@@ -752,8 +752,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "Endereço de e-mail"
+      "Add people or groups": [
+        "Adicionar pessoas ou grupos"
       ]
     },
     "Calendar invite buttons label": {
@@ -836,8 +836,8 @@
       "Edit (view, create and edit event details)": [
         "Edição (ver, criar e editar os detelhes do evento)"
       ],
-      "Full view (see all event details)": [
-        "Visualização completa (ver todos os detalhes do evento)"
+      "View (see all event details)": [
+        "Visualizar (ver todos os detalhes do evento)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3300,9 +3300,6 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Qualquer um com este link pode ver se você está livre ou ocupado no seu calendário. Eles não podem ver os detalhes do evento, como título, localização ou participantes."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "São permitidos no máximo 100 participantes por convite"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
@@ -5024,8 +5021,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Adicionar pessoas ou grupos"
+      "Enter an email address or group name": [
+        "Insira um endereço de e-mail ou nome de grupo"
       ]
     },
     "Share calendar modal title": {
@@ -5665,9 +5662,6 @@
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
       ],
-      "Create calendar": [
-        "Criar calendário"
-      ],
       "Create contact": [
         "Criar contato"
       ],
@@ -5711,9 +5705,6 @@
       ],
       "Drop to upload": [
         "Solte para enviar"
-      ],
-      "Edit calendar": [
-        "Editar calendário"
       ],
       "Edit contact": [
         "Editar contato"
@@ -5968,9 +5959,14 @@
         "Escolha um número"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Editar informações"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Criar calendário"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Editar calendário"
       ]
     },
     "Today icon tooltip in mini calendar": {

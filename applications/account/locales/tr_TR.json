@@ -1166,16 +1166,6 @@
         "Tweet"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "E-posta adresi"
-      ]
-    },
-    "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "Takvi bilgilerini düzenle"
-      ]
-    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "Seçilmiş takvimdeki tüm etkinlikleri içeren bir ICS dosyası indirin."
@@ -1277,9 +1267,6 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Düzenleme (etkinlik bilgilerini görüntüleme, ekleme ya da düzenleme)"
-      ],
-      "Full view (see all event details)": [
-        "Tam görüntüleme (tüm etkinlik bilgilerini görüntüleme)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -5537,6 +5524,9 @@
       "Show original message": [
         "Özgün iletiyi göster"
       ],
+      "Sign in": [
+        "Oturum aç"
+      ],
       "Signed up": [
         "Hesap açtı"
       ],
@@ -6067,9 +6057,6 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Var olan ${ BRAND_NAME } hesabınız tüm ${ BRAND_NAME } hizmetlerine erişmek için kullanılabilir. Lütfen ${ email } ile oturum açın."
-      ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "${ delayedImport.Account } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı."
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
@@ -7373,38 +7360,6 @@
         "VPN bağlantısı"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Proton duyuruları"
-      ],
-      "Proton Beta": [
-        "Proton Beta"
-      ],
-      "Proton beta announcements": [
-        "Proton beta duyuruları"
-      ],
-      "Proton company announcements": [
-        "Proton şirket duyuruları"
-      ],
-      "Proton for Business": [
-        "İş için Proton"
-      ],
-      "Proton for Business newsletter": [
-        "İş için Proton bülteni"
-      ],
-      "Proton major features": [
-        "Önemli Proton özellikleri"
-      ],
-      "Proton newsletter": [
-        "Proton bülteni"
-      ],
-      "Proton offers and promotions": [
-        "Proton teklif ve tanıtımları"
-      ],
-      "Proton product announcements": [
-        "Proton ürün duyuruları"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Adresler"
@@ -7849,17 +7804,26 @@
       "Back": [
         "Geri"
       ],
-      "Back to Calendar": [
-        "Calendar uygulamasına dön"
+      "Back to calendar": [
+        "Takvime dön"
       ],
-      "Back to Drive": [
-        "Drive uygulamasına dön"
+      "Back to files": [
+        "Dosyalara dön"
       ],
-      "Back to Mail": [
-        "Mail uygulamasına dön"
+      "Back to inbox": [
+        "Gelen kutusuna dön"
       ],
       "Blocked": [
         "Engellenmiş"
+      ],
+      "Calendar": [
+        "Takvim"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Inbox": [
+        "Gelen kutusu"
       ],
       "Not spam": [
         "İstenmeyen değil"
@@ -8184,26 +8148,6 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -8273,6 +8217,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -9355,11 +9319,6 @@
         "${ calendarName } takvimini paylaşmak istediğiniz Proton hesaplarını ekleyin. Kendilerine bir çağrı gönderilecek."
       ]
     },
-    "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Kişiler ya da gruplar ekle"
-      ]
-    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Proton kullanıcıları ile paylaş"
@@ -10084,9 +10043,6 @@
       "Couldn’t create accounts": [
         "Hesaplar eklenemedi"
       ],
-      "Create calendar": [
-        "Takvim ekle"
-      ],
       "Create multiple user accounts": [
         "Birkaç kullanıcı hesabı ekle"
       ],
@@ -10197,9 +10153,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } indir"
-      ],
-      "Edit calendar": [
-        "Takvimi düzenle"
       ],
       "Edit credit/debit card": [
         "Kredi/banka kartını düzenle"
@@ -10553,6 +10506,9 @@
       "Sign out": [
         "Oturumu kapat"
       ],
+      "Signed in successfully!": [
+        "Başarıyla oturum açıldı!"
+      ],
       "Signed in to member account": [
         "Üye hesabıyla oturum açıldı"
       ],
@@ -10762,11 +10718,6 @@
       ],
       "Role": [
         "Rol"
-      ]
-    },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Bilgileri düzenle"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10993,6 +10944,11 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries } ülkede ${ numberOfServers }",
         "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ]
+    },
+    "vpn: Info": {
+      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
+        "Web üzerinde gezinirken korunmak için ${ VPN_APP_NAME } tarayıcı eklentisini açın"
       ]
     },
     "VPNClient": {

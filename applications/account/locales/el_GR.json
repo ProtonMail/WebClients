@@ -1012,11 +1012,6 @@
         "Tweet"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "Διεύθυνση email"
-      ]
-    },
     "Calendar status": {
       "Active": [
         "Ενεργά"
@@ -4920,9 +4915,6 @@
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Ο υπάρχων λογαριασμός σας ${ BRAND_NAME } μπορεί να χρησιμοποιηθεί για πρόσβαση σε όλες τις υπηρεσίες ${ BRAND_NAME }. Παρακαλούμε εισέλθετε στο ${ email }."
       ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Η εισαγωγή σας από το ${ delayedImport.Account } καθυστερεί προσωρινά."
-      ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
       ],
@@ -6076,35 +6068,6 @@
         "Ιδιωτικό"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Ανακοινώσεις Proton"
-      ],
-      "Proton Beta": [
-        "Proton Beta"
-      ],
-      "Proton beta announcements": [
-        "Ανακοινώσεις Proton beta"
-      ],
-      "Proton company announcements": [
-        "Ανακοινώσεις εταιρείας του Proton"
-      ],
-      "Proton for Business newsletter": [
-        "Ενημερωτικό δελτίο Proton για επιχειρήσεις"
-      ],
-      "Proton major features": [
-        "Κύρια χαρακτηριστικά του Proton"
-      ],
-      "Proton newsletter": [
-        "Ενημερωτικό δελτίο Proton"
-      ],
-      "Proton offers and promotions": [
-        "Προσφορές και προωθήσεις της Proton"
-      ],
-      "Proton product announcements": [
-        "Ανακοινώσεις προϊόντων του Proton"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Διευθύνσεις"
@@ -6500,15 +6463,6 @@
       "Back": [
         "Πίσω"
       ],
-      "Back to Calendar": [
-        "Πίσω στο Ημερολόγιο"
-      ],
-      "Back to Drive": [
-        "Πίσω στο Drive"
-      ],
-      "Back to Mail": [
-        "Πίσω στο Γραμματοκιβώτιο"
-      ],
       "Spam": [
         "Ενοχλητικά"
       ]
@@ -6751,17 +6705,6 @@
         "Διαχείριση ομάδας"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -6780,6 +6723,17 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8073,9 +8027,6 @@
       "Continue with partial import?": [
         "Συνέχιση με μερική εισαγωγή;"
       ],
-      "Create calendar": [
-        "Δημιουργία ημερολογίου"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "Δημιουργία Λογαριασμού ${ BRAND_NAME }"
       ],
@@ -8168,9 +8119,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Λήψη ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Επεξεργασία ημερολογίου"
       ],
       "Edit credit/debit card": [
         "Επεξεργασία πιστωτικής/χρεωστικής κάρτας"
