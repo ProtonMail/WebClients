@@ -29,11 +29,13 @@ import {
 
 interface Props {
     shareId: string;
+    linkId: string;
     items: DecryptedLink[];
     showOptionsForNoSelection?: boolean;
+    isLinkReadOnly?: boolean;
 }
 
-const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true }: Props) => {
+const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLinkReadOnly }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { isNarrow } = useActiveBreakpoint();
     const selectionControls = useSelection()!;
@@ -51,16 +53,20 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true }: Prop
             }
             return (
                 <>
-                    <CreateNewFolderButton />
-                    {isEditEnabled && <CreateNewFileButton />}
-                    {isDesktop && (
+                    {!isLinkReadOnly ? (
                         <>
+                            <CreateNewFolderButton />
                             <Vr />
+                        </>
+                    ) : null}
+                    {isEditEnabled && !isLinkReadOnly && <CreateNewFileButton />}
+                    {isDesktop && !isLinkReadOnly ? (
+                        <>
                             <UploadFolderButton />
                             <UploadFileButton />
+                            <Vr />
                         </>
-                    )}
-                    <Vr />
+                    ) : null}
                     <ShareFileButton shareId={shareId} />
                 </>
             );
@@ -76,8 +82,12 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true }: Prop
                     <>
                         <ShareLinkButton selectedLinks={selectedItems} />
                         <Vr />
-                        <MoveToFolderButton shareId={shareId} selectedLinks={selectedItems} />
-                        <RenameButton selectedLinks={selectedItems} />
+                        {!isLinkReadOnly ? (
+                            <>
+                                <MoveToFolderButton shareId={shareId} selectedLinks={selectedItems} />
+                                <RenameButton selectedLinks={selectedItems} />
+                            </>
+                        ) : null}
                         <DetailsButton selectedLinks={selectedItems} />
                         <Vr />
                         <MoveToTrashButton selectedLinks={selectedItems} />

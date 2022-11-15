@@ -13,16 +13,21 @@ import DriveToolbar from '../Drive/DriveToolbar';
 import { Search } from './Search';
 
 export function SearchView() {
-    const { activeShareId } = useActiveShare();
+    const { activeFolder } = useActiveShare();
 
     const location = useLocation();
     const query = extractSearchParameters(location);
 
-    const searchView = useSearchView(activeShareId, query);
+    const searchView = useSearchView(activeFolder.shareId, query);
 
     return (
         <FileBrowserStateProvider itemIds={searchView.items.map(({ linkId }) => linkId)}>
-            <DriveToolbar shareId={activeShareId} items={searchView.items} showOptionsForNoSelection={false} />
+            <DriveToolbar
+                shareId={activeFolder.shareId}
+                linkId={activeFolder.linkId}
+                items={searchView.items}
+                showOptionsForNoSelection={false}
+            />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
                 <div className="max-w100 text-pre pt1 pb1 pl0-75 pr0-75 border-bottom section--header text-strong">
                     {searchView.isLoading
@@ -33,7 +38,7 @@ export function SearchView() {
                               searchView.numberOfResults
                           )}
                 </div>
-                <Search shareId={activeShareId} searchView={searchView} />
+                <Search shareId={activeFolder.shareId} searchView={searchView} />
             </PrivateMainArea>
         </FileBrowserStateProvider>
     );
