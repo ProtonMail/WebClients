@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
-import { Address, Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
-import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { Address, Organization, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
+import { ADDRESS_TYPE, MAIL_APP_NAME, USER_ROLES } from '@proton/shared/lib/constants';
+import { getHasB2BPlan } from '@proton/shared/lib/helpers/subscription';
 
 export const getHasPmMeAddress = (addresses: Address[]) => {
     return addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
@@ -19,11 +20,13 @@ export const getMailAppRoutes = ({
     user,
     addresses,
     organization,
+    subscription,
     isSpyTrackerEnabled,
     isShowSenderImagesEnabled,
 }: {
     user: UserModel;
     addresses: Address[];
+    subscription: Subscription;
     organization: Organization;
     isSpyTrackerEnabled: boolean;
     isShowSenderImagesEnabled: boolean;
@@ -181,6 +184,11 @@ export const getMailAppRoutes = ({
                         text: c('Title').t`${MAIL_APP_NAME} Bridge`,
                         id: 'protonmail-bridge',
                     },
+                    {
+                        text: c('Title').t`SMTP tokens`,
+                        id: 'smtp-tokens',
+                        available: getHasB2BPlan(subscription) && user.Role === USER_ROLES.ADMIN_ROLE,
+                    }
                 ],
             },
             backup: <SectionConfig>{
