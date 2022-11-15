@@ -66,50 +66,52 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                 data-testid="toolbar:select-all-dropdown"
                 className="toolbar-button--dropdown-more-selections"
             >
-                {() => (
-                    <DropdownMenu>
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center text-left"
-                            onClick={handleAll(true)}
-                            data-testid="toolbar:select-all"
-                        >
-                            <Icon name="checkmark-triple" className="mr0-5" />
-                            {c('Action').t`Select All`}
-                        </DropdownMenuButton>
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center text-left"
-                            onClick={handleRead(true)}
-                            data-testid="toolbar:all-read"
-                        >
-                            <Icon name="envelope-open" className="mr0-5" />
-                            {c('Action').t`All Read`}
-                        </DropdownMenuButton>
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center text-left"
-                            onClick={handleRead(false)}
-                            data-testid="toolbar:all-unread"
-                        >
-                            <Icon name="envelope-dot" className="mr0-5" />
-                            {c('Action').t`All Unread`}
-                        </DropdownMenuButton>
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center text-left"
-                            onClick={handleStarred(true)}
-                            data-testid="toolbar:all-starred"
-                        >
-                            <Icon name="star-filled" className="mr0-5" />
-                            {c('Action').t`All Starred`}
-                        </DropdownMenuButton>
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center text-left"
-                            onClick={handleStarred(false)}
-                            data-testid="toolbar:all-unstarred"
-                        >
-                            <Icon name="star" className="mr0-5" />
-                            {c('Action').t`All Unstarred`}
-                        </DropdownMenuButton>
-                    </DropdownMenu>
-                )}
+                {{
+                    render: () => (
+                        <DropdownMenu>
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center text-left"
+                                onClick={handleAll(true)}
+                                data-testid="toolbar:select-all"
+                            >
+                                <Icon name="checkmark-triple" className="mr0-5" />
+                                {c('Action').t`Select All`}
+                            </DropdownMenuButton>
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center text-left"
+                                onClick={handleRead(true)}
+                                data-testid="toolbar:all-read"
+                            >
+                                <Icon name="envelope-open" className="mr0-5" />
+                                {c('Action').t`All Read`}
+                            </DropdownMenuButton>
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center text-left"
+                                onClick={handleRead(false)}
+                                data-testid="toolbar:all-unread"
+                            >
+                                <Icon name="envelope-dot" className="mr0-5" />
+                                {c('Action').t`All Unread`}
+                            </DropdownMenuButton>
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center text-left"
+                                onClick={handleStarred(true)}
+                                data-testid="toolbar:all-starred"
+                            >
+                                <Icon name="star-filled" className="mr0-5" />
+                                {c('Action').t`All Starred`}
+                            </DropdownMenuButton>
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center text-left"
+                                onClick={handleStarred(false)}
+                                data-testid="toolbar:all-unstarred"
+                            >
+                                <Icon name="star" className="mr0-5" />
+                                {c('Action').t`All Unstarred`}
+                            </DropdownMenuButton>
+                        </DropdownMenu>
+                    ),
+                }}
             </ToolbarDropdown>
         </>
     );

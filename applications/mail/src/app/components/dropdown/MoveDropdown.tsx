@@ -38,6 +38,8 @@ import { Breakpoints } from '../../models/utils';
 
 import './MoveDropdown.scss';
 
+export const moveDropdownContentProps = { className: 'flex flex-column flex-nowrap flex-align-items-stretch' };
+
 type FolderItem = Folder & { icon: IconName; level: number };
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
@@ -161,8 +163,11 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const applyDisabled = selectedFolder?.ID === undefined;
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
+        <form
+            className="flex flex-column flex-nowrap flex-justify-start flex-align-items-stretch flex-item-fluid-auto"
+            onSubmit={handleSubmit}
+        >
+            <div className="flex flex-item-noshrink flex-justify-space-between flex-align-items-center m1 mb0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
                 </span>
@@ -181,7 +186,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 </Tooltip>
                 <EditLabelModal type="folder" onCloseCustomAction={() => setContainFocus(true)} {...editLabelProps} />
             </div>
-            <div className="m1 mb0">
+            <div className="flex-item-noshrink m1 mb0">
                 <SearchInput
                     value={search}
                     onChange={updateSearch}
@@ -193,7 +198,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 />
             </div>
             <div
-                className="scroll-if-needed scroll-smooth-touch mt1 move-dropdown-container"
+                className="overflow-auto mt1 move-dropdown-container flex-item-fluid-auto"
                 data-testid="move-dropdown-list"
             >
                 <ul className="unstyled mt0 mb0">
@@ -239,10 +244,10 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
             </div>
             {contextFilteringFeature.feature?.Value === true && contextFilteringFeature.loading === false && (
                 <>
-                    <hr className="m0" />
+                    <hr className="m0 flex-item-noshrink" />
                     <div
                         className={classnames([
-                            'move-dropdown-container px1 mt1',
+                            'px1 mt1 flex-item-noshrink',
                             alwaysCheckboxDisabled && 'color-disabled',
                         ])}
                     >
@@ -259,7 +264,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     </div>
                 </>
             )}
-            <div className="m1">
+            <div className="m1 flex-item-noshrink">
                 <PrimaryButton
                     className="w100"
                     loading={loading}
