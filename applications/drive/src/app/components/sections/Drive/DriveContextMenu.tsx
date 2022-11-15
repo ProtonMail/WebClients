@@ -23,9 +23,11 @@ export function DriveItemContextMenu({
     open,
     close,
     children,
+    isActiveLinkReadOnly,
 }: ContextMenuProps & {
     shareId: string;
     selectedLinks: DecryptedLink[];
+    isActiveLinkReadOnly?: boolean;
 }) {
     const selectedLink = selectedLinks[0];
     const isOnlyOneItem = selectedLinks.length === 1;
@@ -42,8 +44,12 @@ export function DriveItemContextMenu({
             {hasLink && <CopyLinkButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
             {isOnlyOneItem && <ShareLinkButton shareId={shareId} link={selectedLink} close={close} />}
             <ContextSeparator />
-            <MoveToFolderButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
-            {isOnlyOneItem && <RenameButton shareId={shareId} link={selectedLink} close={close} />}
+            {!isActiveLinkReadOnly ? (
+                <MoveToFolderButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
+            ) : null}
+            {isOnlyOneItem && !isActiveLinkReadOnly && (
+                <RenameButton shareId={shareId} link={selectedLink} close={close} />
+            )}
             <DetailsButton selectedLinks={selectedLinks} close={close} />
             <ContextSeparator />
             <MoveToTrashButton selectedLinks={selectedLinks} close={close} />

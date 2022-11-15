@@ -5,7 +5,13 @@ import { useLoading } from '@proton/components';
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
 import { generateErrorHandler } from '../_utils';
-import { useAbortSignal, useControlledSorting, useLinkName, useMemoArrayNoMatterTheOrder } from './utils';
+import {
+    useAbortSignal,
+    useControlledSorting,
+    useIsActiveLinkReadOnly,
+    useLinkName,
+    useMemoArrayNoMatterTheOrder,
+} from './utils';
 
 /**
  * useFolderView provides data for folder view (file browser of folder).
@@ -26,6 +32,8 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
     const { layout, sort, changeSort } = useUserSettings();
     const { sortedList, sortParams, setSorting } = useControlledSorting(cachedChildren, sort, changeSort);
 
+    const isActiveLinkReadOnly = useIsActiveLinkReadOnly();
+
     useEffect(() => {
         const ac = new AbortController();
         void withLoading(linksListing.loadChildren(ac.signal, shareId, linkId).catch(generateErrorHandler(setError)));
@@ -37,6 +45,7 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
     return {
         layout,
         folderName,
+        isActiveLinkReadOnly,
         items: sortedList,
         sortParams,
         setSorting,

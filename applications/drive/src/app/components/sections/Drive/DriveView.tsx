@@ -36,7 +36,16 @@ function DriveView() {
     return (
         <FileBrowserStateProvider itemIds={folderView.items.map(({ linkId }) => linkId)}>
             <UploadDragDrop className="flex flex-column flex-nowrap flex-item-fluid">
-                {activeFolder ? <DriveToolbar shareId={activeFolder.shareId} items={folderView.items} /> : <Toolbar />}
+                {activeFolder ? (
+                    <DriveToolbar
+                        isLinkReadOnly={folderView.isActiveLinkReadOnly}
+                        shareId={activeFolder.shareId}
+                        linkId={activeFolder.linkId}
+                        items={folderView.items}
+                    />
+                ) : (
+                    <Toolbar />
+                )}
                 <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
                     <div className="max-w100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom section--header">
                         {activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />}
