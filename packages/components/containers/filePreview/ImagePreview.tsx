@@ -13,7 +13,7 @@ import ZoomControl from './ZoomControl';
 
 interface Props {
     mimeType: string;
-    onSave?: () => void;
+    onDownload?: () => void;
     contents?: Uint8Array[];
     placeholderSrc?: string;
     isLoading: boolean;
@@ -55,7 +55,7 @@ function sanitizeSVG(contents: Uint8Array[]): Uint8Array[] {
     return [stringToUint8Array(sanitzedSVG)];
 }
 
-const ImagePreview = ({ isLoading = false, mimeType, contents, onSave, placeholderSrc }: Props) => {
+const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, placeholderSrc }: Props) => {
     const imageRef = useRef<HTMLImageElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const containerBounds = useElementRect(containerRef);
@@ -142,7 +142,7 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onSave, placehold
         <>
             <div ref={containerRef} className="file-preview-container">
                 {error ? (
-                    <UnsupportedPreview onSave={onSave} type="image" />
+                    <UnsupportedPreview onDownload={onDownload} type="image" />
                 ) : (
                     <div
                         className="flex-no-min-children mauto relative"

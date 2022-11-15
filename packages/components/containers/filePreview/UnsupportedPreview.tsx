@@ -9,10 +9,10 @@ import { useActiveBreakpoint } from '../../hooks';
 
 interface Props {
     type?: 'file' | 'image' | 'video' | 'audio';
-    onSave?: () => void;
+    onDownload?: () => void;
 }
 
-const UnsupportedPreview = ({ onSave, type = 'file' }: Props) => {
+const UnsupportedPreview = ({ onDownload, type = 'file' }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
     return (
@@ -25,8 +25,8 @@ const UnsupportedPreview = ({ onSave, type = 'file' }: Props) => {
 
             <h2 className={classnames(['p0-25 text-bold', isNarrow && 'h3'])}>{c('Info').t`No preview available`}</h2>
 
-            {onSave && (
-                <PrimaryButton size={!isNarrow ? 'large' : undefined} className="text-bold" onClick={onSave}>{c(
+            {onDownload && (
+                <PrimaryButton size={!isNarrow ? 'large' : undefined} className="text-bold" onClick={onDownload}>{c(
                     'Action'
                 ).t`Download`}</PrimaryButton>
             )}

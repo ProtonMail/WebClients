@@ -68,7 +68,7 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
         };
     }, [shareId, linkId]);
 
-    const saveFile = useCallback(async () => {
+    const downloadFile = useCallback(async () => {
         if (!link) {
             return;
         }
@@ -87,7 +87,7 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
         error,
         link,
         contents,
-        saveFile,
+        downloadFile,
         navigation,
     };
 }
