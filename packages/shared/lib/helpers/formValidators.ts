@@ -21,6 +21,8 @@ export const usernameLengthValidator = (value: string, n = defaultUsernameLength
 
 export const minLengthValidator = (value: string, minimumLength: number) =>
     value.length < minimumLength ? c('Error').t`This field requires a minimum of ${minimumLength} characters.` : '';
+export const maxLengthValidator = (value: string, maximumLength: number) =>
+    value.length > maximumLength ? c('Error').t`This field exceeds the maximum of ${maximumLength} characters.` : '';
 export const emailValidator = (value: string) => (!validateEmailAddress(value) ? c('Error').t`Email is not valid` : '');
 export const numberValidator = (value: string) => (!isNumber(value) ? c('Error').t`Not a valid number` : '');
 export const confirmPasswordValidator = (a: string, b: string) => (a !== b ? c('Error').t`Passwords do not match` : '');
