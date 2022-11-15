@@ -30,6 +30,7 @@ interface Props {
     isExpanded?: boolean;
     onContactDetails: (contactID: string) => void;
     onContactEdit: (props: ContactEditProps) => void;
+    customDataTestId?: string;
 }
 
 const RecipientItem = ({
@@ -48,6 +49,7 @@ const RecipientItem = ({
     isExpanded,
     onContactDetails,
     onContactEdit,
+    customDataTestId,
 }: Props) => {
     const ref = useRef<HTMLButtonElement>(null);
 
@@ -66,6 +68,7 @@ const RecipientItem = ({
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
                 showDropdown={showDropdown}
+                customDataTestId={customDataTestId}
             />
         );
     }
@@ -88,6 +91,7 @@ const RecipientItem = ({
                     isExpanded={isExpanded}
                     onContactDetails={onContactDetails}
                     onContactEdit={onContactEdit}
+                    customDataTestId={customDataTestId}
                 />
             );
         }

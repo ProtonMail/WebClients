@@ -66,6 +66,7 @@ interface Props {
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
     filterDropdownToggleRef: React.MutableRefObject<() => void>;
     parentMessageRef: React.RefObject<HTMLElement>;
+    conversationIndex?: number;
 }
 
 const HeaderExpanded = ({
@@ -89,6 +90,7 @@ const HeaderExpanded = ({
     moveDropdownToggleRef,
     filterDropdownToggleRef,
     parentMessageRef,
+    conversationIndex = 0,
 }: Props) => {
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
@@ -160,6 +162,7 @@ const HeaderExpanded = ({
             globalIcon={messageViewIcons.globalIcon}
             onContactDetails={onContactDetails}
             onContactEdit={onContactEdit}
+            customDataTestId="recipients:sender"
         />
     );
 
@@ -199,7 +202,7 @@ const HeaderExpanded = ({
                 !messageLoaded && 'is-loading',
                 showDetails ? 'message-header-expanded--with-details' : 'message-header-expanded--without-details',
             ])}
-            data-testid={`message-header-expanded:${message.data?.Subject}`}
+            data-testid={`message-header-expanded:${conversationIndex}`}
         >
             <HeaderTopPrivacyIcon message={message} />
             {isNarrow && messageLoaded && (
@@ -318,7 +321,6 @@ const HeaderExpanded = ({
                         onToggle={onToggle}
                         onSourceMode={onSourceMode}
                         breakpoints={breakpoints}
-                        data-testid="message-header-expanded:more-dropdown"
                         parentMessageRef={parentMessageRef}
                         mailSettings={mailSettings}
                         messageViewIcons={messageViewIcons}

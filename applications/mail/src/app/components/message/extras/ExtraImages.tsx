@@ -72,7 +72,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
             <Tooltip title={text}>
                 <Button
                     onClick={onLoadImages}
-                    data-testid="remote-content:load"
+                    data-testid="embedded-content:load"
                     className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
                 >
                     <Icon name={couldLoadDirect ? 'shield' : 'image'} className="flex-item-noshrink ml0-25" />

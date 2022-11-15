@@ -41,6 +41,7 @@ interface Props {
     isExpanded?: boolean;
     onContactDetails: (contactID: string) => void;
     onContactEdit: (props: ContactEditProps) => void;
+    customDataTestId?: string;
 }
 
 const MailRecipientItemSingle = ({
@@ -58,6 +59,7 @@ const MailRecipientItemSingle = ({
     isExpanded,
     onContactDetails,
     onContactEdit,
+    customDataTestId,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const history = useHistory();
@@ -160,7 +162,11 @@ const MailRecipientItemSingle = ({
     const customDropdownActions = (
         <>
             <hr className="my0-5" />
-            <DropdownMenuButton className="text-left flex flex-nowrap flex-align-items-center" onClick={handleCompose}>
+            <DropdownMenuButton
+                className="text-left flex flex-nowrap flex-align-items-center"
+                onClick={handleCompose}
+                data-testid="recipient:new-message"
+            >
                 <Icon name="envelope" className="mr0-5" />
                 <span className="flex-item-fluid myauto">{c('Action').t`New message`}</span>
             </DropdownMenuButton>
@@ -168,6 +174,7 @@ const MailRecipientItemSingle = ({
                 <DropdownMenuButton
                     className="text-left flex flex-nowrap flex-align-items-center"
                     onClick={handleClickContact}
+                    data-testid="recipient:view-contact-details"
                 >
                     <Icon name="user" className="mr0-5" />
                     <span className="flex-item-fluid myauto">{c('Action').t`View contact details`}</span>
@@ -176,6 +183,7 @@ const MailRecipientItemSingle = ({
                 <DropdownMenuButton
                     className="text-left flex flex-nowrap flex-align-items-center"
                     onClick={handleClickContact}
+                    data-testid="recipient:create-new-contact"
                 >
                     <Icon name="user-plus" className="mr0-5" />
                     <span className="flex-item-fluid myauto">{c('Action').t`Create new contact`}</span>
@@ -184,6 +192,7 @@ const MailRecipientItemSingle = ({
             <DropdownMenuButton
                 className="text-left flex flex-nowrap flex-align-items-center"
                 onClick={handleClickSearch}
+                data-testid="recipient:search-messages"
             >
                 <Icon name="envelope-magnifying-glass" className="mr0-5" />
                 <span className="flex-item-fluid myauto">
@@ -205,6 +214,7 @@ const MailRecipientItemSingle = ({
                 <DropdownMenuButton
                     className="text-left flex flex-nowrap flex-align-items-center"
                     onClick={handleClickTrust}
+                    data-testid="recipient:show-trust-public-key"
                 >
                     <Icon name="user" className="mr0-5" />
                     <span className="flex-item-fluid myauto">{c('Action').t`Trust public key`}</span>
@@ -232,6 +242,7 @@ const MailRecipientItemSingle = ({
                 hideAddress={hideAddress}
                 isRecipient={isRecipient}
                 isExpanded={isExpanded}
+                customDataTestId={customDataTestId}
             />
             {renderTrustPublicKeyModal && <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />}
             {blockSenderModal}

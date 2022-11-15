@@ -36,6 +36,7 @@ interface Props {
      * The recipient item is not the sender
      */
     isRecipient?: boolean;
+    customDataTestId?: string;
 }
 
 const RecipientItemLayout = ({
@@ -56,6 +57,7 @@ const RecipientItemLayout = ({
     showDropdown = true,
     isOutside = false,
     isRecipient = false,
+    customDataTestId,
 }: Props) => {
     // When displaying messages sent as Encrypted Outside, this component is used
     // almost in isolation, specifically without the usual mail app (and authenticated
@@ -120,12 +122,12 @@ const RecipientItemLayout = ({
             ])}
             role="button"
             tabIndex={0}
-            data-testid="message-header:from"
             onClick={handleClick}
             ref={combinedRef}
             aria-label={labelMessageRecipientButton}
             aria-expanded={isDropdownOpen}
             title={title}
+            data-testid={customDataTestId ? customDataTestId : `recipient:details-dropdown-${title}`}
         >
             <span
                 className={classnames([
@@ -140,7 +142,11 @@ const RecipientItemLayout = ({
                     ])}
                 >
                     <span className="inline-block text-ellipsis max-w100">
-                        {labelHasIcon && <span className="inline-block align-sub">{itemActionIcon}</span>}
+                        {labelHasIcon && (
+                            <span className="inline-block align-sub" data-testid="recipient:action-icon">
+                                {itemActionIcon}
+                            </span>
+                        )}
                         {icon}
                         <span
                             className={classnames([
@@ -148,6 +154,7 @@ const RecipientItemLayout = ({
                                 isLoading && 'inline-block',
                                 isNarrow && 'text-strong',
                             ])}
+                            data-testid="recipient-label"
                         >
                             {highlightedLabel}
                         </span>
@@ -158,6 +165,7 @@ const RecipientItemLayout = ({
                                     isLoading && 'inline-block',
                                     isRecipient ? 'color-weak' : 'color-primary',
                                 ])}
+                                data-testid="recipient-address"
                             >
                                 {highlightedAddress}
                             </span>

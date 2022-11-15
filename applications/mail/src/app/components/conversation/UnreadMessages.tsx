@@ -59,6 +59,7 @@ const UnreadMessages = ({ conversationID, messages, onClick }: Props) => {
                 color="norm"
                 className="flex flex-nowrap flex-align-items-center conversation-unread-messages"
                 onClick={handleClick}
+                data-testid="conversation-view:view-new-unread-message"
             >
                 <span>{text}</span> <Icon name="arrow-down" className="ml0-5" />
             </Button>

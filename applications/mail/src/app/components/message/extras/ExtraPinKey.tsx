@@ -200,7 +200,9 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                 <Icon name="exclamation-circle-filled" className="mt0-4 mr0-5 ml0-2 flex-item-noshrink color-danger" />
                 <div>
                     <span className="pr0-5 flex flex-item-fluid mt0-25">
-                        <span className="mr0-25">{getBannerMessage(promptKeyPinningType)}</span>
+                        <span className="mr0-25" data-testid="extra-pin-key:content">
+                            {getBannerMessage(promptKeyPinningType)}
+                        </span>
                         {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
                             <InlineLinkButton
                                 disabled={loadingDisablePromptPin}
@@ -223,6 +225,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                     className="rounded-sm"
                     onClick={handleTrustKey}
                     disabled={loading}
+                    data-testid="extra-pin-key:trust-button"
                 >
                     {c('Action').t`Trust key`}
                 </Button>

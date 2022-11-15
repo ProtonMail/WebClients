@@ -34,6 +34,7 @@ interface Props {
     isUnreadMessage: boolean;
     onExpand: () => void;
     breakpoints: Breakpoints;
+    conversationIndex?: number;
 }
 
 const HeaderCollapsed = ({
@@ -45,6 +46,7 @@ const HeaderCollapsed = ({
     isUnreadMessage,
     onExpand,
     breakpoints,
+    conversationIndex = 0,
 }: Props) => {
     const { lessThanTwoHours } = useExpiration(message);
 
@@ -72,7 +74,7 @@ const HeaderCollapsed = ({
                 !messageLoaded && 'is-loading',
             ])}
             onClick={handleClick}
-            data-testid={`message-header-collapsed:${message.data?.Subject}`}
+            data-testid={`message-header-collapsed:${conversationIndex}`}
         >
             <div className="flex flex-item-fluid flex-nowrap flex-align-items-center mr0-5">
                 <RecipientItem
