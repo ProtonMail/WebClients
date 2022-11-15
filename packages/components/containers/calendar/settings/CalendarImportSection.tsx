@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
-import { CALENDAR_APP_NAME, IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
+import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';

@@ -31,7 +31,6 @@ import {
     getDoesCalendarNeedUserAction,
     getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
-import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getParticipant } from '@proton/shared/lib/calendar/mailIntegration/invite';
@@ -39,7 +38,7 @@ import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/re
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
-import { APPS, SECOND } from '@proton/shared/lib/constants';
+import { APPS, CALENDAR_APP_NAME, SECOND } from '@proton/shared/lib/constants';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
