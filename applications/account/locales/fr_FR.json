@@ -354,6 +354,9 @@
       "Filters are being applied. This might take a few minutes.": [
         "Les filtres sont en cours d'application. Cela peut prendre quelques minutes."
       ],
+      "Fit to window": [
+        "Ajuster à la fenêtre"
+      ],
       "Font": [
         "Police"
       ],
@@ -1163,16 +1166,6 @@
         "Tweeter"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "Adresse électronique"
-      ]
-    },
-    "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "Modifier les informations du calendrier"
-      ]
-    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "Téléchargez un fichier ICS avec tous les événements du calendrier sélectionné."
@@ -1274,9 +1267,6 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Modifier (afficher, créer et modifier les détails de l'événement)"
-      ],
-      "Full view (see all event details)": [
-        "Vue complète (voir toutes les informations des événements)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -5534,6 +5524,9 @@
       "Show original message": [
         "Afficher le message d'origine"
       ],
+      "Sign in": [
+        "Se connecter"
+      ],
       "Signed up": [
         "Inscrit"
       ],
@@ -5592,7 +5585,7 @@
         "L'adresse électronique que vous placez en haut de la liste est votre adresse par défaut. Glissez et déposez pour réorganiser vos adresses."
       ],
       "The following address is available:": [
-        "Les adresses suivantes sont disponibles :"
+        "Les adresses suivantes sont disponibles :"
       ],
       "The following address is invalid.": [
         "L'adresse suivante n'est pas valide.",
@@ -6015,7 +6008,7 @@
         "Vous serez bientôt redirigé vers votre banque pour vérifier votre paiement."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "Vous avez besoin d'une adresse ${ BRAND_NAME } pour utiliser ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }"
+        "Vous avez besoin d'une adresse ${ BRAND_NAME } pour utiliser ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }."
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Vous ne pourrez PAS déchiffrer les messages, fichiers et autres données chiffrés avec cette clé."
@@ -6064,9 +6057,6 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Votre compte ${ BRAND_NAME } peut être utilisé pour accéder à tous les services ${ BRAND_NAME }. Connectez-vous avec ${ email }."
-      ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Votre importation à partir de ${ delayedImport.Account } est temporairement retardée."
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
@@ -7370,38 +7360,6 @@
         "Connexions VPN"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Annonces et actualités de l'entreprise"
-      ],
-      "Proton Beta": [
-        "Proton bêta"
-      ],
-      "Proton beta announcements": [
-        "Annonces et actualités bêta"
-      ],
-      "Proton company announcements": [
-        "Annonces et actualités de l'entreprise"
-      ],
-      "Proton for Business": [
-        "Proton pour les entreprises"
-      ],
-      "Proton for Business newsletter": [
-        "Newsletter Proton for Business"
-      ],
-      "Proton major features": [
-        "Les principales fonctionnalités de Proton"
-      ],
-      "Proton newsletter": [
-        "Newsletter Proton"
-      ],
-      "Proton offers and promotions": [
-        "Offres et promotions Proton"
-      ],
-      "Proton product announcements": [
-        "Annonces et actualités produits"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Adresses"
@@ -7846,17 +7804,26 @@
       "Back": [
         "Précédent"
       ],
-      "Back to Calendar": [
+      "Back to calendar": [
         "Revenir au calendrier"
       ],
-      "Back to Drive": [
-        "Revenir à Drive"
+      "Back to files": [
+        "Revenir aux fichiers"
       ],
-      "Back to Mail": [
-        "Revenir à la messagerie"
+      "Back to inbox": [
+        "Revenir à la boite de réception"
       ],
       "Blocked": [
         "Bloqué"
+      ],
+      "Calendar": [
+        "Calendrier"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Inbox": [
+        "Boîte de réception"
       ],
       "Not spam": [
         "Non indésirables/spam"
@@ -8181,26 +8148,6 @@
         "Gestion de l'équipe"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Dans le cas contraire, l'accès à votre compte sera limité et il sera par la suite désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Votre essai se termine le ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -8270,6 +8217,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un prix promotionnel pour votre abonnement actuel. Si vous rétrogradez votre compte, vous perdrez ce prix promotionnel et il ne sera plus disponible si vous cherchez à vous réabonner."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Dans le cas contraire, l'accès à votre compte sera limité et il sera par la suite désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Votre essai se termine le ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9352,11 +9319,6 @@
         "Ajoutez les comptes Proton avec lesquels vous souhaitez partager ${ calendarName }. Nous leur enverrons une invitation."
       ]
     },
-    "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Ajouter des personnes ou des groupes"
-      ]
-    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Partager avec les utilisateurs Proton"
@@ -10330,9 +10292,6 @@
       "Couldn’t create accounts": [
         "Impossible de créer des comptes"
       ],
-      "Create calendar": [
-        "Créer un calendrier"
-      ],
       "Create multiple user accounts": [
         "Créer plusieurs comptes utilisateurs"
       ],
@@ -10443,9 +10402,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Télécharger ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Modifier le calendrier"
       ],
       "Edit credit/debit card": [
         "Modifier la carte de crédit/débit"
@@ -10799,6 +10755,9 @@
       "Sign out": [
         "Se déconnecter"
       ],
+      "Signed in successfully!": [
+        "Connexion réussie"
+      ],
       "Signed in to member account": [
         "Connecté au compte membre"
       ],
@@ -11008,11 +10967,6 @@
       ],
       "Role": [
         "Rôle"
-      ]
-    },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Modifier les informations"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11239,6 +11193,11 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } dans ${ numberOfCountries } pays"
+      ]
+    },
+    "vpn: Info": {
+      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
+        "Ouvrez l'extension navigateur ${ VPN_APP_NAME } pour vous protéger pendant la navigation"
       ]
     },
     "VPNClient": {

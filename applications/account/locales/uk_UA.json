@@ -6,7 +6,7 @@
   "contexts": {
     "A label for unlabeled shared calendar links": {
       "Unlabeled": [
-        "З прибраною міткою"
+        "Без мітки"
       ]
     },
     "Access level": {
@@ -438,6 +438,9 @@
       "label emails as": [
         "позначати листи міткою"
       ],
+      "Leave": [
+        "Залишити"
+      ],
       "Load more": [
         "Завантажити ще"
       ],
@@ -446,6 +449,9 @@
       ],
       "Make default": [
         "Зробити типовою"
+      ],
+      "Manage communication preferences": [
+        "Керування комунікаційними налаштуванями"
       ],
       "Mark as default": [
         "Позначити типовим"
@@ -1171,13 +1177,13 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "Адреса е-пошти"
+      "Add people or groups": [
+        "Додати людей чи групи"
       ]
     },
     "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "Редагувати інформацію календаря"
+      "Edit calendar": [
+        "Редагувати календар"
       ]
     },
     "Calendar export section description": {
@@ -1203,10 +1209,10 @@
         "Ви досягли максимальної кількості особистих календарів у межах свого тарифного плану."
       ],
       "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Ви досягли найбільшої кількості персональних календарів, яку можете мати. Щоб погодитися на запрошення до календарів у черзі, вам необхідно вилучити деякі з ваших календарів."
+        "Ви досягли максимальної кількості доступних вам особистих календарів. Щоб погодитися на запрошення до календарів у черзі, необхідно вилучити деякі з ваших календарів."
       ],
       "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Ви досягли найбільшої кількості спільних календарів, яку можете мати. Щоб погодитися на запрошення до календарів у черзі, вам необхідно вилучити деякі з ваших календарів."
+        "Ви досягли максимальної кількості доступних вам спільних календарів. Щоб погодитися на запрошення до календарів у черзі, необхідно вилучити деякі з ваших календарів."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS } підписного календаря.",
@@ -1253,7 +1259,7 @@
     },
     "Calendar settings private share description": {
       "Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Діліться своїм календарем з іншими користувачами Proton. Увімкніть спільну роботу, дозволивши їм додавати та змінювати події у вашому календарі. Ви можете будь-коли змінити права користувача."
+        "Діліться своїм календарем з іншими користувачами Proton. Увімкніть спільну роботу, дозволивши їм додавати та змінювати події у вашому календарі. Ви можете будь-коли змінити дозволи користувача."
       ]
     },
     "Calendar settings section title": {
@@ -1284,8 +1290,8 @@
       "Edit (view, create and edit event details)": [
         "Редагування (перегляд, створення й редагування подробиць події)"
       ],
-      "Full view (see all event details)": [
-        "Повний перегляд (усі подробиці події)"
+      "View (see all event details)": [
+        "Перегляд (усі подробиці події)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -2643,7 +2649,7 @@
         "Не вдалося видалити ${ name }"
       ],
       "${ name } failed to move to not spam List": [
-        "${ name } не вдалося перемістити до списку не спаму"
+        "${ name } не вдалося перемістити до списку надійних адресатів"
       ],
       "${ name } failed to move to spam list": [
         "Не вдалося перемістити ${ name } до вашого списку спаму"
@@ -2652,7 +2658,7 @@
         "Не вдалося перемістити ${ name } до вашого списку блокування"
       ],
       "${ name } moved to not spam list": [
-        "${ name } переміщено до списку не спаму"
+        "${ name } переміщено до списку надійних адресатів"
       ],
       "${ name } moved to spam list": [
         "${ name } переміщено до списку спаму"
@@ -2760,7 +2766,7 @@
         "Не вдалося видалити ${ name }"
       ],
       "${ name } failed to move to not spam List": [
-        "${ name } не вдалося перемістити до списку не спаму"
+        "${ name } не вдалося перемістити до списку надійних адресатів"
       ],
       "${ name } failed to move to spam list": [
         "Не вдалося перемістити ${ name } до вашого списку спаму"
@@ -2769,7 +2775,7 @@
         "Не вдалося перемістити ${ name } до вашого списку блокування"
       ],
       "${ name } moved to not spam list": [
-        "${ name } переміщено до списку не спаму"
+        "${ name } переміщено до списку надійних адресатів"
       ],
       "${ name } moved to spam list": [
         "${ name } переміщено до списку спаму"
@@ -3482,6 +3488,9 @@
       ],
       "sign in": [
         "увійти"
+      ],
+      "There was a problem removing your email address.": [
+        "Виникла проблема з вилученням адреси електронної пошти."
       ],
       "There was a problem verifying your email address.": [
         "Виникла проблема з підтвердженням адреси електронної пошти."
@@ -4840,6 +4849,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
       ],
+      "Before you reset your password, download your recovery phrase.": [
+        "Перед скиданням пароля, завантажте фразу відновлення."
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Підтвердження транзакцій з Bitcoin можуть тривати деякий час (до 24 годин). Після підтвердження ми додамо кошти до вашого облікового запису. Після підтвердження транзакції ви можете сплатити свій рахунок, використавши ці кошти."
       ],
@@ -4977,6 +4989,9 @@
       ],
       "Download recovery file": [
         "Завантажити файл відновлення"
+      ],
+      "Download recovery phrase": [
+        "Завантажити фразу відновлення"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
@@ -5136,6 +5151,12 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
+      ],
+      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
+        "Якщо ви не знаєте свій пароль, вам потрібно буде ${ boldPasswordReset }, щоб отримати доступ до нового сайту."
+      ],
+      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
+        "Якщо вам коли-небудь знову знадобиться скинути пароль, вам потрібно буде ввести цю фразу, щоб знову ввійти до свого облікового запису та розблокувати свої дані."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Якщо у вас є власний домен з ${ MAIL_APP_NAME }, ви можете налаштувати електронну адресу catch-all для отримання повідомлень, надісланих на ваш домен, але з неправильною адресою (наприклад, через помилки)."
@@ -5335,6 +5356,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Обов'язково ${ addARecoveryMethod }, щоб мати можливість отримати доступ до свого облікового запису в разі втрати пароля."
       ],
+      "Make sure you keep your recovery phrase somewhere private.": [
+        "Переконайтеся, що ви зберігаєте свою фразу відновлення в захищеному місці."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ _switchButton }."
       ],
@@ -5457,6 +5481,9 @@
       ],
       "Paid for a monthly plan": [
         "Передплачено місячний тарифний план"
+      ],
+      "password reset": [
+        "скинути пароль"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Повна перевірка оплати може тривати кілька хвилин."
@@ -5611,6 +5638,9 @@
       "Remove one of your calendars to join this one": [
         "Вилучіть один з ваших календарів, щоб приєднатися до цього"
       ],
+      "Reset password": [
+        "Скинути пароль"
+      ],
       "Revoke certificate ${ name }": [
         "Відкликати сертифікат ${ name }"
       ],
@@ -5664,6 +5694,9 @@
       ],
       "Show original message": [
         "Показати оригінальне повідомлення"
+      ],
+      "Sign in": [
+        "Увійти"
       ],
       "Signed up": [
         "Зареєстровано"
@@ -5748,6 +5781,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Найзахищеніший спосіб переглядати, передавати та бути онлайн."
+      ],
+      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
+        "У вашій адресі електронної пошти або в обліковому записі ${ BRAND_NAME } не відбулося жодних змін. облікового запису. Просто ввійдіть за посиланням ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ці файли конфігурації дають змогу обрати сервер ${ VPN_APP_NAME }, з яким ви з'єднуєтесь під час користування стороннім застосунком VPN або налаштованим VPN-з'єднанням маршрутизатора."
@@ -6202,8 +6238,11 @@
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Ваш наявний обліковий запис ${ BRAND_NAME } можна використовувати для доступу до всіх служб ${ BRAND_NAME }. Увійдіть із ${ email }."
       ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Ваше імпортування з ${ delayedImport.Account } тимчасово затримано."
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Ваше імпортування з ${ accounts } тимчасово затримано.",
+        "Ваші імпортування з ${ accounts } тимчасово затримано.",
+        "Ваші імпортування з ${ accounts } тимчасово затримано.",
+        "Ваші імпортування з ${ accounts } тимчасово затримано."
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
@@ -7512,35 +7551,23 @@
       ]
     },
     "Label for news": {
-      "Proton announcements": [
-        "Оголошення від Proton"
+      "${ BRAND_NAME } beta announcements": [
+        "Оголошення ${ BRAND_NAME } бета"
       ],
-      "Proton Beta": [
-        "Proton Beta"
+      "${ BRAND_NAME } company announcements": [
+        "Оголошення компанії ${ BRAND_NAME }"
       ],
-      "Proton beta announcements": [
-        "Оголошення про бета-версії Proton"
+      "${ BRAND_NAME } for Business newsletter": [
+        "Новини ${ BRAND_NAME } для бізнесу"
       ],
-      "Proton company announcements": [
-        "Оголошення від компанії Proton"
+      "${ BRAND_NAME } newsletter": [
+        "Новини ${ BRAND_NAME }"
       ],
-      "Proton for Business": [
-        "Proton для бізнесу"
+      "${ BRAND_NAME } offers and promotions": [
+        "Пропозиції та акції ${ BRAND_NAME }"
       ],
-      "Proton for Business newsletter": [
-        "Інформаційний бюлетень Proton для бізнесу"
-      ],
-      "Proton major features": [
-        "Основні функції Proton"
-      ],
-      "Proton newsletter": [
-        "Інформаційний бюлетень Proton"
-      ],
-      "Proton offers and promotions": [
-        "Пропозиції та акції Proton"
-      ],
-      "Proton product announcements": [
-        "Оголошення про продукти Proton"
+      "${ BRAND_NAME } product announcements": [
+        "Оголошення продукту ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -7861,19 +7888,19 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Кожен ${ interval } місяць ${ onDayString }",
+        "Щомісяця ${ onDayString }",
         "Кожні ${ interval } місяці ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Кожен ${ interval } місяць ${ onDayString }, ${ timesString }",
+        "Щомісяця ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Кожен ${ interval } місяць ${ onDayString }, ${ untilString }",
+        "Щомісяця ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
@@ -8005,17 +8032,26 @@
       "Back": [
         "Назад"
       ],
-      "Back to Calendar": [
+      "Back to calendar": [
         "Назад до календаря"
       ],
-      "Back to Drive": [
-        "Назад до Drive"
+      "Back to files": [
+        "Назад до файлів"
       ],
-      "Back to Mail": [
-        "Назад до пошти"
+      "Back to inbox": [
+        "Назад до вхідних"
       ],
       "Blocked": [
         "Заблоковано"
+      ],
+      "Calendar": [
+        "Календар"
+      ],
+      "Drive": [
+        "Диск"
+      ],
+      "Inbox": [
+        "Вхідні"
       ],
       "Not spam": [
         "Не спам"
@@ -8368,26 +8404,6 @@
         "Керування командою"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -8459,6 +8475,26 @@
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } з ${ humanMaxSpace }"
@@ -8479,7 +8515,7 @@
     },
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
-        "Створюючи обліковий запис ${ BRAND_NAME }, Ви погоджуєтеся на наші ${ terms }"
+        "Створюючи обліковий запис ${ BRAND_NAME }, ви приймаєте наші ${ terms }"
       ],
       "Payment details": [
         "Подробиці платежу"
@@ -9100,16 +9136,16 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink }, щоб додати більше користувачів або вилучити деякі облікові записи користувачів, щоб звільнити місце."
+        "${ upgradeLink }, щоб додати більше користувачів, або вилучіть деякі облікові записи користувачів для звільнення місця."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
         "${ upgradeLink }, щоб отримати більше облікових записів або відкличте доступ VPN для деяких користувачів."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
-        "${ upgradeLink }, щоб отримати більше адрес або вилучіть якісь адреси, щоб звільнити місце."
+        "${ upgradeLink }, щоб отримати більше адрес, або вилучіть наявні адреси для звільнення місця."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink }, щоб отримати більше сховища або очистьте сховище, щоб звільнити місце."
+        "${ upgradeLink }, щоб отримати більше місця для зберігання, або очистьте сховище для звільнення місця."
       ],
       "Your plan includes a maximum of ${ availableAddresses } address.": [
         "Ваш тарифний план включає ${ availableAddresses } адресу.",
@@ -9380,6 +9416,9 @@
       "You can safely close this tab.": [
         "Ви можете безпечно закрити цю вкладку."
       ],
+      "Your recovery email has been successfully removed.": [
+        "Вашу електронну пошту відновлення успішно вилучено."
+      ],
       "Your recovery email has been successfully verified.": [
         "Вашу електронну пошту відновлення успішно підтверджено."
       ]
@@ -9436,7 +9475,7 @@
     },
     "Remove calendar section text": {
       "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Якщо ви залишите цей календар, вам доведеться просити власника про повторне приєднання."
+        "Якщо ви покинете цей календар, вам доведеться просити власника про повторне приєднання."
       ],
       "This calendar will be removed from your account.": [
         "Цей календар буде вилучено з вашого облікового запису."
@@ -9566,8 +9605,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Додати людей чи групи"
+      "Enter an email address or group name": [
+        "Введіть адресу електронної пошти або назву групи"
       ]
     },
     "Share calendar modal title": {
@@ -10324,9 +10363,6 @@
       "Couldn’t create accounts": [
         "Не вдалося створити облікові записи"
       ],
-      "Create calendar": [
-        "Створити календар"
-      ],
       "Create multiple user accounts": [
         "Створити кілька облікових записів користувачів"
       ],
@@ -10437,9 +10473,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Завантажити ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Редагувати календар"
       ],
       "Edit credit/debit card": [
         "Редагувати кредитну/платіжну картку"
@@ -10795,6 +10828,9 @@
       "Sign out": [
         "Вийти"
       ],
+      "Signed in successfully!": [
+        "Вхід виконано!"
+      ],
       "Signed in to member account": [
         "Виконано вхід до облікового запису учасника"
       ],
@@ -10890,6 +10926,9 @@
       ],
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
+      ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "Ми перейшли на ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"
@@ -11008,9 +11047,14 @@
         "Роль"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Редагувати інформацію"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Створити календар"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Редагувати календар"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11251,6 +11295,11 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах"
       ]
     },
+    "vpn: Info": {
+      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
+        "Відкрийте розширення для браузера ${ VPN_APP_NAME }, щоб убезпечити себе під час перегляду вебсторінок"
+      ]
+    },
     "VPNClient": {
       "Android": [
         "Android"
@@ -11372,163 +11421,163 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Кожен ${ interval } тиждень ${ multipleDaysString }",
-        "Кожні ${ interval } тижні ${ multipleDaysString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }"
+        "Щотижня у ${ multipleDaysString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }",
+        "Кожні ${ interval } тижня ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Кожен ${ interval } тиждень ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижні ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }"
+        "Щотижня у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ untilString }",
+        "Щотижня у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Кожен ${ interval } тиждень в усі дні",
+        "Щотижня в усі дні",
         "Кожні ${ interval } тижні в усі дні",
-        "Кожні ${ interval } тижнів в усі дні",
-        "Кожні ${ interval } тижнів в усі дні"
+        "Кожні ${ interval } тижнів у всі дні",
+        "Кожні ${ interval } тижнів у всі дні"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Кожен ${ interval } тиждень щодня, ${ timesString }",
+        "Щотижня кожен день, ${ timesString }",
         "Кожні ${ interval } тижні щодня, ${ timesString }",
         "Кожні ${ interval } тижнів щодня, ${ timesString }",
         "Кожні ${ interval } тижнів щодня, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Кожен ${ interval } тиждень щодня, ${ untilString }",
+        "Щотижня кожен день, ${ untilString }",
         "Кожні ${ interval } тижні щодня, ${ untilString }",
         "Кожні ${ interval } тижнів щодня, ${ untilString }",
         "Кожні ${ interval } тижнів щодня, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Кожен ${ interval } тиждень у п'ятницю",
+        "Щотижня у п'ятницю",
         "Кожні ${ interval } тижні у п'ятницю",
         "Кожні ${ interval } тижнів у п'ятницю",
         "Кожні ${ interval } тижнів у п'ятницю"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у п'ятницю, ${ timesString }",
+        "Щотижня у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у п'ятницю, ${ untilString }",
+        "Щотижня у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Кожен ${ interval } тиждень у понеділок",
+        "Щотижня в понеділок",
         "Кожні ${ interval } тижні у понеділок",
         "Кожні ${ interval } тижнів у понеділок",
         "Кожні ${ interval } тижнів у понеділок"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у понеділок, ${ timesString }",
+        "Щотижня у понеділок, ${ timesString }",
         "Кожні ${ interval } тижні у понеділок, ${ timesString }",
         "Кожні ${ interval } тижнів у понеділок, ${ timesString }",
         "Кожні ${ interval } тижнів у понеділок, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у понеділок, ${ untilString }",
+        "Щотижня у понеділок, ${ untilString }",
         "Кожні ${ interval } тижні у понеділок, ${ untilString }",
         "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
         "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Кожен ${ interval } тиждень у суботу",
+        "Щотижня у суботу",
         "Кожні ${ interval } тижні у суботу",
         "Кожні ${ interval } тижнів у суботу",
         "Кожні ${ interval } тижнів у суботу"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у суботу, ${ timesString }",
+        "Щотижня у суботу, ${ timesString }",
         "Кожні ${ interval } тижні у суботу, ${ timesString }",
         "Кожні ${ interval } тижнів у суботу, ${ timesString }",
         "Кожні ${ interval } тижнів у суботу, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у суботу, ${ untilString }",
+        "Щотижня у суботу, ${ untilString }",
         "Кожні ${ interval } тижні у суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Кожен ${ interval } тиждень у неділю",
+        "Щотижня в неділю",
         "Кожні ${ interval } тижні у неділю",
         "Кожні ${ interval } тижнів у неділю",
         "Кожні ${ interval } тижнів у неділю"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у неділю, ${ timesString }",
+        "Щотижня у неділю, ${ timesString }",
         "Кожні ${ interval } тижні у неділю, ${ timesString }",
         "Кожні ${ interval } тижнів у неділю, ${ timesString }",
         "Кожні ${ interval } тижнів у неділю, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у неділю, ${ untilString }",
+        "Щотижня у неділю, ${ untilString }",
         "Кожні ${ interval } тижні у неділю, ${ untilString }",
         "Кожні ${ interval } тижнів у неділю, ${ untilString }",
         "Кожні ${ interval } тижнів у неділю, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Кожен ${ interval } тиждень у четвер",
+        "Щотижня у четвер",
         "Кожні ${ interval } тижні у четвер",
         "Кожні ${ interval } тижнів у четвер",
         "Кожні ${ interval } тижнів у четвер"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у четвер, ${ timesString }",
+        "Щотижня у четвер, ${ timesString }",
         "Кожні ${ interval } тижні у четвер, ${ timesString }",
         "Кожні ${ interval } тижнів у четвер, ${ timesString }",
         "Кожні ${ interval } тижнів у четвер, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у четвер, ${ untilString }",
+        "Щотижня у четвер, ${ untilString }",
         "Кожні ${ interval } тижні у четвер, ${ untilString }",
         "Кожні ${ interval } тижнів у четвер, ${ untilString }",
         "Кожні ${ interval } тижнів у четвер, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Кожен ${ interval } тиждень у вівторок",
+        "Щотижня у вівторок",
         "Кожні ${ interval } тижні у вівторок",
         "Кожні ${ interval } тижнів у вівторок",
         "Кожні ${ interval } тижнів у вівторок"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у вівторок, ${ timesString }",
+        "Щотижня у вівторок, ${ timesString }",
         "Кожні ${ interval } тижні у вівторок, ${ timesString }",
         "Кожні ${ interval } тижнів у вівторок, ${ timesString }",
         "Кожні ${ interval } тижнів у вівторок, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у вівторок, ${ untilString }",
+        "Щотижня у вівторок, ${ untilString }",
         "Кожні ${ interval } тижні у вівторок, ${ untilString }",
         "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
         "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Кожен ${ interval } тиждень у середу",
+        "Щотижня у середу",
         "Кожні ${ interval } тижні у середу",
         "Кожні ${ interval } тижнів у середу",
         "Кожні ${ interval } тижнів у середу"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у середу, ${ timesString }",
+        "Щотижня у середу, ${ timesString }",
         "Кожні ${ interval } тижні у середу, ${ timesString }",
         "Кожні ${ interval } тижнів у середу, ${ timesString }",
         "Кожні ${ interval } тижнів у середу, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у середу, ${ untilString }",
+        "Щотижня у середу, ${ untilString }",
         "Кожні ${ interval } тижні у середу, ${ untilString }",
         "Кожні ${ interval } тижнів у середу, ${ untilString }",
         "Кожні ${ interval } тижнів у середу, ${ untilString }"
@@ -11646,7 +11695,7 @@
         "Кожні ${ interval } років"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Кожен ${ interval } рік, ${ timesString }",
+        "Щороку, ${ timesString }",
         "Кожні ${ interval } роки, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }"

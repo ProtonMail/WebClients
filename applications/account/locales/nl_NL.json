@@ -136,6 +136,9 @@
       "Choose a file or drag it here": [
         "Kies een bestand of sleep het hierheen"
       ],
+      "Claim it": [
+        "Eis het op"
+      ],
       "Clear all formatting": [
         "Alle opmaak wissen"
       ],
@@ -204,6 +207,9 @@
       ],
       "Create link": [
         "Link aanmaken"
+      ],
+      "Create your own": [
+        "Maak uw eigen"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -343,6 +349,9 @@
       "Filters are being applied. This might take a few minutes.": [
         "Filters worden toegepast. Dit kan enkele minuten duren."
       ],
+      "Fit to window": [
+        "Passend in venster"
+      ],
       "Font": [
         "Lettertype"
       ],
@@ -357,6 +366,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Krijg ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Verkrijg een nieuw versleuteld e-mailadres"
       ],
       "Get verification code": [
         "Krijg verificatie code"
@@ -573,6 +585,9 @@
       ],
       "Requires a verified recovery email address": [
         "Vereist een geverifieerd herstel-e-mailadres"
+      ],
+      "Resend code": [
+        "Verstuur code opnieuw"
       ],
       "Reset credentials": [
         "Inloggegevens resetten"
@@ -799,6 +814,9 @@
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
+      "Use your current email instead": [
+        "Gebruik in plaats daarvan uw huidige e-mailadres"
+      ],
       "Use “${ label }” setting": [
         "Gebruik “${ label }”-instelling"
       ],
@@ -916,6 +934,9 @@
       ],
       "Disabled": [
         "Uitgeschakeld"
+      ],
+      "External": [
+        "Extern"
       ],
       "Missing keys": [
         "Ontbrekende sleutels"
@@ -1141,13 +1162,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "E-mailadres"
-      ]
-    },
-    "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "Agenda-informatie bewerken"
+      "Add people or groups": [
+        "Voeg mensen of groepen toe"
       ]
     },
     "Calendar export section description": {
@@ -1236,7 +1252,7 @@
       "Edit (view, create and edit event details)": [
         "Bewerk (bekijk, creëer en bewerk afspraakdetails)"
       ],
-      "Full view (see all event details)": [
+      "View (see all event details)": [
         "Volledig beeld (bekijk alle afspraakdetails)"
       ]
     },
@@ -4836,6 +4852,12 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Als u een nieuwe herstelzin genereert, wordt uw oude zin gedeactiveerd."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Verkrijg een ${ BRAND_NAME }-adres om te gebruiken bij all ${ BRAND_NAME }-diensten met inbegrip van Mail en Calendar."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Haal mijn ${ BRAND_NAME }-adres"
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Geef uw publieke sleutel aan uw vrienden, of publiceer deze online, zodat iedereen u end-to-end versleutelde e-mail kan sturen!"
       ],
@@ -5138,6 +5160,9 @@
       "of": [
         "van"
       ],
+      "One account. All ${ BRAND_NAME } services.": [
+        "Eén account. Alle ${ BRAND_NAME }-diensten."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
       ],
@@ -5378,6 +5403,9 @@
       "Show original message": [
         "Toon origineel bericht"
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "Signed up": [
         "Geregistreerd"
       ],
@@ -5434,6 +5462,9 @@
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Het e-mailadres dat u bovenaan de lijst plaatst is uw standaard e-mailadres. Slepen en neerzetten om uw adressen te rangschikken."
+      ],
+      "The following address is available:": [
+        "Het volgende adres is beschikbaar:"
       ],
       "The following address is invalid.": [
         "Het volgende adres is ongeldig.",
@@ -5562,6 +5593,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Download en installeer de ${ VPN_APP_NAME }-applicatie en maak verbinding met een server om uw verbinding te beveiligen."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "om ${ toAppName } en alle ${ BRAND_NAME }-diensten"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Om goed te werken, moet elk filter minstens een naam en een geldig Sieve-script bevatten. U kunt ${ link }."
@@ -5722,6 +5756,9 @@
       "Why?": [
         "Waarom?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Zonder activatie kun u nog geen nieuwe gebruikers maken, adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-privé gebruikersaccounts."
       ],
@@ -5843,6 +5880,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "U wordt doorgestuurd naar uw bank om uw betaling te controleren."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
+      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "U zal berichten, bestanden en andere gegevens versleuteld met deze sleutel, niet langer kunnen ontsleutelen."
       ],
@@ -5890,9 +5930,6 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Uw bestaande ${ BRAND_NAME }-account kan gebruikt worden voor alle ${ BRAND_NAME }-diensten. Log in met ${ email }."
-      ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Uw import van ${ delayedImport.Account } is tijdelijk vertraagd."
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
@@ -7193,38 +7230,6 @@
         "VPN-verbindingen"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Proton aankondigingen"
-      ],
-      "Proton Beta": [
-        "Proton Bèta"
-      ],
-      "Proton beta announcements": [
-        "Proton bèta-aankondigingen"
-      ],
-      "Proton company announcements": [
-        "Proton bedrijfsaankondigingen"
-      ],
-      "Proton for Business": [
-        "Proton voor bedrijven"
-      ],
-      "Proton for Business newsletter": [
-        "Proton voor Bedrijven-nieuwsbrief"
-      ],
-      "Proton major features": [
-        "Proton belangrijke functies"
-      ],
-      "Proton newsletter": [
-        "Proton nieuwsbrief"
-      ],
-      "Proton offers and promotions": [
-        "Proton aanbiedingen en promoties"
-      ],
-      "Proton product announcements": [
-        "Proton productaankondigingen"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Adressen"
@@ -7661,17 +7666,26 @@
       "Back": [
         "Terug"
       ],
-      "Back to Calendar": [
+      "Back to calendar": [
         "Terug naar agenda"
       ],
-      "Back to Drive": [
-        "Terug naar Drive"
+      "Back to files": [
+        "Terug naar bestanden"
       ],
-      "Back to Mail": [
-        "Terug naar mail"
+      "Back to inbox": [
+        "Terug naar postvak in"
       ],
       "Blocked": [
         "Geblokkeerd"
+      ],
+      "Calendar": [
+        "Agenda"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Inbox": [
+        "Postvak in"
       ],
       "Not spam": [
         "Geen spam"
@@ -7996,26 +8010,6 @@
         "Teambeheer"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -8085,6 +8079,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9165,8 +9179,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Voeg mensen en groepen toe"
+      "Enter an email address or group name": [
+        "Geef een e-mail adres op of een groepsnaam"
       ]
     },
     "Share calendar modal title": {
@@ -10139,9 +10153,6 @@
       "Couldn’t create accounts": [
         "Kon geen accounts aanmaken"
       ],
-      "Create calendar": [
-        "Agenda aanmaken"
-      ],
       "Create multiple user accounts": [
         "Meerdere gebruikersaccounts aanmaken"
       ],
@@ -10153,6 +10164,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Maak uw ${ BRAND_NAME }-account"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Maak uw ${ BRAND_NAME }-adres aan"
       ],
       "Creating user accounts": [
         "Gebruikersaccounts aan het maken"
@@ -10249,9 +10263,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Download ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Agenda bijwerken"
       ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
@@ -10681,6 +10692,9 @@
       "Verification": [
         "Verificatie"
       ],
+      "Verify email address": [
+        "Verifieer e-mailadres"
+      ],
       "VPN apps": [
         "VPN-apps"
       ],
@@ -10810,9 +10824,14 @@
         "Rol"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Bewerk informatie"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Agenda aanmaken"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Agenda bijwerken"
       ]
     },
     "Today icon tooltip in mini calendar": {

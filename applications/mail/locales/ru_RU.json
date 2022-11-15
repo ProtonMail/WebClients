@@ -3384,11 +3384,6 @@
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
       ]
     },
-    "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        "В одном приглашении можно указать не более 100 участников"
-      ]
-    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "Черновики нельзя переместить в папку Входящие"
@@ -8260,6 +8255,12 @@
         "${ emailsCount } участника",
         "${ emailsCount } участников",
         "${ emailsCount } участника"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } непрочитанное сообщение",
+        "${ unreads } непрочитанного сообщения",
+        "${ unreads } непрочитанных сообщения",
+        "${ unreads } непрочитанного сообщения"
       ],
       "Account suspended": [
         "Аккаунт отключен"

@@ -751,11 +751,6 @@
         "Continuer à utiliser ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "Adresse électronique"
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Participez-vous ?"
@@ -835,9 +830,6 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Modifier (afficher, créer et modifier les détails de l'événement)"
-      ],
-      "Full view (see all event details)": [
-        "Vue complète (voir toutes les informations des événements)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3300,8 +3292,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Toute personne ayant ce lien peut voir sur votre calendrier si vous êtes libre ou occupé. Les informations de l'événement (comme le titre, le lieu ou les participants) ne sont pas visibles."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Un maximum de 100 participants est autorisé par invitation"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Un maximum de ${ MAX_ATTENDEES } participant est autorisé par invitation",
+        "Au maximum ${ MAX_ATTENDEES } participants sont autorisés par invitation"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, vérifiez votre dossier indésirables/spam et assurez-vous que ${ strong } est la bonne adresse."
@@ -3717,6 +3710,9 @@
       "Week": [
         "Semaine"
       ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Nous passons à ${ PROTON_ME_DOMAIN }."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
@@ -3829,7 +3825,7 @@
         "Vos données sont prêtes à être importées de ${ importedEmailAddressStrong } vers votre compte Proton."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "Votre adresse mail restera la même. Bientôt, vous devrez utiliser le nom de domaine ${ link } pour vous connecter."
+        "Votre adresse e-mail restera la même. Bientôt, vous devrez utiliser le nom de domaine ${ link } pour vous connecter."
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
@@ -5020,11 +5016,6 @@
         "Ajoutez les comptes Proton avec lesquels vous souhaitez partager ${ calendarName }. Nous leur enverrons une invitation."
       ]
     },
-    "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Ajouter des personnes ou des groupes"
-      ]
-    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Partager avec les utilisateurs Proton"
@@ -5662,9 +5653,6 @@
       "Continue with partial import?": [
         "Continuer l'importation partielle ?"
       ],
-      "Create calendar": [
-        "Créer un calendrier"
-      ],
       "Create contact": [
         "Créer un contact"
       ],
@@ -5708,9 +5696,6 @@
       ],
       "Drop to upload": [
         "Déposer pour charger"
-      ],
-      "Edit calendar": [
-        "Modifier le calendrier"
       ],
       "Edit contact": [
         "Modifier le contact"
@@ -5963,11 +5948,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Sélectionner un numéro"
-      ]
-    },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Modifier les informations"
       ]
     },
     "Today icon tooltip in mini calendar": {

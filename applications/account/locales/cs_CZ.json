@@ -1171,13 +1171,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "E-mailová adresa"
-      ]
-    },
-    "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "Upravit informace kalendáře"
+      "Add people or groups": [
+        "Přidat lidi nebo skupiny"
       ]
     },
     "Calendar export section description": {
@@ -1284,8 +1279,8 @@
       "Edit (view, create and edit event details)": [
         "Upravit (zobrazit, vytvořit a upravit podrobnosti o události)"
       ],
-      "Full view (see all event details)": [
-        "Plné zobrazení (zobrazit všechny podrobnosti o události)"
+      "View (see all event details)": [
+        "Zobrazení (zobrazit všechny podrobnosti o události)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -5665,6 +5660,9 @@
       "Show original message": [
         "Zobrazit původní zprávu"
       ],
+      "Sign in": [
+        "Přihlásit se"
+      ],
       "Signed up": [
         "Zaregistrováno"
       ],
@@ -6202,8 +6200,11 @@
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Váš stávající účet ${ BRAND_NAME } lze použít pro přístup ke všem službám ${ BRAND_NAME }. Přihlaste se prosím pomocí ${ email }."
       ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Váš import z ${ delayedImport.Account } je dočasně opožděn."
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Váš import z ${ accounts } je dočasně opožděn.",
+        "Vaše importy z ${ accounts } jsou dočasně opožděny.",
+        "Vaše importy z ${ accounts } jsou dočasně opožděny.",
+        "Vaše importy z ${ accounts } jsou dočasně opožděny."
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
@@ -7511,38 +7512,6 @@
         "VPN připojení"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Proton oznámení"
-      ],
-      "Proton Beta": [
-        "Proton Beta"
-      ],
-      "Proton beta announcements": [
-        "Proton Beta oznámení"
-      ],
-      "Proton company announcements": [
-        "Oznámení společnosti Proton"
-      ],
-      "Proton for Business": [
-        "Proton pro firmy"
-      ],
-      "Proton for Business newsletter": [
-        "Proton novinky pro firmy"
-      ],
-      "Proton major features": [
-        "Hlavní vlastnosti Protonu"
-      ],
-      "Proton newsletter": [
-        "Proton zpravodaj"
-      ],
-      "Proton offers and promotions": [
-        "Proton nabídky a akce"
-      ],
-      "Proton product announcements": [
-        "Oznámení společnosti o produktech"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Adresy"
@@ -8005,17 +7974,26 @@
       "Back": [
         "Zpět"
       ],
-      "Back to Calendar": [
+      "Back to calendar": [
         "Zpět do Kalendáře"
       ],
-      "Back to Drive": [
-        "Zpět na Disk"
+      "Back to files": [
+        "Zpět k souborům"
       ],
-      "Back to Mail": [
-        "Zpět na e-mail"
+      "Back to inbox": [
+        "Zpět do Doručené pošty"
       ],
       "Blocked": [
         "Blokováno"
+      ],
+      "Calendar": [
+        "Kalendář"
+      ],
+      "Drive": [
+        "Disk"
+      ],
+      "Inbox": [
+        "Doručená pošta"
       ],
       "Not spam": [
         "Není spam"
@@ -8368,26 +8346,6 @@
         "Řízení týmu"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -8457,6 +8415,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9566,8 +9544,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Přidat lidi nebo skupiny"
+      "Enter an email address or group name": [
+        "Zadejte e-mailovou adresu nebo název skupiny"
       ]
     },
     "Share calendar modal title": {
@@ -10324,9 +10302,6 @@
       "Couldn’t create accounts": [
         "Nepodařilo se vytvořit účty"
       ],
-      "Create calendar": [
-        "Vytvořit kalendář"
-      ],
       "Create multiple user accounts": [
         "Vytvořit více uživatelských účtů"
       ],
@@ -10437,9 +10412,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Stáhnout ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Upravit kalendář"
       ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"
@@ -10795,6 +10767,9 @@
       "Sign out": [
         "Odhlásit se"
       ],
+      "Signed in successfully!": [
+        "Přihlášení proběhlo úspěšně!"
+      ],
       "Signed in to member account": [
         "Přihlášeno k členskému účtu"
       ],
@@ -11008,9 +10983,14 @@
         "Role"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Upravit informace"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Vytvořit kalendář"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Upravit kalendář"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11249,6 +11229,11 @@
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ]
+    },
+    "vpn: Info": {
+      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
+        "Otevřete rozšíření prohlížeče ${ VPN_APP_NAME } pro ochranu při prohlížení webu"
       ]
     },
     "VPNClient": {

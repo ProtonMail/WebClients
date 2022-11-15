@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } is beschikbaar."
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } inleiding"
       ],
@@ -50,6 +47,9 @@
       "Chat with us": [
         "Chat met ons"
       ],
+      "Claim it": [
+        "Eis het op"
+      ],
       "Close": [
         "Sluiten"
       ],
@@ -77,14 +77,11 @@
       "Create": [
         "Aanmaken"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Maak in plaats daarvan een veilig ${ MAIL_APP_NAME }-adres"
-      ],
       "Create account": [
         "Account aanmaken"
       ],
-      "Create address": [
-        "Adres aanmaken"
+      "Create your own": [
+        "Maak uw eigen"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -109,9 +106,6 @@
       ],
       "Didn't receive a code?": [
         "Heeft u geen code ontvangen?"
-      ],
-      "Didn't receive the code?": [
-        "Code niet ontvangen?"
       ],
       "Disable": [
         "Uitschakelen"
@@ -158,8 +152,14 @@
       "Extend": [
         "Verlengen"
       ],
+      "Fit to window": [
+        "Passend in venster"
+      ],
       "Get ${ vpnPlus }": [
         "Krijg ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Verkrijg een nieuw versleuteld e-mailadres"
       ],
       "Get verification code": [
         "Krijg verificatie code"
@@ -244,6 +244,9 @@
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
+      ],
+      "Resend code": [
+        "Verstuur code opnieuw"
       ],
       "Reset credentials": [
         "Inloggegevens resetten"
@@ -356,7 +359,7 @@
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
-      "Use your current email address instead": [
+      "Use your current email instead": [
         "Gebruik in plaats daarvan uw huidige e-mailadres"
       ],
       "User": [
@@ -373,9 +376,6 @@
       ],
       "Verify code again": [
         "Verifieer code opnieuw"
-      ],
-      "Verify email": [
-        "Verifieer e-mailadres"
       ],
       "View": [
         "Bekijken"
@@ -1791,9 +1791,6 @@
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } U gebruikt dit e-mailadres om in te loggen op alle ${ BRAND_NAME } diensten."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "${ vpnBasic }, ${ vpnPlus } of ${ visionary } vereist om te kunnen verbinden via een specifiek land."
       ],
@@ -1960,6 +1957,12 @@
       "Free up some space or contact your administrator.": [
         "Maak ruimte vrij of neem contact op met uw beheerder."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Verkrijg een ${ BRAND_NAME }-adres om te gebruiken bij all ${ BRAND_NAME }-diensten met inbegrip van Mail en Calendar."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Haal mijn ${ BRAND_NAME }-adres"
+      ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Google registreert uw online activiteit en leest uw persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
       ],
@@ -2071,8 +2074,8 @@
       "of": [
         "van"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Eén account voor al uw ${ BRAND_NAME }-diensten."
+      "One account. All ${ BRAND_NAME } services.": [
+        "Eén account. Alle ${ BRAND_NAME }-diensten."
       ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
@@ -2173,6 +2176,9 @@
       "support team": [
         "ondersteuningsteam"
       ],
+      "The following address is available:": [
+        "Het volgende adres is beschikbaar:"
+      ],
       "The securest way to browse, stream, and be online.": [
         "De veiligste manier om te browsen, streamen en online te zijn."
       ],
@@ -2226,6 +2232,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Download en installeer de ${ VPN_APP_NAME }-applicatie en maak verbinding met een server om uw verbinding te beveiligen."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "om ${ toAppName } en alle ${ BRAND_NAME }-diensten"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Vul uw account op met credits die u kunt gebruiken om zich aan te melden bij een nieuw plan of uw huidige abonnement te vernieuwen. U krijgt één krediet voor elke ${ i18nCurrency } die u gebruikt."
@@ -2335,6 +2344,9 @@
       "Why?": [
         "Waarom?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
       ],
@@ -2398,6 +2410,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "U wordt doorgestuurd naar uw bank om uw betaling te controleren."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
@@ -2436,9 +2451,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
-      ],
-      "Your recovery email address:": [
-        "Uw herstel e-mailadres:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
@@ -2545,9 +2557,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } van de ${ humanMaxSpace } gebruikt"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME }-adres"
       ],
       "${ n } month": [
         "${ n } maand",
@@ -4447,11 +4456,11 @@
       "Congratulations on choosing privacy!": [
         "Gefeliciteerd om voor privacy te kiezen!"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Maak een ${ MAIL_APP_NAME }-adres"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "Maak uw ${ BRAND_NAME }-account"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Maak uw ${ BRAND_NAME }-adres aan"
       ],
       "Credits": [
         "Tegoed"
@@ -4681,6 +4690,9 @@
       "Verification": [
         "Verificatie"
       ],
+      "Verify email address": [
+        "Verifieer e-mailadres"
+      ],
       "Warning": [
         "Waarschuwing"
       ],
@@ -4695,9 +4707,6 @@
       ],
       "You already have a Proton account": [
         "U heeft al een Proton account"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Uw ${ MAIL_APP_NAME }-adres"
       ],
       "Your current plan": [
         "Uw huidige abonnement"

@@ -3341,8 +3341,9 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        "Sono ammessi al massimo 100 partecipanti per invito"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Al massimo ${ MAX_ATTENDEES } partecipante è ammesso per ogni invito",
+        "Al massimo ${ MAX_ATTENDEES } partecipanti sono ammessi per ogni invito"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4277,6 +4278,10 @@
       "${ numContacts } contact": [
         "${ numContacts } contatto",
         "${ numContacts } contatti"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } messaggio nella conversazione",
+        "${ NumMessages } messaggi nella conversazione"
       ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } occorrenza trovata",

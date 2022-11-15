@@ -348,6 +348,9 @@
       "Filters are being applied. This might take a few minutes.": [
         "正在执行筛选规则，可能需要几分钟。"
       ],
+      "Fit to window": [
+        "适应窗口大小"
+      ],
       "Font": [
         "字体"
       ],
@@ -578,6 +581,9 @@
       ],
       "Requires a verified recovery email address": [
         "需要一个经过验证的恢复邮箱地址"
+      ],
+      "Resend code": [
+        "重新发送验证码"
       ],
       "Reset credentials": [
         "重置凭证信息"
@@ -1134,16 +1140,6 @@
         "发推文"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "邮箱地址"
-      ]
-    },
-    "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "编辑日历信息"
-      ]
-    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "从所选日历中下载包含所有事件的ICS文件。"
@@ -1244,9 +1240,6 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "编辑（查看、创建、编辑日程详情）"
-      ],
-      "Full view (see all event details)": [
-        "允许查看所有日程详情"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -5302,6 +5295,9 @@
       "Show original message": [
         "显示原始邮件"
       ],
+      "Sign in": [
+        "登录"
+      ],
       "Signed up": [
         "已注册"
       ],
@@ -5790,9 +5786,6 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "您现有的 ${ BRAND_NAME } 账户即可使用所有 ${ BRAND_NAME } 服务。请使用账号 ${ email } 登录。"
-      ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "您的 ${ delayedImport.Account } 导入被暂时推迟。"
       ],
       "Your import will not be processed.": [
         "此次导入将不会进行。"
@@ -7070,38 +7063,6 @@
         "VPN 连接数"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Proton 公告"
-      ],
-      "Proton Beta": [
-        "ProtonMail 公测"
-      ],
-      "Proton beta announcements": [
-        "Proton 公测版公告"
-      ],
-      "Proton company announcements": [
-        "Proton 公司公告"
-      ],
-      "Proton for Business": [
-        "Proton for Business"
-      ],
-      "Proton for Business newsletter": [
-        "Proton 商业通讯"
-      ],
-      "Proton major features": [
-        "Proton 主要功能特性"
-      ],
-      "Proton newsletter": [
-        "Proton 新闻"
-      ],
-      "Proton offers and promotions": [
-        "Proton 优惠与促销"
-      ],
-      "Proton product announcements": [
-        "Proton 产品公告"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "邮箱地址"
@@ -7537,15 +7498,6 @@
       "Back": [
         "后退"
       ],
-      "Back to Calendar": [
-        "返回日历"
-      ],
-      "Back to Drive": [
-        "返回网盘"
-      ],
-      "Back to Mail": [
-        "返回邮箱"
-      ],
       "Blocked": [
         "已屏蔽"
       ],
@@ -7855,26 +7807,6 @@
         "团队管理"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -7938,6 +7870,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -9004,11 +8956,6 @@
         "添加您想分享 ${ calendarName } 的用户账号，我们会为您发送邀请。"
       ]
     },
-    "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "添加用户或群组"
-      ]
-    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "分享至 Proton 用户"
@@ -9709,9 +9656,6 @@
       "Couldn’t create accounts": [
         "无法创建账户"
       ],
-      "Create calendar": [
-        "创建日历"
-      ],
       "Create multiple user accounts": [
         "创建多个账户"
       ],
@@ -9819,9 +9763,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "下载 ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "编辑日历"
       ],
       "Edit credit/debit card": [
         "编辑信用卡/借记卡"
@@ -10364,11 +10305,6 @@
       ],
       "Role": [
         "角色"
-      ]
-    },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "修改信息"
       ]
     },
     "Today icon tooltip in mini calendar": {

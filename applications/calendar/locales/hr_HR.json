@@ -633,11 +633,6 @@
         "Problem s pristupom web stanici"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "Adresa e-pošte"
-      ]
-    },
     "Calendar invite info": {
       "${ name } accepted the invitation": [
         "${ name } je prihvatio vašu pozivnicu"
@@ -1646,9 +1641,6 @@
       ],
       "and": [
         "i"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        "Dopušteno je najviše 100 sudionika po pozivnici"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Ne možete se sjetiti lozinke? Možemo vam pomoći da izbrišete šifrirane podatke od svih kontakata koji su šifrirani ovim ključem i da u tom procesu odbacite upozorenje."
@@ -2762,6 +2754,11 @@
       ]
     },
     "Progress bar description": {
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno.",
+        "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno.",
+        "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno."
+      ],
       "No contacts exported.": [
         "Nema izvezenih kontakata."
       ],
@@ -3108,9 +3105,6 @@
       ],
       "Contacts": [
         "Kontakti"
-      ],
-      "Create calendar": [
-        "Stvori kalendar"
       ],
       "Create contact": [
         "Stvori kontakt"

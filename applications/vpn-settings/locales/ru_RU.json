@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } доступен."
-      ],
       "${ BRAND_NAME } introduction": [
         "Введение в ${ BRAND_NAME }"
       ],
@@ -77,14 +74,8 @@
       "Create": [
         "Создать"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Вместо этого создайте защищенный адрес ${ MAIL_APP_NAME }"
-      ],
       "Create account": [
         "Создать аккаунт"
-      ],
-      "Create address": [
-        "Создать адрес"
       ],
       "Current plan": [
         "Текущий тариф"
@@ -108,9 +99,6 @@
         "Информация"
       ],
       "Didn't receive a code?": [
-        "Не получили код?"
-      ],
-      "Didn't receive the code?": [
         "Не получили код?"
       ],
       "Disable": [
@@ -248,6 +236,9 @@
       "Request new code": [
         "Запросить новый код"
       ],
+      "Resend code": [
+        "Повторно отправить код"
+      ],
       "Reset credentials": [
         "Сбросить учётные данные"
       ],
@@ -359,9 +350,6 @@
       "Use recovery code": [
         "Использовать код восстановления"
       ],
-      "Use your current email address instead": [
-        "Использовать ваш текущий адрес электронной почты"
-      ],
       "User": [
         "Пользователь"
       ],
@@ -376,9 +364,6 @@
       ],
       "Verify code again": [
         "Подтвердить код еще раз"
-      ],
-      "Verify email": [
-        "Подтвердить эл. почту"
       ],
       "View": [
         "Посмотреть"
@@ -1890,9 +1875,6 @@
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Вы будете использовать этот адрес электронной почты для входа во все службы ${ BRAND_NAME }."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Требуются ${ vpnBasic }, ${ vpnPlus } или ${ visionary } для подключения на уровне страны."
       ],
@@ -2178,9 +2160,6 @@
       "of": [
         "из"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Один аккаунт для всех служб ${ BRAND_NAME }."
-      ],
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
       ],
@@ -2282,6 +2261,9 @@
       ],
       "support team": [
         "служба поддержки"
+      ],
+      "The following address is available:": [
+        "Доступен следующий адрес:"
       ],
       "The securest way to browse, stream, and be online.": [
         "Самый безопасный способ просматривать веб-страницы, смотреть трансляции и находиться онлайн."
@@ -2550,9 +2532,6 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ваш аккаунт в Proton в настоящее время приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите все просроченные счета."
       ],
-      "Your recovery email address:": [
-        "Ваш резервный адрес электронной почты:"
-      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
       ]
@@ -2658,9 +2637,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Используется ${ humanUsedSpace } из ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "Адрес ${ MAIL_APP_NAME }"
       ],
       "${ n } month": [
         "${ n } месяц",
@@ -4636,9 +4612,6 @@
       "Congratulations on choosing privacy!": [
         "Поздравляем с выбором конфиденциальности!"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Создайте адрес ${ MAIL_APP_NAME }"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "Создайте свой аккаунт ${ BRAND_NAME }"
       ],
@@ -4870,6 +4843,9 @@
       "Verification": [
         "Подтверждение"
       ],
+      "Verify email address": [
+        "Подтвердить адрес электронной почты"
+      ],
       "Warning": [
         "Предупреждение"
       ],
@@ -4884,9 +4860,6 @@
       ],
       "You already have a Proton account": [
         "У вас уже есть аккаунт Proton"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "Ваш адрес ${ MAIL_APP_NAME }"
       ],
       "Your current plan": [
         "Ваш текущий тариф"

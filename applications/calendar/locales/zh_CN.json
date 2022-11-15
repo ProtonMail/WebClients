@@ -385,6 +385,9 @@
       "Request new code": [
         "重发验证码"
       ],
+      "Resend code": [
+        "重新发送验证码"
+      ],
       "Reset to default": [
         "重置所有选项"
       ],
@@ -746,11 +749,6 @@
         "继续使用 ${ MAIL_APP_NAME }。"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "邮箱地址"
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         "是否出席？"
@@ -828,9 +826,6 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "编辑（查看、创建、编辑日程详情）"
-      ],
-      "Full view (see all event details)": [
-        "允许查看所有日程详情"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3144,7 +3139,7 @@
         "${ contactCount } 名联系人各有多个邮箱地址。"
       ],
       "${ contactEmailsLength } Members": [
-        "${ contactEmailsLength } 会员"
+        "${ contactEmailsLength } 位成员"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 有多个邮箱地址。"
@@ -3186,7 +3181,7 @@
         "${ storageSize } 存储空间"
       ],
       "${ updated } contacts updated successfully.": [
-        "${ updated } 联系人更新成功。"
+        "已成功更新 ${ updated } 位联系人。"
       ],
       "(${ memberCount } members)": [
         "（${ memberCount } 位成员）"
@@ -3235,9 +3230,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "任何有此链接的人都可以在日历上看到您的状态 (空闲/忙碌)。他们无法查看事件详细信息，例如标题、地点或参与者。"
-      ],
-      "At most 100 participants are allowed per invitation": [
-        "每次邀请的上限是 100 人"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
@@ -4916,11 +4908,6 @@
         "添加您想分享 ${ calendarName } 的用户账号，我们会为您发送邀请。"
       ]
     },
-    "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "添加用户或群组"
-      ]
-    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "分享至 Proton 用户"
@@ -5299,9 +5286,6 @@
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
       ],
-      "Create calendar": [
-        "创建日历"
-      ],
       "Create contact": [
         "创建联系人"
       ],
@@ -5343,9 +5327,6 @@
       ],
       "Drop to upload": [
         "拖拽文件并上传"
-      ],
-      "Edit calendar": [
-        "编辑日历"
       ],
       "Edit contact": [
         "编辑联系人"
@@ -5597,11 +5578,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "选择一个数字"
-      ]
-    },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "修改信息"
       ]
     },
     "Today icon tooltip in mini calendar": {
