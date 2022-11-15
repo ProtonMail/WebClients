@@ -33,7 +33,8 @@ const extractStyle = (original: HTMLElement | undefined, documentWidth: number |
             prop !== 'display' &&
             !prop.startsWith('border') &&
             !prop.startsWith('outline') &&
-            !prop.startsWith('background')
+            !prop.startsWith('background') &&
+            !prop.startsWith('padding')
         ) {
             style[spineToCamelCase(prop)] = value;
         }
