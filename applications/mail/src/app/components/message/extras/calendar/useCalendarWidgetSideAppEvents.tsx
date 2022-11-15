@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 import { APPS } from '@proton/shared/lib/constants';
 import { CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
-import { isAuthorizedSideAppUrl, postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import { getIsSideAppPostMessage, postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 
 interface Props {
     messageID: string;
@@ -26,8 +26,8 @@ const useCalendarWidgetSideAppEvents = ({ messageID, calendarEvent, refresh }: P
             APPS.PROTONCALENDAR
         );
 
-        const handleSideCalendarEvents = (event: MessageEvent<SIDE_APP_ACTION>) => {
-            if (!isAuthorizedSideAppUrl(event.origin)) {
+        const handleSideCalendarEvents = (event: MessageEvent) => {
+            if (!getIsSideAppPostMessage(event)) {
                 return;
             }
 
