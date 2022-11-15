@@ -38,16 +38,19 @@ interface Props {
     currentLabelID: string;
     labelID: string;
     isFolder: boolean;
+    hideCountOnHover?: boolean;
     icon?: IconName;
     iconSize?: IconSize;
     text: string;
     shortcutText?: string;
     content?: ReactNode;
+    itemOptions?: ReactNode;
     color?: string;
     unreadCount?: number;
     totalMessagesCount?: number;
     shortcutHandlers?: HotkeyTuple[];
     onFocus?: (id: string) => void;
+    className?: string;
     id?: string;
 }
 
@@ -59,13 +62,16 @@ const SidebarItem = ({
     text,
     shortcutText,
     content = text,
+    itemOptions,
     color,
     isFolder,
+    hideCountOnHover = true,
     unreadCount,
     totalMessagesCount = 0,
     shortcutHandlers = defaultShortcutHandlers,
     onFocus = noop,
     id,
+    className,
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
@@ -119,7 +125,13 @@ const SidebarItem = ({
     useHotkeys(elementRef, shortcutHandlers);
 
     return (
-        <SidebarListItem className={classnames([dragOver && 'navigation__dragover'])}>
+        <SidebarListItem
+            className={classnames([
+                dragOver && 'navigation__dragover',
+                'hide-on-hover-container opacity-on-hover-container',
+                className,
+            ])}
+        >
             <SidebarListItemLink
                 aria-current={ariaCurrent}
                 to={link}
@@ -141,6 +153,8 @@ const SidebarItem = ({
                             active={active}
                             refreshing={refreshing}
                             shouldDisplayTotal={needsTotalDisplay}
+                            hideCountOnHover={hideCountOnHover}
+                            itemOptions={itemOptions}
                         />
                     }
                 >
