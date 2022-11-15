@@ -219,6 +219,7 @@ const MailSidebarSystemFolders = ({
                             {...getCommonProps(element.labelID)}
                             icon={element.icon}
                             id={element.ID}
+                            hideCountOnHover={false}
                             isFolder={element.labelID !== MAILBOX_LABEL_IDS.STARRED}
                             onFocus={setFocusedItem}
                             shortcutText={element.shortcutText}
@@ -260,6 +261,7 @@ const MailSidebarSystemFolders = ({
                                   icon={element.icon}
                                   id={element.ID}
                                   isFolder={element.labelID !== MAILBOX_LABEL_IDS.STARRED}
+                                  hideCountOnHover={false}
                                   onFocus={setFocusedItem}
                                   shortcutText={element.shortcutText}
                                   text={element.text}

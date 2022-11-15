@@ -1,4 +1,4 @@
-import { CSSProperties, ElementType, ReactNode, forwardRef, useState } from 'react';
+import { CSSProperties, ElementType, MouseEventHandler, ReactNode, forwardRef, useState } from 'react';
 
 import { generateUID } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
@@ -15,10 +15,11 @@ interface OwnProps {
     dropdownClassName?: string;
     dropdownStyle?: CSSProperties;
     disableDefaultArrowNavigation?: boolean;
-    onClick?: () => void;
+    onClick?: MouseEventHandler;
+    onToggle?: (isOpen: boolean) => void;
 }
 
-export type Props<T extends ElementType> = OwnProps & DropdownButtonProps<T>;
+export type Props<T extends ElementType> = DropdownButtonProps<T> & OwnProps;
 
 const SimpleDropdownBase = <E extends ElementType>(
     {
@@ -31,17 +32,18 @@ const SimpleDropdownBase = <E extends ElementType>(
         dropdownStyle,
         disableDefaultArrowNavigation = false,
         onClick,
+        onToggle,
         ...rest
     }: Props<E>,
     ref: typeof rest.ref
 ) => {
     const [uid] = useState(generateUID('dropdown'));
 
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>(onToggle);
 
-    const handleClick = !!onClick
-        ? () => {
-              onClick();
+    const handleClick: MouseEventHandler<HTMLButtonElement> = !!onClick
+        ? (e) => {
+              onClick(e);
               toggle();
           }
         : toggle;
