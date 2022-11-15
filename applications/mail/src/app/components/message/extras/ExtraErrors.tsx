@@ -67,7 +67,7 @@ const ExtraErrors = ({ message }: Props) => {
                                 name="exclamation-circle-filled"
                                 className="flex-item-noshrink mt0-4 ml0-2 color-danger"
                             />
-                            <span className="pl0-5 mt0-25 pr0-5 flex-item-fluid">
+                            <span className="pl0-5 mt0-25 pr0-5 flex-item-fluid" data-testid="errors-banner:content">
                                 {getTranslations(errorType, alreadyTried)}
                             </span>
                         </div>
@@ -80,6 +80,7 @@ const ExtraErrors = ({ message }: Props) => {
                                     fullWidth
                                     className="rounded-sm"
                                     onClick={handleReload}
+                                    data-testid="errors-banner:reload"
                                 >{c('Action').t`Try again`}</Button>
                             </span>
                         )}

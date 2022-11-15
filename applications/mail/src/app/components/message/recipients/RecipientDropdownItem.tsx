@@ -62,7 +62,7 @@ const RecipientDropdownItem = ({
                     )}
                 </span>
             </span>
-            <div className="flex flex-column flex-item-fluid px0-5">
+            <div className="flex flex-column flex-item-fluid px0-5" data-testid="recipient:dropdown-item--contact-name">
                 <span className="text-ellipsis user-select" title={label}>
                     {label}
                 </span>
@@ -74,6 +74,7 @@ const RecipientDropdownItem = ({
                 onCopy={handleCopyEmail}
                 tooltipText={c('Action').t`Copy email to clipboard`}
                 size="small"
+                data-test-id="recipient:dropdown-item--copy-address-button"
             />
         </div>
     );

@@ -33,6 +33,7 @@ interface Props {
     isOutside?: boolean;
     displaySenderImage: boolean;
     bimiSelector?: string;
+    customDataTestId?: string;
 }
 
 const RecipientItemGroup = ({
@@ -43,6 +44,7 @@ const RecipientItemGroup = ({
     globalIcon,
     showDropdown,
     isOutside,
+    customDataTestId,
 }: Props) => {
     const { getGroupLabel, getRecipientLabel } = useRecipientLabel();
     const { createModal } = useModals();
@@ -128,6 +130,7 @@ const RecipientItemGroup = ({
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={handleCompose}
+                            data-testid="recipient:new-message-to-group"
                         >
                             <Icon name="envelope" className="mr0-5" />
                             <span className="flex-item-fluid myauto">{c('Action').t`New message`}</span>
@@ -135,6 +138,7 @@ const RecipientItemGroup = ({
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={handleCopy}
+                            data-testid="recipient:copy-group-emails"
                         >
                             <Icon name="squares" className="mr0-5" />
                             <span className="flex-item-fluid myauto">{c('Action').t`Copy addresses`}</span>
@@ -142,6 +146,7 @@ const RecipientItemGroup = ({
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={handleRecipients}
+                            data-testid="recipient:view-group-recipients"
                         >
                             <Icon name="user" className="mr0-5" />
                             <span className="flex-item-fluid myauto">{c('Action').t`View recipients`}</span>
@@ -150,6 +155,7 @@ const RecipientItemGroup = ({
                 </Dropdown>
             }
             isOutside={isOutside}
+            customDataTestId={customDataTestId}
         />
     );
 };
