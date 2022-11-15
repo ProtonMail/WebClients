@@ -55,7 +55,9 @@ describe('ConversationView', () => {
         const rerender = (newProps: Partial<typeof props> = {}) =>
             result.rerender(<ConversationView {...props} {...newProps} />);
 
-        const messageElements = result.container.querySelectorAll('[data-shortcut-target="message-container"]');
+        const messageElements = result.container.querySelectorAll<HTMLElement>(
+            '[data-shortcut-target="message-container"]'
+        );
         const message = messageElements[0];
 
         return {
@@ -268,20 +270,22 @@ describe('ConversationView', () => {
 
             const { messageElements, down, ctrlDown, up, ctrlUp } = await setup();
 
+            const isFocused = (element: HTMLElement) => element.dataset.hasfocus === 'true';
+
             down();
-            assertFocus(messageElements[0]);
+            expect(isFocused(messageElements[0])).toBe(true);
             down();
-            assertFocus(messageElements[1]);
+            expect(isFocused(messageElements[1])).toBe(true);
             down();
-            assertFocus(messageElements[2]);
+            expect(isFocused(messageElements[2])).toBe(true);
             up();
-            assertFocus(messageElements[1]);
+            expect(isFocused(messageElements[1])).toBe(true);
             up();
-            assertFocus(messageElements[0]);
+            expect(isFocused(messageElements[0])).toBe(true);
             ctrlDown();
-            assertFocus(messageElements[9]);
+            expect(isFocused(messageElements[9])).toBe(true);
             ctrlUp();
-            assertFocus(messageElements[0]);
+            expect(isFocused(messageElements[0])).toBe(true);
         });
 
         it('should open a message on enter', async () => {
