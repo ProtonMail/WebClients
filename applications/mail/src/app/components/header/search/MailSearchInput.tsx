@@ -53,6 +53,7 @@ const MailSearchInput = ({ value, onOpen, onChange }: Props, ref: Ref<HTMLInputE
                                 className="rounded-sm"
                                 title={c('Action').t`Clear`}
                                 onClick={handleClear}
+                                data-testid="clear-button"
                             >
                                 {c('Action').t`Clear`}
                             </Button>
