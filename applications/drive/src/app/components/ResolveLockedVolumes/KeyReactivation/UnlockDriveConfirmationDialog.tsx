@@ -4,11 +4,8 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
-
-const appName = getAppName(APPS.PROTONDRIVE);
 
 interface Props {
     onClose?: () => void;
@@ -22,9 +19,11 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack
         <ModalTwo onClose={onClose} size="small" open={open}>
             <ModalTwoHeader title={c('Label').t`Unlock drive`} />
             <ModalTwoContent onSubmit={() => onSubmit()}>
-                <p>{c('Info').t`Because ${appName} is end-to-end encrypted, we cannot access
+                <p>
+                    {c('Info').t`Because ${DRIVE_APP_NAME} is end-to-end encrypted, we cannot access
                         or decrypt your files for you. To unlock your drive after a password reset,
-                        you must have one of the following:`}</p>
+                        you must have one of the following:`}
+                </p>
                 <ul>
                     <li>{c('Info').t`Your previous password`}</li>
                     <li>{c('Info').t`An active recovery file`}</li>

@@ -1,14 +1,11 @@
 import { c } from 'ttag';
 
 import { Alert } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import { InvitationModel } from '../../../../helpers/calendar/invite';
-
-const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
@@ -46,7 +43,7 @@ const ExtraEventWarning = ({ model }: Props) => {
                     {veventIcs['recurrence-id'] && (
                         <Alert className={alertClassName} type="warning">
                             {c('Calendar invite info')
-                                .t`This answer cannot be added to ${calendarAppName} as we only support answers to all events of a series for the moment`}
+                                .t`This answer cannot be added to ${CALENDAR_APP_NAME} as we only support answers to all events of a series for the moment`}
                         </Alert>
                     )}
                     <Alert className={alertClassName} type="warning">
@@ -59,7 +56,7 @@ const ExtraEventWarning = ({ model }: Props) => {
             return (
                 <Alert className={alertClassName} type="warning">
                     {c('Calendar invite info')
-                        .t`This answer cannot be added to ${calendarAppName} as we only support answers to all events of a series for the moment`}
+                        .t`This answer cannot be added to ${CALENDAR_APP_NAME} as we only support answers to all events of a series for the moment`}
                 </Alert>
             );
         }

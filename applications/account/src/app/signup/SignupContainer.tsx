@@ -20,7 +20,6 @@ import {
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import {
     APPS,
     APP_NAMES,
@@ -28,6 +27,7 @@ import {
     CLIENT_TYPES,
     CYCLE,
     DEFAULT_CURRENCY,
+    MAIL_APP_NAME,
     PLANS,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
@@ -124,7 +124,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const offersFeature = useFeature<OfferGlobalFeatureCodeValue>(FeatureCode.Offers);
     const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const referralExperiment = useExperiment(ExperimentCode.ReferralProgramSignup);
-    const mailAppName = getAppName(APPS.PROTONMAIL);
     const [[previousSteps, step], setStep] = useState<[SIGNUP_STEPS[], SIGNUP_STEPS]>([
         [],
         SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME,
@@ -489,7 +488,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                     onBack={handleBackStep}
                     title={(() => {
                         if (model.referralData) {
-                            return c('Title').t`You’ve been invited to try ${mailAppName}`;
+                            return c('Title').t`You’ve been invited to try ${MAIL_APP_NAME}`;
                         }
                         return c('Title').t`Create your ${BRAND_NAME} Account`;
                     })()}
