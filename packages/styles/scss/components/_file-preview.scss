@@ -28,7 +28,7 @@
 		@extend .p2;
 		@extend .center;
 		@extend .flex-item-fluid-auto;
-		@extend .mt0;
+		@extend .mt0-2; // So the highlight in case of textarea is fully visible on the top too.
 		@extend .mb2;
 
 		word-break: break-word;

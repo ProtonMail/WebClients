@@ -7,7 +7,8 @@ import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { ContextMenuProps } from '../../FileBrowser/interface';
 import { ShareFileButton } from '../ContextMenu/buttons';
-import { CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
+import useIsEditEnabled from '../useIsEditEnabled';
+import { CreateNewFileButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
 
 export function FolderContextMenu({
     shareId,
@@ -24,6 +25,8 @@ export function FolderContextMenu({
             open();
         }
     }, [position]);
+
+    const isEditEnabled = useIsEditEnabled();
 
     const { activeFolder } = useActiveShare();
     const {
@@ -45,6 +48,7 @@ export function FolderContextMenu({
             <input multiple type="file" ref={folderInput} className="hidden" onChange={folderChange} />
             <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
                 <CreateNewFolderButton close={close} />
+                {isEditEnabled && <CreateNewFileButton close={close} />}
                 <ContextSeparator />
                 <UploadFileButton close={close} onClick={fileClick} />
                 <UploadFolderButton close={close} onClick={folderClick} />
