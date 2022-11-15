@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { FolderIcon, HotkeyTuple, Icon, classnames } from '@proton/components';
@@ -5,6 +7,7 @@ import { formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import SidebarItem from './SidebarItem';
+import SidebarLabelActions from './SidebarLabelActions';
 
 interface Props {
     currentLabelID: string;
@@ -29,6 +32,7 @@ const SidebarFolder = ({
     id,
     treeMode = true,
 }: Props) => {
+    const [isOptionDropdownOpened, setIsOptionDropdownOpened] = useState(false);
     const shortcutHandlers: HotkeyTuple[] = [
         [
             'ArrowRight',
@@ -61,6 +65,7 @@ const SidebarFolder = ({
             shortcutHandlers={shortcutHandlers}
             id={id}
             onFocus={onFocus}
+            className={isOptionDropdownOpened ? 'navigation-item-dropdown-opened' : undefined}
             content={
                 <div className="flex flex-nowrap flex-align-items-center" data-level={level}>
                     {folder.subfolders?.length ? (
@@ -90,8 +95,11 @@ const SidebarFolder = ({
                         alt={c('Info').t`Folder`}
                         folder={folder}
                     />
-                    <span className="text-ellipsis pr0-5">{formatFolderName(level, folder.Name)}</span>
+                    <div className="text-ellipsis px0-5">{formatFolderName(level, folder.Name)}</div>
                 </div>
+            }
+            itemOptions={
+                <SidebarLabelActions type={'folder'} element={folder} onToggleDropdown={setIsOptionDropdownOpened} />
             }
         />
     );

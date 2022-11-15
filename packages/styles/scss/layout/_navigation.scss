@@ -236,6 +236,9 @@ label.navigation-link {
 		background: transparent;
 		color: var(--text-weak);
 
+		// To avoid shift when hovering and displaying options
+		min-inline-size: em(28, 11);
+
 		.active & {
 			color: currentcolor;
 		}
@@ -248,6 +251,20 @@ label.navigation-link {
 
 /* Sub folders */
 .navigation-item {
+	&-dropdown-opened {
+		& .hide-on-hover {
+			display: none;
+		}
+
+		& .opacity-on-hover {
+			opacity: 1;
+
+			&-no-width {
+				inline-size: auto;
+			}
+		}
+	}
+
 	[data-level='1'] {
 		padding-inline-start: 0.6em;
 	}
