@@ -1,7 +1,8 @@
 import { c, msgid } from 'ttag';
 
-import { CALENDAR_APP_NAME, IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL } from '@proton/shared/lib/calendar/constants';
+import { IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { extractTotals } from '@proton/shared/lib/calendar/import/import';
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
