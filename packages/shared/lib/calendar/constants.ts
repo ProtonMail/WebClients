@@ -329,7 +329,17 @@ export enum CALENDAR_VALIDATION_MODE {
     DOWNLOAD_AND_PARSE = 1,
 }
 
-export const CALENDAR_SETTINGS_SUBSECTION_ID = {
+export const CALENDAR_SETTINGS_ROUTE = {
+    GENERAL: '/general',
+    CALENDARS: '/calendars',
+    INTEROPS: '/import-export',
+};
+
+export const CALENDAR_SETTINGS_SECTION_ID = {
+    TIME_ZONE: 'time-zone',
+    LAYOUT: 'layout',
+    INVITATIONS: 'invitations',
+    THEME: 'theme',
     PERSONAL_CALENDARS: 'my-calendars',
     SUBSCRIBED_CALENDARS: 'other-calendars',
     IMPORT: 'import',

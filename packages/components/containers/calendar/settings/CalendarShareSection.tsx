@@ -7,7 +7,7 @@ import { SettingsLink, useModalState } from '@proton/components/components';
 import { FeatureCode, SettingsParagraph } from '@proton/components/containers';
 import { useApi, useFeature, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
-import { CALENDAR_SETTINGS_SUBSECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/share';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -109,13 +109,13 @@ const CalendarShareSection = ({
                 />
             )}
 
-            <SubSettingsSection title={title} id={CALENDAR_SETTINGS_SUBSECTION_ID.SHARE}>
+            <SubSettingsSection title={title} id={CALENDAR_SETTINGS_SECTION_ID.SHARE}>
                 {hasPaidMail ? (
                     isCalendarSharingEnabled ? (
                         <>
                             <div className="mb3">
                                 <div className="mb1-75">
-                                    <h3 className="text-bold" id={CALENDAR_SETTINGS_SUBSECTION_ID.SHARE_PRIVATELY}>{c(
+                                    <h3 className="text-bold" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}>{c(
                                         'Calendar settings section title'
                                     ).t`Share with Proton users`}</h3>
                                     <SettingsParagraph>{c('Calendar settings private share description')
