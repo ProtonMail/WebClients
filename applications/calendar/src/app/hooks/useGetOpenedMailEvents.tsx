@@ -2,8 +2,8 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { isAuthorizedSideAppUrl, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import { getIsSideAppPostMessage, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 
 const getIsMatch = (existingEvent: OpenedMailEvent, newEvent: OpenedMailEvent) => {
     const { messageID: existingMessageID, UID: existingUID } = existingEvent;
@@ -29,10 +29,8 @@ export const useGetOpenedMailEvents = (sideAppView?: VIEWS): (() => OpenedMailEv
     }, [isMailView]);
 
     useEffect(() => {
-        const handleMessageEvents = (event: MessageEvent<SIDE_APP_ACTION>) => {
-            const origin = event.origin;
-
-            if (!isAuthorizedSideAppUrl(origin)) {
+        const handleMessageEvents = (event: MessageEvent) => {
+            if (!getIsSideAppPostMessage(event)) {
                 return;
             }
 

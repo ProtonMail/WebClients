@@ -3,7 +3,7 @@ import { isURLProtonInternal } from '@proton/components/helpers/url';
 import { getAppHref } from '../apps/helper';
 import { getLocalIDFromPathname } from '../authentication/pathnameHelper';
 import { APPS, APPS_CONFIGURATION, APP_NAMES } from '../constants';
-import { SIDE_APP_ACTION } from './models';
+import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from './models';
 
 const { PROTONMAIL, PROTONCALENDAR } = APPS;
 
@@ -24,6 +24,22 @@ export const isAuthorizedSideAppUrl = (url: string) => {
 export const getIsAuthorizedApp = (appName: string): appName is APP_NAMES => {
     const authorizedApps: string[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
     return authorizedApps.includes(appName);
+};
+
+export const getIsSideAppPostMessage = (event: MessageEvent) => {
+    const origin = event.origin;
+
+    /**
+     * The message is a "valid" side app message if
+     * - The message is coming from an authorized app
+     * - event.data is defined
+     * - event.data.type is part of the SIDE_APP_EVENT enum
+     */
+    return !(
+        !isAuthorizedSideAppUrl(origin) ||
+        !event.data ||
+        !Object.values(SIDE_APP_EVENTS).includes(event.data.type)
+    );
 };
 
 export const postMessageFromIframe = (message: SIDE_APP_ACTION, parentApp: APP_NAMES) => {
