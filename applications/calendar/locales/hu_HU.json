@@ -367,6 +367,9 @@
       "Request new code": [
         "Új kód kérése"
       ],
+      "Resend code": [
+        "Kód újraküldése"
+      ],
       "Reset to default": [
         "Alapbeállítások visszaállítása"
       ],
@@ -708,8 +711,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "E-mail cím"
+      "Add people or groups": [
+        "Személyek vagy csoportok hozzáadása"
       ]
     },
     "Calendar invite buttons label": {
@@ -744,6 +747,11 @@
       ],
       "You tentatively accepted the invitation": [
         "Feltételesen elfogadta a meghívást"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "View (see all event details)": [
+        "Megtekintés (az összes eseményrészlet megtekintése)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -3153,8 +3161,9 @@
       "and": [
         "és"
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Maximum 100 résztvevő lehetséges meghívónként"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként",
+        "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
@@ -4769,6 +4778,11 @@
         "Nincs találat"
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Írjon be egy e-mail címet vagy egy csoportnevet"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Naptár kezelése"
@@ -4778,8 +4792,20 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
       ],
+      "Get up to ${ credits } in credits.": [
+        "Szerezzen akár ${ credits } kreditet."
+      ],
+      "Invite friends to Proton": [
+        "Barátok meghívása a Protonba"
+      ],
+      "Subscribe to other calendars": [
+        "Feliratkozás más naptárakra"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Próbálja ki a ${ DRIVE_APP_NAME }-ot"
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "Feliratkozhat külső naptárakra, és elolvashatja azok eseményeit."
       ]
     },
     "Spotlight settings link": {
@@ -5120,9 +5146,6 @@
       "Continue with partial import?": [
         "Folytatja részleges importálással?"
       ],
-      "Create calendar": [
-        "Naptár létrehozása"
-      ],
       "Create contact": [
         "Névjegy létrehozása"
       ],
@@ -5163,9 +5186,6 @@
       ],
       "Drop to upload": [
         "Húzza a fájlokat ide a feltöltéshez"
-      ],
-      "Edit calendar": [
-        "Naptár szerkesztése"
       ],
       "Edit contact": [
         "Névjegy szerkesztése"
@@ -5418,6 +5438,16 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Válasszon egy számot"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Naptár létrehozása"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Naptár szerkesztése"
       ]
     },
     "Today icon tooltip in mini calendar": {

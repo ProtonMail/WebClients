@@ -55,7 +55,7 @@
         "Tambahkan syarat"
       ],
       "Add credit / debit card": [
-        "Tambahkan kartu kredit / debit"
+        "Tambah kartu kredit / debit"
       ],
       "Add credits": [
         "Tambah saldo"
@@ -141,6 +141,9 @@
       "Choose a file or drag it here": [
         "Pilih berkas atau taruh di sini"
       ],
+      "Claim it": [
+        "Klaim"
+      ],
       "Clear all formatting": [
         "Hapus seluruh format"
       ],
@@ -209,6 +212,9 @@
       ],
       "Create link": [
         "Buat tautan"
+      ],
+      "Create your own": [
+        "Buat email Anda sendiri"
       ],
       "Current plan": [
         "Paket saat ini"
@@ -366,6 +372,9 @@
       "Get ${ vpnPlus }": [
         "Dapatkan ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Dapatkan alamat email terenkripsi baru"
+      ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
@@ -429,6 +438,9 @@
       "label emails as": [
         "labeli email sebagai"
       ],
+      "Leave": [
+        "Tinggalkan"
+      ],
       "Load more": [
         "Muat lebih banyak"
       ],
@@ -437,6 +449,9 @@
       ],
       "Make default": [
         "Jadikan default"
+      ],
+      "Manage communication preferences": [
+        "Kelola preferensi komunikasi"
       ],
       "Mark as default": [
         "Tandai sebagai standar"
@@ -581,6 +596,9 @@
       ],
       "Requires a verified recovery email address": [
         "Memerlukan alamat email pemulihan yang telah terverifikasi"
+      ],
+      "Resend code": [
+        "Kirim ulang kode"
       ],
       "Reset credentials": [
         "Atur ulang kredensial"
@@ -807,6 +825,9 @@
       "Use recovery code": [
         "Gunakan kode pemulihan"
       ],
+      "Use your current email instead": [
+        "Gunakan alamat email Anda saat ini"
+      ],
       "Use “${ label }” setting": [
         "Gunakan pengaturan \"${ label }\""
       ],
@@ -922,6 +943,9 @@
       ],
       "Disabled": [
         "Nonaktif"
+      ],
+      "External": [
+        "Eksternal"
       ],
       "Missing keys": [
         "Kunci yang hilang"
@@ -1147,13 +1171,13 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "Alamat email"
+      "Add people or groups": [
+        "Tambahkan anggota atau grup"
       ]
     },
     "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "Sunting informasi kalender"
+      "Edit calendar": [
+        "Sunting kalender"
       ]
     },
     "Calendar export section description": {
@@ -1257,7 +1281,7 @@
       "Edit (view, create and edit event details)": [
         "Sunting (lihat, buat, dan sunting rincian acara)"
       ],
-      "Full view (see all event details)": [
+      "View (see all event details)": [
         "Tampilan penuh (lihat seluruh rincian acara)"
       ]
     },
@@ -3417,6 +3441,9 @@
       "sign in": [
         "masuk"
       ],
+      "There was a problem removing your email address.": [
+        "Terdapat masalah dalam menghapus alamat email Anda."
+      ],
       "There was a problem verifying your email address.": [
         "Terdapat masalah dalam memverifikasi alamat email Anda."
       ]
@@ -4651,6 +4678,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Sebelum Anda dapat mulai mengirim dan menerima email dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
       ],
+      "Before you reset your password, download your recovery phrase.": [
+        "Sebelum Anda mengatur ulang kata sandi Anda, unduh frasa pemulihan Anda."
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Transaksi Bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
       ],
@@ -4783,6 +4813,9 @@
       "Download recovery file": [
         "Unduh berkas pemulihan"
       ],
+      "Download recovery phrase": [
+        "Unduh frasa pemulihan"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
       ],
@@ -4903,6 +4936,12 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Dapatkan alamat ${ BRAND_NAME } untuk digunakan di seluruh layanan ${ BRAND_NAME } termasuk Mail dan Calendar."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Dapatkan alamat ${ BRAND_NAME } saya"
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Berikan kunci publik Anda kepada teman, atau sebarkan secara daring, sehingga setiap orang dapat mengirim Anda dengan pesan terenkripsi ujung ke ujung!"
       ],
@@ -4935,6 +4974,12 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
+      ],
+      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
+        "Apabila Anda tidak tahu kata sandi Anda, Anda harus terlebih dahulu ${ boldPasswordReset } sebelum Anda dapat mengakses situs baru kami."
+      ],
+      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
+        "Apabila Anda perlu untuk kembali mengatur ulang kata sandi ke depannya, Anda akan perlu untuk memasukkan frasa ini untuk dapat kembali mengakses akun dan membuka kunci data Anda."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Apabila Anda memiliki domain ${ MAIL_APP_NAME } khusus, Anda dapat mengatur alamat email catch-all yang akan menampung seluruh pesan yang dikirim ke alamat yang tidak valid pada domain Anda (cth. karena salah ketik)."
@@ -5036,7 +5081,7 @@
         "Koneksi internet terputus"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi internet terputus. Mohon periksa koneksi perangkat Anda."
+        "Koneksi internet terputus. Silakan periksa konektivitas perangkat Anda."
       ],
       "Internet connection restored.": [
         "Koneksi internet telah kembali pulih."
@@ -5128,6 +5173,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Pastikan Anda ${ addARecoveryMethod } agar Anda dapat kembali mengakses akun apabila Anda lupa kata sandi."
       ],
+      "Make sure you keep your recovery phrase somewhere private.": [
+        "Pastikan Anda menyimpan frasa keamanan Anda di tempat yang privat."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Masukkan informasi berikut secara manual ke perangkat otentikasi dua faktor yang Anda miliki untuk menyiapkan akun Anda. ${ _switchButton }."
       ],
@@ -5206,6 +5254,9 @@
       "of": [
         "dari"
       ],
+      "One account. All ${ BRAND_NAME } services.": [
+        "Satu akun. Seluruh layanan ${ BRAND_NAME }."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
       ],
@@ -5244,6 +5295,9 @@
       ],
       "Paid for a monthly plan": [
         "Terbayar dalam bentuk paket berlangganan bulanan"
+      ],
+      "password reset": [
+        "mengatur ulang kata sandi"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Pembayaran dapat memakan waktu beberapa menit untuk terverifikasi sepenuhnya."
@@ -5392,6 +5446,9 @@
       "Remove one of your calendars to join this one": [
         "Hapus salah satu kalender Anda untuk dapat bergabung ke kalender ini"
       ],
+      "Reset password": [
+        "Atur ulang kata sandi"
+      ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
       ],
@@ -5445,6 +5502,9 @@
       ],
       "Show original message": [
         "Tampilkan pesan asli"
+      ],
+      "Sign in": [
+        "Masuk"
       ],
       "Signed up": [
         "Terdaftar"
@@ -5503,6 +5563,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Alamat email yang Anda tempatkan di bagian atas daftar adalah alamat email default Anda. Tarik dan lepas untuk menyusun ulang alamat Anda."
       ],
+      "The following address is available:": [
+        "Alamat berikut tersedia:"
+      ],
       "The following addresses are invalid.": [
         "Alamat berikut tidak valid."
       ],
@@ -5520,6 +5583,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Cara paling aman untuk menjelajah, menonton, dan beraktivitas di internet."
+      ],
+      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
+        "Alamat email atau Akun ${ BRAND_NAME } Anda tidak berubah. Cukup masuk kembali melalui ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Berkas konfigurasi ini memungkinkan Anda untuk memilih server ${ VPN_APP_NAME } mana yang akan tersambung pada saat Anda menggunakan aplikasi VPN milik pihak ketiga atau menyiapkan koneksi VPN pada router."
@@ -5628,6 +5694,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan sambungkan diri Anda ke server yang tersedia."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "untuk dapat menggunakan ${ toAppName } dan seluruh layanan ${ BRAND_NAME }"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Untuk dapat bekerja, masing-masing filter harus memiliki nama dan kode Sieve yang valid. Anda dapat ${ link }."
@@ -5791,6 +5860,9 @@
       "Why?": [
         "Mengapa?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Dengan alamat ${ BRAND_NAME } yang terenkripsi, Anda dapat menggunakan seluruh layanan ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
       ],
@@ -5914,6 +5986,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Anda akan dialihkan ke situs bank untuk menyelesaikan verifikasi pembayaran."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
+      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Anda TIDAK akan dapat mendekripsi pesan, berkas, atau data apa pun yang terenkripsi dengan kunci ini."
       ],
@@ -5962,11 +6037,11 @@
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Akun ${ BRAND_NAME } Anda dapat digunakan untuk mengakses seluruh layanan ${ BRAND_NAME }. Silakan masuk dengan ${ email }."
       ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Proses impor Anda dari ${ delayedImport.Account } ditunda sementara."
-      ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
+      ],
+      "Your imports from ${ accounts } are temporarily delayed.": [
+        "Impor Anda dari ${ accounts } ditunda sementara."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
@@ -6040,7 +6115,7 @@
     },
     "Info for domain modal": {
       "Add a new address for any user of your organization.": [
-        "Tambah alamat baru untuk siapa pun pengguna organisasi Anda."
+        "Tambah alamat baru untuk pengguna manapun yang terdapat pada organisasi Anda."
       ],
       "Add a new user to your organization and create an address for it.": [
         "Tambah pengguna baru ke organisasi Anda dan buat alamat untuknya."
@@ -7266,35 +7341,23 @@
       ]
     },
     "Label for news": {
-      "Proton announcements": [
-        "Pengumuman Proton"
+      "${ BRAND_NAME } beta announcements": [
+        "Pengumuman akses beta ${ BRAND_NAME }"
       ],
-      "Proton Beta": [
-        "Proton Beta"
+      "${ BRAND_NAME } company announcements": [
+        "Pengumuman perusahaan ${ BRAND_NAME }"
       ],
-      "Proton beta announcements": [
-        "Pengumuman akses beta Proton"
+      "${ BRAND_NAME } for Business newsletter": [
+        "Buletin ${ BRAND_NAME } for Business"
       ],
-      "Proton company announcements": [
-        "Pengumuman perusahaan Proton"
+      "${ BRAND_NAME } newsletter": [
+        "Buletin ${ BRAND_NAME }"
       ],
-      "Proton for Business": [
-        "Proton for Business"
+      "${ BRAND_NAME } offers and promotions": [
+        "Penawaran dan promosi ${ BRAND_NAME }"
       ],
-      "Proton for Business newsletter": [
-        "Buletin Proton for Business"
-      ],
-      "Proton major features": [
-        "Fitur mayor Proton"
-      ],
-      "Proton newsletter": [
-        "Buletin Proton"
-      ],
-      "Proton offers and promotions": [
-        "Penawaran dan promosi Proton"
-      ],
-      "Proton product announcements": [
-        "Pengumuman produk Proton"
+      "${ BRAND_NAME } product announcements": [
+        "Pengumuman produk ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -7732,17 +7795,26 @@
       "Back": [
         "Kembali"
       ],
-      "Back to Calendar": [
-        "Kembali ke Kalender"
+      "Back to calendar": [
+        "Kembali ke kalender"
       ],
-      "Back to Drive": [
-        "Kembali ke Drive"
+      "Back to files": [
+        "Kembali ke daftar berkas"
       ],
-      "Back to Mail": [
-        "Kembali ke Kotak Surat"
+      "Back to inbox": [
+        "Kembali ke kotak masuk"
       ],
       "Blocked": [
         "Diblokir"
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Inbox": [
+        "Kotak masuk"
       ],
       "Not spam": [
         "Bukan spam"
@@ -8053,26 +8125,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8142,6 +8194,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9029,6 +9101,9 @@
       "You can safely close this tab.": [
         "Anda kini dapat menutup tab ini."
       ],
+      "Your recovery email has been successfully removed.": [
+        "Alamat email pemulihan Anda berhasil dihapus."
+      ],
       "Your recovery email has been successfully verified.": [
         "Alamat email pemulihan Anda telah berhasil diverifikasi."
       ]
@@ -9212,8 +9287,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Tambahkan anggota atau grup"
+      "Enter an email address or group name": [
+        "Masukkan alamat email atau nama grup"
       ]
     },
     "Share calendar modal title": {
@@ -9773,7 +9848,7 @@
         "Tambah nama grup kontak"
       ],
       "Add credit/debit card": [
-        "Tambahkan kartu kredit/debit"
+        "Tambah kartu kredit/debit"
       ],
       "Add credits": [
         "Tambah saldo"
@@ -9925,9 +10000,6 @@
       "Couldn’t create accounts": [
         "Tidak dapat membuat akun"
       ],
-      "Create calendar": [
-        "Buat kalender"
-      ],
       "Create multiple user accounts": [
         "Buat lebih dari satu akun pengguna"
       ],
@@ -9939,6 +10011,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Buat Akun ${ BRAND_NAME } Anda"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Buat alamat ${ BRAND_NAME } Anda"
       ],
       "Creating user accounts": [
         "Membuat akun pengguna"
@@ -10035,9 +10110,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Sunting kalender"
       ],
       "Edit credit/debit card": [
         "Sunting rincian kartu kredit/debit"
@@ -10390,6 +10462,9 @@
       "Sign out": [
         "Keluar"
       ],
+      "Signed in successfully!": [
+        "Upaya sign in berhasil!"
+      ],
       "Signed in to member account": [
         "Terdaftar masuk dengan akun anggota"
       ],
@@ -10468,6 +10543,9 @@
       "Verification": [
         "Verifikasi"
       ],
+      "Verify email address": [
+        "Verifikasi alamat email"
+      ],
       "VPN apps": [
         "Aplikasi VPN"
       ],
@@ -10479,6 +10557,9 @@
       ],
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
+      ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "Kami telah berpindah ke ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
@@ -10597,9 +10678,14 @@
         "Peran"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Sunting informasi"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Buat kalender"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Sunting kalender"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10820,6 +10906,11 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
+      ]
+    },
+    "vpn: Info": {
+      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
+        "Buka ekstensi browser ${ VPN_APP_NAME } untuk melindungi diri Anda pada saat menjelajah internet"
       ]
     },
     "VPNClient": {

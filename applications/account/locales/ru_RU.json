@@ -1158,16 +1158,6 @@
         "Твитнуть"
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "Адрес эл. почты"
-      ]
-    },
-    "Calendar edit button tooltip": {
-      "Edit calendar information": [
-        "Изменить информацию о календаре"
-      ]
-    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "Скачать файл ICS со всеми событиями из выбранного календаря."
@@ -1271,9 +1261,6 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Изменить (просмотр, создание и изменение информации о событии)"
-      ],
-      "Full view (see all event details)": [
-        "Полный просмотр (см. всю информацию мероприятия)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -5641,6 +5628,9 @@
       "Show original message": [
         "Показать исходное сообщение"
       ],
+      "Sign in": [
+        "Войти"
+      ],
       "Signed up": [
         "Зарегистрировано"
       ],
@@ -6162,9 +6152,6 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Ваш аккаунт ${ BRAND_NAME } можно использовать для доступа ко всем службам ${ BRAND_NAME }. Пожалуйста, войдите с ${ email }."
-      ],
-      "Your import from ${ delayedImport.Account } is temporarily delayed.": [
-        "Ваш импорт из ${ delayedImport.Account } временно отложен."
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
@@ -7472,38 +7459,6 @@
         "Подключения к VPN"
       ]
     },
-    "Label for news": {
-      "Proton announcements": [
-        "Объявления Proton"
-      ],
-      "Proton Beta": [
-        "Proton Beta"
-      ],
-      "Proton beta announcements": [
-        "Объявления о Proton beta"
-      ],
-      "Proton company announcements": [
-        "Объявления компании Proton"
-      ],
-      "Proton for Business": [
-        "Proton для бизнеса"
-      ],
-      "Proton for Business newsletter": [
-        "Новости Proton for Business"
-      ],
-      "Proton major features": [
-        "Главные функции Proton"
-      ],
-      "Proton newsletter": [
-        "Новостная рассылка Proton"
-      ],
-      "Proton offers and promotions": [
-        "Предложения и акции Proton"
-      ],
-      "Proton product announcements": [
-        "Объявления о продукте Proton"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Адреса"
@@ -7966,17 +7921,26 @@
       "Back": [
         "Назад"
       ],
-      "Back to Calendar": [
-        "Вернуться к календарю"
+      "Back to calendar": [
+        "Вернуться в календарь"
       ],
-      "Back to Drive": [
-        "Вернуться к диску"
+      "Back to files": [
+        "Вернуться к файлам"
       ],
-      "Back to Mail": [
-        "Вернуться к почте"
+      "Back to inbox": [
+        "Вернуться во входящие"
       ],
       "Blocked": [
         "Заблокировано"
+      ],
+      "Calendar": [
+        "Календарь"
+      ],
+      "Drive": [
+        "Диск"
+      ],
+      "Inbox": [
+        "Входящие"
       ],
       "Not spam": [
         "Не спам"
@@ -8329,26 +8293,6 @@
         "Управление командами"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся ${ last4 }"
@@ -8418,6 +8362,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9526,11 +9490,6 @@
         "Добавьте аккаунты Proton, с которыми вы хотите поделиться ${ calendarName }. Мы отправим им приглашение."
       ]
     },
-    "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Добавьте людей или группу"
-      ]
-    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Поделиться с пользователями Proton"
@@ -10546,9 +10505,6 @@
       "Couldn’t create accounts": [
         "Не могу создать аккаунты"
       ],
-      "Create calendar": [
-        "Создать календарь"
-      ],
       "Create multiple user accounts": [
         "Создать несколько пользовательских аккаунтов"
       ],
@@ -10656,9 +10612,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Скачать ${ VPN_APP_NAME }"
-      ],
-      "Edit calendar": [
-        "Редактировать календарь"
       ],
       "Edit credit/debit card": [
         "Изменить кредитную/дебетовую карту"
@@ -11014,6 +10967,9 @@
       "Sign out": [
         "Выйти"
       ],
+      "Signed in successfully!": [
+        "Успешный вход в аккаунт!"
+      ],
       "Signed in to member account": [
         "Выполнен вход в аккаунт пользователя"
       ],
@@ -11225,11 +11181,6 @@
       ],
       "Role": [
         "Должность"
-      ]
-    },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Изменить информацию"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11468,6 +11419,11 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
+      ]
+    },
+    "vpn: Info": {
+      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
+        "Откройте ${ VPN_APP_NAME } расширение для браузера, чтобы защитить ваши данные во время браузерной сессии"
       ]
     },
     "VPNClient": {

@@ -5,9 +5,6 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        "${ address } kullanılabilir."
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } tanıtımı"
       ],
@@ -50,6 +47,9 @@
       "Chat with us": [
         "Bizimle canlı görüşün"
       ],
+      "Claim it": [
+        "İstek yapın"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -77,14 +77,11 @@
       "Create": [
         "Ekle"
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
-        "Bunun yerine güvenli bir ${ MAIL_APP_NAME } adresi oluşturun"
-      ],
       "Create account": [
         "Hesap ekle"
       ],
-      "Create address": [
-        "Adres oluştur"
+      "Create your own": [
+        "Kendinizinkini oluşturun"
       ],
       "Current plan": [
         "Geçerli tarife"
@@ -109,9 +106,6 @@
       ],
       "Didn't receive a code?": [
         "Bir kod almadınız mı?"
-      ],
-      "Didn't receive the code?": [
-        "Kodu almadınız mı?"
       ],
       "Disable": [
         "Devre dışı bırak"
@@ -163,6 +157,9 @@
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } alın"
+      ],
+      "Get a new encrypted email address": [
+        "Yeni bir şifrelenmiş e-posta adresi alın"
       ],
       "Get verification code": [
         "Doğrulama kodu alın"
@@ -247,6 +244,9 @@
       ],
       "Request new code": [
         "Yeni kod iste"
+      ],
+      "Resend code": [
+        "Kodu yeniden gönder"
       ],
       "Reset credentials": [
         "Kimlik doğrulama bilgilerini sıfırla"
@@ -359,7 +359,7 @@
       "Use recovery code": [
         "Kurtarma kodunu kullan"
       ],
-      "Use your current email address instead": [
+      "Use your current email instead": [
         "Bunun yerine var olan e-posta adresinizi kullanın"
       ],
       "User": [
@@ -376,9 +376,6 @@
       ],
       "Verify code again": [
         "Kodu yeniden doğrula"
-      ],
-      "Verify email": [
-        "E-posta adresini doğrula"
       ],
       "View": [
         "Görüntüle"
@@ -1866,9 +1863,6 @@
       "${ storageSize } storage": [
         "${ storageSize } depolama alanı"
       ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable } Bu e-posta adresini tüm ${ BRAND_NAME } hizmetlerinde oturum açmak için kullanacaksınız."
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Ülke düzeyinde bağlantı için ${ vpnBasic }, ${ vpnPlus } ya da ${ visionary } tarifesi gereklidir."
       ],
@@ -2038,6 +2032,12 @@
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "E-posta ve Takvim ile birlikte tüm ${ BRAND_NAME } hizmetlerini kullanmak için bir ${ BRAND_NAME } adresi alın."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresimi al"
+      ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Google, reklam verenlere ve üçüncü taraflara bilgi sağlamak için çevrimiçi etkinliğinizi ve kişisel bilgilerinizi kayıt eder. Daha iyi bir kişisel gizlilik elde etmek için, güvenli bir eposta adresi oluşturun."
       ],
@@ -2152,8 +2152,8 @@
       "of": [
         "/"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        "Tüm ${ BRAND_NAME } hizmetleri için tek hesap."
+      "One account. All ${ BRAND_NAME } services.": [
+        "Tek hesap. Tüm ${ BRAND_NAME } hizmetleri."
       ],
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
@@ -2257,6 +2257,9 @@
       "support team": [
         "destek ekibi"
       ],
+      "The following address is available:": [
+        "Şu adres kullanılabilir:"
+      ],
       "The securest way to browse, stream, and be online.": [
         "Web üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrimiçi olmanın en güvenli yolu."
       ],
@@ -2310,6 +2313,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "İnternet bağlantınızı güvenli kılmak için aygıtınıza ${ VPN_APP_NAME } uygulamasını indirip kurun ve bir sunucuya bağlanın."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "${ toAppName } ve tüm ${ BRAND_NAME } hizmetlerini kullanmak için"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Hesabınızla yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz krediler ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
@@ -2422,6 +2428,9 @@
       "Why?": [
         "Neden?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME } hizmetlerini kullanabilirsiniz"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
       ],
@@ -2485,6 +2494,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için bankanıza yönlendirileceksiniz."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } kullanmak için bir ${ BRAND_NAME } adresiniz olmalıdır"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
@@ -2523,9 +2535,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
-      ],
-      "Your recovery email address:": [
-        "Kurtarma e-posta adresiniz:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
@@ -2632,9 +2641,6 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
-      ],
-      "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } adresi"
       ],
       "${ n } month": [
         "${ n } ay",
@@ -4290,11 +4296,11 @@
       "Congratulations on choosing privacy!": [
         "Kişisel gizliliği korumayı seçtiğiniz için teşekkürler!"
       ],
-      "Create a ${ MAIL_APP_NAME } address": [
-        "Bir ${ MAIL_APP_NAME } adresi oluştur"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabınızı açın"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresinizi oluşturun"
       ],
       "Credits": [
         "Krediler"
@@ -4524,6 +4530,9 @@
       "Verification": [
         "Doğrulama"
       ],
+      "Verify email address": [
+        "E-posta adresini doğrula"
+      ],
       "Warning": [
         "Uyarı"
       ],
@@ -4538,9 +4547,6 @@
       ],
       "You already have a Proton account": [
         "Zaten bir Proton hesabınız var"
-      ],
-      "Your ${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } adresiniz"
       ],
       "Your current plan": [
         "Geçerli tarifeniz"

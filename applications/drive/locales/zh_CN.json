@@ -248,6 +248,9 @@
       "Export contacts": [
         "导出联系人"
       ],
+      "Fit to window": [
+        "适应窗口大小"
+      ],
       "Forward as attachment": [
         "作为附件转发"
       ],
@@ -415,6 +418,9 @@
       ],
       "Request new code": [
         "重发验证码"
+      ],
+      "Resend code": [
+        "重新发送验证码"
       ],
       "Reset to default": [
         "重置所有选项"
@@ -2492,7 +2498,7 @@
         "${ contactCount } 名联系人各有多个邮箱地址。"
       ],
       "${ contactEmailsLength } Members": [
-        "${ contactEmailsLength } 会员"
+        "${ contactEmailsLength } 位成员"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 有多个邮箱地址。"
@@ -2552,7 +2558,7 @@
         "${ storageSize } 存储空间"
       ],
       "${ updated } contacts updated successfully.": [
-        "${ updated } 联系人更新成功。"
+        "已成功更新 ${ updated } 位联系人。"
       ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } 已存在于该路径。"

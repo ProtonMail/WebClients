@@ -66,16 +66,16 @@
         "Ausrichtung"
       ],
       "All Read": [
-        "Alle gelesenen auswählen"
+        "Alle gelesenen"
       ],
       "All Starred": [
-        "Alle gekennzeichneten auswählen"
+        "Alle markierten"
       ],
       "All Unread": [
-        "Alle ungelesenen auswählen"
+        "Alle ungelesenen"
       ],
       "All Unstarred": [
-        "Alle nicht gekennzeichneten auswählen"
+        "Alle nicht markierten auswählen"
       ],
       "Allow messages": [
         "Nachrichten erlauben"
@@ -492,7 +492,7 @@
         "Hinzufügen zu Kategorie"
       ],
       "Label as...": [
-        "Hinzufügen zur Kategorie…"
+        "Kategorisieren als..."
       ],
       "label emails as": [
         "Nachrichten folgender Kategorie zuordnen"
@@ -621,7 +621,7 @@
         "In den Papierkorb verschieben"
       ],
       "Move to...": [
-        "Verschieben nach…"
+        "Verschieben nach..."
       ],
       "Need help?": [
         "Benötigst du Hilfe?"
@@ -1003,7 +1003,7 @@
         "Bild hochladen"
       ],
       "Use ${ label } theme": [
-        "Farbschema „${ label }” verwenden"
+        "Farbschema „${ label }“ verwenden"
       ],
       "Use authentication code": [
         "Authentifizierungscode verwenden"
@@ -1224,7 +1224,7 @@
         "Anwendungsproblem"
       ],
       "Bridge problem": [
-        "Problem mit „Bridge”"
+        "Problem mit „Bridge“"
       ],
       "Calendar problem": [
         "Kalenderproblem"
@@ -1297,7 +1297,7 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        "Enthält einen Kalender-Termin"
+        "Enthält einen Kalendertermin"
       ]
     },
     "Calendar invite buttons label": {
@@ -1337,10 +1337,10 @@
         "${ participantName } fragte nach den letzten Aktualisierungen für einen Termin, der nicht mehr existiert. Du verfügst über keine Kalender."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
-        "${ participantName } fragte nach den letzten Aktualisierungen für einen Termin, welcher nicht mehr in deinem Kalender existiert."
+        "${ participantName } fragte nach den letzten Updates für einen Termin, welcher nicht mehr in deinem Kalender existiert."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } hat nach den letzten Aktualisierungen eines Termins gefragt, die nicht mit deinen Einladungsdetails übereinstimmt. Bitte überprüfe die Einladungsdetails in deinem Kalender."
+        "${ participantName } fragte nach den letzten Updates für einen Termin, der nicht mit deinen Einladungsdetails übereinstimmt. Bitte überprüfe die Einladungsdetails in deinem Kalender."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } hat eine Einladung abgelehnt und eine neue Zeit für einen der Termine vorgeschlagen."
@@ -1502,7 +1502,7 @@
         "Das Umplanen von Terminen wird derzeit nicht unterstützt."
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        "Diese Antwort konnte nicht zu „${ calendarAppName }” hinzugefügt werden, da derzeit nur Antworten auf alle Termine einer Serie unterstützt werden."
+        "Diese Antwort konnte nicht zu „${ calendarAppName }“ hinzugefügt werden, da derzeit nur Antworten auf alle Termine einer Serie unterstützt werden."
       ],
       "This event has been canceled.": [
         "Dieser Termin wurde abgesagt."
@@ -1652,7 +1652,7 @@
         "Zitronengelb"
       ],
       "light moss green": [
-        "helles Moosgrün"
+        "Helles Moosgrün"
       ],
       "maize": [
         "Mais"
@@ -1714,7 +1714,7 @@
         "Ende-zu-Ende verschlüsselt"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Ende-zu-Ende verschlüsselt an verifizierten Empfänger"
+        "Ende-zu-Ende-verschlüsselt an verifizierten Empfänger"
       ],
       "End-to-end encrypted. ${ warningsText }": [
         "Ende-zu-Ende verschlüsselt. ${ warningsText }"
@@ -1732,7 +1732,7 @@
         "PGP-signiert"
       ],
       "The address might be misspelled": [
-        "Die E-Mail-Adresse könnte fehlerhaft sein"
+        "Die E-Mail-Adresse könnte falsch geschrieben sein."
       ]
     },
     "Composer size": {
@@ -2739,11 +2739,11 @@
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Neue E-Mails von „${ senderEmailAddress }” und ${ otherSendersCount } weiterer werden nicht zugestellt und dauerhaft gelöscht.",
-        "Neue E-Mails von „${ senderEmailAddress }” und ${ otherSendersCount } weitere werden nicht zugestellt und dauerhaft gelöscht."
+        "Neue E-Mails von „${ senderEmailAddress }“ und ${ otherSendersCount } weiterer werden nicht zugestellt und dauerhaft gelöscht.",
+        "Neue E-Mails von „${ senderEmailAddress }“ und ${ otherSendersCount } weitere werden nicht zugestellt und dauerhaft gelöscht."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
-        "Neue E-Mails von „${ senderEmailAddress }” werden nicht zugestellt und dauerhaft gelöscht."
+        "Neue E-Mails von „${ senderEmailAddress }“ werden nicht zugestellt und dauerhaft gelöscht."
       ],
       "No folders": [
         "Keine Ordner"
@@ -3100,7 +3100,7 @@
         "Bitte versuchen Sie, sich erneut zu authentifizieren und stellen Sie sicher, dass die Berechtigungen korrekt festgelegt wurden."
       ],
       "Primary address key is not decrypted": [
-        "Der Schlüssel der primären Adresse wird nicht entschlüsselt"
+        "Der Schlüssel der primären Adresse ist nicht entschlüsselt"
       ],
       "Primary address key is not decrypted.": [
         "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
@@ -3275,8 +3275,9 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        "Maximal 100 Teilnehmer sind pro Einladung erlaubt"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Pro Einladung ist maximal ${ MAX_ATTENDEES } Teilnehmer erlaubt",
+        "Pro Einladung sind maximal ${ MAX_ATTENDEES } Teilnehmer erlaubt"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3406,7 +3407,7 @@
         "Zeitzone wird nicht unterstützt"
       ],
       "To-do entry": [
-        "Eintrag „Zu erledigen”"
+        "Eintrag „Zu erledigen“"
       ],
       "Unsupported event": [
         "Nicht unterstützter Termin"
@@ -3420,7 +3421,7 @@
         "Keine Ergebnisse"
       ],
       "No results found for \"${ query }\"": [
-        "Keine Ergebnisse für „${ query }”"
+        "Keine Ergebnisse für „${ query }“"
       ],
       "Oops, something went wrong": [
         "Es ist ein Problem aufgetreten"
@@ -3453,7 +3454,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        "Punktzahl erforderlich"
+        "Wertung ist erforderlich"
       ]
     },
     "Error sending calendar invitation": {
@@ -3727,7 +3728,7 @@
     },
     "Get started checklist item": {
       "Get mobile app": [
-        "Hol dir die App für mobile Endgeräte"
+        "Hol dir die Mobile-App"
       ],
       "Import contacts or emails": [
         "Kontakte oder E-Mails importieren"
@@ -3879,7 +3880,7 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Der „Zugriff auf weniger sichere Apps” ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
+        "Der „Zugriff auf weniger sichere Apps“ ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
       ],
       "2-step verification is enabled in your external account.": [
         "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
@@ -3942,7 +3943,7 @@
         "Verwende dein App-Passwort anstelle deines regulären Passworts, wenn:"
       ],
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Sie können auch versuchen, sich von „${ boldGoogleAccounts }” im Browser abzumelden und anschließend ${ linkCAPTCHA } zu entsperren."
+        "Du kannst auch versuchen, dich von „${ boldGoogleAccounts }“ im Browser abzumelden und anschließend ${ linkCAPTCHA } zu entsperren."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Dein App-Passwort ist korrekt. Verwende ${ boldNot } dein reguläres Passwort."
@@ -4212,6 +4213,10 @@
         "${ numContacts } Kontakt",
         "${ numContacts } Kontakte"
       ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } Nachricht in der Unterhaltung",
+        "${ NumMessages } Nachrichten in der Unterhaltung"
+      ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } Vorkommen gefunden",
         "${ numOccurrences } Vorkommen gefunden"
@@ -4399,7 +4404,7 @@
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
       "Body: ": [
-        "Nachrichteninhalt:"
+        "Nachrichteninhalt: "
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
@@ -4642,7 +4647,7 @@
         "Stunden"
       ],
       "How Hide My Email works": [
-        "Wie „Hide My Email” funktioniert"
+        "Wie „Hide My Email“ funktioniert"
       ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Ich sende diese Nachricht an einen Nicht-Proton Mail-Benutzer."
@@ -4929,7 +4934,7 @@
         "Proton verdient kein Geld durch Missbrauch der Privatsphäre."
       ],
       "Recipient: ": [
-        "Empfänger:"
+        "Empfänger: "
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
@@ -5004,7 +5009,7 @@
         "Nachricht wird gesendet..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse „${ email }” gesendet."
+        "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse „${ email }“ gesendet."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -5022,7 +5027,7 @@
         "Wiederherstellungsphrase festlegen"
       ],
       "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
+        "Wiederherstellungsphrase festlegen"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
@@ -5058,7 +5063,7 @@
         "Betreff:"
       ],
       "Subject: ": [
-        "Betreff:"
+        "Betreff: "
       ],
       "Support for 1 custom email domain": [
         "Unterstützung für 1 eigene E-Mail-Domain"
@@ -5355,7 +5360,7 @@
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet."
+        "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Du kannst es als Anhang hinzufügen oder eingebettet in den Text deiner Nachricht anzeigen."
@@ -5536,7 +5541,7 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "Ein Klick auf „Vertrauenswürdiger Schlüssel” verknüpft diesen öffentlichen Schlüssel mit dem Absender und E-Mails von dieser Adresse werden automatisch kryptographisch verifiziert."
+        "Ein Klick auf „Schlüssel vertrauen“ verknüpft diesen öffentlichen Schlüssel mit dem Absender und E-Mails von dieser Adresse werden automatisch kryptografisch verifiziert."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
         "Wenn du auf „Schlüssel vertrauen“ klickst, wird ein neuer Kontakt erstellt und dieser öffentliche Schlüssel mit diesem Absender verknüpft. E-Mails von dieser Adresse werden automatisch kryptografisch verifiziert."
@@ -6287,7 +6292,7 @@
     },
     "Link": {
       "All mail": [
-        "Alle Nachrichten"
+        "Alle E-Mails"
       ],
       "Archive": [
         "Archiv"
@@ -6467,25 +6472,25 @@
         "Wir sammeln deine Daten bei deinem Anbieter"
       ],
       "Your import is starting": [
-        "Dein Datenimport wurde gestartet"
+        "Dein Datenimport wird gestartet"
       ]
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Ordner seit ${ periodFragment } importieren und als \"${ LABEL_MARKUP_PLACEHOLDER }\" kategorisieren.",
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Ordnern seit ${ periodFragment } importieren und als \"${ LABEL_MARKUP_PLACEHOLDER }\" kategorisieren."
       ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren.",
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren."
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }“"
+        "Alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }” kategorisieren.",
+        "Alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren."
       ]
     },
     "Mailbox": {
@@ -6865,7 +6870,7 @@
     },
     "Paid user checklist item": {
       "Get mobile app": [
-        "Hol dir die App für mobile Endgeräte"
+        "Hol dir die Mobile-App"
       ],
       "Import contacts or emails": [
         "Kontakte oder E-Mails importieren"
@@ -7046,7 +7051,7 @@
         "Pager"
       ],
       "Phone": [
-        "Telefonnummer"
+        "Telefon"
       ],
       "Work": [
         "Arbeit"
@@ -7117,7 +7122,7 @@
         "Keine Nachrichten gefunden"
       ],
       "No messages scheduled": [
-        "Keine zum Versenden geplante Nachrichten"
+        "Keine geplanten Nachrichten"
       ],
       "No results found": [
         "Keine Ergebnisse"
@@ -7497,13 +7502,13 @@
         "Schutz vor E-Mail-Trackern"
       ],
       "Get up to ${ credits } in credits.": [
-        "Erhalte bis zu ${ credits } in Guthaben."
+        "Erhalte bis zu ${ credits } als Guthaben."
       ],
       "Invite friends to Proton": [
         "Lade Freunde zu Proton ein"
       ],
       "Message Content Search": [
-        "Nachrichteninhalte durchsuchen"
+        "Nachrichteninhaltssuche"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } ausprobieren"
@@ -7568,8 +7573,8 @@
         "${ count } Nachrichten gelöscht"
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
-        "${ elementsCount } Unterhaltung zu „${ labelName }” hinzugefügt.",
-        "${ elementsCount } Unterhaltungen zu „${ labelName }” hinzugefügt."
+        "${ elementsCount } Unterhaltung zu „${ labelName }“ hinzugefügt.",
+        "${ elementsCount } Unterhaltungen zu „${ labelName }“ hinzugefügt."
       ],
       "${ elementsCount } conversation marked as read.": [
         "${ elementsCount } Unterhaltung als gelesen markieren.",
@@ -7584,24 +7589,24 @@
         "${ elementsCount } Unterhaltungen als ungelesen markieren."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } Unterhaltung in den Ordner „${ folderName }” verschoben und Absender zur Liste „Kein Spam” hinzugefügt.",
-        "${ elementsCount } Unterhaltungen in den Ordner „${ folderName }” verschoben und Absender zur Liste „Kein Spam” hinzugefügt."
+        "${ elementsCount } Unterhaltung in den Ordner „${ folderName }“ verschoben und Absender zur Liste „Kein Spam“ hinzugefügt.",
+        "${ elementsCount } Unterhaltungen in den Ordner „${ folderName }“ verschoben und Absender zur Liste „Kein Spam“ hinzugefügt."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } Unterhaltung in „${ folderName }” verschoben.",
-        "${ elementsCount } Unterhaltungen in „${ folderName }” verschoben."
+        "${ elementsCount } Unterhaltung nach „${ folderName }“ verschoben.",
+        "${ elementsCount } Unterhaltungen nach „${ folderName }“ verschoben."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } Unterhaltung in Spam verschoben und Absender zur Spamliste hinzugefügt.",
         "${ elementsCount } Unterhaltungen in Spam verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } Unterhaltung aus „${ labelName }” entfernt.",
-        "${ elementsCount } Unterhaltungen aus „${ labelName }” entfernt."
+        "${ elementsCount } Unterhaltung aus „${ labelName }“ entfernt.",
+        "${ elementsCount } Unterhaltungen aus „${ labelName }“ entfernt."
       ],
       "${ elementsCount } message added to ${ labelName }.": [
-        "${ elementsCount } Nachricht zu „${ labelName }” hinzugefügt.",
-        "${ elementsCount } Nachrichten zu „${ labelName }” hinzugefügt."
+        "${ elementsCount } Nachricht zu „${ labelName }“ hinzugefügt.",
+        "${ elementsCount } Nachrichten zu „${ labelName }“ hinzugefügt."
       ],
       "${ elementsCount } message marked as read.": [
         "${ elementsCount } Nachricht als gelesen markiert.",
@@ -7616,20 +7621,20 @@
         "${ elementsCount } Nachrichten als ungelesen markiert."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } Nachricht in den Ordner „${ folderName }” verschoben und Absender zur Liste „Kein Spam” hinzugefügt.",
-        "${ elementsCount } Nachrichten in den Ordner „${ folderName }” verschoben und Absender zur Liste „Kein Spam” hinzugefügt."
+        "${ elementsCount } Nachricht in den Ordner „${ folderName }“ verschoben und Absender zur Liste „Kein Spam“ hinzugefügt.",
+        "${ elementsCount } Nachrichten in den Ordner „${ folderName }“ verschoben und Absender zur Liste „Kein Spam“ hinzugefügt."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } Nachricht nach „${ folderName }” verschoben.",
-        "${ elementsCount } Nachrichten nach „${ folderName }” verschoben."
+        "${ elementsCount } Nachricht nach „${ folderName }“ verschoben.",
+        "${ elementsCount } Nachrichten nach „${ folderName }“ verschoben."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "${ elementsCount } Nachricht in Spam verschoben und Absender zur Spamliste hinzugefügt.",
         "${ elementsCount } Nachrichten in Spam verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
-        "${ elementsCount } Nachricht aus „${ labelName }” entfernt.",
-        "${ elementsCount } Nachrichten aus „${ labelName }” entfernt."
+        "${ elementsCount } Nachricht aus „${ labelName }“ entfernt.",
+        "${ elementsCount } Nachrichten aus „${ labelName }“ entfernt."
       ],
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
@@ -7658,7 +7663,7 @@
         "Kontakte gelöscht"
       ],
       "Conversation added to ${ labelName }.": [
-        "Unterhaltung zu „${ labelName }” hinzugefügt."
+        "Unterhaltung zu „${ labelName }“ hinzugefügt."
       ],
       "Conversation deleted": [
         "Unterhaltung gelöscht"
@@ -7676,13 +7681,13 @@
         "Unterhaltung in ${ folderName } verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "Conversation moved to ${ folderName }.": [
-        "Unterhaltung in „${ folderName }” verschoben."
+        "Unterhaltung nach „${ folderName }“ verschoben."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
         "Unterhaltung in Spam verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "Conversation removed from ${ labelName }.": [
-        "Unterhaltung aus „${ labelName }” entfernt."
+        "Unterhaltung aus „${ labelName }“ entfernt."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Unterhaltungen von ${ sendersList } werden als ${ labelsList } kategorisiert"
@@ -7715,7 +7720,7 @@
         "Aus Verteilerliste ausgetragen"
       ],
       "Message added to ${ labelName }.": [
-        "Nachricht zu „${ labelName }” hinzugefügt."
+        "Nachricht zu „${ labelName }“ hinzugefügt."
       ],
       "Message content search activated": [
         "Suche nach Nachrichteninhalten aktiviert"
@@ -7739,13 +7744,13 @@
         "Nachricht in ${ folderName } verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "Message moved to ${ folderName }.": [
-        "Nachricht nach „${ folderName }” verschoben."
+        "Nachricht nach „${ folderName }“ verschoben."
       ],
       "Message moved to spam and sender added to your spam list.": [
         "Nachricht in Spam verschoben und Absender zur Spamliste hinzugefügt."
       ],
       "Message removed from ${ labelName }.": [
-        "Nachricht aus „${ labelName }” entfernt."
+        "Nachricht aus „${ labelName }“ entfernt."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Die Nachrichten von ${ sendersList } werden als ${ labelsList } gekennzeichnet"
@@ -7919,7 +7924,7 @@
         "Zu ${ groupCount } Gruppen hinzufügen"
       ],
       "Add to ${ groupName }": [
-        "Zu „${ groupName }” hinzufügen"
+        "Zu „${ groupName }“ hinzufügen"
       ],
       "Addresses": [
         "Adressen"
@@ -8215,7 +8220,7 @@
         "Kein Anhang gefunden"
       ],
       "Open actions dropdown": [
-        "Auswahlliste „Aktionen” öffnen"
+        "Auswahlliste „Aktionen“ öffnen"
       ],
       "Open help menu": [
         "Hilfemenü öffnen"
@@ -8403,7 +8408,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "„Automatisch” zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
+        "„Automatisch“ zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
       ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"

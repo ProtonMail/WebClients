@@ -367,6 +367,9 @@
       "Filter on...": [
         "Filteren op..."
       ],
+      "Fit to window": [
+        "Passend in venster"
+      ],
       "Font": [
         "Lettertype"
       ],
@@ -769,6 +772,9 @@
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
+      ],
+      "Resend code": [
+        "Verstuur code opnieuw"
       ],
       "Reset": [
         "Resetten"
@@ -3335,8 +3341,9 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        "Maximaal 100 deelnemers zijn toegestaan per uitnodiging"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Ten hoogste ${ MAX_ATTENDEES } deelnemer toegelaten per uitnodiging",
+        "Ten hoogste ${ MAX_ATTENDEES } deelnemers toegelaten per uitnodiging"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4259,6 +4266,10 @@
       "${ numContacts } contact": [
         "Één contactpersoon",
         "${ numContacts } contactpersonen"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } bericht in het gesprek",
+        "${ NumMessages } berichten in het gesprek"
       ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } voorval gevonden",

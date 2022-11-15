@@ -385,6 +385,9 @@
       "Request new code": [
         "Minta kode baru"
       ],
+      "Resend code": [
+        "Kirim ulang kode"
+      ],
       "Reset to default": [
         "Atur ulang ke awal"
       ],
@@ -747,8 +750,8 @@
       ]
     },
     "Calendar access select label": {
-      "Email address": [
-        "Alamat email"
+      "Add people or groups": [
+        "Tambahkan anggota atau grup"
       ]
     },
     "Calendar invite buttons label": {
@@ -829,7 +832,7 @@
       "Edit (view, create and edit event details)": [
         "Sunting (lihat, buat, dan sunting rincian acara)"
       ],
-      "Full view (see all event details)": [
+      "View (see all event details)": [
         "Tampilan penuh (lihat seluruh rincian acara)"
       ]
     },
@@ -3236,8 +3239,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Semua orang yang memiliki tautan ini akan dapat melihat apakah Anda sedang sibuk atau tidak pada kalender Anda. Meskipun demikian, mereka tidak akan dapat melihat berbagai rincian yang ada seperti judul acara, lokasi acara, atau daftar peserta."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Maksimal 100 peserta per undangan"
+      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
+        "Hanya ${ MAX_ATTENDEES } peserta yang dapat diundang per undangannya"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
@@ -3381,7 +3384,7 @@
         "Koneksi internet terputus"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi internet terputus. Mohon periksa koneksi perangkat Anda."
+        "Koneksi internet terputus. Silakan periksa konektivitas perangkat Anda."
       ],
       "Internet connection restored.": [
         "Koneksi internet telah kembali pulih."
@@ -4920,8 +4923,8 @@
       ]
     },
     "Share calendar modal input placeholder": {
-      "Add people or groups": [
-        "Tambahkan anggota atau grup"
+      "Enter an email address or group name": [
+        "Masukkan alamat email atau nama grup"
       ]
     },
     "Share calendar modal title": {
@@ -4944,7 +4947,7 @@
         "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
       ],
       "Don't miss any events": [
-        "Jangan lewatkan acara apa pun"
+        "Jangan lewatkan acara apapun"
       ],
       "Easily accept invites": [
         "Terima undangan dengan mudah"
@@ -5308,9 +5311,6 @@
       "Continue with partial import?": [
         "Lanjut impor walau hanya sebagian?"
       ],
-      "Create calendar": [
-        "Buat kalender"
-      ],
       "Create contact": [
         "Buat kontak"
       ],
@@ -5352,9 +5352,6 @@
       ],
       "Drop to upload": [
         "Letakkan untuk mengunggah"
-      ],
-      "Edit calendar": [
-        "Sunting kalender"
       ],
       "Edit contact": [
         "Sunting kontak"
@@ -5608,9 +5605,14 @@
         "Pilih angka"
       ]
     },
-    "Title; edit calendar information modal": {
-      "Edit information": [
-        "Sunting informasi"
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Buat kalender"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Sunting kalender"
       ]
     },
     "Today icon tooltip in mini calendar": {

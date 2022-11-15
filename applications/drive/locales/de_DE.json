@@ -347,7 +347,7 @@
         "In den Papierkorb verschieben"
       ],
       "New upload": [
-        "Neu hochladen"
+        "Neuer Upload"
       ],
       "Next": [
         "Weiter"
@@ -434,10 +434,10 @@
         "Alle neu starten"
       ],
       "Restart download": [
-        "Herunterladen neu starten"
+        "Download neu starten"
       ],
       "Restart upload": [
-        "Hochladen neu starten"
+        "Upload neu starten"
       ],
       "Restore from trash": [
         "Aus dem Papierkorb wiederherstellen"
@@ -515,7 +515,7 @@
         "Importvorgang starten"
       ],
       "Start recovering": [
-        "Wiederherstellung wird gestartet"
+        "Wiederherstellung starten"
       ],
       "Start setup": [
         "Einrichtung starten"
@@ -581,7 +581,7 @@
         "Bild hochladen"
       ],
       "Use ${ label } theme": [
-        "Farbschema „${ label }” verwenden"
+        "Farbschema „${ label }“ verwenden"
       ],
       "Use authentication code": [
         "Authentifizierungscode verwenden"
@@ -654,7 +654,7 @@
         "Anwendungsproblem"
       ],
       "Bridge problem": [
-        "Problem mit „Bridge”"
+        "Problem mit „Bridge“"
       ],
       "Calendar problem": [
         "Kalenderproblem"
@@ -1761,7 +1761,7 @@
         "6 Ziffern eingeben"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Datei „${ item.name }” kann aufgrund des Fehlers „${ error }” nicht hochgeladen werden"
+        "Datei „${ item.name }“ kann aufgrund des Fehlers „${ error }“ nicht hochgeladen werden."
       ],
       "File \"${ name }\" is already downloading": [
         "Die Datei „${ name }“ wird bereits heruntergeladen"
@@ -1849,7 +1849,7 @@
         "Bitte versuchen Sie, sich erneut zu authentifizieren und stellen Sie sicher, dass die Berechtigungen korrekt festgelegt wurden."
       ],
       "Primary address key is not decrypted": [
-        "Der Schlüssel der primären Adresse wird nicht entschlüsselt"
+        "Der Schlüssel der primären Adresse ist nicht entschlüsselt"
       ],
       "Primary address key is not decrypted.": [
         "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
@@ -2058,7 +2058,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        "Punktzahl erforderlich"
+        "Wertung ist erforderlich"
       ]
     },
     "Feedback Modal Title": {
@@ -2236,7 +2236,7 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Der „Zugriff auf weniger sichere Apps” ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
+        "Der „Zugriff auf weniger sichere Apps“ ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
       ],
       "2-step verification is enabled in your external account.": [
         "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
@@ -2299,7 +2299,7 @@
         "Verwende dein App-Passwort anstelle deines regulären Passworts, wenn:"
       ],
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Sie können auch versuchen, sich von „${ boldGoogleAccounts }” im Browser abzumelden und anschließend ${ linkCAPTCHA } zu entsperren."
+        "Du kannst auch versuchen, dich von „${ boldGoogleAccounts }“ im Browser abzumelden und anschließend ${ linkCAPTCHA } zu entsperren."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Dein App-Passwort ist korrekt. Verwende ${ boldNot } dein reguläres Passwort."
@@ -2835,7 +2835,7 @@
         "Sicherer Link konnte nicht geöffnet werden. Fehler: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        "Die Datei „${ name }“ wurde während dem herunterladen gelöscht"
+        "Die Datei „${ name }“ wurde während des Downloads gelöscht."
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Bei der Datei fehlt die Signatur. Wir konnten nicht verifizieren, dass ${ emailAddress } ${ fileName } hochgeladen hat."
@@ -2850,7 +2850,7 @@
         "Wird abgeschlossen"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        "Der Ordner „${ link.name }“ wurde während dem herunterladen gelöscht"
+        "Der Ordner „${ link.name }“ wurde während des Downloads gelöscht."
       ],
       "Folder contents will merge into a single folder": [
         "Die Inhalte der Ordner werden in einen einzigen Ordner zusammengeführt"
@@ -2877,7 +2877,7 @@
         "Na los, lade etwas hoch"
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Wechsle zu „Meine Dateien” und lade zunächst einige Dateien hoch."
+        "Wechsle zu „Meine Dateien“ und lade zunächst einige Dateien hoch."
       ],
       "Group assignment applied": [
         "Gruppenzuordnung übernommen"
@@ -2901,7 +2901,7 @@
         "Falls du dein Passwort nicht mehr weißt, lege eine Wiederherstellungsphrase fest, um sicherzustellen, dass du den Zugang zu deinem Konto und deinen Daten nicht verlierst."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "Wenn eines davon auf dich zutrifft, fahre mit den Proton-Kontoeinstellungen fort,\num den Entsperrungsprozess zu starten."
+        "Wenn eines davon auf dich zutrifft, fahre mit den Proton-Kontoeinstellungen fort,\num den Entsperrprozess zu starten."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
@@ -3132,7 +3132,7 @@
         "Die private Suche ist aktiviert. Du kannst nun diesen Dialog schließen und nach Dateien und Ordnern suchen."
       ],
       "Queued": [
-        "in Warteschlange"
+        "Eingereiht"
       ],
       "recommended browser": [
         "empfohlenen Browsers"
@@ -3177,7 +3177,7 @@
         "Zeitüberschreitung der Sitzung"
       ],
       "Set recovery phrase": [
-        "Wiederherstellungsphrase einrichten"
+        "Wiederherstellungsphrase festlegen"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
@@ -3276,8 +3276,8 @@
         "Dieser Link wird dauerhaft deaktiviert. Niemand mit diesem Link wird auf deinen Ordner zugreifen können. Um den Ordner erneut freizugeben, muss ein neuer Link erstellt werden."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Dadurch wird der Link gelöscht und der Zugriff auf deine Datei oder deinen Ordner für jeden, der über den Link verfügt, unterbunden.",
-        "Dadurch werden die Links gelöscht und der Zugriff auf deine Dateien oder deine Ordner für jeden, der über die Links verfügt, unterbunden."
+        "Dadurch wird der Link gelöscht und der Zugriff auf deine Datei oder deinen Ordner für jeden, der über den Link verfügt, entfernt.",
+        "Dadurch werden die Links gelöscht und der Zugriff auf deine Dateien oder deine Ordner für jeden, der über die Links verfügt, entfernt."
       ],
       "This will overwrite the existing file": [
         "Dadurch wird die vorhandene Datei überschrieben"
@@ -3304,16 +3304,16 @@
         "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
       ],
       "Transfer canceled for file \"${ name }\"": [
-        "Übertragung der Datei „${ name }” wurde abgebrochen"
+        "Übertragung der Datei „${ name }“ wurde abgebrochen"
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        "Übertragung des Ordners „${ name }” wurde abgebrochen"
+        "Übertragung des Ordners „${ name }“ wurde abgebrochen."
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        "Übertragung der Datei „${ file.name }” übersprungen"
+        "Übertragung der Datei „${ file.name }“ wurde übersprungen"
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        "Übertragung des Ordners „${ folderName }” wurde übersprungen"
+        "Übertragung des Ordners „${ folderName }“ wurde übersprungen"
       ],
       "Trash": [
         "Papierkorb"
@@ -3400,7 +3400,7 @@
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet."
+        "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Du kannst zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
@@ -4023,25 +4023,25 @@
         "Wir sammeln deine Daten bei deinem Anbieter"
       ],
       "Your import is starting": [
-        "Dein Datenimport wurde gestartet"
+        "Dein Datenimport wird gestartet"
       ]
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordner der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ selectedLabelsCount } von ${ totalLabelsCount } Ordnern der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Ordner seit ${ periodFragment } importieren und als \"${ LABEL_MARKUP_PLACEHOLDER }\" kategorisieren.",
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Ordnern seit ${ periodFragment } importieren und als \"${ LABEL_MARKUP_PLACEHOLDER }\" kategorisieren."
       ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiert alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiert diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren.",
+        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren."
       ],
       "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kategorisiere diese als „${ LABEL_MARKUP_PLACEHOLDER }“"
+        "Alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }” kategorisieren.",
+        "Alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren."
       ]
     },
     "Message": {
@@ -4119,10 +4119,10 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        "„${ name }” erfolgreich erstellt"
+        "„${ name }“ erfolgreich erstellt"
       ],
       "\"${ name }\" deleted permanently from trash": [
-        "„${ name }” dauerhaft aus dem Papierkorb gelöscht"
+        "„${ name }“ dauerhaft aus dem Papierkorb gelöscht"
       ],
       "\"${ name }\" failed to be created": [
         "\"${ name }\" konnte nicht erstellt werden"
@@ -4131,7 +4131,7 @@
         "\"${ name }\" konnte nicht dauerhaft aus dem Papierkorb gelöscht werden"
       ],
       "\"${ name }\" failed to be moved": [
-        "„${ name }” konnte nicht verschoben werden"
+        "„${ name }“ konnte nicht verschoben werden."
       ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" konnte nicht in den Papierkorb verschoben werden"
@@ -4143,10 +4143,10 @@
         "\"${ name }\" in den Papierkorb verschoben"
       ],
       "\"${ name }\" restored from trash": [
-        "„${ name }” aus dem Papierkorb wiederhergestellt"
+        "„${ name }“ aus dem Papierkorb wiederhergestellt"
       ],
       "\"${ name }\" successfully moved": [
-        "„${ name }” erfolgreich verschoben"
+        "„${ name }“ erfolgreich verschoben"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" konnte nicht umbenannt werden"
@@ -4232,11 +4232,11 @@
         "Upload der Dateien fehlgeschlagen: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Die Datei oder der Ordner \"${ filename }\" und ${ count } weitere werden bereits hochgeladen",
+        "Die Datei oder der Ordner \"${ filename }\" und ${ count } weitere(r) werden bereits hochgeladen",
         "Die Datei oder der Ordner \"${ filename }\" und ${ count } weitere werden bereits hochgeladen"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "Die Datei oder der Ordner „${ filename }” wird bereits hochgeladen"
+        "Die Datei oder der Ordner „${ filename }“ wird bereits hochgeladen."
       ],
       "File or folder is missing a name": [
         "Der Datei oder dem Ordner fehlt ein Name"
@@ -4522,7 +4522,7 @@
         "Pager"
       ],
       "Phone": [
-        "Telefonnummer"
+        "Telefon"
       ],
       "Work": [
         "Arbeit"
@@ -4790,13 +4790,13 @@
         "Die verschlüsselte Suche ist da"
       ],
       "Get up to ${ credits } in credits.": [
-        "Erhalte bis zu ${ credits } in Guthaben."
+        "Erhalte bis zu ${ credits } als Guthaben."
       ],
       "Invite friends to Proton": [
         "Lade Freunde zu Proton ein"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        "Jetzt kannst du Drive-Dateien ganz einfach durchsuchen, währenddessen deine Daten in Sicherheit sind."
+        "Jetzt kannst du Drive-Dateien ganz einfach durchsuchen und gleichzeitig deine Daten schützen."
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } ausprobieren"
@@ -4982,7 +4982,7 @@
         "Zu ${ groupCount } Gruppen hinzufügen"
       ],
       "Add to ${ groupName }": [
-        "Zu „${ groupName }” hinzufügen"
+        "Zu „${ groupName }“ hinzufügen"
       ],
       "Addresses": [
         "Adressen"
@@ -5000,7 +5000,7 @@
         "Dem Browser geht möglicherweise der Speicher aus"
       ],
       "Change layout": [
-        "Darstellung ändern"
+        "Anordnung ändern"
       ],
       "Clearing data": [
         "Daten werden gelöscht"
@@ -5171,7 +5171,7 @@
         "Linkbestätigung"
       ],
       "Location": [
-        "Ort"
+        "Speicherort"
       ],
       "Manage secure link": [
         "Sicheren Link verwalten"
@@ -5210,7 +5210,7 @@
         "Anzahl der Elemente"
       ],
       "Open actions dropdown": [
-        "Auswahlliste „Aktionen” öffnen"
+        "Auswahlliste „Aktionen“ öffnen"
       ],
       "Open help menu": [
         "Hilfemenü öffnen"
@@ -5285,7 +5285,7 @@
         "Ablaufdatum des Links wählen"
       ],
       "Select link expiration time": [
-        "Ablaufzeit der Verknüpfung wählen"
+        "Ablaufzeit des Links wählen"
       ],
       "Send feedback": [
         "Feedback senden"
@@ -5333,7 +5333,7 @@
         "Übertragung abbrechen?"
       ],
       "Synced devices": [
-        "Synchronisierten Geräte"
+        "Synchronisierte Geräte"
       ],
       "The link either does not exist or has expired": [
         "Der Link existiert entweder nicht oder ist abgelaufen"
@@ -5418,7 +5418,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "„Automatisch” zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
+        "„Automatisch“ zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
       ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
@@ -5474,7 +5474,7 @@
     },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
-        "„${ str }” ist kein gültiger Name"
+        "„${ str }“ ist kein gültiger Name"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Der Name darf weder unsichtbare Zeichen noch / oder \\ enthalten."

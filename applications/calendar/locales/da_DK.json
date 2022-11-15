@@ -4,6 +4,14 @@
     "language": "da_DK"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Fuld visning (se alle detaljer om begivenheden)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Begrænset visning (se kun fri/optaget)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introduktion"
@@ -379,6 +387,9 @@
       "Request new code": [
         "Anmod om ny kode"
       ],
+      "Resend code": [
+        "Send kode igen"
+      ],
       "Reset to default": [
         "Nulstil til standard"
       ],
@@ -515,6 +526,22 @@
         "Ja, jeg deltager"
       ]
     },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Alle, der har linket, kan se din kalender"
+      ],
+      "They can view or edit your calendar": [
+        "De kan se eller redigere din kalender"
+      ]
+    },
+    "Action title": {
+      "Share with anyone": [
+        "Del med enhver"
+      ],
+      "Share with Proton users": [
+        "Del med Proton-brugere"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } eller ${ importContact }."
@@ -635,6 +662,11 @@
         "Valgfri"
       ]
     },
+    "Badge": {
+      "Coming soon": [
+        "Kommer snart"
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Beta-adgang giver dig mulighed for at bruge betaversionen af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
@@ -719,11 +751,6 @@
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar access select label": {
-      "Email address": [
-        "E-mail"
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Deltager?"
@@ -758,12 +785,64 @@
         "Du har foreløbigt accepteret invitationen"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Kun du kan se etiketten"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Du kan til enhver tid ændre eller fjerne tilladelser."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Tilladelser"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Du har allerede adgang til denne kalender"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Håndter links"
+      ],
+      "Manage members": [
+        "Administrer medlemmer"
+      ],
+      "Unable to create more calendar links": [
+        "Det er ikke muligt at oprette flere kalenderlinks"
+      ],
+      "Unable to share this calendar with more Proton users": [
+        "Kan ikke dele denne kalender med flere Proton-brugere"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
+        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem for denne kalender.\nHvis du vil dele denne kalender med flere Proton-konti, skal du fjerne nogle medlemmer.",
+        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlemmer for denne kalender.\nHvis du vil dele denne kalender med flere Proton-konti, skal du fjerne nogle medlemmer."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Du har nået det maksimale antal på ${ MAX_LINKS_PER_CALENDAR } link for denne kalender.\nHvis du vil oprette et nyt link til denne kalender, skal du slette et eksisterende link.",
+        "Du har nået det maksimale antal på ${ MAX_LINKS_PER_CALENDAR } links for denne kalender.\nHvis du vil oprette et nyt link til denne kalender, skal du slette et eksisterende link."
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Rediger (visning, oprettelse og redigering af begivenhedsoplysninger)"
+      ]
+    },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
         "Tilføj kalender fra URL"
       ],
       "More options": [
         "Flere muligheder"
+      ]
+    },
+    "Calendar sidebar; Calendar info": {
+      "Shared with me": [
+        "Delt med mig"
       ]
     },
     "Calendar status": {
@@ -844,14 +923,29 @@
       ]
     },
     "color": {
+      "carrot": [
+        "gulerod"
+      ],
+      "cerise": [
+        "kirsebærrød"
+      ],
       "cobalt": [
         "kobolt"
       ],
       "copper": [
         "kobber"
       ],
+      "enzian": [
+        "ensian"
+      ],
       "fern": [
         "bregne"
+      ],
+      "forest": [
+        "skov"
+      ],
+      "ocean": [
+        "ocean"
       ],
       "olive": [
         "oliven"
@@ -859,14 +953,35 @@
       "pacific": [
         "stillehav"
       ],
+      "pickle": [
+        "syltet agurk"
+      ],
+      "pine": [
+        "fyr"
+      ],
+      "pink": [
+        "pink"
+      ],
+      "plum": [
+        "blomme"
+      ],
+      "purple": [
+        "lilla"
+      ],
       "reef": [
         "rev"
+      ],
+      "sahara": [
+        "sahara"
       ],
       "slateblue": [
         "skiferblå"
       ],
       "soil": [
         "jord"
+      ],
+      "strawberry": [
+        "jordbær"
       ]
     },
     "Confirm modal title": {
@@ -1802,6 +1917,10 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
+        "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
       ],
@@ -2138,6 +2257,13 @@
       "Primary key is not valid for sending": [
         "Primær nøgle er ikke gyldig til afsendelse"
       ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Primær nøgle hentet for ${ BRAND_NAME }-bruger er ikke gyldig til afsendelse"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Fjernede dublet af modtager: ${ joinedRecipients }",
+        "Fjernede dubletter af modtagere: ${ joinedRecipients }"
+      ],
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
@@ -2156,11 +2282,17 @@
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
       ],
+      "Some of your folder names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine mappenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne overskrider den maksimale tegngrænse i ${ MAIL_APP_NAME }. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Some of your label names are reserved. Please customize the import to edit these names.": [
+        "Nogle af dine etikettenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
@@ -2231,11 +2363,19 @@
       "You can't send vCards of more than 10 contacts": [
         "Du kan ikke sende vCards med mere end 10 kontakter"
       ],
+      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
+        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
+      ],
       "You must set a name": [
         "Du skal angive et navn"
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Den inviterede adresse findes ikke"
       ]
     },
     "Error importing calendar": {
@@ -2545,6 +2685,24 @@
         "Din feedback"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -2838,17 +2996,62 @@
       ]
     },
     "Import instructions": {
+      "Click ${ boldManage } to expand the options menu.": [
+        "Klik på ${ boldManage } for at udvide menu med valgmuligheder."
+      ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til Proton."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Opret et ${ boldAppPassword } og brug det i stedet for din almindelige adgangskode, når Proton anmoder om det."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Generer ${ boldAppPassword } og bruge det i stedet for din almindelige adgangskode, når Proton beder dig om det."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Gå til ${ boldAccountInfo } under din profil i ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Gå til ${ boldAccountSecurity }."
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Gå til Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "Hvis 2-trinsbekræftelse er slået fra, skal du slå det til."
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Åbn dine ${ yahooMailLink }-kontakter."
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Åbn dit Outlook ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Vælg ${ boldExportContacts } og vælg, hvilke kontakter der skal eksporteres."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Vælg ${ boldExportCSV }."
+      ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
       ],
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "For at importere en kalender til Proton, skal du bruge ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
+      ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
+      ],
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "For at importere kontakter til Proton skal du bruge et ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "For at importere e-mails til Proton, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
@@ -2899,6 +3102,9 @@
       "contacts": [
         "kontakter"
       ],
+      "CSV or a VCF (vCard) file": [
+        "CSV eller en VCF-fil (vCard)"
+      ],
       "full calendar view": [
         "fuld kalendervisning"
       ],
@@ -2913,6 +3119,26 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Click on the ${ boldICS } link and download the file.": [
+        "Klik på ${ boldICS }-linket og download filen."
+      ],
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Gå til ${ calendarLink } i dine Outlook-indstillinger."
+      ],
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Gå til ${ calendarViewLink } i Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Hold musen over den kalender, du vil importere, og åbn dropdown-menuen."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Under ${ boldPublish } skal du vælge den kalender, du vil importere. Indstil tilladelsen til ${ boldCanViewAllDetails }, og udgiv den."
       ]
     },
     "Import warning": {
@@ -3066,8 +3292,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Alle med dette link kan se, om du er fri eller optaget på din kalender. De kan ikke se begivenhedsdetaljer, såsom titel, placering eller deltagere."
       ],
-      "At most 100 participants are allowed per invitation": [
-        "Højst 100 deltagere er tilladt pr. invitation"
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Højst ${ MAX_ATTENDEES } deltager er tilladt pr. invitation",
+        "Højst ${ MAX_ATTENDEES } deltagere er tilladt pr. invitation"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
@@ -3136,6 +3363,9 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
       "Enter the code from your authenticator app": [
         "Indtast koden fra din godkendelsesapp"
       ],
@@ -3144,6 +3374,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Existent and added participants will be notified.": [
         "Eksisterende og tilføjede deltagere vil blive underrettet."
@@ -3177,6 +3410,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
+      ],
+      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
+        "Hvis du ikke kender din adgangskode, skal du angive en gendannelsessætning for at sikre, at du ikke mister adgangen til din konto og dine data."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
@@ -3217,6 +3453,9 @@
       ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
+      ],
+      "Labels:": [
+        "Etiketter:"
       ],
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
@@ -3271,6 +3510,9 @@
       ],
       "None of the participants can be notified about your changes:": [
         "Ingen af deltagerne kan få besked om dine ændringer:"
+      ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Ingen af de uploadede nøgler er gyldige til kryptering. For at kunne sende beskeder til denne adresse skal du uploade en gyldig nøgle eller deaktivere \"Krypter e-mails\" for at kunne sende beskeder til denne adresse."
       ],
       "Not a valid URL": [
         "Ugyldig URL"
@@ -3360,6 +3602,9 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
       ],
+      "Sign in": [
+        "Log ind"
+      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Nogle af dine svar på forekomster, som arrangøren tidligere har opdateret, vil gå tabt."
       ],
@@ -3423,6 +3668,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
       ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browsere. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
       ],
@@ -3458,6 +3706,9 @@
       ],
       "Week": [
         "Uge"
+      ],
+      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
+        "Vi flytter til ${ PROTON_ME_DOMAIN }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
@@ -3570,6 +3821,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din Proton-konto."
       ],
+      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
+        "Din e-mailadresse ændres ikke. Men snart skal du logge ind på ${ link }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
@@ -3600,6 +3854,14 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Flere kontakter ser identiske ud. ${ mergeAction }"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Adgang"
+      ],
+      "Label (optional)": [
+        "Etiket (valgfrit)"
       ]
     },
     "Input placeholder": {
@@ -3690,6 +3952,9 @@
       ],
       "Color": [
         "Farve"
+      ],
+      "Coming soon": [
+        "Kommer snart"
       ],
       "Contacts": [
         "Kontakter"
@@ -3831,6 +4096,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Navigation": [
+        "Navigation"
       ],
       "Notification": [
         "Notifikation"
@@ -4027,9 +4295,17 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -4068,6 +4344,30 @@
         "Administrer kalendere"
       ]
     },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Ikke muligt at oprette flere kalendere. Du har nået det maksimale antal personlige kalendere for dit abonnement."
+      ],
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Ikke muligt at tilføje flere kalendere. Du har nået det maksimale antal tilmeldte kalendere for dit abonnement."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Ikke muligt at oprette flere kalendere. Du har nået det maksimale antal personlige kalendere for dit abonnement."
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } har delt deres kalender ${ boldCalendarName } med dig."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Tilmeld kalender"
+      ],
+      "Unable to join more calendars": [
+        "Kan ikke tilmelde flere kalendere"
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "Sådan importerer du kalendere fra en anden tjeneste"
@@ -4095,6 +4395,9 @@
       ],
       "How to import emails from Yahoo": [
         "Sådan importerer du e-mails fra Yahoo"
+      ],
+      "Share calendar": [
+        "Del kalender"
       ],
       "Time zone changed": [
         "Tidszone ændret"
@@ -4279,6 +4582,14 @@
       "Member added": [
         "Medlem tilføjet",
         "Medlemmer tilføjet"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Kalenderinvitation afvist"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Tilmeldt ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification suffix": {
@@ -4612,6 +4923,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } ud af ${ countContacts } kontakt ekporteret.",
+        "${ contactsExported.length } ud af ${ countContacts } kontakter ekporteret."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } af i alt ${ totalBeDeleted } kontakt blev slettet.",
         "${ model.deleted.length } af i alt ${ totalBeDeleted } kontakter blev slettet."
@@ -4682,6 +4997,27 @@
         "Kunne ikke opdatere indstillinger"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-Proton users, share your calendar with a link": [
+        "Hvis du vil invitere ikke-Proton-brugere, skal du dele din kalender med et link"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Du har overskredet det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem pr. kalender",
+        "Du har overskredet det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlemmer pr. kalender"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Tilføj de Proton-konti, som du ønsker at dele ${ calendarName } med. Vi sender dem en invitation."
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with Proton users": [
+        "Del med Proton-brugere"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Oprettet af ${ ownerName }"
@@ -4702,14 +5038,26 @@
       "Easily accept invites": [
         "Let at acceptere invitationer"
       ],
+      "Get up to ${ credits } in credits.": [
+        "Få op til ${ credits } i kreditter."
+      ],
+      "Invite friends to Proton": [
+        "Inviter venner til Proton"
+      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Nu vises invitationer i din kalender som afventende begivenheder. Du skal blot åbne en begivenhed for at svare. ${ goToSettingsLink }"
+      ],
+      "Subscribe to other calendars": [
+        "Abonner på andre kalendere"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prøv ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Du kan nu tilføje notifikationer til kalendere, du har abonneret på."
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "Du kan abonnere på eksterne kalendere og læse deres begivenheder."
       ]
     },
     "Spotlight settings link": {
@@ -5058,9 +5406,6 @@
       "Continue with partial import?": [
         "Fortsæt med delvis import?"
       ],
-      "Create calendar": [
-        "Opret kalender"
-      ],
       "Create contact": [
         "Opret kontakt"
       ],
@@ -5105,14 +5450,14 @@
       "Drop to upload": [
         "Slip for at uploade"
       ],
-      "Edit calendar": [
-        "Rediger kalender"
-      ],
       "Edit contact": [
         "Rediger kontakt"
       ],
       "Edit contact group": [
         "Redigér kontaktgruppe"
+      ],
+      "Edit email settings": [
+        "Rediger e-mail-indstillinger"
       ],
       "Edit image": [
         "Redigér billede"
@@ -5303,6 +5648,9 @@
       ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
+      ],
+      "Sign in at ${ PROTON_ME_DOMAIN }": [
+        "Log ind på ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Log ud"
@@ -5500,6 +5848,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Hvis du vil have adgang til denne delte kalender, skal du aktivere denne adresse eller bede ${ boldCalendarOwnerEmail } om at sende en invitation til en aktiv adresse."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Du kan ikke deltage i denne kalender, fordi din inviterede e-mailadresse (${ boldInvitedAddress }) er deaktiveret."
       ]
     },
     "Weekly recurring event, frequency": {
