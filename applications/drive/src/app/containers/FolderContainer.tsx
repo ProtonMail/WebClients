@@ -16,7 +16,7 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
     const { activeFolder, setFolder } = useActiveShare();
     const lastFolderPromise = useRef<Promise<DriveFolder | undefined>>();
     const [, setError] = useState();
-    const { getDefaultShare } = useDefaultShare();
+    const { getDefaultShare, isShareAvailable } = useDefaultShare();
     useFolderContainerTitle({ params: match.params, setAppTitle: useAppTitle });
     const events = useDriveEventManager();
 
@@ -41,6 +41,13 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
             console.warn('Missing parameters, should be none or shareId/type/linkId');
             navigateToRoot();
         } else if (type === LinkURLType.FOLDER) {
+            const ac = new AbortController();
+            const isAvailable = await isShareAvailable(ac.signal, shareId);
+            if (!isAvailable) {
+                console.warn('Provided share is not available, probably locked or soft deleted');
+                navigateToRoot();
+                return;
+            }
             return { shareId, linkId };
         }
         return lastFolderPromise.current;
