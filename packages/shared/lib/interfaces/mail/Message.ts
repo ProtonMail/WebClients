@@ -63,6 +63,7 @@ export interface MessageMetadata {
     NumAttachments: number;
     Flags: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
+    BimiSelector?: string | null;
 }
 
 export interface Message extends MessageMetadata {
@@ -78,7 +79,6 @@ export interface Message extends MessageMetadata {
     PasswordHint?: string;
     RightToLeft?: number;
     EORecipient?: Recipient;
-    BimiSelector?: string | null;
 }
 
 export type DraftMessage = Pick<
