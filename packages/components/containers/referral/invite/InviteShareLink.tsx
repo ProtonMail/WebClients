@@ -3,13 +3,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, TwitterButton, useNotifications } from '@proton/components';
 import { useUserSettings } from '@proton/components/hooks';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import throttle from '@proton/utils/throttle';
 
 const InviteShareLink = () => {
-    const appName = getAppName(APPS.PROTONMAIL);
     const [userSettings, loadingUserSettings] = useUserSettings();
     const { createNotification } = useNotifications();
 
@@ -46,7 +44,7 @@ const InviteShareLink = () => {
                         url={encodeURI(
                             'https://twitter.com/intent/tweet?text=' +
                                 c('Info')
-                                    .t`I’ve been using ${appName} and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${referrerLink}`
+                                    .t`I’ve been using ${MAIL_APP_NAME} and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${referrerLink}`
                         )}
                         target="_blank"
                     >

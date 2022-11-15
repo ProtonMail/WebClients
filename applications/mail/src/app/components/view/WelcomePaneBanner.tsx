@@ -5,8 +5,14 @@ import { c } from 'ttag';
 
 import { Href, MailShortcutsModal, Price, SettingsLink, useModalState, useModals } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, BRAND_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    CALENDAR_APP_NAME,
+    DRIVE_APP_NAME,
+    MAIL_APP_NAME,
+    PLANS,
+    VPN_APP_NAME,
+} from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
 import { PROTON_DEFAULT_THEME, ThemeTypes } from '@proton/shared/lib/themes/themes';
@@ -69,8 +75,6 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
         openShop: c('Action').t`Open shop`,
         openCalendar: c('Action').t`Open calendar`,
     };
-
-    const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
     const getLink = (url: string, optionID: number) => `${url}?ref=${upsellRefLink}${optionID}`;
 
@@ -384,7 +388,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
         },
         !userSettings.AppWelcome?.Calendar?.length && {
             id: 21,
-            text: c('Info').t`Use ${calendarAppName} to keep your agenda private.`,
+            text: c('Info').t`Use ${CALENDAR_APP_NAME} to keep your agenda private.`,
             cta: (
                 <Href
                     url={getLink(WELCOME_PANE_OPTIONS_URLS.calendar, UPSELL_MAIL_BANNER_LINK_ID.USE_PROTON_CALENDAR)}

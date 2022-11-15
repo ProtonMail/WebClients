@@ -4,16 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Loader, ReferralFeaturesList, ReferralHowItWorks, useLoading } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { PlanIDs } from '@proton/shared/lib/interfaces';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
-
-const MAIL_APP_NAME = getAppName(APPS.PROTONMAIL);
 
 type PlanType = 'free' | 'trial';
 
@@ -50,7 +47,7 @@ const ReferralStep = ({ experiment, onPlan, onBack }: Props) => {
                         className="mb0-5"
                         onClick={() => {
                             setType('trial');
-                            withLoading(onPlan({ [PLANS.MAIL]: 1 }));
+                            void withLoading(onPlan({ [PLANS.MAIL]: 1 }));
                         }}
                         fullWidth
                     >{c('Action in trial plan').t`Start my 30-day free trial`}</Button>
@@ -62,7 +59,7 @@ const ReferralStep = ({ experiment, onPlan, onBack }: Props) => {
                         shape="ghost"
                         onClick={() => {
                             setType('free');
-                            withLoading(onPlan({}));
+                            void withLoading(onPlan({}));
                         }}
                         fullWidth
                     >{c('Action in trial plan').t`Continue with free plan`}</Button>
@@ -89,7 +86,7 @@ const ReferralStep = ({ experiment, onPlan, onBack }: Props) => {
                     className="mb0-5"
                     onClick={() => {
                         setType('trial');
-                        withLoading(onPlan({ [PLANS.MAIL]: 1 }));
+                        void withLoading(onPlan({ [PLANS.MAIL]: 1 }));
                     }}
                     fullWidth
                 >{c('Action in trial plan').t`Try free for 30 days`}</Button>
@@ -104,7 +101,7 @@ const ReferralStep = ({ experiment, onPlan, onBack }: Props) => {
                     shape="ghost"
                     onClick={() => {
                         setType('free');
-                        withLoading(onPlan({}));
+                        void withLoading(onPlan({}));
                     }}
                     fullWidth
                 >{c('Action in trial plan').t`No, thanks`}</Button>

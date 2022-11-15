@@ -14,8 +14,7 @@ import {
     useActiveBreakpoint,
     useToggle,
 } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ListView } from '../components/FileBrowser';
 import { ListViewHeaderItem } from '../components/FileBrowser/interface';
@@ -35,7 +34,6 @@ const headerItemsMobile: ListViewHeaderItem[] = [headerItems.name, headerItems.p
 const DriveContainerBlurred = () => {
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: toggleExpanded } = useToggle();
-    const appName = getAppName(APPS.PROTONDRIVE);
     const { isDesktop } = useActiveBreakpoint();
 
     const logo = <MainLogo to="/" />;
@@ -82,7 +80,7 @@ const DriveContainerBlurred = () => {
             id: 'dummy-link-2',
             parentLinkId: '',
             mimeType: 'text/plain',
-            name: `Welcome to ${appName}.txt`,
+            name: `Welcome to ${DRIVE_APP_NAME}.txt`,
             fileModifyTime: Date.now() / 1000,
             trashed: null,
             size: 1024 * 1024,
