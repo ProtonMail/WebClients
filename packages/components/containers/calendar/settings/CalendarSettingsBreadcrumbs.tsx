@@ -7,6 +7,7 @@ import { ButtonLike } from '@proton/atoms';
 import { CollapsingBreadcrumbs, Icon, Option, SimpleDropdown } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import SelectOptions from '@proton/components/components/selectTwo/SelectOptions';
+import { getCalendarSubpagePath, getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
@@ -28,7 +29,7 @@ const CalendarSettingsBreadcrumbs = ({ calendar, calendars }: Props) => {
                     {
                         text: c('breadcrumb').t`Calendars`,
                         key: 'calendars-main-route',
-                        onClick: () => history.replace('/calendar/calendars'),
+                        onClick: () => history.replace(getCalendarsSettingsPath({ fullPath: true })),
                     },
                     {
                         text: calendar.Name,
@@ -48,9 +49,11 @@ const CalendarSettingsBreadcrumbs = ({ calendar, calendars }: Props) => {
                     content={<Icon name="chevron-down" className="caret-like" />}
                     hasCaret={false}
                 >
-                    <SelectOptions
+                    <SelectOptions<string>
                         selected={calendars.findIndex(({ ID }) => ID === calendar.ID) || 0}
-                        onChange={({ value: calendarID }) => history.replace(`/calendar/calendars/${calendarID}`)}
+                        onChange={({ value: calendarID }) =>
+                            history.replace(getCalendarSubpagePath(calendarID, { fullPath: true }))
+                        }
                     >
                         {calendars.map(({ ID, Name, Color }) => (
                             <Option key={ID} value={ID} title={Name}>

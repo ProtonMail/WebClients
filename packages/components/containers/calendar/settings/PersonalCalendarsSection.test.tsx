@@ -19,7 +19,19 @@ jest.mock('../../../hooks/useApi', () => ({
     __esModule: true,
     default: jest.fn(() => jest.fn().mockResolvedValue({})),
 }));
-
+jest.mock('@proton/components/hooks/useConfig', () => () => ({
+    CLIENT_TYPE: 1,
+    CLIENT_SECRET: 'not_so_secret',
+    APP_VERSION: 'test',
+    APP_NAME: 'proton-calendar',
+    API_URL: 'api',
+    LOCALES: {},
+    DATE_VERSION: 'test',
+    COMMIT: 'test',
+    BRANCH: 'test',
+    SENTRY_DSN: 'test',
+    VERSION_PATH: 'test',
+}));
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
 jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
 jest.mock('../../eventManager/calendar/ModelEventManagerProvider', () => ({
@@ -27,7 +39,6 @@ jest.mock('../../eventManager/calendar/ModelEventManagerProvider', () => ({
 }));
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/components/hooks/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
-jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
 jest.mock('@proton/components/hooks/useEarlyAccess', () => () => ({}));
 
 function renderComponent(props?: Partial<PersonalCalendarsSectionProps>) {

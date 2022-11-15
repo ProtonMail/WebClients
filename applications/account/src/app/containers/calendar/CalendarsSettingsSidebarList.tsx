@@ -19,10 +19,9 @@ import {
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import { getIsOwnedCalendar, getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getIsCalendarSubpage } from '@proton/shared/lib/calendar/settingsRoutes';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
-
-import { getIsSingleCalendarSection } from './routes';
 
 const MAX_CALENDARS = 10;
 
@@ -65,7 +64,7 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
     const headerId = generateUID('CalendarsListHeader');
     const contentId = generateUID('CalendarsListContent');
 
-    const [isExpanded, setIsExpanded] = useState(() => getIsSingleCalendarSection(pathname, calendarsSection.to));
+    const [isExpanded, setIsExpanded] = useState(() => getIsCalendarSubpage(pathname, calendarsSection.to));
 
     const toggleCalendarItems = () => {
         setIsExpanded((expanded) => !expanded);
