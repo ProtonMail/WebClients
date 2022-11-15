@@ -1,5 +1,5 @@
 import { ThemeColor } from '@proton/colors';
-import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getAccountAppRoutes } from '../containers/account/routes';
 import { getCalendarAppRoutes } from '../containers/calendar/routes';
@@ -12,6 +12,7 @@ interface Arguments {
     user: UserModel;
     addresses: Address[];
     organization: Organization;
+    subscription: Subscription;
     isSpyTrackerEnabled: boolean;
     isInviteSettingEnabled: boolean;
     isReferralProgramEnabled: boolean;
@@ -26,6 +27,7 @@ export const getRoutes = ({
     user,
     organization,
     addresses,
+    subscription,
     isDataRecoveryAvailable,
     isSpyTrackerEnabled,
     isReferralProgramEnabled,
@@ -37,7 +39,7 @@ export const getRoutes = ({
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({ user, isDataRecoveryAvailable, isReferralProgramEnabled, recoveryNotification }),
-        mail: getMailAppRoutes({ user, addresses, organization, isSpyTrackerEnabled, isShowSenderImagesEnabled }),
+        mail: getMailAppRoutes({ user, addresses, organization, subscription, isSpyTrackerEnabled, isShowSenderImagesEnabled }),
         calendar: getCalendarAppRoutes(isSubscribeCalendarEnabled, isInviteSettingEnabled),
         drive: getDriveAppRoutes(),
         organization: getOrganizationAppRoutes({ user, organization, isBulkUserUploadEnabled }),
