@@ -17,7 +17,7 @@ export default function useDefaultShare() {
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
     const sharesState = useSharesState();
-    const { getShareWithKey } = useShare();
+    const { getShare, getShareWithKey } = useShare();
     const { createVolume } = useVolume();
 
     const loadUserShares = useCallback(async (): Promise<void> => {
@@ -55,7 +55,22 @@ export default function useDefaultShare() {
         [sharesState.getDefaultShareId, getShareWithKey]
     );
 
+    const isShareAvailable = useCallback(
+        (abortSignal: AbortSignal, shareId: string): Promise<boolean> => {
+            return debouncedFunction(
+                async (abortSignal: AbortSignal) => {
+                    const share = await getShare(abortSignal, shareId);
+                    return !share.isLocked && !share.isVolumeSoftDeleted;
+                },
+                ['getDefaultShare'],
+                abortSignal
+            );
+        },
+        [getShare]
+    );
+
     return {
         getDefaultShare,
+        isShareAvailable,
     };
 }
