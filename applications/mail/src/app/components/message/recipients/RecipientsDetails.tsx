@@ -117,7 +117,7 @@ const RecipientsDetails = ({
             ) : (
                 <>
                     {ToList.length > 0 && (
-                        <div className="mb1">
+                        <div className="mb1" data-testid="recipients:to-list">
                             <div className="mb0-5">
                                 <strong className="mb0-5">{c('Title').t`Recipients`}</strong>
                             </div>
@@ -125,7 +125,7 @@ const RecipientsDetails = ({
                         </div>
                     )}
                     {CCList.length > 0 && (
-                        <div className="mb1">
+                        <div className="mb1" data-testid="recipients:cc-list">
                             <div className="mb0-5">
                                 <strong className="mb0-5">{c('Title').t`CC`}</strong>
                             </div>
@@ -133,7 +133,7 @@ const RecipientsDetails = ({
                         </div>
                     )}
                     {BCCList.length > 0 && (
-                        <div className="mb1">
+                        <div className="mb1" data-testid="recipients:bcc-list">
                             <div className="mb0-5">
                                 <strong className="mb0-5">{c('Title').t`BCC`}</strong>
                             </div>

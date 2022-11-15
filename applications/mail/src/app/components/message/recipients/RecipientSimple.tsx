@@ -18,7 +18,7 @@ const RecipientSimple = ({ isLoading, recipientsOrGroup, isOutside, onContactDet
     return (
         <div className="flex flex-nowrap flex-align-items-center" data-testid="message-header:to">
             <RecipientType label={c('Label Recipient').t`To`}>
-                <span className="flex">
+                <span className="flex" data-testid="recipients:partial-recipients-list">
                     {recipientsOrGroup.length
                         ? recipientsOrGroup.map((recipientOrGroup, index) => {
                               return (
@@ -31,6 +31,11 @@ const RecipientSimple = ({ isLoading, recipientsOrGroup, isOutside, onContactDet
                                           isExpanded={false}
                                           onContactDetails={onContactDetails}
                                           onContactEdit={onContactEdit}
+                                          customDataTestId={`recipients:item-${
+                                              recipientOrGroup.group
+                                                  ? recipientOrGroup.group.group?.Name
+                                                  : recipientOrGroup.recipient?.Address
+                                          }`}
                                       />
                                       {index < recipientsOrGroup.length - 1 && (
                                           <span className="message-recipient-item-separator mr0-2">,</span>

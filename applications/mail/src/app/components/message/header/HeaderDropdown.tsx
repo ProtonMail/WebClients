@@ -79,6 +79,7 @@ const HeaderDropdown = ({
                     isOpen={isOpen}
                     onClick={toggle}
                     disabled={loading}
+                    aria-expanded={isOpen}
                     {...rest}
                 >
                     {content}
@@ -111,6 +112,7 @@ const HeaderDropdown = ({
                         anchorRef={anchorRef}
                         onClose={handleAdditionalClose}
                         contentProps={additionalDropdown.contentProps}
+                        data-testid={`message-view-more-dropdown:additional-${index}`}
                     >
                         {additionalDropdown.render({
                             onClose: handleAdditionalClose,

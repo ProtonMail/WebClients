@@ -66,6 +66,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
                     fullWidth
                     className="rounded-sm"
                     onClick={handleClick}
+                    data-testid="ask-resign-banner:verify-button"
                 >{c('Action').t`Verify`}</Button>
             </span>
 
