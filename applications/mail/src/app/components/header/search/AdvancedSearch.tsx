@@ -189,7 +189,14 @@ const AdvancedSearch = ({
                     ref={searchInputRef}
                     suffix={
                         model.keyword ? (
-                            <Button shape="ghost" color="weak" size="small" type="button" onClick={handleClear}>
+                            <Button
+                                shape="ghost"
+                                color="weak"
+                                size="small"
+                                type="button"
+                                data-testid="clear-button"
+                                onClick={handleClear}
+                            >
                                 {c('Action').t`Clear`}
                             </Button>
                         ) : null

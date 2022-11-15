@@ -137,6 +137,7 @@ export const SearchField = () => {
                                         color="weak"
                                         size="small"
                                         className="rounded-sm"
+                                        data-testid="clear-button"
                                         title={c('Action').t`Clear`}
                                         onClick={() => {
                                             setSearchParams('');
