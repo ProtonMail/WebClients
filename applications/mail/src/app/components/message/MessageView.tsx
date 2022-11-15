@@ -272,6 +272,16 @@ const MessageView = (
         }
     }, [message.data?.ID]);
 
+    /**
+     * When message pass from sending to draft (for ex when undo send)
+     * we need to go back to non expanded state
+     */
+    useEffect(() => {
+        if (draft === true) {
+            setExpanded(false);
+        }
+    }, [draft]);
+
     // Automatically activate source mode when processing errors
     const hasProcessingErrors = !!message.errors?.processing?.length;
     useEffect(() => {

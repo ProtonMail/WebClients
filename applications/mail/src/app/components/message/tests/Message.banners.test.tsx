@@ -1,5 +1,6 @@
 import { waitFor } from '@testing-library/dom';
 
+import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { addAddressToCache, minimalCache } from '../../../helpers/test/cache';
@@ -34,7 +35,14 @@ describe('Message banners', () => {
     });
 
     it('should show the spam banner', async () => {
-        initMessage({ data: { Flags: MESSAGE_FLAGS.FLAG_PHISHING_AUTO } });
+        initMessage({
+            data: {
+                Flags: setBit(
+                    MESSAGE_FLAGS.FLAG_PHISHING_AUTO,
+                    setBit(MESSAGE_FLAGS.FLAG_SENT, setBit(0, MESSAGE_FLAGS.FLAG_RECEIVED))
+                ),
+            },
+        });
 
         const { getByTestId } = await setup();
 
