@@ -352,7 +352,7 @@ const AdvancedSearch = ({
                     </>
                 )}
             </div>
-            <div className={classnames(['py1 mx1-5 flex flex-align-items-center flex-justify-space-between'])}>
+            <div className="my1 mx1-5 flex flex-align-items-center flex-justify-space-between">
                 {showMore ? null : (
                     <Button
                         data-testid="advanced-search:show-more"
