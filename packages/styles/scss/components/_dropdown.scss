@@ -12,11 +12,11 @@
 	position: fixed;
 	z-index: $layer-modals;
 
+	// NOTE: Don't use logical properties. RTL positioning is done in JS.
 	/* stylelint-disable */
-	inset-block-start: calc(var(--top) * 1px);
-	inset-inline-start: calc(var(--left) * 1px); // JS provide left value only
+	top: var(--top);
+	left: var(--left);
 	/* stylelint-enable */
-
 	transform: scale(1);
 	border-radius: var(--border-radius-md);
 	box-shadow: var(--shadow-lifted);
@@ -129,8 +129,8 @@
 
 	/* Scrollable frame inside the dropdown */
 	&-content {
-		inline-size: calc(var(--width) * 1px);
-		block-size: calc(var(--height) * 1px);
+		inline-size: var(--width);
+		block-size: var(--height);
 		min-inline-size: min(var(--min-width, 1.5em), 100vw);
 		min-block-size: min(var(--min-height, 1em), 100vh);
 		max-inline-size: var(--max-width, unset);
