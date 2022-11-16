@@ -1,9 +1,10 @@
-import { SetStateAction, useState } from 'react';
+import { ChangeEvent, SetStateAction, useState } from 'react';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import {
     Checkbox,
     CreateNotificationOptions,
+    CustomNotificationProps,
     InputFieldTwo,
     NotificationButton,
     RadioGroup,
@@ -23,28 +24,43 @@ export default {
     },
 };
 
+const ExpandableNotification = () => {
+    const [open, setOpen] = useState(false);
+    return (
+        <>
+            <span>{!open ? 'Expand' : 'Collapse'} me</span>
+            {open && <div style={{ height: 100, width: 100 }}></div>}
+            <NotificationButton onClick={() => setOpen(!open)}>{!open ? 'Expand' : 'Collapse'}</NotificationButton>
+        </>
+    );
+};
+
+const CloseableNotification = ({ onClose }: CustomNotificationProps) => {
+    return (
+        <>
+            <span>I've done the thing</span>
+            <NotificationButton onClick={onClose}>Undo</NotificationButton>
+        </>
+    );
+};
+
+const WarningNotification = ({ onClose }: CustomNotificationProps) => {
+    return (
+        <>
+            <span>Oh no, not again</span>
+            <NotificationButton notificationType="warning" onClick={onClose}>
+                Edit
+            </NotificationButton>
+        </>
+    );
+};
+
 export const Basic = () => {
     const { createNotification } = useNotifications();
 
     const handleClick = (options: CreateNotificationOptions) => () => {
         createNotification(options);
     };
-
-    const defaultWithAction = (
-        <>
-            <span>I've done the thing</span>
-            <NotificationButton onClick={undefined}>Undo</NotificationButton>
-        </>
-    );
-
-    const warningWithAction = (
-        <>
-            <span>Oh no, not again</span>
-            <NotificationButton notificationType="warning" onClick={undefined}>
-                Edit
-            </NotificationButton>
-        </>
-    );
 
     const types = ['info', 'warning'] as const;
 
@@ -59,12 +75,14 @@ export const Basic = () => {
 
         const [byoLoader, setByoLoader] = useState(false);
 
-        const ByoContent = () => {
+        const ByoContent = ({ onClose }: CustomNotificationProps) => {
             return (
                 <>
                     <span>{byoText}</span>
                     {byoButtonShow && (
-                        <NotificationButton notificationType={byoType}>{byoButtonText}</NotificationButton>
+                        <NotificationButton notificationType={byoType} onClick={onClose}>
+                            {byoButtonText}
+                        </NotificationButton>
                     )}
                     {byoLoader && <CircleLoader />}
                 </>
@@ -140,7 +158,7 @@ export const Basic = () => {
                             className="w10e"
                             value={byoExpiration}
                             type="number"
-                            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                            onChange={(event: ChangeEvent<HTMLInputElement>) =>
                                 setByoExpiration(Number(event.target.value))
                             }
                         />
@@ -175,7 +193,11 @@ export const Basic = () => {
             >
                 Default notification
             </Button>
-            <Button color="info" onClick={handleClick({ type: 'info', text: defaultWithAction })} className="mr1 mb1">
+            <Button
+                color="info"
+                onClick={handleClick({ type: 'info', text: <CloseableNotification /> })}
+                className="mr1 mb1"
+            >
                 Default with action
             </Button>
             <Button
@@ -187,7 +209,7 @@ export const Basic = () => {
             </Button>
             <Button
                 color="info"
-                onClick={handleClick({ type: 'info', text: defaultWithAction, showCloseButton: false })}
+                onClick={handleClick({ type: 'info', text: <CloseableNotification />, showCloseButton: false })}
                 className="mr1 mb1"
             >
                 Default without close button but with an action
@@ -220,7 +242,7 @@ export const Basic = () => {
             </Button>
             <Button
                 color="warning"
-                onClick={handleClick({ type: 'warning', text: warningWithAction })}
+                onClick={handleClick({ type: 'warning', text: <WarningNotification /> })}
                 className="mr1 mb1"
             >
                 Warning with action
@@ -234,10 +256,17 @@ export const Basic = () => {
             </Button>
             <Button
                 color="warning"
-                onClick={handleClick({ type: 'warning', text: warningWithAction, showCloseButton: false })}
+                onClick={handleClick({ type: 'warning', text: <WarningNotification />, showCloseButton: false })}
                 className="mr1 mb1"
             >
                 Warning without close button but with an action
+            </Button>
+            <Button
+                color="info"
+                onClick={handleClick({ type: 'info', text: <ExpandableNotification />, expiration: -1 })}
+                className="mr1 mb1"
+            >
+                Expandable notification
             </Button>
 
             <hr />
