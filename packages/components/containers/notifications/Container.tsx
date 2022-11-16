@@ -95,8 +95,9 @@ const NotificationsContainer = ({ notifications, removeNotification, hideNotific
                 isClosing={isClosing}
                 icon={icon}
                 type={type}
-                onClose={showCloseButton ? () => hideNotification(id) : undefined}
+                onClose={() => hideNotification(id)}
                 onExit={() => removeNotification(id)}
+                showCloseButton={showCloseButton}
             >
                 {text}
             </Notification>

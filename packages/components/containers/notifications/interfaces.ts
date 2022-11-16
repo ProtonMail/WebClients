@@ -25,3 +25,7 @@ export interface CreateNotificationOptions
     icon?: IconName;
     expiration?: number;
 }
+
+export interface CustomNotificationProps {
+    onClose?: () => void;
+}
