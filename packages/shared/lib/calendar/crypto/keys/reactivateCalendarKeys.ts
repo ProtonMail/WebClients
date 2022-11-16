@@ -78,7 +78,7 @@ const reactivateCalendarKeys = async ({
                     privateKeys,
                     publicKeys,
                 });
-                const privateKey = await await CryptoProxy.importPrivateKey({
+                const privateKey = await CryptoProxy.importPrivateKey({
                     armoredKey: PrivateKey,
                     passphrase: decryptedPassphrase,
                 });

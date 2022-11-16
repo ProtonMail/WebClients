@@ -6,7 +6,10 @@ import {
     SubscribedCalendarsSection,
 } from '@proton/components/containers';
 import { useCalendarShareInvitations } from '@proton/components/hooks';
-import { filterOutExpiredInvitations, getPendingInvitations } from '@proton/shared/lib/calendar/share';
+import {
+    filterOutExpiredInvitations,
+    getPendingInvitations,
+} from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 

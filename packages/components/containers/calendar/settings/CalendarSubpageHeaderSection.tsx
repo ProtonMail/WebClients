@@ -9,7 +9,7 @@ import { SettingsSectionWide } from '@proton/components/containers';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { classnames } from '@proton/components/helpers';
 import { CALENDAR_STATUS_TYPE, getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
-import { getCalendarCreatedByText } from '@proton/shared/lib/calendar/share';
+import { getCalendarCreatedByText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
