@@ -12,6 +12,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
     DRAFT_ID_PREFIX,
+    FORWARDED_MESSAGE,
     FW_PREFIX,
     ORIGINAL_MESSAGE,
     RE_PREFIX,
@@ -152,6 +153,68 @@ export const handleActions = (
     }
 };
 
+export const getBlockquoteRecipientsString = (recipients: Recipient[] = []) => {
+    return recipients
+        .map((recipient) => {
+            return `${recipient?.Name || recipient?.Address} &lt;${recipient?.Address}&gt;`;
+        })
+        .join(', ');
+};
+
+export const generatePreviousMessageInfos = (referenceMessage: PartialMessageState, action: MESSAGE_ACTIONS) => {
+    const senderString = getBlockquoteRecipientsString([referenceMessage.data?.Sender] as Recipient[]);
+    const date = formatFullDate(getDate(referenceMessage?.data as Message, ''));
+
+    if (action === MESSAGE_ACTIONS.FORWARD) {
+        const ccString = getBlockquoteRecipientsString(referenceMessage.data?.CCList as Recipient[]);
+        const toString = getBlockquoteRecipientsString(referenceMessage.data?.ToList as Recipient[]);
+        const ccRecipients = (referenceMessage.data?.CCList?.length || 0) > 0 ? `CC: ${ccString}<br>` : '';
+        const subject = referenceMessage.data?.Subject;
+
+        /*
+         * translator: String inserted in draft blockquotes when forwarding a message
+         * ${senderString} is a string containing the sender of the message you're forwarding
+         * Full sentence for reference: "From: Display Name <address@protonmail.com>"
+         */
+        const fromString = c('forwardmessage').t`From: ${senderString}`;
+        /*
+         * translator: String inserted in draft blockquotes when forwarding a message
+         * ${date} is the localized date "Thursday, October 27th, 2022 at 12:31", for example
+         * Full sentence for reference: "Date: On Thursday, October 27th, 2022 at 12:31"
+         */
+        const dateString = c('forwardmessage').t`Date: On ${date}`;
+        /*
+         * translator: String inserted in draft blockquotes when forwarding a message
+         * ${subject} is a string containing the subject of the message you're forwarding
+         */
+        const subjectString = c('forwardmessage').t`Subject: ${subject}`;
+        /*
+         * translator: String inserted in draft blockquotes when forwarding a message
+         * ${toString} is a string containing the recipients of the message you're forwarding
+         * Full sentence for reference: "To: Display Name <address@protonmail.com>"
+         */
+        const recipientString = c('forwardmessage').t`To: ${toString}`;
+
+        return `${FORWARDED_MESSAGE}<br>
+        ${fromString}<br>
+        ${dateString}<br>
+        ${subjectString}<br>
+        ${recipientString}<br>
+        ${ccRecipients}<br>`;
+    } else {
+        /*
+         * translator: String inserted in draft blockquotes when replying to a message
+         * ${date} is the localized date "Thursday, October 27th, 2022 at 12:31", for example
+         * ${senderString} is a string containing the sender of the message you're replying to
+         * Full sentence for reference: "On Thursday, October 27th, 2022 at 12:31, Display Name <address@protonmail.com> wrote:"
+         */
+        const previously = c('Message').t`On ${date}, ${senderString} wrote:`;
+
+        return `${ORIGINAL_MESSAGE}<br>
+        ${previously}<br><br>`;
+    }
+};
+
 /**
  * Generate blockquote of the referenced message to the content of the new mail
  */
@@ -159,12 +222,9 @@ const generateBlockquote = (
     referenceMessage: PartialMessageState,
     mailSettings: MailSettings,
     userSettings: UserSettings,
-    addresses: Address[]
+    addresses: Address[],
+    action: MESSAGE_ACTIONS
 ) => {
-    const date = formatFullDate(getDate(referenceMessage?.data as Message, ''));
-    const name = referenceMessage?.data?.Sender?.Name;
-    const address = `&lt;${referenceMessage?.data?.Sender?.Address}&gt;`;
-    const previously = c('Message').t`On ${date}, ${name} ${address} wrote:`;
     const previousContent = referenceMessage.errors?.decryption
         ? referenceMessage.data?.Body
         : isPlainText(referenceMessage.data)
@@ -177,9 +237,10 @@ const generateBlockquote = (
           )
         : getDocumentContent(restoreImages(referenceMessage.messageDocument?.document, referenceMessage.messageImages));
 
+    const previousMessageInfos = generatePreviousMessageInfos(referenceMessage, action);
+
     return `<div class="${CLASSNAME_BLOCKQUOTE}">
-        ${ORIGINAL_MESSAGE}<br>
-        ${previously}<br><br>
+        ${previousMessageInfos}
         <blockquote class="${CLASSNAME_BLOCKQUOTE}" type="cite">
             ${previousContent}
         </blockquote><br>
@@ -241,7 +302,7 @@ export const createNewDraft = (
             ? referenceMessage?.decryption?.decryptedBody
                 ? referenceMessage?.decryption?.decryptedBody
                 : ''
-            : generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses);
+            : generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses, action);
 
     const fontStyle = defaultFontStyle({ FontFace, FontSize });
 
