@@ -44,7 +44,7 @@ const NotificationButton: <E extends ElementType = typeof defaultElement>(
 export const NotificationCloseButton = ({ onClick }: { onClick?: () => void }) => {
     return (
         <NotificationButton icon onClick={onClick} close>
-            <Icon name="cross" />
+            <Icon name="cross-big" />
         </NotificationButton>
     );
 };
