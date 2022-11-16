@@ -16,7 +16,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import MoveScheduledModal from '../../components/message/modals/MoveScheduledModal';
 import MoveToSpamModal from '../../components/message/modals/MoveToSpamModal';
-import MoveAllButton from '../../components/notifications/MoveAllButton';
+import MoveAllNotificationButton from '../../components/notifications/MoveAllNotificationButton';
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { PAGE_SIZE, SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
@@ -342,7 +342,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 const handleMoveAll = suggestMoveAll ? () => moveAll(fromLabelID) : undefined;
 
                 const moveAllButton = handleMoveAll ? (
-                    <MoveAllButton
+                    <MoveAllNotificationButton
                         className={classnames([canUndo && 'mr1'])}
                         onMoveAll={handleMoveAll}
                         isMessage={isMessage}
