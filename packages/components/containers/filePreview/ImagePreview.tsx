@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import DOMPurify from 'dompurify';
 import { c } from 'ttag';
 
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
 
@@ -67,9 +68,11 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
         src: '',
     });
     const [ready, setReady] = useState(false);
+    const timeoutId = useRef<ReturnType<typeof setTimeout>>();
 
     const handleZoomOut = () => setScale((zoom) => (zoom ? zoom * 0.9 : 1));
     const handleZoomIn = () => setScale((zoom) => (zoom ? zoom * 1.1 : 1));
+
     const fitToContainer = () => {
         if (!imageRef.current || !containerBounds) {
             return;
@@ -95,6 +98,22 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
         if (!error) {
             setError(true);
         }
+    };
+
+    const handleFullImageLoaded = () => {
+        if (isFirefox()) {
+            // Setting the flag with arbitrary timeout value to hide thumbnail image with a delay.
+            // Firefox tends to insert bigger images slowly, which lead to flickering.
+            // Example:
+            // 1. Data of full-size image loads
+            // 2. We hide the thumbnail
+            // 3. Before the full image is properly inserted into DOM, we see preview overlay background
+            setTimeout(() => setReady(true), 200);
+        } else {
+            setReady(true);
+        }
+
+        fitToContainer();
     };
 
     const dimensions = getImageNaturalDimensions(imageRef.current);
@@ -126,9 +145,6 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
 
         // Load image before rendering
         const buffer = new Image();
-        buffer.onload = () => {
-            setReady(true);
-        };
         buffer.src = srcUrl;
 
         return () => {
@@ -138,6 +154,12 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
         };
     }, [contents, mimeType]);
 
+    useEffect(() => {
+        return () => {
+            clearTimeout(timeoutId.current);
+        };
+    }, []);
+
     return (
         <>
             <div ref={containerRef} className="file-preview-container">
@@ -145,21 +167,21 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
                     <UnsupportedPreview onDownload={onDownload} type="image" />
                 ) : (
                     <div
-                        className="flex-no-min-children mauto relative"
+                        className={classnames(['flex-no-min-children relative mauto'])}
                         style={{
                             ...scaledDimensions,
+                            overflow: 'hidden',
                             // Add checkered background to override any theme
                             // so transparent images are better visible.
                             background: isLoading
                                 ? ''
                                 : 'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%) 50% / 20px 20px',
-                            overflow: 'hidden',
                         }}
                     >
-                        {!isLoading && ready && (
+                        {!isLoading && (
                             <img
                                 ref={imageRef}
-                                onLoad={() => fitToContainer()}
+                                onLoad={handleFullImageLoaded}
                                 onError={handleBrokenImage}
                                 className={classnames(['file-preview-image file-preview-image-full-size'])}
                                 style={styles}
@@ -173,11 +195,11 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
                             onError={handleBrokenImage}
                             className={classnames(['file-preview-image', ready && 'hide'])}
                             style={{
-                                // Scaling up the image to hide its edges that become
-                                // transparent when blurred
-                                transform: 'scale(1.1)',
-                                filter: 'blur(5px)',
                                 ...scaledDimensions,
+                                // Blurring an image this way leads to its edges to become transparent.
+                                // To compensate this, we apply scale transformation.
+                                filter: 'blur(3px)',
+                                transform: 'scale(1.03)',
                             }}
                             src={placeholderSrc}
                             alt={c('Info').t`Preview`}
@@ -185,7 +207,6 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
                     </div>
                 )}
             </div>
-
             {!error && (
                 <ZoomControl
                     className={shouldHideZoomControls ? 'visibility-hidden' : ''}
