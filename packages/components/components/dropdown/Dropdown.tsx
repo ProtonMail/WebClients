@@ -225,8 +225,8 @@ const Dropdown = ({
     }
 
     const varPosition = {
-        '--top': position.top,
-        '--left': position.left,
+        '--top': `${position.top}px`,
+        '--left': `${position.left}px`,
     };
 
     const staticContentRectWidth = contentRect?.width || undefined;
@@ -236,8 +236,8 @@ const Dropdown = ({
     const varSize =
         width !== undefined
             ? {
-                  '--width': `${width}`,
-                  '--height': `${height}`,
+                  '--width': `${width}px`,
+                  '--height': `${height}px`,
               }
             : {};
 
