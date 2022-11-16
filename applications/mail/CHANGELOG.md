@@ -1,9 +1,5 @@
 ## Release 5.0.12 - November 16, 2022
 
-### Improvements
-
--   Added a verified badge to visually confirm the authenticity of official Proton emails
-
 ### Bug fixes
 
 -   Fixed an issue in which the message view container was too tall
