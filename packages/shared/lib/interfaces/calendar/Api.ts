@@ -222,6 +222,6 @@ export interface GetAllMembersApiResponse {
     Members: CalendarMember[];
 }
 
-export interface GetAllInvitationsApiResponse {
+export interface GetCalendarInvitationsResponse {
     Invitations: CalendarMemberInvitation[];
 }
