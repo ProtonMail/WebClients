@@ -48,9 +48,7 @@ const WarningNotification = ({ onClose }: CustomNotificationProps) => {
     return (
         <>
             <span>Oh no, not again</span>
-            <NotificationButton notificationType="warning" onClick={onClose}>
-                Edit
-            </NotificationButton>
+            <NotificationButton onClick={onClose}>Edit</NotificationButton>
         </>
     );
 };
@@ -79,11 +77,7 @@ export const Basic = () => {
             return (
                 <>
                     <span>{byoText}</span>
-                    {byoButtonShow && (
-                        <NotificationButton notificationType={byoType} onClick={onClose}>
-                            {byoButtonText}
-                        </NotificationButton>
-                    )}
+                    {byoButtonShow && <NotificationButton onClick={onClose}>{byoButtonText}</NotificationButton>}
                     {byoLoader && <CircleLoader />}
                 </>
             );

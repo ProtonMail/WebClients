@@ -29,3 +29,7 @@ export interface CreateNotificationOptions
 export interface CustomNotificationProps {
     onClose?: () => void;
 }
+
+export interface NotificationContextProps {
+    type: NotificationType;
+}
