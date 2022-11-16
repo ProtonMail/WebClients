@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
-import { getCalendarCreatedByText } from '@proton/shared/lib/calendar/share';
+import { getCalendarCreatedByText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { Nullable } from '@proton/shared/lib/interfaces';
 import { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';

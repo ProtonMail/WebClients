@@ -70,7 +70,7 @@ export const encryptPassphrase = async ({
         format: 'binary',
     });
 
-    // encrypt to each public key separetely to get separate serialized session keys
+    // encrypt to the public key separately to get a separate serialized session key
     const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
         ...sessionKey,
         encryptionKeys: publicKey,

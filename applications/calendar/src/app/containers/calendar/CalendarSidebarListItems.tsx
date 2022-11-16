@@ -55,8 +55,8 @@ import {
     CalendarMember,
     CalendarMemberInvitation,
     CalendarUrlsResponse,
-    GetAllInvitationsApiResponse,
     GetAllMembersApiResponse,
+    GetCalendarInvitationsResponse,
     MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
@@ -297,7 +297,7 @@ const CalendarSidebarListItems = ({
     const fetchMembersAndInvitations = async (calendarID: string) => {
         const [{ Members }, { Invitations }] = await Promise.all([
             api<GetAllMembersApiResponse>(getAllMembers(calendarID)),
-            api<GetAllInvitationsApiResponse>(getCalendarInvitations(calendarID)),
+            api<GetCalendarInvitationsResponse>(getCalendarInvitations(calendarID)),
         ]);
 
         // filter out owner and accepted invitations

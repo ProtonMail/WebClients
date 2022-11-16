@@ -1,17 +1,17 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { arrayToBinaryString, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
 
-import { AES256, EVENT_ACTIONS } from '../../constants';
-import { generateRandomBytes, getSHA256Base64String, xorEncryptDecrypt } from '../../helpers/crypto';
-import { stringToUint8Array, uint8ArrayToPaddedBase64URLString, uint8ArrayToString } from '../../helpers/encoding';
-import { Nullable } from '../../interfaces';
-import { ACCESS_LEVEL, CalendarLink, CalendarUrl } from '../../interfaces/calendar';
+import { AES256, EVENT_ACTIONS } from '../../../constants';
+import { generateRandomBytes, getSHA256Base64String, xorEncryptDecrypt } from '../../../helpers/crypto';
+import { stringToUint8Array, uint8ArrayToPaddedBase64URLString, uint8ArrayToString } from '../../../helpers/encoding';
+import { Nullable } from '../../../interfaces';
+import { ACCESS_LEVEL, CalendarLink, CalendarUrl } from '../../../interfaces/calendar';
 import {
     CalendarUrlEventManager,
     CalendarUrlEventManagerCreate,
     CalendarUrlEventManagerDelete,
     CalendarUrlEventManagerUpdate,
-} from '../../interfaces/calendar/EventManager';
+} from '../../../interfaces/calendar/EventManager';
 
 export const getIsCalendarUrlEventManagerDelete = (
     event: CalendarUrlEventManager

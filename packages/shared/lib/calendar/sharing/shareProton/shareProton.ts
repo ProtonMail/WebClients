@@ -2,18 +2,18 @@ import { c } from 'ttag';
 
 import { serverTime } from '@proton/crypto';
 
-import { acceptInvitation, rejectInvitation } from '../api/calendars';
-import { getIsOwnedCalendar } from '../calendar/calendar';
-import { getIsSubscribedCalendar } from '../calendar/subscribe/helpers';
-import { SECOND } from '../constants';
-import { getContactDisplayNameEmail } from '../contacts/contactEmail';
-import { canonicalizeEmail } from '../helpers/email';
-import { Api, SimpleMap } from '../interfaces';
-import { CalendarMemberInvitation, MEMBER_INVITATION_STATUS, VisualCalendar } from '../interfaces/calendar';
-import { ContactEmail } from '../interfaces/contacts';
-import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
-import { getPrimaryKey } from '../keys';
-import { decryptPassphrase, signPassphrase } from './crypto/keys/calendarKeys';
+import { acceptInvitation, rejectInvitation } from '../../../api/calendars';
+import { getIsOwnedCalendar } from '../../../calendar/calendar';
+import { getIsSubscribedCalendar } from '../../../calendar/subscribe/helpers';
+import { SECOND } from '../../../constants';
+import { getContactDisplayNameEmail } from '../../../contacts/contactEmail';
+import { canonicalizeEmail } from '../../../helpers/email';
+import { Api, SimpleMap } from '../../../interfaces';
+import { CalendarMemberInvitation, MEMBER_INVITATION_STATUS, VisualCalendar } from '../../../interfaces/calendar';
+import { ContactEmail } from '../../../interfaces/contacts';
+import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
+import { getPrimaryKey } from '../../../keys';
+import { decryptPassphrase, signPassphrase } from '../../crypto/keys/calendarKeys';
 
 export const getIsInvitationExpired = ({ ExpirationTime }: CalendarMemberInvitation) => {
     if (!ExpirationTime) {
@@ -28,6 +28,10 @@ export const getPendingInvitations = (invitations: CalendarMemberInvitation[]) =
 
 export const filterOutAcceptedInvitations = (invitations: CalendarMemberInvitation[]) => {
     return invitations.filter(({ Status }) => Status !== MEMBER_INVITATION_STATUS.ACCEPTED);
+};
+
+export const filterOutDeclinedInvitations = (invitations: CalendarMemberInvitation[]) => {
+    return invitations.filter(({ Status }) => Status !== MEMBER_INVITATION_STATUS.REJECTED);
 };
 
 export const filterOutExpiredInvitations = (invitations: CalendarMemberInvitation[]) => {

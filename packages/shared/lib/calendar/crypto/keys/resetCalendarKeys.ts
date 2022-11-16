@@ -1,32 +1,29 @@
 import { useGetAddressKeys } from '@proton/components';
 
 import { resetCalendars } from '../../../api/calendars';
-import { Address, Api } from '../../../interfaces';
+import { Api } from '../../../interfaces';
 import { VisualCalendar } from '../../../interfaces/calendar';
 import { getPrimaryKey } from '../../../keys';
-import { getMemberAddressWithAdminPermissions } from '../../getMemberWithAdmin';
 import { generateCalendarKeyPayload } from './calendarKeys';
 
 interface ResetCalendarKeysArguments {
     calendars: VisualCalendar[];
-    addresses: Address[];
     api: Api;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
 }
 
-export const resetCalendarKeys = async ({ calendars, addresses, api, getAddressKeys }: ResetCalendarKeysArguments) => {
+export const resetCalendarKeys = async ({ calendars, api, getAddressKeys }: ResetCalendarKeysArguments) => {
     const calendarsResult = await Promise.all(
-        calendars.map(async ({ Members }) => {
-            const { Address: selfAddress } = getMemberAddressWithAdminPermissions(Members, addresses);
+        calendars.map(async ({ Members: [{ AddressID: addressID }] }) => {
             const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
-                getPrimaryKey(await getAddressKeys(selfAddress.ID)) || {};
+                getPrimaryKey(await getAddressKeys(addressID)) || {};
 
             if (!primaryAddressKey || !primaryAddressPublicKey) {
                 throw new Error('Calendar owner is missing keys');
             }
 
             return generateCalendarKeyPayload({
-                addressID: selfAddress.ID,
+                addressID,
                 privateKey: primaryAddressKey,
                 publicKey: primaryAddressPublicKey,
             });

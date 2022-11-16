@@ -8,7 +8,7 @@ import { FeatureCode, SettingsParagraph, SettingsSectionWide } from '@proton/com
 import { useApi, useFeature, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
-import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/share';
+import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
