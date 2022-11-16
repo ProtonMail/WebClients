@@ -9,7 +9,7 @@ import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { formatDateToHuman } from '../../helpers/date';
-import UndoButton from './UndoButton';
+import UndoNotificationButton from './UndoNotificationButton';
 
 export const createSendingMessageNotificationManager = () => {
     const listeners = createListeners();
@@ -74,8 +74,8 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
 
         return (
             <>
-                <span className="mr1">{notification}</span>
-                {onUndo && <UndoButton className="mr1" onUndo={onUndo} />}
+                <span>{notification}</span>
+                {onUndo && <UndoNotificationButton className="mr1" onUndo={onUndo} />}
             </>
         );
     };
@@ -108,8 +108,8 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
         }
         return (
             <>
-                <span className="mr1">{c('Info').t`Message sent.`}</span>
-                <UndoButton onUndo={onUndo} />
+                <span>{c('Info').t`Message sent.`}</span>
+                <UndoNotificationButton onUndo={onUndo} />
             </>
         );
     }

@@ -1,20 +1,27 @@
 import { ReactNode } from 'react';
 
-import { classnames } from '@proton/components';
+import { CustomNotificationProps } from '@proton/components';
 
-import UndoButton from './UndoButton';
+import UndoNotificationButton from './UndoNotificationButton';
 
-interface Props {
+interface Props extends CustomNotificationProps {
     children: ReactNode;
     additionalButton?: ReactNode;
     onUndo?: () => void;
 }
 
-const UndoActionNotification = ({ children, additionalButton = null, onUndo }: Props) => (
+const UndoActionNotification = ({ children, additionalButton = null, onUndo, onClose }: Props) => (
     <>
-        <span className={classnames([(onUndo || additionalButton !== null) && 'mr1'])}>{children}</span>
+        <span>{children}</span>
         {additionalButton ? additionalButton : null}
-        {onUndo ? <UndoButton onUndo={onUndo} /> : null}
+        {onUndo ? (
+            <UndoNotificationButton
+                onUndo={() => {
+                    onClose?.();
+                    onUndo();
+                }}
+            />
+        ) : null}
     </>
 );
 

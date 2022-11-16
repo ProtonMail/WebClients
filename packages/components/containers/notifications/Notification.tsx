@@ -1,9 +1,10 @@
 import { AnimationEvent, MouseEvent, ReactNode, Ref, cloneElement, forwardRef, isValidElement } from 'react';
 
-import { Icon, IconName, NotificationButton } from '@proton/components/components';
-
+import { Icon, IconName } from '../../components/icon';
 import { classnames } from '../../helpers';
+import { NotificationCloseButton } from './NotificationButton';
 import { CustomNotificationProps, NotificationType } from './interfaces';
+import NotificationContext from './notificationContext';
 
 const TYPES_CLASS = {
     error: 'notification--error',
@@ -64,20 +65,13 @@ const NotificationBase = (
                 '--top-custom': top === undefined ? `${-999}px` : `${top}px`,
             }}
         >
-            {icon && <Icon name={icon} className="notification__icon" />}
-            <span className="notification__content">
-                {isValidElement<CustomNotificationProps>(children) ? cloneElement(children, { onClose }) : children}
-            </span>
-            {showCloseButton && (
-                <NotificationButton
-                    notificationType={type == 'error' || type == 'warning' ? 'warning' : undefined}
-                    icon
-                    onClick={onClose}
-                    className="notification__close-button"
-                >
-                    <Icon name="cross" />
-                </NotificationButton>
-            )}
+            <NotificationContext.Provider value={{ type }}>
+                {icon && <Icon name={icon} className="notification__icon" />}
+                <span className="notification__content">
+                    {isValidElement<CustomNotificationProps>(children) ? cloneElement(children, { onClose }) : children}
+                </span>
+                {showCloseButton && <NotificationCloseButton onClick={onClose} />}
+            </NotificationContext.Provider>
         </div>
     );
 };

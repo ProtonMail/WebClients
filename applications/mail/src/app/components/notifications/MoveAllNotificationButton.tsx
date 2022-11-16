@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/components';
+import { NotificationButton } from '@proton/components';
 
 interface Props {
     onMoveAll: () => void;
@@ -26,10 +26,10 @@ const getText = (isMessage: boolean, isLabel: boolean) => {
     }
 };
 
-const UndoButton = ({ onMoveAll, isMessage, isLabel, disabled, className }: Props) => (
-    <InlineLinkButton onClick={onMoveAll} disabled={disabled} className={className}>
+const MoveAllNotificationButton = ({ onMoveAll, isMessage, isLabel, disabled, className }: Props) => (
+    <NotificationButton onClick={onMoveAll} disabled={disabled} className={className}>
         {getText(isMessage, isLabel)}
-    </InlineLinkButton>
+    </NotificationButton>
 );
 
-export default UndoButton;
+export default MoveAllNotificationButton;
