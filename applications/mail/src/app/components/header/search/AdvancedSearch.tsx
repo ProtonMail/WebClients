@@ -194,7 +194,7 @@ const AdvancedSearch = ({
                                 color="weak"
                                 size="small"
                                 type="button"
-                                data-testid="clear-button"
+                                data-testid="advanced-search:clear"
                                 onClick={handleClear}
                             >
                                 {c('Action').t`Clear`}
@@ -220,6 +220,7 @@ const AdvancedSearch = ({
                             <Button
                                 className="mb0-5 on-mobile-w100"
                                 onClick={toggleShowMore}
+                                data-testid="advanced-search:show-less"
                                 title={c('Action').t`Show fewer search options`}
                             >
                                 {c('Action').t`Fewer search options`}
@@ -232,6 +233,7 @@ const AdvancedSearch = ({
                                 <DateInput
                                     placeholder={c('Placeholder').t`Start date`}
                                     id="begin-date"
+                                    data-testid="advanced-search:start-date"
                                     value={model.begin}
                                     onChange={async (begin) => {
                                         if (begin) {
@@ -255,6 +257,7 @@ const AdvancedSearch = ({
                                 <DateInput
                                     placeholder={c('Placeholder').t`End date`}
                                     id="end-date"
+                                    data-testid="advanced-search:end-date"
                                     value={model.end}
                                     onChange={(end) =>
                                         (!model.begin || isAfter(end || Infinity, model.begin)) &&
@@ -271,6 +274,7 @@ const AdvancedSearch = ({
                             >{c('Label').t`Sender`}</Label>
                             <AddressesInput
                                 id="from"
+                                dataTestId="advanced-search:sender"
                                 recipients={model.from}
                                 onChange={(from) => updateModel({ ...model, from })}
                                 placeholder={c('Placeholder').t`Name or email address`}
@@ -285,6 +289,7 @@ const AdvancedSearch = ({
                             >{c('Label').t`Recipient`}</Label>
                             <AddressesInput
                                 id="to"
+                                dataTestId="advanced-search:recipient"
                                 recipients={model.to}
                                 onChange={(to) => updateModel({ ...model, to })}
                                 placeholder={c('Placeholder').t`Name or email address`}
@@ -299,6 +304,7 @@ const AdvancedSearch = ({
                             >{c('Label').t`Address`}</Label>
                             <SelectTwo
                                 id="address"
+                                data-testid="advanced-search:address"
                                 value={model.address}
                                 onChange={({ value }) => updateModel({ ...model, address: value })}
                             >
@@ -317,6 +323,7 @@ const AdvancedSearch = ({
                             <div className="pt0-5">
                                 <Radio
                                     id="advanced-search-attachments-all"
+                                    data-testid="advanced-search:attachments:all"
                                     onChange={() => updateModel({ ...model, attachments: UNDEFINED })}
                                     checked={model.attachments === UNDEFINED}
                                     name="advanced-search-attachments"
@@ -325,6 +332,7 @@ const AdvancedSearch = ({
                                 >{c('Attachment radio advanced search').t`All`}</Radio>
                                 <Radio
                                     id="advanced-search-attachments-yes"
+                                    data-testid="advanced-search:attachments:with"
                                     onChange={() => updateModel({ ...model, attachments: WITH_ATTACHMENTS })}
                                     checked={model.attachments === WITH_ATTACHMENTS}
                                     name="advanced-search-attachments"
@@ -333,6 +341,7 @@ const AdvancedSearch = ({
                                 >{c('Attachment radio advanced search').t`With`}</Radio>
                                 <Radio
                                     id="advanced-search-attachments-no"
+                                    data-testid="advanced-search:attachments:without"
                                     onChange={() => updateModel({ ...model, attachments: NO_ATTACHMENTS })}
                                     checked={model.attachments === NO_ATTACHMENTS}
                                     name="advanced-search-attachments"
@@ -357,13 +366,17 @@ const AdvancedSearch = ({
                 <div className="mlauto">
                     {canReset ? (
                         <Button
+                            data-testid="advanced-search:reset"
                             className="mb0-5 on-mobile-w100 mr1"
                             type="reset"
                             title={c('Action').t`Reset search form`}
                         >{c('Action').t`Reset`}</Button>
                     ) : null}
-                    <PrimaryButton type="submit" className="mb0-5 on-mobile-w100">{c('Action')
-                        .t`Search`}</PrimaryButton>
+                    <PrimaryButton
+                        data-testid="advanced-search:submit"
+                        type="submit"
+                        className="mb0-5 on-mobile-w100"
+                    >{c('Action').t`Search`}</PrimaryButton>
                 </div>
             </div>
         </form>
