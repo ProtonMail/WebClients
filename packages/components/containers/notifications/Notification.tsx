@@ -1,9 +1,9 @@
-import { AnimationEvent, MouseEvent, ReactNode, Ref, forwardRef } from 'react';
+import { AnimationEvent, MouseEvent, ReactNode, Ref, cloneElement, forwardRef, isValidElement } from 'react';
 
 import { Icon, IconName, NotificationButton } from '@proton/components/components';
 
 import { classnames } from '../../helpers';
-import { NotificationType } from './interfaces';
+import { CustomNotificationProps, NotificationType } from './interfaces';
 
 const TYPES_CLASS = {
     error: 'notification--error',
@@ -30,12 +30,13 @@ interface Props {
     onExit: () => void;
     onClick?: (e: MouseEvent<HTMLElement>) => void;
     onClose?: () => void;
+    showCloseButton?: boolean;
     icon?: IconName;
     top: number | undefined;
 }
 
 const NotificationBase = (
-    { children, type, top, isClosing, onClick, onClose, onExit, icon }: Props,
+    { children, type, top, isClosing, onClick, showCloseButton, onClose, onExit, icon }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
@@ -64,8 +65,10 @@ const NotificationBase = (
             }}
         >
             {icon && <Icon name={icon} className="notification__icon" />}
-            <span className="notification__content">{children}</span>
-            {onClose && (
+            <span className="notification__content">
+                {isValidElement<CustomNotificationProps>(children) ? cloneElement(children, { onClose }) : children}
+            </span>
+            {showCloseButton && (
                 <NotificationButton
                     notificationType={type == 'error' || type == 'warning' ? 'warning' : undefined}
                     icon
