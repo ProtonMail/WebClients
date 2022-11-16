@@ -197,6 +197,7 @@ export const formatSubject = (subject = '', prefix = '') => {
 
 export const DRAFT_ID_PREFIX = 'draft';
 export const ORIGINAL_MESSAGE = `------- Original Message -------`;
+export const FORWARDED_MESSAGE = `------- Forwarded Message -------`;
 export const RE_PREFIX = c('Message').t`Re:`;
 export const FW_PREFIX = c('Message').t`Fw:`;
 
