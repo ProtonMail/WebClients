@@ -44,6 +44,7 @@
 	@each $variant,
 		$color
 			in (
+				norm: var(--interaction-norm),
 				disabled: var(--background-strong),
 				running: var(--signal-info),
 				success: var(--signal-success),
