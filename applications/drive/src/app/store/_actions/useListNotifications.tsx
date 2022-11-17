@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { InlineLinkButton, useNotifications } from '@proton/components';
+import { NotificationButton, useNotifications } from '@proton/components';
 
 import { useErrorHandler } from '../_utils';
 import { LinkInfo } from './interface';
@@ -27,15 +27,15 @@ export default function useListNotifications() {
         createNotification({
             type: 'success',
             text: (
-                <span className="text-pre-wrap">
-                    {message}
+                <>
+                    <span>{message}</span>
                     {undoAction && (
                         <>
                             {'. '}
-                            <InlineLinkButton onClick={() => undoAction()}>{c('Action').t`Undo`}</InlineLinkButton>
+                            <NotificationButton onClick={() => undoAction()}>{c('Action').t`Undo`}</NotificationButton>
                         </>
                     )}
-                </span>
+                </>
             ),
         });
     };

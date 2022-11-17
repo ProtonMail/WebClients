@@ -130,11 +130,11 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
                         if (error) {
                             createNotification({
                                 text: (
-                                    <div className="text-center">
+                                    <>
                                         {c('Error').t`Authentication canceled.`}
                                         <br />
                                         {errorMessage}
-                                    </div>
+                                    </>
                                 ),
                                 type: 'error',
                             });
@@ -147,11 +147,11 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
                         if (state !== stateId.current) {
                             createNotification({
                                 text: (
-                                    <div className="text-center">
+                                    <>
                                         {c('Error').t`Authentication error.`}
                                         <br />
                                         {errorMessage}
-                                    </div>
+                                    </>
                                 ),
                                 type: 'error',
                             });
