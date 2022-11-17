@@ -146,6 +146,7 @@
 
 	&-input-adornment {
 		color: var(--text-weak);
+		max-inline-size: 60vw; // arbitrary value to avoid issues in case of super long suffix - domain names suffix on mobile for example
 
 		.button:not([class*='button-underline']) {
 			&:first-child {
