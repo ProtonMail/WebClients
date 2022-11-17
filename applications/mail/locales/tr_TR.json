@@ -954,6 +954,9 @@
       "Try another method": [
         "Başka bir yöntem deneyin"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
+      ],
       "Turn on tracker protection": [
         "İzleme korumasını aç"
       ],
@@ -3343,6 +3346,12 @@
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Bir davette en fazla ${ MAX_ATTENDEES } katılımcı bulunabilir",
+        "Bir davette en fazla ${ MAX_ATTENDEES } katılımcı bulunabilir"
+      ]
+    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "Taslaklar Gelen kutusuna taşınamaz"
@@ -4276,6 +4285,10 @@
         "${ numContacts } kişi",
         "${ numContacts } kişi"
       ],
+      "${ NumMessages } message in conversation": [
+        "Yazışmada ${ NumMessages } ileti var",
+        "Yazışmada ${ NumMessages } ileti var"
+      ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } kez bulundu",
         "${ numOccurrences } kez bulundu"
@@ -4968,6 +4981,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Lütfen değişiklikleriniz sunucu ile eşitlenene kadar bekleyin."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
       ],
@@ -5303,6 +5319,9 @@
       ],
       "Unlock message": [
         "İletinin kilidini aç"
+      ],
+      "Unsaved changes": [
+        "Kaydedilmemiş değişiklikler"
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
@@ -7747,6 +7766,9 @@
       "Archive": [
         "Arşivle"
       ],
+      "Are you sure you want to close the preview?": [
+        "Ön izlemeyi kapatmak istediğinize emin misiniz?"
+      ],
       "Are you sure you want to close?": [
         "Oturumu kapatmak istediğinize emin misiniz?"
       ],
@@ -8211,6 +8233,9 @@
       ],
       "What's new": [
         "Yenilikler"
+      ],
+      "Your changes are not synced yet": [
+        "Değişiklikleriniz henüz eşitlenmedi"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"

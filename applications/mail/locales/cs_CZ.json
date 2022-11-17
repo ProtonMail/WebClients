@@ -959,6 +959,9 @@
       "Try another method": [
         "Zkuste jinou metodu"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
+      ],
       "Turn on tracker protection": [
         "Zapnout ochranu proti sledování"
       ],
@@ -5147,6 +5150,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vyberte adresu, nebo adresy, které chcete přidat do skupiny ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Počkejte prosím, dokud se vaše změny nesynchronizují se serverem."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Prosím čekejte, hledáme kontakty, které mohou být znovu podepsány pomocí výchozího šifrovacího klíče."
       ],
@@ -5488,6 +5494,9 @@
       ],
       "Unlock message": [
         "Odemknout zprávu"
+      ],
+      "Unsaved changes": [
+        "Neuložené změny"
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
@@ -8050,6 +8059,9 @@
       "Archive": [
         "Archiv"
       ],
+      "Are you sure you want to close the preview?": [
+        "Jste si jisti, že chcete náhled zavřít?"
+      ],
       "Are you sure you want to close?": [
         "Opravdu chcete zavřít editor filtrů?"
       ],
@@ -8526,6 +8538,9 @@
       ],
       "What's new": [
         "Co je nového"
+      ],
+      "Your changes are not synced yet": [
+        "Vaše změny zatím nejsou synchronizovány"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"

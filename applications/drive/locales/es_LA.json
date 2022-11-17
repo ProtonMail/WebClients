@@ -158,6 +158,9 @@
       "Create new folder": [
         "Crear carpeta nueva"
       ],
+      "Create new text file": [
+        "Crear un archivo de texto nuevo"
+      ],
       "Customize": [
         "Personalizar"
       ],
@@ -543,6 +546,9 @@
       ],
       "Try another method": [
         "Intente otro método"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Intente guardar de nuevo. El guardado falló debido a: ${ saveError }"
       ],
       "Undo": [
         "Deshacer"
@@ -1713,6 +1719,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" ya existe"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -2642,6 +2651,9 @@
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
       ],
+      "All your changes will be lost.": [
+        "Todos sus cambios se perderán."
+      ],
       "An active recovery file": [
         "Un archivo de recuperación activo"
       ],
@@ -2656,6 +2668,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Cualquiera que tenga este enlace puede acceder a su carpeta."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "¿Está seguro que desea descartar los cambios?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "¿Está seguro que desea vaciar la papelera y eliminar permanentemente todos los elementos?"
@@ -3107,6 +3122,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccione qué dirección o direcciones de correo añadir a ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Espere hasta que sus cambios se sincronicen con el servidor."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Espere mientras buscamos contactos que puedan ser refirmados con la clave de cifrado principal."
       ],
@@ -3326,6 +3344,9 @@
       ],
       "Unlock drive to recover files": [
         "Desbloquear unidad para recuperar los archivos"
+      ],
+      "Unsaved changes": [
+        "Cambios sin guardar"
       ],
       "Unsupported file": [
         "Archivo no soportado"
@@ -4142,11 +4163,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "Error al restaurar \"${ name }\" de la papelera"
       ],
+      "\"${ name }\" failed to be saved": [
+        "Error al guardar \"${ name }\""
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido a la papelera"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" restaurado de la papelera"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" guardado con éxito"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" movido con éxito"
@@ -4427,6 +4454,9 @@
       ],
       "E.g., ": [
         "Ej., "
+      ],
+      "Enter a new file name": [
+        "Ingrese un nombre de archivo nuevo"
       ],
       "Enter a new folder name": [
         "Ingrese un nombre nuevo para la carpeta"
@@ -4993,6 +5023,9 @@
       "All": [
         "Todo"
       ],
+      "Are you sure you want to close the preview?": [
+        "¿En verdad desea cerrar la vista previa?"
+      ],
       "Back": [
         "Atrás"
       ],
@@ -5022,6 +5055,9 @@
       ],
       "Contacts": [
         "Contactos"
+      ],
+      "Create a new file": [
+        "Crear un archivo nuevo"
       ],
       "Create a new folder": [
         "Crear una carpeta nueva"
@@ -5406,6 +5442,9 @@
       ],
       "Your 500 MB bonus": [
         "Su bono de 500 MB"
+      ],
+      "Your changes are not synced yet": [
+        "Sus cambios aún no se han sincronizado"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Su prueba gratuita termina pronto, en ${ formattedEndDate }"

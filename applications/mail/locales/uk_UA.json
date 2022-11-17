@@ -962,6 +962,9 @@
       "Try another method": [
         "Спробувати інший спосіб"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Спробуйте зберегти ще раз. Не вдалося зберегти через: ${ saveError }"
+      ],
       "Turn on tracker protection": [
         "Увімкнути захист від стеження"
       ],
@@ -5150,6 +5153,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Виберіть яку електронну адресу або адреси додати до ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Будь ласка, зачекайте, поки ваші зміни будуть синхронізовані з сервером."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Зачекайте, поки ми перевіряємо контакти, які можуть бути повторно підписані з використанням основного ключа шифрування."
       ],
@@ -5491,6 +5497,9 @@
       ],
       "Unlock message": [
         "Розблокувати повідомлення"
+      ],
+      "Unsaved changes": [
+        "Незбережені зміни"
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
@@ -8053,6 +8062,9 @@
       "Archive": [
         "Архів"
       ],
+      "Are you sure you want to close the preview?": [
+        "Ви впевнені, що хочете закрити попередній перегляд?"
+      ],
       "Are you sure you want to close?": [
         "Ви дійсно хочете закрити?"
       ],
@@ -8529,6 +8541,9 @@
       ],
       "What's new": [
         "Що нового"
+      ],
+      "Your changes are not synced yet": [
+        "Ваші зміни ще не синхронізовані"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"

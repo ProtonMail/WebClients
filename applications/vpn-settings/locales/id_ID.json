@@ -110,6 +110,9 @@
       "Disable": [
         "Nonaktifkan"
       ],
+      "Discard": [
+        "Buang"
+      ],
       "Done": [
         "Selesai"
       ],
@@ -328,6 +331,9 @@
       ],
       "Try another method": [
         "Coba metode lain"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Coba simpan kembali. Penyimpanan gagal akibat: ${ saveError }"
       ],
       "Unlock": [
         "Membuka"
@@ -1899,6 +1905,9 @@
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Usai melakukan pembayaran dengan Bitcoin, harap ikuti instruksi di bawah untuk meningkatkan."
       ],
+      "All your changes will be lost.": [
+        "Seluruh perubahan yang belum Anda simpan akan hilang."
+      ],
       "Amount below minimum (${ amount }).": [
         "Di bawah jumlah minimum (${ amount })."
       ],
@@ -1907,6 +1916,9 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Anda yakin ingin mematikan pemeriksaan dua-faktor?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Apakah Anda yakin untuk membatalkan perubahan-perubahan Anda?"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Dibutuhkan langganan Basic, Plus atau Visionary"
@@ -2178,6 +2190,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Mohon verifikasi kartu di tab baru yang telah dibuka."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
+      ],
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
@@ -2343,6 +2358,9 @@
       "Unlimited messages": [
         "Tanpa batasan jumlah pesan"
       ],
+      "Unsaved changes": [
+        "Perubahan yang belum disimpan"
+      ],
       "Unsupported file": [
         "Berkas tidak didukung"
       ],
@@ -2443,7 +2461,7 @@
         "Anda hanya dapat membuka satu jendela percakapan dalam satu waktu. Harap tutup jendela percakapan lainnya yang terbuka sebelum memulai percakapan baru."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Anda dapat menggunakan informasi kredensial berikut untuk dapat tersambung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
+        "Anda dapat menggunakan informasi kredensial berikut untuk terhubung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga, seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Anda tidak dapat menggunakan informasi kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
@@ -2555,7 +2573,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Silahkan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
+        "Silakan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
       ]
     },
     "Info for payment methods": {
@@ -2939,23 +2957,23 @@
       ]
     },
     "Label for news": {
-      "Proton beta announcements": [
-        "Pengumuman akses beta Proton"
+      "${ BRAND_NAME } beta announcements": [
+        "Pengumuman akses beta ${ BRAND_NAME }"
       ],
-      "Proton company announcements": [
-        "Pengumuman perusahaan Proton"
+      "${ BRAND_NAME } company announcements": [
+        "Pengumuman perusahaan ${ BRAND_NAME }"
       ],
-      "Proton for Business newsletter": [
-        "Buletin Proton for Business"
+      "${ BRAND_NAME } for Business newsletter": [
+        "Buletin ${ BRAND_NAME } for Business"
       ],
-      "Proton newsletter": [
-        "Buletin Proton"
+      "${ BRAND_NAME } newsletter": [
+        "Buletin ${ BRAND_NAME }"
       ],
-      "Proton offers and promotions": [
-        "Penawaran dan promosi Proton"
+      "${ BRAND_NAME } offers and promotions": [
+        "Penawaran dan promosi ${ BRAND_NAME }"
       ],
-      "Proton product announcements": [
-        "Pengumuman produk Proton"
+      "${ BRAND_NAME } product announcements": [
+        "Pengumuman produk ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {
@@ -3528,7 +3546,7 @@
         "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Buat beberapa alamat email untuk identitas daring Anda, mis. JohnShopper@proton.me untuk akun belanja, JohnNews@proton.me untuk langganan berita"
+        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@proton.me untuk berbelanja dan JohnNews@proton.me untuk berlangganan berita"
       ],
       "Create up to ${ n } custom calendars.": [
         "Buat hingga ${ n } kalender khusus."
@@ -4209,6 +4227,9 @@
       "Apply gift code": [
         "Gunakan kode hadiah"
       ],
+      "Are you sure you want to close the preview?": [
+        "Apakah Anda yakin untuk menutup pratinjau?"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -4462,7 +4483,7 @@
         "Beralih ke mode dua kata sandi"
       ],
       "This address might compromise your privacy.": [
-        "Alamat ini mungkin menembus privasi Anda."
+        "Alamat ini dapat membahayakan privasi Anda."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Nikmati berbagai fitur unggulan ${ MAIL_APP_NAME } secara gratis"
@@ -4502,6 +4523,9 @@
       ],
       "You already have a Proton account": [
         "Anda telah memiliki akun Proton"
+      ],
+      "Your changes are not synced yet": [
+        "Perubahan Anda belum disinkronkan"
       ],
       "Your current plan": [
         "Paket Anda saat ini"

@@ -110,6 +110,9 @@
       "Disable": [
         "Вимкнути"
       ],
+      "Discard": [
+        "Відхилити"
+      ],
       "Done": [
         "Готово"
       ],
@@ -328,6 +331,9 @@
       ],
       "Try another method": [
         "Спробувати інший спосіб"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Спробуйте зберегти ще раз. Не вдалося зберегти через: ${ saveError }"
       ],
       "Unlock": [
         "Розблокувати"
@@ -1938,6 +1944,9 @@
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Після здійснення платежу в Bitcoin, дотримуйтесь наведених далі настанов для оновлення."
       ],
+      "All your changes will be lost.": [
+        "Всі зміни будуть втрачені."
+      ],
       "Amount below minimum (${ amount }).": [
         "Сума нижче найменшої (${ amount })."
       ],
@@ -1946,6 +1955,9 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Ви впевнені, що хочете вимкнути двоетапну перевірку?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Ви справді хочете відхилити зміни?"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Необхідна передплата Basic, Plus або Visionary"
@@ -2217,6 +2229,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Підтвердьте картку в новій вкладці, яку було відкрито."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Будь ласка, зачекайте, поки ваші зміни будуть синхронізовані з сервером."
+      ],
       "Plus or Visionary subscription required": [
         "Необхідна передплата Plus або Visionary"
       ],
@@ -2381,6 +2396,9 @@
       ],
       "Unlimited messages": [
         "Необмежена кількість повідомлень"
+      ],
+      "Unsaved changes": [
+        "Незбережені зміни"
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
@@ -2981,23 +2999,23 @@
       ]
     },
     "Label for news": {
-      "Proton beta announcements": [
-        "Оголошення про бета-версії Proton"
+      "${ BRAND_NAME } beta announcements": [
+        "Оголошення ${ BRAND_NAME } бета"
       ],
-      "Proton company announcements": [
-        "Оголошення від компанії Proton"
+      "${ BRAND_NAME } company announcements": [
+        "Оголошення компанії ${ BRAND_NAME }"
       ],
-      "Proton for Business newsletter": [
-        "Інформаційний бюлетень Proton для бізнесу"
+      "${ BRAND_NAME } for Business newsletter": [
+        "Новини ${ BRAND_NAME } для бізнесу"
       ],
-      "Proton newsletter": [
-        "Інформаційний бюлетень Proton"
+      "${ BRAND_NAME } newsletter": [
+        "Новини ${ BRAND_NAME }"
       ],
-      "Proton offers and promotions": [
-        "Пропозиції та акції Proton"
+      "${ BRAND_NAME } offers and promotions": [
+        "Пропозиції та акції ${ BRAND_NAME }"
       ],
-      "Proton product announcements": [
-        "Оголошення про продукти Proton"
+      "${ BRAND_NAME } product announcements": [
+        "Оголошення продукту ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4344,6 +4362,9 @@
       "Apply gift code": [
         "Застосувати подарунковий код"
       ],
+      "Are you sure you want to close the preview?": [
+        "Ви впевнені, що хочете закрити попередній перегляд?"
+      ],
       "Back": [
         "Назад"
       ],
@@ -4637,6 +4658,9 @@
       ],
       "You already have a Proton account": [
         "У вас уже є обліковий запис Proton"
+      ],
+      "Your changes are not synced yet": [
+        "Ваші зміни ще не синхронізовані"
       ],
       "Your current plan": [
         "Поточний тарифний план"

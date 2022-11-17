@@ -755,6 +755,11 @@
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Добавить людей или группы"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Посещаете?"
@@ -838,6 +843,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Изменить (просмотр, создание и изменение информации о событии)"
+      ],
+      "View (see all event details)": [
+        "Просмотр (см. всю информацию о событии)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -5220,6 +5228,11 @@
         "Добавьте аккаунты Proton, с которыми вы хотите поделиться ${ calendarName }. Мы отправим им приглашение."
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Введите адрес электронной почты или название группы"
+      ]
+    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Поделиться с пользователями Proton"
@@ -6182,6 +6195,16 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Выберите количество"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Создать календарь"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Редактировать календарь"
       ]
     },
     "Today icon tooltip in mini calendar": {
