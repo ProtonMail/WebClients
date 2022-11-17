@@ -11,9 +11,10 @@ interface Props {
     onOpen: () => void;
     value: string;
     onChange: (newValue: string) => void;
+    loading: boolean;
 }
 
-const MailSearchInput = ({ value, onOpen, onChange }: Props, ref: Ref<HTMLInputElement>) => {
+const MailSearchInput = ({ value, onOpen, onChange, loading }: Props, ref: Ref<HTMLInputElement>) => {
     const handleClear = () => {
         onChange('');
         onOpen();
@@ -24,6 +25,7 @@ const MailSearchInput = ({ value, onOpen, onChange }: Props, ref: Ref<HTMLInputE
             <div ref={ref} className="w100 mauto">
                 <InputTwo
                     inputClassName="cursor-text"
+                    disabled={loading}
                     value={value}
                     placeholder={c('Placeholder').t`Search messages`}
                     onClick={onOpen}
@@ -51,8 +53,9 @@ const MailSearchInput = ({ value, onOpen, onChange }: Props, ref: Ref<HTMLInputE
                                 color="weak"
                                 size="small"
                                 className="rounded-sm"
-                                title={c('Action').t`Clear`}
+                                title={c('Action').t`Clear search`}
                                 onClick={handleClear}
+                                data-testid="clear-button"
                             >
                                 {c('Action').t`Clear`}
                             </Button>
