@@ -34,7 +34,12 @@ function NewLabelForm({
             <Row>
                 <Label htmlFor="color-button">{c('New Label form').t`Color`} </Label>
                 <Field>
-                    <ColorPicker id="color-button" color={label.Color} onChange={onChangeColor} />
+                    <ColorPicker
+                        id="color-button"
+                        data-testid="color-button"
+                        color={label.Color}
+                        onChange={onChangeColor}
+                    />
                 </Field>
             </Row>
         );
@@ -63,7 +68,12 @@ function NewLabelForm({
                             {mailSettings?.InheritParentFolderColor && folder.ParentID ? (
                                 <div className="mt0-5">{c('Info').t`Inherited from parent folder`}</div>
                             ) : (
-                                <ColorPicker id="color-button" color={folder.Color} onChange={onChangeColor} />
+                                <ColorPicker
+                                    id="color-button"
+                                    data-testid="color-button"
+                                    color={folder.Color}
+                                    onChange={onChangeColor}
+                                />
                             )}
                         </Field>
                     </Row>

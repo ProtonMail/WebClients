@@ -58,7 +58,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
 
     const loading =
-        loadingLabels || loadingFolders || loadingMailSettings || loadingAddresses || loadingScheduledFeature;
+        loadingScheduledFeature || loadingLabels || loadingFolders || loadingMailSettings || loadingAddresses;
 
     useEffect(() => {
         if (!isOpen) {
@@ -110,6 +110,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
                     <TopNavbarListItemSearchButton onClick={handleOpen} />
                 ) : (
                     <MailSearchInput
+                        loading={loading}
                         ref={anchorRef}
                         value={searchInputValue}
                         onChange={setSearchInputValue}
