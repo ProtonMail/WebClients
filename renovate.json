@@ -8,7 +8,8 @@
     "ignorePaths": ["**/node_modules/**"],
     "packageRules": [
         {
-            "matchPackagePatterns": ["typescript"]
+            "groupName": "typescript",
+            "matchPackagePatterns": ["^@types", "typescript"]
         }
     ]
 }
