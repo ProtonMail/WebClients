@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Modifica abbonamento"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
       ],
@@ -776,6 +773,9 @@
       ],
       "Try another method": [
         "Prova un altro metodo"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Salvataggio non riuscito a causa di: ${ saveError }. Prova a salvare di nuovo. "
       ],
       "Underline": [
         "Sottolineato"
@@ -1285,7 +1285,7 @@
         "Modifica (vedi, crea e modifica i dettagli dell'evento)"
       ],
       "View (see all event details)": [
-        "Visualizza (vedi tutti i dettagli dell'evento)"
+        "Visualizza (mostra i dettagli dell'evento)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -5034,8 +5034,11 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
+      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
+        "Se non ricordi la tua password, dovrai eseguire un ${ boldPasswordReset } per accedere al nuovo sito."
+      ],
       "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "Se hai bisogno di reimpostare nuovamente la tua password, dovrai inserire questa frase per tornare nel tuo account e sbloccare i tuoi dati."
+        "Se hai bisogno di reimpostare nuovamente la tua password, dovrai inserire questa frase per accedere al tuo account e sbloccare i tuoi dati."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Se hai un dominio personalizzato con ${ MAIL_APP_NAME }, puoi impostare un indirizzo email catch-all per ricevere i messaggi inviati al tuo dominio ma a un indirizzo email non valido (ad es. a causa di errori di battitura)."
@@ -5232,7 +5235,7 @@
         "Assicurati di ${ addARecoveryMethod } in modo da poter tornare al tuo account se dimentichi la password."
       ],
       "Make sure you keep your recovery phrase somewhere private.": [
-        "Assicurati di mantenere la tua frase di recupero in un posto privato."
+        "Assicurati di conservare la tua frase di recupero in un luogo privato."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Inserisci manualmente queste informazioni nel tuo dispositivo di autenticazione a due fattori per impostare il tuo account. ${ _switchButton }."
@@ -5432,6 +5435,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Per favore verifica la carta nella nuova scheda che è stata aperta."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Attendi che le tue modifiche siano sincronizzate con il server."
+      ],
       "Plus or Visionary subscription required": [
         "Abbonamento Plus o Visionary richiesto"
       ],
@@ -5508,7 +5514,7 @@
         "Per aggiungere questo calendario devi prima rimuovere uno dei tuoi calendari"
       ],
       "Reset password": [
-        "Reimposta la password"
+        "Reimposta password"
       ],
       "Revoke certificate ${ name }": [
         "Revoca certificato ${ name }"
@@ -5646,6 +5652,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Il modo più sicuro per navigare, trasmettere in streaming ed essere online."
+      ],
+      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
+        "Non sono state apportate modifiche al tuo indirizzo email o al tuo account ${ BRAND_NAME }. Accedi a ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Questi file di configurazione ti permettono di scegliere a quale server ${ VPN_APP_NAME } ti connetti quando utilizzi un’app VPN di terze parti o se configuri una connessione VPN su un router."
@@ -5805,6 +5814,9 @@
       ],
       "Unlimited messages": [
         "Messaggi illimitati"
+      ],
+      "Unsaved changes": [
+        "Modifiche non salvate"
       ],
       "Unsupported file": [
         "File non supportato"
@@ -6099,7 +6111,7 @@
         "Il tuo account ${ BRAND_NAME } esistente può essere utilizzato per accedere a tutti i servizi ${ BRAND_NAME }. Accedi con ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
-        "Il tuo importo da ${ accounts } è temporaneamente ritardato.",
+        "L'importazione dagli account ${ accounts } è temporaneamente rinviato.",
         "I tuoi importi da ${ accounts } sono temporaneamente ritardati."
       ],
       "Your import will not be processed.": [
@@ -7406,22 +7418,22 @@
     },
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
-        "Annunci beta di ${ BRAND_NAME }"
+        "Comunicazioni ${ BRAND_NAME } sulle versioni beta"
       ],
       "${ BRAND_NAME } company announcements": [
-        "Annunci dell'azienda ${ BRAND_NAME }"
+        "Comunicazioni da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } per la newsletter Aziendale"
+        "Newsletter ${ BRAND_NAME } Business"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } newsletter"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } offerte e promozioni"
+        "offerte e promozioni ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
-        "Annunci di prodotti ${ BRAND_NAME }"
+        "Comunicazioni sui servizi ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9388,7 +9400,7 @@
     },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
-        "Inserisci un indirizzo email o un nome di gruppo"
+        "Inserisci un indirizzo email o il nome di gruppo"
       ]
     },
     "Share calendar modal title": {
@@ -10268,6 +10280,9 @@
       "Apply gift code": [
         "Applica codice regalo"
       ],
+      "Are you sure you want to close the preview?": [
+        "Sei sicuro di voler chiudere l'anteprima?"
+      ],
       "Are you sure you want to close?": [
         "Confermi di voler chiudere?"
       ],
@@ -10944,6 +10959,9 @@
       ],
       "Your calendar link": [
         "Link del tuo calendario"
+      ],
+      "Your changes are not synced yet": [
+        "Le tue modifiche non sono ancora sincronizzate"
       ],
       "Your current plan": [
         "Il tuo piano attuale"

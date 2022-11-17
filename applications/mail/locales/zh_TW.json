@@ -947,6 +947,9 @@
       "Try another method": [
         "嘗試其它驗證方式"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "嘗試再次儲存。儲存失敗原因：${ saveError }"
+      ],
       "Turn on tracker protection": [
         "開啟追蹤保護"
       ],
@@ -3318,6 +3321,11 @@
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
+        "您最多可以一次邀請 ${ MAX_ATTENDEES } 位參與者"
+      ]
+    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "草稿無法移至收件匣"
@@ -4224,6 +4232,9 @@
       "${ numContacts } contacts": [
         "${ numContacts } 位聯絡人"
       ],
+      "${ NumMessages } messages in conversation": [
+        "對話中有 ${ NumMessages } 則訊息"
+      ],
       "${ numOccurrences } occurrences found": [
         "${ numOccurrences } 件事故已找到"
       ],
@@ -4881,6 +4892,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
       ],
+      "Please wait till your changes are synced with the server.": [
+        "請等待您的變更與伺服器同步。"
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
       ],
@@ -5213,6 +5227,9 @@
       ],
       "Unlock message": [
         "解密鎖定訊息"
+      ],
+      "Unsaved changes": [
+        "未儲存的變更"
       ],
       "Unsupported file": [
         "不支援的檔案"
@@ -7592,6 +7609,9 @@
       "Archive": [
         "封存"
       ],
+      "Are you sure you want to close the preview?": [
+        "您確定要關閉預覽嗎？"
+      ],
       "Are you sure you want to close?": [
         "您確定要關閉嗎？"
       ],
@@ -8050,6 +8070,9 @@
       ],
       "What's new": [
         "最新功能"
+      ],
+      "Your changes are not synced yet": [
+        "您的變更尚未同步"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您專屬的免費試用即將結束，到期日為 ${ formattedEndDate }"

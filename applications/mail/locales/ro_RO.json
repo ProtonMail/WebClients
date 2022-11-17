@@ -507,7 +507,7 @@
         "Continuare încărcare"
       ],
       "Load embedded images": [
-        "Încărcare imagini integrate"
+        "Încărcare imagini incluse"
       ],
       "Load image": [
         "Încărcare imagine"
@@ -954,6 +954,9 @@
       ],
       "Try another method": [
         "Încercaţi o altă metodă"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
       "Turn on tracker protection": [
         "Activare protecție împotriva urmăririi"
@@ -3364,9 +3367,9 @@
     },
     "Error adding participants to a calendar event": {
       "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Este permis ${ MAX_ATTENDEES } cel mult un participant per invitație",
-        "Sunt permiși cel mult ${ MAX_ATTENDEES } participanți per invitație",
-        "Sunt permiși cel mult ${ MAX_ATTENDEES } de participanți per invitație"
+        "Este permis cel mult un participant per invitație.",
+        "Sunt permiși cel mult ${ MAX_ATTENDEES } participanți per invitație.",
+        "Sunt permiși cel mult ${ MAX_ATTENDEES } de participanți per invitație."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4297,9 +4300,9 @@
         "${ count } de mesaje necitite"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        "O imagine încorporată.",
-        "${ embeddedAttachmentsCount } imagini încorporate.",
-        "${ embeddedAttachmentsCount } de imagini încorporate."
+        "O imagine inclusă.",
+        "${ embeddedAttachmentsCount } imagini incluse.",
+        "${ embeddedAttachmentsCount } de imagini incluse."
       ],
       "${ groupCounts } group found": [
         "S-a găsit un grup",
@@ -4330,7 +4333,7 @@
         "${ numContacts } de contacte"
       ],
       "${ NumMessages } message in conversation": [
-        "${ NumMessages } mesaj în conversație",
+        "Un mesaj în conversație",
         "${ NumMessages } mesaje în conversație",
         "${ NumMessages } de mesaje în conversație"
       ],
@@ -4700,9 +4703,9 @@
         "Urmăritoarele de e-mailuri vă pot încălca intimitatea. Activați protecția împotriva urmăririi pentru a împiedica expeditorii să știe dacă și când ați deschis un mesaj."
       ],
       "embedded image": [
-        "imagine încorporată",
-        "imagini încorporate",
-        "de imagini încorporate"
+        "imagine inclusă",
+        "imagini incluse",
+        "de imagini incluse"
       ],
       "Encrypt message": [
         "Criptare mesaj"
@@ -5061,6 +5064,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selectați adresa sau adresele de e-mail de adăugat la ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Așteptați până când modificările se sincronizează cu serverul."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Așteptați până se caută contactele care pot fi resemnate cu cheia de criptare primară."
       ],
@@ -5399,6 +5405,9 @@
       ],
       "Unlock message": [
         "Deblocare mesaj"
+      ],
+      "Unsaved changes": [
+        "Modificări nesalvate"
       ],
       "Unsupported file": [
         "Fişier nesuportat"
@@ -5794,7 +5803,7 @@
         "Etichetare ca..."
       ],
       "Load embedded images": [
-        "Încărcare imagini integrate"
+        "Încărcare imagini incluse"
       ],
       "Load remote content": [
         "Încărcare conținut extern"
@@ -7902,6 +7911,9 @@
       "Archive": [
         "Arhivă"
       ],
+      "Are you sure you want to close the preview?": [
+        "Sigur doriți să închideți examinarea?"
+      ],
       "Are you sure you want to close?": [
         "Sigur doriți să închideți?"
       ],
@@ -8111,7 +8123,7 @@
         "Legătură de confirmare"
       ],
       "Load embedded images": [
-        "Încărcare imagini încorporate"
+        "Încărcare imagini incluse"
       ],
       "Load remote content": [
         "Încărcare conținut extern"
@@ -8372,6 +8384,9 @@
       ],
       "What's new": [
         "Ce este nou"
+      ],
+      "Your changes are not synced yet": [
+        "Modificările nu sunt încă sincronizate"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Perioada de încercare gratuită se încheie în curând, la ${ formattedEndDate }"

@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Modifier l'abonnement"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
@@ -438,6 +435,9 @@
       "label emails as": [
         "labelliser le message comme"
       ],
+      "Leave": [
+        "Quitter"
+      ],
       "Load more": [
         "Charger plus"
       ],
@@ -446,6 +446,9 @@
       ],
       "Make default": [
         "Définir par défaut"
+      ],
+      "Manage communication preferences": [
+        "Gérer les préférences de communication"
       ],
       "Mark as default": [
         "Définir par défaut"
@@ -770,6 +773,9 @@
       ],
       "Try another method": [
         "Essayer une autre méthode"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Veuillez réessayer l'enregistrement. L'erreur suivante est survenue : ${ saveError }"
       ],
       "Underline": [
         "Souligner"
@@ -1166,6 +1172,16 @@
         "Tweeter"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Ajouter des personnes ou des groupes"
+      ]
+    },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "Modifier le calendrier"
+      ]
+    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "Téléchargez un fichier ICS avec tous les événements du calendrier sélectionné."
@@ -1267,6 +1283,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Modifier (afficher, créer et modifier les détails de l'événement)"
+      ],
+      "View (see all event details)": [
+        "Afficher plus de détails (voir toutes les informations des événements)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3438,6 +3457,9 @@
       "sign in": [
         "se connecter"
       ],
+      "There was a problem removing your email address.": [
+        "Une erreur est survenue lors de la suppression de votre adresse mail."
+      ],
       "There was a problem verifying your email address.": [
         "Votre adresse e-mail n'a pas pu être vérifiée."
       ]
@@ -4713,6 +4735,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir envoyer et recevoir des e-mails avec vos nouvelles adresses, vous devez leur créer des clés de chiffrement."
       ],
+      "Before you reset your password, download your recovery phrase.": [
+        "Avant de réinitialiser votre mot de passe, veuillez télécharger votre phrase de récupération."
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Les transactions en Bitcoin peuvent prendre un certain temps pour être validées (jusqu'à 24 heures). Une fois confirmées, nous ajouterons les crédits sur votre compte. Après confirmation de la transaction, vous pourrez payer votre facture avec les crédits."
       ],
@@ -4846,6 +4871,9 @@
       ],
       "Download recovery file": [
         "Télécharger le fichier de récupération"
+      ],
+      "Download recovery phrase": [
+        "Télécharger votre phrase de récupération"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Téléchargez votre application préférée et protégez votre vie privée partout où vous allez."
@@ -5005,6 +5033,12 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
+      ],
+      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
+        "Si vous avez oublié votre mot de passe, vous devrez effectuer une ${ boldPasswordReset } pour accéder au nouveau site."
+      ],
+      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
+        "Si vous êtes amené à réinitialiser de nouveau votre mot de passe, vous devrez entrer cette phrase de nouveau pour rétablir l'accès à votre compte et débloquer vos données."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Si vous avez un domaine personnalisé avec ${ MAIL_APP_NAME }, vous pouvez configurer une adresse électronique catch-all qui recevra les messages envoyés à votre domaine, à une adresse inexistante ou avec une faute de frappe."
@@ -5200,6 +5234,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assurez-vous d'${ addARecoveryMethod } pour pouvoir vous reconnecter à votre compte si vous oubliez votre mot de passe."
       ],
+      "Make sure you keep your recovery phrase somewhere private.": [
+        "Veuillez vous assurer que votre phrase de récupération est sauvegardée de manière sécurisée."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Saisissez manuellement ces informations dans votre périphérique d'authentification à deux facteurs pour configurer votre compte. ${ _switchButton }."
       ],
@@ -5321,6 +5358,9 @@
       "Paid for a monthly plan": [
         "Payé pour un abonnement mensuel"
       ],
+      "password reset": [
+        "réinitialisation du mot de passe"
+      ],
       "Payment can take a few minutes to fully verify.": [
         "La vérification du paiement peut prendre quelques minutes."
       ],
@@ -5394,6 +5434,9 @@
       ],
       "Please verify the card in the new tab which was opened.": [
         "Nous vous invitons à vérifier la carte dans le nouvel onglet qui a été ouvert."
+      ],
+      "Please wait till your changes are synced with the server.": [
+        "Veuillez patienter jusqu'à ce que vous modifications soient synchronisées avec le serveur."
       ],
       "Plus or Visionary subscription required": [
         "Abonnement Plus ou Visionary nécessaire"
@@ -5469,6 +5512,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Retirez un de vos calendriers pour rejoindre celui-ci."
+      ],
+      "Reset password": [
+        "Réinitialiser le mot de passe"
       ],
       "Revoke certificate ${ name }": [
         "Révoquer le certificat ${ name }"
@@ -5606,6 +5652,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Le moyen le plus sûr de naviguer, de faire du streaming et d'être en ligne."
+      ],
+      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
+        "Aucun changement n'a été effectué sur votre adresse mail ou sur votre compte ${ BRAND_NAME }. Veuillez vous reconnecter sur ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ces fichiers de configuration vous permettent de choisir le serveur ${ VPN_APP_NAME } auquel vous vous connectez lorsque vous utilisez une application VPN tierce ou que vous configurez une connexion VPN sur un routeur."
@@ -5765,6 +5814,9 @@
       ],
       "Unlimited messages": [
         "Messages illimités"
+      ],
+      "Unsaved changes": [
+        "Modifications non enregistrées"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
@@ -6057,6 +6109,10 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Votre compte ${ BRAND_NAME } peut être utilisé pour accéder à tous les services ${ BRAND_NAME }. Connectez-vous avec ${ email }."
+      ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Votre importation à partir de ${ accounts } est temporairement retardée.",
+        "Vos importations à partir de ${ accounts } sont temporairement retardées."
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
@@ -7358,6 +7414,26 @@
       ],
       "VPN connections": [
         "Connexions VPN"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "Actualités des versions bêta ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } company announcements": [
+        "Actualités de l'entreprise ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Newsletter ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Newsletter ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Offres et promotions ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Actualités des produits ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9136,6 +9212,9 @@
       "You can safely close this tab.": [
         "Vous pouvez fermer cet onglet en toute sécurité."
       ],
+      "Your recovery email has been successfully removed.": [
+        "Votre adresse de récupération a été correctement supprimée."
+      ],
       "Your recovery email has been successfully verified.": [
         "Votre adresse de récupération a été correctement vérifiée."
       ]
@@ -9317,6 +9396,11 @@
     "Share calendar modal description": {
       "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "Ajoutez les comptes Proton avec lesquels vous souhaitez partager ${ calendarName }. Nous leur enverrons une invitation."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Veuillez saisir une adresse mail ou un nom de groupe."
       ]
     },
     "Share calendar modal title": {
@@ -10196,6 +10280,9 @@
       "Apply gift code": [
         "Appliquer un code cadeau"
       ],
+      "Are you sure you want to close the preview?": [
+        "Êtes vous sûr de vouloir fermer la prévisualisation ?"
+      ],
       "Are you sure you want to close?": [
         "Vous voulez vraiment fermer ?"
       ],
@@ -10852,6 +10939,9 @@
       "Warning: suspected fake website": [
         "Attention : site web suspect/frauduleux"
       ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "Nous sommes désormais sur ${ PROTON_ME_DOMAIN }."
+      ],
       "What would you like to import?": [
         "Que voulez-vous importer ?"
       ],
@@ -10869,6 +10959,9 @@
       ],
       "Your calendar link": [
         "Lien de votre calendrier"
+      ],
+      "Your changes are not synced yet": [
+        "Vos modifications ne sont pas sychnonisées pour le moment."
       ],
       "Your current plan": [
         "Votre abonnement actuel"
@@ -10967,6 +11060,16 @@
       ],
       "Role": [
         "Rôle"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Créer un calendrier"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Modifier le calendrier"
       ]
     },
     "Today icon tooltip in mini calendar": {

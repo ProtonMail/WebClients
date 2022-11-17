@@ -544,6 +544,9 @@
       "Try another method": [
         "Prøv en anden metode"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Prøv at gemme igen. Det lykkedes ikke at gemme på grund af: ${ saveError }"
+      ],
       "Undo": [
         "Fortryd"
       ],
@@ -2642,6 +2645,9 @@
         "Alle (${ totalFoldersCount } etiket)",
         "Alle (${ totalFoldersCount } etiketter)"
       ],
+      "All your changes will be lost.": [
+        "Alle dine ændringer vil gå tabt."
+      ],
       "An active recovery file": [
         "En aktiv gendannelsesfil"
       ],
@@ -2656,6 +2662,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Alle med dette link kan få adgang til din mappe."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Er du sikker på at du vil kassere dine ændringer?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Er du sikker på, at du vil tømme papirkurven og slette alt indholdet permanent?"
@@ -3107,6 +3116,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vælg hvilken eller hvilke e-mail-adresser der skal føjes til ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Vent venligst, indtil dine ændringer er synkroniseret med serveren."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
       ],
@@ -3326,6 +3338,9 @@
       ],
       "Unlock drive to recover files": [
         "Lås drev op for at gendanne filer"
+      ],
+      "Unsaved changes": [
+        "Ikke-gemte ændringer"
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
@@ -4746,6 +4761,9 @@
       "All": [
         "Alle"
       ],
+      "Are you sure you want to close the preview?": [
+        "Er du sikker på, at du vil lukke forhåndsvisningen?"
+      ],
       "Back": [
         "Tilbage"
       ],
@@ -5159,6 +5177,9 @@
       ],
       "Your 500 MB bonus": [
         "Din 500 MB bonus"
+      ],
+      "Your changes are not synced yet": [
+        "Dine ændringer er endnu ikke synkroniseret"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
