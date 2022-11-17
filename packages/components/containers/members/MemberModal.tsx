@@ -190,6 +190,8 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
                         ) : (
                             <SelectTwo
                                 unstyled
+                                originalPlacement="bottom-end"
+                                sameAnchorWidth={false}
                                 value={model.domain}
                                 onChange={({ value }) => handleChange('domain')(value)}
                             >
