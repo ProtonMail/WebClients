@@ -62,7 +62,7 @@ export default function useDefaultShare() {
                     const share = await getShare(abortSignal, shareId);
                     return !share.isLocked && !share.isVolumeSoftDeleted;
                 },
-                ['getDefaultShare'],
+                ['isShareAvailable'],
                 abortSignal
             );
         },
