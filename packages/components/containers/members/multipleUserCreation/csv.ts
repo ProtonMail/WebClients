@@ -137,6 +137,7 @@ export const parseMultiUserCsv = async (files: File[]) => {
         transformHeader: (value) => value.trim(),
         transform: (value) => value.trim(),
         comments: '#',
+        skipEmptyLines: true,
     });
 
     /**
