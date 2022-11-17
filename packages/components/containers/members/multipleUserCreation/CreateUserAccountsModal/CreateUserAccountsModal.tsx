@@ -252,6 +252,90 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
         setStep(STEPS.DONE);
     };
 
+    if (organizationCapacityError && step === STEPS.ORGANIZATION_VALIDATION_ERROR) {
+        return (
+            <OrganizationCapacityErrorModal
+                error={organizationCapacityError}
+                onOk={() => setStep(STEPS.SELECT_USERS)}
+                {...rest}
+            />
+        );
+    }
+
+    if (step === STEPS.OFFLINE) {
+        return (
+            <AlertModal
+                title={c('Title').t`No internet connection`}
+                buttons={[<Button onClick={onClose}>{c('Action').t`Ok`}</Button>]}
+                {...rest}
+            >
+                {c('Info').t`Please check your connection and try again.`}
+            </AlertModal>
+        );
+    }
+
+    if (step === STEPS.DONE) {
+        const title = successfullyCreatedUsers.length
+            ? c('Title').ngettext(
+                  msgid`Successfully created ${successfullyCreatedUsers.length} user account`,
+                  `Successfully created ${successfullyCreatedUsers.length} user accounts`,
+                  successfullyCreatedUsers.length
+              )
+            : c('Title').t`Couldn’t create accounts`;
+        return (
+            <AlertModal title={title} buttons={[<Button onClick={onClose}>{c('Action').t`Done`}</Button>]} {...rest}>
+                <>
+                    {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length
+                        ? c('Info')
+                              .t`Please check your file for errors, or contact customer support for more information.`
+                        : null}
+
+                    {invalidAddresses.length ? (
+                        <>
+                            <p className="mt0">
+                                {c('Info').ngettext(
+                                    msgid`The following address is invalid.`,
+                                    `The following addresses are invalid.`,
+                                    invalidAddresses.length
+                                )}
+                            </p>
+                            <ul className="unstyled">
+                                {invalidAddresses.map((address) => {
+                                    return (
+                                        <li key={address} className="mb0 text-ellipsis" title={address}>
+                                            {address}
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </>
+                    ) : null}
+
+                    {unavailableAddresses.length ? (
+                        <>
+                            <p className="mt0">
+                                {c('Info').ngettext(
+                                    msgid`The following address is unavailable.`,
+                                    `The following addresses are unavailable.`,
+                                    unavailableAddresses.length
+                                )}
+                            </p>
+                            <ul className="unstyled">
+                                {unavailableAddresses.map((address) => {
+                                    return (
+                                        <li key={address} className="mb0 text-ellipsis" title={address}>
+                                            {address}
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </>
+                    ) : null}
+                </>
+            </AlertModal>
+        );
+    }
+
     const {
         title,
         additionalContent,
@@ -379,97 +463,8 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             };
         }
 
-        return {
-            title: successfullyCreatedUsers.length
-                ? c('Title').ngettext(
-                      msgid`Successfully created ${successfullyCreatedUsers.length} user account`,
-                      `Successfully created ${successfullyCreatedUsers.length} user accounts`,
-                      successfullyCreatedUsers.length
-                  )
-                : c('Title').t`Couldn’t create accounts`,
-            content: (
-                <>
-                    {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length
-                        ? c('Info')
-                              .t`Please check your file for errors, or contact customer support for more information.`
-                        : null}
-
-                    {invalidAddresses.length ? (
-                        <>
-                            <p className="mt0">
-                                {c('Info').ngettext(
-                                    msgid`The following address is invalid.`,
-                                    `The following addresses are invalid.`,
-                                    invalidAddresses.length
-                                )}
-                            </p>
-                            <ul className="unstyled">
-                                {invalidAddresses.map((address) => {
-                                    return (
-                                        <li key={address} className="mb0 text-ellipsis" title={address}>
-                                            {address}
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </>
-                    ) : null}
-
-                    {unavailableAddresses.length ? (
-                        <>
-                            <p className="mt0">
-                                {c('Info').ngettext(
-                                    msgid`The following address is unavailable.`,
-                                    `The following addresses are unavailable.`,
-                                    unavailableAddresses.length
-                                )}
-                            </p>
-                            <ul className="unstyled">
-                                {unavailableAddresses.map((address) => {
-                                    return (
-                                        <li key={address} className="mb0 text-ellipsis" title={address}>
-                                            {address}
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </>
-                    ) : null}
-                </>
-            ),
-            footer: <Button onClick={onClose}>{c('Action').t`Done`}</Button>,
-        };
+        throw Error('No step found');
     })();
-
-    if (organizationCapacityError && step === STEPS.ORGANIZATION_VALIDATION_ERROR) {
-        return (
-            <OrganizationCapacityErrorModal
-                error={organizationCapacityError}
-                onOk={() => setStep(STEPS.SELECT_USERS)}
-                {...rest}
-            />
-        );
-    }
-
-    if (step === STEPS.OFFLINE) {
-        return (
-            <AlertModal
-                title={c('Title').t`No internet connection`}
-                buttons={[<Button onClick={onClose}>{c('Action').t`Ok`}</Button>]}
-                {...rest}
-            >
-                {c('Info').t`Please check your connection and try again.`}
-            </AlertModal>
-        );
-    }
-
-    if (step === STEPS.DONE) {
-        return (
-            <AlertModal title={title} buttons={[footer]} {...rest}>
-                {content}
-            </AlertModal>
-        );
-    }
 
     return (
         <ModalTwo size={size} onClose={onClose} {...rest}>
