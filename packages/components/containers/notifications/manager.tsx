@@ -60,7 +60,7 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
         text,
         showCloseButton = true,
         icon = type === 'warning' || type === 'error' ? 'exclamation-triangle-filled' : undefined,
-        deduplicate = type === 'error',
+        deduplicate = true,
         ...rest
     }: CreateNotificationOptions) => {
         if (intervalIds.has(id)) {
