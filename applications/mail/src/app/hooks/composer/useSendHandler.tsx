@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useEventManager, useHandler, useMailSettings, useNotifications } from '@proton/components';
+import { useEventManager, useHandler, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
 
 import SendingMessageNotification, {
@@ -61,7 +61,6 @@ export const useSendHandler = ({
         handleNoAttachments
     );
     const sendMessage = useSendMessage();
-    const [mailSettings] = useMailSettings();
 
     const onCompose = useOnCompose();
 
@@ -162,14 +161,7 @@ export const useSendHandler = ({
 
         // Display growler to receive direct feedback (UX) since sendMessage function is added to queue (and other async process could need to complete first)
         notifManager.ID = createNotification({
-            text: (
-                <SendingMessageNotification
-                    scheduledAt={scheduledAt}
-                    manager={notifManager}
-                    viewMode={mailSettings?.ViewMode || 0}
-                    message={getModelMessage().data}
-                />
-            ),
+            text: <SendingMessageNotification scheduledAt={scheduledAt} manager={notifManager} />,
             expiration: -1,
             disableAutoClose: true,
         });
