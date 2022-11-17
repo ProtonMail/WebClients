@@ -33,7 +33,6 @@ const LocationField = ({ value, onChange }: Props) => {
                     <Button
                         key={option.value}
                         data-testid={`location-${option.value}`}
-                        data-is-selected={option.value === value}
                         onClick={() => {
                             onChange(option.value);
                         }}
@@ -54,7 +53,6 @@ const LocationField = ({ value, onChange }: Props) => {
                         className="flex flex-nowrap flex-align-items-center"
                         onClick={() => onChange(ALL_MAIL)}
                         color="norm"
-                        data-is-selected="true"
                         shape="solid"
                         size="small"
                         title={c('Action').t`Remove`}
