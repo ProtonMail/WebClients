@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -411,77 +411,68 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     // True while loading, and then true if it's fetched correctly.
     const hasValidPlanSelected = model === DEFAULT_SIGNUP_MODEL || plan;
 
-    const stepper = useMemo(
-        () =>
-            (() => {
-                const hasPaidPlanPreSelected =
-                    signupParameters.preSelectedPlan &&
-                    signupParameters.preSelectedPlan !== 'free' &&
-                    hasValidPlanSelected;
-                const stepLabels = {
-                    accountSetup: c('Signup step').t`Account setup`,
-                    verification: c('Signup step').t`Verification`,
-                    payment: c('Signup step').t`Payment`,
+    const stepper = (() => {
+        const hasPaidPlanPreSelected =
+            signupParameters.preSelectedPlan && signupParameters.preSelectedPlan !== 'free' && hasValidPlanSelected;
+        const stepLabels = {
+            accountSetup: c('Signup step').t`Account setup`,
+            verification: c('Signup step').t`Verification`,
+            payment: c('Signup step').t`Payment`,
+        };
+
+        const isExternalAccountFlow = signupType.type === SignupType.Email;
+        if (isExternalAccountFlow) {
+            if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
+                return {
+                    activeStep: 0,
+                    steps: [
+                        stepLabels.accountSetup,
+                        stepLabels.verification,
+                        hasPaidPlanPreSelected && stepLabels.payment,
+                    ].filter(isTruthy),
                 };
+            }
 
-                const isExternalAccountFlow = signupType.type === SignupType.Email;
-                if (isExternalAccountFlow) {
-                    if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
-                        return {
-                            activeStep: 0,
-                            steps: [
-                                stepLabels.accountSetup,
-                                stepLabels.verification,
-                                hasPaidPlanPreSelected && stepLabels.payment,
-                            ].filter(isTruthy),
-                        };
-                    }
+            if (step === SIGNUP_STEPS.HUMAN_VERIFICATION || step === SIGNUP_STEPS.UPSELL) {
+                return {
+                    activeStep: 1,
+                    steps: [
+                        stepLabels.accountSetup,
+                        stepLabels.verification,
+                        hasPaidPlanPreSelected && stepLabels.payment,
+                    ].filter(isTruthy),
+                };
+            }
 
-                    if (step === SIGNUP_STEPS.HUMAN_VERIFICATION || step === SIGNUP_STEPS.UPSELL) {
-                        return {
-                            activeStep: 1,
-                            steps: [
-                                stepLabels.accountSetup,
-                                stepLabels.verification,
-                                hasPaidPlanPreSelected && stepLabels.payment,
-                            ].filter(isTruthy),
-                        };
-                    }
+            if (step === SIGNUP_STEPS.PAYMENT) {
+                return {
+                    activeStep: 2,
+                    steps: [stepLabels.accountSetup, stepLabels.verification, stepLabels.payment],
+                };
+            }
+        }
 
-                    if (step === SIGNUP_STEPS.PAYMENT) {
-                        return {
-                            activeStep: 2,
-                            steps: [stepLabels.accountSetup, stepLabels.verification, stepLabels.payment],
-                        };
-                    }
-                }
+        if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
+            return {
+                activeStep: 0,
+                steps: [stepLabels.accountSetup, hasPaidPlanPreSelected ? stepLabels.payment : stepLabels.verification],
+            };
+        }
 
-                if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
-                    return {
-                        activeStep: 0,
-                        steps: [
-                            stepLabels.accountSetup,
-                            hasPaidPlanPreSelected ? stepLabels.payment : stepLabels.verification,
-                        ],
-                    };
-                }
+        if (step === SIGNUP_STEPS.UPSELL) {
+            return { activeStep: 0, steps: [stepLabels.accountSetup, stepLabels.verification] };
+        }
 
-                if (step === SIGNUP_STEPS.UPSELL) {
-                    return { activeStep: 0, steps: [stepLabels.accountSetup, stepLabels.verification] };
-                }
+        if (step === SIGNUP_STEPS.HUMAN_VERIFICATION) {
+            return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.verification] };
+        }
 
-                if (step === SIGNUP_STEPS.HUMAN_VERIFICATION) {
-                    return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.verification] };
-                }
+        if (step === SIGNUP_STEPS.PAYMENT) {
+            return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.payment] };
+        }
 
-                if (step === SIGNUP_STEPS.PAYMENT) {
-                    return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.payment] };
-                }
-
-                return;
-            })(),
-        [step, signupParameters.preSelectedPlan, signupType, hasValidPlanSelected]
-    );
+        return;
+    })();
 
     const children = (
         <>
