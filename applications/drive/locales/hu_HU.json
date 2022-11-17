@@ -158,6 +158,9 @@
       "Create new folder": [
         "Új mappa létrehozása"
       ],
+      "Create new text file": [
+        "Új szövegfájl létrehozása"
+      ],
       "Customize": [
         "Testreszabás"
       ],
@@ -540,6 +543,9 @@
       ],
       "Try another method": [
         "Másik módszer"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
       ],
       "Undo": [
         "Visszavonás"
@@ -2636,6 +2642,9 @@
         "Mind (${ totalFoldersCount } címke)",
         "Mind (${ totalFoldersCount } címke)"
       ],
+      "All your changes will be lost.": [
+        "A változtatások el fognak veszni."
+      ],
       "An active recovery file": [
         "Egy aktív helyreállító fájl"
       ],
@@ -2650,6 +2659,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "A hivatkozás birtokában bárki hozzáférhet a mappához."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Biztos abban, hogy elveti a módosításokat?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Biztos benne, hogy kiüríti a lomtárat és véglegesen törli az összes benne lévő elemet?"
@@ -3075,6 +3087,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Válasszon ki e-mail címet vagy címeket a ${ groupName } csoporthoz adáshoz."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Várjon, amíg módosításai szinkronizálódnak a szerverrel."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Folyamatban van az olyan névjegyek keresése, amelyeket újra aláírhat az elsődleges titkosítás kulccsal."
       ],
@@ -3276,6 +3291,9 @@
       ],
       "Unlock drive to recover files": [
         "A tárhelyek feloldása a fájlok helyreállításához"
+      ],
+      "Unsaved changes": [
+        "Nem mentett módosítások"
       ],
       "Unsupported file": [
         "Ismeretlen file"
@@ -4660,6 +4678,9 @@
       "All": [
         "Mind"
       ],
+      "Are you sure you want to close the preview?": [
+        "Biztos, hogy be szeretné zárni az előnézetet?"
+      ],
       "Back": [
         "Vissza"
       ],
@@ -4689,6 +4710,9 @@
       ],
       "Contacts": [
         "Névjegyek"
+      ],
+      "Create a new file": [
+        "Új fájl létrehozása"
       ],
       "Create a new folder": [
         "Új mappa létrehozása"
@@ -5067,6 +5091,9 @@
       ],
       "You've got files": [
         "Fájljai érkeztek"
+      ],
+      "Your changes are not synced yet": [
+        "Módosításai még nincsenek szinkronizálva"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ formattedEndDate }"

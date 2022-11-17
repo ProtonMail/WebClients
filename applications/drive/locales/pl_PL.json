@@ -158,6 +158,9 @@
       "Create new folder": [
         "Utwórz nowy folder"
       ],
+      "Create new text file": [
+        "Utwórz nowy plik tekstowy"
+      ],
       "Customize": [
         "Dostosuj"
       ],
@@ -547,6 +550,9 @@
       ],
       "Try another method": [
         "Użyj innej metody"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Spróbuj zapisać ponownie. Zapisanie nie powiodło się: ${ saveError }"
       ],
       "Undo": [
         "Cofnij"
@@ -1719,6 +1725,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "Plik o nazwie \"${ name }\" już istnieje"
+      ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
@@ -2740,6 +2749,9 @@
         "Wszystkie (${ totalFoldersCount } etykiet)",
         "Wszystkie (${ totalFoldersCount } etykiety)"
       ],
+      "All your changes will be lost.": [
+        "Wszystkie zmiany zostaną utracone."
+      ],
       "An active recovery file": [
         "Aktywny plik odzyskiwania"
       ],
@@ -2754,6 +2766,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Każdy, kto posiada link, ma dostęp do folderu."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Czy na pewno chcesz opróżnić Kosz i trwale usunąć wszystkie elementy?"
@@ -3217,6 +3232,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Zaznacz adresy, które chcesz dodać do grupy ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Poczekaj na synchronizację zmian z serwerem."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Poczekaj na sprawdzenie kontaktów, które mogą zostać ponownie podpisane za pomocą głównego klucza szyfrowania."
       ],
@@ -3438,6 +3456,9 @@
       ],
       "Unlock drive to recover files": [
         "Odblokuj dysk, aby odzyskać pliki"
+      ],
+      "Unsaved changes": [
+        "Niezapisane zmiany"
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
@@ -4264,11 +4285,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "Przywrócenie elementu \"${ name } z Kosza nie powiodło się"
       ],
+      "\"${ name }\" failed to be saved": [
+        "Nie udało zapisać się pliku \"${ name }\""
+      ],
       "\"${ name }\" moved to trash": [
         "Element \"${ name }\" został przeniesiony do Kosza"
       ],
       "\"${ name }\" restored from trash": [
         "Element \"${ name }\" został przywrócony z Kosza"
+      ],
+      "\"${ name }\" saved successfully": [
+        "Plik \"${ name }\" zapisany"
       ],
       "\"${ name }\" successfully moved": [
         "Element \"${ name }\" został przeniesiony"
@@ -4587,6 +4614,9 @@
       ],
       "E.g., ": [
         "Np. "
+      ],
+      "Enter a new file name": [
+        "Wpisz nową nazwę pliku"
       ],
       "Enter a new folder name": [
         "Wpisz nową nazwę folderu"
@@ -5189,6 +5219,9 @@
       "All": [
         "Wszystkie"
       ],
+      "Are you sure you want to close the preview?": [
+        "Czy na pewno chcesz zamknąć podgląd?"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -5218,6 +5251,9 @@
       ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Create a new file": [
+        "Utwórz nowy plik"
       ],
       "Create a new folder": [
         "Utwórz nowy folder"
@@ -5608,6 +5644,9 @@
       ],
       "Your 500 MB bonus": [
         "Twój bonus 500 MB"
+      ],
+      "Your changes are not synced yet": [
+        "Zmiany nie zostały zsynchronizowane"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Darmowa wersja próbna zakończy się ${ formattedEndDate }"

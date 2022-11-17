@@ -158,6 +158,9 @@
       "Create new folder": [
         "Crea nuova cartella"
       ],
+      "Create new text file": [
+        "Crea un nuovo file di testo"
+      ],
       "Customize": [
         "Personalizza"
       ],
@@ -543,6 +546,9 @@
       ],
       "Try another method": [
         "Prova un altro metodo"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Salvataggio non riuscito a causa di: ${ saveError }. Prova a salvare di nuovo. "
       ],
       "Undo": [
         "Annulla"
@@ -1713,6 +1719,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" esiste già"
+      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -2642,6 +2651,9 @@
         "Tutta la (${ totalFoldersCount } etichetta)",
         "Tutte le (${ totalFoldersCount } etichette)"
       ],
+      "All your changes will be lost.": [
+        "Tutte le modifiche andranno perse."
+      ],
       "An active recovery file": [
         "Un file di ripristino attivo"
       ],
@@ -2656,6 +2668,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Chiunque abbia questo link può accedere alla tua cartella."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Vuoi davvero ignorare le modifiche?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sei sicuro di voler svuotare il cestino ed eliminare definitivamente tutti gli elementi?"
@@ -3107,6 +3122,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere a ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Attendi che le tue modifiche siano sincronizzate con il server."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Attendi mentre cerchiamo i contatti che possono essere ri-firmati con la chiave di crittografia primaria."
       ],
@@ -3326,6 +3344,9 @@
       ],
       "Unlock drive to recover files": [
         "Sblocca lo spazio per recuperare i file"
+      ],
+      "Unsaved changes": [
+        "Modifiche non salvate"
       ],
       "Unsupported file": [
         "File non supportato"
@@ -4142,11 +4163,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "Impossibile ripristinare \"${ name }\" dal cestino"
       ],
+      "\"${ name }\" failed to be saved": [
+        "\"${ name }\" non salvato"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" spostato nel cestino"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" ripristinato dal cestino"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" salvato con successo"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" spostato correttamente"
@@ -4427,6 +4454,9 @@
       ],
       "E.g., ": [
         "Ad es "
+      ],
+      "Enter a new file name": [
+        "Inserisci un nuovo nome del file"
       ],
       "Enter a new folder name": [
         "Inserisci un nuovo nome del file"
@@ -4993,6 +5023,9 @@
       "All": [
         "Tutto"
       ],
+      "Are you sure you want to close the preview?": [
+        "Sei sicuro di voler chiudere l'anteprima?"
+      ],
       "Back": [
         "Indietro"
       ],
@@ -5022,6 +5055,9 @@
       ],
       "Contacts": [
         "Contatti"
+      ],
+      "Create a new file": [
+        "Crea un nuovo file"
       ],
       "Create a new folder": [
         "Crea una nuova cartella"
@@ -5406,6 +5442,9 @@
       ],
       "Your 500 MB bonus": [
         "Il tuo bonus di 500 MB"
+      ],
+      "Your changes are not synced yet": [
+        "Le tue modifiche non sono ancora sincronizzate"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "La tua prova gratuita terminerà presto, il ${ formattedEndDate }"

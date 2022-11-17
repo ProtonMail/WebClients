@@ -141,6 +141,9 @@
       "Choose a file or drag it here": [
         "Выберите файл или перетащите его сюда"
       ],
+      "Claim it": [
+        "Заявите об этом"
+      ],
       "Clear all formatting": [
         "Удалить форматирование"
       ],
@@ -209,6 +212,9 @@
       ],
       "Create link": [
         "Создать ссылку"
+      ],
+      "Create your own": [
+        "Создайте свой собственный"
       ],
       "Current plan": [
         "Текущий тариф"
@@ -317,9 +323,6 @@
       ],
       "Edit subscription": [
         "Изменить подписку"
-      ],
-      "Emoji": [
-        "Эмоджи"
       ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
@@ -762,6 +765,9 @@
       "Try another method": [
         "Попробуйте другой способ"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Попробуйте сохранить ещё раз. Не удалось сохранить из-за: ${ saveError }"
+      ],
       "Underline": [
         "Подчёркнутый"
       ],
@@ -1158,6 +1164,16 @@
         "Твитнуть"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Добавить людей или группы"
+      ]
+    },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "Редактировать календарь"
+      ]
+    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "Скачать файл ICS со всеми событиями из выбранного календаря."
@@ -1261,6 +1277,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Изменить (просмотр, создание и изменение информации о событии)"
+      ],
+      "View (see all event details)": [
+        "Просмотр (см. всю информацию о событии)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3458,6 +3477,9 @@
       "sign in": [
         "войти в систему"
       ],
+      "There was a problem removing your email address.": [
+        "Возникла проблема с удалением вашего адреса электронной почты."
+      ],
       "There was a problem verifying your email address.": [
         "Возникла проблема с проверкой вашего адреса электронной почты."
       ]
@@ -4953,6 +4975,9 @@
       "Download recovery file": [
         "Скачать файл восстановления"
       ],
+      "Download recovery phrase": [
+        "Скачать фразу для восстановления"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
       ],
@@ -5072,6 +5097,12 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерирование новой фразы восстановления приведет к деактивации старой."
+      ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Получите адрес ${ BRAND_NAME } для использования всех служб ${ BRAND_NAME }, включая Почту и Календарь."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Получить свой адрес ${ BRAND_NAME }"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Поделитесь своим публичным ключом с друзьями или опубликуйте его в Интернете, чтобы каждый мог отправлять вам письма со сквозным шифрованием!"
@@ -5424,6 +5455,9 @@
       "Paid for a monthly plan": [
         "Оплачен тариф на месяц"
       ],
+      "password reset": [
+        "сброс пароля"
+      ],
       "Payment can take a few minutes to fully verify.": [
         "Полная проверка платежа может занять несколько минут."
       ],
@@ -5502,6 +5536,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Пожалуйста, подтвердите карту в новой открывшейся вкладке."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Пожалуйста, ожидайте пока изменения синхронизируются с сервером."
+      ],
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
       ],
@@ -5513,6 +5550,9 @@
       ],
       "Priority support": [
         "Приоритетная поддержка"
+      ],
+      "Proton ${ planName } credits earned": [
+        "Получено кредитов Proton ${ planName }"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton приостановил импорт, т. к. потерял подключение к поставщику услуг вашей другой электронной почты. Пожалуйста, подключитесь снова."
@@ -5573,6 +5613,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Удалите один из своих календарей, чтобы присоединиться к этому"
+      ],
+      "Reset password": [
+        "Сбросить пароль"
       ],
       "Revoke certificate ${ name }": [
         "Отозвать сертификат ${ name }"
@@ -5721,6 +5764,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Эти конфигурации предоставляются для работы с маршрутизаторами WireGuard и официальными клиентами."
       ],
+      "They'll receive a free month of ${ planName }.": [
+        "Они получат бесплатный месяц ${ planName }."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
       ],
@@ -5868,6 +5914,9 @@
       "Unlimited messages": [
         "Неограниченное количество сообщений"
       ],
+      "Unsaved changes": [
+        "Несохранённые изменения"
+      ],
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
@@ -5969,6 +6018,9 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Если уведомления включены, мы будем отправлять оповещения на ваш резервный адрес электронной почты, если в вашем аккаунте ${ MAIL_APP_NAME } появятся новые сообщения."
+      ],
+      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
+        "Когда они подписываются на тариф, вы получаете кредиты, которые можно использовать на подписку."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
@@ -9490,6 +9542,11 @@
         "Добавьте аккаунты Proton, с которыми вы хотите поделиться ${ calendarName }. Мы отправим им приглашение."
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Введите адрес электронной почты или название группы"
+      ]
+    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Поделиться с пользователями Proton"
@@ -10409,6 +10466,9 @@
       "Apply gift code": [
         "Применить подарочный код"
       ],
+      "Are you sure you want to close the preview?": [
+        "Вы уверены, что хотите закрыть предпросмотр?"
+      ],
       "Are you sure you want to close?": [
         "Вы уверены, что хотите закрыть?"
       ],
@@ -10516,6 +10576,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Создайте свой аккаунт ${ BRAND_NAME }"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Создайте свой адрес ${ BRAND_NAME }"
       ],
       "Creating user accounts": [
         "Создание пользовательских аккаунтов"
@@ -11066,6 +11129,9 @@
       "Warning: suspected fake website": [
         "Предупреждение: предполагаемый поддельный сайт"
       ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "Мы перешли на ${ PROTON_ME_DOMAIN }"
+      ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
       ],
@@ -11083,6 +11149,9 @@
       ],
       "Your calendar link": [
         "Ссылка на календарь"
+      ],
+      "Your changes are not synced yet": [
+        "Изменения ещё не сохранены"
       ],
       "Your current plan": [
         "Ваш текущий тариф"
@@ -11181,6 +11250,16 @@
       ],
       "Role": [
         "Должность"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Создать календарь"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Редактировать календарь"
       ]
     },
     "Today icon tooltip in mini calendar": {

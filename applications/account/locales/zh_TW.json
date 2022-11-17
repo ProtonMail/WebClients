@@ -310,9 +310,6 @@
       "Edit subscription": [
         "更換授權約期"
       ],
-      "Emoji": [
-        "表情符號"
-      ],
       "enable desktop notifications": [
         "啟用桌面通知"
       ],
@@ -424,6 +421,9 @@
       "label emails as": [
         "將電郵加上標籤"
       ],
+      "Leave": [
+        "離開"
+      ],
       "Load more": [
         "載入更多"
       ],
@@ -432,6 +432,9 @@
       ],
       "Make default": [
         "設為預設值"
+      ],
+      "Manage communication preferences": [
+        "管理通訊偏好設定"
       ],
       "Mark as default": [
         "標記為預設值"
@@ -756,6 +759,9 @@
       ],
       "Try another method": [
         "嘗試其它驗證方式"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "嘗試再次儲存。儲存失敗原因：${ saveError }"
       ],
       "Underline": [
         "底線"
@@ -1116,6 +1122,16 @@
         "Tweet"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "新增夥伴或群組"
+      ]
+    },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "編輯行事曆"
+      ]
+    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "下載選定行事曆中所有行程的 ICS 檔案。"
@@ -1173,6 +1189,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "編輯（檢視、建立與編輯事件詳細資訊）"
+      ],
+      "View (see all event details)": [
+        "檢視（檢視所有事件的詳細資訊）"
       ]
     },
     "Calendar status": {
@@ -3276,6 +3295,9 @@
       "sign in": [
         "登入"
       ],
+      "There was a problem removing your email address.": [
+        "移除您的電郵位址發生問題。"
+      ],
       "There was a problem verifying your email address.": [
         "驗證您的電郵位址時發生問題。"
       ]
@@ -4382,6 +4404,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需建立加密金鑰，才可用來傳送和接收電郵。"
       ],
+      "Before you reset your password, download your recovery phrase.": [
+        "在重設密碼字元前，先下載您的恢復短語。"
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "比特幣交易可能需時確認 (可能長達 24 小時)。一俟確認，儲值將撥入您的帳號。在交易確認後，您即可使用儲值餘額支付您的帳單。"
       ],
@@ -4513,6 +4538,9 @@
       ],
       "Download recovery file": [
         "下載帳號救援檔案"
+      ],
+      "Download recovery phrase": [
+        "下載復原短語"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "現在就下載您最愛的應用程式，隱私隨身帶著走。"
@@ -4669,6 +4697,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
+      ],
+      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
+        "如要重設密碼字元，您需輸入此恢復短語，才能進入帳號和解除資料鎖定。"
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "若您在 ${ MAIL_APP_NAME } 自訂了一個網域，您可以啟用「全部擷取電郵位址」，以接收任何寄到您的網域但收件人不存在(可能是因為拼寫錯誤)的郵件。"
@@ -4862,6 +4893,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "請確保 ${ addARecoveryMethod } ，如果忘記密碼您還能恢復存取帳號。"
       ],
+      "Make sure you keep your recovery phrase somewhere private.": [
+        "請記錄並保管您的恢復短語。"
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。又或者，${ _switchButton }。"
       ],
@@ -4976,6 +5010,9 @@
       "Paid for a monthly plan": [
         "以每月方案付費"
       ],
+      "password reset": [
+        "密碼重設"
+      ],
       "Payment can take a few minutes to fully verify.": [
         "付款或需時數分鐘才驗證完成。"
       ],
@@ -5038,6 +5075,9 @@
       ],
       "Please verify the card in the new tab which was opened.": [
         "請在剛開啟的新索引標籤中驗證信用卡。"
+      ],
+      "Please wait till your changes are synced with the server.": [
+        "請等待您的變更與伺服器同步。"
       ],
       "Plus or Visionary subscription required": [
         "需為 Plus 或 Visionary 訂閱方案"
@@ -5104,6 +5144,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
+      ],
+      "Reset password": [
+        "重設密碼"
       ],
       "Revoke certificate ${ name }": [
         "撤銷憑證 ${ name }"
@@ -5393,6 +5436,9 @@
       "Unlimited messages": [
         "無限制的郵件"
       ],
+      "Unsaved changes": [
+        "未儲存的變更"
+      ],
       "Unsupported file": [
         "不支援的檔案"
       ],
@@ -5662,6 +5708,9 @@
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
+      ],
+      "Your imports from ${ accounts } are temporarily delayed.": [
+        "您從匯入 ${ accounts } 的操作被暫時推遲。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
@@ -6914,6 +6963,26 @@
       ],
       "Private": [
         "私密"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } Beta 公告"
+      ],
+      "${ BRAND_NAME } company announcements": [
+        "${ BRAND_NAME } 公司公告"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } 商業通訊"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } 通訊"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } 計劃與優惠"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } 產品公告"
       ]
     },
     "Label in domain modal": {
@@ -8214,6 +8283,9 @@
       "You can safely close this tab.": [
         "您可以安全地關閉此分頁。"
       ],
+      "Your recovery email has been successfully removed.": [
+        "已成功移除您的復原用電郵位址。"
+      ],
       "Your recovery email has been successfully verified.": [
         "您的還原電郵已成功驗證。"
       ]
@@ -8373,6 +8445,11 @@
     "Share calendar modal description": {
       "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "新增您要與之分享 ${ calendarName } 的 Proton 帳號。我們會向他們傳送邀請。"
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "輸入電子郵件地址或群組名稱"
       ]
     },
     "Share calendar modal title": {
@@ -8954,6 +9031,9 @@
       ],
       "Apply gift code": [
         "套用禮品代碼"
+      ],
+      "Are you sure you want to close the preview?": [
+        "您確定要關閉預覽嗎？"
       ],
       "Are you sure you want to close?": [
         "您確定要關閉嗎？"
@@ -9609,6 +9689,9 @@
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
       ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "我們已搬家至 ${ PROTON_ME_DOMAIN }"
+      ],
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
       ],
@@ -9626,6 +9709,9 @@
       ],
       "Your calendar link": [
         "您的行事曆連結"
+      ],
+      "Your changes are not synced yet": [
+        "您的變更尚未同步"
       ],
       "Your current plan": [
         "您目前的方案"
@@ -9724,6 +9810,16 @@
       ],
       "Role": [
         "角色"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "建立行事曆"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "編輯行事曆"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -951,6 +951,9 @@
       "Try another method": [
         "Prova un altro metodo"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Salvataggio non riuscito a causa di: ${ saveError }. Prova a salvare di nuovo. "
+      ],
       "Turn on tracker protection": [
         "Attiva la protezione del tracker"
       ],
@@ -3342,8 +3345,8 @@
     },
     "Error adding participants to a calendar event": {
       "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Al massimo ${ MAX_ATTENDEES } partecipante è ammesso per ogni invito",
-        "Al massimo ${ MAX_ATTENDEES } partecipanti sono ammessi per ogni invito"
+        "Per ogni invito, è ammesso ${ MAX_ATTENDEES } solo partecipante",
+        "Per ogni invito, sono ammessi un massimo di ${ MAX_ATTENDEES } partecipanti"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4975,6 +4978,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere a ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Attendi che le tue modifiche siano sincronizzate con il server."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Attendi mentre cerchiamo i contatti che possono essere ri-firmati con la chiave di crittografia primaria."
       ],
@@ -5310,6 +5316,9 @@
       ],
       "Unlock message": [
         "Sblocca messaggio"
+      ],
+      "Unsaved changes": [
+        "Modifiche non salvate"
       ],
       "Unsupported file": [
         "File non supportato"
@@ -7998,6 +8007,9 @@
       "Archive": [
         "Archivio"
       ],
+      "Are you sure you want to close the preview?": [
+        "Sei sicuro di voler chiudere l'anteprima?"
+      ],
       "Are you sure you want to close?": [
         "Confermi di voler chiudere?"
       ],
@@ -8462,6 +8474,9 @@
       ],
       "What's new": [
         "Cosa c'è di nuovo"
+      ],
+      "Your changes are not synced yet": [
+        "Le tue modifiche non sono ancora sincronizzate"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "La tua prova gratuita terminerà presto, il ${ formattedEndDate }"

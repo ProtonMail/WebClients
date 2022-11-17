@@ -110,6 +110,9 @@
       "Disable": [
         "Deaktivieren"
       ],
+      "Discard": [
+        "Verwerfen"
+      ],
       "Done": [
         "Fertig"
       ],
@@ -325,6 +328,9 @@
       ],
       "Try another method": [
         "Eine andere Methode ausprobieren"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
       ],
       "Unlock": [
         "Entsperren"
@@ -1909,6 +1915,9 @@
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Nachdem Sie Ihre Bitcoin-Zahlung getätigt haben, folgen Sie bitte den nachfolgenden Anweisungen zum Wechsel."
       ],
+      "All your changes will be lost.": [
+        "Alle Ihre Änderungen gehen dabei verloren."
+      ],
       "Amount below minimum (${ amount }).": [
         "Mindestbetrag unterschritten (${ amount })."
       ],
@@ -1917,6 +1926,9 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sind Sie sicher, dass Sie die Zwei-Faktor-Authentifizierung deaktivieren wollen?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Möchten Sie Ihre Änderungen wirklich verwerfen?"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Basic-, Plus‐ oder Visionary‐Abonnement benötigt"
@@ -2185,6 +2197,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Bitte überprüfen Sie die Karte im neu geöffneten Tab."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Bitte warte, bis deine Änderungen mit dem Server synchronisiert wurden."
+      ],
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
       ],
@@ -2346,6 +2361,9 @@
       ],
       "Unlimited messages": [
         "Unbegrenzt viele Nachrichten"
+      ],
+      "Unsaved changes": [
+        "Ungespeicherte Änderungen"
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
@@ -2944,23 +2962,23 @@
       ]
     },
     "Label for news": {
-      "Proton beta announcements": [
-        "Proton Beta-Ankündigungen"
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } Beta-Ankündigungen"
       ],
-      "Proton company announcements": [
-        "Proton Firmenankündigungen"
+      "${ BRAND_NAME } company announcements": [
+        "${ BRAND_NAME } Firmenankündigungen"
       ],
-      "Proton for Business newsletter": [
-        "Proton Mail für Unternehmen • Newsletter"
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business-Newsletter"
       ],
-      "Proton newsletter": [
-        "Proton Newsletter"
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } Newsletter"
       ],
-      "Proton offers and promotions": [
-        "Proton Angebote und Sonderaktionen"
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } Angebote und Sonderaktionen"
       ],
-      "Proton product announcements": [
-        "Proton Produktankündigungen"
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } Produktankündigungen"
       ]
     },
     "Label on payment method": {
@@ -4489,6 +4507,9 @@
       "Apply gift code": [
         "Geschenkcode anwenden"
       ],
+      "Are you sure you want to close the preview?": [
+        "Möchtest du die Vorschau wirklich schließen?"
+      ],
       "Back": [
         "Zurück"
       ],
@@ -4782,6 +4803,9 @@
       ],
       "You already have a Proton account": [
         "Du verfügst bereits über ein Proton-Konto"
+      ],
+      "Your changes are not synced yet": [
+        "Deine Änderungen wurden noch nicht synchronisiert"
       ],
       "Your current plan": [
         "Dein aktuelles Abonnement"

@@ -1676,7 +1676,7 @@
     },
     "Confirm modal title": {
       "Edit and reschedule": [
-        "編集して再スケジュール"
+        "編集してもう一度送信予約"
       ],
       "Message saved to Drafts": [
         "メッセージを下書きに保存しました"
@@ -2820,7 +2820,7 @@
         "未来の日付を入力してください。"
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
-        "次の ${ SCHEDULED_MAX_DATE_DAYS } 日から日付を選択してください。"
+        "次の ${ SCHEDULED_MAX_DATE_DAYS } 日間から日付を選択してください"
       ],
       "Condition incomplete": [
         "条件が不完全です"
@@ -4103,7 +4103,7 @@
         "${ unread } 件の未読のメッセージ"
       ],
       "${ unreadCount } scheduled messages": [
-        "${ unreadCount } 件の予定されたメッセージ"
+        "${ unreadCount } 件の送信予約されたメッセージ"
       ],
       "${ unreadCount } unread conversations": [
         "${ unreadCount } 件の未読の会話"
@@ -4781,7 +4781,7 @@
         "下書きを保存しています…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "このメッセージのスケジュールされた送信はキャンセルされました。"
+        "このメッセージの送信予約はキャンセルされました"
       ],
       "Scheduling message...": [
         "メッセージをスケジューリングしています..."
@@ -4937,7 +4937,7 @@
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "このやりとりには送信予定のメールがあります。当該メールの送信はキャンセルされます。"
+        "この会話には送信予約されたメールが含まれます。送信予約はキャンセルされます。"
       ],
       "This conversation contains non-trashed messages.": [
         "このやりとりには、ごみ箱に入れられていないメールもあります。"
@@ -4979,7 +4979,7 @@
         "このメッセージはまだ信頼されていない添付された鍵で署名されています。"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        "このメッセージは下書きへ移動され編集することができます。送信するには再スケジュールする必要があります。"
+        "編集のため、このメッセージは下書きへ移動されます。送信するにはもう一度、送信を予約する必要があります。"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "このメッセージは ${ dateString } の ${ formattedTime } に送信されます"
@@ -6329,10 +6329,10 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        "スケジュールされた送信を取り消しました"
+        "送信予約を取り消しました"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "スケジュールがキャンセルされました。メッセージは下書きに移動しました。"
+        "送信予約がキャンセルされました。メッセージは下書きに移動されました"
       ],
       "Sending undone": [
         "送信が取り消されました"
@@ -6895,7 +6895,7 @@
         "メッセージが見つかりませんでした"
       ],
       "No messages scheduled": [
-        "スケジュールされているメッセージはありません"
+        "送信予約されているメッセージはありません"
       ],
       "No results found": [
         "該当する結果が見つかりませんでした"
@@ -7683,7 +7683,7 @@
         "ごみ箱に移動"
       ],
       "Moving a scheduled message": [
-        "スケジュールされたメッセージを移動しています"
+        "送信予約されたメッセージを移動しています"
       ],
       "New message": [
         "新規メッセージ"

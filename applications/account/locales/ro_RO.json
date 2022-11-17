@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Editare abonament"
       ],
-      "Emoji": [
-        "Emoticon"
-      ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
@@ -451,7 +448,7 @@
         "Setare ca implicită"
       ],
       "Manage communication preferences": [
-        "Gestionați preferințele de comunicare"
+        "Gestionare preferințe de comunicare"
       ],
       "Mark as default": [
         "Setare ca implicită"
@@ -776,6 +773,9 @@
       ],
       "Try another method": [
         "Încercaţi o altă metodă"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
       "Underline": [
         "Subliniat"
@@ -1288,7 +1288,7 @@
         "Editare (afișare, creare și editare detalii evenimente)"
       ],
       "View (see all event details)": [
-        "Vizualizare (vezi toate detaliile evenimentului)"
+        "Afișare (afișare toate detaliile evenimentului)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3474,7 +3474,7 @@
         "autentificare"
       ],
       "There was a problem removing your email address.": [
-        "A existat o problemă la eliminarea adresei dumneavoastră de e-mail."
+        "A existat o problemă la eliminarea adresei de e-mail."
       ],
       "There was a problem verifying your email address.": [
         "A existat o problemă la verificarea adresei de e-mail."
@@ -5094,7 +5094,7 @@
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
       "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
-        "Dacă nu vă cunoașteți parola, va trebui să faceți un ${ boldPasswordReset } pentru a accesa noul site."
+        "Dacă nu vă cunoașteți parola, va trebui să vă ${ boldPasswordReset } pentru a accesa noul site."
       ],
       "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
         "Dacă va trebui să vă resetați parola din nou, va trebui să introduceți această frază pentru a intra din nou în cont și a vă debloca datele."
@@ -5499,6 +5499,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Verificați cardul în noua pagină deschisă."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Așteptați până când modificările se sincronizează cu serverul."
+      ],
       "Plus or Visionary subscription required": [
         "Este necesar abonamentul „Plus” sau „Visionary”"
       ],
@@ -5575,7 +5578,7 @@
         "Eliminați unul din calendare pentru a vă alătura acestuia"
       ],
       "Reset password": [
-        "Resetați parola"
+        "Resetare parolă"
       ],
       "Revoke certificate ${ name }": [
         "Anulare certificat ${ name }"
@@ -5717,7 +5720,7 @@
         "Cea mai sigură cale de navigare, redare în flux și de a fi online."
       ],
       "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
-        "Nu au existat modificări la adresa dumneavoastră de e-mail sau la ${ BRAND_NAME } Cont. Doar conectați-vă la ${ link }."
+        "Nu au existat modificări la adresa de e-mail sau la contul ${ BRAND_NAME }. Doar conectați-vă la ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Aceste fișiere de configurare vă permit să alegeți la care server ${ VPN_APP_NAME } vă conectați atunci când utilizați o aplicație VPN terță sau când configurați o conexiune VPN pe un ruter."
@@ -5877,6 +5880,9 @@
       ],
       "Unlimited messages": [
         "Mesaje nelimitate"
+      ],
+      "Unsaved changes": [
+        "Modificări nesalvate"
       ],
       "Unsupported file": [
         "Fişier nesuportat"
@@ -6172,9 +6178,9 @@
         "Contul ${ BRAND_NAME } existent poate fi utilizat pentru accesarea tuturor serviciilor ${ BRAND_NAME }. Conectați-vă cu ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
-        "Importul dumneavoastră din ${ accounts } este temporar întârziat.",
-        "Importurile dumneavoastră din ${ accounts } sunt temporar întârziate.",
-        "De importuri ale dumneavoastră din ${ accounts } sunt temporar întârziate."
+        "Importarea din ${ accounts } este temporar întârziată.",
+        "Importarea din ${ accounts } este temporar întârziată.",
+        "Importarea din ${ accounts } este temporar întârziată."
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
@@ -6466,7 +6472,7 @@
         "Etichetare ca..."
       ],
       "Load embedded images": [
-        "Încărcare imagini integrate"
+        "Încărcare imagini incluse"
       ],
       "Load remote content": [
         "Încărcare conținut extern"
@@ -7482,22 +7488,22 @@
     },
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } anunțuri beta"
+        "Anunțuri beta ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } anunțuri ale companiei"
+        "Anunțuri ale companiei ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } pentru buletinul informativ Business"
+        "Buletin informativ ${ BRAND_NAME } pentru afaceri"
       ],
       "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } buletin informativ"
+        "Buletin informativ ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } oferte și promoții"
+        "Oferte și promoții ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } anunțuri de produse"
+        "Anunțuri de produse ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -7960,7 +7966,7 @@
         "Înapoi la fișiere"
       ],
       "Back to inbox": [
-        "Înapoi la mesaje primite"
+        "Înapoi la primite"
       ],
       "Blocked": [
         "Blocat"
@@ -7969,10 +7975,10 @@
         "Calendar"
       ],
       "Drive": [
-        "Unitate"
+        "Drive"
       ],
       "Inbox": [
-        "Mesaje primite"
+        "Primite"
       ],
       "Not spam": [
         "Acceptată"
@@ -9312,7 +9318,7 @@
         "Puteți închide această filă în siguranță."
       ],
       "Your recovery email has been successfully removed.": [
-        "E-mailul dumneavoastră de recuperare a fost eliminat cu succes."
+        "S-a reușit eliminarea adresei de e-mail pentru recuperare."
       ],
       "Your recovery email has been successfully verified.": [
         "E-mailul de recuperare a fost verificat cu succes."
@@ -10146,6 +10152,9 @@
       "Apply gift code": [
         "Aplicare cod cadou"
       ],
+      "Are you sure you want to close the preview?": [
+        "Sigur doriți să închideți examinarea?"
+      ],
       "Are you sure you want to close?": [
         "Sigur doriți să închideți?"
       ],
@@ -10824,6 +10833,9 @@
       ],
       "Your calendar link": [
         "Legătură calendar"
+      ],
+      "Your changes are not synced yet": [
+        "Modificările nu sunt încă sincronizate"
       ],
       "Your current plan": [
         "Planul curent"

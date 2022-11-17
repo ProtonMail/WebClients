@@ -47,6 +47,9 @@
       "Chat with us": [
         "Поговорите с нами"
       ],
+      "Claim it": [
+        "Заявите об этом"
+      ],
       "Close": [
         "Закрыть"
       ],
@@ -77,6 +80,9 @@
       "Create account": [
         "Создать аккаунт"
       ],
+      "Create your own": [
+        "Создайте свой собственный"
+      ],
       "Current plan": [
         "Текущий тариф"
       ],
@@ -103,6 +109,9 @@
       ],
       "Disable": [
         "Отключить"
+      ],
+      "Discard": [
+        "Отменить"
       ],
       "Done": [
         "Готово"
@@ -319,6 +328,9 @@
       ],
       "Try another method": [
         "Попробуйте другой способ"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Попробуйте сохранить ещё раз. Не удалось сохранить из-за: ${ saveError }"
       ],
       "Unlock": [
         "Разблокировать"
@@ -1926,6 +1938,9 @@
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "После внесения оплаты Bitcoin, пожалуйста, следуйте согласно указаниям ниже, чтобы произвести улучшение."
       ],
+      "All your changes will be lost.": [
+        "Все ваши изменения будут потеряны."
+      ],
       "Amount below minimum (${ amount }).": [
         "Сумма ниже допустимого минимума (${ amount })."
       ],
@@ -1934,6 +1949,9 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Вы уверены, что хотите отключить двухфакторную аутентификацию?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Вы уверены, что хотите отменить изменения?"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Требуется подписка Basic, Plus или Visionary"
@@ -2045,6 +2063,12 @@
       ],
       "Free up some space or contact your administrator.": [
         "Освободите место или свяжитесь с вашим администратором."
+      ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
+        "Получите адрес ${ BRAND_NAME } для использования всех служб ${ BRAND_NAME }, включая Почту и Календарь."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Получить свой адрес ${ BRAND_NAME }"
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Google регистрирует ваши действия в Интернете и читает ваши персональные данные, чтобы предоставить доступ рекламодателям и другим третьим лицам. Для большей конфиденциальности, создайте защищенный адрес электронной почты."
@@ -2195,6 +2219,9 @@
       ],
       "Please verify the card in the new tab which was opened.": [
         "Пожалуйста, подтвердите карту в новой открывшейся вкладке."
+      ],
+      "Please wait till your changes are synced with the server.": [
+        "Пожалуйста, ожидайте пока изменения синхронизируются с сервером."
       ],
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
@@ -2357,6 +2384,9 @@
       ],
       "Unlimited messages": [
         "Неограниченное количество сообщений"
+      ],
+      "Unsaved changes": [
+        "Несохранённые изменения"
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
@@ -2948,26 +2978,6 @@
     "label": {
       "Recovery phone number": [
         "Номер телефона для восстановления"
-      ]
-    },
-    "Label for news": {
-      "Proton beta announcements": [
-        "Объявления о Proton beta"
-      ],
-      "Proton company announcements": [
-        "Объявления компании Proton"
-      ],
-      "Proton for Business newsletter": [
-        "Новости Proton for Business"
-      ],
-      "Proton newsletter": [
-        "Новостная рассылка Proton"
-      ],
-      "Proton offers and promotions": [
-        "Предложения и акции Proton"
-      ],
-      "Proton product announcements": [
-        "Объявления о продукте Proton"
       ]
     },
     "Label on payment method": {
@@ -4570,6 +4580,9 @@
       "Apply gift code": [
         "Применить подарочный код"
       ],
+      "Are you sure you want to close the preview?": [
+        "Вы уверены, что хотите закрыть предпросмотр?"
+      ],
       "Back": [
         "Назад"
       ],
@@ -4614,6 +4627,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Создайте свой аккаунт ${ BRAND_NAME }"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Создайте свой адрес ${ BRAND_NAME }"
       ],
       "Credits": [
         "Кредиты"
@@ -4860,6 +4876,9 @@
       ],
       "You already have a Proton account": [
         "У вас уже есть аккаунт Proton"
+      ],
+      "Your changes are not synced yet": [
+        "Изменения ещё не сохранены"
       ],
       "Your current plan": [
         "Ваш текущий тариф"

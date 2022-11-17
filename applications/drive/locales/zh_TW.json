@@ -158,6 +158,9 @@
       "Create new folder": [
         "建立新資料夾"
       ],
+      "Create new text file": [
+        "建立新文字檔案"
+      ],
       "Customize": [
         "自訂"
       ],
@@ -541,6 +544,9 @@
       ],
       "Try another method": [
         "嘗試其它驗證方式"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "嘗試再次儲存。儲存失敗原因：${ saveError }"
       ],
       "Undo": [
         "復原"
@@ -1710,6 +1716,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "「${ name }」已存在"
+      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
@@ -2593,6 +2602,9 @@
       "All (${ totalFoldersCount } labels)": [
         "全部 (${ totalFoldersCount } 個標籤)"
       ],
+      "All your changes will be lost.": [
+        "一切您所作的變更將會消失。"
+      ],
       "An active recovery file": [
         "作用的還原檔案"
       ],
@@ -2607,6 +2619,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "任何人憑此連結均可存取您的資料夾。"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "您確定要捨棄所作的變更嗎？"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您確定要清空垃圾桶並永久刪除當中所有項目嗎？"
@@ -3052,6 +3067,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
       ],
+      "Please wait till your changes are synced with the server.": [
+        "請等待您的變更與伺服器同步。"
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
       ],
@@ -3270,6 +3288,9 @@
       ],
       "Unlock drive to recover files": [
         "解鎖雲端硬碟以恢復文件"
+      ],
+      "Unsaved changes": [
+        "未儲存的變更"
       ],
       "Unsupported file": [
         "不支援的檔案"
@@ -4078,11 +4099,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "檔案 \"${ name }\" 未能從垃圾中被復原"
       ],
+      "\"${ name }\" failed to be saved": [
+        "「${ name }」儲存失敗"
+      ],
       "\"${ name }\" moved to trash": [
         "「${ name }」已移動到垃圾桶"
       ],
       "\"${ name }\" restored from trash": [
         "「${ name }」已從垃圾桶中還原"
+      ],
+      "\"${ name }\" saved successfully": [
+        "「${ name }」已成功儲存"
       ],
       "\"${ name }\" successfully moved": [
         "「${ name }」已成功移動"
@@ -4344,6 +4371,9 @@
       ],
       "E.g., ": [
         "例如： "
+      ],
+      "Enter a new file name": [
+        "輸入新檔案名稱"
       ],
       "Enter a new folder name": [
         "請輸入新的資料夾名稱"
@@ -4651,6 +4681,9 @@
       "All": [
         "全部"
       ],
+      "Are you sure you want to close the preview?": [
+        "您確定要關閉預覽嗎？"
+      ],
       "Back": [
         "返回"
       ],
@@ -4680,6 +4713,9 @@
       ],
       "Contacts": [
         "通訊錄"
+      ],
+      "Create a new file": [
+        "建立新檔案"
       ],
       "Create a new folder": [
         "建立新資料夾"
@@ -5061,6 +5097,9 @@
       ],
       "Your 500 MB bonus": [
         "您的 500 MB 獎勵"
+      ],
+      "Your changes are not synced yet": [
+        "您的變更尚未同步"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您專屬的免費試用即將結束，到期日為 ${ formattedEndDate }"

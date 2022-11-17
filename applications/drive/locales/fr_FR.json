@@ -158,6 +158,9 @@
       "Create new folder": [
         "Créer un nouveau dossier"
       ],
+      "Create new text file": [
+        "Créer un nouveau fichier texte"
+      ],
       "Customize": [
         "Personnaliser"
       ],
@@ -543,6 +546,9 @@
       ],
       "Try another method": [
         "Essayer une autre méthode"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Veuillez réessayer l'enregistrement. L'erreur suivante est survenue : ${ saveError }"
       ],
       "Undo": [
         "Annuler"
@@ -1713,6 +1719,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" existe déjà"
+      ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà."
       ],
@@ -2642,6 +2651,9 @@
         "Tous (${ totalFoldersCount } label)",
         "Tous (${ totalFoldersCount } labels)"
       ],
+      "All your changes will be lost.": [
+        "Toutes vos modifications seront perdues."
+      ],
       "An active recovery file": [
         "Un fichier de récupération actif"
       ],
@@ -2656,6 +2668,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Toute personne ayant ce lien peut accéder à votre dossier."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Voulez-vous vraiment abandonner vos modifications ?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Êtes-vous sûr de vouloir vider le dossier Corbeille et supprimer définitivement tous les éléments ?"
@@ -3107,6 +3122,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Sélectionnez la ou les adresses e-mail à ajouter à ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Veuillez patienter jusqu'à ce que vous modifications soient synchronisées avec le serveur."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Veuillez patienter pendant que nous recherchons des contacts qui peuvent être signés une nouvelle fois avec la clé de chiffrement principale."
       ],
@@ -3326,6 +3344,9 @@
       ],
       "Unlock drive to recover files": [
         "Déverrouillez le disque pour récupérer des fichiers"
+      ],
+      "Unsaved changes": [
+        "Modifications non enregistrées"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
@@ -4142,11 +4163,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "« ${ name } » n'a pas pu être restauré depuis la corbeille"
       ],
+      "\"${ name }\" failed to be saved": [
+        "« ${ name } » n'a pas pu être enregistré"
+      ],
       "\"${ name }\" moved to trash": [
         "« ${ name } » déplacé dans le dossier Corbeille"
       ],
       "\"${ name }\" restored from trash": [
         "« ${ name } » restauré depuis la corbeille"
+      ],
+      "\"${ name }\" saved successfully": [
+        "« ${ name } » enregistré avec succès"
       ],
       "\"${ name }\" successfully moved": [
         "« ${ name } » correctement déplacé"
@@ -4427,6 +4454,9 @@
       ],
       "E.g., ": [
         "p. ex., "
+      ],
+      "Enter a new file name": [
+        "Saisissez un nouveau nom de fichier"
       ],
       "Enter a new folder name": [
         "Saisissez un nouveau nom de dossier."
@@ -4993,6 +5023,9 @@
       "All": [
         "Tous"
       ],
+      "Are you sure you want to close the preview?": [
+        "Êtes vous sûr de vouloir fermer la prévisualisation ?"
+      ],
       "Back": [
         "Retour"
       ],
@@ -5022,6 +5055,9 @@
       ],
       "Contacts": [
         "Contacts"
+      ],
+      "Create a new file": [
+        "Créer un nouveau fichier"
       ],
       "Create a new folder": [
         "Créer un nouveau dossier"
@@ -5406,6 +5442,9 @@
       ],
       "Your 500 MB bonus": [
         "Votre bonus de 500 Mo"
+      ],
+      "Your changes are not synced yet": [
+        "Vos modifications ne sont pas sychnonisées pour le moment."
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }."
