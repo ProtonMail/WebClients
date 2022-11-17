@@ -1,5 +1,6 @@
 import { Api } from '@proton/shared/lib/interfaces';
 
+import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { Element } from '../../models/element';
 import { LabelIDsChanges } from '../../models/event';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
@@ -141,6 +142,7 @@ export interface OptimisticUpdates {
     isMove?: boolean;
     bypass?: boolean;
     conversationMode?: boolean;
+    markAsStatus?: MARK_AS_STATUS;
 }
 
 export interface OptimisticDelete {

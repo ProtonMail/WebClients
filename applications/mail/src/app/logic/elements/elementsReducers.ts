@@ -22,6 +22,7 @@ import {
     QueryResults,
     TaskRunningInfo,
 } from './elementsTypes';
+import { getElementsToBypassFilter } from './helpers/elementBypassFilters';
 import { newRetry } from './helpers/elementQuery';
 
 export const globalReset = (state: Draft<ElementsState>) => {
@@ -162,14 +163,37 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         const elementIDs = action.payload.elements.map(({ ID }) => ID || '');
         state.bypassFilter = diff(state.bypassFilter, elementIDs);
     }
-    if (action.payload.bypass) {
+
+    // If there is a filter applied when marking elements as read or unread, elements might need to bypass filters
+    // e.g. filter is unread and marking elements as read, then we want to keep those items in the view
+    if (action.payload.bypass && action.payload.markAsStatus) {
         const { conversationMode } = action.payload;
-        action.payload.elements.forEach((element) => {
+        const unreadFilter = state.params.filter.Unread as number | undefined;
+
+        const { elementsToBypass, elementsToRemove } = getElementsToBypassFilter(
+            action.payload.elements,
+            action.payload.markAsStatus,
+            unreadFilter
+        );
+
+        // Add elements in the bypass array if they are not already present
+        elementsToBypass.forEach((element) => {
             const isMessage = testIsMessage(element);
             const id = (isMessage && conversationMode ? (element as Message).ConversationID : element.ID) || '';
             if (!state.bypassFilter.includes(id)) {
                 state.bypassFilter.push(id);
             }
+        });
+
+        // If we are not in a case where we need to bypass filter,
+        // we need to remove elements if they are already in the array
+        const toRemoveIDs = elementsToRemove.map((element) => {
+            const isMessage = testIsMessage(element);
+            return (isMessage && conversationMode ? (element as Message).ConversationID : element.ID) || '';
+        });
+
+        state.bypassFilter = state.bypassFilter.filter((elementID) => {
+            return !toRemoveIDs.includes(elementID);
         });
     }
 };
