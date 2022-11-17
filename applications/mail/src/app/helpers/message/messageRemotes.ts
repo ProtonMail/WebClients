@@ -76,12 +76,11 @@ export const loadElementOtherThanImages = (images: MessageRemoteImage[], message
                     return elementValue === el.originalURL;
                 });
 
-                // Set attribute with the right URL (normal or blob depending on the setting)
+                // Set attribute with the right URL (normal or blob depending on the setting) and remove the proton attribute
                 if (elementWithOriginalURL && elementWithOriginalURL.url) {
                     element.setAttribute(attr, elementWithOriginalURL.url);
+                    element.removeAttribute(protonAttr);
                 }
-
-                element.removeAttribute(protonAttr);
             }
         });
     });
