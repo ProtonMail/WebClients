@@ -158,6 +158,9 @@
       "Create new folder": [
         "Створити нову теку"
       ],
+      "Create new text file": [
+        "Створити новий текстовий файл"
+      ],
       "Customize": [
         "Налаштувати"
       ],
@@ -547,6 +550,9 @@
       ],
       "Try another method": [
         "Спробувати інший спосіб"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Спробуйте зберегти ще раз. Не вдалося зберегти через: ${ saveError }"
       ],
       "Undo": [
         "Скасувати"
@@ -1719,6 +1725,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "«${ name }» вже існує"
+      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
@@ -2740,6 +2749,9 @@
         "Усі (${ totalFoldersCount } міток)",
         "Усі (${ totalFoldersCount } мітки)"
       ],
+      "All your changes will be lost.": [
+        "Всі зміни будуть втрачені."
+      ],
       "An active recovery file": [
         "Активний файл відновлення"
       ],
@@ -2754,6 +2766,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Будь-хто за цим посиланням може отримати доступ до вашої теки."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Ви справді хочете відхилити зміни?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Ви впевнені, що хочете спорожнити смітник та остаточно видалити всі елементи?"
@@ -3217,6 +3232,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Виберіть яку електронну адресу або адреси додати до ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Будь ласка, зачекайте, поки ваші зміни будуть синхронізовані з сервером."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Зачекайте, поки ми перевіряємо контакти, які можуть бути повторно підписані з використанням основного ключа шифрування."
       ],
@@ -3438,6 +3456,9 @@
       ],
       "Unlock drive to recover files": [
         "Розблокувати сховище, щоб відновити файли"
+      ],
+      "Unsaved changes": [
+        "Незбережені зміни"
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
@@ -4264,11 +4285,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" не вдалося відновити зі смітника"
       ],
+      "\"${ name }\" failed to be saved": [
+        "Не вдалося зберегти «${ name }»"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" переміщено до смітника"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" відновлено зі смітника"
+      ],
+      "\"${ name }\" saved successfully": [
+        "«${ name }» успішно збережено"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" успішно переміщено"
@@ -4587,6 +4614,9 @@
       ],
       "E.g., ": [
         "Наприклад, "
+      ],
+      "Enter a new file name": [
+        "Введіть нову назву файлу"
       ],
       "Enter a new folder name": [
         "Уведіть нову назву теки"
@@ -4933,6 +4963,9 @@
       "All": [
         "Усі"
       ],
+      "Are you sure you want to close the preview?": [
+        "Ви впевнені, що хочете закрити попередній перегляд?"
+      ],
       "Back": [
         "Назад"
       ],
@@ -4962,6 +4995,9 @@
       ],
       "Contacts": [
         "Контакти"
+      ],
+      "Create a new file": [
+        "Створити новий файл"
       ],
       "Create a new folder": [
         "Створити нову теку"
@@ -5352,6 +5388,9 @@
       ],
       "Your 500 MB bonus": [
         "Ваша винагорода 500 МБ"
+      ],
+      "Your changes are not synced yet": [
+        "Ваші зміни ще не синхронізовані"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"

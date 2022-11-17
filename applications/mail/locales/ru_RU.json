@@ -959,6 +959,9 @@
       "Try another method": [
         "Попробуйте другой способ"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Попробуйте сохранить ещё раз. Не удалось сохранить из-за: ${ saveError }"
+      ],
       "Turn on tracker protection": [
         "Включите защиту от трекеров"
       ],
@@ -5127,6 +5130,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Пожалуйста, ожидайте пока изменения синхронизируются с сервером."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Пожалуйста, подождите, пока мы ищем контакты, которые можно повторно подписать с помощью основного ключа шифрования."
       ],
@@ -5468,6 +5474,9 @@
       ],
       "Unlock message": [
         "Разблокировать сообщение"
+      ],
+      "Unsaved changes": [
+        "Несохранённые изменения"
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
@@ -8286,6 +8295,9 @@
       "Archive": [
         "Архив"
       ],
+      "Are you sure you want to close the preview?": [
+        "Вы уверены, что хотите закрыть предпросмотр?"
+      ],
       "Are you sure you want to close?": [
         "Вы уверены, что хотите закрыть?"
       ],
@@ -8762,6 +8774,9 @@
       ],
       "What's new": [
         "Что нового"
+      ],
+      "Your changes are not synced yet": [
+        "Изменения ещё не сохранены"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"

@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Sunting jenis langganan"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
       ],
@@ -776,6 +773,9 @@
       ],
       "Try another method": [
         "Coba metode lain"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Coba simpan kembali. Penyimpanan gagal akibat: ${ saveError }"
       ],
       "Underline": [
         "Garis bawah"
@@ -4679,7 +4679,7 @@
         "Sebelum Anda dapat mulai mengirim dan menerima email dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
       ],
       "Before you reset your password, download your recovery phrase.": [
-        "Sebelum Anda mengatur ulang kata sandi Anda, unduh frasa pemulihan Anda."
+        "Sebelum Anda mengatur ulang kata sandi, unduh frasa pemulihan Anda terlebih dahulu."
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Transaksi Bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
@@ -5371,6 +5371,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Mohon verifikasi kartu di tab baru yang telah dibuka."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
+      ],
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
@@ -5746,6 +5749,9 @@
       "Unlimited messages": [
         "Tanpa batasan jumlah pesan"
       ],
+      "Unsaved changes": [
+        "Perubahan yang belum disimpan"
+      ],
       "Unsupported file": [
         "Berkas tidak didukung"
       ],
@@ -5924,7 +5930,7 @@
         "Anda dapat menggunakan ${ MAIL_APP_NAME } dengan klien email desktop mana pun yang mendukung IMAP/SMTP termasuk Outlook, Apple Mail, dan Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Anda dapat menggunakan informasi kredensial berikut untuk dapat tersambung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
+        "Anda dapat menggunakan informasi kredensial berikut untuk terhubung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga, seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "Anda tidak dapat mengirim lebih dari ${ emailSendLimitNumber } email undangan dalam 24 jam ke depan"
@@ -6110,7 +6116,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Silahkan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
+        "Silakan hubungi kami di ${ email } untuk intruksi cara membayar dengan tunai."
       ]
     },
     "Info for domain modal": {
@@ -8314,7 +8320,7 @@
         "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Buat beberapa alamat email untuk identitas daring Anda, mis. JohnShopper@proton.me untuk akun belanja, JohnNews@proton.me untuk langganan berita"
+        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@proton.me untuk berbelanja dan JohnNews@proton.me untuk berlangganan berita"
       ],
       "Create up to ${ n } custom calendars.": [
         "Buat hingga ${ n } kalender khusus."
@@ -9904,6 +9910,9 @@
       "Apply gift code": [
         "Gunakan kode hadiah"
       ],
+      "Are you sure you want to close the preview?": [
+        "Apakah Anda yakin untuk menutup pratinjau?"
+      ],
       "Are you sure you want to close?": [
         "Yakin ingin menutupnya?"
       ],
@@ -10511,7 +10520,7 @@
         "Tema"
       ],
       "This address might compromise your privacy.": [
-        "Alamat ini mungkin menembus privasi Anda."
+        "Alamat ini dapat membahayakan privasi Anda."
       ],
       "Time zone": [
         "Zona waktu"
@@ -10578,6 +10587,9 @@
       ],
       "Your calendar link": [
         "Tautan kalender Anda"
+      ],
+      "Your changes are not synced yet": [
+        "Perubahan Anda belum disinkronkan"
       ],
       "Your current plan": [
         "Paket Anda saat ini"
@@ -10977,7 +10989,7 @@
         "Harap tulis setidaknya satu nama penerima"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton akan secara otomatis menggabungkan folder yang memiliki nama yang sama. Untuk menghindari hal ini, silahkan ubah nama folder sebelum Anda mengimpor."
+        "Proton akan secara otomatis menggabungkan folder yang memiliki nama yang sama. Untuk menghindari hal ini, silakan ubah nama folder sebelum Anda mengimpor."
       ],
       "Proton will transfer as much data as possible, starting with your most recent messages.": [
         "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."

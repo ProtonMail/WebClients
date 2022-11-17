@@ -319,9 +319,6 @@
       "Edit subscription": [
         "Wijzig abonnement"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
@@ -1166,6 +1163,11 @@
         "Voeg mensen of groepen toe"
       ]
     },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "Agenda bijwerken"
+      ]
+    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "Download een ICS-bestand met alle gebeurtenissen uit de geselecteerde agenda."
@@ -1222,6 +1224,11 @@
     "Calendar self sharing error": {
       "You already have access to this calendar": [
         "U heeft al toegang tot deze agenda"
+      ]
+    },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "Maak een koppeling naar uw agenda en deel deze met iedereen buiten uw Proton. Alleen u kunt afspraken toevoegen of verwijderen."
       ]
     },
     "Calendar settings section title": {
@@ -3556,17 +3563,39 @@
         "Ondersteuning voor Torrents (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Beveiligingssleutel toevoegen"
+      ],
+      "Delete key": [
+        "Sleutel verwijderen"
+      ]
+    },
     "fido2: Info": {
       "Security key": [
         "Beveiligingssleutel"
+      ],
+      "Security key removed": [
+        "Veiligheidssleutel verwijderd"
       ],
       "Security key updated": [
         "Veiligheidssleutel bijgewerkt"
       ]
     },
     "fido2: Label": {
+      "Key name": [
+        "Sleutelnaam"
+      ],
       "Security key": [
         "Beveiligingssleutel"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Beveiligingssleutel verwijderen?"
+      ],
+      "Registered security keys": [
+        "Geregistreerde beveiligingssleutels"
       ]
     },
     "file size format": {
@@ -4437,7 +4466,7 @@
         "Voeg een herstel-e-mailadres toe"
       ],
       "add a recovery method": [
-        "voeg een herstelmethode toe"
+        "een herstelmethode toe voegt"
       ],
       "Add a recovery phone number": [
         "Een telefoonnummer voor herstel toevoegen"
@@ -5082,6 +5111,9 @@
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru leest uw persoonlijke gegevens om toegang te bieden aan adverteerders, Russische overheidsinstanties en andere derde partijen. Maak een veilig e-mailadres aan voor betere privacy."
       ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Zorg ervoor dat u ${ addARecoveryMethod }, zodat u terug toegang kunt krijgen tot uw account wanneer u uw wachtwoord vergeten bent."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ _switchButton }."
       ],
@@ -5348,6 +5380,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Verwijderen één van uw agenda's om lid te worden van deze"
+      ],
+      "Reset password": [
+        "Wachtwoord resetten"
       ],
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
@@ -5644,6 +5679,9 @@
       ],
       "Unlimited messages": [
         "Onbeperkt aantal berichten"
+      ],
+      "Unsaved changes": [
+        "Niet-opgeslagen wijzigingen"
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
@@ -6830,6 +6868,9 @@
       "Level for NetShield blocker filtering": [
         "Niveau voor NetShield blokkeerfiltering"
       ],
+      "Link label": [
+        "Link label"
+      ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
       ],
@@ -7228,6 +7269,20 @@
       ],
       "VPN connections": [
         "VPN-verbindingen"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } company announcements": [
+        "${ BRAND_NAME } bedrijfsaankondigingen"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } voor Bedrijven-nieuwsbrief"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME }-nieuwsbrief"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } aanbiedingen en promoties"
       ]
     },
     "Label in domain modal": {
@@ -8998,6 +9053,9 @@
       "You can safely close this tab.": [
         "U kan dit tabblad veilig sluiten."
       ],
+      "Your recovery email has been successfully removed.": [
+        "Uw herstel-e-mailadres werd succesvol verwijderd."
+      ],
       "Your recovery email has been successfully verified.": [
         "Uw herstel-e-mailadres werd succesvol geverifieerd."
       ]
@@ -9055,6 +9113,9 @@
     "Remove calendar section text": {
       "If you leave this calendar, you'll have to ask the owner to join again.": [
         "Als u deze agenda verlaat, moet u de eigenaar vragen om opnieuw lid te worden."
+      ],
+      "This calendar will be removed from your account.": [
+        "Deze agenda zal verwijderd worden van uw account."
       ]
     },
     "Remove calendar section title": {
@@ -10023,6 +10084,9 @@
       ],
       "Add Sieve filter": [
         "Sievefilter toevoegen"
+      ],
+      "Add to Not spam list": [
+        "Toevoegen aan Geen spam-lijst"
       ],
       "Add to spam list": [
         "Toevoegen aan spamlijst"

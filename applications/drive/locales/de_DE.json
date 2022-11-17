@@ -158,6 +158,9 @@
       "Create new folder": [
         "Neuen Ordner erstellen"
       ],
+      "Create new text file": [
+        "Neue Textdatei erstellen"
+      ],
       "Customize": [
         "Anpassen"
       ],
@@ -543,6 +546,9 @@
       ],
       "Try another method": [
         "Eine andere Methode ausprobieren"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
       ],
       "Undo": [
         "Rückgängig"
@@ -1713,6 +1719,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "„${ name }“ existiert bereits"
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -2642,6 +2651,9 @@
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
+      "All your changes will be lost.": [
+        "Alle Ihre Änderungen gehen dabei verloren."
+      ],
       "An active recovery file": [
         "Eine aktive Wiederherstellungsdatei"
       ],
@@ -2656,6 +2668,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Jeder mit diesem Link kann auf deinen Ordner zugreifen."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Möchten Sie Ihre Änderungen wirklich verwerfen?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Möchtest du den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
@@ -3107,6 +3122,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupName } hinzugefügt werden sollen."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Bitte warte, bis deine Änderungen mit dem Server synchronisiert wurden."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
       ],
@@ -3326,6 +3344,9 @@
       ],
       "Unlock drive to recover files": [
         "Laufwerk entsperren, um Dateien wiederherzustellen"
+      ],
+      "Unsaved changes": [
+        "Ungespeicherte Änderungen"
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
@@ -4139,11 +4160,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" konnte nicht aus dem Papierkorb wiederhergestellt werden"
       ],
+      "\"${ name }\" failed to be saved": [
+        "„${ name }“ konnte nicht gespeichert werden."
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" in den Papierkorb verschoben"
       ],
       "\"${ name }\" restored from trash": [
         "„${ name }“ aus dem Papierkorb wiederhergestellt"
+      ],
+      "\"${ name }\" saved successfully": [
+        "„${ name }“ erfolgreich gespeichert"
       ],
       "\"${ name }\" successfully moved": [
         "„${ name }“ erfolgreich verschoben"
@@ -4424,6 +4451,9 @@
       ],
       "E.g., ": [
         "Z. B. "
+      ],
+      "Enter a new file name": [
+        "Neuen Dateinamen eingeben"
       ],
       "Enter a new folder name": [
         "Neuen Ordnernamen eingeben"
@@ -4990,6 +5020,9 @@
       "All": [
         "Alle"
       ],
+      "Are you sure you want to close the preview?": [
+        "Möchtest du die Vorschau wirklich schließen?"
+      ],
       "Back": [
         "Zurück"
       ],
@@ -5019,6 +5052,9 @@
       ],
       "Contacts": [
         "Kontakte"
+      ],
+      "Create a new file": [
+        "Neue Datei erstellen"
       ],
       "Create a new folder": [
         "Neuen Ordner erstellen"
@@ -5403,6 +5439,9 @@
       ],
       "Your 500 MB bonus": [
         "Dein 500 MB Bonus"
+      ],
+      "Your changes are not synced yet": [
+        "Deine Änderungen wurden noch nicht synchronisiert"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Deine kostenlose Testversion endet demnächst, am ${ formattedEndDate }"

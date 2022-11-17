@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Změnit předplatné"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "povolit upozornění"
       ],
@@ -770,6 +767,9 @@
       ],
       "Try another method": [
         "Zkuste jinou metodu"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
       ],
       "Underline": [
         "Podtržení"
@@ -4835,6 +4835,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
       ],
+      "Before you reset your password, download your recovery phrase.": [
+        "Před obnovením hesla si stáhněte obnovovací frázi."
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Potvrzení Bitcoin transakcí může nějakou dobu trvat (až 24 hodin). Jakmile bude transakce potvrzena, kredity připíšeme na Váš účet. Po potvrzené transakci můžete fakturu uhradit kredity."
       ],
@@ -4972,6 +4975,9 @@
       ],
       "Download recovery file": [
         "Stáhnout soubor pro obnovení"
+      ],
+      "Download recovery phrase": [
+        "Stáhnout obnovovací frázi"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stáhněte si svou oblíbenou aplikaci ještě dnes a vezměte soukromí do svých rukou, ať jste kdekoli."
@@ -5131,6 +5137,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
+      ],
+      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
+        "Pokud budete někdy potřebovat znovu obnovit heslo, musíte zadat tuto frázi, abyste se dostali zpět do svého účtu a odemkli svá data."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Pokud máte vlastní doménu s ${ MAIL_APP_NAME }, můžete nastavit \"spádovou\" e-mailovou adresu, která bude dostávat zprávy odeslané do Vaší domény, ale na neplatnou e-mailovou adresu (např. kvůli překlepům)."
@@ -5329,6 +5338,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Ujistěte se, že jste ${ addARecoveryMethod }, abyste se mohli vrátit ke svému účtu, pokud zapomenete heslo."
+      ],
+      "Make sure you keep your recovery phrase somewhere private.": [
+        "Ujistěte se, že máte obnovovací frázi v bezpečí."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Ručně zadejte tyto informace do zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ _switchButton }."
@@ -5531,6 +5543,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Ověřte prosím kartu v nové záložce, která je již otevřena."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Počkejte prosím, dokud se vaše změny nesynchronizují se serverem."
+      ],
       "Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Plus nebo Visionary"
       ],
@@ -5605,6 +5620,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Odstraňte jeden ze svých kalendářů a připojte se k tomuto"
+      ],
+      "Reset password": [
+        "Obnovit heslo"
       ],
       "Revoke certificate ${ name }": [
         "Zrušit certifikát ${ name }"
@@ -5905,6 +5923,9 @@
       ],
       "Unlimited messages": [
         "Neomezený počet zpráv"
+      ],
+      "Unsaved changes": [
+        "Neuložené změny"
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
@@ -10206,6 +10227,9 @@
       "Apply gift code": [
         "Použít dárkový kód"
       ],
+      "Are you sure you want to close the preview?": [
+        "Jste si jisti, že chcete náhled zavřít?"
+      ],
       "Are you sure you want to close?": [
         "Opravdu chcete zavřít editor filtrů?"
       ],
@@ -10883,6 +10907,9 @@
       ],
       "Your calendar link": [
         "URL adresa kalendáře"
+      ],
+      "Your changes are not synced yet": [
+        "Vaše změny zatím nejsou synchronizovány"
       ],
       "Your current plan": [
         "Váš aktuální tarif"

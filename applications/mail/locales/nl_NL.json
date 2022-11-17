@@ -4330,6 +4330,10 @@
         "${ unread } ongelezen bericht",
         "${ unread } ongelezen berichten"
       ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } ingepland bericht",
+        "${ unreadCount } ingeplande berichten"
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } ongelezen gesprek",
         "${ unreadCount } ongelezen gesprekken"
@@ -4971,6 +4975,9 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Voorkom dat uw e-mailadres gelekt wordt naar nieuwsbrieven of spammers met ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton verdient geen geld door privacy te misbruiken."
       ],
@@ -5079,6 +5086,9 @@
       "Sign in": [
         "Inloggen"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin is een Protondienst, en uw Proton Account bevat Verberg Mijn E-mailaliassen. Om te beginnen met het maskeren van uw e-mailadres, ga naar SimpleLogin en maak uw eerste alias aan."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin biedt een eenvoudige manier om in te loggen op niet-vertrouwde sites van derden waar u uw eigenlijke e-mailadres niet wilt prijsgeven."
       ],
@@ -5148,6 +5158,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Er is iets misgegaan met de ondertekening tijdens het controleren van de contactgegevens, dat veroorzaakt kan zijn door het resetten van uw wachtwoord."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "Ze kunnen u niet spammen als ze uw e-mailadres niet kennen. Bescherm uw inbox met Verberg Mijn E-mailadres."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -5280,6 +5293,9 @@
       "Unlock message": [
         "Bericht ontgrendelen"
       ],
+      "Unsaved changes": [
+        "Niet-opgeslagen wijzigingen"
+      ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
@@ -5372,6 +5388,9 @@
       ],
       "When do you want your message to be sent?": [
         "Wanneer wilt u dat uw bericht wordt verzonden?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Bij het doorgeven van uw e-mailadres, gebruik een unieke wegwerpbare alias met Verberg Mijn E-mailadres, in de plaats van uw echt e-mailadres."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
@@ -7636,6 +7655,10 @@
         "${ elementsCount } bericht gemarkeerd als ongelezen.",
         "${ elementsCount } berichten gemarkeerd als ongelezen."
       ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } bericht verplaatst naar ${ folderName } en afzender toegevoegd aan uw toegestane lijst.",
+        "${ elementsCount } berichten verplaatst naar ${ folderName } en afzenders toegevoegd aan uw toegestane lijst."
+      ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } bericht is verplaatst naar ${ folderName }.",
         "${ elementsCount } berichten zijn verplaatst naar ${ folderName }."
@@ -7688,6 +7711,9 @@
       ],
       "Conversation marked as unread.": [
         "Conversatie gemarkeerd als ongelezen."
+      ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Conversatie verplaatst naar ${ folderName } en afzender toegevoegd aan uw toegestane lijst."
       ],
       "Conversation moved to ${ folderName }.": [
         "Gesprek verplaatst naar ${ folderName }."
@@ -7748,6 +7774,9 @@
       ],
       "Message marked as unread.": [
         "Bericht gemarkeerd als ongelezen."
+      ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Bericht verplaatst naar ${ folderName } en afzender toegevoegd aan uw toegestande lijst."
       ],
       "Message moved to ${ folderName }.": [
         "Bericht verplaatst naar ${ folderName }."

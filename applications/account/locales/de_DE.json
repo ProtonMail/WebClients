@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Abonnement bearbeiten"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
       ],
@@ -773,6 +770,9 @@
       ],
       "Try another method": [
         "Eine andere Methode ausprobieren"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
       ],
       "Underline": [
         "Unterstreichen"
@@ -4801,7 +4801,7 @@
         "Wiederherstellungsdatei herunterladen"
       ],
       "Download recovery phrase": [
-        "Wiederherstellungsphrase downloaden"
+        "Wiederherstellungsphrase herunterladen"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Laden Sie noch heute diese großartige App herunter und nehmen Sie Ihre Privatsphäre überall hin mit."
@@ -4963,7 +4963,7 @@
         "Wenn du dein Passwort nicht kennst, musst du dein ${ boldPasswordReset }, um auf die neue Website zuzugreifen."
       ],
       "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "Solltest du dein Passwort jemals wieder zurücksetzen müssen, musst du diesen Satz eingeben, um wieder in dein Konto zu gelangen und deine Daten zu entsperren."
+        "Solltest du dein Passwort jemals wieder zurücksetzen müssen, musst du diese Phrase eingeben, um wieder in dein Konto zu gelangen und deine Daten zu entsperren."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Wenn du eine eigene Domain mit ${ MAIL_APP_NAME } nutzt, kannst du eine Catch-All-E-Mail-Adresse festlegen, um Nachrichten zu empfangen, die an deine Domain, aber an eine ungültige E-Mail-Adresse (z.B. aufgrund von Tippfehlern) gesendet werden."
@@ -5360,6 +5360,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Bitte überprüfen Sie die Karte im neu geöffneten Tab."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Bitte warte, bis deine Änderungen mit dem Server synchronisiert wurden."
+      ],
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
       ],
@@ -5733,6 +5736,9 @@
       ],
       "Unlimited messages": [
         "Unbegrenzt viele Nachrichten"
+      ],
+      "Unsaved changes": [
+        "Ungespeicherte Änderungen"
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
@@ -6456,7 +6462,7 @@
         "Als Haupt festlegen"
       ],
       "Mark compromised": [
-        "Als „Kompromittiert“ kennzeichnen"
+        "Als „Gefährdet“ markieren"
       ],
       "Mark not compromised": [
         "Als „Nicht gefährdet“ markieren"
@@ -10196,6 +10202,9 @@
       "Apply gift code": [
         "Geschenkcode anwenden"
       ],
+      "Are you sure you want to close the preview?": [
+        "Möchtest du die Vorschau wirklich schließen?"
+      ],
       "Are you sure you want to close?": [
         "Wirklich schließen?"
       ],
@@ -10872,6 +10881,9 @@
       ],
       "Your calendar link": [
         "Dein Kalender-Link"
+      ],
+      "Your changes are not synced yet": [
+        "Deine Änderungen wurden noch nicht synchronisiert"
       ],
       "Your current plan": [
         "Dein aktuelles Abonnement"

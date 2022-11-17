@@ -751,6 +751,11 @@
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Kişiler ya da gruplar ekle"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Katılıyor musunuz?"
@@ -830,6 +835,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Düzenleme (etkinlik bilgilerini görüntüleme, ekleme ya da düzenleme)"
+      ],
+      "View (see all event details)": [
+        "Görüntüleme (tüm etkinlik bilgilerini görüntüleme)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -5016,6 +5024,11 @@
         "${ calendarName } takvimini paylaşmak istediğiniz Proton hesaplarını ekleyin. Kendilerine bir çağrı gönderilecek."
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Bir e-posta adresi ya da grup adı yazın"
+      ]
+    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Proton kullanıcıları ile paylaş"
@@ -5704,6 +5717,16 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Bir sayı seçin"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Takvim ekle"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Takvimi düzenle"
       ]
     },
     "Today icon tooltip in mini calendar": {
