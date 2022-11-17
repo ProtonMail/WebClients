@@ -449,7 +449,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 title: c('Title').t`Creating user accounts`,
                 content: (
                     <>
-                        <Progress value={currentProgress} max={numberOfUsersToImport} />
+                        <Progress className="progress-bar--norm" value={currentProgress} max={numberOfUsersToImport} />
                         <span className="mt0-5">
                             {currentProgress} / {numberOfUsersToImport}
                         </span>
