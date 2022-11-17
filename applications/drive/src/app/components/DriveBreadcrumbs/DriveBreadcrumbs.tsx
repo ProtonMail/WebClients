@@ -12,6 +12,7 @@ import { useLinkPath } from '../../store';
 import { Share, ShareType, useShare } from '../../store/_shares';
 import { reportError } from '../../store/_utils';
 import SignatureIcon from '../SignatureIcon';
+import { getDevicesSectionName } from '../sections/Devices/constants';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -26,6 +27,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     const [dropTarget, setDropTarget] = useState<string>();
     const [rootShare, setRootShare] = useState<Share>();
     const { getShare } = useShare();
+    const sectionTitle = getDevicesSectionName();
 
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([]);
 
@@ -107,7 +109,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     if (rootShare?.type === ShareType.device) {
         breadcrumbs.unshift({
             key: 'devices-root',
-            text: c('Title').t`Synced devices`,
+            text: sectionTitle,
             noShrink: true,
             onClick: navigateToDevices,
         });

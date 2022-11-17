@@ -1,7 +1,5 @@
 import { useCallback, useMemo, useRef } from 'react';
 
-import { c } from 'ttag';
-
 import { useActiveBreakpoint } from '@proton/components';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
@@ -14,6 +12,7 @@ import headerCellsCommon from '../FileBrowser/headerCells';
 import { DevicesItemContextMenu } from './ContextMenu/DevicesContextMenu';
 import EmptyDevices from './EmptyDevices';
 import { getSelectedItems } from './Toolbar/DevicesToolbar';
+import { getDevicesSectionName } from './constants';
 import headerCells from './headerCells';
 
 export interface DeviceItem extends FileBrowserBaseItem {
@@ -46,6 +45,7 @@ function Devices({ view }: Props) {
     const { isDesktop } = useActiveBreakpoint();
 
     const { layout, items: browserItems, isLoading } = view;
+    const sectionTitle = getDevicesSectionName();
 
     const selectedItems = useMemo(
         () => getSelectedItems(browserItems, selectionControls!.selectedItemIds),
@@ -91,7 +91,7 @@ function Devices({ view }: Props) {
                 position={browserItemContextMenu.position}
             />
             <FileBrowser
-                caption={c('Title').t`Synced devices`}
+                caption={sectionTitle}
                 items={browserItems}
                 headerItems={headerItems}
                 layout={layout}
