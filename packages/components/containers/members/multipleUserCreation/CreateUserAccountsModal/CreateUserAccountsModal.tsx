@@ -285,14 +285,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                 return (
                                     <tr key={displayName.text} onClick={() => handleCheckboxChange(id)}>
                                         <TableCell key="displayName" className="align-top">
-                                            <Checkbox
-                                                id={checkboxId}
-                                                checked={isItemSelected}
-                                                onChange={(e) => {
-                                                    handleCheckboxChange(id);
-                                                    e.stopPropagation();
-                                                }}
-                                            >
+                                            <Checkbox id={checkboxId} checked={isItemSelected} readOnly>
                                                 <div title={displayName.text}>
                                                     <Marks chunks={displayName.chunks}>{displayName.text}</Marks>
                                                 </div>
