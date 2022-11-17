@@ -954,6 +954,9 @@
       "Try another method": [
         "Eine andere Methode ausprobieren"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
+      ],
       "Turn on tracker protection": [
         "Tracker-Schutz aktivieren"
       ],
@@ -1120,7 +1123,7 @@
         "Weitergeleitet"
       ],
       "Replied to": [
-        "Geantwortet"
+        "Geantwortet an"
       ],
       "Replied to all": [
         "Allen geantwortet"
@@ -4909,6 +4912,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupName } hinzugefügt werden sollen."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Bitte warte, bis deine Änderungen mit dem Server synchronisiert wurden."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
       ],
@@ -5244,6 +5250,9 @@
       ],
       "Unlock message": [
         "Nachricht entsperren"
+      ],
+      "Unsaved changes": [
+        "Ungespeicherte Änderungen"
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
@@ -7932,6 +7941,9 @@
       "Archive": [
         "Archiv"
       ],
+      "Are you sure you want to close the preview?": [
+        "Möchtest du die Vorschau wirklich schließen?"
+      ],
       "Are you sure you want to close?": [
         "Wirklich schließen?"
       ],
@@ -8396,6 +8408,9 @@
       ],
       "What's new": [
         "Neuigkeiten"
+      ],
+      "Your changes are not synced yet": [
+        "Deine Änderungen wurden noch nicht synchronisiert"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Deine kostenlose Testversion endet demnächst, am ${ formattedEndDate }"

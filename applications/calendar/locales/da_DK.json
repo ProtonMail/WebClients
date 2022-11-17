@@ -751,6 +751,11 @@
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Tilføj personer eller grupper"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Deltager?"
@@ -830,6 +835,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Rediger (visning, oprettelse og redigering af begivenhedsoplysninger)"
+      ],
+      "View (see all event details)": [
+        "Vis (se alle detaljer om begivenheden)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -5013,6 +5021,11 @@
         "Tilføj de Proton-konti, som du ønsker at dele ${ calendarName } med. Vi sender dem en invitation."
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Indtast en e-mailadresse eller et gruppenavn"
+      ]
+    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Del med Proton-brugere"
@@ -5701,6 +5714,16 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Vælg et nummer"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Opret kalender"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Rediger kalender"
       ]
     },
     "Today icon tooltip in mini calendar": {

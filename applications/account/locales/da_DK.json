@@ -310,9 +310,6 @@
       "Edit subscription": [
         "Rediger abonnement"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
@@ -751,6 +748,9 @@
       "Try another method": [
         "Prøv en anden metode"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Prøv at gemme igen. Det lykkedes ikke at gemme på grund af: ${ saveError }"
+      ],
       "Underline": [
         "Understreg"
       ],
@@ -1114,6 +1114,11 @@
         "Tweet"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Tilføj personer eller grupper"
+      ]
+    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "Kun du kan se etiketten"
@@ -1137,6 +1142,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Rediger (visning, oprettelse og redigering af begivenhedsoplysninger)"
+      ],
+      "View (see all event details)": [
+        "Vis (se alle detaljer om begivenheden)"
       ]
     },
     "Calendar status": {
@@ -4864,6 +4872,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Bekræft kortet i den nye fane, der blev åbnet."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Vent venligst, indtil dine ændringer er synkroniseret med serveren."
+      ],
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
       ],
@@ -5195,6 +5206,9 @@
       ],
       "Unlimited messages": [
         "Ubegrænset antal beskeder"
+      ],
+      "Unsaved changes": [
+        "Ikke-gemte ændringer"
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
@@ -5965,6 +5979,9 @@
       ],
       "Authenticator app": [
         "Godkendelsesapp"
+      ],
+      "Auto show remote images": [
+        "Auto-vis eksterne billeder"
       ],
       "Auto-detect primary time zone": [
         "Registrer automatisk primær tidszone"
@@ -7940,6 +7957,11 @@
         "Tilføj de Proton-konti, som du ønsker at dele ${ calendarName } med. Vi sender dem en invitation."
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Indtast en e-mailadresse eller et gruppenavn"
+      ]
+    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "Del med Proton-brugere"
@@ -8528,6 +8550,9 @@
       ],
       "Apply gift code": [
         "Tilføj gavekode"
+      ],
+      "Are you sure you want to close the preview?": [
+        "Er du sikker på, at du vil lukke forhåndsvisningen?"
       ],
       "Are you sure you want to close?": [
         "Er du sikker på, at du vil lukke?"
@@ -9200,6 +9225,9 @@
       "Your calendar link": [
         "Dit kalenderlink"
       ],
+      "Your changes are not synced yet": [
+        "Dine ændringer er endnu ikke synkroniseret"
+      ],
       "Your current plan": [
         "Dit nuværende abonnement"
       ],
@@ -9297,6 +9325,16 @@
       ],
       "Role": [
         "Rolle"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Opret kalender"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Rediger kalender"
       ]
     },
     "Today icon tooltip in mini calendar": {

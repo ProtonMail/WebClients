@@ -158,6 +158,9 @@
       "Create new folder": [
         "Yeni klasör ekle"
       ],
+      "Create new text file": [
+        "Yeni bir metin dosyası oluştur"
+      ],
       "Customize": [
         "Özelleştir"
       ],
@@ -543,6 +546,9 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
       ],
       "Undo": [
         "Geri al"
@@ -1713,6 +1719,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" zaten var"
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -2642,6 +2651,9 @@
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
       ],
+      "All your changes will be lost.": [
+        "Yaptığınız tüm değişiklikler kaybolacak."
+      ],
       "An active recovery file": [
         "Etkn bir kurtarma dosyası"
       ],
@@ -2656,6 +2668,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Bu bağlantıya sahip olan herkes klasörünüze erişebilir."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Çöp kutusunu boşaltmak ve tüm öğeleri kalıcı olarak silmek istediğinizden emin misiniz?"
@@ -3107,6 +3122,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Lütfen değişiklikleriniz sunucu ile eşitlenene kadar bekleyin."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
       ],
@@ -3326,6 +3344,9 @@
       ],
       "Unlock drive to recover files": [
         "Dosyaları kurtarmak için sürücünün kilidini açın"
+      ],
+      "Unsaved changes": [
+        "Kaydedilmemiş değişiklikler"
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
@@ -4142,11 +4163,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" çöpten çıkarılamadı"
       ],
+      "\"${ name }\" failed to be saved": [
+        "\"${ name }\" kaydedilemedi"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" çöpe atıldı"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" çöpten çıkarıldı"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" kaydedildi"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" taşındı"
@@ -4427,6 +4454,9 @@
       ],
       "E.g., ": [
         "Örneğin, "
+      ],
+      "Enter a new file name": [
+        "Yeni bir dosya adı yazın"
       ],
       "Enter a new folder name": [
         "Yeni bir klasör adı yazın"
@@ -4749,6 +4779,9 @@
       "All": [
         "Tümü"
       ],
+      "Are you sure you want to close the preview?": [
+        "Ön izlemeyi kapatmak istediğinize emin misiniz?"
+      ],
       "Back": [
         "Geri"
       ],
@@ -4778,6 +4811,9 @@
       ],
       "Contacts": [
         "Kişiler"
+      ],
+      "Create a new file": [
+        "Yeni bir dosya oluştur"
       ],
       "Create a new folder": [
         "Yeni bir klasör ekle"
@@ -5162,6 +5198,9 @@
       ],
       "Your 500 MB bonus": [
         "500 MB ödülünüz"
+      ],
+      "Your changes are not synced yet": [
+        "Değişiklikleriniz henüz eşitlenmedi"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"

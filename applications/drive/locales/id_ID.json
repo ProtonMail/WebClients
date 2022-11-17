@@ -158,6 +158,9 @@
       "Create new folder": [
         "Buat folder baru"
       ],
+      "Create new text file": [
+        "Buat berkas teks baru"
+      ],
       "Customize": [
         "Atur"
       ],
@@ -541,6 +544,9 @@
       ],
       "Try another method": [
         "Coba metode lain"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Coba simpan kembali. Penyimpanan gagal akibat: ${ saveError }"
       ],
       "Undo": [
         "Urungkan"
@@ -1710,6 +1716,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" telah ada"
+      ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
@@ -2593,6 +2602,9 @@
       "All (${ totalFoldersCount } labels)": [
         "Semua (${ totalFoldersCount } label)"
       ],
+      "All your changes will be lost.": [
+        "Seluruh perubahan yang belum Anda simpan akan hilang."
+      ],
       "An active recovery file": [
         "Berkas pemulihan yang aktif"
       ],
@@ -2607,6 +2619,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Siapa pun yang memiliki tautan ini akan dapat mengakses folder Anda."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Apakah Anda yakin untuk membatalkan perubahan-perubahan Anda?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Apakah Anda yakin untuk mengosongkan sampah dan menghapus seluruh berkas yang ada di dalamnya secara permanen?"
@@ -3052,6 +3067,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Silakan pilih alamat email mana saja yang akan ditambahkan ke ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Mohon tunggu selagi kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
       ],
@@ -3270,6 +3288,9 @@
       ],
       "Unlock drive to recover files": [
         "Buka kunci drive untuk memulihkan berkas-berkas yang ada"
+      ],
+      "Unsaved changes": [
+        "Perubahan yang belum disimpan"
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
@@ -4081,11 +4102,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" gagal untuk dipulihkan dari sampah"
       ],
+      "\"${ name }\" failed to be saved": [
+        "\"${ name }\" gagal disimpan"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" dipindahkan ke sampah"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" dipulihkan dari sampah"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" berhasil disimpan"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" berhasil dipindahkan"
@@ -4347,6 +4374,9 @@
       ],
       "E.g., ": [
         "Misalnya "
+      ],
+      "Enter a new file name": [
+        "Masukkan nama berkas baru"
       ],
       "Enter a new folder name": [
         "Masukkan nama folder baru"
@@ -4654,6 +4684,9 @@
       "All": [
         "Semua"
       ],
+      "Are you sure you want to close the preview?": [
+        "Apakah Anda yakin untuk menutup pratinjau?"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -4683,6 +4716,9 @@
       ],
       "Contacts": [
         "Kontak"
+      ],
+      "Create a new file": [
+        "Buat berkas baru"
       ],
       "Create a new folder": [
         "Buat folder baru"
@@ -5065,6 +5101,9 @@
       "Your 500 MB bonus": [
         "Bonus 500 MB Anda"
       ],
+      "Your changes are not synced yet": [
+        "Perubahan Anda belum disinkronkan"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Masa uji coba gratis Anda akan segera berakhir pada ${ formattedEndDate }"
       ],
@@ -5189,7 +5228,7 @@
         "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton akan secara otomatis menggabungkan folder yang memiliki nama yang sama. Untuk menghindari hal ini, silahkan ubah nama folder sebelum Anda mengimpor."
+        "Proton akan secara otomatis menggabungkan folder yang memiliki nama yang sama. Untuk menghindari hal ini, silakan ubah nama folder sebelum Anda mengimpor."
       ],
       "Proton will transfer as much data as possible, starting with your most recent messages.": [
         "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."

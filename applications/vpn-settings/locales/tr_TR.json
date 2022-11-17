@@ -110,6 +110,9 @@
       "Disable": [
         "Devre dışı bırak"
       ],
+      "Discard": [
+        "Sil"
+      ],
       "Done": [
         "Tamam"
       ],
@@ -328,6 +331,9 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
       ],
       "Unlock": [
         "Kilidi aç"
@@ -1912,6 +1918,9 @@
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Bitcoin ödemenizi yaptıktan sonra, tarifenizi yükseltmek için aşağıdaki yönergeleri izleyin."
       ],
+      "All your changes will be lost.": [
+        "Yaptığınız tüm değişiklikler kaybolacak."
+      ],
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
@@ -1920,6 +1929,9 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "İki aşamalı kimlik doğrulamayı devre dışı bırakmak istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus veya Visionary aboneliği gerekli"
@@ -2191,6 +2203,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Lütfen açılan yeni sekmede kartı doğrulayın."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Lütfen değişiklikleriniz sunucu ile eşitlenene kadar bekleyin."
+      ],
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
       ],
@@ -2355,6 +2370,9 @@
       ],
       "Unlimited messages": [
         "Sınırsız ileti"
+      ],
+      "Unsaved changes": [
+        "Kaydedilmemiş değişiklikler"
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
@@ -2953,23 +2971,23 @@
       ]
     },
     "Label for news": {
-      "Proton beta announcements": [
-        "Proton beta duyuruları"
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } beta sürümü duyuruları"
       ],
-      "Proton company announcements": [
-        "Proton şirket duyuruları"
+      "${ BRAND_NAME } company announcements": [
+        "${ BRAND_NAME } kurumsal duyuruları"
       ],
-      "Proton for Business newsletter": [
-        "İş için Proton bülteni"
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } Kurumsal bülteni"
       ],
-      "Proton newsletter": [
-        "Proton bülteni"
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } bülteni"
       ],
-      "Proton offers and promotions": [
-        "Proton teklif ve tanıtımları"
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } teklif ve fırsatları"
       ],
-      "Proton product announcements": [
-        "Proton ürün duyuruları"
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } ürün duyuruları"
       ]
     },
     "Label on payment method": {
@@ -4254,6 +4272,9 @@
       "Apply gift code": [
         "Hediye kodunu uygula"
       ],
+      "Are you sure you want to close the preview?": [
+        "Ön izlemeyi kapatmak istediğinize emin misiniz?"
+      ],
       "Back": [
         "Geri"
       ],
@@ -4547,6 +4568,9 @@
       ],
       "You already have a Proton account": [
         "Zaten bir Proton hesabınız var"
+      ],
+      "Your changes are not synced yet": [
+        "Değişiklikleriniz henüz eşitlenmedi"
       ],
       "Your current plan": [
         "Geçerli tarifeniz"

@@ -158,6 +158,9 @@
       "Create new folder": [
         "Создать новую папку"
       ],
+      "Create new text file": [
+        "Создать новый текстовый файл"
+      ],
       "Customize": [
         "Настроить"
       ],
@@ -547,6 +550,9 @@
       ],
       "Try another method": [
         "Попробуйте другой способ"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Попробуйте сохранить ещё раз. Не удалось сохранить из-за: ${ saveError }"
       ],
       "Undo": [
         "Отменить"
@@ -1719,6 +1725,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" уже существует"
+      ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
@@ -2740,6 +2749,9 @@
         "Все (${ totalFoldersCount } ярлыков)",
         "Все (${ totalFoldersCount } ярлыка(ов)"
       ],
+      "All your changes will be lost.": [
+        "Все ваши изменения будут потеряны."
+      ],
       "An active recovery file": [
         "Активный файл восстановления"
       ],
@@ -2754,6 +2766,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Доступ к вашей папке разрешен всем, у кого есть эта ссылка."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Вы уверены, что хотите отменить изменения?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Вы уверены, что хотите очистить корзину и безвозвратно удалить все элементы?"
@@ -3217,6 +3232,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Пожалуйста, ожидайте пока изменения синхронизируются с сервером."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Пожалуйста, подождите, пока мы ищем контакты, которые можно повторно подписать с помощью основного ключа шифрования."
       ],
@@ -3435,6 +3453,9 @@
       ],
       "Unlock drive to recover files": [
         "Разблокировать хранилище чтобы восстановить файлы"
+      ],
+      "Unsaved changes": [
+        "Несохранённые изменения"
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
@@ -4258,11 +4279,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "Не удалось восстановить из корзины \"${ name }\""
       ],
+      "\"${ name }\" failed to be saved": [
+        "\"${ name }\" не удалось сохранить"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" перемещено в корзину"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" восстановлено из корзины"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" успешно сохранено"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" успешно перемещено"
@@ -4581,6 +4608,9 @@
       ],
       "E.g., ": [
         "Например, "
+      ],
+      "Enter a new file name": [
+        "Введите новое имя файла"
       ],
       "Enter a new folder name": [
         "Введите новое имя папки"
@@ -5183,6 +5213,9 @@
       "All": [
         "Все"
       ],
+      "Are you sure you want to close the preview?": [
+        "Вы уверены, что хотите закрыть предпросмотр?"
+      ],
       "Back": [
         "Назад"
       ],
@@ -5212,6 +5245,9 @@
       ],
       "Contacts": [
         "Контакты"
+      ],
+      "Create a new file": [
+        "Создать новый файл"
       ],
       "Create a new folder": [
         "Создать новую папку"
@@ -5602,6 +5638,9 @@
       ],
       "Your 500 MB bonus": [
         "Ваши бонусные 500 МБ"
+      ],
+      "Your changes are not synced yet": [
+        "Изменения ещё не сохранены"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"

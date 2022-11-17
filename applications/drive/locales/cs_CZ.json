@@ -158,6 +158,9 @@
       "Create new folder": [
         "Vytvořit novou složku"
       ],
+      "Create new text file": [
+        "Vytvořit nový textový soubor"
+      ],
       "Customize": [
         "Přizpůsobit"
       ],
@@ -547,6 +550,9 @@
       ],
       "Try another method": [
         "Zkuste jinou metodu"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
       ],
       "Undo": [
         "Zpět"
@@ -1719,6 +1725,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" již existuje"
+      ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
@@ -2740,6 +2749,9 @@
         "Všech (${ totalFoldersCount } štítků)",
         "Všech (${ totalFoldersCount } štítků)"
       ],
+      "All your changes will be lost.": [
+        "Veškeré vaše změny budou ztraceny."
+      ],
       "An active recovery file": [
         "Aktivní soubor pro obnovení"
       ],
@@ -2754,6 +2766,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Kdokoli s tímto odkazem má přístup k vaší složce."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Určitě chcete zahodit všechny provedené změny?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
@@ -3217,6 +3232,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vyberte adresu, nebo adresy, které chcete přidat do skupiny ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Počkejte prosím, dokud se vaše změny nesynchronizují se serverem."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Prosím čekejte, hledáme kontakty, které mohou být znovu podepsány pomocí výchozího šifrovacího klíče."
       ],
@@ -3438,6 +3456,9 @@
       ],
       "Unlock drive to recover files": [
         "Odemknutí disku pro obnovení souborů"
+      ],
+      "Unsaved changes": [
+        "Neuložené změny"
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
@@ -4264,11 +4285,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" se nepodařilo obnovit z koše"
       ],
+      "\"${ name }\" failed to be saved": [
+        "\"${ name }\" se nepodařilo uložit"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" přesunuto do koše"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" obnoveno z koše"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" úspěšně uloženo"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" úspěšně přesunuto"
@@ -4587,6 +4614,9 @@
       ],
       "E.g., ": [
         "Např., "
+      ],
+      "Enter a new file name": [
+        "Zadejte nový název souboru"
       ],
       "Enter a new folder name": [
         "Zadejte nový název složky"
@@ -4933,6 +4963,9 @@
       "All": [
         "Vše"
       ],
+      "Are you sure you want to close the preview?": [
+        "Jste si jisti, že chcete náhled zavřít?"
+      ],
       "Back": [
         "Zpět"
       ],
@@ -4962,6 +4995,9 @@
       ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Create a new file": [
+        "Vytvořit nový soubor"
       ],
       "Create a new folder": [
         "Vytvořit novou složku"
@@ -5352,6 +5388,9 @@
       ],
       "Your 500 MB bonus": [
         "Bonus 500 MB"
+      ],
+      "Your changes are not synced yet": [
+        "Vaše změny zatím nejsou synchronizovány"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"

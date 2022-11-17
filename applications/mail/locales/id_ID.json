@@ -947,6 +947,9 @@
       "Try another method": [
         "Coba metode lain"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Coba simpan kembali. Penyimpanan gagal akibat: ${ saveError }"
+      ],
       "Turn on tracker protection": [
         "Aktifkan perlindungan pelacak"
       ],
@@ -4889,6 +4892,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Silakan pilih alamat email mana saja yang akan ditambahkan ke ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Mohon tunggu selagi kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
       ],
@@ -5221,6 +5227,9 @@
       ],
       "Unlock message": [
         "Buka kunci pesan"
+      ],
+      "Unsaved changes": [
+        "Perubahan yang belum disimpan"
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
@@ -7603,6 +7612,9 @@
       "Archive": [
         "Arsip"
       ],
+      "Are you sure you want to close the preview?": [
+        "Apakah Anda yakin untuk menutup pratinjau?"
+      ],
       "Are you sure you want to close?": [
         "Yakin ingin menutupnya?"
       ],
@@ -8062,6 +8074,9 @@
       "What's new": [
         "Apa-apa saja yang baru"
       ],
+      "Your changes are not synced yet": [
+        "Perubahan Anda belum disinkronkan"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Masa uji coba gratis Anda akan segera berakhir pada ${ formattedEndDate }"
       ]
@@ -8185,7 +8200,7 @@
         "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton akan secara otomatis menggabungkan folder yang memiliki nama yang sama. Untuk menghindari hal ini, silahkan ubah nama folder sebelum Anda mengimpor."
+        "Proton akan secara otomatis menggabungkan folder yang memiliki nama yang sama. Untuk menghindari hal ini, silakan ubah nama folder sebelum Anda mengimpor."
       ],
       "Proton will transfer as much data as possible, starting with your most recent messages.": [
         "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."

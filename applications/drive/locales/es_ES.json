@@ -158,6 +158,9 @@
       "Create new folder": [
         "Crear nueva carpeta"
       ],
+      "Create new text file": [
+        "Crear un nuevo archivo de texto"
+      ],
       "Customize": [
         "Personalizar"
       ],
@@ -543,6 +546,9 @@
       ],
       "Try another method": [
         "Prueba con otro método"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Intenta guardar de nuevo. El guardado falló debido a: ${ saveError }"
       ],
       "Undo": [
         "Deshacer"
@@ -1713,6 +1719,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "Ya existe \"${ name }\""
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -2642,6 +2651,9 @@
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
       ],
+      "All your changes will be lost.": [
+        "Todos los cambios se perderán."
+      ],
       "An active recovery file": [
         "Un archivo de recuperación activo"
       ],
@@ -2656,6 +2668,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Cualquiera en posesión de este enlace puede acceder a su directorio."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "¿Estás seguro de que quieres descartar los cambios?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "¿Estás seguro de que quieres vaciar la papelera y eliminar permanentemente todos los elementos?"
@@ -3107,6 +3122,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccione qué dirección o direcciones de correo añadir a ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Espera hasta que tus cambios estén sincronizados con el servidor."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, espera mientras buscamos contactos que puedan volver a firmarse con la clave de cifrado principal."
       ],
@@ -3326,6 +3344,9 @@
       ],
       "Unlock drive to recover files": [
         "Desbloquea la unidad para recuperar los archivos"
+      ],
+      "Unsaved changes": [
+        "Cambios sin guardar"
       ],
       "Unsupported file": [
         "Fichero no soportado"
@@ -4142,11 +4163,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "No se pudo restaurar \"${ name }\" de la papelera"
       ],
+      "\"${ name }\" failed to be saved": [
+        "No se ha podido guardar \"${ name }\""
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" se ha movido a la papelera"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" se ha restaurado de la papelera"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" guardado con éxito"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" fue movido con éxito"
@@ -4427,6 +4454,9 @@
       ],
       "E.g., ": [
         "Ej., "
+      ],
+      "Enter a new file name": [
+        "Introduce un nombre de archivo nuevo"
       ],
       "Enter a new folder name": [
         "Introduce un nombre nuevo para la carpeta"
@@ -4993,6 +5023,9 @@
       "All": [
         "Todo"
       ],
+      "Are you sure you want to close the preview?": [
+        "¿Estás seguro de que quieres cerrar la previsualización?"
+      ],
       "Back": [
         "Atrás"
       ],
@@ -5022,6 +5055,9 @@
       ],
       "Contacts": [
         "Contactos"
+      ],
+      "Create a new file": [
+        "Crear un nuevo archivo"
       ],
       "Create a new folder": [
         "Crear una carpeta nueva"
@@ -5406,6 +5442,9 @@
       ],
       "Your 500 MB bonus": [
         "Tu bonus de 500 MB"
+      ],
+      "Your changes are not synced yet": [
+        "Tus cambios todavía no están sincronizados"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Tu periodo de prueba gratuito acaba el ${ formattedEndDate }"

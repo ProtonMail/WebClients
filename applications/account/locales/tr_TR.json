@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Aboneliği düzenle"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştirmek"
       ],
@@ -438,6 +435,9 @@
       "label emails as": [
         "e-postalar şöyle etiketlensin"
       ],
+      "Leave": [
+        "Ayrıl"
+      ],
       "Load more": [
         "Diğerlerini yükle"
       ],
@@ -446,6 +446,9 @@
       ],
       "Make default": [
         "Varsayılan yap"
+      ],
+      "Manage communication preferences": [
+        "İletişim ayarları yönetimi"
       ],
       "Mark as default": [
         "Varsayılan olarak işaretle"
@@ -770,6 +773,9 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
       ],
       "Underline": [
         "Altı çizili"
@@ -1166,6 +1172,16 @@
         "Tweet"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Kişiler ya da gruplar ekle"
+      ]
+    },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "Takvimi düzenle"
+      ]
+    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "Seçilmiş takvimdeki tüm etkinlikleri içeren bir ICS dosyası indirin."
@@ -1267,6 +1283,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Düzenleme (etkinlik bilgilerini görüntüleme, ekleme ya da düzenleme)"
+      ],
+      "View (see all event details)": [
+        "Görüntüleme (tüm etkinlik bilgilerini görüntüleme)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3438,6 +3457,9 @@
       "sign in": [
         "oturum aç"
       ],
+      "There was a problem removing your email address.": [
+        "E-posta adresiniz silinirken bir sorun çıktı."
+      ],
       "There was a problem verifying your email address.": [
         "E-posta adresiniz doğrulanırken bir sorun çıktı."
       ]
@@ -4713,6 +4735,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Yeni adreslerinizden e-posta gönderip almaya başlamadan önce, adresler için şifreleme anahtarlarını oluşturmalısınız."
       ],
+      "Before you reset your password, download your recovery phrase.": [
+        "Parolanızı sıfırlamadan önce kurtarma ifadenizi indirin."
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Bitcoin işlemlerinin onaylanması biraz zaman alabilir (24 saate kadar). Onaylandıktan sonra hesabınıza kredi ekleyeceğiz. İşlem onayından sonra, faturanızı kredilerle ödeyebilirsiniz."
       ],
@@ -4846,6 +4871,9 @@
       ],
       "Download recovery file": [
         "Kurtarma dosyasını indir"
+      ],
+      "Download recovery phrase": [
+        "Kurtarma ifadesini indir"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve kişisel gizliliğinizi gittiğiniz her yere götürün."
@@ -5005,6 +5033,12 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
+      ],
+      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
+        "Parolanızı hatırlamıyorsanız yeni siteye erişmek için ${ boldPasswordReset } işlemini yapmalısınız."
+      ],
+      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
+        "Parolanızı yeniden sıfırlamanız gerekirse, hesabınızı geri alarak verilerinizin kilidini açmak için bu ifadeyi yazmanız gerekecek."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "${ MAIL_APP_NAME } üzerinde kullandığınız özel bir etki alanınız varsa, etki alanınıza geçersiz bir e-posta adresiyle (yazım hataları gibi) gönderilen iletileri alacak bir tümünü yakalayan e-posta adresi ayarlayabilirsiniz."
@@ -5200,6 +5234,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
       ],
+      "Make sure you keep your recovery phrase somewhere private.": [
+        "Kurtarma ifadenizi gizli bir yerde sakladığınızdan emin olun."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Hesabınızı kurmak için bu bilgileri iki aşamalı kimlik doğrulama aygıtınıza el ile yazın. ${ _switchButton }."
       ],
@@ -5321,6 +5358,9 @@
       "Paid for a monthly plan": [
         "Bir aylık tarife ödemesi yaptı"
       ],
+      "password reset": [
+        "parola sıfırlama"
+      ],
       "Payment can take a few minutes to fully verify.": [
         "Ödeme işleminin tamamen doğrulanması birkaç dakika sürebilir."
       ],
@@ -5394,6 +5434,9 @@
       ],
       "Please verify the card in the new tab which was opened.": [
         "Lütfen açılan yeni sekmede kartı doğrulayın."
+      ],
+      "Please wait till your changes are synced with the server.": [
+        "Lütfen değişiklikleriniz sunucu ile eşitlenene kadar bekleyin."
       ],
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
@@ -5469,6 +5512,9 @@
       ],
       "Remove one of your calendars to join this one": [
         "Bu takvime katılabilmek için var olan takvimlerinizden birini silin"
+      ],
+      "Reset password": [
+        "Parolayı sıfırla"
       ],
       "Revoke certificate ${ name }": [
         "${ name } sertifikasını geçersiz kıl"
@@ -5606,6 +5652,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Web üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrimiçi olmanın en güvenli yolu."
+      ],
+      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
+        "E-posta adresinizde ya da${ BRAND_NAME } hesabınızda bir değişiklik olmadı. ${ link } adresinden oturum açabilirsiniz."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ${ VPN_APP_NAME } sunucusunu seçmenizi sağlar."
@@ -5765,6 +5814,9 @@
       ],
       "Unlimited messages": [
         "Sınırsız ileti"
+      ],
+      "Unsaved changes": [
+        "Kaydedilmemiş değişiklikler"
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
@@ -6057,6 +6109,10 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Var olan ${ BRAND_NAME } hesabınız tüm ${ BRAND_NAME } hizmetlerine erişmek için kullanılabilir. Lütfen ${ email } ile oturum açın."
+      ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "${ accounts } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı.",
+        "${ accounts } hizmetinden içe aktarma işlemleriniz geçici olarak duraklatıldı."
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
@@ -7358,6 +7414,26 @@
       ],
       "VPN connections": [
         "VPN bağlantısı"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } beta sürümü duyuruları"
+      ],
+      "${ BRAND_NAME } company announcements": [
+        "${ BRAND_NAME } kurumsal duyuruları"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } Kurumsal bülteni"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } bülteni"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } teklif ve fırsatları"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } ürün duyuruları"
       ]
     },
     "Label in domain modal": {
@@ -9136,6 +9212,9 @@
       "You can safely close this tab.": [
         "Bu sekmeyi kapatabilirsiniz."
       ],
+      "Your recovery email has been successfully removed.": [
+        "Kurtarma e-postası adresiniz silindi."
+      ],
       "Your recovery email has been successfully verified.": [
         "Kurtarma e-postası adresiniz doğrulandı."
       ]
@@ -9317,6 +9396,11 @@
     "Share calendar modal description": {
       "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "${ calendarName } takvimini paylaşmak istediğiniz Proton hesaplarını ekleyin. Kendilerine bir çağrı gönderilecek."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Bir e-posta adresi ya da grup adı yazın"
       ]
     },
     "Share calendar modal title": {
@@ -9947,6 +10031,9 @@
       "Apply gift code": [
         "Hediye kodunu uygula"
       ],
+      "Are you sure you want to close the preview?": [
+        "Ön izlemeyi kapatmak istediğinize emin misiniz?"
+      ],
       "Are you sure you want to close?": [
         "Oturumu kapatmak istediğinize emin misiniz?"
       ],
@@ -10507,7 +10594,7 @@
         "Oturumu kapat"
       ],
       "Signed in successfully!": [
-        "Başarıyla oturum açıldı!"
+        "Oturum açıldı!"
       ],
       "Signed in to member account": [
         "Üye hesabıyla oturum açıldı"
@@ -10603,6 +10690,9 @@
       "Warning: suspected fake website": [
         "Uyarı: Şüpheli sahte web sitesi"
       ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "${ PROTON_ME_DOMAIN } etki alanına taşındık"
+      ],
       "What would you like to import?": [
         "Neyi içe aktarmak istersiniz?"
       ],
@@ -10620,6 +10710,9 @@
       ],
       "Your calendar link": [
         "Takvim bağlantınız"
+      ],
+      "Your changes are not synced yet": [
+        "Değişiklikleriniz henüz eşitlenmedi"
       ],
       "Your current plan": [
         "Geçerli tarifeniz"
@@ -10718,6 +10811,16 @@
       ],
       "Role": [
         "Rol"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Takvim ekle"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Takvimi düzenle"
       ]
     },
     "Today icon tooltip in mini calendar": {
