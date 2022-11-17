@@ -201,6 +201,7 @@ const AccountStep = ({
                 return (
                     <SelectTwo
                         id="select-domain"
+                        originalPlacement="bottom-end"
                         anchorRef={anchorRef}
                         sameAnchorWidth={false}
                         unstyled
