@@ -83,7 +83,7 @@ describe('notification manager', () => {
         });
 
         describe('when deduplicate is undefined', () => {
-            it('should not deduplicate a success notification', () => {
+            it('should deduplicate a success notification', () => {
                 const { result } = renderHook(() => useState<NotificationOptions[]>([]));
                 const [, setState] = result.current;
 
@@ -105,12 +105,11 @@ describe('notification manager', () => {
 
                 expect(result.current[0]).toStrictEqual([
                     expect.objectContaining({ text: 'bar' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'foo' }),
                 ]);
             });
 
-            it('should not deduplicate a warning notification', () => {
+            it('should deduplicate a warning notification', () => {
                 const { result } = renderHook(() => useState<NotificationOptions[]>([]));
                 const [, setState] = result.current;
 
@@ -132,12 +131,11 @@ describe('notification manager', () => {
 
                 expect(result.current[0]).toStrictEqual([
                     expect.objectContaining({ text: 'bar' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'foo' }),
                 ]);
             });
 
-            it('should not deduplicate a info notification', () => {
+            it('should deduplicate a info notification', () => {
                 const { result } = renderHook(() => useState<NotificationOptions[]>([]));
                 const [, setState] = result.current;
 
@@ -159,7 +157,6 @@ describe('notification manager', () => {
 
                 expect(result.current[0]).toStrictEqual([
                     expect.objectContaining({ text: 'bar' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'foo' }),
                 ]);
             });
