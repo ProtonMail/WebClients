@@ -226,6 +226,8 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                         ) : (
                             <SelectTwo
                                 unstyled
+                                sameAnchorWidth={false}
+                                originalPlacement="bottom-end"
                                 value={selectedDomain}
                                 onChange={({ value }) => setModel({ ...model, domain: value })}
                                 data-testid="settings:identity-section:add-address:domain-select"
