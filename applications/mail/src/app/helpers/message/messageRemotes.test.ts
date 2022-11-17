@@ -5,6 +5,7 @@ import { loadBackgroundImages, loadElementOtherThanImages } from './messageRemot
 describe('messageRemote', () => {
     describe('loadElementOtherThanImages', () => {
         const imageURL = 'ImageURL';
+        const imageURL2 = 'ImageURL2';
 
         const backgroundContent = `<div>
                                   <table>
@@ -64,6 +65,45 @@ describe('messageRemote', () => {
                               </picture>
                             </div>`;
 
+        const multipleElementsContent = `<div>
+                                  <table>
+                                        <tbody>
+                                        <tr>
+                                          <td proton-background='${imageURL}'>Element1</td>
+                                         </tr>
+                                         <tr>
+                                          <td proton-background='${imageURL2}'>Element2</td>
+                                         </tr>
+                                        </tbody>
+                                   </table>
+                              </div>`;
+
+        const multipleElementsExpectedContent1 = `<div>
+                                  <table>
+                                        <tbody>
+                                        <tr>
+                                          <td background='${imageURL}'>Element1</td>
+                                         </tr>
+                                         <tr>
+                                          <td proton-background='${imageURL2}'>Element2</td>
+                                         </tr>
+                                        </tbody>
+                                   </table>
+                              </div>`;
+
+        const multipleElementsExpectedContent2 = `<div>
+                                  <table>
+                                        <tbody>
+                                        <tr>
+                                          <td background='${imageURL}'>Element1</td>
+                                         </tr>
+                                         <tr>
+                                          <td background='${imageURL2}'>Element2</td>
+                                         </tr>
+                                        </tbody>
+                                   </table>
+                              </div>`;
+
         it.each`
             content              | expectedContent
             ${backgroundContent} | ${backgroundExpectedContent}
@@ -109,6 +149,42 @@ describe('messageRemote', () => {
             const expectedDocument = createDocument(srcsetExpectedContent);
 
             expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
+        });
+
+        it('should remove only the proton attribute of the current image when loading element other than images', async () => {
+            const messageDocument = createDocument(multipleElementsContent);
+
+            const remoteImage1 = {
+                type: 'remote',
+                url: imageURL,
+                originalURL: imageURL,
+                id: 'remote-0',
+                tracker: undefined,
+                status: 'loaded',
+            } as MessageRemoteImage;
+
+            const remoteImage2 = {
+                type: 'remote',
+                url: imageURL2,
+                originalURL: imageURL2,
+                id: 'remote-1',
+                tracker: undefined,
+                status: 'loaded',
+            } as MessageRemoteImage;
+
+            // Load the first image, only the first image has been replaced, and proton-attribute of other element is still present
+            loadElementOtherThanImages([remoteImage1], messageDocument);
+
+            const expectedDocument1 = createDocument(multipleElementsExpectedContent1);
+
+            expect(messageDocument.innerHTML).toEqual(expectedDocument1.innerHTML);
+
+            // Load the second image, both images are now replaced, and no proton-attribute is still present
+            loadElementOtherThanImages([remoteImage2], expectedDocument1);
+
+            const expectedDocument2 = createDocument(multipleElementsExpectedContent2);
+
+            expect(expectedDocument1.innerHTML).toEqual(expectedDocument2.innerHTML);
         });
     });
 
