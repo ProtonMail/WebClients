@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import DOMPurify from 'dompurify';
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
@@ -123,7 +124,7 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
     };
 
     const styles = isLoading ? {} : scaledDimensions;
-    const shouldHideZoomControls = isLoading || !Boolean(scale);
+    const shouldHideZoomControls = !ready;
 
     useEffect(() => {
         if (error) {
@@ -207,6 +208,18 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
                     </div>
                 )}
             </div>
+            {/* TODO: check if these conditions can be simplified/cleaned up. Those for loading
+            should more or less match the ones for zoom controls. */}
+            {!ready && (
+                <div
+                    className={classnames([
+                        'file-preview-loading w100 mb2 flex flex-justify-center flex-align-items-center',
+                    ])}
+                >
+                    <CircleLoader />
+                    <span className="ml1">{c('Info').t`Loading...`}</span>
+                </div>
+            )}
             {!error && (
                 <ZoomControl
                     className={shouldHideZoomControls ? 'visibility-hidden' : ''}
