@@ -3,14 +3,11 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
-import { AppLink } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { VIEW_MODE } from '@proton/shared/lib/constants';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { formatDateToHuman } from '../../helpers/date';
-import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import UndoButton from './UndoButton';
 
 export const createSendingMessageNotificationManager = () => {
@@ -28,8 +25,6 @@ export type SendingMessageNotificationManager = ReturnType<typeof createSendingM
 interface SendingMessageNotificationProps {
     manager: SendingMessageNotificationManager;
     scheduledAt?: number;
-    viewMode?: number;
-    message?: MessageWithOptionalBody;
 }
 
 enum SendingStep {
@@ -38,7 +33,7 @@ enum SendingStep {
     sentWithUndo,
 }
 
-const SendingMessageNotification = ({ manager, scheduledAt, viewMode, message }: SendingMessageNotificationProps) => {
+const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNotificationProps) => {
     const [state, setState] = useState(SendingStep.sending);
     const onUndoRef = useRef<() => Promise<void> | undefined>();
     const isMounted = useIsMounted();
@@ -76,13 +71,10 @@ const SendingMessageNotification = ({ manager, scheduledAt, viewMode, message }:
 
         const notification = getNotificationText();
 
-        const linkID = viewMode === VIEW_MODE.GROUP ? message?.ConversationID : message?.ID;
-
         return (
             <>
                 <span className="mr1">{notification}</span>
                 {onUndo && <UndoButton className="mr1" onUndo={onUndo} />}
-                <AppLink to={`/scheduled/${linkID}`}>{c('Action').t`View message`}</AppLink>
             </>
         );
     };
