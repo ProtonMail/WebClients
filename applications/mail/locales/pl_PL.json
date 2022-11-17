@@ -959,6 +959,9 @@
       "Try another method": [
         "Użyj innej metody"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Spróbuj zapisać ponownie. Zapisanie nie powiodło się: ${ saveError }"
+      ],
       "Turn on tracker protection": [
         "Włącz ochronę przed śledzeniem"
       ],
@@ -5147,6 +5150,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Zaznacz adresy, które chcesz dodać do grupy ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Poczekaj na synchronizację zmian z serwerem."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Poczekaj na sprawdzenie kontaktów, które mogą zostać ponownie podpisane za pomocą głównego klucza szyfrowania."
       ],
@@ -5485,6 +5491,9 @@
       ],
       "Unlock message": [
         "Odblokuj wiadomość"
+      ],
+      "Unsaved changes": [
+        "Niezapisane zmiany"
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
@@ -8303,6 +8312,9 @@
       "Archive": [
         "Archiwum"
       ],
+      "Are you sure you want to close the preview?": [
+        "Czy na pewno chcesz zamknąć podgląd?"
+      ],
       "Are you sure you want to close?": [
         "Czy na pewno chcesz zamknąć edytor filtra?"
       ],
@@ -8779,6 +8791,9 @@
       ],
       "What's new": [
         "Co nowego"
+      ],
+      "Your changes are not synced yet": [
+        "Zmiany nie zostały zsynchronizowane"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Darmowa wersja próbna zakończy się ${ formattedEndDate }"

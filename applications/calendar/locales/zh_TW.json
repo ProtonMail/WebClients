@@ -749,6 +749,11 @@
         "繼續使用 ${ MAIL_APP_NAME }。"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "新增夥伴或群組"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "會否出席？"
@@ -826,6 +831,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "編輯（檢視、建立與編輯事件詳細資訊）"
+      ],
+      "View (see all event details)": [
+        "檢視（檢視所有事件的詳細資訊）"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -4911,6 +4919,11 @@
         "新增您要與之分享 ${ calendarName } 的 Proton 帳號。我們會向他們傳送邀請。"
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "輸入電子郵件地址或群組名稱"
+      ]
+    },
     "Share calendar modal title": {
       "Share with Proton users": [
         "與 Proton 使用者分享"
@@ -5587,6 +5600,16 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "請選擇一個數字"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "建立行事曆"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "編輯行事曆"
       ]
     },
     "Today icon tooltip in mini calendar": {

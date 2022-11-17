@@ -951,6 +951,9 @@
       "Try another method": [
         "Másik módszer"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
+      ],
       "Turn on tracker protection": [
         "Követés védelem bekapcsolása"
       ],
@@ -4975,6 +4978,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Válasszon ki e-mail címet vagy címeket a ${ groupName } csoporthoz adáshoz."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Várjon, amíg módosításai szinkronizálódnak a szerverrel."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Folyamatban van az olyan névjegyek keresése, amelyeket újra aláírhat az elsődleges titkosítás kulccsal."
       ],
@@ -5310,6 +5316,9 @@
       ],
       "Unlock message": [
         "Üzenet feloldása"
+      ],
+      "Unsaved changes": [
+        "Nem mentett módosítások"
       ],
       "Unsupported file": [
         "Ismeretlen file"
@@ -7754,6 +7763,9 @@
       "Archive": [
         "Archívum"
       ],
+      "Are you sure you want to close the preview?": [
+        "Biztos, hogy be szeretné zárni az előnézetet?"
+      ],
       "Are you sure you want to close?": [
         "Biztosan bezárja?"
       ],
@@ -8218,6 +8230,9 @@
       ],
       "What's new": [
         "Újdonságok"
+      ],
+      "Your changes are not synced yet": [
+        "Módosításai még nincsenek szinkronizálva"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ formattedEndDate }"

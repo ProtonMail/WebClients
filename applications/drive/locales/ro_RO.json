@@ -158,6 +158,9 @@
       "Create new folder": [
         "Creare folder"
       ],
+      "Create new text file": [
+        "Creare fișier text"
+      ],
       "Customize": [
         "Personalizare"
       ],
@@ -545,6 +548,9 @@
       ],
       "Try another method": [
         "Încercaţi o altă metodă"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
       "Undo": [
         "Anulare"
@@ -1716,6 +1722,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "„${ name }” există deja."
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -2691,6 +2700,9 @@
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
+      "All your changes will be lost.": [
+        "Toate modificările vor fi pierdute."
+      ],
       "An active recovery file": [
         "Un fișier de recuperare activ"
       ],
@@ -2705,6 +2717,9 @@
       ],
       "Anyone with this link can access your folder.": [
         "Oricine are această legătură vă poate accesa folderul."
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Sigur doriți să renunțați la modificări?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sigur doriți să goliți folderul «Gunoi» și să ștergeți definitiv tot din el?"
@@ -3162,6 +3177,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selectați adresa sau adresele de e-mail de adăugat la ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Așteptați până când modificările se sincronizează cu serverul."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Așteptați până se caută contactele care pot fi resemnate cu cheia de criptare primară."
       ],
@@ -3382,6 +3400,9 @@
       ],
       "Unlock drive to recover files": [
         "Deblocare unitate pentru recuperarea fișierelor"
+      ],
+      "Unsaved changes": [
+        "Modificări nesalvate"
       ],
       "Unsupported file": [
         "Fişier nesuportat"
@@ -4203,11 +4224,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "„${ name }” nu a putut fi restaurat din «Gunoi»."
       ],
+      "\"${ name }\" failed to be saved": [
+        "„${ name }” nu s-a putut salva."
+      ],
       "\"${ name }\" moved to trash": [
         "„${ name }” a fost mutat în «Gunoi»."
       ],
       "\"${ name }\" restored from trash": [
         "„${ name }” a fost restaurat din «Gunoi»."
+      ],
+      "\"${ name }\" saved successfully": [
+        "„${ name }” a fost salvat."
       ],
       "\"${ name }\" successfully moved": [
         "„${ name }” a fost mutat cu succes."
@@ -4507,6 +4534,9 @@
       ],
       "E.g., ": [
         "Ex.: "
+      ],
+      "Enter a new file name": [
+        "Introducere nume fișier"
       ],
       "Enter a new folder name": [
         "Introducere nume folder nou"
@@ -4841,6 +4871,9 @@
       "All": [
         "Toate"
       ],
+      "Are you sure you want to close the preview?": [
+        "Sigur doriți să închideți examinarea?"
+      ],
       "Back": [
         "Înapoi"
       ],
@@ -4870,6 +4903,9 @@
       ],
       "Contacts": [
         "Contacte"
+      ],
+      "Create a new file": [
+        "Creare fișier"
       ],
       "Create a new folder": [
         "Creare folder"
@@ -5257,6 +5293,9 @@
       ],
       "Your 500 MB bonus": [
         "Bonusul de 500 MB"
+      ],
+      "Your changes are not synced yet": [
+        "Modificările nu sunt încă sincronizate"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Perioada de încercare gratuită se încheie în curând, la ${ formattedEndDate }"

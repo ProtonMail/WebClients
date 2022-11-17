@@ -951,6 +951,9 @@
       "Try another method": [
         "Essayer une autre méthode"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Veuillez réessayer l'enregistrement. L'erreur suivante est survenue : ${ saveError }"
+      ],
       "Turn on tracker protection": [
         "Activer la protection contre les traqueurs"
       ],
@@ -3340,6 +3343,12 @@
         "Trop de résultats correspondants à votre recherche. Limitez votre recherche et essayez à nouveau."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Un maximum de ${ MAX_ATTENDEES } participant est autorisé par invitation.",
+        "Un maximum de ${ MAX_ATTENDEES } participants est autorisé par invitation."
+      ]
+    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "Les brouillons ne peuvent pas être déplacés dans le dossier Boîte de réception."
@@ -4273,6 +4282,10 @@
         "${ numContacts } contact",
         "${ numContacts } contacts"
       ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } message dans la conversation",
+        "${ NumMessages } messages dans la conversation"
+      ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } occurrence trouvée",
         "${ numOccurrences } occurrences trouvées"
@@ -4965,6 +4978,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Sélectionnez la ou les adresses e-mail à ajouter à ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Veuillez patienter jusqu'à ce que vous modifications soient synchronisées avec le serveur."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Veuillez patienter pendant que nous recherchons des contacts qui peuvent être signés une nouvelle fois avec la clé de chiffrement principale."
       ],
@@ -5300,6 +5316,9 @@
       ],
       "Unlock message": [
         "Débloquer le message"
+      ],
+      "Unsaved changes": [
+        "Modifications non enregistrées"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
@@ -7988,6 +8007,9 @@
       "Archive": [
         "Archives"
       ],
+      "Are you sure you want to close the preview?": [
+        "Êtes vous sûr de vouloir fermer la prévisualisation ?"
+      ],
       "Are you sure you want to close?": [
         "Vous voulez vraiment fermer ?"
       ],
@@ -8452,6 +8474,9 @@
       ],
       "What's new": [
         "Nouveautés"
+      ],
+      "Your changes are not synced yet": [
+        "Vos modifications ne sont pas sychnonisées pour le moment."
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }."

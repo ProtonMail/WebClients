@@ -318,9 +318,6 @@
       "Edit subscription": [
         "Előfizetés szerkesztése"
       ],
-      "Emoji": [
-        "Hangulatjel"
-      ],
       "enable desktop notifications": [
         "asztali értesítéset küldhessen"
       ],
@@ -764,6 +761,9 @@
       ],
       "Try another method": [
         "Másik módszer"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
       ],
       "Underline": [
         "Aláhúzott"
@@ -5360,6 +5360,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Ellenőrizze a bankkártyát a megnyílt új böngészőfülön."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Várjon, amíg módosításai szinkronizálódnak a szerverrel."
+      ],
       "Plus or Visionary subscription required": [
         "Plus vagy Visionary előfizetés szükséges"
       ],
@@ -5736,6 +5739,9 @@
       ],
       "Unlimited messages": [
         "Korlátlan számú üzenet"
+      ],
+      "Unsaved changes": [
+        "Nem mentett módosítások"
       ],
       "Unsupported file": [
         "Ismeretlen file"
@@ -9850,6 +9856,9 @@
       "Apply gift code": [
         "Ajándék kód hozzáadása"
       ],
+      "Are you sure you want to close the preview?": [
+        "Biztos, hogy be szeretné zárni az előnézetet?"
+      ],
       "Are you sure you want to close?": [
         "Biztosan bezárja?"
       ],
@@ -10520,6 +10529,9 @@
       ],
       "Your calendar link": [
         "Az ön naptárának hivatkozása"
+      ],
+      "Your changes are not synced yet": [
+        "Módosításai még nincsenek szinkronizálva"
       ],
       "Your current plan": [
         "Jelenlegi csomag"

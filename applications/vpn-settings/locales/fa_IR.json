@@ -110,6 +110,9 @@
       "Disable": [
         "غیرفعال"
       ],
+      "Discard": [
+        "کنارگذاری"
+      ],
       "Done": [
         "انجام شد"
       ],
@@ -157,6 +160,9 @@
       ],
       "Get ${ vpnPlus }": [
         "دریافت ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "دریافت یک آدرس ایمیل رمزگذاری شده جدید"
       ],
       "Get verification code": [
         "دریافت کد تایید"
@@ -352,6 +358,9 @@
       ],
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
+      ],
+      "Use your current email instead": [
+        "در عوض از ایمیل فعلی خود استفاده کنید"
       ],
       "User": [
         "کاربر"
@@ -1814,6 +1823,9 @@
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "پس از پرداخت Bitcoin، لطفا برای ارتقا دستورالعمل‌های زیر را دنبال کنید."
       ],
+      "All your changes will be lost.": [
+        "تمام تغییرات شما از دست خواهد رفت."
+      ],
       "Amount below minimum (${ amount }).": [
         "مبلغ کمتر از حداقل است (${ amount })."
       ],
@@ -1822,6 +1834,9 @@
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "آیا مطمئن هستید که می خواهید تأیید هویت دو عاملی را غیرفعال کنید?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "آیا مطمئن هستید که می‌خواهید تغییرات خود را نادیده بگیرید؟"
       ],
       "Basic, Plus or Visionary subscription required": [
         "اشتراک Basic، Plus یا Visionary مورد نیاز است"
@@ -2807,26 +2822,6 @@
     "label": {
       "Recovery phone number": [
         "شماره تلفن بازیابی"
-      ]
-    },
-    "Label for news": {
-      "Proton beta announcements": [
-        "اطلاعیه‌های بتا Proton"
-      ],
-      "Proton company announcements": [
-        "اطلاعیه‌های شرکت Proton"
-      ],
-      "Proton for Business newsletter": [
-        "Proton برای خبرنامه تجاری"
-      ],
-      "Proton newsletter": [
-        "خبرنامه Proton"
-      ],
-      "Proton offers and promotions": [
-        "پیشنهادات و تبلیغات Proton"
-      ],
-      "Proton product announcements": [
-        "اطلاعیه‌های محصولات Proton"
       ]
     },
     "Label on payment method": {
