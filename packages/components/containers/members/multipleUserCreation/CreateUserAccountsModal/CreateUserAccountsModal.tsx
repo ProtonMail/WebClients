@@ -24,7 +24,9 @@ import {
     useDomains,
     useEventManager,
     useGetAddresses,
+    useLoading,
     useNotifications,
+    useOnline,
     useOrganization,
     useOrganizationKey,
 } from '@proton/components';
@@ -52,6 +54,7 @@ enum STEPS {
     IMPORT_USERS,
     ORGANIZATION_VALIDATION_ERROR,
     DONE,
+    OFFLINE,
 }
 
 const search = (text: string, regex: RegExp | undefined) => {
@@ -114,11 +117,23 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
     const [failedUsers, setFailedUsers] = useState<UserTemplate[]>([]);
     const [invalidAddresses, setInvalidAddresses] = useState<string[]>([]);
     const [unavailableAddresses, setUnavailableAddresses] = useState<string[]>([]);
+    const [importing, withImporting] = useLoading();
 
     /**
      * Prompt on browser instance closing if users are being imported
      */
     useBeforeUnload(step === STEPS.IMPORT_USERS);
+
+    /**
+     * Abort import when not online
+     */
+    const online = useOnline();
+    useEffect(() => {
+        if (!online && importing) {
+            abortControllerRef.current?.abort();
+            setStep(STEPS.OFFLINE);
+        }
+    }, [online, importing]);
 
     /**
      * Setup abort controller used when importing users
@@ -174,6 +189,10 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
     };
 
     const importUsers = async () => {
+        if (!online) {
+            return;
+        }
+
         const error = validateAddUser(organization, organizationKey, verifiedDomains);
         if (error) {
             return createNotification({ type: 'error', text: error });
@@ -322,7 +341,8 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                         <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                         <Button
                             color="norm"
-                            onClick={importUsers}
+                            onClick={() => withImporting(importUsers())}
+                            loading={importing}
                             disabled={
                                 loadingOrganization ||
                                 loadingOrganizationKey ||
@@ -428,6 +448,18 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 onOk={() => setStep(STEPS.SELECT_USERS)}
                 {...rest}
             />
+        );
+    }
+
+    if (step === STEPS.OFFLINE) {
+        return (
+            <AlertModal
+                title={c('Title').t`No internet connection`}
+                buttons={[<Button onClick={onClose}>{c('Action').t`Ok`}</Button>]}
+                {...rest}
+            >
+                {c('Info').t`Please check your connection and try again.`}
+            </AlertModal>
         );
     }
 
