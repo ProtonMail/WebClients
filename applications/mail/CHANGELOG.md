@@ -1,3 +1,17 @@
+## Release 5.0.13.0 — November 30th, 2022
+
+### Improvements
+
+-   Added the ability to edit or delete a folder from the side menu
+-   Added the ability to edit or delete a label from the side menu
+
+### Bug fixes
+
+-   Fixed an issue in which recipients in CC were not displayed in the original message that gets forwarded or replied to
+-   Fixed an issue in which a draft was still displayed in a conversation after clicking on undo
+-   Fixed an issue in which the focus on the composer could disappear
+-   Fixed an issue in which Twitter emails were not displayed properly
+
 ## Release 5.0.12 - November 16, 2022
 
 ### Bug fixes
