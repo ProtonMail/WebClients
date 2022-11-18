@@ -168,20 +168,20 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
                     <UnsupportedPreview onDownload={onDownload} type="image" />
                 ) : (
                     <div
-                        className={classnames(['flex-no-min-children relative mauto'])}
+                        className="flex-no-min-children mauto relative"
                         style={{
                             ...scaledDimensions,
-                            overflow: 'hidden',
+                            // TODO: fix dimensions calculation and uncomment
                             // Add checkered background to override any theme
                             // so transparent images are better visible.
-                            background: isLoading
-                                ? ''
-                                : 'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%) 50% / 20px 20px',
+                            // background: isLoading
+                            //     ? ''
+                            //     : 'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%) 50% / 20px 20px',
+                            overflow: 'hidden',
                         }}
                     >
                         {!isLoading && (
                             <img
-                                ref={imageRef}
                                 onLoad={handleFullImageLoaded}
                                 onError={handleBrokenImage}
                                 className={classnames(['file-preview-image file-preview-image-full-size'])}
@@ -192,7 +192,7 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
                         )}
                         <img
                             ref={imageRef}
-                            onLoad={() => fitToContainer()}
+                            onLoad={fitToContainer}
                             onError={handleBrokenImage}
                             className={classnames(['file-preview-image', ready && 'hide'])}
                             style={{
