@@ -40,7 +40,13 @@ const Info = ({
     const safeTitle = title || '';
 
     return (
-        <Tooltip title={safeTitle} openDelay={0} closeDelay={250} originalPlacement={originalPlacement}>
+        <Tooltip
+            title={safeTitle}
+            openDelay={0}
+            closeDelay={250}
+            longTapDelay={0}
+            originalPlacement={originalPlacement}
+        >
             <button
                 tabIndex={buttonTabIndex}
                 className={buttonClass}
