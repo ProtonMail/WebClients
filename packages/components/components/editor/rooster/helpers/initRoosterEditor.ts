@@ -5,6 +5,7 @@ import { DefaultFormat, Direction, EditorPlugin, IEditor } from 'roosterjs-edito
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE, ROOSTER_SNAPSHOTS_MAX_SIZE } from '../../constants';
+import { getFontFaceValueFromId } from '../../helpers/fontFace';
 import { ModalLinkProps } from '../../hooks/interface';
 import { EditorActions, OnEditorEventListened } from '../../interface';
 import EditorCustomPastePlugin from '../plugins/EditorCustomPastePlugin';
@@ -52,10 +53,16 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
     ];
 
     const fontSize = options.mailSettings?.FontSize ? `${options.mailSettings.FontSize}px` : `${DEFAULT_FONT_SIZE}px`;
+    const fontFamily = (() => {
+        if (options.mailSettings?.FontFace) {
+            return getFontFaceValueFromId(options.mailSettings.FontFace) || DEFAULT_FONT_FACE;
+        }
+        return DEFAULT_FONT_FACE;
+    })();
 
     const defaultFormat: DefaultFormat = {
         bold: false,
-        fontFamily: options.mailSettings?.FontFace || DEFAULT_FONT_FACE,
+        fontFamily,
         fontSize,
     };
 
