@@ -392,7 +392,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                 const humanReadableStorage = humanSize(totalStorage);
 
                                 return (
-                                    <tr key={displayName.text} onClick={() => handleCheckboxChange(id)}>
+                                    <tr key={id} onClick={() => handleCheckboxChange(id)}>
                                         <TableCell key="displayName" className="align-top">
                                             <Checkbox id={checkboxId} checked={isItemSelected} readOnly>
                                                 <div title={displayName.text}>
