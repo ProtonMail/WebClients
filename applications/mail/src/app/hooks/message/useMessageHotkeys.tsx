@@ -24,7 +24,6 @@ import { Element } from '../../models/element';
 import { MARK_AS_STATUS, useMarkAs } from '../actions/useMarkAs';
 import { useMoveToFolder } from '../actions/useMoveToFolder';
 import { useStar } from '../actions/useStar';
-import { useFolderNavigationHotkeys } from '../mailbox/useFolderNavigationHotkeys';
 
 const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -80,7 +79,6 @@ export const useMessageHotkeys = (
     const location = useLocation();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const [folders] = useFolders();
-    const folderNavigationHotkeys = useFolderNavigationHotkeys();
     const { call } = useEventManager();
 
     const { feature: conversationHeaderInScrollFeature } = useFeature(FeatureCode.ConversationHeaderInScroll);
@@ -141,7 +139,6 @@ export const useMessageHotkeys = (
     };
 
     const shortcutHandlers: HotkeyTuple[] = [
-        ...folderNavigationHotkeys,
         [
             'Enter',
             (e) => {
