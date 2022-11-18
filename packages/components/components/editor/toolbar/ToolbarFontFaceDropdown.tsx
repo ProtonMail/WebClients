@@ -109,7 +109,6 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
                         isSelected={fontValue === value}
                         onClick={() => onChange(fontValue)}
                         style={{ fontFamily: fontValue }}
-                        data-testid={`editor-font-${fontLabel}`}
                         buttonContent={<span className="pr0-5">{fontLabel}</span>}
                         extraContent={
                             displayDefaultFontButton(defaultValue, fontId, !!showDefaultFontSelector) ? (
