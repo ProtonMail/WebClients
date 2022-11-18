@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { classnames } from '../../helpers';
-import { Href } from '../link';
+import Href from '../link/Href';
 
 const CLASSES = {
     info: 'alert-block',
@@ -18,6 +18,7 @@ interface Props {
     learnMore?: string;
     className?: string;
 }
+
 const Alert = ({ type = 'info', children, learnMore, className }: Props) => {
     return (
         <div className={classnames([CLASSES[type], className])}>

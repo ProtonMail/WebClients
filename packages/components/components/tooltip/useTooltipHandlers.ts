@@ -1,17 +1,123 @@
-import { useEffect, useRef } from 'react';
+import { MutableRefObject, useEffect, useRef } from 'react';
 
-const LONG_TAP_TIMEOUT = 1000;
+const LONG_TAP_TIMEOUT = 500;
+const OPEN_DELAY_TIMEOUT = 1000;
+const CLOSE_DELAY_TIMEOUT = 500;
 
-const useTooltipHandlers = (open: () => void, close: () => void, isOpen: boolean) => {
+let visibleTimeout = 0;
+let globalId = 0;
+
+enum State {
+    Opened,
+    Closing,
+}
+
+type CloseCb = (immediate?: boolean) => void;
+type OpenCb = (immediate?: boolean) => void;
+
+const tooltips = new Map<number, { state: State; close: MutableRefObject<CloseCb> }>();
+
+const closePendingTooltips = () => {
+    for (let [id, entry] of tooltips) {
+        if (entry.state === State.Closing) {
+            entry.close.current();
+            tooltips.delete(id);
+        }
+    }
+};
+
+interface Props {
+    open: OpenCb;
+    close: CloseCb;
+    isOpen: boolean;
+    isExternalOpen?: boolean;
+    openDelay?: number;
+    closeDelay?: number;
+    longTapDelay?: number;
+}
+
+const useTooltipHandlers = ({
+    open: outsideOpen,
+    close: outsideClose,
+    isOpen,
+    isExternalOpen,
+    openDelay = OPEN_DELAY_TIMEOUT,
+    closeDelay = CLOSE_DELAY_TIMEOUT,
+    longTapDelay = LONG_TAP_TIMEOUT,
+}: Props) => {
+    const idRef = useRef(-1);
+    if (idRef.current === -1) {
+        idRef.current = ++globalId;
+    }
+    const id = idRef.current;
+
+    const closeTimeoutRef = useRef(0);
     const longTapTimeoutRef = useRef(0);
     const ignoreFocusRef = useRef(false);
     const ignoreNonTouchEventsRef = useRef(false);
     const ignoreNonTouchEventsTimeoutRef = useRef(0);
+    const closeRef = useRef(outsideClose);
+    const openRef = useRef(outsideOpen);
+
+    useEffect(() => {
+        const entry = tooltips.get(id);
+        if (!entry) {
+            return;
+        }
+        closeRef.current = outsideClose;
+        openRef.current = outsideOpen;
+    });
+
+    useEffect(() => {
+        return () => {
+            window.clearTimeout(closeTimeoutRef.current);
+            window.clearTimeout(longTapTimeoutRef.current);
+            window.clearTimeout(ignoreNonTouchEventsTimeoutRef.current);
+            tooltips.get(id)?.close.current();
+            tooltips.delete(id);
+        };
+    }, [id]);
+
+    const open = (immediate?: boolean) => {
+        window.clearTimeout(visibleTimeout);
+        window.clearTimeout(closeTimeoutRef.current);
+        const oldTooltip = tooltips.get(id);
+        tooltips.set(id, { state: State.Opened, close: closeRef });
+        if (oldTooltip?.state === State.Closing) {
+            return;
+        }
+        closePendingTooltips();
+        openRef.current(immediate);
+    };
+
+    const close = () => {
+        window.clearTimeout(visibleTimeout);
+        // Trying to close something that isn't open.
+        if (tooltips.get(id)?.state !== State.Opened) {
+            return;
+        }
+
+        window.clearTimeout(closeTimeoutRef.current);
+        if (!closeDelay) {
+            outsideClose();
+            tooltips.delete(id);
+            return;
+        }
+
+        tooltips.set(id, { state: State.Closing, close: closeRef });
+        closeTimeoutRef.current = window.setTimeout(() => {
+            const entry = tooltips.get(id);
+            if (entry?.state === State.Closing) {
+                entry.close.current(false);
+                tooltips.delete(id);
+            }
+        }, closeDelay);
+    };
 
     const handleCloseTooltip = () => {
-        clearTimeout(longTapTimeoutRef.current);
+        window.clearTimeout(longTapTimeoutRef.current);
         longTapTimeoutRef.current = 0;
-        clearTimeout(ignoreNonTouchEventsTimeoutRef.current);
+        window.clearTimeout(ignoreNonTouchEventsTimeoutRef.current);
         // Clear non-touch events after a small timeout to avoid the focus event accidentally triggering it after touchend
         // touchstart -> touchend -> focus
         ignoreNonTouchEventsTimeoutRef.current = window.setTimeout(() => {
@@ -33,14 +139,14 @@ const useTooltipHandlers = (open: () => void, close: () => void, isOpen: boolean
     }, [isOpen, close]);
 
     const handleTouchStart = () => {
-        clearTimeout(ignoreNonTouchEventsTimeoutRef.current);
+        window.clearTimeout(ignoreNonTouchEventsTimeoutRef.current);
         ignoreNonTouchEventsTimeoutRef.current = 0;
-        clearTimeout(longTapTimeoutRef.current);
+        window.clearTimeout(longTapTimeoutRef.current);
         // Initiate a long-tap timer to open the tooltip on touch devices
         longTapTimeoutRef.current = window.setTimeout(() => {
             open();
             longTapTimeoutRef.current = 0;
-        }, LONG_TAP_TIMEOUT);
+        }, longTapDelay);
         // Also set to ignore non-touch events
         ignoreNonTouchEventsRef.current = true;
     };
@@ -51,7 +157,7 @@ const useTooltipHandlers = (open: () => void, close: () => void, isOpen: boolean
             return;
         }
         // Otherwise it's either not opened or it wasn't opened from the long tap, so we can set to close the tooltip
-        clearTimeout(longTapTimeoutRef.current);
+        window.clearTimeout(longTapTimeoutRef.current);
         longTapTimeoutRef.current = 0;
         handleCloseTooltip();
     };
@@ -60,7 +166,14 @@ const useTooltipHandlers = (open: () => void, close: () => void, isOpen: boolean
         if (ignoreNonTouchEventsRef.current) {
             return;
         }
-        open();
+        window.clearTimeout(visibleTimeout);
+        if (tooltips.size || !openDelay || isOpen) {
+            open();
+        } else {
+            visibleTimeout = window.setTimeout(() => {
+                open(false);
+            }, openDelay);
+        }
     };
 
     const handleMouseDown = () => {
@@ -73,7 +186,7 @@ const useTooltipHandlers = (open: () => void, close: () => void, isOpen: boolean
     };
 
     const handleMouseLeave = () => {
-        // Reset the ignore focus when leaving the element
+        // Reset ignore focus when leaving the element
         ignoreFocusRef.current = false;
         if (ignoreNonTouchEventsRef.current) {
             return;
@@ -91,6 +204,17 @@ const useTooltipHandlers = (open: () => void, close: () => void, isOpen: boolean
         }
         open();
     };
+
+    useEffect(() => {
+        if (isExternalOpen === undefined) {
+            return;
+        }
+        if (isExternalOpen && !isOpen) {
+            open();
+        } else if (!isExternalOpen && isOpen) {
+            close();
+        }
+    }, [isExternalOpen, isOpen]);
 
     return {
         onTouchEnd: handleTouchEnd,
