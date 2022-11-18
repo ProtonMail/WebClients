@@ -272,11 +272,11 @@ export enum INVOICE_STATE {
 }
 
 export enum UNPAID_STATE {
-    NOT_UNPAID,
-    AVAILABLE,
-    OVERDUE,
-    DELINQUENT,
-    NO_RECEIVE,
+    NOT_UNPAID = 0,
+    AVAILABLE = 1,
+    OVERDUE = 2,
+    DELINQUENT = 3,
+    NO_RECEIVE = 4,
 }
 
 export const BASE_SIZE = 1024;
