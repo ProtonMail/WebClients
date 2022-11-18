@@ -6,7 +6,6 @@ import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 
 export interface PageHotkeysHandlers {
     onOpenShortcutsModal: () => void;
@@ -14,13 +13,11 @@ export interface PageHotkeysHandlers {
 
 export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) => {
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
-    const folderNavigationHotkeys = useFolderNavigationHotkeys();
     const onCompose = useOnCompose();
 
     const documentRef = useRef(window.document);
 
     const shortcutHandlers: HotkeyTuple[] = [
-        ...folderNavigationHotkeys,
         [
             KeyboardKey.QuestionMark,
             (e) => {
