@@ -7,7 +7,7 @@
 
 ### Bug fixes
 
--   Fixed an issue in which CC were not displayed within the email block quote
+-   Fixed an issue in which recipients in CC were not displayed in the original message that gets forwarded or replied to
 -   Fixed an issue in which a draft was still displayed in a conversation after clicking on undo
 -   Fixed an issue in which the focus on the composer could disappear
 -   Fixed an issue in which Twitter emails were not displayed properly
