@@ -234,7 +234,13 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
 
                 setSuccessfullyCreatedUsers((successfullyCreatedUsers) => [...successfullyCreatedUsers, user]);
             } catch (error: any) {
-                if (error instanceof InvalidAddressesError) {
+                if (error.cancel) {
+                    /**
+                     * Handle auth prompt cancel
+                     */
+                    abortControllerRef.current.abort();
+                    setStep(STEPS.SELECT_USERS);
+                } else if (error instanceof InvalidAddressesError) {
                     const addresses = error.addresses;
                     setInvalidAddresses((invalidAddresses) => [...invalidAddresses, ...addresses]);
                 } else if (error instanceof UnavailableAddressesError) {
