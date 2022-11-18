@@ -1,7 +1,4 @@
-import { getAppName } from '../apps/helper';
-import { ACCENT_COLORS, APPS, BASE_SIZE } from '../constants';
-
-export const CALENDAR_APP_NAME = getAppName(APPS.PROTONCALENDAR);
+import { ACCENT_COLORS, BASE_SIZE } from '../constants';
 
 export const MAX_CALENDARS_FREE = 1;
 export const MAX_SUBSCRIBED_CALENDARS = 5;

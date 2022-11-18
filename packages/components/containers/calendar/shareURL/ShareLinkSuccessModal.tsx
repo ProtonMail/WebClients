@@ -3,6 +3,7 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 
 import { BasicModal } from '../../../components';
@@ -33,7 +34,7 @@ const ShareLinkSuccessModal = ({ link, onSubmit, onClose, accessLevel, isOpen }:
                 {accessLevel === ACCESS_LEVEL.FULL ? (
                     <>
                         <p className="mt0">{c('Info')
-                            .t`By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.`}</p>
+                            .t`By sharing the full event details of this calendar, you accept to grant ${BRAND_NAME} access to this calendar's encrypted information.`}</p>
                         <p>{c('Info')
                             .t`Anyone with this link can see all the event details of this calendar such as title, location or participants.`}</p>
                     </>

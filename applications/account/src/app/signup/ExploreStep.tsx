@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, Logo, classnames, useLoading } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
@@ -20,7 +20,7 @@ const ExploreStep = ({ onExplore }: Props) => {
     const [loading, withLoading] = useLoading();
     return (
         <Main>
-            <Header title={c('new_plans: title').t`Start exploring the Proton universe`} />
+            <Header title={c('new_plans: title').t`Start exploring the ${BRAND_NAME} universe`} />
             <Content>
                 <ul className="unstyled m0 divide-y">
                     {[APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS].map((app) => {

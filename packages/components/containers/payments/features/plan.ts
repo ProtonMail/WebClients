@@ -56,7 +56,8 @@ export const getBundlePlan = (plan: Plan): ShortPlan => {
         plan: PLANS.BUNDLE,
         title: plan.Title,
         label: c('new_plans: info').t`Popular`,
-        description: c('new_plans: info').t`Comprehensive privacy and security with all Proton services combined.`,
+        description: c('new_plans: info')
+            .t`Comprehensive privacy and security with all ${BRAND_NAME} services combined.`,
         cta: getCTA(plan.Title),
         features: [
             getStorageFeature(plan.MaxSpace),
@@ -181,7 +182,7 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
         title: plan.Title,
         label: '',
         description: c('new_plans: info')
-            .t`Privacy and security suite for businesses, including all premium Proton services.`,
+            .t`Privacy and security suite for businesses, including all premium ${BRAND_NAME} services.`,
         cta: getCTA(plan.Title),
         features: [
             getStorageFeatureB2B(plan.MaxSpace),

@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { ActionCard, BasicModal, ModalOwnProps as MainModalOwnProps } from '@proton/components/components';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 interface CalendarSidebarCreateCalendarModalProps extends MainModalOwnProps {
     isOpen: boolean;
@@ -39,7 +40,7 @@ const CalendarSidebarShareCalendarModal = ({
             <ActionCard
                 onClick={onSharePrivately}
                 iconName="users"
-                title={c('Action title').t`Share with Proton users`}
+                title={c('Action title').t`Share with ${BRAND_NAME} users`}
                 subtitle={c('Action subline').t`They can view or edit your calendar`}
                 loading={loadingFetchMembersAndInvitations}
             />

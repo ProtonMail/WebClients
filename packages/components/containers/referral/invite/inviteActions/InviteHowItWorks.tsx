@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Href, Icon } from '@proton/components';
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface Props {
@@ -27,7 +27,7 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
 
             <ol className="flex flex-nowrap flex-gap-1 unstyled on-tablet-flex-column mb2">
                 <li className="flex-item-fluid">
-                    <h3 className="mb0-5 text-bold">{c('Info').t`1. Invite friends to Proton`}</h3>
+                    <h3 className="mb0-5 text-bold">{c('Info').t`1. Invite friends to ${BRAND_NAME}`}</h3>
                     {c('Info').t`Just send them your personal referral link.`}
                 </li>
                 <li className="flex-item-fluid">

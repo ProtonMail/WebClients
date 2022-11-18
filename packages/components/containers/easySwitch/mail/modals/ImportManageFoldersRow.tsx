@@ -2,7 +2,7 @@ import { ChangeEvent, KeyboardEvent, MouseEvent, ReactNode, useEffect, useMemo, 
 
 import { c } from 'ttag';
 
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { ImportedMailFolder, MailImportDestinationFolder } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -134,7 +134,7 @@ const ImportManageFoldersRow = ({
 
     const WARNINGS = {
         mergeWarning: c('Warning')
-            .t`Proton will merge all folders with the same name. To avoid this, change the names before import.`,
+            .t`${BRAND_NAME} will merge all folders with the same name. To avoid this, change the names before import.`,
     };
 
     const emptyValueError = useMemo(() => !inputValue || !inputValue.trim(), [inputValue]);

@@ -9,8 +9,9 @@ import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 export const getNAddressesFeature = ({ n, fire }: { n: number; fire?: boolean }): PlanCardFeatureDefinition => {
     let tooltip = '';
     if (n > 1) {
+        const domain = 'proton.me';
         tooltip = c('new_plans: tooltip')
-            .t`Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription`;
+            .t`Create multiple email addresses for your online identities, e.g., JohnShopper@${domain} for shopping accounts, JohnNews@${domain} for news subscription`;
     }
     return {
         featureName: c('new_plans: feature').ngettext(msgid`${n} email address`, `${n} email addresses/aliases`, n),
@@ -180,7 +181,7 @@ const getEncryptedContacts = (): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').t`Encrypted contact details`,
         tooltip: c('new_plans: tooltip')
-            .t`Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.`,
+            .t`Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${BRAND_NAME} can't access them.`,
         included: true,
     };
 };

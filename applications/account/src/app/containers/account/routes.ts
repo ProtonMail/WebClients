@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { ThemeColor } from '@proton/colors';
-import { DEFAULT_CURRENCY, PRODUCT_NAMES, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DEFAULT_CURRENCY, PRODUCT_NAMES, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
 import { UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 
@@ -157,7 +157,7 @@ export const getAccountAppRoutes = ({
             },
             referral: <SectionConfig>{
                 text: c('Title').t`Refer a friend`,
-                description: c('Description').t`Get up to ${credits} in credits by inviting friends to Proton.`,
+                description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
                 to: '/referral',
                 icon: 'gift',
                 available: !!isReferralProgramEnabled,

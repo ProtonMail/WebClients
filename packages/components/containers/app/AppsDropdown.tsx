@@ -3,7 +3,7 @@ import { ForwardedRef, Fragment, forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AppLink, Icon, Logo, SettingsLink, SimpleDropdown, VpnLogo } from '../../components';
 import { useApps } from '../../hooks';
@@ -20,8 +20,6 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
         name: getAppName(app),
     }));
 
-    const vpnName = getAppName(APPS.PROTONVPN_SETTINGS);
-
     const itemClassName =
         'dropdown-item-link w100 flex flex-nowrap flex-align-items-center py0-5 pl1 pr1-5 color-norm text-no-decoration';
 
@@ -34,7 +32,7 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
             className="apps-dropdown-button flex-item-noshrink"
             dropdownClassName="apps-dropdown"
             originalPlacement="bottom-start"
-            title={c('Apps dropdown').t`Proton applications`}
+            title={c('Apps dropdown').t`${BRAND_NAME} applications`}
             onClick={onDropdownClick}
             disableDefaultArrowNavigation
             ref={ref}
@@ -56,9 +54,9 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
                 })}
 
                 <li className="dropdown-item">
-                    <SettingsLink path="/" app={APPS.PROTONVPN_SETTINGS} title={vpnName} className={itemClassName}>
+                    <SettingsLink path="/" app={APPS.PROTONVPN_SETTINGS} title={VPN_APP_NAME} className={itemClassName}>
                         <VpnLogo variant="glyph-only" className="mr0-5" />
-                        {vpnName}
+                        {VPN_APP_NAME}
                     </SettingsLink>
                 </li>
             </ul>

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { Alert, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useLoading } from '../../hooks';
@@ -17,7 +18,7 @@ const DisableAddressModal = ({ email, onDisable, ...rest }: Props) => {
             <ModalTwoHeader title={c('Title').t`Disable ${email}`} />
             <ModalTwoContent>
                 <Alert className="mb1" type="warning">{c('Warning')
-                    .t`By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?`}</Alert>
+                    .t`By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${BRAND_NAME} products will also be disabled. Are you sure you want to disable this address?`}</Alert>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={rest.onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>

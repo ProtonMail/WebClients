@@ -14,6 +14,7 @@ import {
     useFormErrors,
     useLoading,
 } from '@proton/components';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
@@ -69,7 +70,8 @@ const RemoveDeviceModal = ({ device, onClose, open }: Props) => {
             <ModalTwoHeader closeButtonProps={{ disabled: submitting }} title={c('Title').t`Remove device?`} />
             <ModalTwoContent>
                 <p>
-                    {c('Info').jt`This will remove from Proton Drive the synced device ${deviceName}. Local files on
+                    {c('Info')
+                        .jt`This will remove from ${DRIVE_APP_NAME} the synced device ${deviceName}. Local files on
                     the device won’t be affected.`}
                 </p>
                 <p>Enter the device name to confirm removal.</p>

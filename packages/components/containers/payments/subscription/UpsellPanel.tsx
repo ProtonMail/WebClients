@@ -3,14 +3,14 @@ import { ReactNode } from 'react';
 import { format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { generateUID } from '@proton/components/helpers';
 import { Button } from '@proton/atoms';
-import { getAppName } from '@proton/shared/lib/apps/helper';
+import { generateUID } from '@proton/components/helpers';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     APPS,
     APP_NAMES,
     BRAND_NAME,
+    CALENDAR_APP_NAME,
     CYCLE,
     MAIL_APP_NAME,
     PLANS,
@@ -28,8 +28,8 @@ import {
 import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getDrivePlan } from '../features/plan';
 import { Icon, IconName, Price, StripedItem, StripedList } from '../../../components';
+import { getDrivePlan } from '../features/plan';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 
@@ -114,7 +114,6 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
     if (isTrial(subscription) && subscription.PeriodEnd && mailPlan) {
         const mailPlanName = mailPlan.Title;
         const formattedTrialExpirationDate = format(fromUnixTime(subscription.PeriodEnd || 0), 'MMMM d, y');
-        const calendarAppName = getAppName(APPS.PROTONCALENDAR);
         const handleUpgrade = () =>
             openSubscriptionModal({
                 plan: PLANS.MAIL,
@@ -153,7 +152,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
             },
             {
                 icon: 'brand-proton-calendar',
-                text: calendarAppName,
+                text: CALENDAR_APP_NAME,
             },
         ];
         return (
@@ -294,7 +293,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
             <UpsellBox
                 title={getUpgradeText(plan.Title)}
                 description={c('new_plans: Info')
-                    .t`Upgrade to the ultimate privacy pack and access all premium Proton services.`}
+                    .t`Upgrade to the ultimate privacy pack and access all premium ${BRAND_NAME} services.`}
                 items={items.filter(isTruthy)}
                 actions={
                     <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
@@ -348,7 +347,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
             <UpsellBox
                 title={getUpgradeText(plan.Title)}
                 description={c('new_plans: Info')
-                    .t`Upgrade to the business pack with access to all premium Proton services.`}
+                    .t`Upgrade to the business pack with access to all premium ${BRAND_NAME} services.`}
                 items={items}
                 actions={
                     <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
