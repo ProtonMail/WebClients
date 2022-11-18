@@ -36,6 +36,7 @@ interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'> {
     relativeReference?: Parameters<typeof usePopper>[0]['relativeReference'];
     openDelay?: number;
     closeDelay?: number;
+    longTapDelay?: number;
 }
 
 const getTooltipTypeClass = (type: TooltipType) => {
@@ -100,6 +101,7 @@ const TooltipBase = (
         relativeReference,
         openDelay,
         closeDelay,
+        longTapDelay,
         ...rest
     }: Props,
     ref: Ref<HTMLElement>
@@ -140,6 +142,7 @@ const TooltipBase = (
         isExternalOpen,
         openDelay,
         closeDelay,
+        longTapDelay,
     });
 
     const child = Children.only(children);

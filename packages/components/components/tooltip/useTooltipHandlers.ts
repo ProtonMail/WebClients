@@ -1,6 +1,6 @@
 import { MutableRefObject, useEffect, useRef } from 'react';
 
-const LONG_TAP_TIMEOUT = 1000;
+const LONG_TAP_TIMEOUT = 500;
 const OPEN_DELAY_TIMEOUT = 1000;
 const CLOSE_DELAY_TIMEOUT = 500;
 
@@ -33,6 +33,7 @@ interface Props {
     isExternalOpen?: boolean;
     openDelay?: number;
     closeDelay?: number;
+    longTapDelay?: number;
 }
 
 const useTooltipHandlers = ({
@@ -42,6 +43,7 @@ const useTooltipHandlers = ({
     isExternalOpen,
     openDelay = OPEN_DELAY_TIMEOUT,
     closeDelay = CLOSE_DELAY_TIMEOUT,
+    longTapDelay = LONG_TAP_TIMEOUT,
 }: Props) => {
     const idRef = useRef(-1);
     if (idRef.current === -1) {
@@ -144,7 +146,7 @@ const useTooltipHandlers = ({
         longTapTimeoutRef.current = window.setTimeout(() => {
             open();
             longTapTimeoutRef.current = 0;
-        }, LONG_TAP_TIMEOUT);
+        }, longTapDelay);
         // Also set to ignore non-touch events
         ignoreNonTouchEventsRef.current = true;
     };
