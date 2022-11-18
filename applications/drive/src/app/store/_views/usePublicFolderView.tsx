@@ -6,6 +6,7 @@ import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings'
 
 import { useSelectionControls } from '../../components/FileBrowser';
 import { usePublicLinksListing } from '../_links';
+import { reportError } from '../_utils';
 import { useAbortSignal, useLinkName, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
@@ -44,7 +45,7 @@ export default function usePublicFolderView(token: string, linkId: string) {
 
     useEffect(() => {
         const ac = new AbortController();
-        void withLoading(linksListing.loadChildren(ac.signal, token, linkId));
+        void withLoading(linksListing.loadChildren(ac.signal, token, linkId).catch(reportError));
         return () => {
             ac.abort();
         };
