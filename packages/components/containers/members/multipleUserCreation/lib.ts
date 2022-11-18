@@ -47,20 +47,45 @@ export const createUser = async ({
     }
 
     const unavailableAddresses: string[] = [];
-    await Promise.all(
-        addressParts.map(async ({ address, Local, Domain }) => {
-            try {
-                await api(
-                    checkMemberAddressAvailability({
-                        Local,
-                        Domain,
-                    })
-                );
-            } catch (error) {
-                unavailableAddresses.push(address);
+
+    const [firstAddressParts, ...restAddressParts] = addressParts;
+
+    const checkAddressAvailability = async ({
+        address,
+        Local,
+        Domain,
+    }: {
+        address: string;
+        Local: string;
+        Domain: string;
+    }) => {
+        try {
+            await api(
+                checkMemberAddressAvailability({
+                    Local,
+                    Domain,
+                })
+            );
+        } catch (error: any) {
+            if (error.cancel) {
+                /**
+                 * Allow for handling if auth prompt is cancelled
+                 */
+                throw error;
             }
-        })
-    );
+            unavailableAddresses.push(address);
+        }
+    };
+
+    /**
+     * Will prompt password prompt only once
+     */
+    await checkAddressAvailability(firstAddressParts);
+
+    /**
+     * No more password prompts will be needed
+     */
+    await Promise.all(restAddressParts.map(checkAddressAvailability));
 
     if (unavailableAddresses.length) {
         /**
