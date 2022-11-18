@@ -381,10 +381,10 @@ describe('multi user upload csv.ts', () => {
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
-                    expect(user.totalStorage).toBe(20 * GIGA);
+                    expect(user.totalStorage).toBe(0);
                 });
 
-                it('defaults to 20GB', async () => {
+                it('defaults to 0', async () => {
                     const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
                     const file = getFile(fileContent);
 
@@ -392,7 +392,7 @@ describe('multi user upload csv.ts', () => {
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
-                    expect(user.totalStorage).toBe(20 * GIGA);
+                    expect(user.totalStorage).toBe(0);
                 });
             });
 
