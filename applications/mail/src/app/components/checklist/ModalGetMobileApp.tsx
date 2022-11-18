@@ -1,10 +1,7 @@
 import { c } from 'ttag';
 
 import { DialogModal, Href, InnerModal, ModalCloseButton, ModalPropsInjection, QRCode } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
-
-const protonMailAppName = getAppName(APPS.PROTONMAIL);
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 const ModalGetMobileApp = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => (
     /* TODO Modal refactor */
@@ -13,7 +10,7 @@ const ModalGetMobileApp = ({ onClose, ...rest }: Partial<ModalPropsInjection>) =
         <ModalCloseButton onClose={onClose} />
         <InnerModal className="modal-content pb2 pt2 text-center">
             <h1 className="mb0-5 text-2xl text-bold">{c('Get started checklist instructions')
-                .t`Get the ${protonMailAppName} mobile app`}</h1>
+                .t`Get the ${MAIL_APP_NAME} mobile app`}</h1>
             <div className="mb2 ">{c('Get started checklist instructions').t`Available on iOS and Android.`}</div>
             <div className=" mb2">
                 <QRCode value="https://pm.me/app?type=qr" size={200} />

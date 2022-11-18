@@ -15,7 +15,7 @@ import {
 } from '@proton/components';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
@@ -116,7 +116,7 @@ function WelcomeActionsSpotlight({
         <div>
             <h6 className="text-semibold">{c('Title').t`Your welcome actions`}</h6>
             <div className="mb1 color-weak">
-                {c('Info').t`Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.`}
+                {c('Info').t`Get to know ${DRIVE_APP_NAME} and earn your 500 MB storage bonus! Take action today.`}
             </div>
             <WelcomeActions completedActions={completedActions} onActionDone={toggleOpen} />
         </div>
@@ -192,7 +192,7 @@ function WelcomeActions({
 
     return (
         <>
-            <WelcomeAction icon="checkmark" title={c('Label').t`Create Proton account`} />
+            <WelcomeAction icon="checkmark" title={c('Label').t`Create ${BRAND_NAME} account`} />
             <input
                 multiple
                 type="file"

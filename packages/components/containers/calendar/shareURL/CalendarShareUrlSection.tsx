@@ -7,6 +7,7 @@ import { SettingsParagraph } from '@proton/components/containers';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
 import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/lib/calendar/shareUrl/helpers';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
@@ -154,7 +155,7 @@ const CalendarShareUrlSection = ({ calendar, user, noTitle }: Props) => {
         <>
             <SettingsParagraph>
                 {c('Calendar settings link share description')
-                    .t`Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.`}
+                    .t`Create a link to your calendar and share it with anyone outside ${BRAND_NAME}. Only you can add or remove events.`}
             </SettingsParagraph>
             <Button
                 onClick={() => updateModal('shareLinkModal', { isOpen: true })}

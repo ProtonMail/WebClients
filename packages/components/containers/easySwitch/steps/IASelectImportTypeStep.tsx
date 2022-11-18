@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Address, Label } from '@proton/shared/lib/interfaces';
 import {
@@ -168,7 +168,7 @@ const IASelectImportTypeStep = ({
             <>
                 <div className="mb1">
                     {c('Info')
-                        .jt`Your data is ready to import from ${importedEmailAddressStrong} to your Proton account.`}
+                        .jt`Your data is ready to import from ${importedEmailAddressStrong} to your ${BRAND_NAME} account.`}
                 </div>
                 <div>{c('Info').t`Just confirm your selection and we'll do the rest.`}</div>
             </>

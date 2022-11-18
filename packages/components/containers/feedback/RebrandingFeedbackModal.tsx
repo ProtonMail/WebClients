@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+
 import useFeature from '../../hooks/useFeature';
 import { FeatureCode } from '../features/FeaturesContext';
 import FeedbackModal, { FeedbackModalProps } from './FeedbackModal';
@@ -34,7 +36,7 @@ const RebrandingFeedbackModal = (props: RebrandingModalProps) => {
             size="medium"
             onSuccess={handleSuccess}
             feedbackType="web_clients_relaunch"
-            scaleTitle={c('Label').t`How would you describe your experience with the new Proton?`}
+            scaleTitle={c('Label').t`How would you describe your experience with the new ${BRAND_NAME}?`}
             scaleProps={{
                 fromLabel: c('Label').t`Awful`,
                 toLabel: c('Label').t`Wonderful`,

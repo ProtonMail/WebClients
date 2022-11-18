@@ -3,7 +3,7 @@ import { Fragment, ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -76,7 +76,7 @@ const FeedbackDowngradeModal = ({ onSubmit, onClose, user, ...rest }: Props) => 
         const reasons: ReasonOption[] = [
             !isVpnApp
                 ? {
-                      title: c('Downgrade account reason').t`I use a different Proton account`,
+                      title: c('Downgrade account reason').t`I use a different ${BRAND_NAME} account`,
                       value: DIFFERENT_ACCOUNT,
                   }
                 : undefined,

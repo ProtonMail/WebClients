@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 import { Button } from '@proton/atoms';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
@@ -228,18 +228,18 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                 <Alert className="mb1 mt1" type="warning">
                     <div className="mb1">
                         {c('Warning')
-                            .t`This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.`}
+                            .t`This import may exceed the storage capacity currently available in your ${BRAND_NAME} account. Please consider customizing your import.`}
                     </div>
 
                     <div>
                         {c('Warning')
-                            .t`Proton will transfer as much data as possible, starting with your most recent messages.`}
+                            .t`${BRAND_NAME} will transfer as much data as possible, starting with your most recent messages.`}
                     </div>
                 </Alert>
             ) : (
                 <div>
                     {c('Warning')
-                        .t`Proton will transfer as much data as possible, starting with your most recent messages.`}
+                        .t`${BRAND_NAME} will transfer as much data as possible, starting with your most recent messages.`}
                 </div>
             )}
 

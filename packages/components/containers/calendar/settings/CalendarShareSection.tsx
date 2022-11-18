@@ -9,6 +9,7 @@ import { useApi, useFeature, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/share';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -92,7 +93,7 @@ const CalendarShareSection = ({
 
     const title = isCalendarSharingEnabled
         ? c('Calendar settings section title').t`Share calendar`
-        : c('Calendar settings section title').t`Share outside Proton`;
+        : c('Calendar settings section title').t`Share outside ${BRAND_NAME}`;
     const pendingInvitations = filterOutAcceptedInvitations(invitations);
     const isMaximumMembersReached = members.length + pendingInvitations.length >= MAX_CALENDAR_MEMBERS;
 
@@ -117,9 +118,9 @@ const CalendarShareSection = ({
                                 <div className="mb1-75">
                                     <h3 className="text-bold" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}>{c(
                                         'Calendar settings section title'
-                                    ).t`Share with Proton users`}</h3>
+                                    ).t`Share with ${BRAND_NAME} users`}</h3>
                                     <SettingsParagraph>{c('Calendar settings private share description')
-                                        .t`Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.`}</SettingsParagraph>
+                                        .t`Share your calendar with other ${BRAND_NAME} users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.`}</SettingsParagraph>
                                     <Button
                                         onClick={() => handleShare()}
                                         disabled={isLoading || isMaximumMembersReached}

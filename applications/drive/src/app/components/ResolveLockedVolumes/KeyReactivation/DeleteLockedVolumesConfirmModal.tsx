@@ -12,11 +12,8 @@ import {
     ModalTwoHeader,
     useLoading,
 } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
-
-const appName = getAppName(APPS.PROTONDRIVE);
 
 interface Props {
     onClose?: () => void;
@@ -34,7 +31,7 @@ const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, vol
 
     const warningTitle = c('Label').t`This will permanently delete all files in your locked drive.`;
     const warningInfo = c('Info')
-        .t`Note: Data may still be available locally on devices where you have installed ${appName}.`;
+        .t`Note: Data may still be available locally on devices where you have installed ${DRIVE_APP_NAME}.`;
     const confirmationText = c('Label').t`Yes, I want to permanently delete
         my old files`;
 

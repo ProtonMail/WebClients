@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PLANS, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { Audience, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
@@ -136,7 +136,7 @@ const getVPNConnectionsB2B = (n = 0, fire?: boolean): PlanCardFeatureDefinition 
                       n
                   ),
         tooltip: c('new_plans: tooltip')
-            .t`One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.`,
+            .t`One VPN connection allows one device to connect to ${BRAND_NAME} VPN at any given time. For instance, to connect a phone and a laptop to ${BRAND_NAME} VPN at the same time, you need two VPN connections.`,
         included: true,
         fire,
         icon: 'brand-proton-vpn',
