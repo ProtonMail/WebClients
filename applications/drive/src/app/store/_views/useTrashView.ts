@@ -5,6 +5,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
+import { reportError } from '../_utils';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
@@ -30,7 +31,7 @@ export default function useTrashView(shareId: string) {
 
     useEffect(() => {
         const ac = new AbortController();
-        void withLoading(linksListing.loadTrashedLinks(ac.signal, shareId));
+        void withLoading(linksListing.loadTrashedLinks(ac.signal, shareId).catch(reportError));
         return () => {
             ac.abort();
         };

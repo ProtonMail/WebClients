@@ -51,6 +51,12 @@ export default function useDownloadControl(
     };
 
     const updateProgress = (id: string, linkIds: string[], increment: number) => {
+        // Progress might be updated even when transfer is already finished and
+        // thus progress is not here anymore. In such case it is OK to simply
+        // ignore the call to not crash.
+        if (progresses.current[id] === undefined) {
+            return;
+        }
         progresses.current[id].progress += increment;
         // Because increment can be float, some aritmetic operation can result
         // in -0.0000000001 which would be then displayed as -0 after rounding.
