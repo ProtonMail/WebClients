@@ -24,7 +24,7 @@
 	background-color: var(--background-invert);
 	color: var(--text-invert);
 	inline-size: max-content;
-	max-inline-size: max(400px, calc(100% - 2em));
+	max-inline-size: min(400px, calc(100vw - 2em));
 	padding-block: em(8);
 	padding-inline: em(12) em(4);
 	transform: translateX(-50%);
