@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
@@ -34,6 +34,15 @@ function renderComponent() {
 }
 
 describe('SubscribedCalendarModal', () => {
+    beforeEach(() => {
+        jest.useFakeTimers();
+    });
+
+    afterEach(() => {
+        jest.runOnlyPendingTimers();
+        jest.useRealTimers();
+    });
+
     it('shows warnings with an appropriate priority and disables the submit button when needed', async () => {
         renderComponent();
 
@@ -79,6 +88,9 @@ describe('SubscribedCalendarModal', () => {
 
         // 0 is the close modal svg, 1 is the input icon
         userEvent.hover(screen.getAllByRole('img', { hidden: true })[1]);
+        await act(() => {
+            jest.advanceTimersByTime(1000);
+        });
         // 0 is sr only, 1 is the tooltip
         expect(screen.getAllByText(urlTooLongRegex)[1]).toBeVisible();
 
