@@ -6,18 +6,23 @@ import {
     Ref,
     cloneElement,
     forwardRef,
+    useCallback,
     useContext,
     useEffect,
+    useState,
 } from 'react';
 
 import useInstance from '@proton/hooks/useInstance';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { classnames, generateUID } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
-import { Popper, PopperPlacement, usePopper, usePopperState } from '../popper';
+import { Popper, PopperPlacement, usePopper } from '../popper';
 import { TooltipExclusiveContext } from './TooltipExclusive';
 import useTooltipHandlers from './useTooltipHandlers';
+
+import './Tooltip.scss';
 
 export type TooltipType = 'info' | 'error' | 'warning';
 
@@ -29,6 +34,8 @@ interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'> {
     anchorOffset?: { x: number; y: number };
     isOpen?: boolean;
     relativeReference?: Parameters<typeof usePopper>[0]['relativeReference'];
+    openDelay?: number;
+    closeDelay?: number;
 }
 
 const getTooltipTypeClass = (type: TooltipType) => {
@@ -57,6 +64,31 @@ const mergeCallbacks = (a: any, b: any) => {
     );
 };
 
+interface State {
+    open: boolean;
+    position: 'first' | 'last' | 'middle';
+    closing: boolean;
+    animate: boolean;
+}
+
+const defaultState: State = { position: 'middle', open: false, closing: false, animate: false };
+
+const getAnimateInFirst = (state: State) => {
+    return state.position === 'first' && state.open && !state.closing && state.animate;
+};
+
+const getAnimateOutLast = (state: State) => {
+    return state.position === 'last' && state.open && state.closing && state.animate;
+};
+
+const getAnimateInMiddle = (state: State) => {
+    return state.position === 'middle' && state.open && !state.closing && state.animate;
+};
+
+const getAnimateOutMiddle = (state: State) => {
+    return state.position === 'middle' && state.open && state.closing && state.animate;
+};
+
 const TooltipBase = (
     {
         children,
@@ -66,23 +98,49 @@ const TooltipBase = (
         anchorOffset,
         isOpen: isExternalOpen,
         relativeReference,
+        openDelay,
+        closeDelay,
         ...rest
     }: Props,
     ref: Ref<HTMLElement>
 ) => {
     const uid = useInstance(() => generateUID('tooltip'));
+    const isMounted = useIsMounted();
 
-    const { open, close, isOpen } = usePopperState();
-    const combinedIsOpen = isExternalOpen || isOpen;
+    const [state, setState] = useState<State>(defaultState);
+    const open = useCallback((immediate?: boolean) => {
+        if (!isMounted()) {
+            return;
+        }
+        const first = immediate === false;
+        setState({ position: first ? 'first' : 'middle', animate: true, open: true, closing: false });
+    }, []);
+
+    const close = useCallback((immediate?: boolean) => {
+        if (!isMounted()) {
+            return;
+        }
+        const last = immediate === false;
+        setState({ position: last ? 'last' : 'middle', animate: true, open: true, closing: true });
+    }, []);
+
+    const isOpen = state.open;
     const { floating, reference, position, arrow, placement } = usePopper({
-        isOpen: combinedIsOpen,
+        isOpen,
         originalPlacement,
         relativeReference,
     });
 
     const exclusive = useContext(TooltipExclusiveContext) || {};
 
-    const tooltipHandlers = useTooltipHandlers(open, close, combinedIsOpen);
+    const tooltipHandlers = useTooltipHandlers({
+        open,
+        close,
+        isOpen,
+        isExternalOpen,
+        openDelay,
+        closeDelay,
+    });
 
     const child = Children.only(children);
     // Types are wrong? Not sure why ref doesn't exist on a ReactElement
@@ -90,12 +148,12 @@ const TooltipBase = (
     const mergedRef = useCombinedRefs(child?.ref, reference, ref);
 
     useEffect(() => {
-        if (combinedIsOpen) {
+        if (isOpen) {
             exclusive.add?.(uid);
         } else {
             exclusive.remove?.(uid);
         }
-    }, [isOpen, isExternalOpen]);
+    }, [isOpen]);
 
     if (!title) {
         return cloneElement(child, {
@@ -108,6 +166,11 @@ const TooltipBase = (
         return null;
     }
 
+    const animateInFirst = getAnimateInFirst(state);
+    const animateOutLast = getAnimateOutLast(state);
+    const animateInMiddle = getAnimateInMiddle(state);
+    const animateOutMiddle = getAnimateOutMiddle(state);
+
     return (
         <>
             {cloneElement(child, {
@@ -119,9 +182,51 @@ const TooltipBase = (
             <Popper
                 divRef={floating}
                 id={uid}
-                isOpen={(exclusive.last === uid || !exclusive.last) && !!title && combinedIsOpen}
+                isOpen={(exclusive.last === uid || !exclusive.last) && !!title && isOpen}
                 style={{ ...position, ...arrow }}
-                className={classnames(['tooltip', `tooltip--${placement}`, getTooltipTypeClass(type)])}
+                onAnimationEnd={(event) => {
+                    if (event.animationName.includes('anime-tooltip-out-last')) {
+                        setState((oldState) => {
+                            if (getAnimateOutLast(oldState)) {
+                                return defaultState;
+                            }
+                            return oldState;
+                        });
+                    }
+                    if (event.animationName.includes('anime-tooltip-out')) {
+                        setState((oldState) => {
+                            if (getAnimateOutMiddle(oldState)) {
+                                return defaultState;
+                            }
+                            return oldState;
+                        });
+                    }
+                    if (event.animationName.includes('anime-tooltip-in')) {
+                        setState((oldState) => {
+                            if (getAnimateInMiddle(oldState)) {
+                                return { open: true, position: 'middle', closing: false, animate: false };
+                            }
+                            return oldState;
+                        });
+                    }
+                    if (event.animationName.includes('anime-tooltip-in-first')) {
+                        setState((oldState) => {
+                            if (getAnimateInFirst(oldState)) {
+                                return { open: true, position: 'first', closing: false, animate: false };
+                            }
+                            return oldState;
+                        });
+                    }
+                }}
+                className={classnames([
+                    'tooltip',
+                    animateInMiddle && 'tooltip-in',
+                    animateOutMiddle && 'tooltip-out',
+                    animateInFirst && `tooltip-in-first`,
+                    animateOutLast && `tooltip-out-last`,
+                    `tooltip--${placement}`,
+                    getTooltipTypeClass(type),
+                ])}
             >
                 {title}
             </Popper>
