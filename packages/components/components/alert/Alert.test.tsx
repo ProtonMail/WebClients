@@ -13,7 +13,7 @@ describe('Alert component', () => {
     const { firstChild } = container;
 
     it('renders children and should contain "Learn more" link', () => {
-        expect(firstChild.textContent).toBe(`${text}${learnMoreText}`);
+        expect(firstChild?.textContent).toBe(`${text}${learnMoreText}`);
     });
 
     it('has default class', () => {
