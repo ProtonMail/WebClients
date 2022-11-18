@@ -76,8 +76,10 @@ const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, onBack, head
                     <div className="fixed m2 mb1-5 bottom right on-tablet-m0 on-tablet-mb1 on-tablet-text-center on-tablet-static on-tiny-mobile-text-sm">
                         {bottomRight}
                     </div>
-                    <p className="hidden auto-tiny-mobile text-center text-sm m0-5 mb1">{c('Info')
-                        .jt`Version ${version}`}</p>
+                    <p
+                        data-testid="layout-footer:version-text"
+                        className="hidden auto-tiny-mobile text-center text-sm m0-5 mb1"
+                    >{c('Info').jt`Version ${version}`}</p>
                 </>
             ) : (
                 <footer className="pt2 on-mobile-pt0" />
