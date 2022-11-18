@@ -85,6 +85,15 @@ code {
 	background-color: transparent;
 }
 
+ul,
+ol {
+	/**
+	 * Overrides app reset in order to get back to native browser spacing
+	 * Fix issue when ordered list has more than 10 items
+	 */
+	padding-inline-start: em(40);
+}
+
 /* ---------------------------------
       CUSTOM STYLES AND HELPERS
 ----------------------------------- */
