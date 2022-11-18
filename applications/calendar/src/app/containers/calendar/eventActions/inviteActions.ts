@@ -10,6 +10,7 @@ import {
     getHasUpdatedInviteData,
 } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getAttendeePartstat, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -87,7 +88,7 @@ const extractProtonAttendeePublicKey = (email: string, sendPreferencesMap: Simpl
     }
     if (!publicKeys?.length) {
         // This should not happen either. Throwing just in case
-        throw new Error('No public key for Proton attendee');
+        throw new Error(`No public key for ${BRAND_NAME} attendee`);
     }
     return publicKeys[0];
 };

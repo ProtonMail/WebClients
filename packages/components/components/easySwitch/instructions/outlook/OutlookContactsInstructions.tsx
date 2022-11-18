@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Href } from '../../../link';
@@ -13,7 +14,7 @@ const OutlookContactsInstructions = () => {
     );
     // translator: full sentence: "To import contacts to Proton, you need a CSV or a VCF (vCard) file. Download it from Outlook in 3 easy steps:"
     const outlookContactsMessage = c('Import instructions')
-        .jt`To import contacts to Proton, you need a ${knowledgeBaseLink}. Download it from Outlook in 3 easy steps:`;
+        .jt`To import contacts to ${BRAND_NAME}, you need a ${knowledgeBaseLink}. Download it from Outlook in 3 easy steps:`;
 
     // translator: full sentence: "Open your Outlook contacts"
     const outlookContactsLink = (

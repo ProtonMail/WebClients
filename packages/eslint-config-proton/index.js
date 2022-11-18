@@ -90,7 +90,44 @@ module.exports = {
         'no-nested-ternary': 'warn',
         'no-param-reassign': 'off',
         'no-plusplus': 'off',
-        'no-restricted-syntax': 'off',
+        'no-restricted-syntax': [
+            'error',
+            {
+                selector:
+                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton\\b(?!\\s+(Account|Mail|Drive|Calendar|VPN|Verify))/i]',
+                message: 'Use `BRAND_NAME` instead to avoid possible translation.',
+            },
+            {
+                selector:
+                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Account\\b/i]',
+                message: 'Use `${BRAND_NAME} Account` instead to allow translation of `Account`.',
+            },
+            {
+                selector:
+                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Mail\\b/i]',
+                message: 'Use `MAIL_APP_NAME` instead to avoid possible translation.',
+            },
+            {
+                selector:
+                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Drive\\b/i]',
+                message: 'Use `DRIVE_APP_NAME` instead to avoid possible translation.',
+            },
+            {
+                selector:
+                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Calendar\\b/i]',
+                message: 'Use `CALENDAR_APP_NAME` instead to avoid possible translation.',
+            },
+            {
+                selector:
+                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton VPN\\b/i]',
+                message: 'Use `VPN_APP_NAME` instead to avoid possible translation.',
+            },
+            {
+                selector:
+                    'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Verify\\b/i]',
+                message: 'Use `VERIFY_APP_NAME` instead to avoid possible translation.',
+            },
+        ],
         'no-shadow': 'off',
         'no-void': [2, { allowAsStatement: true }],
         'react-hooks/rules-of-hooks': 'error',

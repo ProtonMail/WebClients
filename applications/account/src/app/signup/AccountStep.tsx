@@ -54,7 +54,7 @@ import './AccountStep.scss';
 const SignInPromptModal = ({ email, ...rest }: ModalProps & { email: string }) => {
     return (
         <AlertModal
-            title={c('Title').t`You already have a Proton account`}
+            title={c('Title').t`You already have a ${BRAND_NAME} account`}
             buttons={[
                 <ButtonLike as={Link} color="norm" shape="solid" to="/login">{c('Action')
                     .t`Go to sign in`}</ButtonLike>,

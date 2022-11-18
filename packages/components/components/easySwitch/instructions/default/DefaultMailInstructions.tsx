@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Href } from '../../../link';
@@ -14,7 +15,7 @@ const DefaultMailInstructions = () => {
 
     // translator: full sentence: "Depending on your email service provider, you may need to generate an app password or enable IMAP first before you can import to Proton."
     const defaultAppPasswordMessage = c('Import instructions')
-        .jt`Depending on your email service provider, you may need to generate an ${knowledgeBaseLink} first before you can import to Proton.`;
+        .jt`Depending on your email service provider, you may need to generate an ${knowledgeBaseLink} first before you can import to ${BRAND_NAME}.`;
 
     return <div className="mb1">{defaultAppPasswordMessage}</div>;
 };

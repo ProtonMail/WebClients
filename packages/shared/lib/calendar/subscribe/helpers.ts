@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+
 import { EVENT_ACTIONS, HOUR } from '../../constants';
 import {
     CALENDAR_SUBSCRIPTION_STATUS,
@@ -144,7 +146,7 @@ export const getCalendarIsNotSyncedInfo = (calendar: SubscribedCalendar) => {
         return getNotSyncedInfo(
             c('Calendar subscription not synced error').t`More than 12 hours passed since last update`,
             c('Calendar subscription not synced error; long version')
-                .t`More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.`
+                .t`More than 12 hours passed since last update — ${CALENDAR_APP_NAME} will try to update the calendar in a few hours.`
         );
     }
 

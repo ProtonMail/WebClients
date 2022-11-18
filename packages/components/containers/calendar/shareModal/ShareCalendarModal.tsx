@@ -17,6 +17,7 @@ import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/share';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Address, Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
@@ -59,7 +60,7 @@ const getValidationErrorMessage = (type: VALIDATION_ERRORR_TYPES) => {
         return c('Error').t`The address might be misspelled`;
     }
     if (type === NOT_PROTON_ACCOUNT) {
-        return c('Error').t`Not a Proton account`;
+        return c('Error').t`Not a ${BRAND_NAME} account`;
     }
     if (type === DOES_NOT_EXIST) {
         return c('Error').t`Account does not exist`;
@@ -224,7 +225,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                 if (!primaryApiKey) {
                     return (invalidRecipients[email] = new EncryptionPreferencesError(
                         ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_API_KEY,
-                        c('Error').t`No public key for Proton address`
+                        c('Error').t`No public key for ${BRAND_NAME} address`
                     ));
                 }
 
@@ -314,7 +315,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
         Object.values(invalidRecipients)
             .filter(isTruthy)
             .some(({ type }) => type === NOT_PROTON_ACCOUNT)
-            ? c('Share calendar assistive text').t`To invite non-Proton users, share your calendar with a link`
+            ? c('Share calendar assistive text').t`To invite non-${BRAND_NAME} users, share your calendar with a link`
             : '';
     const addressesInputText = c('Calendar access select label').t`Add people or groups`;
 
@@ -369,11 +370,11 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
 
     return (
         <Modal size="large" {...rest} data-test-id="share-calendar-privately">
-            <ModalHeader title={c('Share calendar modal title').t`Share with Proton users`} />
+            <ModalHeader title={c('Share calendar modal title').t`Share with ${BRAND_NAME} users`} />
             <ModalContent>
                 <div className="mb1">
                     {c('Share calendar modal description')
-                        .jt`Add the Proton accounts with whom you want to share ${calendarName}. We’ll send them an invite.`}
+                        .jt`Add the ${BRAND_NAME} accounts with whom you want to share ${calendarName}. We’ll send them an invite.`}
                 </div>
                 <div className="mb1">
                     <InputField

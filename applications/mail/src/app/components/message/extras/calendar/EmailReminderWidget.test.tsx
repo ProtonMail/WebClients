@@ -9,7 +9,7 @@ import { CacheProvider } from '@proton/components/containers/cache';
 import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import createCache from '@proton/shared/lib/helpers/cache';

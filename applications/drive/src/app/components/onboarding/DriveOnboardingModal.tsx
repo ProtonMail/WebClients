@@ -11,8 +11,7 @@ import {
     OnboardingStep,
     OnboardingStepRenderCallback,
 } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import drive1gbSvg from '@proton/styles/assets/img/onboarding/drive-1gb.svg';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
 
@@ -25,8 +24,6 @@ interface Props {
 }
 
 const DriveOnboardingModal = (props: Props) => {
-    const appName = getAppName(APPS.PROTONDRIVE);
-
     const { isLoading, expiresInDays } = useChecklist();
 
     if (isLoading) {
@@ -45,16 +42,16 @@ const DriveOnboardingModal = (props: Props) => {
         ({ onNext, displayGenericSteps }: OnboardingStepRenderCallback) => (
             <OnboardingStep>
                 <OnboardingContent
-                    title={c('Onboarding Title').t`Welcome to ${appName}`}
+                    title={c('Onboarding Title').t`Welcome to ${DRIVE_APP_NAME}`}
                     description={c('Onboarding Info')
                         .t`Your trusty online vault for vital documents and precious memories.`}
-                    img={<img src={onboardingWelcome} alt={appName} />}
+                    img={<img src={onboardingWelcome} alt={DRIVE_APP_NAME} />}
                 />
                 <footer>
                     <Button size="large" color="norm" fullWidth onClick={onNext}>
                         {displayGenericSteps || expiresInDays > 0
                             ? c('Onboarding Action').t`Next`
-                            : c('Onboarding Action').t`Start using ${appName}`}
+                            : c('Onboarding Action').t`Start using ${DRIVE_APP_NAME}`}
                     </Button>
                 </footer>
             </OnboardingStep>
@@ -67,8 +64,8 @@ const DriveOnboardingModal = (props: Props) => {
                 <OnboardingContent
                     title={c('Onboarding Title').t`Your welcome bonus`}
                     description={c('Onboarding Info')
-                        .t`Get started using Proton Drive and we'll double your free storage to 1GB!`}
-                    img={<img src={drive1gbSvg} alt={appName} />}
+                        .t`Get started using ${DRIVE_APP_NAME} and we'll double your free storage to 1GB!`}
+                    img={<img src={drive1gbSvg} alt={DRIVE_APP_NAME} />}
                 />
                 <div>
                     {c('Onboarding Info').ngettext(
@@ -92,7 +89,7 @@ const DriveOnboardingModal = (props: Props) => {
                     <Button size="large" color="norm" fullWidth onClick={onNext}>
                         {displayGenericSteps
                             ? c('Onboarding Action').t`Next`
-                            : c('Onboarding Action').t`Start using ${appName}`}
+                            : c('Onboarding Action').t`Start using ${DRIVE_APP_NAME}`}
                     </Button>
                 </footer>
             </OnboardingStep>

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import { ACCOUNT_DELETION_REASONS } from '@proton/shared/lib/constants';
+import { ACCOUNT_DELETION_REASONS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { emailValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -85,7 +85,7 @@ const DeleteAccountModal = (props: Props) => {
 
     const reasons = [
         <Option
-            title={c('Option').t`I use a different Proton account`}
+            title={c('Option').t`I use a different ${BRAND_NAME} account`}
             value={DIFFERENT_ACCOUNT}
             key={DIFFERENT_ACCOUNT}
         />,
