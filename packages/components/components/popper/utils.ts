@@ -1,6 +1,6 @@
 import { RefObject } from 'react';
 
-import { Middleware, MiddlewareArguments, MiddlewareReturn, size } from '@floating-ui/react-dom';
+import { Middleware, MiddlewareArguments, MiddlewareReturn, size } from '@floating-ui/dom';
 
 import { ArrowOffset, PopperPlacement, PopperPosition } from './interface';
 
