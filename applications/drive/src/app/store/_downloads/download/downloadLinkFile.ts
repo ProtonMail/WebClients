@@ -32,7 +32,7 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
             format: 'binary',
         });
 
-        const binaryMessage = await readToEnd(stream);
+        const binaryMessage = await readToEnd<Uint8Array>(stream);
         const hash = (await generateContentHash(binaryMessage)).BlockHash;
 
         const { data, verified } = await CryptoProxy.decryptMessage({

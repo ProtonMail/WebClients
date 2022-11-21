@@ -3860,10 +3860,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openpgp/web-stream-tools@npm:^0.0.12":
-  version: 0.0.12
-  resolution: "@openpgp/web-stream-tools@npm:0.0.12"
-  checksum: cff6f05f0a740eb84f10b293faccc47b935daf8557edde40b471eff3e429d1f32eee8c6c3339311a7dfacca9c8434a1bfb80c320cba14c9804d4e2dcdec2d6ad
+"@openpgp/web-stream-tools@npm:^0.0.13":
+  version: 0.0.13
+  resolution: "@openpgp/web-stream-tools@npm:0.0.13"
+  peerDependencies:
+    typescript: ">=4.2"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: f420188259ab874a259dfca92fce074712523bcc811828005a03d13f95cd68f95367568a6e9f31d8bab4755a9216e29e681f3a8d9de338ca28ca9b23d8bec6b9
   languageName: node
   linkType: hard
 
@@ -3977,7 +3982,7 @@ __metadata:
     react-polymorphic-box: ^3.0.3
     ts-loader: ^9.4.1
     ts-node: ^10.9.1
-    typescript: ^4.8.4
+    typescript: ^4.9.3
     webpack: ^5.75.0
   languageName: unknown
   linkType: soft
@@ -3999,7 +4004,7 @@ __metadata:
     tinycolor2: ^1.4.2
     ts-jest: ^28.0.8
     ts-loader: ^9.4.1
-    typescript: ^4.8.4
+    typescript: ^4.9.3
     webpack: ^5.75.0
     webpack-cli: ^4.10.0
   languageName: unknown
@@ -4069,7 +4074,7 @@ __metadata:
     tabbable: ^6.0.1
     tinycolor2: ^1.4.2
     ttag: ^1.7.24
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   peerDependencies:
     "@proton/crypto": "*"
     "@proton/shared": "*"
@@ -4092,7 +4097,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/shared": "workspace:packages/shared"
     eslint: ^8.27.0
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
@@ -4117,10 +4122,10 @@ __metadata:
     karma-webpack: ^5.0.0
     mocha: ^10.1.0
     playwright: ^1.27.1
-    pmcrypto-v7: "npm:@protontech/pmcrypto@^7.3.0"
+    pmcrypto-v7: "npm:@protontech/pmcrypto@^7.4.0"
     prettier: ^2.7.1
     ts-loader: ^9.4.1
-    typescript: ^4.8.4
+    typescript: ^4.9.3
     webpack: ^5.75.0
     webpack-cli: ^4.10.0
   languageName: unknown
@@ -4146,7 +4151,7 @@ __metadata:
     karma-spec-reporter: ^0.0.34
     karma-webpack: ^5.0.0
     ts-loader: ^9.4.1
-    typescript: ^4.8.4
+    typescript: ^4.9.3
     webpack: ^5.75.0
   languageName: unknown
   linkType: soft
@@ -4155,8 +4160,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/eslint-config-proton@workspace:packages/eslint-config-proton"
   dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.42.1
-    "@typescript-eslint/parser": ^5.42.1
+    "@typescript-eslint/eslint-plugin": ^5.43.0
+    "@typescript-eslint/parser": ^5.43.0
     eslint: ^8.27.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-typescript: ^17.0.0
@@ -4186,7 +4191,7 @@ __metadata:
     react: ^17.0.2
     react-test-renderer: ^17.0.2
     ts-jest: ^28.0.8
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
@@ -4226,7 +4231,7 @@ __metadata:
     pkijs: ^3.0.8
     pmcrypto: "npm:@protontech/pmcrypto@^6.7.1"
     ts-loader: ^9.4.1
-    typescript: ^4.8.4
+    typescript: ^4.9.3
     webpack: ^5.75.0
   languageName: unknown
   linkType: soft
@@ -4352,7 +4357,7 @@ __metadata:
     push.js: ^1.0.12
     ts-loader: ^9.4.1
     ttag: ^1.7.24
-    typescript: ^4.8.4
+    typescript: ^4.9.3
     ua-parser-js: ^0.8.1
     web-streams-polyfill: ^3.2.1
     webpack: ^5.75.0
@@ -4378,7 +4383,7 @@ __metadata:
     jsdom-global: ^3.0.2
     mocha: ^10.1.0
     prettier: ^2.7.1
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
@@ -4429,7 +4434,7 @@ __metadata:
     eslint: ^8.27.0
     jest: ^28.1.3
     ts-jest: ^28.0.8
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
@@ -7230,13 +7235,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.42.1":
-  version: 5.42.1
-  resolution: "@typescript-eslint/eslint-plugin@npm:5.42.1"
+"@typescript-eslint/eslint-plugin@npm:^5.43.0":
+  version: 5.43.0
+  resolution: "@typescript-eslint/eslint-plugin@npm:5.43.0"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.42.1
-    "@typescript-eslint/type-utils": 5.42.1
-    "@typescript-eslint/utils": 5.42.1
+    "@typescript-eslint/scope-manager": 5.43.0
+    "@typescript-eslint/type-utils": 5.43.0
+    "@typescript-eslint/utils": 5.43.0
     debug: ^4.3.4
     ignore: ^5.2.0
     natural-compare-lite: ^1.4.0
@@ -7249,7 +7254,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 6e80b15df7e655964ddd3041d5f7c0bf564e9901f9e3a9cdaf8d056301841fad8d40cd253d83669f01e0ddc62521af9286a27f098df43e304cf932d768995e98
+  checksum: aa0e9bcd9982e9601ada2088f46c1e9389abd31ceaf6cd1d492684fd711a67d595d4c95d97ba14081c2ea7eb3b98a9ebb33f91ef008e7450ce2f70b2a8ec4309
   languageName: node
   linkType: hard
 
@@ -7269,30 +7274,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.42.1":
-  version: 5.42.1
-  resolution: "@typescript-eslint/parser@npm:5.42.1"
+"@typescript-eslint/parser@npm:^5.43.0":
+  version: 5.43.0
+  resolution: "@typescript-eslint/parser@npm:5.43.0"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.42.1
-    "@typescript-eslint/types": 5.42.1
-    "@typescript-eslint/typescript-estree": 5.42.1
+    "@typescript-eslint/scope-manager": 5.43.0
+    "@typescript-eslint/types": 5.43.0
+    "@typescript-eslint/typescript-estree": 5.43.0
     debug: ^4.3.4
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 7208a085102be5c569ac2be5799d05e080a9c0b9157ed3efa5d7eadb675185bddfa05f2f27e20c235910193a2bd835e5375fb9fc13561a6e20d110e444f37caa
+  checksum: a28e0ef2807f1c3381c6dc1d9ddfd83ea8db657d3f808511adf13023b469ed64fc09619e05d7f68746b05ea68770a0882883c77ce908682965ba266f95e168c9
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:5.42.1":
-  version: 5.42.1
-  resolution: "@typescript-eslint/scope-manager@npm:5.42.1"
+"@typescript-eslint/scope-manager@npm:5.43.0":
+  version: 5.43.0
+  resolution: "@typescript-eslint/scope-manager@npm:5.43.0"
   dependencies:
-    "@typescript-eslint/types": 5.42.1
-    "@typescript-eslint/visitor-keys": 5.42.1
-  checksum: cfad5f04328fae4bb6d965a94c980ac2f6fa0eee6183e9bed6d7ebdb067f01a0a9a3b5500fc3638d5e287f46f4412aa462e238c610c1fb96b794b83c575c7fb4
+    "@typescript-eslint/types": 5.43.0
+    "@typescript-eslint/visitor-keys": 5.43.0
+  checksum: e594c7a32c3fa29e46dd0b0bc62f97f154bd864682ae7da87a14b6f4336f4cb02f6ed0602bbdb15783e4230ecdf8a0ccc6f7c5820850e8f11240c9e4fb0e388d
   languageName: node
   linkType: hard
 
@@ -7306,12 +7311,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/type-utils@npm:5.42.1":
-  version: 5.42.1
-  resolution: "@typescript-eslint/type-utils@npm:5.42.1"
+"@typescript-eslint/type-utils@npm:5.43.0":
+  version: 5.43.0
+  resolution: "@typescript-eslint/type-utils@npm:5.43.0"
   dependencies:
-    "@typescript-eslint/typescript-estree": 5.42.1
-    "@typescript-eslint/utils": 5.42.1
+    "@typescript-eslint/typescript-estree": 5.43.0
+    "@typescript-eslint/utils": 5.43.0
     debug: ^4.3.4
     tsutils: ^3.21.0
   peerDependencies:
@@ -7319,7 +7324,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 7ac3180aeb966351e54055440f42b723aa864fd39c74be5a41aae97401e6424df94d9f96ae945f1c3a6023860ffd7ba424ff6506c21bd373a6cd878466d9ba62
+  checksum: 08dbc0b194d0ef1454a95d76c082503e04d9957e89a056068002e233f8d98113f50b2707f7c4b9b44f428e223d5b4485ee2b4df4e0cde354827c5edc92ede973
   languageName: node
   linkType: hard
 
@@ -7330,6 +7335,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/types@npm:5.43.0":
+  version: 5.43.0
+  resolution: "@typescript-eslint/types@npm:5.43.0"
+  checksum: fc5e5431c305feee4a3faae84f34df482e08d74b910a6f9376b01326c682ceefeeb0e270d03d7778787bc94ef05b3b85ee6d3c9d732290fbdb4a67ae1b110226
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/types@npm:5.9.1":
   version: 5.9.1
   resolution: "@typescript-eslint/types@npm:5.9.1"
@@ -7337,12 +7349,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.42.1, @typescript-eslint/typescript-estree@npm:^5.13.0":
-  version: 5.42.1
-  resolution: "@typescript-eslint/typescript-estree@npm:5.42.1"
+"@typescript-eslint/typescript-estree@npm:5.43.0":
+  version: 5.43.0
+  resolution: "@typescript-eslint/typescript-estree@npm:5.43.0"
   dependencies:
-    "@typescript-eslint/types": 5.42.1
-    "@typescript-eslint/visitor-keys": 5.42.1
+    "@typescript-eslint/types": 5.43.0
+    "@typescript-eslint/visitor-keys": 5.43.0
     debug: ^4.3.4
     globby: ^11.1.0
     is-glob: ^4.0.3
@@ -7351,7 +7363,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: dfd3e20d41ba4b574a52d82cc40b38708b8c2c4277d6304a8d914fe2a4a9ce8779f4d79fdac140e77a3afd3c6a2a7e3f31620dc427cabd04e4e906bb0ca3a468
+  checksum: 3479f9413d73369ab3d574580c90a72f74d2ae1ec4afe485eebfad054c3d15c89f23a137bb9d6197dfdae33e444a76a99f6832688787feabbb064e09d39a3f55
   languageName: node
   linkType: hard
 
@@ -7373,21 +7385,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:5.42.1":
+"@typescript-eslint/typescript-estree@npm:^5.13.0":
   version: 5.42.1
-  resolution: "@typescript-eslint/utils@npm:5.42.1"
+  resolution: "@typescript-eslint/typescript-estree@npm:5.42.1"
+  dependencies:
+    "@typescript-eslint/types": 5.42.1
+    "@typescript-eslint/visitor-keys": 5.42.1
+    debug: ^4.3.4
+    globby: ^11.1.0
+    is-glob: ^4.0.3
+    semver: ^7.3.7
+    tsutils: ^3.21.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: dfd3e20d41ba4b574a52d82cc40b38708b8c2c4277d6304a8d914fe2a4a9ce8779f4d79fdac140e77a3afd3c6a2a7e3f31620dc427cabd04e4e906bb0ca3a468
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/utils@npm:5.43.0":
+  version: 5.43.0
+  resolution: "@typescript-eslint/utils@npm:5.43.0"
   dependencies:
     "@types/json-schema": ^7.0.9
     "@types/semver": ^7.3.12
-    "@typescript-eslint/scope-manager": 5.42.1
-    "@typescript-eslint/types": 5.42.1
-    "@typescript-eslint/typescript-estree": 5.42.1
+    "@typescript-eslint/scope-manager": 5.43.0
+    "@typescript-eslint/types": 5.43.0
+    "@typescript-eslint/typescript-estree": 5.43.0
     eslint-scope: ^5.1.1
     eslint-utils: ^3.0.0
     semver: ^7.3.7
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 9f1c429a602dad4ba7a52df00924aab6033854234a1e1bf699a3e5b48455b5fdc1a41de459a7f11a3ccfed1528831ecb95fc7e54d30be7d8cccbb689f885fdac
+  checksum: 4c6b383b51506b57230f2624f883ae21e5d8411d138587c04fe3145f915bf8c289cc2a9f7b0b3faba98345ba230504e5014922bcc578aa0badd594d9eaa8f9ef
   languageName: node
   linkType: hard
 
@@ -7398,6 +7428,16 @@ __metadata:
     "@typescript-eslint/types": 5.42.1
     eslint-visitor-keys: ^3.3.0
   checksum: d36c59da7bf3b3c150c12cbe4b0331edc15253f59599ec3d8b873b2a3d9fc7a4fea11490c1b20d972afcdc9c842deb5ada527ea9c538aa7e87555699d9a59f24
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/visitor-keys@npm:5.43.0":
+  version: 5.43.0
+  resolution: "@typescript-eslint/visitor-keys@npm:5.43.0"
+  dependencies:
+    "@typescript-eslint/types": 5.43.0
+    eslint-visitor-keys: ^3.3.0
+  checksum: 4820679e50096dcdaadc7c95d32e5dca3ba8510acf1a865e283822bae3940a2faec02ad8abe793f8a25f75b600f1e7215e1fd3b3ba73779eff737fa90d092550
   languageName: node
   linkType: hard
 
@@ -24684,16 +24724,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto-v7@npm:@protontech/pmcrypto@^7.3.0":
-  version: 7.3.0
-  resolution: "@protontech/pmcrypto@npm:7.3.0"
+"pmcrypto-v7@npm:@protontech/pmcrypto@^7.4.0":
+  version: 7.4.0
+  resolution: "@protontech/pmcrypto@npm:7.4.0"
   dependencies:
     "@openpgp/asmcrypto.js": ^2.3.3-0
     "@openpgp/tweetnacl": ^1.0.3
-    "@openpgp/web-stream-tools": ^0.0.12
+    "@openpgp/web-stream-tools": ^0.0.13
     jsmimeparser: "npm:@protontech/jsmimeparser@^1.0.4"
     openpgp: "npm:@protontech/openpgp@~5.5.0"
-  checksum: b2e0a2c6a800c8ef5190746b986850d0a49c9aa1532c8ed515a30ffa9aa84823536640f457e753ec09903f98ad75976dcfd29490b417207593f0d17bd8175ee8
+  checksum: 770da742529905e4858498ce07ce2ef018cb6f7280ad80beb11f812f292a1143a1aea6ea0db66f7a96a9cbf2e7e4e6e2ac1945a3efc68e8200ef14dc36dcdaec
   languageName: node
   linkType: hard
 
@@ -25649,7 +25689,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     ttag: ^1.7.24
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
@@ -25684,7 +25724,7 @@ fsevents@^1.2.7:
     react-hooks-testing-library: ^0.6.0
     react-json-view: ^1.21.3
     ttag: ^1.7.24
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
@@ -25725,7 +25765,7 @@ fsevents@^1.2.7:
     react-helmet: ^6.1.0
     tinycolor2: ^1.4.2
     ttag: ^1.7.24
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
@@ -25734,7 +25774,7 @@ fsevents@^1.2.7:
   resolution: "proton-drive@workspace:applications/drive"
   dependencies:
     "@mattiasbuelens/web-streams-adapter": 0.1.0
-    "@openpgp/web-stream-tools": ^0.0.12
+    "@openpgp/web-stream-tools": ^0.0.13
     "@proton/components": "workspace:packages/components"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
@@ -25768,7 +25808,7 @@ fsevents@^1.2.7:
     react-dom: ^17.0.2
     react-window: ^1.8.8
     ttag: ^1.7.24
-    typescript: ^4.8.4
+    typescript: ^4.9.3
     web-streams-polyfill: ^3.2.1
     webpack: ^5.75.0
   languageName: unknown
@@ -25817,8 +25857,8 @@ fsevents@^1.2.7:
     "@types/react": ^17.0.52
     "@types/react-dom": ^17.0.18
     "@types/turndown": ^5.0.1
-    "@typescript-eslint/eslint-plugin": ^5.42.1
-    "@typescript-eslint/parser": ^5.42.1
+    "@typescript-eslint/eslint-plugin": ^5.43.0
+    "@typescript-eslint/parser": ^5.43.0
     babel-jest: ^28.1.3
     babel-plugin-transform-require-context: ^0.1.1
     cross-env: ^7.0.3
@@ -25843,7 +25883,7 @@ fsevents@^1.2.7:
     redux-logger: ^3.0.6
     ttag: ^1.7.24
     turndown: ^7.1.1
-    typescript: ^4.8.4
+    typescript: ^4.9.3
     weak-napi: ^2.0.2
     workbox-cacheable-response: ^6.5.4
     workbox-expiration: ^6.5.4
@@ -25884,7 +25924,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     ts-loader: ^9.4.1
-    typescript: ^4.8.4
+    typescript: ^4.9.3
     webpack: ^5.75.0
   languageName: unknown
   linkType: soft
@@ -25906,7 +25946,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     resize-observer: ^1.0.4
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
@@ -25930,7 +25970,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     ttag: ^1.7.24
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
@@ -27866,7 +27906,7 @@ fsevents@^1.2.7:
     prettier: ^2.7.1
     sort-package-json: ^2.1.0
     stylelint-use-logical-spec: ^4.1.0
-    typescript: ^4.8.4
+    typescript: ^4.9.3
   languageName: unknown
   linkType: soft
 
@@ -30951,6 +30991,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"typescript@npm:^4.9.3":
+  version: 4.9.3
+  resolution: "typescript@npm:4.9.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 17b8f816050b412403e38d48eef0e893deb6be522d6dc7caf105e54a72e34daf6835c447735fd2b28b66784e72bfbf87f627abb4818a8e43d1fa8106396128dc
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@^4.5.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.8.4#~builtin<compat/typescript>":
   version: 4.8.4
   resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"
@@ -30958,6 +31008,16 @@ fsevents@^1.2.7:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 301459fc3eb3b1a38fe91bf96d98eb55da88a9cb17b4ef80b4d105d620f4d547ba776cc27b44cc2ef58b66eda23fe0a74142feb5e79a6fb99f54fc018a696afa
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.9.3#~builtin<compat/typescript>":
+  version: 4.9.3
+  resolution: "typescript@patch:typescript@npm%3A4.9.3#~builtin<compat/typescript>::version=4.9.3&hash=701156"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: ef65c22622d864497d0a0c5db693523329b3284c15fe632e93ad9aa059e8dc38ef3bd767d6f26b1e5ecf9446f49bd0f6c4e5714a2eeaf352805dc002479843d1
   languageName: node
   linkType: hard
 
