@@ -4,8 +4,8 @@ import { KeyboardKeyType } from '../interfaces';
 
 const HTML_TAGS_TO_IGNORE = ['input', 'select', 'textarea', 'button', 'a'];
 
-export const isBusy = (e: KeyboardEvent) => {
-    const { tagName, isContentEditable } = e.target as HTMLElement;
+export const isBusy = (e?: KeyboardEvent) => {
+    const { tagName, isContentEditable } = (e || document.activeElement) as HTMLElement;
 
     return (
         HTML_TAGS_TO_IGNORE.includes(tagName.toLowerCase()) ||
