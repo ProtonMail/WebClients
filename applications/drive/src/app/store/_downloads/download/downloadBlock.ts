@@ -9,6 +9,8 @@ import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/Api
 
 import { MAX_TOO_MANY_REQUESTS_WAIT } from '../constants';
 
+// Stream wrapper has outdated types
+// @ts-expect-error
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
 export default async function downloadBlock(

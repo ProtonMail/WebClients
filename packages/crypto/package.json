@@ -13,7 +13,7 @@
     },
     "dependencies": {
         "comlink": "^4.3.1",
-        "pmcrypto-v7": "npm:@protontech/pmcrypto@^7.3.0"
+        "pmcrypto-v7": "npm:@protontech/pmcrypto@^7.4.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -34,7 +34,7 @@
         "playwright": "^1.27.1",
         "prettier": "^2.7.1",
         "ts-loader": "^9.4.1",
-        "typescript": "^4.8.4",
+        "typescript": "^4.9.3",
         "webpack": "^5.75.0",
         "webpack-cli": "^4.10.0"
     }
