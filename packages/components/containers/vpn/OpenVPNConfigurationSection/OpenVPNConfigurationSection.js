@@ -140,8 +140,6 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
     const plusVpnConnections = vpnPlan?.MaxVPN || VPN_CONNECTIONS;
 
     const vpnPlus = vpnPlan?.Title;
-    const vpnBasic = `${VPN_APP_NAME} Basic`;
-    const visionary = 'Visionary';
 
     return (
         <>
@@ -253,7 +251,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                         {isUpgradeRequiredForSecureCore && (
                             <SettingsParagraph>
                                 <span className="block">{c('Info')
-                                    .t`${vpnPlus} or ${visionary} required for Secure Core feature.`}</span>
+                                    .t`${vpnPlus} required for Secure Core feature.`}</span>
                                 <SettingsLink path="/upgrade">{c('Link').t`Learn more`}</SettingsLink>
                             </SettingsParagraph>
                         )}
@@ -278,7 +276,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                         )}
                         {isUpgradeRequiredForCountries && (
                             <SettingsParagraph learnMoreUrl={`https://${VPN_HOSTNAME}/dashboard`}>{c('Info')
-                                .t`${vpnBasic}, ${vpnPlus} or ${visionary} required for Country level connection.`}</SettingsParagraph>
+                                .t`${vpnPlus} required for Country level connection.`}</SettingsParagraph>
                         )}
                         <ConfigsTable
                             category={CATEGORY.COUNTRY}
