@@ -1,14 +1,10 @@
+@import '~@proton/styles/scss/config';
+
 .kbd {
 	padding-block: 0;
-	padding-inline: 0.25em;
+	padding-inline: em(4);
 	background-color: var(--background-strong);
 	color: var(--text-norm);
 	border: 1px solid var(--border-norm);
 	border-radius: var(--border-radius-sm);
-
-	.tooltip & {
-		// background-color: var(--background-norm);
-		// color: var(--text-norm);
-		// border: none;
-	}
 }

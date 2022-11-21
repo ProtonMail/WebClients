@@ -80,10 +80,7 @@
 
 	// colored versions
 	@each $color in (primary, danger, warning, success, info) {
-		$prefix: '';
-		@if $color != 'primary' {
-			$prefix: 'signal-';
-		}
+		$prefix: if($color != 'primary', 'signal-', '');
 
 		&-#{$color} {
 			--tooltip-background-color: var(--#{$prefix + $color});
@@ -198,4 +195,20 @@
 		bottom: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
 	}
 	/* stylelint-enable */
+
+	.kbd {
+		position: relative;
+		background-color: transparent;
+		color: inherit;
+		border-color: transparent;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: var(--background-strong);
+			opacity: 0.2;
+			border-radius: var(--border-radius-sm);
+		}
+	}
 }
