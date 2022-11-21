@@ -90,6 +90,7 @@ export const useCloseHandler = ({
                 />
             ),
             expiration: -1,
+            showCloseButton: false,
         });
 
         setSaving(true);
