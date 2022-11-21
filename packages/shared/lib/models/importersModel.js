@@ -20,7 +20,7 @@ export const ImportersModel = {
         updateCollection({
             model,
             events,
-            item: ({ Importer }) => Importer,
+            itemKey: 'Importer',
             merge: (oldModel, newModel) => newModel,
         }),
 };
@@ -32,6 +32,6 @@ export const ImportReportsModel = {
         updateCollection({
             model,
             events,
-            item: ({ ImportReport }) => ImportReport,
+            itemKey: 'ImportReport',
         }),
 };

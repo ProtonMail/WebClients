@@ -8,5 +8,5 @@ export const getApiEnvironmentConfigModel = (api) => {
 export const ApiEnvironmentConfigModel = {
     key: 'ApiEnvironmentConfig',
     get: getApiEnvironmentConfigModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ Config }) => Config }),
+    update: (model, events) => updateCollection({ model, events, itemKey: 'Config' }),
 };
