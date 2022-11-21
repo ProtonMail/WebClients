@@ -10,6 +10,10 @@ export const hasCovid = (organization: Partial<Organization> = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.COVID);
 };
 
+export const hasSMTPSubmission = (organization: Partial<Organization> = {}) => {
+    return hasBit(organization.Flags, ORGANIZATION_FLAGS.SMTP_SUBMISSION);
+};
+
 export const isDissident = (organization: Partial<Organization> = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.DISSIDENT);
 };
@@ -30,6 +34,9 @@ export const humanReadableFlags = (organization: Partial<Organization> = {}) => 
     }
     if (hasCovid(organization)) {
         flags.push('Covid');
+    }
+    if (hasSMTPSubmission(organization)) {
+        flags.push('SMTP Submission');
     }
     if (isDissident(organization)) {
         flags.push('Dissident');
