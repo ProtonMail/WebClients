@@ -82,6 +82,8 @@ const ItemHoverButtons = ({
         ? c('Alt').t`Unstar conversation`
         : c('Alt').t`Star conversation`;
 
+    const buttonTxt = isMessage(element) ? c('Alt').t`Star message` : c('Alt').t`Star conversation`;
+
     return (
         <>
             <div
@@ -130,8 +132,9 @@ const ItemHoverButtons = ({
                                 'color-inherit starbutton item-star',
                                 isStarred && 'starbutton--is-starred'
                             )}
+                            aria-pressed={isStarred}
                         >
-                            <Icon name={starIcon} alt={starAlt} />
+                            <Icon name={starIcon} alt={buttonTxt} />
                         </Button>
                     </Tooltip>
                 )}
