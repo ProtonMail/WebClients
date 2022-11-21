@@ -2,6 +2,7 @@ import { memo, useEffect, useRef } from 'react';
 import * as React from 'react';
 
 import { FeatureCode, Scroll, classnames, useFeature, useLabels, useToggle } from '@proton/components';
+import { isEditing } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -91,7 +92,8 @@ const ConversationView = ({
     const expandMessage = (messageID: string | undefined, scrollTo = false) => {
         messageViewsRefs.current[messageID || '']?.expand();
         const index = messagesToShow.findIndex((message) => message.ID === messageID);
-        if (index !== undefined) {
+        // isEditing is used to prevent the focus to be set on the message when the user is editing, otherwise it triggers shortcuts
+        if (index !== undefined && !isEditing()) {
             handleFocus(index, { scrollTo });
         }
     };
