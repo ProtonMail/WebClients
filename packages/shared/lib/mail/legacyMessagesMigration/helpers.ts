@@ -3,8 +3,11 @@ import { fromUnixTime } from 'date-fns';
 import { CryptoProxy, enums } from '@proton/crypto';
 import chunk from '@proton/utils/chunk';
 
+import { getApiError } from '../../api/helpers/apiErrorHelper';
 import { getMessage, markAsBroken, queryMessageMetadata, updateBody } from '../../api/messages';
 import { API_CODES, MINUTE, SECOND } from '../../constants';
+import { HTTP_ERROR_CODES } from '../../errors';
+import { ApiError } from '../../fetch/ApiError';
 import { wait } from '../../helpers/promise';
 import { Api, SimpleMap } from '../../interfaces';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
@@ -15,7 +18,7 @@ const LABEL_LEGACY_MESSAGE = '11';
 const QUERY_LEGACY_MESSAGES_MAX_PAGESIZE = 150;
 const LEGACY_MESSAGES_CHUNK_SIZE = 5; // How many messages we want to decrypt and encrypt simultaneously
 const RELAX_TIME = 5 * SECOND; // 5s . Time to wait (for other operations) after a batch of legacy messages has been migrated
-const MAX_RETRIES = 20; // Maximum number of retries allowed for the migration to restart after an unexpected error
+const MAX_RETRIES = 5; // Maximum number of retries allowed for the migration to restart after an unexpected error
 
 // For constant-time decryption we need to specify which ciphers might have been used to encrypt the legacy message.
 // It is likely that only AES was used, but we are not 100% certain, so we go all the way.
@@ -35,6 +38,7 @@ enum MIGRATION_STATUS {
     SUCCESS,
     BROKEN,
     ERROR,
+    SKIP, // message already migrated or deleted
 }
 
 /**
@@ -110,8 +114,13 @@ export const migrateSingle = async ({
             // lowest priority
             headers: { Priority: 'u=7' },
         });
-    } catch {
-        statusMap[id] = MIGRATION_STATUS.ERROR;
+    } catch (e) {
+        // Status '422' is returned if the message is already migrated or it has been deleted.
+        // The former case could happen when the user has logged into multiple devices, and multiple instances
+        // of the migration process are running in parallel.
+        // In both cases, we do not want to retry the migration on the affected messages.
+        const shouldSkip = e instanceof ApiError && getApiError(e).status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY;
+        statusMap[id] = shouldSkip ? MIGRATION_STATUS.SKIP : MIGRATION_STATUS.ERROR;
     }
 };
 
