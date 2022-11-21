@@ -466,6 +466,7 @@ export enum RIGHT_TO_LEFT {
 export enum ORGANIZATION_FLAGS {
     LOYAL = 1,
     COVID = 2,
+    SMTP_SUBMISSION = 4,
     DISSIDENT = 64,
     PROTON = 128,
 }
