@@ -51,4 +51,10 @@
 	&-image.hide {
 		opacity: 0;
 	}
+
+	&-loading {
+		position: absolute;
+		inset-block-end: 0;
+		block-size: 2.5em;
+	}
 }
