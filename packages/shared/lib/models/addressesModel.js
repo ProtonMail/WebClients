@@ -4,5 +4,5 @@ import updateCollection from '../helpers/updateCollection';
 export const AddressesModel = {
     key: 'Addresses',
     get: getAllAddresses,
-    update: (model, events) => updateCollection({ model, events, item: ({ Address }) => Address }),
+    update: (model, events) => updateCollection({ model, events, itemKey: 'Address' }),
 };
