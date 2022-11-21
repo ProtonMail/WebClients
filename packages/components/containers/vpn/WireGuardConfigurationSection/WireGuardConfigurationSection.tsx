@@ -70,12 +70,14 @@ interface Peer {
     name: string;
     publicKey: string;
     ip: string;
+    label: string;
 }
 
 interface ExtraCertificateFeatures {
     peerName: Peer['name'];
     peerPublicKey: Peer['publicKey'];
     peerIp: Peer['ip'];
+    label: Peer['label'];
     platform: PLATFORM;
 }
 
@@ -204,9 +206,10 @@ const WireGuardConfigurationSection = () => {
     const [featuresConfig, setFeaturesConfig] = useState<FeaturesConfig>(initialFeaturesConfig);
     const api = useApi();
     const [peer, setPeer] = useState<Peer>({
-        name: 'NL#150',
-        publicKey: 'TcpH/ozM+f16aiEzzmKap78Ifdb62JAeGFiBqKeqjVo=',
-        ip: '172.83.45.3',
+        name: '',
+        publicKey: '',
+        ip: '',
+        label: '',
     });
     const certificateCacheRef = useRef<Record<string, Certificate>>({});
     const certificateCache = certificateCacheRef.current;
@@ -345,8 +348,10 @@ const WireGuardConfigurationSection = () => {
     const getFeatureValues = useCallback(
         (addedPeer?: Peer) => {
             const peerFeatures = addedPeer || peer;
+            const label = peerFeatures?.label;
 
             return Object.assign(
+                label ? { Bouncing: label } : {},
                 Object.fromEntries(
                     getFeatureKeys().map((key) => [
                         key,
@@ -477,6 +482,7 @@ const WireGuardConfigurationSection = () => {
                     name: serverName,
                     publicKey: `${server.X25519PublicKey}`,
                     ip: server.EntryIP,
+                    label: server.Label || '',
                 };
 
                 if (doAdd) {
