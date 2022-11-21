@@ -41,6 +41,7 @@ export const useKeyVerification = () => {
                     text: <DecryptionErrorNotification onDiscard={() => hideNotification(notification)} keyFound />,
                     type: 'error',
                     expiration: -1,
+                    showCloseButton: false,
                 });
 
                 const updatedEncounteredKeys = JSON.stringify([...encounteredDecryptionErrorKeysArray, matchingKeyID]);
@@ -51,6 +52,7 @@ export const useKeyVerification = () => {
                 text: <DecryptionErrorNotification onDiscard={() => hideNotification(notification)} />,
                 type: 'error',
                 expiration: -1,
+                showCloseButton: false,
             });
         }
     };
