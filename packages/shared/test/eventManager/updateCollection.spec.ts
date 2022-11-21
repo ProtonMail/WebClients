@@ -14,8 +14,12 @@ describe('update collection', () => {
                 ID: '123',
                 Action: EVENT_ACTIONS.DELETE,
             },
-        ];
-        const newLabels = updateCollection({ model: labels, events, item: ({ Label }) => Label });
+        ] as const;
+        const newLabels = updateCollection({
+            model: labels,
+            events,
+            itemKey: 'Label',
+        });
         expect(newLabels).toEqual([]);
     });
 
@@ -35,8 +39,8 @@ describe('update collection', () => {
                     foo: 'bar2',
                 },
             },
-        ];
-        const newLabels = updateCollection({ model: labels, events, item: ({ Label }) => Label });
+        ] as const;
+        const newLabels = updateCollection({ model: labels, events, itemKey: 'Label' });
         expect(newLabels).toEqual([
             { ID: '123', foo: 'bar' },
             { ID: '124', foo: 'bar2' },
@@ -60,8 +64,8 @@ describe('update collection', () => {
                     foo: 'bar2',
                 },
             },
-        ];
-        const newLabels = updateCollection({ model: labels, events, item: ({ Label }) => Label });
+        ] as const;
+        const newLabels = updateCollection({ model: labels, events, itemKey: 'Label' });
         expect(newLabels).toEqual([{ ID: '123', foo: 'bar2', kept: true }]);
     });
 
@@ -101,8 +105,8 @@ describe('update collection', () => {
                     foo: 'bar',
                 },
             },
-        ];
-        const newLabels = updateCollection({ model: labels, events, item: ({ Label }) => Label });
+        ] as const;
+        const newLabels = updateCollection({ model: labels, events, itemKey: 'Label', item: ({ Label }) => Label });
         expect(newLabels).toEqual([{ ID: '124', foo: 'bar3' }]);
     });
 
@@ -142,8 +146,8 @@ describe('update collection', () => {
                         Order: 3,
                     },
                 },
-            ];
-            const newLabels = updateCollection({ model: labels, events, item: ({ Label }) => Label });
+            ] as const;
+            const newLabels = updateCollection({ model: labels, events, itemKey: 'Label', item: ({ Label }) => Label });
             expect(newLabels).toEqual([
                 { ID: '123', foo: 'bar2', Order: 1 },
                 { ID: '12345', foo: 'monique', Order: 2 },
@@ -164,9 +168,14 @@ describe('update collection', () => {
                         Order: 1,
                     },
                 },
-            ];
+            ] as const;
 
-            const newLabels2 = updateCollection({ model: newLabels, events: events2, item: ({ Label }) => Label });
+            const newLabels2 = updateCollection({
+                model: newLabels,
+                events: events2,
+                itemKey: 'Label',
+                item: ({ Label }) => Label,
+            });
             expect(newLabels2).toEqual([
                 { ID: '124', foo: 'bar3', Order: 1 },
                 { ID: '12345', foo: 'monique', Order: 2 },
@@ -205,8 +214,8 @@ describe('update collection', () => {
                         foo: 'bar',
                     },
                 },
-            ];
-            const newLabels = updateCollection({ model: labels, events, item: ({ Label }) => Label });
+            ] as const;
+            const newLabels = updateCollection({ model: labels, events, itemKey: 'Label' });
             expect(newLabels).toEqual([
                 { ID: '123', foo: 'bar2' },
                 { ID: '12345', foo: 'monique' },
@@ -226,12 +235,68 @@ describe('update collection', () => {
                         foo: 'bar3',
                     },
                 },
-            ];
+            ] as const;
 
-            const newLabels2 = updateCollection({ model: newLabels, events: events2, item: ({ Label }) => Label });
+            const newLabels2 = updateCollection({
+                model: newLabels,
+                events: events2,
+                itemKey: 'Label',
+                item: ({ Label }) => Label,
+            });
             expect(newLabels2).toEqual([
                 { ID: '12345', foo: 'monique' },
                 { ID: '124', foo: 'bar3' },
+            ]);
+        });
+
+        it('should delete, create and update items and not sort them by a custom key', () => {
+            const labels = [
+                {
+                    ID: '122',
+                    foo: 'bar',
+                    counter: 3,
+                },
+                {
+                    ID: '123',
+                    foo: 'bar',
+                    counter: 1,
+                },
+            ];
+            const events = [
+                {
+                    ID: '123',
+                    Action: EVENT_ACTIONS.UPDATE,
+                    Label: {
+                        ID: '123',
+                        foo: 'bar2',
+                        counter: 5,
+                    },
+                },
+                {
+                    ID: '12345',
+                    Action: EVENT_ACTIONS.CREATE,
+                    Label: {
+                        ID: '12345',
+                        foo: 'monique',
+                        counter: 2,
+                    },
+                },
+                {
+                    ID: '124',
+                    Action: EVENT_ACTIONS.CREATE,
+                    Label: {
+                        ID: '124',
+                        foo: 'bar',
+                        counter: 3,
+                    },
+                },
+            ] as const;
+            const newLabels = updateCollection({ model: labels, events, itemKey: 'Label', sortByKey: 'counter' });
+            expect(newLabels).toEqual([
+                { ID: '12345', foo: 'monique', counter: 2 },
+                { ID: '122', foo: 'bar', counter: 3 },
+                { ID: '124', foo: 'bar', counter: 3 },
+                { ID: '123', foo: 'bar2', counter: 5 },
             ]);
         });
     });

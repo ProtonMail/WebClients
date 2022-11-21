@@ -44,6 +44,7 @@ export const ContactsModel = {
             model,
             events,
             item: ({ Contact }) => pick(Contact),
+            itemKey: 'Contact',
             merge: mergeModel,
         }).sort(compareName),
 };
