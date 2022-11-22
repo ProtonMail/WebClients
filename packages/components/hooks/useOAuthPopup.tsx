@@ -46,6 +46,8 @@ const getOAuthAuthorizationUrl = ({
     params.append('redirect_uri', getOAuthRedirectURL(provider));
     params.append('response_type', 'code');
     params.append('scope', scope);
+    // force user to consent again so that we can always get a refresh token
+    params.append('prompt', 'consent');
 
     if (provider === OAUTH_PROVIDER.GOOGLE) {
         params.append('access_type', 'offline');
