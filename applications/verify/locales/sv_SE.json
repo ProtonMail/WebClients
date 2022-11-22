@@ -945,8 +945,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Något gick fel. Uppdatera sidan eller försök igen senare."
       ],
-      "There was a problem connecting to Proton.": [
-        "Det var ett problem att ansluta till Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Det gick inte att ansluta till ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Du kan också ${ refresh } eller försöka igen senare."
@@ -1050,9 +1050,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ditt Proton-konto är f.n. väntande. För att fortsätta använda ditt konto måste du betala eventuella förfallna fakturor."
       ]
     },
     "Label": {

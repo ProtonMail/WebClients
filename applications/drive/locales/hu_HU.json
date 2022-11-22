@@ -1713,6 +1713,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" már létezik"
+      ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
@@ -4098,11 +4101,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name } fájl visszaállítása a lomtárból nem sikerült"
       ],
+      "\"${ name }\" failed to be saved": [
+        "\"${ name }\" elmentése nem sikerült"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" áthelyezve a lomtárba"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" visszaállítva a lomtárból"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" sikeresen elmentve"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" sikeresen áthelyezve"
@@ -4368,6 +4377,9 @@
       ],
       "E.g., ": [
         "Pl., "
+      ],
+      "Enter a new file name": [
+        "Adjon meg egy új fájlnevet"
       ],
       "Enter a new folder name": [
         "Adja meg az új mappa nevét"

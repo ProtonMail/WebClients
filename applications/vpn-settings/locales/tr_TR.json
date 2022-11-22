@@ -234,7 +234,7 @@
         "sayfayı yenile"
       ],
       "Remove bonuses": [
-        "Ödülleri kaldır"
+        "Hediyeleri kaldır"
       ],
       "Remove gift code": [
         "Hediye kodunu kaldır"
@@ -432,8 +432,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Proton uygulamaları"
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } uygulamaları"
       ]
     },
     "Badge": {
@@ -1444,8 +1444,8 @@
       "Bugs or quality issue": [
         "Hatalar veya kalite sorunları"
       ],
-      "I use a different Proton account": [
-        "Farklı bir Proton hesabı kullanıyorum"
+      "I use a different ${ BRAND_NAME } account": [
+        "Farklı bir ${ BRAND_NAME } hesabı kullanıyorum"
       ],
       "Missing feature(s)": [
         "Özellikler eksik"
@@ -1627,8 +1627,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
-      "There was a problem connecting to Proton.": [
-        "Proton bağlantısı kurulurken bir sorun çıktı."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } bağlantısı kurulurken bir sorun çıktı."
       ],
       "You may also ${ refresh } or try again later.": [
         "Ayrıca sayfayı ${ refresh }yebilir ya da bir süre sonra yeniden deneyebilirsiniz."
@@ -1855,6 +1855,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
@@ -1987,8 +1990,8 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. Proton etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini Proton üzerinde barındırabilirsiniz."
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
       "Emailing preference saved": [
         "E-posta ayarı kaydedildi"
@@ -2218,9 +2221,6 @@
       "Priority support": [
         "Öncelikli destek"
       ],
-      "Proton's encryption technology means that nobody can access your password - not even us.": [
-        "Proton şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
-      ],
       "read our two-factor authentication guide first": [
         "önce iki aşamalı kimlik doğrulama rehberimizi okuyun"
       ],
@@ -2299,8 +2299,8 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı avantajlarını kaybetmenize sebep olacak. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu seçenek, Proton aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için bunu devre dışı bırakın."
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için bunu devre dışı bırakın."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Bu işlem, hesabınızı ve tüm verilerini kalıcı olarak siler. Bu hesabı yeniden etkinleştiremezsiniz."
@@ -2311,8 +2311,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Bu seçenek, tüm etkin oturumlarınızın kapatılmasını ve 2 aşamalı kimlik doğrulamasının devre dışı bırakılmasını sağlar."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Bu yardımcı, Proton hesabınızda iki aşamalı kimlik doğrulamayı (2FA) etkinleştirir. Proton hesabınızı daha güvenli kılacağından iki aşamalı kimlik doğrulamayı etkinleştirmenizi öneririz."
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki aşamalı kimlik doğrulamayı (2FA) etkinleştirir. ${ BRAND_NAME } hesabınızı daha güvenli kılacağından iki aşamalı kimlik doğrulamayı etkinleştirmenizi öneririz."
       ],
       "to continue to ${ toAppName }": [
         "${ toAppName } uygulamasına ilerlemek için"
@@ -2320,8 +2320,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Proton ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman blog sayfamıza bakabilirsiniz."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "${ BRAND_NAME } ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman günlük sayfamıza bakabilirsiniz."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "İlerlemek için, isteği doğrulayabileceğimiz bir hesap kurtarma yöntemi seçin."
@@ -2524,6 +2524,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. ${ toAppName } kullanabilmek için bir ${ MAIL_APP_NAME } adresinizin olması gereklidir."
       ],
+      "Your ${ BRAND_NAME } account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
       ],
@@ -2550,9 +2553,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
@@ -2657,6 +2657,9 @@
       "${ BRAND_NAME } email or username": [
         "${ BRAND_NAME } e-posta adresi ya da kullanıcı adı"
       ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } kullanıcı adı"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
       ],
@@ -2692,7 +2695,7 @@
         "Kötü amaçlı yazılımlar, reklamlar ve etkinlik izleyiciler engellensin"
       ],
       "bonus storage": [
-        "ödül depolama alanı"
+        "hediye depolama alanı"
       ],
       "Browser": [
         "Tarayıcı"
@@ -2897,9 +2900,6 @@
       ],
       "Proration": [
         "Eşit dağıtım"
-      ],
-      "Proton username": [
-        "Proton kullanıcı adı"
       ],
       "Recovery email address": [
         "Kurtarma e-posta adresi"
@@ -3416,8 +3416,8 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Uygulanabilir krediler, eşit dağıtım ve kuponlar sonraki adımda uygulanacak"
       ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        "Tüm Proton hizmetlerinin bir arada olduğu kapsamlı kişisel gizlilik ve güvenlik."
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı kişisel gizlilik ve güvenlik."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Hesabınızı silerseniz tüm ${ visionary } tarifesi avantajlarını kaybedersiniz ve daha sonra yeni bir hesap açtığınızda yeniden abone olamazsınız."
@@ -3434,8 +3434,8 @@
       "Popular": [
         "Beğenilen"
       ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        "Tüm ücretli Proton hizmetleri ile birlikte kuruluşlar için kişisel gizlilik ve güvenlik paketi."
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri ile birlikte kuruluşlar için kişisel gizlilik ve güvenlik paketi."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolaması."
@@ -3469,11 +3469,11 @@
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
       ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
       ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
@@ -3534,8 +3534,8 @@
       "Review subscription and pay": [
         "Aboneliği ve ödemeyi gözden geçirin"
       ],
-      "Start exploring the Proton universe": [
-        "Proton evrenini keşfetmeye başlayın"
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "${ BRAND_NAME } evrenini keşfetmeye başlayın"
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
@@ -3574,8 +3574,8 @@
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Paylaşılan dosyalarınıza erişimi parola koruması ve bağlantı geçerlilik tarihi ekleyerek denetleyin"
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@proton.me, haber aboneliği için AliHaber@proton.me gibi takma adlar oluşturabilirsiniz"
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber${ domain } gibi takma adlar oluşturabilirsiniz"
       ],
       "Create up to ${ n } custom calendar.": [
         "${ n } özel takvime kadar ekleyin.",
@@ -3614,8 +3614,8 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
       ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        "Çalışma günlerinde, isteklerin ardından 24 saat içinde Proton müşteri destek ekibinden destek alın"
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "Çalışma günlerinde, isteklerin ardından 24 saat içinde ${ BRAND_NAME } müşteri destek ekibinden yardım alın"
       ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "Buna ek olarak, iş arkadaşlarınız, kuruluşunuz, aileniz ve arkadaşlarınız için 5 taneye kadar takvim ekleyebilirsiniz."
@@ -3623,8 +3623,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Buna ek olarak, arkadaşlarınız, aileniz, iş arkadaşlarınız ve kuruluşunuz için 5 taneye kadar takvim ekleyebilirsiniz."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
-        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın Proton VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda Proton VPN bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
+        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın ${ BRAND_NAME } VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda ${ BRAND_NAME } VPN bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Kişisel olmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
@@ -3641,8 +3641,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
       ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        "6 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde Proton müşteri başarısı ekibinden telefonla destek alabilirsiniz"
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "6 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde ${ BRAND_NAME } müşteri başarısı ekibinden telefonla destek alabilirsiniz"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
@@ -3665,8 +3665,8 @@
       "Route your internet traffic through the Tor network with a single click": [
         "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişimli şifreleme, bu bilgilere Proton tarafından bile erişilememesini sağlar."
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişimli şifreleme, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
@@ -3782,8 +3782,8 @@
       "I found another service that I like better": [
         "Daha çok sevdiğim başka bir hizmet buldum"
       ],
-      "I use a different Proton account": [
-        "Farklı bir Proton hesabı kullanıyorum"
+      "I use a different ${ BRAND_NAME } account": [
+        "Farklı bir ${ BRAND_NAME } hesabı kullanıyorum"
       ],
       "iOS": [
         "iOS"
@@ -3985,8 +3985,8 @@
       "Get up to ${ credits } in credits.": [
         "${ credits } tutarına kadar kredi kazanın."
       ],
-      "Invite friends to Proton": [
-        "Arkadaşlarınıza Proton daveti gönderin"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Arkadaşlarınızı ${ BRAND_NAME } üzerine çağırın"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını deneyin"
@@ -4088,8 +4088,8 @@
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren e-posta ve takvim çözümü."
       ],
-      "This offer is for those new to Proton only. No credit card required.": [
-        "Bu teklif yalnızca yeni Proton kullanıcıları için geçerlidir. Kredi kartı gerekmez."
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "Bu teklif yalnızca yeni ${ BRAND_NAME } kullanıcıları için geçerlidir. Kredi kartı gerekmez."
       ]
     },
     "Success": {
@@ -4308,8 +4308,8 @@
       "Confirm downgrade": [
         "Düşürmeyi onayla"
       ],
-      "Confirm loss of Proton bonuses": [
-        "Proton ödüllerini kaybedeceğinizi onaylayın"
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "${ BRAND_NAME } hediyelerinizi kaybedeceğinizi onaylayın"
       ],
       "Confirm phone number": [
         "Telefon numarasını onaylayın"
@@ -4566,8 +4566,8 @@
       "WireGuard configuration": [
         "WireGuard yapılandırması"
       ],
-      "You already have a Proton account": [
-        "Zaten bir Proton hesabınız var"
+      "You already have a ${ BRAND_NAME } account": [
+        "Zaten bir ${ BRAND_NAME } hesabınız var"
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
@@ -4578,8 +4578,8 @@
       "Your plan": [
         "Tarifeniz"
       ],
-      "You’ve been invited to try ${ mailAppName }": [
-        "${ mailAppName } uygulamasını denemeye davet edildiniz"
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } uygulamasını denemeye çağrıldınız"
       ],
       "ZIP / postal code": [
         "ZIP / posta kodu"

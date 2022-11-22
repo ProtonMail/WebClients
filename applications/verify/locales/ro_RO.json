@@ -945,9 +945,6 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Ceva nu a mers bine. Reîmprospătați pagina sau reîncercați mai târziu."
       ],
-      "There was a problem connecting to Proton.": [
-        "A apărut o problemă la conectarea la Proton."
-      ],
       "You may also ${ refresh } or try again later.": [
         "Puteți ${ refresh } sau reîncerca mai târziu."
       ]
@@ -1045,14 +1042,17 @@
       "Would you like to receive a new verification code?": [
         "Doriți să primiți un cod nou de verificare?"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Contul dumneavoastră ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, e-mailurile nu vor mai fi livrate în căsuța dumneavoastră de primire, linkurile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru a relua serviciul normal, vă rugăm să plătiți toate facturile restante."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Contul dumneavoastră ${ BRAND_NAME } este în prezent suspendat. E-mailurile nu mai sunt livrate în căsuța dumneavoastră de primire. Linkurile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru a continua să vă folosiți contul, vă rugăm să plătiți toate facturile restante."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
       ]
     },
     "Label": {

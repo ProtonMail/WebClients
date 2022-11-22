@@ -548,7 +548,7 @@
         "Essayer une autre méthode"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Veuillez réessayer l'enregistrement. L'erreur suivante est survenue : ${ saveError }"
+        "Réessayez d'enregistrer. L'enregistrement a échoué à cause de : ${ saveError }"
       ],
       "Undo": [
         "Annuler"
@@ -1720,7 +1720,7 @@
     },
     "Error": {
       "\"${ name }\" already exists": [
-        "\"${ name }\" existe déjà"
+        "« ${ name } » existe déjà."
       ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà."
@@ -2913,7 +2913,7 @@
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Si vous ne vous rappelez plus de votre mot de passe, ajoutez une phrase de récupération pour vous assurer de ne pas perdre l'accès à votre compte ou données."
+        "Si vous ne vous souvenez pas de votre mot de passe, définissez une phrase de récupération pour vous assurer de ne pas perdre l'accès à votre compte et à vos données."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Si vous avez un de ces éléments, passez à la configuration du compte Proton pour commencer le processus de déblocage."
@@ -3123,7 +3123,7 @@
         "Sélectionnez la ou les adresses e-mail à ajouter à ${ groupName }."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Veuillez patienter jusqu'à ce que vous modifications soient synchronisées avec le serveur."
+        "Veuillez attendre que vos modifications soient synchronisées avec le serveur."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Veuillez patienter pendant que nous recherchons des contacts qui peuvent être signés une nouvelle fois avec la clé de chiffrement principale."
@@ -4164,7 +4164,7 @@
         "« ${ name } » n'a pas pu être restauré depuis la corbeille"
       ],
       "\"${ name }\" failed to be saved": [
-        "« ${ name } » n'a pas pu être enregistré"
+        "« ${ name } » n'a pas pu être enregistré."
       ],
       "\"${ name }\" moved to trash": [
         "« ${ name } » déplacé dans le dossier Corbeille"
@@ -4173,7 +4173,7 @@
         "« ${ name } » restauré depuis la corbeille"
       ],
       "\"${ name }\" saved successfully": [
-        "« ${ name } » enregistré avec succès"
+        "« ${ name } » a été enregistré."
       ],
       "\"${ name }\" successfully moved": [
         "« ${ name } » correctement déplacé"
@@ -4456,7 +4456,7 @@
         "p. ex., "
       ],
       "Enter a new file name": [
-        "Saisissez un nouveau nom de fichier"
+        "Saisissez un nouveau nom de fichier."
       ],
       "Enter a new folder name": [
         "Saisissez un nouveau nom de dossier."
@@ -5024,7 +5024,7 @@
         "Tous"
       ],
       "Are you sure you want to close the preview?": [
-        "Êtes vous sûr de vouloir fermer la prévisualisation ?"
+        "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
       ],
       "Back": [
         "Retour"
@@ -5444,7 +5444,7 @@
         "Votre bonus de 500 Mo"
       ],
       "Your changes are not synced yet": [
-        "Vos modifications ne sont pas sychnonisées pour le moment."
+        "Vos modifications ne sont pas encore synchronisées."
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }."

@@ -945,8 +945,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Terjadi suatu kesalahan. Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
-      "There was a problem connecting to Proton.": [
-        "Ada masalah saat menyambung ke Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Terdapat masalah dalam menghubungkan ke ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
@@ -1045,14 +1045,17 @@
       "Would you like to receive a new verification code?": [
         "Apakah Anda ingin menerima kode verifikasi baru?"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
       ]
     },
     "Label": {
