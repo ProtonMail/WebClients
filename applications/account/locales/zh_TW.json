@@ -4,9 +4,20 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "未標記"
+      ]
+    },
     "Access level": {
+      "Full view": [
+        "完整檢視"
+      ],
       "Full view (see all event details)": [
         "完整檢視（檢視所有事件的詳細資訊）"
+      ],
+      "Limited view": [
+        "有限檢視"
       ],
       "Limited view (see only free/busy)": [
         "有限制的檢視（僅檢視有空／忙碌）"
@@ -310,6 +321,9 @@
       "Edit subscription": [
         "更換授權約期"
       ],
+      "Emoji": [
+        "表情符號"
+      ],
       "enable desktop notifications": [
         "啟用桌面通知"
       ],
@@ -478,11 +492,11 @@
       "Not spam": [
         "非垃圾郵件"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -1148,6 +1162,17 @@
     "Calendar limit warning": {
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendars.": [
         "您已達到最高限數 ${ MAX_SUBSCRIBED_CALENDARS } 訂購授權行事曆。"
+      ]
+    },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "已加入標籤"
+      ],
+      "Label deleted": [
+        "已刪除標籤"
+      ],
+      "Label edited": [
+        "已編輯標籤"
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -3382,6 +3407,9 @@
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "由於密碼重設，您的部份行程無法解密和匯出。"
       ],
+      "Error decrypting event": [
+        "解密事件時發生錯誤"
+      ],
       "Loading events": [
         "載入活動中"
       ],
@@ -3544,6 +3572,9 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "新增一個自訂的篩選器可以自動進行某些操作，例如為郵件添加標籤或歸檔。篩選器可以直接使用 Sieve 語言建立或修改。"
+      ],
+      "Search list": [
+        "搜索列表"
       ]
     },
     "Font Face Default": {
@@ -4341,6 +4372,9 @@
       "Are you sure you want to delete this calendar?": [
         "您確定要刪除此行事曆嗎？"
       ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "您確定刪除此行事曆嗎？ 所有已授權的郵件位址將無法繼續存取此行事曆。"
+      ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "您確認刪除此行事曆嗎？所有相關行程將會被刪除。"
       ],
@@ -4394,6 +4428,9 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "需為 Basic、Plus 或 Visionary 訂閱方案"
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "啟用帳號前，您需要為新位址設立密碼和創建加密金鑰。"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
@@ -4631,6 +4668,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "請輸入您的復原手機號碼，我們將向您發送您的使用者名稱或電郵位址。"
+      ],
+      "Event invitations and RSVPs will be sent in this language.": [
+        "事件邀請與回函將會以此語言傳送。"
       ],
       "Expired": [
         "已過期"
@@ -4899,6 +4939,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。又或者，${ _switchButton }。"
       ],
+      "Member": [
+        "成員"
+      ],
       "Merged": [
         "合併的"
       ],
@@ -5033,6 +5076,9 @@
       ],
       "Please add passwords for the users on rows": [
         "請在此行使用者處加入密碼"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "請檢查您的檔案是否存在錯誤，或聯繫客戶支援以獲取更多訊息。"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "請輸入與您的帳號關連的12字復原短語。"
@@ -5511,6 +5557,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "我們搬家啦！請登入新網域： ${ link }。"
+      ],
       "Web URL": [
         "網頁 URL"
       ],
@@ -5619,6 +5668,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您沒有設定復原方法，萬一忘記您的密碼，將無從恢復帳號。要在無復原電郵的情況下繼續嗎？"
       ],
+      "You have no personal calendars to export.": [
+        "您沒有可匯出的個人行事曆。"
+      ],
       "You have no saved payment methods.": [
         "您沒有任何已儲存的付款方法。"
       ],
@@ -5640,6 +5692,9 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "您需移除其它額外添加的個人行事曆，以及共享行事曆的連結後，即可進行取消訂購授權。"
       ],
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "您需要有使用中的個人行事曆才可以從 ICS 匯入您的事件。"
+      ],
       "You need to have an active personal calendar to import your events.": [
         "您需要有使用中的個人行事曆才可匯入您的行程。"
       ],
@@ -5651,6 +5706,9 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "您最好匯出一份此金鑰的備份，以備用於還原加密的資料。"
+      ],
+      "You still need to reply to invitations for the host to see your response.": [
+        "您仍需回覆邀請以便主辦者了解您的回覆。"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "您將會 ${ loseAllData } 在您的 ${ BRAND_NAME } 帳號。要復原，您將需要輸入您的舊密碼。"
@@ -6231,6 +6289,9 @@
       "Authenticator app": [
         "驗證器APP"
       ],
+      "Auto show remote images": [
+        "自動顯示遠端圖像"
+      ],
       "Auto-detect primary time zone": [
         "自動偵測主要時區"
       ],
@@ -6296,6 +6357,9 @@
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
+      ],
+      "Collect usage diagnostics": [
+        "收集使用狀況與診斷"
       ],
       "Color": [
         "色彩"
@@ -6645,6 +6709,9 @@
       "Non-standard ports": [
         "非標準的連接埠"
       ],
+      "Not spam": [
+        "非垃圾郵件"
+      ],
       "Notification": [
         "通知"
       ],
@@ -6776,6 +6843,9 @@
       ],
       "Show secondary time zone": [
         "顯示次要時區"
+      ],
+      "Show sender images": [
+        "顯示寄件者的圖像"
       ],
       "Show week numbers": [
         "顯示週數"
@@ -7223,6 +7293,9 @@
       "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
         "所有篩選器將會套用至您 Proton Mail 帳號的所有訊息。自動回覆電郵將不再傳送。"
       ],
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
+        "連接您的自訂網域至 ${ BRAND_NAME } ，以進行設定自訂電郵位址 (例如: you@yourcompany.com)。我們的提示小精靈將會引導您完成整個過程。"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費試用期已結束。您即將無法存取您的帳戶。${ action }"
       ]
@@ -7435,6 +7508,9 @@
       "Inbox": [
         "收件匣"
       ],
+      "Not spam": [
+        "非垃圾郵件"
+      ],
       "Spam": [
         "垃圾郵件"
       ]
@@ -7614,6 +7690,9 @@
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我們的 ${ visionary } 計畫不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
       ],
+      "Popular": [
+        "熱門"
+      ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "設定自動回覆，可告知來訪者您不在辦公室或暫時無法親自回應。"
       ],
@@ -7776,6 +7855,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "為使匯入開始運作，您必須選取所有必要的項目，可參考依循 GIF 裡顯示的部分。"
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ VPN_APP_NAME }": [
+        "歡迎使用 ${ VPN_APP_NAME }"
       ]
     },
     "Option": {
@@ -8125,6 +8209,9 @@
       "Email address": [
         "電郵位址"
       ],
+      "example@domain.com": [
+        "example@domain.com"
+      ],
       "Feedback": [
         "意見回饋"
       ],
@@ -8330,6 +8417,11 @@
       ],
       "State of the art": [
         "最先進的"
+      ]
+    },
+    "Remove calendar section description": {
+      "You will no longer have access to this calendar.": [
+        "您將無法再存取此行事曆。"
       ]
     },
     "Remove calendar section title": {
@@ -9896,6 +9988,9 @@
       ],
       "This feature is only available for paid users": [
         "此功能僅提供給付費使用者"
+      ],
+      "This feature is unavailable for the moment": [
+        "此功能目前暫不適用。"
       ],
       "This key cannot be used for encryption": [
         "此金鑰不能用於加密"

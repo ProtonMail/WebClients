@@ -158,6 +158,9 @@
       "Create new folder": [
         "Opret ny mappe"
       ],
+      "Create new text file": [
+        "Opret en ny tekstfil"
+      ],
       "Customize": [
         "Tilpas"
       ],
@@ -1716,6 +1719,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" findes allerede"
+      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -4154,11 +4160,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" kunne ikke gendannes fra papirkurv"
       ],
+      "\"${ name }\" failed to be saved": [
+        "\"${ name }\" kunne ikke gemmes"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" flyttet til papirkurv"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" gendannet fra papirkurv"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" gemt"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" blev flyttet"
@@ -4439,6 +4451,9 @@
       ],
       "E.g., ": [
         "F.eks., "
+      ],
+      "Enter a new file name": [
+        "Indtast et nyt filnavn"
       ],
       "Enter a new folder name": [
         "Indtast et nyt mappenavn"
@@ -4793,6 +4808,9 @@
       ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Create a new file": [
+        "Opret en ny fil"
       ],
       "Create a new folder": [
         "Opret ny mappe"

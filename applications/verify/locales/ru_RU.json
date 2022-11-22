@@ -945,8 +945,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
       ],
-      "There was a problem connecting to Proton.": [
-        "Возникла проблема при подключении к Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Возникла проблема при подключении к ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Вы также можете ${ refresh } или повторить попытку позже."
@@ -984,7 +984,7 @@
         "Нет доступных способов проверки"
       ],
       "SMS": [
-        "Короткое сообщение на телефон"
+        "SMS"
       ]
     },
     "Info": {
@@ -1045,14 +1045,17 @@
       "Would you like to receive a new verification code?": [
         "Хотите ли вы получить новый код подтверждения?"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, оплатите все просроченные счета."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ваш аккаунт в Proton в настоящее время приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите все просроченные счета."
       ]
     },
     "Label": {

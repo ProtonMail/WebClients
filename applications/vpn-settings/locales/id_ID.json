@@ -430,8 +430,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Aplikasi Proton"
+      "${ BRAND_NAME } applications": [
+        "Aplikasi ${ BRAND_NAME }"
       ]
     },
     "Badge": {
@@ -1440,9 +1440,6 @@
       "Bugs or quality issue": [
         "Terdapat bug-bug yang mengganggu saya"
       ],
-      "I use a different Proton account": [
-        "Saya menggunakan akun Proton lain"
-      ],
       "Missing feature(s)": [
         "Terdapat fitur yang hilang"
       ],
@@ -1623,8 +1620,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Terjadi suatu kesalahan. Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
-      "There was a problem connecting to Proton.": [
-        "Ada masalah saat menyambung ke Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Terdapat masalah dalam menghubungkan ke ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
@@ -1845,6 +1842,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } juga mendukung penggunaan kata sandi tunggal yang dapat digunakan baik untuk masuk ataupun untuk mengakses kotak pesan Anda. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang hendak Anda gunakan dan klik Simpan."
       ],
@@ -1974,8 +1974,8 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Layanan hosting email gratis untuk domain khusus terbatas hanya pada 10 domain. Anda dapat membeli domain tambahan dengan harga ${ price } per domainnya."
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        "Layanan hosting email hanya tersedia bagi domain yang telah Anda miliki. Proton tidak dapat digunakan untuk mendaftarkan domain, dan Anda hanya dapat membuat alamat email baru pada domain yang telah terdaftar pada badan registrasi domain yang berwenang."
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Hosting email hanya tersedia untuk domain yang Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak didukung. Anda dapat meng-host email untuk domain yang terdaftar pada badan registrasi domain manapun."
       ],
       "Emailing preference saved": [
         "Preferensi email disimpan"
@@ -2205,9 +2205,6 @@
       "Priority support": [
         "Dukungan prioritas"
       ],
-      "Proton's encryption technology means that nobody can access your password - not even us.": [
-        "Teknologi enkripsi Proton memastikan bahwa tidak ada siapa pun yang akan dapat mengakses kata sandi Anda — termasuk kami sendiri."
-      ],
       "read our two-factor authentication guide first": [
         "terlebih dahulu membaca panduan seputar otentikasi dua faktor berikut"
       ],
@@ -2286,8 +2283,8 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dengan ini, PayPal dapat dipakai untuk membayar langganan Proton Anda. Kami akan membuka PayPal di tab baru. Jika Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Tindakan ini akan memungkinkan Anda untuk membayar langganan ${ BRAND_NAME } Anda melalui PayPal. Kami akan membuka PayPal di tab baru. Apabila Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tindakan ini akan menghapus akun Anda beserta seluruh data yang terkandung di dalamnya secara permanen. Anda tidak akan dapat mengaktifkan kembali akun ini."
@@ -2298,8 +2295,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan otentikasi dua faktor."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Proses ini akan mengaktifkan Otentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun Proton Anda. Kami menyarankan Anda untuk mengaktifkan otentikasi dua faktor mengingat hal ini akan membuat akun Proton Anda lebih aman."
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "Proses ini akan mengaktifkan Otentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun ${ BRAND_NAME } Anda. Kami sangat menyarankan Anda untuk mengaktifkan otentikasi dua faktor karena metode otentikasi ini akan membuat akun ${ BRAND_NAME } Anda lebih aman."
       ],
       "to continue to ${ toAppName }": [
         "untuk melanjutkan ke ${ toAppName }"
@@ -2307,8 +2304,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
       ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Untuk dapat mengikuti perkembangan terbaru seputar berbagai produk Proton, Anda dapat berlangganan ke buletin email kami serta mengunjungi blog kami dari waktu ke waktu."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Untuk mengikuti perkembangan terbaru seputar berbagai produk ${ BRAND_NAME }, Anda dapat berlangganan ke buletin email kami serta mengunjungi blog kami dari waktu ke waktu."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
@@ -2511,6 +2508,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Akun ${ BRAND_NAME } Anda terhubung dengan ${ externalEmailAddress }. Untuk dapat menggunakan ${ toAppName }, Anda butuh alamat email ${ MAIL_APP_NAME }."
       ],
+      "Your ${ BRAND_NAME } account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Akun ${ BRAND_NAME } Anda sedang dalam masa tenggang. Untuk dapat tetap menggunakan akun Anda, mohon lunasi seluruh tagihan yang tertunggak."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, harap masuk ke ${ loginLink } dan hapus akun Anda di sana."
       ],
@@ -2537,9 +2537,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Harap hubungi layanan dukungan Mozilla."
@@ -2643,6 +2640,9 @@
     "Label": {
       "${ BRAND_NAME } email or username": [
         "Email atau nama pengguna ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } username": [
+        "Pengguna ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
@@ -2883,9 +2883,6 @@
       ],
       "Proration": [
         "Prorasi"
-      ],
-      "Proton username": [
-        "Nama Pengguna Proton"
       ],
       "Recovery email address": [
         "Alamat email pemulihan"
@@ -3388,9 +3385,6 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Segala saldo, prorasi, dan kupon diskon akan diterapkan pada langkah selanjutnya"
       ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        "Privasi dan keamanan yang komprehensif dengan dukungan gabungan dari seluruh layanan Proton."
-      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Dengan menghapus akun Anda, Anda akan kehilangan seluruh manfaat yang dimiliki oleh paket ${ visionary } dan paket tersebut tidak akan lagi tersedia apabila Anda membuat akun baru."
       ],
@@ -3405,9 +3399,6 @@
       ],
       "Popular": [
         "Populer"
-      ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        "Rangkaian gawai privasi dan keamanan untuk bisnis, dengan seluruh layanan premium Proton yang terkandung di dalamnya."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk mengarsipkan, menyinkronkan, dan membagikan berkas dengan mudah dan aman."
@@ -3440,12 +3431,6 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
@@ -3505,9 +3490,6 @@
       "Review subscription and pay": [
         "Peninjauan dan pembayaran langganan"
       ],
-      "Start exploring the Proton universe": [
-        "Mulai jelajahi semesta Proton"
-      ],
       "Switch plans?": [
         "Ganti paket?"
       ]
@@ -3545,9 +3527,6 @@
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@proton.me untuk berbelanja dan JohnNews@proton.me untuk berlangganan berita"
-      ],
       "Create up to ${ n } custom calendars.": [
         "Buat hingga ${ n } kalender khusus."
       ],
@@ -3584,17 +3563,11 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Kelola status berlangganan Anda dan atur sendiri paket yang ingin Anda langgan. Kami menerima pembayaran melalui kartu kredit, PayPal, mata uang kripto, dan transfer bank."
       ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        "Dapatkan dukungan dari tim Layanan Dukungan Proton dalam rentang waktu 1 x 24 jam pada hari kerja"
-      ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "Di samping itu, Anda juga akan dapat menambahkan hingga 5 kalender dari rekan kerja, organisasi, keluarga, dan teman Anda."
       ],
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Di samping itu, Anda juga akan dapat menambahkan hingga 5 kalender dari teman, keluarga, rekan kerja, dan organisasi Anda."
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
-        "Satu koneksi VPN hanya memungkinkan Anda untuk menghubungkan satu perangkat ke Proton VPN dalam satu waktu. Semisal Anda ingin menyambungkan ponsel dan laptop Anda ke Proton VPN secara bersamaan, Anda akan butuh dua koneksi VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opsi untuk melihat kotak masuk para pengguna non-privat sebagaimana yang mereka lihat, termasuk seluruh isi pesan dan rincian kontak mereka"
@@ -3610,9 +3583,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
-      ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        "Dukungan via telepon tersedia dari tim Proton Customer Success pada hari dan jam kerja yang berlaku di Eropa pada umumnya, khusus untuk para pelanggan dengan 6 atau lebih pengguna"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Mencegah pesan untuk dapat diakses oleh ${ BRAND_NAME } atau pihak ketiga. Pesan Anda hanya akan dibaca oleh penerima dan Anda sendiri."
@@ -3634,9 +3604,6 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik"
-      ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Simpan rincian kontak Anda seperti nomor telepon, alamat, tanggal ulang tahun, catatan personal, dan lain sebagainya secara aman. Enkripsi zero-access kami memastikan bahwa tidak akan ada pihak luar yang dapat mengakses data Anda, termasuk Proton sendiri."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Kirim email ke grup yang besar dengan mudah dan cepat ke dengan cara membuat kontak grup khusus sejumlah pesan yang Anda butuhkan (hingga 100 kontak per grup)"
@@ -3751,8 +3718,8 @@
       "I found another service that I like better": [
         "Saya menemukan layanan lain yang lebih baik"
       ],
-      "I use a different Proton account": [
-        "Saya menggunakan akun Proton lain"
+      "I use a different ${ BRAND_NAME } account": [
+        "Saya menggunakan akun ${ BRAND_NAME } lainnya"
       ],
       "iOS": [
         "iOS"
@@ -3953,8 +3920,8 @@
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
       ],
-      "Invite friends to Proton": [
-        "Undang teman ke Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Undang teman ke ${ BRAND_NAME }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Coba ${ DRIVE_APP_NAME }"
@@ -4043,8 +4010,8 @@
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
       ],
-      "This offer is for those new to Proton only. No credit card required.": [
-        "Penawaran ini hanya berlaku bagi para pengguna baru Proton. Tidak ada kartu kredit yang diperlukan."
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "Penawaran ini hanya berlaku bagi pengguna baru ${ BRAND_NAME }. Tidak ada kartu kredit yang diperlukan."
       ]
     },
     "Success": {
@@ -4263,8 +4230,8 @@
       "Confirm downgrade": [
         "Konfirmasi penurunan jenis akun"
       ],
-      "Confirm loss of Proton bonuses": [
-        "Konfirmasi hilangnya bonus Proton"
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "Konfirmasi hilangnya bonus ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Konfirmasi nomor telepon"
@@ -4521,8 +4488,8 @@
       "WireGuard configuration": [
         "Konfigurasi WireGuard"
       ],
-      "You already have a Proton account": [
-        "Anda telah memiliki akun Proton"
+      "You already have a ${ BRAND_NAME } account": [
+        "Anda telah memiliki akun ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
@@ -4533,8 +4500,8 @@
       "Your plan": [
         "Paket anda"
       ],
-      "You’ve been invited to try ${ mailAppName }": [
-        "Anda telah diundang untuk dapat mencoba ${ mailAppName }"
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Anda telah diundang untuk mencoba ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
         "Kode pos"
