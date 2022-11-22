@@ -381,11 +381,6 @@
         "+ ${ users } utilizadores"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicações do Proton"
-      ]
-    },
     "Badge": {
       "5 users": [
         "5 utilizadores"
@@ -1300,11 +1295,6 @@
         "Factura em dívida"
       ]
     },
-    "Downgrade account reason": {
-      "I use a different Proton account": [
-        "Utilizo uma conta Proton diferente"
-      ]
-    },
     "Error": {
       "Amount above the maximum.": [
         "Quantia acima do máximo."
@@ -1430,9 +1420,6 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Por favor ${ refresh } ou verifique a sua ligação."
-      ],
-      "There was a problem connecting to Proton.": [
-        "Ocorreu um problema ao ligar ao Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "Também pode ${ refresh } ou tentar mais tarde."
@@ -1851,26 +1838,17 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Isto cancelará a sua assinatura paga actual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Isto permite a utilização do PayPal para pagar a sua subscrição Proton. Será redireccionado para o PayPal num novo separador do navegador. Se usa qualquer bloqueador de janelas, por favor desactive-o para continuar."
-      ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Isto vai eliminar permanentemente a sua conta e todos os seus dados. Não poderá reactivar esta conta."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isto substituirá a sua senha temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Este assistente vai activar a autenticação em dois passos (2FA) na sua conta Proton. O 2FA tornará a sua conta Proton mais segura, recomendamos a sua activação."
-      ],
       "to continue to ${ toAppName }": [
         "para continuar para ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
-      ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Para acompanhar o mais recente desenvolvimento dos produtos Proton, pode subscrever os nossos vários emails e visitar o nosso blogue de tempos a tempos."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
@@ -2000,9 +1978,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta Proton está actualmente suspensa. Para continuar a usar a sua conta, por favor, pague quaisquer facturas em atraso."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Por favor contacte o suporte da Mozilla."
@@ -2252,9 +2227,6 @@
       ],
       "Proration": [
         "Repartição"
-      ],
-      "Proton username": [
-        "Utilizador Proton"
       ],
       "Recovery phone number": [
         "Número de telefone de recuperação"
@@ -2511,9 +2483,6 @@
       ],
       "I found another service that I like better": [
         "Encontrei outro serviço de que gosto mais"
-      ],
-      "I use a different Proton account": [
-        "Utilizo uma conta Proton diferente"
       ],
       "iOS": [
         "iOS"
@@ -2888,9 +2857,6 @@
       "Confirm downgrade": [
         "Confirmar regressão"
       ],
-      "Confirm loss of Proton bonuses": [
-        "Confirmar perda de bónus Proton"
-      ],
       "Confirm phone number": [
         "Confirmar número de telefone"
       ],
@@ -3112,9 +3078,6 @@
       ],
       "What's new": [
         "O que há de novo"
-      ],
-      "You already have a Proton account": [
-        "Já tem uma conta Proton"
       ],
       "Your current plan": [
         "O seu plano actual"

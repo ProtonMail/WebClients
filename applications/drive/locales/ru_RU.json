@@ -3415,6 +3415,9 @@
       "This will overwrite the existing folder": [
         "Это перезапишет существующую папку"
       ],
+      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Это удалит из Proton Drive синхронизированное устройство ${ deviceName }. Локальные файлы на\nустройстве не будут затронуты."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Чтобы включить действительно конфиденциальный поиск, нам надо проиндексировать ваши файлы локально. Вы по-прежнему можете использовать ${ DRIVE_APP_NAME } в обычном режиме – мы сообщим вам, когда индексирование будет завершено."
       ],
@@ -3474,6 +3477,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Одновременная загрузка сотен файлов может повлиять на производительность."
+      ],
+      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Используйте Drive для настольных компьютеров, чтобы синхронизировать папки на вашем компьютере с Proton Drive. Они будут отображаться здесь и будут доступны из любого места.  ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Используйте эту форму, чтобы уведомить нас о неприемлемых, незаконных,\nили других вредоносных файлах общего доступа. Вы собираетесь сообщить:"

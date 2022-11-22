@@ -945,8 +945,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
-      "There was a problem connecting to Proton.": [
-        "Proton bağlantısı kurulurken bir sorun çıktı."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } bağlantısı kurulurken bir sorun çıktı."
       ],
       "You may also ${ refresh } or try again later.": [
         "Ayrıca sayfayı ${ refresh }yebilir ya da bir süre sonra yeniden deneyebilirsiniz."
@@ -1045,14 +1045,17 @@
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
       ]
     },
     "Label": {

@@ -952,7 +952,7 @@
         "Essayer une autre méthode"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Veuillez réessayer l'enregistrement. L'erreur suivante est survenue : ${ saveError }"
+        "Réessayez d'enregistrer. L'enregistrement a échoué à cause de : ${ saveError }"
       ],
       "Turn on tracker protection": [
         "Activer la protection contre les traqueurs"
@@ -4731,7 +4731,7 @@
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Si vous ne vous rappelez plus de votre mot de passe, ajoutez une phrase de récupération pour vous assurer de ne pas perdre l'accès à votre compte ou données."
+        "Si vous ne vous souvenez pas de votre mot de passe, définissez une phrase de récupération pour vous assurer de ne pas perdre l'accès à votre compte et à vos données."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Si votre alias est vendu, divulgué ou utilisé de manière abusive, il suffit de le désactiver pour ne plus recevoir d'indésirables/spam."
@@ -4979,7 +4979,7 @@
         "Sélectionnez la ou les adresses e-mail à ajouter à ${ groupName }."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Veuillez patienter jusqu'à ce que vous modifications soient synchronisées avec le serveur."
+        "Veuillez attendre que vos modifications soient synchronisées avec le serveur."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Veuillez patienter pendant que nous recherchons des contacts qui peuvent être signés une nouvelle fois avec la clé de chiffrement principale."
@@ -8008,7 +8008,7 @@
         "Archives"
       ],
       "Are you sure you want to close the preview?": [
-        "Êtes vous sûr de vouloir fermer la prévisualisation ?"
+        "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
       ],
       "Are you sure you want to close?": [
         "Vous voulez vraiment fermer ?"
@@ -8476,7 +8476,7 @@
         "Nouveautés"
       ],
       "Your changes are not synced yet": [
-        "Vos modifications ne sont pas sychnonisées pour le moment."
+        "Vos modifications ne sont pas encore synchronisées."
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }."

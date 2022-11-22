@@ -310,6 +310,9 @@
       "Edit subscription": [
         "Rediger abonnement"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
@@ -466,10 +469,10 @@
       "No": [
         "Nej"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -4826,6 +4829,10 @@
       "Plan upgrade required": [
         "Abonnementsopgradering påkrævet"
       ],
+      "Please add a password for the user on row": [
+        "Tilføj en adgangskode til brugeren på række",
+        "Tilføj adgangskoder til brugerne på rækker"
+      ],
       "Please add an email address for the user on row": [
         "Tilføj venligst en e-mailadresse til brugeren på række",
         "Tilføj venligst e-mailadresser til brugerne på rækker"
@@ -6893,6 +6900,12 @@
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem.",
+        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlemmer."
       ]
     },
     "Member action": {

@@ -324,6 +324,9 @@
       "Edit subscription": [
         "Modifier l'abonnement"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
@@ -492,10 +495,10 @@
       "Not spam": [
         "Non indésirables/spam"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -775,7 +778,7 @@
         "Essayer une autre méthode"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Veuillez réessayer l'enregistrement. L'erreur suivante est survenue : ${ saveError }"
+        "Réessayez d'enregistrer. L'enregistrement a échoué à cause de : ${ saveError }"
       ],
       "Underline": [
         "Souligner"
@@ -1285,7 +1288,7 @@
         "Modifier (afficher, créer et modifier les détails de l'événement)"
       ],
       "View (see all event details)": [
-        "Afficher plus de détails (voir toutes les informations des événements)"
+        "Voir tous les détails de l'événement"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3458,7 +3461,7 @@
         "se connecter"
       ],
       "There was a problem removing your email address.": [
-        "Une erreur est survenue lors de la suppression de votre adresse mail."
+        "Une erreur est survenue lors de la suppression de votre adresse électronique."
       ],
       "There was a problem verifying your email address.": [
         "Votre adresse e-mail n'a pas pu être vérifiée."
@@ -4736,7 +4739,7 @@
         "Avant de pouvoir envoyer et recevoir des e-mails avec vos nouvelles adresses, vous devez leur créer des clés de chiffrement."
       ],
       "Before you reset your password, download your recovery phrase.": [
-        "Avant de réinitialiser votre mot de passe, veuillez télécharger votre phrase de récupération."
+        "Avant de réinitialiser votre mot de passe, téléchargez votre phrase de récupération."
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Les transactions en Bitcoin peuvent prendre un certain temps pour être validées (jusqu'à 24 heures). Une fois confirmées, nous ajouterons les crédits sur votre compte. Après confirmation de la transaction, vous pourrez payer votre facture avec les crédits."
@@ -5035,10 +5038,10 @@
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
-        "Si vous avez oublié votre mot de passe, vous devrez effectuer une ${ boldPasswordReset } pour accéder au nouveau site."
+        "Si vous avez oublié votre mot de passe, nous vous invitons à effectuer une ${ boldPasswordReset } pour accéder au nouveau site."
       ],
       "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "Si vous êtes amené à réinitialiser de nouveau votre mot de passe, vous devrez entrer cette phrase de nouveau pour rétablir l'accès à votre compte et débloquer vos données."
+        "Si vous devez à nouveau réinitialiser votre mot de passe, vous devrez saisir cette phrase pour pouvoir accéder à votre compte et déverrouiller vos données."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Si vous avez un domaine personnalisé avec ${ MAIL_APP_NAME }, vous pouvez configurer une adresse électronique catch-all qui recevra les messages envoyés à votre domaine, à une adresse inexistante ou avec une faute de frappe."
@@ -5235,7 +5238,7 @@
         "Assurez-vous d'${ addARecoveryMethod } pour pouvoir vous reconnecter à votre compte si vous oubliez votre mot de passe."
       ],
       "Make sure you keep your recovery phrase somewhere private.": [
-        "Veuillez vous assurer que votre phrase de récupération est sauvegardée de manière sécurisée."
+        "Conservez votre phrase de récupération en lieu sûr."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Saisissez manuellement ces informations dans votre périphérique d'authentification à deux facteurs pour configurer votre compte. ${ _switchButton }."
@@ -5436,7 +5439,7 @@
         "Nous vous invitons à vérifier la carte dans le nouvel onglet qui a été ouvert."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Veuillez patienter jusqu'à ce que vous modifications soient synchronisées avec le serveur."
+        "Veuillez attendre que vos modifications soient synchronisées avec le serveur."
       ],
       "Plus or Visionary subscription required": [
         "Abonnement Plus ou Visionary nécessaire"
@@ -5654,7 +5657,7 @@
         "Le moyen le plus sûr de naviguer, de faire du streaming et d'être en ligne."
       ],
       "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
-        "Aucun changement n'a été effectué sur votre adresse mail ou sur votre compte ${ BRAND_NAME }. Veuillez vous reconnecter sur ${ link }."
+        "Aucune modification n'a été apportée à votre adresse électronique ou à votre compte ${ BRAND_NAME }. Il suffit de vous connecter sur ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ces fichiers de configuration vous permettent de choisir le serveur ${ VPN_APP_NAME } auquel vous vous connectez lorsque vous utilisez une application VPN tierce ou que vous configurez une connexion VPN sur un routeur."
@@ -9213,7 +9216,7 @@
         "Vous pouvez fermer cet onglet en toute sécurité."
       ],
       "Your recovery email has been successfully removed.": [
-        "Votre adresse de récupération a été correctement supprimée."
+        "Votre adresse de récupération a été supprimée."
       ],
       "Your recovery email has been successfully verified.": [
         "Votre adresse de récupération a été correctement vérifiée."
@@ -9400,7 +9403,7 @@
     },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
-        "Veuillez saisir une adresse mail ou un nom de groupe."
+        "Saisissez une adresse électronique ou un nom de groupe."
       ]
     },
     "Share calendar modal title": {
@@ -10281,7 +10284,7 @@
         "Appliquer un code cadeau"
       ],
       "Are you sure you want to close the preview?": [
-        "Êtes vous sûr de vouloir fermer la prévisualisation ?"
+        "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
       ],
       "Are you sure you want to close?": [
         "Vous voulez vraiment fermer ?"
@@ -10961,7 +10964,7 @@
         "Lien de votre calendrier"
       ],
       "Your changes are not synced yet": [
-        "Vos modifications ne sont pas sychnonisées pour le moment."
+        "Vos modifications ne sont pas encore synchronisées."
       ],
       "Your current plan": [
         "Votre abonnement actuel"
@@ -11300,7 +11303,7 @@
     },
     "vpn: Info": {
       "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
-        "Ouvrez l'extension navigateur ${ VPN_APP_NAME } pour vous protéger pendant la navigation"
+        "Ouvrez l'extension de navigateur ${ VPN_APP_NAME } pour vous protéger pendant la navigation."
       ]
     },
     "VPNClient": {
