@@ -24,6 +24,7 @@ import { altKey, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { hasFlag } from '@proton/shared/lib/mail/messages';
+import scheduledImg from '@proton/styles/assets/img/illustrations/spotlight-scheduled-send.svg';
 
 import { formatSimpleDate } from '../../../helpers/date';
 import { getAttachmentCounts } from '../../../helpers/message/messages';
@@ -173,11 +174,19 @@ const ComposerActions = ({
                     anchorRef={dropdownRef}
                     content={
                         <>
-                            {c('Spotlight').t`You can now schedule your messages to be sent later`}
-                            <br />
-                            <Href url={getKnowledgeBaseUrl('/scheduled-send')} title="Scheduled send">
-                                {c('Info').t`Learn more`}
-                            </Href>
+                            <div className="flex flex-nowrap mt0-5 mb0-5">
+                                <div className="flex-item-noshrink mr1">
+                                    <img src={scheduledImg} className="w4e" />
+                                </div>
+                                <div>
+                                    <p className="mt0 mb0-5 text-bold">{c('Spotlight').t`Schedule send`}</p>
+                                    <p className="m0">{c('Spotlight')
+                                        .t`You can now schedule your messages to be sent later`}</p>
+                                    <Href url={getKnowledgeBaseUrl('/scheduled-send')} title="Scheduled send">
+                                        {c('Info').t`Learn more`}
+                                    </Href>
+                                </div>
+                            </div>
                         </>
                     }
                 >
