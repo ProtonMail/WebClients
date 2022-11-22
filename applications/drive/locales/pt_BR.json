@@ -158,6 +158,9 @@
       "Create new folder": [
         "Criar nova pasta"
       ],
+      "Create new text file": [
+        "Criar um novo arquivo de texto"
+      ],
       "Customize": [
         "Personalizar"
       ],
@@ -1713,6 +1716,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" já existe"
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -3113,6 +3119,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Por favor, selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Por favor, espera que suas alterações serão sincronizadas com o servidor."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
       ],
@@ -3332,6 +3341,9 @@
       ],
       "Unlock drive to recover files": [
         "Desbloquear drive para recuperar arquivos"
+      ],
+      "Unsaved changes": [
+        "Alterações não salvas"
       ],
       "Unsupported file": [
         "Arquivo não suportado"
@@ -4148,11 +4160,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "Falha ao restaurar \"${ name }\" da lixeira"
       ],
+      "\"${ name }\" failed to be saved": [
+        "\"${ name }\" falhou ao ser salvado"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para a lixeira"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" restaurado da lixeira"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" salvo com sucesso"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" movido com sucesso"
@@ -4433,6 +4451,9 @@
       ],
       "E.g., ": [
         "Ex., "
+      ],
+      "Enter a new file name": [
+        "Digite um nome para o novo arquivo"
       ],
       "Enter a new folder name": [
         "Digite o nome para nova pasta"
@@ -4999,6 +5020,9 @@
       "All": [
         "Todos"
       ],
+      "Are you sure you want to close the preview?": [
+        "Você tem certeza que deseja fechar a pré-visualização?"
+      ],
       "Back": [
         "Voltar"
       ],
@@ -5415,6 +5439,9 @@
       ],
       "Your 500 MB bonus": [
         "Seu bônus de 500 MB"
+      ],
+      "Your changes are not synced yet": [
+        "Sua alteração não foram sintonizadas ainda"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Sua avaliação gratuita termina em breve, em ${ formattedEndDate }"

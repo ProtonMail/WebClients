@@ -316,11 +316,6 @@
         "+ ${ domains } prilagođena domena"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikacije"
-      ]
-    },
     "Billing cycle option": {
       "Annually": [
         "Godišnje"
@@ -426,11 +421,6 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "Neplaćena faktura"
-      ]
-    },
-    "Downgrade account reason": {
-      "I use a different Proton account": [
-        "Koristim drugi Proton račun"
       ]
     },
     "Error": {
@@ -552,9 +542,6 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Molimo ${ refresh } ili provjerite vezu."
-      ],
-      "There was a problem connecting to Proton.": [
-        "Došlo je do problema pri povezivanju s Protonom."
       ],
       "You may also ${ refresh } or try again later.": [
         "Možete ${ refresh } ili pokušati ponovo kasnije."
@@ -893,26 +880,17 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Ovo će otkazati vašu trenutnu pretplatu i izgubit ćete sve privilegije vjernosti koje ste nakupili. Preostali iznos vaše pretplate vratit će se kao kredit na vašem računu."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Ovo će omogućiti PayPalu da se koristi za plaćanje vaše Proton pretplate. Preusmjerit ćemo vas na PayPal u novoj kartici preglednika. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
-      ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ovim će te trajno izbrisati vaš račun i sve podatke povezane s njim. Nećete moći ponovno aktivirati ovaj račun."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Ovo će zamijeniti vašu privremenu lozinku. Ubuduće će te ga koristiti za pristup vašem ${ BRAND_NAME } računu."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Ovaj čarobnjak omogućiti će dvofaktorsku autentikaciju na Proton računu. Dvofaktorska autentikacija će vaš Proton račun učiniti sigurnijim pa vam preporučujemo da opciju omogućite."
-      ],
       "to continue to ${ toAppName }": [
         "za nastavak u ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
-      ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Da biste bili u tijeku s najnovijim razvojima u Proton proizvodima, možete se pretplatiti na naše različite e-poruke i povremeno posjetiti naš blog."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Dopunite svoj račun sa kreditima koje možete upotrijebiti za pretplatu na novi plan ili za obnovu trenutnog plana. Dobivate jedan kredit za svaku potrošenu ${ i18nCurrency }."
@@ -1018,9 +996,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vašom pretplatom upravlja Mozilla. Molimo kontaktirajte Mozilla podršku."
@@ -1246,9 +1221,6 @@
       "Proration": [
         "Proration"
       ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
       "Repeat password": [
         "Ponovite lozinku"
       ],
@@ -1409,9 +1381,6 @@
       ],
       "I found another service that I like better": [
         "Pronašao/la sam drugu uslugu koja mi se više sviđa"
-      ],
-      "I use a different Proton account": [
-        "Koristim drugi Proton račun"
       ],
       "iOS": [
         "iOS"
@@ -1701,9 +1670,6 @@
       ],
       "Confirm downgrade": [
         "Potvrdi snižavanje statusa"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Potvrdite gubitak Proton bonusa"
       ],
       "Confirm phone number": [
         "Potvrdite broj telefona"

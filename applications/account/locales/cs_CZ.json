@@ -324,6 +324,9 @@
       "Edit subscription": [
         "Změnit předplatné"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "enable desktop notifications": [
         "povolit upozornění"
       ],
@@ -435,6 +438,9 @@
       "label emails as": [
         "označit e-maily jako"
       ],
+      "Leave": [
+        "Opustit"
+      ],
       "Load more": [
         "Načíst více"
       ],
@@ -443,6 +449,9 @@
       ],
       "Make default": [
         "Nastavit jako výchozí"
+      ],
+      "Manage communication preferences": [
+        "Spravovat nastavení komunikace"
       ],
       "Mark as default": [
         "Označit jako výchozí"
@@ -486,11 +495,11 @@
       "Not spam": [
         "Není spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -1173,6 +1182,11 @@
     "Calendar access select label": {
       "Add people or groups": [
         "Přidat lidi nebo skupiny"
+      ]
+    },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "Upravit kalendář"
       ]
     },
     "Calendar export section description": {
@@ -3478,6 +3492,9 @@
       "sign in": [
         "přihlaste se"
       ],
+      "There was a problem removing your email address.": [
+        "Při odstraňování vaší e-mailové adresy došlo k problému."
+      ],
       "There was a problem verifying your email address.": [
         "Při ověřování vaší e-mailové adresy došlo k problému."
       ]
@@ -5097,7 +5114,7 @@
         "uvolněte úložiště smazáním starých zpráv nebo jiných dat"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        "Vygenerováním nové obnovovací fráze bude deaktivovaná stará."
+        "Vygenerováním nové obnovovací fráze bude deaktivována stará."
       ],
       "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
         "Získejte ${ BRAND_NAME } adresu pro používání všech služeb ${ BRAND_NAME } včetně e-mailu a kalendáře."
@@ -5137,6 +5154,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
+      ],
+      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
+        "Pokud své heslo neznáte, budete muset pro přístup k novému webu provést ${ boldPasswordReset }."
       ],
       "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
         "Pokud budete někdy potřebovat znovu obnovit heslo, musíte zadat tuto frázi, abyste se dostali zpět do svého účtu a odemkli svá data."
@@ -5340,7 +5360,7 @@
         "Ujistěte se, že jste ${ addARecoveryMethod }, abyste se mohli vrátit ke svému účtu, pokud zapomenete heslo."
       ],
       "Make sure you keep your recovery phrase somewhere private.": [
-        "Ujistěte se, že máte obnovovací frázi v bezpečí."
+        "Ujistěte se, že uchováváte obnovovací frázi na soukromém místě."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Ručně zadejte tyto informace do zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ _switchButton }."
@@ -5464,6 +5484,9 @@
       ],
       "Paid for a monthly plan": [
         "Zaplaceno za měsíční tarif"
+      ],
+      "password reset": [
+        "obnovení hesla"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Než bude platba zcela ověřena, může to trvat i několik minut."
@@ -5764,6 +5787,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Nejbezpečnější způsob, jak procházet, streamovat a být online."
+      ],
+      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
+        "Na vaší e-mailové adrese ani ve vašem účtu ${ BRAND_NAME } nedošlo k žádným změnám. Stačí se přihlásit na ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Tyto konfigurační soubory vám umožní vybrat, ke kterému ${ VPN_APP_NAME } serveru se připojíte, pokud používáte alternativní VPN aplikace nebo nastavujete VPN na routeru."
@@ -7531,6 +7557,26 @@
       ],
       "VPN connections": [
         "VPN připojení"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "Beta oznámení ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } company announcements": [
+        "Firemní oznámení ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Novinky ${ BRAND_NAME } pro firmy"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Novinky ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Akční nabídky ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Oznámení o produktech ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9379,6 +9425,9 @@
       "You can safely close this tab.": [
         "Tuto záložku můžete bezpečně zavřít."
       ],
+      "Your recovery email has been successfully removed.": [
+        "Váš e-mail pro obnovení byl úspěšně odstraněn."
+      ],
       "Your recovery email has been successfully verified.": [
         "Váš e-mail pro obnovení byl úspěšně ověřen."
       ]
@@ -10889,6 +10938,9 @@
       ],
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
+      ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "Přesunuli jsme se na ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"
