@@ -359,7 +359,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
-                    <div className="flex flex-justify-space-between flex-align-items-center create-user-accounts-additional-content mt1">
+                    <div className="flex flex-justify-space-between flex-align-items-center flex-gap-1 create-user-accounts-additional-content mt1">
                         <Checkbox
                             id="selectAll"
                             checked={isSelectAllChecked}
