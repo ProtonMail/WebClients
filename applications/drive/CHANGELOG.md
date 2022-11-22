@@ -1,3 +1,14 @@
+# Release 5.0.8.0 — December 1, 2022
+
+## Improved
+
+-   Showing thumbnail before image preview is loaded
+
+## Fixed
+
+-   Better detection of failed uploads
+-   Fix minor bugs
+
 # Release 5.0.7.0 — November 2, 2022
 
 ## Improved
