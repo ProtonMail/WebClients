@@ -24,4 +24,16 @@ describe('Time component', () => {
 
         expect(container.firstChild.textContent).toBe(readableTime(unixDate, 'PPp'));
     });
+
+    it('should support format forcing', () => {
+        const todayUnixDate = Math.floor(Date.now() / 1000);
+
+        const { container } = render(
+            <Time format="PP" forceFormat={true}>
+                {todayUnixDate}
+            </Time>
+        );
+
+        expect(container.firstChild.textContent).toBe(readableTime(todayUnixDate, 'PP', {}, true));
+    });
 });
