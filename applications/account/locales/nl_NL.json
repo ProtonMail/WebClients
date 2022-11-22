@@ -319,6 +319,9 @@
       "Edit subscription": [
         "Wijzig abonnement"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
@@ -430,6 +433,9 @@
       "label emails as": [
         "e-mail labellen als"
       ],
+      "Leave": [
+        "Verlaat"
+      ],
       "Load more": [
         "Laad meer"
       ],
@@ -438,6 +444,9 @@
       ],
       "Make default": [
         "Standaard maken"
+      ],
+      "Manage communication preferences": [
+        "Beheer communicatievoorkeuren"
       ],
       "Mark as default": [
         "Markeren als standaard"
@@ -481,10 +490,10 @@
       "Not spam": [
         "Geen spam"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -4627,6 +4636,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
       ],
+      "Before you reset your password, download your recovery phrase.": [
+        "Download uw herstelzin voordat u uw wachtwoord opnieuw instelt."
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Het kan even duren voordat Bitcoin-transacties worden bevestigd (tot 24 uur), waarna wij de credits aan uw account zullen toevoegen. Na de transactiebevestiging kunt u uw factuur met de credits betalen."
       ],
@@ -4760,6 +4772,9 @@
       ],
       "Download recovery file": [
         "Herstelbestand downloaden"
+      ],
+      "Download recovery phrase": [
+        "Download de herstelzin"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
@@ -4919,6 +4934,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
+      ],
+      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
+        "Indien u ooit uw wachtwoord opnieuw zou moeten instellen, dan zult u deze zin moeten ingeven om terug toegang te krijgen tot uw account en uw data."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Als u een eigen domein heeft met ${ MAIL_APP_NAME }, kunt u een catch-all e-mailadres instellen dat berichten zal ontvangen die naar uw domein worden verzonden, maar op een ongeldig e-mailadres (bijv. door typo's)."
@@ -5114,6 +5132,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Zorg ervoor dat u ${ addARecoveryMethod }, zodat u terug toegang kunt krijgen tot uw account wanneer u uw wachtwoord vergeten bent."
       ],
+      "Make sure you keep your recovery phrase somewhere private.": [
+        "Bewaar uw herstelzin op een private veilige plaats."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ _switchButton }."
       ],
@@ -5234,6 +5255,9 @@
       ],
       "Paid for a monthly plan": [
         "Betaald voor een maandelijks abonnement"
+      ],
+      "password reset": [
+        "wachtwoord reset"
       ],
       "Payment can take a few minutes to fully verify.": [
         "De betaling bevestigen kan een paar minuten duren."
@@ -10770,6 +10794,9 @@
       ],
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
+      ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "We zijn verhuisd naar ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "Wat zou u willen importeren?"

@@ -945,9 +945,6 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "出了一點問題。請重新整理頁面或稍後再試。"
       ],
-      "There was a problem connecting to Proton.": [
-        "連線到 Proton 時發生問題。"
-      ],
       "You may also ${ refresh } or try again later.": [
         "您亦可${ refresh } 或稍後再試一次。"
       ]
@@ -1045,19 +1042,22 @@
       "Would you like to receive a new verification code?": [
         "您想要收到新的驗證碼嗎？"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期帳單。"
+      ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
       ]
     },
     "Label": {
       "Authenticator app": [
-        "驗證器APP"
+        "驗證 APP"
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"

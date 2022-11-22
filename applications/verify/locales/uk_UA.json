@@ -945,8 +945,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Щось пішло не так. Оновіть сторінку і спробуйте знову пізніше."
       ],
-      "There was a problem connecting to Proton.": [
-        "Виникла проблема при з'єднанні з Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Виникла проблема під час з'єднання з ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Ви можете також ${ refresh }, або спробувати знову пізніше."
@@ -1045,14 +1045,17 @@
       "Would you like to receive a new verification code?": [
         "Бажаєте отримати новий код підтвердження?"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. За 28 днів електронні листи перестануть надходити до вашої поштової скриньки, посилання на спільний доступ до Drive будуть заблоковані, і ви не зможете завантажувати нові файли. Щоб відновити звичайну роботу, будь ласка, сплатіть несплачені рахунки."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
       ]
     },
     "Label": {
