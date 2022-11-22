@@ -945,8 +945,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Qualcosa è andato storto. Aggiorna la pagina o riprova più tardi."
       ],
-      "There was a problem connecting to Proton.": [
-        "Si è verificato un problema di connessione a Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Si è verificato un problema di connessione a ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Puoi anche ${ refresh } o riprovare più tardi."
@@ -1045,14 +1045,17 @@
       "Would you like to receive a new verification code?": [
         "Vuoi ricevere un nuovo codice di verifica?"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Dopo 28 giorni, le email non verranno più recapitate nella tua casella di posta, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, si prega di pagare le fatture scadute."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
+      ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account Proton è attualmente in attesa. Per continuare a utilizzare il tuo account, paga le fatture scadute."
       ]
     },
     "Label": {

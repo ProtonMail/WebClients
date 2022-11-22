@@ -324,6 +324,9 @@
       "Edit subscription": [
         "Editar assinatura"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
       ],
@@ -447,6 +450,9 @@
       "Make default": [
         "Tornar padrão"
       ],
+      "Manage communication preferences": [
+        "Gerenciar preferências de comunicação"
+      ],
       "Mark as default": [
         "Definir como padrão"
       ],
@@ -489,11 +495,11 @@
       "Not spam": [
         "Não é spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -3451,6 +3457,9 @@
       "sign in": [
         "iniciar sessão"
       ],
+      "There was a problem removing your email address.": [
+        "Ocorreu um problema ao remover seu endereço de e-mail."
+      ],
       "There was a problem verifying your email address.": [
         "Ocorreu um problema ao verificar seu endereço de e-mail."
       ]
@@ -4860,6 +4869,9 @@
       "Download recovery file": [
         "Baixar o arquivo de recuperação"
       ],
+      "Download recovery phrase": [
+        "Baixar frase de recuperação"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
       ],
@@ -5334,6 +5346,9 @@
       "Paid for a monthly plan": [
         "Pago para o plano mensal"
       ],
+      "password reset": [
+        "redefinição de senha"
+      ],
       "Payment can take a few minutes to fully verify.": [
         "O pagamento pode demorar alguns minutos para ser totalmente verificado."
       ],
@@ -5407,6 +5422,9 @@
       ],
       "Please verify the card in the new tab which was opened.": [
         "Por favor, verifique o cartão na nova guia que foi aberta."
+      ],
+      "Please wait till your changes are synced with the server.": [
+        "Por favor, espera que suas alterações serão sincronizadas com o servidor."
       ],
       "Plus or Visionary subscription required": [
         "É necessária a assinatura Plus ou Visionária"
@@ -5781,6 +5799,9 @@
       ],
       "Unlimited messages": [
         "Mensagens ilimitadas"
+      ],
+      "Unsaved changes": [
+        "Alterações não salvas"
       ],
       "Unsupported file": [
         "Arquivo não suportado"
@@ -7374,6 +7395,26 @@
       ],
       "VPN connections": [
         "Conexões VPN"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "Comunicados de ${ BRAND_NAME } beta"
+      ],
+      "${ BRAND_NAME } company announcements": [
+        "Comunicados da empresa de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Boletim de ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Boletim de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Ofertas e promoções de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Comunicados de produto de ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -10220,6 +10261,9 @@
       "Apply gift code": [
         "Adicionar código de vale-presente"
       ],
+      "Are you sure you want to close the preview?": [
+        "Você tem certeza que deseja fechar a pré-visualização?"
+      ],
       "Are you sure you want to close?": [
         "Você tem certeza que deseja fechar?"
       ],
@@ -10779,6 +10823,9 @@
       "Sign out": [
         "Encerrar sessão"
       ],
+      "Signed in successfully!": [
+        "Iniciado sessão com sucesso!"
+      ],
       "Signed in to member account": [
         "Conectado à conta de membro"
       ],
@@ -10873,6 +10920,9 @@
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
       ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "Mudamos para ${ PROTON_ME_DOMAIN }"
+      ],
       "What would you like to import?": [
         "O que você gostaria de importar?"
       ],
@@ -10890,6 +10940,9 @@
       ],
       "Your calendar link": [
         "Link do seu calendário"
+      ],
+      "Your changes are not synced yet": [
+        "Sua alteração não foram sintonizadas ainda"
       ],
       "Your current plan": [
         "O seu plano atual"

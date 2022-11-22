@@ -945,8 +945,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Něco se pokazilo. Obnovte prosím stránku nebo to zkuste později."
       ],
-      "There was a problem connecting to Proton.": [
-        "Při připojování k Proton došlo k chybě."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Při připojování ke službě ${ BRAND_NAME } došlo k chybě."
       ],
       "You may also ${ refresh } or try again later.": [
         "Můžete taky stránku ${ refresh } nebo to zkusit později."
@@ -1045,14 +1045,17 @@
       "Would you like to receive a new verification code?": [
         "Chcete obdržet nový ověřovací kód?"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
       ]
     },
     "Label": {

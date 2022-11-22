@@ -324,6 +324,9 @@
       "Edit subscription": [
         "Изменить подписку"
       ],
+      "Emoji": [
+        "Эмоджи"
+      ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
@@ -368,6 +371,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Получить ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Получение нового зашифрованного адреса электронной почты"
       ],
       "Get verification code": [
         "Получить проверочный код"
@@ -432,6 +438,9 @@
       "label emails as": [
         "отметить ярлыком электронные письма как"
       ],
+      "Leave": [
+        "Оставить"
+      ],
       "Load more": [
         "Загрузить ещё"
       ],
@@ -440,6 +449,9 @@
       ],
       "Make default": [
         "Установить по умолчанию"
+      ],
+      "Manage communication preferences": [
+        "Управление настройками коммуникации"
       ],
       "Mark as default": [
         "Установить по умолчанию"
@@ -483,11 +495,11 @@
       "Not spam": [
         "Не спам"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
@@ -815,6 +827,9 @@
       ],
       "Use recovery code": [
         "Использовать код восстановления"
+      ],
+      "Use your current email instead": [
+        "Используйте свою текущую электронную почту"
       ],
       "Use “${ label }” setting": [
         "Использовать настройку «${ label }»"
@@ -4837,6 +4852,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования."
       ],
+      "Before you reset your password, download your recovery phrase.": [
+        "Перед сбросом пароля скачайте фразу восстановления."
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Транзакции Bitcoin могут занять некоторое время для подтверждения (до 24 часов). Сразу после подтверждения мы добавим кредиты на ваш счет. После подтверждения транзакции вы сможете оплатить свой счет кредитами."
       ],
@@ -5137,6 +5155,12 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
       ],
+      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
+        "Если вы не знаете свой пароль, вам нужно будет выполнить ${ boldPasswordReset }, чтобы получить доступ к новому сайту."
+      ],
+      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
+        "Если вам когда-нибудь снова понадобится сбросить пароль, вам нужно будет ввести эту фразу, чтобы вернуться в свой аккаунт и разблокировать данные."
+      ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Если у вас есть свой домен с ${ MAIL_APP_NAME }, вы можете установить адреса электронной почты для приема всех сообщений, отправленных на ваш домен, но на недействительный адрес электронной почты (например, из-за опечаток)."
       ],
@@ -5335,6 +5359,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Убедитесь, что вы ${ addARecoveryMethod }, чтобы вы могли попась в ваш аккаунт, если забудете пароль."
       ],
+      "Make sure you keep your recovery phrase somewhere private.": [
+        "Убедитесь, что вы сохранили свою фразу восстановления в надежном месте."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Чтобы настроить свою учётную запись, введите эту информацию вручную в своё устройство двухфакторной аутентификации. ${ _switchButton }."
       ],
@@ -5412,6 +5439,9 @@
       ],
       "of": [
         "из"
+      ],
+      "One account. All ${ BRAND_NAME } services.": [
+        "Один аккаунт. Все службы ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
@@ -5758,6 +5788,9 @@
       "The securest way to browse, stream, and be online.": [
         "Самый безопасный способ просматривать веб-страницы, смотреть трансляции и находиться онлайн."
       ],
+      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
+        "Никаких изменений в вашем адресе электронной почты или в вашем ${ BRAND_NAME } аккаунте не было. Просто войдите в систему по ссылке ${ link }."
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
       ],
@@ -5865,6 +5898,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Чтобы защитить свое подключение к Интернету, скачайте и установите приложение ${ VPN_APP_NAME } для своего устройства и подключитесь к серверу."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "использовать ${ toAppName } и все службы ${ BRAND_NAME }"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Для правильной работы каждый фильтр должен содержать как минимум имя и действительный скрипт Sieve. Вы можете ${ link }."
@@ -6031,6 +6067,9 @@
       "Why?": [
         "Почему?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Имея зашифрованный адрес ${ BRAND_NAME }, вы можете пользоваться всеми услугами ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без активации вы не сможете создавать новых пользователей, добавлять адреса к существующим пользователям или получать доступ к нечастным аккаунтам."
       ],
@@ -6157,6 +6196,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Скоро Вы будете перенаправлены на сайт вашего банка для проверки оплаты."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Вам понадобится адрес ${ BRAND_NAME } для использования ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
+      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Вы НЕ сможете расшифровать сообщения, файлы и другие данные, зашифрованные с помощью этого ключа."
       ],
@@ -6204,6 +6246,12 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Ваш аккаунт ${ BRAND_NAME } можно использовать для доступа ко всем службам ${ BRAND_NAME }. Пожалуйста, войдите с ${ email }."
+      ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Ваш импорт из ${ accounts } временно отложен.",
+        "Ваши импорты из ${ accounts } временно отложены.",
+        "Ваши импорты из ${ accounts } временно отложены.",
+        "Ваши импорты из ${ accounts } временно отложены."
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
@@ -7509,6 +7557,26 @@
       ],
       "VPN connections": [
         "Подключения к VPN"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } бета-объявления"
+      ],
+      "${ BRAND_NAME } company announcements": [
+        "Объявления компании ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } для бизнес-рассылки"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } рассылка"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } предложения и акции"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Объявления о продукции ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9357,6 +9425,9 @@
       "You can safely close this tab.": [
         "Вы можете безопасно закрыть эту вкладку."
       ],
+      "Your recovery email has been successfully removed.": [
+        "Ваш резервный адрес электронной почты для восстановления был успешно удален."
+      ],
       "Your recovery email has been successfully verified.": [
         "Резервный адрес электронной почты был успешно подтвержден."
       ]
@@ -11064,10 +11135,10 @@
         "Успешно"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Успешно создана ${ successfullyCreatedUsers.length } учетная запись",
-        "Успешно созданы ${ successfullyCreatedUsers.length } учетных записи",
-        "Успешно созданы ${ successfullyCreatedUsers.length } учетных записей",
-        "Успешно созданы ${ successfullyCreatedUsers.length } учетных записи"
+        "Успешно создан ${ successfullyCreatedUsers.length } аккаунт",
+        "Успешно созданы ${ successfullyCreatedUsers.length } аккаунта",
+        "Успешно созданы ${ successfullyCreatedUsers.length } аккаунта",
+        "Успешно созданы ${ successfullyCreatedUsers.length } аккаунта"
       ],
       "Switch to one-password mode": [
         "Переключить в режим с одним паролем"

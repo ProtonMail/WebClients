@@ -161,6 +161,9 @@
       "Get ${ vpnPlus }": [
         "Получить ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Получение нового зашифрованного адреса электронной почты"
+      ],
       "Get verification code": [
         "Получить проверочный код"
       ],
@@ -362,6 +365,9 @@
       "Use recovery code": [
         "Использовать код восстановления"
       ],
+      "Use your current email instead": [
+        "Используйте свою текущую электронную почту"
+      ],
       "User": [
         "Пользователь"
       ],
@@ -430,8 +436,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Приложения Proton"
+      "${ BRAND_NAME } applications": [
+        "Приложения ${ BRAND_NAME }"
       ]
     },
     "Badge": {
@@ -1446,8 +1452,8 @@
       "Bugs or quality issue": [
         "Ошибки или проблемы с качеством"
       ],
-      "I use a different Proton account": [
-        "Я использую другую учетную запись Proton"
+      "I use a different ${ BRAND_NAME } account": [
+        "Я использую другой аккаунт ${ BRAND_NAME }"
       ],
       "Missing feature(s)": [
         "Не хватает функции(й)"
@@ -1629,8 +1635,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
       ],
-      "There was a problem connecting to Proton.": [
-        "Возникла проблема при подключении к Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Возникла проблема при подключении к ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Вы также можете ${ refresh } или повторить попытку позже."
@@ -1757,8 +1763,8 @@
     "file size format": {
       "byte": [
         "байт",
-        "байт",
-        "байты",
+        "байта",
+        "байтов",
         "байтов"
       ],
       "GB": [
@@ -1774,7 +1780,7 @@
     "file size format, long": {
       "Byte": [
         "Байт",
-        "Байтов",
+        "Байта",
         "Байтов",
         "Байтов"
       ],
@@ -1786,7 +1792,7 @@
       ],
       "Kilobyte": [
         "Килобайт",
-        "Килобайтов",
+        "Килобайта",
         "Килобайтов",
         "Килобайтов"
       ],
@@ -1859,7 +1865,7 @@
         "Нет доступных способов проверки"
       ],
       "SMS": [
-        "Короткое сообщение на телефон"
+        "SMS"
       ]
     },
     "Info": {
@@ -1868,6 +1874,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } можно также использовать с одним паролем, который заменяет и логин, и пароль почтового ящика. Чтобы перейти в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
@@ -2007,8 +2016,8 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через Proton в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
       ],
       "Emailing preference saved": [
         "Настройки отправки почты сохранены"
@@ -2184,6 +2193,9 @@
       "of": [
         "из"
       ],
+      "One account. All ${ BRAND_NAME } services.": [
+        "Один аккаунт. Все службы ${ BRAND_NAME }."
+      ],
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
       ],
@@ -2234,9 +2246,6 @@
       ],
       "Priority support": [
         "Приоритетная поддержка"
-      ],
-      "Proton's encryption technology means that nobody can access your password - not even us.": [
-        "Технология шифрования Proton значит, что ни у кого нет доступа к Вашему паролю – даже у нас."
       ],
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
@@ -2316,8 +2325,8 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Это приведет к отмене вашей текущей платной подписки, и вы потеряете все накопленные вами преимущества лояльности. Оставшаяся сумма подписки будет возвращена в виде остатка на счету."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Это позволит вам оплачивать подписку на Proton через PayPal. Мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-нибудь блокировщиками всплывающих окон, пожалуйста, временно отключите их перед тем, как продолжить."
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Это позволит использовать PayPal для оплаты подписки на ${ BRAND_NAME }. Мы перенаправим вас на PayPal в новой вкладке браузера. Если вы используете какие-либо блокировщики всплывающих окон, пожалуйста, отключите их, чтобы продолжить."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Это приведет к окончательному удалению вашего аккаунта и всех его данных. Вы не сможете повторно активировать этот аккаунт."
@@ -2328,8 +2337,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Это выведет вас из всех активных сеансов и отключит двухфакторную аутентификацию."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Этот мастер поможет включить двухфакторную аутентификацию (2ФА) для вашей учётной записи Proton. Мы рекомендуем сделать это, так как двухфакторная аутентификация повышает безопасность учётной записи."
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "Этот мастер включит двухфакторную аутентификацию (2FA) для вашей учетной записи ${ BRAND_NAME }. Двухфакторная аутентификация сделает ваш аккаунт ${ BRAND_NAME } более безопасным, поэтому мы рекомендуем включить ее."
       ],
       "to continue to ${ toAppName }": [
         "чтобы продолжить в ${ toAppName }"
@@ -2337,14 +2346,17 @@
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Чтобы быть в курсе последних разработок продуктов Proton, вы можете подписаться на различные наши рассылки и время от времени посещать наш блог."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Чтобы быть в курсе последних событий, касающихся продукции ${ BRAND_NAME }, вы можете подписаться на наши разнообразные электронные письма и время от времени посещать наш блог."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Чтобы продолжить, выберите метод восстановления аккаунта, чтобы мы могли проверить запрос."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Чтобы защитить свое подключение к Интернету, скачайте и установите приложение ${ VPN_APP_NAME } для своего устройства и подключитесь к серверу."
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "использовать ${ toAppName } и все службы ${ BRAND_NAME }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Пополняйте свой счет кредитами, которые вы можете использовать для подписки на новый тариф или продления своего текущего тарифа. Вы получаете один кредит за каждый потраченный ${ i18nCurrency }."
@@ -2460,6 +2472,9 @@
       "Why?": [
         "Почему?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Имея зашифрованный адрес ${ BRAND_NAME }, вы можете пользоваться всеми услугами ${ BRAND_NAME }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
       ],
@@ -2523,6 +2538,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Скоро Вы будете перенаправлены на сайт вашего банка для проверки оплаты."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Вам понадобится адрес ${ BRAND_NAME } для использования ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
@@ -2531,6 +2549,9 @@
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Ваш аккаунт ${ BRAND_NAME } связан с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, вам необходим адрес ${ MAIL_APP_NAME }."
+      ],
+      "Your ${ BRAND_NAME } account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Для продолжения использования вашего аккаунта, оплатите все просроченные счета."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны между собой. Чтобы удалить оба из них, войдите в систему по ссылке: ${ loginLink } и удалите по ней свой аккаунт."
@@ -2558,9 +2579,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ваш аккаунт в Proton в настоящее время приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите все просроченные счета."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
@@ -2664,6 +2682,9 @@
     "Label": {
       "${ BRAND_NAME } email or username": [
         "${ BRAND_NAME } электронная почта или имя пользователя"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } имя пользователя"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Используется ${ humanUsedSpace } из ${ humanMaxSpace }"
@@ -2908,9 +2929,6 @@
       "Proration": [
         "Пропорциональное распределение"
       ],
-      "Proton username": [
-        "Имя пользователя в Proton"
-      ],
       "Recovery email address": [
         "Резервный адрес электронной почты"
       ],
@@ -2978,6 +2996,26 @@
     "label": {
       "Recovery phone number": [
         "Номер телефона для восстановления"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } бета-объявления"
+      ],
+      "${ BRAND_NAME } company announcements": [
+        "Объявления компании ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } для бизнес-рассылки"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } рассылка"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } предложения и акции"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Объявления о продукции ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {
@@ -3434,8 +3472,8 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Применяемые кредиты, пропорциональное распределение и купоны будут применены на следующем шаге"
       ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        "Комплексная конфиденциальность и безопасность со всеми службами Proton вместе взятыми."
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Комплексная конфиденциальность и безопасность со всеми услугами ${ BRAND_NAME } вместе взятыми."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Если вы удалите аккаунт, то потеряете все преимущества тарифа ${ visionary } и он не будет доступен, если вы создадите новый аккаунт."
@@ -3452,8 +3490,8 @@
       "Popular": [
         "Популярный"
       ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        "Пакет обеспечения конфиденциальности и безопасности для предприятий, включающий все платные услуги Proton."
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Пакет обеспечения конфиденциальности и безопасности для бизнеса, включающий все платные услуги ${ BRAND_NAME }."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Защищенное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
@@ -3487,11 +3525,11 @@
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
       ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Перейдите на пакет для бизнеса с доступом ко всем платным услугам ${ BRAND_NAME }."
       ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Улучшите пакет для обеспечения максимальной конфиденциальности и получите доступ ко всем платным услугам ${ BRAND_NAME }."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
@@ -3554,8 +3592,8 @@
       "Review subscription and pay": [
         "Выберите подписку и оплатите"
       ],
-      "Start exploring the Proton universe": [
-        "Начните исследовать вселенную Proton"
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "Начните изучать вселенную ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Сменить тариф?"
@@ -3594,8 +3632,8 @@
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Контролируйте доступ к общим файлам, добавляя защиту паролем и даты истечения срока действия ссылок"
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Создайте несколько адресов электронной почты для своих сетевых личных данных, например, IvanPokupki@proton.me для аккаунтов, связанных с покупками, а IvanNovosti@proton.me для подписки на новости"
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, JohnShopper@${ domain } для учетных записей покупок, JohnNews@${ domain } для подписки на новости"
       ],
       "Create up to ${ n } custom calendar.": [
         "Создайте до ${ n } пользовательского календаря.",
@@ -3636,8 +3674,8 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Управляйте своей подпиской, включая настройку вашего тарифа. Принимаются следующие способы оплаты: кредитная карта, PayPal, криптовалюта и банковский перевод."
       ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        "В рабочие дни получайте помощь от службы поддержки клиентов Proton в течение 24 часов после поступления запроса"
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "В рабочие дни получайте помощь от Службы Поддержки Клиентов ${ BRAND_NAME } в течение 24 часов после поступления запроса"
       ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "Кроме того, можно добавить до 5 календарей коллег, организаций, семьи и друзей."
@@ -3645,8 +3683,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Кроме того, можно добавить до 5 календарей коллег, организаций, семьи и друзей."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
-        "Одно подключение к VPN позволяет одному устройству подключаться к Proton VPN в любой момент времени. Например, для одновременного подключения телефона и ноутбука к Proton VPN вам потребуется два подключения к VPN."
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
+        "Одно подключение к VPN позволяет одному устройству подключаться к ${ BRAND_NAME } VPN в любой момент времени. Например, чтобы подключить телефон и ноутбук к ${ BRAND_NAME } VPN одновременно, необходимо два подключения к VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просмотра публичных папок входящих сообщений пользователей, как это делает сам пользователь, включая полную информацию о сообщениях и контактах"
@@ -3663,8 +3701,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персонализируйте свою подпись электронной почты с помощью логотипов, изображений, значков социальных сетей, ссылок на контактную информацию и т. д."
       ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        "Поддержка по телефону предоставляется командой поддержки клиентов Proton в рабочее время в Европе для клиентов с 6 и более пользователями"
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "Поддержка по телефону предоставляется командой поддержки клиентов ${ BRAND_NAME } в рабочее время в Европе для клиентов с 6 и более пользователями"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Ограничивает доступ к сообщениям для ${ BRAND_NAME } или третьей стороны. Читать сообщения могут только отправитель и предполагаемый получатель."
@@ -3687,8 +3725,8 @@
       "Route your internet traffic through the Tor network with a single click": [
         "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Храните в защищенном виде данные своих контактов, такие как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже Proton не сможет получить к ним доступ."
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Защищенное хранение данных контактов, таких как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже ${ BRAND_NAME } не сможет получить к ним доступ."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Быстро и легко отправляйте электронные письма большим группам, создавая необходимое количество групп контактов (до 100 контактов в каждой группе)"
@@ -3806,8 +3844,8 @@
       "I found another service that I like better": [
         "Я нашел другую службу, которая мне нравится больше"
       ],
-      "I use a different Proton account": [
-        "Я использую другой аккаунт Proton"
+      "I use a different ${ BRAND_NAME } account": [
+        "Я использую другой аккаунт ${ BRAND_NAME }"
       ],
       "iOS": [
         "iOS"
@@ -4221,11 +4259,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Мы снова предлагаем скидку на подписку Visionary, но предложение ограничено!"
       ],
-      "Save more with 1 year of Proton Unlimited": [
-        "Экономьте с годовой подпиской на Proton Unlimited"
+      "Save more with 1 year of ${ planName }": [
+        "Сэкономьте с тарифом ${ planName } на 1 год"
       ],
-      "Upgrade and save more with Proton Unlimited": [
-        "Перейдите на Proton Unlimited и экономьте"
+      "Upgrade and save more with ${ planName }": [
+        "Перейдите на тариф ${ planName } со скидкой"
       ]
     },
     "specialoffer: Tooltip": {
@@ -4267,8 +4305,8 @@
       "Get up to ${ credits } in credits.": [
         "Вы можете получить до ${ credits } в кредитах."
       ],
-      "Invite friends to Proton": [
-        "Пригласите друзей в Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Пригласите друзей на ${ BRAND_NAME }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Попробуйте ${DRIVE_APP_NAME}"
@@ -4396,8 +4434,8 @@
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Почта и календарь - это решение для повседневных коммуникаций с приоритетом конфиденциальности."
       ],
-      "This offer is for those new to Proton only. No credit card required.": [
-        "Это предложение только для новичков в Proton. Кредитная карта не требуется."
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "Это предложение только для новичков в ${ BRAND_NAME }. Кредитная карта не требуется."
       ]
     },
     "Success": {
@@ -4616,8 +4654,8 @@
       "Confirm downgrade": [
         "Подтвердите переход на более дешевую версию тарифа"
       ],
-      "Confirm loss of Proton bonuses": [
-        "Подтвердите потерю бонусов Proton"
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "Подтвердите потерю бонусов ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Подтвердите номер телефона"
@@ -4874,8 +4912,8 @@
       "WireGuard configuration": [
         "Конфигурация WireGuard"
       ],
-      "You already have a Proton account": [
-        "У вас уже есть аккаунт Proton"
+      "You already have a ${ BRAND_NAME } account": [
+        "У вас уже есть аккаунт ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"
@@ -4886,8 +4924,8 @@
       "Your plan": [
         "Ваш тариф"
       ],
-      "You’ve been invited to try ${ mailAppName }": [
-        "Вас пригласили попробовать ${ mailAppName }"
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Вас пригласили попробовать ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
         "Почтовый индекс"

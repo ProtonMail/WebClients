@@ -436,8 +436,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Aplikacje Proton"
+      "${ BRAND_NAME } applications": [
+        "Aplikacje ${ BRAND_NAME }"
       ]
     },
     "Badge": {
@@ -1452,8 +1452,8 @@
       "Bugs or quality issue": [
         "Błędy lub problemy z jakością usługi"
       ],
-      "I use a different Proton account": [
-        "Korzystam z innego konta Proton"
+      "I use a different ${ BRAND_NAME } account": [
+        "Używam innego konta ${ BRAND_NAME }"
       ],
       "Missing feature(s)": [
         "Brakujące funkcje"
@@ -1635,8 +1635,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Coś poszło nie tak. Odśwież stronę lub spróbuj ponownie później."
       ],
-      "There was a problem connecting to Proton.": [
-        "Wystąpił problem z połączeniem z usługą Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Wystąpił problem z połączeniem z usługą ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "${ refresh } lub spróbuj ponownie później."
@@ -1875,6 +1875,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Jeśli to zrobisz, stracisz dostęp do wszystkich obecnie zaszyfrowanych danych."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje Twoje hasło logowania oraz skrzynki pocztowej. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
       ],
@@ -2013,8 +2016,8 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Poczta e-mail dla 10 niestandardowych domen za darmo. Dodatkowe domeny możesz dodać za ${ price }."
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        "Poczta e-mail jest dostępna tylko dla Twoich domen. Rejestracja domeny przez Proton nie jest obecnie dostępna. Możesz uzyskać pocztę dla domeny zarejestrowanej u dowolnego dostawcy."
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Poczta e-mail jest dostępna tylko dla Twoich domen. Rejestracja domeny przez ${ BRAND_NAME } nie jest obecnie dostępna. Możesz uzyskać pocztę dla domeny zarejestrowanej u dowolnego dostawcy."
       ],
       "Emailing preference saved": [
         "Ustawienia list mailingowych zostały zapisane"
@@ -2244,9 +2247,6 @@
       "Priority support": [
         "Priorytetowe wsparcie"
       ],
-      "Proton's encryption technology means that nobody can access your password - not even us.": [
-        "Technologia szyfrowania Proton oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
-      ],
       "read our two-factor authentication guide first": [
         "wcześniejsze zapoznanie się z naszym przewodnikiem"
       ],
@@ -2325,8 +2325,8 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych. Pozostałe środki subskrypcji zostaną zwrócone na Twoje konto w postaci środków."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję Proton. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję ${ BRAND_NAME }. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ta czynność spowoduje trwałe usunięcie konta. Nie będziesz mógł reaktywować tego konta."
@@ -2337,8 +2337,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ta czynność spowoduje wylogowanie z każdej aktywnej sesji i wyłączenie uwierzytelniania dwustopniowego."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie Proton. Ta funkcja poprawi bezpieczeństwo Twojego konta, dlatego zalecamy włączenie tej opcji."
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie ${ BRAND_NAME }. Ta funkcja poprawi bezpieczeństwo Twojego konta, dlatego zalecamy włączenie tej opcji."
       ],
       "to continue to ${ toAppName }": [
         "i przejdź do aplikacji ${ toAppName }"
@@ -2346,8 +2346,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
       ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Aby na bieżąco śledzić rozwój usług Proton, możesz zapisać się do naszych list mailingowych, a także okazjonalnie odwiedzać naszego bloga."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Aby na bieżąco śledzić rozwój usług ${ BRAND_NAME }, możesz zapisać się do naszych list mailingowych, a także okazjonalnie odwiedzać naszego bloga."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Aby kontynuować, wybierz metodę odzyskiwania konta, abyśmy mogli zweryfikować żądanie."
@@ -2550,6 +2550,9 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres ${ MAIL_APP_NAME }, aby korzystać z usługi ${ toAppName }."
       ],
+      "Your ${ BRAND_NAME } account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Konto ${ BRAND_NAME } zostało zawieszone. Ureguluj zobowiązania."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Twoje konta ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } są połączone. Aby je usunąć, zaloguj się na ${ loginLink } i usuń konto."
       ],
@@ -2576,9 +2579,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Twoje konto Proton jest obecnie zawieszone. Ureguluj zobowiązania."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
@@ -2682,6 +2682,9 @@
     "Label": {
       "${ BRAND_NAME } email or username": [
         "Adres e-mail lub nazwa użytkownika ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } username": [
+        "Nazwa użytkownika ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -2925,9 +2928,6 @@
       ],
       "Proration": [
         "Dzielenie proporcjonalne"
-      ],
-      "Proton username": [
-        "Nazwa użytkownika Proton"
       ],
       "Recovery email address": [
         "Adres pomocniczy"
@@ -3472,8 +3472,8 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Środki, dzielenie proporcjonalne i kupony zostaną zastosowane w następnym kroku"
       ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług Proton."
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług ${ BRAND_NAME }."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Jeśli usuniesz konto, stracisz wszystkie zalety planu ${ visionary }, które nie będą dostępne przy tworzeniu nowego konta."
@@ -3490,8 +3490,8 @@
       "Popular": [
         "Popularny"
       ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        "Pakiet dla biznesów w zakresie prywatności i bezpieczeństwa, w tym wszystkie usługi Proton premium."
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Pakiet dla biznesów w zakresie prywatności i bezpieczeństwa, w tym wszystkie usługi ${ BRAND_NAME } premium."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpieczna przestrzeń dyskowa w chmurze, w której możesz przechowywać, synchronizować i udostępniać pliki w łatwy sposób."
@@ -3525,11 +3525,11 @@
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
       ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Ulepsz do pakietu biznesowego z dostępem do wszystkich usług Proton premium."
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Ulepsz do pakietu biznesowego z dostępem do wszystkich usług ${ BRAND_NAME } premium."
       ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Ulepsz do najwyższego pakietu prywatności i uzyskaj dostęp do wszystkich usług Proton premium."
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Ulepsz do najwyższego pakietu prywatności i uzyskaj dostęp do wszystkich usług ${ BRAND_NAME } premium."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Wersja próbna zakończy się ${ formattedTrialExpirationDate }"
@@ -3592,8 +3592,8 @@
       "Review subscription and pay": [
         "Przejrzyj subskrypcję i zapłać"
       ],
-      "Start exploring the Proton universe": [
-        "Zacznij odkrywać świat Proton"
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "Zacznij odkrywać świat ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Zmienić plany?"
@@ -3632,8 +3632,8 @@
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontroluj dostęp do udostępnionych plików, dodając zabezpieczenie hasłem i datę wygaśnięcia linku"
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@proton.me dla kont zakupowych i JanWiadomości@proton.me dla subskrybowania wiadomości"
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain } dla subskrybowania wiadomości"
       ],
       "Create up to ${ n } custom calendar.": [
         "Utwórz do ${ n } niestandardowego kalendarza.",
@@ -3674,8 +3674,8 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Zarządzaj subskrypcją i dostosuj plan. Akceptowanymi metodami płatności są karty kredytowe, konto PayPal, kryptowaluty i przelewy bankowe."
       ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        "W dni robocze otrzymasz odpowiedź od zespołu wsparcia klienta Proton w ciągu 24 godzin od zgłoszenia"
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "W dni robocze otrzymasz odpowiedź od zespołu wsparcia klienta ${ BRAND_NAME } w ciągu 24 godzin od zgłoszenia"
       ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "Ponadto możesz dodać do 5 kalendarzy od współpracowników, organizacji, rodziny i znajomych."
@@ -3683,8 +3683,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Ponadto możesz dodać do 5 kalendarzy od znajomych, rodziny, współpracowników i organizacji."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
-        "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą Proton VPN w danym momencie. Na przykład, aby podłączyć telefon i laptop do Proton VPN w tym samym czasie, potrzebujesz 2 połączenia VPN."
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
+        "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą ${ BRAND_NAME } VPN w danym momencie. Na przykład, aby podłączyć telefon i laptop do ${ BRAND_NAME } VPN w tym samym czasie, potrzebujesz 2 połączenia VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Możliwość przeglądania służbowych skrzynek odbiorczych użytkowników w taki sam sposób, w jaki robi to użytkownik, łącznie z pełnymi wiadomościami i szczegółami kontaktu"
@@ -3701,8 +3701,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
       ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 6 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta Proton"
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 6 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta ${ BRAND_NAME }"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
@@ -3725,8 +3725,8 @@
       "Route your internet traffic through the Tor network with a single click": [
         "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia"
       ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Bezpiecznie przechowuj szczegóły kontaktów, takie jak numer telefonu, adres, datę urodzin i osobiste notatki. Szyfrowanie po stronie klienta zapewnia, że nawet Proton nie ma do nich dostępu."
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Bezpiecznie przechowuj szczegóły kontaktów, takie jak numer telefonu, adres, datę urodzin i osobiste notatki. Szyfrowanie po stronie klienta zapewnia, że nawet ${ BRAND_NAME } nie ma do nich dostępu."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Wysyłaj wiadomości do dużych grup szybko i łatwo, tworząc tyle grup kontaktów, ile potrzebujesz (do 100 kontaktów na grupę)"
@@ -3844,8 +3844,8 @@
       "I found another service that I like better": [
         "Znalazłem inną, lepszą usługę"
       ],
-      "I use a different Proton account": [
-        "Korzystam z innego konta Proton"
+      "I use a different ${ BRAND_NAME } account": [
+        "Używam innego konta ${ BRAND_NAME }"
       ],
       "iOS": [
         "iOS"
@@ -4258,12 +4258,6 @@
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
         "Nasz wycofany z dystrybucji plan Visionary powrócił na czas ograniczony"
-      ],
-      "Save more with 1 year of Proton Unlimited": [
-        "Zaoszczędź więcej dzięki rocznej subskrypcji Proton Unlimited"
-      ],
-      "Upgrade and save more with Proton Unlimited": [
-        "Uaktualnij i zaoszczędź więcej dzięki Proton Unlimited"
       ]
     },
     "specialoffer: Tooltip": {
@@ -4305,8 +4299,8 @@
       "Get up to ${ credits } in credits.": [
         "Uzyskaj do ${ credits }."
       ],
-      "Invite friends to Proton": [
-        "Zaproś znajomych do usługi Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Zaproś znajomych do usługi ${ BRAND_NAME }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Wypróbuj ${ DRIVE_APP_NAME }"
@@ -4434,8 +4428,8 @@
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Prywatna poczta i kalendarz do codziennej komunikacji."
       ],
-      "This offer is for those new to Proton only. No credit card required.": [
-        "Oferta dla nowych użytkowników usług Proton. Karta płatnicza nie jest wymagana."
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "Oferta dla nowych użytkowników usług ${ BRAND_NAME }. Karta płatnicza nie jest wymagana."
       ]
     },
     "Success": {
@@ -4654,8 +4648,8 @@
       "Confirm downgrade": [
         "Potwierdź obniżenie planu"
       ],
-      "Confirm loss of Proton bonuses": [
-        "Potwierdź utratę Proton bonusów"
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "Potwierdź utratę ${ BRAND_NAME } bonusów"
       ],
       "Confirm phone number": [
         "Potwierdź numer telefonu"
@@ -4912,8 +4906,8 @@
       "WireGuard configuration": [
         "Konfiguracja WireGuard"
       ],
-      "You already have a Proton account": [
-        "Posiadasz już konto Proton"
+      "You already have a ${ BRAND_NAME } account": [
+        "Masz już konto ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
@@ -4924,8 +4918,8 @@
       "Your plan": [
         "Twój plan"
       ],
-      "You’ve been invited to try ${ mailAppName }": [
-        "Otrzymujesz zaproszenie do wypróbowania poczty ${ mailAppName }"
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Otrzymujesz zaproszenie do wypróbowania poczty ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
         "Kod pocztowy"

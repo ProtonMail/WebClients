@@ -3387,6 +3387,14 @@
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участника",
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участников",
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участников",
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участников"
+      ]
+    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "Черновики нельзя переместить в папку Входящие"
@@ -4314,6 +4322,12 @@
         "${ contactEmailsLength } адресатов",
         "${ contactEmailsLength } адресатов"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } участник)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } участника)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } участников)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } участников)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } контакт содержит несколько адресов электронной почты."
       ],
@@ -4367,6 +4381,12 @@
         "${ numContacts } контактов",
         "${ numContacts } контактов",
         "${ numContacts } контакт(а,ов)"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } сообщение в цепочке писем",
+        "${ NumMessages } сообщения в цепочке писем",
+        "${ NumMessages } сообщений в цепочке писем",
+        "${ NumMessages } сообщений в цепочке писем"
       ],
       "${ numOccurrences } occurrence found": [
         "Найдено ${ numOccurrences } повторение",
