@@ -8,10 +8,10 @@ type Options = Parameters<typeof formatDate>[2];
  * ** Hours and minutes if the UNIX timestamp is from the same day,
  * ** Day, month and year otherwise
  */
-export const readableTime = (unixTime: number, format = 'PP', options?: Options) => {
+export const readableTime = (unixTime: number, format = 'PP', options?: Options, forceFormat = false) => {
     const date = fromUnixTime(unixTime);
 
-    if (isSameDay(date, Date.now())) {
+    if (isSameDay(date, Date.now()) && !forceFormat) {
         return formatDate(date, 'p', options);
     }
 
