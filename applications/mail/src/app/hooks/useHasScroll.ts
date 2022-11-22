@@ -1,6 +1,7 @@
 import { RefObject, useEffect, useState } from 'react';
 
 import { useHandler } from '@proton/components';
+import debounce from '@proton/utils/debounce';
 
 export const useHasScroll = (ref: RefObject<HTMLElement>) => {
     const [hasVerticalScrollbar, setHasVerticalScrollbar] = useState(false);
@@ -23,13 +24,13 @@ export const useHasScroll = (ref: RefObject<HTMLElement>) => {
         if (!element) {
             return;
         }
-
-        element.addEventListener('resize', handleResize);
+        const debouncedHandleResize = debounce(handleResize, 100);
+        element.addEventListener('resize', debouncedHandleResize);
         // Must add an observer because nor resize or scroll event are enough
-        const observer = new MutationObserver(handleResize);
+        const observer = new MutationObserver(debouncedHandleResize);
         observer.observe(element, { attributes: true, childList: true, subtree: true });
         return () => {
-            element.removeEventListener('resize', handleResize);
+            element.removeEventListener('resize', debouncedHandleResize);
             observer.disconnect();
         };
     }, []);
