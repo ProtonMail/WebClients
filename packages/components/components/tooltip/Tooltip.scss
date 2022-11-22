@@ -8,6 +8,7 @@
 	z-index: $layer-tooltips;
 	min-inline-size: $arrow-width;
 	max-inline-size: $tooltip-width;
+	scale: 1.001; // To avoid text jittering
 	border-radius: var(--border-radius-md);
 	background-color: var(--tooltip-background-color);
 	color: var(--tooltip-text-color);
@@ -18,23 +19,23 @@
 	animation-fill-mode: both;
 
 	&-in-first {
-		animation: anime-tooltip-in-first 0.15s easing(ease-out-quart);
+		animation: anime-tooltip-in-first 0.2s easing(ease-out-quart);
 
 		@keyframes anime-tooltip-in-first {
 			from {
-				scale: 1.2;
+				scale: 0.9;
 				opacity: 0;
 			}
 
 			to {
-				scale: 1;
+				scale: 1.001; // To avoid text jittering
 				opacity: 1;
 			}
 		}
 	}
 
 	&-in {
-		animation: anime-tooltip-in 0.1s easing(ease-in-quint);
+		animation: anime-tooltip-in 0.15s easing(ease-in-quad);
 
 		@keyframes anime-tooltip-in {
 			from {
@@ -48,7 +49,7 @@
 	}
 
 	&-out {
-		animation: anime-tooltip-out 0.1s easing(ease-out-quint);
+		animation: anime-tooltip-out 0.15s easing(ease-out-quad);
 
 		@keyframes anime-tooltip-out {
 			from {
@@ -62,16 +63,16 @@
 	}
 
 	&-out-last {
-		animation: anime-tooltip-out-last 0.3s easing(ease-in-expo);
+		animation: anime-tooltip-out-last 0.35s easing(ease-in-expo);
 
 		@keyframes anime-tooltip-out-last {
 			from {
-				scale: 1;
+				scale: 1.001; // To avoid text jittering
 				opacity: 1;
 			}
 
 			to {
-				scale: 0.8;
+				scale: 0.9;
 				opacity: 0;
 			}
 		}
