@@ -5,6 +5,7 @@
 	z-index: $layer-notifications;
 	transform: translateX(-50%);
 	transition: all 1s ease;
+	filter: drop-shadow(var(--shadow-lifted));
 
 	@at-root {
 		[dir='rtl'] & {
@@ -20,7 +21,6 @@
 	align-items: center;
 	overflow: hidden;
 	border-radius: var(--border-radius-lg);
-	box-shadow: var(--shadow-lifted);
 	background-color: var(--background-invert);
 	color: var(--text-invert);
 	inline-size: max-content;
@@ -28,7 +28,7 @@
 	padding-block: em(8);
 	padding-inline: em(12) em(4);
 	transform: translateX(-50%);
-	transition: inset-block-end 0.3s ease;
+	transition: inset-block-end 0.35s easing(ease-out-quad);
 
 	@at-root {
 		[dir='rtl'] & {
@@ -94,17 +94,16 @@
 	}
 
 	&--in {
-		animation-duration: 0.3s;
-		animation-delay: 0.3s;
+		animation-duration: 0.4s;
 		animation-fill-mode: both;
-		animation-timing-function: ease;
+		animation-timing-function: easing(ease-out-quad);
 		animation-name: anime-notification-in;
 	}
 
 	&--out {
 		animation-duration: 0.3s;
 		animation-fill-mode: both;
-		animation-timing-function: ease;
+		animation-timing-function: easing(ease-in-quad);
 		animation-name: anime-notification-out;
 	}
 
@@ -118,7 +117,7 @@
 @keyframes anime-notification-in {
 	0% {
 		opacity: 0;
-		transform: translateY(50%);
+		transform: translateY(60%);
 	}
 
 	100% {
@@ -135,7 +134,7 @@
 
 	100% {
 		opacity: 0;
-		transform: translateY(-50%);
+		transform: translateY(-20%);
 	}
 }
 
