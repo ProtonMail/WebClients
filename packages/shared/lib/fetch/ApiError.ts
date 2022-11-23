@@ -55,14 +55,23 @@ export const deserializeApiErrorData = ({
     return error;
 };
 
+export enum CUSTOM_FETCH_ERROR_STATUS_CODE {
+    NO_NETWORK_CONNECTION = 0,
+    TIMEOUT = -1,
+}
+
 export const createOfflineError = (config: any) => {
-    const error = new ApiError('No network connection', 0, 'OfflineError');
+    const error = new ApiError(
+        'No network connection',
+        CUSTOM_FETCH_ERROR_STATUS_CODE.NO_NETWORK_CONNECTION,
+        'OfflineError'
+    );
     error.config = config;
     return error;
 };
 
 export const createTimeoutError = (config: any) => {
-    const error = new ApiError('Request timed out', -1, 'TimeoutError');
+    const error = new ApiError('Request timed out', CUSTOM_FETCH_ERROR_STATUS_CODE.TIMEOUT, 'TimeoutError');
     error.config = config;
     return error;
 };
