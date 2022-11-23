@@ -78,7 +78,7 @@ const Marks = ({ children: text, chunks }: Props) => {
                     );
                 }
                 return insert;
-            }, [])}
+            })}
         </>
     );
 };

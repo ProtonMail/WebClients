@@ -70,17 +70,17 @@ const ItemRowLayout = ({
                 : highlightData
                 ? highlightMetadata(senders, unread, true).resultJSX
                 : senders,
-        [loading, displayRecipients, senders, highlightData]
+        [loading, displayRecipients, senders, highlightData, highlightMetadata, unread]
     );
     const subjectContent = useMemo(
         () => (highlightData && Subject ? highlightMetadata(Subject, unread, true).resultJSX : Subject),
-        [Subject, highlightData]
+        [Subject, highlightData, highlightMetadata, unread]
     );
 
     const { resultJSX, numOccurrences } = useMemo(
         () =>
             body && highlightData ? highlightMetadata(body, unread, true) : { resultJSX: undefined, numOccurrences: 0 },
-        [body, unread]
+        [body, unread, highlightData, highlightMetadata]
     );
     const bodyTitle = c('Info').ngettext(
         msgid`${numOccurrences} occurrence found`,
