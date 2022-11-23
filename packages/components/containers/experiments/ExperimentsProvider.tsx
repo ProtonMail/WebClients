@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { getExperiments } from '@proton/shared/lib/api/experiments';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
@@ -82,7 +83,7 @@ const getExperimentsFromCookie = () => {
 
 const ExperimentsProvider = ({ children }: Props) => {
     const api = useApi();
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
+    const silentApi = getSilentApi(api);
     const [experiments, setExperiments] = useState<{ [key in ExperimentCode]?: string }>(getExperimentsFromCookie());
     const [loading, setLoading] = useState(true);
     const codePromiseCacheRef = useRef<Promise<void> | undefined>();

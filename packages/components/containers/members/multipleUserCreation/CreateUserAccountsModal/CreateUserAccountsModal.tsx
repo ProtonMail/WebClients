@@ -28,6 +28,7 @@ import {
     useOrganization,
     useOrganizationKey,
 } from '@proton/components';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { DOMAIN_STATE } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
@@ -87,7 +88,6 @@ interface Props extends ModalProps {
 
 const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => {
     const api = useApi();
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
     const getAddresses = useGetAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
@@ -208,7 +208,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             try {
                 await createUser({
                     user,
-                    api: silentApi,
+                    api: getSilentApi(api),
                     getAddresses,
                     organizationKey: organizationKey.privateKey,
                 });

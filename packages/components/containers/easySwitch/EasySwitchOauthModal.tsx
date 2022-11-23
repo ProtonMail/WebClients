@@ -14,6 +14,7 @@ import {
     startImportTask,
 } from '@proton/shared/lib/api/easySwitch';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getPersonalCalendars, getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
@@ -106,7 +107,7 @@ const EasySwitchOauthModal = ({
     const isCurrentLocationImportPage = IA_PATHNAME_REGEX.test(location.pathname);
     const settingsLink = useSettingsLink();
     const api = useApi();
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
+    const silentApi = getSilentApi(api);
     const { call } = useEventManager();
     const errorHandler = useErrorHandler();
     const [importError, setImportError] = useState<[ImportType, IMPORT_ERROR][]>([]);

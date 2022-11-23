@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 
+import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { getContact, queryContactExport } from '../../api/contacts';
@@ -73,7 +74,7 @@ export const exportContactsFromLabel = async (
     callbackSuccess: (contactContent: string) => void,
     callbackFailure: (contactID: string) => void
 ) => {
-    const apiWithAbort = (config: any) => api({ ...config, signal });
+    const apiWithAbort = getApiWithAbort(api, signal);
     const apiCalls = Math.ceil(count / QUERY_EXPORT_MAX_PAGESIZE);
     const results = { success: [] as string[], failures: [] as string[] };
 
