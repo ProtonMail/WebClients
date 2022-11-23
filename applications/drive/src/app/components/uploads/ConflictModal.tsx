@@ -19,6 +19,7 @@ import { TransferConflictStrategy } from '../../store';
 export interface ConflictModalProps {
     name: string;
     isFolder?: boolean;
+    originalIsDraft?: boolean;
     originalIsFolder?: boolean;
     apply: (strategy: TransferConflictStrategy, all: boolean) => void;
     cancelAll: () => void;
@@ -42,6 +43,7 @@ export interface ConflictModalProps {
 export default function ConflictModal({
     name,
     isFolder = false,
+    originalIsDraft = false,
     originalIsFolder = false,
     apply,
     cancelAll,
@@ -58,6 +60,8 @@ export default function ConflictModal({
             {name}
         </strong>
     );
+
+    const replaceFile = <strong key="replaceFile">{c('Action').t`Replace file`}</strong>;
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -77,7 +81,10 @@ export default function ConflictModal({
             />
             <ModalTwoContent>
                 <p>
-                    {c('Info').jt`${uploadName} already exists in this location.`}
+                    {originalIsDraft
+                        ? c('Info')
+                              .jt`It looks like you recently tried to upload ${uploadName}. If the upload failed, please ${replaceFile}. If the upload is still in progress, replacing it will cancel the ongoing upload.`
+                        : c('Info').jt`${uploadName} already exists in this location.`}
                     <br />
                     {c('Info').t`What do you want to do?`}
                 </p>

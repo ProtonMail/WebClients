@@ -56,7 +56,7 @@ export default function useUploadConflict(
             conflictStrategyRef: React.MutableRefObject<{ [id: string]: TransferConflictStrategy }>,
             uploadId: string
         ): ConflictStrategyHandler => {
-            return (abortSignal, originalIsFolder) => {
+            return (abortSignal, originalIsDraft, originalIsFolder) => {
                 const getStrategy = (): TransferConflictStrategy | undefined => {
                     return (
                         conflictStrategyRef.current[CONFLICT_STRATEGY_ALL_ID] || conflictStrategyRef.current[uploadId]
@@ -67,7 +67,7 @@ export default function useUploadConflict(
                 if (strategy) {
                     return Promise.resolve(strategy);
                 }
-                updateWithData(uploadId, TransferState.Conflict, { originalIsFolder });
+                updateWithData(uploadId, TransferState.Conflict, { originalIsDraft, originalIsFolder });
 
                 return new Promise((resolve, reject) => {
                     waitUntil(() => !!getStrategy(), abortSignal)
@@ -101,7 +101,7 @@ export default function useUploadConflict(
     const openConflictStrategyModal = (
         uploadId: string,
         conflictStrategyRef: React.MutableRefObject<{ [id: string]: TransferConflictStrategy }>,
-        params: { name: string; isFolder?: boolean; originalIsFolder?: boolean }
+        params: { name: string; isFolder?: boolean; originalIsDraft?: boolean; originalIsFolder?: boolean }
     ) => {
         isConflictStrategyModalOpen.current = true;
 
@@ -142,6 +142,7 @@ export default function useUploadConflict(
             openConflictStrategyModal(conflictingFolderUpload.id, folderConflictStrategy, {
                 name: conflictingFolderUpload.meta.filename,
                 isFolder: true,
+                originalIsDraft: conflictingFolderUpload.originalIsDraft,
                 originalIsFolder: conflictingFolderUpload.originalIsFolder,
             });
             return;
@@ -151,6 +152,7 @@ export default function useUploadConflict(
         if (conflictingFileUpload) {
             openConflictStrategyModal(conflictingFileUpload.id, fileConflictStrategy, {
                 name: conflictingFileUpload.meta.filename,
+                originalIsDraft: conflictingFileUpload.originalIsDraft,
             });
         }
     }, [fileUploads, folderUploads]);

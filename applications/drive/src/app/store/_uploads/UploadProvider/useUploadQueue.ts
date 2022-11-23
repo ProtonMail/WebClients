@@ -118,7 +118,7 @@ export default function useUploadQueue() {
         (
             idOrFilter: UpdateFilter,
             newStateOrCallback: UpdateState,
-            { mimeType, name, error, folderId, originalIsFolder }: UpdateData = {},
+            { mimeType, name, error, folderId, originalIsDraft, originalIsFolder }: UpdateData = {},
             callback?: UpdateCallback
         ) => {
             const filter = convertFilterToFunction(idOrFilter);
@@ -135,6 +135,9 @@ export default function useUploadQueue() {
                 }
                 if (name) {
                     item.meta.filename = name;
+                }
+                if (originalIsDraft) {
+                    item.originalIsDraft = originalIsDraft;
                 }
                 item.error = error;
             };

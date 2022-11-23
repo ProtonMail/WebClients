@@ -35,6 +35,7 @@ export default function useUploadHelper() {
             hash: string;
             linkId?: string;
             clientUid?: string;
+            hasDraft?: boolean;
         }> => {
             const hashesToCheck = await Promise.all(
                 range(start, start + HASH_CHECK_AMOUNT).map(async (i) => {
@@ -74,7 +75,14 @@ export default function useUploadHelper() {
             if (!availableName) {
                 throw new Error('Backend returned unexpected hash');
             }
-            return availableName;
+
+            const draftHashes = PendingHashes.filter(({ ClientUID }) => !isClientUidAvailable(ClientUID));
+            const hasDraft = draftHashes.length > 0;
+
+            return {
+                ...availableName,
+                hasDraft,
+            };
         };
         return findAdjustedName();
     };
