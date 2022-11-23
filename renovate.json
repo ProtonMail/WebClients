@@ -9,7 +9,7 @@
     "packageRules": [
         {
             "groupName": "typescript",
-            "matchPackagePatterns": ["^@types", "typescript"]
+            "matchPackagePatterns": ["typescript"]
         }
     ]
 }

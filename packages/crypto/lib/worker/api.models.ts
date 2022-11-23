@@ -20,7 +20,7 @@ import type {
     VerifyOptionsPmcrypto,
 } from 'pmcrypto-v7/lib/pmcrypto';
 
-export type { PartialConfig as OpenPGPConfig, enums } from 'pmcrypto-v7/lib/openpgp';
+export type { enums } from 'pmcrypto-v7/lib/openpgp';
 
 type MaybeArray<T> = T[] | T;
 export type { SessionKey, AlgorithmInfo, MIMEAttachment };
