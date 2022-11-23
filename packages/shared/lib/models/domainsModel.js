@@ -18,5 +18,5 @@ export const getDomainsModel = (api) => {
 export const DomainsModel = {
     key: 'Domains',
     get: getDomainsModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ Domain }) => Domain }),
+    update: (model, events) => updateCollection({ model, events, itemKey: 'Domain' }),
 };
