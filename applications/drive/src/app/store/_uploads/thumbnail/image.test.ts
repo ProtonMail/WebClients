@@ -27,7 +27,11 @@ describe('scaleImageFile', () => {
     });
 
     it('returns the scaled image', async () => {
-        await expect(scaleImageFile(new Blob())).resolves.toEqual(new Uint8Array([97, 98, 99]));
+        await expect(scaleImageFile(new Blob())).resolves.toEqual({
+            originalWidth: undefined,
+            originalHeight: undefined,
+            thumbnailData: new Uint8Array([97, 98, 99]),
+        });
     });
 
     it('fails due to problem to load the image', async () => {

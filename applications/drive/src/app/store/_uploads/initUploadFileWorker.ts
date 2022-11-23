@@ -27,8 +27,8 @@ export function initUploadFileWorker(
     const mimeTypePromise = mimeTypeFromFile(file);
 
     const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
-        // Worker has a slight overhead about 40 ms. Lets start creating
-        // revision on API and making thumbnail a bit sooner.
+        // Worker has a slight overhead about 40 ms. Lets start generating
+        // thumbnail a bit sooner.
         const thumbnailDataPromise = mimeTypePromise.then(async (mimeType) => {
             return makeThumbnail(mimeType, file).catch((err) => {
                 traceError(err);
