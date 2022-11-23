@@ -21,7 +21,7 @@
         "@types/jest": "^27.5.2",
         "@types/react": "^17.0.52",
         "@types/react-dom": "^17.0.18",
-        "memfs": "^3.4.10",
+        "memfs": "^3.4.12",
         "safe-buffer": "^5.2.1"
     },
     "dependencies": {
@@ -38,7 +38,7 @@
         "prettier": "^2.8.0",
         "sort-package-json": "^2.1.0"
     },
-    "packageManager": "yarn@3.2.4",
+    "packageManager": "yarn@3.3.0",
     "engines": {
         "node": ">= v18.12.1"
     }
