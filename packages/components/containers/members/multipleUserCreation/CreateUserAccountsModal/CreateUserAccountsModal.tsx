@@ -296,6 +296,8 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
         size?: ModalProps['size'];
     } = (() => {
         if (step === STEPS.SELECT_USERS) {
+            const isCreateUsersButtonDisabled =
+                loadingOrganization || loadingOrganizationKey || loadingDomains || !selectedUserIds.length;
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
@@ -373,14 +375,15 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                             color="norm"
                             onClick={() => withImporting(importUsers())}
                             loading={importing}
-                            disabled={
-                                loadingOrganization ||
-                                loadingOrganizationKey ||
-                                loadingDomains ||
-                                !selectedUserIds.length
-                            }
+                            disabled={isCreateUsersButtonDisabled}
                         >
-                            {c('Action').t`Create accounts`}
+                            {selectedUserIds.length
+                                ? c('Title').ngettext(
+                                      msgid`Create ${selectedUserIds.length} user`,
+                                      `Create ${selectedUserIds.length} users`,
+                                      selectedUserIds.length
+                                  )
+                                : c('Action').t`Create users`}
                         </Button>
                     </>
                 ),
