@@ -1,5 +1,6 @@
 import { FeatureCode, StandardPrivateApp, useApi, useProtonMailMigrationRedirect } from '@proton/components';
 import { getEvents } from '@proton/shared/lib/api/events';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { Model } from '@proton/shared/lib/interfaces/Model';
@@ -32,7 +33,6 @@ const getAppContainer = () => import('./MainContainer');
 
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
 
     useProtonMailMigrationRedirect();
 
@@ -43,7 +43,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             onLogout={onLogout}
             onInit={() => {
                 // Intentionally ignoring to return promise of the timezone call to avoid blocking app start
-                loadAllowedTimeZones(silentApi).catch(noop);
+                loadAllowedTimeZones(getSilentApi(api)).catch(noop);
             }}
             locales={locales}
             preloadFeatures={[FeatureCode.ReorderSystemFolders]}

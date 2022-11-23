@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { addressType } from '@proton/shared/lib/api/addresses';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     ADDRESS_TYPE,
     DKIM_STATE,
@@ -32,7 +33,16 @@ import {
     useFormErrors,
 } from '../../components';
 import { classnames } from '../../helpers';
-import { useApi, useDomains, useEventManager, useGetAddresses, useGetAddressKeys, useLoading, useNotifications, useStep } from '../../hooks';
+import {
+    useApi,
+    useDomains,
+    useEventManager,
+    useGetAddressKeys,
+    useGetAddresses,
+    useLoading,
+    useNotifications,
+    useStep,
+} from '../../hooks';
 import AddressesSection from './AddressesSection';
 import DKIMSection from './DKIMSection';
 import DMARCSection from './DMARCSection';
@@ -109,7 +119,6 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const [domainName, updateDomainName] = useState(domainModel.DomainName || '');
     const api = useApi();
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
     const { step, next, goTo } = useStep();
     const { call } = useEventManager();
     const { validator, onFormSubmit } = useFormErrors();
@@ -138,7 +147,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                     return convertToInternalAddress({
                         address: externalAddress,
                         keys: await getAddressKeys(externalAddress.ID),
-                        api: silentApi,
+                        api: getSilentApi(api),
                     });
                 })
             );
