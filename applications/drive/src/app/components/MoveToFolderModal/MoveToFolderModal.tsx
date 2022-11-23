@@ -16,7 +16,7 @@ import {
     useModals,
 } from '@proton/components';
 
-import { DecryptedLink, TreeItem, useActions, useFolderTreeModals } from '../../store';
+import { DecryptedLink, TreeItem, useActions, useTreeForModals } from '../../store';
 import CreateFolderModal from '../CreateFolderModal';
 import FolderTree from '../FolderTree/FolderTree';
 import ModalContentLoader from '../ModalContentLoader';
@@ -39,7 +39,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
         toggleExpand,
         isLoaded: isTreeLoaded,
         rootLinkId,
-    } = useFolderTreeModals(shareId, { rootExpanded: true });
+    } = useTreeForModals(shareId, { rootExpanded: true, foldersOnly: true });
 
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
