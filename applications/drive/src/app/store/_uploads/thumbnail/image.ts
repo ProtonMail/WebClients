@@ -1,6 +1,8 @@
 import { THUMBNAIL_MAX_SIDE, THUMBNAIL_MAX_SIZE, THUMBNAIL_QUALITIES } from '@proton/shared/lib/drive/constants';
 
-export function scaleImageFile(file: Blob): Promise<Uint8Array> {
+import { ThumbnailData } from './interface';
+
+export function scaleImageFile(file: Blob): Promise<ThumbnailData> {
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.addEventListener('load', () => {
@@ -11,7 +13,7 @@ export function scaleImageFile(file: Blob): Promise<Uint8Array> {
     });
 }
 
-async function scaleImage(img: HTMLImageElement): Promise<Uint8Array> {
+async function scaleImage(img: HTMLImageElement): Promise<ThumbnailData> {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
@@ -30,7 +32,11 @@ async function scaleImage(img: HTMLImageElement): Promise<Uint8Array> {
 
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-    return new Uint8Array(await canvasToThumbnail(canvas));
+    return {
+        originalWidth: img.width,
+        originalHeight: img.height,
+        thumbnailData: new Uint8Array(await canvasToThumbnail(canvas)),
+    };
 }
 
 export function calculateThumbnailSize(img: { width: number; height: number }): [width: number, height: number] {

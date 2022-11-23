@@ -8,6 +8,10 @@ interface ExtendedAttributes {
         Size?: number;
         BlockSizes?: number[];
     };
+    Media?: {
+        Width: number;
+        Height: number;
+    };
 }
 
 interface ParsedExtendedAttributes {
@@ -15,6 +19,10 @@ interface ParsedExtendedAttributes {
         ModificationTime?: number;
         Size?: number;
         BlockSizes?: number[];
+    };
+    Media?: {
+        Width: number;
+        Height: number;
     };
 }
 
@@ -38,13 +46,23 @@ export function createFolderExtendedAttributes(modificationTime: Date): Extended
 export async function ecryptFileExtendedAttributes(
     file: File,
     nodePrivateKey: PrivateKeyReference,
-    addressPrivateKey: PrivateKeyReference
+    addressPrivateKey: PrivateKeyReference,
+    media?: {
+        width: number;
+        height: number;
+    }
 ) {
-    const xattr = createFileExtendedAttributes(file);
+    const xattr = createFileExtendedAttributes(file, media);
     return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
 }
 
-export function createFileExtendedAttributes(file: File): ExtendedAttributes {
+export function createFileExtendedAttributes(
+    file: File,
+    media?: {
+        width: number;
+        height: number;
+    }
+): ExtendedAttributes {
     const blockSizes = new Array(Math.floor(file.size / FILE_CHUNK_SIZE));
     blockSizes.fill(FILE_CHUNK_SIZE);
     blockSizes.push(file.size % FILE_CHUNK_SIZE);
@@ -54,6 +72,12 @@ export function createFileExtendedAttributes(file: File): ExtendedAttributes {
             Size: file.size,
             BlockSizes: blockSizes,
         },
+        Media: media
+            ? {
+                  Width: media.width,
+                  Height: media.height,
+              }
+            : undefined,
     };
 }
 
@@ -101,6 +125,7 @@ export function parseExtendedAttributes(xattrString: string) {
             Size: parseSize(xattr),
             BlockSizes: parseBlockSizes(xattr),
         },
+        Media: parseMedia(xattr),
     };
 }
 
@@ -149,6 +174,27 @@ function parseBlockSizes(xattr: any): number[] | undefined {
         return undefined;
     }
     return blockSizes;
+}
+
+function parseMedia(xattr: any): { Width: number; Height: number } | undefined {
+    const media = xattr?.Media;
+    if (media === undefined || media.Width === undefined || media.Height === undefined) {
+        return undefined;
+    }
+    const width = media.Width;
+    if (typeof width !== 'number') {
+        console.warn(`XAttr media width "${width}" is not valid`);
+        return undefined;
+    }
+    const height = media.Height;
+    if (typeof height !== 'number') {
+        console.warn(`XAttr media height "${height}" is not valid`);
+        return undefined;
+    }
+    return {
+        Width: width,
+        Height: height,
+    };
 }
 
 function dateToIsoString(date: Date) {

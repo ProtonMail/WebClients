@@ -3,6 +3,7 @@ import { generateContentKeys, generateNodeKeys, sign as signMessage } from '@pro
 
 import { ecryptFileExtendedAttributes } from '../../_links';
 import { EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
+import { ThumbnailData } from '../thumbnail';
 import { getErrorString } from '../utils';
 import { UploadWorker } from '../workerController';
 import UploadWorkerBuffer from './buffer';
@@ -61,14 +62,16 @@ async function generateKeys(addressPrivateKey: PrivateKeyReference, parentPrivat
  */
 async function start(
     file: File,
-    thumbnailData: Uint8Array | undefined,
+    thumbnailData: ThumbnailData | undefined,
     addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey
 ) {
     buffer
-        .feedEncryptedBlocks(generateEncryptedBlocks(file, thumbnailData, addressPrivateKey, privateKey, sessionKey))
+        .feedEncryptedBlocks(
+            generateEncryptedBlocks(file, thumbnailData?.thumbnailData, addressPrivateKey, privateKey, sessionKey)
+        )
         .catch((err) => uploadWorker.postError(getErrorString(err)));
 
     buffer.runBlockLinksCreation((blocks: EncryptedBlock[], thumbnailBlock?: EncryptedThumbnailBlock) => {
@@ -80,7 +83,17 @@ async function start(
         const fileHash = buffer.hash;
         const [signature, xattr] = await Promise.all([
             signMessage(fileHash, [addressPrivateKey]),
-            ecryptFileExtendedAttributes(file, privateKey, addressPrivateKey),
+            ecryptFileExtendedAttributes(
+                file,
+                privateKey,
+                addressPrivateKey,
+                thumbnailData && thumbnailData.originalWidth && thumbnailData.originalHeight
+                    ? {
+                          width: thumbnailData.originalWidth,
+                          height: thumbnailData.originalHeight,
+                      }
+                    : undefined
+            ),
         ]);
         uploadWorker.postDone(buffer.blockTokens, signature, addressEmail, xattr);
     };
