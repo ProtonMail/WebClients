@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { getEventsCount } from '@proton/shared/lib/api/calendars';
+import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { processInBatches } from '@proton/shared/lib/calendar/export/export';
 import {
     CalendarEventWithMetadata,
@@ -46,8 +47,6 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
         const abortController = new AbortController();
         const { signal } = abortController;
 
-        const apiWithAbort: <T>(config: object) => Promise<T> = (config) => api({ ...config, signal });
-
         const setModelWithAbort = (set: (currentModel: ExportCalendarModel) => ExportCalendarModel) => {
             if (signal.aborted) {
                 return;
@@ -90,7 +89,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 const [exportedEvents, exportErrors, totalEventsFetched] = await processInBatches({
                     calendarID: model.calendar.ID,
                     addresses,
-                    api: apiWithAbort,
+                    api: getApiWithAbort(api, signal),
                     signal,
                     onProgress: handleExportProgress,
                     getAddressKeys,

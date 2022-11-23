@@ -1,4 +1,5 @@
 import { StandardPrivateApp, useApi } from '@proton/components';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
@@ -49,14 +50,13 @@ interface Props {
 
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
 
     return (
         <StandardPrivateApp
             onLogout={onLogout}
             onInit={() => {
                 // Intentionally ignoring to return promise of the timezone call to avoid blocking app start
-                loadAllowedTimeZones(silentApi).catch(noop);
+                loadAllowedTimeZones(getSilentApi(api)).catch(noop);
             }}
             locales={locales}
             preloadModels={PRELOAD_MODELS}

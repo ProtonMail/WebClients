@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
@@ -40,7 +41,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
         const abortController = new AbortController();
         const { signal } = abortController;
 
-        const apiWithAbort: <T>(config: object) => Promise<T> = (config) => api({ ...config, signal });
+        const apiWithAbort = getApiWithAbort(api, signal);
 
         const setModelWithAbort = (set: (model: ImportCalendarModel) => ImportCalendarModel) => {
             if (signal.aborted) {

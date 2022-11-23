@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { addContacts, deleteContacts, getContact } from '@proton/shared/lib/api/contacts';
+import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { ADD_CONTACTS_MAX_SIZE, API_SAFE_INTERVAL, CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
@@ -74,8 +75,7 @@ const ContactMergingContent = ({
     useEffect(() => {
         // Prepare api for allowing cancellation in the middle of the merge
         const abortController = new AbortController();
-        const apiWithAbort: <T>(config: object) => Promise<T> = (config) =>
-            api({ ...config, signal: abortController.signal });
+        const apiWithAbort = getApiWithAbort(api, abortController.signal);
 
         /**
          * Get a contact from its ID and decrypt it. Return contact as a list of properties
