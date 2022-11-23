@@ -16,5 +16,5 @@ export const getLabelsModel = async (api) => {
 export const LabelsModel = {
     key: 'Labels',
     get: getLabelsModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ Label }) => Label, merge: (a, b) => b }),
+    update: (model, events) => updateCollection({ model, events, itemKey: 'Label', merge: (a, b) => b }),
 };
