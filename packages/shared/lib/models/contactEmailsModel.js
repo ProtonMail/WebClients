@@ -26,5 +26,5 @@ export const getContactEmailsModel = (api) => {
 export const ContactEmailsModel = {
     key: 'ContactEmails',
     get: getContactEmailsModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ ContactEmail }) => ContactEmail }),
+    update: (model, events) => updateCollection({ model, events, itemKey: 'ContactEmail' }),
 };
