@@ -1,6 +1,7 @@
 import { ReactNode, useCallback, useRef, useState } from 'react';
 
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import unique from '@proton/utils/unique';
 
 import { useApi } from '../../hooks';
@@ -12,7 +13,7 @@ interface Props {
 
 const FeaturesProvider = ({ children }: Props) => {
     const api = useApi();
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
+    const silentApi = getSilentApi(api);
     const [features, setFeatures] = useState<{ [key in FeatureCode]?: Feature }>({});
     const [loading, setLoading] = useState<{ [key in FeatureCode]?: boolean }>({});
     const codePromiseCacheRef = useRef<{ [key in FeatureCode]?: Promise<Feature> | undefined }>({});

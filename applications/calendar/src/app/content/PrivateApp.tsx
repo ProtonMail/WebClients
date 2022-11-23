@@ -6,6 +6,7 @@ import {
     useProtonMailMigrationRedirect,
     useSideAppParent,
 } from '@proton/components';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
@@ -48,13 +49,11 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
 
     useSideAppParent();
 
-    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
-
     return (
         <StandardPrivateApp
             onLogout={onLogout}
             locales={locales}
-            onInit={() => loadAllowedTimeZones(silentApi).catch(noop)}
+            onInit={() => loadAllowedTimeZones(getSilentApi(api)).catch(noop)}
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENT_MODELS}
             fallback={<LoaderPage />}
