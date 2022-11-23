@@ -17,16 +17,13 @@ export interface TreeItem {
     children: TreeItem[];
 }
 
-interface FolderTreeOptions {
+interface TreeOptions {
     rootLinkId?: string;
     rootExpanded?: boolean;
-}
-
-interface TreeOptions extends FolderTreeOptions {
     foldersOnly?: boolean;
 }
 
-export function useFolderTreeModals(shareId: string, options?: FolderTreeOptions) {
+export function useTreeForModals(shareId: string, options?: Omit<TreeOptions, 'rootLinkId'>) {
     const shareType = useShareType(shareId);
 
     const getRootItems = (tree: ReturnType<typeof useTree>): TreeItem[] => {
@@ -37,7 +34,8 @@ export function useFolderTreeModals(shareId: string, options?: FolderTreeOptions
         return tree.rootFolder ? [tree.rootFolder] : [];
     };
 
-    const tree = useTree(shareId, { ...options, foldersOnly: true });
+    const tree = useTree(shareId, { ...options });
+
     const linkStructure = {
         ...tree,
         rootItems: getRootItems(tree),
@@ -50,10 +48,10 @@ export function useFolderTreeModals(shareId: string, options?: FolderTreeOptions
 
 /**
  * useFolderTree provides data for folder tree view of the provided share.
- * @deprecated use useFolderTreeModals – it skips the root link and provides multiple
+ * @deprecated re-use useTreeForModals – it skips the root link and provides multiple
  * entries to the file structure
  */
-export function useFolderTree(shareId: string, options?: FolderTreeOptions) {
+export function useFolderTree(shareId: string, options?: TreeOptions) {
     return useTree(shareId, { ...options, foldersOnly: true });
 }
 
