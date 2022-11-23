@@ -306,7 +306,7 @@ END:VCALENDAR`;
                 method: 'PUBLISH',
                 vevent: {
                     component: 'vevent',
-                    uid: { value: 'sha1-uid-cba317c4bb79e20bdca567bf6dc80dfce145712b-original-uid-test-event' },
+                    uid: { value: 'original-uid-test-event-sha1-uid-cba317c4bb79e20bdca567bf6dc80dfce145712b' },
                     dtstamp: {
                         value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
                     },
@@ -366,7 +366,7 @@ END:VCALENDAR`;
                 method: 'PUBLISH',
                 vevent: expect.objectContaining({
                     component: 'vevent',
-                    uid: { value: 'sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186-original-uid-test-event' },
+                    uid: { value: 'original-uid-test-event-sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186' },
                     dtstamp: {
                         value: { year: 2022, month: 10, day: 10, hours: 10, minutes: 0, seconds: 0, isUTC: true },
                     },
