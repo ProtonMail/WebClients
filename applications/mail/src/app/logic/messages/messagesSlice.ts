@@ -43,13 +43,20 @@ import {
     updateScheduled as updateScheduledReducer,
 } from './draft/messagesDraftReducers';
 import { updateFromElements } from './helpers/messagesReducer';
-import { loadEmbedded, loadFakeProxy, loadRemoteDirect, loadRemoteProxy } from './images/messagesImagesActions';
+import {
+    loadEmbedded,
+    loadFakeProxy,
+    loadRemoteDirect,
+    loadRemoteProxy,
+    loadRemoteProxyFromURL,
+} from './images/messagesImagesActions';
 import {
     loadEmbeddedFulfilled,
     loadFakeProxyFulFilled,
     loadFakeProxyPending,
     loadRemoteDirectFulFilled,
     loadRemotePending,
+    loadRemoteProxyFromURL as loadRemoteProxyFromURLReducer,
     loadRemoteProxyFulFilled,
 } from './images/messagesImagesReducers';
 import { MessagesState } from './messagesTypes';
@@ -126,6 +133,7 @@ const messagesSlice = createSlice({
         builder.addCase(loadFakeProxy.fulfilled, loadFakeProxyFulFilled);
         builder.addCase(loadRemoteDirect.pending, loadRemotePending);
         builder.addCase(loadRemoteDirect.fulfilled, loadRemoteDirectFulFilled);
+        builder.addCase(loadRemoteProxyFromURL, loadRemoteProxyFromURLReducer);
 
         builder.addCase(optimisticApplyLabels, optimisticApplyLabelsReducer);
         builder.addCase(optimisticMarkAs, optimisticMarkAsReducer);

@@ -1,3 +1,6 @@
+import { getImage } from '@proton/shared/lib/api/images';
+import { createUrl } from '@proton/shared/lib/fetch/helpers';
+
 import {
     MessageEmbeddedImage,
     MessageImage,
@@ -104,4 +107,11 @@ export const restoreImages = (inputDocument: Element | undefined, images: Messag
 export const restoreAllPrefixedAttributes = (content: string) => {
     const regex = new RegExp(REGEXP_FIXER, 'g');
     return content.replace(regex, (_, $1) => $1.substring(7));
+};
+
+export const forgeImageURL = (url: string, uid: string) => {
+    const config = getImage(url, 0, uid);
+    const prefixedUrl = `api/${config.url}`; // api/ is required to set the AUTH cookie
+    const urlToLoad = createUrl(prefixedUrl, config.params);
+    return urlToLoad.toString();
 };

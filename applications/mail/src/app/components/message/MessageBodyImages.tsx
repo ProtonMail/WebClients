@@ -8,9 +8,10 @@ interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;
     isPrint: boolean;
     onImagesLoaded?: () => void;
+    localID: string;
 }
 
-const MessageBodyImages = ({ messageImages, iframeRef, isPrint, onImagesLoaded }: Props) => {
+const MessageBodyImages = ({ messageImages, iframeRef, isPrint, onImagesLoaded, localID }: Props) => {
     const hasTriggeredLoaded = useRef<boolean>(false);
 
     useEffect(() => {
@@ -31,6 +32,7 @@ const MessageBodyImages = ({ messageImages, iframeRef, isPrint, onImagesLoaded }
                           showEmbeddedImages={messageImages?.showEmbeddedImages || false}
                           image={image}
                           isPrint={isPrint}
+                          localID={localID}
                       />
                   ))
                 : null}
