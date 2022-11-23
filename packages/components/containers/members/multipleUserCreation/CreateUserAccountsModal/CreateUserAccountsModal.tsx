@@ -280,78 +280,18 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
         );
     }
 
-    if (step === STEPS.DONE) {
-        const title = successfullyCreatedUsers.length
-            ? c('Title').ngettext(
-                  msgid`Successfully created ${successfullyCreatedUsers.length} user account`,
-                  `Successfully created ${successfullyCreatedUsers.length} user accounts`,
-                  successfullyCreatedUsers.length
-              )
-            : c('Title').t`Couldn’t create accounts`;
-        return (
-            <AlertModal title={title} buttons={[<Button onClick={onClose}>{c('Action').t`Done`}</Button>]} {...rest}>
-                <>
-                    {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length
-                        ? c('Info')
-                              .t`Please check your file for errors, or contact customer support for more information.`
-                        : null}
-
-                    {invalidAddresses.length ? (
-                        <>
-                            <p className="mt0">
-                                {c('Info').ngettext(
-                                    msgid`The following address is invalid.`,
-                                    `The following addresses are invalid.`,
-                                    invalidAddresses.length
-                                )}
-                            </p>
-                            <ul className="unstyled">
-                                {invalidAddresses.map((address) => {
-                                    return (
-                                        <li key={address} className="mb0 text-ellipsis" title={address}>
-                                            {address}
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </>
-                    ) : null}
-
-                    {unavailableAddresses.length ? (
-                        <>
-                            <p className="mt0">
-                                {c('Info').ngettext(
-                                    msgid`The following address is unavailable.`,
-                                    `The following addresses are unavailable.`,
-                                    unavailableAddresses.length
-                                )}
-                            </p>
-                            <ul className="unstyled">
-                                {unavailableAddresses.map((address) => {
-                                    return (
-                                        <li key={address} className="mb0 text-ellipsis" title={address}>
-                                            {address}
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </>
-                    ) : null}
-                </>
-            </AlertModal>
-        );
-    }
-
     const {
         title,
         additionalContent,
         content,
+        footerClassName,
         footer,
         size = 'xlarge',
     }: {
         title: string;
         additionalContent?: JSX.Element;
         content?: JSX.Element;
+        footerClassName?: string;
         footer: JSX.Element;
         size?: ModalProps['size'];
     } = (() => {
@@ -465,7 +405,75 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                         </p>
                     </>
                 ),
+                footerClassName: 'flex-justify-end',
                 footer: <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            };
+        }
+
+        if (step === STEPS.DONE) {
+            const title = successfullyCreatedUsers.length
+                ? c('Title').ngettext(
+                      msgid`Successfully created ${successfullyCreatedUsers.length} user account`,
+                      `Successfully created ${successfullyCreatedUsers.length} user accounts`,
+                      successfullyCreatedUsers.length
+                  )
+                : c('Title').t`Couldn’t create accounts`;
+
+            return {
+                size: 'small',
+                title,
+                content: (
+                    <>
+                        {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length
+                            ? c('Info')
+                                  .t`Please check your file for errors, or contact customer support for more information.`
+                            : null}
+
+                        {invalidAddresses.length ? (
+                            <>
+                                <p className="mt0">
+                                    {c('Info').ngettext(
+                                        msgid`The following address is invalid.`,
+                                        `The following addresses are invalid.`,
+                                        invalidAddresses.length
+                                    )}
+                                </p>
+                                <ul className="unstyled">
+                                    {invalidAddresses.map((address) => {
+                                        return (
+                                            <li key={address} className="mb0 text-ellipsis" title={address}>
+                                                {address}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </>
+                        ) : null}
+
+                        {unavailableAddresses.length ? (
+                            <>
+                                <p className="mt0">
+                                    {c('Info').ngettext(
+                                        msgid`The following address is unavailable.`,
+                                        `The following addresses are unavailable.`,
+                                        unavailableAddresses.length
+                                    )}
+                                </p>
+                                <ul className="unstyled">
+                                    {unavailableAddresses.map((address) => {
+                                        return (
+                                            <li key={address} className="mb0 text-ellipsis" title={address}>
+                                                {address}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </>
+                        ) : null}
+                    </>
+                ),
+                footerClassName: 'flex-justify-end',
+                footer: <Button onClick={onClose}>{c('Action').t`Got it`}</Button>,
             };
         }
 
@@ -476,7 +484,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
         <ModalTwo size={size} onClose={onClose} {...rest}>
             <ModalTwoHeader title={title} additionalContent={additionalContent} />
             <ModalTwoContent>{content}</ModalTwoContent>
-            <ModalTwoFooter>{footer}</ModalTwoFooter>
+            <ModalTwoFooter className={footerClassName}>{footer}</ModalTwoFooter>
         </ModalTwo>
     );
 };
