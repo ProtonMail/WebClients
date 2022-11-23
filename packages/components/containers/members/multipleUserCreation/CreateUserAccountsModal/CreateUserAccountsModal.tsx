@@ -53,7 +53,7 @@ enum STEPS {
     SELECT_USERS,
     IMPORT_USERS,
     ORGANIZATION_VALIDATION_ERROR,
-    DONE,
+    DONE_WITH_ERRORS,
     OFFLINE,
 }
 
@@ -217,6 +217,11 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
         abortControllerRef.current = new AbortController();
         setStep(STEPS.IMPORT_USERS);
 
+        const localSuccessfullyCreatedUsers: UserTemplate[] = [];
+        const localFailedUsers: UserTemplate[] = [];
+        const localInvalidAddresses: string[] = [];
+        const localUnavailableAddresses: string[] = [];
+
         for (let i = 0; i < selectedUsers.length; i++) {
             const signal = abortControllerRef.current.signal;
             if (signal.aborted) {
@@ -232,7 +237,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                     organizationKey: organizationKey.privateKey,
                 });
 
-                setSuccessfullyCreatedUsers((successfullyCreatedUsers) => [...successfullyCreatedUsers, user]);
+                localSuccessfullyCreatedUsers.push(user);
             } catch (error: any) {
                 if (error.cancel) {
                     /**
@@ -242,20 +247,40 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                     setStep(STEPS.SELECT_USERS);
                 } else if (error instanceof InvalidAddressesError) {
                     const addresses = error.addresses;
-                    setInvalidAddresses((invalidAddresses) => [...invalidAddresses, ...addresses]);
+                    localInvalidAddresses.push(...addresses);
                 } else if (error instanceof UnavailableAddressesError) {
                     const addresses = error.addresses;
-                    setUnavailableAddresses((unavailableAddresses) => [...unavailableAddresses, ...addresses]);
+                    localUnavailableAddresses.push(...addresses);
                 } else {
-                    setFailedUsers((failedUsers) => [...failedUsers, user]);
+                    localFailedUsers.push(user);
                 }
             }
 
             setCurrentProgress((currentProgress) => currentProgress + 1);
         }
 
+        setSuccessfullyCreatedUsers(localSuccessfullyCreatedUsers);
+
+        setFailedUsers(localFailedUsers);
+        setInvalidAddresses(localInvalidAddresses);
+        setUnavailableAddresses(localUnavailableAddresses);
+
         await call();
-        setStep(STEPS.DONE);
+
+        if (localFailedUsers.length || localInvalidAddresses.length || localUnavailableAddresses.length) {
+            setStep(STEPS.DONE_WITH_ERRORS);
+            return;
+        }
+
+        createNotification({
+            type: 'success',
+            text: c('Title').ngettext(
+                msgid`Successfully created ${localSuccessfullyCreatedUsers.length} user account`,
+                `Successfully created ${localSuccessfullyCreatedUsers.length} user accounts`,
+                localSuccessfullyCreatedUsers.length
+            ),
+        });
+        onClose?.();
     };
 
     if (organizationCapacityError && step === STEPS.ORGANIZATION_VALIDATION_ERROR) {
@@ -413,7 +438,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             };
         }
 
-        if (step === STEPS.DONE) {
+        if (step === STEPS.DONE_WITH_ERRORS) {
             const title = successfullyCreatedUsers.length
                 ? c('Title').ngettext(
                       msgid`Successfully created ${successfullyCreatedUsers.length} user account`,
