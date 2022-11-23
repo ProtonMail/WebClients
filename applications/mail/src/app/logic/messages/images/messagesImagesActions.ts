@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getImage } from '@proton/shared/lib/api/images';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
@@ -7,7 +7,13 @@ import { get } from '../../../helpers/attachment/attachmentLoader';
 import { preloadImage } from '../../../helpers/dom';
 import { createBlob } from '../../../helpers/message/messageEmbeddeds';
 import encodeImageUri from '../helpers/encodeImageUri';
-import { LoadEmbeddedParams, LoadEmbeddedResults, LoadRemoteParams, LoadRemoteResults } from '../messagesTypes';
+import {
+    LoadEmbeddedParams,
+    LoadEmbeddedResults,
+    LoadRemoteFromURLParams,
+    LoadRemoteParams,
+    LoadRemoteResults,
+} from '../messagesTypes';
 
 export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedParams>(
     'messages/embeddeds/load',
@@ -72,10 +78,12 @@ export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults, LoadRemotePar
     }
 );
 
+export const loadRemoteProxyFromURL = createAction<LoadRemoteFromURLParams>('messages/remote/load/proxy/url');
+
 export const loadFakeProxy = createAsyncThunk<LoadRemoteResults | undefined, LoadRemoteParams>(
     'messages/remote/fake/proxy',
     async ({ imageToLoad, api }) => {
-        if (imageToLoad.tracker !== undefined) {
+        if (imageToLoad.tracker !== undefined || !api) {
             return;
         }
 

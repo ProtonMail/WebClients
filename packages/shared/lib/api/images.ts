@@ -1,7 +1,7 @@
-export const getImage = (Url: string, DryRun = 0) => ({
+export const getImage = (Url: string, DryRun = 0, UID?: string) => ({
     method: 'get',
     url: 'core/v4/images',
-    params: { Url, DryRun },
+    params: { Url, DryRun, UID },
 });
 
 export type SenderImageMode = 'light' | 'dark';
