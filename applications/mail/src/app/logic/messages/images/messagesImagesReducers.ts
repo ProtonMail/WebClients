@@ -2,12 +2,19 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
 
 import { markEmbeddedImagesAsLoaded } from '../../../helpers/message/messageEmbeddeds';
-import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
+import {
+    forgeImageURL,
+    getEmbeddedImages,
+    getRemoteImages,
+    updateImages,
+} from '../../../helpers/message/messageImages';
 import { loadBackgroundImages, loadElementOtherThanImages, urlCreator } from '../../../helpers/message/messageRemotes';
+import encodeImageUri from '../helpers/encodeImageUri';
 import { getMessage } from '../helpers/messagesReducer';
 import {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
+    LoadRemoteFromURLParams,
     LoadRemoteParams,
     LoadRemoteResults,
     MessageRemoteImage,
@@ -103,6 +110,58 @@ export const loadRemoteProxyFulFilled = (
         loadElementOtherThanImages([image], messageState.messageDocument?.document);
 
         loadBackgroundImages({ document: messageState.messageDocument?.document, images: [image] });
+    }
+};
+
+export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: PayloadAction<LoadRemoteFromURLParams>) => {
+    const { imageToLoad, ID, uid } = action.payload;
+
+    const messageState = getMessage(state, ID);
+
+    if (messageState && messageState.messageImages && uid) {
+        const imageToLoadState = getStateImage({ image: imageToLoad }, messageState);
+        const { image, inputImage } = imageToLoadState;
+        let newImage: MessageRemoteImage = { ...inputImage };
+
+        if (imageToLoad.url) {
+            // forge URL
+            const encodedImageUrl = encodeImageUri(imageToLoad.url);
+            const loadingURL = forgeImageURL(encodedImageUrl, uid);
+
+            if (image) {
+                image.status = 'loaded';
+                image.originalURL = image.url;
+                image.url = loadingURL;
+                image.error = undefined;
+            } else if (Array.isArray(messageState.messageImages.images)) {
+                newImage = {
+                    ...newImage,
+                    status: 'loaded',
+                    originalURL: inputImage.url,
+                    url: loadingURL,
+                };
+                messageState.messageImages.images.push(newImage);
+            }
+
+            messageState.messageImages.showRemoteImages = true;
+
+            loadElementOtherThanImages([image ? image : newImage], messageState.messageDocument?.document);
+
+            loadBackgroundImages({
+                document: messageState.messageDocument?.document,
+                images: [image ? image : newImage],
+            });
+        } else {
+            if (image) {
+                image.error = 'No URL';
+            } else if (Array.isArray(messageState.messageImages.images)) {
+                messageState.messageImages.images.push({
+                    ...inputImage,
+                    error: 'No URL',
+                    status: 'loaded',
+                });
+            }
+        }
     }
 };
 

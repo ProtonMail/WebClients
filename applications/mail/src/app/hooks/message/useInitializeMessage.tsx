@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { PayloadAction } from '@reduxjs/toolkit';
 
-import { FeatureCode, useApi, useFeature, useMailSettings } from '@proton/components';
+import { FeatureCode, useApi, useAuthentication, useFeature, useMailSettings } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -20,7 +20,7 @@ import {
     loadEmbedded,
     loadFakeProxy,
     loadRemoteDirect,
-    loadRemoteProxy,
+    loadRemoteProxyFromURL,
 } from '../../logic/messages/images/messagesImagesActions';
 import {
     LoadEmbeddedParams,
@@ -55,6 +55,7 @@ export const useInitializeMessage = () => {
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
     const { verifyKeys } = useKeyVerification();
+    const authentication = useAuthentication();
 
     const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
 
@@ -152,7 +153,9 @@ export const useInitializeMessage = () => {
 
             const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
                 const dispatchResult = imagesToLoad.map((image) => {
-                    return dispatch(loadRemoteProxy({ ID: localID, imageToLoad: image, api }));
+                    return dispatch(
+                        loadRemoteProxyFromURL({ ID: localID, imageToLoad: image, uid: authentication.getUID() })
+                    );
                 });
                 return dispatchResult as any as Promise<LoadRemoteResults[]>;
             };

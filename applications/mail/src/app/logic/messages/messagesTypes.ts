@@ -349,6 +349,12 @@ export interface LoadRemoteParams {
     api: Api;
 }
 
+export interface LoadRemoteFromURLParams {
+    ID: string;
+    imageToLoad: MessageRemoteImage;
+    uid?: string;
+}
+
 export interface LoadRemoteResults {
     image: MessageRemoteImage;
     blob?: Blob;

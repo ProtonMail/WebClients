@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useApi, useMailSettings } from '@proton/components';
+import { useApi, useAuthentication, useMailSettings } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -12,7 +12,7 @@ import {
     loadEmbedded,
     loadFakeProxy,
     loadRemoteDirect,
-    loadRemoteProxy,
+    loadRemoteProxyFromURL,
 } from '../../logic/messages/images/messagesImagesActions';
 import {
     LoadEmbeddedResults,
@@ -31,13 +31,16 @@ export const useLoadRemoteImages = (localID: string) => {
     const api = useApi();
     const getMessage = useGetMessage();
     const [mailSettings] = useMailSettings();
+    const authentication = useAuthentication();
 
     return useCallback(async () => {
         const message = getMessage(localID) as MessageState;
 
         const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
             const dispatchResult = imagesToLoad.map((image) => {
-                return dispatch(loadRemoteProxy({ ID: localID, imageToLoad: image, api }));
+                return dispatch(
+                    loadRemoteProxyFromURL({ ID: localID, imageToLoad: image, uid: authentication.getUID() })
+                );
             });
             return dispatchResult as any as Promise<LoadRemoteResults[]>;
         };
