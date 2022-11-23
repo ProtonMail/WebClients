@@ -21,6 +21,8 @@ const createSecureSessionStorage = () => {
         const handleUnload = () => {
             save(store.getState());
         };
+        // This gets narrowed to never because of the onpagehide
+        // @ts-ignore
         window.addEventListener('unload', handleUnload, true);
     }
 
