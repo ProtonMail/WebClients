@@ -16,7 +16,7 @@ const TotpInputs = ({ code, type, setCode, error, loading, bigger }: Props) => {
         <>
             {type === 'totp' && (
                 <>
-                    <div className="mb1">{c('Info').t`Enter the code from your authenticator app`}</div>
+                    <div className="mb1-75">{c('Info').t`Enter the code from your authenticator app`}</div>
                     <InputFieldTwo
                         id="totp"
                         as={TotpInput}
@@ -28,13 +28,12 @@ const TotpInputs = ({ code, type, setCode, error, loading, bigger }: Props) => {
                         autoComplete="one-time-code"
                         value={code}
                         onValue={setCode}
-                        bigger={bigger}
                     />
                 </>
             )}
             {type === 'recovery-code' && (
                 <>
-                    <div className="mb1 flex flex-align-items-center">
+                    <div className="mb1-75 flex flex-align-items-center">
                         {c('Info').t`Each code can only be used once`}{' '}
                         <Info
                             className="ml0-5"
@@ -43,11 +42,13 @@ const TotpInputs = ({ code, type, setCode, error, loading, bigger }: Props) => {
                         />
                     </div>
                     <InputFieldTwo
+                        type="text"
                         id="recovery-code"
-                        type="alphabet"
                         key="recovery-code"
-                        as={TotpInput}
-                        length={8}
+                        autoComplete="off"
+                        autoCapitalize="off"
+                        autoCorrect="off"
+                        spellCheck="false"
                         error={error}
                         disableChange={loading}
                         autoFocus
