@@ -229,7 +229,9 @@ export default function useUploadFile() {
                     hash,
                     linkId,
                     clientUid,
+                    hasDraft,
                 } = await findAvailableName(abortSignal, shareId, parentId, file.name);
+
                 checkSignal(abortSignal, file.name);
                 // Automatically replace file - previous draft was uploaded
                 // by the same client.
@@ -239,7 +241,7 @@ export default function useUploadFile() {
                 if (file.name === newName) {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
-                const conflictStrategy = await getFileConflictStrategy(abortSignal);
+                const conflictStrategy = await getFileConflictStrategy(abortSignal, hasDraft);
                 if (conflictStrategy === TransferConflictStrategy.Rename) {
                     return createFile(abortSignal, newName, mimeType, hash, keys);
                 }
