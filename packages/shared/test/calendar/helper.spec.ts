@@ -26,17 +26,17 @@ describe('getVeventHashUID', () => {
         expect(await generateVeventHashUID(binaryString)).toEqual('sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229');
     });
 
-    it('should keep short UIDs after the hash', async () => {
+    it('should keep short UIDs before the hash', async () => {
         expect(await generateVeventHashUID(binaryString, shortUid)).toEqual(
-            'sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229-original-uid-stmyce9lb3ef@domain.com'
+            'original-uid-stmyce9lb3ef@domain.com-sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229'
         );
     });
 
-    it('should crop long UIDs after the hash', async () => {
+    it('should crop long UIDs before the hash', async () => {
         const hashUID = await generateVeventHashUID(binaryString, longUid);
         expect(hashUID.length).toEqual(MAX_LENGTHS_API.UID);
         expect(hashUID).toEqual(
-            'sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229-original-uid-vEFmcWKJ0q0eeNWIN4OLZ8yJnSDdC8DT9CndSxOnnPC47VWjQHu0psXB25lZuCt4EWsWAtgmCPWe1Wa0AIL0y8rlPn0qbB05u3WuyOst8XYkJNWz6gYx@domaine.com'
+            'original-uid-vEFmcWKJ0q0eeNWIN4OLZ8yJnSDdC8DT9CndSxOnnPC47VWjQHu0psXB25lZuCt4EWsWAtgmCPWe1Wa0AIL0y8rlPn0qbB05u3WuyOst8XYkJNWz6gYx@domaine.com-sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229'
         );
     });
 });
