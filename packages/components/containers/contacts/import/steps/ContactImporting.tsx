@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
@@ -40,8 +41,6 @@ const ContactImporting = ({ model, setModel, onClose }: Props) => {
         const abortController = new AbortController();
         const { signal } = abortController;
 
-        const apiWithAbort: <T>(config: object) => Promise<T> = (config) => api({ ...config, signal });
-
         const setModelWithAbort = (set: (model: ImportContactsModel) => ImportContactsModel) => {
             if (signal.aborted) {
                 return;
@@ -75,7 +74,7 @@ const ContactImporting = ({ model, setModel, onClose }: Props) => {
                     labels: CATEGORIES.IGNORE,
                     overwrite: OVERWRITE.OVERWRITE_CONTACT,
                     keyPair,
-                    api: apiWithAbort,
+                    api: getApiWithAbort(api, signal),
                     signal,
                     onProgress: handleImportProgress,
                     isImport: true,
