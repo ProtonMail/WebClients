@@ -3976,7 +3976,7 @@ __metadata:
     jest: ^28.1.3
     mustache: ^4.2.0
     netlify-cli: ^12.1.1
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     react: ^17.0.2
     react-dom: ^17.0.2
     react-polymorphic-box: ^3.0.3
@@ -4000,7 +4000,7 @@ __metadata:
     css-tree: ^2.2.1
     eslint: ^8.27.0
     jest: ^28.1.3
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     tinycolor2: ^1.4.2
     ts-jest: ^28.0.8
     ts-loader: ^9.4.1
@@ -4056,7 +4056,7 @@ __metadata:
     libphonenumber-js: ^1.10.14
     linkify-it: ^4.0.1
     markdown-it: ^13.0.1
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     prop-types: ^15.8.1
     punycode.js: ^2.1.0
     push.js: ^1.0.12
@@ -4123,7 +4123,7 @@ __metadata:
     mocha: ^10.1.0
     playwright: ^1.27.1
     pmcrypto-v7: "npm:@protontech/pmcrypto@^7.4.0"
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     ts-loader: ^9.4.1
     typescript: ^4.9.3
     webpack: ^5.75.0
@@ -4205,7 +4205,7 @@ __metadata:
     execa: ^5.1.1
     gettext-parser: ^6.0.0
     glob: ^8.0.3
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     ttag-cli: ^1.10.1
   bin:
     proton-i18n: index.js
@@ -4281,7 +4281,7 @@ __metadata:
     postcss-color-functional-notation: ^4.2.4
     postcss-loader: ^7.0.1
     postcss-logical: ^5.0.4
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     react-refresh: ^0.14.0
     resolve-url-loader: ^5.0.0
     sass: ^1.56.1
@@ -4352,7 +4352,7 @@ __metadata:
     karma-webpack: ^5.0.0
     lodash: ^4.17.21
     papaparse: ^5.3.2
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     puppeteer: ^18.2.1
     push.js: ^1.0.12
     ts-loader: ^9.4.1
@@ -4382,7 +4382,7 @@ __metadata:
     jsdom: ^20.0.2
     jsdom-global: ^3.0.2
     mocha: ^10.1.0
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     typescript: ^4.9.3
   languageName: unknown
   linkType: soft
@@ -4404,7 +4404,7 @@ __metadata:
   dependencies:
     include-media: ^1.4.10
     inter-ui: ^3.19.3
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     sass: ^1.56.1
     stylelint: ^14.14.1
     stylelint-config-prettier-scss: ^0.0.1
@@ -25414,12 +25414,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.7.1":
-  version: 2.7.1
-  resolution: "prettier@npm:2.7.1"
+"prettier@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "prettier@npm:2.8.0"
   bin:
     prettier: bin-prettier.js
-  checksum: 55a4409182260866ab31284d929b3cb961e5fdb91fe0d2e099dac92eaecec890f36e524b4c19e6ceae839c99c6d7195817579cdffc8e2c80da0cb794463a748b
+  checksum: 72004ce0cc9bb097daf3e3833f62495768724392c1d5b178dd47372337616e9e50ecbb0804f236596223f7b5eb1bbe69cefc8957dca21112c5777e77ef73a564
   languageName: node
   linkType: hard
 
@@ -25685,7 +25685,7 @@ fsevents@^1.2.7:
     jest: ^28.1.3
     jest-environment-jsdom: ^28.1.3
     jest-junit: ^14.0.1
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     react: ^17.0.2
     react-dom: ^17.0.2
     ttag: ^1.7.24
@@ -25718,7 +25718,7 @@ fsevents@^1.2.7:
     jest-environment-jsdom: ^28.1.3
     jest-junit: ^14.0.1
     moment: ^2.29.4
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     react: ^17.0.2
     react-dom: ^17.0.2
     react-hooks-testing-library: ^0.6.0
@@ -25759,7 +25759,7 @@ fsevents@^1.2.7:
     jest: ^28.1.3
     jest-environment-jsdom: ^28.1.3
     jest-junit: ^14.0.1
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     react: ^17.0.2
     react-dom: ^17.0.2
     react-helmet: ^6.1.0
@@ -25802,7 +25802,7 @@ fsevents@^1.2.7:
     jest-junit: ^14.0.1
     mime-types: ^2.1.35
     path-browserify: ^1.0.1
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     pretty-format: ^27.5.1
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -25876,7 +25876,7 @@ fsevents@^1.2.7:
     juice: ^8.1.0
     loud-rejection: ^2.2.0
     markdown-it: ^13.0.1
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     react: ^17.0.2
     react-dom: ^17.0.2
     react-redux: ^8.0.5
@@ -25919,7 +25919,7 @@ fsevents@^1.2.7:
     eslint-plugin-storybook: ^0.6.7
     lodash.startcase: ^4.4.0
     netlify-cli: ^12.1.1
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     prop-types: 15.8.1
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -25965,7 +25965,7 @@ fsevents@^1.2.7:
     "@types/react-dom": ^17.0.18
     cross-env: ^7.0.3
     eslint: ^8.27.0
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     proton-account: "workspace:applications/account"
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -27903,7 +27903,7 @@ fsevents@^1.2.7:
     husky: ^8.0.2
     is-ci: ^3.0.1
     lint-staged: ^13.0.3
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     sort-package-json: ^2.1.0
     stylelint-use-logical-spec: ^4.1.0
     typescript: ^4.9.3
