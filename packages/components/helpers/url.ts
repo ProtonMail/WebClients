@@ -1,3 +1,5 @@
+import punycode from 'punycode.js';
+
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -15,6 +17,12 @@ export const getHostname = (url: string) => {
     const parser = document.createElement('a');
     parser.href = url;
     return parser.hostname;
+};
+
+export const getHostnameWithRegex = (url: string) => {
+    const regex = /^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/gim;
+    const matches = regex.exec(url);
+    return matches?.[1] || '';
 };
 
 export const isMailTo = (url: string): boolean => {
@@ -42,4 +50,16 @@ export const isURLProtonInternal = (url: string) => {
     return ['protonmail.com', currentDomain]
         .filter(isTruthy)
         .some((domain) => isSubDomain(targetOriginHostname, domain));
+};
+
+/**
+ * Force URL to display punycode
+ * Punycode is a special encoding used to convert Unicode characters to ASCII, which is a smaller, restricted character set. Punycode is used to encode internationalized domain names (IDN).
+ * Explanation about the potential attack: https://www.xudongz.com/blog/2017/idn-phishing/
+ */
+export const punycodeUrl = (url: string) => {
+    const { protocol, hostname, pathname, search, hash } = new URL(url);
+    const punycodeHostname = punycode.toASCII(hostname); // Even if modern browsers support IDN, we still need to convert it to punycode for old browsers
+    const cleanPathname = pathname.replace(/\/$/, ''); // Remove trailing slash
+    return `${protocol}//${punycodeHostname}${cleanPathname}${search}${hash}`;
 };
