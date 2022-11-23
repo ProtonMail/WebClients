@@ -13,6 +13,7 @@ import {
     SelectTwo,
     TextAreaTwo,
     Toggle,
+    TotpInput,
 } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
@@ -291,6 +292,7 @@ export const CustomElements = () => {
     const [color, setColor] = useState('');
     const [toggleChecked, setToggleChecked] = useState(false);
     const [checked, setChecked] = useState(false);
+    const [totp, setTotp] = useState('');
 
     return (
         <>
@@ -322,6 +324,10 @@ export const CustomElements = () => {
                 color={color}
                 onChange={setColor}
             />
+
+            <div style={{ maxWidth: 250 }}>
+                <InputFieldTwo as={TotpInput} label="TOTP input" length={6} value={totp} onValue={setTotp} />
+            </div>
         </>
     );
 };
