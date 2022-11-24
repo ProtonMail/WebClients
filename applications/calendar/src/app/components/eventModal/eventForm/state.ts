@@ -144,7 +144,9 @@ export const getOrganizerModel = ({
     addresses: Address[];
 }) => {
     if (!attendees.length) {
-        return {};
+        return {
+            organizer: undefined,
+        };
     }
     const organizerAddress = addresses.find(({ ID }) => ID === addressID);
     const { Email: email = '', DisplayName: cn = '' } = organizerAddress || {};
