@@ -4,31 +4,23 @@ import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared
 import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+import { UserModel } from '@proton/shared/lib/interfaces';
+import { EASY_SWITCH_SOURCE, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, GoogleButton, Href, PrimaryButton, useModalState } from '../../../components';
-import { useFeature, useModals } from '../../../hooks';
+import { Alert, Href, PrimaryButton, useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSection } from '../../account';
-import { EasySwitchOauthModal } from '../../easySwitch';
-import { FeatureCode } from '../../features';
+import { EasySwitchOauthImportButton, EasySwitchProvider } from '../../easySwitch';
 import { ImportModal } from '../importModal';
 
 interface Props {
-    addresses: Address[];
     calendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
     user: UserModel;
 }
 
-const CalendarImportSection = ({ addresses, calendars, defaultCalendar, user }: Props) => {
+const CalendarImportSection = ({ calendars, defaultCalendar, user }: Props) => {
     const { hasNonDelinquentScope } = user;
-    const { createModal } = useModals();
-
-    const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
-    const easySwitchFeatureLoading = easySwitchFeature.loading;
-    const easySwitchFeatureValue = easySwitchFeature.feature?.Value;
 
     const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(calendars));
     const hasActiveCalendars = !!activeWritableCalendars.length;
@@ -36,16 +28,6 @@ const CalendarImportSection = ({ addresses, calendars, defaultCalendar, user }: 
     const [importModal, setIsImportModalOpen, renderImportModal] = useModalState();
 
     const handleManualImport = () => setIsImportModalOpen(true);
-
-    const handleOAuthClick = () =>
-        createModal(
-            <EasySwitchOauthModal
-                source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
-                addresses={addresses}
-                defaultCheckedTypes={[ImportType.CALENDAR]}
-                featureMap={easySwitchFeatureValue}
-            />
-        );
 
     return (
         <SettingsSection>
@@ -72,13 +54,14 @@ const CalendarImportSection = ({ addresses, calendars, defaultCalendar, user }: 
                     .t`Here's how`}</Href>
             </SettingsParagraph>
 
-            {!easySwitchFeatureLoading && easySwitchFeatureValue?.GoogleCalendar && (
-                <GoogleButton
-                    onClick={handleOAuthClick}
-                    disabled={easySwitchFeatureLoading || !hasNonDelinquentScope}
+            <EasySwitchProvider>
+                <EasySwitchOauthImportButton
                     className="mr1"
+                    source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
+                    defaultCheckedTypes={[ImportType.CALENDAR]}
+                    displayOn={'GoogleCalendar'}
                 />
-            )}
+            </EasySwitchProvider>
 
             <PrimaryButton onClick={handleManualImport} disabled={!hasNonDelinquentScope || !hasActiveCalendars}>
                 {c('Action').t`Import from ICS`}

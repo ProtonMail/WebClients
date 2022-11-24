@@ -23,7 +23,6 @@ import {
     MailImportGmailCategories,
     MailImportPayloadError,
     MailImporterPayload,
-    NON_OAUTH_PROVIDER,
     OAUTH_PROVIDER,
     TIME_PERIOD,
 } from '@proton/shared/lib/interfaces/EasySwitch';
@@ -36,7 +35,6 @@ import { classnames } from '../../../helpers';
 import { useFeature, useModals } from '../../../hooks';
 import ContactImportModal from '../../contacts/import/ContactImportModal';
 import { FeatureCode } from '../../features';
-import EasySwitchInstructionsModal from '../EasySwitchInstructionsModal';
 import CustomizeCalendarImportModal from '../calendar/modals/CustomizeCalendarImportModal';
 import { CALENDAR_TO_BE_CREATED_PREFIX, GMAIL_CATEGORIES } from '../constants';
 import { hasDataToImport } from '../helpers';
@@ -616,15 +614,8 @@ const IASelectImportTypeStep = ({
                         <InlineLinkButton
                             color="weak"
                             onClick={() => {
-                                createModal(
-                                    <EasySwitchInstructionsModal
-                                        importType={ImportType.CONTACTS}
-                                        addresses={addresses}
-                                        provider={NON_OAUTH_PROVIDER.OUTLOOK}
-                                        onOpenCalendarModal={() => {}}
-                                        onImportContact={onImportContact}
-                                    />
-                                );
+                                // TODO: Add instruction modal step before loading directly contacts
+                                void onImportContact();
                             }}
                         >
                             {c('Label').t`Upload file`}

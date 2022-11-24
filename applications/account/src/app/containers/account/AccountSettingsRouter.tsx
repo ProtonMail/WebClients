@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import {
-    AccountEasySwitchSection,
     AccountRecoverySection,
     AutomaticSubscriptionModal,
     BillingSection,
@@ -12,8 +11,7 @@ import {
     CreditsSection,
     DataRecoverySection,
     DeleteSection,
-    EasySwitchDashboard,
-    EasySwitchStoreProvider,
+    EasySwitchSettingsArea,
     EmailSubscriptionSection,
     GiftCodeSection,
     InvoicesSection,
@@ -28,7 +26,6 @@ import {
     PrivateMainSettingsArea,
     SessionsSection,
     SettingsPageTitle,
-    SettingsSectionWide,
     SubscriptionModalProvider,
     TwoFactorSection,
     UsernameSection,
@@ -132,14 +129,7 @@ const AccountSettingsRouter = ({
                 </Route>
             )}
             <Route path={getSectionPath(path, easySwitch)}>
-                <EasySwitchStoreProvider>
-                    <PrivateMainSettingsArea config={easySwitch}>
-                        <AccountEasySwitchSection />
-                        <SettingsSectionWide>
-                            <EasySwitchDashboard />
-                        </SettingsSectionWide>
-                    </PrivateMainSettingsArea>
-                </EasySwitchStoreProvider>
+                <EasySwitchSettingsArea config={easySwitch} />
             </Route>
             {redirect}
         </Switch>

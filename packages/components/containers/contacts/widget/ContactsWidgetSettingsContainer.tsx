@@ -51,7 +51,7 @@ const ContactsWidgetSettingsContainer = ({ onImport, onExport, onClose }: Props)
                         </Field>
                     </div>
                     <div className="mb2">
-                        <ContactsWidgetSettingsContainerImport onImport={handleImport} />
+                        <ContactsWidgetSettingsContainerImport onImport={handleImport} onClose={onClose} />
                     </div>
                     <div className="mb2">
                         <ContactsWidgetSettingsContainerExport onExport={handleExport} />

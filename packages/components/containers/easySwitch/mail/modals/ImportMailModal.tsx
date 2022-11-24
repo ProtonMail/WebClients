@@ -76,6 +76,7 @@ interface ImporterFromServer {
 interface Props {
     currentImport?: NormalizedImporter;
     onClose?: () => void;
+    onExit?: () => void;
     addresses: Address[];
     provider?: NON_OAUTH_PROVIDER;
 }
