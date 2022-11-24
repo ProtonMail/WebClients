@@ -1440,6 +1440,9 @@
       "Bugs or quality issue": [
         "Terdapat bug-bug yang mengganggu saya"
       ],
+      "I use a different ${ BRAND_NAME } account": [
+        "Saya menggunakan akun ${ BRAND_NAME } lainnya"
+      ],
       "Missing feature(s)": [
         "Terdapat fitur yang hilang"
       ],
@@ -1857,11 +1860,11 @@
       "${ storageSize } storage": [
         "Kuota penyimpanan ${ storageSize }"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "Paket ${ vpnBasic }, ${ vpnPlus }, atau ${ visionary } dibutuhkan untuk dapat membuka sambungan tingkat negara."
+      "${ vpnPlus } required for Country level connection.": [
+        "${ vpnPlus } diperlukan untuk koneksi tingkat Negara."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "Paket ${ vpnPlus } atau ${ visionary } dibutuhkan untuk dapat mengakses fitur Secure Core."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "${ vpnPlus } diperlukan untuk fitur Secure Core."
       ],
       "* No credit card required.": [
         "* Tanpa perlu kartu kredit."
@@ -2114,6 +2117,9 @@
       ],
       "Loading preview": [
         "Memuat pratinjau"
+      ],
+      "Loading...": [
+        "Memuat..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Masuk ke ${ MAIL_APP_NAME } untuk mengaktifkan alamat Anda"
@@ -2508,17 +2514,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Akun ${ BRAND_NAME } Anda terhubung dengan ${ externalEmailAddress }. Untuk dapat menggunakan ${ toAppName }, Anda butuh alamat email ${ MAIL_APP_NAME }."
       ],
-      "Your ${ BRAND_NAME } account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang dalam masa tenggang. Untuk dapat tetap menggunakan akun Anda, mohon lunasi seluruh tagihan yang tertunggak."
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, harap masuk ke ${ loginLink } dan hapus akun Anda di sana."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akun Anda telah ditangguhkan dan seluruh layanan telah diblokir hingga Anda melakukan pembayaran. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak dan telah ditangguhkan. Kelalaian membayar yang berkelanjutan akan memblokir email dan tautan berbagi Anda. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
@@ -3385,6 +3397,9 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Segala saldo, prorasi, dan kupon diskon akan diterapkan pada langkah selanjutnya"
       ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Privasi dan keamanan yang komprehensif dengan dukungan gabungan dari seluruh layanan ${ BRAND_NAME }."
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Dengan menghapus akun Anda, Anda akan kehilangan seluruh manfaat yang dimiliki oleh paket ${ visionary } dan paket tersebut tidak akan lagi tersedia apabila Anda membuat akun baru."
       ],
@@ -3399,6 +3414,9 @@
       ],
       "Popular": [
         "Populer"
+      ],
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Rangkaian gawai privasi dan keamanan untuk bisnis, dengan seluruh layanan premium ${ BRAND_NAME } yang terkandung di dalamnya."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Layanan penyimpanan aman berbasis cloud yang memungkinkan Anda untuk mengarsipkan, menyinkronkan, dan membagikan berkas dengan mudah dan aman."
@@ -3431,6 +3449,12 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
@@ -3490,6 +3514,9 @@
       "Review subscription and pay": [
         "Peninjauan dan pembayaran langganan"
       ],
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "Mulai jelajahi semesta ${ BRAND_NAME }"
+      ],
       "Switch plans?": [
         "Ganti paket?"
       ]
@@ -3527,6 +3554,9 @@
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kendalikan akses menuju berkas yang Anda bagikan dengan menambahkan kata sandi dan waktu kedaluwarsa tautan"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
+      ],
       "Create up to ${ n } custom calendars.": [
         "Buat hingga ${ n } kalender khusus."
       ],
@@ -3563,11 +3593,17 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Kelola status berlangganan Anda dan atur sendiri paket yang ingin Anda langgan. Kami menerima pembayaran melalui kartu kredit, PayPal, mata uang kripto, dan transfer bank."
       ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "Dapatkan dukungan dari tim Layanan Dukungan ${ BRAND_NAME } dalam rentang waktu 1 x 24 jam pada hari kerja"
+      ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "Di samping itu, Anda juga akan dapat menambahkan hingga 5 kalender dari rekan kerja, organisasi, keluarga, dan teman Anda."
       ],
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Di samping itu, Anda juga akan dapat menambahkan hingga 5 kalender dari teman, keluarga, rekan kerja, dan organisasi Anda."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
+        "Satu koneksi VPN hanya memungkinkan Anda untuk menghubungkan satu perangkat ke ${ BRAND_NAME } pada satu waktu. Semisal Anda ingin menyambungkan ponsel dan laptop Anda ke ${ BRAND_NAME } secara bersamaan, Anda akan butuh dua koneksi VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opsi untuk melihat kotak masuk para pengguna non-privat sebagaimana yang mereka lihat, termasuk seluruh isi pesan dan rincian kontak mereka"
@@ -3583,6 +3619,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "Dukungan via telepon tersedia dari tim ${ BRAND_NAME } Customer Success pada hari dan jam kerja yang berlaku di Eropa pada umumnya, khusus untuk para pelanggan dengan 6 atau lebih pengguna"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Mencegah pesan untuk dapat diakses oleh ${ BRAND_NAME } atau pihak ketiga. Pesan Anda hanya akan dibaca oleh penerima dan Anda sendiri."
@@ -3604,6 +3643,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Simpan rincian kontak Anda seperti nomor telepon, alamat, tanggal ulang tahun, catatan personal, dan lain sebagainya secara aman. Enkripsi zero-access kami memastikan bahwa tidak ada siapapun yang dapat mengakses data Anda, termasuk ${ BRAND_NAME } sendiri."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Kirim email ke grup yang besar dengan mudah dan cepat ke dengan cara membuat kontak grup khusus sejumlah pesan yang Anda butuhkan (hingga 100 kontak per grup)"

@@ -552,11 +552,6 @@
         "Ao sair agora, alguns contactos podem não ser importados"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicações do Proton"
-      ]
-    },
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Se encontrar problemas, pode sempre desactivar o acesso Beta."
@@ -1721,9 +1716,6 @@
       "Please ${ refresh } or check your connection.": [
         "Por favor ${ refresh } ou verifique a sua ligação."
       ],
-      "There was a problem connecting to Proton.": [
-        "Ocorreu um problema ao ligar ao Proton."
-      ],
       "You may also ${ refresh } or try again later.": [
         "Também pode ${ refresh } ou tentar mais tarde."
       ],
@@ -1907,27 +1899,6 @@
       ],
       "Invalid IMAP port": [
         "Porta IMAP inválida"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que o acesso Gmail IMAP está activado."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que o acesso IMAP está activado na sua conta Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "O Proton não pode ligar à sua conta externa. Por favor, certifique-se de que o endereço do servidor e a porta estão correctos."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "O Proton não pode ligar à sua conta externa. Por favor, certifique-se de que:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "O Proton não pode ligar à sua conta do Gmail. Por favor, certifique-se de que o endereço do servidor de email e o número da porta estão correctos."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "O Proton não pode ligar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de email e o número da porta estão correctos."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiados pedidos recentes. Por favor, tente mais tarde."
@@ -2474,9 +2445,6 @@
       "There are no files yet": [
         "Ainda não há ficheiros"
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "Estes ficheiros foram partilhados usando encriptação ponto a ponto. Para os manter seguros — assim como todos os seus documentos, fotos, e ficheiros privados — armazene-os no Proton Drive. É fácil de usar e gratuito."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
       ],
@@ -2573,9 +2541,6 @@
       "You will lose all unsaved changes.": [
         "Perderá todas as alterações por gravar."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "A sua conta tem pelo menos uma factura em atraso. O acesso foi restringido. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
       ],
@@ -2593,9 +2558,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta Proton está actualmente suspensa. Para continuar a usar a sua conta, por favor, pague quaisquer facturas em atraso."
       ]
     },
     "Info on errors": {
@@ -2836,9 +2798,6 @@
       ],
       "Protect with password": [
         "Proteger com senha"
-      ],
-      "Proton username": [
-        "Utilizador Proton"
       ],
       "Public keys": [
         "Chaves públicas"
@@ -3111,17 +3070,11 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configure a sua organização, vincule o seu nome de domínio e crie contas para garantir que todos os membros da sua organização estão protegidos."
       ],
-      "Discover all Proton services": [
-        "Descubra todos os serviços Proton"
-      ],
       "Select a theme": [
         "Seleccionar um tema"
       ],
       "Set up your organization": [
         "Configure a sua organização"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Use o selector de aplicações no canto superior esquerdo para aceder a outros serviços Proton, incluindo VPN, Calendar e Drive."
       ],
       "You can change this anytime in your settings.": [
         "Pode alterar isto a qualquer momento nas definições."
@@ -3835,9 +3788,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se não se lembra da senha, é impossível reactivar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."
       ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "O Proton transferirá o máximo de dados possível, começando com as mensagens mais recentes."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
       ],
@@ -3855,12 +3805,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acção é irreversível. Por favor, insira a palavra ${ boldDanger } no campo para continuar."
-      ],
-      "This feature requires a paid Proton account": [
-        "Esta funcionalidade requer uma conta Proton paga"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Esta importação pode exceder a capacidade de armazenamento actualmente disponível na sua conta Proton. Por favor, considere personalizar a importação."
       ]
     }
   }

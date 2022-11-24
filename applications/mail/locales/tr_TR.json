@@ -155,6 +155,9 @@
       "Clear query": [
         "Sorguyu temizle"
       ],
+      "Clear search": [
+        "Aramayı temizle"
+      ],
       "Click here.": [
         "Buraya tıklayın."
       ],
@@ -268,6 +271,12 @@
       "Delete draft": [
         "Taslağı sil"
       ],
+      "Delete folder": [
+        "Klasörü sil"
+      ],
+      "Delete label": [
+        "Etiketi sil"
+      ],
       "Delete permanently": [
         "Kalıcı olarak sil"
       ],
@@ -312,6 +321,9 @@
       ],
       "Edit encryption": [
         "Şifrelemeyi düzenle"
+      ],
+      "Edit folder": [
+        "Klasörü düzenle"
       ],
       "Edit label": [
         "Etiketi düzenle"
@@ -797,9 +809,6 @@
       "Save": [
         "Kaydet"
       ],
-      "Saving${ _ellipsis }": [
-        "Kaydediliyor${ _ellipsis }"
-      ],
       "Schedule message": [
         "İletiyi zamanla"
       ],
@@ -1047,9 +1056,6 @@
       "View keys": [
         "Anahtarları göster"
       ],
-      "View message": [
-        "İletiyi göster"
-      ],
       "View message details": [
         "İleti ayrıntılarını görüntüle"
       ],
@@ -1171,8 +1177,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Proton uygulamaları"
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } uygulamaları"
       ]
     },
     "Attached ics file error": {
@@ -1504,8 +1510,8 @@
       "Event rescheduling is not supported for the moment": [
         "Şimdilik etkinlik zamanının değiştirilmesi desteklenmiyor"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        "Bu yanıt, şu anda yalnızca etkinlik dizilerinin tamamına verilen yanıtlar desteklendiği için ${ calendarAppName } takvimine eklenemez"
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "Şu anda yalnızca etkinlik dizilerinin tamamına yanıt verilmesi desteklendiğinden, bu yanıt ${ CALENDAR_APP_NAME } takvimine eklenemez"
       ],
       "This event has been canceled.": [
         "Bu etkinlik iptal edildi."
@@ -1594,8 +1600,8 @@
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Takvim bağlantısına geçici olarak erişilemiyor. Lütfen takvim hizmeti sağlayıcısı bağlantısının hala geçerli olduğunu doğrulayın."
       ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Son güncellemenin üzerinden 12 saatten fazla zaman geçmiş. Proton Calendar, takvimi birkaç saat içinde güncellemeye çalışacak."
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Son güncellemenin üzerinden 12 saatten fazla zaman geçmiş. ${ CALENDAR_APP_NAME }, takvimi birkaç saat içinde güncellemeye çalışacak."
       ]
     },
     "Calendar widget banner": {
@@ -3104,9 +3110,9 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Eklenebilecek en fazla dosya sayısı (${ attachmentsCountLimit }) sınırı aşıldı"
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
-        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin",
+        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin"
       ],
       "Message needs to be sent first": [
         "Öncelikle iletinin gönderilmesi gerekiyor"
@@ -3238,8 +3244,8 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
       ],
-      "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Ne yazık ki, Proton iletinizin şifresini çözemiyor. Lütfen tüm anahtarlarınızın etkin olduğundan emin olun."
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "Ne yazık ki, ${ BRAND_NAME } iletinizin şifresini çözemiyor. Lütfen tüm anahtarlarınızın etkin olduğundan emin olun."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Ek dosyanın şifresi çözülemedi.\nİlgili kişisel anahtara sahipseniz, GnuPG gibi programlarla dosyanın şifresini çözebilirsiniz.",
@@ -3504,8 +3510,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
-      "There was a problem connecting to Proton.": [
-        "Proton bağlantısı kurulurken bir sorun çıktı."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } bağlantısı kurulurken bir sorun çıktı."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Henüz herhangi bir kişiniz yok. Bir kişi ekleyin"
@@ -3752,6 +3758,17 @@
         "${ BRAND_NAME }. Varsayılan olarak kişisel gizliliği korur."
       ]
     },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "Tarih: ${ date }"
+      ],
+      "From: ${ senderString }": [
+        "Kimden: ${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "Konu: ${ subject }"
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "Hesabınızın toplam depolama alanını ${ rewardInGb } GB yaptık. Bugün ek depolama alanı alın ve ücretli özelliklere erişin."
@@ -3779,8 +3796,8 @@
       "Available on iOS and Android.": [
         "iOS ve Android ile kullanılabilir."
       ],
-      "Get the ${ protonMailAppName } mobile app": [
-        "${ protonMailAppName } mobil uygulamasını alın"
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "${ MAIL_APP_NAME } mobil uygulamasını edinin"
       ],
       "Import contacts or emails": [
         "Kişileri veya e-postaları içe aktarın"
@@ -3954,6 +3971,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "Google hesabınızın güvenlik ayarlarında \"Daha az güvenli uygulama erişimi\" açık."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen Gmail IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen Gmail hesabınızda IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, dış hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME }, dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Dış hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
       ],
@@ -3980,30 +4021,6 @@
       ],
       "Invalid IMAP port": [
         "IMAP bağlantı noktası geçersiz"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton hesabınızla bağlantı kuramadı. Lütfen Gmail IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton hesabınızla bağlantı kuramadı. Lütfen Gmail hesabınızda IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton dış hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton, Yahoo hesabınıza bağlanamıyor. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
@@ -4065,17 +4082,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Seçenekler menüsü açmak için ${ boldManage } üzerine tıklayın."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "E-posta hizmeti sağlayıcınıza bağlı olarak, Proton içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "E-posta hizmeti sağlayıcınıza bağlı olarak, ${ BRAND_NAME } içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3 nokta (...) üzerine tıklayarak menüyü açın."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Bir ${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Bir ${ boldAppPassword } oluşturun ve ${ BRAND_NAME } tarafından sorulduğunda normal parolanız yerine bunu yazın."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword } oluşturun ve ${ BRAND_NAME } tarafından sorulduğunda normal parolanız yerine bunu yazın."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } üzerindeki profilinizin altından ${ boldAccountInfo } bölümüne gidin."
@@ -4101,29 +4118,29 @@
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } seçin."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } işlemini yapmalısınız. 3 kolay adımda Outlook üzerinden indirin:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } işlemini yapmalısınız. 3 kolay adımda Yahoo üzerinden indirin:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "E-postaları Proton içine aktarmak için şu adımları izleyerek Outlook üzerinden ${ appPasswordLink } almalısınız:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "E-postaları ${ BRAND_NAME } içine aktarmak için şu adımları izleyerek Outlook üzerinden ${ appPasswordLink } almalısınız:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "E-postaları Proton içine aktarmak için şu adımları izleyerek Yahoo üzerinden ${ appPasswordLink } almalısınız:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "E-postaları ${ BRAND_NAME } içine aktarmak için şu adımları izleyerek Yahoo üzerinden ${ appPasswordLink } almalısınız:"
       ]
     },
     "Import instructions emphasis": {
@@ -4222,6 +4239,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
+      ],
+      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
+        "${ BRAND_NAME } kişisel güvenliğinizi ihlal ederek para kazanmaz."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
@@ -4436,6 +4456,12 @@
       "Are you sure you want to delete all messages with this label?": [
         "Bu şekilde etiketlenmiş tüm iletileri silmek istediğinize emin misiniz?"
       ],
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Bu klasörü silmek istediğinize emin misiniz? Bu klasörün içindeki klasörler de silinecek."
+      ],
+      "Are you sure you want to delete this label?": [
+        "Bu etiketi silmek istediğinize emin misiniz?"
+      ],
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
@@ -4616,15 +4642,21 @@
       "Email tracker protection is disabled": [
         "E-posta izleme koruması devre dışı"
       ],
-      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        "E-posta izleyicileri kişisel gizliliğinizi ihlal edebilir. Proton bu iletide herhangi bir izleyici bulamadı."
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
+        "E-posta izleyicileri kişisel gizliliğinizi ihlal edebilir. ${ BRAND_NAME }, bu iletide herhangi bir izleyici bulamadı."
       ],
-      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. Proton ${ numberOfTrackers } izleyici buldu ve engelledi.",
-        "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. Proton ${ numberOfTrackers } izleyici buldu ve engelledi."
+      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
+        "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. ${ BRAND_NAME } ${ numberOfTrackers } izleyici buldu ve engelledi.",
+        "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. ${ BRAND_NAME } ${ numberOfTrackers } izleyici buldu ve engelledi."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. Göndericinin iletileri açıp açmadığınızı bilmesini önlemek için izleme koruma özelliğini açın."
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "Bu klasörde depolanmış e-postalar silinmeyecek ve hala Tüm e-postalar kutusunda bulunabilecek."
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "Bu etiket ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
       ],
       "embedded image": [
         "gömülmüş görsel",
@@ -4721,8 +4753,8 @@
       "How Hide My Email works": [
         "E-postamı gizle özelliği nasıl çalışır"
       ],
-      "I'm sending this message to a non-Proton Mail user.": [
-        "Bu iletiyi Proton Mail kullanmayan bir alıcıya gönderiyorum."
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "Bu iletiyi ${ MAIL_APP_NAME } kullanmayan bir alıcıya gönderiyorum."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -4827,6 +4859,9 @@
       "Loading preview": [
         "Ön izleme yükleniyor"
       ],
+      "Loading...": [
+        "Yükleniyor..."
+      ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
       ],
@@ -4914,8 +4949,8 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Herhangi bir izleyici bulunamadı. Ancak bazı görseller izleme koruması nedeniyle yüklenmeyebilir"
       ],
-      "non-Proton Mail": [
-        "Proton olmayan e-posta"
+      "non-${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } kullanmayan"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Yüklenen anahtarların hiçbiri şifreleme için geçerli değil. Bu adrese ileti gönderebilmek için lütfen geçerli bir anahtar yükleyin ya da \"E-postalar şifrelensin\" seçeneğini devre dışı bırakın."
@@ -5004,9 +5039,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } ile e-posta adresinizin, posta listeleri veya istenmeyen e-posta gönderenlere sızmasından korunun."
-      ],
-      "Proton doesn't make money by abusing privacy.": [
-        "Proton kişisel güvenliğinizi ihlal ederek para kazanmaz."
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -5113,8 +5145,8 @@
       "Sign in": [
         "Oturum aç"
       ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin bir Proton hizmetidir ve Proton hesabınızda E-postamı gizle takma adları kullanılmasını sağlar. E-posta adresinizi gizlemeye başlamak için SimpleLogin sitesine gidin ve ilk takma adınızı oluşturun."
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin bir ${ BRAND_NAME } hizmetidir ve ${ BRAND_NAME } hesabınızda E-postamı gizle takma adları kullanılmasını sağlar. E-posta adresinizi gizlemeye başlamak için SimpleLogin sitesine gidin ve ilk takma adınızı oluşturun."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin, gerçek e-posta adresinizi açıklamak istemediğiniz, güvenilmez üçüncü taraf sitelerinde oturum açmak için basit bir yol sunar."
@@ -5371,8 +5403,8 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "Adres: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ calendarAppName } to keep your agenda private.": [
-        "Takviminizi kişisel tutmak için ${ calendarAppName } kullanın."
+      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
+        "Takviminizi kişisel tutmak için ${ CALENDAR_APP_NAME } kullanın."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "E-postanızı daha hızlı yönetmek için klavye kısayollarını kullanın."
@@ -5380,14 +5412,14 @@
       "Using SimpleLogin is easy": [
         "SimpleLogin kullanmak kolaydır"
       ],
-      "Verified Proton message": [
-        "Doğrulanmış Proton iletisi"
+      "Verified ${ BRAND_NAME } message": [
+        "Doğrulanmış ${ BRAND_NAME } iletisi"
       ],
       "Version ${ appVersion }": [
         "Sürüm ${ appVersion }"
       ],
-      "Visit our shop to get Proton merchandise.": [
-        "Proton imzalı ürünleri almak için mağazamıza bakabilirsiniz."
+      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
+        "${ BRAND_NAME } ürünlerini almak için mağazamıza bakabilirsiniz."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Özür dileriz. Bu durum bizim hatamızdan kaynaklanıyor olabilir. Bu e-postanın göründüğü gibi olduğunu doğrulayabilir misiniz misiniz?"
@@ -5443,8 +5475,8 @@
       "You can add it as an attachment or display it inline in your mail body.": [
         "Dosya olarak ekleyebilir ya da e-postanızın içeriğinde satır arasında görüntüleyebilirsiniz."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Ayrıca içe aktarılan takvimleri var olan Proton takvimleriyle birleştirebilirsiniz."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Ayrıca içe aktarılan takvimleri var olan ${ BRAND_NAME } takvimleriyle birleştirebilirsiniz."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "İlerlemeye bakabilirsiniz ${ importProgressLink }."
@@ -5523,14 +5555,26 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” yazdınız ama bir dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz kısıtlandı. ${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "${ BRAND_NAME } hesabınızda SimpleLogin bulunur. Başlamak için tek tıklamayla web tarayıcı eklentisini kurabilirsiniz."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Verileriniz ${ importedEmailAddressStrong } üzerinden Proton hesabınız içine aktarılmaya hazır."
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "E-posta adresiniz değişmeyecek. Ancak yakında ${ link } adresinden oturum açmanız gerekecek."
@@ -5565,12 +5609,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Proton hesabınızda SimpleLogin bulunur. Başlamak için tek tıklamayla web tarayıcı eklentisini kurabilirsiniz."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
       ],
       "Your recovery phrase": [
         "Kurtarma ifadeniz"
@@ -5833,6 +5871,9 @@
       " and ${ l }": [
         " ve ${ l }"
       ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } kullanıcı adı"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
@@ -6025,8 +6066,8 @@
       "Hide password": [
         "Parolayı gizle"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Yeni Proton ile yaşadığınız deneyimi nasıl değerlendirirsiniz?"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Yeni ${ BRAND_NAME } ile yaşadığınız deneyimi nasıl değerlendirirsiniz?"
       ],
       "I understand the risk": [
         "Riski anladım"
@@ -6162,9 +6203,6 @@
       ],
       "Postal code": [
         "Posta kodu"
-      ],
-      "Proton username": [
-        "Proton kullanıcı adı"
       ],
       "Public keys": [
         "Herkese açık anahtarlar"
@@ -6429,20 +6467,17 @@
       "Manage your folders": [
         "Klasörlerinizi yönetin"
       ],
-      "Manage your labels": [
-        "Etiketlerinizi yönetin"
-      ],
       "More": [
         "Diğer"
       ],
       "More about recovery": [
         "Kurtarma hakkında ayrıntılı bilgi"
       ],
-      "Open in ${ calendarAppName }": [
-        "${ calendarAppName } ile aç"
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } uygulamasında aç"
       ],
-      "Open updated event in ${ calendarAppName }": [
-        "Güncellenen etkinliği ${ calendarAppName } ile aç"
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Güncellenen etkinliği ${ CALENDAR_APP_NAME } ile aç"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Ya da takvimlerinizden birini silebilir ve etkin bir e-posta adresine bağlı yeni bir takvim ekleyebilirsiniz."
@@ -6483,8 +6518,8 @@
       "Terms": [
         "Koşullar"
       ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Bu ICS dosyasında birden fazla etkinlik var. Lütfen dosyayı indirin ve ${ calendarAppName } içine aktarın"
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Bu ICS dosyasında birden fazla etkinlik var. Lütfen dosyayı indirin ve ${ CALENDAR_APP_NAME } içine aktarın"
       ],
       "Trash": [
         "Çöp kutusu"
@@ -6598,8 +6633,8 @@
       "Fw:": [
         "İlt:"
       ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ name } ${ address } ${ date } tarihinde şunu yazdı:"
+      "On ${ date }, ${ senderString } wrote:": [
+        "${ senderString }, ${ date } tarihinde şunu yazdı:"
       ],
       "Re:": [
         "Ynt:"
@@ -6614,8 +6649,8 @@
       ]
     },
     "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by Proton": [
-        "Proton tarafından SimpleLogin aracılığıyla aktarıldı"
+      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
+        "SimpleLogin ile ${ BRAND_NAME } üzerine gönderildi"
       ]
     },
     "Message image": {
@@ -6837,9 +6872,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } eklendi"
-      ],
       "Block removed": [
         "Engelleme kaldırıldı"
       ],
@@ -6860,8 +6892,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Ardından, Google hesabınızda oturum açmanız ve verilerinize Proton tarafından erişilmesine izin vermeniz gerekecek."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ardından, Google hesabınızda oturum açmanız ve verilerinize ${ BRAND_NAME } tarafından erişilmesine izin vermeniz gerekecek."
       ]
     },
     "Oauth instructions video": {
@@ -6889,8 +6921,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar ekleyin."
       ],
-      "Discover all Proton services": [
-        "Tüm Proton hizmetlerini keşfedin"
+      "Discover all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetlerini keşfedin"
       ],
       "Select a theme": [
         "Bir tema seçin"
@@ -6898,8 +6930,8 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "VPN, Calendar ve Drive gibi diğer Proton hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "VPN, Calendar ve Drive gibi diğer ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
       ],
       "You can change this anytime in your settings.": [
         "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."
@@ -7295,12 +7327,6 @@
       ]
     },
     "Signature verification warning": {
-      "PGP-encrypted message. Sender verification failed: ${ _verificationErrorsMessage }": [
-        "PGP ile şifrelenmiş ileti. Gönderici doğrulanamadı: ${ _verificationErrorsMessage }"
-      ],
-      "PGP-signed message. Sender verification failed: ${ _verificationErrorsMessage2 }": [
-        "PGP ile imzalanmış ileti. Gönderici doğrulanamadı: ${ _verificationErrorsMessage2 }"
-      ],
       "Sender could not be verified: Message not signed": [
         "Gönderici doğrulanamadı: İleti imzalanmamış"
       ],
@@ -7338,8 +7364,8 @@
       "Get up to ${ credits } in credits.": [
         "${ credits } tutarına kadar kredi kazanın."
       ],
-      "Invite friends to Proton": [
-        "Arkadaşlarınıza Proton daveti gönderin"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Arkadaşlarınızı ${ BRAND_NAME } üzerine çağırın"
       ],
       "Message Content Search": [
         "İleti içeriği arama"
@@ -7625,6 +7651,11 @@
         "Doğrulandı"
       ]
     },
+    "Success notification": {
+      "${ label.Name } removed": [
+        "${ label.Name } silindi"
+      ]
+    },
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Geri bildirim gönderildi"
@@ -7733,12 +7764,12 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } klavye kısayolları"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } üye",
         "${ emailsCount } üye"
+      ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "${ MAIL_APP_NAME } klavye kısayolları"
       ],
       "${ unreads } unread message": [
         "${ unreads } okunmamış ileti",
@@ -7870,6 +7901,12 @@
         "${ count } iletiyi sil",
         "${ count } iletiyi sil"
       ],
+      "Delete ${ label.Name } folder": [
+        "${ label.Name } klasörünü sil"
+      ],
+      "Delete ${ label.Name } label": [
+        "${ label.Name } etiketini sil"
+      ],
       "Delete ${ Name }": [
         "${ Name } kişisini sil"
       ],
@@ -7942,14 +7979,17 @@
       "Filter on...": [
         "Şuna göre süz..."
       ],
+      "Folder options": [
+        "Klasör ayarları"
+      ],
       "Forward": [
         "İlet"
       ],
       "Groups": [
         "Gruplar"
       ],
-      "Hide your email with SimpleLogin by Proton": [
-        "Proton tarafından sunulan SimpleLogin hizmeti ile e-posta adresinizi gizleyin"
+      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
+        "${ BRAND_NAME } tarafından sunulan SimpleLogin hizmeti ile e-posta adresinizi gizleyin"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
@@ -7968,6 +8008,9 @@
       ],
       "Label as": [
         "Etiketle"
+      ],
+      "Label options": [
+        "Etiket ayarları"
       ],
       "Link confirmation": [
         "Bağlantı onayı"
@@ -8336,6 +8379,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
+      ],
       "Are you sure you want to discard your import?": [
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
@@ -8361,12 +8410,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Canlı sohbet yalnızca ücretli ${ VPN_APP_NAME } tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
-      ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
@@ -8396,11 +8439,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Bu işlem geri alınamaz. İlerlemek için lütfen kutuya ${ boldDanger } sözcüğünü yazın."
       ],
-      "This feature requires a paid Proton account": [
-        "Bu özellik ücretli bir Proton hesabında kullanılabilir"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Bu özellik ücretli bir ${ BRAND_NAME } hesabında kullanılabilir"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Bu içe aktarma işlemi, Proton hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrimiçi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrimiçi olduğumuzda inceleyip size geri döneceğiz."

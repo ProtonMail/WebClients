@@ -530,15 +530,6 @@
       "${ title } started at ${ formattedHour }": [
         "${ title } va començar a les ${ formattedHour }"
       ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } va començar a les ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } va començar el ${ _formattedDate } a les ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } va començar el ${ _formattedDateWithTime }"
-      ],
       "${ title } started on ${ formattedDate }": [
         "${ title } va començar a les ${ formattedDate }"
       ],
@@ -560,21 +551,6 @@
       "${ title } starts now": [
         "${ title } comença ara"
       ],
-      "${ title } starts on ${ _formattedDate2 }": [
-        "${ title } va començar a les ${ _formattedDate2 }"
-      ],
-      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } va començar el ${ _formattedDate2 } a les ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDate3 }": [
-        "${ title } va començar a les ${ _formattedDate3 }"
-      ],
-      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } va començar el ${ _formattedDate3 } a les ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDateWithoutTime }": [
-        "${ title } va començar a les ${ _formattedDateWithoutTime }"
-      ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } va començar el ${ formattedDateWithTime }"
       ],
@@ -594,11 +570,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "Si surts ara, perdreu el vostre esdeveniment."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicacions de Proton"
       ]
     },
     "Attached ics file error": {
@@ -1906,14 +1877,6 @@
       ]
     },
     "Error": {
-      "${ _list } doesn't have an email address": [
-        "${ _list } no té una adreça de correu electrònic",
-        "Alguns contactes no tenen adreça de correu electrònic: ${ _list } "
-      ],
-      "${ _list2 } has no contacts": [
-        "${ _list2 } no té contactes",
-        "Alguns grups no tenen contactes: ${ _list2 } "
-      ],
       "${ list } doesn't have a valid email address": [
         "${ list } no té una adreça de correu electrònic vàlida",
         "Alguns contactes no tenen una adreça de correu electrònic vàlida: ${ list }"
@@ -2034,10 +1997,6 @@
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Uniu almenys ${ calendarToFixCount } calendari amb un calendari Proton existent",
-        "Uniu almenys ${ calendarToFixCount } calendaris amb calendaris Proton existents"
       ],
       "Missing key packet": [
         "Falta el paquet de claus"
@@ -2345,9 +2304,6 @@
       "Please ${ refresh } or check your connection.": [
         "Si us play, ${ refresh } o comproveu la vostra connexió."
       ],
-      "There was a problem connecting to Proton.": [
-        "S'ha produït un problema en connectar amb Proton."
-      ],
       "You may also ${ refresh } or try again later.": [
         "També podeu ${ refresh } o tornar-ho a intentar més tard."
       ],
@@ -2591,9 +2547,6 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Les invitacions importades aparèixen a ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador i dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de Proton."
-      ],
       "This file contains an event invitation:": [
         "Aquest fitxer conté una invitació a un esdeveniment:",
         "Aquest fitxer conté invitacions a un esdeveniment:"
@@ -2664,24 +2617,6 @@
       ],
       "Invalid IMAP port": [
         "Port IMAP no vàlid"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton no es pot connectar al vostre compte. Assegureu-vos que l’accés IMAP de Gmail estigui habilitat."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton no es pot connectar al teu compte. Assegureu-vos que l'accés IMAP està habilitat al vostre compte de Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton no es pot connectar al vostre compte. Assegureu-vos que:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton no es pot connectar al vostre compte extern. Assegureu-vos que l'adreça del servidor de correu i el número del port són correctes."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton no es pot connectar al vostre compte extern. Assegureu-vos que:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton no es pot connectar al vostre compte de Gmail. Assegureu-vos que l'adreça del servidor de correu i el número del port són correctes."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
@@ -3342,9 +3277,6 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "També podeu combinar els calendaris importats amb calendaris Proton existents."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
@@ -3387,9 +3319,6 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Actualitzareu tots els esdeveniments d'aquesta sèrie. El participants eliminats seran norificats."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "El vostre compte té almenys una factura en retard. El vostre accés ha estat restringit. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
       ],
@@ -3398,9 +3327,6 @@
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "La vostra adreça està desactivada. Els participants a l'esdeveniment no rebran cap correu electrònic de cancel·lació. Voleu esborrar l'esdeveniment?"
-      ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Les vostres dades estan a punt per importar des de ${ importedEmailAddressStrong } al vostre compte de Proton."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "La teva adreça de correu no canviarà. Però properament l'enllaç per a l'inici de sessió serà ${ link }."
@@ -3419,9 +3345,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Actualment, el vostre compte Proton està en suspensió. Per continuar utilitzant el vostre compte, pagueu qualsevol factura que hagi pendent."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Sembla que la vostra zona horària del sistema ha canviat a ${ timezone }. Voleu actualitzar la vostra preferència de fus horari?"
@@ -3595,9 +3518,6 @@
       "Hide password": [
         "Amaga la contrasenya"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Com descriuríeu la vostra experiència amb el nou Proton?"
-      ],
       "I understand the risk": [
         "Entenc el risc"
       ],
@@ -3700,9 +3620,6 @@
       ],
       "Postal code": [
         "Codi postal"
-      ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
       ],
       "Public keys": [
         "Claus públiques"
@@ -4211,17 +4128,11 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
       ],
-      "Discover all Proton services": [
-        "Descobriu tots els serveis de Proton"
-      ],
       "Select a theme": [
         "Seleccioneu un tema"
       ],
       "Set up your organization": [
         "Configureu la vostra organització"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Utilitzeu el selector d'aplicació a dalt a l'esquerra per accedir a altres serveis de Proton, incloent VPN, Calendar i Drive."
       ],
       "You can change this anytime in your settings.": [
         "Podeu canviar-ho en qualsevol moment a les preferències."
@@ -5189,12 +5100,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recordeu la vostra contrasenya és impossible reactivar la vostra clau. Us podem ajudar a desactivar l'alerta però en el procés perdreu permanentment l'accés a totes les dades xifrades amb aquesta clau."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton combinarà totes les carpetes amb el mateix nom. Per evitar-ho, canvieu els noms abans d’importar-los."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton transferirà tantes dades com sigui possible, començant pels missatges més recents."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
       ],
@@ -5218,12 +5123,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Aquesta acció és irreversible. Si us plau, introduïu la paraula ${ boldDanger } al camp per continuar."
-      ],
-      "This feature requires a paid Proton account": [
-        "Aquesta característica requereix un compte de pagament de Proton"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de Proton. Considereu personalitzar la importació."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."

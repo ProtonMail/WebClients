@@ -957,8 +957,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Proton 應用程式"
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } 應用程式"
       ]
     },
     "Attached ics file error": {
@@ -1151,6 +1151,11 @@
         "下載選定行事曆中所有行程的 ICS 檔案。"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "您可以透過 ICS 檔案匯入另一個行事曆到 ${ CALENDAR_APP_NAME }。這讓您快速匯入單一活動或是您的完整行程。"
+      ]
+    },
     "Calendar invite status label": {
       "Declined": [
         "已拒絕"
@@ -1195,20 +1200,28 @@
         "您已可存取此行事曆"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "創建一組導向您行事曆的連結，Proton 外部的人即可存取共享資源。唯獨您有權限可加入或移除行程。"
+    "Calendar settings private share description": {
+      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "分享您的行事曆給其他 ${ BRAND_NAME } 使用者。啟用協作來允許他們在您的行事曆中新增及編輯事件。您能夠隨時修改使用者的權限。"
       ]
     },
     "Calendar settings section title": {
       "Share calendar": [
         "共享行事曆"
       ],
+      "Share outside ${ BRAND_NAME }": [
+        "分享外部 ${ BRAND_NAME }"
+      ],
+      "Share with ${ BRAND_NAME } users": [
+        "與 ${ BRAND_NAME } 使用者共享"
+      ],
       "Share with anyone": [
         "與任何人分享"
-      ],
-      "Share with Proton users": [
-        "與 Proton 使用者分享"
+      ]
+    },
+    "Calendar share permission label": {
+      "See all event details": [
+        "查看所有事件詳情"
       ]
     },
     "Calendar sharing access option label": {
@@ -1217,6 +1230,11 @@
       ],
       "View (see all event details)": [
         "檢視（檢視所有事件的詳細資訊）"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "權限已變更到 ${ email }"
       ]
     },
     "Calendar status": {
@@ -1271,9 +1289,6 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "從上次更新以來已經過了超過12小時 — Proton Calendar 將會嘗試在幾個小時內更新日曆。"
       ]
     },
     "Calendar table settings button tooltip": {
@@ -2524,11 +2539,17 @@
       "${ name } deletion failed": [
         "${ name } 刪除失敗"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } 移動到非垃圾郵件清單失敗"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } 無法移至垃圾郵件黑名單"
       ],
       "${ name } failed to move to your block list": [
         "${ name } 無法移至您的封鎖清單"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } 已移動到非垃圾郵件清單"
       ],
       "${ name } moved to spam list": [
         "${ name } 已移至垃圾郵件黑名單"
@@ -2544,8 +2565,8 @@
       "Bugs or quality issue": [
         "臭蟲或品質問題"
       ],
-      "I use a different Proton account": [
-        "我改用另一個 Proton 帳號"
+      "I use a different ${ BRAND_NAME } account": [
+        "我使用不同的 ${ BRAND_NAME } 帳號"
       ],
       "Missing feature(s)": [
         "缺少功能"
@@ -2635,11 +2656,17 @@
       "${ name } deletion failed": [
         "${ name } 刪除失敗"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } 移動到非垃圾郵件清單失敗"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } 無法移至垃圾郵件黑名單"
       ],
       "${ name } failed to move to your block list": [
         "${ name } 無法移至您的封鎖清單"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } 已移動到非垃圾郵件清單"
       ],
       "${ name } moved to spam list": [
         "${ name } 已移至垃圾郵件黑名單"
@@ -2832,9 +2859,6 @@
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
       ],
-      "Merge at least ${ calendarToFixCount } calendars with existing Proton calendars": [
-        "請將至少 ${ calendarToFixCount } 個行事曆與現有的 Proton 行事曆合併"
-      ],
       "Missing key packet": [
         "缺少金鑰封包"
       ],
@@ -2862,8 +2886,8 @@
       "No emails found to import - the account does not have an inbox": [
         "沒有找到電子郵件可以匯入 - 該帳號沒有收件匣"
       ],
-      "No public key for Proton address": [
-        "Proton 地址沒有公開金鑰"
+      "No public key for ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } 地址沒有公開金鑰"
       ],
       "No valid address found": [
         "未能找到有效位址"
@@ -2871,8 +2895,8 @@
       "No WKD key retrieved for user is valid for sending": [
         "未為內部使用者檢索到有效WKD密鑰"
       ],
-      "Not a Proton account": [
-        "不是 Proton 帳號"
+      "Not a ${ BRAND_NAME } account": [
+        "不是 ${ BRAND_NAME } 帳號"
       ],
       "Not a valid number": [
         "號碼無效"
@@ -2944,7 +2968,7 @@
         "主要位址金鑰並未被解密。"
       ],
       "Primary key is not valid for sending": [
-        "寄件用的主金鑰不正確。"
+        "主金鑰無法用於傳送郵件"
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "從 ${ BRAND_NAME } 擷取出的使用者專屬主金鑰不適用於發送郵件"
@@ -3306,9 +3330,6 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "出了一點問題。請重新整理頁面或稍後再試。"
       ],
-      "There was a problem connecting to Proton.": [
-        "連線到 Proton 時發生問題。"
-      ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "太多子系作業階段，請清除您的 cookies 然後重新登入。"
       ],
@@ -3589,7 +3610,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }。預設隱私。"
+        "${ BRAND_NAME }。隱私無憂。"
       ]
     },
     "Frequency of news": {
@@ -3758,8 +3779,8 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，不帶召集人和參與者詳細資料。若要取得事件更新並顯示參與者，請著召集人以您的 Proton 電郵位址向您發出邀請。"
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，沒有舉辦人與參與者的詳細資料。若要取得事件更新並顯示參與者，請要求舉辦人以您的 ${ BRAND_NAME } 電子郵件地址向您發出邀請。"
       ],
       "This file contains event invitations:": [
         "此檔案包含事件邀請："
@@ -3814,6 +3835,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } 無法連接您的帳號。請確認 Gmail IMAP 存取已啟用。"
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } 無法連接您的帳號。請確認您的 Gmail IMAP 存取已啟用。"
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } 無法連接您的帳號。請確認以下事項:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 無法連接您的外部帳號。請確認郵件伺服器和連接埠號正確無誤。"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } 無法連接您的外部帳號。請確認以下事項:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 無法連接您的 Gmail 帳號。請確認郵件伺服器和連接埠號正確無誤。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 無法連接您的 Yahoo! 帳號。請確認郵件伺服器和連接埠號正確無誤。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } 無法連接您的 Yahoo! 帳號。請確認以下事項:"
+      ],
       "2-step verification is enabled in your external account.": [
         "您的外部帳號已啟用兩步驟驗證。"
       ],
@@ -3840,30 +3885,6 @@
       ],
       "Invalid IMAP port": [
         "無效的 IMAP 連接埠"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton 無法連接您的帳號。請確保 Gmail IMAP 存取已啟用。"
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton 無法連線到您的帳號。請確保您的 Gmail 帳號已啟用 IMAP 存取。"
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton 無法連線到您的帳號。請確保："
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton 無法連線到您的外部帳號。請確保電郵伺服器位置和連接埠號碼正確。"
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton 無法連線到您的外部帳號。請確保："
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton 無法連線到您的 Gmail 帳號。請確保電郵伺服器位置和連接埠號碼正確。"
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton 無法連線到您的 Yahoo 電子郵件帳號。請確保電子郵件伺服器位置和連接埠號碼正確。"
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton 無法連線到您的 Yahoo 電子郵件帳號。請確保："
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "最近的請求太多。請容後再試。"
@@ -3922,17 +3943,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "點擊 ${ boldManage } 以展開選項功能表。"
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "取決於您的電子郵件服務提供者，您可能需要先產生 ${ knowledgeBaseLink } 才能匯入到 Proton。"
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "取決於您的電子郵件服務提供者，您可能需要先產生 ${ knowledgeBaseLink } 才能匯入到 ${ BRAND_NAME }。"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "點擊三個點 (...) 展開下拉式選單"
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "進行生成一組 ${ boldAppPassword } ，當 ${ BRAND_NAME } 出現提示時，即以該密碼取代您舊有的一般密碼。"
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "進行生成一組 ${ boldAppPassword } ，當 ${ BRAND_NAME } 出現提示時，即以該密碼取代您舊有的一般密碼。"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "請至 ${ yahooMailLink } 裡您名下個人資料的 ${ boldAccountInfo }。"
@@ -3957,30 +3978,6 @@
       ],
       "Select ${ boldExportCSV }.": [
         "選取匯出 ${ boldExportCSV }."
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "要匯入電郵到 Outlook，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "要匯入電郵到 Proton，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
       ]
     },
     "Import instructions emphasis": {
@@ -4138,6 +4135,21 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 若你選擇繼續，你會遺失所有的已加密資料。"
       ],
+      "${ BRAND_NAME } ${ planName } credits earned": [
+        "${ BRAND_NAME } ${ planName } 儲值已賺取"
+      ],
+      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "因為與您另一個電郵提供者的連線中斷，${ BRAND_NAME } 已暫停了一項匯入。請重新連線。"
+      ],
+      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
+        "${ BRAND_NAME } 暫停了一項匯入，因為您的帳號空間快要用完了。您可以："
+      ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } 將會在電郵提供商提供重設您帳號的 ${ bandwithLimitLink } 後嘗試復原匯入。您不需要執行任何動作。如果您取消匯入，將無法復原匯入，而您就必須重新開始。"
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } 將會是預設的行事曆。"
       ],
@@ -4210,11 +4222,11 @@
       "${ storageSize } storage": [
         "${ storageSize } 儲存量"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "國家級連線需要 ${ vpnBasic }、${ vpnPlus } 或 ${ visionary }。"
+      "${ vpnPlus } required for Country level connection.": [
+        "國家等級的連線需要 ${ vpnPlus } 。"
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "使用安全核心功能需要 ${ vpnPlus } 或 ${ visionary } 。"
+      "${ vpnPlus } required for Secure Core feature.": [
+        "使用安全核心功能需要 ${ vpnPlus } 。"
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } 個成員)"
@@ -4234,8 +4246,8 @@
       "+${ organization.BonusVPN } connections for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 紅利加碼連線數至 ${ VPN_APP_NAME } (您即可享受多設備同時連上 VPN)"
       ],
-      "1. Invite friends to Proton": [
-        "一、邀請好友到 Proton"
+      "1. Invite friends to ${ BRAND_NAME }": [
+        "1. 邀請好友加入 ${ BRAND_NAME }"
       ],
       "10 email addresses": [
         "10 個電郵位址"
@@ -4254,6 +4266,9 @@
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "復原檔可讓您在重設帳號後，解鎖並檢視您的資料"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "如果您忘記密碼，復原短語將讓您可以存取您的帳號並復原您的加密訊息。"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
@@ -4429,6 +4444,9 @@
       "Basic, Plus or Visionary subscription required": [
         "需為 Basic、Plus 或 Visionary 訂閱方案"
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "在創建位址前，您需要設立密碼並創建加密金鑰。"
+      ],
       "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
         "啟用帳號前，您需要為新位址設立密碼和創建加密金鑰。"
       ],
@@ -4459,8 +4477,8 @@
       "By leaving now, changes may not be saved": [
         "若現在離開，所作變更將不儲存"
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "為了分享此行事曆之完整事件細節，您允許 Proton Mail 存取此加密行事曆的資料。"
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "為分享此行事曆的完整事件細節，您允許 ${ BRAND_NAME } 存取此加密行事曆的資料。"
       ],
       "Center": [
         "置中"
@@ -4483,8 +4501,8 @@
       "Continue with ${ planName }": [
         "繼續使用 ${ planName }"
       ],
-      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
-        "繼續進行連結您的 ${ ACCOUNT_APP_NAME } 至 ${ name }。"
+      "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
+        "繼續進行連結您的 ${ BRAND_NAME } 帳號至 ${ name }。"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "建立 ${ calendarsToBeCreated } 個新行事曆"
@@ -4606,8 +4624,8 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "免費提供 10 個自訂電郵網域名稱的託管服務。 亦可加入更多網域，現在只需 ${ price }。"
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。Proton 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
       ],
       "Emailing preference saved": [
         "電子通訊喜好設定已儲存"
@@ -4787,7 +4805,7 @@
         "圖像 URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "圖像已被移除，因為自動回覆不支援。"
+        "圖像已被移除，因為自動回覆不支援"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
@@ -4804,8 +4822,8 @@
       "Import mailbox": [
         "匯入郵箱"
       ],
-      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "從其它服務匯入您的電郵、行事曆或聯絡人到 Proton。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "從其它服務匯入您的電郵、行事曆或聯絡人到 ${ BRAND_NAME }。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要：請確定您將復原代碼儲存到其它地方了。否則在您遺失您的兩步驟驗證裝置時，您也會永久失去對您的帳號的存取權。"
@@ -4855,8 +4873,8 @@
       "it’s imperative": [
         "有件至關重要的事"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "我正在用 ${ appName } ，我覺得你也會喜歡它。他是一個主打安全性的電郵服務，可以保護你的隱私權。用我的連結註冊的話還可以免費獲得一個月的加值帳號(普通帳號是永遠免費的) 哦： ${ referrerLink }"
+      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "我正在用 ${ MAIL_APP_NAME } ，我覺得您也會喜歡它。他是一個主打安全性的電郵服務，可以保護您的隱私權。用我的連結註冊的話還可以免費獲得一個月的加值帳號(普通帳號是永遠免費的) 哦： ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
@@ -4918,11 +4936,14 @@
       "Loading preview": [
         "正在載入預覽"
       ],
+      "Loading...": [
+        "載入中‧‧‧"
+      ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "登 ${ MAIL_APP_NAME } 入以啟用您位址"
       ],
-      "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "記錄包含使用您的 Proton 認證登入所有 Proton 服務的認證嘗試。"
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "日誌的登入紀錄涵蓋所有使用 ${ BRAND_NAME } 密碼的 ${ BRAND_NAME } 服務。"
       ],
       "lose access to all current encrypted data": [
         "失去對您所有目前已加密資料的存取權"
@@ -5080,6 +5101,12 @@
       "Please check your file for errors, or contact customer support for more information.": [
         "請檢查您的檔案是否存在錯誤，或聯繫客戶支援以獲取更多訊息。"
       ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "請檢查您的檔案，或試試我們的 ${ csvTemplateButton }。"
+      ],
+      "Please contact the administrator of the organisation to manage the subscription.": [
+        "請洽詢組織機構的管理員以管理訂購授權。"
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "請輸入與您的帳號關連的12字復原短語。"
       ],
@@ -5134,21 +5161,6 @@
       "Priority support": [
         "優先支援"
       ],
-      "Proton ${ planName } credits earned": [
-        "Proton ${ planName } 儲值已賺取"
-      ],
-      "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Proton 暫停了一項匯入，因為與您另一個電郵提供者的連線已中斷。請重新連線。"
-      ],
-      "Proton paused an import because your account is running low on space. You can:": [
-        "Proton 暫停了一項匯入，因為您的帳號空間快要用完了。您可以："
-      ],
-      "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "Proton 將會在電郵提供商提供重設您帳號的 ${ bandwithLimitLink } 後嘗試復原匯入。您不需要執行任何動作。如果您取消匯入，將無法復原匯入，而您就必須重新開始。"
-      ],
-      "Proton's encryption technology means that nobody can access your password - not even us.": [
-        "Proton 的加密技術代表無人可以存取您的密碼，包括我們。"
-      ],
       "Public link invite": [
         "公開的連結邀請"
       ],
@@ -5190,6 +5202,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
+      ],
+      "Remove one of your calendars to join this one": [
+        "移除其中一個行事曆以加入目前這個"
       ],
       "Reset password": [
         "重設密碼"
@@ -5308,6 +5323,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "清單首列為您預設的電郵位址。請拖放以重新排序您的電郵位址。"
       ],
+      "The following address is available:": [
+        "以下的電子郵件地址可用："
+      ],
       "The following addresses are invalid.": [
         "以下的電子郵件地址無效."
       ],
@@ -5386,8 +5404,8 @@
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "這將下載一個包含您私鑰的檔案。使用密碼進行加密來保護這個檔案。"
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "這將允許使用 PayPal 來支付您的 Proton 訂閱。我們將在瀏覽器的新索引標籤中重新導向到 PayPal。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "這將允許使用 PayPal 來支付您的 ${ BRAND_NAME } 訂購授權。我們將在瀏覽器的新分頁中重新導向到 PayPal。若您有使用任何彈出式視窗攔截程式，請先停用它然後再繼續。"
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "這將會永久刪除與此使者相關聯的資料與所有電郵位址。"
@@ -5401,8 +5419,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "這將會使您登出所有裝置並停用雙重驗證。"
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "本精靈將會在您的 Proton 帳號上啟用兩步驟驗證 (2FA)。兩步驟驗證讓您的 Proton 帳號更安全，所以我們建議啟用它。"
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "本精靈將會在您的 ${ BRAND_NAME } 帳號上啟用兩步驟驗證 (2FA)。兩步驟驗證讓您的 ${ BRAND_NAME } 帳號更安全，所以我們建議啟用它。"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "為避免資料遺失，最好只刪除您知道的檔案，或是匯出複本。"
@@ -5425,8 +5443,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
       ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "為了解 Proton 產品的最新開發動態，您可訂閱我們的各份電子通訊，或不時造訪我們的部落格。"
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "為了解 ${ BRAND_NAME } 產品的最新開發動態，您可訂購授權我們的各份電子通訊，或不時造訪我們的部落格。"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "為繼續此程序，選擇帳號復原手段，然後我們將能驗證您的請求。"
@@ -5545,6 +5563,9 @@
       "We recommend using your recovery phrase instead.": [
         "我們建議您使用你的復原短語取代它。"
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "我們在您信任的裝置上妥善保管復原金鑰，以防發生資料丟失。"
+      ],
       "We use 3-D Secure to protect your payments.": [
         "我們使用 3-D Secure 保障您的付款。"
       ],
@@ -5596,6 +5617,9 @@
       "Why?": [
         "為什麼？"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "透過已加密的 ${ BRAND_NAME } 位址，您可以使用全部的 ${ BRAND_NAME } 服務"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "如果沒有啟用，您將無法建立新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
       ],
@@ -5626,9 +5650,6 @@
       "You are signed in to the account ${ memberAddress }.": [
         "您已登入帳號 ${ memberAddress }。"
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "您亦可將匯入的行事曆與現有的 Proton 行事曆合併。"
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
@@ -5643,6 +5664,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "您現在可以管理員身份存取與管理帳號。"
+      ],
+      "You can now close this window.": [
+        "您現在就能關閉這個視窗。"
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "您的 @pm.me 電郵位址現在可以接收郵件了。升級至付費方案，不但可使用您的 @pm.me 電郵位址傳送郵件外，還可創建更多的 @pm.me 電郵位址。"
@@ -5659,8 +5683,8 @@
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "在接下來的 24 小時內，您最多只能發送 ${ emailSendLimitNumber } 封電郵邀請"
       ],
-      "You cannot refer ${ appName } users": [
-        "您不能推薦 ${ appName } 使用者"
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "您不能推薦 ${ MAIL_APP_NAME } 使用者"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "您無法使用 OpenVPN / IKEv2 認證以登入 ${ VPN_APP_NAME } 應用程式或 ${ VPN_APP_NAME } 儀表板。 ${ learnMore }"
@@ -5734,14 +5758,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "您的 ${ BRAND_NAME } 帳號目前已設定關聯至 ${ externalEmailAddress }。 若要使用 ${ toAppName }，您需要一組 ${ MAIL_APP_NAME } 電郵位址。"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期帳單。"
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 帳號是相互連結的。如要一併刪除，請登入 ${ loginLink } 並在那裡刪除您的帳號。"
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "您的帳號有至少一張逾期帳單。您的存取已受限制。${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的帳號至少有一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "由於有多於一張逾期帳單，目前已凍結您的帳號並終止所有服務直至收到付款。 ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "由於出現多於一張逾期帳單，您的帳號將受限制。持續欠款將封鎖您的電郵和共享連結。 ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
         "你已設置帳號復原方法"
@@ -5751,9 +5784,6 @@
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "為確保安全，您的銀行要求您進行 3-D Secure 驗證。"
-      ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 Proton 帳號。"
       ],
       "Your data recovery method is set": [
         "你的資料復原方法已設置"
@@ -5784,9 +5814,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
       ],
       "Your recovery phrase": [
         "您的復原短語"
@@ -6000,7 +6027,7 @@
         "捨棄草稿"
       ],
       "Expand / contract composer": [
-        "展開 / 收合撰寫器"
+        "展開 / 收合撰寫工具"
       ],
       "Forward": [
         "轉寄"
@@ -6054,7 +6081,7 @@
         "標記為未讀"
       ],
       "Minimize / maximize composer": [
-        "最小化 / 最小化撰寫器"
+        "最小化 / 最小化撰寫工具"
       ],
       "Move down": [
         "往下移動"
@@ -6140,7 +6167,7 @@
         "基本導覽"
       ],
       "Composer shortcuts": [
-        "撰寫器快捷鍵"
+        "撰寫工具快捷鍵"
       ],
       "Folder shortcuts": [
         "資料夾捷徑"
@@ -6191,6 +6218,9 @@
       ]
     },
     "Knowledge base link label": {
+      "Here's how": [
+        "就是這樣"
+      ],
       "Learn more": [
         "瞭解詳情"
       ]
@@ -6204,6 +6234,9 @@
       ],
       "${ BRAND_NAME } email or username": [
         "${ BRAND_NAME } 電郵或使用者名稱"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } 使用者名稱"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -6256,6 +6289,9 @@
       "Allow recovery by recovery phrase": [
         "允許透過復原短語復原"
       ],
+      "Allow recovery using a trusted device": [
+        "允許復原時使用信任的裝置"
+      ],
       "Amount": [
         "金額"
       ],
@@ -6287,7 +6323,10 @@
         "附加螢幕截圖"
       ],
       "Authenticator app": [
-        "驗證器APP"
+        "驗證 APP"
+      ],
+      "Auto show embedded images": [
+        "自動載入內嵌圖片"
       ],
       "Auto show remote images": [
         "自動顯示遠端圖像"
@@ -6802,9 +6841,6 @@
       "Protection mode": [
         "保護模式"
       ],
-      "Proton username": [
-        "Proton 使用者名稱"
-      ],
       "Read": [
         "已讀"
       ],
@@ -7163,6 +7199,9 @@
       "Learn more": [
         "瞭解詳情"
       ],
+      "Learn more about data recovery": [
+        "了解更多關於資料救援"
+      ],
       "Need help?": [
         "需要幫助嗎？"
       ],
@@ -7290,9 +7329,6 @@
       ]
     },
     "Message": {
-      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
-        "所有篩選器將會套用至您 Proton Mail 帳號的所有訊息。自動回覆電郵將不再傳送。"
-      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "連接您的自訂網域至 ${ BRAND_NAME } ，以進行設定自訂電郵位址 (例如: you@yourcompany.com)。我們的提示小精靈將會引導您完成整個過程。"
       ],
@@ -7703,6 +7739,14 @@
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
+    "new_plans: Info": {
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -7743,6 +7787,9 @@
       ],
       "Downgrade account?": [
         "確定要換成精簡功能的帳號？"
+      ],
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "開始探索 ${ BRAND_NAME } 世界"
       ]
     },
     "new_plans: tooltip": {
@@ -7797,6 +7844,15 @@
       ]
     },
     "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "邀請已刪除"
+      ],
+      "Invitation revoked": [
+        "邀請已撤銷"
+      ],
+      "Member deleted": [
+        "成員已刪除"
+      ],
       "Members added": [
         "成員已新增"
       ]
@@ -7845,11 +7901,6 @@
       ],
       "weeks before": [
         "週前"
-      ]
-    },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "接下來，您將必須登入您的 Google 帳號，並同意 Proton 存取您的資料。"
       ]
     },
     "Oauth instructions video": {
@@ -7989,8 +8040,8 @@
       "I found another service that I like better": [
         "別家的服務，我更喜歡"
       ],
-      "I use a different Proton account": [
-        "我改用另一個 Proton 帳號"
+      "I use a different ${ BRAND_NAME } account": [
+        "我使用不同的 ${ BRAND_NAME } 帳號"
       ],
       "Ignore group": [
         "忽略群組"
@@ -8525,8 +8576,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-Proton users, share your calendar with a link": [
-        "要邀請非 Proton 使用者，請透過連結分享您的行事曆"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "要邀請非 ${ BRAND_NAME } 使用者，請透過連結分享您的行事曆"
       ]
     },
     "Share calendar max shares reached error": {
@@ -8535,8 +8586,8 @@
       ]
     },
     "Share calendar modal description": {
-      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "新增您要與之分享 ${ calendarName } 的 Proton 帳號。我們會向他們傳送邀請。"
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "新增您要與之分享 ${ calendarName } 的 ${ BRAND_NAME } 帳號。我們會向他們傳送邀請。"
       ]
     },
     "Share calendar modal input placeholder": {
@@ -8545,8 +8596,8 @@
       ]
     },
     "Share calendar modal title": {
-      "Share with Proton users": [
-        "與 Proton 使用者分享"
+      "Share with ${ BRAND_NAME } users": [
+        "與 ${ BRAND_NAME } 使用者分享"
       ]
     },
     "Shared calendar label input placeholder": {
@@ -8588,8 +8639,8 @@
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
       ],
-      "Invite friends to Proton": [
-        "邀請好友使用 Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "揪親朋好友一起用 ${ BRAND_NAME }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試看 ${ DRIVE_APP_NAME }"
@@ -8706,6 +8757,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "隱私為先的郵件與行事曆解決方案，適合您的日常通訊需要。"
+      ],
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "此優惠僅適用於 ${ BRAND_NAME } 的新用戶。無需信用卡。"
       ]
     },
     "Success": {
@@ -8837,6 +8891,9 @@
       ],
       "SPF value copied to clipboard": [
         "SFP 字串已複製到剪貼簿"
+      ],
+      "Undo in progress": [
+        "復原進行中"
       ],
       "User created": [
         "使用者已創建"
@@ -9010,11 +9067,11 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } 鍵盤捷徑"
-      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
+      ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "${ MAIL_APP_NAME }鍵盤快捷鍵"
       ],
       "1. Give a name to the config to be generated": [
         "1. 為生成的設定檔取一個名稱"
@@ -9202,8 +9259,8 @@
       "Confirm downgrade": [
         "確認降級"
       ],
-      "Confirm loss of Proton bonuses": [
-        "確認失去 Proton 贈品"
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "確認失去 ${ BRAND_NAME } 獎勵"
       ],
       "Confirm phone number": [
         "確認手機號碼"
@@ -9356,7 +9413,7 @@
         "電子郵件"
       ],
       "Email composer": [
-        "電郵撰寫器"
+        "電郵撰寫工具"
       ],
       "Email encryption keys": [
         "電郵金鑰"
@@ -9796,8 +9853,8 @@
       "WireGuard configuration": [
         "WireGuard 組態"
       ],
-      "You already have a Proton account": [
-        "您已經擁有一個 Proton 帳號"
+      "You already have a ${ BRAND_NAME } account": [
+        "您已擁有 ${ BRAND_NAME } 帳號"
       ],
       "Your calendar link": [
         "您的行事曆連結"
@@ -9820,8 +9877,8 @@
       "Your recovery status": [
         "你的復原狀態"
       ],
-      "You’ve been invited to try ${ mailAppName }": [
-        "您已獲邀試用 ${ mailAppName }"
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "您已獲邀試用 ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
         "郵編 / 郵政代碼"
@@ -10018,9 +10075,6 @@
       ],
       "Your DKIM signing is working.": [
         "您的 DKIM 簽章運作正常。"
-      ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "您的外部帳號可能已達其24小時頻寬限制。Proton 將會盡快重試匯入。"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -10060,6 +10114,9 @@
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendars, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "升級為付費方案後可創建多達 ${ MAX_CALENDARS_PAID } 個行事曆，讓您可建立行事曆用於公務、與好友共享，也可為自己處理私事。"
+      ],
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "升級到郵件的付費方案來分享您的行事曆。"
       ]
     },
     "User role": {
@@ -10126,6 +10183,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } 會合併所有相同名稱的資料夾。避免此情況發生，請於匯入前先行變更名稱。"
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
+      ],
       "Are you sure you want to delete the address?": [
         "您確定要刪除此電郵位址嗎？"
       ],
@@ -10150,12 +10213,6 @@
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "停用記錄將一併清除您整個記錄歷程。您確定要停用記錄嗎？"
       ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "停用此電郵位址後，您將不能再以此電郵位址傳送或接收電郵，而且所有已連結的 Proton 產品亦將隨之停用。您確定要停用此電郵位址嗎？"
-      ],
-      "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
-        "如果您取消此匯入，您將無法復原。Proton 已將所有進度儲存在您的帳號中。無論無何都要取消嗎？"
-      ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "即時文字客服加值功能僅適用於 ${ VPN_APP_NAME } 的付費方案。請改為提交支援需求。"
       ],
@@ -10165,20 +10222,11 @@
       "Please provide at least one recipient": [
         "請輸入最少一位收件者"
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton 將會合併所有相同名稱的資料夾。為了避免這種狀況，請在匯入前變更名稱。"
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton 會從您最近的郵件開始，儘可能轉移最多的資料。"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "您裝置上的日期與時間設置未同步。 ${ learnMore }"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "此匯入可能超出您的 Proton 帳號中目前可用的儲存空間。請考慮自訂您的匯入。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"

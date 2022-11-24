@@ -155,6 +155,9 @@
       "Clear query": [
         "Wyczyść zapytanie"
       ],
+      "Clear search": [
+        "Wyczyść wyszukiwanie"
+      ],
       "Click here.": [
         "Kliknij tutaj."
       ],
@@ -272,6 +275,12 @@
       "Delete draft": [
         "Usuń szkic"
       ],
+      "Delete folder": [
+        "Usuń folder"
+      ],
+      "Delete label": [
+        "Usuń etykietę"
+      ],
       "Delete permanently": [
         "Usuń trwale"
       ],
@@ -316,6 +325,9 @@
       ],
       "Edit encryption": [
         "Edytuj szyfrowanie"
+      ],
+      "Edit folder": [
+        "Edytuj folder"
       ],
       "Edit label": [
         "Edytuj etykietę"
@@ -800,8 +812,8 @@
       "Save": [
         "Zapisz"
       ],
-      "Saving${ _ellipsis }": [
-        "Zapisywanie${ _ellipsis }"
+      "Saving${ ellipsis }": [
+        "Zapisywanie${ ellipsis }"
       ],
       "Schedule message": [
         "Zaplanuj wiadomość"
@@ -1052,9 +1064,6 @@
       "View keys": [
         "Pokaż klucze"
       ],
-      "View message": [
-        "Pokaż wiadomość"
-      ],
       "View message details": [
         "Pokaż szczegóły wiadomości"
       ],
@@ -1178,8 +1187,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Aplikacje Proton"
+      "${ BRAND_NAME } applications": [
+        "Aplikacje ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -1511,8 +1520,8 @@
       "Event rescheduling is not supported for the moment": [
         "Planowanie wydarzenia nie jest obecnie obsługiwane"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        "Ta odpowiedź nie może zostać dodana do usługi ${ calendarAppName }, ponieważ obecnie obsługiwane są tylko odpowiedzi na wszystkie wydarzenia w tej samej serii"
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "Ta odpowiedź nie może zostać dodana do usługi ${ CALENDAR_APP_NAME }, ponieważ obecnie obsługiwane są tylko odpowiedzi na wszystkie wydarzenia w tej samej serii"
       ],
       "This event has been canceled.": [
         "Wydarzenie zostało anulowane."
@@ -1601,8 +1610,8 @@
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Link kalendarza jest tymczasowo niedostępny. Zweryfikuj, czy link dostawcy kalendarza jest ważny."
       ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Minęło ponad 12 godzin od ostatniej synchronizacji. Proton Calendar zaktualizuje kalendarz w ciągu kilku godzin."
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Minęło ponad 12 godzin od ostatniej synchronizacji. ${ CALENDAR_APP_NAME } zaktualizuje kalendarz w ciągu kilku godzin."
       ]
     },
     "Calendar widget banner": {
@@ -3131,11 +3140,11 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maksymalna liczba ${ attachmentsCountLimit } załączników została przekroczona"
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Scal co najmniej ${ calendarToFixCount } kalendarz z obecnym kalendarzem Proton",
-        "Scal co najmniej ${ calendarToFixCount } kalendarze z obecnymi kalendarzami Proton",
-        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami Proton",
-        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami Proton"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Scal co najmniej ${ calendarToFixCount } kalendarz z obecnym kalendarzem ${ BRAND_NAME }",
+        "Scal co najmniej ${ calendarToFixCount } kalendarze z obecnymi kalendarzami ${ BRAND_NAME }",
+        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami ${ BRAND_NAME }",
+        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "Najpierw wyślij wiadomość"
@@ -3275,8 +3284,8 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
       ],
-      "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Proton nie może odszyfrować wiadomości. Sprawdź, czy wszystkie klucze są aktywne."
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "${ BRAND_NAME } nie może odszyfrować wiadomości. Sprawdź, czy wszystkie klucze są aktywne."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Odszyfrowanie załącznika nie powiodło się.\nJeśli posiadasz odpowiedni klucz prywatny, nadal możesz odszyfrować\nplik programem, takim jak GnuPG.",
@@ -3547,8 +3556,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Coś poszło nie tak. Odśwież stronę lub spróbuj ponownie później."
       ],
-      "There was a problem connecting to Proton.": [
-        "Wystąpił problem z połączeniem z usługą Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Wystąpił problem z połączeniem z usługą ${ BRAND_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Nie masz jeszcze żadnego kontaktu. Zacznij od utworzenia nowego kontaktu"
@@ -3805,6 +3814,20 @@
         "${ BRAND_NAME }. Prywatność to nasz standard."
       ]
     },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "Data: ${ date }"
+      ],
+      "From: ${ senderString }": [
+        "Od: ${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "Temat: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "Do: ${ toString }"
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "Przestrzeń dyskowa Twojego konta została zwiększona do ${ rewardInGb } GB. Opcjonalnie możesz dodać dodatkową przestrzeń dyskową i odblokować funkcje premium."
@@ -3834,8 +3857,8 @@
       "Available on iOS and Android.": [
         "Dostępna na iOS i Androida."
       ],
-      "Get the ${ protonMailAppName } mobile app": [
-        "Pobierz aplikację mobilną ${ protonMailAppName }"
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "Pobierz aplikację mobilną ${ MAIL_APP_NAME }"
       ],
       "Import contacts or emails": [
         "Importuj kontakty lub wiadomości"
@@ -4021,6 +4044,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "\"Dostęp do mniej bezpiecznych aplikacji\" w ustawieniach bezpieczeństwa konta Google jest włączony."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } nie może połączyć się z kontem. Upewnij się, że dostęp IMAP w ustawieniach konta Gmail jest włączony."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } nie może połączyć się z kontem. Upewnij się, że dostęp IMAP w ustawieniach konta jest włączony."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } nie może połączyć się z kontem. Upewnij się, że:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } nie może połączyć się z kontem zewnętrznym. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } nie może połączyć się z kontem zewnętrznym. Upewnij się, że:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } nie może połączyć się z kontem Gmail. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } nie może połączyć się z kontem Yahoo. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } nie może połączyć się z kontem Yahoo. Upewnij się, że:"
+      ],
       "2-step verification is enabled in your external account.": [
         "weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
       ],
@@ -4047,30 +4094,6 @@
       ],
       "Invalid IMAP port": [
         "Port IMAP jest nieprawidłowy"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton nie może połączyć się z kontem. Upewnij się, że dostęp IMAP w ustawieniach konta Gmail jest włączony."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton nie może połączyć się z kontem. Upewnij się, że dostęp IMAP w ustawieniach konta Gmail jest włączony."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton nie może połączyć się z kontem. Upewnij się, że:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton nie może połączyć się z kontem zewnętrznym. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton nie może połączyć się z kontem zewnętrznym. Upewnij się, że:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton nie może połączyć się z kontem Gmail. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton nie może połączyć się z kontem Yahoo. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton nie może połączyć się z kontem Yahoo. Upewnij się, że:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Zbyt wiele żądań w ostatnim czasie. Spróbuj ponownie za kilka chwil."
@@ -4132,17 +4155,8 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Kliknij ${ boldManage }, aby rozwinąć menu."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "W zależności od dostawcy poczty e-mail, musisz wygenerować ${ knowledgeBaseLink } przed rozpoczęciem procesu importowania."
-      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Rozwiń menu, klikając na 3 kropki (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Wygeneruj ${ boldAppPassword } i użyj go zamiast swojego zwykłego hasła."
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Wygeneruj ${ boldAppPassword } i użyj go zamiast swojego zwykłego hasła."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Przejdź do sekcji ${ boldAccountInfo } na koncie ${ yahooMailLink }."
@@ -4168,29 +4182,29 @@
       "Select ${ boldExportCSV }.": [
         "Wybierz ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Aby zaimportować kalendarz do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Outlook w 3 prostych krokach:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Aby zaimportować kalendarz do usługi ${ BRAND_NAME }, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Outlook w 3 prostych krokach:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Aby zaimportować kalendarz do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Yahoo w 3 prostych krokach:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Aby zaimportować kalendarz do usługi ${ BRAND_NAME }, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Yahoo w 3 prostych krokach:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Aby zaimportować kalendarz do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi przed rozpoczęciem procesu importowania."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Aby zaimportować kalendarz do usługi ${ BRAND_NAME }, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi przed rozpoczęciem procesu importowania."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Aby zaimportować kontakty do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Outlook w 3 prostych krokach:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Aby zaimportować kontakty do usługi ${ BRAND_NAME }, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Outlook w 3 prostych krokach:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Aby zaimportować kontakty do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Yahoo w 3 prostych krokach:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Aby zaimportować kontakty do usługi ${ BRAND_NAME }, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi Yahoo w 3 prostych krokach:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Aby zaimportować kontakty do serwisu Proton, potrzebujesz ${ knowledgeBaseLink }. Pobierz go z usługi przed rozpoczęciem procesu importowania."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Aby zaimportować kontakty do usługi ${ BRAND_NAME }, potrzebujesz ${ knowledgeBaseLink }. Pobierz plik przed rozpoczęciem procesu importowania."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Aby zaimportować wiadomości do serwisu Proton, potrzebujesz ${ appPasswordLink } z usługi Outlook. Zdobądź je wykonując następuje kroki:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Aby zaimportować wiadomości do usługi ${ BRAND_NAME }, potrzebujesz ${ appPasswordLink } z usługi Outlook. Zdobądź je, wykonując następujące kroki:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Aby zaimportować wiadomości do serwisu Proton, potrzebujesz ${ appPasswordLink } z usługi Yahoo. Zdobądź je wykonując następuje kroki:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Aby zaimportować wiadomości do usługi ${ BRAND_NAME }, potrzebujesz ${ appPasswordLink } z usługi Yahoo. Zdobądź je, wykonując następujące kroki:"
       ]
     },
     "Import instructions emphasis": {
@@ -4291,6 +4305,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
+        "${ BRAND_NAME } nie zarabia pieniędzy, naruszając prywatność."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nowy kalendarz",
@@ -4577,6 +4594,12 @@
       "Are you sure you want to delete all messages with this label?": [
         "Czy na pewno chcesz usunąć wszystkie wiadomości z tą etykietą?"
       ],
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Czy na pewno chcesz usunąć ten folder? Wszystkie foldery podrzędne również zostaną usunięte."
+      ],
+      "Are you sure you want to delete this label?": [
+        "Czy na pewno chcesz usunąć tę etykietę?"
+      ],
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
       ],
@@ -4769,17 +4792,23 @@
       "Email tracker protection is disabled": [
         "Ochrona przed śledzeniem wiadomości jest wyłączona"
       ],
-      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton nie znalazł żadnych takich elementów."
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } nie znalazł elementów śledzących w wiadomości."
       ],
-      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton znalazł i zablokował element śledzący.",
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton znalazł i zablokował ${ numberOfTrackers } elementy śledzące.",
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton znalazł i zablokował ${ numberOfTrackers } elementów śledzących.",
-        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Proton znalazł i zablokował ${ numberOfTrackers } elementów śledzących."
+      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował element śledzący w wiadomości.",
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } elementy śledzące w wiadomości.",
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } elementów śledzących w wiadomości.",
+        "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. ${ BRAND_NAME } znalazł i zablokował ${ numberOfTrackers } elementów śledzących w wiadomości."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Elementy śledzące w wiadomości mogą naruszyć Twoją prywatność. Włącz ochronę przed śledzeniem, aby nadawca nie wiedział, czy i kiedy otwierasz wiadomość."
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "Wiadomości w tym folderze nie zostaną usunięte i będą nadal dostępne w folderze Wszystkie wiadomości."
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "Wiadomości oznaczone tą etykietą nie zostaną usunięte i będą nadal dostępne w odpowiednim folderze."
       ],
       "embedded image": [
         "osadzony obraz",
@@ -4886,8 +4915,8 @@
       "How Hide My Email works": [
         "Jak działa funkcja Hide My Email"
       ],
-      "I'm sending this message to a non-Proton Mail user.": [
-        "Wysyłam wiadomość do użytkownika spoza Proton Mail."
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "Wysyłam wiadomość do użytkownika spoza ${ MAIL_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
@@ -4994,6 +5023,9 @@
       "Loading preview": [
         "Ładowanie podglądu"
       ],
+      "Loading...": [
+        "Ładowanie..."
+      ],
       "Manage your folders": [
         "Zarządzaj folderami"
       ],
@@ -5081,8 +5113,8 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Brak elementów śledzących, ale niektóre obrazy nie mogły zostać załadowane z ochroną przed śledzeniem"
       ],
-      "non-Proton Mail": [
-        "użytkownika spoza Proton Mail"
+      "non-${ MAIL_APP_NAME }": [
+        "użytkownika spoza ${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Żaden z przesłanych kluczy nie jest przeznaczony do szyfrowania. Prześlij prawidłowy klucz lub wyłącz opcję \"Zaszyfruj wiadomości\", aby wysyłać wiadomości na ten adres."
@@ -5173,9 +5205,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Chroń swój adres e-mail przed ujawnieniem go w listach mailingowych lub przez spammerów za pomocą funkcji ${ maskMyEmailButton }."
-      ],
-      "Proton doesn't make money by abusing privacy.": [
-        "Proton nie zarabia pieniędzy, naruszając prywatność."
       ],
       "Recipient: ": [
         "Odbiorca: "
@@ -5279,8 +5308,8 @@
       "Sign in": [
         "Zaloguj się"
       ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin to usługa Proton. Twoje konto Proton zawiera aliasy Hide My Email. Utwórz w usłudze SimpleLogin pierwszy alias, aby ukryć swój adres."
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin to usługa ${ BRAND_NAME }. Twoje konto ${ BRAND_NAME } zawiera aliasy Hide My Email. Utwórz w usłudze SimpleLogin pierwszy alias, aby ukryć swój adres."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "Usługa SimpleLogin zapewnia łatwy sposób tworzenia adresów e-mail dla niezaufanych stron trzecich, gdzie nie chcesz ujawniać swojego prawdziwego adresu."
@@ -5543,8 +5572,8 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "Adres URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ calendarAppName } to keep your agenda private.": [
-        "Użyj kalendarza ${ calendarAppName }, aby utrzymać swój harmonogram prywatny."
+      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
+        "Użyj kalendarza ${ CALENDAR_APP_NAME }, aby utrzymać prywatność swojego harmonogramu."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Użyj skrótów klawiszowych, aby szybciej zarządzać swoimi wiadomościami."
@@ -5552,14 +5581,14 @@
       "Using SimpleLogin is easy": [
         "Używanie usługi SimpleLogin jest łatwe"
       ],
-      "Verified Proton message": [
-        "Zweryfikowana wiadomość Proton"
+      "Verified ${ BRAND_NAME } message": [
+        "Zweryfikowana wiadomość ${ BRAND_NAME }"
       ],
       "Version ${ appVersion }": [
         "Wersja ${ appVersion }"
       ],
-      "Visit our shop to get Proton merchandise.": [
-        "Odwiedź nasz sklep, aby zdobyć Proton gadżety."
+      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
+        "Odwiedź nasz sklep, aby zdobyć ${ BRAND_NAME } gadżety."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Przepraszamy, mogliśmy popełnić błąd. Czy możesz potwierdzić, że chcesz oznaczyć wiadomość jako wiarygodną?"
@@ -5615,8 +5644,8 @@
       "You can add it as an attachment or display it inline in your mail body.": [
         "Możesz dodać plik jako załącznik lub osadzony obraz w treści wiadomości."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Możesz również scalić importowane kalendarze z obecnymi kalendarzami Proton."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Możesz również scalić importowane kalendarze z obecnymi kalendarzami ${ BRAND_NAME }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Możesz sprawdzić postęp ${ importProgressLink }."
@@ -5711,14 +5740,26 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Wiadomość zawiera wyrażenie \"${ attachmentsFoundKeyword }\", ale załącznik nie został dodany. Czy chcesz wysłać wiadomość mimo to?"
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Twoje konto posiada zaległe faktury. Dostęp do konta został ograniczony. ${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Twoje konto ${ BRAND_NAME } zawiera subskrypcję SimpleLogin. Zainstaluj rozszerzenie przeglądarki za pomocą jednego kliknięcia."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta zostanie wkrótce ograniczony. ${ payInvoiceLink }"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta Proton."
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Wszystkie usługi zostały zablokowane do czasu wykonania płatności. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Dalszy brak płatności spowoduje zablokowanie dostarczania wiadomości i udostępnionych linków. ${ payInvoiceLink }"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta ${ BRAND_NAME }."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "Twój adres e-mail nie zostanie zmieniony. Wkrótce logowanie będzie możliwe tylko na stronie ${ link }."
@@ -5755,12 +5796,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
-      ],
-      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Twoje konto Proton zawiera subskrypcję SimpleLogin. Zainstaluj rozszerzenie przeglądarki za pomocą jednego kliknięcia."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Twoje konto Proton jest obecnie zawieszone. Ureguluj zobowiązania."
       ],
       "Your recovery phrase": [
         "Twoje hasło odzyskiwania"
@@ -6027,6 +6062,9 @@
       " and ${ l }": [
         " oraz ${ l }"
       ],
+      "${ BRAND_NAME } username": [
+        "Nazwa użytkownika ${ BRAND_NAME }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
       ],
@@ -6219,8 +6257,8 @@
       "Hide password": [
         "Ukryj hasło"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Jak oceniasz nową usługę Proton?"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Jak oceniasz nową aplikację ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Rozumiem ryzyko"
@@ -6356,9 +6394,6 @@
       ],
       "Postal code": [
         "Kod pocztowy"
-      ],
-      "Proton username": [
-        "Nazwa użytkownika Proton"
       ],
       "Public keys": [
         "Klucze publiczne"
@@ -6623,20 +6658,17 @@
       "Manage your folders": [
         "Zarządzaj folderami"
       ],
-      "Manage your labels": [
-        "Zarządzaj etykietami"
-      ],
       "More": [
         "Więcej"
       ],
       "More about recovery": [
         "Więcej na temat odzyskiwania"
       ],
-      "Open in ${ calendarAppName }": [
-        "Otwórz w aplikacji ${ calendarAppName }"
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Otwórz w aplikacji ${ CALENDAR_APP_NAME }"
       ],
-      "Open updated event in ${ calendarAppName }": [
-        "Otwórz zaktualizowane wydarzenie w aplikacji ${ calendarAppName }"
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Otwórz zaktualizowane wydarzenie w aplikacji ${ CALENDAR_APP_NAME }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Możesz usunąć jeden z kalendarzy i utworzyć nowy, powiązany z aktywnym adresem e-mail."
@@ -6677,8 +6709,8 @@
       "Terms": [
         "Regulamin"
       ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Plik ICS zawiera wiele wydarzeń. Pobierz i zaimportuj wydarzenia w aplikacji ${ calendarAppName }"
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Plik ICS zawiera wiele wydarzeń. Pobierz i zaimportuj wydarzenia w aplikacji ${ CALENDAR_APP_NAME }"
       ],
       "Trash": [
         "Kosz"
@@ -6800,8 +6832,8 @@
       "Fw:": [
         "Fw:"
       ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ date }, ${ name } ${ address } napisał(a):"
+      "On ${ date }, ${ senderString } wrote:": [
+        "${ date }, ${ senderString } napisał(a):"
       ],
       "Re:": [
         "Re:"
@@ -6816,8 +6848,8 @@
       ]
     },
     "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by Proton": [
-        "Dostarczono za pomocą SimpleLogin przez Proton"
+      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
+        "Dostarczono za pomocą SimpleLogin przez ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -7045,8 +7077,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "Filtr ${ _Filter.Name } został utworzony"
+      "${ Filter.Name } created": [
+        "Filtr ${ Filter.Name } został utworzony"
       ],
       "Block removed": [
         "Blokada została usunięta"
@@ -7068,8 +7100,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Następnie musisz zalogować się na konto Google i przyznać aplikacji Proton dostęp do Twoich danych."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Następnie musisz zalogować się na konto Google i przyznać aplikacji ${ BRAND_NAME } dostęp do Twoich danych."
       ]
     },
     "Oauth instructions video": {
@@ -7097,8 +7129,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ustaw swoją organizację, połącz nazwę domeny i utwórz konta, aby zapewnić ochronę wszystkim użytkownikom organizacji."
       ],
-      "Discover all Proton services": [
-        "Poznaj wszystkie usługi Proton"
+      "Discover all ${ BRAND_NAME } services": [
+        "Poznaj wszystkie usługi ${ BRAND_NAME }"
       ],
       "Select a theme": [
         "Wybierz motyw"
@@ -7106,8 +7138,8 @@
       "Set up your organization": [
         "Skonfiguruj swoją organizację"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do innych usług Proton, w tym VPN, kalendarza i dysku."
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do innych usług ${ BRAND_NAME }, w tym VPN, kalendarza i dysku."
       ],
       "You can change this anytime in your settings.": [
         "Motyw możesz zmienić w ustawieniach."
@@ -7521,11 +7553,11 @@
       ]
     },
     "Signature verification warning": {
-      "PGP-encrypted message. Sender verification failed: ${ _verificationErrorsMessage }": [
-        "Wiadomość zaszyfrowana PGP. Weryfikacja nadawcy nie powiodła się: ${ _verificationErrorsMessage }"
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "Wiadomość zaszyfrowana PGP. Weryfikacja nadawcy nie powiodła się: ${ verificationErrorsMessage }"
       ],
-      "PGP-signed message. Sender verification failed: ${ _verificationErrorsMessage2 }": [
-        "Wiadomość podpisana PGP. Weryfikacja nadawcy nie powiodła się: ${ _verificationErrorsMessage2 }"
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "Wiadomość podpisana PGP. Weryfikacja nadawcy nie powiodła się: ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
         "Odbiorca nie mógł zostać zweryfikowany: Wiadomość nie została podpisana"
@@ -7771,11 +7803,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Nasz wycofany z dystrybucji plan Visionary powrócił na czas ograniczony"
       ],
-      "Save more with 1 year of Proton Unlimited": [
-        "Zaoszczędź więcej dzięki rocznej subskrypcji Proton Unlimited"
+      "Save more with 1 year of ${ planName }": [
+        "Zaoszczędź więcej dzięki rocznej subskrypcji ${ planName }"
       ],
-      "Upgrade and save more with Proton Unlimited": [
-        "Uaktualnij i zaoszczędź więcej dzięki Proton Unlimited"
+      "Upgrade and save more with ${ planName }": [
+        "Uaktualnij i zaoszczędź więcej dzięki ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7820,11 +7852,14 @@
       "Get up to ${ credits } in credits.": [
         "Uzyskaj do ${ credits }."
       ],
-      "Invite friends to Proton": [
-        "Zaproś znajomych do usługi Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Zaproś znajomych do usługi ${ BRAND_NAME }"
       ],
       "Message Content Search": [
         "Wyszukiwanie zawartości wiadomości"
+      ],
+      "Schedule send": [
+        "Zaplanuj wysyłanie"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Wypróbuj ${ DRIVE_APP_NAME }"
@@ -8153,6 +8188,11 @@
         "Weryfikacja powiodła się"
       ]
     },
+    "Success notification": {
+      "${ label.Name } removed": [
+        "Utworzono \"${ label.Name }\""
+      ]
+    },
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Opinia została wysłana"
@@ -8273,14 +8313,14 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "Skróty klawiszowe ${ appName }"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } członek",
         "${ emailsCount } członków",
         "${ emailsCount } członków",
         "${ emailsCount } członków"
+      ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "Skróty klawiszowe ${ MAIL_APP_NAME }"
       ],
       "${ unreads } unread message": [
         "${ unreads } nieprzeczytana wiadomość",
@@ -8426,6 +8466,12 @@
         "Usuń ${ count } wiadomości",
         "Usuń ${ count } wiadomości"
       ],
+      "Delete ${ label.Name } folder": [
+        "Usuń folder ${ label.Name }"
+      ],
+      "Delete ${ label.Name } label": [
+        "Usuń etykietę ${ label.Name }"
+      ],
       "Delete ${ Name }": [
         "Usuń ${ Name }"
       ],
@@ -8498,14 +8544,17 @@
       "Filter on...": [
         "Filtruj..."
       ],
+      "Folder options": [
+        "Opcje folderu"
+      ],
       "Forward": [
         "Przekaż dalej"
       ],
       "Groups": [
         "Grupy"
       ],
-      "Hide your email with SimpleLogin by Proton": [
-        "Ukryj swój adres e-mail za pomocą SimpleLogin przez Proton"
+      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
+        "Ukryj swój adres e-mail za pomocą SimpleLogin przez ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Weryfikacja antyspamowa"
@@ -8524,6 +8573,9 @@
       ],
       "Label as": [
         "Oznacz jako"
+      ],
+      "Label options": [
+        "Opcje etykiety"
       ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
@@ -8896,6 +8948,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } scali wszystkie foldery o tej samej nazwie. Aby tego uniknąć, zmień nazwy przed importem."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
+      ],
       "Are you sure you want to discard your import?": [
         "Czy na pewno chcesz odrzucić swój import?"
       ],
@@ -8925,12 +8983,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Czat jest funkcją premium dostępną dla płatnych planów ${ VPN_APP_NAME }. Zamiast tego zgłoś błąd."
-      ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton scali wszystkie foldery o tej samej nazwie. Aby tego uniknąć, zmień nazwy przed importem."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
@@ -8962,11 +9014,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Ta akcja jest nieodwracalna. Wpisz słowo ${ boldDanger }, aby kontynuować."
       ],
-      "This feature requires a paid Proton account": [
-        "Ta funkcja wymaga płatnego konta Proton"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Ta funkcja wymaga posiadania płatnego konta ${ BRAND_NAME }"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Ten import może przekroczyć obecnie dostępną przestrzeń dyskową na Twoim koncie Proton. Rozważ dostosowanie importu."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Ten import może przekroczyć obecnie dostępną przestrzeń dyskową na Twoim koncie ${ BRAND_NAME }. Rozważ modyfikację zakresu danych do importu."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Jesteśmy teraz niedostępni. Wypełnij formularz, na który odpowiemy kiedy będziemy ponownie dostępni."

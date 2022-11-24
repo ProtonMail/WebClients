@@ -536,11 +536,6 @@
         "Ako sada napustite, neki se kontakti možda neće uvesti"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikacije"
-      ]
-    },
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Ako naiđete na probleme, uvijek možete onemogućiti beta pristup."
@@ -920,9 +915,6 @@
       "Please ${ refresh } or check your connection.": [
         "Molimo ${ refresh } ili provjerite vezu."
       ],
-      "There was a problem connecting to Proton.": [
-        "Došlo je do problema pri povezivanju s Protonom."
-      ],
       "You may also ${ refresh } or try again later.": [
         "Možete ${ refresh } ili pokušati ponovo kasnije."
       ],
@@ -1083,24 +1075,6 @@
       ],
       "Invalid IMAP port": [
         "Nevažeći IMAP port"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton se ne može povezati s vašim računom. Provjerite je li omogućen pristup IMAP-u za Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton se ne može povezati s vašim računom. Provjerite je li omogućen pristup IMAP-u u vašem Gmail računu."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton se ne može povezati s vašim računom. Molimo osigurajte sljedeće:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton se ne može povezati s vašim vanjskim računom. Molimo provjerite jesu li adresa poslužitelja pošte i broj porta ispravni."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton se ne može povezati s vašim vanjskim računom. Molimo osigurajte sljedeće:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton se ne može povezati s vašim Gmail računom. Molimo provjerite jesu li adresa poslužitelja pošte i broj porta ispravni."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Previše nedavnih zahtjeva. Pokušajte ponovno za nekoliko trenutaka."
@@ -1540,9 +1514,6 @@
       "You will lose all unsaved changes.": [
         "Izgubit ćete sve nespremljene promjene."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš pristup je ograničen. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
       ],
@@ -1560,9 +1531,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
       ]
     },
     "Info on errors": {
@@ -1769,9 +1737,6 @@
       ],
       "Protect with password": [
         "Zaštitite pomoću lozinke"
-      ],
-      "Proton username": [
-        "Proton korisničko ime"
       ],
       "Public keys": [
         "Javni ključevi"
@@ -1980,17 +1945,11 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
       ],
-      "Discover all Proton services": [
-        "Otkrijte sve Proton usluge"
-      ],
       "Select a theme": [
         "Odaberi temu"
       ],
       "Set up your organization": [
         "Postavite vašu organizaciju"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Koristite birač aplikacija u gornjem lijevom kutu za pristup ostalim Proton uslugama, uključujući VPN, Calendar i Drive."
       ],
       "You can change this anytime in your settings.": [
         "Možete promijeniti bilo kada u vašim postavkama."
@@ -2655,9 +2614,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ako ste zaboravili lozinku, nemoguće je ponovno aktivirati vaš ključ. Možemo vam pomoći da odbacite natpis upozorenja, ali tijekom postupka trajno ćete izgubiti pristup svim podacima šifriranim tim ključem."
       ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton će prenijeti što više podataka, počevši od vaših najnovijih poruka."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
       ],
@@ -2675,12 +2631,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Ova radnja je nepovratna. Unesite riječ ${ boldDanger }} u polje da biste nastavili."
-      ],
-      "This feature requires a paid Proton account": [
-        "Ova značajka zahtijeva plaćeni Proton račun"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Ovaj uvoz može premašiti kapacitet prostora za pohranu koji je trenutno dostupan na vašem Proton računu. Razmislite o prilagodbi uvoza."
       ]
     }
   }

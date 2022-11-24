@@ -24,7 +24,7 @@
         "Добавить контакт"
       ],
       "Add email": [
-        "Добавить эл. почту"
+        "Добавить электронну почту"
       ],
       "Add group": [
         "Добавить группу"
@@ -102,7 +102,7 @@
         "Закрыть"
       ],
       "Close navigation": [
-        "Закрыть навигацию"
+        "Закрыть панель навигации"
       ],
       "Close this banner": [
         "Закрыть этот баннер"
@@ -198,7 +198,7 @@
         "Информация"
       ],
       "Discard": [
-        "Отменить"
+        "Сбросить"
       ],
       "Done": [
         "Готово"
@@ -234,7 +234,7 @@
         "Изменить информацию о входе в систему"
       ],
       "Email settings": [
-        "Настройки эл. почты"
+        "Настройки электронной почты"
       ],
       "Empty trash": [
         "Очистить корзину"
@@ -360,13 +360,13 @@
         "Далее"
       ],
       "Next month": [
-        "След. месяц"
+        "Следующий месяц"
       ],
       "OK": [
         "OK"
       ],
       "Open navigation": [
-        "Открыть навигацию"
+        "Открыть панель навигации"
       ],
       "Pause all": [
         "Приостановить все"
@@ -647,8 +647,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Приложения Proton"
+      "${ BRAND_NAME } applications": [
+        "Приложения ${ BRAND_NAME }"
       ]
     },
     "Beta access description": {
@@ -1759,7 +1759,7 @@
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
@@ -1821,11 +1821,11 @@
       "Label name cannot be empty.": [
         "Название ярлыка не может быть пустым."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем Proton",
-        "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
-        "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
-        "Объединить по крайней мере ${ calendarToFixCount } календарь(ей) с существующим календарем Proton"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Отсутствует пакет ключей"
@@ -2063,8 +2063,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
       ],
-      "There was a problem connecting to Proton.": [
-        "Возникла проблема при подключении к Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Возникла проблема при подключении к ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Вы также можете ${ refresh } или повторить попытку позже."
@@ -2114,8 +2114,8 @@
     "file size format": {
       "byte": [
         "байт",
-        "байт",
-        "байты",
+        "байта",
+        "байтов",
         "байтов"
       ],
       "GB": [
@@ -2131,7 +2131,7 @@
     "file size format, long": {
       "Byte": [
         "Байт",
-        "Байтов",
+        "Байта",
         "Байтов",
         "Байтов"
       ],
@@ -2143,7 +2143,7 @@
       ],
       "Kilobyte": [
         "Килобайт",
-        "Килобайтов",
+        "Килобайта",
         "Килобайтов",
         "Килобайтов"
       ],
@@ -2217,7 +2217,7 @@
         "Нет доступных способов проверки"
       ],
       "SMS": [
-        "Короткое сообщение на телефон"
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -2285,6 +2285,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "\"Менее безопасный доступ к приложениям\" включен в настройках безопасности аккаунта Google."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } не может подключиться к вашему аккаунту. Убедитесь, что доступ к IMAP Gmail включен."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } не может подключиться к вашему аккаунту. Убедитесь, что в вашем аккаунте Gmail включен доступ по протоколу IMAP."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } не может подключиться к вашему аккаунту. Пожалуйста, убедитесь, что:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } не может подключиться к вашему внешнему аккаунту. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта указаны правильно."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } не может подключиться к вашему внешнему аккаунту. Пожалуйста, убедитесь, что:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } не удается подключиться к аккаунту Gmail. Убедитесь, что адрес почтового сервера и номер порта указаны правильно."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } не удается подключиться к вашему аккаунту Yahoo. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта указаны правильно."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } не может подключиться к вашему аккаунту Yahoo. Пожалуйста, убедитесь, что:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Двухэтапная аутентификация включена в вашем внешнем аккаунте."
       ],
@@ -2311,30 +2335,6 @@
       ],
       "Invalid IMAP port": [
         "Недействительный порт IMAP"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton не может подключиться к вашему аккаунту. Пожалуйста, убедитесь, что в Gmail включен IMAP."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton не может подключиться к вашему аккаунту. Пожалуйста, убедитесь, что IMAP включен в вашем аккаунте Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton не может подключиться к вашей учетной записи. Пожалуйста, убедитесь, что:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton не может подключиться к Вашему внешнему аккаунту. Пожалуйста, убедитесь, что адрес почтового сервера и порт указаны верно."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton не может подключиться к вашей внешней учетной записи. Пожалуйста, убедитесь, что:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton не может подключиться к вашей учетной записи Gmail. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта указаны правильно."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton не может подключиться к вашей учетной записи Yahoo. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта правильны."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton не может подключиться к вашей учетной записи Yahoo. Пожалуйста, убедитесь, что:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Слишком много запросов за последнее время. Пожалуйста, повторите попытку позднее."
@@ -2388,17 +2388,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Нажмите ${ boldManage }, чтобы развернуть меню параметров."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "В зависимости от поставщика услуг электронной почты, вам может потребоваться сначала сгенерировать ${ knowledgeBaseLink }, прежде чем вы сможете импортировать данные в Proton."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "В зависимости от поставщика услуг электронной почты вам может потребоваться сначала создать ${ knowledgeBaseLink }, прежде чем вы сможете импортировать в ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Разверните выпадающее меню, нажав на 3 точки (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Сгенерируйте пароль ${ boldAppPassword } и используйте его вместо обычного пароля при запросе ${ BRAND_NAME }."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Сгенерируйте пароль ${ boldAppPassword } и используйте его вместо обычного пароля при запросе ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Перейдите в ${ boldAccountInfo } в своем профиле в ${ yahooMailLink }."
@@ -2424,29 +2424,29 @@
       "Select ${ boldExportCSV }.": [
         "Выберите ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Чтобы импортировать календарь в Proton, вам необходим ${ knowledgeBaseLink }. Скачайте его с Outlook в 3 простых шага:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Чтобы импортировать календарь в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите его из Outlook в 3 простых шага:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его с Yahoo в 3 простых шага:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Чтобы импортировать календарь в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите его с сайта Yahoo в 3 простых шага:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Чтобы импортировать календарь в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Для импорта контактов в Proton вам необходим ${ knowledgeBaseLink }. Скачайте его с Outlook в 3 простых шага:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Чтобы импортировать контакты в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите ее из Outlook в 3 простых шага:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Для импорта контактов в Proton необходим ${ knowledgeBaseLink }. Скачайте его с Yahoo в 3 простых шага:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Чтобы импортировать контакты в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите ее с сайта Yahoo в 3 простых шага:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Чтобы импортировать контакты в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Чтобы импортировать контакты в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите его перед началом процесса импорта."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Для импорта электронной почты в Proton вам понадобится ${ appPasswordLink } из Outlook. Получите его, выполнив следующие действия:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Чтобы импортировать электронные письма в ${ BRAND_NAME }, вам понадобится ${ appPasswordLink } из Outlook. Получите ее, выполнив следующие действия:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Для импорта электронной почты в Proton вам понадобится ${ appPasswordLink } от Yahoo. Получите его, выполнив следующие действия:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Для импорта электронной почты в ${ BRAND_NAME } вам понадобится ${ appPasswordLink } от Yahoo. Получите ее, выполнив следующие действия:"
       ]
     },
     "Import instructions emphasis": {
@@ -2568,21 +2568,21 @@
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новый календарь",
+        "${ calendarsToBeCreatedCount } новых календаря",
         "${ calendarsToBeCreatedCount } новых календарей",
-        "${ calendarsToBeCreatedCount } новых календарей",
-        "${ calendarsToBeCreatedCount } новых(ый) календарь(я,ей)"
+        "${ calendarsToBeCreatedCount } новых календарей"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "${ calendarsToBeMerged } объединенный календарь",
+        "${ calendarsToBeMerged } объединенных календаря",
         "${ calendarsToBeMerged } объединенных календарей",
-        "${ calendarsToBeMerged } объединенных календарей",
-        "${ calendarsToBeMerged } объединенный(х) календарь(я,ей)"
+        "${ calendarsToBeMerged } объединенных календарей"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } объединенный календарь",
+        "${ calendarsToBeMergedCount } объединенных календаря",
         "${ calendarsToBeMergedCount } объединенных календарей",
-        "${ calendarsToBeMergedCount } объединенных календарей",
-        "${ calendarsToBeMergedCount } объединенный(х) календарь(я,ей)"
+        "${ calendarsToBeMergedCount } объединенных календарей"
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } отменен",
@@ -2643,15 +2643,15 @@
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } группа контактов",
-        "${ numContactGroups } группа контактов",
+        "${ numContactGroups } группы контактов",
         "${ numContactGroups } групп контактов",
-        "${ numContactGroups } групп(а,ы) контактов"
+        "${ numContactGroups } групп контактов"
       ],
       "${ numContacts } contact": [
         "${ numContacts } контакт",
+        "${ numContacts } контакта",
         "${ numContacts } контактов",
-        "${ numContacts } контактов",
-        "${ numContacts } контакт(а,ов)"
+        "${ numContacts } контактов"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } приостановлен",
@@ -2675,19 +2675,19 @@
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
-        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря(ей)"
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } папка выбрана",
+        "${ selectedFoldersCount } папки выбрано",
         "${ selectedFoldersCount } папок выбрано",
-        "${ selectedFoldersCount } папок выбрано",
-        "${ selectedFoldersCount } папок(а,и) выбрано(на)"
+        "${ selectedFoldersCount } папок выбрано"
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } ярлык выбран",
+        "${ selectedFoldersCount } ярлыка выбрано",
         "${ selectedFoldersCount } ярлыков выбрано",
-        "${ selectedFoldersCount } ярлыков выбрано",
-        "${ selectedFoldersCount } ярлык(а,ов) выбран(о)"
+        "${ selectedFoldersCount } ярлыков выбрано"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Выбрана ${ selectedFoldersCountLocalized } папка",
@@ -2741,13 +2741,13 @@
         "Вся (${ totalFoldersCount } папка)",
         "Все (${ totalFoldersCount } папок)",
         "Все (${ totalFoldersCount } папки)",
-        "Все (${ totalFoldersCount } папки(ок))"
+        "Все (${ totalFoldersCount } папок)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Все (${ totalFoldersCount } ярлык)",
+        "Весь (${ totalFoldersCount } ярлык)",
+        "Все (${ totalFoldersCount } ярлыка)",
         "Все (${ totalFoldersCount } ярлыков)",
-        "Все (${ totalFoldersCount } ярлыков)",
-        "Все (${ totalFoldersCount } ярлыка(ов)"
+        "Все (${ totalFoldersCount } ярлыков)"
       ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
@@ -2779,8 +2779,8 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы уверены, что хотите безвозвратно удалить выбранные элементы из корзины?"
       ],
-      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Поскольку ${ appName } защищено сквозным шифрованием, мы не можем получить доступ к вашим файлам или их расшифровать. Чтобы разблокировать хранилище после сброса пароля, у вас должно быть что-то из следующего:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
@@ -2821,17 +2821,17 @@
       "Conflict": [
         "Конфликт"
       ],
-      "Continue using ${ appName } and unlock drive later": [
-        "Продолжить использование ${ appName } и разблокировать хранилище позже"
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Продолжить использование ${ DRIVE_APP_NAME } и разблокировать хранилище позже"
       ],
       "Continue with ${ planName }": [
         "Продолжить с ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Создать ${ calendarsToBeCreated } новый календарь",
+        "Создать ${ calendarsToBeCreated } новых календаря",
         "Создать ${ calendarsToBeCreated } новых календарей",
-        "Создать ${ calendarsToBeCreated } новых календарей",
-        "Создать ${ calendarsToBeCreated } новых(ый) календарь(я,ей)"
+        "Создать ${ calendarsToBeCreated } новых календарей"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
@@ -2989,8 +2989,8 @@
       "Free up some space or contact your administrator.": [
         "Освободите место или свяжитесь с вашим администратором."
       ],
-      "Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.": [
-        "Познакомьтесь с Proton Drive и заработайте свои бонусные 500 МБ хранилища! Действуйте сегодня."
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "Познакомьтесь с ${ DRIVE_APP_NAME } и получите бонус за хранение 500 МБ! Действуйте уже сегодня."
       ],
       "Go ahead, upload a file": [
         "Вперед, загрузите файл"
@@ -3019,8 +3019,8 @@
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "Если вы не знаете пароль, то установите секретную фразу, чтобы не потерять доступ к вашему аккаунту и данным."
       ],
-      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "Если у вас есть что-то из этого, перейдите к настройкам аккаунта Proton, чтобы начать процесс разблокировки."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Импорт ${ contactsFragment } и ${ contactsGroupsFragment }"
@@ -3029,7 +3029,7 @@
         "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календаря",
         "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
         "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
-        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календаря(я,ей)"
+        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей"
       ],
       "Import from": [
         "Импортировать из"
@@ -3112,6 +3112,9 @@
       "Loading preview": [
         "Загрузка предпросмотра"
       ],
+      "Loading...": [
+        "Загрузка..."
+      ],
       "Makes your account safer": [
         "Делает вашу учётную запись безопаснее"
       ],
@@ -3157,20 +3160,20 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "No synced devices": [
-        "Нет синхронизируемых устройств"
+      "No synced computers": [
+        "Нет синхронизированных компьютеров"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ни один из загруженных ключей не действителен для шифрования. Чтобы отправить сообщения по этому адресу, пожалуйста, загрузите действующий ключ или отключите функцию \"Зашифровать электронные письма\"."
       ],
       "Not a valid URL": [
-        "Недопустимый URL"
+        "Недействительный URL"
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Не все файлы были переданы. Попробуйте загрузить или скачать файлы еще раз."
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        "Примечание: Данные все еще могут быть доступны локально на устройствах, на которых вы установили ${ appName }."
+      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Примечание: Данные все еще могут быть доступны локально на устройствах, на которых вы установили ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "из"
@@ -3224,8 +3227,8 @@
         "Пожалуйста, выберите папки для импорта:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } групп.",
-        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группу .",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группу.",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группы .",
         "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } групп .",
         "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } групп."
       ],
@@ -3352,9 +3355,6 @@
       "Swiss privacy": [
         "Швейцарская конфиденциальность"
       ],
-      "Synced devices": [
-        "Синхронизируемые устройства"
-      ],
       "Tap the + button to upload a file or folder": [
         "Нажмите кнопку \"+\", чтобы загрузить файл или папку"
       ],
@@ -3373,8 +3373,8 @@
       "There are no files yet": [
         "Пока здесь пусто"
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "Эти файлы были отправлены с конечным шифрованием. Чтобы сохранить их в безопасности — как и все ваши документы, фото и личные файлы — сохраните их на своем собственном Proton Drive. Он прост в использовании и бесплатен."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
+        "Эти файлы были переданы с использованием сквозного шифрования. Чтобы сохранить их в безопасности и все ваши документы, фотографии и файлы, храните их на собственном диске ${ DRIVE_APP_NAME }. Он прост в использовании и бесплатен."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
@@ -3415,8 +3415,8 @@
       "This will overwrite the existing folder": [
         "Это перезапишет существующую папку"
       ],
-      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Это удалит из Proton Drive синхронизированное устройство ${ deviceName }. Локальные файлы на\nустройстве не будут затронуты."
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Это удалит из ${ DRIVE_APP_NAME } синхронизированное устройство ${ deviceName }. Локальные файлы на\nустройстве не будут затронуты."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Чтобы включить действительно конфиденциальный поиск, нам надо проиндексировать ваши файлы локально. Вы по-прежнему можете использовать ${ DRIVE_APP_NAME } в обычном режиме – мы сообщим вам, когда индексирование будет завершено."
@@ -3478,8 +3478,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Одновременная загрузка сотен файлов может повлиять на производительность."
       ],
-      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Используйте Drive для настольных компьютеров, чтобы синхронизировать папки на вашем компьютере с Proton Drive. Они будут отображаться здесь и будут доступны из любого места.  ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Используйте Drive для настольных компьютеров, чтобы синхронизировать папки на вашем компьютере с ${ DRIVE_APP_NAME }. Они будут отображаться здесь и будут доступны из любого места.  ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Используйте эту форму, чтобы уведомить нас о неприемлемых, незаконных,\nили других вредоносных файлах общего доступа. Вы собираетесь сообщить:"
@@ -3535,8 +3535,8 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Вы также можете объединить импортированные календари с существующими календарями Proton."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Вы также можете объединить импортированные календари с существующими календарями ${ BRAND_NAME }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можете проверить процесс ${ importProgressLink }."
@@ -3559,17 +3559,26 @@
       "You will lose all unsaved changes.": [
         "Вы потеряете все несохраненные изменения."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Для вашего аккаунту есть по крайней мере один просроченный счет. Ваш доступ был ограничен. ${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, оплатите все просроченные счета."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
       ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "В вашем аккаунте есть как минимум один просроченный счет. Ваш аккаунт ограничен, и все услуги теперь заблокированы до оплаты. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "В вашем аккаунте есть по крайней мере один просроченный счет. Ваш аккаунт ограничен. Продолжение неуплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
+      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Ваш текущий браузер не поддерживает загрузку больших файлов из-за недоступности работников службы. Загрузка больших файлов может привести к зависанию или отсутствию реакции браузера. Используйте последние версии ${ recommendedBrowser } и повторите попытку."
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт ${ BRAND_NAME }."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "Скоро вам необходимо будет войти через ${ link }. Ваш адрес электронной почты не изменится."
@@ -3597,9 +3606,6 @@
       ],
       "Your previous recovery phrase": [
         "Ваша предыдущая фраза для восстановления"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ваш аккаунт в Proton в настоящее время приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите все просроченные счета."
       ]
     },
     "Info on errors": {
@@ -3664,6 +3670,9 @@
     "Label": {
       "# of accesses": [
         "Количество обращений"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } имя пользователя"
       ],
       "(Expired)": [
         "(Истек)"
@@ -3752,11 +3761,11 @@
       "Country": [
         "Страна"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "Создать аккаунт ${ BRAND_NAME }"
+      ],
       "Create a share link": [
         "Создайте ссылку для общего доступа"
-      ],
-      "Create Proton account": [
-        "Создать аккаунт Proton"
       ],
       "Created": [
         "Создано"
@@ -3851,8 +3860,8 @@
       "Hide password": [
         "Скрыть пароль"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Как бы вы описали свой опыт работы с новым ProtonMail?"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Как бы вы описали свой опыт использования нового ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Я понимаю риск"
@@ -3964,9 +3973,6 @@
       ],
       "Protect with password": [
         "Защитить паролем"
-      ],
-      "Proton username": [
-        "Имя пользователя в Proton"
       ],
       "Public keys": [
         "Публичные ключи"
@@ -4168,8 +4174,8 @@
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папки с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папок с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папки с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папки с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папок с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папок с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыка с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -4184,10 +4190,10 @@
         "Импортируйте все сообщения из ${ totalLabelsCount } папок с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортируйте все сообщения из ярлыка ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ярлыков ${ totalLabelsCount } с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Импортируйте все сообщения из ${ totalLabelsCount } ярлыка с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -4497,8 +4503,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Затем вам нужно будет войти в свой аккаунт Google и предоставить Proton доступ к вашим данным."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Далее вам нужно войти в свой аккаунт Google и предоставить ${ BRAND_NAME } доступ к своим данным."
       ]
     },
     "Oauth instructions video": {
@@ -4510,16 +4516,16 @@
       "Next": [
         "Далее"
       ],
-      "Start using ${ appName }": [
-        "Начните использовать ${ appName }"
+      "Start using ${ DRIVE_APP_NAME }": [
+        "Начните использовать ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "Создайте ссылку для общего доступа"
       ],
-      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
-        "Начните пользоваться Proton Drive, и мы удвоим ваше бесплатное хранилище до 1 Гб!"
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "Начните использовать ${ DRIVE_APP_NAME } и мы удвоим ваше бесплатное хранилище до 1 ГБ!"
       ],
       "Set a recovery method": [
         "Установить способ восстановления"
@@ -4541,8 +4547,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Настройте свою организацию, привяжите свое доменное имя и создайте аккаунты, чтобы обеспечить защиту всех членов организации."
       ],
-      "Discover all Proton services": [
-        "Откройте для себя все сервисы Proton"
+      "Discover all ${ BRAND_NAME } services": [
+        "Узнайте обо всех службах ${ BRAND_NAME }"
       ],
       "Select a theme": [
         "Выберите тему"
@@ -4550,16 +4556,16 @@
       "Set up your organization": [
         "Настройка организации"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Используйте меню приложений в верхнем левом углу для доступа к другим службам Proton, включая VPN, календарь и диск."
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "Используйте селектор приложений в левом верхнем углу для доступа к другим службам ${ BRAND_NAME }, включая VPN, Calendar и Drive."
       ],
       "You can change this anytime in your settings.": [
         "Вы можете изменить это в любой момент в настройках."
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ appName }": [
-        "Добро пожаловать в ${ appName }"
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Добро пожаловать в ${ DRIVE_APP_NAME }"
       ],
       "Your welcome bonus": [
         "Ваш приветственный подарок"
@@ -4677,13 +4683,13 @@
         "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удален.",
         "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
         "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
-        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удален."
+        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удалены."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } из ${ totalBeMerged } контакта успешно объединены.",
         "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединены.",
         "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединены.",
-        "${ model.submitted.length } из ${ totalBeMerged } контакта успешно объединены."
+        "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединены."
       ],
       "No contacts exported.": [
         "0 контактов было экспортировано."
@@ -4954,11 +4960,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Мы снова предлагаем скидку на подписку Visionary, но предложение ограничено!"
       ],
-      "Save more with 1 year of Proton Unlimited": [
-        "Экономьте с годовой подпиской на Proton Unlimited"
+      "Save more with 1 year of ${ planName }": [
+        "Сэкономьте с тарифом ${ planName } на 1 год"
       ],
-      "Upgrade and save more with Proton Unlimited": [
-        "Перейдите на Proton Unlimited и экономьте"
+      "Upgrade and save more with ${ planName }": [
+        "Перейдите на тариф ${ planName } со скидкой"
       ]
     },
     "specialoffer: Tooltip": {
@@ -5003,8 +5009,8 @@
       "Get up to ${ credits } in credits.": [
         "Вы можете получить до ${ credits } в кредитах."
       ],
-      "Invite friends to Proton": [
-        "Пригласите друзей в Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Пригласите друзей на ${ BRAND_NAME }"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Теперь вы легко можете искать файлы в Хранилище, сохраняя защищенность своих данных."
@@ -5035,7 +5041,7 @@
         "Код отправлен на ${ methodTo }"
       ],
       "Contact deleted": [
-        "Контакт удалён",
+        "Контакт удален",
         "Контакты удалены",
         "Контакты удалены",
         "Контакты удалены"
@@ -5156,15 +5162,15 @@
     "Time unit": {
       "${ hours } hour": [
         "${ hours } час",
+        "${ hours } часа",
         "${ hours } часов",
-        "${ hours } часов",
-        "${ hours } час(а, ов)"
+        "${ hours } часов"
       ],
       "${ minutes } minute": [
         "${ minutes } минута",
+        "${ minutes } минуты",
         "${ minutes } минут",
-        "${ minutes } минут",
-        "${ minutes } минут(а, ы)"
+        "${ minutes } минут"
       ]
     },
     "Title": {
@@ -5239,6 +5245,9 @@
       ],
       "Completed": [
         "Завершено"
+      ],
+      "Computers": [
+        "Компьютеры"
       ],
       "Contact details": [
         "Информация контакта"
@@ -5573,9 +5582,6 @@
       "Stop transfers?": [
         "Остановить передачи?"
       ],
-      "Synced devices": [
-        "Синхронизируемые устройства"
-      ],
       "The link either does not exist or has expired": [
         "Ссылка не существует или просрочена"
       ],
@@ -5753,6 +5759,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } объединит все папки с одинаковым названием. Чтобы избежать этого, измените названия перед импортом."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
+      ],
       "Are you sure you want to discard your import?": [
         "Вы уверены, что хотите сбросить импорт?"
       ],
@@ -5783,12 +5795,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Живой чат – это платная функция, доступная только для платных тарифов ${ VPN_APP_NAME }. Пожалуйста, вместо этого откройте билет."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton объединит все папки с одинаковым названием. Чтобы избежать этого, измените названия перед импортом."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton перенесёт столько данных, сколько возможно, начиная с самых последних сообщений."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
       ],
@@ -5813,11 +5819,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Это действие необратимо. Пожалуйста, введите слово «${ boldDanger }» в поле для продолжения."
       ],
-      "This feature requires a paid Proton account": [
-        "Для этой функции требуется платная учётная запись Proton"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Эта функция требует платного аккаунта ${ BRAND_NAME }"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Этот импорт может потребовать больше места, чем в настоящее время доступно в вашем аккаунте Proton. Рассмотрите возможность настройки вашего импорта."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Этот импорт может превысить объем памяти, доступный в настоящее время в вашем аккаунте ${ BRAND_NAME }. Рассмотрите возможность настройки импорта."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда вернемся к работе."
