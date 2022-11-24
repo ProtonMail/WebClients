@@ -606,11 +606,6 @@
         "Ma teffɣeḍ tura, yezmer ur d-ttwaktaran ara kra n yinermisen"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Isnasen n Proton"
-      ]
-    },
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
@@ -1834,9 +1829,6 @@
       "Please ${ refresh } or check your connection.": [
         "Ma ulac aɣilif ${ refresh } neɣ senqed tuqqna."
       ],
-      "There was a problem connecting to Proton.": [
-        "Tella-d tuccḍa deg tuqqna ɣer Proton."
-      ],
       "You may also ${ refresh } or try again later.": [
         "Ahat ilaq daɣen ${ refresh } neɣ εreḍ ticki."
       ],
@@ -2018,30 +2010,6 @@
       "Invalid IMAP port": [
         "Tawwurt IMAP tarmeɣtut"
       ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton ur yezmir ara ad yeqqen ɣer umiḍan-ik·im. Ttxil-k·im wali ma yella anekcum IMAP n Gmail yermed."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton yegguma ad yeqqen ɣer umiḍan-ik·im. Ttxil-k·im wali ma yella anekcum IMAP yermed deg umiḍan-ik·im Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton ur yezmir ara ad yeqqen ɣer umiḍan-ik·im. Ttxil-k·m wali ma yella:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton yegguma ad yeqqen ɣer umiḍan-ik·im azɣaray. Ttxil-k·m wali ma yella tansa n uqeddac n yimayl akked wuṭṭun n tewwurt d imeɣta."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton ur yezmir ara ad yeqqen ɣer umiḍan-ik·im azɣaray. Ttxil-k·m wali ma yella:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton yegguma ad yeqqen ɣer umiḍan-ik·im Gmail. Ttxil-k·m wali ma yella tansa n uqeddac n yimayl akked wawal uffir d imeɣta."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton yegguma ad yeqqen ɣer umiḍan-ik·im Yahoo. Ttxil-k·m wali ma yella tansa n uqeddac n yimayl akked wawal uffir d imeɣta."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton ur yezmir ara ad yeqqen ɣer umiḍan-ik·im Yahoo. Ttxil-k·m wali ma yella:"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Aṭas n yisutar n melmi kan. Ttxil-k·m εreḍ tikkelt-nniḍen deg kra n wakud."
       ],
@@ -2088,11 +2056,6 @@
       ],
       "not": [
         "uhu"
-      ]
-    },
-    "Import instructions": {
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "I uktar n yimaylen ɣer Proton, tesriḍ ${ appPasswordLink } seg Yahoo. Awi-t-id s uḍfar n yiḥricen-a :"
       ]
     },
     "Import instructions emphasis": {
@@ -2782,9 +2745,6 @@
       "You will lose all unsaved changes.": [
         "Ad teṣruḥeḍ akk ibeddilen ur nettwasekles ara."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ad yesɛu talast. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ur yettɛṭṭil ara ad yesɛu talast. ${ payInvoiceLink }"
       ],
@@ -2811,9 +2771,6 @@
       ],
       "Your previous recovery phrase": [
         "Tafyirt-ik•im n tririt yezrin"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Amiḍan-inek/m Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek/m, ttxil-k/m xelleṣ tifaturin yellan."
       ]
     },
     "Info on errors": {
@@ -3021,9 +2978,6 @@
       "Hide password": [
         "Ffer awal uffir"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Amek ara tgelmeḍ tarmit-inek•inem akked Proton amaynut?"
-      ],
       "Image": [
         "Tugna"
       ],
@@ -3122,9 +3076,6 @@
       ],
       "Protect with password": [
         "Mmesten s wawal uffir"
-      ],
-      "Proton username": [
-        "Isem n useqdac Proton"
       ],
       "Public keys": [
         "Tisura tizuyaz"
@@ -3491,17 +3442,11 @@
     "Onboarding Action": {
       "Next": [
         "Ɣer sdat"
-      ],
-      "Start using ${ appName }": [
-        "Bdu aseqdec n ${ appName }"
       ]
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Swel tuddsa-k•m, qqen isem n taɣult-ik•im, rnu snulfu-d imiḍanen akken ad tḍemneḍ\ni yimttekkiyen n tuddsa-k•m dakken ttwemmsetnen."
-      ],
-      "Discover all Proton services": [
-        "Issin imeẓluyen meṛṛa n Proton"
       ],
       "Select a theme": [
         "Fren asentel"
@@ -3509,16 +3454,8 @@
       "Set up your organization": [
         "Sbadu tuddsa-ik•im"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Seqdec afran n yisnasen i yellan deg ufella deg tama taẓelmaḍt akken ad tkecmeḍ ɣer yimeẓluyen n Proton, gar-asen VPN, awitay d Drive."
-      ],
       "You can change this anytime in your settings.": [
         "Tzemreḍ ad tbeddeleḍ aya melmi tebɣiḍ deg yiɣewwaren."
-      ]
-    },
-    "Onboarding Title": {
-      "Welcome to ${ appName }": [
-        "Ansuf ɣer ${ appName }"
       ]
     },
     "Option": {
@@ -4327,12 +4264,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Adiwenni srid d tamahilt premium yellan kan i yiɣawasen ${ VPN_APP_NAME } n lexlaṣ. Ma ulac aɣilif, ldi atiki deg ubdil."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton ad ismezdi akk ikaramen s yiwen n yisem. Akken ur d-yettili ara waya, beddel ismawen send ad tketreḍ."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton ad siweḍ aqettun n yisefka iwum yezmer, ad yebdu s yiznan-inek·inem n melmi kan."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
       ],
@@ -4350,12 +4281,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Tigawt-agi ur tettwassefsax ara. Ttxil-k•m sekcem awal ${ boldDanger } deg wurti akken ad tkemmeleḍ."
-      ],
-      "This feature requires a paid Proton account": [
-        "Tamahilt-a tesra amiḍan n Proton yettuxellṣen"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Akter-a izmer ad iεeddi tallunt n usekles i yellan akka tura deg umiḍan-inek·inem Proton. ttxil fren ayen ara tketreḍ."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ad nesḥisef imi ur neqqin ara akka tura. Ma ulac uɣilif semmed tiferkit-agi ukessar akken ad gelmeḍ ugur-inek•inem, akken ad t-nmuqel sakin ad k•m-nenermes ticki ara neqqen."
