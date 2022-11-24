@@ -76,8 +76,6 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     let isMimeTypeFixed: boolean;
     if (model?.isPGPInternal) {
         isMimeTypeFixed = false;
-    } else if (model?.isPGPExternalWithWKDKeys) {
-        isMimeTypeFixed = true;
     } else {
         isMimeTypeFixed = model?.sign !== undefined ? model.sign : !!mailSettings?.Sign;
     }
@@ -140,32 +138,38 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             });
         }
 
-        if (model.isPGPExternalWithoutWKDKeys && model.encrypt !== undefined) {
-            newProperties.push({
-                field: 'x-pm-encrypt',
-                value: `${model.encrypt}`,
-                group: emailGroup,
-                uid: createContactPropertyUid(),
-            });
-        }
+        if (model.isPGPExternal) {
+            const hasPinnedKeys = model.publicKeys.pinnedKeys.length > 0;
+            const hasApiKeys = model.publicKeys.apiKeys.length > 0; // from WKD or other untrusted servers
 
-        // Encryption automatically enables signing.
-        const sign = model.encrypt || model.sign;
-        if (model.isPGPExternalWithoutWKDKeys && sign !== undefined) {
-            newProperties.push({
-                field: 'x-pm-sign',
-                value: `${sign}`,
-                group: emailGroup,
-                uid: createContactPropertyUid(),
-            });
-        }
-        if (model.isPGPExternal && model.scheme) {
-            newProperties.push({
-                field: 'x-pm-scheme',
-                value: model.scheme,
-                group: emailGroup,
-                uid: createContactPropertyUid(),
-            });
+            if ((hasPinnedKeys || hasApiKeys) && model.encrypt !== undefined) {
+                newProperties.push({
+                    field: hasPinnedKeys ? 'x-pm-encrypt' : 'x-pm-encrypt-untrusted',
+                    value: `${model.encrypt}`,
+                    group: emailGroup,
+                    uid: createContactPropertyUid(),
+                });
+            }
+
+            // Encryption automatically enables signing (but we do not store the info for non-pinned WKD keys).
+            const sign = model.encrypt || model.sign;
+            if (sign !== undefined) {
+                newProperties.push({
+                    field: 'x-pm-sign',
+                    value: `${sign}`,
+                    group: emailGroup,
+                    uid: createContactPropertyUid(),
+                });
+            }
+
+            if (model.scheme) {
+                newProperties.push({
+                    field: 'x-pm-scheme',
+                    value: model.scheme,
+                    group: emailGroup,
+                    uid: createContactPropertyUid(),
+                });
+            }
         }
 
         const newVCardContact = fromVCardProperties(newProperties);
@@ -224,7 +228,6 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
 
             return {
                 ...model,
-                encrypt: publicKeys?.pinnedKeys.length > 0 && model.encrypt,
                 publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             };
         });
