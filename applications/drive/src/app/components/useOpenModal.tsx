@@ -10,7 +10,7 @@ import MoveToFolderModal from './MoveToFolderModal/MoveToFolderModal';
 import RemoveDeviceModal from './RemoveDeviceModal';
 import RenameDeviceModal from './RenameDeviceModal';
 import RenameModal from './RenameModal';
-import SelectedFileToShareModal from './SelectedFileToShareModal/SelectedFileToShareModal';
+import SelectedFileToShareModal from './SelectLinkToShareModal/SelectLinkToShareModal';
 import ShareLinkModal from './ShareLinkModal/ShareLinkModal';
 import { useSpotlight } from './useSpotlight';
 

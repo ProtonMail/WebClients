@@ -1,27 +1,14 @@
-import React, { ReactNode, useState } from 'react';
+import React, { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import {
-    Icon,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PrimaryButton,
-    UnderlineButton,
-    useActiveBreakpoint,
-    useLoading,
-    useModals,
-} from '@proton/components';
+import { ModalTwo, useActiveBreakpoint, useLoading, useModals } from '@proton/components';
 
-import { DecryptedLink, TreeItem, useActions, useTreeForModals } from '../../store';
+import { DecryptedLink, useActions, useTreeForModals } from '../../store';
 import CreateFolderModal from '../CreateFolderModal';
-import FolderTree from '../FolderTree/FolderTree';
 import ModalContentLoader from '../ModalContentLoader';
 import { selectMessageForItemList } from '../sections/helpers';
-import HasNoFolders from './HasNoFolders';
+import { ModalContent } from './ModalContent';
 
 interface Props {
     shareId: string;
@@ -38,7 +25,6 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
         expand,
         toggleExpand,
         isLoaded: isTreeLoaded,
-        rootLinkId,
     } = useTreeForModals(shareId, { rootExpanded: true, foldersOnly: true });
 
     const [loading, withLoading] = useLoading();
@@ -62,12 +48,22 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
         }
     };
 
-    const handleCreateNewFolderClick = (parentFolderId: string) => {
+    const handleCreateNewFolderClick = (selectedItemParentLinkId?: string) => {
+        if (rootItems.length > 1 && selectedItemParentLinkId === undefined) {
+            return;
+        }
+
+        const targetLinkId = selectedItemParentLinkId || rootItems[0]?.link.linkId || selectedItems[0]?.parentLinkId;
+
+        if (!targetLinkId) {
+            return;
+        }
+
         createModal(
             <CreateFolderModal
-                folder={{ shareId: shareId, linkId: parentFolderId }}
+                folder={{ shareId: shareId, linkId: targetLinkId }}
                 onCreateDone={async (newFolderId) => {
-                    expand(parentFolderId);
+                    expand(targetLinkId);
                     setSelectedFolder(newFolderId);
                 }}
             />
@@ -94,7 +90,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
         ),
     };
 
-    const moveIsDisabled =
+    const isMoveDisabled =
         !selectedFolder ||
         selectedItems.some((item) =>
             [
@@ -103,68 +99,10 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
             ].includes(selectedFolder)
         );
 
-    let modalContents = {
-        title: selectMessageForItemList(
-            selectedItems.map((item) => item.isFile),
-            messages
-        ),
-        content: rootItems && rootItems.length && (
-            <FolderTree
-                treeItems={rootItems}
-                isLoaded={isTreeLoaded}
-                selectedItemId={selectedFolder}
-                rowIsDisabled={(item: TreeItem) => itemsToMove.includes(item.link.linkId)}
-                onSelect={onSelect}
-                toggleExpand={toggleExpand}
-            />
-        ),
-        footer: (
-            <ModalTwoFooter>
-                <div className="flex flex-justify-space-between w100 flex-nowrap">
-                    {isNarrow ? (
-                        <Button
-                            icon
-                            disabled={loading || !selectedFolder}
-                            onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
-                            title={c('Action').t`Create new folder`}
-                        >
-                            <Icon name="folder-plus" />
-                        </Button>
-                    ) : (
-                        <UnderlineButton
-                            disabled={loading || !selectedFolder}
-                            onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
-                        >
-                            {c('Action').t`Create new folder`}
-                        </UnderlineButton>
-                    )}
-                    <div>
-                        <Button type="reset" disabled={loading} autoFocus>
-                            {c('Action').t`Close`}
-                        </Button>
-                        <PrimaryButton className="ml1" loading={loading} type="submit" disabled={moveIsDisabled}>
-                            {c('Action').t`Move`}
-                        </PrimaryButton>
-                    </div>
-                </div>
-            </ModalTwoFooter>
-        ) as ReactNode,
-    };
-
-    if (isTreeLoaded && rootItems.length === 0 && rootLinkId) {
-        modalContents = {
-            content: (
-                <HasNoFolders
-                    onCreate={() => {
-                        onClose?.();
-                        handleCreateNewFolderClick(rootLinkId);
-                    }}
-                />
-            ),
-            title: '',
-            footer: null,
-        };
-    }
+    const title = selectMessageForItemList(
+        selectedItems.map((item) => item.isFile),
+        messages
+    );
 
     return (
         <ModalTwo
@@ -180,14 +118,21 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
                 onClose?.();
             }}
         >
-            <ModalTwoHeader title={modalContents.title} closeButtonProps={{ disabled: loading }} />
-            {!rootItems.length || !isTreeLoaded ? (
-                <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
+            {isTreeLoaded ? (
+                <ModalContent
+                    isLoading={loading}
+                    isTreeLoaded={isTreeLoaded}
+                    title={title}
+                    rootItems={rootItems}
+                    selectedLinkId={selectedFolder}
+                    isMoveDisabled={isMoveDisabled}
+                    isMobile={isNarrow}
+                    toggleExpand={toggleExpand}
+                    onSelect={onSelect}
+                    onCreate={handleCreateNewFolderClick}
+                />
             ) : (
-                <>
-                    <ModalTwoContent>{modalContents.content}</ModalTwoContent>
-                    {modalContents.footer}
-                </>
+                <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
             )}
         </ModalTwo>
     );
