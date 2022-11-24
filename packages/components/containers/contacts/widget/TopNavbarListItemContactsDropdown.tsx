@@ -2,7 +2,7 @@ import { forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownButton, Icon, Tabs, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownButton, EasySwitchProvider, Icon, Tabs, usePopperAnchor } from '@proton/components';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '@proton/components/components/topnavbar/TopNavbarListItemButton';
@@ -87,7 +87,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
     };
 
     return (
-        <>
+        <EasySwitchProvider>
             <DropdownButton
                 as={TopNavbarListItemContactsButton}
                 isOpen={isOpen}
@@ -175,7 +175,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
             {modals}
             {importModal}
             {mergeModals}
-        </>
+        </EasySwitchProvider>
     );
 };
 

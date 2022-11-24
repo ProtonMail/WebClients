@@ -2,12 +2,13 @@ import { Provider } from 'react-redux';
 
 import { useSubscribeEventManager } from '@proton/components/hooks';
 
+import MainModal from '../components/Modals/MainModal';
 import { event } from './actions';
 import { useEasySwitchDispatch, useGenerateEasySwitchStore } from './store';
 import { ApiEvent } from './types/events.types';
 
 interface Props {
-    children: JSX.Element | JSX.Element[];
+    children: JSX.Element | (JSX.Element | null)[] | null;
 }
 
 const EasySwitchEventListener = ({ children }: Props) => {
@@ -25,6 +26,7 @@ const EasySwitchStoreProvider = ({ children }: Props) => {
     return (
         <Provider store={easySwitchStore}>
             <EasySwitchEventListener>{children}</EasySwitchEventListener>
+            <MainModal />
         </Provider>
     );
 };

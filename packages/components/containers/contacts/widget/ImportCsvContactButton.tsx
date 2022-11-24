@@ -2,51 +2,40 @@ import { c } from 'ttag';
 
 import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { GoogleButton, Loader, PrimaryButton } from '../../../components';
-import { useAddresses, useFeature, useModals, useUser } from '../../../hooks';
-import { EasySwitchOauthModal } from '../../easySwitch';
+import { Loader, PrimaryButton } from '../../../components';
+import { useFeature, useUser } from '../../../hooks';
+import { EasySwitchOauthImportButton } from '../../easySwitch';
 import { FeatureCode } from '../../features';
 
 interface Props {
     onImport: () => void;
     easySwitchSource?: EASY_SWITCH_SOURCE;
+    onClose: () => void;
 }
 
-const ImportCsvContactButton = ({ easySwitchSource = EASY_SWITCH_SOURCE.IMPORT_CONTACTS_BUTTON, onImport }: Props) => {
-    const { createModal } = useModals();
+const ImportCsvContactButton = ({
+    easySwitchSource = EASY_SWITCH_SOURCE.IMPORT_CONTACTS_BUTTON,
+    onImport,
+    onClose,
+}: Props) => {
     const [user, loadingUser] = useUser();
-    const [addresses, loadingAddresses] = useAddresses();
-
     const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
-    const easySwitchFeatureLoading = easySwitchFeature.loading;
-    const easySwitchFeatureValue = easySwitchFeature.feature?.Value;
 
-    const isLoading = loadingUser || loadingAddresses || easySwitchFeatureLoading;
-
-    if (isLoading) {
+    if (loadingUser || easySwitchFeature.loading) {
         return <Loader />;
     }
 
-    const disabled = isLoading || !user.hasNonDelinquentScope;
+    const disabled = !user.hasNonDelinquentScope;
 
     return (
         <>
-            {!easySwitchFeatureLoading && easySwitchFeatureValue?.GoogleContacts && (
-                <GoogleButton
-                    onClick={() => {
-                        createModal(
-                            <EasySwitchOauthModal
-                                source={easySwitchSource}
-                                addresses={addresses}
-                                defaultCheckedTypes={[ImportType.CONTACTS]}
-                                featureMap={easySwitchFeatureValue}
-                            />
-                        );
-                    }}
-                    disabled={disabled}
-                    className="mr1 mb0-5"
-                />
-            )}
+            <EasySwitchOauthImportButton
+                className="mr1 mb0-5"
+                defaultCheckedTypes={[ImportType.CONTACTS]}
+                displayOn="GoogleContacts"
+                source={easySwitchSource}
+                onClick={onClose}
+            />
             <PrimaryButton className="mb0-5" id="import-contacts-button" disabled={disabled} onClick={onImport}>
                 {c('Action').t`Import from .csv or vCard`}
             </PrimaryButton>
