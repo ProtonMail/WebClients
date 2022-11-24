@@ -332,6 +332,9 @@
       "Try another method": [
         "Tentar outro método"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Tente salvar novamente. Falha ao salvar devido a: ${ saveError }"
+      ],
       "Unlock": [
         "Desbloquear"
       ],
@@ -426,6 +429,11 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Isso irá desconectar todos os roteadores e clientes usando esse certificado."
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "Aplicativos do ${ BRAND_NAME }"
       ]
     },
     "Badge": {
@@ -1436,6 +1444,9 @@
       "Bugs or quality issue": [
         "Defeitos ou problema de qualidade"
       ],
+      "I use a different ${ BRAND_NAME } account": [
+        "Eu uso uma conta ${ BRAND_NAME } diferente"
+      ],
       "Missing feature(s)": [
         "Recurso(s) ausente(s)"
       ],
@@ -1861,11 +1872,11 @@
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "Necessário ${ vpnBasic }, ${ vpnPlus } ou ${ visionary } para conexões em países específicos."
+      "${ vpnPlus } required for Country level connection.": [
+        "${ vpnPlus } necessária para conexão em nível de país."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "Necessário ${ vpnPlus } ou ${ visionary } para o recurso Secure Core."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "É necessário o plano ${ vpnPlus } para usar o recurso Secure Core."
       ],
       "* No credit card required.": [
         "* Cartão de crédito não necessário."
@@ -2119,6 +2130,9 @@
       ],
       "Loading preview": [
         "Carregando visualização"
+      ],
+      "Loading...": [
+        "Carregando..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Faça login no ${ MAIL_APP_NAME } para ativar seu endereço"
@@ -2513,17 +2527,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }. Para usar o ${ toAppName }, você precisa de um ${ MAIL_APP_NAME } endereço."
       ],
-      "Your ${ BRAND_NAME } account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Sua conta do ${ BRAND_NAME } está atualmente suspensa. Para continuar usando sua conta, pague as faturas pendentes."
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Sua conta ${ BRAND_NAME } está suspensa no momento. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento do Drive serão bloqueados e você não poderá fazer upload de novos arquivos. Para retomar o serviço normal, pague as faturas vencidas."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Sua conta ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode fazer upload de novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, por favor acesse sua conta em ${ loginLink } e exclua sua conta lá."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Sua conta tem pelo menos uma fatura vencida. Seu acesso foi restringido. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Sua conta tem pelo menos uma fatura vencida. Sua conta está restrita e todos os serviços agora estão bloqueados até o pagamento. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Sua conta tem pelo menos uma fatura vencida. Sua conta é restrita. O não pagamento contínuo bloqueará seus e-mails e links de compartilhamento. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "A sua conta será atualizada assim que o pagamento for aprovado."
@@ -3523,6 +3543,9 @@
       "Review subscription and pay": [
         "Revisar assinatura e pagar"
       ],
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "Comece a explorar o universo ${ BRAND_NAME }"
+      ],
       "Switch plans?": [
         "Mudar de plano?"
       ]
@@ -3767,6 +3790,9 @@
       ],
       "I found another service that I like better": [
         "Encontrei outro serviço que considero melhor"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "Eu uso uma conta ${ BRAND_NAME } diferente"
       ],
       "iOS": [
         "iOS"
@@ -4165,6 +4191,12 @@
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
         "Nosso plano Visionary que foi descontinuado voltou somente por um período limitado"
+      ],
+      "Save more with 1 year of ${ planName }": [
+        "Economize mais com 1 ano de ${ planName }"
+      ],
+      "Upgrade and save more with ${ planName }": [
+        "Faça upgrade e economize mais com ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -4205,6 +4237,9 @@
       ],
       "Get up to ${ credits } in credits.": [
         "Receba até ${ credits } em créditos."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Convide amigos para ${ BRAND_NAME }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Experimente ${ DRIVE_APP_NAME }"
@@ -4526,6 +4561,9 @@
       "Confirm downgrade": [
         "Confirmar downgrade"
       ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "Confirmar pérdida de beneficios do ${ BRAND_NAME }"
+      ],
       "Confirm phone number": [
         "Confirme o número do telefone"
       ],
@@ -4533,7 +4571,7 @@
         "Parabéns por escolher a privacidade!"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Crie sua conta ${ BRAND_NAME }"
+        "Crie suaconta do ${ BRAND_NAME }"
       ],
       "Create your ${ BRAND_NAME } address": [
         "Criar seu endereço de ${ BRAND_NAME }"
@@ -4746,7 +4784,7 @@
         "Este endereço pode comprometer sua privacidade."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Experimente o melhor de ${ MAIL_APP_NAME } gratuitamente"
+        "Experimente o melhor do ${ MAIL_APP_NAME } gratuitamente"
       ],
       "TV log in": [
         "Iniciar sessão na TV"
@@ -4780,6 +4818,9 @@
       ],
       "WireGuard configuration": [
         "Configuração do WireGuard"
+      ],
+      "You already have a ${ BRAND_NAME } account": [
+        "Você já tem uma conta ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"

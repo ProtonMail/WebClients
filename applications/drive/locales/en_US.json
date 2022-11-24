@@ -3,5 +3,14 @@
     "plural-forms": "nplurals=2; plural=(n != 1);",
     "language": "en_US"
   },
-  "contexts": {}
+  "contexts": {
+    "Info": {
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+      ]
+    }
+  }
 }

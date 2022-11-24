@@ -643,8 +643,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Applicazioni Proton"
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } applicazioni"
       ]
     },
     "Beta access description": {
@@ -1811,9 +1811,9 @@
       "Label name cannot be empty.": [
         "Il nome dell'etichetta non può essere vuoto."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Unisci almeno ${ calendarToFixCount } calendario con un calendario Proton esistente",
-        "Unisci almeno ${ calendarToFixCount } calendari con calendari Proton esistenti"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Unisci almeno ${ calendarToFixCount } calendario con un calendario ${ BRAND_NAME } esistente",
+        "Unisci almeno ${ calendarToFixCount } calendari con calendari ${ BRAND_NAME } esistenti"
       ],
       "Missing key packet": [
         "Pacchetto chiavi mancante"
@@ -2045,8 +2045,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Qualcosa è andato storto. Aggiorna la pagina o riprova più tardi."
       ],
-      "There was a problem connecting to Proton.": [
-        "Si è verificato un problema di connessione a Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Si è verificato un problema di connessione a ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Puoi anche ${ refresh } o riprovare più tardi."
@@ -2247,6 +2247,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "\"Accesso meno sicuro alle app\" sia attivato nelle impostazioni di sicurezza dell'account Google."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } non può connettersi al tuo account. Assicurati che l'accesso a Gmail IMAP sia abilitato."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } non può connettersi al tuo account. Assicurati che l'accesso IMAP sia abilitato nel tuo account Gmail."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } non può connettersi al tuo account. Assicurati che:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } non può connettersi al tuo account esterno. Assicurati che l'indirizzo del server di posta e il numero della porta siano corretti."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } non può connettersi al tuo account esterno. Assicurati che:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } non può connettersi al tuo account Gmail. Assicurati che l'indirizzo del server di posta e il numero della porta siano corretti."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } non può connettersi al tuo account Yahoo. Assicurati che l'indirizzo del server di posta e il numero della porta siano corretti."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } non può connettersi al tuo account Yahoo. Assicurati che:"
+      ],
       "2-step verification is enabled in your external account.": [
         "La verifica in 2 passaggi è abilitata nel tuo account esterno."
       ],
@@ -2273,30 +2297,6 @@
       ],
       "Invalid IMAP port": [
         "Porta IMAP non valida"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton non può connettersi al tuo account. Assicurati che l'accesso a Gmail IMAP sia abilitato."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton non può connettersi al tuo account. Assicurati che l'accesso IMAP sia abilitato nel tuo account Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton non può connettersi al tuo account. Assicurati che:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton non può connettersi al tuo account esterno. Assicurati che l'indirizzo del server di posta e il numero della porta siano corretti."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton non può connettersi al tuo account esterno. Assicurati che:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton non può connettersi al tuo account Gmail. Assicurati che l'indirizzo del server di posta e il numero della porta siano corretti."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton non può connettersi al tuo account Yahoo. Assicurati che l'indirizzo del server di posta e il numero della porta siano corretti."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton non può connettersi al tuo account Yahoo. Assicurati che:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Troppe richieste recenti. Per favore riprova tra qualche istante."
@@ -2350,17 +2350,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Clicca ${ boldManage } per espandere il menu delle opzioni."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "A seconda del tuo provider di servizi email, potresti aver bisogno di generare una ${ knowledgeBaseLink } prima di poter importare su Proton."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "A seconda del tuo provider di servizi email, potresti aver bisogno di generare una ${ knowledgeBaseLink } prima di poter importare su ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Espandi il menu a tendina cliccando sui 3 puntini (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Genera una ${ boldAppPassword } e usala al posto della tua password regolare quando richiesto da Proton."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Genera una ${ boldAppPassword } e usala al posto della tua password regolare quando richiesto da ${ BRAND_NAME }."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Genera la ${ boldAppPassword } e usala al posto della tua password regolare quando richiesto da Proton."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Genera la ${ boldAppPassword } e usala al posto della tua password regolare quando richiesto da ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Vai a ${ boldAccountInfo } nel tuo profilo su ${ yahooMailLink }."
@@ -2386,29 +2386,29 @@
       "Select ${ boldExportCSV }.": [
         "Seleziona ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Per importare un calendario su Proton, necessiti del ${ knowledgeBaseLink }. Scaricala da Outlook in 3 facili passaggi:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Per importare un calendario su ${ BRAND_NAME }, necessiti del ${ knowledgeBaseLink }. Scaricala da Outlook in 3 facili passaggi:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Per importare un calendario su Proton, necessiti del ${ knowledgeBaseLink }. Scaricala da Yahoo in 3 facili passaggi:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Per importare un calendario su ${ BRAND_NAME }, necessiti del ${ knowledgeBaseLink }. Scaricala da Yahoo in 3 semplici passaggi:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Per importare un calendario su Proton, necessiti del ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Per importare un calendario su ${ BRAND_NAME }, necessiti del ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Per importare i contatti su Proton, necessiti di un ${ knowledgeBaseLink }. Scaricala da Outlook in 3 facili passaggi:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Per importare i contatti su ${ BRAND_NAME }, hai bisogno di un ${ knowledgeBaseLink }. Scaricalo da Outlook in 3 semplici passaggi:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Per importare i contatti su Proton, necessiti di un ${ knowledgeBaseLink }. Scaricala da Yahoo in 3 facili passaggi:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Per importare i contatti su ${ BRAND_NAME }, hai bisogno di un ${ knowledgeBaseLink }. Scaricalo da Yahoo in 3 semplici passaggi:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Per importare i contatti su Proton, necessiti del ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Per importare i contatti su ${ BRAND_NAME }, hai bisogno di un ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Per importare le email su Proton, necessiti di una ${ appPasswordLink } da Outlook. Ottienila seguendo questi passaggi:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Per importare le email su ${ BRAND_NAME }, necessiti di una ${ appPasswordLink } da Outlook. Ottienila seguendo questi passaggi:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Per importare le email su Proton, necessiti di una ${ appPasswordLink } da Yahoo. Ottienila seguendo questi passaggi:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Per importare le email su ${ BRAND_NAME }, necessiti di una ${ appPasswordLink } da Yahoo. Ottienila seguendo questi passaggi:"
       ]
     },
     "Import instructions emphasis": {
@@ -2681,8 +2681,8 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Sei sicuro di voler eliminare definitivamente gli elementi selezionati dal cestino?"
       ],
-      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Poiché ${ appName } è crittografato end-to-end, non possiamo accedere\no decrittografa i tuoi file per te. Per sbloccare l'unità dopo la reimpostazione della password,\ndevi avere uno dei seguenti:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
@@ -2723,8 +2723,8 @@
       "Conflict": [
         "Conflitto"
       ],
-      "Continue using ${ appName } and unlock drive later": [
-        "Continua a utilizzare ${ appName } e sblocca l'unità in un secondo momento"
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Continua a utilizzare ${ DRIVE_APP_NAME } e sblocca l'unità in un secondo momento"
       ],
       "Continue with ${ planName }": [
         "Continua con ${ planName }"
@@ -2827,6 +2827,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Inserisci il codice di verifica. Digita ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
@@ -2885,8 +2888,8 @@
       "Free up some space or contact your administrator.": [
         "Libera dello spazio o contatta il tuo amministratore."
       ],
-      "Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.": [
-        "Vieni a conoscere Proton Drive ed guadagnati 500 MB di bonus memoria! Agisci ora."
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "Vieni a conoscere ${ DRIVE_APP_NAME } ed guadagnati 500 MB di bonus memoria! Agisci ora."
       ],
       "Go ahead, upload a file": [
         "Procedi, carica un file"
@@ -2915,8 +2918,8 @@
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "Se non conosci la tua password, imposta una frase di recupero per assicurarti di non perdere l'accesso al tuo account e ai tuoi dati."
       ],
-      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "Se disponi di uno di questi, passa alle impostazioni dell'account Proton per\niniziare il processo di sblocco."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importa ${ contactsFragment } e ${ contactsGroupsFragment }"
@@ -3006,6 +3009,9 @@
       "Loading preview": [
         "Caricamento anteprima"
       ],
+      "Loading...": [
+        "Caricamento in corso..."
+      ],
       "Makes your account safer": [
         "Rendi il tuo account più sicuro"
       ],
@@ -3051,8 +3057,8 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
-      "No synced devices": [
-        "Nessun dispositivo sincronizzato"
+      "No synced computers": [
+        "Nessun computer sincronizzato"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Nessuna delle chiavi caricate è valida per la crittografia. Per abilitare l'invio di messaggi a questo indirizzo, caricare cortesemente una chiave valida oppure disabilitare \"Email criptate\"."
@@ -3063,8 +3069,8 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Non tutti i file sono stati trasferiti. Prova nuovamente a caricare o scaricare i file."
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        "Nota: i dati potrebbero essere ancora disponibili localmente sui dispositivi su cui hai installato ${ appName }."
+      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Nota: i dati potrebbero essere ancora disponibili localmente sui dispositivi su cui hai installato ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "di"
@@ -3242,9 +3248,6 @@
       "Swiss privacy": [
         "Privacy svizzera"
       ],
-      "Synced devices": [
-        "Dispositivi sincronizzati"
-      ],
       "Tap the + button to upload a file or folder": [
         "Tocca il pulsante + per caricare un file o una cartella"
       ],
@@ -3263,8 +3266,8 @@
       "There are no files yet": [
         "File non ancora presenti"
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "Questi file sono stati condivisi utilizzando una crittografia end-to-end. Per mantenerli al sicuro — e con essi tutti i tuoi documenti, foto, e file privati — memorizzali nel tuo Proton Drive. È facile da usare, e gratis."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
+        "Questi file sono stati condivisi utilizzando una crittografia end-to-end. Per mantenerli al sicuro — e con essi tutti i tuoi documenti, foto, e file privati — memorizzali nel tuo ${ DRIVE_APP_NAME }. È facile da usare, e gratis."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
@@ -3303,8 +3306,8 @@
       "This will overwrite the existing folder": [
         "Questo sovrascriverà la cartella esistente"
       ],
-      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Questo rimuoverà da Proton Drive il dispositivo sincronizzato ${ deviceName }. I file locali sul dispositivo non saranno interessati."
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Questo rimuoverà da ${ DRIVE_APP_NAME } il dispositivo sincronizzato ${ deviceName }. I file locali sul dispositivo non saranno interessati."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Per abilitare la ricerca veramente privata, dobbiamo indicizzare i tuoi file localmente. Puoi comunque utilizzare ${ DRIVE_APP_NAME } normalmente: ti faremo sapere al termine dell'indicizzazione."
@@ -3366,8 +3369,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Caricare centinaia di file in una sola volta può avere un impatto sulle prestazioni."
       ],
-      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Usa Drive per Desktop per sincronizzare le cartelle sul tuo computer con Proton Drive. Verranno visualizzate qui e saranno accessibili da qualsiasi luogo. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Usa Drive per Desktop per sincronizzare le cartelle sul tuo computer con ${ DRIVE_APP_NAME }. Verranno visualizzate qui e saranno accessibili da qualsiasi luogo. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilizza questo modulo per informarci di contenuti inappropriati, illegali,\no altri file condivisi dannosi. Stai per segnalare:"
@@ -3423,8 +3426,8 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email })."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Puoi anche unire i calendari importati con i calendari Proton esistenti."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Puoi anche unire i calendari importati con i calendari ${ BRAND_NAME } esistenti."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
@@ -3447,17 +3450,26 @@
       "You will lose all unsaved changes.": [
         "Perderai tutte le modifiche non salvate."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Il tuo account ha almeno una fattura scaduta. Il tuo accesso è stato limitato. ${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Dopo 28 giorni, le email non verranno più recapitate nella tua casella di posta, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, si prega di pagare le fatture scadute."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
       ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Il tuo account ha almeno una fattura scaduta. Il tuo account è limitato e tutti i servizi saranno bloccati fino al pagamento. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Il tuo account ha almeno una fattura scaduta. Il tuo account è limitato. Il mancato pagamento bloccherà le tue email e i link di condivisione. ${ payInvoiceLink }"
+      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Il tuo browser attuale non supporta il download di file di grandi dimensioni a causa dell'indisponibilità degli operatori del servizio. Il download di file di grandi dimensioni potrebbe bloccarsi o lasciare che il browser non risponda. Utilizza le versioni più recenti di un ${ recommendedBrowser } e riprova."
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account Proton."
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "A breve, dovrai accedere a ${ link }. Il tuo indirizzo email non cambierà."
@@ -3485,9 +3497,6 @@
       ],
       "Your previous recovery phrase": [
         "La tua frase di recupero precedente"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account Proton è attualmente in attesa. Per continuare a utilizzare il tuo account, paga le fatture scadute."
       ]
     },
     "Info on errors": {
@@ -3552,6 +3561,9 @@
     "Label": {
       "# of accesses": [
         "# di accessi"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } username"
       ],
       "(Expired)": [
         "(Scaduto)"
@@ -3640,11 +3652,11 @@
       "Country": [
         "Paese"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "Crea un account ${ BRAND_NAME }"
+      ],
       "Create a share link": [
         "Creare un collegamento di condivisione"
-      ],
-      "Create Proton account": [
-        "Crea il tuo Account Proton"
       ],
       "Created": [
         "Creato"
@@ -3737,8 +3749,8 @@
       "Hide password": [
         "Nascondi la password"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Come descriveresti la tua esperienza con la nuova versione di Proton?"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Come vorresti descrivere la tua esperienza con il nuovo ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Comprendo i rischi"
@@ -3850,9 +3862,6 @@
       ],
       "Protect with password": [
         "Proteggi con password"
-      ],
-      "Proton username": [
-        "Nome utente di Proton"
       ],
       "Public keys": [
         "Chiavi pubbliche"
@@ -4339,8 +4348,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Successivamente dovrai accedere al tuo account Google e concedere a Proton l'accesso ai tuoi dati."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Successivamente dovrai accedere al tuo account Google e concedere a ${ BRAND_NAME } l'accesso ai tuoi dati."
       ]
     },
     "Oauth instructions video": {
@@ -4352,16 +4361,16 @@
       "Next": [
         "Prossimo"
       ],
-      "Start using ${ appName }": [
-        "Inizia a usare ${ appName }"
+      "Start using ${ DRIVE_APP_NAME }": [
+        "Inizia ad usare ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "Creare un collegamento di condivisione"
       ],
-      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
-        "Inizia ad utilizzare Proton Drive, e ti raddoppieremo lo spazio di archiviazione gratuito fino a 1Gb!"
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "Inizia ad utilizzare ${ DRIVE_APP_NAME } e raddoppieremo il tuo spazio di archiviazione gratuito ad 1GB!"
       ],
       "Set a recovery method": [
         "Impostare un metodo di recupero"
@@ -4381,8 +4390,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configura la tua organizzazione, collega il tuo nome di dominio e crea un account per garantire che tutti i membri della tua organizzazione siano protetti."
       ],
-      "Discover all Proton services": [
-        "Scopri tutti i servizi Proton"
+      "Discover all ${ BRAND_NAME } services": [
+        "Scopri tutti i servizi ${ BRAND_NAME }"
       ],
       "Select a theme": [
         "Seleziona un tema"
@@ -4390,16 +4399,16 @@
       "Set up your organization": [
         "Configura la tua organizzazione"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Usa il selettore app in alto a sinistra per accedere ad altri servizi Proton, tra cui VPN, Calendar e Drive."
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "Usa il selettore app in alto a sinistra per accedere ad altri servizi ${ BRAND_NAME }, tra cui VPN, Calendar e Drive."
       ],
       "You can change this anytime in your settings.": [
         "Puoi cambiarlo in qualunque momento nelle impostazioni."
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ appName }": [
-        "Benvenuto in ${ appName }"
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Benvenuto in ${ DRIVE_APP_NAME }"
       ],
       "Your welcome bonus": [
         "Il tuo regalo di benvenuto"
@@ -4776,11 +4785,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Il piano Visionary che avevamo sospeso è di nuovo disponibile per un periodo limitato"
       ],
-      "Save more with 1 year of Proton Unlimited": [
-        "Risparmia con 1 anno di Proton Unlimited"
+      "Save more with 1 year of ${ planName }": [
+        "Risparmia con 1 anno di ${ planName }"
       ],
-      "Upgrade and save more with Proton Unlimited": [
-        "Effettua l'upgrade e risparmia con Proton Unlimited"
+      "Upgrade and save more with ${ planName }": [
+        "Effettua l'upgrade e risparmia con ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -4825,8 +4834,8 @@
       "Get up to ${ credits } in credits.": [
         "Guadagna fino a ${ credits } in crediti."
       ],
-      "Invite friends to Proton": [
-        "Invita i tuoi amici su Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Invita gli amici su ${ BRAND_NAME }"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ora puoi cercare facilmente i file di Drive mantenendo i tuoi dati al sicuro."
@@ -5043,6 +5052,9 @@
       ],
       "Completed": [
         "Completato"
+      ],
+      "Computers": [
+        "Computer"
       ],
       "Contact details": [
         "Dettagli contatto"
@@ -5371,9 +5383,6 @@
       "Stop transfers?": [
         "Interrompere i trasferimenti?"
       ],
-      "Synced devices": [
-        "Dispositivi sincronizzati"
-      ],
       "The link either does not exist or has expired": [
         "Il link non esiste o è scaduto"
       ],
@@ -5547,6 +5556,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } unirà tutte le cartelle con lo stesso nome. Per evitare ciò, cambia i nomi prima dell'importazione."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
+      ],
       "Are you sure you want to discard your import?": [
         "Vuoi davvero ignorare la tua importazione?"
       ],
@@ -5573,12 +5588,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "La chat dal vivo è una funzionalità premium disponibile solo per chi ha piani ${ VPN_APP_NAME } a pagamento. Si prega di aprire un ticket."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton unirà tutte le cartelle con lo stesso nome. Per evitare ciò, cambia i nomi prima dell'importazione."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."
       ],
@@ -5603,11 +5612,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Questa azione è irreversibile. Inserisci la parola ${ boldDanger } nel campo per procedere."
       ],
-      "This feature requires a paid Proton account": [
-        "Questa funzione richiede un account Proton a pagamento"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Questa funzione richiede un account ${ BRAND_NAME } a pagamento"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Questa importazione potrebbe superare la capacità di archiviazione attualmente disponibile nel tuo account Proton. Considera la possibilità di personalizzare l'importazione."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Questa importazione potrebbe superare la capacità di archiviazione attualmente disponibile nel tuo account ${ BRAND_NAME }. Considera la possibilità di personalizzare l'importazione."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sfortunatamente, al momento non sei online. Per favore completa il modulo sotto per descrivere il problema, lo esamineremo e ti contatteremo quando quando saremo di nuovo online."

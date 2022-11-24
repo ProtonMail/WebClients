@@ -1896,11 +1896,11 @@
       "${ storageSize } storage": [
         "${ storageSize } przestrzeni dyskowej"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "Plan ${ vpnBasic }, ${ vpnPlus } lub ${ visionary } są wymagane, aby móc korzystać z połączeń przez wybrane kraje."
+      "${ vpnPlus } required for Country level connection.": [
+        "Połączenie z poziomu kraju wymagana planu ${ vpnPlus }."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "Plan ${ vpnPlus } lub ${ visionary } są wymagane, aby móc korzystać z funkcji Secure Core."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "Funkcja Secure Core wymaga posiadania planu ${ vpnPlus }."
       ],
       "* No credit card required.": [
         "* Karta płatnicza nie jest wymagana."
@@ -2156,6 +2156,9 @@
       ],
       "Loading preview": [
         "Ładowanie podglądu"
+      ],
+      "Loading...": [
+        "Ładowanie..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Aby aktywować adres, zaloguj się do poczty ${ MAIL_APP_NAME }"
@@ -2550,17 +2553,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres ${ MAIL_APP_NAME }, aby korzystać z usługi ${ toAppName }."
       ],
-      "Your ${ BRAND_NAME } account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Konto ${ BRAND_NAME } zostało zawieszone. Ureguluj zobowiązania."
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Twoje konta ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } są połączone. Aby je usunąć, zaloguj się na ${ loginLink } i usuń konto."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Twoje konto posiada zaległe faktury. Dostęp do konta został ograniczony. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta zostanie wkrótce ograniczony. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Wszystkie usługi zostały zablokowane do czasu wykonania płatności. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Dalszy brak płatności spowoduje zablokowanie dostarczania wiadomości i udostępnionych linków. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Konto zostanie zaktualizowane po zaksięgowaniu płatności."
@@ -4258,6 +4267,12 @@
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
         "Nasz wycofany z dystrybucji plan Visionary powrócił na czas ograniczony"
+      ],
+      "Save more with 1 year of ${ planName }": [
+        "Zaoszczędź więcej dzięki rocznej subskrypcji ${ planName }"
+      ],
+      "Upgrade and save more with ${ planName }": [
+        "Uaktualnij i zaoszczędź więcej dzięki ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {

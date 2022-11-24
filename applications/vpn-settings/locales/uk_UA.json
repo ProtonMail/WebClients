@@ -1896,11 +1896,11 @@
       "${ storageSize } storage": [
         "${ storageSize } сховища"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "Для вибору з'єднання на рівні країни необхідна передплата ${ vpnBasic }, ${ vpnPlus } або ${ visionary }."
+      "${ vpnPlus } required for Country level connection.": [
+        "${ vpnPlus } вимагає з'єднання на рівні країни."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "Для функції Secure Core необхідна передплата ${ vpnPlus } або ${ visionary }."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "Для функції Secure Core необхідна передплата ${ vpnPlus }."
       ],
       "* No credit card required.": [
         "* Кредитна картка не потрібна."
@@ -2156,6 +2156,9 @@
       ],
       "Loading preview": [
         "Завантаження попереднього перегляду"
+      ],
+      "Loading...": [
+        "Завантаження..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Увійдіть до ${ MAIL_APP_NAME }, щоб активувати свою адресу"
@@ -2467,7 +2470,7 @@
         "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "При продовженні вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
+        "Під час продовження вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
       ],
       "Why?": [
         "Навіщо?"
@@ -2550,14 +2553,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Щоб користуватися ${ toAppName }, вам потрібна адреса ${ MAIL_APP_NAME }."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. За 28 днів електронні листи перестануть надходити до вашої поштової скриньки, посилання на спільний доступ до Drive будуть заблоковані, і ви не зможете завантажувати нові файли. Щоб відновити звичайну роботу, будь ласка, сплатіть несплачені рахунки."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Ваші облікові записи ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } пов'язані. Щоб видалити їх обидва, виконайте вхід у ${ loginLink } та видаліть свій обліковий запис."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ було обмежено. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Ваш обліковий запис має хоча б один несплачений рахунок. Ваш обліковий запис обмежено, і всі послуги зараз заблоковані до оплати. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Ваш обліковий запис має хоча б один несплачений рахунок. Ваш обліковий запис обмежений. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
@@ -3974,10 +3986,10 @@
         "Підтвердити зараз"
       ],
       "Verify recovery email?": [
-        "Перевірити резервну адресу електронної пошти?"
+        "Підтвердити резервну адресу електронної пошти?"
       ],
       "Verify with email": [
-        "Перевірити електронною поштою"
+        "Підтвердити електронною поштою"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Підтвердження вашої електронної адреси поліпшує безпеку вашого облікового запису та розширює можливості відновлення."
@@ -4045,6 +4057,9 @@
       ],
       "Get up to ${ credits } in credits.": [
         "Отримайте до ${ credits } кредиту."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Запросіть друзів до ${ BRAND_NAME }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Спробувати ${ DRIVE_APP_NAME }"

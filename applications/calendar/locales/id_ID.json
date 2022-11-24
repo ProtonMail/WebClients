@@ -533,11 +533,11 @@
       ]
     },
     "Action title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Bagikan dengan pengguna ${ BRAND_NAME }"
+      ],
       "Share with anyone": [
         "Bagikan kepada siapa saja"
-      ],
-      "Share with Proton users": [
-        "Bagikan dengan pengguna Proton"
       ]
     },
     "Actions message": {
@@ -561,15 +561,6 @@
       "${ title } started at ${ formattedHour }": [
         "${ title } dimulai pada pukul ${ formattedHour }"
       ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } dimulai pada pukul ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } dimulai pada ${ _formattedDate } pukul ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } dimulai pada ${ _formattedDateWithTime }"
-      ],
       "${ title } started on ${ formattedDate }": [
         "${ title } dimulai pada ${ formattedDate }"
       ],
@@ -590,21 +581,6 @@
       ],
       "${ title } starts now": [
         "${ title } mulai sekarang"
-      ],
-      "${ title } starts on ${ _formattedDate2 }": [
-        "${ title } akan dimulai pada ${ _formattedDate2 }"
-      ],
-      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } akan dimulai pada ${ _formattedDate2 } pukul ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDate3 }": [
-        "${ title } akan dimulai pada ${ _formattedDate3 }"
-      ],
-      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } akan dimulai pada ${ _formattedDate3 } pukul ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDateWithoutTime }": [
-        "${ title } akan dimulai pada ${ _formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } akan dimulai pada ${ formattedDateWithTime }"
@@ -631,8 +607,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Aplikasi Proton"
+      "${ BRAND_NAME } applications": [
+        "Aplikasi ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -818,11 +794,11 @@
       "Unable to create more calendar links": [
         "Tidak dapat membuat lebih banyak tautan"
       ],
-      "Unable to share this calendar with more Proton users": [
-        "Tidak dapat membagikan kalender ini dengan pengguna Proton lainnya"
+      "Unable to share this calendar with more ${ BRAND_NAME } users": [
+        "Tidak dapat membagikan kalender ini dengan pengguna ${ BRAND_NAME } lainnya"
       ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
-        "Anda telah mencapai batas maksimum ${ MAX_CALENDAR_MEMBERS } pengguna untuk kalender ini.\nUntuk dapat membagikan kalender ini dengan pengguna Proton lainnya, silakan hapus sebagian pengguna terlebih dahulu."
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Anda telah mencapai batas maksimum ${ MAX_CALENDAR_MEMBERS } pengguna untuk kalender ini.\nUntuk dapat membagikan kalender ini dengan pengguna ${ BRAND_NAME } lainnya, silakan hapus sebagian pengguna terlebih dahulu."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } links for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Anda telah mencapai batas maksimum ${ MAX_LINKS_PER_CALENDAR } tautan untuk kalender ini.\nUntuk dapat membuat tautan baru bagi kalender ini, silakan hapus tautan yang telah ada terlebih dahulu."
@@ -893,8 +869,8 @@
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Tautan kalender untuk sementara tidak dapat diakses. Pastikan tautan dari penyedia kalender masih valid."
       ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — Proton Calendar akan mencoba untuk memperbarui kalender dalam beberapa jam."
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — ${ CALENDAR_APP_NAME } akan mencoba untuk memperbarui kalender dalam beberapa jam."
       ]
     },
     "Calendar view": {
@@ -2167,8 +2143,8 @@
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
       ],
-      "Merge at least ${ calendarToFixCount } calendars with existing Proton calendars": [
-        "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
+      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
       ],
       "Missing key packet": [
         "Paket kunci hilang"
@@ -2188,8 +2164,8 @@
       "No emails found to import - the account does not have an inbox": [
         "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
-      "No public key for Proton address": [
-        "Tidak ada kunci publik untuk alamat Proton"
+      "No public key for ${ BRAND_NAME } address": [
+        "Tidak ada kunci publik untuk alamat ${ BRAND_NAME }"
       ],
       "No valid address found": [
         "Tidak ada alamat valid yang ditemukan"
@@ -2197,8 +2173,8 @@
       "No WKD key retrieved for user is valid for sending": [
         "Tidak ada kunci WKD yang diambil untuk pengguna internal yang valid untuk pengiriman"
       ],
-      "Not a Proton account": [
-        "Bukan akun Proton"
+      "Not a ${ BRAND_NAME } account": [
+        "Bukan akun ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Nomor telepon tidak valid"
@@ -2251,9 +2227,6 @@
       "Some contacts don't have a valid email address: ${ list }": [
         "${ list } tidak memiliki alamat email yang valid"
       ],
-      "Some contacts have no email addresses: ${ _list }": [
-        "Kontak berikut tidak memiliki alamat email: ${ _list }"
-      ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "Kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
       ],
@@ -2262,9 +2235,6 @@
       ],
       "Some groups have invalid emails: ${ list }": [
         "${ list } mempunyai alamat email yang tidak valid"
-      ],
-      "Some groups have no contacts: ${ _list2 }": [
-        "Salah satu grup tidak memiliki kontak: ${ _list2 }\n\nBeberapa grup tidak memiliki kontak: ${ noContactGroupList }"
       ],
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "Grup tidak memiliki kontak: ${ noContactGroupList } "
@@ -2542,8 +2512,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Terjadi suatu kesalahan. Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
-      "There was a problem connecting to Proton.": [
-        "Ada masalah saat menyambung ke Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Terdapat masalah dalam menghubungkan ke ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
@@ -2809,8 +2779,8 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk simple event tanpa rincian nama penyelenggara dan peserta. Untuk dapat memperoleh daftar peserta dan informasi terkini, mintalah penyelenggara acara untuk mengundang Anda dengan menggunakan alamat email Proton Anda."
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk simple event tanpa rincian seputar penyelenggara dan peserta. Untuk dapat memperoleh pembaruan terkini dan melihat daftar peserta, mintalah penyelenggara untuk mengundang Anda melalui alamat email ${ BRAND_NAME } Anda."
       ],
       "This file contains event invitations:": [
         "Berkas ini mengandung undangan acara:"
@@ -2865,6 +2835,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "\"Akses aplikasi yang kurang aman\" telah diaktifkan pada pengaturan keamanan akun Google Anda."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun Anda. Mohon pastikan akses IMAP Gmail telah aktif."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun Anda. Mohon pastikan akses IMAP telah aktif pada akun Gmail Anda."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun Anda. Mohon pastikan bahwa:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda. Mohon pastikan alamat server mail dan nomor port telah sesuai."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda. Mohon pastikan bahwa:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda. Mohon pastikan alamat server mail dan nomor port telah sesuai."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun Yahoo Anda. Mohon pastikan alamat server mail dan nomor port telah sesuai."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun Yahoo Anda. Mohon pastikan bahwa:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Verifikasi 2 langkah telah diaktifkan pada akun eksternal Anda."
       ],
@@ -2891,30 +2885,6 @@
       ],
       "Invalid IMAP port": [
         "Port IMAP tidak valid"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan akses IMAP Gmail aktif."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan akses IMAP telah aktif di akun Gmail Anda."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton tidak dapat tersambung ke akun Anda. Mohon pastikan:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton tidak dapat tersambung ke akun eksternal Anda. Mohon pastikan alamat server mail dan nomor port benar."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton tidak dapat tersambung ke akun eksternal Anda. Mohon pastikan:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton tidak dapat tersambung dengan akun Gmail. Pastikan alamat server mail dan nomor port Anda benar."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton tidak dapat tersambung ke akun Yahoo Anda. Mohon pastikan bahwa alamat server email dan nomor port yang ada sudah benar."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton tidak dapat tersambung ke akun Yahoo Anda. Mohon pastikan bahwa:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
@@ -2968,17 +2938,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Klik ${ boldManage } untuk menampilkan menu pengaturan selengkapnya."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "Tergantung dari layanan email Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke Proton."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Tergantung dari layanan email Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengklik tombol 3 titik (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh ${ BRAND_NAME }."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Tuju ${ boldAccountInfo } yang ada di bawah profil ${ yahooMailLink } Anda."
@@ -3004,29 +2974,29 @@
       "Select ${ boldExportCSV }.": [
         "Pilih ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Outlook dengan mengikuti 3 langkah mudah berikut:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Untuk mengimpor kalender ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh berkas ini dari Outlook dengan mengikuti 3 langkah mudah berikut:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Untuk mengimpor kalender ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh berkas ini dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Untuk mengimpor kalender ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Harap unduh berkas ini sebelum memulai proses impor."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Outlook dengan mengikuti 3 langkah mudah berikut:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh berkas ini dari Outlook dengan mengikuti 3 langkah mudah berikut:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh berkas ini dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Harap unduh berkas ini sebelum memulai proses impor."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Untuk dapat mengimpor email ke Proton, Anda akan membutuhkan ${ appPasswordLink } dari Outlook. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Untuk mengimpor email ke ${ BRAND_NAME }, Anda akan membutuhkan ${ appPasswordLink } dari Outlook. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Untuk dapat mengimpor email ke Proton, Anda akan membutuhkan ${ appPasswordLink } dari Yahoo. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Untuk mengimpor email ke ${ BRAND_NAME }, Anda akan memerlukan ${ appPasswordLink } dari Yahoo. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
       ]
     },
     "Import instructions emphasis": {
@@ -3245,8 +3215,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Dengan membagikan detail acara milik kalender ini secara menyeluruh, Anda mengizinkan Proton untuk mengakses informasi terenkripsi yang terdapat pada kalender ini."
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Dengan membagikan detail acara milik kalender ini secara menyeluruh, Anda mengizinkan ${ BRAND_NAME } untuk mengakses informasi terenkripsi yang terdapat pada kalender ini."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
@@ -3704,8 +3674,8 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Anda saat ini sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Anda juga dapat menggabungkan kalender-kalender yang Anda impor dengan kalender-kalender Proton yang telah ada sebelumnya."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Anda juga dapat menggabungkan kalender yang diimpor dengan kalender ${ BRAND_NAME } yang telah ada."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
@@ -3752,11 +3722,20 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Anda akan memperbarui semua rangkaian acara ini. Peserta yang dihapus akan diberi tahu."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akun Anda telah ditangguhkan dan seluruh layanan telah diblokir hingga Anda melakukan pembayaran. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak dan telah ditangguhkan. Kelalaian membayar yang berkelanjutan akan memblokir email dan tautan berbagi Anda. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Alamat Anda nonaktif. Surel pembatalan tidak dapat dikirim ke peserta acara. Anda ingin tetap menghapus semua rangkaian acara ini?"
@@ -3764,8 +3743,8 @@
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Alamat Anda nonaktif. Surel pembatalan tidak dapat dikirim ke peserta acara. Anda ingin tetap menghapus acara ini?"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Data-data Anda telah siap untuk diimpor dari ${ importedEmailAddressStrong } ke akun Proton Anda."
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "Alamat email Anda tidak akan berubah. Meskipun demikian, ke depannya Anda akan perlu untuk masuk pada ${ link }."
@@ -3784,9 +3763,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Zona waktu sistem Anda sepertinya berubah menjadi ${ timezone }. Anda ingin memperbarui preferensi zona waktu?"
@@ -3839,6 +3815,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } username": [
+        "Pengguna ${ BRAND_NAME }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
@@ -3983,8 +3962,8 @@
       "Hide password": [
         "Sembunyikan kata sandi"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Bagaimana Anda menggambarkan pengalaman Anda dengan Proton yang baru?"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Bagaimana Anda menggambarkan pengalaman Anda dengan ${ BRAND_NAME } yang baru?"
       ],
       "I understand the risk": [
         "Saya paham akan resikonya"
@@ -4090,9 +4069,6 @@
       ],
       "Postal code": [
         "Kode pos"
-      ],
-      "Proton username": [
-        "Nama Pengguna Proton"
       ],
       "Public keys": [
         "Kunci publik"
@@ -4627,8 +4603,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Selanjutnya, Anda perlu masuk ke akun Google Anda dan memberikan kami izin untuk mengakses data Anda."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Selanjutnya, Anda perlu masuk ke akun Google Anda dan memberikan ${ BRAND_NAME } izin untuk mengakses data Anda."
       ]
     },
     "Oauth instructions video": {
@@ -4656,8 +4632,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurasi organisasi Anda, tautkan nama domain, dan membuat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
       ],
-      "Discover all Proton services": [
-        "Telusuri seluruh layanan yang Proton tawarkan"
+      "Discover all ${ BRAND_NAME } services": [
+        "Telusuri seluruh layanan ${ BRAND_NAME }"
       ],
       "Select a theme": [
         "Pilih tema"
@@ -4665,8 +4641,8 @@
       "Set up your organization": [
         "Siapkan organisasi Anda"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Gunakan menu aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "Gunakan menu aplikasi yang terdapat pada pojok kiri atas untuk mengakses layanan ${ BRAND_NAME } lainnya, termasuk VPN, Calendar, dan Drive."
       ],
       "You can change this anytime in your settings.": [
         "Anda dapat mengubah tema yang aktif kapan pun melalui beranda pengaturan Anda."
@@ -4908,8 +4884,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-Proton users, share your calendar with a link": [
-        "Untuk mengundang pengguna non-Proton, bagikan kalender Anda melalui tautan"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "Untuk mengundang pengguna non-${ BRAND_NAME }, bagikan kalender Anda melalui tautan"
       ]
     },
     "Share calendar max shares reached error": {
@@ -4918,8 +4894,8 @@
       ]
     },
     "Share calendar modal description": {
-      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Tentukan kepada akun Proton mana saja kalender ${ calendarName } milik Anda akan dibagikan. Kami akan mengirimkan undangan kepada mereka."
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Tentukan kepada akun ${ BRAND_NAME } mana saja kalender ${ calendarName } akan dibagikan. Kami akan mengirimkan undangan kepada mereka."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -4928,8 +4904,8 @@
       ]
     },
     "Share calendar modal title": {
-      "Share with Proton users": [
-        "Bagikan dengan pengguna Proton"
+      "Share with ${ BRAND_NAME } users": [
+        "Bagikan dengan pengguna ${ BRAND_NAME }"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -4955,8 +4931,8 @@
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
       ],
-      "Invite friends to Proton": [
-        "Undang teman ke Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Undang teman ke ${ BRAND_NAME }"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Sekarang, undangan akan muncul pada kalender Anda sebagai acara yang menunggu balasan. Anda hanya perlu membuka acara untuk membalas. ${ goToSettingsLink }"
@@ -5689,6 +5665,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } akan menggabungkan seluruh folder yang memiliki nama yang sama. Untuk menghindari hal ini, silakan ubah nama folder sebelum Anda mengimpor."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
+      ],
       "Are you sure you want to discard your import?": [
         "Yakin ingin membuang impor Anda?"
       ],
@@ -5712,12 +5694,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
-      ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton akan secara otomatis menggabungkan folder yang memiliki nama yang sama. Untuk menghindari hal ini, silakan ubah nama folder sebelum Anda mengimpor."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton akan mentransfer data sebanyak mungkin, mulai dari pesan Anda yang terbaru."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
@@ -5743,11 +5719,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Tindakan ini permanen. Silakan masukkan kata ${ boldDanger } di kolom tersebut untuk melanjutkan."
       ],
-      "This feature requires a paid Proton account": [
-        "Fitur ini hanya tersedia bagi para pemilik akun Proton berbayar"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Fitur ini memerlukan akun ${ BRAND_NAME } berbayar"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Impor ini mungkin akan menghabiskan kapasitas penyimpanan akun Proton Anda. Harap sesuaikan kebutuhan impor Anda."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Impor ini dapat melebihi kapasitas penyimpanan akun ${ BRAND_NAME } Anda yang tersedia. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sayangnya, kami saat ini sedang tidak daring. Harap kabarkan masalah yang telah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali daring."

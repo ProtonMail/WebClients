@@ -1872,11 +1872,11 @@
       "${ storageSize } storage": [
         "${ storageSize } spazio"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "${ vpnBasic }, ${ vpnPlus } o ${ visionary } richiesti per la connessione a livello di Paese."
+      "${ vpnPlus } required for Country level connection.": [
+        "${ vpnPlus } richiesta per la connessione a livello di Paese."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "${ vpnPlus } o ${ visionary } richiesti per la funzione Secure Core."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "${ vpnPlus } richiesta per la funzione Secure Core."
       ],
       "* No credit card required.": [
         "* Nessuna carta di credito richiesta."
@@ -2130,6 +2130,9 @@
       ],
       "Loading preview": [
         "Caricamento anteprima"
+      ],
+      "Loading...": [
+        "Caricamento in corso..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Accedi a ${ MAIL_APP_NAME } per attivare il tuo indirizzo"
@@ -2524,17 +2527,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Il tuo account ${ BRAND_NAME } è associato a ${ externalEmailAddress }. Per usare ${ toAppName }, hai bisogno di un indirizzo ${ MAIL_APP_NAME }."
       ],
-      "Your ${ BRAND_NAME } account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Il tuo account ${ BRAND_NAME } è attualmente in attesa. Per continuare a utilizzare il tuo account, paga le fatture scadute."
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Dopo 28 giorni, le email non verranno più recapitate nella tua casella di posta, i link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, si prega di pagare le fatture scadute."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "I tuoi account ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } sono collegati. Per eliminarli entrambi, accedi a ${ loginLink } ed elimina il tuo account da lì."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Il tuo account ha almeno una fattura scaduta. Il tuo accesso è stato limitato. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Il tuo account ha almeno una fattura scaduta. Il tuo account è limitato e tutti i servizi saranno bloccati fino al pagamento. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Il tuo account ha almeno una fattura scaduta. Il tuo account è limitato. Il mancato pagamento bloccherà le tue email e i link di condivisione. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."

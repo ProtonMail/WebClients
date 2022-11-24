@@ -527,15 +527,6 @@
       "${ title } started at ${ formattedHour }": [
         "${ title } elkezdődött ekkor: ${ formattedHour }"
       ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } kezdődik: ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate } ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } ekkor kezdődött: ${ _formattedDateWithTime }"
-      ],
       "${ title } started on ${ formattedDate }": [
         "${ title } kezdődik: ${ formattedDate }"
       ],
@@ -556,21 +547,6 @@
       ],
       "${ title } starts now": [
         "${ title } most kezdődik"
-      ],
-      "${ title } starts on ${ _formattedDate2 }": [
-        "${ title } elkezdődik ekkor: ${ _formattedDate2 }"
-      ],
-      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate2 } ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDate3 }": [
-        "${ title } elkezdődik ekkor: ${ _formattedDate3 }"
-      ],
-      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate3 } ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDateWithoutTime }": [
-        "${ title } elkezdődik ekkor: ${ _formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } elkezdődik ekkor: ${ formattedDateWithTime }"
@@ -594,11 +570,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "Ha most kilép, elveszíti az eseményt."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton alkalmazások"
       ]
     },
     "Attached ics file error": {
@@ -805,9 +776,6 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "A naptár hivatkozás átmenetileg nem érhető el. Ellenőrizze, hogy a naptárszolgáltatónál még mindig érvényes ez a hivatkozás."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Több mint 12 óra telt el a legutóbbi frissítés óta — a Proton Calendar néhány órán belül megpróbálja frissíteni a naptárat."
       ]
     },
     "Calendar view": {
@@ -1959,14 +1927,6 @@
       ]
     },
     "Error": {
-      "${ _list } doesn't have an email address": [
-        "${ _list } nem tartalmaz e-mail címet",
-        "Néhány névjegyhez nincs e-mail cím: ${ _list }"
-      ],
-      "${ _list2 } has no contacts": [
-        "${ _list2 } nem tartalmaz névjegyeket",
-        "Néhány csoportban nincsenek névjegyek: ${ _list2 }"
-      ],
       "${ list } doesn't have a valid email address": [
         "${ list } nem tartalmaz egy érvényes e-mail címet",
         "Néhány névjegy nem tartalmaz egy érvényes e-mail címet: ${ list }"
@@ -2087,10 +2047,6 @@
       ],
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
-        "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal"
       ],
       "Missing key packet": [
         "Hiányzó kulcs csomag"
@@ -2439,9 +2395,6 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Hiba történt. Kérjük, töltse újra az oldalt vagy próbálja meg később."
       ],
-      "There was a problem connecting to Proton.": [
-        "Hiba lépett fel a Protonhoz történő csatlakozás során."
-      ],
       "You may also ${ refresh } or try again later.": [
         "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
       ],
@@ -2709,9 +2662,6 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Az importált meghívók egyszerű eseményként jelennek meg a ${ CALENDAR_APP_NAME } eseményei közt, szervező és résztvevők nélkül. Hogy értesüljön az esemény változásairól és lássa a résztvevőket, kérje meg a szervezőket, hogy a Proton e-mail címével hívják meg."
-      ],
       "This file contains an event invitation:": [
         "Ez a fájl egy esemény meghívót tartalmaz:",
         "Ez a fájl esemény meghívókat tartalmaz:"
@@ -2798,30 +2748,6 @@
       "Invalid IMAP port": [
         "Érvénytelen IMAP port"
       ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "A Proton nem tud csatlakozni. Ellenőrizze, hogy a Gmail IMAP elérése engedélyezett."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "A Proton nem tud csatlakozni. Ellenőrizze, hogy az IMAP elérés engedélyezett a Gmail fiókban."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "A Proton nem tud csatlakozni a fiókhoz. Ellenőrizze a következőket:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "A Proton nem tud csatlakozni a külső fiókhoz. Ellenőrizze, hogy a szerver címe és port száma megfelelő."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "A Proton nem tud csatlakozni a külső fiókhoz. Ellenőrizze a következőket:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "A Proton nem tud csatlakozni a Gmail fiókhoz. Ellenőrizze, hogy a szerver címe és port száma megfelelő."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "A Proton nem tud csatlakozni a Yahoo Mail fiókjához. Ellenőrizze, hogy a szerver címe és port száma megfelelő."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "A Proton nem tud csatlakozni a Yahoo fiókjához. Ellenőrizze a következőket:"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Túl sok lekérdezés történt. Próbálja újra egy kis várakozás után."
       ],
@@ -2874,17 +2800,8 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Kattintson a ${ boldManage } elemre a lehetőségek megnyitásához."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a Protonba importál."
-      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Hozzon létre egy ${ boldAppPassword }-t és azt használja a belépési jelszava helyett amikor a Proton kéri."
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Hozzon létre egy ${ boldAppPassword }-t és azt használja a belépési jelszava helyett amikor a Proton kéri."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Nyissa meg a ${ boldAccountInfo } részt a személyes adatainál, a ${ yahooMailLink } fiókjában."
@@ -2909,30 +2826,6 @@
       ],
       "Select ${ boldExportCSV }.": [
         "Válassza az ${ boldExportCSV } elemet."
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Naptár importálásához szükséges az ${ knowledgeBaseLink }. Az Outlookból a következő 3 lépéssel töltheti le:"
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Naptár importálásához szükséges az ${ knowledgeBaseLink }. A Yahoo-tól a következő 3 lépéssel töltheti le:"
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Naptár importálásához szükséges az ${ knowledgeBaseLink }. Töltse le az importálás megkezdése előtt."
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Névjegyek importálásához szükséges a ${ knowledgeBaseLink }. Az Outlookból a következő 3 lépéssel töltheti le:"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Névjegyek importálásához szükséges a ${ knowledgeBaseLink }. A Yahoo-tól a következő 3 lépéssel töltheti le:"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Névjegyek importálásához szükséges a ${ knowledgeBaseLink }. Töltse le az importálás megkezdése előtt."
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Az e-mailek Protonba való importálásához egy ${ appPasswordLink } szükséges a Outlookhoz. A következő módon juthat hozzá:"
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Az e-mailek Protonba való importálásához egy ${ appPasswordLink } szükséges a Yahoo-tól. A következő módon juthat hozzá:"
       ]
     },
     "Import instructions emphasis": {
@@ -3621,9 +3514,6 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Az importált naptárokat összefűzheti meglévő Proton naptáraival is."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
       ],
@@ -3666,9 +3556,6 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "A sorozat összes eseményét frissíteni fogja. Az eltávolított résztvevők értesítést kapnak."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Lejárt számlatartozása van. Hozzáférése korlátozásra került. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
       ],
@@ -3677,9 +3564,6 @@
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Az ön címe le van tiltva. A részvevők így nem kapnak lemondási értesítőt. Ebben az esetben is szeretné törölni az eseményt?"
-      ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Az adatok a Proton fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "E-mail címe nem változik meg, de hamarosan már a ${ link } webcímen kell bejelentkeznie."
@@ -3698,9 +3582,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Úgy tűnik, hogy a rendszer időzónája ${ timezone } -re változott. Szeretne erre az időzónára frissíteni?"
@@ -3880,9 +3761,6 @@
       "Hide password": [
         "Jelszó elrejtése"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Hogyan értékelné a tapasztalatait az új Protonnal kapcsolatban?"
-      ],
       "I understand the risk": [
         "Megértettem a kockázatot"
       ],
@@ -3988,9 +3866,6 @@
       ],
       "Postal code": [
         "Irányítószám"
-      ],
-      "Proton username": [
-        "Proton felhasználónév"
       ],
       "Public keys": [
         "Nyilvános kulcsok"
@@ -4503,11 +4378,6 @@
         "Ismeretlen"
       ]
     },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze a Protonnak az adatokhoz való hozzáférést."
-      ]
-    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
@@ -4530,17 +4400,11 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Állítsa be a saját szervezete adatait, irányítsa át a domain nevét, hozza létre a fiókokat, hogy a szervezet minden tagja élhessen a védelemmel."
       ],
-      "Discover all Proton services": [
-        "Fedezze fel a Proton szolgáltatásokat"
-      ],
       "Select a theme": [
         "Téma kiválasztása"
       ],
       "Set up your organization": [
         "Állítsa be a szervezet adatait"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Használja a bal felső sarokban található alkalmazás választót a Proton szolgáltatások eléréshez, mint például a VPN, Calendar vagy a Drive."
       ],
       "You can change this anytime in your settings.": [
         "Ezt a beállításoknál bármikor megváltoztathatja."
@@ -4794,9 +4658,6 @@
       ],
       "Get up to ${ credits } in credits.": [
         "Szerezzen akár ${ credits } kreditet."
-      ],
-      "Invite friends to Proton": [
-        "Barátok meghívása a Protonba"
       ],
       "Subscribe to other calendars": [
         "Feliratkozás más naptárakra"
@@ -5546,12 +5407,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Az élő csevegés egy prémium funkció, ami csak a fizetős ${ VPN_APP_NAME } csomagokban elérhető. Kérjük, nyisson egy jegyet."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "A Proton az azonos nevű mappákat összefésüli. Ha ezt el szeretné kerülni, előzetesen nevezze át az azonos nevű mappákat."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "A Proton annyi adatot áttölt, amennyi lehetséges, a legfrissebb üzenetekkel kezdve."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
       ],
@@ -5575,12 +5430,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Ez a művelet nem vonható vissza. Írja be a ${ boldDanger } szót a mezőbe a folytatáshoz."
-      ],
-      "This feature requires a paid Proton account": [
-        "Ehhez a lehetőséghez előfizetéses csomag szükséges"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Az importálás helyigénye meghaladhatja a Proton fiókban rendelkezésre álló helyet. Fontolja meg a beállítások finomítását."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sajnos a támogatási csoport jelenleg nem elérhető. Kérjük, az alábbi űrlapon írja le a problémáját és amint lehet felvesszük önnel a kapcsolatot."

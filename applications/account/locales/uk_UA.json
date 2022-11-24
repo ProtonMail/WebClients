@@ -977,8 +977,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Додатки Proton"
+      "${ BRAND_NAME } applications": [
+        "Застосунки ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -1256,27 +1256,27 @@
       ]
     },
     "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Створіть посилання на ваш календар і поділіться ним з будь-ким за межами Proton. Лише ви можете додавати та вилучати події."
+      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
+        "Створіть посилання на ваш календар і поділіться ним з будь-ким за межами ${ BRAND_NAME }. Лише ви можете додавати та вилучати події."
       ]
     },
     "Calendar settings private share description": {
-      "Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Діліться своїм календарем з іншими користувачами Proton. Увімкніть спільну роботу, дозволивши їм додавати та змінювати події у вашому календарі. Ви можете будь-коли змінити дозволи користувача."
+      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Діліться своїм календарем з іншими користувачами ${ BRAND_NAME }. Увімкніть спільну роботу, дозволивши їм додавати та змінювати події у вашому календарі. Ви можете будь-коли змінити дозволи користувача."
       ]
     },
     "Calendar settings section title": {
       "Share calendar": [
         "Поширити календар"
       ],
-      "Share outside Proton": [
-        "Поділитися за межами Proton"
+      "Share outside ${ BRAND_NAME }": [
+        "Поділитися за межами ${ BRAND_NAME }"
+      ],
+      "Share with ${ BRAND_NAME } users": [
+        "Поділитися з користувачами ${ BRAND_NAME }"
       ],
       "Share with anyone": [
         "Поділіться з будь-ким"
-      ],
-      "Share with Proton users": [
-        "Поділіться з користувачами Proton"
       ]
     },
     "Calendar settings sidebar": {
@@ -1355,8 +1355,8 @@
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
       ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "З моменту останнього оновлення минуло понад 12 годин — Proton Calendar спробує оновити календар за кілька годин."
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "З моменту останнього оновлення минуло понад 12 годин — ${ CALENDAR_APP_NAME } спробує оновити календар за кілька годин."
       ]
     },
     "Calendar table settings button tooltip": {
@@ -2604,8 +2604,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
-      "Get up to ${ credits } in credits by inviting friends to Proton.": [
-        "Отримайте до ${ credits } кредитів, запросивши друзів до Proton."
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "Отримайте до ${ credits } кредитів, запросивши друзів до ${ BRAND_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
@@ -2677,8 +2677,8 @@
       "Bugs or quality issue": [
         "Помилки чи проблеми з якістю"
       ],
-      "I use a different Proton account": [
-        "Я використовую інший обліковий запис Proton"
+      "I use a different ${ BRAND_NAME } account": [
+        "Я користуюсь іншим обліковим записом ${ BRAND_NAME }"
       ],
       "Missing feature(s)": [
         "Відсутні функції"
@@ -2977,11 +2977,11 @@
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем Proton",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями Proton",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями Proton"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Відсутній пакунок ключів"
@@ -3010,8 +3010,8 @@
       "No emails found to import - the account does not have an inbox": [
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
-      "No public key for Proton address": [
-        "Немає публічного ключа для адреси Proton"
+      "No public key for ${ BRAND_NAME } address": [
+        "Немає відкритого ключа для адреси ${ BRAND_NAME }"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
@@ -3019,8 +3019,8 @@
       "No WKD key retrieved for user is valid for sending": [
         "Для користувача не отримано жодного ключа WKD, дійсного для надсилання"
       ],
-      "Not a Proton account": [
-        "Не є обліковим записом Proton"
+      "Not a ${ BRAND_NAME } account": [
+        "Обліковий запис поза ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Номер недійсний"
@@ -3475,8 +3475,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Щось пішло не так. Оновіть сторінку і спробуйте знову пізніше."
       ],
-      "There was a problem connecting to Proton.": [
-        "Виникла проблема при з'єднанні з Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Виникла проблема під час з'єднання з ${ BRAND_NAME }."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Занадто багато дочірніх сеансів. Будь ласка, очистьте куки й увійдіть знову."
@@ -3855,8 +3855,8 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Додайте власний фільтр для автовиконання певних дій, наприклад, позначення міткою або архівування повідомлень. Фільтри можна редагувати та створювати безпосередньо за допомогою мови програмування Sieve."
       ],
-      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Електронні листи з адрес, які ви або Proton позначили спамом, потраплятимуть у вашу теку зі спамом. Якщо ви хочете дозволити електронні листи з однієї з цих адрес, позначте її «не спам»."
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Електронні листи з адрес, які ви або ${ BRAND_NAME } позначили спамом, потраплятимуть у вашу теку спаму. Якщо хочете дозволити електронні листи з однієї з цих адрес, позначте її «не спам»."
       ],
       "Emails from blocked addresses won't be delivered.": [
         "Електронні листи із заблокованих адрес не доставлятимуться."
@@ -4071,8 +4071,8 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Імпортовані запрошення з'являються в ${ CALENDAR_APP_NAME } як прості події без подробиць про організаторів та учасників. Для отримання оновлень подій та перегляду учасників попросіть організаторів запросити вас з використанням вашої адреси електронної пошти Proton."
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Імпортовані запрошення з'являються в ${ CALENDAR_APP_NAME } як прості події без подробиць про організаторів та учасників. Для отримання оновлень подій та перегляду учасників попросіть організаторів запросити вас за допомогою вашої адреси електронної пошти ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Цей файл містить запрошення на подію:",
@@ -4145,6 +4145,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "«Доступ менш захищених програм» увімкнено у налаштуваннях безпеки вашого облікового запису Google."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом. Переконайтеся, що доступ Gmail IMAP увімкнено."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом. Переконайтеся, що доступ IMAP увімкнено у вашому обліковому записі Gmail."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом. Переконайтеся, що:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } не може з'єднатися з вашим зовнішнім обліковим записом. Переконайтеся, що адреса поштового сервера і номер порту правильні."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } не може з'єднатися з вашим зовнішнім обліковим записом. Переконайтеся, що:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом Gmail. Переконайтеся, що адреса поштового сервера і номер порту правильні."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що адреса поштового сервера і номер порту правильні."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі."
       ],
@@ -4171,30 +4195,6 @@
       ],
       "Invalid IMAP port": [
         "Неправильний порт IMAP"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton не може з'єднатися з вашим обліковим записом. Переконайтеся, що доступ Gmail IMAP увімкнено."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton не може з'єднатися з вашим обліковим записом. Переконайтеся, що доступ IMAP увімкнено у вашому обліковому записі Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton не може з'єднатися з вашим обліковим записом. Переконайтеся, що:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton не може з'єднатися з вашим зовнішнім обліковим записом. Переконайтеся, що адреса поштового сервера і номер порту правильні."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton не може з'єднатися з вашим зовнішнім обліковим записом. Переконайтеся, що:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton не може з'єднатися з вашим обліковим записом Gmail. Переконайтеся, що адреса поштового сервера і номер порту правильні."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що адреса поштового сервера і номер порту правильні."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Забагато недавніх запитів. Будь ласка, спробуйте ще раз за хвильку."
@@ -4253,17 +4253,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Натисніть ${ boldManage }, щоб розгорнути меню опцій."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "Залежно від вашого постачальника е-пошти, вам, можливо, доведеться згенерувати ${ knowledgeBaseLink }, перш ніж ви зможете імпортувати до Proton."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Залежно від вашого постачальника е-пошти, вам, можливо, доведеться згенерувати ${ knowledgeBaseLink }, перш ніж ви зможете імпортувати до ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Розгорніть випадне меню, натиснувши на 3 крапки (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Згенеруйте ${ boldAppPassword } і скористайтеся ним замість свого звичайного пароля під час запиту від Proton."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Згенеруйте ${ boldAppPassword } і скористайтеся ним замість свого звичайного пароля під час запиту від ${ BRAND_NAME }."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Згенеруйте ${ boldAppPassword } та скористайтеся ним замість свого звичайного пароля під час запиту від Proton."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Згенеруйте ${ boldAppPassword } і скористайтеся ним замість свого звичайного пароля під час запиту від ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Перейдіть до ${ boldAccountInfo } у своєму профілі ${ yahooMailLink }."
@@ -4289,29 +4289,29 @@
       "Select ${ boldExportCSV }.": [
         "Виберіть ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Щоб імпортувати календар до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Щоб імпортувати календар до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Щоб імпортувати календар до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Щоб імпортувати календар до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Щоб імпортувати календар до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його до початку процесу імпортування."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Щоб імпортувати календар до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його до початку процесу імпортування."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Щоб імпортувати контакти до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Щоб імпортувати контакти до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Щоб імпортувати контакти до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Щоб імпортувати контакти до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Щоб імпортувати контакти до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його до початку процесу імпортування."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Щоб імпортувати контакти до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його до початку процесу імпортування."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Щоб імпортувати листи до Proton, вам необхідний ${ appPasswordLink } від Outlook. Отримайте його, дотримуючись цих кроків:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Щоб імпортувати листи до ${ BRAND_NAME }, вам необхідний ${ appPasswordLink } від Outlook. Отримайте його, дотримуючись цих кроків:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Щоб імпортувати листи до Proton, вам необхідний ${ appPasswordLink } від Yahoo. Отримайте його, дотримуючись цих кроків:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Щоб імпортувати листи до ${ BRAND_NAME }, вам необхідний ${ appPasswordLink } від Yahoo. Отримайте його, дотримуючись цих кроків:"
       ]
     },
     "Import instructions emphasis": {
@@ -4480,6 +4480,21 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Продовживши, ви втратите доступ до усіх зашифрованих даних вашого облікового запису."
       ],
+      "${ BRAND_NAME } ${ planName } credits earned": [
+        "Зібрано кредитів ${ BRAND_NAME } ${ planName }"
+      ],
+      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "${ BRAND_NAME } призупинив імпортування, тому що втрачено з'єднання з вашим іншим провайдером е-пошти. Будь ласка, повторіть з'єднання."
+      ],
+      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
+        "${ BRAND_NAME } призупинив імпортування, тому що у вашому обліковому записі вичерпується вільний простір. Ви можете:"
+      ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } спробує відновити імпортування одразу, як провайдер вашої електронної пошти скине ${ bandwithLimitLink } вашого облікового запису. Вам не потрібно нічого робити. Якщо ви скасуєте імпортування, ви більше не зможете його продовжити й доведеться почати спочатку."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } буде встановлено типовим календарем."
       ],
@@ -4600,11 +4615,11 @@
       "${ storageSize } storage": [
         "${ storageSize } сховища"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "Для вибору з'єднання на рівні країни необхідна передплата ${ vpnBasic }, ${ vpnPlus } або ${ visionary }."
+      "${ vpnPlus } required for Country level connection.": [
+        "${ vpnPlus } вимагає з'єднання на рівні країни."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "Для функції Secure Core необхідна передплата ${ vpnPlus } або ${ visionary }."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "Для функції Secure Core необхідна передплата ${ vpnPlus }."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } учасник)",
@@ -4630,8 +4645,8 @@
         "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)"
       ],
-      "1. Invite friends to Proton": [
-        "1. Запрошуйте друзів до Proton"
+      "1. Invite friends to ${ BRAND_NAME }": [
+        "1. Запросіть друзів до ${ BRAND_NAME }"
       ],
       "10 email addresses": [
         "10 адрес е-пошти"
@@ -4870,8 +4885,8 @@
       "By leaving now, changes may not be saved": [
         "Якщо ви зараз підете, зміни можуть не зберегтися"
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Поширюючи всі подробиці про подію з цього календаря, ви погоджуєтеся надати доступ для Proton до зашифрованої інформації цього календаря."
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Поширюючи всі подробиці про подію з цього календаря, ви погоджуєтеся надати доступ для ${ BRAND_NAME } до зашифрованої інформації цього календаря."
       ],
       "Center": [
         "По центру"
@@ -4894,8 +4909,8 @@
       "Continue with ${ planName }": [
         "Продовжити з ${ planName }"
       ],
-      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
-        "Продовживши, ви пов'яжете ${ ACCOUNT_APP_NAME } з ${ name }."
+      "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
+        "Продовживши, ви пов'яжете обліковий запис ${ BRAND_NAME } з ${ name }."
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Створити ${ calendarsToBeCreated } новий календар",
@@ -5023,8 +5038,8 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Розміщення до 10 власних доменних імен електронної пошти включено безплатно. Більше доменів можна додати за ${ price }."
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        "Розміщення доменів електронної пошти доступне лише для доменів, якими ви володієте. Реєстрація доменів наразі недоступна в Proton. Ви можете розмістити електронну пошту для доменів, придбаних у будь-якого реєстратора."
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Розміщення доменів електронної пошти доступне лише для доменів, якими ви володієте. Реєстрація доменів наразі недоступна у ${ BRAND_NAME }. Ви можете розмістити електронну пошту для доменів, придбаних у будь-якого реєстратора."
       ],
       "Emailing preference saved": [
         "Налаштування електронної пошти збережено"
@@ -5227,8 +5242,8 @@
       "Import mailbox": [
         "Імпортувати поштову скриньку"
       ],
-      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Імпортуйте свої листи, календарі та контакти з іншого сервісу на Proton. Ми допоможемо вам пройти кожен крок та зашифрувати ваші дані після переміщення. Вітаємо у світі приватності."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Імпортуйте свої листи, календарі та контакти з іншої служби до ${ BRAND_NAME }. Ми допоможемо вам пройти кожен крок та зашифрувати ваші дані після переміщення. Вітаємо у світі приватності."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важливо: Впевніться, що ви зберегли коди відновлення. Інакше ви можете назавжди втратити доступ до свого облікового запису в разі втрати пристрою двоетапної перевірки."
@@ -5264,7 +5279,7 @@
         "Втрачено інтернет-з'єднання"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Відсутнє з'єднання з інтернетом. Перевірте доступ до мережі свого пристрою."
+        "Відсутнє з'єднання з інтернетом. Перевірте доступ свого пристрою до мережі."
       ],
       "Internet connection restored.": [
         "З'єднання з Інтернетом відновлено."
@@ -5281,8 +5296,8 @@
       "it’s imperative": [
         "це обов'язково"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Я користуюся службою ${ appName } і думаю, що вам вона теж може сподобатися. Це безпечна служба електронної пошти, яка захищає вашу приватність. Зареєструйтеся за цим посиланням, щоб отримати 1 місяць користування преміумфункціями безплатно: ${ referrerLink }"
+      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Я користуюся службою ${ MAIL_APP_NAME } і думаю, що вам вона теж може сподобатися. Це безпечна служба електронної пошти, яка захищає вашу приватність. Зареєструйтеся за цим посиланням, щоб отримати 1 місяць користування преміумфункціями безплатно: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
@@ -5344,11 +5359,14 @@
       "Loading preview": [
         "Завантаження попереднього перегляду"
       ],
+      "Loading...": [
+        "Завантаження..."
+      ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Увійдіть до ${ MAIL_APP_NAME }, щоб активувати свою адресу"
       ],
-      "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Журнал містить спроби авторизації з використанням ваших облікових даних в усіх службах Proton."
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Журнали містять спроби автентифікації для всіх служб ${ BRAND_NAME }, в яких використовуються облікові дані ${ BRAND_NAME }."
       ],
       "lose access to all current encrypted data": [
         "втратите доступ до всіх наявних зашифрованих даних"
@@ -5580,21 +5598,6 @@
       ],
       "Priority support": [
         "Пріоритетна підтримка"
-      ],
-      "Proton ${ planName } credits earned": [
-        "Зароблено кредити Proton ${ planName }"
-      ],
-      "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Proton зупинив імпортування, тому що втрачено з'єднання з вашим іншим провайдером е-пошти. Будь ласка, повторіть з'єднання."
-      ],
-      "Proton paused an import because your account is running low on space. You can:": [
-        "Proton зупинив імпортування, тому що у вашому обліковому записі завершується вільний простір. Ви можете:"
-      ],
-      "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "Proton спробує відновити імпортування одразу, як провайдер вашої електронної пошти скине ${ bandwithLimitLink } вашого облікового запису. Вам не потрібно нічого робити. Якщо ви скасуєте імпортування, ви більше не зможете його продовжити й доведеться почати спочатку."
-      ],
-      "Proton's encryption technology means that nobody can access your password - not even us.": [
-        "Технологія шифрування Proton гарантує неможливість доступу до вашого пароля, навіть для нас."
       ],
       "Public link invite": [
         "Запрошення загальнодоступним посиланням"
@@ -5851,8 +5854,8 @@
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Це завантажить файл, що містить ваш приватний ключ. Захистіть цей файл, зашифрувавши його паролем."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Це дозволить використовувати PayPal для вашої передплати Proton. Вас буде перенаправлено до PayPal у новій вкладці браузера. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Це дасть змогу використовувати PayPal для вашої передплати ${ BRAND_NAME }. Вас буде перенаправлено до PayPal у новій вкладці браузера. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Це остаточно видалить дані та всі електронні адреси, пов'язані з цим користувачем."
@@ -5866,8 +5869,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "При цьому виконається вихід з системи в будь-яких активних сеансах та вимкнеться двоетапна перевірка."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Цей майстер активує двоетапну перевірку (2FA) для вашого облікового запису Proton. Це зробить ваш обліковий запис більш захищеним, тому ми рекомендуємо увімкнути її."
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "Цей майстер активує двоетапну перевірку (2FA) для вашого облікового запису ${ BRAND_NAME }. Це зробить ваш обліковий запис ${ BRAND_NAME } захищенішим, тому ми радимо ввімкнути її."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Щоб уникнути втрати даних, видаляйте його лише якщо впевнені у своїх діях або експортували копію."
@@ -5890,8 +5893,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Щоб бути в курсі найновіших розробок продуктів Proton, ви можете підписатися на наші розсилки електронною поштою та час від часу відвідувати наш блог."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Щоб бути в курсі найновіших розробок продуктів ${ BRAND_NAME }, ви можете підписатися на наші розсилки електронною поштою та час від часу відвідувати наш блог."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
@@ -6062,7 +6065,7 @@
         "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "При продовженні вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
+        "Під час продовження вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
       ],
       "Why?": [
         "Навіщо?"
@@ -6100,8 +6103,8 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Ви увійшли в обліковий запис ${ memberAddress }."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Ви також можете об'єднати імпортовані календарі з наявними календарями Proton."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Ви також можете об'єднати імпортовані календарі з наявними календарями ${ BRAND_NAME }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
@@ -6139,8 +6142,8 @@
         "Ви не можете надіслати більше ніж ${ emailSendLimitNumber } запрошень електронною поштою впродовж наступних 24 годин",
         "Ви не можете надіслати більше ніж ${ emailSendLimitNumber } запрошення електронною поштою впродовж наступних 24 годин"
       ],
-      "You cannot refer ${ appName } users": [
-        "Ви не можете запрошувати користувачів ${ appName }"
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Ви не можете запрошувати користувачів ${ MAIL_APP_NAME }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Ви не можете використати облікові дані OpenVPN / IKEv2 для входу в застосунки ${ VPN_APP_NAME } чи панель керування ${ VPN_APP_NAME }. ${ learnMore }"
@@ -6217,14 +6220,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Щоб користуватися ${ toAppName }, вам потрібна адреса ${ MAIL_APP_NAME }."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. За 28 днів електронні листи перестануть надходити до вашої поштової скриньки, посилання на спільний доступ до Drive будуть заблоковані, і ви не зможете завантажувати нові файли. Щоб відновити звичайну роботу, будь ласка, сплатіть несплачені рахунки."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Ваші облікові записи ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } пов'язані. Щоб видалити їх обидва, виконайте вхід у ${ loginLink } та видаліть свій обліковий запис."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ було обмежено. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Ваш обліковий запис має хоча б один несплачений рахунок. Ваш обліковий запис обмежено, і всі послуги зараз заблоковані до оплати. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Ваш обліковий запис має хоча б один несплачений рахунок. Ваш обліковий запис обмежений. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
         "Ваш спосіб відновлення облікового запису налаштовано"
@@ -6235,8 +6247,8 @@
       "Your bank requires 3-D Secure verification for security purposes.": [
         "З міркувань безпеки, ваш банк вимагає перевірки 3-D Secure."
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису Proton готові."
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
       ],
       "Your data recovery method is set": [
         "Ваш спосіб відновлення даних налаштовано"
@@ -6270,9 +6282,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
       ],
       "Your recovery phrase": [
         "Ваша фраза відновлення"
@@ -6708,6 +6717,9 @@
       ],
       "${ BRAND_NAME } email or username": [
         "Е-пошта або ім'я користувача ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } username": [
+        "Ім'я користувача ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } з ${ humanMaxSpace }"
@@ -7318,9 +7330,6 @@
       "Protection mode": [
         "Режим захисту"
       ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
       "Read": [
         "Прочитані"
       ],
@@ -7835,11 +7844,11 @@
       ]
     },
     "Message": {
-      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
-        "Усі дії фільтра буде застосовано до всіх повідомлень у вашому обліковому записі Proton Mail. Електронні листи з автоматичною відповіддю не надсилатимуться."
+      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
+        "Усі дії фільтра буде застосовано до всіх повідомлень у вашому обліковому записі ${ MAIL_APP_NAME }. Електронні листи з автоматичною відповіддю не надсилатимуться."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Під'єднайте власний домен до ${ BRAND_NAME }, щоб налаштувати власні адреси електронної пошти (наприклад, you@yourcompany.com). Наш автоматичний помічник допоможе вам все налаштувати."
+        "Під'єднайте власний домен до ${ BRAND_NAME }, щоб налаштувати власні адреси електронної пошти (наприклад, you@yourcompany.com). Наш автоматичний помічник допоможе вам усе налаштувати."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Час безплатної пробної версії вичерпано. Доступ до вашого облікового запису незабаром буде вимкнено. ${ action }"
@@ -8438,8 +8447,8 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Чинні кредити, розподілення та купони можна застосувати в наступному кроці"
       ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        "Комплексна приватність і безпека з усіма службами Proton."
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Комплексна приватність і безпека з усіма службами ${ BRAND_NAME }."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Якщо ви видалите свій обліковий запис, то втратите всі переваги тарифного плану ${ visionary } та не зможете передплатити його знову після створення нового облікового запису."
@@ -8456,8 +8465,8 @@
       "Popular": [
         "Популярний"
       ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        "Комплект із приватності та безпеки для компаній, включно з преміумслужбами Proton."
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Комплект із приватності та безпеки для компаній, включно з преміумслужбами ${ BRAND_NAME }."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Безпечне хмарне сховище, яке дає змогу легко та безпечно зберігати, синхронізувати та ділитися файлами."
@@ -8494,11 +8503,11 @@
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
       ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
       ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
@@ -8572,8 +8581,8 @@
       "Review subscription and pay": [
         "Перегляньте передплату й сплатіть"
       ],
-      "Start exploring the Proton universe": [
-        "Почніть досліджувати всесвіт Proton"
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "Почніть досліджувати всесвіт ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Змінити тарифний план?"
@@ -8604,8 +8613,8 @@
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Контролюйте спільний доступ до файлів, додаючи захист паролем або термін дії посилання"
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Створіть кілька адрес електронної пошти для свого онлайн-життя, наприклад, JohnShopper@proton.me для облікових записів для покупок, JohnNews@proton.me для підписок на новини"
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Створіть кілька адрес електронної пошти для свого онлайн-життя, наприклад, JohnShopper@${ domain } для облікових записів для покупок, JohnNews@${ domain } для підписок на новини"
       ],
       "Create up to ${ n } custom calendar.": [
         "Створіть ${ n } власний календар.",
@@ -8646,8 +8655,8 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Керуйте своєю передплатою, включно з налаштуванням тарифного плану. Підтримувані способи оплати – кредитні картки, PayPal, криптовалюта і банківські перекази."
       ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        "Отримуйте допомогу від команди підтримки клієнтів Proton упродовж 24 годин після запиту в робочі дні"
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "Отримуйте допомогу від команди підтримки клієнтів ${ BRAND_NAME } упродовж 24 годин після запиту в робочі дні"
       ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "Разом з тим, додайте до 5 календарів від колег, організацій, сім'ї та друзів."
@@ -8655,8 +8664,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Крім того, додавайте до 5 календарів від друзів, сім'ї, колег та організацій."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
-        "Одне VPN-з'єднання дає змогу користуватися Proton VPN на одному пристрої в будь-який час. Наприклад, щоб під'єднати до Proton VPN телефон і ноутбук одночасно, необхідно два VPN-з'єднання."
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
+        "Одне VPN-з'єднання дає змогу користуватися ${ BRAND_NAME } VPN на одному пристрої в будь-який час. Наприклад, щоб під'єднати до ${ BRAND_NAME } VPN телефон і ноутбук одночасно, необхідно два VPN-з'єднання."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Можливість перегляду не приватних вхідних скриньок користувача, включно з усіма повідомленнями та подробицями контактів"
@@ -8673,7 +8682,7 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Налаштуйте свій підпис з використанням логотипів, зображень, піктограм соціальних мереж, посилань на свої контакти та інших можливостей"
       ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
         "Підтримка телефоном доступна клієнтам з 6-ма та більше користувачами під час європейського робочого часу"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
@@ -8697,8 +8706,8 @@
       "Route your internet traffic through the Tor network with a single click": [
         "Спрямовуйте свій інтернет-трафік через мережу Tor одним натиском"
       ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Надійно зберігайте свої контактні дані, як-от номер телефону, адреса, день народження, особисті нотатки. Шифрування нульового рівня гарантує неможливість отримання доступу до них, навіть для Proton."
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Надійно зберігайте свої контактні дані, як-от номер телефону, адреса, день народження та особисті примітки. Шифрування нульового рівня гарантує неможливість отримання доступу до них, навіть для ${ BRAND_NAME }."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Швидко та легко надсилайте листи великим групам, створюючи скільки завгодно груп контактів (до 100 контактів на групу)"
@@ -8888,8 +8897,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Далі вам потрібно буде увійти до свого облікового запису Google і надати Proton доступ до ваших даних."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Далі вам потрібно буде ввійти до свого облікового запису Google і надати ${ BRAND_NAME } доступ до ваших даних."
       ]
     },
     "Oauth instructions video": {
@@ -9029,8 +9038,8 @@
       "I found another service that I like better": [
         "Я використовую інший сервіс, який мені більше подобається"
       ],
-      "I use a different Proton account": [
-        "Я використовую інший обліковий запис Proton"
+      "I use a different ${ BRAND_NAME } account": [
+        "Я користуюсь іншим обліковим записом ${ BRAND_NAME }"
       ],
       "Ignore group": [
         "Ігнорувати групу"
@@ -9414,10 +9423,10 @@
         "Підтвердити зараз"
       ],
       "Verify recovery email?": [
-        "Перевірити резервну адресу електронної пошти?"
+        "Підтвердити резервну адресу електронної пошти?"
       ],
       "Verify with email": [
-        "Перевірити електронною поштою"
+        "Підтвердити електронною поштою"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Підтвердження вашої електронної адреси поліпшує безпеку вашого облікового запису та розширює можливості відновлення."
@@ -9596,8 +9605,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-Proton users, share your calendar with a link": [
-        "Щоб запросити людей, які не є користувачами Proton, надішліть їм посилання на свій календар"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "Щоб запросити людей, які не є користувачами ${ BRAND_NAME }, надішліть їм посилання на свій календар"
       ]
     },
     "Share calendar max shares reached error": {
@@ -9609,8 +9618,8 @@
       ]
     },
     "Share calendar modal description": {
-      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Додайте облікові записи Proton, з якими ви хочете поділитися ${ calendarName }. Вони отримають запрошення."
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Додайте облікові записи ${ BRAND_NAME }, з якими ви хочете поділитися ${ calendarName }. Вони отримають запрошення."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -9619,8 +9628,8 @@
       ]
     },
     "Share calendar modal title": {
-      "Share with Proton users": [
-        "Поділіться з користувачами Proton"
+      "Share with ${ BRAND_NAME } users": [
+        "Поділитися з користувачами ${ BRAND_NAME }"
       ]
     },
     "Shared calendar label input placeholder": {
@@ -9662,8 +9671,8 @@
       "Get up to ${ credits } in credits.": [
         "Отримайте до ${ credits } кредиту."
       ],
-      "Invite friends to Proton": [
-        "Запрошуйте друзів до Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Запросіть друзів до ${ BRAND_NAME }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Спробувати ${ DRIVE_APP_NAME }"
@@ -9836,8 +9845,8 @@
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Створена для приватності електронна пошта й календар для ваших повсякденних потреб спілкування."
       ],
-      "This offer is for those new to Proton only. No credit card required.": [
-        "Ця пропозиція лише для новачків у Proton. Кредитна картка не потрібна."
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "Ця пропозиція лише для новачків у ${ BRAND_NAME }. Кредитна картка не потрібна."
       ]
     },
     "Success": {
@@ -10162,11 +10171,11 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "Комбінації клавіш ${ appName }"
-      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
+      ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "Комбінації клавіш ${ MAIL_APP_NAME }"
       ],
       "1. Give a name to the config to be generated": [
         "1. Назвіть створювану конфігурацію"
@@ -10354,8 +10363,8 @@
       "Confirm downgrade": [
         "Підтвердити перехід"
       ],
-      "Confirm loss of Proton bonuses": [
-        "Підтвердити втрату бонусів Proton"
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "Підтвердьте втрату бонусів ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Підтвердьте номер телефону"
@@ -10954,8 +10963,8 @@
       "WireGuard configuration": [
         "Конфігурація WireGuard"
       ],
-      "You already have a Proton account": [
-        "У вас уже є обліковий запис Proton"
+      "You already have a ${ BRAND_NAME } account": [
+        "Ви вже маєте обліковий запис ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Посилання на ваш календар"
@@ -10978,8 +10987,8 @@
       "Your recovery status": [
         "Ваш стан відновлення"
       ],
-      "You’ve been invited to try ${ mailAppName }": [
-        "Вас було запрошено спробувати ${ mailAppName }"
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Ви запрошені спробувати ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
         "Поштовий індекс"
@@ -11186,8 +11195,8 @@
       "Your DKIM signing is working.": [
         "Підписування DKIM працює."
       ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "Схоже, ваш зовнішній обліковий запис досягнув 24-годинного обмеження пропускної здатності. Proton спробує відновити імпортування одразу, як це стане можливим."
+      "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
+        "Схоже, ваш зовнішній обліковий запис досягнув 24-годинного обмеження пропускної здатності. ${ BRAND_NAME } спробує відновити імпортування одразу, як це стане можливим."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -11339,6 +11348,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } об'єднає всі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
+      ],
       "Are you sure you want to delete the address?": [
         "Ви впевнені, що хочете видалити цю адресу?"
       ],
@@ -11363,11 +11378,11 @@
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Вимкнувши журнали, ви також очистите всю історію записів. Ви дійсно хочете вимкнути журнали?"
       ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "Вимкнувши цю адресу, ви більше не зможете надсилати чи отримувати пошту з її використанням, а всі пов'язані продукти Proton будуть деактивовані. Ви дійсно хочете вимкнути цю адресу?"
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "Вимкнувши цю адресу, ви більше не зможете надсилати чи отримувати пошту з її використанням, а всі пов'язані продукти ${ BRAND_NAME } будуть деактивовані. Ви дійсно хочете вимкнути цю адресу?"
       ],
-      "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
-        "Якщо ви скасуєте це імпортування, ви не зможете його продовжити. Proton зберіг перебіг процесу до вашого облікового запису. Все одно скасувати?"
+      "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
+        "Якщо ви скасуєте це імпортування, ви не зможете його продовжити. ${ BRAND_NAME } зберіг перебіг процесу до вашого облікового запису. Усе одно скасувати?"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Живий чат — це преміум можливість, доступна лише користувачам платних тарифних планів ${ VPN_APP_NAME }. Будь ласка, створіть запит натомість."
@@ -11378,20 +11393,14 @@
       "Please provide at least one recipient": [
         "Укажіть принаймні одного отримувача"
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton об'єднає всі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Дата й час на вашому пристрої не синхронізуються. ${ learnMore }"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Цей імпорт може перевищити обсяг сховища, який зараз доступний для вашого облікового запису Proton. Розгляньте можливість налаштування вашого імпортування."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Цей імпорт може перевищити обсяг сховища, який зараз доступний для вашого облікового запису ${ BRAND_NAME }. Розгляньте можливість налаштування вашого імпортування."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
         "Це призведе до вилучення всіх повідомлень, тек і міток, створених під час імпорту."
