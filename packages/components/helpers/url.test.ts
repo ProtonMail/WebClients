@@ -1,6 +1,5 @@
 import {
     getHostname,
-    getHostnameWithRegex,
     isExternal,
     isMailTo,
     isSubDomain,
@@ -102,28 +101,6 @@ describe('isProtonInternal', function () {
         const url = 'https://url.whatever.com';
 
         expect(isURLProtonInternal(url)).toBeFalsy();
-    });
-});
-
-describe('getHostnameWithRegex', () => {
-    it('should return the correct hostname', () => {
-        const url = 'https://mail.proton.me';
-        expect(getHostnameWithRegex(url)).toEqual('mail.proton.me');
-    });
-
-    it('should return the correct hostname with www', () => {
-        const url = 'https://www.proton.me';
-        expect(getHostnameWithRegex(url)).toEqual('proton.me');
-    });
-
-    it('should return the correct hostname with www and subdomain', () => {
-        const url = 'https://www.mail.proton.me';
-        expect(getHostnameWithRegex(url)).toEqual('mail.proton.me');
-    });
-
-    it('should return the correct hostname with subdomain', () => {
-        const url = 'https://mail.proton.me';
-        expect(getHostnameWithRegex(url)).toEqual('mail.proton.me');
     });
 });
 

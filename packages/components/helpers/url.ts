@@ -19,12 +19,6 @@ export const getHostname = (url: string) => {
     return parser.hostname;
 };
 
-export const getHostnameWithRegex = (url: string) => {
-    const regex = /^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/gim;
-    const matches = regex.exec(url);
-    return matches?.[1] || '';
-};
-
 export const isMailTo = (url: string): boolean => {
     return url.toLowerCase().startsWith('mailto:');
 };
