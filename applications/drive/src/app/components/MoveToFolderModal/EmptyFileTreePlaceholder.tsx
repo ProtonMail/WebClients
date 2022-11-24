@@ -7,7 +7,7 @@ interface Props {
     onCreate: () => void;
 }
 
-const HasNoFolders = ({ onCreate }: Props) => {
+const EmptyFileTreePlaceholder = ({ onCreate }: Props) => {
     const title = c('Title').t`You have no folders yet`;
     return (
         <div className="p1 flex flex-column flex-align-items-center w100">
@@ -23,4 +23,4 @@ const HasNoFolders = ({ onCreate }: Props) => {
     );
 };
 
-export default HasNoFolders;
+export default EmptyFileTreePlaceholder;
