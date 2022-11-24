@@ -645,8 +645,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Aplicații Proton"
+      "${ BRAND_NAME } applications": [
+        "Aplicații ${ BRAND_NAME }"
       ]
     },
     "Beta access description": {
@@ -1816,10 +1816,10 @@
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Îmbinați cel puțin un calendar cu un calendar Proton existent",
-        "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele Proton existente",
-        "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele Proton existente"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Îmbinați cel puțin un calendar cu un calendar ${ BRAND_NAME } existent.",
+        "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
+        "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele ${ BRAND_NAME } existente."
       ],
       "Missing key packet": [
         "Lipsește pachetul de chei."
@@ -2054,8 +2054,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Ceva nu a mers bine. Reîmprospătați pagina sau reîncercați mai târziu."
       ],
-      "There was a problem connecting to Proton.": [
-        "A apărut o problemă la conectarea la Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "A apărut o problemă la conectarea la ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Puteți ${ refresh } sau reîncerca mai târziu."
@@ -2266,6 +2266,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "„Accesul aplicațiilor mai puțin sigure” este activat în setările de securitate ale contului Google."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } nu se poate conecta la acest cont. Asigurați-vă că accesul IMAP este activat în contul Gmail."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } nu se poate conecta la acest cont. Asigurați-vă că accesul IMAP este activat în contul Gmail."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } nu se poate conecta la cont. Asigurați-vă că:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } nu se poate conecta la contul extern. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } nu se poate conecta la contul extern. Asigurați-vă că:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } nu se poate conecta la contul Gmail. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } nu se poate conecta la contul Yahoo. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } nu se poate conecta la contul Yahoo. Asigurați-vă că:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Verificarea în 2 pași este activată în contul extern."
       ],
@@ -2292,30 +2316,6 @@
       ],
       "Invalid IMAP port": [
         "Port IMAP nevalid"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton nu se poate conecta la contul dvs. Asigurați-vă că accesul Gmail IMAP este activat."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton nu se poate conecta la contul dvs. Asigurați-vă că accesul IMAP este activat în contul Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton nu se poate conecta la cont. Asigurați-vă că:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton nu se poate conecta la contul extern. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton nu se poate conecta la contul extern. Asigurați-vă că:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton nu se poate conecta la contul Gmail. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton nu se poate conecta la contul din Yahoo. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton nu se poate conecta la contul din Yahoo. Asigurați-vă că:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Prea multe solicitări recente. Reîncercați mai târziu."
@@ -2369,17 +2369,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Faceți clic pe ${ boldManage } pentru a extinde meniul de opțiuni."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "În funcție de furnizorul de e-mail, s-ar putea să trebuiască să generați ${ knowledgeBaseLink } înainte de a putea importa datele în Proton."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "În funcție de furnizorul de e-mail, s-ar putea să trebuiască să generați ${ knowledgeBaseLink } înainte de a putea importa datele în ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Extindeți meniul derulant făcând clic pe cele 3 puncte (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Generați o ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Generați o ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită ${ BRAND_NAME }."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Generați ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Generați ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Accesați ${ boldAccountInfo } din profilul personal în ${ yahooMailLink }."
@@ -2405,29 +2405,29 @@
       "Select ${ boldExportCSV }.": [
         "Selectați ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pentru a importa un calendar în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pentru a importa un calendar în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Pentru a importa un calendar în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pentru a importa contacte la ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pentru a importa contacte la ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Pentru a importa contacte în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Pentru a importa contacte în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Pentru a importa e-mailuri la Proton, trebuie să obțineți ${ appPasswordLink } de la Outlook. Obțineți-o urmând acești pași:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Pentru a importa e-mailuri la ${ BRAND_NAME }, trebuie să obțineți ${ appPasswordLink } de la Outlook. Obțineți-o urmând acești pași:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Pentru a importa e-mailuri la Proton, trebuie să obțineți ${ appPasswordLink } de la Yahoo. Obțineți-o urmând acești pași:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Pentru a importa e-mailuri la ${ BRAND_NAME }, trebuie să obțineți ${ appPasswordLink } de la Yahoo. Obțineți-o urmând acești pași:"
       ]
     },
     "Import instructions emphasis": {
@@ -2730,8 +2730,8 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Sigur doriţi să ştergeţi definitiv elementele selectate din «Gunoi»?"
       ],
-      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Deoarece ${ appName } este criptat de la un capăt la altul, nu putem accesa\nsau decripta fișierele pentru dvs. Pentru a vă debloca unitatea după o resetare a parolei,\ntrebuie să aveți una dintre următoarele:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
@@ -2772,8 +2772,8 @@
       "Conflict": [
         "Conflict"
       ],
-      "Continue using ${ appName } and unlock drive later": [
-        "Continuare utilizare ${ appName } și deblocare unitate mai târziu"
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Continuare utilizare ${ DRIVE_APP_NAME } și deblocare unitate mai târziu"
       ],
       "Continue with ${ planName }": [
         "Continuare cu ${ planName }"
@@ -2937,8 +2937,8 @@
       "Free up some space or contact your administrator.": [
         "Eliberați ceva spațiu sau contactați administratorul."
       ],
-      "Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.": [
-        "Descoperiți Proton Drive și câștigați 500 MB spațiu bonus! Acționați astăzi."
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "Descoperiți ${ DRIVE_APP_NAME } și câștigați 500 MB spațiu bonus! Acționați astăzi."
       ],
       "Go ahead, upload a file": [
         "Continuați, încărcați un fișier."
@@ -2967,8 +2967,8 @@
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "Dacă nu vă cunoașteți parola, setați o frază de recuperare pentru a vă asigura că nu vă pierdeți accesul la cont și date."
       ],
-      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "Dacă aveți una dintre acestea, accesați setările contului Proton pentru a\nîncepe procesul de deblocare."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
@@ -3059,6 +3059,9 @@
       "Loading preview": [
         "Se încarcă previzualizarea"
       ],
+      "Loading...": [
+        "Se încarcă…"
+      ],
       "Makes your account safer": [
         "Vă face contul mai sigur"
       ],
@@ -3104,8 +3107,8 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
-      "No synced devices": [
-        "Nu există dispozitive sincronizate"
+      "No synced computers": [
+        "Calculatoare nesincronizate"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Niciuna din cheile încărcate nu este validă pentru criptare. Pentru a putea trimite mesaje către această adresă, încărcați o cheie validă sau dezactivați „Criptare mesaje”."
@@ -3116,8 +3119,8 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Nu au fost transferate toate fișierele. Încercați să încărcați sau să descărcați din nou fișierele."
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        "Notă: Este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ appName }."
+      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Notă: Este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "din"
@@ -3297,9 +3300,6 @@
       "Swiss privacy": [
         "Confidențialitate elvețiană"
       ],
-      "Synced devices": [
-        "Dispozitive sincronizate"
-      ],
       "Tap the + button to upload a file or folder": [
         "Atingeți butonul „+” pentru a încărca un fișier sau folder"
       ],
@@ -3318,8 +3318,8 @@
       "There are no files yet": [
         "Încă nu există fișiere."
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "Aceste fișiere au fost partajate utilizând criptarea la ambele capete. Pentru a le păstra în siguranță - și toate documentele, fotografiile și fișierele să rămână private - stocați-le în propria unitate Proton Drive. Este ușor de utilizat și gratuit."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
+        "Aceste fișiere au fost partajate utilizând criptarea la ambele capete. Pentru a le păstra în siguranță - și toate documentele, fotografiile și fișierele să rămână private - stocați-le în propria unitate ${ DRIVE_APP_NAME }. Este ușor de utilizat și gratuit."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
@@ -3359,8 +3359,8 @@
       "This will overwrite the existing folder": [
         "Aceasta va suprascrie folderul existent."
       ],
-      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Acest lucru va elimina din Proton Drive dispozitivul sincronizat ${ deviceName }. Fișierele locale de pe dispozitiv nu vor fi afectate."
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Acest lucru va elimina din ${ DRIVE_APP_NAME } dispozitivul sincronizat ${ deviceName }. Fișierele locale de pe dispozitiv nu vor fi afectate."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Pentru a permite o căutare cu adevărat privată, trebuie indexate fișierele la nivel local. Puteți utiliza în continuare ${ DRIVE_APP_NAME } în mod normal - vă vom anunța când indexarea este finalizată."
@@ -3422,8 +3422,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
       ],
-      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Utilizați Drive pentru Desktop pentru a sincroniza folderele de pe computer cu Proton Drive. Acestea vor apărea aici și vor fi accesibile de oriunde.  ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Utilizați Drive pentru Desktop pentru a sincroniza folderele de pe computer cu ${ DRIVE_APP_NAME }. Acestea vor apărea aici și vor fi accesibile de oriunde.  ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
@@ -3479,8 +3479,8 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "V-ați conectat cu ${ user.Name } (${ user.Email })."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Puteți și să îmbinați calendarele importate cu calendarele Proton existente."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Puteți și să îmbinați calendarele importate cu calendarele ${ BRAND_NAME } existente."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
@@ -3503,17 +3503,26 @@
       "You will lose all unsaved changes.": [
         "Veți pierde toate modificările nesalvate."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Acest cont are cel puțin o factură restantă. Accesul a fost restricționat. ${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
       ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Acest cont are cel puțin o factură scadentă. Contul este restricționat, iar toate serviciile sunt acum blocate până la plata datoriilor. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile partajate. ${ payInvoiceLink }"
+      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Navigatorul web actual nu acceptă descărcarea de fișiere de mari dimensiuni din cauza indisponibilității unui prestator de servicii. Descărcarea de fișiere mari poate îngheța sau poate face ca navigatorul să nu răspundă. Utilizați cele mai recente versiuni ale unui ${ recommendedBrowser } și reîncercați."
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "Adresa de e-mail nu vi se va schimba. Dar curând, va trebui să vă autentificați la ${ link }."
@@ -3541,9 +3550,6 @@
       ],
       "Your previous recovery phrase": [
         "Fraza anterioară de recuperare"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
       ]
     },
     "Info on errors": {
@@ -3608,6 +3614,9 @@
     "Label": {
       "# of accesses": [
         "Nr. de accesări"
+      ],
+      "${ BRAND_NAME } username": [
+        "Nnume de utilizator ${ BRAND_NAME }"
       ],
       "(Expired)": [
         "(Expirat)"
@@ -3696,11 +3705,11 @@
       "Country": [
         "Țara"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "Creați-vă contul ${ BRAND_NAME }"
+      ],
       "Create a share link": [
         "Creare legătură de partajare"
-      ],
-      "Create Proton account": [
-        "Creare cont Proton"
       ],
       "Created": [
         "Creat la"
@@ -3794,8 +3803,8 @@
       "Hide password": [
         "Ascundere parolă"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Cum ați descrie experiența avută cu noul Proton Mail?"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Cum ați descrie experiența cu noul ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Înțeleg riscul"
@@ -3907,9 +3916,6 @@
       ],
       "Protect with password": [
         "Protejare cu parolă"
-      ],
-      "Proton username": [
-        "Utilizator Proton"
       ],
       "Public keys": [
         "Chei publice"
@@ -4418,8 +4424,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "În continuare, va trebui să vă conectați la contul Google personal și să permiteți ca Proton să vă acceseze datele."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "În continuare, va trebui să vă conectați la contul Google și să permiteți ca ${ BRAND_NAME } să acceseze datele."
       ]
     },
     "Oauth instructions video": {
@@ -4431,16 +4437,16 @@
       "Next": [
         "Înainte"
       ],
-      "Start using ${ appName }": [
-        "Începeți să utilizați ${ appName }"
+      "Start using ${ DRIVE_APP_NAME }": [
+        "Începeți să utilizați ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "Creare legătură de partajare"
       ],
-      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
-        "Începeți să folosiți Proton Drive și vă vom dubla spațiul de stocare la 1 GB!"
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "Începeți să folosiți ${ DRIVE_APP_NAME } și vă vom dubla spațiul de stocare la 1 GB!"
       ],
       "Set a recovery method": [
         "Setați metodă de recuperare"
@@ -4461,8 +4467,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configurați-vă organizația, asociați un nume de domeniu și creați conturi pentru a vă asigura că toți membrii organizației vă sunt protejați."
       ],
-      "Discover all Proton services": [
-        "Descoperiți toate serviciile Proton"
+      "Discover all ${ BRAND_NAME } services": [
+        "Descoperiți toate serviciile ${ BRAND_NAME }"
       ],
       "Select a theme": [
         "Selectaţi o temă"
@@ -4470,16 +4476,16 @@
       "Set up your organization": [
         "Setați organizația"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii Proton, inclusiv VPN, Calendar și Drive."
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii ${ BRAND_NAME }, inclusiv VPN, Calendar și Drive."
       ],
       "You can change this anytime in your settings.": [
         "Puteți modifica oricând aceasta în setări."
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ appName }": [
-        "Bun venit la ${ appName }"
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Bun venit la ${ DRIVE_APP_NAME }"
       ],
       "Your welcome bonus": [
         "Bonusul de bun venit"
@@ -4664,8 +4670,8 @@
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
       ],
-      "Invite friends to Proton": [
-        "Invitați persoane în Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Invitați persoane la ${ BRAND_NAME }"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Acum puteți căuta cu ușurință fișierele din unitate, păstrând în același timp datele în siguranță."
@@ -4891,6 +4897,9 @@
       ],
       "Completed": [
         "Finalizate"
+      ],
+      "Computers": [
+        "Calculatoare"
       ],
       "Contact details": [
         "Detalii contact"
@@ -5222,9 +5231,6 @@
       "Stop transfers?": [
         "Opriți transferurile?"
       ],
-      "Synced devices": [
-        "Dispozitive sincronizate"
-      ],
       "The link either does not exist or has expired": [
         "Legătura nu există sau a expirat"
       ],
@@ -5400,6 +5406,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
+      ],
       "Are you sure you want to discard your import?": [
         "Sigur doriți să anulați importarea?"
       ],
@@ -5428,12 +5440,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Mesageria live este o funcție premium disponibilă numai pentru cei care au planuri ${ VPN_APP_NAME } cu plată. Puteți însă deschide un tichet de asistență."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
       ],
@@ -5458,11 +5464,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Această acțiune este ireversibilă. Introduceți cuvântul ${ boldDanger } pentru a continua."
       ],
-      "This feature requires a paid Proton account": [
-        "Această funcționalitate necesită un cont Proton cu plată"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Această funcționalitate necesită un cont ${ BRAND_NAME } cu plată"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont Proton. Luați în considerare modificarea opțiunilor de importare."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont ${ BRAND_NAME }. Luați în considerare modificarea opțiunilor de importare."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."

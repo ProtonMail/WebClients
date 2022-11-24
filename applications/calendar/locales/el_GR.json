@@ -4,6 +4,14 @@
     "language": "el_GR"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Πλήρης προβολή (δείτε όλες τις λεπτομέρειες)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Περιορισμένη προβολή (δείτε μόνο ελεύθερος/απασχολημένος)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } εισαγωγή"
@@ -137,6 +145,9 @@
       "Customize import": [
         "Προσαρμοσμένη εισαγωγή"
       ],
+      "Decline invite": [
+        "Απόρριψη πρόσκλησης"
+      ],
       "Delete": [
         "Διαγραφή"
       ],
@@ -243,6 +254,9 @@
       ],
       "Import from .csv or vCard": [
         "Εισαγωγή από αρχείο .csv ή vCard"
+      ],
+      "Join calendar": [
+        "Εγγραφή στο ημερολόγιο"
       ],
       "Load image": [
         "Φόρτωση εικόνας"
@@ -524,15 +538,6 @@
       "${ title } started at ${ formattedHour }": [
         "${ title } ξεκίνησε στις ${ formattedHour }"
       ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } ξεκίνησε στις ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } ξεκίνησε στις ${ _formattedDate } στις ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } ξεκίνησε στις ${ _formattedDateWithTime }"
-      ],
       "${ title } started on ${ formattedDate }": [
         "${ title } ξεκίνησε στις ${ formattedDate }"
       ],
@@ -553,21 +558,6 @@
       ],
       "${ title } starts now": [
         "${ title } ξεκινά τώρα"
-      ],
-      "${ title } starts on ${ _formattedDate2 }": [
-        "Το ${ title } ξεκινά την ${ _formattedDate2 }"
-      ],
-      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        "Το ${ title } ξεκινά την ${ _formattedDate2 } στις ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDate3 }": [
-        "Το ${ title } ξεκινά την ${ _formattedDate3 }"
-      ],
-      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        "Το ${ title } ξεκινά την ${ _formattedDate3 } στις ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDateWithoutTime }": [
-        "Το ${ title } ξεκινά την ${ _formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "Το ${ title } ξεκινά την ${ formattedDateWithTime }"
@@ -593,11 +583,6 @@
         "Αποχωρώντας τώρα, θα χάσετε το γεγονός σας."
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Εφαρμογές Proton"
-      ]
-    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Άδειο αρχείο ICS"
@@ -621,6 +606,11 @@
     "Attendee role": {
       "Optional": [
         "Προαιρετικό"
+      ]
+    },
+    "Badge": {
+      "Coming soon": [
+        "Ερχεται σύντομα"
       ]
     },
     "Beta access description": {
@@ -699,6 +689,11 @@
         "Πρόβλημα πρόσβασης ιστοσελίδας"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Προσθέστε άτομα ή ομάδες"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Συμμετέχετε;"
@@ -731,6 +726,34 @@
       ],
       "You tentatively accepted the invitation": [
         "Αποδεχθήκατε προσωρινά την πρόσκληση"
+      ]
+    },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Μόνο εσείς μπορείτε να δείτε την ετικέτα"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Μπορείτε να αλλάξετε ή να αφαιρέσετε δικαιώματα οποιαδήποτε στιγμή."
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Δικαιώματα"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Έχετε ήδη πρόσβαση σε αυτό το ημερολόγιο"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Επεξεργασία (προβολή, δημιουργία, τροποποίηση λεπτομερειών συμβάντος)"
+      ],
+      "View (see all event details)": [
+        "Προβολή (δείτε όλες τις λεπτομέρειες)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1874,14 +1897,6 @@
       ]
     },
     "Error": {
-      "${ _list } doesn't have an email address": [
-        "${ _list } δεν έχει μια διεύθυνση ηλεκτρονικού ταχυδρομείου",
-        "Καποιες επαφές δεν έχουν διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ _list }"
-      ],
-      "${ _list2 } has no contacts": [
-        "${ _list2 } δεν έχει επαφές",
-        "Ορισμένες ομάδες δεν έχουν επαφές: ${ _list2 }"
-      ],
       "${ list } doesn't have a valid email address": [
         "${ list } δεν έχει έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "Ορισμένες επαφές δεν έχουν έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου: ${ list }"
@@ -1893,8 +1908,14 @@
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
+      "Account does not exist": [
+        "Ο λογαριασμός δεν υπάρχει"
+      ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
+      ],
+      "Already a member of this calendar": [
+        "Είναι ήδη μέλος στο παρόν ημερολόγιο"
       ],
       "Answer failed to be sent": [
         "Η απάντηση απέτυχε να σταλεί"
@@ -2000,21 +2021,23 @@
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του Proton"
-      ],
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
       "Name required": [
         "Απαιτείται όνομα"
       ],
+      "No public key for ${ BRAND_NAME } address": [
+        "Κανένα δημόσιο κλειδί για τη ${ BRAND_NAME } διεύθυνση"
+      ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Κανένα κλειδί WKD που ανακτήθηκε για το χρήστη δεν είναι έγκυρο για την αποστολή"
+      ],
+      "Not a ${ BRAND_NAME } account": [
+        "Δεν είναι ${ BRAND_NAME } λογαριασμός"
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
@@ -2129,6 +2152,9 @@
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
+      ],
+      "Validation error": [
+        "Σφάλμα επικύρωσης"
       ],
       "We were unable to connect to your service provider.": [
         "Δεν ήταν δυνατή η σύνδεση με τον πάροχο υπηρεσιών σας."
@@ -2311,11 +2337,11 @@
       "Please ${ refresh } or check your connection.": [
         "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
       ],
-      "There was a problem connecting to Proton.": [
-        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο Proton."
-      ],
       "You may also ${ refresh } or try again later.": [
         "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
+      ],
+      "You need an active personal calendar to import events": [
+        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τα συμβάντα σας"
       ]
     },
     "Error notification": {
@@ -2528,8 +2554,8 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Οι εισαγόμενες προσκλήσεις εμφανίζονται στο ${ CALENDAR_APP_NAME } ως απλές εκδηλώσεις χωρίς στοιχεία διοργανωτή και συμμετέχοντα. Για να λαμβάνετε ενημερώσεις για την εκδήλωση και να δείτε τους συμμετέχοντες, ζητήστε από τους διοργανωτές να σας προσκαλέσουν χρησιμοποιώντας τη διεύθυνση email της Proton."
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Οι εισαγόμενες προσκλήσεις εμφανίζονται στο ${ CALENDAR_APP_NAME } ως απλά συμβάντα χωρίς στοιχεία διοργανωτή και συμμετέχοντα. Για να λαμβάνετε ενημερώσεις για το συμβάν και για να δείτε τους συμμετέχοντες, ζητήστε από τους διοργανωτές να σας προσκαλέσουν χρησιμοποιώντας τη δική σας ${ BRAND_NAME } διεύθυνση ηλ. ταχυδρομείου."
       ],
       "This file contains an event invitation:": [
         "Αυτό το αρχείο περιέχει μια πρόσκληση σε εκδήλωση:",
@@ -2614,30 +2640,6 @@
       "Invalid IMAP port": [
         "Μη έγκυρη θύρα IMAP"
       ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι η πρόσβαση IMAP στο Gmail είναι ενεργοποιημένη."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας. Παρακαλούμε βεβαιώστε την ορθότητα της διεύθυνσης του διακομιστή αλληλογραφίας, καθώς και του αριθμού θύρας."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Το Proton δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας. Βεβαιωθείτε ότι:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας στο Gmail. Βεβαιωθείτε ότι η διεύθυνση του διακομιστή αλληλογραφίας και ο αριθμός θύρας είναι σωστές."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Αδυναμία σύνδεσης του Proton στον λογαριασμό σας Yahoo. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Αδυναμία σύνδεσης του Proton στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
       ],
@@ -2684,12 +2686,6 @@
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Ανοίξτε το αναδιπλούμενο μενού κάνοντας κλικ στις 3 τελείες (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Παράξτε ένα ${ boldAppPassword } και χρησιμοποιήστε το αντί του κανονικού σας κωδικού όταν σας ζητηθεί από το Proton."
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Παράξτε το ${ boldAppPassword } και χρησιμοποιήστε το αντί του κανονικού σας κωδικού όταν σας ζητηθεί από το Proton."
-      ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Πηγαίνετε στο ${ boldAccountInfo }, κάτω από το προφίλ σας στο ${ yahooMailLink }."
       ],
@@ -2713,12 +2709,6 @@
       ],
       "Select ${ boldExportCSV }.": [
         "Επιλέξτε ${ boldExportCSV }."
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Για την εισαγωγή ενός ημερολογίου στο Proton, θα χρειαστείτε ${ knowledgeBaseLink }. Κατεβάστε το από το Yahoo σε 3 απλά βήματα:"
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Για να εισάγετε email στο Proton, χρειάζεστε ${ appPasswordLink } από το Yahoo. Αποκτήστε το ακολουθώντας τα παρακάτω βήματα:"
       ]
     },
     "Import instructions emphasis": {
@@ -2931,8 +2921,17 @@
       "and": [
         "και"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να δει όλες τις λεπτομέρειες των συμβάντων σε αυτό το ημερολόγιο, όπως τον τίτλο, την τοποθεσία και τους συμμετέχοντες."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να δει αν είστε ελεύθεροι ή απασχολημένοι στο ημερολόγιο σας. Όμως δεν μπορούν να δουν τις λεπτομέρειες των συμβάντων, όπως τον τίτλο, την τοποθεσία και τους συμμετέχοντες."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Κοινοποιώντας όλες τις λεπτομέρειες των συμβάντων αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στη ${ BRAND_NAME } πρόσβαση στις κρυπτογραφημένες πληροφορίες του ημερολογίου."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας? Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
@@ -3082,6 +3081,9 @@
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
+      "Link created": [
+        "Ο σύνδεσμος δημιουργήθηκε"
       ],
       "Loading": [
         "Φόρτωση"
@@ -3323,14 +3325,14 @@
       "Yearly": [
         "Ετησίως"
       ],
+      "You already joined this calendar": [
+        "Έχετε ήδη εγγραφτεί σε αυτό το ημερολόγιο"
+      ],
       "You are about to open another browser tab and visit:": [
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
-      ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
@@ -3346,6 +3348,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Εχετε επαναφέρει τον κωδικό πρόσβασης σασ και σαν αποτέλεσμα γεγονότα συνδεδεμένα με τα ακόλουθα ημερολόγια, δε μπορέσανε να αποκρυπτωγραφηθούν.\nΟι συνδέσεις κοινόχρηστου ημερολογίου που δημιουργήσατε προηγουμένως δεν θα λειτουργούν πλέον.\nΟποιαδήποτε ενεργά εγγεγραμμένα ημερολόγια θα συγχρονιστούν ξανά μετά από λίγα λεπτά."
+      ],
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Έχετε προηγουμένως απορρίψει αυτήν την πρόσκληση. Παρακαλώ ρωτήστε τον κάτοχο για μια νέα πρόσκληση"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"
@@ -3374,9 +3379,6 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Θα ενημερώσετε όλα τα γεγονότα σε αυτή τη σειρά. Θα ειδοποιηθούν οι αποσυρθέντες συμμετέχοντες."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας έχει περιοριστεί. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
       ],
@@ -3386,11 +3388,11 @@
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Η διεύθυνση σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε αυτό το γεγονός ούτως ή άλλως;"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
+      ],
+      "Your events will be encrypted and then saved.": [
+        "Τα συμβάντα σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
@@ -3400,9 +3402,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Η ζώνη ώρας του συστήματός σας φαίνεται να έχει αλλάξει σε ${ timezone }. Θέλετε να ενημερώσετε τις προτιμήσεις ζώνης ώρας;"
@@ -3416,6 +3415,14 @@
     "Info, no need for singular": {
       "Multiple contacts look identical. ${ mergeAction }": [
         "Πολλαπλές επαφές φαίνονται ίδιες. ${ mergeAction }"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Πρόσβαση"
+      ],
+      "Label (optional)": [
+        "Ετικέτα (προαιρετικό)"
       ]
     },
     "Input placeholder": {
@@ -3455,6 +3462,9 @@
       ],
       "All day": [
         "Όλη την ημέρα"
+      ],
+      "All-day event notifications": [
+        "Ολοήμερες ειδοποιήσεις συμβάντος"
       ],
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
@@ -3537,6 +3547,12 @@
       "Ends": [
         "Λήξη"
       ],
+      "Event duration": [
+        "Διάρκεια συμβάντος"
+      ],
+      "Event notifications": [
+        "Ειδοποιήσεις συμβάντος"
+      ],
       "Event title": [
         "Τίτλος εκδήλωσης"
       ],
@@ -3566,9 +3582,6 @@
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Πώς θα περιγράφατε την εμπειρία σας στο νέο Proton;"
       ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
@@ -3670,9 +3683,6 @@
       "Postal code": [
         "Ταχυδρομικός κώδικας"
       ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
       "Public keys": [
         "Δημόσια κλειδιά"
       ],
@@ -3729,6 +3739,9 @@
       ],
       "Wonderful": [
         "Θαυμάσια"
+      ],
+      "Your calendar URL": [
+        "Η διεύθυνση URL του ημερολογίου σας"
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
@@ -3851,6 +3864,17 @@
         "Διαχείριση ημερολογίων"
       ]
     },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Δεν είναι δυνατή η προσθήκη περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των προσωπικών ημερολογίων που παρέχει το πλάνο που επιλέξατε."
+      ],
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Δεν είναι δυνατή η προσθήκη περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των εγγεγραμμένων ημερολογίων που παρέχει το πλάνο που επιλέξατε."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Δεν είναι δυνατή η δημιουργία περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των προσωπικών ημερολογίων που παρέχει το πλάνο που επιλέξατε."
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "Πώς να εισάγετε ημερολόγια από μια άλλη υπηρεσία"
@@ -3878,6 +3902,9 @@
       ],
       "How to import emails from Yahoo": [
         "Πώς να εισάγετε email από το Yahoo"
+      ],
+      "Share calendar": [
+        "Κοινοποίηση ημερολογίου"
       ],
       "Time zone changed": [
         "Η ζώνη ώρας άλλαξε"
@@ -4058,6 +4085,14 @@
         "Η ομάδα επαφών ενημερώθηκε"
       ]
     },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "Η πρόσκληση στο ημερολόγιο απορρίφθηκε"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Γραφτήκατε στο ${ calendarName } (${ senderEmail })"
+      ]
+    },
     "Notification suffix": {
       "by email": [
         "μέσω ηλεκτρονικού ταχυδρομείου"
@@ -4066,6 +4101,14 @@
     "Notification time input": {
       "at": [
         "στις"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "ηλ. μήνυμα"
+      ],
+      "notification": [
+        "ειδοποίηση"
       ]
     },
     "Notification when": {
@@ -4167,11 +4210,6 @@
         "Άγνωστο"
       ]
     },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Στη συνέχεια θα χρειαστεί να εισέλθετε στον Google λογαριασμό σας και να παραχωρήσετε στην Proton πρόσβαση στα δεδομένα σας."
-      ]
-    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Για να ολοκληρωθεί η διαδικασία της εισαγωγής πρέπει να επιλέξετε όλα τα απαραίτητα στοιχεία, όπως φαίνεται στο GIF."
@@ -4197,17 +4235,11 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ρυθμίστε τις παραμέτρους του οργανισμού σας, συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για να διασφαλίσετε ότι όλα τα μέλη του οργανισμού σας προστατεύονται."
       ],
-      "Discover all Proton services": [
-        "Ανακαλύψτε όλες τις υπηρεσίες Proton"
-      ],
       "Select a theme": [
         "Επιλέξτε ένα θέμα"
       ],
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Χρησιμοποιήστε τον επιλογέα εφαρμογών πάνω αριστερά για να αποκτήσετε πρόσβαση σε άλλες υπηρεσίες Proton, συμπεριλαμβανομένων του VPN, του Ημερολογίου και του Χώρου Αποθήκευσης στο cloud."
       ],
       "You can change this anytime in your settings.": [
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
@@ -4435,14 +4467,52 @@
         "Αποτυχία ενημέρωσης ρυθμίσεων"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "Για να προσκαλέσετε μη ${ BRAND_NAME } χρήστες, κοινοποιήστε το ημερολόγιό σας με έναν σύνδεσμο"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Προσθέστε τους ${ BRAND_NAME } λογαριασμούς με τους οποίους επιθυμείτε να μοιράσετε το ημερολόγιο ${ calendarName }. Θα σταλθεί αυτόματα πρόσκληση."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Εισάγετε μια ηλεκτρονική διεύθυνση ή ένα όνομα ομάδας"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Κοινοποίηση με ${ BRAND_NAME } χρήστες"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Διαχείριση ημερολογίου"
       ]
     },
     "Spotlight": {
+      "Don't miss any events": [
+        "Μη χάσετε κανένα συμβάν"
+      ],
+      "Easily accept invites": [
+        "Αποδεχτείτε προσκλήσεις εύκολα"
+      ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Οι προσκλήσεις τώρα εμφανίζονται στο ημερολόγιό σας ως εκκρεμή συμβάντα. Απλά ανοίξτε ένα συμβάν για να απαντήσετε στην πρόσκληση. ${ goToSettingsLink }"
+      ],
+      "Subscribe to other calendars": [
+        "Εγγραφή σε άλλα ημερολόγια"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Δοκιμή ${ DRIVE_APP_NAME }"
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Μπορείτε τώρα να προσθέσετε ειδοποιήσεις σε ημερολόγια που έχετε εγγραφτεί."
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "Μπορείτε να εγγραφείτε σε εξωτερικά ημερολόγια και να διαβάσετε τις εκδηλώσεις τους."
       ]
     },
     "Spotlight settings link": {
@@ -4522,6 +4592,9 @@
       ],
       "Calendar created": [
         "Το ημερολόγιο δημιουργήθηκε"
+      ],
+      "Calendar information updated": [
+        "Οι πληροφορίες του ημερολογίου ενημερώθηκαν"
       ],
       "Calendar updated": [
         "Το ημερολόγιο ενημερώθηκε"
@@ -4794,6 +4867,9 @@
       "Create new group": [
         "Δημιουργία νέας ομάδας"
       ],
+      "Create public link": [
+        "Δημιουργία δημόσιου συνδέσμου"
+      ],
       "Currency": [
         "Νόμισμα"
       ],
@@ -4825,6 +4901,9 @@
       ],
       "Deleting contacts": [
         "Διαγραφή επαφών"
+      ],
+      "Drop to upload": [
+        "Αφήστε το εδώ για να ανεβεί"
       ],
       "Edit contact": [
         "Επεξεργασία επαφής"
@@ -5057,11 +5136,24 @@
       ],
       "You have invited participants with equivalent emails": [
         "Έχετε προσκαλέσει συμμετέχοντες με ισοδύναμα μηνύματα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Your calendar link": [
+        "Ο σύνδεσμος του ημερολογίου σας"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Επιλέξτε έναν αριθμό"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Δημιουργία ημερολογίου"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Επεξεργασία ημερολογίου"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5159,12 +5251,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Το Proton θα συγχωνεύσει όλους τους φακέλους ίδιου ονόματος. Για αποφυγή της συγχώνευσης, αλλάξτε τα ονόματα πριν την εισαγωγή."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Η Proton θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
       ],
@@ -5188,12 +5274,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
-      ],
-      "This feature requires a paid Proton account": [
-        "Αυτή η λειτουργία απαιτεί έναν λογαριασμό Proton επί πληρωμή"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας Proton. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."

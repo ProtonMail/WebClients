@@ -606,11 +606,6 @@
         "Φεύγοντας τώρα, κάποιες επαφές ενδέχεται να μην εισαχθούν"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Εφαρμογές Proton"
-      ]
-    },
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
@@ -1695,10 +1690,6 @@
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του Proton"
-      ],
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
@@ -1899,9 +1890,6 @@
       "Please ${ refresh } or check your connection.": [
         "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
       ],
-      "There was a problem connecting to Proton.": [
-        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο Proton."
-      ],
       "You may also ${ refresh } or try again later.": [
         "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
       ],
@@ -2080,30 +2068,6 @@
       "Invalid IMAP port": [
         "Μη έγκυρη θύρα IMAP"
       ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι η πρόσβαση IMAP στο Gmail είναι ενεργοποιημένη."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας. Παρακαλούμε βεβαιώστε την ορθότητα της διεύθυνσης του διακομιστή αλληλογραφίας, καθώς και του αριθμού θύρας."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Το Proton δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας. Βεβαιωθείτε ότι:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας στο Gmail. Βεβαιωθείτε ότι η διεύθυνση του διακομιστή αλληλογραφίας και ο αριθμός θύρας είναι σωστές."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Αδυναμία σύνδεσης του Proton στον λογαριασμό σας Yahoo. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Αδυναμία σύνδεσης του Proton στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
       ],
@@ -2150,12 +2114,6 @@
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Ανοίξτε το αναδιπλούμενο μενού κάνοντας κλικ στις 3 τελείες (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Παράξτε ένα ${ boldAppPassword } και χρησιμοποιήστε το αντί του κανονικού σας κωδικού όταν σας ζητηθεί από το Proton."
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Παράξτε το ${ boldAppPassword } και χρησιμοποιήστε το αντί του κανονικού σας κωδικού όταν σας ζητηθεί από το Proton."
-      ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Πηγαίνετε στο ${ boldAccountInfo }, κάτω από το προφίλ σας στο ${ yahooMailLink }."
       ],
@@ -2179,12 +2137,6 @@
       ],
       "Select ${ boldExportCSV }.": [
         "Επιλέξτε ${ boldExportCSV }."
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Για την εισαγωγή ενός ημερολογίου στο Proton, θα χρειαστείτε ${ knowledgeBaseLink }. Κατεβάστε το από το Yahoo σε 3 απλά βήματα:"
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Για να εισάγετε email στο Proton, χρειάζεστε ${ appPasswordLink } από το Yahoo. Αποκτήστε το ακολουθώντας τα παρακάτω βήματα:"
       ]
     },
     "Import instructions emphasis": {
@@ -2438,9 +2390,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά τα επιλεγμένα διαγραμμένα στοιχεία;"
       ],
-      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Επειδή το ${ appName } είναι διατερματικά κρυπτογραφημένο, δεν μπορούμε να προσπελάσουμε ή να αποκρυπτογραφήσουμε τα αρχεία σας για εσάς. Για να ξεκλειδώσετε την αρχειοθήκη σας μετά από επαναφορά κωδικού πρόσβασης, πρέπει να έχετε ένα από τα εξής:"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
@@ -2476,9 +2425,6 @@
       ],
       "Conflict": [
         "Διένεξη"
-      ],
-      "Continue using ${ appName } and unlock drive later": [
-        "Συνέχιση χρήσης ${ appName } και ξεκλείδωμα αρχειοθήκης αργότερα"
       ],
       "Continue with ${ planName }": [
         "Συνέχεια με ${ planName }"
@@ -2626,9 +2572,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δεν βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
-      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "Εάν έχετε ένα από αυτά, συνεχίστε στη ρύθμιση λογαριασμού Proton για να αρχίσετε τη διαδικασία ξεμπλοκαρίσματος."
-      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
       ],
@@ -2740,9 +2683,6 @@
       ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
-      ],
-      "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        "Σημείωση: Σε συσκευές όπου εγκαταστήσατε το ${ appName }, κάποια δεδομένα ίσως είναι ακόμα διαθέσιμα."
       ],
       "of": [
         "από"
@@ -2997,9 +2937,6 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
@@ -3018,14 +2955,8 @@
       "You will lose all unsaved changes.": [
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας έχει περιοριστεί. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
-      ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
@@ -3050,9 +2981,6 @@
       ],
       "Your previous recovery phrase": [
         "Η προηγούμενη φράση ανάκτησής σας"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
       ]
     },
     "Info on errors": {
@@ -3263,9 +3191,6 @@
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Πώς θα περιγράφατε την εμπειρία σας στο νέο Proton;"
-      ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
       ],
@@ -3367,9 +3292,6 @@
       ],
       "Protect with password": [
         "Προστασία με κωδικό πρόσβασης"
-      ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
       ],
       "Public keys": [
         "Δημόσια κλειδιά"
@@ -3801,11 +3723,6 @@
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
       ]
     },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Στη συνέχεια θα χρειαστεί να εισέλθετε στον Google λογαριασμό σας και να παραχωρήσετε στην Proton πρόσβαση στα δεδομένα σας."
-      ]
-    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Για να ολοκληρωθεί η διαδικασία της εισαγωγής πρέπει να επιλέξετε όλα τα απαραίτητα στοιχεία, όπως φαίνεται στο GIF."
@@ -3814,17 +3731,11 @@
     "Onboarding Action": {
       "Next": [
         "Επόμενο"
-      ],
-      "Start using ${ appName }": [
-        "Έναρξη χρήσης του ${ appName }"
       ]
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ρυθμίστε τις παραμέτρους του οργανισμού σας, συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για να διασφαλίσετε ότι όλα τα μέλη του οργανισμού σας προστατεύονται."
-      ],
-      "Discover all Proton services": [
-        "Ανακαλύψτε όλες τις υπηρεσίες Proton"
       ],
       "Select a theme": [
         "Επιλέξτε ένα θέμα"
@@ -3832,16 +3743,8 @@
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Χρησιμοποιήστε τον επιλογέα εφαρμογών πάνω αριστερά για να αποκτήσετε πρόσβαση σε άλλες υπηρεσίες Proton, συμπεριλαμβανομένων του VPN, του Ημερολογίου και του Χώρου Αποθήκευσης στο cloud."
-      ],
       "You can change this anytime in your settings.": [
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
-      ]
-    },
-    "Onboarding Title": {
-      "Welcome to ${ appName }": [
-        "Καλώς ήρθατε στο ${ appName }"
       ]
     },
     "Option": {
@@ -4259,6 +4162,9 @@
       "Drive": [
         "Αρχειοθήκη"
       ],
+      "Drop to upload": [
+        "Αφήστε το εδώ για να ανεβεί"
+      ],
       "Duplicate file found": [
         "Βρέθηκε ομώνυμο αρχείο"
       ],
@@ -4650,12 +4556,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Το Proton θα συγχωνεύσει όλους τους φακέλους ίδιου ονόματος. Για αποφυγή της συγχώνευσης, αλλάξτε τα ονόματα πριν την εισαγωγή."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Η Proton θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
       ],
@@ -4679,12 +4579,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
-      ],
-      "This feature requires a paid Proton account": [
-        "Αυτή η λειτουργία απαιτεί έναν λογαριασμό Proton επί πληρωμή"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας Proton. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."

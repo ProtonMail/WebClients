@@ -155,6 +155,9 @@
       "Clear query": [
         "清除查詢"
       ],
+      "Clear search": [
+        "清除搜尋"
+      ],
       "Click here.": [
         "點擊此處。"
       ],
@@ -162,7 +165,7 @@
         "關閉"
       ],
       "Close composer": [
-        "關閉撰寫器"
+        "關閉撰寫工具"
       ],
       "Close navigation": [
         "關閉導覽"
@@ -180,7 +183,7 @@
         "撰寫郵件"
       ],
       "Composer size": [
-        "撰寫器大寫"
+        "撰寫工具大小"
       ],
       "Confirm": [
         "確認"
@@ -201,7 +204,7 @@
         "繼續以 Google 帳號登入"
       ],
       "Contract composer": [
-        "縮小撰寫器"
+        "縮小撰寫工具"
       ],
       "Copy address": [
         "複製郵件位址"
@@ -266,6 +269,12 @@
       "Delete draft": [
         "刪除草稿"
       ],
+      "Delete folder": [
+        "刪除資料夾"
+      ],
+      "Delete label": [
+        "刪除標籤"
+      ],
       "Delete permanently": [
         "永久刪除"
       ],
@@ -311,6 +320,9 @@
       "Edit encryption": [
         "編譯加密"
       ],
+      "Edit folder": [
+        "編輯資料夾"
+      ],
       "Edit label": [
         "編輯標籤"
       ],
@@ -339,7 +351,7 @@
         "排除訊息内容"
       ],
       "Expand composer": [
-        "展開撰寫器"
+        "展開撰寫工具"
       ],
       "Expand URL": [
         "查看完整網址"
@@ -516,7 +528,7 @@
         "登入"
       ],
       "Mailbox density": [
-        "收件匣密度"
+        "信箱密集度"
       ],
       "Mailbox layout": [
         "信箱配置"
@@ -537,7 +549,7 @@
         "標記為正當郵件"
       ],
       "Maximize composer": [
-        "最大化撰寫器"
+        "最大化撰寫工具"
       ],
       "Maybe": [
         "也許"
@@ -558,7 +570,7 @@
         "查看來自此收件者的所有訊息"
       ],
       "Minimize composer": [
-        "最小化撰寫器"
+        "最小化撰寫工具"
       ],
       "More": [
         "更多"
@@ -790,9 +802,6 @@
       ],
       "Save": [
         "儲存"
-      ],
-      "Saving${ _ellipsis }": [
-        "正在儲存${ _ellipsis }"
       ],
       "Schedule message": [
         "排程訊息"
@@ -1040,9 +1049,6 @@
       "View keys": [
         "檢視金鑰"
       ],
-      "View message": [
-        "檢視訊息"
-      ],
       "View message details": [
         "檢視訊息詳細資料"
       ],
@@ -1163,8 +1169,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Proton 應用程式"
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } 應用程式"
       ]
     },
     "Attached ics file error": {
@@ -1496,9 +1502,6 @@
       "Event rescheduling is not supported for the moment": [
         "暫未支援事件重新排程"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        "此回答未能加入至 ${ calendarAppName }，因為我們暫時僅支援回答一系列中的全部事件"
-      ],
       "This event has been canceled.": [
         "此事件已取消。"
       ],
@@ -1585,9 +1588,6 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "從上次更新以來已經過了超過12小時 — Proton Calendar 將會嘗試在幾個小時內更新日曆。"
       ]
     },
     "Calendar widget banner": {
@@ -3086,9 +3086,6 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "可容許的附件數量 (${ attachmentsCountLimit }) 已達上限"
       ],
-      "Merge at least ${ calendarToFixCount } calendars with existing Proton calendars": [
-        "請將至少 ${ calendarToFixCount } 個行事曆與現有的 Proton 行事曆合併"
-      ],
       "Message needs to be sent first": [
         "需要先傳送郵件"
       ],
@@ -3150,7 +3147,7 @@
         "主要位址金鑰並未被解密。"
       ],
       "Primary key is not valid for sending": [
-        "寄件用的主金鑰不正確。"
+        "主金鑰無法用於傳送郵件"
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "從 ${ BRAND_NAME } 擷取出的使用者專屬主金鑰不適用於發送郵件"
@@ -3217,9 +3214,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
-      ],
-      "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "抱歉，Proton 無法解密您的郵件。請檢查您所有的金鑰是否在使用中。"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "此資料夾名稱無法使用。請換另一個名稱。"
@@ -3478,9 +3472,6 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "出了一點問題。請重新整理頁面或稍後再試。"
       ],
-      "There was a problem connecting to Proton.": [
-        "連線到 Proton 時發生問題。"
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您尚未有任何聯絡人。立即開始建立一個新的聯絡人"
       ],
@@ -3718,7 +3709,15 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }。預設隱私。"
+        "${ BRAND_NAME }。隱私無憂。"
+      ]
+    },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "日期: ${ date }"
+      ],
+      "From: ${ senderString }": [
+        "寄件者: ${ senderString }"
       ]
     },
     "Get started checklist completion": {
@@ -3747,8 +3746,8 @@
       "Available on iOS and Android.": [
         "IOS 和 Android 皆適用。"
       ],
-      "Get the ${ protonMailAppName } mobile app": [
-        "取得 ${ protonMailAppName } 行動應用程式"
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "免費下載 ${ MAIL_APP_NAME } 行動裝置程式"
       ],
       "Import contacts or emails": [
         "匯入聯絡人或郵件"
@@ -3916,6 +3915,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } 無法連接您的帳號。請確認 Gmail IMAP 存取已啟用。"
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } 無法連接您的帳號。請確認您的 Gmail IMAP 存取已啟用。"
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } 無法連接您的帳號。請確認以下事項:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 無法連接您的外部帳號。請確認郵件伺服器和連接埠號正確無誤。"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } 無法連接您的外部帳號。請確認以下事項:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 無法連接您的 Gmail 帳號。請確認郵件伺服器和連接埠號正確無誤。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 無法連接您的 Yahoo! 帳號。請確認郵件伺服器和連接埠號正確無誤。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } 無法連接您的 Yahoo! 帳號。請確認以下事項:"
+      ],
       "2-step verification is enabled in your external account.": [
         "您的外部帳號已啟用兩步驟驗證。"
       ],
@@ -3942,30 +3965,6 @@
       ],
       "Invalid IMAP port": [
         "無效的 IMAP 連接埠"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton 無法連接您的帳號。請確保 Gmail IMAP 存取已啟用。"
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton 無法連線到您的帳號。請確保您的 Gmail 帳號已啟用 IMAP 存取。"
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton 無法連線到您的帳號。請確保："
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton 無法連線到您的外部帳號。請確保電郵伺服器位置和連接埠號碼正確。"
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton 無法連線到您的外部帳號。請確保："
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton 無法連線到您的 Gmail 帳號。請確保電郵伺服器位置和連接埠號碼正確。"
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton 無法連線到您的 Yahoo 電子郵件帳號。請確保電子郵件伺服器位置和連接埠號碼正確。"
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton 無法連線到您的 Yahoo 電子郵件帳號。請確保："
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "最近的請求太多。請容後再試。"
@@ -4027,17 +4026,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "點擊 ${ boldManage } 以展開選項功能表。"
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "取決於您的電子郵件服務提供者，您可能需要先產生 ${ knowledgeBaseLink } 才能匯入到 Proton。"
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "取決於您的電子郵件服務提供者，您可能需要先產生 ${ knowledgeBaseLink } 才能匯入到 ${ BRAND_NAME }。"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "點擊三個點 (...) 展開下拉式選單"
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "進行生成一組 ${ boldAppPassword } ，當 ${ BRAND_NAME } 出現提示時，即以該密碼取代您舊有的一般密碼。"
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "進行生成一組 ${ boldAppPassword } ，當 ${ BRAND_NAME } 出現提示時，即以該密碼取代您舊有的一般密碼。"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "請至 ${ yahooMailLink } 裡您名下個人資料的 ${ boldAccountInfo }。"
@@ -4062,30 +4061,6 @@
       ],
       "Select ${ boldExportCSV }.": [
         "選取匯出 ${ boldExportCSV }."
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "要匯入電郵到 Outlook，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "要匯入電郵到 Proton，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
       ]
     },
     "Import instructions emphasis": {
@@ -4183,6 +4158,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
+      ],
+      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
+        "${ BRAND_NAME } 不會濫用隱私獲取營利。"
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
@@ -4361,6 +4339,12 @@
       "Are you sure you want to delete all messages with this label?": [
         "您確定要刪除有此標籤的全部郵件？"
       ],
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "您確定您要刪除此資料夾嗎？所有下層資料夾也都將會被刪除。"
+      ],
+      "Are you sure you want to delete this label?": [
+        "您確定要刪除此標籤嗎？"
+      ],
       "Are you sure you want to discard your changes?": [
         "您確定要捨棄所作的變更嗎？"
       ],
@@ -4535,14 +4519,20 @@
       "Email tracker protection is disabled": [
         "電郵追蹤保護已停用"
       ],
-      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        "電郵追蹤程式會侵犯您的隱私。 Proton 在此訊息中並未發現任何電郵追蹤程式。"
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
+        "電郵追蹤程式會侵犯您的隱私。 ${ BRAND_NAME } 在此訊息中並未發現任何電郵追蹤程式。"
       ],
-      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } trackers.": [
-        "電郵追蹤器會侵犯您的隱私。 Proton 找到並阻止了 ${ numberOfTrackers } 個追蹤器。"
+      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
+        "電郵追蹤程式會侵犯您的私隱。 ${ BRAND_NAME } 找到並阻止了 ${ numberOfTrackers } 個追踪器。"
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "電郵追蹤器會侵犯您的隱私。開啟電郵追蹤保護防止寄件者得知您是否開啟過此訊息。"
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "儲存在此資料夾中的電郵不會被刪除，仍可在「所有郵件」資料夾中找到。"
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "帶有此標籤的電郵不會被刪除，仍可在對應的資料夾中找到。"
       ],
       "embedded images": [
         "嵌入圖像"
@@ -4634,8 +4624,8 @@
       "How Hide My Email works": [
         "Hide My Email 如何運作"
       ],
-      "I'm sending this message to a non-Proton Mail user.": [
-        "我正傳送郵件給一位非 Proton Mail 的使用者。"
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "我正傳送郵件給一位非 ${ MAIL_APP_NAME } 的使用者。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
@@ -4659,7 +4649,7 @@
         "圖像 URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "圖像已被移除，因為自動回覆不支援。"
+        "圖像已被移除，因為自動回覆不支援"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
@@ -4738,6 +4728,9 @@
       ],
       "Loading preview": [
         "正在載入預覽"
+      ],
+      "Loading...": [
+        "載入中‧‧‧"
       ],
       "Manage your folders": [
         "管理您的資料夾"
@@ -4826,9 +4819,6 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "沒有發現追蹤程式，但追蹤保護啟用時即無法載入某些圖像"
       ],
-      "non-Proton Mail": [
-        "非 Proton Mail"
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "上載的金鑰皆無法用於加密。為能夠傳送郵件至此電郵位址，請上載有效的金鑰或是停用「加密電郵」。"
       ],
@@ -4915,9 +4905,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "防止您的郵件地址外洩到郵件清單或垃圾郵件發送者手上，使用 ${ maskMyEmailButton }。"
-      ],
-      "Proton doesn't make money by abusing privacy.": [
-        "Proton 不會透過濫用隱私來賺錢。"
       ],
       "Recipient: ": [
         "收件人 : "
@@ -5023,9 +5010,6 @@
       ],
       "Sign in": [
         "登入"
-      ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin 是一項 Proton 服務，您的 Proton 帳戶包含 Hide My Email 功能。要開始隱藏您的電子信箱，請造訪 SimpleLogin 並建立您的第一個別名。"
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "簡單登入提供了一個簡單的方法，讓您可以建立使用者但不需要將您的真實電子郵件透露給不可信的第三方網站。"
@@ -5279,23 +5263,14 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL：${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ calendarAppName } to keep your agenda private.": [
-        "使用 ${ calendarAppName } 保護您的議程隱私。"
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用鍵盤快捷鍵來更快管理您的電郵。"
       ],
       "Using SimpleLogin is easy": [
         "使用 SimpleLogin 很簡單"
       ],
-      "Verified Proton message": [
-        "驗證 Proton 訊息"
-      ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
-      ],
-      "Visit our shop to get Proton merchandise.": [
-        "造訪我們的線上商店以取得 Proton 商品。"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "不好意思，說不好是我們搞錯了。可否請您確認一下，您想要標記這是一封正當的電郵？"
@@ -5350,9 +5325,6 @@
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "您可以將其添加為附件或是在內文中顯示。"
-      ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "您亦可將匯入的行事曆與現有的 Proton 行事曆合併。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
@@ -5423,14 +5395,20 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您編寫了「${ attachmentsFoundKeyword }」，但沒有加入對應的附件。無論如何寄出此封郵件？"
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "您的帳號有至少一張逾期帳單。您的存取已受限制。${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期帳單。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的帳號至少有一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 Proton 帳號。"
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "由於有多於一張逾期帳單，目前已凍結您的帳號並終止所有服務直至收到付款。 ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "由於出現多於一張逾期帳單，您的帳號將受限制。持續欠款將封鎖您的電郵和共享連結。 ${ payInvoiceLink }"
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "您的電郵位址毋需變更。 不過日後就得在 ${ link } 進行登入。"
@@ -5464,12 +5442,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
-      ],
-      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "您的 Proton 帳戶包含簡單登入。安裝瀏覽器外掛可實現一鍵開始。"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
       ],
       "Your recovery phrase": [
         "您的復原短語"
@@ -5561,7 +5533,7 @@
         "捨棄草稿"
       ],
       "Expand / contract composer": [
-        "展開 / 收合撰寫器"
+        "展開 / 收合撰寫工具"
       ],
       "Forward": [
         "轉寄"
@@ -5615,7 +5587,7 @@
         "標記為未讀"
       ],
       "Minimize / maximize composer": [
-        "最小化 / 最小化撰寫器"
+        "最小化 / 最小化撰寫工具"
       ],
       "Move down": [
         "往下移動"
@@ -5701,7 +5673,7 @@
         "基本導覽"
       ],
       "Composer shortcuts": [
-        "撰寫器快捷鍵"
+        "撰寫工具快捷鍵"
       ],
       "Folder shortcuts": [
         "資料夾捷徑"
@@ -5729,6 +5701,9 @@
       ],
       " and ${ l }": [
         " 且 ${ l }"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } 使用者名稱"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
@@ -5785,7 +5760,7 @@
         "附件"
       ],
       "Authenticator app": [
-        "驗證器APP"
+        "驗證 APP"
       ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
@@ -5922,8 +5897,8 @@
       "Hide password": [
         "隱藏密碼"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "您會如何形容描述新版 Proton 的使用經驗與心得？"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "衷心期盼新版本的 ${ BRAND_NAME }給您更多不同的體驗，請您跟我們分享，好嗎？"
       ],
       "I understand the risk": [
         "我已了解此可能的風險"
@@ -6059,9 +6034,6 @@
       ],
       "Postal code": [
         "郵遞區號"
-      ],
-      "Proton username": [
-        "Proton 使用者名稱"
       ],
       "Public keys": [
         "公開金鑰"
@@ -6326,20 +6298,11 @@
       "Manage your folders": [
         "管理您的資料夾"
       ],
-      "Manage your labels": [
-        "管理您的標籤"
-      ],
       "More": [
         "更多"
       ],
       "More about recovery": [
         "更多有關於復原部份"
-      ],
-      "Open in ${ calendarAppName }": [
-        "開啟在${ calendarAppName }"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "在 ${ calendarAppName } 中開啟已更新的事件"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "又或者，您可以刪除您的其中一個行事曆，並建立一個連結到使用中電郵位址的新行事曆。"
@@ -6379,9 +6342,6 @@
       ],
       "Terms": [
         "條款"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "此 ICS 檔案包含超過一個以上的事件。請下載後並在 ${ calendarAppName } 中匯入事件"
       ],
       "Trash": [
         "垃圾桶"
@@ -6491,9 +6451,6 @@
       "Fw:": [
         "轉寄:"
       ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "在 ${ date }，${ name } ${ address } 寫道："
-      ],
       "Re:": [
         "Re:"
       ],
@@ -6507,8 +6464,8 @@
       ]
     },
     "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by Proton": [
-        "此遞送採用 Proton 的 SimpleLogin 服務"
+      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
+        "此遞送採用 ${ BRAND_NAME }  SimpleLogin 服務"
       ]
     },
     "Message image": {
@@ -6727,9 +6684,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } 已建立"
-      ],
       "Block removed": [
         "封鎖已移除"
       ],
@@ -6747,11 +6701,6 @@
       ],
       "Senders blocked": [
         "寄件者已封鎖"
-      ]
-    },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "接下來，您將必須登入您的 Google 帳號，並同意 Proton 存取您的資料。"
       ]
     },
     "Oauth instructions video": {
@@ -6779,17 +6728,14 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "設置您的組織、連結您的網域名稱，並建立各個帳號以確保您的組織中所有成員均得到保護。"
       ],
-      "Discover all Proton services": [
-        "探索所有 Proton 服務"
+      "Discover all ${ BRAND_NAME } services": [
+        "探索所有 ${ BRAND_NAME } 服務"
       ],
       "Select a theme": [
         "選擇佈景主題"
       ],
       "Set up your organization": [
         "設定您的組織"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "請點擊左上方的應用程式選擇器以使用其它 Proton 服務，包括 VPN、行事曆和雲端硬碟。"
       ],
       "You can change this anytime in your settings.": [
         "您隨時都可以在設定中變更。"
@@ -7176,12 +7122,6 @@
       ]
     },
     "Signature verification warning": {
-      "PGP-encrypted message. Sender verification failed: ${ _verificationErrorsMessage }": [
-        "PGP 加密郵件。寄件人驗證失敗：${ _verificationErrorsMessage }"
-      ],
-      "PGP-signed message. Sender verification failed: ${ _verificationErrorsMessage2 }": [
-        "PGP 簽署郵件。寄件人驗證失敗：${ _verificationErrorsMessage2 }"
-      ],
       "Sender could not be verified: Message not signed": [
         "寄件人無法驗證：郵件未經簽署"
       ],
@@ -7219,8 +7159,8 @@
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
       ],
-      "Invite friends to Proton": [
-        "邀請好友使用 Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "揪親朋好友一起用 ${ BRAND_NAME }"
       ],
       "Message Content Search": [
         "郵件內文搜尋"
@@ -7480,6 +7420,11 @@
         "驗證成功"
       ]
     },
+    "Success notification": {
+      "${ label.Name } removed": [
+        "已移除 ${ label.Name }"
+      ]
+    },
     "Success notification when user send feedback": {
       "Feedback sent": [
         "意見反饋已送出"
@@ -7582,11 +7527,11 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } 鍵盤捷徑"
-      ],
       "${ emailsCount } members": [
         "${ emailsCount } 位成員"
+      ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "${ MAIL_APP_NAME }鍵盤快捷鍵"
       ],
       "${ unreads } unread messages": [
         "${ unreads } 封未讀郵件"
@@ -7711,6 +7656,12 @@
       "Delete ${ count } messages": [
         "刪除 ${ count } 封電郵"
       ],
+      "Delete ${ label.Name } folder": [
+        "刪除 ${ label.Name } 資料夾"
+      ],
+      "Delete ${ label.Name } label": [
+        "刪除 ${ label.Name } 標籤"
+      ],
       "Delete ${ Name }": [
         "刪除 ${ Name }"
       ],
@@ -7751,7 +7702,7 @@
         "電郵位址"
       ],
       "Email composer": [
-        "電郵撰寫器"
+        "電郵撰寫工具"
       ],
       "Email content": [
         "電郵內容"
@@ -7783,14 +7734,17 @@
       "Filter on...": [
         "篩選..."
       ],
+      "Folder options": [
+        "資料夾選項"
+      ],
       "Forward": [
         "轉寄"
       ],
       "Groups": [
         "群組"
       ],
-      "Hide your email with SimpleLogin by Proton": [
-        "隱藏您的電郵位址，首選 Proton 的 SimpleLogin"
+      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
+        "隱藏您的電郵位址，首選 ${ BRAND_NAME } SimpleLogin"
       ],
       "Human verification": [
         "真人身分驗證"
@@ -7810,6 +7764,9 @@
       "Label as": [
         "標籤為"
       ],
+      "Label options": [
+        "標籤選項"
+      ],
       "Link confirmation": [
         "外部連結確認"
       ],
@@ -7820,7 +7777,7 @@
         "載入遠端內容"
       ],
       "Mailbox density": [
-        "收件匣密度"
+        "信箱密集度"
       ],
       "Mailbox layout": [
         "收件匣佈局"
@@ -8088,7 +8045,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "「自動」表示傳送給此使用者時將使用撰寫器中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
+        "「自動」表示傳送給此使用者時將使用撰寫工具中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
       ],
       "Customize import to reduce the number of folders": [
         "自訂匯入以減少資料夾數量"
@@ -8175,6 +8132,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } 會合併所有相同名稱的資料夾。避免此情況發生，請於匯入前先行變更名稱。"
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
+      ],
       "Are you sure you want to discard your import?": [
         "您確定要捨棄您的匯入嗎？"
       ],
@@ -8198,12 +8161,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "即時文字客服加值功能僅適用於 ${ VPN_APP_NAME } 的付費方案。請改為提交支援需求。"
-      ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton 將會合併所有相同名稱的資料夾。為了避免這種狀況，請在匯入前變更名稱。"
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton 會從您最近的郵件開始，儘可能轉移最多的資料。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
@@ -8231,12 +8188,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "此動作無法復原。請在欄位輸入「${ boldDanger }」一詞以繼續。"
-      ],
-      "This feature requires a paid Proton account": [
-        "此功能僅限付費Proton 帳號使用"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "此匯入可能超出您的 Proton 帳號中目前可用的儲存空間。請考慮自訂您的匯入。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"

@@ -535,11 +535,11 @@
       ]
     },
     "Action title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Mit ${ BRAND_NAME }-Benutzern teilen"
+      ],
       "Share with anyone": [
         "Mit anderen teilen"
-      ],
-      "Share with Proton users": [
-        "Mit Proton-Nutzern teilen"
       ]
     },
     "Actions message": {
@@ -563,15 +563,6 @@
       "${ title } started at ${ formattedHour }": [
         "${ title } begann um ${ formattedHour }"
       ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } begann am ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } begann am ${ _formattedDate } um ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } begann am ${ _formattedDateWithTime }"
-      ],
       "${ title } started on ${ formattedDate }": [
         "${ title } begann am ${ formattedDate }"
       ],
@@ -580,6 +571,9 @@
       ],
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } begann am ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } begann am ${ formattedDateWithTime }"
       ],
       "${ title } started yesterday": [
         "${ title } begann gestern"
@@ -593,20 +587,14 @@
       "${ title } starts now": [
         "${ title } beginnt jetzt"
       ],
-      "${ title } starts on ${ _formattedDate2 }": [
-        "${ title } beginnt am ${ _formattedDate2 }"
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } beginnt am ${ formattedDate }"
       ],
-      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } beginnt am ${ _formattedDate2 } um ${ formattedHour }"
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } beginnt am ${ formattedDate } um ${ formattedHour }"
       ],
-      "${ title } starts on ${ _formattedDate3 }": [
-        "${ title } beginnt am ${ _formattedDate3 }"
-      ],
-      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } beginnt am ${ _formattedDate3 } um ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDateWithoutTime }": [
-        "${ title } beginnt am ${ _formattedDateWithoutTime }"
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } beginnt am ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } beginnt am ${ formattedDateWithTime }"
@@ -633,8 +621,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Proton-Anwendungen"
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME }-Anwendungen"
       ]
     },
     "Attached ics file error": {
@@ -820,12 +808,12 @@
       "Unable to create more calendar links": [
         "Es können keine weiteren Kalenderlinks erstellt werden"
       ],
-      "Unable to share this calendar with more Proton users": [
-        "Dieser Kalender kann nicht für weitere Proton-Benutzer freigegeben werden"
+      "Unable to share this calendar with more ${ BRAND_NAME } users": [
+        "Dieser Kalender kann nicht für weitere ${ BRAND_NAME }-Benutzer freigegeben werden."
       ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
-        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitglied für diesen Kalender erreicht.\nUm den Kalender mit weiteren Proton-Konten zu teilen, entferne bitte einige Mitglieder.",
-        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitgliedern für diesen Kalender erreicht.\nUm den Kalender mit weiteren Proton-Konten zu teilen, entferne bitte einige Mitglieder."
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitglied für diesen Kalender erreicht.\nUm den Kalender mit weiteren ${ BRAND_NAME }-Konten zu teilen, entferne bitte einige Mitglieder.",
+        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitgliedern für diesen Kalender erreicht.\nUm den Kalender mit weiteren ${ BRAND_NAME }-Konten zu teilen, entferne bitte einige Mitglieder."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Du hast die maximale Anzahl von ${ MAX_LINKS_PER_CALENDAR } Link für diesen Kalender erreicht.\nUm einen neuen Link zu diesem Kalender zu erstellen, lösche bitte einen bestehenden.",
@@ -897,8 +885,8 @@
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Auf den Kalenderlink kann vorübergehend nicht zugegriffen werden. Bitte überprüfe, ob der Link des Kalenderanbieters noch gültig ist."
       ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen — Proton Calendar versucht, den Kalender in einigen Stunden zu aktualisieren."
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen - ${ CALENDAR_APP_NAME } wird versuchen, den Kalender in ein paar Stunden zu aktualisieren."
       ]
     },
     "Calendar view": {
@@ -2060,21 +2048,21 @@
       ]
     },
     "Error": {
-      "${ _list } doesn't have an email address": [
-        "${ _list } enthält keine E-Mail-Adresse",
-        "Einige Kontakte enthalten keine E-Mail-Adresse: ${ _list }"
-      ],
-      "${ _list2 } has no contacts": [
-        "${ _list2 } enthält keine Kontakte",
-        "Einige Gruppen enthalten keine Kontakte: ${ _list2 }"
-      ],
       "${ list } doesn't have a valid email address": [
         "${ list } enthält keine gültige E-Mail-Adresse",
         "Einige Kontakte enthalten keine gültige E-Mail-Adresse: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } hat keine E-Mail-Adresse",
+        "Einige Kontakte haben keine E-Mail-Adresse: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } enthält ungültige E-Mail-Adressen",
         "Einige Gruppen enthalten ungültige E-Mail-Adressen: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } enthält keine Kontakte",
+        "Einige Gruppen enthalten keine Kontakte: ${ list }"
       ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
@@ -2195,9 +2183,9 @@
       "Label name cannot be empty.": [
         "Name der Kategorie kann nicht leer sein."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen.",
-        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen."
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Mindestens ${ calendarToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen"
       ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
@@ -2217,17 +2205,14 @@
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
-      "No public key for Proton address": [
-        "Kein öffentlicher Schlüssel für Proton-Adresse"
-      ],
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Der für den Benutzer abgerufene WKD-Schlüssel ist für den Versand ungültig"
       ],
-      "Not a Proton account": [
-        "Kein Proton-Konto"
+      "Not a ${ BRAND_NAME } account": [
+        "Kein ${ BRAND_NAME }-Konto"
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
@@ -2257,7 +2242,7 @@
         "Bitte versuchen Sie, sich erneut zu authentifizieren und stellen Sie sicher, dass die Berechtigungen korrekt festgelegt wurden."
       ],
       "Primary address key is not decrypted": [
-        "Der Schlüssel der primären Adresse ist nicht entschlüsselt"
+        "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
       ],
       "Primary address key is not decrypted.": [
         "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
@@ -2564,8 +2549,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Etwas ist schiefgelaufen. Bitte aktualisiere die Seite oder versuche es später erneut."
       ],
-      "There was a problem connecting to Proton.": [
-        "Es gab ein Problem bei der Verbindung zu Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Es gab ein Problem bei der Verbindung mit ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "Du kannst auch die ${ refresh } oder es später noch einmal versuchen."
@@ -2842,8 +2827,8 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Importierte Einladungen werden in ${ CALENDAR_APP_NAME } als einzelne Termine ohne Organisator- und Teilnehmerdetails angezeigt. Um Aktualisierungen der Termine zu erhalten und die Teilnehmer anzuzeigen, bitte den Organisator, dich über deine Proton-E-Mail-Adresse einzuladen."
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Importierte Einladungen werden in ${ CALENDAR_APP_NAME } als einzelne Termine ohne Organisator- und Teilnehmerdetails angezeigt. Um Aktualisierungen der Termine zu erhalten und die Teilnehmer anzuzeigen, bitte den Organisator, dich über deine ${ BRAND_NAME }-E-Mail-Adresse einzuladen."
       ],
       "This file contains an event invitation:": [
         "Diese Datei enthält eine Termineinladung:",
@@ -2904,6 +2889,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "Der „Zugriff auf weniger sichere Apps“ ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } kann keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass der Gmail IMAP-Zugang aktiviert ist."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } kann keine Verbindung zu deinem Konto herstellen. Bitte vergewissere dich, dass der IMAP-Zugang in deinem Gmail-Konto aktiviert ist."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } kann keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kann keine Verbindung zu deinem externen Konto herstellen. Bitte stelle sicher, dass die Adresse des Mailservers und die Portnummer korrekt sind."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } kann keine Verbindung zu deinem externen Konto herstellen. Bitte stelle sicher, dass:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kann keine Verbindung zu deinem Gmail-Konto herstellen. Bitte stelle sicher, dass die Adresse des Mailservers und die Portnummer korrekt sind."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kann keine Verbindung zu deinem Yahoo-Konto herstellen. Bitte stelle sicher, dass die Adresse des Mailservers und die Portnummer korrekt sind."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } kann keine Verbindung zu deinem Yahoo-Konto herstellen. Bitte stelle sicher, dass:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
       ],
@@ -2930,30 +2939,6 @@
       ],
       "Invalid IMAP port": [
         "Ungültiger IMAP-Port"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton konnte keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass der IMAP-Zugang von Google Mail aktiviert ist."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton konnte keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass in deinem Google Mail-Konto der IMAP-Zugang aktiviert ist."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton konnte keine Verbindung zu deinem Konto herstellen. Bitte stelle sicher, dass:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton konnte keine Verbindung zu deinem externen Konto herstellen. Bitte stelle sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton konnte keine Verbindung zu deinem externen Konto herstellen. Bitte stelle sicher, dass:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton konnte keine Verbindung zu deinem Google Mail-Konto herstellen. Bitte stelle sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton konnte keine Verbindung zu deinem Yahoo Konto herstellen. Bitte stelle sicher, dass die Adresse und Portnummer des Mailservers korrekt sind."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton konnte keine Verbindung zu deinem Yahoo Konto herstellen. Bitte stelle sicher, dass:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Zu viele neue Anfragen. Bitte versuchen Sie es in wenigen Augenblicken noch einmal."
@@ -3007,17 +2992,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Klicke auf ${ boldManage }, um das Optionsmenü zu erweitern."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "Abhängig von deinem E-Mail-Anbieter musst du möglicherweise zuerst ${ knowledgeBaseLink } erzeugen, bevor du die E-Mails in Proton importieren kannst."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Abhängig von deinem E-Mail-Dienstanbieter musst du möglicherweise zuerst ein ${ knowledgeBaseLink } erstellen, bevor du einen Import in ${ BRAND_NAME } starten kannst."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Erweitere das Dropdown-Menü durch Klicken auf die 3 Punkte (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Erzeuge ein ${ boldAppPassword } und verwende es anstelle des regulären Passworts, wenn du von Proton dazu aufgefordert wirst."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Erstelle ein ${ boldAppPassword } und verwende es anstelle deines regulären Passworts, wenn du von ${ BRAND_NAME } dazu aufgefordert wirst."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Erzeuge das ${ boldAppPassword } und verwende es anstelle des regulären Passworts, wenn du von Proton dazu aufgefordert wirst."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Erstelle ein ${ boldAppPassword } und verwende es anstelle deines regulären Passworts, wenn du von ${ BRAND_NAME } dazu aufgefordert wirst."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Gehe in deinem ${ yahooMailLink } Profil zu den ${ boldAccountInfo }."
@@ -3043,29 +3028,29 @@
       "Select ${ boldExportCSV }.": [
         "Wähle ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Um einen Kalender in Proton zu importieren, benötigst du die ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Outlook herunter:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Um einen Kalender in ${ BRAND_NAME } zu importieren, brauchst du die ${ knowledgeBaseLink }. Lade sie von Outlook in drei einfachen Schritten herunter:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Um einen Kalender in Proton zu importieren, benötigst du die ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Yahoo herunter:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Um einen Kalender in ${ BRAND_NAME } zu importieren, brauchst du die ${ knowledgeBaseLink }. Lade sie von Yahoo in drei einfachen Schritten herunter:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Um einen Kalender in Proton zu importieren, benötigst du die ${ knowledgeBaseLink }. Lade diese herunter bevor du den Import-Vorgang beginnst."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Um einen Kalender in ${ BRAND_NAME } zu importieren, brauchst du die ${ knowledgeBaseLink }. Lade sie herunter, bevor du mit dem Import beginnst."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Um Kontakte in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Outlook herunter:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Um Kontakte in ${ BRAND_NAME } zu importieren, brauchst du eine ${ knowledgeBaseLink }. Lade sie von Outlook in drei einfachen Schritten herunter:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Um Kontakte in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese in 3 einfachen Schritten von Yahoo herunter:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Um Kontakte in ${ BRAND_NAME } zu importieren, brauchst du eine ${ knowledgeBaseLink }. Lade sie von Yahoo in drei einfachen Schritten herunter:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Um einen Kalender in Proton zu importieren, benötigst du eine ${ knowledgeBaseLink }. Lade diese herunter bevor du den Import-Vorgang beginnst."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Um Kontakte in ${ BRAND_NAME } zu importieren, brauchst du eine ${ knowledgeBaseLink }. Lade sie herunter, bevor du mit dem Import beginnst."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Outlook. Gehe dazu folgendermaßen vor:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Um E-Mails in ${ BRAND_NAME } zu importieren, brauchst du ein ${ appPasswordLink } von Outlook. Gehe dazu wie folgt vor:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Um E-Mails in Proton zu importieren, benötigst du ein ${ appPasswordLink } von Yahoo. Gehe dazu folgendermaßen vor:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Um E-Mails in ${ BRAND_NAME } zu importieren, brauchst du ein ${ appPasswordLink } von Yahoo. Gehe dazu wie folgt vor:"
       ]
     },
     "Import instructions emphasis": {
@@ -3307,8 +3292,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Indem du die vollständigen Termindetails dieses Kalenders freigibst, erklärst du dich damit einverstanden, Proton Zugriff auf diese verschlüsselten Informationen des Kalenders zu gewähren."
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Indem du die vollständigen Termindetails dieses Kalenders freigibst, erklärst du dich damit einverstanden, ${ BRAND_NAME } Zugriff auf diese verschlüsselten Informationen des Kalenders zu gewähren."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
@@ -3769,8 +3754,8 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Du kannst zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Du kannst importierte Kalender auch mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kannst den Fortschritt hier ${ importProgressLink } überprüfen."
@@ -3817,11 +3802,20 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Du bist dabei, alle Termine in dieser Serie zu aktualisieren. Entfernte Teilnehmer werden darüber informiert."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wurde eingeschränkt. ${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. E-Mails werden nicht mehr an deinen Posteingang zugestellt. Deine Drive-Freigabelinks sind nicht mehr aktiv und du kannst keine neuen Dateien hochladen. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt und alle Dienste sind nun bis zur Zahlung gesperrt. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt. Bei anhaltender Nichtbezahlung werden deine E-Mails und Freigabelinks gesperrt. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Deine E-Mail-Adresse ist deaktiviert. Eine Absage-E-Mail kann nicht an die Teilnehmer des Termins gesendet werden. Möchtest du trotzdem alle Termine dieser Serie löschen?"
@@ -3829,8 +3823,8 @@
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Deine E-Mail-Adresse ist deaktiviert. Eine E-Mail zur Absage des Termins kann daher nicht an die Teilnehmer gesendet werden. Möchtest du diesen Termin dennoch löschen?"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Deine Daten von ${ importedEmailAddressStrong } können nun in dein Proton-Konto übertragen werden."
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "Deine E-Mail-Adresse wird sich nicht ändern. Aber bald wirst du dich unter ${ link } anmelden müssen."
@@ -3849,9 +3843,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Dein Proton-Konto ist derzeit gesperrt. Um dein Konto weiterhin nutzen zu können, begleiche bitte alle überfälligen Rechnungen."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Deine Systemzeitzone scheint sich auf ${ timezone } geändert zu haben. Möchtest du deine Zeitzoneneinstellung aktualisieren?"
@@ -3904,6 +3895,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME }-Benutzername"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
       ],
@@ -4048,8 +4042,8 @@
       "Hide password": [
         "Passwort ausblenden"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Wie würdest du deine Erfahrungen mit dem neuen Proton beschreiben?"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Wie würdest du deine Erfahrungen mit dem neuen ${ BRAND_NAME } beschreiben?"
       ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
@@ -4156,9 +4150,6 @@
       ],
       "Postal code": [
         "Postleitzahl"
-      ],
-      "Proton username": [
-        "Proton-Benutzername"
       ],
       "Public keys": [
         "Öffentliche Schlüssel"
@@ -4721,8 +4712,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Als Nächstes musst du dich bei deinem Google-Konto anmelden und Proton Zugriff auf deine Daten gewähren."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Als Nächstes musst du dich bei deinem Google-Konto anmelden und ${ BRAND_NAME } Zugriff auf deine Daten gewähren."
       ]
     },
     "Oauth instructions video": {
@@ -4750,8 +4741,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfiguriere deine Organisation, verknüpfe deinen Domainnamen und erstelle Konten, um sicherzustellen, dass alle Mitglieder deiner Organisation geschützt sind."
       ],
-      "Discover all Proton services": [
-        "Alle Proton-Dienste kennenlernen"
+      "Discover all ${ BRAND_NAME } services": [
+        "Entdecke alle ${ BRAND_NAME }-Dienste"
       ],
       "Select a theme": [
         "Farbschema auswählen"
@@ -4759,8 +4750,8 @@
       "Set up your organization": [
         "Organisation einrichten"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Nutze die App-Auswahl oben links, um auf andere Proton-Dienste wie VPN, Calendar und Drive zuzugreifen."
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "Verwende die App-Auswahl oben links, um auf andere ${ BRAND_NAME }-Dienste zuzugreifen, darunter VPN, Calender und Drive."
       ],
       "You can change this anytime in your settings.": [
         "Dies kann jederzeit in den Einstellungen geändert werden."
@@ -5009,8 +5000,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-Proton users, share your calendar with a link": [
-        "Teile deinen Kalender mit einem Link, um Nicht-Proton-Benutzer einzuladen"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "Teile deinen Kalender über einen Link, um Nicht-${ BRAND_NAME }-Benutzer einzuladen."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5020,8 +5011,8 @@
       ]
     },
     "Share calendar modal description": {
-      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Füge die Proton-Konten hinzu, mit denen du ${ calendarName } teilen möchtest. Wir werden ihnen eine Einladung schicken."
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Füge die ${ BRAND_NAME }-Konten hinzu, mit denen du ${ calendarName } teilen möchtest. Wir senden ihnen eine Einladung."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -5030,8 +5021,8 @@
       ]
     },
     "Share calendar modal title": {
-      "Share with Proton users": [
-        "Mit Proton-Nutzern teilen"
+      "Share with ${ BRAND_NAME } users": [
+        "Mit ${ BRAND_NAME }-Benutzern teilen"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5249,11 +5240,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Unser eingestelltes Visionary-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
       ],
-      "Save more with 1 year of Proton Unlimited": [
-        "Spare noch mehr mit einem Jahr Proton Unlimited"
+      "Save more with 1 year of ${ planName }": [
+        "Spare mehr mit einem Jahr ${ planName }"
       ],
-      "Upgrade and save more with Proton Unlimited": [
-        "Führe ein Upgrade durch und spare noch mehr mit Proton Unlimited"
+      "Upgrade and save more with ${ planName }": [
+        "Upgrade durchführen und mehr sparen mit ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -5301,8 +5292,8 @@
       "Get up to ${ credits } in credits.": [
         "Erhalte bis zu ${ credits } als Guthaben."
       ],
-      "Invite friends to Proton": [
-        "Lade Freunde zu Proton ein"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Lade Freunde zu ${ BRAND_NAME } ein"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Jetzt werden Einladungen in deinem Kalender als ausstehende Termine angezeigt. Öffne einfach einen Termin, um zu antworten. ${ goToSettingsLink }"
@@ -6048,6 +6039,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } fasst alle Ordner mit demselben Namen zusammen. Um dies zu vermeiden, ändere die Namen vor dem Import."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
+      ],
       "Are you sure you want to discard your import?": [
         "Möchtest du deinen Import wirklich verwerfen?"
       ],
@@ -6074,12 +6071,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Der Live-Chat ist eine Premium-Funktion, die nur für Kunden mit kostenpflichtigen ${ VPN_APP_NAME }-Abonnements verfügbar ist. Bitte öffne stattdessen ein Ticket."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton wird alle Ordner mit dem gleichen Namen zusammenführen. Um dies zu vermeiden, ändere vor dem Import deren Namen."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton wird so viele Daten wie möglich übertragen, beginnend mit Ihren neuesten Nachrichten."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
       ],
@@ -6104,11 +6095,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Diese Aktion kann NICHT widerrufen werden. Bitte gib das Wort ${ boldDanger } in das Feld ein, um fortzufahren."
       ],
-      "This feature requires a paid Proton account": [
-        "Diese Funktion erfordert ein kostenpflichtiges Proton-Konto"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Diese Funktion erfordert ein kostenpflichtiges ${ BRAND_NAME }-Konto."
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Dieser Import kann die derzeit in Ihrem Proton-Konto verfügbare Speicherkapazität überschreiten. Bitte prüfen Sie, ob Sie den Import anpassen können."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Dieser Import kann die derzeit verfügbare Speicherkapazität deines ${ BRAND_NAME }-Kontos überschreiten. Bitte ziehe in Erwägung, den Import anzupassen."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."

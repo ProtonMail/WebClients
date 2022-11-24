@@ -611,7 +611,7 @@
         "Faturayı görüntüle"
       ],
       "Your 500 MB bonus": [
-        "500 MB ödülünüz"
+        "500 MB hediyeniz"
       ],
       "Zoom in": [
         "Yakınlaştır"
@@ -643,8 +643,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Proton uygulamaları"
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } uygulamaları"
       ]
     },
     "Beta access description": {
@@ -1811,9 +1811,9 @@
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
-        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin",
+        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin"
       ],
       "Missing key packet": [
         "Anahtar paketi eksik"
@@ -2045,8 +2045,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
-      "There was a problem connecting to Proton.": [
-        "Proton bağlantısı kurulurken bir sorun çıktı."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } bağlantısı kurulurken bir sorun çıktı."
       ],
       "You may also ${ refresh } or try again later.": [
         "Ayrıca sayfayı ${ refresh }yebilir ya da bir süre sonra yeniden deneyebilirsiniz."
@@ -2247,6 +2247,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "Google hesabınızın güvenlik ayarlarında \"Daha az güvenli uygulama erişimi\" açık."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen Gmail IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen Gmail hesabınızda IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, dış hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME }, dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Dış hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
       ],
@@ -2273,30 +2297,6 @@
       ],
       "Invalid IMAP port": [
         "IMAP bağlantı noktası geçersiz"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton hesabınızla bağlantı kuramadı. Lütfen Gmail IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton hesabınızla bağlantı kuramadı. Lütfen Gmail hesabınızda IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton dış hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton, Yahoo hesabınıza bağlanamıyor. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
@@ -2350,17 +2350,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Seçenekler menüsü açmak için ${ boldManage } üzerine tıklayın."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "E-posta hizmeti sağlayıcınıza bağlı olarak, Proton içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "E-posta hizmeti sağlayıcınıza bağlı olarak, ${ BRAND_NAME } içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3 nokta (...) üzerine tıklayarak menüyü açın."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Bir ${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Bir ${ boldAppPassword } oluşturun ve ${ BRAND_NAME } tarafından sorulduğunda normal parolanız yerine bunu yazın."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword } oluşturun ve ${ BRAND_NAME } tarafından sorulduğunda normal parolanız yerine bunu yazın."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } üzerindeki profilinizin altından ${ boldAccountInfo } bölümüne gidin."
@@ -2386,29 +2386,29 @@
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } seçin."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } işlemini yapmalısınız. 3 kolay adımda Outlook üzerinden indirin:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } işlemini yapmalısınız. 3 kolay adımda Yahoo üzerinden indirin:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "E-postaları Proton içine aktarmak için şu adımları izleyerek Outlook üzerinden ${ appPasswordLink } almalısınız:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "E-postaları ${ BRAND_NAME } içine aktarmak için şu adımları izleyerek Outlook üzerinden ${ appPasswordLink } almalısınız:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "E-postaları Proton içine aktarmak için şu adımları izleyerek Yahoo üzerinden ${ appPasswordLink } almalısınız:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "E-postaları ${ BRAND_NAME } içine aktarmak için şu adımları izleyerek Yahoo üzerinden ${ appPasswordLink } almalısınız:"
       ]
     },
     "Import instructions emphasis": {
@@ -2681,8 +2681,8 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Seçilmiş ögeleri çöp kutusundan kalıcı olarak silmek istediğinizden emin misiniz?"
       ],
-      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "${ appName } uçtan uca şifrelenmiş olduğundan, dosyalarınıza erişemeyiz ve şifrelerini çözemeyiz. Şifreyi yeniledikten sonra Drive kilidini açmak için şunlardan birine sahip olmanız gerekir:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
@@ -2723,8 +2723,8 @@
       "Conflict": [
         "Çakışma"
       ],
-      "Continue using ${ appName } and unlock drive later": [
-        "${ appName } kullanmayı sürdür ve sürücünün kilidini daha sonra aç"
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "${ DRIVE_APP_NAME } kullanmayı sürdür ve sürücünün kilidini daha sonra aç"
       ],
       "Continue with ${ planName }": [
         "${ planName } aboneliğini kullanmayı sürdür"
@@ -2885,8 +2885,8 @@
       "Free up some space or contact your administrator.": [
         "Biraz boş yer açın veya yöneticinizle görüşün."
       ],
-      "Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.": [
-        "Proton Drive uygulamasını tanıyın ve 500 MB depolama alanı ödülünüzü kazanın! Bugün harekete geçin."
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "${ DRIVE_APP_NAME } uygulamasını tanıyın ve 500 MB depolama alanı hediyenizi kazanın! Bugün harekete geçin."
       ],
       "Go ahead, upload a file": [
         "Kullanmaya başlayın ve bir dosya yükleyin"
@@ -2915,8 +2915,8 @@
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "Parolanızı bilmiyorsanız, hesabınıza ve verilerinize erişimi kaybetmeyeceğinizden emin olmak için bir kurtarma ifadesi ayarlayın."
       ],
-      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "Bunlardan birine sahipseniz, engellemeyi kaldırmak için Proton hesabı ayarıyla ilerleyin."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
@@ -3006,6 +3006,9 @@
       "Loading preview": [
         "Ön izleme yükleniyor"
       ],
+      "Loading...": [
+        "Yükleniyor..."
+      ],
       "Makes your account safer": [
         "Hesabınızı daha güvenli kılar"
       ],
@@ -3051,8 +3054,8 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
-      "No synced devices": [
-        "Eşitlenen bir aygıt yok"
+      "No synced computers": [
+        "Eşitlenmiş bir bilgisayar yok"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Yüklenen anahtarların hiçbiri şifreleme için geçerli değil. Bu adrese ileti gönderebilmek için lütfen geçerli bir anahtar yükleyin ya da \"E-postalar şifrelensin\" seçeneğini devre dışı bırakın."
@@ -3063,8 +3066,8 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Tüm dosyalar aktarılmadı. Dosyaları yeniden yüklemeyi veya indirmeyi deneyin."
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        "Not: Veriler, ${ appName } kurulu aygıtlarda yerel olarak bulunmayı sürdürebilir."
+      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Not: Veriler, ${ DRIVE_APP_NAME } kurulu aygıtlarda yerel olarak bulunmayı sürdürebilir."
       ],
       "of": [
         "/"
@@ -3242,9 +3245,6 @@
       "Swiss privacy": [
         "İsviçre kişisel gizliliği"
       ],
-      "Synced devices": [
-        "Eşitlenmiş aygıtlar"
-      ],
       "Tap the + button to upload a file or folder": [
         "Bir dosya ya da klasör yüklemek için + düğmesine dokunun"
       ],
@@ -3263,8 +3263,8 @@
       "There are no files yet": [
         "Henüz bir dosya yok"
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "Bu dosyalar uçtan uca şifreleme kullanılarak paylaşıldı. Bu dosyaları ve diğer tüm belgelerinizi, fotoğraflarınızı ve dosyalarınızı kişisel gizliliğinizi koruyarak saklamak için kendi Proton Drive depolama alanınızı kullanın. Kolay kullanılır ve ücretsizdir."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
+        "Bu dosyalar uçtan uca şifreleme kullanılarak paylaşıldı. Bu dosyaları ve diğer tüm belgelerinizi, fotoğraflarınızı ve dosyalarınızı kişisel gizliliğinizi koruyarak saklamak için kendi ${ DRIVE_APP_NAME } depolama alanınızı kullanın. Kolay kullanılır ve ücretsizdir."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -3303,8 +3303,8 @@
       "This will overwrite the existing folder": [
         "Bu işlem var olan klasörün üzerine yazacak"
       ],
-      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Bu işlem Proton Drive ile eşitlenmiş ${ deviceName } aygıtının eşitlemesini kaldıracak. Aygıt üzerindeki yerel dosyalar bu işlemden etkilenmeyecek."
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Bu işlem ${ DRIVE_APP_NAME } ile eşitlenmiş ${ deviceName } aygıtının eşitlemesini kaldıracak. Aygıt üzerindeki yerel dosyalar bu işlemden etkilenmeyecek."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Gerçekten kişisel gizliliği koruyan aramayı etkinleştirmek için dosyalarınızın yerel dizinini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
@@ -3366,8 +3366,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Yüzlerce dosyanın aynı anda yüklenmesi başarımı etkileyebilir."
       ],
-      "Use Drive for Desktop to sync folders on your computer with Proton Drive. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Bilgisayarınızdaki klasörleri Proton Drive ile eşitlemek için Masaüstü için Drive uygulamasını kullanın. klasörleriniz burada görünür ve her yerden erişilebilir. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Bilgisayarınızdaki klasörleri ${ DRIVE_APP_NAME } ile eşitlemek için Masaüstü için Drive uygulamasını kullanın. klasörleriniz burada görünür ve her yerden erişilebilir. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bu formu kullanarak bize uygunsuz, yasadışı\nya da başka türlü kötü amaçla paylaşılmış dosyaları bildirin. Şunu şikayet ediyorsunuz:"
@@ -3423,8 +3423,8 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Ayrıca içe aktarılan takvimleri var olan Proton takvimleriyle birleştirebilirsiniz."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Ayrıca içe aktarılan takvimleri var olan ${ BRAND_NAME } takvimleriyle birleştirebilirsiniz."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "İlerlemeye bakabilirsiniz ${ importProgressLink }."
@@ -3436,7 +3436,7 @@
         "Bu işlemi geri alamazsınız."
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "${ expiresInDays } gün içinde 500 MB hoş geldiniz ödülünüzü alın ve "
+        "${ expiresInDays } gün içinde 500 MB hoş geldiniz hediyenizi alın ve "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
@@ -3447,17 +3447,26 @@
       "You will lose all unsaved changes.": [
         "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz kısıtlandı. ${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
+      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Hizmet çalışanları kullanılamadığından kullandığınız web tarayıcı büyük dosyaların indirilmesini desteklemiyor. Büyük dosyaları indirmek web tarayıcının donmasına ya da yanıt vermemesine neden olabilir. Lütfen güncel ${ recommendedBrowser } sürümünü kullanarak yeniden deneyin."
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Verileriniz ${ importedEmailAddressStrong } üzerinden Proton hesabınız içine aktarılmaya hazır."
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "E-posta adresiniz değişmeyecek. Ancak yakında ${ link } adresinden oturum açmanız gerekecek."
@@ -3485,9 +3494,6 @@
       ],
       "Your previous recovery phrase": [
         "Önceki kurtarma ifadeniz"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
       ]
     },
     "Info on errors": {
@@ -3552,6 +3558,9 @@
     "Label": {
       "# of accesses": [
         "erişilme sayısı"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } kullanıcı adı"
       ],
       "(Expired)": [
         "(Süresi geçmiş)"
@@ -3640,11 +3649,11 @@
       "Country": [
         "Ülke"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesabınızı açın"
+      ],
       "Create a share link": [
         "Bir paylaşım bağlantısı oluşturun"
-      ],
-      "Create Proton account": [
-        "Proton hesabı oluşturun"
       ],
       "Created": [
         "Oluşturulma"
@@ -3737,8 +3746,8 @@
       "Hide password": [
         "Parolayı gizle"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Yeni Proton ile yaşadığınız deneyimi nasıl değerlendirirsiniz?"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Yeni ${ BRAND_NAME } ile yaşadığınız deneyimi nasıl değerlendirirsiniz?"
       ],
       "I understand the risk": [
         "Riski anladım"
@@ -3850,9 +3859,6 @@
       ],
       "Protect with password": [
         "Parola ile korunsun"
-      ],
-      "Proton username": [
-        "Proton kullanıcı adı"
       ],
       "Public keys": [
         "Herkese açık anahtarlar"
@@ -4339,8 +4345,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Ardından, Google hesabınızda oturum açmanız ve verilerinize Proton tarafından erişilmesine izin vermeniz gerekecek."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ardından, Google hesabınızda oturum açmanız ve verilerinize ${ BRAND_NAME } tarafından erişilmesine izin vermeniz gerekecek."
       ]
     },
     "Oauth instructions video": {
@@ -4352,16 +4358,16 @@
       "Next": [
         "Sonraki"
       ],
-      "Start using ${ appName }": [
-        "${ appName } kullanmaya başlayın"
+      "Start using ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } kullanmaya başlayın"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "Bir paylaşım bağlantısı ekleyin"
       ],
-      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
-        "Proton Drive kullanmaya başladığınızda ücretsiz depolama alanınızı 1GB yapacağız!"
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "${ DRIVE_APP_NAME } kullanmaya başladığınızda ücretsiz depolama alanınızı 1GB yapacağız!"
       ],
       "Set a recovery method": [
         "Bir kurtarma yöntemi ayarlayın"
@@ -4381,8 +4387,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar ekleyin."
       ],
-      "Discover all Proton services": [
-        "Tüm Proton hizmetlerini keşfedin"
+      "Discover all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetlerini keşfedin"
       ],
       "Select a theme": [
         "Bir tema seçin"
@@ -4390,16 +4396,16 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "VPN, Calendar ve Drive gibi diğer Proton hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "VPN, Calendar ve Drive gibi diğer ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
       ],
       "You can change this anytime in your settings.": [
         "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ appName }": [
-        "${ appName } hoş geldiniz"
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } uygulamasına hoş geldiniz"
       ],
       "Your welcome bonus": [
         "Karşılama hediyeniz"
@@ -4581,8 +4587,8 @@
       "Get up to ${ credits } in credits.": [
         "${ credits } tutarına kadar kredi kazanın."
       ],
-      "Invite friends to Proton": [
-        "Arkadaşlarınıza Proton daveti gönderin"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Arkadaşlarınızı ${ BRAND_NAME } üzerine çağırın"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
@@ -4799,6 +4805,9 @@
       ],
       "Completed": [
         "Tamamlandı"
+      ],
+      "Computers": [
+        "Bilgisayarlar"
       ],
       "Contact details": [
         "Kişi bilgileri"
@@ -5127,9 +5136,6 @@
       "Stop transfers?": [
         "Aktarımlar durdurulsun mu?"
       ],
-      "Synced devices": [
-        "Eşitlenmiş aygıtlar"
-      ],
       "The link either does not exist or has expired": [
         "Bağlantı bulunamadı ya da geçerlilik süresi geçmiş"
       ],
@@ -5197,7 +5203,7 @@
         "Dosyalarınız var"
       ],
       "Your 500 MB bonus": [
-        "500 MB ödülünüz"
+        "500 MB hediyeniz"
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
@@ -5303,6 +5309,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
+      ],
       "Are you sure you want to discard your import?": [
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
@@ -5329,12 +5341,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Canlı sohbet yalnızca ücretli ${ VPN_APP_NAME } tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
@@ -5359,11 +5365,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Bu işlem geri alınamaz. İlerlemek için lütfen kutuya ${ boldDanger } sözcüğünü yazın."
       ],
-      "This feature requires a paid Proton account": [
-        "Bu özellik ücretli bir Proton hesabında kullanılabilir"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Bu özellik ücretli bir ${ BRAND_NAME } hesabında kullanılabilir"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Bu içe aktarma işlemi, Proton hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrimiçi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrimiçi olduğumuzda inceleyip size geri döneceğiz."
