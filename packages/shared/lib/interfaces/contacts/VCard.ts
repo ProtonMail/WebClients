@@ -85,7 +85,9 @@ export interface VCardContact {
     url?: VCardProperty<string>[];
     categories?: VCardProperty<string | string[]>[];
     key?: VCardProperty<string>[];
-    'x-pm-encrypt'?: VCardProperty<boolean>[];
+    // at most one of 'x-pm-encrypt' and 'x-pm-encrypt-untrusted' should be present
+    'x-pm-encrypt'?: VCardProperty<boolean>[]; // encryption flag that applies if 'key' field (i.e. pinned keys) is populated
+    'x-pm-encrypt-untrusted'?: VCardProperty<boolean>[]; // encryption flag that applies to (unpinned) keys from e.g. WKD or other untrusted servers
     'x-pm-sign'?: VCardProperty<boolean>[];
     'x-pm-scheme'?: VCardProperty<PGP_SCHEMES>[];
     'x-pm-mimetype'?: VCardProperty<MimeTypeVcard>[];
