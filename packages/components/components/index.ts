@@ -19,7 +19,6 @@ export * from './contextMenu';
 export * from './dragMoveContainer';
 export * from './dropdown';
 export * from './dropzone';
-export * from './easySwitch';
 export * from './editableText';
 export * from './editor';
 export * from './ellipsis';
