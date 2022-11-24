@@ -4,7 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
     Checkbox,
     Icon,
     InputTwo,
@@ -26,11 +25,11 @@ import {
     useGetAddresses,
     useLoading,
     useNotifications,
-    useOnline,
     useOrganization,
     useOrganizationKey,
 } from '@proton/components';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { DOMAIN_STATE } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
@@ -54,7 +53,6 @@ enum STEPS {
     IMPORT_USERS,
     ORGANIZATION_VALIDATION_ERROR,
     DONE_WITH_ERRORS,
-    OFFLINE,
 }
 
 const search = (text: string, regex: RegExp | undefined) => {
@@ -125,17 +123,6 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
     useBeforeUnload(step === STEPS.IMPORT_USERS);
 
     /**
-     * Abort import when not online
-     */
-    const online = useOnline();
-    useEffect(() => {
-        if (!online && importing) {
-            abortControllerRef.current?.abort();
-            setStep(STEPS.OFFLINE);
-        }
-    }, [online, importing]);
-
-    /**
      * Setup abort controller used when importing users
      */
     useEffect(() => {
@@ -189,10 +176,6 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
     };
 
     const importUsers = async () => {
-        if (!online) {
-            return;
-        }
-
         const error = validateAddUser(organization, organizationKey, verifiedDomains);
         if (error) {
             return createNotification({ type: 'error', text: error });
@@ -222,8 +205,17 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
         const localInvalidAddresses: string[] = [];
         const localUnavailableAddresses: string[] = [];
 
+        const { signal } = abortControllerRef.current;
+
+        const syncState = () => {
+            setSuccessfullyCreatedUsers(localSuccessfullyCreatedUsers);
+
+            setFailedUsers(localFailedUsers);
+            setInvalidAddresses(localInvalidAddresses);
+            setUnavailableAddresses(localUnavailableAddresses);
+        };
+
         for (let i = 0; i < selectedUsers.length; i++) {
-            const signal = abortControllerRef.current.signal;
             if (signal.aborted) {
                 return;
             }
@@ -232,14 +224,21 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             try {
                 await createUser({
                     user,
-                    api: getSilentApi(api),
+                    api: getSilentApiWithAbort(api, signal),
                     getAddresses,
                     organizationKey: organizationKey.privateKey,
                 });
 
                 localSuccessfullyCreatedUsers.push(user);
             } catch (error: any) {
-                if (error.cancel) {
+                if (getIsOfflineError(error)) {
+                    abortControllerRef.current.abort();
+
+                    const unattemptedUsers = selectedUsers.slice(i);
+                    localFailedUsers.push(...unattemptedUsers);
+                    syncState();
+                    setStep(STEPS.DONE_WITH_ERRORS);
+                } else if (error.cancel) {
                     /**
                      * Handle auth prompt cancel
                      */
@@ -259,12 +258,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             setCurrentProgress((currentProgress) => currentProgress + 1);
         }
 
-        setSuccessfullyCreatedUsers(localSuccessfullyCreatedUsers);
-
-        setFailedUsers(localFailedUsers);
-        setInvalidAddresses(localInvalidAddresses);
-        setUnavailableAddresses(localUnavailableAddresses);
-
+        syncState();
         await call();
 
         if (localFailedUsers.length || localInvalidAddresses.length || localUnavailableAddresses.length) {
@@ -290,18 +284,6 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 onOk={() => setStep(STEPS.SELECT_USERS)}
                 {...rest}
             />
-        );
-    }
-
-    if (step === STEPS.OFFLINE) {
-        return (
-            <AlertModal
-                title={c('Title').t`No internet connection`}
-                buttons={[<Button onClick={onClose}>{c('Action').t`Ok`}</Button>]}
-                {...rest}
-            >
-                {c('Info').t`Please check your connection and try again.`}
-            </AlertModal>
         );
     }
 
@@ -452,10 +434,18 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 title,
                 content: (
                     <>
-                        {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length
-                            ? c('Info')
-                                  .t`Please check your file for errors, or contact customer support for more information.`
-                            : null}
+                        {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length ? (
+                            <>
+                                {c('Title').ngettext(
+                                    msgid`Failed to create ${failedUsers.length} user
+                                account.`,
+                                    `Failed to create ${failedUsers.length} user accounts.`,
+                                    failedUsers.length
+                                )}{' '}
+                                {c('Info')
+                                    .t`Please check your file for errors, or contact customer support for more information.`}
+                            </>
+                        ) : null}
 
                         {invalidAddresses.length ? (
                             <>
