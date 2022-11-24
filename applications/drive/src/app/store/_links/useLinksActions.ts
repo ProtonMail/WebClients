@@ -10,7 +10,6 @@ import {
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { RestoreFromTrashResult } from '@proton/shared/lib/interfaces/drive/restore';
 import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import chunk from '@proton/utils/chunk';
@@ -25,6 +24,15 @@ import useLinks from './useLinks';
 import useLinksState from './useLinksState';
 
 const INVALID_REQUEST_ERROR_CODES = [RESPONSE_CODE.ALREADY_EXISTS, RESPONSE_CODE.INVALID_REQUIREMENT];
+
+interface APIResponses {
+    Responses: {
+        Response: {
+            Code: RESPONSE_CODE;
+            Error?: string;
+        };
+    }[];
+}
 
 /**
  * useLinksActions provides actions for manipulating with links in batches.
@@ -175,7 +183,7 @@ export function useLinksActions({
         });
     };
 
-    const batchHelperMultipleShares = async <T>(
+    const batchHelperMultipleShares = async (
         abortSignal: AbortSignal,
         ids: { shareId: string; linkId: string }[],
         query: (batchLinkIds: string[], shareId: string) => any
@@ -184,7 +192,7 @@ export function useLinksActions({
 
         const results = await Promise.all(
             groupedByShareId.map((group) => {
-                return batchHelper<T>(
+                return batchHelper<APIResponses>(
                     abortSignal,
                     group[0].shareId,
                     group.map(({ linkId }) => linkId),
@@ -193,7 +201,21 @@ export function useLinksActions({
             })
         );
 
-        return accumulateResults(results);
+        const { responses, failures } = accumulateResults(results);
+        const successes: string[] = [];
+        responses.forEach(({ batchLinkIds, response }) => {
+            response.Responses.forEach(({ Response }, index) => {
+                const linkId = batchLinkIds[index];
+                if (!Response.Error) {
+                    successes.push(linkId);
+                } else if (INVALID_REQUEST_ERROR_CODES.includes(Response.Code)) {
+                    failures[linkId] = new ValidationError(Response.Error);
+                } else {
+                    failures[linkId] = Response.Error;
+                }
+            });
+        });
+        return { responses, successes, failures };
     };
 
     const trashLinks = async (
@@ -206,13 +228,9 @@ export function useLinksActions({
             linksByParentIds.map((linksGroup) => {
                 const groupParentLinkId = linksGroup[0].parentLinkId;
 
-                return batchHelperMultipleShares<RestoreFromTrashResult>(
-                    abortSignal,
-                    linksGroup,
-                    (batchLinkIds, shareId) => {
-                        return queries.queryTrashLinks(shareId, groupParentLinkId, batchLinkIds);
-                    }
-                );
+                return batchHelperMultipleShares(abortSignal, linksGroup, (batchLinkIds, shareId) => {
+                    return queries.queryTrashLinks(shareId, groupParentLinkId, batchLinkIds);
+                });
             })
         );
 
@@ -231,13 +249,9 @@ export function useLinksActions({
         const sortedLinks = links.sort((a, b) => (b.trashed || 0) - (a.trashed || 0));
         const sortedLinkIds = sortedLinks.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }));
 
-        const results = await batchHelperMultipleShares<RestoreFromTrashResult>(
-            abortSignal,
-            sortedLinkIds,
-            (batchLinkIds, shareId) => {
-                return queries.queryRestoreLinks(shareId, batchLinkIds);
-            }
-        );
+        const results = await batchHelperMultipleShares(abortSignal, sortedLinkIds, (batchLinkIds, shareId) => {
+            return queries.queryRestoreLinks(shareId, batchLinkIds);
+        });
 
         return results;
     };
