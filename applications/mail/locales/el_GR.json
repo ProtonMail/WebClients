@@ -758,9 +758,6 @@
       "Save": [
         "Αποθήκευση"
       ],
-      "Saving${ _ellipsis }": [
-        "Γίνεται αποθήκευση${ _ellipsis }"
-      ],
       "Schedule message": [
         "Προγραμματισμός μηνύματος"
       ],
@@ -996,9 +993,6 @@
       "View keys": [
         "Προβολή πλήκτρων"
       ],
-      "View message": [
-        "Προβολή μηνύματος"
-      ],
       "View message details": [
         "Προβολη λεπτομέρειες μηνύματος"
       ],
@@ -1088,11 +1082,6 @@
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfItems } ολοκληρώθηκε",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } ολοκληρώθηκαν"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Εφαρμογές Proton"
       ]
     },
     "Attached ics file error": {
@@ -1335,9 +1324,6 @@
       ],
       "Event rescheduling is not supported for the moment": [
         "Για την ώρα δεν υποστηρίζεται επαναπρογραμματισμός εκδήλωσης"
-      ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        "Αυτή η απάντηση δεν μπορεί να προστεθεί στο ${ calendarAppName }, καθώς για την ώρα υποστηρίζουμε απαντήσεις μόνο σε όλες τις εκδηλώσεις μιας σειράς"
       ],
       "This event has been canceled.": [
         "Αυτή η εκδήλωση έχει ακυρωθεί."
@@ -2778,10 +2764,6 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Υπέρβαση μέγιστου αριθμού συνημμένων (${ attachmentsCountLimit })"
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του Proton"
-      ],
       "Message needs to be sent first": [
         "Το μήνυμα πρέπει πρώτα να αποσταλεί"
       ],
@@ -2887,9 +2869,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
-      ],
-      "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Λυπούμαστε, το Proton δεν μπορεί να αποκρυπτογραφήσει το μήνυμά σας. Παρακαλούμε ελέγξτε αν είναι ενεργά όλα τα κλειδιά σας."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Δεν ήταν δυνατή η αποκρυπτογράφηση του συνημμένου.\nΑν έχετε το αντίστοιχο ιδιωτικό κλειδί, θα μπορείτε να αποκρυπτογραφήσετε\nτο αρχείο με ένα πρόγραμμα όπως το GnuPG.",
@@ -3130,9 +3109,6 @@
       "Please ${ refresh } or check your connection.": [
         "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
       ],
-      "There was a problem connecting to Proton.": [
-        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο Proton."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Δεν έχετε καμία επαφή ακόμα. Ξεκινήστε δημιουργώντας μια νέα επαφή"
       ],
@@ -3331,9 +3307,6 @@
       "Available on iOS and Android.": [
         "Διατίθεται σε iOS και Android."
       ],
-      "Get the ${ protonMailAppName } mobile app": [
-        "Αποκτήστε την εφαρμογή ${ protonMailAppName } για κινητά"
-      ],
       "Import contacts or emails": [
         "Εισαγωγή επαφών ή μηνυμάτων"
       ],
@@ -3530,30 +3503,6 @@
       "Invalid IMAP port": [
         "Μη έγκυρη θύρα IMAP"
       ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι η πρόσβαση IMAP στο Gmail είναι ενεργοποιημένη."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας. Βεβαιωθείτε ότι:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας. Παρακαλούμε βεβαιώστε την ορθότητα της διεύθυνσης του διακομιστή αλληλογραφίας, καθώς και του αριθμού θύρας."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Το Proton δεν μπορεί να συνδεθεί στον εξωτερικό λογαριασμό σας. Βεβαιωθείτε ότι:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας στο Gmail. Βεβαιωθείτε ότι η διεύθυνση του διακομιστή αλληλογραφίας και ο αριθμός θύρας είναι σωστές."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Αδυναμία σύνδεσης του Proton στον λογαριασμό σας Yahoo. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Αδυναμία σύνδεσης του Proton στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
       ],
@@ -3608,12 +3557,6 @@
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Ανοίξτε το αναδιπλούμενο μενού κάνοντας κλικ στις 3 τελείες (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Παράξτε ένα ${ boldAppPassword } και χρησιμοποιήστε το αντί του κανονικού σας κωδικού όταν σας ζητηθεί από το Proton."
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Παράξτε το ${ boldAppPassword } και χρησιμοποιήστε το αντί του κανονικού σας κωδικού όταν σας ζητηθεί από το Proton."
-      ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Πηγαίνετε στο ${ boldAccountInfo }, κάτω από το προφίλ σας στο ${ yahooMailLink }."
       ],
@@ -3637,12 +3580,6 @@
       ],
       "Select ${ boldExportCSV }.": [
         "Επιλέξτε ${ boldExportCSV }."
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Για την εισαγωγή ενός ημερολογίου στο Proton, θα χρειαστείτε ${ knowledgeBaseLink }. Κατεβάστε το από το Yahoo σε 3 απλά βήματα:"
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Για να εισάγετε email στο Proton, χρειάζεστε ${ appPasswordLink } από το Yahoo. Αποκτήστε το ακολουθώντας τα παρακάτω βήματα:"
       ]
     },
     "Import instructions emphasis": {
@@ -3919,6 +3856,12 @@
       "Are you sure you want to delete all messages with this label?": [
         "Θέλετε σίγουρα να διαγράψετε όλα τα μηνύματα με αυτή την ετικέτα;"
       ],
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Θέλετε σίγουρα να διαγράψετε αυτόν τον φάκελο; Θα διαγραφούν επίσης όλοι οι υποφάκελοι."
+      ],
+      "Are you sure you want to delete this label?": [
+        "Θέλετε σίγουρα να διαγράψετε αυτήν την ετικέτα;"
+      ],
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
       ],
@@ -4087,15 +4030,14 @@
       "Email tracker protection is disabled": [
         "Η προστασία από ιχνηλάτες είναι απενεργοποιημένη"
       ],
-      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Το Proton δεν βρήκε κανέναν ιχνηλάτη σε αυτό το μήνυμα."
-      ],
-      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Το Proton βρήκε και απέκλεισε ${ numberOfTrackers } ιχνηλάτη.",
-        "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Το Proton βρήκε και απέκλεισε ${ numberOfTrackers } ιχνηλάτες."
-      ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Οι ιχνηλάτες μηνυμάτων μπορούν να παραβιάσουν το απόρρητό σας. Ενεργοποιείστε την προστασία από ιχνηλάτες, στερώντας στους αποστολείς τη γνώση του αν και πότε ανοίξατε ένα μήνυμα."
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν το φάκελο δεν θα διαγραφούν και εξακολουθούν να βρίσκονται στο φάκελο All Mail."
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου με ετικέτα δεν θα διαγραφούν και μπορούν ακόμα να βρεθούν στον αντίστοιχο φάκελο."
       ],
       "embedded image": [
         "ενσωματωμένη εικόνα",
@@ -4343,9 +4285,6 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Δεν βρέθηκαν ιχνηλάτες, όμως κάποιες εικόνες δεν μπόρεσαν να φορτωθούν με προστασία ιχνηλασίας"
       ],
-      "non-Proton Mail": [
-        "εκτός Proton Mail"
-      ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
@@ -4408,9 +4347,6 @@
       ],
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
-      ],
-      "Proton doesn't make money by abusing privacy.": [
-        "Το Proton δε βγάζει λεφτά κάνοντας κατάχρηση απόρρητου."
       ],
       "Recipient: ": [
         "Παραλήπτης: "
@@ -4707,9 +4643,6 @@
       "Version ${ appVersion }": [
         "'Εκδοση ${ appVersion }"
       ],
-      "Visit our shop to get Proton merchandise.": [
-        "Επισκεφθείτε το κατάστημά μας για να αγοράσετε εμπορεύματα Proton."
-      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ζητάμε συγγνώμη. Αυτό μπορεί να ήταν λάθος από την πλευρά μας. Μπορείτε να επιβεβαιώσετε ότι θέλετε να επισημάνετε αυτό το email ως νόμιμο;"
       ],
@@ -4748,9 +4681,6 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
-      ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
@@ -4829,14 +4759,8 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Γράψατε “${ attachmentsFoundKeyword }”, αλλά δεν έχει προστεθεί συνημμένο. Θέλετε να στείλετε το μήνυμά σας ούτως ή άλλως;"
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας έχει περιοριστεί. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
-      ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
@@ -4868,9 +4792,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
       ],
       "Your recovery phrase": [
         "Η φράση ανάκτησής σας"
@@ -5298,9 +5219,6 @@
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Πώς θα περιγράφατε την εμπειρία σας στο νέο Proton;"
-      ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
       ],
@@ -5423,9 +5341,6 @@
       ],
       "Postal code": [
         "Ταχυδρομικός κώδικας"
-      ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
       ],
       "Public keys": [
         "Δημόσια κλειδιά"
@@ -5684,20 +5599,11 @@
       "Manage your folders": [
         "Διαχείριση των φακέλων σας"
       ],
-      "Manage your labels": [
-        "Διαχείρηση των ετικετών σας"
-      ],
       "More": [
         "Περισσότερα"
       ],
       "More about recovery": [
         "Περισσότερα περί ανάκτησης"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Άνοιγμα σε ${ calendarAppName }"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Άνοιγμα ενημερωμένης εκδήλωσης σε ${ calendarAppName }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Ή μπορείτε να διαγράψετε ένα από τα ημερολόγιά σας και να δημιουργήσετε ένα νέο συνδεδεμένο με μια ενεργή διεύθυνση ηλεκτρονικού ταχυδρομείου."
@@ -5737,9 +5643,6 @@
       ],
       "Terms": [
         "Όροι"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Αυτό το αρχείο ICS περιέχει περισσότερα από ένα συμβάντα. Κατεβάστε το και εισαγάγετε τα συμβάντα στο ${ calendarAppName }"
       ],
       "Trash": [
         "Διαγραμμένα"
@@ -5836,9 +5739,6 @@
     "Message": {
       "Fw:": [
         "Προώθ:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "Στις ${ date }, ${ name } ${ address } έγραψε:"
       ],
       "Re:": [
         "Απ:"
@@ -6065,9 +5965,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } δημιουργήθηκε"
-      ],
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
       ],
@@ -6076,11 +5973,6 @@
       ],
       "Password has been set successfully": [
         "Ο κωδικός πρόσβασης ορίστηκε επιτυχώς"
-      ]
-    },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Στη συνέχεια θα χρειαστεί να εισέλθετε στον Google λογαριασμό σας και να παραχωρήσετε στην Proton πρόσβαση στα δεδομένα σας."
       ]
     },
     "Oauth instructions video": {
@@ -6105,17 +5997,11 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ρυθμίστε τις παραμέτρους του οργανισμού σας, συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για να διασφαλίσετε ότι όλα τα μέλη του οργανισμού σας προστατεύονται."
       ],
-      "Discover all Proton services": [
-        "Ανακαλύψτε όλες τις υπηρεσίες Proton"
-      ],
       "Select a theme": [
         "Επιλέξτε ένα θέμα"
       ],
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Χρησιμοποιήστε τον επιλογέα εφαρμογών πάνω αριστερά για να αποκτήσετε πρόσβαση σε άλλες υπηρεσίες Proton, συμπεριλαμβανομένων του VPN, του Ημερολογίου και του Χώρου Αποθήκευσης στο cloud."
       ],
       "You can change this anytime in your settings.": [
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
@@ -6488,12 +6374,6 @@
       ]
     },
     "Signature verification warning": {
-      "PGP-encrypted message. Sender verification failed: ${ _verificationErrorsMessage }": [
-        "Μήνυμα με κρυπτογράφηση PGP. Η επαλήθευση αποστολέα απέτυχε:${ _verificationErrorsMessage }"
-      ],
-      "PGP-signed message. Sender verification failed: ${ _verificationErrorsMessage2 }": [
-        "Μήνυμα υπογεγραμμένο PGP. Η επαλήθευση αποστολέα απέτυχε: ${ _verificationErrorsMessage2 }"
-      ],
       "Sender could not be verified: Message not signed": [
         "Ο αποστολέας δεν μπόρεσε να επαληθευτεί: Το μήνυμα δεν υπογράφηκε"
       ],
@@ -6760,6 +6640,11 @@
         "Επιτυχία επαλήθευσης"
       ]
     },
+    "Success notification": {
+      "${ label.Name } removed": [
+        "${ label.Name } αφαιρέθηκε"
+      ]
+    },
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Τα σχόλια απεστάλησαν"
@@ -6868,9 +6753,6 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Συντομεύσεις πληκτρολογίου"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } μέλος",
         "${ emailsCount } μέλη"
@@ -6994,6 +6876,12 @@
       "Delete ${ count } message": [
         "Διαγραφή ${ count } μηνύματος",
         "Διαγραφή ${ count } μηνυμάτων"
+      ],
+      "Delete ${ label.Name } folder": [
+        "Διαγραφή φακέλου ${ label.Name }"
+      ],
+      "Delete ${ label.Name } label": [
+        "Διαγραφή ετικέτας ${ label.Name }"
       ],
       "Delete ${ Name }": [
         "Διαγραφή ${ Name }"
@@ -7442,12 +7330,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Το Proton θα συγχωνεύσει όλους τους φακέλους ίδιου ονόματος. Για αποφυγή της συγχώνευσης, αλλάξτε τα ονόματα πριν την εισαγωγή."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Η Proton θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
       ],
@@ -7475,12 +7357,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
-      ],
-      "This feature requires a paid Proton account": [
-        "Αυτή η λειτουργία απαιτεί έναν λογαριασμό Proton επί πληρωμή"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας Proton. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."

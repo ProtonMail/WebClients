@@ -1869,11 +1869,11 @@
       "${ storageSize } storage": [
         "${ storageSize } Speicherplatz"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "${ vpnBasic }, ${ vpnPlus } oder ${ visionary } ist für eine Verbindung auf Länderebene erforderlich."
+      "${ vpnPlus } required for Country level connection.": [
+        "${ vpnPlus } ist für die länderbasierte Verbindung notwendig."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "${ vpnPlus } oder ${ visionary } ist für die Secure Core-Funktion notwendig."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "${ vpnPlus } ist für die Secure Core-Funktion notwendig."
       ],
       "* No credit card required.": [
         "* Keine Kreditkarte erforderlich."
@@ -2124,6 +2124,9 @@
       ],
       "Loading preview": [
         "Vorschau wird geladen"
+      ],
+      "Loading...": [
+        "Wird geladen..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Melde dich bei ${ MAIL_APP_NAME } an, um deine Adresse zu aktivieren"
@@ -2515,17 +2518,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Dein ${ BRAND_NAME }-Konto ist mit ${ externalEmailAddress } verknüpft. Um ${ toAppName } zu verwenden, benötigst du eine ${ MAIL_APP_NAME }-E-Mail-Adresse."
       ],
-      "Your ${ BRAND_NAME } account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. E-Mails werden nicht mehr an deinen Posteingang zugestellt. Deine Drive-Freigabelinks sind nicht mehr aktiv und du kannst keine neuen Dateien hochladen. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Deine ${ VPN_APP_NAME } und ${ MAIL_APP_NAME } Konten sind miteinander verknüpft. Um beide zu löschen, melde dich bitte unter ${ loginLink } an und lösche dort dein Konto."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wurde eingeschränkt. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt und alle Dienste sind nun bis zur Zahlung gesperrt. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt. Bei anhaltender Nichtbezahlung werden deine E-Mails und Freigabelinks gesperrt. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ihr Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
@@ -2649,7 +2658,7 @@
         "${ BRAND_NAME } E-Mail-Adresse oder Benutzername"
       ],
       "${ BRAND_NAME } username": [
-        "${ BRAND_NAME } Benutzername"
+        "${ BRAND_NAME }-Benutzername"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
@@ -3407,6 +3416,9 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Anwendbares Guthaben, anteilige Anrechnungen und Gutscheine können im nächsten Schritt berücksichtigt werden."
       ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Umfassender Schutz der Privatsphäre und Sicherheit bei allen ${ BRAND_NAME }-Diensten."
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Wenn du dein Konto löschst, verlierst du alle Vorteile des ${ visionary }-Abonnements und es wird für dich nicht verfügbar sein, wenn du ein neues Konto erstellst."
       ],
@@ -3421,6 +3433,9 @@
       ],
       "Popular": [
         "Beliebt"
+      ],
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Privatsphären- und Sicherheitssuite für Unternehmen, einschließlich aller Premium-${ BRAND_NAME }-Dienste."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
@@ -3453,6 +3468,12 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Deine Testversion endet am ${ formattedTrialExpirationDate }"
@@ -3593,6 +3614,9 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Verwalte dein Abonnement einschließlich dessen Anpassung. Es werden folgende Zahlungsmethoden akzeptiert: Kreditkarte, PayPal, Kryptowährung und Überweisung."
       ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "An Werktagen erhältst du innerhalb von 24 Stunden Unterstützung durch den Kundensupport von ${ BRAND_NAME }."
+      ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "Darüber hinaus kannst du bis zu 5 Kalender von Kollegen, Organisationen sowie Freunden und Familie hinzufügen."
       ],
@@ -3616,6 +3640,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "Telefonische Unterstützung ist durch das ${ BRAND_NAME }-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 6 oder mehr Benutzern verfügbar."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindert den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -3695,7 +3722,7 @@
         "Profitiere von erweiterten VPN-Funktionen"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Sorge für eine persönliche Note mit 15 E-Mail-Adressen und 3 unterstützten eigenen E-Mail-Domains."
+        "Sorge für eine persönliche Note mit 15 E-Mail-Adressen und 3 eigenen E-Mail-Domains."
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Erhöhe deinen Speicherplatz auf insgesamt ${ bundleStorage }."
@@ -3704,7 +3731,7 @@
         "Erhöhe deinen Speicherplatz auf ${ businessStorage } pro Benutzer."
       ],
       "Cover more ground with support for 10 custom email domains": [
-        "Erhöhe deine Reichweite mit 10 unterstützen benutzerdefinierten E-Mail-Domains."
+        "Erhöhe deine Reichweite mit 10 eigenen E-Mail-Domains."
       ],
       "Create ${ numberOfPersonalCalendars } personal calendar": [
         "Erstelle ${ numberOfPersonalCalendars } persönlichen Kalender",
@@ -3717,7 +3744,7 @@
         "Erhalte 5 zusätzliche E-Mail-Adressen pro Benutzer."
       ],
       "Priority support": [
-        "Vorrangiger Support"
+        "Priorisierter Support"
       ],
       "Support for 1 custom email domain": [
         "Unterstützung für eine eigene E-Mail-Domain"

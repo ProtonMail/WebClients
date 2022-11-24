@@ -565,7 +565,7 @@
         "Engellemeyi kaldır"
       ],
       "Remove bonuses": [
-        "Ödülleri kaldır"
+        "Hediyeleri kaldır"
       ],
       "Remove calendar": [
         "Takvimi kaldır"
@@ -973,8 +973,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Proton uygulamaları"
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } uygulamaları"
       ]
     },
     "Attached ics file error": {
@@ -1250,27 +1250,27 @@
       ]
     },
     "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Takviminize bir bağlantı oluşturun ve bunu Proton kullanmayan bir kişiyle paylaşın. Etkinlikleri yalnızca siz ekleyebilir ya da kaldırabilirsiniz."
+      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
+        "Takviminize bir bağlantı oluşturun ve bunu ${ BRAND_NAME } kullanmayan bir kişiyle paylaşın. Etkinlikleri yalnızca siz ekleyebilir ya da kaldırabilirsiniz."
       ]
     },
     "Calendar settings private share description": {
-      "Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Takviminizi diğer Proton kullanıcılarıyla paylaşın. Diğer kullanıcıların takviminize etkinlik eklemesine ve düzenlemesine izin vererek işbirliğini etkinleştirin. Kullanıcı izinlerini istediğiniz zaman değiştirebilirsiniz."
+      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Takviminizi diğer ${ BRAND_NAME } kullanıcılarıyla paylaşın. Diğer kullanıcıların takviminize etkinlik eklemesine ve düzenlemesine izin vererek işbirliğini etkinleştirin. Kullanıcı izinlerini istediğiniz zaman değiştirebilirsiniz."
       ]
     },
     "Calendar settings section title": {
       "Share calendar": [
         "Takvimi paylaş"
       ],
-      "Share outside Proton": [
-        "Proton dışında paylaş"
+      "Share outside ${ BRAND_NAME }": [
+        "${ BRAND_NAME } dışıyla paylaş"
+      ],
+      "Share with ${ BRAND_NAME } users": [
+        "${ BRAND_NAME } kullanıcıları ile paylaş"
       ],
       "Share with anyone": [
         "Herkes ile paylaş"
-      ],
-      "Share with Proton users": [
-        "Proton kullanıcıları ile paylaş"
       ]
     },
     "Calendar settings sidebar": {
@@ -1349,8 +1349,8 @@
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Takvim bağlantısına geçici olarak erişilemiyor. Lütfen takvim hizmeti sağlayıcısı bağlantısının hala geçerli olduğunu doğrulayın."
       ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Son güncellemenin üzerinden 12 saatten fazla zaman geçmiş. Proton Calendar, takvimi birkaç saat içinde güncellemeye çalışacak."
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Son güncellemenin üzerinden 12 saatten fazla zaman geçmiş. ${ CALENDAR_APP_NAME }, takvimi birkaç saat içinde güncellemeye çalışacak."
       ]
     },
     "Calendar table settings button tooltip": {
@@ -2586,8 +2586,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
-      "Get up to ${ credits } in credits by inviting friends to Proton.": [
-        "Arkadaşlarınızı Proton kullanmaya çağırarak ${ credits } krediye kadar hediye kazanın."
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya çağırarak ${ credits } krediye kadar hediye kazanın."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
@@ -2657,8 +2657,8 @@
       "Bugs or quality issue": [
         "Hatalar veya kalite sorunları"
       ],
-      "I use a different Proton account": [
-        "Farklı bir Proton hesabı kullanıyorum"
+      "I use a different ${ BRAND_NAME } account": [
+        "Farklı bir ${ BRAND_NAME } hesabı kullanıyorum"
       ],
       "Missing feature(s)": [
         "Özellikler eksik"
@@ -2953,9 +2953,9 @@
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
-        "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin",
+        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin"
       ],
       "Missing key packet": [
         "Anahtar paketi eksik"
@@ -2984,8 +2984,8 @@
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
-      "No public key for Proton address": [
-        "Proton adresinin herkese açık anahtarı yok"
+      "No public key for ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresi için bir herkese açık anahtar yok"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -2993,8 +2993,8 @@
       "No WKD key retrieved for user is valid for sending": [
         "İç kullanıcı için geçerli WKD bir gönderim anahtarı alınamadı"
       ],
-      "Not a Proton account": [
-        "Bir Proton hesabı değil"
+      "Not a ${ BRAND_NAME } account": [
+        "Bir ${ BRAND_NAME } hesabı değil"
       ],
       "Not a valid number": [
         "Numara geçerli değil"
@@ -3443,8 +3443,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
-      "There was a problem connecting to Proton.": [
-        "Proton bağlantısı kurulurken bir sorun çıktı."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } bağlantısı kurulurken bir sorun çıktı."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Çok fazla alt oturum var. Lütfen çerezleri temizleyip yeniden oturum açın."
@@ -3807,8 +3807,8 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "İletileri etiketlemek ya da arşivlemek gibi belirli işlemleri otomatik olarak yapacak bir özel süzgeç ekleyin. Süzgeçler düzeltilebilir ve doğrudan Sieve programlama diliyle oluşturulabilir."
       ],
-      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Siz ya da Proton tarafından istenmeyen olarak işaretlenmiş e-postalar İstenmeyen kutunuza taşınır. Bu adreslerden gelen e-postalara izin vermek için e-postayı \"İstenmeyen değil\" olarak işaretleyebilirsiniz."
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Siz ya da ${ BRAND_NAME } tarafından istenmeyen olarak işaretlenmiş e-postalar İstenmeyen kutunuza taşınır. Bu adreslerden gelen e-postalara izin vermek için e-postayı \"İstenmeyen değil\" olarak işaretleyebilirsiniz."
       ],
       "Emails from blocked addresses won't be delivered.": [
         "Engellenmiş adreslerden gelen e-postalar alınmaz."
@@ -4013,8 +4013,8 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı ayrıntıları olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden Proton e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı ayrıntıları olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
       ],
       "This file contains an event invitation:": [
         "Bu dosyada bir etkinlik daveti bulunuyor:",
@@ -4075,6 +4075,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "Google hesabınızın güvenlik ayarlarında \"Daha az güvenli uygulama erişimi\" açık."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen Gmail IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen Gmail hesabınızda IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, dış hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME }, dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Dış hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
       ],
@@ -4101,30 +4125,6 @@
       ],
       "Invalid IMAP port": [
         "IMAP bağlantı noktası geçersiz"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton hesabınızla bağlantı kuramadı. Lütfen Gmail IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton hesabınızla bağlantı kuramadı. Lütfen Gmail hesabınızda IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton dış hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton, Yahoo hesabınıza bağlanamıyor. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
@@ -4183,17 +4183,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Seçenekler menüsü açmak için ${ boldManage } üzerine tıklayın."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "E-posta hizmeti sağlayıcınıza bağlı olarak, Proton içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "E-posta hizmeti sağlayıcınıza bağlı olarak, ${ BRAND_NAME } içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3 nokta (...) üzerine tıklayarak menüyü açın."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Bir ${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Bir ${ boldAppPassword } oluşturun ve ${ BRAND_NAME } tarafından sorulduğunda normal parolanız yerine bunu yazın."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword } oluşturun ve ${ BRAND_NAME } tarafından sorulduğunda normal parolanız yerine bunu yazın."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } üzerindeki profilinizin altından ${ boldAccountInfo } bölümüne gidin."
@@ -4219,29 +4219,29 @@
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } seçin."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } işlemini yapmalısınız. 3 kolay adımda Outlook üzerinden indirin:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } işlemini yapmalısınız. 3 kolay adımda Yahoo üzerinden indirin:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "E-postaları Proton içine aktarmak için şu adımları izleyerek Outlook üzerinden ${ appPasswordLink } almalısınız:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "E-postaları ${ BRAND_NAME } içine aktarmak için şu adımları izleyerek Outlook üzerinden ${ appPasswordLink } almalısınız:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "E-postaları Proton içine aktarmak için şu adımları izleyerek Yahoo üzerinden ${ appPasswordLink } almalısınız:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "E-postaları ${ BRAND_NAME } içine aktarmak için şu adımları izleyerek Yahoo üzerinden ${ appPasswordLink } almalısınız:"
       ]
     },
     "Import instructions emphasis": {
@@ -4408,6 +4408,21 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
+      "${ BRAND_NAME } ${ planName } credits earned": [
+        "${ BRAND_NAME } ${ planName } kredisi kazandınız"
+      ],
+      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "${ BRAND_NAME }, diğer e-posta hizmeti sağlayıcınızla bağlantıyı kaybettiğinden içe aktarma işlemini duraklattı. Lüften yeniden bağlanın."
+      ],
+      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
+        "${ BRAND_NAME }, hesabınızda yeterli alan olmadığı için içe aktarma işlemini duraklattı. Şunları yapabilirsiniz:"
+      ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "E-posta hizmeti sağlayıcınız hesabınızın ${ bandwithLimitLink } değerini sıfırladığı anda ${ BRAND_NAME } içe aktarma işlemini sürdürmeye çalışacaktır. Harhangi bir şey yapmanıza gerek yok. İçe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz ve baştan başlamanız gerekir."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } varsayılan takvim olarak ayarlanacak."
       ],
@@ -4496,11 +4511,11 @@
       "${ storageSize } storage": [
         "${ storageSize } depolama alanı"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "Ülke düzeyinde bağlantı için ${ vpnBasic }, ${ vpnPlus } ya da ${ visionary } tarifesi gereklidir."
+      "${ vpnPlus } required for Country level connection.": [
+        "Ülke düzeyinde bağlantı için ${ vpnPlus } tarifesi gereklidir."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "Secure Core özelliği için ${ vpnPlus } ya da ${ visionary } tarifesi gereklidir."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "Secure Core özelliği için ${ vpnPlus } tarifesi gereklidir."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
@@ -4522,8 +4537,8 @@
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
-      "1. Invite friends to Proton": [
-        "1. Arkadaşlarınıza Proton daveti gönderin"
+      "1. Invite friends to ${ BRAND_NAME }": [
+        "1. Arkadaşlarınızı ${ BRAND_NAME } kullanmaya çağırın"
       ],
       "10 email addresses": [
         "10 e-posta adresi"
@@ -4532,7 +4547,7 @@
         "2. Onlar da ${ planName } denesinler"
       ],
       "3. You earn credits": [
-        "3. Ödülünüzü kazanın"
+        "3. Hediye kredilerinizi kazanın"
       ],
       "30-day money-back guarantee.": [
         "30 gün ücret iade garantisi."
@@ -4756,8 +4771,8 @@
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Bu takvimin tüm etkinlik ayrıntılarını paylaşarak, bu takvimin şifrelenmiş bilgilerine Proton tarafından erişilmesine izin vermiş olursunuz."
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Bu takvimin tüm etkinlik ayrıntılarını paylaşarak, bu takvimin şifrelenmiş bilgilerine ${ BRAND_NAME } tarafından erişilmesine izin vermiş olursunuz."
       ],
       "Center": [
         "Ortaya hizala"
@@ -4780,8 +4795,8 @@
       "Continue with ${ planName }": [
         "${ planName } aboneliğini kullanmayı sürdür"
       ],
-      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
-        "İlerlerseniz ${ ACCOUNT_APP_NAME } uygulamanız ${ name } ile bağlanacak."
+      "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
+        "İlerlerseniz ${ BRAND_NAME } hesabınız ${ name } ile bağlanacak."
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } yeni takvim ekle",
@@ -4905,8 +4920,8 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. Proton etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini Proton üzerinde barındırabilirsiniz."
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
       "Emailing preference saved": [
         "E-posta ayarı kaydedildi"
@@ -5107,8 +5122,8 @@
       "Import mailbox": [
         "Posta kutusunu içe aktar"
       ],
-      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten Proton üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Kişisel gizlilik dünyasına hoş geldiniz."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Kişisel gizlilik dünyasına hoş geldiniz."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki aşamalı kimlik doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
@@ -5159,8 +5174,8 @@
       "it’s imperative": [
         "zorunlu olarak"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Bir süredir kişisel gizliliğimi koruyan ${ appName } e-posta hizmetini kullanıyorum ve senin de beğeneceğini düşündüm. Ücretli özellikleri bir ay süreyle ücretsiz olarak kullanmak için bu bağlantıya giderek bir hesap açabilirsin: ${ referrerLink }"
+      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Bir süredir kişisel gizliliğimi koruyan ${ MAIL_APP_NAME } e-posta hizmetini kullanıyorum ve senin de beğeneceğini düşündüm. Ücretli özellikleri bir ay süreyle ücretsiz olarak kullanmak için bu bağlantıya giderek bir hesap açabilirsin: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
@@ -5222,11 +5237,14 @@
       "Loading preview": [
         "Ön izleme yükleniyor"
       ],
+      "Loading...": [
+        "Yükleniyor..."
+      ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Adresinizi etkinleştirmek için ${ MAIL_APP_NAME } oturumu açın"
       ],
-      "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Günlük kayıtlarında, Proton kimlik doğrulama bilgilerinizi kullanan tüm Proton hizmetleri için oturum açma girişimleri bulunur."
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Günlük kayıtlarında, ${ BRAND_NAME } kimlik doğrulama bilgilerinizi kullanan tüm ${ BRAND_NAME } hizmetleri için kimlik doğrulama girişimleri bulunur."
       ],
       "lose access to all current encrypted data": [
         "tüm şifrelenmiş verilere erişimi kaybedeceksiniz"
@@ -5452,21 +5470,6 @@
       ],
       "Priority support": [
         "Öncelikli destek"
-      ],
-      "Proton ${ planName } credits earned": [
-        "Proton ${ planName } kredisi kazandınız"
-      ],
-      "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Proton, diğer e-posta hizmeti sağlayıcınızla bağlantıyı kaybettiğinden içe aktarma işlemini duraklattı. Lüften yeniden bağlanın."
-      ],
-      "Proton paused an import because your account is running low on space. You can:": [
-        "Proton, hesabınızda yeterli alan olmadığı için içe aktarma işlemini duraklattı. Şunları yapabilirsiniz:"
-      ],
-      "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "E-posta hizmeti sağlayıcınız hesabınızın ${ bandwithLimitLink } değerini sıfırladığı anda Proton içe aktarma işlemini sürdürmeye çalışacaktır. Harhangi bir şey yapmanıza gerek yok. İçe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz ve baştan başlamanız gerekir."
-      ],
-      "Proton's encryption technology means that nobody can access your password - not even us.": [
-        "Proton şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
       "Public link invite": [
         "Herkese açık davet bağlantısı"
@@ -5719,8 +5722,8 @@
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Bu işlem kişisel anahtarınızın bulunduğu bir dosyayı indirecek. Bu dosyayı bir parola ile şifreleyerek koruyun."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu seçenek, Proton aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için bunu devre dışı bırakın."
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için bunu devre dışı bırakın."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Bu kullanıcı ile ilişkili tüm e-posta ve veriler kalıcı olarak silinecek."
@@ -5734,8 +5737,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Bu seçenek, tüm etkin oturumlarınızın kapatılmasını ve 2 aşamalı kimlik doğrulamasının devre dışı bırakılmasını sağlar."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Bu yardımcı, Proton hesabınızda iki aşamalı kimlik doğrulamayı (2FA) etkinleştirir. Proton hesabınızı daha güvenli kılacağından iki aşamalı kimlik doğrulamayı etkinleştirmenizi öneririz."
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki aşamalı kimlik doğrulamayı (2FA) etkinleştirir. ${ BRAND_NAME } hesabınızı daha güvenli kılacağından iki aşamalı kimlik doğrulamayı etkinleştirmenizi öneririz."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Veri kaybını engellemek için bu anahtarı, yalnızca ne yaptığınızdan eminseniz ya da dışa aktardıysanız silin."
@@ -5758,8 +5761,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Proton ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman blog sayfamıza bakabilirsiniz."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "${ BRAND_NAME } ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman günlük sayfamıza bakabilirsiniz."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "İlerlemek için, isteği doğrulayabileceğimiz bir hesap kurtarma yöntemi seçin."
@@ -5968,8 +5971,8 @@
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } hesabıyla oturum açtınız."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Ayrıca içe aktarılan takvimleri var olan Proton takvimleriyle birleştirebilirsiniz."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Ayrıca içe aktarılan takvimleri var olan ${ BRAND_NAME } takvimleriyle birleştirebilirsiniz."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "İlerlemeye bakabilirsiniz ${ importProgressLink }."
@@ -6005,8 +6008,8 @@
         "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz",
         "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz"
       ],
-      "You cannot refer ${ appName } users": [
-        "${ appName } kullanıcılarını kaynak gösteremezsiniz"
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "${ MAIL_APP_NAME } kullanıcılarını kaynak gösteremezsiniz"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "${ VPN_APP_NAME } uygulamalarında ya da ${ VPN_APP_NAME } panosunda oturum açmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
@@ -6083,14 +6086,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. ${ toAppName } kullanabilmek için bir ${ MAIL_APP_NAME } adresinizin olması gereklidir."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz kısıtlandı. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
         "Hesap kurtarma yönteminiz ayarlandı"
@@ -6101,8 +6113,8 @@
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Bankanız güvenlik için 3-D Secure ile doğrulama istiyor."
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Verileriniz ${ importedEmailAddressStrong } üzerinden Proton hesabınız içine aktarılmaya hazır."
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
       "Your data recovery method is set": [
         "Veri kurtarma yönteminiz ayarlandı"
@@ -6134,9 +6146,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
       ],
       "Your recovery phrase": [
         "Kurtarma ifadeniz"
@@ -6573,6 +6582,9 @@
       "${ BRAND_NAME } email or username": [
         "${ BRAND_NAME } e-posta adresi ya da kullanıcı adı"
       ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } kullanıcı adı"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
       ],
@@ -6696,7 +6708,7 @@
         "Engellenmiş"
       ],
       "bonus storage": [
-        "ödül depolama alanı"
+        "hediye depolama alanı"
       ],
       "Browser": [
         "Tarayıcı"
@@ -7177,9 +7189,6 @@
       ],
       "Protection mode": [
         "Koruma kipi"
-      ],
-      "Proton username": [
-        "Proton kullanıcı adı"
       ],
       "Read": [
         "Okunmuş"
@@ -7683,8 +7692,8 @@
       ]
     },
     "Message": {
-      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
-        "Tüm süzgeç işlemleri, Proton Mail hesabınızdaki tüm iletilere uygulanacak. Herhangi bir otomatik yanıt e-postası gönderilmeyecek."
+      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
+        "Tüm süzgeç işlemleri, ${ MAIL_APP_NAME } hesabınızdaki tüm iletilere uygulanacak. Herhangi bir otomatik yanıt e-postası gönderilmeyecek."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Özel e-posta adresleri (siz@sirketiniz.com gibi) oluşturmak için özel etki alanınızı ${ BRAND_NAME } ile ilişkilendirin. Yardımcımız süreç boyunca size yol gösterir."
@@ -8252,8 +8261,8 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Uygulanabilir krediler, eşit dağıtım ve kuponlar sonraki adımda uygulanacak"
       ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        "Tüm Proton hizmetlerinin bir arada olduğu kapsamlı kişisel gizlilik ve güvenlik."
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı kişisel gizlilik ve güvenlik."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Hesabınızı silerseniz tüm ${ visionary } tarifesi avantajlarını kaybedersiniz ve daha sonra yeni bir hesap açtığınızda yeniden abone olamazsınız."
@@ -8270,8 +8279,8 @@
       "Popular": [
         "Beğenilen"
       ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        "Tüm ücretli Proton hizmetleri ile birlikte kuruluşlar için kişisel gizlilik ve güvenlik paketi."
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri ile birlikte kuruluşlar için kişisel gizlilik ve güvenlik paketi."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolaması."
@@ -8308,11 +8317,11 @@
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
       ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
       ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
@@ -8384,8 +8393,8 @@
       "Review subscription and pay": [
         "Aboneliği ve ödemeyi gözden geçirin"
       ],
-      "Start exploring the Proton universe": [
-        "Proton evrenini keşfetmeye başlayın"
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "${ BRAND_NAME } evrenini keşfetmeye başlayın"
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
@@ -8416,8 +8425,8 @@
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Paylaşılan dosyalarınıza erişimi parola koruması ve bağlantı geçerlilik tarihi ekleyerek denetleyin"
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@proton.me, haber aboneliği için AliHaber@proton.me gibi takma adlar oluşturabilirsiniz"
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber${ domain } gibi takma adlar oluşturabilirsiniz"
       ],
       "Create up to ${ n } custom calendar.": [
         "${ n } özel takvime kadar ekleyin.",
@@ -8456,8 +8465,8 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
       ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        "Çalışma günlerinde, isteklerin ardından 24 saat içinde Proton müşteri destek ekibinden destek alın"
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "Çalışma günlerinde, isteklerin ardından 24 saat içinde ${ BRAND_NAME } müşteri destek ekibinden yardım alın"
       ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "Buna ek olarak, iş arkadaşlarınız, kuruluşunuz, aileniz ve arkadaşlarınız için 5 taneye kadar takvim ekleyebilirsiniz."
@@ -8465,8 +8474,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Buna ek olarak, arkadaşlarınız, aileniz, iş arkadaşlarınız ve kuruluşunuz için 5 taneye kadar takvim ekleyebilirsiniz."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
-        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın Proton VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda Proton VPN bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
+        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın ${ BRAND_NAME } VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda ${ BRAND_NAME } VPN bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Kişisel olmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
@@ -8483,8 +8492,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
       ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        "6 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde Proton müşteri başarısı ekibinden telefonla destek alabilirsiniz"
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "6 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde ${ BRAND_NAME } müşteri başarısı ekibinden telefonla destek alabilirsiniz"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
@@ -8507,8 +8516,8 @@
       "Route your internet traffic through the Tor network with a single click": [
         "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişimli şifreleme, bu bilgilere Proton tarafından bile erişilememesini sağlar."
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişimli şifreleme, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
@@ -8686,8 +8695,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Ardından, Google hesabınızda oturum açmanız ve verilerinize Proton tarafından erişilmesine izin vermeniz gerekecek."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ardından, Google hesabınızda oturum açmanız ve verilerinize ${ BRAND_NAME } tarafından erişilmesine izin vermeniz gerekecek."
       ]
     },
     "Oauth instructions video": {
@@ -8827,8 +8836,8 @@
       "I found another service that I like better": [
         "Daha çok sevdiğim başka bir hizmet buldum"
       ],
-      "I use a different Proton account": [
-        "Farklı bir Proton hesabı kullanıyorum"
+      "I use a different ${ BRAND_NAME } account": [
+        "Farklı bir ${ BRAND_NAME } hesabı kullanıyorum"
       ],
       "Ignore group": [
         "Grubu yok say"
@@ -9386,8 +9395,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-Proton users, share your calendar with a link": [
-        "Proton kullanmayan kişilerle takviminizi bir bağlantı ile paylaşın"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "${ BRAND_NAME } kullanmayan kişilerle takviminizi bir bağlantı ile paylaşın"
       ]
     },
     "Share calendar max shares reached error": {
@@ -9397,8 +9406,8 @@
       ]
     },
     "Share calendar modal description": {
-      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "${ calendarName } takvimini paylaşmak istediğiniz Proton hesaplarını ekleyin. Kendilerine bir çağrı gönderilecek."
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "${ calendarName } takvimini paylaşmak istediğiniz ${ BRAND_NAME } hesaplarını ekleyin. Kendilerine bir çağrı gönderilecek."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -9407,8 +9416,8 @@
       ]
     },
     "Share calendar modal title": {
-      "Share with Proton users": [
-        "Proton kullanıcıları ile paylaş"
+      "Share with ${ BRAND_NAME } users": [
+        "${ BRAND_NAME } kullanıcıları ile paylaş"
       ]
     },
     "Shared calendar label input placeholder": {
@@ -9450,8 +9459,8 @@
       "Get up to ${ credits } in credits.": [
         "${ credits } tutarına kadar kredi kazanın."
       ],
-      "Invite friends to Proton": [
-        "Arkadaşlarınıza Proton daveti gönderin"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Arkadaşlarınızı ${ BRAND_NAME } üzerine çağırın"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını deneyin"
@@ -9598,8 +9607,8 @@
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren e-posta ve takvim çözümü."
       ],
-      "This offer is for those new to Proton only. No credit card required.": [
-        "Bu teklif yalnızca yeni Proton kullanıcıları için geçerlidir. Kredi kartı gerekmez."
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "Bu teklif yalnızca yeni ${ BRAND_NAME } kullanıcıları için geçerlidir. Kredi kartı gerekmez."
       ]
     },
     "Success": {
@@ -9920,11 +9929,11 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } klavye kısayolları"
-      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
+      ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "${ MAIL_APP_NAME } klavye kısayolları"
       ],
       "1. Give a name to the config to be generated": [
         "1. Oluşturulacak yapılandırmaya bir ad verin"
@@ -10112,8 +10121,8 @@
       "Confirm downgrade": [
         "Düşürmeyi onayla"
       ],
-      "Confirm loss of Proton bonuses": [
-        "Proton ödüllerini kaybedeceğinizi onaylayın"
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "${ BRAND_NAME } hediyelerinizi kaybedeceğinizi onaylayın"
       ],
       "Confirm phone number": [
         "Telefon numarasını onaylayın"
@@ -10708,8 +10717,8 @@
       "WireGuard configuration": [
         "WireGuard yapılandırması"
       ],
-      "You already have a Proton account": [
-        "Zaten bir Proton hesabınız var"
+      "You already have a ${ BRAND_NAME } account": [
+        "Zaten bir ${ BRAND_NAME } hesabınız var"
       ],
       "Your calendar link": [
         "Takvim bağlantınız"
@@ -10732,8 +10741,8 @@
       "Your recovery status": [
         "Kurtarma durumunuz"
       ],
-      "You’ve been invited to try ${ mailAppName }": [
-        "${ mailAppName } uygulamasını denemeye davet edildiniz"
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } uygulamasını denemeye çağrıldınız"
       ],
       "ZIP / postal code": [
         "ZIP / posta kodu"
@@ -10940,8 +10949,8 @@
       "Your DKIM signing is working.": [
         "DKIM imzanız çalışıyor."
       ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "Dış hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. Proton, olabilecek en kısa sürede içe aktarma işlemini sürdürmeye çalışacak."
+      "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
+        "Dış hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. ${ BRAND_NAME }, olabilecek en kısa sürede içe aktarma işlemini sürdürmeye çalışacak."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -11081,6 +11090,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
+      ],
       "Are you sure you want to delete the address?": [
         "E-posta adresini silmek istediğinize emin misiniz?"
       ],
@@ -11105,11 +11120,11 @@
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Günlük kayıtlarını devre dışı bıraktığınızda, bütün günlük geçmişinizi de temizlemiş olursunuz. Günlük kaydını devre dışı bırakmak istediğinize emin misiniz?"
       ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "Bu adresi devre dışı bıraktığınızda, bu adresi kullanarak e-posta gönderemez veya alamazsınız ve bağlantılı tüm Proton ürünleri de devre dışı bırakılır. Bu adresi devre dışı bırakmak istediğinize emin misiniz?"
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "Bu adresi devre dışı bıraktığınızda, bu adresi kullanarak e-posta gönderemez veya alamazsınız ve bağlantılı tüm ${ BRAND_NAME } ürünleri de devre dışı bırakılır. Bu adresi devre dışı bırakmak istediğinize emin misiniz?"
       ],
-      "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
-        "Bu içe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz. Proton, hesabınızdaki tüm ilerlemeyi kaydetti. Yine de işlemi iptal etmek istiyor musunuz?"
+      "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
+        "Bu içe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz. ${ BRAND_NAME }, tüm ilerlemeyi hesabınıza kaydetti. Yine de işlemi iptal etmek istiyor musunuz?"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Canlı sohbet yalnızca ücretli ${ VPN_APP_NAME } tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
@@ -11120,20 +11135,14 @@
       "Please provide at least one recipient": [
         "Lütfen en az bir alıcı belirtin"
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton aynı adlı tüm klasörleri birleştirecek. Bunu istemiyorsanız, içe aktarmadan önce klasör adlarını değiştirin."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Aygıtınızın tarih ve saat ayarları eşit değil. ${ learnMore }"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Bu içe aktarma işlemi, Proton hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
         "Bu işlem, içe aktarma sırasında eklenen tüm iletileri, klasörleri ve etiketleri siler."

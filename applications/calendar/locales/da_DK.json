@@ -535,11 +535,11 @@
       ]
     },
     "Action title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Del med ${ BRAND_NAME }-brugere"
+      ],
       "Share with anyone": [
         "Del med enhver"
-      ],
-      "Share with Proton users": [
-        "Del med Proton-brugere"
       ]
     },
     "Actions message": {
@@ -563,15 +563,6 @@
       "${ title } started at ${ formattedHour }": [
         "${ title } startede ${ formattedHour }"
       ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } startede ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } startede ${ _formattedDate } ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } startede ${ _formattedDateWithTime }"
-      ],
       "${ title } started on ${ formattedDate }": [
         "${ title } startede ${ formattedDate }"
       ],
@@ -592,21 +583,6 @@
       ],
       "${ title } starts now": [
         "${ title } starter nu"
-      ],
-      "${ title } starts on ${ _formattedDate2 }": [
-        "${ title } starter ${ _formattedDate2 }"
-      ],
-      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } starter ${ _formattedDate2 } ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDate3 }": [
-        "${ title } starter ${ _formattedDate3 }"
-      ],
-      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } starter ${ _formattedDate3 } ${ formattedHour }"
-      ],
-      "${ title } starts on ${ _formattedDateWithoutTime }": [
-        "${ title } starter ${ _formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } starter ${ formattedDateWithTime }"
@@ -630,11 +606,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "Ved at forlade nu, mister du din begivenhed."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applikationer"
       ]
     },
     "Attached ics file error": {
@@ -820,12 +791,12 @@
       "Unable to create more calendar links": [
         "Det er ikke muligt at oprette flere kalenderlinks"
       ],
-      "Unable to share this calendar with more Proton users": [
-        "Kan ikke dele denne kalender med flere Proton-brugere"
+      "Unable to share this calendar with more ${ BRAND_NAME } users": [
+        "Kan ikke dele denne kalender med flere ${ BRAND_NAME }-brugere"
       ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
-        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem for denne kalender.\nHvis du vil dele denne kalender med flere Proton-konti, skal du fjerne nogle medlemmer.",
-        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlemmer for denne kalender.\nHvis du vil dele denne kalender med flere Proton-konti, skal du fjerne nogle medlemmer."
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem for denne kalender.\nHvis du vil dele denne kalender med flere ${ BRAND_NAME }-konti, skal du fjerne nogle medlemmer.",
+        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlemmer for denne kalender.\nHvis du vil dele denne kalender med flere ${ BRAND_NAME }-konti, skal du fjerne nogle medlemmer."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Du har nået det maksimale antal på ${ MAX_LINKS_PER_CALENDAR } link for denne kalender.\nHvis du vil oprette et nyt link til denne kalender, skal du slette et eksisterende link.",
@@ -896,9 +867,6 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Der er gået mere end 12 timer siden sidste opdatering - Proton Calendar vil forsøge at opdatere kalenderen om et par timer."
       ]
     },
     "Calendar view": {
@@ -2060,14 +2028,6 @@
       ]
     },
     "Error": {
-      "${ _list } doesn't have an email address": [
-        "${ _list } har ikke en e-mailadresse",
-        "Nogle kontakter har ikke e-mailadresse: ${ _list }"
-      ],
-      "${ _list2 } has no contacts": [
-        "${ _list2 } har ingen kontakter",
-        "Nogle grupper har ingen kontakter: ${ _list2 }"
-      ],
       "${ list } doesn't have a valid email address": [
         "${ list } har ikke en gyldig e-mailadresse",
         "Nogle kontakter har ikke en gyldig e-mailadresse: ${ list }"
@@ -2195,10 +2155,6 @@
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Flet mindst ${ calendarToFixCount } kalender med en eksisterende Proton-kalender",
-        "Flet mindst ${ calendarToFixCount } kalendere med eksisterende Proton-kalendere"
-      ],
       "Missing key packet": [
         "Manglende nøglepakke"
       ],
@@ -2217,8 +2173,8 @@
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
-      "No public key for Proton address": [
-        "Ingen offentlig nøgle til Proton-adresse"
+      "No public key for ${ BRAND_NAME } address": [
+        "Ingen offentlig nøgle til ${ BRAND_NAME }-adresse"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
@@ -2226,8 +2182,8 @@
       "No WKD key retrieved for user is valid for sending": [
         "Ingen WKD-nøgle hentet for bruger er gyldig til afsendelse"
       ],
-      "Not a Proton account": [
-        "Ikke en Proton-konto"
+      "Not a ${ BRAND_NAME } account": [
+        "Ikke en ${ BRAND_NAME }-konto"
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
@@ -2564,9 +2520,6 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Noget gik galt. Genopfrisk siden eller prøv igen senere."
       ],
-      "There was a problem connecting to Proton.": [
-        "Der opstod et problem med at oprette forbindelse til Proton."
-      ],
       "You may also ${ refresh } or try again later.": [
         "Du kan også ${ refresh }, eller forsøge igen senere."
       ],
@@ -2842,8 +2795,8 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Importerede invitationer vises i ${ CALENDAR_APP_NAME } som simple begivenheder uden oplysninger om arrangør og deltagere. Hvis du vil have opdateringer om begivenhederne og se deltagerne, skal du bede arrangørerne om at invitere dig med din Proton-e-mailadresse."
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Importerede invitationer vises i ${ CALENDAR_APP_NAME } som simple begivenheder uden oplysninger om arrangør og deltagere. Hvis du vil have opdateringer om begivenhederne og se deltagerne, skal du bede arrangørerne om at invitere dig med din ${ BRAND_NAME }-e-mailadresse."
       ],
       "This file contains an event invitation:": [
         "Denne fil indeholder en invitation til en begivenhed:",
@@ -2931,30 +2884,6 @@
       "Invalid IMAP port": [
         "Ugyldig IMAP- port"
       ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton kan ikke oprette forbindelse til din konto. Sørg for, at Gmail IMAP adgang er aktiveret."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton kan ikke oprette forbindelse til din konto. Sørg for, at IMAP-adgang er aktiveret på din Gmail-konto."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton kan ikke oprette forbindelse til din konto. Sørg for, at:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton kan ikke oprette forbindelse til din eksterne konto. Sørg for, at mailserverens adresse og portnummer er korrekte."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton kan ikke oprette forbindelse til din eksterne konto. Sørg for, at:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton kan ikke oprette forbindelse til din Gmail-konto. Sørg for, at mailserverens adresse og portnummer er korrekte."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton kan ikke oprette forbindelse til din Yahoo-konto. Sørg for, at mailserverens adresse og portnummer er korrekt."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton kan ikke oprette forbindelse til din Yahoo-konto. Sørg for at:"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "For mange nylige anmodninger. Forsøg igen lidt senere."
       ],
@@ -3007,17 +2936,8 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Klik på ${ boldManage } for at udvide menu med valgmuligheder."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til Proton."
-      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Opret et ${ boldAppPassword } og brug det i stedet for din almindelige adgangskode, når Proton anmoder om det."
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Generer ${ boldAppPassword } og bruge det i stedet for din almindelige adgangskode, når Proton beder dig om det."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Gå til ${ boldAccountInfo } under din profil i ${ yahooMailLink }."
@@ -3042,30 +2962,6 @@
       ],
       "Select ${ boldExportCSV }.": [
         "Vælg ${ boldExportCSV }."
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "For at importere en kalender til Proton, skal du bruge ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "For at importere kontakter til Proton skal du bruge et ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "For at importere e-mails til Proton, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "For at importere til Proton skal du bruge et ${ appPasswordLink } fra Yahoo. Få det ved at følge disse trin:"
       ]
     },
     "Import instructions emphasis": {
@@ -3307,8 +3203,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Ved at dele alle detaljer om begivenheden i denne kalender, accepterer du at give Proton adgang til denne kalenders krypterede oplysninger."
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Ved at dele alle detaljer om begivenheden i denne kalender, accepterer du at give ${ BRAND_NAME } adgang til denne kalenders krypterede oplysninger."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
@@ -3766,9 +3662,6 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Du kan også flette importerede kalendere med eksisterende Proton-kalendere."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
@@ -3814,9 +3707,6 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Du vil opdatere alle begivenheder i denne serie. Fjernede deltagere vil blive underrettet."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Din konto har mindst én forfalden faktura. Din adgang er blevet begrænset. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
       ],
@@ -3825,9 +3715,6 @@
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Din adresse er deaktiveret. En aflysningsmail kan ikke sendes til deltagerne i arrangementet. Vil du slette denne begivenhed alligevel?"
-      ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din Proton-konto."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "Din e-mailadresse ændres ikke. Men snart skal du logge ind på ${ link }."
@@ -3846,9 +3733,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Din Proton-konto er suspenderet. For at fortsætte med at bruge din konto skal du betale eventuelle forfaldne fakturaer."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszone ser ud til at være ændret til ${ timezone }. Vil du opdatere din tidszone præferencer?"
@@ -4045,9 +3929,6 @@
       "Hide password": [
         "Skjul adgangskode"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Hvordan vil du beskrive din oplevelse med det nye Proton?"
-      ],
       "I understand the risk": [
         "Jeg er indforstået med risikoen"
       ],
@@ -4153,9 +4034,6 @@
       ],
       "Postal code": [
         "Postnummer"
-      ],
-      "Proton username": [
-        "Proton-brugernavn"
       ],
       "Public keys": [
         "Offentlige nøgler"
@@ -4717,11 +4595,6 @@
         "Ukendt"
       ]
     },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Derefter skal du logge ind på din Google-konto og give Proton adgang til dine data."
-      ]
-    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
@@ -4747,17 +4620,11 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
       ],
-      "Discover all Proton services": [
-        "Udforsk alle Proton-tjenester"
-      ],
       "Select a theme": [
         "Vælg et tema"
       ],
       "Set up your organization": [
         "Konfigurer din organisation"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Brug app-vælgeren øverst til venstre for at få adgang til andre Proton-tjenester, herunder VPN, kalender og drev."
       ],
       "You can change this anytime in your settings.": [
         "Du kan altid ændre dette i dine indstillingerne."
@@ -5006,8 +4873,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-Proton users, share your calendar with a link": [
-        "Hvis du vil invitere ikke-Proton-brugere, skal du dele din kalender med et link"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "Hvis du vil invitere brugere, som ikke benytter ${ BRAND_NAME }, skal du dele din kalender med et link"
       ]
     },
     "Share calendar max shares reached error": {
@@ -5017,8 +4884,8 @@
       ]
     },
     "Share calendar modal description": {
-      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Tilføj de Proton-konti, som du ønsker at dele ${ calendarName } med. Vi sender dem en invitation."
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Tilføj de ${ BRAND_NAME }-konti, som du ønsker at dele ${ calendarName } med. Vi sender dem en invitation."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -5027,8 +4894,8 @@
       ]
     },
     "Share calendar modal title": {
-      "Share with Proton users": [
-        "Del med Proton-brugere"
+      "Share with ${ BRAND_NAME } users": [
+        "Del med ${ BRAND_NAME }-brugere"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5053,9 +4920,6 @@
       ],
       "Get up to ${ credits } in credits.": [
         "Få op til ${ credits } i kreditter."
-      ],
-      "Invite friends to Proton": [
-        "Inviter venner til Proton"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Nu vises invitationer i din kalender som afventende begivenheder. Du skal blot åbne en begivenhed for at svare. ${ goToSettingsLink }"
@@ -5827,12 +5691,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Live chat er en premium-funktion, der kun er tilgængelig for dem, der har betalte ${ VPN_APP_NAME }-abonnementer. Åbn venligst en sag i stedet."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton vil sammenflette alle mapper med det samme navn. For at undgå dette, skal du ændre navnene før importen."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton vil overføre så mange data som muligt, startende med dine seneste beskeder."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
@@ -5856,12 +5714,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Denne handling er irreversibel. Indtast ordet ${ boldDanger } i feltet for at fortsætte."
-      ],
-      "This feature requires a paid Proton account": [
-        "Denne funktion kræver en betalt Proton-konto"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din Proton-konto. Overvej venligst at tilpasse din import."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."

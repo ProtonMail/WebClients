@@ -54,7 +54,7 @@
         "Закрыть"
       ],
       "Close navigation": [
-        "Закрыть навигацию"
+        "Закрыть панель навигации"
       ],
       "Close this banner": [
         "Закрыть этот баннер"
@@ -111,7 +111,7 @@
         "Отключить"
       ],
       "Discard": [
-        "Отменить"
+        "Сбросить"
       ],
       "Done": [
         "Готово"
@@ -180,7 +180,7 @@
         "Увеличить"
       ],
       "Load more": [
-        "Загрузить ещё"
+        "Загрузить еще"
       ],
       "Loading verification": [
         "Загружается проверка"
@@ -210,7 +210,7 @@
         "Открыть настройки ${ CALENDAR_APP_NAME }"
       ],
       "Open navigation": [
-        "Открыть навигацию"
+        "Открыть панель навигации"
       ],
       "Organization": [
         "Организация"
@@ -1896,11 +1896,11 @@
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "Требуются ${ vpnBasic }, ${ vpnPlus } или ${ visionary } для подключения на уровне страны."
+      "${ vpnPlus } required for Country level connection.": [
+        "Для подключений уровня страны требуется ${ vpnPlus }."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "${ vpnPlus } или ${ visionary } нужны для использования функции Secure Core."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "Для функции Secure Core требуется ${ vpnPlus }."
       ],
       "* No credit card required.": [
         "* Кредитная карточка не требуется."
@@ -2156,6 +2156,9 @@
       ],
       "Loading preview": [
         "Загрузка предпросмотра"
+      ],
+      "Loading...": [
+        "Загрузка..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Войдите в ${ MAIL_APP_NAME }, чтобы активировать свой адрес"
@@ -2550,17 +2553,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Ваш аккаунт ${ BRAND_NAME } связан с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, вам необходим адрес ${ MAIL_APP_NAME }."
       ],
-      "Your ${ BRAND_NAME } account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Для продолжения использования вашего аккаунта, оплатите все просроченные счета."
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, оплатите все просроченные счета."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны между собой. Чтобы удалить оба из них, войдите в систему по ссылке: ${ loginLink } и удалите по ней свой аккаунт."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Для вашего аккаунту есть по крайней мере один просроченный счет. Ваш доступ был ограничен. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "В вашем аккаунте есть как минимум один просроченный счет. Ваш аккаунт ограничен, и все услуги теперь заблокированы до оплаты. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "В вашем аккаунте есть по крайней мере один просроченный счет. Ваш аккаунт ограничен. Продолжение неуплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш аккаунт будет обновлен, когда платеж будет проверен."

@@ -155,6 +155,9 @@
       "Clear query": [
         "清除查询"
       ],
+      "Clear search": [
+        "清除搜索条件"
+      ],
       "Click here.": [
         "点击此处。"
       ],
@@ -266,6 +269,12 @@
       "Delete draft": [
         "删除草稿"
       ],
+      "Delete folder": [
+        "删除文件夹"
+      ],
+      "Delete label": [
+        "删除标签"
+      ],
       "Delete permanently": [
         "永久删除"
       ],
@@ -310,6 +319,9 @@
       ],
       "Edit encryption": [
         "编辑加密"
+      ],
+      "Edit folder": [
+        "修改文件夹"
       ],
       "Edit label": [
         "编辑标签"
@@ -791,9 +803,6 @@
       "Save": [
         "保存"
       ],
-      "Saving${ _ellipsis }": [
-        "正在保存${ _ellipsis }"
-      ],
       "Schedule message": [
         "定时邮件"
       ],
@@ -947,6 +956,9 @@
       "Try another method": [
         "更换验证方式"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "保存失败，请重试。失败原因：${ saveError }"
+      ],
       "Turn on tracker protection": [
         "开启追踪保护"
       ],
@@ -1036,9 +1048,6 @@
       ],
       "View keys": [
         "查看密钥"
-      ],
-      "View message": [
-        "查看邮件"
       ],
       "View message details": [
         "查看邮件详细信息"
@@ -1160,8 +1169,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Proton 产品"
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } 应用"
       ]
     },
     "Attached ics file error": {
@@ -1493,9 +1502,6 @@
       "Event rescheduling is not supported for the moment": [
         "暂不支持重新安排活动"
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        "此回复无法添加到 ${ calendarAppName } 中，因为目前仅支持对全系列事件的回复"
-      ],
       "This event has been canceled.": [
         "此活动已被取消。"
       ],
@@ -1583,8 +1589,8 @@
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "日历链接暂时无法访问。请核实日历提供者的链接仍然有效。"
       ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "距离上次更新已经超过12小时--Proton Calendar将尝试在几小时内更新日历。"
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "距上次更新已超过 12 小时，${ CALENDAR_APP_NAME } 将在数小时内尝试更新日历。"
       ]
     },
     "Calendar widget banner": {
@@ -3083,9 +3089,6 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "最多只能有 ${ attachmentsCountLimit } 个附件"
       ],
-      "Merge at least ${ calendarToFixCount } calendars with existing Proton calendars": [
-        "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
-      ],
       "Message needs to be sent first": [
         "需要先发送邮件"
       ],
@@ -3215,8 +3218,8 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
-      "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "对不起，Proton 无法解密您的邮件。请确认您的密钥是否已全部启用。"
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "对不起，${ BRAND_NAME } 无法解密您的邮件。请确认您的密钥是否已全部启用。"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "文件夹名称无效，请更改。"
@@ -3316,6 +3319,11 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
+        "每次最多可邀请 ${ MAX_ATTENDEES } 人参与"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3470,8 +3478,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "出错了，请刷新页面或稍后重试。"
       ],
-      "There was a problem connecting to Proton.": [
-        "连接 Proton 服务器失败。"
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "连接 ${ BRAND_NAME } 服务器失败。"
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您还没有任何联系人。首先创建一个新的联系人。"
@@ -3713,6 +3721,17 @@
         "${ BRAND_NAME }。隐私优先。"
       ]
     },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "日期：${ date }"
+      ],
+      "From: ${ senderString }": [
+        "发件人：${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "主题：${ subject }"
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "我们已将您的存储空间升至 ${ rewardInGb } GB。您还可以升级账户，从而获得更大的存储空间和更高级的功能。"
@@ -3739,8 +3758,8 @@
       "Available on iOS and Android.": [
         "支持 iOS 与安卓设备。"
       ],
-      "Get the ${ protonMailAppName } mobile app": [
-        "下载 ${ protonMailAppName } 移动应用"
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "下载 ${ MAIL_APP_NAME } 移动应用"
       ],
       "Import contacts or emails": [
         "导入您的通讯录或信息"
@@ -3908,6 +3927,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "Google 账户的安全设置中已开启“允许不够安全的应用访问”选项"
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } 无法连接您的账户，请确认 Gmail 的 IMAP 功能是否已开启。"
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } 无法连接您的账户，请确认 Gmail 账户的 IMAP 功能是否已开启。"
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } 无法连接该账户，请确认："
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 无法连接该邮箱，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } 无法连接该邮箱，请确认："
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 无法连接您的 Gmail 账户，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认："
+      ],
       "2-step verification is enabled in your external account.": [
         "该邮箱开启了两步验证."
       ],
@@ -3934,30 +3977,6 @@
       ],
       "Invalid IMAP port": [
         "IMAP 端口号无效"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton 无法连接您的账户，请确认 Gmail 的 IMAP 功能是否已开启。"
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton 无法连接您的账户，请确认 Gmail 账户的 IMAP 功能是否已开启。"
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton 无法连接您的账户，请确认："
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "ProtonMail 无法连接该邮箱账户，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton 无法连接该邮箱，请确认："
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "ProtonMail 无法连接您的 Gmail 账户，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "ProtonMail 无法连接您的 Yahoo Mail 账户，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton 无法连接您的 Yahoo 账户，请确认："
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "请求过于频繁，请稍后再试。"
@@ -4019,17 +4038,14 @@
       "Click ${ boldManage } to expand the options menu.": [
         "点击 ${ boldManage } 下拉菜单."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "由于各邮箱厂商的规定不同，您可能需要先生成${ knowledgeBaseLink } 才能开始导入."
-      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "点击三点图标（...）展开下拉菜单。"
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "生成 ${ boldAppPassword } ，并在Proton提示下使用它来代替您的常规密码。"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "生成 ${ boldAppPassword } 并在 ${ BRAND_NAME } 中根据提示使用。"
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "生成 ${ boldAppPassword } ，并在Proton提示下使用它来代替您的常规密码。"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "生成 ${ boldAppPassword } 并在 ${ BRAND_NAME } 中根据提示使用。"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "前往 ${ yahooMailLink } 中您个人资料下的${ boldAccountInfo }。"
@@ -4055,29 +4071,29 @@
       "Select ${ boldExportCSV }.": [
         "选择 ${ boldExportCSV }"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "如需将日程导入 Proton，您需要在 Outlook 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "将 Outlook 日程导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "如需将日程导入 Proton，您需要在 Yahoo 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "将 Yahoo 日程导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "如需将日程导入 Proton，您需要先下载一份 ${ knowledgeBaseLink }."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "如需将日程导入 ${ BRAND_NAME }，您需要先下载一份 ${ knowledgeBaseLink }。"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "如需将通讯录导入 Proton，您需要在 Outlook 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "将 Outlook 通讯录导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "如需将通讯录导入 Proton，您需要在 Yahoo 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "将 Yahoo 通讯录导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "如需将通讯录导入 Proton，您需要先下载一份 ${ knowledgeBaseLink }."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "如需将通讯录导入 ${ BRAND_NAME }，您需要先下载一份 ${ knowledgeBaseLink }。"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "如需将邮件导入 Proton，您需要按下列步骤获取 Outlook ${ appPasswordLink }："
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "将 Outlook 邮件导入 ${ BRAND_NAME }，需要按以下步骤获取 ${ appPasswordLink }："
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "要将电子邮件从Yahoo导入到Proton，您需要在Yahoo得到一条 ${ appPasswordLink }，通过下面的步骤来获取："
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "将 Yahoo 邮件导入 ${ BRAND_NAME }，需要按以下步骤获取 ${ appPasswordLink }："
       ]
     },
     "Import instructions emphasis": {
@@ -4175,6 +4191,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的权限来${ enableDesktopNotifications }。"
+      ],
+      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
+        "${ BRAND_NAME } 绝不以践踏用户隐私的方式牟利。"
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 个新日历"
@@ -4350,6 +4369,12 @@
       "Are you sure you want to delete all messages with this label?": [
         "确定要删除带有此标签的所有邮件吗？"
       ],
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "您确定要删除此文件夹吗？注意所有子文件夹也将被删除。"
+      ],
+      "Are you sure you want to delete this label?": [
+        "确定要删除此标签吗？"
+      ],
       "Are you sure you want to discard your changes?": [
         "确定要放弃修改吗？"
       ],
@@ -4524,14 +4549,20 @@
       "Email tracker protection is disabled": [
         "已禁用电子邮件跟踪保护"
       ],
-      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        "邮件跟踪器会威胁到您的隐私，Proton暂未在此邮件中发现任何跟踪器。"
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
+        "邮件跟踪器会侵害您的隐私，${ BRAND_NAME } 在此邮件中未发现跟踪器。"
       ],
-      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } trackers.": [
-        "邮件跟踪器会威胁到您的隐私，Proton找到并阻止了 ${ numberOfTrackers } 个跟踪器。"
+      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
+        "邮件跟踪器会侵害您的隐私，${ BRAND_NAME } 已发现并屏蔽了 ${ numberOfTrackers } 个跟踪器。"
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "邮件跟踪器会威胁到您的隐私，开启跟踪器防护可以避免发件人得知您在何时何地阅览了此邮件。"
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "放在此文件夹中的邮件不会被删除，且仍可在 \"所有邮件\" 文件夹中找到。"
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "带有此标签的邮件不会被删除，且仍可在相应文件夹中找到。"
       ],
       "embedded images": [
         "张嵌入图像"
@@ -4623,8 +4654,8 @@
       "How Hide My Email works": [
         "Hide My Email 的原理"
       ],
-      "I'm sending this message to a non-Proton Mail user.": [
-        "我要将此邮件发给非 Proton Mail 邮箱。"
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "我确定要将此邮件发给非 ${ MAIL_APP_NAME } 邮箱。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
@@ -4815,8 +4846,8 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "没有检测到跟踪器，但跟踪器防护导致某些图像无法加载"
       ],
-      "non-Proton Mail": [
-        "非 Proton Mail"
+      "non-${ MAIL_APP_NAME }": [
+        "非 ${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "已上传的所有密钥都不能用于加密，如需向此地址发送邮件，请上传一份有效密钥或关闭邮件加密。"
@@ -4881,6 +4912,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "请选择将哪些邮箱地址加入「${ groupName }」。"
       ],
+      "Please wait till your changes are synced with the server.": [
+        "请稍候，数据正在与服务器同步。"
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "请稍候，我们正在寻找可用主密钥重新签名的联系人。"
       ],
@@ -4901,9 +4935,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "使用 ${ maskMyEmailButton } 功能即可防止您的邮箱地址泄露，免受垃圾邮件干扰。"
-      ],
-      "Proton doesn't make money by abusing privacy.": [
-        "Proton 绝不以践踏用户隐私的方式牟利。"
       ],
       "Recipient: ": [
         "收件人："
@@ -5010,8 +5041,8 @@
       "Sign in": [
         "登录"
       ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "您可以使用 Proton 提供的 SimpleLogin 服务隐藏您的邮箱地址，只需前往 SimpleLogin 创建邮箱别名即可。"
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "您可以使用 ${ BRAND_NAME } 提供的 SimpleLogin 服务隐藏您的邮箱地址，只需前往 SimpleLogin 创建邮箱别名即可。"
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "如果您不愿将真实邮箱透露给其他网站，SimpleLogin 能够方便快捷地生成临时邮箱供您使用。"
@@ -5214,6 +5245,9 @@
       "Unlock message": [
         "解锁邮件"
       ],
+      "Unsaved changes": [
+        "更改未保存"
+      ],
       "Unsupported file": [
         "不支持文件"
       ],
@@ -5262,8 +5296,8 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "网址：${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ calendarAppName } to keep your agenda private.": [
-        "使用 ${ calendarAppName } 守护您的日程隐私。"
+      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
+        "使用 ${ CALENDAR_APP_NAME } 守护您的日程隐私。"
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用键盘快捷键让邮件操作更加迅捷。"
@@ -5271,14 +5305,14 @@
       "Using SimpleLogin is easy": [
         "SimpleLogin 便捷易用"
       ],
-      "Verified Proton message": [
-        "已核实为 Proton 官方邮件"
+      "Verified ${ BRAND_NAME } message": [
+        "已核实为 ${ BRAND_NAME } 官方邮件"
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
       ],
-      "Visit our shop to get Proton merchandise.": [
-        "前往我们的商店即可选购 Proton 特色纪念品。"
+      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
+        "前往我们的商店即可选购 ${ BRAND_NAME } 特色纪念品。"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "很抱歉，这可能是我们的失误。确定要将此邮件标为非垃圾邮件吗？"
@@ -5331,8 +5365,8 @@
       "You can add it as an attachment or display it inline in your mail body.": [
         "您可以将此图片作为附件或嵌入邮件正文中。"
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "您也可以将导入日历与现有 Proton 日历合并。"
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "您也可以将导入的日历与 ${ BRAND_NAME } 现有日历合并。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在${ importProgressLink } 查看导入进度"
@@ -5403,14 +5437,26 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您提到了“${ attachmentsFoundKeyword }”，但没有添加附件。是否仍要发送邮件？"
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "您有逾期未支付的账单，因此功能已受限。${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "您的 ${ BRAND_NAME } 账户自带 SimpleLogin 服务，一键安装浏览器扩展程序即可开始使用。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "您的 ${ BRAND_NAME } 账户已被停用，无法继续收取新邮件，并且网盘分享链接已全部失效，新文件也无法上传。如需恢复账户正常功能，请付清逾期账单。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "数据随时可以从 ${ importedEmailAddressStrong } 导入至您的 Proton 账户。"
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "您的账户有逾期未支付的账单，所有功能均已停用，续费后方可恢复。${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "您的账户有逾期未支付的账单，因此功能已受限。欠费时间过长将导致无法收取邮件，网盘分享链接也将失效。${ payInvoiceLink }"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "您的邮箱地址不会变化，但近期您将需要通过 ${ link } 重新登录。"
@@ -5444,12 +5490,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
-      ],
-      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "您的 Proton 账户自带 SimpleLogin 服务，一键安装浏览器扩展程序即可开始使用。"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
       ],
       "Your recovery phrase": [
         "您的恢复密语"
@@ -5710,6 +5750,9 @@
       " and ${ l }": [
         "、${ l }"
       ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } 用户名"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
       ],
@@ -5902,8 +5945,8 @@
       "Hide password": [
         "隐藏密码"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "您认为新版 Proton 的使用体验如何？"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "您认为新版 ${ BRAND_NAME } 的使用体验如何？"
       ],
       "I understand the risk": [
         "风险已知悉"
@@ -6039,9 +6082,6 @@
       ],
       "Postal code": [
         "邮编"
-      ],
-      "Proton username": [
-        "Proton 用户名"
       ],
       "Public keys": [
         "公钥"
@@ -6306,20 +6346,17 @@
       "Manage your folders": [
         "管理文件夹"
       ],
-      "Manage your labels": [
-        "管理标签"
-      ],
       "More": [
         "展开"
       ],
       "More about recovery": [
         "详细了解账户恢复"
       ],
-      "Open in ${ calendarAppName }": [
-        "在 ${ calendarAppName } 中打开"
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "前往 ${ CALENDAR_APP_NAME } 查看"
       ],
-      "Open updated event in ${ calendarAppName }": [
-        "在 ${ calendarAppName } 中打开更新的日程"
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "前往 ${ CALENDAR_APP_NAME } 查看新日程"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "您也可以删除并重新创建一份日历，关联至已启用的邮箱地址。"
@@ -6360,8 +6397,8 @@
       "Terms": [
         "服务条款"
       ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "此 ICS 文件包含多个日程，请下载并导入 ${ calendarAppName } 中的日程"
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "此 ICS 文件包含多项日程，请下载后前往 ${ CALENDAR_APP_NAME } 导入"
       ],
       "Trash": [
         "废件箱"
@@ -6471,8 +6508,8 @@
       "Fw:": [
         "转发："
       ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ date }，${ name } ${ address } 来信："
+      "On ${ date }, ${ senderString } wrote:": [
+        "${ date }，${ senderString } 来信："
       ],
       "Re:": [
         "回复："
@@ -6487,8 +6524,8 @@
       ]
     },
     "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by Proton": [
-        "由 Proton 通过 SimpleLogin 提供"
+      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
+        "通过 ${ BRAND_NAME } 的 SimpleLogin 服务送达"
       ]
     },
     "Message image": {
@@ -6707,9 +6744,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } 规则已创建"
-      ],
       "Block removed": [
         "移除屏蔽"
       ],
@@ -6730,8 +6764,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "接下来您需要登录 Google 账户并允许 Proton 获取您的数据。"
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "接下来您需要登录 Google 账户并允许 ${ BRAND_NAME } 获取您的数据。"
       ]
     },
     "Oauth instructions video": {
@@ -6759,8 +6793,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护。"
       ],
-      "Discover all Proton services": [
-        "探索所有 Proton 系列服务"
+      "Discover all ${ BRAND_NAME } services": [
+        "探索各类 ${ BRAND_NAME } 服务"
       ],
       "Select a theme": [
         "选择配色"
@@ -6768,8 +6802,8 @@
       "Set up your organization": [
         "填写机构信息"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "点击左上方的应用菜单即可前往其他 Proton 服务，如 VPN、日历和网盘。"
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "点击左上方的应用菜单即可前往其他 ${ BRAND_NAME } 服务，如 VPN、日历和网盘。"
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
@@ -7156,12 +7190,6 @@
       ]
     },
     "Signature verification warning": {
-      "PGP-encrypted message. Sender verification failed: ${ _verificationErrorsMessage }": [
-        "PGP 加密邮件，发件人验证失败：${ _verificationErrorsMessage }"
-      ],
-      "PGP-signed message. Sender verification failed: ${ _verificationErrorsMessage2 }": [
-        "PGP 签名邮件，发件人验证失败：${ _verificationErrorsMessage2 }"
-      ],
       "Sender could not be verified: Message not signed": [
         "无法验证发件人：邮件未签名"
       ],
@@ -7195,6 +7223,9 @@
       ],
       "Email tracking protection": [
         "邮件追踪防护"
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "邀请好友注册 ${ BRAND_NAME }"
       ],
       "Message Content Search": [
         "邮件全文搜索"
@@ -7454,6 +7485,11 @@
         "验证成功"
       ]
     },
+    "Success notification": {
+      "${ label.Name } removed": [
+        "${ label.Name } 已删除"
+      ]
+    },
     "Success notification when user send feedback": {
       "Feedback sent": [
         "反馈已发送"
@@ -7556,11 +7592,11 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } 快捷键"
-      ],
       "${ emailsCount } members": [
         "${ emailsCount } 位成員"
+      ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "${ MAIL_APP_NAME } 快捷键"
       ],
       "${ unreads } unread messages": [
         "${ unreads } 封未读邮件"
@@ -7585,6 +7621,9 @@
       ],
       "Archive": [
         "存档"
+      ],
+      "Are you sure you want to close the preview?": [
+        "确定要关闭预览吗？"
       ],
       "Are you sure you want to close?": [
         "确定要关闭吗？"
@@ -7682,6 +7721,12 @@
       "Delete ${ count } messages": [
         "删除 ${ count } 封邮件"
       ],
+      "Delete ${ label.Name } folder": [
+        "删除 ${ label.Name } 文件夹"
+      ],
+      "Delete ${ label.Name } label": [
+        "删除 ${ label.Name } 标签"
+      ],
       "Delete ${ Name }": [
         "删除 ${ Name }"
       ],
@@ -7754,14 +7799,17 @@
       "Filter on...": [
         "筛选..."
       ],
+      "Folder options": [
+        "文件夹选项"
+      ],
       "Forward": [
         "转发"
       ],
       "Groups": [
         "群组"
       ],
-      "Hide your email with SimpleLogin by Proton": [
-        "借助 Proton 的 SimpleLogin 服务隐藏您的邮箱地址"
+      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
+        "借助 ${ BRAND_NAME } 的 SimpleLogin 服务隐藏您的邮箱地址"
       ],
       "Human verification": [
         "身份验证"
@@ -7780,6 +7828,9 @@
       ],
       "Label as": [
         "加标签"
+      ],
+      "Label options": [
+        "标签选项"
       ],
       "Link confirmation": [
         "确认打开链接"
@@ -8045,6 +8096,9 @@
       "What's new": [
         "更新内容"
       ],
+      "Your changes are not synced yet": [
+        "您的改动尚未同步"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您的免费试用将在 ${ formattedEndDate } 后过期。"
       ]
@@ -8143,6 +8197,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } 将合并所有同名文件夹，无需合并的文件夹请在导入前更改名称。"
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
+      ],
       "Are you sure you want to discard your import?": [
         "您确定要放弃导入吗？"
       ],
@@ -8166,12 +8226,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "只有付费 ${ VPN_APP_NAME } 账户才能与客服实时交流，请通过表单提交反馈。"
-      ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton 将从最近的邮件开始导入尽可能多的数据。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
@@ -8200,11 +8254,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "此操作不可逆，请在字段中输入 ${ boldDanger } 以继续"
       ],
-      "This feature requires a paid Proton account": [
-        "此功能仅限付费用户使用"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "此功能仅对 ${ BRAND_NAME } 付费账户开放"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "此次导入可能会耗尽您的 Proton 账户存储空间，请考虑缩减导入内容。"
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "此次导入可能会耗尽您的 ${ BRAND_NAME } 账户存储空间，请考虑缩减导入内容。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"

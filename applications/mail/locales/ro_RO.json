@@ -155,6 +155,9 @@
       "Clear query": [
         "Ștergere interogare"
       ],
+      "Clear search": [
+        "Golire căutare"
+      ],
       "Click here.": [
         "Apăsați aici."
       ],
@@ -270,6 +273,12 @@
       "Delete draft": [
         "Ștergere ciornă"
       ],
+      "Delete folder": [
+        "Ștergere folder"
+      ],
+      "Delete label": [
+        "Ștergere etichetă"
+      ],
       "Delete permanently": [
         "Ștergere permanentă"
       ],
@@ -314,6 +323,9 @@
       ],
       "Edit encryption": [
         "Editare criptare"
+      ],
+      "Edit folder": [
+        "Editare folder"
       ],
       "Edit label": [
         "Editare etichetă"
@@ -797,9 +809,6 @@
       "Save": [
         "Salvare"
       ],
-      "Saving${ _ellipsis }": [
-        "Se salvează${ _ellipsis }"
-      ],
       "Schedule message": [
         "Mesaj programat"
       ],
@@ -1048,9 +1057,6 @@
       "View keys": [
         "Afișare chei"
       ],
-      "View message": [
-        "Afișare mesaj"
-      ],
       "View message details": [
         "Afișare detalii mesaj"
       ],
@@ -1173,8 +1179,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Aplicații Proton"
+      "${ BRAND_NAME } applications": [
+        "Aplicații ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -1506,8 +1512,8 @@
       "Event rescheduling is not supported for the moment": [
         "Reprogramarea evenimentului nu este momentan suportată."
       ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        "Acest răspuns nu poate fi adăugat la ${ calendarAppName } deoarece momentan sunt suportate doar răspunsuri la toate evenimentele dintr-o serie."
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "Acest răspuns nu poate fi adăugat la ${ CALENDAR_APP_NAME } deoarece momentan sunt suportate doar răspunsuri la toate evenimentele dintr-o serie."
       ],
       "This event has been canceled.": [
         "Acest eveniment a fost anulat."
@@ -1596,8 +1602,8 @@
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Legătura calendarului nu este accesibilă momentan. Verificați dacă legătura de la furnizorul calendarului încă e validă."
       ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Au trecut mai mult de 12 ore de la ultima actualizare - Proton Calendar va încerca să actualizeze calendarul în câteva ore."
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Au trecut mai mult de 12 ore de la ultima actualizare - ${ CALENDAR_APP_NAME } va încerca să actualizeze calendarul în câteva ore."
       ]
     },
     "Calendar widget banner": {
@@ -3116,10 +3122,10 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Numărul maxim de atașamente (${ attachmentsCountLimit }) a fost depășit."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Îmbinați cel puțin un calendar cu un calendar Proton existent",
-        "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele Proton existente",
-        "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele Proton existente"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Îmbinați cel puțin un calendar cu un calendar ${ BRAND_NAME } existent.",
+        "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
+        "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele ${ BRAND_NAME } existente."
       ],
       "Message needs to be sent first": [
         "Mesajul trebuie trimis mai întâi."
@@ -3255,8 +3261,8 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
-      "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Proton nu poate decripta mesajul. Verificați dacă toate cheile sunt active."
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "${ BRAND_NAME } nu poate decripta mesajul. Verificați dacă toate cheile sunt active."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Atașamentul nu a putut fi decriptat.\nDacă aveți cheia privată corespunzătoare, veți putea decripta\nfișierul cu un program cum ar fi GnuPG.",
@@ -3524,8 +3530,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Ceva nu a mers bine. Reîmprospătați pagina sau reîncercați mai târziu."
       ],
-      "There was a problem connecting to Proton.": [
-        "A apărut o problemă la conectarea la Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "A apărut o problemă la conectarea la ${ BRAND_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Încă nu aveți niciun contact. Începeți prin a crea un contact nou."
@@ -3777,6 +3783,17 @@
         "${ BRAND_NAME }. Confidențialitate implicită."
       ]
     },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "Data: ${ date }"
+      ],
+      "From: ${ senderString }": [
+        "De la: ${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "Subiect: ${ subject }"
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "V-am mărit spațiul de stocare total al contului la ${ rewardInGb } GB. Obțineți spațiu de stocare suplimentar și deblocați caracteristici premium astăzi."
@@ -3805,8 +3822,8 @@
       "Available on iOS and Android.": [
         "Disponibilă pe iOS și Android."
       ],
-      "Get the ${ protonMailAppName } mobile app": [
-        "Obțineți aplicația mobilă ${ protonMailAppName }"
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "Obțineți aplicația mobilă ${ MAIL_APP_NAME }"
       ],
       "Import contacts or emails": [
         "Importați contacte sau e-mailuri"
@@ -3986,6 +4003,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "„Accesul aplicațiilor mai puțin sigure” este activat în setările de securitate ale contului Google."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } nu se poate conecta la acest cont. Asigurați-vă că accesul IMAP este activat în contul Gmail."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } nu se poate conecta la acest cont. Asigurați-vă că accesul IMAP este activat în contul Gmail."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } nu se poate conecta la cont. Asigurați-vă că:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } nu se poate conecta la contul extern. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } nu se poate conecta la contul extern. Asigurați-vă că:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } nu se poate conecta la contul Gmail. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } nu se poate conecta la contul Yahoo. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } nu se poate conecta la contul Yahoo. Asigurați-vă că:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Verificarea în 2 pași este activată în contul extern."
       ],
@@ -4012,30 +4053,6 @@
       ],
       "Invalid IMAP port": [
         "Port IMAP nevalid"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton nu se poate conecta la contul dvs. Asigurați-vă că accesul Gmail IMAP este activat."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton nu se poate conecta la contul dvs. Asigurați-vă că accesul IMAP este activat în contul Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton nu se poate conecta la cont. Asigurați-vă că:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton nu se poate conecta la contul extern. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton nu se poate conecta la contul extern. Asigurați-vă că:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton nu se poate conecta la contul Gmail. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton nu se poate conecta la contul din Yahoo. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton nu se poate conecta la contul din Yahoo. Asigurați-vă că:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Prea multe solicitări recente. Reîncercați mai târziu."
@@ -4097,17 +4114,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Faceți clic pe ${ boldManage } pentru a extinde meniul de opțiuni."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "În funcție de furnizorul de e-mail, s-ar putea să trebuiască să generați ${ knowledgeBaseLink } înainte de a putea importa datele în Proton."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "În funcție de furnizorul de e-mail, s-ar putea să trebuiască să generați ${ knowledgeBaseLink } înainte de a putea importa datele în ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Extindeți meniul derulant făcând clic pe cele 3 puncte (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Generați o ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Generați o ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită ${ BRAND_NAME }."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Generați ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Generați ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Accesați ${ boldAccountInfo } din profilul personal în ${ yahooMailLink }."
@@ -4133,29 +4150,29 @@
       "Select ${ boldExportCSV }.": [
         "Selectați ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pentru a importa un calendar în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pentru a importa un calendar în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Pentru a importa un calendar în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pentru a importa contacte la ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pentru a importa contacte la ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Pentru a importa contacte în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Pentru a importa contacte în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Pentru a importa e-mailuri la Proton, trebuie să obțineți ${ appPasswordLink } de la Outlook. Obțineți-o urmând acești pași:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Pentru a importa e-mailuri la ${ BRAND_NAME }, trebuie să obțineți ${ appPasswordLink } de la Outlook. Obțineți-o urmând acești pași:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Pentru a importa e-mailuri la Proton, trebuie să obțineți ${ appPasswordLink } de la Yahoo. Obțineți-o urmând acești pași:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Pentru a importa e-mailuri la ${ BRAND_NAME }, trebuie să obțineți ${ appPasswordLink } de la Yahoo. Obțineți-o urmând acești pași:"
       ]
     },
     "Import instructions emphasis": {
@@ -4256,6 +4273,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
+        "${ BRAND_NAME } nu face bani abuzând de viața privată."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Un calendar nou",
         "${ calendarsToBeCreatedCount } calendare noi",
@@ -4318,9 +4338,9 @@
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } de mesaje."
       ],
       "${ numberOfTrackers } email tracker blocked": [
-        "S-a blocat un urmăritor de e-mail",
-        "S-au blocat ${ numberOfTrackers } urmăritori de e-mail",
-        "S-au blocat ${ numberOfTrackers } de urmăritori de e-mail"
+        "S-a blocat o funcție de monitorizare prin e-mail",
+        "S-au blocat ${ numberOfTrackers } funcții de monitorizare prin e-mail",
+        "S-au blocat ${ numberOfTrackers } de funcții de monitorizare prin e-mail"
       ],
       "${ numContactGroups } contact group": [
         "Un grup de contacte",
@@ -4504,6 +4524,12 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Sigur doriți să ștergeți toate mesajele cu această etichetă?"
+      ],
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Sigur doriți să ștergeți acest dosar? Toate subfolderele vor fi și ele șterse."
+      ],
+      "Are you sure you want to delete this label?": [
+        "Sigur doriţi să ştergeţi această etichetă?"
       ],
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
@@ -4691,16 +4717,22 @@
       "Email tracker protection is disabled": [
         "Protecția de urmărire a e-mailurilor este dezactivată"
       ],
-      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        "Urmăritoarele de e-mailuri vă pot încălca intimitatea. Proton nu a găsit niciun urmăritor pentru acest mesaj."
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
+        "Monitorizarea mesajelor vă pot încălca intimitatea. ${ BRAND_NAME } nu a găsit nici o monitorizare în acest mesaj."
       ],
-      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "Urmăritoarele de e-mailuri vă pot încălca intimitatea. Proton a găsit și a blocat un urmăritor.",
-        "Urmăritoarele de e-mailuri vă pot încălca intimitatea. Proton a găsit și a blocat ${ numberOfTrackers } urmăritori.",
-        "Urmăritoarele de e-mailuri vă pot încălca intimitatea. Proton a găsit și a blocat ${ numberOfTrackers } de urmăritori."
+      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
+        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } a găsit și a blocat o monitorizare.",
+        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } a găsit și a blocat ${ numberOfTrackers } monitorizări.",
+        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } a găsit și a blocat ${ numberOfTrackers } de monitorizări."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Urmăritoarele de e-mailuri vă pot încălca intimitatea. Activați protecția împotriva urmăririi pentru a împiedica expeditorii să știe dacă și când ați deschis un mesaj."
+        "Monitorizarea prin e-mail vă pot încălca intimitatea. Activați protecția împotriva urmăririi pentru a împiedica expeditorii să știe dacă și când ați deschis un mesaj."
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "Mesajele stocate în acest folder nu vor fi șterse și pot fi găsite în continuare în folderul «Toate mesajele»"
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "Mesajele primite etichetate cu această etichetă nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
       ],
       "embedded image": [
         "imagine inclusă",
@@ -4802,8 +4834,8 @@
       "How Hide My Email works": [
         "Cum funcționează ascunderea adresei"
       ],
-      "I'm sending this message to a non-Proton Mail user.": [
-        "Trimit acest mesaj unui utilizator non-Proton Mail."
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "Trimit acest mesaj unui destinatar care nu este utilizator al ${ MAIL_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
@@ -4909,6 +4941,9 @@
       "Loading preview": [
         "Se încarcă previzualizarea"
       ],
+      "Loading...": [
+        "Se încarcă…"
+      ],
       "Manage your folders": [
         "Gestionare foldere"
       ],
@@ -4925,7 +4960,7 @@
         "Îmbinat"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Expirarea mesajelor funcționează implicit atunci când trimiteți e-mailuri către alți utilizatori ${ MAIL_APP_NAME }. Pentru a trimite e-mailuri care expiră către alți utilizatori decât ${ BRAND_NAME }, anulați și adăugați protecție cu parolă la e-mail."
+        "Expirarea mesajelor funcționează implicit atunci când trimiteți e-mailuri către alți utilizatori ${ MAIL_APP_NAME }. Pentru a trimite e-mailuri care expiră către alți utilizatori decât ai ${ BRAND_NAME }, anulați și adăugați protecția cu parolă la e-mail."
       ],
       "Message headers": [
         "Antete mesaj"
@@ -4967,7 +5002,7 @@
         "Lipsă adresă de e-mail"
       ],
       "No email trackers found": [
-        "Nu s-au găsit urmăritori de e-mail"
+        "Nu s-au găsit funcții de monitorizare prin e-mail"
       ],
       "No folder found": [
         "Nu există folder"
@@ -4994,10 +5029,10 @@
         "Nu s-au găsit rezultate"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        "Nu s-au găsit urmăritori, dar unele imagini nu au putut fi încărcare cu protecția la urmărire activă."
+        "Nu s-au găsit funcții de monitorizare, dar unele imagini nu au putut fi încărcare cu protecția la monitorizare activată."
       ],
-      "non-Proton Mail": [
-        "non-Proton Mail"
+      "non-${ MAIL_APP_NAME }": [
+        "non-${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Niciuna din cheile încărcate nu este validă pentru criptare. Pentru a putea trimite mesaje către această adresă, încărcați o cheie validă sau dezactivați „Criptare mesaje”."
@@ -5087,9 +5122,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Împiedicați divulgarea adresei e-mail către liste de mesagerie sau mesaje nedorite cu ${ maskMyEmailButton }."
-      ],
-      "Proton doesn't make money by abusing privacy.": [
-        "Proton nu face bani abuzând de viața privată."
       ],
       "Recipient: ": [
         "Destinatar: "
@@ -5196,8 +5228,8 @@
       "Sign in": [
         "Autentificare"
       ],
-      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin este un serviciu Proton, iar acest cont include aliasuri de ascundere a adresei de e-mail. Pentru a începe să vă mascați adresa, accesați SimpleLogin și creați-vă primul alias."
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin este un serviciu ${ BRAND_NAME }, iar acest cont ${ BRAND_NAME } include aliasuri Hide My Email de ascundere a adresei de e-mail. Pentru a începe să vă mascați adresa, accesați SimpleLogin și creați-vă primul alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin furnizează o metodă simplă de a crea adrese de autorizare pe site-urile de neîncredere unde nu doriți să vă expuneți adevărata adresă de e-mail."
@@ -5457,8 +5489,8 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ calendarAppName } to keep your agenda private.": [
-        "Utilizați ${ calendarAppName } pentru a vă păstra agenda de programări privată."
+      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
+        "Utilizați ${ CALENDAR_APP_NAME } pentru a vă păstra activitățile private."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilizați combinaţiile de taste pentru a vă gestiona mai rapid mesajele."
@@ -5466,14 +5498,14 @@
       "Using SimpleLogin is easy": [
         "Folosirea SimpleLogin este ușoară"
       ],
-      "Verified Proton message": [
-        "Mesaj Proton verificat"
+      "Verified ${ BRAND_NAME } message": [
+        "Mesaj ${ BRAND_NAME } verificat"
       ],
       "Version ${ appVersion }": [
         "Versiunea ${ appVersion }"
       ],
-      "Visit our shop to get Proton merchandise.": [
-        "Vizitați magazinul nostru pentru a obține produse Proton."
+      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
+        "Vizitați magazinul nostru pentru a obține produse ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ne cerem scuze. S-ar putea să fi fost o greşeală din partea noastră. Puteți confirma că doriți să marcați acest e-mail ca fiind legitim?"
@@ -5529,8 +5561,8 @@
       "You can add it as an attachment or display it inline in your mail body.": [
         "Puteți să o adăugați ca atașament sau să o afișați înclusă în corpul mesajului."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Puteți și să îmbinați calendarele importate cu calendarele Proton existente."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Puteți și să îmbinați calendarele importate cu calendarele ${ BRAND_NAME } existente."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
@@ -5617,14 +5649,26 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ați scris „${ attachmentsFoundKeyword }”, dar nu a fost adăugat niciun atașament. Doriți să trimiteți totuși mesajul?"
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Acest cont are cel puțin o factură restantă. Accesul a fost restricționat. ${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Acest cont ${ BRAND_NAME } include SimpleLogin. Instalați extensia de navigator cu un clic și începeți să o folosiți."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Acest cont are cel puțin o factură scadentă. Contul este restricționat, iar toate serviciile sunt acum blocate până la plata datoriilor. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile partajate. ${ payInvoiceLink }"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "Adresa de e-mail nu vi se va schimba. Dar curând, va trebui să vă autentificați la ${ link }."
@@ -5660,12 +5704,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
-      ],
-      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "Acest cont Proton include SimpleLogin. Instalați extensia de navigator cu un clic și începeți să o folosiți."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
       ],
       "Your recovery phrase": [
         "Fraza de recuperare"
@@ -5930,6 +5968,9 @@
       " and ${ l }": [
         " și ${ l }"
       ],
+      "${ BRAND_NAME } username": [
+        "Nnume de utilizator ${ BRAND_NAME }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
       ],
@@ -6122,8 +6163,8 @@
       "Hide password": [
         "Ascundere parolă"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Cum ați descrie experiența avută cu noul Proton Mail?"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Cum ați descrie experiența cu noul ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Înțeleg riscul"
@@ -6259,9 +6300,6 @@
       ],
       "Postal code": [
         "Cod poștal"
-      ],
-      "Proton username": [
-        "Utilizator Proton"
       ],
       "Public keys": [
         "Chei publice"
@@ -6526,20 +6564,17 @@
       "Manage your folders": [
         "Gestionare foldere"
       ],
-      "Manage your labels": [
-        "Gestionare etichete"
-      ],
       "More": [
         "Mai multe"
       ],
       "More about recovery": [
         "Mai multe despre recuperare"
       ],
-      "Open in ${ calendarAppName }": [
-        "Deschidere în ${ calendarAppName }"
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Deschidere în ${ CALENDAR_APP_NAME }"
       ],
-      "Open updated event in ${ calendarAppName }": [
-        "Deschidere eveniment actualizat în ${ calendarAppName }"
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Deschidere eveniment actualizat în ${ CALENDAR_APP_NAME }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Sau puteți șterge unul dintre calendare și crea unul nou asociat la o adresă de e-mail activă."
@@ -6580,8 +6615,8 @@
       "Terms": [
         "Termeni"
       ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Acest fișier ICS conține mai multe evenimente. Descărcați-l și importați evenimentele în ${ calendarAppName }"
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Acest fișier ICS conține mai multe evenimente. Descărcați-l și importați evenimentele în ${ CALENDAR_APP_NAME }"
       ],
       "Trash": [
         "Gunoi"
@@ -6699,8 +6734,8 @@
       "Fw:": [
         "Fw:"
       ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "${ name } ${ address } - ${ date } a scris:"
+      "On ${ date }, ${ senderString } wrote:": [
+        "La ${ date }, ${ senderString } a scris:"
       ],
       "Re:": [
         "Re:"
@@ -6715,8 +6750,8 @@
       ]
     },
     "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by Proton": [
-        "Livrat prin SimpleLogin de la Proton"
+      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
+        "Livrat prin SimpleLogin de la ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -6941,9 +6976,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "A fost creat ${ _Filter.Name }"
-      ],
       "Block removed": [
         "Blocare eliminată."
       ],
@@ -6964,8 +6996,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "În continuare, va trebui să vă conectați la contul Google personal și să permiteți ca Proton să vă acceseze datele."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "În continuare, va trebui să vă conectați la contul Google și să permiteți ca ${ BRAND_NAME } să acceseze datele."
       ]
     },
     "Oauth instructions video": {
@@ -6993,8 +7025,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configurați-vă organizația, asociați un nume de domeniu și creați conturi pentru a vă asigura că toți membrii organizației vă sunt protejați."
       ],
-      "Discover all Proton services": [
-        "Descoperiți toate serviciile Proton"
+      "Discover all ${ BRAND_NAME } services": [
+        "Descoperiți toate serviciile ${ BRAND_NAME }"
       ],
       "Select a theme": [
         "Selectaţi o temă"
@@ -7002,8 +7034,8 @@
       "Set up your organization": [
         "Setați organizația"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii Proton, inclusiv VPN, Calendar și Drive."
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii ${ BRAND_NAME }, inclusiv VPN, Calendar și Drive."
       ],
       "You can change this anytime in your settings.": [
         "Puteți modifica oricând aceasta în setări."
@@ -7408,12 +7440,6 @@
       ]
     },
     "Signature verification warning": {
-      "PGP-encrypted message. Sender verification failed: ${ _verificationErrorsMessage }": [
-        "Mesaj criptat cu PGP. Verificarea expeditorului a eșuat: ${ _verificationErrorsMessage }"
-      ],
-      "PGP-signed message. Sender verification failed: ${ _verificationErrorsMessage2 }": [
-        "Mesaj semnat cu PGP. Verificarea expeditorului a eșuat: ${ _verificationErrorsMessage2 }"
-      ],
       "Sender could not be verified: Message not signed": [
         "Expeditorul nu a putut fi verificat: mesajul nu a fost semnat."
       ],
@@ -7451,8 +7477,8 @@
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
       ],
-      "Invite friends to Proton": [
-        "Invitați persoane în Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Invitați persoane la ${ BRAND_NAME }"
       ],
       "Message Content Search": [
         "Căutare în conținut mesaj"
@@ -7761,6 +7787,11 @@
         "Verificare reușită"
       ]
     },
+    "Success notification": {
+      "${ label.Name } removed": [
+        "${ label.Name } a fost eliminată"
+      ]
+    },
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Mesajul a fost trimis"
@@ -7875,13 +7906,13 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "Combinații de taste ${ appName }"
-      ],
       "${ emailsCount } member": [
         "Un membru",
         "${ emailsCount } membri",
         "${ emailsCount } de membri"
+      ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "Combinații de taste ${ MAIL_APP_NAME }"
       ],
       "${ unreads } unread message": [
         "Un mesaj necitit.",
@@ -8020,6 +8051,12 @@
         "Ștergere ${ count } mesaje",
         "Ștergere ${ count } de mesaje"
       ],
+      "Delete ${ label.Name } folder": [
+        "Ștergere folder ${ label.Name }"
+      ],
+      "Delete ${ label.Name } label": [
+        "Ștergere eticheta ${ label.Name }"
+      ],
       "Delete ${ Name }": [
         "Ștergere ${ Name }"
       ],
@@ -8092,14 +8129,17 @@
       "Filter on...": [
         "Filtrare după..."
       ],
+      "Folder options": [
+        "Opțiuni folder"
+      ],
       "Forward": [
         "Redirecționare"
       ],
       "Groups": [
         "Grupuri"
       ],
-      "Hide your email with SimpleLogin by Proton": [
-        "Ascundeți-vă adresa de e-mail cu Simple Login de la Proton"
+      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
+        "Ascundeți-vă adresa de e-mail cu SimpleLogin de la ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -8118,6 +8158,9 @@
       ],
       "Label as": [
         "Etichetare ca"
+      ],
+      "Label options": [
+        "Opțiuni etichetă"
       ],
       "Link confirmation": [
         "Legătură de confirmare"
@@ -8488,6 +8531,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
+      ],
       "Are you sure you want to discard your import?": [
         "Sigur doriți să anulați importarea?"
       ],
@@ -8515,12 +8564,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Mesageria live este o funcție premium disponibilă numai pentru cei care au planuri ${ VPN_APP_NAME } cu plată. Puteți însă deschide un tichet de asistență."
-      ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton va îmbina toate folderele cu același nume. Pentru a evita acest lucru, schimbați numele înainte de importare."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
@@ -8551,11 +8594,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Această acțiune este ireversibilă. Introduceți cuvântul ${ boldDanger } pentru a continua."
       ],
-      "This feature requires a paid Proton account": [
-        "Această funcționalitate necesită un cont Proton cu plată"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Această funcționalitate necesită un cont ${ BRAND_NAME } cu plată"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont Proton. Luați în considerare modificarea opțiunilor de importare."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont ${ BRAND_NAME }. Luați în considerare modificarea opțiunilor de importare."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."

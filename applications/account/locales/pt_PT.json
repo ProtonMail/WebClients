@@ -824,11 +824,6 @@
         "Ao sair agora, alguns eventos podem não ser importados."
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicações do Proton"
-      ]
-    },
     "Attached ics file error": {
       "Invalid event": [
         "Evento inválido"
@@ -987,16 +982,6 @@
     "Calendar permissions label": {
       "Permissions": [
         "Permissões"
-      ]
-    },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Crie uma ligação à sua agenda e partilhe-a com qualquer pessoa fora do Proton. A adição ou eliminação de eventos só pode ser feita por si."
-      ]
-    },
-    "Calendar settings section title": {
-      "Share outside Proton": [
-        "Partilhar fora do Proton"
       ]
     },
     "Calendar status": {
@@ -2065,11 +2050,6 @@
         "${ name } adicionado"
       ]
     },
-    "Downgrade account reason": {
-      "I use a different Proton account": [
-        "Utilizo uma conta Proton diferente"
-      ]
-    },
     "Duration": {
       "120 minutes": [
         "120 minutos"
@@ -2292,14 +2272,8 @@
       "No active sessions": [
         "Sem sessões activas"
       ],
-      "No public key for Proton address": [
-        "Nenhuma chave pública para o endereço do Proton"
-      ],
       "No WKD key retrieved for user is valid for sending": [
         "Nenhuma das chaves WKD recuperadas para o utilizador é válida para o envio"
-      ],
-      "Not a Proton account": [
-        "Não é uma conta Proton"
       ],
       "Not a valid number": [
         "Número inválido"
@@ -2620,9 +2594,6 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Por favor ${ refresh } ou verifique a sua ligação."
-      ],
-      "There was a problem connecting to Proton.": [
-        "Ocorreu um problema ao ligar ao Proton."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Demasiadas sessões abertas, por favor termine, limpe os cookies e reinicie sessão."
@@ -3051,27 +3022,6 @@
       "Invalid IMAP port": [
         "Porta IMAP inválida"
       ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que o acesso Gmail IMAP está activado."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que o acesso IMAP está activado na sua conta Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "O Proton não pode ligar à sua conta externa. Por favor, certifique-se de que o endereço do servidor e a porta estão correctos."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "O Proton não pode ligar à sua conta externa. Por favor, certifique-se de que:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "O Proton não pode ligar à sua conta do Gmail. Por favor, certifique-se de que o endereço do servidor de email e o número da porta estão correctos."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "O Proton não pode ligar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de email e o número da porta estão correctos."
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiados pedidos recentes. Por favor, tente mais tarde."
       ],
@@ -3295,12 +3245,6 @@
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "Requeridos ${ vpnBasic }, ${ vpnPlus } ou ${ visionary } para uma ligação a nível de país."
-      ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "Requeridos ${ vpnPlus } ou ${ visionary } para a funcionalidade Secure Core."
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
@@ -3473,9 +3417,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar gravadas"
-      ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Ao partilhar todos os detalhes de evento desta agenda, aceita conceder acesso ao Proton à informação encriptada nesta agenda."
       ],
       "Center": [
         "Centrar"
@@ -3792,9 +3733,6 @@
       "Loading preview": [
         "A carregar antevisão"
       ],
-      "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Os diários incluem tentativas de autenticação em todos os serviços Proton que utilizem as suas credenciais Proton."
-      ],
       "lose access to all current encrypted data": [
         "perder o acesso a todos os dados encriptados actuais"
       ],
@@ -3939,15 +3877,6 @@
       "Priority support": [
         "Suporte prioritário"
       ],
-      "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "O Proton pausou uma importação porque perdeu a ligação ao outro fornecedor de email. Por favor, restabeleça a ligação."
-      ],
-      "Proton paused an import because your account is running low on space. You can:": [
-        "O Proton pausou uma importação porque a sua conta tem pouco espaço disponível. Pode:"
-      ],
-      "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "O Proton tentará retomar a importação assim que o seu fornecedor de email reiniciar o ${ bandwithLimitLink } da sua conta. Não precisa fazer nada. Se cancelar a sua importação, não será possível retomá-la, terá de recomeçar."
-      ],
       "purchase additional storage": [
         "comprar armazenamento adicional"
       ],
@@ -4067,9 +3996,6 @@
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Isto criará uma chave de encriptação para a sua organização. Chaves de 4096-bit só funcionam em computadores de alto desempenho, para a maioria do utilizadores recomendamos chaves de 2048-bit."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Isto permite a utilização do PayPal para pagar a sua subscrição Proton. Será redireccionado para o PayPal num novo separador do navegador. Se usa qualquer bloqueador de janelas, por favor desactive-o para continuar."
-      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Isto eliminará permanentemente os dados e todos os endereços de email associados a este utilizador."
       ],
@@ -4079,9 +4005,6 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isto substituirá a sua senha temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Este assistente vai activar a autenticação em dois passos (2FA) na sua conta Proton. O 2FA tornará a sua conta Proton mais segura, recomendamos a sua activação."
-      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Para confirmar, por favor, insira o nome do utilizador que deseja eliminar."
       ],
@@ -4090,9 +4013,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e abusos, confirme que é um ser humano."
-      ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Para acompanhar o mais recente desenvolvimento dos produtos Proton, pode subscrever os nossos vários emails e visitar o nosso blogue de tempos a tempos."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
@@ -4244,9 +4164,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redireccionado para o PayPal para verificar o pagamento."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "A sua conta tem pelo menos uma factura em atraso. O acesso foi restringido. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
       ],
@@ -4279,9 +4196,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta Proton está actualmente suspensa. Para continuar a usar a sua conta, por favor, pague quaisquer facturas em atraso."
       ],
       "Your recovery phrase": [
         "A sua frase de recuperação"
@@ -5108,9 +5022,6 @@
       ],
       "Proration": [
         "Repartição"
-      ],
-      "Proton username": [
-        "Utilizador Proton"
       ],
       "Read": [
         "Lido"
@@ -5969,9 +5880,6 @@
       "I found another service that I like better": [
         "Encontrei outro serviço de que gosto mais"
       ],
-      "I use a different Proton account": [
-        "Utilizo uma conta Proton diferente"
-      ],
       "Ignore group": [
         "Ignorar grupo"
       ],
@@ -6363,11 +6271,6 @@
         "Etiquetas"
       ]
     },
-    "Share calendar modal title": {
-      "Share with Proton users": [
-        "Partilhar com utilizadores do Proton"
-      ]
-    },
     "Shared calendar label input placeholder": {
       "Add label": [
         "Adicionar etiqueta"
@@ -6737,9 +6640,6 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "Atalhos de teclado de ${ appName }"
-      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
@@ -6901,9 +6801,6 @@
       ],
       "Confirm downgrade": [
         "Confirmar regressão"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Confirmar perda de bónus Proton"
       ],
       "Confirm phone number": [
         "Confirmar número de telefone"
@@ -7380,9 +7277,6 @@
       "What's new": [
         "O que há de novo"
       ],
-      "You already have a Proton account": [
-        "Já tem uma conta Proton"
-      ],
       "Your calendar link": [
         "A sua ligação à agenda"
       ],
@@ -7553,9 +7447,6 @@
       ],
       "Your DKIM signing is working.": [
         "A sua assinatura DKIM está a funcionar."
-      ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "A sua conta externa pode ter atingido o limite de largura de banda de 24 horas. O Proton tentará retomar a importação o mais rapidamente possível."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -7659,23 +7550,11 @@
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Ao desactivar os diários limpa também todo o seu histórico. Tem a certeza de que deseja desactivar os diários?"
       ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "Ao desactivar este endereço já não poderá enviar ou receber emails utilizando este endereço e todos os produtos Proton associados serão igualmente desactivados. Tem a certeza de que deseja eliminar o endereço?"
-      ],
-      "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
-        "Se cancelar a importação, não poderá retomá-la. O Proton gravou todo o progresso na sua conta. Cancelar mesmo assim?"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Por favor, note que ao escolher este método de pagamento, a sua conta não poderá ser actualizada imediatamente. Faremos a actualização assim que o pagamento for aprovado."
       ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "O Proton transferirá o máximo de dados possível, começando com as mensagens mais recentes."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Esta importação pode exceder a capacidade de armazenamento actualmente disponível na sua conta Proton. Por favor, considere personalizar a importação."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectámos um problema com sua configuração DNS. Por favor, certifique-se de que os seus registos coincidem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."

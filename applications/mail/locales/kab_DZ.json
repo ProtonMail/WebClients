@@ -725,9 +725,6 @@
       "Save": [
         "Sekles"
       ],
-      "Saving${ _ellipsis }": [
-        "Asekles${ _ellipsis }"
-      ],
       "Schedule message": [
         "Sɣiwes izen"
       ],
@@ -960,9 +957,6 @@
       "View keys": [
         "Sken tisura"
       ],
-      "View message": [
-        "Wali izen"
-      ],
       "View message details": [
         "Wali talqayt n yizen"
       ],
@@ -1057,11 +1051,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Anṣuf"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Isnasen n Proton"
       ]
     },
     "Attached ics file error": {
@@ -1380,9 +1369,6 @@
       ],
       "Event rescheduling is not supported for the moment": [
         "Allus n usɣiwen n tedyant ur yettwasefrak ara taswiɛt-a"
-      ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        "Tiririt-a ulamek ad tettwarnu ɣer ${ calendarAppName } acku taswiɛt-a nessefrak kan tiririyin i tedyanin akk n yiwen n uzrar"
       ],
       "This event has been canceled.": [
         "Tadyant-a tettusefsex."
@@ -2836,9 +2822,6 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Yella wayen ur neddi ara akken iwata, ma ulac aɣilif ${ refresh } asebter akken ad tkemmleḍ. Ma tezgiḍ tettwaliḍ izen-a n tuccḍa ma ulac aɣilif nermes ${ supportTeam } nneɣ."
       ],
-      "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Surfaɣ, Proton ur yezmir ara ad ikkes awgelhen i yizen-inek•m. Ttxil-k•m selken belli akk tisura-inek•m remdent."
-      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Taceqquft yeddan yugi ad as-yekkes uwgelhen.\nMa yella tesɛiḍ tasarut tusligt yemṣadan, mazal tzemreḍ ad tekkseḍ awgelhen\nafaylu s wahil am GnuPG.",
         "Ticeqqufin yeddan yugi ad asent-yekkes uwgelhen.\nMa yella tesɛiḍ tasarut tusligt yemṣadan, mazal tzemreḍ ad tekkseḍ awgelhen\nifuyla s wahil am GnuPG."
@@ -3057,9 +3040,6 @@
       "Please ${ refresh } or check your connection.": [
         "Ma ulac aɣilif ${ refresh } neɣ senqed tuqqna."
       ],
-      "There was a problem connecting to Proton.": [
-        "Tella-d tuccḍa deg tuqqna ɣer Proton."
-      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Ur tesεiḍ ara εad anermis. Bdu s tmerna n unermis amaynut"
       ],
@@ -3248,9 +3228,6 @@
       "Available on iOS and Android.": [
         "Yewjed di iOS akked Android."
       ],
-      "Get the ${ protonMailAppName } mobile app": [
-        "Awi asnqs aziraz ${ protonMailAppName }"
-      ],
       "Import contacts or emails": [
         "Kter inermisen neɣ imaylen"
       ],
@@ -3436,30 +3413,6 @@
       "Invalid IMAP port": [
         "Tawwurt IMAP tarmeɣtut"
       ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton ur yezmir ara ad yeqqen ɣer umiḍan-ik·im. Ttxil-k·im wali ma yella anekcum IMAP n Gmail yermed."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton yegguma ad yeqqen ɣer umiḍan-ik·im. Ttxil-k·im wali ma yella anekcum IMAP yermed deg umiḍan-ik·im Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton ur yezmir ara ad yeqqen ɣer umiḍan-ik·im. Ttxil-k·m wali ma yella:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton yegguma ad yeqqen ɣer umiḍan-ik·im azɣaray. Ttxil-k·m wali ma yella tansa n uqeddac n yimayl akked wuṭṭun n tewwurt d imeɣta."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton ur yezmir ara ad yeqqen ɣer umiḍan-ik·im azɣaray. Ttxil-k·m wali ma yella:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton yegguma ad yeqqen ɣer umiḍan-ik·im Gmail. Ttxil-k·m wali ma yella tansa n uqeddac n yimayl akked wawal uffir d imeɣta."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton yegguma ad yeqqen ɣer umiḍan-ik·im Yahoo. Ttxil-k·m wali ma yella tansa n uqeddac n yimayl akked wawal uffir d imeɣta."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton ur yezmir ara ad yeqqen ɣer umiḍan-ik·im Yahoo. Ttxil-k·m wali ma yella:"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Aṭas n yisutar n melmi kan. Ttxil-k·m εreḍ tikkelt-nniḍen deg kra n wakud."
       ],
@@ -3514,11 +3467,6 @@
       ],
       "Creating calendar event failed": [
         "Timerna n uneḍruy n uwitay tecceḍ"
-      ]
-    },
-    "Import instructions": {
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "I uktar n yimaylen ɣer Proton, tesriḍ ${ appPasswordLink } seg Yahoo. Awi-t-id s uḍfar n yiḥricen-a :"
       ]
     },
     "Import instructions emphasis": {
@@ -3786,6 +3734,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "Tebɣiḍ s tidet ad tekkseḍ akk iznan s tebzimt-a?"
       ],
+      "Are you sure you want to delete this label?": [
+        "Tebɣiḍ ad tekkseḍ tabzimt-agi?"
+      ],
       "Are you sure you want to discard your changes?": [
         "D tidet tebɣiḍ ad tesfesxeḍ ibeddilen-ik m?"
       ],
@@ -3938,6 +3889,12 @@
       ],
       "Email address": [
         "Tansa imayl"
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "Imaylen i yettwaskelsen deg ukaram-a ur ttwakkasen ara, tzemreḍ ad ten-tafeḍ deg ukaram Akk iznan."
+      ],
+      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
+        "Imaylen i icerḍen s tebzimt-a ur ttwakkasen ara, tzemreḍ ad ten-tafeḍ deg yikaramen i asen-ittunefken."
       ],
       "embedded image": [
         "tugna tusliɣt",
@@ -4194,9 +4151,6 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Ulacineḍfaren, maca kra n tugniwin ulamek ara d-alint s ummesten n uḍfar"
       ],
-      "non-Proton Mail": [
-        "mačči-Proton Mail"
-      ],
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
       ],
@@ -4253,9 +4207,6 @@
       ],
       "Priority support": [
         "Tallalt yezwaren"
-      ],
-      "Proton doesn't make money by abusing privacy.": [
-        "Ur d-ixeddem ara Proton idrimen s uttɛeddi ɣef tbaḍnit."
       ],
       "Recipient: ": [
         "Aɣerwaḍ: "
@@ -4534,9 +4485,6 @@
       "Version ${ appVersion }": [
         "Lqem ${ appVersion }"
       ],
-      "Visit our shop to get Proton merchandise.": [
-        "Rzu ɣer taḥanut-nneɣ akken ad tawiḍ alzazen n Proton."
-      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Suref-aɣ. Ayagi yezmer ad yili d tuccḍa si tama-nneɣ. Ttxil-k m ma tzemreḍ ad tsentmeḍ belli tebɣiḍ ad tcerḍeḍ imayl-agi iṣeḥḥa?"
       ],
@@ -4637,9 +4585,6 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Turiḍ \"${ attachmentsFoundKeyword }\", maca ulac amedday i yettwarnan. Tebɣiḍ ad tazneḍ izen-ik·im akken yebɣu yili?"
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ad yesɛu talast. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ur yettɛṭṭil ara ad yesɛu talast. ${ payInvoiceLink }"
       ],
@@ -4660,9 +4605,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Amiḍan-inek/m Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek/m, ttxil-k/m xelleṣ tifaturin yellan."
       ],
       "Your recovery phrase": [
         "Tafyirt-ik·im n tririt"
@@ -5093,9 +5035,6 @@
       "Hide password": [
         "Ffer awal uffir"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Amek ara tgelmeḍ tarmit-inek•inem akked Proton amaynut?"
-      ],
       "IF": [
         "MA"
       ],
@@ -5215,9 +5154,6 @@
       ],
       "Postal code": [
         "Tangalt n lpusṭa"
-      ],
-      "Proton username": [
-        "Isem n useqdac Proton"
       ],
       "Public keys": [
         "Tisura tizuyaz"
@@ -5473,20 +5409,11 @@
       "Manage your folders": [
         "Sefrek ikaramen-ik·im"
       ],
-      "Manage your labels": [
-        "Sefrek tibzimin-ik·im"
-      ],
       "More": [
         "Ugar"
       ],
       "More about recovery": [
         "Ugar ɣef tririt"
-      ],
-      "Open in ${ calendarAppName }": [
-        "Ldi deg ${ calendarAppName }"
-      ],
-      "Open updated event in ${ calendarAppName }": [
-        "Ldi tadyant yettwaleqqmen deg ${ calendarAppName }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Neɣ tzemreḍ ad tekkseḍ yiwen seg yiwitayen-inek·inem syen rnu yiwen umaynut ara icudden ɣer tansa n yimayl turmidt."
@@ -5526,9 +5453,6 @@
       ],
       "Terms": [
         "Tiwtilin"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Afaylu-a ICS yegber ugar n tedyant. Ttxil sader-it-id tketreḍ tidyanin deg ${ calendarAppName }"
       ],
       "Trash": [
         "Taqecwalt n yiḍumman"
@@ -5597,9 +5521,6 @@
     "Message": {
       "Fw:": [
         "Welleh:"
-      ],
-      "On ${ date }, ${ name } ${ address } wrote:": [
-        "Deg ${ date }, ${ name } ${ address } t/yura :"
       ],
       "Re:": [
         "Err:"
@@ -5818,9 +5739,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } Yettwarna"
-      ],
       "Contact group created": [
         "Agraw n unermes yettwarna"
       ],
@@ -5848,17 +5766,11 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Swel tuddsa-k•m, qqen isem n taɣult-ik•im, rnu snulfu-d imiḍanen akken ad tḍemneḍ\ni yimttekkiyen n tuddsa-k•m dakken ttwemmsetnen."
       ],
-      "Discover all Proton services": [
-        "Issin imeẓluyen meṛṛa n Proton"
-      ],
       "Select a theme": [
         "Fren asentel"
       ],
       "Set up your organization": [
         "Sbadu tuddsa-ik•im"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Seqdec afran n yisnasen i yellan deg ufella deg tama taẓelmaḍt akken ad tkecmeḍ ɣer yimeẓluyen n Proton, gar-asen VPN, awitay d Drive."
       ],
       "You can change this anytime in your settings.": [
         "Tzemreḍ ad tbeddeleḍ aya melmi tebɣiḍ deg yiɣewwaren."
@@ -6231,12 +6143,6 @@
       ]
     },
     "Signature verification warning": {
-      "PGP-encrypted message. Sender verification failed: ${ _verificationErrorsMessage }": [
-        "Izen i yettwawgelhen n PGP. Asenqed n umazan yecceḍ: ${ _verificationErrorsMessage }"
-      ],
-      "PGP-signed message. Sender verification failed: ${ _verificationErrorsMessage2 }": [
-        "Izen i yettuzemlen n PGP. Asenqed n umazan yecceḍ: ${ _verificationErrorsMessage2 }"
-      ],
       "Sender could not be verified: Message not signed": [
         "Amazan ur izmir ara ad ittwasenqed/ Izen ur yettwazmel ara"
       ],
@@ -6486,6 +6392,11 @@
         "Asenqed yedda akken iwata"
       ]
     },
+    "Success notification": {
+      "${ label.Name } removed": [
+        "${ label.Name } yettwakkes"
+      ]
+    },
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Awennit yettwazen"
@@ -6594,9 +6505,6 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } n yinegzumen n unasiw"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } n uεeggal",
         "${ emailsCount } n yiεeggalen"
@@ -6720,6 +6628,12 @@
       "Delete ${ count } message": [
         "Kkes ${ count } n yizen",
         "Kkes ${ count } n yiznan"
+      ],
+      "Delete ${ label.Name } folder": [
+        "Kkes akaram ${ label.Name }"
+      ],
+      "Delete ${ label.Name } label": [
+        "Kkes tabzimt ${ label.Name }"
       ],
       "Delete ${ Name }": [
         "Kkes ${ Name }"
@@ -7171,12 +7085,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Adiwenni srid d tamahilt premium yellan kan i yiɣawasen ${ VPN_APP_NAME } n lexlaṣ. Ma ulac aɣilif, ldi atiki deg ubdil."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton ad ismezdi akk ikaramen s yiwen n yisem. Akken ur d-yettili ara waya, beddel ismawen send ad tketreḍ."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton ad siweḍ aqettun n yisefka iwum yezmer, ad yebdu s yiznan-inek·inem n melmi kan."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
       ],
@@ -7198,12 +7106,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Tigawt-agi ur tettwassefsax ara. Ttxil-k•m sekcem awal ${ boldDanger } deg wurti akken ad tkemmeleḍ."
-      ],
-      "This feature requires a paid Proton account": [
-        "Tamahilt-a tesra amiḍan n Proton yettuxellṣen"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Akter-a izmer ad iεeddi tallunt n usekles i yellan akka tura deg umiḍan-inek·inem Proton. ttxil fren ayen ara tketreḍ."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ad nesḥisef imi ur neqqin ara akka tura. Ma ulac uɣilif semmed tiferkit-agi ukessar akken ad gelmeḍ ugur-inek•inem, akken ad t-nmuqel sakin ad k•m-nenermes ticki ara neqqen."

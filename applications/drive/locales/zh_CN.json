@@ -539,6 +539,9 @@
       "Try another method": [
         "更换验证方式"
       ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "保存失败，请重试。失败原因：${ saveError }"
+      ],
       "Undo": [
         "撤销"
       ],
@@ -632,8 +635,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Proton 产品"
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } 应用"
       ]
     },
     "Beta access description": {
@@ -1707,6 +1710,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "“${ name }”已存在"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -1736,6 +1742,9 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendars or": [
         "取消选择至少 ${ calendarToFixCount } 个日历或者"
+      ],
+      "Device name does not match": [
+        "设备名称不匹配"
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
@@ -1790,9 +1799,6 @@
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing Proton calendars": [
-        "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
       ],
       "Missing key packet": [
         "缺少密钥数据包"
@@ -2021,8 +2027,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "出错了，请刷新页面或稍后重试。"
       ],
-      "There was a problem connecting to Proton.": [
-        "连接 Proton 服务器失败。"
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "连接 ${ BRAND_NAME } 服务器失败。"
       ],
       "You may also ${ refresh } or try again later.": [
         "您也可以${ refresh }页面或稍后再试。"
@@ -2213,6 +2219,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "Google 账户的安全设置中已开启“允许不够安全的应用访问”选项"
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } 无法连接您的账户，请确认 Gmail 的 IMAP 功能是否已开启。"
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } 无法连接您的账户，请确认 Gmail 账户的 IMAP 功能是否已开启。"
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } 无法连接该账户，请确认："
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 无法连接该邮箱，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } 无法连接该邮箱，请确认："
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 无法连接您的 Gmail 账户，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认邮件服务器地址和端口号是否正确。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认："
+      ],
       "2-step verification is enabled in your external account.": [
         "该邮箱开启了两步验证."
       ],
@@ -2239,30 +2269,6 @@
       ],
       "Invalid IMAP port": [
         "IMAP 端口号无效"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton 无法连接您的账户，请确认 Gmail 的 IMAP 功能是否已开启。"
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton 无法连接您的账户，请确认 Gmail 账户的 IMAP 功能是否已开启。"
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton 无法连接您的账户，请确认："
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "ProtonMail 无法连接该邮箱账户，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton 无法连接该邮箱，请确认："
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "ProtonMail 无法连接您的 Gmail 账户，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "ProtonMail 无法连接您的 Yahoo Mail 账户，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton 无法连接您的 Yahoo 账户，请确认："
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "请求过于频繁，请稍后再试。"
@@ -2316,17 +2322,14 @@
       "Click ${ boldManage } to expand the options menu.": [
         "点击 ${ boldManage } 下拉菜单."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "由于各邮箱厂商的规定不同，您可能需要先生成${ knowledgeBaseLink } 才能开始导入."
-      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "点击三点图标（...）展开下拉菜单。"
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "生成 ${ boldAppPassword } ，并在Proton提示下使用它来代替您的常规密码。"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "生成 ${ boldAppPassword } 并在 ${ BRAND_NAME } 中根据提示使用。"
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "生成 ${ boldAppPassword } ，并在Proton提示下使用它来代替您的常规密码。"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "生成 ${ boldAppPassword } 并在 ${ BRAND_NAME } 中根据提示使用。"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "前往 ${ yahooMailLink } 中您个人资料下的${ boldAccountInfo }。"
@@ -2352,29 +2355,29 @@
       "Select ${ boldExportCSV }.": [
         "选择 ${ boldExportCSV }"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "如需将日程导入 Proton，您需要在 Outlook 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "将 Outlook 日程导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "如需将日程导入 Proton，您需要在 Yahoo 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "将 Yahoo 日程导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "如需将日程导入 Proton，您需要先下载一份 ${ knowledgeBaseLink }."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "如需将日程导入 ${ BRAND_NAME }，您需要先下载一份 ${ knowledgeBaseLink }。"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "如需将通讯录导入 Proton，您需要在 Outlook 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "将 Outlook 通讯录导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "如需将通讯录导入 Proton，您需要在 Yahoo 中按下列三个步骤下载一份 ${ knowledgeBaseLink }："
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "将 Yahoo 通讯录导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "如需将通讯录导入 Proton，您需要先下载一份 ${ knowledgeBaseLink }."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "如需将通讯录导入 ${ BRAND_NAME }，您需要先下载一份 ${ knowledgeBaseLink }。"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "如需将邮件导入 Proton，您需要按下列步骤获取 Outlook ${ appPasswordLink }："
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "将 Outlook 邮件导入 ${ BRAND_NAME }，需要按以下步骤获取 ${ appPasswordLink }："
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "要将电子邮件从Yahoo导入到Proton，您需要在Yahoo得到一条 ${ appPasswordLink }，通过下面的步骤来获取："
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "将 Yahoo 邮件导入 ${ BRAND_NAME }，需要按以下步骤获取 ${ appPasswordLink }："
       ]
     },
     "Import instructions emphasis": {
@@ -2614,9 +2617,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "确定要从回收站中永久删除所选项吗？"
       ],
-      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "因为 ${ appName } 是端到端加密的，我们无法为您\n访问或解密您的文件。要在密码重置后解锁您的网盘，\n您必须具备以下条件之一："
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
       ],
@@ -2655,9 +2655,6 @@
       ],
       "Conflict": [
         "冲突"
-      ],
-      "Continue using ${ appName } and unlock drive later": [
-        "继续使用 ${ appName } 并稍后解锁网盘"
       ],
       "Continue with ${ planName }": [
         "升级至 ${ planName } 并继续"
@@ -2839,9 +2836,6 @@
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "如果您已忘记密码，请先设置恢复密语，以免届时无法登录账户并导致个人数据丢失。"
       ],
-      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "如果您有其中之一，请前往 Proton 账户设置以\n启动解锁进程。"
-      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
       ],
@@ -2977,9 +2971,6 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "并非所有文件都已传输。请尝试重新上传或下载文件。"
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        "请注意：安装过 ${ appName } 的设备上仍可能存在本地数据。"
-      ],
       "of": [
         "，共"
       ],
@@ -3033,6 +3024,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "请选择将哪些邮箱地址加入「${ groupName }」。"
+      ],
+      "Please wait till your changes are synced with the server.": [
+        "请稍候，数据正在与服务器同步。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "请稍候，我们正在寻找可用主密钥重新签名的联系人。"
@@ -3169,9 +3163,6 @@
       "There are no files yet": [
         "还没有文件"
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "这些文件是使用端到端加密共享的。 为了确保它们的安全，以及所有文档、照片和文件的私密性，请将其存储在Proton Drive中。 使用方便，而且免费。"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
       ],
@@ -3244,6 +3235,9 @@
       "Unlock drive to recover files": [
         "解锁网盘以恢复文件"
       ],
+      "Unsaved changes": [
+        "更改未保存"
+      ],
       "Unsupported file": [
         "不支持文件"
       ],
@@ -3310,8 +3304,8 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "您也可以将导入日历与现有 Proton 日历合并。"
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "您也可以将导入的日历与 ${ BRAND_NAME } 现有日历合并。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在${ importProgressLink } 查看导入进度"
@@ -3331,17 +3325,26 @@
       "You will lose all unsaved changes.": [
         "您所作的改动将丢失。"
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "您有逾期未支付的账单，因此功能已受限。${ payInvoiceLink }"
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "您的 ${ BRAND_NAME } 账户已被停用，无法继续收取新邮件，并且网盘分享链接已全部失效，新文件也无法上传。如需恢复账户正常功能，请付清逾期账单。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
       ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "您的账户有逾期未支付的账单，所有功能均已停用，续费后方可恢复。${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "您的账户有逾期未支付的账单，因此功能已受限。欠费时间过长将导致无法收取邮件，网盘分享链接也将失效。${ payInvoiceLink }"
+      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "由于服务人员不在，当前的浏览器不支持下载大型文件。 下载大文件可能会冻结浏览器或使其无响应。 请使用 ${ recommendedBrowser } 的最新版本，然后再试一次。"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "数据随时可以从 ${ importedEmailAddressStrong } 导入至您的 Proton 账户。"
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "您的邮箱地址不会变化，但近期您将需要通过 ${ link } 重新登录。"
@@ -3369,9 +3372,6 @@
       ],
       "Your previous recovery phrase": [
         "您先前的恢复密语"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
       ]
     },
     "Info on errors": {
@@ -3433,6 +3433,9 @@
     "Label": {
       "# of accesses": [
         "下载次数"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } 用户名"
       ],
       "(Expired)": [
         "（已失效）"
@@ -3521,6 +3524,12 @@
       "Country": [
         "国家"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "创建 ${ BRAND_NAME } 账户"
+      ],
+      "Create a share link": [
+        "创建共享链接"
+      ],
       "Created": [
         "创建时间"
       ],
@@ -3535,6 +3544,12 @@
       ],
       "Deleted": [
         "删除时间"
+      ],
+      "Device": [
+        "设备"
+      ],
+      "Device name": [
+        "设备名称"
       ],
       "Do not ask again": [
         "不再询问"
@@ -3559,6 +3574,9 @@
       ],
       "Encrypt emails": [
         "加密电子邮件"
+      ],
+      "Enter device name": [
+        "输入设备名称"
       ],
       "Expired": [
         "已失效"
@@ -3602,8 +3620,8 @@
       "Hide password": [
         "隐藏密码"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "您认为新版 Proton 的使用体验如何？"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "您认为新版 ${ BRAND_NAME } 的使用体验如何？"
       ],
       "I understand the risk": [
         "风险已知悉"
@@ -3716,9 +3734,6 @@
       "Protect with password": [
         "密码保护"
       ],
-      "Proton username": [
-        "Proton 用户名"
-      ],
       "Public keys": [
         "公钥"
       ],
@@ -3808,6 +3823,9 @@
       ],
       "Upload picture": [
         "上传图片"
+      ],
+      "Upload your first file": [
+        "上传您的第一个文件"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "用户名或 ${ MAIL_APP_NAME } 邮箱地址"
@@ -4158,8 +4176,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "接下来您需要登录 Google 账户并允许 Proton 获取您的数据。"
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "接下来您需要登录 Google 账户并允许 ${ BRAND_NAME } 获取您的数据。"
       ]
     },
     "Oauth instructions video": {
@@ -4170,20 +4188,17 @@
     "Onboarding Action": {
       "Next": [
         "下一步"
-      ],
-      "Start using ${ appName }": [
-        "开始使用 ${ appName }"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "创建分享链接"
       ],
-      "Get started using Proton Drive and we'll double your free storage to 1GB!": [
-        "现在开始使用 Proton Drive，我们会将您的免费空间加倍到 1GB！"
-      ],
       "Set a recovery method": [
         "设置恢复方法"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } days:": [
+        "只需在接下来的 ${ expiresInDays } 天内完成以下任务："
       ],
       "Upload a file": [
         "上传文件"
@@ -4196,8 +4211,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护。"
       ],
-      "Discover all Proton services": [
-        "探索所有 Proton 系列服务"
+      "Discover all ${ BRAND_NAME } services": [
+        "探索各类 ${ BRAND_NAME } 服务"
       ],
       "Select a theme": [
         "选择配色"
@@ -4205,17 +4220,14 @@
       "Set up your organization": [
         "填写机构信息"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "点击左上方的应用菜单即可前往其他 Proton 服务，如 VPN、日历和网盘。"
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "点击左上方的应用菜单即可前往其他 ${ BRAND_NAME } 服务，如 VPN、日历和网盘。"
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ appName }": [
-        "欢迎来到 ${ appName }"
-      ],
       "Your welcome bonus": [
         "您的欢迎奖励"
       ]
@@ -4383,6 +4395,9 @@
       ],
       "Encrypted search is here": [
         "已推出加密搜索功能"
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "邀请好友注册 ${ BRAND_NAME }"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "现在，您可以保持数据安全，同时轻松搜索网盘文件。"
@@ -4566,6 +4581,9 @@
       ],
       "All": [
         "全部"
+      ],
+      "Are you sure you want to close the preview?": [
+        "确定要关闭预览吗？"
       ],
       "Back": [
         "返回"
@@ -4969,6 +4987,9 @@
       "Your 500 MB bonus": [
         "您的500 MB 奖励"
       ],
+      "Your changes are not synced yet": [
+        "您的改动尚未同步"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您的免费试用将在 ${ formattedEndDate } 后过期。"
       ],
@@ -5065,6 +5086,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } 将合并所有同名文件夹，无需合并的文件夹请在导入前更改名称。"
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
+      ],
       "Are you sure you want to discard your import?": [
         "您确定要放弃导入吗？"
       ],
@@ -5088,12 +5115,6 @@
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "只有付费 ${ VPN_APP_NAME } 账户才能与客服实时交流，请通过表单提交反馈。"
-      ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton 将从最近的邮件开始导入尽可能多的数据。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
@@ -5119,11 +5140,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "此操作不可逆，请在字段中输入 ${ boldDanger } 以继续"
       ],
-      "This feature requires a paid Proton account": [
-        "此功能仅限付费用户使用"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "此功能仅对 ${ BRAND_NAME } 付费账户开放"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "此次导入可能会耗尽您的 Proton 账户存储空间，请考虑缩减导入内容。"
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "此次导入可能会耗尽您的 ${ BRAND_NAME } 账户存储空间，请考虑缩减导入内容。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"

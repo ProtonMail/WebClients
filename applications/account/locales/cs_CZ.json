@@ -977,8 +977,8 @@
       ]
     },
     "Apps dropdown": {
-      "Proton applications": [
-        "Proton aplikace"
+      "${ BRAND_NAME } applications": [
+        "Aplikace ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -1256,27 +1256,27 @@
       ]
     },
     "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Vytvořte odkaz do svého kalendáře a sdílejte ho s kýmkoli mimo Proton. Pouze vy můžete přidat nebo odebrat události."
+      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
+        "Vytvořte odkaz na svůj kalendář a sdílejte ho s kýmkoli mimo ${ BRAND_NAME }. Pouze vy můžete přidat nebo odebrat události."
       ]
     },
     "Calendar settings private share description": {
-      "Share your calendar with other Proton users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Sdílejte svůj kalendář s ostatními uživateli Protonu. Umožněte jim spolupráci tím, že jim dovolíte přidávat a upravovat události v kalendáři. Oprávnění uživatelů můžete kdykoli změnit."
+      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Sdílejte svůj kalendář s ostatními uživateli ${ BRAND_NAME }. Umožněte jim spolupráci tím, že jim dovolíte přidávat a upravovat události ve svém kalendáři. Oprávnění uživatelů můžete kdykoli změnit."
       ]
     },
     "Calendar settings section title": {
       "Share calendar": [
         "Sdílet kalendář"
       ],
-      "Share outside Proton": [
-        "Sdílet mimo Proton"
+      "Share outside ${ BRAND_NAME }": [
+        "Sdílet mimo ${ BRAND_NAME }"
+      ],
+      "Share with ${ BRAND_NAME } users": [
+        "Sdílet s uživateli ${ BRAND_NAME }"
       ],
       "Share with anyone": [
         "Sdílet s kýmkoli"
-      ],
-      "Share with Proton users": [
-        "Sdílet s uživateli Protonu"
       ]
     },
     "Calendar settings sidebar": {
@@ -1355,8 +1355,8 @@
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Odkaz na kalendář je dočasně nedostupný. Zkontrolujte, zda je odkaz od poskytovatele kalendáře stále platný."
       ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "Od poslední aktualizace uplynulo více než 12 hodin — Proton Calendar se pokusí kalendář aktualizovat během několika hodin."
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Od poslední aktualizace uplynulo více než 12 hodin — ${ CALENDAR_APP_NAME } se pokusí kalendář aktualizovat během několika hodin."
       ]
     },
     "Calendar table settings button tooltip": {
@@ -2604,8 +2604,8 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
-      "Get up to ${ credits } in credits by inviting friends to Proton.": [
-        "Pozváním přátel do Protonu získáte až ${ credits } kreditů."
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "Pozváním přátel do ${ BRAND_NAME } získáte až ${ credits } kreditů."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
@@ -2677,8 +2677,8 @@
       "Bugs or quality issue": [
         "Chyby nebo problém s kvalitou"
       ],
-      "I use a different Proton account": [
-        "Používám jiný Proton účet"
+      "I use a different ${ BRAND_NAME } account": [
+        "Používám jiný účet ${ BRAND_NAME }"
       ],
       "Missing feature(s)": [
         "Chybějící funkce"
@@ -2977,11 +2977,11 @@
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Sloučit nejméně ${ calendarToFixCount } kalendář s existujícím Proton kalendářem",
-        "Sloučit nejméně ${ calendarToFixCount } kalendáře s existujícími Proton kalendáři",
-        "Sloučit nejméně ${ calendarToFixCount } kalendářů s existujícími Proton kalendáři",
-        "Sloučit nejméně ${ calendarToFixCount } kalendářů s existujícími Proton kalendáři"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Sloučit alespoň ${ calendarToFixCount } kalendář s existujícím ${ BRAND_NAME } kalendářem",
+        "Sloučit alespoň ${ calendarToFixCount } kalendáře s existujícími ${ BRAND_NAME } kalendáři",
+        "Sloučit alespoň ${ calendarToFixCount } kalendářů s existujícími ${ BRAND_NAME } kalendáři",
+        "Sloučit alespoň ${ calendarToFixCount } kalendářů s existujícími ${ BRAND_NAME } kalendáři"
       ],
       "Missing key packet": [
         "Chybějící balíček klíčů"
@@ -3010,8 +3010,8 @@
       "No emails found to import - the account does not have an inbox": [
         "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
-      "No public key for Proton address": [
-        "Žádný veřejný klíč pro adresu Protonu"
+      "No public key for ${ BRAND_NAME } address": [
+        "Žádný veřejný klíč pro adresu ${ BRAND_NAME }"
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
@@ -3019,8 +3019,8 @@
       "No WKD key retrieved for user is valid for sending": [
         "Žádný WKD klíč pro uživatele není platný pro odesílání"
       ],
-      "Not a Proton account": [
-        "Nejedná se o účet Protonu"
+      "Not a ${ BRAND_NAME } account": [
+        "Nejde o ${ BRAND_NAME } účet"
       ],
       "Not a valid number": [
         "Neplatné číslo"
@@ -3475,8 +3475,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Něco se pokazilo. Obnovte prosím stránku nebo to zkuste později."
       ],
-      "There was a problem connecting to Proton.": [
-        "Při připojování k Proton došlo k chybě."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Při připojování ke službě ${ BRAND_NAME } došlo k chybě."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Příliš mnoho přidružených relací, prosím vymažte soubory cookie a znovu se přihlaste."
@@ -3855,8 +3855,8 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Přidejte vlastní filtr pro automatické provádění určitých akcí, jako je označování nebo archivace zpráv. Filtry lze upravovat a vytvářet přímo prostřednictvím programovacího jazyka Sieve."
       ],
-      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "E-maily z adres, které jste vy nebo společnost Proton označili jako spam, budou odeslány do složky Spam. Pokud chcete e-maily z některé z těchto adres povolit, označte je jako \"není spam\"."
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "E-maily z adres, které jste vy nebo společnost ${ BRAND_NAME } označili jako spam, budou odeslány do složky Spam. Pokud chcete e-maily z některé z těchto adres povolit, označte je jako \"není spam\"."
       ],
       "Emails from blocked addresses won't be delivered.": [
         "E-maily z blokovaných adres nebudou doručeny."
@@ -4071,8 +4071,8 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Importované pozvánky naleznete v ${ CALENDAR_APP_NAME } jako prosté události bez podrobností o organizátorech a účastnících. Pro aktualizace událostí a zobrazení účastníků požádejte organizátory o pozvánku pomocí své Proton e-mailové adresy."
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Importované pozvánky naleznete v ${ CALENDAR_APP_NAME } jako prosté události bez podrobností o organizátorech a účastnících. Pro aktualizace událostí a zobrazení účastníků požádejte organizátory o pozvánku pomocí své ${ BRAND_NAME } e-mailové adresy."
       ],
       "This file contains an event invitation:": [
         "Tento soubor obsahuje pozvánku na událost:",
@@ -4145,6 +4145,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "\"Přístup méně zabezpečených aplikací\" se povoluje v nastavení zabezpečení vašeho účtu Google."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } se nemůže připojit k vašemu účtu. Ujistěte se, že je IMAP přístup povolen ve vašem Gmail účtu."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } se nemůže připojit k vašemu účtu. Ujistěte se, že je IMAP přístup povolen ve vašem Gmail účtu."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } se nemůže připojit k vašemu účtu. Ujistěte se, že:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } se nemůže připojit k vašemu vzdálenému účtu. Ujistěte se prosím, že adresa e-mailového serveru a číslo portu jsou správně."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } se nemůže připojit k vašemu vzdálenému účtu. Ujistěte se, že:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } se nemůže připojit k vašemu Gmail účtu. Ujistěte se prosím, že adresa e-mailového serveru a číslo portu jsou správně."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } se nemůže připojit k vašemu účtu Yahoo. Zkontrolujte prosím, že adresa e-mailového servu a číslo portu jsou správně."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } se nemůže připojit k vašemu účtu Yahoo. Ujistěte se, že:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Dvoufázové ověřování je zapnuto ve vašem vzdáleném účtu."
       ],
@@ -4171,30 +4195,6 @@
       ],
       "Invalid IMAP port": [
         "Neplatný IMAP port"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton se nemůže připojit k vašemu účtu. Ujistěte se, že je povolen IMAP přístup ke Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton se nemůže připojit k vašemu účtu. Ujistěte se, že je IMAP přístup povolen ve vašem Gmail účtu."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton se nemůže připojit k vašemu účtu. Ujistěte se, že:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton se nemůže připojit k vašemu vzdálenému účtu. Ujistěte se prosím, že adresa e-mailového serveru a číslo portu jsou správně."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton se nemůže připojit k vašemu vzdálenému účtu. Ujistěte se, že:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton se nemůže přihlásit k vašemu Gmail účtu. Ujistěte se prosím, že adresa e-mailového serveru a číslo portu jsou správně."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton se nemůže připojit k vašemu účtu Yahoo. Zkontrolujte prosím, že adresa e-mailového servu a číslo portu jsou správně."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton se nemůže připojit k vašemu účtu Yahoo. Ujistěte se, že:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
@@ -4253,17 +4253,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Kliknutím na ${ boldManage } rozbalíte nabídku možností."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "V závislosti na vašem poskytovateli e-mailové služby bude možná nutné nejprve vygenerovat ${ knowledgeBaseLink } než budete moci provést import do Protonu."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "V závislosti na vašem poskytovateli e-mailové služby bude možná nutné nejprve vygenerovat ${ knowledgeBaseLink } než budete moci provést import do ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Rozbalte nabídku kliknutím na 3 tečky (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Vygenerujte ${ boldAppPassword } a na výzvu Protonu jej použijte místo běžného hesla."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Vygenerujte ${ boldAppPassword } a na výzvu ${ BRAND_NAME } jej použijte místo běžného hesla."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Vygenerujte ${ boldAppPassword } a na výzvu Protonu jej použijte místo běžného hesla."
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Vygenerujte ${ boldAppPassword } a na výzvu ${ BRAND_NAME } ho použijte místo běžného hesla."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Jděte do ${ boldAccountInfo } pod svým profilem v ${ yahooMailLink }."
@@ -4289,29 +4289,29 @@
       "Select ${ boldExportCSV }.": [
         "Vybrat ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z aplikace Outlook ve 3 snadných krocích:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Chcete-li importovat kalendář do ${ BRAND_NAME }, potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z aplikace Outlook ve 3 snadných krocích:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si ji z Yahoo ve 3 snadných krocích:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Chcete-li importovat kalendář do ${ BRAND_NAME }, potřebujete ${ knowledgeBaseLink }. Stáhněte si ho z Yahoo ve 3 snadných krocích:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si ho před zahájením importu."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Chcete-li importovat kalendář do ${ BRAND_NAME }, potřebujete ${ knowledgeBaseLink }. Stáhněte si ho před zahájením importu."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Pro import kontaktů do Protonu potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z aplikace Outlook ve 3 snadných krocích:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pro import kontaktů do ${ BRAND_NAME } potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z aplikace Outlook ve 3 snadných krocích:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Pro import kontaktů do Protonu potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z Yahoo ve 3 snadných krocích:"
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pro import kontaktů do ${ BRAND_NAME } potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z Yahoo ve 3 snadných krocích:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Chcete-li importovat kontakty do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si ho před zahájením importu."
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Chcete-li importovat kontakty do ${ BRAND_NAME }, potřebujete ${ knowledgeBaseLink }. Stáhněte si ho před zahájením importu."
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Chcete-li importovat e-maily do aplikace Proton, potřebujete ${ appPasswordLink } z aplikace Outlook. Získáte jej podle následujících kroků:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Chcete-li importovat e-maily do ${ BRAND_NAME }, potřebujete ${ appPasswordLink } z aplikace Outlook. Získáte jej podle následujících kroků:"
       ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Pro import e-mailů do Protonu potřebujete ${ appPasswordLink } od Yahoo. Získáte jej podle následujících kroků:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Pro import e-mailů do ${ BRAND_NAME } potřebujete ${ appPasswordLink } od Yahoo. Získáte ho pomocí následujících kroků:"
       ]
     },
     "Import instructions emphasis": {
@@ -4480,6 +4480,21 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
       ],
+      "${ BRAND_NAME } ${ planName } credits earned": [
+        "${ BRAND_NAME } ${ planName } získaných kreditů"
+      ],
+      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "${ BRAND_NAME } pozastavil import, protože ztratil spojení se vzdáleným e-mailovým serverem. Prosím znovu se připojte."
+      ],
+      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
+        "${ BRAND_NAME } pozastavil import, protože na vašem účtu je málo volného místa. Můžete:"
+      ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } se pokusí pokračovat v importu, jakmile váš poskytovatel e-mailu obnoví ${ bandwithLimitLink }. Nemusíte nic dělat. Pokud zrušíte import, nebudete jej moci obnovit a budete muset začít znovu."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } bude nastaven jako výchozí kalendář."
       ],
@@ -4600,11 +4615,11 @@
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "Pro připojení na úrovni země je vyžadován tarif ${ vpnBasic }, ${ vpnPlus } nebo ${ visionary }."
+      "${ vpnPlus } required for Country level connection.": [
+        "Země vyžaduje tarif ${ vpnPlus }."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "Funkce Secure Core vyžaduje ${ vpnPlus } nebo ${ visionary }."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "Funkce Secure Core vyžaduje ${ vpnPlus }."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } člen)",
@@ -4630,8 +4645,8 @@
         "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
         "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)"
       ],
-      "1. Invite friends to Proton": [
-        "1. Pozvěte přátele do služby Proton"
+      "1. Invite friends to ${ BRAND_NAME }": [
+        "1. Pozvěte přátele do ${ BRAND_NAME }"
       ],
       "10 email addresses": [
         "10 e-mailových adres"
@@ -4870,8 +4885,8 @@
       "By leaving now, changes may not be saved": [
         "Pokud nyní opustíte stránku, změny nemusí být uloženy"
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Sdílením úplných údajů o události tohoto kalendáře souhlasíte s udělením přístupu Protonu k šifrovaným informacím tohoto kalendáře."
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Sdílením úplných údajů o události tohoto kalendáře souhlasíte s udělením přístupu ${ BRAND_NAME } k šifrovaným informacím tohoto kalendáře."
       ],
       "Center": [
         "Zarovnat na střed"
@@ -4894,8 +4909,8 @@
       "Continue with ${ planName }": [
         "Pokračovat s ${ planName }"
       ],
-      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
-        "Pokračováním se váš ${ ACCOUNT_APP_NAME } připojí k ${ name }."
+      "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
+        "Pokračováním se váš ${ BRAND_NAME } účet připojí k ${ name }."
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Vytvořit ${ calendarsToBeCreated } nový kalendář",
@@ -5023,8 +5038,8 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailový hosting pro 10 vlastních e-mailových domén je zahrnut zdarma. Další domény lze přidat za ${ price }."
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby Proton k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby ${ BRAND_NAME } k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
       ],
       "Emailing preference saved": [
         "Nastavení e-mailu uloženo"
@@ -5227,8 +5242,8 @@
       "Import mailbox": [
         "Importovat poštovní schránku"
       ],
-      "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importujte e-maily, kalendáře a kontakty z jiné služby do služby Proton. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Důležité: Ujistěte se, že jste si uložili kódy pro obnovení. V opačném případě se již nikdy nebudete moci přihlásit, pokud ztratíte zařízení určené pro 2FA."
@@ -5281,8 +5296,8 @@
       "it’s imperative": [
         "je to nezbytně nutné"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Používal/a jsem ${ appName } a myslel/a jsem, že by se Vám to mohlo líbit. Je to zabezpečená e-mailová služba, která chrání Vaše soukromí. Zaregistrujte se pomocí tohoto odkazu a získejte 1 měsíc prémiových funkcí zdarma: ${ referrerLink }"
+      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Používám ${ MAIL_APP_NAME } a myslím si, že by se Vám mohl líbit. Je to zabezpečená e-mailová služba, která chrání vaše soukromí. Zaregistrujte se pomocí tohoto odkazu a získejte zdarma 1 měsíc prémiových funkcí: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
@@ -5344,11 +5359,14 @@
       "Loading preview": [
         "Načítání náhledu"
       ],
+      "Loading...": [
+        "Načítání..."
+      ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Přihlaste se do ${ MAIL_APP_NAME } pro aktivaci adresy"
       ],
-      "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Logy obsahují pokusy o přihlášení do všech služeb Protonu s použitím Vašich přístupových údajů."
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Logy zaznamenávají pokusy o přihlášení do všech služeb ${ BRAND_NAME } s použitím vašich přístupových údajů ${ BRAND_NAME }."
       ],
       "lose access to all current encrypted data": [
         "ztratíte přístup ke všem šifrovaným datům"
@@ -5580,21 +5598,6 @@
       ],
       "Priority support": [
         "Prioritní podpora"
-      ],
-      "Proton ${ planName } credits earned": [
-        "Získané kredity na Proton ${ planName }"
-      ],
-      "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Proton pozastavil import, protože ztratil spojení s Vaším jiným poskytovatelem e-mailů. Prosím zkontrolujte připojení."
-      ],
-      "Proton paused an import because your account is running low on space. You can:": [
-        "Proton pozastavil import, protože na vašem účtu je málo volného místa. Můžete:"
-      ],
-      "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "Proton se pokusí pokračovat v importu, jakmile váš poskytovatel e-mailu obnoví Váš účet ${ bandwithLimitLink }. Nemusíte nic dělat. Pokud zrušíte import, nebudete jej moci obnovit a budete muset začít znovu."
-      ],
-      "Proton's encryption technology means that nobody can access your password - not even us.": [
-        "Díky šifrovací technologii Protonu se k vašemu heslu nikdo nedostane - ani my ne."
       ],
       "Public link invite": [
         "Pozvánka na veřejný odkaz"
@@ -5851,8 +5854,8 @@
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Tímto se stáhne soubor obsahující soukromý klíč. Chraňte tento soubor zašifrováním pomocí hesla."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Toto umožní použít Paypal pro platby Proton předplatného. Přesměrujeme vás na Váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím pro než budete pokračovat."
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Toto umožní použít Paypal pro platby ${ BRAND_NAME } předplatného. Přesměrujeme vás na váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím než budete pokračovat."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Tímto trvale smažete data a všechny e-mailové adresy spojené s tímto uživatelem."
@@ -5866,8 +5869,8 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tímto se odhlásíte ze všech aktivních relací a zakážete dvoufázové ověřování."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem Proton účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější Proton účet."
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ${ BRAND_NAME } účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ${ BRAND_NAME } účet."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Abyste předešli ztrátě dat, klíč smažte pouze v případě, že víte, co děláte, nebo pokud máte klíč zálohovaný."
@@ -5890,8 +5893,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Chcete-li držet krok s nejnovějším vývojem produktů Proton, můžete se přihlásit k odběru našich různých e-mailů a občas navštívit náš blog."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Chcete-li držet krok s nejnovějším vývojem produktů ${ BRAND_NAME }, můžete se přihlásit k odběru našich e-mailů a občas navštívit náš blog."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Chcete-li pokračovat, vyberte způsob obnovení účtu, abychom mohli žádost ověřit."
@@ -6100,8 +6103,8 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Jste přihlášen/a k účtu ${ memberAddress }."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "Importované kalendáře můžete také sloučit s existujícími Proton kalendáři."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Importované kalendáře můžete také sloučit s existujícími ${ BRAND_NAME } kalendáři."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Zde můžete zkontrolovat průběh ${ importProgressLink }."
@@ -6139,8 +6142,8 @@
         "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailových pozvánek",
         "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailových pozvánek"
       ],
-      "You cannot refer ${ appName } users": [
-        "Nelze odkazovat ${ appName } uživatele"
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Nelze doporučovat uživatelům ${ MAIL_APP_NAME }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Přihlašovací údaje OpenVPN / IKEv2 nelze použít pro přihlášení do aplikací ${ VPN_APP_NAME } nebo ovládacího panelu ${ VPN_APP_NAME }. ${ learnMore }"
@@ -6217,14 +6220,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Váš účet ${ BRAND_NAME } je spojen s ${ externalEmailAddress }. Chcete-li použít ${ toAppName }, potřebujete ${ MAIL_APP_NAME } adresu."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Vaše účty ${ VPN_APP_NAME } a ${ MAIL_APP_NAME } jsou propojeny. Chcete-li je odstranit, přihlaste se prosím na ${ loginLink } a smažte tam svůj účet."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup byl omezen. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen a všechny služby jsou nyní až do zaplacení zablokovány. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen. Pokračující neplacení zablokuje vaše e-maily a odkazy pro sdílení. ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
         "Vaše metoda obnovení účtu je nastavena"
@@ -6235,8 +6247,8 @@
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Z důvodu bezpečnosti Vaše banka vyžaduje ověření pomocí 3-D Secure."
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu ${ BRAND_NAME }."
       ],
       "Your data recovery method is set": [
         "Vaše metoda obnovení údajů je nastavena"
@@ -6270,9 +6282,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
       ],
       "Your recovery phrase": [
         "Vaše obnovovací fráze"
@@ -6708,6 +6717,9 @@
       ],
       "${ BRAND_NAME } email or username": [
         "E-mail nebo uživatelské jméno ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } username": [
+        "Uživatelské jméno ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -7318,9 +7330,6 @@
       "Protection mode": [
         "Ochranný režim"
       ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
       "Read": [
         "Přečteno"
       ],
@@ -7835,8 +7844,8 @@
       ]
     },
     "Message": {
-      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
-        "Všechny akce filtru se použijí na všechny zprávy ve Vašem Proton Mail účtu. Nebudou odesílány žádné e-maily s automatickou odpovědí."
+      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
+        "Všechny akce filtru se použijí na všechny zprávy ve vašem ${ MAIL_APP_NAME } účtu. Nebudou odesílány žádné e-maily s automatickou odpovědí."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Připojte vlastní doménu k ${ BRAND_NAME } a nastavte vlastní e-mailové adresy (např. vy@vasefirma.cz). Náš průvodce vás provede celým procesem."
@@ -8438,8 +8447,8 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "V dalším kroku se uplatní příslušné kredity, poměrná část a kupony"
       ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        "Komplexní ochrana soukromí a zabezpečení se všemi službami Protonu dohromady."
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Komplexní ochrana soukromí a zabezpečení se všemi službami ${ BRAND_NAME } dohromady."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Pokud svůj účet odstraníte, ztratíte všechny výhody tarifu ${ visionary } a při vytvoření nového účtu nebudou k dispozici."
@@ -8456,8 +8465,8 @@
       "Popular": [
         "Oblíbené"
       ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        "Soukromí a zabezpečení pro firmy, včetně všech prémiových služeb Proton."
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Soukromí a zabezpečení pro firmy, včetně všech prémiových služeb ${ BRAND_NAME }."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Bezpečné kloudové úložiště, které vám umožňuje uchovávat, synchronizovat a sdílet soubory jednoduše a bezpečně."
@@ -8494,11 +8503,11 @@
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
       ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
       ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Zkušební verze končí ${ formattedTrialExpirationDate }"
@@ -8572,8 +8581,8 @@
       "Review subscription and pay": [
         "Zkontrolovat předplatné a zaplatit"
       ],
-      "Start exploring the Proton universe": [
-        "Začněte objevovat svět Protonu"
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "Začněte prozkoumávat svět ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Změnit tarif?"
@@ -8604,8 +8613,8 @@
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Spravujte přístup ke svým sdíleným souborům přidáním ochrany heslem a nebo datem vypršení platnosti"
       ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@proton.me pro nákupní účty a HonzaZpravy@proton.me pro odběry zpráv"
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain } pro odběry zpráv"
       ],
       "Create up to ${ n } custom calendar.": [
         "Vytvořte až ${ n } vlastní kalendář.",
@@ -8646,8 +8655,8 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Spravujte své předplatné a parametry služby. Podporované platební možnosti jsou kreditní karta, PayPal, kryptoměna a nebo bankovní převod."
       ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        "V pracovní dny, získejte podporu od týmu zákaznické podpory Proton během 24 hodin od žádosti"
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "V pracovní dny, získejte podporu od týmu zákaznické podpory ${ BRAND_NAME } během 24 hodin od žádosti"
       ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "Kromě toho, přidejte až 5 kalendářů od kolegů, organizací, rodiny, přátel."
@@ -8655,8 +8664,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Kromě toho, přidejte až 5 kalendářů od přátel, rodiny, kolegů, organizací."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
-        "Jedno VPN připojení umožňuje v jednom okamžiku použít Proton VPN pouze jednomu zařízení. Například pro připojení telefonu a notebooku k Proton VPN v jeden okamžik, budete potřebovat dvě VPN připojení."
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
+        "Jedno VPN připojení umožňuje v jednom okamžiku použít ${ BRAND_NAME } VPN pouze jednomu zařízení. Například pro připojení telefonu a notebooku k ${ BRAND_NAME } VPN v jeden okamžik budete potřebovat dvě VPN připojení."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
@@ -8673,8 +8682,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Přizpůsobte svůj podpis logem, obrázky, ikony sociálních médií, odkazem na kontakt atd."
       ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonická podpora je dostupná od týmu zákaznické podpory během evropské pracovní doby, pro zákazníky se 6 a více uživateli"
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky se 6 a více uživateli"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zamezí přístup ke zprávám třetím stranám i ${ BRAND_NAME }. Jediní lidé, kteří mohou číst zprávy, jsou odesílatel a příjemce."
@@ -8697,8 +8706,8 @@
       "Route your internet traffic through the Tor network with a single click": [
         "Směrujte svůj internetový provoz skrz sít Tor jediným kliknutím"
       ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Bezpečně ukládejte údaje vašich kontaktů, např. telefonní číslo, adresu, narozeniny a osobní poznámky. Šifrování bez přístupu (koncové) znamená, že ani Proton si nemůže přečíst tyto údaje."
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Bezpečně ukládejte údaje vašich kontaktů, např. telefonní číslo, adresu, narozeniny a osobní poznámky. Šifrování bez přístupu (koncové) znamená, že ani ${ BRAND_NAME } si nemůže přečíst tyto údaje."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Odešlete e-maily velkým skupinám rychle a snadno vytvořením kontaktních skupin (až 100 kontaktů na skupinu)"
@@ -8888,8 +8897,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Dále se potřebujete přihlásit ke svému účtu Google a udělit společnosti Proton přístup k vašim datům."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Dále se potřebujete přihlásit ke svému účtu Google a udělit ${ BRAND_NAME } přístup k vašim datům."
       ]
     },
     "Oauth instructions video": {
@@ -9029,8 +9038,8 @@
       "I found another service that I like better": [
         "Našel jsem jinou službu, která se mi líbí více"
       ],
-      "I use a different Proton account": [
-        "Používám jiný Proton účet"
+      "I use a different ${ BRAND_NAME } account": [
+        "Používám jiný účet ${ BRAND_NAME }"
       ],
       "Ignore group": [
         "Ignorovat skupinu"
@@ -9596,8 +9605,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-Proton users, share your calendar with a link": [
-        "Chcete-li pozvat uživatele, kteří nemají účet Proton, sdílejte svůj kalendář pomocí odkazu"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "Chcete-li pozvat uživatele, kteří nemají účet ${ BRAND_NAME }, sdílejte svůj kalendář pomocí odkazu"
       ]
     },
     "Share calendar max shares reached error": {
@@ -9609,8 +9618,8 @@
       ]
     },
     "Share calendar modal description": {
-      "Add the Proton accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Přidejte účty Proton, se kterými chcete sdílet ${ calendarName }. Pošleme jim pozvánku."
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Přidejte účty ${ BRAND_NAME }, se kterými chcete sdílet ${ calendarName }. Pošleme jim pozvánku."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -9619,8 +9628,8 @@
       ]
     },
     "Share calendar modal title": {
-      "Share with Proton users": [
-        "Sdílet s uživateli Protonu"
+      "Share with ${ BRAND_NAME } users": [
+        "Sdílet s uživately ${ BRAND_NAME }"
       ]
     },
     "Shared calendar label input placeholder": {
@@ -9662,8 +9671,8 @@
       "Get up to ${ credits } in credits.": [
         "Získejte až ${ credits } v kreditech."
       ],
-      "Invite friends to Proton": [
-        "Pozvěte přátele do služby Proton"
+      "Invite friends to ${ BRAND_NAME }": [
+        "Pozvěte přátele do ${ BRAND_NAME }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Vyzkoušejte ${ DRIVE_APP_NAME }"
@@ -9836,8 +9845,8 @@
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Řešení pošty a kalendáře pro každodenní komunikaci s ohledem na soukromí."
       ],
-      "This offer is for those new to Proton only. No credit card required.": [
-        "Tato nabídka je určena pouze pro nové zákazníky společnosti Proton. Kreditní karta není vyžadována."
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "Tato nabídka je určena pouze pro nové zákazníky společnosti ${ BRAND_NAME }. Kreditní karta není vyžadována."
       ]
     },
     "Success": {
@@ -10162,11 +10171,11 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "${ appName } Klávesové zkratky"
-      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
+      ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "${ MAIL_APP_NAME } klávesové zkratky"
       ],
       "1. Give a name to the config to be generated": [
         "1. Pojmenujte konfiguraci, která se má vygenerovat"
@@ -10354,8 +10363,8 @@
       "Confirm downgrade": [
         "Potvrzení snížení"
       ],
-      "Confirm loss of Proton bonuses": [
-        "Potvrdit odebrání Proton bonusů"
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "Potvrdit ztrátu bonusů ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Potvrzení telefonního čísla"
@@ -10954,8 +10963,8 @@
       "WireGuard configuration": [
         "Konfigurace WireGuard"
       ],
-      "You already have a Proton account": [
-        "Již máte účet Proton"
+      "You already have a ${ BRAND_NAME } account": [
+        "Již máte účet ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "URL adresa kalendáře"
@@ -10978,8 +10987,8 @@
       "Your recovery status": [
         "Stav obnovy"
       ],
-      "You’ve been invited to try ${ mailAppName }": [
-        "Byli jste pozváni k vyzkoušení ${ mailAppName }"
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Byli jste pozváni k vyzkoušení ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
         "ZIP / PSČ"
@@ -11186,8 +11195,8 @@
       "Your DKIM signing is working.": [
         "Váš DKIM podpis funguje."
       ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "Váš externí účet možná dosáhl 24-hodinového limitu. Proton se pokusí pokračovat v importu co nejdříve."
+      "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
+        "Váš externí účet možná dosáhl 24-hodinového omezení datového přenosu. ${ BRAND_NAME } se pokusí pokračovat v importu co nejdříve."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -11339,6 +11348,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } sloučí všechny složky se stejným názvem. Chcete-li tomu zabránit, změňte názvy před importem."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
+      ],
       "Are you sure you want to delete the address?": [
         "Jste si jistí, že chcete vymazat tuhle adresu?"
       ],
@@ -11363,11 +11378,11 @@
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Deaktivací záznamů aktivity také vyčistíte celou historii záznamů. Jste si jistí, že chcete deaktivovat záznamy?"
       ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "Deaktivováním této adresy již nebudete moci odesílat ani přijímat e-maily pomocí této adresy a všechny propojené produkty Proton budou také deaktivovány. Opravdu chcete deaktivovat tuto adresu?"
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "Deaktivováním této adresy již nebudete moci odesílat ani přijímat e-maily pomocí této adresy a všechny propojené produkty ${ BRAND_NAME } budou také deaktivovány. Opravdu chcete deaktivovat tuto adresu?"
       ],
-      "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
-        "Pokud zrušíte tento import, nebudete jej moci obnovit. Proton uložil veškerý průběh na vašem účtu. Přesto zrušit?"
+      "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
+        "Pokud zrušíte tento import, nebudete jej moci obnovit. ${ BRAND_NAME } uložil veškerý průběh na vašem účtu. Přesto zrušit?"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } tarify. Prosím otevřete běžný požadavek na podporu."
@@ -11378,20 +11393,14 @@
       "Please provide at least one recipient": [
         "Uveďte alespoň jednoho příjemce"
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proto sloučí všechny složky se stejnými názvy. Pokud si to nepřejete, změňte názvy před importem."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Nastavení data a času na vašem zařízení nejsou synchronizována. ${ learnMore }"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Tento import může překročit kapacitu úložiště, která je momentálně k dispozici ve vašem Proton účtu. Zvažte prosím přizpůsobení importu."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Tento import může překročit kapacitu úložiště, která je momentálně k dispozici ve vašem ${ BRAND_NAME } účtu. Zvažte prosím přizpůsobení importu."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
         "Tím se odstraní všechny zprávy, složky a štítky vytvořené během importu."
