@@ -9,10 +9,9 @@ import {
     ImportError,
     NON_OAUTH_PROVIDER,
     NormalizedImporter,
-    OAUTH_PROVIDER,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { Alert, Field, Href, InputTwo, Label, PasswordInputTwo, Row } from '../../../../../components';
+import { Alert, Field, InputTwo, Label, PasswordInputTwo, Row } from '../../../../../components';
 import { EASY_SWITCH_EMAIL_PLACEHOLDER, IMAPS } from '../../../constants';
 import { ImportMailModalModel } from '../../interfaces';
 
@@ -41,89 +40,9 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
 
     const renderError = () => {
         let message = null;
-
-        const bold2StepsDisabled = (
-            <strong key="bold2StepsDisabled">{c('Import error emphasis').t`2-step verification is disabled`}</strong>
-        );
-        const bold2StepsEnabled = (
-            <strong key="bold2StepsEnabled">{c('Import error emphasis').t`2-step verification is enabled`}</strong>
-        );
-        const boldGoogleAccounts = (
-            <strong key="boldGoogleAccounts">{c('Import error emphasis').t`all your other Google accounts`}</strong>
-        );
         const boldNot = <strong key="boldNot">{c('Import error emphasis').t`not`}</strong>;
-        const linkCAPTCHA = (
-            <Href key="linkCAPTCHA" url="https://accounts.google.com/DisplayUnlockCaptcha">
-                {c('Import error emphasis').t`CAPTCHA`}
-            </Href>
-        );
 
         switch (modalModel.imap) {
-            case IMAPS[OAUTH_PROVIDER.GOOGLE]:
-                if (isReconnect) {
-                    // translator: the variable here is a HTML tag, here is the complete sentence: "If 2-step verification is disabled in Gmail (default settings), please make sure that:"
-                    const twoStepsDisabledMessage = c('Import error')
-                        .jt`If ${bold2StepsDisabled} in Gmail (default settings), please make sure that:`;
-
-                    // translator: the variable here is a HTML tag, here is the complete sentence: "If 2-step verification is enabled in Gmail, please make sure that you are using your app password instead of your regular password."
-                    const twoStepsEnabledMessage = c('Import error')
-                        .jt`If ${bold2StepsEnabled} in Gmail, please make sure that you are using your app password instead of your regular password.`;
-
-                    // translator: the variables here are HTML tags, here is the complete sentence: "You can also try to sign out of all your other Google accounts in the browser, then unlock CAPTCHA."
-                    const captchaMessage = c('Import error')
-                        .jt`You can also try to sign out of ${boldGoogleAccounts} in the browser, then unlock ${linkCAPTCHA}.`;
-
-                    message = (
-                        <>
-                            <div className="mb1">{c('Import error')
-                                .t`${BRAND_NAME} can't connect to your account. Please make sure that Gmail IMAP access is enabled.`}</div>
-                            <div className="mb1">{twoStepsDisabledMessage}</div>
-                            <ul className="m0 pb1">
-                                <li>{c('Import error').t`Your password is correct.`}</li>
-                                <li>{c('Import error')
-                                    .t`"Less secure app access" is turned on in your Google account security settings.`}</li>
-                            </ul>
-                            <div className="mb1">{twoStepsEnabledMessage}</div>
-                            <div className="mb1">{captchaMessage}</div>
-                        </>
-                    );
-                }
-
-                if (isIMAPError) {
-                    message = c('Import error')
-                        .t`${BRAND_NAME} can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.`;
-                }
-
-                if (isAuthError) {
-                    // translator: the variable here is a HTML tag, here is the complete sentence: "If 2-step verification is disabled (default Gmail settings), please make sure that:"
-                    const twoStepsDisabledMessage = c('Import error')
-                        .jt`If ${bold2StepsDisabled} (default Gmail settings), please make sure that:`;
-
-                    // translator: the variables here are HTML tags, here is the complete sentence: "If 2-step verification is enabled, please make sure that your email address and app password are correct. Do not use your regular password."
-                    const twoStepsEnabledMessage = c('Import error')
-                        .jt`If ${bold2StepsEnabled}, please make sure that your email address and app password are correct. Do ${boldNot} use your regular password.`;
-
-                    // translator: the variables here are HTML tags, here is the complete sentence: "You can also try to sign out of all your other Google accounts in the browser, then unlock CAPTCHA."
-                    const captchaMessage = c('Import error')
-                        .jt`You can also try to sign out of ${boldGoogleAccounts} in the browser, then unlock ${linkCAPTCHA}.`;
-
-                    message = (
-                        <>
-                            <div className="mb1">{c('Import error')
-                                .t`${BRAND_NAME} can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.`}</div>
-                            <div className="mb1">{twoStepsDisabledMessage}</div>
-                            <ul className="m0 pb1">
-                                <li>{c('Import error').t`Your email address and password are correct.`}</li>
-                                <li>{c('Import error')
-                                    .t`"Less secure app access" is turned on in your Google account security settings.`}</li>
-                            </ul>
-                            <div className="mb1">{twoStepsEnabledMessage}</div>
-                            <div className="mb1">{captchaMessage}</div>
-                        </>
-                    );
-                }
-
-                break;
             case IMAPS[NON_OAUTH_PROVIDER.YAHOO]:
                 if (isReconnect) {
                     // translator: the variable here is a HTML tag, here is the complete sentence: "your app password is correct. Do not use your regular password"
