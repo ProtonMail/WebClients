@@ -67,13 +67,16 @@ export const createUser = async ({
                 })
             );
         } catch (error: any) {
-            if (error.cancel) {
+            if (error.status === 409) {
                 /**
-                 * Allow for handling if auth prompt is cancelled
+                 * Conflict error from address being not available
                  */
-                throw error;
+
+                unavailableAddresses.push(address);
+                return;
             }
-            unavailableAddresses.push(address);
+
+            throw error;
         }
     };
 
