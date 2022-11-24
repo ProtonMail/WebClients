@@ -633,11 +633,6 @@
         "Door nu te verlaten, worden sommige contacten mogelijk niet geïmporteerd"
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-applicaties"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Bèta toegang laat u gebruikmaken van de bètaversie van ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME } voordat deze uitgebracht zijn voor het publiek. Dit betekent dat u de eerste kunt zijn om nieuwe producten te proberen, nieuwe updates te ontvangen en nieuwe functies te gebruiken."
@@ -1710,6 +1705,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" bestaat reeds"
+      ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
@@ -1799,9 +1797,9 @@
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
-        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
+        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
@@ -2033,8 +2031,8 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Er is iets misgegaan. Vernieuw de pagina of probeer het later opnieuw."
       ],
-      "There was a problem connecting to Proton.": [
-        "Fout bij het verbinden met Proton."
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Fout tijdens het verbinden met ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "U kunt ook ${ refresh } of probeer het later opnieuw."
@@ -2227,6 +2225,30 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "\"Minder veilige app-toegang\" is ingeschakeld in de beveiligingsinstellingen voor uw Google-account."
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw account. Zorg ervoor dat Gmail IMAP-toegang is ingeschakeld."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw account. Zorg ervoor dat IMAP-toegang is ingeschakeld in uw Gmail account."
+      ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw account. Zorg ervoor dat:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw externe account. Zorg ervoor dat het e-mailadres en het poortnummer correct zijn."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw extern account. Zorg ervoor dat:"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw Gmail account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat:"
+      ],
       "2-step verification is enabled in your external account.": [
         "2-staps-verificatie is ingeschakeld in uw externe account."
       ],
@@ -2253,30 +2275,6 @@
       ],
       "Invalid IMAP port": [
         "Ongeldige IMAP poort"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton kan geen verbinding maken met uw account. Zorg ervoor dat Gmail IMAP-toegang is ingeschakeld."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton kan geen verbinding maken met uw account. Zorg ervoor dat IMAP toegang is ingeschakeld in uw Gmail account."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton kan geen verbinding maken met uw account. Zorg ervoor dat:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton kan geen verbinding maken met uw externe account. Zorg ervoor dat het e-mailadres en het poortnummer correct zijn."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton kan geen verbinding maken met uw extern account. Zorg ervoor dat:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton kan geen verbinding maken met uw Gmail-account. Zorg ervoor dat het e-mailadres en het poortnummer correct zijn."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton kan geen verbinding maken met uw Yahoo account. Gelieve ervoor te zorgen dat:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Te veel recente pogingen. Probeer over enkele ogenblikken opnieuw."
@@ -2330,17 +2328,14 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Klik op ${ boldManage } om het keuzemenu uit te vouwen."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "Afhankelijk van uw e-mail-serviceprovider moet u mogelijk eerst een ${ knowledgeBaseLink } voordat u kunt importeren naar Proton."
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Afhankelijk van uw e-mail-serviceprovider moet u mogelijk eerst een ${ knowledgeBaseLink } voordat u kunt importeren naar ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Vouw het dropdown-menu uit door te klikken op de 3 puntjes (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Genereer een ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door Proton."
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "Genereer het ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door Proton."
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Genereer een ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Ga naar ${ boldAccountInfo } onder uw profiel in ${ yahooMailLink }."
@@ -2366,29 +2361,20 @@
       "Select ${ boldExportCSV }.": [
         "Selecteer ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Om een agenda te importeren naar ${ BRAND_NAME } heeft u het ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Om een agenda te importeren naar ${ BRAND_NAME } heeft u het ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Om een agenda te importeren naar Proton heeft u het ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Om een agenda te importeren naar ${ BRAND_NAME } heeft u het ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Om uw e-mails te importeren naar ${ BRAND_NAME } heeft u een ${ appPasswordLink } nodig van Outlook. Krijg het door deze stappen te volgen:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Om contactpersonen te importeren naar Proton heeft u een ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Om uw e-mails te importeren naar Proton heeft u een ${ appPasswordLink } nodig van Outlook. Krijg het door deze stappen te volgen:"
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Om uw e-mails te importeren naar Proton heeft u een ${ appPasswordLink } nodig van Yahoo. Krijg het door deze stappen te volgen:"
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Om uw e-mails te importeren naar ${ BRAND_NAME } heeft u een ${ appPasswordLink } nodig van Yahoo. Krijg het door deze stappen te volgen:"
       ]
     },
     "Import instructions emphasis": {
@@ -2661,8 +2647,8 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Weet u zeker dat u de geselecteerde items permanent wilt verwijderen uit de prullenbak?"
       ],
-      "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Omdat ${ appName } end-to-end versleuteld is, kunnen we geen toegang krijgen\nof uw bestanden voor u decoderen. Om uw schijf te ontgrendelen na een wachtwoord reset,\nmoet u een van de volgende dingen hebben:"
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
@@ -2703,8 +2689,8 @@
       "Conflict": [
         "Probleem"
       ],
-      "Continue using ${ appName } and unlock drive later": [
-        "Blijf ${ appName } gebruiken en ontgrendel de schijf later"
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Blijf ${ DRIVE_APP_NAME } gebruiken en ontgrendel de schijf later"
       ],
       "Continue with ${ planName }": [
         "Ga door met ${ planName }"
@@ -2861,8 +2847,8 @@
       "Free up some space or contact your administrator.": [
         "Maak ruimte vrij of neem contact op met uw beheerder."
       ],
-      "Get to know Proton Drive and earn your 500 MB storage bonus! Take action today.": [
-        "Maak kennis met Proton Drive en verdien uw 500 MB opslagbonus! Onderneem vandaag nog actie."
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "Maak kennis met ${ DRIVE_APP_NAME } en verdien uw 500 MB opslagbonus! Onderneem vandaag nog actie."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Ga naar \"Mijn bestanden\" en upload eerst enkele bestanden."
@@ -2888,8 +2874,8 @@
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "Als u uw wachtwoord niet weet, stel dan een herstelzin in zodat u zeker de toegang tot uw account en gegevens niet verliest."
       ],
-      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "Als u een van deze heeft, ga dan verder naar Proton account instelling om\nhet deblokkeerproces voort te zetten."
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
@@ -2976,6 +2962,9 @@
       "Loading preview": [
         "Voorbeeld laden"
       ],
+      "Loading...": [
+        "Laden..."
+      ],
       "Makes your account safer": [
         "Maakt uw account veiliger"
       ],
@@ -3021,8 +3010,8 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "No synced devices": [
-        "Geen gesynchroniseerde apparaten"
+      "No synced computers": [
+        "Geen gesynchroniseerde computers"
       ],
       "Not a valid URL": [
         "Ongeldige link"
@@ -3030,8 +3019,8 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Niet alle bestanden zijn overgeplaatst. Probeer de bestanden opnieuw te up- of downloaden."
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
-        "Opmerking: Gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ appName } hebt geïnstalleerd."
+      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Opmerking: Gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ DRIVE_APP_NAME } hebt geïnstalleerd."
       ],
       "of": [
         "van"
@@ -3203,9 +3192,6 @@
       "Swiss privacy": [
         "Zwitserse privacy"
       ],
-      "Synced devices": [
-        "Gesynchroniseerde apparaten"
-      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
       ],
@@ -3221,8 +3207,8 @@
       "There are no files yet": [
         "Er zijn nog geen bestanden"
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
-        "Deze bestanden werden gedeeld gebruik makend van end-to-end encryptie. Om ze veilig te houden — en al uw documenten, foto's, en bestanden privé — sla ze op in uw eigen Proton Drive. Het is gemakkelijk en gratis."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
+        "Deze bestanden werden gedeeld gebruik makend van end-to-end encryptie. Om ze veilig te houden — en al uw documenten, foto's, en bestanden privé — sla ze op in uw eigen ${ DRIVE_APP_NAME }. Het is gemakkelijk en gratis."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -3261,8 +3247,8 @@
       "This will overwrite the existing folder": [
         "Dit zal de bestaande map overschrijven"
       ],
-      "This will remove from Proton Drive the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Dit verwijdert het gesynchroniseerde apparaat ${ deviceName } van Proton Drive. Lokale bestanden op het apparaat blijven onaangeroerd."
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "Dit verwijdert het gesynchroniseerde apparaat ${ deviceName } van ${ DRIVE_APP_NAME }. Lokale bestanden op het apparaat blijven onaangeroerd."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Om echt privé zoeken in te schakelen, moeten we uw bestanden lokaal indexeren. U kan ${ DRIVE_APP_NAME } normaal blijven gebruiken - we laten u weten wanneer het indexeren klaar is."
@@ -3324,6 +3310,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
       ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Gebruik Drive voor Desktop om mappen op uw computer met ${ DRIVE_APP_NAME } te synchroniseren. Ze zullen hier verschijnen en van eender waar beschikbaar worden.  ${ LearnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gebruik dit formulier om ons in te lichten over ongepaste, illegale of op een andere manier schadelijke bestanden. U staat op het punt om te melden:"
       ],
@@ -3378,8 +3367,8 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "U kunt geïmporteerde kalenders ook samenvoegen met bestaande Proton-agenda's."
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "U kunt geïmporteerde kalenders ook samenvoegen met bestaande ${ BRAND_NAME }-agenda's."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
@@ -3402,17 +3391,14 @@
       "You will lose all unsaved changes.": [
         "U zal alle wijzigingen kwijtraken."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Uw account heeft minstens één onbetaalde factuur. Uw toegang is beperkt. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Uw huidige browser ondersteunt het downloaden van grote bestanden niet wegens de onbeschikbaarheid van service workers. Het downloaden van grote bestanden kan ervoor zorgen dat uw browser vastloopt of niet langer reageert. Gebruik de meest recente versie van een ${ recommendedBrowser } en probeer het opnieuw."
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "Uw e-mailadres zal niet veranderen, maar binnenkort moet u zich inloggen via ${ link }."
@@ -3440,9 +3426,6 @@
       ],
       "Your previous recovery phrase": [
         "Uw vorige herstelzin"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
       ]
     },
     "Info on errors": {
@@ -3504,6 +3487,9 @@
     "Label": {
       "# of accesses": [
         "Aantal weergaven"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } gebruikersnaam"
       ],
       "(Expired)": [
         "(Verlopen)"
@@ -3592,11 +3578,11 @@
       "Country": [
         "Land"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "Maak een ${ BRAND_NAME }-account aan"
+      ],
       "Create a share link": [
         "Maak een link om te delen"
-      ],
-      "Create Proton account": [
-        "Maak Proton-account aan"
       ],
       "Created": [
         "Aangemaakt"
@@ -3689,8 +3675,8 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "Hoe zou u uw ervaring met de nieuwe Proton omschrijven?"
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Hoe zou u uw ervaring met de nieuwe ${ BRAND_NAME } omschrijven?"
       ],
       "I understand the risk": [
         "Ik begrijp het risico"
@@ -3802,9 +3788,6 @@
       ],
       "Protect with password": [
         "Met wachtwoord beschermen"
-      ],
-      "Proton username": [
-        "Proton gebruikersnaam"
       ],
       "Public keys": [
         "Openbare sleutels"
@@ -4277,8 +4260,8 @@
       ]
     },
     "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Vervolgens moet u zich aanmelden bij uw Google-account en ons toegang geven tot uw gegevens."
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Vervolgens moet u zich aanmelden bij uw Google-account en ${ BRAND_NAME } toegang geven tot uw gegevens."
       ]
     },
     "Oauth instructions video": {
@@ -4290,13 +4273,16 @@
       "Next": [
         "Volgende"
       ],
-      "Start using ${ appName }": [
-        "Begin met ${ appName }"
+      "Start using ${ DRIVE_APP_NAME }": [
+        "Begin met ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "Maak een link om te delen"
+      ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "Start met het gebruik van ${ DRIVE_APP_NAME } en we verdubbelen uw gratis opslagruimte tot 1GB!"
       ],
       "Set a recovery method": [
         "Stel een herstelmethode in"
@@ -4316,8 +4302,8 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureer uw organisatie, koppel uw domeinnaam, en maak accounts aan om ervoor te zorgen dat alle leden van uw organisatie beveiligd zijn."
       ],
-      "Discover all Proton services": [
-        "Ontdek alle Proton services"
+      "Discover all ${ BRAND_NAME } services": [
+        "Ontdek alle ${ BRAND_NAME }-diensten"
       ],
       "Select a theme": [
         "Selecteer een thema"
@@ -4325,16 +4311,16 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Gebruik de app-selector in de linkerbovenhoek om toegang te krijgen tot andere Proton diensten, waaronder VPN, Calendar en Drive."
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "Gebruik het app-menu linksboven om toegang te krijgen tot andere ${ BRAND_NAME }-diensten, waaronder VPN, Calendar en Drive."
       ],
       "You can change this anytime in your settings.": [
         "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ appName }": [
-        "Welkom bij ${ appName }"
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Welkom bij ${ DRIVE_APP_NAME }"
       ]
     },
     "Option": {
@@ -4436,6 +4422,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } van de ${ countContacts } contactpersonen geëxporteerd.",
+        "${ contactsExported.length } van de ${ countContacts } contactpersonen geëxporteerd."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } van de ${ totalBeDeleted } contact succesvol verwijderd.",
         "${ model.deleted.length } van de ${ totalBeDeleted } contactpersonen zijn succesvol verwijderd."
@@ -4701,11 +4691,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Ons oude Visionary-abonnement is tijdelijk terug"
       ],
-      "Save more with 1 year of Proton Unlimited": [
-        "Bespaar meer met 1 jaar Proton Unlimited"
+      "Save more with 1 year of ${ planName }": [
+        "Bespaar meer met 1 jaar ${ planName }"
       ],
-      "Upgrade and save more with Proton Unlimited": [
-        "Upgrade en bespaar meer met Proton Unlimited"
+      "Upgrade and save more with ${ planName }": [
+        "Upgrade en bespaar meer met ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -4749,9 +4739,6 @@
       ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
-      ],
-      "Invite friends to Proton": [
-        "Nodig vrienden uit voor Proton"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "U kan nu eenvoudig Drive-bestanden zoeken terwijl u uw gegevens veilig houdt."
@@ -4965,6 +4952,9 @@
       ],
       "Completed": [
         "Voltooid"
+      ],
+      "Computers": [
+        "Computers"
       ],
       "Contact details": [
         "Contactgegevens"
@@ -5290,9 +5280,6 @@
       "Stop transfers?": [
         "Overdrachten stoppen?"
       ],
-      "Synced devices": [
-        "Gesynchroniseerde apparaten"
-      ],
       "The link either does not exist or has expired": [
         "De link bestaat niet of is verlopen"
       ],
@@ -5463,6 +5450,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
+      ],
       "Are you sure you want to discard your import?": [
         "Weet u zeker dat u uw import wilt verwijderen?"
       ],
@@ -5489,12 +5482,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ${ VPN_APP_NAME } abonnementen. Gelieve in plaats daarvan een ticket te openen."
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
@@ -5519,11 +5506,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Deze actie is onomkeerbaar. Voer het woord ${ boldDanger } in het veld in om door te gaan."
       ],
-      "This feature requires a paid Proton account": [
-        "Deze functie vereist een betaald Proton-account"
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Deze functie vereist een betaald ${ BRAND_NAME }-account"
       ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw Proton account. Overweeg om uw import aan te passen."
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw ${ BRAND_NAME } account. Overweeg om uw import aan te passen."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."

@@ -537,15 +537,6 @@
       "${ title } started at ${ formattedHour }": [
         "${ title }は${ formattedHour }からの予定です"
       ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title }は${ _formattedDate }に開始です"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title }は${ _formattedDate }の${ formattedHour }に開始です"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title }は${ _formattedDateWithTime }の予定です"
-      ],
       "${ title } started on ${ formattedDate }": [
         "${ title } は ${ formattedDate } に開始しました"
       ],
@@ -566,21 +557,6 @@
       ],
       "${ title } starts now": [
         "${ title }はただいま開始の予定です"
-      ],
-      "${ title } starts on ${ _formattedDate2 }": [
-        "${ title }は${ _formattedDate2 }の予定です"
-      ],
-      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title }は${ _formattedDate2 }の${ formattedHour }からの予定です"
-      ],
-      "${ title } starts on ${ _formattedDate3 }": [
-        "${ title }の開始日は${ _formattedDate3 }の予定です"
-      ],
-      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title }は${ _formattedDate3 }の${ formattedHour }からの予定です"
-      ],
-      "${ title } starts on ${ _formattedDateWithoutTime }": [
-        "${ title }は${ _formattedDateWithoutTime }の予定です"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title }は${ formattedDateWithTime }の予定です"
@@ -604,11 +580,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "今終了すると、予定は削除されます。"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton アプリケーション"
       ]
     },
     "Attached ics file error": {
@@ -766,9 +737,6 @@
       "Manage members": [
         "メンバーを管理"
       ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members for this calendar.\nTo share this calendar with more Proton accounts, remove some members.": [
-        "カレンダーごとに追加できるメンバーは${ MAX_CALENDAR_MEMBERS }人までです。他のメンバーを招待するには、現在のメンバーを削除してください。"
-      ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } links for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "カレンダーごとに作成できるリンクは最大 ${ MAX_LINKS_PER_CALENDAR } 件です。このカレンダーの新しいリンクを作成するには、リンクをひとつ削除してください。"
       ]
@@ -824,9 +792,6 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "公開リンクには現在アクセスできません。リンクがまだ有効かどうかをご確認ください。"
-      ],
-      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
-        "最後の更新から12時間が経過しています。数時間後に自動更新を試みます。"
       ]
     },
     "Calendar view": {
@@ -2099,9 +2064,6 @@
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
       ],
-      "Merge at least ${ calendarToFixCount } calendars with existing Proton calendars": [
-        "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
-      ],
       "Missing key packet": [
         "キーパケットが利用できません"
       ],
@@ -2120,17 +2082,11 @@
       "No emails found to import - the account does not have an inbox": [
         "インポートするメールがありません - アカウントに受信箱がありません"
       ],
-      "No public key for Proton address": [
-        "Protonアドレスに公開鍵がありません"
-      ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "ユーザーのWKD 鍵が送信に使用できません"
-      ],
-      "Not a Proton account": [
-        "Protonのアカウントではありません"
       ],
       "Not a valid number": [
         "無効な番号です"
@@ -2183,9 +2139,6 @@
       "Some contacts don't have a valid email address: ${ list }": [
         "次の連絡先には有効なメールアドレスが登録されていません: ${ list }"
       ],
-      "Some contacts have no email addresses: ${ _list }": [
-        "次の連絡先にはメールアドレスがありません: ${ _list }"
-      ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "一部の連絡先にメールアドレスがありません: ${ noEmailsContactNamesList } "
       ],
@@ -2194,9 +2147,6 @@
       ],
       "Some groups have invalid emails: ${ list }": [
         "次のグループには正しくないメールアドレスが登録されています: ${ list }"
-      ],
-      "Some groups have no contacts: ${ _list2 }": [
-        "次のグループには連絡先が追加されていません: ${ _list2 }"
       ],
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
@@ -2468,9 +2418,6 @@
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "問題が発生しました。ページを更新するか後ほど再度お試しください。"
-      ],
-      "There was a problem connecting to Proton.": [
-        "Proton への接続に問題がありました。"
       ],
       "You may also ${ refresh } or try again later.": [
         "${ refresh } するか再度お試しください。"
@@ -2786,6 +2733,12 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "Google アカウントのセキュリティ設定で「あまり安全ではないアプリアクセス」がオンになっています。"
       ],
+      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
+        "${ BRAND_NAME } はあなたのアカウントに接続できません。Gmail IMAP アクセスが有効になっていることを確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } はあなたの Gmail アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
       "2-step verification is enabled in your external account.": [
         "2 段階認証は外部アカウントで有効になっています。"
       ],
@@ -2812,30 +2765,6 @@
       ],
       "Invalid IMAP port": [
         "無効な IMAP ポート番号"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Protonはあなたのアカウントに接続できません。Gmail IMAPアクセスが有効になっていることを確認してください。"
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Protonはあなたのアカウントに接続できません。Gmail アカウントで IMAP アクセスが有効になっていることを確認してください。"
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Protonはあなたのアカウントに接続できません。以下を確認してください。"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton が外部アカウントに接続できませんでした。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Protonは外部アカウントに接続できません。以下を確認してください。"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton が Gmail アカウントに接続できませんでした。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton が Yahoo アカウントに接続できませんでした。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton はあなたの Yahoo アカウントに接続できません。以下をご確認ください:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "最近のリクエストが多すぎます。しばらくしてから再度お試しください。"
@@ -2889,17 +2818,8 @@
       "Click ${ boldManage } to expand the options menu.": [
         "${ boldManage } をクリックしてオプション メニューを展開してください。"
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "手順がメールサービスプロバイダーによって異なるため、Proton にメールをインポートする前に ${ knowledgeBaseLink } を生成することをおすすめします。"
-      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3 点リーダー（...）をクリックしてドロップダウンを展開します。"
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "${ boldAppPassword } を生成し、Proton からプロンプトが表示に通常のパスワードの代わりに入力してください。"
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        "${ boldAppPassword }を生成し、Proton からプロンプトが表示されたら、通常のパスワードを入力します。"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } のプロフィールから${ boldAccountInfo }に移動します。"
@@ -2924,30 +2844,6 @@
       ],
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } を選択します。"
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "カレンダーを Proton にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "連絡先を Proton にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "連絡先を Proton にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "連絡先を Proton にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "メールを Proton へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "メールを Proton へインポートするには、Yahoo から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
       ]
     },
     "Import instructions emphasis": {
@@ -3159,9 +3055,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
-      ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "このカレンダーの予定の詳細を共有すると、Protonがこのカレンダーの暗号化された情報にアクセスできるようになります。"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワード思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
@@ -3607,9 +3500,6 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "存在する Proton カレンダーにインポートしたカレンダーを結合することもできます。"
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "進捗を確認するには ${ importProgressLink }。"
       ],
@@ -3655,9 +3545,6 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "一連の予定はすべて更新されます。削除した参加者にはメールが送られます。"
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されています。${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
@@ -3666,9 +3553,6 @@
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "あなたのアドレスは無効になってます。取り消しメールは予定の参加者に送信されません。この予定を削除しますか？"
-      ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "データは ${ importedEmailAddressStrong } から Proton アカウントにインポートできる状態です。"
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "メールアドレスは変わりません。しかし、近いうちに${ link }でログインしなければなりません。"
@@ -3687,9 +3571,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "システムのタイムゾーンが${ timezone }に変更されたようです。タイムゾーンの設定を更新しますか？"
@@ -3742,6 +3623,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } ユーザー名"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
       ],
@@ -3886,9 +3770,6 @@
       "Hide password": [
         "パスワードを隠す"
       ],
-      "How would you describe your experience with the new Proton?": [
-        "新しい Proton の使い心地はいかがでしょうか?"
-      ],
       "I understand the risk": [
         "リスクを承知しました"
       ],
@@ -3993,9 +3874,6 @@
       ],
       "Postal code": [
         "郵便番号"
-      ],
-      "Proton username": [
-        "Proton ユーザー名"
       ],
       "Public keys": [
         "公開鍵"
@@ -4502,11 +4380,6 @@
         "不明"
       ]
     },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "次に、Google アカウントにサインインしてデータにアクセスすることを許可します。"
-      ]
-    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "インポートするには、GIF にあるように要求されたすべてのアイテムを選択します。"
@@ -4532,17 +4405,11 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
       ],
-      "Discover all Proton services": [
-        "すべての Proton サービスがここに"
-      ],
       "Select a theme": [
         "テーマを選択"
       ],
       "Set up your organization": [
         "組織のための設定"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "左上のアプリセレクターを使用して VPN、Calendar、Drive などの Proton サービスにアクセスできます。"
       ],
       "You can change this anytime in your settings.": [
         "この設定はいつでも変更できます。"
@@ -4808,8 +4675,8 @@
       "Get up to ${ credits } in credits.": [
         "最大${ credits }分のクレジットを獲得できます"
       ],
-      "Invite friends to Proton": [
-        "Protonに友達を招待する"
+      "Invite friends to ${ BRAND_NAME }": [
+        "フレンドを ${ BRAND_NAME } に招待"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "招待は、保留中の予定としてカレンダーに表示されるようになりました。その予定を開いて、返信することができます。${ goToSettingsLink }"
@@ -5508,12 +5375,6 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "ライブチャットは ${ VPN_APP_NAME } の有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"
       ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Protonは、最新のメッセージからできるだけ多くのデータを転送します。"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"
       ],
@@ -5537,12 +5398,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "この操作は元に戻せません。続行するには、単語${ boldDanger } を入力してください。"
-      ],
-      "This feature requires a paid Proton account": [
-        "この機能は有料の Proton アカウントが必要です"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "このインポートは現在Protonアカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"

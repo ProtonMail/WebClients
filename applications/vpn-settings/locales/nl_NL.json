@@ -1616,6 +1616,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Er is iets misgegaan. Vernieuw de pagina of probeer het later opnieuw."
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Fout tijdens het verbinden met ${ BRAND_NAME }."
+      ],
       "You may also ${ refresh } or try again later.": [
         "U kunt ook ${ refresh } of probeer het later opnieuw."
       ]
@@ -1791,6 +1794,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat beide het inlog en mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkele wachtwoord naar keuze in en klik op opslaan."
       ],
@@ -1805,11 +1811,11 @@
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "${ vpnBasic }, ${ vpnPlus } of ${ visionary } vereist om te kunnen verbinden via een specifiek land."
+      "${ vpnPlus } required for Country level connection.": [
+        "${ vpnPlus } vereist voor verbindingen op landniveau."
       ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "${ vpnPlus } of ${ visionary } vereist voor Secure Core functies."
+      "${ vpnPlus } required for Secure Core feature.": [
+        "${ vpnPlus } vereist voor Secure Core functies."
       ],
       "* No credit card required.": [
         "* Green kredietkaart vereist."
@@ -1919,6 +1925,9 @@
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
       ],
       "Emailing preference saved": [
         "E-mailvoorkeuren opgeslagen"
@@ -2057,6 +2066,9 @@
       ],
       "Loading preview": [
         "Voorbeeld laden"
+      ],
+      "Loading...": [
+        "Laden..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren"
@@ -2220,6 +2232,9 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dit zal uw huidige betaalde abonnement annuleren en u verliest alle voordelen van loyaliteit die u heeft verzameld. Het resterende saldo van uw abonnement zal worden teruggestuurd als accountcredits."
       ],
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Dit zal PayPal inschakelen om te betalen voor uw ${ BRAND_NAME } abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
+      ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dit zal uw account en alle bijbehorende gegevens permanent verwijderen. U zult dit account niet kunnen heractiveren."
       ],
@@ -2229,11 +2244,17 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dit zal je afmelden van alle actieve sessies en de 2-factor authenticatie uitschakelen."
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw ${ BRAND_NAME } account. Tweestapsverificatie zal uw ${ BRAND_NAME } account veiliger maken en daarom raden we aan om het in te schakelen."
+      ],
       "to continue to ${ toAppName }": [
         "om door te gaan naar ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Om de laatste ontwikkeling bij ${ BRAND_NAME }-producten te kunnen bijhouden, kunt u zich abonneren op onze verschillende e-mails en onze blog van tijd tot tijd bezoeken."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Om verder te gaan, selecteer een herstelmethode voor uw account zodat we het verzoek kunnen verifiëren."
@@ -2436,9 +2457,6 @@
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Uw account heeft minstens één onbetaalde factuur. Uw toegang is beperkt. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
       ],
@@ -2562,6 +2580,9 @@
     "Label": {
       "${ BRAND_NAME } email or username": [
         "${ BRAND_NAME } e-mail of gebruikersnaam"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } gebruikersnaam"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } van de ${ humanMaxSpace } gebruikt"
@@ -3313,6 +3334,9 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Toepasselijke tegoeden, aftrek en kortingscodes worden toegepast in de volgende stap"
       ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Uitgebreide privacy en beveiliging met alle ${ BRAND_NAME }-services gecombineerd."
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Als u uw account verwijdert, raakt u alle voordelen van uw ${ visionary }-abonnement kwijt en kunt u niet meer voor dit abonnement kiezen als u een nieuwe account maakt."
       ],
@@ -3327,6 +3351,9 @@
       ],
       "Popular": [
         "Populair"
+      ],
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "Privacy- en beveiligingssuite voor bedrijven, inclusief alle premium ${ BRAND_NAME }-services."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
@@ -3359,6 +3386,12 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium ${ BRAND_NAME }-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium ${ BRAND_NAME }-services."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
@@ -3419,6 +3452,9 @@
       "Review subscription and pay": [
         "Abonnement controleren en betalen"
       ],
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "Ontdek het ${ BRAND_NAME }-universum"
+      ],
       "Switch plans?": [
         "Van abonnement wisselen?"
       ]
@@ -3455,6 +3491,9 @@
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Beheer toegang tot uw gedeelde bestanden door wachtwoordbeveiliging en verloopdatums voor koppelingen toe te voegen"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
       ],
       "Create up to ${ n } custom calendar.": [
         "Maak ${ n } aangepaste agenda.",
@@ -3493,11 +3532,17 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Beheer uw abonnement en pas het zo nodig aan uw wensen aan. De geaccepteerde betaalmethodes zijn creditcard, PayPal, cryptovaluta en bankoverschrijving."
       ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "Ontvang op werkdagen binnen 24 uur na het indienen van uw verzoek ondersteuning van ${ BRAND_NAME }-klantenondersteuning"
+      ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "Voeg daarnaast tot 5 agenda's toe van collega's, organisaties, familieleden en vrienden."
       ],
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Voeg daarnaast tot 5 agenda's toe van vrienden, familieleden, collega's en organisaties."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
+        "Met één VPN-verbinding kunt u één apparaat per keer verbinden met ${ BRAND_NAME } VPN. Als u bijvoorbeeld tegelijkertijd een telefoon en een laptop met ${ BRAND_NAME } VPN wilt verbinden, hebt u twee VPN-verbindingen nodig."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
@@ -3513,6 +3558,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "Telefonische ondersteuning van het ${ BRAND_NAME }-klantensuccesteam is beschikbaar tijdens Europese kantooruren voor klanten met 6 of meer gebruikers"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Voorkomt dat berichten worden gelezen door ${ BRAND_NAME } of derden. De enige personen die de berichten kunnen lezen, zijn de afzender en de beoogde ontvanger."
@@ -3534,6 +3582,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Routeer uw internetverkeer door het Tor-netwerk met een enkele klik"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Sla de gegevens van uw contactpersonen, zoals telefoonnummer, adres, geboortedatum en persoonlijke notities, veilig op. Dankzij zero-access versleuteling heeft zelfs ${ BRAND_NAME } geen toegang tot deze gegevens."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Stuur snel en eenvoudig e-mails naar grote groepen door zoveel contactgroepen te maken als u wilt (tot 100 contactpersonen per groep)"
@@ -4192,6 +4243,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "De privacy-eerst e-mail en agenda oplossing voor uw alledaagse communicatienoden."
+      ],
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "Dit aanbod is enkel voor zij nieuw bij ${ BRAND_NAME }. Geen kredietkaart vereist."
       ]
     },
     "Success": {
@@ -4662,11 +4716,17 @@
       "WireGuard configuration": [
         "WireGuard configuratie"
       ],
+      "You already have a ${ BRAND_NAME } account": [
+        "U hebt al een account voor ${ BRAND_NAME }"
+      ],
       "Your current plan": [
         "Uw huidige abonnement"
       ],
       "Your plan": [
         "Uw abonnement"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "U bent uitgenodigd om ${ MAIL_APP_NAME } te proberen"
       ],
       "ZIP / postal code": [
         "Postcode"

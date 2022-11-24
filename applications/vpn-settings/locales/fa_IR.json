@@ -1766,12 +1766,6 @@
       "${ storageSize } storage": [
         "${ storageSize } فضای ذخیره‌سازی"
       ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "طرح های ${ vpnBasic }، ${ vpnPlus } یا ${ visionary } برای اتصال در سطح کشورها نیاز است."
-      ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "${ vpnPlus } یا ${ visionary } میاز است تا از ویژگی Secure Core استفاده کنید."
-      ],
       "* No credit card required.": [
         "* نیازی به کارت اعتباری نیست."
       ],
@@ -2360,9 +2354,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "حساب‌های کاربری ${ VPN_APP_NAME } و ${ MAIL_APP_NAME } شما به یکدیگر متصلند. برای حذف هردوی آنها، لطفا به ${ loginLink } وارد شوید و حساب‌تان را از آنجا حذف کنید."
-      ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "حساب شما حداقل یک صورت‌حساب واگذاشته دارد. دسترسی شما محدود شده است. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "حساب شما حداقل یک صورت‌حساب به تعویق افتاده دارد. دسترسی شما به زودی محدود خواهد شد. ${ payInvoiceLink }"

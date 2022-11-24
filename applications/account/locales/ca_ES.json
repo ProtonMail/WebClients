@@ -197,7 +197,7 @@
         "Crear enllaç"
       ],
       "Create your own": [
-        "Crea'n una de pròpia"
+        "Crea la teva pròpia"
       ],
       "Current plan": [
         "Pla actual"
@@ -341,7 +341,7 @@
         "Obtenir ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
-        "Obté una nova adreça de correu xifrada"
+        "Obteniu una nova adreça de correu xifrada"
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
@@ -862,11 +862,6 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Si sortiu ara, alguns contactes potser no es poden importar"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicacions de Proton"
       ]
     },
     "Attached ics file error": {
@@ -2261,9 +2256,6 @@
       "Bugs or quality issue": [
         "Errors o problema de qualitat"
       ],
-      "I use a different Proton account": [
-        "Faig us d'un compte Proton diferent"
-      ],
       "My reason isn't listed, please comment": [
         "La meva raó no es troba a la llista, si us plau comenteu"
       ],
@@ -2503,10 +2495,6 @@
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Uniu almenys ${ calendarToFixCount } calendari amb un calendari Proton existent",
-        "Uniu almenys ${ calendarToFixCount } calendaris amb calendaris Proton existents"
       ],
       "Missing key packet": [
         "Falta el paquet de claus"
@@ -2895,9 +2883,6 @@
       "Please ${ refresh } or check your connection.": [
         "Si us play, ${ refresh } o comproveu la vostra connexió."
       ],
-      "There was a problem connecting to Proton.": [
-        "S'ha produït un problema en connectar amb Proton."
-      ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Massa sessions actives. Netegeu les galetes i torneu a iniciar sessió."
       ],
@@ -3262,9 +3247,6 @@
       ]
     },
     "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Les invitacions importades aparèixen a ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador i dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de Proton."
-      ],
       "This file contains an event invitation:": [
         "Aquest fitxer conté una invitació a un esdeveniment:",
         "Aquest fitxer conté invitacions a un esdeveniment:"
@@ -3335,24 +3317,6 @@
       ],
       "Invalid IMAP port": [
         "Port IMAP no vàlid"
-      ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "Proton no es pot connectar al vostre compte. Assegureu-vos que l’accés IMAP de Gmail estigui habilitat."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "Proton no es pot connectar al teu compte. Assegureu-vos que l'accés IMAP està habilitat al vostre compte de Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "Proton no es pot connectar al vostre compte. Assegureu-vos que:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton no es pot connectar al vostre compte extern. Assegureu-vos que l'adreça del servidor de correu i el número del port són correctes."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "Proton no es pot connectar al vostre compte extern. Assegureu-vos que:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton no es pot connectar al vostre compte de Gmail. Assegureu-vos que l'adreça del servidor de correu i el número del port són correctes."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
@@ -3592,9 +3556,6 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
-      ],
-      "1. Invite friends to Proton": [
-        "1. Convida amistats a Proton"
       ],
       "10 email addresses": [
         "10 adreces de correu"
@@ -4080,9 +4041,6 @@
       "Loading preview": [
         "S'està carregant la previsualització"
       ],
-      "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Els registres inclouen els intents d'autentificació per a tots els serveis de Proton que utilitzen les vostres credencials de Proton."
-      ],
       "lose access to all current encrypted data": [
         "perd l'accés a totes les dades encriptades actuals"
       ],
@@ -4243,15 +4201,6 @@
       "Priority support": [
         "Suport prioritari"
       ],
-      "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Proton ha aturat una importació perquè ha perdut la connexió amb el vostre altre proveïdor de correu electrònic. Torneu a connectar."
-      ],
-      "Proton paused an import because your account is running low on space. You can:": [
-        "Proton ha posat en pausa una importació perquè queda por espai al vostre compte. Pot:"
-      ],
-      "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "Proton intentarà reprendre la importació tan aviat com el vostre proveïdor de correu electrònic restableixi el del vostre compte ${ bandwithLimitLink }. No cal fer res. Si cancel·leu la importació, no la podreu reprendre i haureu de tornar a començar."
-      ],
       "Public link invite": [
         "Enllaç públic d'invitació"
       ],
@@ -4408,9 +4357,6 @@
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Això crearà una nova clau de xifrat per a la vostra organització. Les claus 4096-bit només funcionen en ordinadors d'alt rendiment, per a la majoria d'usuaris recomanem l'ús de claus de 2048-bit."
       ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Això permetrà que PayPal s’utilitzi per pagar la vostra subscripció a Proton. Els redirigirem a PayPal en una pestanya nova del navegador. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
-      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Això suprimirà permanentment les dades i totes les adreces de correu electrònic associades a aquest usuari."
       ],
@@ -4419,9 +4365,6 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Això reemplaçarà la vostra contrasenya temporal. Ho utilitzareu per accedir al vostre compte ${ BRAND_NAME } en el futur."
-      ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Aquest assistent habilitarà l'autenticació de dos factors (2FA) al vostre compte de Proton. L’autenticació de dos factors farà que el vostre compte Proton sigui més segur, de manera que us recomanem que l’activeu."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Per confirmar-ho, introduïu el nom de l'usuari que vulgueu suprimir."
@@ -4434,9 +4377,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
-      ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Per mantenir-vos al dia amb els darrers desenvolupaments de Protonmail, podeu subscriure-us als nostres diversos correus electrònics i visitar el nostre blog de tant en tant."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregeu el vostre compte amb crèdits que podeu utilitzar per subscriure-us a un nou pla o per renovar el pla actual. Obteniu un crèdit per cada ${ i18nCurrency } gastat."
@@ -4573,9 +4513,6 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
       ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        "També podeu combinar els calendaris importats amb calendaris Proton existents."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
@@ -4624,9 +4561,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "El vostre compte té almenys una factura en retard. El vostre accés ha estat restringit. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
       ],
@@ -4638,9 +4572,6 @@
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "El vostre banc requereix una verificació segura en 3-D amb finalitats de seguretat."
-      ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Les vostres dades estan a punt per importar des de ${ importedEmailAddressStrong } al vostre compte de Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
@@ -4662,9 +4593,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Actualment, el vostre compte Proton està en suspensió. Per continuar utilitzant el vostre compte, pagueu qualsevol factura que hagi pendent."
       ],
       "Your recovery phrase": [
         "La vostra frase de recuperació"
@@ -5538,9 +5466,6 @@
       ],
       "Protection mode": [
         "Mode de protecció"
-      ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
       ],
       "Read": [
         "Llegit"
@@ -6454,9 +6379,6 @@
       "I found another service that I like better": [
         "He trobat un altre servei que m'agrada mes"
       ],
-      "I use a different Proton account": [
-        "Faig us d'un compte Proton diferent"
-      ],
       "Ignore group": [
         "Ignorar grup"
       ],
@@ -6971,9 +6893,6 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "La solució de correu electrònic i calendari que prioritza la privadesa per a les vostres necessitats de comunicació diàries."
-      ],
-      "This offer is for those new to Proton only. No credit card required.": [
-        "L'oferta és només per a persones noves a Proton. No cal targeta de crèdit."
       ]
     },
     "Success": {
@@ -7257,9 +7176,6 @@
       ]
     },
     "Title": {
-      "${ appName } Keyboard Shortcuts": [
-        "Dreceres de teclat de ${ appName }"
-      ],
       "1. Select platform": [
         "1. Seleccioneu la plataforma"
       ],
@@ -7412,9 +7328,6 @@
       ],
       "Confirm downgrade": [
         "Confirmar baixar de categoria"
-      ],
-      "Confirm loss of Proton bonuses": [
-        "Confirmeu la pèrdua de bonificacions de Proton"
       ],
       "Confirm phone number": [
         "Confirmeu el número de telèfon"
@@ -7945,9 +7858,6 @@
       "WireGuard configuration": [
         "Configuració del WireGuard"
       ],
-      "You already have a Proton account": [
-        "Ja teniu un compte de Proton"
-      ],
       "Your calendar link": [
         "Enllaç del vostre calendari"
       ],
@@ -8125,9 +8035,6 @@
       ],
       "Your DKIM signing is working.": [
         "La teva signatura DKIM està funcionant."
-      ],
-      "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "És possible que el vostre compte extern hagi assolit el límit d'ample de banda de 24 hores. Proton intentarà reprendre la importació el més aviat possible."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -8256,29 +8163,14 @@
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Al desactivar els registres, també netejaràs l'historial complet de registres. Esteu segur que voleu desactivar els registres?"
       ],
-      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "Si desactiveu aquesta adreça, ja no podreu enviar o rebre correus electrònics amb aquesta adreça i tots els productes Proton vinculats també seran desactivats. Segur que voleu desactivar l'adreça?"
-      ],
-      "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
-        "Si cancel·leu aquesta importació, no la podreu reprendre. Proton ha desat tot el progrés del vostre compte. Voleu cancel·lar-ho de totes maneres?"
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
-      ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton combinarà totes les carpetes amb el mateix nom. Per evitar-ho, canvieu els noms abans d’importar-los."
-      ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "Proton transferirà tantes dades com sigui possible, començant pels missatges més recents."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "La configuració de data i hora del vostre dispositiu no estan sincronitzats. ${ learnMore }"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de Proton. Considereu personalitzar la importació."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."

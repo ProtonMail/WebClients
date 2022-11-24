@@ -514,9 +514,6 @@
     "Action title": {
       "Share with anyone": [
         "Partilhar com o qualquer pessoa"
-      ],
-      "Share with Proton users": [
-        "Partilhar com utilizadores do Proton"
       ]
     },
     "Actions message": {
@@ -540,15 +537,6 @@
       "${ title } started at ${ formattedHour }": [
         "${ title } começou às ${ formattedHour }"
       ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } começou em ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } começou em ${ _formattedDate } às ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } começou em ${ _formattedDateWithTime }"
-      ],
       "${ title } started on ${ formattedDate }": [
         "${ title } começou em ${ formattedDate }"
       ],
@@ -566,21 +554,6 @@
       ],
       "${ title } starts now": [
         "${ title } começa agora"
-      ],
-      "${ title } starts on ${ _formattedDate2 }": [
-        "${ title } começa em ${ _formattedDate2 }."
-      ],
-      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } começa em ${ _formattedDate2 } às ${ formattedHour }."
-      ],
-      "${ title } starts on ${ _formattedDate3 }": [
-        "${ title } começa em ${ _formattedDate3 }."
-      ],
-      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } começa em ${ _formattedDate3 } às ${ formattedHour }."
-      ],
-      "${ title } starts on ${ _formattedDateWithoutTime }": [
-        "${ title } começa em ${ _formattedDateWithoutTime }."
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } começa em ${ formattedDateWithTime }."
@@ -604,11 +577,6 @@
       ],
       "By leaving now, you will lose your event.": [
         "Se sair agora, perderá o seu evento."
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Aplicações do Proton"
       ]
     },
     "Attached ics file error": {
@@ -1853,14 +1821,6 @@
       ]
     },
     "Error": {
-      "${ _list } doesn't have an email address": [
-        "${ _list } não tem um endereço electrónico",
-        "${ _list } não tem um endereço electrónico"
-      ],
-      "${ _list2 } has no contacts": [
-        "${ _list2 } não tem contactos",
-        "Alguns grupos não têm contactos: ${ _list2 }"
-      ],
       "${ list } doesn't have a valid email address": [
         "${ list } não tem um endereço electrónico válido",
         "Alguns contactos não têm um endereço electrónico válido: ${ list }"
@@ -1971,14 +1931,8 @@
       "Name required": [
         "Nome requerido"
       ],
-      "No public key for Proton address": [
-        "Nenhuma chave pública para o endereço do Proton"
-      ],
       "No WKD key retrieved for user is valid for sending": [
         "Nenhuma das chaves WKD recuperadas para o utilizador é válida para o envio"
-      ],
-      "Not a Proton account": [
-        "Não é uma conta Proton"
       ],
       "Not a valid number": [
         "Número inválido"
@@ -2236,9 +2190,6 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Por favor ${ refresh } ou verifique a sua ligação."
-      ],
-      "There was a problem connecting to Proton.": [
-        "Ocorreu um problema ao ligar ao Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "Também pode ${ refresh } ou tentar mais tarde."
@@ -2543,27 +2494,6 @@
       "Invalid IMAP port": [
         "Porta IMAP inválida"
       ],
-      "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que o acesso Gmail IMAP está activado."
-      ],
-      "Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que o acesso IMAP está activado na sua conta Gmail."
-      ],
-      "Proton can't connect to your account. Please make sure that:": [
-        "O Proton não pode ligar à sua conta. Por favor, certifique-se de que:"
-      ],
-      "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "O Proton não pode ligar à sua conta externa. Por favor, certifique-se de que o endereço do servidor e a porta estão correctos."
-      ],
-      "Proton can't connect to your external account. Please make sure that:": [
-        "O Proton não pode ligar à sua conta externa. Por favor, certifique-se de que:"
-      ],
-      "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "O Proton não pode ligar à sua conta do Gmail. Por favor, certifique-se de que o endereço do servidor de email e o número da porta estão correctos."
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "O Proton não pode ligar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de email e o número da porta estão correctos."
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiados pedidos recentes. Por favor, tente mais tarde."
       ],
@@ -2790,9 +2720,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam’ e verifique que ${ strong } é o endereço correto."
-      ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Ao partilhar todos os detalhes de evento desta agenda, aceita conceder acesso ao Proton à informação encriptada nesta agenda."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não se lembra da senha? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
@@ -3205,9 +3132,6 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Vai actualizar todos os eventos desta série. Os participantes removidos serão notificados."
       ],
-      "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "A sua conta tem pelo menos uma factura em atraso. O acesso foi restringido. ${ payInvoiceLink }"
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
       ],
@@ -3231,9 +3155,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta Proton está actualmente suspensa. Para continuar a usar a sua conta, por favor, pague quaisquer facturas em atraso."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Parece que o fuso horário do seu sistema mudou para ${ timezone }. Deseja actualizar a sua preferência de fuso horário?"
@@ -3478,9 +3399,6 @@
       ],
       "Postal code": [
         "Código postal"
-      ],
-      "Proton username": [
-        "Utilizador Proton"
       ],
       "Public keys": [
         "Chaves públicas"
@@ -3966,17 +3884,11 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configure a sua organização, vincule o seu nome de domínio e crie contas para garantir que todos os membros da sua organização estão protegidos."
       ],
-      "Discover all Proton services": [
-        "Descubra todos os serviços Proton"
-      ],
       "Select a theme": [
         "Seleccionar um tema"
       ],
       "Set up your organization": [
         "Configure a sua organização"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Use o selector de aplicações no canto superior esquerdo para aceder a outros serviços Proton, incluindo VPN, Calendar e Drive."
       ],
       "You can change this anytime in your settings.": [
         "Pode alterar isto a qualquer momento nas definições."
@@ -4206,11 +4118,6 @@
     "Select search results": {
       "No results found": [
         "Nenhum resultado encontrado"
-      ]
-    },
-    "Share calendar modal title": {
-      "Share with Proton users": [
-        "Partilhar com utilizadores do Proton"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -4913,9 +4820,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se não se lembra da senha, é impossível reactivar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."
       ],
-      "Proton will transfer as much data as possible, starting with your most recent messages.": [
-        "O Proton transferirá o máximo de dados possível, começando com as mensagens mais recentes."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
       ],
@@ -4933,12 +4837,6 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acção é irreversível. Por favor, insira a palavra ${ boldDanger } no campo para continuar."
-      ],
-      "This feature requires a paid Proton account": [
-        "Esta funcionalidade requer uma conta Proton paga"
-      ],
-      "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Esta importação pode exceder a capacidade de armazenamento actualmente disponível na sua conta Proton. Por favor, considere personalizar a importação."
       ]
     },
     "Weekly recurring event, frequency": {
