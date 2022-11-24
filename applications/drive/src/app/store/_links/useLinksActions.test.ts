@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useLinksActions } from './useLinksActions';
@@ -97,7 +98,18 @@ describe('useLinksActions', () => {
 
     beforeEach(() => {
         jest.resetAllMocks();
-        mockRequest.mockImplementation(() => Promise.resolve());
+        mockRequest.mockImplementation((linkIds: string[]) => {
+            return Promise.resolve({
+                Responses: linkIds.map(() => ({
+                    Response: {
+                        Code: RESPONSE_CODE.SUCCESS,
+                    },
+                })),
+            });
+        });
+        mockQueryTrashLinks.mockImplementation((shareId, parentLinkId, linkIds) => linkIds);
+        mockQueryRestoreLinks.mockImplementation((shareId, linkIds) => linkIds);
+        mockQueryDeleteTrashedLinks.mockImplementation((shareId, linkIds) => linkIds);
 
         const { result } = renderHook(() =>
             useLinksActions({
