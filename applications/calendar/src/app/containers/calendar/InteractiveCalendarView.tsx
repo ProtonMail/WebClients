@@ -42,7 +42,7 @@ import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from '@proton/crypto';
 import { updateAttendeePartstat, updateMember, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
-import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
+import { emailToAttendee, getAttendeeEmail, toApiPartstat } from '@proton/shared/lib/calendar/attendees';
 import {
     getIsCalendarDisabled,
     getIsCalendarProbablyActive,
@@ -111,6 +111,7 @@ import {
     getExistingEvent,
     getInitialFrequencyModel,
     getInitialModel,
+    getOrganizerModel,
 } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import EventPopover from '../../components/events/EventPopover';
@@ -542,10 +543,23 @@ const InteractiveCalendarView = ({
         const originalOrOccurrenceEvent = eventRecurrence
             ? withOccurrenceEvent(veventComponent, eventRecurrence)
             : veventComponent;
-        // when duplicating from a disabled calendar, we artificially changed the calendar. In that case we need to retrieve the old member
+        /**
+         * When duplicating from a disabled calendar, we artificially changed the calendar. In that case we need to:
+         * * retrieve alarms from the old member
+         * * compute organizer model for the new calendar
+         */
         const existingAlarmMember = duplicateFromNonWritableCalendarData
             ? getMemberAndAddress(addresses, readCalendarBootstrap(calendarData.ID).Members, eventData.Author)[0]
             : Member;
+        const organizerModel = duplicateFromNonWritableCalendarData
+            ? getOrganizerModel({
+                  attendees: (veventComponent.attendee || []).map((attendee) =>
+                      emailToAttendee(getAttendeeEmail(attendee))
+                  ),
+                  addresses,
+                  addressID: Address.ID,
+              })
+            : undefined;
         const eventResult = getExistingEvent({
             veventComponent: originalOrOccurrenceEvent,
             veventValarmComponent: personalMap[existingAlarmMember?.ID]?.veventComponent,
@@ -570,6 +584,7 @@ const InteractiveCalendarView = ({
         return {
             ...createResult,
             ...eventResult,
+            ...organizerModel,
         };
     };
 
@@ -1636,6 +1651,7 @@ const InteractiveCalendarView = ({
                             <CreateEventPopover
                                 isDraggingDisabled={isNarrow || isSideApp}
                                 isNarrow={isNarrow}
+                                isCreateEvent={isCreatingEvent}
                                 style={style}
                                 popoverRef={ref}
                                 model={tmpData}
@@ -1727,14 +1743,12 @@ const InteractiveCalendarView = ({
                                           });
 
                                           handleCreateEvent({
-                                              attendees: undefined,
                                               startModel: {
                                                   ...tmpData,
                                                   // This is used to keep track of the original event start
                                                   initialDate: propertyToUTCDate(
                                                       modelToDateProperty(tmpData.start, tmpData.isAllDay)
                                                   ),
-                                                  organizer: undefined,
                                               },
                                               isDuplicating: true,
                                           });
