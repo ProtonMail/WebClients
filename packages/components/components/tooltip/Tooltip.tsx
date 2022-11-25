@@ -17,7 +17,7 @@ import useIsMounted from '@proton/hooks/useIsMounted';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { classnames, generateUID } from '../../helpers';
-import { useCombinedRefs } from '../../hooks';
+import useCombinedRefs from '../../hooks/useCombinedRefs';
 import { Popper, PopperPlacement, usePopper } from '../popper';
 import { TooltipExclusiveContext } from './TooltipExclusive';
 import useTooltipHandlers from './useTooltipHandlers';
@@ -37,6 +37,7 @@ interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'> {
     openDelay?: number;
     closeDelay?: number;
     longTapDelay?: number;
+    updateAnimationFrame?: boolean;
 }
 
 const getTooltipTypeClass = (type: TooltipType) => {
@@ -102,6 +103,7 @@ const TooltipBase = (
         openDelay,
         closeDelay,
         longTapDelay,
+        updateAnimationFrame,
         ...rest
     }: Props,
     ref: Ref<HTMLElement>
@@ -131,6 +133,7 @@ const TooltipBase = (
         isOpen,
         originalPlacement,
         relativeReference,
+        updateAnimationFrame,
     });
 
     const exclusive = useContext(TooltipExclusiveContext) || {};

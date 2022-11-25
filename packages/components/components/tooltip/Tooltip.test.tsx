@@ -33,6 +33,30 @@ describe('tooltip', () => {
         expect(screen.queryByTestId('tooltip')).toBeNull();
     });
 
+    it('should not close tooltip when externally opened', async () => {
+        render(
+            <>
+                <Tooltip title={<span data-testid="tooltip">World</span>} isOpen>
+                    <span data-testid="span">Hello</span>
+                </Tooltip>
+                <div data-testid="outside">hello</div>
+            </>
+        );
+        expect(screen.getByTestId('span')).toHaveTextContent('Hello');
+        expect(screen.getByTestId('tooltip')).toHaveTextContent('World');
+
+        await userEvent.unhover(screen.getByTestId('span'));
+        await userEvent.click(screen.getByTestId('outside'));
+
+        await act(() => {
+            jest.advanceTimersByTime(1000);
+        });
+        fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out-last' });
+
+        expect(screen.getByTestId('span')).toHaveTextContent('Hello');
+        expect(screen.getByTestId('tooltip')).toHaveTextContent('World');
+    });
+
     it('should show and hide tooltip with a delay', async () => {
         render(
             <Tooltip title={<span data-testid="tooltip">World</span>}>
