@@ -45,7 +45,6 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
-import InsecureEmailInfo from './InsecureEmailInfo';
 import Loader from './Loader';
 import { SignupType } from './interfaces';
 
@@ -335,7 +334,6 @@ const AccountStep = ({
                     ) : (
                         innerChallenge
                     )}
-                    {signupType === SignupType.Email && <InsecureEmailInfo email={trimmedEmail} />}
                     {signupTypes.includes(SignupType.Email) && signupTypes.length > 1 ? (
                         <div className="text-center mb1">
                             <InlineLinkButton
