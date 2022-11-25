@@ -1,5 +1,6 @@
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+
 import { ApiImportListResponse, ApiImporter } from '../types/api.types';
-import { ImportType } from '../types/shared.types';
 import { ActiveImporter, ActiveImportersMap, Importer, ImportersMap } from './importers.interface';
 
 export const normalizeImporter = (apiImporter: ApiImporter) => {
