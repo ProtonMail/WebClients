@@ -45,6 +45,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
     const [folders = [], foldersLoading] = useFolders();
     const [labels = [], labelsLoading] = useLabels();
 
+    // Google provides labels instead of folders even when IMAP is used for import
     const isLabelMapping = modalModel.imap === IMAPS[OAUTH_PROVIDER.GOOGLE];
 
     const { payload, selectedPeriod } = modalModel;
