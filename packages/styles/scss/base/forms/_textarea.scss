@@ -10,6 +10,10 @@
 	filter: none; // fixes Firefox autofill color
 	transition: 0.15s easing(ease-out-quint), block-size 0s;
 
+	@include media('<=xsmall') {
+		padding-inline: em(8);
+	}
+
 	&:hover,
 	&.hover {
 		border-color: var(--field-hover);
