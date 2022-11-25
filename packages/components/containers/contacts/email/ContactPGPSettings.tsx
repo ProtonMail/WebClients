@@ -3,7 +3,7 @@ import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
-import { BRAND_NAME, CONTACT_PGP_SCHEMES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
+import { BRAND_NAME, CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ContactPublicKeyModel, MailSettings } from '@proton/shared/lib/interfaces';
 import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
@@ -14,6 +14,7 @@ import { useNotifications } from '../../../hooks';
 import SelectKeyFiles from '../../keys/shared/SelectKeyFiles';
 import ContactKeysTable from './ContactKeysTable';
 import ContactSchemeSelect from './ContactSchemeSelect';
+import SignEmailsSelect from './SignEmailsSelect';
 
 interface Props {
     model: ContactPublicKeyModel;
@@ -110,10 +111,6 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                 <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/address-verification')}>{c('Info')
                     .t`To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.`}</Alert>
             )}
-            {!hasApiKeys && !model.sign && (
-                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Info')
-                    .t`Only change these settings if you are using PGP with non-${BRAND_NAME} recipients.`}</Alert>
-            )}
             {model.isPGPExternalWithoutWKDKeys && noPinnedKeyCanSend && model.encrypt && (
                 <Alert className="mb1" type="error" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Info')
                     .t`None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable "Encrypt emails".`}</Alert>
@@ -128,8 +125,9 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                                 .t`Email encryption forces email signature to help authenticate your sent messages`}
                         />
                     </Label>
-                    <Field className="pt0-5">
+                    <Field className="pt0-5 flex flex-align-items-center">
                         <Toggle
+                            className="mr0-5"
                             id="encrypt-toggle"
                             checked={model.encrypt}
                             disabled={!hasPinnedKeys}
@@ -137,16 +135,18 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                                 setModel({
                                     ...model,
                                     encrypt: target.checked,
-                                    sign: target.checked ? true : model.sign,
                                 })
                             }
                         />
+                        <div className="flex-item-fluid">
+                            {model.encrypt && c('Info').t`Emails are automatically signed`}
+                        </div>
                     </Field>
                 </Row>
             )}
             {!hasApiKeys && (
                 <Row>
-                    <Label htmlFor="sign-toggle">
+                    <Label htmlFor="sign-select">
                         {c('Label').t`Sign emails`}
                         <Info
                             className="ml0-5"
@@ -154,18 +154,13 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                                 .t`Digitally signing emails helps authenticating that messages are sent by you`}
                         />
                     </Label>
-                    <Field className="pt0-5">
-                        <Toggle
-                            id="sign-toggle"
-                            checked={model.sign}
+                    <Field>
+                        <SignEmailsSelect
+                            id="sign-select"
+                            value={model.encrypt ? true : model.sign}
+                            mailSettings={mailSettings}
                             disabled={model.encrypt}
-                            onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                setModel({
-                                    ...model,
-                                    sign: target.checked,
-                                    mimeType: MIME_TYPES_MORE.AUTOMATIC,
-                                })
-                            }
+                            onChange={(sign?: boolean) => setModel({ ...model, sign })}
                         />
                     </Field>
                 </Row>

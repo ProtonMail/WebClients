@@ -265,9 +265,6 @@ export const createNewDraft = (
     if (mailSettings.AttachPublicKey) {
         Flags = setBit(Flags, MESSAGE_FLAGS.FLAG_PUBLIC_KEY);
     }
-    if (mailSettings.Sign) {
-        Flags = setBit(Flags, MESSAGE_FLAGS.FLAG_SIGN);
-    }
 
     const {
         data: { Subject = '', ToList = [], CCList = [], BCCList = [], Attachments: reusedAttachments = [] } = {},

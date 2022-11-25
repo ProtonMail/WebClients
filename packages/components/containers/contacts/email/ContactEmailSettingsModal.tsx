@@ -5,13 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
-import {
-    CONTACT_MIME_TYPES,
-    MAIL_APP_NAME,
-    MIME_TYPES,
-    MIME_TYPES_MORE,
-    PGP_SCHEMES,
-} from '@proton/shared/lib/constants';
+import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { VCARD_KEY_FIELDS } from '@proton/shared/lib/contacts/constants';
 import { getKeyInfoFromProperties, getMimeTypeVcard, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
 import {
@@ -85,7 +79,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     } else if (model?.isPGPExternalWithWKDKeys) {
         isMimeTypeFixed = true;
     } else {
-        isMimeTypeFixed = !!model?.sign;
+        isMimeTypeFixed = model?.sign !== undefined ? model.sign : !!mailSettings?.Sign;
     }
 
     const hasPGPInline = model && mailSettings ? extractScheme(model, mailSettings) === PGP_INLINE : false;
@@ -101,7 +95,12 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             apiKeysConfig,
             pinnedKeysConfig: { ...pinnedKeysConfig, isContact: true },
         });
-        setModel(publicKeyModel);
+        setModel({
+            ...publicKeyModel,
+            // Encryption enforces signing, so we can ignore the signing preference so that if the user
+            // disables encryption, the global default signing setting is automatically selected.
+            sign: publicKeyModel.encrypt ? undefined : publicKeyModel.sign,
+        });
     };
 
     /**
@@ -149,10 +148,13 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                 uid: createContactPropertyUid(),
             });
         }
-        if (model.isPGPExternalWithoutWKDKeys && model.sign !== undefined) {
+
+        // Encryption automatically enables signing.
+        const sign = model.encrypt || model.sign;
+        if (model.isPGPExternalWithoutWKDKeys && sign !== undefined) {
             newProperties.push({
                 field: 'x-pm-sign',
-                value: `${model.sign}`,
+                value: `${sign}`,
                 group: emailGroup,
                 uid: createContactPropertyUid(),
             });
@@ -222,7 +224,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
 
             return {
                 ...model,
-                encrypt: model?.publicKeys?.pinnedKeys.length > 0 && model.encrypt,
+                encrypt: publicKeys?.pinnedKeys.length > 0 && model.encrypt,
                 publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             };
         });
@@ -271,15 +273,11 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                     </Alert>
                 ) : null}
                 {isMimeTypeFixed && hasPGPInline ? (
-                    <Alert className="mb1">
-                        {c('Info')
-                            .t`PGP/Inline is only compatible with Plain Text format. Please note that ${MAIL_APP_NAME} always signs encrypted messages.`}
-                    </Alert>
+                    <Alert className="mb1">{c('Info').t`PGP/Inline is only compatible with Plain Text format.`}</Alert>
                 ) : null}
                 {isMimeTypeFixed && !hasPGPInline ? (
                     <Alert className="mb1">
-                        {c('Info')
-                            .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ${MAIL_APP_NAME} always signs encrypted messages.`}
+                        {c('Info').t`PGP/MIME automatically sends the message using the current composer mode.`}
                     </Alert>
                 ) : null}
                 <Row>
@@ -325,7 +323,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                                 ? c('Action').t`Hide advanced PGP settings`
                                 : c('Action').t`Show advanced PGP settings`}
                         </CollapsibleHeader>
-                        <CollapsibleContent>
+                        <CollapsibleContent className="mt1">
                             {showPgpSettings && model ? (
                                 <ContactPGPSettings model={model} setModel={setModel} mailSettings={mailSettings} />
                             ) : null}
