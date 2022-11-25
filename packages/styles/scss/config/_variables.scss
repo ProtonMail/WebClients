@@ -29,6 +29,30 @@ $breakpoint-medium: 910 !default;
 $breakpoint-small: 680 !default;
 $breakpoint-tiny: 450 !default;
 
+// Breakpoints for include-media
+$breakpoints: (
+	// 1500px
+	'xlarge': 93.75em,
+	// 1100px
+	'large': 68.75em,
+	// 910px
+	'medium': 56.875em,
+	// 680px
+	'small': 42.5em,
+	// 450px
+	'xsmall': 28.125em
+) !default;
+
+// Media expressions for include-media
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'mouse': '(hover: hover) and (pointer: fine)',
+	'touch': '(hover: hover) and (pointer: coarse), (hover: none)',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+) !default;
+
 // RTL
 // RTL = Right To Left =>
 // to adapt a website in a language that is written from right to left
@@ -60,25 +84,6 @@ $root-equiv-10-px: false !default;
 // basic premise: default user setting for font size is at 16 pixels in the browser
 // you should NEVER update this value, however… who can predict the future…
 $root-default-font-size: 16 !default;
-
-// Breakpoints for include-media
-$breakpoints: (
-	'xlarge': em($breakpoint-large, $root-default-font-size),
-	'large': em($breakpoint-medium-landscape, $root-default-font-size),
-	'medium': em($breakpoint-medium, $root-default-font-size),
-	'small': em($breakpoint-small, $root-default-font-size),
-	'xsmall': em($breakpoint-tiny, $root-default-font-size),
-);
-
-// Media expressions for include-media
-$media-expressions: (
-	'screen': 'screen',
-	'print': 'print',
-	'mouse': '(hover: hover) and (pointer: fine)',
-	'touch': '(hover: hover) and (pointer: coarse), (hover: none)',
-	'landscape': '(orientation: landscape)',
-	'portrait': '(orientation: portrait)',
-);
 
 // others
 $use-reset-button: true !default;
