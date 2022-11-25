@@ -9,6 +9,7 @@ import {
 
 import { ThemeColorUnion } from '@proton/colors';
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useRightToLeft } from '@proton/components/containers/rightToLeft';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
 import clamp from '@proton/utils/clamp';
@@ -86,6 +87,7 @@ const Slider = ({
     ...rest
 }: SliderProps) => {
     const [rtl] = useRightToLeft();
+    const [tooltipOpen, setTooltipOpen] = useState(false);
     const [internalValue, setInternalValue] = useSynchronizingState(value || min);
     const [dragging, setDragging] = useState(false);
 
@@ -303,37 +305,51 @@ const Slider = ({
                 </>
             )}
 
-            <ButtonLike
-                icon
-                color="weak"
-                shape="outline"
-                as="span"
-                style={{ '--left-custom': `${valueInPercent}%` }}
-                data-testid="slider-thumb"
-                className={clsx('slider-thumb left-custom shadow-norm relative', dragging && 'slider-thumb-dragging')}
+            <Tooltip
+                title={renderDisplayedValue()}
+                isOpen={tooltipOpen || dragging}
+                closeDelay={0}
+                openDelay={0}
+                updateAnimationFrame={
+                    true /* Needed to ensure it's next to the button. Otherwise only updated on title change. */
+                }
             >
-                <input
-                    type="range"
-                    ref={thumbInputRef}
-                    value={value}
-                    min={min}
-                    max={max}
-                    step={step}
-                    aria-valuenow={clampedInternalValue}
-                    aria-orientation="horizontal"
-                    data-testid="slider-input"
-                    className="sr-only slider-thumb-input"
-                    onChange={handleInputChange}
-                    onInput={handleInputInput}
-                    {...rest}
-                />
-
-                <div className="slider-thumb-tooltip absolute tooltip tooltip--top" data-testid="slider-tooltip">
-                    {renderDisplayedValue()}
-                </div>
-
-                <Icon name="arrows-left-right" />
-            </ButtonLike>
+                <ButtonLike
+                    icon
+                    color="weak"
+                    shape="outline"
+                    as="span"
+                    style={{ '--left-custom': `${valueInPercent}%` }}
+                    data-testid="slider-thumb"
+                    className={clsx(
+                        'slider-thumb left-custom shadow-norm relative',
+                        dragging && 'slider-thumb-dragging'
+                    )}
+                >
+                    <input
+                        onFocus={() => {
+                            setTooltipOpen(true);
+                        }}
+                        onBlur={() => {
+                            setTooltipOpen(false);
+                        }}
+                        type="range"
+                        ref={thumbInputRef}
+                        value={value}
+                        min={min}
+                        max={max}
+                        step={step}
+                        aria-valuenow={clampedInternalValue}
+                        aria-orientation="horizontal"
+                        data-testid="slider-input"
+                        className="sr-only slider-thumb-input"
+                        onChange={handleInputChange}
+                        onInput={handleInputInput}
+                        {...rest}
+                    />
+                    <Icon name="arrows-left-right" />
+                </ButtonLike>
+            </Tooltip>
         </div>
     );
 };

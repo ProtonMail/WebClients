@@ -61,33 +61,9 @@ $size-track-thumb-small: 28 !default;
 			transform: translateX(50%) translateY(-10px);
 		}
 
-		&-tooltip {
-			opacity: 0;
-			transition: 0.2s;
-			transform: scale(0);
-			word-break: initial;
-			inset-block-end: calc(100% + 16px);
-		}
-
-		&:active,
-		&:focus,
-		&:hover,
-		&-dragging {
-			.slider-thumb-tooltip {
-				opacity: 1;
-				transform: scale(1);
-			}
-		}
-
 		&-input {
 			inline-size: 100%;
 			block-size: 100%;
-
-			&:active + .slider-thumb-tooltip,
-			&:focus + .slider-thumb-tooltip {
-				opacity: 1;
-				transform: scale(1);
-			}
 		}
 	}
 
