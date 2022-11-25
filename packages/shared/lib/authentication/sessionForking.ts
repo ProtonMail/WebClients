@@ -1,3 +1,5 @@
+import type { MutableRefObject } from 'react';
+
 import noop from '@proton/utils/noop';
 
 import { pullForkSession, pushForkSession, revoke } from '../api/auth';
@@ -9,7 +11,7 @@ import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { replaceUrl } from '../helpers/browser';
 import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
 import { Api, User as tsUser } from '../interfaces';
-import { FORK_TYPE } from './ForkInterface';
+import { Extension, FORK_TYPE } from './ForkInterface';
 import { getKey } from './cryptoHelper';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from './error';
 import { PullForkResponse, PushForkResponse } from './interface';
@@ -21,6 +23,85 @@ import {
     getValidatedLocalID,
     getValidatedRawKey,
 } from './sessionForkValidation';
+
+interface ExtensionForkPayload {
+    selector: string;
+    keyPassword: string | undefined;
+    persistent: boolean;
+    trusted: boolean;
+    state: string;
+}
+
+type ExtensionForkResult = { type: 'success'; payload?: any } | { type: 'error'; payload: string | undefined };
+
+export const produceExtensionFork = ({
+    messageListenerRef,
+    extension,
+    payload,
+}: {
+    messageListenerRef: MutableRefObject<any>;
+    extension: Extension;
+    payload: ExtensionForkPayload;
+}): Promise<ExtensionForkResult> => {
+    return new Promise((resolve) => {
+        window.setTimeout(() => {
+            resolve({ type: 'error', payload: 'Extension timed out' });
+        }, 15000);
+
+        // Fallback for firefox browsers since it doesn't implement externally connectable
+        const handleFallback = () => {
+            window.removeEventListener('message', messageListenerRef.current);
+
+            messageListenerRef.current = (event: MessageEvent<any>) => {
+                if (event.source !== window) {
+                    return;
+                }
+                if (event.data?.fork === 'success') {
+                    window.removeEventListener('message', messageListenerRef.current);
+                    messageListenerRef.current = undefined;
+
+                    resolve({ type: 'success' });
+                }
+            };
+
+            window.addEventListener('message', messageListenerRef.current);
+            window.postMessage(
+                {
+                    extension: extension.ID,
+                    type: 'fork',
+                    payload,
+                },
+                '/'
+            );
+        };
+
+        try {
+            const browser = 'chrome' in window ? (window.chrome as any) : undefined;
+            if (!browser?.runtime?.sendMessage) {
+                return handleFallback();
+            }
+            browser.runtime.sendMessage(
+                extension.ID,
+                {
+                    type: 'fork',
+                    payload,
+                },
+                (result: any) => {
+                    if (browser.runtime.lastError) {
+                        resolve({
+                            type: 'error',
+                            payload: browser.runtime.lastError.message,
+                        });
+                        return;
+                    }
+                    resolve(result);
+                }
+            );
+        } catch (e) {
+            handleFallback();
+        }
+    });
+};
 
 interface ForkState {
     url: string;
