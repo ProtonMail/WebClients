@@ -142,7 +142,7 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
                 />
 
                 <div className="mb1-5">
-                    <h2 className="text-strong h3">{c('Label').t`Account storage`}</h2>
+                    <div className="text-semibold mb0-5">{c('Label').t`Account storage`}</div>
                     <MemberStorageSelector
                         className="mb1"
                         value={model.storage}
