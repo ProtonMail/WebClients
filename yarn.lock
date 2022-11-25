@@ -17446,7 +17446,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"htmlparser2@npm:^6.0.0, htmlparser2@npm:^6.1.0":
+"htmlparser2@npm:^6.1.0":
   version: 6.1.0
   resolution: "htmlparser2@npm:6.1.0"
   dependencies:
@@ -24177,13 +24177,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"parse-srcset@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "parse-srcset@npm:1.0.2"
-  checksum: 3a0380380c6082021fcce982f0b89fb8a493ce9dfd7d308e5e6d855201e80db8b90438649b31fdd82a3d6089a8ca17dccddaa2b730a718389af4c037b8539ebf
-  languageName: node
-  linkType: hard
-
 "parse5-htmlparser2-tree-adapter@npm:^6.0.1":
   version: 6.0.1
   resolution: "parse5-htmlparser2-tree-adapter@npm:6.0.1"
@@ -25175,7 +25168,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.14, postcss@npm:^8.2.15, postcss@npm:^8.3.11, postcss@npm:^8.4.12, postcss@npm:^8.4.17, postcss@npm:^8.4.18, postcss@npm:^8.4.19":
+"postcss@npm:^8.2.14, postcss@npm:^8.2.15, postcss@npm:^8.4.12, postcss@npm:^8.4.17, postcss@npm:^8.4.18, postcss@npm:^8.4.19":
   version: 8.4.19
   resolution: "postcss@npm:8.4.19"
   dependencies:
@@ -26540,17 +26533,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-sanitized-html@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "react-sanitized-html@npm:2.0.0"
-  peerDependencies:
-    prop-types: ^15.6.0
-    react: ^16.2.0
-    sanitize-html: ^1.16.1
-  checksum: 8611759fb4b2e75acfb54351261c3dc0c6878c9863d6c8883efdebe47254d0640f92ca67227f9ace67857c6edc94393f15e0bd13c8b84fbc37cd518fcf31d331
-  languageName: node
-  linkType: hard
-
 "react-shallow-renderer@npm:^16.13.1":
   version: 16.15.0
   resolution: "react-shallow-renderer@npm:16.15.0"
@@ -27768,8 +27750,6 @@ fsevents@^1.2.7:
     is-ci: ^3.0.1
     lint-staged: ^13.0.4
     prettier: ^2.8.0
-    react-sanitized-html: ^2.0.0
-    sanitize-html: ^2.7.3
     sort-package-json: ^2.1.0
     stylelint-use-logical-spec: ^4.1.0
     typescript: ^4.9.3
@@ -27890,20 +27870,6 @@ fsevents@^1.2.7:
   bin:
     sane: ./src/cli.js
   checksum: 97716502d456c0d38670a902a4ea943d196dcdf998d1e40532d8f3e24e25d7eddfd4c3579025a1eee8eac09a48dfd05fba61a2156c56704e7feaa450eb249f7c
-  languageName: node
-  linkType: hard
-
-"sanitize-html@npm:^2.7.3":
-  version: 2.7.3
-  resolution: "sanitize-html@npm:2.7.3"
-  dependencies:
-    deepmerge: ^4.2.2
-    escape-string-regexp: ^4.0.0
-    htmlparser2: ^6.0.0
-    is-plain-object: ^5.0.0
-    parse-srcset: ^1.0.2
-    postcss: ^8.3.11
-  checksum: 2399d1fdbbc3a263fb413c1fe1971b3dc2b51abc6cc5cb49490624539d1c57a8fe31e2b21408c118e2a957f4e673e3169b1f9a5807654408f17b130a9d78aed7
   languageName: node
   linkType: hard
 
