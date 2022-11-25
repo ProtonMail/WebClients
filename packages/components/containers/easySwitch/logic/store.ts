@@ -8,7 +8,8 @@ import { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import { Api } from '@proton/shared/lib/interfaces';
 
 import { NotificationsManager } from '../../notifications/manager';
-import draft from './draft/draft.slice';
+import imapDraft from './draft/imapDraft/imapDraft.slice';
+import oauthDraft from './draft/oauthDraft/oauthDraft.slice';
 import importers from './importers/importers.slice';
 import reports from './reports/reports.slice';
 
@@ -18,7 +19,7 @@ export const useGenerateEasySwitchStore = () => {
     const eventManager = useEventManager();
     const store = useMemo(() => {
         return configureStore({
-            reducer: { reports, importers, draft },
+            reducer: { reports, importers, oauthDraft, imapDraft },
             middleware: (getDefaultMiddleware) =>
                 getDefaultMiddleware({
                     thunk: { extraArgument: { api, notificationManager, eventManager } },

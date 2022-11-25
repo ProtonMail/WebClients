@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/components/hooks';
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { startDraft } from '../../logic/draft/draft.actions';
+import { startImapDraft } from '../../logic/draft/imapDraft/imapDraft.actions';
+import { startOauthDraft } from '../../logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '../../logic/store';
-import { ImportAuthType, ImportProvider, ImportType } from '../../logic/types/shared.types';
+import { ImportProvider } from '../../logic/types/shared.types';
 import ProviderCard from './ProviderCard';
 
 const ProviderCards = () => {
@@ -22,10 +24,9 @@ const ProviderCards = () => {
                     provider={ImportProvider.GOOGLE}
                     onClick={() => {
                         dispatch(
-                            startDraft({
+                            startOauthDraft({
                                 provider: ImportProvider.GOOGLE,
-                                authType: ImportAuthType.OAUTH,
-                                importType: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
+                                products: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
                             })
                         );
                     }}
@@ -35,9 +36,7 @@ const ProviderCards = () => {
 
                 <ProviderCard
                     provider={ImportProvider.YAHOO}
-                    onClick={() =>
-                        dispatch(startDraft({ provider: ImportProvider.YAHOO, authType: ImportAuthType.IMAP }))
-                    }
+                    onClick={() => dispatch(startImapDraft({ provider: ImportProvider.YAHOO }))}
                     disabled={disabled}
                     className="mb1 mr1"
                 />
@@ -46,10 +45,9 @@ const ProviderCards = () => {
                     provider={ImportProvider.OUTLOOK}
                     onClick={() =>
                         dispatch(
-                            startDraft({
+                            startOauthDraft({
                                 provider: ImportProvider.OUTLOOK,
-                                authType: ImportAuthType.OAUTH,
-                                importType: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
+                                products: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
                             })
                         )
                     }
@@ -59,9 +57,7 @@ const ProviderCards = () => {
 
                 <ProviderCard
                     provider={ImportProvider.DEFAULT}
-                    onClick={() =>
-                        dispatch(startDraft({ provider: ImportProvider.DEFAULT, authType: ImportAuthType.IMAP }))
-                    }
+                    onClick={() => dispatch(startImapDraft({ provider: ImportProvider.DEFAULT }))}
                     disabled={disabled}
                     className="mb1"
                 />

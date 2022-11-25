@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { IconName } from '@proton/components/components';
-
-import { ImportType } from '../../logic/types/shared.types';
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
 export const getImportProductName = (type: ImportType) => {
     switch (type) {

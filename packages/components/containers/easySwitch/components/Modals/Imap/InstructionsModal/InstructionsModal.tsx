@@ -4,10 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { selectDraftImportType, selectDraftProvider } from '../../../logic/draft/draft.selector';
-import { useEasySwitchSelector } from '../../../logic/store';
-import { ImportProvider, ImportType } from '../../../logic/types/shared.types';
+import { selectImapDraftProduct, selectImapDraftProvider } from '../../../../logic/draft/imapDraft/imapDraft.selector';
+import { useEasySwitchSelector } from '../../../../logic/store';
+import { ImportProvider } from '../../../../logic/types/shared.types';
 import DefaultCalendarInstructions from './Instructions/default/DefaultCalendarInstructions';
 import DefaultContactsInstructions from './Instructions/default/DefaultContactsInstructions';
 import DefaultMailInstructions from './Instructions/default/DefaultMailInstructions';
@@ -26,11 +27,11 @@ interface Props {
 const { DEFAULT, YAHOO, OUTLOOK } = ImportProvider;
 
 const InstructionsModal = ({ onSubmit, onClose }: Props) => {
-    const importType = useEasySwitchSelector(selectDraftImportType);
-    const provider = useEasySwitchSelector(selectDraftProvider);
+    const product = useEasySwitchSelector(selectImapDraftProduct);
+    const provider = useEasySwitchSelector(selectImapDraftProvider);
 
     const titleRenderer = () => {
-        if (importType === ImportType.MAIL) {
+        if (product === ImportType.MAIL) {
             if (provider === YAHOO) {
                 return c('Modal title').t`How to import emails from Yahoo`;
             }
@@ -41,7 +42,7 @@ const InstructionsModal = ({ onSubmit, onClose }: Props) => {
                 return c('Modal title').t`How to import emails from another service`;
             }
         }
-        if (importType === ImportType.CALENDAR) {
+        if (product === ImportType.CALENDAR) {
             if (provider === YAHOO) {
                 return c('Modal title').t`How to import calendars from Yahoo`;
             }
@@ -52,7 +53,7 @@ const InstructionsModal = ({ onSubmit, onClose }: Props) => {
                 return c('Modal title').t`How to import calendars from another service`;
             }
         }
-        if (importType === ImportType.CONTACTS) {
+        if (product === ImportType.CONTACTS) {
             if (provider === YAHOO) {
                 return c('Modal title').t`How to import contacts from Yahoo`;
             }
@@ -66,7 +67,7 @@ const InstructionsModal = ({ onSubmit, onClose }: Props) => {
     };
 
     const instructionsRenderer = () => {
-        if (importType === ImportType.MAIL) {
+        if (product === ImportType.MAIL) {
             if (provider === YAHOO) {
                 return <YahooMailInstructions />;
             }
@@ -77,7 +78,7 @@ const InstructionsModal = ({ onSubmit, onClose }: Props) => {
                 return <DefaultMailInstructions />;
             }
         }
-        if (importType === ImportType.CALENDAR) {
+        if (product === ImportType.CALENDAR) {
             if (provider === YAHOO) {
                 return <YahooCalendarInstructions />;
             }
@@ -88,7 +89,7 @@ const InstructionsModal = ({ onSubmit, onClose }: Props) => {
                 return <DefaultCalendarInstructions />;
             }
         }
-        if (importType === ImportType.CONTACTS) {
+        if (product === ImportType.CONTACTS) {
             if (provider === YAHOO) {
                 return <YahooContactsInstructions />;
             }

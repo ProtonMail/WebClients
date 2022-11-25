@@ -1,8 +1,8 @@
 import format from 'date-fns/format';
 
 import { Icon, TableCell } from '@proton/components/components';
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { ImportType } from '../../logic/types/shared.types';
 import { getImportIconNameByProduct, getImportProductName } from './ReportsTableCell.helpers';
 
 interface Props {

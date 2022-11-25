@@ -1,8 +1,7 @@
-import { ImporterActiveProps, NormalizedImporter } from '@proton/shared/lib/interfaces/EasySwitch';
+import { ImportType, ImporterActiveProps, NormalizedImporter } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { ActiveImporter } from '../../../logic/importers/importers.interface';
 import { ApiImportResponse } from '../../../logic/types/api.types';
-import { ImportType } from '../../../logic/types/shared.types';
 import { AuthenticationMethod } from '../../../mail/interfaces';
 
 export const getActiveImporterProgress = (activeImporter: ActiveImporter) => {
