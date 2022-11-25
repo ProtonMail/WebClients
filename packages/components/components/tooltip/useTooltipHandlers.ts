@@ -216,6 +216,10 @@ const useTooltipHandlers = ({
         }
     }, [isExternalOpen, isOpen]);
 
+    if (isExternalOpen !== undefined) {
+        return {};
+    }
+
     return {
         onTouchEnd: handleTouchEnd,
         onTouchStart: handleTouchStart,

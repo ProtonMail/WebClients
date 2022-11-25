@@ -112,12 +112,17 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     ? { tooltipType: 'error' as const, iconClassName: 'color-danger', title: error }
                     : { tooltipType: 'warning' as const, iconClassName: 'color-warning', title: warning };
 
+                // Force open it if the condition is true, otherwise leave it as undefined for the default handlers to deal with it
+                const isTooltipOpen = isFocused && !rest.value ? true : undefined;
                 return (
                     <Tooltip
+                        openDelay={0}
+                        closeDelay={250}
+                        longTapDelay={0}
                         title={title}
                         type={tooltipType}
                         originalPlacement="top-end"
-                        isOpen={isFocused && !rest.value}
+                        isOpen={isTooltipOpen}
                     >
                         <span className="flex flex-item-noshrink p0-25">
                             <Icon name="exclamation-circle-filled" className={iconClassName} />
