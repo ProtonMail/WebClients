@@ -1,10 +1,10 @@
 import { FeatureCode } from '@proton/components/containers/features';
 import { useFeature, useUser } from '@proton/components/hooks';
-import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag } from '@proton/shared/lib/interfaces/EasySwitch';
+import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { startDraft } from '../../logic/draft/draft.actions';
+import { startOauthDraft } from '../../logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '../../logic/store';
-import { ImportAuthType, ImportProvider, ImportType } from '../../logic/types/shared.types';
+import { ImportProvider } from '../../logic/types/shared.types';
 import GoogleButton from '../GoogleButton/GoogleButton';
 
 interface Props {
@@ -33,11 +33,10 @@ const OauthImportButton = ({ className, defaultCheckedTypes, displayOn, onClick 
             className={className}
             onClick={() => {
                 dispatch(
-                    startDraft({
+                    startOauthDraft({
                         // Defaults to google but can be updated later
                         provider: ImportProvider.GOOGLE,
-                        authType: ImportAuthType.OAUTH,
-                        importType: defaultCheckedTypes,
+                        products: defaultCheckedTypes,
                     })
                 );
                 onClick?.();

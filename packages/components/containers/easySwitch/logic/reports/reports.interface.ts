@@ -1,5 +1,6 @@
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+
 import { ApiReport, ApiReportState, ApiReportSummary } from '../types/api.types';
-import { ImportType } from '../types/shared.types';
 
 export type Report = {
     ID: ApiReport['ID'];
