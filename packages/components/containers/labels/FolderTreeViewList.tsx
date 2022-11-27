@@ -7,7 +7,7 @@ import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { getParents, order } from '@proton/shared/lib/helpers/folder';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
-import { Icon, TreeViewContainer, TreeViewItem } from '../../components';
+import { Icon, Info, TreeViewContainer, TreeViewItem } from '../../components';
 import { classnames } from '../../helpers';
 import { useActiveBreakpoint, useApi, useEventManager, useLoading } from '../../hooks';
 import ActionsLabel from './ActionsLabel';
@@ -29,7 +29,10 @@ const Header = ({ isNarrow }: HeaderProps) => {
                 {isNarrow ? null : <Icon name="arrows-cross" className="mr1" />}
                 {c('Header').t`Folders`}
             </span>
-            <span className="text-bold w10e no-mobile">{c('Header').t`Notifications`}</span>
+            <span className="text-bold w10e no-mobile">
+                {c('Header').t`Notifications`}
+                <Info className="ml0-5" title={c('Tooltip').t`Enable/disable desktop and mobile notifications`} />
+            </span>
             <span className="text-bold w10e text-right">{c('Header').t`Actions`}</span>
         </div>
     );
