@@ -29,7 +29,7 @@ const Header = ({ isNarrow }: HeaderProps) => {
                 {isNarrow ? null : <Icon name="arrows-cross" className="mr1" />}
                 {c('Header').t`Folders`}
             </span>
-            <span className="w10e no-mobile">
+            <span className="w10e no-mobile flex flex-align-items-center">
                 <span className="text-bold">{c('Header').t`Notifications`}</span>
                 <Info className="ml0-5" title={c('Tooltip').t`Enable/disable desktop and mobile notifications`} />
             </span>
