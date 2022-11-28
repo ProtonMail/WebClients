@@ -19,7 +19,7 @@ const MailSidebarListActions = ({ type }: Props) => {
                 className="flex navigation-link-header-group-control flex-item-noshrink"
                 onClick={() => createLabel(type)}
                 title={type === 'label' ? c('Action').t`Create a new label` : c('Action').t`Create a new folder`}
-                data-testid="navigation-link:add-folder"
+                data-testid={type === 'label' ? 'navigation-link:add-label' : 'navigation-link:add-folder'}
             >
                 <Icon
                     name="plus"
