@@ -1,6 +1,6 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "types": ["webpack-env", "chrome"]
+        "types": ["webpack-env"]
     }
 }
