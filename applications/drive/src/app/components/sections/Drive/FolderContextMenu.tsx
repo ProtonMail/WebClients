@@ -49,15 +49,9 @@ export function FolderContextMenu({
             <input multiple type="file" ref={fileInput} className="hidden" onChange={fileChange} />
             <input multiple type="file" ref={folderInput} className="hidden" onChange={folderChange} />
             <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
-                { !isActiveLinkReadOnly && <CreateNewFolderButton close={close} /> }
+                {!isActiveLinkReadOnly && <CreateNewFolderButton close={close} />}
                 {isEditEnabled && !isActiveLinkReadOnly && <CreateNewFileButton close={close} />}
-                <ContextSeparator />
-                {!isActiveLinkReadOnly ? (
-                    <>
-                        <CreateNewFolderButton close={close} />
-                        <ContextSeparator />
-                    </>
-                ) : null}
+                {!isActiveLinkReadOnly && <ContextSeparator />}
                 {!isActiveLinkReadOnly ? (
                     <>
                         <UploadFileButton close={close} onClick={fileClick} />
