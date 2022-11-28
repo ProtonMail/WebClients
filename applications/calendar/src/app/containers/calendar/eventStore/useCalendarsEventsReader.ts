@@ -169,7 +169,7 @@ const useCalendarsEventsReader = (
                         eventRecord.eventReadResult = { result };
                         eventRecord.eventPromise = undefined;
                     })
-                    .catch((error) => {
+                    .catch((error: any) => {
                         eventRecord.eventReadResult = { error };
                         eventRecord.eventPromise = undefined;
                     });

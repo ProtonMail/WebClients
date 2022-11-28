@@ -26,7 +26,9 @@ import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurre
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
+import { ApiError, CUSTOM_FETCH_ERROR_STATUS_CODE } from '@proton/shared/lib/fetch/ApiError';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Calendar, CalendarBootstrap, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -65,6 +67,7 @@ interface Props {
     weekStartsOn: WeekStartsOn;
     isNarrow: boolean;
     displayNameEmailMap: SimpleMap<DisplayNameEmail>;
+    sentryLogsIDs: Set<string>;
 }
 
 const EventPopover = ({
@@ -77,12 +80,13 @@ const EventPopover = ({
     style,
     popoverRef,
     event: targetEvent,
-    event: { start, end, isAllDay, isAllPartDay },
+    event: { start, end, isAllDay, isAllPartDay, id, data },
     view,
     tzid,
     weekStartsOn,
     isNarrow,
     displayNameEmailMap,
+    sentryLogsIDs,
 }: Props) => {
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
 
@@ -280,6 +284,21 @@ const EventPopover = ({
     };
 
     if (eventReadError) {
+        if (
+            eventReadError instanceof ApiError &&
+            eventReadError.status === CUSTOM_FETCH_ERROR_STATUS_CODE.NO_NETWORK_CONNECTION &&
+            !sentryLogsIDs.has(id)
+        ) {
+            /**
+             * On rare occasions we will end up with a "No network connection" error here. We log this error instance
+             * to Sentry to monitor how widespread this issue is. Otherwise, such offline errors are not logged
+             */
+            sentryLogsIDs.add(id);
+            captureMessage('Error in event popover due to network issues', {
+                extra: { eventID: id, calendarID: data.calendarData.ID },
+            });
+        }
+
         return (
             <PopoverContainer {...commonContainerProps} className={containerClassName}>
                 <PopoverHeader
