@@ -35,6 +35,7 @@ export interface MailSettings {
     AlsoArchive: number;
     HideEmbeddedImages: SHOW_IMAGES;
     HideRemoteImages: SHOW_IMAGES;
+    /** @deprecated use Shortcuts instead */
     Hotkeys: number; // used by v3 (Angular)
     Shortcuts: number; // used by v4
     PMSignature: number;
