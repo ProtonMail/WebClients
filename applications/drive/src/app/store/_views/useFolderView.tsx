@@ -32,7 +32,7 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
     const { layout, sort, changeSort } = useUserSettings();
     const { sortedList, sortParams, setSorting } = useControlledSorting(cachedChildren, sort, changeSort);
 
-    const isActiveLinkReadOnly = useIsActiveLinkReadOnly();
+    const { isReadOnly: isActiveLinkReadOnly, isLoading: isActiveLinkTypeLoading } = useIsActiveLinkReadOnly();
 
     useEffect(() => {
         const ac = new AbortController();
@@ -49,7 +49,7 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
         items: sortedList,
         sortParams,
         setSorting,
-        isLoading: isLoading || isDecrypting,
+        isLoading: isLoading || isDecrypting || isActiveLinkTypeLoading,
         error,
     };
 }
