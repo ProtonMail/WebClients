@@ -122,6 +122,10 @@
 		outline: none;
 		filter: none; // fixes Firefox autofill color
 
+		@include media('<=xsmall') {
+			padding-inline: em(8);
+		}
+
 		&:-moz-ui-invalid {
 			// fixes some Firefox issues with HTML5 validation
 			box-shadow: none;
