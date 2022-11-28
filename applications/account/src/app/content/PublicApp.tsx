@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import * as H from 'history';
@@ -25,7 +25,7 @@ import {
     GetActiveSessionsResult,
     LocalSessionPersisted,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { produceFork, produceOAuthFork } from '@proton/shared/lib/authentication/sessionForking';
+import { produceExtensionFork, produceFork, produceOAuthFork } from '@proton/shared/lib/authentication/sessionForking';
 import {
     APPS,
     APPS_CONFIGURATION,
@@ -120,6 +120,16 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const [activeSessions, setActiveSessions] = useState<LocalSessionPersisted[]>();
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
+    const messageListenerRef = useRef<undefined | ((event: MessageEvent<any>) => void)>();
+
+    useEffect(() => {
+        return () => {
+            if (messageListenerRef.current) {
+                window.removeEventListener('message', messageListenerRef.current);
+                messageListenerRef.current = undefined;
+            }
+        };
+    }, []);
 
     const { service: maybeQueryAppIntent } = useMemo(() => {
         return getSearchParams(location.search);
@@ -162,37 +172,22 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         })
                     )
                 );
-
-                chrome.runtime.sendMessage(
-                    extension.ID,
-                    {
-                        type: 'fork',
-                        payload: {
-                            selector,
-                            keyPassword: data.payload.keyPassword,
-                            persistent: data.payload.persistent,
-                            trusted: data.payload.trusted,
-                            state: data.payload.state,
-                        },
+                const result = await produceExtensionFork({
+                    messageListenerRef,
+                    extension,
+                    payload: {
+                        selector,
+                        keyPassword: data.payload.keyPassword,
+                        persistent: data.payload.persistent,
+                        trusted: data.payload.trusted,
+                        state: data.payload.state,
                     },
-                    (result) => {
-                        if (chrome.runtime.lastError) {
-                            history.replace('/auth-ext', {
-                                type: 'error',
-                                extension,
-                                payload: chrome.runtime.lastError.message,
-                            });
-                            return;
-                        }
-                        if (result.type === 'success') {
-                            history.replace('/auth-ext', { type: 'success', extension, payload: result.payload });
-                        } else {
-                            history.replace('/auth-ext', { type: 'error', extension, payload: result.payload });
-                        }
-                    }
-                );
+                });
+                const type = result?.type === 'success' ? 'success' : 'error';
+                history.replace('/auth-ext', { type, extension, payload: result?.payload });
                 return;
             }
+
             return produceFork({ api, ...data.payload });
         }
 
