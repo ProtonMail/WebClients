@@ -173,12 +173,20 @@ const getVeventWithAlarms = async ({
     };
 };
 
+const getRelevantEventsByUID = ({ api, uid, calendarIDs }: { api: Api; uid: string; calendarIDs: string[] }) => {
+    // No need to search for invitations in subscribed calendars
+    return getPaginatedEventsByUID({ api, uid, calendarType: CALENDAR_TYPE.PERSONAL }).then((events) =>
+        events.filter(({ CalendarID }) => calendarIDs.includes(CalendarID))
+    );
+};
+
 export type FetchAllEventsByUID = ({
     uid,
     api,
     recurrenceId,
 }: {
     uid: string;
+    legacyUid?: string;
     calendars: VisualCalendar[];
     recurrenceId?: VcalDateOrDateTimeProperty;
     api: Api;
@@ -190,16 +198,35 @@ export type FetchAllEventsByUID = ({
     supportedRecurrenceId?: VcalDateOrDateTimeProperty;
 }>;
 
-export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, calendars, api, recurrenceId }) => {
+export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, legacyUid, calendars, api, recurrenceId }) => {
     const timestamp = recurrenceId ? getUnixTime(propertyToUTCDate(recurrenceId)) : undefined;
     const allowedCalendarIDs = calendars.map(({ ID }) => ID);
-    // No need to search for invitations in subscribed calendars
-    const promises: Promise<CalendarEventWithMetadata[]>[] = [
-        getPaginatedEventsByUID({ api, uid, calendarType: CALENDAR_TYPE.PERSONAL }).then((events) =>
-            events.filter(({ CalendarID }) => allowedCalendarIDs.includes(CalendarID))
-        ),
-    ];
+
+    const promises: Promise<CalendarEventWithMetadata[]>[] = (() => {
+        if (!legacyUid) {
+            return [getRelevantEventsByUID({ api, uid, calendarIDs: allowedCalendarIDs })];
+        }
+        /**
+         * We might be looking for an event with a legacy hash UID. We do not know in advance,
+         * so we have to fire two calls. We pick the response from the one containing a result, if any
+         */
+        return [
+            Promise.all([
+                getRelevantEventsByUID({ api, uid, calendarIDs: allowedCalendarIDs }),
+                getRelevantEventsByUID({ api, uid: legacyUid, calendarIDs: allowedCalendarIDs }),
+            ]).then(([result, resultLegacy]) => {
+                if (result[0]) {
+                    return result;
+                }
+                return resultLegacy;
+            }),
+        ];
+    })();
     if (recurrenceId) {
+        /**
+         * Notice that due to how ICS surgery works, whenever we have a hash UID, we are guaranteed not to have a
+         * recurrence id, so we don't need to fire an extra call here if a legacy UID is present
+         */
         promises.unshift(
             getPaginatedEventsByUID({ api, uid, recurrenceID: timestamp, calendarType: CALENDAR_TYPE.PERSONAL }).then(
                 (events) => events.filter(({ CalendarID }) => allowedCalendarIDs.includes(CalendarID))
@@ -210,9 +237,11 @@ export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, calendars,
     if (!parentEvent) {
         return { event, otherEvents };
     }
-    // If recurrenceID is passed, but the single edit is not found, it is possible that the ICS
-    // contained the wrong RECURRENCE-ID (Outlook sends a wrong one for single edits of all-day events).
-    // Try to recover. If we cannot find the single edit, return the parent
+    /**
+     * If recurrenceID is passed, but the single edit is not found, it is possible that the ICS
+     * contained the wrong RECURRENCE-ID (Outlook sends a wrong one for single edits of all-day events).
+     * Try to recover. If we cannot find the single edit, return the parent
+     */
     if (!event && recurrenceId) {
         try {
             const supportedRecurrenceId = getLinkedDateTimeProperty({
@@ -246,6 +275,7 @@ export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, calendars,
 
 type FetchEventInvitation = (args: {
     veventComponent: VcalVeventComponent;
+    legacyUid?: string;
     api: Api;
     getAddressKeys: GetAddressKeys;
     getCalendarInfo: GetCalendarInfo;
@@ -268,6 +298,7 @@ type FetchEventInvitation = (args: {
 }>;
 export const fetchEventInvitation: FetchEventInvitation = async ({
     veventComponent,
+    legacyUid,
     api,
     getAddressKeys,
     getCalendarInfo,
@@ -281,6 +312,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
 }) => {
     const allEventsWithUID = await fetchAllEventsByUID({
         uid: veventComponent.uid.value,
+        legacyUid,
         api,
         calendars,
         recurrenceId: veventComponent['recurrence-id'],
