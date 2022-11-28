@@ -38,6 +38,10 @@ $field-container: rem(260) !default;
 	filter: none; // fixes Firefox autofill color
 	transition: 0.15s easing(ease-out-quint), visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
 
+	@include media('<=xsmall') {
+		padding-inline: em(8);
+	}
+
 	@at-root {
 		details & {
 			block-size: auto;
