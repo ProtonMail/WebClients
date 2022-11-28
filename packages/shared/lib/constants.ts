@@ -31,10 +31,14 @@ export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
 export const USERNAME_PLACEHOLDER = 'john.doe';
 
 export const BRAND_NAME = 'Proton';
-export const MAIL_APP_NAME = 'Proton Mail';
-export const CALENDAR_APP_NAME = 'Proton Calendar';
-export const DRIVE_APP_NAME = 'Proton Drive';
-export const VPN_APP_NAME = 'Proton VPN';
+export const MAIL_SHORT_APP_NAME = 'Mail';
+export const MAIL_APP_NAME = `${BRAND_NAME} ${MAIL_SHORT_APP_NAME}`;
+export const CALENDAR_SHORT_APP_NAME = 'Calendar';
+export const CALENDAR_APP_NAME = `${BRAND_NAME} ${CALENDAR_SHORT_APP_NAME}`;
+export const DRIVE_SHORT_APP_NAME = 'Drive';
+export const DRIVE_APP_NAME = `${BRAND_NAME} ${DRIVE_SHORT_APP_NAME}`;
+export const VPN_SHORT_APP_NAME = 'VPN';
+export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
 export const VERIFY_APP_NAME = 'Proton Verify';
 
 export const APPS = {
@@ -83,7 +87,7 @@ export const APPS_CONFIGURATION = {
         publicPath: '',
         subdomain: 'mail',
         name: MAIL_APP_NAME,
-        bareName: 'Mail',
+        bareName: MAIL_SHORT_APP_NAME,
         clientID: 'web-mail',
         icon: 'brand-proton-mail',
         settingsSlug: 'mail',
@@ -101,7 +105,7 @@ export const APPS_CONFIGURATION = {
         publicPath: '/drive',
         subdomain: 'drive',
         name: DRIVE_APP_NAME,
-        bareName: 'Drive',
+        bareName: DRIVE_SHORT_APP_NAME,
         clientID: 'web-drive',
         icon: 'brand-proton-drive',
         settingsSlug: 'drive',
@@ -110,7 +114,7 @@ export const APPS_CONFIGURATION = {
         publicPath: '/calendar',
         subdomain: 'calendar',
         name: CALENDAR_APP_NAME,
-        bareName: 'Calendar',
+        bareName: CALENDAR_SHORT_APP_NAME,
         clientID: 'web-calendar',
         icon: 'brand-proton-calendar',
         settingsSlug: 'calendar',
@@ -128,7 +132,7 @@ export const APPS_CONFIGURATION = {
         publicPath: '',
         subdomain: '',
         name: VPN_APP_NAME,
-        bareName: 'VPN',
+        bareName: VPN_SHORT_APP_NAME,
         clientID: 'web-vpn-settings',
         icon: 'brand-proton-vpn',
         settingsSlug: 'vpn',
