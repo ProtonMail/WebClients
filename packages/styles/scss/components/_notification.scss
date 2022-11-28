@@ -4,7 +4,6 @@
 	inset-inline-start: 50%;
 	z-index: $layer-notifications;
 	transform: translateX(-50%);
-	transition: all 1s ease;
 	filter: drop-shadow(var(--shadow-lifted));
 
 	@at-root {
@@ -15,7 +14,7 @@
 }
 
 .notification {
-	position: fixed;
+	position: absolute;
 	display: flex;
 	inset-block-end: var(--top-custom);
 	align-items: center;
@@ -24,7 +23,7 @@
 	background-color: var(--background-invert);
 	color: var(--text-invert);
 	inline-size: max-content;
-	max-inline-size: min(400px, calc(100vw - 2em));
+	max-inline-size: min(#{em(400)}, calc(100vw - 2em));
 	padding-block: em(8);
 	padding-inline: em(12) em(4);
 	transform: translateX(-50%);
@@ -49,7 +48,7 @@
 	}
 
 	&__icon {
-		margin-inline: em(-3) em(8);
+		margin-inline: 0 em(8);
 	}
 
 	&__content {
@@ -94,14 +93,14 @@
 	}
 
 	&--in {
-		animation-duration: 0.4s;
+		animation-duration: 0.3s;
 		animation-fill-mode: both;
 		animation-timing-function: easing(ease-out-quad);
 		animation-name: anime-notification-in;
 	}
 
 	&--out {
-		animation-duration: 0.3s;
+		animation-duration: 0.25s;
 		animation-fill-mode: both;
 		animation-timing-function: easing(ease-in-quad);
 		animation-name: anime-notification-out;

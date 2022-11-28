@@ -62,7 +62,7 @@ const NotificationBase = (
             onClick={onClick}
             onAnimationEnd={handleAnimationEnd}
             style={{
-                '--top-custom': top === undefined ? `${-999}px` : `${top}px`,
+                '--top-custom': top === undefined ? '-999px' : `${top}px`,
             }}
         >
             <NotificationContext.Provider value={{ type }}>
