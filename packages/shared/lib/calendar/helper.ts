@@ -39,7 +39,7 @@ export const generateProtonCalendarUID = () => {
     return `${base64String}@proton.me`;
 };
 
-export const generateVeventHashUID = async (binaryString: string, uid = '') => {
+export const generateVeventHashUID = async (binaryString: string, uid = '', legacyFormat = false) => {
     const hash = arrayToHexString(
         await CryptoProxy.computeHash({ algorithm: 'unsafeSHA1', data: binaryStringToArray(binaryString) })
     );
@@ -51,7 +51,9 @@ export const generateVeventHashUID = async (binaryString: string, uid = '') => {
     const uidLength = uid.length;
     const availableLength = MAX_LENGTHS_API.UID - ORIGINAL_UID_PREFIX.length - hashUid.length - join.length;
     const croppedUID = uid.substring(uidLength - availableLength, uidLength);
-    return `${ORIGINAL_UID_PREFIX}${croppedUID}${join}${hashUid}`;
+    return legacyFormat
+        ? `${hashUid}${join}${ORIGINAL_UID_PREFIX}${croppedUID}`
+        : `${ORIGINAL_UID_PREFIX}${croppedUID}${join}${hashUid}`;
 };
 
 export const getOriginalUID = (uid = '') => {
@@ -71,6 +73,13 @@ export const getOriginalUID = (uid = '') => {
         return '';
     }
     return uid;
+};
+
+export const getHasLegacyHashUID = (uid = '') => {
+    if (!uid) {
+        return false;
+    }
+    return new RegExp(`^${HASH_UID_PREFIX}[abcdef\\d]{40}-${ORIGINAL_UID_PREFIX}`).test(uid);
 };
 
 export const getSupportedUID = (uid: string) => {
