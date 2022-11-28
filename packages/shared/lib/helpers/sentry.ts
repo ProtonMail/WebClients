@@ -142,7 +142,6 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
             'No network connection',
             'Failed to fetch',
             'NetworkError when attempting to fetch resource.',
-            'No network connection',
             'webkitExitFullScreen', // Bug in Firefox for iOS.
             'InactiveSession',
             'UnhandledRejection', // Happens too often in extensions and we have lints for that, so should be safe to ignore.
