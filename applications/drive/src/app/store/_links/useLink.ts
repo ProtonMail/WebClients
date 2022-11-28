@@ -372,6 +372,7 @@ export function useLinkInner(
                     ? {
                           fileModifyTime: encryptedLink.metaDataModifyTime,
                           fileModifyTimeVerified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+                          originalDimensions: undefined,
                       }
                     : getLinkPrivateKey(abortSignal, shareId, encryptedLink.linkId)
                           .then(async (privateKey) =>
@@ -388,12 +389,16 @@ export function useLinkInner(
                           .then(({ xattrs, verified }) => ({
                               fileModifyTime: xattrs.Common.ModificationTime || encryptedLink.metaDataModifyTime,
                               fileModifyTimeVerified: verified,
+                              originalDimensions: xattrs.Media
+                                  ? {
+                                        width: xattrs.Media.Width,
+                                        height: xattrs.Media.Height,
+                                    }
+                                  : undefined,
                           }));
 
-                const [{ name, nameVerified }, { fileModifyTime, fileModifyTimeVerified }] = await Promise.all([
-                    namePromise,
-                    fileModifyTimePromise,
-                ]);
+                const [{ name, nameVerified }, { fileModifyTime, fileModifyTimeVerified, originalDimensions }] =
+                    await Promise.all([namePromise, fileModifyTimePromise]);
 
                 const signatureIssues: SignatureIssues = {};
                 if (
@@ -421,6 +426,7 @@ export function useLinkInner(
                     // by detecting if share or token is used.
                     name: name === 'root' && !encryptedLink.parentLinkId ? c('Title').t`My files` : name,
                     fileModifyTime: fileModifyTime,
+                    originalDimensions,
                     signatureIssues: Object.keys(signatureIssues).length > 0 ? signatureIssues : undefined,
                 };
             },
