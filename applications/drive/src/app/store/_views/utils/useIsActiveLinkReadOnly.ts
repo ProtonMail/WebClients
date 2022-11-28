@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { ShareType } from '../..';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
@@ -17,9 +17,16 @@ export const useIsActiveLinkReadOnly = () => {
     const link = useLink();
 
     const [isReadOnly, setIsReadOnly] = useState<boolean>();
+    const [isLoading, setIsLoading] = useState<boolean>();
+    const lastAc = useRef<AbortController>();
 
     useEffect(() => {
+        setIsLoading(true);
         const ac = new AbortController();
+
+        // Abort ongoing request to avoid fast meaningless shareType change
+        lastAc.current?.abort();
+        lastAc.current = ac;
 
         link.getLink(ac.signal, shareId, linkId)
             .then((link) => {
@@ -30,5 +37,14 @@ export const useIsActiveLinkReadOnly = () => {
             .catch(console.warn);
     }, [shareId, linkId, shareType]);
 
-    return isReadOnly;
+    useEffect(() => {
+        if (isReadOnly !== undefined) {
+            setIsLoading(false);
+        }
+    }, [isReadOnly]);
+
+    return {
+        isLoading: isLoading === true,
+        isReadOnly,
+    };
 };
