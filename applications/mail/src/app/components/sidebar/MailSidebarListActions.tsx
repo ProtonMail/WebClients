@@ -33,7 +33,7 @@ const MailSidebarListActions = ({ type }: Props) => {
                 title={type === 'label' ? c('Info').t`Manage your labels` : c('Info').t`Manage your folders`}
                 info={type === 'label' ? c('Info').t`Manage your labels` : c('Link').t`Manage your folders`}
                 target="_self"
-                data-testid="navigation-link:folders-settings"
+                data-testid="navigation-link:labels-settings"
             />
         </div>
     );
