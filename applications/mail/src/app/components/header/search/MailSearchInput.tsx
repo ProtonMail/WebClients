@@ -21,7 +21,7 @@ const MailSearchInput = ({ value, onOpen, onChange, loading }: Props, ref: Ref<H
     };
 
     return (
-        <div className="searchbox flex">
+        <div className="searchbox flex" role="search">
             <div ref={ref} className="w100 mauto">
                 <InputTwo
                     inputClassName="cursor-text"

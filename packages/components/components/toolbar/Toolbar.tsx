@@ -1,5 +1,7 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
+import { c } from 'ttag';
+
 import { classnames } from '../../helpers';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -8,12 +10,13 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Toolbar = ({ children, className, ...rest }: Props) => (
-    <div
+    <nav
         className={classnames(['toolbar flex flex-nowrap no-scroll flex-item-noshrink no-print', className])}
+        aria-label={c('Label').t`Toolbar`}
         {...rest}
     >
         <div className="flex toolbar-inner w100">{children}</div>
-    </div>
+    </nav>
 );
 
 export default Toolbar;
