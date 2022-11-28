@@ -9,6 +9,7 @@ import {
     Link,
     ThumbnailRequestBlock,
 } from './interface';
+import { ThumbnailData } from './thumbnail';
 import { getErrorString } from './utils';
 
 type GenerateKeysMessage = {
@@ -21,7 +22,7 @@ type GenerateKeysMessage = {
 type StartMessage = {
     command: 'start';
     file: File;
-    thumbnailData?: Uint8Array;
+    thumbnailData?: ThumbnailData;
     addressPrivateKey: Uint8Array;
     addressEmail: string;
     privateKey: Uint8Array;
@@ -62,7 +63,7 @@ interface WorkerHandlers {
     generateKeys: (addressPrivateKey: PrivateKeyReference, parentPrivateKey: PrivateKeyReference) => void;
     start: (
         file: File,
-        thumbnailData: Uint8Array | undefined,
+        thumbnailData: ThumbnailData | undefined,
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
@@ -384,7 +385,7 @@ export class UploadWorkerController {
 
     async postStart(
         file: File,
-        thumbnailData: Uint8Array | undefined,
+        thumbnailData: ThumbnailData | undefined,
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
