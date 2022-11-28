@@ -90,6 +90,7 @@ const Toolbar = ({
             ref={toolbarRef}
             className="toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between"
             data-shortcut-target="mailbox-toolbar"
+            aria-label={c('Label').t`Toolbar`}
         >
             <div className="flex toolbar-inner">
                 {listInView ? (
