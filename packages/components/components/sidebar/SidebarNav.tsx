@@ -11,7 +11,11 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 const SidebarNav = ({ children, className, ...rest }: Props) => {
     return (
-        <nav className={classnames(['navigation max-w100 flex-item-fluid-auto', className])} {...rest}>
+        <nav
+            className={classnames(['navigation max-w100 flex-item-fluid-auto', className])}
+            {...rest}
+            aria-label={c('Label').t`Main`}
+        >
             <h2 className="sr-only">
                 {
                     // translator: This is a hidden headline for users with screen readers to highlight the main navigation
