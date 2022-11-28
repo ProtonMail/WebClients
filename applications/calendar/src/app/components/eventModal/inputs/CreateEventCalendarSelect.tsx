@@ -1,11 +1,11 @@
 import { useGetAddresses, useGetCalendarBootstrap, useLoading } from '@proton/components';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
-import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
-import { getInitialMemberModel } from '../eventForm/state';
+import { getInitialMemberModel, getOrganizerModel } from '../eventForm/state';
 
 export interface Props extends Omit<SelectProps<string>, 'children'> {
     model: EventModel;
@@ -55,12 +55,12 @@ const CreateEventCalendarSelect = ({
                 DefaultFullDayNotifications,
             },
         } = await getCalendarBootstrap(newId);
-        const Addresses = await getAddresses();
+        const addresses = await getAddresses();
 
         const [Member = {}] = Members;
         const memberEmail = Member.Email;
-        const Address = Addresses.find(({ Email }) => Email === memberEmail);
-        if (!memberEmail || !Address) {
+        const address = addresses.find(({ Email }) => Email === memberEmail);
+        if (!memberEmail || !address) {
             throw new Error('Address does not exist');
         }
         const newDefaultPartDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
@@ -79,7 +79,8 @@ const CreateEventCalendarSelect = ({
         setModel({
             ...model,
             calendar: { id: newId, color, isSubscribed: false, permissions },
-            ...getInitialMemberModel(Addresses, Members, Member, Address),
+            ...getInitialMemberModel(addresses, Members, Member, address),
+            ...getOrganizerModel({ attendees: model.attendees, addresses, addressID: address.ID }),
             defaultEventDuration,
             partDayNotifications,
             fullDayNotifications,

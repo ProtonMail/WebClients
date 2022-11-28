@@ -32,6 +32,7 @@ interface Props {
     style: CSSProperties;
     popoverRef: Ref<HTMLDivElement>;
     setModel: (value: EventModel) => void;
+    isCreateEvent: boolean;
     isDraggingDisabled?: boolean;
 }
 
@@ -47,6 +48,7 @@ const CreateEventPopover = ({
     weekStartsOn,
     addresses,
     isNarrow,
+    isCreateEvent,
     isDraggingDisabled = false,
 }: Props) => {
     const [participantError, setParticipantError] = useState(false);
@@ -165,7 +167,7 @@ const CreateEventPopover = ({
                     model={model}
                     setModel={setModel}
                     isMinimal
-                    isCreateEvent
+                    isCreateEvent={isCreateEvent}
                     setParticipantError={setParticipantError}
                 />
                 <PopoverFooter className="flex-nowrap flex-justify-end">
