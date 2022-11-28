@@ -19,7 +19,7 @@ const MailSidebarListActions = ({ type }: Props) => {
                 className="flex navigation-link-header-group-control flex-item-noshrink"
                 onClick={() => createLabel(type)}
                 title={type === 'label' ? c('Action').t`Create a new label` : c('Action').t`Create a new folder`}
-                data-testid="navigation-link:add-folder"
+                data-testid={type === 'label' ? 'navigation-link:add-label' : 'navigation-link:add-folder'}
             >
                 <Icon
                     name="plus"
@@ -33,7 +33,7 @@ const MailSidebarListActions = ({ type }: Props) => {
                 title={type === 'label' ? c('Info').t`Manage your labels` : c('Info').t`Manage your folders`}
                 info={type === 'label' ? c('Info').t`Manage your labels` : c('Link').t`Manage your folders`}
                 target="_self"
-                data-testid="navigation-link:folders-settings"
+                data-testid="navigation-link:labels-settings"
             />
         </div>
     );
