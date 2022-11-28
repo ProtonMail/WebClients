@@ -381,6 +381,7 @@ END:VCALENDAR`;
                 }),
                 originalVcalInvitation: parsedInvitation,
                 originalUniqueIdentifier: 'test-event',
+                legacyUid: 'sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186-original-uid-test-event',
                 hasMultipleVevents: false,
                 fileName: 'test.ics',
             });
