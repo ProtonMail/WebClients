@@ -50,12 +50,12 @@ const createSpace = (style?: string, className?: string) => {
  *     user + proton signature: 2 spaces + addressSignature + 1 space + protonSignature
  */
 const getSpaces = (signature: string, protonSignature: string, fontStyle: string | undefined, isReply = false) => {
-    const isUserEmpty = isHTMLEmpty(signature);
-    const isEmptySignature = isUserEmpty && !protonSignature;
+    const isUserSignatureEmpty = isHTMLEmpty(signature);
+    const isEmptySignature = isUserSignatureEmpty && !protonSignature;
     return {
         start: isEmptySignature ? createSpace(fontStyle) : createSpace(fontStyle) + createSpace(fontStyle),
         end: isReply ? createSpace(fontStyle) : '',
-        between: !isUserEmpty && protonSignature ? createSpace(fontStyle) : '',
+        between: !isUserSignatureEmpty && protonSignature ? createSpace(fontStyle) : '',
     };
 };
 
