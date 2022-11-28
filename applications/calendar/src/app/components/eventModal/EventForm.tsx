@@ -91,8 +91,8 @@ const EventForm = ({
     // selfAddress may not need be defined
     const isSelfAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
     const canEditSharedEventData = !isSubscribedCalendar && !isAttendee && isSelfAddressActive;
-    const showParticipants = !isImportedEvent && (!isMinimal || isCreateEvent) && canEditSharedEventData;
-    const canChangeCalendar = isAttendee ? !isSingleEdit : !model.organizer;
+    const showParticipants = !isImportedEvent && canEditSharedEventData;
+    const canChangeCalendar = isAttendee ? !isSingleEdit : isCreateEvent || !model.organizer;
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications = canAddNotifications || notifications.length;
