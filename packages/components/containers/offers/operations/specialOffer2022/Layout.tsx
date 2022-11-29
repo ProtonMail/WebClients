@@ -14,7 +14,7 @@ const Layout = (props: OfferLayoutProps) => {
     const planName = PLAN_NAMES[PLANS.BUNDLE];
 
     return (
-        <>
+        <div className="flex flex-justify-center">
             <ProtonLogos />
             {hasOffer(props) ? (
                 <>
@@ -33,7 +33,7 @@ const Layout = (props: OfferLayoutProps) => {
             ) : (
                 <OfferLoader />
             )}
-        </>
+        </div>
     );
 };
 
