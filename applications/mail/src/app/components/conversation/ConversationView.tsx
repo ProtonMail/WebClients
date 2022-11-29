@@ -23,7 +23,7 @@ import ConversationHeader from './ConversationHeader';
 import TrashWarning from './TrashWarning';
 import UnreadMessages from './UnreadMessages';
 
-const { TRASH } = MAILBOX_LABEL_IDS;
+const { TRASH, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 interface Props {
     hidden: boolean;
@@ -74,8 +74,9 @@ const ConversationView = ({
     const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
 
     const inTrash = labelID === TRASH;
+    const inAllMail = labelID === ALL_MAIL;
     const filteredMessages = messages.filter(
-        (message) => inTrash === hasLabel(message, TRASH) || isSearchResult(message.ID)
+        (message) => inAllMail || inTrash === hasLabel(message, TRASH) || isSearchResult(message.ID)
     );
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
