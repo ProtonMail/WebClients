@@ -304,6 +304,15 @@
       "import": [
         "importér"
       ],
+      "Import calendars": [
+        "Importer kalendere"
+      ],
+      "Import contacts": [
+        "Importér kontakter"
+      ],
+      "Import emails": [
+        "Importer e-mails"
+      ],
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
       ],
@@ -640,6 +649,29 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ved at afslutte nu vil nogle kontakter måske ikke blive importeret"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Ved at forlade nu, vil nogle begivenheder måske ikke blive importeret"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Tom ICS-fil"
+      ],
+      "Invalid event": [
+        "Ugyldig begivenhed"
+      ],
+      "Invalid ICS file": [
+        "Ugyldig ICS-fil"
+      ],
+      "Invalid method": [
+        "Ugyldig metode"
+      ],
+      "Unsupported calendar component": [
+        "Ikke-understøttet kalender-komponent"
+      ],
+      "Unsupported event": [
+        "Ikke-understøttet begivenhed"
       ]
     },
     "Beta access description": {
@@ -724,6 +756,51 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Ikke synkroniseret"
+      ],
+      "Syncing": [
+        "Synkroniserer"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender kunne ikke dekrypteres"
+      ],
+      "Calendar is syncing": [
+        "Kalender synkroniserer"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Kalender er ved at blive synkroniseret: Det kan tage flere minutter, før alle begivenhederne vises."
+      ],
+      "Calendar is too big": [
+        "Kalender er for stor"
+      ],
+      "Calendar link is not accessible": [
+        "Kalenderlink er ikke tilgængeligt"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "Kalenderlink er midlertidig ikke tilgængeligt"
+      ],
+      "Failed to sync calendar": [
+        "Kunne ikke synkronisere kalender"
+      ],
+      "More than 12 hours passed since last update": [
+        "Der er gået mere end 12 timer siden den seneste opdatering"
+      ],
+      "Unsupported calendar format": [
+        "Ikke-understøttet kalenderformat"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Kalenderlinket er ikke tilgængeligt uden for kalenderudbyderens økosystem."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
       ]
     },
     "Collapsible tooltip": {
@@ -1691,6 +1768,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
       ]
@@ -1713,6 +1793,69 @@
         "Til"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Beskrivelse: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } er blevet annulleret."
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Du er inviteret til ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "Hvornår: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "Hvornår: ${ formattedStart } (hele dagen)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Hvornår: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Hvor: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } har accepteret din invitation til ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } har afslået din invitation til ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } har foreløbig accepteret din invitation til ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Annullering af en begivenhed den ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Annullering af en begivenhed med start den ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Invitation til en begivenhed den ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Invitation til en begivenhed med start den ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Opdatering til en begivenhed den ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Opdatering til en begivenhed med start den ${ formattedStart }"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" findes allerede"
@@ -1722,6 +1865,9 @@
       ],
       "A problem occurred, please try again": [
         "Der opstod et problem. Prøv venligst igen"
+      ],
+      "Address primary private key not found": [
+        "Adresses primære private nøgle ikke fundet"
       ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
@@ -1976,8 +2122,36 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Kun ICS-filformater er tilladt."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "En uventet fejl opstod. Import skal genstartes."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenhed.",
+        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenheder."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Din fil ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Din fil ${ formattedFilename } har ingen begivenheder til import."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Din fil ${ formattedFilename } er tom."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Din fil ${ formattedFilename } er ikke en kalender."
       ]
     },
     "Error importing contact": {
@@ -2009,6 +2183,104 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Din fil ${ formattedFilename } er tom."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Forkert format. Komponent kan ikke læses."
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Calendar time zone not supported": [
+        "Kalendertidszone understøttes ikke"
+      ],
+      "Component with wrong format": [
+        "Komponent med forkert format"
+      ],
+      "Custom timezone": [
+        "Brugerdefineret tidszone"
+      ],
+      "Edited event not supported": [
+        "Redigeret begivenhed understøttes ikke"
+      ],
+      "Element": [
+        "Element"
+      ],
+      "Encryption failed": [
+        "Kryptering mislykkedes"
+      ],
+      "End time out of bounds": [
+        "Sluttid uden for grænserne"
+      ],
+      "Event": [
+        "Begivenhed"
+      ],
+      "Event validation failed": [
+        "Validering af begivenhed mislykkedes"
+      ],
+      "Floating times not supported": [
+        "Flydende tider understøttes ikke"
+      ],
+      "Free-busy time information": [
+        "Fri-optaget tidsinformation"
+      ],
+      "Invalid event": [
+        "Ugyldig begivenhed"
+      ],
+      "Journal entry": [
+        "Journalindlæg"
+      ],
+      "Malformed all-day event": [
+        "Misdannet heldagsbegivenhed"
+      ],
+      "Malformed end time": [
+        "Misdannet sluttidspunkt"
+      ],
+      "Malformed recurring event": [
+        "Misdannet tilbagevendende begivenhed"
+      ],
+      "Malformed start time": [
+        "Misdannet starttid"
+      ],
+      "Missing start time": [
+        "Manglende starttidspunkt"
+      ],
+      "No UID, title or start time": [
+        "Ingen UID, titel eller starttid"
+      ],
+      "Non-Gregorian": [
+        "Ikke-gregoriansk"
+      ],
+      "Notification out of bounds": [
+        "Notifikation uden for grænserne"
+      ],
+      "Original recurring event could not be found": [
+        "Oprindelig tilbagevendende begivenhed kunne ikke findes"
+      ],
+      "Recurring event has no occurrences": [
+        "Tilbagevendende begivenhed har ingen forekomster"
+      ],
+      "Recurring rule not supported": [
+        "Tilbagevendende regel understøttes ikke"
+      ],
+      "Start time out of bounds": [
+        "Starttid uden for grænserne"
+      ],
+      "Time zone not supported": [
+        "Tidszone understøttes ikke"
+      ],
+      "Timezone": [
+        "Tidszone"
+      ],
+      "To-do entry": [
+        "Gøremålindlæg"
+      ],
+      "Unknown": [
+        "Ukendt"
+      ],
+      "Unsupported event": [
+        "Ikke-understøttet begivenhed"
       ]
     },
     "Error message": {
@@ -2056,6 +2328,55 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "Bedømmelse er påkrævet"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Vedhæftet ICS-fil kunne ikke dekrypteres"
+      ],
+      "Attached ICS file could not be read": [
+        "Vedhæftet ICS-fil kunne ikke læses"
+      ],
+      "Invalid invitation": [
+        "Ugyldig invitation"
+      ],
+      "Invalid response": [
+        "Ugyldigt svar"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Begivenheden kunne ikke tilføjes til din kalender. Der blev ikke sendt noget svar"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Begivenheden kunne ikke opdateres i din kalender. Der blev ikke sendt noget svar"
+      ],
+      "Unexpected error": [
+        "Uventet fejl"
+      ],
+      "Unsupported invitation": [
+        "Ikke-understøttet invitation"
+      ],
+      "Unsupported response": [
+        "Ikke-understøttet svar"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Vi kunne ikke annullere begivenheden i din kalender"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Vi kunne ikke hente begivenheden fra din kalender"
+      ],
+      "We could not update the event in your calendar": [
+        "Vi kunne ikke opdatere begivenheden i din kalender"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Dit svar blev sendt, men begivenheden kunne ikke tilføjes til din kalender"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Dit svar blev sendt, men begivenheden kunne ikke opdateres i din kalender"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(ingen titel)"
       ]
     },
     "Feedback Modal Title": {
@@ -2179,13 +2500,54 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } begivenhed krypteret og føjet til din kalender",
+        "${ totalImported }/${ totalToImport } begivenheder krypteret og føjet til din kalender"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret.",
+        "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. Ingen begivenhed kunne importeres.",
+        "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. Ingen begivenheder kunne importeres."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kryptering og tilføjelse af kontakter: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Kryptering og tilføjelse af begivenheder til din kalender: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Begivenhed importeret. Den importerede begivenhed vises nu i din kalender.",
+        "Begivenheder importeret. De importerede begivenheder vises nu i din kalender."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Luk ikke fanen før importprocessen er afsluttet."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } understøtter i øjeblikket ikke visse begivenhedstyper, detaljer og formater."
+      ],
       "vCard versions < 3.0": [
         "vCard versioner < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Importerede invitationer vises i ${ CALENDAR_APP_NAME } som simple begivenheder uden oplysninger om arrangør og deltagere. Hvis du vil have opdateringer om begivenhederne og se deltagerne, skal du bede arrangørerne om at invitere dig med din ${ BRAND_NAME }-e-mailadresse."
+      ],
+      "This file contains an event invitation:": [
+        "Denne fil indeholder en invitation til en begivenhed:",
+        "Denne fil indeholder invitationer til begivenhed:"
+      ],
+      "This file contains an invitation response:": [
+        "Denne fil indeholder et svar på en invitation:",
+        "Denne fil indeholder svar på en invitation:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Denne fil indeholder nogle data, som vi ikke kan importere:"
       ]
     },
     "Import contact": {
@@ -2232,26 +2594,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Mindre sikker app-adgang\" er slået til i sikkerhedsindstillingerne for din Google-konto."
-      ],
       "2-step verification is enabled in your external account.": [
         "Totrinsbekræftelse er aktiveret på din eksterne konto."
       ],
       "2-step verification is enabled in your external email account.": [
         "Totrinsbekræftelse er aktiveret på din eksterne e-mail-konto."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Hvis ${ bold2StepsDisabled } (standard Gmail-indstillinger), så sørg venligst for:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Hvis ${ bold2StepsDisabled } i Gmail (standard indstillinger), så sørg venligst for:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Hvis ${ bold2StepsEnabled } i Gmail, skal du sørge for, at du bruger din app-adgangskode i stedet for din almindelige adgangskode."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Hvis ${ bold2StepsEnabled }, skal du sørge for, at din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP-adgang er aktiveret på din eksterne konto."
@@ -2270,9 +2617,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Brug din app adgangskode i stedet for din almindelige adgangskode, hvis:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Du kan også prøve at logge ud af ${ boldGoogleAccounts } i browseren, og derefter låse ${ linkCAPTCHA } op."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Din app-adgangskode er korrekt. Benyt ${ boldNot } din normale adgangskode."
@@ -2294,18 +2638,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Totrinsbekræftelse deaktiveret"
-      ],
-      "2-step verification is enabled": [
-        "Totrinsbekræftelse aktiveret"
-      ],
-      "all your other Google accounts": [
-        "alle dine andre Google-konti"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "ikke"
       ]
@@ -2427,8 +2759,18 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } ud af ${ totalEvents } begivenhed vil ikke blive importeret. Udvid for detaljer.",
+        "${ totalEventsDiscarded } ud af ${ totalEvents } begivenheder vil ikke blive importeret. Udvid for detajler."
+      ],
       "No contact can be imported. Click for details": [
         "Ingen kontakt kan importeres. Klik for detaljer"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Ingen begivenhed kan importeres. Klik for detaljer."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
     "Info": {
@@ -3158,6 +3500,9 @@
       "Tap the + button to upload a file or folder": [
         "Tryk på + knappen for at overføre en fil eller mappe"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Midlertidigt utilgængelig. Tjek igen senere."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
@@ -3324,6 +3669,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Du kan importere én datatype ad gangen."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
       ],
@@ -3332,6 +3680,9 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "Du har ${ expiresInDays } dage tilbage til at få din 500 MB velkomstbonus og "
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Du skal have en aktiv personlig kalender for at importere dine begivenheder."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
@@ -3637,6 +3988,9 @@
       ],
       "Import to email address": [
         "Importer til e-mailadresse"
+      ],
+      "Import to:": [
+        "Importer til:"
       ],
       "Label messages as": [
         "Giv beskeder etiketten"
@@ -4284,6 +4638,11 @@
         "Flet med kalender"
       ]
     },
+    "Participant name": {
+      "You": [
+        "Dig"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
@@ -4463,6 +4822,9 @@
       "Bug reported": [
         "Fejl anmeldt"
       ],
+      "Canceling import": [
+        "Annullerer import"
+      ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
       ],
@@ -4485,6 +4847,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Fingeraftryk kopieret til udklipsholder"
+      ],
+      "Import record deleted": [
+        "Importpost slettet"
       ],
       "Phone number copied to clipboard": [
         "Telefonnummer kopieret til udklipsholder"
@@ -4666,6 +5031,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue with partial import?": [
+        "Fortsæt med delvis import?"
+      ],
       "Create a new file": [
         "Opret en ny fil"
       ],
@@ -4804,8 +5172,18 @@
       "Human verification": [
         "Menneskelig bekræftelse"
       ],
+      "Import as simple event?": [
+        "Importer som simpel begivenhed?",
+        "Importer som simple begivenheder?"
+      ],
       "Import contacts": [
         "Importér kontakter"
+      ],
+      "Import events": [
+        "Importer begivenheder"
+      ],
+      "Import failed": [
+        "Import mislykkedes"
       ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"

@@ -14,7 +14,7 @@ const DelinquentModal = (props: ModalProps) => {
     const title = c('Delinquent modal title').t`Overdue invoice`;
 
     const delinquentMessage = c('Info')
-        .t`Your ${BRAND_NAME} account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.`;
+        .t`Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.`;
 
     let message: string = '';
     if (user.Delinquent === UNPAID_STATE.DELINQUENT) {

@@ -253,6 +253,15 @@
       "import": [
         "импорт"
       ],
+      "Import calendars": [
+        "Импортировать календари"
+      ],
+      "Import contacts": [
+        "Импортировать контакты"
+      ],
+      "Import emails": [
+        "Импортировать электронную почту"
+      ],
       "Import events": [
         "Импортировать события"
       ],
@@ -576,6 +585,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "Событие ${ title } началось ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } началось ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "Событие ${ title } началось вчера"
       ],
@@ -587,6 +599,15 @@
       ],
       "${ title } starts now": [
         "Событие ${ title } начинается"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } начинается ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } начинается ${ formattedDate } в ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } начинается ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "Событие ${ title } начинается ${ formattedDateWithTime }"
@@ -649,7 +670,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "Доступ к бета-версии позволит вам использовать бета-версию ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } до их публичного выпуска. Это означает, что вы сможете первыми опробовать новые продукты, получать обновления и использовать новые функции."
+        "Бета-доступ позволит вам использовать бета-версию ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } до их публичного выпуска. Это означает, что вы сможете первыми опробовать новые продукты, получать обновления и использовать новые функции."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Если вы столкнетесь с проблемами, то всегда можете отключить доступ к Beta-функциям."
@@ -678,7 +699,7 @@
         "Проблема Drive"
       ],
       "Feature request": [
-        "Запрос новой функции"
+        "Запрос функционала"
       ],
       "Import / export problem": [
         "Проблема импорта / экспорта"
@@ -922,7 +943,7 @@
         "вишневый"
       ],
       "cobalt": [
-        "кобальт"
+        "кобальтовый"
       ],
       "copper": [
         "медный"
@@ -931,13 +952,13 @@
         "горечавка"
       ],
       "fern": [
-        "папоротник"
+        "папоротниковый"
       ],
       "forest": [
         "лесной"
       ],
       "ocean": [
-        "океан"
+        "океанический"
       ],
       "olive": [
         "оливковый"
@@ -946,7 +967,7 @@
         "тихоокеанский"
       ],
       "pickle": [
-        "огурчик"
+        "огуречный"
       ],
       "pine": [
         "сосновый"
@@ -1782,7 +1803,7 @@
         "Украина"
       ],
       "United Arab Emirates": [
-        "Объединённые Арабские Эмираты"
+        "Объединенные Арабские Эмираты"
       ],
       "United Kingdom": [
         "Великобритания"
@@ -1895,7 +1916,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Исп. глоб. знач. по умолчанию (${ defaultValueText })"
+        "Использовать глобальное значение по умолчанию (${ defaultValueText })"
       ]
     },
     "Delinquent modal title": {
@@ -1908,7 +1929,7 @@
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Удаляем контакты... Это может занять несколько минут. Когда процесс завершится, вы можете закрыть это окно."
+        "Удаление контактов... Это может занять несколько минут. Когда процесс завершится, вы можете закрыть это окно."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
@@ -1999,7 +2020,7 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        "Событие «${ eventTitle }» было отменено."
+        "Событие ${ eventTitle } было отменено."
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "Событие «${ eventTitle }» было обновлено.\n${ eventDetailsText }"
@@ -2062,11 +2083,23 @@
         "У ${ list } нет действительных адресов электронной почты",
         "У ${ list } нет действительных адресов электронной почты"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } не содержит адреса электронной почты",
+        "${ list } не содержат адреса электронной почты",
+        "${ list } не содержат адреса электронной почты",
+        "У некоторых контактов нет адресов электронной почты: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "У ${ list } есть недопустимый email",
         "У ${ list } есть недопустимые email",
         "У ${ list } есть недопустимые email",
         "У ${ list } есть недопустимые email"
+      ],
+      "${ list } has no contacts": [
+        "В ${ list } нет контактов",
+        "В ${ list } нет контактов",
+        "В ${ list } нет контактов",
+        "В некоторых группах нет контактов: ${ list }"
       ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
@@ -2126,7 +2159,7 @@
         "Адрес электронной почты отключен"
       ],
       "Email address invalid": [
-        "Неверный адрес электронной почты"
+        "Недействительный адрес электронной почты"
       ],
       "Email is not valid": [
         "Эл. почта недействительна"
@@ -2150,7 +2183,7 @@
         "Не удалось загрузить начальное вхождение серии событий"
       ],
       "Folder name cannot be empty.": [
-        "Название папки не может быть пустым."
+        "Имя папки не может быть пустым."
       ],
       "Image upload failed": [
         "Не удалось загрузить изображение"
@@ -2174,7 +2207,7 @@
         "Недопустимое имя"
       ],
       "Invalid public key file": [
-        "Недействительный файл публичного ключа"
+        "Недействительный файл открытого ключа"
       ],
       "Invalid verification code": [
         "Неверный код подтверждения"
@@ -2189,7 +2222,7 @@
         "Перемещать события можно только в интервале ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty.": [
-        "Название ярлыка не может быть пустым."
+        "Имя ярлыка не может быть пустым."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
@@ -2207,13 +2240,13 @@
         "Требуется имя"
       ],
       "No calendars found to import": [
-        "Не найдено ни одного календаря для импорта"
+        "Не найдено календарей для импорта"
       ],
       "No contacts found to import": [
         "Не найдено контактов для импорта"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Не найдено писем для импорта - у аккаунта нет папки входящих сообщений"
+        "Не найдено писем для импорта, у аккаунта нет папки Входящие"
       ],
       "No public key for ${ BRAND_NAME } address": [
         "Нет открытого ключа для адреса ${ BRAND_NAME }"
@@ -2222,7 +2255,7 @@
         "Не найдено действительных адресов"
       ],
       "No WKD key retrieved for user is valid for sending": [
-        "Ни один из полученных из WKD ключей пользователя не годен для отправки"
+        "Ни один из ключей, полученных из WKD для пользователя не годен для отправки"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Не аккаунт ${ BRAND_NAME }"
@@ -2258,7 +2291,7 @@
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Попробуйте повторить аутентификацию и убедитесь, что права доступа установлены правильно."
+        "Попробуйте повторить аутентификацию и убедитесь, что разрешения установлены правильно."
       ],
       "Primary address key is not decrypted": [
         "Ключ первичного адреса не расшифрован"
@@ -2303,7 +2336,7 @@
         "Имена некоторых ваших папок недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Некоторые из ваших имен папок превышают максимальное ограничение на количество символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
+        "Некоторые из ваших имен папок превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "Имена некоторых ваших ярлыков зарезервированы. Пожалуйста, настройте импорт для изменения этих имен."
@@ -2315,7 +2348,7 @@
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
+        "Что-то пошло не так. ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, свяжитесь нашей ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Время начала должно быть раньше времени окончания"
@@ -2327,13 +2360,13 @@
         "Недопустимое название папки. Пожалуйста, выберите другое название."
       ],
       "The folder name is too long. Please choose a different name.": [
-        "Название папки слишком длинное. Пожалуйста, выберите другое название."
+        "Имя папки слишком длинное. Пожалуйста, выберите другое имя."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Недопустимое название ярлыка. Пожалуйста, выберите другое название."
       ],
       "The label name is too long. Please choose a different name.": [
-        "Название ярлыка слишком длинное. Пожалуйста, выберите другое название."
+        "Имя ярлыка слишком длинное. Пожалуйста, выберите другое имя."
       ],
       "The sending key is not valid": [
         "Недействительный ключ отправки"
@@ -2351,16 +2384,16 @@
         "Минимальная длина для этого поля ${ minimumLength } символов."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Это название папки недоступно. Пожалуйста, выберите другое название."
+        "Это имя папки недоступно. Пожалуйста, выберите другое название."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Это название ярлыка недоступно. Пожалуйста, выберите другое название."
+        "Это имя ярлыка недоступно. Пожалуйста, выберите другое имя."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере."
       ],
       "Trusted keys are not valid for sending": [
-        "Доверенные ключи не действительны для отправки"
+        "Доверенные ключи недействительны для отправки"
       ],
       "Unknown error": [
         "Неизвестная ошибка"
@@ -2493,7 +2526,7 @@
         "Проверка события не удалась"
       ],
       "Floating times not supported": [
-        "Плавающий график не поддерживается"
+        "Плавающие значения времени не поддерживаются"
       ],
       "Free-busy time information": [
         "Информация о свободном и занятом времени"
@@ -2505,7 +2538,7 @@
         "Запись журнала"
       ],
       "Malformed all-day event": [
-        "Неправильный формант оформление события на весь день"
+        "Неправильное мероприятие на весь день"
       ],
       "Malformed end time": [
         "Неправильный формат времени окончания"
@@ -2532,7 +2565,7 @@
         "Исходное повторяющееся событие не найдено"
       ],
       "Recurring event has no occurrences": [
-        "Повторяющееся событие не происходило"
+        "Повторяющееся событие не имеет повторений"
       ],
       "Recurring rule not supported": [
         "Правило для повторения не поддерживается"
@@ -2632,7 +2665,7 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Вложенный файл ICS невозможно расшифровать"
+        "Невозможно расшифровать вложенный файл ICS"
       ],
       "Attached ICS file could not be read": [
         "Невозможно прочитать вложенный файл ICS"
@@ -2943,15 +2976,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Менее безопасный доступ к приложениям\" включен в настройках безопасности аккаунта Google."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } не может подключиться к вашему аккаунту. Убедитесь, что доступ к IMAP Gmail включен."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } не может подключиться к вашему аккаунту. Убедитесь, что в вашем аккаунте Gmail включен доступ по протоколу IMAP."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } не может подключиться к вашему аккаунту. Пожалуйста, убедитесь, что:"
       ],
@@ -2960,9 +2984,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } не может подключиться к вашему внешнему аккаунту. Пожалуйста, убедитесь, что:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } не удается подключиться к аккаунту Gmail. Убедитесь, что адрес почтового сервера и номер порта указаны правильно."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } не удается подключиться к вашему аккаунту Yahoo. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта указаны правильно."
@@ -2975,18 +2996,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Двухэтапная аутентификация включена в вашем внешнем аккаунте электронной почты."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Если ${ bold2StepsDisabled } (настройки Gmail по умолчанию), то убедитесь, что:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Если ${ bold2StepsDisabled } в Gmail (по умолчанию), убедитесь, что:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Если ${ bold2StepsEnabled } в Gmail, пожалуйста, убедитесь, что вы используете свой пароль приложения, а не обычный пароль."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Если ${ bold2StepsEnabled }, то убедитесь, что ваш адрес электронной почты и пароль от приложения правильны. ${ boldNot } используйте ваш обычный пароль."
       ],
       "IMAP access is enabled in your external account.": [
         "Доступ IMAP включен в вашем внешнем аккаунте."
@@ -3005,9 +3014,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Используйте ваш пароль приложения вместо обычного пароля, если:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Вы также можете попробовать выйти из ${ boldGoogleAccounts } в браузере, а затем разблокировать ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ваш пароль приложения правильный. ${ boldNot } используйте свой обычный пароль."
@@ -3029,18 +3035,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Двухэтапная авторизация выключена"
-      ],
-      "2-step verification is enabled": [
-        "Двухэтапная авторизация включена"
-      ],
-      "all your other Google accounts": [
-        "все остальные ваши аккаунты Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "не"
       ]
@@ -3165,7 +3159,7 @@
         "настройки безопасности"
       ],
       "shared calendars": [
-        "подписанным календарям"
+        "общие календари"
       ],
       "Yahoo": [
         "Yahoo"
@@ -3473,6 +3467,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Введите собственный пароль (как администратор организации)."
       ],
@@ -3507,13 +3504,13 @@
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
+        "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "Если вы не знаете пароль, то установите секретную фразу, чтобы не потерять доступ к вашему аккаунту и данным."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
-        "Импорт ${ contactsFragment } и ${ contactsGroupsFragment }"
+        "Импортировать ${ contactsFragment } и ${ contactsGroupsFragment }"
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календаря",
@@ -3540,10 +3537,10 @@
         "Подключение к Интернету потеряно"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Интернет-соединение потеряно. Пожалуйста, проверьте подключение вашего устройства."
+        "Подключение к Интернету потеряно. Пожалуйста, проверьте возможность подключения вашего устройства."
       ],
       "Internet connection restored.": [
-        "Интернет-соединение восстановлено."
+        "Подключение к Интернету восстановлено."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
@@ -3585,7 +3582,7 @@
         "Управление календарями"
       ],
       "Merged": [
-        "Объединённые"
+        "Объединенные"
       ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
@@ -3648,7 +3645,7 @@
         "Пожалуйста, удалите дубликаты и повторите попытку."
       ],
       "Please select the folders you would like to import:": [
-        "Пожалуйста, выберите папки для импорта:"
+        "Выберите папки для импорта:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группу.",
@@ -3718,6 +3715,9 @@
       ],
       "support team": [
         "служба поддержки"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "Временно недоступно. Пожалуйста, проверьте позже."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Приложению необходимо расшифровать ваши контакты, прежде чем экспортировать их. В конце процесса будет сгенерирован файл VCF, и вы сможете его скачать."
@@ -3867,7 +3867,10 @@
         "Вы также можете объединить импортированные календари с существующими календарями ${ BRAND_NAME }."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        "Вы можете проверить процесс ${ importProgressLink }."
+        "Вы можете проверить ход выполнения ${ importProgressLink }."
+      ],
+      "You can import one data type at a time.": [
+        "Вы можете импортировать один тип данных за один раз."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Вы можете изменять только свою копию события, так как вы не можете отправлять письма с адреса организатора."
@@ -3880,6 +3883,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Вы сбросили пароль, и события, связанные со следующими календарями, не могут быть расшифрованы.\nВсе созданные ранее ссылки на общие календари больше не будут работать.\nВсе активные подписанные календари снова синхронизируются через несколько минут."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Вам нужен активный личный календарь, чтобы начать импорт событий."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Вы ранее отклонили это приглашение. Попросите владельца повторно пригласить вас"
@@ -3912,7 +3918,7 @@
         "Вы обновите все события в этой серии. Удаленные участники будут уведомлены."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, оплатите все просроченные счета."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
@@ -3945,7 +3951,7 @@
         "Ваши события будут зашифрованы, а затем сохранены."
       ],
       "Your import will not be processed.": [
-        "Импорт не будет обработан."
+        "Ваш импорт не будет обработан."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
@@ -3997,7 +4003,7 @@
         "Отозванный"
       ],
       "Trusted": [
-        "Надёжный"
+        "Надежный"
       ],
       "WKD": [
         "WKD"
@@ -4005,10 +4011,10 @@
     },
     "Label": {
       "${ BRAND_NAME } username": [
-        "${ BRAND_NAME } имя пользователя"
+        "имя пользователя ${ BRAND_NAME }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Временно недоступно. Пожалуйста, проверьте позже.)"
+        "(Временно недоступно. Проверьте позже.)"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -4167,7 +4173,7 @@
         "Интервал импорта"
       ],
       "Import to email address": [
-        "Импортировать в адреса электронной почты"
+        "Импортировать в адрес электронной почты"
       ],
       "Import to:": [
         "Импортировать в:"
@@ -4203,10 +4209,10 @@
         "Управление ярлыками"
       ],
       "Move to Archive": [
-        "Переместить в архив"
+        "Переместить в Архив"
       ],
       "Move to Inbox": [
-        "Переместить в входящие"
+        "Переместить во Входящие"
       ],
       "Name": [
         "Имя"
@@ -4263,10 +4269,10 @@
         "Почтовый индекс"
       ],
       "Public keys": [
-        "Публичные ключи"
+        "Открытые ключи"
       ],
       "Region": [
-        "Регион/область"
+        "Регион"
       ],
       "Repeat every": [
         "Повторяется каждый"
@@ -4281,7 +4287,7 @@
         "Подписать письма"
       ],
       "Street address": [
-        "Адрес"
+        "Андрес улицы"
       ],
       "System information": [
         "Сведения о системе"
@@ -4333,7 +4339,7 @@
     },
     "Label for contact group name": {
       "Name": [
-        "Название"
+        "Имя"
       ]
     },
     "Label/folder modal": {
@@ -4360,7 +4366,7 @@
         "Календари"
       ],
       "clearing your browser cache": [
-        "очистка кэша браузера"
+        "очистка кеша браузера"
       ],
       "Learn more": [
         "Подробнее"
@@ -4676,7 +4682,7 @@
         "Цвет"
       ],
       "Folder name": [
-        "Название папки"
+        "Имя папки"
       ],
       "Label name": [
         "Название ярлыка"
@@ -4689,7 +4695,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
-        "Расскажите нам о вашем опыте (не обязательно)"
+        "Расскажите нам о вашем опыте (необязательно)"
       ]
     },
     "new_plans: placeholder": {
@@ -5025,7 +5031,7 @@
         "${ emailAddress } пометил этот ключ как устаревший. Этот ключ можно использовать только для проверки подписи."
       ],
       "We recommend that you \"untrust\" this key.": [
-        "Мы рекомендуем вам \"отозвать доверие\" у этого ключа."
+        "Мы рекомендуем вам отозвать доверие у этого ключа."
       ]
     },
     "PGP key warning": {
@@ -5080,7 +5086,7 @@
         "Поиск по названию группы"
       ],
       "Search for name or email": [
-        "Поиск имени или электронной почте"
+        "Поиск имени или электронной почты"
       ],
       "Select": [
         "Выбрать"
@@ -5091,7 +5097,7 @@
     },
     "Placeholder for contact group name": {
       "Name": [
-        "Название"
+        "Имя"
       ]
     },
     "Placeholder for contact with no name": {
@@ -5476,7 +5482,7 @@
     },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Бета-версия ${DRIVE_APP_NAME} вышла из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронные письма."
+        "${ DRIVE_APP_NAME } вышел из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронной почте."
       ],
       "Don't miss any events": [
         "Не пропускайте события"
@@ -5488,7 +5494,7 @@
         "Вы можете получить до ${ credits } в кредитах."
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "Пригласите друзей на ${ BRAND_NAME }"
+        "Пригласите друзей в ${ BRAND_NAME }"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Теперь приглашения появляются в вашем календаре как ожидающие события. Просто откройте событие, чтобы ответить. ${ goToSettingsLink }"
@@ -5497,7 +5503,7 @@
         "Подписаться на другие календари"
       ],
       "Try ${ DRIVE_APP_NAME }": [
-        "Попробуйте ${DRIVE_APP_NAME}"
+        "Попробуйте ${ DRIVE_APP_NAME }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Теперь можно добавлять уведомления для календарей, на которые вы подписаны."
@@ -5590,6 +5596,9 @@
       "Calendar updated": [
         "Календарь обновлен"
       ],
+      "Canceling import": [
+        "Импорт отменяется"
+      ],
       "Cancellation sent and all events deleted": [
         "Сообщение об отмене отправлено и все события удалены"
       ],
@@ -5647,6 +5656,9 @@
       "Future events updated": [
         "Будущие события обновлены"
       ],
+      "Import record deleted": [
+        "Запись об импорте удалена"
+      ],
       "Invitation sent and all events updated": [
         "Приглашение отправлено и все события обновлены"
       ],
@@ -5686,6 +5698,9 @@
       "Preferences saved": [
         "Настройки сохранены"
       ],
+      "Undo in progress": [
+        "Выполняется отмена"
+      ],
       "Verification successful": [
         "Проверка прошла успешно"
       ]
@@ -5706,13 +5721,13 @@
         "Адрес"
       ],
       "Created": [
-        "Создано"
+        "Создан"
       ],
       "Expires": [
         "Истекает"
       ],
       "Fingerprint": [
-        "Отпечаток"
+        "Цифровой отпечаток"
       ],
       "Name": [
         "Имя"
@@ -5754,7 +5769,7 @@
     },
     "Time period": {
       "account creation date": [
-        "дата создания учётной записи"
+        "дата создания аккаунта"
       ],
       "the last 12 months": [
         "последние 12 месяцев"
@@ -5988,7 +6003,7 @@
         "Идет объединение контактов"
       ],
       "Minicalendar": [
-        "Мини-календарь"
+        "Миникалендарь"
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
@@ -6174,7 +6189,7 @@
     },
     "Title; edit calendar modal": {
       "Edit calendar": [
-        "Редактировать календарь"
+        "Изменить календарь"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6276,7 +6291,7 @@
         "Вы уверены, что хотите навсегда удалить ${ count } контактов?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "Вы уверены, что хотите удалить эту группу контактов?"
+        "Вы уверены, что хотите навсегда удалить эту группу контактов?"
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Вы уверены, что хотите навсегда удалить этот контакт?"
@@ -6321,13 +6336,13 @@
         "Этот импорт может превысить объем памяти, доступный в настоящее время в вашем аккаунте ${ BRAND_NAME }. Рассмотрите возможность настройки импорта."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда вернемся к работе."
+        "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."
       ],
       "You will lose any customization you made so far.": [
         "Вы потеряете все сделанные вами до этого настройки."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Ваша бесплатная пробная версия заканчивается ${ textDate }. ${ action }"
+        "Ваш бесплатный пробный период заканчивается ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -6532,7 +6547,7 @@
         "Еженедельно в понедельник"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Еженедельно в понедельник в ${ timesString }"
+        "Еженедельно по понедельникам в ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
         "Еженедельно в понедельник ${ untilString }"
@@ -6550,7 +6565,7 @@
         "Еженедельно в воскресенье"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Еженедельно в воскресенье в ${ timesString }"
+        "Еженедельно по воскресеньям в ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
         "Еженедельно по воскресеньям ${ untilString }"

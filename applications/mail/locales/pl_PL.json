@@ -470,6 +470,15 @@
       "import": [
         "importuj"
       ],
+      "Import calendars": [
+        "Importuj kalendarze"
+      ],
+      "Import contacts": [
+        "Importuj kontakty"
+      ],
+      "Import emails": [
+        "Importuj wiadomości"
+      ],
       "Import from .csv or vCard": [
         "Importuj z pliku CSV lub vCard"
       ],
@@ -801,7 +810,7 @@
         "Zresetuj wyszukiwanie"
       ],
       "Reset to default": [
-        "Przywróć domyślne ustawienia"
+        "Przywróć ustawienia domyślne"
       ],
       "Resume": [
         "Wznów"
@@ -1130,6 +1139,9 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Jeśli wyjdziesz teraz, niektóre kontakty nie zostaną zaimportowane"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Jeśli wyjdziesz teraz, niektóre wydarzenia nie zostaną zaimportowane"
       ]
     },
     "Alt": {
@@ -2858,6 +2870,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Możesz importować wydarzenia w formacie iCal (plik ICS). Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Możesz oznaczyć do usunięcia te kontakty, których nie chcesz scalić ani zachować. Usunięcie nastąpi dopiero po kliknięciu przycisku Scal"
       ]
@@ -3422,8 +3437,38 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Plik nie posiada odpowiedniego formatu."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Dozwolony jest tylko plik ICS."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Wystąpił błąd podczas przesyłania pliku. Nie został wybrany żaden plik."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Wystąpił nieoczekiwany błąd. Importowanie musi zostać ponownie uruchomione."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzenie.",
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzenia.",
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń.",
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Plik ${ formattedFilename } jest nieprawidłowy i nie może zostać zaimportowany."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Plik ${ formattedFilename } nie posiada wydarzeń do zaimportowania."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Plik ${ formattedFilename } jest pusty."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Plik ${ formattedFilename } nie jest plikiem kalendarza."
       ]
     },
     "Error importing contact": {
@@ -3458,6 +3503,12 @@
       ]
     },
     "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Plik jest w złym formacie. Komponent nie może zostać odczytany."
+      ],
+      "Calendar": [
+        "Kalendarz"
+      ],
       "Calendar time zone not supported": [
         "Strefa czasowa kalendarza nie jest obsługiwana"
       ],
@@ -3470,11 +3521,17 @@
       "Edited event not supported": [
         "Edytowane wydarzenie nie jest obsługiwane"
       ],
+      "Element": [
+        "Element"
+      ],
       "Encryption failed": [
         "Szyfrowanie nie powiodło się"
       ],
       "End time out of bounds": [
         "Czas zakończenia jest poza zakresem"
+      ],
+      "Event": [
+        "Wydarzenie"
       ],
       "Event validation failed": [
         "Weryfikacja wydarzenia nie powiodła się"
@@ -3530,8 +3587,14 @@
       "Time zone not supported": [
         "Strefa czasowa nie jest obsługiwana"
       ],
+      "Timezone": [
+        "Strefa czasowa"
+      ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
+      ],
+      "Unknown": [
+        "Wystąpił nieznany błąd"
       ],
       "Unsupported event": [
         "Wydarzenie jest nieobsługiwane"
@@ -3980,13 +4043,66 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
+        "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
+        "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
+        "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie zostało zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie może zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Szyfrowanie i dodawanie kontaktów: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Szyfrowanie i dodawanie wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Wydarzenie zostało zaimportowane i pojawi się w Twoim kalendarzu.",
+        "Wydarzenia zostały zaimportowane i pojawią się w Twoim kalendarzu.",
+        "Wydarzenia zostały zaimportowane i pojawią się w Twoim kalendarzu.",
+        "Wydarzenia zostały zaimportowane i pojawią się w Twoim kalendarzu."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Nie zamykaj karty przed zaimportowaniem danych."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } nie obsługuje niektórych typów wydarzeń, szczegółów i formatów."
+      ],
       "vCard versions < 3.0": [
         "Wersja vCard jest starsza niż 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Zaimportowane zaproszenia pojawiają się w ${ CALENDAR_APP_NAME } jako zwykłe wydarzenia bez szczegółów organizatora i uczestników. Aby otrzymywać aktualizacje wydarzeń i zobaczyć listę uczestników, poproś organizatorów o zaproszenie, używając swojego adresu e-mail ${ BRAND_NAME }."
+      ],
+      "This file contains an event invitation:": [
+        "Plik zawiera zaproszenie do wydarzenia:",
+        "Plik zawiera zaproszenia do wydarzeń:",
+        "Plik zawiera zaproszenia do wydarzeń:",
+        "Plik zawiera zaproszenia do wydarzeń:"
+      ],
+      "This file contains an invitation response:": [
+        "Plik zawiera odpowiedź na zaproszenie:",
+        "Plik zawiera odpowiedzi na zaproszenia:",
+        "Plik zawiera odpowiedzi na zaproszenia:",
+        "Plik zawiera odpowiedzi na zaproszenia:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Plik zawiera dane, których nie możemy zaimportować:"
       ]
     },
     "Import contact": {
@@ -4041,15 +4157,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Dostęp do mniej bezpiecznych aplikacji\" w ustawieniach bezpieczeństwa konta Google jest włączony."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } nie może połączyć się z kontem. Upewnij się, że dostęp IMAP w ustawieniach konta Gmail jest włączony."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } nie może połączyć się z kontem. Upewnij się, że dostęp IMAP w ustawieniach konta jest włączony."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } nie może połączyć się z kontem. Upewnij się, że:"
       ],
@@ -4058,9 +4165,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } nie może połączyć się z kontem zewnętrznym. Upewnij się, że:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } nie może połączyć się z kontem Gmail. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } nie może połączyć się z kontem Yahoo. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
@@ -4073,18 +4177,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Jeśli ${ bold2StepsDisabled } (domyślne ustawienie poczty Gmail), upewnij się, że:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Jeśli ${ bold2StepsDisabled } w poczcie Gmail (domyślne ustawienie), upewnij się, że:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Jeśli w ustawieniach poczty Gmail ${ bold2StepsEnabled }, upewnij się, że używasz hasła aplikacji, zamiast swojego zwykłego hasła."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Jeśli ${ bold2StepsEnabled }, upewnij się, że adres e-mail i hasło aplikacji są prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
       ],
       "IMAP access is enabled in your external account.": [
         "dostęp IMAP jest włączony na koncie zewnętrznym."
@@ -4103,9 +4195,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Użyj hasła aplikacji, zamiast swojego zwykłego hasła, jeśli:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Możesz spróbować zalogować się na ${ boldGoogleAccounts } w przeglądarce, a następnie przejść weryfikację ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Hasło aplikacji jest prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
@@ -4127,18 +4216,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "weryfikacja dwuetapowa jest wyłączona"
-      ],
-      "2-step verification is enabled": [
-        "weryfikacja dwuetapowa jest włączona"
-      ],
-      "all your other Google accounts": [
-        "wszystkie pozostałe konta Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "Nie"
       ]
@@ -4155,8 +4232,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Kliknij ${ boldManage }, aby rozwinąć menu."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "W zależności od dostawcy poczty e-mail musisz wygenerować ${ knowledgeBaseLink } przed rozpoczęciem procesu importowania do ${ BRAND_NAME }."
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Rozwiń menu, klikając na 3 kropki (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Wygeneruj ${ boldAppPassword } i użyj go zamiast swojego zwykłego hasła, gdy ${ BRAND_NAME } o to poprosi."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Wygeneruj ${ boldAppPassword } i użyj go zamiast swojego zwykłego hasła, gdy ${ BRAND_NAME } o to poprosi."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Przejdź do sekcji ${ boldAccountInfo } na koncie ${ yahooMailLink }."
@@ -4292,8 +4378,20 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "Wydarzenie nie mogło zostać zaimportowane. Rozwiń szczegóły.",
+        "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły.",
+        "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły.",
+        "Niektóre wydarzenia (${ totalEventsDiscarded }/${ totalEvents }) nie mogą zostać zaimportowane. Rozwiń szczegóły."
+      ],
       "No contact can be imported. Click for details": [
         "Żaden kontakt nie może zostać zaimportowany. Kliknij po szczegóły"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Żadne wydarzenie nie może zostać zaimportowane. Rozwiń szczegóły."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
     "Info": {
@@ -4828,6 +4926,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
       ],
@@ -5344,6 +5445,9 @@
       "support team": [
         "pomocą techniczną"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
+      ],
       "Test link": [
         "Podgląd linku"
       ],
@@ -5656,6 +5760,9 @@
       "You can either update your search query or clear it": [
         "Możesz zaktualizować zapytanie lub wyczyścić je"
       ],
+      "You can import one data type at a time.": [
+        "Możesz importować jeden typ danych jednocześnie."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
       ],
@@ -5707,6 +5814,9 @@
       "You have reached the maximum number of 5 replies.": [
         "Osiągnięto maksymalną liczbę 5 odpowiedzi."
       ],
+      "You need to have an active personal calendar to import your events.": [
+        "Musisz posiadać aktywny osobisty kalendarz, aby zaimportować wydarzenia."
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Wykorzystano ${ spaceDisplayed }% dostępnej przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5744,7 +5854,7 @@
         "Twoje konto ${ BRAND_NAME } zawiera subskrypcję SimpleLogin. Zainstaluj rozszerzenie przeglądarki za pomocą jednego kliknięcia."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
@@ -6280,6 +6390,9 @@
       ],
       "Import to email address": [
         "Importuj do adresu e-mail"
+      ],
+      "Import to:": [
+        "Importuj do:"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Skrót klawiszowy: ${ shortcut }"
@@ -8034,6 +8147,9 @@
       "Bug reported": [
         "Błąd został zgłoszony"
       ],
+      "Canceling import": [
+        "Anulowanie procesu importowania"
+      ],
       "Code sent to ${ methodTo }": [
         "Kod został wysłany na ${ methodTo }"
       ],
@@ -8099,6 +8215,9 @@
       ],
       "Folder cleared": [
         "Folder został wyczyszczony"
+      ],
+      "Import record deleted": [
+        "Rekord importu został usunięty"
       ],
       "Keyboard shortcuts preferences updated": [
         "Ustawienia skrótów klawiszowych zostały zaktualizowane"
@@ -8183,6 +8302,9 @@
       ],
       "Read receipt sent": [
         "Potwierdzenie odczytu zostało wysłane"
+      ],
+      "Undo in progress": [
+        "Cofnięcie jest w toku"
       ],
       "Verification successful": [
         "Weryfikacja powiodła się"
@@ -8406,6 +8528,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with partial import?": [
+        "Kontynuować częściowe importowanie?"
+      ],
       "Conversation list": [
         "Lista wątków"
       ],
@@ -8562,8 +8687,20 @@
       "Image": [
         "Obraz"
       ],
+      "Import as simple event?": [
+        "Importować jako zwykłe wydarzenie?",
+        "Importować jako zwykłe wydarzenia?",
+        "Importować jako zwykłe wydarzenia?",
+        "Importować jako zwykłe wydarzenia?"
+      ],
       "Import contacts": [
         "Importuj kontakty"
+      ],
+      "Import events": [
+        "Importuj wydarzenia"
+      ],
+      "Import failed": [
+        "Importowanie nie powiodło się"
       ],
       "Insert contacts": [
         "Wstaw kontakty"

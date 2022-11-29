@@ -492,11 +492,11 @@
       "Not spam": [
         "非垃圾郵件"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -3042,14 +3042,8 @@
       "The label name is too long. Please choose a different name.": [
         "標籤名稱太長。請選擇其它名稱。"
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "每次儲值的最低金額為 ${ _price }"
-      ],
       "The minimum amount that can be donated is ${ price }": [
         "每筆捐款的最低金額為 ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "最低付款額為 ${ _price2 }"
       ],
       "The organization key must be activated first": [
         "必須先啟用組織機構的金鑰"
@@ -3832,15 +3826,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } 無法連接您的帳號。請確認 Gmail IMAP 存取已啟用。"
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } 無法連接您的帳號。請確認您的 Gmail IMAP 存取已啟用。"
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } 無法連接您的帳號。請確認以下事項:"
       ],
@@ -3849,9 +3834,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } 無法連接您的外部帳號。請確認以下事項:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } 無法連接您的 Gmail 帳號。請確認郵件伺服器和連接埠號正確無誤。"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } 無法連接您的 Yahoo! 帳號。請確認郵件伺服器和連接埠號正確無誤。"
@@ -3864,18 +3846,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "您的外部電郵帳號已啟用兩步驟驗證."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "如果 ${ bold2StepsDisabled }（預設的 Gmail 設定），請確保："
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "如果 Gmail ${ bold2StepsDisabled }（預設設定），請確保："
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "如果 Gmail ${ bold2StepsEnabled }，請確保您使用您的應用程式密碼，而非您的一般密碼。"
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "如果 ${ bold2StepsEnabled }，請確保您的電郵位址和應用程式密碼均正確。${ boldNot } 使用您的一般密碼。"
       ],
       "IMAP access is enabled in your external account.": [
         "您的外部帳號已啟用 IMAP 存取。"
@@ -3894,9 +3864,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "使用您的應用程式密碼而非一般密碼，如果："
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "您亦可嘗試在瀏覽器登出 ${ boldGoogleAccounts }，然後透過 ${ linkCAPTCHA } 驗證。"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
@@ -3918,18 +3885,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "兩步驟驗證已停用"
-      ],
-      "2-step verification is enabled": [
-        "兩步驟驗證已啟用"
-      ],
-      "all your other Google accounts": [
-        "您所有的其它 Google 帳號"
-      ],
-      "CAPTCHA": [
-        "驗證碼"
-      ],
       "not": [
         "不要"
       ]
@@ -4378,9 +4333,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "知道此連結的任何人都無法同步或取得您行事曆的日後更新。 若要再次給予他們存取權限，您需要創建一個新連結。"
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL 讀取您的個人資料以供給廣告商及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
-      ],
       "Are you sure you want to delete this address?": [
         "您確定要刪除此電郵位址嗎？"
       ],
@@ -4726,9 +4678,6 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "把公開金鑰給您的朋友們，或是發佈在網路上，這樣每個人都可以向您寄送端到端加密電郵！"
       ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google 記錄您的線上活動並讀取您的個人資料，以供給廣告商及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
-      ],
       "here": [
         "這裡"
       ],
@@ -4948,17 +4897,11 @@
       "lose access to all current encrypted data": [
         "失去對您所有目前已加密資料的存取權"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru 讀取您的個人資料以供給廣告商、俄國政府機構及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "請確保 ${ addARecoveryMethod } ，如果忘記密碼您還能恢復存取帳號。"
       ],
       "Make sure you keep your recovery phrase somewhere private.": [
         "請記錄並保管您的恢復短語。"
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。又或者，${ _switchButton }。"
       ],
       "Member": [
         "成員"
@@ -5629,12 +5572,6 @@
       "Would you like to receive a new verification code?": [
         "您想要收到新的驗證碼嗎？"
       ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo 讀取您的個人資料以供給廣告商、美國情報機構及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex 記錄您的線上活動並讀取您的個人資料，以供給廣告商及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
-      ],
       "Yearly": [
         "每年"
       ],
@@ -5759,7 +5696,7 @@
         "您的 ${ BRAND_NAME } 帳號目前已設定關聯至 ${ externalEmailAddress }。 若要使用 ${ toAppName }，您需要一組 ${ MAIL_APP_NAME } 電郵位址。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期帳單。"
@@ -7695,6 +7632,14 @@
         "支援"
       ]
     },
+    "new_plans: Info": {
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -7737,14 +7682,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
-      ]
-    },
-    "new_plans: Info": {
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
       ]
     },
     "new_plans: Label": {
@@ -7830,9 +7767,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } 已建立"
-      ],
       "A disabled address cannot be primary": [
         "已停用的電郵位址不能成為主要"
       ],
@@ -8703,9 +8637,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendars per user": [
-        "${ _n } 個行事曆/每位使用者"
-      ],
       "${ maxVpn } high-speed VPN connections": [
         "${ maxVpn } 個極飆速 VPN 連線"
       ],
@@ -9789,9 +9720,6 @@
       ],
       "Theme": [
         "佈景主題"
-      ],
-      "This address might compromise your privacy.": [
-        "此電郵位址可能會危害您的隱私。"
       ],
       "Time zone": [
         "時區"

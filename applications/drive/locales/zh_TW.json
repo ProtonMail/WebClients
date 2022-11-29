@@ -302,6 +302,15 @@
       "import": [
         "匯入"
       ],
+      "Import calendars": [
+        "匯入行事曆"
+      ],
+      "Import contacts": [
+        "匯入聯絡人"
+      ],
+      "Import emails": [
+        "匯入電郵"
+      ],
       "Import from .csv or vCard": [
         "從 .csv 或 vCard 匯入"
       ],
@@ -638,11 +647,34 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "若您現在離開，部份聯絡人或會無法匯入"
+      ],
+      "By leaving now, some events may not be imported": [
+        "若您現在離開，有一些事件或會無法匯入"
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 應用程式"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "空的 ICS 檔案"
+      ],
+      "Invalid event": [
+        "無效的事件"
+      ],
+      "Invalid ICS file": [
+        "無效的 ICS 檔案"
+      ],
+      "Invalid method": [
+        "無效的方式"
+      ],
+      "Unsupported calendar component": [
+        "不支援的行事曆元件"
+      ],
+      "Unsupported event": [
+        "不支援的事件"
       ]
     },
     "Beta access description": {
@@ -727,6 +759,51 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "未同步"
+      ],
+      "Syncing": [
+        "正在同步"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "無法解密行事曆"
+      ],
+      "Calendar is syncing": [
+        "行事曆正在同步"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "行事曆同步中：僅需數分鐘即可顯示所有事件。"
+      ],
+      "Calendar is too big": [
+        "行事曆太大了"
+      ],
+      "Calendar link is not accessible": [
+        "行事曆無法存取"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "行事曆連結暫時無法存取"
+      ],
+      "Failed to sync calendar": [
+        "同步行事曆失敗"
+      ],
+      "More than 12 hours passed since last update": [
+        "距離上次更新已經過了12小時以上"
+      ],
+      "Unsupported calendar format": [
+        "不支援的行事曆格式"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "行事曆連結無法從服務提供商生態系統外進行連線。"
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
       ]
     },
     "Collapsible tooltip": {
@@ -1693,6 +1770,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
       ]
@@ -1715,6 +1795,69 @@
         "開啟"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "描述：${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } 已被取消。"
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "謹邀請閣下出席 ${ eventTitle }，詳情如下：\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "日期：${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "日期：${ formattedStart }（整天）"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "日期：由 ${ formattedStart } 至 ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "地點：${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲接受"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已被謝絕"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "您邀請 ${ emailAddress } 出席 ${ eventTitle }，已獲暫訂接受"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "原訂 ${ formattedStart } 一事取消"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "原訂自 ${ formattedStart } 起一事取消"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "誠邀 ${ formattedStart } 撥冗出席"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "誠邀自 ${ formattedStart } 起撥冗出席"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "原訂 ${ formattedStart } 一事有變"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "原訂自 ${ formattedStart } 起一事有變"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "「${ name }」已存在"
@@ -1724,6 +1867,9 @@
       ],
       "A problem occurred, please try again": [
         "發生錯誤，請再試一次"
+      ],
+      "Address primary private key not found": [
+        "找不到電子郵件地址主要私密金鑰"
       ],
       "Authentication canceled.": [
         "驗證已取消。"
@@ -1973,8 +2119,35 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "上載您的檔案 ${ formattedFilename } 時發生錯誤。僅允許 ICS 檔案格式。"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "上載您的檔案時發生錯誤。未選取任何檔案。"
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "發生未知的錯誤。需重新開始匯入。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "您的檔案 ${ formattedFilename } 包含超過 ${ MAX_IMPORT_EVENTS_STRING } 則事件。"
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "您的檔案 ${ formattedFilename } 有一個無效的方法，因此無法匯入。"
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "您的檔案 ${ formattedFilename } 無任何事件可供匯入。"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "您的檔案 ${ formattedFilename } 是空的。"
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "您的檔案 ${ formattedFilename } 不是一個行事曆。"
       ]
     },
     "Error importing contact": {
@@ -2006,6 +2179,104 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "您的檔案 ${ formattedFilename } 是空的。"
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "格式有誤。元件無法讀取。"
+      ],
+      "Calendar": [
+        "行事曆"
+      ],
+      "Calendar time zone not supported": [
+        "行事曆的時區不支援"
+      ],
+      "Component with wrong format": [
+        "元件的格式有誤"
+      ],
+      "Custom timezone": [
+        "自訂時區"
+      ],
+      "Edited event not supported": [
+        "已編輯事件不受支援"
+      ],
+      "Element": [
+        "元素"
+      ],
+      "Encryption failed": [
+        "加密失敗"
+      ],
+      "End time out of bounds": [
+        "結束時間超出界限"
+      ],
+      "Event": [
+        "事件"
+      ],
+      "Event validation failed": [
+        "事件驗證失敗"
+      ],
+      "Floating times not supported": [
+        "浮動時間不受支援"
+      ],
+      "Free-busy time information": [
+        "空閒／忙碌時間資訊"
+      ],
+      "Invalid event": [
+        "無效的事件"
+      ],
+      "Journal entry": [
+        "日誌項目"
+      ],
+      "Malformed all-day event": [
+        "全日事件格式有誤"
+      ],
+      "Malformed end time": [
+        "結束時間格式有誤"
+      ],
+      "Malformed recurring event": [
+        "週期性事件格式有誤"
+      ],
+      "Malformed start time": [
+        "開始時間格式有誤"
+      ],
+      "Missing start time": [
+        "漏掉了開始時間"
+      ],
+      "No UID, title or start time": [
+        "無 UID、標題或開始時間"
+      ],
+      "Non-Gregorian": [
+        "非西曆"
+      ],
+      "Notification out of bounds": [
+        "通知超出界限"
+      ],
+      "Original recurring event could not be found": [
+        "找不到原始的週期性事件"
+      ],
+      "Recurring event has no occurrences": [
+        "重複事件並未發生"
+      ],
+      "Recurring rule not supported": [
+        "週期性規則不受支援"
+      ],
+      "Start time out of bounds": [
+        "開始時間超出界限"
+      ],
+      "Time zone not supported": [
+        "不支援的時區"
+      ],
+      "Timezone": [
+        "時區"
+      ],
+      "To-do entry": [
+        "待辦事項"
+      ],
+      "Unknown": [
+        "未知"
+      ],
+      "Unsupported event": [
+        "不支援的事件"
       ]
     },
     "Error message": {
@@ -2053,6 +2324,55 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "郵件信譽評分為必要項目"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "附件的 ICS 檔案無法解密"
+      ],
+      "Attached ICS file could not be read": [
+        "附件中的 ICS 檔案無法讀取"
+      ],
+      "Invalid invitation": [
+        "邀請無效"
+      ],
+      "Invalid response": [
+        "無效的回應"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "無法在您的行事曆中添加活動。未發送任何答复"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "無法在您的行事曆中更新活動。未發送任何答复"
+      ],
+      "Unexpected error": [
+        "未預期的錯誤"
+      ],
+      "Unsupported invitation": [
+        "邀請不受支援"
+      ],
+      "Unsupported response": [
+        "不支援的回應"
+      ],
+      "We could not cancel the event in your calendar": [
+        "我們無法在您的行事曆取消此事件"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "我們無法從您的行事曆提取此事件"
+      ],
+      "We could not update the event in your calendar": [
+        "我們無法在您的行事曆更新此事件"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "您的回覆已傳送，惟此事件無法加入到您的行事曆中"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "您的回答已傳送，惟此事件無法在您的行事曆中更新"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(無標題)"
       ]
     },
     "Feedback Modal Title": {
@@ -2170,13 +2490,48 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "加密及加入您的事件時發生錯誤。${ totalToImport } 個事件之中，有 ${ totalImported } 個已成功匯入。"
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "加密及加入您的事件時發生錯誤。無法匯入任何事件。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密並加入聯絡人：${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "正在加密並加入事件到您的行事曆中：${ totalImported }/${ totalToImport }"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "事件已成功匯入。已匯入的事件現將顯示於行事曆中。"
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "在匯入過程完成之前，請勿關閉此索引標籤。"
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } 目前尚未支援某些事件類型、詳細資料和格式。"
+      ],
       "vCard versions < 3.0": [
         "vCard 版本 < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，沒有舉辦人與參與者的詳細資料。若要取得事件更新並顯示參與者，請要求舉辦人以您的 ${ BRAND_NAME } 電子郵件地址向您發出邀請。"
+      ],
+      "This file contains event invitations:": [
+        "此檔案包含事件邀請："
+      ],
+      "This file contains invitation responses:": [
+        "此檔案包含邀請回覆："
+      ],
+      "This file contains some data that we cannot import:": [
+        "此檔案包含部分無法匯入的內容："
       ]
     },
     "Import contact": {
@@ -2219,15 +2574,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } 無法連接您的帳號。請確認 Gmail IMAP 存取已啟用。"
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } 無法連接您的帳號。請確認您的 Gmail IMAP 存取已啟用。"
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } 無法連接您的帳號。請確認以下事項:"
       ],
@@ -2236,9 +2582,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } 無法連接您的外部帳號。請確認以下事項:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } 無法連接您的 Gmail 帳號。請確認郵件伺服器和連接埠號正確無誤。"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } 無法連接您的 Yahoo! 帳號。請確認郵件伺服器和連接埠號正確無誤。"
@@ -2251,18 +2594,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "您的外部電郵帳號已啟用兩步驟驗證."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "如果 ${ bold2StepsDisabled }（預設的 Gmail 設定），請確保："
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "如果 Gmail ${ bold2StepsDisabled }（預設設定），請確保："
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "如果 Gmail ${ bold2StepsEnabled }，請確保您使用您的應用程式密碼，而非您的一般密碼。"
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "如果 ${ bold2StepsEnabled }，請確保您的電郵位址和應用程式密碼均正確。${ boldNot } 使用您的一般密碼。"
       ],
       "IMAP access is enabled in your external account.": [
         "您的外部帳號已啟用 IMAP 存取。"
@@ -2281,9 +2612,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "使用您的應用程式密碼而非一般密碼，如果："
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "您亦可嘗試在瀏覽器登出 ${ boldGoogleAccounts }，然後透過 ${ linkCAPTCHA } 驗證。"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
@@ -2305,18 +2633,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "兩步驟驗證已停用"
-      ],
-      "2-step verification is enabled": [
-        "兩步驟驗證已啟用"
-      ],
-      "all your other Google accounts": [
-        "您所有的其它 Google 帳號"
-      ],
-      "CAPTCHA": [
-        "驗證碼"
-      ],
       "not": [
         "不要"
       ]
@@ -2447,8 +2763,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEvents } 個事件之中，有 ${ totalEventsDiscarded } 個將不會匯入。展開以取得詳細資料。"
+      ],
       "No contact can be imported. Click for details": [
         "無聯絡人可供匯入。點擊以查看詳細資料"
+      ],
+      "No event can be imported. Expand for details.": [
+        "無事件可供匯入。展開以取得詳細資料。"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
     "Info": {
@@ -2602,6 +2927,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "您確定要從垃圾桶中永久刪除已所選取的項目嗎？"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
       ],
@@ -2640,6 +2968,9 @@
       ],
       "Conflict": [
         "衝突"
+      ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "繼續使用 ${ DRIVE_APP_NAME } 並在稍後解鎖雲端硬碟"
       ],
       "Continue with ${ planName }": [
         "繼續使用 ${ planName }"
@@ -2797,6 +3128,9 @@
       "Free up some space or contact your administrator.": [
         "請釋出部分空間或聯絡您的系統管理員。"
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "了解 ${ DRIVE_APP_NAME } 並獲得您的 500 MB 儲存空間獎勵！今天就行動。"
+      ],
       "Go ahead, upload a file": [
         "來吧，上載檔案"
       ],
@@ -2823,6 +3157,9 @@
       ],
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "倘若您擔心記不住密碼，可設定復原片語， 存取帳號和資料即可萬無一失。"
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
@@ -2959,6 +3296,9 @@
       "No results found": [
         "找不到相符的結果"
       ],
+      "No synced computers": [
+        "無已同步的電腦"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "上載的金鑰皆無法用於加密。為能夠傳送郵件至此電郵位址，請上載有效的金鑰或是停用「加密電郵」。"
       ],
@@ -2967,6 +3307,9 @@
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "並非所有檔案皆已傳輸。請嘗試重新上載或下載檔案。"
+      ],
+      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "備註：資料將會持續在安裝 ${ DRIVE_APP_NAME } 的裝置上保持可用狀態。"
       ],
       "of": [
         "/"
@@ -3145,6 +3488,9 @@
       "Tap the + button to upload a file or folder": [
         "輕點 + 按鈕以上載檔案或資料夾"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "暫時無法使用，請稍後再試。"
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "帳號可能換了新的金鑰，不然下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
       ],
@@ -3159,6 +3505,9 @@
       ],
       "There are no files yet": [
         "目前還沒有任何檔案"
+      ],
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
+        "這些檔案將以端到端加密分享。安全儲存這些檔案－包含您全部的文件、照片、私人檔案－保存在僅屬於您的 ${ DRIVE_APP_NAME }。它不但免費且易於使用。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
@@ -3195,6 +3544,9 @@
       ],
       "This will overwrite the existing folder": [
         "這將會覆寫現有的資料夾"
+      ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "這將從 ${ DRIVE_APP_NAME } 中刪除同步的裝置 ${ deviceName }。裝置上的本機檔案不會受影響。"
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "要啟用真正的隱私搜尋，我們必須在本機索引您的檔案。您仍然可以正常使用 ${ DRIVE_APP_NAME }，我們將會在索引完成後通知您。"
@@ -3256,6 +3608,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "同一時間上載數以百計的檔案或會有礙效能。"
       ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
+        "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用此表格通知我們不適當、非法，或其它惡意分享的檔案。您即將報告："
       ],
@@ -3313,6 +3668,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
+      "You can import one data type at a time.": [
+        "您可以一次匯入一種資料類型。"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
       ],
@@ -3321,6 +3679,9 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "您還有${ expiresInDays }天的時間領取您的 500 MB 歡迎獎勵，以及 "
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "您需要有使用中的個人行事曆才可匯入您的行程。"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已使用 ${ spaceDisplayed }% 儲存空間。${ freeUpMessage } ${ upgradeLink }"
@@ -3332,7 +3693,7 @@
         "您所有未儲存的變更將會消失。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期帳單。"
@@ -3530,6 +3891,9 @@
       "Country": [
         "國家"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "建立 ${ BRAND_NAME } 帳號"
+      ],
       "Create a share link": [
         "創建分享連結"
       ],
@@ -3643,6 +4007,9 @@
       ],
       "Import to email address": [
         "匯入至電郵位址"
+      ],
+      "Import to:": [
+        "匯入到："
       ],
       "Label messages as": [
         "將郵件加上標籤"
@@ -4207,11 +4574,17 @@
     "Onboarding Action": {
       "Next": [
         "下一步"
+      ],
+      "Start using ${ DRIVE_APP_NAME }": [
+        "開始使用 ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "創建共享連結"
+      ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "開始使用 ${ DRIVE_APP_NAME }，我們會將您的免費儲存空間加倍至 1GB！"
       ],
       "Set a recovery method": [
         "設定備援方法"
@@ -4244,6 +4617,9 @@
       ]
     },
     "Onboarding Title": {
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "歡迎使用 ${ DRIVE_APP_NAME }"
+      ],
       "Your welcome bonus": [
         "您的歡迎獎勵"
       ]
@@ -4268,6 +4644,11 @@
       ],
       "Merge with calendar": [
         "與行事曆合併"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "您"
       ]
     },
     "PGP key encryption warning": {
@@ -4449,6 +4830,9 @@
       "Bug reported": [
         "錯誤已回報"
       ],
+      "Canceling import": [
+        "正在取消匯入"
+      ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
       ],
@@ -4467,6 +4851,9 @@
       "Fingerprint copied to clipboard": [
         "指紋已複製到剪貼簿"
       ],
+      "Import record deleted": [
+        "匯入記錄已刪除"
+      ],
       "Phone number copied to clipboard": [
         "手機號碼已複製到剪貼簿"
       ],
@@ -4481,6 +4868,9 @@
       ],
       "The link to your file was successfully copied": [
         "已成功複製檔案連結"
+      ],
+      "Undo in progress": [
+        "復原進行中"
       ],
       "Verification successful": [
         "驗證成功"
@@ -4628,6 +5018,9 @@
       "Completed": [
         "完成"
       ],
+      "Computers": [
+        "電腦"
+      ],
       "Contact details": [
         "聯絡人詳細資料"
       ],
@@ -4639,6 +5032,9 @@
       ],
       "Contacts": [
         "通訊錄"
+      ],
+      "Continue with partial import?": [
+        "要繼續部分匯入嗎？"
       ],
       "Create a new file": [
         "創建新檔案"
@@ -4775,8 +5171,17 @@
       "Human verification": [
         "真人身分驗證"
       ],
+      "Import as simple events?": [
+        "要匯入為簡單事件嗎？"
+      ],
       "Import contacts": [
         "匯入聯絡人"
+      ],
+      "Import events": [
+        "匯入事件"
+      ],
+      "Import failed": [
+        "匯入失敗"
       ],
       "Invalid verification code": [
         "驗證碼無效"

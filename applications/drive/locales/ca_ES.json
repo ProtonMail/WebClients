@@ -298,6 +298,15 @@
       "import": [
         "importar"
       ],
+      "Import calendars": [
+        "Importa calendaris"
+      ],
+      "Import contacts": [
+        "Importar contactes"
+      ],
+      "Import emails": [
+        "Importa correus"
+      ],
       "Import from .csv or vCard": [
         "Importar des de .csv o vCard"
       ],
@@ -619,6 +628,29 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Si sortiu ara, alguns contactes potser no es poden importar"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Si surts ara alguns esdeveniments no podràn ser importats"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Fitxer ICS buit"
+      ],
+      "Invalid event": [
+        "Esdeveniment invàlid"
+      ],
+      "Invalid ICS file": [
+        "Fitxer ICS invàlid"
+      ],
+      "Invalid method": [
+        "Mètode no vàlid"
+      ],
+      "Unsupported calendar component": [
+        "Component de calendari no admès"
+      ],
+      "Unsupported event": [
+        "Esdeveniment no suportat"
       ]
     },
     "Beta access description": {
@@ -703,6 +735,40 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "No sincronitzat"
+      ],
+      "Syncing": [
+        "Sincronitzant"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "El calendari no es pot desxifrar"
+      ],
+      "Calendar is syncing": [
+        "El calendari s'està sincronitzant"
+      ],
+      "Calendar is too big": [
+        "El calendari és massa gran"
+      ],
+      "Calendar link is not accessible": [
+        "L'enllaç del calendari no és accessible"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "L'enllaç del calendari no és accessible temporalment"
+      ],
+      "Failed to sync calendar": [
+        "Error sincronitzant el calendari"
+      ],
+      "More than 12 hours passed since last update": [
+        "Han passat més de 12 hores des de la darrera actualització"
+      ],
+      "Unsupported calendar format": [
+        "Format de calendari no suportat"
       ]
     },
     "Collapsible tooltip": {
@@ -1639,6 +1705,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
       ]
@@ -1661,12 +1730,78 @@
         "Activat"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Descripció: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } s'ha cancel·lat."
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } s'ha actualitzat.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Heu estat convidat/da a ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "Quan: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "Quan: ${ formattedStart } (tot el dia)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Quan: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "On: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha acceptat la vostra invitació a ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha declinat la vostra invitació a ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } ha acceptat provisionalment la vostra invitació a ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Cancel·lació d'un esdeveniment el ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Cancel·lació d'un esdeveniment que comença el ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Invitació a un esdeveniment el ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Invitació a un esdeveniment que comença el ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Actualització d'un esdeveniment el ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Actualització d'un esdeveniment que comença el ${ formattedStart }"
+      ]
+    },
     "Error": {
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
       "A problem occurred, please try again": [
         "S'ha produït un problema. Intenteu-ho de nou"
+      ],
+      "Address primary private key not found": [
+        "No s'ha trobat la clau privada primària de l'adreça"
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -1897,8 +2032,21 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "El vostre fitxer ${ formattedFilename } està buit."
       ]
     },
     "Error importing contact": {
@@ -1930,6 +2078,98 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "El vostre fitxer ${ formattedFilename } està buit."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Format dolent. No es pot llegir el component."
+      ],
+      "Calendar": [
+        "Calendari"
+      ],
+      "Component with wrong format": [
+        "Component amb format erroni"
+      ],
+      "Custom timezone": [
+        "Fus horari personalitzat"
+      ],
+      "Edited event not supported": [
+        "Esdeveniment editat no compatible"
+      ],
+      "Element": [
+        "Element"
+      ],
+      "Encryption failed": [
+        "Ha fallat el xifratge"
+      ],
+      "End time out of bounds": [
+        "Hora de finalització fora de límits"
+      ],
+      "Event": [
+        "Esdeveniment"
+      ],
+      "Event validation failed": [
+        "Ha fallat la validació de l'esdeveniment"
+      ],
+      "Floating times not supported": [
+        "Temps flotants no compatibles"
+      ],
+      "Free-busy time information": [
+        "Informació de disponibilitat temporal"
+      ],
+      "Invalid event": [
+        "Esdeveniment no vàlid"
+      ],
+      "Journal entry": [
+        "Entrada de diari"
+      ],
+      "Malformed all-day event": [
+        "Esdeveniment de tot el dia amb format incorrecte"
+      ],
+      "Malformed end time": [
+        "Hora de finalització amb format incorrecte"
+      ],
+      "Malformed recurring event": [
+        "Esdeveniment recurrent amb format incorrecte"
+      ],
+      "Malformed start time": [
+        "Hora de inici amb format incorrecte"
+      ],
+      "Missing start time": [
+        "Falta l’hora d’inici"
+      ],
+      "No UID, title or start time": [
+        "Sense UID, títol o hora d'inici"
+      ],
+      "Non-Gregorian": [
+        "No gregorià"
+      ],
+      "Notification out of bounds": [
+        "Notificació fora de límits"
+      ],
+      "Original recurring event could not be found": [
+        "No es troba l'esdeveniment recurrent original"
+      ],
+      "Recurring event has no occurrences": [
+        "L'esdeveniment recurrent no té cap ocurrència"
+      ],
+      "Recurring rule not supported": [
+        "Regla recurrent no compatible"
+      ],
+      "Start time out of bounds": [
+        "Hora d’inici fora de límits"
+      ],
+      "Timezone": [
+        "Zona Horària"
+      ],
+      "To-do entry": [
+        "Entrada de tasques"
+      ],
+      "Unknown": [
+        "Desconegut"
+      ],
+      "Unsupported event": [
+        "Esdeveniment no suportat"
       ]
     },
     "Error message": {
@@ -1969,6 +2209,55 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "No s'ha seleccionat cap imatge"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "No es pot desxifrar l'arxiu ICS adjuntat"
+      ],
+      "Attached ICS file could not be read": [
+        "No es pot llegir l'arxiu ICS adjunt"
+      ],
+      "Invalid invitation": [
+        "Invitació no vàlida"
+      ],
+      "Invalid response": [
+        "Resposta no vàlida"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "No s'ha pogut afegir l'esdeveniment al calendari. No s'ha enviat cap resposta"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "No s'ha pogut actualitzar l'esdeveniment al calendari. No s'ha enviat cap resposta"
+      ],
+      "Unexpected error": [
+        "Error inesperat"
+      ],
+      "Unsupported invitation": [
+        "Invitació no compatible"
+      ],
+      "Unsupported response": [
+        "Resposta no admesa"
+      ],
+      "We could not cancel the event in your calendar": [
+        "No hem pogut cancelar l'esdeveniment del vostre calendari"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "No hem pogut recuperar l'esdeveniment del calendari"
+      ],
+      "We could not update the event in your calendar": [
+        "No hem pogut actualitzar l'esdeveniment del teu calendari"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "S'ha enviat la vostra resposta, però l'esdeveniment no s'ha pogut afegir al vostre calendari"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "S'ha enviat la resposta, però no s'ha pogut actualitzar l'esdeveniment al calendari"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(No title)"
       ]
     },
     "Feedback Modal Title": {
@@ -2069,13 +2358,45 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } esdeveniment xifrat i afegit al teu calendari",
+        "${ totalImported }/${ totalToImport } esdeveniments xifrats i afegits al teu calendari"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
+        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "S'ha produït un error xifrant i afegint el teu esdeveniment. No s’ha pogut importar cap esdeveniment.",
+        "S'ha produït un error xifrant i afegint els teus esdeveniments. No s’ha pogut importar cap esdeveniment."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esdeveniment importat amb èxit. L’esdeveniment importat ara apareixerà al vostre calendari.",
+        "Esdeveniments importats amb èxit. Els esdeveniments importats ara apareixeràn al vostre calendari."
       ]
     },
     "Import calendar warning": {
       "vCard versions < 3.0": [
         "versions vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Les invitacions importades aparèixen a ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador i dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de ${ BRAND_NAME }."
+      ],
+      "This file contains an event invitation:": [
+        "Aquest fitxer conté una invitació a un esdeveniment:",
+        "Aquest fitxer conté invitacions a un esdeveniment:"
+      ],
+      "This file contains an invitation response:": [
+        "Aquest fitxer conté una resposta a la invitació:",
+        "Aquest fitxer conté respostes a la invitació:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Aquest fitxer conté algunes dades que no podem importar:"
       ]
     },
     "Import contact": {
@@ -2122,18 +2443,6 @@
       ]
     },
     "Import error": {
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Si ${ bold2StepsDisabled } (paràmetre de Gmail per defecte), assegureu-vos que:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Si ${ bold2StepsDisabled } a Gmail (configuració predeterminada), assegureu-vos que:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Si ${ bold2StepsEnabled } a Gmail, assegureu-vos que utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya habitual."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Si ${ bold2StepsEnabled }, assegureu-vos que la vostra adreça de correu electrònic i contrasenya d'aplicació són correctes. ${ boldNot } utilitzis la contrasenya normal."
-      ],
       "Invalid IMAP port": [
         "Port IMAP no vàlid"
       ],
@@ -2146,26 +2455,11 @@
       "Use your app password instead of your regular password if:": [
         "Utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya normal si:"
       ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "També podeu provar de tancar la sessió de ${ boldGoogleAccounts } al navegador i desbloquejar ${ linkCAPTCHA }."
-      ],
       "Your password is correct.": [
         "La seva contrasenya és correcta."
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "La verificació en dos passos està desactivada"
-      ],
-      "2-step verification is enabled": [
-        "La verificació en dos passos està activada"
-      ],
-      "all your other Google accounts": [
-        "tots els altres comptes teus de Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "no"
       ]
@@ -2231,8 +2525,18 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniment no es pot importar. Cliqueu per obtenir més informació.",
+        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniments no es poden importar. Cliqueu per obtenir més informació."
+      ],
       "No contact can be imported. Click for details": [
         "No s'ha pogut importar cap contacte. Cliqueu per obtenir més informació"
+      ],
+      "No event can be imported. Expand for details.": [
+        "No s’han pogut importar esdeveniments. Ampliar per obtenir més informació."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Port del contingent del teu calendari no es compatible i no s'ha pogut importar."
       ]
     },
     "Info": {
@@ -2945,6 +3249,9 @@
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
       ],
+      "You need to have an active personal calendar to import your events.": [
+        "Necessiteu tenir un calendari personal actiu per importar els vostres esdeveniments."
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -3210,6 +3517,9 @@
       ],
       "Import to email address": [
         "Importar a l'adreça de correu electrònic"
+      ],
+      "Import to:": [
+        "Importar a:"
       ],
       "Label messages as": [
         "Etiquetar els missatges com"
@@ -3671,6 +3981,11 @@
         "Combinar amb el calendari"
       ]
     },
+    "Participant name": {
+      "You": [
+        "Tú"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clau no es pot utilitzar per al xifratge"
@@ -3823,6 +4138,9 @@
       "Bug reported": [
         "Error notificat"
       ],
+      "Canceling import": [
+        "Cancel·lar importació"
+      ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
       ],
@@ -3845,6 +4163,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Empremta digital copiada al porta-retalls"
+      ],
+      "Import record deleted": [
+        "S'ha suprimit el registre d'importació"
       ],
       "Phone number copied to clipboard": [
         "Número de telèfon copiat al porta-retalls"
@@ -4020,6 +4341,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Continue with partial import?": [
+        "Continuar amb la importació parcial?"
+      ],
       "Create a new folder": [
         "Crear una nova carpeta"
       ],
@@ -4155,8 +4479,18 @@
       "Human verification": [
         "Verificació humana"
       ],
+      "Import as simple event?": [
+        "Importar com a un esdeveniment simple?",
+        "Importar com a esdeveniments simples?"
+      ],
       "Import contacts": [
         "Importar contactes"
+      ],
+      "Import events": [
+        "Importar esdeveniments"
+      ],
+      "Import failed": [
+        "Error en la importació"
       ],
       "Invalid verification code": [
         "Codi de verificació no vàlid"

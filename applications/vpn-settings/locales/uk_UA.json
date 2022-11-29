@@ -1591,14 +1591,14 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Браузер, який ви використовуєте, не дозволяє повністю авторизувати платіж. Будь ласка, скористайтеся іншим браузером або увійдіть за допомогою комп'ютера."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Найменша сума, яку можна додати, становить ${ _price }"
+      "The minimum amount of credit that can be added is ${ price }": [
+        "Найменша сума, яку можна додати — ${ price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Найменша сума, яку можна внести, становить ${ price }"
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Найменший платіж, який ми приймаємо становить ${ _price2 }"
+      "The minimum payment we accept is ${ price }": [
+        "Найменший платіж, який ми приймаємо — ${ price }"
       ],
       "This field is required": [
         "Це поле є обов'язковим"
@@ -1953,9 +1953,6 @@
       "Amount below minimum (${ amount }).": [
         "Сума нижче найменшої (${ amount })."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL читає ваші особисті дані, щоб забезпечити доступ для рекламодавців та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Ви впевнені, що хочете вимкнути двоетапну перевірку?"
       ],
@@ -2011,7 +2008,7 @@
         "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
       ],
       "Each code can only be used once": [
-        "Кожен код може бути використаний тільки один раз"
+        "Кожен код можна використати лише один раз"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Розміщення до 10 власних доменних імен електронної пошти включено безплатно. Більше доменів можна додати за ${ price }."
@@ -2042,6 +2039,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введіть код підтвердження. Цифри ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Введіть подробиці вашого облікового запису ${ BRAND_NAME }."
@@ -2078,9 +2078,6 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "Отримати свою адресу ${ BRAND_NAME }"
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google записує вашу онлайн-активність та читає ваші особисті дані, щоб забезпечити доступ для рекламодавців та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
       ],
       "here": [
         "тут"
@@ -2166,14 +2163,11 @@
       "lose access to all current encrypted data": [
         "втратите доступ до всіх наявних зашифрованих даних"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru читає ваші особисті дані, щоб забезпечити доступ для рекламодавців, російських державних агенцій та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Обов'язково ${ addARecoveryMethod }, щоб мати можливість отримати доступ до свого облікового запису в разі втрати пароля."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ _switchButton }."
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ switchButton }."
       ],
       "No credit card required": [
         "Кредитна картка не обов'язкова"
@@ -2484,12 +2478,6 @@
       "Would you like to receive a new verification code?": [
         "Бажаєте отримати новий код підтвердження?"
       ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo читає ваші особисті дані, щоб забезпечити доступ для рекламодавців, державних агенцій США та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex записує вашу онлайн-активність та читає ваші особисті дані, щоб забезпечити доступ для рекламодавців та інших сторонніх організацій. Для кращої приватності створіть надійну адресу електронної пошти."
-      ],
       "You already have a free account": [
         "У мене вже є безплатний обліковий запис"
       ],
@@ -2554,7 +2542,7 @@
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Щоб користуватися ${ toAppName }, вам потрібна адреса ${ MAIL_APP_NAME }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. За 28 днів електронні листи перестануть надходити до вашої поштової скриньки, посилання на спільний доступ до Drive будуть заблоковані, і ви не зможете завантажувати нові файли. Щоб відновити звичайну роботу, будь ласка, сплатіть несплачені рахунки."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
@@ -2563,13 +2551,13 @@
         "Ваші облікові записи ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } пов'язані. Щоб видалити їх обидва, виконайте вхід у ${ loginLink } та видаліть свій обліковий запис."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
+        "Ваш обліковий запис має несплачені рахунки. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має хоча б один несплачений рахунок. Ваш обліковий запис обмежено, і всі послуги зараз заблоковані до оплати. ${ payInvoiceLink }"
+        "Ваш обліковий запис має несплачені рахунки. У зв'язку з цим його роботу обмежено, а всі послуги наразі заблоковані, доки не буде проведено оплату. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має хоча б один несплачений рахунок. Ваш обліковий запис обмежений. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
+        "Ваш обліковий запис має несплачені рахунки, тому його роботу обмежено. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
@@ -3185,14 +3173,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Переглянути всі тарифні плани ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "Від ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Від ${ _price2 } за користувача"
-      ],
       "From ${ price }": [
         "Від ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Від ${ price } за користувача"
       ],
       "Keep my ${ currentPlanName } account": [
         "Залишити мою передплату ${ currentPlanName }"
@@ -4082,12 +4067,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } календар на користувача",
-        "${ _n } календарі на користувача",
-        "${ _n } календарів на користувача",
-        "${ _n } календарів на користувача"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } високошвидкісне VPN-з'єднання",
         "${ maxVpn } високошвидкісні VPN-з'єднання",
@@ -4099,6 +4078,12 @@
         "${ n } календарі",
         "${ n } календарів",
         "${ n } календарі"
+      ],
+      "${ n } calendar per user": [
+        "${ n } календар на користувача",
+        "${ n } календарі на користувача",
+        "${ n } календарів на користувача",
+        "${ n } календарів на користувача"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } високошвидкісне VPN-з'єднання",
@@ -4625,9 +4610,6 @@
       ],
       "Switch to two-password mode": [
         "Перемкнутися на двопарольний режим"
-      ],
-      "This address might compromise your privacy.": [
-        "Ця адреса може загрожувати вашій приватності."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Випробуйте найкраще у ${ MAIL_APP_NAME } безплатно"

@@ -1000,6 +1000,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "検証コードを入力してください。桁数は ${ digit } 桁です。"
+      ],
       "Enter your own password (as organization admin).": [
         "パスワード（管理員のもの）を入力してください"
       ],

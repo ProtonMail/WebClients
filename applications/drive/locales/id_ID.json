@@ -302,6 +302,15 @@
       "import": [
         "impor"
       ],
+      "Import calendars": [
+        "Impor kalender"
+      ],
+      "Import contacts": [
+        "Impor kontak"
+      ],
+      "Import emails": [
+        "Impor email"
+      ],
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
       ],
@@ -638,11 +647,34 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Dengan keluar sekarang, beberapa kontak mungkin tidak diimpor"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Abaila Anda keluar sekarang, sebagian acara kemungkinan tidak akan terimpor"
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikasi ${ BRAND_NAME }"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Berkas ICS kosong"
+      ],
+      "Invalid event": [
+        "Acara tidak valid"
+      ],
+      "Invalid ICS file": [
+        "Berkas ICS tidak valid"
+      ],
+      "Invalid method": [
+        "Metode tidak valid"
+      ],
+      "Unsupported calendar component": [
+        "Komponen kalender tidak didukung"
+      ],
+      "Unsupported event": [
+        "Acara tidak didukung"
       ]
     },
     "Beta access description": {
@@ -727,6 +759,54 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Tidak disinkronkan"
+      ],
+      "Syncing": [
+        "Menyinkronkan"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalender tidak dapat didekripsi"
+      ],
+      "Calendar is syncing": [
+        "Kalender sedang menyinkronkan data"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Kalender sedang menyinkronkan data: proses ini dapat berlangsung hingga beberapa menit sebelum seluruh acara dapat dimunculkan."
+      ],
+      "Calendar is too big": [
+        "Ukuran kalender terlalu besar"
+      ],
+      "Calendar link is not accessible": [
+        "Tautan kalender tidak dapat diakses"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "Tautan kalender untuk sementara tidak dapat diakses"
+      ],
+      "Failed to sync calendar": [
+        "Gagal menyinkronkan kalender"
+      ],
+      "More than 12 hours passed since last update": [
+        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir"
+      ],
+      "Unsupported calendar format": [
+        "Format kalender tidak didukung"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Tautan kalender tidak dapat diakses dari luar ekosistem penyedia kalender."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Tautan kalender untuk sementara tidak dapat diakses. Pastikan tautan dari penyedia kalender masih valid."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — ${ CALENDAR_APP_NAME } akan mencoba untuk memperbarui kalender dalam beberapa jam."
       ]
     },
     "Collapsible tooltip": {
@@ -1693,6 +1773,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
       ]
@@ -1715,6 +1798,69 @@
         "Aktif"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Deskripsi: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } telah dibatalkan."
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } telah diperbarui.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Anda diundang ke ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "Kapan: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "Kapan: ${ formattedStart } (sepanjang hari)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Kapan: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Di mana: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } telah menerima undangan Anda ke ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } telah menolak undangan Anda ke ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } telah secara tentatif menerima undangan Anda ke ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Pembatalan acara pada ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Pembatalan acara mulai pada ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Undangan acara pada ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Undangan acara mulai pada ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Pembaruan acara pada ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Pembaruan acara mulai pada ${ formattedStart }"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" telah ada"
@@ -1724,6 +1870,9 @@
       ],
       "A problem occurred, please try again": [
         "Terdapat suatu masalah, silakan coba lagi"
+      ],
+      "Address primary private key not found": [
+        "Kunci pribadi utama alamat tidak ditemukan"
       ],
       "Authentication canceled.": [
         "Otentikasi dibatalkan."
@@ -1976,8 +2125,35 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Terjadi kesalahan pada saat membaca berkas ${ formattedFilename }. Format berkas tidak sesuai."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Hanya format berkas ICS yang diizinkan."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Terjadi kesalahan pada saat mengunggah berkas. Tidak ada berkas yang dipilih."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "Berkas ${ formattedFilename } milik Anda mengandung lebih dari ${ MAX_IMPORT_EVENTS_STRING } acara."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Berkas ${ formattedFilename } tidak dapat diimpor karena mengandung metode yang tidak valid."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Berkas ${ formattedFilename } tidak memiliki acara untuk diimpor."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Berkas ${ formattedFilename } Anda kosong."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Berkas ${ formattedFilename } bukan merupakan kalender."
       ]
     },
     "Error importing contact": {
@@ -2009,6 +2185,104 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Berkas ${ formattedFilename } Anda kosong."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Format tidak valid. Komponen tidak dapat dibaca."
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
+      "Calendar time zone not supported": [
+        "Zona waktu kalender tidak didukung"
+      ],
+      "Component with wrong format": [
+        "Komponen dengan format yang salah"
+      ],
+      "Custom timezone": [
+        "Zona waktu khusus"
+      ],
+      "Edited event not supported": [
+        "Acara yang telah diedit tidak didukung"
+      ],
+      "Element": [
+        "Elemen"
+      ],
+      "Encryption failed": [
+        "Enkripsi gagal"
+      ],
+      "End time out of bounds": [
+        "Waktu akhir di luar batas"
+      ],
+      "Event": [
+        "Acara"
+      ],
+      "Event validation failed": [
+        "Validasi acara gagal"
+      ],
+      "Floating times not supported": [
+        "Waktu desimal tidak didukung"
+      ],
+      "Free-busy time information": [
+        "Informasi waktu luang dan waktu sibuk"
+      ],
+      "Invalid event": [
+        "Acara tidak valid"
+      ],
+      "Journal entry": [
+        "Entri jurnal"
+      ],
+      "Malformed all-day event": [
+        "Acara sepanjang hari tidak diformat dengan benar"
+      ],
+      "Malformed end time": [
+        "Waktu akhir tidak diformat dengan benar"
+      ],
+      "Malformed recurring event": [
+        "Acara berulang tidak diformat dengan benar"
+      ],
+      "Malformed start time": [
+        "Waktu mulai tidak diformat dengan benar"
+      ],
+      "Missing start time": [
+        "Waktu mulai hilang"
+      ],
+      "No UID, title or start time": [
+        "Tidak ada UID, judul, atau waktu mulai"
+      ],
+      "Non-Gregorian": [
+        "Non-Gregorian"
+      ],
+      "Notification out of bounds": [
+        "Notifikasi di luar batas"
+      ],
+      "Original recurring event could not be found": [
+        "Acara berulang yang asli tidak ditemukan"
+      ],
+      "Recurring event has no occurrences": [
+        "Acara berulang tidak terlaksana"
+      ],
+      "Recurring rule not supported": [
+        "Aturan berulang tidak didukung"
+      ],
+      "Start time out of bounds": [
+        "Waktu mulai di luar batas"
+      ],
+      "Time zone not supported": [
+        "Zona waktu tidak didukung"
+      ],
+      "Timezone": [
+        "Zona waktu"
+      ],
+      "To-do entry": [
+        "Entri to-do"
+      ],
+      "Unknown": [
+        "Tidak diketahui"
+      ],
+      "Unsupported event": [
+        "Acara tidak didukung"
       ]
     },
     "Error message": {
@@ -2059,6 +2333,55 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "Nilai diperlukan"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Berkas ICS terlampir tidak dapat didekripsi"
+      ],
+      "Attached ICS file could not be read": [
+        "Berkas ICS terlampir tidak dapat dibaca"
+      ],
+      "Invalid invitation": [
+        "Undangan tidak valid"
+      ],
+      "Invalid response": [
+        "Respon tidak valid"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Acara ini tidak dapat ditambahkan ke kalender Anda. Tidak ada jawaban yang terkirim"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Acara ini tidak dapat diperbarui ke kalender Anda. Tidak ada jawaban yang terkirim"
+      ],
+      "Unexpected error": [
+        "Kesalahan yang tidak terduga"
+      ],
+      "Unsupported invitation": [
+        "Undangan tidak didukung"
+      ],
+      "Unsupported response": [
+        "Respon tidak didukung"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Kami tidak dapat membatalkan acara di kalender Anda"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Kami tidak dapat mengambil acara dari kalender Anda"
+      ],
+      "We could not update the event in your calendar": [
+        "Kami tidak dapat memperbarui acara di kalender Anda"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Jawaban Anda terkirim, tapi acara tidak dapat ditambahkan ke kalender Anda"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Jawaban Anda terkirim, namun acara yang bersangkutan tidak dapat diperbarui pada kalender Anda"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(tanpa judul)"
       ]
     },
     "Feedback Modal Title": {
@@ -2176,13 +2499,48 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } acara telah dienkripsi dan ditambahkan ke kalender Anda"
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. Tidak ada acara yang berhasil diimpor."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Mengenkripsi dan menambah kontak: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Mengenkripsi dan menambahkan acara ke kalender: ${ totalImported }/${ totalToImport }"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Acara berhasil diimpor. Acara tersebut akan muncul pada kalender Anda."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Mohon untuk tidak menutup tab ini sebelum proses impor selesai."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } saat ini tidak mendukung tipe, rincian, dan format acara tertentu."
+      ],
       "vCard versions < 3.0": [
         "versi vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk simple event tanpa rincian seputar penyelenggara dan peserta. Untuk dapat memperoleh pembaruan terkini dan melihat daftar peserta, mintalah penyelenggara untuk mengundang Anda melalui alamat email ${ BRAND_NAME } Anda."
+      ],
+      "This file contains event invitations:": [
+        "Berkas ini mengandung undangan acara:"
+      ],
+      "This file contains invitation responses:": [
+        "Berkas ini mengandung balasan atas undangan yang dikirim:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Sebagian data yang terkandung dalam berkas ini tidak dapat kami impor:"
       ]
     },
     "Import contact": {
@@ -2225,15 +2583,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Akses aplikasi yang kurang aman\" telah diaktifkan pada pengaturan keamanan akun Google Anda."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } tidak dapat terhubung ke akun Anda. Mohon pastikan akses IMAP Gmail telah aktif."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } tidak dapat terhubung ke akun Anda. Mohon pastikan akses IMAP telah aktif pada akun Gmail Anda."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } tidak dapat terhubung ke akun Anda. Mohon pastikan bahwa:"
       ],
@@ -2242,9 +2591,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda. Mohon pastikan bahwa:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda. Mohon pastikan alamat server mail dan nomor port telah sesuai."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } tidak dapat terhubung ke akun Yahoo Anda. Mohon pastikan alamat server mail dan nomor port telah sesuai."
@@ -2257,18 +2603,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Verifikasi 2 langkah telah diaktifkan pada akun email eksternal Anda."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Jika ${ bold2StepsDisabled } (pengaturan baku Gmail), mohon pastikan:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Jika ${ bold2StepsDisabled } di Gmail (pengaturan baku), pastikan:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Jika ${ bold2StepsEnabled } di Gmail, pastikan Anda menggunakan kata sandi aplikasi alih-alih kata sandi Anda biasanya."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Apabila ${ bold2StepsEnabled }, mohon pastikan alamat email dan kata sandi aplikasi Anda sudah benar. ${ boldNot } gunakan kata sandi Anda biasanya."
       ],
       "IMAP access is enabled in your external account.": [
         "Akses IMAP telah diaktifkan pada akun eksternal Anda."
@@ -2287,9 +2621,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Gunakan kata sandi aplikasi Anda alih-alih kata sandi Anda biasanya jika:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Anda juga bisa keluar dari ${ boldGoogleAccounts } di peramban, lalu buka kunci ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
@@ -2311,18 +2642,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Verifikasi 2 langkah dinonaktifkan"
-      ],
-      "2-step verification is enabled": [
-        "Verifikasi 2 langkah aktif"
-      ],
-      "all your other Google accounts": [
-        "semua akun Google Anda lainnya"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "jangan"
       ]
@@ -2477,8 +2796,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } acara dari total ${ totalEvents } acara tidak akan diimpor. Klik untuk keterangan lebih lanjut."
+      ],
       "No contact can be imported. Click for details": [
         "Tidak ada kontak yang dapat diimpor. Klik untuk melihat rincian"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Tidak ada acara yang dapat diimpor. Klik untuk melihat rincian lebih lanjut."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
     "Info": {
@@ -2775,6 +3103,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Masukkan kode verifikasi. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
@@ -3193,6 +3524,9 @@
       "Tap the + button to upload a file or folder": [
         "Ketuk tombol + untuk mengunggah berkas atau folder"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon hanya buka berkas/folder berikut apabila Anda mempercayai sumbernya."
       ],
@@ -3311,7 +3645,7 @@
         "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
       ],
       "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Gunakan Drive for Desktop untuk menyinkronkan folder pada komputer Anda dengan ${ DRIVE_APP_NAME }. Folder yang telah disinkronkan akan muncul pada halaman ini dan dapat diakses dari mana saja.  ${ LearnMore }"
+        "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Gunakan formulir berikut untuk melaporkan berkas yang berisikan hal-hal yang\ntidak pantas, ilegal, ataupun berbahaya kepada kami. Anda akan melaporkan:"
@@ -3373,6 +3707,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
@@ -3381,6 +3718,9 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "Anda memiliki ${ expiresInDays } hari tersisa untuk mengklaim bonus 500 MB dan "
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Anda harus punya kalender pribadi aktif supaya bisa mengimpor acara."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
@@ -3392,7 +3732,7 @@
         "Anda akan kehilangan semua perubahan yang belum disimpan."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
@@ -3709,6 +4049,9 @@
       ],
       "Import to email address": [
         "Impor ke alamat email"
+      ],
+      "Import to:": [
+        "Impor ke:"
       ],
       "Label messages as": [
         "Labeli pesan-pesan ini dengan"
@@ -4353,6 +4696,11 @@
         "Gabungkan dengan kalender"
       ]
     },
+    "Participant name": {
+      "You": [
+        "Anda"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Kunci tidak dapat digunakan untuk enkripsi"
@@ -4532,6 +4880,9 @@
       "Bug reported": [
         "Bug berhasil dilaporkan"
       ],
+      "Canceling import": [
+        "Membatalkan proses impor"
+      ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
       ],
@@ -4550,6 +4901,9 @@
       "Fingerprint copied to clipboard": [
         "Sidik jari disalin ke clipboard"
       ],
+      "Import record deleted": [
+        "Rekaman impor dihapus"
+      ],
       "Phone number copied to clipboard": [
         "Nomor telepon disalin ke clipboard"
       ],
@@ -4564,6 +4918,9 @@
       ],
       "The link to your file was successfully copied": [
         "Tautan ke berkas Anda berhasil disalin"
+      ],
+      "Undo in progress": [
+        "Pengurungan sedang berlangsung"
       ],
       "Verification successful": [
         "Verifikasi berhasil"
@@ -4726,6 +5083,9 @@
       "Contacts": [
         "Kontak"
       ],
+      "Continue with partial import?": [
+        "Lanjut impor walau hanya sebagian?"
+      ],
       "Create a new file": [
         "Buat berkas baru"
       ],
@@ -4861,8 +5221,17 @@
       "Human verification": [
         "Verifikasi manusia"
       ],
+      "Import as simple events?": [
+        "Impor sebagai acara sederhana?"
+      ],
       "Import contacts": [
         "Impor kontak"
+      ],
+      "Import events": [
+        "Impor acara"
+      ],
+      "Import failed": [
+        "Proses impor gagal"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
