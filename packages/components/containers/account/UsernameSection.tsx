@@ -49,21 +49,29 @@ const UsernameSection = ({ app }: Props) => {
                 )}
                 <SettingsLayout>
                     <SettingsLayoutLeft>
-                        <div className="text-semibold">{Name ? c('Label').t`Name` : c('Label').t`Username`}</div>
+                        <div className="text-semibold">{Name ? c('Label').t`Name` : c('Label').t`Email address`}</div>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="pt0-5">
-                        {app === APPS.PROTONVPN_SETTINGS ? (
-                            <Href
-                                url="https://account.proton.me/switch?product=mail"
-                                title={c('Info').t`Log in to ${MAIL_APP_NAME} to activate your address`}
-                            >
-                                {c('Link').t`Not activated`}
-                            </Href>
-                        ) : (
-                            <div className="text-pre-wrap break user-select">{Name ? Name : Email}</div>
-                        )}
+                        <div className="text-pre-wrap break user-select">{Name ? Name : Email}</div>
                     </SettingsLayoutRight>
                 </SettingsLayout>
+                {app === APPS.PROTONVPN_SETTINGS && Type === UserType.PROTON && (
+                    <SettingsLayout>
+                        <SettingsLayoutLeft>
+                            <div className="text-semibold">{c('Label').t`${MAIL_APP_NAME} address`}</div>
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight>
+                            {primaryAddress?.Email ? (
+                                <div className="text-pre-wrap break user-select">{primaryAddress.Email}</div>
+                            ) : (
+                                <Href
+                                    url="https://account.proton.me/switch?product=mail"
+                                    title={c('Info').t`Log in to ${MAIL_APP_NAME} to activate your address`}
+                                >{c('Link').t`Not activated`}</Href>
+                            )}
+                        </SettingsLayoutRight>
+                    </SettingsLayout>
+                )}
                 {Type === UserType.EXTERNAL && primaryAddress && (
                     <SettingsLayout>
                         <SettingsLayoutLeft>
