@@ -74,14 +74,14 @@ const ENV_CONFIG = Object.keys(APP_CONFIG_JSON).reduce(
 );
 
 const API_TARGETS = {
-    prod: 'https://mail.protonmail.com',
+    prod: 'https://mail.proton.me',
     localhost: 'https://localhost',
     proxy: '/api',
     ...ENV_CONFIG.api,
 };
 
 const getApi = (value) => {
-    // We can do --api=https://mail.protonmail.com/api and it's only for dev, so we can stop here
+    // We can do --api=https://mail.proton.me/api and it's only for dev, so we can stop here
     if (value.startsWith('http') || value.startsWith('/api')) {
         return value;
     }
