@@ -2,6 +2,7 @@ import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, ReactNode, Ref, fo
 
 import { ButtonLike, ButtonLikeShape } from '@proton/atoms';
 import { ThemeColorUnion } from '@proton/colors';
+import clsx from '@proton/utils/clsx';
 
 import { useCombinedRefs } from '../../hooks';
 
@@ -27,7 +28,7 @@ const FileInput = (
         <ButtonLike
             as="label"
             htmlFor={id}
-            className={className}
+            className={clsx(className, 'relative')}
             disabled={disabled}
             shape={shape}
             color={color}
