@@ -48,7 +48,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import Layout from '../public/Layout';
-import { defaultPersistentKey, getHasAppExternalSignup } from '../public/helper';
+import { defaultPersistentKey, getHasAppExternalSignup, getIsVPNApp } from '../public/helper';
 import AccountStep from './AccountStep';
 import CongratulationsStep from './CongratulationsStep';
 import ExploreStep from './ExploreStep';
@@ -147,6 +147,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             if (toApp && getHasAppExternalSignup(toApp)) {
                 return [SignupType.Email, SignupType.Username];
             }
+            // Only on account.protonvpn.com do we suggest external only sign up
             if (clientType === CLIENT_TYPES.VPN) {
                 return [SignupType.Email];
             }
@@ -154,9 +155,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                 return [SignupType.Username, SignupType.Email];
             }
         }
-        return clientType === CLIENT_TYPES.VPN || toApp === APPS.PROTONVPN_SETTINGS
-            ? [SignupType.VPN]
-            : [SignupType.Username];
+        return getIsVPNApp(toApp, clientType) ? [SignupType.VPN] : [SignupType.Username];
     })();
     const defaultSignupType = signupTypes[0];
 
@@ -396,7 +395,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         }
     })();
     const upsellPlanName = (() => {
-        if (defaultSignupType === SignupType.VPN) {
+        if (getIsVPNApp(toApp, clientType)) {
             return PLANS.VPN;
         }
 
@@ -484,6 +483,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             )}
             {step === ACCOUNT_CREATION_USERNAME && (
                 <AccountStep
+                    toApp={toApp}
                     clientType={clientType}
                     onBack={handleBackStep}
                     title={(() => {
