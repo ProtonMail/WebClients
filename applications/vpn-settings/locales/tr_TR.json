@@ -1583,14 +1583,14 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da bilgisayar ile oturum açın."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Eklenebilecek en az kredi tutarı: ${ _price }"
+      "The minimum amount of credit that can be added is ${ price }": [
+        "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Bağışlanabilecek en az tutar: ${ price }"
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Kabul ettiğimiz en az ödeme: ${ _price2 }"
+      "The minimum payment we accept is ${ price }": [
+        "Kabul ettiğimiz en az ödeme: ${ price }"
       ],
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
@@ -1927,9 +1927,6 @@
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL, reklamcılara ve diğer üçüncü taraflara bilgi sağlamak için kişisel verilerinizi okur. Daha iyi bir kişisel gizlilik elde etmek için güvenli bir e-posta adresi oluşturun."
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "İki aşamalı kimlik doğrulamayı devre dışı bırakmak istediğinize emin misiniz?"
       ],
@@ -2017,6 +2014,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } hesabınızın kimlik doğrulama bilgilerini yazın."
       ],
@@ -2052,9 +2052,6 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresimi al"
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google, reklam verenlere ve üçüncü taraflara bilgi sağlamak için çevrimiçi etkinliğinizi ve kişisel bilgilerinizi kayıt eder. Daha iyi bir kişisel gizlilik elde etmek için, güvenli bir eposta adresi oluşturun."
       ],
       "here": [
         "buraya"
@@ -2140,14 +2137,11 @@
       "lose access to all current encrypted data": [
         "tüm şifrelenmiş verilere erişimi kaybedeceksiniz"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru, reklamcılara, Rus devlet kurumlarına ve diğer üçüncü taraflara bilgi sağlamak için kişisel verilerinizi okur. Daha iyi bir kişisel gizlilik elde etmek için güvenli bir e-posta adresi oluşturun."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Hesabınızı kurmak için bu bilgileri iki aşamalı kimlik doğrulama aygıtınıza el ile yazın. ${ _switchButton }."
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Hesabınızı kurmak için bu bilgileri iki aşamalı kimlik doğrulama aygıtınıza el ile yazın. ${ switchButton }."
       ],
       "No credit card required": [
         "Kredi kartı gerekmez"
@@ -2458,12 +2452,6 @@
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo, reklamcılara, ABD istihbarat kurumlarına ve diğer üçüncü taraflara bilgi sağlamak için kişisel verilerinizi okur. Daha iyi bir kişisel gizlilik elde etmek için güvenli bir e-posta adresi oluşturun."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex, reklam verenlere ve diğer üçüncü taraflara bilgi sağlamak için çevrimiçi etkinliğinizi kaydeder ve kişisel verilerinizi okur. Daha iyi bir kişisel gizlilik elde etmek için güvenli bir e-posta adresi oluşturun."
-      ],
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
       ],
@@ -2528,7 +2516,7 @@
         "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. ${ toAppName } kullanabilmek için bir ${ MAIL_APP_NAME } adresinizin olması gereklidir."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
@@ -3157,14 +3145,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
       ],
-      "From ${ _price }": [
-        "${ _price } ile başlar"
-      ],
-      "From ${ _price2 } per user": [
-        "Bir kullanıcı için ${ _price2 } ile başlar"
-      ],
       "From ${ price }": [
         "${ price } ile başlar"
+      ],
+      "From ${ price } per user": [
+        "Bir kullanıcı için ${ price } ile başlar"
       ],
       "Keep my ${ currentPlanName } account": [
         "${ currentPlanName } hesabımı koru"
@@ -4018,10 +4003,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "Kullanıcı başına ${ _n } takvim",
-        "Kullanıcı başına ${ _n } takvim"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } yüksek hızlı VPN bağlantısı",
         "${ maxVpn } yüksek hızlı VPN bağlantısı"
@@ -4029,6 +4010,10 @@
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
+      ],
+      "${ n } calendar per user": [
+        "Kullanıcı başına ${ n } takvim",
+        "Kullanıcı başına ${ n } takvim"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } yüksek hızlı VPN bağlantısı",
@@ -4535,9 +4520,6 @@
       ],
       "Switch to two-password mode": [
         "İki parola kipine geç"
-      ],
-      "This address might compromise your privacy.": [
-        "Bu adres kişisel gizliliğinizi tehlikeye atabilir."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "En iyi ${ MAIL_APP_NAME } sürümünü ücretsiz deneyin"

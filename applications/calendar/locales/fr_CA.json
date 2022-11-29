@@ -249,6 +249,15 @@
       "import": [
         "importer"
       ],
+      "Import calendars": [
+        "Importer des calendriers"
+      ],
+      "Import contacts": [
+        "Importer des contacts"
+      ],
+      "Import emails": [
+        "Importer des courriels"
+      ],
       "Import events": [
         "Importer des événements"
       ],
@@ -2824,26 +2833,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "« L'accès aux applications moins sécurisées » est activé dans les paramètres de sécurité de votre compte Google."
-      ],
       "2-step verification is enabled in your external account.": [
         "La vérification en deux étapes est activée dans votre compte externe."
       ],
       "2-step verification is enabled in your external email account.": [
         "La vérification en deux étapes est activée dans votre compte de messagerie externe."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Si ${ bold2StepsDisabled } (paramètre Gmail par défaut), assurez-vous que:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Si ${ bold2StepsDisabled } dans Gmail (par défaut), assurez-vous que:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Si ${ bold2StepsEnabled } dans Gmail, assurez-vous que vous utilisez le mot de passe de votre application au lieu de votre mot de passe habituel."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Si ${ bold2StepsEnabled }, assurez-vous que votre adresse courriel et votre mot de passe de l'application sont corrects. N'utilisez ${ boldNot } votre mot de passe habituel."
       ],
       "IMAP access is enabled in your external account.": [
         "L'accès IMAP est activé dans votre compte externe."
@@ -2862,9 +2856,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Utilisez le mot de passe d'application au lieu de votre mot de passe habituel si:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Vous pouvez également essayer de vous déconnecter de ${ boldGoogleAccounts } dans le navigateur, puis déverrouiller ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Le mot de passe de votre application est correct. N'utilisez ${ boldNot } votre mot de passe habituel."
@@ -2886,18 +2877,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "La vérification en deux étapes est désactivée"
-      ],
-      "2-step verification is enabled": [
-        "La vérification en deux étapes est activée"
-      ],
-      "all your other Google accounts": [
-        "tous vos autres comptes Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "pas"
       ]
@@ -3478,6 +3457,9 @@
       "support team": [
         "équipe d'assistance"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Temporairement indisponible. Veuillez vérifier plus tard."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
       ],
@@ -3622,6 +3604,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Vous pouvez vérifier la progression ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Vous pouvez importer un type de données à la fois."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Vous ne pouvez modifier que les propriétés personnelles de l'événement, car vous ne pouvez pas envoyer de messages à partir de l'adresse de l'organisateur·rice."
       ],
@@ -3633,6 +3618,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Vous avez réinitialisé votre mot de passe et les événements liés aux calendriers suivants n'ont pas pu être déchiffrés.\nTous les liens de calendriers partagés que vous avez créés précédemment ne fonctionneront plus.\nTous les calendriers actifs souscrits se synchroniseront à nouveau après quelques minutes."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Vous devez avoir un calendrier personnel actif pour importer vos événements."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Vous avez déjà refusé cette invitation. Demandez une nouvelle invitation à la personne qui vous a invité·e"
@@ -4952,6 +4940,9 @@
       "Calendar updated": [
         "Calendrier mis à jour"
       ],
+      "Canceling import": [
+        "Annulation de l'importation"
+      ],
       "Cancellation sent and all events deleted": [
         "Annulation envoyée et tous les événements supprimés"
       ],
@@ -5005,6 +4996,9 @@
       "Future events updated": [
         "Événements futurs mis à jour"
       ],
+      "Import record deleted": [
+        "Enregistrement supprimé"
+      ],
       "Invitation sent and all events updated": [
         "Invitation envoyée et tous les événements mis à jour"
       ],
@@ -5043,6 +5037,9 @@
       ],
       "Preferences saved": [
         "Préférences enregistrées"
+      ],
+      "Undo in progress": [
+        "Annulation en cours"
       ],
       "Verification successful": [
         "Vérification réussie"

@@ -253,6 +253,15 @@
       "import": [
         "імпортувати"
       ],
+      "Import calendars": [
+        "Імпортувати календарі"
+      ],
+      "Import contacts": [
+        "Імпортувати контакти"
+      ],
+      "Import emails": [
+        "Імпортувати електронну пошту"
+      ],
       "Import events": [
         "Імпорт подій"
       ],
@@ -576,6 +585,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } почалося ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } почалося ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } розпочато вчора"
       ],
@@ -587,6 +599,15 @@
       ],
       "${ title } starts now": [
         "${ title } розпочинається зараз"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } розпочнеться ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } розпочнеться ${ formattedDate } о ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } розпочнеться ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } розпочнеться ${ formattedDateWithTime }"
@@ -2062,11 +2083,23 @@
         "Деякі контакти не мають дійсної адреси е-пошти: ${ list }",
         "Деякі контакти не мають дійсної адреси е-пошти: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } не має адреси е-пошти",
+        "Деякі контакти не мають адрес е-пошти: ${ list }",
+        "Деякі контакти не мають адрес е-пошти: ${ list }",
+        "Деякі контакти не мають адрес е-пошти: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } має недійсні адреси е-пошти",
         "В деяких групах недійсні адреси е-пошти: ${ list }",
         "В деяких групах недійсні адреси е-пошти: ${ list }",
         "В деяких групах недійсні адреси е-пошти: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } не має контактів",
+        "У деяких групах немає контактів: ${ list }",
+        "У деяких групах немає контактів: ${ list }",
+        "У деяких групах немає контактів: ${ list }"
       ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
@@ -2943,15 +2976,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "«Доступ менш захищених програм» увімкнено у налаштуваннях безпеки вашого облікового запису Google."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом. Переконайтеся, що доступ Gmail IMAP увімкнено."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом. Переконайтеся, що доступ IMAP увімкнено у вашому обліковому записі Gmail."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом. Переконайтеся, що:"
       ],
@@ -2960,9 +2984,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } не може з'єднатися з вашим зовнішнім обліковим записом. Переконайтеся, що:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом Gmail. Переконайтеся, що адреса поштового сервера і номер порту правильні."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що адреса поштового сервера і номер порту правильні."
@@ -2975,18 +2996,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі пошти."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Якщо ${ bold2StepsDisabled } (типові налаштування Gmail), переконайтеся, що:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Якщо ${ bold2StepsDisabled } в Gmail (типові налаштування), переконайтеся, що:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Якщо ${ bold2StepsEnabled } в Gmail, переконайтеся, що ви використовуєте пароль програм замість свого звичайного пароля."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Якщо ${ bold2StepsEnabled }, переконайтеся що ваша адреса е-пошти і пароль правильні. ${ boldNot } використовуйте свій звичайний пароль."
       ],
       "IMAP access is enabled in your external account.": [
         "Доступ до IMAP увімкнено у вашому зовнішньому обліковому записі."
@@ -3005,9 +3014,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Використовуйте пароль програм замість свого звичайного пароля якщо:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Ви також можете спробувати вийти з ${ boldGoogleAccounts } в браузері, потім розблокувати ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
@@ -3029,18 +3035,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Двоетапну перевірку вимкнено"
-      ],
-      "2-step verification is enabled": [
-        "Двоетапну перевірку увімкнено"
-      ],
-      "all your other Google accounts": [
-        "усі інші ваші облікові записи Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "не"
       ]
@@ -3462,7 +3456,7 @@
         "Дублікат ключа оновлено"
       ],
       "Each code can only be used once": [
-        "Кожен код може бути використаний тільки один раз"
+        "Кожен код можна використати лише один раз"
       ],
       "Enter the code from your authenticator app": [
         "Введіть код з програми автентифікації"
@@ -3472,6 +3466,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введіть код підтвердження. Цифри ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Введіть власний пароль (як адміністратор організації)."
@@ -3687,10 +3684,10 @@
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
       "Select what you want to import.": [
-        "Виберіть те, що бажаєте імпортувати."
+        "Виберіть, що ви хочете імпортувати."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більше 20 календарів."
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більш ніж 20 календарів."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -3718,6 +3715,9 @@
       ],
       "support team": [
         "командою підтримки"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Програма повинна локально розшифрувати ваші контакти для можливості їх експортування. Після завершення процесу буде згенеровано файл VCF і ви зможете його завантажити."
@@ -3869,6 +3869,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Ви можете імпортувати один тип даних за один раз."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Ви можете змінювати лише властивості особистих подій, тому що ви не можете надсилати листи з адреси організатора."
       ],
@@ -3880,6 +3883,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Ви скинули свій пароль, а події, пов'язані з цими календарями, не можуть бути розшифровані.\nБудь-які посилання на календарі, якими ви поділились, надалі не працюватимуть.\nБудь-які активні календарі, на які ви підписані знову синхронізуються за кілька хвилин."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Вам необхідно мати активний особистий календар для імпорту ваших подій."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Ви раніше відхилили це запрошення. Зверніться до власника з проханням про повторне запрошення"
@@ -3912,19 +3918,19 @@
         "Ви оновите всі події в цій серії. Вилучені учасники отримають сповіщення."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. За 28 днів електронні листи перестануть надходити до вашої поштової скриньки, посилання на спільний доступ до Drive будуть заблоковані, і ви не зможете завантажувати нові файли. Щоб відновити звичайну роботу, будь ласка, сплатіть несплачені рахунки."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
+        "Ваш обліковий запис має несплачені рахунки. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має хоча б один несплачений рахунок. Ваш обліковий запис обмежено, і всі послуги зараз заблоковані до оплати. ${ payInvoiceLink }"
+        "Ваш обліковий запис має несплачені рахунки. У зв'язку з цим його роботу обмежено, а всі послуги наразі заблоковані, доки не буде проведено оплату. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має хоча б один несплачений рахунок. Ваш обліковий запис обмежений. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
+        "Ваш обліковий запис має несплачені рахунки, тому його роботу обмежено. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Ваша адреса вимкнена. Неможливо надіслати лист про скасування учасникам події. Усе одно бажаєте видалити всі події в цій серії?"
@@ -5334,6 +5340,9 @@
       "Calendar updated": [
         "Календар оновлено"
       ],
+      "Canceling import": [
+        "Скасування імпорту"
+      ],
       "Cancellation sent and all events deleted": [
         "Лист про скасування надіслано, а всі події видалено"
       ],
@@ -5391,6 +5400,9 @@
       "Future events updated": [
         "Майбутні події оновлено"
       ],
+      "Import record deleted": [
+        "Запис імпорту видалено"
+      ],
       "Invitation sent and all events updated": [
         "Запрошення надіслано, а всі події оновлено"
       ],
@@ -5429,6 +5441,9 @@
       ],
       "Preferences saved": [
         "Налаштування збережено"
+      ],
+      "Undo in progress": [
+        "Скасовується"
       ],
       "Verification successful": [
         "Перевірка пройшла успішно"

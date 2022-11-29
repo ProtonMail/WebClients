@@ -378,6 +378,9 @@
       "import": [
         "uvoz"
       ],
+      "Import contacts": [
+        "Uvezi kontakte"
+      ],
       "Import from .csv or vCard": [
         "Uvezite iz .csv ili vCard"
       ],
@@ -1698,8 +1701,17 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo je do neočekivane pogreške. Uvoz se mora ponovo pokrenuti."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Vaša datoteka ${ formattedFilename } je prazna."
       ]
     },
     "Error importing contact": {
@@ -1794,8 +1806,14 @@
       "Start time out of bounds": [
         "Početno vrijeme je van granica"
       ],
+      "Timezone": [
+        "Vremenska zona"
+      ],
       "To-do entry": [
         "Stavka liste zadataka"
+      ],
+      "Unknown": [
+        "Nepoznato"
       ],
       "Unsupported event": [
         "Događaj nije podržan"
@@ -2096,18 +2114,6 @@
       ]
     },
     "Import error": {
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Ako je ${ bold2StepsDisabled } (zadana Gmail postavka), pobrinite se da:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Ako je ${ bold2StepsDisabled } u Gmailu (zadano), pobrinite se da:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Ako je ${ bold2StepsEnabled } u Gmailu, provjerite upotrebljavate li lozinku za aplikaciju umjesto uobičajene lozinke."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ako je ${ bold2StepsEnabled }, provjerite jesu li adresa e-pošte i lozinka za aplikaciju točni. ${ boldNot } koristite svoju uobičajenu lozinku."
-      ],
       "Invalid IMAP port": [
         "Nevažeći IMAP port"
       ],
@@ -2119,24 +2125,9 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Upotrijebite lozinku za aplikaciju umjesto vaše uobičajene lozinke ako:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Također se možete pokušati odjaviti iz ${ boldGoogleAccounts } u pregledniku, a zatim otključajte ${ linkCAPTCHA }."
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Dvofaktorska autentikacija je onemogućena"
-      ],
-      "2-step verification is enabled": [
-        "Dvofaktorska autentikacija je omogućena"
-      ],
-      "all your other Google accounts": [
-        "svim ostalim Google računima"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "ne"
       ]
@@ -4367,6 +4358,9 @@
       ],
       "Folder cleared": [
         "Mapa je očišćena"
+      ],
+      "Import record deleted": [
+        "Zapis uvoza je izbrisan"
       ],
       "Keyboard shortcuts preferences updated": [
         "Postavke tipkovnih prečaca su ažurirane"

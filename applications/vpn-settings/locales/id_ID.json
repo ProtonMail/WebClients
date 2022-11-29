@@ -1579,14 +1579,14 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Browser Anda tidak mengizinkan pembayaran yang ada untuk dapat diotorisir sepenuhnya. Mohon gunakan browser lain atau masuk via komputer."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Jumlah saldo minimal yang dapat ditambahkan adalah ${ _price }"
+      "The minimum amount of credit that can be added is ${ price }": [
+        "Jumlah saldo minimal yang dapat ditambahkan adalah ${ price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Sumbangan minimal ${ price }"
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Pembayaran minimal ${ _price2 }"
+      "The minimum payment we accept is ${ price }": [
+        "Nominal pembayaran minimal yang kami terima adalah ${ price }"
       ],
       "This field is required": [
         "Kolom ini wajib diisi"
@@ -1914,9 +1914,6 @@
       "Amount below minimum (${ amount }).": [
         "Di bawah jumlah minimum (${ amount })."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Anda yakin ingin mematikan pemeriksaan dua-faktor?"
       ],
@@ -2004,6 +2001,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Masukkan kode verifikasi. Digit ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Masukkan rincian akun ${ BRAND_NAME } Anda."
       ],
@@ -2039,9 +2039,6 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "Dapatkan alamat ${ BRAND_NAME } saya"
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google merekam aktivitas daring dan membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
       ],
       "here": [
         "di sini"
@@ -2127,14 +2124,11 @@
       "lose access to all current encrypted data": [
         "kehilangan akses ke semua data yang terenkripsi"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru membaca data pribadi Anda untuk disampaikan kepada para pengiklan, lembaga pemerintahan Rusia, dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Pastikan Anda ${ addARecoveryMethod } agar Anda dapat kembali mengakses akun apabila Anda lupa kata sandi."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Masukkan informasi berikut secara manual ke perangkat otentikasi dua faktor yang Anda miliki untuk menyiapkan akun Anda. ${ _switchButton }."
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Masukkan informasi ini secara manual ke perangkat otentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
       ],
       "No credit card required": [
         "Tanpa perlu kartu kredit"
@@ -2445,12 +2439,6 @@
       "Would you like to receive a new verification code?": [
         "Apakah Anda ingin menerima kode verifikasi baru?"
       ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo membaca data pribadi Anda untuk disampaikan kepada para pengiklan, lembaga intelijen AS, dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex merekam aktivitas daring dan membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
-      ],
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
       ],
@@ -2515,7 +2503,7 @@
         "Akun ${ BRAND_NAME } Anda terhubung dengan ${ externalEmailAddress }. Untuk dapat menggunakan ${ toAppName }, Anda butuh alamat email ${ MAIL_APP_NAME }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
@@ -3143,14 +3131,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Telusuri seluruh paket ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "Dari ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Dari ${ _price2 } per pengguna"
-      ],
       "From ${ price }": [
         "Dari ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Dari ${ price } per pengguna"
       ],
       "Keep my ${ currentPlanName } account": [
         "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
@@ -3986,14 +3971,14 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendars per user": [
-        "${ _n } kalender per pengguna"
-      ],
       "${ maxVpn } high-speed VPN connections": [
         "${ maxVpn } koneksi VPN berkecepatan tinggi"
       ],
       "${ n } calendars": [
         "${ n } kalender"
+      ],
+      "${ n } calendars per user": [
+        "${ n } kalender per pengguna"
       ],
       "${ n } high-speed VPN connections": [
         "${ n } koneksi VPN berkecepatan tinggi"
@@ -4490,9 +4475,6 @@
       ],
       "Switch to two-password mode": [
         "Beralih ke mode dua kata sandi"
-      ],
-      "This address might compromise your privacy.": [
-        "Alamat ini dapat membahayakan privasi Anda."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Nikmati berbagai fitur unggulan ${ MAIL_APP_NAME } secara gratis"
