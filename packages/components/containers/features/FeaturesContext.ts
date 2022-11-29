@@ -100,6 +100,7 @@ export enum FeatureCode {
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     ProtonBadge = 'ProtonBadge',
     ProtonMailDomainMigrationEnabled = 'ProtonMailDomainMigrationEnabled',
+    TelemetrySetting = 'TelemetrySetting',
 }
 
 export interface FeaturesContextValue {
