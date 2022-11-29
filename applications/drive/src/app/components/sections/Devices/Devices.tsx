@@ -7,7 +7,7 @@ import { useDevicesView } from '../../../store';
 import FileBrowser, { Cells, useItemContextMenu, useSelection } from '../../FileBrowser';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { GridViewItemDevice } from '../FileBrowser/GridViewItemDevice';
-import { DeviceNameCell, ModifiedCellDevice } from '../FileBrowser/contentCells';
+import { DeviceNameCell } from '../FileBrowser/contentCells';
 import headerCellsCommon from '../FileBrowser/headerCells';
 import { DevicesItemContextMenu } from './ContextMenu/DevicesContextMenu';
 import EmptyDevices from './EmptyDevices';
@@ -25,14 +25,10 @@ interface Props {
 
 const { ContextMenuCell } = Cells;
 
-const desktopCells: React.FC<{ item: DeviceItem }>[] = [DeviceNameCell, ModifiedCellDevice, ContextMenuCell];
+const desktopCells: React.FC<{ item: DeviceItem }>[] = [DeviceNameCell, ContextMenuCell];
 const mobileCells = [DeviceNameCell, ContextMenuCell];
 
-const headerItemsDesktop: ListViewHeaderItem[] = [
-    headerCells.name,
-    headerCells.modificationTimeDevice,
-    headerCellsCommon.placeholder,
-];
+const headerItemsDesktop: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
 
 const headeItemsMobile: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
 
