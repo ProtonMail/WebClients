@@ -320,6 +320,7 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
                     role="img"
                     focusable="false"
                     ref={ref}
+                    aria-hidden="true"
                     {...rest}
                 >
                     {title ? <title>{title}</title> : null}
