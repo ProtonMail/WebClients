@@ -23,6 +23,7 @@ const config: OfferConfig = {
         },
     ],
     layout: Layout,
+    noImg: true,
     getCTAContent: () => c('specialoffer: Action, Unlimited is a plan name').t`Go Unlimited`,
 };
 

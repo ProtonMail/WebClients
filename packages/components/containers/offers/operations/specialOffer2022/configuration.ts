@@ -23,6 +23,7 @@ const config: OfferConfig = {
         },
     ],
     layout: Layout,
+    noImg: true,
 };
 
 export default config;
