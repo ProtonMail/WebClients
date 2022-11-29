@@ -10,6 +10,7 @@ import {
 } from 'react';
 
 import { ICONS_ID } from '../../components/icon/Icons';
+import { useActiveBreakpoint } from '../../hooks';
 import { THEME_ID } from '../themes/ThemeProvider';
 import { getStyleSrcUrls, getStyleSrcsData, handleEvent } from './challengeHelper';
 import { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
@@ -54,6 +55,7 @@ const ChallengeFrame = ({
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const renderDivRef = useRef<HTMLDivElement>(null);
+    const activeBreakpoint = useActiveBreakpoint();
 
     const targetOrigin = useMemo(() => {
         return new URL(src).origin;
@@ -281,11 +283,11 @@ const ChallengeFrame = ({
         contentWindow.postMessage(
             {
                 type: 'html',
-                payload: `<div>${renderDivEl.innerHTML}</div>`,
+                payload: `<div class='${activeBreakpoint.breakpoint}'>${renderDivEl.innerHTML}</div>`,
             },
             targetOrigin
         );
-    }, [isLoaded, children, iframeRef.current, renderDivRef.current]);
+    }, [isLoaded, activeBreakpoint.breakpoint, children, iframeRef.current, renderDivRef.current]);
 
     return (
         <>
