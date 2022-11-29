@@ -289,6 +289,15 @@
       "import": [
         "kter"
       ],
+      "Import calendars": [
+        "Kter iwitayen"
+      ],
+      "Import contacts": [
+        "Sgaǧ-d tansiwin"
+      ],
+      "Import emails": [
+        "Kter imaylen"
+      ],
       "Import from .csv or vCard": [
         "Kter si .csv neɣ vCard"
       ],
@@ -606,6 +615,23 @@
         "Ma teffɣeḍ tura, yezmer ur d-ttwaktaran ara kra n yinermisen"
       ]
     },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Afaylu ICS ilem"
+      ],
+      "Invalid event": [
+        "Tadyant d tarameɣtut"
+      ],
+      "Invalid ICS file": [
+        "Afaylu ICS d armeɣtu"
+      ],
+      "Invalid method": [
+        "Yir tarrayt"
+      ],
+      "Unsupported event": [
+        "Tadyant ur nettusefrak ara"
+      ]
+    },
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
@@ -685,6 +711,31 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kemmel s useqdec ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Ur yemtawi ara"
+      ],
+      "Syncing": [
+        "Amtawi"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing": [
+        "Awitay yemtawi"
+      ],
+      "Calendar is too big": [
+        "Awitay meqqer nezzeh"
+      ],
+      "Calendar link is not accessible": [
+        "Ulac anekcum ɣer useɣwen n uwitay"
+      ],
+      "Failed to sync calendar": [
+        "Tuccḍa deg umtawi n uwitay"
+      ],
+      "More than 12 hours passed since last update": [
+        "Ugar n 12 n yisragen i yezrin ɣef uleqqem aneggaru"
       ]
     },
     "color": {
@@ -1596,9 +1647,75 @@
         "Yermed"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Aglam: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } yettwasefsex."
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } yettwaleqqem.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Tettwaɛerḍeḍ ɣer ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "Melmi: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "Melmi: ${ formattedStart } (akk ass)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Melmi: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Anida: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } yeqbel tinubga-inek·inem ɣer ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } yugi•tugi leɛraḍa-inek•m ɣer ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } yeqbel bizmant tinubga-inek·inem ɣer ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Asefsex n uneḍru di ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Asefsex n tedyant ara yebdun deg ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Anaɛruḍ ɣer uneḍru di ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Tinubga ɣer tedyant ara yebdun deg ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Aleqqem n uneḍru di ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Aleqqem n tedyant ara yebdun deg ${ formattedStart }"
+      ]
+    },
     "Error": {
       "A group with this name already exists": [
         "Yella yakan ugraw s yisem-agi"
+      ],
+      "Address primary private key not found": [
+        "Tasarut tamaẓlayt tagejdant n tansa ulac-itt"
       ],
       "Authentication canceled.": [
         "Yefsex usesteb."
@@ -1772,8 +1889,17 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Tella-d tuccḍa deg usali n ufaylu-inek ·inem ${ formattedFilename }. Teɣzi tafellayt n ufaylu d ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Tella-d tuccḍa deg usali n ufaylu-inek·inem. Ulac afaylu i yettwafernen."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Tella-d tuccḍa ur nettwarǧa ara. Aktar ilaq ad yales asenker."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Afaylu-inek/m ${ formattedFilename } d ilem."
       ]
     },
     "Error importing contact": {
@@ -1805,6 +1931,86 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Afaylu-inek/m ${ formattedFilename } d ilem."
+      ]
+    },
+    "Error importing event": {
+      "Calendar": [
+        "Awitay"
+      ],
+      "Component with wrong format": [
+        "Asuddis s yir amasal"
+      ],
+      "Custom timezone": [
+        "Iẓdi n wakud yugnen"
+      ],
+      "Edited event not supported": [
+        "Aẓrag n tedyant ur yettusefrak ara"
+      ],
+      "Encryption failed": [
+        "Awgelhen ur yeddi ara"
+      ],
+      "End time out of bounds": [
+        "Akud n taggara akkin i tlisa"
+      ],
+      "Event validation failed": [
+        "Asentem n tedyant yecceḍ"
+      ],
+      "Floating times not supported": [
+        "Akuden i d-yuflawen ur ttusefraken ara"
+      ],
+      "Free-busy time information": [
+        "Talɣut ɣef tilin"
+      ],
+      "Invalid event": [
+        "Tadyant tarameɣtut"
+      ],
+      "Journal entry": [
+        "Anekcum ɣer uɣmis"
+      ],
+      "Malformed all-day event": [
+        "Tadyant i wass meṛṛa texṣer"
+      ],
+      "Malformed end time": [
+        "Akud n taggara ur yemsil ara akken ilaq"
+      ],
+      "Malformed recurring event": [
+        "Yir talɣa n tedyant d-ittuɣalen"
+      ],
+      "Malformed start time": [
+        "Akud n beddu ur yemsil ara akken ilaq"
+      ],
+      "Missing start time": [
+        "Akud n beddu yexxuṣ"
+      ],
+      "No UID, title or start time": [
+        "Ulac UID, azwel neɣ akud n beddu"
+      ],
+      "Non-Gregorian": [
+        "Mačči d agriguryan"
+      ],
+      "Notification out of bounds": [
+        "Alɣu akkin i tlisa"
+      ],
+      "Original recurring event could not be found": [
+        "Tadyant tameẓlut i d-yettuɣalen ulac-itt"
+      ],
+      "Recurring rule not supported": [
+        "Alugen i d-yettuɣalen ur yettusefrak ara"
+      ],
+      "Start time out of bounds": [
+        "Akud n beddu akkin i tlisa"
+      ],
+      "Timezone": [
+        "Tamennaḍt tasragant"
+      ],
+      "To-do entry": [
+        "Anekcum n twuriwin"
+      ],
+      "Unknown": [
+        "Arussin"
+      ],
+      "Unsupported event": [
+        "Tadyant ur nettusefrak ara"
       ]
     },
     "Error message": {
@@ -1849,6 +2055,49 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "Agmuḍ yettwasra"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Afaylu ICS yeddan ulamek ad yettwawgelhen"
+      ],
+      "Attached ICS file could not be read": [
+        "Afaylu ICS yeddan ulamek d-yettwaɣra"
+      ],
+      "Invalid invitation": [
+        "Tinubga mačči d tameɣtut"
+      ],
+      "Invalid response": [
+        "Tiririt tarameɣtut"
+      ],
+      "Unexpected error": [
+        "Tuccḍa u nettwarǧa ara"
+      ],
+      "Unsupported invitation": [
+        "Tinubga ur tttwasefrak ara"
+      ],
+      "Unsupported response": [
+        "Tiririt ur nettusefrak ara"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Ur nezmir ara ad nsefsex tadyant deg uwitay-inek·inem"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Ur nezmir ara ad d-nerr tadyant seg uwitay-inek·inem"
+      ],
+      "We could not update the event in your calendar": [
+        "Ur nezmir ara ad nleqqem tadyant deg uwitay-inek·inem"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Tiririt-ik·im tettwazen, maca tadyant ulamek tettwarna ɣer uwitay-inek·inem"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Tiririt-ik·im tettwazen, maca tadyant ulamek tettuleqqem deg uwitay-inek·inem"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(ulac azwel)"
       ]
     },
     "Feedback Modal Title": {
@@ -1980,26 +2229,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Anekcum i yusnasen i yesεan taɣelist meẓẓiyen\" irmed deg yiɣewwaṛen n umiḍan-ik·im Google."
-      ],
       "2-step verification is enabled in your external account.": [
         "Asenqed ɣef sin yiḥricen yermed deg umiḍan-ik·im azɣaray."
       ],
       "2-step verification is enabled in your external email account.": [
         "Asenqed s sin yiḥricen yermed deg umiḍan-ik·im n yimayl azɣaray."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Ma yella ${ bold2StepsDisabled } (iɣewwaren n Gmail imezwer), ttxil-k·m wali ma yella:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Ma yella ${ bold2StepsDisabled } deg Gmail (iɣewwaren imezwer), ttxil-k·m wali ma yella:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Ma yella ${ bold2StepsEnabled } deg Gmail, ttxil-k·m wali ma yella tseqdaceḍ awal-ik·im uffir n usnas deg ubdil n wawal-ik·im uffir i tezgiḍ tseqdaceḍ."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ma yella ${ bold2StepsEnabled }, ttxil-k·m senqed tansa-inek·inem n yimayl akked wawal uffir ma yella d imeɣta. Seqdec ${ boldNot } awal-ik·im uffir i tseqdaceḍ."
       ],
       "IMAP access is enabled in your external account.": [
         "Anekcum IMAP yermed deg umiḍan-ik·im azɣaray."
@@ -2018,9 +2252,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Seqdec awal-ik·im uffir n usnas deg ubdil n wawal-ik·im uffir i tezgiḍ tseqdaceḍ ma yella:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Mazal tzemreḍ ad tɛerḍeḍ ad teffɣeḍ seg ${ boldGoogleAccounts } deg yiminig, syen kkes asekker n ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Awal-ik·im uffir d ameɣtu. Seqdec ${ boldNot } awal-ik·im uffir n tannumi."
@@ -2042,18 +2273,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Asenqed s sin yiḥricen yensa"
-      ],
-      "2-step verification is enabled": [
-        "Asenqed s sin yiḥricen yensa"
-      ],
-      "all your other Google accounts": [
-        "akk imiḍanen-inek·inem-nniḍen n Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "uhu"
       ]
@@ -2630,6 +2849,9 @@
       "support team": [
         "tarbaɛt n tallalt"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Ulac-it akka tura. Ma ulac aɣilif, senqed ticki."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Asnas-a yesra ad ikkes awgelhen s wudem adidgan i yinermisen-ik send ad d-banen. Ɣer taggara n ukala, afaylu VCF ad ilal, sakin ad tizmireḍ ad t-id-sadreḍ."
       ],
@@ -2735,6 +2957,9 @@
       ],
       "You cannot undo this action.": [
         "Ur tezmireḍ ara ad tesfesxeḍ tigawt-a."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Tesriḍ ad tesɛuḍ awitay urmid udmawen i uktar n yineḍruyen-ik·im."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Tewwḍeḍ ɣer ${ spaceDisplayed }% n tallunt-inek .m n weḥraz. ${ freeUpMessage } ${ upgradeLink }"
@@ -3480,6 +3705,11 @@
         "Smezdi akked uwitay"
       ]
     },
+    "Participant name": {
+      "You": [
+        "Kečč/kemm"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Tasarut ulamek ara tettwaseqdec i uwgelhen"
@@ -3626,6 +3856,9 @@
       "Bug reported": [
         "Abug yettwazen"
       ],
+      "Canceling import": [
+        "Asefsex n tektert"
+      ],
       "Code sent to ${ methodTo }": [
         "Tangalt tettwazen ɣer ${ methodTo }"
       ],
@@ -3648,6 +3881,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Adriz n uḍad yettwanɣel ɣer tecfawit"
+      ],
+      "Import record deleted": [
+        "Kter asekles yettwakksen"
       ],
       "Phone number copied to clipboard": [
         "Uṭṭun n tilifun yettwanɣel ɣef afus"

@@ -247,6 +247,15 @@
       "import": [
         "impor"
       ],
+      "Import calendars": [
+        "Impor kalender"
+      ],
+      "Import contacts": [
+        "Impor kontak"
+      ],
+      "Import emails": [
+        "Impor email"
+      ],
       "Import events": [
         "Impor acara"
       ],
@@ -570,6 +579,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } dimulai pada ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } telah dimulai pada ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } dimulai besok"
       ],
@@ -581,6 +593,15 @@
       ],
       "${ title } starts now": [
         "${ title } mulai sekarang"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } akan dimulai pada ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } akan dimulai pada ${ formattedDate } pukul ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } akan dimulai pada ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } akan dimulai pada ${ formattedDateWithTime }"
@@ -2227,6 +2248,9 @@
       "Some contacts don't have a valid email address: ${ list }": [
         "${ list } tidak memiliki alamat email yang valid"
       ],
+      "Some contacts have no email addresses: ${ list }": [
+        "${ list } tidak memiliki alamat email"
+      ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "Kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
       ],
@@ -2235,6 +2259,9 @@
       ],
       "Some groups have invalid emails: ${ list }": [
         "${ list } mempunyai alamat email yang tidak valid"
+      ],
+      "Some groups have no contacts: ${ list }": [
+        "${ list } tidak memiliki kontak"
       ],
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "Grup tidak memiliki kontak: ${ noContactGroupList } "
@@ -2832,15 +2859,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Akses aplikasi yang kurang aman\" telah diaktifkan pada pengaturan keamanan akun Google Anda."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } tidak dapat terhubung ke akun Anda. Mohon pastikan akses IMAP Gmail telah aktif."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } tidak dapat terhubung ke akun Anda. Mohon pastikan akses IMAP telah aktif pada akun Gmail Anda."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } tidak dapat terhubung ke akun Anda. Mohon pastikan bahwa:"
       ],
@@ -2849,9 +2867,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda. Mohon pastikan bahwa:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda. Mohon pastikan alamat server mail dan nomor port telah sesuai."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } tidak dapat terhubung ke akun Yahoo Anda. Mohon pastikan alamat server mail dan nomor port telah sesuai."
@@ -2864,18 +2879,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Verifikasi 2 langkah telah diaktifkan pada akun email eksternal Anda."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Jika ${ bold2StepsDisabled } (pengaturan baku Gmail), mohon pastikan:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Jika ${ bold2StepsDisabled } di Gmail (pengaturan baku), pastikan:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Jika ${ bold2StepsEnabled } di Gmail, pastikan Anda menggunakan kata sandi aplikasi alih-alih kata sandi Anda biasanya."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Apabila ${ bold2StepsEnabled }, mohon pastikan alamat email dan kata sandi aplikasi Anda sudah benar. ${ boldNot } gunakan kata sandi Anda biasanya."
       ],
       "IMAP access is enabled in your external account.": [
         "Akses IMAP telah diaktifkan pada akun eksternal Anda."
@@ -2894,9 +2897,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Gunakan kata sandi aplikasi Anda alih-alih kata sandi Anda biasanya jika:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Anda juga bisa keluar dari ${ boldGoogleAccounts } di peramban, lalu buka kunci ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
@@ -2918,18 +2918,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Verifikasi 2 langkah dinonaktifkan"
-      ],
-      "2-step verification is enabled": [
-        "Verifikasi 2 langkah aktif"
-      ],
-      "all your other Google accounts": [
-        "semua akun Google Anda lainnya"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "jangan"
       ]
@@ -3290,6 +3278,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Masukkan kode verifikasi. Digit ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
@@ -3530,6 +3521,9 @@
       "support team": [
         "tim dukungan"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
       ],
@@ -3680,6 +3674,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Anda hanya dapat mengubah properti acara pribadi karena Anda tidak dapat mengirim email dari alamat penyelenggara."
       ],
@@ -3691,6 +3688,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Karena Anda telah mengatur ulang kata sandi, seluruh acara yang terhubung dengan kalender berikut tidak dapat didekripsi.\nSeluruh kalender yang telah Anda buat sebelumnya tidak akan lagi dapat digunakan.\nSeluruh kalender aktif yang Anda langgan akan kembali disinkronkan dalam beberapa menit."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Anda harus punya kalender pribadi aktif supaya bisa mengimpor acara."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Anda sebelumnya telah menolak undangan ini. Silakan minta pemilik kalender untuk kembali mengundang Anda"
@@ -3723,7 +3723,7 @@
         "Anda akan memperbarui semua rangkaian acara ini. Peserta yang dihapus akan diberi tahu."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
@@ -5034,6 +5034,9 @@
       "Calendar updated": [
         "Kalender berhasil diperbarui"
       ],
+      "Canceling import": [
+        "Membatalkan proses impor"
+      ],
       "Cancellation sent and all events deleted": [
         "Pembatalan terkirim dan semua acara berhasil dihapus"
       ],
@@ -5082,6 +5085,9 @@
       "Future events updated": [
         "Acara mendatang berhasil diperbarui"
       ],
+      "Import record deleted": [
+        "Rekaman impor dihapus"
+      ],
       "Invitation sent and all events updated": [
         "Undangan terkirim dan semua acara berhasil diperbarui"
       ],
@@ -5120,6 +5126,9 @@
       ],
       "Preferences saved": [
         "Preferensi telah disimpan"
+      ],
+      "Undo in progress": [
+        "Pengurungan sedang berlangsung"
       ],
       "Verification successful": [
         "Verifikasi berhasil"

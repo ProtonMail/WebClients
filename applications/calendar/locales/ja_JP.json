@@ -239,6 +239,15 @@
       "import": [
         "インポート"
       ],
+      "Import calendars": [
+        "カレンダーをインポート"
+      ],
+      "Import contacts": [
+        "連絡先をインポート"
+      ],
+      "Import emails": [
+        "メールをインポート"
+      ],
       "Import events": [
         "予定をインポート"
       ],
@@ -516,6 +525,14 @@
         "はい、参加します"
       ]
     },
+    "Action title": {
+      "Share with ${ BRAND_NAME } users": [
+        "${ BRAND_NAME } ユーザーに共有"
+      ],
+      "Share with anyone": [
+        "ほかの人に共有"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact }または${ importContact }。"
@@ -546,6 +563,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title }は${ formattedDateWithoutTime }の予定です"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } は ${ formattedDateWithTime } に開始しました"
+      ],
       "${ title } started yesterday": [
         "${ title }は昨日開始の予定です"
       ],
@@ -557,6 +577,15 @@
       ],
       "${ title } starts now": [
         "${ title }はただいま開始の予定です"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } は ${ formattedDate } に開始します"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } は ${ formattedDate } ${ formattedHour } に開始します"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } は ${ formattedDateWithoutTime } に開始します"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title }は${ formattedDateWithTime }の予定です"
@@ -605,6 +634,11 @@
     "Attendee role": {
       "Optional": [
         "任意"
+      ]
+    },
+    "Badge": {
+      "Coming soon": [
+        "まもなく登場"
       ]
     },
     "Beta access description": {
@@ -691,6 +725,11 @@
         "${ MAIL_APP_NAME } を使って続行します。"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "人またはグループを追加"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "出席しますか?"
@@ -730,12 +769,26 @@
         "権限"
       ]
     },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "すでにこのカレンダーにアクセスできます"
+      ]
+    },
     "Calendar share limit modal": {
       "Manage links": [
         "リンクを管理"
       ],
       "Manage members": [
         "メンバーを管理"
+      ],
+      "Unable to create more calendar links": [
+        "これ以上のカレンダーリンクを作成できません"
+      ],
+      "Unable to share this calendar with more ${ BRAND_NAME } users": [
+        "これ以上 ${ BRAND_NAME } ユーザーにカレンダーを共有できません"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "カレンダーごとに追加できるメンバーは ${ MAX_CALENDAR_MEMBERS } 人までです。\nほかの ${ BRAND_NAME } アカウントを招待するには、現在のメンバーを削除してください。"
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } links for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "カレンダーごとに作成できるリンクは最大 ${ MAX_LINKS_PER_CALENDAR } 件です。このカレンダーの新しいリンクを作成するには、リンクをひとつ削除してください。"
@@ -2088,6 +2141,9 @@
       "No WKD key retrieved for user is valid for sending": [
         "ユーザーのWKD 鍵が送信に使用できません"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } アカウントではありません"
+      ],
       "Not a valid number": [
         "無効な番号です"
       ],
@@ -2139,6 +2195,9 @@
       "Some contacts don't have a valid email address: ${ list }": [
         "次の連絡先には有効なメールアドレスが登録されていません: ${ list }"
       ],
+      "Some contacts have no email addresses: ${ list }": [
+        "次の連絡先にはメールアドレスがありません: ${ list }"
+      ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "一部の連絡先にメールアドレスがありません: ${ noEmailsContactNamesList } "
       ],
@@ -2147,6 +2206,9 @@
       ],
       "Some groups have invalid emails: ${ list }": [
         "次のグループには正しくないメールアドレスが登録されています: ${ list }"
+      ],
+      "Some groups have no contacts: ${ list }": [
+        "次のグループには連絡先が追加されていません: ${ list }"
       ],
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
@@ -2240,6 +2302,11 @@
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "無効なアドレスは存在しません"
       ]
     },
     "Error importing calendar": {
@@ -2730,32 +2797,26 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Google アカウントのセキュリティ設定で「あまり安全ではないアプリアクセス」がオンになっています。"
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたのアカウントに接続できません。以下を確認してください。"
       ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } はあなたのアカウントに接続できません。Gmail IMAP アクセスが有効になっていることを確認してください。"
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } はあなたの外部アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
       ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } はあなたの Gmail アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたの外部アカウントに接続できません。以下を確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } はあなたの Yahoo アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたの Yahoo アカウントに接続できません。以下を確認してください。"
       ],
       "2-step verification is enabled in your external account.": [
         "2 段階認証は外部アカウントで有効になっています。"
       ],
       "2-step verification is enabled in your external email account.": [
         "2 段階認証は外部メールアカウントで有効になっています。"
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "${ bold2StepsDisabled } (デフォルトのGmail設定) の場合は、以下を確認してください:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Gmail で ${ bold2StepsDisabled } （デフォルト設定）の場合は、以下を確認してください:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Gmailで ${ bold2StepsEnabled } の場合は、通常のパスワードの代わりにアプリのパスワードを使用していることを確認してください。"
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "${ bold2StepsEnabled } の場合は、メールアドレスとアプリのパスワードが正しいことを確認してください。${ boldNot } は通常のパスワードを使用します。"
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP アクセスは外部アカウントで有効になっています。"
@@ -2774,9 +2835,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "また、ブラウザで ${ boldGoogleAccounts } のサインアウトを試し、 ${ linkCAPTCHA } をロックを解除することもできます。"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "アプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
@@ -2798,18 +2856,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "2 段階認証が無効"
-      ],
-      "2-step verification is enabled": [
-        "2 段階認証が有効"
-      ],
-      "all your other Google accounts": [
-        "ほかのすべての Google アカウント"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "しないで"
       ]
@@ -2961,7 +3007,7 @@
         "${ contactCount } 件の連絡先に複数のメールアドレスが含まれています。"
       ],
       "${ contactEmailsLength } Members": [
-        "${ contactEmailsLength } メンバー"
+        "${ contactEmailsLength } 人のメンバー"
       ],
       "${ contactName } contains multiple email addresses.": [
         "連絡先 ${ contactName } に複数のメールアドレスが含まれています。"
@@ -3006,7 +3052,7 @@
         "${ updated } 連絡先が正常に更新されました。"
       ],
       "(${ memberCount } members)": [
-        "(${ memberCount } メンバー)"
+        "(${ memberCount } 人のメンバー)"
       ],
       "10 email addresses": [
         "10 件のメールアドレス"
@@ -3055,6 +3101,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
+      ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "このカレンダーの予定の詳細を共有すると、${ BRAND_NAME } がこのカレンダーの暗号化された情報にアクセスできるようになります。"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワード思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
@@ -3127,6 +3176,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
         "パスワード（管理員のもの）を入力してください"
@@ -3269,6 +3321,12 @@
       "Not a valid URL": [
         "有効な URL ではありません"
       ],
+      "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
+        "主催者が過去に更新した行事は残りますが、いくつかの入力した回答は失われます。"
+      ],
+      "Occurrences previously updated by the organizer will be kept.": [
+        "主催者が過去に更新した行事は削除されません。"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
@@ -3362,6 +3420,9 @@
       "support team": [
         "サポートチーム"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "一時的に利用できません。あとでお試しください。"
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
       ],
@@ -3397,6 +3458,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
+      ],
+      "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
+        "この予定は主催者が内容を変更しています。この行事に対してのみ回答を変更してよろしいですか?"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
         "主催者がこの予定を更新しました。この予定を削除しますか？"
@@ -3503,6 +3567,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "進捗を確認するには ${ importProgressLink }。"
       ],
+      "You can import one data type at a time.": [
+        "1 回にインポートできるのは 1 種類のみです。"
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "主催者のアドレスからメールを送信できないため、個人の予定プロパティのみ変更できます。"
       ],
@@ -3514,6 +3581,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "パスワードが変更されたため、以下のカレンダーに登録されていた予定を復号できませんでした。\nパスワードの変更前に共有したリンクにはアクセスできません。\n登録した他人のカレンダーは数分後に同期されます。"
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "予定をインポートするには、アクティブなパーソナルカレンダーが必要です。"
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "一度招待を拒否しているため、主催者からもう一度招待される必要があります。"
@@ -4069,6 +4139,9 @@
     "Modal for received invitation to share calendar; Title": {
       "Join calendar": [
         "カレンダーに参加"
+      ],
+      "Unable to join more calendars": [
+        "これ以上カレンダーに参加できません"
       ]
     },
     "Modal title": {
@@ -4288,6 +4361,11 @@
         "${ calendarName }に参加しました(${ senderEmail })"
       ]
     },
+    "Notification suffix": {
+      "by email": [
+        "メール"
+      ]
+    },
     "Notification time input": {
       "at": [
         "の"
@@ -4405,11 +4483,17 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
       ],
+      "Discover all ${ BRAND_NAME } services": [
+        "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで"
+      ],
       "Select a theme": [
         "テーマを選択"
       ],
       "Set up your organization": [
         "組織のための設定"
+      ],
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "左上のアプリセレクターを使用して VPN、Calendar、Drive などの ${ BRAND_NAME } サービスにアクセスできます。"
       ],
       "You can change this anytime in your settings.": [
         "この設定はいつでも変更できます。"
@@ -4650,9 +4734,19 @@
         "設定の更新に失敗しました"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "非 ${ BRAND_NAME } ユーザーを招待するには、リンクでカレンダーを共有します"
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
         "カレンダーのメンバーの上限 ${ MAX_CALENDAR_MEMBERS } を超過しました。"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with ${ BRAND_NAME } users": [
+        "${ BRAND_NAME } ユーザーに共有"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -4742,6 +4836,9 @@
       "All events updated": [
         "すべての予定が更新されました"
       ],
+      "An invitation will be sent to added participants for all the events in this series.": [
+        "一連の予定に追加した参加者全員に対し、招待が送られます。"
+      ],
       "Answer sent and all events deleted": [
         "回答を送信し、すべての予定を削除しました"
       ],
@@ -4762,6 +4859,15 @@
       ],
       "Calendar updated": [
         "カレンダーが更新されました。"
+      ],
+      "Canceling import": [
+        "インポートをキャンセル"
+      ],
+      "Cancellation sent and all events deleted": [
+        "予定キャンセルの通知を送り、すべてのイベントは削除されました。"
+      ],
+      "Cancellation sent and event deleted": [
+        "予定キャンセルの通知を送りました。予定は削除されました。"
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
@@ -4798,6 +4904,12 @@
       ],
       "Future events updated": [
         "将来の予定が更新されました。"
+      ],
+      "Import record deleted": [
+        "インポート記録が削除されました"
+      ],
+      "Invitation sent and all events updated": [
+        "招待を送信し、予定は更新されました"
       ],
       "Invitation sent and event created": [
         "招待を送信し、予定を作成しました"
@@ -5277,6 +5389,16 @@
         "番号を選択"
       ]
     },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "カレンダーを作成"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "カレンダーを編集"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今日"
@@ -5407,6 +5529,11 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "無料トライアルは ${ textDate } に終了します。${ action }"
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "招待されたメールアドレス (${ boldInvitedAddress }) は無効なため、このカレンダーを追加できません。"
       ]
     },
     "Weekly recurring event, frequency": {

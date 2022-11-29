@@ -253,6 +253,15 @@
       "import": [
         "import"
       ],
+      "Import calendars": [
+        "Importovat kalendáře"
+      ],
+      "Import contacts": [
+        "Importovat kontakty"
+      ],
+      "Import emails": [
+        "Importovat e-maily"
+      ],
       "Import events": [
         "Import událostí"
       ],
@@ -576,6 +585,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } začalo ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } začala ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } začalo včera"
       ],
@@ -587,6 +599,15 @@
       ],
       "${ title } starts now": [
         "${ title } začíná právě teď"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } začíná ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } začíná ${ formattedDate } v ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } začíná ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } začíná ${ formattedDateWithTime }"
@@ -2062,11 +2083,23 @@
         "Některé kontakty nemají platnou e-mailovou adresu: ${ list }",
         "Některé kontakty nemají platnou e-mailovou adresu: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } nemá e-mailovou adresu",
+        "Některé kontakty nemají e-mailové adresy: ${ list }",
+        "Některé kontakty nemají e-mailové adresy: ${ list }",
+        "Některé kontakty nemají e-mailové adresy: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } má neplatné emaily",
         "Některé skupiny obsahují neplatné e-maily: ${ list }",
         "Některé skupiny obsahují neplatné e-maily: ${ list }",
         "Některé skupiny obsahují neplatné e-maily: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } neobsahuje žádné kontakty",
+        "Některé skupiny neobsahují žádné kontakty: ${ list }",
+        "Některé skupiny neobsahují žádné kontakty: ${ list }",
+        "Některé skupiny neobsahují žádné kontakty: ${ list }"
       ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
@@ -2943,15 +2976,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Přístup méně zabezpečených aplikací\" se povoluje v nastavení zabezpečení vašeho účtu Google."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } se nemůže připojit k vašemu účtu. Ujistěte se, že je IMAP přístup povolen ve vašem Gmail účtu."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } se nemůže připojit k vašemu účtu. Ujistěte se, že je IMAP přístup povolen ve vašem Gmail účtu."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } se nemůže připojit k vašemu účtu. Ujistěte se, že:"
       ],
@@ -2960,9 +2984,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } se nemůže připojit k vašemu vzdálenému účtu. Ujistěte se, že:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } se nemůže připojit k vašemu Gmail účtu. Ujistěte se prosím, že adresa e-mailového serveru a číslo portu jsou správně."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } se nemůže připojit k vašemu účtu Yahoo. Zkontrolujte prosím, že adresa e-mailového servu a číslo portu jsou správně."
@@ -2975,18 +2996,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Dvoufázové ověřování je zapnuto ve vašem vzdáleném e-mailovém účtu."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Pokud ${ bold2StepsDisabled } (výchozí nastavení Gmail), ujistěte se prosím:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Pokud ${ bold2StepsDisabled } v Gmailu (výchozí nastavení), ujistěte se, že:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Pokud ${ bold2StepsEnabled } v Gmailu, ujistěte se, že používáte Vaše heslo pro aplikaci namísto svého běžného hesla."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Pokud ${ bold2StepsEnabled }, ujistěte se prosím, že Vaše adresa e-mailu a heslo aplikace jsou správné. ${ boldNot }používejte běžné heslo."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP přístup je zapnut ve vašem externím účtu."
@@ -3005,9 +3014,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Použijte heslo aplikace místo běžného hesla, pokud:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Můžete se také zkusit odhlásit z ${ boldGoogleAccounts } a následně odemknout ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Vaše heslo pro aplikaci je správné. ${ boldNot }používejte vaše běžné heslo."
@@ -3029,18 +3035,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Dvoufázové ověřování je vypnuto"
-      ],
-      "2-step verification is enabled": [
-        "Dvoufázové ověřování je povoleno"
-      ],
-      "all your other Google accounts": [
-        "všechny vaše další účty Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "ne"
       ]
@@ -3473,6 +3467,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Zadejte ověřovací kód. Číslice ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
       ],
@@ -3719,6 +3716,9 @@
       "support team": [
         "tým podpory"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Dočasně nedostupné. Zkontrolujte to prosím později."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
       ],
@@ -3869,6 +3869,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Zde můžete zkontrolovat průběh ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Importovat můžete vždy jeden typ dat."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Můžete upravovat pouze osobní vlastnosti události, protože z adresy organizátora nemůžete odesílat e-maily."
       ],
@@ -3880,6 +3883,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Resetovali jste své heslo a události propojené s následujícími kalendáři nemohly být dešifrovány.\nJakékoliv odkazy sdílených kalendářů, které jste před tím vytvořili, již nebudou fungovat.\nJakékoliv aktivně odebírané kalendáře budou znovu synchronizovány za několik minut."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Před importováním vašich událostí musíte mít aktivní osobní kalendář."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Tuto pozvánku jste již dříve odmítli. Požádejte majitele o opětovné zaslání pozvánky"
@@ -3912,7 +3918,7 @@
         "Aktualizujete všechny události v této sérii. Odebraní účastníci budou informováni."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
@@ -5334,6 +5340,9 @@
       "Calendar updated": [
         "Kalendář aktualizován"
       ],
+      "Canceling import": [
+        "Ruším import"
+      ],
       "Cancellation sent and all events deleted": [
         "Zrušení odesláno a všechny události smazány"
       ],
@@ -5391,6 +5400,9 @@
       "Future events updated": [
         "Budoucí události byly aktualizovány"
       ],
+      "Import record deleted": [
+        "Záznam o importu byl smazán"
+      ],
       "Invitation sent and all events updated": [
         "Pozvánka byla odeslána a všechny události aktualizovány"
       ],
@@ -5429,6 +5441,9 @@
       ],
       "Preferences saved": [
         "Nastavení bylo uloženo"
+      ],
+      "Undo in progress": [
+        "Probíhá zrušení"
       ],
       "Verification successful": [
         "Ověření proběhlo úspěšně"

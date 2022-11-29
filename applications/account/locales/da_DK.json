@@ -469,10 +469,10 @@
       "No": [
         "Nej"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2836,14 +2836,8 @@
       "The label name is too long. Please choose a different name.": [
         "Etikettenavnet er for langt. Vælg venligst et andet navn."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Det mindste mængde kredit, der kan tilføjes, er ${ _price }"
-      ],
       "The minimum amount that can be donated is ${ price }": [
         "Det mindste beløb, der kan doneres, er ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Den mindste betaling vi accepterer er ${ _price2 }"
       ],
       "The organization key must be activated first": [
         "Organisationsnøglen skal først aktiveres"
@@ -3575,26 +3569,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Mindre sikker app-adgang\" er slået til i sikkerhedsindstillingerne for din Google-konto."
-      ],
       "2-step verification is enabled in your external account.": [
         "Totrinsbekræftelse er aktiveret på din eksterne konto."
       ],
       "2-step verification is enabled in your external email account.": [
         "Totrinsbekræftelse er aktiveret på din eksterne e-mail-konto."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Hvis ${ bold2StepsDisabled } (standard Gmail-indstillinger), så sørg venligst for:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Hvis ${ bold2StepsDisabled } i Gmail (standard indstillinger), så sørg venligst for:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Hvis ${ bold2StepsEnabled } i Gmail, skal du sørge for, at du bruger din app-adgangskode i stedet for din almindelige adgangskode."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Hvis ${ bold2StepsEnabled }, skal du sørge for, at din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP-adgang er aktiveret på din eksterne konto."
@@ -3613,9 +3592,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Brug din app adgangskode i stedet for din almindelige adgangskode, hvis:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Du kan også prøve at logge ud af ${ boldGoogleAccounts } i browseren, og derefter låse ${ linkCAPTCHA } op."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Din app-adgangskode er korrekt. Benyt ${ boldNot } din normale adgangskode."
@@ -3637,18 +3613,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Totrinsbekræftelse deaktiveret"
-      ],
-      "2-step verification is enabled": [
-        "Totrinsbekræftelse aktiveret"
-      ],
-      "all your other Google accounts": [
-        "alle dine andre Google-konti"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "ikke"
       ]
@@ -4074,9 +4038,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Folk med dette link vil ikke kunne synkronisere eller få fremtidige opdateringer til din kalender. Hvis du vil give dem adgang igen, bliver du nødt til at oprette et nyt link."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL læser dine personlige data for at give adgang for annoncører og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
-      ],
       "Are you sure you want to delete this address?": [
         "Er du sikker på, at du vil slette denne adresse?"
       ],
@@ -4391,9 +4352,6 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Giv din offentlige nøgle til dine venner, eller offentliggør den online, så alle kan sende dig end-to-end krypterede e-mails!"
       ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google registrerer din onlineaktivitet og læser dine personlige data for at give adgang for annoncører og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af dine personlige oplysninger."
-      ],
       "here": [
         "hér"
       ],
@@ -4596,12 +4554,6 @@
       ],
       "lose access to all current encrypted data": [
         "miste adgang til alle aktuelt krypterede data"
-      ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru læser dine personlige oplysninger for at give adgang til annoncører, den russiske regering og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Angiv disse oplysninger manuelt i din to-faktor-godkendelsesenhed for at oprette din konto. ${ _switchButton }."
       ],
       "Member": [
         "Medlem"
@@ -5216,12 +5168,6 @@
       ],
       "Would you like to receive a new verification code?": [
         "Ønsker du at modtage en ny verifikationskode?"
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo læser dine personlige oplysninger for at give adgang til annoncører, amerikanske efterretningstjenester og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex registrerer din onlineaktivitet og læser dine personlige data for at give adgang for annoncører og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
       ],
       "Yearly": [
         "Årlig"
@@ -7023,12 +6969,6 @@
       ]
     },
     "new_plans: Action": {
-      "From ${ _price }": [
-        "Fra ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Fra ${ _price2 } per bruger"
-      ],
       "From ${ price }": [
         "Fra ${ price }"
       ],
@@ -7143,9 +7083,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } oprettet"
-      ],
       "A disabled address cannot be primary": [
         "En deaktiveret adresse kan ikke være primær"
       ],
@@ -7932,10 +7869,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } kalender pr. bruger",
-        "${ _n } kalendere pr. bruger"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } højhastigheds VPN-forbindelse",
         "${ maxVpn } højhastigheds VPN-forbindelser"
@@ -9020,9 +8953,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This address might compromise your privacy.": [
-        "Denne adresse kan kompromittere dit privatliv."
       ],
       "Time zone": [
         "Tidszone"

@@ -235,6 +235,15 @@
       "import": [
         "importar"
       ],
+      "Import calendars": [
+        "Importar agendas"
+      ],
+      "Import contacts": [
+        "Importar contactos"
+      ],
+      "Import emails": [
+        "Importar e-mails"
+      ],
       "Import events": [
         "Importar eventos"
       ],
@@ -2473,23 +2482,8 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Acesso a aplicações menos seguras\" está ativado nas definições de segurança da sua conta Google."
-      ],
       "2-step verification is enabled in your external account.": [
         "A verificação em 2 passos está ativada na sua conta externa."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Se ${ bold2StepsDisabled } no Gmail (predefinições), certifique-se de que:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Se ${ bold2StepsDisabled } no Gmail (predefinições), certifique-se de que:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Se ${ bold2StepsEnabled } no Gmail, certifique-se de que está a utilizar a senha da sua aplicação, em vez da sua senha habitual."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Se ${ bold2StepsEnabled }, certifique-se de que o seu endereço de email e senha da aplicação estão correctos. ${ boldNot } use a sua senha regular."
       ],
       "Invalid IMAP port": [
         "Porta IMAP inválida"
@@ -2503,9 +2497,6 @@
       "Use your app password instead of your regular password if:": [
         "Use a senha da aplicação em vez da sua senha normal se:"
       ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Também pode tentar terminar a sessão em ${ boldGoogleAccounts } no navegador e desbloquear ${ linkCAPTCHA }."
-      ],
       "Your email account requires one to export your data.": [
         "A sua conta de e-mail requer uma para exportar os seus dados."
       ],
@@ -2514,18 +2505,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "a verificação em 2 passos está desactivada"
-      ],
-      "2-step verification is enabled": [
-        "a verificação em 2 passos está activada"
-      ],
-      "all your other Google accounts": [
-        "todas as suas outras contas Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "não"
       ]
@@ -4264,6 +4243,9 @@
       ],
       "Future events updated": [
         "Eventos futuros actualizados"
+      ],
+      "Import record deleted": [
+        "Registo de importação eliminado"
       ],
       "Invitation sent and all events updated": [
         "Convite enviado e eventos actualizados"

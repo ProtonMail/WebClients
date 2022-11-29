@@ -238,6 +238,15 @@
       "import": [
         "importálás"
       ],
+      "Import calendars": [
+        "Naptárak importálása"
+      ],
+      "Import contacts": [
+        "Névjegyek importálása"
+      ],
+      "Import emails": [
+        "E-mailek importálása"
+      ],
       "Import events": [
         "Események importálása"
       ],
@@ -536,6 +545,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } elkezdődött ekkor: ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } elkezdődött ekkor: ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } tegnap kezdődött"
       ],
@@ -547,6 +559,15 @@
       ],
       "${ title } starts now": [
         "${ title } most kezdődik"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } elkezdődik ekkor: ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } ekkor kezdődik: ${ formattedDate } ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } elkezdődik ekkor: ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } elkezdődik ekkor: ${ formattedDateWithTime }"
@@ -1931,9 +1952,17 @@
         "${ list } nem tartalmaz egy érvényes e-mail címet",
         "Néhány névjegy nem tartalmaz egy érvényes e-mail címet: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } nem tartalmaz e-mail címet",
+        "Néhány névjegyhez nincs e-mail cím: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } érvénytelen e-mail címet tartalmaz",
         "Némelyik csoport érvénytelen e-mail címet tartalmaz: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } nem tartalmaz névjegyeket",
+        "Néhány csoportban nincsenek névjegyek: ${ list }"
       ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
@@ -2718,26 +2747,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Kevésbé biztonságos alkalmazások hozzáférése\" be van kapcsolva a Google fiókbiztonsági beállításaiban."
-      ],
       "2-step verification is enabled in your external account.": [
         "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
       ],
       "2-step verification is enabled in your external email account.": [
         "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Ha ${ bold2StepsDisabled } (alapértelmezett Gmail beállítás), kérjük ellenőrizze, hogy:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Ha ${ bold2StepsDisabled } a Gmail-ben (alapértelmezett beállítás), kérjük ellenőrizze, hogy:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Ha ${ bold2StepsEnabled } a Gmail-ben, kérjük ellenőrizze hogy az alkalmazásjelszavát használja a rendes jelszava helyett."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ha ${ bold2StepsEnabled }, kérjük ellenőrizze hogy az e-mail cím és az alkalmazásjelszó helyes.\n${ boldNot } használja az alapértelmezett jelszavát."
       ],
       "IMAP access is enabled in your external account.": [
         "Az IMAP elérés engedélyezve van a külső fiókon."
@@ -2756,9 +2770,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Az alkalmazásjelszót használja a belépési jelszava helyett, ha:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Megpróbálhat kijelentkezni ${ boldGoogleAccounts }-ból a böngészőjében, és utána feloldani ${ linkCAPTCHA }-t."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Az alkalmazásjelszó megfelelő. ${ boldNot } a belépési jelszavát használja."
@@ -2780,18 +2791,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Kétlépcsős hitelesítés ki van kapcsolva"
-      ],
-      "2-step verification is enabled": [
-        "Kétlépcsős hitelesítés be van kapcsolva"
-      ],
-      "all your other Google accounts": [
-        "a többi Google fiókja"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "Ne"
       ]
@@ -3134,6 +3133,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Írja be az ellenőrző kódot. ${ digit } számjegy."
+      ],
       "Enter your own password (as organization admin).": [
         "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
@@ -3373,6 +3375,9 @@
       "support team": [
         "ügyfélszolgálat"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Átmenetileg nem elérhető. Próbálja meg később."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
       ],
@@ -3517,6 +3522,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Egyszerre egyféle adat importálható."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Kizárólag a személyes események tulajdonságait módosíthatja mivel a szervező nevében nem tud leveleket küldeni."
       ],
@@ -3528,6 +3536,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Visszaállította a jelszavát és a következő naptárakhoz tartozó események visszafejtése nem sikerült.\nA korábban létrehozott naptár megosztási hivatkozások nem fognak működni.\nMinden feliratkozott naptár újra szinkronizálásra kerül, pár percen belül."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Az importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
@@ -4745,6 +4756,9 @@
       "Calendar updated": [
         "Naptár frissítve"
       ],
+      "Canceling import": [
+        "Importálás megszakítása"
+      ],
       "Cancellation sent and all events deleted": [
         "Lemondás elküldve és az összes esemény törölve"
       ],
@@ -4798,6 +4812,9 @@
       "Future events updated": [
         "A jövőbeli események frissítve"
       ],
+      "Import record deleted": [
+        "Importálási elem törölve"
+      ],
       "Invitation sent and all events updated": [
         "Meghívó elküldve és az összes esemény frissítve"
       ],
@@ -4836,6 +4853,9 @@
       ],
       "Preferences saved": [
         "Beállítások mentve"
+      ],
+      "Undo in progress": [
+        "Visszavonás folyamatban"
       ],
       "Verification successful": [
         "Sikeres ellenőrzés"

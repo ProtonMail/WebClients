@@ -1560,14 +1560,8 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "مرورگری که شما استفاده می‌کنید اجازه پرداخت کامل را نمی‌دهد. لطفا از مرورگر دیگری استفاده نمایید یا از طریق رایانه وارد شوید."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "حداقل مبلغ اعتباری که می‌توان اضافه کرد ${ _price } است"
-      ],
       "The minimum amount that can be donated is ${ price }": [
         "حداقل مبلغی که می‌توان اهدا کرد ${ price } است"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "حداقل پرداختی که می‌پذیریم ${ _price2 } است"
       ],
       "This field is required": [
         "این قسمت الزامی است"
@@ -1812,9 +1806,6 @@
       "Amount below minimum (${ amount }).": [
         "مبلغ کمتر از حداقل است (${ amount })."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "آیا مطمئن هستید که می خواهید تأیید هویت دو عاملی را غیرفعال کنید?"
       ],
@@ -1926,9 +1917,6 @@
       "Free up some space or contact your administrator.": [
         "مقداری فضای آزاد ایجاد کنید یا با مدیر خود تماس بگیرید."
       ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "گوگل فعالیت‌های برخط شما را ثبت کرده و اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
-      ],
       "here": [
         "اینجا"
       ],
@@ -2010,14 +1998,8 @@
       "lose access to all current encrypted data": [
         "از دست دادن دسترسی به همه داده‌های رمزگذاری شده کنونی"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان، سازمان‌های دولتی روسیه و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "مطمئن شوید که ${ addARecoveryMethod } تا اگر گذرواژه خود را فراموش کردید بتوانید حساب کاربری خود را برگردانید."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "برای تنظیم حساب خود، این اطلاعات را به‌صورت دستی در دستگاه تایید هویت دو مرحله‌ای خود وارد کنید.${ _switchButton }."
       ],
       "No credit card required": [
         "نیازی به کارت اعتباری نیست"
@@ -2285,12 +2267,6 @@
       ],
       "Would you like to receive a new verification code?": [
         "آیا می‌خواهید یک کد تأیید جدید دریافت کنید؟"
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "یاهو اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان، سازمان‌های اطلاعاتی ایالات متحده و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "یاندکس فعالیت‌های برخط شما را ثبت کرده و اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
       ],
       "You already have a free account": [
         "در حال حاضر یک حساب کاربری رایگان دارید"
@@ -2937,12 +2913,6 @@
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "همه طرح های ${ BRAND_NAME } را بررسی کنید"
-      ],
-      "From ${ _price }": [
-        "از ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "از ${ _price2 } برای هر کاربر"
       ],
       "From ${ price }": [
         "از ${ price }"
@@ -3736,10 +3706,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } تقویم برای هر کاربر",
-        "${ _n } تقویم برای هر کاربر"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } اتصال VPN پرسرعت",
         "${ maxVpn } اتصال VPN پرسرعت"
@@ -4241,9 +4207,6 @@
       ],
       "Switch to two-password mode": [
         "گذر به حالت دوگذرواژه"
-      ],
-      "This address might compromise your privacy.": [
-        "این نشانی ممکن است حریم شما را تهدید کند."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "بهترین های ${ MAIL_APP_NAME } را رایگان امتحان کنید"

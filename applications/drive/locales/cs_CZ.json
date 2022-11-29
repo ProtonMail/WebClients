@@ -308,6 +308,15 @@
       "import": [
         "import"
       ],
+      "Import calendars": [
+        "Importovat kalendáře"
+      ],
+      "Import contacts": [
+        "Importovat kontakty"
+      ],
+      "Import emails": [
+        "Importovat e-maily"
+      ],
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
       ],
@@ -644,11 +653,34 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Pokud teď odejdete, některé kontakty nebudou importovány"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Pokud teď odejdete, některé události nebudou importovány"
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikace ${ BRAND_NAME }"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Prázdný soubor ICS"
+      ],
+      "Invalid event": [
+        "Neplatná událost"
+      ],
+      "Invalid ICS file": [
+        "Neplatný ICS soubor"
+      ],
+      "Invalid method": [
+        "Neplatná metoda"
+      ],
+      "Unsupported calendar component": [
+        "Nepodporovaná komponenta kalendáře"
+      ],
+      "Unsupported event": [
+        "Událost není podporována"
       ]
     },
     "Beta access description": {
@@ -733,6 +765,54 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Nesynchronizováno"
+      ],
+      "Syncing": [
+        "Synchronizace"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Kalendář se nepodařilo dešifrovat"
+      ],
+      "Calendar is syncing": [
+        "Kalendář se synchronizuje"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Synchronizace kalendáře: načtení všech událostí může trvat několik minut."
+      ],
+      "Calendar is too big": [
+        "Kalendář je příliš velký"
+      ],
+      "Calendar link is not accessible": [
+        "Odkaz na kalendář není přístupný"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "Odkaz na kalendář je dočasně nedostupný"
+      ],
+      "Failed to sync calendar": [
+        "Synchronizace kalendáře selhala"
+      ],
+      "More than 12 hours passed since last update": [
+        "Od poslední aktualizace uběhlo už více jak 12 hodin"
+      ],
+      "Unsupported calendar format": [
+        "Nepodporovaný formát kalendáře"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Odkaz na kalendář není přístupný mimo ekosystém poskytovatele kalendáře."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Odkaz na kalendář je dočasně nedostupný. Zkontrolujte, zda je odkaz od poskytovatele kalendáře stále platný."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Od poslední aktualizace uplynulo více než 12 hodin — ${ CALENDAR_APP_NAME } se pokusí kalendář aktualizovat během několika hodin."
       ]
     },
     "Collapsible tooltip": {
@@ -1702,6 +1782,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
       ]
@@ -1724,6 +1807,69 @@
         "Zapnuto"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Popis: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } byla zrušena."
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } byla aktualizována.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Pozvání k ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "Kdy: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "Kdy: ${ formattedStart } (celý den)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Kdy: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Kde: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } přijal(a) pozvání na ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } odmítl/a pozvání na ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } předběžně přijal(a) pozvání na ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Zrušení události na ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Zrušení události začínající v ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Pozvání na událost ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Pozvání na událost začínající v ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Aktualizace události v ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Aktualizace události začínající v ${ formattedStart }"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" již existuje"
@@ -1733,6 +1879,9 @@
       ],
       "A problem occurred, please try again": [
         "Objevil se problém, prosím zkuste to znovu"
+      ],
+      "Address primary private key not found": [
+        "Primární soukromý klíč adresy nenalezen"
       ],
       "Authentication canceled.": [
         "Ověření zrušeno."
@@ -2003,8 +2152,38 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Jsou povoleny pouze formáty souborů ICS."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo k chybě při nahrávání souboru. Nebyl vybrán žádný soubor."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo k neočekávané chybě. Import musí být restartován."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událost.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } události.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událostí.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událostí."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Váš soubor ${ formattedFilename } má neplatnou metodu a nelze jej importovat."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Váš soubor ${ formattedFilename } nemá žádné události pro import."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Váš soubor ${ formattedFilename } je prázdný."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Váš soubor ${ formattedFilename } není kalendář."
       ]
     },
     "Error importing contact": {
@@ -2036,6 +2215,104 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Váš soubor ${ formattedFilename } je prázdný."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Špatný formát. Komponent nešlo přečíst."
+      ],
+      "Calendar": [
+        "Kalendář"
+      ],
+      "Calendar time zone not supported": [
+        "Časové pásmo kalendáře není podporováno"
+      ],
+      "Component with wrong format": [
+        "Komponenta s nesprávným formátem"
+      ],
+      "Custom timezone": [
+        "Vlastní časové pásmo"
+      ],
+      "Edited event not supported": [
+        "Upravená událost není podporována"
+      ],
+      "Element": [
+        "Prvek"
+      ],
+      "Encryption failed": [
+        "Šifrování selhalo"
+      ],
+      "End time out of bounds": [
+        "Čas ukončení mimo hranice"
+      ],
+      "Event": [
+        "Událost"
+      ],
+      "Event validation failed": [
+        "Ověření události se nezdařilo"
+      ],
+      "Floating times not supported": [
+        "Plovoucí časy nejsou podporovány"
+      ],
+      "Free-busy time information": [
+        "Informace o vytížení"
+      ],
+      "Invalid event": [
+        "Neplatná událost"
+      ],
+      "Journal entry": [
+        "Záznamy deníku"
+      ],
+      "Malformed all-day event": [
+        "Špatný formát celodenní události"
+      ],
+      "Malformed end time": [
+        "Špatný formát času ukončení"
+      ],
+      "Malformed recurring event": [
+        "Špatný formát opakující se události"
+      ],
+      "Malformed start time": [
+        "Špatný formát času zahájení"
+      ],
+      "Missing start time": [
+        "Chybějící čas zahájení"
+      ],
+      "No UID, title or start time": [
+        "Žádný UID, název nebo čas zahájení"
+      ],
+      "Non-Gregorian": [
+        "Ne-Gregoriánský"
+      ],
+      "Notification out of bounds": [
+        "Upozornění mimo hranice"
+      ],
+      "Original recurring event could not be found": [
+        "Původní opakující se událost nebyla nalezena"
+      ],
+      "Recurring event has no occurrences": [
+        "Opakující se událost nemá žádné výskyty"
+      ],
+      "Recurring rule not supported": [
+        "Pravidlo opakování není podporováno"
+      ],
+      "Start time out of bounds": [
+        "Čas zahájení mimo hranice"
+      ],
+      "Time zone not supported": [
+        "Časové pásmo není podporováno"
+      ],
+      "Timezone": [
+        "Časové pásmo"
+      ],
+      "To-do entry": [
+        "Úkoly"
+      ],
+      "Unknown": [
+        "Neznámé"
+      ],
+      "Unsupported event": [
+        "Událost není podporována"
       ]
     },
     "Error message": {
@@ -2086,6 +2363,55 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "Skóre je potřeba vyplnit"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Přiložený ICS soubor nelze dešifrovat"
+      ],
+      "Attached ICS file could not be read": [
+        "Přiložený soubor ICS se nepodařilo přečíst"
+      ],
+      "Invalid invitation": [
+        "Neplatná pozvánka"
+      ],
+      "Invalid response": [
+        "Neplatná odpověď"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Událost se nepodařilo přidat do kalendáře. Nebyla odeslána žádná odpověď"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Událost se nepodařilo aktualizovat ve vašem kalendáři. Nebyla odeslána žádná odpověď"
+      ],
+      "Unexpected error": [
+        "Neočekávaná chyba"
+      ],
+      "Unsupported invitation": [
+        "Nepodporovaná pozvánka"
+      ],
+      "Unsupported response": [
+        "Nepodporovaná odpověď"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Nepodařilo se nám zrušit událost ve vašem kalendáři"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Nepodařilo se nám načíst událost z vašeho kalendáře"
+      ],
+      "We could not update the event in your calendar": [
+        "Nepodařilo se nám aktualizovat událost ve vašem kalendáři"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Vaše odpověď byla odeslána, ale událost nemohla být přidána do vašeho kalendáře"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Odpověď byla odeslána, ale událost nemohla být aktualizována ve vašem kalendáři"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(bez názvu)"
       ]
     },
     "Feedback Modal Title": {
@@ -2221,13 +2547,66 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } události zašifrována a přidána do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrovány a přidány do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } události byla úspěšně importována.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } ze ${ totalToImport } událostí byly úspěšně importovány.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Nastal problém při šifrování a přidávání vaší události. Událost nemohla být importována.",
+        "Nastal problém při šifrování a přidávání vašich událostí. Události nemohly být importovány.",
+        "Nastal problém při šifrování a přidávání vašich událostí. Události nemohly být importovány.",
+        "Nastal problém při šifrování a přidávání vašich událostí. Události nemohly být importovány."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifrování a přidávaní kontaktů: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Šifrování a přidávání událostí do Vašeho kalendáře: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Událost byla úspěšně importována. Importovaná událost se nyní objeví ve vašem kalendáři.",
+        "Události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři.",
+        "Události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři.",
+        "Události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Prosíme nezavírejte kartu před dokončením importu."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } v současné době nepodporuje některé typy, detaily a formáty událostí."
+      ],
       "vCard versions < 3.0": [
         "vCard verze < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Importované pozvánky naleznete v ${ CALENDAR_APP_NAME } jako prosté události bez podrobností o organizátorech a účastnících. Pro aktualizace událostí a zobrazení účastníků požádejte organizátory o pozvánku pomocí své ${ BRAND_NAME } e-mailové adresy."
+      ],
+      "This file contains an event invitation:": [
+        "Tento soubor obsahuje pozvánku na událost:",
+        "Tento soubor obsahuje pozvánky na události:",
+        "Tento soubor obsahuje pozvánky na události:",
+        "Tento soubor obsahuje pozvánky na události:"
+      ],
+      "This file contains an invitation response:": [
+        "Tento soubor obsahuje odpověď na pozvánku:",
+        "Tento soubor obsahuje odpovědi na pozvánky:",
+        "Tento soubor obsahuje odpovědi na pozvánky:",
+        "Tento soubor obsahuje odpovědi na pozvánky:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Tento soubor obsahuje některá data, která nemůžeme importovat:"
       ]
     },
     "Import contact": {
@@ -2282,15 +2661,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Přístup méně zabezpečených aplikací\" se povoluje v nastavení zabezpečení vašeho účtu Google."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } se nemůže připojit k vašemu účtu. Ujistěte se, že je IMAP přístup povolen ve vašem Gmail účtu."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } se nemůže připojit k vašemu účtu. Ujistěte se, že je IMAP přístup povolen ve vašem Gmail účtu."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } se nemůže připojit k vašemu účtu. Ujistěte se, že:"
       ],
@@ -2299,9 +2669,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } se nemůže připojit k vašemu vzdálenému účtu. Ujistěte se, že:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } se nemůže připojit k vašemu Gmail účtu. Ujistěte se prosím, že adresa e-mailového serveru a číslo portu jsou správně."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } se nemůže připojit k vašemu účtu Yahoo. Zkontrolujte prosím, že adresa e-mailového servu a číslo portu jsou správně."
@@ -2314,18 +2681,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Dvoufázové ověřování je zapnuto ve vašem vzdáleném e-mailovém účtu."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Pokud ${ bold2StepsDisabled } (výchozí nastavení Gmail), ujistěte se prosím:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Pokud ${ bold2StepsDisabled } v Gmailu (výchozí nastavení), ujistěte se, že:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Pokud ${ bold2StepsEnabled } v Gmailu, ujistěte se, že používáte Vaše heslo pro aplikaci namísto svého běžného hesla."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Pokud ${ bold2StepsEnabled }, ujistěte se prosím, že Vaše adresa e-mailu a heslo aplikace jsou správné. ${ boldNot }používejte běžné heslo."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP přístup je zapnut ve vašem externím účtu."
@@ -2344,9 +2699,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Použijte heslo aplikace místo běžného hesla, pokud:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Můžete se také zkusit odhlásit z ${ boldGoogleAccounts } a následně odemknout ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Vaše heslo pro aplikaci je správné. ${ boldNot }používejte vaše běžné heslo."
@@ -2368,18 +2720,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Dvoufázové ověřování je vypnuto"
-      ],
-      "2-step verification is enabled": [
-        "Dvoufázové ověřování je povoleno"
-      ],
-      "all your other Google accounts": [
-        "všechny vaše další účty Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "ne"
       ]
@@ -2534,8 +2874,20 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } z ${ totalEvents } události nebude importována. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } ze ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily."
+      ],
       "No contact can be imported. Click for details": [
         "Žádný kontakt nemůže být importován. Klikněte pro více informací"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Události nemohou být importovány. Klikněte pro detaily."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
     "Info": {
@@ -2928,6 +3280,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Zadejte ověřovací kód. Číslice ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
@@ -3358,6 +3713,9 @@
       "Tap the + button to upload a file or folder": [
         "Klepnutím na tlačítko + nahrajete soubor nebo složku"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Dočasně nedostupné. Zkontrolujte to prosím později."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
@@ -3479,7 +3837,7 @@
         "Nahrávání stovek souborů najednou, může zapříčinit snížení výkonu."
       ],
       "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Pomocí Drive pro PC můžete synchronizovat složky v počítači s ${ DRIVE_APP_NAME }. Zobrazí se zde a budou přístupné odkudkoli.  ${ LearnMore }"
+        "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Pomocí tohoto formuláře nás můžete upozornit na nevhodné, nezákonné,\nnebo jinak škodlivé sdílené soubory. Chystáte se nahlásit:"
@@ -3541,6 +3899,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Zde můžete zkontrolovat průběh ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Importovat můžete vždy jeden typ dat."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
@@ -3549,6 +3910,9 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "Zbývá vám ${ expiresInDays } dní na získání uvítacího bonusu 500 MB a "
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Před importováním vašich událostí musíte mít aktivní osobní kalendář."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosáhli jste ${ spaceDisplayed }% kapacity svého úložiště. ${ freeUpMessage } ${ upgradeLink }"
@@ -3560,7 +3924,7 @@
         "Ztratíte všechny neuložené změny."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
@@ -3880,6 +4244,9 @@
       ],
       "Import to email address": [
         "Importovat na e-mailovou adresu"
+      ],
+      "Import to:": [
+        "Importovat do:"
       ],
       "Label messages as": [
         "Označit zprávy jako"
@@ -4593,6 +4960,11 @@
         "Sloučit s kalendářem"
       ]
     },
+    "Participant name": {
+      "You": [
+        "Vy"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Klíč není možné použít k šifrování"
@@ -4781,6 +5153,9 @@
       "Bug reported": [
         "Chyba nahlášena"
       ],
+      "Canceling import": [
+        "Ruším import"
+      ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
       ],
@@ -4808,6 +5183,9 @@
       "Fingerprint copied to clipboard": [
         "Otisk zkopírován do schránky"
       ],
+      "Import record deleted": [
+        "Záznam o importu byl smazán"
+      ],
       "Phone number copied to clipboard": [
         "Telefonní číslo zkopírováno do schránky"
       ],
@@ -4822,6 +5200,9 @@
       ],
       "The link to your file was successfully copied": [
         "Odkaz na váš soubor byl úspěšně zkopírován"
+      ],
+      "Undo in progress": [
+        "Probíhá zrušení"
       ],
       "Verification successful": [
         "Ověření proběhlo úspěšně"
@@ -5005,6 +5386,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue with partial import?": [
+        "Pokračovat s částečným importem?"
+      ],
       "Create a new file": [
         "Vytvořit nový soubor"
       ],
@@ -5149,8 +5533,20 @@
       "Human verification": [
         "Lidské ověření"
       ],
+      "Import as simple event?": [
+        "Importovat jako jednoduchou událost?",
+        "Importovat jako jednoduché události?",
+        "Importovat jako jednoduché události?",
+        "Importovat jako jednoduché události?"
+      ],
       "Import contacts": [
         "Importovat kontakty"
+      ],
+      "Import events": [
+        "Import událostí"
+      ],
+      "Import failed": [
+        "Import selhal"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"

@@ -463,6 +463,15 @@
       "import": [
         "importeren"
       ],
+      "Import calendars": [
+        "Agenda's importeren"
+      ],
+      "Import contacts": [
+        "Contactpersonen importeren"
+      ],
+      "Import emails": [
+        "E-mails importeren"
+      ],
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
       ],
@@ -803,6 +812,9 @@
       "Save": [
         "Opslaan"
       ],
+      "Saving${ ellipsis }": [
+        "Opslaan${ ellipsis }"
+      ],
       "Schedule message": [
         "Bericht plannen"
       ],
@@ -1113,6 +1125,9 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Door nu te verlaten, worden sommige contacten mogelijk niet geïmporteerd"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Door nu te verlaten, worden sommige afspraken mogelijk niet geïmporteerd"
       ]
     },
     "Alt": {
@@ -2822,6 +2837,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "U kunt contactpersonen markeren die u niet wilt samenvoegen of behouden. Ze worden pas verwijderd na het klikken op 'samenvoegen'"
       ]
@@ -3362,8 +3380,36 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Er is een fout opgetreden bij het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Alleen ICS-bestandsindelingen zijn toegestaan."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Fout opgetreden tijdens het uploaden van uw bestand. Er is geen bestand geselecteerd."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraak.",
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Uw bestand ${ formattedFilename } heeft geen afspraken om te importeren."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Uw bestand ${ formattedFilename } is leeg."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Uw bestand ${ formattedFilename } is geen agenda."
       ]
     },
     "Error importing contact": {
@@ -3398,6 +3444,12 @@
       ]
     },
     "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Verkeerd formaat. Onderdeel kan niet gelezen worden."
+      ],
+      "Calendar": [
+        "Agenda"
+      ],
       "Calendar time zone not supported": [
         "Agenda-tijdzone niet ondersteund"
       ],
@@ -3410,11 +3462,17 @@
       "Edited event not supported": [
         "Bewerkte afspraak niet ondersteund"
       ],
+      "Element": [
+        "Element"
+      ],
       "Encryption failed": [
         "Versleutelen is mislukt"
       ],
       "End time out of bounds": [
         "Eindtijd valt buiten de grenzen"
+      ],
+      "Event": [
+        "Afspraak"
       ],
       "Event validation failed": [
         "Validatie van afspraak mislukt"
@@ -3470,8 +3528,14 @@
       "Time zone not supported": [
         "Tijdzone niet ondersteund"
       ],
+      "Timezone": [
+        "Tijdzone"
+      ],
       "To-do entry": [
         "To-do item"
+      ],
+      "Unknown": [
+        "Onbekend"
       ],
       "Unsupported event": [
         "Niet-ondersteunde afspraak"
@@ -3745,6 +3809,9 @@
       ],
       "Subject: ${ subject }": [
         "Onderwerp: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "Aan: ${ toString }"
       ]
     },
     "Get started checklist completion": {
@@ -3893,13 +3960,54 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/ 1 afspraak versleuteld en toegevoegd aan uw agenda",
+        "${ totalImported }/${ totalToImport } afspraken versleuteld en toegevoegd aan uw agenda"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd.",
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. Er kon geen enkele afspraak worden geïmporteerd."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Versleutelen en toevoegen van contacten: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Versleutelen en toevoegen van afspraken aan uw agenda: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Afspraak succesvol geïmporteerd. De geïmporteerde afspraak zal nu in uw agenda verschijnen.",
+        "Afspraken succesvol geïmporteerd. De geïmporteerde afspraken zullen nu in uw agenda verschijnen."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Gelieve het tabblad niet te sluiten voordat het importproces is voltooid."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } ondersteunt momenteel bepaalde afspraaktypen, -details en -indelingen niet."
+      ],
       "vCard versions < 3.0": [
         "vCard-versies < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Geïmporteerde uitnodigingen verschijnen in ${ CALENDAR_APP_NAME } als eenvoudige afspraken zonder details over de organisator en deelnemers. Om updates van afspraken te krijgen en deelnemers te zien, vraag je organisatoren om u uit te nodigen met uw ${ BRAND_NAME }-e-mailadres."
+      ],
+      "This file contains an event invitation:": [
+        "Dit bestand bevat een uitnodiging voor een afspraak:",
+        "Dit bestand bevat uitnodigingen voor afspraken:"
+      ],
+      "This file contains an invitation response:": [
+        "Dit bestand bevat een antwoord op een uitnodiging:",
+        "Dit bestand bevat antwoorden op uitnodigingen:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Dit bestand bevat enkele gegevens die we niet kunnen importeren:"
       ]
     },
     "Import contact": {
@@ -3946,15 +4054,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Minder veilige app-toegang\" is ingeschakeld in de beveiligingsinstellingen voor uw Google-account."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } kan geen verbinding maken met uw account. Zorg ervoor dat Gmail IMAP-toegang is ingeschakeld."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } kan geen verbinding maken met uw account. Zorg ervoor dat IMAP-toegang is ingeschakeld in uw Gmail account."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } kan geen verbinding maken met uw account. Zorg ervoor dat:"
       ],
@@ -3963,9 +4062,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } kan geen verbinding maken met uw extern account. Zorg ervoor dat:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan geen verbinding maken met uw Gmail account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
@@ -3978,18 +4074,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Als ${ bold2StepsDisabled } (standaard Gmail-instellingen), zorg er dan voor dat:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Als ${ bold2StepsDisabled } in Gmail (standaard instellingen), zorg er dan voor:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Als ${ bold2StepsEnabled } in Gmail, zorg er dan voor dat u uw app-wachtwoord gebruikt in plaats van uw reguliere wachtwoord."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Als ${ bold2StepsEnabled }, zorg er dan voor dat uw e-mailadres en app-wachtwoord juist zijn. Gebruik ${ boldNot } uw reguliere wachtwoord."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP-toegang is ingeschakeld in uw externe account."
@@ -4008,9 +4092,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Gebruik het wachtwoord van uw app in plaats van het normale wachtwoord als:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "U kunt ook proberen u uit te loggen uit ${ boldGoogleAccounts } in de browser, en daarna ${ linkCAPTCHA } ontgrendelen."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Uw app-wachtwoord is juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
@@ -4032,18 +4113,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "tweestapsverificatie (2FA) is uitgeschakeld"
-      ],
-      "2-step verification is enabled": [
-        "tweestapsverificatie (2FA) is ingeschakeld"
-      ],
-      "all your other Google accounts": [
-        "al uw andere Google-accounts"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "niet"
       ]
@@ -4194,8 +4263,18 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraak wordt niet geïmporteerd. Uitvouwen voor details.",
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraken worden niet geïmporteerd. Uitvouwen voor details."
+      ],
       "No contact can be imported. Click for details": [
         "Er kan geen contact worden geïmporteerd. Klik voor meer informatie"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Er kan geen afspraak worden geïmporteerd. Uitvouwen voor details."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
     "Info": {
@@ -4632,6 +4711,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
@@ -5131,6 +5213,9 @@
       "support team": [
         "ondersteuningsteam"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Tijdelijk onbeschikbaar. Probeer later opnieuw."
+      ],
       "Test link": [
         "Koppeling testen"
       ],
@@ -5423,7 +5508,7 @@
         "U kunt het als bijlage toevoegen of het inline in uw e-mail tonen."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "U kunt geïmporteerde kalenders ook samenvoegen met bestaande ${ BRAND_NAME }-agenda's."
+        "U kunt geïmporteerde agenda's ook samenvoegen met bestaande ${ BRAND_NAME }-agenda's."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
@@ -5433,6 +5518,9 @@
       ],
       "You can either update your search query or clear it": [
         "U kunt uw zoekopdracht bewerken of wissen"
+      ],
+      "You can import one data type at a time.": [
+        "U kunt maar één type gegevens tegelijk importeren."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
@@ -5476,6 +5564,9 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "U heeft het maximale aantal van 5 reacties bereikt."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft ${ spaceDisplayed }% van uw opslagcapaciteit bereikt. ${ freeUpMessage } ${ upgradeLink }"
@@ -6024,6 +6115,9 @@
       ],
       "Import to email address": [
         "Importeren naar e-mailadres"
+      ],
+      "Import to:": [
+        "Importeren naar:"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Toetsenbordsneltoets: ${ shortcut }"
@@ -6799,6 +6893,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } aangemaakt"
+      ],
       "Block removed": [
         "Blokkade verwijderd"
       ],
@@ -7254,6 +7351,12 @@
       ]
     },
     "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP-versleuteld bericht. Verificatie van afzender is mislukt: ${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP-ondertekend bericht. Verificatie van afzender is mislukt: ${ verificationErrorsMessage }"
+      ],
       "Sender could not be verified: Message not signed": [
         "Afzender kan niet geverifieerd worden: Het bericht was niet ondertekend"
       ],
@@ -7538,6 +7641,9 @@
       "Message Content Search": [
         "Zoeken naar berichtinhoud"
       ],
+      "Schedule send": [
+        "Plan versturen in"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probeer ${ DRIVE_APP_NAME }"
       ],
@@ -7617,8 +7723,8 @@
         "${ elementsCount } gesprekken gemarkeerd als ongelezen."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } conversatie verplaatst naar ${ folderName } en afzender toegevoegd aan uw toegestane lijst.",
-        "${ elementsCount } conversaties verplaatst naar ${ folderName } en afzenders toegevoegd aan uw toegestane lijst."
+        "${ elementsCount } conversatie verplaatst naar ${ folderName } en afzender toegevoegd aan uw niet-Spamlijst.",
+        "${ elementsCount } conversaties verplaatst naar ${ folderName } en afzenders toegevoegd aan uw niet-Spamlijst."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } gesprek verplaatst naar ${ folderName }.",
@@ -7649,8 +7755,8 @@
         "${ elementsCount } berichten gemarkeerd als ongelezen."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } bericht verplaatst naar ${ folderName } en afzender toegevoegd aan uw toegestane lijst.",
-        "${ elementsCount } berichten verplaatst naar ${ folderName } en afzenders toegevoegd aan uw toegestane lijst."
+        "${ elementsCount } bericht verplaatst naar ${ folderName } en afzender toegevoegd aan uw niet-Spamlijst.",
+        "${ elementsCount } berichten verplaatst naar ${ folderName } en afzenders toegevoegd aan uw niet-Spamlijst."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } bericht is verplaatst naar ${ folderName }.",
@@ -7672,6 +7778,9 @@
       ],
       "Bug reported": [
         "Bug gemeld"
+      ],
+      "Canceling import": [
+        "Annuleer import"
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
@@ -7706,7 +7815,7 @@
         "Conversatie gemarkeerd als ongelezen."
       ],
       "Conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "Conversatie verplaatst naar ${ folderName } en afzender toegevoegd aan uw toegestane lijst."
+        "Conversatie verplaatst naar ${ folderName } en afzender toegevoegd aan uw niet-Spamlijst."
       ],
       "Conversation moved to ${ folderName }.": [
         "Gesprek verplaatst naar ${ folderName }."
@@ -7734,6 +7843,9 @@
       ],
       "Folder cleared": [
         "Map geleegd"
+      ],
+      "Import record deleted": [
+        "Import record verwijderd"
       ],
       "Keyboard shortcuts preferences updated": [
         "Sneltoetsvoorkeuren bijgewerkt"
@@ -7769,7 +7881,7 @@
         "Bericht gemarkeerd als ongelezen."
       ],
       "Message moved to ${ folderName } and sender added to your not spam list.": [
-        "Bericht verplaatst naar ${ folderName } en afzender toegevoegd aan uw toegestande lijst."
+        "Bericht verplaatst naar ${ folderName } en afzender toegevoegd aan uw niet-Spamlijst."
       ],
       "Message moved to ${ folderName }.": [
         "Bericht verplaatst naar ${ folderName }."
@@ -7814,6 +7926,9 @@
       ],
       "Read receipt sent": [
         "Ontvangstbewijs verzonden"
+      ],
+      "Undo in progress": [
+        "Bezig met ongedaan maken"
       ],
       "Verification successful": [
         "Verificatie gelukt"
@@ -8016,6 +8131,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Continue with partial import?": [
+        "Doorgaan met gedeeltelijke invoer?"
+      ],
       "Conversation list": [
         "Gesprekslijst"
       ],
@@ -8156,8 +8274,18 @@
       "Image": [
         "Afbeelding"
       ],
+      "Import as simple event?": [
+        "Importeren als eenvoudige afspraak?",
+        "Importeren als eenvoudige afspraken?"
+      ],
       "Import contacts": [
         "Contactpersonen importeren"
+      ],
+      "Import events": [
+        "Afspraken importeren"
+      ],
+      "Import failed": [
+        "Import mislukt"
       ],
       "Insert contacts": [
         "Contacten invoegen"

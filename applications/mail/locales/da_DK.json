@@ -454,6 +454,15 @@
       "import": [
         "importér"
       ],
+      "Import calendars": [
+        "Importer kalendere"
+      ],
+      "Import contacts": [
+        "Importér kontakter"
+      ],
+      "Import emails": [
+        "Importer e-mails"
+      ],
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
       ],
@@ -1107,6 +1116,9 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ved at afslutte nu vil nogle kontakter måske ikke blive importeret"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Ved at forlade nu, vil nogle begivenheder måske ikke blive importeret"
       ]
     },
     "Alt": {
@@ -2771,6 +2783,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
       ]
@@ -3304,8 +3319,36 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Der opstod en fejl under upload af din fil ${ formattedFilename }. Kun ICS-filformater er tilladt."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "En uventet fejl opstod. Import skal genstartes."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenhed.",
+        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenheder."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Din fil ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Din fil ${ formattedFilename } har ingen begivenheder til import."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Din fil ${ formattedFilename } er tom."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Din fil ${ formattedFilename } er ikke en kalender."
       ]
     },
     "Error importing contact": {
@@ -3340,6 +3383,12 @@
       ]
     },
     "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Forkert format. Komponent kan ikke læses."
+      ],
+      "Calendar": [
+        "Kalender"
+      ],
       "Calendar time zone not supported": [
         "Kalendertidszone understøttes ikke"
       ],
@@ -3352,11 +3401,17 @@
       "Edited event not supported": [
         "Redigeret begivenhed understøttes ikke"
       ],
+      "Element": [
+        "Element"
+      ],
       "Encryption failed": [
         "Kryptering mislykkedes"
       ],
       "End time out of bounds": [
         "Sluttid uden for grænserne"
+      ],
+      "Event": [
+        "Begivenhed"
       ],
       "Event validation failed": [
         "Validering af begivenhed mislykkedes"
@@ -3412,8 +3467,14 @@
       "Time zone not supported": [
         "Tidszone understøttes ikke"
       ],
+      "Timezone": [
+        "Tidszone"
+      ],
       "To-do entry": [
         "Gøremålindlæg"
+      ],
+      "Unknown": [
+        "Ukendt"
       ],
       "Unsupported event": [
         "Ikke-understøttet begivenhed"
@@ -3826,13 +3887,54 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } begivenhed krypteret og føjet til din kalender",
+        "${ totalImported }/${ totalToImport } begivenheder krypteret og føjet til din kalender"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret.",
+        "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. Ingen begivenhed kunne importeres.",
+        "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. Ingen begivenheder kunne importeres."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kryptering og tilføjelse af kontakter: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Kryptering og tilføjelse af begivenheder til din kalender: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Begivenhed importeret. Den importerede begivenhed vises nu i din kalender.",
+        "Begivenheder importeret. De importerede begivenheder vises nu i din kalender."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Luk ikke fanen før importprocessen er afsluttet."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } understøtter i øjeblikket ikke visse begivenhedstyper, detaljer og formater."
+      ],
       "vCard versions < 3.0": [
         "vCard versioner < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Importerede invitationer vises i ${ CALENDAR_APP_NAME } som simple begivenheder uden oplysninger om arrangør og deltagere. Hvis du vil have opdateringer om begivenhederne og se deltagerne, skal du bede arrangørerne om at invitere dig med din ${ BRAND_NAME }-e-mailadresse."
+      ],
+      "This file contains an event invitation:": [
+        "Denne fil indeholder en invitation til en begivenhed:",
+        "Denne fil indeholder invitationer til begivenhed:"
+      ],
+      "This file contains an invitation response:": [
+        "Denne fil indeholder et svar på en invitation:",
+        "Denne fil indeholder svar på en invitation:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Denne fil indeholder nogle data, som vi ikke kan importere:"
       ]
     },
     "Import contact": {
@@ -3879,26 +3981,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Mindre sikker app-adgang\" er slået til i sikkerhedsindstillingerne for din Google-konto."
-      ],
       "2-step verification is enabled in your external account.": [
         "Totrinsbekræftelse er aktiveret på din eksterne konto."
       ],
       "2-step verification is enabled in your external email account.": [
         "Totrinsbekræftelse er aktiveret på din eksterne e-mail-konto."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Hvis ${ bold2StepsDisabled } (standard Gmail-indstillinger), så sørg venligst for:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Hvis ${ bold2StepsDisabled } i Gmail (standard indstillinger), så sørg venligst for:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Hvis ${ bold2StepsEnabled } i Gmail, skal du sørge for, at du bruger din app-adgangskode i stedet for din almindelige adgangskode."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Hvis ${ bold2StepsEnabled }, skal du sørge for, at din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP-adgang er aktiveret på din eksterne konto."
@@ -3917,9 +4004,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Brug din app adgangskode i stedet for din almindelige adgangskode, hvis:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Du kan også prøve at logge ud af ${ boldGoogleAccounts } i browseren, og derefter låse ${ linkCAPTCHA } op."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Din app-adgangskode er korrekt. Benyt ${ boldNot } din normale adgangskode."
@@ -3941,18 +4025,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Totrinsbekræftelse deaktiveret"
-      ],
-      "2-step verification is enabled": [
-        "Totrinsbekræftelse aktiveret"
-      ],
-      "all your other Google accounts": [
-        "alle dine andre Google-konti"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "ikke"
       ]
@@ -4082,8 +4154,18 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } ud af ${ totalEvents } begivenhed vil ikke blive importeret. Udvid for detaljer.",
+        "${ totalEventsDiscarded } ud af ${ totalEvents } begivenheder vil ikke blive importeret. Udvid for detajler."
+      ],
       "No contact can be imported. Click for details": [
         "Ingen kontakt kan importeres. Klik for detaljer"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Ingen begivenhed kan importeres. Klik for detaljer."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
     "Info": {
@@ -5013,6 +5095,9 @@
       "support team": [
         "supportteam"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Midlertidigt utilgængelig. Tjek igen senere."
+      ],
       "Test link": [
         "Test link"
       ],
@@ -5304,6 +5389,9 @@
       "You can either update your search query or clear it": [
         "Du kan enten opdatere din søgeforespørgsel eller slette den"
       ],
+      "You can import one data type at a time.": [
+        "Du kan importere én datatype ad gangen."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
       ],
@@ -5346,6 +5434,9 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Du har nået det maksimale antal på 5 svar."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Du skal have en aktiv personlig kalender for at importere dine begivenheder."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
@@ -5882,6 +5973,9 @@
       ],
       "Import to email address": [
         "Importer til e-mailadresse"
+      ],
+      "Import to:": [
+        "Importer til:"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturgenvej: ${ shortcut }"
@@ -7267,6 +7361,9 @@
       "Bug reported": [
         "Fejl anmeldt"
       ],
+      "Canceling import": [
+        "Annullerer import"
+      ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
       ],
@@ -7328,6 +7425,9 @@
       ],
       "Folder cleared": [
         "Mappe ryddet"
+      ],
+      "Import record deleted": [
+        "Importpost slettet"
       ],
       "Keyboard shortcuts preferences updated": [
         "Indstillinger for tastaturgenveje opdateret"
@@ -7610,6 +7710,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue with partial import?": [
+        "Fortsæt med delvis import?"
+      ],
       "Conversation list": [
         "Samtaleliste"
       ],
@@ -7750,8 +7853,18 @@
       "Image": [
         "Billede"
       ],
+      "Import as simple event?": [
+        "Importer som simpel begivenhed?",
+        "Importer som simple begivenheder?"
+      ],
       "Import contacts": [
         "Importér kontakter"
+      ],
+      "Import events": [
+        "Importer begivenheder"
+      ],
+      "Import failed": [
+        "Import mislykkedes"
       ],
       "Insert contacts": [
         "Indsæt kontakter"

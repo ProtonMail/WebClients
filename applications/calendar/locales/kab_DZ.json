@@ -229,6 +229,15 @@
       "import": [
         "kter"
       ],
+      "Import calendars": [
+        "Kter iwitayen"
+      ],
+      "Import contacts": [
+        "Sgaǧ-d tansiwin"
+      ],
+      "Import emails": [
+        "Kter imaylen"
+      ],
       "Import from .csv or vCard": [
         "Kter si .csv neɣ vCard"
       ],
@@ -2383,26 +2392,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Anekcum i yusnasen i yesεan taɣelist meẓẓiyen\" irmed deg yiɣewwaṛen n umiḍan-ik·im Google."
-      ],
       "2-step verification is enabled in your external account.": [
         "Asenqed ɣef sin yiḥricen yermed deg umiḍan-ik·im azɣaray."
       ],
       "2-step verification is enabled in your external email account.": [
         "Asenqed s sin yiḥricen yermed deg umiḍan-ik·im n yimayl azɣaray."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Ma yella ${ bold2StepsDisabled } (iɣewwaren n Gmail imezwer), ttxil-k·m wali ma yella:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Ma yella ${ bold2StepsDisabled } deg Gmail (iɣewwaren imezwer), ttxil-k·m wali ma yella:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Ma yella ${ bold2StepsEnabled } deg Gmail, ttxil-k·m wali ma yella tseqdaceḍ awal-ik·im uffir n usnas deg ubdil n wawal-ik·im uffir i tezgiḍ tseqdaceḍ."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ma yella ${ bold2StepsEnabled }, ttxil-k·m senqed tansa-inek·inem n yimayl akked wawal uffir ma yella d imeɣta. Seqdec ${ boldNot } awal-ik·im uffir i tseqdaceḍ."
       ],
       "IMAP access is enabled in your external account.": [
         "Anekcum IMAP yermed deg umiḍan-ik·im azɣaray."
@@ -2421,9 +2415,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Seqdec awal-ik·im uffir n usnas deg ubdil n wawal-ik·im uffir i tezgiḍ tseqdaceḍ ma yella:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Mazal tzemreḍ ad tɛerḍeḍ ad teffɣeḍ seg ${ boldGoogleAccounts } deg yiminig, syen kkes asekker n ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Awal-ik·im uffir d ameɣtu. Seqdec ${ boldNot } awal-ik·im uffir n tannumi."
@@ -2445,18 +2436,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Asenqed s sin yiḥricen yensa"
-      ],
-      "2-step verification is enabled": [
-        "Asenqed s sin yiḥricen yensa"
-      ],
-      "all your other Google accounts": [
-        "akk imiḍanen-inek·inem-nniḍen n Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "uhu"
       ]
@@ -2909,6 +2888,9 @@
       "support team": [
         "tarbaɛt n tallalt"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Ulac-it akka tura. Ma ulac aɣilif, senqed ticki."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Asnas-a yesra ad ikkes awgelhen s wudem adidgan i yinermisen-ik send ad d-banen. Ɣer taggara n ukala, afaylu VCF ad ilal, sakin ad tizmireḍ ad t-id-sadreḍ."
       ],
@@ -3037,6 +3019,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Twennzeḍ awal-ik·im uffir, tidyanin yeqqnen ɣer yiwitay-a ulamek ara asent-yekkes uwgelhen.\nAkk iseɣwan n yiwitayen yettwabḍa i d-terniḍ yakan dayen ur tteddun ara.\n Akk iwitayen urmiden iɣer tjerrdeḍ ad ttumtawin i tikkelt-nniḍen seld kra n tesdatin."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Tesriḍ ad tesɛuḍ awitay urmid udmawen i uktar n yineḍruyen-ik·im."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Tewwḍeḍ ɣer ${ spaceDisplayed }% n tallunt-inek .m n weḥraz. ${ freeUpMessage } ${ upgradeLink }"
@@ -4091,6 +4076,9 @@
       "Calendar updated": [
         "Awitay yettwasnifel"
       ],
+      "Canceling import": [
+        "Asefsex n tektert"
+      ],
       "Cancellation sent and all events deleted": [
         "Asefsex yettwazen, akk tidyanin ttwakksent"
       ],
@@ -4143,6 +4131,9 @@
       ],
       "Future events updated": [
         "Tidyanin d-iteddun ttwaleqment"
+      ],
+      "Import record deleted": [
+        "Kter asekles yettwakksen"
       ],
       "Invitation sent and all events updated": [
         "Tinubga tettwazen, tidyanin ttwaleqqment akk"

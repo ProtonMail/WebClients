@@ -469,10 +469,10 @@
       "Not spam": [
         "迷惑メールでない"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -953,6 +953,9 @@
     "Badge": {
       "5 users": [
         "5 ユーザー"
+      ],
+      "Coming soon": [
+        "まもなく登場"
       ]
     },
     "Badge for domain": {
@@ -1109,6 +1112,11 @@
         "Tweet"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "人またはグループを追加"
+      ]
+    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "選択したカレンダーの全予定を含む ICS ファイルをダウンロードします。"
@@ -1141,6 +1149,11 @@
     "Calendar permissions label": {
       "Permissions": [
         "権限"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "すでにこのカレンダーにアクセスできます"
       ]
     },
     "Calendar settings section title": {
@@ -2785,6 +2798,9 @@
       "No WKD key retrieved for user is valid for sending": [
         "ユーザーのWKD 鍵が送信に使用できません"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } アカウントではありません"
+      ],
       "Not a valid number": [
         "無効な番号です"
       ],
@@ -2929,14 +2945,8 @@
       "The label name is too long. Please choose a different name.": [
         "ラベル名が長すぎます。別の名前を選択してください。"
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "追加クレジットの最低金額は ${ _price } です。"
-      ],
       "The minimum amount that can be donated is ${ price }": [
         "寄付金額は ${ price } から受け付けています。"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "最低 ${ _price2 } より受け付けています。"
       ],
       "The organization key must be activated first": [
         "組織の鍵を最初に有効にする必要があります"
@@ -3783,32 +3793,26 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Google アカウントのセキュリティ設定で「あまり安全ではないアプリアクセス」がオンになっています。"
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたのアカウントに接続できません。以下を確認してください。"
       ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } はあなたのアカウントに接続できません。Gmail IMAP アクセスが有効になっていることを確認してください。"
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } はあなたの外部アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
       ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } はあなたの Gmail アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたの外部アカウントに接続できません。以下を確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } はあなたの Yahoo アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたの Yahoo アカウントに接続できません。以下を確認してください。"
       ],
       "2-step verification is enabled in your external account.": [
         "2 段階認証は外部アカウントで有効になっています。"
       ],
       "2-step verification is enabled in your external email account.": [
         "2 段階認証は外部メールアカウントで有効になっています。"
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "${ bold2StepsDisabled } (デフォルトのGmail設定) の場合は、以下を確認してください:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Gmail で ${ bold2StepsDisabled } （デフォルト設定）の場合は、以下を確認してください:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Gmailで ${ bold2StepsEnabled } の場合は、通常のパスワードの代わりにアプリのパスワードを使用していることを確認してください。"
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "${ bold2StepsEnabled } の場合は、メールアドレスとアプリのパスワードが正しいことを確認してください。${ boldNot } は通常のパスワードを使用します。"
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP アクセスは外部アカウントで有効になっています。"
@@ -3827,9 +3831,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "また、ブラウザで ${ boldGoogleAccounts } のサインアウトを試し、 ${ linkCAPTCHA } をロックを解除することもできます。"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "アプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
@@ -3851,18 +3852,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "2 段階認証が無効"
-      ],
-      "2-step verification is enabled": [
-        "2 段階認証が有効"
-      ],
-      "all your other Google accounts": [
-        "ほかのすべての Google アカウント"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "しないで"
       ]
@@ -4129,7 +4118,7 @@
         "${ storageSize } ストレージ"
       ],
       "(${ memberCount } members)": [
-        "(${ memberCount } メンバー)"
+        "(${ memberCount } 人のメンバー)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(以下のすべての条件が満たされた場合に動作します)"
@@ -4260,9 +4249,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "今後、このリンクはあなたのカレンダーとの同期や更新の取得に使用できなくなります。再度アクセスを許可したい場合は、新しいリンクを作成する必要があります。"
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL はあなたの個人情報を収集しており、広告主や、その他の第三者に情報を提供しています。プライバシーを守るため、安全なメールアドレスを作成しましょう。"
-      ],
       "Are you sure you want to delete this address?": [
         "本当にこのアドレスを削除してよいですか。"
       ],
@@ -4346,6 +4332,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "変更が保存されていません"
+      ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "このカレンダーの予定の詳細を共有すると、${ BRAND_NAME } がこのカレンダーの暗号化された情報にアクセスできるようになります。"
       ],
       "Center": [
         "中央揃え"
@@ -4518,6 +4507,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "検証コードを入力してください。桁数は ${ digit } 桁です。"
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } アカウントの詳細を入力してください。"
       ],
@@ -4565,9 +4557,6 @@
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "あなたの公開鍵を友達に渡すか、誰もがあなたにエンドツーエンドの暗号化メールを送れるようにオンラインで公開しましょう！"
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google はオンライン履歴を記録したり、個人情報を収集しており、広告主や、その他の第三者に情報を提供しています。プライバシーを守るため、安全なメールアドレスを作成しましょう。"
       ],
       "here": [
         "こちら"
@@ -4766,12 +4755,6 @@
       ],
       "lose access to all current encrypted data": [
         "すべての暗号化されたデータにアクセスできなくなります"
-      ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru はあなたの個人情報を収集しており、広告主、ロシアの政府機関、その他の第三者に情報を提供しています。プライバシーを守るため、安全なメールアドレスを作成しましょう。"
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "アカウント設定のために、２要素認証デバイスに手動でこの情報を入力してください。 ${ _switchButton }"
       ],
       "Member": [
         "メンバー"
@@ -5372,12 +5355,6 @@
       ],
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "アメリカの Yahoo はあなたの個人情報を収集しており、広告主、アメリカの諜報機関、その他の第三者に情報を提供しています。プライバシーを守るため、安全なメールアドレスを作成しましょう。"
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex はオンライン履歴を記録したり、個人情報を収集しており、広告主や、その他の第三者に情報を提供しています。プライバシーを守るため、安全なメールアドレスを作成しましょう。"
       ],
       "Yearly": [
         "毎年"
@@ -7255,12 +7232,6 @@
       "Explore all ${ BRAND_NAME } plans": [
         "すべての ${ BRAND_NAME } プランを表示"
       ],
-      "From ${ _price }": [
-        "${ _price } から"
-      ],
-      "From ${ _price2 } per user": [
-        "1 ユーザーあたり ${ _price2 } から"
-      ],
       "From ${ price }": [
         "${ price } から"
       ],
@@ -7475,6 +7446,17 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7520,17 +7502,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -7726,9 +7697,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } が作成されました"
-      ],
       "A disabled address cannot be primary": [
         "無効にされたアドレスはプライマリーにすることができません"
       ],
@@ -8435,9 +8403,19 @@
         "ラベル"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "非 ${ BRAND_NAME } ユーザーを招待するには、リンクでカレンダーを共有します"
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
         "カレンダーのメンバーの上限 ${ MAX_CALENDAR_MEMBERS } を超過しました。"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with ${ BRAND_NAME } users": [
+        "${ BRAND_NAME } ユーザーに共有"
       ]
     },
     "Shared calendar label input placeholder": {
@@ -8537,9 +8515,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendars per user": [
-        "1 ユーザーあたり ${ _n } 件のカレンダー"
-      ],
       "${ maxVpn } high-speed VPN connections": [
         "${ maxVpn } 件の高速 VPN 接続"
       ],
@@ -9615,9 +9590,6 @@
       "Theme": [
         "テーマ"
       ],
-      "This address might compromise your privacy.": [
-        "このアドレスはブライバシーを損なう可能性があります。"
-      ],
       "Time zone": [
         "タイムゾーン"
       ],
@@ -9769,6 +9741,16 @@
       ],
       "Role": [
         "権限"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "カレンダーを作成"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "カレンダーを編集"
       ]
     },
     "Today icon tooltip in mini calendar": {

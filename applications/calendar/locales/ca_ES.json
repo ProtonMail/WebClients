@@ -137,6 +137,9 @@
       "Customize import": [
         "Personalitzar importació"
       ],
+      "Decline invite": [
+        "Declinar invitació"
+      ],
       "Delete": [
         "Esborra"
       ],
@@ -237,6 +240,15 @@
       ],
       "import": [
         "importar"
+      ],
+      "Import calendars": [
+        "Importa calendaris"
+      ],
+      "Import contacts": [
+        "Importar contactes"
+      ],
+      "Import emails": [
+        "Importa correus"
       ],
       "Import events": [
         "Importar esdeveniments"
@@ -568,6 +580,9 @@
       "By leaving now, some contacts may not be imported": [
         "Si sortiu ara, alguns contactes potser no es poden importar"
       ],
+      "By leaving now, some events may not be imported": [
+        "Si surts ara alguns esdeveniments no podràn ser importats"
+      ],
       "By leaving now, you will lose your event.": [
         "Si surts ara, perdreu el vostre esdeveniment."
       ]
@@ -681,6 +696,11 @@
         "Continua utilitzant ${ MAIL_APP_NAME }."
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Afegir persones o grups"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Hi assistireu?"
@@ -713,6 +733,19 @@
       ],
       "You tentatively accepted the invitation": [
         "Heu acceptat provisionalment la invitació"
+      ]
+    },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Permisos"
+      ]
+    },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Gestionar enllaços"
+      ],
+      "Manage members": [
+        "Gestionar membres"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1752,6 +1785,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
       ]
@@ -1881,9 +1917,17 @@
         "${ list } no té una adreça de correu electrònic vàlida",
         "Alguns contactes no tenen una adreça de correu electrònic vàlida: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } no té una adreça de correu electrònic",
+        "Alguns contactes no tenen adreça de correu electrònic: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } té correus electrònics incorrectes",
         "Alguns grups tenen correus electrònics incorrectes: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } no té contactes",
+        "Alguns grups no tenen contactes: ${ list }"
       ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
@@ -2013,6 +2057,9 @@
       "No WKD key retrieved for user is valid for sending": [
         "No hi ha cap clau WKD per a l'usuari vàlida per a l'enviament"
       ],
+      "Not a ${ BRAND_NAME } account": [
+        "No és un compte ${ BRAND_NAME }"
+      ],
       "Not a valid number": [
         "Número no vàlid"
       ],
@@ -2133,6 +2180,9 @@
       ],
       "Unknown error": [
         "Error desconegut"
+      ],
+      "Validation error": [
+        "Error de validació"
       ],
       "We were unable to connect to your service provider.": [
         "No hem pogut connectar-nos al vostre proveïdor de serveis."
@@ -2547,6 +2597,9 @@
       ]
     },
     "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Les invitacions importades aparèixen a ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador i dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de ${ BRAND_NAME }."
+      ],
       "This file contains an event invitation:": [
         "Aquest fitxer conté una invitació a un esdeveniment:",
         "Aquest fitxer conté invitacions a un esdeveniment:"
@@ -2603,18 +2656,6 @@
       ]
     },
     "Import error": {
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Si ${ bold2StepsDisabled } (paràmetre de Gmail per defecte), assegureu-vos que:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Si ${ bold2StepsDisabled } a Gmail (configuració predeterminada), assegureu-vos que:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Si ${ bold2StepsEnabled } a Gmail, assegureu-vos que utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya habitual."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Si ${ bold2StepsEnabled }, assegureu-vos que la vostra adreça de correu electrònic i contrasenya d'aplicació són correctes. ${ boldNot } utilitzis la contrasenya normal."
-      ],
       "Invalid IMAP port": [
         "Port IMAP no vàlid"
       ],
@@ -2627,26 +2668,11 @@
       "Use your app password instead of your regular password if:": [
         "Utilitzeu la contrasenya de l'aplicació en lloc de la contrasenya normal si:"
       ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "També podeu provar de tancar la sessió de ${ boldGoogleAccounts } al navegador i desbloquejar ${ linkCAPTCHA }."
-      ],
       "Your password is correct.": [
         "La seva contrasenya és correcta."
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "La verificació en dos passos està desactivada"
-      ],
-      "2-step verification is enabled": [
-        "La verificació en dos passos està activada"
-      ],
-      "all your other Google accounts": [
-        "tots els altres comptes teus de Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "no"
       ]
@@ -2718,6 +2744,12 @@
       ],
       "No contact can be imported. Click for details": [
         "No s'ha pogut importar cap contacte. Cliqueu per obtenir més informació"
+      ],
+      "No event can be imported. Expand for details.": [
+        "No s’han pogut importar esdeveniments. Ampliar per obtenir més informació."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Port del contingent del teu calendari no es compatible i no s'ha pogut importar."
       ]
     },
     "Info": {
@@ -2847,12 +2879,21 @@
       "and": [
         "i"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Qualsevol amb aquest enllaç pot veure tots els detalls dels esdeveniments d'aquest calendari com ara títol, localització o participants."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Qualsevol amb aquest enllaç pot veure al vostre calendari si esteu lliure o ocupat. No podran veure detalls dels esdeveniments com ara títol, localització o participants."
+      ],
       "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
         "Es permet un màxim d'${ MAX_ATTENDEES } participant per invitació",
         "Es permet un màxim de ${ MAX_ATTENDEES } participants per invitació"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Compartint tots els detalls dels esdeveniments d'aquest calendari accepteu donar a ${ BRAND_NAME } accés a la informació xifrada d'aquest calendari."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
@@ -3008,6 +3049,9 @@
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls"
+      ],
+      "Link created": [
+        "Enllaç creat"
       ],
       "Loading": [
         "Carregant"
@@ -3292,6 +3336,9 @@
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Heu restablert la vostra contrasenya i els esdeveniments vinculats als calendaris següents no s'han pogut desxifrar. Qualsevol enllaç de calendari compartit que hàgiu creat prèviament no tornarà a funcionar.\nTots els calendaris subscrits actius es sincronitzaran altra vegada després d'uns minuts."
       ],
+      "You need to have an active personal calendar to import your events.": [
+        "Necessiteu tenir un calendari personal actiu per importar els vostres esdeveniments."
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -3404,6 +3451,9 @@
       "All day": [
         "Tot el dia"
       ],
+      "All-day event notifications": [
+        "Notificacions d'esdeveniments de tot el dia"
+      ],
       "App password": [
         "Contrasenya de l'aplicació"
       ],
@@ -3487,6 +3537,12 @@
       ],
       "Ends": [
         "Finalitza"
+      ],
+      "Event duration": [
+        "Durada de l'esdeveniment"
+      ],
+      "Event notifications": [
+        "Notificacions d'esdeveniment"
       ],
       "Event title": [
         "Títol de l'esdeveniment"
@@ -3678,6 +3734,9 @@
       "Wonderful": [
         "Meravellosa"
       ],
+      "Your calendar URL": [
+        "URL del vostre calendari"
+      ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
       ]
@@ -3813,7 +3872,15 @@
         "Gestionar els calendaris"
       ]
     },
+    "Modal for received invitation to share calendar; Title": {
+      "Unable to join more calendars": [
+        "No es poden unir-se a més calendaris"
+      ]
+    },
     "Modal title": {
+      "Share calendar": [
+        "Compartir calendari"
+      ],
       "Time zone changed": [
         "Fus horari canviat"
       ],
@@ -4366,6 +4433,11 @@
         "Heu sobrepassat el nombre màxim de ${ MAX_CALENDAR_MEMBERS } membres per calendari"
       ]
     },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Introduïu una adreça de correu o un nom de grup"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Gestiona el calendari"
@@ -4375,8 +4447,14 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
       ],
+      "Subscribe to other calendars": [
+        "Subscriure's a altres calendaris"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "Podeu subscriure-us a calendaris externs i llegir-ne els esdeveniments."
       ]
     },
     "Spotlight settings link": {
@@ -4452,8 +4530,14 @@
       "Calendar created": [
         "Calendari creat"
       ],
+      "Calendar information updated": [
+        "S'ha actualitzat l'nformació del calendari"
+      ],
       "Calendar updated": [
         "Calendari actualitzat"
+      ],
+      "Canceling import": [
+        "Cancel·lar importació"
       ],
       "Cancellation sent and all events deleted": [
         "Cancel·lació enviada i tots els esdeveniments eliminats"
@@ -4507,6 +4591,9 @@
       ],
       "Future events updated": [
         "Futurs esdeveniments actualitzats"
+      ],
+      "Import record deleted": [
+        "S'ha suprimit el registre d'importació"
       ],
       "Invitation sent and all events updated": [
         "Invitació enviada i tots els esdeveniments actualitzats"
@@ -4722,6 +4809,9 @@
       ],
       "Create new group": [
         "Crea un grup nou"
+      ],
+      "Create public link": [
+        "Crear un enllaç publico"
       ],
       "Currency": [
         "Moneda"
@@ -5006,6 +5096,16 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Tria un número"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Crear calendari"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Editar calendari"
       ]
     },
     "Today icon tooltip in mini calendar": {
