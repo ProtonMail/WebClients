@@ -124,7 +124,14 @@
 
 		@include media('<=xsmall') {
 			padding-inline: em(8);
+		}
+
+		@include media('<=small') {
 			font-size: max(16px, em($base-font-size));
+		}
+
+		.is-drawer-app & {
+			font-size: em($base-font-size);
 		}
 
 		&:-moz-ui-invalid {

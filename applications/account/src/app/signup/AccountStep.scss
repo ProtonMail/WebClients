@@ -10,10 +10,16 @@
 .email-input-field {
 	&#{&} {
 		padding-inline: em(16);
+		font-size: em($base-font-size);
 	}
 
 	// Rely on parent frame size through a flag classname
 	.tinymobile & {
 		padding-inline: em(8);
+	}
+
+	.tinymobile &,
+	.mobile & {
+		font-size: max(16px, em($base-font-size));
 	}
 }
