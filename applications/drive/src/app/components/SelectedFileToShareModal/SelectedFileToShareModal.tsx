@@ -13,7 +13,7 @@ import {
     useLoading,
 } from '@proton/components';
 
-import { DecryptedLink, useFolderTreeModals } from '../../store';
+import { DecryptedLink, useTreeForModals } from '../../store';
 import FolderTree from '../FolderTree/FolderTree';
 import ModalContentLoader from '../ModalContentLoader';
 import useOpenModal from '../useOpenModal';
@@ -26,7 +26,7 @@ interface Props {
 }
 
 const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
-    const { rootItems, toggleExpand, isLoaded: isTreeLoaded } = useFolderTreeModals(shareId, { rootExpanded: true });
+    const { rootItems, toggleExpand, isLoaded: isTreeLoaded } = useTreeForModals(shareId, { rootExpanded: true });
 
     const [loading, withLoading] = useLoading();
     const [selectedFile, setSelectedFile] = useState<DecryptedLink>();
