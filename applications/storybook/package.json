@@ -37,7 +37,7 @@
         "webpack": "^5.75.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.20.2",
+        "@babel/core": "^7.20.5",
         "@storybook/addon-actions": "^6.5.13",
         "@storybook/addon-essentials": "^6.5.13",
         "@storybook/addon-links": "^6.5.13",
@@ -48,6 +48,6 @@
         "@storybook/source-loader": "^6.5.13",
         "babel-loader": "^9.1.0",
         "eslint-plugin-storybook": "^0.6.7",
-        "netlify-cli": "^12.2.6"
+        "netlify-cli": "^12.2.7"
     }
 }

@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "@emoji-mart/data": "^1.0.3",
-        "@floating-ui/dom": "^1.0.6",
+        "@floating-ui/dom": "^1.0.7",
         "@noble/ed25519": "1.7.1",
         "@proton/styles": "workspace:packages/styles",
         "@reduxjs/toolkit": "^1.9",
@@ -56,7 +56,7 @@
         "tinycolor2": "^1.4.2"
     },
     "devDependencies": {
-        "@babel/core": "^7.20.2",
+        "@babel/core": "^7.20.5",
         "@babel/plugin-proposal-object-rest-spread": "^7.20.2",
         "@babel/plugin-transform-runtime": "^7.19.6",
         "@babel/preset-env": "^7.20.2",
