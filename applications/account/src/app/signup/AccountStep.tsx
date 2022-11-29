@@ -25,6 +25,7 @@ import {
 } from '@proton/components';
 import {
     APPS,
+    APP_NAMES,
     BRAND_NAME,
     CALENDAR_APP_NAME,
     CLIENT_TYPES,
@@ -45,6 +46,7 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
+import { getIsVPNApp } from '../public/helper';
 import Loader from './Loader';
 import { SignupType } from './interfaces';
 
@@ -72,6 +74,7 @@ interface Props {
     onBack?: () => void;
     defaultUsername?: string;
     defaultEmail?: string;
+    toApp: APP_NAMES | undefined;
     signupTypes: SignupType[];
     signupType: SignupType;
     onChangeSignupType: (signupType: SignupType) => void;
@@ -94,6 +97,7 @@ interface Props {
 
 const AccountStep = ({
     clientType,
+    toApp,
     onBack,
     title,
     subTitle,
@@ -251,7 +255,7 @@ const AccountStep = ({
     const terms = (
         <Fragment key="terms">
             <br />
-            <Href url={getTermsURL(clientType === CLIENT_TYPES.VPN ? APPS.PROTONVPN_SETTINGS : undefined)}>{
+            <Href url={getTermsURL(getIsVPNApp(toApp, clientType) ? APPS.PROTONVPN_SETTINGS : undefined)}>{
                 // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
                 c('new_plans: signup').t`terms and conditions`
             }</Href>
