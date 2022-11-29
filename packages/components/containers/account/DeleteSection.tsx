@@ -27,7 +27,7 @@ const DeleteSection = () => {
     if (APP_NAME === APPS.PROTONVPN_SETTINGS && addresses.length) {
         const loginLink = (
             <Href key="0" url="https://account.proton.me/login?product=mail">
-                mail.protonmail.com
+                mail.proton.me
             </Href>
         );
 
