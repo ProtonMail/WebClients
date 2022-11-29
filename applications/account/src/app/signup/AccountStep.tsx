@@ -185,6 +185,7 @@ const AccountStep = ({
             )}
             disableChange={loading}
             autoFocus
+            inputClassName="email-input-field"
             suffix={(() => {
                 if (signupType === SignupType.Email || signupType === SignupType.VPN) {
                     /* Something empty to avoid a layout gap when switching */
