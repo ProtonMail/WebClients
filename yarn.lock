@@ -4309,7 +4309,7 @@ __metadata:
     ts-loader: ^9.4.1
     ttag: ^1.7.24
     typescript: ^4.9.3
-    ua-parser-js: ^0.8.1
+    ua-parser-js: ^1.0.32
     web-streams-polyfill: ^3.2.1
     webpack: ^5.75.0
   peerDependencies:
@@ -30859,10 +30859,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"ua-parser-js@npm:^0.8.1":
-  version: 0.8.1
-  resolution: "ua-parser-js@npm:0.8.1"
-  checksum: 0f05384823a514ad7b0f7a6ae81775c84ea0ae50ee30ea3c5f8cd6139b5df1f48ee9fe38e41c523619411816b3eb05644f16931ec5d01094972cd1b7611194eb
+"ua-parser-js@npm:^1.0.32":
+  version: 1.0.32
+  resolution: "ua-parser-js@npm:1.0.32"
+  checksum: 79a80efd9c21511fdafc042ab748e0e93c8cdb0e8925bf6d48ad7dbb08e808c60fcecd49e679670def44ef428c005aa1810810f6773e7d8135a7817338080813
   languageName: node
   linkType: hard
 
