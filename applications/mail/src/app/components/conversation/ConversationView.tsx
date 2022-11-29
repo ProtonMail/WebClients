@@ -65,7 +65,7 @@ const ConversationView = ({
         handleRetry,
     } = useConversation(inputConversationID, messageID);
     const { state: filter, toggle: toggleFilter, set: setFilter } = useToggle(DEFAULT_FILTER_VALUE);
-    useShouldMoveOut(true, conversationID, pendingRequest, onBack);
+    useShouldMoveOut({ conversationMode: true, elementID: conversationID, loading: pendingRequest, onBack, labelID });
     const messageViewsRefs = useRef({} as { [messageID: string]: MessageViewRef | undefined });
 
     const wrapperRef = useRef<HTMLDivElement>(null);
