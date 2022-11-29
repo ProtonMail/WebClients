@@ -16,7 +16,7 @@ import { propertyToUTCDate } from './vcalConverter';
 import { getIsPropertyAllDay } from './vcalHelper';
 
 export const HASH_UID_PREFIX = 'sha1-uid-';
-export const ORIGINAL_UID_PREFIX = '-original-uid-';
+export const ORIGINAL_UID_PREFIX = 'original-uid-';
 
 export const getIsSuccessSyncApiResponse = (
     response: SyncMultipleApiResponses
@@ -39,26 +39,32 @@ export const generateProtonCalendarUID = () => {
     return `${base64String}@proton.me`;
 };
 
-export const generateVeventHashUID = async (binaryString: string, uid = '') => {
+export const generateVeventHashUID = async (binaryString: string, uid = '', legacyFormat = false) => {
     const hash = arrayToHexString(
         await CryptoProxy.computeHash({ algorithm: 'unsafeSHA1', data: binaryStringToArray(binaryString) })
     );
+    const hashUid = `${HASH_UID_PREFIX}${hash}`;
     if (!uid) {
-        return `${HASH_UID_PREFIX}${hash}`;
+        return hashUid;
     }
-    const sandwichedHash = `${HASH_UID_PREFIX}${hash}${ORIGINAL_UID_PREFIX}`;
+    const join = '-';
     const uidLength = uid.length;
-    const availableLength = MAX_LENGTHS_API.UID - sandwichedHash.length;
+    const availableLength = MAX_LENGTHS_API.UID - ORIGINAL_UID_PREFIX.length - hashUid.length - join.length;
     const croppedUID = uid.substring(uidLength - availableLength, uidLength);
-    return `${sandwichedHash}${croppedUID}`;
+    return legacyFormat
+        ? `${hashUid}${join}${ORIGINAL_UID_PREFIX}${croppedUID}`
+        : `${ORIGINAL_UID_PREFIX}${croppedUID}${join}${hashUid}`;
 };
 
 export const getOriginalUID = (uid = '') => {
     if (!uid) {
         return '';
     }
-    const regexWithOriginalUid = new RegExp(`^${HASH_UID_PREFIX}[abcdef\\d]{40}${ORIGINAL_UID_PREFIX}(.+)`);
-    const [, match] = uid.match(regexWithOriginalUid) || [];
+    const regexWithOriginalUid = new RegExp(`^${ORIGINAL_UID_PREFIX}(.+)-${HASH_UID_PREFIX}[abcdef\\d]{40}`);
+    const regexWithOriginalUidLegacyFormat = new RegExp(
+        `^${HASH_UID_PREFIX}[abcdef\\d]{40}-${ORIGINAL_UID_PREFIX}(.+)`
+    );
+    const [, match] = uid.match(regexWithOriginalUid) || uid.match(regexWithOriginalUidLegacyFormat) || [];
     if (match) {
         return match;
     }
@@ -67,6 +73,13 @@ export const getOriginalUID = (uid = '') => {
         return '';
     }
     return uid;
+};
+
+export const getHasLegacyHashUID = (uid = '') => {
+    if (!uid) {
+        return false;
+    }
+    return new RegExp(`^${HASH_UID_PREFIX}[abcdef\\d]{40}-${ORIGINAL_UID_PREFIX}`).test(uid);
 };
 
 export const getSupportedUID = (uid: string) => {

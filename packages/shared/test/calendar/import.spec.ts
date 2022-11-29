@@ -59,7 +59,19 @@ END:VEVENT`;
         expect(getComponentIdentifier(event)).toEqual('test-event');
     });
 
-    it('should return the original uid for an event with a hash uid', () => {
+    it('should return the original uid for an event with a hash uid with legacy format', () => {
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:original-uid-stmyce9lb3ef@domain.com-sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229
+DTSTART;TZID=America/New_York:20690312T083000
+DTEND;TZID=America/New_York:20690312T093000
+LOCATION:1CP Conference Room 4350
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(getComponentIdentifier(event)).toEqual('stmyce9lb3ef@domain.com');
+    });
+
+    it('should return the original uid for an event with a hash uid with legacy format', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229-original-uid-stmyce9lb3ef@domain.com
@@ -953,7 +965,7 @@ END:VEVENT`;
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
-            uid: { value: 'sha1-uid-d39ba53e577d2eae6ba0baf8539e1fa468fbeabb-original-uid-lalalala' },
+            uid: { value: 'original-uid-lalalala-sha1-uid-d39ba53e577d2eae6ba0baf8539e1fa468fbeabb' },
             dtstamp: {
                 value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
             },
@@ -1085,7 +1097,7 @@ END:VEVENT`;
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
-            uid: { value: 'sha1-uid-a9c06d78f4755f736bfd046b3deb3d76f99ab285-original-uid-test-event' },
+            uid: { value: 'original-uid-test-event-sha1-uid-a9c06d78f4755f736bfd046b3deb3d76f99ab285' },
             dtstamp: {
                 value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
             },

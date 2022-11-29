@@ -164,6 +164,7 @@ const ExtraEvent = ({
                     supportedRecurrenceId,
                 } = await fetchEventInvitation({
                     veventComponent: invitationIcs.vevent,
+                    legacyUid: invitationIcs.legacyUid,
                     api,
                     getAddressKeys,
                     getCalendarInfo,
