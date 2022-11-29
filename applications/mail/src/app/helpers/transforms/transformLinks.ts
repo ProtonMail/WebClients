@@ -45,7 +45,7 @@ const httpInNewTab = (link: HTMLLinkElement) => {
  */
 const sanitizeRelativeHttpLinks = (link: HTMLLinkElement) => {
     if (matches(link, EXCLUDE_ANCHORS) && !linkUsesProtocols(link) && link.nodeName === 'A') {
-        // link.href is the absolute value of the link: mail.protonmail.com is prepended, use getAttribute
+        // link.href is the absolute value of the link: mail.proton.me is prepended, use getAttribute
         const url = link.getAttribute('href');
 
         link.setAttribute('href', `http://${url}`);
