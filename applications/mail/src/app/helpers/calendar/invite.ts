@@ -80,6 +80,7 @@ export enum EVENT_TIME_STATUS {
 export interface EventInvitation {
     originalVcalInvitation?: VcalVcalendar;
     originalUniqueIdentifier?: string;
+    legacyUid?: string;
     fileName?: string;
     vevent: VcalVeventComponent;
     hasMultipleVevents?: boolean;
@@ -620,8 +621,14 @@ export const getSupportedEventInvitation = async ({
     const originalUID = completeVevent.uid?.value;
     const originalUniqueIdentifier =
         hasMultipleVevents || !originalUID ? await generateVeventHashUID(serialize(vcalComponent)) : originalUID;
+    let legacyUid;
     if (isImport) {
-        const sha1Uid = await generateVeventHashUID(icsBinaryString, completeVevent.uid?.value);
+        const sha1Uid = await generateVeventHashUID(icsBinaryString, originalUID);
+        if (originalUID) {
+            // generate a hash UID with legacy format. The ICS widget will need it to find the event in the DB
+            // in case it was added before the UID migration
+            legacyUid = await generateVeventHashUID(icsBinaryString, originalUID, true);
+        }
         completeVevent.uid = { value: sha1Uid };
     } else if (!completeVevent.organizer) {
         // The ORGANIZER field is mandatory in an invitation
@@ -656,6 +663,7 @@ export const getSupportedEventInvitation = async ({
             vtimezone,
             originalVcalInvitation: vcalComponent,
             originalUniqueIdentifier,
+            legacyUid,
             hasMultipleVevents,
             fileName: icsFileName,
         };
