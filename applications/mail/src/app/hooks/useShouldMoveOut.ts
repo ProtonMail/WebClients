@@ -1,11 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useFolders } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-
-import { getCurrentFolderIDs, hasLabel } from '../helpers/elements';
+import { getLabelIDs } from '../helpers/elements';
 import { hasErrorType } from '../helpers/errors';
 import { conversationByID } from '../logic/conversations/conversationsSelectors';
 import { ConversationState } from '../logic/conversations/conversationsTypes';
@@ -14,8 +10,6 @@ import { MessageState } from '../logic/messages/messagesTypes';
 import { RootState } from '../logic/store';
 import { useGetConversation } from './conversation/useConversation';
 import { useGetMessage } from './message/useMessage';
-
-const { ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 const cacheEntryToElement = (cacheEntry: MessageState | ConversationState | undefined) =>
     (cacheEntry as ConversationState)?.Conversation || (cacheEntry as MessageState)?.data || {};
@@ -31,79 +25,61 @@ const cacheEntryIsFailedLoading = (
     return messageExtended?.data?.ID && !messageExtended?.data?.Subject;
 };
 
-export const useShouldMoveOut = (
-    conversationMode: boolean,
-    ID: string | undefined,
-    loading: boolean,
-    onBack: () => void
-) => {
+interface Props {
+    conversationMode: boolean;
+    elementID?: string;
+    onBack: () => void;
+    loading: boolean;
+    labelID: string;
+}
+
+export const useShouldMoveOut = ({ conversationMode, elementID = '', labelID, loading, onBack }: Props) => {
     const getMessage = useGetMessage();
     const getConversation = useGetConversation();
-    const [folders = []] = useFolders();
-
-    const previousVersionRef = useRef<MessageState | ConversationState | undefined>();
-
-    const message = useSelector((state: RootState) => messageByID(state, { ID: ID || '' }));
-    const conversation = useSelector((state: RootState) => conversationByID(state, { ID: ID || '' }));
+    const message = useSelector((state: RootState) => messageByID(state, { ID: elementID }));
+    const conversation = useSelector((state: RootState) => conversationByID(state, { ID: elementID }));
 
     const onChange = (cacheEntry: MessageState | ConversationState | undefined) => {
-        // Move out of a deleted element
+        // Move out if the element is not present in the cache anymore
         if (!cacheEntry) {
             onBack();
             return;
         }
 
-        // Move out of moved away message
-        const previousElement = cacheEntryToElement(previousVersionRef.current);
         const currentElement = cacheEntryToElement(cacheEntry);
-        const hadLabels = hasLabel(previousElement, ALL_MAIL);
-        const previousFolderID = getCurrentFolderIDs(previousElement, folders);
-        const currentFolderID = getCurrentFolderIDs(currentElement, folders);
+        const currentLabelIDs = getLabelIDs(currentElement, labelID);
 
-        if (hadLabels && previousFolderID.length > 0 && !isDeepEqual(previousFolderID, currentFolderID)) {
+        // Move out if the element doesn't contain the current label
+        if (!currentLabelIDs[labelID]) {
             onBack();
             return;
         }
-
-        previousVersionRef.current = cacheEntry;
     };
-
-    useEffect(() => {
-        if (ID) {
-            if (conversationMode) {
-                previousVersionRef.current = getConversation(ID);
-            } else {
-                previousVersionRef.current = getMessage(ID);
-            }
-        } else {
-            previousVersionRef.current = undefined;
-        }
-    }, [ID]);
 
     useEffect(() => {
         if (!conversationMode) {
             // Not sure why, but message from the selector can be a render late here
-            onChange(getMessage(ID || ''));
+            onChange(getMessage(elementID));
         }
     }, [message]);
 
     useEffect(() => {
         if (conversationMode) {
             // Not sure why, but message from the selector can be a render late here
-            onChange(getConversation(ID || ''));
+            onChange(getConversation(elementID));
         }
     }, [conversation]);
 
     useEffect(() => {
-        if (!ID) {
+        if (!elementID) {
             return;
         }
 
-        const cacheEntry = conversationMode ? getConversation(ID) : getMessage(ID);
+        const cacheEntry = conversationMode ? getConversation(elementID) : getMessage(elementID);
 
         // Move out of a non existing message
         if (!loading && cacheEntryIsFailedLoading(conversationMode, cacheEntry)) {
             onBack();
         }
-    }, [ID, loading]);
+    }, [elementID, loading]);
 };

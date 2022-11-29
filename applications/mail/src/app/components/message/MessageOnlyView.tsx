@@ -47,7 +47,7 @@ const MessageOnlyView = ({
     const { feature: conversationHeaderInScrollFeature } = useFeature(FeatureCode.ConversationHeaderInScroll);
     const shouldShowConversationHeaderInScroll = conversationHeaderInScrollFeature?.Value;
 
-    useShouldMoveOut(false, messageID, !bodyLoaded, onBack);
+    useShouldMoveOut({ conversationMode: false, elementID: messageID, loading: !bodyLoaded, onBack, labelID });
 
     // Manage loading the message
     useEffect(() => {
