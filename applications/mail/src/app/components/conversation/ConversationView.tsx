@@ -23,7 +23,7 @@ import ConversationHeader from './ConversationHeader';
 import TrashWarning from './TrashWarning';
 import UnreadMessages from './UnreadMessages';
 
-const { TRASH } = MAILBOX_LABEL_IDS;
+const { TRASH, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 interface Props {
     hidden: boolean;
@@ -65,7 +65,7 @@ const ConversationView = ({
         handleRetry,
     } = useConversation(inputConversationID, messageID);
     const { state: filter, toggle: toggleFilter, set: setFilter } = useToggle(DEFAULT_FILTER_VALUE);
-    useShouldMoveOut(true, conversationID, pendingRequest, onBack);
+    useShouldMoveOut({ conversationMode: true, elementID: conversationID, loading: pendingRequest, onBack, labelID });
     const messageViewsRefs = useRef({} as { [messageID: string]: MessageViewRef | undefined });
 
     const wrapperRef = useRef<HTMLDivElement>(null);
@@ -74,8 +74,9 @@ const ConversationView = ({
     const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
 
     const inTrash = labelID === TRASH;
+    const inAllMail = labelID === ALL_MAIL;
     const filteredMessages = messages.filter(
-        (message) => inTrash === hasLabel(message, TRASH) || isSearchResult(message.ID)
+        (message) => inAllMail || inTrash === hasLabel(message, TRASH) || isSearchResult(message.ID)
     );
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
