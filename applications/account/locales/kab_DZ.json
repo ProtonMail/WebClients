@@ -434,11 +434,11 @@
       "No": [
         "Ala"
       ],
-      "Ok": [
-        "IH"
-      ],
       "OK": [
         "Ih"
+      ],
+      "Ok": [
+        "IH"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
@@ -2476,14 +2476,8 @@
       "The label name is too long. Please choose a different name.": [
         "Isem n tebzimt ɣezif aṭas. Ttxil-k·m fren isem-nniḍen."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Azal amezyan maḍi n usmad i izemren ad yettwarnu d ${ _price }"
-      ],
       "The minimum amount that can be donated is ${ price }": [
         "Azal amezyan maḍi i izemren ad yettunefk d ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Lexlaṣ amezyan maḍi i nezmer ad neqbel d ${ _price2 }"
       ],
       "The organization key must be activated first": [
         "Ilaq deg tazwara tasarut n tuddsa ad tettwarmed"
@@ -3059,26 +3053,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Anekcum i yusnasen i yesεan taɣelist meẓẓiyen\" irmed deg yiɣewwaṛen n umiḍan-ik·im Google."
-      ],
       "2-step verification is enabled in your external account.": [
         "Asenqed ɣef sin yiḥricen yermed deg umiḍan-ik·im azɣaray."
       ],
       "2-step verification is enabled in your external email account.": [
         "Asenqed s sin yiḥricen yermed deg umiḍan-ik·im n yimayl azɣaray."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Ma yella ${ bold2StepsDisabled } (iɣewwaren n Gmail imezwer), ttxil-k·m wali ma yella:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Ma yella ${ bold2StepsDisabled } deg Gmail (iɣewwaren imezwer), ttxil-k·m wali ma yella:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Ma yella ${ bold2StepsEnabled } deg Gmail, ttxil-k·m wali ma yella tseqdaceḍ awal-ik·im uffir n usnas deg ubdil n wawal-ik·im uffir i tezgiḍ tseqdaceḍ."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ma yella ${ bold2StepsEnabled }, ttxil-k·m senqed tansa-inek·inem n yimayl akked wawal uffir ma yella d imeɣta. Seqdec ${ boldNot } awal-ik·im uffir i tseqdaceḍ."
       ],
       "IMAP access is enabled in your external account.": [
         "Anekcum IMAP yermed deg umiḍan-ik·im azɣaray."
@@ -3097,9 +3076,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Seqdec awal-ik·im uffir n usnas deg ubdil n wawal-ik·im uffir i tezgiḍ tseqdaceḍ ma yella:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Mazal tzemreḍ ad tɛerḍeḍ ad teffɣeḍ seg ${ boldGoogleAccounts } deg yiminig, syen kkes asekker n ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Awal-ik·im uffir d ameɣtu. Seqdec ${ boldNot } awal-ik·im uffir n tannumi."
@@ -3121,18 +3097,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Asenqed s sin yiḥricen yensa"
-      ],
-      "2-step verification is enabled": [
-        "Asenqed s sin yiḥricen yensa"
-      ],
-      "all your other Google accounts": [
-        "akk imiḍanen-inek·inem-nniḍen n Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "uhu"
       ]
@@ -3459,9 +3423,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Yal win yesεan aseɣwen-a ur yettizmir ara ad yemtawi neɣ ad yawi ileqman i d-iteddun n uwitay-inek·inem. Ma yella tebɣiḍ ad asen-tmuddeḍ anekcum i tikkelt-nniḍen, ilaq ad ternuḍ aseɣwen amaynut-nniḍen."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo yeɣɣar isefka-inek·inem udmawanen akken ad yefk tasiregt n unekcum i wid iqeddcen deg udellel, tisnurayin n wumlan n Marikan akked yiḥricen-niḍen n wis kraḍ. I tbaḍnit igerrzen, rnu tansa n yimayl taɣellsant."
-      ],
       "Are you sure you want to delete this address?": [
         "Tebɣiḍ ad tekkseḍ tansa-agi?"
       ],
@@ -3725,9 +3686,6 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Mudd tasarut-ik·im tazayazt i yimeddukkal-ik·im, neɣ suffeɣ-t-id srid, akka yal yiwen ad yizmir ad ak·am-d-yazen imayl yettwawgelhen seg yixef ɣer yixef!"
       ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google yesseklas tigawt-inek·inem srid rnu yeqqar isefka-inek·inem udmawanen i wakken ad imudd tisiregt n unekcum i wid i iqeddcen deg udellel d yihricen wiyaḍ n wis tlata. I tbaḍnit igerrzen, rnu tansa n yimayl taɣelsant."
-      ],
       "here": [
         "da"
       ],
@@ -3881,12 +3839,6 @@
       ],
       "lose access to all current encrypted data": [
         "ad tesruḥeḍ anekcum ɣer meṛṛa isefka imiranen iwgelhanen"
-      ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru yeɣɣar isefka-inek·inem udmawanen akken ad yefk tasiregt n unekcum i wid iqeddcen deg udellel, tisnurayin tinabḍanin n Rrus akked yiḥricen-niḍen n wis kraḍ. I tbaḍnit igerrzen, rnu tansa n yimayl taɣellsant."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Sekcem s ufus talqut ar yibenk-ik n usesteb s snat n tarrayin akked ad yeswel umiḍan-ik.${ _switchButton }."
       ],
       "Merged": [
         "Ttusmezdin"
@@ -4289,12 +4241,6 @@
       ],
       "Would you like to receive a new verification code?": [
         "Tebɣiḍ ad teṭṭfeḍ tangalt tamaynutt n uselken ?"
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo yeɣɣar isefka-inek·inem udmawanen akken ad yefk tasiregt n unekcum i wid iqeddcen deg udellel, tisnurayin n wumlan n Marikan akked yiḥricen-niḍen n wis kraḍ. I tbaḍnit igerrzen, rnu tansa n yimayl taɣellsant."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex yesseklas tigawt-inek·inem srid rnu yeqqar isefka-inek·inem udmawanen i wakken ad imudd tisiregt n unekcum i wid i iqeddcen deg udellel d yihricen wiyaḍ n wis tlata. I tbaḍnit igerrzen, rnu tansa n yimayl taɣelsant."
       ],
       "Yearly": [
         "S useggas"
@@ -5933,9 +5879,6 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Smiren akk iɣawasen ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "Seg ${ _price }"
-      ],
       "From ${ price }": [
         "Seg ${ price }"
       ],
@@ -6133,9 +6076,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } Yettwarna"
-      ],
       "A disabled address cannot be primary": [
         "Tansa yensan ur tezmir ara ad tili d tansa tamezwarut"
       ],
@@ -6776,10 +6716,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } uwitay i useqdac",
-        "${ _n } yiwitayen i useqdac"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } n tuqqna VPN s urured ɛlayen",
         "${ maxVpn } n tuqqna VPN s urured ɛlayen"
@@ -7745,9 +7681,6 @@
       ],
       "Theme": [
         "Asentel"
-      ],
-      "This address might compromise your privacy.": [
-        "Tansa-a tezmer ad teglu s wugur i tbaḍnt-ik·im."
       ],
       "Time zone": [
         "Tamnaḍt tasragant"

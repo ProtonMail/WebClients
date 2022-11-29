@@ -439,11 +439,11 @@
       "No": [
         "Όχι"
       ],
-      "Ok": [
-        "Οκ"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "Οκ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -2614,14 +2614,8 @@
       "The label name is too long. Please choose a different name.": [
         "Υπερβολικό μήκος ονόματος ετικέτας. Παρακαλούμε δοκιμάστε ένα συντομότερο."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Το ελάχιστο ποσό χρημάτων που μπορεί να προστεθεί είναι ${ _price }"
-      ],
       "The minimum amount that can be donated is ${ price }": [
         "Το ελάχιστο ποσό που μπορεί να δοθεί για δωρεά είναι ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Η ελάχιστη πληρωμή που γίνεται αποδεκτή είναι ${ _price2 }"
       ],
       "The organization key must be activated first": [
         "Πρέπει να ενεργοποιηθεί πρώτα το κλειδί οργανισμού"
@@ -3278,23 +3272,8 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Η \"λιγότερο ασφαλής πρόσβαση σε εφαρμογή\" είναι ενεργοποιημένη στις ρυθμίσεις ασφαλείας του λογαριασμού σας Google."
-      ],
       "2-step verification is enabled in your external account.": [
         "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Εάν ${ bold2StepsDisabled } (προεπιλεγμένες ρυθμίσεις Gmail), βεβαιωθείτε ότι:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Εάν ${ bold2StepsDisabled } στο Gmail (προεπιλεγμένες ρυθμίσεις), βεβαιωθείτε ότι:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Εάν ${ bold2StepsEnabled } στο Gmail, βεβαιωθείτε ότι χρησιμοποιείτε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Εάν ${ bold2StepsEnabled }, βεβαιωθείτε ότι η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
       ],
       "IMAP access is enabled in your external account.": [
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
@@ -3314,9 +3293,6 @@
       "Use your app password instead of your regular password if:": [
         "Χρησιμοποιήστε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης σας εάν:"
       ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Μπορείτε επίσης να προσπαθήσετε να αποσυνδεθείτε από ${ boldGoogleAccounts } στο πρόγραμμα περιήγησης και, στη συνέχεια, να ξεκλειδώσετε το ${ linkCAPTCHA }."
-      ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
       ],
@@ -3328,18 +3304,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Η επαλήθευση 2 βημάτων είναι απενεργοποιημένη"
-      ],
-      "2-step verification is enabled": [
-        "Η επαλήθευση 2 βημάτων είναι ενεργοποιημένη"
-      ],
-      "all your other Google accounts": [
-        "όλους τους άλλους λογαριασμούς σας στο Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "δεν"
       ]
@@ -3738,9 +3702,6 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να δει αν είστε ελεύθεροι ή απασχολημένοι στο ημερολόγιο σας. Όμως δεν μπορούν να δουν τις λεπτομέρειες των συμβάντων, όπως τον τίτλο, την τοποθεσία και τους συμμετέχοντες."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Το AOL διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιστές και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
-      ],
       "Are you sure you want to delete this address?": [
         "Θέλετε σίγουρα να διαγράψετε αυτήν τη διεύθυνση;"
       ],
@@ -4028,9 +3989,6 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Δώστε το δημόσιο κλειδί σας στους φίλους σας ή δημοσιεύστε το στο δίκτυο, ώστε όλοι να μπορούν να σας στέλνουν διατερματικά κρυπτογραφημένα μηνύματα!"
       ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Το Google καταγράφει τη διαδικτυακή σας δραστηριότητα και διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιστές και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
-      ],
       "here": [
         "εδώ"
       ],
@@ -4224,12 +4182,6 @@
       ],
       "lose access to all current encrypted data": [
         "χάσετε την πρόσβαση σε όλα τα τρέχοντα κρυπτογραφημένα δεδομένα"
-      ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Το Mail.ru διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιστές, ρωσικές κυβερνητικές υπηρεσίες και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στη συσκευή επαλήθευσης ταυτότητας δύο παραγόντων ώστε να ρυθμίσετε το λογαριασμό σας. ${ _switchButton }."
       ],
       "Merged": [
         "Συγχωνευμένα"
@@ -4768,12 +4720,6 @@
       ],
       "Would you like to receive a new verification code?": [
         "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Το Yahoo διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιστές, υπηρεσίες πληροφοριών των ΗΠΑ και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Το Yandex καταγράφει τη διαδικτυακή σας δραστηριότητα και διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιζόμενους και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
       ],
       "Yearly": [
         "Ετησίως"
@@ -6510,12 +6456,6 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "Από ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Από ${ _price2 } ανά χρήστη"
-      ],
       "From ${ price }": [
         "Από ${ price }"
       ],
@@ -6690,6 +6630,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -6708,17 +6659,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -6820,9 +6760,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } δημιουργήθηκε"
-      ],
       "A disabled address cannot be primary": [
         "Μια απενεργοποιημένη διεύθυνση δεν μπορεί να είναι κύρια"
       ],
@@ -7557,10 +7494,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } ημερολόγιο ανά χρήστη",
-        "${ _n } ημερολόγια ανά χρήστη"
-      ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
         "${ n } ημερολόγια"
@@ -8490,9 +8423,6 @@
       ],
       "Theme": [
         "Θέμα"
-      ],
-      "This address might compromise your privacy.": [
-        "Αυτή η διεύθυνση ενδέχεται να θέσει σε κίνδυνο το απόρρητο σας."
       ],
       "Time zone": [
         "Ζωνη ωρας"

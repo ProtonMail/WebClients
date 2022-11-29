@@ -306,6 +306,15 @@
       "import": [
         "importare"
       ],
+      "Import calendars": [
+        "Importare calendare"
+      ],
+      "Import contacts": [
+        "Importare contacte"
+      ],
+      "Import emails": [
+        "Importare mesaje"
+      ],
       "Import from .csv or vCard": [
         "Importare din .csv sau vCard"
       ],
@@ -642,11 +651,34 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Renunțând acum, unele contacte nu vor fi importate."
+      ],
+      "By leaving now, some events may not be imported": [
+        "Renunțând acum, unele evenimente nu vor fi importate."
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicații ${ BRAND_NAME }"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Fișier ICS gol."
+      ],
+      "Invalid event": [
+        "Eveniment nevalid"
+      ],
+      "Invalid ICS file": [
+        "Fisier ICS nevalid."
+      ],
+      "Invalid method": [
+        "Metodă nevalidă"
+      ],
+      "Unsupported calendar component": [
+        "Componentă de calendar neacceptată."
+      ],
+      "Unsupported event": [
+        "Eveniment nesuportat"
       ]
     },
     "Beta access description": {
@@ -731,6 +763,54 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Nesincronizat"
+      ],
+      "Syncing": [
+        "Se sincronizează"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Calendarul nu a putut fi decriptat."
+      ],
+      "Calendar is syncing": [
+        "Calendarul se sincronizează."
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Calendarul se sincronizează: ar putea dura câteva minute ca să apară toate evenimentele din el."
+      ],
+      "Calendar is too big": [
+        "Calendarul este prea mare."
+      ],
+      "Calendar link is not accessible": [
+        "Legătura calendarului nu este accesibilă."
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "Legătura calendarului nu este disponibilă momentan."
+      ],
+      "Failed to sync calendar": [
+        "Eșuare sincronizare calendar."
+      ],
+      "More than 12 hours passed since last update": [
+        "Au trecut mai mult de 12 ore de la ultima actualizare."
+      ],
+      "Unsupported calendar format": [
+        "Format de calendar neacceptat."
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Legătura calendarului nu este accesibilă din exteriorul ecosistemului furnizorului calendarului."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Legătura calendarului nu este accesibilă momentan. Verificați dacă legătura de la furnizorul calendarului încă e validă."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Au trecut mai mult de 12 ore de la ultima actualizare - ${ CALENDAR_APP_NAME } va încerca să actualizeze calendarul în câteva ore."
       ]
     },
     "Collapsible tooltip": {
@@ -1699,6 +1779,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puteți marca pentru ștergere contactele pe care nu doriți nici să le îmbinați, nici să le păstrați. Ștergerea va fi efectuată doar după apăsarea butonului de îmbinare."
       ]
@@ -1721,6 +1804,69 @@
         "Activat"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Descriere: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } a fost anulat."
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Invitație la ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "Când: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "Când: ${ formattedStart } (toată ziua)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Când: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Unde: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a acceptat invitația la ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a refuzat invitația la ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } v-a acceptat provizoriu invitația la ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Anulare eveniment ce are loc ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Anulare eveniment care începe ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Invitație la un eveniment ce are loc ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Invitație la un eveniment care începe ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Actualizarea unui eveniment ce are loc ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Actualizarea unui eveniment care începe ${ formattedStart }"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "„${ name }” există deja."
@@ -1730,6 +1876,9 @@
       ],
       "A problem occurred, please try again": [
         "A apărut o eroare. Mai reîncercați."
+      ],
+      "Address primary private key not found": [
+        "Nu s-a găsit adresa cheii private primare"
       ],
       "Authentication canceled.": [
         "Autentificare anulată."
@@ -1994,8 +2143,37 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Mărimea maximă a unui fișier este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Sunt permise doar fișiere în format ICS."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "A apărut o eroare la încărcarea fișierului. Nu s-a selectat niciun fișier."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "A apărut o eroare neașteptată. Importarea trebuie repornită."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Fișierul ${ formattedFilename } conține mai mult de un eveniment.",
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } evenimente.",
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } de evenimente."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Fișierul ${ formattedFilename } are o metodă nevalidă și nu poat fi importat."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Fișierul ${ formattedFilename } nu are evenimente de importat."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Fișierul ${ formattedFilename } este gol."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Fișierul ${ formattedFilename } nu este un calendar."
       ]
     },
     "Error importing contact": {
@@ -2027,6 +2205,104 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Fișierul ${ formattedFilename } este gol."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Format greșit. Componenta nu poate fi citită."
+      ],
+      "Calendar": [
+        "Calendar"
+      ],
+      "Calendar time zone not supported": [
+        "Fusul orar al calendarului nu este suportat."
+      ],
+      "Component with wrong format": [
+        "Componentă cu format greșit"
+      ],
+      "Custom timezone": [
+        "Fus orar personal"
+      ],
+      "Edited event not supported": [
+        "Evenimentul editat nu este suportat"
+      ],
+      "Element": [
+        "Element"
+      ],
+      "Encryption failed": [
+        "Criptare eșuată"
+      ],
+      "End time out of bounds": [
+        "Timp final în afara limitelor"
+      ],
+      "Event": [
+        "Eveniment"
+      ],
+      "Event validation failed": [
+        "Validare eveniment eșuată"
+      ],
+      "Floating times not supported": [
+        "Orele flotante nu sunt suportate"
+      ],
+      "Free-busy time information": [
+        "Informații timp liber/ocupat"
+      ],
+      "Invalid event": [
+        "Eveniment nevalid"
+      ],
+      "Journal entry": [
+        "Intrare în jurnal"
+      ],
+      "Malformed all-day event": [
+        "Eveniment întreaga zi eronat"
+      ],
+      "Malformed end time": [
+        "Timp final malformat"
+      ],
+      "Malformed recurring event": [
+        "Eveniment repetitiv malformat"
+      ],
+      "Malformed start time": [
+        "Timp de pornire malformat"
+      ],
+      "Missing start time": [
+        "Lipsește ora de pornire"
+      ],
+      "No UID, title or start time": [
+        "Lipseşte UID, titlu sau ora de începere."
+      ],
+      "Non-Gregorian": [
+        "Non-Gregorian"
+      ],
+      "Notification out of bounds": [
+        "Notificare în afara limitelor"
+      ],
+      "Original recurring event could not be found": [
+        "Evenimentul recurent original nu a putut fi găsit"
+      ],
+      "Recurring event has no occurrences": [
+        "Evenimentul recurent nu are nicio apariție."
+      ],
+      "Recurring rule not supported": [
+        "Regula recurentă nesuportată"
+      ],
+      "Start time out of bounds": [
+        "Timp de start în afara limitelor"
+      ],
+      "Time zone not supported": [
+        "Fus orar nesuportat."
+      ],
+      "Timezone": [
+        "Fus orar"
+      ],
+      "To-do entry": [
+        "Intrare de făcut"
+      ],
+      "Unknown": [
+        "Necunoscut"
+      ],
+      "Unsupported event": [
+        "Eveniment nesuportat"
       ]
     },
     "Error message": {
@@ -2077,6 +2353,55 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "Scorul este obligatoriu"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Fișierul ICS atașat nu a putut fi decriptat"
+      ],
+      "Attached ICS file could not be read": [
+        "Fișierul ICS atașat nu a putut fi citit."
+      ],
+      "Invalid invitation": [
+        "Invitație nevalidă"
+      ],
+      "Invalid response": [
+        "Răspuns nevalid"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Evenimentul nu a putut fi adăugat în calendar. Nu a fost trimis niciun răspuns."
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Evenimentul nu a putut fi actualizat în calendar. Nu a fost trimis niciun răspuns."
+      ],
+      "Unexpected error": [
+        "Eroare neașteptată"
+      ],
+      "Unsupported invitation": [
+        "Invitație nesuportată"
+      ],
+      "Unsupported response": [
+        "Răspuns nesuportat"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Nu s-a putut anula evenimentul din calendar"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Nu s-a putut recupera evenimentul din calendar"
+      ],
+      "We could not update the event in your calendar": [
+        "Nu s-a putut actualiza evenimentul din calendar"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Răspunsul a fost trimis, dar evenimentul nu a putut fi adăugat în calendar."
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Răspunsul a fost trimis, dar evenimentul nu a putut fi actualizat în calendar"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(fără titlu)"
       ]
     },
     "Feedback Modal Title": {
@@ -2206,13 +2531,60 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "Un eveniment din ${ totalToImport } a fost criptat și adăugat în calendar.",
+        "${ totalImported } evenimente din ${ totalToImport } au fost criptate și adăugate în calendar.",
+        "${ totalImported } de evenimente din ${ totalToImport } au fost criptate și adăugate în calendar."
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "A apărut o eroare la criptarea și adăugarea evenimentului. Niciun eveniment nu a putut fi importat.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare contacte: ${ totalImported }}/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Criptare și adăugare evenimente în calendar: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Eveniment importat cu succes. Evenimentul importat va apărea acum în calendar.",
+        "Evenimente importate cu succes. Evenimentele importate vor apărea acum în calendar.",
+        "Evenimente importate cu succes. Evenimentele importate vor apărea acum în calendar."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Nu închideţi fila înainte de terminarea procesului de importare."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } nu acceptă în prezent anumite tipuri de evenimente, detalii și formate."
+      ],
       "vCard versions < 3.0": [
         "versiuni vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Invitațiile importate apar în ${ CALENDAR_APP_NAME } ca evenimente simple, fără detalii despre organizator și participant. Pentru a primi actualizări ale evenimentelor și a vedea participanții, solicitați organizatorilor să vă invite folosind adresa dvs. de e-mail din ${ BRAND_NAME }."
+      ],
+      "This file contains an event invitation:": [
+        "Acest fișier conține o invitație la un eveniment:",
+        "Acest fișier conține invitații la evenimente:",
+        "Acest fișier conține invitații la evenimente:"
+      ],
+      "This file contains an invitation response:": [
+        "Acest fișier conține un răspuns la invitație:",
+        "Acest fișier conține răspunsurile la invitații:",
+        "Acest fișier conține răspunsurile la invitații:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Acest fișier conține unele date care nu se pot importa:"
       ]
     },
     "Import contact": {
@@ -2263,15 +2635,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "„Accesul aplicațiilor mai puțin sigure” este activat în setările de securitate ale contului Google."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } nu se poate conecta la acest cont. Asigurați-vă că accesul IMAP este activat în contul Gmail."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } nu se poate conecta la acest cont. Asigurați-vă că accesul IMAP este activat în contul Gmail."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } nu se poate conecta la cont. Asigurați-vă că:"
       ],
@@ -2280,9 +2643,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } nu se poate conecta la contul extern. Asigurați-vă că:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } nu se poate conecta la contul Gmail. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } nu se poate conecta la contul Yahoo. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
@@ -2295,18 +2655,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "verificarea în 2 pași este activată în contul extern de e-mail."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Dacă ${ bold2StepsDisabled } (setare implicită în Gmail), asigurați-vă că:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Dacă ${ bold2StepsDisabled } în Gmail (setare implicită), asigurați-vă că:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Dacă ${ bold2StepsEnabled } în Gmail, asigurați-vă că folosiți parola aplicației în loc de parola obișnuită de conectare."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Dacă ${ bold2StepsEnabled }, asigurați-vă că adresa de e-mail și parola aplicației sunt corecte. Să ${ boldNot } folosiți parola obișnuită."
       ],
       "IMAP access is enabled in your external account.": [
         "Accesul IMAP este activat în contul extern."
@@ -2325,9 +2673,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Folosiți parola aplicației în locul parolei obișnuite dacă:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Mai puteți înerca să vă deconectați din ${ boldGoogleAccounts } din navigatorul web, apoi să deblocați ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Parola aplicației este corectă. Să ${ boldNot } folosiți parola obișnuită."
@@ -2349,18 +2694,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "verificarea în doi pași este dezactivată"
-      ],
-      "2-step verification is enabled": [
-        "verificarea în doi pași este activată"
-      ],
-      "all your other Google accounts": [
-        "toate celelalte conturi Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "nu"
       ]
@@ -2515,8 +2848,19 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } eveniment din ${ totalEvents } nu va fi importat. Extindeți pentru detalii.",
+        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii.",
+        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii."
+      ],
       "No contact can be imported. Click for details": [
         "Nu se pot importa contacte. Faceți clic pentru detalii."
+      ],
+      "No event can be imported. Expand for details.": [
+        "Nu poate fi importat niciun eveniment. Extindeți pentru detalii."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
     "Info": {
@@ -2877,6 +3221,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduceți codul de verificare. ${ digit } cifre."
       ],
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
@@ -3303,6 +3650,9 @@
       "Tap the + button to upload a file or folder": [
         "Atingeți butonul „+” pentru a încărca un fișier sau folder"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Contul poate avea o cheie nouă sau este posibil ca următoarele să fi fost modificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
       ],
@@ -3423,7 +3773,7 @@
         "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
       ],
       "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Utilizați Drive pentru Desktop pentru a sincroniza folderele de pe computer cu ${ DRIVE_APP_NAME }. Acestea vor apărea aici și vor fi accesibile de oriunde.  ${ LearnMore }"
+        "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
@@ -3485,6 +3835,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Puteți importa un singur tip de date la un moment dat."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
@@ -3493,6 +3846,9 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "Mai aveți ${ expiresInDays } zile rămase pentru a vă revendica bonusul de bun venit de 500 MB și să vă "
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Trebuie să aveți un calendar personal activ pentru a importa evenimentele."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "S-a atins ${ spaceDisplayed }% din capacitatea de stocare. ${ freeUpMessage } ${ upgradeLink }"
@@ -3504,7 +3860,7 @@
         "Veți pierde toate modificările nesalvate."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
@@ -3823,6 +4179,9 @@
       ],
       "Import to email address": [
         "Importare în adresa de e-mail"
+      ],
+      "Import to:": [
+        "Importare în:"
       ],
       "Label messages as": [
         "Etichetare mesaje cu"
@@ -4513,6 +4872,11 @@
         "Îmbinare cu calendarul"
       ]
     },
+    "Participant name": {
+      "You": [
+        "Dvs."
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Cheia nu poate fi folosită pentru criptare."
@@ -4698,6 +5062,9 @@
       "Bug reported": [
         "Eroare raportată"
       ],
+      "Canceling import": [
+        "Anulare importare"
+      ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
       ],
@@ -4723,6 +5090,9 @@
       "Fingerprint copied to clipboard": [
         "Amprenta a fost copiată în memorie"
       ],
+      "Import record deleted": [
+        "Înregistrare importare ștearsă"
+      ],
       "Phone number copied to clipboard": [
         "Numărul de telefon a fost copiat în memorie"
       ],
@@ -4737,6 +5107,9 @@
       ],
       "The link to your file was successfully copied": [
         "Legătura către fișier a fost copiată cu succes."
+      ],
+      "Undo in progress": [
+        "Anulare în desfășurare"
       ],
       "Verification successful": [
         "Verificare reușită"
@@ -4913,6 +5286,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Continue with partial import?": [
+        "Continuați cu importarea parțială?"
+      ],
       "Create a new file": [
         "Creare fișier"
       ],
@@ -5054,8 +5430,19 @@
       "Human verification": [
         "Verificare persoană"
       ],
+      "Import as simple event?": [
+        "Importați ca eveniment simplu?",
+        "Importați ca evenimente simple?",
+        "Importați ca evenimente simple?"
+      ],
       "Import contacts": [
         "Importare contacte"
+      ],
+      "Import events": [
+        "Importare evenimente"
+      ],
+      "Import failed": [
+        "Importare eșuată"
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"

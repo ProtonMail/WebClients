@@ -292,6 +292,15 @@
       "import": [
         "εισαγωγή"
       ],
+      "Import calendars": [
+        "Εισαγωγή ημερολογίων"
+      ],
+      "Import contacts": [
+        "Εισαγωγή επαφών"
+      ],
+      "Import emails": [
+        "Εισαγωγή email"
+      ],
       "Import from .csv or vCard": [
         "Εισαγωγή από αρχείο .csv ή vCard"
       ],
@@ -604,6 +613,29 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Φεύγοντας τώρα, κάποιες επαφές ενδέχεται να μην εισαχθούν"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Φεύγοντας τώρα, κάποια γεγονότα μπορεί να μην εισαχθούν"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Άδειο αρχείο ICS"
+      ],
+      "Invalid event": [
+        "Μη έγκυρη εκδήλωση"
+      ],
+      "Invalid ICS file": [
+        "Μη έγκυρο αρχείο ICS"
+      ],
+      "Invalid method": [
+        "Μη έγκυρη μέθοδος"
+      ],
+      "Unsupported calendar component": [
+        "Μη υποστηριζόμενο συνθετικό ημερολογίου"
+      ],
+      "Unsupported event": [
+        "Μη υποστηριζόμενη εκδήλωση"
       ]
     },
     "Beta access description": {
@@ -680,6 +712,40 @@
       ],
       "Website access problem": [
         "Πρόβλημα πρόσβασης ιστοσελίδας"
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Δεν συγχρονίστηκαν"
+      ],
+      "Syncing": [
+        "Συχρονισμός"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Αδυναμία αποκρυπτογράφησης ημερολογίου"
+      ],
+      "Calendar is syncing": [
+        "Το ημερολόγιο συγχρονίζεται"
+      ],
+      "Calendar is too big": [
+        "Υπερβολικά μεγάλο ημερολόγιο"
+      ],
+      "Calendar link is not accessible": [
+        "Ο σύνδεσμος του ημερολογίου είναι μη προσβάσιμος"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "Ο σύνδεσμος του ημερολογίου είναι προσωρινά μη προσβάσιμος"
+      ],
+      "Failed to sync calendar": [
+        "Αποτυχία συγχρονισμού ημερολογίου"
+      ],
+      "More than 12 hours passed since last update": [
+        "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
+      ],
+      "Unsupported calendar format": [
+        "Μη υποστηριζόμενη μορφή ημερολογίου"
       ]
     },
     "color": {
@@ -1587,6 +1653,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Μπορείτε να εισάγετε γεγονότα σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι ${ MAX_IMPORT_EVENTS_STRING } γεγονότα.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Μπορείτε να επισημάνετε για διαγραφή τις επαφές που δεν θέλετε να συγχωνεύσετε ούτε να διατηρήσετε. Η διαγραφή θα πραγματοποιηθεί μόνο αφού πατηθεί το κουμπί συγχώνευσης"
       ]
@@ -1609,9 +1678,75 @@
         "Ενεργό"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Περιγραφή: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "Το ${ eventTitle } έχει ακυρωθεί."
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Σας προσκαλούμε σε ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "Πότε: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "Πότε: ${ formattedStart } (όλη την ημέρα)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Πότε: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Πού: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } έχει αποδεχθεί την πρόσκληση σας στο ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } έχει απορρίψει την πρόσκληση σας στο ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } έχει αποδεχτεί προσωρινά την πρόσκληση σας στο ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Ακύρωση μιας εκδήλωσης στις ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Ακύρωση μιας εκδήλωσης ξεκινώντας από ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Πρόσκληση για μια εκδήλωση στις ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Πρόσκληση για μια εκδήλωση που αρχίζει στις ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Ενημέρωση για μια εκδήλωση στις ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Ενημέρωση για ένα γεγονός που αρχίζει στις ${ formattedStart }"
+      ]
+    },
     "Error": {
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
+      ],
+      "Address primary private key not found": [
+        "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
       "Authentication canceled.": [
         "Ο έλεγχος ταυτότητας ακυρώθηκε."
@@ -1833,8 +1968,32 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Παρουσιάστηκε σφάλμα κατά το ανέβασμα του αρχείου σας ${ formattedFilename }. Επιτρέπονται μόνο αρχεία μορφής ICS."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου σας. Δεν έχει επιλεγεί αρχείο."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Το αρχείο σας ${ formattedFilename } δεν έχει κανένα συμβάν για εισαγωγή."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Το αρχείο σας ${ formattedFilename } είναι άδειο."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Το αρχείο σας ${ formattedFilename } δεν είναι ημερολόγιο."
       ]
     },
     "Error importing contact": {
@@ -1866,6 +2025,98 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Το αρχείο σας ${ formattedFilename } είναι άδειο."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Κακή μορφή. Αδυναμία ανάγνωσης στοιχείου."
+      ],
+      "Calendar": [
+        "Ημερολόγιο"
+      ],
+      "Component with wrong format": [
+        "Συνθετικό λανθασμένης μορφής"
+      ],
+      "Custom timezone": [
+        "Προσαρμοσμένη ζώνη ώρας"
+      ],
+      "Edited event not supported": [
+        "Η επεξεργασμένη εκδήλωση δεν υποστηρίζεται"
+      ],
+      "Element": [
+        "Στοιχείο"
+      ],
+      "Encryption failed": [
+        "Η κρυπτογράφηση απέτυχε"
+      ],
+      "End time out of bounds": [
+        "Ώρα λήξης εκτός ορίων"
+      ],
+      "Event": [
+        "Γεγονός"
+      ],
+      "Event validation failed": [
+        "Αποτυχία επικύρωσης εκδήλωσης"
+      ],
+      "Floating times not supported": [
+        "Οι κυμαινόμενοι χρόνοι δεν υποστηρίζονται"
+      ],
+      "Free-busy time information": [
+        "Πληροφορίες διαθέσιμου/μη διαθέσιμου χρόνου"
+      ],
+      "Invalid event": [
+        "Μη έγκυρη εκδήλωση"
+      ],
+      "Journal entry": [
+        "Καταχώρηση χρονικού"
+      ],
+      "Malformed all-day event": [
+        "Δύσμορφη ολοήμερη εκδήλωση"
+      ],
+      "Malformed end time": [
+        "Λάθος χρόνος λήξης"
+      ],
+      "Malformed recurring event": [
+        "Δύσμορφη επαναλαμβανόμενη εκδήλωση"
+      ],
+      "Malformed start time": [
+        "Λάθος χρόνος έναρξης"
+      ],
+      "Missing start time": [
+        "Λείπει η ώρα έναρξης"
+      ],
+      "No UID, title or start time": [
+        "Λείπει UID, τίτλος ή ώρα έναρξης"
+      ],
+      "Non-Gregorian": [
+        "Μη-Γρηγοριανό"
+      ],
+      "Notification out of bounds": [
+        "Ειδοποίηση εκτός ορίων"
+      ],
+      "Original recurring event could not be found": [
+        "Δεν βρέθηκε το αρχικό επαναλαμβανόμενο συμβάν"
+      ],
+      "Recurring event has no occurrences": [
+        "Η επαναλαμβανόμενη εκδήλωση δεν έχει διοργανώσεις"
+      ],
+      "Recurring rule not supported": [
+        "Ο επαναλαμβανόμενος κανόνας δεν υποστηρίζεται"
+      ],
+      "Start time out of bounds": [
+        "Ώρα έναρξης εκτός ορίων"
+      ],
+      "Timezone": [
+        "Ζώνη ώρας"
+      ],
+      "To-do entry": [
+        "Εγγραφή προς υλοποίηση"
+      ],
+      "Unknown": [
+        "Άγνωστο"
+      ],
+      "Unsupported event": [
+        "Μη υποστηριζόμενη εκδήλωση"
       ]
     },
     "Error message": {
@@ -1910,6 +2161,46 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "Απαιτείται βαθμολογία"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Αδυναμία αποκρυπτογράφησης συνημμένου αρχείου ICS"
+      ],
+      "Attached ICS file could not be read": [
+        "Αδυναμία ανάγνωσης συνημμένου αρχείου ICS"
+      ],
+      "Invalid invitation": [
+        "Μη έγκυρη πρόσκληση"
+      ],
+      "Invalid response": [
+        "Μη έγκυρη απάντηση"
+      ],
+      "Unexpected error": [
+        "Απροσδόκητο σφάλμα"
+      ],
+      "Unsupported invitation": [
+        "Μη υποστηριζόμενη πρόσκληση"
+      ],
+      "Unsupported response": [
+        "Μη υποστηριζόμενη απάντηση"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Δεν ήταν δυνατή η ακύρωση του συμβάντος στο ημερολόγιό σας"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Δεν ήταν δυνατή η ανάκτηση της εκδήλωσης από το ημερολόγιο σας"
+      ],
+      "We could not update the event in your calendar": [
+        "Δεν ήταν δυνατή η ενημέρωση του συμβάντος στο ημερολόγιο σας"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(χωρίς τίτλο)"
       ]
     },
     "Feedback Modal Title": {
@@ -1988,13 +2279,50 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
+        "${ totalImported }/${ totalToImport } εκδηλώσεις κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος.",
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και προσθήκη των συμβάντων σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη επαφών: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Κρυπτογράφηση και προσθήκη γεγονότων στο ημερολόγιό σας: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Το συμβάν εισήχθη επιτυχώς. Το εισαγόμενο γεγονός θα εμφανιστεί τώρα στο ημερολόγιό σας.",
+        "Τα γεγονότα εισήχθησαν επιτυχώς. Τα εισαγόμενα γεγονότα θα εμφανιστούν τώρα στο ημερολόγιό σας."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Παρακαλώ μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "Η ${ CALENDAR_APP_NAME } δεν υποστηρίζει προς το παρόν συγκεκριμένους τύπους συμβάντων, λεπτομέρειες και μορφές."
+      ],
       "vCard versions < 3.0": [
         "εκδόσεις vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Οι εισαγόμενες προσκλήσεις εμφανίζονται στο ${ CALENDAR_APP_NAME } ως απλά συμβάντα χωρίς στοιχεία διοργανωτή και συμμετέχοντα. Για να λαμβάνετε ενημερώσεις για το συμβάν και για να δείτε τους συμμετέχοντες, ζητήστε από τους διοργανωτές να σας προσκαλέσουν χρησιμοποιώντας τη δική σας ${ BRAND_NAME } διεύθυνση ηλ. ταχυδρομείου."
+      ],
+      "This file contains an event invitation:": [
+        "Αυτό το αρχείο περιέχει μια πρόσκληση σε εκδήλωση:",
+        "Αυτό το αρχείο περιέχει προσκλήσεις σε εκδηλώσεις:"
+      ],
+      "This file contains an invitation response:": [
+        "Αυτό το αρχείο περιέχει μια απάντηση πρόσκλησης:",
+        "Αυτό το αρχείο περιέχει απαντήσεις πρόσκλησης:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Το αρχείο περιέχει κάποια δεδομένα που δεν μπορούμε να εισάγουμε:"
       ]
     },
     "Import contact": {
@@ -2041,23 +2369,8 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Η \"λιγότερο ασφαλής πρόσβαση σε εφαρμογή\" είναι ενεργοποιημένη στις ρυθμίσεις ασφαλείας του λογαριασμού σας Google."
-      ],
       "2-step verification is enabled in your external account.": [
         "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Εάν ${ bold2StepsDisabled } (προεπιλεγμένες ρυθμίσεις Gmail), βεβαιωθείτε ότι:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Εάν ${ bold2StepsDisabled } στο Gmail (προεπιλεγμένες ρυθμίσεις), βεβαιωθείτε ότι:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Εάν ${ bold2StepsEnabled } στο Gmail, βεβαιωθείτε ότι χρησιμοποιείτε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Εάν ${ bold2StepsEnabled }, βεβαιωθείτε ότι η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
       ],
       "IMAP access is enabled in your external account.": [
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
@@ -2077,9 +2390,6 @@
       "Use your app password instead of your regular password if:": [
         "Χρησιμοποιήστε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης σας εάν:"
       ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Μπορείτε επίσης να προσπαθήσετε να αποσυνδεθείτε από ${ boldGoogleAccounts } στο πρόγραμμα περιήγησης και, στη συνέχεια, να ξεκλειδώσετε το ${ linkCAPTCHA }."
-      ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
       ],
@@ -2091,18 +2401,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Η επαλήθευση 2 βημάτων είναι απενεργοποιημένη"
-      ],
-      "2-step verification is enabled": [
-        "Η επαλήθευση 2 βημάτων είναι ενεργοποιημένη"
-      ],
-      "all your other Google accounts": [
-        "όλους τους άλλους λογαριασμούς σας στο Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "δεν"
       ]
@@ -2218,8 +2516,18 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } από ${ totalEvents } διοργάνωση δεν θα εισαχθεί. Αναπτύξτε για λεπτομέρειες.",
+        "${ totalEventsDiscarded } από ${ totalEvents } διοργανώσεις δεν θα εισαχθούν. Αναπτύξτε για λεπτομέρειες."
+      ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Δεν μπορεί να εισαχθεί κανένα γεγονός. Αναπτύξτε το για λεπτομέρειες."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
     "Info": {
@@ -2801,6 +3109,9 @@
       "support team": [
         "ομάδα υποστήριξης"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
       ],
@@ -2940,11 +3251,17 @@
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
       ],
       "You cannot undo this action.": [
         "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"
@@ -3208,6 +3525,9 @@
       ],
       "Import to email address": [
         "Εισαγωγή σε διεύθυνση email"
+      ],
+      "Import to:": [
+        "Εισαγωγή σε:"
       ],
       "Label messages as": [
         "Επισήμανση μηνυμάτων ως"
@@ -3769,6 +4089,11 @@
         "Συγχώνευση με ημερολόγιο"
       ]
     },
+    "Participant name": {
+      "You": [
+        "Εσείς"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
@@ -3918,6 +4243,9 @@
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
       ],
+      "Canceling import": [
+        "Γίνεται ακύρωση εισαγωγής"
+      ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
       ],
@@ -3940,6 +4268,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Το αποτύπωμα αντιγράφηκε στο πρόχειρο"
+      ],
+      "Import record deleted": [
+        "Η εισαγωγή εγγραφής διαγράφηκε"
       ],
       "Phone number copied to clipboard": [
         "Ο αριθμός τηλεφώνου αντιγράφηκε στο πρόχειρο"
@@ -4106,6 +4437,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Continue with partial import?": [
+        "Συνέχιση με μερική εισαγωγή;"
+      ],
       "Create a new folder": [
         "Δημιουργία νέου φακέλου"
       ],
@@ -4229,8 +4563,18 @@
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
       ],
+      "Import as simple event?": [
+        "Εισαγωγή ως απλή εκδήλωση;",
+        "Εισαγωγή ως απλές εκδηλώσεις;"
+      ],
       "Import contacts": [
         "Εισαγωγή Επαφών"
+      ],
+      "Import events": [
+        "Εισαγωγή εκδηλώσεων"
+      ],
+      "Import failed": [
+        "Αποτυχία εισαγωγής"
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"

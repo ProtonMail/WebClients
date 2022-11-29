@@ -1591,14 +1591,14 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Przeglądarka, której używasz, nie pozwala na pełną autoryzację płatności. Skorzystaj z innej przeglądarki lub zaloguj się za pomocą komputera."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Minimalna kwota doładowania wynosi ${ _price }"
+      "The minimum amount of credit that can be added is ${ price }": [
+        "Minimalna kwota doładowania wynosi ${ price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Minimalna kwota darowizny wynosi ${ price }"
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Minimalna kwota akceptowanej płatności wynosi ${ _price2 }"
+      "The minimum payment we accept is ${ price }": [
+        "Minimalna kwota akceptowanej płatności wynosi ${ price }"
       ],
       "This field is required": [
         "Pole jest wymagane"
@@ -1953,9 +1953,6 @@
       "Amount below minimum (${ amount }).": [
         "Kwota poniżej minimum (${ amount })."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL odczytuje Twoje dane osobowe, aby zapewnić dostęp reklamodawcom i innym stronom trzecim. Utwórz bezpieczny adres e-mail, aby uzyskać lepszą prywatność."
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Czy na pewno chcesz wyłączyć uwierzytelnianie dwustopniowe?"
       ],
@@ -2043,6 +2040,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Wpisz szczegóły konta ${ BRAND_NAME }."
       ],
@@ -2078,9 +2078,6 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "Uzyskaj adres ${ BRAND_NAME }"
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google rejestruje Twoją aktywność w sieci i odczytuje dane osobowe, aby zapewnić dostęp reklamodawcom i innym stronom trzecim. Utwórz bezpieczny adres e-mail, aby uzyskać lepszą prywatność."
       ],
       "here": [
         "tutaj"
@@ -2166,14 +2163,11 @@
       "lose access to all current encrypted data": [
         "Stracisz dostęp do wszystkich obecnie zaszyfrowanych danych"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru odczytuje Twoje dane osobowe, aby zapewnić dostęp reklamodawcom, rosyjskim agencjom rządowym i innym stronom trzecim. Utwórz bezpieczny adres e-mail, aby uzyskać lepszą prywatność."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "${ addARecoveryMethod }, aby odzyskać dostęp do konta, jeśli zapomnisz hasła."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Wpisz ręcznie te informacje do urządzenia uwierzytelniania dwustopniowego. ${ _switchButton }."
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Wpisz ręcznie te informacje do urządzenia uwierzytelniania dwustopniowego. ${ switchButton }."
       ],
       "No credit card required": [
         "Karta płatnicza nie jest wymagana"
@@ -2484,12 +2478,6 @@
       "Would you like to receive a new verification code?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny?"
       ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo odczytuje Twoje dane osobowe, aby zapewnić dostęp reklamodawcom, amerykańskim agencjom wywiadowczym i innym stronom trzecim. Utwórz bezpieczny adres e-mail, aby uzyskać lepszą prywatność."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex rejestruje Twoją aktywność w sieci i odczytuje dane osobowe, aby zapewnić dostęp reklamodawcom i innym stronom trzecim. Utwórz bezpieczny adres e-mail, aby uzyskać lepszą prywatność."
-      ],
       "You already have a free account": [
         "Posiadasz już darmowe konto"
       ],
@@ -2554,7 +2542,7 @@
         "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres ${ MAIL_APP_NAME }, aby korzystać z usługi ${ toAppName }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
@@ -3185,14 +3173,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Pokaż wszystkie plany ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "Od ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Od ${ _price2 } za użytkownika"
-      ],
       "From ${ price }": [
         "Od ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Od ${ price } za użytkownika"
       ],
       "Keep my ${ currentPlanName } account": [
         "Zachowaj moje konto ${ currentPlanName }"
@@ -4338,12 +4323,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } kalendarz na użytkownika",
-        "${ _n } kalendarze na użytkownika",
-        "${ _n } kalendarzy na użytkownika",
-        "${ _n } kalendarzy na użytkownika"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } szybkie połączenie VPN",
         "${ maxVpn } szybkie połączenia VPN",
@@ -4355,6 +4334,12 @@
         "${ n } kalendarze",
         "${ n } kalendarzy",
         "${ n } kalendarzy"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendarz na użytkownika",
+        "${ n } kalendarze na użytkownika",
+        "${ n } kalendarzy na użytkownika",
+        "${ n } kalendarzy na użytkownika"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } szybkie połączenie VPN",
@@ -4881,9 +4866,6 @@
       ],
       "Switch to two-password mode": [
         "Przełącz do trybu podwójnego hasła"
-      ],
-      "This address might compromise your privacy.": [
-        "Ten adres może naruszyć Twoją prywatność."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Wypróbuj za darmo to, co najlepsze w poczcie ${ MAIL_APP_NAME }"

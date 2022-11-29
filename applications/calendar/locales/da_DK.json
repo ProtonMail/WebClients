@@ -249,6 +249,15 @@
       "import": [
         "importér"
       ],
+      "Import calendars": [
+        "Importer kalendere"
+      ],
+      "Import contacts": [
+        "Importér kontakter"
+      ],
+      "Import emails": [
+        "Importer e-mails"
+      ],
       "Import events": [
         "Importer begivenheder"
       ],
@@ -2854,26 +2863,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Mindre sikker app-adgang\" er slået til i sikkerhedsindstillingerne for din Google-konto."
-      ],
       "2-step verification is enabled in your external account.": [
         "Totrinsbekræftelse er aktiveret på din eksterne konto."
       ],
       "2-step verification is enabled in your external email account.": [
         "Totrinsbekræftelse er aktiveret på din eksterne e-mail-konto."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Hvis ${ bold2StepsDisabled } (standard Gmail-indstillinger), så sørg venligst for:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Hvis ${ bold2StepsDisabled } i Gmail (standard indstillinger), så sørg venligst for:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Hvis ${ bold2StepsEnabled } i Gmail, skal du sørge for, at du bruger din app-adgangskode i stedet for din almindelige adgangskode."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Hvis ${ bold2StepsEnabled }, skal du sørge for, at din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP-adgang er aktiveret på din eksterne konto."
@@ -2892,9 +2886,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Brug din app adgangskode i stedet for din almindelige adgangskode, hvis:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Du kan også prøve at logge ud af ${ boldGoogleAccounts } i browseren, og derefter låse ${ linkCAPTCHA } op."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Din app-adgangskode er korrekt. Benyt ${ boldNot } din normale adgangskode."
@@ -2916,18 +2907,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Totrinsbekræftelse deaktiveret"
-      ],
-      "2-step verification is enabled": [
-        "Totrinsbekræftelse aktiveret"
-      ],
-      "all your other Google accounts": [
-        "alle dine andre Google-konti"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "ikke"
       ]
@@ -3521,6 +3500,9 @@
       "support team": [
         "supportteam"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Midlertidigt utilgængelig. Tjek igen senere."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade denne."
       ],
@@ -3665,6 +3647,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Du kan importere én datatype ad gangen."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Du kan kun ændre personlige begivenhedsegenskaber, da du ikke kan sende e-mails fra arrangørens adresse."
       ],
@@ -3676,6 +3661,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Du har nulstillet din adgangskode, og begivenheder tilknyttet følgende kalendere kunne ikke dekrypteres. \nAlle delte kalenderlinks du tidligere har oprettet, vil ikke længere virke. \nAlle aktive, tilmeldte kalendere vil blive synkroniseret igen efter nogle få minutter."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Du skal have en aktiv personlig kalender for at importere dine begivenheder."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Du har tidligere afvist denne invitation. Bed ejeren om en ny invitation"
@@ -5021,6 +5009,9 @@
       "Calendar updated": [
         "Kalender opdateret"
       ],
+      "Canceling import": [
+        "Annullerer import"
+      ],
       "Cancellation sent and all events deleted": [
         "Aflysning sendt og alle begivenheder slettet"
       ],
@@ -5073,6 +5064,9 @@
       ],
       "Future events updated": [
         "Kommende begivenheder opdateret"
+      ],
+      "Import record deleted": [
+        "Importpost slettet"
       ],
       "Invitation sent and all events updated": [
         "Invitation sendt og alle begivenheder opdateret"

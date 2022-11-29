@@ -155,6 +155,9 @@
       "Clear query": [
         "検索をクリア"
       ],
+      "Clear search": [
+        "検索をクリア"
+      ],
       "Click here.": [
         "ここをクリック"
       ],
@@ -266,6 +269,12 @@
       "Delete draft": [
         "下書きの削除"
       ],
+      "Delete folder": [
+        "フォルダーを削除"
+      ],
+      "Delete label": [
+        "ラベルの削除"
+      ],
       "Delete permanently": [
         "完全に削除"
       ],
@@ -310,6 +319,9 @@
       ],
       "Edit encryption": [
         "暗号化を編集"
+      ],
+      "Edit folder": [
+        "フォルダーを編集"
       ],
       "Edit label": [
         "ラベルを編集"
@@ -451,6 +463,15 @@
       ],
       "import": [
         "インポート"
+      ],
+      "Import calendars": [
+        "カレンダーをインポート"
+      ],
+      "Import contacts": [
+        "連絡先をインポート"
+      ],
+      "Import emails": [
+        "メールをインポート"
       ],
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
@@ -791,6 +812,9 @@
       "Save": [
         "保存"
       ],
+      "Saving${ ellipsis }": [
+        "保存中${ ellipsis }"
+      ],
       "Schedule message": [
         "メッセージをスケジュール"
       ],
@@ -1100,6 +1124,9 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
+      ],
+      "By leaving now, some events may not be imported": [
+        "今終了すると、インポートされない予定がある可能性があります"
       ]
     },
     "Alt": {
@@ -2640,6 +2667,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "iCal 形式 (ICS ファイル) をインポートできます。インポートするファイルは ${ MAX_IMPORT_FILE_SIZE_STRING } 以下でかつ、予定の数は ${ MAX_IMPORT_EVENTS_STRING } 件以下である必要があります。もし、インポートしようとしているファイルが大きすぎる場合、小さなファイルに分割してインポートしてください。"
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
       ]
@@ -3160,8 +3190,35 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "ファイル　${ formattedFilename }の読み取り中にエラーが発生しました。ファイルのフォーマットが正しくありません。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。ICS ファイル形式のみが許可されています。"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "ファイルのアップロード中にエラーが発生しました。ファイルが選択されていません。"
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "予期しないエラーが発生しました。インポートを再起動する必要があります。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS_STRING } 以上の予定が含まれています。"
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "ファイル　${ formattedFilename }はメソッドが正しくなく、インポートできません。"
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "ファイル　${ formattedFilename }にはインポートする連絡先がありません。"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "ファイル　${ formattedFilename }は空です。"
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "ファイル　${ formattedFilename }はカレンダーではありません。"
       ]
     },
     "Error importing contact": {
@@ -3196,6 +3253,12 @@
       ]
     },
     "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "不正なフォーマットです。コンポーネントを読み込めません。"
+      ],
+      "Calendar": [
+        "カレンダー"
+      ],
       "Calendar time zone not supported": [
         "カレンダーのタイムゾーンはサポートされていません"
       ],
@@ -3208,11 +3271,17 @@
       "Edited event not supported": [
         "編集された予定はサポートされていません"
       ],
+      "Element": [
+        "要素"
+      ],
       "Encryption failed": [
         "暗号化に失敗しました"
       ],
       "End time out of bounds": [
         "終了日時が指定可能な範囲を超えています"
+      ],
+      "Event": [
+        "予定"
       ],
       "Event validation failed": [
         "予定の検証に失敗しました"
@@ -3268,8 +3337,14 @@
       "Time zone not supported": [
         "タイムゾーンはサポートされていません"
       ],
+      "Timezone": [
+        "タイムゾーン"
+      ],
       "To-do entry": [
         "To-do のエントリー"
+      ],
+      "Unknown": [
+        "不明"
       ],
       "Unsupported event": [
         "サポートされていない予定です"
@@ -3571,6 +3646,9 @@
       "Available on iOS and Android.": [
         "iOS または Android で利用可能です。"
       ],
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "${ MAIL_APP_NAME } のモバイルアプリを入手"
+      ],
       "Import contacts or emails": [
         "連絡先とメールをインポート"
       ],
@@ -3685,13 +3763,42 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } 予定が暗号化され、カレンダーに追加されました"
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "予定を暗号化し、カレンダーに追加中...${ totalToImport }件中${ totalImported }件が完了"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "インポートが完了するまでタブを閉じないでください。"
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME }は現在、特定の予定の種類や詳細、フォーマットに対応していません。"
+      ],
       "vCard versions < 3.0": [
         "vCard バージョン3.0以前"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "This file contains event invitations:": [
+        "このファイルには予定の招待が含まれています:"
+      ],
+      "This file contains invitation responses:": [
+        "以下のファイルには参加の是非の回答があります。"
       ]
     },
     "Import contact": {
@@ -3734,32 +3841,26 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Google アカウントのセキュリティ設定で「あまり安全ではないアプリアクセス」がオンになっています。"
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたのアカウントに接続できません。以下を確認してください。"
       ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } はあなたのアカウントに接続できません。Gmail IMAP アクセスが有効になっていることを確認してください。"
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } はあなたの外部アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
       ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } はあなたの Gmail アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたの外部アカウントに接続できません。以下を確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } はあなたの Yahoo アカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } はあなたの Yahoo アカウントに接続できません。以下を確認してください。"
       ],
       "2-step verification is enabled in your external account.": [
         "2 段階認証は外部アカウントで有効になっています。"
       ],
       "2-step verification is enabled in your external email account.": [
         "2 段階認証は外部メールアカウントで有効になっています。"
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "${ bold2StepsDisabled } (デフォルトのGmail設定) の場合は、以下を確認してください:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Gmail で ${ bold2StepsDisabled } （デフォルト設定）の場合は、以下を確認してください:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Gmailで ${ bold2StepsEnabled } の場合は、通常のパスワードの代わりにアプリのパスワードを使用していることを確認してください。"
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "${ bold2StepsEnabled } の場合は、メールアドレスとアプリのパスワードが正しいことを確認してください。${ boldNot } は通常のパスワードを使用します。"
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP アクセスは外部アカウントで有効になっています。"
@@ -3778,9 +3879,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "以下の場合、通常のパスワードの代わりにアプリのパスワードを使用してください。"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "また、ブラウザで ${ boldGoogleAccounts } のサインアウトを試し、 ${ linkCAPTCHA } をロックを解除することもできます。"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "アプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
@@ -3802,18 +3900,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "2 段階認証が無効"
-      ],
-      "2-step verification is enabled": [
-        "2 段階認証が有効"
-      ],
-      "all your other Google accounts": [
-        "ほかのすべての Google アカウント"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "しないで"
       ]
@@ -3943,8 +4029,14 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEvents } 件のうち ${ totalEventsDiscarded } 件の予定はインポートされません。クリックして詳細を展開します。"
+      ],
       "No contact can be imported. Click for details": [
         "連絡先をインポートすることはできません。詳細はクリックしてください"
+      ],
+      "No event can be imported. Expand for details.": [
+        "予定をインポートできませんでした。クリックして詳細を展開します。"
       ]
     },
     "Info": {
@@ -3967,7 +4059,7 @@
         "${ contactCount } 件の連絡先に複数のメールアドレスが含まれています。"
       ],
       "${ contactEmailsLength } Members": [
-        "${ contactEmailsLength } メンバー"
+        "${ contactEmailsLength } 人のメンバー"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } members)": [
         "${ contactGroupName }（${ numberOfContactsInGroup }件中${ numberOfSelectedContacts }件）"
@@ -4063,7 +4155,7 @@
         "${ updated } 連絡先が正常に更新されました。"
       ],
       "(${ memberCount } members)": [
-        "(${ memberCount } メンバー)"
+        "(${ memberCount } 人のメンバー)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(以下のすべての条件が満たされた場合に動作します)"
@@ -4334,6 +4426,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your own password (as organization admin).": [
         "パスワード（管理員のもの）を入力してください"
@@ -4788,6 +4883,9 @@
       "Sign in": [
         "ログイン"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin は ${ BRAND_NAME } サービスであり、あなたの ${ BRAND_NAME } アカウントには Hide My Email エイリアスが含まれています。SimpleLogin でエイリアスを作成し、あなたのメールアドレスを保護しましょう。"
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin は、信頼のおけない第三者サイトで、本来のメールアドレスを公開せずにアカウントを作成するためのシンプルな方法を提供します。"
       ],
@@ -4820,6 +4918,9 @@
       ],
       "support team": [
         "サポートチーム"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "一時的に利用できません。あとでお試しください。"
       ],
       "Test link": [
         "リンクをテスト"
@@ -5106,6 +5207,9 @@
       "You can either update your search query or clear it": [
         "検索内容を変えるか、消去してください"
       ],
+      "You can import one data type at a time.": [
+        "1 回にインポートできるのは 1 種類のみです。"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
@@ -5125,13 +5229,13 @@
         "受信箱に ${ unreadsLabel } があります。"
       ],
       "You have **${ count } conversations** stored in this folder": [
-        "このフォルダー内に **${ count } 件の会話** が存在します"
+        "このフォルダー内に **${ count } 件の会話**が存在します"
       ],
       "You have **${ count } conversations** tagged with this label": [
         "このラベルでタグ付けされている${ count }件のやりとりがあります"
       ],
       "You have **${ count } messages** stored in this folder": [
-        "このフォルダー内に **${ count } 件のメッセージ** が存在します"
+        "このフォルダー内に **${ count } 件のメッセージ**が存在します"
       ],
       "You have **${ count } messages** tagged with this label": [
         "このラベルにタグされた **${ count } 件のメッセージ** があります"
@@ -5144,6 +5248,9 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "返信数の上限（5件）の達しました。"
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "予定をインポートするには、アクティブなパーソナルカレンダーが必要です。"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
@@ -5676,6 +5783,9 @@
       ],
       "Import to email address": [
         "メールアドレスをインポート"
+      ],
+      "Import to:": [
+        "インポート先："
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "キーボードショートカット: ${ shortcut }"
@@ -6482,11 +6592,17 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
       ],
+      "Discover all ${ BRAND_NAME } services": [
+        "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで"
+      ],
       "Select a theme": [
         "テーマを選択"
       ],
       "Set up your organization": [
         "組織のための設定"
+      ],
+      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
+        "左上のアプリセレクターを使用して VPN、Calendar、Drive などの ${ BRAND_NAME } サービスにアクセスできます。"
       ],
       "You can change this anytime in your settings.": [
         "この設定はいつでも変更できます。"
@@ -6868,6 +6984,12 @@
       ]
     },
     "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP 暗号化されたメッセージです。送信者の検証に失敗しました: ${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP 署名されたメッセージです。送信者の検証に失敗しました: ${ verificationErrorsMessage }"
+      ],
       "Sender could not be verified: Message not signed": [
         "送信者を検証できませんでした: メッセージが署名されていません"
       ],
@@ -6989,7 +7111,7 @@
         "${ elementsCount }件のやりとりを${ folderName }に移動しました。"
       ],
       "${ elementsCount } conversations moved to spam and senders added to your spam list.": [
-        "${ elementsCount }件のやりとりを迷惑メールに移動し、送信元のアドレスは迷惑メールリストに登録されました。"
+        "${ elementsCount } 件のやりとりを迷惑メールに移動し、送信元のアドレスは迷惑メールリストに登録されました。"
       ],
       "${ elementsCount } conversations removed from ${ labelName }.": [
         "${ elementsCount }件のやりとりから${ labelName }のラベルを外しました。"
@@ -7026,6 +7148,9 @@
       ],
       "Bug reported": [
         "バグの報告が送信されました"
+      ],
+      "Canceling import": [
+        "インポートをキャンセル"
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
@@ -7083,6 +7208,9 @@
       ],
       "Folder cleared": [
         "フォルダーをクリアしました"
+      ],
+      "Import record deleted": [
+        "インポート記録が削除されました"
       ],
       "Keyboard shortcuts preferences updated": [
         "キーボードショートカットの設定が更新されました"
@@ -7354,6 +7482,9 @@
       "Contacts": [
         "連絡先"
       ],
+      "Continue with partial import?": [
+        "部分的なインポートを続行しますか?"
+      ],
       "Conversation list": [
         "やりとりの一覧"
       ],
@@ -7492,8 +7623,17 @@
       "Image": [
         "画像"
       ],
+      "Import as simple events?": [
+        "シンプル 予定としてインポートしますか?"
+      ],
       "Import contacts": [
         "連絡先をインポート"
+      ],
+      "Import events": [
+        "予定をインポート"
+      ],
+      "Import failed": [
+        "インポートに失敗"
       ],
       "Insert contacts": [
         "連絡先を挿入"

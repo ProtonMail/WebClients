@@ -333,7 +333,7 @@
         "Essayer une autre méthode"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Réessayez d'enregistrer. L'enregistrement a échoué à cause de : ${ saveError }"
+        "Réessayez d'enregistrer. L'enregistrement a échoué pour la raison suivante : ${ saveError }"
       ],
       "Unlock": [
         "Déverrouiller"
@@ -1583,14 +1583,14 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Le navigateur que vous utilisez ne permet pas le traitement complet des paiements. Nous vous invitons à utiliser un autre navigateur ou à vous connecter depuis un ordinateur."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Le montant minimum de crédit qui peut être ajouté est ${ _price }."
+      "The minimum amount of credit that can be added is ${ price }": [
+        "Le montant minimum de crédit pouvant être ajouté est de ${ price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Le montant minimum qui peut être donné est ${ price }."
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Le paiement minimum que nous acceptons est ${ _price2 }."
+      "The minimum payment we accept is ${ price }": [
+        "Le paiement minimum accepté est de ${ price }"
       ],
       "This field is required": [
         "Ce champ est nécessaire."
@@ -1927,9 +1927,6 @@
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum de (${ amount })."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL lit vos données personnelles pour permettre à des annonceurs et d'autres tiers d'y accéder. Vous pouvez protéger vos données en utilisant une messagerie sécurisée."
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Êtes-vous sûr de vouloir désactiver l'authentification à deux facteurs ?"
       ],
@@ -2017,6 +2014,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Entrez le code de vérification. Chiffre ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Saisissez les identifiants de votre compte ${ BRAND_NAME }."
       ],
@@ -2052,9 +2052,6 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "Obtenir mon adresse ${ BRAND_NAME }"
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google enregistre votre activité en ligne et lit vos données personnelles pour permettre aux annonceurs et à d’autres tiers d'y accéder. Vous pouvez protéger vos données en utilisant une messagerie sécurisée."
       ],
       "here": [
         "ici"
@@ -2140,14 +2137,11 @@
       "lose access to all current encrypted data": [
         "perdre l'accès à toutes les données actuellement chiffrées"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru lit vos données personnelles pour permettre à des annonceurs, des agences de renseignements russes et d'autres tiers d’y accéder. Vous pouvez protéger vos données en utilisant une messagerie sécurisée."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assurez-vous d'${ addARecoveryMethod } pour pouvoir vous reconnecter à votre compte si vous oubliez votre mot de passe."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Saisissez manuellement ces informations dans votre périphérique d'authentification à deux facteurs pour configurer votre compte. ${ _switchButton }."
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Veuillez saisir cette information manuellement dans votre dispositif d'authentification à deux facteurs afin de configurer votre compte. ${ switchButton }."
       ],
       "No credit card required": [
         "Aucune carte bancaire nécessaire"
@@ -2303,7 +2297,7 @@
         "Ceci annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité que vous avez accumulés. Le solde restant de votre abonnement sera retourné sous forme de crédits de compte."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Ceci permettra à PayPal d'être utilisé pour payer votre abonnement ${ BRAND_NAME }. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
+        "Ceci vous permettra d'utiliser PayPal pour payer votre abonnement ${ BRAND_NAME }. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ceci supprimera définitivement votre compte et toutes ses données. Vous ne pourrez pas réactiver ce compte."
@@ -2318,13 +2312,13 @@
         "Cet assistant activera l'authentification à deux facteurs (A2F) sur votre compte ${ BRAND_NAME }. Nous vous recommandons de l'activer, cela renforce la sécurité de votre compte."
       ],
       "to continue to ${ toAppName }": [
-        "pour continuer vers ${ toAppName }"
+        "pour continuer vers ${ toAppName }."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous êtes humain."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Restez au courant des actualités et évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes newsletters et consulter notre blog de temps en temps."
+        "Pour rester au courant des actualités et évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes newsletters et consulter notre blog de temps en temps."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pour continuer, sélectionnez une méthode de récupération de compte afin que nous puissions vérifier la demande."
@@ -2333,7 +2327,7 @@
         "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "pour utiliser ${ toAppName } et tous les services ${ BRAND_NAME }"
+        "pour utiliser ${ toAppName } et tous les services ${ BRAND_NAME }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Rechargez votre compte avec des crédits que vous pouvez utiliser pour vous abonner ou renouveler votre abonnement actuel. Vous obtenez un crédit pour chaque ${ i18nCurrency } dépensé."
@@ -2458,12 +2452,6 @@
       "Would you like to receive a new verification code?": [
         "Souhaiteriez-vous recevoir un nouveau code de vérification ?"
       ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo lit vos données personnelles pour permettre à des annonceurs, des agences de renseignements américaines et d'autres tiers d’y accéder. Vous pouvez protéger vos données en utilisant une messagerie sécurisée."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex enregistre votre activité en ligne et lit vos données personnelles pour permettre à des annonceurs et d’autres tiers d'y accéder. Vous pouvez protéger vos données en utilisant une messagerie sécurisée."
-      ],
       "You already have a free account": [
         "Vous avez déjà un compte gratuit."
       ],
@@ -2528,7 +2516,7 @@
         "Votre compte ${ BRAND_NAME } est associé à l'e-mail ${ externalEmailAddress }. Pour utiliser ${ toAppName }, vous avez besoin d'une adresse ${ MAIL_APP_NAME }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est actuellement suspendu. Après 28 jours, les e-mails ne seront plus envoyés dans votre boîte de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour reprendre un service normal, nous vous invitons à régler toutes les factures en retard."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est actuellement suspendu. Les e-mails ne sont plus envoyés dans votre boîte de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à régler toutes les factures en retard."
@@ -3157,14 +3145,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Découvrir tous les abonnements ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "À partir de ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "À partir de ${ _price2 } par utilisateur"
-      ],
       "From ${ price }": [
         "À partir de ${ price }"
+      ],
+      "From ${ price } per user": [
+        "À partir de ${ price } par utilisateur"
       ],
       "Keep my ${ currentPlanName } account": [
         "Conserver mon compte ${ currentPlanName }"
@@ -3426,7 +3411,7 @@
         "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Une confidentialité et une sécurité totales en utilisant tous les services ${ BRAND_NAME }."
+        "Une protection de la vie privée et une sécurité totales grâce à l'ensemble des services ${ BRAND_NAME }."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Si vous supprimez votre compte, vous perdrez tous les avantages de l'abonnement ${ visionary } et ce dernier ne sera plus disponible si vous créez un nouveau compte."
@@ -3444,7 +3429,7 @@
         "Populaire"
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Suite de confidentialité et de sécurité pour les entreprises, comprenant tous les services premium de ${ BRAND_NAME }."
+        "Suite de confidentialité et de sécurité pour les entreprises, avec tous les services premium de ${ BRAND_NAME }."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Un stockage cloud sécurisé qui vous permet de stocker, synchroniser et partager des fichiers facilement et en toute sécurité."
@@ -3675,7 +3660,7 @@
         "Envoyez l'ensemble de votre trafic internet à travers le réseau Tor en un seul clic."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Conservez en toute sécurité les informations de vos contacts, comme leur numéro de téléphone, leur adresse, leur date d'anniversaire et vos notes personnelles. Le chiffrement zéro accès garantit que même ${ BRAND_NAME } ne peut pas y accéder."
+        "Conservez en toute sécurité les informations de vos contacts, comme leur numéro de téléphone, adresse, date d'anniversaire ainsi que vos notes personnelles. Le chiffrement zéro accès garantit que même ${ BRAND_NAME } ne peut pas y accéder."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envoyez rapidement et facilement des e-mails à de nombreuses personnes en créant autant de groupes de contacts que nécessaire (jusqu'à 100 contacts par groupe)."
@@ -4262,10 +4247,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } calendrier par utilisateur",
-        "${ _n } calendriers par utilisateur"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } connexion VPN haut débit",
         "${ maxVpn } connexions VPN haut débit"
@@ -4273,6 +4254,10 @@
       "${ n } calendar": [
         "${ n } calendrier",
         "${ n } calendriers"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendrier par utilisateur",
+        "${ n } calendriers par utilisateur"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } connexion VPN haut débit",
@@ -4342,7 +4327,7 @@
         "La solution de messagerie et de calendrier respectueuse de la vie privée pour vos besoins de communication quotidiens."
       ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Cette offre s'adresse uniquement aux nouveaux utilisateurs de ${ BRAND_NAME }. Aucune carte de crédit n'est nécessaire."
+        "Cette offre s'adresse uniquement aux nouveaux utilisateurs ${ BRAND_NAME }. Aucune carte de crédit n'est nécessaire."
       ]
     },
     "Success": {
@@ -4562,7 +4547,7 @@
         "Confirmer le passage à un abonnement inférieur"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirmer la perte des bonus ${ BRAND_NAME }"
+        "Confirmez la perte des bonus ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Confirmer le numéro de téléphone"
@@ -4571,7 +4556,7 @@
         "Bienvenue sur un internet libre et respectueux de votre vie privée !"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Créez votre compte ${ BRAND_NAME }."
+        "Créez votre compte ${ BRAND_NAME }"
       ],
       "Create your ${ BRAND_NAME } address": [
         "Créez votre adresse ${ BRAND_NAME }"
@@ -4779,9 +4764,6 @@
       ],
       "Switch to two-password mode": [
         "Passer au mode deux mots de passe"
-      ],
-      "This address might compromise your privacy.": [
-        "Cette adresse pourrait compromettre votre vie privée."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Essayez gratuitement le meilleur de ${ MAIL_APP_NAME }."

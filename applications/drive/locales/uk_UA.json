@@ -308,6 +308,15 @@
       "import": [
         "імпортувати"
       ],
+      "Import calendars": [
+        "Імпортувати календарі"
+      ],
+      "Import contacts": [
+        "Імпортувати контакти"
+      ],
+      "Import emails": [
+        "Імпортувати електронну пошту"
+      ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
       ],
@@ -644,11 +653,34 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Якщо ви зараз вийдете, деякі контакти можуть не імпортуватися"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Якщо ви зараз вийдете, деякі події можуть не імпортуватися"
       ]
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Застосунки ${ BRAND_NAME }"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Порожній файл ICS"
+      ],
+      "Invalid event": [
+        "Недійсна подія"
+      ],
+      "Invalid ICS file": [
+        "Недійсний файл ICS"
+      ],
+      "Invalid method": [
+        "Недійсний спосіб"
+      ],
+      "Unsupported calendar component": [
+        "Непідтримуваний компонент календаря"
+      ],
+      "Unsupported event": [
+        "Непідтримувана подія"
       ]
     },
     "Beta access description": {
@@ -733,6 +765,54 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Не синхронізовано"
+      ],
+      "Syncing": [
+        "Синхронізація"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "Не вдалося розшифрувати календар"
+      ],
+      "Calendar is syncing": [
+        "Календар синхронізується"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин."
+      ],
+      "Calendar is too big": [
+        "Календар завеликий"
+      ],
+      "Calendar link is not accessible": [
+        "Календар за посиланням недоступний"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "Посилання календаря тимчасово недоступне"
+      ],
+      "Failed to sync calendar": [
+        "Не вдалося синхронізувати календар"
+      ],
+      "More than 12 hours passed since last update": [
+        "Понад 12 годин минуло після попередньої синхронізації"
+      ],
+      "Unsupported calendar format": [
+        "Непідтримуваний формат календаря"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "З моменту останнього оновлення минуло понад 12 годин — ${ CALENDAR_APP_NAME } спробує оновити календар за кілька годин."
       ]
     },
     "Collapsible tooltip": {
@@ -1702,6 +1782,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Ви можете позначити ті контакти, які ви не хочете ані об’єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
       ]
@@ -1724,6 +1807,69 @@
         "Увімкнено"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Опис: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } було скасовано."
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } було оновлено.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Вас запрошено на ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "Коли: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "Коли: ${ formattedStart } (увесь день)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Коли: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Де: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } приймає ваше запрошення на ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } відхиляє ваше запрошення на ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } приймає із сумнівом ваше запрошення на ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Скасування події ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Скасування події, що починається ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Запрошення на подію ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Запрошення на подію, що починається ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Оновлення для події ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Оновлення для події, що починається ${ formattedStart }"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "«${ name }» вже існує"
@@ -1733,6 +1879,9 @@
       ],
       "A problem occurred, please try again": [
         "Виникла проблема. Повторіть спробу"
+      ],
+      "Address primary private key not found": [
+        "Основний приватний ключ адреси не знайдено"
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -2003,8 +2152,38 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Дозволяються лише файли у форматі ICS."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Помилка під час вивантаження вашого файлу. Файл не вибрано."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Необхідно перезапустити імпорт."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подію.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } події.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подій.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } події."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "Ваш файл ${ formattedFilename } не містить подій для імпортування."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Ваш файл ${ formattedFilename } порожній."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "Ваш файл ${ formattedFilename } не є календарем."
       ]
     },
     "Error importing contact": {
@@ -2036,6 +2215,104 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Ваш файл ${ formattedFilename } порожній."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Неправильний формат. Не вдалося прочитати."
+      ],
+      "Calendar": [
+        "Календар"
+      ],
+      "Calendar time zone not supported": [
+        "Часовий пояс календаря не підтримується"
+      ],
+      "Component with wrong format": [
+        "Компонент з неправильним форматом"
+      ],
+      "Custom timezone": [
+        "Власний часовий пояс"
+      ],
+      "Edited event not supported": [
+        "Відредагована подія не підтримується"
+      ],
+      "Element": [
+        "Елемент"
+      ],
+      "Encryption failed": [
+        "Не вдалося зашифрувати"
+      ],
+      "End time out of bounds": [
+        "Час завершення поза припустимими межами"
+      ],
+      "Event": [
+        "Подія"
+      ],
+      "Event validation failed": [
+        "Не вдалося перевірити подію"
+      ],
+      "Floating times not supported": [
+        "Гнучкий час не підтримується"
+      ],
+      "Free-busy time information": [
+        "Інформація про доступність та зайнятість"
+      ],
+      "Invalid event": [
+        "Недійсна подія"
+      ],
+      "Journal entry": [
+        "Запис журналу"
+      ],
+      "Malformed all-day event": [
+        "Неправильна подія на цілий день"
+      ],
+      "Malformed end time": [
+        "Неправильний час завершення"
+      ],
+      "Malformed recurring event": [
+        "Неправильна повторювана подія"
+      ],
+      "Malformed start time": [
+        "Неправильний час початку"
+      ],
+      "Missing start time": [
+        "Відсутній час початку"
+      ],
+      "No UID, title or start time": [
+        "Немає UID, заголовка або часу початку"
+      ],
+      "Non-Gregorian": [
+        "Не григоріанський"
+      ],
+      "Notification out of bounds": [
+        "Сповіщення поза межами"
+      ],
+      "Original recurring event could not be found": [
+        "Не вдається знайти оригінальну повторювану подію"
+      ],
+      "Recurring event has no occurrences": [
+        "Повторювана подія не має випадків"
+      ],
+      "Recurring rule not supported": [
+        "Правило повторення не підтримується"
+      ],
+      "Start time out of bounds": [
+        "Час початку поза припустимим діапазоном"
+      ],
+      "Time zone not supported": [
+        "Часовий пояс не підтримується"
+      ],
+      "Timezone": [
+        "Часовий пояс"
+      ],
+      "To-do entry": [
+        "Запис завдання"
+      ],
+      "Unknown": [
+        "Невідомо"
+      ],
+      "Unsupported event": [
+        "Непідтримувана подія"
       ]
     },
     "Error message": {
@@ -2086,6 +2363,55 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "Оцінка обов'язкова"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Не вдається розшифрувати вкладений ICS-файл"
+      ],
+      "Attached ICS file could not be read": [
+        "Не вдалося прочитати вкладений файл ICS"
+      ],
+      "Invalid invitation": [
+        "Недійсне запрошення"
+      ],
+      "Invalid response": [
+        "Недійсна відповідь"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Неможливо додати подію до вашого календаря. Відповідь не надіслано"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Неможливо оновити подію вашого календаря. Відповідь не надіслано"
+      ],
+      "Unexpected error": [
+        "Неочікувана помилка"
+      ],
+      "Unsupported invitation": [
+        "Непідтримуване запрошення"
+      ],
+      "Unsupported response": [
+        "Непідтримувана відповідь"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Не вдається скасувати подію у вашому календарі"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Не вдається видобути подію з вашого календаря"
+      ],
+      "We could not update the event in your calendar": [
+        "Не вдається оновити подію у вашому календарі"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Вашу відповідь надіслано, але подію не вдається додати до вашого календаря"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Вашу відповідь надіслано, але подію не вдалося оновити у вашому календарі"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(без назви)"
       ]
     },
     "Feedback Modal Title": {
@@ -2221,13 +2547,66 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } подію зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } подій зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "При шифруванні та додаванні вашої події сталася помилка. ${ totalImported } із ${ totalToImport } події успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "При шифруванні та додаванні вашої події сталася помилка. Неможливо імпортувати подію.",
+        "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події.",
+        "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події.",
+        "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шифрування та додавання контактів: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Шифрування та додавання подій до вашого календаря: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Подію успішно імпортовано. Тепер вона з'явиться у вашому календарі.",
+        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі.",
+        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі.",
+        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Не закривайте цю вкладку доки не завершиться процес імпортування."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
+      ],
       "vCard versions < 3.0": [
         "vCard версії < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Імпортовані запрошення з'являються в ${ CALENDAR_APP_NAME } як прості події без подробиць про організаторів та учасників. Для отримання оновлень подій та перегляду учасників попросіть організаторів запросити вас за допомогою вашої адреси електронної пошти ${ BRAND_NAME }."
+      ],
+      "This file contains an event invitation:": [
+        "Цей файл містить запрошення на подію:",
+        "Цей файл містить запрошення на події:",
+        "Цей файл містить запрошення на події:",
+        "Цей файл містить запрошення на події:"
+      ],
+      "This file contains an invitation response:": [
+        "Цей файл містить відповідь на запрошення:",
+        "Цей файл містить відповіді на запрошення:",
+        "Цей файл містить відповіді на запрошення:",
+        "Цей файл містить відповіді на запрошення:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Цей файл містить деякі дані, які ми не можемо імпортувати:"
       ]
     },
     "Import contact": {
@@ -2282,15 +2661,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "«Доступ менш захищених програм» увімкнено у налаштуваннях безпеки вашого облікового запису Google."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом. Переконайтеся, що доступ Gmail IMAP увімкнено."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом. Переконайтеся, що доступ IMAP увімкнено у вашому обліковому записі Gmail."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом. Переконайтеся, що:"
       ],
@@ -2299,9 +2669,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } не може з'єднатися з вашим зовнішнім обліковим записом. Переконайтеся, що:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом Gmail. Переконайтеся, що адреса поштового сервера і номер порту правильні."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що адреса поштового сервера і номер порту правильні."
@@ -2314,18 +2681,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі пошти."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Якщо ${ bold2StepsDisabled } (типові налаштування Gmail), переконайтеся, що:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Якщо ${ bold2StepsDisabled } в Gmail (типові налаштування), переконайтеся, що:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Якщо ${ bold2StepsEnabled } в Gmail, переконайтеся, що ви використовуєте пароль програм замість свого звичайного пароля."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Якщо ${ bold2StepsEnabled }, переконайтеся що ваша адреса е-пошти і пароль правильні. ${ boldNot } використовуйте свій звичайний пароль."
       ],
       "IMAP access is enabled in your external account.": [
         "Доступ до IMAP увімкнено у вашому зовнішньому обліковому записі."
@@ -2344,9 +2699,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Використовуйте пароль програм замість свого звичайного пароля якщо:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Ви також можете спробувати вийти з ${ boldGoogleAccounts } в браузері, потім розблокувати ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
@@ -2368,18 +2720,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Двоетапну перевірку вимкнено"
-      ],
-      "2-step verification is enabled": [
-        "Двоетапну перевірку увімкнено"
-      ],
-      "all your other Google accounts": [
-        "усі інші ваші облікові записи Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "не"
       ]
@@ -2534,8 +2874,20 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } із ${ totalEvents } події не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць."
+      ],
       "No contact can be imported. Click for details": [
         "Неможливо імпортувати контакти. Натисніть для подробиць"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Неможливо імпортувати події. Розгорніть для подробиць."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
     "Info": {
@@ -2909,7 +3261,7 @@
         "Дублікат ключа оновлено"
       ],
       "Each code can only be used once": [
-        "Кожен код може бути використаний тільки один раз"
+        "Кожен код можна використати лише один раз"
       ],
       "Enabling drive search": [
         "Увімкнення пошуку на диску"
@@ -2928,6 +3280,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введіть код підтвердження. Цифри ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Введіть власний пароль (як адміністратор організації)."
@@ -3296,10 +3651,10 @@
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
       "Select what you want to import.": [
-        "Виберіть те, що бажаєте імпортувати."
+        "Виберіть, що ви хочете імпортувати."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більше 20 календарів."
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більш ніж 20 календарів."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -3357,6 +3712,9 @@
       ],
       "Tap the + button to upload a file or folder": [
         "Торкніться кнопки +, щоб вивантажити файл або теку"
+      ],
+      "Temporarily unavailable. Please check back later.": [
+        "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Можливо, в обліковому записі є новий ключ або ці елементи підроблено: ${ items }. Відкривайте, лише якщо ви довіряєте їм."
@@ -3479,7 +3837,7 @@
         "Завантаження сотень файлів одразу може вплинути на швидкодію."
       ],
       "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Використовуйте Drive для комп'ютерів, щоб синхронізувати теки на своєму комп'ютері з ${ DRIVE_APP_NAME }. Вони з'являться тут і будуть доступні звідусіль.  ${ LearnMore }"
+        "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Скористайтеся цією формою, щоб повідомити нас про невідповідні, незаконні,\nабо іншим чином шкідливі спільні файли. Ви збираєтеся повідомити:"
@@ -3541,6 +3899,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Ви можете імпортувати один тип даних за один раз."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
       ],
@@ -3549,6 +3910,9 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "У вас залишилося ${ expiresInDays } днів для отримання додаткових 500 МБ з нагоди запуску і "
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Вам необхідно мати активний особистий календар для імпорту ваших подій."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Ви досягли ${ spaceDisplayed }% свого обсягу сховища. ${ freeUpMessage } ${ upgradeLink }"
@@ -3560,19 +3924,19 @@
         "Ви втратите всі незбережені зміни."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. За 28 днів електронні листи перестануть надходити до вашої поштової скриньки, посилання на спільний доступ до Drive будуть заблоковані, і ви не зможете завантажувати нові файли. Щоб відновити звичайну роботу, будь ласка, сплатіть несплачені рахунки."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
+        "Ваш обліковий запис має несплачені рахунки. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має хоча б один несплачений рахунок. Ваш обліковий запис обмежено, і всі послуги зараз заблоковані до оплати. ${ payInvoiceLink }"
+        "Ваш обліковий запис має несплачені рахунки. У зв'язку з цим його роботу обмежено, а всі послуги наразі заблоковані, доки не буде проведено оплату. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Ваш обліковий запис має хоча б один несплачений рахунок. Ваш обліковий запис обмежений. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
+        "Ваш обліковий запис має несплачені рахунки, тому його роботу обмежено. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Ваш поточний браузер не підтримує завантаження великих файлів через недоступність служби обробників (service workers). Завантаження великих файлів може «заморозити» браузер. Будь ласка, скористайтеся найновішими версіями ${ recommendedBrowser } та повторіть спробу."
@@ -3880,6 +4244,9 @@
       ],
       "Import to email address": [
         "Електронна адреса для імпорту"
+      ],
+      "Import to:": [
+        "Імпортувати до:"
       ],
       "Label messages as": [
         "Позначити повідомлення"
@@ -4593,6 +4960,11 @@
         "Об'єднати з календарем"
       ]
     },
+    "Participant name": {
+      "You": [
+        "Ви"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не можна використовувати для шифрування"
@@ -4781,6 +5153,9 @@
       "Bug reported": [
         "Звіт про помилку надіслано"
       ],
+      "Canceling import": [
+        "Скасування імпорту"
+      ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
       ],
@@ -4808,6 +5183,9 @@
       "Fingerprint copied to clipboard": [
         "Цифровий відбиток скопійовано до буфера обміну"
       ],
+      "Import record deleted": [
+        "Запис імпорту видалено"
+      ],
       "Phone number copied to clipboard": [
         "Номер телефону скопійовано до буфера обміну"
       ],
@@ -4822,6 +5200,9 @@
       ],
       "The link to your file was successfully copied": [
         "Посилання на ваш файл успішно скопійовано"
+      ],
+      "Undo in progress": [
+        "Скасовується"
       ],
       "Verification successful": [
         "Перевірка пройшла успішно"
@@ -5005,6 +5386,9 @@
       "Contacts": [
         "Контакти"
       ],
+      "Continue with partial import?": [
+        "Продовжити частковий імпорт?"
+      ],
       "Create a new file": [
         "Створити новий файл"
       ],
@@ -5149,8 +5533,20 @@
       "Human verification": [
         "Перевірка \"Я не робот\""
       ],
+      "Import as simple event?": [
+        "Імпортувати як просту подію?",
+        "Імпортувати як прості події?",
+        "Імпортувати як прості події?",
+        "Імпортувати як прості події?"
+      ],
       "Import contacts": [
         "Імпортувати контакти"
+      ],
+      "Import events": [
+        "Імпорт подій"
+      ],
+      "Import failed": [
+        "Не вдалося імпортувати"
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"

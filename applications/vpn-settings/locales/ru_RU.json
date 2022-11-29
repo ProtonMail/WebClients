@@ -156,7 +156,7 @@
         "Продлить"
       ],
       "Fit to window": [
-        "Вписать в окне"
+        "Вписать в окно"
       ],
       "Get ${ vpnPlus }": [
         "Получить ${ vpnPlus }"
@@ -168,7 +168,7 @@
         "Получить проверочный код"
       ],
       "Go to sign in": [
-        "Перейти к входу в систему"
+        "Перейти ко входу в систему"
       ],
       "Hide": [
         "Скрыть"
@@ -333,7 +333,7 @@
         "Попробуйте другой способ"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Попробуйте сохранить ещё раз. Не удалось сохранить из-за: ${ saveError }"
+        "Попробуйте сохранить еще раз. Не удалось сохранить из-за: ${ saveError }"
       ],
       "Unlock": [
         "Разблокировать"
@@ -511,7 +511,7 @@
         "Проблема Drive"
       ],
       "Feature request": [
-        "Запрос новой функции"
+        "Запрос функционала"
       ],
       "Import / export problem": [
         "Проблема импорта / экспорта"
@@ -594,7 +594,7 @@
         "вишневый"
       ],
       "cobalt": [
-        "кобальт"
+        "кобальтовый"
       ],
       "copper": [
         "медный"
@@ -603,13 +603,13 @@
         "горечавка"
       ],
       "fern": [
-        "папоротник"
+        "папоротниковый"
       ],
       "forest": [
         "лесной"
       ],
       "ocean": [
-        "океан"
+        "океанический"
       ],
       "olive": [
         "оливковый"
@@ -618,7 +618,7 @@
         "тихоокеанский"
       ],
       "pickle": [
-        "огурчик"
+        "огуречный"
       ],
       "pine": [
         "сосновый"
@@ -1374,7 +1374,7 @@
         "Украина"
       ],
       "United Arab Emirates": [
-        "Объединённые Арабские Эмираты"
+        "Объединенные Арабские Эмираты"
       ],
       "United Kingdom": [
         "Великобритания"
@@ -1583,7 +1583,7 @@
         "Проверка подписи не удалась"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
+        "Что-то пошло не так. ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, свяжитесь нашей ${ supportTeam }."
       ],
       "Tab closed": [
         "Вкладка закрыта"
@@ -1591,14 +1591,14 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Ваш браузер не позволяет полностью авторизировать платеж. Пожалуйста, используйте другой браузер или войдите с компьютера."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Минимальная сумма, которую можно добавить, составляет ${ _price }"
+      "The minimum amount of credit that can be added is ${ price }": [
+        "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Минимальная сумма, которую можно пожертвовать, составляет ${ price }"
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Минимальная оплата, которую мы принимаем, составляет ${ _price2 }"
+      "The minimum payment we accept is ${ price }": [
+        "Минимальный платеж, который мы принимаем, составляет ${ price }"
       ],
       "This field is required": [
         "Это обязательное поле"
@@ -1685,7 +1685,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Пожалуйста, отключите 2ФА через ключ безопасности перед отключением TOTP"
+        "Пожалуйста, отключите 2FA через ключ безопасности перед отключением TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте еще раз."
@@ -1696,10 +1696,10 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "Ключ 2ФА отключен"
+        "2FA через ключ безопасности отключена"
       ],
       "Add a name to identify your security key with.": [
-        "Добавьте имя, чтобы потом понять, что это за ключ безопасности."
+        "Добавьте имя для идентификации ключа безопасности."
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы уверены, что хотите удалить ключ безопасности ${ name }?"
@@ -1708,7 +1708,7 @@
         "Вставьте ключ безопасности, связанный с вашим аккаунтом ${ BRAND_NAME }."
       ],
       "Insert your security key into your device's USB port.": [
-        "Вставьте свой ключ безопасности в USB-порт вашего устройства."
+        "Вставьте свой ключ безопасности в порт USB вашего устройства."
       ],
       "Security key": [
         "Ключ безопасности"
@@ -1723,10 +1723,10 @@
         "Это удалит все ключи безопасности, связанные с вашим аккаунтом."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Чтобы включить 2ФА через ключ безопасности, потребуется требуется активировать 2ФА через приложение аутентификатор"
+        "Чтобы включить FA через ключ безопасности, потребуется активировать 2FA через приложение-аутентификатор"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Проверьте свою личность физическим ключом U2F или FIDO2"
+        "Подтвердите свою личность физическим ключом безопасности U2F или FIDO2"
       ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш ключ двухфакторной аутентификации готов к использованию."
@@ -1745,7 +1745,7 @@
         "Удалить ключ безопасности?"
       ],
       "Disable 2FA via security key?": [
-        "Отключить 2ФА через ключ безопасности?"
+        "Отключить 2FA через ключ безопасности?"
       ],
       "Name your security key": [
         "Назовите свой ключ безопасности"
@@ -1939,7 +1939,7 @@
         "добавить способ восстановления"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Добавьте дополнительный слой безопасности к вашему аккаунту. Вам надо будет удостоверять себя с помощью 2ФА при каждом входе."
+        "Добавьте дополнительный слой безопасности к вашему аккаунту. Вам надо будет удостоверять себя с помощью 2FA при каждом входе."
       ],
       "Additional options": [
         "Дополнительные параметры"
@@ -1952,9 +1952,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Сумма ниже допустимого минимума (${ amount })."
-      ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL читает ваши личные данные, чтобы предоставить доступ рекламодателям и другим третьим лицам. Для большей конфиденциальности создайте защищенный адрес электронной почты."
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Вы уверены, что хотите отключить двухфакторную аутентификацию?"
@@ -2043,6 +2040,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Введите подробности своей учетной записи ${ BRAND_NAME }."
       ],
@@ -2079,9 +2079,6 @@
       "Get my ${ BRAND_NAME } address": [
         "Получить свой адрес ${ BRAND_NAME }"
       ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google регистрирует ваши действия в Интернете и читает ваши персональные данные, чтобы предоставить доступ рекламодателям и другим третьим лицам. Для большей конфиденциальности, создайте защищенный адрес электронной почты."
-      ],
       "here": [
         "здесь"
       ],
@@ -2092,7 +2089,7 @@
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
+        "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Если у вас есть подарочный код, введите его ниже, чтобы применить скидку."
@@ -2134,10 +2131,10 @@
         "Подключение к Интернету потеряно"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Интернет-соединение потеряно. Пожалуйста, проверьте подключение вашего устройства."
+        "Подключение к Интернету потеряно. Пожалуйста, проверьте возможность подключения вашего устройства."
       ],
       "Internet connection restored.": [
-        "Интернет-соединение восстановлено."
+        "Подключение к Интернету восстановлено."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Узнайте, как войти в ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
@@ -2166,14 +2163,11 @@
       "lose access to all current encrypted data": [
         "потеряете доступ ко всем текущим зашифрованным данным"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru читает ваши персональные данные с целью предоставления доступа рекламодателям, государственным учреждениям России и другим третьим лицам. Для большей конфиденциальности, создайте защищенный адрес электронной почты."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
-        "Убедитесь, что вы ${ addARecoveryMethod }, чтобы вы могли попась в ваш аккаунт, если забудете пароль."
+        "Убедитесь, что вы ${ addARecoveryMethod }, чтобы попасть в свой аккаунт, если забудете пароль."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Чтобы настроить свою учётную запись, введите эту информацию вручную в своё устройство двухфакторной аутентификации. ${ _switchButton }."
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Введите эту информацию вручную в устройство двухфакторной аутентификации, чтобы настроить учетную запись. ${ switchButton }."
       ],
       "No credit card required": [
         "Кредитная карточка не требуется"
@@ -2236,7 +2230,7 @@
         "Пожалуйста, подтвердите карту в новой открывшейся вкладке."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Пожалуйста, ожидайте пока изменения синхронизируются с сервером."
+        "Ожидайте пока изменения синхронизируются с сервером."
       ],
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
@@ -2401,7 +2395,7 @@
         "Неограниченное количество сообщений"
       ],
       "Unsaved changes": [
-        "Несохранённые изменения"
+        "Несохраненные изменения"
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
@@ -2449,7 +2443,7 @@
         "Мы используем 3-D Secure для защиты ваших платежей."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то, пожалуйста, отключите их перед тем, как продолжить."
+        "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то отключите их перед тем, как продолжить."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
@@ -2483,12 +2477,6 @@
       ],
       "Would you like to receive a new verification code?": [
         "Хотите ли вы получить новый код подтверждения?"
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo читает ваши персональные данные с целью предоставления доступа рекламодателям, разведывательным агентствам США и другим третьим лицам. Для большей конфиденциальности, создайте защищенный адрес электронной почты."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Яндекс регистрирует ваши действия в Интернете и читает ваши персональные данные, чтобы предоставить доступ рекламодателям и другим третьим лицам. Для большей конфиденциальности, создайте защищенный адрес электронной почты."
       ],
       "You already have a free account": [
         "У вас уже есть бесплатная учётная запись"
@@ -2554,7 +2542,7 @@
         "Ваш аккаунт ${ BRAND_NAME } связан с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, вам необходим адрес ${ MAIL_APP_NAME }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, оплатите все просроченные счета."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
@@ -2581,7 +2569,7 @@
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Ваш аккаунт ${ BRAND_NAME } можно использовать для доступа ко всем службам ${ BRAND_NAME }. Пожалуйста, войдите с ${ email }."
+        "Ваш аккаунт ${ BRAND_NAME } можно использовать для доступа ко всем службам ${ BRAND_NAME }. Войдите с ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ваши платежные данные защищены шифрованием TLS и законами о Швейцарии о частной жизни."
@@ -2664,7 +2652,7 @@
         "Отмена"
       ],
       "Chargeback": [
-        "Списано"
+        "Возврат платежа"
       ],
       "Credit": [
         "Кредит"
@@ -2679,10 +2667,10 @@
         "Другое"
       ],
       "Refund": [
-        "Возвращено"
+        "Refund"
       ],
       "Renewal": [
-        "Продлено"
+        "Обновление"
       ],
       "Subscription": [
         "Подписка"
@@ -2693,7 +2681,7 @@
         "${ BRAND_NAME } электронная почта или имя пользователя"
       ],
       "${ BRAND_NAME } username": [
-        "${ BRAND_NAME } имя пользователя"
+        "имя пользователя ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Используется ${ humanUsedSpace } из ${ humanMaxSpace }"
@@ -2945,7 +2933,7 @@
         "Номер телефона для восстановления"
       ],
       "Recovery phrase": [
-        "Фраза для восстановления доступа к аккаунту"
+        "Фраза для восстановления"
       ],
       "Repeat password": [
         "Повторите пароль"
@@ -3040,7 +3028,7 @@
         "Добавить подарочный код"
       ],
       "clearing your browser cache": [
-        "очистка кэша браузера"
+        "очистка кеша браузера"
       ],
       "click here": [
         "нажмите здесь"
@@ -3185,14 +3173,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "От ${_price}"
-      ],
-      "From ${ _price2 } per user": [
-        "От ${ _price2 } за пользователя"
-      ],
       "From ${ price }": [
         "От: ${ price }"
+      ],
+      "From ${ price } per user": [
+        "От ${ price } за пользователя"
       ],
       "Keep my ${ currentPlanName } account": [
         "Сохранить мой аккаунт ${ currentPlanName }"
@@ -3621,7 +3606,7 @@
     },
     "new_plans: tooltip": {
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Получайте доступ к содержимому служб трансляции, включая Netflix, Disney+ и Amazon Prime Video, из любой точки мира"
+        "Доступ к содержимому служб трансляции, включая Netflix, Disney+ и Prime Video, из любой точки мира"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "В адресах есть полный функционал для отправки и получения сообщений. Одному пользователю можно назначить несколько адресов, однако один адрес нельзя назначить разным пользователям"
@@ -3636,7 +3621,7 @@
         "Позволяет настраивать автоматические ответы (автоответчик) для входящих сообщений"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Массовая рекламная или программатическая рассылка электронной почты в настоящее время не поддерживается. Для этих целей мы рекомендуем использовать специального провайдера электронной почты."
+        "Массовая рекламная или программная рассылка электронной почты в настоящее время не поддерживается. Мы рекомендуем использовать специального поставщика услуг электронной почты для этого случая."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Контролируйте доступ к общим файлам, добавляя защиту паролем и даты истечения срока действия ссылок"
@@ -3660,10 +3645,10 @@
         "Легко делитесь своими календарями с семьей, друзьями или коллегами с помощью ссылки"
       ],
       "End-to-end encrypted calendar": [
-        "Календарь, зашифрованный сквозным шифрованием"
+        "Календарь, зашифрованный сквозным методом"
       ],
       "End-to-end encrypted file storage": [
-        "Файлы в хранилище зашифрованы сквозным шифрованием"
+        "Файлы в хранилище зашифрованы сквозным методом"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантирует, что вы получите все письма, отправленные на ваш домен, даже если адрес электронной почты не существует, его больше нет или в нем допущена ошибка"
@@ -3690,7 +3675,7 @@
         "Кроме того, можно добавить до 5 календарей коллег, организаций, семьи и друзей."
       ],
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Кроме того, можно добавить до 5 календарей коллег, организаций, семьи и друзей."
+        "Кроме того, можно добавить до 5 календарей друзей, членов семьи, коллег и организаций."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Одно подключение к VPN позволяет одному устройству подключаться к ${ BRAND_NAME } VPN в любой момент времени. Например, чтобы подключить телефон и ноутбук к ${ BRAND_NAME } VPN одновременно, необходимо два подключения к VPN."
@@ -3774,7 +3759,7 @@
         "При подключении к нашей сети VPN ваши запросы DNS проходят через зашифрованный туннель VPN, что повышает уровень конфиденциальности и безопасности в Интернете"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "При отправке сообщений другим пользователям ${ MAIL_APP_NAME }, шифрование выполняется автоматически. Отправка письма пользователю вне ${ MAIL_APP_NAME }, предполагает предварительную установку для него пароля."
+        "При отправке сообщений другим пользователям ${ MAIL_APP_NAME }, шифрование выполняется автоматически. Отправка письма пользователю вне ${ MAIL_APP_NAME } предполагает предварительную установку для него пароля."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату"
@@ -4045,7 +4030,7 @@
         "Настройка аккаунта"
       ],
       "Payment": [
-        "Платёж"
+        "Платеж"
       ],
       "Verification": [
         "Подтверждение"
@@ -4309,16 +4294,16 @@
     },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Бета-версия ${DRIVE_APP_NAME} вышла из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронные письма."
+        "${ DRIVE_APP_NAME } вышел из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронной почте."
       ],
       "Get up to ${ credits } in credits.": [
         "Вы можете получить до ${ credits } в кредитах."
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "Пригласите друзей на ${ BRAND_NAME }"
+        "Пригласите друзей в ${ BRAND_NAME }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
-        "Попробуйте ${DRIVE_APP_NAME}"
+        "Попробуйте ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
@@ -4338,12 +4323,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } календарь на пользователя",
-        "${ _n } календаря на пользователя",
-        "${ _n } календарей на пользователя",
-        "${ _n } календаря на пользователя"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } высокоскоростное подключение к VPN",
         "${ maxVpn } высокоскоростных подключения к VPN",
@@ -4355,6 +4334,12 @@
         "${ n } календаря",
         "${ n } календарей",
         "${ n } календаря"
+      ],
+      "${ n } calendar per user": [
+        "${ n } календарь на пользователя",
+        "${ n } календаря на пользователя",
+        "${ n } календарей на пользователя",
+        "${ n } календарей на пользователя"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } высокоскоростное подключение к VPN",
@@ -4449,7 +4434,7 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } скопировано в ваш буфер обмена"
+        "${ server.Domain } скопирован в ваш буфер обмена"
       ],
       "Account deleted. Logging out...": [
         "Учётная запись удалена. Производится выход..."
@@ -4561,7 +4546,7 @@
         "Имя"
       ],
       "Status": [
-        "Статус"
+        "Состояние"
       ]
     },
     "Themes": {
@@ -4882,9 +4867,6 @@
       "Switch to two-password mode": [
         "Переключение в режим с двумя паролями"
       ],
-      "This address might compromise your privacy.": [
-        "Этот адрес может поставить под угрозу вашу конфиденциальность."
-      ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
       ],
@@ -5057,10 +5039,10 @@
         "Настройки даты и времени на вашем устройстве не синхронизированы. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда вернемся к работе."
+        "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Ваша бесплатная пробная версия заканчивается ${ textDate }. ${ action }"
+        "Ваш бесплатный пробный период заканчивается ${ textDate }. ${ action }"
       ]
     }
   }

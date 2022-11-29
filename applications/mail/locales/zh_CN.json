@@ -464,6 +464,15 @@
       "import": [
         "导入"
       ],
+      "Import calendars": [
+        "导入日历"
+      ],
+      "Import contacts": [
+        "导入联系人"
+      ],
+      "Import emails": [
+        "导入电子邮件"
+      ],
       "Import from .csv or vCard": [
         "从 .csv 或 vCard 导入"
       ],
@@ -1115,6 +1124,9 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "如果现在离开，一些联系人可能无法导入"
+      ],
+      "By leaving now, some events may not be imported": [
+        "如果现在退出，某些日程可能无法导入"
       ]
     },
     "Alt": {
@@ -2819,6 +2831,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
       ]
@@ -3344,8 +3359,35 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "读取文件 ${ formattedFilename } 失败，文件格式不正确。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "文件 ${ formattedFilename } 上传失败，我们只接受 ICS 文件格式。"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "文件上传失败，尚未选择文件。"
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "出现意外错误，需重新开始导入。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS_STRING }。"
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "文件 ${ formattedFilename } 中没有可导入的事件。"
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "文件 ${ formattedFilename } 为空。"
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "文件 ${ formattedFilename } 不是日历文件。"
       ]
     },
     "Error importing contact": {
@@ -3380,6 +3422,12 @@
       ]
     },
     "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "格式错误，组件无法读取。"
+      ],
+      "Calendar": [
+        "日历"
+      ],
       "Calendar time zone not supported": [
         "不支持此日历时区"
       ],
@@ -3392,11 +3440,17 @@
       "Edited event not supported": [
         "不支持已编辑的事件"
       ],
+      "Element": [
+        "元素"
+      ],
       "Encryption failed": [
         "加密失败"
       ],
       "End time out of bounds": [
         "结束时间超出限制"
+      ],
+      "Event": [
+        "事件"
       ],
       "Event validation failed": [
         "事件验证失败"
@@ -3452,8 +3506,14 @@
       "Time zone not supported": [
         "不支持此时区"
       ],
+      "Timezone": [
+        "时区"
+      ],
       "To-do entry": [
         "待办事项"
+      ],
+      "Unknown": [
+        "未知"
       ],
       "Unsupported event": [
         "不支持的日程"
@@ -3875,13 +3935,45 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "加密并添加日程时出错，未能导入任何日程。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加联系人：已完成 ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "正在加密并添加日程：已完成 ${ totalImported }/${ totalToImport }"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "日程导入成功，已显示在您的日历中。"
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "导入结束前请勿关闭此网页。"
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } 当前不支持某些日程类型、详情和格式。"
+      ],
       "vCard versions < 3.0": [
         "vCard 版本小于3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "This file contains event invitations:": [
+        "此文件包含活动邀请："
+      ],
+      "This file contains invitation responses:": [
+        "此文件包含邀请回复："
+      ],
+      "This file contains some data that we cannot import:": [
+        "此文件包含一些无法导入的数据："
       ]
     },
     "Import contact": {
@@ -3924,15 +4016,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Google 账户的安全设置中已开启“允许不够安全的应用访问”选项"
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } 无法连接您的账户，请确认 Gmail 的 IMAP 功能是否已开启。"
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } 无法连接您的账户，请确认 Gmail 账户的 IMAP 功能是否已开启。"
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } 无法连接该账户，请确认："
       ],
@@ -3941,9 +4024,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } 无法连接该邮箱，请确认："
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } 无法连接您的 Gmail 账户，请确认邮件服务器地址和端口号是否正确。"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认邮件服务器地址和端口号是否正确。"
@@ -3956,18 +4036,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "该邮箱开启了两步验证."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "如果 Gmail 的${ bold2StepsDisabled }（这是 Gmail 的默认设置），请确认："
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "如果 Gmail 的${ bold2StepsDisabled }（这是默认选项），请确认："
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "如果 Gmail 的${ bold2StepsEnabled }，请确认您使用的是应用专用密码，而非平时使用的密码。"
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "如果${ bold2StepsEnabled }，请确认您的邮箱地址和应用专用密码输入无误。${ boldNot }输入您平常用的密码。"
       ],
       "IMAP access is enabled in your external account.": [
         "您的外部账户已开启 IMAP 访问。"
@@ -3986,9 +4054,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "下列情况需使用应用专用密码，不能用平常输入的密码："
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "您也可以尝试在浏览器中退出${ boldGoogleAccounts }，然后解锁${ linkCAPTCHA }。"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "应用密码输入无误。${ boldNot } 输入您平常用的密码。"
@@ -4010,18 +4075,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "两步验证已关闭"
-      ],
-      "2-step verification is enabled": [
-        "两步验证已开启"
-      ],
-      "all your other Google accounts": [
-        "您所有其他的 Google 账户"
-      ],
-      "CAPTCHA": [
-        "验证码"
-      ],
       "not": [
         "不要"
       ]
@@ -4181,8 +4234,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEvents } 个日程有 ${ totalEventsDiscarded } 个将不会被导入，展开查看详情。"
+      ],
       "No contact can be imported. Click for details": [
         "没有联系人可以导入。点击查看详情"
+      ],
+      "No event can be imported. Expand for details.": [
+        "未能导入任何日程，展开查看详情。"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
     "Info": {
@@ -5077,6 +5139,9 @@
       "support team": [
         "客服团队"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "暂时不可用。请稍后再试。"
+      ],
       "Test link": [
         "测试链接"
       ],
@@ -5377,6 +5442,9 @@
       "You can either update your search query or clear it": [
         "您可以修改或清除搜索内容"
       ],
+      "You can import one data type at a time.": [
+        "您一次可以导入一种数据类型。"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
       ],
@@ -5416,6 +5484,9 @@
       "You have reached the maximum number of 5 replies.": [
         "您已经达到5回复的最大限制。"
       ],
+      "You need to have an active personal calendar to import your events.": [
+        "导入您的日程之前您需要有一个启用的个人日历。"
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已经使用了 ${ spaceDisplayed }% 的存储空间。${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5441,7 +5512,7 @@
         "您的 ${ BRAND_NAME } 账户自带 SimpleLogin 服务，一键安装浏览器扩展程序即可开始使用。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "您的 ${ BRAND_NAME } 账户已被停用，无法继续收取新邮件，并且网盘分享链接已全部失效，新文件也无法上传。如需恢复账户正常功能，请付清逾期账单。"
@@ -5968,6 +6039,9 @@
       ],
       "Import to email address": [
         "导入到邮箱地址"
+      ],
+      "Import to:": [
+        "导入到："
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "快捷键：${ shortcut }"
@@ -7346,6 +7420,9 @@
       "Bug reported": [
         "问题已反馈"
       ],
+      "Canceling import": [
+        "正在取消导入"
+      ],
       "Code sent to ${ methodTo }": [
         "验证码已发至 ${ methodTo }"
       ],
@@ -7402,6 +7479,9 @@
       ],
       "Folder cleared": [
         "文件夹已清空"
+      ],
+      "Import record deleted": [
+        "导入记录已删除"
       ],
       "Keyboard shortcuts preferences updated": [
         "快捷键设置已更改"
@@ -7676,6 +7756,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Continue with partial import?": [
+        "继续以部分导入进行吗？"
+      ],
       "Conversation list": [
         "会话列表"
       ],
@@ -7817,8 +7900,17 @@
       "Image": [
         "图像"
       ],
+      "Import as simple events?": [
+        "导入为简单活动？"
+      ],
       "Import contacts": [
         "导入联系人"
+      ],
+      "Import events": [
+        "导入事件"
+      ],
+      "Import failed": [
+        "导入失败"
       ],
       "Insert contacts": [
         "插入联系人"

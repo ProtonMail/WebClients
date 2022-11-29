@@ -469,6 +469,15 @@
       "import": [
         "içe aktar"
       ],
+      "Import calendars": [
+        "Takvimleri içe aktar"
+      ],
+      "Import contacts": [
+        "Kişileri içe aktar"
+      ],
+      "Import emails": [
+        "E-postaları içe aktar"
+      ],
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından içe aktar"
       ],
@@ -809,6 +818,9 @@
       "Save": [
         "Kaydet"
       ],
+      "Saving${ ellipsis }": [
+        "Kaydediliyor${ ellipsis }"
+      ],
       "Schedule message": [
         "İletiyi zamanla"
       ],
@@ -1122,6 +1134,9 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Şimdi ayrılırsanız, bazı kişiler içe aktarılamayabilir"
+      ],
+      "By leaving now, some events may not be imported": [
+        "Şimdi ayrılırsanız, bazı etkinlikler içe aktarılamayabilir"
       ]
     },
     "Alt": {
@@ -2836,6 +2851,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Birleştirmek veya tutmak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıkladıktan sonra yapılır"
       ]
@@ -3376,8 +3394,36 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya doğru biçimde değil."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Yalnızca ICS dosya biçimleri kullanılabilir."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Dosyanız yüklenirken bir sorun çıktı. Herhangi bir dosya seçilmemiş."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Beklenmedik bir sorun çıktı. İçe aktarma işlemi yeniden başlatılmalı."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS_STRING } etkinlikten daha fazla etkinlik var.",
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS_STRING } etkinlikten daha fazla etkinlik var."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "${ formattedFilename } dosyanız geçersiz bir yöntem içerdiğinden içe aktarılamıyor."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "${ formattedFilename } dosyanızda içe aktarılacak bir etkinlik yok."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "${ formattedFilename } dosyanız boş."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "${ formattedFilename } dosyanız bir takvim değil."
       ]
     },
     "Error importing contact": {
@@ -3412,6 +3458,12 @@
       ]
     },
     "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Biçim bozuk. Bileşen okunamadı."
+      ],
+      "Calendar": [
+        "Takvim"
+      ],
       "Calendar time zone not supported": [
         "Takvimin saat dilimi desteklenmiyor"
       ],
@@ -3424,11 +3476,17 @@
       "Edited event not supported": [
         "Etkinlikleri düzenleme desteklenmiyor"
       ],
+      "Element": [
+        "Bileşen"
+      ],
       "Encryption failed": [
         "Şifrelenemedi"
       ],
       "End time out of bounds": [
         "Bitiş zamanı sınırların dışında"
+      ],
+      "Event": [
+        "Etkinlik"
       ],
       "Event validation failed": [
         "Etkinlik doğrulanamadı"
@@ -3484,8 +3542,14 @@
       "Time zone not supported": [
         "Saat dilimi desteklenmiyor"
       ],
+      "Timezone": [
+        "Saat dilimi"
+      ],
       "To-do entry": [
         "Yapılacak iş kaydı"
+      ],
+      "Unknown": [
+        "Bilinmiyor"
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
@@ -3767,6 +3831,9 @@
       ],
       "Subject: ${ subject }": [
         "Konu: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "Kime: ${ toString }"
       ]
     },
     "Get started checklist completion": {
@@ -3915,13 +3982,54 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
+        "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
+        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı.",
+        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kişiler ekleniyor ve şifreleniyor: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Etkinlikler şifrelenip takviminze ekleniyor: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz.",
+        "Etkinlikler içe aktarıldı. İçe aktarılan etkinlikleri takviminizde görebilirsiniz."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Lütfen içe aktarma işlemi bitmeden önce sekmeyi kapatmayın."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, ayrıntılarını ve biçimlerini desteklemiyor."
+      ],
       "vCard versions < 3.0": [
         "vCard 3.0 sürümü öncesi"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı ayrıntıları olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
+      ],
+      "This file contains an event invitation:": [
+        "Bu dosyada bir etkinlik daveti bulunuyor:",
+        "Bu dosyada etkinlik davetleri bulunuyor:"
+      ],
+      "This file contains an invitation response:": [
+        "Bu dosyada bir davet yanıtı bulunuyor:",
+        "Bu dosyada davet yanıtları bulunuyor:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Bu dosyada içe aktaramayacağımız bazı veriler var:"
       ]
     },
     "Import contact": {
@@ -3968,15 +4076,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Google hesabınızın güvenlik ayarlarında \"Daha az güvenli uygulama erişimi\" açık."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen Gmail IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen Gmail hesabınızda IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
@@ -3985,9 +4084,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME }, dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME }, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
@@ -4000,18 +4096,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Dış e-posta hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "${ bold2StepsDisabled } (varsayılan Gmail ayarı) ise, lütfen şundan emin olun:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Gmail üzerinde ${ bold2StepsDisabled } (varsayılan ayar) ise, lütfen şundan emin olun:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Gmail üzerinde ${ bold2StepsEnabled } ise, lütfen normal parolanız yerine uygulama parolanızı kullandığınızdan emin olun."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "${ bold2StepsEnabled } ise, lütfen e-posta adresinizin ve uygulama parolanızın doğru olduğundan emin olun. Normal parolanız ${ boldNot }."
       ],
       "IMAP access is enabled in your external account.": [
         "Dış hesabınızda IMAP erişimi etkinleştirilmiş."
@@ -4030,9 +4114,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Ayrıca web tarayıcıda açık olan ${ boldGoogleAccounts } oturumlarını kapatıp sonrasında ${ linkCAPTCHA } doğrulamasını açmayı deneyebilirsiniz."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
@@ -4054,18 +4135,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "2 aşamalı kimlik doğrulaması devre dışı bırakıldı"
-      ],
-      "2-step verification is enabled": [
-        "2 aşamalı kimlik doğrulaması etkinleştirildi"
-      ],
-      "all your other Google accounts": [
-        "diğer tüm Google hesaplarınız"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "değildir"
       ]
@@ -4228,8 +4297,18 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin.",
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin."
+      ],
       "No contact can be imported. Click for details": [
         "Herhangi bir kişi içe aktarılamadı. Ayrıntılar için tıklayın"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Herhangi bir etkinlik içe aktarılamadı. Ayrıntılar için genişletin."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
     "Info": {
@@ -4673,6 +4752,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -5181,6 +5263,9 @@
       "support team": [
         "destek ekibi"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
+      ],
       "Test link": [
         "Bağlantıyı sına"
       ],
@@ -5487,6 +5572,9 @@
       "You can either update your search query or clear it": [
         "Arama sorgunuzu güncelleyebilir ya da temizleyebilirsiniz"
       ],
+      "You can import one data type at a time.": [
+        "Bir seferde bir veri türünü içe aktarabilirsiniz."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
       ],
@@ -5530,6 +5618,9 @@
       "You have reached the maximum number of 5 replies.": [
         "Olabilecek en fazla 5 yanıt sayısına ulaştınız."
       ],
+      "You need to have an active personal calendar to import your events.": [
+        "Etkinliklerinizi içe aktarmak için etkin bir kişisel takviminiz olmalıdır."
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5559,7 +5650,7 @@
         "${ BRAND_NAME } hesabınızda SimpleLogin bulunur. Başlamak için tek tıklamayla web tarayıcı eklentisini kurabilirsiniz."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
@@ -6089,6 +6180,9 @@
       ],
       "Import to email address": [
         "E-posta adresi içine aktar"
+      ],
+      "Import to:": [
+        "Şunun içine aktar:"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
@@ -6872,6 +6966,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } eklendi"
+      ],
       "Block removed": [
         "Engelleme kaldırıldı"
       ],
@@ -7327,6 +7424,12 @@
       ]
     },
     "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP ile şifrelenmiş ileti. Gönderici doğrulanamadı: ${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP ile imzalanmış ileti. Gönderici doğrulanamadı: ${ verificationErrorsMessage }"
+      ],
       "Sender could not be verified: Message not signed": [
         "Gönderici doğrulanamadı: İleti imzalanmamış"
       ],
@@ -7369,6 +7472,9 @@
       ],
       "Message Content Search": [
         "İleti içeriği arama"
+      ],
+      "Schedule send": [
+        "Gönderimi zamanla"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını deneyin"
@@ -7505,6 +7611,9 @@
       "Bug reported": [
         "Hata bildirildi"
       ],
+      "Canceling import": [
+        "İçe aktarma iptal ediliyor"
+      ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
       ],
@@ -7566,6 +7675,9 @@
       ],
       "Folder cleared": [
         "Klasör temizlendi"
+      ],
+      "Import record deleted": [
+        "İçe aktarma kaydı silindi"
       ],
       "Keyboard shortcuts preferences updated": [
         "Klavye kısayol ayarları güncellendi"
@@ -7646,6 +7758,9 @@
       ],
       "Read receipt sent": [
         "Okundu bilgisi gönderildi"
+      ],
+      "Undo in progress": [
+        "Geri alınıyor"
       ],
       "Verification successful": [
         "Doğrulandı"
@@ -7851,6 +7966,9 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Continue with partial import?": [
+        "Kısmi içe aktarmay ile ilerlensin mi?"
+      ],
       "Conversation list": [
         "Yazışma listesi"
       ],
@@ -7997,8 +8115,18 @@
       "Image": [
         "Görsel"
       ],
+      "Import as simple event?": [
+        "İçe basit etkinlik olarak aktarılsın mı?",
+        "İçe basit etkinlik olarak aktarılsın mı?"
+      ],
       "Import contacts": [
         "Kişileri içe aktar"
+      ],
+      "Import events": [
+        "Etkinlikleri içe aktar"
+      ],
+      "Import failed": [
+        "İçe aktarılamadı"
       ],
       "Insert contacts": [
         "Kişi ekle"
