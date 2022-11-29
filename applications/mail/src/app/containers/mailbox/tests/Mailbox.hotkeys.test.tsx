@@ -115,7 +115,7 @@ describe('Mailbox hotkeys', () => {
         j();
 
         const history = getHistory();
-        expect(history.length).toBe(3);
+        expect(history.length).toBe(6);
         expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[1].ID}`);
     });
 
@@ -132,7 +132,7 @@ describe('Mailbox hotkeys', () => {
         k();
 
         const history = getHistory();
-        expect(history.length).toBe(3);
+        expect(history.length).toBe(6);
         expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[3].ID}`);
     });
 
