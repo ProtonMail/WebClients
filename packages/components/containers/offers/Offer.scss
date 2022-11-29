@@ -12,6 +12,10 @@ $amount-size: 36;
 		&.offer-modal--one-deal {
 			--size: #{em(820)}; // half image & content
 
+			&.offer-modal--noimg {
+				--size: #{em(420)}; // no left or top image
+			}
+
 			.modal-two-content {
 				margin-block-end: 0;
 				@include respond-to($breakpoint-small, 'min') {
@@ -47,7 +51,6 @@ $amount-size: 36;
 
 	// for some promotions
 	&-proton-logo {
-		margin-block-start: em(-12); // magic number to align with close button
 		@include respond-to($breakpoint-small) {
 			inline-size: em(30); // just to avoid having images going to another next line on mobile
 		}
@@ -55,7 +58,6 @@ $amount-size: 36;
 	@include respond-to($breakpoint-small) {
 		&-proton-logo {
 			inline-size: em(30); // just to avoid having images going to another next line on mobile
-			margin-block-start: em(-12); // magic number to align with close button on mobile
 		}
 	}
 
