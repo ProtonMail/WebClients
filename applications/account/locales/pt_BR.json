@@ -495,11 +495,11 @@
       "Not spam": [
         "Não é spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -3142,14 +3142,14 @@
       "The label name is too long. Please choose a different name.": [
         "O nome do marcador é muito longo. Por favor, escolha um nome diferente."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "A quantidade mínima de crédito que pode ser adicionada é ${ _price }"
+      "The minimum amount of credit that can be added is ${ price }": [
+        "O valor mínimo de crédito que pode ser adicionado é ${ price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "O valor mínimo que pode ser doado é ${ price }"
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "O pagamento mínimo que aceitamos é ${ _price2 }"
+      "The minimum payment we accept is ${ price }": [
+        "O pagamento mínimo que aceitamos é ${ price }"
       ],
       "The organization key must be activated first": [
         "A chave da organização deve ser ativada primeiro"
@@ -3454,8 +3454,8 @@
       ]
     },
     "Error message, recovery": {
-      "Please ${ _signIn } to resend a recovery email verification request.": [
-        "Por favor, ${ _signIn } para reenviar uma solicitação de verificação de e-mail de recuperação."
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "Por favor, ${ signIn } para reenviar uma solicitação de verificação de e-mail de recuperação."
       ],
       "sign in": [
         "iniciar sessão"
@@ -4072,15 +4072,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "O \"Acesso a aplicativos menos seguros\" está ativado nas configurações de segurança de sua conta Google."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "O ${ BRAND_NAME } não pode se conectar à sua conta. Por favor, certifique-se de que o acesso IMAP do Gmail esteja ativado."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "O ${ BRAND_NAME } não pode se conectar à sua conta. Por favor, certifique-se de que o acesso IMAP esteja ativado em sua conta do Gmail."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "O ${ BRAND_NAME } não pode se conectar à sua conta. Por favor, certifique-se de que:"
       ],
@@ -4089,9 +4080,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "O ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "O ${ BRAND_NAME } não pode se conectar à sua conta do Gmail. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "O ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
@@ -4104,18 +4092,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "A verificação em duas etapas está ativada em sua conta externa."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Se a ${ bold2StepsDisabled } no Gmail (configurações padrão), por favor, certifique-se de que:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Se a ${ bold2StepsDisabled } no Gmail (configurações padrão), por favor, certifique-se disso:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Se a ${ bold2StepsEnabled } no Gmail, certifique-se de que você está usando a senha de aplicativo em vez da senha normal."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Se a ${ bold2StepsEnabled }, certifique-se de que o seu endereço de e-mail e senha de aplicativo estão corretos. Por favor, ${ boldNot } use a sua senha normal."
       ],
       "IMAP access is enabled in your external account.": [
         "Acesso IMAP está ativado na sua conta do Yahoo."
@@ -4134,9 +4110,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Use sua senha de aplicativo em vez da sua senha normal se:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Você também pode tentar encerrar sessão de ${ boldGoogleAccounts } no navegador, depois desbloquear ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "A senha de aplicativo está correta. ${ boldNot } use sua senha normal."
@@ -4158,18 +4131,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "A verificação em 2 etapas está desativada"
-      ],
-      "2-step verification is enabled": [
-        "A verificação em 2 etapas está ativada"
-      ],
-      "all your other Google accounts": [
-        "todas as suas outras contas do Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "não"
       ]
@@ -4672,9 +4633,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Qualquer um com este link não poderá sincronizar ou obter atualizações futuras para o seu calendário. Se você quiser dar acesso de novo, você terá que criar um novo link."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "A AOL analisa seus dados pessoais a fim de fornecer acesso aos anunciantes e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
-      ],
       "Are you sure you want to delete this address?": [
         "Você tem certeza que deseja excluir este endereço?"
       ],
@@ -4968,6 +4926,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Digite o código de verificação. Insira ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Insira os detalhes da sua conta ${ BRAND_NAME }."
       ],
@@ -5021,9 +4982,6 @@
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Forneça sua chave pública aos seus amigos, ou publique online, para que todos possam te enviar e-mails criptografados de ponta a ponta!"
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "O Google registra sua atividade online e lê seus dados pessoais a fim de proporcionar acesso para anunciantes e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
       ],
       "here": [
         "aqui"
@@ -5249,17 +5207,14 @@
       "lose access to all current encrypted data": [
         "perder o acesso a todos os dados criptografados atuais"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "O Mail.ru analisa seus dados pessoais a fim de fornecer acesso para anunciantes, agências governamentais russas e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Certifique-se de ${ addARecoveryMethod } para poder voltar à sua conta se esquecer sua senha."
       ],
       "Make sure you keep your recovery phrase somewhere private.": [
         "Certifique-se de manter sua frase de recuperação em algum lugar privado."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ _switchButton }."
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
       ],
       "Member": [
         "Membro"
@@ -5950,12 +5905,6 @@
       "Would you like to receive a new verification code?": [
         "Deseja receber um novo código de verificação?"
       ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo analisa seus dados pessoais a fim de fornecer acesso para anunciantes, agências de inteligência dos EUA e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "O Yandex analisa seus dados pessoais a fim de fornecer acesso aos anunciantes e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
-      ],
       "Yearly": [
         "Anualmemnte"
       ],
@@ -6087,7 +6036,7 @@
         "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }. Para usar o ${ toAppName }, você precisa de um ${ MAIL_APP_NAME } endereço."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Sua conta ${ BRAND_NAME } está suspensa no momento. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento do Drive serão bloqueados e você não poderá fazer upload de novos arquivos. Para retomar o serviço normal, pague as faturas vencidas."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Sua conta ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode fazer upload de novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
@@ -7990,14 +7939,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Explorar todos os planos da ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "A partir de ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "A partir de ${ _price2 } por usuário"
-      ],
       "From ${ price }": [
         "A partir de ${ price }"
+      ],
+      "From ${ price } per user": [
+        "A partir de ${ price } por usuário"
       ],
       "Keep my ${ currentPlanName } account": [
         "Manter minha conta do ${ currentPlanName }"
@@ -8236,6 +8182,26 @@
         "Gerenciamento de equipes"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium do ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium do ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -8305,26 +8271,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium do ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium do ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8616,8 +8562,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } criado"
+      "${ Filter.Name } created": [
+        "${ Filter.Name } criado"
       ],
       "A disabled address cannot be primary": [
         "Um endereço desativado não pode ser primário"
@@ -9777,10 +9723,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } calendário por usuario",
-        "${ _n } calendarios por usuario"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } conexão VPN de alta velocidade",
         "${ maxVpn } conexões VPN de alta velocidade"
@@ -9788,6 +9730,10 @@
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendarios"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendário por usuario",
+        "${ n } calendarios por usuario"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } conexão VPN de alta velocidade",
@@ -10902,9 +10848,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This address might compromise your privacy.": [
-        "Este endereço pode comprometer sua privacidade."
       ],
       "Time zone": [
         "Fuso horário"

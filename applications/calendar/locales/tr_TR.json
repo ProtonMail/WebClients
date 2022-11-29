@@ -249,6 +249,15 @@
       "import": [
         "içe aktar"
       ],
+      "Import calendars": [
+        "Takvimleri içe aktar"
+      ],
+      "Import contacts": [
+        "Kişileri içe aktar"
+      ],
+      "Import emails": [
+        "E-postaları içe aktar"
+      ],
       "Import events": [
         "Etkinlikleri içe aktar"
       ],
@@ -572,6 +581,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title }, ${ formattedDateWithoutTime } tarihinde başladı"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title }, ${ formattedDateWithTime } zamanında başladı"
+      ],
       "${ title } started yesterday": [
         "${ title } dün başladı"
       ],
@@ -583,6 +595,15 @@
       ],
       "${ title } starts now": [
         "${ title } şimdi başlıyor"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title }, ${ formattedDate } tarihinde başlayacak"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title }, ${ formattedDate } tarihinde ${ formattedHour } saatinde başlayacak"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title }, ${ formattedDateWithoutTime } tarihinde başlayacak"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title }, ${ formattedDateWithTime } zamanında başlayacak"
@@ -2040,9 +2061,17 @@
         "${ list } içinde geçerli bir e-posta adresi yok",
         "Bazı kişilerin geçerli bir e-posta adresi yok: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } içinde bir e-posta adresi yok",
+        "Bazı kişilerin e-posta adresi yok: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } içinde geçersiz e-posta adresleri var",
         "Bazı gruplarda geçersiz e-posta adresleri var: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } içinde hiçbir kişi yok",
+        "Bazı gruplarda hiçbir kişi yok: ${ list }"
       ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
@@ -2869,15 +2898,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Google hesabınızın güvenlik ayarlarında \"Daha az güvenli uygulama erişimi\" açık."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen Gmail IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen Gmail hesabınızda IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME }, hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
@@ -2886,9 +2906,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME }, dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME }, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
@@ -2901,18 +2918,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Dış e-posta hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "${ bold2StepsDisabled } (varsayılan Gmail ayarı) ise, lütfen şundan emin olun:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Gmail üzerinde ${ bold2StepsDisabled } (varsayılan ayar) ise, lütfen şundan emin olun:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Gmail üzerinde ${ bold2StepsEnabled } ise, lütfen normal parolanız yerine uygulama parolanızı kullandığınızdan emin olun."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "${ bold2StepsEnabled } ise, lütfen e-posta adresinizin ve uygulama parolanızın doğru olduğundan emin olun. Normal parolanız ${ boldNot }."
       ],
       "IMAP access is enabled in your external account.": [
         "Dış hesabınızda IMAP erişimi etkinleştirilmiş."
@@ -2931,9 +2936,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Ayrıca web tarayıcıda açık olan ${ boldGoogleAccounts } oturumlarını kapatıp sonrasında ${ linkCAPTCHA } doğrulamasını açmayı deneyebilirsiniz."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
@@ -2955,18 +2957,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "2 aşamalı kimlik doğrulaması devre dışı bırakıldı"
-      ],
-      "2-step verification is enabled": [
-        "2 aşamalı kimlik doğrulaması etkinleştirildi"
-      ],
-      "all your other Google accounts": [
-        "diğer tüm Google hesaplarınız"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "değildir"
       ]
@@ -3351,6 +3341,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
@@ -3593,6 +3586,9 @@
       "support team": [
         "destek ekibi"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
       ],
@@ -3743,6 +3739,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "İlerlemeye bakabilirsiniz ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Bir seferde bir veri türünü içe aktarabilirsiniz."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Düzenleyici adresinden e-posta gönderemeyeceğiniz için yalnızca kişisel etkinlik özelliklerini değiştirebilirsiniz."
       ],
@@ -3754,6 +3753,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Parolanızı sıfırladınız ve şu takvimlere bağlı etkinliklerin şifresi çözülemedi.\nÖnceden oluşturduğunuz paylaşılan takvim bağlantıları artık kullanılamayacak.\nAbone olunmuş etkin takvimler birkaç dakika sonra yeniden eşitlenecek."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Etkinliklerinizi içe aktarmak için etkin bir kişisel takviminiz olmalıdır."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Daha önce bu çağrıyı reddetmişsiniz. Yeniden çağırması için sahibi ile görüşün"
@@ -3786,7 +3788,7 @@
         "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler çıkarılmış katılımcılara bildirilecek."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
@@ -5134,6 +5136,9 @@
       "Calendar updated": [
         "Takvim güncellendi"
       ],
+      "Canceling import": [
+        "İçe aktarma iptal ediliyor"
+      ],
       "Cancellation sent and all events deleted": [
         "İptal bilgilendirmesi gönderildi ve tüm etkinlikler silindi"
       ],
@@ -5187,6 +5192,9 @@
       "Future events updated": [
         "Gelecekteki etkinlikler güncellendi"
       ],
+      "Import record deleted": [
+        "İçe aktarma kaydı silindi"
+      ],
       "Invitation sent and all events updated": [
         "Davet gönderildi ve tüm etkinlikler güncellendi"
       ],
@@ -5225,6 +5233,9 @@
       ],
       "Preferences saved": [
         "Ayarlar kaydedildi"
+      ],
+      "Undo in progress": [
+        "Geri alınıyor"
       ],
       "Verification successful": [
         "Doğrulandı"

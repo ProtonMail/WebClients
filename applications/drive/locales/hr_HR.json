@@ -255,6 +255,9 @@
       "import": [
         "uvoz"
       ],
+      "Import contacts": [
+        "Uvezi kontakte"
+      ],
       "Import from .csv or vCard": [
         "Uvezite iz .csv ili vCard"
       ],
@@ -536,6 +539,20 @@
         "Ako sada napustite, neki se kontakti možda neće uvesti"
       ]
     },
+    "Attached ics file error": {
+      "Invalid event": [
+        "Nevažeći događaj"
+      ],
+      "Invalid ICS file": [
+        "Nevažeća ICS datoteka"
+      ],
+      "Invalid method": [
+        "Nevažeća metoda"
+      ],
+      "Unsupported event": [
+        "Događaj nije podržan"
+      ]
+    },
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Ako naiđete na probleme, uvijek možete onemogućiti beta pristup."
@@ -749,9 +766,72 @@
         "Uklj"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Opis: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } je ažuriran.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Pozvani ste na ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "Kada: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "Kada: ${ formattedStart } (cijeli dan)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Kada: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Gdje: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } je prihvatio vašu pozivnicu za ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } je odbio vašu pozivnicu za ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } je uvjetno prihvatio vašu pozivnicu za ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Otkazani događaj ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Otkazani događaj s početkom ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Pozivnica za događaj ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Pozivnica za događaj s početkom ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Ažuriranje događaja ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Ažuriranje događaja s početkom ${ formattedStart }"
+      ]
+    },
     "Error": {
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
+      ],
+      "Address primary private key not found": [
+        "Primarni privatni ključ adrese nije pronađen"
       ],
       "Authentication canceled.": [
         "Otkazana autentikacija."
@@ -858,8 +938,17 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo je do neočekivane pogreške. Uvoz se mora ponovo pokrenuti."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Vaša datoteka ${ formattedFilename } je prazna."
       ]
     },
     "Error importing contact": {
@@ -891,6 +980,80 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Vaša datoteka ${ formattedFilename } je prazna."
+      ]
+    },
+    "Error importing event": {
+      "Component with wrong format": [
+        "Komponenta s pogrešnim formatom"
+      ],
+      "Custom timezone": [
+        "Prilagođena vremenska zona"
+      ],
+      "Edited event not supported": [
+        "Uređeni događaj nije podržan"
+      ],
+      "Encryption failed": [
+        "Neuspješno šifriranje"
+      ],
+      "End time out of bounds": [
+        "Krajnje vrijeme je van granica"
+      ],
+      "Event validation failed": [
+        "Neuspjela provjera valjanosti događaja"
+      ],
+      "Floating times not supported": [
+        "Floating vremena nisu podržana"
+      ],
+      "Free-busy time information": [
+        "Informacije o slobodnom/zauzetom vremenu"
+      ],
+      "Invalid event": [
+        "Nevažeći događaj"
+      ],
+      "Journal entry": [
+        "Stavka dnevnika"
+      ],
+      "Malformed all-day event": [
+        "Nevažeći cjelodnevni događaj"
+      ],
+      "Malformed end time": [
+        "Nevažeće krajnje vrijeme"
+      ],
+      "Malformed recurring event": [
+        "Neispravan ponavljajući događaj"
+      ],
+      "Malformed start time": [
+        "Nevažeće početno vrijeme"
+      ],
+      "Missing start time": [
+        "Nedostaje početno vrijeme"
+      ],
+      "Non-Gregorian": [
+        "Ne gregorijanski"
+      ],
+      "Notification out of bounds": [
+        "Obavijest je izvan granica"
+      ],
+      "Original recurring event could not be found": [
+        "Originalni ponavljajući događaj nije pronađen"
+      ],
+      "Recurring rule not supported": [
+        "Ponavljajuće pravilo nije podržano"
+      ],
+      "Start time out of bounds": [
+        "Početno vrijeme je van granica"
+      ],
+      "Timezone": [
+        "Vremenska zona"
+      ],
+      "To-do entry": [
+        "Stavka liste zadataka"
+      ],
+      "Unknown": [
+        "Nepoznato"
+      ],
+      "Unsupported event": [
+        "Događaj nije podržan"
       ]
     },
     "Error message": {
@@ -930,6 +1093,37 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nije odabrana nijedna slika"
+      ]
+    },
+    "Event invitation error": {
+      "Invalid invitation": [
+        "Nevažeća pozivnica"
+      ],
+      "Invalid response": [
+        "Nevažeći odgovor"
+      ],
+      "Unsupported invitation": [
+        "Nepodržana pozivnica"
+      ],
+      "Unsupported response": [
+        "Odgovor nije podržan"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Nismo mogli otkazati događaj u vašem kalendaru"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Nismo mogli dohvatiti događaj iz vašeg kalendara"
+      ],
+      "We could not update the event in your calendar": [
+        "Nismo mogli ažurirati događaj u vašem kalendaru"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Vaš je odgovor poslan, ali događaj nije moguće dodati u vaš kalendar"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(bez naslova)"
       ]
     },
     "file size format": {
@@ -1061,18 +1255,6 @@
       ]
     },
     "Import error": {
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Ako je ${ bold2StepsDisabled } (zadana Gmail postavka), pobrinite se da:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Ako je ${ bold2StepsDisabled } u Gmailu (zadano), pobrinite se da:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Ako je ${ bold2StepsEnabled } u Gmailu, provjerite upotrebljavate li lozinku za aplikaciju umjesto uobičajene lozinke."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ako je ${ bold2StepsEnabled }, provjerite jesu li adresa e-pošte i lozinka za aplikaciju točni. ${ boldNot } koristite svoju uobičajenu lozinku."
-      ],
       "Invalid IMAP port": [
         "Nevažeći IMAP port"
       ],
@@ -1084,24 +1266,9 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Upotrijebite lozinku za aplikaciju umjesto vaše uobičajene lozinke ako:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Također se možete pokušati odjaviti iz ${ boldGoogleAccounts } u pregledniku, a zatim otključajte ${ linkCAPTCHA }."
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Dvofaktorska autentikacija je onemogućena"
-      ],
-      "2-step verification is enabled": [
-        "Dvofaktorska autentikacija je omogućena"
-      ],
-      "all your other Google accounts": [
-        "svim ostalim Google računima"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "ne"
       ]
@@ -1969,6 +2136,11 @@
         "Nema roditeljske mape"
       ]
     },
+    "Participant name": {
+      "You": [
+        "Vi"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ključ se ne može koristiti za šifriranje"
@@ -2125,6 +2297,9 @@
       ],
       "Fingerprint copied to clipboard": [
         "Otisak prsta je kopiran u međuspremnik"
+      ],
+      "Import record deleted": [
+        "Zapis uvoza je izbrisan"
       ],
       "Phone number copied to clipboard": [
         "Telefonski broj je kopiran u međuspremnik"

@@ -249,6 +249,15 @@
       "import": [
         "εισαγωγή"
       ],
+      "Import calendars": [
+        "Εισαγωγή ημερολογίων"
+      ],
+      "Import contacts": [
+        "Εισαγωγή επαφών"
+      ],
+      "Import emails": [
+        "Εισαγωγή email"
+      ],
       "Import events": [
         "Εισαγωγή εκδηλώσεων"
       ],
@@ -2613,23 +2622,8 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "Η \"λιγότερο ασφαλής πρόσβαση σε εφαρμογή\" είναι ενεργοποιημένη στις ρυθμίσεις ασφαλείας του λογαριασμού σας Google."
-      ],
       "2-step verification is enabled in your external account.": [
         "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Εάν ${ bold2StepsDisabled } (προεπιλεγμένες ρυθμίσεις Gmail), βεβαιωθείτε ότι:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Εάν ${ bold2StepsDisabled } στο Gmail (προεπιλεγμένες ρυθμίσεις), βεβαιωθείτε ότι:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Εάν ${ bold2StepsEnabled } στο Gmail, βεβαιωθείτε ότι χρησιμοποιείτε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Εάν ${ bold2StepsEnabled }, βεβαιωθείτε ότι η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
       ],
       "IMAP access is enabled in your external account.": [
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
@@ -2649,9 +2643,6 @@
       "Use your app password instead of your regular password if:": [
         "Χρησιμοποιήστε τον κωδικό πρόσβασης της εφαρμογής σας αντί για τον κανονικό κωδικό πρόσβασης σας εάν:"
       ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Μπορείτε επίσης να προσπαθήσετε να αποσυνδεθείτε από ${ boldGoogleAccounts } στο πρόγραμμα περιήγησης και, στη συνέχεια, να ξεκλειδώσετε το ${ linkCAPTCHA }."
-      ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
       ],
@@ -2663,18 +2654,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Η επαλήθευση 2 βημάτων είναι απενεργοποιημένη"
-      ],
-      "2-step verification is enabled": [
-        "Η επαλήθευση 2 βημάτων είναι ενεργοποιημένη"
-      ],
-      "all your other Google accounts": [
-        "όλους τους άλλους λογαριασμούς σας στο Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "δεν"
       ]
@@ -3202,6 +3181,9 @@
       "support team": [
         "ομάδα υποστήριξης"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Πρέπει να αποκρυπτογραφήσουμε τοπικά τις επαφές σας προτού μπορέσετε να τις εξάγετε. Στο τέλος της διαδικασίας, θα δημιουργηθεί ένα αρχείο VCF και θα μπορείτε να το κατεβάσετε."
       ],
@@ -3337,6 +3319,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Μπορείτε να τροποποιήσετε μόνο τις προσωπικές ιδιότητες του συμβάντος, καθώς δεν μπορείτε να στείλετε email από τη διεύθυνση του διοργανωτή."
       ],
@@ -3348,6 +3333,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Εχετε επαναφέρει τον κωδικό πρόσβασης σασ και σαν αποτέλεσμα γεγονότα συνδεδεμένα με τα ακόλουθα ημερολόγια, δε μπορέσανε να αποκρυπτωγραφηθούν.\nΟι συνδέσεις κοινόχρηστου ημερολογίου που δημιουργήσατε προηγουμένως δεν θα λειτουργούν πλέον.\nΟποιαδήποτε ενεργά εγγεγραμμένα ημερολόγια θα συγχρονιστούν ξανά μετά από λίγα λεπτά."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Έχετε προηγουμένως απορρίψει αυτήν την πρόσκληση. Παρακαλώ ρωτήστε τον κάτοχο για μια νέα πρόσκληση"
@@ -4599,6 +4587,9 @@
       "Calendar updated": [
         "Το ημερολόγιο ενημερώθηκε"
       ],
+      "Canceling import": [
+        "Γίνεται ακύρωση εισαγωγής"
+      ],
       "Cancellation sent and all events deleted": [
         "Η ακύρωση στάλθηκε και όλες οι εκδηλώσεις διαγράφηκαν"
       ],
@@ -4651,6 +4642,9 @@
       ],
       "Future events updated": [
         "Τα μελλοντικά γεγονότα ενημερώθηκαν"
+      ],
+      "Import record deleted": [
+        "Η εισαγωγή εγγραφής διαγράφηκε"
       ],
       "Invitation sent and all events updated": [
         "Η πρόσκληση στάλθηκε και ενημερώθηκαν όλα τα γεγονότα"

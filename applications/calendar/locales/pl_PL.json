@@ -253,6 +253,15 @@
       "import": [
         "importuj"
       ],
+      "Import calendars": [
+        "Importuj kalendarze"
+      ],
+      "Import contacts": [
+        "Importuj kontakty"
+      ],
+      "Import emails": [
+        "Importuj wiadomości"
+      ],
       "Import events": [
         "Importuj wydarzenia"
       ],
@@ -395,7 +404,7 @@
         "Wyślij ponownie kod"
       ],
       "Reset to default": [
-        "Przywróć domyślne ustawienia"
+        "Przywróć ustawienia domyślne"
       ],
       "Save": [
         "Zapisz"
@@ -2967,15 +2976,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Dostęp do mniej bezpiecznych aplikacji\" w ustawieniach bezpieczeństwa konta Google jest włączony."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } nie może połączyć się z kontem. Upewnij się, że dostęp IMAP w ustawieniach konta Gmail jest włączony."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } nie może połączyć się z kontem. Upewnij się, że dostęp IMAP w ustawieniach konta jest włączony."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } nie może połączyć się z kontem. Upewnij się, że:"
       ],
@@ -2984,9 +2984,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } nie może połączyć się z kontem zewnętrznym. Upewnij się, że:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } nie może połączyć się z kontem Gmail. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } nie może połączyć się z kontem Yahoo. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
@@ -2999,18 +2996,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Jeśli ${ bold2StepsDisabled } (domyślne ustawienie poczty Gmail), upewnij się, że:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Jeśli ${ bold2StepsDisabled } w poczcie Gmail (domyślne ustawienie), upewnij się, że:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Jeśli w ustawieniach poczty Gmail ${ bold2StepsEnabled }, upewnij się, że używasz hasła aplikacji, zamiast swojego zwykłego hasła."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Jeśli ${ bold2StepsEnabled }, upewnij się, że adres e-mail i hasło aplikacji są prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
       ],
       "IMAP access is enabled in your external account.": [
         "dostęp IMAP jest włączony na koncie zewnętrznym."
@@ -3029,9 +3014,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Użyj hasła aplikacji, zamiast swojego zwykłego hasła, jeśli:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Możesz spróbować zalogować się na ${ boldGoogleAccounts } w przeglądarce, a następnie przejść weryfikację ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Hasło aplikacji jest prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
@@ -3053,18 +3035,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "weryfikacja dwuetapowa jest wyłączona"
-      ],
-      "2-step verification is enabled": [
-        "weryfikacja dwuetapowa jest włączona"
-      ],
-      "all your other Google accounts": [
-        "wszystkie pozostałe konta Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "Nie"
       ]
@@ -3073,8 +3043,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Kliknij ${ boldManage }, aby rozwinąć menu."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "W zależności od dostawcy poczty e-mail musisz wygenerować ${ knowledgeBaseLink } przed rozpoczęciem procesu importowania do ${ BRAND_NAME }."
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Rozwiń menu, klikając na 3 kropki (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Wygeneruj ${ boldAppPassword } i użyj go zamiast swojego zwykłego hasła, gdy ${ BRAND_NAME } o to poprosi."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Wygeneruj ${ boldAppPassword } i użyj go zamiast swojego zwykłego hasła, gdy ${ BRAND_NAME } o to poprosi."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Przejdź do sekcji ${ boldAccountInfo } na koncie ${ yahooMailLink }."
@@ -3488,6 +3467,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
       ],
@@ -3734,6 +3716,9 @@
       "support team": [
         "pomocą techniczną"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Zanim kontakty będą mogły zostać wyeksportowane, aplikacja musi je lokalnie odszyfrować. Pod koniec procesu zostanie wygenerowany plik VCF do pobrania."
       ],
@@ -3884,6 +3869,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Możesz sprawdzić postęp ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Możesz importować jeden typ danych jednocześnie."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Możesz edytować tylko osobiste właściwości wydarzeń, ponieważ nie możesz wysyłać wiadomości z adresu organizatora."
       ],
@@ -3895,6 +3883,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Zresetowano hasło, więc wydarzenia z kalendarzy nie mogły zostać odszyfrowane.\nWszystkie udostępnione linki kalendarzy przestaną działać.\nZa kilka minut wszystkie subskrybowane kalendarze zostaną ponownie zsynchronizowane."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Musisz posiadać aktywny osobisty kalendarz, aby zaimportować wydarzenia."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Poprzednie zaproszenie zostało odrzucone. Poproś właściciela o ponowne zaproszenie"
@@ -3927,7 +3918,7 @@
         "Zaktualizujesz wszystkie wydarzenia w tej serii. Usunięci uczestnicy zostaną powiadomieni."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
@@ -5605,6 +5596,9 @@
       "Calendar updated": [
         "Kalendarz został zaktualizowany"
       ],
+      "Canceling import": [
+        "Anulowanie procesu importowania"
+      ],
       "Cancellation sent and all events deleted": [
         "Powiadomienie o anulowaniu wydarzeń zostało wysłane. Wszystkie wydarzenia zostały usunięte"
       ],
@@ -5662,6 +5656,9 @@
       "Future events updated": [
         "Przyszłe wydarzenia zostały zaktualizowane"
       ],
+      "Import record deleted": [
+        "Rekord importu został usunięty"
+      ],
       "Invitation sent and all events updated": [
         "Zaproszenie zostało wysłane. Wszystkie wydarzenia zostały zaktualizowane"
       ],
@@ -5700,6 +5697,9 @@
       ],
       "Preferences saved": [
         "Ustawienia zostały zapisane"
+      ],
+      "Undo in progress": [
+        "Cofnięcie jest w toku"
       ],
       "Verification successful": [
         "Weryfikacja powiodła się"

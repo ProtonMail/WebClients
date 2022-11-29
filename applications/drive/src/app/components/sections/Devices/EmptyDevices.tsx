@@ -18,7 +18,7 @@ const EmptyDevices = () => {
             <h3 className="text-bold">{c('Info').t`No synced computers`}</h3>
             <p className="empty-devices-placeholder-info">
                 {c('Info')
-                    .jt`Use Drive for Desktop to sync folders on your computer with ${DRIVE_APP_NAME}. They’ll show up here and be accessible from anywhere.  ${LearnMore}`}
+                    .jt`Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }`}
             </p>
         </EmptyViewContainer>
     );

@@ -495,11 +495,11 @@
       "Not spam": [
         "No es spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -3142,14 +3142,14 @@
       "The label name is too long. Please choose a different name.": [
         "El nombre de la etiqueta es demasiado largo. Elija un nombre diferente."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "La cantidad mínima de crédito que se puede agregar es de ${ _price }"
+      "The minimum amount of credit that can be added is ${ price }": [
+        "La cantidad mínima de crédito que se puede añadir es de ${ price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "La cantidad mínima que puede donarse es de ${ price }"
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "El pago mínimo aceptado es de ${ _price2 }"
+      "The minimum payment we accept is ${ price }": [
+        "El pago mínimo que aceptamos es de ${ price }"
       ],
       "The organization key must be activated first": [
         "La clave de la organización debe activarse primero"
@@ -3454,8 +3454,8 @@
       ]
     },
     "Error message, recovery": {
-      "Please ${ _signIn } to resend a recovery email verification request.": [
-        "Por favor, ${ _signIn } para reenviar una solicitud de verificación nueva."
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "Por favor, ${ signIn } para reenviar una solicitud de verificación nueva."
       ],
       "sign in": [
         "inicie sesión"
@@ -4072,15 +4072,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "El \"acceso de aplicaciones poco seguras\" está habilitado en los ajustes de seguridad de su cuenta de Google."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } no puede conectarse a su cuenta. Asegúrese que el acceso IMAP de Gmail está habilitado."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } no puede conectarse a su cuenta. Asegúrese que el acceso IMAP está habilitado en su cuenta de Gmail."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } no puede conectarse a su cuenta. Asegúrese de que:"
       ],
@@ -4089,9 +4080,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } no puede conectarse a su cuenta externa. Asegúrese de que:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } no puede conectarse a su cuenta de Gmail. Asegúrese que la dirección del servidor de correo y el puerto son correctos."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } no puede conectarse a su cuenta de Yahoo. Asegúrese que la dirección del servidor de correo y el puerto son correctos."
@@ -4104,18 +4092,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "La verificación en dos pasos está habilitada en su cuenta de correo externa."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Si ${ bold2StepsDisabled } (configuración de Gmail predeterminada), asegúrese de que:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Si ${ bold2StepsDisabled } en Gmail (ajustes predeterminados), asegúrese de que:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Si ${ bold2StepsEnabled } en Gmail, asegúrese de que está usando la contraseña de su aplicación en lugar de la contraseña regular."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Si ${ bold2StepsEnabled }, asegúrese de que su dirección de correo electrónico y contraseña de la aplicación son correctas. ${ boldNot } utilice su contraseña regular."
       ],
       "IMAP access is enabled in your external account.": [
         "El acceso IMAP está habilitado en su cuenta externa."
@@ -4134,9 +4110,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Use su contraseña de la aplicación en lugar de su contraseña normal si:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "También puede intentar cerrar sesión de ${ boldGoogleAccounts } en el navegador y luego desbloquear el ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "La contraseña de la aplicación es correcta. ${ boldNot } use su contraseña regular."
@@ -4158,18 +4131,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "la verificación en dos pasos está deshabilitada"
-      ],
-      "2-step verification is enabled": [
-        "la verificación en dos pasos está habilitada"
-      ],
-      "all your other Google accounts": [
-        "todas sus otras cuentas de Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "No"
       ]
@@ -4672,9 +4633,6 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Cualquier persona con este enlace no podrá sincronizar ni obtener actualizaciones futuras para su calendario. Si desea darles acceso de nuevo, tendrá que crear un enlace nuevo."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL lee sus datos personales con el fin de facilitar el acceso a los anunciantes y terceros. Para una mejor privacidad, cree una dirección de correo electrónico segura."
-      ],
       "Are you sure you want to delete this address?": [
         "¿Está seguro que desea eliminar esta dirección?"
       ],
@@ -4968,6 +4926,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ingrese el código de verificación. Digite ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Ingrese los datos de su cuenta de ${ BRAND_NAME }."
       ],
@@ -5021,9 +4982,6 @@
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "¡Dele su clave pública a sus amigos, o publíquela en línea, para que todo el mundo pueda enviarle un correo electrónico cifrado de extremo a extremo!"
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google registra su actividad en línea y lee sus datos personales con el fin de facilitar el acceso a los anunciantes y terceros. Para una mejor privacidad, cree una dirección de correo electrónico segura."
       ],
       "here": [
         "aquí"
@@ -5249,17 +5207,14 @@
       "lose access to all current encrypted data": [
         "Perderá acceso a todos los datos cifrados actuales"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru lee sus datos personales con el fin de facilitar el acceso a anunciantes, agencias gubernamentales rusas y terceros. Para una mejor privacidad, cree una dirección de correo electrónico segura."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asegúrese de ${ addARecoveryMethod } de tal modo que pueda volver a tener acceso a su cuenta en caso de olvidar la contraseña."
       ],
       "Make sure you keep your recovery phrase somewhere private.": [
         "Asegúrese de guardar la frase de recuperación en un lugar privado."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Ingrese manualmente esta información en el dispositivo de autenticación de dos factores para configurar su cuenta. ${ _switchButton }."
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Ingrese manualmente esta información en el dispositivo de autenticación de dos factores para configurar su cuenta. ${ switchButton }."
       ],
       "Member": [
         "Miembro"
@@ -5950,12 +5905,6 @@
       "Would you like to receive a new verification code?": [
         "¿Desearía recibir un código de verificación nuevo?"
       ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo lee sus datos personales con el fin de facilitar el acceso a anunciantes, agencias de inteligencia de Estados Unidos y terceros. Para una mejor privacidad, cree una dirección de correo electrónico segura."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex registra su actividad en línea y lee sus datos personales con el fin de facilitar el acceso a los anunciantes y terceros. Para una mejor privacidad, cree una dirección de correo electrónico segura."
-      ],
       "Yearly": [
         "Anual"
       ],
@@ -6087,7 +6036,7 @@
         "Su cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }. Para usar ${ toAppName }, necesita una dirección de ${ MAIL_APP_NAME }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Su cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en su buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, por favor pague cualquier factura pendiente."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Su cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en su buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando su cuenta, por favor pague cualquier factura pendiente."
@@ -7990,14 +7939,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Ver todos los planes de ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "Desde ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Desde ${ _price2 } por usuario"
-      ],
       "From ${ price }": [
         "Desde ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Desde ${ price } por usuario"
       ],
       "Keep my ${ currentPlanName } account": [
         "Seguir en ${ currentPlanName }"
@@ -8236,6 +8182,26 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8305,26 +8271,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8616,8 +8562,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } creado"
+      "${ Filter.Name } created": [
+        "${ Filter.Name } creado"
       ],
       "A disabled address cannot be primary": [
         "Una dirección deshabilitada no puede ser principal"
@@ -9777,10 +9723,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } calendario por usuario",
-        "${ _n } calendarios por usuario"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } conexión VPN de gran velocidad",
         "${ maxVpn } conexiones VPN de gran velocidad"
@@ -9788,6 +9730,10 @@
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendario por usuario",
+        "${ n } calendarios por usuario"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } conexión VPN de gran velocidad",
@@ -10902,9 +10848,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This address might compromise your privacy.": [
-        "Esta dirección podría comprometer su privacidad."
       ],
       "Time zone": [
         "Zona horaria"

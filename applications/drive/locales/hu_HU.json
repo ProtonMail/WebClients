@@ -301,6 +301,15 @@
       "import": [
         "importálás"
       ],
+      "Import calendars": [
+        "Naptárak importálása"
+      ],
+      "Import contacts": [
+        "Névjegyek importálása"
+      ],
+      "Import emails": [
+        "E-mailek importálása"
+      ],
       "Import from .csv or vCard": [
         "Importálás .csv vagy vCard fájlból"
       ],
@@ -634,6 +643,29 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "A folyamat megszakítása esetén, bizonyos névjegyek nem kerülnek importálásra"
+      ],
+      "By leaving now, some events may not be imported": [
+        "A folyamat megszakítása esetén, bizonyos események nem kerülnek importálásra"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Üres ICS fájl"
+      ],
+      "Invalid event": [
+        "Érvénytelen esemény"
+      ],
+      "Invalid ICS file": [
+        "Érvénytelen ICS fájl"
+      ],
+      "Invalid method": [
+        "Érvénytelen metódus"
+      ],
+      "Unsupported calendar component": [
+        "Nem támogatott naptár komponens"
+      ],
+      "Unsupported event": [
+        "Nem támogatott esemény"
       ]
     },
     "Beta access description": {
@@ -718,6 +750,51 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Calendar status": {
+      "Not synced": [
+        "Nincs szinkronizálva"
+      ],
+      "Syncing": [
+        "Szinkronizálás"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "A naptár visszafejtése nem sikerült"
+      ],
+      "Calendar is syncing": [
+        "A naptár szinkronizál"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "A naptár szinkronizál: több percig is eltarthat, mire az összes esemény látható lesz."
+      ],
+      "Calendar is too big": [
+        "A naptár túl nagy"
+      ],
+      "Calendar link is not accessible": [
+        "A naptár hivatkozás nem érhető el"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "A naptár hivatkozás átmenetileg nem érhető el"
+      ],
+      "Failed to sync calendar": [
+        "A naptár szinkronizálása nem sikerült"
+      ],
+      "More than 12 hours passed since last update": [
+        "Több mint 12 óra telt el a legutóbbi frissítés óta"
+      ],
+      "Unsupported calendar format": [
+        "Nem támogatott naptár formátum"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "A naptár hivatkozás nem érhető el a naptárszolgáltató rendszerén kívül."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "A naptár hivatkozás átmenetileg nem érhető el. Ellenőrizze, hogy a naptárszolgáltatónál még mindig érvényes ez a hivatkozás."
       ]
     },
     "Collapsible tooltip": {
@@ -1685,6 +1762,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Eseményeket iCal formátumból (ICS fájl) tud importálni.\nA fájl maximális mérete ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és maximum ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmazhat. Nagyobb fájl importálásához, kisebb darabokra kell vágnia."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
       ]
@@ -1707,6 +1787,69 @@
         "Be"
       ]
     },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Leírás: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } törlésre került."
+      ],
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } frissítve.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "Meghívták a következő eseményre: ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "Ekkor: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "Ekkor: ${ formattedStart } (egész nap)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "Ekkor: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Hely: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } elfogadta a meghívást az eseményre: ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } elutasította a meghívást az eseményre: ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } feltételesen elfogadta a meghívást az eseményre: ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Esemény törlése ekkor: ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Esemény törlése: ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Meghívó egy eseményre ekkor: ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Meghívó eseményre: ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Frissítés egy eseményhez: ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Frissítés egy eseményhez: ${ formattedStart }"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" már létezik"
@@ -1716,6 +1859,9 @@
       ],
       "A problem occurred, please try again": [
         "Hiba történt, próbálja meg újra"
+      ],
+      "Address primary private key not found": [
+        "A cím elsődleges privát kulcsa nem található"
       ],
       "Authentication canceled.": [
         "Hitelesítés megszakítva."
@@ -1970,8 +2116,36 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. Csak ICS fájl formátumok támogatottak."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Hiba történt a fájl feltöltésekor. Nincs fájl kiválasztva."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Váratlan hiba történt. Az importálást újra kell kezdeni."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }.",
+        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "A(z) ${ formattedFilename } fájl érvénytelen metódust tartalmaz és nem importálható."
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "A fájlban nem találhatók importálandó események: ${ formattedFilename }."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "A fájl üres: ${ formattedFilename }."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "A fájl nem egy naptár: ${ formattedFilename }."
       ]
     },
     "Error importing contact": {
@@ -2003,6 +2177,104 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "A fájl üres: ${ formattedFilename }."
+      ]
+    },
+    "Error importing event": {
+      "Bad format. Component cannot be read.": [
+        "Hibás formátum. A komponens nem olvasható."
+      ],
+      "Calendar": [
+        "Naptár"
+      ],
+      "Calendar time zone not supported": [
+        "A naptár időzónája nem támogatott"
+      ],
+      "Component with wrong format": [
+        "A komponens formátuma hibás"
+      ],
+      "Custom timezone": [
+        "Egyéni időzóna"
+      ],
+      "Edited event not supported": [
+        "Szerkesztett esemény nem támogatott"
+      ],
+      "Element": [
+        "Elem"
+      ],
+      "Encryption failed": [
+        "Titkosítás nem sikerült"
+      ],
+      "End time out of bounds": [
+        "Záró időpont a korlátokon kívül"
+      ],
+      "Event": [
+        "Esemény"
+      ],
+      "Event validation failed": [
+        "Esemény ellenőrzése nem sikerült"
+      ],
+      "Floating times not supported": [
+        "Lebegő idők nem támogatottak"
+      ],
+      "Free-busy time information": [
+        "Szabad-elfoglalt információ"
+      ],
+      "Invalid event": [
+        "Érvénytelen esemény"
+      ],
+      "Journal entry": [
+        "Napló elem"
+      ],
+      "Malformed all-day event": [
+        "Hibás egésznapos esemény"
+      ],
+      "Malformed end time": [
+        "Hibás záró időpont"
+      ],
+      "Malformed recurring event": [
+        "Hibás ismétlődő esemény"
+      ],
+      "Malformed start time": [
+        "Hibás kezdő időpont"
+      ],
+      "Missing start time": [
+        "Hiányzó kezdő időpont"
+      ],
+      "No UID, title or start time": [
+        "Nincs UID, cím vagy kezdési időpont"
+      ],
+      "Non-Gregorian": [
+        "Nem gergely-naptár"
+      ],
+      "Notification out of bounds": [
+        "Az értesítés határokon kívül esik"
+      ],
+      "Original recurring event could not be found": [
+        "Az ismétlődő esemény eredetije nem található"
+      ],
+      "Recurring event has no occurrences": [
+        "Az ismétlődő eseménynek nincs előfordulása"
+      ],
+      "Recurring rule not supported": [
+        "Ismétlődési szabály nem támogatott"
+      ],
+      "Start time out of bounds": [
+        "Kezdő időpont a korlátokon kívül"
+      ],
+      "Time zone not supported": [
+        "Időzóna nem támogatott"
+      ],
+      "Timezone": [
+        "Időzóna"
+      ],
+      "To-do entry": [
+        "Tennivaló elem"
+      ],
+      "Unknown": [
+        "Ismeretlen"
+      ],
+      "Unsupported event": [
+        "Nem támogatott esemény"
       ]
     },
     "Error message": {
@@ -2050,6 +2322,55 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "A pont megadása kötelező"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "Nem sikerült a csatolt ICS fájl visszafejtése"
+      ],
+      "Attached ICS file could not be read": [
+        "Nem sikerült a csatolt ICS fájl olvasása"
+      ],
+      "Invalid invitation": [
+        "Érvénytelen meghívó"
+      ],
+      "Invalid response": [
+        "Érvénytelen válasz"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "Az eseményt nem sikerült felvenni a naptárába. Válasz nem került elküldésre"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "Az eseményt nem sikerült frissíteni a naptárában. Válasz nem került elküldésre"
+      ],
+      "Unexpected error": [
+        "Váratlan hiba"
+      ],
+      "Unsupported invitation": [
+        "Nem támogatott meghívó"
+      ],
+      "Unsupported response": [
+        "Nem támogatott válasz"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Nem sikerült az esemény törlése a naptárából"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Nem sikerült az esemény betöltése a naptárból"
+      ],
+      "We could not update the event in your calendar": [
+        "Nem sikerült az esemény frissítése a naptárában"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "A válasz elküldésre került, de az eseményt nem sikerült a naptárához adni"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "A válasz elküldésre került, de az eseményt nem sikerült a naptárában frissíteni"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(névtelen)"
       ]
     },
     "Feedback Modal Title": {
@@ -2173,13 +2494,51 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a naptárba",
+        "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a naptárba"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
+        "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Hiba történt az esemény titkosításakor és tárolásakor. Az esemény nem került importálásra.",
+        "Hiba történt az események titkosításakor és tárolásakor. Az események nem kerültek importálásra."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Névjegyek titkosítása és tárolása: ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "Események titkosítása és tárolása a naptárában: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esemény sikeresen importálva. Az importált esemény azonnal elérhető a naptárában.",
+        "Események sikeresen importálva. Az importált események azonnal elérhetők a naptárában."
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "Ne zárja be a böngészőfület mielőtt az importálás befejeződik."
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "A ${ CALENDAR_APP_NAME } jelenleg nem támogat bizonyos esemény típusokat, részleteket és formátumokat."
+      ],
       "vCard versions < 3.0": [
         "vCard verzió < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "This file contains an event invitation:": [
+        "Ez a fájl egy esemény meghívót tartalmaz:",
+        "Ez a fájl esemény meghívókat tartalmaz:"
+      ],
+      "This file contains an invitation response:": [
+        "Ez a fájl egy meghívó választ tartalmaz:",
+        "Ez a fájl meghívó válaszokat tartalmaz:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Ez a fájl olyan adatokat is tartalmaz, amit nem lehet importálni:"
       ]
     },
     "Import contact": {
@@ -2226,26 +2585,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Kevésbé biztonságos alkalmazások hozzáférése\" be van kapcsolva a Google fiókbiztonsági beállításaiban."
-      ],
       "2-step verification is enabled in your external account.": [
         "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
       ],
       "2-step verification is enabled in your external email account.": [
         "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Ha ${ bold2StepsDisabled } (alapértelmezett Gmail beállítás), kérjük ellenőrizze, hogy:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Ha ${ bold2StepsDisabled } a Gmail-ben (alapértelmezett beállítás), kérjük ellenőrizze, hogy:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Ha ${ bold2StepsEnabled } a Gmail-ben, kérjük ellenőrizze hogy az alkalmazásjelszavát használja a rendes jelszava helyett."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ha ${ bold2StepsEnabled }, kérjük ellenőrizze hogy az e-mail cím és az alkalmazásjelszó helyes.\n${ boldNot } használja az alapértelmezett jelszavát."
       ],
       "IMAP access is enabled in your external account.": [
         "Az IMAP elérés engedélyezve van a külső fiókon."
@@ -2264,9 +2608,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Az alkalmazásjelszót használja a belépési jelszava helyett, ha:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Megpróbálhat kijelentkezni ${ boldGoogleAccounts }-ból a böngészőjében, és utána feloldani ${ linkCAPTCHA }-t."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Az alkalmazásjelszó megfelelő. ${ boldNot } a belépési jelszavát használja."
@@ -2288,18 +2629,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Kétlépcsős hitelesítés ki van kapcsolva"
-      ],
-      "2-step verification is enabled": [
-        "Kétlépcsős hitelesítés be van kapcsolva"
-      ],
-      "all your other Google accounts": [
-        "a többi Google fiókja"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "Ne"
       ]
@@ -2421,8 +2750,18 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } a ${ totalContacts } névjegyből nem kerül importálásra. Kattintson a részletekért"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért.",
+        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért."
+      ],
       "No contact can be imported. Click for details": [
         "Nem került importálásra névjegy. Kattintson a részletekért"
+      ],
+      "No event can be imported. Expand for details.": [
+        "Nem került importálásra esemény. Nyissa meg a részletekért."
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
     "Info": {
@@ -2741,6 +3080,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Írja be az ellenőrző kódot. ${ digit } számjegy."
       ],
       "Enter your own password (as organization admin).": [
         "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
@@ -3120,6 +3462,9 @@
       "Swiss privacy": [
         "Svájci adatbiztonság"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Átmenetileg nem elérhető. Próbálja meg később."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A fióknak lehet, hogy új kulcsa van, vagy babráltak a következőkkel: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
       ],
@@ -3286,6 +3631,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Egyszerre egyféle adat importálható."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
       ],
@@ -3294,6 +3642,9 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "Már csak ${ expiresInDays } napja maradt, hogy igénybe vegye az 500 MB-os üdvözlése bónuszát és "
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Az importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
@@ -3593,6 +3944,9 @@
       ],
       "Import to email address": [
         "Importálás e-mail címre"
+      ],
+      "Import to:": [
+        "Importálás ide:"
       ],
       "Label messages as": [
         "Üzenetek megjelölése címkével"
@@ -4220,6 +4574,11 @@
         "Összefőzés naptárral"
       ]
     },
+    "Participant name": {
+      "You": [
+        "Ön"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "A kulcs nem használható titkosításhoz"
@@ -4399,6 +4758,9 @@
       "Bug reported": [
         "Hiba bejelentve"
       ],
+      "Canceling import": [
+        "Importálás megszakítása"
+      ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
       ],
@@ -4422,6 +4784,9 @@
       "Fingerprint copied to clipboard": [
         "Ujjlenyomat a vágólapra másolva"
       ],
+      "Import record deleted": [
+        "Importálási elem törölve"
+      ],
       "Phone number copied to clipboard": [
         "Telefonszám a vágólapra másolva"
       ],
@@ -4436,6 +4801,9 @@
       ],
       "The link to your file was successfully copied": [
         "A fájlra mutató hivatkozás sikeresen másolva"
+      ],
+      "Undo in progress": [
+        "Visszavonás folyamatban"
       ],
       "Verification successful": [
         "Sikeres ellenőrzés"
@@ -4590,6 +4958,9 @@
       "Contacts": [
         "Névjegyek"
       ],
+      "Continue with partial import?": [
+        "Folytatja részleges importálással?"
+      ],
       "Create a new file": [
         "Új fájl létrehozása"
       ],
@@ -4728,8 +5099,18 @@
       "Human verification": [
         "Robot ellenőrzés"
       ],
+      "Import as simple event?": [
+        "Importálás egyszerű eseményként?",
+        "Importálás egyszerű eseményekként?"
+      ],
       "Import contacts": [
         "Névjegyek importálása"
+      ],
+      "Import events": [
+        "Események importálása"
+      ],
+      "Import failed": [
+        "Importálás sikertelen"
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
