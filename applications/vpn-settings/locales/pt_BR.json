@@ -1583,14 +1583,14 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "A quantidade mínima de crédito que pode ser adicionada é ${ _price }"
+      "The minimum amount of credit that can be added is ${ price }": [
+        "O valor mínimo de crédito que pode ser adicionado é ${ price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
         "O valor mínimo que pode ser doado é ${ price }"
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "O pagamento mínimo que aceitamos é ${ _price2 }"
+      "The minimum payment we accept is ${ price }": [
+        "O pagamento mínimo que aceitamos é ${ price }"
       ],
       "This field is required": [
         "Este campo é obrigatório"
@@ -1927,9 +1927,6 @@
       "Amount below minimum (${ amount }).": [
         "Valor total abaixo do mínimo (${ amount })."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "A AOL analisa seus dados pessoais a fim de fornecer acesso aos anunciantes e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Você tem certeza de que deseja desativar a autenticação de dois fatores?"
       ],
@@ -2017,6 +2014,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Digite o código de verificação. Insira ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Insira os detalhes da sua conta ${ BRAND_NAME }."
       ],
@@ -2052,9 +2052,6 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "Obter meu endereço de ${ BRAND_NAME }"
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "O Google registra sua atividade online e lê seus dados pessoais a fim de proporcionar acesso para anunciantes e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
       ],
       "here": [
         "aqui"
@@ -2140,14 +2137,11 @@
       "lose access to all current encrypted data": [
         "perder o acesso a todos os dados criptografados atuais"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "O Mail.ru analisa seus dados pessoais a fim de fornecer acesso para anunciantes, agências governamentais russas e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Certifique-se de ${ addARecoveryMethod } para poder voltar à sua conta se esquecer sua senha."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ _switchButton }."
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
       ],
       "No credit card required": [
         "Cartão de crédito não necessário"
@@ -2458,12 +2452,6 @@
       "Would you like to receive a new verification code?": [
         "Deseja receber um novo código de verificação?"
       ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo analisa seus dados pessoais a fim de fornecer acesso para anunciantes, agências de inteligência dos EUA e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "O Yandex analisa seus dados pessoais a fim de fornecer acesso aos anunciantes e outros terceiros. Para ter uma melhor privacidade, crie um endereço de e-mail seguro."
-      ],
       "You already have a free account": [
         "Você já possui uma conta gratuita"
       ],
@@ -2528,7 +2516,7 @@
         "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }. Para usar o ${ toAppName }, você precisa de um ${ MAIL_APP_NAME } endereço."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Sua conta ${ BRAND_NAME } está suspensa no momento. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento do Drive serão bloqueados e você não poderá fazer upload de novos arquivos. Para retomar o serviço normal, pague as faturas vencidas."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Sua conta ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode fazer upload de novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
@@ -3157,14 +3145,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Explorar todos os planos da ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "A partir de ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "A partir de ${ _price2 } por usuário"
-      ],
       "From ${ price }": [
         "A partir de ${ price }"
+      ],
+      "From ${ price } per user": [
+        "A partir de ${ price } por usuário"
       ],
       "Keep my ${ currentPlanName } account": [
         "Manter minha conta do ${ currentPlanName }"
@@ -4262,10 +4247,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } calendário por usuario",
-        "${ _n } calendarios por usuario"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } conexão VPN de alta velocidade",
         "${ maxVpn } conexões VPN de alta velocidade"
@@ -4273,6 +4254,10 @@
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendarios"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendário por usuario",
+        "${ n } calendarios por usuario"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } conexão VPN de alta velocidade",
@@ -4779,9 +4764,6 @@
       ],
       "Switch to two-password mode": [
         "Alternar para o modo de duas senhas"
-      ],
-      "This address might compromise your privacy.": [
-        "Este endereço pode comprometer sua privacidade."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Experimente o melhor do ${ MAIL_APP_NAME } gratuitamente"

@@ -251,6 +251,15 @@
       "import": [
         "importare"
       ],
+      "Import calendars": [
+        "Importare calendare"
+      ],
+      "Import contacts": [
+        "Importare contacte"
+      ],
+      "Import emails": [
+        "Importare mesaje"
+      ],
       "Import events": [
         "Importare evenimente"
       ],
@@ -574,6 +583,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } a început ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } a început ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } a început ieri"
       ],
@@ -585,6 +597,15 @@
       ],
       "${ title } starts now": [
         "${ title } începe acum"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } începe ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } începe ${ formattedDate } la ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } începe ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } începe ${ formattedDateWithTime }"
@@ -2051,10 +2072,20 @@
         "Unele contacte nu au o adresă de e-mail validă: ${ list }",
         "Unele contacte nu au o adresă de e-mail validă: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } nu are o adresă de e-mail.",
+        "Câteva contacte nu au adresă de e-mail: ${ list }",
+        "Câteva contacte nu au adresă de e-mail: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } are adrese de e-mail nevalide.",
         "Unele grupuri au adrese de e-mail nevalide: ${ list }",
         "Unele grupuri au adrese de e-mail nevalide: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } nu are contacte.",
+        "Câteva grupuri nu au contacte: ${ list }",
+        "Câteva grupuri nu au contacte: ${ list }"
       ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
@@ -2906,15 +2937,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "„Accesul aplicațiilor mai puțin sigure” este activat în setările de securitate ale contului Google."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } nu se poate conecta la acest cont. Asigurați-vă că accesul IMAP este activat în contul Gmail."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } nu se poate conecta la acest cont. Asigurați-vă că accesul IMAP este activat în contul Gmail."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } nu se poate conecta la cont. Asigurați-vă că:"
       ],
@@ -2923,9 +2945,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } nu se poate conecta la contul extern. Asigurați-vă că:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } nu se poate conecta la contul Gmail. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } nu se poate conecta la contul Yahoo. Asigurați-vă că adresa serverului de e-mail și numărul portului sunt corecte."
@@ -2938,18 +2957,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "verificarea în 2 pași este activată în contul extern de e-mail."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Dacă ${ bold2StepsDisabled } (setare implicită în Gmail), asigurați-vă că:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Dacă ${ bold2StepsDisabled } în Gmail (setare implicită), asigurați-vă că:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Dacă ${ bold2StepsEnabled } în Gmail, asigurați-vă că folosiți parola aplicației în loc de parola obișnuită de conectare."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Dacă ${ bold2StepsEnabled }, asigurați-vă că adresa de e-mail și parola aplicației sunt corecte. Să ${ boldNot } folosiți parola obișnuită."
       ],
       "IMAP access is enabled in your external account.": [
         "Accesul IMAP este activat în contul extern."
@@ -2968,9 +2975,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Folosiți parola aplicației în locul parolei obișnuite dacă:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Mai puteți înerca să vă deconectați din ${ boldGoogleAccounts } din navigatorul web, apoi să deblocați ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Parola aplicației este corectă. Să ${ boldNot } folosiți parola obișnuită."
@@ -2992,18 +2996,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "verificarea în doi pași este dezactivată"
-      ],
-      "2-step verification is enabled": [
-        "verificarea în doi pași este activată"
-      ],
-      "all your other Google accounts": [
-        "toate celelalte conturi Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "nu"
       ]
@@ -3412,6 +3404,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduceți codul de verificare. ${ digit } cifre."
+      ],
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
       ],
@@ -3656,6 +3651,9 @@
       "support team": [
         "echipa de asistență"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
       ],
@@ -3806,6 +3804,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Puteți importa un singur tip de date la un moment dat."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Puteți modifica doar proprietățile evenimentelor personale deoarece nu puteți trimite e-mailuri de la adresa organizatorului."
       ],
@@ -3817,6 +3818,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "V-ați resetat parola și evenimentele legate la următoarele calendare nu s-au putut decripta.\nOrice legătură de calendar partajată creată anterior nu va mai funcționa.\nOrice calendar activ abonat se va resincroniza după câteva minute."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Trebuie să aveți un calendar personal activ pentru a importa evenimentele."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Anterior ați respins această invitație. Solicitați proprietarului o reinvitare."
@@ -3849,7 +3853,7 @@
         "Veţi actualiza toate evenimentele din această serie. Participanţii eliminaţi vor fi notificaţi."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
@@ -5234,6 +5238,9 @@
       "Calendar updated": [
         "Calendar actualizat"
       ],
+      "Canceling import": [
+        "Anulare importare"
+      ],
       "Cancellation sent and all events deleted": [
         "Anularea a fost trimisă și toate evenimentele au fost șterse."
       ],
@@ -5289,6 +5296,9 @@
       "Future events updated": [
         "Evenimente viitoare actualizate."
       ],
+      "Import record deleted": [
+        "Înregistrare importare ștearsă"
+      ],
       "Invitation sent and all events updated": [
         "Invitația a fost trimisă și evenimentele au fost actualizate."
       ],
@@ -5327,6 +5337,9 @@
       ],
       "Preferences saved": [
         "Preferințe salvate"
+      ],
+      "Undo in progress": [
+        "Anulare în desfășurare"
       ],
       "Verification successful": [
         "Verificare reușită"

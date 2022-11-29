@@ -247,6 +247,15 @@
       "import": [
         "匯入"
       ],
+      "Import calendars": [
+        "匯入行事曆"
+      ],
+      "Import contacts": [
+        "匯入聯絡人"
+      ],
+      "Import emails": [
+        "匯入電郵"
+      ],
       "Import events": [
         "匯入事件"
       ],
@@ -570,6 +579,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } 已在 ${ formattedDateWithoutTime } 開始"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } 已在 ${ formattedDateWithTime } 開始"
+      ],
       "${ title } started yesterday": [
         "${ title } 已在昨天開始"
       ],
@@ -581,6 +593,15 @@
       ],
       "${ title } starts now": [
         "${ title } 現在開始"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } 在 ${ formattedDate } 開始"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } 在 ${ formattedDate } 於 ${ formattedHour } 開始"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } 在 ${ formattedDateWithoutTime } 開始"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } 在 ${ formattedDateWithTime } 開始"
@@ -2221,6 +2242,9 @@
       "Some contacts don't have a valid email address: ${ list }": [
         "某些聯絡人不具備有效的電郵位址 ${ list }"
       ],
+      "Some contacts have no email addresses: ${ list }": [
+        "部份聯絡人無電子郵件地址：${ list }"
+      ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "部份聯絡人無電郵位址 : ${ noEmailsContactNamesList } "
       ],
@@ -2229,6 +2253,9 @@
       ],
       "Some groups have invalid emails: ${ list }": [
         "某些群組包含無效的電郵: ${ list }"
+      ],
+      "Some groups have no contacts: ${ list }": [
+        "部份群組內沒有任何聯絡人：${ list }"
       ],
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "部份群組無聯絡人：${ noContactGroupList }"
@@ -2823,15 +2850,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } 無法連接您的帳號。請確認 Gmail IMAP 存取已啟用。"
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } 無法連接您的帳號。請確認您的 Gmail IMAP 存取已啟用。"
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } 無法連接您的帳號。請確認以下事項:"
       ],
@@ -2840,9 +2858,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } 無法連接您的外部帳號。請確認以下事項:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } 無法連接您的 Gmail 帳號。請確認郵件伺服器和連接埠號正確無誤。"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } 無法連接您的 Yahoo! 帳號。請確認郵件伺服器和連接埠號正確無誤。"
@@ -2855,18 +2870,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "您的外部電郵帳號已啟用兩步驟驗證."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "如果 ${ bold2StepsDisabled }（預設的 Gmail 設定），請確保："
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "如果 Gmail ${ bold2StepsDisabled }（預設設定），請確保："
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "如果 Gmail ${ bold2StepsEnabled }，請確保您使用您的應用程式密碼，而非您的一般密碼。"
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "如果 ${ bold2StepsEnabled }，請確保您的電郵位址和應用程式密碼均正確。${ boldNot } 使用您的一般密碼。"
       ],
       "IMAP access is enabled in your external account.": [
         "您的外部帳號已啟用 IMAP 存取。"
@@ -2885,9 +2888,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "使用您的應用程式密碼而非一般密碼，如果："
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "您亦可嘗試在瀏覽器登出 ${ boldGoogleAccounts }，然後透過 ${ linkCAPTCHA } 驗證。"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
@@ -2909,18 +2909,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "兩步驟驗證已停用"
-      ],
-      "2-step verification is enabled": [
-        "兩步驟驗證已啟用"
-      ],
-      "all your other Google accounts": [
-        "您所有的其它 Google 帳號"
-      ],
-      "CAPTCHA": [
-        "驗證碼"
-      ],
       "not": [
         "不要"
       ]
@@ -3497,6 +3485,9 @@
       "support team": [
         "支援團隊"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "暫時無法使用，請稍後再試。"
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "在可以匯出前，應用程式需要在本機先解密您的聯絡人。過程結束時，將會產生一個 VCF 檔案以供您下載。"
       ],
@@ -3644,6 +3635,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
+      "You can import one data type at a time.": [
+        "您可以一次匯入一種資料類型。"
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "您僅可以修改個人事件屬性，因為您無法以召集人電郵位址傳送電郵。"
       ],
@@ -3655,6 +3649,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "您已重設您的密碼，因此與下列行事曆連結的事件無法解密。\n任何您先前創建的已分享行事曆連結將不再運作。\n任何使用中已訂購授權的行事曆將於數分鐘後再次同步。"
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "您需要有使用中的個人行事曆才可匯入您的行程。"
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "您先前回絕了此邀請。請要求擁有者重新邀請"
@@ -3687,7 +3684,7 @@
         "您即將更新此一系列中全部事件。已移除的參與者將獲通知。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期帳單。"
@@ -4987,6 +4984,9 @@
       "Calendar updated": [
         "行事曆已更新"
       ],
+      "Canceling import": [
+        "正在取消匯入"
+      ],
       "Cancellation sent and all events deleted": [
         "取消已送出，並且已刪除全部事件"
       ],
@@ -5035,6 +5035,9 @@
       "Future events updated": [
         "未來的活動已更新"
       ],
+      "Import record deleted": [
+        "匯入記錄已刪除"
+      ],
       "Invitation sent and all events updated": [
         "邀請已送出，並且已更新全部事件"
       ],
@@ -5073,6 +5076,9 @@
       ],
       "Preferences saved": [
         "偏好設定已儲存"
+      ],
+      "Undo in progress": [
+        "復原進行中"
       ],
       "Verification successful": [
         "驗證成功"

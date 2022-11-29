@@ -418,6 +418,15 @@
       "import": [
         "kter"
       ],
+      "Import calendars": [
+        "Kter iwitayen"
+      ],
+      "Import contacts": [
+        "Sgaǧ-d tansiwin"
+      ],
+      "Import emails": [
+        "Kter imaylen"
+      ],
       "Import from .csv or vCard": [
         "Kter si .csv neɣ vCard"
       ],
@@ -2918,8 +2927,17 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Tella-d tuccḍa deg usali n ufaylu-inek ·inem ${ formattedFilename }. Teɣzi tafellayt n ufaylu d ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Tella-d tuccḍa deg usali n ufaylu-inek·inem. Ulac afaylu i yettwafernen."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Tella-d tuccḍa ur nettwarǧa ara. Aktar ilaq ad yales asenker."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Afaylu-inek/m ${ formattedFilename } d ilem."
       ]
     },
     "Error importing contact": {
@@ -2954,6 +2972,9 @@
       ]
     },
     "Error importing event": {
+      "Calendar": [
+        "Awitay"
+      ],
       "Component with wrong format": [
         "Asuddis s yir amasal"
       ],
@@ -3017,8 +3038,14 @@
       "Start time out of bounds": [
         "Akud n beddu akkin i tlisa"
       ],
+      "Timezone": [
+        "Tamennaḍt tasragant"
+      ],
       "To-do entry": [
         "Anekcum n twuriwin"
+      ],
+      "Unknown": [
+        "Arussin"
       ],
       "Unsupported event": [
         "Tadyant ur nettusefrak ara"
@@ -3383,26 +3410,11 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Anekcum i yusnasen i yesεan taɣelist meẓẓiyen\" irmed deg yiɣewwaṛen n umiḍan-ik·im Google."
-      ],
       "2-step verification is enabled in your external account.": [
         "Asenqed ɣef sin yiḥricen yermed deg umiḍan-ik·im azɣaray."
       ],
       "2-step verification is enabled in your external email account.": [
         "Asenqed s sin yiḥricen yermed deg umiḍan-ik·im n yimayl azɣaray."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Ma yella ${ bold2StepsDisabled } (iɣewwaren n Gmail imezwer), ttxil-k·m wali ma yella:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Ma yella ${ bold2StepsDisabled } deg Gmail (iɣewwaren imezwer), ttxil-k·m wali ma yella:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Ma yella ${ bold2StepsEnabled } deg Gmail, ttxil-k·m wali ma yella tseqdaceḍ awal-ik·im uffir n usnas deg ubdil n wawal-ik·im uffir i tezgiḍ tseqdaceḍ."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ma yella ${ bold2StepsEnabled }, ttxil-k·m senqed tansa-inek·inem n yimayl akked wawal uffir ma yella d imeɣta. Seqdec ${ boldNot } awal-ik·im uffir i tseqdaceḍ."
       ],
       "IMAP access is enabled in your external account.": [
         "Anekcum IMAP yermed deg umiḍan-ik·im azɣaray."
@@ -3421,9 +3433,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Seqdec awal-ik·im uffir n usnas deg ubdil n wawal-ik·im uffir i tezgiḍ tseqdaceḍ ma yella:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Mazal tzemreḍ ad tɛerḍeḍ ad teffɣeḍ seg ${ boldGoogleAccounts } deg yiminig, syen kkes asekker n ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Awal-ik·im uffir d ameɣtu. Seqdec ${ boldNot } awal-ik·im uffir n tannumi."
@@ -3445,18 +3454,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Asenqed s sin yiḥricen yensa"
-      ],
-      "2-step verification is enabled": [
-        "Asenqed s sin yiḥricen yensa"
-      ],
-      "all your other Google accounts": [
-        "akk imiḍanen-inek·inem-nniḍen n Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "uhu"
       ]
@@ -4295,6 +4292,9 @@
       "support team": [
         "tarbaɛt n tallalt"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Ulac-it akka tura. Ma ulac aɣilif, senqed ticki."
+      ],
       "Test link": [
         "Aseɣwen n usekyed"
       ],
@@ -4567,6 +4567,9 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Tessawḍeḍ amḍan afellay n 5 n tririyin."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Tesriḍ ad tesɛuḍ awitay urmid udmawen i uktar n yineḍruyen-ik·im."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Tewwḍeḍ ɣer ${ spaceDisplayed }% n tallunt-inek .m n weḥraz. ${ freeUpMessage } ${ upgradeLink }"
@@ -6273,6 +6276,9 @@
       "Bug reported": [
         "Abug yettwazen"
       ],
+      "Canceling import": [
+        "Asefsex n tektert"
+      ],
       "Code sent to ${ methodTo }": [
         "Tangalt tettwazen ɣer ${ methodTo }"
       ],
@@ -6322,6 +6328,9 @@
       ],
       "Folder cleared": [
         "Akaram yettwaṣfeḍ"
+      ],
+      "Import record deleted": [
+        "Kter asekles yettwakksen"
       ],
       "Keyboard shortcuts preferences updated": [
         "Ismenyifen n yinegzumen n unasiw ttwaleqqmen"

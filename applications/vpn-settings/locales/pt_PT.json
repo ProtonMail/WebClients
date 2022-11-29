@@ -1386,14 +1386,8 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "O navegador que utiliza não permite que o pagamento seja completamente autorizado. Por favor, utilize outro navegador ou inicie sessão via computador."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "A quantia mínima de créditos que pode adicionar é ${ _price }"
-      ],
       "The minimum amount that can be donated is ${ price }": [
         "A quantia mínima que pode ser doada é ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "O pagamento mínimo que aceitamos é ${ _price2 }"
       ],
       "This field is required": [
         "Este campo é requerido"
@@ -1552,6 +1546,12 @@
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
       ],
+      "${ vpnPlus } required for Country level connection.": [
+        "É requerida ${ vpnPlus } para ligação a nível de país."
+      ],
+      "${ vpnPlus } required for Secure Core feature.": [
+        "${ vpnPlus } ou $ requeridos para a funcionalidade Secure Core."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
       ],
@@ -1576,9 +1576,6 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Quantia abaixo do mínimo (${ amount })."
-      ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "O AOL lê os seus dados pessoais, a fim de fornecer acesso a anunciantes e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "Tem certeza de que deseja desactivar a autenticação em dois passos?"
@@ -1661,9 +1658,6 @@
       "Free up some space or contact your administrator.": [
         "Liberte algum espaço ou contacte um administrador."
       ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "O Google regista a sua actividade online e lê os seus dados pessoais, a fim de fornecer acesso a anunciantes e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
-      ],
       "here": [
         "aqui"
       ],
@@ -1730,14 +1724,11 @@
       "Loading preview": [
         "A carregar antevisão"
       ],
+      "Loading...": [
+        "A carregar..."
+      ],
       "lose access to all current encrypted data": [
         "perder o acesso a todos os dados encriptados actuais"
-      ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "O Mail.ru lê os seus dados pessoais a fim de proporcionar acesso a anunciantes, agências de informação russas e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Insira manualmente esta informação no seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ _switchButton }."
       ],
       "No payment is required at this time.": [
         "Nenhum pagamento é necessário neste momento."
@@ -1906,12 +1897,6 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "O Yahoo lê os seus dados pessoais a fim de proporcionar acesso a anunciantes, agências de informação americanas e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "O Yandex regista a sua actividade online e lê os seus dados pessoais, a fim de fornecer acesso a anunciantes e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
       ],
       "You already have a free account": [
         "Já tem uma conta gratuita"
@@ -3039,9 +3024,6 @@
       ],
       "Switch to two-password mode": [
         "Mudar para modo de senha dupla"
-      ],
-      "This address might compromise your privacy.": [
-        "Este endereço pode comprometer sua privacidade."
       ],
       "TV log in": [
         "Iniciar sessão de TV"

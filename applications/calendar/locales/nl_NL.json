@@ -249,6 +249,15 @@
       "import": [
         "importeren"
       ],
+      "Import calendars": [
+        "Agenda's importeren"
+      ],
+      "Import contacts": [
+        "Contactpersonen importeren"
+      ],
+      "Import emails": [
+        "E-mails importeren"
+      ],
       "Import events": [
         "Afspraken importeren"
       ],
@@ -572,6 +581,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } begon op ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } begon op ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } is gisteren begonnen"
       ],
@@ -583,6 +595,15 @@
       ],
       "${ title } starts now": [
         "${ title } begint nu"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } begint op ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } begint op ${ formattedDate } om ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } begint op ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } begint op ${ formattedDateWithTime }"
@@ -2856,15 +2877,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "\"Minder veilige app-toegang\" is ingeschakeld in de beveiligingsinstellingen voor uw Google-account."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } kan geen verbinding maken met uw account. Zorg ervoor dat Gmail IMAP-toegang is ingeschakeld."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } kan geen verbinding maken met uw account. Zorg ervoor dat IMAP-toegang is ingeschakeld in uw Gmail account."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } kan geen verbinding maken met uw account. Zorg ervoor dat:"
       ],
@@ -2873,9 +2885,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } kan geen verbinding maken met uw extern account. Zorg ervoor dat:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan geen verbinding maken met uw Gmail account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
@@ -2888,18 +2897,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Als ${ bold2StepsDisabled } (standaard Gmail-instellingen), zorg er dan voor dat:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Als ${ bold2StepsDisabled } in Gmail (standaard instellingen), zorg er dan voor:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Als ${ bold2StepsEnabled } in Gmail, zorg er dan voor dat u uw app-wachtwoord gebruikt in plaats van uw reguliere wachtwoord."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Als ${ bold2StepsEnabled }, zorg er dan voor dat uw e-mailadres en app-wachtwoord juist zijn. Gebruik ${ boldNot } uw reguliere wachtwoord."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP-toegang is ingeschakeld in uw externe account."
@@ -2918,9 +2915,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Gebruik het wachtwoord van uw app in plaats van het normale wachtwoord als:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "U kunt ook proberen u uit te loggen uit ${ boldGoogleAccounts } in de browser, en daarna ${ linkCAPTCHA } ontgrendelen."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Uw app-wachtwoord is juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
@@ -2942,18 +2936,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "tweestapsverificatie (2FA) is uitgeschakeld"
-      ],
-      "2-step verification is enabled": [
-        "tweestapsverificatie (2FA) is ingeschakeld"
-      ],
-      "all your other Google accounts": [
-        "al uw andere Google-accounts"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "niet"
       ]
@@ -3251,7 +3233,7 @@
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
-        "Door de volledige agendadetails van deze kalender te delen, gaat u akkoord om ${ BRAND_NAME } toegang te verlenen tot versleutelde informatie van deze agenda."
+        "Door de volledige agendadetails van deze agenda te delen, gaat u akkoord om ${ BRAND_NAME } toegang te verlenen tot versleutelde informatie van deze agenda."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -3325,6 +3307,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
@@ -3565,6 +3550,9 @@
       "support team": [
         "ondersteuningsteam"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Tijdelijk onbeschikbaar. Probeer later opnieuw."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
       ],
@@ -3710,10 +3698,13 @@
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "U kunt geïmporteerde kalenders ook samenvoegen met bestaande ${ BRAND_NAME }-agenda's."
+        "U kunt geïmporteerde agenda's ook samenvoegen met bestaande ${ BRAND_NAME }-agenda's."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
+      ],
+      "You can import one data type at a time.": [
+        "U kunt maar één type gegevens tegelijk importeren."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "U kunt alleen persoonlijke eigenschappen van afspraken aanpassen omdat u geen e-mails vanuit de organisator kunt verzenden."
@@ -3726,6 +3717,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "U hebt uw wachtwoord opnieuw ingesteld en afspraken gekoppeld aan de volgende agenda's konden niet worden ontsleuteld.\nAlle gedeelde agendakoppelingen die u eerder hebt gemaakt, werken niet meer.\nAlle actieve geabonneerde agenda's zullen na een paar minuten weer synchroniseren."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "U hebt deze uitnodiging eerder al geweigerd. Vraag de eigenaar naar een nieuwe uitnodiging"
@@ -5327,6 +5321,9 @@
       "Calendar updated": [
         "Agenda bijgewerkt"
       ],
+      "Canceling import": [
+        "Annuleer import"
+      ],
       "Cancellation sent and all events deleted": [
         "Annulering verzonden en alle afspraken zijn verwijderd"
       ],
@@ -5380,6 +5377,9 @@
       "Future events updated": [
         "Toekomstige afspraken bijgewerkt"
       ],
+      "Import record deleted": [
+        "Import record verwijderd"
+      ],
       "Invitation sent and all events updated": [
         "Uitnodiging verstuurd en alle afspraken bijgewerkt"
       ],
@@ -5418,6 +5418,9 @@
       ],
       "Preferences saved": [
         "Voorkeuren opgeslagen"
+      ],
+      "Undo in progress": [
+        "Bezig met ongedaan maken"
       ],
       "Verification successful": [
         "Verificatie gelukt"

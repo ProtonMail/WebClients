@@ -1572,14 +1572,11 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Het minimum bedrag dat kan worden toegevoegd is ${ _price }"
-      ],
       "The minimum amount that can be donated is ${ price }": [
         "Het minimum bedrag dat kan worden gedoneerd is ${ price }"
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "De minimale betaling die we accepteren is ${ _price2 }"
+      "The minimum payment we accept is ${ price }": [
+        "De minimale betaling die we accepteren is ${ price }"
       ],
       "This field is required": [
         "Dit veld is vereist"
@@ -1863,9 +1860,6 @@
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL leest uw persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
-      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
       ],
@@ -1953,6 +1947,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Voer uw ${ BRAND_NAME } Accountgegevens in."
       ],
@@ -1988,9 +1985,6 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "Haal mijn ${ BRAND_NAME }-adres"
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google registreert uw online activiteit en leest uw persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
       ],
       "here": [
         "hier"
@@ -2076,14 +2070,11 @@
       "lose access to all current encrypted data": [
         "toegang tot alle huidige versleutelde gegevens verliezen"
       ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru leest uw persoonlijke gegevens om toegang te bieden aan adverteerders, Russische overheidsinstanties en andere derde partijen. Maak een veilig e-mailadres aan voor betere privacy."
-      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Zorg ervoor dat u ${ addARecoveryMethod }, zodat u terug toegang kunt krijgen tot uw account wanneer u uw wachtwoord vergeten bent."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ _switchButton }."
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ switchButton }."
       ],
       "No credit card required": [
         "Green kredietkaart vereist"
@@ -2384,12 +2375,6 @@
       ],
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo leest uw persoonlijke gegevens om adverteerders, Amerikaanse inlichtingendiensten en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex registreert uw online activiteit en leest uw persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
       ],
       "You already have a free account": [
         "U heeft al een gratis account"
@@ -3066,14 +3051,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Bekijk alle ${ BRAND_NAME }-abonnementen"
       ],
-      "From ${ _price }": [
-        "Vanaf ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Vanaf ${ _price2 } per gebruiker"
-      ],
       "From ${ price }": [
         "Vanaf ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Vanaf ${ price } per gebruiker"
       ],
       "Keep my ${ currentPlanName } account": [
         "Behoud mijn ${ currentPlanName }-account"
@@ -4165,10 +4147,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "${ _n } agenda per gebruiker",
-        "${ _n } agenda's per gebruiker"
-      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } supersnelle VPN-verbinding",
         "${ maxVpn } supersnelle VPN-verbindingen"
@@ -4176,6 +4154,10 @@
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } supersnelle VPN-verbinding",
@@ -4676,9 +4658,6 @@
       ],
       "Switch to two-password mode": [
         "Overschakelen naar twee-wachtwoorden modus"
-      ],
-      "This address might compromise your privacy.": [
-        "Dit adres kan uw privacy in gevaar brengen."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Probeer het beste van ${ MAIL_APP_NAME } gratis"

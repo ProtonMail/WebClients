@@ -249,6 +249,15 @@
       "import": [
         "importar"
       ],
+      "Import calendars": [
+        "Importar calendarios"
+      ],
+      "Import contacts": [
+        "Importar contactos"
+      ],
+      "Import emails": [
+        "Importar correos electrónicos"
+      ],
       "Import events": [
         "Importar eventos"
       ],
@@ -572,6 +581,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } comenzó el ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } comenzó el ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } comenzó ayer"
       ],
@@ -583,6 +595,15 @@
       ],
       "${ title } starts now": [
         "${ title } comienza ahora"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } comienza el ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } comienza el ${ formattedDate } a las ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } comienza el ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } comienza el ${ formattedDateWithTime }"
@@ -2040,9 +2061,17 @@
         "${ list } no tiene una dirección de correo válida",
         "Algunos contactos no tienen una dirección de correo válida: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } no tiene una dirección de correo",
+        "${ list } no tienen una dirección de correo"
+      ],
       "${ list } has invalid emails": [
         "${ list } tiene correos electrónicos no válidos",
         "Algunos grupos tienen correos electrónicos no válidos: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } no tiene contactos",
+        "${ list } no tienen contactos"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -2869,15 +2898,6 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "El \"Acceso de aplicaciones poco seguras\" está activado en los ajustes de seguridad de tu cuenta de Google."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
-        "${ BRAND_NAME } no puede conectarse a tu cuenta. Asegúrate de que el acceso IMAP de Gmail está habilitado."
-      ],
-      "${ BRAND_NAME } can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.": [
-        "${ BRAND_NAME } no puede conectarse a tu cuenta. Asegúrate de que el acceso IMAP está habilitado en tu cuenta de Gmail."
-      ],
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "${ BRAND_NAME } no ha podido conectarse a tu cuenta. Asegúrate de que:"
       ],
@@ -2886,9 +2906,6 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } no ha podido conectarse a tu cuenta externa. Asegúrate de que:"
-      ],
-      "${ BRAND_NAME } can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } no puede conectarse a tu cuenta de Gmail. Asegúrate de que la dirección del servidor de correo y el número de puerto son correctos."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } no ha podido conectarse a tu cuenta de Yahoo. Asegúrate de que la dirección del servidor de correo y el número de puerto son correctos."
@@ -2901,18 +2918,6 @@
       ],
       "2-step verification is enabled in your external email account.": [
         "La verificación en dos pasos está habilitada en tu cuenta de correo externa."
-      ],
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Si ${ bold2StepsDisabled } (configuración predeterminada de Gmail), asegúrate de que:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Si ${ bold2StepsDisabled } en Gmail (ajustes predeterminados), asegúrate de que:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Si ${ bold2StepsEnabled } en Gmail, asegúrate de que estás utilizando la contraseña de tu aplicación en lugar de la contraseña habitual."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Si ${ bold2StepsEnabled }, asegúrate de que tu dirección de correo electrónico y contraseña de la aplicación son correctas. ${ boldNot } utilices tu contraseña habitual."
       ],
       "IMAP access is enabled in your external account.": [
         "El acceso IMAP está habilitado en tu cuenta externa."
@@ -2931,9 +2936,6 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Utiliza tu contraseña de la aplicación en lugar de tu contraseña habitual si:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "También puedes intentar cerrar la sesión de ${ boldGoogleAccounts } en el navegador y luego desbloquear el ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Tu contraseña de la aplicación es correcta. ${ boldNot } utilices tu contraseña habitual."
@@ -2955,18 +2957,6 @@
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "La verificación en dos pasos está desactivada"
-      ],
-      "2-step verification is enabled": [
-        "La verificación en dos pasos está habilitada"
-      ],
-      "all your other Google accounts": [
-        "todas tus otras cuentas de Google"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "no"
       ]
@@ -3351,6 +3341,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduce el código de verificación. Dígito ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
       ],
@@ -3593,6 +3586,9 @@
       "support team": [
         "equipo de soporte"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "Temporalmente no disponible. Vuelva a comprobarlo más tarde."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "La aplicación necesita descifrar localmente tus contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrás descargarlo."
       ],
@@ -3743,6 +3739,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puedes comprobar el progreso ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Puede importar un tipo de datos a la vez."
+      ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Solo puedes modificar las propiedades del evento personal ya que no puedes enviar correos electrónicos desde la dirección del organizador."
       ],
@@ -3754,6 +3753,9 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Has restablecido tu contraseña y los eventos enlazados a los siguientes calendarios no pudieron ser descifrados.\nCualquier enlace al calendario compartido que hayas creado anteriormente ya no funcionará.\nCualquier calendario activo subscrito será sincronizado en unos minutos."
+      ],
+      "You need to have an active personal calendar to import your events.": [
+        "Necesitas tener un calendario personal activo para importar tus eventos."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Ya habías rechazado esta invitación. Solicita al dueño una nueva invitación"
@@ -3786,7 +3788,7 @@
         "Actualizarás todos los eventos de esta serie. Se notificarán a los participantes eliminados."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive serán bloqueados y no podrás subir nuevos archivos. Para restablecer el servicion normal, por favor, abona las facturas pendientes."
+        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive están bloqueados y no puedes subir nuevos archivos. Para continuar usando tu cuenta, por favor, abona las facturas pendientes."
@@ -5378,6 +5380,9 @@
       "Calendar updated": [
         "Calendario actualizado"
       ],
+      "Canceling import": [
+        "Cancelando importación"
+      ],
       "Cancellation sent and all events deleted": [
         "Cancelación enviada y todos los eventos eliminados"
       ],
@@ -5431,6 +5436,9 @@
       "Future events updated": [
         "Eventos futuros actualizados"
       ],
+      "Import record deleted": [
+        "Se ha eliminado el registro importación"
+      ],
       "Invitation sent and all events updated": [
         "Invitación enviada y todos los eventos actualizados"
       ],
@@ -5469,6 +5477,9 @@
       ],
       "Preferences saved": [
         "Preferencias guardadas"
+      ],
+      "Undo in progress": [
+        "Deshacer en progreso"
       ],
       "Verification successful": [
         "Verificación completada con éxito"

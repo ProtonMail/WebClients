@@ -329,10 +329,10 @@
       "No": [
         "Ne"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -1329,14 +1329,8 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Minimalni iznos kredita koji se može dodati je ${ _price }"
-      ],
       "The minimum amount that can be donated is ${ price }": [
         "Minimalni iznos koji se može donirati je ${ price }"
-      ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Minimalni iznos koji prihvaćamo je ${ _price2 }"
       ],
       "The organization key must be activated first.": [
         "Prvo se mora aktivirati organizacijski ključ."
@@ -1869,18 +1863,6 @@
       ]
     },
     "Import error": {
-      "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Ako je ${ bold2StepsDisabled } (zadana Gmail postavka), pobrinite se da:"
-      ],
-      "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
-        "Ako je ${ bold2StepsDisabled } u Gmailu (zadano), pobrinite se da:"
-      ],
-      "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Ako je ${ bold2StepsEnabled } u Gmailu, provjerite upotrebljavate li lozinku za aplikaciju umjesto uobičajene lozinke."
-      ],
-      "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Ako je ${ bold2StepsEnabled }, provjerite jesu li adresa e-pošte i lozinka za aplikaciju točni. ${ boldNot } koristite svoju uobičajenu lozinku."
-      ],
       "Invalid IMAP port": [
         "Nevažeći IMAP port"
       ],
@@ -1892,24 +1874,9 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Upotrijebite lozinku za aplikaciju umjesto vaše uobičajene lozinke ako:"
-      ],
-      "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Također se možete pokušati odjaviti iz ${ boldGoogleAccounts } u pregledniku, a zatim otključajte ${ linkCAPTCHA }."
       ]
     },
     "Import error emphasis": {
-      "2-step verification is disabled": [
-        "Dvofaktorska autentikacija je onemogućena"
-      ],
-      "2-step verification is enabled": [
-        "Dvofaktorska autentikacija je omogućena"
-      ],
-      "all your other Google accounts": [
-        "svim ostalim Google računima"
-      ],
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "not": [
         "ne"
       ]
@@ -2070,9 +2037,6 @@
       ],
       "and": [
         "i"
-      ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL čita vaše osobne podatke kako bi omogućio pristup oglašivačima i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
       ],
       "Are you sure you want to delete this address?": [
         "Jeste li sigurni da želite ukloniti ovu adresu?"
@@ -2262,9 +2226,6 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Podijelite svoj javni ključ s prijateljima ili ga objavite na mreži kako bi vam svi mogli slati end-to-end šifrirane e-poruke!"
       ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google čita vaše mrežne aktivnosti kako bi omogućio pristup oglašivačima i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
-      ],
       "here": [
         "ovdje"
       ],
@@ -2366,12 +2327,6 @@
       ],
       "lose access to all current encrypted data": [
         "gubitak pristupa svim trenutnim šifriranim podacima"
-      ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru čita vaše osobne podatke kako bi omogućio pristup oglašivačima, ruskim obavještajnim agencijama i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ _switchButton }."
       ],
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
@@ -2654,12 +2609,6 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo čita vaše osobne podatke kako bi omogućio pristup oglašivačima, američkim obavještajnim agencijama i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex čita vaše mrežne aktivnosti kako bi omogućio pristup oglašivačima i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
       ],
       "Yearly": [
         "Godišnje"
@@ -3944,9 +3893,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } stvoren"
-      ],
       "A disabled address cannot be primary": [
         "Onemogućena adresa e-pošte ne može biti primarna"
       ],
@@ -5188,9 +5134,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This address might compromise your privacy.": [
-        "Ova adresa može ugroziti vašu privatnost."
       ],
       "Time zone": [
         "Vremenska zona"
