@@ -99,7 +99,11 @@ const ContactMergingContent = ({
          * Get and decrypt a group of contacts to be merged. Return array of decrypted contacts
          */
         const getDecryptedGroup = (groupIDs: string[] = [], { signal }: Signal) => {
-            return processApiRequestsSafe(groupIDs.map((ID) => () => getDecryptedContact(ID, { signal })));
+            return processApiRequestsSafe(
+                groupIDs.map((ID) => () => getDecryptedContact(ID, { signal })),
+                3,
+                1000
+            );
         };
 
         /**
@@ -229,10 +233,11 @@ const ContactMergingContent = ({
             const apiCalls = contactBatches.length;
 
             for (let i = 0; i < apiCalls; i++) {
-                // avoid overloading API in the unlikely case submitBatch is too fast
+                // avoid overloading API in the case submitBatch is too fast
                 await Promise.all([
                     submitBatch({ contacts: contactBatches[i], labels }, { signal }),
-                    wait(API_SAFE_INTERVAL),
+                    // tripling the safe interval as there are reports of hitting jails on production (the proper solution would be a dynamic rate)
+                    wait(3 * API_SAFE_INTERVAL),
                 ]);
             }
         };
