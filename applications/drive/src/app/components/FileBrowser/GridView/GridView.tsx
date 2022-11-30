@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 
 import { Loader, Table, classnames, useElementRect, useRightToLeft } from '@proton/components';
-import buffer from '@proton/utils/buffer';
 
 import { FileBrowserProps } from '../FileBrowser';
 import { FileBrowserBaseItem } from '../interface';
@@ -83,7 +82,7 @@ function GridView<T extends FileBrowserBaseItem, T1>({
 }: GridViewProps<T, T1>) {
     const selectionControls = useSelection()!;
     const containerRef = useRef<HTMLDivElement>(null);
-    const rect = useElementRect(containerRef, buffer);
+    const rect = useElementRect(containerRef);
     const totalItems = items.length + (loading ? 1 : 0);
 
     const width = rect?.width ?? 0;
