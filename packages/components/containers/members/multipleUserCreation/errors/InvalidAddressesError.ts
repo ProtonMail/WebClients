@@ -1,9 +1,21 @@
 export default class InvalidAddressesError extends Error {
-    readonly addresses: string[];
+    readonly invalidAddresses: string[];
 
-    constructor(addresses: string[]) {
+    readonly orphanedAddresses: string[];
+
+    constructor(
+        /**
+         * Addresses that are consider invalid through client side validation
+         */
+        invalidAddresses: string[],
+        /**
+         * Extra addresses for the user that was not created
+         */
+        orphanedAddresses: string[]
+    ) {
         super();
-        this.addresses = addresses;
+        this.invalidAddresses = invalidAddresses;
+        this.orphanedAddresses = orphanedAddresses;
         Object.setPrototypeOf(this, InvalidAddressesError.prototype);
     }
 }

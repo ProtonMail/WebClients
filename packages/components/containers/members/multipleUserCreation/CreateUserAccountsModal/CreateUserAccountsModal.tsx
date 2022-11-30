@@ -34,6 +34,7 @@ import { DOMAIN_STATE } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
+import clsx from '@proton/utils/clsx';
 import removeIndex from '@proton/utils/removeIndex';
 
 import validateAddUser from '../../validateAddUser';
@@ -115,6 +116,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
     const [failedUsers, setFailedUsers] = useState<UserTemplate[]>([]);
     const [invalidAddresses, setInvalidAddresses] = useState<string[]>([]);
     const [unavailableAddresses, setUnavailableAddresses] = useState<string[]>([]);
+    const [orphanedAddresses, setOrphanedAddresses] = useState<string[]>([]);
     const [importing, withImporting] = useLoading();
 
     /**
@@ -204,6 +206,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
         const localFailedUsers: UserTemplate[] = [];
         const localInvalidAddresses: string[] = [];
         const localUnavailableAddresses: string[] = [];
+        const localOrphanedAddresses: string[] = [];
 
         const { signal } = abortControllerRef.current;
 
@@ -213,6 +216,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             setFailedUsers(localFailedUsers);
             setInvalidAddresses(localInvalidAddresses);
             setUnavailableAddresses(localUnavailableAddresses);
+            setOrphanedAddresses(localOrphanedAddresses);
         };
 
         for (let i = 0; i < selectedUsers.length; i++) {
@@ -245,13 +249,14 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                     abortControllerRef.current.abort();
                     setStep(STEPS.SELECT_USERS);
                 } else if (error instanceof InvalidAddressesError) {
-                    const addresses = error.addresses;
-                    localInvalidAddresses.push(...addresses);
+                    localInvalidAddresses.push(...error.invalidAddresses);
+                    localOrphanedAddresses.push(...error.orphanedAddresses);
                 } else if (error instanceof UnavailableAddressesError) {
-                    const addresses = error.addresses;
-                    localUnavailableAddresses.push(...addresses);
+                    localUnavailableAddresses.push(...error.unavailableAddresses);
+                    localOrphanedAddresses.push(...error.orphanedAddresses);
                 } else {
                     localFailedUsers.push(user);
+                    localOrphanedAddresses.push(...user.emailAddresses);
                 }
             }
 
@@ -435,7 +440,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 content: (
                     <>
                         {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length ? (
-                            <>
+                            <p className={clsx('mt0', !orphanedAddresses.length && 'mb0')}>
                                 {c('Title').ngettext(
                                     msgid`Failed to create ${failedUsers.length} user
                                 account.`,
@@ -444,7 +449,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                 )}{' '}
                                 {c('Info')
                                     .t`Please check your file for errors, or contact customer support for more information.`}
-                            </>
+                            </p>
                         ) : null}
 
                         {invalidAddresses.length ? (
@@ -479,6 +484,27 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                 </p>
                                 <ul className="unstyled">
                                     {unavailableAddresses.map((address) => {
+                                        return (
+                                            <li key={address} className="mb0 text-ellipsis" title={address}>
+                                                {address}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </>
+                        ) : null}
+
+                        {orphanedAddresses.length ? (
+                            <>
+                                <p className="mt0">
+                                    {c('Info').ngettext(
+                                        msgid`The following address was not created.`,
+                                        `The following addresses were not created.`,
+                                        orphanedAddresses.length
+                                    )}
+                                </p>
+                                <ul className="unstyled">
+                                    {orphanedAddresses.map((address) => {
                                         return (
                                             <li key={address} className="mb0 text-ellipsis" title={address}>
                                                 {address}
