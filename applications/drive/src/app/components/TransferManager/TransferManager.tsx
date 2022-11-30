@@ -14,7 +14,6 @@ import {
 } from '@proton/components';
 import busy from '@proton/shared/lib/busy';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import buffer from '@proton/utils/buffer';
 import noop from '@proton/utils/noop';
 
 import useConfirm from '../../hooks/util/useConfirm';
@@ -108,8 +107,8 @@ const TransferManager = ({
 
         For more details see TransferManagerContainer component
     */
-    const rect = useElementRect(containerRef, buffer);
-    const rectHeader = useElementRect(headerRef, buffer);
+    const rect = useElementRect(containerRef);
+    const rectHeader = useElementRect(headerRef);
     const { state: minimized, toggle: toggleMinimized } = useToggle();
     const { openConfirmModal } = useConfirm();
     const { isNarrow } = useActiveBreakpoint();
