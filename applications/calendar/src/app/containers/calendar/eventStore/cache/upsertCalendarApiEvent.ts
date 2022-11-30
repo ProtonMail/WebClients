@@ -1,8 +1,8 @@
 import { APPS } from '@proton/shared/lib/constants';
+import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
-import { postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 
 import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import { CalendarEventsCache } from '../interface';
@@ -48,7 +48,7 @@ const upsertCalendarApiEvent = (
         if (didUpsert && isOpenInMail) {
             postMessageFromIframe(
                 {
-                    type: SIDE_APP_EVENTS.SIDE_APP_REFRESH_WIDGET,
+                    type: DRAWER_EVENTS.REFRESH_WIDGET,
                     payload: { UID, ModifyTime },
                 },
                 APPS.PROTONMAIL

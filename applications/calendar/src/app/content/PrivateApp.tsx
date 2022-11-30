@@ -1,13 +1,16 @@
 import {
+    FeatureCode,
     LoaderPage,
     StandardPrivateApp,
     useApi,
     useAppTitle,
+    useDrawer,
+    useDrawerParent,
     useProtonMailMigrationRedirect,
-    useSideAppParent,
 } from '@proton/components';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     AddressesModel,
@@ -47,14 +50,17 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
 
     useAppTitle('');
 
-    useSideAppParent();
+    useDrawerParent();
+    const { setShowDrawerSidebar } = useDrawer();
 
     return (
         <StandardPrivateApp
             onLogout={onLogout}
             locales={locales}
             onInit={() => loadAllowedTimeZones(getSilentApi(api)).catch(noop)}
+            onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             preloadModels={PRELOAD_MODELS}
+            preloadFeatures={[FeatureCode.Drawer]}
             eventModels={EVENT_MODELS}
             fallback={<LoaderPage />}
             hasPrivateMemberKeyGeneration

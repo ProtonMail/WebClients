@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 import { SearchInput } from '@proton/components';
-import { useApi, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
+import { useApi, useNotifications, useUser, useUserKeys } from '@proton/components/hooks';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -23,9 +23,9 @@ import ContactsWidgetToolbar from './ContactsWidgetToolbar';
 import { CustomAction } from './types';
 
 interface Props {
-    onClose: () => void;
+    onClose?: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
-    onLock: (lock: boolean) => void;
+    onLock?: (lock: boolean) => void;
     customActions: CustomAction[];
     onDetails: (contactID: string) => void;
     onEdit: (props: ContactEditProps) => void;
@@ -36,6 +36,7 @@ interface Props {
     onGroupEdit: (props: ContactGroupEditProps) => void;
     onUpgrade: () => void;
     onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
+    isDrawer?: boolean;
 }
 
 const ContactsWidgetContainer = ({
@@ -52,9 +53,9 @@ const ContactsWidgetContainer = ({
     onGroupEdit,
     onUpgrade,
     onSelectEmails,
+    isDrawer = false,
 }: Props) => {
     const [user, loadingUser] = useUser();
-    const [userSettings, loadingUserSettings] = useUserSettings();
     const [userKeys] = useUserKeys();
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -131,7 +132,7 @@ const ContactsWidgetContainer = ({
         });
 
         onCompose?.(recipients, []);
-        onClose();
+        onClose?.();
     };
 
     const handleForward = async () => {
@@ -157,7 +158,7 @@ const ContactsWidgetContainer = ({
                 text: c('Error').t`There was an error when exporting the contacts vCards`,
             });
         }
-        onClose();
+        onClose?.();
     };
 
     const handleDelete = () => {
@@ -172,17 +173,17 @@ const ContactsWidgetContainer = ({
                 handleCheckAll(false);
             },
         });
-        onClose();
+        onClose?.();
     };
 
     const handleCreate = () => {
         onEdit({});
-        onClose();
+        onClose?.();
     };
 
     const handleImport = () => {
         onImport();
-        onClose();
+        onClose?.();
     };
 
     const handleMerge = (mergeContactsDetected?: boolean) => {
@@ -191,13 +192,13 @@ const ContactsWidgetContainer = ({
 
         const onMerged = () => handleCheckAll(false);
         onMerge({ contacts, onMerged });
-        onClose();
+        onClose?.();
     };
 
     const contactsCount = formattedContacts.length;
     const contactsLength = contacts ? contacts.length : 0;
 
-    const loading = loadingContacts || loadingUser || loadingUserSettings;
+    const loading = loadingContacts || loadingUser;
     const showPlaceholder = !loading && !contactsCount;
     const showList = !loading && !showPlaceholder;
 
@@ -207,11 +208,11 @@ const ContactsWidgetContainer = ({
                 <label htmlFor="id_contact-widget-search" className="sr-only">{c('Placeholder')
                     .t`Search for name or email`}</label>
                 <SearchInput
-                    autoFocus
+                    autoFocus={!isDrawer}
                     value={search}
                     onChange={setSearch}
                     id="id_contact-widget-search"
-                    placeholder={c('Placeholder').t`Search for name or email`}
+                    placeholder={c('Placeholder').t`Name, email or address`}
                 />
                 <span className="sr-only" aria-atomic aria-live="assertive">
                     {c('Info').ngettext(
@@ -221,7 +222,7 @@ const ContactsWidgetContainer = ({
                     )}
                 </span>
             </div>
-            <div className="contacts-widget-toolbar pt1 pb1 border-bottom flex-item-noshrink">
+            <div className="contacts-widget-toolbar py1 border-bottom border-weak flex-item-noshrink">
                 <ContactsWidgetToolbar
                     allChecked={hasCheckedAllFiltered}
                     selected={selectedIDs}
@@ -239,9 +240,12 @@ const ContactsWidgetContainer = ({
                     onGroupEdit={onGroupEdit}
                     onUpgrade={onUpgrade}
                     onSelectEmails={onSelectEmails}
+                    isDrawer={isDrawer}
                 />
             </div>
-            {showList && countMergeableContacts ? <MergeContactBanner onMerge={() => handleMerge(true)} /> : null}
+            {showList && countMergeableContacts ? (
+                <MergeContactBanner onMerge={() => handleMerge(true)} countMergeableContacts={countMergeableContacts} />
+            ) : null}
             <div className="flex-item-fluid w100">
                 {loading ? (
                     <div className="flex h100">
@@ -261,7 +265,6 @@ const ContactsWidgetContainer = ({
                         contacts={formattedContacts}
                         contactGroupsMap={contactGroupsMap}
                         user={user}
-                        userSettings={userSettings}
                         onCheckOne={handleCheckOne}
                         isDesktop={false}
                         checkedIDs={checkedIDs}
@@ -269,6 +272,7 @@ const ContactsWidgetContainer = ({
                         onClick={onDetails}
                         activateDrag={false}
                         onGroupDetails={onGroupDetails}
+                        isDrawer={isDrawer}
                     />
                 ) : null}
             </div>

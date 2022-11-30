@@ -88,6 +88,10 @@
 			--margin: #{rem(24)};
 		}
 
+		@include respond-to($breakpoint-tiny) {
+			--margin: #{rem(16)};
+		}
+
 		position: relative;
 		z-index: 1;
 		display: flex;

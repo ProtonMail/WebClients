@@ -7,7 +7,7 @@ import TimeGrid from '../../components/calendar/TimeGrid';
 import { OnMouseDown } from '../../components/calendar/interactions/interface';
 import { SharedViewProps, TargetEventData, TargetMoreData, TimeGridRef } from './interface';
 
-const { DAY, WEEK, MONTH, MAIL } = VIEWS;
+const { DAY, WEEK, MONTH, MAIL, DRIVE } = VIEWS;
 
 interface Props extends SharedViewProps {
     isInteractionEnabled?: boolean;
@@ -22,7 +22,7 @@ interface Props extends SharedViewProps {
     weekdaysSingle: string[];
     formatTime: (date: Date) => string;
     formatDate: (date: Date) => string;
-    isSideApp?: boolean;
+    isDrawerApp?: boolean;
 }
 const CalendarView = ({
     view,
@@ -51,6 +51,7 @@ const CalendarView = ({
 
     onClickDate,
     onChangeDate,
+    onClickToday,
     timeGridViewRef,
     isScrollDisabled,
 
@@ -59,9 +60,9 @@ const CalendarView = ({
     formatTime,
     formatDate,
 
-    isSideApp,
+    isDrawerApp,
 }: Props) => {
-    if (view === DAY || view === WEEK || view === MAIL) {
+    if ([DAY, WEEK, MAIL, DRIVE].includes(view)) {
         return (
             <TimeGrid
                 isNarrow={isNarrow}
@@ -84,10 +85,11 @@ const CalendarView = ({
                 formatTime={formatTime}
                 onClickDate={onClickDate}
                 onChangeDate={onChangeDate}
+                onClickToday={onClickToday}
                 actionRef={timeGridViewRef}
                 weekdays={weekdays}
                 weekdaysSingle={weekdaysSingle}
-                isSideApp={isSideApp}
+                isDrawerApp={isDrawerApp}
             />
         );
     }

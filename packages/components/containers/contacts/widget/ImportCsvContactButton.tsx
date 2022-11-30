@@ -10,7 +10,7 @@ import { FeatureCode } from '../../features';
 interface Props {
     onImport: () => void;
     easySwitchSource?: EASY_SWITCH_SOURCE;
-    onClose: () => void;
+    onClose?: () => void;
 }
 
 const ImportCsvContactButton = ({

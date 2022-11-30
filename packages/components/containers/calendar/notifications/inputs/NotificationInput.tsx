@@ -1,5 +1,4 @@
-import { c } from 'ttag';
-
+import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
 import {
     NOTIFICATION_INPUT_ID,
     NOTIFICATION_UNITS_MAX,
@@ -28,7 +27,7 @@ interface Props {
     hasType?: boolean;
     fullWidth?: boolean;
     disabled?: boolean;
-    onChange: (model: NotificationModel) => void;
+    onEdit: (model: NotificationModel) => void;
     error?: string;
 }
 
@@ -48,9 +47,19 @@ const NotificationInput = ({
     hasType = false,
     fullWidth = true,
     disabled = false,
-    onChange,
+    onEdit,
     error,
 }: Props) => {
+    const {
+        notificationTypeText,
+        emailTypeText,
+        howToSendText,
+        whenToSendText,
+        timeToSendText,
+        atText,
+        chooseANumberText,
+    } = getNotificationsTexts();
+
     const safeValue = value === undefined ? 1 : value;
 
     const options = getWhenOptions(isAllDay, safeValue);
@@ -86,13 +95,13 @@ const NotificationInput = ({
                         id={id}
                         value={type}
                         disabled={disabled}
-                        onChange={({ value }) => onChange({ ...notification, type: +value })}
-                        title={c('Title').t`Select the way to send this notification`}
+                        onChange={({ value }) => onEdit({ ...notification, type: +value })}
+                        title={howToSendText}
                         {...errorProps}
                     >
                         {[
-                            { text: c('Notification type').t`notification`, value: DEVICE },
-                            { text: c('Notification type').t`email`, value: EMAIL },
+                            { text: notificationTypeText, value: DEVICE },
+                            { text: emailTypeText, value: EMAIL },
                             // { text: c('Notification type').t`both notification and email`, value: BOTH },
                         ].map(({ value, text }) => (
                             <Option key={value} value={value} title={text} />
@@ -115,14 +124,14 @@ const NotificationInput = ({
                                 if (newValue !== undefined && newValue === 0) {
                                     return;
                                 }
-                                onChange({ ...notification, value: newValue });
+                                onEdit({ ...notification, value: newValue });
                             }}
                             onBlur={() => {
                                 if (!value) {
-                                    onChange({ ...notification, value: 1 });
+                                    onEdit({ ...notification, value: 1 });
                                 }
                             }}
-                            title={c('Title (number of minutes/hours/days/weeks)').t`Choose a number`}
+                            title={chooseANumberText}
                             {...errorProps}
                         />
                     </span>
@@ -138,12 +147,12 @@ const NotificationInput = ({
                         if (!option) {
                             return;
                         }
-                        onChange({
+                        onEdit({
                             ...notification,
                             ...option,
                         });
                     }}
-                    title={c('Title').t`Select when you want this notification to be sent`}
+                    title={whenToSendText}
                     {...errorProps}
                 >
                     {textOptions.map(({ value, text }) => (
@@ -165,14 +174,16 @@ const NotificationInput = ({
                                     'flex-item-noshrink ml0-5 mr0-5',
                                     fullWidth ? 'on-mobile-ml0' : 'on-tablet-ml0',
                                 ])}
-                            >{c('Notification time input').t`at`}</span>
+                            >
+                                {atText}
+                            </span>
                             <span className="w8e">
                                 <TimeInput
                                     data-test-id="notification-time-at"
                                     value={at}
                                     disabled={disabled}
-                                    onChange={(at) => onChange({ ...notification, at })}
-                                    title={c('Title').t`Select the time to send this notification`}
+                                    onChange={(at) => onEdit({ ...notification, at })}
+                                    title={timeToSendText}
                                     {...errorProps}
                                 />
                             </span>

@@ -1,8 +1,7 @@
 import { DragEvent, useEffect, useRef, useState } from 'react';
 
-import { ErrorBoundary, classnames, useHandler, useMailSettings, useSideApp, useToggle } from '@proton/components';
+import { ErrorBoundary, classnames, useHandler, useMailSettings, useToggle } from '@proton/components';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
-import { SIDE_APP_WIDTH } from '@proton/shared/lib/sideApp/constants';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
 import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
@@ -20,6 +19,7 @@ interface Props {
     breakpoints: Breakpoints;
     onFocus: () => void;
     onClose: () => void;
+    drawerOffset: number;
 }
 
 const ComposerFrame = ({
@@ -31,11 +31,11 @@ const ComposerFrame = ({
     breakpoints,
     onFocus,
     onClose: inputOnClose,
+    drawerOffset,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
-    const { sideAppUrl, showSideApp } = useSideApp();
 
     // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
@@ -45,7 +45,10 @@ const ComposerFrame = ({
         mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
 
-    const windowWidth = sideAppUrl && showSideApp ? windowSize.width - SIDE_APP_WIDTH : windowSize.width;
+    // Add sidebar width to put composer to the left
+    // EXCEPT when windowSize < 1280 and app is open
+    // In this case sidebar is shown but hidden by the drawer which covers the app
+    const windowWidth = windowSize.width - drawerOffset;
     const { style, customClasses } = computeComposerStyle({
         index,
         count,

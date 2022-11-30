@@ -42,8 +42,16 @@ html,
 
 .header {
 	padding-block: rem(10);
-	padding-inline: 0 rem(15);
+	padding-inline: 0 rem(10);
 	block-size: rem($header-height);
+	flex-shrink: 0;
+	background-color: var(--header-background-color);
+	color: var(--header-text-color, var(--text-norm));
+}
+
+.footer {
+	padding-block: rem(10);
+	padding-inline: 0 rem(15);
 	flex-shrink: 0;
 	background-color: var(--header-background-color);
 	color: var(--header-text-color, var(--text-norm));
@@ -132,9 +140,8 @@ html,
 		margin-inline-end: 0;
 		border-radius: 0;
 		border-inline-start-width: 0;
-	}
 
-	@include respond-to($breakpoint-medium-sidepanel) {
+		// Drawer specific
 		border-start-end-radius: 0;
 		border-inline-end-width: 0;
 	}

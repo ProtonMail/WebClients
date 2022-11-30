@@ -25,6 +25,7 @@ interface Props {
     weekStartsOn: WeekStartsOn;
     isCreateEvent: boolean;
     isDuplicating: boolean;
+    isDrawerApp: boolean;
     model: EventModel;
     addresses: Address[];
     onSave: (inviteActions: InviteActions) => Promise<void>;
@@ -42,6 +43,7 @@ const CreateEventModal = ({
     weekStartsOn,
     isCreateEvent,
     isDuplicating,
+    isDrawerApp,
     addresses,
     model,
     setModel,
@@ -164,6 +166,7 @@ const CreateEventModal = ({
                 setParticipantError={setParticipantError}
                 isSubscribedCalendar={isSubscribedCalendar}
                 isDuplicating={isDuplicating}
+                isDrawerApp={isDrawerApp}
             />
         </BasicModal>
     );

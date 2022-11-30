@@ -58,6 +58,7 @@ const ItemCheckbox = ({
             <span
                 className="item-icon flex-item-noshrink relative rounded inline-flex"
                 data-testid="element-list:message-checkbox"
+                aria-hidden="true"
             >
                 <span className="mauto item-abbr" aria-hidden="true">
                     <ContactImage email={email} name={name} bimiSelector={bimiSelector} className="rounded" />

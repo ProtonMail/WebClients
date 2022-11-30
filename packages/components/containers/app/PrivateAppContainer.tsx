@@ -3,17 +3,17 @@ import { ReactNode, Ref } from 'react';
 import { classnames } from '../../helpers';
 import ErrorBoundary from './ErrorBoundary';
 
-import './SideApp.scss';
-
 interface Props {
     containerRef?: Ref<HTMLDivElement>;
     header: ReactNode;
     sidebar: ReactNode;
     children: ReactNode;
     top?: ReactNode;
+    bottom?: ReactNode;
     isBlurred?: boolean;
-    sideAppSidebar?: ReactNode;
-    sideAppIframe?: ReactNode;
+    drawerSidebar?: ReactNode;
+    drawerVisibilityButton?: ReactNode;
+    drawerApp?: ReactNode;
     mainBordered?: boolean;
     mainNoBorder?: boolean;
 }
@@ -23,10 +23,12 @@ const PrivateAppContainer = ({
     sidebar,
     children,
     top,
+    bottom,
     isBlurred = false,
     containerRef,
-    sideAppSidebar,
-    sideAppIframe,
+    drawerSidebar,
+    drawerVisibilityButton,
+    drawerApp,
     mainBordered,
     mainNoBorder,
 }: Props) => {
@@ -34,7 +36,7 @@ const PrivateAppContainer = ({
         <div className="flex flex-row flex-nowrap h100">
             <div
                 className={classnames([
-                    'content-container flex flex-column flex-nowrap no-scroll flex-item-fluid',
+                    'content-container flex flex-column flex-nowrap no-scroll flex-item-fluid relative',
                     isBlurred && 'filter-blur',
                 ])}
                 ref={containerRef}
@@ -53,11 +55,13 @@ const PrivateAppContainer = ({
                         >
                             {children}
                         </div>
-                        {sideAppSidebar}
+                        {drawerVisibilityButton}
+                        {drawerSidebar}
                     </div>
                 </div>
+                {bottom}
             </div>
-            {sideAppIframe}
+            {drawerApp}
         </div>
     );
 };

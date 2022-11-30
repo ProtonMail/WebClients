@@ -96,8 +96,8 @@
 	flex-grow: 2;
 }
 
-.flex-item-grow-1-8 {
-	flex-grow: 1.8;
+.flex-item-grow-custom {
+	flex-grow: var(--grow-custom);
 }
 
 .flex-gap-0-5 {

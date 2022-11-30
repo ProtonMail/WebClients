@@ -7,7 +7,7 @@ import ImportCsvContactButton from './ImportCsvContactButton';
 
 interface Props {
     onImport: () => void;
-    onClose: () => void;
+    onClose?: () => void;
 }
 
 const ContactsWidgetSettingsContainerImport = ({ onImport, onClose }: Props) => (

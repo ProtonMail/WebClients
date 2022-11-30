@@ -6,10 +6,10 @@ import { useCalendarModelEventManager, useNotifications } from '@proton/componen
 import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { startOfDay } from '@proton/shared/lib/date-fns-utc';
 import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
+import { getIsDrawerPostMessage } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { isAuthorizedSideAppUrl } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 
 import { TYPE } from '../components/calendar/interactions/constants';
 import { InteractiveState, TimeGridRef } from '../containers/calendar/interface';
@@ -98,15 +98,13 @@ export const useOpenEventsFromMail = ({
     );
 
     const handleEvents = useCallback(
-        (event: MessageEvent<SIDE_APP_ACTION>) => {
-            const origin = event.origin;
-
-            if (!isAuthorizedSideAppUrl(origin)) {
+        (event: MessageEvent) => {
+            if (!getIsDrawerPostMessage(event)) {
                 return;
             }
 
             switch (event.data.type) {
-                case SIDE_APP_EVENTS.SIDE_APP_CALENDAR_OPEN_EVENT:
+                case DRAWER_EVENTS.CALENDAR_OPEN_EVENT:
                     {
                         const { calendarID, eventID, recurrenceID } = event.data.payload;
 
@@ -122,7 +120,7 @@ export const useOpenEventsFromMail = ({
                         });
                     }
                     break;
-                case SIDE_APP_EVENTS.SIDE_APP_CALL_CALENDAR_EVENT_MANAGER:
+                case DRAWER_EVENTS.CALL_CALENDAR_EVENT_MANAGER:
                     {
                         void call([event.data.payload.calendarID]);
                     }

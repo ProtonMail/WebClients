@@ -11,6 +11,7 @@ import {
     classnames,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
 import {
     CALENDAR_INPUT_ID,
     DESCRIPTION_INPUT_ID,
@@ -52,6 +53,7 @@ export interface EventFormProps {
     setParticipantError?: (value: boolean) => void;
     isSubscribedCalendar?: boolean;
     isDuplicating?: boolean;
+    isDrawerApp?: boolean;
 }
 
 const EventForm = ({
@@ -68,6 +70,7 @@ const EventForm = ({
     setParticipantError,
     isSubscribedCalendar,
     isDuplicating = false,
+    isDrawerApp,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
     const {
@@ -192,56 +195,102 @@ const EventForm = ({
         </IconRow>
     );
 
+    // temporary code; remove when proper design available
+    const allDayNotificationsRow = isDrawerApp ? (
+        <NotificationsInDrawer
+            id={NOTIFICATION_INPUT_ID}
+            hasType
+            {...{
+                errors,
+                canAdd: canAddNotifications,
+                notifications: fullDayNotifications,
+                defaultNotification: defaultFullDayNotification,
+                onChange: (notifications: NotificationModel[]) => {
+                    setModel({
+                        ...model,
+                        fullDayNotifications: notifications,
+                        hasTouchedNotifications: {
+                            ...model.hasTouchedNotifications,
+                            fullDay: true,
+                        },
+                    });
+                },
+            }}
+        />
+    ) : (
+        <Notifications
+            id={NOTIFICATION_INPUT_ID}
+            hasType
+            {...{
+                errors,
+                canAdd: canAddNotifications,
+                notifications: fullDayNotifications,
+                defaultNotification: defaultFullDayNotification,
+                onChange: (notifications: NotificationModel[]) => {
+                    setModel({
+                        ...model,
+                        fullDayNotifications: notifications,
+                        hasTouchedNotifications: {
+                            ...model.hasTouchedNotifications,
+                            fullDay: true,
+                        },
+                    });
+                },
+            }}
+        />
+    );
+    const partDayNotificationsRow = isDrawerApp ? (
+        <NotificationsInDrawer
+            id={NOTIFICATION_INPUT_ID}
+            hasType
+            {...{
+                errors,
+                canAdd: canAddNotifications,
+                notifications: partDayNotifications,
+                defaultNotification: defaultPartDayNotification,
+                onChange: (notifications: NotificationModel[]) => {
+                    setModel({
+                        ...model,
+                        partDayNotifications: notifications,
+                        hasTouchedNotifications: {
+                            ...model.hasTouchedNotifications,
+                            partDay: true,
+                        },
+                    });
+                },
+            }}
+        />
+    ) : (
+        <Notifications
+            id={NOTIFICATION_INPUT_ID}
+            hasType
+            {...{
+                errors,
+                canAdd: canAddNotifications,
+                notifications: partDayNotifications,
+                defaultNotification: defaultPartDayNotification,
+                onChange: (notifications: NotificationModel[]) => {
+                    setModel({
+                        ...model,
+                        partDayNotifications: notifications,
+                        hasTouchedNotifications: {
+                            ...model.hasTouchedNotifications,
+                            partDay: true,
+                        },
+                    });
+                },
+            }}
+        />
+    );
+
     const notificationsRow = (
         <IconRow
             id={NOTIFICATION_INPUT_ID}
             icon="bell"
             title={c('Label').t`Notifications`}
-            labelClassName="pb0-5 on-mobile-mt0-5"
+            labelClassName={isDrawerApp ? '' : 'pb0-5 on-mobile-mt0-5'}
         >
-            {isAllDay ? (
-                <Notifications
-                    id={NOTIFICATION_INPUT_ID}
-                    hasType
-                    {...{
-                        errors,
-                        canAdd: canAddNotifications,
-                        notifications: fullDayNotifications,
-                        defaultNotification: defaultFullDayNotification,
-                        onChange: (notifications: NotificationModel[]) => {
-                            setModel({
-                                ...model,
-                                fullDayNotifications: notifications,
-                                hasTouchedNotifications: {
-                                    ...model.hasTouchedNotifications,
-                                    fullDay: true,
-                                },
-                            });
-                        },
-                    }}
-                />
-            ) : (
-                <Notifications
-                    id={NOTIFICATION_INPUT_ID}
-                    hasType
-                    {...{
-                        errors,
-                        canAdd: canAddNotifications,
-                        notifications: partDayNotifications,
-                        defaultNotification: defaultPartDayNotification,
-                        onChange: (notifications: NotificationModel[]) => {
-                            setModel({
-                                ...model,
-                                partDayNotifications: notifications,
-                                hasTouchedNotifications: {
-                                    ...model.hasTouchedNotifications,
-                                    partDay: true,
-                                },
-                            });
-                        },
-                    }}
-                />
-            )}
+            {isAllDay ? allDayNotificationsRow : partDayNotificationsRow}
         </IconRow>
     );
 
