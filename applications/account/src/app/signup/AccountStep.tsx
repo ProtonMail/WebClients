@@ -291,8 +291,8 @@ const AccountStep = ({
                             ref={anchorRef as any}
                             className="absolute top-custom right-custom"
                             style={{
-                                '--right-custom': '40px',
-                                '--top-custom': '50px', // Magic values where the select will be
+                                '--right-custom': '6px',
+                                '--top-custom': '53px', // Magic values where the select will be
                             }}
                         />
                     </div>
