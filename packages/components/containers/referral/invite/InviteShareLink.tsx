@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -13,12 +15,19 @@ const InviteShareLink = () => {
 
     const referrerLink = userSettings.Referral?.Link || '';
 
-    const onCopyButtonClick = throttle(() => {
-        textToClipboard(referrerLink);
-        createNotification({
-            text: c('Info').t`Referral link copied to your clipboard`,
-        });
-    }, 1500);
+    const onCopyButtonClick = useCallback(
+        throttle(
+            () => {
+                textToClipboard(referrerLink);
+                createNotification({
+                    text: c('Info').t`Referral link copied to your clipboard`,
+                });
+            },
+            1500,
+            { leading: true, trailing: false }
+        ),
+        [referrerLink]
+    );
 
     if (loadingUserSettings) {
         return null;

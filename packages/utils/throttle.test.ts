@@ -28,9 +28,12 @@ describe('throttle()', () => {
 
         // fast-forward until 1st call should be executed
         jest.advanceTimersByTime(1);
-        expect(functionToThrottle).toHaveBeenCalledTimes(1);
+        expect(functionToThrottle).toHaveBeenCalledTimes(2);
 
         throttledFunction();
         expect(functionToThrottle).toHaveBeenCalledTimes(2);
+
+        jest.advanceTimersByTime(wait);
+        expect(functionToThrottle).toHaveBeenCalledTimes(3);
     });
 });
