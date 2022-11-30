@@ -17,9 +17,9 @@ export const getLogo = (
     Size?: number,
     BimiSelector?: string,
     Mode?: SenderImageMode,
-    uid?: string // FIXME should be UID not uid
+    UID?: string
 ) => ({
     method: 'get',
     url: 'core/v4/images/logo',
-    params: { uid, Address, Size, BimiSelector, Mode },
+    params: { UID, Address, Size, BimiSelector, Mode },
 });
