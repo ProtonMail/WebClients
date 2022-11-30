@@ -19,7 +19,9 @@ const ContactImage = ({ email, name, className, bimiSelector }: Props) => {
     const { canLoad, url } = useSenderImage(email, fallback, bimiSelector);
 
     if (canLoad) {
+        // Fallback to XHR API call to load the image if native fails
         const handleError = () => {
+            // url is not set at the initial render
             if (!url) {
                 return;
             }
@@ -33,7 +35,7 @@ const ContactImage = ({ email, name, className, bimiSelector }: Props) => {
                 width="32"
                 src={url}
                 onError={handleError}
-                loading="lazy"
+                loading="lazy" // Lazy load the image only when it's in the viewport
             />
         );
     }
