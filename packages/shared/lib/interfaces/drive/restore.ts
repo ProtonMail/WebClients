@@ -1,7 +1,10 @@
 import { RESPONSE_CODE } from '../../drive/constants';
 
 export interface RestoreFromTrashResult {
-    Responses: { Response: RestoreResponse }[];
+    Responses: {
+        LinkID: string;
+        Response: RestoreResponse;
+    }[];
 }
 
 export interface RestoreResponse {
