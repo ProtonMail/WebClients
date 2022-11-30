@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { addMonths, endOfMonth, isSameMonth, startOfMonth } from 'date-fns';
 import { c } from 'ttag';
@@ -7,7 +7,7 @@ import { Vr } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 
 import { classnames } from '../../helpers';
-import { useElementRect } from '../../hooks';
+import { createObserver } from '../../hooks/useElementRect';
 import { TodayIcon } from '../icon';
 import Icon from '../icon/Icon';
 import { Tooltip } from '../tooltip';
@@ -80,8 +80,35 @@ const MiniCalendar = ({
     todayTitle,
 }: Props) => {
     const [temporaryDate, setTemporaryDate] = useState<Date | undefined>();
-    const cellRef = useRef<HTMLLIElement>(null);
-    const cellRect = useElementRect(cellRef);
+    const [cellWidth, setCellWidth] = useState(0);
+    const unsubscribeRef = useRef<() => void | undefined>();
+
+    useEffect(() => {
+        return () => {
+            unsubscribeRef.current?.();
+        };
+    }, []);
+
+    const cb = useCallback((node: HTMLElement | null) => {
+        unsubscribeRef.current?.();
+        if (!node) {
+            return null;
+        }
+        const sizeCache: number[] = [];
+        unsubscribeRef.current = createObserver(node, (rect) => {
+            const [prevOld, prevNew] = sizeCache;
+            const newWidth = rect.width;
+            // If it's flipping back and forth, settle on the previous value. This is
+            // to prevent a scenario where the new height of the node causes an overflow scroll to
+            // appear/disappear indefinitely.
+            if (prevOld === newWidth) {
+                return;
+            }
+            setCellWidth(newWidth);
+            sizeCache[0] = prevNew;
+            sizeCache[1] = newWidth;
+        });
+    }, []);
 
     const activeDate = temporaryDate || selectedDate;
     const activeDateDay = isSameMonth(now, activeDate) ? now.getDay() : undefined;
@@ -186,9 +213,7 @@ const MiniCalendar = ({
 
             <div
                 style={
-                    !fixedSize && cellRect && cellRect.width > 0
-                        ? { '--computed-cell-width': `${cellRect.width}px` }
-                        : undefined
+                    !fixedSize && cellWidth && cellWidth > 0 ? { '--computed-cell-width': `${cellWidth}px` } : undefined
                 }
                 className={classnames([
                     'minicalendar-grid pl0-75 pr0-75 pb1',
@@ -214,6 +239,7 @@ const MiniCalendar = ({
                     weekdaysLong={weekdaysLong}
                     weekStartsOn={weekStartsOn}
                     activeDateDay={activeDateDay}
+                    cellRef={cb}
                 />
 
                 <MonthDays
@@ -229,7 +255,6 @@ const MiniCalendar = ({
                     now={now}
                     activeDate={activeDate}
                     selectedDate={selectedDate}
-                    cellRef={cellRef}
                 />
             </div>
         </div>

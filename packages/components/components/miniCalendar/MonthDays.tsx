@@ -25,7 +25,7 @@ export interface Props {
     formatDay: (a1: Date) => string;
     numberOfDays: number;
     numberOfWeeks: number;
-    cellRef: Ref<HTMLLIElement>;
+    cellRef?: Ref<HTMLLIElement>;
 }
 
 const MonthDays = ({

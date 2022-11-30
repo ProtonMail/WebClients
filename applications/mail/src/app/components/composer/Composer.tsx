@@ -471,7 +471,7 @@ const Composer = (
     };
 
     const handleDelete = async () => {
-        autoSave.abort?.();
+        autoSave.cancel?.();
         try {
             await handleDiscard();
         } finally {
