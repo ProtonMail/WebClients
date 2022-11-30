@@ -1,9 +1,8 @@
 import { ChangeEvent, useMemo, useRef } from 'react';
 import { AutoSizer, List } from 'react-virtualized';
 
-import { DENSITY } from '@proton/shared/lib/constants';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
@@ -18,13 +17,13 @@ interface Props {
     contactGroupsMap: SimpleMap<ContactGroup>;
     onCheckOne: (event: ChangeEvent, contactID: string) => void;
     user: UserModel;
-    userSettings: UserSettings;
     isDesktop: boolean;
     onCheck: (contactIDs: string[], checked: boolean, replace: boolean) => void;
     checkedIDs: string[];
     onClick: (contactID: string) => void;
     activateDrag?: boolean;
     onGroupDetails: (contactGroupID: string) => void;
+    isDrawer?: boolean;
 }
 
 const ContactsList = ({
@@ -32,17 +31,16 @@ const ContactsList = ({
     contactGroupsMap,
     onCheckOne,
     user,
-    userSettings,
     isDesktop = true,
     onCheck,
     checkedIDs,
     onClick,
     activateDrag = true,
     onGroupDetails,
+    isDrawer = false,
 }: Props) => {
     const listRef = useRef<List>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
-    const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
     const contactIDs: string[] = useMemo(() => {
         return contacts.map((contact) => contact.ID);
@@ -77,17 +75,10 @@ const ContactsList = ({
         }
     );
 
-    const contactRowHeightComfort = 4 * rootFontSize; // 4 * 16 = we want 64px by default
-    const contactRowHeightCompact = 3 * rootFontSize; // 3 * 16 = we want 48px by default
+    const contactRowHeightComfort = 4 * rootFontSize + 8; // 4 * 16 = we want 72px by default
 
     return (
-        <div
-            ref={elementRef}
-            className={classnames([
-                isDesktop ? 'items-column-list' : 'items-column-list--mobile',
-                isCompactView && 'list-compact',
-            ])}
-        >
+        <div ref={elementRef} className={classnames([isDesktop ? 'items-column-list' : 'items-column-list--mobile'])}>
             <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--border-none">
                 <AutoSizer>
                     {({ height, width }) => (
@@ -111,12 +102,13 @@ const ContactsList = ({
                                     index={index}
                                     onFocus={handleFocus}
                                     onGroupDetails={onGroupDetails}
+                                    isDrawer={isDrawer}
                                 />
                             )}
                             rowCount={contacts.length}
                             height={height}
                             width={width}
-                            rowHeight={isCompactView ? contactRowHeightCompact : contactRowHeightComfort}
+                            rowHeight={contactRowHeightComfort}
                             tabIndex={-1}
                         />
                     )}

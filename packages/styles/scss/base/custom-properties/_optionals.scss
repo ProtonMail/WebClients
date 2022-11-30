@@ -104,7 +104,7 @@
 		shadow-lifted: 0 calc(var(--1px) * 8) calc(var(--1px) * 24) rgb(0 0 0 / var(--shadow-lifted-opacity, 0.2)),
 
 		logo-text-proton-color : var(--text-norm),
-		logo-text-product-color: var(--primary)
+		logo-text-product-color: var(--primary),
 	) {
 		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
 		--#{$variable}: var(--optional-#{$variable}, #{$default});

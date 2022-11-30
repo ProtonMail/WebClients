@@ -26,6 +26,7 @@ import {
     useModalState,
     useUserSettings,
 } from '@proton/components';
+import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS, COMPOSER_MODE, DENSITY, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -59,6 +60,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const { getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
+    const displayContactsInHeader = useDisplayContactsWidget();
 
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
@@ -169,7 +171,9 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                     </TopNavbarListItemSettingsDropdown>
                 }
                 contactsButton={
-                    <TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />
+                    displayContactsInHeader && (
+                        <TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />
+                    )
                 }
                 feedbackButton={
                     hasRebrandingFeedback ? (

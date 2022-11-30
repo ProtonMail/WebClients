@@ -1,6 +1,6 @@
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
-const { DAY, WEEK, MONTH, MAIL } = VIEWS;
+const { DAY, WEEK, MONTH, MAIL, DRIVE } = VIEWS;
 
 export const SUPPORTED_VIEWS_IN_APP = [MONTH, WEEK, DAY];
-export const SUPPORTED_VIEWS_IN_SIDE_APP = [MAIL];
+export const SUPPORTED_VIEWS_IN_DRAWER = [MAIL, DRIVE];

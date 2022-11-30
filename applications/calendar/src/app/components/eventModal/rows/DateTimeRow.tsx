@@ -73,7 +73,10 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
             <div className={classnames([isAllDay && 'w50 on-mobile-w100'])}>
                 <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
                     <div className="flex flex-nowrap flex-item-fluid flex-item-grow">
-                        <div className="flex-no-min-children flex-item-fluid flex-item-grow-2 on-tiny-mobile-flex-item-grow-1-5">
+                        <div
+                            className="flex-no-min-children flex-item-fluid flex-item-grow-custom"
+                            style={{ '--grow-custom': '1.25' }}
+                        >
                             <DateInput
                                 id={DATE_INPUT_ID}
                                 className="flex-item-fluid"
@@ -115,7 +118,10 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                 <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
                     <div className="flex flex-nowrap flex-item-fluid flex-item-grow">
-                        <div className="flex-no-min-children flex-item-fluid flex-item-grow-2 on-tiny-mobile-flex-item-grow-1-5">
+                        <div
+                            className="flex-no-min-children flex-item-fluid flex-item-grow-custom"
+                            style={{ '--grow-custom': '1.25' }}
+                        >
                             <DateInput
                                 id="event-endDate"
                                 className="flex-item-fluid"
@@ -160,7 +166,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 </div>
             </div>
 
-            <div className="flex flex-justify-space-between">
+            <div className="flex flex-justify-space-between flex-gap-0-5">
                 <AllDayCheckbox
                     title={
                         model.isAllDay

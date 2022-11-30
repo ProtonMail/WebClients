@@ -16,6 +16,7 @@ import {
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { SSO_PATHS, isSSOMode } from '@proton/shared/lib/constants';
+import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import createListeners from '@proton/shared/lib/helpers/listeners';
@@ -25,16 +26,15 @@ import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { AddressesModel } from '@proton/shared/lib/models';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import { UserModel, formatUser } from '@proton/shared/lib/models/userModel';
-import { getIsAuthorizedApp } from '@proton/shared/lib/sideApp/helpers';
 import noop from '@proton/utils/noop';
 
 import { Icons } from '../../components';
 import { GlobalLoader, GlobalLoaderProvider } from '../../components/globalLoader';
 import SpotlightProvider from '../../components/spotlight/Provider';
 import { PreventLeaveProvider } from '../../hooks';
-import { SideAppUrlProvider } from '../../hooks/useSideApp';
+import { DrawerProvider } from '../../hooks/useDrawer';
 import StandardApiProvider from '../api/ApiProvider';
-import SideAppApiProvider from '../api/SideAppApiProvider';
+import DrawerApiProvider from '../api/DrawerApiProvider';
 import AuthenticationProvider from '../authentication/Provider';
 import CacheProvider from '../cache/Provider';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
@@ -302,9 +302,9 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
 
     const isIframe = window.self !== window.top;
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
-    const isSideApp = isIframe && parentApp && getIsAuthorizedApp(parentApp);
+    const isDrawerApp = isIframe && parentApp && getIsAuthorizedApp(parentApp);
 
-    const ApiProvider = isSideApp ? SideAppApiProvider : StandardApiProvider;
+    const ApiProvider = isDrawerApp ? DrawerApiProvider : StandardApiProvider;
 
     return (
         <ConfigProvider config={config}>
@@ -324,7 +324,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
                                                             <FeaturesProvider>
                                                                 <ExperimentsProvider>
                                                                     <GlobalLoaderProvider>
-                                                                        <SideAppUrlProvider>
+                                                                        <DrawerProvider>
                                                                             <GlobalLoader />
                                                                             <NotificationsChildren />
                                                                             {(() => {
@@ -350,7 +350,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
                                                                                 }
                                                                                 return children;
                                                                             })()}
-                                                                        </SideAppUrlProvider>
+                                                                        </DrawerProvider>
                                                                     </GlobalLoaderProvider>
                                                                 </ExperimentsProvider>
                                                             </FeaturesProvider>

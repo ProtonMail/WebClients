@@ -8,11 +8,11 @@ import { InactiveSessionError } from '../api/helpers/withApiHandlers';
 import { getUser } from '../api/user';
 import { getAppFromPathnameSafe } from '../apps/slugHelper';
 import { SECOND, isSSOMode } from '../constants';
+import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from '../drawer/helpers';
+import { DRAWER_EVENTS } from '../drawer/interfaces';
 import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
 import { Api, User as tsUser } from '../interfaces';
-import { getIsAuthorizedApp, getIsSideAppPostMessage, postMessageFromIframe } from '../sideApp/helpers';
-import { SIDE_APP_EVENTS } from '../sideApp/models';
 import { getKey } from './cryptoHelper';
 import { InvalidPersistentSessionError } from './error';
 import { LocalKeyResponse, LocalSessionResponse } from './interface';
@@ -34,7 +34,7 @@ export type ResumedSessionResult = {
     trusted: boolean;
 };
 
-const handleSideApp = (localID: number) => {
+const handleDrawerApp = (localID: number) => {
     let timeout: ReturnType<typeof setTimeout> | undefined;
 
     let resolve: (arg: undefined | ResumedSessionResult) => void = () => {};
@@ -46,11 +46,11 @@ const handleSideApp = (localID: number) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
 
     const handler = (event: MessageEvent) => {
-        if (!getIsSideAppPostMessage(event)) {
+        if (!getIsDrawerPostMessage(event)) {
             return;
         }
 
-        if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_SESSION) {
+        if (event.data.type === DRAWER_EVENTS.SESSION) {
             const { UID, keyPassword, User, persistent, trusted, tag } = event.data.payload;
             window.removeEventListener('message', handler);
 
@@ -58,7 +58,7 @@ const handleSideApp = (localID: number) => {
                 clearTimeout(timeout);
             }
 
-            // When opening the side panel, we might need to set the tag of the app we are opening
+            // When opening the drawer, we might need to set the tag of the app we are opening
             // Otherwise we will not open the correct version of the app (default instead of beta or alpha)
             if (tag && versionCookieAtLoad !== tag) {
                 updateVersionCookie(tag, undefined);
@@ -70,7 +70,7 @@ const handleSideApp = (localID: number) => {
     };
 
     if (parentApp && getIsAuthorizedApp(parentApp) && isIframe) {
-        postMessageFromIframe({ type: SIDE_APP_EVENTS.SIDE_APP_READY }, parentApp);
+        postMessageFromIframe({ type: DRAWER_EVENTS.READY }, parentApp);
         window.addEventListener('message', handler);
 
         // Resolve the promise if the parent app does not respond
@@ -84,9 +84,9 @@ const handleSideApp = (localID: number) => {
 };
 
 export const resumeSession = async (api: Api, localID: number, User?: tsUser): Promise<ResumedSessionResult> => {
-    const res = await handleSideApp(localID);
+    const res = await handleDrawerApp(localID);
 
-    // If we got a res, it means that we are in a side app. We don't need to make the whole resumeSession part
+    // If we got a res, it means that we are in a drawer app. We don't need to make the whole resumeSession part
     if (res) {
         return res;
     }

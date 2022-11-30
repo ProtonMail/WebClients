@@ -1,7 +1,7 @@
 import { getIsRecurring, getRecurrenceIdDate, getUidValue } from '@proton/shared/lib/calendar/vcalHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import { postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 
 import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import { CalendarEventsCache } from '../interface';
@@ -36,7 +36,7 @@ export const removeCalendarEventStoreRecord = (
     if ((getOpenedMailEvents?.() || []).find(({ UID }) => UID === uid)) {
         postMessageFromIframe(
             {
-                type: SIDE_APP_EVENTS.SIDE_APP_REFRESH_WIDGET,
+                type: DRAWER_EVENTS.REFRESH_WIDGET,
                 payload: { UID: uid, ModifyTime: Number.POSITIVE_INFINITY },
             },
             APPS.PROTONMAIL

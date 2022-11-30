@@ -1,48 +1,48 @@
 import { useEffect } from 'react';
 
 import { APPS } from '@proton/shared/lib/constants';
+import { getIsDrawerPostMessage, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
-import { getIsSideAppPostMessage, postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 
 interface Props {
     messageID: string;
     calendarEvent?: CalendarEventWithMetadata;
     refresh: () => void;
 }
-const useCalendarWidgetSideAppEvents = ({ messageID, calendarEvent, refresh }: Props) => {
+const useCalendarWidgetDrawerEvents = ({ messageID, calendarEvent, refresh }: Props) => {
     useEffect(() => {
         if (!calendarEvent) {
             return;
         }
         const { UID } = calendarEvent;
 
-        // Tell potential calendar side app that the events in the widget are in view
+        // Tell potential calendar drawer app that the events in the widget are in view
         postMessageToIframe(
             {
-                type: SIDE_APP_EVENTS.SIDE_APP_SET_WIDGET_EVENT,
+                type: DRAWER_EVENTS.SET_WIDGET_EVENT,
                 payload: { messageID: messageID, UID },
             },
             APPS.PROTONCALENDAR
         );
 
         const handleSideCalendarEvents = (event: MessageEvent) => {
-            if (!getIsSideAppPostMessage(event)) {
+            if (!getIsDrawerPostMessage(event)) {
                 return;
             }
 
-            if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_REQUEST_OPEN_EVENTS) {
+            if (event.data.type === DRAWER_EVENTS.REQUEST_OPEN_EVENTS) {
                 // The calendar app is requesting if there are open events in the widget
                 postMessageToIframe(
                     {
-                        type: SIDE_APP_EVENTS.SIDE_APP_SET_WIDGET_EVENT,
+                        type: DRAWER_EVENTS.SET_WIDGET_EVENT,
                         payload: { messageID, UID },
                     },
                     APPS.PROTONCALENDAR
                 );
             }
 
-            if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_REFRESH_WIDGET) {
+            if (event.data.type === DRAWER_EVENTS.REFRESH_WIDGET) {
                 const { UID, ModifyTime } = event.data.payload;
 
                 const hasMatchingUID = calendarEvent ? calendarEvent.UID === UID : false;
@@ -58,10 +58,10 @@ const useCalendarWidgetSideAppEvents = ({ messageID, calendarEvent, refresh }: P
         return () => {
             window.addEventListener('message', handleSideCalendarEvents);
 
-            // On unmount, tell potential calendar side app that the events in the widget are no longer in view
+            // On unmount, tell potential calendar drawer app that the events in the widget are no longer in view
             postMessageToIframe(
                 {
-                    type: SIDE_APP_EVENTS.SIDE_APP_UNSET_WIDGET_EVENT,
+                    type: DRAWER_EVENTS.UNSET_WIDGET_EVENT,
                     payload: { messageID, UID },
                 },
                 APPS.PROTONCALENDAR
@@ -70,4 +70,4 @@ const useCalendarWidgetSideAppEvents = ({ messageID, calendarEvent, refresh }: P
     }, [messageID, calendarEvent]);
 };
 
-export default useCalendarWidgetSideAppEvents;
+export default useCalendarWidgetDrawerEvents;

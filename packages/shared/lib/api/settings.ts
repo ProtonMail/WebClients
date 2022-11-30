@@ -1,5 +1,6 @@
 import { DENSITY } from '@proton/shared/lib/constants';
 import {
+    DRAWER_VISIBILITY,
     SETTINGS_DATE_FORMAT,
     SETTINGS_LOG_AUTH_STATE,
     SETTINGS_TIME_FORMAT,
@@ -163,6 +164,12 @@ export const setupTotp = (TOTPSharedSecret: string, TOTPConfirmation: string) =>
 export const disableTotp = () => ({
     url: 'settings/2fa/totp',
     method: 'put',
+});
+
+export const updateHideDrawer = (HideSidePanel: DRAWER_VISIBILITY) => ({
+    url: 'settings/hide-side-panel',
+    method: 'put',
+    data: { HideSidePanel },
 });
 
 export const updateTheme = (Theme: number) => ({

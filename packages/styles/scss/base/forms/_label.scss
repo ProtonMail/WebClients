@@ -22,8 +22,10 @@
 }
 
 // case for forms labelled only with icons (calendar popover, etc.)
-$label-icon-width: 2.4em !default;
-
 .form--icon-labels .label {
-	inline-size: $label-icon-width;
+	--label-width: 2.4em;
+
+	@include respond-to($breakpoint-tiny) {
+		--label-width: 1.75em;
+	}
 }

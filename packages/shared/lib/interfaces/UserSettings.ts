@@ -47,6 +47,11 @@ export enum SETTINGS_2FA_ENABLED {
     FIDO2 = 2,
 }
 
+export const enum DRAWER_VISIBILITY {
+    SHOW = 0,
+    HIDE = 1,
+}
+
 export interface Flags {
     Welcomed: number;
 }
@@ -78,6 +83,7 @@ export interface UserSettings {
         Reset: number;
     };
     Flags: Flags;
+    HideSidePanel: DRAWER_VISIBILITY;
     InvoiceText: number;
     Locale: string;
     LogAuth: SETTINGS_LOG_AUTH_STATE;

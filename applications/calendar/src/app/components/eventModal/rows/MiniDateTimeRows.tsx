@@ -32,7 +32,10 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
             <div>
                 <div className="flex flex-nowrap mb0-5">
-                    <div className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-2">
+                    <div
+                        className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-custom"
+                        style={{ '--grow-custom': '1.25' }}
+                    >
                         <DateInput
                             id={DATE_INPUT_ID}
                             className="flex-item-fluid"
@@ -57,7 +60,10 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                     )}
                 </div>
                 <div className="flex flex-nowrap mb0-25">
-                    <div className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-2">
+                    <div
+                        className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-custom"
+                        style={{ '--grow-custom': '1.25' }}
+                    >
                         <DateInput
                             id="event-endDate"
                             className="flex-item-fluid"

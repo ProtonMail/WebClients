@@ -3,7 +3,11 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import {
+    CalendarDrawerAppButton,
     CollapsingBreadcrumbs,
+    ContactDrawerAppButton,
+    DrawerSidebar,
+    FeatureCode,
     FloatingButton,
     Icon,
     MainLogo,
@@ -12,9 +16,13 @@ import {
     PrivateMainArea,
     SidebarPrimaryButton,
     useActiveBreakpoint,
+    useFeature,
     useToggle,
 } from '@proton/components';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { ListView } from '../components/FileBrowser';
 import { ListViewHeaderItem } from '../components/FileBrowser/interface';
@@ -35,6 +43,7 @@ const DriveContainerBlurred = () => {
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: toggleExpanded } = useToggle();
     const { isDesktop } = useActiveBreakpoint();
+    const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
 
     const logo = <MainLogo to="/" />;
     const dummyUploadButton = (
@@ -93,10 +102,23 @@ const DriveContainerBlurred = () => {
 
     const Cells = isDesktop ? desktopCells : mobileCells;
 
+    const drawerSidebarButtons = [
+        drawerFeature?.Value.ContactsInDrive && <ContactDrawerAppButton />,
+        drawerFeature?.Value.CalendarInDrive && <CalendarDrawerAppButton />,
+    ].filter(isTruthy);
+
+    const canShowDrawer = drawerSidebarButtons.length > 0;
+
     return (
         <>
             <ModalsChildren />
-            <PrivateAppContainer isBlurred header={header} sidebar={sidebar}>
+            <PrivateAppContainer
+                isBlurred
+                header={header}
+                sidebar={sidebar}
+                drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
+                drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
+            >
                 <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
                     <div className="max-w100 pt0-5 pb0-5 pl0-75 pr0-75 border-bottom">
                         <CollapsingBreadcrumbs

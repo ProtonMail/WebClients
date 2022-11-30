@@ -3,17 +3,18 @@ import { BrowserRouter } from 'react-router-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
-import { FeaturesProvider, useAddresses } from '@proton/components';
+import { FeaturesProvider, useAddresses, useUserSettings } from '@proton/components';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache';
 import useApi from '@proton/components/hooks/useApi';
+import { DrawerProvider } from '@proton/components/hooks/useDrawer';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { Nullable } from '@proton/shared/lib/interfaces';
+import { DRAWER_VISIBILITY, Nullable, UserSettings } from '@proton/shared/lib/interfaces';
 import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 import {
     addressBuilder,
@@ -35,6 +36,7 @@ jest.mock('@proton/components/hooks/useModals');
 jest.mock('@proton/components/hooks/useApi');
 jest.mock('@proton/components/hooks/useGetCalendarEventRaw');
 jest.mock('@proton/components/hooks/useAddresses');
+jest.mock('@proton/components/hooks/useUserSettings');
 
 jest.mock('./EventReminderText', () => ({
     __esModule: true,
@@ -50,6 +52,7 @@ const mockedUseApi = mocked(useApi);
 const mockedUseNotifications = mocked(useNotifications);
 const mockedUseGetCalendarEventRaw = mocked(useGetCalendarEventRaw);
 const mockedUseAddresses = mocked(useAddresses);
+const mockedUserSettings = mocked(useUserSettings);
 
 function renderComponent(overrides?: any) {
     window.history.pushState({}, 'Calendar', '/');
@@ -58,7 +61,9 @@ function renderComponent(overrides?: any) {
         <AuthenticationProvider store={authentication}>
             <CacheProvider cache={createCache()}>
                 <FeaturesProvider>
-                    <BrowserRouter>{children}</BrowserRouter>
+                    <DrawerProvider>
+                        <BrowserRouter>{children}</BrowserRouter>
+                    </DrawerProvider>
                 </FeaturesProvider>
             </CacheProvider>
         </AuthenticationProvider>
@@ -100,6 +105,11 @@ describe('EmailReminderWidget', () => {
                 })
         );
         mockedUseAddresses.mockImplementation(() => [[addressBuilder({})], false, null]);
+        mockedUserSettings.mockImplementation(() => [
+            { HideSidePanel: DRAWER_VISIBILITY.HIDE } as UserSettings,
+            false,
+            {} as Error,
+        ]);
         server.use(
             rest.get(`/core/v4/features`, (req, res, ctx) => {
                 return res.once(ctx.json({}));

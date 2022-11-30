@@ -5,22 +5,27 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
+    AppLink,
+    ContactDrawerAppButton,
+    DrawerApp,
+    DrawerAppFooter,
+    DrawerAppHeader,
+    DrawerAppHeaderCustomTitle,
+    DrawerSidebar,
     FeatureCode,
     FloatingButton,
     Icon,
     LocalizedMiniCalendar,
     MainLogo,
+    PrimaryButton,
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainArea,
-    PrivateSideAppHeader,
     RebrandingFeedbackModal,
     SettingsLink,
-    SideAppHeaderTitle,
     Spotlight,
     TextLoader,
     TimeZoneSelector,
-    TodayIcon,
     Tooltip,
     TopBanners,
     TopNavbarListItemContactsDropdown,
@@ -28,6 +33,8 @@ import {
     TopNavbarListItemSettingsDropdown,
     UserDropdown,
     useContactGroups,
+    useDrawer,
+    useFeature,
     useHasRebrandingFeedback,
     useModalState,
     useNotifications,
@@ -37,18 +44,25 @@ import {
     useWelcomeFlags,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import { CONTACT_WIDGET_TABS, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
+import {
+    CONTACT_WIDGET_TABS,
+    CustomAction,
+    CustomActionRenderProps,
+} from '@proton/components/containers/contacts/widget/types';
+import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { CALENDAR_SETTINGS_SECTION_ID, MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';
 import { getGeneralSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
+import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 import uniqueBy from '@proton/utils/uniqueBy';
@@ -58,7 +72,7 @@ import ViewSelector from '../../components/ViewSelector';
 import getDateRangeText from '../../components/getDateRangeText';
 import CalendarOnboardingModal from '../../components/onboarding/CalendarOnboardingModal';
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
-import { getIsSideApp } from '../../helpers/views';
+import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import getDateDiff from './getDateDiff';
@@ -136,7 +150,11 @@ const CalendarContainerView = ({
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
 
-    const isSideApp = getIsSideApp(view);
+    const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
+    const displayContactsInHeader = useDisplayContactsWidget();
+    const { showDrawerSidebar } = useDrawer();
+
+    const isDrawerApp = getIsCalendarAppInDrawer(view);
     const defaultView = getDefaultView(calendarUserSettings);
 
     const toLink = toUrlParams({
@@ -188,12 +206,7 @@ const CalendarContainerView = ({
         return addresses.map(({ Email }) => canonicalizeInternalEmail(Email));
     }, [addresses]);
 
-    const handleClickTodayIframe = () => {
-        setShowIframeMiniCalendar(false);
-        onClickToday();
-    };
-
-    const getHandleCreateEventFromWidget = ({
+    const getHandleCreateEventFromContacts = ({
         contactList,
         groupsEmailsMap,
         recipients,
@@ -273,7 +286,7 @@ const CalendarContainerView = ({
                 }
 
                 onCreateEvent?.(participantsWithoutSelf);
-                onClose();
+                onClose?.();
             };
         }
 
@@ -354,7 +367,7 @@ const CalendarContainerView = ({
                 );
 
                 onCreateEvent?.(participants);
-                onClose();
+                onClose?.();
             };
         }
     };
@@ -363,7 +376,7 @@ const CalendarContainerView = ({
         setExpand(false);
     }, [window.location.pathname]);
 
-    const top = !isSideApp && <TopBanners />;
+    const top = !isDrawerApp && <TopBanners />;
 
     const logo = <MainLogo to="/" />;
 
@@ -385,12 +398,45 @@ const CalendarContainerView = ({
             key="settings-link"
         >{c('Spotlight settings link').t`Go to settings`}</SettingsLink>
     );
+    const createEventText = c('Action').t`Create event`;
 
-    const header = isSideApp ? (
-        <PrivateSideAppHeader
-            toLink={toLink}
-            customTitle={
-                <SideAppHeaderTitle
+    const contactCustomActions: CustomAction[] = [
+        {
+            render: ({ contactList, groupsEmailsMap, recipients, noSelection, onClose, selected }) => {
+                const onClick = getHandleCreateEventFromContacts({
+                    contactList,
+                    groupsEmailsMap,
+                    recipients,
+                    onClose,
+                    selected,
+                });
+
+                if (!onClick) {
+                    return null;
+                }
+
+                return (
+                    <Tooltip key="createEvent" title={createEventText}>
+                        <Button
+                            icon
+                            className="mr0-5 inline-flex pt0-5 pb0-5"
+                            onClick={onClick}
+                            disabled={noSelection || !onCreateEvent}
+                            title={createEventText}
+                        >
+                            <Icon name="calendar-grid" alt={createEventText} />
+                        </Button>
+                    </Tooltip>
+                );
+            },
+            tabs: [CONTACT_WIDGET_TABS.CONTACTS, CONTACT_WIDGET_TABS.GROUPS],
+        },
+    ];
+
+    const header = isDrawerApp ? (
+        <DrawerAppHeader
+            title={
+                <DrawerAppHeaderCustomTitle
                     dropdownTitle={format(localDate, 'PP', { locale: dateLocale })}
                     onToggleDropdown={() => setShowIframeMiniCalendar(!showIframeMiniCalendar)}
                     onCloseDropdown={() => setShowIframeMiniCalendar(false)}
@@ -398,14 +444,7 @@ const CalendarContainerView = ({
                     dropdownExpanded={showIframeMiniCalendar}
                 />
             }
-            customActions={
-                <Tooltip title={c('Action').t`Today`}>
-                    <Button icon color="norm" shape="ghost" onClick={handleClickTodayIframe} className="flex mr0-5">
-                        <TodayIcon todayDate={localNowDate.getDate()} />
-                    </Button>
-                </Tooltip>
-            }
-            dropdownItem={
+            customDropdown={
                 showIframeMiniCalendar ? (
                     <LocalizedMiniCalendar
                         onSelectDate={handleClickLocalDate}
@@ -454,47 +493,9 @@ const CalendarContainerView = ({
                     </FloatingButton>
                 }
                 contactsButton={
-                    <TopNavbarListItemContactsDropdown
-                        customActions={[
-                            {
-                                render: ({
-                                    contactList,
-                                    groupsEmailsMap,
-                                    recipients,
-                                    noSelection,
-                                    onClose,
-                                    selected,
-                                }) => {
-                                    const onClick = getHandleCreateEventFromWidget({
-                                        contactList,
-                                        groupsEmailsMap,
-                                        recipients,
-                                        onClose,
-                                        selected,
-                                    });
-
-                                    if (!onClick) {
-                                        return null;
-                                    }
-
-                                    return (
-                                        <Tooltip key="createEvent" title={c('Action').t`Create event`}>
-                                            <Button
-                                                icon
-                                                className="mr0-5 inline-flex pt0-5 pb0-5"
-                                                onClick={onClick}
-                                                disabled={noSelection || !onCreateEvent}
-                                                title={c('Action').t`Create event`}
-                                            >
-                                                <Icon name="calendar-grid" alt={c('Action').t`Create event`} />
-                                            </Button>
-                                        </Tooltip>
-                                    );
-                                },
-                                tabs: [CONTACT_WIDGET_TABS.CONTACTS, CONTACT_WIDGET_TABS.GROUPS],
-                            },
-                        ]}
-                    />
+                    displayContactsInHeader && (
+                        <TopNavbarListItemContactsDropdown customActions={contactCustomActions} />
+                    )
                 }
                 feedbackButton={
                     hasRebrandingFeedback ? (
@@ -510,6 +511,17 @@ const CalendarContainerView = ({
             <RebrandingFeedbackModal {...rebrandingFeedbackModal} />
         </>
     );
+
+    const footerButtons = [
+        <PrimaryButton key="footer-button-1" onClick={() => onCreateEvent?.()} disabled={!onCreateEvent}>
+            {createEventText}
+        </PrimaryButton>,
+        <AppLink key="footer-button-2" to={toLink} selfOpening className="button button-outline-weak">
+            {c('Link to calendar app').t`Open in ${CALENDAR_APP_NAME}`}
+        </AppLink>,
+    ];
+
+    const bottom = isDrawerApp ? <DrawerAppFooter buttons={footerButtons} /> : undefined;
 
     const sidebar = (
         <CalendarSidebar
@@ -550,14 +562,25 @@ const CalendarContainerView = ({
 
     const noonDate = getNoonDateForTimeZoneOffset(utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate);
 
+    const drawerSidebarButtons = [drawerFeature?.Value.ContactsInCalendar && <ContactDrawerAppButton />].filter(
+        isTruthy
+    );
+
+    const canShowDrawer = !isDrawerApp && drawerSidebarButtons.length > 0;
+
     return (
         <PrivateAppContainer
             top={top}
             header={header}
+            bottom={bottom}
             sidebar={sidebar}
             isBlurred={isBlurred}
             containerRef={containerRef}
-            mainNoBorder={isSideApp}
+            mainNoBorder={isDrawerApp}
+            drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
+            drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
+            drawerApp={isDrawerApp ? null : <DrawerApp contactCustomActions={contactCustomActions} />}
+            mainBordered={canShowDrawer && showDrawerSidebar}
         >
             {loader}
             <div className="only-print p1">
@@ -572,7 +595,7 @@ const CalendarContainerView = ({
                 <br />
                 {currentRange}
             </div>
-            {!isSideApp && (
+            {!isDrawerApp && (
                 <CalendarToolbar
                     dateCursorButtons={
                         <DateCursorButtons
