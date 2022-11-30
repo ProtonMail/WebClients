@@ -434,6 +434,19 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                   )
                 : c('Title').t`Couldn’t create accounts`;
 
+            const renderAddressList = (addresses: string[]) => {
+                return (
+                    <ul className="unstyled">
+                        {addresses.map((address) => {
+                            return (
+                                <li key={address} className="mb0 text-ellipsis" title={address}>
+                                    {address}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                );
+            };
             return {
                 size: 'small',
                 title,
@@ -461,15 +474,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                         invalidAddresses.length
                                     )}
                                 </p>
-                                <ul className="unstyled">
-                                    {invalidAddresses.map((address) => {
-                                        return (
-                                            <li key={address} className="mb0 text-ellipsis" title={address}>
-                                                {address}
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
+                                {renderAddressList(invalidAddresses)}
                             </>
                         ) : null}
 
@@ -482,15 +487,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                         unavailableAddresses.length
                                     )}
                                 </p>
-                                <ul className="unstyled">
-                                    {unavailableAddresses.map((address) => {
-                                        return (
-                                            <li key={address} className="mb0 text-ellipsis" title={address}>
-                                                {address}
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
+                                {renderAddressList(unavailableAddresses)}
                             </>
                         ) : null}
 
@@ -503,15 +500,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                         orphanedAddresses.length
                                     )}
                                 </p>
-                                <ul className="unstyled">
-                                    {orphanedAddresses.map((address) => {
-                                        return (
-                                            <li key={address} className="mb0 text-ellipsis" title={address}>
-                                                {address}
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
+                                {renderAddressList(orphanedAddresses)}
                             </>
                         ) : null}
                     </>
