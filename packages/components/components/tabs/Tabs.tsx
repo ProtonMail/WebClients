@@ -75,7 +75,7 @@ export const Tabs = ({
         window.addEventListener('resize', debouncedHandleResize);
         handleResize();
         return () => {
-            debouncedHandleResize.abort();
+            debouncedHandleResize.cancel();
             window.removeEventListener('resize', debouncedHandleResize);
             resizeObserver.disconnect();
         };

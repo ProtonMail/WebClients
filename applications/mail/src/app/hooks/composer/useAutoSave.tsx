@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import { useHandler } from '@proton/components';
-import { Abortable } from '@proton/components/hooks/useHandler';
+import { Cancellable } from '@proton/components/hooks/useHandler';
 
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
@@ -78,21 +78,21 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
         }
     });
 
-    const abort = useHandler(() => {
-        debouncedHandler.abort?.();
+    const cancel = useHandler(() => {
+        debouncedHandler.cancel?.();
         pendingAutoSave.resolver();
         pauseDebouncer.current = false;
     });
 
-    pausableHandler.abort = abort;
+    pausableHandler.cancel = cancel;
 
     const saveNow = (message: MessageState) => {
-        abort();
+        cancel();
         return actualSave(message);
     };
 
     const deleteDraft = useHandler(async (message: MessageState) => {
-        abort();
+        cancel();
 
         try {
             await pendingSave.promise;
@@ -110,7 +110,7 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
     });
 
     return {
-        autoSave: pausableHandler as ((message: MessageState) => Promise<void>) & Abortable,
+        autoSave: pausableHandler as ((message: MessageState) => Promise<void>) & Cancellable,
         saveNow,
         deleteDraft,
         pendingSave,
