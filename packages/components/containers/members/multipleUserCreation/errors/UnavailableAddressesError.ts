@@ -1,9 +1,21 @@
 export default class UnavailableAddressesError extends Error {
-    readonly addresses: string[];
+    readonly unavailableAddresses: string[];
 
-    constructor(addresses: string[]) {
+    readonly orphanedAddresses: string[];
+
+    constructor(
+        /**
+         * Addresses that are not available for use
+         */
+        unavailableAddresses: string[],
+        /**
+         * Extra addresses for the user that was not created
+         */
+        orphanedAddresses: string[]
+    ) {
         super();
-        this.addresses = addresses;
+        this.unavailableAddresses = unavailableAddresses;
+        this.orphanedAddresses = orphanedAddresses;
         Object.setPrototypeOf(this, UnavailableAddressesError.prototype);
     }
 }

@@ -25,10 +25,13 @@ export const createUser = async ({
     const { emailAddresses, password, displayName, totalStorage, vpnAccess, privateSubUser } = user;
 
     const invalidAddresses: string[] = [];
+    const validAddresses: string[] = [];
     const addressParts = emailAddresses.map((emailAddress) => {
         const isValid = validateEmailAddress(emailAddress);
         if (!isValid) {
             invalidAddresses.push(emailAddress);
+        } else {
+            validAddresses.push(emailAddress);
         }
 
         const [Local, Domain] = getEmailParts(emailAddress);
@@ -43,10 +46,11 @@ export const createUser = async ({
         /**
          * Throw if any of the addresses are not valid
          */
-        throw new InvalidAddressesError(invalidAddresses);
+        throw new InvalidAddressesError(invalidAddresses, validAddresses);
     }
 
     const unavailableAddresses: string[] = [];
+    const availableAddresses: string[] = [];
 
     const [firstAddressParts, ...restAddressParts] = addressParts;
 
@@ -66,6 +70,7 @@ export const createUser = async ({
                     Domain,
                 })
             );
+            availableAddresses.push(address);
         } catch (error: any) {
             if (error.status === 409) {
                 /**
@@ -94,7 +99,7 @@ export const createUser = async ({
         /**
          * Throw if any of the addresses are not available
          */
-        throw new UnavailableAddressesError(unavailableAddresses);
+        throw new UnavailableAddressesError(unavailableAddresses, availableAddresses);
     }
 
     const { Member } = await srpVerify({
