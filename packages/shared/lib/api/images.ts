@@ -12,8 +12,14 @@ export type SenderImageMode = 'light' | 'dark';
  * @param Size The size of the logo to be returned, default 48
  * @returns
  */
-export const getLogo = (Address: string, Size?: number, BimiSelector?: string, Mode?: SenderImageMode) => ({
+export const getLogo = (
+    Address: string,
+    Size?: number,
+    BimiSelector?: string,
+    Mode?: SenderImageMode,
+    uid?: string // FIXME should be UID not uid
+) => ({
     method: 'get',
     url: 'core/v4/images/logo',
-    params: { Address, Size, BimiSelector, Mode },
+    params: { uid, Address, Size, BimiSelector, Mode },
 });
