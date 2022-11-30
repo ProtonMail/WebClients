@@ -1,4 +1,5 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
+import { utf8ArrayToString } from '@proton/crypto/lib/utils';
 
 import { base64StringToUint8Array } from '../../helpers/encoding';
 import { CalendarEventData } from '../../interfaces/calendar';
@@ -67,6 +68,7 @@ export const decryptCard = async (
 ) => {
     const { data: decryptedData, verified } = await CryptoProxy.decryptMessage({
         binaryMessage: dataToDecrypt,
+        format: 'binary',
         verificationKeys: publicKeys,
         armoredSignature: signature || undefined,
         sessionKeys: [sessionKey],
@@ -74,11 +76,7 @@ export const decryptCard = async (
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
     const verificationStatus = getEventVerificationStatus(verified, hasPublicKeys);
 
-    if (typeof decryptedData !== 'string') {
-        throw new Error('Unknown data');
-    }
-
-    return { data: decryptedData, verificationStatus };
+    return { data: utf8ArrayToString(decryptedData), verificationStatus };
 };
 
 export const decryptAndVerifyCalendarEvent = (
@@ -109,6 +107,7 @@ export const decryptAndVerifyCalendarEvent = (
         if (!sessionKey) {
             throw new Error('Cannot decrypt without session key');
         }
+
         return decryptCard(base64StringToUint8Array(Data), Signature, publicKeys, sessionKey);
     }
     throw new Error('Unknow event card type');

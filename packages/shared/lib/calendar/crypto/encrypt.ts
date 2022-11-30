@@ -1,4 +1,5 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 
 import { SimpleMap } from '../../interfaces';
 import { EncryptPartResult, SignPartResult } from '../../interfaces/calendar';
@@ -49,8 +50,7 @@ export async function encryptPart(
         return;
     }
     const { message: encryptedData, signature: binarySignature } = await CryptoProxy.encryptMessage({
-        textData: dataToEncrypt,
-        stripTrailingSpaces: true,
+        binaryData: stringToUtf8Array(dataToEncrypt),
         signingKeys: [signingKey],
         sessionKey,
         format: 'binary',
