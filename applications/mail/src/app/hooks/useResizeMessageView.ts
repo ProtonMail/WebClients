@@ -121,7 +121,7 @@ export const useResizeMessageView = (
 
     useEffect(() => {
         scrollBarListener();
-        return () => scrollBarListener.abort?.();
+        return () => scrollBarListener.cancel?.();
     });
 
     return { enableResize, resetWidth, scrollBarWidth, isResizing };

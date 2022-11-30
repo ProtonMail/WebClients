@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Alert, ErrorButton } from '@proton/components';
-import { Abortable } from '@proton/components/hooks/useHandler';
+import { Cancellable } from '@proton/components/hooks/useHandler';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { ATTACHMENT_ACTION } from '../../../helpers/attachment/attachmentUploader';
@@ -22,7 +22,7 @@ interface Props {
     handleCloseInnerModal: () => void;
     handleScheduleSend: (scheduledAt: number) => void;
     handleCloseInsertImageModal: () => void;
-    handleAddAttachmentsUpload: ((action: ATTACHMENT_ACTION, files?: File[]) => Promise<void>) & Abortable;
+    handleAddAttachmentsUpload: ((action: ATTACHMENT_ACTION, files?: File[]) => Promise<void>) & Cancellable;
     handleDelete: () => void;
     handleSendAnyway: () => void;
     handleCancelSend: (error: string) => void;

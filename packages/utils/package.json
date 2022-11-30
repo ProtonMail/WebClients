@@ -6,6 +6,9 @@
         "lint": "eslint . --ext ts --quiet --cache",
         "test": "jest --coverage --runInBand --ci"
     },
+    "dependencies": {
+        "lodash": "^4.17.21"
+    },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@types/jest": "^27.5.2",

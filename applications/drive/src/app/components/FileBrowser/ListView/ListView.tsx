@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useRef } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 
 import {
@@ -11,7 +11,6 @@ import {
     useRightToLeft,
 } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import buffer from '@proton/utils/buffer';
 
 import { FileBrowserProps } from '../FileBrowser';
 import { BrowserItemId, DragMoveControls, FileBrowserBaseItem } from '../interface';
@@ -129,8 +128,8 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
     const [isRTL] = useRightToLeft();
     const selectionControls = useSelection();
 
-    const containerRef = React.useRef<HTMLDivElement>(null);
-    const rect = useElementRect(containerRef, buffer);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const rect = useElementRect(containerRef);
 
     const itemCount = loading ? items.length + 1 : items.length;
     const itemHeight = rootFontSize * 2.5; // 2.5 x 16 = we want 40px by default
