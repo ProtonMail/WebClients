@@ -30,10 +30,12 @@ const useSenderImage = (emailAddress: string, fallback: boolean, bimiSelector?: 
         }
 
         if (fallback) {
+            // Load the image with XHR request and create a blob URL
             void getSenderLogo(api, emailAddress, imageSizeRef.current, bimiSelector, mode).then(setUrl);
             return;
         }
 
+        // Load the image with a simple GET request
         setUrl(getSenderImageUrl(UID, emailAddress, imageSizeRef.current, bimiSelector, mode));
     }, [emailAddress, canLoad, mode, bimiSelector, fallback]);
 
