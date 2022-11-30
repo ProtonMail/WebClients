@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useEventManager, useHandler, useNotifications } from '@proton/components';
-import { Abortable } from '@proton/components/hooks/useHandler';
+import { Cancellable } from '@proton/components/hooks/useHandler';
 
 import SendingMessageNotification, {
     SendingMessageNotificationManager,
@@ -26,7 +26,7 @@ export interface UseSendHandlerParameters {
     promiseUpload: Promise<void>;
     pendingSave: PromiseHandlers<void>;
     pendingAutoSave: PromiseHandlers<void>;
-    autoSave: ((message: MessageState) => Promise<void>) & Abortable;
+    autoSave: ((message: MessageState) => Promise<void>) & Cancellable;
     saveNow: (message: MessageState) => Promise<void>;
     onClose: () => void;
     onMessageAlreadySent: () => void;
@@ -83,7 +83,7 @@ export const useSendHandler = ({
                 !verificationResults.hasChanged;
 
             // Don't abort before pendingAutoSave is checked
-            autoSave.abort?.();
+            autoSave.cancel?.();
 
             // sendMessage expect a saved and up to date message
             // If there is anything new or pending, we have to make a last save

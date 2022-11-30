@@ -1,5 +1,6 @@
 import { RefObject, useLayoutEffect, useState } from 'react';
 
+import noop from '@proton/utils/noop';
 import throttle from '@proton/utils/throttle';
 
 // Can't loop over DOMRect keys with getOwnPropertyNames.
@@ -27,7 +28,7 @@ function getElementRect(target?: HTMLElement | null) {
     return target.getBoundingClientRect();
 }
 
-type RateLimiter = <A extends any[]>(func: (...args: A) => void) => (...args: A) => void;
+type RateLimiter = <A extends any[]>(func: (...args: A) => void) => ((...args: A) => void) & { cancel: () => void };
 
 export const equivalentReducer = (oldRect?: DOMRect, newRect?: DOMRect) => {
     return isEquivalent(oldRect, newRect) ? oldRect : newRect;
@@ -50,6 +51,7 @@ export const createObserver = (
         cache = rect;
         onResize(rect);
     };
+    handleResizeCallback.cancel = noop;
 
     const handleResize = maybeRateLimiter ? maybeRateLimiter(handleResizeCallback) : handleResizeCallback;
 
@@ -60,6 +62,7 @@ export const createObserver = (
     resizeObserver.observe(target, { box: 'border-box' });
     handleResizeObserver();
     return () => {
+        handleResize?.cancel?.();
         resizeObserver.disconnect();
     };
 };

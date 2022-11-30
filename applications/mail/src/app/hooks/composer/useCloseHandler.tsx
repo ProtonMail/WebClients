@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useHandler, useNotifications } from '@proton/components';
-import { Abortable } from '@proton/components/hooks/useHandler';
+import { Cancellable } from '@proton/components/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -22,7 +22,7 @@ export interface UseCloseHandlerParameters {
     uploadInProgress: boolean;
     promiseUpload: Promise<void>;
     pendingAutoSave: PromiseHandlers<void>;
-    autoSave: ((message: MessageState) => Promise<void>) & Abortable;
+    autoSave: ((message: MessageState) => Promise<void>) & Cancellable;
     saveNow: (message: MessageState) => Promise<void>;
     onClose: () => void;
     onDiscard: () => void;

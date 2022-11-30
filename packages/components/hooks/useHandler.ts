@@ -7,8 +7,8 @@ import useEventManager from './useEventManager';
 
 export type Handler = (...args: any[]) => void;
 
-export interface Abortable {
-    abort?: () => void;
+export interface Cancellable {
+    cancel?: () => void;
 }
 
 /**
@@ -18,7 +18,7 @@ export interface Abortable {
 export const useHandler = <T extends Handler>(
     handler: T,
     options: { debounce?: number; throttle?: number } = {}
-): T & Abortable => {
+): T & Cancellable => {
     const handlerRef = useRef(handler);
 
     useEffect(() => {
@@ -37,7 +37,7 @@ export const useHandler = <T extends Handler>(
         }
 
         return handler;
-    }, []) as T & Abortable;
+    }, []) as T & Cancellable;
 
     return actualHandler;
 };
@@ -84,7 +84,7 @@ export const useSubscribeEventManager = (handler: Handler) => {
  * Using an interval 0 will prevent the interval to be used
  */
 export const useInterval = (interval: number, handler: Handler) => {
-    const actualHandler: Handler & Abortable = useHandler(handler);
+    const actualHandler: Handler & Cancellable = useHandler(handler);
 
     useEffect(() => {
         if (interval > 0) {
@@ -92,13 +92,13 @@ export const useInterval = (interval: number, handler: Handler) => {
 
             actualHandler();
 
-            actualHandler.abort = () => clearInterval(intervalID);
+            actualHandler.cancel = () => clearInterval(intervalID);
 
-            return actualHandler.abort;
+            return actualHandler.cancel;
         }
     }, []);
 
-    return () => actualHandler.abort?.();
+    return () => actualHandler.cancel?.();
 };
 
 export default useHandler;

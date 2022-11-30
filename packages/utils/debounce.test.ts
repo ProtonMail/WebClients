@@ -64,7 +64,7 @@ describe('debounce()', () => {
             it('invokes function immediately if true', () => {
                 const functionToDebounce = jest.fn();
                 const wait = 1000;
-                const debouncedFunction = debounce(functionToDebounce, wait, { immediate: true });
+                const debouncedFunction = debounce(functionToDebounce, wait, { leading: true });
 
                 debouncedFunction();
                 expect(functionToDebounce).toHaveBeenCalled();
@@ -82,7 +82,7 @@ describe('debounce()', () => {
 
             // Call function again just before the wait time expires
             jest.advanceTimersByTime(wait - 1);
-            debouncedFunction.abort();
+            debouncedFunction.cancel();
 
             // fast-forward until 1st call should be executed
             jest.advanceTimersByTime(1);
