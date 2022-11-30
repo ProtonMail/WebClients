@@ -1,0 +1,46 @@
+@import '~@proton/styles/scss/config';
+
+.drawer-sidebar {
+	min-inline-size: rem(46);
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	&-button {
+		background-color: var(--interaction-default);
+		animation: anime-sidebar-button-appear-in 0.5s calc(var(--index, 0) * 75ms) easing(ease-out-quint) both;
+
+		@keyframes anime-sidebar-button-appear-in {
+			from {
+				translate: 1em;
+				opacity: 0;
+			}
+
+			to {
+				translate: 0;
+				opacity: 1;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-default-hover);
+		}
+
+		&:active,
+		&.is-active {
+			.user-initials {
+				background-color: var(--interaction-default-active);
+			}
+		}
+	}
+
+	&--hide-on-tablet {
+		@include respond-to($breakpoint-medium-drawer) {
+			display: none;
+		}
+	}
+
+	@include respond-to($breakpoint-small) {
+		display: none;
+	}
+}

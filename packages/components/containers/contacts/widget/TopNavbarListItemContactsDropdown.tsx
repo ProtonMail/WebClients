@@ -2,11 +2,21 @@ import { forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownButton, EasySwitchProvider, Icon, Tabs, usePopperAnchor } from '@proton/components';
+import {
+    Dropdown,
+    DropdownButton,
+    EasySwitchProvider,
+    Icon,
+    Tabs,
+    useActiveBreakpoint,
+    useDrawer,
+    usePopperAnchor,
+} from '@proton/components';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '@proton/components/components/topnavbar/TopNavbarListItemButton';
 import { generateUID } from '@proton/components/helpers';
+import { APPS } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -49,6 +59,8 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [tabIndex, setTabIndex] = useState(0);
     const [lock, setLock] = useState(false);
+    const { isNarrow } = useActiveBreakpoint();
+    const { toggleDrawerApp } = useDrawer();
 
     const {
         modals,
@@ -82,7 +94,11 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
         if (isOpen) {
             handleClose();
         } else {
-            toggle();
+            if (isNarrow) {
+                toggleDrawerApp({ app: APPS.PROTONCONTACTS })();
+            } else {
+                toggle();
+            }
         }
     };
 

@@ -3,15 +3,15 @@ import { ReactNode } from 'react';
 import { updateServerTime } from '@proton/crypto';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APP_NAMES, DEFAULT_TIMEOUT } from '@proton/shared/lib/constants';
+import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { deserializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
-import { getIsAuthorizedApp, getIsSideAppPostMessage, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 import noop from '@proton/utils/noop';
 
 import { generateUID } from '../../helpers';
 import ApiContext from './apiContext';
 
-const SideAppApiProvider = ({ children }: { children: ReactNode }) => {
+const DrawerApiProvider = ({ children }: { children: ReactNode }) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
 
     const handleIframeApi = (arg: any) => {
@@ -26,11 +26,11 @@ const SideAppApiProvider = ({ children }: { children: ReactNode }) => {
         });
 
         const handler = (event: MessageEvent) => {
-            if (!getIsSideAppPostMessage(event)) {
+            if (!getIsDrawerPostMessage(event)) {
                 return;
             }
 
-            if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_API_RESPONSE && event.data.payload.id === id) {
+            if (event.data.type === DRAWER_EVENTS.API_RESPONSE && event.data.payload.id === id) {
                 const { serverTime, data, success, isApiError } = event.data.payload;
 
                 window.removeEventListener('message', handler);
@@ -60,7 +60,7 @@ const SideAppApiProvider = ({ children }: { children: ReactNode }) => {
                 (arg.signal as AbortSignal).onabort = () => {
                     postMessageFromIframe(
                         {
-                            type: SIDE_APP_EVENTS.SIDE_APP_ABORT_REQUEST,
+                            type: DRAWER_EVENTS.ABORT_REQUEST,
                             payload: { id },
                         },
                         parentApp as APP_NAMES
@@ -68,7 +68,7 @@ const SideAppApiProvider = ({ children }: { children: ReactNode }) => {
                 };
             }
             postMessageFromIframe(
-                { type: SIDE_APP_EVENTS.SIDE_APP_API_REQUEST, payload: { arg: newArg, id, hasAbortController } },
+                { type: DRAWER_EVENTS.API_REQUEST, payload: { arg: newArg, id, hasAbortController } },
                 parentApp
             );
             window.addEventListener('message', handler);
@@ -85,4 +85,4 @@ const SideAppApiProvider = ({ children }: { children: ReactNode }) => {
     return <ApiContext.Provider value={handleIframeApi}>{children}</ApiContext.Provider>;
 };
 
-export default SideAppApiProvider;
+export default DrawerApiProvider;

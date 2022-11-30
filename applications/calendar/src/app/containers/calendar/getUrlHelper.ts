@@ -6,6 +6,7 @@ const URL_PARAMS_VIEWS_CONVERSION: { [key: string]: VIEWS } = {
     week: VIEWS.WEEK,
     day: VIEWS.DAY,
     mail: VIEWS.MAIL,
+    drive: VIEWS.DRIVE,
 };
 export const VIEW_URL_PARAMS_VIEWS_CONVERSION = {
     [VIEWS.YEAR]: 'year',
@@ -15,6 +16,7 @@ export const VIEW_URL_PARAMS_VIEWS_CONVERSION = {
     [VIEWS.WEEK]: 'week',
     [VIEWS.DAY]: 'day',
     [VIEWS.MAIL]: 'mail',
+    [VIEWS.DRIVE]: 'drive',
 };
 
 export const getUrlView = (urlView: string) => {

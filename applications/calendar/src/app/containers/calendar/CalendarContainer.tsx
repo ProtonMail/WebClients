@@ -49,7 +49,7 @@ import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import CalendarContainerView from './CalendarContainerView';
 import InteractiveCalendarView from './InteractiveCalendarView';
 import ShareCalendarInvitationModal from './ShareCalendarInvitationModal';
-import { SUPPORTED_VIEWS_IN_APP, SUPPORTED_VIEWS_IN_SIDE_APP } from './constants';
+import { SUPPORTED_VIEWS_IN_APP, SUPPORTED_VIEWS_IN_DRAWER } from './constants';
 import { CalendarsEventsCache } from './eventStore/interface';
 import useCalendarsEvents from './eventStore/useCalendarsEvents';
 import getDateRange from './getDateRange';
@@ -89,7 +89,7 @@ interface Props {
     tzid: string;
     setCustomTzid: (tzid: string) => void;
     isNarrow: boolean;
-    sideAppView?: VIEWS;
+    drawerView?: VIEWS;
     user: UserModel;
     addresses: Address[];
     activeAddresses: Address[];
@@ -110,7 +110,7 @@ const CalendarContainer = ({
     tzid,
     setCustomTzid,
     isNarrow,
-    sideAppView,
+    drawerView,
     user,
     addresses,
     activeAddresses,
@@ -184,7 +184,7 @@ const CalendarContainer = ({
             }
             let doNotShowAskTimezoneUpdateModal =
                 !!shareCalendarInvitationRef.current ||
-                sideAppView ||
+                drawerView ||
                 !getAutoDetectPrimaryTimezone(calendarUserSettings);
             if (shareCalendarInvitationRef.current) {
                 try {
@@ -256,7 +256,7 @@ const CalendarContainer = ({
     const defaultView = getDefaultView(calendarUserSettings);
     const requestedView = customView || defaultView;
     const view = (() => {
-        if (SUPPORTED_VIEWS_IN_SIDE_APP.includes(requestedView)) {
+        if (SUPPORTED_VIEWS_IN_DRAWER.includes(requestedView)) {
             return requestedView;
         }
         if (isNarrow) {
@@ -456,6 +456,7 @@ const CalendarContainer = ({
                 events={calendarsEvents}
                 onClickDate={isNarrow ? handleChangeDate : handleClickDateWeekView}
                 onChangeDate={handleChangeDate}
+                onClickToday={handleClickToday}
                 isEventCreationDisabled={isEventCreationDisabled}
                 onInteraction={(active: boolean) => setDisableCreate(active)}
                 calendars={calendars}

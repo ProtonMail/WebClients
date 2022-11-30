@@ -1,32 +1,51 @@
+import { Feature } from '@proton/components/containers';
 import { isURLProtonInternal } from '@proton/components/helpers/url';
 
 import { getAppHref } from '../apps/helper';
 import { getLocalIDFromPathname } from '../authentication/pathnameHelper';
 import { APPS, APPS_CONFIGURATION, APP_NAMES } from '../constants';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from './models';
+import { DrawerFeatureFlag } from '../interfaces/Drawer';
+import { DRAWER_ACTION, DRAWER_APPS, DRAWER_EVENTS } from './interfaces';
 
-const { PROTONMAIL, PROTONCALENDAR } = APPS;
+const { PROTONMAIL, PROTONCALENDAR, PROTONDRIVE } = APPS;
 
-const sideAppAuthorizedApps = [
+const drawerAuthorizedApps = [
     APPS_CONFIGURATION[PROTONMAIL].subdomain,
     APPS_CONFIGURATION[PROTONCALENDAR].subdomain,
+    APPS_CONFIGURATION[PROTONDRIVE].subdomain,
 ] as string[];
 
-export const isAuthorizedSideAppUrl = (url: string) => {
+export const getIsNativeDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
+    const nativeApps: APP_NAMES[] = [APPS.PROTONCONTACTS];
+
+    return nativeApps.includes(app);
+};
+
+export const getIsIframedDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
+    const iframedApps: APP_NAMES[] = [APPS.PROTONCALENDAR];
+
+    return iframedApps.includes(app);
+};
+
+export const getIsDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
+    return getIsNativeDrawerApp(app) || getIsIframedDrawerApp(app);
+};
+
+export const isAuthorizedDrawerUrl = (url: string) => {
     const originURL = new URL(url);
 
     // Get subdomain of the url => e.g. mail, calendar, drive
     const appFromUrl = originURL.hostname.split('.')[0];
 
-    return isURLProtonInternal(url) && sideAppAuthorizedApps.includes(appFromUrl);
+    return isURLProtonInternal(url) && drawerAuthorizedApps.includes(appFromUrl);
 };
 
 export const getIsAuthorizedApp = (appName: string): appName is APP_NAMES => {
-    const authorizedApps: string[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
+    const authorizedApps: string[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE];
     return authorizedApps.includes(appName);
 };
 
-export const getIsSideAppPostMessage = (event: MessageEvent) => {
+export const getIsDrawerPostMessage = (event: MessageEvent): event is MessageEvent<DRAWER_ACTION> => {
     const origin = event.origin;
 
     /**
@@ -35,14 +54,10 @@ export const getIsSideAppPostMessage = (event: MessageEvent) => {
      * - event.data is defined
      * - event.data.type is part of the SIDE_APP_EVENT enum
      */
-    return !(
-        !isAuthorizedSideAppUrl(origin) ||
-        !event.data ||
-        !Object.values(SIDE_APP_EVENTS).includes(event.data.type)
-    );
+    return !(!isAuthorizedDrawerUrl(origin) || !event.data || !Object.values(DRAWER_EVENTS).includes(event.data.type));
 };
 
-export const postMessageFromIframe = (message: SIDE_APP_ACTION, parentApp: APP_NAMES) => {
+export const postMessageFromIframe = (message: DRAWER_ACTION, parentApp: APP_NAMES) => {
     if (!getIsAuthorizedApp(parentApp)) {
         return;
     }
@@ -51,11 +66,11 @@ export const postMessageFromIframe = (message: SIDE_APP_ACTION, parentApp: APP_N
     window.parent?.postMessage(message, parentUrl);
 };
 
-export const postMessageToIframe = (message: SIDE_APP_ACTION, iframedApp: APP_NAMES) => {
+export const postMessageToIframe = (message: DRAWER_ACTION, iframedApp: APP_NAMES) => {
     if (!getIsAuthorizedApp(iframedApp)) {
         return;
     }
-    const iframe = document.getElementById('side-app') as HTMLIFrameElement | null;
+    const iframe = document.getElementById('drawer-app-iframe') as HTMLIFrameElement | null;
     const targetOrigin = getAppHref('/', iframedApp, getLocalIDFromPathname(window.location.pathname));
 
     iframe?.contentWindow?.postMessage(message, targetOrigin);
@@ -82,4 +97,16 @@ export const addParentAppToUrl = (url: string, currentApp: APP_NAMES, replacePat
     }
 
     return targetUrl.href;
+};
+
+export const getDisplayContactsInDrawer = (app: APP_NAMES, drawerFeature?: Feature<DrawerFeatureFlag>) => {
+    if (app === APPS.PROTONMAIL) {
+        return drawerFeature?.Value.ContactsInMail;
+    } else if (app === APPS.PROTONCALENDAR) {
+        return drawerFeature?.Value.ContactsInCalendar;
+    } else if (app === APPS.PROTONDRIVE) {
+        return drawerFeature?.Value.ContactsInDrive;
+    }
+
+    return undefined;
 };

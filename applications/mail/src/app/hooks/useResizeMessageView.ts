@@ -1,6 +1,6 @@
 import { RefObject, useCallback, useEffect, useState } from 'react';
 
-import { useHandler, useHotkeys, useWindowSize } from '@proton/components';
+import { useDrawer, useHandler, useHotkeys, useWindowSize } from '@proton/components';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import throttle from '@proton/utils/throttle';
 
@@ -9,12 +9,15 @@ export const useResizeMessageView = (
     resizeAreaRef: RefObject<HTMLButtonElement>,
     listRef: RefObject<HTMLDivElement>
 ) => {
+    const { appInView } = useDrawer();
+
     const [isResizing, setIsResizing] = useState(false);
     const [scrollBarWidth, setScrollBarWidth] = useState(0);
     const [windowWidth] = useWindowSize();
 
     // Original ratio of the messageList
     const realDefaultRatio = 0.35;
+    const realDefaultRatioWithDrawer = 0.25;
 
     const [defaultRatio, setDefaultRatio] = useState<number>(+(getItem('messageListRatio') || realDefaultRatio));
     const [defaultWindowWidth, setDefaultWindowWidth] = useState(windowWidth);
@@ -26,7 +29,11 @@ export const useResizeMessageView = (
         (newWidth: number) => {
             const newRatio = newWidth / windowWidth;
             setDefaultRatio(newRatio);
-            setItem('messageListRatio', newRatio.toString());
+            if (appInView) {
+                setItem('messageListRatioWithDrawer', newRatio.toString());
+            } else {
+                setItem('messageListRatio', newRatio.toString());
+            }
         },
         { debounce: 2000 }
     );
@@ -80,6 +87,14 @@ export const useResizeMessageView = (
             },
         ],
     ]);
+
+    useEffect(() => {
+        if (appInView) {
+            setDefaultRatio(+(getItem('messageListRatioWithDrawer') || realDefaultRatioWithDrawer));
+        } else {
+            setDefaultRatio(+(getItem('messageListRatio') || realDefaultRatio));
+        }
+    }, [appInView]);
 
     // If the window is resized, resize the width too
     useEffect(() => {

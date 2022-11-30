@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Checkbox, Icon, Tooltip } from '../../../components';
+import { ButtonGroup, Checkbox, Icon, Tooltip } from '../../../components';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useContactList from '../hooks/useContactList';
@@ -23,13 +23,14 @@ interface Props {
     onDelete: () => void;
     onCreate: () => void;
     onMerge: () => void;
-    onClose: () => void;
-    onLock: (lock: boolean) => void;
+    onClose?: () => void;
+    onLock?: (lock: boolean) => void;
     customActions: CustomAction[];
     contactList: ReturnType<typeof useContactList>;
     onGroupEdit: (props: ContactGroupEditProps) => void;
     onUpgrade: () => void;
     onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
+    isDrawer?: boolean;
 }
 
 const ContactsWidgetToolbar = ({
@@ -49,6 +50,7 @@ const ContactsWidgetToolbar = ({
     onGroupEdit,
     onUpgrade,
     onSelectEmails,
+    isDrawer = false,
 }: Props) => {
     const selectedCount = selected.length;
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
@@ -71,10 +73,9 @@ const ContactsWidgetToolbar = ({
     return (
         <div className="flex flex-items-align-center">
             <Tooltip title={allChecked ? c('Action').t`Deselect all` : c('Action').t`Select all`}>
-                <span className="mr1 flex">
+                <span className="ml0-5 mr1 flex">
                     <Checkbox
                         id="id_contact-widget-select-all"
-                        className="ml0-5"
                         checked={allChecked}
                         onChange={handleCheck}
                         data-testid="contacts:select-all"
@@ -84,12 +85,12 @@ const ContactsWidgetToolbar = ({
                     </label>
                 </span>
             </Tooltip>
-            {onCompose ? (
-                <>
+            <ButtonGroup>
+                {onCompose && (
                     <Tooltip title={c('Action').t`Compose`}>
                         <Button
                             icon
-                            className="mr0-5 inline-flex pt0-5 pb0-5"
+                            className="inline-flex pt0-5 pb0-5"
                             onClick={onCompose}
                             disabled={noEmailInSelected}
                             title={c('Action').t`Compose`}
@@ -98,10 +99,12 @@ const ContactsWidgetToolbar = ({
                             <Icon name="envelope" alt={c('Action').t`Compose`} />
                         </Button>
                     </Tooltip>
+                )}
+                {onCompose && (
                     <Tooltip title={c('Action').t`Forward as attachment`}>
                         <Button
                             icon
-                            className="mr0-5 inline-flex pt0-5 pb0-5"
+                            className="inline-flex pt0-5 pb0-5"
                             onClick={onForward}
                             disabled={noEmailInSelected}
                             title={c('Action').t`Forward as attachment`}
@@ -110,58 +113,60 @@ const ContactsWidgetToolbar = ({
                             <Icon name="arrow-right" alt={c('Action').t`Forward as attachment`} />
                         </Button>
                     </Tooltip>
-                </>
-            ) : null}
-            {customActions.map((action) => action.render({ contactList, noSelection, onClose, selected }))}
-            <Tooltip title={c('Action').t`Merge contacts`}>
-                <Button
-                    icon
-                    className="mr0-5 inline-flex pt0-5 pb0-5"
-                    onClick={onMerge}
-                    disabled={!canMerge}
-                    title={c('Action').t`Merge contacts`}
-                    data-testid="contacts:merge-contacts"
-                >
-                    <Icon name="users-merge" alt={c('Action').t`Merge contacts`} />
-                </Button>
-            </Tooltip>
-            <ContactGroupDropdown
-                className="mr0-5 inline-flex pt0-5 pb0-5"
-                contactEmails={contactEmails}
-                disabled={contactEmails.length === 0}
-                forToolbar
-                onLock={onLock}
-                onSuccess={() => onCheckAll(false)}
-                onGroupEdit={onGroupEdit}
-                onUpgrade={onUpgrade}
-                onSelectEmails={onSelectEmails}
-            >
-                <Icon name="users" />
-            </ContactGroupDropdown>
-            <Tooltip title={deleteText}>
-                <Button
-                    icon
+                )}
+                {customActions.map((action) => action.render({ contactList, noSelection, onClose, selected }))}
+                <Tooltip title={c('Action').t`Merge contacts`}>
+                    <Button
+                        icon
+                        className="inline-flex pt0-5 pb0-5"
+                        onClick={onMerge}
+                        disabled={!canMerge}
+                        title={c('Action').t`Merge contacts`}
+                        data-testid="contacts:merge-contacts"
+                    >
+                        <Icon name="users-merge" alt={c('Action').t`Merge contacts`} />
+                    </Button>
+                </Tooltip>
+                <ContactGroupDropdown
                     className="inline-flex pt0-5 pb0-5"
-                    onClick={onDelete}
-                    disabled={noSelection}
-                    title={deleteText}
-                    data-testid="contacts:delete-contacts"
+                    contactEmails={contactEmails}
+                    disabled={contactEmails.length === 0}
+                    forToolbar
+                    onLock={onLock}
+                    onSuccess={() => onCheckAll(false)}
+                    onGroupEdit={onGroupEdit}
+                    onUpgrade={onUpgrade}
+                    onSelectEmails={onSelectEmails}
                 >
-                    <Icon name="trash" />
-                </Button>
-            </Tooltip>
-            <Tooltip title={c('Action').t`Add new contact`}>
-                <Button
-                    icon
-                    color="norm"
-                    className="mlauto inline-flex pt0-5 pb0-5"
-                    onClick={onCreate}
-                    title={c('Action').t`Add new contact`}
-                    data-testid="contacts:add-new-contact"
-                >
-                    <Icon name="user-plus" />
-                </Button>
-            </Tooltip>
+                    <Icon name="users" />
+                </ContactGroupDropdown>
+                <Tooltip title={deleteText}>
+                    <Button
+                        icon
+                        className="inline-flex pt0-5 pb0-5"
+                        onClick={onDelete}
+                        disabled={noSelection}
+                        title={deleteText}
+                        data-testid="contacts:delete-contacts"
+                    >
+                        <Icon name="trash" />
+                    </Button>
+                </Tooltip>
+                {!isDrawer && (
+                    <Tooltip title={c('Action').t`Add new contact`}>
+                        <Button
+                            icon
+                            color="norm"
+                            className="mlauto inline-flex pt0-5 pb0-5"
+                            onClick={onCreate}
+                            title={c('Action').t`Add new contact`}
+                            data-testid="contacts:add-new-contact"
+                        >
+                            <Icon name="user-plus" />
+                        </Button>
+                    </Tooltip>
+                )}
+            </ButtonGroup>
         </div>
     );
 };

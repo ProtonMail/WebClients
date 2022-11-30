@@ -17,7 +17,7 @@ import { getOwnedPersonalCalendars, getVisualCalendars, sortCalendars } from '@p
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 
 import Favicon from '../../components/Favicon';
-import { getIsSideApp } from '../../helpers/views';
+import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import ResetContainer from '../setup/ResetContainer';
@@ -32,11 +32,13 @@ const MainContainer = () => {
     const [user] = useUser();
     const { pathname } = useLocation();
 
-    const sideAppView = useInstance(() => {
+    const drawerView = useInstance(() => {
         const { view } = fromUrlParams(pathname);
-        if (!getIsSideApp(view)) {
+        if (!getIsCalendarAppInDrawer(view)) {
             return;
         }
+        document.body.classList.add('is-drawer-app');
+
         return view;
     });
 
@@ -89,7 +91,7 @@ const MainContainer = () => {
             user={user}
             addresses={memoedAddresses}
             calendars={memoedCalendars}
-            sideAppView={sideAppView}
+            drawerView={drawerView}
         />
     );
 };

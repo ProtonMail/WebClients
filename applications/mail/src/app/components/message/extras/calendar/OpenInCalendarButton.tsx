@@ -1,10 +1,17 @@
 import { Button } from '@proton/atoms';
-import { AppLink, FeatureCode, useAuthentication, useFeature, useSideApp } from '@proton/components';
+import {
+    AppLink,
+    FeatureCode,
+    useActiveBreakpoint,
+    useAuthentication,
+    useConfig,
+    useDrawer,
+    useFeature,
+} from '@proton/components';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { openCalendarEventInSideApp } from '@proton/shared/lib/sideApp/calendar';
-
-import './OpenInCalendarButton.scss';
+import { openCalendarEventInDrawer } from '@proton/shared/lib/drawer/calendar';
+import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 
 interface Props {
     linkString: string;
@@ -14,8 +21,10 @@ interface Props {
 }
 
 const OpenInCalendarButton = ({ linkString, calendarID, eventID, recurrenceID }: Props) => {
-    const { feature: calendarViewInMailFeature, loading } = useFeature(FeatureCode.CalendarViewInMail);
-    const { sideAppUrl, setSideAppUrl, showSideApp, setShowSideApp } = useSideApp();
+    const { APP_NAME: currentApp } = useConfig();
+    const { feature: drawerFeature, loading } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
+    const { setAppInView, iframeSrcMap, setIframeSrcMap, showDrawerSidebar } = useDrawer();
+    const { isNarrow } = useActiveBreakpoint();
     const authentication = useAuthentication();
     const localID = authentication.getLocalID();
 
@@ -31,12 +40,12 @@ const OpenInCalendarButton = ({ linkString, calendarID, eventID, recurrenceID }:
         return null;
     }
 
-    const handleSideAppOpening = () => {
-        openCalendarEventInSideApp({
-            sideAppUrl,
-            setSideAppUrl,
-            showSideApp,
-            setShowSideApp,
+    const handleDrawerAppOpening = () => {
+        openCalendarEventInDrawer({
+            currentApp,
+            setAppInView,
+            iframeSrcMap,
+            setIframeSrcMap,
             localID,
             calendarID,
             eventID,
@@ -44,27 +53,15 @@ const OpenInCalendarButton = ({ linkString, calendarID, eventID, recurrenceID }:
         });
     };
 
-    if (!calendarViewInMailFeature?.Value) {
+    // We use the default link to the Calendar app when the feature flag is off OR mobile view OR the user is hiding the Drawer
+    if (!drawerFeature?.Value.CalendarInMail || isNarrow || !showDrawerSidebar) {
         return appLink;
     }
 
     return (
-        // TODO: Need to have both buttons, and we display/hide them depending on the screen size in CSS
-        // TODO: It will need to be done with breakpoints when $breakpoint-large will be part of it
-        <>
-            <span className="open-calendar--small-screens" data-testid="open-calendar-small-screens">
-                {appLink}
-            </span>
-            <Button
-                className="open-calendar--large-screens text-left"
-                color="norm"
-                shape="underline"
-                onClick={handleSideAppOpening}
-                data-testid="open-calendar-large-screens"
-            >
-                {linkString}
-            </Button>
-        </>
+        <Button className="text-left" color="norm" shape="underline" onClick={handleDrawerAppOpening}>
+            {linkString}
+        </Button>
     );
 };
 

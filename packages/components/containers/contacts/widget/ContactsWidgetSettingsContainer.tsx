@@ -12,7 +12,7 @@ import ContactsWidgetSettingsContainerImport from './ContactsWidgetSettingsConta
 interface Props {
     onImport: () => void;
     onExport: () => void;
-    onClose: () => void;
+    onClose?: () => void;
 }
 
 const ContactsWidgetSettingsContainer = ({ onImport, onExport, onClose }: Props) => {
@@ -24,12 +24,12 @@ const ContactsWidgetSettingsContainer = ({ onImport, onExport, onClose }: Props)
 
     const handleImport = () => {
         onImport();
-        onClose();
+        onClose?.();
     };
 
     const handleExport = () => {
         onExport();
-        onClose();
+        onClose?.();
     };
 
     return (
@@ -39,7 +39,7 @@ const ContactsWidgetSettingsContainer = ({ onImport, onExport, onClose }: Props)
                     <CircleLoader className="mauto color-primary" size="large" />
                 </div>
             ) : (
-                <div className="pl2 pr2 pt1 pb1 scroll-if-needed h100">
+                <div className="p1 pt0 scroll-if-needed h100">
                     <div className="flex mb1 on-mobile-flex-column">
                         <Label htmlFor="saveContactToggle">
                             <span className="mr0-5 text-semibold" role="heading" aria-level={2}>{c('Label')

@@ -185,6 +185,7 @@ export enum VIEWS {
     AGENDA,
     CUSTOM,
     MAIL,
+    DRIVE,
 }
 
 export enum ACTION_VIEWS {

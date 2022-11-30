@@ -27,6 +27,7 @@ interface Props {
     index: number;
     onFocus: (index: number) => void;
     onGroupDetails: (contactGroupID: string) => void;
+    isDrawer?: boolean;
 }
 
 const ContactRow = ({
@@ -44,6 +45,7 @@ const ContactRow = ({
     index,
     onFocus,
     onGroupDetails,
+    isDrawer = false,
 }: Props) => {
     const { createNotification } = useNotifications();
     const { ID, Name, LabelIDs = [], emails = [] } = contact;
@@ -78,7 +80,8 @@ const ContactRow = ({
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
             className={classnames([
-                'item-container item-contact flex cursor-pointer bg-global-white',
+                'item-container item-contact flex cursor-pointer bg-global-white opacity-on-hover-container',
+                isDrawer && 'item-in-drawer',
                 dragged && 'item-dragging',
                 hasFocus && 'item-is-focused',
             ])}
@@ -88,9 +91,9 @@ const ContactRow = ({
             data-element-id={contact.ID}
             data-shortcut-target="contact-container"
         >
-            <div className="flex flex-nowrap w100 h100 myauto flex-align-items-center opacity-on-hover-container">
+            <div className="flex flex-nowrap w100 h100 myauto flex-align-items-start">
                 <ItemCheckbox ID={ID} name={Name} checked={checked} onChange={onCheck} />
-                <div className="flex-item-fluid pl1 flex flex-column flex-justify-space-between conversation-titlesender">
+                <div className="flex-item-fluid ml0-6 conversation-titlesender">
                     <div className="flex flex-nowrap flex-align-items-center item-firstline max-w100">
                         <div className={classnames(['flex flex-item-fluid w0', !!LabelIDs.length && 'pr1'])}>
                             <span
@@ -110,22 +113,26 @@ const ContactRow = ({
                             <span className="placeholder">{c('Info').t`No email address`}</span>
                         )}
                     </div>
+                    {hasPaidMail && contactGroups && (
+                        <ContactGroupLabels
+                            contactGroups={contactGroups}
+                            className="mt0-2"
+                            onDetails={onGroupDetails}
+                            leftToRight
+                            maxNumber={4}
+                        />
+                    )}
                 </div>
-                {hasPaidMail && contactGroups && (
-                    <ContactGroupLabels
-                        contactGroups={contactGroups}
-                        className="mr0-5 flex-justify-end"
-                        onDetails={onGroupDetails}
-                    />
-                )}
                 {emails[0] && (
-                    <Copy
-                        value={emails[0]}
-                        className="opacity-on-hover"
-                        onCopy={handleCopyEmail}
-                        tooltipText={c('Action').t`Copy email to clipboard`}
-                        size="small"
-                    />
+                    <div className="item-hover-action-buttons">
+                        <Copy
+                            value={emails[0]}
+                            className={classnames([isDrawer && 'mr0-25'])}
+                            onCopy={handleCopyEmail}
+                            tooltipText={c('Action').t`Copy email to clipboard`}
+                            size="small"
+                        />
+                    </div>
                 )}
             </div>
         </div>
