@@ -20,14 +20,14 @@ const Layout = (props: OfferLayoutProps) => {
                 <>
                     <OfferHeader {...props}>
                         <h1 className="h2 text-center text-bold">{c('specialoffer: Title')
-                            .t`Save more with 1 year of ${planName}`}</h1>
+                            .t`Save more with 2 years of ${planName}`}</h1>
                     </OfferHeader>
 
                     <Deals {...props} />
 
                     <OfferFooter {...props}>
                         <p className="text-sm text-center mb1 color-weak">{c('specialoffer: Footer')
-                            .t`This subscription will automatically renew every year at the same rate until it is cancelled.`}</p>
+                            .t`This subscription will automatically renew every 2 years at the same rate until it is cancelled.`}</p>
                     </OfferFooter>
                 </>
             ) : (

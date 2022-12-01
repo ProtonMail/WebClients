@@ -20,7 +20,7 @@ const Layout = (props: OfferLayoutProps) => {
                 <>
                     <OfferHeader {...props}>
                         <h1 className="h2 text-center text-bold">{c('specialoffer: Title')
-                            .t`Upgrade and save more with ${planName}`}</h1>
+                            .t`Upgrade and save more with 2 years of ${planName}`}</h1>
                     </OfferHeader>
 
                     <Deals {...props} />
