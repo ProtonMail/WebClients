@@ -12,7 +12,7 @@ import {
     LayoutButton,
     PreviewButton,
     RenameButton,
-    ShareFileButton,
+    ShareButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
 import { getSelectedItems } from '../helpers';
@@ -46,6 +46,8 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
         [items, selectionControls!.selectedItemIds]
     );
 
+    const shouldShowShareButton = !isLinkReadOnly || items.length > 0;
+
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             if (!showOptionsForNoSelection) {
@@ -67,7 +69,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                             <Vr />
                         </>
                     ) : null}
-                    <ShareFileButton shareId={shareId} />
+                    {shouldShowShareButton && <ShareButton shareId={shareId} />}
                 </>
             );
         }

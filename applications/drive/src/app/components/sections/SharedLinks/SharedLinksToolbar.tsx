@@ -11,7 +11,7 @@ import {
     LayoutButton,
     PreviewButton,
     RenameButton,
-    ShareFileButton,
+    ShareButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
 import { getSelectedItems } from '../helpers';
@@ -34,7 +34,7 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
         if (!selectedItems.length) {
             return (
                 <>
-                    <ShareFileButton shareId={shareId} />
+                    <ShareButton shareId={shareId} />
                 </>
             );
         }
