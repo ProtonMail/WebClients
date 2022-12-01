@@ -31,6 +31,7 @@ export interface TrashItem extends FileBrowserBaseItem {
     size: number;
     trashed: number | null;
     parentLinkId: string;
+    rootShareId: string;
 }
 interface Props {
     shareId: string;
@@ -69,7 +70,7 @@ const headeItemsMobile: ListViewHeaderItem[] = [
 type TrashSortFields = Extract<SortField, SortField.name | SortField.size | SortField.trashed>;
 const SORT_FIELDS: TrashSortFields[] = [SortField.name, SortField.trashed, SortField.size];
 
-function Trash({ shareId, trashView }: Props) {
+function Trash({ trashView }: Props) {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
     const { navigateToLink } = useNavigate();
@@ -98,14 +99,14 @@ function Trash({ shareId, trashView }: Props) {
             if (!item.isFile) {
                 return;
             }
-            navigateToLink(shareId, id, item.isFile);
+            navigateToLink(id, item.rootShareId, item.isFile);
         },
-        [navigateToLink, shareId, browserItems]
+        [navigateToLink, browserItems]
     );
 
     const handleItemRender = useCallback((item: TrashItem) => {
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(shareId, item.id, item.activeRevision.id);
+            thumbnails.addToDownloadQueue(item.rootShareId, item.id, item.activeRevision.id);
         }
     }, []);
 
@@ -141,7 +142,6 @@ function Trash({ shareId, trashView }: Props) {
     return (
         <>
             <TrashItemContextMenu
-                shareId={shareId}
                 selectedLinks={selectedItems}
                 anchorRef={contextMenuAnchorRef}
                 close={browserItemContextMenu.close}

@@ -12,7 +12,7 @@ interface Props {
 const EmptyTrashSidebarButton = ({ mobileVersion = false }: Props) => {
     const { activeShareId } = useActiveShare();
     const { emptyTrash } = useActions();
-    const disabled = !useIsEmptyTrashButtonAvailable(activeShareId);
+    const disabled = !useIsEmptyTrashButtonAvailable();
 
     const handleEmptyTrashClick = () => {
         void emptyTrash(new AbortController().signal, activeShareId);

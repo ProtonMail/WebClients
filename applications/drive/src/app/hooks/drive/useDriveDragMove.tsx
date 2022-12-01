@@ -69,7 +69,6 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
 
         const isActiveDropTarget = activeDropTarget?.id === item.id;
         const availableTarget = !item.isFile && allDragging.every(({ id }) => item.id !== id);
-        // console.log({item});
         const handleDrop = getHandleItemDrop(item.id);
 
         const handleDragOver = (e: React.DragEvent<HTMLTableRowElement>) => {

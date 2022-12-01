@@ -2,22 +2,16 @@ import { createContext, useCallback, useContext, useRef } from 'react';
 
 import { queryFolderChildren } from '@proton/shared/lib/api/drive/folder';
 import { queryLinkMetaBatch } from '@proton/shared/lib/api/drive/link';
-import { queryTrashList } from '@proton/shared/lib/api/drive/share';
 import { querySharedLinks } from '@proton/shared/lib/api/drive/sharing';
 import { BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
-import {
-    FolderLinkMeta,
-    LinkChildrenResult,
-    LinkMeta,
-    LinkMetaBatchPayload,
-} from '@proton/shared/lib/interfaces/drive/link';
+import { LinkChildrenResult, LinkMeta, LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
 import chunk from '@proton/utils/chunk';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { linkMetaToEncryptedLink, useDebouncedRequest } from '../../_api';
 import { waitFor } from '../../_utils';
-import { DecryptedLink } from './../interface';
+import { DecryptedLink, EncryptedLink } from './../interface';
 import useLinksState from './../useLinksState';
 import {
     FetchMeta,
@@ -27,6 +21,7 @@ import {
     sortParamsToServerSortArgs,
     useLinksListingHelpers,
 } from './useLinksListingHelpers';
+import { useTrashedLinksListing } from './useTrashedLinksListing';
 
 type FetchState = {
     [shareId: string]: FetchShareState;
@@ -51,7 +46,7 @@ type FetchShareState = {
 };
 
 /**
- * useLinksListingProvider provides way to list links, such as folder links or
+ * Provides way to list links, such as folder links or
  * trashed links or shared links, and ensure the links are decrypted.
  * The typical usage should be as follow:
  *
@@ -76,9 +71,15 @@ type FetchShareState = {
 export function useLinksListingProvider() {
     const debouncedRequest = useDebouncedRequest();
     const linksState = useLinksState();
+    const trashedLinksListing = useTrashedLinksListing();
 
-    const { cacheLoadedLinks, fetchNextPageWithSortingHelper, fetchNextPageHelper, loadHelper, getCachedLinksHelper } =
-        useLinksListingHelpers();
+    const {
+        cacheLoadedLinks,
+        fetchNextPageWithSortingHelper,
+        fetchNextPageHelper,
+        loadFullListing,
+        getDecryptedLinksAndDecryptRest,
+    } = useLinksListingHelpers();
     const state = useRef<FetchState>({});
 
     /**
@@ -95,6 +96,7 @@ export function useLinksListingProvider() {
             sharedByLink: {},
             links: {},
         };
+
         return state.current[shareId];
     };
 
@@ -123,10 +125,9 @@ export function useLinksListingProvider() {
     };
 
     /**
-     * fetchChildrenNextPage fetches next page for the given folder.
-     * If request for `foldersOnly` is made and there is already ongoing
-     * request for all files for the same folder, it waits till its finished
-     * to not ask for the same links twice.
+     * Fetches next page for the given folder. If request for `foldersOnly`
+     * is made and there is already ongoing request for all files for the same folder,
+     * it waits till its finished to not ask for the same links twice.
      */
     const fetchChildrenNextPage = async (
         abortSignal: AbortSignal,
@@ -177,37 +178,65 @@ export function useLinksListingProvider() {
         );
     };
 
-    const fetchTrashedLinksPage = async (
+    const fetchLinksMeta = async (
         abortSignal: AbortSignal,
         shareId: string,
-        page: number
+        linkIds: string[]
     ): Promise<FetchResponse> => {
-        const { Links, Parents } = await debouncedRequest<{
-            Links: LinkMeta[];
-            Parents: { [id: string]: FolderLinkMeta };
-        }>(
-            queryTrashList(shareId, {
-                PageSize: PAGE_SIZE,
-                Page: page,
-            }),
+        const { Links, Parents } = await debouncedRequest<LinkMetaBatchPayload>(
+            queryLinkMetaBatch(shareId, linkIds),
             abortSignal
         );
+
         return {
             links: Links.map((link) => linkMetaToEncryptedLink(link, shareId)),
-            parents: Object.values(Parents).map((link) => linkMetaToEncryptedLink(link, shareId)),
+            parents: Parents ? Object.values(Parents).map((link) => linkMetaToEncryptedLink(link, shareId)) : [],
         };
     };
 
-    const fetchTrashedLinksNextPage = async (abortSignal: AbortSignal, shareId: string): Promise<boolean> => {
+    const loadLinksMeta = async (
+        abortSignal: AbortSignal,
+        query: string,
+        shareId: string,
+        linkIds: string[],
+        cache: boolean = true
+    ): Promise<{
+        links: EncryptedLink[];
+        parents: EncryptedLink[];
+    }> => {
         const shareState = getShareFetchState(shareId);
-        let fetchMeta = shareState.trash;
+        let fetchMeta = shareState.links[query];
         if (!fetchMeta) {
             fetchMeta = {};
-            state.current[shareId].trash = fetchMeta;
+            state.current[shareId].links[query] = fetchMeta;
         }
-        return fetchNextPageHelper(abortSignal, shareId, fetchMeta, (page: number) =>
-            fetchTrashedLinksPage(abortSignal, shareId, page)
-        );
+        await waitFor(() => !fetchMeta.isInProgress, { abortSignal });
+        fetchMeta.isInProgress = true;
+
+        const linksAcc: EncryptedLink[] = [];
+        const parentsAcc: EncryptedLink[] = [];
+        const load = async () => {
+            const missingLinkIds = linkIds.filter((linkId) => !linksState.getLink(shareId, linkId));
+            for (const pageLinkIds of chunk(missingLinkIds, BATCH_REQUEST_SIZE)) {
+                const { links, parents } = await fetchLinksMeta(abortSignal, shareId, pageLinkIds);
+                if (cache) {
+                    await cacheLoadedLinks(abortSignal, shareId, links, parents);
+                }
+                linksAcc.push(...links);
+                parentsAcc.push(...parents);
+                if (abortSignal.aborted) {
+                    break;
+                }
+            }
+        };
+        await load().finally(() => {
+            fetchMeta.isInProgress = false;
+        });
+
+        return {
+            links: linksAcc,
+            parents: parentsAcc,
+        };
     };
 
     const fetchLinksSharedByLinkPage = async (
@@ -258,23 +287,6 @@ export function useLinksListingProvider() {
         );
     };
 
-    const fetchLinks = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]): Promise<FetchResponse> => {
-        const { Links, Parents } = await debouncedRequest<LinkMetaBatchPayload>(
-            queryLinkMetaBatch(shareId, linkIds),
-            abortSignal
-        );
-
-        return {
-            links: Links.map((link) => linkMetaToEncryptedLink(link, shareId)),
-            parents: Parents ? Object.values(Parents).map((link) => linkMetaToEncryptedLink(link, shareId)) : [],
-        };
-    };
-
-    const fetchLinksPage = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]) => {
-        const { links, parents } = await fetchLinks(abortSignal, shareId, linkIds);
-        await cacheLoadedLinks(abortSignal, shareId, links, parents);
-    };
-
     const loadChildren = async (
         abortSignal: AbortSignal,
         shareId: string,
@@ -284,46 +296,13 @@ export function useLinksListingProvider() {
     ): Promise<void> => {
         // undefined means keep the sorting used the last time = lets reuse what we loaded so far.
         const sorting = undefined;
-        return loadHelper(() =>
+        return loadFullListing(() =>
             fetchChildrenNextPage(abortSignal, shareId, linkId, sorting, foldersOnly, showNotification)
         );
     };
 
-    const loadTrashedLinks = async (abortSignal: AbortSignal, shareId: string): Promise<void> => {
-        return loadHelper(() => fetchTrashedLinksNextPage(abortSignal, shareId));
-    };
-
     const loadLinksSharedByLink = async (abortSignal: AbortSignal, shareId: string): Promise<void> => {
-        return loadHelper(() => fetchLinksSharedByLinkNextPage(abortSignal, shareId));
-    };
-
-    const loadLinks = async (
-        abortSignal: AbortSignal,
-        fetchKey: string,
-        shareId: string,
-        linkIds: string[]
-    ): Promise<void> => {
-        const shareState = getShareFetchState(shareId);
-        let fetchMeta = shareState.links[fetchKey];
-        if (!fetchMeta) {
-            fetchMeta = {};
-            state.current[shareId].links[fetchKey] = fetchMeta;
-        }
-        await waitFor(() => !fetchMeta.isInProgress, { abortSignal });
-        fetchMeta.isInProgress = true;
-
-        const load = async () => {
-            const missingLinkIds = linkIds.filter((linkId) => !linksState.getLink(shareId, linkId));
-            for (const pageLinkIds of chunk(missingLinkIds, BATCH_REQUEST_SIZE)) {
-                await fetchLinksPage(abortSignal, shareId, pageLinkIds);
-                if (abortSignal.aborted) {
-                    break;
-                }
-            }
-        };
-        await load().finally(() => {
-            fetchMeta.isInProgress = false;
-        });
+        return loadFullListing(() => fetchLinksSharedByLinkNextPage(abortSignal, shareId));
     };
 
     const getCachedChildren = useCallback(
@@ -333,7 +312,7 @@ export function useLinksListingProvider() {
             parentLinkId: string,
             foldersOnly: boolean = false
         ): { links: DecryptedLink[]; isDecrypting: boolean } => {
-            return getCachedLinksHelper(
+            return getDecryptedLinksAndDecryptRest(
                 abortSignal,
                 shareId,
                 linksState.getChildren(shareId, parentLinkId, foldersOnly),
@@ -351,21 +330,9 @@ export function useLinksListingProvider() {
         [linksState.getChildren]
     );
 
-    const getCachedTrashed = useCallback(
-        (abortSignal: AbortSignal, shareId: string): { links: DecryptedLink[]; isDecrypting: boolean } => {
-            return getCachedLinksHelper(
-                abortSignal,
-                shareId,
-                linksState.getTrashed(shareId),
-                getShareFetchState(shareId).trash
-            );
-        },
-        [linksState.getTrashed]
-    );
-
     const getCachedSharedByLink = useCallback(
         (abortSignal: AbortSignal, shareId: string): { links: DecryptedLink[]; isDecrypting: boolean } => {
-            return getCachedLinksHelper(
+            return getDecryptedLinksAndDecryptRest(
                 abortSignal,
                 shareId,
                 linksState.getSharedByLink(shareId),
@@ -383,7 +350,12 @@ export function useLinksListingProvider() {
             linkIds: string[]
         ): { links: DecryptedLink[]; isDecrypting: boolean } => {
             const links = linkIds.map((linkId) => linksState.getLink(shareId, linkId)).filter(isTruthy);
-            return getCachedLinksHelper(abortSignal, shareId, links, getShareFetchState(shareId).links[fetchKey]);
+            return getDecryptedLinksAndDecryptRest(
+                abortSignal,
+                shareId,
+                links,
+                getShareFetchState(shareId).links[fetchKey]
+            );
         },
         [linksState.getLink]
     );
@@ -391,12 +363,14 @@ export function useLinksListingProvider() {
     return {
         fetchChildrenNextPage,
         loadChildren,
-        loadTrashedLinks,
+        loadTrashedLinks: (signal: AbortSignal, volumeId: string) => {
+            return trashedLinksListing.loadTrashedLinks(signal, volumeId, loadLinksMeta);
+        },
         loadLinksSharedByLink,
-        loadLinks,
+        loadLinksMeta,
         getCachedChildren,
         getCachedChildrenCount,
-        getCachedTrashed,
+        getCachedTrashed: trashedLinksListing.getCachedTrashed,
         getCachedSharedByLink,
         getCachedLinks,
     };

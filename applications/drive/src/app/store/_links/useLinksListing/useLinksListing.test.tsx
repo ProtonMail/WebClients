@@ -2,6 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
+import { VolumesStateProvider } from '../../_volumes/useVolumesState';
 import { EncryptedLink } from '../interface';
 import { LinksStateProvider } from '../useLinksState';
 import { useLinksListingProvider } from './useLinksListing';
@@ -75,7 +76,9 @@ describe('useLinksListing', () => {
         );
 
         const wrapper = ({ children }: { children: React.ReactNode }) => (
-            <LinksStateProvider>{children}</LinksStateProvider>
+            <VolumesStateProvider>
+                <LinksStateProvider>{children}</LinksStateProvider>
+            </VolumesStateProvider>
         );
 
         const { result } = renderHook(() => useLinksListingProvider(), { wrapper });
