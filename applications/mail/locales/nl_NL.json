@@ -155,6 +155,9 @@
       "Clear query": [
         "Zoekopdracht wissen"
       ],
+      "Clear search": [
+        "Zoekveld legen maken"
+      ],
       "Click here.": [
         "Klik hier."
       ],
@@ -4791,6 +4794,9 @@
         "Uur",
         "Uren"
       ],
+      "How Hide My Email works": [
+        "Zo werkt Hide My Email"
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Ik verzend dit bericht naar een niet-${ MAIL_APP_NAME }-gebruiker."
       ],
@@ -5447,6 +5453,9 @@
       "Using SimpleLogin is easy": [
         "Het gebruik van SimpleLogin is eenvoudig"
       ],
+      "Verified ${ BRAND_NAME } message": [
+        "Geverifieerd ${ BRAND_NAME }-bericht"
+      ],
       "Version ${ appVersion }": [
         "Versie ${ appVersion }"
       ],
@@ -5595,6 +5604,9 @@
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Uw ${ BRAND_NAME }-account bevat SimpleLogin. Installeer de browserextensie met één klik om te beginnen."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
@@ -6954,8 +6966,8 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
-      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
-        "Gebruik het app-menu linksboven om toegang te krijgen tot andere ${ BRAND_NAME }-diensten, waaronder VPN, Calendar en Drive."
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "Gebruik de app kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }."
       ],
       "You can change this anytime in your settings.": [
         "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
@@ -7642,7 +7654,7 @@
         "Zoeken naar berichtinhoud"
       ],
       "Schedule send": [
-        "Plan versturen in"
+        "Ingepland versturen"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probeer ${ DRIVE_APP_NAME }"
