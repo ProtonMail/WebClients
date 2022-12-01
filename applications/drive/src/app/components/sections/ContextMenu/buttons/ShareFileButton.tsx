@@ -8,7 +8,7 @@ interface Props {
     close: () => void;
 }
 
-const ShareFileButton = ({ shareId, close }: Props) => {
+const ShareButton = ({ shareId, close }: Props) => {
     const { openFileSharing } = useOpenModal();
 
     return (
@@ -22,4 +22,4 @@ const ShareFileButton = ({ shareId, close }: Props) => {
     );
 };
 
-export default ShareFileButton;
+export default ShareButton;
