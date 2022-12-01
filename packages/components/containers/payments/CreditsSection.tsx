@@ -25,7 +25,7 @@ const CreditsSection = () => {
                 <Button shape="outline" onClick={handleAddCreditsClick}>{c('Action').t`Add credits`}</Button>
             </div>
             <div className="pl1 pr1 mb1 flex flex-justify-space-between">
-                <span className="text-bold">{c('Credits').t`Unused credits`}</span>
+                <span className="text-bold">{c('Credits').t`Available credits`}</span>
                 <span className="text-bold">{Credit / 100}</span>
             </div>
             <hr />
