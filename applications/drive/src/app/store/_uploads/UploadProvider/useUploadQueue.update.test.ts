@@ -115,6 +115,7 @@ describe("useUploadQueue's update functions", () => {
             hook.current.updateWithData(firstFileId, TransferState.Progress, {
                 name: 'file1 (1).txt',
                 mimeType: 'txt2',
+                originalIsDraft: true,
             });
         });
         expect(hook.current.fileUploads[0]).toMatchObject({
@@ -124,6 +125,7 @@ describe("useUploadQueue's update functions", () => {
                 mimeType: 'txt2',
                 size: 42,
             },
+            originalIsDraft: true,
         });
     });
 
@@ -131,12 +133,14 @@ describe("useUploadQueue's update functions", () => {
         act(() => {
             hook.current.updateWithData(firstFolderId, TransferState.Progress, {
                 folderId: 'folderId',
+                originalIsDraft: true,
             });
         });
 
         expect(hook.current.folderUploads[0]).toMatchObject({
             state: TransferState.Progress,
             linkId: 'folderId',
+            originalIsDraft: true,
         });
         expect(
             hook.current.fileUploads.map(({ parentId, state, meta }) => [meta.filename, state, parentId])

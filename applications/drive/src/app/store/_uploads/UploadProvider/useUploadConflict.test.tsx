@@ -81,6 +81,21 @@ describe('useUploadConflict', () => {
         });
     });
 
+    it('updates with info about original item', async () => {
+        const hook = renderConflict();
+        await act(async () => {
+            const conflictHandler = hook.current.getFileConflictHandler('file1');
+            const originalIsDraft = true;
+            const originalIsFolder = false;
+            const promise = conflictHandler(abortController.signal, originalIsDraft, originalIsFolder);
+            expect(mockUpdateWithData.mock.calls).toMatchObject([
+                ['file1', 'conflict', { originalIsDraft, originalIsFolder }],
+            ]);
+            abortController.abort();
+            await expect(promise).rejects.toThrowError('Upload was canceled');
+        });
+    });
+
     it('waits and resolves in conflict strategy for one', async () => {
         mockCreateModal.mockImplementation(({ props }) => {
             props.apply(TransferConflictStrategy.Rename, false);
