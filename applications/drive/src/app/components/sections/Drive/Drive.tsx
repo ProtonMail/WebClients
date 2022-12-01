@@ -22,6 +22,7 @@ import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';
 import { getSelectedItems } from '../helpers';
 import { DriveItemContextMenu } from './DriveContextMenu';
+import EmptyDeviceRoot from './EmptyDeviceRoot';
 import EmptyFolder from './EmptyFolder';
 import { FolderContextMenu } from './FolderContextMenu';
 
@@ -152,6 +153,10 @@ function Drive({ activeFolder, folderView }: Props) {
     }, [shareId, linkId]);
 
     if (!items.length && !isLoading) {
+        if (folderView.isActiveLinkReadOnly) {
+            return <EmptyDeviceRoot />;
+        }
+
         return <EmptyFolder shareId={shareId} />;
     }
 
@@ -199,7 +204,7 @@ function Drive({ activeFolder, folderView }: Props) {
                 onSort={setSorting}
                 onScroll={handleScroll}
                 onViewContextMenu={browserContextMenu.handleContextMenu}
-                getDragMoveControls={getDragMoveControls}
+                getDragMoveControls={folderView.isActiveLinkReadOnly ? undefined : getDragMoveControls}
             />
         </>
     );

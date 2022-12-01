@@ -35,7 +35,10 @@ function DriveView() {
 
     return (
         <FileBrowserStateProvider itemIds={folderView.items.map(({ linkId }) => linkId)}>
-            <UploadDragDrop className="flex flex-column flex-nowrap flex-item-fluid">
+            <UploadDragDrop
+                className="flex flex-column flex-nowrap flex-item-fluid"
+                disabled={folderView.isActiveLinkReadOnly}
+            >
                 {activeFolder ? (
                     <DriveToolbar
                         isLinkReadOnly={folderView.isActiveLinkReadOnly}
