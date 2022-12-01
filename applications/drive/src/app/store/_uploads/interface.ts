@@ -7,6 +7,7 @@ export type UploadConflictModal = React.FunctionComponent<UploadConflictModalPro
 export interface UploadConflictModalProps {
     name: string;
     isFolder?: boolean;
+    originalIsDraft?: boolean;
     originalIsFolder?: boolean;
     apply: (strategy: TransferConflictStrategy, all: boolean) => void;
     cancelAll: () => void;
