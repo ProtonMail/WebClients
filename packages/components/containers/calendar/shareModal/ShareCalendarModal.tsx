@@ -339,7 +339,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                 }}
                 icon={
                     invalidEmailMessage && (
-                        <div className="flex flex-align-items-center ml0-5">
+                        <div className="flex flex-align-items-center flex-item-noshrink ml0-5">
                             <Icon name="exclamation-circle" />
                         </div>
                     )
