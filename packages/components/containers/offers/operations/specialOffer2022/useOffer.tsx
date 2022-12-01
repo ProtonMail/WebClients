@@ -1,6 +1,6 @@
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { getPlan, hasBlackFridayDiscount } from '@proton/shared/lib/helpers/subscription';
+import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { isExternal } from '@proton/shared/lib/helpers/subscription';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
@@ -15,12 +15,10 @@ const useOffer = (): Operation => {
     const { APP_NAME } = useConfig();
     const isMailOrAccountSettings = APP_NAME === APPS.PROTONMAIL || APP_NAME === APPS.PROTONACCOUNT;
     const isLoading = flagsLoading || userLoading || loading;
-    const noBF = !hasBlackFridayDiscount(subscription);
 
     const isValid =
         plan?.Name === PLANS.BUNDLE &&
         subscription?.Cycle === 1 &&
-        noBF &&
         user.canPay &&
         isMailOrAccountSettings &&
         !user.isDelinquent &&
