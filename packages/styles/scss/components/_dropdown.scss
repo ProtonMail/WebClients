@@ -1,3 +1,10 @@
+/*
+The border is set on the parent, but the max height is set on a child container.
+This breaks the available size computation because the parent element will be +2 pixels larger than the available max height.
+This causes an infinite loop in the floating ui library. To prevent that, border size is subtracted in a calc in the max height set in .dropdown-content.
+ */
+$border-size: 1;
+
 .dropdown {
 	--min-width: 10em;
 	--max-width: min(20em, 100vw);
@@ -20,7 +27,7 @@
 	transform: scale(1);
 	border-radius: var(--border-radius-md);
 	box-shadow: var(--shadow-lifted);
-	border: 1px solid var(--border-norm);
+	border: #{$border-size}px solid var(--border-norm);
 	background-color: var(--background-norm);
 	color: var(--text-norm);
 	animation: 0.15s easing(ease-out-cubic) both anime-dropdown-in-mouse;
@@ -133,8 +140,8 @@
 		block-size: var(--height);
 		min-inline-size: min(var(--min-width, 1.5em), 100vw);
 		min-block-size: min(var(--min-height, 1em), 100vh);
-		max-inline-size: var(--max-width, unset);
-		max-block-size: var(--max-height, unset);
+		max-inline-size: calc(min(var(--available-width, var(--max-width)), var(--max-width)) - #{$border-size * 2}px);
+		max-block-size: calc(min(var(--available-height, var(--max-height)), var(--max-height)) - #{$border-size * 2}px);
 		overflow: auto;
 		border-radius: var(--border-radius-md);
 		background-color: var(--background-norm);
