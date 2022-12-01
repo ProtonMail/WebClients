@@ -25,31 +25,42 @@ interface TreeOptions {
 
 export function useTreeForModals(shareId: string, options?: Omit<TreeOptions, 'rootLinkId'>) {
     const shareType = useShareType(shareId);
-
     const getRootItems = (tree: ReturnType<typeof useTree>): TreeItem[] => {
         if (shareType === ShareType.device) {
             return tree.rootFolder?.children ? tree.rootFolder?.children : [];
+        }
+
+        const isLoaded = tree.rootFolder?.isLoaded;
+
+        if (isLoaded && tree.rootFolder?.children.length === 0) {
+            // Avoid displaying root folder for empty My Files section not
+            // to have only one non-interactable tree element in the UI
+            return [];
         }
 
         return tree.rootFolder ? [tree.rootFolder] : [];
     };
 
     const tree = useTree(shareId, { ...options });
+    const isLoaded = tree.rootFolder?.isLoaded || false;
 
-    const linkStructure = {
+    let items = getRootItems(tree);
+
+    return {
         ...tree,
-        rootItems: getRootItems(tree),
-        rootLinkId: tree.rootFolder?.link.linkId,
-        isLoaded: tree.rootFolder?.isLoaded || false,
+        rootItems: items,
+        isLoaded,
     };
-
-    return linkStructure;
 }
 
 /**
  * useFolderTree provides data for folder tree view of the provided share.
- * @deprecated re-use useTreeForModals – it skips the root link and provides multiple
- * entries to the file structure
+ *
+ * @deprecated – if possible, reuse logic from useTreeForModals, if there's a need to
+ * exlude root link from the output. The reason this function exists is that Sidebar
+ * component has it's own implementation of formatting the tree. This function and
+ * `useTreeForModals` is an object of possible refactor – the goal of it is to create
+ * a unified mechanism to get tree data ready for presentation.
  */
 export function useFolderTree(shareId: string, options?: TreeOptions) {
     return useTree(shareId, { ...options, foldersOnly: true });
