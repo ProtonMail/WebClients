@@ -268,6 +268,12 @@
       "Delete draft": [
         "Slet kladde"
       ],
+      "Delete folder": [
+        "Slet mappe"
+      ],
+      "Delete label": [
+        "Slet etiket"
+      ],
       "Delete permanently": [
         "Slet permanent"
       ],
@@ -312,6 +318,9 @@
       ],
       "Edit encryption": [
         "Rediger kryptering"
+      ],
+      "Edit folder": [
+        "Redigér mappe"
       ],
       "Edit label": [
         "Redigér etikette"
@@ -803,6 +812,9 @@
       "Save": [
         "Gem"
       ],
+      "Saving${ ellipsis }": [
+        "Gemmer${ ellipsis }"
+      ],
       "Schedule message": [
         "Planlæg besked"
       ],
@@ -1173,6 +1185,11 @@
         "${ numberOfCompletedItems }/${ totalNumberOfItems } færdige"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } applikationer"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Tom ICS-fil"
@@ -1502,6 +1519,9 @@
       "Event rescheduling is not supported for the moment": [
         "Flytning af begivenheder understøttes ikke i øjeblikket"
       ],
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "Dette svar kan ikke tilføjes til ${ CALENDAR_APP_NAME } , da vi i øjeblikket kun understøtter svar på alle begivenheder i en serie"
+      ],
       "This event has been canceled.": [
         "Denne begivenhed er blevet annulleret."
       ],
@@ -1588,6 +1608,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Der er gået mere end 12 timer siden sidste opdatering - ${ CALENDAR_APP_NAME } vil forsøge at opdatere kalenderen om et par timer."
       ]
     },
     "Calendar widget banner": {
@@ -3060,6 +3083,10 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Det maksimale antal vedhæftninger (${ attachmentsCountLimit }) overskredet"
       ],
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Flet mindst ${ calendarToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
+        "Flet mindst ${ calendarToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
+      ],
       "Message needs to be sent first": [
         "Beskeden skal sendes først"
       ],
@@ -3189,6 +3216,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
+      ],
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "Beklager, ${ BRAND_NAME } kan ikke dekryptere din besked. Kontroller at alle dine nøgler er aktive."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Vedhæftningen kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filen med et program som for eksempel GnuPG.",
@@ -3499,6 +3529,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Noget gik galt. Genopfrisk siden eller prøv igen senere."
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Der opstod et problem med at oprette forbindelse til ${ BRAND_NAME }."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Du har ikke nogen kontakt endnu. Start med at oprette en ny kontakt"
       ],
@@ -3744,6 +3777,17 @@
         "${ BRAND_NAME }. Privatliv som standard."
       ]
     },
+    "forwardmessage": {
+      "From: ${ senderString }": [
+        "Fra: ${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "Emne: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "Til: ${ toString }"
+      ]
+    },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
         "Vi har øget den samlede lagerplads for din konto til ${ rewardInGb } GB. Få ekstra lagerplads, og lås op for premium-funktioner i dag."
@@ -3770,6 +3814,9 @@
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
         "Tilgængelig på iOS og Android."
+      ],
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "Hent mobilappen til ${ MAIL_APP_NAME }"
       ],
       "Import contacts or emails": [
         "Importer kontakter eller e-mails"
@@ -3981,6 +4028,21 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din konto. Sørg for at:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din eksterne konto. Sørg for, at mailserverens adresse og portnummer er korrekt."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din eksterne konto. Sørg for at:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din Yahoo-konto. Sørg for, at mailserverens adresse og portnummer er korrekt."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din Yahoo-konto. Sørg for at:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Totrinsbekræftelse er aktiveret på din eksterne konto."
       ],
@@ -4041,8 +4103,14 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Klik på ${ boldManage } for at udvide menu med valgmuligheder."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til ${ BRAND_NAME }."
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Opret et ${ boldAppPassword } og brug det i stedet for din almindelige adgangskode, når ${ BRAND_NAME } anmoder om det."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Gå til ${ boldAccountInfo } under din profil i ${ yahooMailLink }."
@@ -4067,6 +4135,21 @@
       ],
       "Select ${ boldExportCSV }.": [
         "Vælg ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "For at importere en kalender til ${ BRAND_NAME } skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "For at importere en kalender til ${ BRAND_NAME } skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "For at importere en kalender til ${ BRAND_NAME }, skal du bruge ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "For at importere e-mails til ${ BRAND_NAME }, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "For at importere e-mails til ${ BRAND_NAME }, skal du bruge et ${ appPasswordLink } fra Yahoo. Få det ved at følge disse trin:"
       ]
     },
     "Import instructions emphasis": {
@@ -4175,6 +4258,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
+        "${ BRAND_NAME } tjener ikke penge ved at misbruge privatlivets fred."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -4575,6 +4661,13 @@
       "Email tracker protection is disabled": [
         "Beskyttelse mod sporing af e-mail er deaktiveret"
       ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
+        "Sporing af e-mails kan krænke dit privatliv. ${ BRAND_NAME } fandt ingen sporing af denne besked."
+      ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
+        "Sporing af e-mails kan krænke dit privatliv. ${ BRAND_NAME } fandt og blokerede ${ numberOfTrackers } tracker.",
+        "Sporing af e-mails kan krænke dit privatliv. ${ BRAND_NAME } fandt og blokerede ${ numberOfTrackers } trackere."
+      ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Sporing af e-mails kan krænke dit privatliv. Slå beskyttelse mod sporing til for at forhindre afsendere i at vide, om og hvornår du har åbnet en besked."
       ],
@@ -4679,6 +4772,9 @@
       "How Hide My Email works": [
         "Sådan fungerer Skjul min e-mail"
       ],
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "Jeg sender denne besked til en, som ikke bruger ${ MAIL_APP_NAME }."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
       ],
@@ -4781,6 +4877,9 @@
       ],
       "Loading preview": [
         "Indlæser forhåndsvisning"
+      ],
+      "Loading...": [
+        "Indlæser..."
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -5062,6 +5161,9 @@
       "Sign in": [
         "Log ind"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin er en ${ BRAND_NAME }-tjeneste, og din ${ BRAND_NAME }-konto omfatter Skjul min e-mail-aliasser. Hvis du vil begynde at sløre din e-mailadresse, skal du gå til SimpleLogin og oprette dit første alias."
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin tilbyder en let måde at oprette konti hos upålidelige tredjepartssider hvor du ikke ønsker at vise din rigtige e-mailadresse."
       ],
@@ -5320,6 +5422,9 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
+        "Brug ${ CALENDAR_APP_NAME } for at holde dine planer private."
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Brug tastaturgenveje for at håndtere dine e-mails hurtigere."
       ],
@@ -5328,6 +5433,9 @@
       ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
+      ],
+      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
+        "Besøg vores butik for at få ${ BRAND_NAME }-merchandise."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Vi beklager. Dette kan være en fejl fra vores side. Kan du bekræfte, at du ønsker at markere denne e-mail som en legitim én?"
@@ -5340,6 +5448,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
+      ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Vi er flyttet! Log venligst ind på vores nye domæne: ${ link }."
       ],
       "Web URL": [
         "Webadresse"
@@ -5379,6 +5490,9 @@
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Du kan tilføje den som en vedhæftet fil eller vise den i din mail-tekst."
+      ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Du kan også flette importerede kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
@@ -5463,8 +5577,14 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men der er ikke tilføjet en vedhæftning. Vil du sende din besked alligevel?"
       ],
+      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Din ${ BRAND_NAME }-konto inkluderer SimpleLogin. Installér browserudvidelsen med ét klik for at komme i gang."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "Din e-mailadresse ændres ikke. Men snart skal du logge ind på ${ link }."
@@ -5761,6 +5881,9 @@
       " and ${ l }": [
         " og ${ l }"
       ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } brugernavn"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
       ],
@@ -5952,6 +6075,9 @@
       ],
       "Hide password": [
         "Skjul adgangskode"
+      ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Hvordan vil du beskrive din oplevelse med den nye ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Jeg er indforstået med risikoen"
@@ -6360,6 +6486,12 @@
       "More about recovery": [
         "Mere om gendannelse"
       ],
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Åbn i ${ CALENDAR_APP_NAME }"
+      ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Åbn opdateret begivenhed i ${ CALENDAR_APP_NAME }"
+      ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Eller du kan slette en af dine kalendere og oprette en ny, som er knyttet til en aktiv e-mailadresse."
       ],
@@ -6398,6 +6530,9 @@
       ],
       "Terms": [
         "Betingelser"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Denne ICS-fil indeholder mere end én begivenhed. Download den og importer begivenhederne i ${ CALENDAR_APP_NAME }"
       ],
       "Trash": [
         "Papirkurv"
@@ -6521,6 +6656,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "En ny version af ${ appName } er tilgængelig. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
+        "Leveret via SimpleLogin fra ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -6742,6 +6882,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } oprettet"
+      ],
       "Block removed": [
         "Blokering fjernet"
       ],
@@ -6759,6 +6902,11 @@
       ],
       "Senders blocked": [
         "Afsendere blokeret"
+      ]
+    },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Derefter skal du logge ind på din Google-konto og give ${ BRAND_NAME } adgang til dine data."
       ]
     },
     "Oauth instructions video": {
@@ -7186,6 +7334,12 @@
       ]
     },
     "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP-krypteret besked. Afsenderbekræftelse fejlede: ${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP-signeret besked. Afsenderbekræftelse fejlede: ${ verificationErrorsMessage }"
+      ],
       "Sender could not be verified: Message not signed": [
         "Afsenderen kunne ikke bekræftes: Besked ikke signeret"
       ],
@@ -7225,6 +7379,9 @@
       ],
       "Message Content Search": [
         "Søgning efter beskedindhold"
+      ],
+      "Schedule send": [
+        "Planlæg afsendelse"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prøv ${ DRIVE_APP_NAME }"
@@ -7630,6 +7787,9 @@
         "${ emailsCount } medlem",
         "${ emailsCount } medlemmer"
       ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "${ MAIL_APP_NAME } Tastaturgenveje"
+      ],
       "${ unreads } unread message": [
         "${ unreads } ulæst besked",
         "${ unreads } ulæste beskeder"
@@ -7846,6 +8006,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
+        "Skjul din e-mail med SimpleLogin fra ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
@@ -8242,6 +8405,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } vil sammenflette alle mapper med det samme navn. For at undgå dette, skal du ændre navnene før importen."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
+      ],
       "Are you sure you want to discard your import?": [
         "Er du sikker på, at du vil kassere din import?"
       ],
@@ -8295,6 +8464,12 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Denne handling er irreversibel. Indtast ordet ${ boldDanger } i feltet for at fortsætte."
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Denne funktion kræver en betalt ${ BRAND_NAME }-konto"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din ${ BRAND_NAME }-konto. Overvej venligst at tilpasse din import."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."

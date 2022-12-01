@@ -654,6 +654,11 @@
         "Ved at forlade nu, vil nogle begivenheder måske ikke blive importeret"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } applikationer"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Tom ICS-fil"
@@ -801,6 +806,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Der er gået mere end 12 timer siden sidste opdatering - ${ CALENDAR_APP_NAME } vil forsøge at opdatere kalenderen om et par timer."
       ]
     },
     "Collapsible tooltip": {
@@ -1952,6 +1960,10 @@
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
       ],
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Flet mindst ${ calendarToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
+        "Flet mindst ${ calendarToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
+      ],
       "Missing key packet": [
         "Manglende nøglepakke"
       ],
@@ -2308,6 +2320,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Noget gik galt. Genopfrisk siden eller prøv igen senere."
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Der opstod et problem med at oprette forbindelse til ${ BRAND_NAME }."
+      ],
       "You may also ${ refresh } or try again later.": [
         "Du kan også ${ refresh }, eller forsøge igen senere."
       ],
@@ -2594,6 +2609,21 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din konto. Sørg for at:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din eksterne konto. Sørg for, at mailserverens adresse og portnummer er korrekt."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din eksterne konto. Sørg for at:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din Yahoo-konto. Sørg for, at mailserverens adresse og portnummer er korrekt."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din Yahoo-konto. Sørg for at:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Totrinsbekræftelse er aktiveret på din eksterne konto."
       ],
@@ -2646,8 +2676,14 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Klik på ${ boldManage } for at udvide menu med valgmuligheder."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til ${ BRAND_NAME }."
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Opret et ${ boldAppPassword } og brug det i stedet for din almindelige adgangskode, når ${ BRAND_NAME } anmoder om det."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Gå til ${ boldAccountInfo } under din profil i ${ yahooMailLink }."
@@ -2672,6 +2708,21 @@
       ],
       "Select ${ boldExportCSV }.": [
         "Vælg ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "For at importere en kalender til ${ BRAND_NAME } skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "For at importere en kalender til ${ BRAND_NAME } skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "For at importere en kalender til ${ BRAND_NAME }, skal du bruge ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "For at importere e-mails til ${ BRAND_NAME }, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "For at importere e-mails til ${ BRAND_NAME }, skal du bruge et ${ appPasswordLink } fra Yahoo. Få det ved at følge disse trin:"
       ]
     },
     "Import instructions emphasis": {
@@ -2954,6 +3005,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Er du sikker på, at du ønsker at slette de valgte elementer permanent fra papirkurven?"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
@@ -2992,6 +3046,9 @@
       ],
       "Conflict": [
         "Konflikt"
+      ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås op for drev senere"
       ],
       "Continue with ${ planName }": [
         "Fortsæt med ${ planName }"
@@ -3152,6 +3209,9 @@
       "Free up some space or contact your administrator.": [
         "Frigør lidt plads eller kontakt din administrator."
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "Lær ${ DRIVE_APP_NAME } at kende og optjen din bonus på 500 MB lagerplads! Gør noget i dag."
+      ],
       "Go ahead, upload a file": [
         "Værsgo, upload en fil"
       ],
@@ -3178,6 +3238,9 @@
       ],
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "Hvis du ikke kender din adgangskode, skal du angive en gendannelsessætning for at sikre, at du ikke mister adgangen til din konto og dine data."
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
@@ -3267,6 +3330,9 @@
       "Loading preview": [
         "Indlæser forhåndsvisning"
       ],
+      "Loading...": [
+        "Indlæser..."
+      ],
       "Makes your account safer": [
         "Gør din konto mere sikker"
       ],
@@ -3320,6 +3386,9 @@
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Nogle filer blev ikke overført. Prøv at overføre eller hente filerne igen."
+      ],
+      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Bemærk: Data kan stadig være tilgængelige lokalt på enheder, hvor du har installeret ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "af"
@@ -3518,6 +3587,9 @@
       "There are no files yet": [
         "Der er ingen filer endnu"
       ],
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
+        "Disse filer blev delt med ende til ende kryptering. Hvis du vil holde dem sikre - og alle dine dokumenter, fotos og filer private - skal du gemme dem i din egen ${ DRIVE_APP_NAME }. Det er nemt og gratis at bruge."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
@@ -3554,6 +3626,9 @@
       ],
       "This will overwrite the existing folder": [
         "Dette vil overskrive den eksisterende mappe"
+      ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "For at muliggøre en ægte privat søgning er vi nødt til at indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } normalt - vi giver dig besked, når indekseringen er færdig."
@@ -3615,6 +3690,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Upload af hundredvis af filer på én gang kan have en effekt på ydeevnen."
       ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
+        "Brug Drive for Desktop til at synkronisere mapper på din computer med ${ DRIVE_APP_NAME }. De vil blive vist her og være tilgængelige hvor som helst fra. ${ LearnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Brug denne formular til at give os besked om upassende, ulovlige,\neller på anden måde skadelige delte filer. Du er ved at anmelde:"
       ],
@@ -3632,6 +3710,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
+      ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "Vi er flyttet! Log venligst ind på vores nye domæne: ${ link }."
       ],
       "Week": [
         "Uge"
@@ -3666,6 +3747,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Du kan også flette importerede kalendere med eksisterende ${ BRAND_NAME }-kalendere."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
       ],
@@ -3698,6 +3782,9 @@
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Din nuværende browser understøtter ikke hentning af store filer på grund af manglende adgang til såkaldte service workers. Ved hentning af store filer kan browseren fryse eller holde op med at svare. Brug venligst de nyeste versioner af en ${ recommendedBrowser } og prøv igen."
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "Din e-mailadresse ændres ikke. Men snart skal du logge ind på ${ link }."
@@ -3789,6 +3876,9 @@
     "Label": {
       "# of accesses": [
         "# af adgange"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } brugernavn"
       ],
       "(Expired)": [
         "(Udløbet)"
@@ -3970,6 +4060,9 @@
       ],
       "Hide password": [
         "Skjul adgangskode"
+      ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Hvordan vil du beskrive din oplevelse med den nye ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Jeg er indforstået med risikoen"
@@ -4569,6 +4662,11 @@
         "Dine indstillinger er blevet ændret"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Derefter skal du logge ind på din Google-konto og give ${ BRAND_NAME } adgang til dine data."
+      ]
+    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
@@ -4577,11 +4675,17 @@
     "Onboarding Action": {
       "Next": [
         "Næste"
+      ],
+      "Start using ${ DRIVE_APP_NAME }": [
+        "Begynd at bruge ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "Opret et delingslink"
+      ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "Hvis du begynder at bruge ${ DRIVE_APP_NAME }, fordobler vi din gratis lagerplads til 1 GB!"
       ],
       "Set a recovery method": [
         "Indstil en gendannelsesmetode"
@@ -4612,6 +4716,9 @@
       ]
     },
     "Onboarding Title": {
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Velkommen til ${ DRIVE_APP_NAME }"
+      ],
       "Your welcome bonus": [
         "Din velkomstbonus"
       ]
@@ -5532,6 +5639,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } vil sammenflette alle mapper med det samme navn. For at undgå dette, skal du ændre navnene før importen."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
+      ],
       "Are you sure you want to discard your import?": [
         "Er du sikker på, at du vil kassere din import?"
       ],
@@ -5581,6 +5694,12 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Denne handling er irreversibel. Indtast ordet ${ boldDanger } i feltet for at fortsætte."
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Denne funktion kræver en betalt ${ BRAND_NAME }-konto"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din ${ BRAND_NAME }-konto. Overvej venligst at tilpasse din import."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."

@@ -945,6 +945,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "問題が発生しました。ページを更新するか後ほど再度お試しください。"
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } への接続中に問題が発生しました。"
+      ],
       "You may also ${ refresh } or try again later.": [
         "${ refresh } するか再度お試しください。"
       ]
@@ -1104,7 +1107,7 @@
     },
     "Title": {
       "Enter your password": [
-        "パスワードを入力してください"
+        "パスワードを入力"
       ],
       "Human verification": [
         "人間であることの検証"

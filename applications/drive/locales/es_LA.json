@@ -3646,7 +3646,7 @@
         "Esto sobrescribirá la carpeta existente"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Esto eliminará el dispositivo sincronizado ${ deviceName } de ${ DRIVE_APP_NAME }. Los archivos locales en el dispositivos no serán afectados."
+        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Para habilitar una búsqueda verdaderamente privada $ necesitamos indexar sus archivos localmente. Puede seguir usando ${ DRIVE_APP_NAME } normalmente y le avisaremos cuando la indexación finalice."
@@ -3708,8 +3708,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Cargar cientos de archivos a la vez puede tener un impacto en el rendimiento."
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
+        "Use Drive para Escritorio para sincronizar carpetas en su computadora con ${ DRIVE_APP_NAME }. Se mostrarán aquí y serán accesibles desde cualquier lugar. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Use este formulario para notificarnos sobre archivos compartidos\ninapropiados, ilegales o maliciosos. Está a punto de denunciar:"
@@ -3795,8 +3795,8 @@
       "You will lose all unsaved changes.": [
         "Perderá todos los cambios sin guardar."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Su cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en su buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, por favor pague cualquier factura pendiente."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Su cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en su buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando su cuenta, por favor pague cualquier factura pendiente."
@@ -4747,8 +4747,8 @@
       "Set up your organization": [
         "Configure su organización"
       ],
-      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
-        "Use el selector de aplicaciones arriba a la izquierda para acceder a otros servicios de ${ BRAND_NAME }, incluyendo VPN, Calendario y Drive."
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "Use el selector de aplicaciones en la esquina superior izquierda para acceder a todos los servicios de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME }."
       ],
       "You can change this anytime in your settings.": [
         "Puede cambiar esto en cualquier momento en los ajustes."

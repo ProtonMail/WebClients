@@ -649,6 +649,11 @@
         "今終了すると、インポートされない予定がある可能性があります"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } アプリケーション"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "空の ICS ファイルです"
@@ -1941,6 +1946,9 @@
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
       ],
+      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "${ calendarToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
+      ],
       "Missing key packet": [
         "キーパケットが利用できません"
       ],
@@ -2293,6 +2301,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "問題が発生しました。ページを更新するか後ほど再度お試しください。"
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } への接続中に問題が発生しました。"
+      ],
       "You may also ${ refresh } or try again later.": [
         "${ refresh } するか再度お試しください。"
       ],
@@ -2624,8 +2635,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "${ boldManage } をクリックしてオプション メニューを展開してください。"
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "手順がメールサービスプロバイダーによって異なるため、${ BRAND_NAME } にメールをインポートする前に${ knowledgeBaseLink }を生成することをおすすめします。"
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3 点リーダー（...）をクリックしてドロップダウンを展開します。"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword } を生成し、${ BRAND_NAME } からプロンプトが表示に通常のパスワードの代わりに入力してください。"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword }を生成し、${ BRAND_NAME } からプロンプトが表示に通常のパスワードの代わりに入力してください。"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } のプロフィールから${ boldAccountInfo }に移動します。"
@@ -2650,6 +2670,30 @@
       ],
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } を選択します。"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "メールを ${ BRAND_NAME } へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "メールを ${ BRAND_NAME } へインポートするには、Yahoo から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
       ]
     },
     "Import instructions emphasis": {
@@ -3210,6 +3254,9 @@
       "Loading preview": [
         "プレビューを読み込み中"
       ],
+      "Loading...": [
+        "読み込み中..."
+      ],
       "Makes your account safer": [
         "アカウントをより安全にする"
       ],
@@ -3317,6 +3364,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
+      ],
+      "Please wait till your changes are synced with the server.": [
+        "変更がサーバーで同期されるまでお待ちください。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "プライマリー暗号鍵で再署名できる連絡先を探しています。しばらくお待ちください。"
@@ -3531,6 +3581,9 @@
       "Unlock drive to recover files": [
         "回復用ファイルを使ってドライブを開く"
       ],
+      "Unsaved changes": [
+        "未保存の変更"
+      ],
       "Unsupported file": [
         "非対応のファイル"
       ],
@@ -3600,6 +3653,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "存在する ${ BRAND_NAME } カレンダーにインポートしたカレンダーを結合することもできます。"
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "進捗を確認するには ${ importProgressLink }。"
       ],
@@ -3630,8 +3686,14 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "あなたのアカウントには滞納したお支払いがあり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
+      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "お使いのブラウザはサービスワーカーが利用できないため、大きなファイルのダウンロードに対応していません。大きなファイルをダウンロードすると、ブラウザがフリーズしたり応答しなくなったりする可能性があります。最新版の${ recommendedBrowser }を使用し、もう一度お試しください。"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "メールアドレスは変わりません。しかし、近いうちに${ link }でログインしなければなりません。"
@@ -3909,6 +3971,9 @@
       ],
       "Hide password": [
         "パスワードを隠す"
+      ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "新しい ${ BRAND_NAME } の使い心地はいかがでしょうか?"
       ],
       "I understand the risk": [
         "リスクを承知しました"
@@ -4480,6 +4545,11 @@
         "設定を変更しました"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "次に、Google アカウントにサインインして ${ BRAND_NAME } にデータにアクセスすることを許可します。"
+      ]
+    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "インポートするには、GIF にあるように要求されたすべてのアイテムを選択します。"
@@ -4519,9 +4589,6 @@
       ],
       "Set up your organization": [
         "組織のための設定"
-      ],
-      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
-        "左上のアプリセレクターを使用して VPN、Calendar、Drive などの ${ BRAND_NAME } サービスにアクセスできます。"
       ],
       "You can change this anytime in your settings.": [
         "この設定はいつでも変更できます。"
@@ -4905,6 +4972,9 @@
       "All": [
         "すべて"
       ],
+      "Are you sure you want to close the preview?": [
+        "プレビューを閉じてよろしいですか?"
+      ],
       "Back": [
         "戻る"
       ],
@@ -5032,7 +5102,7 @@
         "ごみ箱を空にする"
       ],
       "Enter your password": [
-        "パスワードを入力してください"
+        "パスワードを入力"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
         "ユーザー名または ${ MAIL_APP_NAME } メールアドレスを入力"
@@ -5328,6 +5398,9 @@
       "Your 500 MB bonus": [
         "500 MB のボーナス"
       ],
+      "Your changes are not synced yet": [
+        "変更は同期されていません"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "無料トライアルは ${ formattedEndDate } に終了します。"
       ],
@@ -5427,6 +5500,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
+      ],
       "Are you sure you want to discard your import?": [
         "インポートを破棄してよろしいですか?"
       ],
@@ -5474,6 +5553,12 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "この操作は元に戻せません。続行するには、単語${ boldDanger } を入力してください。"
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "この機能は有料の ${ BRAND_NAME } アカウントが必要です"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "このインポートは現在 ${ BRAND_NAME } アカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"

@@ -469,10 +469,10 @@
       "Not spam": [
         "迷惑メールでない"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -867,6 +867,16 @@
         "無料で 30 日間試す"
       ]
     },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "承認"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "拒否"
+      ]
+    },
     "Addon": {
       "+ ${ domains } custom domains": [
         "+ ${ domains } 独自ドメイン"
@@ -925,6 +935,11 @@
         "この認証情報を使用しているすべてのルーターやクライアントが切断されます。"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } アプリケーション"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "空の ICS ファイルです"
@@ -943,6 +958,11 @@
       ],
       "Unsupported event": [
         "サポートされていない予定です"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add to calendar and mark as pending": [
+        "保留中としてカレンダーに追加"
       ]
     },
     "Autoresponse": {
@@ -1156,9 +1176,23 @@
         "すでにこのカレンダーにアクセスできます"
       ]
     },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
+        "カレンダーへのリンクを作成し、非 ${ BRAND_NAME } ユーザーに共有します。予定の追加・削除が行えるのはあなただけです。"
+      ]
+    },
     "Calendar settings section title": {
       "Share calendar": [
         "カレンダーを共有"
+      ],
+      "Share outside ${ BRAND_NAME }": [
+        "${ BRAND_NAME } 外に共有"
+      ],
+      "Share with ${ BRAND_NAME } users": [
+        "${ BRAND_NAME } ユーザーに共有"
+      ],
+      "Share with anyone": [
+        "ほかの人に共有"
       ]
     },
     "Calendar status": {
@@ -2765,6 +2799,9 @@
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
       ],
+      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "${ calendarToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
+      ],
       "Missing key packet": [
         "キーパケットが利用できません"
       ],
@@ -3226,6 +3263,9 @@
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "問題が発生しました。ページを更新するか後ほど再度お試しください。"
+      ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } への接続中に問題が発生しました。"
       ],
       "You may also ${ refresh } or try again later.": [
         "${ refresh } するか再度お試しください。"
@@ -3865,8 +3905,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "${ boldManage } をクリックしてオプション メニューを展開してください。"
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "手順がメールサービスプロバイダーによって異なるため、${ BRAND_NAME } にメールをインポートする前に${ knowledgeBaseLink }を生成することをおすすめします。"
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3 点リーダー（...）をクリックしてドロップダウンを展開します。"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword } を生成し、${ BRAND_NAME } からプロンプトが表示に通常のパスワードの代わりに入力してください。"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword }を生成し、${ BRAND_NAME } からプロンプトが表示に通常のパスワードの代わりに入力してください。"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } のプロフィールから${ boldAccountInfo }に移動します。"
@@ -3891,6 +3940,30 @@
       ],
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } を選択します。"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "メールを ${ BRAND_NAME } へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "メールを ${ BRAND_NAME } へインポートするには、Yahoo から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
       ]
     },
     "Import instructions emphasis": {
@@ -4468,6 +4541,9 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10個のカスタムメールドメイン名のメールホスティングが無料で含まれています。 追加のドメインを${ price } で追加できます。"
       ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "メール ホスティングはあなたがお持ちのドメインでのみ利用できます。ドメインの登録は現在、${ BRAND_NAME } 経由では取り扱っていません。ドメイン レジストラーからドメインを登録することでメールのホストが可能になります。"
+      ],
       "Emailing preference saved": [
         "メール設定が保存されました"
       ],
@@ -4493,7 +4569,7 @@
         "認証アプリのコードを入力してください"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
-        "電話番号 ${ phone } に送信したコードを入力してください。"
+        "お客様の電話番号（${ phone }）に届く番号を入力してください。"
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "${ email } に送信したコードを入力してください。受信トレイにメールがない場合、迷惑メールフォルダーを確認してください。"
@@ -4554,6 +4630,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "新たな回復用フレーズを生成すると古いものは無効になります。"
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } アドレスを入手"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "あなたの公開鍵を友達に渡すか、誰もがあなたにエンドツーエンドの暗号化メールを送れるようにオンラインで公開しましょう！"
@@ -4750,6 +4829,9 @@
       "Loading preview": [
         "プレビューを読み込み中"
       ],
+      "Loading...": [
+        "読み込み中..."
+      ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "${ MAIL_APP_NAME } にログインしてアドレスをアクティブにします"
       ],
@@ -4932,6 +5014,9 @@
       ],
       "Please verify the card in the new tab which was opened.": [
         "新たに開かれたタブでカードの検証を行ってください。"
+      ],
+      "Please wait till your changes are synced with the server.": [
+        "変更がサーバーで同期されるまでお待ちください。"
       ],
       "Plus or Visionary subscription required": [
         "PLUS または VISIONARY プランが必要です"
@@ -5245,6 +5330,9 @@
       "Unlimited messages": [
         "送信数制限なし"
       ],
+      "Unsaved changes": [
+        "未保存の変更"
+      ],
       "Unsupported file": [
         "非対応のファイル"
       ],
@@ -5371,6 +5459,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "アカウント ${ memberAddress } でサインインしました"
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "存在する ${ BRAND_NAME } カレンダーにインポートしたカレンダーを結合することもできます。"
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "進捗を確認するには ${ importProgressLink }。"
       ],
@@ -5446,6 +5537,9 @@
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "暗号化されたデータを復元する必要が生じたときのために、この鍵のバックアップをエクスポートしておくことを推奨します。"
       ],
+      "You still need to reply to invitations for the host to see your response.": [
+        "主催者に招待への応答を返信する必要があります。"
+      ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "${ BRAND_NAME } アカウントに${ loseAllData }。復元するには、古いパスワードが必要です。"
       ],
@@ -5473,6 +5567,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "あなたのアカウントには滞納したお支払いがあり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
+      ],
       "Your account recovery method is set": [
         "アカウントの回復手段が設定されています"
       ],
@@ -5481,6 +5578,9 @@
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "セキュリティ上の観点から、3D セキュア認証に対応した銀行口座が必要です。"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
       ],
       "Your data recovery method is set": [
         "データの回復手段が設定されています"
@@ -5918,6 +6018,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } のうち ${ humanUsedSpace }"
       ],
+      "${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } アドレス"
+      ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } フッター"
       ],
@@ -6134,8 +6237,14 @@
       "Create password": [
         "パスワードを作成"
       ],
+      "Credits": [
+        "クレジット"
+      ],
       "Credits used": [
         "使用クレジット"
+      ],
+      "Current display name": [
+        "現在の表示名"
       ],
       "Customize invoices": [
         "請求書のカスタマイズ"
@@ -6383,6 +6492,9 @@
       "Navigation": [
         "ナビゲーション"
       ],
+      "New display name": [
+        "新しい表示名"
+      ],
       "New login password": [
         "新しいログインパスワード"
       ],
@@ -6451,6 +6563,9 @@
       ],
       "Payment method": [
         "支払い方法"
+      ],
+      "Pending": [
+        "保留中"
       ],
       "Phone number": [
         "電話番号"
@@ -6872,6 +6987,9 @@
       ],
       "Upgrade account": [
         "アカウントをアップグレード"
+      ],
+      "Upgrade your plan": [
+        "プランをアップグレード"
       ],
       "View guide": [
         "ガイドを表示"
@@ -7473,6 +7591,9 @@
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* 24 か月のサブスクリプション その他のサブスクリプションのオプションははチェックアウト時に選択できます。"
       ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "包括的なプライバシーとセキュリティを提供する、すべての ${ BRAND_NAME } サービスが利用できるプランです。"
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "アカウントをダウン削除をすると、すべての ${ visionary } プランの特典は失われ、新しいアカウントを作成しても利用できなくなります。"
       ],
@@ -7697,6 +7818,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } が作成されました"
+      ],
       "A disabled address cannot be primary": [
         "無効にされたアドレスはプライマリーにすることができません"
       ],
@@ -7708,6 +7832,15 @@
       ]
     },
     "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "招待が削除されました"
+      ],
+      "Invitation revoked": [
+        "招待が取り消されました"
+      ],
+      "Member deleted": [
+        "メンバーが削除されました"
+      ],
       "Members added": [
         "メンバーを追加しました"
       ]
@@ -7753,6 +7886,11 @@
       ],
       "weeks before": [
         "週間前"
+      ]
+    },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "次に、Google アカウントにサインインして ${ BRAND_NAME } にデータにアクセスすることを許可します。"
       ]
     },
     "Oauth instructions video": {
@@ -7891,6 +8029,9 @@
       ],
       "I found another service that I like better": [
         "より良い他のサービスを見つけた"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "別の ${ BRAND_NAME } アカウントを使っている"
       ],
       "Ignore group": [
         "グループを無視"
@@ -8439,6 +8580,11 @@
         "ユーザー名"
       ]
     },
+    "Signup step": {
+      "Payment": [
+        "支払い"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
@@ -8630,6 +8776,9 @@
       ],
       "Default calendar updated": [
         "既定のカレンダーが更新されました"
+      ],
+      "Display name updated": [
+        "表示名が更新されました"
       ],
       "DMARC value copied to clipboard": [
         "DMARC 値がクリップボードにコピーされました"
@@ -8990,6 +9139,9 @@
       "Apply gift code": [
         "ギフトコードを使用"
       ],
+      "Are you sure you want to close the preview?": [
+        "プレビューを閉じてよろしいですか?"
+      ],
       "Are you sure you want to close?": [
         "本当に画面を閉じてよろしいですか？"
       ],
@@ -9231,7 +9383,7 @@
         "暗号化と鍵"
       ],
       "Enter your password": [
-        "パスワードを入力してください"
+        "パスワードを入力"
       ],
       "Error": [
         "エラー"
@@ -9647,6 +9799,9 @@
       "Your calendar link": [
         "カレンダーのリンク"
       ],
+      "Your changes are not synced yet": [
+        "変更は同期されていません"
+      ],
       "Your current plan": [
         "現在のプラン"
       ],
@@ -9957,6 +10112,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
+      ],
       "Are you sure you want to delete the address?": [
         "本当にこのアドレスを削除してよろしいですか?"
       ],
@@ -9995,6 +10156,9 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "デバイスの日時設定を同期できません。${ learnMore }"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "このインポートは現在 ${ BRAND_NAME } アカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
