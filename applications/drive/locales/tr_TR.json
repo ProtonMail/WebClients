@@ -3646,7 +3646,7 @@
         "Bu işlem var olan klasörün üzerine yazacak"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "Bu işlem ${ DRIVE_APP_NAME } ile eşitlenmiş ${ deviceName } aygıtının eşitlemesini kaldıracak. Aygıt üzerindeki yerel dosyalar bu işlemden etkilenmeyecek."
+        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Gerçekten kişisel gizliliği koruyan aramayı etkinleştirmek için dosyalarınızın yerel dizinini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
@@ -3708,8 +3708,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Yüzlerce dosyanın aynı anda yüklenmesi başarımı etkileyebilir."
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
+        "Bilgisayarınızdaki klasörleri ${ DRIVE_APP_NAME } ile eşitlemek için Masaüstü için Drive uygulamasını kullanın. klasörleriniz burada görünür ve her yerden erişilebilir. ${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Bu formu kullanarak bize uygunsuz, yasadışı\nya da başka türlü kötü amaçla paylaşılmış dosyaları bildirin. Şunu şikayet ediyorsunuz:"
@@ -3795,8 +3795,8 @@
       "You will lose all unsaved changes.": [
         "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
@@ -4747,8 +4747,8 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
-      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
-        "VPN, Calendar ve Drive gibi diğer ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }."
       ],
       "You can change this anytime in your settings.": [
         "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."

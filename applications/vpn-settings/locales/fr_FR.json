@@ -1584,13 +1584,13 @@
         "Le navigateur que vous utilisez ne permet pas le traitement complet des paiements. Nous vous invitons à utiliser un autre navigateur ou à vous connecter depuis un ordinateur."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
-        "Le montant minimum de crédit pouvant être ajouté est de ${ price }"
+        "Le montant minimum de crédit qui peut être ajouté est ${ price }."
       ],
       "The minimum amount that can be donated is ${ price }": [
         "Le montant minimum qui peut être donné est ${ price }."
       ],
       "The minimum payment we accept is ${ price }": [
-        "Le paiement minimum accepté est de ${ price }"
+        "Le paiement minimum que nous acceptons est ${ price }."
       ],
       "This field is required": [
         "Ce champ est nécessaire."
@@ -1872,9 +1872,6 @@
       "${ storageSize } storage": [
         "${ storageSize } de stockage"
       ],
-      "${ vpnPlus } required for Country level connection.": [
-        "${ vpnPlus } est nécessaire pour une connexion au niveau du pays."
-      ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } est nécessaire pour la fonctionnalité Secure Core."
       ],
@@ -2141,7 +2138,7 @@
         "Assurez-vous d'${ addARecoveryMethod } pour pouvoir vous reconnecter à votre compte si vous oubliez votre mot de passe."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Veuillez saisir cette information manuellement dans votre dispositif d'authentification à deux facteurs afin de configurer votre compte. ${ switchButton }."
+        "Saisissez manuellement cette information dans votre dispositif d'authentification à deux facteurs pour configurer votre compte. ${ switchButton }."
       ],
       "No credit card required": [
         "Aucune carte bancaire nécessaire"
@@ -2515,8 +2512,8 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Votre compte ${ BRAND_NAME } est associé à l'e-mail ${ externalEmailAddress }. Pour utiliser ${ toAppName }, vous avez besoin d'une adresse ${ MAIL_APP_NAME }."
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Votre compte ${ BRAND_NAME } est actuellement suspendu. Après 28 jours, les e-mails ne seront plus envoyés dans votre boîte de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour reprendre un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est actuellement suspendu. Les e-mails ne sont plus envoyés dans votre boîte de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à régler toutes les factures en retard."
@@ -2659,6 +2656,9 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } sur ${ humanMaxSpace }"
+      ],
+      "${ MAIL_APP_NAME } address": [
+        "Adresse ${ MAIL_APP_NAME }"
       ],
       "${ n } month": [
         "${ n } mois",
@@ -3660,7 +3660,7 @@
         "Envoyez l'ensemble de votre trafic internet à travers le réseau Tor en un seul clic."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
-        "Conservez en toute sécurité les informations de vos contacts, comme leur numéro de téléphone, adresse, date d'anniversaire ainsi que vos notes personnelles. Le chiffrement zéro accès garantit que même ${ BRAND_NAME } ne peut pas y accéder."
+        "Conservez en sécurité les informations de vos contacts, comme leur numéro de téléphone, adresse, date d'anniversaire, ainsi que vos notes personnelles. Le chiffrement zéro accès garantit que même ${ BRAND_NAME } ne peut pas y accéder."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Envoyez rapidement et facilement des e-mails à de nombreuses personnes en créant autant de groupes de contacts que nécessaire (jusqu'à 100 contacts par groupe)."
