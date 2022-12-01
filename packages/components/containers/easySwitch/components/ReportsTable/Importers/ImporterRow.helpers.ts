@@ -48,7 +48,7 @@ export const getDeprecatedImporterFormatByID = (apiImporter: ApiImportResponse):
         // Is defined when IMAP context
         AllowSelfSigned: AllowSelfSigned as boolean,
         tokenScope: Product,
-        Email: '',
+        Email: Account,
     };
 
     if (Active?.Mail) {
