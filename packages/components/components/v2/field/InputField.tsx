@@ -1,4 +1,4 @@
-import { ElementType, ReactElement, ReactNode, forwardRef, useContext, useRef, useState } from 'react';
+import { ElementType, ReactElement, ReactNode, Ref, forwardRef, useContext, useRef, useState } from 'react';
 
 import { isFocusable } from 'tabbable';
 
@@ -34,6 +34,7 @@ export interface InputFieldOwnProps {
     error?: NodeOrBoolean;
     warning?: NodeOrBoolean;
     rootClassName?: string;
+    rootRef?: Ref<HTMLDivElement>;
     labelContainerClassName?: string;
     assistContainerClassName?: string;
 }
@@ -48,6 +49,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         label,
         hint,
         assistiveText,
+        rootRef,
         disabled,
         bigger,
         dense: denseProp,
@@ -153,6 +155,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             onBlur={() => {
                 setIsFocused(false);
             }}
+            ref={rootRef}
         >
             {label || hint ? (
                 <label htmlFor={id} className={classes.labelContainer} ref={labelRef}>
