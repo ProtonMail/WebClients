@@ -2,7 +2,7 @@ import { addDays, fromUnixTime, isBefore } from 'date-fns';
 
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { getPlan, hasBlackFridayDiscount, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { getPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { isExternal } from '@proton/shared/lib/helpers/subscription';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
@@ -19,13 +19,11 @@ const useOffer = (): Operation => {
     const isLoading = flagsLoading || userLoading || loading;
     const createDate = fromUnixTime(subscription?.CreateTime || subscription?.PeriodStart); // Subscription.CreateTime is not yet available
     const notTrial = !isTrial(subscription);
-    const noBF = !hasBlackFridayDiscount(subscription);
 
     const isValid =
         [PLANS.MAIL, PLANS.VPN].includes(plan?.Name as PLANS) &&
         notTrial &&
         isBefore(createDate, addDays(new Date(), -7)) &&
-        noBF &&
         user.canPay &&
         isMailOrAccountSettings &&
         !user.isDelinquent &&
