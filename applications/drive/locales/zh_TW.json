@@ -2494,10 +2494,10 @@
         "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "加密及加入您的事件時發生錯誤。${ totalToImport } 個事件之中，有 ${ totalImported } 個已成功匯入。"
+        "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "加密及加入您的事件時發生錯誤。無法匯入任何事件。"
+        "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密並加入聯絡人：${ totalImported }/${ totalToImport }"
@@ -2506,7 +2506,7 @@
         "正在加密並加入事件到您的行事曆中：${ totalImported }/${ totalToImport }"
       ],
       "Events successfully imported. The imported events will now appear in your calendar.": [
-        "事件已成功匯入。已匯入的事件現將顯示於行事曆中。"
+        "行程已成功匯入。已匯入的行程現將顯示於行事曆中。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "在匯入過程完成之前，請勿關閉此索引標籤。"
@@ -2764,7 +2764,7 @@
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
-        "${ totalEvents } 個事件之中，有 ${ totalEventsDiscarded } 個將不會匯入。展開以取得詳細資料。"
+        "${ totalEvents } 個行程之中，有 ${ totalEventsDiscarded } 個將不會匯入。展開以取得詳細資料。"
       ],
       "No contact can be imported. Click for details": [
         "無聯絡人可供匯入。點擊以查看詳細資料"
@@ -3546,7 +3546,7 @@
         "這將會覆寫現有的資料夾"
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
-        "這將從 ${ DRIVE_APP_NAME } 中刪除同步的裝置 ${ deviceName }。裝置上的本機檔案不會受影響。"
+        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "要啟用真正的隱私搜尋，我們必須在本機索引您的檔案。您仍然可以正常使用 ${ DRIVE_APP_NAME }，我們將會在索引完成後通知您。"
@@ -3608,8 +3608,8 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "同一時間上載數以百計的檔案或會有礙效能。"
       ],
-      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere.  ${ LearnMore }": [
-        "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }"
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
+        "使用桌面版的 Drive 來將您電腦上的資料夾與 ${ DRIVE_APP_NAME } 同步。它們將會在此處顯示並在任何地方皆可存取。${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用此表格通知我們不適當、非法，或其它惡意分享的檔案。您即將報告："
@@ -3692,8 +3692,8 @@
       "You will lose all unsaved changes.": [
         "您所有未儲存的變更將會消失。"
       ],
-      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links with be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices."
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期帳單。"
