@@ -1,4 +1,4 @@
-import { MutableRefObject, ReactElement, cloneElement, useRef, useEffect } from 'react';
+import { MutableRefObject, ReactElement, cloneElement, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -58,7 +58,7 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
 
     return (
         <nav
-            aria-label={c('Landmarks').t`Sidepanel`}
+            aria-label={c('Landmarks').t`Side panel`}
             className={clsx('drawer-sidebar', appInView && 'drawer-sidebar--hide-on-tablet')}
         >
             <Spotlight
