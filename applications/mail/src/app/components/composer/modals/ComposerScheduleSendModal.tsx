@@ -70,14 +70,12 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
 
         tmpDate.setHours(hours, minutes, 0, 0);
 
+        // Save scheduled date in the cache so that the user can have the date fields completed
+        // if he cancel scheduling to re-schedule it later or if he edits the message and re-schedules it
+        dispatch(updateScheduled({ ID: message.localID, scheduledAt: getUnixTime(tmpDate) }));
+
         return tmpDate;
     }, [date, time]);
-
-    // Save scheduled date in the cache so that the user can have the date fields completed
-    // if he cancel scheduling to re-schedule it later or if he edits the message and re-schedules it
-    useEffect(() => {
-        dispatch(updateScheduled({ ID: message.localID, scheduledAt: getUnixTime(scheduleDateTime) }));
-    }, [scheduleDateTime]);
 
     const handleChangeDate = (selectedDate?: Date) => {
         if (!selectedDate) {
