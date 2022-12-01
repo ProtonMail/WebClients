@@ -31,7 +31,8 @@ export function usePublicLinksListingProvider() {
     const { request: publicRequest } = usePublicSession();
     const linksState = useLinksState();
 
-    const { fetchNextPageWithSortingHelper, loadHelper, getCachedLinksHelper } = useLinksListingHelpers();
+    const { fetchNextPageWithSortingHelper, loadFullListing, getDecryptedLinksAndDecryptRest } =
+        useLinksListingHelpers();
     const state = useRef<FetchState>({});
 
     /**
@@ -102,7 +103,9 @@ export function usePublicLinksListingProvider() {
     ): Promise<void> => {
         // undefined means keep the sorting used the last time = lets reuse what we loaded so far.
         const sorting = undefined;
-        return loadHelper(() => fetchPublicChildrenNextPage(abortSignal, token, linkId, sorting, showNotification));
+        return loadFullListing(() =>
+            fetchPublicChildrenNextPage(abortSignal, token, linkId, sorting, showNotification)
+        );
     };
 
     const getCachedChildren = useCallback(
@@ -112,7 +115,7 @@ export function usePublicLinksListingProvider() {
             parentLinkId: string,
             foldersOnly: boolean = false
         ): { links: DecryptedLink[]; isDecrypting: boolean } => {
-            return getCachedLinksHelper(
+            return getDecryptedLinksAndDecryptRest(
                 abortSignal,
                 token,
                 linksState.getChildren(token, parentLinkId, foldersOnly),

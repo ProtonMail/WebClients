@@ -7,7 +7,6 @@ import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ContextMenuButtons';
 
 export function TrashItemContextMenu({
-    shareId,
     selectedLinks,
     anchorRef,
     isOpen,
@@ -15,10 +14,10 @@ export function TrashItemContextMenu({
     open,
     close,
 }: ContextMenuProps & {
-    shareId: string;
     selectedLinks: DecryptedLink[];
 }) {
     const selectedLink = selectedLinks[0];
+    const shareId = selectedLink ? selectedLink.rootShareId : '';
     const hasPreviewAvailable =
         selectedLinks.length === 1 &&
         selectedLink.isFile &&

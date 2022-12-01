@@ -98,12 +98,13 @@ export const CreatedCell = ({ item }: { item: TrashItem }) => {
     );
 };
 
-export const LocationCell = ({ item }: { item: TrashItem }) => {
+export const LocationCell = ({ item }: { item: TrashItem | SharedLinkItem }) => {
     const { isDesktop } = useActiveBreakpoint();
-    const { activeShareId } = useActiveShare();
+    const shareId = item.rootShareId;
+
     return (
         <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])} data-testid="column-location">
-            <LocationCellBase shareId={activeShareId} parentLinkId={item.parentLinkId} />
+            <LocationCellBase shareId={shareId} parentLinkId={item.parentLinkId} />
         </TableCell>
     );
 };

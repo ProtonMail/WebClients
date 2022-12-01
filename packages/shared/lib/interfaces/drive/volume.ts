@@ -30,3 +30,11 @@ export interface RestoreDriveVolume {
     NodePassphraseSignature: string;
     TargetVolumeID: string;
 }
+
+export interface ListDriveVolumeTrashPayload {
+    Trash: {
+        LinkIDs: string[];
+        ShareID: string;
+        ParentIDs: string[];
+    }[];
+}
