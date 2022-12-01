@@ -17,6 +17,7 @@ interface LinkUpload {
     state: TransferState;
     resumeState?: TransferState; // resumeState is set only when state is paused.
     error?: Error;
+    originalIsDraft?: boolean;
 }
 
 export interface FileUpload extends LinkUpload {
@@ -59,6 +60,7 @@ export type UpdateData = {
     error?: Error;
     folderId?: string;
     isNewFolder?: boolean;
+    originalIsDraft?: boolean;
     originalIsFolder?: boolean;
 };
 export type UpdateCallbackParams = {
@@ -71,6 +73,7 @@ export type UpdateCallbackParams = {
 
 export type ConflictStrategyHandler = (
     abortSignal: AbortSignal,
+    originalIsDraft?: boolean,
     originalIsFolder?: boolean
 ) => Promise<TransferConflictStrategy>;
 
