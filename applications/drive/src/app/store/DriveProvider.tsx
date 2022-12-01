@@ -8,6 +8,7 @@ import { SearchProvider } from './_search';
 import { SharesProvider } from './_shares';
 import { UploadProvider } from './_uploads';
 import { UploadConflictModal } from './_uploads/interface';
+import { VolumesProvider } from './_volumes';
 
 interface DriveProviderProps {
     DownloadSignatureIssueModal: DownloadSignatureIssueModal;
@@ -18,17 +19,19 @@ interface DriveProviderProps {
 export function DriveProvider({ DownloadSignatureIssueModal, UploadConflictModal, children }: DriveProviderProps) {
     return (
         <DriveEventManagerProvider>
-            <SharesProvider>
-                <LinksProvider>
-                    <DevicesProvider>
-                        <DownloadsProvider DownloadSignatureIssueModal={DownloadSignatureIssueModal}>
-                            <UploadProvider UploadConflictModal={UploadConflictModal}>
-                                <SearchProvider>{children}</SearchProvider>
-                            </UploadProvider>
-                        </DownloadsProvider>
-                    </DevicesProvider>
-                </LinksProvider>
-            </SharesProvider>
+            <VolumesProvider>
+                <SharesProvider>
+                    <LinksProvider>
+                        <DevicesProvider>
+                            <DownloadsProvider DownloadSignatureIssueModal={DownloadSignatureIssueModal}>
+                                <UploadProvider UploadConflictModal={UploadConflictModal}>
+                                    <SearchProvider>{children}</SearchProvider>
+                                </UploadProvider>
+                            </DownloadsProvider>
+                        </DevicesProvider>
+                    </LinksProvider>
+                </SharesProvider>
+            </VolumesProvider>
         </DriveEventManagerProvider>
     );
 }

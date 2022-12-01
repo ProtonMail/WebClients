@@ -15,7 +15,7 @@ const TrashView = () => {
     const { activeShareId, setDefaultRoot } = useActiveShare();
     useEffect(setDefaultRoot, []);
 
-    const trashView = useTrashView(activeShareId);
+    const trashView = useTrashView();
 
     return (
         <FileBrowserStateProvider itemIds={trashView.items.map(({ linkId }) => linkId)}>
