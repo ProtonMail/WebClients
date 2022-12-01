@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 import 'intersection-observer';
 
@@ -15,36 +15,32 @@ interface Props {
 }
 
 const ContactImage = ({ email, name, className, bimiSelector }: Props) => {
-    const initials = getInitials(name);
-    const [load, setLoad] = useState(false);
-    const url = useSenderImage(load ? email : '', bimiSelector);
-    const ref = useRef<HTMLSpanElement>(null);
+    const [fallback, setFallback] = useState(false);
+    const { canLoad, url } = useSenderImage(email, fallback, bimiSelector);
 
-    useEffect(() => {
-        const callback = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach((entry) => {
-                if (!load && entry.isIntersecting) {
-                    setLoad(true);
-                }
-            });
+    if (canLoad) {
+        // Fallback to XHR API call to load the image if native fails
+        const handleError = () => {
+            // url is not set at the initial render
+            if (!url) {
+                return;
+            }
+            setFallback(true);
         };
-        const options = { rootMargin: '50px' };
-        const observer = new IntersectionObserver(callback, options);
 
-        if (ref?.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
-            observer.disconnect();
-        };
-    }, [ref?.current]);
-
-    if (url) {
-        return <img className={clsx(className, 'item-sender-image')} alt="" width="32" src={url} />;
+        return (
+            <img
+                className={clsx(className, 'item-sender-image')}
+                alt=""
+                width="32"
+                src={url}
+                onError={handleError}
+                loading="lazy" // Lazy load the image only when it's in the viewport
+            />
+        );
     }
 
-    return <span ref={ref}>{initials}</span>;
+    return <span>{getInitials(name)}</span>;
 };
 
 export default ContactImage;
