@@ -58,6 +58,7 @@ export const getSenderImageUrl = (
     mode?: SenderImageMode
 ) => {
     const config = getLogo(emailAddress, size, bimiSelector, mode, UID);
-    const url = createUrl(config.url, config.params);
+    const prefixedUrl = `api/${config.url}`; // api/ is required to set the AUTH cookie
+    const url = createUrl(prefixedUrl, config.params);
     return url.toString();
 };
