@@ -1142,6 +1142,9 @@
       "Star message": [
         "メッセージに星印をつける"
       ],
+      "Unread email": [
+        "未読メール"
+      ],
       "Unstar conversation": [
         "やりとりから星を外す"
       ],
@@ -1172,6 +1175,11 @@
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfItems } 完了"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } アプリケーション"
       ]
     },
     "Attached ics file error": {
@@ -1304,18 +1312,30 @@
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        "出席しますか?"
+        "参加しますか？"
       ]
     },
     "Calendar invite info": {
+      "${ participantName } accepted an invitation to one occurrence of the event.": [
+        "${ participantName } は以前にこの予定内の行事の招待を承認していました。"
+      ],
       "${ participantName } accepted an invitation to this event.": [
         "${ participantName } はこの予定の招待を承認しました。"
+      ],
+      "${ participantName } accepted your invitation to one occurrence of the event.": [
+        "${ participantName } は以前にこの予定内の行事の招待を承認していました。"
       ],
       "${ participantName } accepted your invitation.": [
         "${ participantName } は招待を受け入れました。"
       ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "${ participantName } は以前にこの予定内の行事の招待を拒否していました。"
+      ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } はこの予定の招待を拒否しました。"
+      ],
+      "${ participantName } declined your invitation to one occurrence of the event.": [
+        "${ participantName } は以前にこの予定内の行事の招待を拒否していました。"
       ],
       "${ participantName } declined your invitation.": [
         "${ participantName } は招待を断りました。"
@@ -1326,6 +1346,9 @@
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } は以前にこの予定の招待を承認していました。"
       ],
+      "${ participantName } had declined an invitation to one occurrence of the event.": [
+        "${ participantName } は以前にこの予定内の行事の招待を拒否していました。"
+      ],
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } はこの予定の招待を拒否していました。"
       ],
@@ -1335,20 +1358,41 @@
       "${ participantName } had previously accepted your invitation.": [
         "${ participantName } は以前に招待を受け入れていました。"
       ],
+      "${ participantName } had previously declined your invitation to one occurrence of the event.": [
+        "${ participantName } は以前にこの予定内の行事の招待を拒否していました。"
+      ],
       "${ participantName } had previously declined your invitation.": [
         "${ participantName } は以前に招待を断っていました。"
+      ],
+      "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } は以前にこの予定内の行事の招待を仮承認していました。"
+      ],
+      "${ participantName } had previously tentatively accepted your invitation.": [
+        "${ participantName } は以前に招待を仮承認していました。"
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } は以前にこの予定内の行事の招待を仮承認していました。"
+      ],
+      "${ participantName } had tentatively accepted an invitation to this event.": [
+        "${ participantName } はこの予定の招待を仮承認していました。"
       ],
       "${ participantName } is not in the participants list.": [
         "${ participantName } は招待リストにいません。"
       ],
+      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } は以前にこの予定内の行事の招待を仮承認していました。"
+      ],
       "${ participantName } tentatively accepted an invitation to this event.": [
         "${ participantName } はこの予定の招待を仮承認しました。"
+      ],
+      "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
+        "${ participantName } は以前にこの予定内の行事の招待を仮承認していました。"
       ],
       "${ participantName } tentatively accepted your invitation.": [
         "${ participantName } はとりあえず招待を受け入れました。"
       ],
       "(Attendance optional)": [
-        "(出席は任意です)"
+        "(参加は任意です)"
       ],
       "Event refreshing is not supported for the moment": [
         "予定の再リフレッシュは現在サポートされていません"
@@ -2890,7 +2934,7 @@
         "6 桁の数字を入力してください"
       ],
       "Enter a password": [
-        "パスワードを入力してください"
+        "パスワードを入力"
       ],
       "Error in one of the conditions": [
         "いずれかの条件にエラーがあります"
@@ -2939,6 +2983,9 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "添付ファイルの最大数 (${ attachmentsCountLimit }) を超えました。"
+      ],
+      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "${ calendarToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
       ],
       "Message needs to be sent first": [
         "メッセージを最初に送信する必要があります"
@@ -3369,6 +3416,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "問題が発生しました。ページを更新するか後ほど再度お試しください。"
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "${ BRAND_NAME } への接続中に問題が発生しました。"
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "連絡先がありません。新しい連絡先を作成して始めましょう"
       ],
@@ -3618,6 +3668,9 @@
       ],
       "Subject: ${ subject }": [
         "件名: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "宛先: ${ toString }"
       ]
     },
     "Get started checklist completion": {
@@ -3916,8 +3969,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "${ boldManage } をクリックしてオプション メニューを展開してください。"
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "手順がメールサービスプロバイダーによって異なるため、${ BRAND_NAME } にメールをインポートする前に${ knowledgeBaseLink }を生成することをおすすめします。"
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3 点リーダー（...）をクリックしてドロップダウンを展開します。"
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword } を生成し、${ BRAND_NAME } からプロンプトが表示に通常のパスワードの代わりに入力してください。"
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "${ boldAppPassword }を生成し、${ BRAND_NAME } からプロンプトが表示に通常のパスワードの代わりに入力してください。"
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } のプロフィールから${ boldAccountInfo }に移動します。"
@@ -3942,6 +4004,30 @@
       ],
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } を選択します。"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "メールを ${ BRAND_NAME } へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "メールを ${ BRAND_NAME } へインポートするには、Yahoo から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
       ]
     },
     "Import instructions emphasis": {
@@ -4045,6 +4131,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
+      ],
+      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
+        "${ BRAND_NAME } がプライバシーを悪用して資金を入手することはありません。"
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
@@ -4403,6 +4492,12 @@
       "Email tracker protection is disabled": [
         "メールトラッカー防止は無効です"
       ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
+        "メールトラッカーはあなたのプライバシーを侵害します。${ BRAND_NAME } はこのメッセージのトラッカーを見つけることができませんでした。"
+      ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
+        "メールトラッカーはあなたのプライバシーを侵害します。${ BRAND_NAME } は ${ numberOfTrackers } 件のトラッカーを見つけてブロックしました。"
+      ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "メールトラッカーはあなたのプライバシーを侵害します。トラッカー防止を有効にすると、あなたがメッセージを閲覧したかどうか、いつ閲覧したかを差出人に知られるのを防ぐことができます。"
       ],
@@ -4504,6 +4599,9 @@
       ],
       "How Hide My Email works": [
         "Hide My Email の仕組み"
+      ],
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "このメッセージを非 ${ MAIL_APP_NAME } ユーザーに送信しています。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -4607,6 +4705,9 @@
       "Loading preview": [
         "プレビューを読み込み中"
       ],
+      "Loading...": [
+        "読み込み中..."
+      ],
       "Manage your folders": [
         "フォルダーを管理"
       ],
@@ -4694,6 +4795,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "トラッカーは見つかりませんでしたが、一部の画像はトラッキング防止により読み込まれませんでした"
       ],
+      "non-${ MAIL_APP_NAME }": [
+        "非 ${ MAIL_APP_NAME }"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "アップロードされた鍵はすべて暗号化には使用できないものです。指定のアドレスにメールを送信するには、正しい鍵をアップロードするかメールの暗号化をオフにしてください。"
       ],
@@ -4756,6 +4860,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
+      ],
+      "Please wait till your changes are synced with the server.": [
+        "変更がサーバーで同期されるまでお待ちください。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "プライマリー暗号鍵で再署名できる連絡先を探しています。しばらくお待ちください。"
@@ -5090,6 +5197,9 @@
       "Unlock message": [
         "メッセージのロックを解除"
       ],
+      "Unsaved changes": [
+        "未保存の変更"
+      ],
       "Unsupported file": [
         "非対応のファイル"
       ],
@@ -5138,14 +5248,23 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
+        "${ CALENDAR_APP_NAME } を使うことで予定表をプライベートに保つことができます。"
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "キーボードショートカットを使ってメールを素早く管理します。"
       ],
       "Using SimpleLogin is easy": [
         "SimpleLogin を使うのは簡単です"
       ],
+      "Verified ${ BRAND_NAME } message": [
+        "検証された ${ BRAND_NAME } メッセージ"
+      ],
       "Version ${ appVersion }": [
         "バージョン ${ appVersion }"
+      ],
+      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
+        "ショップで ${ BRAND_NAME } の商品を手に入れましょう。"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "申し訳ございません。スパム判定を誤ってしまった可能性があります。このメールを迷惑メールから除外しますか？"
@@ -5197,6 +5316,9 @@
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "添付ファイルを追加するか、メール内に直接インラインで表示させることができます。"
+      ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "存在する ${ BRAND_NAME } カレンダーにインポートしたカレンダーを結合することもできます。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "進捗を確認するには ${ importProgressLink }。"
@@ -5273,8 +5395,17 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” とありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
       ],
+      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "あなたの ${ BRAND_NAME } アカウントには SimpleLogin が含まれています。ワンクリックでブラウザー拡張機能をインストールし始めることができます。"
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "あなたのアカウントには滞納したお支払いがあり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "メールアドレスは変わりません。しかし、近いうちに${ link }でログインしなければなりません。"
@@ -5763,6 +5894,9 @@
       "Hide password": [
         "パスワードを隠す"
       ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "新しい ${ BRAND_NAME } の使い心地はいかがでしょうか?"
+      ],
       "I understand the risk": [
         "リスクを承知しました"
       ],
@@ -6170,6 +6304,12 @@
       "More about recovery": [
         "回復について"
       ],
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } で開く"
+      ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } で更新された予定を開く"
+      ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "またはカレンダーを削除し、有効なメールアドレスにリンクされたカレンダーを作成することができます。"
       ],
@@ -6208,6 +6348,9 @@
       ],
       "Terms": [
         "利用規約"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "この ICS ファイルには 1 つ以上の予定を含んでいます。ダウンロードして ${ CALENDAR_APP_NAME } で予定をインポートしてください"
       ],
       "Trash": [
         "ごみ箱"
@@ -6548,6 +6691,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } が作成されました"
+      ],
       "Block removed": [
         "ブロックが解除されました"
       ],
@@ -6565,6 +6711,11 @@
       ],
       "Senders blocked": [
         "送信者をブロックしました"
+      ]
+    },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "次に、Google アカウントにサインインして ${ BRAND_NAME } にデータにアクセスすることを許可します。"
       ]
     },
     "Oauth instructions video": {
@@ -6600,9 +6751,6 @@
       ],
       "Set up your organization": [
         "組織のための設定"
-      ],
-      "Use the app selector in the top left to access other ${ BRAND_NAME } services, including VPN, Calendar and Drive.": [
-        "左上のアプリセレクターを使用して VPN、Calendar、Drive などの ${ BRAND_NAME } サービスにアクセスできます。"
       ],
       "You can change this anytime in your settings.": [
         "この設定はいつでも変更できます。"
@@ -6877,10 +7025,10 @@
     },
     "Reply to calendar invitation": {
       "Answer sent": [
-        "答えを送信しました"
+        "回答を送信しました"
       ],
       "Answering invitation failed": [
-        "出席の回答に失敗しました"
+        "招待への回答に失敗しました"
       ],
       "Calendar event created": [
         "カレンダーの予定が作成されました"
@@ -7032,6 +7180,9 @@
       ],
       "Message Content Search": [
         "メッセージの内容を検索"
+      ],
+      "Schedule send": [
+        "スケジュールを送信"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を試す"
@@ -7431,6 +7582,9 @@
       "Archive": [
         "アーカイブ"
       ],
+      "Are you sure you want to close the preview?": [
+        "プレビューを閉じてよろしいですか?"
+      ],
       "Are you sure you want to close?": [
         "本当に画面を閉じてよろしいですか？"
       ],
@@ -7588,7 +7742,7 @@
         "メッセージ内容の検索を有効化"
       ],
       "Enter your password": [
-        "パスワードを入力してください"
+        "パスワードを入力"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
         "ユーザー名または ${ MAIL_APP_NAME } メールアドレスを入力"
@@ -7607,6 +7761,9 @@
       ],
       "Filter on...": [
         "絞り込み"
+      ],
+      "Folder options": [
+        "フォルダーの設定"
       ],
       "Forward": [
         "転送"
@@ -7643,6 +7800,9 @@
       ],
       "Label as": [
         "ラベル付け"
+      ],
+      "Label options": [
+        "ラベルの設定"
       ],
       "Link confirmation": [
         "リンクの確認"
@@ -7900,13 +8060,16 @@
         "ようこそ"
       ],
       "Welcome ${ userName }": [
-        "ようこそ、${ userName }"
+        "ようこそ ${ userName } さん"
       ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
       ],
       "What's new": [
         "更新情報"
+      ],
+      "Your changes are not synced yet": [
+        "変更は同期されていません"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "無料トライアルは ${ formattedEndDate } に終了します。"
@@ -8006,6 +8169,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } は同じ名前ですべてのフォルダーを結合します。これを避けるには、インポートする前にフォルダー名を変更してください。"
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
+      ],
       "Are you sure you want to discard your import?": [
         "インポートを破棄してよろしいですか?"
       ],
@@ -8056,6 +8225,12 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "この操作は元に戻せません。続行するには、単語${ boldDanger } を入力してください。"
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "この機能は有料の ${ BRAND_NAME } アカウントが必要です"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "このインポートは現在 ${ BRAND_NAME } アカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
