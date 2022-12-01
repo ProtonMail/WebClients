@@ -7,7 +7,7 @@ import verifiedBadge from '@proton/styles/assets/img/illustrations/verified-badg
 const VerifiedBadge = () => {
     return (
         <Tooltip title={c('Info').t`Verified ${BRAND_NAME} message`}>
-            <img src={verifiedBadge} alt={c('Info').t`Verified ${BRAND_NAME} message`} className="ml0-25" />
+            <img src={verifiedBadge} alt={c('Info').t`Verified ${BRAND_NAME} message`} className="ml0-25 flex-item-noshrink" />
         </Tooltip>
     );
 };
