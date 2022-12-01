@@ -1,4 +1,4 @@
-import { memo, useMemo, useRef } from 'react';
+import { memo, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -47,7 +47,6 @@ const ParticipantsInput = ({
     collapsible = true,
 }: Props) => {
     const numberOfParticipants = value.length;
-    const anchorRef = useRef<HTMLInputElement>(null);
 
     const { contactEmails, contactGroups, contactEmailsMap, groupsWithContactsMap } = useContactEmailsCache();
 
@@ -133,8 +132,6 @@ const ParticipantsInput = ({
                 placeholder={placeholder}
                 id={id}
                 data-test-id="participants-input"
-                ref={anchorRef}
-                anchorRef={anchorRef}
                 contactEmails={contactEmails}
                 contactGroups={contactGroups}
                 contactEmailsMap={contactEmailsMap}
