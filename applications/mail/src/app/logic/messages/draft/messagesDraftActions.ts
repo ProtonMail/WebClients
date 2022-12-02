@@ -32,6 +32,10 @@ export const sent = createAction<Message>('message/send/sent');
 
 export const endSending = createAction<string>('messages/send/end');
 
+/**
+ * @param {string} messageID MessageID can be the draft LocalID or the data ID. message.data.ID has priority for deletion
+ * @example dispatch(deleteDraft(message.data.ID || message.ID));
+ */
 export const deleteDraft = createAction<string>('messages/deleteDraft');
 
 export const cancelSendMessage = createAsyncThunk<Message, { messageID: string; api: Api }>(
