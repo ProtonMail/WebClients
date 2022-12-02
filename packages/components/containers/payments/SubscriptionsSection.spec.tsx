@@ -669,8 +669,19 @@ describe('SubscriptionsSection', () => {
         expect(container).toHaveTextContent('4.99');
         expect(container).toHaveTextContent('Active');
 
-        expect(container).toHaveTextContent('Mail Plus');
+        expect(container).toHaveTextContent('Mail Plus*');
         expect(container).toHaveTextContent('83.76');
         expect(container).toHaveTextContent('Upcoming');
+    });
+
+    it('should show renewal date as end of the current subscription if there is no upcoming one', () => {
+        const { container } = render(<SubscriptionsSection />);
+        expect(container).toHaveTextContent('* Renews automatically on Dec 21, 2022');
+    });
+
+    it('should show renewal date as end of the upcoming subscription if there is one', () => {
+        subscription.upcoming = upcoming;
+        const { container } = render(<SubscriptionsSection />);
+        expect(container).toHaveTextContent('* Renews automatically on Dec 21, 2024');
     });
 });
