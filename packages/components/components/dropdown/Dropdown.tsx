@@ -6,7 +6,6 @@ import {
     ReactNode,
     RefObject,
     useEffect,
-    useLayoutEffect,
     useRef,
     useState,
 } from 'react';
@@ -17,7 +16,14 @@ import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import noop from '@proton/utils/noop';
 
 import { classnames, getCustomSizingClasses } from '../../helpers';
-import { HotkeyTuple, useCombinedRefs, useDropdownArrowNavigation, useHotkeys, useIsClosing } from '../../hooks';
+import {
+    HotkeyTuple,
+    useCombinedRefs,
+    useDropdownArrowNavigation,
+    useElementRect,
+    useHotkeys,
+    useIsClosing,
+} from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { PopperPlacement, PopperPosition, allPopperPlacements, usePopper } from '../popper';
 import Portal from '../portal/Portal';
@@ -83,8 +89,15 @@ const Dropdown = ({
     ...rest
 }: DropdownProps) => {
     const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
+    const anchorRect = useElementRect(isOpen && sameAnchorWidth ? anchorRef : null);
 
-    const { floating, position, arrow, placement } = usePopper({
+    const {
+        floating,
+        position,
+        arrow,
+        placement,
+        availableSize: varAvailableSize,
+    } = usePopper({
         reference:
             anchorPosition || anchorPosition === null
                 ? {
@@ -99,6 +112,7 @@ const Dropdown = ({
         isOpen,
         originalPlacement,
         availablePlacements,
+        availableSize: true,
         offset,
     });
 
@@ -122,7 +136,6 @@ const Dropdown = ({
     const contentRef = useRef<HTMLDivElement>(null);
     const combinedContentRef = useCombinedRefs(contentRef, contentProps?.ref);
 
-    const anchorRectRef = useRef<DOMRect | undefined>();
     const [contentRect, setContentRect] = useState<DOMRect | undefined>();
 
     const focusTrapProps = useFocusTrap({ rootRef, active: isOpen && !disableFocusTrap, enableInitialFocus: false });
@@ -146,15 +159,6 @@ const Dropdown = ({
     useHotkeys(rootRef, hotkeyTuples, {
         dependencies: [isOpen, !disableDefaultArrowNavigation],
     });
-
-    useLayoutEffect(() => {
-        if (!isOpen) {
-            return;
-        }
-        if (sameAnchorWidth) {
-            anchorRectRef.current = anchorRef.current?.getBoundingClientRect();
-        }
-    }, [isOpen, sameAnchorWidth]);
 
     useEffect(() => {
         if (!isOpen) {
@@ -231,22 +235,21 @@ const Dropdown = ({
 
     const staticContentRectWidth = contentRect?.width || undefined;
     const staticContentRectHeight = contentRect?.height || undefined;
-    const width = sameAnchorWidth ? anchorRectRef.current?.width : staticContentRectWidth;
+    const width = sameAnchorWidth ? anchorRect?.width : staticContentRectWidth;
     const height = staticContentRectHeight;
-    const varSize =
-        width !== undefined
-            ? {
-                  '--width': `${width}px`,
-                  '--height': `${height}px`,
-              }
-            : {};
+    const varSize = {
+        ...(width !== undefined ? { '--width': `${width}px` } : undefined),
+        ...(height !== undefined ? { '--height': `${height}px` } : undefined),
+    };
 
     const rootStyle = {
         ...(noMaxHeight ? { '--max-height': 'unset' } : {}),
         ...(noMaxWidth ? { '--max-width': 'unset' } : {}),
         ...style,
         ...varPosition,
+        ...varAvailableSize,
         ...varSize,
+        ...arrow,
     };
 
     const contentStyle = UNSTABLE_AUTO_HEIGHT ? { '--height-custom': 'auto' } : undefined;
@@ -255,7 +258,7 @@ const Dropdown = ({
         <Portal>
             <div
                 ref={combinedDropdownRef}
-                style={{ ...rootStyle, ...style, ...arrow, ...varPosition, ...varSize }}
+                style={rootStyle}
                 role="dialog"
                 className={popperClassName}
                 onClick={handleClickContent}

@@ -10,6 +10,7 @@ import {
     hide,
     offset,
     shift,
+    size,
 } from '@floating-ui/dom';
 
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -39,18 +40,26 @@ interface Data {
     middlewareData: any;
 }
 
+interface AvailableSizeVariables {
+    '--available-width': string;
+    '--available-height': string;
+}
+
 interface PopperReturnValue {
     reference: ((el: ReferenceType | null) => void) | null;
     floating: ((el: HTMLElement | null) => void) | null;
     position: PopperPosition;
     arrow: PopperArrow;
     placement: PopperPlacement | 'hidden';
+    availableSize: AvailableSizeVariables | undefined;
+    update: () => void;
 }
 
 interface Props {
     isOpen?: boolean;
     originalPlacement?: PopperPlacement;
     availablePlacements?: PopperPlacement[];
+    availableSize?: boolean;
     reference?:
         | {
               mode: 'element';
@@ -75,13 +84,14 @@ const defaultState: Data = {
 };
 
 const usePopper = ({
-    isOpen = false,
+    isOpen,
     originalPlacement = 'top',
     availablePlacements = allPopperPlacements,
+    availableSize,
     offset: offsetPx = 10,
     relativeReference,
     reference: anchorReference,
-    updateAnimationFrame = false,
+    updateAnimationFrame,
 }: Props): PopperReturnValue => {
     const [data, setData] = useState<Data>(defaultState);
 
@@ -101,6 +111,8 @@ const usePopper = ({
             return;
         }
 
+        let availableSizeVariables: AvailableSizeVariables | undefined;
+
         // NOTE: This hook assumes that props never change during the lifetime of the component.
         computePosition(referenceEl, floatingEl, {
             placement: originalPlacement,
@@ -109,6 +121,19 @@ const usePopper = ({
                 offset(offsetPx),
                 flip({ fallbackPlacements }),
                 shift(),
+                availableSize
+                    ? size({
+                          apply({ elements, availableHeight, availableWidth }) {
+                              availableSizeVariables = {
+                                  '--available-height': `${Math.floor(availableHeight)}px`,
+                                  '--available-width': `${Math.floor(availableWidth)}px`,
+                              };
+                              Object.entries(availableSizeVariables).forEach(([key, value]) => {
+                                  elements.floating.style.setProperty(key, value);
+                              });
+                          },
+                      })
+                    : undefined,
                 hide(),
                 arrowOffset(),
                 rtlPlacement(),
@@ -118,6 +143,7 @@ const usePopper = ({
             if (!isMountedRef.current) {
                 return;
             }
+            data.middlewareData.availableSize = availableSizeVariables;
             setData((oldData) => {
                 if (isDeepEqual(oldData, data)) {
                     return oldData;
@@ -208,6 +234,7 @@ const usePopper = ({
     const adjustedPlacement: PopperPlacement = data.middlewareData.rtlPlacement?.placement || data.placement;
 
     return {
+        update,
         reference: isOpen ? setReference : null,
         floating: isOpen ? setFloating : null,
         position: hidden
@@ -220,6 +247,7 @@ const usePopper = ({
             '--arrow-offset': !arrowOffsetValue ? 0 : `${arrowOffsetValue}px`,
         },
         placement: hidden ? 'hidden' : adjustedPlacement,
+        availableSize: data.middlewareData.availableSize,
     };
 };
 
