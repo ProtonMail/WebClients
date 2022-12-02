@@ -198,3 +198,15 @@ export function getNormalCycleFromCustomCycle(cycle: CYCLE | undefined): CYCLE |
     }
     return cycle;
 }
+
+export const hasYearly = (subscription?: Subscription) => {
+    return subscription?.Cycle === CYCLE.YEARLY;
+};
+
+export const hasMonthly = (subscription?: Subscription) => {
+    return subscription?.Cycle === CYCLE.MONTHLY;
+};
+
+export const hasTwoYears = (subscription?: Subscription) => {
+    return subscription?.Cycle === CYCLE.TWO_YEARS;
+};
