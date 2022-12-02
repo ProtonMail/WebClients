@@ -114,7 +114,7 @@ const CalendarShareSection = ({
                 {hasPaidMail ? (
                     isCalendarSharingEnabled ? (
                         <>
-                            <div className="mb3">
+                            <div className="mb3 mt1-5">
                                 <div className="mb1-75">
                                     <h3 className="text-bold" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}>{c(
                                         'Calendar settings section title'
