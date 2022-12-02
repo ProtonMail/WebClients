@@ -221,7 +221,7 @@ const PaymentStep = ({
                             <>
                                 <Button type="submit" size="large" loading={loading} color="norm" fullWidth>
                                     {subscriptionData.checkResult.AmountDue > 0
-                                        ? c('Action').jt`Pay ${price}`
+                                        ? c('Action').jt`Pay ${price} now`
                                         : c('Action').t`Confirm`}
                                 </Button>
                                 <Alert3ds />
