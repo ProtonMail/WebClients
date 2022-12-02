@@ -1,3 +1,17 @@
+## Release: 5.0.6 — December 14, 2022
+
+### New features
+
+-   Manage your contacts from the new side panel
+
+### Improvements
+
+-   Better display on mobile view
+
+### Fixes
+
+-   Fix issue where some white spaces in event details could be trimmed when saving
+
 ## Release: 5.0.5 — October 5, 2022
 
 ### Improvements
