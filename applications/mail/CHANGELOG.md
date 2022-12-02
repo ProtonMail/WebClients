@@ -1,3 +1,13 @@
+## Release 5.0.14.0 — December 14th, 2022
+
+### Improvements
+
+-   Added a right-hand side panel giving users the ability to use Proton Mail and view upcoming Proton Calendar events or contacts in parallel
+
+### Bug fixes
+
+-   Various UI fixes
+
 ## Release 5.0.13.0 — November 30th, 2022
 
 ### Improvements
