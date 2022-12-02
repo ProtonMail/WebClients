@@ -47,8 +47,6 @@ export interface OfferConfig {
     canBeDisabled?: boolean;
     deals: Deal[];
     layout: JSXElementConstructor<OfferLayoutProps>;
-    // no side or top image to display
-    noImg?: boolean;
     /** Displays countdown if present */
     periodEnd?: Date;
     getCTAContent?: () => string;
