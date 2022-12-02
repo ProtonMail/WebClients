@@ -136,7 +136,7 @@ export const useDeleteDraft = () => {
                 throw error;
             }
 
-            dispatch(deleteDraft(message.localID));
+            dispatch(deleteDraft(message.data?.ID || message.localID));
 
             const conversationID = message.data?.ConversationID || '';
             const conversationFromConversationState = getConversation(conversationID);

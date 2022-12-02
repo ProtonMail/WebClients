@@ -154,8 +154,7 @@ export const endSending = (state: Draft<MessagesState>, { payload: ID }: Payload
 };
 
 export const deleteDraft = (state: Draft<MessagesState>, { payload: ID }: PayloadAction<string>) => {
-    const localID = getLocalID(state, ID);
-    delete state[localID];
+    delete state[ID];
 };
 
 export const cancelScheduled = (state: Draft<MessagesState>, { payload: ID }: PayloadAction<string>) => {
