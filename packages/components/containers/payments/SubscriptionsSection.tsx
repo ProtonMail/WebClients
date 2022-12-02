@@ -11,6 +11,11 @@ import { SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { getShortBillingText } from './helper';
 
+const getRenewalText = (periodEnd: number) => {
+    const formattedEndTime = <Time key="time-text">{periodEnd}</Time>;
+    return c('Billing cycle').jt`Renews automatically on ${formattedEndTime}`;
+};
+
 const SubscriptionsSection = () => {
     const [plans, loadingPlans] = usePlans();
     const [current, loadingSubscription] = useSubscription();
@@ -34,10 +39,15 @@ const SubscriptionsSection = () => {
         checkResult: upcomingCheckResult,
     });
 
+    const asterisk = <span> * </span>;
+
     const upcomingSubscription = upcoming && (
         <TableRow
             cells={[
-                <span>{upcomingCheckout.planTitle}</span>,
+                <span>
+                    {upcomingCheckout.planTitle}
+                    {asterisk}
+                </span>,
                 <span>{getShortBillingText(upcomingCheckResult.Cycle)}</span>,
                 <span>{upcomingCheckout.users}</span>,
                 <Time forceFormat={true}>{upcoming.PeriodStart}</Time>,
@@ -47,6 +57,15 @@ const SubscriptionsSection = () => {
                 <Badge type="info">{c('Subscription status').t`Upcoming`}</Badge>,
             ]}
         ></TableRow>
+    );
+
+    const renewalText = upcoming && (
+        <div className="flex w100 mb1 color-weak text-right mt1">
+            <div className="text-right w100">
+                {asterisk}
+                {getRenewalText(upcoming.PeriodStart)}
+            </div>
+        </div>
     );
 
     const currentCheckResult = getCheckResultFromSubscription(current);
@@ -89,6 +108,7 @@ const SubscriptionsSection = () => {
                         {upcomingSubscription}
                     </TableBody>
                 </Table>
+                {renewalText}
             </div>
         </SettingsSectionWide>
     );
