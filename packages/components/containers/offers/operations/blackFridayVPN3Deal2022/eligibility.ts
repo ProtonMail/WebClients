@@ -4,8 +4,6 @@ import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getPlan, hasBlackFridayDiscount, isExternal, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
-import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
-
 interface Props {
     user: UserModel;
     subscription?: Subscription;
@@ -17,8 +15,11 @@ const isEligible = ({ user, subscription, protonConfig, lastSubscriptionEnd = 0 
     const plan = getPlan(subscription);
     const noBF = !hasBlackFridayDiscount(subscription);
     const isVpnApp = protonConfig.APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const aMonthAgo = new Date();
+    aMonthAgo.setMonth(aMonthAgo.getMonth() - 1);
+    const sinceAMonth = isBefore(fromUnixTime(lastSubscriptionEnd), aMonthAgo);
     return (
-        ((user.isFree && isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT)) ||
+        ((user.isFree && sinceAMonth) ||
             isTrial(subscription) ||
             (plan?.Name === PLANS.VPN && subscription?.Cycle === CYCLE.MONTHLY && !user.hasPaidMail)) &&
         noBF &&
