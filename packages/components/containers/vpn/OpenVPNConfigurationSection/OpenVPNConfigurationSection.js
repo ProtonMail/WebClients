@@ -250,8 +250,10 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                         </SettingsParagraph>
                         {isUpgradeRequiredForSecureCore && (
                             <SettingsParagraph>
-                                <span className="block">{c('Info')
-                                    .t`${vpnPlus} required for Secure Core feature.`}</span>
+                                <span className="block">{
+                                    // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
+                                    c('Info').t`${vpnPlus} required for Secure Core feature.`
+                                }</span>
                                 <SettingsLink path="/upgrade">{c('Link').t`Learn more`}</SettingsLink>
                             </SettingsParagraph>
                         )}
@@ -275,8 +277,11 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                             </SettingsParagraph>
                         )}
                         {isUpgradeRequiredForCountries && (
-                            <SettingsParagraph learnMoreUrl={`https://${VPN_HOSTNAME}/dashboard`}>{c('Info')
-                                .t`${vpnPlus} required for Country level connection.`}</SettingsParagraph>
+                            <SettingsParagraph learnMoreUrl={`https://${VPN_HOSTNAME}/dashboard`}>{
+                                // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
+                                // translator: This notice appears when a free user go to "OpenVPN configuration files" section and select "Country configs'
+                                c('Info').t`${vpnPlus} required for Country level connection.`
+                            }</SettingsParagraph>
                         )}
                         <ConfigsTable
                             category={CATEGORY.COUNTRY}
@@ -340,8 +345,10 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                         </div>
                         {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) && vpnPlus && (
                             <div className="border p2 text-center">
-                                <h3 className="color-primary mt0 mb1">{c('Title')
-                                    .t`Get ${vpnPlus} to access all servers`}</h3>
+                                <h3 className="color-primary mt0 mb1">{
+                                    // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
+                                    c('Title').t`Get ${vpnPlus} to access all servers`
+                                }</h3>
                                 <ul className="unstyled inline-flex mt0 mb2 on-mobile-flex-column">
                                     <li className="flex flex-nowrap flex-align-items-center mr1">
                                         <Icon name="checkmark" className="color-success mr0-5" />
@@ -382,7 +389,10 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                 </ul>
                                 <div>
                                     <ButtonLike as={SettingsLink} color="norm" path={`/dashboard?plan=${PLANS.VPN}`}>
-                                        {c('Action').t`Get ${vpnPlus}`}
+                                        {
+                                            // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
+                                            c('Action').t`Get ${vpnPlus}`
+                                        }
                                     </ButtonLike>
                                 </div>
                             </div>
