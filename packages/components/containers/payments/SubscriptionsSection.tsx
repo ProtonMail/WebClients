@@ -108,7 +108,9 @@ const SubscriptionsSection = () => {
         checkResult: getCheckResultFromSubscription(upcoming),
     });
 
-    const asterisk = <span> * </span>;
+    const asterisk = <span>* </span>;
+
+    const renewalDate = upcoming?.PeriodEnd ?? current.PeriodEnd;
 
     return (
         <SettingsSectionWide>
@@ -147,14 +149,12 @@ const SubscriptionsSection = () => {
                         )}
                     </TableBody>
                 </Table>
-                {upcoming && (
-                    <div className="flex w100 mb1 color-weak text-right mt1">
-                        <div className="text-right w100">
-                            {asterisk}
-                            {getRenewalText(upcoming.PeriodStart)}
-                        </div>
+                <div className="flex w100 mb1 color-weak text-right mt1">
+                    <div className="text-right w100">
+                        {asterisk}
+                        {getRenewalText(renewalDate)}
                     </div>
-                )}
+                </div>
             </div>
         </SettingsSectionWide>
     );
