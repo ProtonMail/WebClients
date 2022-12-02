@@ -48,7 +48,7 @@ const ContextMenu = ({
             id={uid}
             isOpen={isOpen}
             anchorRef={anchorRef}
-            anchorPosition={position}
+            anchorPosition={position || null}
             availablePlacements={cornerPopperPlacements}
             noCaret
             autoCloseOutsideAnchor={false}
