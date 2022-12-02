@@ -42,7 +42,8 @@ export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number) => {
 interface SubscriptionCheckoutData {
     planName: PLANS | null;
     planTitle: string;
-    users: string;
+    usersTitle: string;
+    users: number;
     addons: { name: ADDON_NAMES; title: string; quantity: number }[];
     withDiscountPerCycle: number;
     withDiscountPerMonth: number;
@@ -129,7 +130,8 @@ export const getCheckout = ({
                 title: getAddonTitle(addon.name, addon.quantity),
             };
         }),
-        users: getUserTitle(result.users || 1), // VPN and free plan has no users
+        usersTitle: getUserTitle(result.users || 1), // VPN and free plan has no users
+        users: result.users || 1,
         withDiscountPerCycle,
         withDiscountPerMonth: withDiscountPerCycle / cycle,
         discountPerCycle,

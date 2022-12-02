@@ -84,7 +84,8 @@ describe('should get checkout result', () => {
         ).toEqual({
             planTitle: 'VPN',
             planName: PLANS.VPN,
-            users: '1 user',
+            usersTitle: '1 user',
+            users: 1,
             addons: [],
             withDiscountPerCycle: 999,
             withDiscountPerMonth: 999,
@@ -116,7 +117,8 @@ describe('should get checkout result', () => {
         ).toEqual({
             planTitle: 'VIS',
             planName: PLANS.NEW_VISIONARY,
-            users: '6 users',
+            usersTitle: '6 users',
+            users: 6,
             addons: [],
             withDiscountPerCycle: 43200,
             withDiscountPerMonth: 1800,
@@ -148,7 +150,8 @@ describe('should get checkout result', () => {
         ).toEqual({
             planTitle: 'VPN',
             planName: PLANS.VPN,
-            users: '1 user',
+            usersTitle: '1 user',
+            users: 1,
             addons: [],
             withDiscountPerCycle: 11976,
             withDiscountPerMonth: 399.2,
@@ -181,7 +184,8 @@ describe('should get checkout result', () => {
         ).toEqual({
             planTitle: 'BUS',
             planName: PLANS.BUNDLE_PRO,
-            users: '3 users',
+            usersTitle: '3 users',
+            users: 3,
             addons: [{ name: ADDON_NAMES.DOMAIN_BUNDLE_PRO, quantity: 3, title: '+ 3 custom domains' }],
             withDiscountPerCycle: 81288,
             withDiscountPerMonth: 3387,
@@ -213,7 +217,8 @@ describe('should get checkout result', () => {
         ).toEqual({
             planTitle: 'VIS',
             planName: PLANS.NEW_VISIONARY,
-            users: '6 users',
+            usersTitle: '6 users',
+            users: 6,
             addons: [],
             withDiscountPerCycle: 0,
             withDiscountPerMonth: 0,
