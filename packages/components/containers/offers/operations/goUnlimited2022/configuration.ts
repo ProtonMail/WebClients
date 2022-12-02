@@ -21,10 +21,11 @@ const config: OfferConfig = {
             cycle: CYCLE.TWO_YEARS,
             popular: true,
             features: getUnlimitedDealFeatures,
+            getCTAContent: () => c('specialoffer: Action, Unlimited is a plan name').t`Go Unlimited`,
         },
     ],
     layout: Layout,
-    getCTAContent: () => c('specialoffer: Action, Unlimited is a plan name').t`Go Unlimited`,
+
 };
 
 export default config;

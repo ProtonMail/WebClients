@@ -12,10 +12,6 @@ $amount-size: 36;
 		&.offer-modal--one-deal {
 			--size: #{em(820)}; // half image & content
 
-			&.offer-modal--noimg {
-				--size: #{em(420)}; // no left or top image
-			}
-
 			.modal-two-content {
 				margin-block-end: 0;
 				@include respond-to($breakpoint-small, 'min') {
