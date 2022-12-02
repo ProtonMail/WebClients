@@ -104,7 +104,7 @@ const SubscriptionCheckout = ({
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const { planTitle, users, discountPercent, withDiscountPerMonth, withDiscountPerCycle, addons } = getCheckout({
+    const { planTitle, usersTitle, discountPercent, withDiscountPerMonth, withDiscountPerCycle, addons } = getCheckout({
         planIDs,
         plansMap,
         checkResult,
@@ -143,7 +143,7 @@ const SubscriptionCheckout = ({
             <CheckoutRow
                 title={
                     <>
-                        {users}
+                        {usersTitle}
                         {discountPercent > 0 && (
                             <Badge type="success" tooltip={getDiscountText()} className="ml0-5 text-semibold">
                                 -{discountPercent}%
