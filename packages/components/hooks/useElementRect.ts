@@ -67,11 +67,11 @@ export const createObserver = (
     };
 };
 
-const useElementRect = <E extends HTMLElement>(ref: RefObject<E>, maybeRateLimiter?: RateLimiter | null) => {
+const useElementRect = <E extends HTMLElement>(ref: RefObject<E> | null, maybeRateLimiter?: RateLimiter | null) => {
     const [elementRect, setElementRect] = useState<DOMRect | null>(null);
 
     useLayoutEffect(() => {
-        const target = ref.current;
+        const target = ref?.current;
         if (!target) {
             return;
         }
@@ -82,7 +82,7 @@ const useElementRect = <E extends HTMLElement>(ref: RefObject<E>, maybeRateLimit
             },
             maybeRateLimiter
         );
-    }, [ref.current]);
+    }, [ref, ref?.current]);
 
     return elementRect;
 };

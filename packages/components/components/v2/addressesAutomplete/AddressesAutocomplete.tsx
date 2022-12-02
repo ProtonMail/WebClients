@@ -29,7 +29,7 @@ interface Props extends Omit<InputFieldProps<typeof Input>, 'value' | 'onChange'
     onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
     onAddRecipients: (recipients: Recipient[]) => void;
     recipients: Recipient[];
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef?: RefObject<HTMLElement>;
     contactEmails?: ContactEmail[];
     contactGroups?: ContactGroup[];
     contactEmailsMap?: SimpleMap<ContactEmail>;
@@ -71,6 +71,7 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
         const [input, setInput] = useState('');
         const [emailError, setEmailError] = useState('');
         const inputRef = useRef<HTMLInputElement>(null);
+        const rootRef = useRef<HTMLDivElement>(null);
 
         const [recipientsByAddress, recipientsByGroup] = useMemo(() => {
             return recipients.reduce<[Set<string>, Set<string>]>(
@@ -199,6 +200,7 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
                     {...inputProps}
                     dense
                     ref={useCombinedRefs(ref, inputRef)}
+                    rootRef={rootRef}
                     value={input}
                     onValue={(value: string) => {
                         handleInputChange(value.trimStart());
@@ -225,7 +227,7 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
                     style={compact ? { height: 'auto', minHeight: 'auto' } : {}}
                     error={emailError}
                 />
-                <AutocompleteList anchorRef={anchorRef} {...suggestionProps}>
+                <AutocompleteList anchorRef={anchorRef || rootRef} {...suggestionProps}>
                     {filteredAndSortedOptions.map(({ chunks, text, option }, index) => {
                         return (
                             <Option

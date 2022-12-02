@@ -1,6 +1,6 @@
 import { RefObject } from 'react';
 
-import { Middleware, MiddlewareArguments, MiddlewareReturn, size } from '@floating-ui/dom';
+import { Middleware, MiddlewareArguments, MiddlewareReturn } from '@floating-ui/dom';
 
 import { ArrowOffset, PopperPlacement, PopperPosition } from './interface';
 
@@ -188,35 +188,6 @@ export const anchorOffset = (ref: RefObject<HTMLElement> | undefined): Middlewar
                 x: x + position.x,
                 y: y + position.y,
             };
-        },
-    };
-};
-
-export const availableSize = (): Middleware => {
-    let availableSize = { width: 0, height: 0 };
-
-    const sizeMiddleWare = size({
-        apply(args: MiddlewareArguments & { availableWidth: number; availableHeight: number }) {
-            availableSize.width = args.availableWidth;
-            availableSize.height = args.availableHeight;
-        },
-    });
-
-    return {
-        name: 'availableSize',
-        async fn(middlewareArguments: MiddlewareArguments): Promise<MiddlewareReturn> {
-            // Hack to get the result of the size middleware to be returned.
-            await sizeMiddleWare.fn(middlewareArguments);
-            return { data: availableSize };
-        },
-    };
-};
-
-export const rects = (): Middleware => {
-    return {
-        name: 'rects',
-        async fn(middlewareArguments: MiddlewareArguments): Promise<MiddlewareReturn> {
-            return { data: middlewareArguments.rects };
         },
     };
 };
