@@ -1,10 +1,14 @@
+import { ReactElement } from 'react';
+
 import { c } from 'ttag';
 
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { Currency, Cycle } from '@proton/shared/lib/interfaces';
 
-import { Badge, Loader, Table, TableBody, TableCell, TableHeader, TableRow, Time } from '../../components';
+import { Loader, Table, TableBody, TableCell, TableHeader, TableRow, Time } from '../../components';
+import { default as Badge, Props as BadgeProps } from '../../components/badge/Badge';
 import Price from '../../components/price/Price';
 import { usePlans, useSubscription } from '../../hooks';
 import { SettingsSectionWide } from '../account';
@@ -16,9 +20,71 @@ const getRenewalText = (periodEnd: number) => {
     return c('Billing cycle').jt`Renews automatically on ${formattedEndTime}`;
 };
 
+interface SubscriptionRowProps {
+    planTitle: string;
+    Cycle: Cycle;
+    users: number;
+    PeriodStart: number;
+    PeriodEnd: number;
+    PricePerMonth: number;
+    PricePerCycle: number;
+    Currency: Currency;
+    status: {
+        label: string;
+        type: BadgeProps['type'];
+    };
+    asterisk?: ReactElement;
+}
+
+const SubscriptionRow = ({
+    planTitle,
+    Cycle,
+    users,
+    PeriodStart,
+    PeriodEnd,
+    PricePerMonth,
+    PricePerCycle,
+    Currency,
+    status,
+    asterisk,
+}: SubscriptionRowProps) => {
+    return (
+        <TableRow>
+            <TableCell>
+                <span>
+                    {planTitle}
+                    {asterisk}
+                </span>
+            </TableCell>
+            <TableCell>
+                <span>{getShortBillingText(Cycle)}</span>
+            </TableCell>
+            <TableCell>
+                <span>{users}</span>
+            </TableCell>
+            <TableCell>
+                <Time forceFormat={true}>{PeriodStart}</Time>
+            </TableCell>
+            <TableCell>
+                <Time forceFormat={true}>{PeriodEnd}</Time>
+            </TableCell>
+            <TableCell className="text-right">
+                <Price currency={Currency}>{PricePerMonth}</Price>
+            </TableCell>
+            <TableCell className="text-right">
+                <Price currency={Currency}>{PricePerCycle}</Price>
+            </TableCell>
+            <TableCell className="text-right">
+                <Badge type={status.type}>{status.label}</Badge>
+            </TableCell>
+        </TableRow>
+    );
+};
+
 const SubscriptionsSection = () => {
     const [plans, loadingPlans] = usePlans();
     const [current, loadingSubscription] = useSubscription();
+    const upcoming = current?.upcoming;
 
     if (loadingSubscription || loadingPlans) {
         return <Loader />;
@@ -28,58 +94,26 @@ const SubscriptionsSection = () => {
         return <MozillaInfoPanel />;
     }
 
-    const upcoming = current.upcoming;
-
     const plansMap = toMap(plans, 'Name');
 
-    const upcomingCheckResult = getCheckResultFromSubscription(upcoming);
-    const upcomingCheckout = getCheckout({
-        planIDs: getPlanIDs(upcoming),
+    const currentCheckout = getCheckout({
         plansMap,
-        checkResult: upcomingCheckResult,
+        planIDs: getPlanIDs(current),
+        checkResult: getCheckResultFromSubscription(current),
+    });
+
+    const upcomingCheckout = getCheckout({
+        plansMap,
+        planIDs: getPlanIDs(upcoming),
+        checkResult: getCheckResultFromSubscription(upcoming),
     });
 
     const asterisk = <span> * </span>;
 
-    const upcomingSubscription = upcoming && (
-        <TableRow
-            cells={[
-                <span>
-                    {upcomingCheckout.planTitle}
-                    {asterisk}
-                </span>,
-                <span>{getShortBillingText(upcomingCheckResult.Cycle)}</span>,
-                <span>{upcomingCheckout.users}</span>,
-                <Time forceFormat={true}>{upcoming.PeriodStart}</Time>,
-                <Time forceFormat={true}>{upcoming.PeriodEnd}</Time>,
-                <Price currency={upcoming.Currency}>{upcoming.RenewAmount / upcoming.Cycle}</Price>,
-                <Price currency={upcoming.Currency}>{upcoming.RenewAmount}</Price>,
-                <Badge type="info">{c('Subscription status').t`Upcoming`}</Badge>,
-            ]}
-        ></TableRow>
-    );
-
-    const renewalText = upcoming && (
-        <div className="flex w100 mb1 color-weak text-right mt1">
-            <div className="text-right w100">
-                {asterisk}
-                {getRenewalText(upcoming.PeriodStart)}
-            </div>
-        </div>
-    );
-
-    const currentCheckResult = getCheckResultFromSubscription(current);
-
-    const currentCheckout = getCheckout({
-        planIDs: getPlanIDs(current),
-        plansMap,
-        checkResult: currentCheckResult,
-    });
-
     return (
         <SettingsSectionWide>
             <div style={{ overflow: 'auto' }}>
-                <Table>
+                <Table className="table-auto">
                     <TableHeader>
                         <TableRow>
                             <TableCell type="header">{c('Title').t`Plan`}</TableCell>
@@ -87,28 +121,40 @@ const SubscriptionsSection = () => {
                             <TableCell type="header">{c('Title').t`Users`}</TableCell>
                             <TableCell type="header">{c('Title').t`Start date`}</TableCell>
                             <TableCell type="header">{c('Title').t`End date`}</TableCell>
-                            <TableCell type="header">{c('Title').t`Price per month`}</TableCell>
-                            <TableCell type="header">{c('Title').t`Total paid`}</TableCell>
+                            <TableCell type="header" className="text-right min-w7e">{c('Title')
+                                .t`Price per month`}</TableCell>
+                            <TableCell type="header" className="text-right">{c('Title').t`Total paid`}</TableCell>
                             <TableCell type="header"> </TableCell>
                         </TableRow>
                     </TableHeader>
                     <TableBody colSpan={8}>
-                        <TableRow
-                            cells={[
-                                <span>{currentCheckout.planTitle}</span>,
-                                <span>{getShortBillingText(currentCheckResult.Cycle)}</span>,
-                                <span>{currentCheckout.users}</span>,
-                                <Time forceFormat={true}>{current.PeriodStart}</Time>,
-                                <Time forceFormat={true}>{current.PeriodEnd}</Time>,
-                                <Price currency={current.Currency}>{currentCheckout.withDiscountPerMonth}</Price>,
-                                <Price currency={current.Currency}>{currentCheckout.withDiscountPerCycle}</Price>,
-                                <Badge type="success">{c('Subscription status').t`Active`}</Badge>,
-                            ]}
-                        ></TableRow>
-                        {upcomingSubscription}
+                        <SubscriptionRow
+                            {...currentCheckout}
+                            {...current}
+                            PricePerMonth={currentCheckout.withDiscountPerMonth}
+                            PricePerCycle={currentCheckout.withDiscountPerCycle}
+                            status={{ type: 'success', label: c('Subscription status').t`Active` }}
+                        ></SubscriptionRow>
+                        {upcoming && (
+                            <SubscriptionRow
+                                {...upcomingCheckout}
+                                {...upcoming}
+                                PricePerMonth={upcoming.RenewAmount / upcoming.Cycle}
+                                PricePerCycle={upcoming.RenewAmount}
+                                status={{ type: 'info', label: c('Subscription status').t`Upcoming` }}
+                                asterisk={asterisk}
+                            ></SubscriptionRow>
+                        )}
                     </TableBody>
                 </Table>
-                {renewalText}
+                {upcoming && (
+                    <div className="flex w100 mb1 color-weak text-right mt1">
+                        <div className="text-right w100">
+                            {asterisk}
+                            {getRenewalText(upcoming.PeriodStart)}
+                        </div>
+                    </div>
+                )}
             </div>
         </SettingsSectionWide>
     );
