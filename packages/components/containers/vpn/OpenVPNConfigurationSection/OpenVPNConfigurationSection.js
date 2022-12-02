@@ -279,6 +279,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                         {isUpgradeRequiredForCountries && (
                             <SettingsParagraph learnMoreUrl={`https://${VPN_HOSTNAME}/dashboard`}>{
                                 // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
+                                // translator: This notice appears when a free user go to "OpenVPN configuration files" section and select "Country configs'
                                 c('Info').t`${vpnPlus} required for Country level connection.`
                             }</SettingsParagraph>
                         )}
