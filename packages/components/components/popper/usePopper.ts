@@ -99,6 +99,7 @@ const usePopper = ({
     const floating = useRef<HTMLElement | null>(null);
     const cleanupRef = useRef<(() => void) | void | null>(null);
     const isMountedRef = useRef(false);
+    const iterationRef = useRef<Symbol>();
 
     const fallbackPlacements = useMemo(() => {
         return getFallbackPlacements(originalPlacement, availablePlacements);
@@ -113,6 +114,7 @@ const usePopper = ({
 
         let availableSizeVariables: AvailableSizeVariables | undefined;
 
+        const iteration = (iterationRef.current = Symbol('iteration'));
         // NOTE: This hook assumes that props never change during the lifetime of the component.
         computePosition(referenceEl, floatingEl, {
             placement: originalPlacement,
@@ -140,7 +142,7 @@ const usePopper = ({
             ],
             strategy: 'fixed',
         }).then((data) => {
-            if (!isMountedRef.current) {
+            if (!isMountedRef.current || iteration !== iterationRef.current) {
                 return;
             }
             data.middlewareData.availableSize = availableSizeVariables;
