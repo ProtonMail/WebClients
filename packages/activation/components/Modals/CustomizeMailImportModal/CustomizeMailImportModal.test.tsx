@@ -96,8 +96,8 @@ describe('Customize modal tests', () => {
             />
         );
 
-        const canceButton = screen.getByTestId('CustomizeModal:modalCancel');
-        fireEvent.click(canceButton);
+        const cancelButton = screen.getByTestId('CustomizeModal:modalCancel');
+        fireEvent.click(cancelButton);
     });
 
     it('Should display the customize folder modal', () => {
@@ -148,7 +148,7 @@ describe('Customize modal tests', () => {
         const closeModal = screen.getByTestId('CancelModal:cancel');
         fireEvent.click(closeModal);
 
-        //Click agian the cancel button but cancel the changes this time
+        //Click again the cancel button but cancel the changes this time
         fireEvent.click(cancelButton);
         const quitModal = screen.getByTestId('CancelModal:quit');
         fireEvent.click(quitModal);
@@ -195,7 +195,7 @@ describe('Customize modal tests', () => {
         });
     });
 
-    it('Should display an error if folder is reserverd and save buttons should be disabled', () => {
+    it('Should display an error if folder is reserved and save buttons should be disabled', () => {
         const fields: MailImportFields = {
             mapping: new MailImportFoldersParser(providerFolderWithError, isLabelMapping).folders,
             importLabel: { Color: '#fff', Name: 'label', Type: 1 },

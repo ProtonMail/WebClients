@@ -87,7 +87,7 @@ const CustomizeMailImportModal = ({
                         isLabelMapping={isLabelMapping}
                         organizeFolderVisible={displayFolders}
                         selectedFoldersCount={selectedFoldersCount}
-                        toggleFolderVisility={toggleFolders}
+                        toggleFolderVisibility={toggleFolders}
                         totalFoldersCount={totalFoldersCount}
                     />
                     <GmailCategories

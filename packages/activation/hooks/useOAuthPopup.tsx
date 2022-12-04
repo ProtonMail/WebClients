@@ -2,71 +2,45 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { G_OAUTH_REDIRECT_PATH, O_OAUTH_REDIRECT_PATH } from '@proton/activation/constants';
-import { OAUTH_PROVIDER, OAuthProps } from '@proton/activation/interface';
+import { ImportProvider } from '@proton/activation/interface';
 import useApiEnvironmentConfig from '@proton/components/hooks/useApiEnvironmentConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
-import { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces';
+
+import { getOAuthAuthorizationUrl, getOAuthRedirectURL, getProviderNumber } from './useOAuthPopup.helpers';
 
 const WINDOW_WIDTH = 500;
 const WINDOW_HEIGHT = 600;
 
 const POLLING_INTERVAL = 100;
 
-const getOAuthRedirectURL = (provider: OAUTH_PROVIDER) => {
-    const { protocol, host } = window.location;
+const CreateAuthCancelledError = (errorMessage: string) => {
+    const { createNotification } = useNotifications();
 
-    if (provider === OAUTH_PROVIDER.GOOGLE) {
-        return `${protocol}//${host}${G_OAUTH_REDIRECT_PATH}`;
-    }
-
-    if (provider === OAUTH_PROVIDER.OUTLOOK) {
-        return `${protocol}//${host}${O_OAUTH_REDIRECT_PATH}`;
-    }
-
-    throw new Error('Provider does not exist');
+    createNotification({
+        text: (
+            <div className="text-center">
+                {c('Error').t`Authentication canceled.`}
+                <br />
+                {errorMessage}
+            </div>
+        ),
+        type: 'error',
+    });
 };
+const CreateAuthError = (errorMessage: string) => {
+    const { createNotification } = useNotifications();
 
-const getOAuthAuthorizationUrl = ({
-    provider,
-    scope,
-    config,
-    loginHint,
-}: {
-    provider: OAUTH_PROVIDER;
-    scope: string;
-    config: ApiEnvironmentConfig;
-    loginHint?: string;
-}) => {
-    let url;
-    const params = new URLSearchParams();
-
-    params.append('redirect_uri', getOAuthRedirectURL(provider));
-    params.append('response_type', 'code');
-    params.append('scope', scope);
-    // force user to consent again so that we can always get a refresh token
-    params.append('prompt', 'consent');
-
-    if (provider === OAUTH_PROVIDER.GOOGLE) {
-        params.append('access_type', 'offline');
-        params.append('client_id', config['importer.google.client_id']);
-        if (loginHint) {
-            params.append('login_hint', loginHint);
-        }
-        url = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
-    }
-
-    if (provider === OAUTH_PROVIDER.OUTLOOK) {
-        params.append('client_id', config['importer.outlook.client_id']);
-        url = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?${params.toString()}`;
-    }
-
-    if (!url) {
-        throw new Error('Provider does not exist');
-    }
-
-    return url;
+    createNotification({
+        text: (
+            <div className="text-center">
+                {c('Error').t`Authentication error.`}
+                <br />
+                {errorMessage}
+            </div>
+        ),
+        type: 'error',
+    });
 };
 
 interface Props {
@@ -74,7 +48,6 @@ interface Props {
 }
 
 const useOAuthPopup = ({ errorMessage }: Props) => {
-    const { createNotification } = useNotifications();
     const [config, loadingConfig] = useApiEnvironmentConfig();
     const stateId = useRef<string>();
 
@@ -84,10 +57,11 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
         loginHint,
         callback,
     }: {
-        provider: OAUTH_PROVIDER;
+        provider: ImportProvider;
         scope: string;
         loginHint?: string;
-        callback: (oauthProps: OAuthProps) => void | Promise<void>;
+        //TODO properly type this
+        callback: (oauthProps: any) => void | Promise<void>;
     }) => {
         let interval: number;
         const authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config, loginHint });
@@ -128,43 +102,23 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
                         const error = params.get('error');
 
                         if (error) {
-                            createNotification({
-                                text: (
-                                    <>
-                                        {c('Error').t`Authentication canceled.`}
-                                        <br />
-                                        {errorMessage}
-                                    </>
-                                ),
-                                type: 'error',
-                            });
-                            return;
+                            return CreateAuthCancelledError(errorMessage);
                         }
 
                         const state = params.get('state');
 
                         // State passthrough mismatch error
                         if (state !== stateId.current) {
-                            createNotification({
-                                text: (
-                                    <>
-                                        {c('Error').t`Authentication error.`}
-                                        <br />
-                                        {errorMessage}
-                                    </>
-                                ),
-                                type: 'error',
-                            });
-                            return;
+                            return CreateAuthError(errorMessage);
                         }
 
                         const Code = params.get('code');
-
                         if (!Code) {
                             return;
                         }
 
-                        void callback({ Code, Provider: provider, RedirectUri });
+                        const providerNum = getProviderNumber(provider);
+                        void callback({ Code, Provider: providerNum, RedirectUri });
                     }
                 } catch (err: any) {
                     // silent error

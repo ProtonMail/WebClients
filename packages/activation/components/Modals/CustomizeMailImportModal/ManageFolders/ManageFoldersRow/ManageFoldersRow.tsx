@@ -118,7 +118,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                         style={indentStyle(folderItem.protonPath.length)}
                         data-testid="CustomizeModal:destinationItem"
                     >
-                        {!folderItem.isLabel && (
+                        {((folderItem.isLabel && folderItem.systemFolder) || !folderItem.isLabel) && (
                             <Icon
                                 name={folderItem.systemFolder ? FOLDER_ICONS[folderItem.systemFolder] : 'folder'}
                                 className={clsx([

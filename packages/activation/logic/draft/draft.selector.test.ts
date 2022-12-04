@@ -113,12 +113,14 @@ describe('EasySwitch draft selectors', () => {
             expect(selectDraftModal(state3)).toEqual('import-Contacts');
         });
 
-        it('Should return "oauth" when selecting Oauth import', () => {
+        it('Should return "oauth" when selecting OAuth import', () => {
             const state: EasySwitchState = {
                 ...BASE_STATE,
                 oauthDraft: {
                     step: 'started',
-                    products: [ImportType.CALENDAR, ImportType.MAIL],
+                    mailImport: {
+                        products: [ImportType.MAIL, ImportType.CALENDAR],
+                    },
                     provider: ImportProvider.GOOGLE,
                 },
                 imapDraft: {

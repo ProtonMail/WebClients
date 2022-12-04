@@ -4,6 +4,7 @@ import { ApiMailImporterFolder } from '@proton/activation/api/api.interface';
 import { MAX_FOLDERS_DEPTH } from '@proton/activation/constants';
 import { MailImportDestinationFolder } from '@proton/activation/interface';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
+import isTruthy from '@proton/utils/isTruthy';
 import move from '@proton/utils/move';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
@@ -218,38 +219,37 @@ class MailImportFoldersParser {
         return [first, second, third.join(separator)];
     };
 
-    private getFolderChildIds = (index: number, childIds: string[] = [], i = 1): string[] => {
+    private getFolderChildIds = (index: number): string[] => {
         const folder = this.providerFolders[index];
-        const nextFolder = this.providerFolders[index + i];
-        if (!nextFolder) {
-            return childIds;
-        }
 
-        const folderHierachy = this.getProviderPath(folder.Source, folder.Separator);
-        const nextFolderHierachy = this.getProviderPath(nextFolder.Source, nextFolder.Separator);
-
-        if (nextFolderHierachy.length > folderHierachy.length) {
-            childIds.push(nextFolder.Source);
-            return this.getFolderChildIds(index, childIds, i + 1);
-        }
-
-        return childIds;
+        /**
+         * Children are folder that starts with the same source and have a separator right at the end of the current folder
+         *
+         * For example the following folder:
+         * 'folder' is the parent of 'folder/sub folder' since 'folder/sub folder' starts with 'folder' and has '/' right after
+         */
+        return this.providerFolders
+            .map((item) => {
+                if (
+                    item.Source.startsWith(folder.Source) &&
+                    item.Source.charAt(folder.Source.length) === folder.Separator
+                ) {
+                    return item;
+                }
+            })
+            .filter(isTruthy)
+            .map((item) => item.Source);
     };
 
-    private getParentFolderId = (index: number, i = 1): string | undefined => {
+    private getParentFolderId = (index: number): string | undefined => {
         const folder = this.providerFolders[index];
-        const prevFolder = this.providerFolders[index - i];
-        if (!prevFolder) {
-            return undefined;
-        }
 
-        const folderHierachy = this.getProviderPath(folder.Source, folder.Separator);
-        const prevFolderHierachy = this.getProviderPath(prevFolder.Source, prevFolder.Separator);
-        if (prevFolderHierachy.length === folderHierachy.length - 1) {
-            return prevFolder.Source;
-        }
-
-        return this.getParentFolderId(index, i + 1);
+        /**
+         * Parents folders are folders that are one level above in the providerPath
+         * It can either be undefined or a string
+         */
+        const folderProviderPath = this.getProviderPath(folder.Source, folder.Separator);
+        return folderProviderPath[folderProviderPath.length - 2];
     };
 
     private createFolders(isLabelMapping = false) {
@@ -267,6 +267,11 @@ class MailImportFoldersParser {
 
                 const providerPath = this.getProviderPath(folder.Source, folder.Separator);
 
+                // System subfolders need to have root parent with a destination.
+                const isSystemFolderChild = this.providerFolders.some((item) => {
+                    return item.Source === providerPath[0] && providerPath.length > 1 && item.DestinationFolder;
+                });
+
                 const parsedFolder = {
                     id: folder.Source,
                     providerPath,
@@ -274,9 +279,7 @@ class MailImportFoldersParser {
                     checked: true, // By default we assume that every folders should be imported
                     color: memoizedRootFolderColor,
                     systemFolder: folder.DestinationFolder,
-                    isSystemFolderChild:
-                        providerPath.length > 1 &&
-                        this.providerFolders.find((f) => f.DestinationFolder === providerPath[0]) !== undefined,
+                    isSystemFolderChild: isSystemFolderChild,
                     folderChildIDS: this.getFolderChildIds(index),
                     folderParentID: this.getParentFolderId(index),
                     protonPath: this.getProtonPath(folder.Source, folder.Separator, isLabelMapping),
@@ -287,7 +290,21 @@ class MailImportFoldersParser {
                 return parsedFolder;
             });
 
-        return result;
+        const sortedResults = new Set<MailImportFolder>();
+        result.forEach((item) => {
+            if (item.folderChildIDS.length > 0) {
+                sortedResults.add(item);
+                item.folderChildIDS.forEach((childId) => {
+                    const child = result.find((item) => item.id.endsWith(childId));
+                    if (child) {
+                        sortedResults.add(child);
+                    }
+                });
+            }
+            sortedResults.add(item);
+        });
+
+        return Array.from(sortedResults);
     }
 }
 
