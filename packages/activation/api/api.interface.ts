@@ -51,7 +51,7 @@ export interface ApiMailImporterFolder {
     /**
      * TODO
      * Flags seem to deliver inconsistent results between
-     * IMAP and Oauth calls. We will not rely on it ATM
+     * IMAP and OAuth calls. We will not rely on it ATM
      * */
     Flags: string[];
     Total?: number;

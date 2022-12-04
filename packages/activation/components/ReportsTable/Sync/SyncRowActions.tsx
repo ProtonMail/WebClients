@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ApiSyncState } from '@proton/activation/api/api.interface';
 import { SYNC_G_OAUTH_SCOPES, SYNC_SOURCE } from '@proton/activation/constants';
 import useOAuthPopup from '@proton/activation/hooks/useOAuthPopup';
-import { OAUTH_PROVIDER, OAuthProps } from '@proton/activation/interface';
+import { ImportProvider, OAuthProps } from '@proton/activation/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
 import { deleteSyncItem, resumeSyncItem } from '@proton/activation/logic/sync/sync.actions';
 import { selectSyncById } from '@proton/activation/logic/sync/sync.selectors';
@@ -33,7 +33,7 @@ const SyncRowActions = ({ syncId }: Props) => {
 
     const handleReconnectClick = () => {
         triggerOAuthPopup({
-            provider: OAUTH_PROVIDER.GOOGLE,
+            provider: ImportProvider.GOOGLE,
             scope: SYNC_G_OAUTH_SCOPES.join(' '),
             callback: async (oAuthProps: OAuthProps) => {
                 const { Code, Provider, RedirectUri } = oAuthProps;
