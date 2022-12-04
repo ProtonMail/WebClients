@@ -28,6 +28,7 @@ export const getMailMappingError = (
     const unavailableNameErrorPaths = [
         // item ids who are checked and not current item
         ...collection.filter((colItem) => colItem.id && colItem.id !== item.id && colItem.checked).map((m) => m.id),
+        // labels and folders can be merged but a label and a folder cannot have the same name
         ...(isLabelMapping ? folders.map((item) => item.Path) : labels.map((item) => item.Path)),
     ];
 

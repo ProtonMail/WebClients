@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { SYNC_G_OAUTH_SCOPES, SYNC_SOURCE, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/constants';
 import useOAuthPopup from '@proton/activation/hooks/useOAuthPopup';
-import { ImportProvider, ImportType, OAUTH_PROVIDER, OAuthProps } from '@proton/activation/interface';
+import { ImportProvider, ImportType, OAuthProps } from '@proton/activation/interface';
 import { startOauthDraft } from '@proton/activation/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/logic/sync/sync.actions';
@@ -46,7 +46,7 @@ const OAuthImportSelectionModal = ({ modalProps, onClose }: Props) => {
 
     const handleSynchronizeClick = () => {
         triggerOAuthPopup({
-            provider: OAUTH_PROVIDER.GOOGLE,
+            provider: ImportProvider.GOOGLE,
             scope: SYNC_G_OAUTH_SCOPES.join(' '),
             callback: async (oAuthProps: OAuthProps) => {
                 const { Code, Provider, RedirectUri } = oAuthProps;

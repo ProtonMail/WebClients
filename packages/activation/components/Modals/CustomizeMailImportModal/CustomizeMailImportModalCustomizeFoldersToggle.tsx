@@ -6,7 +6,7 @@ interface Props {
     isLabelMapping: boolean;
     organizeFolderVisible: boolean;
     selectedFoldersCount: number;
-    toggleFolderVisility: () => void;
+    toggleFolderVisibility: () => void;
     totalFoldersCount: number;
 }
 
@@ -14,7 +14,7 @@ const CustomizeMailImportModalCustomizeFoldersToggle = ({
     isLabelMapping,
     organizeFolderVisible,
     selectedFoldersCount,
-    toggleFolderVisility: toggleFolders,
+    toggleFolderVisibility,
     totalFoldersCount,
 }: Props) => {
     const t = EasyTrans.get(isLabelMapping);
@@ -35,7 +35,7 @@ const CustomizeMailImportModalCustomizeFoldersToggle = ({
                     <Button
                         shape="outline"
                         className="ml2"
-                        onClick={toggleFolders}
+                        onClick={toggleFolderVisibility}
                         data-testid="CustomizeModal:toggleFolders"
                     >
                         {toggleActionCopy}
