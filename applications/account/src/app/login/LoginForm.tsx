@@ -21,13 +21,13 @@ import {
     useLocalState,
 } from '@proton/components';
 import { Icon } from '@proton/components';
-import { APPS, APP_NAMES, BRAND_NAME, SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME, SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import SupportDropdown from '../public/SupportDropdown';
-import { defaultPersistentKey } from '../public/helper';
+import { defaultPersistentKey, getIsVPNApp } from '../public/helper';
 import Loader from '../signup/Loader';
 
 interface Props {
@@ -67,7 +67,7 @@ const LoginForm = ({
     const [challengeLoading, setChallengeLoading] = useState(true);
     const [challengeError, setChallengeError] = useState(false);
 
-    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS || toApp === APPS.PROTONVPN_SETTINGS;
+    const isVPN = getIsVPNApp(APP_NAME) || getIsVPNApp(toApp);
 
     const loading = Boolean(challengeLoading || trustedDeviceRecoveryFeature?.loading);
 
