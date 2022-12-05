@@ -32,7 +32,7 @@ import { formatFullDate } from '../date';
 import { parseInDiv } from '../dom';
 import { getDate } from '../elements';
 import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
-import { getEmbeddedImages, restoreImages, updateImages } from './messageImages';
+import { getEmbeddedImages, getRemoteImages, restoreImages, updateImages } from './messageImages';
 import { insertSignature } from './messageSignature';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
@@ -42,10 +42,11 @@ export const CLASSNAME_BLOCKQUOTE = 'protonmail_quote';
 /**
  * Copy embeddeds images from the reference message
  */
-export const keepEmbeddeds = (message: PartialMessageState) => {
+export const keepImages = (message: PartialMessageState) => {
     const embeddedImages = getEmbeddedImages(message);
+    const remoteImages = getRemoteImages(message);
     const Attachments = embeddedImages.map((image) => image.attachment);
-    const messageImages = updateImages(message.messageImages, undefined, [], embeddedImages);
+    const messageImages = updateImages(message.messageImages, undefined, remoteImages, embeddedImages);
 
     return { Attachments, messageImages };
 };
@@ -79,7 +80,7 @@ export const reply = (referenceMessage: PartialMessageState, useEncrypted = fals
             ? referenceMessage.data?.ToList
             : referenceMessage.data?.ReplyTos;
 
-    const { Attachments, messageImages } = keepEmbeddeds(referenceMessage);
+    const { Attachments, messageImages } = keepImages(referenceMessage);
 
     return {
         data: { Subject, ToList, Attachments },
@@ -99,7 +100,7 @@ export const replyAll = (
 
     const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, RE_PREFIX);
 
-    const { Attachments, messageImages } = keepEmbeddeds(referenceMessage);
+    const { Attachments, messageImages } = keepImages(referenceMessage);
 
     if (isSent(referenceMessage.data) || isSentAndReceived(referenceMessage.data)) {
         return {
@@ -126,7 +127,7 @@ const forward = (referenceMessage: PartialMessageState, useEncrypted = false): P
     const Subject = formatSubject(useEncrypted ? decryptedSubject : data?.Subject, FW_PREFIX);
     const Attachments = data?.Attachments;
 
-    const { messageImages } = keepEmbeddeds(referenceMessage);
+    const { messageImages } = keepImages(referenceMessage);
 
     return { data: { Subject, ToList: [], Attachments }, messageImages };
 };

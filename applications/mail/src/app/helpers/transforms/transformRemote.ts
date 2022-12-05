@@ -32,7 +32,7 @@ const SELECTOR = ATTRIBUTES_TO_FIND.map((name) => {
     return `[proton-${name}]`;
 }).join(',');
 
-const getRemoteImageMatches = (message: MessageState) => {
+export const getRemoteImageMatches = (message: MessageState) => {
     const imageElements = querySelectorAll(message, SELECTOR);
 
     const elementsWithStyleTag = querySelectorAll(message, '[style]').reduce<HTMLElement[]>((acc, elWithStyleTag) => {
@@ -84,9 +84,13 @@ export const transformRemote = (
         if (match.tagName === 'IMG') {
             if (!draft) {
                 insertImageAnchor(id, 'remote', match);
-            } else if (showRemoteImages && !useProxy) {
-                removeProtonPrefix(match);
             }
+        }
+
+        // If the user do not want to use the proxy at all, we can remove all proton prefix in drafts
+        // This will load all images
+        if (draft && showRemoteImages && !useProxy) {
+            removeProtonPrefix(match);
         }
 
         let url = '';
