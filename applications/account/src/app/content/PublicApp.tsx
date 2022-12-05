@@ -49,7 +49,7 @@ import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
 import RemoveRecoveryEmailContainer from '../public/RemoveRecoveryEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyRecoveryEmailContainer from '../public/VerifyRecoveryEmailContainer';
-import { externalApps, getToAppName, requiresProtonAccount } from '../public/helper';
+import { externalApps, getIsVPNApp, getToAppName, requiresProtonAccount } from '../public/helper';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
@@ -368,6 +368,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const toInternalAppName = maybePreAppIntent && getToAppName(maybePreAppIntent);
     const toAppName = toOAuthName || toInternalAppName;
 
+    const clientType = getIsVPNApp(maybePreAppIntent) ? CLIENT_TYPES.VPN : CLIENT_TYPES.MAIL;
+
     return (
         <>
             <HandleLogout />
@@ -410,7 +412,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
                     <SignupInviteContainer
-                        clientType={CLIENT_TYPES.MAIL}
+                        clientType={clientType}
                         onValid={(inviteData) =>
                             history.replace({
                                 pathname: '/signup',
@@ -464,7 +466,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                             </Route>
                                             <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
                                                 <SignupContainer
-                                                    clientType={CLIENT_TYPES.MAIL}
+                                                    clientType={clientType}
                                                     toApp={maybePreAppIntent}
                                                     toAppName={toAppName}
                                                     onLogin={handleLogin}
