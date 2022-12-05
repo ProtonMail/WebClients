@@ -7,3 +7,7 @@ export const getSilentApi = (api: Api) => {
 export const getApiWithAbort = (api: Api, signal: AbortSignal) => {
     return <T>(config: any) => api<T>({ ...config, signal });
 };
+
+export const getSilentApiWithAbort = (api: Api, signal: AbortSignal) => {
+    return <T>(config: any) => api<T>({ ...config, signal, silence: true  });
+};
