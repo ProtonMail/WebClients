@@ -13,6 +13,7 @@ import ContactsWidgetContainer from '@proton/components/containers/contacts/widg
 import ContactsWidgetGroupsContainer from '@proton/components/containers/contacts/widget/ContactsWidgetGroupsContainer';
 import ContactsWidgetSettingsContainer from '@proton/components/containers/contacts/widget/ContactsWidgetSettingsContainer';
 import { CONTACT_WIDGET_TABS, CustomAction } from '@proton/components/containers/contacts/widget/types';
+import { useUser } from '@proton/components/hooks';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -29,6 +30,8 @@ interface Props {
 }
 
 const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: Props) => {
+    const [{ hasPaidMail }] = useUser();
+
     const options: SelectedDrawerOption[] = [
         { text: c('Title').t`Contacts`, value: CONTACT_TAB.CONTACT },
         { text: c('Title').t`Groups`, value: CONTACT_TAB.CONTACT_GROUP },
@@ -55,6 +58,14 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
 
     const handleDetails = (contactID: string) => {
         void onDetails(contactID);
+    };
+
+    const handleAddContactGroup = () => {
+        if (hasPaidMail) {
+            onGroupEdit({});
+        } else {
+            onUpgrade();
+        }
     };
 
     const actionIncludes = (tab: CONTACT_WIDGET_TABS) => (customAction: CustomAction) =>
@@ -107,7 +118,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                 ];
             case CONTACT_TAB.CONTACT_GROUP:
                 return [
-                    <PrimaryButton key="footer-button-1" onClick={() => onGroupEdit({})}>{c('Action')
+                    <PrimaryButton key="footer-button-1" onClick={() => handleAddContactGroup()}>{c('Action')
                         .t`Add new group`}</PrimaryButton>,
                 ];
             case CONTACT_TAB.SETTINGS:
