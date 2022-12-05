@@ -26,7 +26,7 @@ const ImportCSVFileButton = ({ onUpload, className, children = c('Select file').
     const { createModal } = useModals();
 
     const csvTemplateButton = (
-        <InlineLinkButton onClick={downloadSampleCSV}>{
+        <InlineLinkButton key="csvTemplateButton" onClick={downloadSampleCSV}>{
             // translator: full sentence is "Please check your file, or try using our CSV template."
             c('CSV download button').t`CSV template`
         }</InlineLinkButton>

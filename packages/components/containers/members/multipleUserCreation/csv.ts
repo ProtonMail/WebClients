@@ -42,9 +42,8 @@ const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number) => {
 
     const totalStorage = (() => {
         const totalStorageNumber = +TotalStorage;
-
         if (isNaN(totalStorageNumber)) {
-            return 20 * GIGA;
+            return 0;
         }
         return totalStorageNumber;
     })();
@@ -137,6 +136,7 @@ export const parseMultiUserCsv = async (files: File[]) => {
         transformHeader: (value) => value.trim(),
         transform: (value) => value.trim(),
         comments: '#',
+        skipEmptyLines: true,
     });
 
     /**
@@ -199,7 +199,8 @@ export const getSampleCSV = (userArray: ExportedCSVUser[] = defaultSampleCSV) =>
         EmailAddresses:
             '# Enter the email address you want to set up for this user. To add more than 1 email address for a user, separate the addresses with commas.',
         Password: '# Add a password for their account',
-        TotalStorage: '# Number of bytes of storage the user will have. Defaults to 21474836480 (20GiB).',
+        TotalStorage:
+            '# Number of bytes of storage the user will have. For example entering 1073741824 will result in 1GiB of storage.',
         VPNAccess: '# Enter 1 to give the user a VPN account',
         PrivateSubUser: '# Enter 1 to make the user account private',
     };

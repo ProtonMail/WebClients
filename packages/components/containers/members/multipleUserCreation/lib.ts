@@ -25,10 +25,13 @@ export const createUser = async ({
     const { emailAddresses, password, displayName, totalStorage, vpnAccess, privateSubUser } = user;
 
     const invalidAddresses: string[] = [];
+    const validAddresses: string[] = [];
     const addressParts = emailAddresses.map((emailAddress) => {
         const isValid = validateEmailAddress(emailAddress);
         if (!isValid) {
             invalidAddresses.push(emailAddress);
+        } else {
+            validAddresses.push(emailAddress);
         }
 
         const [Local, Domain] = getEmailParts(emailAddress);
@@ -43,30 +46,60 @@ export const createUser = async ({
         /**
          * Throw if any of the addresses are not valid
          */
-        throw new InvalidAddressesError(invalidAddresses);
+        throw new InvalidAddressesError(invalidAddresses, validAddresses);
     }
 
     const unavailableAddresses: string[] = [];
-    await Promise.all(
-        addressParts.map(async ({ address, Local, Domain }) => {
-            try {
-                await api(
-                    checkMemberAddressAvailability({
-                        Local,
-                        Domain,
-                    })
-                );
-            } catch (error) {
+    const availableAddresses: string[] = [];
+
+    const [firstAddressParts, ...restAddressParts] = addressParts;
+
+    const checkAddressAvailability = async ({
+        address,
+        Local,
+        Domain,
+    }: {
+        address: string;
+        Local: string;
+        Domain: string;
+    }) => {
+        try {
+            await api(
+                checkMemberAddressAvailability({
+                    Local,
+                    Domain,
+                })
+            );
+            availableAddresses.push(address);
+        } catch (error: any) {
+            if (error.status === 409) {
+                /**
+                 * Conflict error from address being not available
+                 */
+
                 unavailableAddresses.push(address);
+                return;
             }
-        })
-    );
+
+            throw error;
+        }
+    };
+
+    /**
+     * Will prompt password prompt only once
+     */
+    await checkAddressAvailability(firstAddressParts);
+
+    /**
+     * No more password prompts will be needed
+     */
+    await Promise.all(restAddressParts.map(checkAddressAvailability));
 
     if (unavailableAddresses.length) {
         /**
          * Throw if any of the addresses are not available
          */
-        throw new UnavailableAddressesError(unavailableAddresses);
+        throw new UnavailableAddressesError(unavailableAddresses, availableAddresses);
     }
 
     const { Member } = await srpVerify({

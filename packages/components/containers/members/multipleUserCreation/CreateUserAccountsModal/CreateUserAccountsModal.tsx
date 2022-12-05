@@ -4,7 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
     Checkbox,
     Icon,
     InputTwo,
@@ -24,15 +23,18 @@ import {
     useDomains,
     useEventManager,
     useGetAddresses,
+    useLoading,
     useNotifications,
     useOrganization,
     useOrganizationKey,
 } from '@proton/components';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { DOMAIN_STATE } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
+import clsx from '@proton/utils/clsx';
 import removeIndex from '@proton/utils/removeIndex';
 
 import validateAddUser from '../../validateAddUser';
@@ -51,7 +53,7 @@ enum STEPS {
     SELECT_USERS,
     IMPORT_USERS,
     ORGANIZATION_VALIDATION_ERROR,
-    DONE,
+    DONE_WITH_ERRORS,
 }
 
 const search = (text: string, regex: RegExp | undefined) => {
@@ -114,6 +116,8 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
     const [failedUsers, setFailedUsers] = useState<UserTemplate[]>([]);
     const [invalidAddresses, setInvalidAddresses] = useState<string[]>([]);
     const [unavailableAddresses, setUnavailableAddresses] = useState<string[]>([]);
+    const [orphanedAddresses, setOrphanedAddresses] = useState<string[]>([]);
+    const [importing, withImporting] = useLoading();
 
     /**
      * Prompt on browser instance closing if users are being imported
@@ -198,8 +202,24 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
         abortControllerRef.current = new AbortController();
         setStep(STEPS.IMPORT_USERS);
 
+        const localSuccessfullyCreatedUsers: UserTemplate[] = [];
+        const localFailedUsers: UserTemplate[] = [];
+        const localInvalidAddresses: string[] = [];
+        const localUnavailableAddresses: string[] = [];
+        const localOrphanedAddresses: string[] = [];
+
+        const { signal } = abortControllerRef.current;
+
+        const syncState = () => {
+            setSuccessfullyCreatedUsers(localSuccessfullyCreatedUsers);
+
+            setFailedUsers(localFailedUsers);
+            setInvalidAddresses(localInvalidAddresses);
+            setUnavailableAddresses(localUnavailableAddresses);
+            setOrphanedAddresses(localOrphanedAddresses);
+        };
+
         for (let i = 0; i < selectedUsers.length; i++) {
-            const signal = abortControllerRef.current.signal;
             if (signal.aborted) {
                 return;
             }
@@ -208,49 +228,92 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
             try {
                 await createUser({
                     user,
-                    api: getSilentApi(api),
+                    api: getSilentApiWithAbort(api, signal),
                     getAddresses,
                     organizationKey: organizationKey.privateKey,
                 });
 
-                setSuccessfullyCreatedUsers((successfullyCreatedUsers) => [...successfullyCreatedUsers, user]);
+                localSuccessfullyCreatedUsers.push(user);
             } catch (error: any) {
-                if (error instanceof InvalidAddressesError) {
-                    const addresses = error.addresses;
-                    setInvalidAddresses((invalidAddresses) => [...invalidAddresses, ...addresses]);
+                if (getIsOfflineError(error)) {
+                    abortControllerRef.current.abort();
+
+                    const unattemptedUsers = selectedUsers.slice(i);
+                    localFailedUsers.push(...unattemptedUsers);
+                    syncState();
+                    setStep(STEPS.DONE_WITH_ERRORS);
+                } else if (error.cancel) {
+                    /**
+                     * Handle auth prompt cancel
+                     */
+                    abortControllerRef.current.abort();
+                    setStep(STEPS.SELECT_USERS);
+                } else if (error instanceof InvalidAddressesError) {
+                    localInvalidAddresses.push(...error.invalidAddresses);
+                    localOrphanedAddresses.push(...error.orphanedAddresses);
                 } else if (error instanceof UnavailableAddressesError) {
-                    const addresses = error.addresses;
-                    setUnavailableAddresses((unavailableAddresses) => [...unavailableAddresses, ...addresses]);
+                    localUnavailableAddresses.push(...error.unavailableAddresses);
+                    localOrphanedAddresses.push(...error.orphanedAddresses);
                 } else {
-                    setFailedUsers((failedUsers) => [...failedUsers, user]);
+                    localFailedUsers.push(user);
+                    localOrphanedAddresses.push(...user.emailAddresses);
                 }
             }
 
             setCurrentProgress((currentProgress) => currentProgress + 1);
         }
 
+        syncState();
         await call();
-        setStep(STEPS.DONE);
+
+        if (localFailedUsers.length || localInvalidAddresses.length || localUnavailableAddresses.length) {
+            setStep(STEPS.DONE_WITH_ERRORS);
+            return;
+        }
+
+        createNotification({
+            type: 'success',
+            text: c('Title').ngettext(
+                msgid`Successfully created ${localSuccessfullyCreatedUsers.length} user account`,
+                `Successfully created ${localSuccessfullyCreatedUsers.length} user accounts`,
+                localSuccessfullyCreatedUsers.length
+            ),
+        });
+        onClose?.();
     };
+
+    if (organizationCapacityError && step === STEPS.ORGANIZATION_VALIDATION_ERROR) {
+        return (
+            <OrganizationCapacityErrorModal
+                error={organizationCapacityError}
+                onOk={() => setStep(STEPS.SELECT_USERS)}
+                {...rest}
+            />
+        );
+    }
 
     const {
         title,
         additionalContent,
         content,
+        footerClassName,
         footer,
         size = 'xlarge',
     }: {
         title: string;
         additionalContent?: JSX.Element;
         content?: JSX.Element;
+        footerClassName?: string;
         footer: JSX.Element;
         size?: ModalProps['size'];
     } = (() => {
         if (step === STEPS.SELECT_USERS) {
+            const isCreateUsersButtonDisabled =
+                loadingOrganization || loadingOrganizationKey || loadingDomains || !selectedUserIds.length;
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
-                    <div className="flex flex-justify-space-between flex-align-items-center create-user-accounts-additional-content mt1">
+                    <div className="flex flex-justify-space-between flex-align-items-center flex-gap-1 create-user-accounts-additional-content mt1">
                         <Checkbox
                             id="selectAll"
                             checked={isSelectAllChecked}
@@ -283,16 +346,9 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                                 const humanReadableStorage = humanSize(totalStorage);
 
                                 return (
-                                    <tr key={displayName.text} onClick={() => handleCheckboxChange(id)}>
+                                    <tr key={id} onClick={() => handleCheckboxChange(id)}>
                                         <TableCell key="displayName" className="align-top">
-                                            <Checkbox
-                                                id={checkboxId}
-                                                checked={isItemSelected}
-                                                onChange={(e) => {
-                                                    handleCheckboxChange(id);
-                                                    e.stopPropagation();
-                                                }}
-                                            >
+                                            <Checkbox id={checkboxId} checked={isItemSelected} readOnly>
                                                 <div title={displayName.text}>
                                                     <Marks chunks={displayName.chunks}>{displayName.text}</Marks>
                                                 </div>
@@ -329,15 +385,17 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                         <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                         <Button
                             color="norm"
-                            onClick={importUsers}
-                            disabled={
-                                loadingOrganization ||
-                                loadingOrganizationKey ||
-                                loadingDomains ||
-                                !selectedUserIds.length
-                            }
+                            onClick={() => withImporting(importUsers())}
+                            loading={importing}
+                            disabled={isCreateUsersButtonDisabled}
                         >
-                            {c('Action').t`Create accounts`}
+                            {selectedUserIds.length
+                                ? c('Title').ngettext(
+                                      msgid`Create ${selectedUserIds.length} user`,
+                                      `Create ${selectedUserIds.length} users`,
+                                      selectedUserIds.length
+                                  )
+                                : c('Action').t`Create users`}
                         </Button>
                     </>
                 ),
@@ -352,7 +410,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                 title: c('Title').t`Creating user accounts`,
                 content: (
                     <>
-                        <Progress value={currentProgress} max={numberOfUsersToImport} />
+                        <Progress className="progress-bar--norm" value={currentProgress} max={numberOfUsersToImport} />
                         <span className="mt0-5">
                             {currentProgress} / {numberOfUsersToImport}
                         </span>
@@ -362,95 +420,104 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                         </p>
                     </>
                 ),
+                footerClassName: 'flex-justify-end',
                 footer: <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             };
         }
 
-        return {
-            title: successfullyCreatedUsers.length
+        if (step === STEPS.DONE_WITH_ERRORS) {
+            const title = successfullyCreatedUsers.length
                 ? c('Title').ngettext(
                       msgid`Successfully created ${successfullyCreatedUsers.length} user account`,
                       `Successfully created ${successfullyCreatedUsers.length} user accounts`,
                       successfullyCreatedUsers.length
                   )
-                : c('Title').t`Couldn’t create accounts`,
-            content: (
-                <>
-                    {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length
-                        ? c('Info')
-                              .t`Please check your file for errors, or contact customer support for more information.`
-                        : null}
+                : c('Title').t`Couldn’t create accounts`;
 
-                    {invalidAddresses.length ? (
-                        <>
-                            <p className="mt0">
-                                {c('Info').ngettext(
-                                    msgid`The following address is invalid.`,
-                                    `The following addresses are invalid.`,
-                                    invalidAddresses.length
-                                )}
+            const renderAddressList = (addresses: string[]) => {
+                return (
+                    <ul className="unstyled">
+                        {addresses.map((address) => {
+                            return (
+                                <li key={address} className="mb0 text-ellipsis" title={address}>
+                                    {address}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                );
+            };
+            return {
+                size: 'small',
+                title,
+                content: (
+                    <>
+                        {failedUsers.length && !invalidAddresses.length && !unavailableAddresses.length ? (
+                            <p className={clsx('mt0', !orphanedAddresses.length && 'mb0')}>
+                                {c('Title').ngettext(
+                                    msgid`Failed to create ${failedUsers.length} user
+                                account.`,
+                                    `Failed to create ${failedUsers.length} user accounts.`,
+                                    failedUsers.length
+                                )}{' '}
+                                {c('Info')
+                                    .t`Please check your file for errors, or contact customer support for more information.`}
                             </p>
-                            <ul className="unstyled">
-                                {invalidAddresses.map((address) => {
-                                    return (
-                                        <li key={address} className="mb0 text-ellipsis" title={address}>
-                                            {address}
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </>
-                    ) : null}
+                        ) : null}
 
-                    {unavailableAddresses.length ? (
-                        <>
-                            <p className="mt0">
-                                {c('Info').ngettext(
-                                    msgid`The following address is unavailable.`,
-                                    `The following addresses are unavailable.`,
-                                    unavailableAddresses.length
-                                )}
-                            </p>
-                            <ul className="unstyled">
-                                {unavailableAddresses.map((address) => {
-                                    return (
-                                        <li key={address} className="mb0 text-ellipsis" title={address}>
-                                            {address}
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </>
-                    ) : null}
-                </>
-            ),
-            footer: <Button onClick={onClose}>{c('Action').t`Done`}</Button>,
-        };
+                        {invalidAddresses.length ? (
+                            <>
+                                <p className="mt0">
+                                    {c('Info').ngettext(
+                                        msgid`The following address is invalid.`,
+                                        `The following addresses are invalid.`,
+                                        invalidAddresses.length
+                                    )}
+                                </p>
+                                {renderAddressList(invalidAddresses)}
+                            </>
+                        ) : null}
+
+                        {unavailableAddresses.length ? (
+                            <>
+                                <p className="mt0">
+                                    {c('Info').ngettext(
+                                        msgid`The following address is unavailable.`,
+                                        `The following addresses are unavailable.`,
+                                        unavailableAddresses.length
+                                    )}
+                                </p>
+                                {renderAddressList(unavailableAddresses)}
+                            </>
+                        ) : null}
+
+                        {orphanedAddresses.length ? (
+                            <>
+                                <p className="mt0">
+                                    {c('Info').ngettext(
+                                        msgid`The following address was not created.`,
+                                        `The following addresses were not created.`,
+                                        orphanedAddresses.length
+                                    )}
+                                </p>
+                                {renderAddressList(orphanedAddresses)}
+                            </>
+                        ) : null}
+                    </>
+                ),
+                footerClassName: 'flex-justify-end',
+                footer: <Button onClick={onClose}>{c('Action').t`Got it`}</Button>,
+            };
+        }
+
+        throw Error('No step found');
     })();
-
-    if (organizationCapacityError && step === STEPS.ORGANIZATION_VALIDATION_ERROR) {
-        return (
-            <OrganizationCapacityErrorModal
-                error={organizationCapacityError}
-                onOk={() => setStep(STEPS.SELECT_USERS)}
-                {...rest}
-            />
-        );
-    }
-
-    if (step === STEPS.DONE) {
-        return (
-            <AlertModal title={title} buttons={[footer]} {...rest}>
-                {content}
-            </AlertModal>
-        );
-    }
 
     return (
         <ModalTwo size={size} onClose={onClose} {...rest}>
             <ModalTwoHeader title={title} additionalContent={additionalContent} />
             <ModalTwoContent>{content}</ModalTwoContent>
-            <ModalTwoFooter>{footer}</ModalTwoFooter>
+            <ModalTwoFooter className={footerClassName}>{footer}</ModalTwoFooter>
         </ModalTwo>
     );
 };
