@@ -3,11 +3,7 @@ import { Draft } from 'immer';
 
 import { markEmbeddedImagesAsLoaded } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';
-import {
-    loadBackgroundImages,
-    loadElementOtherThanImages,
-    removeProtonPrefix,
-} from '../../helpers/message/messageRemotes';
+import { loadBackgroundImages, loadImages, removeProtonPrefix } from '../../helpers/message/messageRemotes';
 import { MessageRemoteImage, MessageState } from '../messages/messagesTypes';
 import { eoMessageSelector, eoMessageStateSelector } from './eoSelectors';
 import { initialState } from './eoSlice';
@@ -167,7 +163,7 @@ export const EOLoadRemoteFulfilled = (
 
         const images = payload.map(({ image }) => image);
 
-        loadElementOtherThanImages(images, messageState.messageDocument?.document);
+        loadImages(images, messageState.messageDocument?.document);
 
         loadBackgroundImages({ document: messageState.messageDocument?.document, images });
     }

@@ -8,7 +8,7 @@ import {
     getRemoteImages,
     updateImages,
 } from '../../../helpers/message/messageImages';
-import { loadBackgroundImages, loadElementOtherThanImages, urlCreator } from '../../../helpers/message/messageRemotes';
+import { loadBackgroundImages, loadImages, urlCreator } from '../../../helpers/message/messageRemotes';
 import encodeImageUri from '../helpers/encodeImageUri';
 import { getMessage } from '../helpers/messagesReducer';
 import {
@@ -107,7 +107,7 @@ export const loadRemoteProxyFulFilled = (
 
         messageState.messageImages.showRemoteImages = true;
 
-        loadElementOtherThanImages([image], messageState.messageDocument?.document);
+        loadImages([image], messageState.messageDocument?.document);
 
         loadBackgroundImages({ document: messageState.messageDocument?.document, images: [image] });
     }
@@ -124,7 +124,7 @@ export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: Payl
         let newImage: MessageRemoteImage = { ...inputImage };
 
         if (imageToLoad.url) {
-            // forge URL
+            // Forge proxy URL
             const encodedImageUrl = encodeImageUri(imageToLoad.url);
             const loadingURL = forgeImageURL(encodedImageUrl, uid);
 
@@ -145,7 +145,7 @@ export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: Payl
 
             messageState.messageImages.showRemoteImages = true;
 
-            loadElementOtherThanImages([image ? image : newImage], messageState.messageDocument?.document);
+            loadImages([image ? image : newImage], messageState.messageDocument?.document);
 
             loadBackgroundImages({
                 document: messageState.messageDocument?.document,
@@ -230,7 +230,7 @@ export const loadRemoteDirectFulFilled = (
 
         messageState.messageImages.showRemoteImages = true;
 
-        loadElementOtherThanImages([image], messageState.messageDocument?.document);
+        loadImages([image], messageState.messageDocument?.document);
         loadBackgroundImages({ document: messageState.messageDocument?.document, images: [image] });
     }
 };
