@@ -4,6 +4,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
+import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
+
 interface Props {
     lastSubscriptionEnd?: number;
     user: UserModel;
@@ -16,11 +18,12 @@ const isEligible = ({ user, subscription, protonConfig, lastSubscriptionEnd = 0 
         protonConfig?.APP_NAME === APPS.PROTONMAIL ||
         protonConfig?.APP_NAME === APPS.PROTONACCOUNT ||
         protonConfig?.APP_NAME === APPS.PROTONACCOUNTLITE;
-    const aMonthAgo = new Date();
-    aMonthAgo.setMonth(aMonthAgo.getMonth() - 1);
-    const sinceAMonth = isBefore(fromUnixTime(lastSubscriptionEnd), aMonthAgo);
     return (
-        ((user?.isFree && sinceAMonth) || isTrial(subscription)) && user?.canPay && !user?.isDelinquent && isValidApp
+        ((user?.isFree && isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT)) ||
+            isTrial(subscription)) &&
+        user?.canPay &&
+        !user?.isDelinquent &&
+        isValidApp
     );
 };
 
