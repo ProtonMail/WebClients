@@ -34,6 +34,8 @@ const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, onBack, head
 
     const welcome = getIsProtonMailDomain() ? <NudgeTopBanner /> : null;
 
+    const protonLogo = <ProtonLogo variant="full" className={classnames([onBack && 'on-mobile-ml1'])} />;
+
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
             <PublicTopBanners>{hasWelcome ? welcome : null}</PublicTopBanners>
@@ -47,12 +49,16 @@ const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, onBack, head
                     <div className="no-desktop no-tablet flex-item-noshrink">
                         {onBack && <BackButton onClick={onBack} />}
                     </div>
-                    <Href
-                        className="flex-item-noshrink"
-                        href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
-                    >
-                        <ProtonLogo variant="full" className={classnames([onBack && 'on-mobile-ml1'])} />
-                    </Href>
+                    {hasDecoration ? (
+                        <Href
+                            className="flex-item-noshrink"
+                            href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
+                        >
+                            {protonLogo}
+                        </Href>
+                    ) : (
+                        <div className="flex-item-noshrink">{protonLogo}</div>
+                    )}
                 </div>
                 {hasDecoration && <LanguageSelect className="max-w100 ml1" outlined globe locales={locales} />}
             </header>
