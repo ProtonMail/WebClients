@@ -35,6 +35,9 @@ const useLastSubscriptionEnd = (): [latestSubscription: number, loading: boolean
                 }
             } catch (e) {
                 // Ignore
+            } finally {
+                // Reset promise to allow a new request
+                promise = undefined;
             }
         };
         void withLoading(run());
