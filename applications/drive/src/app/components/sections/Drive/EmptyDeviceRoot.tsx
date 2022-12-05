@@ -10,7 +10,7 @@ const EmptyDeviceRoot = () => {
                 imageProps={{ src: uploadSvg, title: c('Info').t`No synced folders` }}
                 data-test-id="my-files-device-root-empty-placeholder"
             >
-                <h3 className="text-bold">{c('Info').t`No synced folder`}</h3>
+                <h3 className="text-bold">{c('Info').t`No synced folders`}</h3>
                 <p className="color-weak">{c('Info').t`Folders you sync from your computer will appear here.`}</p>
             </EmptyViewContainer>
         </div>

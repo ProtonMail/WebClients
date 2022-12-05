@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ShareType } from '../..';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { DecryptedLink, useLink } from '../../_links';
+import { reportError } from '../../_utils';
 import { useShareType } from './useShareType';
 
 const isLinkReadOnly = (link: DecryptedLink, shareType: ShareType) => {
@@ -16,35 +17,32 @@ export const useIsActiveLinkReadOnly = () => {
     const shareType = useShareType(shareId);
     const link = useLink();
 
-    const [isReadOnly, setIsReadOnly] = useState<boolean>();
-    const [isLoading, setIsLoading] = useState<boolean>();
+    const [isReadOnly, setIsReadOnly] = useState<boolean | undefined>(undefined);
     const lastAc = useRef<AbortController>();
 
     useEffect(() => {
-        setIsLoading(true);
         const ac = new AbortController();
 
         // Abort ongoing request to avoid fast meaningless shareType change
         lastAc.current?.abort();
         lastAc.current = ac;
 
-        link.getLink(ac.signal, shareId, linkId)
-            .then((link) => {
-                if (link && shareType) {
-                    setIsReadOnly(() => isLinkReadOnly(link, shareType));
-                }
-            })
-            .catch(console.warn);
+        if (shareType) {
+            link.getLink(ac.signal, shareId, linkId)
+                .then((link) => {
+                    setIsReadOnly(isLinkReadOnly(link, shareType));
+                })
+                .catch((e) => {
+                    reportError(e);
+                    setIsReadOnly(true);
+                });
+        } else {
+            setIsReadOnly(true);
+        }
     }, [shareId, linkId, shareType]);
 
-    useEffect(() => {
-        if (isReadOnly !== undefined) {
-            setIsLoading(false);
-        }
-    }, [isReadOnly]);
-
     return {
-        isLoading: isLoading === true,
+        isLoading: isReadOnly === undefined,
         isReadOnly,
     };
 };
