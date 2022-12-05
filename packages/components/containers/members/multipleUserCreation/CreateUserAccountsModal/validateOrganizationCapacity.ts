@@ -28,8 +28,8 @@ const validateOrganizationCapacity = (usersToImport: UserTemplate[], organizatio
         throw new OrganizationCapacityError(
             ORGANIZATION_CAPACITY_ERROR_TYPE.MEMBER,
             c('Organization capacity error').ngettext(
-                msgid`Your plan includes a maximum of ${availableNumberOfMembers} organizational user.`,
-                `Your plan includes a maximum of ${availableNumberOfMembers} organizational users.`,
+                msgid`Your plan includes a maximum of ${availableNumberOfMembers} more organizational user.`,
+                `Your plan includes a maximum of ${availableNumberOfMembers} more organizational users.`,
                 availableNumberOfMembers
             )
         );
@@ -56,7 +56,7 @@ const validateOrganizationCapacity = (usersToImport: UserTemplate[], organizatio
         throw new OrganizationCapacityError(
             ORGANIZATION_CAPACITY_ERROR_TYPE.SPACE,
             c('Organization capacity error')
-                .t`Your plan includes a maximum of ${humanReadableAvailableSpace} of storage.`
+                .t`Your plan includes a maximum of ${humanReadableAvailableSpace} more storage.`
         );
     }
 
@@ -65,8 +65,8 @@ const validateOrganizationCapacity = (usersToImport: UserTemplate[], organizatio
         throw new OrganizationCapacityError(
             ORGANIZATION_CAPACITY_ERROR_TYPE.ADDRESSES,
             c('Organization capacity error').ngettext(
-                msgid`Your plan includes a maximum of ${availableAddresses} address.`,
-                `Your plan includes a maximum of ${availableAddresses} addresses.`,
+                msgid`Your plan includes a maximum of ${availableAddresses} more address.`,
+                `Your plan includes a maximum of ${availableAddresses} more addresses.`,
                 availableAddresses
             )
         );
@@ -77,8 +77,8 @@ const validateOrganizationCapacity = (usersToImport: UserTemplate[], organizatio
         throw new OrganizationCapacityError(
             ORGANIZATION_CAPACITY_ERROR_TYPE.VPNS,
             c('Organization capacity error').ngettext(
-                msgid`Your plan includes a maximum of ${availableVPNAccess} VPN account.`,
-                `Your plan includes a maximum of ${availableVPNAccess} VPN accounts.`,
+                msgid`Your plan includes a maximum of ${availableVPNAccess} more VPN account.`,
+                `Your plan includes a maximum of ${availableVPNAccess} more VPN accounts.`,
                 availableVPNAccess
             )
         );
