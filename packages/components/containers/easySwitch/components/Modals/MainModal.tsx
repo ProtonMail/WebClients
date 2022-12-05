@@ -1,13 +1,18 @@
 import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { readInstructions, resetDraft, selectProductToImport } from '../../logic/draft/draft.actions';
 import { selectDraftModal } from '../../logic/draft/draft.selector';
+import {
+    readImapInstructions,
+    resetImapDraft,
+    selectImapProductToImport,
+} from '../../logic/draft/imapDraft/imapDraft.actions';
+import { resetOauthDraft } from '../../logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../../logic/store';
-import { ImportType } from '../../logic/types/shared.types';
-import CalendarModal from './Imap/CalendarModal';
-import ImapModal from './Imap/ImapModal';
-import InstructionsModal from './Imap/InstructionModal';
-import MailModal from './Imap/MailModal';
+import CalendarModal from './Imap/CalendarModal/CalendarModal';
+import ImapMailModal from './Imap/ImapMailModal/ImapMailModal';
+import ImapProductsModal from './Imap/ImapProductsModal/ImapProductsModal';
+import InstructionsModal from './Imap/InstructionsModal/InstructionsModal';
 import OauthModal from './Oauth/OauthModal';
 
 import './MainModal.scss';
@@ -16,17 +21,13 @@ const MainModal = () => {
     const dispatch = useEasySwitchDispatch();
     const modal = useEasySwitchSelector(selectDraftModal);
 
-    const onClose = () => {
-        dispatch(resetDraft());
-    };
-
     if (modal === 'select-product') {
         return (
-            <ImapModal
+            <ImapProductsModal
                 onClick={(selectedProduct: ImportType) => {
-                    dispatch(selectProductToImport({ importType: selectedProduct }));
+                    dispatch(selectImapProductToImport({ product: selectedProduct }));
                 }}
-                onClose={onClose}
+                onClose={() => dispatch(resetImapDraft())}
             />
         );
     }
@@ -34,28 +35,28 @@ const MainModal = () => {
     if (modal === 'read-instructions') {
         return (
             <InstructionsModal
-                onClose={onClose}
+                onClose={() => dispatch(resetImapDraft())}
                 onSubmit={() => {
-                    dispatch(readInstructions(true));
+                    dispatch(readImapInstructions());
                 }}
             />
         );
     }
 
     if (modal === 'import-Mail') {
-        return <MailModal onClose={onClose} />;
+        return <ImapMailModal onClose={() => dispatch(resetImapDraft())} />;
     }
 
     if (modal === 'import-Calendar') {
-        return <CalendarModal onClose={onClose} />;
+        return <CalendarModal onClose={() => dispatch(resetImapDraft())} />;
     }
 
     if (modal === 'import-Contacts') {
-        return <ContactImportModal open onClose={onClose} />;
+        return <ContactImportModal open onClose={() => dispatch(resetImapDraft())} />;
     }
 
     if (modal === 'oauth') {
-        return <OauthModal onClose={onClose} />;
+        return <OauthModal onClose={() => dispatch(resetOauthDraft())} />;
     }
 
     return null;

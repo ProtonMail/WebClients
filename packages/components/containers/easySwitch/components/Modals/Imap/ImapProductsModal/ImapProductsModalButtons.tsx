@@ -2,11 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Tooltip } from '@proton/components/components';
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 import calendarIllu from '@proton/styles/assets/img/import/importTypes/calendar.svg';
 import contactsIllu from '@proton/styles/assets/img/import/importTypes/contacts.svg';
 import mailIllu from '@proton/styles/assets/img/import/importTypes/mail.svg';
-
-import { ImportType } from '../../../logic/types/shared.types';
 
 interface ImportTypeButtonProps {
     importType: ImportType;

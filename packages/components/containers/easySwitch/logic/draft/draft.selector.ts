@@ -1,53 +1,53 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+
 import { EasySwitchState } from '../store';
-import { ImportAuthType, ImportType } from '../types/shared.types';
-import { DraftStep } from './draft.interface';
 
-export const selectDraftUi = (state: EasySwitchState) => state.draft.ui;
+const selectImapDraft = (state: EasySwitchState) => state.imapDraft;
+const selectOauthDraft = (state: EasySwitchState) => state.oauthDraft;
 
-export const selectDraftStep = createSelector(selectDraftUi, (ui) => ui.step);
+type DraftModal = 'select-product' | `import-${ImportType}` | 'read-instructions' | 'oauth' | null;
+export const selectDraftModal = createSelector(
+    selectImapDraft,
+    selectOauthDraft,
+    (imapDraft, oauthDraft): DraftModal => {
+        /**
+         * We don't display modal if:
+         * - both imap and oauth draft steps are idle,
+         * - both imap and oauth draft steps are started (not idle)
+         */
+        if (
+            (imapDraft.step === 'idle' && oauthDraft.step === 'idle') ||
+            (imapDraft.step !== 'idle' && oauthDraft.step !== 'idle')
+        ) {
+            return null;
+        }
 
-export const selectDraftProvider = createSelector(selectDraftUi, (ui) =>
-    ui.step === DraftStep.START ? ui.provider : undefined
-);
-
-export const selectDraftImportType = createSelector(selectDraftUi, (ui) => {
-    return ui.step === DraftStep.START ? ui.importType : undefined;
-});
-
-export const selectDraftAuthType = createSelector(selectDraftUi, (ui) =>
-    ui.step === DraftStep.START ? ui.authType : undefined
-);
-
-type DraftModal = null | 'select-product' | `import-${ImportType}` | 'read-instructions' | 'oauth';
-export const selectDraftModal = createSelector(selectDraftUi, (ui): DraftModal => {
-    if (ui.step === DraftStep.IDLE) {
-        return null;
-    }
-
-    if (ui.step === DraftStep.START) {
-        if (ui.authType === ImportAuthType.IMAP) {
-            if (!ui.importType) {
+        /**
+         * We consider a draft as started if it's not idle.
+         */
+        if (imapDraft.step !== 'idle') {
+            if (!imapDraft.product) {
                 return 'select-product';
             }
 
-            if (!ui.hasReadInstructions) {
+            if (!imapDraft.hasReadInstructions) {
                 return 'read-instructions';
             }
 
-            // When IMAP is selected importType is always a single value
-            // We display a different modal for each IMAP import type
-            // For OAUTH it's different because we have a single modal for all OAUTH providers
-            if (typeof ui.importType === 'string') {
-                return `import-${ui.importType}`;
+            if (imapDraft.product) {
+                return `import-${imapDraft.product}`;
             }
         }
 
-        if (ui.authType === ImportAuthType.OAUTH) {
+        /**
+         * We consider a draft as started if it's not idle.
+         */
+        if (oauthDraft.step !== 'idle') {
             return 'oauth';
         }
-    }
 
-    return null;
-});
+        return null;
+    }
+);

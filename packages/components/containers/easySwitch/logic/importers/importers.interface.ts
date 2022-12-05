@@ -1,5 +1,6 @@
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+
 import { ApiImporter, ApiImporterActive, ApiImporterFolder } from '../types/api.types';
-import { ImportType } from '../types/shared.types';
 
 /**
  * TODO: Change typing depending on IMAP and OAUTH context
