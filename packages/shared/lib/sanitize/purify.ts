@@ -169,3 +169,8 @@ export const removeImagesFromContent = (message: string) => {
 
     return { message: div.innerHTML, containsImages: allImages.length > 0 };
 };
+
+export const sanitizeSignature = (input: string) => {
+    const process = clean('default');
+    return process(input.replace(/<a\s.*href="(.+?)".*>(.+?)<\/a>/, '[URL: $1] $2'));
+};
