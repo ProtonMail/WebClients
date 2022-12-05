@@ -1,0 +1,27 @@
+{
+    "$id": "https://proton.me/my_data_series_v2.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MyDataSeries",
+    "description": "A series that measures this and that",
+    "type": "object",
+    "properties": {
+        "value": {
+            "type": "integer"
+        },
+        "labels": {
+            "type": "object",
+            "properties": {
+                "foo": {
+                    "type": "string",
+                    "enum": ["bar", "baz"]
+                },
+                "foo2": {
+                    "type": "string",
+                    "enum": ["bar2", "baz2"]
+                }
+            },
+            "required": ["foo", "foo2"]
+        }
+    },
+    "required": ["value", "labels"]
+}
