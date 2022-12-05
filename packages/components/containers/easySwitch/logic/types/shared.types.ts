@@ -1,9 +1,3 @@
-export enum ImportType {
-    MAIL = 'Mail',
-    CALENDAR = 'Calendar',
-    CONTACTS = 'Contacts',
-}
-
 export enum ImportAuthType {
     IMAP = 'IMAP',
     OAUTH = 'OAUTH',

@@ -1,6 +1,5 @@
 import { ApiResponse } from '@proton/shared/lib/interfaces';
-
-import { ImportType } from './shared.types';
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
 export enum ApiMailImportDestinationFolder {
     INBOX = 'Inbox',

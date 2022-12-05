@@ -1,5 +1,6 @@
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
+
 import { ApiImportReportListResponse, ApiReport } from '../types/api.types';
-import { ImportType } from '../types/shared.types';
 import { Report, ReportSummariesMap, ReportSummary, ReportsMap } from './reports.interface';
 
 type NormalizeReport = (apiReport: ApiReport) => { report: Report; reportSummaries: ReportSummary[] };

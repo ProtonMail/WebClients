@@ -5,15 +5,15 @@ import { c } from 'ttag';
 import { FeatureCode, Loader, ModalTwo, ModalTwoContent, ModalTwoHeader, useFeature } from '@proton/components';
 import { EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import ImapModalButton from './ImapModalButton';
-import useUserCalendars from './useUserCalendars';
+import useUserCalendars from '../CalendarModal/useUserCalendars';
+import ImapModalButton from './ImapProductsModalButtons';
 
 interface Props {
     onClick: (importType: ImportType) => void;
     onClose: () => void;
 }
 
-const ImapModal = ({ onClick, onClose }: Props) => {
+const ImapProductsModal = ({ onClick, onClose }: Props) => {
     const { feature, loading: FFLoading } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
     const [userActiveCalendars, calendarLoading] = useUserCalendars();
     const loading = FFLoading || calendarLoading;
@@ -59,4 +59,4 @@ const ImapModal = ({ onClick, onClose }: Props) => {
     );
 };
 
-export default ImapModal;
+export default ImapProductsModal;
