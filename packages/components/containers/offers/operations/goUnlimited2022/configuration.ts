@@ -25,7 +25,8 @@ const config: OfferConfig = {
         },
     ],
     layout: Layout,
-
+    getCTAContent: () => c('specialoffer: Action, Unlimited is a plan name').t`Go Unlimited`,
+    shapeButton: 'outline',
 };
 
 export default config;

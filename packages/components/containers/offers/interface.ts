@@ -1,5 +1,6 @@
 import { JSXElementConstructor, ReactNode } from 'react';
 
+import { ButtonLikeShape } from '@proton/atoms/Button';
 import type { FeatureCode, IconName } from '@proton/components';
 import type { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import type { Currency, Optional, PlanIDs } from '@proton/shared/lib/interfaces';
@@ -50,6 +51,7 @@ export interface OfferConfig {
     /** Displays countdown if present */
     periodEnd?: Date;
     getCTAContent?: () => string;
+    shapeButton?: ButtonLikeShape;
 }
 
 interface Feature {
