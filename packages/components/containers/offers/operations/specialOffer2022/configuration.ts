@@ -22,6 +22,7 @@ const config: OfferConfig = {
         },
     ],
     layout: Layout,
+    shapeButton: 'outline',
 };
 
 export default config;
