@@ -170,9 +170,7 @@ export const removeImagesFromContent = (message: string) => {
     return { message: div.innerHTML, containsImages: allImages.length > 0 };
 };
 
-export const signatureSanitize = (source: string) => {
-    return DOMPurify.sanitize(source.replace(/<a\s.*href="(.+?)".*>(.+?)<\/a>/, '[URL: $1] $2'), {
-        ALLOWED_TAGS: ['a', 'b', 'br', 'em', 'br', 'i', 'u', 'ul', 'ol', 'li', 'span', 'p'],
-        ALLOWED_ATTR: ['href'],
-    });
+export const sanitizeSignature = (input: string) => {
+    const process = clean('default');
+    return process(input.replace(/<a\s.*href="(.+?)".*>(.+?)<\/a>/, '[URL: $1] $2'));
 };
