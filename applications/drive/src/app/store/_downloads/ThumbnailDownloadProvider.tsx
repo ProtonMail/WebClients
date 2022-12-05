@@ -3,9 +3,9 @@ import { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
 
 import useNavigate from '../../hooks/drive/useNavigate';
+import { logError } from '../../utils/errorHandling';
 import { createAsyncQueue } from '../../utils/parallelRunners';
 import { useLink } from '../_links';
-import { logError } from '../_utils';
 import useDownload from './useDownload';
 
 interface DownloadProviderState {

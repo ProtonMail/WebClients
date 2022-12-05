@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import { useLoading, useNotifications } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { useLinksListing } from '../_links';
 import { useSearchResults } from '../_search';
 import { useUserSettings } from '../_settings';
-import { reportError } from '../_utils';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSorting, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
@@ -88,7 +88,7 @@ export default function useSearchView(shareId: string, query: string) {
                 type: 'error',
                 text: c('Error').t`Search failed`,
             });
-            reportError(err);
+            sendErrorReport(err);
         });
     }, [dbExists, query]);
 
@@ -96,7 +96,9 @@ export default function useSearchView(shareId: string, query: string) {
     // possible order.
     useEffect(() => {
         const ac = new AbortController();
-        void withLoading(linksListing.loadLinksMeta(ac.signal, query, shareId, sortedSearchResultIds)).catch(reportError);
+        void withLoading(linksListing.loadLinksMeta(ac.signal, query, shareId, sortedSearchResultIds)).catch(
+            sendErrorReport
+        );
         return () => {
             ac.abort();
         };

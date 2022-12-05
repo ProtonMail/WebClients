@@ -7,6 +7,7 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import DownloadIsTooBigModal from '../../../components/DownloadIsTooBigModal';
 import { TransferState } from '../../../components/TransferManager/transfer';
+import { logError, sendErrorReport } from '../../../utils/errorHandling';
 import { bufferToStream } from '../../../utils/stream';
 import {
     isTransferCancelError,
@@ -15,7 +16,6 @@ import {
     isTransferProgress,
 } from '../../../utils/transfer';
 import { SignatureIssues } from '../../_links';
-import { logError, reportError } from '../../_utils';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
 import { DownloadSignatureIssueModal, InitDownloadCallback, LinkDownload } from '../interface';
@@ -140,7 +140,7 @@ export default function useDownloadProvider(
                         queue.updateState(nextDownload.id, TransferState.Canceled);
                     } else {
                         queue.updateWithData(nextDownload.id, TransferState.Error, { error });
-                        reportError(error);
+                        sendErrorReport(error);
                     }
 
                     // If the error is 429 (rate limited), we should not continue
