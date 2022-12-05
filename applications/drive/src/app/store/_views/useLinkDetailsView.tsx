@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/components';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { useActions } from '../_actions';
 import { DecryptedLink, SignatureIssues, useLink } from '../_links';
 import { useShareUrl } from '../_shares';
-import { reportError } from '../_utils';
 
 /**
  * useLinkDetailsView loads link if not cached yet with all signature issues
@@ -35,19 +35,19 @@ export default function useLinkDetailsView(shareId: string, linkId: string) {
                     void withLoadingSignatureIssues(
                         checkLinkSignatures(abortController.signal, shareId, linkId)
                             .then(setSignatureIssues)
-                            .catch(reportError)
+                            .catch(sendErrorReport)
                     );
                     if (link.shareId) {
                         void withLoadingNumberOfAccesses(
                             loadShareUrlNumberOfAccesses(abortController.signal, shareId, linkId)
                                 .then(setNumberOfAccesses)
-                                .catch(reportError)
+                                .catch(sendErrorReport)
                         );
                     }
                 })
                 .catch((err) => {
                     setError(err);
-                    reportError(err);
+                    sendErrorReport(err);
                 })
         );
         return () => {

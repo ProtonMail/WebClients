@@ -1,4 +1,4 @@
-import { reportError } from '../../_utils';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import {
     DownloadCallbacks,
     DownloadStreamControls,
@@ -88,7 +88,7 @@ function loadTotalSize(
             const linkSizes = results.reduce((sum, { linkSizes }) => ({ ...sum, ...linkSizes }), {});
             onInit?.(size, linkSizes);
         })
-        .catch(reportError);
+        .catch(sendErrorReport);
 }
 
 async function* iterateAllLinks(

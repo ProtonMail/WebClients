@@ -5,13 +5,15 @@ import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useConfirm from '../../hooks/util/useConfirm';
+import { sendErrorReport } from '../../utils/errorHandling';
+import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDevicesActions from '../_devices/useDevicesActions';
 import { useDownload } from '../_downloads';
 import { useLinkActions, useLinksActions } from '../_links';
 import { useShareUrl } from '../_shares';
 import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
 import { TransferConflictStrategy } from '../_uploads/interface';
-import { ValidationError, useErrorHandler } from '../_utils';
+import { useErrorHandler } from '../_utils';
 import { LinkInfo } from './interface';
 import useListNotifications from './useListNotifications';
 
@@ -339,7 +341,7 @@ export default function useAction() {
             })
             .catch((err) => {
                 showErrorNotification(err, c('Notification').t`Device failed to be removed`);
-                reportError(err);
+                sendErrorReport(err);
             });
     };
 
@@ -352,7 +354,7 @@ export default function useAction() {
             })
             .catch((err) => {
                 showErrorNotification(err, c('Notification').t`Device failed to be renamed`);
-                reportError(err);
+                sendErrorReport(err);
             });
     };
 

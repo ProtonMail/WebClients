@@ -10,10 +10,10 @@ import {
 } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
+import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
-import { ValidationError } from '../_utils';
 import { ecryptFolderExtendedAttributes } from './extendedAttributes';
 import useLink from './useLink';
 import { validateLinkName } from './validation';

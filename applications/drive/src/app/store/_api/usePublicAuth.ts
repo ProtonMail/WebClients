@@ -7,6 +7,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { ERROR_CODE_INVALID_SRP_PARAMS, default as usePublicSession } from './usePublicSession';
 
 /**
@@ -57,7 +58,7 @@ export default function usePublicAuth(token: string, urlPassword: string) {
         }
 
         setError(c('Title').t`The link failed to be loaded`);
-        reportError(error);
+        sendErrorReport(error);
     };
 
     useEffect(() => {
