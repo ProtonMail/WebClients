@@ -10,7 +10,7 @@ import esSpotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-s
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { useSearchControl } from '../../../store';
 import { useSearchResults } from '../../../store/_search';
-import { reportError } from '../../../store/_utils';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import { useSpotlight } from '../../useSpotlight';
 import { SearchDropdown } from './SearchDropdown';
 import { useSearchParams } from './useSearchParams';
@@ -37,7 +37,7 @@ export const SearchField = () => {
     }, []);
 
     const handleFieldFocus = () => {
-        return prepareSearchData().catch(reportError);
+        return prepareSearchData().catch(sendErrorReport);
     };
 
     const handleInputClick = () => {

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 
-import { logError } from '../_utils';
+import { logError } from '../../utils/errorHandling';
 import { useUploadProvider } from './UploadProvider';
 import { UploadFileItem, UploadFileList } from './interface';
 

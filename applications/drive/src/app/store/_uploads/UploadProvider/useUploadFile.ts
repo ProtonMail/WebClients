@@ -19,11 +19,12 @@ import { encryptName, generateLookupHash } from '@proton/shared/lib/keys/driveKe
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
+import { logError } from '../../../utils/errorHandling';
+import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
 import { useDriveEventManager } from '../../_events';
 import { DecryptedLink, useLink, useLinksActions, validateLinkName } from '../../_links';
-import { ValidationError, logError } from '../../_utils';
 import { MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
 import {

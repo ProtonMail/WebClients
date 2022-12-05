@@ -4,9 +4,9 @@ import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import { TransferCancel, TransferMeta } from '../../../components/TransferManager/transfer';
+import { isValidationError } from '../../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
-import { isValidationError } from '../../_utils';
 import { initDownloadSW, openDownloadStream } from './download';
 
 // FileSaver provides functionality to start download to file. This class does

@@ -16,13 +16,13 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
 import { FileThresholdModal, FileThresholdModalType } from '../../../components/uploads/FileThresholdModal';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import {
     isTransferCancelError,
     isTransferOngoing,
     isTransferPausedByConnection,
     isTransferProgress,
 } from '../../../utils/transfer';
-import { reportError } from '../../_utils';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadConflictModal, UploadFileItem, UploadFileList } from '../interface';
 import { UpdateFilter } from './interface';
@@ -178,7 +178,7 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
                         queue.updateState(nextFolderUpload.id, TransferState.Canceled);
                     } else {
                         queue.updateWithData(nextFolderUpload.id, TransferState.Error, { error });
-                        reportError(error);
+                        sendErrorReport(error);
                     }
                 })
                 .finally(() => {
@@ -234,7 +234,7 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
                         queue.updateState(nextFileUpload.id, TransferState.Canceled);
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
-                        reportError(error);
+                        sendErrorReport(error);
                     }
 
                     // If the error is 429 (rate limited), we should not continue

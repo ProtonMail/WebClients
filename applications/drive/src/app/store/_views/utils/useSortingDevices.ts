@@ -4,7 +4,7 @@ import { useMultiSortedList } from '@proton/components';
 import { SortConfig } from '@proton/components/hooks/useSortedList';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { logError } from '../../_utils';
+import { logError } from '../../../utils/errorHandling';
 
 export enum SortField {
     name = 'name',

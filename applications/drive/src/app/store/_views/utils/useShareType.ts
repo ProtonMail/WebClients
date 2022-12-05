@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { ShareType } from '../..';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import { useShare } from '../../_shares';
 
 export const useShareType = (shareId: string) => {
@@ -13,7 +14,7 @@ export const useShareType = (shareId: string) => {
             .then((share) => {
                 setShareType(share.type);
             })
-            .catch(reportError);
+            .catch(sendErrorReport);
     }, [shareId]);
 
     return shareType;

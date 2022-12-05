@@ -9,6 +9,7 @@ import useActiveShare, { DriveFolder } from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 import useNavigate from '../hooks/drive/useNavigate';
 import { useDefaultShare, useDriveEventManager } from '../store';
+import { sendErrorReport } from '../utils/errorHandling';
 import PreviewContainer from './PreviewContainer';
 
 export default function FolderContainer({ match }: RouteComponentProps<DriveSectionRouteProps>) {
@@ -69,7 +70,7 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
     const shouldRenderDriveView = Boolean(activeFolder.shareId && activeFolder.linkId);
 
     useEffect(() => {
-        events.shares.startSubscription(activeFolder.shareId).catch(reportError);
+        events.shares.startSubscription(activeFolder.shareId).catch(sendErrorReport);
 
         return () => {
             events.shares.pauseSubscription(activeFolder.shareId);
