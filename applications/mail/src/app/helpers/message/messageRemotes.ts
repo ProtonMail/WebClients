@@ -1,6 +1,7 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { MessageImage, MessageRemoteImage } from '../../logic/messages/messagesTypes';
+import { getRemoteSelector } from './messageImages';
 
 export const ATTRIBUTES_TO_FIND = ['url', 'xlink:href', 'src', 'srcset', 'svg', 'background', 'poster'];
 export const ATTRIBUTES_TO_LOAD = ['url', 'xlink:href', 'src', 'svg', 'background', 'poster'];
@@ -49,17 +50,14 @@ export const loadBackgroundImages = ({ images, document }: LoadBackgroundImagesP
     });
 };
 
-export const loadElementOtherThanImages = (images: MessageRemoteImage[], messageDocument?: Element) => {
-    const elementOtherThanImages = images.filter((image) => image.original?.tagName !== 'IMG');
-
-    const selector = ATTRIBUTES_TO_LOAD.map((name) => {
-        // https://stackoverflow.com/questions/23034283/is-it-possible-to-use-htmls-queryselector-to-select-by-xlink-attribute-in-an
-        if (name === 'xlink:href') {
-            return '[*|href]:not([href])';
-        }
-
-        return `[proton-${name}]`;
-    }).join(',');
+/**
+ * Search for proton attributes in the document and replace them with their normal attributes
+ * =>  e.g. proton-src becomes src so that we can load an image
+ *
+ * It should work on img tags and other elements from ATTRIBUTE_TO_LOAD (e.g. url, background, etc...)
+ */
+export const loadImages = (images: MessageRemoteImage[], messageDocument?: Element) => {
+    const selector = getRemoteSelector(true);
 
     // Get all elements in the mail which have a proton attribute
     const foundElements = messageDocument ? messageDocument.querySelectorAll(selector) : [];
@@ -72,14 +70,13 @@ export const loadElementOtherThanImages = (images: MessageRemoteImage[], message
 
                 // Find the corresponding image to get its url (same url if loading without proxy, or blob if loading through proxy)
                 // Check its originalUrl because url field can be a blob at this point
-                const elementWithOriginalURL = elementOtherThanImages.find((el) => {
+                const elementWithOriginalURL = images.find((el) => {
                     return elementValue === el.originalURL;
                 });
 
-                // Set attribute with the right URL (normal or blob depending on the setting) and remove the proton attribute
+                // Set attribute with the right URL (normal or blob depending on the setting)
                 if (elementWithOriginalURL && elementWithOriginalURL.url) {
                     element.setAttribute(attr, elementWithOriginalURL.url);
-                    element.removeAttribute(protonAttr);
                 }
             }
         });
