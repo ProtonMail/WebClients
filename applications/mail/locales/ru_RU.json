@@ -3872,11 +3872,6 @@
         "По умолчанию"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Конфиденциальность по умолчанию."
-      ]
-    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Дата: ${ date }"
@@ -5927,11 +5922,6 @@
         "Нажмите, чтобы узнать подробности"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Несколько контактов выглядят идентичными. ${ mergeAction }"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Раскрытый"
@@ -6705,6 +6695,11 @@
         "${ Label.Name } создан"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Боковая панель"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Колонка"
@@ -7367,6 +7362,9 @@
       "Filter labels": [
         "Ярлыки фильтров"
       ],
+      "Group name": [
+        "Название группы"
+      ],
       "Hint": [
         "Подсказка"
       ],
@@ -7384,6 +7382,9 @@
       ],
       "Name or email address": [
         "Имя или адрес эл. почты"
+      ],
+      "Name, email or address": [
+        "Имя, электронная почта или адрес"
       ],
       "Password": [
         "Пароль"
@@ -7529,7 +7530,7 @@
         "Отправлено ${ MAIL_APP_NAME } с шифрованием с нулевым доступом"
       ],
       "Stored with zero-access encryption": [
-        "Хранится с шифрованием с нулевым доступом"
+        "Хранится под шифрованием с нулевым доступом"
       ]
     },
     "Refresh on apply warning": {
@@ -7665,7 +7666,15 @@
         "Отправлено вами со сквозным шифрованием проверенным получателям"
       ],
       "Stored with zero-access encryption": [
-        "Хранится с применением шифрования с нулевым доступом"
+        "Хранится под шифрованием с нулевым доступом"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Управляйте контактами и просматривайте календарь не выходя из приложения."
+      ],
+      "Try the new side panel": [
+        "Попробуйте новую боковую панель"
       ]
     },
     "Signature verification warning": {
@@ -8044,6 +8053,12 @@
         "${ count } сообщения удалено",
         "${ count } сообщений удалено",
         "${ count } сообщений удалено"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } контакт выглядит одинаково.",
+        "${ countMergeableContacts } контакта выглядят одинаково.",
+        "${ countMergeableContacts } контактов выглядят одинаково.",
+        "${ countMergeableContacts } контактов выглядят одинаково."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "${ elementsCount } цепочке писем присвоен ярлык ${ labelName }.",
@@ -9030,8 +9045,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
+      "Hide side panel": [
+        "Скрыть боковую панель"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
+      ],
+      "Show side panel": [
+        "Показать боковую панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"

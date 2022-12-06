@@ -3843,11 +3843,6 @@
         "Implicit"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Confidențialitate implicită."
-      ]
-    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Data: ${ date }"
@@ -4769,7 +4764,7 @@
         "Ciornă"
       ],
       "Draft discarded": [
-        "Ciornă respinsă"
+        "Ciornă aruncată"
       ],
       "Draft saved.": [
         "Ciornă salvată."
@@ -5821,11 +5816,6 @@
         "Apăsați pentru detalii"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Mai multe contacte arată identic. ${ mergeAction }"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Compromisă"
@@ -6597,6 +6587,11 @@
         "${ Label.Name } creată"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Panou lateral"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Coloane"
@@ -7252,6 +7247,9 @@
       "Filter labels": [
         "Filtrare etichete"
       ],
+      "Group name": [
+        "Nume grup"
+      ],
       "Hint": [
         "Indiciu"
       ],
@@ -7269,6 +7267,9 @@
       ],
       "Name or email address": [
         "Numele de utilizator sau adresa de e-mail"
+      ],
+      "Name, email or address": [
+        "Nume, e-mail sau adresă"
       ],
       "Password": [
         "Parola"
@@ -7544,6 +7545,14 @@
         "Stocat criptat cu acces exclusiv personal"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Gestionați-vă contactele și accesați calendarul fără a părăsi aplicația."
+      ],
+      "Try the new side panel": [
+        "Încercați noul panou lateral"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Mesaj criptat cu PGP. Verificarea expeditorului a eșuat: ${ verificationErrorsMessage }"
@@ -7661,6 +7670,11 @@
         "S-a șters un mesaj.",
         "S-au șters ${ count } mesaje.",
         "S-au șters ${ count } de mesaje."
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "Un contact arată identic.",
+        "${ countMergeableContacts } contacte arată identic.",
+        "${ countMergeableContacts } de contacte arată identic."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "S-a adăugat o conversație în ${ labelName }.",
@@ -8611,8 +8625,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
+      "Hide side panel": [
+        "Ascundere panou lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
+      ],
+      "Show side panel": [
+        "Afișare panou lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."

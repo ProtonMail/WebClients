@@ -3781,11 +3781,6 @@
         "Alapértelmezett"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Adatvédelem alapértelmezett."
-      ]
-    },
     "forwardmessage": {
       "To: ${ toString }": [
         "Címzett: ${ toString }"
@@ -5516,8 +5511,17 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "A levél tartalmazza a \"${ attachmentsFoundKeyword }\" kifejezést, de nem csatolt mellékletet. Biztos, hogy elküldi így a levelet?"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Önnek legalább egy lejárt számlatartozása van. Fiókját korlátoztuk és minden szolgáltatást felfüggesztettünk amíg nem rendezi tartozását. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Önnek legalább egy lejárt számlatartozása van, ezért fiókját korlátoztuk. Tájékoztatjuk, hogy amennyiben nem rendezi tartozását, a jövőben az e-mailek és a fájlmegosztások letiltásra kerülhetnek. Kérjük mielőbb rendezze tartozását: ${ payInvoiceLink }"
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "E-mail címe nem változik meg, de hamarosan már a ${ link } webcímen kell bejelentkeznie."
@@ -5568,11 +5572,6 @@
     "Info on errors": {
       "Click for details": [
         "Kattintson a részletekért"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Több névjegy is megegyezik. ${ mergeAction }"
       ]
     },
     "Key badge": {
@@ -6338,6 +6337,11 @@
         "${ Label.Name } létrehozva"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Oldalsáv"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Oszlop"
@@ -6958,6 +6962,9 @@
       "Filter labels": [
         "Címkék szűrése"
       ],
+      "Group name": [
+        "Csoport név"
+      ],
       "Hint": [
         "Emlékeztető"
       ],
@@ -6975,6 +6982,9 @@
       ],
       "Name or email address": [
         "Név vagy e-mail cím"
+      ],
+      "Name, email or address": [
+        "Név, email cím vagy cím"
       ],
       "Password": [
         "Jelszó"
@@ -7239,6 +7249,14 @@
       ],
       "Stored with zero-access encryption": [
         "Zéró-hozzáférés titkosítással tárolva"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Kezelje névjegyeit és tekintse meg naptárát anélkül, hogy elhagyná az alkalmazást."
+      ],
+      "Try the new side panel": [
+        "Próbálja ki az új oldalsó panelt"
       ]
     },
     "Signature verification warning": {
@@ -8254,8 +8272,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
+      "Hide side panel": [
+        "Oldalpanel elrejtése"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
+      ],
+      "Show side panel": [
+        "Oldalsó panel megjelenítése"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"

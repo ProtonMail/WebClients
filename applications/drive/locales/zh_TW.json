@@ -2304,6 +2304,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "出了一點問題。請重新整理頁面或稍後再試。"
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "連線至 ${ BRAND_NAME } 時發生問題。"
+      ],
       "You may also ${ refresh } or try again later.": [
         "您亦可${ refresh } 或稍後再試一次。"
       ],
@@ -2429,11 +2432,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 已更新"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }。隱私無憂。"
       ]
     },
     "Group": {
@@ -3070,6 +3068,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
@@ -3743,11 +3744,6 @@
         "點擊以查看詳細資料"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "多位聯絡人重複。${ mergeAction }"
-      ]
-    },
     "Item": {
       "file attributes": [
         "檔案屬性"
@@ -4251,6 +4247,11 @@
         "${ Label.Name } 已建立"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "側邊面板"
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "清除瀏覽器快取"
@@ -4694,6 +4695,9 @@
       "Filter groups": [
         "篩選群組"
       ],
+      "Group name": [
+        "群組名稱"
+      ],
       "Image URL": [
         "圖像網址"
       ],
@@ -4702,6 +4706,9 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "Name, email or address": [
+        "名稱，電郵位址或地址"
       ],
       "New name": [
         "新名稱"
@@ -4792,6 +4799,14 @@
         "上載"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "不離開應用程式也能管理您的聯絡人和檢視您的行事曆。"
+      ],
+      "Try the new side panel": [
+        "嘗試新的側欄"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
@@ -4824,6 +4839,9 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } 個聯絡人似乎相同。"
+      ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
       ],
@@ -5478,8 +5496,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
+      "Hide side panel": [
+        "隱藏側欄"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
+      ],
+      "Show side panel": [
+        "顯示側欄"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"

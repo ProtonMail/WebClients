@@ -155,6 +155,9 @@
       "Clear query": [
         "Ryd forespørgslen"
       ],
+      "Clear search": [
+        "Ryd søgning"
+      ],
       "Click here.": [
         "Klik her."
       ],
@@ -1633,6 +1636,12 @@
       "apple": [
         "æble"
       ],
+      "azureish white": [
+        "azurblålig hvid"
+      ],
+      "blanched almond": [
+        "blancherede mandler"
+      ],
       "blue-gray": [
         "blågrå"
       ],
@@ -1660,6 +1669,12 @@
       "dandelion": [
         "mælkebøtte"
       ],
+      "dark cerulean": [
+        "mørk cerulean"
+      ],
+      "dark midnight blue": [
+        "mørk midnatsblå"
+      ],
       "dim gray": [
         "svag grå"
       ],
@@ -1675,17 +1690,29 @@
       "gainsboro": [
         "gainsboro"
       ],
+      "japanese laurel": [
+        "japansk laurbær"
+      ],
       "kiwi": [
         "kiwi"
       ],
       "lemon yellow": [
         "citrongul"
       ],
+      "light carmine pink": [
+        "lys karminrosa"
+      ],
+      "light moss green": [
+        "lys mosgrøn"
+      ],
       "light red": [
         "lysrød"
       ],
       "maize": [
         "majs"
+      ],
+      "mughal green": [
+        "mughal grøn"
       ],
       "ocean": [
         "ocean"
@@ -1701,6 +1728,15 @@
       ],
       "palatinate blue": [
         "palatinatblå"
+      ],
+      "pale cerulean": [
+        "lys cerulean"
+      ],
+      "pastel gray": [
+        "pastelgrå"
+      ],
+      "persian plum": [
+        "persisk blomme"
       ],
       "persian red": [
         "persisk rød"
@@ -1719,6 +1755,9 @@
       ],
       "pink": [
         "pink"
+      ],
+      "pistachio": [
+        "pistacie"
       ],
       "plum": [
         "blomme"
@@ -3772,12 +3811,10 @@
         "Standard"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privatliv som standard."
-      ]
-    },
     "forwardmessage": {
+      "Date: On ${ date }": [
+        "Dato: ${ date }"
+      ],
       "From: ${ senderString }": [
         "Fra: ${ senderString }"
       ],
@@ -4112,6 +4149,9 @@
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Opret et ${ boldAppPassword } og brug det i stedet for din almindelige adgangskode, når ${ BRAND_NAME } anmoder om det."
       ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Generer ${ boldAppPassword }, og brug den i stedet for din almindelige adgangskode, når du bliver bedt om det af ${ BRAND_NAME }."
+      ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Gå til ${ boldAccountInfo } under din profil i ${ yahooMailLink }."
       ],
@@ -4144,6 +4184,15 @@
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "For at importere en kalender til ${ BRAND_NAME }, skal du bruge ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "For at importere kontakter til ${ BRAND_NAME } skal du bruge et ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "For at importere kontakter til ${ BRAND_NAME } skal du bruge et ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "For at importere kontakter til ${ BRAND_NAME }, skal du bruge et ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "For at importere e-mails til ${ BRAND_NAME }, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
@@ -4693,6 +4742,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast verifikationskode. Ciffer ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
@@ -4967,6 +5019,9 @@
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Ingen trackere fundet, men nogle billeder kunne ikke indlæses med sporingsbeskyttelse"
+      ],
+      "non-${ MAIL_APP_NAME }": [
+        "ikke-${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ingen af de uploadede nøgler er gyldige til kryptering. For at kunne sende beskeder til denne adresse skal du uploade en gyldig nøgle eller deaktivere \"Krypter e-mails\" for at kunne sende beskeder til denne adresse."
@@ -5431,6 +5486,9 @@
       "Using SimpleLogin is easy": [
         "Det er nemt at bruge SimpleLogin"
       ],
+      "Verified ${ BRAND_NAME } message": [
+        "Verificeret ${ BRAND_NAME }-besked"
+      ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
       ],
@@ -5580,8 +5638,20 @@
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Din ${ BRAND_NAME }-konto inkluderer SimpleLogin. Installér browserudvidelsen med ét klik for at komme i gang."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Efter 28 dage vil e-mails ikke længere blive leveret til din indbakke, dine Drive-delingslinks vil blive blokeret, og du vil ikke længere kunne uploade nye filer. For at genoptage normal service skal du betale alle forfaldne fakturaer."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Der leveres ikke længere e-mails til din indbakke. Dine Drive-links til deling er ikke længere aktive, og du kan ikke uploade nye filer. Hvis du fortsat vil bruge din konto, skal du betale eventuelle forfaldne fakturaer."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Din konto har mindst én faktura, der er forfalden. Din konto er begrænset, og alle tjenester er nu blokeret, indtil du har betalt. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Din konto har mindst én faktura, der er forfalden. Din konto er begrænset. Fortsat manglende betaling vil blokere dine e-mails og delingslinks. ${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
@@ -5635,11 +5705,6 @@
     "Info on errors": {
       "Click for details": [
         "Klik for detaljer"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Flere kontakter ser identiske ud. ${ mergeAction }"
       ]
     },
     "Key badge": {
@@ -6002,7 +6067,7 @@
         "Land"
       ],
       "Date": [
-        "Stævnemøde"
+        "Dato"
       ],
       "Date:": [
         "Dato:"
@@ -6411,6 +6476,11 @@
         "${ Label.Name } oprettet"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Sidepanel"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Kolonne"
@@ -6645,6 +6715,9 @@
     "Message": {
       "Fw:": [
         "Vs:"
+      ],
+      "On ${ date }, ${ senderString } wrote:": [
+        "${ date }, skrev ${ senderString }:"
       ],
       "Re:": [
         "Sv:"
@@ -6934,11 +7007,17 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
       ],
+      "Discover all ${ BRAND_NAME } services": [
+        "Udforsk alle ${ BRAND_NAME }-tjenester"
+      ],
       "Select a theme": [
         "Vælg et tema"
       ],
       "Set up your organization": [
         "Konfigurer din organisation"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "Brug appvælgeren øverst til venstre for at få adgang til alle ${ BRAND_NAME }-tjenester: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }."
       ],
       "You can change this anytime in your settings.": [
         "Du kan altid ændre dette i dine indstillingerne."
@@ -7050,6 +7129,9 @@
       "Filter labels": [
         "Filtrér etiketter"
       ],
+      "Group name": [
+        "Gruppenavn"
+      ],
       "Hint": [
         "Tip"
       ],
@@ -7067,6 +7149,9 @@
       ],
       "Name or email address": [
         "Navn eller e-mailadresse"
+      ],
+      "Name, email or address": [
+        "Navn, e-mail eller adresse"
       ],
       "Password": [
         "Adgangskode"
@@ -7333,6 +7418,14 @@
         "Lagret med nuladgangskryptering"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Administrer dine kontakter og se din kalender uden at forlade appen."
+      ],
+      "Try the new side panel": [
+        "Prøv det nye sidepanel"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP-krypteret besked. Afsenderbekræftelse fejlede: ${ verificationErrorsMessage }"
@@ -7376,6 +7469,9 @@
       ],
       "Get up to ${ credits } in credits.": [
         "Få op til ${ credits } i kreditter."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Inviter venner til ${ BRAND_NAME }"
       ],
       "Message Content Search": [
         "Søgning efter beskedindhold"
@@ -7444,6 +7540,10 @@
       "${ count } message deleted": [
         "${ count } besked slettet",
         "${ count } beskeder slettet"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kontakt ser identisk ud.",
+        "${ countMergeableContacts } kontakter ser identiske ud."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "${ elementsCount } samtale føjet til ${ labelName }.",
@@ -8001,6 +8101,9 @@
       "Filter on...": [
         "Filtrer efter..."
       ],
+      "Folder options": [
+        "Mappeindstillinger"
+      ],
       "Forward": [
         "Videresend"
       ],
@@ -8037,6 +8140,9 @@
       ],
       "Label as": [
         "Etikettér som"
+      ],
+      "Label options": [
+        "Etiketindstillinger"
       ],
       "Link confirmation": [
         "Linkbekræftelse"
@@ -8349,8 +8455,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
+      "Hide side panel": [
+        "Skjul sidepanel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
+      ],
+      "Show side panel": [
+        "Vis sidepanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"

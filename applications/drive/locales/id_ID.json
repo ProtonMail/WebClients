@@ -425,6 +425,9 @@
       "Rename": [
         "Ubah nama"
       ],
+      "Replace file": [
+        "Ubah berkas"
+      ],
       "Report a problem": [
         "Laporkan masalah"
       ],
@@ -3158,6 +3161,9 @@
       "Folder will not be uploaded": [
         "Folder tidak akan diunggah"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "Folder yang Anda sinkronkan dari komputer Anda akan muncul pada layar ini."
+      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -3235,6 +3241,9 @@
       ],
       "Internet connection restored.": [
         "Koneksi internet telah kembali pulih."
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Sepertinya baru-baru ini Anda mencoba untuk mengunggah ${ uploadName }. Apabila unggahan gagal, silakan ${ replaceFile }. Apabila unggahan masih berlangsung, mengubah berkas akan membatalkan unggahan yang telah ada."
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Mengunggah berkas semudah menarik atau memilih berkas"
@@ -3334,6 +3343,12 @@
       ],
       "No synced computers": [
         "Tidak ada komputer yang disinkronkan"
+      ],
+      "No synced folder": [
+        "Tidak ada folder yang disinkronkan"
+      ],
+      "No synced folders": [
+        "Tidak ada folder yang disinkronkan"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Tidak ada kunci yang valid untuk enkripsi dari daftar kunci yang diunggah. Untuk dapat mengirim pesan ke alamat ini, silakan unggah kunci yang valid atau nonaktifkan pengaturan \"Enkripsi email\"."
@@ -3783,11 +3798,6 @@
     "Info on errors": {
       "Click for details": [
         "Klik untuk rincian"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Beberapa kontak terlihat mirip. ${ mergeAction }"
       ]
     },
     "Item": {
@@ -4293,6 +4303,11 @@
         "${ Label.Name } dibuat"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Panel samping"
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
@@ -4744,6 +4759,9 @@
       "Filter groups": [
         "Filter grup"
       ],
+      "Group name": [
+        "Nama grup"
+      ],
       "Image URL": [
         "URL gambar"
       ],
@@ -4752,6 +4770,9 @@
       ],
       "Name": [
         "Nama"
+      ],
+      "Name, email or address": [
+        "Nama, email, atau alamat"
       ],
       "New name": [
         "Nama baru"
@@ -4842,6 +4863,14 @@
         "Unggah"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Kelola kontak Anda dan lihat kalender Anda tanpa meninggalkan aplikasi."
+      ],
+      "Try the new side panel": [
+        "Coba panel samping kami yang baru"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
@@ -4874,6 +4903,9 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } kontak terlihat identik."
+      ],
       "Address copied to clipboard": [
         "Alamat disalin ke clipboard"
       ],
@@ -5528,8 +5560,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
+      "Hide side panel": [
+        "Sembunyikan panel samping"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
+      ],
+      "Show side panel": [
+        "Tampilkan panel samping"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"

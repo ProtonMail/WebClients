@@ -5854,7 +5854,7 @@
         "Twoje konto ${ BRAND_NAME } zawiera subskrypcję SimpleLogin. Zainstaluj rozszerzenie przeglądarki za pomocą jednego kliknięcia."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą już dostarczane do skrzynki odbiorczej. Linki do plików na Dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
+        "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
@@ -5922,11 +5922,6 @@
     "Info on errors": {
       "Click for details": [
         "Kliknij po szczegóły"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Wiele kontaktów wygląda identycznie. ${ mergeAction }"
       ]
     },
     "Key badge": {
@@ -6702,6 +6697,11 @@
         "Utworzono \"${ Label.Name }\""
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Panel boczny"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Kolumna"
@@ -7364,6 +7364,9 @@
       "Filter labels": [
         "Filtruj etykiety"
       ],
+      "Group name": [
+        "Nazwa grupy"
+      ],
       "Hint": [
         "Podpowiedź"
       ],
@@ -7380,6 +7383,9 @@
         "Nazwa"
       ],
       "Name or email address": [
+        "Nazwa lub adres e-mail"
+      ],
+      "Name, email or address": [
         "Nazwa lub adres e-mail"
       ],
       "Password": [
@@ -7663,6 +7669,14 @@
       ],
       "Stored with zero-access encryption": [
         "Przechowywana z szyfrowaniem po stronie klienta"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Zarządzaj kontaktami i przeglądaj kalendarz bez opuszczania aplikacji."
+      ],
+      "Try the new side panel": [
+        "Wypróbuj nowy panel boczny"
       ]
     },
     "Signature verification warning": {
@@ -8041,6 +8055,12 @@
         "${ count } wiadomości zostały usunięte",
         "${ count } wiadomości zostało usuniętych",
         "${ count } wiadomości zostało usuniętych"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kontakt wygląda identycznie.",
+        "${ countMergeableContacts } kontakty wyglądają identycznie.",
+        "${ countMergeableContacts } kontaktów wygląda identycznie.",
+        "${ countMergeableContacts } kontaktów wygląda identycznie."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "Wątek został dodany do etykiety ${ labelName }.",
@@ -9027,8 +9047,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automatycznie dodaje kategorie (jak Społeczności lub Oferty) do niektórych wiadomości. Wybierz, gdzie zaimportować te wiadomości."
       ],
+      "Hide side panel": [
+        "Ukryj panel boczny"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wybierz schemat PGP, który będzie używany przy podpisywaniu lub szyfrowaniu wiadomości wysyłanych do użytkownika. Pamiętaj, że PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu"
+      ],
+      "Show side panel": [
+        "Pokaż panel boczny"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"

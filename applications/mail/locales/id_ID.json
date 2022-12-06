@@ -5609,11 +5609,6 @@
         "Klik untuk rincian"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Beberapa kontak terlihat mirip. ${ mergeAction }"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Bocor"
@@ -6381,6 +6376,11 @@
         "${ Label.Name } dibuat"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Panel samping"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Kolom"
@@ -7022,6 +7022,9 @@
       "Filter labels": [
         "Filter label"
       ],
+      "Group name": [
+        "Nama grup"
+      ],
       "Hint": [
         "Petunjuk"
       ],
@@ -7039,6 +7042,9 @@
       ],
       "Name or email address": [
         "Nama atau alamat email"
+      ],
+      "Name, email or address": [
+        "Nama, email, atau alamat"
       ],
       "Password": [
         "Kata sandi"
@@ -7296,6 +7302,14 @@
         "Disimpan dengan enkripsi zero access"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Kelola kontak Anda dan lihat kalender Anda tanpa meninggalkan aplikasi."
+      ],
+      "Try the new side panel": [
+        "Coba panel samping kami yang baru"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Pesan terenkripsi PGP. Verifikasi pengirim gagal: ${ verificationErrorsMessage }"
@@ -7407,6 +7421,9 @@
       ],
       "${ count } messages deleted": [
         "Pesan dihapus\n\n${ count } pesan dihapus"
+      ],
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } kontak terlihat identik."
       ],
       "${ elementsCount } conversations added to ${ labelName }.": [
         "${ elementsCount } percakapan ditambahkan ke ${ labelName }."
@@ -8282,8 +8299,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
+      "Hide side panel": [
+        "Sembunyikan panel samping"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
+      ],
+      "Show side panel": [
+        "Tampilkan panel samping"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"

@@ -431,6 +431,9 @@
       "Rename": [
         "Перейменувати"
       ],
+      "Replace file": [
+        "Замінити файл"
+      ],
       "Report a problem": [
         "Повідомити про проблему"
       ],
@@ -3338,6 +3341,9 @@
       "Folder will not be uploaded": [
         "Теку не буде вивантажено"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "Тут з'являться теки, які ви синхронізуєте з комп'ютера."
+      ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
       ],
@@ -3418,6 +3424,9 @@
       ],
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Схоже, що ви нещодавно намагалися завантажити ${ uploadName }. Якщо не вдалося завантажити, ${ replaceFile }. Якщо завантаження досі триває, заміна файлу скасує поточне завантаження."
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Це так само просто, як перетягування або вибір файлів"
@@ -3517,6 +3526,12 @@
       ],
       "No synced computers": [
         "Немає синхронізованих комп'ютерів"
+      ],
+      "No synced folder": [
+        "Немає синхронізованої теки"
+      ],
+      "No synced folders": [
+        "Немає синхронізованих тек"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Жоден із завантажених ключів не є дійсним для шифрування. Щоб мати можливість надсилати повідомлення на цю адресу, завантажте дійсний ключ або вимкніть функцію «Шифрувати листи»."
@@ -3975,11 +3990,6 @@
     "Info on errors": {
       "Click for details": [
         "Натисніть для подробиць"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Деякі контакти виглядають однаково. ${ mergeAction }"
       ]
     },
     "Item": {
@@ -4486,6 +4496,11 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } створено"
+      ]
+    },
+    "Landmarks": {
+      "Side panel": [
+        "Бічна панель"
       ]
     },
     "Link": {
@@ -5008,6 +5023,9 @@
       "Filter groups": [
         "Фільтр груп"
       ],
+      "Group name": [
+        "Назва групи"
+      ],
       "Image URL": [
         "URL-адреса зображення"
       ],
@@ -5016,6 +5034,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Name, email or address": [
+        "Назва, адреса е-пошти чи адреси"
       ],
       "New name": [
         "Нова назва"
@@ -5115,6 +5136,14 @@
         "Вивантажити"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Керуйте контактами та переглядайте календар, не виходячи з застосунку."
+      ],
+      "Try the new side panel": [
+        "Спробуйте нову бічну панель"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
@@ -5147,6 +5176,12 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } контакти має ідентичний вигляд.",
+        "${ countMergeableContacts } контакти мають ідентичний вигляд.",
+        "${ countMergeableContacts } контактів мають ідентичний вигляд.",
+        "${ countMergeableContacts } контакти мають ідентичний вигляд."
+      ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
       ],
@@ -5843,8 +5878,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
       ],
+      "Hide side panel": [
+        "Сховати бічну панель"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
+      ],
+      "Show side panel": [
+        "Показати бічну панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"

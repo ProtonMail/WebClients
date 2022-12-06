@@ -779,6 +779,14 @@
         "Format de calendari no suportat"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Siusplau, verifiqueu que l'enllaç segueix essent vàlid."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Fa més de 12 hores de la darrera actualització — ${ CALENDAR_APP_NAME } provarà d'actualitzar-lo en les hores vinents."
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Replega"
@@ -1399,6 +1407,9 @@
       "Mozambique": [
         "Moçambic"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namíbia"
       ],
@@ -1612,8 +1623,14 @@
       "Thailand": [
         "Tailàndia"
       ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
       "Togo": [
         "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
       ],
       "Tonga": [
         "Tonga"
@@ -1632,6 +1649,9 @@
       ],
       "Turkmenistan": [
         "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Illes Turks i Caicos"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -1710,6 +1730,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Desxifrant contactes… Pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
@@ -2208,6 +2231,9 @@
       "Start time out of bounds": [
         "Hora d’inici fora de límits"
       ],
+      "Time zone not supported": [
+        "Zona horària no admesa"
+      ],
       "Timezone": [
         "Zona Horària"
       ],
@@ -2371,11 +2397,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualitzat"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privadesa per defecte."
       ]
     },
     "Group": {
@@ -3266,6 +3287,9 @@
       "Tap the + button to upload a file or folder": [
         "Toqueu el botó + per a pujar un fitxer o carpeta"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "No disponible temporalment. Comproveu-ho de nou més tard."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
       ],
@@ -3447,11 +3471,6 @@
     "Info on errors": {
       "Click for details": [
         "Cliqueu per veure'n detalls"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Diversos contactes semblen idèntics. ${ mergeAction }"
       ]
     },
     "Item": {
@@ -3664,6 +3683,9 @@
       "Hide password": [
         "Amaga la contrasenya"
       ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Com descriuria la seva experiència amb el nou ${ BRAND_NAME }?"
+      ],
       "I understand the risk": [
         "Entenc el risc"
       ],
@@ -3732,6 +3754,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Navigation": [
+        "Navegació"
       ],
       "Never": [
         "Mai"
@@ -3992,6 +4017,35 @@
         "Text plà"
       ]
     },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Com importar calendaris des d'un altre servei"
+      ],
+      "How to import calendars from Outlook": [
+        "Com importar calendaris des d'Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Com importar calendaris des de Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Com importar contactes des d'un altre servei"
+      ],
+      "How to import contacts from Outlook": [
+        "Com importar contactes des d'Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Com importar contactes des de Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Com importar correus electrònics des d'un altre servei"
+      ],
+      "How to import emails from Outlook": [
+        "Com importar correus electrònics des d'Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Com importar correus electrònics des de Yahoo"
+      ]
+    },
     "New Label form": {
       "Color": [
         "Color"
@@ -4113,6 +4167,9 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
       ],
+      "Discover all ${ BRAND_NAME } services": [
+        "Descobriu tots els serveis de ${ BRAND_NAME }"
+      ],
       "Select a theme": [
         "Seleccioneu un tema"
       ],
@@ -4191,6 +4248,9 @@
       ],
       "Filter groups": [
         "Filtra grups"
+      ],
+      "Group name": [
+        "Nom del grup"
       ],
       "Image URL": [
         "URL de la imatge"
@@ -4494,6 +4554,9 @@
       ],
       "All": [
         "Tot"
+      ],
+      "Are you sure you want to close the preview?": [
+        "Esteu segur que voleu tancar la previsualització?"
       ],
       "Back": [
         "Torna"
@@ -4947,6 +5010,9 @@
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
       ],
+      "Hide side panel": [
+        "Amaga la subfinestra lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
       ],
@@ -5028,6 +5094,9 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recordeu la vostra contrasenya és impossible reactivar la vostra clau. Us podem ajudar a desactivar l'alerta però en el procés perdreu permanentment l'accés a totes les dades xifrades amb aquesta clau."
       ],
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ${ VPN_APP_NAME }. En comptes d'això, obriu una incidència."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
       ],
@@ -5051,6 +5120,12 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Aquesta acció és irreversible. Si us plau, introduïu la paraula ${ boldDanger } al camp per continuar."
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Aquesta característica requereix un compte de pagament de ${ BRAND_NAME }"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
