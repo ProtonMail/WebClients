@@ -341,8 +341,24 @@ blockquote.protonmail_quote
 		margin-block-start: 0.75em;
 	}
 
+	// trick to get elements aligned, whatever is the length of first cell
+	.message-print-recipient-container {
+		display: table;
+
+		> * {
+			display: table-row;
+			padding-block: 0.5em;
+
+			> * {
+				display: table-cell;
+				padding-block: 0.25em;
+			}
+		}
+	}
+
 	.container-to {
-		min-inline-size: 3em;
+		padding-inline-end: 1em;
+		text-align: start;
 	}
 
 	.item-icon,
