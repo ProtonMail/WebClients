@@ -172,7 +172,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                         const { arg, id, hasAbortController } = event.data.payload;
 
                         try {
-                            let updatedArgs = arg;
+                            let updatedArgs: any = arg;
                             if (hasAbortController) {
                                 const abortController = new AbortController();
 
@@ -187,7 +187,10 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                                 };
                             }
 
-                            const res = await api(updatedArgs);
+                            const res = await api({
+                                ...updatedArgs,
+                                headers: { ...updatedArgs.headers, 'x-pm-source': 'drawer' },
+                            });
 
                             // Once the request is finished, remove the controller from the array
                             if (hasAbortController) {
