@@ -2,7 +2,7 @@ import { Children, MouseEvent, ReactElement, RefObject, cloneElement } from 'rea
 
 import { c, msgid } from 'ttag';
 
-import { Dropdown } from '../dropdown';
+import { Dropdown, DropdownSizeUnit } from '../dropdown';
 import { Props as OptionProps } from '../option/Option';
 
 interface Props<V> {
@@ -53,11 +53,13 @@ const AutocompleteList = <V,>({ id, children, onClose, isOpen, highlightedIndex,
                 onClose={onClose}
                 offset={4}
                 noCaret
-                noMaxWidth
-                sameAnchorWidth
+                size={{
+                    width: DropdownSizeUnit.Anchor,
+                    height: DropdownSizeUnit.Dynamic,
+                    maxWidth: DropdownSizeUnit.Viewport,
+                }}
                 disableFocusTrap
                 disableDefaultArrowNavigation
-                UNSTABLE_AUTO_HEIGHT
             >
                 <ul id={id} className="unstyled m0 p0" onMouseDown={handleListMouseDown}>
                     {items}

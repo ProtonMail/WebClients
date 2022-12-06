@@ -3,6 +3,8 @@ import { ReactNode, useRef, useState } from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { DropdownProps, DropdownSizeUnit } from '@proton/components/components';
+
 import Dropdown from './Dropdown';
 import DropdownButton from './DropdownButton';
 
@@ -71,5 +73,53 @@ describe('<Dropdown />', () => {
         await userEvent.click(getByTestId('outside'));
         fireEvent.animationEnd(getByTestId('dropdown'), { animationName: 'anime-dropdown-out' });
         expect(queryByTestId('dropdown-test')).toBeNull();
+    });
+
+    describe('dropdown size', () => {
+        const Test = (props: { size: DropdownProps['size'] }) => {
+            const ref = useRef<HTMLDivElement>(null);
+            return (
+                <Dropdown anchorRef={ref} isOpen={true} data-testid="dropdown" {...props}>
+                    hello
+                </Dropdown>
+            );
+        };
+
+        it('should should set initial on viewport max size', async () => {
+            const { getByTestId } = render(
+                <Test size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }} />
+            );
+            expect(getByTestId('dropdown')).toHaveStyle('--custom-max-width: initial; --custom-max-height: initial');
+        });
+
+        it('should should set custom max height', async () => {
+            const { getByTestId } = render(<Test size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: '13em' }} />);
+            expect(getByTestId('dropdown')).toHaveStyle('--custom-max-width: initial; --custom-max-height: 13em');
+        });
+
+        it('should should set custom height', async () => {
+            const { getByTestId } = render(
+                <Test size={{ height: '15px', maxWidth: DropdownSizeUnit.Viewport, maxHeight: '13em' }} />
+            );
+            expect(getByTestId('dropdown')).toHaveStyle(
+                '--height: 15px; --custom-max-width: initial; --custom-max-height: 13em'
+            );
+        });
+
+        it('should should set custom width', async () => {
+            const { getByTestId } = render(
+                <Test
+                    size={{
+                        width: '13px',
+                        height: '15px',
+                        maxWidth: '13em',
+                        maxHeight: DropdownSizeUnit.Viewport,
+                    }}
+                />
+            );
+            expect(getByTestId('dropdown')).toHaveStyle(
+                '--width: 13px; --height: 15px; --custom-max-width: 13em; --custom-max-height: initial'
+            );
+        });
     });
 });

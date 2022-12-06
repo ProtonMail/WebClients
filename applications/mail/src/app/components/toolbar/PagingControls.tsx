@@ -57,7 +57,6 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                     title={c('Action').t`Change page`}
                     content={String(page)}
                     disabled={total <= 1}
-                    size="narrow"
                     data-testid="toolbar:page-number-dropdown"
                 >
                     {{
@@ -109,7 +108,6 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                 title={c('Action').t`Change page`}
                 content={paginationLabel}
                 disabled={loading || total <= 1}
-                size="narrow"
                 data-testid="toolbar:page-number-dropdown"
                 hasCaret={false}
             >

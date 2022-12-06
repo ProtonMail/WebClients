@@ -27,6 +27,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import clamp from '@proton/utils/clamp';
 
 import {
+    DropdownSizeUnit,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -191,7 +192,7 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
                             <SelectTwo
                                 unstyled
                                 originalPlacement="bottom-end"
-                                sameAnchorWidth={false}
+                                size={{ width: DropdownSizeUnit.Static }}
                                 value={model.domain}
                                 onChange={({ value }) => handleChange('domain')(value)}
                             >

@@ -1,7 +1,7 @@
 import { ReactNode, RefObject, useEffect, useState } from 'react';
 
 import { generateUID } from '../../helpers';
-import { Dropdown } from '../dropdown';
+import { Dropdown, DropdownProps } from '../dropdown';
 import { PopperPosition, cornerPopperPlacements } from '../popper';
 
 export interface ContextMenuProps {
@@ -11,18 +11,10 @@ export interface ContextMenuProps {
     position?: PopperPosition;
     close: () => void;
     autoClose?: boolean;
-    noMaxHeight?: boolean;
+    size?: DropdownProps['size'];
 }
 
-const ContextMenu = ({
-    anchorRef,
-    children,
-    isOpen,
-    position,
-    close,
-    autoClose = true,
-    noMaxHeight = false,
-}: ContextMenuProps) => {
+const ContextMenu = ({ anchorRef, children, isOpen, position, close, autoClose = true, size }: ContextMenuProps) => {
     const [uid] = useState(generateUID('context-menu'));
 
     useEffect(() => {
@@ -56,7 +48,7 @@ const ContextMenu = ({
             offset={1}
             onClose={close}
             onContextMenu={(e) => e.stopPropagation()}
-            noMaxHeight={noMaxHeight}
+            size={size}
         >
             {children}
         </Dropdown>

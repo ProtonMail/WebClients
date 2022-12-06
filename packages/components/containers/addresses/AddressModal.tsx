@@ -26,6 +26,7 @@ import {
 import noop from '@proton/utils/noop';
 
 import {
+    DropdownSizeUnit,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -226,7 +227,7 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                         ) : (
                             <SelectTwo
                                 unstyled
-                                sameAnchorWidth={false}
+                                size={{ width: DropdownSizeUnit.Static }}
                                 originalPlacement="bottom-end"
                                 value={selectedDomain}
                                 onChange={({ value }) => setModel({ ...model, domain: value })}

@@ -7,7 +7,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
-import { DropdownButton } from '../../components';
+import { DropdownButton, DropdownSizeUnit } from '../../components';
 import Dropdown from '../../components/dropdown/Dropdown';
 import Icon from '../../components/icon/Icon';
 import Checkbox from '../../components/input/Checkbox';
@@ -198,7 +198,7 @@ const ContactGroupDropdown = ({
                 onClose={close}
                 autoClose={false}
                 autoCloseOutside={!lock}
-                noMaxSize
+                size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
             >
                 <form onSubmit={handleSubmit}>
                     <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
