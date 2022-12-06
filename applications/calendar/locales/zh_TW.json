@@ -331,9 +331,6 @@
       "OK": [
         "好"
       ],
-      "Open in a new tab": [
-        "開啟新分頁"
-      ],
       "Open navigation": [
         "開啟導覽"
       ],
@@ -2533,6 +2530,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "出了一點問題。請重新整理頁面或稍後再試。"
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "連線至 ${ BRAND_NAME } 時發生問題。"
+      ],
       "You may also ${ refresh } or try again later.": [
         "您亦可${ refresh } 或稍後再試一次。"
       ],
@@ -3245,6 +3245,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
+      ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
@@ -3731,11 +3734,6 @@
         "點擊以查看詳細資料"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "多位聯絡人重複。${ mergeAction }"
-      ]
-    },
     "Input label": {
       "Access": [
         "存取"
@@ -4121,6 +4119,11 @@
         "${ Label.Name } 已建立"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "側邊面板"
+      ]
+    },
     "Link": {
       "Calendars": [
         "行事曆"
@@ -4148,6 +4151,11 @@
       ],
       "What’s this?": [
         "這是什麼？"
+      ]
+    },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "於 ${ CALENDAR_APP_NAME } 開啟"
       ]
     },
     "Loading info": {
@@ -4723,6 +4731,9 @@
       "Filter groups": [
         "篩選群組"
       ],
+      "Group name": [
+        "群組名稱"
+      ],
       "Image URL": [
         "圖像網址"
       ],
@@ -4731,6 +4742,9 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "Name, email or address": [
+        "名稱，電郵位址或地址"
       ],
       "Password": [
         "密碼"
@@ -4863,6 +4877,14 @@
         "由 ${ ownerName } 建立"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "不離開應用程式也能管理您的聯絡人和檢視您的行事曆。"
+      ],
+      "Try the new side panel": [
+        "嘗試新的側欄"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "管理行事曆"
@@ -4948,6 +4970,9 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } 個聯絡人似乎相同。"
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "取消函將傳送給此一系列中全部事件的已移除參與者。"
       ],
@@ -5589,8 +5614,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
+      "Hide side panel": [
+        "隱藏側欄"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
+      ],
+      "Show side panel": [
+        "顯示側欄"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"

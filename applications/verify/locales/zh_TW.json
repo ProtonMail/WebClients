@@ -945,6 +945,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "出了一點問題。請重新整理頁面或稍後再試。"
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "連線至 ${ BRAND_NAME } 時發生問題。"
+      ],
       "You may also ${ refresh } or try again later.": [
         "您亦可${ refresh } 或稍後再試一次。"
       ]
@@ -999,6 +1002,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"

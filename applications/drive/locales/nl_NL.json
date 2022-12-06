@@ -648,6 +648,11 @@
         "Door nu te verlaten, worden sommige afspraken mogelijk niet geïmporteerd"
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME }-applicaties"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Leeg ICS-bestand"
@@ -2436,11 +2441,6 @@
         "${ Label.Name } bijgewerkt"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy is standaard."
-      ]
-    },
     "Group": {
       "Account": [
         "Account"
@@ -2666,6 +2666,9 @@
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Genereer een ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door ${ BRAND_NAME }."
       ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Genereer het ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door ${ BRAND_NAME }."
+      ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Ga naar ${ boldAccountInfo } onder uw profiel in ${ yahooMailLink }."
       ],
@@ -2698,6 +2701,15 @@
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Om een agenda te importeren naar ${ BRAND_NAME } heeft u het ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Om contacten te importeren naar ${ BRAND_NAME } heeft u een ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Om contacten te importeren naar ${ BRAND_NAME } heeft u een ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Om contacten te importeren naar ${ BRAND_NAME } heeft u een ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Om uw e-mails te importeren naar ${ BRAND_NAME } heeft u een ${ appPasswordLink } nodig van Outlook. Krijg het door deze stappen te volgen:"
@@ -3787,11 +3799,6 @@
         "Klik voor details"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Meerdere contactpersonen zien er identiek uit. ${ mergeAction }"
-      ]
-    },
     "Item": {
       "file attributes": [
         "bestandsattributen"
@@ -4343,6 +4350,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importeer alle berichten van ${ selectedLabelsCount } uit ${ totalLabelsCount } map sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ selectedLabelsCount } van de ${ totalLabelsCount } mappen sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importeer alle berichten van ${ selectedLabelsCount } uit ${ totalLabelsCount } label sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importeer alle berichten van ${ selectedLabelsCount } van de ${ totalLabelsCount } labels sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -4747,6 +4758,9 @@
       "Filter groups": [
         "Filter groepen"
       ],
+      "Group name": [
+        "Groepsnaam"
+      ],
       "Image URL": [
         "Afbeeldings-URL"
       ],
@@ -4846,6 +4860,14 @@
     "Select files": {
       "Upload": [
         "Uploaden"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Beheer uw contacten en bekijk uw agenda zonder uw applicatie te verlaten."
+      ],
+      "Try the new side panel": [
+        "Probeer het nieuwe zijpaneel uit"
       ]
     },
     "specialoffer: Action": {

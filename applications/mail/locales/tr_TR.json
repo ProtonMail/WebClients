@@ -5718,11 +5718,6 @@
         "Ayrıntılar için tıklayın"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Birden fazla kişi aynı görünüyor. ${ mergeAction }"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Ele geçirilmiş"
@@ -6492,6 +6487,11 @@
         "${ Label.Name } eklendi"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Yan pano"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Sütun"
@@ -7140,6 +7140,9 @@
       "Filter labels": [
         "Etiketleri süz"
       ],
+      "Group name": [
+        "Grup adı"
+      ],
       "Hint": [
         "İpucu"
       ],
@@ -7157,6 +7160,9 @@
       ],
       "Name or email address": [
         "Ad ya da e-posta adresi"
+      ],
+      "Name, email or address": [
+        "Ad, e-posta ya da adres"
       ],
       "Password": [
         "Parola"
@@ -7423,6 +7429,14 @@
         "Sıfır erişim şifrelemesiyle kaydedildi"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Uygulamadan ayrılmadan kişilerinizi yönetebilir ve takviminize bakabilirsiniz."
+      ],
+      "Try the new side panel": [
+        "Yeni yan panoyu deneyin"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP ile şifrelenmiş ileti. Gönderici doğrulanamadı: ${ verificationErrorsMessage }"
@@ -7537,6 +7551,10 @@
       "${ count } message deleted": [
         "${ count } ileti silindi",
         "${ count } ileti silindi"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kişi aynı görünüyor.",
+        "${ countMergeableContacts } kişi aynı görünüyor."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "${ labelName } etiketine ${ elementsCount } yazışma eklendi.",
@@ -8451,8 +8469,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
+      "Hide side panel": [
+        "Yan panoyu gizle"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
+      ],
+      "Show side panel": [
+        "Yan panoyu görüntüle"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"

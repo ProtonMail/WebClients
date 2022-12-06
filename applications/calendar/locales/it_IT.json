@@ -333,9 +333,6 @@
       "OK": [
         "OK"
       ],
-      "Open in a new tab": [
-        "Aprire in una nuova scheda"
-      ],
       "Open navigation": [
         "Apri navigazione"
       ],
@@ -3838,11 +3835,6 @@
         "Clicca per maggiori dettagli"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Diversi contatti sembrano identici. ${ mergeAction }"
-      ]
-    },
     "Input label": {
       "Access": [
         "Accesso"
@@ -4229,6 +4221,11 @@
         "${ Label.Name } creato"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Pannello laterale"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Calendari"
@@ -4256,6 +4253,11 @@
       ],
       "What’s this?": [
         "Cos'è questo?"
+      ]
+    },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Apri in ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -4871,6 +4873,9 @@
       "Filter groups": [
         "Filtra gruppi"
       ],
+      "Group name": [
+        "Nome gruppo"
+      ],
       "Image URL": [
         "URL dell'immagine"
       ],
@@ -4879,6 +4884,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Name, email or address": [
+        "Nome, email o indirizzo"
       ],
       "Password": [
         "Password"
@@ -5013,6 +5021,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Creato da ${ ownerName }"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Gestisci i tuoi contatti e visualizza il tuo calendario senza uscire dall'app."
+      ],
+      "Try the new side panel": [
+        "Prova il nuovo pannello laterale"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5344,6 +5360,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contatto sembra identico.",
+        "${ countMergeableContacts } contatti sembrano identici."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Una email di cancellazione verrà inviata ai partecipanti rimossi per tutti gli eventi di questa serie."
       ],
@@ -5997,8 +6017,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
       ],
+      "Hide side panel": [
+        "Nascondi pannello laterale"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando si firma o si crittografa per un utente. Nota che PGP/Inline forza i testi in messaggi semplici"
+      ],
+      "Show side panel": [
+        "Mostra pannello laterale"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
