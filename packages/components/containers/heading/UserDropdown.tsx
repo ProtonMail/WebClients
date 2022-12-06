@@ -260,7 +260,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                                 onClick={close}
                             >
                                 {insideDropdownRecoveryNotification.text}
-                                <NotificationDot color={insideDropdownRecoveryNotification.color} />
+                                <NotificationDot className="ml1" color={insideDropdownRecoveryNotification.color} />
                             </DropdownMenuLink>
                         </>
                     )}
