@@ -370,6 +370,9 @@
       "Rename": [
         "Renomear"
       ],
+      "Replace file": [
+        "Substituir ficheiro"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -2487,6 +2490,9 @@
       "Folder will not be uploaded": [
         "A pasta não será enviada"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "As pastas do seu computador que você sincronizar aparecerão aqui."
+      ],
       "Free up some space or add more storage space.": [
         "Liberte algum espaço ou adicione mais espaço de armazenamento."
       ],
@@ -2607,6 +2613,12 @@
       ],
       "No results found": [
         "Nenhum resultado"
+      ],
+      "No synced folder": [
+        "Nenhuma pasta sincronizada"
+      ],
+      "No synced folders": [
+        "Nenhuma pasta sincronizada"
       ],
       "Not a valid URL": [
         "Não é um URL válido"
@@ -2823,11 +2835,6 @@
     "Info on errors": {
       "Click for details": [
         "Clique para detalhes"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Vários contactos parecem idênticos. ${ mergeAction }"
       ]
     },
     "Key badge": {
@@ -3165,6 +3172,11 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } criada"
+      ]
+    },
+    "Landmarks": {
+      "Side panel": [
+        "Painel lateral"
       ]
     },
     "Link": {

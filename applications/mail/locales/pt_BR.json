@@ -5718,11 +5718,6 @@
         "Clique para ver detalhes"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Vários contatos parecem idênticos. ${ mergeAction }"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Comprometida"
@@ -6492,6 +6487,11 @@
         "${ Label.Name } criado"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Painel lateral"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Coluna"
@@ -7137,6 +7137,9 @@
       "Filter labels": [
         "Filtrar marcadores"
       ],
+      "Group name": [
+        "Nome do grupo"
+      ],
       "Hint": [
         "Dica"
       ],
@@ -7154,6 +7157,9 @@
       ],
       "Name or email address": [
         "Nome ou endereço de e-mail"
+      ],
+      "Name, email or address": [
+        "Nome, e-mail ou endereço"
       ],
       "Password": [
         "Senha"
@@ -7418,6 +7424,14 @@
       ],
       "Stored with zero-access encryption": [
         "Armazenado com criptografia de acesso zero"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Gerencie seus contatos e veja seu calendário sem sair do aplicativo."
+      ],
+      "Try the new side panel": [
+        "Experimente o novo painel lateral"
       ]
     },
     "Signature verification warning": {
@@ -8692,8 +8706,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente categoriza alguns e-mails como Social e Promoções. Você pode selecionar para onde importar esses e-mails."
       ],
+      "Hide side panel": [
+        "Ocultar o painel lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a ser usado durante a assinatura ou criptografia de um usuário. Observe que o PGP/Incorporado força o envio de mensagens de texto sem formatação"
+      ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "As subpastas do sistema aparecerão como pastas separadas no ${ MAIL_APP_NAME }"

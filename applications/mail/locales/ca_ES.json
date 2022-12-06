@@ -1143,6 +1143,9 @@
       "Star message": [
         "Destacar missatge"
       ],
+      "Unread email": [
+        "Correu no llegit"
+      ],
       "Unstar conversation": [
         "Treure conversa destacada"
       ],
@@ -1525,6 +1528,12 @@
       "This invitation is out of date. The event has been updated.": [
         "Aquesta invitació no està actualitzada. L'esdeveniment s'ha actualitzat."
       ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Aquesta nova proposta horària no coincideix amb els detalls de la vostra invitació. Si us plau, verifiqueu els detalls de la invitació al vostre calendari."
+      ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Aquesta resposta no coincideix amb els detalls de la vostra invitació. Si us plau, verifiqueu els detalls de la invitació al vostre calendari."
+      ],
       "This response is out of date.": [
         "Aquesta resposta està desactualitzada."
       ],
@@ -1582,6 +1591,14 @@
       ],
       "Unsupported calendar format": [
         "Format de calendari no suportat"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Siusplau, verifiqueu que l'enllaç segueix essent vàlid."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Fa més de 12 hores de la darrera actualització — ${ CALENDAR_APP_NAME } provarà d'actualitzar-lo en les hores vinents."
       ]
     },
     "Calendar widget banner": {
@@ -2389,6 +2406,9 @@
       "Mozambique": [
         "Moçambic"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namíbia"
       ],
@@ -2602,8 +2622,14 @@
       "Thailand": [
         "Tailàndia"
       ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
       "Togo": [
         "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
       ],
       "Tonga": [
         "Tonga"
@@ -2622,6 +2648,9 @@
       ],
       "Turkmenistan": [
         "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Illes Turks i Caicos"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -2687,6 +2716,9 @@
     "CustomFilter": {
       "Attachment": [
         "Adjuntar"
+      ],
+      "Filter on": [
+        "Filtrar per"
       ],
       "Next": [
         "Següent"
@@ -2763,6 +2795,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Desxifrant contactes… Pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
@@ -2778,6 +2813,9 @@
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "Nous correus de ${ senderEmailAddress } i ${ otherSendersCount } altre no s'entregaran i seran eliminats permanentment.",
         "Nous correus de ${ senderEmailAddress } i ${ otherSendersCount } altres no s'entregaran i seran eliminats permanentment."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Nous correus de ${ senderEmailAddress } no s'entregaran i seran eliminats permanentment."
       ],
       "No folders": [
         "Cap carpeta"
@@ -3249,6 +3287,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el navegador actual."
       ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Massa filtres actius. Actualitzeu a un pla de pagament per activar més filtres."
+      ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
       ],
@@ -3455,6 +3496,9 @@
       ],
       "Start time out of bounds": [
         "Hora d’inici fora de límits"
+      ],
+      "Time zone not supported": [
+        "Zona horària no admesa"
       ],
       "Timezone": [
         "Zona Horària"
@@ -3718,11 +3762,6 @@
     "Font Size Default": {
       "Default": [
         "Predeterminada"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privadesa per defecte."
       ]
     },
     "forwardmessage": {
@@ -5040,6 +5079,9 @@
       "support team": [
         "equip de suport"
       ],
+      "Temporarily unavailable. Please check back later.": [
+        "No disponible temporalment. Comproveu-ho de nou més tard."
+      ],
       "Test link": [
         "Enllaç de prova"
       ],
@@ -5457,11 +5499,6 @@
     "Info on errors": {
       "Click for details": [
         "Cliqueu per veure'n detalls"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Diversos contactes semblen idèntics. ${ mergeAction }"
       ]
     },
     "Key badge": {
@@ -5889,6 +5926,9 @@
       "Hide password": [
         "Amaga la contrasenya"
       ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Com descriuria la seva experiència amb el nou ${ BRAND_NAME }?"
+      ],
       "I understand the risk": [
         "Entenc el risc"
       ],
@@ -5912,6 +5952,9 @@
       ],
       "Import to:": [
         "Importar a:"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Dreceres de teclat: ${ shortcut }"
       ],
       "Keyboard shortcuts": [
         "Dreceres de teclat"
@@ -5958,6 +6001,9 @@
       "Mark as": [
         "Marca com a"
       ],
+      "Move ${ sidebarElementName }": [
+        "Moure ${ sidebarElementName }"
+      ],
       "Move to": [
         "Moure a"
       ],
@@ -5969,6 +6015,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Navigation": [
+        "Navegació"
       ],
       "No label found": [
         "No s'ha trobat cap etiqueta"
@@ -6329,6 +6378,9 @@
       "Terms": [
         "Termes"
       ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Aquest arxiu ICS conté més d'un esdeveniment. Descarregueu-lo i importeu els esdeveniments a ${ CALENDAR_APP_NAME }"
+      ],
       "Trash": [
         "Paperera"
       ],
@@ -6366,6 +6418,11 @@
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Obrir a ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link to settings": {
+      "settings": [
+        "configuració"
       ]
     },
     "Loading info": {
@@ -6448,6 +6505,11 @@
         "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
       ]
     },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
+        "Lliurat amb SimpleLogin de ${ BRAND_NAME }"
+      ]
+    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "La imatge no s'ha carregat per tal de protegir la vostra privacitat."
@@ -6473,6 +6535,35 @@
       ],
       "Plain text": [
         "Text plà"
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Com importar calendaris des d'un altre servei"
+      ],
+      "How to import calendars from Outlook": [
+        "Com importar calendaris des d'Outlook"
+      ],
+      "How to import calendars from Yahoo": [
+        "Com importar calendaris des de Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Com importar contactes des d'un altre servei"
+      ],
+      "How to import contacts from Outlook": [
+        "Com importar contactes des d'Outlook"
+      ],
+      "How to import contacts from Yahoo": [
+        "Com importar contactes des de Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Com importar correus electrònics des d'un altre servei"
+      ],
+      "How to import emails from Outlook": [
+        "Com importar correus electrònics des d'Outlook"
+      ],
+      "How to import emails from Yahoo": [
+        "Com importar correus electrònics des de Yahoo"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -6668,6 +6759,9 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
       ],
+      "Discover all ${ BRAND_NAME } services": [
+        "Descobriu tots els serveis de ${ BRAND_NAME }"
+      ],
       "Select a theme": [
         "Seleccioneu un tema"
       ],
@@ -6783,6 +6877,9 @@
       ],
       "Filter labels": [
         "Filtrar etiquetes"
+      ],
+      "Group name": [
+        "Nom del grup"
       ],
       "Hint": [
         "Pista"
@@ -7019,6 +7116,15 @@
       "Encrypted by ${ MAIL_APP_NAME }": [
         "Xifrat per ${ MAIL_APP_NAME }"
       ],
+      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
+        "Xifrat per ${ MAIL_APP_NAME } a un destinatari PGP"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Xifrat per ${ MAIL_APP_NAME } a un destinatari PGP verificat"
+      ],
+      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
+        "Xifrat per ${ MAIL_APP_NAME } a un destinatari verificat"
+      ],
       "End-to-end encrypted": [
         "Xifrat d'extrem a extrem"
       ],
@@ -7109,6 +7215,9 @@
     "Status": {
       "This message is from a mailing list.": [
         "Aquest missatge és d'una llista de correus."
+      ],
+      "Unsubscribed": [
+        "Subscripció cancel·lada"
       ]
     },
     "Step in filter modal": {
@@ -7491,6 +7600,9 @@
       "Archive": [
         "Arxiu"
       ],
+      "Are you sure you want to close the preview?": [
+        "Esteu segur que voleu tancar la previsualització?"
+      ],
       "Are you sure you want to close?": [
         "Segur que voleu tancar?"
       ],
@@ -7667,6 +7779,9 @@
       "Feedback": [
         "Comentaris"
       ],
+      "Filter on...": [
+        "Filtra per..."
+      ],
       "Folder options": [
         "Opcions de carpeta"
       ],
@@ -7703,6 +7818,9 @@
       ],
       "Label as": [
         "Etiqueta com a"
+      ],
+      "Label options": [
+        "Opcions d'etiqueta"
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
@@ -7745,6 +7863,9 @@
       ],
       "More": [
         "Més"
+      ],
+      "More actions": [
+        "Més accions"
       ],
       "More options": [
         "Més opcions"
@@ -8003,6 +8124,9 @@
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
       ],
+      "Hide side panel": [
+        "Amaga la subfinestra lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
       ],
@@ -8088,6 +8212,9 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recordeu la vostra contrasenya és impossible reactivar la vostra clau. Us podem ajudar a desactivar l'alerta però en el procés perdreu permanentment l'accés a totes les dades xifrades amb aquesta clau."
       ],
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ${ VPN_APP_NAME }. En comptes d'això, obriu una incidència."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
       ],
@@ -8115,6 +8242,12 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Aquesta acció és irreversible. Si us plau, introduïu la paraula ${ boldDanger } al camp per continuar."
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Aquesta característica requereix un compte de pagament de ${ BRAND_NAME }"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."

@@ -366,6 +366,9 @@
       "Get ${ vpnPlus }": [
         "开通 ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "获取新的加密邮箱地址"
+      ],
       "Get verification code": [
         "获取验证码"
       ],
@@ -429,6 +432,9 @@
       "label emails as": [
         "给邮件加标签"
       ],
+      "Leave": [
+        "离开"
+      ],
       "Load more": [
         "加载更多"
       ],
@@ -437,6 +443,9 @@
       ],
       "Make default": [
         "设为默认"
+      ],
+      "Manage communication preferences": [
+        "管理通讯偏好设置"
       ],
       "Mark as default": [
         "标记为默认"
@@ -480,10 +489,10 @@
       "Not spam": [
         "非垃圾邮件"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -812,6 +821,9 @@
       ],
       "Use recovery code": [
         "使用恢复码"
+      ],
+      "Use your current email instead": [
+        "使用您已有的邮箱地址"
       ],
       "Use “${ label }” setting": [
         "使用 \"${ label }\" 设置"
@@ -2413,11 +2425,6 @@
         "没有搜索结果"
       ]
     },
-    "Credits": {
-      "Unused credits": [
-        "当前余额"
-      ]
-    },
     "CSV download button": {
       "CSV template": [
         "csv 模板"
@@ -3621,11 +3628,6 @@
     "Font Size Default": {
       "Default": [
         "默认"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }。隐私优先。"
       ]
     },
     "Frequency of news": {
@@ -7976,6 +7978,9 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "10 个自有域名更显游刃有余"
+      ],
+      "Create up to ${ numberOfPersonalCalendars } personal calendars": [
+        "创建多达 ${ numberOfPersonalCalendars } 份个人日历"
       ],
       "Everything in ${ vpnPlanName }": [
         "包含 ${ vpnPlanName } 所有功能"

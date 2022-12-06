@@ -492,11 +492,11 @@
       "Not spam": [
         "非垃圾郵件"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -2405,11 +2405,6 @@
         "(中轉 ${ entryCountryName })"
       ]
     },
-    "Credits": {
-      "Unused credits": [
-        "尚餘儲值"
-      ]
-    },
     "CSV download button": {
       "CSV template": [
         "CSV 範本"
@@ -3330,6 +3325,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "出了一點問題。請重新整理頁面或稍後再試。"
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "連線至 ${ BRAND_NAME } 時發生問題。"
+      ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "太多子系作業階段，請清除您的 cookies 然後重新登入。"
       ],
@@ -3621,11 +3619,6 @@
     "Font Size Default": {
       "Default": [
         "預設"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }。隱私無憂。"
       ]
     },
     "Frequency of news": {
@@ -4649,6 +4642,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "請輸入您的 ${ BRAND_NAME } 帳號詳細資料。"

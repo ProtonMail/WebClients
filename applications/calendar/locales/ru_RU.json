@@ -337,9 +337,6 @@
       "OK": [
         "OK"
       ],
-      "Open in a new tab": [
-        "Открыть в новой вкладке"
-      ],
       "Open navigation": [
         "Открыть панель навигации"
       ],
@@ -3968,11 +3965,6 @@
         "Нажмите, чтобы узнать подробности"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Несколько контактов выглядят идентичными. ${ mergeAction }"
-      ]
-    },
     "Input label": {
       "Access": [
         "Доступ"
@@ -4361,6 +4353,11 @@
         "${ Label.Name } создан"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Боковая панель"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Календари"
@@ -4388,6 +4385,11 @@
       ],
       "What’s this?": [
         "Что это такое?"
+      ]
+    },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Открыть в ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -5067,6 +5069,9 @@
       "Filter groups": [
         "Фильтровать группы"
       ],
+      "Group name": [
+        "Название группы"
+      ],
       "Image URL": [
         "URL изображения"
       ],
@@ -5075,6 +5080,9 @@
       ],
       "Name": [
         "Название"
+      ],
+      "Name, email or address": [
+        "Имя, электронная почта или адрес"
       ],
       "Password": [
         "Пароль"
@@ -5217,6 +5225,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Создано ${ ownerName }"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Управляйте контактами и просматривайте календарь не выходя из приложения."
+      ],
+      "Try the new side panel": [
+        "Попробуйте новую боковую панель"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5560,6 +5576,12 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } контакт выглядит одинаково.",
+        "${ countMergeableContacts } контакта выглядят одинаково.",
+        "${ countMergeableContacts } контактов выглядят одинаково.",
+        "${ countMergeableContacts } контактов выглядят одинаково."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Сообщение об отмене будет отправлено удаленным участникам всех событий этой серии."
       ],
@@ -6231,8 +6253,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
+      "Hide side panel": [
+        "Скрыть боковую панель"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
+      ],
+      "Show side panel": [
+        "Показать боковую панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"

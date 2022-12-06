@@ -431,6 +431,9 @@
       "Rename": [
         "Zmień nazwę"
       ],
+      "Replace file": [
+        "Zastąp plik"
+      ],
       "Report a problem": [
         "Zgłoś problem"
       ],
@@ -3338,6 +3341,9 @@
       "Folder will not be uploaded": [
         "Folder nie zostanie przesłany"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "Tutaj pojawią się foldery zsynchronizowane z urządzeniem."
+      ],
       "Free up some space or add more storage space.": [
         "Zwolnij część miejsca lub dodaj dodatkową przestrzeń dyskową."
       ],
@@ -3418,6 +3424,9 @@
       ],
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Próbujesz przesłać plik ${ uploadName }. ${ replaceFile }, jeśli przesyłanie nie powiodło się. Jeśli przesyłanie jest w toku, zastąpienie pliku spowoduje anulowanie przesyłania."
       ],
       "It’s as easy as drag and drop or selecting files": [
         "To jest łatwe jak przeciąganie i upuszczanie lub zaznaczanie plików"
@@ -3517,6 +3526,12 @@
       ],
       "No synced computers": [
         "Brak zsynchronizowanych urządzeń"
+      ],
+      "No synced folder": [
+        "Brak zsynchronizowanego folderu"
+      ],
+      "No synced folders": [
+        "Brak zsynchronizowanych folderów"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Żaden z przesłanych kluczy nie jest przeznaczony do szyfrowania. Prześlij prawidłowy klucz lub wyłącz opcję \"Zaszyfruj wiadomości\", aby wysyłać wiadomości na ten adres."
@@ -3924,7 +3939,7 @@
         "Stracisz wszystkie niezapisane zmiany."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą już dostarczane do skrzynki odbiorczej. Linki do plików na Dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
+        "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
@@ -3975,11 +3990,6 @@
     "Info on errors": {
       "Click for details": [
         "Kliknij po szczegóły"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Wiele kontaktów wygląda identycznie. ${ mergeAction }"
       ]
     },
     "Item": {
@@ -4486,6 +4496,11 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "Utworzono \"${ Label.Name }\""
+      ]
+    },
+    "Landmarks": {
+      "Side panel": [
+        "Panel boczny"
       ]
     },
     "Link": {
@@ -5008,6 +5023,9 @@
       "Filter groups": [
         "Filtruj grupy"
       ],
+      "Group name": [
+        "Nazwa grupy"
+      ],
       "Image URL": [
         "Adres URL zdjęcia"
       ],
@@ -5016,6 +5034,9 @@
       ],
       "Name": [
         "Nazwa"
+      ],
+      "Name, email or address": [
+        "Nazwa lub adres e-mail"
       ],
       "New name": [
         "Nowa nazwa"
@@ -5113,6 +5134,14 @@
     "Select files": {
       "Upload": [
         "Prześlij"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Zarządzaj kontaktami i przeglądaj kalendarz bez opuszczania aplikacji."
+      ],
+      "Try the new side panel": [
+        "Wypróbuj nowy panel boczny"
       ]
     },
     "specialoffer: Action": {
@@ -5403,6 +5432,12 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kontakt wygląda identycznie.",
+        "${ countMergeableContacts } kontakty wyglądają identycznie.",
+        "${ countMergeableContacts } kontaktów wygląda identycznie.",
+        "${ countMergeableContacts } kontaktów wygląda identycznie."
+      ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"
       ],
@@ -6099,8 +6134,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automatycznie dodaje kategorie (jak Społeczności lub Oferty) do niektórych wiadomości. Wybierz, gdzie zaimportować te wiadomości."
       ],
+      "Hide side panel": [
+        "Ukryj panel boczny"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wybierz schemat PGP, który będzie używany przy podpisywaniu lub szyfrowaniu wiadomości wysyłanych do użytkownika. Pamiętaj, że PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu"
+      ],
+      "Show side panel": [
+        "Pokaż panel boczny"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"

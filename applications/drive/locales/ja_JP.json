@@ -1856,6 +1856,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "「${ name }」はすでに存在します"
+      ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
@@ -2431,11 +2434,6 @@
         "${ Label.Name } は更新されました"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "プライバシーを標準搭載した ${ BRAND_NAME }。"
-      ]
-    },
     "Group": {
       "Account": [
         "アカウント"
@@ -2942,6 +2940,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "選択したアイテムをごみ箱から完全に削除してよろしいですか？"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
@@ -2980,6 +2981,9 @@
       ],
       "Conflict": [
         "競合"
+      ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "${ DRIVE_APP_NAME } の使用を継続し、ドライブは後で開く"
       ],
       "Continue with ${ planName }": [
         "${ planName } で続行"
@@ -3140,6 +3144,9 @@
       "Free up some space or contact your administrator.": [
         "スペースを解放するか、管理者にお問い合わせしてください。"
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "${ DRIVE_APP_NAME } について学び、500 MB のストレージボーナスを手に入れましょう!"
+      ],
       "Go ahead, upload a file": [
         "このフォルダーは空です。ファイルをアップロードしましょう。"
       ],
@@ -3166,6 +3173,9 @@
       ],
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "パスワードを忘れた時のため、回復フレーズを設定してアカウントとデータにアクセスできるようにしておきましょう。"
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
@@ -3302,6 +3312,9 @@
       "No results found": [
         "該当する項目がありません"
       ],
+      "No synced computers": [
+        "同期されたコンピューターがありません"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "アップロードされた鍵はすべて暗号化には使用できないものです。指定のアドレスにメールを送信するには、正しい鍵をアップロードするかメールの暗号化をオフにしてください。"
       ],
@@ -3310,6 +3323,9 @@
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "一部転送が完了していないファイルがあります。当該ファイルの再ダウンロード・アップロードをお試しください。"
+      ],
+      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "補足: データはまだ ${ DRIVE_APP_NAME } をインストールしているデバイスで開くことができる場合があります。"
       ],
       "of": [
         " / "
@@ -3506,6 +3522,9 @@
       "There are no files yet": [
         "まだファイルがありません"
       ],
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
+        "ファイルは、エンドツーエンド暗号化を使用して共有されました。${ DRIVE_APP_NAME } を利用するとドキュメント、写真、ファイルを安全に保管できます。使いやすく、無料で利用できます。"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
       ],
@@ -3541,6 +3560,9 @@
       ],
       "This will overwrite the existing folder": [
         "既存のフォルダーに上書きします"
+      ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "ローカルにファイルのインデックスを作成することで、本当の意味でのプライベート検索を実現します。インデックス作成中も、通常通り ${ DRIVE_APP_NAME } をご利用いただけます。インデックス作成が完了したらお知らせします。"
@@ -3601,6 +3623,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "同時にたくさんのファイルをアップロードすると、動作が遅くなる可能性があります。"
+      ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
+        "デスクトップ用の ${ DRIVE_APP_NAME } で同期したフォルダーはここに表示されます。${ LearnMore }"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "このフォームを使うことで、不適切であったり違法である共有ファイル、およびその他の悪意ある共有ファイルを報告することができます。レポートする内容:"
@@ -3726,11 +3751,6 @@
     "Info on errors": {
       "Click for details": [
         "クリックして詳細を確認"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "重複した連絡先が存在しているようです。${ mergeAction }"
       ]
     },
     "Item": {
@@ -4394,11 +4414,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "「${ name }」をごみ箱から復元できませんでした"
       ],
+      "\"${ name }\" failed to be saved": [
+        "「${ name }」の保存に失敗しました"
+      ],
       "\"${ name }\" moved to trash": [
         "「${ name }」をごみ箱に移動しました"
       ],
       "\"${ name }\" restored from trash": [
         "「${ name }」をごみ箱から復元しました"
+      ],
+      "\"${ name }\" saved successfully": [
+        "「${ name }」を正常にを保存しました"
       ],
       "\"${ name }\" successfully moved": [
         "「${ name }」を移動しました"
@@ -4476,10 +4502,10 @@
         "ファイルのアップロードに失敗しました: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } others are already uploading": [
-        "「${ filename }」とその他 ${ count } 件はすでにアップロード中です"
+        "「${ filename }」とその他 ${ count }件はすでにアップロード中です"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "ファイルまたはフォルダー「${ filename }」はすでにアップロード中です"
+        "「${ filename }」はすでにアップロード中です"
       ],
       "File or folder is missing a name": [
         "ファイルまたはフォルダーに名前がありません"
@@ -4558,11 +4584,17 @@
     "Onboarding Action": {
       "Next": [
         "次へ"
+      ],
+      "Start using ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } を使ってみる"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "共有リンクを作成"
+      ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "${ DRIVE_APP_NAME } を使い始めると、無料ストレージが 2 倍の 1 GB になります！"
       ],
       "Set a recovery method": [
         "回復手段を設定"
@@ -4672,6 +4704,9 @@
       "Filter groups": [
         "グループをフィルター"
       ],
+      "Group name": [
+        "グループ名"
+      ],
       "Image URL": [
         "画像の URL"
       ],
@@ -4680,6 +4715,9 @@
       ],
       "Name": [
         "名前"
+      ],
+      "Name, email or address": [
+        "名前、メールまたは住所"
       ],
       "New name": [
         "新しい名前"
@@ -4768,6 +4806,11 @@
     "Select files": {
       "Upload": [
         "アップロード"
+      ]
+    },
+    "Side panel spotlight": {
+      "Try the new side panel": [
+        "新しいサイドパネルを試す"
       ]
     },
     "Spotlight": {
@@ -4992,6 +5035,9 @@
       ],
       "Completed": [
         "完了済み"
+      ],
+      "Computers": [
+        "コンピューター"
       ],
       "Contact details": [
         "連絡先の詳細"
@@ -5450,8 +5496,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
+      "Hide side panel": [
+        "サイドパネルを隠す"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
+      ],
+      "Show side panel": [
+        "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"

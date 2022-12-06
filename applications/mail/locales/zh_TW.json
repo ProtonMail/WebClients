@@ -3532,6 +3532,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "出了一點問題。請重新整理頁面或稍後再試。"
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "連線至 ${ BRAND_NAME } 時發生問題。"
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您尚未有任何聯絡人。立即開始建立一個新的聯絡人"
       ],
@@ -3765,11 +3768,6 @@
     "Font Size Default": {
       "Default": [
         "預設"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }。隱私無憂。"
       ]
     },
     "forwardmessage": {
@@ -4614,6 +4612,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
+      ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
@@ -5076,6 +5077,9 @@
       "Sign in": [
         "登入"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin 是 ${ BRAND_NAME } 的服務，您的 ${ BRAND_NAME } 帳戶包含 「藏起我的郵箱」別名。要開始藏起您的電子郵件地址，造訪 SimpleLogin並建立起您的第一個別名。"
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "簡單登入提供了一個簡單的方法，讓您可以建立使用者但不需要將您的真實電子郵件透露給不可信的第三方網站。"
       ],
@@ -5340,6 +5344,9 @@
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
       ],
+      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
+        "造訪我們的線上商店以取得 ${ BRAND_NAME } 商品。"
+      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "不好意思，說不好是我們搞錯了。可否請您確認一下，您想要標記這是一封正當的電郵？"
       ],
@@ -5532,11 +5539,6 @@
     "Info on errors": {
       "Click for details": [
         "點擊以查看詳細資料"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "多位聯絡人重複。${ mergeAction }"
       ]
     },
     "Key badge": {
@@ -6306,6 +6308,11 @@
         "${ Label.Name } 已建立"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "側邊面板"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "欄"
@@ -6924,6 +6931,9 @@
       "Filter labels": [
         "篩選標籤"
       ],
+      "Group name": [
+        "群組名稱"
+      ],
       "Hint": [
         "提示"
       ],
@@ -6941,6 +6951,9 @@
       ],
       "Name or email address": [
         "名稱或電郵位址"
+      ],
+      "Name, email or address": [
+        "名稱，電郵位址或地址"
       ],
       "Password": [
         "密碼"
@@ -7198,6 +7211,14 @@
         "以零存取加密儲存"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "不離開應用程式也能管理您的聯絡人和檢視您的行事曆。"
+      ],
+      "Try the new side panel": [
+        "嘗試新的側欄"
+      ]
+    },
     "Signature verification warning": {
       "Sender could not be verified: Message not signed": [
         "寄件人無法驗證：郵件未經簽署"
@@ -7300,6 +7321,9 @@
       ],
       "${ count } messages deleted": [
         "${ count } 封郵件已刪除"
+      ],
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } 個聯絡人似乎相同。"
       ],
       "${ elementsCount } conversations added to ${ labelName }.": [
         "${ elementsCount } 個交談已加上 ${ labelName } 標籤。"
@@ -8175,8 +8199,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
+      "Hide side panel": [
+        "隱藏側欄"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
+      ],
+      "Show side panel": [
+        "顯示側欄"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"
