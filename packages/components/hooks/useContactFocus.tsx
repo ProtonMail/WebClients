@@ -26,19 +26,7 @@ export const useContactFocus = ({ elementIDs, listRef }: ContactFocusContext) =>
     };
 
     useEffect(() => {
-        // keep focus position when updating the list (moving/deleting items)
-        if (typeof focusIndex !== 'undefined') {
-            if (elementIDs[focusIndex]) {
-                setTimeout(() => focusOnElementByIndex(focusIndex));
-                return;
-            }
-
-            setTimeout(() => focusOnElementByIndex(elementIDs.length - 1));
-        }
-    }, [elementIDs]);
-
-    useEffect(() => {
-        if (typeof focusIndex !== 'undefined') {
+        if (focusIndex !== undefined) {
             focusOnElementByIndex(focusIndex);
         }
 
