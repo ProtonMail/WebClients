@@ -5,6 +5,19 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
+    Alert,
+    ConfirmModal,
+    FormModal,
+    PrimaryButton,
+    useApi,
+    useDebounceInput,
+    useErrorHandler,
+    useEventManager,
+    useLoading,
+    useModals,
+    useSettingsLink,
+} from '@proton/components';
+import {
     createImport,
     getAuthenticationMethod,
     getImport,
@@ -28,15 +41,6 @@ import {
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import noop from '@proton/utils/noop';
 
-import {
-    Alert,
-    ConfirmModal,
-    FormModal,
-    PrimaryButton,
-    useDebounceInput,
-    useSettingsLink,
-} from '../../../../components';
-import { useApi, useErrorHandler, useEventManager, useLoading, useModals } from '../../../../hooks';
 import { IA_PATHNAME_REGEX, IMAPS, PORTS } from '../../constants';
 import ImportStartedStep from '../../steps/IAImportStartedStep';
 import { dateToTimestamp } from '../helpers';
@@ -376,7 +380,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
         switch (step) {
             case MailImportStep.START:
                 return (
-                    <PrimaryButton type="submit" disabled={disabledStartStep} loading={loading}>
+                    <PrimaryButton data-testid="submit" type="submit" disabled={disabledStartStep} loading={loading}>
                         {isReconnectMode ? c('Action').t`Reconnect` : c('Action').t`Next`}
                     </PrimaryButton>
                 );
