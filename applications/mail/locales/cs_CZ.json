@@ -3872,11 +3872,6 @@
         "Výchozí"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Soukromí je samozřejmostí."
-      ]
-    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "Datum: ${ date }"
@@ -5927,11 +5922,6 @@
         "Klikněte pro podrobnosti"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Několik kontaktů vypadá stejně. ${ mergeAction }"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Kompromitovaný"
@@ -6705,6 +6695,11 @@
         "${ Label.Name } byl vytvořen"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Postranní panel"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Sloupec"
@@ -7367,6 +7362,9 @@
       "Filter labels": [
         "Filtrovat štítky"
       ],
+      "Group name": [
+        "Název skupiny"
+      ],
       "Hint": [
         "Nápověda"
       ],
@@ -7384,6 +7382,9 @@
       ],
       "Name or email address": [
         "Jméno nebo e-mail"
+      ],
+      "Name, email or address": [
+        "Jméno, e-mail nebo adresa"
       ],
       "Password": [
         "Heslo"
@@ -7668,6 +7669,14 @@
         "Uloženo včetně šifrování s nulovým přístupem"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Spravujte své kontakty a prohlížejte si kalendář, aniž byste opustili aplikaci."
+      ],
+      "Try the new side panel": [
+        "Vyzkoušejte nový postranní panel"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP-šifrovaná zpráva. Ověření odesílatele selhalo: ${ verificationErrorsMessage }"
@@ -7788,6 +7797,12 @@
         "${ count } zprávy byly smazány",
         "${ count } zpráv bylo smazáno",
         "${ count } zpráv bylo smazáno"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kontakt se shoduje.",
+        "${ countMergeableContacts } kontakty se shodují.",
+        "${ countMergeableContacts } kontaktů se shoduje.",
+        "${ countMergeableContacts } kontaktů se shoduje."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "${ elementsCount } konverzace přidána do ${ labelName }.",
@@ -8774,8 +8789,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky zařazuje některé e-maily do kategorií, například Sociální sítě nebo Propagační akce. Můžete si vybrat, kam chcete tyto e-maily importovat."
       ],
+      "Hide side panel": [
+        "Skrýt postranní panel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
+      ],
+      "Show side panel": [
+        "Zobrazit postranní panel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"

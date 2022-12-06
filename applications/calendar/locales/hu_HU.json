@@ -3567,8 +3567,17 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "A sorozat összes eseményét frissíteni fogja. Az eltávolított résztvevők értesítést kapnak."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Önnek legalább egy lejárt számlatartozása van. Fiókját korlátoztuk és minden szolgáltatást felfüggesztettünk amíg nem rendezi tartozását. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Önnek legalább egy lejárt számlatartozása van, ezért fiókját korlátoztuk. Tájékoztatjuk, hogy amennyiben nem rendezi tartozását, a jövőben az e-mailek és a fájlmegosztások letiltásra kerülhetnek. Kérjük mielőbb rendezze tartozását: ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Az ön címe le van tiltva. A részvevők így nem kapnak lemondási értesítőt. Ebben az esetben is törli a sorozat összes eseményét?"
@@ -3601,11 +3610,6 @@
     "Info on errors": {
       "Click for details": [
         "Kattintson a részletekért"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Több névjegy is megegyezik. ${ mergeAction }"
       ]
     },
     "Input placeholder": {
@@ -3969,6 +3973,11 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } létrehozva"
+      ]
+    },
+    "Landmarks": {
+      "Side panel": [
+        "Oldalsáv"
       ]
     },
     "Link": {
@@ -4545,6 +4554,9 @@
       "Filter groups": [
         "Csoportok szűrése"
       ],
+      "Group name": [
+        "Csoport név"
+      ],
       "Image URL": [
         "Kép URL"
       ],
@@ -4553,6 +4565,9 @@
       ],
       "Name": [
         "Név"
+      ],
+      "Name, email or address": [
+        "Név, email cím vagy cím"
       ],
       "Password": [
         "Jelszó"
@@ -4656,6 +4671,14 @@
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
         "Írjon be egy e-mail címet vagy egy csoportnevet"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Kezelje névjegyeit és tekintse meg naptárát anélkül, hogy elhagyná az alkalmazást."
+      ],
+      "Try the new side panel": [
+        "Próbálja ki az új oldalsó panelt"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5370,8 +5393,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
+      "Hide side panel": [
+        "Oldalpanel elrejtése"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
+      ],
+      "Show side panel": [
+        "Oldalsó panel megjelenítése"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"

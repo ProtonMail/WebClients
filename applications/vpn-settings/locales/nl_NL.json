@@ -428,6 +428,11 @@
         "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
       ]
     },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME }-applicaties"
+      ]
+    },
     "Badge": {
       "5 users": [
         "5 gebruikers"
@@ -1414,11 +1419,6 @@
         "(via ${ entryCountryName })"
       ]
     },
-    "Credits": {
-      "Unused credits": [
-        "Ongebruikte credits"
-      ]
-    },
     "Cycle": {
       "/month": [
         "/maand"
@@ -1717,11 +1717,6 @@
       "Megabyte": [
         "Megabyt",
         "Megabytes"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy is standaard."
       ]
     },
     "Frequency of news": {
