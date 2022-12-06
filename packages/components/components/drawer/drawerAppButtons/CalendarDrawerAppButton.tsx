@@ -21,6 +21,7 @@ const CalendarDrawerAppButton = ({
         <DrawerAppButton
             key="toggle-calendar-drawer-app-button"
             tooltipText={CALENDAR_APP_NAME}
+            data-testid="calendar-drawer-app-button:calendar-icon"
             buttonContent={<CalendarDrawerLogo monthDay={monthDay} />}
             onClick={handleClick}
             {...rest}
