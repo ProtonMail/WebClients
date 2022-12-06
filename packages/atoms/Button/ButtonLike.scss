@@ -31,13 +31,17 @@
 	}
 
 	&:hover,
-	&:focus,
-	&:focus-within,
 	&.is-hover {
 		border-color: var(--button-hover-border-color, transparent);
 		background-color: var(--button-hover-background-color, transparent);
 		color: var(--button-hover-text-color, inherit);
 		opacity: 1; // In case the button is invisible as default
+	}
+
+	&:focus-visible,
+	&:has(*:focus-visible) {
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 
 	&:active,
@@ -73,7 +77,7 @@
 
 .button-underline {
 	display: inline-block;
-	padding-block: em(5) em(6);
+	padding-block: em(7);
 	outline: none; // be careful of a11y
 	color: var(--button-default-text-color, inherit);
 	text-decoration: underline;
