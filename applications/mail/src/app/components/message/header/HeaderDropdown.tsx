@@ -1,7 +1,16 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { MutableRefObject, ReactNode, useEffect, useState } from 'react';
 
 import { Button } from '@proton/atoms';
-import { Dropdown, DropdownButton, DropdownProps, Tooltip, generateUID, usePopperAnchor } from '@proton/components';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownProps,
+    DropdownSizeUnit,
+    Tooltip,
+    generateUID,
+    usePopperAnchor,
+} from '@proton/components';
+import { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
 
 export interface DropdownRenderProps {
     onClose: () => void;
@@ -14,24 +23,21 @@ export interface DropdownRender {
     render: (props: DropdownRenderProps) => ReactNode;
 }
 
-interface Props {
+interface Props extends Omit<DropdownButtonProps<typeof Button>, 'title'> {
     dropDownClassName?: string;
     content?: ReactNode;
     title?: ReactNode;
     className?: string;
     children: DropdownRender;
     autoClose?: boolean;
-    noMaxSize?: boolean;
-    noMaxHeight?: boolean;
+    dropdownSize?: DropdownProps['size'];
     loading?: boolean;
     /**
      * Used on mobile to open an additional dropdown from the dropdown
      * The handler onOpenAdditionnal is passed to use them
      */
     additionalDropdowns?: DropdownRender[];
-    externalToggleRef?: React.MutableRefObject<() => void>;
-
-    [rest: string]: any;
+    externalToggleRef?: MutableRefObject<() => void>;
 }
 
 const HeaderDropdown = ({
@@ -39,8 +45,7 @@ const HeaderDropdown = ({
     content,
     children,
     autoClose,
-    noMaxSize,
-    noMaxHeight,
+    dropdownSize,
     loading,
     className,
     dropDownClassName,
@@ -86,8 +91,7 @@ const HeaderDropdown = ({
                 autoClose={autoClose}
                 autoCloseOutside={!lock}
                 isOpen={isOpen}
-                noMaxSize={noMaxSize}
-                noMaxHeight={noMaxHeight}
+                size={dropdownSize}
                 anchorRef={anchorRef}
                 onClose={close}
                 contentProps={children.contentProps}
@@ -103,7 +107,7 @@ const HeaderDropdown = ({
                         originalPlacement="bottom"
                         autoClose={false}
                         isOpen={additionalOpen === index}
-                        noMaxSize
+                        size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                         anchorRef={anchorRef}
                         onClose={handleAdditionalClose}
                         contentProps={additionalDropdown.contentProps}

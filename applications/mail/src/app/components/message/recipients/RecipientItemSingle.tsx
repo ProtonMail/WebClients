@@ -1,6 +1,6 @@
 import { ReactNode, RefObject, useState } from 'react';
 
-import { Dropdown, DropdownMenu, generateUID } from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownSizeUnit, generateUID } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -87,7 +87,7 @@ const RecipientItemSingle = ({
             dropdownContent={
                 <Dropdown
                     id={uid}
-                    noMaxWidth
+                    size={{ maxWidth: DropdownSizeUnit.Viewport }}
                     originalPlacement="bottom"
                     isOpen={isOpen}
                     anchorRef={anchorRef}

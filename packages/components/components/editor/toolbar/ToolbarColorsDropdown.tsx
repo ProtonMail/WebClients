@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { DropdownSizeUnit } from '@proton/components/components';
+
 import ColorSelector from '../../color/ColorSelector';
 import Icon from '../../icon/Icon';
 import { Tabs } from '../../tabs';
@@ -32,7 +34,7 @@ const ToolbarColorsDropdown = ({ fontColor, bgColor, setFontColor, setBgColor }:
 
     return (
         <ToolbarDropdown
-            noMaxSize
+            dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
             content={<Icon name="circle-half-filled" alt={c('Action').t`Color`} />}
             className="flex-item-noshrink"
             title={c('Action').t`Color`}

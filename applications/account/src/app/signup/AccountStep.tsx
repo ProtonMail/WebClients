@@ -11,6 +11,7 @@ import {
     ChallengeError,
     ChallengeRef,
     ChallengeResult,
+    DropdownSizeUnit,
     Href,
     Info,
     InlineLinkButton,
@@ -207,7 +208,7 @@ const AccountStep = ({
                         id="select-domain"
                         originalPlacement="bottom-end"
                         anchorRef={anchorRef}
-                        sameAnchorWidth={false}
+                        size={{ width: DropdownSizeUnit.Static }}
                         unstyled
                         onOpen={() => setRerender({})}
                         onClose={() => setRerender({})}
