@@ -427,6 +427,9 @@
       "Rename": [
         "Omdøb"
       ],
+      "Replace file": [
+        "Erstat fil"
+      ],
       "Report a problem": [
         "Anmeld et problem"
       ],
@@ -2455,11 +2458,6 @@
         "${ Label.Name } opdateret"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privatliv som standard."
-      ]
-    },
     "Group": {
       "Account": [
         "Konto"
@@ -2685,6 +2683,9 @@
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Opret et ${ boldAppPassword } og brug det i stedet for din almindelige adgangskode, når ${ BRAND_NAME } anmoder om det."
       ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Generer ${ boldAppPassword }, og brug den i stedet for din almindelige adgangskode, når du bliver bedt om det af ${ BRAND_NAME }."
+      ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Gå til ${ boldAccountInfo } under din profil i ${ yahooMailLink }."
       ],
@@ -2717,6 +2718,15 @@
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "For at importere en kalender til ${ BRAND_NAME }, skal du bruge ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "For at importere kontakter til ${ BRAND_NAME } skal du bruge et ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "For at importere kontakter til ${ BRAND_NAME } skal du bruge et ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "For at importere kontakter til ${ BRAND_NAME }, skal du bruge et ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "For at importere e-mails til ${ BRAND_NAME }, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
@@ -3151,6 +3161,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast verifikationskode. Ciffer ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
@@ -3202,6 +3215,9 @@
       ],
       "Folder will not be uploaded": [
         "Mappen vil ikke blive uploadet"
+      ],
+      "Folders you sync from your computer will appear here.": [
+        "De mapper, du synkroniserer fra din computer, vises her."
       ],
       "Free up some space or add more storage space.": [
         "Frigør plads eller tilføj mere lagerplads."
@@ -3281,6 +3297,9 @@
       ],
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Det ser ud til, at du for nylig har forsøgt at uploade ${ uploadName }. Hvis upload mislykkedes, bedes du ${ replaceFile }. Hvis upload stadig er i gang, vil det annullere den igangværende upload, hvis du erstatter den."
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Det er lige så nemt som at trække og slippe eller vælge filer"
@@ -3377,6 +3396,15 @@
       ],
       "No results found": [
         "Ingen resultater fundet"
+      ],
+      "No synced computers": [
+        "Ingen synkroniserede computere"
+      ],
+      "No synced folder": [
+        "Ingen synkroniseret mappe"
+      ],
+      "No synced folders": [
+        "Ingen synkroniserede mapper"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ingen af de uploadede nøgler er gyldige til kryptering. For at kunne sende beskeder til denne adresse skal du uploade en gyldig nøgle eller deaktivere \"Krypter e-mails\" for at kunne sende beskeder til denne adresse."
@@ -3777,8 +3805,20 @@
       "You will lose all unsaved changes.": [
         "Du vil miste alle ikke-gemte ændringer."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Efter 28 dage vil e-mails ikke længere blive leveret til din indbakke, dine Drive-delingslinks vil blive blokeret, og du vil ikke længere kunne uploade nye filer. For at genoptage normal service skal du betale alle forfaldne fakturaer."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Der leveres ikke længere e-mails til din indbakke. Dine Drive-links til deling er ikke længere aktive, og du kan ikke uploade nye filer. Hvis du fortsat vil bruge din konto, skal du betale eventuelle forfaldne fakturaer."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Din konto har mindst én faktura, der er forfalden. Din konto er begrænset, og alle tjenester er nu blokeret, indtil du har betalt. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Din konto har mindst én faktura, der er forfalden. Din konto er begrænset. Fortsat manglende betaling vil blokere dine e-mails og delingslinks. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Din nuværende browser understøtter ikke hentning af store filer på grund af manglende adgang til såkaldte service workers. Ved hentning af store filer kan browseren fryse eller holde op med at svare. Brug venligst de nyeste versioner af en ${ recommendedBrowser } og prøv igen."
@@ -3817,11 +3857,6 @@
     "Info on errors": {
       "Click for details": [
         "Klik for detaljer"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Flere kontakter ser identiske ud. ${ mergeAction }"
       ]
     },
     "Item": {
@@ -3966,6 +4001,9 @@
       ],
       "Country": [
         "Land"
+      ],
+      "Create ${ BRAND_NAME } account": [
+        "Opret ${ BRAND_NAME }-konto"
       ],
       "Create a share link": [
         "Opret et delingslink"
@@ -4323,6 +4361,11 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } oprettet"
+      ]
+    },
+    "Landmarks": {
+      "Side panel": [
+        "Sidepanel"
       ]
     },
     "Link": {
@@ -4705,11 +4748,17 @@
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
       ],
+      "Discover all ${ BRAND_NAME } services": [
+        "Udforsk alle ${ BRAND_NAME }-tjenester"
+      ],
       "Select a theme": [
         "Vælg et tema"
       ],
       "Set up your organization": [
         "Konfigurer din organisation"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "Brug appvælgeren øverst til venstre for at få adgang til alle ${ BRAND_NAME }-tjenester: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }."
       ],
       "You can change this anytime in your settings.": [
         "Du kan altid ændre dette i dine indstillingerne."
@@ -4793,6 +4842,9 @@
       "Filter groups": [
         "Filtrér grupper"
       ],
+      "Group name": [
+        "Gruppenavn"
+      ],
       "Image URL": [
         "Billed-URL"
       ],
@@ -4801,6 +4853,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Name, email or address": [
+        "Navn, e-mail eller adresse"
       ],
       "New name": [
         "Nyt navn"
@@ -4894,6 +4949,14 @@
         "Overfør"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Administrer dine kontakter og se din kalender uden at forlade appen."
+      ],
+      "Try the new side panel": [
+        "Prøv det nye sidepanel"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
@@ -4903,6 +4966,9 @@
       ],
       "Get up to ${ credits } in credits.": [
         "Få op til ${ credits } i kreditter."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Inviter venner til ${ BRAND_NAME }"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nu kan du nemt søge i Drive-filer, mens dine data forbliver sikre."
@@ -4923,6 +4989,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kontakt ser identisk ud.",
+        "${ countMergeableContacts } kontakter ser identiske ud."
+      ],
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
       ],
@@ -5125,6 +5195,9 @@
       ],
       "Completed": [
         "Fuldført"
+      ],
+      "Computers": [
+        "Computere"
       ],
       "Contact details": [
         "Kontaktdetaljer"
@@ -5587,8 +5660,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
+      "Hide side panel": [
+        "Skjul sidepanel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
+      ],
+      "Show side panel": [
+        "Vis sidepanel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"

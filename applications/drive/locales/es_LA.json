@@ -2455,11 +2455,6 @@
         "${ Label.Name } actualizado"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
-      ]
-    },
     "Group": {
       "Account": [
         "Cuenta"
@@ -3218,6 +3213,9 @@
       "Folder will not be uploaded": [
         "La carpeta no se cargará"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "Las carpetas que sincronice de su computadora aparecerán aquí."
+      ],
       "Free up some space or add more storage space.": [
         "Libere algo de espacio o añada más espacio de almacenamiento."
       ],
@@ -3395,6 +3393,12 @@
       ],
       "No synced computers": [
         "Sin dispositivos sincronizados"
+      ],
+      "No synced folder": [
+        "Carpeta no sincronizada"
+      ],
+      "No synced folders": [
+        "Carpetas no sincronizadas"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ninguna de las claves cargadas son válidas para cifrar. Para enviar mensajes a esta dirección, cargue una clave válida o desactive \"Cifrar correos electrónicos\"."
@@ -3847,11 +3851,6 @@
     "Info on errors": {
       "Click for details": [
         "Clic para más detalles"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Varios contactos parecen idénticos. ${ mergeAction }"
       ]
     },
     "Item": {
@@ -4358,6 +4357,11 @@
         "${ Label.Name } creado"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Panel lateral"
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "vaciar la caché del navegador"
@@ -4832,6 +4836,9 @@
       "Filter groups": [
         "Filtrar grupos"
       ],
+      "Group name": [
+        "Nombre del grupo"
+      ],
       "Image URL": [
         "URL de la imagen"
       ],
@@ -4840,6 +4847,9 @@
       ],
       "Name": [
         "Nombre"
+      ],
+      "Name, email or address": [
+        "Nombre, correo electrónico o dirección"
       ],
       "New name": [
         "Nombre nuevo"
@@ -4931,6 +4941,14 @@
     "Select files": {
       "Upload": [
         "Subir"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Gestione sus contactos y visualice su calendario sin salir de la aplicación."
+      ],
+      "Try the new side panel": [
+        "Pruebe el panel lateral nuevo"
       ]
     },
     "specialoffer: Action": {
@@ -5209,6 +5227,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacto parece idéntico.",
+        "${ countMergeableContacts } contactos parecen idénticos."
+      ],
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
       ],
@@ -5879,8 +5901,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como redes sociales o promociones. Puede seleccionar adónde importar estos correos."
       ],
+      "Hide side panel": [
+        "Ocultar panel lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/Inline obliga a mensajes de texto plano"
+      ],
+      "Show side panel": [
+        "Mostrar panel lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las subcarpetas del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }"

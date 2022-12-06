@@ -74,7 +74,7 @@
         "carotte"
       ],
       "cerise": [
-        "rouge cerise"
+        "cerise"
       ],
       "cobalt": [
         "cobalt"
@@ -911,10 +911,10 @@
         "Saisissez 6 chiffres."
       ],
       "Invalid verification code": [
-        "Code de vérification non valide"
+        "Le code de vérification n'est pas valide."
       ],
       "Not a valid number": [
-        "Numéro non valide"
+        "Le numéro n'est pas valide."
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
@@ -989,10 +989,10 @@
     },
     "Info": {
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Avant de demander un nouveau code de vérification, vérifiez votre dossier indésirables/spam et assurez-vous que ${ strong } est la bonne adresse."
+        "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur Modifier pour le corriger."
+        "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
       ],
       "Each code can only be used once": [
         "Chaque code ne peut être utilisé qu'une seule fois."
@@ -1001,22 +1001,19 @@
         "Entrez le code de votre application d'authentification."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Entrez le code de vérification. Chiffre ${ digit }."
+        "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si vous rencontrez des difficultés à créer votre compte, demandez une invitation et nous vous répondrons dans un délai d'un jour ouvré."
+        "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "Internet connection lost": [
-        "Connexion internet perdue"
+        "La connexion internet est perdue."
       ],
       "Learn more": [
         "En savoir plus"
@@ -1025,13 +1022,13 @@
         "Chargement"
       ],
       "No results found": [
-        "Aucun résultat trouvé"
+        "Aucun résultat n'a été trouvé."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
       "Session timed out": [
-        "Session expirée"
+        "La session a expiré."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous êtes humain."
@@ -1043,16 +1040,16 @@
         "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification  ?"
+        "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
       ],
       "Would you like to receive a new verification code?": [
-        "Souhaiteriez-vous recevoir un nouveau code de vérification ?"
+        "Voulez-vous recevoir un nouveau code de vérification ?"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est actuellement suspendu. Après 28 jours, les e-mails ne seront plus envoyés dans votre boîte de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour reprendre un service normal, nous vous invitons à régler toutes les factures en retard."
+        "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les e-mails ne seront plus envoyés dans votre boîte de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte ${ BRAND_NAME } est actuellement suspendu. Les e-mails ne sont plus envoyés dans votre boîte de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à régler toutes les factures en retard."
+        "Votre compte ${ BRAND_NAME } est suspendu. Les e-mails ne sont plus envoyés dans votre boîte de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."

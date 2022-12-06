@@ -335,9 +335,6 @@
       "OK": [
         "OK"
       ],
-      "Open in a new tab": [
-        "Deschidere in filă nouă"
-      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -3903,11 +3900,6 @@
         "Apăsați pentru detalii"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Mai multe contacte arată identic. ${ mergeAction }"
-      ]
-    },
     "Input label": {
       "Access": [
         "Accesare"
@@ -4295,6 +4287,11 @@
         "${ Label.Name } creată"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Panou lateral"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Calendare"
@@ -4322,6 +4319,11 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ]
+    },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Deschidere în ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -4969,6 +4971,9 @@
       "Filter groups": [
         "Filtrare grupuri"
       ],
+      "Group name": [
+        "Nume grup"
+      ],
       "Image URL": [
         "URL imagine"
       ],
@@ -4977,6 +4982,9 @@
       ],
       "Name": [
         "Nume"
+      ],
+      "Name, email or address": [
+        "Nume, e-mail sau adresă"
       ],
       "Password": [
         "Parola"
@@ -5117,6 +5125,14 @@
         "Creat de ${ ownerName }"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Gestionați-vă contactele și accesați calendarul fără a părăsi aplicația."
+      ],
+      "Try the new side panel": [
+        "Încercați noul panou lateral"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Gestionare calendar"
@@ -5202,6 +5218,11 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "Un contact arată identic.",
+        "${ countMergeableContacts } contacte arată identic.",
+        "${ countMergeableContacts } de contacte arată identic."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Un e-mail de anulare va fi trimis participanților la toate evenimentele din această serie."
       ],
@@ -5864,8 +5885,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
+      "Hide side panel": [
+        "Ascundere panou lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
+      ],
+      "Show side panel": [
+        "Afișare panou lateral"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."

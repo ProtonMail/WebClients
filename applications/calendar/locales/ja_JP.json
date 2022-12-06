@@ -323,9 +323,6 @@
       "OK": [
         "OK"
       ],
-      "Open in a new tab": [
-        "新しいタブで開く"
-      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
@@ -3143,6 +3140,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "このリンクを持っている人は誰でもカレンダー上であなたの予定の有無を確認できます。タイトル、場所、参加者などの予定詳細は表示されません。"
       ],
+      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
+        "1 つの招待につき ${ MAX_ATTENDEES } 人までが許可されています"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
@@ -3704,11 +3704,6 @@
         "クリックして詳細を確認"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "重複した連絡先が存在しているようです。${ mergeAction }"
-      ]
-    },
     "Input label": {
       "Access": [
         "アドレス"
@@ -4123,6 +4118,11 @@
         "これは何ですか?"
       ]
     },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } で開く"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "もう少しです"
@@ -4190,6 +4190,14 @@
       ],
       "Manage calendars": [
         "カレンダーを管理"
+      ]
+    },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "これ以上のカレンダーを追加できません。このプランで追加できる購読済みカレンダーの最大数に達しています。"
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "これ以上のカレンダーを作成できません。このプランで作成できる個人用カレンダーの最大数に達しています。"
       ]
     },
     "Modal for received invitation to share calendar; Title": {
@@ -4682,6 +4690,9 @@
       "Filter groups": [
         "グループをフィルター"
       ],
+      "Group name": [
+        "グループ名"
+      ],
       "Image URL": [
         "画像の URL"
       ],
@@ -4690,6 +4701,9 @@
       ],
       "Name": [
         "名前"
+      ],
+      "Name, email or address": [
+        "名前、メールまたは住所"
       ],
       "Password": [
         "パスワード"
@@ -4812,6 +4826,11 @@
         "${ ownerName }が作成"
       ]
     },
+    "Side panel spotlight": {
+      "Try the new side panel": [
+        "新しいサイドパネルを試す"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "カレンダーを管理"
@@ -4833,8 +4852,14 @@
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "招待は、保留中の予定としてカレンダーに表示されるようになりました。その予定を開いて、返信することができます。${ goToSettingsLink }"
       ],
+      "Subscribe to other calendars": [
+        "他のカレンダーを購読"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を試す"
+      ],
+      "You can subscribe to external calendars and read their events.": [
+        "外部カレンダーを購読して、イベントを読み込むことができます。"
       ]
     },
     "Spotlight settings link": {
@@ -5496,8 +5521,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
+      "Hide side panel": [
+        "サイドパネルを隠す"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
+      ],
+      "Show side panel": [
+        "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
