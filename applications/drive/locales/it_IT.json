@@ -427,6 +427,9 @@
       "Rename": [
         "Rinomina"
       ],
+      "Replace file": [
+        "Sostituisci file"
+      ],
       "Report a problem": [
         "Segnala un problema"
       ],
@@ -2455,11 +2458,6 @@
         "${ Label.Name } aggiornato"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy di default."
-      ]
-    },
     "Group": {
       "Account": [
         "Account"
@@ -3218,6 +3216,9 @@
       "Folder will not be uploaded": [
         "La cartella non verrà caricata"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "Le cartelle che sincronizzi dal tuo computer appariranno qui."
+      ],
       "Free up some space or add more storage space.": [
         "Libera dello spazio o aggiungi più spazio di archiviazione."
       ],
@@ -3296,6 +3297,9 @@
       ],
       "Internet connection restored.": [
         "Connessione Internet ripristinata."
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Sembra che tu abbia provato a caricare ${ uploadName } di recente. Se il caricamento non è riuscito, ${ replaceFile }. Se il caricamento è ancora in corso, sostituirlo annullerà il caricamento in corso."
       ],
       "It’s as easy as drag and drop or selecting files": [
         "È semplicissimo, trascina e rilascia o seleziona i file"
@@ -3395,6 +3399,12 @@
       ],
       "No synced computers": [
         "Nessun computer sincronizzato"
+      ],
+      "No synced folder": [
+        "Nessuna cartella sincronizzata"
+      ],
+      "No synced folders": [
+        "Nessuna cartella sincronizzata"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Nessuna delle chiavi caricate è valida per la crittografia. Per abilitare l'invio di messaggi a questo indirizzo, caricare cortesemente una chiave valida oppure disabilitare \"Email criptate\"."
@@ -3847,11 +3857,6 @@
     "Info on errors": {
       "Click for details": [
         "Clicca per maggiori dettagli"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Diversi contatti sembrano identici. ${ mergeAction }"
       ]
     },
     "Item": {
@@ -4358,6 +4363,11 @@
         "${ Label.Name } creato"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Pannello laterale"
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "pulendo la cache del browser"
@@ -4832,6 +4842,9 @@
       "Filter groups": [
         "Filtra gruppi"
       ],
+      "Group name": [
+        "Nome gruppo"
+      ],
       "Image URL": [
         "URL dell'immagine"
       ],
@@ -4840,6 +4853,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Name, email or address": [
+        "Nome, email o indirizzo"
       ],
       "New name": [
         "Nuovo nome"
@@ -4931,6 +4947,14 @@
     "Select files": {
       "Upload": [
         "Carica"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Gestisci i tuoi contatti e visualizza il tuo calendario senza uscire dall'app."
+      ],
+      "Try the new side panel": [
+        "Prova il nuovo pannello laterale"
       ]
     },
     "specialoffer: Action": {
@@ -5209,6 +5233,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contatto sembra identico.",
+        "${ countMergeableContacts } contatti sembrano identici."
+      ],
       "Address copied to clipboard": [
         "Indirizzo copiato negli appunti"
       ],
@@ -5879,8 +5907,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
       ],
+      "Hide side panel": [
+        "Nascondi pannello laterale"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando si firma o si crittografa per un utente. Nota che PGP/Inline forza i testi in messaggi semplici"
+      ],
+      "Show side panel": [
+        "Mostra pannello laterale"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"

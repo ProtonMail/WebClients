@@ -469,10 +469,10 @@
       "Not spam": [
         "迷惑メールでない"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -998,8 +998,14 @@
       "Payable every 12 months": [
         "12 か月の支払い"
       ],
+      "Payable every 15 months": [
+        "15 か月の支払い"
+      ],
       "Payable every 24 months": [
         "24 か月の支払い"
+      ],
+      "Payable every 30 months": [
+        "30 か月の支払い"
       ],
       "Payable every month": [
         "毎月の支払い"
@@ -1135,6 +1141,11 @@
     "Calendar access select label": {
       "Add people or groups": [
         "人またはグループを追加"
+      ]
+    },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "カレンダーを編集"
       ]
     },
     "Calendar export section description": {
@@ -2368,11 +2379,6 @@
         "検索結果が見つかりません"
       ]
     },
-    "Credits": {
-      "Unused credits": [
-        "未使用のクレジット"
-      ]
-    },
     "CSV download button": {
       "CSV template": [
         "CSV テンプレート"
@@ -2494,11 +2500,17 @@
       "${ name } deletion failed": [
         "${ name } の削除に失敗しました"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } の非迷惑メールリストへの移動に失敗しました"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } の迷惑メールリストへの移動に失敗しました"
       ],
       "${ name } failed to move to your block list": [
         "${ name } のブロックリストへの移動に失敗しました"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } が非迷惑メールリストに移動されました"
       ],
       "${ name } moved to spam list": [
         "${ name } が迷惑メールリストに移動されました"
@@ -2513,6 +2525,9 @@
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "バグまたは品質の問題"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "別の ${ BRAND_NAME } アカウントを使っている"
       ],
       "Missing feature(s)": [
         "機能が不足している"
@@ -2602,11 +2617,17 @@
       "${ name } deletion failed": [
         "${ name } の削除に失敗しました"
       ],
+      "${ name } failed to move to not spam List": [
+        "${ name } の非迷惑メールリストへの移動に失敗しました"
+      ],
       "${ name } failed to move to spam list": [
         "${ name } の迷惑メールリストへの移動に失敗しました"
       ],
       "${ name } failed to move to your block list": [
         "${ name } のブロックリストへの移動に失敗しました"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } が非迷惑メールリストに移動されました"
       ],
       "${ name } moved to spam list": [
         "${ name } が迷惑メールリストに移動されました"
@@ -3244,8 +3265,17 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "ファイル「${ formattedFilename }」の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "ファイル「${ formattedFilename }」のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
+      ],
       "An error occurred uploading your file. No file has been selected.": [
         "ファイルのアップロード中にエラーが発生しました。ファイルが選択されていません。"
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "ファイル「${ formattedFilename }」は空です。"
       ]
     },
     "Error message": {
@@ -3367,6 +3397,9 @@
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
         "カレンダーから予定を復号中: ${ totalProcessed }/${ totalToProcess }"
       ],
+      "Due to a password reset, none of your events could be decrypted and exported.": [
+        "パスワードをリセットしたため、どのイベントも復号およびエクスポートができませんでした。"
+      ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "パスワードをリセットしたため、いくつかの予定は復号およびエクスポートができませんでした。"
       ],
@@ -3378,6 +3411,9 @@
       ],
       "Loading events": [
         "予定を読み込み中"
+      ],
+      "None of the events could be exported.": [
+        "どのイベントもエクスポートできませんでした。"
       ],
       "Password reset - event cannot be decrypted": [
         "パスワードリセット - 予定を復号できません"
@@ -3613,11 +3649,6 @@
         "既定"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "プライバシーを標準搭載した ${ BRAND_NAME }。"
-      ]
-    },
     "Frequency of news": {
       "(1 email per month)": [
         "(毎月 1 通のメール)"
@@ -3627,6 +3658,11 @@
       ],
       "(1-2 emails per month)": [
         "(毎月 1 〜 2 通のメール)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "既にアカウントを持っている場合: ${ signIn }"
       ]
     },
     "Go to sign up": {
@@ -3652,6 +3688,9 @@
       ]
     },
     "Header": {
+      "Access": [
+        "アドレス"
+      ],
       "Action": [
         "アクション"
       ],
@@ -4118,6 +4157,21 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 続行するとアカウント内にある現在の暗号化されたデータにアクセスすることができなくなります。"
       ],
+      "${ BRAND_NAME } ${ planName } credits earned": [
+        "${ BRAND_NAME } ${ planName } のクレジットを入手しました"
+      ],
+      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "${ BRAND_NAME } は他のメールプロバイダーとの接続が失われたためインポートを一時停止しました。再接続してください。"
+      ],
+      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
+        "$アカウントの空き容量が少なくなっているため、${ BRAND_NAME } はインポートを一時停止しました。以下のことが可能です:"
+      ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } は、メールプロバイダーがアカウントのリセットを完了するとすぐにインポートを再開しようとします。${ bandwithLimitLink }。 何もする必要はありません。インポートをキャンセルすると再開できなくなり、やり直す必要があります。"
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } は既定のカレンダーとして設定されます。"
       ],
@@ -4222,6 +4276,12 @@
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "名前をつけることで何に使用しているか判別しやすくなり、簡単に失効させたり期限を延長したりできます。"
+      ],
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "リカバリーファイルは、アカウントリセット後にロックを解除し、データを閲覧できるようにするものです"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "回復用フレーズはパスワードを忘れた場合にアカウントにアクセスしたり暗号化されたメッセージを復元するのに使われます。"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
@@ -4565,6 +4625,9 @@
       "Enter key manually instead": [
         "代わりに手動で鍵を入力"
       ],
+      "Enter new password for user ${ userName }.": [
+        "ユーザー ${ userName } の新しいパスワードを入力してください。"
+      ],
       "Enter the code from your authenticator app": [
         "認証アプリのコードを入力してください"
       ],
@@ -4724,6 +4787,9 @@
       "Import mailbox": [
         "メールボックスのインポート"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "プライバシーの世界へようこそ。メール、カレンダー、連絡先をほかのサービスから Proton にインポートできます。${ BRAND_NAME }. では、データを移行し暗号化する手順を手順をわかりやすく解説します。"
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントにアクセスできなくなります。"
       ],
@@ -4771,6 +4837,9 @@
       ],
       "it’s imperative": [
         "必須です"
+      ],
+      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "私は ${ MAIL_APP_NAME } を使用しており、あなたに気に入ってもらえると思いました。これはプライバシーを保護できる安全なメールサービスです。このリンクを使ってサインアップすると 1 か月間、プレミアム機能を無料で使うことができます。${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
@@ -4837,6 +4906,9 @@
       ],
       "lose access to all current encrypted data": [
         "すべての暗号化されたデータにアクセスできなくなります"
+      ],
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "アカウント設定のために、2 要素認証デバイスに手動でこの情報を入力してください。 ${ switchButton }"
       ],
       "Member": [
         "メンバー"
@@ -4952,6 +5024,9 @@
       "Paid for a monthly plan": [
         "月額プランに課金"
       ],
+      "password reset": [
+        "パスワードリセット"
+      ],
       "Payment can take a few minutes to fully verify.": [
         "お支払いの検証完了まで数分を要する場合があります。"
       ],
@@ -4972,6 +5047,9 @@
       ],
       "Please add passwords for the users on rows": [
         "追加ユーザーのパスワードを入力してください。"
+      ],
+      "Please contact the administrator of the organisation to manage the subscription.": [
+        "サブスクリプションを管理するには、あなたの組織の管理者に問い合わせてください."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "アカウントに関連付けられた 12 語の回復用フレーズ入力してください。"
@@ -5069,6 +5147,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
       ],
+      "Reset password": [
+        "パスワードをリセット"
+      ],
       "Revoke certificate ${ name }": [
         "証明書 ${ name } を失効させます"
       ],
@@ -5116,6 +5197,9 @@
       ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
+      ],
+      "Setting up your Drive": [
+        "Drive をセットアップしています"
       ],
       "Show original message": [
         "元のメッセージを表示"
@@ -5179,6 +5263,9 @@
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "リストの一番上にあるものが、デフォルトのメールアドレスとして使用されます。メールアドレスを並び替えるには、ドラッグ＆ドロップしてください。"
+      ],
+      "The following address is available:": [
+        "以下のアドレスが利用可能です："
       ],
       "The following addresses are invalid.": [
         "次のアドレスに間違いがあります。"
@@ -5275,6 +5362,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "各種メールニュースやブログで ${ BRAND_NAME } プロダクトの最新情報を配信しています。"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "アカウント復旧方法を選択し、リクエストを確認してください。"
@@ -5435,6 +5525,9 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "サブスクリプション更新時には、支払い方法よりも使用可能なクレジットが優先して使用されます。"
       ],
+      "Why?": [
+        "なぜ?"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "有効化しない限り、新規ユーザーの作成、既存ユーザーへのメールアドレスの追加並びに、ユーザーのアカウントへのアクセスはできません。"
       ],
@@ -5491,6 +5584,9 @@
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "今後24時間で送信できる招待メールの数は合計${ emailSendLimitNumber }件です。"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "${ MAIL_APP_NAME } のユーザーは招待できません"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "OpenVPN / IKEv2 認証情報は、${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードへのログインには使用できません。${ learnMore }"
@@ -5628,6 +5724,9 @@
       ],
       "Try Mail Plus": [
         "Mail Plus を試す"
+      ],
+      "Your new email address is ready to go!": [
+        "新しいメールアドレスの準備ができました!"
       ],
       "Your subscription starts on ${ startText }.": [
         "サブスクリプションは ${ startText } に開始されます。"
@@ -6450,6 +6549,9 @@
       "Level for NetShield blocker filtering": [
         "NetShield ブロッカーのフィルタリング強度"
       ],
+      "Link label": [
+        "表示するテキスト"
+      ],
       "Mail Server (IMAP)": [
         "メールサーバー (IMAP)"
       ],
@@ -6839,6 +6941,14 @@
       ],
       "VPN connections": [
         "VPN 接続"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business ニュースレター"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } プロダクトのお知らせ"
       ]
     },
     "Label in domain modal": {
@@ -7273,8 +7383,14 @@
       "Back": [
         "戻る"
       ],
+      "Back to inbox": [
+        "受信箱に戻る"
+      ],
       "Blocked": [
         "ブロック中"
+      ],
+      "Inbox": [
+        "受信トレイ"
       ],
       "Not spam": [
         "迷惑メールでない"
@@ -7341,6 +7457,9 @@
       ],
       "Switch plan": [
         "プランを変更"
+      ],
+      "Upgrade to ${ upsellPlanHumanSize }": [
+        "${ upsellPlanHumanSize } へアップグレード"
       ]
     },
     "new_plans: Action": {
@@ -7352,6 +7471,9 @@
       ],
       "From ${ price }": [
         "${ price } から"
+      ],
+      "From ${ price } per user": [
+        "1 ユーザーあたり ${ price } から"
       ],
       "Keep my ${ currentPlanName } account": [
         "${ currentPlanName } アカウントを継続"
@@ -7410,6 +7532,9 @@
       ],
       "${ size } storage per user": [
         "1 ユーザーあたり ${ size } のストレージ"
+      ],
+      "1 free VPN connection in total": [
+        "合計 1 件の無料 VPN 接続"
       ],
       "99.95% SLA": [
         "99.95% SLA"
@@ -7552,6 +7677,9 @@
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
       ],
+      "User session management": [
+        "ユーザーセッション管理"
+      ],
       "Worldwide streaming services": [
         "世界的なストリーミングサービス"
       ]
@@ -7570,6 +7698,12 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "トライアルは ${ formattedTrialExpirationDate } で終了します"
@@ -7606,6 +7740,9 @@
       "Popular": [
         "最も人気"
       ],
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "ビジネスのためプライバシーとセキュリティを提供する、すべてのプレミアム ${ BRAND_NAME } サービスが利用できるプランです。"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "ファイルを簡単かつ安全に保存、同期、共有できる、安全なクラウドストレージのプランです。"
       ],
@@ -7637,10 +7774,13 @@
     },
     "new_plans: Plan time remaining": {
       "You still have ${ daysRemaining } days left on your ${ currentPlanName } account.": [
-        "あなたの ${ currentPlanName } アカウントはまだ ${ daysRemaining } 日残っています。"
+        "お客様の${ currentPlanName }アカウントの有効期限は残り${ daysRemaining }日です。"
       ]
     },
     "new_plans: signup": {
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "${ BRAND_NAME } アカウントを作成すると${ terms }に同意したことになります。"
+      ],
       "Payment details": [
         "支払いの詳細"
       ],
@@ -8445,6 +8585,16 @@
         "最新の暗号形式"
       ]
     },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "登録解除を行うと、このカレンダーにアクセスできなくなります。このカレンダーのすべての予定はアカウントから削除されますが、元の公開リンクはそのまま残ります。"
+      ]
+    },
+    "Remove calendar section text": {
+      "This calendar will be removed from your account.": [
+        "このカレンダーはアカウントから削除されます。"
+      ]
+    },
     "Remove calendar section title": {
       "Delete calendar?": [
         "カレンダーを削除しますか?"
@@ -8581,8 +8731,14 @@
       ]
     },
     "Signup step": {
+      "Account setup": [
+        "アカウント セットアップ"
+      ],
       "Payment": [
         "支払い"
+      ],
+      "Verification": [
+        "検証"
       ]
     },
     "Spotlight": {
@@ -8666,6 +8822,9 @@
       ],
       "${ n } calendars": [
         "${ n } カレンダー"
+      ],
+      "${ n } calendars per user": [
+        "1 ユーザーあたり ${ n } 件のカレンダー"
       ],
       "${ n } high-speed VPN connections": [
         "${ n } 件の高速 VPN 接続"
@@ -8940,6 +9099,11 @@
         "毎月"
       ]
     },
+    "Summary of errors during export calendar": {
+      "Details about events that couldn't be exported": [
+        "エクスポートできなかったイベントについての詳細"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "メールアドレス"
@@ -8980,6 +9144,9 @@
       ],
       "Import": [
         "インポート"
+      ],
+      "Marked as": [
+        "マーキング"
       ],
       "Name": [
         "名前"
@@ -9216,6 +9383,9 @@
       ],
       "Confirm downgrade": [
         "ダウングレードの確認"
+      ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "${ BRAND_NAME } ボーナスの損失を確認"
       ],
       "Confirm phone number": [
         "電話番号の確認"
@@ -10046,6 +10216,16 @@
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendars, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Mail の有料プランにアップグレードすると、最大 ${ MAX_CALENDARS_PAID } 件のカレンダーを作成できるようになり、仕事用、友人との共有用、個人用などのカレンダーを作成できます。"
+      ]
+    },
+    "User referee invited via email": {
+      "Invited via email": [
+        "メール経由の招待"
+      ]
+    },
+    "User referee signed up using referral link": {
+      "Signed up via your link": [
+        "リンク経由でサインアップ済み"
       ]
     },
     "User role": {

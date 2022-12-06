@@ -1394,6 +1394,9 @@
       "(Attendance optional)": [
         "(参加は任意です)"
       ],
+      "Adding occurrences to an event is not supported for the moment": [
+        "予定に行事を追加することには現在対応しておりません。"
+      ],
       "Event refreshing is not supported for the moment": [
         "予定の再リフレッシュは現在サポートされていません"
       ],
@@ -3654,11 +3657,6 @@
         "既定"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "プライバシーを標準搭載した ${ BRAND_NAME }。"
-      ]
-    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "日付: ${ date }"
@@ -5457,11 +5455,6 @@
         "クリックして詳細を確認"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "重複した連絡先が存在しているようです。${ mergeAction }"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "侵害"
@@ -6862,6 +6855,9 @@
       "Filter labels": [
         "絞り込むラベル名"
       ],
+      "Group name": [
+        "グループ名"
+      ],
       "Hint": [
         "ヒント"
       ],
@@ -6879,6 +6875,9 @@
       ],
       "Name or email address": [
         "名前またはメールアドレス"
+      ],
+      "Name, email or address": [
+        "名前、メールまたは住所"
       ],
       "Password": [
         "パスワード"
@@ -7129,6 +7128,11 @@
       ],
       "Stored with zero-access encryption": [
         "暗号化されずに送受信されたメッセージ"
+      ]
+    },
+    "Side panel spotlight": {
+      "Try the new side panel": [
+        "新しいサイドパネルを試す"
       ]
     },
     "Signature verification warning": {
@@ -8114,8 +8118,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
       ],
+      "Hide side panel": [
+        "サイドパネルを隠す"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
+      ],
+      "Show side panel": [
+        "サイドパネルを表示"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"

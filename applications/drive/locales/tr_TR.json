@@ -427,6 +427,9 @@
       "Rename": [
         "Yeniden adlandır"
       ],
+      "Replace file": [
+        "Dosyayı değiştir"
+      ],
       "Report a problem": [
         "Bir sorun bildireceğim"
       ],
@@ -3218,6 +3221,9 @@
       "Folder will not be uploaded": [
         "Klasör yüklenmeyecek"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "Bilgisayarınız ile eşitlediğiniz klasörler burada görüntülenir."
+      ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
       ],
@@ -3296,6 +3302,9 @@
       ],
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Yakın zamanda ${ uploadName } dosyasını yüklemeyi denemişsiniz gibi görünüyor. Yüklenemediyse, lütfen ${ replaceFile }in. Yükleme hala sürüyorsa, dosyanın değiştirilmesi süren yükleme işlemini iptal eder."
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Kolayca dosyaları sürükleyip bırakın ya da seçin"
@@ -3395,6 +3404,12 @@
       ],
       "No synced computers": [
         "Eşitlenmiş bir bilgisayar yok"
+      ],
+      "No synced folder": [
+        "Eşitlenmiş bir klasör yok"
+      ],
+      "No synced folders": [
+        "Eşitlenmiş bir klasör yok"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Yüklenen anahtarların hiçbiri şifreleme için geçerli değil. Bu adrese ileti gönderebilmek için lütfen geçerli bir anahtar yükleyin ya da \"E-postalar şifrelensin\" seçeneğini devre dışı bırakın."
@@ -3847,11 +3862,6 @@
     "Info on errors": {
       "Click for details": [
         "Ayrıntılar için tıklayın"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Birden fazla kişi aynı görünüyor. ${ mergeAction }"
       ]
     },
     "Item": {
@@ -4358,6 +4368,11 @@
         "${ Label.Name } eklendi"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Yan pano"
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "web tarayıcınızın ön belleğini temizlemek"
@@ -4832,6 +4847,9 @@
       "Filter groups": [
         "Grupları süz"
       ],
+      "Group name": [
+        "Grup adı"
+      ],
       "Image URL": [
         "Görsel adresi"
       ],
@@ -4840,6 +4858,9 @@
       ],
       "Name": [
         "Ad"
+      ],
+      "Name, email or address": [
+        "Ad, e-posta ya da adres"
       ],
       "New name": [
         "Yeni ad"
@@ -4933,6 +4954,14 @@
         "Yükle"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Uygulamadan ayrılmadan kişilerinizi yönetebilir ve takviminize bakabilirsiniz."
+      ],
+      "Try the new side panel": [
+        "Yeni yan panoyu deneyin"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
@@ -4965,6 +4994,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kişi aynı görünüyor.",
+        "${ countMergeableContacts } kişi aynı görünüyor."
+      ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
       ],
@@ -5635,8 +5668,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
+      "Hide side panel": [
+        "Yan panoyu gizle"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
+      ],
+      "Show side panel": [
+        "Yan panoyu görüntüle"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"

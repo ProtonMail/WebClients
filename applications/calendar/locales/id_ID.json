@@ -331,9 +331,6 @@
       "OK": [
         "OK"
       ],
-      "Open in a new tab": [
-        "Buka di tab baru"
-      ],
       "Open navigation": [
         "Buka navigasi"
       ],
@@ -3773,11 +3770,6 @@
         "Klik untuk rincian"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Beberapa kontak terlihat mirip. ${ mergeAction }"
-      ]
-    },
     "Input label": {
       "Access": [
         "Akses"
@@ -4163,6 +4155,11 @@
         "${ Label.Name } dibuat"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Panel samping"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Kalender"
@@ -4190,6 +4187,11 @@
       ],
       "What’s this?": [
         "Apa ini?"
+      ]
+    },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Buka di ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -4773,6 +4775,9 @@
       "Filter groups": [
         "Filter grup"
       ],
+      "Group name": [
+        "Nama grup"
+      ],
       "Image URL": [
         "URL gambar"
       ],
@@ -4781,6 +4786,9 @@
       ],
       "Name": [
         "Nama"
+      ],
+      "Name, email or address": [
+        "Nama, email, atau alamat"
       ],
       "Password": [
         "Kata sandi"
@@ -4913,6 +4921,14 @@
         "Dibuat oleh ${ ownerName }"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Kelola kontak Anda dan lihat kalender Anda tanpa meninggalkan aplikasi."
+      ],
+      "Try the new side panel": [
+        "Coba panel samping kami yang baru"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Kelola kalender"
@@ -4998,6 +5014,9 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } kontak terlihat identik."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Surel pembatalan akan dikirim ke peserta yang dihapus untuk semua rangkaian acara ini."
       ],
@@ -5639,8 +5658,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
       ],
+      "Hide side panel": [
+        "Sembunyikan panel samping"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
+      ],
+      "Show side panel": [
+        "Tampilkan panel samping"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"

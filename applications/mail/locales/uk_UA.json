@@ -5930,11 +5930,6 @@
         "Натисніть для подробиць"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Деякі контакти виглядають однаково. ${ mergeAction }"
-      ]
-    },
     "Key badge": {
       "Compromised": [
         "Скомпрометований"
@@ -6708,6 +6703,11 @@
         "${ Label.Name } створено"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Бічна панель"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Стовпчик"
@@ -7370,6 +7370,9 @@
       "Filter labels": [
         "Фільтр міток"
       ],
+      "Group name": [
+        "Назва групи"
+      ],
       "Hint": [
         "Підказка"
       ],
@@ -7387,6 +7390,9 @@
       ],
       "Name or email address": [
         "Ім'я чи адреса е-пошти"
+      ],
+      "Name, email or address": [
+        "Назва, адреса е-пошти чи адреси"
       ],
       "Password": [
         "Пароль"
@@ -7671,6 +7677,14 @@
         "Збережено з повним шифруванням"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Керуйте контактами та переглядайте календар, не виходячи з застосунку."
+      ],
+      "Try the new side panel": [
+        "Спробуйте нову бічну панель"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP-зашифроване повідомлення. Не вдалося перевірити відправника: ${ verificationErrorsMessage }"
@@ -7791,6 +7805,12 @@
         "${ count } повідомлення видалено",
         "${ count } повідомлень видалено",
         "${ count } повідомлень видалено"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } контакти має ідентичний вигляд.",
+        "${ countMergeableContacts } контакти мають ідентичний вигляд.",
+        "${ countMergeableContacts } контактів мають ідентичний вигляд.",
+        "${ countMergeableContacts } контакти мають ідентичний вигляд."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "${ elementsCount } розмову додано до ${ labelName }.",
@@ -8777,8 +8797,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
       ],
+      "Hide side panel": [
+        "Сховати бічну панель"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
+      ],
+      "Show side panel": [
+        "Показати бічну панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"

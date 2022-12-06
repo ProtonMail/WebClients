@@ -431,6 +431,9 @@
       "Rename": [
         "Переименовать"
       ],
+      "Replace file": [
+        "Заменить файл"
+      ],
       "Report a problem": [
         "Сообщить о проблеме"
       ],
@@ -2485,11 +2488,6 @@
         "${ Label.Name } обновлён"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Конфиденциальность по умолчанию."
-      ]
-    },
     "Group": {
       "Account": [
         "Учётная запись"
@@ -3338,6 +3336,9 @@
       "Folder will not be uploaded": [
         "Папка не будет загружена"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "Здесь появятся папки, синхронизированные с компьютером."
+      ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
       ],
@@ -3418,6 +3419,9 @@
       ],
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Похоже, что вы недавно пытались загрузить ${ uploadName }. Если загрузка не удалась, ${ replaceFile }. Если загрузка еще продолжается, замена файла отменит текущую загрузку."
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Это так же просто, как перетаскивание или выбор файлов"
@@ -3517,6 +3521,12 @@
       ],
       "No synced computers": [
         "Нет синхронизированных компьютеров"
+      ],
+      "No synced folder": [
+        "Нет синхронизированной папки"
+      ],
+      "No synced folders": [
+        "Нет синхронизированных папок"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ни один из загруженных ключей не действителен для шифрования. Чтобы отправить сообщения по этому адресу, пожалуйста, загрузите действующий ключ или отключите функцию \"Зашифровать электронные письма\"."
@@ -3975,11 +3985,6 @@
     "Info on errors": {
       "Click for details": [
         "Нажмите, чтобы узнать подробности"
-      ]
-    },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Несколько контактов выглядят идентичными. ${ mergeAction }"
       ]
     },
     "Item": {
@@ -4486,6 +4491,11 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } создан"
+      ]
+    },
+    "Landmarks": {
+      "Side panel": [
+        "Боковая панель"
       ]
     },
     "Link": {
@@ -5008,6 +5018,9 @@
       "Filter groups": [
         "Фильтровать группы"
       ],
+      "Group name": [
+        "Название группы"
+      ],
       "Image URL": [
         "URL изображения"
       ],
@@ -5016,6 +5029,9 @@
       ],
       "Name": [
         "Название"
+      ],
+      "Name, email or address": [
+        "Имя, электронная почта или адрес"
       ],
       "New name": [
         "Новое имя"
@@ -5113,6 +5129,14 @@
     "Select files": {
       "Upload": [
         "Загрузить"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Управляйте контактами и просматривайте календарь не выходя из приложения."
+      ],
+      "Try the new side panel": [
+        "Попробуйте новую боковую панель"
       ]
     },
     "specialoffer: Action": {
@@ -5403,6 +5427,12 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } контакт выглядит одинаково.",
+        "${ countMergeableContacts } контакта выглядят одинаково.",
+        "${ countMergeableContacts } контактов выглядят одинаково.",
+        "${ countMergeableContacts } контактов выглядят одинаково."
+      ],
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
@@ -6099,8 +6129,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
+      "Hide side panel": [
+        "Скрыть боковую панель"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
+      ],
+      "Show side panel": [
+        "Показать боковую панель"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"

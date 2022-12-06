@@ -337,9 +337,6 @@
       "OK": [
         "OK"
       ],
-      "Open in a new tab": [
-        "Otevřít na nové kartě"
-      ],
       "Open navigation": [
         "Otevřít menu"
       ],
@@ -3968,11 +3965,6 @@
         "Klikněte pro podrobnosti"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Několik kontaktů vypadá stejně. ${ mergeAction }"
-      ]
-    },
     "Input label": {
       "Access": [
         "Přístup"
@@ -4361,6 +4353,11 @@
         "${ Label.Name } byl vytvořen"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Postranní panel"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Kalendáře"
@@ -4388,6 +4385,11 @@
       ],
       "What’s this?": [
         "Co je to?"
+      ]
+    },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Otevřít v ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -5067,6 +5069,9 @@
       "Filter groups": [
         "Filtrovat skupiny"
       ],
+      "Group name": [
+        "Název skupiny"
+      ],
       "Image URL": [
         "URL adresa obrázku"
       ],
@@ -5075,6 +5080,9 @@
       ],
       "Name": [
         "Jméno"
+      ],
+      "Name, email or address": [
+        "Jméno, e-mail nebo adresa"
       ],
       "Password": [
         "Heslo"
@@ -5219,6 +5227,14 @@
         "Vytvořil/a ${ ownerName }"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Spravujte své kontakty a prohlížejte si kalendář, aniž byste opustili aplikaci."
+      ],
+      "Try the new side panel": [
+        "Vyzkoušejte nový postranní panel"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Spravovat kalendář"
@@ -5304,6 +5320,12 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kontakt se shoduje.",
+        "${ countMergeableContacts } kontakty se shodují.",
+        "${ countMergeableContacts } kontaktů se shoduje.",
+        "${ countMergeableContacts } kontaktů se shoduje."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Odebraným účastníkům bude zaslán e-mail o zrušení všech akcí v této sérii."
       ],
@@ -5975,8 +5997,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky zařazuje některé e-maily do kategorií, například Sociální sítě nebo Propagační akce. Můžete si vybrat, kam chcete tyto e-maily importovat."
       ],
+      "Hide side panel": [
+        "Skrýt postranní panel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
+      ],
+      "Show side panel": [
+        "Zobrazit postranní panel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"

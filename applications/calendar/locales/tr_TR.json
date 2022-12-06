@@ -333,9 +333,6 @@
       "OK": [
         "Tamam"
       ],
-      "Open in a new tab": [
-        "Yeni sekmede aç"
-      ],
       "Open navigation": [
         "Gezinmeyi aç"
       ],
@@ -3838,11 +3835,6 @@
         "Ayrıntılar için tıklayın"
       ]
     },
-    "Info, no need for singular": {
-      "Multiple contacts look identical. ${ mergeAction }": [
-        "Birden fazla kişi aynı görünüyor. ${ mergeAction }"
-      ]
-    },
     "Input label": {
       "Access": [
         "Erişim"
@@ -4229,6 +4221,11 @@
         "${ Label.Name } eklendi"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Yan pano"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Takvimler"
@@ -4256,6 +4253,11 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ]
+    },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } uygulamasında aç"
       ]
     },
     "Loading info": {
@@ -4871,6 +4873,9 @@
       "Filter groups": [
         "Grupları süz"
       ],
+      "Group name": [
+        "Grup adı"
+      ],
       "Image URL": [
         "Görsel adresi"
       ],
@@ -4879,6 +4884,9 @@
       ],
       "Name": [
         "Ad"
+      ],
+      "Name, email or address": [
+        "Ad, e-posta ya da adres"
       ],
       "Password": [
         "Parola"
@@ -5015,6 +5023,14 @@
         "${ ownerName } tarafından oluşturuldu"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Uygulamadan ayrılmadan kişilerinizi yönetebilir ve takviminize bakabilirsiniz."
+      ],
+      "Try the new side panel": [
+        "Yeni yan panoyu deneyin"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Takvim yönetimi"
@@ -5100,6 +5116,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kişi aynı görünüyor.",
+        "${ countMergeableContacts } kişi aynı görünüyor."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Çıkarılan katılımcılara bu dizideki tüm etkinlikler için bir iptal bilgilendirmesi gönderilecek."
       ],
@@ -5753,8 +5773,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
+      "Hide side panel": [
+        "Yan panoyu gizle"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
+      ],
+      "Show side panel": [
+        "Yan panoyu görüntüle"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
