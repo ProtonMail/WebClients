@@ -338,8 +338,8 @@ $container-to-width: 4em !default;
 	outline: none;
 
 	&:focus-visible {
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 }
 

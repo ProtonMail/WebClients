@@ -124,8 +124,8 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 	&:focus-visible::after {
 		z-index: 1;
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 
 	&.item-is-selected {
@@ -488,7 +488,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	}
 
 	&:focus-visible + .item-icon {
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 
 	// hover state of checkbox

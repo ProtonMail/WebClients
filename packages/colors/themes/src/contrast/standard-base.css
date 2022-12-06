@@ -24,8 +24,9 @@
     --field-norm: #4d4d4d;
     --field-hover: #333333;
     --field-disabled: #b8b8b8;
-    --field-focus: #4630a6;
-    --field-highlight: rgb(70 48 166 / 0.2);
+
+    --focus-outline: #4630a6;
+    --focus-ring: rgb(70 48 166 / 0.2);
 
     --border-norm: #a8a8a8;
     --border-weak: #c2c2c2;

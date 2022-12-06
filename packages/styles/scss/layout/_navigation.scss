@@ -86,8 +86,8 @@ $padding-block-link: rem(7) !default;
 
 	&:focus-visible {
 		background-color: unset;
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 
 	&--collapsible {
@@ -105,8 +105,8 @@ label.navigation-link {
 
 	&:focus-within {
 		background-color: unset;
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 }
 
@@ -154,8 +154,8 @@ label.navigation-link {
 
 	&:focus-visible {
 		background-color: unset;
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 
 	&[aria-expanded='true'],
@@ -200,8 +200,8 @@ label.navigation-link {
 
 	&:focus-visible {
 		background-color: unset;
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 }
 
