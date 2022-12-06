@@ -95,7 +95,6 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                 offset={4}
                 autoClose={false}
                 noCaret
-                noMaxSize
                 disableDefaultArrowNavigation
                 onKeyDown={(e) => {
                     const { key } = e;

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { ContextMenu, ContextMenuButton, ContextSeparator } from '@proton/components';
+import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
@@ -154,7 +154,7 @@ const ItemContextMenu = ({
     const moveButtons = actions.map((action) => allMoveButtons[action]);
 
     return (
-        <ContextMenu noMaxHeight {...rest}>
+        <ContextMenu size={{ maxHeight: DropdownSizeUnit.Viewport }} {...rest}>
             {moveButtons}
             {canShowBlockSender && (
                 <ContextMenuButton

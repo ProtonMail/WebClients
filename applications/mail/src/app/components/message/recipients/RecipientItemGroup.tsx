@@ -6,6 +6,7 @@ import {
     Dropdown,
     DropdownMenu,
     DropdownMenuButton,
+    DropdownSizeUnit,
     Icon,
     generateUID,
     useModals,
@@ -103,7 +104,7 @@ const RecipientItemGroup = ({
             dropdownContent={
                 <Dropdown
                     id={uid}
-                    noMaxWidth
+                    size={{ maxWidth: DropdownSizeUnit.Viewport }}
                     originalPlacement="bottom"
                     isOpen={isOpen}
                     anchorRef={anchorRef}
