@@ -57,8 +57,8 @@
   --field-norm: #adaba8;
   --field-hover: #8f8d8a;
   --field-disabled: #d1cfcd;
-  --field-focus: #6d4aff;
-  --field-highlight: rgb(109 74 255 / 0.2);
+  --focus-outline: #6d4aff;
+  --focus-ring: rgb(109 74 255 / 0.2);
   --border-norm: #d1cfcd;
   --border-weak: #eae7e4;
   --background-norm: white;
@@ -142,8 +142,8 @@
   --field-norm: #9282d4;
   --field-hover: #7c5cff;
   --field-disabled: #38277a;
-  --field-focus: #6d4aff;
-  --field-highlight: rgb(109 74 255 / 0.3);
+  --focus-outline: #6d4aff;
+  --focus-ring: rgb(109 74 255 / 0.3);
   --border-norm: #413085;
   --border-weak: #3c2b80;
   --background-norm: #1b1340;

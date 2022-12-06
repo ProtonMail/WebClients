@@ -10,13 +10,18 @@
 
 	background-color: var(--interaction-default);
 	color: inherit;
+	border: 1px solid transparent;
 	transition: 0.15s easing(ease-out-quint), background-position 0s;
 
-	&:hover,
-	&:focus,
-	&:focus-within {
+	&:hover {
 		background-color: var(--interaction-default-hover);
 		color: inherit;
+	}
+
+	&:focus-visible,
+	&:has(*:focus-visible) {
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 
 	&:active,
