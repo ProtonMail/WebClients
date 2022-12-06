@@ -90,6 +90,9 @@ const ItemColumnLayout = ({
             body && highlightData ? highlightMetadata(body, unread, true) : { resultJSX: undefined, numOccurrences: 0 },
         [body, unread, highlightData, highlightMetadata]
     );
+    // translator: This text is displayed in an Encrypted Search context. The user has searched for a specific keyword.
+    // In the message list, the user should see the part of the message "body" which contains the keyword. On hover, this text is displayed.
+    // The variable "numOccurrences" corresponds to the number of times the keyword has been found in the email content
     const bodyTitle = c('Info').ngettext(
         msgid`${numOccurrences} occurrence found in the mail content`,
         `${numOccurrences} occurrences found in the mail content`,
