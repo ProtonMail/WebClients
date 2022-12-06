@@ -32,12 +32,17 @@ export const getIsDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
 };
 
 export const isAuthorizedDrawerUrl = (url: string) => {
-    const originURL = new URL(url);
+    try {
+        const originURL = new URL(url);
 
-    // Get subdomain of the url => e.g. mail, calendar, drive
-    const appFromUrl = originURL.hostname.split('.')[0];
+        // Get subdomain of the url => e.g. mail, calendar, drive
+        const appFromUrl = originURL.hostname.split('.')[0];
 
-    return isURLProtonInternal(url) && drawerAuthorizedApps.includes(appFromUrl);
+        return isURLProtonInternal(url) && drawerAuthorizedApps.includes(appFromUrl);
+    } catch {
+        // the URL constructor will throw if no URL can be built out of url
+        return false;
+    }
 };
 
 export const getIsAuthorizedApp = (appName: string): appName is APP_NAMES => {
@@ -48,13 +53,19 @@ export const getIsAuthorizedApp = (appName: string): appName is APP_NAMES => {
 export const getIsDrawerPostMessage = (event: MessageEvent): event is MessageEvent<DRAWER_ACTION> => {
     const origin = event.origin;
 
+    // sandboxed iframes might have a "null" origin instead of a valid one
+    // so we need to handle this case, otherwise we will get an error
+    if (!origin || origin === 'null') {
+        return false;
+    }
+
     /**
      * The message is a "valid" side app message if
      * - The message is coming from an authorized app
      * - event.data is defined
      * - event.data.type is part of the SIDE_APP_EVENT enum
      */
-    return !(!isAuthorizedDrawerUrl(origin) || !event.data || !Object.values(DRAWER_EVENTS).includes(event.data.type));
+    return isAuthorizedDrawerUrl(origin) && event.data && Object.values(DRAWER_EVENTS).includes(event.data.type);
 };
 
 export const postMessageFromIframe = (message: DRAWER_ACTION, parentApp: APP_NAMES) => {
