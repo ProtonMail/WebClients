@@ -3,7 +3,7 @@ import { Ref } from 'react';
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import { Icon, useMailSettings } from '@proton/components';
+import { DropdownSizeUnit, Icon, useMailSettings } from '@proton/components';
 
 import { Breakpoints } from '../../models/utils';
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
@@ -60,7 +60,7 @@ const LabelsAndFolders = ({
             <Vr />
             <ToolbarDropdown
                 autoClose={false}
-                noMaxSize
+                dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                 disabled={!selectedIDs || !selectedIDs.length}
                 content={<Icon className="toolbar-icon" name="folder-arrow-in" />}
                 dropDownClassName="move-dropdown"
@@ -87,7 +87,7 @@ const LabelsAndFolders = ({
             </ToolbarDropdown>
             <ToolbarDropdown
                 autoClose={false}
-                noMaxSize
+                dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                 disabled={!selectedIDs || !selectedIDs.length}
                 content={<Icon className="toolbar-icon" name="tag" />}
                 dropDownClassName="label-dropdown"

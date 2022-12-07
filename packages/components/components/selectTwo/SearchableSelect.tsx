@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
 import { classnames } from '../../helpers';
-import { Dropdown } from '../dropdown';
+import { Dropdown, DropdownSizeUnit } from '../dropdown';
 import { SearchInput } from '../input';
 import Option, { Props as OptionProps } from '../option/Option';
 import SelectButton from './SelectButton';
@@ -158,8 +158,7 @@ const SearchableSelect = <V extends any>({
                 autoClose={autoclose}
                 offset={4}
                 noCaret
-                noMaxWidth
-                sameAnchorWidth
+                size={{ width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport }}
                 disableDefaultArrowNavigation={!searchValue}
                 className={classnames([
                     searchContainerRef?.current && 'dropdown--is-searchable',

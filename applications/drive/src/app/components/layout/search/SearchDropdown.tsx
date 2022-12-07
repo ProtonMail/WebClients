@@ -3,7 +3,7 @@ import * as React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Dropdown, useUser } from '@proton/components';
+import { Dropdown, DropdownSizeUnit, useUser } from '@proton/components';
 import { indexKeyExists, isDBReadyAfterBuilding } from '@proton/encrypted-search';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -33,12 +33,15 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                 originalPlacement="bottom-start"
                 autoClose={false}
                 autoCloseOutside={true}
-                noMaxSize
+                size={{
+                    height: DropdownSizeUnit.Dynamic,
+                    maxWidth: DropdownSizeUnit.Viewport,
+                    maxHeight: DropdownSizeUnit.Viewport,
+                }}
                 onClose={onClose}
                 onClosed={onClosed}
                 className="dropdown-content--wide advanced-search-dropdown search-dropdown"
                 disableDefaultArrowNavigation
-                UNSTABLE_AUTO_HEIGHT
             >
                 <div className="pl1-5 pr1-5 pt1-5 pb1">
                     <div>

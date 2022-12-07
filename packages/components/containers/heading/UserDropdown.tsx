@@ -4,8 +4,7 @@ import { useLocation } from 'react-router';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { ButtonLike, NotificationDot } from '@proton/atoms';
+import { Button, ButtonLike, NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
 import {
     ConfirmSignOutModal,
@@ -14,6 +13,7 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     DropdownMenuLink,
+    DropdownSizeUnit,
     FeatureCode,
     Icon,
     ReferralSpotlight,
@@ -186,7 +186,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                 autoClose={false}
                 onClose={close}
                 originalPlacement="bottom-end"
-                UNSTABLE_AUTO_HEIGHT
+                size={{ height: DropdownSizeUnit.Dynamic }}
             >
                 <DropdownMenu>
                     <div className="px1 py0-5">

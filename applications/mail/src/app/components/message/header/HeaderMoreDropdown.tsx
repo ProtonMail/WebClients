@@ -8,6 +8,7 @@ import {
     ButtonGroup,
     DropdownMenu,
     DropdownMenuButton,
+    DropdownSizeUnit,
     Icon,
     Tooltip,
     useApi,
@@ -301,7 +302,7 @@ const HeaderMoreDropdown = ({
                         key="message-header-expanded:folder-dropdown"
                         icon
                         autoClose={false}
-                        noMaxSize
+                        dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                         content={<Icon name="folder-arrow-in" alt={c('Action').t`Move to`} />}
                         className="messageMoveDropdownButton"
                         dropDownClassName="move-dropdown"
@@ -329,7 +330,7 @@ const HeaderMoreDropdown = ({
                         key="message-header-expanded:label-dropdown"
                         icon
                         autoClose={false}
-                        noMaxSize
+                        dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                         content={<Icon name="tag" alt={c('Action').t`Label as`} />}
                         className="messageLabelDropdownButton"
                         dropDownClassName="label-dropdown"
@@ -355,7 +356,7 @@ const HeaderMoreDropdown = ({
                         key="message-header-expanded:filter-dropdown"
                         icon
                         autoClose={false}
-                        noMaxSize
+                        dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                         content={<Icon name="filter" alt={c('Action').t`Filter on...`} />}
                         className="messageFilterDropdownButton"
                         dropDownClassName="filter-dropdown"
@@ -383,8 +384,7 @@ const HeaderMoreDropdown = ({
                     content={<Icon name="three-dots-horizontal" alt={c('Title').t`More options`} />}
                     additionalDropdowns={additionalDropdowns}
                     data-testid="message-header-expanded:more-dropdown"
-                    noMaxHeight
-                    noMaxSize
+                    dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                 >
                     {{
                         render: ({ onClose, onOpenAdditionnal }) => {

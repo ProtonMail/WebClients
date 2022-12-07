@@ -6,7 +6,7 @@ import { classnames } from '../../helpers';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import DropdownCaret from './DropdownCaret';
 
-export interface OwnProps {
+interface OwnProps {
     loading?: boolean;
     caretClassName?: string;
     hasCaret?: boolean;
@@ -57,7 +57,7 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
     );
 };
 
-export const DropdownButton: <E extends ElementType = typeof defaultElement>(
+const DropdownButton: <E extends ElementType = typeof defaultElement>(
     props: DropdownButtonProps<E>
 ) => ReactElement | null = forwardRef(DropdownButtonBase);
 

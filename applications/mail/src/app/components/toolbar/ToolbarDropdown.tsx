@@ -3,7 +3,9 @@ import { ReactNode, Ref, useImperativeHandle, useState } from 'react';
 import {
     Dropdown,
     DropdownButton,
+    DropdownButtonProps,
     DropdownProps,
+    DropdownSizeUnit,
     Tooltip,
     classnames,
     generateUID,
@@ -21,7 +23,7 @@ export interface DropdownRender {
     render: (props: DropdownRenderProps) => ReactNode;
 }
 
-interface Props {
+interface Props extends Omit<DropdownButtonProps<'button'>, 'title'> {
     hasCaret?: boolean;
     autoClose?: boolean;
     title?: ReactNode;
@@ -30,7 +32,7 @@ interface Props {
     content?: ReactNode;
     children: DropdownRender;
     disabled?: boolean;
-    noMaxSize?: boolean;
+    dropdownSize?: DropdownProps['size'];
     /**
      * Used on mobile to open an additional dropdown from the dropdown
      * The handler onOpenAdditionnal is passed to use them
@@ -38,8 +40,6 @@ interface Props {
     additionalDropdowns?: DropdownRender[];
     externalToggleRef?: Ref<() => void>;
     externalCloseRef?: Ref<() => void>;
-
-    [rest: string]: any;
 }
 
 const ToolbarDropdown = ({
@@ -51,7 +51,7 @@ const ToolbarDropdown = ({
     hasCaret = true,
     autoClose = true,
     disabled = false,
-    noMaxSize = false,
+    dropdownSize,
     additionalDropdowns,
     externalToggleRef,
     externalCloseRef,
@@ -98,7 +98,7 @@ const ToolbarDropdown = ({
                 autoClose={autoClose}
                 autoCloseOutside={!lock}
                 isOpen={isOpen}
-                noMaxSize={noMaxSize}
+                size={dropdownSize}
                 anchorRef={anchorRef}
                 onClose={close}
                 className={classnames(['toolbar-dropdown', dropDownClassName])}
@@ -115,7 +115,7 @@ const ToolbarDropdown = ({
                         originalPlacement="bottom"
                         autoClose={false}
                         isOpen={additionalOpen === index}
-                        noMaxSize
+                        size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                         anchorRef={anchorRef}
                         onClose={handleAdditionalClose}
                         contentProps={additionalDropdown.contentProps}
