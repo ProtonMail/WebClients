@@ -70,6 +70,7 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef }: Props) => {
             title={c('Action').t`Emoji`}
             autoClose={false}
             autoCloseOutside={true}
+            data-testid="editor-emoji-picker"
         >
             <EmojiPicker
                 autoFocus="true"

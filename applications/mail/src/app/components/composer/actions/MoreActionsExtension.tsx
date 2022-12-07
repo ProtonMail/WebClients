@@ -123,6 +123,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
             <DropdownMenuButton
                 className="text-left flex flex-nowrap flex-align-items-center"
                 onClick={handleTogglePublicKey}
+                data-testid="composer:attach-public-key-button"
             >
                 <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Attach public key`}</span>
                 <Icon name="checkmark" className={classnames(['ml1', getClassname(isAttachPublicKey)])} />
@@ -130,6 +131,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
             <DropdownMenuButton
                 className="text-left flex flex-nowrap flex-align-items-center"
                 onClick={handleToggleReceiptRequest}
+                data-testid="composer:read-receipt-button"
             >
                 <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Request read receipt`}</span>
                 <Icon name="checkmark" className={classnames(['ml1', getClassname(isReceiptRequest)])} />

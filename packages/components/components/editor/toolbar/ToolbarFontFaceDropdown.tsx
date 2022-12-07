@@ -63,6 +63,7 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
             originalPlacement="bottom-start"
             className="composer-toolbar-fontDropDown flex-item-fluid text-right flex no-scroll"
             title={c('Action').t`Font`}
+            data-testid="editor-font-face"
             content={
                 <span
                     className="text-ellipsis text-left max-w100"
@@ -82,6 +83,7 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
                         isSelected={fontValue === value}
                         onClick={() => onChange(fontValue)}
                         style={{ fontFamily: fontValue }}
+                        data-testid={`editor-font-${fontLabel}`}
                         buttonContent={<span className="pr0-5">{fontLabel}</span>}
                         extraContent={
                             fontValue.toLowerCase() === (defaultValue || '').toLowerCase() &&
