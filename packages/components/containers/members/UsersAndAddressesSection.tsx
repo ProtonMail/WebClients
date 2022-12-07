@@ -192,7 +192,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.`}
             </SettingsParagraph>
             <Block className="flex flex-align-items-start">
-                {renderAddressModal && (
+                {renderAddressModal && members && (
                     <AddressModal members={members} organizationKey={organizationKey} {...addressModalProps} />
                 )}
                 {renderDeleteMemberModal && tmpMember && (
@@ -221,7 +221,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 <div className="mb1 mr1">
                     <Button
                         shape="outline"
-                        disabled={loadingOrganization || loadingDomains || loadingOrganizationKey}
+                        disabled={loadingOrganization || loadingDomains || loadingOrganizationKey || loadingMembers}
                         onClick={handleAddAddress}
                         className="on-mobile-mb0-5"
                     >
