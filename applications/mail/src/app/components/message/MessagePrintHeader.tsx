@@ -23,21 +23,23 @@ const MessagePrintHeader = ({ message, labelID }: Props) => {
         <div className="proton-print">
             <div className="message-print-header">
                 <h2 className="message-print-subject">{message.data?.Subject}</h2>
-                <RecipientType label={c('Label').t`From`}>
-                    {getRecipientLabel(sender as Recipient, true)}{' '}
-                    <span className="color-weak">&lt;{sender?.Address}&gt;</span>
-                </RecipientType>
-                <RecipientsDetails
-                    message={message}
-                    isLoading={false}
-                    showDropdown={false}
-                    isPrintModal
-                    onContactDetails={noop}
-                    onContactEdit={noop}
-                />
-                <RecipientType label={c('Label').t`Date`}>
-                    <ItemDate element={message.data} labelID={labelID} mode="full" />
-                </RecipientType>
+                <div className="message-print-recipient-container">
+                    <RecipientType label={c('Label').t`From`}>
+                        {getRecipientLabel(sender as Recipient, true)}{' '}
+                        <span className="color-weak">&lt;{sender?.Address}&gt;</span>
+                    </RecipientType>
+                    <RecipientsDetails
+                        message={message}
+                        isLoading={false}
+                        showDropdown={false}
+                        isPrintModal
+                        onContactDetails={noop}
+                        onContactEdit={noop}
+                    />
+                    <RecipientType label={c('Label').t`Date`}>
+                        <ItemDate element={message.data} labelID={labelID} mode="full" />
+                    </RecipientType>
+                </div>
             </div>
         </div>
     );
