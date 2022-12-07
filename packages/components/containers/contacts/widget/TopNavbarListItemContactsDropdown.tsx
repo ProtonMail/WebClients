@@ -2,11 +2,11 @@ import { forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { EasySwitchProvider } from '@proton/activation';
 import {
     Dropdown,
     DropdownButton,
     DropdownSizeUnit,
-    EasySwitchProvider,
     Icon,
     Tabs,
     useActiveBreakpoint,

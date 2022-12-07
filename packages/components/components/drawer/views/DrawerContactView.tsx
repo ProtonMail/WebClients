@@ -2,11 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { EasySwitchProvider } from '@proton/activation';
 import { Button } from '@proton/atoms/Button';
 import { PrimaryButton } from '@proton/components/components';
 import DrawerView, { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { EasySwitchProvider, useContactModals } from '@proton/components/containers';
+import { useContactModals } from '@proton/components/containers';
 import { useContactMergeModals } from '@proton/components/containers/contacts/hooks/useContactMergeModals';
 import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
 import ContactsWidgetContainer from '@proton/components/containers/contacts/widget/ContactsWidgetContainer';

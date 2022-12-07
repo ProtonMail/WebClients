@@ -1,4 +1,5 @@
-import { getImportReportsList, getImportsList } from '../api/easySwitch';
+import { getImportReportsList, getImportsList } from '@proton/activation/api';
+
 import updateCollection from '../helpers/updateCollection';
 
 export const getImportsModel = (api) => {
