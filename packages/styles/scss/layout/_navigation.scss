@@ -82,6 +82,7 @@ $padding-block-link: rem(7) !default;
 	&:focus {
 		border-color: transparent;
 		box-shadow: none;
+		color: inherit;
 	}
 
 	&:focus-visible {
