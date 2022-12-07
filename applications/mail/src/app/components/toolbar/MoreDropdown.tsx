@@ -1,12 +1,8 @@
 import { c } from 'ttag';
 
-
-
 import { Vr } from '@proton/atoms/Vr';
 import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-
-
 
 import { labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
@@ -44,9 +40,7 @@ interface Props {
     isExtraTiny: boolean;
     onMove: (labelID: string) => void;
     onDelete: () => void;
-    onBack: () => void;
     breakpoints: Breakpoints;
-    conversationMode: boolean;
 }
 
 const MoreDropdown = ({
@@ -59,9 +53,7 @@ const MoreDropdown = ({
     isExtraTiny,
     onMove,
     onDelete,
-    onBack,
     breakpoints,
-    conversationMode,
 }: Props) => {
     let [firstActions, actions] = useLabelActions(labelID, isNarrow);
     if (isExtraTiny) {
@@ -171,10 +163,8 @@ const MoreDropdown = ({
                       <MoveDropdown
                           labelID={labelID}
                           selectedIDs={selectedIDs}
-                          conversationMode={conversationMode}
                           onClose={onClose}
                           onLock={onLock}
-                          onBack={onBack}
                           breakpoints={breakpoints}
                       />
                   ),
