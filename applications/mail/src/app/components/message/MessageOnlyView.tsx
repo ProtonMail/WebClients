@@ -132,7 +132,6 @@ const MessageOnlyView = ({
     }, [messageID, isMessageReady]);
 
     return (
-        <>
             <Scroll className={classnames([hidden && 'hidden'])}>
                 <ConversationHeader
                     className={classnames([hidden && 'hidden'])}
@@ -163,7 +162,6 @@ const MessageOnlyView = ({
                     />
                 </div>
             </Scroll>
-        </>
     );
 };
 
