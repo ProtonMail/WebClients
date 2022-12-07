@@ -78,7 +78,6 @@ export enum FeatureCode {
     BlockSender = 'BlockSender',
     BlockSenderInToolbar = 'BlockSenderInToolbar',
     SpotlightAutoAddedInvites = 'SpotlightAutoAddedInvites',
-    ContextFiltering = 'ContextFiltering',
     EasySwitchGmailNewScope = 'EasySwitchGmailNewScope',
     Offers = 'Offers',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
