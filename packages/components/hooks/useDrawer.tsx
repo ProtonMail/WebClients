@@ -261,7 +261,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
         return () => {
             window.removeEventListener('message', handleReceived);
         };
-    }, [!!appInView]);
+    }, [handleReceived]);
 
     // We close definitely cached drawer apps if unused for a certain period of time (3 days)
     const hideAtMapRef = useRef<Partial<Record<DRAWER_APPS, number>>>({});
