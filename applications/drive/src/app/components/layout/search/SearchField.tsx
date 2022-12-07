@@ -93,7 +93,7 @@ export const SearchField = () => {
                 }
             >
                 <>
-                    <div onClick={handleInputClick}>
+                    <div onClick={handleInputClick} role="search">
                         <InputTwo
                             value={searchParams}
                             placeholder={placeholderText}
