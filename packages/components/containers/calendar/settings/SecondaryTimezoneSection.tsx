@@ -30,15 +30,18 @@ const SecondaryTimezoneSection = ({ calendarUserSettings: { SecondaryTimezone, D
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
+    const timeZoneSelectorId = 'secondary-timezone';
+
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
-                <label className="text-semibold" htmlFor="secondary-timezone" id="label-secondary-timezone">
+                <label className="text-semibold" htmlFor={timeZoneSelectorId} id="label-secondary-timezone">
                     <span className="mr0-5">{c('Primary timezone').t`Secondary time zone`}</span>
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>
                 <TimeZoneSelector
+                    id={timeZoneSelectorId}
                     data-test-id="settings/secondary-time-zone:dropdown"
                     loading={loadingSecondaryTimeZone}
                     disabled={!DisplaySecondaryTimezone}
