@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+import fetch from 'cross-fetch';
 
 import './jest.mock';
 
@@ -11,6 +12,19 @@ window.ResizeObserver = jest.fn().mockImplementation(() => ({
     unobserve: jest.fn(),
     disconnect: jest.fn(),
 }));
+
+/**
+ * JSDOM does not support fetch API
+ * so we need to fake it
+ */
+let prevFetch;
+beforeAll(() => {
+    prevFetch = fetch;
+    global.fetch = fetch;
+});
+afterAll(() => {
+    global.fetch = prevFetch;
+});
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
