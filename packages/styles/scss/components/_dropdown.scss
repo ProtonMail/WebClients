@@ -216,10 +216,6 @@
 				color: var(--text-norm);
 				text-decoration: none;
 			}
-
-			&.active {
-				background-color: var(--interaction-default-hover);
-			}
 		}
 
 		&--delete {
@@ -242,6 +238,17 @@
 				background-color: var(--interaction-norm);
 				color: var(--interaction-norm-contrast);
 				pointer-events: none;
+			}
+
+			&:focus-visible {
+				z-index: 0;
+				background-color: unset;
+
+				&::after {
+					background-color: var(--interaction-norm);
+					box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+					z-index: -1;
+				}
 			}
 		}
 

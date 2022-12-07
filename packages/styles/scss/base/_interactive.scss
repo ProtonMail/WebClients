@@ -38,7 +38,6 @@
  * Add new focus states
  */
 .interactive-focus {
-	// this will move into .interactive eventually
 	&:focus-visible,
 	&:has(*:focus-visible) {
 		border-color: var(--focus-outline);
@@ -67,6 +66,8 @@
 
 	&:focus-visible,
 	&:has(*:focus-visible) {
+		outline: none;
+
 		&::after {
 			border-color: var(--focus-outline);
 			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
