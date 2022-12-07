@@ -19,6 +19,7 @@
         "types": ["webpack-env", "jest"],
         "baseUrl": ".",
         "paths": {
+            "@proton/activation/*": ["./packages/activation/*"],
             "@proton/atoms/*": ["./packages/atoms/*"],
             "@proton/colors/*": ["./packages/colors/*"],
             "@proton/components/*": ["./packages/components/*"],

@@ -1,16 +1,16 @@
 import { c } from 'ttag';
 
+import { EasySwitchOauthImportButton, EasySwitchProvider } from '@proton/activation';
+import { EASY_SWITCH_SOURCE, ImportType } from '@proton/activation/interface';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { EASY_SWITCH_SOURCE, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { Alert, Href, PrimaryButton, useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSection } from '../../account';
-import { EasySwitchOauthImportButton, EasySwitchProvider } from '../../easySwitch';
 import { ImportModal } from '../importModal';
 
 interface Props {
