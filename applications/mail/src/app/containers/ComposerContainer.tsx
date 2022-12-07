@@ -24,6 +24,7 @@ interface Props {
 const ComposerContainer = ({ breakpoints, children }: Props) => {
     const [messageIDs, setMessageIDs] = useState<string[]>([]);
     const [focusedMessageID, setFocusedMessageID] = useState<string>();
+    const [composerIndex, setComposerIndex] = useState(0);
     const [width, height] = useWindowSize();
     const windowSize: WindowSize = { width, height };
     const store = useStore();
@@ -78,6 +79,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
     const openComposer = (messageID: string, returnFocusTo?: HTMLElement | null) => {
         setMessageIDs((messageIDs) => [...messageIDs, messageID]);
+        setComposerIndex(composerIndex + 1);
         if (returnFocusTo) {
             returnFocusToElement.current = returnFocusTo;
         }
@@ -99,6 +101,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
                         key={messageID}
                         messageID={messageID}
                         index={i}
+                        composerID={composerIndex}
                         count={messageIDs.length}
                         focus={messageID === focusedMessageID}
                         windowSize={windowSize}

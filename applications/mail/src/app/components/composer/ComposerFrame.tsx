@@ -19,6 +19,7 @@ interface Props {
     breakpoints: Breakpoints;
     onFocus: () => void;
     onClose: () => void;
+    composerID: number;
     drawerOffset: number;
 }
 
@@ -31,11 +32,13 @@ const ComposerFrame = ({
     breakpoints,
     onFocus,
     onClose: inputOnClose,
+    composerID,
     drawerOffset,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
+    const composerIDRef = useRef(composerID);
 
     // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
@@ -116,6 +119,7 @@ const ComposerFrame = ({
     return (
         <div
             ref={composerFrameRef}
+            data-id={composerIDRef.current}
             className={classnames([
                 `composer rounded flex flex-column outline-none ${customClasses}`,
                 !focus && 'composer--is-blur',

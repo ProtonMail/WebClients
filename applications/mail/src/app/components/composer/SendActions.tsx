@@ -35,7 +35,7 @@ const SendActions = (
                     loading={loading}
                     className="flex-item-noshrink composer-actions-secondary"
                     title={c('Title').t`Open actions dropdown`}
-                    data-test-id="dropdown:open"
+                    data-testid="dropdown:open"
                 >
                     <DropdownMenu>{secondAction}</DropdownMenu>
                 </SimpleDropdown>

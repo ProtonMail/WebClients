@@ -1,6 +1,7 @@
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
 
 export interface Props extends Omit<ComponentPropsWithRef<'button'>, 'color'> {
@@ -11,6 +12,7 @@ export interface Props extends Omit<ComponentPropsWithRef<'button'>, 'color'> {
      */
     liClassName?: string;
     actionType?: 'delete';
+    'data-testid'?: string;
 }
 
 const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(

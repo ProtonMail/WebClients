@@ -167,7 +167,9 @@ const InsertLinkModalComponent = ({
                     </div>
                 </ModalTwoContent>
                 <ModalTwoFooter>
-                    <Button onClick={modalStateProps.onClose}>{c('Action').t`Cancel`}</Button>
+                    <Button onClick={modalStateProps.onClose} data-testid="insert-link:cancel">
+                        {c('Action').t`Cancel`}
+                    </Button>
                     <PrimaryButton type="submit" disabled={!canSubmit}>
                         {c('Action').t`Insert`}
                     </PrimaryButton>
