@@ -432,7 +432,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
     ]);
 
     useEffect(() => {
-        if (modalModel.step !== MailImportStep.START) {
+        if (modalModel.step !== MailImportStep.START || modalModel.imap || modalModel.port) {
             return;
         }
 
