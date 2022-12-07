@@ -62,14 +62,12 @@ const folderReducer = (acc: FolderItem[], folder: FolderWithSubFolders, level = 
 interface Props {
     selectedIDs: string[];
     labelID: string;
-    conversationMode: boolean;
     onClose: () => void;
     onLock: (lock: boolean) => void;
-    onBack: () => void;
     breakpoints: Breakpoints;
 }
 
-const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock, onBack, breakpoints }: Props) => {
+const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
     const contextFilteringFeature = useFeature(FeatureCode.ContextFiltering);
 
@@ -131,10 +129,6 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
 
         await moveToFolder(elements, selectedFolderID, selectedFolderName, labelID, canApplyAlways ? always : false);
         onClose();
-
-        if (!isMessage || !conversationMode) {
-            onBack();
-        }
     };
 
     const handleMove = async () => {

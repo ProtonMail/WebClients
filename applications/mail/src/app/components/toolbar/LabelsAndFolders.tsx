@@ -13,21 +13,17 @@ import ToolbarDropdown from './ToolbarDropdown';
 interface Props {
     labelID: string;
     selectedIDs: string[];
-    conversationMode: boolean;
     breakpoints: Breakpoints;
     labelDropdownToggleRef: Ref<() => void>;
     moveDropdownToggleRef: Ref<() => void>;
-    onBack: () => void;
 }
 
 const LabelsAndFolders = ({
     labelID,
     selectedIDs,
-    conversationMode,
     breakpoints,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
-    onBack,
 }: Props) => {
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
@@ -76,10 +72,8 @@ const LabelsAndFolders = ({
                         <MoveDropdown
                             labelID={labelID}
                             selectedIDs={selectedIDs}
-                            conversationMode={conversationMode}
                             onClose={onClose}
                             onLock={onLock}
-                            onBack={onBack}
                             breakpoints={breakpoints}
                         />
                     ),
