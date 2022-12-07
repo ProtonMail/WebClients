@@ -69,6 +69,7 @@ $padding-block-link: rem(7) !default;
 
 .navigation-link {
 	@extend .interactive;
+	@extend .interactive-focus;
 
 	position: relative;
 	border-radius: var(--border-radius-md);
@@ -77,18 +78,6 @@ $padding-block-link: rem(7) !default;
 	&:hover,
 	&:focus {
 		text-decoration: none;
-	}
-
-	&:focus {
-		border-color: transparent;
-		box-shadow: none;
-		color: inherit;
-	}
-
-	&:focus-visible {
-		background-color: unset;
-		border-color: var(--focus-outline);
-		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 
 	&--collapsible {
@@ -137,6 +126,7 @@ label.navigation-link {
 // labels/folders sections
 .navigation-link-header-group-link {
 	@extend .interactive;
+	@extend .interactive-focus;
 
 	border: 1px solid transparent;
 	border-radius: var(--border-radius-md);
@@ -151,12 +141,6 @@ label.navigation-link {
 
 	&:hover {
 		color: var(--text-norm);
-	}
-
-	&:focus-visible {
-		background-color: unset;
-		border-color: var(--focus-outline);
-		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 	}
 
 	&[aria-expanded='true'],
@@ -181,6 +165,7 @@ label.navigation-link {
 
 .navigation-link-header-group-control {
 	@extend .interactive;
+	@extend .interactive-focus;
 
 	padding: 0.5em;
 	border: 1px solid transparent;
@@ -198,17 +183,10 @@ label.navigation-link {
 			color: inherit;
 		}
 	}
-
-	&:focus-visible {
-		background-color: unset;
-		border-color: var(--focus-outline);
-		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
-	}
 }
 
 .navigation-link--expand:focus,
 .navigation-link--expand:hover,
-// .navigation-link-header-group-link:focus,
 .navigation-link-header-group-link:hover {
 	.navigation-icon--expand {
 		color: inherit;
