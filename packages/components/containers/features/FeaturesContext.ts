@@ -63,7 +63,6 @@ export enum FeatureCode {
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     MailServiceWorker = 'MailServiceWorker',
     MailContextMenu = 'MailContextMenu',
-    ShowSenderImages = 'ShowSenderImages',
     EORedesign = 'EORedesign',
     Drawer = 'Drawer',
     SpotlightDrawer = 'SpotlightDrawer',
