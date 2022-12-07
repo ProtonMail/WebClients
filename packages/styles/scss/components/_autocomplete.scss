@@ -22,6 +22,7 @@
 
 	div {
 		@extend .interactive;
+		@extend .interactive-focus-pseudo;
 
 		&.selected {
 			background-color: var(--interaction-norm);
