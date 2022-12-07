@@ -406,19 +406,15 @@ const getEmailBodyTexts = (vevent: VcalVeventComponent, dateFormatOptions?: Opti
     const eventDescription = description?.value;
 
     const whenText = getWhenText(vevent, dateFormatOptions);
-    const locationText = eventLocation
-        ? c('Email body for invitation (location part)').t`Where: ${eventLocation}`
-        : undefined;
+    const locationText = eventLocation ? c('Email body for invitation (location part)').t`Where: ${eventLocation}` : '';
     const descriptionText = eventDescription
         ? c('Email body for description (description part)').t`Description: ${eventDescription}`
-        : undefined;
+        : '';
     const locationAndDescriptionText =
         locationText && descriptionText
             ? `${locationText}
 ${descriptionText}`
-            : locationText || descriptionText
-            ? `${locationText || descriptionText}`
-            : '';
+            : `${locationText || descriptionText}`;
     const eventDetailsText = locationAndDescriptionText
         ? `${whenText}
 ${locationAndDescriptionText}`
