@@ -12,7 +12,7 @@ import { getIsPropertyAllDay, getPropertyTzid, getRecurrenceIdDate } from '@prot
 import { addMilliseconds, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { Address } from '@proton/shared/lib/interfaces';
-import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
 
@@ -25,9 +25,9 @@ interface HandlerProps {
     calendarID: string | null;
     eventID: string | null;
     recurrenceId: string | null;
-    onGoToEvent: (eventData: CalendarEventWithMetadata, eventComponent: VcalVeventComponent) => void;
+    onGoToEvent: (eventData: CalendarEvent, eventComponent: VcalVeventComponent) => void;
     onGoToOccurrence: (
-        eventData: CalendarEventWithMetadata,
+        eventData: CalendarEvent,
         eventComponent: VcalVeventComponent,
         occurrence: { localStart: Date; occurrenceNumber: number }
     ) => void;
@@ -67,7 +67,7 @@ export const useOpenEvent = () => {
                 await loadModels([CalendarsModel], { api, cache, useCache: false });
             }
             try {
-                const result = await api<{ Event: CalendarEventWithMetadata }>({
+                const result = await api<{ Event: CalendarEvent }>({
                     ...getEvent(calendarID, eventID),
                     silence: true,
                 });

@@ -23,7 +23,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import {
     CalendarEvent,
     CalendarEventEncryptionData,
-    CalendarEventWithMetadata,
     CalendarWidgetData,
     Participant,
     PartstatActions,
@@ -49,7 +48,7 @@ interface Args {
     messageID?: string;
     calendarData?: CalendarWidgetData;
     pmData?: PmInviteData;
-    singleEditData?: CalendarEventWithMetadata[];
+    singleEditData?: CalendarEvent[];
     reencryptionData?: Required<Pick<CalendarEventEncryptionData, 'encryptingAddressID' | 'sharedSessionKey'>>;
     calendarEvent?: CalendarEvent;
     onEmailSuccess: () => void;

@@ -41,7 +41,7 @@ import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS, CALENDAR_APP_NAME, SECOND } from '@proton/shared/lib/constants';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
@@ -80,7 +80,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const [vevent, setVevent] = useState<VcalVeventComponent>();
     const [calendar, setCalendar] = useState<VisualCalendar>();
     const [addresses] = useAddresses();
-    const [calendarEvent, setCalendarEvent] = useState<CalendarEventWithMetadata>();
+    const [calendarEvent, setCalendarEvent] = useState<CalendarEvent>();
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<React.ReactNode>(null);
@@ -141,7 +141,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
 
                 const fetchEvent = async (
                     byUID = eventIsRecurringHeader === '1'
-                ): Promise<{ Event: CalendarEventWithMetadata }> => {
+                ): Promise<{ Event: CalendarEvent }> => {
                     // We need to fall back to UID search for
                     // - recurring events, to detect deleted and modified occurrences
                     // - when the calendar is changed, since the other route relies on the calendar id
@@ -180,7 +180,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                         return { Event: events[0] };
                     }
 
-                    return api<{ Event: CalendarEventWithMetadata }>({
+                    return api<{ Event: CalendarEvent }>({
                         ...getEvent(calendarIdHeader, eventIdHeader),
                         silence: true,
                     }).catch(() => {

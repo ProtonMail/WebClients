@@ -48,8 +48,8 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
+    CalendarEvent,
     CalendarEventEncryptionData,
-    CalendarEventWithMetadata,
     CalendarWidgetData,
     Participant,
     PmInviteData,
@@ -84,7 +84,7 @@ export interface EventInvitation {
     fileName?: string;
     vevent: VcalVeventComponent;
     hasMultipleVevents?: boolean;
-    calendarEvent?: CalendarEventWithMetadata;
+    calendarEvent?: CalendarEvent;
     method?: ICAL_METHOD;
     vtimezone?: VcalVtimezoneComponent;
     xOrIanaComponents?: VcalXOrIanaComponent[];
@@ -121,7 +121,7 @@ export interface InvitationModel {
     hideSummary?: boolean;
     hideLink?: boolean;
     calendarData?: CalendarWidgetData;
-    singleEditData?: CalendarEventWithMetadata[];
+    singleEditData?: CalendarEvent[];
     reencryptionData?: Required<Pick<CalendarEventEncryptionData, 'encryptingAddressID' | 'sharedSessionKey'>>;
     pmData?: PmInviteData;
     invitationIcs?: RequireSome<EventInvitation, 'method'>;
@@ -287,7 +287,7 @@ export const getIsProtonInvite = ({
     pmData,
 }: {
     invitationIcs: RequireSome<EventInvitation, 'method'>;
-    calendarEvent?: CalendarEventWithMetadata;
+    calendarEvent?: CalendarEvent;
     pmData?: PmInviteData;
 }) => {
     const { method } = invitationIcs;
@@ -315,7 +315,7 @@ export const getIsReinvite = ({
     isOutdated,
 }: {
     invitationIcs: EventInvitation;
-    calendarEvent?: CalendarEventWithMetadata;
+    calendarEvent?: CalendarEvent;
     isOrganizerMode: boolean;
     isOutdated: boolean;
 }) => {
@@ -327,7 +327,7 @@ export const getIsReinvite = ({
 };
 
 export const getIsNonSoughtEvent = (
-    event: CalendarEventWithMetadata,
+    event: CalendarEvent,
     vevent: VcalVeventComponent,
     supportedRecurrenceId?: VcalDateOrDateTimeProperty
 ) => {
