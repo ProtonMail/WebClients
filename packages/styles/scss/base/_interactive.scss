@@ -12,9 +12,7 @@
 	color: inherit;
 	transition: 0.15s easing(ease-out-quint), background-position 0s;
 
-	&:hover,
-	&:focus,
-	&:focus-within {
+	&:hover {
 		background-color: var(--interaction-default-hover);
 		color: inherit;
 	}
@@ -32,6 +30,52 @@
 
 		&:not([aria-busy='true']) {
 			opacity: 0.5;
+		}
+	}
+}
+
+/*
+ * Add new focus states
+ */
+.interactive-focus {
+	// this will move into .interactive eventually
+	&:focus-visible,
+	&:has(*:focus-visible) {
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+
+		&:hover {
+			background-color: var(--interaction-default-hover);
+		}
+	}
+}
+
+/*
+ * Add new focus states as a pseudo element (dropdown etc)
+ */
+.interactive-focus-pseudo {
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		border-radius: var(--border-radius-sm);
+		border: 1px solid transparent;
+		pointer-events: none;
+		transition: 0.15s easing(ease-out-quad);
+	}
+
+	&:focus-visible,
+	&:has(*:focus-visible) {
+		&::after {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		}
+
+		&:hover {
+			&::after {
+				background-color: var(--interaction-default-hover);
+			}
 		}
 	}
 }

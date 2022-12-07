@@ -200,10 +200,18 @@
 		&-button,
 		&-link {
 			@extend .interactive;
+			@extend .interactive-focus-pseudo;
+
+			position: relative;
+
+			&::after {
+				inset: em(3);
+				z-index: 2;
+			}
 
 			&,
 			&:hover,
-			&:focus,
+			&:focus-visible,
 			&:active {
 				color: var(--text-norm);
 				text-decoration: none;
@@ -244,7 +252,7 @@
 
 			&,
 			&:hover,
-			&:focus,
+			&:focus-visible,
 			&:active {
 				color: var(--text-norm);
 				text-decoration: none;
@@ -287,6 +295,7 @@
 		padding: 1rem;
 		background-color: var(--background-norm);
 		box-shadow: var(--shadow-norm);
+		z-index: 1;
 
 		&-no-result {
 			color: var(--text-weak);
