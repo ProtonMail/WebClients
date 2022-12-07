@@ -108,7 +108,9 @@
 	&-weeknumber,
 	&-day {
 		@extend .interactive;
+		@extend .interactive-focus-pseudo;
 
+		position: relative;
 		inline-size: 100%;
 		border-radius: var(--border-radius-sm);
 
@@ -116,9 +118,7 @@
 			background: var(--interaction-weak);
 			color: var(--text-norm);
 
-			&:hover,
-			&:focus,
-			&:focus-within {
+			&:hover {
 				background: var(--interaction-weak-hover);
 			}
 
@@ -129,8 +129,6 @@
 	}
 
 	&-day {
-		position: relative;
-
 		// This is the 'selected' and 'current' marker, placed below the number by z-index
 		&::before {
 			content: '';
@@ -176,7 +174,8 @@
 			font-weight: var(--font-weight-bold);
 			color: var(--mini-calendar-today-color);
 
-			&::before {
+			&::before,
+			&::after {
 				border-color: var(--mini-calendar-today-color);
 			}
 		}

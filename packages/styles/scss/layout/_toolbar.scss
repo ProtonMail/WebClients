@@ -16,6 +16,7 @@
 
 	&-button {
 		@extend .interactive;
+		@extend .interactive-focus;
 
 		position: relative;
 		display: flex; // alignment fix on Chrome
@@ -28,22 +29,6 @@
 			content: '';
 			position: absolute;
 			inset: em(-6);
-		}
-
-		// this will go into .interactive eventually
-		&:focus-visible,
-		&:has(*:focus-visible) {
-			border-color: var(--focus-outline);
-			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
-
-			&:hover {
-				background-color: var(--interaction-default-hover);
-			}
-		}
-
-		&:focus,
-		&:focus-within {
-			background-color: transparent;
 		}
 
 		&--dropdown {
@@ -72,8 +57,9 @@
 	// new select
 	.select {
 		@extend .interactive;
+		@extend .interactive-focus;
 
-		border: unset;
+		border-color: transparent;
 		background-color: unset;
 		color: currentcolor;
 		block-size: auto;
