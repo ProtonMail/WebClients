@@ -1,15 +1,24 @@
 import { useCallback, useState } from 'react';
 
+import useIsMounted from '@proton/hooks/useIsMounted';
+
 const usePopperState = (onChange?: (state: boolean) => void) => {
     const [isOpen, setOpen] = useState(false);
+    const isMounted = useIsMounted();
 
     const open = useCallback(() => {
-        setOpen(true);
+        // setState should not occur when the component is unmounted
+        if (isMounted()) {
+            setOpen(true);
+        }
         onChange?.(true);
     }, []);
 
     const close = useCallback(() => {
-        setOpen(false);
+        // setState should not occur when the component is unmounted
+        if (isMounted()) {
+            setOpen(false);
+        }
         onChange?.(false);
     }, []);
 
