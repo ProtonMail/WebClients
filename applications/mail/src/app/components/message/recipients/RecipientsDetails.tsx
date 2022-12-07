@@ -101,8 +101,8 @@ const RecipientsDetails = ({
         />
     );
 
-    return (
-        <div className="flex flex-column flex-align-items-start flex-item-fluid">
+    const outputRecipientsDetails = (
+        <>
             {!isDetailsModal ? (
                 <>
                     {ToList.length > 0 && (
@@ -150,7 +150,13 @@ const RecipientsDetails = ({
                     )}
                 </>
             )}
-        </div>
+        </>
+    );
+
+    return isPrintModal ? (
+        outputRecipientsDetails
+    ) : (
+        <div className="flex flex-column flex-align-items-start flex-item-fluid">{outputRecipientsDetails}</div>
     );
 };
 
