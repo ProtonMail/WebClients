@@ -1125,7 +1125,7 @@ const InteractiveCalendarView = ({
             calendarKeys,
             api,
         }).catch((error) => {
-            calendarCall([calendarID]);
+            void calendarCall([calendarID]);
 
             throw new Error(error);
         });
