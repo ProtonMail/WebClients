@@ -75,7 +75,6 @@ export enum FeatureCode {
     ApplyFilters = 'ApplyFilters',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
     SLIntegration = 'SLIntegration',
-    BlockSender = 'BlockSender',
     BlockSenderInToolbar = 'BlockSenderInToolbar',
     SpotlightAutoAddedInvites = 'SpotlightAutoAddedInvites',
     EasySwitchGmailNewScope = 'EasySwitchGmailNewScope',
