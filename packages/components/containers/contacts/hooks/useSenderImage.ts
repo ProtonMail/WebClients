@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { FeatureCode, useIsDarkTheme } from '@proton/components';
-import { useApi, useAuthentication, useFeature, useMailSettings } from '@proton/components/hooks';
+import { useIsDarkTheme } from '@proton/components';
+import { useApi, useAuthentication, useMailSettings } from '@proton/components/hooks';
 
 import { getImageSize, getSenderImageUrl, getSenderLogo } from '../helpers/senderImage';
 
@@ -13,7 +13,6 @@ import { getImageSize, getSenderImageUrl, getSenderLogo } from '../helpers/sende
 const useSenderImage = (emailAddress: string, fallback: boolean, bimiSelector?: string) => {
     const [mailSettings] = useMailSettings();
     const isDarkTheme = useIsDarkTheme();
-    const { feature } = useFeature(FeatureCode.ShowSenderImages);
     const imageSizeRef = useRef(getImageSize());
     const mode = isDarkTheme ? 'dark' : 'light';
     const api = useApi();
@@ -22,8 +21,8 @@ const useSenderImage = (emailAddress: string, fallback: boolean, bimiSelector?: 
     const [canLoad, setCanLoad] = useState(false);
 
     useEffect(() => {
-        setCanLoad(emailAddress && mailSettings?.HideSenderImages === 0 && feature?.Value);
-    }, [emailAddress, mailSettings?.HideSenderImages, feature?.Value]);
+        setCanLoad(!!emailAddress && mailSettings?.HideSenderImages === 0);
+    }, [emailAddress, mailSettings?.HideSenderImages]);
 
     useEffect(() => {
         if (!canLoad) {
