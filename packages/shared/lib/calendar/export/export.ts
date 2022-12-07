@@ -18,13 +18,7 @@ import {
 import { wait } from '../../helpers/promise';
 import { dateLocale } from '../../i18n';
 import { Address, Api, Key } from '../../interfaces';
-import {
-    CalendarEvent,
-    CalendarEventWithMetadata,
-    EXPORT_EVENT_ERROR_TYPES,
-    ExportError,
-    VcalVeventComponent,
-} from '../../interfaces/calendar';
+import { CalendarEvent, EXPORT_EVENT_ERROR_TYPES, ExportError, VcalVeventComponent } from '../../interfaces/calendar';
 import { CalendarExportEventsQuery } from '../../interfaces/calendar/Api';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 import { GetCalendarEventPersonal } from '../../interfaces/hooks/GetCalendarEventPersonal';
@@ -59,7 +53,7 @@ export const getHasCalendarEventMatchingSigningKeys = async (event: CalendarEven
 };
 
 export interface GetErrorProps {
-    event: CalendarEventWithMetadata;
+    event: CalendarEvent;
     errorType: EXPORT_EVENT_ERROR_TYPES;
     weekStartsOn: WeekStartsOn;
     defaultTzid: string;
@@ -91,7 +85,7 @@ export const getError = ({ event, errorType, weekStartsOn, defaultTzid }: GetErr
     return [c('Error when exporting event from calendar').t`Event @ ${timeString}`, errorType];
 };
 
-const getDecryptionErrorType = async (event: CalendarEventWithMetadata, keys: Key[]) => {
+const getDecryptionErrorType = async (event: CalendarEvent, keys: Key[]) => {
     try {
         const HasMatchingKeys = await getHasCalendarEventMatchingSigningKeys(event, keys);
         if (HasMatchingKeys) {
@@ -113,7 +107,7 @@ const decryptEvent = async ({
     getCalendarEventPersonal,
     memberID,
 }: {
-    event: CalendarEventWithMetadata;
+    event: CalendarEvent;
     addresses: Address[];
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: GetCalendarKeys;
@@ -179,7 +173,7 @@ interface ProcessData {
     api: Api;
     signal: AbortSignal;
     onProgress: (
-        calendarEvents: CalendarEventWithMetadata[],
+        calendarEvents: CalendarEvent[],
         veventComponents: VcalVeventComponent[],
         exportErrors: ExportError[]
     ) => void;
@@ -224,7 +218,7 @@ export const processInBatches = async ({
         };
 
         const [{ Events }] = await Promise.all([
-            api<{ Events: CalendarEventWithMetadata[] }>(queryEvents(calendarID, params)),
+            api<{ Events: CalendarEvent[] }>(queryEvents(calendarID, params)),
             wait(DELAY),
         ]);
 
