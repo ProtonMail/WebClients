@@ -7,8 +7,8 @@ import { getIsAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHe
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
 import {
     Attendee,
+    CalendarEvent,
     CalendarEventData,
-    CalendarEventWithMetadata,
     CalendarPersonalEventData,
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
@@ -109,5 +109,5 @@ export const generateApiCalendarEvent = async ({
         PersonalEvents: PersonalEventContent ? [toApiPersonalEvent(PersonalEventContent, author, memberID)] : undefined,
         AttendeesEvents: AttendeesEventContent.map((card) => withAuthorCard(card, author)),
         Attendees: toApiAttendees(Attendees),
-    } as CalendarEventWithMetadata;
+    } as CalendarEvent;
 };

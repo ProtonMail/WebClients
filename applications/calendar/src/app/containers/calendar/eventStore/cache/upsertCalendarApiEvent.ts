@@ -2,7 +2,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 
 import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import { CalendarEventsCache } from '../interface';
@@ -33,7 +33,7 @@ const FIELDS_TO_KEEP = [
 ] as const;
 
 const upsertCalendarApiEvent = (
-    Event: CalendarEventWithMetadata,
+    Event: CalendarEvent,
     calendarEventsCache: CalendarEventsCache,
     getOpenedMailEvents?: () => OpenedMailEvent[]
 ) => {

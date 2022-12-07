@@ -7,7 +7,7 @@ import { Address, AddressKey } from '@proton/shared/lib/interfaces';
 import {
     CALENDAR_DISPLAY,
     CALENDAR_TYPE,
-    CalendarEventWithMetadata,
+    CalendarEvent,
     VcalVeventComponent,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
@@ -171,7 +171,7 @@ export const addressBuilder = build<Address>('Address', {
     },
 });
 
-export const calendarEventBuilder = build<CalendarEventWithMetadata>('Event', {
+export const calendarEventBuilder = build<CalendarEvent>('Event', {
     fields: {
         IsProtonProtonInvite: 0,
         // LastEditTime: 1637857503,

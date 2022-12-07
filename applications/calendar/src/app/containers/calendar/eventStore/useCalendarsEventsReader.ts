@@ -7,7 +7,7 @@ import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendar
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { CalendarEvent, CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 
 import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import getAllEventsByUID from '../getAllEventsByUID';
@@ -57,7 +57,7 @@ const useCalendarsEventsReader = (
             calendarEventsCache: CalendarEventsCache
         ): Promise<void> => {
             try {
-                const { Event } = await api<{ Event: CalendarEventWithMetadata }>({
+                const { Event } = await api<{ Event: CalendarEvent }>({
                     ...getEventRoute(calendarID, eventID),
                     silence: true,
                     signal,
