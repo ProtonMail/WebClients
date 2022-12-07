@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import {
     Dropdown,
     DropdownButton,
+    DropdownSizeUnit,
     EasySwitchProvider,
     Icon,
     Tabs,
@@ -126,9 +127,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
                 contentProps={{
                     className: 'flex-no-min-children flex-column flex-nowrap',
                 }}
-                noMaxSize
-                noMaxWidth
-                noMaxHeight
+                size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                 disableDefaultArrowNavigation
             >
                 {/* Translator: this text is "visually"-hidden, it's for helping blind people */}

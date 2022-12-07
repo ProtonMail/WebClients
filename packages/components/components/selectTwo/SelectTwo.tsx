@@ -1,7 +1,8 @@
 import { KeyboardEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
 
 import { classnames } from '../../helpers';
-import { Dropdown } from '../dropdown';
+import Dropdown, { DropdownProps } from '../dropdown/Dropdown';
+import { DropdownSizeUnit } from '../dropdown/utils';
 import Option from '../option/Option';
 import { PopperPlacement } from '../popper';
 import SelectButton from './SelectButton';
@@ -27,12 +28,13 @@ export interface Props<V> extends SelectProps<V> {
      * your values are complex, the search feature will be disabled for
      * that instance of the Select.
      */
-    noMaxWidth?: boolean;
+    size?: DropdownProps['size'];
     originalPlacement?: PopperPlacement;
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
     getSearchableValue?: (value: V) => string;
-    sameAnchorWidth?: boolean;
 }
+
+const defaultSize = { width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport } as const;
 
 const SelectTwo = <V extends any>({
     multiple = false,
@@ -42,7 +44,7 @@ const SelectTwo = <V extends any>({
     placeholder,
     isOpen: controlledOpen,
     clearSearchAfter = 500,
-    noMaxWidth = true,
+    size = defaultSize,
     originalPlacement,
     loading,
     anchorRef: maybeAnchorRef,
@@ -52,7 +54,6 @@ const SelectTwo = <V extends any>({
     onValue,
     getSearchableValue,
     renderSelected,
-    sameAnchorWidth = true,
     ...rest
 }: Props<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -195,9 +196,8 @@ const SelectTwo = <V extends any>({
                 autoClose={autoclose}
                 offset={4}
                 noCaret
-                noMaxWidth={noMaxWidth}
+                size={size}
                 originalPlacement={originalPlacement}
-                sameAnchorWidth={sameAnchorWidth}
                 disableDefaultArrowNavigation
                 className={classnames(['select-dropdown', allowOptionToggling && 'select-dropdown--togglable'])}
             >

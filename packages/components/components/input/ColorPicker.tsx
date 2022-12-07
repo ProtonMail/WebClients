@@ -7,7 +7,7 @@ import noop from '@proton/utils/noop';
 
 import { classnames, generateUID } from '../../helpers';
 import ColorSelector from '../color/ColorSelector';
-import { Dropdown, DropdownButton } from '../dropdown';
+import { Dropdown, DropdownButton, DropdownSizeUnit } from '../dropdown';
 import { DropdownButtonProps } from '../dropdown/DropdownButton';
 import { Icon } from '../icon';
 import { usePopperAnchor } from '../popper';
@@ -45,7 +45,7 @@ const ColorPicker = <T extends ElementType>({ color = 'blue', onChange = noop, c
             <Dropdown
                 id={uid}
                 isOpen={isOpen}
-                noMaxSize
+                size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
                 anchorRef={anchorRef}
                 onClose={close}
                 disableDefaultArrowNavigation

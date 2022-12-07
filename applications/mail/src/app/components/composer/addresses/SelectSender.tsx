@@ -92,7 +92,6 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
                 value={message.data?.Sender?.Address}
                 onChange={handleFromChange}
                 onFocus={addressesBlurRef.current}
-                noMaxWidth={false}
                 originalPlacement="bottom-start"
                 data-testid="composer:from"
             >
