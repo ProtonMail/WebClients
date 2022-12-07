@@ -21,12 +21,29 @@
 		display: flex; // alignment fix on Chrome
 		padding-inline: var(--padding-toolbar-button);
 		border-radius: var(--border-radius-md);
+		border: 1px solid transparent;
 
 		// Increase click area to toolbar height
 		&::before {
 			content: '';
 			position: absolute;
 			inset: em(-6);
+		}
+
+		// this will go into .interactive eventually
+		&:focus-visible,
+		&:has(*:focus-visible) {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+
+			&:hover {
+				background-color: var(--interaction-default-hover);
+			}
+		}
+
+		&:focus,
+		&:focus-within {
+			background-color: transparent;
 		}
 
 		&--dropdown {
