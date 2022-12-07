@@ -41,7 +41,7 @@ describe('Spams - Incoming defaults', () => {
                 modalProps={{
                     open: true,
                 }}
-                type="BLOCKED"
+                type="SPAM"
                 onAdd={mockedSubmit}
             />
         );
