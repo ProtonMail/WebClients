@@ -1,10 +1,24 @@
 import { c, msgid } from 'ttag';
 
 import { validateEmailAddress } from './email';
-import { isNumber } from './validators';
+import { REGEX_USERNAME, isNumber } from './validators';
 
 export const requiredValidator = (value: any) =>
     value === undefined || value === null || value?.trim?.() === '' ? c('Error').t`This field is required` : '';
+
+export const usernameCharacterValidator = (value: string) =>
+    !REGEX_USERNAME.test(value) ? c('Error').t`Try using only letters, numerals, and _.-` : '';
+
+const defaultUsernameLength = 40;
+export const usernameLengthValidator = (value: string, n = defaultUsernameLength) =>
+    value.length > defaultUsernameLength
+        ? c('Validation').ngettext(
+              msgid`Try a shorter username (${n} character max)`,
+              `Try a shorter username (${n} characters max)`,
+              n
+          )
+        : '';
+
 export const minLengthValidator = (value: string, minimumLength: number) =>
     value.length < minimumLength ? c('Error').t`This field requires a minimum of ${minimumLength} characters.` : '';
 export const emailValidator = (value: string) => (!validateEmailAddress(value) ? c('Error').t`Email is not valid` : '');

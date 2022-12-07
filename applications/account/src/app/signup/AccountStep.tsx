@@ -39,6 +39,8 @@ import {
     getMinPasswordLengthMessage,
     passwordLengthValidator,
     requiredValidator,
+    usernameCharacterValidator,
+    usernameLengthValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { hasProtonDomain } from '@proton/shared/lib/helpers/string';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
@@ -185,7 +187,11 @@ const AccountStep = ({
             label={emailLabel}
             error={validator(
                 signupType === SignupType.Username || signupType === SignupType.VPN
-                    ? [requiredValidator(trimmedUsername)]
+                    ? [
+                          requiredValidator(trimmedUsername),
+                          usernameCharacterValidator(trimmedUsername),
+                          usernameLengthValidator(trimmedUsername),
+                      ]
                     : [requiredValidator(trimmedEmail), emailValidator(trimmedEmail)]
             )}
             disableChange={loading}
