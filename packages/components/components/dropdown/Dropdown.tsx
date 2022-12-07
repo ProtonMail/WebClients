@@ -15,7 +15,7 @@ import { c } from 'ttag';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import noop from '@proton/utils/noop';
 
-import { classnames, getCustomSizingClasses } from '../../helpers';
+import { classnames } from '../../helpers';
 import {
     HotkeyTuple,
     useCombinedRefs,
@@ -27,6 +27,7 @@ import {
 import { useFocusTrap } from '../focus';
 import { PopperPlacement, PopperPosition, allPopperPlacements, usePopper } from '../popper';
 import Portal from '../portal/Portal';
+import { DropdownSize, DropdownSizeUnit, getHeightValue, getMaxSizeValue, getProp, getWidthValue } from './utils';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
     ref?: RefObject<HTMLDivElement>;
@@ -44,20 +45,16 @@ export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
     originalPlacement?: PopperPlacement;
     disableFocusTrap?: boolean;
     isOpen?: boolean;
-    noMaxWidth?: boolean;
-    noMaxHeight?: boolean;
-    noMaxSize?: boolean;
+    size?: DropdownSize;
     noCaret?: boolean;
     adaptiveForTouchScreens?: boolean;
     availablePlacements?: PopperPlacement[];
-    sameAnchorWidth?: boolean;
     offset?: number;
     autoClose?: boolean;
     autoCloseOutside?: boolean;
     autoCloseOutsideAnchor?: boolean;
     contentProps?: ContentProps;
     disableDefaultArrowNavigation?: boolean;
-    UNSTABLE_AUTO_HEIGHT?: boolean;
 }
 
 const Dropdown = ({
@@ -73,23 +70,19 @@ const Dropdown = ({
     onClosed,
     onContextMenu = noop,
     isOpen = false,
-    noMaxWidth = false,
-    noMaxHeight = false,
-    noMaxSize = false,
+    size,
     noCaret = false,
     adaptiveForTouchScreens = true,
     disableFocusTrap = false,
-    sameAnchorWidth = false,
     autoClose = true,
     autoCloseOutside = true,
     autoCloseOutsideAnchor = true,
     contentProps,
     disableDefaultArrowNavigation = false,
-    UNSTABLE_AUTO_HEIGHT,
     ...rest
 }: DropdownProps) => {
     const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
-    const anchorRect = useElementRect(isOpen && sameAnchorWidth ? anchorRef : null);
+    const anchorRect = useElementRect(isOpen && size?.width === DropdownSizeUnit.Anchor ? anchorRef : null);
 
     const {
         floating,
@@ -215,7 +208,6 @@ const Dropdown = ({
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
     const popperClassName = classnames([
         dropdownRootClassName,
-        noMaxSize && 'dropdown--no-max-size',
         `dropdown--${placement}`,
         isClosing && `is-dropdown-out`,
         noCaret && 'dropdown--no-caret',
@@ -233,26 +225,24 @@ const Dropdown = ({
         '--left': `${position.left}px`,
     };
 
-    const staticContentRectWidth = contentRect?.width || undefined;
-    const staticContentRectHeight = contentRect?.height || undefined;
-    const width = sameAnchorWidth ? anchorRect?.width : staticContentRectWidth;
-    const height = staticContentRectHeight;
     const varSize = {
-        ...(width !== undefined ? { '--width': `${width}px` } : undefined),
-        ...(height !== undefined ? { '--height': `${height}px` } : undefined),
+        ...getProp('--width', getWidthValue(size?.width, anchorRect, contentRect)),
+        ...getProp('--height', getHeightValue(size?.height, anchorRect, contentRect)),
+    };
+
+    const varMaxSize = {
+        ...getProp('--custom-max-width', getMaxSizeValue(size?.maxWidth)),
+        ...getProp('--custom-max-height', getMaxSizeValue(size?.maxHeight)),
     };
 
     const rootStyle = {
-        ...(noMaxHeight ? { '--max-height': 'unset' } : {}),
-        ...(noMaxWidth ? { '--max-width': 'unset' } : {}),
         ...style,
         ...varPosition,
+        ...varMaxSize,
         ...varAvailableSize,
         ...varSize,
         ...arrow,
     };
-
-    const contentStyle = UNSTABLE_AUTO_HEIGHT ? { '--height-custom': 'auto' } : undefined;
 
     return (
         <Portal>
@@ -290,14 +280,9 @@ const Dropdown = ({
                     <span className="sr-only">{c('Action').t`Close`}</span>
                 </div>
                 <div
-                    style={contentStyle}
                     {...contentProps}
                     ref={combinedContentRef}
-                    className={classnames([
-                        'dropdown-content',
-                        getCustomSizingClasses(contentStyle),
-                        contentProps?.className,
-                    ])}
+                    className={classnames(['dropdown-content', contentProps?.className])}
                 >
                     {children}
                 </div>

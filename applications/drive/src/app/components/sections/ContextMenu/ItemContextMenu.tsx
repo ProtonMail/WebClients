@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { ContextMenu } from '@proton/components';
+import { ContextMenu, DropdownSizeUnit } from '@proton/components';
 
 import { ContextMenuProps } from '../../FileBrowser/interface';
 
@@ -19,7 +19,13 @@ export function ItemContextMenu({ anchorRef, isOpen, position, open, close, chil
     }, [position?.left, position?.top]);
 
     return (
-        <ContextMenu isOpen={isOpen} close={close} position={position} noMaxHeight anchorRef={anchorRef}>
+        <ContextMenu
+            isOpen={isOpen}
+            close={close}
+            position={position}
+            size={{ maxHeight: DropdownSizeUnit.Viewport }}
+            anchorRef={anchorRef}
+        >
             {children}
         </ContextMenu>
     );

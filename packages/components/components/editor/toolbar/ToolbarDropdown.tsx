@@ -2,12 +2,12 @@ import { ReactNode, Ref, forwardRef, useImperativeHandle, useState } from 'react
 
 import { PopperPlacement } from '../../../components/popper';
 import { classnames, generateUID } from '../../../helpers';
-import Dropdown from '../../dropdown/Dropdown';
-import DropdownButton from '../../dropdown/DropdownButton';
+import Dropdown, { DropdownProps } from '../../dropdown/Dropdown';
+import DropdownButton, { DropdownButtonProps } from '../../dropdown/DropdownButton';
 import { usePopperAnchor } from '../../popper';
 import Tooltip from '../../tooltip/Tooltip';
 
-interface Props {
+interface Props extends Omit<DropdownButtonProps<'button'>, 'title'> {
     autoClose?: boolean;
     autoCloseOutside?: boolean;
     title?: string;
@@ -15,12 +15,10 @@ interface Props {
     content?: ReactNode;
     children: ReactNode;
     onOpen?: () => void;
-    noMaxSize?: boolean;
+    dropdownSize?: DropdownProps['size'];
     disabled?: boolean;
     originalPlacement?: PopperPlacement;
     hasCaret?: boolean;
-
-    [rest: string]: any;
 }
 
 export interface ToolbarDropdownAction {
@@ -35,7 +33,7 @@ const ToolbarDropdown = (
         className,
         children,
         onOpen,
-        noMaxSize,
+        dropdownSize,
         autoClose = true,
         autoCloseOutside = true,
         disabled = false,
@@ -86,7 +84,7 @@ const ToolbarDropdown = (
                 autoCloseOutside={autoCloseOutside}
                 originalPlacement={originalPlacement}
                 isOpen={isOpen}
-                noMaxSize={noMaxSize}
+                size={dropdownSize}
                 anchorRef={anchorRef}
                 onClose={close}
                 className="editor-toolbar-dropdown"

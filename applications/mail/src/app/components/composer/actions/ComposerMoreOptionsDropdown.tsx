@@ -1,11 +1,17 @@
 import { ReactNode, useState } from 'react';
 
-import { PopperPlacement, classnames, generateUID, usePopperAnchor } from '@proton/components';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownButtonProps,
+    DropdownProps,
+    Tooltip,
+    classnames,
+    generateUID,
+    usePopperAnchor,
+} from '@proton/components';
 
-interface Props {
+interface Props extends Omit<DropdownButtonProps<'button'>, 'title'> {
     autoClose?: boolean;
     title?: string;
     titleTooltip?: ReactNode;
@@ -13,11 +19,9 @@ interface Props {
     content?: ReactNode;
     children: ReactNode;
     onOpen?: () => void;
-    noMaxSize?: boolean;
+    size?: DropdownProps['size'];
     disabled?: boolean;
-    originalPlacement?: PopperPlacement;
-
-    [rest: string]: any;
+    originalPlacement?: DropdownProps['originalPlacement'];
 }
 
 const ComposerMoreOptionsDropdown = ({
@@ -27,7 +31,7 @@ const ComposerMoreOptionsDropdown = ({
     className,
     children,
     onOpen,
-    noMaxSize,
+    size,
     autoClose = true,
     disabled = false,
     originalPlacement = 'top-start',
@@ -73,7 +77,7 @@ const ComposerMoreOptionsDropdown = ({
                 originalPlacement={originalPlacement}
                 isOpen={isOpen}
                 anchorRef={anchorRef}
-                noMaxSize={noMaxSize}
+                size={size}
                 onClose={close}
                 className="editor-toolbar-dropdown"
             >

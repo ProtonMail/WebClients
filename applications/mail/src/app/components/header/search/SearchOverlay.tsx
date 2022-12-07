@@ -43,7 +43,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     contentProps?: ContentProps;
     disableDefaultArrowNavigation?: boolean;
     updatePositionOnDOMChange?: boolean;
-    UNSTABLE_AUTO_HEIGHT?: boolean;
 }
 
 const SearchOverlay = ({
