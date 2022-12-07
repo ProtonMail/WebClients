@@ -88,28 +88,30 @@ const SpamModal = ({ type, onAdd, modalProps }: Props) => {
         <ModalTwo size="large" as={Form} onSubmit={handleSubmit} {...modalProps} data-testid="spam-modal">
             <ModalTwoHeader title={I18N[type]} />
             <ModalTwoContent>
-                <Row>
-                    <Label>{c('Label').t`Address type`}</Label>
-                    <Field>
-                        <Radio
-                            id="email-mode"
-                            checked={mode === 'email'}
-                            onChange={() => setMode('email')}
-                            className="mr1"
-                            name="filterMode"
-                        >
-                            {c('Label').t`Email`}
-                        </Radio>
-                        <Radio
-                            id="domain-mode"
-                            checked={mode === 'domain'}
-                            onChange={() => setMode('domain')}
-                            name="filterMode"
-                        >
-                            {c('Label').t`Domain`}
-                        </Radio>
-                    </Field>
-                </Row>
+                {type === 'BLOCKED' ? null : (
+                    <Row>
+                        <Label>{c('Label').t`Address type`}</Label>
+                        <Field>
+                            <Radio
+                                id="email-mode"
+                                checked={mode === 'email'}
+                                onChange={() => setMode('email')}
+                                className="mr1"
+                                name="filterMode"
+                            >
+                                {c('Label').t`Email`}
+                            </Radio>
+                            <Radio
+                                id="domain-mode"
+                                checked={mode === 'domain'}
+                                onChange={() => setMode('domain')}
+                                name="filterMode"
+                            >
+                                {c('Label').t`Domain`}
+                            </Radio>
+                        </Field>
+                    </Row>
+                )}
                 <Row>
                     <Label htmlFor={`${mode}Input`}>
                         {mode === 'email' ? c('Label').t`Email` : c('Label').t`Domain`}
