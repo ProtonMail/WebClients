@@ -8,6 +8,7 @@ import { FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/co
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import {
+    useActiveBreakpoint,
     useApi,
     useConfig,
     useErrorHandler,
@@ -126,6 +127,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const location = useLocation<{ invite?: InviteData }>();
     const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
+
+    const { isTinyMobile } = useActiveBreakpoint();
 
     useMetaTags(getSignupMeta(toApp, APP_NAME, { isMailTrial, isMailRefer }));
 
@@ -467,28 +470,38 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             };
         }
     })();
-    const upsellPlanName = (() => {
-        if (getIsVPNApp(toApp, clientType)) {
-            return PLANS.VPN;
-        }
-
-        if (toApp === APPS.PROTONDRIVE) {
-            return PLANS.DRIVE;
-        }
-
-        if (isPassPlusEnabled && toApp === APPS.PROTONPASS) {
-            return PLANS.PASS_PLUS;
-        }
-
-        return PLANS.MAIL;
-    })();
 
     // True while loading, and then true if it's fetched correctly.
     const hasValidPlanSelected = model === DEFAULT_SIGNUP_MODEL || plan;
+    const hasPaidPlanPreSelected =
+        signupParameters.preSelectedPlan && signupParameters.preSelectedPlan !== 'free' && hasValidPlanSelected;
+
+    const { upsellPlanName, mostPopularPlanName }: { upsellPlanName: PLANS; mostPopularPlanName?: PLANS } = (() => {
+        if (getIsVPNApp(toApp, clientType)) {
+            return { upsellPlanName: PLANS.VPN };
+        }
+
+        if (toApp === APPS.PROTONDRIVE) {
+            if (!isTinyMobile) {
+                // Show most popular plan
+                return { upsellPlanName: PLANS.BUNDLE, mostPopularPlanName: PLANS.DRIVE };
+            }
+
+            return { upsellPlanName: PLANS.DRIVE };
+        }
+        
+        if (isPassPlusEnabled && toApp === APPS.PROTONPASS) {
+            return { upsellPlanName: PLANS.PASS_PLUS };
+        }
+
+        if (hasPaidPlanPreSelected) {
+            return { upsellPlanName: PLANS.MAIL };
+        }
+
+        return { upsellPlanName: PLANS.MAIL };
+    })();
 
     const stepper = (() => {
-        const hasPaidPlanPreSelected =
-            signupParameters.preSelectedPlan && signupParameters.preSelectedPlan !== 'free' && hasValidPlanSelected;
         const stepLabels = {
             accountSetup: c('Signup step').t`Account setup`,
             verification: c('Signup step').t`Verification`,
@@ -741,6 +754,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     currency={model.subscriptionData.currency}
                     cycle={model.subscriptionData.cycle}
                     plans={model.plans}
+                    mostPopularPlanName={mostPopularPlanName}
                     upsellPlanName={upsellPlanName}
                     onChangeCurrency={handleChangeCurrency}
                     vpnServers={vpnServers}
