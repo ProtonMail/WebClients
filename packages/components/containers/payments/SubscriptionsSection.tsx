@@ -26,7 +26,6 @@ interface SubscriptionRowProps {
     users: number;
     PeriodStart: number;
     PeriodEnd: number;
-    PricePerMonth: number;
     PricePerCycle: number;
     Currency: Currency;
     status: {
@@ -42,7 +41,6 @@ const SubscriptionRow = ({
     users,
     PeriodStart,
     PeriodEnd,
-    PricePerMonth,
     PricePerCycle,
     Currency,
     status,
@@ -67,9 +65,6 @@ const SubscriptionRow = ({
             </TableCell>
             <TableCell>
                 <Time forceFormat={true}>{PeriodEnd}</Time>
-            </TableCell>
-            <TableCell className="text-right">
-                <Price currency={Currency}>{PricePerMonth}</Price>
             </TableCell>
             <TableCell className="text-right">
                 <Price currency={Currency}>{PricePerCycle}</Price>
@@ -123,8 +118,6 @@ const SubscriptionsSection = () => {
                             <TableCell type="header">{c('Title').t`Users`}</TableCell>
                             <TableCell type="header">{c('Title').t`Start date`}</TableCell>
                             <TableCell type="header">{c('Title').t`End date`}</TableCell>
-                            <TableCell type="header" className="text-right min-w7e">{c('Title')
-                                .t`Price per month`}</TableCell>
                             <TableCell type="header" className="text-right">{c('Title').t`Total paid`}</TableCell>
                             <TableCell type="header"> </TableCell>
                         </TableRow>
@@ -133,7 +126,6 @@ const SubscriptionsSection = () => {
                         <SubscriptionRow
                             {...currentCheckout}
                             {...current}
-                            PricePerMonth={currentCheckout.withDiscountPerMonth}
                             PricePerCycle={currentCheckout.withDiscountPerCycle}
                             status={{ type: 'success', label: c('Subscription status').t`Active` }}
                         ></SubscriptionRow>
@@ -141,7 +133,6 @@ const SubscriptionsSection = () => {
                             <SubscriptionRow
                                 {...upcomingCheckout}
                                 {...upcoming}
-                                PricePerMonth={upcoming.RenewAmount / upcoming.Cycle}
                                 PricePerCycle={upcoming.RenewAmount}
                                 status={{ type: 'info', label: c('Subscription status').t`Upcoming` }}
                                 asterisk={asterisk}
