@@ -25,7 +25,7 @@ const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
                 );
                 const description = getRenewDescription(cycle, discountedAmount, regularAmount, discount);
 
-                if (!description) {
+                if (!description || !star) {
                     return null;
                 }
 
@@ -33,7 +33,7 @@ const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
 
                 return (
                     <p key={key} className="text-sm text-center color-weak">
-                        {star ? <sup className="mr0-5">{star}</sup> : null}
+                        <sup className="mr0-5">{star}</sup>
                         {description}
                     </p>
                 );
