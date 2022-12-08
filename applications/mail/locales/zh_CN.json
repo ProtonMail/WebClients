@@ -4086,6 +4086,9 @@
       "Click ${ boldManage } to expand the options menu.": [
         "点击 ${ boldManage } 下拉菜单."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "各类邮箱操作步骤不尽相同，您可能需要先${ knowledgeBaseLink }才能导入至 ${ BRAND_NAME }。"
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "点击三点图标（...）展开下拉菜单。"
       ],
@@ -6526,20 +6529,6 @@
       ],
       "Your import is starting": [
         "正在启动导入"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个文件夹中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个标签中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
-      ],
-      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "导入自 ${ periodFragment } 以来 ${ totalLabelsCount } 个文件夹中的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "导入自 ${ periodFragment } 以来共计 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {

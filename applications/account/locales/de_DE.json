@@ -198,9 +198,6 @@
       "Create account": [
         "Konto erstellen"
       ],
-      "Create accounts": [
-        "Konten erstellen"
-      ],
       "Create calendar": [
         "Kalender erstellen"
       ],
@@ -212,6 +209,9 @@
       ],
       "Create link": [
         "Link erstellen"
+      ],
+      "Create users": [
+        "Benutzer erstellen"
       ],
       "Create your own": [
         "Erstelle deine eigene"
@@ -3184,6 +3184,9 @@
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
+      ],
       "Unknown error": [
         "Unbekannter Fehler"
       ],
@@ -5602,6 +5605,10 @@
         "Die folgende Adresse ist nicht verfügbar.",
         "Die folgenden Adressen sind nicht verfügbar."
       ],
+      "The following address was not created.": [
+        "Die folgende E-Mail-Adresse wurde nicht erstellt.",
+        "Die folgenden E-Mail-Adressen wurden nicht erstellt."
+      ],
       "The format of your CSV file is incorrect.": [
         "Das Format der CSV-Datei ist ungültig."
       ],
@@ -7594,24 +7601,6 @@
         "Authentifizierungsprotokolle aktivieren"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Ordner seit ${ periodFragment } importieren und als \"${ LABEL_MARKUP_PLACEHOLDER }\" kategorisieren.",
-        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Ordnern seit ${ periodFragment } importieren und als \"${ LABEL_MARKUP_PLACEHOLDER }\" kategorisieren."
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren.",
-        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren."
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }” kategorisieren.",
-        "Alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren."
-      ]
-    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Link pro Kalender erstellen. Um einen neuen Link zu erstellen, musst du einen Link aus der folgenden Liste löschen.",
@@ -8185,26 +8174,6 @@
         "Teamverwaltung"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -8274,6 +8243,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8912,20 +8901,20 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink }, um mehr Speicherplatz zu erhalten oder entferne einige Dateien, um Speicherplatz freizugeben."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } address.": [
-        "Dein Abonnement beinhaltet maximal ${ availableAddresses } E-Mail-Adresse.",
-        "Dein Abonnement beinhaltet maximal ${ availableAddresses } E-Mail-Adressen."
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Dein Abonnement beinhaltet maximal ${ availableAddresses } weitere E-Mail-Adresse.",
+        "Dein Abonnement beinhaltet maximal ${ availableAddresses } weitere E-Mail-Adressen."
       ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
-        "Dein Abonnement beinhaltet maximal ${ availableNumberOfMembers } Organisationsbenutzer.",
-        "Dein Abonnement beinhaltet maximal ${ availableNumberOfMembers } Organisationsbenutzer."
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Dein Abonnement beinhaltet maximal ${ availableNumberOfMembers } weiteren Organisationsbenutzer.",
+        "Dein Abonnement beinhaltet maximal ${ availableNumberOfMembers } weitere Organisationsbenutzer."
       ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
-        "Dein Abonnement beinhaltet maximal ${ availableVPNAccess } VPN-Konto.",
-        "Dein Abonnement beinhaltet maximal ${ availableVPNAccess } VPN-Konten."
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Dein Abonnement beinhaltet maximal ${ availableVPNAccess } weiteres VPN-Konto.",
+        "Dein Abonnement beinhaltet maximal ${ availableVPNAccess } weitere VPN-Konten."
       ],
-      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
-        "Dein Abonnement beinhaltet maximal ${ humanReadableAvailableSpace } Speicherplatz."
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Dein Abonnement beinhaltet maximal ${ humanReadableAvailableSpace } weiteren Speicherplatz."
       ]
     },
     "OS compatibility": {
@@ -10340,6 +10329,10 @@
       "Couldn’t create accounts": [
         "Konten konnten nicht erstellt werden"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } Benutzer erstellt",
+        "${ selectedUserIds.length } Benutzer erstellt"
+      ],
       "Create multiple user accounts": [
         "Mehrere Benutzerkonten erstellen"
       ],
@@ -10507,6 +10500,10 @@
       ],
       "External PGP settings": [
         "Externe PGP-Einstellungen"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Das Erstellen von ${ failedUsers.length } Benutzerkonto ist fehlgeschlagen.",
+        "Das Erstellen von ${ failedUsers.length } Benutzerkonten ist fehlgeschlagen."
       ],
       "Filters": [
         "Filter"
@@ -10835,6 +10832,10 @@
       ],
       "Success": [
         "Erfolgreich"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "${ localSuccessfullyCreatedUsers.length } Benutzerkonto erfolgreich erstellt",
+        "${ localSuccessfullyCreatedUsers.length } Benutzerkonten erfolgreich erstellt"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "${ successfullyCreatedUsers.length } Benutzerkonto erfolgreich erstellt",
@@ -11227,6 +11228,10 @@
       "Password must contain at least ${ length } character": [
         "Das Passwort muss mindestens ${ length } Zeichen enthalten",
         "Das Passwort muss mindestens ${ length } Zeichen enthalten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
       ]
     },
     "Video control": {
