@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import { SettingsSectionWide } from '@proton/components/containers';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -142,7 +143,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
     const vpnPlus = vpnPlan?.Title;
 
     return (
-        <>
+        <SettingsSectionWide>
             {!vpnLoading && (
                 <>
                     {!listOnly && (
@@ -400,7 +401,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                     </>
                 )}
             </Block>
-        </>
+        </SettingsSectionWide>
     );
 };
 
