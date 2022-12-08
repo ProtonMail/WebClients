@@ -107,8 +107,7 @@
 
 	&-weeknumber,
 	&-day {
-		@extend .interactive;
-		@extend .interactive-focus-pseudo;
+		@extend .interactive-pseudo;
 
 		position: relative;
 		inline-size: 100%;
