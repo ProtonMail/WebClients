@@ -25,15 +25,18 @@ const PrimaryTimezoneSection = ({ calendarUserSettings: { PrimaryTimezone } }: P
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
+    const timeZoneSelectorId = 'primary-timezone';
+
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
-                <label className="text-semibold" htmlFor="primary-timezone" id="label-primary-timezone">
+                <label className="text-semibold" htmlFor={timeZoneSelectorId} id="label-primary-timezone">
                     <span className="mr0-5">{c('Primary timezone').t`Primary time zone`}</span>
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>
                 <TimeZoneSelector
+                    id={timeZoneSelectorId}
                     data-test-id="settings/primary-time-zone:dropdown"
                     loading={loadingPrimaryTimeZone}
                     timezone={PrimaryTimezone}
