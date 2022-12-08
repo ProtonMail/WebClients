@@ -6,15 +6,13 @@ import { c } from 'ttag';
 import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
 
 import { Loader } from '../../components';
-import { useApi, useApiWithoutResult, useEventManager, useFeature, useFilters, useNotifications } from '../../hooks';
+import { useApi, useApiWithoutResult, useEventManager, useFilters, useNotifications } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
-import { FeatureCode } from '../features';
 import ActionsFilterToolbar from './ActionsFilterToolbar';
 import FilterSortableList from './FilterSortableList';
 import { Filter } from './interfaces';
 
 function FiltersSection() {
-    const { feature: applyFiltersFeature } = useFeature(FeatureCode.ApplyFilters);
     const { call } = useEventManager();
     const [filters, loading] = useFilters();
     const orderRequest = useApiWithoutResult(updateFilterOrder);
@@ -65,7 +63,6 @@ function FiltersSection() {
                 items={list}
                 onSortEnd={onSortEnd}
                 onApplyFilter={handleApplyFilter}
-                canApplyFilters={applyFiltersFeature?.Value === true}
             />
         ) : null;
     };
