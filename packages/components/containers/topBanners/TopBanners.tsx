@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import BadAppVersionBanner from './BadAppVersionBanner';
 import DelinquentTopBanner from './DelinquentTopBanner';
 import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
-import DriveReleaseTopBanner from './DriveReleaseTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
 import ReferralTopBanner from './ReferralTopBanner';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
@@ -25,7 +24,6 @@ const TopBanners = ({ children }: Props) => {
             <SubUserTopBanner />
             <DesktopNotificationTopBanner />
             <ReferralTopBanner />
-            <DriveReleaseTopBanner />
             {children}
         </>
     );
