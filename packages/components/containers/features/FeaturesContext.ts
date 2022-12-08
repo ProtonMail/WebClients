@@ -67,7 +67,6 @@ export enum FeatureCode {
     RebrandingFeedbackEnabled = 'RebrandingFeedbackEnabled',
     RebrandingFeedback = 'RebrandingFeedback',
     DrivePlan = 'DrivePlan',
-    ApplyFilters = 'ApplyFilters',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
     SLIntegration = 'SLIntegration',
     BlockSenderInToolbar = 'BlockSenderInToolbar',

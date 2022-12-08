@@ -1,4 +1,4 @@
-import { FeatureCode, useFeature, useMailSettings } from '@proton/components';
+import { useMailSettings } from '@proton/components';
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
 
 import { getMessageHasData } from '../../../helpers/message/messages';
