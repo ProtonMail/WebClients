@@ -3,9 +3,9 @@ import { useEffect, useRef } from 'react';
 import { useLoading } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
-import { reportError } from '../_utils';
 import { useDefaultShare } from '../_shares';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
@@ -39,7 +39,7 @@ export default function useTrashView() {
 
     useEffect(() => {
         const ac = new AbortController();
-        void withLoading(loadTrashListing(ac.signal)).catch(reportError)
+        void withLoading(loadTrashListing(ac.signal)).catch(sendErrorReport);
         return () => {
             ac.abort();
         };

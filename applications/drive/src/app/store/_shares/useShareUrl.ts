@@ -37,11 +37,11 @@ import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
-import { reportError } from '../_utils';
 import { getSharedLink } from './shareUrl';
 import useShare from './useShare';
 import useShareActions from './useShareActions';
@@ -404,12 +404,12 @@ export default function useShareUrl() {
     const deleteShareUrl = async (shareId: string, shareUrlId: string) => {
         const deletePromise = async () => {
             await debouncedRequest(queryDeleteSharedLink(shareId, shareUrlId)).catch((error) => {
-                reportError(error);
+                sendErrorReport(error);
                 throw error;
             });
             // Lets only collect reports when share cannot be deleted but do
             // not bother users about it - link was deleted fine.
-            await deleteShare(shareId).catch(reportError);
+            await deleteShare(shareId).catch(sendErrorReport);
         };
         await preventLeave(deletePromise());
         await events.pollEvents.driveEvents();
@@ -468,7 +468,7 @@ export default function useShareUrl() {
         const deleteShareQueue = sharedIds.map((shareId) => async () => {
             // Lets only collect reports when share cannot be deleted but do
             // not bother users about it - link was deleted fine.
-            await deleteShare(shareId).catch(reportError);
+            await deleteShare(shareId).catch(sendErrorReport);
         });
         await preventLeave(runInQueue(deleteShareQueue, MAX_THREADS_PER_REQUEST));
 
@@ -485,7 +485,7 @@ export default function useShareUrl() {
         // error message to user. See comment to useShareUrl on the top.
         loadOrCreateShareUrl: (abortSignal: AbortSignal, shareId: string, linkId: string) =>
             loadOrCreateShareUrl(abortSignal, shareId, linkId).catch((error) => {
-                reportError(error);
+                sendErrorReport(error);
                 throw error;
             }),
         loadShareUrlLink,
@@ -502,7 +502,7 @@ export default function useShareUrl() {
             newPassword?: string
         ) =>
             updateShareUrl(shareUrlInfo, newDuration, newPassword).catch((error) => {
-                reportError(error);
+                sendErrorReport(error);
                 throw error;
             }),
         deleteShareUrl,

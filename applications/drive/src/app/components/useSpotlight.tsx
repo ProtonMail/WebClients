@@ -5,7 +5,7 @@ import { FeatureCode, useSpotlightOnFeature, useSpotlightShow } from '@proton/co
 import { DriveFolder } from '../hooks/drive/useActiveShare';
 import { useLinksListing } from '../store/_links';
 import { useDefaultShare } from '../store/_shares';
-import { reportError } from '../store/_utils';
+import { sendErrorReport } from '../utils/errorHandling';
 
 const SEARCH_DISCOVERY_FILES_THRESHOLD = 5;
 
@@ -33,7 +33,7 @@ const useSearchSpotlight = () => {
             .then(({ shareId, rootLinkId }) => {
                 setRootFolder({ shareId, linkId: rootLinkId });
             })
-            .catch(reportError);
+            .catch(sendErrorReport);
     }, []);
 
     const storedItemsCount = useMemo(() => {

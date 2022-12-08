@@ -1,43 +1,9 @@
 import { ReactNode } from 'react';
 
 import { useNotifications } from '@proton/components';
-import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { ValidationError, isValidationError } from './validationError';
-
-const IGNORED_ERRORS = ['AbortError', 'TransferCancel'];
-
-function isIgnoredErrorForReporting(error: any) {
-    return isIgnoredError(error) || isValidationError(error) || getIsConnectionIssue(error);
-}
-
-export function isIgnoredError(error: any) {
-    return !error || IGNORED_ERRORS.includes(error.name);
-}
-
-/**
- * logErrors logs error to console if its not ignored error.
- */
-export function logError(error: any) {
-    if (isIgnoredErrorForReporting(error)) {
-        return;
-    }
-
-    console.warn(error);
-}
-
-/**
- * reportError reports error to console and Sentry if its not ignored error.
- */
-export function reportError(error: any) {
-    if (isIgnoredErrorForReporting(error)) {
-        return;
-    }
-
-    console.warn(error);
-    traceError(error);
-}
+import { isIgnoredError, isIgnoredErrorForReporting, sendErrorReport } from '../../utils/errorHandling';
+import { ValidationError, isValidationError } from '../../utils/errorHandling/ValidationError';
 
 /**
  * generateErrorHandler generates error handler calling callback if the error
@@ -82,7 +48,7 @@ export function useErrorHandler() {
             type: 'error',
             text: message || error.message || error,
         });
-        reportError(error);
+        sendErrorReport(error);
     };
 
     /**
@@ -123,7 +89,7 @@ export function useErrorHandler() {
             });
         }
 
-        errors.forEach(reportError);
+        errors.forEach(sendErrorReport);
     };
 
     return {
