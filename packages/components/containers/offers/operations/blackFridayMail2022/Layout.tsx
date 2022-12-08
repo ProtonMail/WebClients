@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import BlackFridayFooter from '../../components/blackFriday/BlackFridayFooter';
 import BlackFridayLayout from '../../components/blackFriday/BlackFridayLayout';
-import BlackFridayMailFooter from '../../components/blackFriday/BlackFridayMailFooter';
 import OfferFooter from '../../components/shared/OfferFooter';
 import OfferHeader from '../../components/shared/OfferHeader';
 import OfferLoader from '../../components/shared/OfferLoader';
@@ -20,7 +20,7 @@ const Layout = (props: OfferLayoutProps) => {
             <Deals {...props} />
 
             <OfferFooter {...props}>
-                <BlackFridayMailFooter {...props} />
+                <BlackFridayFooter {...props} />
             </OfferFooter>
         </BlackFridayLayout>
     ) : (
