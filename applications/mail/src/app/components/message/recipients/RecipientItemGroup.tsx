@@ -120,6 +120,7 @@ const RecipientItemGroup = ({
                                     closeDropdown={close}
                                     key={recipient.Address}
                                     bimiSelector={bimiSelector}
+                                    isOutside={isOutside}
                                 />
                             );
                         })}
