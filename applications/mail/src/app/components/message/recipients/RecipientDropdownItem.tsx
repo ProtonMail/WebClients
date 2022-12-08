@@ -3,6 +3,7 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { ContactImage, Copy, useNotifications } from '@proton/components';
+import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -11,9 +12,17 @@ interface Props {
     bimiSelector?: string;
     closeDropdown: () => void;
     displaySenderImage: boolean;
+    isOutside?: boolean;
 }
 
-const RecipientDropdownItem = ({ displaySenderImage, bimiSelector, label, recipient, closeDropdown }: Props) => {
+const RecipientDropdownItem = ({
+    displaySenderImage,
+    bimiSelector,
+    label,
+    recipient,
+    closeDropdown,
+    isOutside,
+}: Props) => {
     const { createNotification } = useNotifications();
 
     // Label value can contain :
@@ -41,12 +50,16 @@ const RecipientDropdownItem = ({ displaySenderImage, bimiSelector, label, recipi
         <div className="flex flex-nowrap flex-align-items-center opacity-on-hover-container p0-5" onClick={handleClick}>
             <span className="item-icon flex flex-item-noshrink rounded mx0-5" aria-hidden="true">
                 <span className="mauto">
-                    <ContactImage
-                        email={displaySenderImage ? recipient.Address : ''}
-                        name={label}
-                        className="rounded"
-                        bimiSelector={bimiSelector}
-                    />
+                    {isOutside ? (
+                        <>{getInitials(label)}</>
+                    ) : (
+                        <ContactImage
+                            email={displaySenderImage ? recipient.Address : ''}
+                            name={label}
+                            className="rounded"
+                            bimiSelector={bimiSelector}
+                        />
+                    )}
                 </span>
             </span>
             <div className="flex flex-column flex-item-fluid px0-5">
