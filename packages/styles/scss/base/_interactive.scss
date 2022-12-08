@@ -1,7 +1,4 @@
-/*
- * Interactive gives only default colors on every states
- */
-.interactive {
+%interactive {
 	outline: none; // be careful of a11y
 	@supports selector(:focus-visible) {
 		// had to do this because of Safari
@@ -35,9 +32,12 @@
 }
 
 /*
- * Add new focus states
+ * Interactive gives only default colors on every states
+ * Default focus states
  */
-.interactive-focus {
+.interactive {
+	@extend %interactive;
+
 	&:focus-visible,
 	&:has(*:focus-visible) {
 		border-color: var(--focus-outline);
@@ -51,9 +51,12 @@
 }
 
 /*
- * Add new focus states as a pseudo element (dropdown etc)
+ * Interactive gives only default colors on every states
+ * Focus states as pseudo element (dropdown options, minicalendar,...)
  */
-.interactive-focus-pseudo {
+.interactive-pseudo {
+	@extend %interactive;
+
 	&::after {
 		content: '';
 		position: absolute;
@@ -67,8 +70,6 @@
 
 	&:focus-visible,
 	&:has(*:focus-visible) {
-		outline: none;
-
 		&::after {
 			border-color: var(--focus-outline);
 			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);

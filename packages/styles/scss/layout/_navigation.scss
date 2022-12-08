@@ -69,7 +69,6 @@ $padding-block-link: rem(7) !default;
 
 .navigation-link {
 	@extend .interactive;
-	@extend .interactive-focus;
 
 	position: relative;
 	border-radius: var(--border-radius-md);
@@ -126,7 +125,6 @@ label.navigation-link {
 // labels/folders sections
 .navigation-link-header-group-link {
 	@extend .interactive;
-	@extend .interactive-focus;
 
 	border: 1px solid transparent;
 	border-radius: var(--border-radius-md);
@@ -165,7 +163,6 @@ label.navigation-link {
 
 .navigation-link-header-group-control {
 	@extend .interactive;
-	@extend .interactive-focus;
 
 	padding: 0.5em;
 	border: 1px solid transparent;

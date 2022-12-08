@@ -16,7 +16,6 @@
 
 	&-button {
 		@extend .interactive;
-		@extend .interactive-focus;
 
 		position: relative;
 		display: flex; // alignment fix on Chrome
@@ -57,7 +56,6 @@
 	// new select
 	.select {
 		@extend .interactive;
-		@extend .interactive-focus;
 
 		border-color: transparent;
 		background-color: unset;
