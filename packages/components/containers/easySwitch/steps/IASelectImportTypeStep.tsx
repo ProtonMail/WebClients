@@ -257,25 +257,7 @@ const IASelectImportTypeStep = ({
         }
 
         const { Mapping, ImportLabel } = payload[MAIL] as MailImporterPayload;
-        const { providerFolders, selectedPeriod } = data[MAIL];
-
-        const getPeriodFragment = () => {
-            switch (selectedPeriod) {
-                case TIME_PERIOD.LAST_3_MONTHS:
-                    // translator: This fragment is to be used in a sentence, here is an example of a complete sentence: "Import all messages from 1 out of 5 labels since the last 3 months and label them as ..." followed by the label HTML element
-                    return c('Time period').t`the last 3 months`;
-                case TIME_PERIOD.LAST_MONTH:
-                    // translator: This fragment is to be used in a sentence, here is an example of a complete sentence: "Import all messages from 4 labels since the last month and label them as ..." followed by the label HTML element
-                    return c('Time period').t`the last month`;
-                case TIME_PERIOD.LAST_YEAR:
-                    // translator: This fragment is to be used in a sentence, here is an example of a complete sentence: "Import all messages from 2 out of 4 labels since the last 12 months and label them as ..." followed by the label HTML element
-                    return c('Time period').t`the last 12 months`;
-                case TIME_PERIOD.BIG_BANG:
-                default:
-                    // translator: This fragment is to be used in a sentence, here is an example of a complete sentence: "Import all messages from 13 out of 15 labels since account creation date and label them as ..." followed by the label HTML element
-                    return c('Time period').t`account creation date`;
-            }
-        };
+        const { providerFolders } = data[MAIL];
 
         const itemsToImportCount = providerFolders.filter(
             (item) => !GMAIL_CATEGORIES.includes(item.Source as MailImportGmailCategories)
@@ -283,8 +265,6 @@ const IASelectImportTypeStep = ({
         const selectedItemsToImportCount = Mapping.filter(
             (item) => item.checked && !GMAIL_CATEGORIES.includes(item.Source as MailImportGmailCategories)
         ).length;
-
-        const periodFragment = getPeriodFragment();
 
         const label = (
             <LabelStack
@@ -299,30 +279,30 @@ const IASelectImportTypeStep = ({
         );
 
         const summaryAllLabels = isLabels
-            ? // translator: here is an example of a complete sentence: "Import all messages from 12 labels since the last month and label them as ..." followed by the label HTML element
+            ? // translator: here is an example of a complete sentence: "Import all messages from 12 labels and label them as ..." followed by the label HTML element
               c('Mail import summary').ngettext(
-                  msgid`Import all messages from ${itemsToImportCount} label since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
-                  `Import all messages from ${itemsToImportCount} labels since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  msgid`Import all messages from ${itemsToImportCount} label and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  `Import all messages from ${itemsToImportCount} labels and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
                   itemsToImportCount
               )
-            : // translator: here is an example of a complete sentence: "Import all messages from 12 folders since the last month and label them as ..." followed by the label HTML element
+            : // translator: here is an example of a complete sentence: "Import all messages from 12 folders and label them as ..." followed by the label HTML element
               c('Mail import summary').ngettext(
-                  msgid`Import all messages from ${itemsToImportCount} folder since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
-                  `Import all messages from ${itemsToImportCount} folders since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  msgid`Import all messages from ${itemsToImportCount} folder since and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  `Import all messages from ${itemsToImportCount} folders since and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
                   itemsToImportCount
               );
 
         const summarySelectedLabels = isLabels
-            ? // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 labels since the last 3 months and label them as ..." followed by the label HTML element
+            ? // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 labels and label them as ..." followed by the label HTML element
               c('Mail import summary').ngettext(
-                  msgid`Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} label since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
-                  `Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} labels since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  msgid`Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} label and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  `Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} labels and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
                   itemsToImportCount
               )
-            : // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 folders since the last 3 months and label them as ..." followed by the label HTML element
+            : // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 folders and label them as ..." followed by the label HTML element
               c('Mail import summary').ngettext(
-                  msgid`Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} folder since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
-                  `Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} folders since ${periodFragment} and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  msgid`Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} folder and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
+                  `Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} folders and label them as ${LABEL_MARKUP_PLACEHOLDER}`,
                   itemsToImportCount
               );
 
@@ -330,6 +310,27 @@ const IASelectImportTypeStep = ({
             itemsToImportCount === selectedItemsToImportCount ? summaryAllLabels : summarySelectedLabels,
             label
         );
+    };
+
+    const getMailCustomLabel = () => {
+        const { data, payload } = modalModel;
+
+        if (!payload[MAIL]) {
+            return null;
+        }
+
+        const { selectedPeriod } = data[MAIL];
+
+        switch (selectedPeriod) {
+            case TIME_PERIOD.BIG_BANG:
+                return c('Label').t`Emails (all messages)`;
+            case TIME_PERIOD.LAST_YEAR:
+                return c('Label').t`Emails (last 12 months)`;
+            case TIME_PERIOD.LAST_3_MONTHS:
+                return c('Label').t`Emails (last 3 months)`;
+            case TIME_PERIOD.LAST_MONTH:
+                return c('Label').t`Emails (last month)`;
+        }
     };
 
     const mailRowRenderer = () => {
@@ -351,7 +352,9 @@ const IASelectImportTypeStep = ({
             ].includes(payloadError as MailImportPayloadError)
         );
 
-        const error = modalModel.data[MAIL].error;
+        const { error } = modalModel.data[MAIL];
+        const { step } = modalModel;
+        const shouldDisplayCustomLabel = checkedTypes[MAIL] && step === IAOauthModalModelStep.SELECT_IMPORT_TYPE;
 
         return error ? (
             <IADisabledCheckbox id="mail">{error}</IADisabledCheckbox>
@@ -372,7 +375,7 @@ const IASelectImportTypeStep = ({
                 />
                 <div className="flex flex-column flex-item-fluid">
                     <div className={classnames([showSummary && 'mb0-5', !isEasySwitchMailEnabled && 'color-weak'])}>
-                        {c('Label').t`Emails`}
+                        {shouldDisplayCustomLabel ? getMailCustomLabel() : c('Label').t`Emails`}
                         {!isEasySwitchMailEnabled && (
                             <span className="block">
                                 {c('Label').t`(Temporarily unavailable. Please check back later.)`}

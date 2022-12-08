@@ -16,6 +16,7 @@ import {
     useLoading,
     useModals,
     useSettingsLink,
+    useUser,
 } from '@proton/components';
 import {
     createImport,
@@ -108,6 +109,7 @@ const getDefaultPort = (provider?: NON_OAUTH_PROVIDER): string => {
 };
 
 const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, ...rest }: Props) => {
+    const [user] = useUser();
     const settingsLink = useSettingsLink();
     const addressMap = toMap(addresses);
     const isReconnectMode = !!currentImport;
@@ -119,6 +121,8 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
     const { createModal } = useModals();
     const errorHandler = useErrorHandler();
 
+    const defaultPeriod = user.isFree ? TIME_PERIOD.LAST_3_MONTHS : TIME_PERIOD.BIG_BANG;
+
     const [modalModel, setModalModel] = useState<ImportMailModalModel>({
         step: MailImportStep.START,
         importID: currentImport?.ID || '',
@@ -129,7 +133,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
         errorCode: 0,
         errorLabel: '',
         providerFolders: [],
-        selectedPeriod: TIME_PERIOD.BIG_BANG,
+        selectedPeriod: defaultPeriod,
         payload: {
             AddressID: addresses[0].ID,
             Mapping: [],
