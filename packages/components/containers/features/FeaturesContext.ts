@@ -62,7 +62,6 @@ export enum FeatureCode {
     PaymentsDisabled = 'PaymentsDisabled',
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     MailServiceWorker = 'MailServiceWorker',
-    EORedesign = 'EORedesign',
     Drawer = 'Drawer',
     SpotlightDrawer = 'SpotlightDrawer',
     RebrandingFeedbackEnabled = 'RebrandingFeedbackEnabled',
