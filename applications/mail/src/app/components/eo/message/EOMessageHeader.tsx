@@ -50,7 +50,7 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
                 !canReply && 'flex-justify-space-between',
             ])}
         >
-            <h1 className="text-ellipsis m0 eo-layout-title" title={subject}>
+            <h1 className="text-ellipsis m0 eo-layout-title" title={subject} data-testid="eo:subject">
                 {subject}
             </h1>
             {canReply ? (
