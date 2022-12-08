@@ -8,7 +8,7 @@ import { SelectChangeEvent } from '@proton/components/components/selectTwo/selec
 import {
     FeatureCode,
     SettingsLayoutLeft,
-    SettingsSection,
+    SettingsSectionWide,
     useCalendarModelEventManager,
 } from '@proton/components/containers';
 import {
@@ -114,7 +114,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
     }
 
     return (
-        <SettingsSection large className="container-section-sticky-section">
+        <SettingsSectionWide className="container-section-sticky-section">
             <div className="h2 mb0-25 text-bold">{c('Default calendar event settings section title')
                 .t`Default event settings`}</div>
             {showDuration && (
@@ -224,7 +224,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
-        </SettingsSection>
+        </SettingsSectionWide>
     );
 };
 
