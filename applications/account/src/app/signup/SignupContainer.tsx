@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
-import { FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
+import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import {
@@ -12,6 +12,7 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
+    useExperiment,
     useFeature,
     useLoading,
     useLocalState,
@@ -163,6 +164,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const [myLocation] = useMyLocation();
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
+    const multipleUpsellExperiment = useExperiment(ExperimentCode.MultipleUpsell);
     const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
         SignupSteps.AccountCreationUsername,
@@ -482,14 +484,14 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         }
 
         if (toApp === APPS.PROTONDRIVE) {
-            if (!isTinyMobile) {
+            if (multipleUpsellExperiment.value === 'B' && !isTinyMobile) {
                 // Show most popular plan
                 return { upsellPlanName: PLANS.BUNDLE, mostPopularPlanName: PLANS.DRIVE };
             }
 
             return { upsellPlanName: PLANS.DRIVE };
         }
-        
+
         if (isPassPlusEnabled && toApp === APPS.PROTONPASS) {
             return { upsellPlanName: PLANS.PASS_PLUS };
         }
@@ -750,6 +752,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             {step === Upsell && (
                 <UpsellStep
                     isPassPlusEnabled={isPassPlusEnabled}
+                    experiment={multipleUpsellExperiment}
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
                     cycle={model.subscriptionData.cycle}
