@@ -3302,6 +3302,9 @@
       "Trusted keys are not valid for sending": [
         "Kunci terpercaya tidak valid untuk mengirim"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Cobalah untuk menggunakan hanya huruf, angka, dan tanda _.-"
+      ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
@@ -6101,6 +6104,9 @@
       "Mailbox password": [
         "Kata sandi kotak pesan"
       ],
+      "Main": [
+        "Utama"
+      ],
       "Manage categories": [
         "Kelola kategori"
       ],
@@ -6271,6 +6277,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Ke: ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "Toolbar"
       ],
       "Two-factor authentication code": [
         "Kode otentikasi dua faktor"
@@ -6572,17 +6581,17 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ itemsToImportCount } folder sejak ${ periodFragment } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ itemsToImportCount } label sejak ${ periodFragment } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ totalLabelsCount } folder yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ selectedItemsToImportCount } folder terpilih (dari total ${ itemsToImportCount } folder sejak ${ periodFragment }) dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ selectedItemsToImportCount } label terpilih (dari total ${ itemsToImportCount } label sejak ${ periodFragment }) dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -7304,7 +7313,7 @@
     },
     "Side panel spotlight": {
       "Manage your contacts and view your calendar without leaving your app.": [
-        "Kelola kontak Anda dan lihat kalender Anda tanpa meninggalkan aplikasi."
+        "Kelola kontak dan lihat kalender Anda tanpa meninggalkan aplikasi."
       ],
       "Try the new side panel": [
         "Coba panel samping kami yang baru"
@@ -8349,6 +8358,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "Kata sandi harus mengandung minimal ${ length } karakter"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     },
     "Video control": {

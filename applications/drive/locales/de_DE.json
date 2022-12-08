@@ -2111,6 +2111,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
+      ],
       "Unknown error": [
         "Unbekannter Fehler"
       ],
@@ -3405,9 +3408,6 @@
       "No synced computers": [
         "Keine synchronisierten Computer"
       ],
-      "No synced folder": [
-        "Kein synchronisierter Ordner"
-      ],
       "No synced folders": [
         "Keine synchronisierten Ordner"
       ],
@@ -4287,6 +4287,9 @@
       "To: ${ PMEmailAddress }": [
         "An: ${ PMEmailAddress }"
       ],
+      "Toolbar": [
+        "Symbolleiste"
+      ],
       "Two-factor authentication code": [
         "Zwei-Faktor-Authentifizierungscode"
       ],
@@ -4420,24 +4423,6 @@
       ],
       "Your import is starting": [
         "Dein Datenimport wird gestartet"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Ordner seit ${ periodFragment } importieren und als \"${ LABEL_MARKUP_PLACEHOLDER }\" kategorisieren.",
-        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Ordnern seit ${ periodFragment } importieren und als \"${ LABEL_MARKUP_PLACEHOLDER }\" kategorisieren."
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorie seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren.",
-        "Alle Nachrichten aus ${ selectedLabelsCount }/${ totalLabelsCount } Kategorien seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren."
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importiere alle Nachrichten aus ${ totalLabelsCount } der ${ periodFragment } und kategorisiere sie als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }” kategorisieren.",
-        "Alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } importieren und als „${ LABEL_MARKUP_PLACEHOLDER }“ kategorisieren."
       ]
     },
     "Message": {
@@ -5935,6 +5920,10 @@
       "Password must contain at least ${ length } character": [
         "Das Passwort muss mindestens ${ length } Zeichen enthalten",
         "Das Passwort muss mindestens ${ length } Zeichen enthalten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
       ]
     },
     "Validation Error": {

@@ -542,7 +542,7 @@
     },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
-        "Partager avec les utilisateurs ${ BRAND_NAME }"
+        "Partager avec des personnes qui utilisent ${ BRAND_NAME }"
       ],
       "Share with anyone": [
         "Partager avec tout le monde"
@@ -579,7 +579,7 @@
         "${ title } a commencé le ${ formattedDateWithoutTime }."
       ],
       "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } a commencé le ${ formattedDateWithTime }"
+        "${ title } a commencé le ${ formattedDateWithTime }."
       ],
       "${ title } started yesterday": [
         "${ title } a commencé hier."
@@ -594,10 +594,10 @@
         "${ title } commence maintenant."
       ],
       "${ title } starts on ${ formattedDate }": [
-        "${ title } commence le ${ formattedDate }"
+        "${ title } commence le ${ formattedDate }."
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } commence le ${ formattedDate } à ${ formattedHour }"
+        "${ title } commence le ${ formattedDate } à ${ formattedHour }."
       ],
       "${ title } starts on ${ formattedDateWithoutTime }": [
         "${ title } commence le ${ formattedDateWithoutTime }."
@@ -623,7 +623,7 @@
         "En quittant maintenant, certains événements pourraient ne pas être importés."
       ],
       "By leaving now, you will lose your event.": [
-        "En partant maintenant, vous perdrez votre événement."
+        "En quittant maintenant, vous perdrez votre événement."
       ]
     },
     "Apps dropdown": {
@@ -812,10 +812,10 @@
         "Gérer les membres"
       ],
       "Unable to create more calendar links": [
-        "Impossible de créer d'autres liens de calendrier"
+        "Il n'est pas possible de créer d'autres liens de calendrier."
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
-        "Impossible de partager ce calendrier avec plus d'utilisateurs ${ BRAND_NAME }"
+        "Il n'est pas possible de partager ce calendrier avec plus d'utilisateurs ${ BRAND_NAME }."
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
         "Vous avez atteint le maximum d'${ MAX_CALENDAR_MEMBERS } membre pour ce calendrier.\nPour partager ce calendrier avec plus de comptes ${ BRAND_NAME }, retirez un ou plusieurs membres actuels.",
@@ -1845,13 +1845,13 @@
     },
     "Custom frequency option": {
       "After repeating…": [
-        "Après la répétition…"
+        "Après (nombre de répétitions)"
       ],
       "Never": [
         "Jamais"
       ],
       "On date…": [
-        "À la date…"
+        "Le (date)"
       ],
       "time": [
         "fois",
@@ -1927,7 +1927,7 @@
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus grand, nous vous invitons à le diviser en plusieurs fichiers plus petits."
+        "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Vous pouvez marquer pour suppression les contacts que vous ne voulez ni fusionner ni conserver. Leur suppression n'aura lieu qu'après avoir cliqué sur le bouton de fusion."
@@ -1953,7 +1953,7 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        "L'événement appartient à un calendrier désactivé."
+        "L'événement est lié à un calendrier désactivé."
       ]
     },
     "Don't ask to update timezone checkbox label": {
@@ -2133,7 +2133,7 @@
         "La date de fin ne peut pas être vide."
       ],
       "Ends on date must be after start time": [
-        "La date de fin doit être après la date de début."
+        "La date de fin doit être après celle de début."
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
@@ -2401,7 +2401,7 @@
         "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Votre fichier ${ formattedFilename } a un format non valide et ne peut pas être importé."
+        "Le format de votre fichier ${ formattedFilename } n'est pas valide et ne peut pas être importé."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Votre fichier ${ formattedFilename } n'a pas d'événements à importer."
@@ -2446,7 +2446,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Format incorrect. L’élément ne peut pas être lu."
+        "Le format n'est pas correct. L’élément ne peut pas être lu."
       ],
       "Calendar": [
         "Calendrier"
@@ -2547,7 +2547,7 @@
         "Erreur : ${ errorMessage }"
       ],
       "Invalid URL": [
-        "URL non valide"
+        "L'URL n'est pas valide."
       ],
       "Oops, something went wrong": [
         "Désolé, quelque chose s'est mal passé."
@@ -3244,7 +3244,7 @@
         "Une invitation sera envoyée aux participants ajoutés."
       ],
       "An invitation will be sent to the event participants.": [
-        "Une invitation sera envoyée aux participants de l'événement."
+        "Une invitation sera envoyée aux participants."
       ],
       "and": [
         "et"
@@ -3472,7 +3472,7 @@
         "Aucun résultat n'a été trouvé."
       ],
       "None of the participants can be notified about your changes:": [
-        "Aucun des participants ne peut être informé de vos modifications :"
+        "Aucun participant ne peut être informé de vos modifications :"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Aucune des clés téléchargées n'est valide pour le chiffrement. Pour pouvoir envoyer des messages à cette adresse, veuillez télécharger une clé valide ou désactiver l'option Chiffrer les e-mails."
@@ -3587,13 +3587,13 @@
         "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
       ],
       "The following participants cannot be notified about your changes:": [
-        "Les participants suivants ne peuvent pas être informés de vos modifications :"
+        "Ces participants ne peuvent pas être informés de vos modifications :"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "L’organisateur ne peut pas être informé que vous refusez l’invitation :"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        "L'organisateur ne peut pas être informé que vous souhaitez modifier votre réponse :"
+        "L'organisateur ne peut pas être informé que vous voulez modifier votre réponse :"
       ],
       "The organizer could not be notified that you changed your answer:": [
         "L'organisateur n'a pas pu être informé que vous avez modifié votre réponse :"
@@ -3692,13 +3692,13 @@
         "Voulez-vous changer votre réponse pour tous les événements de la série ?"
       ],
       "Would you like to continue anyway?": [
-        "Voulez-vous tout de même continuer ?"
+        "Voulez-vous quand même continuer ?"
       ],
       "Would you like to delete all the events in this series?": [
         "Voulez-vous supprimer tous les événements de cette série ?"
       ],
       "Would you like to delete the event anyway?": [
-        "Voulez-vous tout de même supprimer l’événement ?"
+        "Voulez-vous quand même supprimer l’événement ?"
       ],
       "Would you like to delete this event?": [
         "Voulez-vous supprimer cet événement ?"
@@ -3743,16 +3743,16 @@
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Vous avez réactivé vos clés et les événements liés aux calendriers suivants peuvent désormais être déchiffrés."
+        "Vous avez réactivé vos clés et les événements liés aux calendriers suivants peuvent être déchiffrés."
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Vous avez réinitialisé votre mot de passe et les événements liés aux calendriers suivants n'ont pas pu être déchiffrés.\nTous les liens de calendriers partagés que vous avez créés précédemment ne fonctionneront plus.\nTous les calendriers actifs souscrits se synchroniseront à nouveau après quelques minutes."
+        "Vous avez réinitialisé votre mot de passe et les événements liés aux calendriers suivants n'ont pas pu être déchiffrés.\nLes liens vers les calendriers partagés que vous avez précédemment créés ne fonctionneront plus.\nLes calendriers auxquels vous êtes abonné se synchroniseront de nouveau après quelques minutes."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Vous devez avoir un calendrier personnel actif pour importer vos événements."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
-        "Vous avez déjà refusé cette invitation. Demandez une nouvelle invitation à la personne qui vous a invité."
+        "Vous avez déjà refusé cette invitation. Demandez à l'organisateur de vous réinviter."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint ${ spaceDisplayed } % de votre capacité de stockage. ${ freeUpMessage } ${ upgradeLink }"
@@ -3837,7 +3837,7 @@
         "Accès"
       ],
       "Label (optional)": [
-        "Label (optionnel)"
+        "Label (facultatif)"
       ]
     },
     "Input placeholder": {
@@ -3885,10 +3885,10 @@
         "Ajouter au groupe"
       ],
       "All day": [
-        "Journée entière"
+        "Toute la journée"
       ],
       "All-day event notifications": [
-        "Notifications d'événement sur journée complète"
+        "Notifications pour les événements qui durent toute la journée"
       ],
       "App password": [
         "Mot de passe de l'application"
@@ -3978,7 +3978,7 @@
         "Chiffrer les e-mails"
       ],
       "Ends": [
-        "Se termine"
+        "Arrêter la répétition"
       ],
       "Event duration": [
         "Durée de l’événement"
@@ -4280,24 +4280,6 @@
         "Votre importation commence."
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ selectedLabelsCount } dossier sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ selectedLabelsCount } dossiers sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ selectedLabelsCount } label sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ selectedLabelsCount } labels sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ totalLabelsCount } dossier depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ totalLabelsCount } dossiers depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ totalLabelsCount } label depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ totalLabelsCount } labels depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }."
-      ]
-    },
     "Message": {
       "Fw:": [
         "Tr :"
@@ -4351,7 +4333,7 @@
         "Rejoindre le calendrier"
       ],
       "Unable to join more calendars": [
-        "Impossible de rejoindre d'autres calendriers"
+        "Il n'est pas possible de rejoindre d'autres calendriers."
       ]
     },
     "Modal title": {
@@ -4386,7 +4368,7 @@
         "Partager le calendrier"
       ],
       "Time zone changed": [
-        "Fuseau horaire modifié"
+        "Le fuseau horaire est modifié."
       ],
       "Unable to add more calendars": [
         "Impossible d'ajouter d'autres calendriers"
@@ -4572,7 +4554,7 @@
     },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
-        "Invitation au calendrier refusée"
+        "L'invitation au calendrier a été refusée."
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "Vous avez rejoint ${ calendarName } (${ senderEmail })"
@@ -4762,16 +4744,16 @@
         "Ne pas répéter"
       ],
       "Every day": [
-        "Tous les jours"
+        "Chaque jour"
       ],
       "Every month": [
-        "Tous les mois"
+        "Chaque mois"
       ],
       "Every week": [
-        "Toutes les semaines"
+        "Chaque semaine"
       ],
       "Every year": [
-        "Tous les ans"
+        "Chaque année"
       ],
       "Ignore group": [
         "Ignorer le groupe"
@@ -4978,7 +4960,7 @@
     },
     "Select search results": {
       "No results found": [
-        "Aucun résultat trouvé"
+        "Aucun résultat n'a été trouvé."
       ]
     },
     "Settings update growler warning": {
@@ -5009,7 +4991,7 @@
     },
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
-        "Partager avec les utilisateurs ${ BRAND_NAME }"
+        "Partager avec des personnes qui utilisent ${ BRAND_NAME }"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5340,7 +5322,7 @@
         "En utilisant ce lien, Google rendra public le calendrier auquel vous vous inscrivez."
       ],
       "This link might be wrong": [
-        "Ce lien est probablement incorrect."
+        "Ce lien est peut-être incorrect."
       ]
     },
     "Subscribed calendar feature unavailable error": {
@@ -5350,7 +5332,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "L'URL est trop longue"
+        "L'URL est trop longue."
       ]
     },
     "Success": {
@@ -5365,49 +5347,49 @@
         "Adresse copiée dans le presse-papiers"
       ],
       "All events deleted": [
-        "Tous les événements ont été supprimés"
+        "Tous les événements ont été supprimés."
       ],
       "All events updated": [
-        "Tous les événements ont été mis à jour"
+        "Tous les événements ont été mis à jour."
       ],
       "An invitation will be sent to added participants for all the events in this series.": [
         "Une invitation sera envoyée aux participants ajoutés pour tous les événements de cette série."
       ],
       "Answer sent and all events deleted": [
-        "Réponse envoyée et tous les événements supprimés"
+        "La réponse a été envoyée et tous les événements ont été supprimés."
       ],
       "Answer sent and event deleted": [
-        "Réponse envoyée et événement supprimé"
+        "La réponse a été envoyée et l'événement a été supprimé."
       ],
       "Bug reported": [
         "Bug signalé"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "Calendrier ajouté. La synchronisation peut prendre quelques minutes."
+        "Le calendrier a été ajouté. La synchronisation peut prendre quelques minutes."
       ],
       "Calendar created": [
-        "Calendrier créé"
+        "Le calendrier a été créé."
       ],
       "Calendar information updated": [
-        "Informations du calendrier actualisées"
+        "Les informations du calendrier ont été mises à jour."
       ],
       "Calendar updated": [
-        "Calendrier mis à jour"
+        "Le calendrier a été mis à jour."
       ],
       "Canceling import": [
         "Annulation de l'importation"
       ],
       "Cancellation sent and all events deleted": [
-        "Annulation envoyée et tous les événements supprimés"
+        "L'annulation a été envoyée et tous les événements ont été supprimés."
       ],
       "Cancellation sent and event deleted": [
-        "Annulation envoyée et événement supprimé"
+        "L'annulation a été envoyée et l'événement a été supprimé."
       ],
       "Cancellation sent and participants removed": [
-        "Annulation envoyée et participants supprimés"
+        "L'annulation a été envoyée et les participants ont été supprimés."
       ],
       "Cancellation sent and participants removed from all events": [
-        "Annulation envoyée et participants retirés de tous les événements"
+        "L'annulation a été envoyée et les participants ont été supprimés de tous les événements."
       ],
       "Code sent to ${ methodTo }": [
         "Code envoyé à ${ methodTo }."
@@ -5430,58 +5412,58 @@
         "Adresse électronique copiée dans le presse-papiers"
       ],
       "Event created": [
-        "Événement créé"
+        "L'événement a été créé."
       ],
       "Event deleted": [
-        "Événement supprimé"
+        "L'événement a été supprimé."
       ],
       "Event updated": [
-        "Événement mis à jour"
+        "L'événement a été mis à jour."
       ],
       "Events created": [
-        "Événements créés"
+        "Les événements ont été créés."
       ],
       "Fingerprint copied to clipboard": [
         "Empreinte copiée dans le presse-papier"
       ],
       "Future events deleted": [
-        "Événements futurs supprimés"
+        "Les événements suivants ont été supprimés."
       ],
       "Future events updated": [
-        "Événements futurs mis à jour"
+        "Les événements suivants ont été mis à jour."
       ],
       "Import record deleted": [
         "Enregistrement supprimé"
       ],
       "Invitation sent and all events updated": [
-        "Invitation envoyée et tous les événements mis à jour"
+        "L'invitation a été envoyée et tous les événements ont été mis à jour."
       ],
       "Invitation sent and event created": [
-        "Invitation envoyée et événement créé"
+        "L'invitation a été envoyée et l'événement a été créé."
       ],
       "Invitation sent and events created": [
-        "Invitation envoyée et événements créés"
+        "L'invitation a été envoyée et les événements ont été créés."
       ],
       "Invitation sent and participants added": [
-        "Invitation envoyée et participants ajoutés"
+        "L'invitation a été envoyée et les participants ont été ajoutés."
       ],
       "Invitation sent and participants added to all events": [
-        "Invitation envoyée et participants ajoutés à tous les événements"
+        "L'invitation a été envoyée et les participants ont été ajoutés à tous les événements."
       ],
       "Participants notified and all events updated": [
-        "Participants informés et tous les événements mis à jour"
+        "Les participants ont été informés et tous les événements ont été mis à jour."
       ],
       "Participants notified and changes saved": [
-        "Participants informés et modifications enregistrées"
+        "Les participants ont été informés et les modifications ont été enregistrées."
       ],
       "Participants notified and event updated": [
-        "Participants informés et événement mis à jour"
+        "Les participants ont été informés et l'événement a été mis à jour."
       ],
       "Participation status updated": [
-        "Statut de participation mis à jour"
+        "Le statut de participation a été mis à jour."
       ],
       "Participation status updated for all events": [
-        "Statut de participation mis à jour pour tous les événements"
+        "Le statut de participation a été mis à jour pour tous les événements."
       ],
       "Phone number copied to clipboard": [
         "Numéro de téléphone copié dans le presse-papiers"
@@ -5611,7 +5593,7 @@
         "Ajouter un titre d’événement"
       ],
       "Add more information related to this event": [
-        "Ajoutez plus d’informations relatives à cet événement."
+        "Ajouter plus d'informations sur cet événement."
       ],
       "Add participants": [
         "Ajouter des participants"
@@ -5885,7 +5867,7 @@
         "Sélectionnez le mode d’envoi de cette notification."
       ],
       "Select when this event will stop happening": [
-        "Sélectionnez quand cet événement cessera de se produire."
+        "Sélectionnez quand cet événement arrêtera de se produire."
       ],
       "Select when you want this notification to be sent": [
         "Sélectionnez le moment où cette notification doit être envoyée."
@@ -5948,7 +5930,7 @@
         "Nouveautés"
       ],
       "You have invited participants with equivalent emails": [
-        "Vous avez invité des participants avec des adresses électroniques similaires."
+        "Vous avez invité des participants avec des adresses électroniques identiques."
       ],
       "Your calendar link": [
         "Lien de votre calendrier"

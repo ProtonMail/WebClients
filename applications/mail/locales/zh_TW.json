@@ -812,6 +812,9 @@
       "Save": [
         "儲存"
       ],
+      "Saving${ ellipsis }": [
+        "正在儲存${ ellipsis }"
+      ],
       "Schedule message": [
         "排程訊息"
       ],
@@ -1514,6 +1517,9 @@
       "Event rescheduling is not supported for the moment": [
         "暫未支援事件重新排程"
       ],
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "此回答未能加入至 ${ CALENDAR_APP_NAME }，因為我們暫時僅支援回答一系列中的全部事件"
+      ],
       "This event has been canceled.": [
         "此事件已取消。"
       ],
@@ -1600,6 +1606,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "從上次更新以來已經過了超過12小時 — ${ CALENDAR_APP_NAME } 將會嘗試在幾個小時內更新日曆。"
       ]
     },
     "Calendar widget banner": {
@@ -3101,6 +3110,9 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "可容許的附件數量 (${ attachmentsCountLimit }) 已達上限"
       ],
+      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "請至少將 ${ calendarToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
+      ],
       "Message needs to be sent first": [
         "需要先傳送郵件"
       ],
@@ -3229,6 +3241,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
+      ],
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "抱歉，${ BRAND_NAME } 無法解密您的郵件。請檢查您所有的金鑰是否在使用中。"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "此資料夾名稱無法使用。請換另一個名稱。"
@@ -3776,6 +3791,12 @@
       ],
       "From: ${ senderString }": [
         "寄件者: ${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "主旨：${ subject }"
+      ],
+      "To: ${ toString }": [
+        "收件人：${ toString }"
       ]
     },
     "Get started checklist completion": {
@@ -4115,6 +4136,30 @@
       ],
       "Select ${ boldExportCSV }.": [
         "選取匯出 ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "要匯入行事曆到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "要匯入行事曆到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "要匯入行事曆到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "要匯入聯絡人到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "要匯入聯絡人到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "要匯入聯絡人到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "要匯入電子郵件到 ${ BRAND_NAME }，您需要來自 Outlook 的 ${ appPasswordLink }。請按照以下步驟取得："
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "要匯入電子郵件到 ${ BRAND_NAME }，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
       ]
     },
     "Import instructions emphasis": {
@@ -4885,6 +4930,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "沒有發現追蹤程式，但追蹤保護啟用時即無法載入某些圖像"
       ],
+      "non-${ MAIL_APP_NAME }": [
+        "非 ${ MAIL_APP_NAME }"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "上載的金鑰皆無法用於加密。為能夠傳送郵件至此電郵位址，請上載有效的金鑰或是停用「加密電郵」。"
       ],
@@ -5335,11 +5383,17 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL：${ unsubscribeMethods.HttpClient }"
       ],
+      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
+        "使用 ${ CALENDAR_APP_NAME } 保護您的議程隱私。"
+      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用鍵盤快捷鍵來更快管理您的電郵。"
       ],
       "Using SimpleLogin is easy": [
         "使用 SimpleLogin 很簡單"
+      ],
+      "Verified ${ BRAND_NAME } message": [
+        "驗證過的 ${ BRAND_NAME } 訊息"
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
@@ -5400,6 +5454,9 @@
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "您可以將其添加為附件或是在內文中顯示。"
+      ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "你也可以將匯入的行事曆與現有的 ${ BRAND_NAME } 行事曆合併。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
@@ -5476,6 +5533,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您編寫了「${ attachmentsFoundKeyword }」，但沒有加入對應的附件。無論如何寄出此封郵件？"
       ],
+      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "您的 ${ BRAND_NAME } 帳號包含 SimpleLogin。安裝瀏覽器擴充套件就可以快速開始。"
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
       ],
@@ -5490,6 +5550,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "由於出現多於一張逾期帳單，您的帳號將受限制。持續欠款將封鎖您的電郵和共享連結。 ${ payInvoiceLink }"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "您的電郵位址毋需變更。 不過日後就得在 ${ link } 進行登入。"
@@ -6388,6 +6451,12 @@
       "More about recovery": [
         "更多有關於復原部份"
       ],
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "於 ${ CALENDAR_APP_NAME } 開啟"
+      ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "在 ${ CALENDAR_APP_NAME } 中開啟已更新的事件"
+      ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "又或者，您可以刪除您的其中一個行事曆，並建立一個連結到使用中電郵位址的新行事曆。"
       ],
@@ -6426,6 +6495,9 @@
       ],
       "Terms": [
         "條款"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "此 ICS 檔案包含超過一個以上的事件。請下載後並在 ${ CALENDAR_APP_NAME } 中匯入事件"
       ],
       "Trash": [
         "垃圾桶"
@@ -6494,20 +6566,6 @@
         "您的匯入程序已開始"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ totalLabelsCount } 個資料夾匯入 ${ selectedLabelsCount } 個資料夾中自 ${ periodFragment } 以來的所有訊息，並將它們標記為 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入全部 ${ totalLabelsCount } 個標籤中的 ${ selectedLabelsCount } 個最近 ${ periodFragment } 的訊息並將其貼上標籤： ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入${ periodFragment } 迄今來自 ${ totalLabelsCount } 資料夾的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ totalLabelsCount } 個標籤匯入最近 ${ periodFragment } 的訊息並將其貼上標籤： ${ LABEL_MARKUP_PLACEHOLDER }"
-      ]
-    },
     "Mailbox": {
       "Archive": [
         "封存"
@@ -6534,6 +6592,9 @@
     "Message": {
       "Fw:": [
         "轉寄:"
+      ],
+      "On ${ date }, ${ senderString } wrote:": [
+        "在 ${ date }，${ senderString } 寫道："
       ],
       "Re:": [
         "Re:"
@@ -6768,6 +6829,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } 已建立"
+      ],
       "Block removed": [
         "封鎖已移除"
       ],
@@ -6785,6 +6849,11 @@
       ],
       "Senders blocked": [
         "寄件者已封鎖"
+      ]
+    },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "接下來，您將必須登入您的 Google 帳號，並同意 ${ BRAND_NAME } 存取您的資料。"
       ]
     },
     "Oauth instructions video": {
@@ -6820,6 +6889,9 @@
       ],
       "Set up your organization": [
         "設定您的組織"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "使用左上角的應用程式選取器存取所有的 ${ BRAND_NAME } 服務：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
       ],
       "You can change this anytime in your settings.": [
         "您隨時都可以在設定中變更。"
@@ -7220,6 +7292,12 @@
       ]
     },
     "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP 加密郵件。寄件人驗證失敗：${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP 簽署郵件。寄件人驗證失敗：${ verificationErrorsMessage }"
+      ],
       "Sender could not be verified: Message not signed": [
         "寄件人無法驗證：郵件未經簽署"
       ],
@@ -7262,6 +7340,9 @@
       ],
       "Message Content Search": [
         "郵件內文搜尋"
+      ],
+      "Schedule send": [
+        "排程傳送"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試看 ${ DRIVE_APP_NAME }"
@@ -8249,6 +8330,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "密碼至少必須包含 ${ length } 個字元"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
       ]
     },
     "Video control": {
@@ -8316,6 +8400,12 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "此動作無法復原。請在欄位輸入「${ boldDanger }」一詞以繼續。"
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "此功能僅限付費 ${ BRAND_NAME } 帳號使用"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "此匯入可能超出您的 ${ BRAND_NAME } 帳號中目前可用的儲存空間。請考慮自訂您的匯入。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"

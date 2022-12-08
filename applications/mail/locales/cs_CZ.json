@@ -3365,6 +3365,9 @@
       "Trusted keys are not valid for sending": [
         "Důvěryhodné klíče nejsou použitelné pro odesílání"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Zkuste používat pouze písmena, číslice a _.-"
+      ],
       "Unknown error": [
         "Neznámá chyba"
       ],
@@ -6420,6 +6423,9 @@
       "Mailbox password": [
         "Heslo k poštovní schránce"
       ],
+      "Main": [
+        "Hlavní"
+      ],
       "Manage categories": [
         "Zpravovat kategorie"
       ],
@@ -6590,6 +6596,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Komu: ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "Panel nástrojů"
       ],
       "Two-factor authentication code": [
         "Kód dvoufázového ověření"
@@ -6891,29 +6900,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } složky za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } ze ${ totalLabelsCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy z ${ itemsToImportCount } složky za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ze ${ itemsToImportCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy ${ itemsToImportCount } štítku za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ itemsToImportCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ itemsToImportCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ itemsToImportCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy z ${ totalLabelsCount } složky od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ze ${ totalLabelsCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ totalLabelsCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ totalLabelsCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } složky od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } ze ${ itemsToImportCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítku za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } ze ${ itemsToImportCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -8842,6 +8851,12 @@
         "Heslo musí obsahovat alespoň ${ length } znaky",
         "Heslo musí obsahovat alespoň ${ length } znaků",
         "Heslo musí obsahovat alespoň ${ length } znaků"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ]
     },
     "Video control": {

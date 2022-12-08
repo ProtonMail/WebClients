@@ -198,9 +198,6 @@
       "Create account": [
         "Hesap ekle"
       ],
-      "Create accounts": [
-        "Hesaplar ekle"
-      ],
       "Create calendar": [
         "Takvim ekle"
       ],
@@ -212,6 +209,9 @@
       ],
       "Create link": [
         "Bağlantı oluştur"
+      ],
+      "Create users": [
+        "Kullanıcılar ekle"
       ],
       "Create your own": [
         "Kendinizinkini oluşturun"
@@ -3184,6 +3184,9 @@
       "Trusted keys are not valid for sending": [
         "Güvenilen anahtarlar gönderim için geçerli değil"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Sadece harf, rakam ve _.- kullanmayı deneyin"
+      ],
       "Unknown error": [
         "Bilinmeyen hata"
       ],
@@ -5602,6 +5605,10 @@
         "Şu adres kullanılamıyor.",
         "Şu adresler kullanılamıyor."
       ],
+      "The following address was not created.": [
+        "Şu adres eklenemedi.",
+        "Şu adresler eklenemedi."
+      ],
       "The format of your CSV file is incorrect.": [
         "CSV dosyanız doğru biçimde değil."
       ],
@@ -6989,6 +6996,9 @@
       "Mailbox password": [
         "Posta kutusu parolası"
       ],
+      "Main": [
+        "Ana"
+      ],
       "Manage categories": [
         "Kategori yönetimi"
       ],
@@ -7594,24 +7604,6 @@
         "Kimlik doğrulama günlükleri tutulsun"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ selectedLabelsCount } / ${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ selectedLabelsCount } / ${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
-      ]
-    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Her takvim için en fazla ${ MAX_LINKS_PER_CALENDAR } bağlantı oluşturabilirsiniz. Bu takvime yeni bir bağlantı oluşturmak için aşağıdaki listeden birini silin.",
@@ -8185,26 +8177,6 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -8274,6 +8246,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -8912,20 +8904,20 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "Daha fazla depolama alanı almak için ${ upgradeLink } ya da yer açmak için bazı depolama alanlarını silin."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } address.": [
-        "Tarifenizle en fazla ${ availableAddresses } adres ekleyebilirsiniz.",
-        "Tarifenizle en fazla ${ availableAddresses } adres ekleyebilirsiniz."
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Tarifenizle en fazla ${ availableAddresses } adres daha ekleyebilirsiniz.",
+        "Tarifenizle en fazla ${ availableAddresses } adres daha ekleyebilirsiniz."
       ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
-        "Tarifenizle en fazla ${ availableNumberOfMembers } kuruluş kullanıcısı ekleyebilirsiniz.",
-        "Tarifenizle en fazla ${ availableNumberOfMembers } kuruluş kullanıcısı ekleyebilirsiniz."
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Tarifenizle en fazla ${ availableNumberOfMembers } kuruluş kullanıcısı daha ekleyebilirsiniz.",
+        "Tarifenizle en fazla ${ availableNumberOfMembers } kuruluş kullanıcısı daha ekleyebilirsiniz."
       ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
-        "Tarifenizle en fazla ${ availableVPNAccess } VPN hesabı ekleyebilirsiniz.",
-        "Tarifenizle en fazla ${ availableVPNAccess } VPN hesabı ekleyebilirsiniz."
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Tarifenizle en fazla ${ availableVPNAccess } VPN hesabı daha ekleyebilirsiniz.",
+        "Tarifenizle en fazla ${ availableVPNAccess } VPN hesabı daha ekleyebilirsiniz."
       ],
-      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
-        "Tarifenizle en fazla ${ humanReadableAvailableSpace } depolama alanı kullanabilirsiniz."
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Tarifenizle en fazla ${ humanReadableAvailableSpace } depolama alanı daha kullanabilirsiniz."
       ]
     },
     "OS compatibility": {
@@ -10091,6 +10083,10 @@
       "Couldn’t create accounts": [
         "Hesaplar eklenemedi"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } kullanıcıyı ekle",
+        "${ selectedUserIds.length } kullanıcıyı ekle"
+      ],
       "Create multiple user accounts": [
         "Birkaç kullanıcı hesabı ekle"
       ],
@@ -10258,6 +10254,10 @@
       ],
       "External PGP settings": [
         "Dış PGP ayarları"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } kullanıcı hesabı eklenemedi.",
+        "${ failedUsers.length } kullanıcı hesabı eklenemedi."
       ],
       "Filters": [
         "Süzgeçler"
@@ -10586,6 +10586,10 @@
       ],
       "Success": [
         "Başarılı"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "${ localSuccessfullyCreatedUsers.length } kullanıcı hesabı eklendi",
+        "${ localSuccessfullyCreatedUsers.length } kullanıcı hesabı eklendi"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "${ successfullyCreatedUsers.length } kullanıcı hesabı eklendi",

@@ -4089,6 +4089,11 @@
         "${ Label.Name } が作成されました"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "サイドパネル"
+      ]
+    },
     "Link": {
       "Calendars": [
         "カレンダー"
@@ -4144,20 +4149,6 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount }件中${ selectedLabelsCount }件のメールを${ periodFragment }からインポートし、${ LABEL_MARKUP_PLACEHOLDER }のラベルを付ける"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount } つの内 ${ selectedLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
-      ],
-      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ periodFragment }からのメール全てを${ totalLabelsCount }からインポートし、${ LABEL_MARKUP_PLACEHOLDER }のラベルを付ける"
-      ],
-      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ]
     },
     "Message": {
@@ -4827,6 +4818,9 @@
       ]
     },
     "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "アプリから去ることなく連絡先を管理したり、カレンダーを表示できます。"
+      ],
       "Try the new side panel": [
         "新しいサイドパネルを試す"
       ]

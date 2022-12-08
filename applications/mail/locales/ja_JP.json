@@ -3222,6 +3222,11 @@
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
+        "1 つの招待につき ${ MAX_ATTENDEES } 人までが許可されています"
+      ]
+    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "下書きを受信トレイに移動することはできません"
@@ -6222,6 +6227,11 @@
         "${ Label.Name } が作成されました"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "サイドパネル"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "列"
@@ -6410,20 +6420,6 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount }件中${ selectedLabelsCount }件のメールを${ periodFragment }からインポートし、${ LABEL_MARKUP_PLACEHOLDER }のラベルを付ける"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount } つの内 ${ selectedLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
-      ],
-      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ periodFragment }からのメール全てを${ totalLabelsCount }からインポートし、${ LABEL_MARKUP_PLACEHOLDER }のラベルを付ける"
-      ],
-      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ]
     },
     "Mailbox": {
@@ -7131,6 +7127,9 @@
       ]
     },
     "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "アプリから去ることなく連絡先を管理したり、カレンダーを表示できます。"
+      ],
       "Try the new side panel": [
         "新しいサイドパネルを試す"
       ]
