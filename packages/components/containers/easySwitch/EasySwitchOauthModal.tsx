@@ -61,6 +61,7 @@ import {
     useFolders,
     useGetAddressKeys,
     useLabels,
+    useUser,
 } from '../../hooks';
 import useOAuthPopup from '../../hooks/useOAuthPopup';
 import { FeatureCode } from '../features';
@@ -101,6 +102,7 @@ const EasySwitchOauthModal = ({
     provider = OAUTH_PROVIDER.GOOGLE,
     ...rest
 }: Props) => {
+    const [user] = useUser();
     const useNewScopeFeature = useFeature(FeatureCode.EasySwitchGmailNewScope);
     const activeAddresses = getActiveAddresses(addresses);
     const getAddressKeys = useGetAddressKeys();
@@ -121,6 +123,8 @@ const EasySwitchOauthModal = ({
 
     const isInitLoading = loadingLabels || loadingFolders || loadingCalendars || loadingConfig;
 
+    const defaultPeriod = user.isFree ? TIME_PERIOD.LAST_3_MONTHS : TIME_PERIOD.BIG_BANG;
+
     const [modalModel, setModalModel] = useState<IAOauthModalModel>({
         step: AUTHENTICATION,
         AddressID: addresses[0].ID,
@@ -132,7 +136,7 @@ const EasySwitchOauthModal = ({
         data: {
             importerID: '',
             [MAIL]: {
-                selectedPeriod: TIME_PERIOD.BIG_BANG,
+                selectedPeriod: defaultPeriod,
                 providerFolders: [],
             },
             [CALENDAR]: {
