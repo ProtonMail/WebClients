@@ -100,6 +100,7 @@ const RecipientItemSingle = ({
                             label={label}
                             closeDropdown={close}
                             bimiSelector={message?.data?.BimiSelector || undefined}
+                            isOutside={isOutside}
                         />
                         {customDropdownActions}
                     </DropdownMenu>
