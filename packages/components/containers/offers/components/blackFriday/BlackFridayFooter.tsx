@@ -6,7 +6,7 @@ import { getDiscount } from '../../helpers/dealPrices';
 import { getRenewDescription } from '../../helpers/offerCopies';
 import { OfferProps } from '../../interface';
 
-const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
+const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
     return (
         <div className="mb1">
             {offer.deals.map((deal) => {
@@ -44,4 +44,4 @@ const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
     );
 };
 
-export default BlackFridayMailFooter;
+export default BlackFridayFooter;
