@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/components';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { DecryptedLink, useLinks } from '../_links';
-import { reportError } from '../_utils';
 
 /**
  * useLinksDetailsView loads links if not cached yet and provides some
@@ -28,7 +28,7 @@ export default function useLinksDetailsView(selectedLinks: DecryptedLink[]) {
                 })
                 .catch((err) => {
                     setError(err);
-                    reportError(err);
+                    sendErrorReport(err);
                 })
         );
         return () => {

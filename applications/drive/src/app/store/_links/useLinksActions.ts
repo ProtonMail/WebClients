@@ -15,10 +15,10 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import chunk from '@proton/utils/chunk';
 import groupWith from '@proton/utils/groupWith';
 
+import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
-import { ValidationError } from '../_utils';
 import useLink from './useLink';
 import useLinks from './useLinks';
 import useLinksState from './useLinksState';

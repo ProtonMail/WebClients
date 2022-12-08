@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { useLoading } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
-import { reportError } from '../_utils';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
@@ -31,7 +31,7 @@ export default function useSharedLinksView(shareId: string) {
 
     useEffect(() => {
         const ac = new AbortController();
-        void withLoading(linksListing.loadLinksSharedByLink(ac.signal, shareId).catch(reportError));
+        void withLoading(linksListing.loadLinksSharedByLink(ac.signal, shareId).catch(sendErrorReport));
         return () => {
             ac.abort();
         };
