@@ -4,7 +4,7 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
-import { ValidationError } from '../../_utils';
+import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import { WAIT_TIME } from '../constants';
 import {
     ChildrenLinkMeta,

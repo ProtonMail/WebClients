@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/components/hooks';
 
-import { reportError } from '../_utils';
+import { sendErrorReport } from '../../utils/errorHandling';
 import { DevicesState } from './interface';
 import useDevicesApi from './useDevicesApi';
 
@@ -49,7 +49,7 @@ export function DevicesListingProvider({ children }: { children: React.ReactNode
 
     useEffect(() => {
         const ac = new AbortController();
-        value.loadDevices(ac.signal).catch(reportError);
+        value.loadDevices(ac.signal).catch(sendErrorReport);
 
         return () => {
             ac.abort();

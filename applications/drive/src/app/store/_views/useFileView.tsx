@@ -3,11 +3,11 @@ import { useCallback, useEffect, useState } from 'react';
 import { useLoading } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
+import { isIgnoredError, logError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
 import { useDownload, useDownloadProvider } from '../_downloads';
 import { DecryptedLink, useLink, useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
-import { isIgnoredError, logError } from '../_utils';
 import { useAbortSignal, useControlledSorting, useMemoArrayNoMatterTheOrder } from './utils';
 
 /**

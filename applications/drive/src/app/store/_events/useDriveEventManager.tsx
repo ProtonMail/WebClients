@@ -7,8 +7,8 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Api } from '@proton/shared/lib/interfaces';
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
+import { logError } from '../../utils/errorHandling';
 import { driveEventsResultToDriveEvents } from '../_api';
-import { logError } from '../_utils';
 import { EventHandler } from './interface';
 
 const DRIVE_EVENT_HANDLER_ID_PREFIX = 'drive-event-handler';

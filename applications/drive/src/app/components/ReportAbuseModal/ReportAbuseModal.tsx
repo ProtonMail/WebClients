@@ -21,7 +21,7 @@ import {
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-import { reportError } from '../../store/_utils';
+import { sendErrorReport } from '../../utils/errorHandling';
 import { FileCard } from './FileCard';
 import { AbuseCategory, AbuseCateroryType, AbuseFormProps, ReportAbuseRequestPayload } from './types';
 
@@ -98,7 +98,7 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
             onClose?.();
         } catch (e) {
             createNotification({ text: c('Error').t`Report failed to be sent`, type: 'error' });
-            reportError(e);
+            sendErrorReport(e);
         }
     };
 

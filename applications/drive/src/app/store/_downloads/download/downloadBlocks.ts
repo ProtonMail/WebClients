@@ -12,10 +12,10 @@ import orderBy from '@proton/utils/orderBy';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { waitUntil } from '../../../utils/async';
+import { logError } from '../../../utils/errorHandling';
+import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
-import { logError } from '../../_utils';
-import { ValidationError } from '../../_utils';
 import { MAX_DOWNLOADING_BLOCKS, MAX_RETRIES_BEFORE_FAIL, TIME_TO_RESET_RETRIES } from '../constants';
 import { DownloadCallbacks, DownloadStreamControls } from '../interface';
 import downloadBlock from './downloadBlock';

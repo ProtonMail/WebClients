@@ -2,7 +2,7 @@ import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { isIgnoredError } from '../_utils';
+import { isIgnoredError } from '../../utils/errorHandling';
 import { DecryptedLink, EncryptedLink } from './interface';
 import useLink from './useLink';
 

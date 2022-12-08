@@ -10,7 +10,7 @@ import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useLinkPath } from '../../store';
 import { Share, ShareType, useShare } from '../../store/_shares';
-import { reportError } from '../../store/_utils';
+import { sendErrorReport } from '../../utils/errorHandling';
 import SignatureIcon from '../SignatureIcon';
 import { getDevicesSectionName } from '../sections/Devices/constants';
 
@@ -87,7 +87,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                 setBreadcrumbs(breadcrumbs);
             })
             .catch((err: any) => {
-                reportError(err);
+                sendErrorReport(err);
             });
 
         return () => {
@@ -101,7 +101,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
             .then((share) => {
                 setRootShare(share);
             })
-            .catch(reportError);
+            .catch(sendErrorReport);
         return () => {
             abortController.abort();
         };
