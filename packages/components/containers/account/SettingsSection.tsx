@@ -2,12 +2,8 @@ import { ComponentPropsWithoutRef } from 'react';
 
 import { classnames } from '../../helpers';
 
-interface Props extends ComponentPropsWithoutRef<'div'> {
-    large?: boolean;
-}
-
-const SettingsSection = ({ className, large, ...rest }: Props) => {
-    return <div className={classnames([large ? 'max-w60e' : 'max-w46e', className])} {...rest} />;
+const SettingsSection = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => {
+    return <div className={classnames(['max-w46e', className])} {...rest} />;
 };
 
 export default SettingsSection;

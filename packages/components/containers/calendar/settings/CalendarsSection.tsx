@@ -8,7 +8,7 @@ import { UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { Alert, PrimaryButton, SettingsLink, Tooltip } from '../../../components';
-import { SettingsSection } from '../../account';
+import { SettingsSectionWide } from '../../account';
 import CalendarsTable from './CalendarsTable';
 
 export interface CalendarsSectionProps {
@@ -48,7 +48,7 @@ const CalendarsSection = ({
     const shouldShowLimitWarning = calendarsLimitReachedText && !isFeatureUnavailable && user.hasNonDelinquentScope;
 
     return (
-        <SettingsSection {...rest}>
+        <SettingsSectionWide {...rest}>
             {description}
             <div className="mb1">
                 {isFeatureUnavailable ? (
@@ -95,7 +95,7 @@ const CalendarsSection = ({
                     onSetDefault={onSetDefault}
                 />
             )}
-        </SettingsSection>
+        </SettingsSectionWide>
     );
 };
 

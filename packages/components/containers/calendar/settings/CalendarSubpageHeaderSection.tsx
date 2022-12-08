@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms';
 import { Alert, Icon, Tooltip, useModalState } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import { SettingsSection } from '@proton/components/containers';
+import { SettingsSectionWide } from '@proton/components/containers';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { classnames } from '@proton/components/helpers';
 import { CALENDAR_STATUS_TYPE, getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
@@ -40,7 +40,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
     };
 
     return (
-        <SettingsSection large className="container-section-sticky-section">
+        <SettingsSectionWide className="container-section-sticky-section">
             {renderCalendarModal && (
                 <CalendarModal
                     calendar={calendar}
@@ -106,7 +106,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEd
                     </Tooltip>
                 </span>
             </div>
-        </SettingsSection>
+        </SettingsSectionWide>
     );
 };
 
