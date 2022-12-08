@@ -184,9 +184,6 @@
       "Create account": [
         "アカウントを作成"
       ],
-      "Create accounts": [
-        "アドレスを作成"
-      ],
       "Create calendar": [
         "カレンダーを作成"
       ],
@@ -198,6 +195,12 @@
       ],
       "Create link": [
         "リンクを作成"
+      ],
+      "Create users": [
+        "ユーザーを作成"
+      ],
+      "Create your own": [
+        "新規作成"
       ],
       "Current plan": [
         "現在のプラン"
@@ -355,6 +358,9 @@
       "Get ${ vpnPlus }": [
         "${ vpnPlus } を入手"
       ],
+      "Get a new encrypted email address": [
+        "新しい暗号化メールアドレスを取得する"
+      ],
       "Get verification code": [
         "認証コードを取得"
       ],
@@ -418,6 +424,9 @@
       "label emails as": [
         "メールにラベル付け"
       ],
+      "Leave": [
+        "離れる"
+      ],
       "Load more": [
         "さらに読み込む"
       ],
@@ -426,6 +435,9 @@
       ],
       "Make default": [
         "既定にする"
+      ],
+      "Manage communication preferences": [
+        "コミュニケーション設定を管理する"
       ],
       "Mark as default": [
         "既定として設定"
@@ -798,6 +810,9 @@
       ],
       "Use recovery code": [
         "回復用コードを使用"
+      ],
+      "Use your current email instead": [
+        "代わりに現在のメールアドレスを使用"
       ],
       "Use “${ label }” setting": [
         "「${ label }」設定を使用する"
@@ -3305,6 +3320,9 @@
       "sign in": [
         "サインイン"
       ],
+      "There was a problem removing your email address.": [
+        "メールアドレスの削除中にエラーが発生しました。"
+      ],
       "There was a problem verifying your email address.": [
         "メールアドレスの検証中にエラーが発生しました。"
       ]
@@ -4244,6 +4262,9 @@
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
       ],
+      "${ vpnPlus } required for Secure Core feature.": [
+        "Secure Core 機能を利用するには ${ vpnPlus } が必要です。"
+      ],
       "(${ memberCount } members)": [
         "(${ memberCount } 人のメンバー)"
       ],
@@ -4261,6 +4282,9 @@
       ],
       "+${ organization.BonusVPN } connections for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 件の ${ VPN_APP_NAME } 接続 (より多くのデバイスを VPN に接続可能)"
+      ],
+      "1. Invite friends to ${ BRAND_NAME }": [
+        "1. フレンドを ${ BRAND_NAME } に招待"
       ],
       "10 email addresses": [
         "10 件のメールアドレス"
@@ -4306,6 +4330,9 @@
       ],
       "Add a recovery email address": [
         "回復用メールアドレスを追加"
+      ],
+      "add a recovery method": [
+        "回復手段の追加"
       ],
       "Add a recovery phone number": [
         "回復用電話番号を追加"
@@ -4573,6 +4600,9 @@
       ],
       "Download recovery file": [
         "回復用ファイルをダウンロード"
+      ],
+      "Download recovery phrase": [
+        "回復フレーズをダウンロード"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
@@ -4906,6 +4936,9 @@
       ],
       "lose access to all current encrypted data": [
         "すべての暗号化されたデータにアクセスできなくなります"
+      ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "${ addARecoveryMethod }すると、パスワードを忘れた場合にアカウントに再び戻ることができます。"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "アカウント設定のために、2 要素認証デバイスに手動でこの情報を入力してください。 ${ switchButton }"
@@ -5273,6 +5306,12 @@
       "The following addresses are unavailable.": [
         "次のアドレスはご利用になれません。"
       ],
+      "The following addresses were not created.": [
+        "次のアドレスは作成されませんでした。"
+      ],
+      "The format of your CSV file is incorrect.": [
+        "CSV ファイルのフォーマットが間違っています。"
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Import-Export アプリを使うことで、ローカルなバックアップ用にメッセージをエクスポートしたり、以前のバックアップをアカウントに戻すことができます。"
       ],
@@ -5333,6 +5372,9 @@
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "あなたの秘密鍵を含むファイルをダウンロードします。このファイルは必ずパスワードを用いて暗号化してください。"
       ],
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "これにより、PayPal を使用して ${ BRAND_NAME } のサブスクリプションの支払いが可能になります。 新しいブラウザタブで PayPal にリダイレクトします。 使用している場合は ポップアップブロッカーを一旦無効にしてから続行してください。"
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "データとこのユーザーに関連付けられているすべてのメールアドレスが永久的に削除されます。"
       ],
@@ -5341,6 +5383,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "すべての有効なセッションからサインアウトし、2 段階認証を無効にします。"
+      ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "このウィザードは ${ BRAND_NAME } アカウントで 2 要素認証 (2FA) を有効にします。${ BRAND_NAME } アカウントのセキュリティをより高めるため 2 要素認証の使用をおすすめします。"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "データを失うことを避けるため、あなたが何をしているか理解していない場合やコピーをエクスポートしていない場合は削除しないでください。"
@@ -5689,6 +5734,9 @@
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
+      ],
+      "Your imports from ${ accounts } are temporarily delayed.": [
+        "${ accounts } からのインポートが一時的に遅延しています。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
@@ -6110,6 +6158,9 @@
       ],
       " and ${ l }": [
         " と ${ l }"
+      ],
+      "${ BRAND_NAME } email or username": [
+        "${ BRAND_NAME } メールまたはユーザー名"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
@@ -6618,6 +6669,9 @@
       "Non-standard ports": [
         "標準的ではないポート"
       ],
+      "Not spam": [
+        "迷惑メールではない"
+      ],
       "Notification": [
         "通知"
       ],
@@ -6944,8 +6998,20 @@
       ]
     },
     "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } ベータについてのお知らせ"
+      ],
+      "${ BRAND_NAME } company announcements": [
+        "${ BRAND_NAME } 会社についてのお知らせ"
+      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business ニュースレター"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } ニュースレター"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } オファーとプロモーション"
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } プロダクトのお知らせ"
@@ -7143,20 +7209,6 @@
       ],
       "Enable authentication logs": [
         "認証ログを有効にする"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount }件中${ selectedLabelsCount }件のメールを${ periodFragment }からインポートし、${ LABEL_MARKUP_PLACEHOLDER }のラベルを付ける"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount } つの内 ${ selectedLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
-      ],
-      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ periodFragment }からのメール全てを${ totalLabelsCount }からインポートし、${ LABEL_MARKUP_PLACEHOLDER }のラベルを付ける"
-      ],
-      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7383,11 +7435,20 @@
       "Back": [
         "戻る"
       ],
+      "Back to calendar": [
+        "カレンダーに戻る"
+      ],
+      "Back to files": [
+        "ファイルに戻る"
+      ],
       "Back to inbox": [
         "受信箱に戻る"
       ],
       "Blocked": [
         "ブロック中"
+      ],
+      "Drive": [
+        "ドライブ"
       ],
       "Inbox": [
         "受信トレイ"
@@ -7692,23 +7753,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7760,6 +7804,23 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8285,14 +8346,17 @@
       ]
     },
     "Organization capacity error": {
-      "Your plan includes a maximum of ${ availableAddresses } addresses.": [
-        "現在のプランでは、最大${ availableAddresses }件のメールアドレスを作成できます。"
+      "Your plan includes a maximum of ${ availableAddresses } more addresses.": [
+        "現在のプランでは、最大${ availableAddresses } 件のメールアドレスを作成できます。"
       ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational users.": [
-        "現在のプランでは、最大${ availableNumberOfMembers }名のユーザーを作成できます。"
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational users.": [
+        "現在のプランでは、最大${ availableNumberOfMembers } 名の組織ユーザーを作成できます。"
       ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN accounts.": [
-        "現在のプランでは、最大${ availableVPNAccess }件のVPNアカウントを作成できます。"
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN accounts.": [
+        "現在のプランでは、最大${ availableVPNAccess } 件のVPNアカウントを作成できます。"
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "現在のプランでは、最大${ humanReadableAvailableSpace } のストレージを作成できます。"
       ]
     },
     "OS compatibility": {
@@ -8598,6 +8662,9 @@
     "Remove calendar section title": {
       "Delete calendar?": [
         "カレンダーを削除しますか?"
+      ],
+      "Leave calendar?": [
+        "カレンダーを去りますか?"
       ],
       "Remove calendar": [
         "カレンダーを削除"
@@ -9405,6 +9472,9 @@
       "Couldn’t create accounts": [
         "アカウントの作成に失敗しました"
       ],
+      "Create ${ selectedUserIds.length } users": [
+        "ユーザー ${ selectedUserIds.length } を作成"
+      ],
       "Create multiple user accounts": [
         "アカウントを複数作成する"
       ],
@@ -9572,6 +9642,9 @@
       ],
       "External PGP settings": [
         "外部 PGP 設定"
+      ],
+      "Failed to create ${ failedUsers.length } user accounts.": [
+        "ユーザーアカウント${ failedUsers.length } の作成に失敗しました。"
       ],
       "Filters": [
         "フィルター"
@@ -9867,6 +9940,9 @@
       "Sign out": [
         "サインアウト"
       ],
+      "Signed in successfully!": [
+        "正常にサインインしました!"
+      ],
       "Signed in to member account": [
         "メンバーアカウントでサインイン"
       ],
@@ -9896,6 +9972,9 @@
       ],
       "Success": [
         "完了"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
+        "ユーザーアカウント${ localSuccessfullyCreatedUsers.length }を作成しました"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
         "アカウント${ successfullyCreatedUsers.length }のを作成しました"
@@ -9942,6 +10021,9 @@
       "Verification": [
         "検証"
       ],
+      "Verify email address": [
+        "メールアドレスを認証"
+      ],
       "VPN apps": [
         "VPN アプリ"
       ],
@@ -9954,6 +10036,9 @@
       "Warning: suspected fake website": [
         "警告: 偽のウェブサイトの疑いがあります"
       ],
+      "We have moved to ${ PROTON_ME_DOMAIN }": [
+        "ドメインは ${ PROTON_ME_DOMAIN } に移動されました"
+      ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
       ],
@@ -9965,6 +10050,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard 設定ファイル"
+      ],
+      "You already have a ${ BRAND_NAME } account": [
+        "すでに ${ BRAND_NAME } アカウントをお持ちの場合"
       ],
       "Your calendar link": [
         "カレンダーのリンク"
@@ -9986,6 +10074,9 @@
       ],
       "Your recovery status": [
         "回復状態"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } の試用に招待されました"
       ],
       "ZIP / postal code": [
         "郵便番号"
@@ -10159,6 +10250,9 @@
       "This key is encrypted with an old password": [
         "この鍵は旧いパスワードで暗号化されています。"
       ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "このキーは連絡先データを暗号化するのに ${ MAIL_APP_NAME } で使用されています"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS 構成に問題があります。次の手段に従いレコードを確認してください。それでも問題が解決しない場合は DKIM 署名をオフにする必要があります。"
       ],
@@ -10268,6 +10362,11 @@
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
       ]
     },
+    "vpn: Info": {
+      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
+        "${ VPN_APP_NAME } ブラウザー拡張機能を開き、ブラウジングを保護します"
+      ]
+    },
     "VPNClient": {
       "Android": [
         "Android"
@@ -10321,6 +10420,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "ログを無効にするには、ログの履歴をクリアする必要があります。ログを無効にしてよろしいですか?"
+      ],
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "このアドレスを無効にすることで、このアドレスを使ったメールの送受信ができなくなり、リンクされているすべての ${ BRAND_NAME } 製品も無効となります。本当にこのアドレスを無効にしますか？"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "ライブチャットは ${ VPN_APP_NAME } の有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"

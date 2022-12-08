@@ -3981,24 +3981,6 @@
         "La importació s'està iniciant"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tots els missatges d'${ selectedLabelsCount } de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tots els missatges de ${ selectedLabelsCount } de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar tots els missatges d'${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar tots els missatges de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetes des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tots els missatges d'${ totalLabelsCount } carpeta des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tots els missatges de ${ totalLabelsCount } carpetes des de ${ periodFragment } i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar tots els missatges d'${ totalLabelsCount } etiqueta des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar tots els missatges de ${ totalLabelsCount } etiquetes des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
-      ]
-    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"

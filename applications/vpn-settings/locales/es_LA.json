@@ -1598,6 +1598,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Intente usando solo letras, números y _.-"
+      ],
       "Unknown error": [
         "Error desconocido"
       ],
@@ -2823,6 +2826,9 @@
       ],
       "Mailbox password": [
         "Contraseña del buzón"
+      ],
+      "Main": [
+        "Principal"
       ],
       "Moderate NAT": [
         "NAT moderada"
@@ -4851,6 +4857,10 @@
       "Password must contain at least ${ length } character": [
         "La contraseña debe tener al menos ${ length } caracter",
         "La contraseña debe tener al menos ${ length } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Intente con un nombre de usuario corto (${ n } caracter máx.)",
+        "Intente con un nombre de usuario corto (${ n } caracteres máx.)"
       ]
     },
     "VPN info": {

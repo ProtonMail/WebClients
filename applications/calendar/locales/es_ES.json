@@ -2350,6 +2350,9 @@
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Intenta usar sólo letras, números y _.-"
+      ],
       "Unknown error": [
         "Error desconocido"
       ],
@@ -4283,24 +4286,6 @@
         "Tu importación está empezando"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } carpeta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } carpetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todos los mensajes de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes de ${ totalLabelsCount } carpeta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todos los mensajes de ${ totalLabelsCount } carpetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes de ${ totalLabelsCount } etiqueta desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todos los mensajes de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
-      ]
-    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -6043,6 +6028,10 @@
       "Password must contain at least ${ length } character": [
         "La contraseña debe contener al menos ${ length } caracter",
         "La contraseña debe contener al menos ${ length } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Pruebe con un nombre de usuario más corto (${ n } caracteres como máximo)",
+        "Pruebe con un nombre de usuario más corto (${ n } caracteres como máximo)"
       ]
     },
     "Video control": {

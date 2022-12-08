@@ -4349,20 +4349,6 @@
         "Uw import begint"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ selectedLabelsCount } uit ${ totalLabelsCount } map sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ selectedLabelsCount } van de ${ totalLabelsCount } mappen sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ selectedLabelsCount } uit ${ totalLabelsCount } label sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ selectedLabelsCount } van de ${ totalLabelsCount } labels sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ totalLabelsCount } label sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ totalLabelsCount } labels sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ]
-    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
@@ -4864,7 +4850,7 @@
     },
     "Side panel spotlight": {
       "Manage your contacts and view your calendar without leaving your app.": [
-        "Beheer uw contacten en bekijk uw agenda zonder uw applicatie te verlaten."
+        "Beheer uw contacten en bekijk uw agenda zonder uw app te verlaten."
       ],
       "Try the new side panel": [
         "Probeer het nieuwe zijpaneel uit"

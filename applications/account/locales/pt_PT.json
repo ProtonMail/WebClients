@@ -167,9 +167,6 @@
       "Create account": [
         "Criar conta"
       ],
-      "Create accounts": [
-        "Criar contas"
-      ],
       "Create calendar": [
         "Criar agenda"
       ],
@@ -181,6 +178,9 @@
       ],
       "Create link": [
         "Criar ligação"
+      ],
+      "Create users": [
+        "Criar utilizadores"
       ],
       "Current plan": [
         "Plano actual"
@@ -5933,6 +5933,11 @@
       ],
       "Merge with calendar": [
         "Unir com agenda"
+      ]
+    },
+    "Organization capacity error": {
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "O seu plano inclui um máximo de mais ${ humanReadableAvailableSpace } de armazenamento."
       ]
     },
     "OS compatibility": {

@@ -198,9 +198,6 @@
       "Create account": [
         "Utwórz konto"
       ],
-      "Create accounts": [
-        "Utwórz konta"
-      ],
       "Create calendar": [
         "Utwórz kalendarz"
       ],
@@ -212,6 +209,9 @@
       ],
       "Create link": [
         "Utwórz link"
+      ],
+      "Create users": [
+        "Utwórz użytkowników"
       ],
       "Create your own": [
         "Utwórz własny"
@@ -3214,6 +3214,9 @@
       "Trusted keys are not valid for sending": [
         "Zaufane klucze nie są przeznaczone do wysyłania wiadomości"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Użyj tylko liter, cyfr i znaków _.-"
+      ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
       ],
@@ -5734,6 +5737,12 @@
         "Następujące adresy są niedostępne.",
         "Następujące adresy są niedostępne."
       ],
+      "The following address was not created.": [
+        "Następujący adres nie został utworzony.",
+        "Następujące adresy nie zostały utworzone.",
+        "Następujące adresy nie zostały utworzone.",
+        "Następujące adresy nie zostały utworzone."
+      ],
       "The format of your CSV file is incorrect.": [
         "Format pliku CSV jest nieprawidłowy."
       ],
@@ -7129,6 +7138,9 @@
       "Mailbox password": [
         "Hasło skrzynki pocztowej"
       ],
+      "Main": [
+        "Główny"
+      ],
       "Manage categories": [
         "Zarządzaj kategoriami"
       ],
@@ -7735,29 +7747,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importuj wiadomości z niektórych folderów (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórych folderów (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórych folderów (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórych folderów (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importuj wiadomości z ${ itemsToImportCount } folderu od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ itemsToImportCount } folderów od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ itemsToImportCount } folderów od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ itemsToImportCount } folderów od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórymi etykietami (${ selectedLabelsCount }/${ totalLabelsCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importuj wiadomości z ${ itemsToImportCount } etykietą od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ itemsToImportCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ itemsToImportCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z ${ itemsToImportCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importuj wiadomości z ${ totalLabelsCount } folderu od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ totalLabelsCount } folderów od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ totalLabelsCount } folderów od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ totalLabelsCount } folderów od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importuj wiadomości z ${ totalLabelsCount } etykietą od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importuj wiadomości z niektórymi etykietami (${ selectedItemsToImportCount }/${ itemsToImportCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedItemsToImportCount }/${ itemsToImportCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedItemsToImportCount }/${ itemsToImportCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importuj wiadomości z niektórymi etykietami (${ selectedItemsToImportCount }/${ itemsToImportCount }) od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8371,26 +8383,6 @@
         "Zarządzanie zespołem"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zapewnij sobie prywatność podczas tworzenia kopii zapasowej, przechowywania i udostępniania plików."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Ulepsz do pakietu biznesowego z dostępem do wszystkich usług ${ BRAND_NAME } premium."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Ulepsz do najwyższego pakietu prywatności i uzyskaj dostęp do wszystkich usług ${ BRAND_NAME } premium."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Wersja próbna zakończy się ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -8460,6 +8452,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zapewnij sobie prywatność podczas tworzenia kopii zapasowej, przechowywania i udostępniania plików."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Ulepsz do pakietu biznesowego z dostępem do wszystkich usług ${ BRAND_NAME } premium."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Ulepsz do najwyższego pakietu prywatności i uzyskaj dostęp do wszystkich usług ${ BRAND_NAME } premium."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Wersja próbna zakończy się ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9114,25 +9126,25 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink }, aby uzyskać więcej przestrzeni dyskowej lub zwolnij część miejsca."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } address.": [
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Twój plan zawiera maksymalnie ${ availableAddresses } adres.",
         "Twój plan zawiera maksymalnie ${ availableAddresses } adresy.",
         "Twój plan zawiera maksymalnie ${ availableAddresses } adresów.",
         "Twój plan zawiera maksymalnie ${ availableAddresses } adresów."
       ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
         "Twój plan zawiera maksymalnie ${ availableNumberOfMembers } użytkownika organizacji.",
         "Twój plan zawiera maksymalnie ${ availableNumberOfMembers } użytkowników organizacji.",
         "Twój plan zawiera maksymalnie ${ availableNumberOfMembers } użytkowników organizacji.",
         "Twój plan zawiera maksymalnie ${ availableNumberOfMembers } użytkowników organizacji."
       ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
         "Twój plan zawiera maksymalnie ${ availableVPNAccess } konto VPN.",
         "Twój plan zawiera maksymalnie ${ availableVPNAccess } konta VPN.",
         "Twój plan zawiera maksymalnie ${ availableVPNAccess } kont VPN.",
         "Twój plan zawiera maksymalnie ${ availableVPNAccess } kont VPN."
       ],
-      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Twój plan zawiera ${ humanReadableAvailableSpace } przestrzeni dyskowej."
       ]
     },
@@ -10762,6 +10774,12 @@
       "External PGP settings": [
         "Ustawienia zewnętrzne PGP"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Nie udało się utworzyć ${ failedUsers.length } konta użytkownika.",
+        "Nie udało się utworzyć ${ failedUsers.length } kont użytkowników.",
+        "Nie udało się utworzyć ${ failedUsers.length } kont użytkowników.",
+        "Nie udało się utworzyć ${ failedUsers.length } kont użytkowników."
+      ],
       "Filters": [
         "Filtry"
       ],
@@ -11491,6 +11509,12 @@
         "Hasło musi zawierać co najmniej ${ length } znaki",
         "Hasło musi zawierać co najmniej ${ length } znaków",
         "Hasło musi zawierać co najmniej ${ length } znaków"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
       ]
     },
     "Video control": {

@@ -198,9 +198,6 @@
       "Create account": [
         "Vytvořit účet"
       ],
-      "Create accounts": [
-        "Vytvořit účty"
-      ],
       "Create calendar": [
         "Vytvořit kalendář"
       ],
@@ -212,6 +209,9 @@
       ],
       "Create link": [
         "Vytvořit odkaz"
+      ],
+      "Create users": [
+        "Vytvořit uživatele"
       ],
       "Create your own": [
         "Vytvořte si vlastní"
@@ -3214,6 +3214,9 @@
       "Trusted keys are not valid for sending": [
         "Důvěryhodné klíče nejsou použitelné pro odesílání"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Zkuste používat pouze písmena, číslice a _.-"
+      ],
       "Unknown error": [
         "Neznámá chyba"
       ],
@@ -5729,6 +5732,12 @@
         "Následující adresy jsou nedostupné.",
         "Následující adresy jsou nedostupné."
       ],
+      "The following address was not created.": [
+        "Následující adresa nebyla vytvořena.",
+        "Následující adresy nebyly vytvořeny.",
+        "Následující adresy nebyly vytvořeny.",
+        "Následující adresy nebyly vytvořeny."
+      ],
       "The format of your CSV file is incorrect.": [
         "Formát vašeho souboru CSV je nesprávný."
       ],
@@ -7124,6 +7133,9 @@
       "Mailbox password": [
         "Heslo k poštovní schránce"
       ],
+      "Main": [
+        "Hlavní"
+      ],
       "Manage categories": [
         "Zpravovat kategorie"
       ],
@@ -7730,29 +7742,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } složky za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } ze ${ totalLabelsCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy z ${ itemsToImportCount } složky za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ze ${ itemsToImportCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy ${ itemsToImportCount } štítku za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ itemsToImportCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ itemsToImportCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ itemsToImportCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy z ${ totalLabelsCount } složky od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ze ${ totalLabelsCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ totalLabelsCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ totalLabelsCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } složky od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } ze ${ itemsToImportCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } složek od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítku za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } ze ${ itemsToImportCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8366,26 +8378,6 @@
         "Řízení týmu"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -8455,6 +8447,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9109,26 +9121,26 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } pro větší úložný prostor a nebo uvolněte místo na úložišti."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } address.": [
-        "Váš tarif zahrnuje maximálně ${ availableAddresses } adresu.",
-        "Váš tarif zahrnuje maximálně ${ availableAddresses } adresy.",
-        "Váš tarif zahrnuje maximálně ${ availableAddresses } adres.",
-        "Váš tarif zahrnuje maximálně ${ availableAddresses } adres."
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } další adresu.",
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } další adresy.",
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } dalších adres.",
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } dalších adres."
       ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
-        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } organizačního uživatele.",
-        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } organizační uživatele.",
-        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } organizačních uživatelů.",
-        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } organizačních uživatelů."
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalšího organizačního uživatele.",
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } další organizační uživatele.",
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalších organizačních uživatelů.",
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalších organizačních uživatelů."
       ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
-        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } účet VPN.",
-        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } účty VPN.",
-        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } účtů VPN.",
-        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } účtů VPN."
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } další účet VPN.",
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } další účty VPN.",
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } dalších účtů VPN.",
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } dalších účtů VPN."
       ],
-      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
-        "Váš tarif zahrnuje maximálně ${ humanReadableAvailableSpace } úložného prostoru."
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Váš tarif zahrnuje maximálně ${ humanReadableAvailableSpace } dalšího úložného prostoru."
       ]
     },
     "OS compatibility": {
@@ -10328,6 +10340,12 @@
       "Couldn’t create accounts": [
         "Nepodařilo se vytvořit účty"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Vytvořit ${ selectedUserIds.length } uživatele",
+        "Vytvořit ${ selectedUserIds.length } uživatele",
+        "Vytvořit ${ selectedUserIds.length } uživatelů",
+        "Vytvořit ${ selectedUserIds.length } uživatelů"
+      ],
       "Create multiple user accounts": [
         "Vytvořit více uživatelských účtů"
       ],
@@ -10495,6 +10513,12 @@
       ],
       "External PGP settings": [
         "Externí nastavení PGP"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelský účet.",
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelské účty.",
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů.",
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů."
       ],
       "Filters": [
         "Filtry"
@@ -10825,6 +10849,12 @@
       ],
       "Success": [
         "Dokončeno"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Úspěšně vytvořen ${ localSuccessfullyCreatedUsers.length } uživatelský účet",
+        "Úspěšně vytvořeny ${ localSuccessfullyCreatedUsers.length } uživatelské účty",
+        "Úspěšně vytvořeno ${ localSuccessfullyCreatedUsers.length } uživatelských účtů",
+        "Úspěšně vytvořeno ${ localSuccessfullyCreatedUsers.length } uživatelských účtů"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "Úspěšně vytvořen ${ successfullyCreatedUsers.length } uživatelský účet",
@@ -11225,6 +11255,12 @@
         "Heslo musí obsahovat alespoň ${ length } znaky",
         "Heslo musí obsahovat alespoň ${ length } znaků",
         "Heslo musí obsahovat alespoň ${ length } znaků"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ]
     },
     "Video control": {
