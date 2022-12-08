@@ -192,9 +192,6 @@
       "Create account": [
         "Fiók létrehozása"
       ],
-      "Create accounts": [
-        "Fiókok létrehozása"
-      ],
       "Create calendar": [
         "Naptár létrehozása"
       ],
@@ -5445,6 +5442,10 @@
         "A következő cím nem érhető el.",
         "A következő címek nem érhetők el."
       ],
+      "The following address was not created.": [
+        "A következő cím nem jött létre.",
+        "A következő címek nem jöttek létre."
+      ],
       "The format of your CSV file is incorrect.": [
         "A CSV fájl formátuma hibás."
       ],
@@ -7381,24 +7382,6 @@
         "Hitelesítési naplók engedélyezése"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ selectedLabelsCount } mappából az összes ${ totalLabelsCount } mappa közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ selectedLabelsCount } mappából az összes ${ totalLabelsCount } mappa közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ totalLabelsCount } mappából, ${ periodFragment } időponttól, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ totalLabelsCount } mappából, ${ periodFragment } időponttól, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ totalLabelsCount } címkéből, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ totalLabelsCount } címkéből, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ]
-    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Egy naptárhoz maximum ${ MAX_LINKS_PER_CALENDAR } hivatkozást hozhat létre. Újabb hivatkozás létrehozásához, töröljön egyet az alábbi listáról.",
@@ -7972,20 +7955,6 @@
         "Csoport menedzsment"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -8049,6 +8018,20 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8644,20 +8627,8 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } további tárhely eléréshez, vagy szabadítson fel tárhelyet."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } address.": [
-        "A csomagja maximum ${ availableAddresses } cím használatát teszi lehetővé.",
-        "A csomagja maximum ${ availableAddresses } cím használatát teszi lehetővé."
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
-        "A csomagja maximum ${ availableNumberOfMembers } szervezeti felhasználót tesz lehetővé.",
-        "A csomagja maximum ${ availableNumberOfMembers } szervezeti felhasználót tesz lehetővé."
-      ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
-        "A csomagja maximum ${ availableVPNAccess } VPN fiók használatát teszi lehetővé.",
-        "A csomagja maximum ${ availableVPNAccess } VPN fiók használatát teszi lehetővé."
-      ],
-      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
-        "A csomagja maximum ${ humanReadableAvailableSpace } tárhely használatát teszi lehetővé."
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "A csomag legfeljebb ${ humanReadableAvailableSpace } további tárhelyet tartalmaz."
       ]
     },
     "OS compatibility": {

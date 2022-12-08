@@ -2111,6 +2111,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Sadece harf, rakam ve _.- kullanmayı deneyin"
+      ],
       "Unknown error": [
         "Bilinmeyen hata"
       ],
@@ -3405,9 +3408,6 @@
       "No synced computers": [
         "Eşitlenmiş bir bilgisayar yok"
       ],
-      "No synced folder": [
-        "Eşitlenmiş bir klasör yok"
-      ],
       "No synced folders": [
         "Eşitlenmiş bir klasör yok"
       ],
@@ -4149,6 +4149,9 @@
       "Mailbox password": [
         "Posta kutusu parolası"
       ],
+      "Main": [
+        "Ana"
+      ],
       "Malware": [
         "Kötü amaçlı yazılım"
       ],
@@ -4287,6 +4290,9 @@
       "To: ${ PMEmailAddress }": [
         "Nereye: ${ PMEmailAddress }"
       ],
+      "Toolbar": [
+        "Araç Çubuğu"
+      ],
       "Two-factor authentication code": [
         "İki aşamalı kimlik doğrulama kodu"
       ],
@@ -4420,24 +4426,6 @@
       ],
       "Your import is starting": [
         "İçe aktarma işleminize başlanıyor"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ selectedLabelsCount } / ${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ selectedLabelsCount } / ${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ selectedLabelsCount } / ${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ totalLabelsCount } klasörün ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ totalLabelsCount } etiketin ${ periodFragment } tüm iletilerini içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ]
     },
     "Message": {

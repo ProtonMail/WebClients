@@ -198,9 +198,6 @@
       "Create account": [
         "Buat akun"
       ],
-      "Create accounts": [
-        "Buat akun"
-      ],
       "Create calendar": [
         "Buat kalender"
       ],
@@ -212,6 +209,9 @@
       ],
       "Create link": [
         "Buat tautan"
+      ],
+      "Create users": [
+        "Buat pengguna"
       ],
       "Create your own": [
         "Buat email Anda sendiri"
@@ -3169,6 +3169,9 @@
       "Trusted keys are not valid for sending": [
         "Kunci terpercaya tidak valid untuk mengirim"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Cobalah untuk menggunakan hanya huruf, angka, dan tanda _.-"
+      ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
@@ -5536,6 +5539,9 @@
       "The following addresses are unavailable.": [
         "Alamat berikut tidak tersedia."
       ],
+      "The following addresses were not created.": [
+        "Alamat berikut gagal dibuat."
+      ],
       "The format of your CSV file is incorrect.": [
         "Format berkas CSV Anda tidak sesuai."
       ],
@@ -6919,6 +6925,9 @@
       "Mailbox password": [
         "Kata sandi kotak pesan"
       ],
+      "Main": [
+        "Utama"
+      ],
       "Manage categories": [
         "Kelola kategori"
       ],
@@ -7525,17 +7534,17 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ itemsToImportCount } folder sejak ${ periodFragment } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan yang memiliki ${ selectedLabelsCount } label terpilih dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ itemsToImportCount } label sejak ${ periodFragment } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ totalLabelsCount } folder yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ selectedItemsToImportCount } folder terpilih (dari total ${ itemsToImportCount } folder sejak ${ periodFragment }) dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ selectedItemsToImportCount } label terpilih (dari total ${ itemsToImportCount } label sejak ${ periodFragment }) dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8092,26 +8101,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8181,6 +8170,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8811,17 +8820,17 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } untuk menambahkan lebih banyak ruang penyimpanan, atau hapus sebagian data untuk mengosongkannya."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } addresses.": [
-        "Paket Anda meliputi hingga ${ availableAddresses } alamat."
+      "Your plan includes a maximum of ${ availableAddresses } more addresses.": [
+        "Paket Anda meliputi hingga ${ availableAddresses } alamat tambahan."
       ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational users.": [
-        "Paket Anda meliputi hingga ${ availableNumberOfMembers } pengguna organisasi."
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational users.": [
+        "Paket Anda meliputi hingga ${ availableNumberOfMembers } pengguna organisasi tambahan."
       ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN accounts.": [
-        "Paket Anda meliputi hingga ${ availableVPNAccess } akun VPN."
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN accounts.": [
+        "Paket Anda meliputi hingga ${ availableVPNAccess } akun VPN tambahan."
       ],
-      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
-        "Paket Anda meliputi kuota penyimpanan hingga ${ humanReadableAvailableSpace }."
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Paket Anda meliputi hingga ${ humanReadableAvailableSpace } kapasitas penyimpanan tambahan."
       ]
     },
     "OS compatibility": {
@@ -9970,6 +9979,9 @@
       "Couldn’t create accounts": [
         "Tidak dapat membuat akun"
       ],
+      "Create ${ selectedUserIds.length } users": [
+        "Buat ${ selectedUserIds.length } pengguna"
+      ],
       "Create multiple user accounts": [
         "Buat lebih dari satu akun pengguna"
       ],
@@ -10137,6 +10149,9 @@
       ],
       "External PGP settings": [
         "Pengaturan PGP eksternal"
+      ],
+      "Failed to create ${ failedUsers.length } user accounts.": [
+        "${ failedUsers.length } akun pengguna gagal dibuat."
       ],
       "Filters": [
         "Filter"
@@ -10464,6 +10479,9 @@
       ],
       "Success": [
         "Berhasil"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
+        "${ localSuccessfullyCreatedUsers.length } akun pengguna berhasil dibuat"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
         "Akun pengguna ${ successfullyCreatedUsers.length } berhasil dibuat"
@@ -10852,6 +10870,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "Kata sandi harus mengandung minimal ${ length } karakter"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     },
     "Video control": {

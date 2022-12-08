@@ -3323,6 +3323,9 @@
       "Trusted keys are not valid for sending": [
         "Le chiavi attendibili non sono valide per l'invio"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova ad usare solo lettere, numeri e _.-"
+      ],
       "Unknown error": [
         "Errore sconosciuto"
       ],
@@ -6375,6 +6378,9 @@
       "To: ${ PMEmailAddress }": [
         "A: ${ PMEmailAddress }"
       ],
+      "Toolbar": [
+        "Barra degli strumenti"
+      ],
       "Two-factor authentication code": [
         "Codice di autenticazione a due fattori"
       ],
@@ -6672,24 +6678,6 @@
       ],
       "Your import is starting": [
         "La tua importazione sta iniziando"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tutti i messaggi dalla cartella ${ selectedLabelsCount } di ${ totalLabelsCount }, da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tutti i messaggi dalle cartelle ${ selectedLabelsCount } di ${ totalLabelsCount }, da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tutti i messaggi da ${ selectedLabelsCount } di ${ totalLabelsCount } etichetta dal ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tutti i messaggi da ${ selectedLabelsCount } di ${ totalLabelsCount } etichette da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tutti i messaggi dalla cartella ${ totalLabelsCount } da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tutti i messaggi dalle cartelle ${ totalLabelsCount } da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tutti i messaggi da ${ totalLabelsCount } etichetta dal ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tutti i messaggi da ${ totalLabelsCount } etichette da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -8756,6 +8744,10 @@
       "Password must contain at least ${ length } character": [
         "La password deve contenere almeno ${ length } carattere",
         "La password deve contenere almeno ${ length } caratteri"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova un nome utente più corto (massimo ${ n } carattere)",
+        "Prova un nome utente più corto (massimo ${ n } caratteri)"
       ]
     },
     "Video control": {

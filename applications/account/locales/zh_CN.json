@@ -195,9 +195,6 @@
       "Create account": [
         "创建账户"
       ],
-      "Create accounts": [
-        "创建账户"
-      ],
       "Create calendar": [
         "创建日历"
       ],
@@ -3928,6 +3925,9 @@
       "Click ${ boldManage } to expand the options menu.": [
         "点击 ${ boldManage } 下拉菜单."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "各类邮箱操作步骤不尽相同，您可能需要先${ knowledgeBaseLink }才能导入至 ${ BRAND_NAME }。"
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "点击三点图标（...）展开下拉菜单。"
       ],
@@ -7120,20 +7120,6 @@
         "开启登录日志"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个文件夹中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个标签中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
-      ],
-      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "导入自 ${ periodFragment } 以来 ${ totalLabelsCount } 个文件夹中的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "导入自 ${ periodFragment } 以来共计 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ]
-    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "每个日历最多可以创建 ${ MAX_LINKS_PER_CALENDAR } 个链接。要对该日历新建链接，请先从下方列表中删除一个。"
@@ -7661,20 +7647,6 @@
         "团队管理"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -7732,6 +7704,20 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -8337,18 +8323,6 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "点击 ${ upgradeLink } 升级添加更多储存空间，或删除一些内容。"
-      ],
-      "Your plan includes a maximum of ${ availableAddresses } addresses.": [
-        "您的套餐最多包含 ${ availableAddresses } 个邮箱地址。"
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational users.": [
-        "您的套餐最多包含 ${ availableNumberOfMembers } 个组用户。"
-      ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN accounts.": [
-        "您的套餐最多包含 ${ availableVPNAccess } 个 VPN 账户。"
-      ],
-      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
-        "您的套餐最多包含 ${ humanReadableAvailableSpace } 储存空间。"
       ]
     },
     "OS compatibility": {

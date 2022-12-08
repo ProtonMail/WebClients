@@ -2392,6 +2392,9 @@
       "Trusted keys are not valid for sending": [
         "Довірені ключі недійсні для надсилання"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Спробуйте використовувати лише букви, цифри та _.-"
+      ],
       "Unknown error": [
         "Невідома помилка"
       ],
@@ -4191,6 +4194,9 @@
       "Mailbox password": [
         "Пароль поштової скриньки"
       ],
+      "Main": [
+        "Головна"
+      ],
       "Manage categories": [
         "Керувати категоріями"
       ],
@@ -4292,6 +4298,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Кому: ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "Панель інструментів"
       ],
       "Two-factor authentication code": [
         "Код двоетапної перевірки"
@@ -4416,29 +4425,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } теки з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } теки, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } теки з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } тек з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } тек з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } тек з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } міткою з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } мітками з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } мітками з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } мітками з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -6025,6 +6034,12 @@
         "Пароль повинен містити принаймні ${ length } символи",
         "Пароль повинен містити принаймні ${ length } символів",
         "Пароль повинен містити принаймні ${ length } символів"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Спробуйте коротше ім'я користувача (до ${ n } символу)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)"
       ]
     },
     "Video control": {

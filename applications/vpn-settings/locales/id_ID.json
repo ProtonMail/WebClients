@@ -1594,6 +1594,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Kolom ini harus diisi dengan minimal ${ minimumLength } karakter."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Cobalah untuk menggunakan hanya huruf, angka, dan tanda _.-"
+      ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
@@ -2814,6 +2817,9 @@
       ],
       "Mailbox password": [
         "Kata sandi kotak pesan"
+      ],
+      "Main": [
+        "Utama"
       ],
       "Moderate NAT": [
         "NAT Moderat"
@@ -4566,6 +4572,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "Kata sandi harus mengandung minimal ${ length } karakter"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     },
     "VPN info": {

@@ -4349,28 +4349,6 @@
         "Începe importarea"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedLabelsCount } din ${ totalLabelsCount } de foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele de la ${ selectedLabelsCount } din ${ totalLabelsCount } de etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ totalLabelsCount } foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ totalLabelsCount } de foldere începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele de la o etichetă începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele de la ${ totalLabelsCount } etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele de la ${ totalLabelsCount } de etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
-      ]
-    },
     "Message": {
       "Fw:": [
         "Fw:"

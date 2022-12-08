@@ -928,6 +928,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prova att bara använda bokstäver, siffror och _.-"
+      ],
       "Unknown error": [
         "Okänt fel"
       ]
@@ -1132,6 +1135,10 @@
       "Password must contain at least ${ length } character": [
         "Lösenordet måste innehålla minst ${ length } tecken",
         "Lösenordet måste innehålla minst ${ length } tecken"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
       ]
     }
   }

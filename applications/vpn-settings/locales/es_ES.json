@@ -1598,6 +1598,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Intenta usar sólo letras, números y _.-"
+      ],
       "Unknown error": [
         "Error desconocido"
       ],
@@ -4851,6 +4854,10 @@
       "Password must contain at least ${ length } character": [
         "La contraseña debe contener al menos ${ length } caracter",
         "La contraseña debe contener al menos ${ length } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Pruebe con un nombre de usuario más corto (${ n } caracteres como máximo)",
+        "Pruebe con un nombre de usuario más corto (${ n } caracteres como máximo)"
       ]
     },
     "VPN info": {

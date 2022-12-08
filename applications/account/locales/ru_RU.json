@@ -198,9 +198,6 @@
       "Create account": [
         "Создать аккаунт"
       ],
-      "Create accounts": [
-        "Создать аккаунты"
-      ],
       "Create calendar": [
         "Создать календарь"
       ],
@@ -212,6 +209,9 @@
       ],
       "Create link": [
         "Создать ссылку"
+      ],
+      "Create users": [
+        "Создать пользователей"
       ],
       "Create your own": [
         "Создайте свой собственный"
@@ -3214,6 +3214,9 @@
       "Trusted keys are not valid for sending": [
         "Доверенные ключи недействительны для отправки"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Попробуйте, используя только буквы, цифры и _.-"
+      ],
       "Unknown error": [
         "Неизвестная ошибка"
       ],
@@ -5729,6 +5732,12 @@
         "Следующие адреса недоступны.",
         "Следующие адреса недоступны."
       ],
+      "The following address was not created.": [
+        "Следующий адрес не был создан.",
+        "Следующие адреса не были созданы.",
+        "Следующие адреса не были созданы.",
+        "Следующие адреса не были созданы."
+      ],
       "The format of your CSV file is incorrect.": [
         "Формат вашего файла CSV неправильный."
       ],
@@ -7124,6 +7133,9 @@
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
+      "Main": [
+        "Основное"
+      ],
       "Manage categories": [
         "Управлять категориями"
       ],
@@ -7730,29 +7742,23 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папки с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папок с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папок с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все ${ selectedLabelsCount } сообщения из общего количества ${ totalLabelsCount } папок с ${ periodFragment } и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортируйте все сообщения из ${ itemsToImportCount } папки, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ itemsToImportCount } папок, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ itemsToImportCount } папок, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ itemsToImportCount } папок, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыка с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ selectedLabelsCount } из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортируйте все сообщения из ${ itemsToImportCount } ярлыка, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ itemsToImportCount } ярлыков, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ itemsToImportCount } ярлыков, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения из ${ itemsToImportCount } ярлыков, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортируйте все сообщения из ${ totalLabelsCount } папки с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ totalLabelsCount } папок с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ totalLabelsCount } папок с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ totalLabelsCount } папок с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортируйте все сообщения из ${ totalLabelsCount } ярлыка с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ totalLabelsCount } ярлыков с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортируйте все сообщения, начиная с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения, начиная с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения, начиная с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортируйте все сообщения, начиная с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8366,26 +8372,6 @@
         "Управление командами"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Перейдите на пакет для бизнеса с доступом ко всем платным услугам ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Улучшите пакет для обеспечения максимальной конфиденциальности и получите доступ ко всем платным услугам ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся ${ last4 }"
@@ -8455,6 +8441,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Перейдите на пакет для бизнеса с доступом ко всем платным услугам ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Улучшите пакет для обеспечения максимальной конфиденциальности и получите доступ ко всем платным услугам ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9109,26 +9115,26 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink }, чтобы получить больше хранилища, или удалите часть хранилища, чтобы освободить место."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } address.": [
-        "Ваш тариф включает максимум ${ availableAddresses } адрес.",
-        "Ваш тариф включает максимум ${ availableAddresses } адреса.",
-        "Ваш тариф включает максимум ${ availableAddresses } адресов.",
-        "Ваш тариф включает максимум ${ availableAddresses } адресов."
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Ваш тариф включает максимум белее ${ availableAddresses } адреса.",
+        "Ваш тариф включает максимум белее ${ availableAddresses } адресов.",
+        "Ваш тариф включает максимум белее ${ availableAddresses } адресов.",
+        "Ваш тариф включает максимум белее ${ availableAddresses } адресов."
       ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
-        "Ваш тариф допускает максимум ${ availableNumberOfMembers } пользователя в организации.",
-        "Ваш тариф допускает максимум ${ availableNumberOfMembers } пользователя в организации.",
-        "Ваш тариф допускает максимум ${ availableNumberOfMembers } пользователей в организации.",
-        "Ваш тариф допускает максимум ${ availableNumberOfMembers } пользователя в организации."
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Ваш тариф включает максимум более ${ availableNumberOfMembers } пользователя организации.",
+        "Ваш тариф включает максимум более ${ availableNumberOfMembers } пользователей организации.",
+        "Ваш тариф включает максимум более ${ availableNumberOfMembers } пользователей организации.",
+        "Ваш тариф включает максимум более ${ availableNumberOfMembers } пользователей организации."
       ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
-        "Ваш тариф включает максимум ${ availableVPNAccess } аккаунт VPN.",
-        "Ваш тариф включает максимум ${ availableVPNAccess } аккаунта VPN.",
-        "Ваш тариф включает максимум ${ availableVPNAccess } аккаунтов VPN.",
-        "Ваш тариф включает максимум ${ availableVPNAccess } аккаунтов VPN."
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Ваш тариф включает максимум более ${ availableVPNAccess } аккаунта VPN.",
+        "Ваш тариф включает максимум более ${ availableVPNAccess } аккаунтов VPN.",
+        "Ваш тариф включает максимум более ${ availableVPNAccess } аккаунтов VPN.",
+        "Ваш тариф включает максимум более ${ availableVPNAccess } аккаунтов VPN."
       ],
-      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
-        "Ваш тариф включает максимум ${ humanReadableAvailableSpace } хранилища."
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Ваш тариф включает максимум более ${ humanReadableAvailableSpace } хранилища."
       ]
     },
     "OS compatibility": {
@@ -10589,6 +10595,12 @@
       "Couldn’t create accounts": [
         "Не могу создать аккаунты"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Создать ${ selectedUserIds.length } пользователя",
+        "Создать ${ selectedUserIds.length } пользователей",
+        "Создать ${ selectedUserIds.length } пользователей",
+        "Создать ${ selectedUserIds.length } пользователей"
+      ],
       "Create multiple user accounts": [
         "Создать несколько пользовательских аккаунтов"
       ],
@@ -10756,6 +10768,12 @@
       ],
       "External PGP settings": [
         "Внешние настройки PGP"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Не удалось создать ${ failedUsers.length } аккаунт пользователя.",
+        "Не удалось создать ${ failedUsers.length } аккаунта пользователей.",
+        "Не удалось создать ${ failedUsers.length } аккаунтов пользователей.",
+        "Не удалось создать ${ failedUsers.length } аккаунтов пользователей."
       ],
       "Filters": [
         "Фильтры"
@@ -11086,6 +11104,12 @@
       ],
       "Success": [
         "Успешно"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Успешно создан ${ localSuccessfullyCreatedUsers.length } аккаунт пользователя",
+        "Успешно созданы ${ localSuccessfullyCreatedUsers.length } аккаунта пользователя",
+        "Успешно созданы ${ localSuccessfullyCreatedUsers.length } аккаунтов пользователя",
+        "Успешно созданы ${ localSuccessfullyCreatedUsers.length } аккаунтов пользователя"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "Успешно создан ${ successfullyCreatedUsers.length } аккаунт",
@@ -11486,6 +11510,12 @@
         "Пароль должен включать по меньшей мере ${ length } символа",
         "Пароль должен включать по меньшей мере ${ length } символов",
         "Пароль должен включать по меньшей мере ${ length } символа"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
       ]
     },
     "Video control": {

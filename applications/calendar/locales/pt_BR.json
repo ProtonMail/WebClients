@@ -4061,6 +4061,9 @@
       "Mailbox password": [
         "Senha da caixa de correio"
       ],
+      "Main": [
+        "Principal"
+      ],
       "Manage categories": [
         "Gerenciar categorias"
       ],
@@ -4160,6 +4163,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Para: ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "Barra de ferramentas"
       ],
       "Two-factor authentication code": [
         "Autenticação de dois fatores"
@@ -4284,21 +4290,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } pastas desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens de ${ itemsToImportCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ itemsToImportCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens em ${ selectedLabelsCount } de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens de ${ itemsToImportCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ itemsToImportCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ totalLabelsCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } pastas desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ totalLabelsCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {

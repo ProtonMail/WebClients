@@ -198,9 +198,6 @@
       "Create account": [
         "Зареєструватися"
       ],
-      "Create accounts": [
-        "Створити облікові записи"
-      ],
       "Create calendar": [
         "Створити календар"
       ],
@@ -212,6 +209,9 @@
       ],
       "Create link": [
         "Створити посилання"
+      ],
+      "Create users": [
+        "Створити користувачів"
       ],
       "Create your own": [
         "Створити свою власну"
@@ -3214,6 +3214,9 @@
       "Trusted keys are not valid for sending": [
         "Довірені ключі недійсні для надсилання"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Спробуйте використовувати лише букви, цифри та _.-"
+      ],
       "Unknown error": [
         "Невідома помилка"
       ],
@@ -5734,6 +5737,12 @@
         "Ці адреси недоступні.",
         "Ці адреси недоступні."
       ],
+      "The following address was not created.": [
+        "Ця адреса не створена.",
+        "Ці адреси не створені.",
+        "Ці адреси не створені.",
+        "Ці адреси не створені."
+      ],
       "The format of your CSV file is incorrect.": [
         "Формат вашого CSV-файлу неправильний."
       ],
@@ -7129,6 +7138,9 @@
       "Mailbox password": [
         "Пароль поштової скриньки"
       ],
+      "Main": [
+        "Головна"
+      ],
       "Manage categories": [
         "Керувати категоріями"
       ],
@@ -7735,29 +7747,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } теки з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } тек з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } міткою з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedLabelsCount } мітками з усіх ${ totalLabelsCount }, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } теки, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } тек, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } теки з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } тек з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } тек з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } тек з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } міткою, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } міткою з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } мітками з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } мітками з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } мітками з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8371,26 +8383,6 @@
         "Керування командою"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -8460,6 +8452,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9113,27 +9125,6 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink }, щоб отримати більше місця для зберігання, або очистьте сховище для звільнення місця."
-      ],
-      "Your plan includes a maximum of ${ availableAddresses } address.": [
-        "Ваш тарифний план включає ${ availableAddresses } адресу.",
-        "Ваш тарифний план включає до ${ availableAddresses } адрес.",
-        "Ваш тарифний план включає до ${ availableAddresses } адрес.",
-        "Ваш тарифний план включає до ${ availableAddresses } адрес."
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
-        "Ваш тарифний план включає ${ availableNumberOfMembers } користувача організації.",
-        "Ваш тарифний план включає до ${ availableNumberOfMembers } користувачів організації.",
-        "Ваш тарифний план включає до ${ availableNumberOfMembers } користувачів організації.",
-        "Ваш тарифний план включає до ${ availableNumberOfMembers } користувачів організації."
-      ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
-        "Ваш тарифний план включає ${ availableVPNAccess } обліковий запис VPN.",
-        "Ваш тарифний план включає до ${ availableVPNAccess } облікових записів VPN.",
-        "Ваш тарифний план включає до ${ availableVPNAccess } облікових записів VPN.",
-        "Ваш тарифний план включає до ${ availableVPNAccess } облікових записів VPN."
-      ],
-      "Your plan includes a maximum of ${ humanReadableAvailableSpace } of storage.": [
-        "Ваш тарифний план включає до ${ humanReadableAvailableSpace } сховища."
       ]
     },
     "OS compatibility": {
@@ -10333,6 +10324,12 @@
       "Couldn’t create accounts": [
         "Не вдалося створити облікові записи"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Створити ${ selectedUserIds.length } користувача",
+        "Створити ${ selectedUserIds.length } користувача",
+        "Створити ${ selectedUserIds.length } користувачів",
+        "Створити ${ selectedUserIds.length } користувача"
+      ],
       "Create multiple user accounts": [
         "Створити кілька облікових записів користувачів"
       ],
@@ -10500,6 +10497,12 @@
       ],
       "External PGP settings": [
         "Параметри зовнішнього PGP"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Не вдалося створити ${ failedUsers.length } обліковий запис\nкористувача.",
+        "Не вдалося створити ${ failedUsers.length } облікові записи користувачів.",
+        "Не вдалося створити ${ failedUsers.length } облікових записів користувачів.",
+        "Не вдалося створити ${ failedUsers.length } облікові записи користувачів."
       ],
       "Filters": [
         "Фільтри"
@@ -10830,6 +10833,12 @@
       ],
       "Success": [
         "Успішно"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Успішно створено ${ localSuccessfullyCreatedUsers.length } обліковий запис користувача",
+        "Успішно створено ${ localSuccessfullyCreatedUsers.length } облікові записи користувачів",
+        "Успішно створено ${ localSuccessfullyCreatedUsers.length } облікових записів користувачів",
+        "Успішно створено ${ localSuccessfullyCreatedUsers.length } облікові записи користувачів"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "Успішно створено ${ successfullyCreatedUsers.length } обліковий запис",
@@ -11230,6 +11239,12 @@
         "Пароль повинен містити принаймні ${ length } символи",
         "Пароль повинен містити принаймні ${ length } символів",
         "Пароль повинен містити принаймні ${ length } символів"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Спробуйте коротше ім'я користувача (до ${ n } символу)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)"
       ]
     },
     "Video control": {

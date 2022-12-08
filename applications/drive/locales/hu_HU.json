@@ -3297,9 +3297,6 @@
       "No results found": [
         "Nincs találat"
       ],
-      "No synced folder": [
-        "Nincs szinkronizált mappa"
-      ],
       "No synced folders": [
         "Nincsenek szinkronizált mappák"
       ],
@@ -4245,24 +4242,6 @@
       ],
       "Your import is starting": [
         "Az importálás indul"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ selectedLabelsCount } mappából az összes ${ totalLabelsCount } mappa közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ selectedLabelsCount } mappából az összes ${ totalLabelsCount } mappa közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ totalLabelsCount } mappából, ${ periodFragment } időponttól, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ totalLabelsCount } mappából, ${ periodFragment } időponttól, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ totalLabelsCount } címkéből, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ totalLabelsCount } címkéből, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {

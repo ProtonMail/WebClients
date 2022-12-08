@@ -2849,7 +2849,7 @@
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus grand, nous vous invitons à le diviser en plusieurs fichiers plus petits."
+        "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Vous pouvez marquer pour suppression les contacts que vous ne voulez ni fusionner ni conserver. Leur suppression n'aura lieu qu'après avoir cliqué sur le bouton de fusion."
@@ -3411,7 +3411,7 @@
         "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Votre fichier ${ formattedFilename } a un format non valide et ne peut pas être importé."
+        "Le format de votre fichier ${ formattedFilename } n'est pas valide et ne peut pas être importé."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Votre fichier ${ formattedFilename } n'a pas d'événements à importer."
@@ -3456,7 +3456,7 @@
     },
     "Error importing event": {
       "Bad format. Component cannot be read.": [
-        "Format incorrect. L’élément ne peut pas être lu."
+        "Le format n'est pas correct. L’élément ne peut pas être lu."
       ],
       "Calendar": [
         "Calendrier"
@@ -6669,24 +6669,6 @@
       ],
       "Your import is starting": [
         "Votre importation commence."
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ selectedLabelsCount } dossier sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ selectedLabelsCount } dossiers sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ selectedLabelsCount } label sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ selectedLabelsCount } labels sur ${ totalLabelsCount } depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ totalLabelsCount } dossier depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ totalLabelsCount } dossiers depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ totalLabelsCount } label depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ totalLabelsCount } labels depuis ${ periodFragment } et les labelliser comme ${ LABEL_MARKUP_PLACEHOLDER }."
       ]
     },
     "Mailbox": {

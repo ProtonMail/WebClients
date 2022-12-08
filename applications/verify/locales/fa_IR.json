@@ -925,6 +925,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "این قسمت حداقل به ${ minimumLength } نویسه نیاز دارد."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "تنها با استفاده از حروف، اعداد و ـ.- امتحان کنید"
+      ],
       "Unknown error": [
         "خطای ناشناخته"
       ]
@@ -1047,6 +1050,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "برنامه اصالت سنجی"
+      ],
       "Code is 6 digits without spaces": [
         "کد ۶ رقمی بدون فاصله می‌باشد"
       ],
@@ -1114,6 +1120,10 @@
       "Password must contain at least ${ length } character": [
         "گذرواژه باید حداقل ${ length } نویسه داشته باشد",
         "گذرواژه باید حداقل ${ length } نویسه داشته باشد"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)",
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)"
       ]
     }
   }

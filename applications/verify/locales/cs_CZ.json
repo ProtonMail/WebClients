@@ -928,6 +928,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Zkuste používat pouze písmena, číslice a _.-"
+      ],
       "Unknown error": [
         "Neznámá chyba"
       ]
@@ -1134,6 +1137,12 @@
         "Heslo musí obsahovat alespoň ${ length } znaky",
         "Heslo musí obsahovat alespoň ${ length } znaků",
         "Heslo musí obsahovat alespoň ${ length } znaků"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ]
     }
   }

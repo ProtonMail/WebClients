@@ -187,9 +187,6 @@
       "Create account": [
         "Opret konto"
       ],
-      "Create accounts": [
-        "Opret konti"
-      ],
       "Create calendar": [
         "Opret kalender"
       ],
@@ -2483,6 +2480,11 @@
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
         "'www' -underdomæner benyttes typisk ikke til e-mail. Er du sikker på, at du vil benytte denne domæneværdi?"
+      ]
+    },
+    "Domain spam notification": {
+      "${ name } added": [
+        "${ name } tilføjet"
       ]
     },
     "Downgrade account reason": {
@@ -7203,24 +7205,6 @@
         "Aktiver godkendelseslogs"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etikette siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ selectedLabelsCount } ud af ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ totalLabelsCount } mappe siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ totalLabelsCount } mapper siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ]
-    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Du kan oprette op til ${ MAX_LINKS_PER_CALENDAR } link pr. kalender. For at oprette et nyt link til denne kalender, skal du slette et fra listen nedenfor.",
@@ -8039,20 +8023,6 @@
       ],
       "Load content via proxy and store as attachments": [
         "Indlæs indhold via proxy og gem som vedhæftede filer"
-      ]
-    },
-    "Organization capacity error": {
-      "Your plan includes a maximum of ${ availableAddresses } address.": [
-        "Dit abonnement omfatter maksimalt ${ availableAddresses } adresse.",
-        "Dit abonnement omfatter maksimalt ${ availableAddresses } adresser."
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } organizational user.": [
-        "Dit abonnement omfatter maksimalt ${ availableNumberOfMembers } organisatorisk bruger.",
-        "Dit abonnement omfatter maksimalt ${ availableNumberOfMembers } organisatoriske brugere."
-      ],
-      "Your plan includes a maximum of ${ availableVPNAccess } VPN account.": [
-        "Dit abonnement omfatter maksimalt ${ availableVPNAccess } VPN-konto.",
-        "Dit abonnement omfatter maksimalt ${ availableVPNAccess } VPN-konti."
       ]
     },
     "OS compatibility": {
