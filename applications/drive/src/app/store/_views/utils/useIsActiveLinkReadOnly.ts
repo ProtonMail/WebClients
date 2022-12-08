@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { ShareType } from '../..';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { sendErrorReport } from '../../../utils/errorHandling';
+import { sendErrorReport, isIgnoredError } from '../../../utils/errorHandling';
 import { DecryptedLink, useLink } from '../../_links';
 import { useShareType } from './useShareType';
 
@@ -18,14 +18,15 @@ export const useIsActiveLinkReadOnly = () => {
     const link = useLink();
 
     const [isReadOnly, setIsReadOnly] = useState<boolean | undefined>(undefined);
-    const lastAc = useRef<AbortController>();
+    const ongoingRequestAc = useRef<AbortController>();
 
     useEffect(() => {
         const ac = new AbortController();
 
         // Abort ongoing request to avoid fast meaningless shareType change
-        lastAc.current?.abort();
-        lastAc.current = ac;
+        ongoingRequestAc.current?.abort();
+        ongoingRequestAc.current = ac;
+        setIsReadOnly(undefined);
 
         if (shareType) {
             link.getLink(ac.signal, shareId, linkId)
@@ -34,12 +35,22 @@ export const useIsActiveLinkReadOnly = () => {
                 })
                 .catch((e) => {
                     sendErrorReport(e);
-                    setIsReadOnly(true);
+
+                    // Ignore errors caused by .abort()
+                    if (!isIgnoredError(e)) {
+                        // Assume that a link isn't read-only,
+                        // as it's the majority of all cases.
+                        setIsReadOnly(false);
+                    }
+                })
+                .finally(() => {
+                    ongoingRequestAc.current = undefined;
                 });
-        } else {
-            setIsReadOnly(true);
+        } else if (shareType === null) {
+            // Couldn't load share info, assuming it isn't read-only
+            setIsReadOnly(false);
         }
-    }, [shareId, linkId, shareType]);
+    }, [linkId, shareType]);
 
     return {
         isLoading: isReadOnly === undefined,
