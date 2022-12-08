@@ -1,5 +1,5 @@
+import BlackFridayFooter from '../../components/blackFriday/BlackFridayFooter';
 import BlackFridayLayout from '../../components/blackFriday/BlackFridayLayout';
-import BlackFridayMailFooter from '../../components/blackFriday/BlackFridayMailFooter';
 import BlackFridayTitle from '../../components/blackFriday/BlackFridayTitle';
 import OfferFooter from '../../components/shared/OfferFooter';
 import OfferHeader from '../../components/shared/OfferHeader';
@@ -18,7 +18,7 @@ const Layout = (props: OfferLayoutProps) => {
             <Deals {...props} />
 
             <OfferFooter {...props}>
-                <BlackFridayMailFooter {...props} />
+                <BlackFridayFooter {...props} />
             </OfferFooter>
         </BlackFridayLayout>
     ) : (
