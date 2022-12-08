@@ -158,6 +158,9 @@
       "Create new folder": [
         "创建文件夹"
       ],
+      "Create new text file": [
+        "新建文本文件"
+      ],
       "Customize": [
         "定制"
       ],
@@ -413,11 +416,17 @@
       "Remove": [
         "移除"
       ],
+      "Remove device": [
+        "移除设备"
+      ],
       "Remove from this list": [
         "从此列表中移除"
       ],
       "Rename": [
         "重命名"
+      ],
+      "Replace file": [
+        "替换文件"
       ],
       "Report a problem": [
         "反馈问题"
@@ -2633,6 +2642,9 @@
       "Click ${ boldManage } to expand the options menu.": [
         "点击 ${ boldManage } 下拉菜单."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "各类邮箱操作步骤不尽相同，您可能需要先${ knowledgeBaseLink }才能导入至 ${ BRAND_NAME }。"
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "点击三点图标（...）展开下拉菜单。"
       ],
@@ -3715,6 +3727,9 @@
       "file data key": [
         "文件数据密匙"
       ],
+      "file data order": [
+        "文件数据顺序"
+      ],
       "keys": [
         "密钥"
       ],
@@ -4082,6 +4097,9 @@
       "Set expiration date": [
         "设置有效期"
       ],
+      "Set recovery method": [
+        "设置恢复方法"
+      ],
       "Sign emails": [
         "签名电子邮件"
       ],
@@ -4251,20 +4269,6 @@
         "正在启动导入"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个文件夹中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从最近 ${ periodFragment } 以来的共计 ${ totalLabelsCount } 个标签中导入 ${ selectedLabelsCount } 个内的所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }。"
-      ],
-      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "导入自 ${ periodFragment } 以来 ${ totalLabelsCount } 个文件夹中的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "导入自 ${ periodFragment } 以来共计 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ]
-    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免费体验期已结束，账户即将停用。${ action }"
@@ -4416,6 +4420,18 @@
       ],
       "Contact group updated": [
         "群组已更改"
+      ],
+      "Device failed to be removed": [
+        "设备移除失败"
+      ],
+      "Device failed to be renamed": [
+        "设备重命名失败"
+      ],
+      "Device removed": [
+        "设备已移除"
+      ],
+      "Device renamed": [
+        "设备已重命名"
       ],
       "Encrypted search activated": [
         "加密搜索已激活"
@@ -4608,8 +4624,14 @@
       "E.g., ": [
         "例如："
       ],
+      "Enter a new file name": [
+        "输入新文件名称"
+      ],
       "Enter a new folder name": [
         "输入新文件夹名称"
+      ],
+      "Enter device name": [
+        "输入设备名称"
       ],
       "Enter your email address": [
         "输入您的邮箱地址"
@@ -4950,6 +4972,9 @@
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
       ],
+      "Create a new file": [
+        "新建文件"
+      ],
       "Create a new folder": [
         "新建文件夹"
       ],
@@ -5181,11 +5206,17 @@
       "Recover data": [
         "恢复数据"
       ],
+      "Remove device?": [
+        "移除设备？"
+      ],
       "Rename a file": [
         "重命名文件"
       ],
       "Rename a folder": [
         "重命名文件夹"
+      ],
+      "Rename device": [
+        "重命名设备"
       ],
       "Report a problem": [
         "反馈问题"

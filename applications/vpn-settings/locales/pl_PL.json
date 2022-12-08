@@ -1606,6 +1606,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Pole musi zawierać co najmniej ${ minimumLength } znaków."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Użyj tylko liter, cyfr i znaków _.-"
+      ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
       ],
@@ -2856,6 +2859,9 @@
       ],
       "Mailbox password": [
         "Hasło skrzynki pocztowej"
+      ],
+      "Main": [
+        "Główny"
       ],
       "Moderate NAT": [
         "Umiarkowany NAT"
@@ -4960,6 +4966,12 @@
         "Hasło musi zawierać co najmniej ${ length } znaki",
         "Hasło musi zawierać co najmniej ${ length } znaków",
         "Hasło musi zawierać co najmniej ${ length } znaków"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
       ]
     },
     "VPN info": {

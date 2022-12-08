@@ -434,8 +434,14 @@
       "Payable every 12 months": [
         "قابل پرداخت هر 12 ماه"
       ],
+      "Payable every 15 months": [
+        "قابل پرداخت هر 15 ماه"
+      ],
       "Payable every 24 months": [
         "قابل پرداخت هر 24 ماه"
+      ],
+      "Payable every 30 months": [
+        "قابل پرداخت هر 30 ماه"
       ],
       "Payable every month": [
         "قابل پرداخت در هر ماه"
@@ -1560,14 +1566,23 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "مرورگری که شما استفاده می‌کنید اجازه پرداخت کامل را نمی‌دهد. لطفا از مرورگر دیگری استفاده نمایید یا از طریق رایانه وارد شوید."
       ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "حداقل مبلغ اعتباری که می‌توان اضافه کرد ${ price } است"
+      ],
       "The minimum amount that can be donated is ${ price }": [
         "حداقل مبلغی که می‌توان اهدا کرد ${ price } است"
+      ],
+      "The minimum payment we accept is ${ price }": [
+        "حداقل پرداختی که می‌پذیریم ${ price } است"
       ],
       "This field is required": [
         "این قسمت الزامی است"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "این قسمت حداقل به ${ minimumLength } نویسه نیاز دارد."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "تنها با استفاده از حروف، اعداد و ـ.- امتحان کنید"
       ],
       "Unknown error": [
         "خطای ناشناخته"
@@ -1693,6 +1708,11 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 رایانامه در هر ماه)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "پیشتر حساب کاربری داشته اید؟ ${ signIn }"
       ]
     },
     "Group": {
@@ -1860,6 +1880,9 @@
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "میزبانی ایمیل برای 10 نام دامنه ایمیل سفارشی بطور رایگان شامل شده است. افزودن دامنه های اضافی با پرداخت ${ price } ممکن است."
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "میزبانی ایمیل فقط برای دامنه هایی که هم اکنون دارید ممکن است. ثبت دامنه فعلا از طریق ${ BRAND_NAME } ممکن نیست. میتوانید از ایمیل برای دامنه های ثبت شده بر روی هر ثبت کننده دامنه میزبانی کنید."
       ],
       "Emailing preference saved": [
         "تنظیمات رایانامه‌نگاری بروز شد"
@@ -2134,6 +2157,9 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "این کار اشتراک پرداختی فعلی شما را لغو خواهد کرد و شما هر گونه مزایای وفاداری را که تا کنون کسب کرده‌اید، از دست خواهید داد. موجودی باقی ماندهٔ اشتراک شما به صورت اعتبار حساب به شما بازگردانده می‌شود."
       ],
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "این گزینه امکان استفاده از PayPal را برای پرداخت اشتراک ${ BRAND_NAME } شما فراهم می‌کند. شما از طریق یک زبانه جدید در مرورگر به PayPal منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های پیش‌آ استفاده می‌کنید، آن‌ها را غیرفعال کنید."
+      ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "با این کار حساب شما و همه داده‌های آن برای همیشه حذف می‌شود. شما نمی‌توانید این حساب را مجدد فعال کنید."
       ],
@@ -2151,6 +2177,9 @@
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "برای ادامه، لطفاً یک روش بازیابی حساب را انتخاب نمایید تا بتوانیم درخواست شما را تأیید کنیم."
+      ],
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
+        "برای محافظت از ارتباط اینترنت خود، برنامه ${ VPN_APP_NAME } را برای دستگاه خود دانلود و نصب کنید و به یک سرورمتصل شوید."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "حساب خود را با اعتباراتی که می‌توانید جهت اشتراک در یک طرح جدید یا تمدید طرح کنونی خود استفاده کنید، پر نمایید. شما به ازای هر ${ i18nCurrency } هزینه شده یک اعتبار می‌گیرید."
@@ -2450,6 +2479,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } از ${ humanMaxSpace }"
       ],
+      "${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } آدرس"
+      ],
       "${ n } month": [
         "${ n } ماه",
         "${ n } ماه"
@@ -2468,6 +2500,9 @@
       ],
       "Attach screenshot(s)": [
         "پیوست اسکرین شات(ها)"
+      ],
+      "Authenticator app": [
+        "برنامه اصالت سنجی"
       ],
       "Billing cycle": [
         "دوره صورت‌حساب"
@@ -2612,6 +2647,9 @@
       ],
       "Mailbox password": [
         "گذرواژه نامه‌دان"
+      ],
+      "Main": [
+        "اصلی"
       ],
       "Moderate NAT": [
         "Moderate NAT"
@@ -2912,6 +2950,9 @@
       "From ${ price }": [
         "از ${ price }"
       ],
+      "From ${ price } per user": [
+        "از ${ price } برای هر کاربر"
+      ],
       "Keep my ${ currentPlanName } account": [
         "حساب فعلی ${ currentPlanName } $ من را حفظ کن"
       ],
@@ -3159,11 +3200,20 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* با 12 ماه اشتراک. گزینه های اشتراک دیگر در موقع پرداخت موجود است."
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* با 15 ماه اشتراک. گزینه های اشتراک دیگر در موقع پرداخت موجود است."
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* با 24 ماه اشتراک. گزینه های اشتراک دیگر در موقع پرداخت موجود است."
       ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* با 30 ماه اشتراک. گزینه های اشتراک دیگر در موقع پرداخت موجود است."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "اعتبارها، هزینهٔ لحظه‌ای و کوپن های قابل استفاده در قدم بعدی اعمال میشوند"
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "حریم خصوصی و امنیت جامع با ترکیبی از تمام خدمات ${ BRAND_NAME }."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "اگر حساب خود را حذف کنید، تمام مزایای طرح ${ visionary } را از دست خواهید داد و اگر حساب جدیدی بسازید این طرح دیگر در دسترس نخواهد بود."
@@ -3179,6 +3229,9 @@
       ],
       "Popular": [
         "محبوب"
+      ],
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "مجموعه امنیت و حریم خصوصی برا مشاغل، شامل تمام خدمات ویژه ${ BRAND_NAME }."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "فضای ابری امن که به شما اجازه می دهد تا به راحتی و ایمن فایلهای خود را ذخیره، همگام‌سازی و به اشتراک بگذارید."
@@ -3212,6 +3265,12 @@
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "برای ادامه به استفاده از ${ MAIL_APP_NAME } با امکانات ویژه، اشتراک و روش پرداخت خود را انتخاب کنید."
       ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "به بسته مشاغل ارتقا دهید تا به تمامی خدمات ${ BRAND_NAME } دسترسی پیدا کنید."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "به بسته بالاترین حد حریم خصوصی ارتقا دهید و به تمام خدمات ویژه ${ BRAND_NAME } دسترسی پیدا کنید."
+      ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "دورهٔ آزمایشی شما در ${ formattedTrialExpirationDate } به پایان می‌رسد"
       ]
@@ -3233,6 +3292,9 @@
       ]
     },
     "new_plans: signup": {
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "با ساخت یک حساب ${ BRAND_NAME }، با ${ terms } ما موافقت میکنید"
+      ],
       "Payment details": [
         "جزئیات پرداخت"
       ],
@@ -3267,6 +3329,9 @@
       ],
       "Review subscription and pay": [
         "بازنگری اشتراک و پرداخت"
+      ],
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "شروع به کاوش جهان ${ BRAND_NAME } کنید"
       ],
       "Switch plans?": [
         "تغییر دادن طرح؟"
@@ -3305,6 +3370,9 @@
       "Control access to your shared files by adding password protection and link expiration dates": [
         "دسترسی به فایل های اشتراکی خود را با اضافه کردن رمزعبور و تاریخ انقضای لینک، کنترل کنید"
       ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "چندین آدرس ایمیل برای هویت های آنلاین خود، مانند JohnShopper@${ domain } برای حساب های خرید، JohnNews@${ domain } برای اشتراک اخبار ایجاد کنید"
+      ],
       "Create up to ${ n } custom calendar.": [
         "تا ${ n } تقویم سفارشی ایجاد کنید.",
         "تا ${ n } تقویم سفارشی ایجاد کنید."
@@ -3342,11 +3410,17 @@
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "اشتراک خود را مدیریت کنید، همینطور طرح خود را شخصی سازی کنید. روش های پرداخت مورد قبول، کارت اعتباری، PayPal، رمز ارز و حواله است."
       ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "در روزهای کاری، خدمات پشتیبانی را تا 24 ساعت بعد از در خواست ها از تیم پشتیبانی مشتریان ${ BRAND_NAME } دریافت کنید"
+      ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
         "علاوه بر آن، تا 5 تقویم از همکاران، سازمان ها، خانواده و دوستان اضافه کنید."
       ],
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "علاوه بر آن، تا 5 تقویم از دوستان، خانواده، همکاران و سازمان ها اضافه کنید."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
+        "یک اتصال VPN به شما اجازه میدهد تا هر زمانی به ${ BRAND_NAME } متصل شوید. برای مثال، برای اتصال یک موبایل و یک لپ‌تاپ به ${ BRAND_NAME } در یک زمان، شما به دو اتصال VPN نیاز دارید."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "گزینه ای برای نمایش صندوق های دریافتی کاربر غیر خصوصی همانطور که آن کاربر میبیند، که شامل پیام های کامل و جزئیات مخاطبین است"
@@ -3362,6 +3436,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "با استفاده از لوگوها، تصاویر، آیکون های شبکه های اجتماعی، لینک جزئیات مخاطب شما و بیشتر، امضای ایمیل خود را شخصی سازی کنید"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "پشتیبانی تلفنی بوسیله تیم موفقیت مشتری ${ BRAND_NAME } در ساعات کاری اروپا، برای مشتریانی که 6 کاربر یابیشتر دارند در دسترس است"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "از دسترسی به پیام ها توسط ${ BRAND_NAME } یا برنامه های مستقل از ما جلوگیری میکند. تنها افرادی که میتوانند پیام ها را بخوانند فرستنده و گیرنده مورد نظر هستند."
@@ -3383,6 +3460,9 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "با تنها یک کلیک ترافیک اینترنت خود را از طریق شبکه Tor عبور دهید"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "جزئیات مخاطبین خود را مانند شماره تلفن، آدرس، روز تولد و یادداشت های شخصی را بطور امن ذخیره کنید. رمزگذاری دسترسی صفر تضمین میکند که ${ BRAND_NAME } هیچوقت به آنها دسترسی نداشته باشد."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "ایمیل ها را به گروه های بزرگ بوسیله ایجاد گرو های مخاطب به تعدادمورد نیازتان به آسانی و سرعت ارسال کنید. (تا 100 مخاطب یرای هر گروه)"
@@ -3676,6 +3756,14 @@
         "نام کاربری"
       ]
     },
+    "Signup step": {
+      "Payment": [
+        "پرداخت"
+      ],
+      "Verification": [
+        "تایید"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } از بتا خارج شد! به فایل های خود امنیتی بدهید که به ایمیل ها خود می گیرند."
@@ -3775,6 +3863,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "راه حل تقویم و ایمیل با اولویت حریم خصوصی برای نیاز های ارتباطی روزمره شما."
+      ],
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "این پیشنهاد تنها برای کابران جدید ${ BRAND_NAME } است. به کارت اعتباری نیازی نیست."
       ]
     },
     "Success": {
@@ -3989,6 +4080,9 @@
       ],
       "Confirm downgrade": [
         "تایید تنزل"
+      ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "تایید کاهش پاداش‌های ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "تایید شماره تلفن"
@@ -4239,11 +4333,17 @@
       "WireGuard configuration": [
         "تنظیمات WireGuard"
       ],
+      "You already have a ${ BRAND_NAME } account": [
+        "شما در حال حاضر یک حساب ${ BRAND_NAME } دارید"
+      ],
       "Your current plan": [
         "طرح کنونی شما"
       ],
       "Your plan": [
         "طرح شما"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "شما دعوت شده اید تا ${ MAIL_APP_NAME } را امتحان کنید"
       ],
       "ZIP / postal code": [
         "کد پستی"
@@ -4282,6 +4382,10 @@
       "Password must contain at least ${ length } character": [
         "گذرواژه باید حداقل ${ length } نویسه داشته باشد",
         "گذرواژه باید حداقل ${ length } نویسه داشته باشد"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)",
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)"
       ]
     },
     "VPN info": {

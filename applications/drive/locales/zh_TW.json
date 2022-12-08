@@ -425,6 +425,9 @@
       "Rename": [
         "重新命名"
       ],
+      "Replace file": [
+        "取代檔案"
+      ],
       "Report a problem": [
         "回報問題"
       ],
@@ -804,6 +807,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "從上次更新以來已經過了超過12小時 — ${ CALENDAR_APP_NAME } 將會嘗試在幾個小時內更新日曆。"
       ]
     },
     "Collapsible tooltip": {
@@ -1952,6 +1958,9 @@
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
       ],
+      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "請至少將 ${ calendarToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
+      ],
       "Missing key packet": [
         "缺少金鑰封包"
       ],
@@ -2674,6 +2683,30 @@
       ],
       "Select ${ boldExportCSV }.": [
         "選取匯出 ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "要匯入行事曆到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "要匯入行事曆到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "要匯入行事曆到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "要匯入聯絡人到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "要匯入聯絡人到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "要匯入聯絡人到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "要匯入電子郵件到 ${ BRAND_NAME }，您需要來自 Outlook 的 ${ appPasswordLink }。請按照以下步驟取得："
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "要匯入電子郵件到 ${ BRAND_NAME }，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
       ]
     },
     "Import instructions emphasis": {
@@ -3123,6 +3156,9 @@
       "Folder will not be uploaded": [
         "資料夾將不會被上載"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "來自您電腦的同步資料夾將會出現在此。"
+      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -3200,6 +3236,9 @@
       ],
       "Internet connection restored.": [
         "網際網路連線已恢復。"
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "您最近似乎嘗試上傳 ${ uploadName }。若上傳失敗，請 ${ replaceFile }。若上傳仍在進行中，取代它將會取消進行中的上傳。"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "就像拖放或選取檔案一樣簡單"
@@ -3299,6 +3338,9 @@
       ],
       "No synced computers": [
         "無已同步的電腦"
+      ],
+      "No synced folders": [
+        "無已同步的資料夾"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "上載的金鑰皆無法用於加密。為能夠傳送郵件至此電郵位址，請上載有效的金鑰或是停用「加密電郵」。"
@@ -3666,6 +3708,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您目前已登入為 ${ user.Name } (${ user.Email })。"
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "你也可以將匯入的行事曆與現有的 ${ BRAND_NAME } 行事曆合併。"
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
       ],
@@ -3710,6 +3755,9 @@
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "您目前的瀏覽器不支援下載大型檔案，因為服務工作者功能無法使用。下載大型檔案可能會使瀏覽器凍結或沒有回應。請改用其中一個${ recommendedBrowser }的最新版本，然後再試一次。"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "您的電郵位址毋需變更。 不過日後就得在 ${ link } 進行登入。"
@@ -4301,20 +4349,6 @@
         "您的匯入程序已開始"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ totalLabelsCount } 個資料夾匯入 ${ selectedLabelsCount } 個資料夾中自 ${ periodFragment } 以來的所有訊息，並將它們標記為 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入全部 ${ totalLabelsCount } 個標籤中的 ${ selectedLabelsCount } 個最近 ${ periodFragment } 的訊息並將其貼上標籤： ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入${ periodFragment } 迄今來自 ${ totalLabelsCount } 資料夾的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ totalLabelsCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ totalLabelsCount } 個標籤匯入最近 ${ periodFragment } 的訊息並將其貼上標籤： ${ LABEL_MARKUP_PLACEHOLDER }"
-      ]
-    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費試用期已結束。您即將無法存取您的帳戶。${ action }"
@@ -4567,6 +4601,11 @@
         "您的設定已成功變更。"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "接下來，您將必須登入您的 Google 帳號，並同意 ${ BRAND_NAME } 存取您的資料。"
+      ]
+    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "為使匯入開始運作，您必須選取所有必要的項目，可參考依循 GIF 裡顯示的部分。"
@@ -4612,6 +4651,9 @@
       ],
       "Set up your organization": [
         "設定您的組織"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "使用左上角的應用程式選取器存取所有的 ${ BRAND_NAME } 服務：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
       ],
       "You can change this anytime in your settings.": [
         "您隨時都可以在設定中變更。"
@@ -5521,6 +5563,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "密碼至少必須包含 ${ length } 個字元"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
       ]
     },
     "Validation Error": {
@@ -5605,6 +5650,12 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "此動作無法復原。請在欄位輸入「${ boldDanger }」一詞以繼續。"
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "此功能僅限付費 ${ BRAND_NAME } 帳號使用"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "此匯入可能超出您的 ${ BRAND_NAME } 帳號中目前可用的儲存空間。請考慮自訂您的匯入。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
