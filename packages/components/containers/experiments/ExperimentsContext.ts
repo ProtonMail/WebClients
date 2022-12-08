@@ -9,6 +9,7 @@ export enum ExperimentCode {
     Family2023 = 'Family2023',
     ReferralProgramSignup = 'ReferralProgramSignup',
     GmailSyncOnboarding = 'GmailSyncOnboarding',
+    MultipleUpsell = 'MultipleUpsell',
 }
 
 export interface ExperimentsContextValue {

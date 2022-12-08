@@ -23,10 +23,12 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
+import Loader from './Loader';
 import UpsellPlanCard from './UpsellPlanCard';
 import { getSignupApplication } from './helper';
 
 interface Props {
+    experiment: { loading: boolean; value: string };
     onPlan: (planIDs: PlanIDs) => Promise<void>;
     currency: Currency;
     onChangeCurrency: (currency: Currency) => void;
@@ -66,18 +68,44 @@ const hasNoIcon = (features: PlanCardFeatureDefinition[]) => {
 };
 
 const UpsellStep = ({
+    experiment,
     plans,
     vpnServers,
     cycle,
     currency,
     onChangeCurrency,
     onPlan,
-    mostPopularPlanName,
+    mostPopularPlanName: mostPopularPlanNameProp,
     upsellPlanName,
     onBack,
     isPassPlusEnabled,
 }: Props) => {
     const { APP_NAME } = useConfig();
+
+    const [loading, withLoading] = useLoading();
+    const [type, setType] = useState('free');
+
+    useEffect(() => {
+        void metrics.core_signup_pageLoad_total.increment({
+            step: 'upsell',
+            application: getSignupApplication(APP_NAME),
+        });
+    }, []);
+
+    if (experiment.loading) {
+        return (
+            <Main className={clsx('sign-layout-upsell')}>
+                <Content>
+                    <div className="text-center">
+                        <Loader />
+                    </div>
+                </Content>
+            </Main>
+        );
+    }
+
+    const mostPopularPlanName = experiment.value === 'B' ? mostPopularPlanNameProp : undefined;
+
     const plansMap = toMap(plans, 'Name');
 
     const shortFreePlan = (() => {
@@ -106,21 +134,11 @@ const UpsellStep = ({
     const upsellPlan = plansMap[upsellPlanName];
     const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
 
-    const [loading, withLoading] = useLoading();
-    const [type, setType] = useState('free');
-
     const freeFooterNotes = getFooterNotes(PLANS.FREE, cycle);
     const upsellFooterNotes = getFooterNotes(upsellPlanName, cycle);
 
     // If there's a feature with a checkmark, don't show any icons
     const noIcon = hasNoIcon(shortFreePlan?.features || []) || hasNoIcon(upsellShortPlan?.features || []);
-
-    useEffect(() => {
-        void metrics.core_signup_pageLoad_total.increment({
-            step: 'upsell',
-            application: getSignupApplication(APP_NAME),
-        });
-    }, []);
 
     const mostPopularPlan = (() => {
         if (!mostPopularPlanName) {
