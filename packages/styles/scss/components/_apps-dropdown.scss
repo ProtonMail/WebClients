@@ -1,7 +1,6 @@
 .apps-dropdown {
 	&-button {
 		@extend .interactive;
-		@extend .interactive-focus;
 
 		border-radius: var(--border-radius-md);
 		border: 1px solid transparent;
