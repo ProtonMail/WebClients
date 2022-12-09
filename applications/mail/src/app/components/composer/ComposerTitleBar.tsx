@@ -20,7 +20,10 @@ const TitleBarButton = ({ onClick, children, className = '', title, disabled = f
         <Tooltip title={title}>
             <button
                 type="button"
-                className={classnames(['composer-title-bar-button interactive flex p0-5', className])}
+                className={classnames([
+                    'composer-title-bar-button interactive-pseudo-inset relative flex p0-5',
+                    className,
+                ])}
                 onClick={onClick}
                 disabled={disabled}
                 data-testid={dataTestId}
