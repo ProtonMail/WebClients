@@ -199,12 +199,11 @@
 	&-item {
 		&-button,
 		&-link {
-			@extend .interactive-pseudo;
+			@extend .interactive-pseudo-inset;
 
 			position: relative;
 
 			&::after {
-				inset: $focus-ring-size;
 				z-index: 2;
 			}
 

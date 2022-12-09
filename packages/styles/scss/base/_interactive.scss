@@ -82,3 +82,16 @@
 		}
 	}
 }
+
+/*
+ * Interactive gives only default colors on every states
+ * Focus states as pseudo element with inset to deal with overflow-hidden
+ */
+.interactive-pseudo-inset {
+	@extend %interactive;
+	@extend .interactive-pseudo;
+
+	&::after {
+		inset: $focus-ring-size;
+	}
+}
