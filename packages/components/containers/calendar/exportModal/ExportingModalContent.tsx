@@ -87,7 +87,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 }));
 
                 const [exportedEvents, exportErrors, totalEventsFetched] = await processInBatches({
-                    calendarID: model.calendar.ID,
+                    calendar: model.calendar,
                     addresses,
                     api: getApiWithAbort(api, signal),
                     signal,
