@@ -12,7 +12,7 @@ import { readFileAsString } from '../../helpers/file';
 import { dateLocale } from '../../i18n';
 import { Api, SimpleMap } from '../../interfaces';
 import {
-    CalendarEventWithMetadata,
+    CalendarEvent,
     ImportCalendarModel,
     ImportedEvent,
     VcalCalendarComponentOrError,
@@ -282,7 +282,7 @@ export const splitHiddenErrors = (errors: ImportEventError[]) => {
 
 const getParentEventFromApi = async (uid: string, api: Api, calendarId: string) => {
     try {
-        const { Events } = await api<{ Events: CalendarEventWithMetadata[] }>({
+        const { Events } = await api<{ Events: CalendarEvent[] }>({
             ...getEventByUID({
                 UID: uid,
                 Page: 0,
@@ -324,7 +324,7 @@ export const getSupportedEventsWithRecurrenceId = async ({
     const mapParentEvents = parentEvents.reduce<
         SimpleMap<{
             vcalComponent: VcalVeventComponent;
-            calendarEvent: CalendarEventWithMetadata;
+            calendarEvent: CalendarEvent;
         }>
     >((acc, event) => {
         acc[event.component.uid.value] = {

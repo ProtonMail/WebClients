@@ -53,7 +53,6 @@ import {
     CALENDAR_TYPE,
     CalendarEvent,
     CalendarEventEncryptionData,
-    CalendarEventWithMetadata,
     CalendarUserSettings,
     CalendarWidgetData,
     CalendarWithOwnMembers,
@@ -147,7 +146,7 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
 };
 
 interface GetVeventWithAlarmsArgs {
-    calendarEvent: CalendarEventWithMetadata;
+    calendarEvent: CalendarEvent;
     memberID?: string;
     getCalendarEventRaw: GetCalendarEventRaw;
     getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
@@ -191,10 +190,10 @@ export type FetchAllEventsByUID = ({
     recurrenceId?: VcalDateOrDateTimeProperty;
     api: Api;
 }) => Promise<{
-    event?: CalendarEventWithMetadata;
-    otherEvents: CalendarEventWithMetadata[];
-    parentEvent?: CalendarEventWithMetadata;
-    otherParentEvents?: CalendarEventWithMetadata[];
+    event?: CalendarEvent;
+    otherEvents: CalendarEvent[];
+    parentEvent?: CalendarEvent;
+    otherParentEvents?: CalendarEvent[];
     supportedRecurrenceId?: VcalDateOrDateTimeProperty;
 }>;
 
@@ -202,7 +201,7 @@ export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, legacyUid,
     const timestamp = recurrenceId ? getUnixTime(propertyToUTCDate(recurrenceId)) : undefined;
     const allowedCalendarIDs = calendars.map(({ ID }) => ID);
 
-    const promises: Promise<CalendarEventWithMetadata[]>[] = (() => {
+    const promises: Promise<CalendarEvent[]>[] = (() => {
         if (!legacyUid) {
             return [getRelevantEventsByUID({ api, uid, calendarIDs: allowedCalendarIDs })];
         }
@@ -290,8 +289,8 @@ type FetchEventInvitation = (args: {
     invitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitation?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendarData?: CalendarWidgetData;
-    calendarEvent?: CalendarEventWithMetadata;
-    singleEditData?: CalendarEventWithMetadata[];
+    calendarEvent?: CalendarEvent;
+    singleEditData?: CalendarEvent[];
     reencryptionData?: Required<Pick<CalendarEventEncryptionData, 'encryptingAddressID' | 'sharedSessionKey'>>;
     hasDecryptionError?: boolean;
     supportedRecurrenceId?: VcalDateOrDateTimeProperty;
@@ -504,7 +503,7 @@ interface UpdateEventInvitationArgs {
     invitationApi: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendarData: Required<CalendarWidgetData>;
-    singleEditData?: CalendarEventWithMetadata[];
+    singleEditData?: CalendarEvent[];
     pmData?: PmInviteData;
     api: Api;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
@@ -911,7 +910,7 @@ export const updatePartstatFromInvitation = async ({
     oldPartstat?: ICAL_ATTENDEE_STATUS;
     timestamp: number;
     calendarData?: CalendarWidgetData;
-    singleEditData?: CalendarEventWithMetadata[];
+    singleEditData?: CalendarEvent[];
     api: Api;
 }) => {
     const { calendar, memberID, addressKeys, calendarSettings } = calendarData || {};
