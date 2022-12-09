@@ -1,5 +1,5 @@
 import { RequireSome } from '../interfaces';
-import { CalendarCreateEventBlobData } from '../interfaces/calendar';
+import { CalendarCreateEventBlobData, CalendarEvent } from '../interfaces/calendar';
 
 export const getHasSharedEventContent = (
     data: Partial<CalendarCreateEventBlobData>
@@ -8,3 +8,8 @@ export const getHasSharedEventContent = (
 export const getHasSharedKeyPacket = (
     data: CalendarCreateEventBlobData
 ): data is RequireSome<CalendarCreateEventBlobData, 'SharedKeyPacket'> => !!data.SharedKeyPacket;
+
+export const getIsAutoAddedInvite = (
+    event: CalendarEvent
+): event is CalendarEvent & { AddressKeyPacket: string; AddressID: string } =>
+    !!event.AddressKeyPacket && !!event.AddressID;
