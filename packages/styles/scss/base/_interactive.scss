@@ -16,6 +16,7 @@
 
 	&:active,
 	&.is-active,
+	&.active,
 	&[aria-expanded='true'] {
 		background-color: var(--interaction-default-active);
 		color: inherit;
