@@ -32,7 +32,15 @@ interface ExtensionForkPayload {
     state: string;
 }
 
-type ExtensionForkResult = { type: 'success'; payload?: any } | { type: 'error'; payload: string | undefined };
+export type ExtensionForkResultPayload = {
+    title?: string;
+    message: string;
+};
+
+export type ExtensionForkResult = {
+    type: 'error' | 'success';
+    payload?: ExtensionForkResultPayload;
+};
 
 export const produceExtensionFork = ({
     messageListenerRef,
@@ -45,7 +53,7 @@ export const produceExtensionFork = ({
 }): Promise<ExtensionForkResult> => {
     return new Promise((resolve) => {
         window.setTimeout(() => {
-            resolve({ type: 'error', payload: 'Extension timed out' });
+            resolve({ type: 'error', payload: { message: 'Extension timed out' } });
         }, 15000);
 
         // Fallback for firefox browsers since it doesn't implement externally connectable
@@ -76,7 +84,7 @@ export const produceExtensionFork = ({
         };
 
         try {
-            const browser = 'chrome' in window ? (window.chrome as any) : undefined;
+            const browser = 'chrome' in window ? (window as any).chrome : undefined;
             if (!browser?.runtime?.sendMessage) {
                 return handleFallback();
             }
