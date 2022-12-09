@@ -1,3 +1,9 @@
+# Release 5.0.9.0 – December 14, 2022
+
+## Improved
+
+-   Added a right-hand side panel giving users the ability to use Proton Drive and view upcoming Proton Calendar events or contacts in parallel
+
 # Release 5.0.8.0 — December 1, 2022
 
 ## Improved
