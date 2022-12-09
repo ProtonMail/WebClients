@@ -6,6 +6,7 @@
 	overflow-y: auto;
 
 	&-button {
+		border: 1px solid transparent;
 		background-color: var(--interaction-default);
 		animation: anime-sidebar-button-appear-in 0.5s calc(var(--index, 0) * 75ms) easing(ease-out-quint) both;
 
