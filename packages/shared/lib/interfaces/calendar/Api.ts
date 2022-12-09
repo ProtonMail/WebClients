@@ -3,7 +3,7 @@ import { ApiResponse } from '../Api';
 import { Nullable, RequireSome } from '../utils';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from './Calendar';
 import { CalendarMember, CalendarMemberInvitation } from './CalendarMember';
-import { Attendee, CalendarEventData, CalendarEventWithMetadata } from './Event';
+import { Attendee, CalendarEvent, CalendarEventData } from './Event';
 import { ACCESS_LEVEL } from './Link';
 
 export type CalendarCreateData = {
@@ -169,7 +169,7 @@ export interface SyncMultipleApiResponses {
     Index: number;
     Response: {
         Code: number;
-        Event?: CalendarEventWithMetadata;
+        Event?: CalendarEvent;
         Error?: string;
     };
 }
@@ -179,7 +179,7 @@ export interface SyncMultipleApiResponse extends ApiResponse {
 }
 
 export interface UpdateEventPartApiResponse extends ApiResponse {
-    Event: CalendarEventWithMetadata;
+    Event: CalendarEvent;
 }
 
 interface GetCanonicalAddressesSingleApiResponse extends ApiResponse {

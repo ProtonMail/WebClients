@@ -75,9 +75,7 @@ export interface CalendarEventMetadata {
     Exdates: number[];
 }
 
-export interface CalendarEvent extends CalendarEventSharedData, CalendarEventBlobData {}
-
-export interface CalendarEventWithMetadata extends CalendarEvent, CalendarEventMetadata {}
+export interface CalendarEvent extends CalendarEventSharedData, CalendarEventBlobData, CalendarEventMetadata {}
 
 export interface CalendarEventWithoutBlob extends CalendarEventSharedData, CalendarEventMetadata {}
 
@@ -85,7 +83,7 @@ export interface SyncMultipleApiSuccessResponses {
     Index: number;
     Response: {
         Code: API_CODES.SINGLE_SUCCESS;
-        Event: CalendarEventWithMetadata;
+        Event: CalendarEvent;
     };
 }
 

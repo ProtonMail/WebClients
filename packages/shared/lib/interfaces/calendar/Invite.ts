@@ -4,7 +4,7 @@ import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '../../calendar/constan
 import { DecryptedKey } from '../Key';
 import { CalendarSettings, VisualCalendar } from './Calendar';
 import { DecryptedCalendarKey } from './CalendarKey';
-import { CalendarEvent, CalendarEventWithMetadata } from './Event';
+import { CalendarEvent } from './Event';
 import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from './VcalModel';
 
 export interface PartstatActions {
@@ -64,7 +64,7 @@ export interface Participant {
 }
 
 export interface SavedImportData {
-    savedEvent: CalendarEventWithMetadata;
+    savedEvent: CalendarEvent;
     savedVevent: VcalVeventComponent;
 }
 
