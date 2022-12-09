@@ -33,7 +33,7 @@ export interface FeatureFlagsConfig {
 export interface FeaturesConfig {
     NetShieldLevel: FeatureSelection<number>;
     RandomNAT: FeatureOption<boolean>;
-    // PortForwarding: FeatureOption<boolean>;
+    PortForwarding: FeatureOption<boolean>;
     SplitTCP: FeatureOption<boolean>;
     SafeMode: FeatureOption<boolean>;
 }
@@ -80,11 +80,11 @@ export const initialFeaturesConfig: FeaturesConfig = {
         transform: (value) => !value,
         unTransform: (value) => !value,
     },
-    // PortForwarding: {
-    //     name: c('Label').t`NAT-PMP (Port Forwarding)`,
-    //     url: 'https://protonvpn.com/support/port-forwarding',
-    //     value: false,
-    // },
+    PortForwarding: {
+        name: c('Label').t`NAT-PMP (Port Forwarding)`,
+        url: 'https://protonvpn.com/support/port-forwarding',
+        value: false,
+    },
     SplitTCP: {
         name: c('Label').t`VPN Accelerator`,
         url: 'https://protonvpn.com/blog/vpn-accelerator/',
