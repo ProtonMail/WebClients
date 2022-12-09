@@ -6,7 +6,7 @@ import { getDiscount } from '../../helpers/dealPrices';
 import { getRenewDescription } from '../../helpers/offerCopies';
 import { OfferProps } from '../../interface';
 
-const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
+const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
     return (
         <div className="mb1">
             {offer.deals.map((deal) => {
@@ -25,7 +25,7 @@ const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
                 );
                 const description = getRenewDescription(cycle, discountedAmount, regularAmount, discount);
 
-                if (!description) {
+                if (!description || !star) {
                     return null;
                 }
 
@@ -33,7 +33,7 @@ const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
 
                 return (
                     <p key={key} className="text-sm text-center color-weak">
-                        {star ? <sup className="mr0-5">{star}</sup> : null}
+                        <sup className="mr0-5">{star}</sup>
                         {description}
                     </p>
                 );
@@ -44,4 +44,4 @@ const BlackFridayMailFooter = ({ offer, currency }: OfferProps) => {
     );
 };
 
-export default BlackFridayMailFooter;
+export default BlackFridayFooter;
