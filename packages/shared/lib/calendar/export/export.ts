@@ -2,6 +2,7 @@ import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
+import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import partition from '@proton/utils/partition';
 import unique from '@proton/utils/unique';
@@ -142,7 +143,7 @@ const decryptEvent = async ({
             privateKeys: eventDecryptionKeys,
         });
 
-        const { SharedEvents, CalendarEvents, AttendeesEvents, Attendees, AddressKeyPacket, AddressID } = event;
+        const { SharedEvents, CalendarEvents, AttendeesEvents, Attendees } = event;
         const { veventComponent } = await readCalendarEvent({
             event: {
                 SharedEvents: withNormalizedAuthors(SharedEvents),
@@ -153,7 +154,7 @@ const decryptEvent = async ({
             sharedSessionKey,
             calendarSessionKey,
             addresses,
-            encryptingAddressID: AddressKeyPacket && AddressID ? AddressID : undefined,
+            encryptingAddressID: getIsAutoAddedInvite(event) ? event.AddressID : undefined,
         });
         const veventWithAlarmsAndSummary: VcalVeventComponent = {
             ...valarms,

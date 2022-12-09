@@ -1,3 +1,5 @@
+import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
+
 import { DecryptedKey } from '../../interfaces';
 import { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
@@ -17,12 +19,12 @@ export const getCalendarEventDecryptionKeys = async ({
     getAddressKeys?: GetAddressKeys;
     getCalendarKeys?: GetCalendarKeys;
 }) => {
-    const { CalendarID, AddressID, AddressKeyPacket } = calendarEvent;
-    if (AddressKeyPacket && AddressID) {
+    const { CalendarID } = calendarEvent;
+    if (getIsAutoAddedInvite(calendarEvent)) {
         if (!addressKeys && !getAddressKeys) {
             return;
         }
-        return splitKeys(addressKeys || (await getAddressKeys?.(AddressID))).privateKeys;
+        return splitKeys(addressKeys || (await getAddressKeys?.(calendarEvent.AddressID))).privateKeys;
     }
     if (!calendarKeys && !getCalendarKeys) {
         return;
