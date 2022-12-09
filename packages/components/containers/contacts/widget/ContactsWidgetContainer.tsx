@@ -212,7 +212,7 @@ const ContactsWidgetContainer = ({
                     value={search}
                     onChange={setSearch}
                     id="id_contact-widget-search"
-                    placeholder={c('Placeholder').t`Name, email or address`}
+                    placeholder={c('Placeholder').t`Name or email address`}
                 />
                 <span className="sr-only" aria-atomic aria-live="assertive">
                     {c('Info').ngettext(
