@@ -146,6 +146,8 @@ const ImportManageFoldersRow = ({
         if (DestinationFolder) {
             return false;
         }
+
+        //Labels and folder are same entity
         const collection = [
             ...(isLabelMapping ? folders : labels),
             ...(isLabelMapping
@@ -156,7 +158,7 @@ const ImportManageFoldersRow = ({
                 .map(([, dest]) => ({ Path: dest })),
         ];
 
-        return nameAlreadyExists(inputValue, collection);
+        return nameAlreadyExists(inputValue, collection, folder.Source);
     }, [inputValue, folders, labels]);
 
     const nameTooLongError = useMemo(() => {
@@ -191,7 +193,7 @@ const ImportManageFoldersRow = ({
         const cleanInputValue = inputValue.toLowerCase().trim();
         return isLabelMapping
             ? RESERVED_NAMES.includes(cleanInputValue)
-            : RESERVED_NAMES.includes(escapeSlashes(cleanInputValue));
+            : RESERVED_NAMES.includes(escapeSlashes(cleanInputValue)) && level === 0;
     }, [checked, inputValue]);
 
     const hasError = emptyValueError || nameTooLongError || nameAlreadyExistsError || reservedNameError;
