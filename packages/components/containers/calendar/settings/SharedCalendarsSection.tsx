@@ -184,7 +184,7 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
         removeInvitation(invitation.CalendarInvitationID);
     };
 
-    if (!invitations.length && !calendars.length) {
+    if (!(calendars.length || (isCalendarSharingEnabled && invitations.length))) {
         return null;
     }
 
