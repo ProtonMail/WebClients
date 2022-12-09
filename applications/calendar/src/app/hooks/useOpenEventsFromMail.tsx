@@ -9,7 +9,7 @@ import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone'
 import { getIsDrawerPostMessage } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { Address } from '@proton/shared/lib/interfaces';
-import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { TYPE } from '../components/calendar/interactions/constants';
 import { InteractiveState, TimeGridRef } from '../containers/calendar/interface';
@@ -57,7 +57,7 @@ export const useOpenEventsFromMail = ({
 
     const handleGotoOccurrence = useCallback(
         (
-            eventData: CalendarEventWithMetadata,
+            eventData: CalendarEvent,
             eventComponent: VcalVeventComponent,
             occurrence: { localStart: Date; occurrenceNumber: number }
         ) => {
@@ -80,7 +80,7 @@ export const useOpenEventsFromMail = ({
     );
 
     const handleGoToEvent = useCallback(
-        (eventData: CalendarEventWithMetadata, eventComponent: VcalVeventComponent) => {
+        (eventData: CalendarEvent, eventComponent: VcalVeventComponent) => {
             const utcDate = propertyToUTCDate(eventComponent.dtstart);
 
             setInteractiveData({
