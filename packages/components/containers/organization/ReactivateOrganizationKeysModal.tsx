@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -79,11 +79,18 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
             setError('');
 
             const { PrivateKey, KeySalt } = await api(getOrganizationBackupKeys());
-            const decryptedPrivateKey = await decryptPrivateKeyWithSalt({
-                PrivateKey,
-                password: backupPassword,
-                keySalt: KeySalt,
-            });
+            let decryptedPrivateKey: PrivateKeyReference;
+
+            try {
+                decryptedPrivateKey = await decryptPrivateKeyWithSalt({
+                    PrivateKey,
+                    password: backupPassword,
+                    keySalt: KeySalt,
+                });
+            } catch (e) {
+                throw new Error(c('Error').t`Incorrect password`);
+            }
+
             const armoredPrivateKey = await CryptoProxy.exportPrivateKey({
                 privateKey: decryptedPrivateKey,
                 passphrase: authentication.getPassword(),
@@ -128,7 +135,10 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
                     label={c('Label').t`Organization password`}
                     placeholder={c('Placeholder').t`Password`}
                     value={backupPassword}
-                    onValue={setBackupPassword}
+                    onValue={(value: string) => {
+                        setError('');
+                        setBackupPassword(value);
+                    }}
                     error={validator([requiredValidator(backupPassword), error])}
                     autoComplete="off"
                     autoFocus
