@@ -45,17 +45,17 @@ const MailSidebarSystemFolders = ({
     displayMoreItems,
     onToggleMoreItems,
 }: Props) => {
-    const lastDragTimeRef = useRef<number>();
-    const isDragging = useRef<boolean>();
-    const dragOverlay = useRef<HTMLDivElement>();
     const { ShowMoved } = mailSettings || { ShowMoved: 0 };
     const [sidebarElements, moveSidebarElement] = useMoveSystemFolders({ showMoved: ShowMoved, showScheduled });
     const isConversation = isConversationMode(currentLabelID, mailSettings, location);
+    const canDragAndDropFolders = useFeature(FeatureCode.ReorderSystemFolders).feature?.Value === true;
+
+    const lastDragTimeRef = useRef<number>();
+    const isDragging = useRef<boolean>();
+    const dragOverlay = useRef<HTMLDivElement>();
     const [draggedElementId, setDraggedElementId] = useState<MAILBOX_LABEL_IDS | undefined>();
     const [dragOveredElementId, setDragOveredElementId] = useState<string | undefined>();
     const [isOverMoreFolder, setIsOverMoreFolder] = useState<boolean>();
-    const canReorderSystemFolders = useFeature(FeatureCode.ReorderSystemFolders);
-    const canDragAndDropFolders = canReorderSystemFolders.feature?.Value === true;
 
     const getCommonProps = (labelID: string) => ({
         currentLabelID,
@@ -114,11 +114,15 @@ const MailSidebarSystemFolders = ({
         isDragging.current = true;
     };
 
-    const handleDragEnd = () => {
+    const handleResetDragState = () => {
         isDragging.current = false;
         setDraggedElementId(undefined);
+        setDragOveredElementId(undefined);
+        setIsOverMoreFolder(undefined);
         if (dragOverlay.current) {
             document.body.removeChild(dragOverlay.current);
+            lastDragTimeRef.current = undefined;
+            isDragging.current = undefined;
             dragOverlay.current = undefined;
         }
     };
@@ -134,6 +138,7 @@ const MailSidebarSystemFolders = ({
             return;
         }
 
+        handleResetDragState();
         moveSidebarElement(draggedId, droppedId);
     };
 
@@ -209,7 +214,7 @@ const MailSidebarSystemFolders = ({
                         isDnDAllowed={canDragAndDropFolders}
                         key={element.ID}
                         onDragStart={handleDragStart(element.labelID)}
-                        onDragEnd={handleDragEnd}
+                        onDragEnd={handleResetDragState}
                         onDragOver={handleDragOver(element.labelID)}
                         onDrop={handleDrop(element.labelID, draggedElementId)}
                         className={classnames([getDnDClasses(element.labelID, draggedElementId)])}
@@ -251,7 +256,7 @@ const MailSidebarSystemFolders = ({
                               onClick={(e) => e.stopPropagation()}
                               key={element.ID}
                               onDragStart={handleDragStart(element.labelID)}
-                              onDragEnd={handleDragEnd}
+                              onDragEnd={handleResetDragState}
                               onDragOver={handleDragOver(element.labelID)}
                               onDrop={handleDrop(element.labelID, draggedElementId)}
                               className={classnames([getDnDClasses(element.labelID, draggedElementId)])}
