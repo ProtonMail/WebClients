@@ -37,8 +37,14 @@ const MessageDecryptForm = ({ onSubmit }: Props) => {
                 rootClassName="mt0-5"
                 data-testid="unlock:input"
             />
-            <Button size="large" color="norm" type="button" fullWidth onClick={handleSubmit}>{c('Action')
-                .t`Read message`}</Button>
+            <Button
+                size="large"
+                color="norm"
+                type="button"
+                data-testid="unlock:submit"
+                fullWidth
+                onClick={handleSubmit}
+            >{c('Action').t`Read message`}</Button>
         </form>
     );
 };
