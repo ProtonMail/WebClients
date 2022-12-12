@@ -1,5 +1,5 @@
 import { WeekStartsOn } from '../../date-fns-utc/interface';
-import { Calendar } from './Calendar';
+import { VisualCalendar } from './Calendar';
 
 export enum EXPORT_STEPS {
     EXPORTING,
@@ -22,7 +22,7 @@ export interface ExportCalendarModel {
     totalFetched: number;
     totalProcessed: number;
     totalToProcess: number;
-    calendar: Calendar;
+    calendar: VisualCalendar;
     exportErrors: ExportError[];
     error?: EXPORT_ERRORS;
     weekStartsOn: WeekStartsOn;

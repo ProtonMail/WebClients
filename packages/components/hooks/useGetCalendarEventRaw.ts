@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 
+import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAuthorPublicKeysMap, withNormalizedAuthors } from '@proton/shared/lib/calendar/author';
 import { readCalendarEvent, readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
 import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/keys/getCalendarEventDecryptionKeys';
@@ -19,8 +20,8 @@ const useGetCalendarEventRaw = (): GetCalendarEventRaw => {
 
     return useCallback(
         async (Event: CalendarEvent) => {
-            const { AddressKeyPacket, AddressID, SharedEvents, CalendarEvents, AttendeesEvents } = Event;
-            const encryptingAddressID = AddressKeyPacket && AddressID ? AddressID : undefined;
+            const { SharedEvents, CalendarEvents, AttendeesEvents } = Event;
+            const encryptingAddressID = getIsAutoAddedInvite(Event) ? Event.AddressID : undefined;
             const addresses = await getAddresses();
 
             const [privateKeys, publicKeysMap] = await Promise.all([

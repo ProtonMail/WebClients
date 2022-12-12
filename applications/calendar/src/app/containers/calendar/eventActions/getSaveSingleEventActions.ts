@@ -1,4 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
+import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/helpers';
@@ -169,7 +170,7 @@ const getSaveSingleEventActions = async ({
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
-                reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
+                reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                 sendIcs,
                 reencryptSharedEvent,
             });
@@ -181,7 +182,7 @@ const getSaveSingleEventActions = async ({
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
-                reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
+                reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                 inviteActions,
                 reencryptSharedEvent,
             });

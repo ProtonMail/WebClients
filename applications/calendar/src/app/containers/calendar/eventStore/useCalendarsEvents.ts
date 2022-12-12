@@ -1,5 +1,6 @@
 import { MutableRefObject, useEffect, useMemo, useState } from 'react';
 
+import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { DAY } from '@proton/shared/lib/constants';
 import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
@@ -82,13 +83,13 @@ const useCalendarsEvents = (
                             eventReadResult,
                             calendarData: calendar,
                         };
-                        const hasAddressKeyPacket = !!(
+                        const isAutoAddedInvite = !!(
                             eventData &&
                             getIsCalendarEvent(eventData) &&
-                            eventData.AddressKeyPacket
+                            getIsAutoAddedInvite(eventData)
                         );
 
-                        if (hasAddressKeyPacket && !isOwnedCalendar) {
+                        if (isAutoAddedInvite && !isOwnedCalendar) {
                             // ignore auto-added invites in shared calendars (they can't be decrypted)
                             return;
                         }
@@ -122,13 +123,13 @@ const useCalendarsEvents = (
                             eventReadResult,
                             calendarData: calendar,
                         };
-                        const hasAddressKeyPacket = !!(
+                        const isAutoAddedInvite = !!(
                             eventData &&
                             getIsCalendarEvent(eventData) &&
-                            eventData.AddressKeyPacket
+                            getIsAutoAddedInvite(eventData)
                         );
 
-                        if (hasAddressKeyPacket && !isOwnedCalendar) {
+                        if (isAutoAddedInvite && !isOwnedCalendar) {
                             // ignore auto-added invites in shared calendars (they can't be decrypted)
                             return;
                         }
