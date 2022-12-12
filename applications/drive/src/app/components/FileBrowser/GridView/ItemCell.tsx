@@ -13,6 +13,8 @@ export interface ItemProps<T extends FileBrowserBaseItem> {
     item: T;
     style?: React.CSSProperties;
 
+    isMultiSelectionDisabled?: boolean;
+
     onItemContextMenu?: (e: any) => void;
     onItemOpen?: (id: string) => void;
     onItemRender?: (item: any) => void;
@@ -27,6 +29,8 @@ const ItemCell = <T extends FileBrowserBaseItem>({
 
     GridViewItem,
 
+    isMultiSelectionDisabled,
+
     onItemContextMenu,
     onItemOpen,
     onItemRender,
@@ -37,6 +41,7 @@ const ItemCell = <T extends FileBrowserBaseItem>({
         isItemLocked: item.isLocked,
         onItemOpen,
         onItemContextMenu: onItemContextMenu,
+        isMultiSelectionDisabled,
     });
     const dragnDropControls = useDragAndDrop({
         item,
