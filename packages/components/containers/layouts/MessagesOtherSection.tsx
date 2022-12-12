@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace';
 import {
     updateDraftType,
     updateFontFace,
@@ -31,6 +32,7 @@ const MessagesOtherSection = () => {
             DelaySendSeconds = 10,
         } = {},
     ] = useMailSettings();
+    const fontFaceValue = getFontFaceValueFromId(FontFace) || DEFAULT_FONT_FACE;
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
 
@@ -54,9 +56,12 @@ const MessagesOtherSection = () => {
     };
 
     const handleChangeFontFace = async (value: string) => {
-        await api(updateFontFace(value));
-        await call();
-        notifyPreferenceSaved();
+        const fontFaceId = getFontFaceIdFromValue(value);
+        if (fontFaceId) {
+            await api(updateFontFace(fontFaceId));
+            await call();
+            notifyPreferenceSaved();
+        }
     };
 
     const handleChangeFontSize = async (value: number) => {
@@ -112,7 +117,7 @@ const MessagesOtherSection = () => {
                         <FontFaceSelect
                             id="fontFace"
                             aria-describedby="label-composer-default-font-size"
-                            fontFace={FontFace || DEFAULT_FONT_FACE}
+                            fontFace={fontFaceValue}
                             onChange={(value) => withLoadingFontFace(handleChangeFontFace(value))}
                             loading={loadingFontFace}
                         />

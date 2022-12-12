@@ -3,17 +3,21 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { classnames } from '../../../helpers';
 import { Badge } from '../../badge';
 import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
-import { FONT_FACES } from '../constants';
+import { DEFAULT_FONT_FACE, FONT_FACES } from '../constants';
+import { getFontFaceIdFromValue, getFontFaceValueFromId } from '../helpers/fontFace';
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {
+    /** Font value of current text selection */
     value?: string;
     setValue: (font: string) => void;
-    defaultValue: string;
+    /** DefaultValue is a FONT_FACES.font.id */
+    defaultValue: MailSettings['FontFace'] | undefined;
     onClickDefault: () => void;
     showDefaultFontSelector?: boolean;
 }
@@ -34,14 +38,32 @@ const hasFont = (font: string): boolean => {
     return fonts.some(({ value }) => lowerFont === value.toLowerCase());
 };
 
+const displayDefaultFontButton = (
+    defaultFontID: MailSettings['FontFace'] | undefined,
+    fontId: string,
+    canDisplayButton: boolean
+) => {
+    if (!canDisplayButton) {
+        return false;
+    }
+
+    const defaultId = defaultFontID || getFontFaceIdFromValue(DEFAULT_FONT_FACE);
+    const canDisplay = defaultId === fontId;
+
+    return canDisplay;
+};
+
 const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault, showDefaultFontSelector }: Props) => {
-    const [computedValue, setComputedValue] = useState(value || defaultValue);
+    const defaultFontFaceValue = getFontFaceValueFromId(defaultValue);
+    const [computedValue, setComputedValue] = useState(value || DEFAULT_FONT_FACE);
 
     const onChange = (nextFont: string) => {
         setComputedValue(nextFont);
         setValue(nextFont);
     };
 
+    // Value changes when we move cursor to another place.
+    // We reflect those changes to the computed value
     useEffect(() => {
         if (!value || !hasFont(value) || value === computedValue) {
             return;
@@ -52,11 +74,13 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
         }
     }, [value]);
 
+    // defaultFontFaceValue changes when we select a new default value
+    // We reflect those changes to the computedValue
     useEffect(() => {
-        if (defaultValue) {
-            setComputedValue(defaultValue);
+        if (defaultFontFaceValue) {
+            setComputedValue(defaultFontFaceValue);
         }
-    }, [defaultValue]);
+    }, [defaultFontFaceValue]);
 
     return (
         <ToolbarDropdown
@@ -66,6 +90,7 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
             data-testid="editor-font-face"
             content={
                 <span
+                    data-testid="editor-toolbar:font-face:selected-value"
                     className="text-ellipsis text-left max-w100"
                     style={{ display: 'inline-block', fontFamily: computedValue.toString() }}
                 >
@@ -74,26 +99,26 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
             }
         >
             <DropdownMenu>
-                {Object.values(FONT_FACES).map(({ label: fontLabel, value: fontValue }) => (
+                {Object.values(FONT_FACES).map(({ label: fontLabel, value: fontValue, id: fontId }) => (
                     <DropdownMenuContainer
-                        key={fontValue}
+                        key={fontId}
+                        data-testid={`editor-toolbar:font-face:dropdown-item:${fontId}`}
                         className={classnames([fontValue === value && 'dropdown-item--is-selected'])}
                         buttonClassName="text-left"
                         aria-pressed={fontValue === value}
                         isSelected={fontValue === value}
                         onClick={() => onChange(fontValue)}
                         style={{ fontFamily: fontValue }}
-                        data-testid={`editor-font-${fontLabel}`}
                         buttonContent={<span className="pr0-5">{fontLabel}</span>}
                         extraContent={
-                            fontValue.toLowerCase() === (defaultValue || '').toLowerCase() &&
-                            showDefaultFontSelector ? (
+                            displayDefaultFontButton(defaultValue, fontId, !!showDefaultFontSelector) ? (
                                 <div className="flex pl0-5 pr0-5 flex-item-noshrink">
                                     <Button
                                         color="weak"
                                         shape="ghost"
                                         className="inline-flex flex-align-self-center text-no-decoration relative"
                                         onClick={onClickDefault}
+                                        data-testid={`editor-toolbar:font-face:dropdown-item:${fontId}:default`}
                                     >
                                         <Badge className="color-info">{c('Font Face Default').t`Default`}</Badge>
                                     </Button>
