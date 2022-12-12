@@ -2,6 +2,8 @@ import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
+import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
+import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import partition from '@proton/utils/partition';
 import unique from '@proton/utils/unique';
 
@@ -18,7 +20,13 @@ import {
 import { wait } from '../../helpers/promise';
 import { dateLocale } from '../../i18n';
 import { Address, Api, Key } from '../../interfaces';
-import { CalendarEvent, EXPORT_EVENT_ERROR_TYPES, ExportError, VcalVeventComponent } from '../../interfaces/calendar';
+import {
+    CalendarEvent,
+    EXPORT_EVENT_ERROR_TYPES,
+    ExportError,
+    VcalVeventComponent,
+    VisualCalendar,
+} from '../../interfaces/calendar';
 import { CalendarExportEventsQuery } from '../../interfaces/calendar/Api';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 import { GetCalendarEventPersonal } from '../../interfaces/hooks/GetCalendarEventPersonal';
@@ -135,7 +143,7 @@ const decryptEvent = async ({
             privateKeys: eventDecryptionKeys,
         });
 
-        const { SharedEvents, CalendarEvents, AttendeesEvents, Attendees, AddressKeyPacket, AddressID } = event;
+        const { SharedEvents, CalendarEvents, AttendeesEvents, Attendees } = event;
         const { veventComponent } = await readCalendarEvent({
             event: {
                 SharedEvents: withNormalizedAuthors(SharedEvents),
@@ -146,7 +154,7 @@ const decryptEvent = async ({
             sharedSessionKey,
             calendarSessionKey,
             addresses,
-            encryptingAddressID: AddressKeyPacket && AddressID ? AddressID : undefined,
+            encryptingAddressID: getIsAutoAddedInvite(event) ? event.AddressID : undefined,
         });
         const veventWithAlarmsAndSummary: VcalVeventComponent = {
             ...valarms,
@@ -165,7 +173,7 @@ const decryptEvent = async ({
 };
 
 interface ProcessData {
-    calendarID: string;
+    calendar: VisualCalendar;
     addresses: Address[];
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: GetCalendarKeys;
@@ -184,7 +192,7 @@ interface ProcessData {
 }
 
 export const processInBatches = async ({
-    calendarID,
+    calendar,
     api,
     signal,
     onProgress,
@@ -218,23 +226,27 @@ export const processInBatches = async ({
         };
 
         const [{ Events }] = await Promise.all([
-            api<{ Events: CalendarEvent[] }>(queryEvents(calendarID, params)),
+            api<{ Events: CalendarEvent[] }>(queryEvents(calendar.ID, params)),
             wait(DELAY),
         ]);
 
+        // ignore auto-added invites in shared calendars (they can't be decrypted and we don't display them in the UI)
+        const exportableEvents = getIsOwnedCalendar(calendar)
+            ? Events
+            : Events.filter(({ AddressKeyPacket }) => !AddressKeyPacket);
         if (signal.aborted) {
             return [[], [], totalToProcess];
         }
-        onProgress(Events, [], []);
+        onProgress(exportableEvents, [], []);
 
-        const { length: eventsLength } = Events;
+        const eventsLength = exportableEvents.length;
 
-        lastId = Events[eventsLength - 1].ID;
+        lastId = exportableEvents[eventsLength - 1].ID;
 
         totalEventsFetched += eventsLength;
 
         const promise = Promise.all(
-            Events.map((event) =>
+            exportableEvents.map((event) =>
                 decryptEvent({
                     event,
                     defaultTzid,
@@ -258,7 +270,7 @@ export const processInBatches = async ({
                 onProgress([], veventComponents, exportErrors);
             })
             .catch((e) => {
-                const exportErrors: ExportError[] = Events.map(() => [
+                const exportErrors: ExportError[] = exportableEvents.map(() => [
                     e.message,
                     EXPORT_EVENT_ERROR_TYPES.DECRYPTION_ERROR,
                 ]);

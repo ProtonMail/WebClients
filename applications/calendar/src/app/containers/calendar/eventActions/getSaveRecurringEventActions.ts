@@ -1,4 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
+import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getResetPartstatActions, getUpdatedInviteVevent } from '@proton/shared/lib/calendar/mailIntegration/invite';
@@ -126,7 +127,7 @@ const getSaveRecurringEventActions = async ({
                     event: oldEvent,
                     memberID: newMemberID,
                     addressID: newAddressID,
-                    reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
+                    reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                     sendIcs,
                     reencryptSharedEvent,
                 });
@@ -138,7 +139,7 @@ const getSaveRecurringEventActions = async ({
                     event: oldEvent,
                     memberID: newMemberID,
                     addressID: newAddressID,
-                    reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
+                    reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                     inviteActions,
                     reencryptSharedEvent,
                 });
@@ -273,7 +274,7 @@ const getSaveRecurringEventActions = async ({
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
-                reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
+                reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                 sendIcs,
                 reencryptSharedEvent,
             });
@@ -314,7 +315,7 @@ const getSaveRecurringEventActions = async ({
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
-                reencryptionCalendarID: oldEvent.AddressKeyPacket && oldEvent.AddressID ? newCalendarID : undefined,
+                reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                 inviteActions,
                 reencryptSharedEvent,
             });
