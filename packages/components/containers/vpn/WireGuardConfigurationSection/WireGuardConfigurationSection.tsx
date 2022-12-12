@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import { readableTimeLegacy } from '@proton/shared/lib/helpers/time';
+import { readableTime } from '@proton/shared/lib/helpers/time';
 
 import {
     Alert,
@@ -622,7 +622,9 @@ const WireGuardConfigurationSection = () => {
             const newCertificate = getCertificateModel(renewedCertificate, peer, certificate.privateKey);
             setCertificates([...(certificates || []), newCertificate]);
             setCurrentCertificate(newCertificate.id);
-            const formattedExpirationDate = readableTimeLegacy(newCertificate.expirationTime, 'PPp');
+            const formattedExpirationDate = readableTime(newCertificate.expirationTime, {
+                differentDayFormat: 'PPp',
+            });
             createNotification({
                 // translator: formattedExpirationDate is a date+time such as "Jan 31, 2023, 7:57 PM" with format appropriately localized to match current locale
                 text: c('Success notification').t`Certificate extended until ${formattedExpirationDate}`,
@@ -651,7 +653,7 @@ const WireGuardConfigurationSection = () => {
                 <>
                     {getCertificates().map((certificate) => {
                         const name = certificate.name || certificate.publicKeyFingerprint || certificate.publicKey;
-                        const expirationDate = readableTimeLegacy(certificate.expirationTime);
+                        const expirationDate = readableTime(certificate.expirationTime);
                         // translator: expirationDate is a date such as "Dec 11, 2022" (formatted according to current language)
                         const expirationString = c('Info').t`expires ${expirationDate}`;
                         const serverName = certificate?.features?.peerName || peer.name;

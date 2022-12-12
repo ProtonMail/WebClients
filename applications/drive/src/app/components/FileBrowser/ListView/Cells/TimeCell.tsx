@@ -1,5 +1,5 @@
 import { Time } from '@proton/components';
-import { readableTimeLegacy } from '@proton/shared/lib/helpers/time';
+import { readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 
 export const TimeCell = ({ time }: Props) => {
     return (
-        <div className="text-ellipsis" title={readableTimeLegacy(time, 'PP', { locale: dateLocale })}>
+        <div className="text-ellipsis" title={readableTime(time, { locale: dateLocale, differentDayFormat: 'PP' })}>
             <span className="text-pre">
                 <Time format="PPp">{time}</Time>
             </span>
