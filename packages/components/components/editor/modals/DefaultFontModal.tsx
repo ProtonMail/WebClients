@@ -10,6 +10,7 @@ import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';
 import FontSizeSelect from '../../../containers/layouts/FontSizeSelect';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../../hooks';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
+import { getFontFaceIdFromValue, getFontFaceValueFromId } from '../helpers/fontFace';
 
 interface Props {
     onClose?: () => void;
@@ -19,7 +20,8 @@ interface Props {
 const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
     const api = useApi();
     const [settings] = useMailSettings();
-    const [fontFace, setFontFace] = useState(settings?.FontFace || DEFAULT_FONT_FACE);
+
+    const [fontFace, setFontFace] = useState(getFontFaceValueFromId(settings?.FontFace) || DEFAULT_FONT_FACE);
     const [fontSize, setFontSize] = useState(settings?.FontSize || DEFAULT_FONT_SIZE);
     const [loading, setLoading] = useState(false);
     const { createNotification } = useNotifications();
@@ -35,7 +37,10 @@ const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
         setLoading(true);
 
         if (changedFontFace) {
-            await api(updateFontFace(fontFace));
+            const fontFaceId = getFontFaceIdFromValue(fontFace);
+            if (fontFaceId) {
+                await api(updateFontFace(fontFaceId));
+            }
         }
 
         if (changedFontSize) {
