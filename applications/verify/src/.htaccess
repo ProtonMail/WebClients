@@ -19,6 +19,9 @@ RewriteRule ^.*$ - [NC,L]
 
 RewriteRule ^(.*) /index.html [NC,L]
 
+SetEnvIf x-atlas-secret "(.+)" ATLAS_SECRET=$1
+Header add Set-Cookie "AtlasSecret=%{ATLAS_SECRET}e; Path=/; HttpOnly; Secure; Max-Age=3600" env=ATLAS_SECRET
+
 # Error pages
 ErrorDocument 403 /assets/errors/403.html
 
