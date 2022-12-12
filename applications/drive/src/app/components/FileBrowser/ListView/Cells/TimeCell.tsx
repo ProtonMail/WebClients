@@ -10,7 +10,7 @@ export const TimeCell = ({ time }: Props) => {
     return (
         <div className="text-ellipsis" title={readableTime(time, { locale: dateLocale, differentDayFormat: 'PP' })}>
             <span className="text-pre">
-                <Time format="PPp">{time}</Time>
+                <Time differentDayFormat="PPp">{time}</Time>
             </span>
         </div>
     );
