@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { readableTimeLegacy } from '@proton/shared/lib/helpers/time';
+import { readableTime } from '@proton/shared/lib/helpers/time';
 
 import Time from './Time';
 
@@ -16,24 +16,33 @@ describe('Time component', () => {
     it('should display time', () => {
         const { container } = render(<Time>{unixDate}</Time>);
 
-        expect(container.firstChild.textContent).toBe(readableTimeLegacy(unixDate));
+        expect(container.firstChild.textContent).toBe(readableTime(unixDate));
     });
 
     it('should support format', () => {
-        const { container } = render(<Time format="PPp">{unixDate}</Time>);
+        const { container } = render(<Time differentDayFormat="PPp">{unixDate}</Time>);
 
-        expect(container.firstChild.textContent).toBe(readableTimeLegacy(unixDate, 'PPp'));
+        expect(container.firstChild.textContent).toBe(
+            readableTime(unixDate, {
+                differentDayFormat: 'PPp',
+            })
+        );
     });
 
     it('should support format forcing', () => {
         const todayUnixDate = Math.floor(Date.now() / 1000);
 
         const { container } = render(
-            <Time format="PP" forceFormat={true}>
+            <Time differentDayFormat="PP" sameDayFormat="PP">
                 {todayUnixDate}
             </Time>
         );
 
-        expect(container.firstChild.textContent).toBe(readableTimeLegacy(todayUnixDate, 'PP', {}, true));
+        expect(container.firstChild.textContent).toBe(
+            readableTime(todayUnixDate, {
+                differentDayFormat: 'PP',
+                sameDayFormat: 'PP',
+            })
+        );
     });
 });
