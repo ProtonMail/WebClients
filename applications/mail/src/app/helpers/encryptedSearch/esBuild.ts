@@ -99,6 +99,7 @@ export const fetchMessage = async (
     messageID: string,
     api: Api,
     getMessageKeys: GetMessageKeys,
+    messageMetadata?: Message,
     signal?: AbortSignal
 ): Promise<ESMessage | undefined> => {
     const message = await queryMessage(api, messageID, signal);
@@ -133,7 +134,7 @@ export const fetchMessage = async (
             : undefined;
 
     const cachedMessage: ESMessage = {
-        ...prepareMessageMetadata(message),
+        ...prepareMessageMetadata(messageMetadata || message),
         decryptedBody: cleanDecryptedBody,
         decryptedSubject,
         decryptionError,
