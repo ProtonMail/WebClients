@@ -1,9 +1,9 @@
 import { HTMLAttributes } from 'react';
 
-import { readableTime } from '@proton/shared/lib/helpers/time';
+import { readableTimeLegacy } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-type Options = Parameters<typeof readableTime>[2];
+type Options = Parameters<typeof readableTimeLegacy>[2];
 interface Props extends HTMLAttributes<HTMLTimeElement> {
     children?: string | number | null;
     format?: string;
@@ -25,7 +25,7 @@ const getValue = (value?: string | number | null) => {
 };
 
 const Time = ({ children, format = 'PP', options = { locale: dateLocale }, forceFormat = false, ...rest }: Props) => {
-    return <time {...rest}>{readableTime(getValue(children), format, options, forceFormat)}</time>;
+    return <time {...rest}>{readableTimeLegacy(getValue(children), format, options, forceFormat)}</time>;
 };
 
 export default Time;

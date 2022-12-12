@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { readableTime } from '@proton/shared/lib/helpers/time';
+import { readableTimeLegacy } from '@proton/shared/lib/helpers/time';
 
 import Time from './Time';
 
@@ -16,13 +16,13 @@ describe('Time component', () => {
     it('should display time', () => {
         const { container } = render(<Time>{unixDate}</Time>);
 
-        expect(container.firstChild.textContent).toBe(readableTime(unixDate));
+        expect(container.firstChild.textContent).toBe(readableTimeLegacy(unixDate));
     });
 
     it('should support format', () => {
         const { container } = render(<Time format="PPp">{unixDate}</Time>);
 
-        expect(container.firstChild.textContent).toBe(readableTime(unixDate, 'PPp'));
+        expect(container.firstChild.textContent).toBe(readableTimeLegacy(unixDate, 'PPp'));
     });
 
     it('should support format forcing', () => {
@@ -34,6 +34,6 @@ describe('Time component', () => {
             </Time>
         );
 
-        expect(container.firstChild.textContent).toBe(readableTime(todayUnixDate, 'PP', {}, true));
+        expect(container.firstChild.textContent).toBe(readableTimeLegacy(todayUnixDate, 'PP', {}, true));
     });
 });
