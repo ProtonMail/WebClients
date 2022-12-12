@@ -47,6 +47,7 @@ const SMTPSubmissionSection = () => {
     const hasCustomAddress = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN);
     const [organization, loadingOrganization] = useOrganization();
     const [tokenIDToRemove, setTokenIDToRemove] = useState('');
+    const [loadingTokens, withLoadingTokens] = useLoading();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const [confirmModalProps, setConfirmModalOpen, renderConfirmModal] = useModalState();
@@ -100,7 +101,7 @@ const SMTPSubmissionSection = () => {
         if (!submissionTokenAvailable) {
             return;
         }
-        void withLoading(fetchTokens());
+        void withLoadingTokens(fetchTokens());
     }, [submissionTokenAvailable]);
 
     if (loadingOrganization) {
@@ -121,9 +122,10 @@ const SMTPSubmissionSection = () => {
             <SettingsSection>
                 <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
                     {
-                    // translator: full sentence will be: SMTP allows 3rd-party services or devices to send email through <Proton Mail>. It is a new feature available to select business users. Please email <business-updates@proton.me> to request access.
-                    c('Info')
-                        .jt`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}. It is a new feature available to select business users. Please email ${emailLink} to request access.`}
+                        // translator: full sentence will be: SMTP allows 3rd-party services or devices to send email through <Proton Mail>. It is a new feature available to select business users. Please email <business-updates@proton.me> to request access.
+                        c('Info')
+                            .jt`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}. It is a new feature available to select business users. Please email ${emailLink} to request access.`
+                    }
                 </SettingsParagraph>
             </SettingsSection>
         );
@@ -138,13 +140,13 @@ const SMTPSubmissionSection = () => {
             <div className="mb1">
                 <Button
                     data-testid="smtp-submission:generate-token"
-                    loading={loading}
+                    disabled={loadingTokens}
                     onClick={openGenerateTokenModal}
                 >{c('Action').t`Generate token`}</Button>
             </div>
-            <Table className={clsx(!loading && hasTokens && 'simple-table--has-actions')}>
+            <Table className={clsx(!loadingTokens && hasTokens && 'simple-table--has-actions')}>
                 <TableHeader cells={headers} />
-                <TableBody colSpan={headersLength} loading={loading}>
+                <TableBody colSpan={headersLength} loading={loadingTokens}>
                     {tokens.map((token) => (
                         <TableRow
                             key={token.SmtpTokenID}
@@ -155,12 +157,15 @@ const SMTPSubmissionSection = () => {
                                 token.LastUsedTime
                                     ? format(fromUnixTime(token.LastUsedTime), 'PPp', { locale: dateLocale })
                                     : '-',
-                                <Button size="small" onClick={() => confirmRemoveToken(token.SmtpTokenID)}>{c('Action')
-                                    .t`Delete`}</Button>,
+                                <Button
+                                    size="small"
+                                    disabled={loadingTokens}
+                                    onClick={() => confirmRemoveToken(token.SmtpTokenID)}
+                                >{c('Action').t`Delete`}</Button>,
                             ]}
                         />
                     ))}
-                    {!loading && !hasTokens && (
+                    {!loadingTokens && !hasTokens && (
                         <tr>
                             <td colSpan={headersLength} className="text-center">
                                 <i>{c('TableRow').t`No SMTP tokens found`}</i>
@@ -177,7 +182,7 @@ const SMTPSubmissionSection = () => {
                             color="danger"
                             data-testid="smtp-submission:confirm-deletion"
                             loading={loading}
-                            onClick={() => removeToken()}
+                            onClick={() => withLoading(removeToken())}
                         >{c('Action').t`Delete`}</Button>,
                         <Button autoFocus onClick={() => setConfirmModalOpen(false)}>{c('Action').t`Cancel`}</Button>,
                     ]}
@@ -190,7 +195,7 @@ const SMTPSubmissionSection = () => {
             {renderGenerateTokenModal ? (
                 <SMTPTokenModal
                     addresses={addresses}
-                    onCreate={() => withLoading(fetchTokens())}
+                    onCreate={() => withLoadingTokens(fetchTokens())}
                     {...generateTokenModalProps}
                 />
             ) : null}
