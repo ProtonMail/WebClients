@@ -910,7 +910,7 @@ export const FORKABLE_APPS = new Set(
 );
 
 export const EXTENSIONS = {
-    [APPS.PROTONEXTENSION]: { ID: 'damclcigmmkebnbppkmjpnmambblleon' },
+    [APPS.PROTONEXTENSION]: { ID: 'ghmbeldphafepmbegfdlkpapadhbakde' },
     [APPS.PROTONVPNBROWSEREXTENSION]: { ID: 'dcdfibmpfdhihdhfmihgejaedilieoho' },
 } as const;
 
