@@ -9,22 +9,23 @@ import { DRAWER_ACTION, DRAWER_APPS, DRAWER_EVENTS } from './interfaces';
 
 const { PROTONMAIL, PROTONCALENDAR, PROTONDRIVE } = APPS;
 
-const drawerAuthorizedApps = [
+export const drawerAuthorizedApps = [
     APPS_CONFIGURATION[PROTONMAIL].subdomain,
     APPS_CONFIGURATION[PROTONCALENDAR].subdomain,
     APPS_CONFIGURATION[PROTONDRIVE].subdomain,
 ] as string[];
 
-export const getIsNativeDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
-    const nativeApps: APP_NAMES[] = [APPS.PROTONCONTACTS];
+export const authorizedApps: string[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE];
 
-    return nativeApps.includes(app);
+export const drawerNativeApps: APP_NAMES[] = [APPS.PROTONCONTACTS];
+export const drawerIframeApps: APP_NAMES[] = [APPS.PROTONCALENDAR];
+
+export const getIsNativeDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
+    return drawerNativeApps.includes(app);
 };
 
 export const getIsIframedDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
-    const iframedApps: APP_NAMES[] = [APPS.PROTONCALENDAR];
-
-    return iframedApps.includes(app);
+    return drawerIframeApps.includes(app);
 };
 
 export const getIsDrawerApp = (app: APP_NAMES): app is DRAWER_APPS => {
@@ -46,7 +47,6 @@ export const isAuthorizedDrawerUrl = (url: string) => {
 };
 
 export const getIsAuthorizedApp = (appName: string): appName is APP_NAMES => {
-    const authorizedApps: string[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE];
     return authorizedApps.includes(appName);
 };
 
@@ -87,6 +87,20 @@ export const postMessageToIframe = (message: DRAWER_ACTION, iframedApp: APP_NAME
     iframe?.contentWindow?.postMessage(message, targetOrigin);
 };
 
+/**
+ *  Allow to add the parent app in a URL we will open in the Drawer
+ *  From the child application, we need to know who is the parent. For that, we add it in the URL we want to open
+ *  Depending on the case you might want to replace path or not
+ *
+ *  - "replacePath === true": You want to replace the path by the app
+ *      e.g. url = "https://calendar.proton.pink/u/0/event?Action=VIEW&EventID=eventID&RecurrenceID=1670835600" and currentApp = "proton-mail"
+ *        ==> https://calendar.proton.pink/u/0/mail?Action=VIEW&EventID=eventID&RecurrenceID=1670835600
+ *        "event" has been replaced by "mail"
+ *  - "replacePath === false": You want to add your app to the path
+ *      e.g. url = "https://calendar.proton.pink/u/0/something" and currentApp = "proton-mail"
+ *        ==> "https://calendar.proton.pink/u/0/mail/something"
+ *        "mail" has been added to the path
+ */
 export const addParentAppToUrl = (url: string, currentApp: APP_NAMES, replacePath = true) => {
     const targetUrl = new URL(url);
     const splitPathname = targetUrl.pathname.split('/').filter((el) => el !== '');

@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction, useCallback } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useLoading, useNotifications, useDrawer } from '@proton/components';
+import { useDrawer, useLoading, useNotifications } from '@proton/components';
 import { useAddEvents } from '@proton/components/containers/calendar/hooks';
 import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
