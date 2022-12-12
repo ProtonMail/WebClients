@@ -42,6 +42,7 @@ import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import HandleLogout from '../containers/HandleLogout';
 import LoginContainer from '../login/LoginContainer';
+import { AuthExtensionState } from '../public/AuthExtension';
 import AuthExtension from '../public/AuthExtension';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
@@ -184,7 +185,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                     },
                 });
                 const type = result?.type === 'success' ? 'success' : 'error';
-                history.replace('/auth-ext', { type, extension, payload: result?.payload });
+                const state: AuthExtensionState = { type, extension, payload: result?.payload };
+                history.replace('/auth-ext', state);
                 return;
             }
 
