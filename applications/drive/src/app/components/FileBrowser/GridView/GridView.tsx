@@ -14,6 +14,9 @@ interface ItemCellData<T extends FileBrowserBaseItem> {
     itemsPerRow: number;
     rowCount: number;
     items: T[];
+
+    isMultiSelectionDisabled?: boolean;
+
     getItemProps: (item: T) => Omit<ItemProps<T>, 'style'>;
 }
 
@@ -25,7 +28,7 @@ const GridItemCell = <T extends FileBrowserBaseItem>({
     columnIndex,
     rowIndex,
     style,
-    data: { items, rowCount, itemsPerRow, getItemProps, loading },
+    data: { items, rowCount, itemsPerRow, getItemProps, loading, isMultiSelectionDisabled },
 }: GridItemCellProps<T>) => {
     const currentIndex = columnIndex + rowIndex * itemsPerRow;
     const item = items[currentIndex];
@@ -46,6 +49,7 @@ const GridItemCell = <T extends FileBrowserBaseItem>({
                 rowIndex === rowCount - 1 && 'pb0-5',
             ])}
             style={style}
+            isMultiSelectionDisabled={isMultiSelectionDisabled}
         />
     ) : (
         emptyOrLoadingCell
@@ -65,6 +69,8 @@ function GridView<T extends FileBrowserBaseItem, T1>({
     caption,
     items,
     loading = false,
+
+    isMultiSelectionDisabled,
 
     GridHeaderComponent,
     GridViewItem,
@@ -110,6 +116,7 @@ function GridView<T extends FileBrowserBaseItem, T1>({
         itemsPerRow,
         loading,
         rowCount,
+        isMultiSelectionDisabled,
 
         getItemProps: (item: T): Omit<ItemProps<T>, 'style'> => ({
             item,
