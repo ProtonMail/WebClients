@@ -1,6 +1,5 @@
 export { default as DowngradeModal } from './DowngradeModal';
 export { default as LossLoyaltyModal } from './LossLoyaltyModal';
-export { default as BillingSection } from './BillingSection';
 export { default as CreditsSection } from './CreditsSection';
 export { default as GiftCodeSection } from './GiftCodeSection';
 export { default as PlansSection } from './PlansSection';
@@ -24,5 +23,6 @@ export { default as usePayment } from './usePayment';
 export { default as getDefaultCard } from './getDefaultCard';
 export { default as PayPalButton } from './PayPalButton';
 export { default as StyledPayPalButton } from './StyledPayPalButton';
+export { default as SubscriptionsSection } from './SubscriptionsSection';
 
 export * from './subscription';
