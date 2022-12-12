@@ -19,7 +19,6 @@
         "@floating-ui/dom": "^1.0.7",
         "@noble/ed25519": "1.7.1",
         "@proton/styles": "workspace:packages/styles",
-        "@reduxjs/toolkit": "^1.9",
         "@types/codemirror": "5.60.5",
         "@types/credit-card-type": "^7.0.0",
         "@types/markdown-it": "^12.2.3",
@@ -45,7 +44,6 @@
         "react": "^17.0.2",
         "react-codemirror2": "^7.2.1",
         "react-dom": "^17.0.2",
-        "react-redux": "^8.0.5",
         "react-router": "^5.3.4",
         "react-router-dom": "^5.3.4",
         "react-sortable-hoc": "^2.0.0",
@@ -77,7 +75,6 @@
         "eslint": "^8.28.0",
         "jest": "^28.1.3",
         "jest-environment-jsdom": "^28.1.3",
-        "msw": "^0.49.1",
         "prettier": "^2.8.0",
         "ttag": "^1.7.24",
         "typescript": "^4.9.3"

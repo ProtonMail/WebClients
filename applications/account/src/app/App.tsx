@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { G_OAUTH_REDIRECT_PATH } from '@proton/activation/constants';
 import { ErrorBoundary, LoaderPage, ProtonApp, StandardErrorPage, getSessionTrackingEnabled } from '@proton/components';
-import { G_OAUTH_REDIRECT_PATH } from '@proton/components/containers/easySwitch/constants';
 import { initMainHost } from '@proton/cross-storage';
 import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
