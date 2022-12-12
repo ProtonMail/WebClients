@@ -147,6 +147,8 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
     const debouncedEmail = useDebounceInput(modalModel.email);
     const invalidPortError = useMemo(() => !!modalModel.port && !isNumber(modalModel.port), [modalModel.port]);
 
+    const hasIMAPError = modalModel.errorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR;
+
     const title = useMemo(() => {
         switch (modalModel.step) {
             case MailImportStep.START:
@@ -241,6 +243,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
                             ImapPort: parseInt(modalModel.port, 10),
                             Sasl: AuthenticationMethod.PLAIN,
                             Code: modalModel.password,
+                            AllowSelfSigned: hasIMAPError ? 1 : 0,
                         },
                     }),
                     /*
@@ -381,11 +384,21 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
         const { email, password, imap, port, isPayloadInvalid, step } = modalModel;
         const disabledStartStep = !email || !password || !imap || !port || invalidPortError;
 
+        const submitButtonText = (() => {
+            if (isReconnectMode) {
+                return c('Action').t`Reconnect`;
+            }
+            if (hasIMAPError) {
+                return c('Action').t`Skip verification`;
+            }
+            return c('Action').t`Next`;
+        })();
+
         switch (step) {
             case MailImportStep.START:
                 return (
                     <PrimaryButton data-testid="submit" type="submit" disabled={disabledStartStep} loading={loading}>
-                        {isReconnectMode ? c('Action').t`Reconnect` : c('Action').t`Next`}
+                        {submitButtonText}
                     </PrimaryButton>
                 );
             case MailImportStep.PREPARE:
@@ -439,13 +452,23 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
             {...rest}
         >
             {modalModel.step === MailImportStep.START && (
-                <ImportStartStep
-                    modalModel={modalModel}
-                    updateModalModel={(newModel: ImportMailModalModel) => setModalModel(newModel)}
-                    currentImport={currentImport}
-                    invalidPortError={invalidPortError}
-                    provider={provider}
-                />
+                <>
+                    <ImportStartStep
+                        modalModel={modalModel}
+                        updateModalModel={(newModel: ImportMailModalModel) => setModalModel(newModel)}
+                        currentImport={currentImport}
+                        invalidPortError={invalidPortError}
+                        provider={provider}
+                    />
+                    {hasIMAPError && (
+                        <>
+                            <p className="text-bold mb0-75">{c('Warning').t`Skip verification?`}</p>
+                            {/* translator: users with self hosted certificate can skip server validation if we're not able to verify the certificat ourselves */}
+                            <p className="my0-5">{c('Warning')
+                                .t`We couldn't verify the mail server. If you trust it, you can skip this verification.`}</p>
+                        </>
+                    )}
+                </>
             )}
             {modalModel.step === MailImportStep.PREPARE && (
                 <ImportPrepareStep
