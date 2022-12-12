@@ -7,12 +7,20 @@ import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
-import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Currency, Cycle, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { getPlanIDs, hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import {
+    Audience,
+    Currency,
+    Cycle,
+    PlanIDs,
+    PlansMap,
+    SubscriptionCheckResponse,
+    SubscriptionModel,
+} from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
@@ -75,7 +83,7 @@ interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     onSuccess?: () => void;
 }
 
-interface Model {
+export interface Model {
     step: SUBSCRIPTION_STEPS;
     planIDs: PlanIDs;
     currency: Currency;
@@ -90,6 +98,38 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
 };
 
 const getCodes = ({ gift, coupon }: Model) => [gift, coupon].filter(isTruthy);
+
+export const useProration = (
+    model: Model,
+    subscription: SubscriptionModel,
+    plansMap: PlansMap,
+    checkResult?: SubscriptionCheckResponse
+) => {
+    const [showProration, setShowProration] = useState(true);
+
+    useEffect(() => {
+        const checkout = getCheckout({
+            planIDs: getPlanIDs(subscription),
+            plansMap,
+            checkResult,
+        });
+        const activePlan = checkout.planName as string;
+
+        const selectedPlans = Object.keys(model.planIDs);
+
+        const userBuysTheSamePlan = selectedPlans.includes(activePlan);
+
+        if (!checkResult || !userBuysTheSamePlan || checkResult.Proration === undefined) {
+            setShowProration(true);
+        } else {
+            setShowProration(checkResult.Proration !== 0);
+        }
+    }, [subscription, model, checkResult]);
+
+    return {
+        showProration,
+    };
+};
 
 const SubscriptionModal = ({
     step = SUBSCRIPTION_STEPS.PLAN_SELECTION,
@@ -142,6 +182,8 @@ const SubscriptionModal = ({
         coupon,
         planIDs,
     });
+
+    const { showProration } = useProration(model, subscription, plansMap, checkResult);
 
     const amountDue = checkResult?.AmountDue || 0;
     const couponCode = checkResult?.Coupon?.Code;
@@ -592,6 +634,8 @@ const SubscriptionModal = ({
                                         </>
                                     }
                                     onChangeCurrency={handleChangeCurrency}
+                                    showProration={showProration}
+                                    nextSubscriptionStart={subscription.PeriodEnd}
                                 />
                             </div>
                         </div>
