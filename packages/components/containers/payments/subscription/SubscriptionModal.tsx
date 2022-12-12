@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useRef, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -105,9 +105,7 @@ export const useProration = (
     plansMap: PlansMap,
     checkResult?: SubscriptionCheckResponse
 ) => {
-    const [showProration, setShowProration] = useState(true);
-
-    useEffect(() => {
+    const showProration = useMemo(() => {
         const checkout = getCheckout({
             planIDs: getPlanIDs(subscription),
             plansMap,
@@ -120,10 +118,10 @@ export const useProration = (
         const userBuysTheSamePlan = selectedPlans.includes(activePlan);
 
         if (!checkResult || !userBuysTheSamePlan || checkResult.Proration === undefined) {
-            setShowProration(true);
-        } else {
-            setShowProration(checkResult.Proration !== 0);
+            return true;
         }
+
+        return checkResult.Proration !== 0;
     }, [subscription, model, checkResult]);
 
     return {
