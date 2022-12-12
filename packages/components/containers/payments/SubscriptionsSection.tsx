@@ -62,10 +62,14 @@ const SubscriptionRow = ({
                 <span>{users}</span>
             </TableCell>
             <TableCell>
-                <Time forceFormat={true}>{PeriodStart}</Time>
+                <Time differentDayFormat="PP" sameDayFormat="PP">
+                    {PeriodStart}
+                </Time>
             </TableCell>
             <TableCell>
-                <Time forceFormat={true}>{PeriodEnd}</Time>
+                <Time differentDayFormat="PP" sameDayFormat="PP">
+                    {PeriodEnd}
+                </Time>
             </TableCell>
             <TableCell className="text-right">
                 <Price currency={Currency}>{PricePerCycle}</Price>
