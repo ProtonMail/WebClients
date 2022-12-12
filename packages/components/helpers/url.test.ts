@@ -6,6 +6,9 @@ import {
     isURLProtonInternal,
     punycodeUrl,
 } from '@proton/components/helpers/url';
+import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
+
+const windowHostname = 'mail.proton.me';
 
 describe('isSubDomain', function () {
     it('should detect that same hostname is a subDomain', () => {
@@ -47,15 +50,12 @@ describe('isMailTo', function () {
 });
 
 describe('isExternal', function () {
-    const windowHostname = 'mail.proton.me';
-
     beforeEach(() => {
-        global.window = Object.create(window);
-        Object.defineProperty(window, 'location', {
-            value: {
-                hostname: windowHostname,
-            },
-        });
+        mockWindowLocation(undefined, windowHostname);
+    });
+
+    afterEach(() => {
+        resetWindowLocation();
     });
 
     it('should detect that the url is not external', () => {
@@ -78,15 +78,12 @@ describe('isExternal', function () {
 });
 
 describe('isProtonInternal', function () {
-    const windowHostname = 'mail.proton.me';
-
     beforeEach(() => {
-        global.window = Object.create(window);
-        Object.defineProperty(window, 'location', {
-            value: {
-                hostname: windowHostname,
-            },
-        });
+        mockWindowLocation(undefined, windowHostname);
+    });
+
+    afterEach(() => {
+        resetWindowLocation();
     });
 
     it('should detect that the url is proton internal', () => {
