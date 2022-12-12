@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { Address, Organization, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
-import { ADDRESS_TYPE, MAIL_APP_NAME, USER_ROLES } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getHasB2BPlan } from '@proton/shared/lib/helpers/subscription';
 
 export const getHasPmMeAddress = (addresses: Address[]) => {
@@ -187,7 +187,7 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`SMTP tokens`,
                         id: 'smtp-tokens',
-                        available: getHasB2BPlan(subscription) && user.Role === USER_ROLES.ADMIN_ROLE,
+                        available: getHasB2BPlan(subscription),
                     }
                 ],
             },
