@@ -112,7 +112,7 @@ const storeItems = async <ESItemMetadata, ESItem, ESCiphertext>(
             throw new Error('Operation aborted');
         }
 
-        const itemToStore = await fetchESItem(getItemID(itemMetadata), abortIndexingRef.current.signal);
+        const itemToStore = await fetchESItem(getItemID(itemMetadata), itemMetadata, abortIndexingRef.current.signal);
         if (!itemToStore) {
             throw new Error('Item fetching failed');
         }

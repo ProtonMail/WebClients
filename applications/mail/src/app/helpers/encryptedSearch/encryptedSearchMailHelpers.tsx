@@ -51,8 +51,8 @@ export const getESHelpers = ({
 }: Props): ESHelpers<Message, ESMessage, NormalizedSearchParams, ESItemChangesMail, StoredCiphertext> => {
     const { ID: userID } = user;
 
-    const fetchESItem = (itemID: string, abortSignal?: AbortSignal) =>
-        fetchMessage(itemID, api, getMessageKeys, abortSignal);
+    const fetchESItem = (itemID: string, itemMetadata?: Message, abortSignal?: AbortSignal) =>
+        fetchMessage(itemID, api, getMessageKeys, itemMetadata, abortSignal);
 
     const queryItemsMetadata = async (storedItem: StoredCiphertext | undefined, signal: AbortSignal) => {
         const result = await queryMessagesMetadata(
