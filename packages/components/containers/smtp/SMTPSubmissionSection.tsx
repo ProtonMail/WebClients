@@ -120,7 +120,9 @@ const SMTPSubmissionSection = () => {
         return (
             <SettingsSection>
                 <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
-                    {c('Info')
+                    {
+                    // translator: full sentence will be: SMTP allows 3rd-party services or devices to send email through <Proton Mail>. It is a new feature available to select business users. Please email <business-updates@proton.me> to request access.
+                    c('Info')
                         .jt`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}. It is a new feature available to select business users. Please email ${emailLink} to request access.`}
                 </SettingsParagraph>
             </SettingsSection>
