@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { CYCLE, DEFAULT_CURRENCY, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
@@ -12,6 +10,7 @@ import { Option, Price, Radio, SelectTwo } from '../../../components';
 import InputField from '../../../components/v2/field/InputField';
 import { classnames } from '../../../helpers';
 import { getMonthFreeText, getMonthsFree } from '../../offers/helpers/offerCopies';
+import { getShortBillingText } from '../helper';
 
 interface Props {
     cycle: CYCLE;
@@ -32,10 +31,6 @@ interface TotalPricing {
 
 type TotalPricings = {
     [key in CYCLE]: TotalPricing;
-};
-
-const getText = (n: number) => {
-    return c('Label').ngettext(msgid`${n} month`, `${n} months`, n);
 };
 
 const getDiscountPrice = (discount: number, currency: Currency) => {
@@ -118,7 +113,7 @@ const CycleItem = ({
 
     return (
         <CycleItemView
-            text={getText(replacementCycle)}
+            text={getShortBillingText(replacementCycle)}
             currency={currency}
             discount={discount}
             monthlySuffix={monthlySuffix}
@@ -158,7 +153,7 @@ export const SubscriptionCheckoutCycleItem = ({
     return (
         <div className={singleClassName}>
             <CycleItemView
-                text={getText(replacementCycle)}
+                text={getShortBillingText(replacementCycle)}
                 currency={currency}
                 discount={result.discountPerCycle}
                 monthlySuffix={getMonthlySuffix(planIDs)}
@@ -269,9 +264,9 @@ const SubscriptionCycleSelector = ({
             >
                 {cycles.map((cycle) => {
                     return (
-                        <Option value={cycle} title={getText(cycle)} key={cycle}>
+                        <Option value={cycle} title={getShortBillingText(cycle)} key={cycle}>
                             <div className="flex flex-justify-space-between">
-                                <span className="flex-item-noshrink">{getText(cycle)}</span>
+                                <span className="flex-item-noshrink">{getShortBillingText(cycle)}</span>
                                 <span
                                     className={classnames([
                                         'flex-item-noshrink',

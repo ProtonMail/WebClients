@@ -36,8 +36,8 @@ export const getAccountAppRoutes = ({
                         available: canPay,
                     },
                     {
-                        text: c('Title').t`Billing details`,
-                        id: 'billing',
+                        text: c('Title').t`Your subscriptions`,
+                        id: 'your-subscriptions',
                         available: isPaid && canPay,
                     },
                     {

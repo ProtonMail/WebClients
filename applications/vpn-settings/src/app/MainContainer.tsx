@@ -8,7 +8,6 @@ import {
     AccountRecoverySection,
     AuthenticatedBugModal,
     AutomaticSubscriptionModal,
-    BillingSection,
     CancelSubscriptionSection,
     CreditsSection,
     DeleteSection,
@@ -33,6 +32,7 @@ import {
     SidebarNav,
     StandardErrorPage,
     SubscriptionModalProvider,
+    SubscriptionsSection,
     ThemesSection,
     TopBanners,
     TopNavbarUpsell,
@@ -211,7 +211,7 @@ const MainContainer = () => {
                                         <PrivateMainSettingsArea config={routes.dashboard}>
                                             <PlansSection />
                                             <YourPlanSection app={APPS.PROTONVPN_SETTINGS} />
-                                            <BillingSection />
+                                            <SubscriptionsSection />
                                             <CreditsSection />
                                             <GiftCodeSection />
                                             <CancelSubscriptionSection />
