@@ -20,11 +20,9 @@ import {
     useModalState,
     useNotifications,
     useOrganization,
-    useUser,
 } from '@proton/components';
 import { deleteToken, getTokens } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { USER_ROLES } from '@proton/shared/lib/constants';
 import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -44,7 +42,6 @@ const BUSINESS_CONTACT_EMAIL = 'business-updates@proton.me';
 
 const SMTPSubmissionSection = () => {
     const api = useApi();
-    const [user] = useUser();
     const [addresses = []] = useAddresses();
     const addressMap = new Map(addresses.map((address) => [address.ID, address.Email]));
     const hasCustomAddress = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN);
@@ -70,13 +67,6 @@ const SMTPSubmissionSection = () => {
     const headersLength = headers.length;
 
     const openGenerateTokenModal = () => {
-        if (user.Role !== USER_ROLES.ADMIN_ROLE) {
-            createNotification({
-                type: 'error',
-                text: c('Error').t`You need to be an admin to generate an SMTP submission token.`,
-            });
-            return;
-        }
         if (!hasCustomAddress) {
             createNotification({
                 type: 'error',
@@ -89,13 +79,6 @@ const SMTPSubmissionSection = () => {
     };
 
     const confirmRemoveToken = (tokenID: string) => {
-        if (user.Role !== USER_ROLES.ADMIN_ROLE) {
-            createNotification({
-                type: 'error',
-                text: c('Error').t`You need to be an admin to delete an SMTP submission token.`,
-            });
-            return;
-        }
         setTokenIDToRemove(tokenID);
         setConfirmModalOpen(true);
     };
@@ -138,7 +121,7 @@ const SMTPSubmissionSection = () => {
             <SettingsSection>
                 <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp')}>
                     {c('Info')
-                        .jt`SMTP allows 3rd-party services or printers to send email through ${MAIL_APP_NAME}. It is a new feature available to select business users. Please email ${emailLink} to request access.`}
+                        .jt`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}. It is a new feature available to select business users. Please email ${emailLink} to request access.`}
                 </SettingsParagraph>
             </SettingsSection>
         );
@@ -148,7 +131,7 @@ const SMTPSubmissionSection = () => {
         <SettingsSectionWide>
             <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp')}>
                 {c('Info')
-                    .t`SMTP allows 3rd-party services or printers to send email through ${MAIL_APP_NAME}. To use this feature, start by generating a new token.`}
+                    .t`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}. To use this feature, start by generating a new token.`}
             </SettingsParagraph>
             <div className="mb1">
                 <Button
