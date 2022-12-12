@@ -26,8 +26,8 @@ import { Address } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 const Steps = {
-    Form: 0,
-    Generated: 1,
+    TokenForm: 0,
+    TokenValue: 1,
 };
 
 interface Props extends ModalProps {
@@ -38,7 +38,7 @@ interface Props extends ModalProps {
 const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
     const { onClose } = rest;
     const { validator, onFormSubmit } = useFormErrors();
-    const [step, setStep] = useState(Steps.Form);
+    const [step, setStep] = useState(Steps.TokenForm);
     const [loading, withLoading] = useLoading();
     const [tokenName, setTokenName] = useState('');
     const [token, setToken] = useState('');
@@ -46,24 +46,24 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
     const customAddresses = addresses.filter(({ Type }) => Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN);
     const [addressID, setAddressID] = useState(customAddresses[0].ID);
     const api = useApi();
-    const title = step === Steps.Form ? c('Title').t`Generate SMTP token` : c('Title').t`Your SMTP token`;
+    const title = step === Steps.TokenForm ? c('Title').t`Generate SMTP token` : c('Title').t`Your SMTP token`;
 
     const handleClose = loading ? noop : onClose;
 
     const handleSubmit = async () => {
-        if (step === Steps.Form) {
+        if (step === Steps.TokenForm) {
             if (loading || !onFormSubmit()) {
                 return;
             }
             const { SmtpTokenCode } = await api(createToken(addressID, tokenName));
             setToken(SmtpTokenCode);
-            setStep(Steps.Generated);
+            setStep(Steps.TokenValue);
             onCreate();
         }
     };
 
     const content = () => {
-        if (step === Steps.Form) {
+        if (step === Steps.TokenForm) {
             return (
                 <>
                     <p>{c('Info')
@@ -109,7 +109,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
     };
 
     const footer = () => {
-        if (step === Steps.Form) {
+        if (step === Steps.TokenForm) {
             return (
                 <>
                     <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
