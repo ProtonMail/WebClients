@@ -4,7 +4,9 @@ import * as React from 'react';
 import { Sidebar, SidebarNav } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useDebug } from '../../../hooks/drive/useDebug';
 import { ShareWithKey, useDefaultShare } from '../../../store';
+import { useCreateDevice } from '../../../store/_shares/useCreateDevice';
 import DriveSidebarFooter from './DriveSidebarFooter';
 import DriveSidebarList from './DriveSidebarList';
 
@@ -18,8 +20,10 @@ interface Props {
 const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }: Props) => {
     const { activeShareId } = useActiveShare();
     const { getDefaultShare } = useDefaultShare();
+    const debug = useDebug();
 
     const [defaultShare, setDefaultShare] = useState<ShareWithKey>();
+    const { createDevice } = useCreateDevice();
 
     useEffect(() => {
         void getDefaultShare().then(setDefaultShare);
@@ -42,6 +46,7 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
             <SidebarNav>
                 <DriveSidebarList shareId={activeShareId} userShares={shares} />
             </SidebarNav>
+            {debug ? <button onClick={createDevice}>Create device</button> : null}
         </Sidebar>
     );
 };

@@ -13,6 +13,7 @@ export interface FileBrowserProps<T extends FileBrowserBaseItem, T1> {
     items: T[];
     layout: LayoutSetting;
     loading?: boolean;
+    isMultiSelectionDisabled?: boolean;
     sortParams?: SortParams<T1>;
 
     Cells: React.FC<{ item: T }>[];
@@ -42,6 +43,8 @@ const FileBrowser = <T extends FileBrowserBaseItem, T1>({
     layout,
     loading = false,
     sortParams,
+
+    isMultiSelectionDisabled,
 
     Cells = [],
     GridHeaderComponent,
@@ -87,6 +90,7 @@ const FileBrowser = <T extends FileBrowserBaseItem, T1>({
                 contextMenuAnchorRef={contextMenuAnchorRef}
                 scrollAreaRef={scrollAreaRef}
                 getDragMoveControls={getDragMoveControls}
+                isMultiSelectionDisabled={isMultiSelectionDisabled}
             />
         );
     }
@@ -108,6 +112,7 @@ const FileBrowser = <T extends FileBrowserBaseItem, T1>({
             contextMenuAnchorRef={contextMenuAnchorRef}
             scrollAreaRef={scrollAreaRef}
             getDragMoveControls={getDragMoveControls}
+            isMultiSelectionDisabled={isMultiSelectionDisabled}
         />
     );
 };
