@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { EasySwitchSettingsArea } from '@proton/activation';
 import {
     AccountRecoverySection,
     AutomaticSubscriptionModal,
@@ -11,7 +12,6 @@ import {
     CreditsSection,
     DataRecoverySection,
     DeleteSection,
-    EasySwitchSettingsArea,
     EmailSubscriptionSection,
     GiftCodeSection,
     InvoicesSection,

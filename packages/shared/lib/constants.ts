@@ -921,6 +921,7 @@ export const REFERRAL_PROGRAM_MAX_AMOUNT = 9000;
 export const FIBONACCI_LIST = [1, 1, 2, 3, 5, 8, 13];
 
 /* Here is a list of product not to be translated */
+//TODO should this be moved in the easy-switch package
 export const PRODUCT_NAMES = {
     EASY_SWITCH: 'Easy Switch',
 };
