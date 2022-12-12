@@ -259,7 +259,7 @@ export const createNewDraft = (
     const MIMEType = isOutside
         ? (mailSettings.DraftMIMEType as unknown as MIME_TYPES)
         : referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
-    const { FontFace, FontSize, RightToLeft } = mailSettings;
+    const { RightToLeft } = mailSettings;
 
     let Flags = 0;
     if (mailSettings.AttachPublicKey) {
@@ -304,7 +304,7 @@ export const createNewDraft = (
                 : ''
             : generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses, action);
 
-    const fontStyle = defaultFontStyle({ FontFace, FontSize });
+    const fontStyle = defaultFontStyle(mailSettings);
 
     content =
         action === MESSAGE_ACTIONS.NEW && referenceMessage?.decryption?.decryptedBody

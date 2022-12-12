@@ -71,7 +71,7 @@ describe('Composer switch plaintext <-> html', () => {
         await waitForSpyCall(mockSetContent);
 
         expect(mockSetContent).toHaveBeenCalledWith(
-            `<div style="font-family: Arial; font-size: 14px;">${content}</div>`
+            `<div style="font-family: Arial, sans-serif; font-size: 14px;">${content}</div>`
         );
 
         // Wait for auto save
