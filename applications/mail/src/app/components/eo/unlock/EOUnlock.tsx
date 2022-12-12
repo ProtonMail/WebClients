@@ -36,7 +36,7 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
     return (
         <main className="ui-standard shadow-lifted on-tiny-mobile-no-box-shadow relative no-scroll w100 max-w100 mxauto eo-layout mw30r">
             <div className="eo-layout-header">
-                {isError && <h1 className="eo-layout-title mt1">{c('Title').t`Error`}</h1>}
+                {isError && <h1 className="eo-layout-title mt1" data-testid="eo:error">{c('Title').t`Error`}</h1>}
             </div>
             <div className="eo-layout-main-content">
                 {isError ? (
