@@ -119,7 +119,7 @@ const SMTPSubmissionSection = () => {
         );
         return (
             <SettingsSection>
-                <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp')}>
+                <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
                     {c('Info')
                         .jt`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}. It is a new feature available to select business users. Please email ${emailLink} to request access.`}
                 </SettingsParagraph>
@@ -129,7 +129,7 @@ const SMTPSubmissionSection = () => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp')}>
+            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
                 {c('Info')
                     .t`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}. To use this feature, start by generating a new token.`}
             </SettingsParagraph>
