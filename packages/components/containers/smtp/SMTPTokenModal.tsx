@@ -108,15 +108,29 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         label={c('Label').t`SMTP username`}
                         readOnly
                         value={emailAddress}
+                        inputClassName="bg-weak"
                     />
-                    <Copy color="norm" shape="solid" value={emailAddress} className="smtp-token-copy relative flex-item-noshrink ml0-5">{c(
-                        'Action'
-                    ).t`Copy`}</Copy>
+                    <Copy
+                        color="norm"
+                        shape="solid"
+                        value={emailAddress}
+                        className="smtp-token-copy relative flex-item-noshrink ml0-5"
+                    >{c('Action').t`Copy`}</Copy>
                 </div>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
-                    <InputFieldTwo id="smtp-token" label={c('Label').t`SMTP token`} readOnly value={token} />
-                    <Copy color="norm" shape="solid" value={token} className="smtp-token-copy relative flex-item-noshrink ml0-5">{c('Action')
-                        .t`Copy`}</Copy>
+                    <InputFieldTwo
+                        id="smtp-token"
+                        label={c('Label').t`SMTP token`}
+                        readOnly
+                        value={token}
+                        inputClassName="bg-weak"
+                    />
+                    <Copy
+                        color="norm"
+                        shape="solid"
+                        value={token}
+                        className="smtp-token-copy relative flex-item-noshrink ml0-5"
+                    >{c('Action').t`Copy`}</Copy>
                 </div>
                 <p className="color-weak">{c('Info')
                     .t`This token won’t be available after you close this window, and you should not share it with anyone.`}</p>
