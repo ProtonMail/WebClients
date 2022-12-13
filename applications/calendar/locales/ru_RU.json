@@ -4107,6 +4107,18 @@
       "Emails": [
         "Электронные письма"
       ],
+      "Emails (all messages)": [
+        "Письма (все)"
+      ],
+      "Emails (last 12 months)": [
+        "Письма (последние 12 месяцев)"
+      ],
+      "Emails (last 3 months)": [
+        "Письма (последние 3 месяца)"
+      ],
+      "Emails (last month)": [
+        "Письма (последний месяц)"
+      ],
       "Enable Beta Access": [
         "Включить доступ к бета-версии"
       ],
@@ -4195,7 +4207,7 @@
         "Пароль почтового ящика"
       ],
       "Main": [
-        "Основное"
+        "Главная"
       ],
       "Manage categories": [
         "Управлять категориями"
@@ -4425,23 +4437,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортируйте все сообщения из ${ itemsToImportCount } папки, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ itemsToImportCount } папок, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ itemsToImportCount } папок, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ itemsToImportCount } папок, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортируйте все сообщения из ${ itemsToImportCount } ярлыка, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ itemsToImportCount } ярлыков, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ itemsToImportCount } ярлыков, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения из ${ itemsToImportCount } ярлыков, начиная с ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортировать все сообщения с ${ itemsToImportCount } ярлыком и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортируйте все сообщения, начиная с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения, начиная с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения, начиная с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортируйте все сообщения, начиная с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков до ${ periodFragment } и пометьте их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -5084,8 +5102,8 @@
       "Name": [
         "Название"
       ],
-      "Name, email or address": [
-        "Имя, электронная почта или адрес"
+      "Name or email address": [
+        "Имя или адрес эл. почты"
       ],
       "Password": [
         "Пароль"
@@ -5369,9 +5387,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "Скидка будет применяться при продлении до тех пор, пока подписка не будет отменена или изменена"
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Подписка автоматически продлится по стандартной цене в конце платежного цикла"
       ]
     },
     "specialoffer: Link": {
@@ -5790,20 +5805,6 @@
     "Text": {
       "Settings": [
         "Настройки"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "дата создания аккаунта"
-      ],
-      "the last 12 months": [
-        "последние 12 месяцев"
-      ],
-      "the last 3 months": [
-        "последние 3 месяца"
-      ],
-      "the last month": [
-        "последний месяц"
       ]
     },
     "Time unit": {

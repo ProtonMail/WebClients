@@ -161,6 +161,9 @@
       "Close this banner": [
         "Fechar esta faixa"
       ],
+      "Collapse URL": [
+        "Fechar URL"
+      ],
       "Color": [
         "Cor"
       ],
@@ -719,6 +722,9 @@
       "Request new code": [
         "Pedir novo código"
       ],
+      "Resend code": [
+        "Reenviar código"
+      ],
       "Reset": [
         "Redefinir"
       ],
@@ -730,6 +736,9 @@
       ],
       "Save": [
         "Gravar"
+      ],
+      "Saving${ ellipsis }": [
+        "A gravar${ ellipsis }"
       ],
       "Schedule message": [
         "Agendar mensagem"
@@ -2605,6 +2614,10 @@
       "You can't send vCards of more than 10 contacts": [
         "Não pode enviar vCards de mais de 10 contactos"
       ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Não pode abrir mais de ${ maxActiveComposer } janela de composição de cada vez.",
+        "Não pode abrir mais de ${ maxActiveComposer } janelas de composição de cada vez."
+      ],
       "You did not provide a file.": [
         "Não forneceu um ficheiro."
       ],
@@ -4121,9 +4134,17 @@
       "You have ${ unreadsLabel } in your inbox.": [
         "Tem ${ unreadsLabel } na sua caixa de entrada."
       ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Tem **${ count } conversa** armazenada desta pasta",
+        "Tem **${ count } conversas** armazenadas desta pasta"
+      ],
       "You have **${ count } conversation** tagged with this label": [
         "Tem **${ count } conversa com esta etiqueta",
         "Tem **${ count } conversas com esta etiqueta"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Tem **${ count } mensagem** armazenada desta pasta",
+        "Tem **${ count } mensagens** armazenadas desta pasta"
       ],
       "You have **${ count } message** tagged with this label": [
         "Tem **${ count } mensagem** com esta etiqueta",
@@ -4140,6 +4161,22 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos emails. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Selecionou **${ count } conversa** desta pasta",
+        "Selecionou **${ count } conversas** desta pasta"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Selecionou *${ count } conversa** com esta etiqueta",
+        "Selecionou *${ count } conversas** com esta etiqueta"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Selecionou **${ count } mensagem** desta pasta",
+        "Selecionou **${ count } mensagens** desta pasta"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Selecionou **${ count } mensagem** com esta etiqueta",
+        "Selecionou *${ count } mensagens** com esta etiqueta"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -5658,9 +5695,17 @@
         "${ elementsCount } conversa adicionada a ${ labelName }.",
         "${ elementsCount } conversas adicionadas a ${ labelName }."
       ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } conversa marcada como lida.",
+        "${ elementsCount } conversas marcadas como lidas."
+      ],
       "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } conversa marcada com estrela.",
         "${ elementsCount } conversas marcadas com estrela."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } conversa marcada como não lida.",
+        "${ elementsCount } conversas marcadas como não lidas."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversa movida para ${ folderName }.",
@@ -5899,20 +5944,6 @@
     "Time": {
       "Yesterday": [
         "Ontem"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "data de criação da conta"
-      ],
-      "the last 12 months": [
-        "os últimos 12 meses"
-      ],
-      "the last 3 months": [
-        "os últimos 3 meses"
-      ],
-      "the last month": [
-        "o último mês"
       ]
     },
     "Time unit": {

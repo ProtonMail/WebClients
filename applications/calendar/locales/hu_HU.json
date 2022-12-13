@@ -265,6 +265,9 @@
       "Make this participant required": [
         "Résztvevő megjelölése kötelezőként"
       ],
+      "Manage addresses": [
+        "Tagok kezelése"
+      ],
       "Mark for deletion": [
         "Törlésre jelöl"
       ],
@@ -515,6 +518,11 @@
         "Igen, ott leszek"
       ]
     },
+    "Action title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Megosztás ${ BRAND_NAME } felhasználókkal"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } vagy ${ importContact }."
@@ -616,6 +624,11 @@
     "Attendee role": {
       "Optional": [
         "Választható"
+      ]
+    },
+    "Badge": {
+      "Coming soon": [
+        "Hamarosan"
       ]
     },
     "Beta access description": {
@@ -741,6 +754,11 @@
         "Feltételesen elfogadta a meghívást"
       ]
     },
+    "Calendar permissions label": {
+      "Permissions": [
+        "Engedélyek"
+      ]
+    },
     "Calendar sharing access option label": {
       "View (see all event details)": [
         "Megtekintés (az összes eseményrészlet megtekintése)"
@@ -752,6 +770,11 @@
       ],
       "More options": [
         "További lehetőségek"
+      ]
+    },
+    "Calendar sidebar; Calendar info": {
+      "Shared with me": [
+        "Velem megosztott"
       ]
     },
     "Calendar status": {
@@ -797,6 +820,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "A naptár hivatkozás átmenetileg nem érhető el. Ellenőrizze, hogy a naptárszolgáltatónál még mindig érvényes ez a hivatkozás."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Több mint 12 óra telt el a legutóbbi frissítés óta — a ${ CALENDAR_APP_NAME } néhány órán belül megpróbálja frissíteni a naptárat."
       ]
     },
     "Calendar view": {
@@ -1855,6 +1881,11 @@
         "Ez az esemény egy kikapcsolt naptárhoz tartozik."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Ne kérdezze újra"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Naptár hozzáadása"
@@ -2077,6 +2108,10 @@
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
       ],
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fűzzön össze legalább ${ calendarToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral",
+        "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő ${ BRAND_NAME } naptárakkal"
+      ],
       "Missing key packet": [
         "Hiányzó kulcs csomag"
       ],
@@ -2139,6 +2174,10 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME } felhasználóhoz rendelt elsődleges kulcs nem érvényes a küldéshez"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Kettőzött címzett eltávolítása: ${ joinedRecipients }",
+        "Kettőzött címzettek eltávolítása: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "A kérés túllépte az időkorlátot"
@@ -2424,6 +2463,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Hiba történt. Kérjük, töltse újra az oldalt vagy próbálja meg később."
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Hiba lépett fel a ${ BRAND_NAME }hoz történő csatlakozás során."
+      ],
       "You may also ${ refresh } or try again later.": [
         "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
       ],
@@ -2691,6 +2733,9 @@
       ]
     },
     "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Az importált meghívók egyszerű eseményként jelennek meg a ${ CALENDAR_APP_NAME } eseményei közt, szervező és résztvevők nélkül. Hogy értesüljön az esemény változásairól és lássa a résztvevőket, kérje meg a szervezőket, hogy a ${ BRAND_NAME } e-mail címével hívják meg."
+      ],
       "This file contains an event invitation:": [
         "Ez a fájl egy esemény meghívót tartalmaz:",
         "Ez a fájl esemény meghívókat tartalmaz:"
@@ -2747,6 +2792,15 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a fiókjához. Ellenőrizze a következőket:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a Yahoo Mail fiókjához. Ellenőrizze, hogy a szerver címe és port száma megfelelő."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a Yahoo fiókjához. Ellenőrizze a következőket:"
+      ],
       "2-step verification is enabled in your external account.": [
         "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
       ],
@@ -2799,8 +2853,14 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Kattintson a ${ boldManage } elemre a lehetőségek megnyitásához."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME }ba importál."
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Hozzon létre egy ${ boldAppPassword }-t és azt használja a belépési jelszava helyett amikor a ${ BRAND_NAME } kéri."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Nyissa meg a ${ boldAccountInfo } részt a személyes adatainál, a ${ yahooMailLink } fiókjában."
@@ -3053,12 +3113,21 @@
       "and": [
         "és"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "A hivatkozás birtokában bárki megtekintheti a naptár eseményeinek összes részleteit, beleértve a címét, helyét és résztvevőket."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "A hivatkozás birtokában bárki láthatja, hogy a naptára szerint elfoglalt vagy szabad. Nem láthatják viszont az események adatait, mint például címét, helyét vagy résztvevőit."
+      ],
       "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
         "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként",
         "Legfeljebb ${ MAX_ATTENDEES } résztvevő megengedett meghívónként"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "A naptár eseményeinek minden részletének megosztásakor elfogadja, hogy elérést biztosít a ${ BRAND_NAME } számára a naptár titkosított tartalmához."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
@@ -3519,6 +3588,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Az importált naptárokat összefűzheti meglévő ${ BRAND_NAME } naptáraival is."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
       ],
@@ -3585,6 +3657,9 @@
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Az ön címe le van tiltva. A részvevők így nem kapnak lemondási értesítőt. Ebben az esetben is szeretné törölni az eseményt?"
       ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Az adatok a ${ BRAND_NAME } fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
+      ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "E-mail címe nem változik meg, de hamarosan már a ${ link } webcímen kell bejelentkeznie."
       ],
@@ -3610,6 +3685,11 @@
     "Info on errors": {
       "Click for details": [
         "Kattintson a részletekért"
+      ]
+    },
+    "Input label": {
+      "Access": [
+        "Elérés"
       ]
     },
     "Input placeholder": {
@@ -3641,6 +3721,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } felhasználónév"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
       ],
@@ -3746,6 +3829,12 @@
       "Ends": [
         "Befejező dátum"
       ],
+      "Event duration": [
+        "Esemény időtartama"
+      ],
+      "Event notifications": [
+        "Esemény értesítések"
+      ],
       "Event title": [
         "Esemény neve"
       ],
@@ -3775,6 +3864,9 @@
       ],
       "Hide password": [
         "Jelszó elrejtése"
+      ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Hogyan értékelné a tapasztalatait az új ${ BRAND_NAME }lel kapcsolatban?"
       ],
       "I understand the risk": [
         "Megértettem a kockázatot"
@@ -3814,6 +3906,9 @@
       ],
       "Mailbox password": [
         "E-mail titkosítási jelszó"
+      ],
+      "Main": [
+        "Elsődleges"
       ],
       "Manage categories": [
         "Kategóriák kezelése"
@@ -4009,6 +4104,11 @@
         "Mi ez?"
       ]
     },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } megnyitása"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Majdnem kész"
@@ -4064,6 +4164,14 @@
         "Naptárak kezelése"
       ]
     },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "Nem hozható létre több naptár. Elérte a csomagjában elérhető feliratkozott naptárainak maximumát."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "Nem hozható létre több naptár. Elérte a csomagjában elérhető személyes naptárainak maximumát."
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "Naptárak importálása más szolgáltatótól"
@@ -4091,6 +4199,9 @@
       ],
       "How to import emails from Yahoo": [
         "E-mailek importálása a Yahoo-tól"
+      ],
+      "Share calendar": [
+        "Naptár megosztása"
       ],
       "Time zone changed": [
         "Időzóna frissítve"
@@ -4279,6 +4390,11 @@
     "Notification time input": {
       "at": [
         "ekkor:"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "email"
       ]
     },
     "Notification when": {
@@ -4482,6 +4598,11 @@
         "Ön"
       ]
     },
+    "Participants collapse button label": {
+      "Collapse participants list": [
+        "Résztvevők listájának összecsukása"
+      ]
+    },
     "Participants expand button label": {
       "Expand participants list": [
         "Résztvevők listájának megnyitása"
@@ -4548,8 +4669,8 @@
       "Name": [
         "Név"
       ],
-      "Name, email or address": [
-        "Név, email cím vagy cím"
+      "Name or email address": [
+        "Név vagy e-mail cím"
       ],
       "Password": [
         "Jelszó"
@@ -4650,9 +4771,19 @@
         "Nincs találat"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Beállítások frissítése sikertelen"
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
         "Írjon be egy e-mail címet vagy egy csoportnevet"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Megosztás ${ BRAND_NAME } felhasználókkal"
       ]
     },
     "Side panel spotlight": {
@@ -4674,6 +4805,9 @@
       ],
       "Get up to ${ credits } in credits.": [
         "Szerezzen akár ${ credits } kreditet."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Hívjon meg barátokat a ${ BRAND_NAME }ba"
       ],
       "Subscribe to other calendars": [
         "Feliratkozás más naptárakra"
@@ -4725,6 +4859,11 @@
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
         "A naptárra való feliratkozás jelenleg nem érhető el"
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        "Az URL túl hosszú"
       ]
     },
     "Success": {
@@ -4926,20 +5065,6 @@
     "Text": {
       "Settings": [
         "Beállítások"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "fiók létrehozásának dátumától"
-      ],
-      "the last 12 months": [
-        "az utóbbi 12 hónapból"
-      ],
-      "the last 3 months": [
-        "az utóbbi 3 hónapból"
-      ],
-      "the last month": [
-        "az utóbbi hónapból"
       ]
     },
     "Time unit": {
@@ -5412,6 +5537,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "A ${ BRAND_NAME } az azonos nevű mappákat összefésüli. Ha ezt el szeretné kerülni, előzetesen nevezze át az azonos nevű mappákat."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "A ${ BRAND_NAME } annyi adatot áttölt, amennyi lehetséges, a legfrissebb üzenetekkel kezdve."
+      ],
       "Are you sure you want to discard your import?": [
         "Biztos, hogy elveti az importálást?"
       ],
@@ -5461,6 +5592,9 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Ez a művelet nem vonható vissza. Írja be a ${ boldDanger } szót a mezőbe a folytatáshoz."
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Az importálás helyigénye meghaladhatja a ${ BRAND_NAME } fiókban rendelkezésre álló helyet. Fontolja meg a beállítások finomítását."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sajnos a támogatási csoport jelenleg nem elérhető. Kérjük, az alábbi űrlapon írja le a problémáját és amint lehet felvesszük önnel a kapcsolatot."

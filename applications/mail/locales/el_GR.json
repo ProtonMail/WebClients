@@ -3014,6 +3014,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS_STRING } γεγονός.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS_STRING } γεγονότα."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
       ],
@@ -6787,20 +6791,6 @@
     "Time": {
       "Yesterday": [
         "Χθες"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "ημερομηνία δημιουργίας λογαριασμού"
-      ],
-      "the last 12 months": [
-        "τους τελευταίους 12 μήνες"
-      ],
-      "the last 3 months": [
-        "τους τελευταίους 3 μήνες"
-      ],
-      "the last month": [
-        "τον τελευταίο μήνα"
       ]
     },
     "Time unit": {

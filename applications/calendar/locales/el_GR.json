@@ -2194,6 +2194,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS_STRING } γεγονός.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS_STRING } γεγονότα."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
       ],
@@ -4055,6 +4059,12 @@
         "Η ομάδα επαφών ενημερώθηκε"
       ]
     },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Το μέλος προστέθηκε",
+        "Τα μέλη προστέθηκαν"
+      ]
+    },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
         "Η πρόσκληση στο ημερολόγιο απορρίφθηκε"
@@ -4337,6 +4347,9 @@
       "Name": [
         "Όνομα"
       ],
+      "Name or email address": [
+        "Όνομα ή ηλ. διεύθυνση"
+      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
@@ -4440,6 +4453,12 @@
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
         "Για να προσκαλέσετε μη ${ BRAND_NAME } χρήστες, κοινοποιήστε το ημερολόγιό σας με έναν σύνδεσμο"
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Έχετε ξεπεράσει το όριο του ${ MAX_CALENDAR_MEMBERS } μέλους ανά ημερολόγιο",
+        "Έχετε ξεπεράσει το όριο των ${ MAX_CALENDAR_MEMBERS } μελών ανά ημερολόγιο"
       ]
     },
     "Share calendar modal description": {
@@ -4731,20 +4750,6 @@
     "Text": {
       "Settings": [
         "Ρυθμίσεις"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "ημερομηνία δημιουργίας λογαριασμού"
-      ],
-      "the last 12 months": [
-        "τους τελευταίους 12 μήνες"
-      ],
-      "the last 3 months": [
-        "τους τελευταίους 3 μήνες"
-      ],
-      "the last month": [
-        "τον τελευταίο μήνα"
       ]
     },
     "Time unit": {

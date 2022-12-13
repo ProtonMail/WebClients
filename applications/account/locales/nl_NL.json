@@ -2601,6 +2601,9 @@
       "${ name } deletion failed": [
         "Verwijdering van ${ name } is mislukt"
       ],
+      "${ name } moved to not spam list": [
+        "${ name } verplaatst naar niet-Spamlijst"
+      ],
       "${ name } moved to spam list": [
         "${ name } verplaatst naar spamlijst"
       ],
@@ -2705,6 +2708,9 @@
       ],
       "${ name } moved to not spam list": [
         "${ name } verplaatst naar niet-Spamlijst"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } verplaatst naar spamlijst"
       ],
       "${ name } successfully deleted": [
         "${ name } succesvol verwijderd"
@@ -5067,6 +5073,9 @@
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren"
+      ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Logboeken bevatten authenticatiepogingen voor alle ${ BRAND_NAME }-diensten die uw ${ BRAND_NAME }-inloggegevens gebruiken."
       ],
       "lose access to all current encrypted data": [
         "toegang tot alle huidige versleutelde gegevens verliezen"
@@ -7997,6 +8006,26 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium ${ BRAND_NAME }-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium ${ BRAND_NAME }-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -8066,26 +8095,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium ${ BRAND_NAME }-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium ${ BRAND_NAME }-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9316,9 +9325,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "De korting wordt toegepast bij verlenging, tot het abonnement wordt opgezegd of aangepast"
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaardtarief"
       ]
     },
     "specialoffer: Link": {
@@ -9886,20 +9892,6 @@
       ],
       "vCard field": [
         "vCard-veld"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "aanmaakdatum van account"
-      ],
-      "the last 12 months": [
-        "de laatste 12 maanden"
-      ],
-      "the last 3 months": [
-        "de laatste 3 maanden"
-      ],
-      "the last month": [
-        "de laatste maand"
       ]
     },
     "Time unit": {
@@ -11030,11 +11022,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries } landen"
-      ]
-    },
-    "vpn: Info": {
-      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
-        "Open de ${ VPN_APP_NAME }-browserextensie om uzelf te beschermen tijdens het browsen"
       ]
     },
     "VPNClient": {

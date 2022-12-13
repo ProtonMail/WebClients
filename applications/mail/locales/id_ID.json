@@ -926,6 +926,9 @@
       "Skip": [
         "Lewati"
       ],
+      "Skip verification": [
+        "Lewati verifikasi"
+      ],
       "Some images failed to load with tracking protection.": [
         "Sebagian gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
       ],
@@ -3303,7 +3306,7 @@
         "Kunci terpercaya tidak valid untuk mengirim"
       ],
       "Try using only letters, numerals, and _.-": [
-        "Cobalah untuk menggunakan hanya huruf, angka, dan tanda _.-"
+        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
@@ -5999,6 +6002,18 @@
       "Emails": [
         "Email"
       ],
+      "Emails (all messages)": [
+        "Email (seluruh pesan)"
+      ],
+      "Emails (last 12 months)": [
+        "Email (12 bulan terakhir)"
+      ],
+      "Emails (last 3 months)": [
+        "Email (3 bulan terakhir)"
+      ],
+      "Emails (last month)": [
+        "Email (sebulan terakhir)"
+      ],
       "Enable Beta Access": [
         "Aktifkan Akses Beta"
       ],
@@ -6581,17 +6596,17 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ itemsToImportCount } folder sejak ${ periodFragment } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folders since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ itemsToImportCount } folder dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ itemsToImportCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ itemsToImportCount } label sejak ${ periodFragment } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ selectedItemsToImportCount } folder terpilih (dari total ${ itemsToImportCount } folder sejak ${ periodFragment }) dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ selectedItemsToImportCount } label terpilih (dari total ${ itemsToImportCount } label sejak ${ periodFragment }) dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -7051,9 +7066,6 @@
       ],
       "Name or email address": [
         "Nama atau alamat email"
-      ],
-      "Name, email or address": [
-        "Nama, email, atau alamat"
       ],
       "Password": [
         "Kata sandi"
@@ -7709,20 +7721,6 @@
     "Time": {
       "Yesterday": [
         "Kemarin"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "tanggal pembuatan akun"
-      ],
-      "the last 12 months": [
-        "12 bulan terakhir"
-      ],
-      "the last 3 months": [
-        "3 bulan terakhir"
-      ],
-      "the last month": [
-        "sebulan terakhir"
       ]
     },
     "Time unit": {
@@ -8405,6 +8403,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
       ],
+      "Skip verification?": [
+        "Lewati verifikasi?"
+      ],
       "Some of the attachments' signatures failed verification.\nYou can still download these attachments but they might have been tampered with.": [
         "Tanda tangan lampiran gagal diverifikasi.\nAnda tetap dapat mengunduh lampiran ini tapi mungkin saja sudah rusak."
       ],
@@ -8437,6 +8438,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sayangnya, kami saat ini sedang tidak daring. Harap kabarkan masalah yang telah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali daring."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda mempercayainya, Anda dapat melewati proses verifikasi ini."
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."

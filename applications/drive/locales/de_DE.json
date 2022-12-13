@@ -526,6 +526,9 @@
       "Skip": [
         "Überspringen"
       ],
+      "Skip verification": [
+        "Überprüfung überspringen"
+      ],
       "Start import": [
         "Importvorgang starten"
       ],
@@ -4053,6 +4056,18 @@
       "Emails": [
         "E-Mails"
       ],
+      "Emails (all messages)": [
+        "E-Mails (alle Nachrichten)"
+      ],
+      "Emails (last 12 months)": [
+        "E-Mails (letzte 12 Monate)"
+      ],
+      "Emails (last 3 months)": [
+        "E-Mails (letzte 3 Monate)"
+      ],
+      "Emails (last month)": [
+        "E-Mails (letzter Monat)"
+      ],
       "Enable Beta Access": [
         "Beta-Zugang aktivieren"
       ],
@@ -4423,6 +4438,24 @@
       ],
       "Your import is starting": [
         "Dein Datenimport wird gestartet"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Alle Nachrichten aus dem Ordner importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen.",
+        "Alle Nachrichten aus den ${ itemsToImportCount } Ordnern importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen."
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Alle Nachrichten der Kategorie importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen.",
+        "Alle Nachrichten der ${ itemsToImportCount } Kategorien importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen."
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Alle Nachrichten aus dem Ordner importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen.",
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordnern importieren und diese als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen."
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Alle Nachrichten aus der Kategorie importieren und diese als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen.",
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und diese als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen."
       ]
     },
     "Message": {
@@ -4844,8 +4877,8 @@
       "Name": [
         "Name"
       ],
-      "Name, email or address": [
-        "Name, E-Mail-Adresse oder Anschrift"
+      "Name or email address": [
+        "Name und E-Mail-Adresse"
       ],
       "New name": [
         "Neuer Name"
@@ -5063,9 +5096,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "Der Rabatt gilt bei Verlängerung weiter, bis das Abonnement gekündigt oder geändert wird"
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Dein Abonnement wird am Ende deines Abrechnungszeitraums automatisch zum Standardpreis verlängert"
       ]
     },
     "specialoffer: Link": {
@@ -5344,20 +5374,6 @@
     "Text": {
       "Settings": [
         "Einstellungen"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "Erstellungsdatum des Kontos"
-      ],
-      "the last 12 months": [
-        "der letzten 12 Monate"
-      ],
-      "the last 3 months": [
-        "der letzten 3 Monate"
-      ],
-      "the last month": [
-        "des letzten Monats"
       ]
     },
     "Time unit": {
@@ -5990,6 +6006,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
+      ],
+      "Skip verification?": [
+        "Überprüfung überspringen?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Einige der zusammenzuführenden Kontakte enthalten Fehler. Bitte überprüfe diese einzeln."

@@ -377,7 +377,7 @@
         "Moins d'options de recherche"
       ],
       "Filter on...": [
-        "Filtrer sur..."
+        "Filtrer"
       ],
       "Fit to window": [
         "Ajuster à la fenêtre"
@@ -507,10 +507,10 @@
         "Raccourcis clavier"
       ],
       "Label as": [
-        "Labelliser comme"
+        "Labelliser"
       ],
       "Label as...": [
-        "Labelliser comme..."
+        "Labelliser..."
       ],
       "label emails as": [
         "labelliser le message comme"
@@ -612,13 +612,13 @@
         "Déplacer tous les messages de ce label"
       ],
       "Move all to trash": [
-        "Tout déplacer dans Corbeille"
+        "Tout déplacer dans le dossier Corbeille"
       ],
       "move emails to": [
         "déplacer les messages vers"
       ],
       "Move to": [
-        "Déplacer dans"
+        "Déplacer"
       ],
       "Move to archive": [
         "Déplacer dans le dossier Archives"
@@ -636,10 +636,10 @@
         "Déplacer dans le dossier Indésirables/spam et se désabonner"
       ],
       "Move to trash": [
-        "Déplacer dans Corbeille"
+        "Déplacer dans le dossier Corbeille"
       ],
       "Move to...": [
-        "Déplacer dans..."
+        "Déplacer..."
       ],
       "Need help?": [
         "Besoin d'aide ?"
@@ -2733,7 +2733,7 @@
         "Pièce jointe"
       ],
       "Filter on": [
-        "Filtrer par"
+        "Filtrer"
       ],
       "Next": [
         "Suivant"
@@ -3322,6 +3322,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -4745,6 +4748,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Enter verification code. Digit ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
@@ -5816,7 +5822,7 @@
         "Aller au dernier"
       ],
       "Label as...": [
-        "Labelliser comme…"
+        "Labelliser..."
       ],
       "Load embedded images": [
         "Charger les images intégrées"
@@ -5852,10 +5858,10 @@
         "Déplacer dans Indésirables/spam"
       ],
       "Move to Trash": [
-        "Déplacer dans Corbeille"
+        "Déplacer dans le dossier Corbeille"
       ],
       "Move to...": [
-        "Déplacer dans..."
+        "Déplacer..."
       ],
       "Move up": [
         "Déplacer vers le haut"
@@ -6096,6 +6102,18 @@
       "Emails": [
         "E-mails"
       ],
+      "Emails (all messages)": [
+        "E-mails (tous les messages)"
+      ],
+      "Emails (last 12 months)": [
+        "E-mails (12 derniers mois)"
+      ],
+      "Emails (last 3 months)": [
+        "E-mails (3 derniers mois)"
+      ],
+      "Emails (last month)": [
+        "E-mails (mois dernier)"
+      ],
       "Enable Beta Access": [
         "Activer l'accès à la version bêta"
       ],
@@ -6178,10 +6196,10 @@
         "Mot-clé"
       ],
       "Label as": [
-        "Labelliser comme"
+        "Labelliser"
       ],
       "Label messages as": [
-        "Labelliser les messages comme"
+        "Labelliser les messages"
       ],
       "Last 12 months only": [
         "Seulement les 12 derniers mois"
@@ -6200,6 +6218,9 @@
       ],
       "Mailbox password": [
         "Mot de passe de la messagerie"
+      ],
+      "Main": [
+        "Principale"
       ],
       "Manage categories": [
         "Gérer les catégories"
@@ -6220,7 +6241,7 @@
         "Déplacer ${ sidebarElementName }"
       ],
       "Move to": [
-        "Déplacer dans"
+        "Déplacer"
       ],
       "Move to Archive": [
         "Déplacer dans le dossier Archives"
@@ -6371,6 +6392,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "À : ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "Barre d'outils"
       ],
       "Two-factor authentication code": [
         "Code d’authentification à deux facteurs"
@@ -6669,6 +6693,24 @@
       ],
       "Your import is starting": [
         "Votre importation commence."
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages provenant de ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages provenant de ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }. "
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }. "
       ]
     },
     "Mailbox": {
@@ -7030,7 +7072,7 @@
         "Dossiers par défaut"
       ],
       "Move to...": [
-        "Déplacer dans..."
+        "Déplacer..."
       ]
     },
     "Option group label": {
@@ -7555,9 +7597,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "La réduction sera maintenue lors du renouvellement jusqu'à ce que l'abonnement soit annulé ou modifié."
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Votre abonnement se renouvellera automatiquement au prix habituel à la fin de votre cycle de facturation."
       ]
     },
     "specialoffer: Link": {
@@ -8068,20 +8107,6 @@
         "Hier"
       ]
     },
-    "Time period": {
-      "account creation date": [
-        "date de création du compte"
-      ],
-      "the last 12 months": [
-        "les 12 derniers mois"
-      ],
-      "the last 3 months": [
-        "les 3 derniers mois"
-      ],
-      "the last month": [
-        "le dernier mois"
-      ]
-    },
     "Time unit": {
       "${ daysCountLeft } day": [
         "${ daysCountLeft } jour",
@@ -8325,7 +8350,7 @@
         "Votre avis"
       ],
       "Filter on...": [
-        "Filtrer sur..."
+        "Filtrer"
       ],
       "Folder options": [
         "Options de dossier"
@@ -8365,7 +8390,7 @@
         "Code de vérification non valide"
       ],
       "Label as": [
-        "Labelliser comme"
+        "Labelliser"
       ],
       "Label options": [
         "Options de label"
@@ -8425,10 +8450,10 @@
         "Plus de sélections"
       ],
       "Move all messages to Trash": [
-        "Déplacer tous les messages dans Corbeille"
+        "Déplacer tous les messages dans le dossier Corbeille"
       ],
       "Move to": [
-        "Déplacer dans"
+        "Déplacer"
       ],
       "Move to inbox": [
         "Déplacer dans le dossier Boîte de réception"
@@ -8440,7 +8465,7 @@
         "Déplacer dans le dossier Indésirables/spam"
       ],
       "Move to trash": [
-        "Déplacer dans Corbeille"
+        "Déplacer dans le dossier Corbeille"
       ],
       "Moving a scheduled message": [
         "Déplacement d'un message programmé"
@@ -8732,6 +8757,10 @@
       "Password must contain at least ${ length } character": [
         "Le mot de passe doit comporter au moins ${ length } caractère.",
         "Le mot de passe doit comporter au moins ${ length } caractères."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
       ]
     },
     "Video control": {

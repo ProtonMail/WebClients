@@ -3126,6 +3126,12 @@
       "No address with keys available to compose a message": [
         "Cap adreça amb les claus disponibles per redactar un missatge"
       ],
+      "No calendars found to import": [
+        "No s'ha trobat cap calendari per importar"
+      ],
+      "No contacts found to import": [
+        "No s'ha trobat cap contacte per importar"
+      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -3765,6 +3771,9 @@
       ]
     },
     "forwardmessage": {
+      "Date: On ${ date }": [
+        "Data: el ${ date }"
+      ],
       "From: ${ senderString }": [
         "De: ${ senderString }"
       ],
@@ -5986,6 +5995,9 @@
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
+      "Main": [
+        "Principal"
+      ],
       "Manage categories": [
         "Gestiona les categories"
       ],
@@ -6156,6 +6168,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Per: ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "Barra d'eines"
       ],
       "Two-factor authentication code": [
         "Codi d'autenticació de dos factors"
@@ -7243,6 +7258,10 @@
         "${ count } missatge esborrat",
         "${ count } missatges esborrats"
       ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacte sembla idèntic.",
+        "${ countMergeableContacts } contactes semblen idèntics"
+      ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "${ elementsCount } conversa afegida a ${ labelName }.",
         "${ elementsCount } converses afegides a ${ labelName }."
@@ -7400,6 +7419,9 @@
       "Message moved to ${ folderName }.": [
         "Missatge mogut a ${ folderName }."
       ],
+      "Message moved to spam and sender added to your spam list.": [
+        "Missatge s'ha mogut a correu brossa i el remitent s'ha afegit a la vostra llista de bloqueig."
+      ],
       "Message removed from ${ labelName }.": [
         "Missatge esborrat de ${ labelName }."
       ],
@@ -7506,20 +7528,6 @@
     "Time": {
       "Yesterday": [
         "Ahir"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "data de creació del compte"
-      ],
-      "the last 12 months": [
-        "els darrers 12 mesos"
-      ],
-      "the last 3 months": [
-        "els darrers 3 mesos"
-      ],
-      "the last month": [
-        "el darrer mes"
       ]
     },
     "Time unit": {

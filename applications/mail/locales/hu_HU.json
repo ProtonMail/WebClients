@@ -268,6 +268,12 @@
       "Delete draft": [
         "Piszkozat törlése"
       ],
+      "Delete folder": [
+        "Mappa törlése"
+      ],
+      "Delete label": [
+        "Címke törlése"
+      ],
       "Delete permanently": [
         "Végleges törlés"
       ],
@@ -312,6 +318,9 @@
       ],
       "Edit encryption": [
         "Titkosítás szerkesztése"
+      ],
+      "Edit folder": [
+        "Mappa szerkesztése"
       ],
       "Edit label": [
         "Címke szerkesztése"
@@ -1505,6 +1514,9 @@
       "Event rescheduling is not supported for the moment": [
         "Az esemény újraidőzítés jelenleg nem támogatott"
       ],
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "A válasz nem adható a ${ CALENDAR_APP_NAME } naptárhoz, mert jelenleg csak a sorozat összes eseményéhez való válasz támogatott"
+      ],
       "This event has been canceled.": [
         "Ezt az eseményt törölték."
       ],
@@ -1591,6 +1603,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "A naptár hivatkozás átmenetileg nem érhető el. Ellenőrizze, hogy a naptárszolgáltatónál még mindig érvényes ez a hivatkozás."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Több mint 12 óra telt el a legutóbbi frissítés óta — a ${ CALENDAR_APP_NAME } néhány órán belül megpróbálja frissíteni a naptárat."
       ]
     },
     "Calendar widget banner": {
@@ -3102,6 +3117,10 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Túllépte a mellékletek maximális számát (${ attachmentsCountLimit })"
       ],
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fűzzön össze legalább ${ calendarToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral",
+        "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő ${ BRAND_NAME } naptárakkal"
+      ],
       "Message needs to be sent first": [
         "Az üzenetet előbb el kell küldeni"
       ],
@@ -3541,6 +3560,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Hiba történt. Kérjük, töltse újra az oldalt vagy próbálja meg később."
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Hiba lépett fel a ${ BRAND_NAME }hoz történő csatlakozás során."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Még nincs névjegy. Hozzon létre egyet"
       ],
@@ -3782,6 +3804,12 @@
       ]
     },
     "forwardmessage": {
+      "From: ${ senderString }": [
+        "Forrás: ${ senderString }"
+      ],
+      "Subject: ${ subject }": [
+        "Tárgy: ${ subject }"
+      ],
       "To: ${ toString }": [
         "Címzett: ${ toString }"
       ]
@@ -3812,6 +3840,9 @@
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
         "Android és iOS változatokban érhető el."
+      ],
+      "Get the ${ MAIL_APP_NAME } mobile app": [
+        "Töltse le a ${ MAIL_APP_NAME } mobil alkalmazást"
       ],
       "Import contacts or emails": [
         "Importálja névjegyeit vagy üzeneteit"
@@ -3964,6 +3995,9 @@
       ]
     },
     "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Az importált meghívók egyszerű eseményként jelennek meg a ${ CALENDAR_APP_NAME } eseményei közt, szervező és résztvevők nélkül. Hogy értesüljön az esemény változásairól és lássa a résztvevőket, kérje meg a szervezőket, hogy a ${ BRAND_NAME } e-mail címével hívják meg."
+      ],
       "This file contains an event invitation:": [
         "Ez a fájl egy esemény meghívót tartalmaz:",
         "Ez a fájl esemény meghívókat tartalmaz:"
@@ -4020,6 +4054,15 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a fiókjához. Ellenőrizze a következőket:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a Yahoo Mail fiókjához. Ellenőrizze, hogy a szerver címe és port száma megfelelő."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a Yahoo fiókjához. Ellenőrizze a következőket:"
+      ],
       "2-step verification is enabled in your external account.": [
         "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
       ],
@@ -4080,8 +4123,14 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Kattintson a ${ boldManage } elemre a lehetőségek megnyitásához."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME }ba importál."
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Hozzon létre egy ${ boldAppPassword }-t és azt használja a belépési jelszava helyett amikor a ${ BRAND_NAME } kéri."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Nyissa meg a ${ boldAccountInfo } részt a személyes adatainál, a ${ yahooMailLink } fiókjában."
@@ -4614,6 +4663,9 @@
       "Email tracker protection is disabled": [
         "E-mail követő védelem ki van kapcsolva"
       ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
+        "Az e-mail követők megsérthetik a magánszféráját. A ${ BRAND_NAME } nem talált követőt ebben az üzenetben."
+      ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Az e-mail követők megsérthetik a magánszféráját. Kapcsolja be a követés elleni védelmet, hogy a feladók ne értesülhessenek arról, ha és amikor megnyitja az üzenetet."
       ],
@@ -4720,6 +4772,9 @@
       ],
       "How Hide My Email works": [
         "Így működik a Hide My Email"
+      ],
+      "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
+        "Egy nem-${ MAIL_APP_NAME } címzettnek küldöm ezt az üzenetet."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
@@ -5428,6 +5483,9 @@
       "You can add it as an attachment or display it inline in your mail body.": [
         "Hozzáadhatja mellékletként, vagy megjelenítheti az üzenet szövegében."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Az importált naptárokat összefűzheti meglévő ${ BRAND_NAME } naptáraival is."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
       ],
@@ -5511,6 +5569,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "A levél tartalmazza a \"${ attachmentsFoundKeyword }\" kifejezést, de nem csatolt mellékletet. Biztos, hogy elküldi így a levelet?"
       ],
+      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "A ${ BRAND_NAME } Fiókja tartalmazza a SimpleLogin szolgáltatást. Telepítse egyetlen kattintással a böngészőbővítményt, hogy használni kezdhesse."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
       ],
@@ -5522,6 +5583,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Önnek legalább egy lejárt számlatartozása van, ezért fiókját korlátoztuk. Tájékoztatjuk, hogy amennyiben nem rendezi tartozását, a jövőben az e-mailek és a fájlmegosztások letiltásra kerülhetnek. Kérjük mielőbb rendezze tartozását: ${ payInvoiceLink }"
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Az adatok a ${ BRAND_NAME } fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "E-mail címe nem változik meg, de hamarosan már a ${ link } webcímen kell bejelentkeznie."
@@ -5813,6 +5877,9 @@
       " and ${ l }": [
         " és ${ l }"
       ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } felhasználónév"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
       ],
@@ -6005,6 +6072,9 @@
       "Hide password": [
         "Jelszó elrejtése"
       ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Hogyan értékelné a tapasztalatait az új ${ BRAND_NAME }lel kapcsolatban?"
+      ],
       "I understand the risk": [
         "Megértettem a kockázatot"
       ],
@@ -6061,6 +6131,9 @@
       ],
       "Mailbox password": [
         "E-mail titkosítási jelszó"
+      ],
+      "Main": [
+        "Elsődleges"
       ],
       "Manage categories": [
         "Kategóriák kezelése"
@@ -6456,6 +6529,9 @@
       "Terms": [
         "Feltételek"
       ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Ez az ICS fájl több eseményt tartalmaz. Kérjük, töltse le és importálja a ${ CALENDAR_APP_NAME } alkalmazásban"
+      ],
       "Trash": [
         "Lomtár"
       ],
@@ -6550,6 +6626,9 @@
       "Fw:": [
         "Fwd:"
       ],
+      "On ${ date }, ${ senderString } wrote:": [
+        "${ date } keltezéssel, ${ senderString } írta:"
+      ],
       "Re:": [
         "Re:"
       ],
@@ -6560,6 +6639,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "A ${ appName } új verziója érhető el. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
+        "A ${ BRAND_NAME } SimpleLogin szolgáltatásából"
       ]
     },
     "Message image": {
@@ -6965,9 +7049,6 @@
       "Name or email address": [
         "Név vagy e-mail cím"
       ],
-      "Name, email or address": [
-        "Név, email cím vagy cím"
-      ],
       "Password": [
         "Jelszó"
       ],
@@ -7284,6 +7365,9 @@
       ],
       "Get up to ${ credits } in credits.": [
         "Szerezzen akár ${ credits } kreditet."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Hívjon meg barátokat a ${ BRAND_NAME }ba"
       ],
       "Message Content Search": [
         "Keresés üzenetek tartalmában"
@@ -7653,20 +7737,6 @@
         "Tegnap"
       ]
     },
-    "Time period": {
-      "account creation date": [
-        "fiók létrehozásának dátumától"
-      ],
-      "the last 12 months": [
-        "az utóbbi 12 hónapból"
-      ],
-      "the last 3 months": [
-        "az utóbbi 3 hónapból"
-      ],
-      "the last month": [
-        "az utóbbi hónapból"
-      ]
-    },
     "Time unit": {
       "${ daysCountLeft } day": [
         "${ daysCountLeft } nap",
@@ -7697,6 +7767,9 @@
       "${ emailsCount } member": [
         "${ emailsCount } tag",
         "${ emailsCount } tag"
+      ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "${ MAIL_APP_NAME } gyorsbillentyűk"
       ],
       "${ unreads } unread message": [
         "${ unreads } olvasatlan üzenet",
@@ -8316,6 +8389,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "A ${ BRAND_NAME } az azonos nevű mappákat összefésüli. Ha ezt el szeretné kerülni, előzetesen nevezze át az azonos nevű mappákat."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "A ${ BRAND_NAME } annyi adatot áttölt, amennyi lehetséges, a legfrissebb üzenetekkel kezdve."
+      ],
       "Are you sure you want to discard your import?": [
         "Biztos, hogy elveti az importálást?"
       ],
@@ -8369,6 +8448,9 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Ez a művelet nem vonható vissza. Írja be a ${ boldDanger } szót a mezőbe a folytatáshoz."
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Az importálás helyigénye meghaladhatja a ${ BRAND_NAME } fiókban rendelkezésre álló helyet. Fontolja meg a beállítások finomítását."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sajnos a támogatási csoport jelenleg nem elérhető. Kérjük, az alábbi űrlapon írja le a problémáját és amint lehet felvesszük önnel a kapcsolatot."
