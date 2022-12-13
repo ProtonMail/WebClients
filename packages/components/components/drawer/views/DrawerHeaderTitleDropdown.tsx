@@ -28,6 +28,7 @@ const DrawerHeaderTitleDropdown = ({ title, options, onClickOption }: Props) => 
                 shape="ghost"
                 size="small"
                 className={classnames(['drawer-header-button'])}
+                data-testid="drawer-app-header-actions:dropdown"
             >
                 {title}
             </DropdownButton>
@@ -39,6 +40,7 @@ const DrawerHeaderTitleDropdown = ({ title, options, onClickOption }: Props) => 
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={() => onClickOption?.(option)}
                             key={index}
+                            data-testid={`drawer-app-header-actions:${option.text}`}
                         >
                             <span className="ml0-5 mtauto mbauto flex-item-fluid">{option.text}</span>
                         </DropdownMenuButton>

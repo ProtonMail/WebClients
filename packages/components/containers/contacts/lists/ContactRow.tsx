@@ -90,6 +90,7 @@ const ContactRow = ({
             tabIndex={-1}
             data-element-id={contact.ID}
             data-shortcut-target="contact-container"
+            data-testid={`contact-item:${Name}`}
         >
             <div className="flex flex-nowrap w100 h100 myauto flex-align-items-start">
                 <ItemCheckbox ID={ID} name={Name} checked={checked} onChange={onCheck} />
