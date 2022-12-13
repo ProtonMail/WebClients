@@ -187,7 +187,7 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`SMTP tokens`,
                         id: 'smtp-tokens',
-                        available: getHasB2BPlan(subscription),
+                        available: getHasB2BPlan(subscription) || true,
                     }
                 ],
             },
