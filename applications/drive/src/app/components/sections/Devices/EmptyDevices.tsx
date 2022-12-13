@@ -8,9 +8,11 @@ import './EmptyDevices.scss';
 
 const EmptyDevices = () => {
     const LearnMore = (
-        <a href={'https://drive.proton.me/urls/3SF8FZV8B0#grWxkmu9q4NP'} target="_blank" key="learn-more-link">
-            {c('Action').t`Learn more`}
-        </a>
+        <p className="p0 m0">
+            <a href={'https://drive.proton.me/urls/3SF8FZV8B0#grWxkmu9q4NP'} target="_blank" key="learn-more-link">
+                {c('Action').t`Download the Windows application`}
+            </a>
+        </p>
     );
 
     return (
