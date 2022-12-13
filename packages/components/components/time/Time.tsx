@@ -7,6 +7,7 @@ type Options = Parameters<typeof readableTime>[2];
 interface Props extends HTMLAttributes<HTMLTimeElement> {
     children?: string | number | null;
     format?: string;
+    forceFormat?: boolean;
     options?: Options;
 }
 
@@ -23,8 +24,8 @@ const getValue = (value?: string | number | null) => {
     return 0;
 };
 
-const Time = ({ children, format = 'PP', options = { locale: dateLocale }, ...rest }: Props) => {
-    return <time {...rest}>{readableTime(getValue(children), format, options)}</time>;
+const Time = ({ children, format = 'PP', options = { locale: dateLocale }, forceFormat = false, ...rest }: Props) => {
+    return <time {...rest}>{readableTime(getValue(children), format, options, forceFormat)}</time>;
 };
 
 export default Time;
