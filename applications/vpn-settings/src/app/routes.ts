@@ -21,8 +21,8 @@ export const getRoutes = (user: UserModel) => {
                     id: 'subscription',
                 },
                 {
-                    text: c('Title').t`Billing`,
-                    id: 'billing',
+                    text: c('Title').t`Your subscriptions`,
+                    id: 'your-subscriptions',
                     available: user.isPaid,
                 },
                 {

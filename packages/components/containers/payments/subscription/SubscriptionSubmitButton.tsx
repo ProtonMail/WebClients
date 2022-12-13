@@ -69,7 +69,7 @@ const SubscriptionSubmitButton = ({
 
     return (
         <PrimaryButton className={className} loading={loading} disabled={disabled} type="submit">
-            {amountDue > 0 ? c('Action').jt`Pay ${price}` : c('Action').t`Confirm`}
+            {amountDue > 0 ? c('Action').jt`Pay ${price} now` : c('Action').t`Confirm`}
         </PrimaryButton>
     );
 };
