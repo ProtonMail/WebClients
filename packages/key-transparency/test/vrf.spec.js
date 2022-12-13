@@ -1,7 +1,6 @@
-import { arrayToHexString } from 'pmcrypto';
+import { arrayToHexString, hexStringToArray } from '@proton/crypto/lib/utils';
 
-import { hexStringToArray } from '../lib/merkleTree';
-import { vrfVerify } from '../lib/vrf';
+import { vrfVerify } from '../lib/verification/vrf';
 import { testVectors } from './vrf.data';
 
 describe('vrf', () => {
