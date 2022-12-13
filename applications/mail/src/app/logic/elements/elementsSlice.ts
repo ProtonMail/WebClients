@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { globalReset } from '../actions';
+import { deleteDraft } from '../messages/draft/messagesDraftActions';
 import {
     addESResults,
     backendActionFinished,
@@ -29,6 +30,7 @@ import {
     addESResults as addESResultsReducer,
     backendActionFinished as backendActionFinishedReducer,
     backendActionStarted as backendActionStartedReducer,
+    deleteDraft as deleteDraftReducer,
     eventUpdatesFulfilled,
     eventUpdatesPending,
     globalReset as globalResetReducer,
@@ -112,6 +114,8 @@ const elementsSlice = createSlice({
 
         builder.addCase(moveAll.fulfilled, moveAllFulfilled);
         builder.addCase(pollTaskRunning.fulfilled, pollTaskRunningFulfilled);
+
+        builder.addCase(deleteDraft, deleteDraftReducer);
     },
 });
 
