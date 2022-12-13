@@ -21,10 +21,10 @@ interface Props {
     calendar: VisualCalendar | SubscribedCalendar;
     defaultCalendar?: VisualCalendar;
     onEdit?: () => void;
-    isEditDisabled: boolean;
+    canEdit: boolean;
 }
 
-const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, isEditDisabled }: Props) => {
+const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, canEdit }: Props) => {
     const { contactEmailsMap } = useContactEmailsCache();
 
     const { Name, Description, Color, Email } = calendar;
@@ -100,7 +100,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, onEdit, isEdi
                 </div>
                 <span className="ml1 pt0-5 flex-item-noshrink">
                     <Tooltip title={editCalendarText}>
-                        <ButtonLike shape="outline" onClick={handleEdit} icon disabled={isEditDisabled}>
+                        <ButtonLike shape="outline" onClick={handleEdit} icon disabled={!canEdit}>
                             <Icon name="pen" alt={editCalendarText} />
                         </ButtonLike>
                     </Tooltip>

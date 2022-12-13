@@ -14,7 +14,7 @@ import CalendarSettingsBreadcrumbs from '@proton/components/containers/calendar/
 import { useApi, useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
-import { MEMBER_PERMISSIONS, getIsMember } from '@proton/shared/lib/calendar/permissions';
+import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
@@ -141,7 +141,6 @@ const CalendarSubpage = ({ calendars, subscribedCalendars, defaultCalendar, addr
 
     const hasMembersOrInvitations = !!(members.length || invitations.length);
     const isOwner = getIsOwnedCalendar(calendar);
-    const isMember = getIsMember(calendar.Permissions);
     const isSubscribedCalendar = getIsSubscribedCalendar(calendar);
 
     const reRender = () => setRenderCount((count) => count + 1);
@@ -157,23 +156,24 @@ const CalendarSubpage = ({ calendars, subscribedCalendars, defaultCalendar, addr
                     calendar={calendar}
                     defaultCalendar={defaultCalendar}
                     onEdit={reRender}
-                    isEditDisabled={!user.hasNonDelinquentScope || !isMember}
+                    canEdit={user.hasNonDelinquentScope}
                 />
                 <CalendarEventDefaultsSection
-                    isEditDisabled={!user.hasNonDelinquentScope}
                     calendar={calendar}
                     bootstrap={bootstrap}
+                    canEdit={user.hasNonDelinquentScope}
                 />
                 {isOwner && !isSubscribedCalendar && (
                     <CalendarShareSection
                         calendar={calendar}
                         addresses={addresses}
+                        user={user}
                         isLoading={loadingShareData}
+                        canShare={user.hasNonDelinquentScope}
                         members={members}
                         invitations={invitations}
                         setInvitations={setInvitations}
                         setMembers={setMembers}
-                        user={user}
                     />
                 )}
                 <CalendarDeleteSection
