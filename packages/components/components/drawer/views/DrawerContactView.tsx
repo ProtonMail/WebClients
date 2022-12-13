@@ -113,14 +113,20 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
         switch (tab) {
             case CONTACT_TAB.CONTACT:
                 return [
-                    <PrimaryButton key="footer-button-1" onClick={() => onEdit({})}>{c('Action')
-                        .t`Add contact`}</PrimaryButton>,
+                    <PrimaryButton
+                        data-testid="contacts:add-contact"
+                        key="footer-button-1"
+                        onClick={() => onEdit({})}
+                    >{c('Action').t`Add contact`}</PrimaryButton>,
                     <Button key="footer-button-2" onClick={() => onImport()}>{c('Action').t`Import contacts`}</Button>,
                 ];
             case CONTACT_TAB.CONTACT_GROUP:
                 return [
-                    <PrimaryButton key="footer-button-1" onClick={() => handleAddContactGroup()}>{c('Action')
-                        .t`Add new group`}</PrimaryButton>,
+                    <PrimaryButton
+                        data-testid="groups:add-group"
+                        key="footer-button-1"
+                        onClick={() => handleAddContactGroup()}
+                    >{c('Action').t`Add new group`}</PrimaryButton>,
                 ];
             case CONTACT_TAB.SETTINGS:
                 return undefined;

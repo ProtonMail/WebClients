@@ -74,8 +74,11 @@ const ContactDeleteModal = ({ contactIDs = [], deleteAll, onDelete, ...rest }: P
                 </div>
             }
             buttons={[
-                <ErrorButton onClick={() => withLoadingDelete(handleDelete())} loading={loadingDelete}>{c('Action')
-                    .t`Delete`}</ErrorButton>,
+                <ErrorButton
+                    data-testid="delete-button"
+                    onClick={() => withLoadingDelete(handleDelete())}
+                    loading={loadingDelete}
+                >{c('Action').t`Delete`}</ErrorButton>,
                 <Button onClick={rest.onClose} autoFocus>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
