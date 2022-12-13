@@ -2111,6 +2111,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv kun at bruge bogstaver, tal og _.-"
+      ],
       "Unknown error": [
         "Ukendt fejl"
       ],
@@ -4045,6 +4048,18 @@
       "Emails": [
         "E-mails"
       ],
+      "Emails (all messages)": [
+        "E-mails (alle beskeder)"
+      ],
+      "Emails (last 12 months)": [
+        "E-mails (seneste 12 måneder)"
+      ],
+      "Emails (last 3 months)": [
+        "E-mails (seneste 3 måneder)"
+      ],
+      "Emails (last month)": [
+        "E-mails (seneste måned)"
+      ],
       "Enable Beta Access": [
         "Aktivér beta-adgang"
       ],
@@ -4140,6 +4155,9 @@
       ],
       "Mailbox password": [
         "Postkasseadgangskode"
+      ],
+      "Main": [
+        "Hjem"
       ],
       "Malware": [
         "Malware"
@@ -4415,6 +4433,24 @@
       ],
       "Your import is starting": [
         "Din import starter"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -4836,8 +4872,8 @@
       "Name": [
         "Navn"
       ],
-      "Name, email or address": [
-        "Navn, e-mail eller adresse"
+      "Name or email address": [
+        "Navn eller e-mailadresse"
       ],
       "New name": [
         "Nyt navn"
@@ -5025,6 +5061,9 @@
       "The link to your file was successfully copied": [
         "Linket til din fil blev kopieret korrekt"
       ],
+      "Undo in progress": [
+        "Annullering i gang"
+      ],
       "Verification successful": [
         "Bekræftelse gennemført"
       ]
@@ -5089,20 +5128,6 @@
     "Text": {
       "Settings": [
         "Indstillinger"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "oprettelsesdato for konto"
-      ],
-      "the last 12 months": [
-        "de sidste 12 måneder"
-      ],
-      "the last 3 months": [
-        "de sidste 3 måneder"
-      ],
-      "the last month": [
-        "den sidste måned"
       ]
     },
     "Time unit": {
@@ -5668,6 +5693,10 @@
       "Password must contain at least ${ length } character": [
         "Adgangskode skal indeholde mindst ${ length } tegn",
         "Adgangskode skal indeholde mindst ${ length } tegn"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)",
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)"
       ]
     },
     "Validation Error": {

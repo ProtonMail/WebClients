@@ -6102,6 +6102,18 @@
       "Emails": [
         "Email"
       ],
+      "Emails (all messages)": [
+        "Email (tutti i messaggi)"
+      ],
+      "Emails (last 12 months)": [
+        "Email (ultimi 12 mesi)"
+      ],
+      "Emails (last 3 months)": [
+        "Email (ultimi 3 mesi)"
+      ],
+      "Emails (last month)": [
+        "Email (ultimo mese)"
+      ],
       "Enable Beta Access": [
         "Abilita Accesso Beta"
       ],
@@ -6206,6 +6218,9 @@
       ],
       "Mailbox password": [
         "Password della casella email"
+      ],
+      "Main": [
+        "Principale"
       ],
       "Manage categories": [
         "Gestione delle categorie"
@@ -6680,6 +6695,24 @@
         "La tua importazione sta iniziando"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi dalla cartella ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi dalle cartelle ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi da ${ itemsToImportCount } etichetta ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ itemsToImportCount } etichette ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } cartella su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } cartelle su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichetta su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichette su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Archivio"
@@ -7141,9 +7174,6 @@
       "Name or email address": [
         "Nome o indirizzo email"
       ],
-      "Name, email or address": [
-        "Nome, email o indirizzo"
-      ],
       "Password": [
         "Password"
       ],
@@ -7567,9 +7597,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "Lo sconto continuerà a essere applicato al momento del rinnovo finché l'abbonamento non viene annullato o modificato"
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Questo abbonamento si rinnova automaticamente alla tariffa standard alla fine del ciclo di fatturazione"
       ]
     },
     "specialoffer: Link": {
@@ -8078,20 +8105,6 @@
     "Time": {
       "Yesterday": [
         "Ieri"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "data di creazione dell'account"
-      ],
-      "the last 12 months": [
-        "ultimi 12 mesi"
-      ],
-      "the last 3 months": [
-        "ultimi 3 mesi"
-      ],
-      "the last month": [
-        "ultimo mese"
       ]
     },
     "Time unit": {

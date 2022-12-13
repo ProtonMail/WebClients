@@ -747,6 +747,9 @@
       "Size": [
         "Tamanho"
       ],
+      "Skip verification": [
+        "Pular verificação"
+      ],
       "Sort": [
         "Ordenar"
       ],
@@ -3183,6 +3186,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "As chaves confiáveis não são válidas para o envio"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente usar apenas letras, números e _.-"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -6855,6 +6861,18 @@
       "Emails": [
         "E-mails"
       ],
+      "Emails (all messages)": [
+        "E-mails (todas as mensagens)"
+      ],
+      "Emails (last 12 months)": [
+        "E-mails (últimos 12 messes)"
+      ],
+      "Emails (last 3 months)": [
+        "E-mails (últimos 3 messes)"
+      ],
+      "Emails (last month)": [
+        "E-mails (último mês)"
+      ],
       "End date": [
         "Data de término"
       ],
@@ -7602,21 +7620,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ itemsToImportCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ itemsToImportCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens da pasta desde a ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens da pasta desde a ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ itemsToImportCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ itemsToImportCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens do marcador ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens dos marcadores ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } pastas desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } da pasta ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } das pastas ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } do marcador ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } dos marcadores ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8192,6 +8210,26 @@
         "Gerenciamento de equipes"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium do ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium do ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -8261,26 +8299,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium do ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium do ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8919,9 +8937,20 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } para obter mais armazenamento ou remova algo do armazenamento para liberar espaço."
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Seu plano inclui no máximo ${ availableAddresses } endereço a mais.",
+        "Seu plano inclui no máximo ${ availableAddresses } endereços a mais."
+      ],
       "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
         "Seu plano inclui um máximo de ${ availableNumberOfMembers } usuário para a organização.",
         "Seu plano inclui um máximo de ${ availableNumberOfMembers } usuários para a organização."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Seu plano inclui no máximo ${ availableVPNAccess } conta VPN a mais.",
+        "Seu plano inclui no máximo ${ availableVPNAccess } contas VPN a mais."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Seu plano inclui no máximo ${ humanReadableAvailableSpace } a mais de armazenamento."
       ]
     },
     "OS compatibility": {
@@ -9518,9 +9547,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "O desconto continuará sendo aplicado durante a renovação até a assinatura ser cancelada ou modificada"
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Sua assinatura será renovada automaticamente pela taxa padrão ao final do seu ciclo de faturamento"
       ]
     },
     "specialoffer: Link": {
@@ -10093,20 +10119,6 @@
         "Campo vCard"
       ]
     },
-    "Time period": {
-      "account creation date": [
-        "a data de criação da conta"
-      ],
-      "the last 12 months": [
-        "os últimos 12 meses"
-      ],
-      "the last 3 months": [
-        "os últimos 3 meses"
-      ],
-      "the last month": [
-        "o último mês"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } hora",
@@ -10507,6 +10519,10 @@
       ],
       "External PGP settings": [
         "Configurações externas do PGP"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Falha ao criar ${ failedUsers.length } conta\nde usuário.",
+        "Falhar ao criar ${ failedUsers.length } contas de usuário."
       ],
       "Filters": [
         "Filtros"
@@ -11231,6 +11247,10 @@
       "Password must contain at least ${ length } character": [
         "A senha deve conter ao menos ${ length } caractere",
         "A senha deve conter ao menos ${ length } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
+        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
       ]
     },
     "Video control": {
@@ -11258,11 +11278,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } em ${ numberOfCountries } país",
         "${ numberOfServers } em ${ numberOfCountries } países"
-      ]
-    },
-    "vpn: Info": {
-      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
-        "Abra a extensão de navegador ${ VPN_APP_NAME } para se proteger enquanto navega"
       ]
     },
     "VPNClient": {
@@ -11336,6 +11351,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
+      ],
+      "Skip verification?": [
+        "Pular verificação?"
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "As configurações de data e hora em seu dispositivo estão dessincronizadas. ${ learnMore }"

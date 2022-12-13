@@ -4,9 +4,20 @@
     "language": "da_DK"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "Uden etiket"
+      ]
+    },
     "Access level": {
+      "Full view": [
+        "Fuld visning"
+      ],
       "Full view (see all event details)": [
         "Fuld visning (se alle detaljer om begivenheden)"
+      ],
+      "Limited view": [
+        "Begrænset visning"
       ],
       "Limited view (see only free/busy)": [
         "Begrænset visning (se kun fri/optaget)"
@@ -198,6 +209,9 @@
       ],
       "Create link": [
         "Opret link"
+      ],
+      "Create users": [
+        "Opret brugere"
       ],
       "Create your own": [
         "Opret din egen"
@@ -872,11 +886,24 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Fortsæt med gratis abonnement"
+      ],
       "No, thanks": [
         "Nej tak"
       ],
       "Try free for 30 days": [
         "Prøv gratis i 30 dage"
+      ]
+    },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Acceptér"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Afslå"
       ]
     },
     "Addon": {
@@ -918,6 +945,9 @@
       ],
       "Disabled": [
         "Deaktiveret"
+      ],
+      "External": [
+        "Ekstern"
       ],
       "Missing keys": [
         "Nøgler mangler"
@@ -1016,6 +1046,9 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Fornyes automatisk ${ formattedEndTime }"
+      ],
+      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
+        "Fornyes automatisk ${ formattedEndTime } for ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1149,18 +1182,48 @@
         "Rediger kalender"
       ]
     },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "Download en ICS-fil med alle begivenhederne fra den valgte kalender."
+      ]
+    },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         "Du kan importere ICS-filer fra en anden kalender til ${ CALENDAR_APP_NAME }. Dette lader dig hurtigt importere en begivenhed eller hele din dagsorden."
+      ]
+    },
+    "Calendar invite status label": {
+      "Declined": [
+        "Afvist"
+      ],
+      "Invite sent": [
+        "Invitation sendt"
       ]
     },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Du har nået det maksimale antal personlige kalendere, du kan oprette med dit abonnement."
       ],
+      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Du har nået det maksimale antal personlige kalendere, du kan have. Hvis du vil acceptere afventende kalenderinvitationer, skal du fjerne nogle af dine kalendere."
+      ],
+      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "Du har nået det maksimale antal delte kalendere, du kan have. Hvis du vil acceptere afventende kalenderinvitationer, skal du fjerne nogle af dine kalendere."
+      ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS } kalender.",
         "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS } kalendere."
+      ]
+    },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Etiket tilføjet"
+      ],
+      "Label deleted": [
+        "Etiket slettet"
+      ],
+      "Label edited": [
+        "Etiket rettet"
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -1188,9 +1251,17 @@
         "Opret et link til din kalender og del det med enhver uden for ${ BRAND_NAME }. Kun du kan tilføje eller fjerne begivenheder."
       ]
     },
+    "Calendar settings private share description": {
+      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Del din kalender med andre brugere af ${ BRAND_NAME }. Gør det muligt at samarbejde ved at give dem mulighed for at tilføje og redigere begivenheder i din kalender. Du kan ændre brugertilladelserne når som helst."
+      ]
+    },
     "Calendar settings section title": {
       "Share calendar": [
         "Del kalender"
+      ],
+      "Share outside ${ BRAND_NAME }": [
+        "Del uden for ${ BRAND_NAME }"
       ],
       "Share with ${ BRAND_NAME } users": [
         "Del med ${ BRAND_NAME }-brugere"
@@ -1199,12 +1270,27 @@
         "Del med enhver"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Vis ${ remainingItems } mere"
+      ]
+    },
+    "Calendar share permission label": {
+      "See all event details": [
+        "Se alle detaljer om begivenheden"
+      ]
+    },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Rediger (visning, oprettelse og redigering af begivenhedsoplysninger)"
       ],
       "View (see all event details)": [
         "Vis (se alle detaljer om begivenheden)"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "Tilladelser ændret for ${ email }"
       ]
     },
     "Calendar status": {
@@ -1262,6 +1348,11 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Der er gået mere end 12 timer siden sidste opdatering - ${ CALENDAR_APP_NAME } vil forsøge at opdatere kalenderen om et par timer."
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "Åbn Indstillinger"
       ]
     },
     "Calendar view": {
@@ -1349,6 +1440,9 @@
       ],
       "fern": [
         "bregne"
+      ],
+      "field drab": [
+        "brun"
       ],
       "forest": [
         "skov"
@@ -1506,6 +1600,9 @@
       ],
       "Remove from the list?": [
         "Fjern fra listen?"
+      ],
+      "Undo this import?": [
+        "Annuller denne import?"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -2372,6 +2469,16 @@
         "(via ${ entryCountryName })"
       ]
     },
+    "Credits": {
+      "Available credits": [
+        "Tilgængelige kreditter"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "CSV-skabelon"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/måned"
@@ -2433,9 +2540,19 @@
         "Onsdag"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "Standardindstillinger for begivenheder"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Ukendt"
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Alle begivenheder i denne kalender vil blive slettet."
       ]
     },
     "Delinquent modal title": {
@@ -2450,12 +2567,18 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "Få op til ${ credits } i kreditter ved at invitere venner til ${ BRAND_NAME }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
+      ],
+      "Track the status and activity of your referrals.": [
+        "Følg status og aktivitet for dine henvisninger."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsætte med at invitere venner, men du vil ikke kunne optjene flere kreditter"
@@ -2485,11 +2608,38 @@
     "Domain spam notification": {
       "${ name } added": [
         "${ name } tilføjet"
+      ],
+      "${ name } deletion failed": [
+        "${ name } sletning mislykkedes"
+      ],
+      "${ name } failed to move to not spam List": [
+        "${ name } kunne ikke flyttes til ikke-spamliste"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } kunne ikke flyttes til spamliste"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } kunne ikke flyttes til din blokeringsliste"
+      ],
+      "${ name } moved to not spam list": [
+        "${ name } flyttet til ikke-spam-liste"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } flyttet til spam-liste"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } flyttet til din blokeringsliste"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } slettet"
       ]
     },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Fejl eller kvalitetsproblem"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "Jeg bruger en anden ${ BRAND_NAME }-konto"
       ],
       "Missing feature(s)": [
         "Manglende funktion(er)"
@@ -2576,8 +2726,29 @@
       "${ name } added": [
         "${ name } tilføjet"
       ],
+      "${ name } deletion failed": [
+        "${ name } sletning mislykkedes"
+      ],
+      "${ name } failed to move to not spam List": [
+        "${ name } kunne ikke flyttes til ikke-spamliste"
+      ],
+      "${ name } failed to move to spam list": [
+        "${ name } kunne ikke flyttes til spamliste"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } kunne ikke flyttes til din blokeringsliste"
+      ],
       "${ name } moved to not spam list": [
         "${ name } flyttet til ikke-spam-liste"
+      ],
+      "${ name } moved to spam list": [
+        "${ name } flyttet til spam-liste"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } flyttet til din blokeringsliste"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } slettet"
       ]
     },
     "Email subject": {
@@ -2994,6 +3165,9 @@
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv kun at bruge bogstaver, tal og _.-"
+      ],
       "Unknown error": [
         "Ukendt fejl"
       ],
@@ -3221,8 +3395,17 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "Der opstod en fejl ved læsning af din fil \"${ formattedFilename }\". Filen har ikke det rigtige format."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Der opstod en fejl under upload af din fil \"${ formattedFilename }\". Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
       "An error occurred uploading your file. No file has been selected.": [
         "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "Din fil \"${ formattedFilename }\" er tom."
       ]
     },
     "Error message": {
@@ -3251,6 +3434,31 @@
         "Du kan også ${ refresh }, eller forsøge igen senere."
       ]
     },
+    "Error message, recovery": {
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "${ signIn } for at sende en ny anmodning om bekræftelse af e-mail til gendannelse."
+      ],
+      "sign in": [
+        "log ind"
+      ],
+      "There was a problem removing your email address.": [
+        "Der opstod et problem med at fjerne din e-mailadresse."
+      ],
+      "There was a problem verifying your email address.": [
+        "Der opstod et problem med at bekræfte din e-mailadresse."
+      ]
+    },
+    "Error message, unsubscribe": {
+      "Please ${ signIn } to update your email subscription preferences.": [
+        "${ signIn } for at opdatere dine e-mail-abonnementspræferencer."
+      ],
+      "sign in": [
+        "log ind"
+      ],
+      "There was a problem unsubscribing you.": [
+        "Der opstod et problem med at afmelde dig."
+      ]
+    },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Certifikat ${ name } ikke fundet eller allerede tilbagekaldt"
@@ -3262,6 +3470,14 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Intet billede valgt"
+      ]
+    },
+    "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "Begivenhed @ ${ timeString }"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "Begivenhed fra ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -3386,22 +3602,50 @@
         "Understøttelse af torrenting (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Add security key": [
+        "Tilføj sikkerhedsnøgle"
+      ],
+      "Delete key": [
+        "Slet nøgle"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
       ]
     },
     "fido2: Info": {
+      "Are you sure you want to delete security key ${ name }?": [
+        "Er du sikker på du vil slette sikkerhedsnøgle ${ name }?"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
       ],
       "Security key": [
         "Sikkerhedsnøgle"
+      ],
+      "Security key removed": [
+        "Sikkerhedsnøgle fjernet"
+      ],
+      "Security key updated": [
+        "Sikkerhedsnøgle opdateret"
       ]
     },
     "fido2: Label": {
+      "Key name": [
+        "Nøglenavn"
+      ],
       "Security key": [
         "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Slet sikkerhedsnøgle?"
+      ],
+      "Security key registered": [
+        "Sikkerhedsnøgle registreret"
       ]
     },
     "file size format": {
@@ -3505,6 +3749,12 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Tilføj et brugerdefineret filter til automatisk at udføre visse handlinger, f. eks. mærkning eller aktivering af meddelelser. Filtre kan redigeres og oprettes direkte via Sieve-programmeringssproget."
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "E-mails fra adresser, der er markeret som spam af dig eller ${ BRAND_NAME }, vil blive sendt til din spam-mappe. Hvis du ønsker at tillade e-mails fra en af disse adresser, skal du markere den som \"ikke spam\"."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "E-mails fra blokerede adresser vil ikke blive leveret."
+      ],
       "Search list": [
         "Søgeliste"
       ]
@@ -3530,6 +3780,16 @@
         "(1-2 e-mails pr. måned)"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Har du allerede en konto? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Ny på ${ BRAND_NAME }? ${ signUp }"
+      ]
+    },
     "Group": {
       "Account": [
         "Konto"
@@ -3548,6 +3808,9 @@
       ]
     },
     "Header": {
+      "Access": [
+        "Adgang"
+      ],
       "Action": [
         "Handling"
       ],
@@ -3566,6 +3829,9 @@
       "Key type": [
         "Nøgletype"
       ],
+      "Label": [
+        "Etiket"
+      ],
       "Name": [
         "Navn"
       ],
@@ -3574,6 +3840,9 @@
       ],
       "Organization key fingerprint": [
         "Organisationsnøgle-fingeraftryk"
+      ],
+      "Permissions": [
+        "Tilladelser"
       ],
       "Status": [
         "Status"
@@ -3962,6 +4231,14 @@
     "Import provider": {
       "Other": [
         "Anden"
+      ]
+    },
+    "Import rollback status": {
+      "Undo finished": [
+        "Annullering afsluttet"
+      ],
+      "Undo in progress": [
+        "Annullering i gang"
       ]
     },
     "Import status": {
@@ -5262,6 +5539,10 @@
         "Den følgende adresse er ikke tilgængelig.",
         "De følgende adresser er ikke tilgængelige."
       ],
+      "The following address was not created.": [
+        "Følgende adresse blev ikke oprettet.",
+        "Følgende adresser blev ikke oprettet."
+      ],
       "The format of your CSV file is incorrect.": [
         "Formatet af din CSV-fil er forkert."
       ],
@@ -5766,8 +6047,20 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
       ],
+      "Create an email address": [
+        "Opret en e-mailadresse"
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Try Mail Plus": [
+        "Prøv Mail Plus"
+      ],
+      "Your new email address is ready to go!": [
+        "Din nye e-mailadresse er klar til at blive taget i brug!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Dit abonnement starter ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6483,6 +6776,18 @@
       "Emails": [
         "E-mails"
       ],
+      "Emails (all messages)": [
+        "E-mails (alle beskeder)"
+      ],
+      "Emails (last 12 months)": [
+        "E-mails (seneste 12 måneder)"
+      ],
+      "Emails (last 3 months)": [
+        "E-mails (seneste 3 måneder)"
+      ],
+      "Emails (last month)": [
+        "E-mails (seneste måned)"
+      ],
       "End date": [
         "Slutdato"
       ],
@@ -6620,6 +6925,9 @@
       ],
       "Mailbox password": [
         "Postkasseadgangskode"
+      ],
+      "Main": [
+        "Hjem"
       ],
       "Manage categories": [
         "Administrer kategorier"
@@ -7010,8 +7318,23 @@
       ]
     },
     "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } beta-annonceringer"
+      ],
       "${ BRAND_NAME } company announcements": [
         "${ BRAND_NAME }-virksomhedsmeddelelser"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business nyhedsbrev"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME }-nyhedsbrev"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME }-tilbud og kampagner"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME }-produktannonceringer"
       ]
     },
     "Label in domain modal": {
@@ -7122,6 +7445,9 @@
       "Learn more": [
         "Få yderligere information"
       ],
+      "Learn more about data recovery": [
+        "Få mere at vide om datagendannelse"
+      ],
       "Need help?": [
         "Brug for hjælp?"
       ],
@@ -7203,6 +7529,24 @@
       ],
       "Enable authentication logs": [
         "Aktiver godkendelseslogs"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7488,6 +7832,9 @@
       ]
     },
     "new_plans: action": {
+      "Continue with Free": [
+        "Fortsæt med Free"
+      ],
       "Delete account": [
         "Slet konto"
       ],
@@ -7506,16 +7853,37 @@
       "Got it": [
         "Forstået"
       ],
+      "Keep ${ plan }": [
+        "Behold ${ plan }"
+      ],
+      "Keep account": [
+        "Behold konto"
+      ],
       "Switch or add account": [
         "Skift eller tilføj konto"
+      ],
+      "Switch plan": [
+        "Skift abonnement"
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
       "From ${ price }": [
         "Fra ${ price }"
+      ],
+      "From ${ price } per user": [
+        "Fra ${ price } per bruger"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behold min ${ currentPlanName }-konto"
       ],
       "Upgrade now": [
         "Opgradér nu"
@@ -7576,14 +7944,32 @@
         "${ n } VPN-forbindelse pr. bruger",
         "${ n } VPN-forbindelser pr. bruger"
       ],
+      "${ size } attachment size": [
+        "${ size } vedhæftningsstørrelse"
+      ],
+      "${ size } storage": [
+        "${ size } lagerplads"
+      ],
+      "${ size } storage per user": [
+        "${ size } lager pr. bruger"
+      ],
       "Auto-reply": [
         "Autosvar"
+      ],
+      "Catch-all": [
+        "Fang-alle"
+      ],
+      "Contact groups": [
+        "Kontaktgrupper"
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
       "Encrypted contact details": [
         "Krypterede kontaktoplysninger"
+      ],
+      "End-to-end encryption": [
+        "End-to-end kryptering"
       ],
       "Free VPN on a single device": [
         "Gratis VPN på en enkelt enhed"
@@ -7592,11 +7978,32 @@
         "Højhastigheds VPN på ${ n } enhed",
         "Højhastigheds VPN på ${ n } enheder"
       ],
+      "Limited support": [
+        "Begrænset support"
+      ],
+      "P2P/BitTorrent": [
+        "P2P/BitTorrent"
+      ],
       "Priority support": [
         "Prioriteret support"
       ],
+      "Router support": [
+        "Router support"
+      ],
       "Secure Core servers": [
         "Secure Core servere"
+      ],
+      "Send & receive invitations": [
+        "Send og modtag invitationer"
+      ],
+      "Share calendar via link": [
+        "Del kalender via link"
+      ],
+      "Share files and folders via link": [
+        "Del filer og mapper via link"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Split tunneling (Android og Windows)"
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
@@ -7606,11 +8013,43 @@
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
+      ],
+      "Unlimited filters": [
+        "Ubegrænsede filtre"
+      ],
+      "Unlimited folders": [
+        "Ubegrænsede mapper"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Unlimited labels": [
+        "Ubegrænsede etiketter"
+      ],
+      "Unlimited messages per day": [
+        "Ubegrænset beskedafsendelse pr. dag"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Op til ${ totalStorageSize } lagerplads"
       ]
     },
     "new_plans: heading": {
       "Support": [
         "Support"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7629,8 +8068,20 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* Med 30-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
       ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Omfattende privatliv og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
+      ],
+      "Popular": [
+        "Populær"
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Sikker e-mail med avancerede funktioner til din daglige kommunikation."
+      ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "Den gratis startkonto, der er designet til at give alle mulighed for at få privatlivsbeskyttelse som standard."
       ]
     },
     "new_plans: Label": {
@@ -7655,9 +8106,15 @@
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "terms and conditions": [
+        "vilkår og betingelser"
       ]
     },
     "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } Prøve"
+      ],
       "Upgrade to ${ planName }": [
         "Opgrader til ${ planName }"
       ],
@@ -7665,16 +8122,57 @@
         "Din kontos forbrug"
       ]
     },
+    "new_plans: title": {
+      "Delete account?": [
+        "Slet konto?"
+      ],
+      "Downgrade account?": [
+        "Nedgradér konto?"
+      ],
+      "Improved plans coming soon!": [
+        "Forbedrede abonnementer kommer snart!"
+      ],
+      "Review subscription and pay": [
+        "Gennemgå abonnement og betal"
+      ],
+      "Switch plans?": [
+        "Skift abonnement?"
+      ]
+    },
     "new_plans: tooltip": {
       "Create up to ${ n } custom calendar.": [
         "Opret op til ${ n } brugertilpasset kalender.",
         "Opret op til ${ n } brugertilpassede kalendere."
       ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
+      ],
+      "End-to-end encrypted calendar": [
+        "End-to-end krypteret kalender"
+      ],
+      "End-to-end encrypted file storage": [
+        "End-to-end krypteret fillagring"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Send din internettrafik gennem Tor-netværket med ét enkelt tryk"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "Understøttelse af fildelingsprotokoller såsom BitTorrent"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Brug dine egne brugerdefinerede e-mail-domæneadresser, f.eks. dig@ditnavn.com"
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ storageSize } total storage": [
+        "${ storageSize } lagerplads i alt"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailadresser/aliasser"
+      ],
       "Access advanced VPN features": [
         "Få adgang til avancerede VPN-funktioner"
       ],
@@ -7690,6 +8188,9 @@
       "Create ${ numberOfPersonalCalendars } personal calendar": [
         "Opret ${ numberOfPersonalCalendars } personlig kalender",
         "Opret op til ${ numberOfPersonalCalendars } personlige kalendere"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Alt i ${ vpnPlanName }"
       ],
       "Priority support": [
         "Prioriteret support"
@@ -7719,9 +8220,18 @@
       ]
     },
     "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Invitation slettet"
+      ],
+      "Invitation revoked": [
+        "Invitation tilbagekaldt"
+      ],
       "Member added": [
         "Medlem tilføjet",
         "Medlemmer tilføjet"
+      ],
+      "Member deleted": [
+        "Medlem slettet"
       ]
     },
     "Notification in shared calendar modal": {
@@ -7730,6 +8240,11 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "Tilmeldt ${ calendarName } (${ senderEmail })"
+      ]
+    },
+    "Notification success": {
+      "Event defaults updated": [
+        "Standardindstillinger for begivenheder opdateret"
       ]
     },
     "Notification time input": {
@@ -8025,6 +8540,23 @@
         "Indlæs indhold via proxy og gem som vedhæftede filer"
       ]
     },
+    "Organization capacity error": {
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Dit abonnement har et maksimum ${ availableAddresses } adresse.",
+        "Dit abonnement har et maksimum ${ availableAddresses } adresser."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Dit abonnement har et maksimum på ${ availableNumberOfMembers } organisatorisk bruger.",
+        "Dit abonnement har et maksimum på ${ availableNumberOfMembers } organisatoriske brugere."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Dit abonnement har et maksimum på ${ availableVPNAccess } VPN-konto.",
+        "Dit abonnement har et maksimum på ${ availableVPNAccess } VPN-konti."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Dit abonnement har et maksimum ${ humanReadableAvailableSpace } mere lagerplads."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (til Debian/Ubuntu)"
@@ -8246,6 +8778,9 @@
       "Email address not yet verified.": [
         "E-mailadressen er endnu ikke bekræftet."
       ],
+      "sign in": [
+        "log ind"
+      ],
       "Verification email sent to ${ email.Value }": [
         "Bekræftelsesmail sendt til ${ email.Value }"
       ],
@@ -8263,6 +8798,9 @@
       ],
       "You can safely close this tab.": [
         "Du kan godt lukke denne fane."
+      ],
+      "Your recovery email has been successfully removed.": [
+        "Din e-mail til gendannelse er blevet fjernet."
       ],
       "Your recovery email has been successfully verified.": [
         "Din e-mail til gendannelse er blevet bekræftet."
@@ -8283,6 +8821,12 @@
       "Cancel": [
         "Annullér"
       ],
+      "Phone number has been verified.": [
+        "Telefonnummeret er blevet bekræftet."
+      ],
+      "Phone number not yet verified.": [
+        "Telefonnummer er endnu ikke bekræftet."
+      ],
       "Verify by SMS": [
         "Verificer med SMS"
       ],
@@ -8291,6 +8835,9 @@
       ],
       "Verify recovery phone?": [
         "Verificer telefon til gendannelse?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Ved at verificere dit telefonnummer øger du din kontos sikkerhed og giver flere muligheder for gendannelse."
       ]
     },
     "Remark about a key type option": {
@@ -8301,7 +8848,18 @@
         "Den nyeste teknik"
       ]
     },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "Hvis du afmelder dig, vil du ikke længere have adgang til denne kalender. Alle begivenheder i denne kalender vil blive slettet fra din konto, men de vil forblive i det oprindelige offentlige link."
+      ],
+      "You will no longer have access to this calendar.": [
+        "Du vil ikke længere have adgang til denne kalender."
+      ]
+    },
     "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "Hvis du forlader denne kalender, skal du bede ejeren om at blive medlem igen."
+      ],
       "This calendar will be removed from your account.": [
         "Kalenderen vil blive fjernet fra din konto."
       ]
@@ -8309,6 +8867,9 @@
     "Remove calendar section title": {
       "Delete calendar?": [
         "Slet kalender?"
+      ],
+      "Leave calendar?": [
+        "Forlad kalender?"
       ],
       "Remove calendar": [
         "Fjern kalender"
@@ -8332,6 +8893,11 @@
       ],
       "Reading emails of non-private users": [
         "Læse e-mails af ikke-private brugere"
+      ]
+    },
+    "Select file": {
+      "Upload CSV file": [
+        "Upload en CSV-fil"
       ]
     },
     "Select files": {
@@ -8448,6 +9014,17 @@
       ],
       "Username": [
         "Brugernavn"
+      ]
+    },
+    "Signup step": {
+      "Account setup": [
+        "Kontoopsætning"
+      ],
+      "Payment": [
+        "Betaling"
+      ],
+      "Verification": [
+        "Bekræftelse"
       ]
     },
     "Spotlight": {
@@ -8736,6 +9313,9 @@
       "SPF value copied to clipboard": [
         "SPF-værdi kopieret til udklipsholder"
       ],
+      "Undo in progress": [
+        "Annullering i gang"
+      ],
       "User created": [
         "Bruger oprettet"
       ],
@@ -8872,6 +9452,9 @@
       "Import": [
         "Import"
       ],
+      "Marked as": [
+        "Markeret som"
+      ],
       "Name": [
         "Navn"
       ],
@@ -8886,20 +9469,6 @@
       ],
       "vCard field": [
         "vCard-felt"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "oprettelsesdato for konto"
-      ],
-      "the last 12 months": [
-        "de sidste 12 måneder"
-      ],
-      "the last 3 months": [
-        "de sidste 3 måneder"
-      ],
-      "the last month": [
-        "den sidste måned"
       ]
     },
     "Time unit": {
@@ -9131,6 +9700,10 @@
       "Couldn’t create accounts": [
         "Kunne ikke oprette konti"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Opret ${ selectedUserIds.length } bruger",
+        "Opret ${ selectedUserIds.length } brugere"
+      ],
       "Create multiple user accounts": [
         "Opret flere brugerkonti"
       ],
@@ -9298,6 +9871,10 @@
       ],
       "External PGP settings": [
         "Eksterne PGP-indstillinger"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Kunne ikke oprette ${ failedUsers.length } brugerkonto.",
+        "Kunne ikke oprette ${ failedUsers.length } brugerkonti."
       ],
       "Filters": [
         "Filtre"
@@ -9626,6 +10203,10 @@
       ],
       "Success": [
         "Lykkedes"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Oprettede ${ localSuccessfullyCreatedUsers.length } brugerkonto",
+        "Oprettede ${ localSuccessfullyCreatedUsers.length } brugerkonti"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "Oprettede ${ successfullyCreatedUsers.length } brugerkonto",
@@ -9988,6 +10569,19 @@
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Opgrader til et betalt Mail-abonnement for at oprette op til ${ MAX_CALENDARS_PAID } kalender, få mulighed for at lave kalendere til arbejde, deling med venner og bare til dig selv.",
         "Opgrader til et betalt Mail-abonnement for at oprette op til ${ MAX_CALENDARS_PAID } kalendere, få mulighed for at lave kalendere til arbejde, deling med venner og bare til dig selv."
+      ],
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "Opgrader til et betalt Mail-abonnement for at dele din kalender."
+      ]
+    },
+    "User referee invited via email": {
+      "Invited via email": [
+        "Inviteret via e-mail"
+      ]
+    },
+    "User referee signed up using referral link": {
+      "Signed up via your link": [
+        "Meldte sig til via dit link"
       ]
     },
     "User role": {
@@ -10005,6 +10599,10 @@
       "Password must contain at least ${ length } character": [
         "Adgangskode skal indeholde mindst ${ length } tegn",
         "Adgangskode skal indeholde mindst ${ length } tegn"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)",
+        "Prøv et kortere brugernavn (maks. ${ n } tegn)"
       ]
     },
     "Video control": {
@@ -10111,6 +10709,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din ${ BRAND_NAME }-konto. Overvej venligst at tilpasse din import."
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "Dette vil fjerne alle meddelelser, mapper og etiketter, der er oprettet under importen."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."

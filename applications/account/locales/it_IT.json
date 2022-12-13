@@ -6853,6 +6853,18 @@
       "Emails": [
         "Email"
       ],
+      "Emails (all messages)": [
+        "Email (tutti i messaggi)"
+      ],
+      "Emails (last 12 months)": [
+        "Email (ultimi 12 mesi)"
+      ],
+      "Emails (last 3 months)": [
+        "Email (ultimi 3 mesi)"
+      ],
+      "Emails (last month)": [
+        "Email (ultimo mese)"
+      ],
       "End date": [
         "Data di fine"
       ],
@@ -6990,6 +7002,9 @@
       ],
       "Mailbox password": [
         "Password della casella email"
+      ],
+      "Main": [
+        "Principale"
       ],
       "Manage categories": [
         "Gestione delle categorie"
@@ -7596,6 +7611,24 @@
         "Abilita log di autenticazione"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi dalla cartella ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi dalle cartelle ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi da ${ itemsToImportCount } etichetta ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ itemsToImportCount } etichette ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } cartella su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } cartelle su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichetta su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichette su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Puoi creare fino a ${ MAX_LINKS_PER_CALENDAR } link per calendario. Per creare un nuovo link a questo calendario, eliminane uno dalla lista qui sotto.",
@@ -8169,6 +8202,26 @@
         "Gestione del team"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -8238,26 +8291,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8896,9 +8929,20 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } per ottenere più spazio, o rimuovi dello spazio di archiviazione per liberare spazio."
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Il tuo piano include un massimo di ${ availableAddresses } indirizzo in più.",
+        "Il tuo piano include un massimo di ${ availableAddresses } indirizzi in più."
+      ],
       "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
         "Il tuo abbonamento include un massimo di ${ availableNumberOfMembers } utente aggiuntivo dell'organizzazione.",
         "Il tuo abbonamento include un massimo di ${ availableNumberOfMembers } utenti aggiuntivi dell'organizzazione."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Il tuo piano include un massimo di ${ availableVPNAccess } account VPN in più.",
+        "Il tuo piano include un massimo di ${ availableVPNAccess } account VPN in più."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Il tuo piano include un massimo di ${ humanReadableAvailableSpace } spazio di archiviazione in più."
       ]
     },
     "OS compatibility": {
@@ -9495,9 +9539,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "Lo sconto continuerà a essere applicato al momento del rinnovo finché l'abbonamento non viene annullato o modificato"
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Questo abbonamento si rinnova automaticamente alla tariffa standard alla fine del ciclo di fatturazione"
       ]
     },
     "specialoffer: Link": {
@@ -10068,20 +10109,6 @@
       ],
       "vCard field": [
         "campo vCard"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "data di creazione dell'account"
-      ],
-      "the last 12 months": [
-        "ultimi 12 mesi"
-      ],
-      "the last 3 months": [
-        "ultimi 3 mesi"
-      ],
-      "the last month": [
-        "ultimo mese"
       ]
     },
     "Time unit": {
@@ -11243,11 +11270,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",
         "${ numberOfServers } in ${ numberOfCountries } paesi"
-      ]
-    },
-    "vpn: Info": {
-      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
-        "Apri l'estensione ${ VPN_APP_NAME } del browser per proteggerti durante la navigazione"
       ]
     },
     "VPNClient": {
