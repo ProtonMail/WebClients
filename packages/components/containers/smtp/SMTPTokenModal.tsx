@@ -7,6 +7,7 @@ import {
     Copy,
     Form,
     InputFieldTwo,
+    Label,
     ModalProps,
     ModalTwo,
     ModalTwoContent,
@@ -46,7 +47,9 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
     const customAddresses = addresses.filter(({ Type }) => Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN);
     const [addressID, setAddressID] = useState(customAddresses[0].ID);
     const api = useApi();
-    const title = step === Steps.TokenForm ? c('Title').t`Generate SMTP token` : c('Title').t`Your SMTP token`;
+    const title =
+        step === Steps.TokenForm ? c('Title').t`Generate SMTP token` : c('Title').t`Token successfully generated`;
+    const emailAddress = addresses.find(({ ID }) => ID === addressID)?.Email || '';
 
     const handleClose = loading ? noop : onClose;
 
@@ -67,7 +70,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
             return (
                 <>
                     <p>{c('Info')
-                        .t`Give the token a descriptive name, such as the service you plan to use it with. The selected email address will be used for sending and will appear as the username and outgoing address.`}</p>
+                        .t`Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain address. Only this address will be able to send emails with this token.`}</p>
                     <InputFieldTwo
                         label={c('Label').t`Token name`}
                         id="token-name"
@@ -97,10 +100,21 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
         }
         return (
             <>
-                <p>{c('Info').t`Token successfully generated. Use it as the SMTP password in the external service.`}</p>
-                <div className="flex flex-align-items-center flex-nowrap">
-                    <code className="user-select bg-weak flex-item-fluid p0-75 rounded">{token}</code>
-                    <Copy value={token} autoFocus className="flex-item-noshrink ml0-5" />
+                <p>{c('Info')
+                    .t`Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.`}</p>
+                <Label className="text-bold block" htmlFor="smtp-username">{c('Label').t`SMTP username`}</Label>
+                <div className="flex flex-align-items-center flex-nowrap mb1">
+                    <code id="smtp-username" className="user-select bg-weak flex-item-fluid p0-75 rounded">
+                        {emailAddress}
+                    </code>
+                    <Copy value={emailAddress} className="flex-item-noshrink ml0-5" />
+                </div>
+                <Label className="text-bold block" htmlFor="smtp-token">{c('Label').t`SMTP token`}</Label>
+                <div className="flex flex-align-items-center flex-nowrap mb1">
+                    <code id="smtp-token" className="user-select bg-weak flex-item-fluid p0-75 rounded">
+                        {token}
+                    </code>
+                    <Copy value={token} className="flex-item-noshrink ml0-5" />
                 </div>
                 <p className="color-weak">{c('Info')
                     .t`This token won’t be available after you close this window, and you should not share it with anyone.`}</p>
