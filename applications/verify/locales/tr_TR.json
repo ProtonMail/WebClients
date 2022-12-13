@@ -929,7 +929,7 @@
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
       "Try using only letters, numerals, and _.-": [
-        "Sadece harf, rakam ve _.- kullanmayı deneyin"
+        "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
       "Unknown error": [
         "Bilinmeyen hata"
@@ -1135,6 +1135,10 @@
       "Password must contain at least ${ length } character": [
         "Parola en az ${ length } karakter uzunluğunda olmalıdır",
         "Parola en az ${ length } karakter uzunluğunda olmalıdır"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ]
     }
   }

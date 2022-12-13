@@ -1598,6 +1598,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente usar apenas letras, números e _.-"
+      ],
       "Unknown error": [
         "Erro desconhecido"
       ],
@@ -4094,9 +4097,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "O desconto continuará sendo aplicado durante a renovação até a assinatura ser cancelada ou modificada"
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Sua assinatura será renovada automaticamente pela taxa padrão ao final do seu ciclo de faturamento"
       ]
     },
     "specialoffer: Link": {
@@ -4859,6 +4859,10 @@
       "Password must contain at least ${ length } character": [
         "A senha deve conter ao menos ${ length } caractere",
         "A senha deve conter ao menos ${ length } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
+        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
       ]
     },
     "VPN info": {

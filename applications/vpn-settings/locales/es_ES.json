@@ -1599,7 +1599,7 @@
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "Try using only letters, numerals, and _.-": [
-        "Intenta usar sólo letras, números y _.-"
+        "Utiliza solo letras, números y _.-"
       ],
       "Unknown error": [
         "Error desconocido"
@@ -2827,6 +2827,9 @@
       "Mailbox password": [
         "Contraseña del buzón"
       ],
+      "Main": [
+        "Principal"
+      ],
       "Moderate NAT": [
         "NAT moderada"
       ],
@@ -2835,6 +2838,9 @@
       ],
       "Name on card": [
         "Titular de la tarjeta"
+      ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Redirección de puertos)"
       ],
       "Navigation": [
         "Navegación"
@@ -4089,9 +4095,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "El descuento seguirá aplicándose en cada renovación hasta que canceles o modifiques la suscripción"
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Tu suscripción se renovará automáticamente cada año al precio de la cuota estándar al final del ciclo de facturación"
       ]
     },
     "specialoffer: Link": {
@@ -4856,7 +4859,7 @@
         "La contraseña debe contener al menos ${ length } caracteres"
       ],
       "Try a shorter username (${ n } character max)": [
-        "Pruebe con un nombre de usuario más corto (${ n } caracteres como máximo)",
+        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)",
         "Pruebe con un nombre de usuario más corto (${ n } caracteres como máximo)"
       ]
     },

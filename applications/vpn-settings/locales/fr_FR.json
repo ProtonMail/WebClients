@@ -273,7 +273,7 @@
         "Enregistrer"
       ],
       "Save selected": [
-        "Enregistrer la sélection"
+        "Enregistrer votre choix"
       ],
       "Search countries": [
         "Rechercher dans les pays"
@@ -1473,16 +1473,16 @@
     },
     "Error": {
       "Amount above the maximum.": [
-        "Montant supérieur au maximum."
+        "Le montant est supérieur au maximum."
       ],
       "Amount below minimum.": [
-        "Montant inférieur au minimum."
+        "Le montant est inférieur au minimum."
       ],
       "Can't check username, try again later": [
         "Impossible de vérifier le nom d'utilisateur, nous vous invitons à réessayer plus tard."
       ],
       "Checkout expired, please try again": [
-        "La commande a expiré, réessayez."
+        "La commande a expiré, nous vous invitons à réessayer."
       ],
       "Code wrong or not valid anymore": [
         "Code incorrect ou plus valide"
@@ -1497,7 +1497,7 @@
         "Saisissez 6 chiffres."
       ],
       "Error connecting to the Bitcoin API.": [
-        "Erreur de connexion à l'API Bitcoin."
+        "Une erreur s'est produite lors de la connexion à l'API Bitcoin."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si le temps sur votre téléviseur est dépassé, cliquez sur Rafraîchir sur votre téléviseur et saisissez à nouveau votre code."
@@ -1509,22 +1509,22 @@
         "Le mot de passe de la messagerie n'est pas correct. Veuillez réessayer."
       ],
       "Invalid ${ name } code": [
-        "Code ${ name } non valide"
+        "Le code ${ name } n'est pas valide."
       ],
       "Invalid card number": [
-        "Numéro de carte non valide"
+        "Le numéro de carte n’est pas valide."
       ],
       "Invalid code": [
-        "Code non valide"
+        "Le code n'est pas valide."
       ],
       "Invalid expiration date": [
-        "Date d'expiration non valide"
+        "La date d'expiration n’est pas valide."
       ],
       "Invalid invitation link": [
-        "Lien d'invitation non valide"
+        "Le lien d'invitation n'est pas valide."
       ],
       "Invalid postal code": [
-        "Code postal non valide"
+        "Le code postal n'est pas valide."
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
@@ -1536,25 +1536,25 @@
         "Le numéro n'est pas valide."
       ],
       "Organization not recognized. Try again.": [
-        "Organisation non reconnue. Réessayez."
+        "L'organisation n'est pas reconnue. Nous vous invitons à réessayer."
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
       ],
       "Payment process cancelled": [
-        "Processus de paiement annulé"
+        "Le processus de paiement a été annulé."
       ],
       "Payment process consumed": [
-        "Processus de paiement achevé"
+        "Le processus de paiement est achevé."
       ],
       "Payment process failed": [
-        "Échec du processus de paiement"
+        "Le processus de paiement a échoué."
       ],
       "Payment process not supported": [
-        "Processus de paiement non pris en charge"
+        "Le processus de paiement n'est pas pris en charge."
       ],
       "Payments are currently not available, please try again later": [
-        "Les paiements ne sont actuellement pas disponibles, réessayez plus tard."
+        "Les paiements ne sont actuellement pas disponibles, nous vous invitons à réessayer plus tard."
       ],
       "Please generate keys before you try to change your password": [
         "Générez des clés avant d'essayer de changer votre mot de passe."
@@ -1566,7 +1566,7 @@
         "Définissez d'abord un numéro de téléphone de récupération."
       ],
       "Process aborted": [
-        "Processus abandonné"
+        "Le processus a été abandonné."
       ],
       "Request timed out": [
         "La requête a expiré."
@@ -1578,19 +1578,19 @@
         "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
       ],
       "Tab closed": [
-        "Onglet fermé"
+        "L'onglet est fermé."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Le navigateur que vous utilisez ne permet pas le traitement complet des paiements. Nous vous invitons à utiliser un autre navigateur ou à vous connecter depuis un ordinateur."
+        "Le navigateur que vous utilisez ne permet pas d'autoriser complètement le paiement. Nous vous invitons à utiliser un autre navigateur ou à vous connecter à partir d'un ordinateur."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
-        "Le montant minimum de crédit qui peut être ajouté est ${ price }."
+        "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
       ],
       "The minimum amount that can be donated is ${ price }": [
-        "Le montant minimum qui peut être donné est ${ price }."
+        "Le montant minimum d'un don est de ${ price }."
       ],
       "The minimum payment we accept is ${ price }": [
-        "Le paiement minimum que nous acceptons est ${ price }."
+        "Le paiement minimum accepté est de ${ price }."
       ],
       "This field is required": [
         "Ce champ est nécessaire."
@@ -1598,17 +1598,20 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
+      ],
       "Unknown error": [
         "Erreur inconnue"
       ],
       "Unknown payment token status": [
-        "Statut du jeton de paiement inconnu"
+        "Le statut du jeton de paiement est inconnu."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Phrase de récupération erronée. Réessayez ou utilisez une autre méthode de récupération."
+        "La phrase de récupération est incorrecte. Réessayez ou utilisez une autre méthode de récupération."
       ],
       "You have no invoices.": [
-        "Vous n'avez pas de factures."
+        "Vous n'avez aucune facture."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Votre compte ou organisation a une facture en retard. Nous vous invitons à régler les factures impayées."
@@ -1649,8 +1652,8 @@
         "Accès à tous les pays"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Connexion jusqu'à ${ plusVpnConnections } appareil",
-        "Connexion jusqu'à ${ plusVpnConnections } appareils"
+        "Connexion pour ${ plusVpnConnections } appareil au maximum",
+        "Connexion pour ${ plusVpnConnections }  appareils maximum"
       ],
       "Fastest VPN servers": [
         "Serveurs VPN les plus rapides"
@@ -1880,8 +1883,8 @@
         "+${ bonusSpace } de stockage supplémentaire"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } connexion pour ${ VPN_APP_NAME } (afin de connecter plus d'appareils au VPN)",
-        "+${ organization.BonusVPN } connexions pour ${ VPN_APP_NAME } (afin de connecter plus d'appareils au VPN)"
+        "+${ organization.BonusVPN } connexion pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)",
+        "+${ organization.BonusVPN } connexions pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)"
       ],
       "10 email addresses": [
         "10 adresses e-mail"
@@ -1929,7 +1932,7 @@
         "Voulez-vous vraiment abandonner vos modifications ?"
       ],
       "Basic, Plus or Visionary subscription required": [
-        "Abonnement Basic, Plus ou Visionary nécessaire"
+        "Un abonnement Basic, Plus ou Visionary est nécessaire."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
@@ -2008,6 +2011,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Saisissez les identifiants de votre compte ${ BRAND_NAME }."
@@ -2160,7 +2166,7 @@
         "Un seul compte. Tous les services ${ BRAND_NAME }."
       ],
       "Or select a particular server:": [
-        "Ou sélectionnez un serveur particulier :"
+        "Ou sélectionnez un serveur spécifique :"
       ],
       "P2P": [
         "P2P"
@@ -2172,7 +2178,7 @@
         "Les paiements sont protégés par le chiffrement TLS et les lois suisses dédiées à la protection de la vie privée."
       ],
       "Plan upgrade required": [
-        "Abonnement supérieur nécessaire"
+        "Un abonnement supérieur est nécessaire."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Saisissez la phrase de récupération de 12 mots associée à votre compte."
@@ -2199,7 +2205,7 @@
         "Veuillez attendre que vos modifications soient synchronisées avec le serveur."
       ],
       "Plus or Visionary subscription required": [
-        "Abonnement Plus ou Visionary nécessaire"
+        "Un abonnement Plus ou Visionary est nécessaire."
       ],
       "Preview": [
         "Aperçu"
@@ -2268,7 +2274,7 @@
         "Le moyen le plus sûr de naviguer, de faire du streaming et d'être en ligne."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Ces fichiers de configuration vous permettent de choisir le serveur ${ VPN_APP_NAME } auquel vous vous connectez lorsque vous utilisez une application VPN tierce ou que vous configurez une connexion VPN sur un routeur."
+        "Ces fichiers de configuration vous permettent de choisir le serveur ${ VPN_APP_NAME } auquel vous vous connectez quand vous utilisez une application VPN tierce ou que vous configurez une connexion VPN sur un routeur."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Ces configurations sont fournies pour fonctionner avec les routeurs WireGuard et les clients officiels."
@@ -2644,7 +2650,7 @@
     },
     "Label": {
       "${ BRAND_NAME } email or username": [
-        "e-mail ou nom d'utilisateur ${ BRAND_NAME }"
+        "E-mail ou nom d'utilisateur ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
@@ -2820,6 +2826,9 @@
       ],
       "Mailbox password": [
         "Mot de passe de la messagerie"
+      ],
+      "Main": [
+        "Principale"
       ],
       "Moderate NAT": [
         "NAT modéré"
@@ -3165,8 +3174,8 @@
     },
     "new_plans: feature": {
       "${ n } custom email domain": [
-        "${ n } domaine de messagerie personnalisé pris en charge",
-        "${ n } domaines de messagerie personnalisés pris en charge"
+        "${ n } domaine de messagerie personnalisé",
+        "${ n } domaines de messagerie personnalisés"
       ],
       "${ n } email address": [
         "${ n } adresse électronique",
@@ -3876,8 +3885,8 @@
         "Sélectionnez le nombre d'utilisateurs à inclure dans votre abonnement. Chaque utilisateur supplémentaire coûte ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si vous avez besoin de plus d'${ maxUsers } compte utilisateur, nous vous invitons à ${ contact } notre Service client.",
-        "Si vous avez besoin de plus de ${ maxUsers } comptes utilisateur, nous vous invitons à ${ contact } notre Service client."
+        "Si vous avez besoin de plus d'${ maxUsers } compte utilisateur, nous vous invitons à ${ contact } notre service client.",
+        "Si vous avez besoin de plus de ${ maxUsers } comptes utilisateur, nous vous invitons à ${ contact } notre service client."
       ]
     },
     "Price": {
@@ -4083,9 +4092,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "La réduction sera maintenue lors du renouvellement jusqu'à ce que l'abonnement soit annulé ou modifié."
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Votre abonnement se renouvellera automatiquement au prix habituel à la fin de votre cycle de facturation."
       ]
     },
     "specialoffer: Link": {
@@ -4275,20 +4281,20 @@
         "${ UsedAddresses } adresses"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } sur ${ MaxAddresses } adresse électronique",
-        "${ UsedAddresses } sur ${ MaxAddresses } adresses électroniques"
+        "${ UsedAddresses } adresse électronique sur ${ MaxAddresses }",
+        "${ UsedAddresses } adresses électroniques sur ${ MaxAddresses }"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } calendrier",
         "${ UsedCalendars } calendriers"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } sur ${ MaxDomains } domaine personnalisé",
-        "${ UsedDomains } sur ${ MaxDomains } domaines personnalisés"
+        "${ UsedDomains } domaine personnalisé sur ${ MaxDomains }",
+        "${ UsedDomains } domaines personnalisés sur ${ MaxDomains }"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } sur ${ MaxMembers } utilisateur",
-        "${ UsedMembers } sur ${ MaxMembers } utilisateurs"
+        "${ UsedMembers } utilisateur sur ${ MaxMembers }",
+        "${ UsedMembers } utilisateurs sur ${ MaxMembers }"
       ],
       "1 email address": [
         "1 adresse e-mail"
@@ -4452,7 +4458,7 @@
         "Clients ${ VPN_APP_NAME }"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Donnez un nom à la configuration à générer"
+        "1. Donnez un nom à la configuration qui doit être générée"
       ],
       "1. Select platform": [
         "1. Sélectionnez la plateforme"
@@ -4524,7 +4530,7 @@
         "Vérification de la carte"
       ],
       "Card verification in progress": [
-        "Vérification de la carte en cours"
+        "La vérification de la carte est en cours."
       ],
       "Change login password": [
         "Changer le mot de passe de connexion"
@@ -4683,7 +4689,7 @@
         "Vérification du paiement"
       ],
       "Payment verification in progress": [
-        "Vérification du paiement en cours"
+        "La vérification du paiement est en cours."
       ],
       "Payments": [
         "Paiements"
@@ -4776,7 +4782,7 @@
         "Déverrouillez votre messagerie"
       ],
       "Unsupported browser": [
-        "Navigateur non pris en charge"
+        "Le navigateur n'est pas pris en charge."
       ],
       "Verification": [
         "Vérification"
@@ -4848,6 +4854,10 @@
       "Password must contain at least ${ length } character": [
         "Le mot de passe doit comporter au moins ${ length } caractère.",
         "Le mot de passe doit comporter au moins ${ length } caractères."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
       ]
     },
     "VPN info": {

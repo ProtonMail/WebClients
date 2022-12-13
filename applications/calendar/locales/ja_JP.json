@@ -1849,7 +1849,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "未払いの請求書"
+        "未払いの請求"
       ]
     },
     "Description": {
@@ -2924,7 +2924,7 @@
         "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "メールを ${ BRAND_NAME } へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
@@ -3662,11 +3662,17 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "一連の予定はすべて更新されます。削除した参加者にはメールが送られます。"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "あなたのアカウントには滞納したお支払いがあり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
+        "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "あなたのアドレスは無効になってます。取り消しメールは予定の参加者に送信されません。一連のすべての予定を削除しますか？"
@@ -3843,6 +3849,18 @@
       "Emails": [
         "メール"
       ],
+      "Emails (all messages)": [
+        "メール (すべてのメッセージ)"
+      ],
+      "Emails (last 12 months)": [
+        "メール (過去 12 か月)"
+      ],
+      "Emails (last 3 months)": [
+        "メール (過去 3 か月)"
+      ],
+      "Emails (last month)": [
+        "メール (過去 1 か月)"
+      ],
       "Enable Beta Access": [
         "ベータ版アクセスを有効にする"
       ],
@@ -3929,6 +3947,9 @@
       ],
       "Mailbox password": [
         "メールボックスのパスワード"
+      ],
+      "Main": [
+        "メイン"
       ],
       "Manage categories": [
         "カテゴリーを管理"
@@ -4029,6 +4050,9 @@
       "To: ${ PMEmailAddress }": [
         "移行先: ${ PMEmailAddress }"
       ],
+      "Toolbar": [
+        "ツールバー"
+      ],
       "Two-factor authentication code": [
         "2 要素認証コード"
       ],
@@ -4114,7 +4138,7 @@
         "登録を申請"
       ],
       "Subscribed calendars": [
-        "購読済みカレンダー"
+        "購読カレンダー"
       ],
       "Upgrade account": [
         "アカウントをアップグレード"
@@ -4185,7 +4209,7 @@
     },
     "Modal for limit of calendars reached": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "これ以上のカレンダーを追加できません。このプランで追加できる購読済みカレンダーの最大数に達しています。"
+        "これ以上のカレンダーを追加できません。このプランで追加できる購読カレンダーの最大数に達しています。"
       ],
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
         "これ以上のカレンダーを作成できません。このプランで作成できる個人用カレンダーの最大数に達しています。"
@@ -4693,8 +4717,8 @@
       "Name": [
         "名前"
       ],
-      "Name, email or address": [
-        "名前、メールまたは住所"
+      "Name or email address": [
+        "名前またはメールアドレス"
       ],
       "Password": [
         "パスワード"
@@ -4877,7 +4901,7 @@
         "カレンダーのURL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "URLを入力して、外部または公開カレンダーを登録できます。登録すると、そのカレンダーの読み取り専用バージョンが「登録済みカレンダー」に追加されます。\n${ kbLink }"
+        "URL を入力して、外部または公開カレンダーを購読できます。購読すると、そのカレンダーの読み取り専用バージョンが「購読カレンダー」に追加されます。\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -5070,20 +5094,6 @@
     "Text": {
       "Settings": [
         "設定"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "アカウントを作成した日"
-      ],
-      "the last 12 months": [
-        "過去 12 か月以内"
-      ],
-      "the last 3 months": [
-        "過去 3 か月以内"
-      ],
-      "the last month": [
-        "過去 1 か月以内"
       ]
     },
     "Time unit": {
