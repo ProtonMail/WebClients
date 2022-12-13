@@ -15,7 +15,7 @@ interface Props extends ButtonProps {
     tooltipText?: string;
 }
 
-const Copy = ({ value, onCopy, tooltipText, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
+const Copy = ({ children, value, onCopy, tooltipText, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
     const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         textToClipboard(value, e.currentTarget);
@@ -25,7 +25,7 @@ const Copy = ({ value, onCopy, tooltipText, ...rest }: Props, ref: Ref<HTMLButto
     return (
         <Tooltip title={tooltipText || c('Label').t`Copy`}>
             <Button icon color="weak" shape="outline" ref={ref} onClick={handleClick} {...rest}>
-                <Icon name="squares" alt={c('Label').t`Copy`} />
+                {children || <Icon name="squares" alt={c('Label').t`Copy`} />}
             </Button>
         </Tooltip>
     );
