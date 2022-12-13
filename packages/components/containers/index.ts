@@ -59,6 +59,7 @@ export * from './rightToLeft';
 export * from './search';
 export * from './security';
 export * from './sessions';
+export * from './smtp';
 export * from './support';
 export * from './themes';
 export * from './topBanners';

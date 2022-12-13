@@ -87,6 +87,7 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: APP
 export const getIsB2BPlan = (planName: PLANS | ADDON_NAMES) => {
     return [MAIL_PRO, DRIVE_PRO, BUNDLE_PRO, ENTERPRISE].includes(planName as any);
 };
+
 export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
     return [VPNBASIC, VPNPLUS, PLUS, PROFESSIONAL, VISIONARY].includes(planName as any);
 };

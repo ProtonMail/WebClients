@@ -29,6 +29,7 @@ import {
     useToggle,
     useUser,
     useUserSettings,
+    useSubscription,
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
@@ -74,6 +75,7 @@ const MainContainer = () => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [addresses] = useAddresses();
+    const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -119,6 +121,7 @@ const MainContainer = () => {
         user,
         addresses,
         organization,
+        subscription,
         isSubscribeCalendarEnabled: enabled,
         isSpyTrackerEnabled,
         isInviteSettingEnabled: isInviteLocaleFeatureEnabled || isAutoImportInviteFeatureEnabled,
@@ -218,7 +221,7 @@ const MainContainer = () => {
     );
 
     const redirect =
-        loadingOrganization || loadingFeatures ? (
+        loadingOrganization || loadingFeatures || loadingSubscription ? (
             <PrivateMainAreaLoading />
         ) : (
             <Redirect to={`/${appSlug}${getDefaultRedirect(routes.account)}`} />
