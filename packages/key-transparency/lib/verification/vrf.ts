@@ -1,7 +1,9 @@
 import { CURVE, Point } from '@noble/ed25519';
-import { SHA512, arrayToHexString, concatArrays } from 'pmcrypto';
 
-import { CO_FACTOR, N, ptLen } from './constants';
+import { CryptoProxy } from '@proton/crypto';
+import { arrayToHexString, concatArrays } from '@proton/crypto/lib/utils';
+
+import { CO_FACTOR, N, ptLen } from '../constants/constants';
 
 /**
  * Convert an Uint8Array representing a scalar to a bigint instance, also swapping endianness
@@ -44,7 +46,10 @@ const decodeProof = (pi: Uint8Array) => {
  */
 const hashToCurveTAI = async (alpha: Uint8Array, Y: Uint8Array) => {
     for (let ctr = 0x00; ctr <= 0xff; ctr++) {
-        const hash = await SHA512(concatArrays([new Uint8Array([0x03, 0x01]), Y, alpha, new Uint8Array([ctr, 0x00])]));
+        const hash = await CryptoProxy.computeHash({
+            algorithm: 'SHA512',
+            data: concatArrays([new Uint8Array([0x03, 0x01]), Y, alpha, new Uint8Array([ctr, 0x00])]),
+        });
 
         let H: Point;
         try {
@@ -66,9 +71,14 @@ const hashToCurveTAI = async (alpha: Uint8Array, Y: Uint8Array) => {
  * draft-irtf-cfrg-vrf-10
  */
 const hashPoints = async (...points: Point[]) => {
-    const digest = await SHA512(
-        concatArrays([new Uint8Array([0x03, 0x02]), ...points.map((p) => p.toRawBytes()), new Uint8Array([0x00])])
-    );
+    const digest = await CryptoProxy.computeHash({
+        algorithm: 'SHA512',
+        data: concatArrays([
+            new Uint8Array([0x03, 0x02]),
+            ...points.map((p) => p.toRawBytes()),
+            new Uint8Array([0x00]),
+        ]),
+    });
     return stringToScalar(digest.slice(0, N));
 };
 
@@ -77,9 +87,14 @@ const hashPoints = async (...points: Point[]) => {
  * draft-irtf-cfrg-vrf-10
  */
 const proofToHash = async (Gamma: Point) =>
-    SHA512(
-        concatArrays([new Uint8Array([0x03, 0x03]), Gamma.multiply(CO_FACTOR).toRawBytes(), new Uint8Array([0x00])])
-    );
+    CryptoProxy.computeHash({
+        algorithm: 'SHA512',
+        data: concatArrays([
+            new Uint8Array([0x03, 0x03]),
+            Gamma.multiply(CO_FACTOR).toRawBytes(),
+            new Uint8Array([0x00]),
+        ]),
+    });
 
 /**
  * VRF verify a proof, according to section 5.3, ECVRF Verifying, of draft-irtf-cfrg-vrf-10
