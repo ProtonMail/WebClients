@@ -30,7 +30,8 @@ const ContactsWidgetPlaceholder = ({ type, onClearSearch, onImport, onCreate }: 
             imgUrl = noContactsImg;
             actions = (
                 <div className="flex flex-column">
-                    <p className="m0">{c('Actions message').t`You don't have any groups.`}</p>
+                    <p className="m0" data-testid="groups:no-groups">{c('Actions message')
+                        .t`You don't have any groups.`}</p>
                     <p className="m0">
                         <InlineLinkButton key="add-contact" onClick={onCreate}>{c('Action')
                             .t`Add group`}</InlineLinkButton>
@@ -65,7 +66,8 @@ const ContactsWidgetPlaceholder = ({ type, onClearSearch, onImport, onCreate }: 
             );
             actions = (
                 <div className="flex flex-column">
-                    <p className="m0">{c('Actions message').t`You don't have any contacts.`}</p>
+                    <p className="m0" data-testid="contacts:no-contacts">{c('Actions message')
+                        .t`You don't have any contacts.`}</p>
                     <p className="m0">{c('Actions message').jt`${addContact} or ${importContact}.`}</p>
                 </div>
             );

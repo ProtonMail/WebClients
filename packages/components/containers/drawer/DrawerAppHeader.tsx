@@ -151,7 +151,13 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
 
                     <div className="flex flex-align-items-center flex-nowrap flex-gap-0-5">
                         <Tooltip title={c('Action').t`Close`}>
-                            <Button icon color="weak" shape="ghost" onClick={() => handleToggleIFrame()}>
+                            <Button
+                                data-testid="drawer-app-header:close"
+                                icon
+                                color="weak"
+                                shape="ghost"
+                                onClick={() => handleToggleIFrame()}
+                            >
                                 <Icon name="cross-big" size={16} />
                             </Button>
                         </Tooltip>
