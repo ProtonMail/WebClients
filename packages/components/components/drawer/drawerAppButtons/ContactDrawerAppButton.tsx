@@ -21,6 +21,7 @@ const ContactDrawerAppButton = ({
         <DrawerAppButton
             key="toggle-contacts-drawer-app-button"
             tooltipText={c('Title').t`Contacts`}
+            data-testid="contacts-drawer-app-button:contacts-icon"
             buttonContent={<ContactsDrawerLogo />}
             onClick={handleClick}
             {...rest}
