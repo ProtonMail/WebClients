@@ -1742,7 +1742,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "未払いの請求書"
+        "未払いの請求"
       ]
     },
     "Description": {
@@ -2685,7 +2685,7 @@
         "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "メールを ${ BRAND_NAME } へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
@@ -3708,11 +3708,17 @@
       "You will lose all unsaved changes.": [
         "保存されていない変更はすべて失なわれます。"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "あなたのアカウントには滞納したお支払いがあり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
+        "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "お使いのブラウザはサービスワーカーが利用できないため、大きなファイルのダウンロードに対応していません。大きなファイルをダウンロードすると、ブラウザがフリーズしたり応答しなくなったりする可能性があります。最新版の${ recommendedBrowser }を使用し、もう一度お試しください。"
@@ -3941,6 +3947,18 @@
       "Emails": [
         "メール"
       ],
+      "Emails (all messages)": [
+        "メール (すべてのメッセージ)"
+      ],
+      "Emails (last 12 months)": [
+        "メール (過去 12 か月)"
+      ],
+      "Emails (last 3 months)": [
+        "メール (過去 3 か月)"
+      ],
+      "Emails (last month)": [
+        "メール (過去 1 か月)"
+      ],
       "Enable Beta Access": [
         "ベータ版アクセスを有効にする"
       ],
@@ -4036,6 +4054,9 @@
       ],
       "Mailbox password": [
         "メールボックスのパスワード"
+      ],
+      "Main": [
+        "メイン"
       ],
       "Malware": [
         "マルウェア"
@@ -4174,6 +4195,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "移行先: ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "ツールバー"
       ],
       "Two-factor authentication code": [
         "2 要素認証コード"
@@ -4707,8 +4731,8 @@
       "Name": [
         "名前"
       ],
-      "Name, email or address": [
-        "名前、メールまたは住所"
+      "Name or email address": [
+        "名前またはメールアドレス"
       ],
       "New name": [
         "新しい名前"
@@ -4948,20 +4972,6 @@
     "Text": {
       "Settings": [
         "設定"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "アカウントを作成した日"
-      ],
-      "the last 12 months": [
-        "過去 12 か月以内"
-      ],
-      "the last 3 months": [
-        "過去 3 か月以内"
-      ],
-      "the last month": [
-        "過去 1 か月以内"
       ]
     },
     "Time unit": {

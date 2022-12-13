@@ -2473,7 +2473,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "未払いの請求書"
+        "未払いの請求"
       ]
     },
     "Description": {
@@ -4014,7 +4014,7 @@
         "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "メールを ${ BRAND_NAME } へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
@@ -4773,7 +4773,7 @@
         "ログイン情報を失いアカウントをリセットすることになった場合、${ boldAccountAndRecovery }を両方用意することが${ boldImperative }。そうしないと、メール、連絡先、ファイルにアクセスできなくなる可能性があります。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "2 要素認証機器を紛失した場合、6 桁の 2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
+        "2 要素認証デバイスを紛失した場合、6 桁の 2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ MAIL_APP_NAME } と ${ VPN_APP_NAME } の有料機能が使えなくなります。"
@@ -4818,7 +4818,7 @@
         "メールボックスのインポート"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "プライバシーの世界へようこそ。メール、カレンダー、連絡先をほかのサービスから Proton にインポートできます。${ BRAND_NAME }. では、データを移行し暗号化する手順を手順をわかりやすく解説します。"
+        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートできます。データを移行し暗号化する手順をわかりやすく解説します。プライバシーの世界へようこそ。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントにアクセスできなくなります。"
@@ -4941,7 +4941,7 @@
         "${ addARecoveryMethod }すると、パスワードを忘れた場合にアカウントに再び戻ることができます。"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "アカウント設定のために、2 要素認証デバイスに手動でこの情報を入力してください。 ${ switchButton }"
+        "アカウント設定のために、2 要素認証デバイスに手動でこの情報を入力してください。${ switchButton }。"
       ],
       "Member": [
         "メンバー"
@@ -5528,6 +5528,9 @@
       "We recommend using your recovery phrase instead.": [
         "代わりに回復用フレーズを使うことをおすすめします。"
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "回復に関する情報を信頼できるデバイスに安全に保存し、データ紛失を防止します"
+      ],
       "We use 3-D Secure to protect your payments.": [
         "決済を保護するために 3D セキュアを利用します。"
       ],
@@ -5702,6 +5705,12 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "あなたの ${ BRAND_NAME } アカウントは ${ externalEmailAddress } に関連付けされています。${ toAppName } を使うには、${ MAIL_APP_NAME } アドレスが必要です。"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } と ${ MAIL_APP_NAME } のアカウントはリンクしています。両アカウントを削除するには ${ loginLink } へログインしてアカウントを削除してください。"
       ],
@@ -5709,7 +5718,7 @@
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "あなたのアカウントには滞納したお支払いがあり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
+        "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
         "アカウントの回復手段が設定されています"
@@ -5766,6 +5775,12 @@
     "info": {
       "Create an email address": [
         "メールアドレスを作成"
+      ],
+      "Day 27: Trial reminder": [
+        "27 日目: トライアルが間もなく終了"
+      ],
+      "Day 30: Trial ends": [
+        "30 日目: トライアル終了"
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "鍵 ${ fingerprint } は正常にアップロードされました"
@@ -6207,6 +6222,9 @@
       "All-day event notifications": [
         "終日の予定の通知"
       ],
+      "Allow notifications by email": [
+        "メールによる通知を許可"
+      ],
       "Allow recovery by email": [
         "メールアドレスでの回復を許可"
       ],
@@ -6215,6 +6233,9 @@
       ],
       "Allow recovery by recovery phrase": [
         "回復用フレーズによる回復を許可"
+      ],
+      "Allow recovery using a trusted device": [
+        "信頼できるデバイスを使用した回復を許可"
       ],
       "Amount": [
         "金額"
@@ -6471,6 +6492,18 @@
       "Emails": [
         "メール"
       ],
+      "Emails (all messages)": [
+        "メール (すべてのメッセージ)"
+      ],
+      "Emails (last 12 months)": [
+        "メール (過去 12 か月)"
+      ],
+      "Emails (last 3 months)": [
+        "メール (過去 3 か月)"
+      ],
+      "Emails (last month)": [
+        "メール (過去 1 か月)"
+      ],
       "End date": [
         "終了日"
       ],
@@ -6608,6 +6641,9 @@
       ],
       "Mailbox password": [
         "メールボックスのパスワード"
+      ],
+      "Main": [
+        "メイン"
       ],
       "Manage categories": [
         "カテゴリーを管理"
@@ -6961,6 +6997,9 @@
       ],
       "Recovery phrase": [
         "回復用フレーズ"
+      ],
+      "Trusted device recovery": [
+        "信頼できるデバイスによる回復"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6999,10 +7038,10 @@
     },
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } ベータについてのお知らせ"
+        "${ BRAND_NAME } ベータのお知らせ"
       ],
       "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } 会社についてのお知らせ"
+        "${ BRAND_NAME } 会社のお知らせ"
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business ニュースレター"
@@ -7738,6 +7777,9 @@
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
       ],
+      "User credential management": [
+        "ユーザー資格管理"
+      ],
       "User session management": [
         "ユーザーセッション管理"
       ],
@@ -7751,6 +7793,23 @@
       ],
       "Team management": [
         "チームマネジメント"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: info": {
@@ -7804,23 +7863,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8857,7 +8899,7 @@
         "カレンダーのURL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "URLを入力して、外部または公開カレンダーを登録できます。登録すると、そのカレンダーの読み取り専用バージョンが「登録済みカレンダー」に追加されます。\n${ kbLink }"
+        "URL を入力して、外部または公開カレンダーを購読できます。購読すると、そのカレンダーの読み取り専用バージョンが「購読カレンダー」に追加されます。\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -9229,20 +9271,6 @@
       ],
       "vCard field": [
         "vCard フィールド"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "アカウントを作成した日"
-      ],
-      "the last 12 months": [
-        "過去 12 か月以内"
-      ],
-      "the last 3 months": [
-        "過去 3 か月以内"
-      ],
-      "the last month": [
-        "過去 1 か月以内"
       ]
     },
     "Time unit": {
@@ -9968,7 +9996,7 @@
         "状態"
       ],
       "Subscribed calendars": [
-        "購読済みカレンダー"
+        "購読カレンダー"
       ],
       "Success": [
         "完了"
@@ -10360,11 +10388,6 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
-      ]
-    },
-    "vpn: Info": {
-      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
-        "${ VPN_APP_NAME } ブラウザー拡張機能を開き、ブラウジングを保護します"
       ]
     },
     "VPNClient": {

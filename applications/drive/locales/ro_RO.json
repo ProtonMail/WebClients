@@ -528,6 +528,9 @@
       "Skip": [
         "Omitere"
       ],
+      "Skip verification": [
+        "Ignorare verificare"
+      ],
       "Start import": [
         "Pornire importare"
       ],
@@ -2119,6 +2122,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Folosiți doar litere, cifre și _ . -"
       ],
       "Unknown error": [
         "Eroare necunoscută"
@@ -4110,6 +4116,18 @@
       "Emails": [
         "Mesaje"
       ],
+      "Emails (all messages)": [
+        "Mesaje (toate mesajele)"
+      ],
+      "Emails (last 12 months)": [
+        "Mesaje (ultimele 12 luni)"
+      ],
+      "Emails (last 3 months)": [
+        "Mesaje (ultimele 3 luni)"
+      ],
+      "Emails (last month)": [
+        "Mesaje (ultima lună)"
+      ],
       "Enable Beta Access": [
         "Activare acces la Beta"
       ],
@@ -4205,6 +4223,9 @@
       ],
       "Mailbox password": [
         "Parolă mesaje"
+      ],
+      "Main": [
+        "Principală"
       ],
       "Malware": [
         "Malware"
@@ -4344,6 +4365,9 @@
       "To: ${ PMEmailAddress }": [
         "Către: ${ PMEmailAddress }"
       ],
+      "Toolbar": [
+        "Bară de unelte"
+      ],
       "Two-factor authentication code": [
         "Cod autentificare cu doi factori"
       ],
@@ -4477,6 +4501,28 @@
       ],
       "Your import is starting": [
         "Începe importarea"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-un folder și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-o etichetă și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-o etichetă și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ]
     },
     "Message": {
@@ -4917,8 +4963,8 @@
       "Name": [
         "Nume"
       ],
-      "Name, email or address": [
-        "Nume, e-mail sau adresă"
+      "Name or email address": [
+        "Numele de utilizator sau adresa de e-mail"
       ],
       "New name": [
         "Nume nou"
@@ -5179,20 +5225,6 @@
     "Text": {
       "Settings": [
         "Setări"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "data creării contului"
-      ],
-      "the last 12 months": [
-        "ultimele 12 luni"
-      ],
-      "the last 3 months": [
-        "ultimele 3 luni"
-      ],
-      "the last month": [
-        "ultima lună"
       ]
     },
     "Time unit": {
@@ -5770,6 +5802,11 @@
         "Parola trebuie să conțină cel puțin un caracter",
         "Parola trebuie să conțină cel puțin ${ length } caractere.",
         "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
       ]
     },
     "Validation Error": {
@@ -5840,6 +5877,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
       ],
+      "Skip verification?": [
+        "Ignorați verificarea?"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Unele contacte ce trebuie îmbinate prezintă erori. Reexaminați-le individual."
       ],
@@ -5869,6 +5909,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Nu s-a putut verifica serverul de e-mail. Dacă aveți încredere în el, puteți ignora verificarea."
       ],
       "You will lose any customization you made so far.": [
         "Veți pierde orice modificare făcută până acum."

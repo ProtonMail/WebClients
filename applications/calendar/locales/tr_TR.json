@@ -2351,7 +2351,7 @@
         "Güvenilen anahtarlar gönderim için geçerli değil"
       ],
       "Try using only letters, numerals, and _.-": [
-        "Sadece harf, rakam ve _.- kullanmayı deneyin"
+        "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
       "Unknown error": [
         "Bilinmeyen hata"
@@ -3977,6 +3977,18 @@
       "Emails": [
         "E-postalar"
       ],
+      "Emails (all messages)": [
+        "E-postalar (tüm iletiler)"
+      ],
+      "Emails (last 12 months)": [
+        "E-postalar (son 12 ay)"
+      ],
+      "Emails (last 3 months)": [
+        "E-postalar (son 3 ay)"
+      ],
+      "Emails (last month)": [
+        "E-postalar (son 1 ay)"
+      ],
       "Enable Beta Access": [
         "Beta erişimini etkinleştir"
       ],
@@ -4168,7 +4180,7 @@
         "Nereye: ${ PMEmailAddress }"
       ],
       "Toolbar": [
-        "Araç Çubuğu"
+        "Araç çubuğu"
       ],
       "Two-factor authentication code": [
         "İki aşamalı kimlik doğrulama kodu"
@@ -4290,6 +4302,24 @@
       ],
       "Your import is starting": [
         "İçe aktarma işleminize başlanıyor"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
       ]
     },
     "Message": {
@@ -4876,8 +4906,8 @@
       "Name": [
         "Ad"
       ],
-      "Name, email or address": [
-        "Ad, e-posta ya da adres"
+      "Name or email address": [
+        "Ad ya da e-posta adresi"
       ],
       "Password": [
         "Parola"
@@ -5312,20 +5342,6 @@
     "Text": {
       "Settings": [
         "Ayarlar"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "hesabın açılış tarihinden itibaren"
-      ],
-      "the last 12 months": [
-        "son 12 aylık dönemdeki"
-      ],
-      "the last 3 months": [
-        "son 3 aylık dönemdeki"
-      ],
-      "the last month": [
-        "son bir aylık dönemdeki"
       ]
     },
     "Time unit": {
@@ -5790,6 +5806,10 @@
       "Password must contain at least ${ length } character": [
         "Parola en az ${ length } karakter uzunluğunda olmalıdır",
         "Parola en az ${ length } karakter uzunluğunda olmalıdır"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ]
     },
     "Video control": {

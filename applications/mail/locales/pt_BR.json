@@ -932,6 +932,9 @@
       "Skip": [
         "Ignorar"
       ],
+      "Skip verification": [
+        "Pular verificação"
+      ],
       "Some images failed to load with tracking protection.": [
         "Algumas imagens falharam ao carregar com proteção contra rastreamento."
       ],
@@ -3325,6 +3328,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "As chaves confiáveis não são válidas para o envio"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Tente usar apenas letras, números e _.-"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -6107,6 +6113,18 @@
       "Emails": [
         "E-mails"
       ],
+      "Emails (all messages)": [
+        "E-mails (todas as mensagens)"
+      ],
+      "Emails (last 12 months)": [
+        "E-mails (últimos 12 messes)"
+      ],
+      "Emails (last 3 months)": [
+        "E-mails (últimos 3 messes)"
+      ],
+      "Emails (last month)": [
+        "E-mails (último mês)"
+      ],
       "Enable Beta Access": [
         "Habilitar acesso beta"
       ],
@@ -6689,21 +6707,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ itemsToImportCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ itemsToImportCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens da pasta desde a ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens da pasta desde a ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ itemsToImportCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ itemsToImportCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens do marcador ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens dos marcadores ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } pasta desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } pastas desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } da pasta ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } das pastas ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcador desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens em ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } do marcador ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } dos marcadores ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -7033,6 +7051,9 @@
       "Set up your organization": [
         "Configure a sua organização"
       ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "Use o seletor de aplicativos no canto superior esquerdo para acessar todos os serviços de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
+      ],
       "You can change this anytime in your settings.": [
         "Você pode alterar isso a qualquer momento nas suas configurações."
       ]
@@ -7163,9 +7184,6 @@
       ],
       "Name or email address": [
         "Nome ou endereço de e-mail"
-      ],
-      "Name, email or address": [
-        "Nome, e-mail ou endereço"
       ],
       "Password": [
         "Senha"
@@ -7590,9 +7608,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "O desconto continuará sendo aplicado durante a renovação até a assinatura ser cancelada ou modificada"
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Sua assinatura será renovada automaticamente pela taxa padrão ao final do seu ciclo de faturamento"
       ]
     },
     "specialoffer: Link": {
@@ -7798,6 +7813,10 @@
       "${ count } message deleted": [
         "${ count } mensagem excluída",
         "${ count } mensagens excluídas"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contato parece idêntico.",
+        "${ countMergeableContacts } contatos parecem idênticos."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "${ elementsCount } conversa adicionada a ${ labelName }.",
@@ -8097,20 +8116,6 @@
     "Time": {
       "Yesterday": [
         "Ontem"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "a data de criação da conta"
-      ],
-      "the last 12 months": [
-        "os últimos 12 meses"
-      ],
-      "the last 3 months": [
-        "os últimos 3 meses"
-      ],
-      "the last month": [
-        "o último mês"
       ]
     },
     "Time unit": {
@@ -8763,6 +8768,10 @@
       "Password must contain at least ${ length } character": [
         "A senha deve conter ao menos ${ length } caractere",
         "A senha deve conter ao menos ${ length } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
+        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
       ]
     },
     "Video control": {
@@ -8808,6 +8817,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
+      ],
+      "Skip verification?": [
+        "Pular verificação?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dos contatos a serem mesclados apresentam erro. Verifique-os individualmente"

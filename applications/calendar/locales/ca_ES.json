@@ -2113,6 +2113,12 @@
       "Name required": [
         "Nom requerit"
       ],
+      "No calendars found to import": [
+        "No s'ha trobat cap calendari per importar"
+      ],
+      "No contacts found to import": [
+        "No s'ha trobat cap contacte per importar"
+      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -3815,6 +3821,9 @@
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
+      "Main": [
+        "Principal"
+      ],
       "Manage categories": [
         "Gestiona les categories"
       ],
@@ -3914,6 +3923,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Per: ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "Barra d'eines"
       ],
       "Two-factor authentication code": [
         "Codi d'autenticació de dos factors"
@@ -4576,6 +4588,9 @@
       "Name": [
         "Nom"
       ],
+      "Name or email address": [
+        "Nom o adreça de correu electrònic"
+      ],
       "Password": [
         "Contrasenya"
       ],
@@ -4761,6 +4776,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacte sembla idèntic.",
+        "${ countMergeableContacts } contactes semblen idèntics"
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Un correu de cancel·lació serà enviat als participants eliminats per a tots els esdeveniments d'aquesta sèrie."
       ],
@@ -4959,20 +4978,6 @@
     "Text": {
       "Settings": [
         "Preferències"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "data de creació del compte"
-      ],
-      "the last 12 months": [
-        "els darrers 12 mesos"
-      ],
-      "the last 3 months": [
-        "els darrers 3 mesos"
-      ],
-      "the last month": [
-        "el darrer mes"
       ]
     },
     "Time unit": {

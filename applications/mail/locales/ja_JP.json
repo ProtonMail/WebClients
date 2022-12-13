@@ -2666,7 +2666,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "未払いの請求書"
+        "未払いの請求"
       ]
     },
     "Density mode": {
@@ -4024,7 +4024,7 @@
         "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
+        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "メールを ${ BRAND_NAME } へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
@@ -4223,7 +4223,7 @@
         "${ storageSize } ストレージ"
       ],
       "${ total } conversations": [
-        "${ total } 件の会話"
+        "${ total }件のやりとり"
       ],
       "${ total } messages": [
         "${ total } 件のメッセージ"
@@ -4337,7 +4337,7 @@
         "${ count } 件のメッセージを完全に削除してよろしいですか？"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "この会話を完全に削除してよろしいですか？"
+        "このやりとりを完全に削除してよろしいですか？"
       ],
       "Are you sure you want to permanently delete this draft?": [
         "この下書きを完全に削除してよろしいですか？"
@@ -4769,7 +4769,7 @@
         "メールアドレスなし"
       ],
       "No email trackers found": [
-        "メールトラッカーはありません"
+        "メールトラッカーは見つかりませんでした"
       ],
       "No folder found": [
         "フォルダーが見つかりませんでした"
@@ -5360,7 +5360,7 @@
         "このラベルでタグ付けされている${ count }件のやりとりがあります"
       ],
       "You have **${ count } messages** stored in this folder": [
-        "このフォルダー内に **${ count } 件のメッセージ**が存在します"
+        "このフォルダー内に${ count }件のメールがあります"
       ],
       "You have **${ count } messages** tagged with this label": [
         "このラベルにタグされた **${ count } 件のメッセージ** があります"
@@ -5401,11 +5401,17 @@
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "あなたの ${ BRAND_NAME } アカウントには SimpleLogin が含まれています。ワンクリックでブラウザー拡張機能をインストールし始めることができます。"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "あなたのアカウントには滞納したお支払いがあり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
+        "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
@@ -5847,6 +5853,18 @@
       "Emails": [
         "メール"
       ],
+      "Emails (all messages)": [
+        "メール (すべてのメッセージ)"
+      ],
+      "Emails (last 12 months)": [
+        "メール (過去 12 か月)"
+      ],
+      "Emails (last 3 months)": [
+        "メール (過去 3 か月)"
+      ],
+      "Emails (last month)": [
+        "メール (過去 1 か月)"
+      ],
       "Enable Beta Access": [
         "ベータ版アクセスを有効にする"
       ],
@@ -5951,6 +5969,9 @@
       ],
       "Mailbox password": [
         "メールボックスのパスワード"
+      ],
+      "Main": [
+        "メイン"
       ],
       "Manage categories": [
         "カテゴリーを管理"
@@ -6122,6 +6143,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "移行先: ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "ツールバー"
       ],
       "Two-factor authentication code": [
         "2 要素認証コード"
@@ -6872,9 +6896,6 @@
       "Name or email address": [
         "名前またはメールアドレス"
       ],
-      "Name, email or address": [
-        "名前、メールまたは住所"
-      ],
       "Password": [
         "パスワード"
       ],
@@ -7518,20 +7539,6 @@
     "Time": {
       "Yesterday": [
         "昨日"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "アカウントを作成した日"
-      ],
-      "the last 12 months": [
-        "過去 12 か月以内"
-      ],
-      "the last 3 months": [
-        "過去 3 か月以内"
-      ],
-      "the last month": [
-        "過去 1 か月以内"
       ]
     },
     "Time unit": {

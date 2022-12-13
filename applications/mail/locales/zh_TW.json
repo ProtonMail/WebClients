@@ -926,6 +926,9 @@
       "Skip": [
         "略過"
       ],
+      "Skip verification": [
+        "略過驗證"
+      ],
       "Some images failed to load with tracking protection.": [
         "追蹤防護會導致某些圖像無法載入。"
       ],
@@ -3301,6 +3304,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密鑰用於寄送時無效"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "嘗試僅使用字母、數字與 _.-"
       ],
       "Unknown error": [
         "未知錯誤"
@@ -5991,6 +5997,18 @@
       "Emails": [
         "電郵"
       ],
+      "Emails (all messages)": [
+        "電子郵件（全部訊息）"
+      ],
+      "Emails (last 12 months)": [
+        "電子郵件（最近十二個月）"
+      ],
+      "Emails (last 3 months)": [
+        "電子郵件（最近三個月）"
+      ],
+      "Emails (last month)": [
+        "電子郵件（上個月）"
+      ],
       "Enable Beta Access": [
         "啟用測試版體驗"
       ],
@@ -6095,6 +6113,9 @@
       ],
       "Mailbox password": [
         "信箱密碼"
+      ],
+      "Main": [
+        "主要"
       ],
       "Manage categories": [
         "管理分類"
@@ -6266,6 +6287,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "收件者：${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "工具列"
       ],
       "Two-factor authentication code": [
         "雙重驟驗證碼"
@@ -6564,6 +6588,20 @@
       ],
       "Your import is starting": [
         "您的匯入程序已開始"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "匯入來自 ${ itemsToImportCount } 資料夾的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "從 ${ itemsToImportCount } 資料夾中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -7023,9 +7061,6 @@
       ],
       "Name or email address": [
         "名稱或電郵位址"
-      ],
-      "Name, email or address": [
-        "名稱，電郵位址或地址"
       ],
       "Password": [
         "密碼"
@@ -7681,20 +7716,6 @@
     "Time": {
       "Yesterday": [
         "昨天"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "帳號建立時間"
-      ],
-      "the last 12 months": [
-        "最近 12 個月"
-      ],
-      "the last 3 months": [
-        "最近 3 個月"
-      ],
-      "the last month": [
-        "最近 1 個月"
       ]
     },
     "Time unit": {
@@ -8377,6 +8398,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
       ],
+      "Skip verification?": [
+        "略過驗證？"
+      ],
       "Some of the attachments' signatures failed verification.\nYou can still download these attachments but they might have been tampered with.": [
         "附件簽章驗證失敗。\n您仍可下載附件，惟附件可能已遭篡改。"
       ],
@@ -8409,6 +8433,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "我們無法驗證此郵件伺服器。如果您確定可信任此伺服器，則可略過驗證。"
       ],
       "You will lose any customization you made so far.": [
         "您到目前為止所自訂的所有設置將會遺失。"

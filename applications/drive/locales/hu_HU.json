@@ -798,6 +798,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "A naptár hivatkozás átmenetileg nem érhető el. Ellenőrizze, hogy a naptárszolgáltatónál még mindig érvényes ez a hivatkozás."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Több mint 12 óra telt el a legutóbbi frissítés óta — a ${ CALENDAR_APP_NAME } néhány órán belül megpróbálja frissíteni a naptárat."
       ]
     },
     "Collapsible tooltip": {
@@ -1949,6 +1952,10 @@
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
       ],
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fűzzön össze legalább ${ calendarToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral",
+        "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő ${ BRAND_NAME } naptárakkal"
+      ],
       "Missing key packet": [
         "Hiányzó kulcs csomag"
       ],
@@ -2305,6 +2312,9 @@
       "Something went wrong. Please refresh the page or try again later.": [
         "Hiba történt. Kérjük, töltse újra az oldalt vagy próbálja meg később."
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Hiba lépett fel a ${ BRAND_NAME }hoz történő csatlakozás során."
+      ],
       "You may also ${ refresh } or try again later.": [
         "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
       ],
@@ -2527,6 +2537,9 @@
       ]
     },
     "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Az importált meghívók egyszerű eseményként jelennek meg a ${ CALENDAR_APP_NAME } eseményei közt, szervező és résztvevők nélkül. Hogy értesüljön az esemény változásairól és lássa a résztvevőket, kérje meg a szervezőket, hogy a ${ BRAND_NAME } e-mail címével hívják meg."
+      ],
       "This file contains an event invitation:": [
         "Ez a fájl egy esemény meghívót tartalmaz:",
         "Ez a fájl esemény meghívókat tartalmaz:"
@@ -2583,6 +2596,15 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a fiókjához. Ellenőrizze a következőket:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a Yahoo Mail fiókjához. Ellenőrizze, hogy a szerver címe és port száma megfelelő."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a Yahoo fiókjához. Ellenőrizze a következőket:"
+      ],
       "2-step verification is enabled in your external account.": [
         "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
       ],
@@ -2635,8 +2657,14 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Kattintson a ${ boldManage } elemre a lehetőségek megnyitásához."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME }ba importál."
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Hozzon létre egy ${ boldAppPassword }-t és azt használja a belépési jelszava helyett amikor a ${ BRAND_NAME } kéri."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Nyissa meg a ${ boldAccountInfo } részt a személyes adatainál, a ${ yahooMailLink } fiókjában."
@@ -2943,6 +2971,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Biztos, hogy véglegesen törli a kijelölt elemeket a lomtárból?"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
       ],
@@ -2981,6 +3012,9 @@
       ],
       "Conflict": [
         "Ütközés"
+      ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "A ${ DRIVE_APP_NAME } használatának folytatása, a tárhely feloldása később"
       ],
       "Continue with ${ planName }": [
         "Folytatás ezzel: ${ planName }"
@@ -3167,6 +3201,9 @@
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "Arra az esetre, ha nem tudja a jelszavát, állítson be helyreállító jelmondatot, hogy ne veszíthesse el a hozzáférést fiókjához és adataihoz."
       ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
       ],
@@ -3305,6 +3342,9 @@
       ],
       "Not a valid URL": [
         "Érvénytelen URL-cím"
+      ],
+      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Megjegyzés: az adatok még mindig elérhetők lehetnek helyileg olyan eszközökön, ahol telepítette a ${ DRIVE_APP_NAME } alkalmazást."
       ],
       "of": [
         "/"
@@ -3466,6 +3506,9 @@
       "Swiss privacy": [
         "Svájci adatbiztonság"
       ],
+      "Tap the + button to upload a file or folder": [
+        "Bökjön a + gombra, hogy feltöltsön egy fájlt vagy mappát"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
       ],
@@ -3520,6 +3563,9 @@
       ],
       "This will overwrite the existing folder": [
         "Felülírja a meglévő mappát"
+      ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
@@ -3578,6 +3624,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
       ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
+        "Használja a Drive for Desktop-ot, hogy szinkronizálja a számítógépen tárolt mappáit a ${ DRIVE_APP_NAME }-val. Fel fognak itt tűnni és elérhetőek lesznek bárhonnan. ${ LearnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Használja ezt az adatlapot, hogy tájékoztasson minket nem megfelelő, illegális vagy egyéb módon kártékony megosztott fájlokról. A következőt készül megosztani:"
       ],
@@ -3632,6 +3681,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Az importált naptárokat összefűzheti meglévő ${ BRAND_NAME } naptáraival is."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérhezi a folyamatot: ${ importProgressLink }."
       ],
@@ -3673,6 +3725,9 @@
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "A jelenlegi böngészője nem támogatja a nagy fájlok letöltését a szervízszolgáltatások elérhetetlensége miatt. A nagy fájlok letöltésétől lefagyhat a böngésző, vagy nem reagálhat. Kérjük, használja a(z) ${ recommendedBrowser } legújabb verzióját és próbálja újra."
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Az adatok a ${ BRAND_NAME } fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
         "E-mail címe nem változik meg, de hamarosan már a ${ link } webcímen kell bejelentkeznie."
@@ -3756,6 +3811,9 @@
     "Label": {
       "# of accesses": [
         "Elérések száma"
+      ],
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } felhasználónév"
       ],
       "(Expired)": [
         "(Lejárt)"
@@ -3935,6 +3993,9 @@
       "Hide password": [
         "Jelszó elrejtése"
       ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Hogyan értékelné a tapasztalatait az új ${ BRAND_NAME }lel kapcsolatban?"
+      ],
       "I understand the risk": [
         "Megértettem a kockázatot"
       ],
@@ -3976,6 +4037,9 @@
       ],
       "Mailbox password": [
         "E-mail titkosítási jelszó"
+      ],
+      "Main": [
+        "Elsődleges"
       ],
       "Malware": [
         "Rosszindulatú szoftver"
@@ -4072,6 +4136,9 @@
       ],
       "Set expiration date": [
         "Lejárati dátum beállítása"
+      ],
+      "Set recovery method": [
+        "Helyreállítási mód beállítása"
       ],
       "Sign emails": [
         "Üzenetek aláírása"
@@ -4522,6 +4589,9 @@
     "Onboarding Action": {
       "Next": [
         "Következő"
+      ],
+      "Start using ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } használatának megkezdése"
       ]
     },
     "Onboarding Info": {
@@ -4545,6 +4615,11 @@
       ],
       "You can change this anytime in your settings.": [
         "Ezt a beállításoknál bármikor megváltoztathatja."
+      ]
+    },
+    "Onboarding Title": {
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Üdvözli a ${ DRIVE_APP_NAME }"
       ]
     },
     "Option": {
@@ -4629,8 +4704,8 @@
       "Name": [
         "Név"
       ],
-      "Name, email or address": [
-        "Név, email cím vagy cím"
+      "Name or email address": [
+        "Név vagy e-mail cím"
       ],
       "New name": [
         "Új név"
@@ -4741,6 +4816,9 @@
       ],
       "Get up to ${ credits } in credits.": [
         "Szerezzen akár ${ credits } kreditet."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Hívjon meg barátokat a ${ BRAND_NAME }ba"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Most már könnyedén tud Drive fájljai közt keresni adatai biztonságban tartásával."
@@ -4878,20 +4956,6 @@
     "Text": {
       "Settings": [
         "Beállítások"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "fiók létrehozásának dátumától"
-      ],
-      "the last 12 months": [
-        "az utóbbi 12 hónapból"
-      ],
-      "the last 3 months": [
-        "az utóbbi 3 hónapból"
-      ],
-      "the last month": [
-        "az utóbbi hónapból"
       ]
     },
     "Time unit": {
@@ -5358,6 +5422,9 @@
       "You've got files": [
         "Fájljai érkeztek"
       ],
+      "Your 500 MB bonus": [
+        "Az 500 MB bónuszod"
+      ],
       "Your changes are not synced yet": [
         "Módosításai még nincsenek szinkronizálva"
       ],
@@ -5458,6 +5525,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "A ${ BRAND_NAME } az azonos nevű mappákat összefésüli. Ha ezt el szeretné kerülni, előzetesen nevezze át az azonos nevű mappákat."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "A ${ BRAND_NAME } annyi adatot áttölt, amennyi lehetséges, a legfrissebb üzenetekkel kezdve."
+      ],
       "Are you sure you want to discard your import?": [
         "Biztos, hogy elveti az importálást?"
       ],
@@ -5507,6 +5580,9 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Ez a művelet nem vonható vissza. Írja be a ${ boldDanger } szót a mezőbe a folytatáshoz."
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Az importálás helyigénye meghaladhatja a ${ BRAND_NAME } fiókban rendelkezésre álló helyet. Fontolja meg a beállítások finomítását."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sajnos a támogatási csoport jelenleg nem elérhető. Kérjük, az alábbi űrlapon írja le a problémáját és amint lehet felvesszük önnel a kapcsolatot."

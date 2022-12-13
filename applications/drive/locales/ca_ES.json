@@ -1940,6 +1940,12 @@
       "Missing signature": [
         "Signatura no trobada"
       ],
+      "No calendars found to import": [
+        "No s'ha trobat cap calendari per importar"
+      ],
+      "No contacts found to import": [
+        "No s'ha trobat cap contacte per importar"
+      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -3728,6 +3734,9 @@
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
+      "Main": [
+        "Principal"
+      ],
       "Malware": [
         "Programari maliciós"
       ],
@@ -3859,6 +3868,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Per: ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "Barra d'eines"
       ],
       "Two-factor authentication code": [
         "Codi d'autenticació de dos factors"
@@ -4243,6 +4255,9 @@
       "Name": [
         "Nom"
       ],
+      "Name or email address": [
+        "Nom o adreça de correu electrònic"
+      ],
       "New name": [
         "Nom nou"
       ],
@@ -4358,6 +4373,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacte sembla idèntic.",
+        "${ countMergeableContacts } contactes semblen idèntics"
+      ],
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
       ],
@@ -4469,20 +4488,6 @@
     "Text": {
       "Settings": [
         "Preferències"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "data de creació del compte"
-      ],
-      "the last 12 months": [
-        "els darrers 12 mesos"
-      ],
-      "the last 3 months": [
-        "els darrers 3 mesos"
-      ],
-      "the last month": [
-        "el darrer mes"
       ]
     },
     "Time unit": {

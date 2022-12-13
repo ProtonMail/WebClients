@@ -207,6 +207,9 @@
       "Create link": [
         "建立連結"
       ],
+      "Create users": [
+        "建立使用者"
+      ],
       "Create your own": [
         "創建您的帳號"
       ],
@@ -740,6 +743,9 @@
       ],
       "Size": [
         "大小"
+      ],
+      "Skip verification": [
+        "略過驗證"
       ],
       "Sort": [
         "排序"
@@ -3076,6 +3082,9 @@
       "Trusted keys are not valid for sending": [
         "已信任的密鑰用於寄送時無效"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "嘗試僅使用字母、數字與 _.-"
+      ],
       "Unknown error": [
         "未知錯誤"
       ],
@@ -4366,6 +4375,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "金額低於下限 (${ amount })。"
+      ],
+      "An error occured while communicating with the extension": [
+        "與延伸功能通訊時發生錯誤"
       ],
       "and": [
         "和"
@@ -5687,6 +5699,9 @@
       "You have no saved payment methods.": [
         "您沒有任何已儲存的付款方法。"
       ],
+      "You may now start using the extension": [
+        "您現在可開始使用延伸功能"
+      ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "您必須使用由您所屬組織的系統管理員提供的備份組織金鑰密碼來啟用您的組織私密金鑰。"
       ],
@@ -6545,6 +6560,18 @@
       "Emails": [
         "電郵"
       ],
+      "Emails (all messages)": [
+        "電子郵件（全部訊息）"
+      ],
+      "Emails (last 12 months)": [
+        "電子郵件（最近十二個月）"
+      ],
+      "Emails (last 3 months)": [
+        "電子郵件（最近三個月）"
+      ],
+      "Emails (last month)": [
+        "電子郵件（上個月）"
+      ],
       "End date": [
         "結束日期"
       ],
@@ -6683,6 +6710,9 @@
       "Mailbox password": [
         "信箱密碼"
       ],
+      "Main": [
+        "主要"
+      ],
       "Manage categories": [
         "管理分類"
       ],
@@ -6715,6 +6745,9 @@
       ],
       "Name on card": [
         "持卡人姓名"
+      ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (通訊埠轉送)"
       ],
       "Navigation": [
         "巡覽"
@@ -7285,6 +7318,20 @@
         "啟用認證記錄"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "匯入來自 ${ itemsToImportCount } 資料夾的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "從 ${ itemsToImportCount } 資料夾中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "您可以為每個行事曆建立最多 ${ MAX_LINKS_PER_CALENDAR } 個連結。若要為此行事曆建立新連結，請先從下列清單中刪除一個。"
@@ -7690,6 +7737,14 @@
         "支援"
       ]
     },
+    "new_plans: Info": {
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -7738,14 +7793,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
-      ]
-    },
-    "new_plans: Info": {
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
       ]
     },
     "new_plans: Label": {
@@ -9065,20 +9112,6 @@
         "vCard 欄位"
       ]
     },
-    "Time period": {
-      "account creation date": [
-        "帳號建立時間"
-      ],
-      "the last 12 months": [
-        "最近 12 個月"
-      ],
-      "the last 3 months": [
-        "最近 3 個月"
-      ],
-      "the last month": [
-        "最近 1 個月"
-      ]
-    },
     "Time unit": {
       "${ hours } hours": [
         "${ hours } 小時"
@@ -9801,6 +9834,9 @@
       "Success": [
         "成功"
       ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
+        "成功地建立了 ${ localSuccessfullyCreatedUsers.length } 使用者帳號"
+      ],
       "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
         "成功創建 ${ successfullyCreatedUsers.length } 使用者帳號"
       ],
@@ -10251,6 +10287,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
       ],
+      "Skip verification?": [
+        "略過驗證？"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "您裝置上的日期與時間設置未同步。 ${ learnMore }"
       ],
@@ -10259,6 +10298,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "我們無法驗證此郵件伺服器。如果您確定可信任此伺服器，則可略過驗證。"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我們偵測到您的 DNS 配置有問題。請確保您的 DNS 記錄符合下列指示。如果問題持續，我們將需要關閉 DKIM 簽章。"

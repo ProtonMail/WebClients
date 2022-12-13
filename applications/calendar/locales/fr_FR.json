@@ -2350,6 +2350,9 @@
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
+      ],
       "Unknown error": [
         "Erreur inconnue"
       ],
@@ -3338,6 +3341,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Enter verification code. Digit ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
@@ -3971,6 +3977,18 @@
       "Emails": [
         "E-mails"
       ],
+      "Emails (all messages)": [
+        "E-mails (tous les messages)"
+      ],
+      "Emails (last 12 months)": [
+        "E-mails (12 derniers mois)"
+      ],
+      "Emails (last 3 months)": [
+        "E-mails (3 derniers mois)"
+      ],
+      "Emails (last month)": [
+        "E-mails (mois dernier)"
+      ],
       "Enable Beta Access": [
         "Activer l'accès à la version bêta"
       ],
@@ -4038,7 +4056,7 @@
         "Importer dans :"
       ],
       "Label messages as": [
-        "Labelliser les messages comme"
+        "Labelliser les messages"
       ],
       "Last 12 months only": [
         "Seulement les 12 derniers mois"
@@ -4057,6 +4075,9 @@
       ],
       "Mailbox password": [
         "Mot de passe de la messagerie"
+      ],
+      "Main": [
+        "Principale"
       ],
       "Manage categories": [
         "Gérer les catégories"
@@ -4157,6 +4178,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "À : ${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "Barre d'outils"
       ],
       "Two-factor authentication code": [
         "Code d’authentification à deux facteurs"
@@ -4278,6 +4302,24 @@
       ],
       "Your import is starting": [
         "Votre importation commence."
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages provenant de ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages provenant de ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }. "
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }. "
       ]
     },
     "Message": {
@@ -4864,6 +4906,9 @@
       "Name": [
         "Nom"
       ],
+      "Name or email address": [
+        "Nom ou adresse électronique"
+      ],
       "Password": [
         "Mot de passe"
       ],
@@ -5128,9 +5173,6 @@
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
         "La réduction sera maintenue lors du renouvellement jusqu'à ce que l'abonnement soit annulé ou modifié."
-      ],
-      "Your subscription will automatically renew at the standard rate at the end of your billing cycle": [
-        "Votre abonnement se renouvellera automatiquement au prix habituel à la fin de votre cycle de facturation."
       ]
     },
     "specialoffer: Link": {
@@ -5541,20 +5583,6 @@
     "Text": {
       "Settings": [
         "Paramètres"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "date de création du compte"
-      ],
-      "the last 12 months": [
-        "les 12 derniers mois"
-      ],
-      "the last 3 months": [
-        "les 3 derniers mois"
-      ],
-      "the last month": [
-        "le dernier mois"
       ]
     },
     "Time unit": {
@@ -6019,6 +6047,10 @@
       "Password must contain at least ${ length } character": [
         "Le mot de passe doit comporter au moins ${ length } caractère.",
         "Le mot de passe doit comporter au moins ${ length } caractères."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
       ]
     },
     "Video control": {
