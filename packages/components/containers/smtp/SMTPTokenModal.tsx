@@ -7,7 +7,6 @@ import {
     Copy,
     Form,
     InputFieldTwo,
-    Label,
     ModalProps,
     ModalTwo,
     ModalTwoContent,
@@ -24,7 +23,6 @@ import { createToken } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Address } from '@proton/shared/lib/interfaces';
-import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 const Steps = {
@@ -51,7 +49,6 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
     const title =
         step === Steps.TokenForm ? c('Title').t`Generate SMTP token` : c('Title').t`Token successfully generated`;
     const emailAddress = addresses.find(({ ID }) => ID === addressID)?.Email || '';
-    const tokenParts = token.match(/.{1,4}/g) || []; // Split token in 4 characters parts
 
     const handleClose = loading ? noop : onClose;
 
@@ -104,23 +101,18 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
             <>
                 <p>{c('Info')
                     .t`Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.`}</p>
-                <Label className="text-bold block" htmlFor="smtp-username">{c('Label').t`SMTP username`}</Label>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
-                    <code id="smtp-username" className="user-select bg-weak flex-item-fluid p0-75 rounded">
-                        {emailAddress}
-                    </code>
-                    <Copy value={emailAddress} className="flex-item-noshrink ml0-5" />
+                    <InputFieldTwo
+                        id="smtp-username"
+                        label={c('Label').t`SMTP username`}
+                        readOnly
+                        value={emailAddress}
+                    />
+                    <Copy color="norm" shape="solid" value={emailAddress} className="flex-item-noshrink ml0-5" />
                 </div>
-                <Label className="text-bold block" htmlFor="smtp-token">{c('Label').t`SMTP token`}</Label>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
-                    <code id="smtp-token" className="user-select bg-weak flex-item-fluid p0-75 rounded">
-                        {tokenParts.map((part, index) => (
-                            <span key={`${part}${index}`} className={clsx(index > 0 && 'ml0-5')}>
-                                {part}
-                            </span>
-                        ))}
-                    </code>
-                    <Copy value={token} className="flex-item-noshrink ml0-5" />
+                    <InputFieldTwo id="smtp-token" label={c('Label').t`SMTP token`} readOnly value={token} />
+                    <Copy color="norm" shape="solid" value={token} className="flex-item-noshrink ml0-5" />
                 </div>
                 <p className="color-weak">{c('Info')
                     .t`This token won’t be available after you close this window, and you should not share it with anyone.`}</p>
@@ -141,7 +133,8 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
         }
         return (
             <>
-                <PrimaryButton className="mlauto" onClick={handleClose}>{c('Action').t`Close`}</PrimaryButton>
+                <Button shape="outline" color="norm" className="mlauto" onClick={handleClose}>{c('Action')
+                    .t`Close`}</Button>
             </>
         );
     };
