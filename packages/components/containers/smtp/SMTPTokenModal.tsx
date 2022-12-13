@@ -46,8 +46,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
     const customAddresses = addresses.filter(({ Type }) => Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN);
     const [addressID, setAddressID] = useState(customAddresses[0].ID);
     const api = useApi();
-    const title =
-        step === Steps.TokenForm ? c('Title').t`Generate SMTP token` : c('Title').t`Token successfully generated`;
+    const title = step === Steps.TokenForm ? c('Title').t`Generate SMTP token` : c('Title').t`Your SMTP token`;
     const emailAddress = addresses.find(({ ID }) => ID === addressID)?.Email || '';
 
     const handleClose = loading ? noop : onClose;
@@ -108,11 +107,14 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         readOnly
                         value={emailAddress}
                     />
-                    <Copy color="norm" shape="solid" value={emailAddress} className="flex-item-noshrink ml0-5" />
+                    <Copy color="norm" shape="solid" value={emailAddress} className="flex-item-noshrink ml0-5">{c(
+                        'Action'
+                    ).t`Copy`}</Copy>
                 </div>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
                     <InputFieldTwo id="smtp-token" label={c('Label').t`SMTP token`} readOnly value={token} />
-                    <Copy color="norm" shape="solid" value={token} className="flex-item-noshrink ml0-5" />
+                    <Copy color="norm" shape="solid" value={token} className="flex-item-noshrink ml0-5">{c('Action')
+                        .t`Copy`}</Copy>
                 </div>
                 <p className="color-weak">{c('Info')
                     .t`This token won’t be available after you close this window, and you should not share it with anyone.`}</p>
