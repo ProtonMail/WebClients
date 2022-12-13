@@ -58,7 +58,12 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, ...rest }: Props) =>
         <AlertModal
             title={title}
             buttons={[
-                <Button color="danger" onClick={() => withLoading(handleDelete())} loading={loading}>
+                <Button
+                    color="danger"
+                    data-testid="delete-button"
+                    onClick={() => withLoading(handleDelete())}
+                    loading={loading}
+                >
                     {c('Action').t`Delete`}
                 </Button>,
                 <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>,
