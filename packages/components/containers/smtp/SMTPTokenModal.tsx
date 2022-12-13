@@ -25,6 +25,8 @@ import { maxLengthValidator, requiredValidator } from '@proton/shared/lib/helper
 import { Address } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import './SMTPTokenModal.scss';
+
 const Steps = {
     TokenForm: 0,
     TokenValue: 1,
@@ -107,13 +109,13 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         readOnly
                         value={emailAddress}
                     />
-                    <Copy color="norm" shape="solid" value={emailAddress} className="flex-item-noshrink ml0-5">{c(
+                    <Copy color="norm" shape="solid" value={emailAddress} className="smtp-token-copy relative flex-item-noshrink ml0-5">{c(
                         'Action'
                     ).t`Copy`}</Copy>
                 </div>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
                     <InputFieldTwo id="smtp-token" label={c('Label').t`SMTP token`} readOnly value={token} />
-                    <Copy color="norm" shape="solid" value={token} className="flex-item-noshrink ml0-5">{c('Action')
+                    <Copy color="norm" shape="solid" value={token} className="smtp-token-copy relative flex-item-noshrink ml0-5">{c('Action')
                         .t`Copy`}</Copy>
                 </div>
                 <p className="color-weak">{c('Info')
