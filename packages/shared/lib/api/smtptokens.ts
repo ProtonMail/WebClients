@@ -1,8 +1,8 @@
-export const createToken = (AddressId: string, Name: string) => ({
+export const createToken = (AddressID: string, Name: string) => ({
     method: 'post',
     url: 'mail/v4/smtptokens',
     data: {
-        AddressId,
+        AddressID,
         Name,
     },
 });
