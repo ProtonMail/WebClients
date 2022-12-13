@@ -518,6 +518,9 @@
       "Requires a verified recovery email address": [
         "Requer um endereço de e-mail de recuperação confirmado"
       ],
+      "Resend code": [
+        "Reenviar código"
+      ],
       "Reset credentials": [
         "Repor credenciais"
       ],
@@ -3927,6 +3930,10 @@
         "O seguinte endereço é indisponível.",
         "Os seguintes endereços são indisponíveis."
       ],
+      "The following address was not created.": [
+        "O endereço seguinte não foi criado.",
+        "Os endereços seguintes não foram criados."
+      ],
       "The name will be visible to your users while they are logged in.": [
         "O nome estará visível aos utilizadores enquanto estiverem em sessão."
       ],
@@ -5936,6 +5943,18 @@
       ]
     },
     "Organization capacity error": {
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "O seu plano inclui um máximo de mais ${ availableAddresses } endereço.",
+        "O seu plano inclui um máximo de mais ${ availableAddresses } endereços."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "O seu plano inclui um máximo de mais ${ availableNumberOfMembers } utilizador organizacional.",
+        "O seu plano inclui um máximo de mais ${ availableNumberOfMembers } utilizadores organizacionais."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "O seu plano inclui um máximo de mais ${ availableVPNAccess } conta VPN.",
+        "O seu plano inclui um máximo de mais ${ availableVPNAccess } contas VPN."
+      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "O seu plano inclui um máximo de mais ${ humanReadableAvailableSpace } de armazenamento."
       ]
@@ -6567,20 +6586,6 @@
         "Campo vCard"
       ]
     },
-    "Time period": {
-      "account creation date": [
-        "data de criação da conta"
-      ],
-      "the last 12 months": [
-        "os últimos 12 meses"
-      ],
-      "the last 3 months": [
-        "os últimos 3 meses"
-      ],
-      "the last month": [
-        "o último mês"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } hora",
@@ -6774,6 +6779,10 @@
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Criar o utilizador ${ selectedUserIds.length }",
+        "Criar os utilizadores ${ selectedUserIds.length }"
+      ],
       "Create public link": [
         "Criar ligação pública"
       ],
@@ -6896,6 +6905,10 @@
       ],
       "External PGP settings": [
         "Definições de PGP externo"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Falha na criação da conta de utilizador ${ failedUsers.length }.",
+        "Falha na criação das contas de utilizador ${ failedUsers.length }."
       ],
       "Filters": [
         "Filtros"
@@ -7182,6 +7195,10 @@
       ],
       "Success": [
         "Sucesso"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Conta ${ localSuccessfullyCreatedUsers.length } criada",
+        "Contas ${ localSuccessfullyCreatedUsers.length } criadas"
       ],
       "Switch to one-password mode": [
         "Mudar para modo de senha única"

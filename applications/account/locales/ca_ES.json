@@ -2670,6 +2670,12 @@
       "No active sessions": [
         "No hi ha sessions actives"
       ],
+      "No calendars found to import": [
+        "No s'ha trobat cap calendari per importar"
+      ],
+      "No contacts found to import": [
+        "No s'ha trobat cap contacte per importar"
+      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -3061,8 +3067,17 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
+        "S'ha produït un error llegint el fitxer \"${ formattedFilename }\". El fitxer no té el format adequat."
+      ],
+      "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "S'ha produït un error carregant el vostre fitxer \"${ formattedFilename }\". La mida màxima del fitxer és de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
       "An error occurred uploading your file. No file has been selected.": [
         "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
+      ],
+      "Your file \"${ formattedFilename }\" is empty.": [
+        "El vostre fitxer \"${ formattedFilename }\" està buit."
       ]
     },
     "Error message": {
@@ -3097,6 +3112,9 @@
       ]
     },
     "Error message, unsubscribe": {
+      "Please ${ signIn } to update your email subscription preferences.": [
+        "Si us plau ${ signIn } per actualitzar les preferències de subscripció de correu."
+      ],
       "sign in": [
         "inicia la sessió"
       ],
@@ -3212,6 +3230,9 @@
       ]
     },
     "fido2: Action": {
+      "Add security key": [
+        "Afegir clau de seguretat"
+      ],
       "Delete key": [
         "Eliminar clau"
       ]
@@ -3228,8 +3249,25 @@
       ]
     },
     "fido2: Label": {
+      "Key name": [
+        "Nom de clau"
+      ],
       "Security key": [
         "Clau de seguretat"
+      ]
+    },
+    "fido2: Title": {
+      "Delete security key?": [
+        "Eliminar clau de seguretat?"
+      ],
+      "Disable 2FA via security key?": [
+        "Desactivar 2FA amb clau de seguretat?"
+      ],
+      "Registered security keys": [
+        "Claus de seguretat registrades"
+      ],
+      "Security key registered": [
+        "Clau de seguretat registrada"
       ]
     },
     "file size format": {
@@ -3345,6 +3383,11 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 correus electrònics al mes)"
+      ]
+    },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Ja tens un compte? ${ signIn }"
       ]
     },
     "Go to sign up": {
@@ -3883,6 +3926,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } connexió per a ${ VPN_APP_NAME } (permet connectar més dispositius a VPN)",
+        "+${ organization.BonusVPN } connexions per a ${ VPN_APP_NAME } (permet connectar més dispositius a VPN)"
       ],
       "10 email addresses": [
         "10 adreces de correu"
@@ -5906,6 +5953,9 @@
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
+      "Main": [
+        "Principal"
+      ],
       "Manage categories": [
         "Gestiona les categories"
       ],
@@ -6231,6 +6281,11 @@
       ],
       "Recovery phrase": [
         "Frase de recuperació"
+      ]
+    },
+    "Label for adding a new custom domain": {
+      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
+        "Afegeixi un domini propi al seu compte de ${ MAIL_APP_NAME }."
       ]
     },
     "Label for default event notifications": {
@@ -6729,6 +6784,11 @@
         "Nom de etiqueta"
       ]
     },
+    "new_plans": {
+      "Highest VPN speed": [
+        "La velocitat VPN més alta"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar amb el gratuït"
@@ -6845,6 +6905,9 @@
       "Custom email domains": [
         "Dominis de correu personalitzats"
       ],
+      "DNS leak prevention": [
+        "Protecció contra fuites de DNS"
+      ],
       "Encrypted contact details": [
         "Detalls de contacte xifrats"
       ],
@@ -6858,6 +6921,12 @@
       "HTML signatures": [
         "Signatures HTML"
       ],
+      "Kill switch/always-on VPN": [
+        "Kill switch /VPN sempre activa"
+      ],
+      "P2P/BitTorrent": [
+        "P2P/BitTorrent"
+      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
@@ -6866,6 +6935,12 @@
       ],
       "Secure Core servers": [
         "Servidors Secure Core"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no conservar registres"
+      ],
+      "Tor over VPN": [
+        "Tor sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
@@ -7545,6 +7620,11 @@
         "Llegint els correus electrònics d'usuaris no privats"
       ]
     },
+    "Select file": {
+      "Upload CSV file": [
+        "Puja fitxer CSV"
+      ]
+    },
     "Select files": {
       "Browse": [
         "Cercar"
@@ -8054,20 +8134,6 @@
       ],
       "vCard field": [
         "Camp vCard"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "data de creació del compte"
-      ],
-      "the last 12 months": [
-        "els darrers 12 mesos"
-      ],
-      "the last 3 months": [
-        "els darrers 3 mesos"
-      ],
-      "the last month": [
-        "el darrer mes"
       ]
     },
     "Time unit": {
@@ -9116,11 +9182,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } a ${ numberOfCountries } país",
         "${ numberOfServers } a ${ numberOfCountries } països"
-      ]
-    },
-    "vpn: Info": {
-      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
-        "Obre l'extensió ${ VPN_APP_NAME } del navegador per a protegir-te mentre naveguis"
       ]
     },
     "VPNClient": {
