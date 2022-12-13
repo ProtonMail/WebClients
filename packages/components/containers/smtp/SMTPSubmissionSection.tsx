@@ -14,6 +14,7 @@ import {
     TableBody,
     TableHeader,
     TableRow,
+    useActiveBreakpoint,
     useAddresses,
     useApi,
     useLoading,
@@ -27,6 +28,7 @@ import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 
 import SMTPTokenModal from './SMTPTokenModal';
 
@@ -53,7 +55,8 @@ const SMTPSubmissionSection = () => {
     const [confirmModalProps, setConfirmModalOpen, renderConfirmModal] = useModalState();
     const [generateTokenModalProps, setGenerateTokenModalOpen, renderGenerateTokenModal] = useModalState();
     const [tokens, setTokens] = useState<SmtpTokens[]>([]);
-
+    const { isDesktop } = useActiveBreakpoint();
+    const showDetails = isDesktop;
     const submissionTokenAvailable = hasSMTPSubmission(organization);
     const tokenNameToRemove = tokens.find(({ SmtpTokenID }) => SmtpTokenID === tokenIDToRemove)?.Name || '';
     const hasTokens = tokens.length > 0;
@@ -61,10 +64,10 @@ const SMTPSubmissionSection = () => {
     const headers = [
         c('Header for table').t`Token name`,
         c('Header for table').t`Email address`,
-        c('Header for table').t`Created`,
-        c('Header for table').t`Last used`,
+        showDetails && c('Header for table').t`Created`,
+        showDetails && c('Header for table').t`Last used`,
         c('Header for table').t`Actions`,
-    ];
+    ].filter(isTruthy);
     const headersLength = headers.length;
 
     const openGenerateTokenModal = () => {
@@ -153,16 +156,17 @@ const SMTPSubmissionSection = () => {
                             cells={[
                                 token.Name,
                                 addressMap.get(token.AddressID) || '',
-                                format(fromUnixTime(token.CreateTime), 'PPp', { locale: dateLocale }),
-                                token.LastUsedTime
-                                    ? format(fromUnixTime(token.LastUsedTime), 'PPp', { locale: dateLocale })
-                                    : '-',
+                                showDetails && format(fromUnixTime(token.CreateTime), 'PPp', { locale: dateLocale }),
+                                showDetails &&
+                                    (token.LastUsedTime
+                                        ? format(fromUnixTime(token.LastUsedTime), 'PPp', { locale: dateLocale })
+                                        : '-'),
                                 <Button
                                     size="small"
                                     disabled={loadingTokens}
                                     onClick={() => confirmRemoveToken(token.SmtpTokenID)}
                                 >{c('Action').t`Delete`}</Button>,
-                            ]}
+                            ].filter(isTruthy)}
                         />
                     ))}
                     {!loadingTokens && !hasTokens && (
