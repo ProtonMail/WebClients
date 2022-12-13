@@ -12,10 +12,11 @@
     },
     "dependencies": {
         "@noble/ed25519": "1.7.3",
+        "@proton/cross-storage": "workspace:packages/cross-storage",
+        "@proton/crypto": "workspace:packages/crypto",
         "@proton/shared": "workspace:packages/shared",
         "@types/pkijs": "0.0.14",
-        "pkijs": "^3.0.14",
-        "pmcrypto": "npm:@protontech/pmcrypto@^6.7.1"
+        "pkijs": "^3.0.14"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",

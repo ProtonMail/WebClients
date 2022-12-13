@@ -3698,7 +3698,9 @@ __metadata:
     ttag: ^1.7.24
     typescript: ^4.9.5
   peerDependencies:
+    "@proton/cross-storage": "*"
     "@proton/crypto": "*"
+    "@proton/key-transparency": "*"
     "@proton/shared": "*"
     "@proton/srp": "*"
     date-fns: ^2.29.3
@@ -3841,6 +3843,8 @@ __metadata:
   resolution: "@proton/key-transparency@workspace:packages/key-transparency"
   dependencies:
     "@noble/ed25519": 1.7.3
+    "@proton/cross-storage": "workspace:packages/cross-storage"
+    "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/shared": "workspace:packages/shared"
     "@types/jasmine": ^4.3.1
@@ -3854,7 +3858,6 @@ __metadata:
     karma-webpack: ^5.0.0
     pkijs: ^3.0.14
     playwright: ^1.31.2
-    pmcrypto: "npm:@protontech/pmcrypto@^6.7.1"
     ts-loader: ^9.4.2
     typescript: ^4.9.5
     webpack: ^5.76.1
@@ -5825,15 +5828,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bn.js@npm:*":
-  version: 5.1.0
-  resolution: "@types/bn.js@npm:5.1.0"
-  dependencies:
-    "@types/node": "*"
-  checksum: 1dc1cbbd7a1e8bf3614752e9602f558762a901031f499f3055828b5e3e2bba16e5b88c27b3c4152ad795248fbe4086c731a5c4b0f29bb243f1875beeeabee59c
-  languageName: node
-  linkType: hard
-
 "@types/body-parser@npm:*":
   version: 1.19.2
   resolution: "@types/body-parser@npm:1.19.2"
@@ -6360,15 +6354,6 @@ __metadata:
   version: 4.1.2
   resolution: "@types/npmlog@npm:4.1.2"
   checksum: 8ea4c0578839a8a4436bb8fb303efec3b3a81e99c87bada5afdde5f3604696a09077c9b7ff0e48c9c30365f7c716ad4f65329f5259072dc86a03bc58faf5afa9
-  languageName: node
-  linkType: hard
-
-"@types/openpgp@npm:^4.4.18":
-  version: 4.4.18
-  resolution: "@types/openpgp@npm:4.4.18"
-  dependencies:
-    "@types/bn.js": "*"
-  checksum: 3e0cec9aaad008f09a6d771eef3d1fc5fdb24b323cd0a4e2abb24a89571b00236a76509b5d2f1712c29f00213662b01e9aa676a8817331d89a5f06a59efa7b87
   languageName: node
   linkType: hard
 
@@ -22475,7 +22460,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:2.6.7, node-fetch@npm:^2.1.2, node-fetch@npm:^2.3.0, node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.5, node-fetch@npm:^2.6.7":
+"node-fetch@npm:2.6.7, node-fetch@npm:^2.3.0, node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.5, node-fetch@npm:^2.6.7":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
   dependencies:
@@ -22573,15 +22558,6 @@ fsevents@^1.2.7:
     util: ^0.11.0
     vm-browserify: ^1.0.1
   checksum: 41fa7927378edc0cb98a8cc784d3f4a47e43378d3b42ec57a23f81125baa7287c4b54d6d26d062072226160a3ce4d8b7a62e873d2fb637aceaddf71f5a26eca0
-  languageName: node
-  linkType: hard
-
-"node-localstorage@npm:~1.3.0":
-  version: 1.3.1
-  resolution: "node-localstorage@npm:1.3.1"
-  dependencies:
-    write-file-atomic: ^1.1.4
-  checksum: adbeb54e63a16a13fc28ca92ca616a79da039822962d6d9c8d026779a9c9ddad9c40d848c324ea4472193dd1c06b48e153047ef45d3efd7741d13462ec0aec37
   languageName: node
   linkType: hard
 
@@ -23145,17 +23121,6 @@ fsevents@^1.2.7:
   dependencies:
     asn1.js: ^5.0.0
   checksum: ea3deecb41557184c6bdd89a1ee2ed9172e6da5fb72bb6762442b434efbac01823c521db0842a5dc3db64b49d8f4bceaa6949e5ed176cfbf9de3821a840f4461
-  languageName: node
-  linkType: hard
-
-"openpgp@npm:^4.10.8":
-  version: 4.10.10
-  resolution: "openpgp@npm:4.10.10"
-  dependencies:
-    asn1.js: ^5.0.0
-    node-fetch: ^2.1.2
-    node-localstorage: ~1.3.0
-  checksum: 9d38c879fa9af437125da9f1a33be3a667509668ff18583bb2c48f882237425bcd6c372d7e740f62cbe4daf97ef780e007f427aa42dc0f50722bdde4e61c3433
   languageName: node
   linkType: hard
 
@@ -24181,16 +24146,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@npm:@protontech/pmcrypto@^6.7.1":
-  version: 6.7.1
-  resolution: "@protontech/pmcrypto@npm:6.7.1"
-  dependencies:
-    "@types/openpgp": ^4.4.18
-    openpgp: ^4.10.8
-  checksum: 4ef7e7a9fc3ed766fa5090e8e4549ea520c21ffd47b81b0e29ed34cf68309bffd57d735421f4a41e16224d37850b8d0061096a1f304ab234eb670805bc8cec8f
-  languageName: node
-  linkType: hard
-
 "pnp-webpack-plugin@npm:1.6.4":
   version: 1.6.4
   resolution: "pnp-webpack-plugin@npm:1.6.4"
@@ -25091,6 +25046,7 @@ fsevents@^1.2.7:
   dependencies:
     "@babel/preset-typescript": ^7.21.0
     "@proton/components": "workspace:packages/components"
+    "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
@@ -25157,6 +25113,7 @@ fsevents@^1.2.7:
   dependencies:
     "@babel/preset-typescript": ^7.21.0
     "@proton/components": "workspace:packages/components"
+    "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
@@ -25199,6 +25156,7 @@ fsevents@^1.2.7:
     "@mattiasbuelens/web-streams-adapter": 0.1.0
     "@openpgp/web-stream-tools": ^0.0.13
     "@proton/components": "workspace:packages/components"
+    "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
@@ -25260,6 +25218,7 @@ fsevents@^1.2.7:
   dependencies:
     "@babel/plugin-transform-runtime": ^7.21.0
     "@proton/components": "workspace:packages/components"
+    "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
@@ -27962,13 +27921,6 @@ fsevents@^1.2.7:
   version: 1.12.2
   resolution: "slick@npm:1.12.2"
   checksum: 02b586dac1ce12db4e6d3b89e61962e6e07966875b8099ba1d6fac2faa8c88f37450293c27706f296556e4698b9e139bfee4055b845a7c266eca4650609d7603
-  languageName: node
-  linkType: hard
-
-"slide@npm:^1.1.5":
-  version: 1.1.6
-  resolution: "slide@npm:1.1.6"
-  checksum: 5768635d227172e215b7a1a91d32f8781f5783b4961feaaf3d536bbf83cc51878928c137508cde7659fea6d7c04074927cab982731302771ee0051518ff24896
   languageName: node
   linkType: hard
 
@@ -32167,17 +32119,6 @@ fsevents@^1.2.7:
   version: 1.0.2
   resolution: "wrappy@npm:1.0.2"
   checksum: 159da4805f7e84a3d003d8841557196034155008f817172d4e986bd591f74aa82aa7db55929a54222309e01079a65a92a9e6414da5a6aa4b01ee44a511ac3ee5
-  languageName: node
-  linkType: hard
-
-"write-file-atomic@npm:^1.1.4":
-  version: 1.3.4
-  resolution: "write-file-atomic@npm:1.3.4"
-  dependencies:
-    graceful-fs: ^4.1.11
-    imurmurhash: ^0.1.4
-    slide: ^1.1.5
-  checksum: ed5a1fc812abe99dd03cd42be145a5e13af42609e19873244510c71b2e261a169db6d06cb9a92b6b0489dd05f045e53bf464d9ad7713e443934af9b81a9cc65d
   languageName: node
   linkType: hard
 

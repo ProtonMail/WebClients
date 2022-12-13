@@ -1,6 +1,5 @@
 export interface GetEpochsParams {
     SinceEpochID?: number;
-    Email?: string;
     Page?: number;
     PageSize?: number;
 }
