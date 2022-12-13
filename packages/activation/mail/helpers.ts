@@ -52,9 +52,9 @@ export const mappingHasLabelsTooLong = (mapping: MailImportMapping[]) => {
 export const nameAlreadyExists = (
     name: string,
     collection: Pick<Label, 'Path'>[] | Pick<Folder, 'Path'>[],
-    source?: string
+    folderFullPath: string
 ) => {
-    return collection.some((item) => item.Path === name && name === source);
+    return collection.some((item) => item.Path === name && name === folderFullPath);
 };
 
 export const mappingHasUnavailableNames = (
@@ -67,12 +67,12 @@ export const mappingHasUnavailableNames = (
         .map((m) => (isLabelMapping ? m.Destinations.Labels?.[0]?.Name : unescapeSlashes(m.Destinations.FolderPath)))
         .filter(isTruthy);
 
-    return destinations.some((dest) => nameAlreadyExists(dest, collection));
+    return destinations.some((dest, i) => nameAlreadyExists(dest, collection, mapping[i].Source));
 };
 
 export const mappingHasReservedNames = (mapping: MailImportMapping[]) => {
     return mapping.some((m) => {
-        const [firstLevel] = splitEscaped(m.Destinations.FolderPath);
+        const [firstLevel] = splitEscaped(m.Destinations.FolderPath?.toLocaleLowerCase());
         return m.checked && RESERVED_NAMES.includes(firstLevel);
     });
 };
