@@ -57,6 +57,7 @@ interface CalendarMemberRowProps {
     status: MEMBER_INVITATION_STATUS;
     displayPermissions: boolean;
     displayStatus: boolean;
+    canEdit: boolean;
     onPermissionsUpdate: (newPermissions: number) => Promise<void>;
     onDelete: () => Promise<void>;
 }
@@ -69,6 +70,7 @@ const CalendarMemberRow = ({
     status,
     displayPermissions,
     displayStatus,
+    canEdit,
     onPermissionsUpdate,
     onDelete,
 }: CalendarMemberRowProps) => {
@@ -83,7 +85,21 @@ const CalendarMemberRow = ({
         setPerms(newPermissions);
     };
 
+    const availablePermissions = Object.entries(permissionLabelMap);
     const isStatusRejected = status === MEMBER_INVITATION_STATUS.REJECTED;
+
+    const permissionsSelect = (
+        <SelectTwo
+            loading={isLoadingPermissionsUpdate}
+            value={perms}
+            disabled={!canEdit}
+            onChange={handleChangePermissions}
+        >
+            {availablePermissions.map(([value, label]) => (
+                <Option key={value} value={+value} title={label} />
+            ))}
+        </SelectTwo>
+    );
 
     return (
         <TableRow>
@@ -107,35 +123,13 @@ const CalendarMemberRow = ({
                         )}
 
                         {displayPermissions && !isStatusRejected && (
-                            <div className="no-desktop no-tablet on-mobile-inline-flex">
-                                <SelectTwo
-                                    loading={isLoadingPermissionsUpdate}
-                                    value={perms}
-                                    onChange={handleChangePermissions}
-                                >
-                                    {Object.entries(permissionLabelMap).map(([value, label]) => (
-                                        <Option key={value} value={+value} title={label} />
-                                    ))}
-                                </SelectTwo>
-                            </div>
+                            <div className="no-desktop no-tablet on-mobile-inline-flex">{permissionsSelect}</div>
                         )}
                     </div>
                 </div>
             </TableCell>
             {displayPermissions && (
-                <TableCell className="no-mobile">
-                    {!isStatusRejected && (
-                        <SelectTwo
-                            loading={isLoadingPermissionsUpdate}
-                            value={perms}
-                            onChange={handleChangePermissions}
-                        >
-                            {Object.entries(permissionLabelMap).map(([value, label]) => (
-                                <Option key={value} value={+value} title={label} />
-                            ))}
-                        </SelectTwo>
-                    )}
-                </TableCell>
+                <TableCell className="no-mobile">{!isStatusRejected && permissionsSelect}</TableCell>
             )}
             {displayStatus && (
                 <TableCell className="no-mobile no-tablet">
