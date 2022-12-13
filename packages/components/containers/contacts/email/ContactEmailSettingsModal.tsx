@@ -339,6 +339,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                     disabled={loadingSave || loadingPgpSettings}
                     type="submit"
                     onClick={() => withLoadingSave(handleSubmit(model))}
+                    data-testid="email-settings:save"
                 >
                     {c('Action').t`Save`}
                 </Button>

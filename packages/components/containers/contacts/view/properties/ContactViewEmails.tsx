@@ -86,7 +86,13 @@ const ContactViewEmails = ({
                                     <>
                                         {!isOwnAddress && (
                                             <Tooltip title={c('Title').t`Email settings`}>
-                                                <Button icon color="weak" shape="outline" onClick={handleSettings}>
+                                                <Button
+                                                    icon
+                                                    color="weak"
+                                                    shape="outline"
+                                                    onClick={handleSettings}
+                                                    data-testid={`${email.value}:email-settings`}
+                                                >
                                                     <Icon name="cog-wheel" alt={c('Action').t`Email settings`} />
                                                 </Button>
                                             </Tooltip>
@@ -100,6 +106,7 @@ const ContactViewEmails = ({
                                             tooltip={c('Title').t`Contact group`}
                                             onGroupEdit={onGroupEdit}
                                             onUpgrade={onUpgrade}
+                                            data-testid={`${email.value}:groups-dropdown`}
                                         >
                                             <Icon name="users" alt={c('Action').t`Contact group`} />
                                         </ContactGroupDropdown>
@@ -111,6 +118,7 @@ const ContactViewEmails = ({
                                                     text: c('Success').t`Email address copied to clipboard`,
                                                 });
                                             }}
+                                            data-testid={`${email.value}:email-copy`}
                                         />
                                     </>
                                 )}
