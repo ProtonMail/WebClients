@@ -67,7 +67,7 @@ export const mappingHasUnavailableNames = (
         .map((m) => (isLabelMapping ? m.Destinations.Labels?.[0]?.Name : unescapeSlashes(m.Destinations.FolderPath)))
         .filter(isTruthy);
 
-    return destinations.some((dest, i) => nameAlreadyExists(dest, collection, mapping[i].Source));
+    return destinations.some((dest, index) => nameAlreadyExists(dest, collection, mapping[index].Source));
 };
 
 export const mappingHasReservedNames = (mapping: MailImportMapping[]) => {
