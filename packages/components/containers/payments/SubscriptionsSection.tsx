@@ -105,6 +105,7 @@ const SubscriptionsSection = () => {
     });
 
     const asterisk = <span>* </span>;
+    const asteriskForCurrent = upcoming ? undefined : asterisk;
 
     const renewalDate = upcoming?.PeriodEnd ?? current.PeriodEnd;
 
@@ -129,6 +130,7 @@ const SubscriptionsSection = () => {
                             {...current}
                             PricePerCycle={currentCheckout.withDiscountPerCycle}
                             status={{ type: 'success', label: c('Subscription status').t`Active` }}
+                            asterisk={asteriskForCurrent}
                         ></SubscriptionRow>
                         {upcoming && (
                             <SubscriptionRow

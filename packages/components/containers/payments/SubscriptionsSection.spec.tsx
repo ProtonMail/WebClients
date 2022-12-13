@@ -653,7 +653,7 @@ describe('SubscriptionsSection', () => {
     it('should render current subscription', () => {
         const { container } = render(<SubscriptionsSection />);
 
-        expect(container).toHaveTextContent('Mail Plus');
+        expect(container).toHaveTextContent('Mail Plus*');
         expect(container).toHaveTextContent('4.99');
         expect(container).toHaveTextContent('Active');
 
