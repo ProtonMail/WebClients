@@ -23,6 +23,7 @@ import {
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
     ProtonMailBridgeSection,
+    SMTPSubmissionSection,
     SenderImagesSection,
     SpamFiltersSection,
     ThemesSection,
@@ -110,6 +111,7 @@ const MailSettingsRouter = ({
             <Route path={getSectionPath(path, imap)}>
                 <PrivateMainSettingsArea config={imap}>
                     <ProtonMailBridgeSection />
+                    <SMTPSubmissionSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={`${path}/import-export`}>
