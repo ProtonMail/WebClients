@@ -530,6 +530,9 @@
       "Skip": [
         "Пропустити"
       ],
+      "Skip verification": [
+        "Пропустити перевірку"
+      ],
       "Start import": [
         "Розпочати імпорт"
       ],
@@ -644,7 +647,7 @@
         "Результатів не знайдено."
       ],
       "Please try another search term.": [
-        "Спробуйте інший термін пошуку."
+        "Спробуйте інший пошуковий термін."
       ],
       "You don't have any contacts.": [
         "У вас немає контактів."
@@ -691,7 +694,7 @@
         "Бета-доступ дає вам змогу користуватися тестовою версією ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME } до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
-        "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
+        "У разі виникнення проблем, ви завжди можете вимкнути бета-доступ."
       ]
     },
     "Bug category": {
@@ -723,7 +726,7 @@
         "Проблема з імпортом / експортом"
       ],
       "Installation problem": [
-        "Проблема з встановленням"
+        "Проблема зі встановленням"
       ],
       "Mail problem": [
         "Проблема з поштою"
@@ -815,7 +818,7 @@
         "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "З моменту останнього оновлення минуло понад 12 годин — ${ CALENDAR_APP_NAME } спробує оновити календар за кілька годин."
+        "Від часу останнього оновлення минуло понад 12 годин — ${ CALENDAR_APP_NAME } спробує оновити календар за кілька годин."
       ]
     },
     "Collapsible tooltip": {
@@ -2130,7 +2133,7 @@
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
       ],
       "Try using only letters, numerals, and _.-": [
-        "Спробуйте використовувати лише букви, цифри та _.-"
+        "Спробуйте використовувати лише літери, цифри та символи _.-"
       ],
       "Unknown error": [
         "Невідома помилка"
@@ -2171,7 +2174,7 @@
         "Помилка під час вивантаження вашого файлу. Файл не вибрано."
       ],
       "An unexpected error occurred. Import must be restarted.": [
-        "Сталася неочікувана помилка. Необхідно перезапустити імпорт."
+        "Сталася неочікувана помилка. Потрібно перезапустити імпорт."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
         "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подію.",
@@ -2202,7 +2205,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Виникла помилка при прочитанні вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -4183,6 +4186,18 @@
       "Emails": [
         "Адреси е-пошти"
       ],
+      "Emails (all messages)": [
+        "Е-пошта (усі повідомлення)"
+      ],
+      "Emails (last 12 months)": [
+        "Е-пошта (останні 12 місяців)"
+      ],
+      "Emails (last 3 months)": [
+        "Е-пошта (останні 3 місяці)"
+      ],
+      "Emails (last month)": [
+        "Е-пошта (останній місяць)"
+      ],
       "Enable Beta Access": [
         "Увімкнути бета-доступ"
       ],
@@ -4559,29 +4574,17 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } теки з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } тек з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } тек з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } тек з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } міткою з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } мітками з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } мітками з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } мітками з усіх ${ itemsToImportCount }, починаючи з ${ periodFragment } та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -5041,8 +5044,8 @@
       "Name": [
         "Назва"
       ],
-      "Name, email or address": [
-        "Назва, адреса е-пошти чи адреси"
+      "Name or email address": [
+        "Ім'я чи адреса е-пошти"
       ],
       "New name": [
         "Нова назва"
@@ -5309,20 +5312,6 @@
     "Text": {
       "Settings": [
         "Налаштування"
-      ]
-    },
-    "Time period": {
-      "account creation date": [
-        "дата створення облікового запису"
-      ],
-      "the last 12 months": [
-        "останні 12 місяців"
-      ],
-      "the last 3 months": [
-        "останні 3 місяці"
-      ],
-      "the last month": [
-        "останній місяць"
       ]
     },
     "Time unit": {
@@ -5991,6 +5980,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
+      "Skip verification?": [
+        "Пропустити перевірку?"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"
       ],
@@ -6020,6 +6012,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, зараз ми не в мережі. Будь ласка, заповніть форму внизу, щоб описати вашу проблему. Ми розглянемо її та зв'яжемося з вами, коли будемо знову в мережі."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Ми не змогли перевірити поштовий сервер. Якщо ви йому довіряєте, можете пропустити цю перевірку."
       ],
       "You will lose any customization you made so far.": [
         "Ви втратите будь-які попередні налаштування."

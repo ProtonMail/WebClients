@@ -210,6 +210,9 @@
       "Create link": [
         "Creare legătură"
       ],
+      "Create users": [
+        "Creare utilizatori"
+      ],
       "Create your own": [
         "Creați-vă propria"
       ],
@@ -743,6 +746,9 @@
       ],
       "Size": [
         "Mărime"
+      ],
+      "Skip verification": [
+        "Ignorare verificare"
       ],
       "Sort": [
         "Sortare"
@@ -3196,6 +3202,9 @@
       "Trusted keys are not valid for sending": [
         "Cheile de încredere nu sunt valide pentru trimitere"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Folosiți doar litere, cifre și _ . -"
+      ],
       "Unknown error": [
         "Eroare necunoscută"
       ],
@@ -4670,6 +4679,9 @@
       "Amount below minimum (${ amount }).": [
         "Suma este sub minimul acceptat (${ amount })."
       ],
+      "An error occured while communicating with the extension": [
+        "A apărut o eroare în timpul comunicării cu extensia."
+      ],
       "and": [
         "și"
       ],
@@ -5660,6 +5672,11 @@
         "Următoarele adrese nu sunt disponibile.",
         "Următoarele adrese nu sunt disponibile."
       ],
+      "The following address was not created.": [
+        "Următoarea adresă nu a fost creată.",
+        "Următoarele adrese nu au fost create.",
+        "Următoarele adrese nu au fost create."
+      ],
       "The format of your CSV file is incorrect.": [
         "Formatul fișierului CSV nu este corect."
       ],
@@ -6030,6 +6047,9 @@
       ],
       "You have no saved payment methods.": [
         "Nu aveți metode de plată salvate."
+      ],
+      "You may now start using the extension": [
+        "Acum puteți începe utilizarea extensiei"
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Trebuie să activați cheia privată a organizației cu parola de rezervă a cheii organizației primită de la administratorul organizației."
@@ -6913,6 +6933,18 @@
       "Emails": [
         "Mesaje"
       ],
+      "Emails (all messages)": [
+        "Mesaje (toate mesajele)"
+      ],
+      "Emails (last 12 months)": [
+        "Mesaje (ultimele 12 luni)"
+      ],
+      "Emails (last 3 months)": [
+        "Mesaje (ultimele 3 luni)"
+      ],
+      "Emails (last month)": [
+        "Mesaje (ultima lună)"
+      ],
       "End date": [
         "Data sfârșit"
       ],
@@ -7051,6 +7083,9 @@
       "Mailbox password": [
         "Parolă mesaje"
       ],
+      "Main": [
+        "Principală"
+      ],
       "Manage categories": [
         "Gestionare categorii"
       ],
@@ -7083,6 +7118,9 @@
       ],
       "Name on card": [
         "Titular card"
+      ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Port redirecționare)"
       ],
       "Navigation": [
         "Navigare"
@@ -7199,7 +7237,7 @@
         "Solicitare chei de încredere"
       ],
       "Proration": [
-        "Credit neutilizat"
+        "Taxe zilnice"
       ],
       "Protection mode": [
         "Mod de protejare"
@@ -7654,6 +7692,28 @@
       ],
       "Enable authentication logs": [
         "Activare jurnale autentificare"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-un folder și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-o etichetă și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele dintr-o etichetă și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8248,6 +8308,26 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8317,26 +8397,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8507,7 +8567,7 @@
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Asistența telefonică este disponibilă de la echipa de Asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 6 sau mai mulți utilizatori."
+        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 6 sau mai mulți utilizatori."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
@@ -8982,6 +9042,24 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } pentru a obține mai mult spațiu sau eliminați câteva pentru a elibera spațiu."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Planul actual mai include maxim o adresă.",
+        "Planul actual mai include maxim ${ availableAddresses } adrese.",
+        "Planul actual mai include maxim ${ availableAddresses } de adrese."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Planul actual include maxim un utilizator în organizație.",
+        "Planul actual include maxim ${ availableNumberOfMembers } utilizatori în organizație.",
+        "Planul actual include maxim ${ availableNumberOfMembers } de utilizatori în organizație."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Planul actual mai include maxim un cont VPN.",
+        "Planul actual mai include maxim ${ availableVPNAccess } conturi VPN.",
+        "Planul actual mai include maxim ${ availableVPNAccess } de conturi VPN."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Planul actual mai include maxim ${ humanReadableAvailableSpace } de spațiu."
       ]
     },
     "OS compatibility": {
@@ -9546,7 +9624,7 @@
         "${ n } de calendare"
       ],
       "${ n } calendar per user": [
-        "${ n } calendar per utilizator",
+        "Un calendar per utilizator",
         "${ n } calendare per utilizator",
         "${ n } de calendare per utilizator"
       ],
@@ -9581,7 +9659,7 @@
         "${ UsedAddresses } din ${ MaxAddresses } de adrese de e-mail"
       ],
       "${ UsedCalendars } calendar": [
-        "un calendar",
+        "Un calendar",
         "${ UsedCalendars } calendare",
         "${ UsedCalendars } de calendare"
       ],
@@ -9919,20 +9997,6 @@
         "Câmp vCard"
       ]
     },
-    "Time period": {
-      "account creation date": [
-        "data creării contului"
-      ],
-      "the last 12 months": [
-        "ultimele 12 luni"
-      ],
-      "the last 3 months": [
-        "ultimele 3 luni"
-      ],
-      "the last month": [
-        "ultima lună"
-      ]
-    },
     "Time unit": {
       "${ hours } hour": [
         "O oră",
@@ -10164,6 +10228,11 @@
       "Couldn’t create accounts": [
         "Nu s-au putut crea conturi"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Creare un utilizator",
+        "Creare ${ selectedUserIds.length } utilizatori",
+        "Creare ${ selectedUserIds.length } de utilizatori"
+      ],
       "Create multiple user accounts": [
         "Creare conturi multiple de utilizatori"
       ],
@@ -10331,6 +10400,11 @@
       ],
       "External PGP settings": [
         "Setări externe PGP"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Nu s-a putut crea un cont de utilizator.",
+        "Nu s-au putut crea ${ failedUsers.length } conturi de utilizator.",
+        "Nu s-au putut crea ${ failedUsers.length } de conturi de utilizator."
       ],
       "Filters": [
         "Filtre"
@@ -10660,6 +10734,11 @@
       ],
       "Success": [
         "Succes"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "S-a reușit crearea unui cont de utilizator",
+        "S-a reușit crearea a ${ localSuccessfullyCreatedUsers.length } conturi de utilizator",
+        "S-a reușit crearea a ${ localSuccessfullyCreatedUsers.length } de conturi de utilizator"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "S-a reușit crearea unui cont",
@@ -11056,6 +11135,11 @@
         "Parola trebuie să conțină cel puțin un caracter",
         "Parola trebuie să conțină cel puțin ${ length } caractere.",
         "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
       ]
     },
     "Video control": {
@@ -11086,11 +11170,6 @@
         "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
-      ]
-    },
-    "vpn: Info": {
-      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
-        "Deschideți extensia ${ VPN_APP_NAME } pentru navigatoare pentru a vă proteja traficul."
       ]
     },
     "VPNClient": {
@@ -11165,6 +11244,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
       ],
+      "Skip verification?": [
+        "Ignorați verificarea?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Setările de dată și oră de pe dispozitiv nu sunt sincronizate. ${ learnMore }"
       ],
@@ -11176,6 +11258,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Nu s-a putut verifica serverul de e-mail. Dacă aveți încredere în el, puteți ignora verificarea."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Am detectat o problemă cu configurația DNS. Asigurați-vă că înregistrările tale se potrivesc cu instrucțiunile de mai jos. Dacă problema persistă, va trebui să oprim semnarea cu DKIM."

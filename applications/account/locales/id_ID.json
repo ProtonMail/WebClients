@@ -747,6 +747,9 @@
       "Size": [
         "Ukuran"
       ],
+      "Skip verification": [
+        "Lewati verifikasi"
+      ],
       "Sort": [
         "Urut"
       ],
@@ -3170,7 +3173,7 @@
         "Kunci terpercaya tidak valid untuk mengirim"
       ],
       "Try using only letters, numerals, and _.-": [
-        "Cobalah untuk menggunakan hanya huruf, angka, dan tanda _.-"
+        "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
@@ -5911,6 +5914,9 @@
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran yang tersimpan."
       ],
+      "You may now start using the extension": [
+        "Anda kini dapat mulai menggunakan ekstensi"
+      ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Anda harus mengaktifkan kunci pribadi organisasi Anda dengan kata sandi kunci organisasi cadangan yang diberikan oleh administrator organisasi."
       ],
@@ -6787,6 +6793,18 @@
       "Emails": [
         "Email"
       ],
+      "Emails (all messages)": [
+        "Email (seluruh pesan)"
+      ],
+      "Emails (last 12 months)": [
+        "Email (12 bulan terakhir)"
+      ],
+      "Emails (last 3 months)": [
+        "Email (3 bulan terakhir)"
+      ],
+      "Emails (last month)": [
+        "Email (sebulan terakhir)"
+      ],
       "End date": [
         "Tanggal berakhir"
       ],
@@ -6960,6 +6978,9 @@
       ],
       "Name on card": [
         "Nama di kartu"
+      ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Port Forwarding)"
       ],
       "Navigation": [
         "Navigasi"
@@ -7534,17 +7555,17 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ itemsToImportCount } folder sejak ${ periodFragment } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folders since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ itemsToImportCount } folder dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ itemsToImportCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ itemsToImportCount } label sejak ${ periodFragment } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ selectedItemsToImportCount } folder terpilih (dari total ${ itemsToImportCount } folder sejak ${ periodFragment }) dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ selectedItemsToImportCount } label terpilih (dari total ${ itemsToImportCount } label sejak ${ periodFragment }) dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8101,6 +8122,26 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8170,26 +8211,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9738,20 +9759,6 @@
         "Kolom vCard"
       ]
     },
-    "Time period": {
-      "account creation date": [
-        "tanggal pembuatan akun"
-      ],
-      "the last 12 months": [
-        "12 bulan terakhir"
-      ],
-      "the last 3 months": [
-        "3 bulan terakhir"
-      ],
-      "the last month": [
-        "sebulan terakhir"
-      ]
-    },
     "Time unit": {
       "${ hours } hours": [
         "${ hours } jam"
@@ -10899,11 +10906,6 @@
         "${ numberOfServers } di ${ numberOfCountries } negara"
       ]
     },
-    "vpn: Info": {
-      "Open the ${ VPN_APP_NAME } browser extension to protect yourself while browsing": [
-        "Buka ekstensi browser ${ VPN_APP_NAME } untuk melindungi diri Anda pada saat menjelajah internet"
-      ]
-    },
     "VPNClient": {
       "Android": [
         "Android"
@@ -10976,6 +10978,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
       ],
+      "Skip verification?": [
+        "Lewati verifikasi?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"
       ],
@@ -10987,6 +10992,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sayangnya, kami saat ini sedang tidak daring. Harap kabarkan masalah yang telah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali daring."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda mempercayainya, Anda dapat melewati proses verifikasi ini."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."
