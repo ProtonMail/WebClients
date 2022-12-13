@@ -24,6 +24,7 @@ import { createToken } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Address } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 const Steps = {
@@ -50,6 +51,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
     const title =
         step === Steps.TokenForm ? c('Title').t`Generate SMTP token` : c('Title').t`Token successfully generated`;
     const emailAddress = addresses.find(({ ID }) => ID === addressID)?.Email || '';
+    const tokenParts = token.match(/.{1,4}/g) || []; // Split token in 4 characters parts
 
     const handleClose = loading ? noop : onClose;
 
@@ -112,7 +114,11 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                 <Label className="text-bold block" htmlFor="smtp-token">{c('Label').t`SMTP token`}</Label>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
                     <code id="smtp-token" className="user-select bg-weak flex-item-fluid p0-75 rounded">
-                        {token}
+                        {tokenParts.map((part, index) => (
+                            <span key={`${part}${index}`} className={clsx(index > 0 && 'ml0-5')}>
+                                {part}
+                            </span>
+                        ))}
                     </code>
                     <Copy value={token} className="flex-item-noshrink ml0-5" />
                 </div>
