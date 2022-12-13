@@ -75,6 +75,7 @@ const ContactSummary = ({
                                     icon
                                     onClick={onExport}
                                     className="inline-flex ml0-5"
+                                    data-testid="contact-summary:export"
                                 >
                                     <Icon name="arrow-up-from-square" alt={c('Action').t`Export`} />
                                 </Button>
@@ -82,7 +83,14 @@ const ContactSummary = ({
                         )}
 
                         <Tooltip title={c('Action').t`Delete`}>
-                            <Button color="weak" shape="outline" icon onClick={onDelete} className="inline-flex ml0-5">
+                            <Button
+                                color="weak"
+                                shape="outline"
+                                icon
+                                onClick={onDelete}
+                                className="inline-flex ml0-5"
+                                data-testid="contact-summary:delete"
+                            >
                                 <Icon name="trash" alt={c('Action').t`Delete`} />
                             </Button>
                         </Tooltip>
@@ -95,6 +103,7 @@ const ContactSummary = ({
                                     color="norm"
                                     onClick={() => onEdit()}
                                     className="inline-flex ml0-5"
+                                    data-testid="contact-summary:edit"
                                 >
                                     <Icon name="pen" alt={c('Action').t`Edit`} />
                                 </Button>

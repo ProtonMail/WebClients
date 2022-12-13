@@ -87,6 +87,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
                                 onClick={handleExportContactGroup}
                                 disabled={loading}
                                 className="inline-flex ml0-5"
+                                data-testid="group-summary:export"
                             >
                                 <Icon name="arrow-up-from-square" alt={c('Action').t`Export contact group`} />
                             </Button>
@@ -99,6 +100,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
                                 onClick={handleDelete}
                                 disabled={loading}
                                 className="inline-flex ml0-5"
+                                data-testid="group-summary:delete"
                             >
                                 <Icon name="trash" alt={c('Action').t`Delete`} />
                             </Button>
@@ -111,6 +113,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
                                 onClick={handleEdit}
                                 disabled={loading}
                                 className="inline-flex ml0-5"
+                                data-testid="group-summary:edit"
                             >
                                 <Icon name="pen" alt={c('Action').t`Edit`} />
                             </Button>
