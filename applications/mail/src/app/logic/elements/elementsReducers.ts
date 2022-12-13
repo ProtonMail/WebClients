@@ -206,3 +206,7 @@ export const moveAllFulfilled = (
 export const pollTaskRunningFulfilled = (state: Draft<ElementsState>, { payload }: PayloadAction<TaskRunningInfo>) => {
     state.taskRunning = payload;
 };
+
+export const deleteDraft = (state: Draft<ElementsState>, { payload: ID }: PayloadAction<string>) => {
+    delete state.elements[ID];
+};

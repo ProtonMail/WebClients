@@ -154,8 +154,19 @@ export const endSending = (state: Draft<MessagesState>, { payload: ID }: Payload
 };
 
 export const deleteDraft = (state: Draft<MessagesState>, { payload: ID }: PayloadAction<string>) => {
-    const localID = getLocalID(state, ID);
-    delete state[localID];
+    /**
+     * ID can be a messageID or a localID so we need to check for both
+     */
+    const index = Object.values(state).findIndex((message) => {
+        if (message) {
+            return message.data?.ID === ID || message.localID === ID;
+        }
+        return false;
+    });
+
+    if (index !== -1) {
+        delete state[index];
+    }
 };
 
 export const cancelScheduled = (state: Draft<MessagesState>, { payload: ID }: PayloadAction<string>) => {
