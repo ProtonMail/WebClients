@@ -485,7 +485,7 @@ export const useComposerContent = (args: EditorArgs) => {
     const handleDiscard = async (hasChanges = true) => {
         if (isQuickReply) {
             const message = getMessage(modelMessage.localID);
-            if (message?.data?.ID) {
+            if (message) {
                 await deleteDraft(message);
             }
 
@@ -495,7 +495,7 @@ export const useComposerContent = (args: EditorArgs) => {
             }
         } else {
             const message = getMessage(messageID);
-            if (message?.data?.ID) {
+            if (message) {
                 await deleteDraft(message);
             }
         }
@@ -509,9 +509,10 @@ export const useComposerContent = (args: EditorArgs) => {
     const handleDelete = async (hasChanges = true) => {
         autoSave.cancel?.();
         try {
-            await handleDiscard(hasChanges);
-        } finally {
             onClose();
+            await handleDiscard(hasChanges);
+        } catch {
+            // Nothing
         }
     };
 
