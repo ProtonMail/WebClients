@@ -30,7 +30,7 @@ import LocationAside from './LocationAside';
 
 const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED } = MAILBOX_LABEL_IDS;
 
-const noDrop: string[] = [ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED];
+const NO_DROP: string[] = [ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED];
 
 const defaultShortcutHandlers: HotkeyTuple[] = [];
 
@@ -106,20 +106,24 @@ const SidebarItem = ({
         }
     };
 
-    const { dragOver, dragProps, handleDrop } = useItemsDroppable(
-        () =>
-            currentLabelID !== labelID && // Never on current label
-            !noDrop.includes(labelID), // Some destinations has no sense
-        isFolder ? 'move' : 'link',
-        (itemIDs) => {
-            const elements = getElementsFromIDs(itemIDs);
+    const canDrop = () => {
+        const isSameLabel = currentLabelID === labelID;
+        const isNonDroppableFolder = NO_DROP.includes(labelID);
+
+        return !isSameLabel && !isNonDroppableFolder;
+    };
+
+    const { dragOver, dragProps, handleDrop } = useItemsDroppable(canDrop, isFolder ? 'move' : 'link', (itemIDs) => {
+        const elements = getElementsFromIDs(itemIDs);
+
+        if (canDrop()) {
             if (isFolder) {
                 void moveToFolder(elements, labelID, text, currentLabelID, false);
             } else {
                 void applyLabels(elements, { [labelID]: true }, false);
             }
         }
-    );
+    });
 
     const elementRef = useRef<HTMLAnchorElement>(null);
     useHotkeys(elementRef, shortcutHandlers);
