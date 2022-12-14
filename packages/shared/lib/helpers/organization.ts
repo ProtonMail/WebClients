@@ -19,7 +19,7 @@ export const isDissident = (organization: Partial<Organization> = {}) => {
 };
 
 export const hasNoCycleScheduled = (organization: Partial<Organization> = {}) => {
-    return hasBit(organization.Flags, ORGANIZATION_FLAGS.FLAG_NO_CYCLE_SCHEDULED);
+    return hasBit(organization.Flags, ORGANIZATION_FLAGS.NO_CYCLE_SCHEDULED);
 };
 
 export const isProtoneer = (organization: Partial<Organization> = {}) => {
