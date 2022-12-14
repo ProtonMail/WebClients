@@ -8,6 +8,7 @@ import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } 
 import { OfferGlobalFeatureCodeValue } from '@proton/components/containers/offers/interface';
 import {
     useApi,
+    useConfig,
     useErrorHandler,
     useExperiment,
     useFeature,
@@ -105,6 +106,7 @@ interface Props {
 }
 
 const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Props) => {
+    const { APP_NAME } = useConfig();
     const normalApi = useApi();
     const history = useHistory();
     const location = useLocation<{ invite?: InviteData }>();
@@ -542,7 +544,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                                 : undefined,
                             // Internal app or oauth app or vpn
                             ignoreExplore: Boolean(toApp || toAppName || signupType === SignupType.VPN),
-                            generateKeys: clientType === CLIENT_TYPES.MAIL,
+                            generateKeys: APP_NAME === APPS.PROTONACCOUNT,
                             accountData,
                             subscriptionData,
                             inviteData: model.inviteData,
