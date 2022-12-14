@@ -90,6 +90,7 @@ const MainContainer = () => {
         FeatureCode.ReferralProgram,
         FeatureCode.BulkUserUpload,
         FeatureCode.ShowSenderImages,
+        FeatureCode.SmtpToken,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.CalendarSubscription,
         FeatureCode.SubscribedCalendarReminder,
@@ -104,6 +105,7 @@ const MainContainer = () => {
         referralProgramFeature,
         bulkUserUploadFeature,
         showSenderImages,
+        smtpTokenFeature,
     ] = features;
 
     const isSpyTrackerEnabled = spyTrackerFeature.feature?.Value === true;
@@ -111,6 +113,7 @@ const MainContainer = () => {
     const isAutoImportInviteFeatureEnabled = calendarAutoImportInviteFeature.feature?.Value === true;
     const isBulkUserUploadEnabled = bulkUserUploadFeature.feature?.Value === true;
     const isShowSenderImagesEnabled = showSenderImages.feature?.Value === true;
+    const isSmtpTokenEnabled = smtpTokenFeature.feature?.Value === true;
 
     const { enabled, unavailable } = useCalendarSubscribeFeature();
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
@@ -126,6 +129,7 @@ const MainContainer = () => {
         isSpyTrackerEnabled,
         isInviteSettingEnabled: isInviteLocaleFeatureEnabled || isAutoImportInviteFeatureEnabled,
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
+        isSmtpTokenEnabled,
         isBulkUserUploadEnabled,
         isShowSenderImagesEnabled,
         isDataRecoveryAvailable,

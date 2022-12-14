@@ -23,6 +23,7 @@ export const getMailAppRoutes = ({
     subscription,
     isSpyTrackerEnabled,
     isShowSenderImagesEnabled,
+    isSmtpTokenEnabled,
 }: {
     user: UserModel;
     addresses: Address[];
@@ -30,6 +31,7 @@ export const getMailAppRoutes = ({
     organization: Organization;
     isSpyTrackerEnabled: boolean;
     isShowSenderImagesEnabled: boolean;
+    isSmtpTokenEnabled: boolean;
 }) => {
     const hasOrganization = !!organization?.HasKeys;
     return <const>{
@@ -187,7 +189,7 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`SMTP tokens`,
                         id: 'smtp-tokens',
-                        available: getHasB2BPlan(subscription),
+                        available: isSmtpTokenEnabled && getHasB2BPlan(subscription),
                     }
                 ],
             },
