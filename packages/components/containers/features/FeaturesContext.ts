@@ -93,6 +93,7 @@ export enum FeatureCode {
     OfferBlackFridayVPN1Deal2022 = 'OfferBlackFridayVPN1Deal2022',
     OfferBlackFridayVPN2Deal2022 = 'OfferBlackFridayVPN2Deal2022',
     OfferBlackFridayVPN3Deal2022 = 'OfferBlackFridayVPN3Deal2022',
+    SmtpToken = 'SmtpToken',
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     BulkUserUpload = 'BulkUserUpload',
     DriveMyDevices = 'DriveWebMyDevices',
