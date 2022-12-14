@@ -11,6 +11,19 @@
 			transform: translateX(50%);
 		}
 	}
+
+	@at-root {
+		// default positioning above drawer footer
+		.is-drawer-app & {
+			inset-block-end: em(114);
+		}
+
+		// move position down when evenpopover is open
+		// not available on firefox at the moment, use default instead
+		.is-drawer-app:has(.eventpopover) & {
+			inset-block-end: em(24);
+		}
+	}
 }
 
 .notification {
