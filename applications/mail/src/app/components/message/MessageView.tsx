@@ -12,7 +12,7 @@ import {
     useState,
 } from 'react';
 
-import { classnames } from '@proton/components';
+import { FeatureCode, classnames, useFeature } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -98,6 +98,7 @@ const MessageView = (
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
+    const { feature: quickReplyFeature } = useFeature(FeatureCode.QuickReply);
     const getInitialExpand = () => !conversationMode && !isDraft(inputMessage) && !isOutbox(inputMessage);
 
     // Actual expanded state
@@ -222,6 +223,7 @@ const MessageView = (
     const quickReplyIsFocused = hasFocus !== undefined ? hasQuickReplyFocus && hasFocus : hasQuickReplyFocus;
 
     const canShowQuickReply =
+        quickReplyFeature?.Value &&
         !isDraft(message.data) &&
         !isScheduled(message.data) &&
         !isOutbox(message.data) &&
