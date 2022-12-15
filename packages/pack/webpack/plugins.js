@@ -166,7 +166,7 @@ module.exports = ({
             // crossorigin attribute for the manifest.json link is added correctly, however the SRI
             // plugin removes it and replaces it with SRI attributes. This plugin adds back the use-credentials
             // crossorigin attribute for the manifest link.
-            if (tag.tagName === 'link' && tag.attributes.href.endsWith('manifest.json')) {
+            if (tag.tagName === 'link' && tag.attributes.href.endsWith('manifest.webmanifest')) {
                 tag.attributes.crossorigin = 'use-credentials';
             }
             return tag;
