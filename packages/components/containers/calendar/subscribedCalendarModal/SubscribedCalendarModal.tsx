@@ -144,7 +144,10 @@ const SubscribedCalendarModal = ({ open, onClose, onCreateCalendar }: Props) => 
     );
 
     const getError = () => {
-        if (calendarURL && !isURLValid) {
+        const hasInvalidURL =
+            (calendarURL && !isURLValid) || validationError === CALENDAR_SUBSCRIPTION_STATUS.INVALID_URL;
+
+        if (hasInvalidURL) {
             return c('Error message').t`Invalid URL`;
         }
 
