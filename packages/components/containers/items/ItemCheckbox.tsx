@@ -14,6 +14,7 @@ interface Props {
     compactClassName?: string;
     normalClassName?: string;
     bimiSelector?: string;
+    displaySenderImage?: boolean;
     checked: boolean;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -26,6 +27,7 @@ const ItemCheckbox = ({
     normalClassName,
     checked,
     bimiSelector,
+    displaySenderImage,
     onChange,
 }: Props) => {
     const [userSettings] = useUserSettings();
@@ -61,7 +63,13 @@ const ItemCheckbox = ({
                 aria-hidden="true"
             >
                 <span className="mauto item-abbr" aria-hidden="true">
-                    <ContactImage email={email} name={name} bimiSelector={bimiSelector} className="rounded" />
+                    <ContactImage
+                        email={email}
+                        name={name}
+                        bimiSelector={bimiSelector}
+                        displaySenderImage={displaySenderImage}
+                        className="rounded"
+                    />
                 </span>
                 <span className="item-icon-fakecheck mauto">
                     <Icon name="checkmark" className="item-icon-fakecheck-icon" />

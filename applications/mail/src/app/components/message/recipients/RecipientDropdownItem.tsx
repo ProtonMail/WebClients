@@ -54,10 +54,11 @@ const RecipientDropdownItem = ({
                         <>{getInitials(label)}</>
                     ) : (
                         <ContactImage
-                            email={displaySenderImage ? recipient.Address : ''}
+                            email={recipient.Address}
                             name={label}
                             className="rounded"
                             bimiSelector={bimiSelector}
+                            displaySenderImage={displaySenderImage}
                         />
                     )}
                 </span>
