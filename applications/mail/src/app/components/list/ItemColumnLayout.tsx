@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -25,7 +25,6 @@ import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
-import VerifiedBadge from './VerifiedBadge';
 
 interface Props {
     labelID: string;
@@ -34,15 +33,12 @@ interface Props {
     element: Element;
     conversationMode: boolean;
     showIcon: boolean;
-    senders: string;
+    senders: ReactNode;
     addresses: string;
-    displayRecipients: boolean;
-    loading: boolean;
     breakpoints: Breakpoints;
     unread: boolean;
     onBack: () => void;
     isSelected: boolean;
-    hasVerifiedBadge?: boolean;
 }
 
 const ItemColumnLayout = ({
@@ -52,15 +48,12 @@ const ItemColumnLayout = ({
     element,
     conversationMode,
     showIcon,
-    senders,
     addresses,
-    displayRecipients,
-    loading,
     breakpoints,
     unread,
     onBack,
     isSelected,
-    hasVerifiedBadge = false,
+    senders,
 }: Props) => {
     const [userSettings] = useUserSettings();
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
@@ -71,15 +64,6 @@ const ItemColumnLayout = ({
     const body = (element as ESMessage).decryptedBody;
     const { Subject } = element;
 
-    const sendersContent = useMemo(
-        () =>
-            !loading && displayRecipients && !senders
-                ? c('Info').t`(No Recipient)`
-                : highlightData
-                ? highlightMetadata(senders, unread, true).resultJSX
-                : senders,
-        [loading, displayRecipients, senders, highlightData, highlightMetadata, unread]
-    );
     const subjectContent = useMemo(
         () => (highlightData && Subject ? highlightMetadata(Subject, unread, true).resultJSX : Subject),
         [Subject, highlightData, highlightMetadata, unread]
@@ -130,9 +114,8 @@ const ItemColumnLayout = ({
                                 title={addresses}
                                 data-testid="message-column:sender-address"
                             >
-                                {sendersContent}
+                                {senders}
                             </span>
-                            {hasVerifiedBadge && <VerifiedBadge />}
                         </div>
 
                         <span className="item-firstline-infos flex-item-noshrink flex flex-nowrap flex-align-items-center">

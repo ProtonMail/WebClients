@@ -6,6 +6,7 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import ItemAction from '../../list/ItemAction';
+import { PROTON_BADGE_TYPE } from '../../list/ProtonBadgeType';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import RecipientDropdownItem from './RecipientDropdownItem';
 import RecipientItemLayout from './RecipientItemLayout';
@@ -27,6 +28,7 @@ interface Props {
     hideAddress?: boolean;
     isRecipient?: boolean;
     isExpanded?: boolean;
+    badgeType?: PROTON_BADGE_TYPE;
     customDataTestId?: string;
 }
 
@@ -47,6 +49,7 @@ const RecipientItemSingle = ({
     hideAddress = false,
     isRecipient = false,
     isExpanded = false,
+    badgeType,
     customDataTestId,
 }: Props) => {
     const [uid] = useState(generateUID('dropdown-recipient'));
@@ -110,6 +113,7 @@ const RecipientItemSingle = ({
             }
             isOutside={isOutside}
             isRecipient={isRecipient}
+            badgeType={badgeType}
             customDataTestId={customDataTestId}
         />
     );
