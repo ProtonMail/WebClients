@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { APPS, APP_NAMES, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { Address, UserType } from '@proton/shared/lib/interfaces';
@@ -21,8 +22,8 @@ interface Props {
 }
 
 const UsernameSection = ({ app }: Props) => {
-    const [{ Name, Email, Type, DisplayName }] = useUser();
-    const [addresses] = useAddresses();
+    const [user] = useUser();
+    const [addresses, loadingAddresses] = useAddresses();
     const [tmpAddress, setTmpAddress] = useState<Address>();
     const [modalProps, setModalOpen, renderModal] = useModalState();
 
@@ -32,7 +33,7 @@ const UsernameSection = ({ app }: Props) => {
         <>
             {renderModal && tmpAddress && <EditDisplayNameModal {...modalProps} address={tmpAddress} />}
             <SettingsSection>
-                {Type === UserType.EXTERNAL && primaryAddress && (
+                {user.Type === UserType.EXTERNAL && primaryAddress && (
                     <Card className="mb2" rounded bordered={false}>
                         <div className="mb1">
                             {c('Info')
@@ -49,19 +50,45 @@ const UsernameSection = ({ app }: Props) => {
                 )}
                 <SettingsLayout>
                     <SettingsLayoutLeft>
-                        <div className="text-semibold">{Name ? c('Label').t`Name` : c('Label').t`Email address`}</div>
+                        <div className="text-semibold">
+                            {primaryAddress ? c('Label').t`Display name` : c('Label').t`Name`}
+                        </div>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="pt0-5">
-                        <div className="text-pre-wrap break user-select">{Name ? Name : Email}</div>
+                        {loadingAddresses ? (
+                            <div className="flex flex-nowrap">
+                                <CircleLoader />
+                            </div>
+                        ) : (
+                            <div className="flex flex-nowrap">
+                                <div className="text-ellipsis user-select mr0-5">
+                                    {primaryAddress ? primaryAddress.DisplayName : user.Name}
+                                </div>
+                                {primaryAddress && (
+                                    <InlineLinkButton
+                                        onClick={() => {
+                                            setTmpAddress(primaryAddress);
+                                            setModalOpen(true);
+                                        }}
+                                    >
+                                        {c('Action').t`Edit`}
+                                    </InlineLinkButton>
+                                )}
+                            </div>
+                        )}
                     </SettingsLayoutRight>
                 </SettingsLayout>
-                {app === APPS.PROTONVPN_SETTINGS && Type === UserType.PROTON && (
+                {app === APPS.PROTONVPN_SETTINGS && user.Type === UserType.PROTON && (
                     <SettingsLayout>
                         <SettingsLayoutLeft>
                             <div className="text-semibold">{c('Label').t`${MAIL_APP_NAME} address`}</div>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight>
-                            {primaryAddress?.Email ? (
+                            {loadingAddresses ? (
+                                <div className="flex flex-nowrap">
+                                    <CircleLoader />
+                                </div>
+                            ) : primaryAddress?.Email ? (
                                 <div className="text-pre-wrap break user-select">{primaryAddress.Email}</div>
                             ) : (
                                 <Href
@@ -69,24 +96,6 @@ const UsernameSection = ({ app }: Props) => {
                                     title={c('Info').t`Log in to ${MAIL_APP_NAME} to activate your address`}
                                 >{c('Link').t`Not activated`}</Href>
                             )}
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
-                )}
-                {Type === UserType.EXTERNAL && primaryAddress && (
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <div className="text-semibold">{c('Label').t`Display name`}</div>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt0-5">
-                            <div className="flex flex-nowrap">
-                                {DisplayName && <div className="text-ellipsis user-select mr0-5">{DisplayName}</div>}
-                                <InlineLinkButton
-                                    onClick={() => {
-                                        setTmpAddress(primaryAddress);
-                                        setModalOpen(true);
-                                    }}
-                                >{c('Action').t`Edit`}</InlineLinkButton>
-                            </div>
                         </SettingsLayoutRight>
                     </SettingsLayout>
                 )}
