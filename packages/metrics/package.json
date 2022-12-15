@@ -1,0 +1,19 @@
+{
+    "name": "@proton/metrics",
+    "description": "Metrics library",
+    "scripts": {
+        "check-types": "tsc",
+        "generate-schema-types": "rimraf json-schema-registry && git clone $SCHEMA_REPOSITORY && json2ts -i 'json-schema-registry/**/*.schema.json' -o types/ --no-additionalProperties",
+        "generate-schema-types:mock": "json2ts -i 'mockSchemas/**/*.schema.json' -o types/ --no-additionalProperties",
+        "lint": "eslint . --ext ts --quiet --cache"
+    },
+    "dependencies": {
+        "json-schema-to-typescript": "^11.0.2"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "eslint": "^8.28.0",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.9.3"
+    }
+}
