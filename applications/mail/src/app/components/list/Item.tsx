@@ -1,6 +1,6 @@
 import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react';
 
-import { FeatureCode, ItemCheckbox, classnames, useFeature, useLabels, useMailSettings } from '@proton/components';
+import { ItemCheckbox, classnames, useLabels, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
@@ -8,13 +8,14 @@ import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
-import { isFromProton, isMessage, isUnread } from '../../helpers/elements';
+import { isMessage, isUnread } from '../../helpers/elements';
 import { isCustomLabel } from '../../helpers/labels';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
+import ItemSenders from './ItemSenders';
 
 const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS, SCHEDULED } = MAILBOX_LABEL_IDS;
 
@@ -66,7 +67,6 @@ const Item = ({
     const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
     const useES = dbExists && esEnabled && shouldHighlight();
-    const { feature: protonBadgeFeature } = useFeature(FeatureCode.ProtonBadge);
 
     const elementRef = useRef<HTMLDivElement>(null);
 
@@ -97,8 +97,6 @@ const Item = ({
         )
         .flat();
 
-    const hasVerifiedBadge = !displayRecipients && isFromProton(element) && protonBadgeFeature?.Value;
-
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element, labelID);
     const displaySenderImage = !!element.DisplaySenderImage;
@@ -121,6 +119,17 @@ const Item = ({
     const handleFocus = () => {
         onFocus(index);
     };
+
+    const senderItem = (
+        <ItemSenders
+            element={element}
+            conversationMode={conversationMode}
+            loading={loading}
+            unread={unread}
+            displayRecipients={displayRecipients}
+            isSelected={isSelected}
+        />
+    );
 
     return (
         <div
@@ -175,15 +184,12 @@ const Item = ({
                     element={element}
                     conversationMode={conversationMode}
                     showIcon={showIcon}
-                    senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
+                    senders={senderItem}
                     addresses={(displayRecipients ? recipientsAddresses : sendersAddresses).join(', ')}
                     unread={unread}
-                    displayRecipients={displayRecipients}
-                    loading={loading}
                     breakpoints={breakpoints}
                     onBack={onBack}
                     isSelected={isSelected}
-                    hasVerifiedBadge={hasVerifiedBadge}
                 />
             </div>
         </div>
