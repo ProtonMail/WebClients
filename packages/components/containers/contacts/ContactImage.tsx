@@ -12,11 +12,12 @@ interface Props {
     name: string;
     className?: string;
     bimiSelector?: string;
+    displaySenderImage?: boolean;
 }
 
-const ContactImage = ({ email, name, className, bimiSelector }: Props) => {
+const ContactImage = ({ email, name, className, bimiSelector, displaySenderImage }: Props) => {
     const [fallback, setFallback] = useState(false);
-    const { canLoad, url } = useSenderImage(email, fallback, bimiSelector);
+    const { canLoad, url } = useSenderImage(displaySenderImage ? email : '', fallback, bimiSelector);
 
     if (canLoad) {
         // Fallback to XHR API call to load the image if native fails
