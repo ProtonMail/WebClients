@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector, useStore } from 'react-redux';
 
-import { useApi } from '@proton/components';
+import { useApi, useEventManager } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -52,11 +52,15 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     const getElementsFromIDs = useGetElementsFromIDs();
     const getConversation = useGetConversation();
     const isMounted = useIsMounted();
-
+    const { call } = useEventManager();
     const conversationState = useSelector((state: RootState) => conversationByID(state, { ID: inputConversationID }));
 
     const init = (conversationID: string): ConversationStateOptional | undefined => {
         if (conversationState) {
+            // Conversation updated from elements can be desynchronized with messages in store
+            if (conversationState.Conversation.NumMessages === conversationState.Messages?.length) {
+                void call();
+            }
             return conversationState;
         }
 

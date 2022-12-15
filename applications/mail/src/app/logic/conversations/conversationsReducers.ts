@@ -4,7 +4,7 @@ import { Draft } from 'immer';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { mergeConversations } from '../../helpers/conversation';
-import { parseLabelIDsInEvent } from '../../helpers/elements';
+import { isConversation, parseLabelIDsInEvent } from '../../helpers/elements';
 import { isNetworkError, isNotExistError } from '../../helpers/errors';
 import {
     LabelChanges,
@@ -15,6 +15,7 @@ import {
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 import { MarkAsChanges, applyMarkAsChangesOnConversation } from '../../hooks/optimistic/useOptimisticMarkAs';
 import { Conversation } from '../../models/conversation';
+import { QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';
 import { RootState } from '../store';
 import { allConversations, conversationByID } from './conversationsSelectors';
 import {
@@ -269,5 +270,36 @@ export const eventConversationUpdate = (
 
     if (conversationState) {
         conversationState.Conversation = updatedConversation;
+    }
+};
+
+export const updateFromElements = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<
+        {
+            result: QueryResults;
+            taskRunning: TaskRunningInfo;
+        },
+        string,
+        {
+            arg: QueryParams;
+            requestId: string;
+            requestStatus: 'fulfilled';
+        },
+        never
+    >
+) => {
+    const { Elements } = action.payload.result;
+
+    if (Elements && Elements.length) {
+        Elements.forEach((element) => {
+            if (isConversation(element)) {
+                const conversation = state[element.ID];
+
+                if (conversation) {
+                    conversation.Conversation = element;
+                }
+            }
+        });
     }
 };
