@@ -2,7 +2,7 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames } from '@proton/components';
+import { FeatureCode, classnames, useFeature } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import {
     getHasOnlyIcsAttachments,
@@ -22,6 +22,7 @@ import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemStar from '../../list/ItemStar';
 import ItemUnread from '../../list/ItemUnread';
+import { PROTON_BADGE_TYPE } from '../../list/ProtonBadgeType';
 import RecipientItem from '../recipients/RecipientItem';
 
 interface Props {
@@ -48,6 +49,7 @@ const HeaderCollapsed = ({
     conversationIndex = 0,
 }: Props) => {
     const { lessThanTwoHours } = useExpiration(message);
+    const { feature: protonBadgeFeature } = useFeature(FeatureCode.ProtonBadge);
 
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
@@ -63,6 +65,9 @@ const HeaderCollapsed = ({
     const isScheduledMessage = isScheduled(message.data);
     const isExpiringMessage = isExpiring(message.data);
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
+
+    const isProtonSender = message?.data?.Sender?.IsProton;
+    const canDisplayAuthenticityBadge = isProtonSender && protonBadgeFeature?.Value;
 
     return (
         <div
@@ -85,6 +90,7 @@ const HeaderCollapsed = ({
                     hideAddress={true}
                     onContactDetails={noop}
                     onContactEdit={noop}
+                    badgeType={canDisplayAuthenticityBadge ? PROTON_BADGE_TYPE.VERIFIED : undefined}
                 />
 
                 {messageLoaded && isDraftMessage && (

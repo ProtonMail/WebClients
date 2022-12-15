@@ -8,6 +8,7 @@ import { useCombinedRefs } from '@proton/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
+import ProtonBadgeType, { PROTON_BADGE_TYPE } from '../../list/ProtonBadgeType';
 
 interface Props {
     label?: ReactNode;
@@ -36,6 +37,7 @@ interface Props {
      * The recipient item is not the sender
      */
     isRecipient?: boolean;
+    badgeType?: PROTON_BADGE_TYPE;
     customDataTestId?: string;
 }
 
@@ -57,6 +59,7 @@ const RecipientItemLayout = ({
     showDropdown = true,
     isOutside = false,
     isRecipient = false,
+    badgeType,
     customDataTestId,
 }: Props) => {
     // When displaying messages sent as Encrypted Outside, this component is used
@@ -170,6 +173,7 @@ const RecipientItemLayout = ({
                                 {highlightedAddress}
                             </span>
                         )}
+                        {badgeType !== undefined && <ProtonBadgeType badgeType={badgeType} />}
                     </span>
                 </span>
             </span>
