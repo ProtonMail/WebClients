@@ -3373,6 +3373,9 @@
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. Només es permet el format de fitxer ICS."
+      ],
       "An error occurred uploading your file. No file has been selected.": [
         "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
       ],
@@ -3388,6 +3391,9 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "El vostre fitxer ${ formattedFilename } està buit."
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "El vostre fitxer ${ formattedFilename } no és un calendari."
       ]
     },
     "Error importing contact": {
@@ -6490,6 +6496,9 @@
       "Fw:": [
         "Fw:"
       ],
+      "On ${ date }, ${ senderString } wrote:": [
+        "El ${ date }, ${ senderString } va escriure:"
+      ],
       "Re:": [
         "Re:"
       ],
@@ -7155,6 +7164,11 @@
         "Emmagatzemat amb xifratge d'accés zero"
       ]
     },
+    "Side panel spotlight": {
+      "Try the new side panel": [
+        "Provar la nova subfinestra lateral"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Missatge xifrat amb PGP. La verificació del remitent ha fallat: ${ verificationErrorsMessage }"
@@ -7192,6 +7206,9 @@
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Convida amistats a ${ BRAND_NAME }"
       ],
       "Message Content Search": [
         "Cerca de contingut del missatge"
@@ -7364,6 +7381,9 @@
       ],
       "Conversation moved to ${ folderName }.": [
         "Conversa moguda a ${ folderName }."
+      ],
+      "Conversation moved to spam and sender added to your spam list.": [
+        "Conversa s'ha mogut a correu brossa i el remitent s'ha afegit a la vostra llista de bloqueig."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversa esborrada de ${ labelName }."
@@ -8120,6 +8140,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
       ],
+      "Show side panel": [
+        "Mostar la subfinestra lateral"
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
       ],
@@ -8207,6 +8230,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
+      ],
+      "Skip verification?": [
+        "Ometre la verificació?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dels contactes que s'han de combinar tenen errors. Reviseu-los individualment"

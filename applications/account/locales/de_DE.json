@@ -360,6 +360,9 @@
       "Font": [
         "Schriftart"
       ],
+      "Generate": [
+        "Generieren"
+      ],
       "Generate key": [
         "Schlüssel generieren"
       ],
@@ -368,6 +371,9 @@
       ],
       "Generate recovery phrase": [
         "Wiederherstellungsphrase erstellen"
+      ],
+      "Generate token": [
+        "Token generieren"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } holen"
@@ -495,10 +501,10 @@
       "Not spam": [
         "Kein Spam"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -516,8 +522,8 @@
       "Pay": [
         "Zahlen"
       ],
-      "Pay ${ price }": [
-        "${ price } zahlen"
+      "Pay ${ price } now": [
+        "${ price } jetzt zahlen"
       ],
       "Preview": [
         "Vorschau"
@@ -1052,9 +1058,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Verlängert sich automatisch am ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Verlängert sich automatisch am ${ formattedEndTime } für ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -3169,6 +3172,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Es gibt zu viele Ordner in deinem externen Konto. Bitte passe den Import an, um einige Ordner zu löschen."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
+      ],
       "This field is required": [
         "Pflichtfeld"
       ],
@@ -3957,6 +3963,23 @@
         "Wert/Daten/Zeigt auf"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "Aktionen"
+      ],
+      "Created": [
+        "Erstellt"
+      ],
+      "Email address": [
+        "E-Mail-Adresse"
+      ],
+      "Last used": [
+        "Zuletzt verwendet"
+      ],
+      "Token name": [
+        "Tokenname"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
@@ -4628,7 +4651,7 @@
         "Mindestbetrag unterschritten (${ amount })."
       ],
       "An error occured while communicating with the extension": [
-        "Bei der Kommunikation mit der Erweiterung ist ein Fehler aufgetreten"
+        "Bei der Kommunikation mit der Erweiterung ist ein Fehler aufgetreten."
       ],
       "and": [
         "und"
@@ -4988,6 +5011,9 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "Meine ${ BRAND_NAME }-Adresse erhalten"
+      ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain address. Only this address will be able to send emails with this token.": [
+        "Gib dem Token einen beschreibenden Namen, z. B. den Dienst, für den du es verwenden möchtest und wähle eine deiner aktiven eigenen Domänen. Nur diese Adresse ist in der Lage, E-Mails mit diesem Token zu senden."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Gib deinen öffentlichen Schlüssel an deine Freunde weiter oder veröffentliche ihn online, so dass dir jeder Ende-zu-Ende verschlüsselte E-Mails senden kann!"
@@ -5549,6 +5575,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da Sie ein treuer Benutzer sind, wurden Ihrem Konto zusätzliche Funktionen hinzugefügt."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "SMTP erlaubt es Drittanbieterdiensten oder -geräten, E-Mails über ${ MAIL_APP_NAME } zu senden. Diese neue Funktion ist für ausgewählte Business-Benutzer verfügbar. Bitte sende eine E-Mail an ${ emailLink }, um Zugriff anzufordern."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "SMTP erlaubt es Drittanbieterdiensten oder -geräten, E-Mails über ${ MAIL_APP_NAME } zu senden. Um diese Funktion zu nutzen, generiere zunächst ein neues Token."
+      ],
       "Some keys successfully reactivated": [
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
       ],
@@ -5667,10 +5699,13 @@
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität) und kann vom Edge Browser nicht geöffnet werden. Wenn du sicher bist, dass der Link seriös ist, verwende einen anderen Browser, um ihn zu öffnen."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
+      ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "Dieses Token wird nach dem Schließen dieses Fensters nicht mehr verfügbar sein und du solltest es niemals mit jemandem teilen."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zur Zeit für Zahlungen für Ihre Organisation zuständig. Wenn Sie den Benutzer zurückstufen, werden Sie für die Zahlungen für Ihre Organisation zuständig."
@@ -5821,6 +5856,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Verwende die folgenden Anmeldedaten, wenn du dich ohne Anwendung mit ${ VPN_APP_NAME }-Servern verbinden möchtest. Beispiele für Anwendungsfälle sind: „Tunnelblick“ unter macOS, „OpenVPN“ unter GNU/Linux."
+      ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "Verwende die gewählte E-Mail-Adresse als SMTP-Benutzername im externen Dienst und das generierte Token als SMTP-Passwort."
       ],
       "Verification can take a few minutes.": [
         "Die Überprüfung kann einige Minuten dauern."
@@ -5984,6 +6022,9 @@
       ],
       "You have no saved payment methods.": [
         "Du hast keine Zahlungsmethoden festgelegt."
+      ],
+      "You may now start using the extension": [
+        "Du kannst die Erweiterung nun verwenden"
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Du musst den privaten Schlüssel deiner Organisation mit dem Passwort für den gesicherten Organisationsschlüssel aktivieren, das du von deinem Organisationsadministrator erhalten hast."
@@ -6672,9 +6713,6 @@
       "Blocked": [
         "Blockiert"
       ],
-      "bonus storage": [
-        "Zusätzlicher Speicherplatz"
-      ],
       "Browser": [
         "Browser"
       ],
@@ -7047,6 +7085,9 @@
       "Name on card": [
         "Karteninhaber"
       ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Port-Weiterleitung)"
+      ],
       "Navigation": [
         "Navigation"
       ],
@@ -7218,6 +7259,12 @@
       "Signature": [
         "Signatur"
       ],
+      "SMTP token": [
+        "SMTP-Token"
+      ],
+      "SMTP username": [
+        "SMTP-Benutzername"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7277,6 +7324,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "An: ${ PMEmailAddress }"
+      ],
+      "Token name": [
+        "Tokenname"
       ],
       "Two-password mode": [
         "Zwei-Passwort-Modus"
@@ -9069,6 +9119,9 @@
       "Postal code": [
         "Postleitzahl"
       ],
+      "Printer": [
+        "Drucker"
+      ],
       "Search": [
         "Suchen"
       ],
@@ -9823,6 +9876,11 @@
         "Spare"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Aktiv"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Die datenschutzfreundliche E-Mail- und Kalenderlösung für deine täglichen Kommunikationsbedürfnisse."
@@ -9957,6 +10015,9 @@
       ],
       "Sessions revoked": [
         "Sitzungen zurückgenommen"
+      ],
+      "SMTP token deleted": [
+        "SMTP-Token gelöscht"
       ],
       "SPF value copied to clipboard": [
         "SPF-Wert wurde in die Zwischenablage kopiert"
@@ -10119,6 +10180,11 @@
         "vCard-Feld"
       ]
     },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "Keine SMTP-Token gefunden"
+      ]
+    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } Stunde",
@@ -10269,9 +10335,6 @@
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
-      ],
-      "Billing details": [
-        "Abrechnungsdetails"
       ],
       "Bridge for ${ platform }": [
         "Bridge für ${ platform }"
@@ -10424,6 +10487,9 @@
       "Delete ${ label.Name } label": [
         "Kategorie „${ label.Name }“ löschen"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "${ tokenNameToRemove } löschen?"
+      ],
       "Delete account": [
         "Konto löschen"
       ],
@@ -10499,6 +10565,9 @@
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
       ],
+      "End date": [
+        "Enddatum"
+      ],
       "Enter your password": [
         "Passwort eingeben"
       ],
@@ -10544,6 +10613,9 @@
       ],
       "Generate new recovery phrase?": [
         "Neue Wiederherstellungsphrase generieren?"
+      ],
+      "Generate SMTP token": [
+        "SMTP-Token generieren"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Hol dir ${ vpnPlus }, um Zugriff auf alle Server zu erhalten"
@@ -10620,6 +10692,9 @@
       ],
       "Layout": [
         "Anordnung"
+      ],
+      "Length": [
+        "Länge"
       ],
       "Link confirmation": [
         "Linkbestätigung"
@@ -10698,6 +10773,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Plan": [
+        "Abonnement"
       ],
       "Plan summary": [
         "Abo-Zusammenfassung"
@@ -10825,6 +10903,9 @@
       "Signed in to member account": [
         "In Mitgliedskonto angemeldet"
       ],
+      "SMTP tokens": [
+        "SMTP-Token"
+      ],
       "Sort folders alphabetically": [
         "Ordner alphabetisch sortieren"
       ],
@@ -10836,6 +10917,9 @@
       ],
       "Start a new import": [
         "Neuer Importvorgang"
+      ],
+      "Start date": [
+        "Startdatum"
       ],
       "Start import process": [
         "Importvorgang starten"
@@ -10875,6 +10959,9 @@
       "Time zone": [
         "Zeitzone"
       ],
+      "Total paid": [
+        "Insgesamt gezahlt"
+      ],
       "Track your referrals": [
         "Verfolge deine Empfehlungen"
       ],
@@ -10895,6 +10982,9 @@
       ],
       "Upgrade plan": [
         "Abonnement upgraden"
+      ],
+      "Users": [
+        "Benutzer"
       ],
       "Users and addresses": [
         "Benutzer und E-Mail-Adressen"
@@ -10955,6 +11045,12 @@
       ],
       "Your recovery status": [
         "Dein Wiederherstellungsstatus"
+      ],
+      "Your SMTP token": [
+        "Dein SMTP-Token"
+      ],
+      "Your subscriptions": [
+        "Deine Abonnements"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du wurdest eingeladen, ${ MAIL_APP_NAME } zu testen."
@@ -11118,6 +11214,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
       ],
       "This address has been disabled": [
         "Diese Adresse wurde deaktiviert"
@@ -11358,6 +11457,9 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Die Datums- und Zeiteinstellungen auf deinem Gerät sind nicht synchronisiert. ${ learnMore }"
       ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "Das Gerät oder der Dienst, der dieses Token verwendet, kann keine E-Mails mehr über ${ MAIL_APP_NAME } versenden."
+      ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Dieser Import kann die derzeit verfügbare Speicherkapazität deines ${ BRAND_NAME }-Kontos überschreiten. Bitte ziehe in Erwägung, den Import anzupassen."
       ],
@@ -11366,6 +11468,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Wir konnten den Mailserver nicht verifizieren. Wenn du ihm vertraust, kann diese Überprüfung übersprungen werden."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Es wurde ein Problem mit Ihrer DNS-Konfiguration festgestellt. Bitte stellen Sie sicher, dass Ihre Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Abmeldung abschalten."
