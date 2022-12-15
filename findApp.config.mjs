@@ -60,6 +60,10 @@ export default {
                 name: 'encrypted-search',
                 glob: 'lib/**/*.{js,jsx,ts,tsx}',
             },
+            {
+                name: 'activation',
+                glob: '{{api,components,hooks,logic,mail,modals,steps,utils}/**/*,index,helpers,constants,interface}.{js,jsx,ts,tsx}',
+            },
         ],
         ignore: ['pack', 'config', 'i18n', 'eslint-config-proton', 'stylelint-config-proton', 'styles', 'testing'],
     },
