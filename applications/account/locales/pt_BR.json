@@ -360,6 +360,9 @@
       "Font": [
         "Fonte"
       ],
+      "Generate": [
+        "Gerar"
+      ],
       "Generate key": [
         "Gerar chave"
       ],
@@ -368,6 +371,9 @@
       ],
       "Generate recovery phrase": [
         "Gerar frase de recuperação"
+      ],
+      "Generate token": [
+        "Gerar token"
       ],
       "Get ${ vpnPlus }": [
         "Obtenha o ${ vpnPlus }"
@@ -495,11 +501,11 @@
       "Not spam": [
         "Não é spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -516,8 +522,8 @@
       "Pay": [
         "Pagar"
       ],
-      "Pay ${ price }": [
-        "Pagar ${ price }"
+      "Pay ${ price } now": [
+        "Pagar ${ price } agora"
       ],
       "Preview": [
         "Pré-visualização"
@@ -1052,9 +1058,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Renova automaticamente em ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Renova automaticamente em ${ formattedEndTime } por ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -3957,6 +3960,23 @@
         "Valor / dados / pontos para"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "Ações"
+      ],
+      "Created": [
+        "Criação"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
+      ],
+      "Last used": [
+        "Último uso"
+      ],
+      "Token name": [
+        "Nome do token"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Encontrada ${ items.length } sugestão, use o teclado para navegar.",
@@ -4626,6 +4646,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Valor total abaixo do mínimo (${ amount })."
+      ],
+      "An error occured while communicating with the extension": [
+        "Ocorreu um erro durante a comunicação com a extensão"
       ],
       "and": [
         "e"
@@ -5664,7 +5687,7 @@
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link pode ser um ataque homógrafo e não pode ser aberto pelos navegador Edge. Se você tiver certeza de que o link é legítimo, use um navegador diferente para abri-lo."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
@@ -5981,6 +6004,9 @@
       ],
       "You have no saved payment methods.": [
         "Você não tem uma opção de pagamento salva."
+      ],
+      "You may now start using the extension": [
+        "Agora você pode usar essa extensão"
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Você deve ativar a chave privada da sua organização com a chave de backup fornecida pelo administrador da sua organização."
@@ -6669,9 +6695,6 @@
       "Blocked": [
         "Bloqueado"
       ],
-      "bonus storage": [
-        "bônus de armazenamento"
-      ],
       "Browser": [
         "Navegador"
       ],
@@ -7047,6 +7070,9 @@
       "Name on card": [
         "Nome no cartão"
       ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Redirecionamento de portas)"
+      ],
       "Navigation": [
         "Navegação"
       ],
@@ -7218,6 +7244,12 @@
       "Signature": [
         "Assinatura"
       ],
+      "SMTP token": [
+        "Token SMTP"
+      ],
+      "SMTP username": [
+        "Nome de usuário do SMTP"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7277,6 +7309,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Para: ${ PMEmailAddress }"
+      ],
+      "Token name": [
+        "Nome do token"
       ],
       "Two-password mode": [
         "Modo de duas senhas"
@@ -9069,6 +9104,9 @@
       "Postal code": [
         "Código postal"
       ],
+      "Printer": [
+        "Imprimir"
+      ],
       "Search": [
         "Pesquisar"
       ],
@@ -9823,6 +9861,11 @@
         "Economize"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Ativo"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "O acesso à solução de email e calendário que prioriza a privacidade para as suas necessidades diárias de comunicação."
@@ -9957,6 +10000,9 @@
       ],
       "Sessions revoked": [
         "Sessões revogadas"
+      ],
+      "SMTP token deleted": [
+        "Token SMTP excluido"
       ],
       "SPF value copied to clipboard": [
         "Valor SPF copiado para a área de transferência"
@@ -10119,6 +10165,11 @@
         "Campo vCard"
       ]
     },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "Sem tokens de SMTP encontrados"
+      ]
+    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } hora",
@@ -10269,9 +10320,6 @@
       ],
       "Billing cycle": [
         "Ciclo de faturamento"
-      ],
-      "Billing details": [
-        "Detalhes de faturamento"
       ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
@@ -10499,6 +10547,9 @@
       "Encryption and keys": [
         "Criptografia e chaves"
       ],
+      "End date": [
+        "Data de término"
+      ],
       "Enter your password": [
         "Digite sua senha"
       ],
@@ -10544,6 +10595,9 @@
       ],
       "Generate new recovery phrase?": [
         "Gerar nova frase de recuperação?"
+      ],
+      "Generate SMTP token": [
+        "Gerar token SMTP"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obtenha o ${ vpnPlus } para acessar todos os servidores"
@@ -10620,6 +10674,9 @@
       ],
       "Layout": [
         "Layout"
+      ],
+      "Length": [
+        "Tamanho"
       ],
       "Link confirmation": [
         "Confirmar redirecionamento"
@@ -10698,6 +10755,9 @@
       ],
       "Phone": [
         "Telefone"
+      ],
+      "Plan": [
+        "Plano"
       ],
       "Plan summary": [
         "Resumo do plano"
@@ -10825,6 +10885,9 @@
       "Signed in to member account": [
         "Conectado à conta de membro"
       ],
+      "SMTP tokens": [
+        "Tokens SMTP"
+      ],
       "Sort folders alphabetically": [
         "Ordenar pastas por ordem alfabética"
       ],
@@ -10836,6 +10899,9 @@
       ],
       "Start a new import": [
         "Iniciar uma nova importação"
+      ],
+      "Start date": [
+        "Data de início"
       ],
       "Start import process": [
         "Iniciar processo de importação"
@@ -10896,6 +10962,9 @@
       "Upgrade plan": [
         "Fazer upgrade de plano"
       ],
+      "Users": [
+        "Usuários"
+      ],
       "Users and addresses": [
         "Usuários e endereços"
       ],
@@ -10955,6 +11024,9 @@
       ],
       "Your recovery status": [
         "Estado da sua recuperação"
+      ],
+      "Your subscriptions": [
+        "Suas assinaturas"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Você foi convidado a experimentar o ${ MAIL_APP_NAME }"

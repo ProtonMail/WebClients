@@ -495,11 +495,11 @@
       "Not spam": [
         "No es spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -515,9 +515,6 @@
       ],
       "Pay": [
         "Pagar"
-      ],
-      "Pay ${ price }": [
-        "Pague ${ price }"
       ],
       "Preview": [
         "Vista previa"
@@ -1052,9 +1049,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Se renueva automáticamente el ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Se renueva automáticamente en ${ formattedEndTime } por ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -5662,7 +5656,7 @@
         "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homógrafo y los navegadores Edge no pueden abrirlo. Si cree que el enlace es legítimo, use un navegador diferente para abrirlo."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que desea visitar o no lo abra."
@@ -6669,9 +6663,6 @@
       ],
       "Blocked": [
         "Bloqueado"
-      ],
-      "bonus storage": [
-        "almacenamiento adicional"
       ],
       "Browser": [
         "Navegador"
@@ -10273,9 +10264,6 @@
       ],
       "Billing cycle": [
         "Ciclo de facturación"
-      ],
-      "Billing details": [
-        "Datos de facturación"
       ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"

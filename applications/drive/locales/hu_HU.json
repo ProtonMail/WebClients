@@ -523,6 +523,9 @@
       "Skip": [
         "Kihagyás"
       ],
+      "Skip verification": [
+        "Ellenőrzés átugrása"
+      ],
       "Start import": [
         "Importálás indítása"
       ],
@@ -2100,6 +2103,9 @@
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Ez az üzenet olyan URL hivatkozásokat tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Próbáljon csak betűket, számokat és _.-t használni"
+      ],
       "Unknown error": [
         "Ismeretlen hiba"
       ],
@@ -3244,6 +3250,9 @@
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
       ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Úgy tűnik, hogy nemrég megpróbálta feltölteni ezt a fájlt: ${ uploadName }. Ha feltöltés nem sikerült, ${ replaceFile }. Ha a feltöltés még folyamatban van, lecserélése törölni fogja a folyamatban lévő feltöltést."
+      ],
       "It’s easy and secure": [
         "Egyszerű és biztonságos"
       ],
@@ -3540,7 +3549,7 @@
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
@@ -3710,6 +3719,9 @@
       ],
       "You will lose all unsaved changes.": [
         "A nem mentett módosítások el fognak veszni."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva e-mailek nem fognak a fiókjába érkezni, a Drive megosztási linkjei blokkolva lesznek, és nem lesz képes új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
@@ -3941,6 +3953,18 @@
       ],
       "Emails": [
         "E-mailek"
+      ],
+      "Emails (all messages)": [
+        "E-mailek (összes üzenet)"
+      ],
+      "Emails (last 12 months)": [
+        "E-mailek (utolsó 12 hónap)"
+      ],
+      "Emails (last 3 months)": [
+        "E-mailek (utolsó 3 hónap)"
+      ],
+      "Emails (last month)": [
+        "E-mailek (utolsó hónap)"
       ],
       "Enable Beta Access": [
         "\"Béta hozzáférés\" engedélyezése"
@@ -4179,6 +4203,9 @@
       "To: ${ PMEmailAddress }": [
         "Cél: ${ PMEmailAddress }"
       ],
+      "Toolbar": [
+        "Eszköztár"
+      ],
       "Two-factor authentication code": [
         "Kétlépcsős hitelesítő kód"
       ],
@@ -4309,6 +4336,20 @@
       ],
       "Your import is starting": [
         "Az importálás indul"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Az összes üzenet importálása a(z) ${ itemsToImportCount } címkéből és megcímkézni őket így: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Az összes üzenet importálása a(z) ${ itemsToImportCount } címkékből és megcímkézni őket így: ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } mappából, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } mappákból, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } címkéből, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } címkékből, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -4613,6 +4654,9 @@
       "Set up your organization": [
         "Állítsa be a szervezet adatait"
       ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "Használja az alkalmazás választót a bal felső sarokban, hogy hozzáférjen az összes ${ BRAND_NAME } szolgáltatáshoz: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME }."
+      ],
       "You can change this anytime in your settings.": [
         "Ezt a beállításoknál bármikor megváltoztathatja."
       ]
@@ -4839,6 +4883,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kapcsolat azonosnak tűnik.",
+        "${ countMergeableContacts } kapcsolatok azonosnak tűnnek."
+      ],
       "Address copied to clipboard": [
         "Cím a vágólapra másolva"
       ],
@@ -5497,6 +5545,10 @@
       "Password must contain at least ${ length } character": [
         "A jelszónak legalább ${ length } karakterből kell állnia",
         "A jelszónak legalább ${ length } karakterből kell állnia"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
       ]
     },
     "Validation Error": {
@@ -5560,6 +5612,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
       ],
+      "Skip verification?": [
+        "Ellenőrzés átugrása?"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Némelyik névjegy egyesítése hibát jelez. Vizsgálja meg ezeket"
       ],
@@ -5586,6 +5641,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sajnos a támogatási csoport jelenleg nem elérhető. Kérjük, az alábbi űrlapon írja le a problémáját és amint lehet felvesszük önnel a kapcsolatot."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Nem sikerült ellenőrzni a mail-szervert. Ha megbízik benne, átugorhatja ezt az ellenőrzést."
       ],
       "You will lose any customization you made so far.": [
         "Elveszíti az eddigi változtatásokat."

@@ -495,11 +495,11 @@
       "Not spam": [
         "Не спам"
       ],
-      "OK": [
-        "Застосувати"
-      ],
       "Ok": [
         "Гаразд"
+      ],
+      "OK": [
+        "Застосувати"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -515,9 +515,6 @@
       ],
       "Pay": [
         "Сплатити"
-      ],
-      "Pay ${ price }": [
-        "Сплатити ${ price }"
       ],
       "Preview": [
         "Попередній перегляд"
@@ -1056,9 +1053,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Поновлюється автоматично ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Поновлюється автоматично ${ formattedEndTime } за ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -5801,7 +5795,7 @@
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Це посилання може бути гомографічною атакою і його не можна відкрити у браузерах Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."
@@ -6816,9 +6810,6 @@
       ],
       "Blocked": [
         "Заблоковано"
-      ],
-      "bonus storage": [
-        "бонусне сховище"
       ],
       "Browser": [
         "Браузер"
@@ -10243,9 +10234,6 @@
       ],
       "Billing cycle": [
         "Платіжний цикл"
-      ],
-      "Billing details": [
-        "Подробиці платежу"
       ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"

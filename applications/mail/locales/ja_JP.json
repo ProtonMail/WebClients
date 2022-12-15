@@ -231,7 +231,7 @@
         "フォルダーの作成"
       ],
       "Create label": [
-        "ラベルの作成"
+        "ラベルを作成"
       ],
       "Create new contact": [
         "新しい連絡先を作成"
@@ -273,7 +273,7 @@
         "フォルダーを削除"
       ],
       "Delete label": [
-        "ラベルの削除"
+        "ラベルを削除"
       ],
       "Delete permanently": [
         "完全に削除"
@@ -651,7 +651,7 @@
         "次へ"
       ],
       "Next conversation": [
-        "次のやりとり"
+        "次の会話"
       ],
       "Next message": [
         "次のメッセージ"
@@ -711,7 +711,7 @@
         "前へ"
       ],
       "Previous conversation": [
-        "前のやりとり"
+        "前の会話"
       ],
       "Previous message": [
         "前のメッセージ"
@@ -1137,7 +1137,7 @@
         "返信先"
       ],
       "Star conversation": [
-        "やりとりに星をつける"
+        "会話に星印をつける"
       ],
       "Star message": [
         "メッセージに星印をつける"
@@ -1146,7 +1146,7 @@
         "未読メール"
       ],
       "Unstar conversation": [
-        "やりとりから星を外す"
+        "会話の星印を外す"
       ],
       "Unstar message": [
         "メッセージの星印を外す"
@@ -1154,7 +1154,7 @@
     },
     "Alternative text for conversation image": {
       "Conversation": [
-        "やりとり"
+        "会話"
       ]
     },
     "Alternative text for simple login image": {
@@ -4589,7 +4589,7 @@
         "グループの割り当てが適用されました"
       ],
       "Has ${ numAttachments } attachments": [
-        "${ numAttachments } の添付ファイル"
+        "${ numAttachments } 件の添付ファイル"
       ],
       "here": [
         "こちら"
@@ -5108,7 +5108,7 @@
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "このリンクは偽装URLである可能性があり、Edgeでは開くことができません。リンクが確実に正しいと思われる場合、別のブラウザーで開いてください。"
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
@@ -5281,6 +5281,9 @@
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
       ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "移動しました。私たちの新しいドメイン ${ link } でサインインしてください。"
+      ],
       "Web URL": [
         "Web URL"
       ],
@@ -5354,16 +5357,16 @@
         "受信箱に ${ unreadsLabel } があります。"
       ],
       "You have **${ count } conversations** stored in this folder": [
-        "このフォルダー内に **${ count } 件の会話**が存在します"
+        "このフォルダー内に **${ count } 件の会話**があります"
       ],
       "You have **${ count } conversations** tagged with this label": [
-        "このラベルでタグ付けされている${ count }件のやりとりがあります"
+        "このラベルがついた **${ count } 件の会話**があります"
       ],
       "You have **${ count } messages** stored in this folder": [
-        "このフォルダー内に${ count }件のメールがあります"
+        "このフォルダー内に **${ count } 件のメッセージ**があります"
       ],
       "You have **${ count } messages** tagged with this label": [
-        "このラベルにタグされた **${ count } 件のメッセージ** があります"
+        "このラベルがついた **${ count } 件のメッセージ**があります"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "この電子メールには件名がありません。このままメッセージを送信しますか？"
@@ -5384,16 +5387,16 @@
         "ストレージ容量が最大に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversations** from this folder": [
-        "このフォルダー内の **${ count } 件の会話** を選択中"
+        "このフォルダー内の **${ count } 件の会話**を選択中"
       ],
       "You selected **${ count } conversations** with this label": [
-        "このラベルの **${ count } 件の会話** を選択しています"
+        "このラベルがついた **${ count } 件の会話**を選択中"
       ],
       "You selected **${ count } messages** from this folder": [
-        "このフォルダー内の **${ count } 件のメッセージ** を選択中"
+        "このフォルダー内の **${ count } 件のメッセージ**を選択中"
       ],
       "You selected **${ count } messages** with this label": [
-        "このラベルの **${ count } 件のメッセージ** を選択しています"
+        "このラベルがついた **${ count } 件のメッセージ**を選択中"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” とありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
@@ -7274,16 +7277,16 @@
         "${ elementsCount } 件の会話を既読にしました。"
       ],
       "${ elementsCount } conversations marked as Starred.": [
-        "${ elementsCount }件のやりとりに星をつけました。"
+        "${ elementsCount } 件の会話に星印をつけました。"
       ],
       "${ elementsCount } conversations marked as unread.": [
-        "${ elementsCount }件のやりとりを未読にしました。"
+        "${ elementsCount } 件の会話を未読にしました。"
       ],
       "${ elementsCount } conversations moved to ${ folderName } and senders added to your not spam list.": [
         "${ elementsCount }件のやりとりを${ folderName }に移動し、差出人のアドレスは迷惑メールリストに登録されました。"
       ],
       "${ elementsCount } conversations moved to ${ folderName }.": [
-        "${ elementsCount }件のやりとりを${ folderName }に移動しました。"
+        "${ elementsCount } 件の会話を ${ folderName } に移動しました。"
       ],
       "${ elementsCount } conversations moved to spam and senders added to your spam list.": [
         "${ elementsCount } 件のやりとりを迷惑メールに移動し、送信元のアドレスは迷惑メールリストに登録されました。"
@@ -7343,7 +7346,7 @@
         "やりとりに${ labelName }のラベルを付けました"
       ],
       "Conversation deleted": [
-        "やりとりが削除されました"
+        "会話が削除されました"
       ],
       "Conversation marked as read.": [
         "やりとりを既読にしました。"
@@ -7707,7 +7710,7 @@
         "すべてのメッセージを削除"
       ],
       "Delete conversation": [
-        "やりとりを削除"
+        "会話を削除"
       ],
       "Delete draft": [
         "下書きの削除"
@@ -7893,7 +7896,7 @@
         "新規メッセージ"
       ],
       "Next conversation": [
-        "次のやりとり"
+        "次の会話"
       ],
       "Next message": [
         "次のメッセージ"
@@ -7920,7 +7923,7 @@
         "電話番号"
       ],
       "Previous conversation": [
-        "前のやりとり"
+        "前の会話"
       ],
       "Previous message": [
         "前のメッセージ"
