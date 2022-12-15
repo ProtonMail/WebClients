@@ -495,10 +495,10 @@
       "Not spam": [
         "İstenmeyen değil"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -515,9 +515,6 @@
       ],
       "Pay": [
         "Öde"
-      ],
-      "Pay ${ price }": [
-        "${ price } öde"
       ],
       "Preview": [
         "Ön izle"
@@ -746,6 +743,9 @@
       ],
       "Size": [
         "Boyut"
+      ],
+      "Skip verification": [
+        "Doğrulamayı atla"
       ],
       "Sort": [
         "Sırala"
@@ -1049,9 +1049,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "${ formattedEndTime } tarihinde otomatik olarak yenilenir"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "${ formattedEndTime } tarihinde ${ amount } tutar ile otomatik olarak yenilenir"
       ]
     },
     "Billing cycle option": {
@@ -4624,6 +4621,9 @@
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
+      "An error occured while communicating with the extension": [
+        "Eklenti ile iletişim kurulurken bir sorun çıktı"
+      ],
       "and": [
         "ve"
       ],
@@ -5661,7 +5661,7 @@
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir web sitesine gidiyor olabilir."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge web tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
@@ -5978,6 +5978,9 @@
       ],
       "You have no saved payment methods.": [
         "Kayıtlı bir ödeme yönteminiz yok."
+      ],
+      "You may now start using the extension": [
+        "Artık eklentiyi kullanmaya başlayabilirsiniz"
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Kuruluşunuzun kişisel anahtarını, kuruluş yöneticiniz tarafından size sağlanan yedek kuruluş anahtarı parolasıyla etkinleştirmeniz gerekir."
@@ -6666,9 +6669,6 @@
       "Blocked": [
         "Engellenmiş"
       ],
-      "bonus storage": [
-        "hediye depolama alanı"
-      ],
       "Browser": [
         "Tarayıcı"
       ],
@@ -7043,6 +7043,9 @@
       ],
       "Name on card": [
         "Kart üzerindeki isim"
+      ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (bağlantı noktası yönlendirme)"
       ],
       "Navigation": [
         "Gezinme"
@@ -10021,9 +10024,6 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
-      "Billing details": [
-        "Fatura bilgileri"
-      ],
       "Bridge for ${ platform }": [
         "${ platform } için Bridge"
       ],
@@ -11103,6 +11103,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
+      "Skip verification?": [
+        "Doğrulama atlansın mı?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Aygıtınızın tarih ve saat ayarları eşit değil. ${ learnMore }"
       ],
@@ -11114,6 +11117,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrimiçi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrimiçi olduğumuzda inceleyip size geri döneceğiz."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "E-posta sunucusunu doğrulayamadık. Sunucuya güveniyorsanız, bu doğrulamayı atlayabilirsiniz."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."

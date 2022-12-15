@@ -146,6 +146,9 @@
       "Clear query": [
         "Limpar consulta"
       ],
+      "Clear search": [
+        "Limpar a pesquisa"
+      ],
       "Click here.": [
         "Clique aqui."
       ],
@@ -256,6 +259,12 @@
       "Delete draft": [
         "Eliminar rascunho"
       ],
+      "Delete folder": [
+        "Eliminar pasta"
+      ],
+      "Delete label": [
+        "Eliminar etiqueta"
+      ],
       "Delete permanently": [
         "Eliminar permanentemente"
       ],
@@ -298,11 +307,17 @@
       "Edit encryption": [
         "Editar encriptação"
       ],
+      "Edit folder": [
+        "Editar pasta"
+      ],
       "Edit label": [
         "Editar etiqueta"
       ],
       "Edit phone number": [
         "Editar o número de telefone"
+      ],
+      "Edit sign-in details": [
+        "Editar detalhes do início de sessão"
       ],
       "Email settings": [
         "Definições de email"
@@ -345,6 +360,9 @@
       ],
       "Filter on...": [
         "Filtrar por..."
+      ],
+      "Fit to window": [
+        "Ajustar na janela"
       ],
       "Font": [
         "Letra"
@@ -557,6 +575,9 @@
       "Move": [
         "Mover"
       ],
+      "Move all to trash": [
+        "Mover tudo para o lixo"
+      ],
       "move emails to": [
         "mover emails para"
       ],
@@ -626,6 +647,9 @@
       "Open navigation": [
         "Abrir navegação"
       ],
+      "Open shop": [
+        "Abrir loja"
+      ],
       "Ordered list": [
         "Lista ordenada"
       ],
@@ -670,6 +694,9 @@
       ],
       "Re-sign": [
         "Re-assinar"
+      ],
+      "Read message": [
+        "Ler mensagem"
       ],
       "Read receipt sent": [
         "Recibo de leitura enviado"
@@ -827,6 +854,9 @@
       "Show labels": [
         "Mostrar etiquetas"
       ],
+      "Show less": [
+        "Mostrar menos"
+      ],
       "Show messages": [
         "Mostrar mensagens"
       ],
@@ -847,6 +877,9 @@
       ],
       "Skip": [
         "Ignorar"
+      ],
+      "Skip verification": [
+        "Saltar verificação"
       ],
       "Star": [
         "Estrela"
@@ -3352,6 +3385,10 @@
         "${ unread } mensagem não lida",
         "${ unread } mensagens não lidas"
       ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } mensagem agendada",
+        "${ unreadCount } mensagens agendadas"
+      ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } conversa não lida",
         "${ unreadCount } conversas não lidas"
@@ -3657,6 +3694,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
       ],
+      "Image description": [
+        "Descrição da imagem"
+      ],
       "Image URL": [
         "URL da imagem"
       ],
@@ -3702,6 +3742,9 @@
       ],
       "Label all imported messages as": [
         "Etiquetar todas as mensagens importadas como"
+      ],
+      "Labels:": [
+        "Etiquetas:"
       ],
       "Large imports can take several days.": [
         "As importações grandes podem demorar vários dias."
@@ -3826,6 +3869,9 @@
       "Please add at least one recipient.": [
         "Por favor, adicione pelo menos um destinatário."
       ],
+      "Please fill out this field.": [
+        "Por favor, preencha este campo."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Por favor, note que os endereços atribuídos a este grupo NÃO serão eliminados."
       ],
@@ -3931,6 +3977,9 @@
       ],
       "Show original message": [
         "Mostrar mensagem original"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe. Esta mensagem não existe ou já expirou."
@@ -4189,6 +4238,10 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "A informação de início de sessão não será gravada após concluir a importação."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "A sua mensagem expirará em ${ numberOfDays } dia.",
+        "As suas mensagens expirará em ${ numberOfDays } dias."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será usado para esta verificação única."
@@ -5367,6 +5420,9 @@
       "Filter labels": [
         "Filtrar etiquetas"
       ],
+      "Group name": [
+        "Nome do grupo"
+      ],
       "Hint": [
         "Dica"
       ],
@@ -5976,6 +6032,10 @@
       "${ emailsCount } member": [
         "${ emailsCount } membro",
         "${ emailsCount } membros"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } mensagem não lida",
+        "${ unreads } mensagens não lidas"
       ],
       "Account suspended": [
         "Conta suspensa"

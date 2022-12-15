@@ -360,6 +360,9 @@
       "Font": [
         "Шрифт"
       ],
+      "Generate": [
+        "Сгенерировать"
+      ],
       "Generate key": [
         "Сгенерировать ключ"
       ],
@@ -368,6 +371,9 @@
       ],
       "Generate recovery phrase": [
         "Создать фразу для восстановления"
+      ],
+      "Generate token": [
+        "Сгенерировать токен"
       ],
       "Get ${ vpnPlus }": [
         "Получить ${ vpnPlus }"
@@ -495,11 +501,11 @@
       "Not spam": [
         "Не спам"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
@@ -516,8 +522,8 @@
       "Pay": [
         "Оплатить"
       ],
-      "Pay ${ price }": [
-        "Оплатить ${ price }"
+      "Pay ${ price } now": [
+        "Оплатите ${ price } сейчас"
       ],
       "Preview": [
         "Предпросмотр"
@@ -746,6 +752,9 @@
       ],
       "Size": [
         "Размер"
+      ],
+      "Skip verification": [
+        "Пропуск проверки"
       ],
       "Sort": [
         "Сортировать"
@@ -1053,9 +1062,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Пролонгируется автоматически ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Пролонгируется автоматически ${ formattedEndTime } за ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -3271,6 +3277,9 @@
       "You must set a name": [
         "Вы должны задать имя"
       ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "У вас должен быть пользовательский адрес домена, чтобы создать токен SMTP."
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ваш аккаунт или организация имеет просроченный счет. Пожалуйста, оплатите все неоплаченные счета."
       ],
@@ -3995,6 +4004,23 @@
       ],
       "Value / Data / Points to": [
         "Значение / Данные / Указывает на"
+      ]
+    },
+    "Header for table": {
+      "Actions": [
+        "Действия"
+      ],
+      "Created": [
+        "Создано"
+      ],
+      "Email address": [
+        "Адрес электронной почты"
+      ],
+      "Last used": [
+        "В последний раз использовано"
+      ],
+      "Token name": [
+        "Имя токена"
       ]
     },
     "Hint": {
@@ -5099,6 +5125,9 @@
       "Get my ${ BRAND_NAME } address": [
         "Получить свой адрес ${ BRAND_NAME }"
       ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain address. Only this address will be able to send emails with this token.": [
+        "Дайте токену описательное имя, например, услугу, с которой вы планируете его использовать, и выберите один из ваших активных пользовательских доменных адресов. Только этот адрес сможет отправлять электронные письма с этим токеном."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Поделитесь своим публичным ключом с друзьями или опубликуйте его в Интернете, чтобы каждый мог отправлять вам письма со сквозным шифрованием!"
       ],
@@ -5793,10 +5822,13 @@
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Edge. Если вы уверены, что ссылка подлинная, используйте другой браузер для ее открытия."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
+      ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "Этот токен не будет доступен после закрытия этого окна, и вы не должны делиться им ни с кем."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Этот пользователь в настоящее время отвечает за платежи вашей организации. Понизив этого пользователя в должности, вы станете ответственным за платежи вашей организации."
@@ -5947,6 +5979,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Используйте следующие учетные данные при подключении к серверам ${ VPN_APP_NAME } без приложения. Примеры использования включают: Tunnelblick на macOS, OpenVPN на GNU/Linux."
+      ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "Используйте выбранный адрес электронной почты в качестве имени пользователя SMTP во внешней службе и сгенерированный токен в качестве пароля SMTP."
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -6809,9 +6844,6 @@
       "Blocked": [
         "Заблокировано"
       ],
-      "bonus storage": [
-        "бонусное хранилище"
-      ],
       "Browser": [
         "Браузер"
       ],
@@ -7361,6 +7393,12 @@
       "Signature": [
         "Подпись"
       ],
+      "SMTP token": [
+        "SMTP токен"
+      ],
+      "SMTP username": [
+        "Имя пользователя SMTP"
+      ],
       "Spam": [
         "Спам"
       ],
@@ -7420,6 +7458,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Кому: ${ PMEmailAddress }"
+      ],
+      "Token name": [
+        "Имя токена"
       ],
       "Two-password mode": [
         "Режим с двумя паролями"
@@ -9280,6 +9321,9 @@
       "Postal code": [
         "Почтовый индекс"
       ],
+      "Printer": [
+        "Принтер"
+      ],
       "Search": [
         "Поиск"
       ],
@@ -10076,6 +10120,14 @@
         "Сэкономьте"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Активный"
+      ],
+      "Upcoming": [
+        "Предстоящий"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Почта и календарь - это решение для повседневных коммуникаций с приоритетом конфиденциальности."
@@ -10210,6 +10262,9 @@
       ],
       "Sessions revoked": [
         "Сессии прерваны"
+      ],
+      "SMTP token deleted": [
+        "SMTP токен удалён"
       ],
       "SPF value copied to clipboard": [
         "Значение SPF скопировано в буфер обмена"
@@ -10372,6 +10427,11 @@
         "Поле vCard-файла"
       ]
     },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "SMTP токены не найдены"
+      ]
+    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } час",
@@ -10526,9 +10586,6 @@
       ],
       "Billing cycle": [
         "Период оплаты"
-      ],
-      "Billing details": [
-        "Платёжная информация"
       ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
@@ -10758,6 +10815,9 @@
       "Encryption and keys": [
         "Шифрование и ключи"
       ],
+      "End date": [
+        "Дата окончания"
+      ],
       "Enter your password": [
         "Введите свой пароль"
       ],
@@ -10805,6 +10865,9 @@
       ],
       "Generate new recovery phrase?": [
         "Сгенерировать новую фразу для восстановления?"
+      ],
+      "Generate SMTP token": [
+        "Сгенерировать SMTP токен"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Получите ${ vpnPlus } для доступа ко всем серверам"
@@ -10884,6 +10947,9 @@
       "Layout": [
         "Вид"
       ],
+      "Length": [
+        "Длина"
+      ],
       "Link confirmation": [
         "Подтверждение ссылки"
       ],
@@ -10961,6 +11027,9 @@
       ],
       "Phone": [
         "Телефон"
+      ],
+      "Plan": [
+        "Тариф"
       ],
       "Plan summary": [
         "Сводка по тарифу"
@@ -11088,6 +11157,9 @@
       "Signed in to member account": [
         "Выполнен вход в аккаунт пользователя"
       ],
+      "SMTP tokens": [
+        "SMTP токены"
+      ],
       "Sort folders alphabetically": [
         "Сортировать папки по алфавиту"
       ],
@@ -11099,6 +11171,9 @@
       ],
       "Start a new import": [
         "Начать новый импорт"
+      ],
+      "Start date": [
+        "Дата начала"
       ],
       "Start import process": [
         "Начать процесс импорта"
@@ -11142,6 +11217,9 @@
       "Time zone": [
         "Часовой пояс"
       ],
+      "Total paid": [
+        "Общая стоимость"
+      ],
       "Track your referrals": [
         "Отслеживание ваших рефералов"
       ],
@@ -11162,6 +11240,9 @@
       ],
       "Upgrade plan": [
         "Улучшить план"
+      ],
+      "Users": [
+        "Пользователи"
       ],
       "Users and addresses": [
         "Пользователи и адреса"
@@ -11222,6 +11303,12 @@
       ],
       "Your recovery status": [
         "Ваше состояние восстановления"
+      ],
+      "Your SMTP token": [
+        "Ваш SMTP токен"
+      ],
+      "Your subscriptions": [
+        "Ваша подписка"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Вас пригласили попробовать ${ MAIL_APP_NAME }"
@@ -11385,6 +11472,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнется с самых последних сообщений."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Новый цикл подписки начинается ${ formattedTime }"
       ],
       "This address has been disabled": [
         "Этот адрес был отключён"
@@ -11633,8 +11723,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
       ],
+      "Skip verification?": [
+        "Пропустить проверку?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Настройки даты и времени на вашем устройстве не синхронизированы. ${ learnMore }"
+      ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "Устройство или служба, использующие этот токен, больше не смогут отправлять электронную почту через ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Этот импорт может превысить объем памяти, доступный в настоящее время в вашем аккаунте ${ BRAND_NAME }. Рассмотрите возможность настройки импорта."
@@ -11644,6 +11740,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Не удалось проверить почтовый сервер. Если вы доверяете ему, эту проверку можно пропустить."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Мы обнаружили проблему с настройками DNS. Пожалуйста, убедитесь, что ваши записи соответствуют инструкциям ниже. Если проблема останется, нам придётся выключить подписывание DKIM."

@@ -38,7 +38,7 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
     const punyCodeLinkText =
         isEdge() || isIE11()
             ? c('Info')
-                  .t`This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.`
+                  .t`This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.`
             : c('Info')
                   .t`This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.`;
 
