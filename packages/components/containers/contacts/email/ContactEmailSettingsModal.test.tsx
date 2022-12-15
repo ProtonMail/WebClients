@@ -59,12 +59,13 @@ END:VCARD`;
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
         fireEvent.click(showMoreButton);
 
-        const signToggleLabel = getByText('Sign emails');
-        fireEvent.click(signToggleLabel);
+        const signSelect = getByText("Use global default (Don't sign)", { exact: false });
+        fireEvent.click(signSelect);
+        const signOption = getByTitle(document.body, 'Sign');
+        fireEvent.click(signOption);
 
-        const pgpSelect = getByText('Use global default', { exact: false });
+        const pgpSelect = getByText('Use global default (PGP/MIME)', { exact: false });
         fireEvent.click(pgpSelect);
-
         const pgpInlineOption = getByTitle(document.body, 'PGP/Inline');
         fireEvent.click(pgpInlineOption);
 
@@ -92,6 +93,72 @@ END:VCARD`.replaceAll('\n', '\r\n');
         ).Data;
 
         expect(signedCardContent).toBe(expectedEncryptedCard);
+    });
+
+    it('should not store X-PM-SIGN if global default signing setting is selected', async () => {
+        CryptoProxy.setEndpoint(mockedCryptoApi);
+
+        const vcard = `BEGIN:VCARD
+VERSION:4.0
+FN;PREF=1:J. Doe
+UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+ITEM1.EMAIL;PREF=1:jdoe@example.com
+ITEM1.X-PM-SIGN:true
+END:VCARD`;
+
+        const vCardContact = parseToVCard(vcard);
+
+        const saveRequestSpy = jest.fn();
+
+        api.mockImplementation(async (args: any): Promise<any> => {
+            if (args.url === 'keys') {
+                return { Keys: [] };
+            }
+            if (args.url === 'contacts/v4/contacts') {
+                saveRequestSpy(args.data);
+                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+            }
+        });
+
+        const { getByText } = render(
+            <ContactEmailSettingsModal
+                open={true}
+                {...props}
+                vCardContact={vCardContact}
+                emailProperty={vCardContact.email?.[0] as VCardProperty<string>}
+            />
+        );
+
+        const showMoreButton = getByText('Show advanced PGP settings');
+        await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+        fireEvent.click(showMoreButton);
+
+        const signSelect = getByText('Sign', { exact: true });
+        fireEvent.click(signSelect);
+        const signOption = getByTitle(document.body, "Use global default (Don't sign)");
+        fireEvent.click(signOption);
+
+        const saveButton = getByText('Save');
+        fireEvent.click(saveButton);
+
+        await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
+
+        const sentData = saveRequestSpy.mock.calls[0][0];
+        const cards = sentData.Contacts[0].Cards;
+
+        const expectedCard = `BEGIN:VCARD
+VERSION:4.0
+FN;PREF=1:J. Doe
+UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+ITEM1.EMAIL;PREF=1:jdoe@example.com
+ITEM1.X-PM-ENCRYPT:false
+END:VCARD`.replaceAll('\n', '\r\n');
+
+        const signedCardContent = cards.find(
+            ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.SIGNED
+        ).Data;
+
+        expect(signedCardContent).toBe(expectedCard);
     });
 
     it('should warn if encryption is enabled and uploaded keys are not valid for sending', async () => {
