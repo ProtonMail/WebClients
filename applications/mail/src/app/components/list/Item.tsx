@@ -88,7 +88,7 @@ const Item = ({
         : [];
     const recipients = conversationMode ? getConversationRecipients(element) : getMessageRecipients(element as Message);
     const sendersLabels = useMemo(() => senders.map((sender) => getRecipientLabel(sender, true)), [senders]);
-    const sendersAddresses = useMemo(() => senders.map((sender) => sender?.Address), [senders]);
+    const sendersAddresses = senders.map((sender) => sender?.Address);
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
     const recipientsLabels = getRecipientsOrGroupsLabels(recipientsOrGroup);
     const recipientsAddresses = recipientsOrGroup
@@ -99,9 +99,7 @@ const Item = ({
 
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element, labelID);
-    const displaySenderImage = !!element.DisplaySenderImage;
-    const [firstSenderAddress] = sendersAddresses;
-    const [firstRecipientAddress] = recipientsAddresses;
+    const [firstRecipient] = displayRecipients ? recipients : senders;
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
@@ -168,9 +166,10 @@ const Item = ({
             >
                 <ItemCheckbox
                     ID={element.ID}
-                    bimiSelector={element.BimiSelector || undefined}
+                    bimiSelector={firstRecipient?.BimiSelector || ''}
                     name={displayRecipients ? recipientsLabels[0] : sendersLabels[0]}
-                    email={displaySenderImage ? (displayRecipients ? firstRecipientAddress : firstSenderAddress) : ''}
+                    email={firstRecipient?.Address}
+                    displaySenderImage={!!firstRecipient?.DisplaySenderImage}
                     checked={checked}
                     onChange={handleCheck}
                     compactClassName="mr0-75 stop-propagation"
