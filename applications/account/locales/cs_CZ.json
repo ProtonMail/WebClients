@@ -495,11 +495,11 @@
       "Not spam": [
         "Není spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -515,9 +515,6 @@
       ],
       "Pay": [
         "Zaplatit"
-      ],
-      "Pay ${ price }": [
-        "Zaplatit ${ price }"
       ],
       "Preview": [
         "Náhled"
@@ -1056,9 +1053,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Obnoví se automaticky v ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Obnoví se automaticky ${ formattedEndTime } za ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -5796,7 +5790,7 @@
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
@@ -6811,9 +6805,6 @@
       ],
       "Blocked": [
         "Blokováno"
-      ],
-      "bonus storage": [
-        "bonusové úložiště"
       ],
       "Browser": [
         "Prohlížeč"
@@ -10271,9 +10262,6 @@
       ],
       "Billing cycle": [
         "Fakturační cyklus"
-      ],
-      "Billing details": [
-        "Fakturační údaje"
       ],
       "Bridge for ${ platform }": [
         "Most pro ${ platform }"

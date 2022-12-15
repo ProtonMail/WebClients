@@ -530,6 +530,9 @@
       "Skip": [
         "Пропустить"
       ],
+      "Skip verification": [
+        "Пропуск проверки"
+      ],
       "Start import": [
         "Начать импорт"
       ],
@@ -3757,7 +3760,7 @@
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Edge. Если вы уверены, что ссылка подлинная, используйте другой браузер для ее открытия."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
@@ -6237,6 +6240,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
       ],
+      "Skip verification?": [
+        "Пропустить проверку?"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некоторые из планируемых к объединению контактов отображают ошибки. Пожалуйста, рассмотрите каждый из них по отдельности"
       ],
@@ -6266,6 +6272,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Не удалось проверить почтовый сервер. Если вы доверяете ему, эту проверку можно пропустить."
       ],
       "You will lose any customization you made so far.": [
         "Вы потеряете все сделанные вами до этого настройки."

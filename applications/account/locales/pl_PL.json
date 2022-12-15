@@ -360,6 +360,9 @@
       "Font": [
         "Czcionka"
       ],
+      "Generate": [
+        "Generuj"
+      ],
       "Generate key": [
         "Generuj klucz"
       ],
@@ -368,6 +371,9 @@
       ],
       "Generate recovery phrase": [
         "Generuj hasło odzyskiwania"
+      ],
+      "Generate token": [
+        "Generuj token"
       ],
       "Get ${ vpnPlus }": [
         "Wybierz plan ${ vpnPlus }"
@@ -495,11 +501,11 @@
       "Not spam": [
         "To nie jest spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -516,7 +522,7 @@
       "Pay": [
         "Zapłać"
       ],
-      "Pay ${ price }": [
+      "Pay ${ price } now": [
         "Zapłać ${ price }"
       ],
       "Preview": [
@@ -1056,9 +1062,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Automatyczne odnowienie ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Automatyczne odnowienie ${ formattedEndTime } za ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -3199,6 +3202,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Posiadasz zbyt wiele folderów na swoim koncie zewnętrznym. Dostosuj proces importowania, aby usunąć niektóre foldery."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
+      ],
       "This field is required": [
         "Pole jest wymagane"
       ],
@@ -3273,6 +3279,9 @@
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "Aby wygenerować token SMTP, musisz posiadać adres niestandardowej domeny."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Twoje konto lub organizacja posiada obecnie zaległe faktury. Ureguluj wszystkie zobowiązania."
@@ -4003,6 +4012,23 @@
       ],
       "Value / Data / Points to": [
         "Wartość / Dane / Pozostałe"
+      ]
+    },
+    "Header for table": {
+      "Actions": [
+        "Akcje"
+      ],
+      "Created": [
+        "Utworzono"
+      ],
+      "Email address": [
+        "Adres e-mail"
+      ],
+      "Last used": [
+        "Ostatnio użyty"
+      ],
+      "Token name": [
+        "Nazwa tokena"
       ]
     },
     "Hint": {
@@ -5107,6 +5133,9 @@
       "Get my ${ BRAND_NAME } address": [
         "Uzyskaj adres ${ BRAND_NAME }"
       ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain address. Only this address will be able to send emails with this token.": [
+        "Nazwij token, np. nazwą używanej usługi i wybierz aktywny adres niestandardowej domeny. Tylko ten adres będzie mógł wysyłać wiadomości za pomocą tego tokena."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Udostępnij swój klucz publiczny znajomym lub opublikuj go online, aby każdy mógł wysyłać do Ciebie zaszyfrowane wiadomości!"
       ],
@@ -5677,6 +5706,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "Protokół SMTP pozwala innym usługom lub urządzeniom na wysyłanie wiadomości przez pocztę ${ MAIL_APP_NAME }. To nowa funkcja dostępna dla wybranych biznesowych użytkowników. Wyślij wiadomość na adres ${ emailLink }, aby uzyskać do niej dostęp."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "Protokół SMTP pozwala innym usługom lub urządzeniom na wysyłanie wiadomości przez pocztę ${ MAIL_APP_NAME }. Wygeneruj nowy token, aby użyć tej funkcji."
+      ],
       "Some keys successfully reactivated": [
         "Niektóre klucze zostały reaktywowane"
       ],
@@ -5801,10 +5836,13 @@
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić, jest wiarygodny i otwórz go za pomocą innej przeglądarki."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
+      ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "Token nie będzie dostępny po zamknięciu okna. Nie udostępniaj go nikomu."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ten użytkownik jest obecnie odpowiedzialny za płatności w Twojej organizacji. Obniżając status tego użytkownika, staniesz się jednocześnie odpowiedzialny za płatności."
@@ -5955,6 +5993,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Użyj następujących danych logowania, podczas łączenia się z serwerami ${ VPN_APP_NAME } poza aplikacją. Przykładowe użycie: Tunnelblick na macOS, OpenVPN na GNU/Linuksie."
+      ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "Użyj wybranej nazwy użytkownika jako nazwy użytkownika SMTP w zewnętrznej usłudze i wygeneruj token jako hasło SMTP."
       ],
       "Verification can take a few minutes.": [
         "Weryfikacja może zająć kilka minut."
@@ -6817,9 +6858,6 @@
       "Blocked": [
         "Zablokowany"
       ],
-      "bonus storage": [
-        "bonusowa przestrzeń dyskowa"
-      ],
       "Browser": [
         "Przeglądarka"
       ],
@@ -7369,6 +7407,12 @@
       "Signature": [
         "Podpis"
       ],
+      "SMTP token": [
+        "Token SMTP"
+      ],
+      "SMTP username": [
+        "Nazwa użytkownika SMTP"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7428,6 +7472,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Do: ${ PMEmailAddress }"
+      ],
+      "Token name": [
+        "Nazwa tokena"
       ],
       "Two-password mode": [
         "Tryb podwójnego hasła"
@@ -9288,6 +9335,9 @@
       "Postal code": [
         "Kod pocztowy"
       ],
+      "Printer": [
+        "Drukarka"
+      ],
       "Search": [
         "Szukaj"
       ],
@@ -10084,6 +10134,14 @@
         "Zaoszczędź"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Aktywna"
+      ],
+      "Upcoming": [
+        "Nadchodząca"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Prywatna poczta i kalendarz do codziennej komunikacji."
@@ -10218,6 +10276,9 @@
       ],
       "Sessions revoked": [
         "Sesje zostały unieważnione"
+      ],
+      "SMTP token deleted": [
+        "Token SMTP został usunięty"
       ],
       "SPF value copied to clipboard": [
         "Wartość SPF została skopiowana do schowka"
@@ -10380,6 +10441,11 @@
         "Pole vCard"
       ]
     },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "Nie znaleziono tokenów SMTP"
+      ]
+    },
     "Time unit": {
       "${ hours } hour": [
         "${ hours } godzina",
@@ -10535,9 +10601,6 @@
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
-      "Billing details": [
-        "Szczegóły płatności"
-      ],
       "Bridge for ${ platform }": [
         "Aplikacja Bridge na ${ platform }"
       ],
@@ -10691,6 +10754,9 @@
       "Delete ${ label.Name } label": [
         "Usuń etykietę ${ label.Name }"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "Usunąć token ${ tokenNameToRemove }?"
+      ],
       "Delete account": [
         "Usuń konto"
       ],
@@ -10766,6 +10832,9 @@
       "Encryption and keys": [
         "Szyfrowanie i klucze"
       ],
+      "End date": [
+        "Data zakończenia"
+      ],
       "Enter your password": [
         "Wpisz hasło"
       ],
@@ -10813,6 +10882,9 @@
       ],
       "Generate new recovery phrase?": [
         "Wygenerować nowe hasło odzyskiwania?"
+      ],
+      "Generate SMTP token": [
+        "Generuj token SMTP"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Wybierz plan ${ vpnPlus }, aby uzyskać dostęp do wszystkich serwerów"
@@ -10892,6 +10964,9 @@
       "Layout": [
         "Widok"
       ],
+      "Length": [
+        "Długość"
+      ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
       ],
@@ -10969,6 +11044,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Plan": [
+        "Plan"
       ],
       "Plan summary": [
         "Podsumowanie planu"
@@ -11096,6 +11174,9 @@
       "Signed in to member account": [
         "Zalogowano na konto użytkownika"
       ],
+      "SMTP tokens": [
+        "Tokeny SMTP"
+      ],
       "Sort folders alphabetically": [
         "Sortuj foldery alfabetycznie"
       ],
@@ -11107,6 +11188,9 @@
       ],
       "Start a new import": [
         "Rozpocznij nowy import"
+      ],
+      "Start date": [
+        "Data rozpoczęcia"
       ],
       "Start import process": [
         "Rozpocznij proces importowania"
@@ -11150,6 +11234,9 @@
       "Time zone": [
         "Strefa czasu"
       ],
+      "Total paid": [
+        "Łącznie"
+      ],
       "Track your referrals": [
         "Sprawdź aktywność linku polecającego"
       ],
@@ -11170,6 +11257,9 @@
       ],
       "Upgrade plan": [
         "Ulepsz plan"
+      ],
+      "Users": [
+        "Użytkownicy"
       ],
       "Users and addresses": [
         "Użytkownicy i adresy"
@@ -11230,6 +11320,12 @@
       ],
       "Your recovery status": [
         "Status odzyskiwania"
+      ],
+      "Your SMTP token": [
+        "Twój token SMTP"
+      ],
+      "Your subscriptions": [
+        "Twoja subskrypcja"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Otrzymujesz zaproszenie do wypróbowania poczty ${ MAIL_APP_NAME }"
@@ -11393,6 +11489,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Proces importowania rozpocznie się od najnowszych wiadomości."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Nowa subskrypcja rozpocznie się ${ formattedTime }"
       ],
       "This address has been disabled": [
         "Ten adres został wyłączony"
@@ -11646,6 +11745,9 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Ustawienia daty i czasu na Twoim urządzeniu nie są zsynchronizowane. ${ learnMore }"
+      ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "Urządzenie lub usługa używająca tego tokena nie będzie mogła wysyłać wiadomości przez pocztę ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Ten import może przekroczyć obecnie dostępną przestrzeń dyskową na Twoim koncie ${ BRAND_NAME }. Rozważ modyfikację zakresu danych do importu."
