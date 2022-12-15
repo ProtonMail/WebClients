@@ -1,7 +1,8 @@
 const karmaJasmine = require('karma-jasmine');
 const karmaWebpack = require('karma-webpack');
 const karmaChromeLauncher = require('karma-chrome-launcher');
-process.env.CHROME_BIN = require('puppeteer').executablePath();
+const { chromium } = require('playwright');
+process.env.CHROME_BIN = chromium.executablePath();
 
 module.exports = (config) => {
     config.set({
