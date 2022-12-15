@@ -928,6 +928,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Próbáljon csak betűket, számokat és _.-t használni"
+      ],
       "Unknown error": [
         "Ismeretlen hiba"
       ]
@@ -1048,6 +1051,9 @@
       "Would you like to receive a new verification code?": [
         "Szeretne kapni egy új ellenőrzési kódot?"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva e-mailek nem fognak a fiókjába érkezni, a Drive megosztási linkjei blokkolva lesznek, és nem lesz képes új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
       ],
@@ -1129,6 +1135,10 @@
       "Password must contain at least ${ length } character": [
         "A jelszónak legalább ${ length } karakterből kell állnia",
         "A jelszónak legalább ${ length } karakterből kell állnia"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
       ]
     }
   }

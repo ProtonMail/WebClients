@@ -204,6 +204,9 @@
       "Create link": [
         "Hivatkozás létrehozása"
       ],
+      "Create users": [
+        "Felhasználók létrehozása"
+      ],
       "Create your own": [
         "Saját létrehozása"
       ],
@@ -480,10 +483,10 @@
       "Not spam": [
         "Nem levélszemét"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -500,9 +503,6 @@
       ],
       "Pay": [
         "Fizetés"
-      ],
-      "Pay ${ price }": [
-        "${ price } fizetése"
       ],
       "Preview": [
         "Előnézet"
@@ -731,6 +731,9 @@
       ],
       "Size": [
         "Méret"
+      ],
+      "Skip verification": [
+        "Ellenőrzés átugrása"
       ],
       "Sort": [
         "Rendezés"
@@ -1029,9 +1032,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Automatikusan megújul: ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Automatikusan megújul: ${ formattedEndTime } ${ amount } összegért"
       ]
     },
     "Billing cycle option": {
@@ -2439,6 +2439,11 @@
         "Nincs találat"
       ]
     },
+    "Credits": {
+      "Available credits": [
+        "Elérhető kreditek"
+      ]
+    },
     "CSV download button": {
       "CSV template": [
         "CSV sablon"
@@ -3128,6 +3133,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Próbáljon csak betűket, számokat és _.-t használni"
       ],
       "Unknown error": [
         "Ismeretlen hiba"
@@ -4525,6 +4533,9 @@
       "Amount below minimum (${ amount }).": [
         "Az összeg a minimum alatt (${ amount })."
       ],
+      "An error occured while communicating with the extension": [
+        "Hiba lépett fel a kiegészítővel való kommunikáció során"
+      ],
       "and": [
         "és"
       ],
@@ -5553,7 +5564,7 @@
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
@@ -5871,6 +5882,9 @@
       "You have no saved payment methods.": [
         "Nincs elmentve fizetési mód."
       ],
+      "You may now start using the extension": [
+        "Most már elkezdheti használni a kiegészítőt"
+      ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Aktiválnia kell a szervezeti titkos kulcsot, a tartalék szervezeti kulcshoz tartozó jelszóval, melyet a szervezeti adminisztrátor adhat meg."
       ],
@@ -5933,6 +5947,9 @@
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "A ${ BRAND_NAME } fiókja ${ externalEmailAddress } címhez kapcsolódik. A ${ toAppName } használatához, egy ${ MAIL_APP_NAME } címre lesz szüksége."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva e-mailek nem fognak a fiókjába érkezni, a Drive megosztási linkjei blokkolva lesznek, és nem lesz képes új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
@@ -6545,9 +6562,6 @@
       "Blocked": [
         "Letiltott"
       ],
-      "bonus storage": [
-        "bónusz tárhely"
-      ],
       "Browser": [
         "Böngésző"
       ],
@@ -6736,6 +6750,18 @@
       ],
       "Emails": [
         "E-mailek"
+      ],
+      "Emails (all messages)": [
+        "E-mailek (összes üzenet)"
+      ],
+      "Emails (last 12 months)": [
+        "E-mailek (utolsó 12 hónap)"
+      ],
+      "Emails (last 3 months)": [
+        "E-mailek (utolsó 3 hónap)"
+      ],
+      "Emails (last month)": [
+        "E-mailek (utolsó hónap)"
       ],
       "End date": [
         "Befejező dátum"
@@ -7469,6 +7495,20 @@
       ],
       "Enable authentication logs": [
         "Hitelesítési naplók engedélyezése"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Az összes üzenet importálása a(z) ${ itemsToImportCount } címkéből és megcímkézni őket így: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Az összes üzenet importálása a(z) ${ itemsToImportCount } címkékből és megcímkézni őket így: ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } mappából, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } mappákból, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } címkéből, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } címkékből, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -9799,9 +9839,6 @@
       "Billing cycle": [
         "Számlázási ciklus"
       ],
-      "Billing details": [
-        "Számlázási adatok"
-      ],
       "Bridge for ${ platform }": [
         "Bridge ${ platform } eszközökre"
       ],
@@ -9876,6 +9913,10 @@
       ],
       "Couldn’t create accounts": [
         "Fiókok létrehozása nem sikerült"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } felhasználói fiók létrehozása",
+        "${ selectedUserIds.length } felhasználói fiókok létrehozása"
       ],
       "Create multiple user accounts": [
         "Több felhasználói fiók létrehozása"
@@ -10041,6 +10082,10 @@
       ],
       "External PGP settings": [
         "Külső PGP beállítások"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } felhasznlói fiók létrehozása sikertelen.",
+        "${ failedUsers.length } felhasznlói fiókok létrehozása sikertelen."
       ],
       "Filters": [
         "Szűrők"
@@ -10369,6 +10414,10 @@
       ],
       "Success": [
         "Sikeres"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "${ localSuccessfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
+        "${ localSuccessfullyCreatedUsers.length } felhasználói fiókok sikeresen létrehozva"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
@@ -10758,6 +10807,10 @@
       "Password must contain at least ${ length } character": [
         "A jelszónak legalább ${ length } karakterből kell állnia",
         "A jelszónak legalább ${ length } karakterből kell állnia"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
       ]
     },
     "Video control": {
@@ -10859,6 +10912,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
       ],
+      "Skip verification?": [
+        "Ellenőrzés átugrása?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Az eszközén a dátum és idő beállítása pontatlan. ${ learnMore }"
       ],
@@ -10870,6 +10926,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sajnos a támogatási csoport jelenleg nem elérhető. Kérjük, az alábbi űrlapon írja le a problémáját és amint lehet felvesszük önnel a kapcsolatot."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Nem sikerült ellenőrzni a mail-szervert. Ha megbízik benne, átugorhatja ezt az ellenőrzést."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Probléma van a DNS beállításaival. Kérjük, javítsa, hogy minden az alábbiak szerint legyen beállítva. Ha a probléma továbbra is fennáll, ki kell kapcsolnunk a DKIM aláírást."

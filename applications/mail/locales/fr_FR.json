@@ -4531,10 +4531,10 @@
         "Voulez-vous vraiment supprimer tous les messages avec ce label ?"
       ],
       "Are you sure you want to delete this folder? All children folders will also be deleted.": [
-        "Êtes-vous sûr de vouloir supprimer ce dossier ? Tous les sous-dossiers qu'il contient seront également supprimés."
+        "Voulez-vous vraiment supprimer ce dossier ? Tous ses sous-dossiers seront aussi supprimés."
       ],
       "Are you sure you want to delete this label?": [
-        "Souhaitez-vous vraiment supprimer ce label ?"
+        "Voulez-vous vraiment supprimer ce label ?"
       ],
       "Are you sure you want to discard your changes?": [
         "Voulez-vous vraiment abandonner vos modifications ?"
@@ -5336,7 +5336,7 @@
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte bancaire."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous êtes certain de la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
@@ -7946,7 +7946,7 @@
         "Dossier effacé"
       ],
       "Import record deleted": [
-        "Enregistrement supprimé"
+        "L'enregistrement d'importation a été supprimé."
       ],
       "Keyboard shortcuts preferences updated": [
         "Préférences des raccourcis clavier mises à jour"
@@ -8037,7 +8037,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } supprimé"
+        "${ label.Name } a été supprimé."
       ]
     },
     "Success notification when user send feedback": {

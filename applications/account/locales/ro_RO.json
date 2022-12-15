@@ -360,6 +360,9 @@
       "Font": [
         "Font"
       ],
+      "Generate": [
+        "Generare"
+      ],
       "Generate key": [
         "Generare cheie"
       ],
@@ -368,6 +371,9 @@
       ],
       "Generate recovery phrase": [
         "Generare frază de recuperare"
+      ],
+      "Generate token": [
+        "Generare cod de acces"
       ],
       "Get ${ vpnPlus }": [
         "Obțineți ${ vpnPlus }"
@@ -495,11 +501,11 @@
       "Not spam": [
         "Acceptată"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
@@ -516,8 +522,8 @@
       "Pay": [
         "Plătire"
       ],
-      "Pay ${ price }": [
-        "Plătire ${ price }"
+      "Pay ${ price } now": [
+        "Plătire ${ price } acum"
       ],
       "Preview": [
         "Examinare"
@@ -1054,9 +1060,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Reînnoire automată la ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Reînnoire automată la ${ formattedEndTime } pentru ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -2181,7 +2184,7 @@
         "Nepal"
       ],
       "Netherlands": [
-        "Olanda"
+        "Țările de Jos"
       ],
       "New Caledonia": [
         "Noua Caledonie"
@@ -3184,6 +3187,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Aveți prea multe foldere în contul extern. Modificați opțiunile de importare pentru a șterge unele foldere."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
+      ],
       "This field is required": [
         "Acest câmp este obligatoriu"
       ],
@@ -3258,6 +3264,9 @@
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "Trebuie să aveți o adresă personală de domeniu pentru a genera un cod de acces pentru comunicațiile prin SMTP."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
@@ -3974,6 +3983,23 @@
       ],
       "Value / Data / Points to": [
         "Valoare / Date / Direcționat spre"
+      ]
+    },
+    "Header for table": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Created": [
+        "Creare"
+      ],
+      "Email address": [
+        "Adresa de e-mail"
+      ],
+      "Last used": [
+        "Folosire"
+      ],
+      "Token name": [
+        "Nume cod de acces"
       ]
     },
     "Hint": {
@@ -5043,6 +5069,9 @@
       "Get my ${ BRAND_NAME } address": [
         "Vreau adresa mea ${ BRAND_NAME }"
       ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain address. Only this address will be able to send emails with this token.": [
+        "Dați unu nume descriptiv jetonului (codului de acces), cum ar fi serviciul pe care urmați să-l folosiți și selectați una din adresele de domeniu personale active. Numai această adresă va putea trimite mesaje cu acest cod de acces."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Partajați cheia publică prietenilor sau publicați-o online, astfel încât oricine să vă poată trimite mesaje criptate în ambele părți!"
       ],
@@ -5608,6 +5637,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "SMTP permite serviciilor terțe sau dispozitivelor sa trimită mesaje prin ${ MAIL_APP_NAME }. Este o funcție disponibilă utilizatorilor business selectați. Pentru a solicita accesul la ea scrieți-ne la ${ emailLink }."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "SMTP permite serviciilor terțe sau dispozitivelor sa trimită mesaje prin ${ MAIL_APP_NAME }. Pentru a utiliza această funcție, începeți prin a genera un cod de acces."
+      ],
       "Some keys successfully reactivated": [
         "Unele chei au fost reactivate"
       ],
@@ -5729,10 +5764,13 @@
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
+      ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "Acest cod de acces nu va fi disponibil după ce închideți această fereastră și nu ar trebui să-l partajați cu nimeni."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
@@ -5883,6 +5921,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilizați următoarele date atunci când vă conectați la serverele ${ VPN_APP_NAME } fără aplicație. Exemplu de utilizare include: Tunnelblick pe macOS, OpenVPN pe GNU/Linux."
+      ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "În serviciul extern folosiți adresa de e-mail selectată ca nume de utilizator SMTP și codul de acces generat ca parolă SMTP."
       ],
       "Verification can take a few minutes.": [
         "Verificarea poate dura câteva minute."
@@ -6741,9 +6782,6 @@
       "Blocked": [
         "Blocat"
       ],
-      "bonus storage": [
-        "spațiu bonus"
-      ],
       "Browser": [
         "Navigator"
       ],
@@ -7293,6 +7331,12 @@
       "Signature": [
         "Semnătura"
       ],
+      "SMTP token": [
+        "Cod acces SMTP"
+      ],
+      "SMTP username": [
+        "Nume utilizator SMTP"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7352,6 +7396,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Către: ${ PMEmailAddress }"
+      ],
+      "Token name": [
+        "Nume cod de acces"
       ],
       "Two-password mode": [
         "Mod cu două parole"
@@ -9178,6 +9225,9 @@
       "Postal code": [
         "Cod poştal"
       ],
+      "Printer": [
+        "Imprimare"
+      ],
       "Search": [
         "Căutare"
       ],
@@ -9701,6 +9751,14 @@
         "Salvare"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Activ"
+      ],
+      "Upcoming": [
+        "Urmează"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Soluția de e-mail și calendar focalizate pe intimitate pentru nevoile zilnice de comunicații."
@@ -9835,6 +9893,9 @@
       ],
       "Sessions revoked": [
         "Sesiuni anulate"
+      ],
+      "SMTP token deleted": [
+        "Codul de acces SMTP a fost șters."
       ],
       "SPF value copied to clipboard": [
         "Valoarea SPF a fost copiată în memorie"
@@ -9997,6 +10058,11 @@
         "Câmp vCard"
       ]
     },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "Nu s-au găsit coduri de acces SMTP"
+      ]
+    },
     "Time unit": {
       "${ hours } hour": [
         "O oră",
@@ -10150,9 +10216,6 @@
       "Billing cycle": [
         "Ciclu de facturare"
       ],
-      "Billing details": [
-        "Detalii de facturare"
-      ],
       "Bridge for ${ platform }": [
         "Bridge pentru ${ platform }"
       ],
@@ -10305,6 +10368,9 @@
       "Delete ${ label.Name } label": [
         "Ștergere eticheta ${ label.Name }"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "Ștergere ${ tokenNameToRemove }?"
+      ],
       "Delete account": [
         "Ștergere cont"
       ],
@@ -10380,6 +10446,9 @@
       "Encryption and keys": [
         "Criptare și chei"
       ],
+      "End date": [
+        "Data sfârșit"
+      ],
       "Enter your password": [
         "Introduceţi parola"
       ],
@@ -10426,6 +10495,9 @@
       ],
       "Generate new recovery phrase?": [
         "Generare frază nouă de recuperare?"
+      ],
+      "Generate SMTP token": [
+        "Generare cod acces SMTP"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obțineți ${ vpnPlus } pentru a accesa toate serverele"
@@ -10504,6 +10576,9 @@
       "Layout": [
         "Aspect"
       ],
+      "Length": [
+        "Lungime"
+      ],
       "Link confirmation": [
         "Legătură de confirmare"
       ],
@@ -10581,6 +10656,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Plan": [
+        "Plan"
       ],
       "Plan summary": [
         "Sumar planuri"
@@ -10708,6 +10786,9 @@
       "Signed in to member account": [
         "Conectat în cont de membru"
       ],
+      "SMTP tokens": [
+        "Coduri de acces SMTP"
+      ],
       "Sort folders alphabetically": [
         "Sortare alfabetică foldere"
       ],
@@ -10719,6 +10800,9 @@
       ],
       "Start a new import": [
         "Începere importare nouă"
+      ],
+      "Start date": [
+        "Dată început"
       ],
       "Start import process": [
         "Începere proces de importare"
@@ -10760,6 +10844,9 @@
       "Time zone": [
         "Fus orar"
       ],
+      "Total paid": [
+        "Total plătit"
+      ],
       "Track your referrals": [
         "Monitorizare persoane recomandate"
       ],
@@ -10780,6 +10867,9 @@
       ],
       "Upgrade plan": [
         "Migrare plan"
+      ],
+      "Users": [
+        "Utilizatori"
       ],
       "Users and addresses": [
         "Utilizatori și adrese"
@@ -10840,6 +10930,12 @@
       ],
       "Your recovery status": [
         "Starea actuală de recuperare"
+      ],
+      "Your SMTP token": [
+        "Codul de acces SMTP"
+      ],
+      "Your subscriptions": [
+        "Abonamente personale"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Ați fost invitat să încercați ${ MAIL_APP_NAME }"
@@ -11003,6 +11099,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Noul ciclu de abonament începe la ${ formattedTime }."
       ],
       "This address has been disabled": [
         "Această adresă a fost dezactivată."
@@ -11249,6 +11348,9 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Setările de dată și oră de pe dispozitiv nu sunt sincronizate. ${ learnMore }"
+      ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "Dispozitivul sau serviciul care folosește acest cod de acces nu va mai putea trimite mesaje prin ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont ${ BRAND_NAME }. Luați în considerare modificarea opțiunilor de importare."

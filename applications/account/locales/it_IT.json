@@ -495,11 +495,11 @@
       "Not spam": [
         "Non spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -515,9 +515,6 @@
       ],
       "Pay": [
         "Paga"
-      ],
-      "Pay ${ price }": [
-        "Paga ${ price }"
       ],
       "Preview": [
         "Anteprima"
@@ -746,6 +743,9 @@
       ],
       "Size": [
         "Dimensione"
+      ],
+      "Skip verification": [
+        "Salta verifica"
       ],
       "Sort": [
         "Ordina"
@@ -1049,9 +1049,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Si rinnova automaticamente il ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Si rinnova automaticamente il ${ formattedEndTime } per ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -4619,6 +4616,9 @@
       "Amount below minimum (${ amount }).": [
         "Importo inferiore al minimo (${ amount })."
       ],
+      "An error occured while communicating with the extension": [
+        "Si è verificato un errore durante la connessione all'estensione"
+      ],
       "and": [
         "e"
       ],
@@ -5656,7 +5656,7 @@
         "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Questo link potrebbe essere un attacco omografico e non può essere aperto dal browser Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
@@ -5973,6 +5973,9 @@
       ],
       "You have no saved payment methods.": [
         "Non hai salvato alcun metodo di pagamento."
+      ],
+      "You may now start using the extension": [
+        "Adesso puoi cominciare ad usare l'estensione"
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "È necessario attivare la tua chiave privata dell'organizzazione con la password di backup dell'organizzazione fornita dal tuo amministratore dell'organizzazione."
@@ -6661,9 +6664,6 @@
       "Blocked": [
         "Bloccato"
       ],
-      "bonus storage": [
-        "spazio bonus"
-      ],
       "Browser": [
         "Browser"
       ],
@@ -7038,6 +7038,9 @@
       ],
       "Name on card": [
         "Nome sulla carta"
+      ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Reindirizzamento)"
       ],
       "Navigation": [
         "Navigazione"
@@ -10262,9 +10265,6 @@
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
-      "Billing details": [
-        "Dettagli di fatturazione"
-      ],
       "Bridge for ${ platform }": [
         "Bridge per ${ platform }"
       ],
@@ -11344,6 +11344,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."
       ],
+      "Skip verification?": [
+        "Saltare la verifica?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Le impostazioni di data e ora sul dispositivo non sono sincronizzate. ${ learnMore }"
       ],
@@ -11355,6 +11358,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sfortunatamente, al momento non sei online. Per favore completa il modulo sotto per descrivere il problema, lo esamineremo e ti contatteremo quando quando saremo di nuovo online."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Non è stato possibile verificare il server di posta. Se lo consideri attendibile, puoi saltare la verifica."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Abbiamo rilevato un problema con la tua configurazione DNS. Assicurati che i tuoi record corrispondano alle istruzioni qui sotto. Se il problema persiste, dovremo cambiare la firma della DKIM."
