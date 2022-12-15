@@ -49,8 +49,12 @@ export const mappingHasLabelsTooLong = (mapping: MailImportMapping[]) => {
     });
 };
 
-export const nameAlreadyExists = (name: string, collection: Pick<Label, 'Path'>[] | Pick<Folder, 'Path'>[]) => {
-    return collection.map((i) => i.Path).some((i) => i.toLowerCase() === name.toLowerCase());
+export const nameAlreadyExists = (
+    name: string,
+    collection: Pick<Label, 'Path'>[] | Pick<Folder, 'Path'>[],
+    folderFullPath: string
+) => {
+    return collection.some((item) => item.Path === name && name === folderFullPath);
 };
 
 export const mappingHasUnavailableNames = (
@@ -63,13 +67,13 @@ export const mappingHasUnavailableNames = (
         .map((m) => (isLabelMapping ? m.Destinations.Labels?.[0]?.Name : unescapeSlashes(m.Destinations.FolderPath)))
         .filter(isTruthy);
 
-    return destinations.some((dest) => nameAlreadyExists(dest, collection));
+    return destinations.some((dest, index) => nameAlreadyExists(dest, collection, mapping[index].Source));
 };
 
 export const mappingHasReservedNames = (mapping: MailImportMapping[]) => {
     return mapping.some((m) => {
-        const splitted = splitEscaped(m.Destinations.FolderPath);
-        return m.checked && splitted.some((s) => RESERVED_NAMES.includes(s.toLowerCase()));
+        const [firstLevel] = splitEscaped(m.Destinations.FolderPath?.toLocaleLowerCase());
+        return m.checked && RESERVED_NAMES.includes(firstLevel);
     });
 };
 
