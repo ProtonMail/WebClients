@@ -191,7 +191,7 @@
         "フォルダーの作成"
       ],
       "Create label": [
-        "ラベルの作成"
+        "ラベルを作成"
       ],
       "Create link": [
         "リンクを作成"
@@ -481,10 +481,10 @@
       "Not spam": [
         "迷惑メールでない"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -501,9 +501,6 @@
       ],
       "Pay": [
         "支払う"
-      ],
-      "Pay ${ price }": [
-        "${ price } を支払う"
       ],
       "Preview": [
         "プレビュー"
@@ -1027,9 +1024,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "${ formattedEndTime } に自動更新されます"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "${ formattedEndTime } に ${ amount } で自動更新されます"
       ]
     },
     "Billing cycle option": {
@@ -3018,8 +3012,14 @@
       "The label name is too long. Please choose a different name.": [
         "ラベル名が長すぎます。別の名前を選択してください。"
       ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "追加クレジットの最低金額は ${ price } です。"
+      ],
       "The minimum amount that can be donated is ${ price }": [
         "寄付金額は ${ price } から受け付けています。"
+      ],
+      "The minimum payment we accept is ${ price }": [
+        "最低 ${ price } より受け付けています。"
       ],
       "The organization key must be activated first": [
         "組織の鍵を最初に有効にする必要があります"
@@ -4262,6 +4262,9 @@
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
       ],
+      "${ vpnPlus } required for Country level connection.": [
+        "国別の接続には ${ vpnPlus } が必要です。"
+      ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Secure Core 機能を利用するには ${ vpnPlus } が必要です。"
       ],
@@ -5349,7 +5352,7 @@
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "このリンクは偽装URLである可能性があり、Edgeでは開くことができません。リンクが確実に正しいと思われる場合、別のブラウザーで開いてください。"
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
@@ -5543,6 +5546,9 @@
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
       ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "移動しました。私たちの新しいドメイン ${ link } でサインインしてください。"
+      ],
       "Web URL": [
         "Web URL"
       ],
@@ -5695,6 +5701,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "ダウンロードした回復用ファイルを使ってロックされたデータを復元することはできません。"
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
         "続行すると、回復ファイルでデータを復元することができなくなります。また、信頼済みのデバイス回復情報も同時に無効化されます。"
@@ -6299,9 +6308,6 @@
       ],
       "Blocked": [
         "ブロック中"
-      ],
-      "bonus storage": [
-        "ボーナスストレージ"
       ],
       "Browser": [
         "ブラウザ"
@@ -9421,9 +9427,6 @@
       ],
       "Billing cycle": [
         "支払い間隔"
-      ],
-      "Billing details": [
-        "請求の詳細"
       ],
       "Bridge for ${ platform }": [
         "${ platform } 版 Bridge"

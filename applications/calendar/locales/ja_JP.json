@@ -3519,7 +3519,7 @@
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
       "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "このリンクは偽装URLである可能性があり、Edgeでは開くことができません。リンクが確実に正しいと思われる場合、別のブラウザーで開いてください。"
+        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
@@ -3553,6 +3553,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
+      ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "移動しました。私たちの新しいドメイン ${ link } でサインインしてください。"
       ],
       "Week": [
         "週"
