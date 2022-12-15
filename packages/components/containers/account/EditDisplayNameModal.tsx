@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Address } from '@proton/shared/lib/interfaces';
 
 import {
@@ -26,7 +25,7 @@ const EditDisplayNameModal = ({ address, ...rest }: Props) => {
     const [initialDisplayName] = useState(address.DisplayName);
     const [model, setModel] = useState('');
     const { createNotification } = useNotifications();
-    const { validator, onFormSubmit } = useFormErrors();
+    const { onFormSubmit } = useFormErrors();
     const [submitting, withLoading] = useLoading();
     const api = useApi();
     const { call } = useEventManager();
@@ -62,16 +61,19 @@ const EditDisplayNameModal = ({ address, ...rest }: Props) => {
         >
             <ModalHeader title={c('Title').t`Edit display name`} />
             <ModalContent>
-                <div className="mb1-5">
-                    <div className="text-semibold mb0-25">{c('Label').t`Current display name`}</div>
-                    <div className="text-ellipsis">{initialDisplayName}</div>
-                </div>
+                {initialDisplayName && (
+                    <div className="mb1-5">
+                        <div className="text-semibold mb0-25">{c('Label').t`Current display name`}</div>
+                        <div className="text-ellipsis" title={initialDisplayName}>
+                            {initialDisplayName}
+                        </div>
+                    </div>
+                )}
                 <InputFieldTwo
                     id="displayName"
                     autoFocus
                     value={model}
                     maxLength={255}
-                    error={validator([requiredValidator(model)])}
                     onValue={setModel}
                     label={c('Label').t`New display name`}
                 />
