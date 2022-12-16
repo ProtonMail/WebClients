@@ -41,6 +41,8 @@ jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/components/hooks/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
 jest.mock('@proton/components/hooks/useEarlyAccess', () => () => ({}));
 
+let memoryHistory = createMemoryHistory();
+
 function renderComponent(props?: Partial<PersonalCalendarsSectionProps>) {
     const defaultProps: PersonalCalendarsSectionProps = {
         addresses: [addressBuilder()],
@@ -52,7 +54,7 @@ function renderComponent(props?: Partial<PersonalCalendarsSectionProps>) {
 
     return (
         <ModalsProvider>
-            <Router history={createMemoryHistory()}>
+            <Router history={memoryHistory}>
                 <CacheProvider cache={createCache()}>
                     <PersonalCalendarsSection {...defaultProps} {...props} />
                 </CacheProvider>
