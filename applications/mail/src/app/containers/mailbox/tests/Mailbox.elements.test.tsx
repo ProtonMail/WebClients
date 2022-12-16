@@ -18,6 +18,7 @@ describe('Mailbox element list', () => {
         LabelIDs: [labelID],
         Size: 20,
         NumUnread: 1,
+        NumMessages: 1,
     } as Element;
     const element2 = {
         ID: 'id2',
@@ -25,12 +26,14 @@ describe('Mailbox element list', () => {
         LabelIDs: [labelID],
         Size: 10,
         NumUnread: 1,
+        NumMessages: 1,
     } as Element;
     const element3 = {
         ID: 'id3',
         Labels: [{ ID: 'otherLabelID', ContextTime: 3 }],
         LabelIDs: ['otherLabelID'],
         NumUnread: 0,
+        NumMessages: 1,
     } as Element;
 
     beforeEach(clearAll);
