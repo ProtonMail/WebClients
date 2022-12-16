@@ -41,6 +41,12 @@ export interface Operation {
 
 export type OperationsMap = Record<OfferId, Operation>;
 
+export interface OfferImages {
+    sideImage?: string;
+    sideImage2x?: string;
+    bannerImage?: string;
+    bannerImage2x?: string;
+}
 export interface OfferConfig {
     ID: OfferId;
     featureCode: FeatureCode;
@@ -52,6 +58,7 @@ export interface OfferConfig {
     periodEnd?: Date;
     getCTAContent?: () => string;
     shapeButton?: ButtonLikeShape;
+    images?: OfferImages;
 }
 
 interface Feature {
