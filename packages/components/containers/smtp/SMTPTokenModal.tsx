@@ -70,7 +70,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
             return (
                 <>
                     <p>{c('Info')
-                        .t`Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain address. Only this address will be able to send emails with this token.`}</p>
+                        .t`Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.`}</p>
                     <InputFieldTwo
                         label={c('Label').t`Token name`}
                         id="token-name"
