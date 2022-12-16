@@ -5,11 +5,17 @@ import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getUnlimitedVPNFeatures, getVPNPlusFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import Layout from './Layout';
+import bannerImage from './bf-vpn-50-landscape.jpg';
+import bannerImage2x from './bf-vpn-50-landscape@2x.jpg';
 
 const config: OfferConfig = {
     ID: 'black-friday-vpn-3-deal-2022',
     autoPopUp: 'each-time',
     featureCode: FeatureCode.OfferBlackFridayVPN3Deal2022,
+    images: {
+        bannerImage,
+        bannerImage2x,
+    },
     deals: [
         {
             ref: 'bf_22_vpn_free-plus-1m-modal-v15',
