@@ -76,6 +76,7 @@ export const getElements = (count: number, label = props.labelID, elementProps: 
         ID: `id${i}`,
         Labels: [{ ID: label, ContextTime: i }] as ConversationLabel[],
         LabelIDs: [label],
+        NumMessages: 1,
         ...elementProps,
     }));
 
