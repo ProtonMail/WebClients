@@ -471,6 +471,7 @@ export enum ORGANIZATION_FLAGS {
     LOYAL = 1,
     COVID = 2,
     SMTP_SUBMISSION = 4,
+    NO_CYCLE_SCHEDULED = 8,
     DISSIDENT = 64,
     PROTON = 128,
 }
