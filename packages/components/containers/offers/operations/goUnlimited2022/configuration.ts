@@ -6,6 +6,8 @@ import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getUnlimitedDealFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import Layout from './Layout';
+import sideImage from './Unlimited-400x1200.png';
+import sideImage2x from './Unlimited-800x2400.png';
 
 const config: OfferConfig = {
     ID: 'go-unlimited-2022',
@@ -27,6 +29,10 @@ const config: OfferConfig = {
     layout: Layout,
     getCTAContent: () => c('specialoffer: Action, Unlimited is a plan name').t`Go Unlimited`,
     shapeButton: 'outline',
+    images: {
+        sideImage,
+        sideImage2x,
+    },
 };
 
 export default config;

@@ -3,18 +3,14 @@ import { ReactNode } from 'react';
 import clsx from '@proton/utils/clsx';
 
 import { OfferProps } from '../../interface';
-import sideImage from './images/bf-mail-40-halfpage.jpg';
-import sideImage2x from './images/bf-mail-40-halfpage@2x.jpg';
-// temporary for dev
-import bannerImage from './images/bf-mail-40-landscape.jpg';
-import bannerImage2x from './images/bf-mail-40-landscape@2x.jpg';
 
 interface Props extends OfferProps {
     children: ReactNode;
 }
 
-const BlackFridayLayout = ({ children, offer }: Props) => {
+const OfferLayout = ({ children, offer }: Props) => {
     const hasMultipleDeals = offer?.deals?.length > 1;
+    const { sideImage, sideImage2x, bannerImage, bannerImage2x } = offer?.images || {};
     return (
         <div
             className={clsx(
@@ -64,4 +60,4 @@ const BlackFridayLayout = ({ children, offer }: Props) => {
     );
 };
 
-export default BlackFridayLayout;
+export default OfferLayout;
