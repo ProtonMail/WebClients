@@ -18,6 +18,10 @@ export const isDissident = (organization: Partial<Organization> = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.DISSIDENT);
 };
 
+export const hasNoCycleScheduled = (organization: Partial<Organization> = {}) => {
+    return hasBit(organization.Flags, ORGANIZATION_FLAGS.NO_CYCLE_SCHEDULED);
+};
+
 export const isProtoneer = (organization: Partial<Organization> = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.PROTON);
 };
@@ -40,6 +44,9 @@ export const humanReadableFlags = (organization: Partial<Organization> = {}) => 
     }
     if (isDissident(organization)) {
         flags.push('Dissident');
+    }
+    if (hasNoCycleScheduled(organization)) {
+        flags.push('No Cycle Scheduled');
     }
     if (isProtoneer(organization)) {
         flags.push('Proton');
