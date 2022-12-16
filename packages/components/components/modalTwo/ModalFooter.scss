@@ -6,6 +6,7 @@
 	margin-inline: var(--margin);
 	justify-content: space-between;
 	flex-wrap: wrap-reverse;
+	flex-shrink: 0;
 
 	@include respond-to($breakpoint-tiny) {
 		flex-direction: column-reverse;
