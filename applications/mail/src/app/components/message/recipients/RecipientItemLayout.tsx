@@ -2,13 +2,13 @@ import { MouseEvent, ReactNode, RefObject, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames, useHotkeys } from '@proton/components';
+import { ProtonBadgeType, classnames, useHotkeys } from '@proton/components';
 import { highlightNode } from '@proton/encrypted-search';
 import { useCombinedRefs } from '@proton/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import ProtonBadgeType, { PROTON_BADGE_TYPE } from '../../list/ProtonBadgeType';
+import { RecipientOrGroup } from '../../../models/address';
 
 interface Props {
     label?: ReactNode;
@@ -37,7 +37,7 @@ interface Props {
      * The recipient item is not the sender
      */
     isRecipient?: boolean;
-    badgeType?: PROTON_BADGE_TYPE;
+    recipientOrGroup?: RecipientOrGroup;
     customDataTestId?: string;
 }
 
@@ -59,7 +59,7 @@ const RecipientItemLayout = ({
     showDropdown = true,
     isOutside = false,
     isRecipient = false,
-    badgeType,
+    recipientOrGroup,
     customDataTestId,
 }: Props) => {
     // When displaying messages sent as Encrypted Outside, this component is used
@@ -161,6 +161,9 @@ const RecipientItemLayout = ({
                         >
                             {highlightedLabel}
                         </span>
+                        {!isOutside && recipientOrGroup?.recipient && (
+                            <ProtonBadgeType recipient={recipientOrGroup.recipient} />
+                        )}
                         {showAddress && (
                             <span
                                 className={classnames([
@@ -173,7 +176,6 @@ const RecipientItemLayout = ({
                                 {highlightedAddress}
                             </span>
                         )}
-                        {badgeType !== undefined && <ProtonBadgeType badgeType={badgeType} />}
                     </span>
                 </span>
             </span>

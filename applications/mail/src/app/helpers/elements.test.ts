@@ -1,9 +1,9 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings, Recipient } from '@proton/shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { Conversation, ConversationLabel } from '../models/conversation';
-import { getCounterMap, getDate, isConversation, isMessage, isProtonSender, isUnread, sort } from './elements';
+import { getCounterMap, getDate, isConversation, isMessage, isUnread, sort } from './elements';
 
 describe('elements', () => {
     describe('isConversation / isMessage', () => {
@@ -165,53 +165,6 @@ describe('elements', () => {
                 Labels: [{ ID: LabelID, ContextNumUnread: 0 } as ConversationLabel],
             };
             expect(isUnread(conversation, LabelID)).toBe(false);
-        });
-    });
-
-    describe('isProtonSender', () => {
-        const protonSender: Recipient = {
-            Address: 'sender@proton.me',
-            Name: 'Sender',
-            IsProton: 1,
-        };
-
-        const normalSender: Recipient = {
-            Address: 'normalSender@proton.me',
-            Name: 'Normal Sender',
-            IsProton: 0,
-        };
-
-        it('should be an element from Proton', () => {
-            const conversation = {
-                Senders: [protonSender],
-            } as Conversation;
-
-            const message = {
-                ConversationID: 'conversationID',
-                Sender: protonSender,
-            } as Message;
-
-            expect(isProtonSender(conversation, { recipient: protonSender }, false)).toBeTruthy();
-            expect(isProtonSender(message, { recipient: protonSender }, false)).toBeTruthy();
-        });
-
-        it('should not be an element from Proton', () => {
-            const conversation1 = {
-                Senders: [normalSender],
-            } as Conversation;
-
-            const conversation2 = {
-                Senders: [protonSender],
-            } as Conversation;
-
-            const message = {
-                ConversationID: 'conversationID',
-                Sender: normalSender,
-            } as Message;
-
-            expect(isProtonSender(conversation1, { recipient: protonSender }, false)).toBeFalsy();
-            expect(isProtonSender(conversation2, { recipient: protonSender }, true)).toBeFalsy();
-            expect(isProtonSender(message, { recipient: protonSender }, false)).toBeFalsy();
         });
     });
 });
