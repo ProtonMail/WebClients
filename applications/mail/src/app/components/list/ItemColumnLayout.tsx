@@ -34,7 +34,6 @@ interface Props {
     conversationMode: boolean;
     showIcon: boolean;
     senders: ReactNode;
-    addresses: string;
     breakpoints: Breakpoints;
     unread: boolean;
     onBack: () => void;
@@ -48,7 +47,6 @@ const ItemColumnLayout = ({
     element,
     conversationMode,
     showIcon,
-    addresses,
     breakpoints,
     unread,
     onBack,
@@ -111,7 +109,6 @@ const ItemColumnLayout = ({
                             <ItemAction element={element} className="mr0-25 myauto flex-item-noshrink" />
                             <span
                                 className="inline-block max-w100 text-ellipsis"
-                                title={addresses}
                                 data-testid="message-column:sender-address"
                             >
                                 {senders}

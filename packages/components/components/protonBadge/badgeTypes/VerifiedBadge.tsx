@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import ProtonBadge from './ProtonBadge';
+import ProtonBadge from '../ProtonBadge';
 
 interface Props {
     selected?: boolean;
@@ -11,8 +11,8 @@ interface Props {
 const VerifiedBadge = ({ selected }: Props) => {
     return (
         <ProtonBadge
-            text={c('Info').t`Official`}
-            tooltipText={c('Info').t`Verified ${BRAND_NAME} message`}
+            text={c('protonbadge').t`Official`}
+            tooltipText={c('protonbadge').t`Official email from ${BRAND_NAME}`}
             selected={selected}
         />
     );

@@ -24,7 +24,6 @@ import useBlockSender from '../../../hooks/useBlockSender';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { Element } from '../../../models/element';
-import { PROTON_BADGE_TYPE } from '../../list/ProtonBadgeType';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import RecipientItemSingle from './RecipientItemSingle';
 
@@ -44,7 +43,6 @@ interface Props {
     onContactDetails: (contactID: string) => void;
     onContactEdit: (props: ContactEditProps) => void;
     customDataTestId?: string;
-    badgeType?: PROTON_BADGE_TYPE;
 }
 
 const MailRecipientItemSingle = ({
@@ -62,7 +60,6 @@ const MailRecipientItemSingle = ({
     isExpanded,
     onContactDetails,
     onContactEdit,
-    badgeType,
     customDataTestId,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -247,7 +244,6 @@ const MailRecipientItemSingle = ({
                 hideAddress={hideAddress}
                 isRecipient={isRecipient}
                 isExpanded={isExpanded}
-                badgeType={badgeType}
                 customDataTestId={customDataTestId}
             />
             {renderTrustPublicKeyModal && <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />}

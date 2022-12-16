@@ -212,7 +212,7 @@ $container-to-width: 4em !default;
 			overflow: hidden;
 			margin-inline-start: -0.5em;
 
-			* {
+			*:not(.label-proton-badge) {
 				flex-wrap: nowrap;
 				text-overflow: '';
 				display: inline;

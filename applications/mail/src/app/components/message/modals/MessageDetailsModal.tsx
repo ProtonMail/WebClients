@@ -27,7 +27,6 @@ import { Element } from '../../../models/element';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLocation from '../../list/ItemLocation';
-import { PROTON_BADGE_TYPE } from '../../list/ProtonBadgeType';
 import SpyTrackerIcon from '../../list/spy-tracker/SpyTrackerIcon';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import RecipientItem from '../recipients/RecipientItem';
@@ -195,7 +194,6 @@ const MessageDetailsModal = ({
                             isLoading={!messageLoaded}
                             onContactDetails={onContactDetails}
                             onContactEdit={onContactEdit}
-                            badgeType={sender.IsProton ? PROTON_BADGE_TYPE.VERIFIED : undefined}
                         />
                     </div>
                 )}
