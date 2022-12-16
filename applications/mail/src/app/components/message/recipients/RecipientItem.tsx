@@ -10,7 +10,6 @@ import { MessageState } from '../../../logic/messages/messagesTypes';
 import { RecipientOrGroup } from '../../../models/address';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EORecipientSingle from '../../eo/message/recipients/EORecipientSingle';
-import { PROTON_BADGE_TYPE } from '../../list/ProtonBadgeType';
 import MailRecipientItemSingle from './MailRecipientItemSingle';
 import RecipientItemGroup from './RecipientItemGroup';
 import RecipientItemLayout from './RecipientItemLayout';
@@ -31,7 +30,6 @@ interface Props {
     isExpanded?: boolean;
     onContactDetails: (contactID: string) => void;
     onContactEdit: (props: ContactEditProps) => void;
-    badgeType?: PROTON_BADGE_TYPE;
     customDataTestId?: string;
 }
 
@@ -52,7 +50,6 @@ const RecipientItem = ({
     onContactDetails,
     onContactEdit,
     customDataTestId,
-    badgeType,
 }: Props) => {
     const ref = useRef<HTMLButtonElement>(null);
 
@@ -92,7 +89,6 @@ const RecipientItem = ({
                     isExpanded={isExpanded}
                     onContactDetails={onContactDetails}
                     onContactEdit={onContactEdit}
-                    badgeType={badgeType}
                     customDataTestId={customDataTestId}
                 />
             );

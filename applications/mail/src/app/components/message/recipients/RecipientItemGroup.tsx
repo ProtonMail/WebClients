@@ -146,6 +146,7 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showDropdown, i
                 </Dropdown>
             }
             isOutside={isOutside}
+            recipientOrGroup={{ group }}
             customDataTestId={customDataTestId}
         />
     );

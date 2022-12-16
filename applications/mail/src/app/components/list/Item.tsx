@@ -88,14 +88,8 @@ const Item = ({
         : [];
     const recipients = conversationMode ? getConversationRecipients(element) : getMessageRecipients(element as Message);
     const sendersLabels = useMemo(() => senders.map((sender) => getRecipientLabel(sender, true)), [senders]);
-    const sendersAddresses = senders.map((sender) => sender?.Address);
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
     const recipientsLabels = getRecipientsOrGroupsLabels(recipientsOrGroup);
-    const recipientsAddresses = recipientsOrGroup
-        .map(({ recipient, group }) =>
-            recipient ? recipient.Address : group?.recipients.map((recipient) => recipient.Address)
-        )
-        .flat();
 
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element, labelID);
@@ -184,7 +178,6 @@ const Item = ({
                     conversationMode={conversationMode}
                     showIcon={showIcon}
                     senders={senderItem}
-                    addresses={(displayRecipients ? recipientsAddresses : sendersAddresses).join(', ')}
                     unread={unread}
                     breakpoints={breakpoints}
                     onBack={onBack}

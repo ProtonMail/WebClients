@@ -2,15 +2,15 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { FeatureCode } from '@proton/components/containers';
-import { useFeature } from '@proton/components/hooks';
+import { ProtonBadgeType } from '@proton/components/components';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { isProtonSender } from '../../helpers/elements';
 import { getElementSenders } from '../../helpers/recipients';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { Element } from '../../models/element';
-import VerifiedBadge from './VerifiedBadge';
 
 interface Props {
     element: Element;
@@ -22,39 +22,47 @@ interface Props {
 }
 
 const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipients, isSelected }: Props) => {
-    const { feature: protonBadgeFeature } = useFeature(FeatureCode.ProtonBadge);
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
     const { getRecipientsOrGroups, getRecipientOrGroupLabel } = useRecipientLabel();
 
     const senders = useMemo(() => {
-        return getElementSenders(element, conversationMode, displayRecipients);
+        const senders = getElementSenders(element, conversationMode, displayRecipients);
+        return uniqueBy(senders, ({ Address }: Recipient) => canonicalizeInternalEmail(Address));
     }, [element, conversationMode, displayRecipients]);
 
     const sendersAsRecipientOrGroup = useMemo(() => {
         return getRecipientsOrGroups(senders);
     }, [senders]);
 
+    const recipientsAddresses = useMemo(() => {
+        return sendersAsRecipientOrGroup
+            .map(({ recipient, group }) =>
+                recipient ? recipient.Address : group?.recipients.map((recipient) => recipient.Address)
+            )
+            .flat()
+            .join(', ');
+    }, [sendersAsRecipientOrGroup]);
+
     if (!loading && displayRecipients && !senders) {
         return <>{c('Info').t`(No Recipient)`}</>;
     }
 
     return (
-        <span className="text-ellipsis">
+        <span
+            className="inline-block max-w100 text-ellipsis"
+            title={recipientsAddresses}
+            data-testid="message-column:sender-address"
+        >
             {sendersAsRecipientOrGroup.map((sender, index) => {
-                const isProton = isProtonSender(element, sender, displayRecipients) && protonBadgeFeature?.Value;
-                const isLastItem = index === senders.length - 1;
+                const isLastItem = index === sendersAsRecipientOrGroup.length - 1;
                 const recipientLabel = getRecipientOrGroupLabel(sender);
-                // TODO remove before merge (for testing)
-                console.log('real label', getRecipientOrGroupLabel(sender));
-                // const recipientLabel = `Recipient wit a lot of text after for testing - ${index}`;
 
-                // TODO do not use index?
                 return (
                     <span key={`${recipientLabel}-${index}`}>
                         {highlightData ? highlightMetadata(recipientLabel, unread, true).resultJSX : recipientLabel}
-                        {isProton && <VerifiedBadge selected={isSelected} />}
-                        {!isLastItem && <span className="mx0-25">,</span>}
+                        {sender.recipient && <ProtonBadgeType recipient={sender.recipient} selected={isSelected} />}
+                        {!isLastItem && <span className="mr0-25">,</span>}
                     </span>
                 );
             })}

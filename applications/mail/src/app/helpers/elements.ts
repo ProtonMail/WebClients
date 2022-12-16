@@ -12,7 +12,6 @@ import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
 import { ELEMENT_TYPES } from '../constants';
-import { RecipientOrGroup } from '../models/address';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { LabelIDsChanges } from '../models/event';
@@ -206,23 +205,4 @@ export const getFirstSenderAddress = (element: Element) => {
     const [sender] = senders;
     const { Address = '' } = sender || {};
     return Address;
-};
-
-export const isProtonSender = (
-    element: Element,
-    { recipient, group }: RecipientOrGroup,
-    displayRecipients: boolean
-) => {
-    if (displayRecipients || group) {
-        return false;
-    }
-
-    if (isMessage(element)) {
-        const messageSender = (element as Message).Sender;
-        return recipient?.Address === messageSender.Address && !!messageSender.IsProton;
-    } else if (isConversation(element)) {
-        return !!(element as Conversation).Senders?.find((sender) => sender.Address === recipient?.Address)?.IsProton;
-    }
-
-    return false;
 };

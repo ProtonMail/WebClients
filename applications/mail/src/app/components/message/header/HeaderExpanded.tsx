@@ -5,13 +5,11 @@ import { c } from 'ttag';
 import { Button, Kbd } from '@proton/atoms';
 import {
     ButtonGroup,
-    FeatureCode,
     Icon,
     Tooltip,
     classnames,
     useAddresses,
     useContactModals,
-    useFeature,
     useMailSettings,
     useToggle,
 } from '@proton/components';
@@ -35,7 +33,6 @@ import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemStar from '../../list/ItemStar';
-import { PROTON_BADGE_TYPE } from '../../list/ProtonBadgeType';
 import MailRecipients from '../recipients/MailRecipients';
 import RecipientItem from '../recipients/RecipientItem';
 import RecipientType from '../recipients/RecipientType';
@@ -92,7 +89,6 @@ const HeaderExpanded = ({
 }: Props) => {
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
-    const { feature: protonBadgeFeature } = useFeature(FeatureCode.ProtonBadge);
 
     const isSendingMessage = message.draftFlags?.sending;
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
@@ -151,9 +147,6 @@ const HeaderExpanded = ({
 
     const { isNarrow } = breakpoints;
 
-    const isProtonSender = message?.data?.Sender?.IsProton;
-    const canDisplayAuthenticityBadge = isProtonSender && protonBadgeFeature?.Value;
-
     const from = (
         <RecipientItem
             message={message}
@@ -165,7 +158,6 @@ const HeaderExpanded = ({
             globalIcon={messageViewIcons.globalIcon}
             onContactDetails={onContactDetails}
             onContactEdit={onContactEdit}
-            badgeType={canDisplayAuthenticityBadge ? PROTON_BADGE_TYPE.VERIFIED : undefined}
             customDataTestId="recipients:sender"
         />
     );
