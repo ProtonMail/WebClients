@@ -36,10 +36,10 @@ import Notifications from '../notifications/Notifications';
 interface Props {
     calendar: VisualCalendar | SubscribedCalendar;
     bootstrap: CalendarBootstrap;
-    isEditDisabled: boolean;
+    canEdit: boolean;
 }
 
-const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: Props) => {
+const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) => {
     const api = useApi();
     const { call } = useCalendarModelEventManager();
     const { createNotification } = useNotifications();
@@ -56,6 +56,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
 
     const showDuration = getIsPersonalCalendar(calendar);
     const showNotifications = !getIsSubscribedCalendar(calendar) || !!feature?.Value;
+    const cannotEdit = !canEdit;
 
     const displaySuccessNotification = () => {
         createNotification({ type: 'success', text: c('Notification success').t`Event defaults updated` });
@@ -125,7 +126,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight>
                         <InputFieldTwo
-                            disabled={loadingDuration || isEditDisabled}
+                            disabled={loadingDuration || cannotEdit}
                             as={SelectTwo}
                             id="event-duration"
                             data-test-id="create-calendar/event-settings:event-duration"
@@ -160,7 +161,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
                             fullWidth={false}
                             notifications={model.partDayNotifications}
                             canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                            disabled={loadingSavePartDayNotifications || isEditDisabled}
+                            disabled={loadingSavePartDayNotifications || cannotEdit}
                             addIcon="plus"
                             defaultNotification={getDefaultModel().defaultPartDayNotification}
                             onChange={(notifications: NotificationModel[]) => {
@@ -176,7 +177,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
                                 color="norm"
                                 onClick={() => handleSaveNotifications(false)}
                                 loading={loadingSavePartDayNotifications}
-                                disabled={!hasTouchedPartDayNotifications || isEditDisabled}
+                                disabled={!hasTouchedPartDayNotifications || cannotEdit}
                             >
                                 {c('Action').t`Save`}
                             </Button>
@@ -199,7 +200,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
                             fullWidth={false}
                             notifications={model.fullDayNotifications}
                             canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                            disabled={loadingSaveFullDayNotifications || isEditDisabled}
+                            disabled={loadingSaveFullDayNotifications || cannotEdit}
                             addIcon="plus"
                             defaultNotification={getDefaultModel().defaultFullDayNotification}
                             onChange={(notifications: NotificationModel[]) => {
@@ -215,7 +216,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
                                 color="norm"
                                 onClick={() => handleSaveNotifications(true)}
                                 loading={loadingSaveFullDayNotifications}
-                                disabled={!hasTouchedFullDayNotifications || isEditDisabled}
+                                disabled={!hasTouchedFullDayNotifications || cannotEdit}
                             >
                                 {c('Action').t`Save`}
                             </Button>

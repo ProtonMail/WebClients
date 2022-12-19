@@ -40,10 +40,11 @@ type ModalsMap = {
 interface Props extends ComponentPropsWithoutRef<'div'> {
     calendar: VisualCalendar;
     user: UserModel;
+    canShare: boolean;
     noTitle?: boolean;
 }
 
-const CalendarShareUrlSection = ({ calendar, user, noTitle }: Props) => {
+const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) => {
     const [links, setLinks] = useState<CalendarLink[]>([]);
     const [isLoadingLinks, withLoadingLinks] = useLoading();
     const [isLoadingMap, setIsLoadingMap] = useState<Partial<Record<string, boolean>>>({});
@@ -160,7 +161,7 @@ const CalendarShareUrlSection = ({ calendar, user, noTitle }: Props) => {
             <Button
                 onClick={() => updateModal('shareLinkModal', { isOpen: true })}
                 color="norm"
-                disabled={maxLinksReached}
+                disabled={maxLinksReached || !canShare}
             >
                 {c('Action').t`Create link`}
             </Button>

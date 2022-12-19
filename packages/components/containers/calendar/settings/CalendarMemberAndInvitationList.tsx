@@ -19,6 +19,7 @@ interface MemberAndInvitationListProps {
     members: CalendarMember[];
     invitations: CalendarMemberInvitation[];
     calendarID: string;
+    canEdit: boolean;
     onDeleteMember: (id: string) => Promise<void>;
     onDeleteInvitation: (id: string, isDeclined: boolean) => Promise<void>;
 }
@@ -27,6 +28,7 @@ const CalendarMemberAndInvitationList = ({
     members,
     invitations,
     calendarID,
+    canEdit,
     onDeleteMember,
     onDeleteInvitation,
 }: MemberAndInvitationListProps) => {
@@ -89,11 +91,6 @@ const CalendarMemberAndInvitationList = ({
                         return (
                             <CalendarMemberRow
                                 key={ID}
-                                onDelete={() => onDeleteMember(ID)}
-                                onPermissionsUpdate={async (newPermissions) => {
-                                    await api(updateMember(calendarID, ID, { Permissions: newPermissions }));
-                                    showPermissionChangeSuccessNotification(contactEmail);
-                                }}
                                 name={contactName}
                                 email={contactEmail}
                                 deleteLabel={c('Action').t`Remove this member`}
@@ -101,6 +98,12 @@ const CalendarMemberAndInvitationList = ({
                                 permissions={Permissions}
                                 displayPermissions={displayPermissions}
                                 displayStatus={displayStatus}
+                                canEdit={canEdit}
+                                onDelete={() => onDeleteMember(ID)}
+                                onPermissionsUpdate={async (newPermissions) => {
+                                    await api(updateMember(calendarID, ID, { Permissions: newPermissions }));
+                                    showPermissionChangeSuccessNotification(contactEmail);
+                                }}
                             />
                         );
                     })}
@@ -121,6 +124,14 @@ const CalendarMemberAndInvitationList = ({
                         return (
                             <CalendarMemberRow
                                 key={CalendarInvitationID}
+                                name={contactName}
+                                email={contactEmail}
+                                deleteLabel={deleteLabel}
+                                permissions={Permissions}
+                                status={Status}
+                                displayPermissions={displayPermissions}
+                                displayStatus={displayStatus}
+                                canEdit={canEdit}
                                 onDelete={() => onDeleteInvitation(CalendarInvitationID, isDeclined)}
                                 onPermissionsUpdate={async (newPermissions) => {
                                     await api(
@@ -130,13 +141,6 @@ const CalendarMemberAndInvitationList = ({
                                     );
                                     showPermissionChangeSuccessNotification(contactEmail);
                                 }}
-                                name={contactName}
-                                email={contactEmail}
-                                deleteLabel={deleteLabel}
-                                permissions={Permissions}
-                                status={Status}
-                                displayPermissions={displayPermissions}
-                                displayStatus={displayStatus}
                             />
                         );
                     })}
