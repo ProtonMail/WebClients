@@ -15,5 +15,9 @@
 		&--inBackground {
 			z-index: 0;
 		}
+
+		@include respond-to($breakpoint-small, 'min') {
+			inset-block-end: 1em;
+		}
 	}
 }
