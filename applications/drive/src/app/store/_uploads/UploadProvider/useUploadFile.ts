@@ -216,7 +216,7 @@ export default function useUploadFile() {
             hash: string,
             keys: FileKeys,
             linkId: string,
-            clientUid: string
+            clientUid?: string
         ) => {
             await deleteChildrenLinks(abortSignal, shareId, parentId, [linkId]);
             return createFile(abortSignal, filename, mimeType, hash, keys, clientUid);
@@ -228,26 +228,25 @@ export default function useUploadFile() {
                 const {
                     filename: newName,
                     hash,
-                    linkId,
+                    drarftLinkId,
                     clientUid,
-                    hasDraft,
                 } = await findAvailableName(abortSignal, shareId, parentId, file.name);
 
                 checkSignal(abortSignal, file.name);
                 // Automatically replace file - previous draft was uploaded
                 // by the same client.
-                if (linkId && clientUid) {
+                if (drarftLinkId && clientUid) {
                     // Careful: uploading duplicate file has different name and
                     // this newName has to be used, not file.name.
                     // Example: upload A, then do it again with adding number
                     // A (2) which will fail, then do it again to replace draft
                     // with new upload - it needs to be A (2), not just A.
-                    return replaceDraft(abortSignal, newName, mimeType, hash, keys, linkId, clientUid);
+                    return replaceDraft(abortSignal, newName, mimeType, hash, keys, drarftLinkId, clientUid);
                 }
                 if (file.name === newName) {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
-                const conflictStrategy = await getFileConflictStrategy(abortSignal, hasDraft);
+                const conflictStrategy = await getFileConflictStrategy(abortSignal, !!drarftLinkId);
                 if (conflictStrategy === TransferConflictStrategy.Rename) {
                     return createFile(abortSignal, newName, mimeType, hash, keys);
                 }
@@ -255,6 +254,9 @@ export default function useUploadFile() {
                     conflictStrategy === TransferConflictStrategy.Replace ||
                     conflictStrategy === TransferConflictStrategy.Merge
                 ) {
+                    if (drarftLinkId) {
+                        return replaceDraft(abortSignal, file.name, mimeType, hash, keys, drarftLinkId);
+                    }
                     return replaceFile(abortSignal, mimeType, keys);
                 }
                 if (conflictStrategy === TransferConflictStrategy.Skip) {
