@@ -84,12 +84,23 @@ const ContactViewEmails = ({
                             <span className="flex-item-noshrink flex contact-view-actions">
                                 {!isPreview && (
                                     <>
+                                        <Copy
+                                            className="ml0-5"
+                                            value={email.value}
+                                            onCopy={() => {
+                                                createNotification({
+                                                    text: c('Success').t`Email address copied to clipboard`,
+                                                });
+                                            }}
+                                            data-testid={`${email.value}:email-copy`}
+                                        />
                                         {!isOwnAddress && (
                                             <Tooltip title={c('Title').t`Email settings`}>
                                                 <Button
                                                     icon
                                                     color="weak"
                                                     shape="outline"
+                                                    className="ml0-5"
                                                     onClick={handleSettings}
                                                     data-testid={`${email.value}:email-settings`}
                                                 >
@@ -110,16 +121,6 @@ const ContactViewEmails = ({
                                         >
                                             <Icon name="users" alt={c('Action').t`Contact group`} />
                                         </ContactGroupDropdown>
-                                        <Copy
-                                            className="ml0-5"
-                                            value={email.value}
-                                            onCopy={() => {
-                                                createNotification({
-                                                    text: c('Success').t`Email address copied to clipboard`,
-                                                });
-                                            }}
-                                            data-testid={`${email.value}:email-copy`}
-                                        />
                                     </>
                                 )}
                             </span>
