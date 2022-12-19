@@ -126,7 +126,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         value={emailAddress}
                         className="smtp-token-copy relative flex-item-noshrink ml0-5"
                         onCopy={handleCopyEmail}
-                    >{c('Action').t`Copy`}</Copy>
+                    />
                 </div>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
                     <InputFieldTwo
@@ -142,7 +142,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         value={token}
                         className="smtp-token-copy relative flex-item-noshrink ml0-5"
                         onCopy={handleCopyToken}
-                    >{c('Action').t`Copy`}</Copy>
+                    />
                 </div>
                 <p className="color-weak">{c('Info')
                     .t`This token won’t be available after you close this window, and you should not share it with anyone.`}</p>
