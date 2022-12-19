@@ -39,14 +39,29 @@
 .interactive {
 	@extend %interactive;
 
-	&:focus-visible,
-	&:has(*:focus-visible) {
-		border-color: var(--focus-outline);
-		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
-		color: inherit;
+	@supports not selector(:focus-visible) {
+		&:focus,
+		&:focus-within {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			color: inherit;
 
-		&:hover {
-			background-color: var(--interaction-default-hover);
+			&:hover {
+				background-color: var(--interaction-default-hover);
+			}
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible,
+		&:has(*:focus-visible) {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			color: inherit;
+
+			&:hover {
+				background-color: var(--interaction-default-hover);
+			}
 		}
 	}
 }
@@ -69,16 +84,34 @@
 		transition: 0.15s easing(ease-out-quad);
 	}
 
-	&:focus-visible,
-	&:has(*:focus-visible) {
-		&::after {
-			border-color: var(--focus-outline);
-			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
-		}
-
-		&:hover {
+	@supports not selector(:focus-visible) {
+		&:focus,
+		&:focus-within {
 			&::after {
-				background-color: var(--interaction-default-hover);
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+
+			&:hover {
+				&::after {
+					background-color: var(--interaction-default-hover);
+				}
+			}
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible,
+		&:has(*:focus-visible) {
+			&::after {
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+
+			&:hover {
+				&::after {
+					background-color: var(--interaction-default-hover);
+				}
 			}
 		}
 	}
