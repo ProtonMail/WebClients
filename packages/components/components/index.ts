@@ -47,7 +47,6 @@ export * from './pagination';
 export * from './popper';
 export * from './price';
 export * from './progress';
-export * from './scroll';
 export * from './select';
 export * from './selectTwo';
 export * from './sidebar';

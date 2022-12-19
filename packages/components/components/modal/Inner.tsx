@@ -1,7 +1,8 @@
 import { ReactNode, Ref, forwardRef } from 'react';
 
+import { ScrollShadows } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
-import ScrollShadows from '../scroll/ScrollShadows';
 
 interface Props {
     children: ReactNode;
