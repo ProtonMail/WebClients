@@ -51,7 +51,16 @@ export const setTextAreaCursorStart = (textarea: HTMLTextAreaElement) => {
 /**
  * Check if a HTML content is considered empty
  */
-export const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div>' || html === '<div><br></div>';
+export const isHTMLEmpty = (html: string) => {
+    if (!html) {
+        return true;
+    }
+
+    const div = document.createElement('div');
+    div.innerHTML = html;
+
+    return div.textContent?.trim() === '' && div.querySelectorAll('img').length === 0;
+};
 
 // https://github.com/chimurai/http-proxy-middleware/issues/237#issue-294034608
 export const createErrorHandler = (reject: (error: Error) => void) => {
