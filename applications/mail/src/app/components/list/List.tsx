@@ -124,9 +124,11 @@ const List = (
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
-    const { shouldHighlight } = useEncryptedSearchContext();
+    const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
-    const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
+    const { esEnabled, dbExists } = getESDBStatus();
+    const shouldOverrideCompactness = shouldHighlight() && dbExists && esEnabled;
+    const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
 
     const [user] = useUser();
     const onCompose = useOnCompose();
@@ -292,36 +294,37 @@ const List = (
                                                 }}
                                             />
                                         )}
-                                    {userSettings.Checklists?.includes('paying-user') && !isPaidUserChecklistDismissed && (
-                                        <PaidUserGetStartedChecklist
-                                            limitedMaxWidth={!isColumnMode(mailSettings)}
-                                            onDismiss={dismissPaidUserChecklist}
-                                            onItemSelection={(key: ChecklistKey) => () => {
-                                                switch (key) {
-                                                    case ChecklistKey.SendMessage: {
-                                                        onCompose({ action: MESSAGE_ACTIONS.NEW });
-                                                        break;
-                                                    }
-                                                    case ChecklistKey.MobileApp: {
-                                                        createModal(<ModalGetMobileApp />);
-                                                        break;
-                                                    }
-                                                    case ChecklistKey.RecoveryMethod: {
-                                                        if (displayMnemonicPrompt) {
-                                                            setMnemonicPromptModalOpen(true);
-                                                        } else {
-                                                            goToSettings('/recovery', undefined, true);
+                                    {userSettings.Checklists?.includes('paying-user') &&
+                                        !isPaidUserChecklistDismissed && (
+                                            <PaidUserGetStartedChecklist
+                                                limitedMaxWidth={!isColumnMode(mailSettings)}
+                                                onDismiss={dismissPaidUserChecklist}
+                                                onItemSelection={(key: ChecklistKey) => () => {
+                                                    switch (key) {
+                                                        case ChecklistKey.SendMessage: {
+                                                            onCompose({ action: MESSAGE_ACTIONS.NEW });
+                                                            break;
                                                         }
-                                                        break;
+                                                        case ChecklistKey.MobileApp: {
+                                                            createModal(<ModalGetMobileApp />);
+                                                            break;
+                                                        }
+                                                        case ChecklistKey.RecoveryMethod: {
+                                                            if (displayMnemonicPrompt) {
+                                                                setMnemonicPromptModalOpen(true);
+                                                            } else {
+                                                                goToSettings('/recovery', undefined, true);
+                                                            }
+                                                            break;
+                                                        }
+                                                        case ChecklistKey.Import: {
+                                                            createModal(<ModalImportEmails />);
+                                                            break;
+                                                        }
                                                     }
-                                                    case ChecklistKey.Import: {
-                                                        createModal(<ModalImportEmails />);
-                                                        break;
-                                                    }
-                                                }
-                                            }}
-                                        />
-                                    )}
+                                                }}
+                                            />
+                                        )}
                                 </>
                             )}
 
