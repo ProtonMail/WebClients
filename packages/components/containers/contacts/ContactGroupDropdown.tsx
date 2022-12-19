@@ -245,6 +245,7 @@ const ContactGroupDropdown = ({
                                             <label
                                                 htmlFor={checkboxId}
                                                 className="flex flex-align-items-center flex-item-fluid flex-nowrap"
+                                                data-testid={`contact-group-dropdown:item-${Name}`}
                                             >
                                                 <Icon
                                                     name="circle-filled"
@@ -276,6 +277,7 @@ const ContactGroupDropdown = ({
                             disabled={isPristine || !filteredContactGroups.length}
                             data-prevent-arrow-navigation
                             type="submit"
+                            data-testid="contact-group-dropdown:apply-chosen-groups"
                         >
                             {c('Action').t`Apply`}
                         </Button>

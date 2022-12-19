@@ -180,6 +180,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
                             className="ml1 on-mobile-ml0 on-mobile-mt0-5"
                             onClick={handleAdd}
                             disabled={!isValidEmail}
+                            data-testid="create-group:add-email"
                         >
                             {c('Action').t`Add`}
                         </Button>
@@ -200,7 +201,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={rest.onClose}>{c('Action').t`Close`}</Button>
-                <Button color="norm" type="submit" disabled={loading}>
+                <Button color="norm" type="submit" disabled={loading} data-testid="create-group:save">
                     {c('Action').t`Save`}
                 </Button>
             </ModalTwoFooter>

@@ -114,7 +114,7 @@ const ContactMergeTableContent = ({
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button onClick={onClose} data-testid="merge-model-cancel-button">{c('Action').t`Cancel`}</Button>
                 {isDeleteOnly ? (
                     <Button color="norm" onClick={onSubmit}>{c('Action').t`Continue`}</Button>
                 ) : (
