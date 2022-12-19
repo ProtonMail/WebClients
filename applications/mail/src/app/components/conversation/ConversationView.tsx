@@ -1,7 +1,7 @@
 import { memo, useEffect, useRef } from 'react';
 import * as React from 'react';
 
-import { FeatureCode, Scroll, classnames, useFeature, useLabels, useToggle } from '@proton/components';
+import { Scroll, classnames, useLabels, useToggle } from '@proton/components';
 import { isEditing } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -93,9 +93,6 @@ const ConversationView = ({
 
     const { focusIndex, handleFocus, handleBlur, getFocusedId } = useConversationFocus(messagesToShow);
 
-    const { feature: conversationHeaderInScrollFeature } = useFeature(FeatureCode.ConversationHeaderInScroll);
-    const shouldShowConversationHeaderInScroll = conversationHeaderInScrollFeature?.Value;
-
     const expandMessage = (messageID: string | undefined, scrollTo = false) => {
         messageViewsRefs.current[messageID || '']?.expand();
         const index = messagesToShow.findIndex((message) => message.ID === messageID);
@@ -149,22 +146,13 @@ const ConversationView = ({
         <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />
     ) : (
         <>
-            {!shouldShowConversationHeaderInScroll && (
+            <Scroll className={classnames([hidden && 'hidden'])} customContainerRef={containerRef}>
                 <ConversationHeader
                     className={classnames([hidden && 'hidden'])}
                     loading={loadingConversation}
                     element={conversation}
                 />
-            )}
-            <Scroll className={classnames([hidden && 'hidden'])} customContainerRef={containerRef}>
-                {shouldShowConversationHeaderInScroll && (
-                    <ConversationHeader
-                        className={classnames([hidden && 'hidden'])}
-                        loading={loadingConversation}
-                        element={conversation}
-                    />
-                )}
-                <div ref={wrapperRef} className="flex-item-fluid pt1 pr1 pl1 w100">
+                <div ref={wrapperRef} className="flex-item-fluid pr1 pl1 w100">
                     <div className="outline-none" ref={elementRef} tabIndex={-1}>
                         {showMessagesError ? (
                             <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />
