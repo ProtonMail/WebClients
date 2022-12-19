@@ -1,7 +1,7 @@
-import { memo, useEffect, useRef } from 'react';
-import * as React from 'react';
+import { RefObject, memo, useEffect, useRef } from 'react';
 
-import { Scroll, classnames, useLabels, useToggle } from '@proton/components';
+import { Scroll } from '@proton/atoms';
+import { classnames, useLabels, useToggle } from '@proton/components';
 import { isEditing } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -36,7 +36,7 @@ interface Props {
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
-    containerRef: React.RefObject<HTMLElement>;
+    containerRef: RefObject<HTMLElement>;
 }
 
 const DEFAULT_FILTER_VALUE = true;

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { Scroll, classnames, useHotkeys, useLabels } from '@proton/components';
+import { Scroll } from '@proton/atoms';
+import { classnames, useHotkeys, useLabels } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
