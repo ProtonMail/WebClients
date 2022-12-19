@@ -1,3 +1,4 @@
+import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
@@ -98,15 +99,23 @@ export function shareMetaToShareWithKey(share: ShareMeta): ShareWithKey {
     };
 }
 
-export function driveEventsResultToDriveEvents(
-    { EventID, Events, Refresh }: DriveEventsResult,
-    shareId: string
-): DriveEvents {
+export function driveEventsResultToDriveEvents({ EventID, Events, Refresh }: DriveEventsResult): DriveEvents {
     return {
         eventId: EventID,
         events: Events.map((event) => ({
             eventType: event.EventType,
-            encryptedLink: linkMetaToEncryptedLink(event.Link, shareId),
+            // ContextShareID is guaranteed to be on the event for all types
+            // besides delete (after link is deleted, it is not possible to
+            // find the share it was part of). For delete operation, it is
+            // fine to keep rootShareId empty as its only for deleting data
+            // from cache. In future, once the cache is volume oriented, it
+            // will not be a problem, because we will always know proper
+            // volume ID.
+            encryptedLink:
+                event.EventType === EVENT_TYPES.DELETE
+                    ? linkMetaToEncryptedLink(event.Link, '')
+                    : linkMetaToEncryptedLink(event.Link, event.ContextShareID),
+            originShareId: event.EventType === EVENT_TYPES.DELETE ? undefined : event.FromContextShareID,
         })),
         refresh: Refresh !== 0,
     };

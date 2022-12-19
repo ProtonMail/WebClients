@@ -8,12 +8,20 @@ export interface DriveEventsResult {
     Refresh: 0 | 1;
 }
 
-interface DriveEventResult {
-    EventType: EVENT_TYPES;
+type DriveEventResult = {
     Data: any;
     Link: LinkMeta;
-    createTime: number;
-}
+    CreateTime: number;
+} & (
+    | {
+          EventType: EVENT_TYPES.DELETE;
+      }
+    | {
+          EventType: EVENT_TYPES;
+          ContextShareID: string;
+          FromContextShareID?: string;
+      }
+);
 
 enum DriveEventsPaginationFlag {
     completed = 0,

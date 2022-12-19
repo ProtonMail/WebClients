@@ -44,3 +44,13 @@ export const queryVolumeSharedLinks = (
         params,
     };
 };
+
+export const queryLatestVolumeEvent = (volumeId: string) => ({
+    url: `drive/volumes/${volumeId}/events/latest`,
+    method: 'get',
+});
+
+export const queryVolumeEvents = (volumeId: string, eventId: string) => ({
+    url: `drive/volumes/${volumeId}/events/${eventId}`,
+    method: 'get',
+});

@@ -11,6 +11,7 @@ import {
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useDriveEventManager } from '../../../../store';
+import { useVolumesState } from '../../../../store/_volumes';
 
 interface Props {
     children: React.ReactNode;
@@ -25,16 +26,22 @@ interface Props {
 
 const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon, onDoubleClick, style }: Props) => {
     const driveEventManager = useDriveEventManager();
+    const volumeState = useVolumesState();
     const [refreshing, withRefreshing] = useLoading(false);
 
     const left = icon ? <SidebarListItemContentIcon name={icon} /> : null;
 
     const handleDoubleClick = () => {
         onDoubleClick?.();
+
         if (!refreshing && shareId) {
-            withRefreshing(
-                Promise.all([driveEventManager.pollEvents.shares([shareId], { includeCommon: true }), wait(1000)])
-            ).catch(console.warn);
+            const volumeId = volumeState.findVolumeId(shareId);
+
+            if (volumeId) {
+                withRefreshing(
+                    Promise.all([driveEventManager.pollEvents.driveEvents({ includeCommon: true }), wait(1000)])
+                ).catch(console.warn);
+            }
         }
     };
 
