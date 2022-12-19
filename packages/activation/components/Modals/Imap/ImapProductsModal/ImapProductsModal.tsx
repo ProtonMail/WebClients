@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { EasySwitchFeatureFlag, ImportType } from '@proton/activation/interface';
 import { FeatureCode, Loader, ModalTwo, ModalTwoContent, ModalTwoHeader, useFeature } from '@proton/components';
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 import useUserCalendars from '../CalendarModal/useUserCalendars';
 import ImapModalButton from './ImapProductsModalButtons';
@@ -41,7 +42,7 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
                                 disabledTooltipTitle={
                                     feature?.Value?.OtherCalendar
                                         ? c('Info')
-                                              .t`You need to have an active personal calendar to import your events.`
+                                              .t`To import events, first create a calendar in ${CALENDAR_APP_NAME}. This is where the events will appear after the import.`
                                         : c('Info').t`Temporarily unavailable. Please check back later.`
                                 }
                             />
