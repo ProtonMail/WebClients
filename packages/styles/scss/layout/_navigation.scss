@@ -86,16 +86,26 @@ $padding-block-link: rem(7) !default;
 
 // special case for calendar, label has checkbox inside
 label.navigation-link {
-	&:focus {
-		background-color: unset;
-		border-color: transparent;
-		box-shadow: none;
+	@supports not selector(:focus-visible) {
+		&:focus {
+			background-color: unset;
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		}
 	}
 
-	&:focus-within {
-		background-color: unset;
-		border-color: var(--focus-outline);
-		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+	@supports selector(:focus-visible) {
+		&:focus {
+			background-color: unset;
+			border-color: transparent;
+			box-shadow: none;
+		}
+
+		&:focus-within {
+			background-color: unset;
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		}
 	}
 }
 

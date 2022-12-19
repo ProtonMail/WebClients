@@ -238,14 +238,29 @@
 				pointer-events: none;
 			}
 
-			&:focus-visible {
-				z-index: 0;
-				background-color: unset;
+			@supports not selector(:focus-visible) {
+				&:focus {
+					z-index: 0;
+					background-color: unset;
 
-				&::after {
-					background-color: var(--interaction-norm);
-					box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
-					z-index: -1;
+					&::after {
+						background-color: var(--interaction-norm);
+						box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+						z-index: -1;
+					}
+				}
+			}
+
+			@supports selector(:focus-visible) {
+				&:focus-visible {
+					z-index: 0;
+					background-color: unset;
+
+					&::after {
+						background-color: var(--interaction-norm);
+						box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+						z-index: -1;
+					}
 				}
 			}
 		}
