@@ -17,7 +17,7 @@ const Layout = (props: OfferLayoutProps) => {
     return hasOffer(props) ? (
         <OfferLayout {...props}>
             <OfferHeader {...props}>
-                <OfferTitle>{c('specialoffer: Title').t`Upgrade and save more with 2 years of ${planName}`}</OfferTitle>
+                <OfferTitle>{c('specialoffer: Title').t`Save more with 2 years of ${planName}`}</OfferTitle>
             </OfferHeader>
 
             <Deals {...props} />
