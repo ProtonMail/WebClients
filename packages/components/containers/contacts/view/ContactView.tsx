@@ -74,7 +74,6 @@ const ContactView = ({
                 <ContactSummary
                     vCardContact={vCardContact}
                     onExport={onExport}
-                    onEdit={onEdit}
                     onDelete={onDelete}
                     leftBlockWidth="w100 max-w100p on-mobile-wauto"
                     isPreview={isPreview}
