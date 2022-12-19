@@ -13,7 +13,7 @@ const config: OfferConfig = {
     canBeDisabled: true,
     deals: [
         {
-            ref: 'special_offer-modal-1',
+            ref: 'upsell_mail-modal-special_offer23',
             planName: PLANS.BUNDLE,
             planIDs: {
                 [PLANS.BUNDLE]: 1,

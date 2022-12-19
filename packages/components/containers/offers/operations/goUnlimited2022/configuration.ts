@@ -15,7 +15,7 @@ const config: OfferConfig = {
     canBeDisabled: true,
     deals: [
         {
-            ref: 'go_unlimited-modal-1',
+            ref: 'upsell_mail-modal-go_unlimited',
             planName: PLANS.BUNDLE,
             planIDs: {
                 [PLANS.BUNDLE]: 1,
