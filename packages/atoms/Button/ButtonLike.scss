@@ -38,11 +38,22 @@
 		opacity: 1; // In case the button is invisible as default
 	}
 
-	&:focus-visible,
-	&:has(*:focus-visible) {
-		border-color: var(--focus-outline);
-		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
-		color: var(--button-default-text-color, inherit);
+	@supports not selector(:focus-visible) {
+		&:focus,
+		&:focus-within {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			color: var(--button-default-text-color, inherit);
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible,
+		&:has(*:focus-visible) {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			color: var(--button-default-text-color, inherit);
+		}
 	}
 
 	&:active,
@@ -102,11 +113,23 @@
 		transition: 0.15s easing(ease-out-quad);
 	}
 
-	&:focus-visible,
-	&:has(*:focus-visible) {
-		&::after {
-			border-color: var(--focus-outline);
-			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+	@supports not selector(:focus-visible) {
+		&:focus,
+		&:focus-within {
+			&::after {
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible,
+		&:has(*:focus-visible) {
+			&::after {
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
 		}
 	}
 
