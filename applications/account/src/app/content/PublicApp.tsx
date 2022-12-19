@@ -54,7 +54,7 @@ import { externalApps, getIsVPNApp, getToAppName, requiresProtonAccount } from '
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
-import { SERVICES, SERVICES_KEYS } from '../signup/interfaces';
+import { getProduct, getProductParam } from '../signup/searchParams';
 import AccountPublicApp from './AccountPublicApp';
 
 const getPathFromLocation = (location: H.Location) => {
@@ -64,10 +64,11 @@ const getPathFromLocation = (location: H.Location) => {
 export const getSearchParams = (search: string) => {
     const searchParams = new URLSearchParams(search);
 
-    const maybeService = (searchParams.get('service') || searchParams.get('product')) as SERVICES_KEYS | undefined;
-    const service = maybeService ? SERVICES[maybeService] : undefined;
+    const maybeProductParam = searchParams.get('service') || searchParams.get('product') || undefined;
+    const product = getProduct(maybeProductParam);
+    const productParam = getProductParam(product, maybeProductParam);
 
-    return { service };
+    return { product, productParam };
 };
 
 const getLocalRedirect = (pathname?: string) => {
@@ -132,7 +133,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         };
     }, []);
 
-    const { service: maybeQueryAppIntent } = useMemo(() => {
+    const { product: maybeQueryAppIntent, productParam } = useMemo(() => {
         return getSearchParams(location.search);
     }, []);
 
@@ -468,6 +469,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                             </Route>
                                             <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
                                                 <SignupContainer
+                                                    productParam={productParam}
                                                     clientType={clientType}
                                                     toApp={maybePreAppIntent}
                                                     toAppName={toAppName}
