@@ -62,6 +62,7 @@
 
 	&__icon {
 		margin-inline: 0 em(8);
+		flex-shrink: 0;
 	}
 
 	&__content {
