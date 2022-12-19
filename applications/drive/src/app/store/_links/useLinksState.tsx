@@ -41,9 +41,9 @@ export function useLinksStateProvider() {
     const [state, setState] = useState<LinksState>({});
 
     useEffect(() => {
-        const callback = (shareId: string, events: DriveEvents) =>
-            setState((state) => updateByEvents(state, shareId, events));
-        const callbackId = events.eventHandlers.register(callback);
+        const callbackId = events.eventHandlers.register((volumeId, events) =>
+            setState((state) => updateByEvents(state, events))
+        );
         return () => {
             events.eventHandlers.unregister(callbackId);
         };
@@ -120,17 +120,41 @@ export function useLinksStateProvider() {
     };
 }
 
-export function updateByEvents(state: LinksState, shareId: string, { events }: DriveEvents): LinksState {
-    if (!state[shareId]) {
-        return state;
-    }
-
+export function updateByEvents(state: LinksState, { events }: DriveEvents): LinksState {
     events.forEach((event) => {
         if (event.eventType === EVENT_TYPES.DELETE) {
-            state = deleteLinks(state, shareId, [event.encryptedLink.linkId]);
-        } else {
-            state = addOrUpdate(state, shareId, [{ encrypted: event.encryptedLink }]);
+            // Delete event does not contain context share ID because
+            // the link is already deleted and backend might not know
+            // it anymore. There might be two links in mulitple shares
+            // with the same link IDs, but it is very rare, and it can
+            // happen in user cache only with direct sharing. Because
+            // the risk is almost zero, it is simply deleting all the
+            // links with the given ID. In future when we have full sync
+            // we will have storage mapped with volumes instead removing
+            // the problem altogether.
+            Object.keys(state).forEach((shareId) => {
+                state = deleteLinks(state, shareId, [event.encryptedLink.linkId]);
+            });
+            return;
         }
+
+        // If link is moved from one share to the another one, we need
+        // to delete it from the original one too. It is not very efficient
+        // as it will delete the decrypted content. But this is rare and
+        // it will be solved in the future with volume-centric approach
+        // as described above.
+        if (
+            event.originShareId &&
+            event.encryptedLink.rootShareId !== event.originShareId &&
+            state[event.originShareId]
+        ) {
+            state = deleteLinks(state, event.originShareId, [event.encryptedLink.linkId]);
+        }
+
+        if (!state[event.encryptedLink.rootShareId]) {
+            return state;
+        }
+        state = addOrUpdate(state, event.encryptedLink.rootShareId, [{ encrypted: event.encryptedLink }]);
     });
 
     return state;

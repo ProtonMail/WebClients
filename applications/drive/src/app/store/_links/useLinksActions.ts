@@ -19,6 +19,7 @@ import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
+import { useVolumesState } from '../_volumes';
 import useLink from './useLink';
 import useLinks from './useLinks';
 import useLinksState from './useLinksState';
@@ -55,6 +56,7 @@ export function useLinksActions({
     const { getLinks } = useLinks();
     const { lockLinks, unlockLinks, lockTrash } = useLinksState();
     const { getPrimaryAddressKey } = useDriveCrypto();
+    const volumeState = useVolumesState();
 
     /**
      * withLinkLock is helper to lock provided `linkIds` before the action done
@@ -66,7 +68,10 @@ export function useLinksActions({
         try {
             return await callback();
         } finally {
-            await events.pollEvents.shares([shareId]);
+            const volumeId = volumeState.findVolumeId(shareId);
+            if (volumeId) {
+                await events.pollEvents.volumes(volumeId);
+            }
             unlockLinks(shareId, linkIds);
         }
     };
@@ -288,7 +293,11 @@ export function useLinksActions({
     const emptyTrash = async (abortSignal: AbortSignal, shareId: string) => {
         lockTrash(shareId);
         await debouncedRequest(queryEmptyTrashOfShare(shareId), abortSignal);
-        await events.pollEvents.shares([shareId]);
+        const volumeId = volumeState.findVolumeId(shareId);
+
+        if (volumeId) {
+            await events.pollEvents.volumes(volumeId);
+        }
     };
 
     return {
