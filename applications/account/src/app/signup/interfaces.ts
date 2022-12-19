@@ -5,7 +5,7 @@ import { Payment } from '@proton/components/containers/payments/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import {
     Address,
     Currency,
@@ -31,13 +31,12 @@ export enum SIGNUP_STEPS {
     DONE = 'done',
 }
 
-export const SERVICES = {
+export const SERVICES: { [key: string]: APP_NAMES } = {
     mail: APPS.PROTONMAIL,
     calendar: APPS.PROTONCALENDAR,
     drive: APPS.PROTONDRIVE,
     vpn: APPS.PROTONVPN_SETTINGS,
 };
-export type SERVICES_KEYS = keyof typeof SERVICES;
 
 export interface PlanIDs {
     [planID: string]: number;
@@ -138,6 +137,7 @@ export interface UserData {
 
 export interface SignupCacheResult {
     appIntent?: AppIntent;
+    productParam: APP_NAMES | 'generic' | 'none' | undefined;
     userData?: UserData;
     setupData?: SetupData;
     accountData: AccountData;

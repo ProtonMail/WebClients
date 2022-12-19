@@ -99,13 +99,14 @@ const {
 
 interface Props {
     onLogin: OnLoginCallback;
+    productParam: APP_NAMES | 'generic' | 'none' | undefined;
     toApp?: APP_NAMES;
     toAppName?: string;
     onBack?: () => void;
     clientType: CLIENT_TYPES;
 }
 
-const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Props) => {
+const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam }: Props) => {
     const { APP_NAME } = useConfig();
     const normalApi = useApi();
     const history = useHistory();
@@ -542,6 +543,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                                       app: toApp,
                                   }
                                 : undefined,
+                            productParam,
                             // Internal app or oauth app or vpn
                             ignoreExplore: Boolean(toApp || toAppName || signupType === SignupType.VPN),
                             generateKeys: APP_NAME === APPS.PROTONACCOUNT,
