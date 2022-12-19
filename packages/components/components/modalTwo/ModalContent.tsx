@@ -1,7 +1,8 @@
 import { ComponentPropsWithoutRef, useContext } from 'react';
 
+import { Scroll } from '@proton/atoms/Scroll';
+
 import { classnames } from '../../helpers';
-import { Scroll } from '../scroll';
 import { ModalContext } from './Modal';
 
 import './ModalContent.scss';
