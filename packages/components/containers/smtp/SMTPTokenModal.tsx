@@ -18,6 +18,7 @@ import {
     useApi,
     useFormErrors,
     useLoading,
+    useNotifications,
 } from '@proton/components';
 import { createToken } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
@@ -42,6 +43,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [step, setStep] = useState(Steps.TokenForm);
     const [loading, withLoading] = useLoading();
+    const { createNotification } = useNotifications();
     const [tokenName, setTokenName] = useState('');
     const [token, setToken] = useState('');
     // This modal can be open only if it has at least one custom address
@@ -63,6 +65,14 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
             setStep(Steps.TokenValue);
             onCreate();
         }
+    };
+
+    const handleCopyEmail = () => {
+        createNotification({ type: 'success', text: c('Success').t`Email address copied to clipboard` });
+    };
+
+    const handleCopyToken = () => {
+        createNotification({ type: 'success', text: c('Success').t`Token copied to clipboard` });
     };
 
     const content = () => {
@@ -115,6 +125,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         shape="solid"
                         value={emailAddress}
                         className="smtp-token-copy relative flex-item-noshrink ml0-5"
+                        onCopy={handleCopyEmail}
                     >{c('Action').t`Copy`}</Copy>
                 </div>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
@@ -130,6 +141,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         shape="solid"
                         value={token}
                         className="smtp-token-copy relative flex-item-noshrink ml0-5"
+                        onCopy={handleCopyToken}
                     >{c('Action').t`Copy`}</Copy>
                 </div>
                 <p className="color-weak">{c('Info')
