@@ -17,7 +17,6 @@ interface Props {
     vCardContact: VCardContact;
     onExport: () => void;
     onDelete: () => void;
-    onEdit: (newField?: string) => void;
     leftBlockWidth?: string;
     isPreview?: boolean;
     hasError?: boolean;
@@ -25,7 +24,6 @@ interface Props {
 
 const ContactSummary = ({
     vCardContact,
-    onEdit,
     onDelete,
     onExport,
     isPreview,
@@ -94,21 +92,6 @@ const ContactSummary = ({
                                 <Icon name="trash" alt={c('Action').t`Delete`} />
                             </Button>
                         </Tooltip>
-
-                        {!hasError && (
-                            <Tooltip title={c('Action').t`Edit`}>
-                                <Button
-                                    icon
-                                    shape="solid"
-                                    color="norm"
-                                    onClick={() => onEdit()}
-                                    className="inline-flex ml0-5"
-                                    data-testid="contact-summary:edit"
-                                >
-                                    <Icon name="pen" alt={c('Action').t`Edit`} />
-                                </Button>
-                            </Tooltip>
-                        )}
                     </div>
                 )}
             </div>
