@@ -150,25 +150,33 @@ const SMTPSubmissionSection = () => {
             <Table className={clsx(!loadingTokens && hasTokens && 'simple-table--has-actions')}>
                 <TableHeader cells={headers} />
                 <TableBody colSpan={headersLength} loading={loadingTokens}>
-                    {tokens.map((token) => (
-                        <TableRow
-                            key={token.SmtpTokenID}
-                            cells={[
-                                token.Name,
-                                addressMap.get(token.AddressID) || '',
-                                showDetails && format(fromUnixTime(token.CreateTime), 'PPp', { locale: dateLocale }),
-                                showDetails &&
-                                    (token.LastUsedTime
-                                        ? format(fromUnixTime(token.LastUsedTime), 'PPp', { locale: dateLocale })
-                                        : '-'),
-                                <Button
-                                    size="small"
-                                    disabled={loadingTokens}
-                                    onClick={() => confirmRemoveToken(token.SmtpTokenID)}
-                                >{c('Action').t`Delete`}</Button>,
-                            ].filter(isTruthy)}
-                        />
-                    ))}
+                    {tokens.map((token) => {
+                        const email = addressMap.get(token.AddressID) || '';
+                        return (
+                            <TableRow
+                                key={token.SmtpTokenID}
+                                cells={[
+                                    <span title={token.Name} className="text-ellipsis max-w100 inline-block">
+                                        {token.Name}
+                                    </span>,
+                                    <span title={email} className="text-ellipsis max-w100 inline-block">
+                                        {email}
+                                    </span>,
+                                    showDetails &&
+                                        format(fromUnixTime(token.CreateTime), 'PPp', { locale: dateLocale }),
+                                    showDetails &&
+                                        (token.LastUsedTime
+                                            ? format(fromUnixTime(token.LastUsedTime), 'PPp', { locale: dateLocale })
+                                            : '-'),
+                                    <Button
+                                        size="small"
+                                        disabled={loadingTokens}
+                                        onClick={() => confirmRemoveToken(token.SmtpTokenID)}
+                                    >{c('Action').t`Delete`}</Button>,
+                                ].filter(isTruthy)}
+                            />
+                        );
+                    })}
                     {!loadingTokens && !hasTokens && (
                         <tr>
                             <td colSpan={headersLength} className="text-center">
