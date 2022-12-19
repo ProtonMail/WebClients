@@ -237,7 +237,12 @@ export default function useUploadFile() {
                 // Automatically replace file - previous draft was uploaded
                 // by the same client.
                 if (linkId && clientUid) {
-                    return replaceDraft(abortSignal, file.name, mimeType, hash, keys, linkId, clientUid);
+                    // Careful: uploading duplicate file has different name and
+                    // this newName has to be used, not file.name.
+                    // Example: upload A, then do it again with adding number
+                    // A (2) which will fail, then do it again to replace draft
+                    // with new upload - it needs to be A (2), not just A.
+                    return replaceDraft(abortSignal, newName, mimeType, hash, keys, linkId, clientUid);
                 }
                 if (file.name === newName) {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
