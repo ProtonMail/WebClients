@@ -13,7 +13,3 @@ export const MEMBER_PERMISSIONS = {
 export const getCanWrite = (permissions: CALENDAR_PERMISSIONS) => {
     return hasBit(permissions, WRITE);
 };
-
-export const getIsMember = (permissions: CALENDAR_PERMISSIONS) => {
-    return hasBit(permissions, AVAILABILITY);
-};
