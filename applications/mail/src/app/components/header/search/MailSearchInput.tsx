@@ -29,6 +29,7 @@ const MailSearchInput = ({ value, onOpen, onChange, loading }: Props, ref: Ref<H
                     value={value}
                     placeholder={c('Placeholder').t`Search messages`}
                     onClick={onOpen}
+                    onKeyDown={onOpen}
                     data-testid="search-keyword"
                     prefix={
                         <Button
