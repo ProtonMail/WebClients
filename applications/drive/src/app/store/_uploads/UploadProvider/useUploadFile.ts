@@ -26,6 +26,7 @@ import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
 import { useDriveEventManager } from '../../_events';
 import { DecryptedLink, useLink, useLinksActions, validateLinkName } from '../../_links';
+import { useVolumesState } from '../../_volumes';
 import { MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
 import {
@@ -63,6 +64,7 @@ export default function useUploadFile() {
     const { findAvailableName, getLinkByName } = useUploadHelper();
     const { currentEnvironment } = useEarlyAccess();
     const driveEventManager = useDriveEventManager();
+    const volumeState = useVolumesState();
 
     const initFileUpload = (
         shareId: string,
@@ -400,9 +402,12 @@ export default function useUploadFile() {
                         );
                     }
 
-                    await driveEventManager.pollEvents.shares([shareId], {
-                        includeCommon: true,
-                    });
+                    const volumeId = volumeState.findVolumeId(shareId);
+                    if (volumeId) {
+                        await driveEventManager.pollEvents.volumes(volumeId, {
+                            includeCommon: true,
+                        });
+                    }
                 },
                 5
             ),

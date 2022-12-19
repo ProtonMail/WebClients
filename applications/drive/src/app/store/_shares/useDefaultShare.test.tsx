@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import useDefaultShare from './useDefaultShare';
 
 const mockRequest = jest.fn();
@@ -72,7 +73,11 @@ describe('useDefaultShare', () => {
             return { Shares: [] };
         });
 
-        const { result } = renderHook(() => useDefaultShare());
+        const wrapper = ({ children }: { children: React.ReactNode }) => (
+            <VolumesStateProvider>{children}</VolumesStateProvider>
+        );
+
+        const { result } = renderHook(() => useDefaultShare(), { wrapper });
         hook = result;
     });
 

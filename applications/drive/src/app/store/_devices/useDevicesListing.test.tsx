@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import { Device } from './interface';
 import { useDevicesListingProvider } from './useDevicesListing';
 
@@ -47,7 +48,11 @@ describe('useLinksState', () => {
     };
 
     beforeEach(() => {
-        const { result } = renderHook(() => useDevicesListingProvider());
+        const wrapper = ({ children }: { children: React.ReactNode }) => (
+            <VolumesStateProvider>{children}</VolumesStateProvider>
+        );
+
+        const { result } = renderHook(() => useDevicesListingProvider(), { wrapper });
         hook = result;
     });
 

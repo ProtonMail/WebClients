@@ -5,6 +5,7 @@ import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getUserKey } from '@proton/shared/test/keys/keyDataHelper';
 
 import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../utils/test/crypto';
+import { VolumesStateProvider } from '../../_volumes/useVolumesState';
 import { LockedVolumeForRestore } from '../interface';
 import useSharesState from '../useSharesState';
 import useLockedVolume, { useLockedVolumeInner } from './useLockedVolume';
@@ -107,6 +108,10 @@ describe('useLockedVolume', () => {
         current: ReturnType<typeof useLockedVolume>;
     };
 
+    const wrapper = ({ children }: { children: React.ReactNode }) => (
+        <VolumesStateProvider>{children}</VolumesStateProvider>
+    );
+
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
     });
@@ -125,7 +130,7 @@ describe('useLockedVolume', () => {
 
     describe('prepareVolumesForRestore', () => {
         it("should return locked volumes if there's no private keys associated with address", async () => {
-            const { result } = renderHook(() => useHook());
+            const { result } = renderHook(() => useHook(), { wrapper });
             hook = result;
 
             sharesStateMock.lockedVolumesForRestore = [LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2];
@@ -137,10 +142,12 @@ describe('useLockedVolume', () => {
 
         it("should return locked volumes if there's no locked unprepared shares", async () => {
             const addressesKeys = await generateAddressKeys();
-            const { result } = renderHook(() =>
-                useHook({
-                    addressesKeys,
-                })
+            const { result } = renderHook(
+                () =>
+                    useHook({
+                        addressesKeys,
+                    }),
+                { wrapper }
             );
             hook = result;
 
@@ -160,11 +167,13 @@ describe('useLockedVolume', () => {
                 return [{ shareId: 'shareId' }];
             });
             const addressesKeys = await generateAddressKeys();
-            const { result } = renderHook(() =>
-                useHook({
-                    addressesKeys,
-                    getShareWithKey: mockGetShareWithKey,
-                })
+            const { result } = renderHook(
+                () =>
+                    useHook({
+                        addressesKeys,
+                        getShareWithKey: mockGetShareWithKey,
+                    }),
+                { wrapper }
             );
             hook = result;
 
@@ -194,12 +203,14 @@ describe('useLockedVolume', () => {
 
             const addressesKeys = await generateAddressKeys();
 
-            const { result } = renderHook(() =>
-                useHook({
-                    addressesKeys,
-                    getShareWithKey: mockGetShareWithKey,
-                    prepareVolumeForRestore: async () => lockedVolumeForRestore,
-                })
+            const { result } = renderHook(
+                () =>
+                    useHook({
+                        addressesKeys,
+                        getShareWithKey: mockGetShareWithKey,
+                        prepareVolumeForRestore: async () => lockedVolumeForRestore,
+                    }),
+                { wrapper }
             );
             hook = result;
 

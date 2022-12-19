@@ -562,12 +562,17 @@ describe('useLinksState', () => {
     it('processes events', () => {
         const result = updateByEvents(
             state,
-            'shareId',
             generateEvents([
-                [EVENT_TYPES.CREATE, { linkId: 'newLink', name: 'newLink', parentLinkId: 'linkId0' }],
+                [
+                    EVENT_TYPES.CREATE,
+                    { linkId: 'newLink', name: 'newLink', parentLinkId: 'linkId0', rootShareId: 'shareId' },
+                ],
                 [EVENT_TYPES.DELETE, { linkId: 'linkId1' }],
                 [EVENT_TYPES.DELETE, { linkId: 'linkId4' }],
-                [EVENT_TYPES.UPDATE, { linkId: 'linkId7', name: 'new name', parentLinkId: 'linkId0' }],
+                [
+                    EVENT_TYPES.UPDATE,
+                    { linkId: 'linkId7', name: 'new name', parentLinkId: 'linkId0', rootShareId: 'shareId' },
+                ],
             ])
         );
 
@@ -588,8 +593,12 @@ describe('useLinksState', () => {
     it('skips events from non-present share', () => {
         const result = updateByEvents(
             state,
-            'shareId2',
-            generateEvents([[EVENT_TYPES.CREATE, { linkId: 'newLink', name: 'newLink', parentLinkId: 'linkId0' }]])
+            generateEvents([
+                [
+                    EVENT_TYPES.CREATE,
+                    { linkId: 'newLink', name: 'newLink', parentLinkId: 'linkId0', rootShareId: 'shareId2' },
+                ],
+            ])
         );
 
         expect(Object.keys(result)).toMatchObject(['shareId']);

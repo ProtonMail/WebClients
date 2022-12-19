@@ -42,6 +42,7 @@ import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
+import { useVolumesState } from '../_volumes';
 import { getSharedLink } from './shareUrl';
 import useShare from './useShare';
 import useShareActions from './useShareActions';
@@ -66,6 +67,7 @@ export default function useShareUrl() {
     const { createShare, deleteShare } = useShareActions();
     const { getShare, getShareSessionKey } = useShare();
     const { getLink, loadFreshLink } = useLink();
+    const volumeState = useVolumesState();
 
     const fetchShareUrl = async (abortSignal: AbortSignal, shareId: string): Promise<ShareURL | undefined> => {
         const { ShareURLs = [] } = await debouncedRequest<{
@@ -206,7 +208,10 @@ export default function useShareUrl() {
             )
         );
 
-        await events.pollEvents.shares([shareId]);
+        const volumeId = volumeState.findVolumeId(shareId);
+        if (volumeId) {
+            await events.pollEvents.volumes(volumeId);
+        }
 
         return {
             ShareURL: {
@@ -474,7 +479,15 @@ export default function useShareUrl() {
 
         const shareIdsToUpdate = unique(batches.map((batch) => batch[0].rootShareId));
 
-        await events.pollEvents.shares(shareIdsToUpdate, { includeCommon: true });
+        const volumeIds = unique(
+            shareIdsToUpdate.map((shareId) => {
+                return volumeState.findVolumeId(shareId);
+            })
+        ).filter(isTruthy);
+
+        if (volumeIds.length) {
+            await events.pollEvents.volumes(volumeIds);
+        }
 
         return { successes, failures };
     };
