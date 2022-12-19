@@ -70,6 +70,10 @@
 		align-items: center;
 		padding-inline-end: em(8);
 
+		> span {
+			@extend .text-cut;
+		}
+
 		.notification__button {
 			white-space: nowrap;
 			align-self: center;
