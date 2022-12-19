@@ -31,7 +31,6 @@ export default function useListNotifications() {
                     <span>{message}</span>
                     {undoAction && (
                         <>
-                            {'. '}
                             <NotificationButton onClick={() => undoAction()}>{c('Action').t`Undo`}</NotificationButton>
                         </>
                     )}
