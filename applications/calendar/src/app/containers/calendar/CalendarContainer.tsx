@@ -23,6 +23,7 @@ import {
     convertZonedDateTimeToUTC,
     formatGMTOffsetAbbreviation,
     fromUTCDate,
+    getIsEquivalentTimeZone,
     getTimezone,
     getTimezoneOffset,
     toUTCDate,
@@ -218,7 +219,7 @@ const CalendarContainer = ({
             const localTzid = getTimezone();
             const savedTzid = getDefaultTzid(calendarUserSettings, localTzid);
             const key = await getTimezoneSuggestionKey(user.ID);
-            if (savedTzid !== localTzid && canAskTimezoneSuggestion(key)) {
+            if (!getIsEquivalentTimeZone(localTzid, savedTzid) && canAskTimezoneSuggestion(key)) {
                 saveLastTimezoneSuggestion(key);
                 setIsAskUpdateTimezoneModalOpen(true);
                 setLocalTimezoneId(localTzid);
