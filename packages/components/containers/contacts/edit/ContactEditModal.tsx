@@ -338,7 +338,12 @@ const ContactEditModal = ({
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" loading={loading} onClick={() => withLoading(handleSubmit())}>
+                <Button
+                    color="norm"
+                    loading={loading}
+                    data-testid="create-contact:save"
+                    onClick={() => withLoading(handleSubmit())}
+                >
                     {c('Action').t`Save`}
                 </Button>
             </ModalTwoFooter>

@@ -48,9 +48,19 @@ const ContactEditLabel = ({ vCardProperty, onChangeVCard, fixedType = false, fil
 
         return (
             <Label className="pt0 mr1 on-mobile-w100">
-                <SelectTwo value={field} onChange={handleChangeField} title={selectedField?.text}>
+                <SelectTwo
+                    value={field}
+                    onChange={handleChangeField}
+                    title={selectedField?.text}
+                    data-testid="create-contact:other-info-select"
+                >
                     {filteredOtherInformationFields.map((field) => (
-                        <Option key={field.value} title={field.text} value={field.value} />
+                        <Option
+                            data-testid={`create-contact:dropdown-item-${field.text}`}
+                            key={field.value}
+                            title={field.text}
+                            value={field.value}
+                        />
                     ))}
                 </SelectTwo>
             </Label>

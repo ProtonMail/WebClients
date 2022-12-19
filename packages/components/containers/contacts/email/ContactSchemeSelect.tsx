@@ -23,13 +23,14 @@ const ContactSchemeSelect = ({ value, mailSettings, onChange }: Props) => {
     const handleChange = ({ value }: SelectChangeEvent<string>) => onChange(value as CONTACT_PGP_SCHEMES);
 
     return (
-        <SelectTwo value={value} onChange={handleChange}>
+        <SelectTwo value={value} onChange={handleChange} data-testid="email-settings:scheme-dropdown">
             <Option
                 title={c('Default encryption scheme').t`Use global default (${defaultValueText})`}
                 value={PGP_SCHEMES_MORE.GLOBAL_DEFAULT}
+                data-testid="scheme-dropdown:default"
             />
-            <Option title={MIME} value={PGP_MIME} />
-            <Option title={INLINE} value={PGP_INLINE} />
+            <Option title={MIME} value={PGP_MIME} data-testid="scheme-dropdown:pgp_mime" />
+            <Option title={INLINE} value={PGP_INLINE} data-testid="scheme-dropdown:pgp_inline" />
         </SelectTwo>
     );
 };
