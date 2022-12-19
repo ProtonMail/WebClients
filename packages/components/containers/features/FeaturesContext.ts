@@ -97,7 +97,6 @@ export enum FeatureCode {
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     BulkUserUpload = 'BulkUserUpload',
     DriveMyDevices = 'DriveWebMyDevices',
-    ConversationHeaderInScroll = 'ConversationHeaderInScroll',
     MigrationModalLastShown = 'MigrationModalLastShown',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     ProtonBadge = 'ProtonBadge',

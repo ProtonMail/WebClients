@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { FeatureCode, Scroll, classnames, useFeature, useHotkeys, useLabels } from '@proton/components';
+import { Scroll, classnames, useHotkeys, useLabels } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -43,9 +43,6 @@ const MessageOnlyView = ({
     const [isMessageReady, setIsMessageReady] = useState(false);
     const { message, messageLoaded, bodyLoaded } = useMessage(messageID);
     const load = useLoadMessage(message.data || ({ ID: messageID } as MessageWithOptionalBody));
-
-    const { feature: conversationHeaderInScrollFeature } = useFeature(FeatureCode.ConversationHeaderInScroll);
-    const shouldShowConversationHeaderInScroll = conversationHeaderInScrollFeature?.Value;
 
     useShouldMoveOut({ conversationMode: false, elementID: messageID, loading: !bodyLoaded, onBack, labelID });
 
@@ -117,26 +114,13 @@ const MessageOnlyView = ({
 
     return (
         <>
-            {!shouldShowConversationHeaderInScroll && (
+            <Scroll className={classnames([hidden && 'hidden'])}>
                 <ConversationHeader
                     className={classnames([hidden && 'hidden'])}
                     loading={!messageLoaded}
                     element={message.data}
                 />
-            )}
-            <Scroll className={classnames([hidden && 'hidden'])}>
-                {shouldShowConversationHeaderInScroll && (
-                    <ConversationHeader
-                        className={classnames([hidden && 'hidden'])}
-                        loading={!messageLoaded}
-                        element={message.data}
-                    />
-                )}
-                <div
-                    className="flex-item-fluid px1 mt1-25 max-w100 outline-none"
-                    ref={messageContainerRef}
-                    tabIndex={-1}
-                >
+                <div className="flex-item-fluid px1 mt1 max-w100 outline-none" ref={messageContainerRef} tabIndex={-1}>
                     <MessageView
                         // Break the reuse of the MessageView accross multiple message
                         // Solve a lot of reuse issues, reproduce the same as in conversation mode with a map on conversation messages
