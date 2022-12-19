@@ -28,7 +28,7 @@ export default function useListNotifications() {
             type: 'success',
             text: (
                 <>
-                    <span className="text-cut">{message}</span>
+                    <span>{message}</span>
                     {undoAction && (
                         <>
                             <NotificationButton onClick={() => undoAction()}>{c('Action').t`Undo`}</NotificationButton>
