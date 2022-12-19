@@ -43,23 +43,25 @@ const MembersAndInvitationsLoadingSkeleton = () => (
 interface CalendarShareSectionProps {
     calendar: VisualCalendar;
     addresses: Address[];
+    user: UserModel;
     isLoading: boolean;
+    canShare: boolean;
     invitations: CalendarMemberInvitation[];
     members: CalendarMember[];
     setMembers: Dispatch<SetStateAction<CalendarMember[]>>;
     setInvitations: Dispatch<SetStateAction<CalendarMemberInvitation[]>>;
-    user: UserModel;
 }
 
 const CalendarShareSection = ({
     calendar,
     addresses,
+    user,
     isLoading,
+    canShare,
     invitations,
     members,
     setInvitations,
     setMembers,
-    user,
 }: CalendarShareSectionProps) => {
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -123,7 +125,7 @@ const CalendarShareSection = ({
                                         .t`Share your calendar with other ${BRAND_NAME} users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.`}</SettingsParagraph>
                                     <Button
                                         onClick={() => handleShare()}
-                                        disabled={isLoading || isMaximumMembersReached}
+                                        disabled={isLoading || !canShare || isMaximumMembersReached}
                                         color="norm"
                                     >
                                         {c('Action').t`Share`}
@@ -134,14 +136,20 @@ const CalendarShareSection = ({
                                     members={members}
                                     invitations={invitations}
                                     calendarID={calendar.ID}
+                                    canEdit={canShare}
                                     onDeleteInvitation={handleDeleteInvitation}
                                     onDeleteMember={handleDeleteMember}
                                 />
                             </div>
-                            <CalendarShareUrlSection calendar={calendar} user={user} />
+                            <CalendarShareUrlSection calendar={calendar} user={user} canShare={canShare} />
                         </>
                     ) : (
-                        <CalendarShareUrlSection calendar={calendar} noTitle={!isCalendarSharingEnabled} user={user} />
+                        <CalendarShareUrlSection
+                            calendar={calendar}
+                            noTitle={!isCalendarSharingEnabled}
+                            user={user}
+                            canShare={canShare}
+                        />
                     )
                 ) : (
                     <Card rounded className="mb1" data-test-id="card:upgrade">
