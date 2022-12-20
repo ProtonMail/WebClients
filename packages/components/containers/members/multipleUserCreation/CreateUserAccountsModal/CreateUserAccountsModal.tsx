@@ -177,6 +177,11 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
         setSelectedUserIds((selectedUserIds) => removeIndex(selectedUserIds, selectedIndex));
     };
 
+    const setImportUsersStep = () => {
+        setCurrentProgress(0);
+        setStep(STEPS.IMPORT_USERS);
+    };
+
     const importUsers = async () => {
         const error = validateAddUser(organization, organizationKey, verifiedDomains);
         if (error) {
@@ -200,7 +205,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
         }
 
         abortControllerRef.current = new AbortController();
-        setStep(STEPS.IMPORT_USERS);
+        setImportUsersStep();
 
         const localSuccessfullyCreatedUsers: UserTemplate[] = [];
         const localFailedUsers: UserTemplate[] = [];
