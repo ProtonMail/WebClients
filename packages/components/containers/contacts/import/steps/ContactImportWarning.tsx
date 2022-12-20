@@ -3,6 +3,7 @@ import { Dispatch, FormEvent, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { CONTACTS_APP_NAME } from '@proton/shared/lib/constants';
 import { IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../../components';
@@ -39,7 +40,7 @@ const ContactImportWarning = ({ model, setModel, onClose }: Props) => {
             <ModalTwoHeader title={c('Title').t`Warning`} />
             <ModalTwoContent>
                 <Alert className="mb1" type="warning">
-                    <div>{c('Import contacts warning').jt`Proton Contacts does not support ${ forNow }:`}</div>
+                    <div>{c('Import contacts warning').jt`${CONTACTS_APP_NAME} does not support ${forNow}:`}</div>
                     <ul>
                         <li>{c('Import calendar warning').t`vCard versions < 3.0`}</li>
                     </ul>
