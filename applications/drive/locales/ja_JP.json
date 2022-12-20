@@ -521,6 +521,9 @@
       "Skip": [
         "スキップ"
       ],
+      "Skip verification": [
+        "検証をスキップする"
+      ],
       "Start import": [
         "インポート開始"
       ],
@@ -553,6 +556,9 @@
       ],
       "Try another method": [
         "別の方法を試してください"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
       ],
       "Undo": [
         "取り消し"
@@ -801,6 +807,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "公開リンクには現在アクセスできません。リンクがまだ有効かどうかをご確認ください。"
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "前回の更新から12時間以上経過 — ${ CALENDAR_APP_NAME } は数時間後にカレンダーの更新を試行します。"
       ]
     },
     "Collapsible tooltip": {
@@ -1740,6 +1749,11 @@
         "全体の既定値を使用 (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "全体の既定値を使用 (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "未払いの請求"
@@ -2078,6 +2092,9 @@
       "There was an error when exporting the contacts vCards": [
         "連絡先の vCard のエクスポート中にエラーが発生しました"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "このフィールドは${ maximumLength }文字の最大値を超えています。"
+      ],
       "This field is required": [
         "この項目の入力は必須です"
       ],
@@ -2092,6 +2109,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "このメッセージには現在のブラウザーで正しく開けない URL を含んでいる可能性があります。"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "文字・数字・ _.- のみを使用してみてください"
       ],
       "Unknown error": [
         "原因不明なエラーが発生しました"
@@ -2562,7 +2582,7 @@
         "現時点"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts は ${ forNow } をサポートしていません"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2773,6 +2793,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "${ boldPublish } から、インポートしたいカレンダーを選択します。アクセス許可を ${ boldCanViewAllDetails } にし公開します。"
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "その他"
       ]
     },
     "Import warning": {
@@ -3066,6 +3091,9 @@
       "Each code can only be used once": [
         "各コードは 1 回のみ使用可能です"
       ],
+      "Emails are automatically signed": [
+        "電子メールは自動的に署名されます"
+      ],
       "Enabling drive search": [
         "ドライブ内検索をオンにしています"
       ],
@@ -3191,6 +3219,9 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートできます。データを移行し暗号化する手順をわかりやすく解説します。プライバシーの世界へようこそ。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -3339,9 +3370,6 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters are allowed": [
         "${ MAX_CUSTOM_PASSWORD_LENGTH }文字以内で入力してください"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
-      ],
       "Only the people with the link and the password can access this file.": [
         "リンクとパスワードを知っている人のみがファイルにアクセスすることができます。"
       ],
@@ -3357,11 +3385,8 @@
       "Permanently delete all files in your locked drive": [
         "ドライブからすべてのファイルを完全に削除"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME は自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline は Plain Text 形式にのみ対応しています。"
       ],
       "Please enter the password to decrypt and view content.": [
         "復号およびファイルの閲覧には、パスワードが必要です。"
@@ -3537,8 +3562,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "このリンクはホモグラフ攻撃の可能性があり、Edgeブラウザでは開けません。リンクが確実に正しいと思われる場合は、別のブラウザで開いてください。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
@@ -3699,9 +3724,6 @@
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "${ expiresInDays } 日以内に 500 MB のウェルカムボーナスを受け取り、"
       ],
-      "You need to have an active personal calendar to import your events.": [
-        "予定をインポートするには、アクティブなパーソナルカレンダーが必要です。"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -3719,6 +3741,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "お客様のアカウントには1つ以上期限が過ぎている請求書があります。お支払いを確認できるまで全てのサービスにおいて制限が課されます。 ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
@@ -4640,6 +4665,9 @@
       "Set up your organization": [
         "組織のための設定"
       ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "左上のアプリセレクターで、すべてのアプリにアクセスできます。 ${ BRAND_NAME } サービス: ${ MAIL_SHORT_APP_NAME }・ ${ VPN_SHORT_APP_NAME }・ ${ CALENDAR_SHORT_APP_NAME }・ ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "You can change this anytime in your settings.": [
         "この設定はいつでも変更できます。"
       ]
@@ -4834,6 +4862,14 @@
         "新しいサイドパネルを試す"
       ]
     },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "署名しない"
+      ],
+      "Sign": [
+        "署名"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
@@ -4866,6 +4902,9 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } 連絡先は同じようです"
+      ],
       "Address copied to clipboard": [
         "住所がクリップボードにコピーされました"
       ],
@@ -5528,6 +5567,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "パスワードは ${ length } 文字以上必要です"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     },
     "Validation Error": {
@@ -5592,6 +5634,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"
       ],
+      "Skip verification?": [
+        "検証をスキップしますか?"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "統合時にエラーが発生した連絡先があります。エラー内容をご確認ください。"
       ],
@@ -5621,6 +5666,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "メールサーバーを検証できませんでした。信頼できる場合は、この検証をスキップできます。"
       ],
       "You will lose any customization you made so far.": [
         "今までに行ったカスタマイズはすべて失われます。"

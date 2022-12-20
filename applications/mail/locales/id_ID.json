@@ -2790,6 +2790,11 @@
         "Gunakan nilai default global (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Gunakan nilai default global (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Tagihan jatuh tempo"
@@ -3277,6 +3282,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Terdapat kesalahan pada saat mengekspor kontak vCard"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
       ],
       "This field is required": [
         "Kolom ini wajib diisi"
@@ -4033,7 +4041,7 @@
         "untuk sekarang"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts tidak mendukung ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4252,6 +4260,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "Pada ${ boldPublish }, pilih kalender mana saja yang hendak Anda impor. Apabila sudah, berikan kalender tersebut izin ${ boldCanViewAllDetails } dan terbitkan."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Lainnya"
       ]
     },
     "Import warning": {
@@ -4647,6 +4660,9 @@
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Pelacak email dapat mengusik privasi Anda. Aktifkan perlindungan pelacak agar para pengirim pesan tidak dapat mengetahui apakah Anda telah membuka pesan yang Anda terima atau belum."
       ],
+      "Emails are automatically signed": [
+        "Email ditandatangani secara otomatis"
+      ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Email di folder ini tidak akan dihapus dan masih bisa dibuka di folder Semua Surat."
       ],
@@ -4787,6 +4803,9 @@
       ],
       "Import mailbox": [
         "Impor kotak surat"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Impor email, kalender, dan kontak yang Anda miliki dari layanan email Anda terdahulu ke ${ BRAND_NAME }. Kami akan memandu Anda untuk memindahkan dan mengenkripsi data selangkah demi selangkah. Selamat datang di dunia privasi."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
@@ -4956,9 +4975,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
-      ],
       "Other options": [
         "Pilihan lainnya"
       ],
@@ -4968,11 +4984,11 @@
       "per month.": [
         "per bulan."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline hanya kompatibel dengan format Plain Text. Mohon diperhatikan bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "Enkripsi PGP/Inline hanya kompatibel dengan format Plain Text."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "Enkripsi PGP/MIME akan mengirim pesan dengan format yang sesuai dengan mode komposer saat ini secara otomatis. Mohon dicatat bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi."
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "Enkripsi PGP/MIME akan secara otomatis mengirim pesan dengan mode komposer yang saat ini digunakan."
       ],
       "Phone number": [
         "Nomor telepon"
@@ -5250,8 +5266,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Tautan ini mungkin merupakan serangan homograf dan tidak dapat dibuka oleh browser Edge. Apabila Anda yakin tautan tersebut absah, silakan gunakan browser lain untuk membukanya."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
@@ -5519,9 +5535,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Anda telah mencapai jumlah pesan balasan maksimum (5 pesan) yang dapat dikirim."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Anda harus punya kalender pribadi aktif supaya bisa mengimpor acara."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
@@ -7351,6 +7364,14 @@
         "Verifikasi kunci terpercaya pengirim gagal"
       ]
     },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Jangan tandatangani"
+      ],
+      "Sign": [
+        "Tandatangani"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "Terbesar lebih dulu"
@@ -8437,7 +8458,7 @@
         "Impor ini dapat melebihi kapasitas penyimpanan akun ${ BRAND_NAME } Anda yang tersedia. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Sayangnya, kami saat ini sedang tidak daring. Harap kabarkan masalah yang telah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali daring."
+        "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda mempercayainya, Anda dapat melewati proses verifikasi ini."

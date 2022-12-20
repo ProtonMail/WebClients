@@ -453,6 +453,9 @@
       "Skip": [
         "Spring over"
       ],
+      "Skip verification": [
+        "Spring e-mail-verifikation over"
+      ],
       "Start import": [
         "Start importering"
       ],
@@ -1898,6 +1901,11 @@
         "Benyt global standard (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Benyt global standard (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalden faktura"
@@ -2331,6 +2339,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Der opstod en fejl under eksport af kontakternes vCards"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
       ],
       "This field is required": [
         "Feltet er påkrævet"
@@ -2894,7 +2905,7 @@
         "indtil videre"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonKontakter understøtter ikke ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3105,6 +3116,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "Under ${ boldPublish } skal du vælge den kalender, du vil importere. Indstil tilladelsen til ${ boldCanViewAllDetails }, og udgiv den."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Anden"
       ]
     },
     "Import warning": {
@@ -3332,6 +3348,9 @@
       "Each code can only be used once": [
         "Hver kode kan kun bruges én gang"
       ],
+      "Emails are automatically signed": [
+        "E-mails er automatisk signeret"
+      ],
       "Enter the code from your authenticator app": [
         "Indtast koden fra din godkendelsesapp"
       ],
@@ -3398,6 +3417,9 @@
       ],
       "Import mailbox": [
         "Importér postkasse"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importer dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }. Vi vejleder dig hele vejen igennem og krypterer dine data, mens de flyttes. Velkommen til en verden med privatliv."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
@@ -3495,17 +3517,14 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
-      ],
       "Other options": [
         "Andre muligheder"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline er kun kompatibel med Plain Text-formatet."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME sender automatisk beskeden ved hjælp af den aktuelle komponisttilstand."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
@@ -3640,8 +3659,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
@@ -3753,9 +3772,6 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Du har nulstillet din adgangskode, og begivenheder tilknyttet følgende kalendere kunne ikke dekrypteres. \nAlle delte kalenderlinks du tidligere har oprettet, vil ikke længere virke. \nAlle aktive, tilmeldte kalendere vil blive synkroniseret igen efter nogle få minutter."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Du skal have en aktiv personlig kalender for at importere dine begivenheder."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Du har tidligere afvist denne invitation. Bed ejeren om en ny invitation"
@@ -4278,7 +4294,7 @@
     },
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        "Åben i ${ CALENDAR_APP_NAME }"
+        "Åbn i ${ CALENDAR_APP_NAME }"
       ]
     },
     "Loading info": {
@@ -5055,6 +5071,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Administrer kalender"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Ikke signér"
+      ],
+      "Sign": [
+        "Signér"
       ]
     },
     "Spotlight": {
@@ -5861,6 +5885,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
+      "Skip verification?": [
+        "Spring e-mail-verifikation over?"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Nogle af de kontakter, som skal flettes, udviser fejl. Gennemgå dem individuelt"
       ],
@@ -5890,6 +5917,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Vi kunne ikke verificere mailserveren. Hvis du stoler på den, kan du springe denne verifikation over."
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."

@@ -922,6 +922,9 @@
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
+      ],
       "This field is required": [
         "Feltet er påkrævet"
       ],

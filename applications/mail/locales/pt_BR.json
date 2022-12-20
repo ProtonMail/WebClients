@@ -2802,6 +2802,11 @@
         "Usar o padrão global (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Usar o padrão global (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Fatura vencida"
@@ -3301,6 +3306,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Houve um erro ao exportar os vCards dos contatos"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
       ],
       "This field is required": [
         "Este campo é obrigatório"
@@ -4078,7 +4086,7 @@
         "por enquanto"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "O ProtonContacts não suporta ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4297,6 +4305,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "Em ${ boldPublish }, selecione o calendário que deseja importar. Defina as permissões para ${ boldCanViewAllDetails } e publique-o."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Outro"
       ]
     },
     "Import warning": {
@@ -4884,6 +4897,9 @@
       "Import mailbox": [
         "Importar Caixa de Entrada"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importe seus e-mails, calendários e contatos de outro serviço para o ${ BRAND_NAME }. Nós te guiaremos em cada etapa do processo e encriptaremos seus dados conforme eles sejam migrados. Bem-vindo ao mundo da privacidade."
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
@@ -5052,9 +5068,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Outras opções"
       ],
@@ -5063,12 +5076,6 @@
       ],
       "per month.": [
         "por mês."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "O PGP/Incorporado só é compatível com o formato texto sem formatação. Observe que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "O PGP/MIME envia automaticamente a mensagem usando o modo compositor atual. Observe que ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
       ],
       "Phone number": [
         "Número do telefone"
@@ -5346,9 +5353,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
       ],
@@ -5623,9 +5627,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Você atingiu o número máximo de 5 respostas."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Você precisa ter um calendário ativo para importar seus eventos."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Você atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
@@ -7476,6 +7477,14 @@
       ],
       "Sender's trusted keys verification failed": [
         "Falha na verificação de chaves confiáveis do remetente"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Não assinar"
+      ],
+      "Sign": [
+        "Assinar"
       ]
     },
     "Sort option": {

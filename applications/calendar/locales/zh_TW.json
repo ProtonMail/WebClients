@@ -910,6 +910,11 @@
         "將時間範圍更改為"
       ]
     },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } 以上"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "收合"
@@ -1892,6 +1897,11 @@
         "使用系统預設值 (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "使用全域預設值（${ globalDefaultText }）"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "逾期帳單"
@@ -2313,6 +2323,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "匯出聯絡人 vCard 時發生錯誤"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此欄位還剩下 ${ maximumLength } 個字元。"
       ],
       "This field is required": [
         "此欄位必填"
@@ -2858,7 +2871,7 @@
         "暫時"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow }不支援："
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3071,6 +3084,11 @@
         "在 ${ boldPublish } 下，選取您要匯入的行事曆。設定權限給 ${ boldCanViewAllDetails } 並發佈它。"
       ]
     },
+    "Import provider": {
+      "Other": [
+        "其它"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
@@ -3272,6 +3290,9 @@
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
       ],
+      "Emails are automatically signed": [
+        "電子郵件已自動簽章"
+      ],
       "Enter the code from your authenticator app": [
         "輸入驗證應用程式中的驗證代碼"
       ],
@@ -3337,6 +3358,9 @@
       ],
       "Import mailbox": [
         "匯入郵箱"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "從其它服務匯入您的電郵、行事曆或聯絡人到 ${ BRAND_NAME }。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
@@ -3434,17 +3458,14 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "當您使用 PGP 傳送郵件給非 ${ BRAND_NAME } 收件人時，才需變更下列設定。"
-      ],
       "Other options": [
         "其它選項"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline 僅與純文字格式相容。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline 僅與純文字格式相容。"
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME 會自動使用目前編輯器模式來傳送郵件。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME 使用目前的編輯器模式自動傳送訊息。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "請注意：指派到此群組中的電郵位址將不會被刪除。"
@@ -3578,14 +3599,17 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向的網站可能試圖竊取您的資訊，例如密碼或信用卡細節 。"
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此連結可能為域名釣魚攻擊，且無法以 Edge 瀏覽器開啟。若您確定這是正常的連結，請使用其他瀏覽器開啟。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "若要匯入行程，須先在 ${ CALENDAR_APP_NAME } 創建新的行事曆。匯入後的行程，都會在此顯示。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一位聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
@@ -3691,9 +3715,6 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "您已重設您的密碼，因此與下列行事曆連結的事件無法解密。\n任何您先前創建的已分享行事曆連結將不再運作。\n任何使用中已訂購授權的行事曆將於數分鐘後再次同步。"
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "您需要有使用中的個人行事曆才可匯入您的行程。"
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "您先前回絕了此邀請。請要求擁有者重新邀請"
@@ -4956,6 +4977,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "管理行事曆"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "不要簽章"
+      ],
+      "Sign": [
+        "簽章"
       ]
     },
     "Spotlight": {

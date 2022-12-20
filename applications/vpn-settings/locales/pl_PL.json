@@ -218,7 +218,7 @@
       "Pay": [
         "Zapłać"
       ],
-      "Pay ${ price }": [
+      "Pay ${ price } now": [
         "Zapłać ${ price }"
       ],
       "Previous": [
@@ -463,9 +463,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Automatyczne odnowienie ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Automatyczne odnowienie ${ formattedEndTime } za ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1600,6 +1597,9 @@
       "The minimum payment we accept is ${ price }": [
         "Minimalna kwota akceptowanej płatności wynosi ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
+      ],
       "This field is required": [
         "Pole jest wymagane"
       ],
@@ -2341,7 +2341,7 @@
         "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie ${ BRAND_NAME }. Ta funkcja poprawi bezpieczeństwo Twojego konta, dlatego zalecamy włączenie tej opcji."
       ],
       "to continue to ${ toAppName }": [
-        "i przejdź do aplikacji ${ toAppName }"
+        "i przejdź do ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
@@ -2356,7 +2356,7 @@
         "Aby chronić swoje połączenie internetowe, pobierz oraz zainstaluj aplikację ${ VPN_APP_NAME } i połącz się z serwerem."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "i przejdź do aplikacji ${ toAppName } oraz innych usług ${ BRAND_NAME }"
+        "i przejdź do ${ toAppName } oraz innych usług ${ BRAND_NAME }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden kredyt."
@@ -2542,7 +2542,7 @@
         "Pozostaniesz zalogowany, nawet po zamknięciu przeglądarki."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres ${ MAIL_APP_NAME }, aby korzystać z usługi ${ toAppName }."
+        "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres ${ MAIL_APP_NAME }, aby korzystać z ${ toAppName }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
@@ -2724,9 +2724,6 @@
       ],
       "Block malware, ads and trackers": [
         "Zablokuj złośliwe oprogramowanie, reklamy i skrypty śledzące"
-      ],
-      "bonus storage": [
-        "bonusowa przestrzeń dyskowa"
       ],
       "Browser": [
         "Przeglądarka"
@@ -2958,6 +2955,9 @@
       ],
       "Select your country": [
         "Wybierz kraj"
+      ],
+      "Start date": [
+        "Data rozpoczęcia"
       ],
       "Subscription options": [
         "Opcje subskrypcji"
@@ -4433,6 +4433,14 @@
         "Zaoszczędź"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Aktywna"
+      ],
+      "Upcoming": [
+        "Nadchodząca"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Prywatna poczta i kalendarz do codziennej komunikacji."
@@ -4627,9 +4635,6 @@
       "Back": [
         "Wstecz"
       ],
-      "Billing": [
-        "Płatność"
-      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -4723,6 +4728,9 @@
       "Email subscriptions": [
         "Listy mailingowe"
       ],
+      "End date": [
+        "Data zakończenia"
+      ],
       "Enter your password": [
         "Wpisz hasło"
       ],
@@ -4758,6 +4766,9 @@
       ],
       "Language": [
         "Język"
+      ],
+      "Length": [
+        "Długość"
       ],
       "Login password": [
         "Hasło logowania"
@@ -4809,6 +4820,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Plan": [
+        "Plan"
       ],
       "Plan summary": [
         "Podsumowanie planu"
@@ -4867,6 +4881,9 @@
       "Sign out": [
         "Wyloguj"
       ],
+      "Start date": [
+        "Data rozpoczęcia"
+      ],
       "Status": [
         "Status"
       ],
@@ -4875,6 +4892,9 @@
       ],
       "Switch to two-password mode": [
         "Przełącz do trybu podwójnego hasła"
+      ],
+      "Total paid": [
+        "Łącznie"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Wypróbuj za darmo to, co najlepsze w poczcie ${ MAIL_APP_NAME }"
@@ -4893,6 +4913,9 @@
       ],
       "Unsupported browser": [
         "Przeglądarka jest nieobsługiwana"
+      ],
+      "Users": [
+        "Użytkownicy"
       ],
       "Verification": [
         "Weryfikacja"
@@ -4924,6 +4947,9 @@
       "Your plan": [
         "Twój plan"
       ],
+      "Your subscriptions": [
+        "Twoja subskrypcja"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Otrzymujesz zaproszenie do wypróbowania poczty ${ MAIL_APP_NAME }"
       ],
@@ -4950,6 +4976,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Nowa subskrypcja rozpocznie się ${ formattedTime }"
       ]
     },
     "Tor out of date": {

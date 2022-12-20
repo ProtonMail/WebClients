@@ -2817,6 +2817,11 @@
         "Использовать глобальное значение по умолчанию (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Использовать общее значение по умолчанию (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Просроченный счёт"
@@ -3340,6 +3345,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Произошла ошибка при экспорте визитных карточек контактов"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимум ${ maximumLength } символов."
       ],
       "This field is required": [
         "Это обязательное поле"
@@ -4154,7 +4162,7 @@
         "пока"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow } не поддерживает:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4373,6 +4381,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "В разделе ${ boldPublish } выберите календарь, который вы хотите импортировать. Установите разрешение ${ boldCanViewAllDetails } и опубликуйте его."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Другой"
       ]
     },
     "Import warning": {
@@ -4903,6 +4916,9 @@
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Трекеры электронной почты могут нарушать вашу конфиденциальность. Включите защиту от трекеров, чтобы отправители не могли узнать, открывали ли вы сообщение и когда."
       ],
+      "Emails are automatically signed": [
+        "Электронные письма подписываются автоматически"
+      ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Письма, хранящиеся в этой папке, не будут удалены и по-прежнему могут быть найдены в папке \"Вся почта\"."
       ],
@@ -5061,6 +5077,9 @@
       ],
       "Import mailbox": [
         "Импорт почтового ящика"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Импортируйте электронную почту, календари и контакты из другой службы в ${ BRAND_NAME }. Мы будем сопровождать вас на каждом шагу и шифровать ваши данные при переносе. Добро пожаловать в мир конфиденциальности."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
@@ -5230,9 +5249,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Другие возможности"
       ],
@@ -5242,11 +5258,11 @@
       "per month.": [
         "в месяц."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline совместимо только с форматом Plain Text."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем."
       ],
       "Phone number": [
         "Hомер телефона"
@@ -5530,8 +5546,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Эта ссылка может быть омографической атакой и не может быть открыта браузером Edge. Если вы уверены, что ссылка является подлинной, используйте другой браузер, чтобы открыть ее."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
@@ -5817,9 +5833,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Вы достигли максимального количества в 5 ответов."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Вам нужен активный личный календарь, чтобы начать импорт событий."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
@@ -7716,6 +7729,14 @@
       ],
       "Sender's trusted keys verification failed": [
         "Не удалось проверить доверенные ключи отправителя"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Не подписывать"
+      ],
+      "Sign": [
+        "Подписать"
       ]
     },
     "Sort option": {

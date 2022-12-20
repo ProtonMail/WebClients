@@ -218,8 +218,8 @@
       "Pay": [
         "Pagar"
       ],
-      "Pay ${ price }": [
-        "Pagar ${ price }"
+      "Pay ${ price } now": [
+        "Pagar ${ price } agora"
       ],
       "Previous": [
         "Anterior"
@@ -459,9 +459,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Renova automaticamente em ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Renova automaticamente em ${ formattedEndTime } por ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1592,6 +1589,9 @@
       "The minimum payment we accept is ${ price }": [
         "O pagamento mínimo que aceitamos é ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede o máximo de ${ maximumLength } caracteres."
+      ],
       "This field is required": [
         "Este campo é obrigatório"
       ],
@@ -2697,9 +2697,6 @@
       "Block malware, ads and trackers": [
         "Bloqueio de malware, anúncios e rastreadores"
       ],
-      "bonus storage": [
-        "bônus de armazenamento"
-      ],
       "Browser": [
         "Navegador"
       ],
@@ -2930,6 +2927,9 @@
       ],
       "Select your country": [
         "Selecione seu país"
+      ],
+      "Start date": [
+        "Data de início"
       ],
       "Subscription options": [
         "Opções de assinatura"
@@ -4331,6 +4331,11 @@
         "Economize"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Ativo"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "O acesso à solução de email e calendário que prioriza a privacidade para as suas necessidades diárias de comunicação."
@@ -4525,9 +4530,6 @@
       "Back": [
         "Voltar"
       ],
-      "Billing": [
-        "Faturamento"
-      ],
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
@@ -4621,6 +4623,9 @@
       "Email subscriptions": [
         "Inscrições de e-mail"
       ],
+      "End date": [
+        "Data de término"
+      ],
       "Enter your password": [
         "Digite sua senha"
       ],
@@ -4656,6 +4661,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Length": [
+        "Tamanho"
       ],
       "Login password": [
         "Senha de acesso"
@@ -4707,6 +4715,9 @@
       ],
       "Phone": [
         "Telefone"
+      ],
+      "Plan": [
+        "Plano"
       ],
       "Plan summary": [
         "Resumo do plano"
@@ -4765,6 +4776,9 @@
       "Sign out": [
         "Encerrar sessão"
       ],
+      "Start date": [
+        "Data de início"
+      ],
       "Status": [
         "Status"
       ],
@@ -4791,6 +4805,9 @@
       ],
       "Unsupported browser": [
         "Navegador não suportado"
+      ],
+      "Users": [
+        "Usuários"
       ],
       "Verification": [
         "Verificação"
@@ -4821,6 +4838,9 @@
       ],
       "Your plan": [
         "O seu plano"
+      ],
+      "Your subscriptions": [
+        "Suas assinaturas"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Você foi convidado a experimentar o ${ MAIL_APP_NAME }"

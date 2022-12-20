@@ -66,13 +66,13 @@
         "Alignement"
       ],
       "All Read": [
-        "Tous les éléments lus"
+        "Tous les lus"
       ],
       "All Starred": [
         "Tous les favoris"
       ],
       "All Unread": [
-        "Tous les éléments non lus"
+        "Tous les non lus"
       ],
       "All Unstarred": [
         "Tous les non-favoris"
@@ -165,7 +165,7 @@
         "Fermer"
       ],
       "Close composer": [
-        "Fermer"
+        "Fermer l'éditeur"
       ],
       "Close navigation": [
         "Fermer la navigation"
@@ -183,7 +183,7 @@
         "Rédiger"
       ],
       "Composer size": [
-        "Taille du composeur"
+        "Taille de l'éditeur"
       ],
       "Confirm": [
         "Confirmer"
@@ -204,7 +204,7 @@
         "Continuer avec Google"
       ],
       "Contract composer": [
-        "Réduire le composeur"
+        "Réduire l'éditeur"
       ],
       "Copy address": [
         "Copier l'adresse"
@@ -216,7 +216,7 @@
         "Copier l’adresse électronique dans le presse-papiers"
       ],
       "Copy password to clipboard": [
-        "Copier le mot de passe dans le presse-papier"
+        "Copier le mot de passe dans le presse-papiers"
       ],
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
@@ -296,7 +296,7 @@
         "Abandonner"
       ],
       "Dismiss get started checklist": [
-        "Fermer la liste de vérification de démarrage"
+        "Ignorer la checklist de démarrage"
       ],
       "Done": [
         "Terminé"
@@ -353,7 +353,7 @@
         "excluez le contenu des messages"
       ],
       "Expand composer": [
-        "Agrandir"
+        "Agrandir l'éditeur"
       ],
       "Expand URL": [
         "Afficher toute l'URL"
@@ -561,7 +561,7 @@
         "Marquer comme légitime"
       ],
       "Maximize composer": [
-        "Agrandir"
+        "Agrandir l'éditeur"
       ],
       "Maybe": [
         "Peut-être"
@@ -582,7 +582,7 @@
         "Messages vers ce destinataire"
       ],
       "Minimize composer": [
-        "Réduire"
+        "Réduire l'éditeur"
       ],
       "More": [
         "Plus"
@@ -684,7 +684,7 @@
         "Ouvrir le calendrier"
       ],
       "Open get started checklist modal": [
-        "Ouvrir la liste de vérification de démarrage"
+        "Ouvrir la checklist de démarrage"
       ],
       "Open navigation": [
         "Ouvrir la navigation"
@@ -929,11 +929,14 @@
       "Skip": [
         "Ignorer"
       ],
+      "Skip verification": [
+        "Ignorer la vérification"
+      ],
       "Some images failed to load with tracking protection.": [
-        "Certaines images n'ont pas pu être chargées avec la protection contre le suivi."
+        "Certaines images n'ont pas pu être chargées en raison de la protection du suivi."
       ],
       "Star": [
-        "Ajouter aux favoris"
+        "Ajouter aux Favoris"
       ],
       "Start import": [
         "Démarrer l'importation"
@@ -994,7 +997,7 @@
         "Liste à puces"
       ],
       "Unstar": [
-        "Retirer des favoris"
+        "Retirer des Favoris"
       ],
       "Unsubscribe": [
         "Se désabonner"
@@ -1018,13 +1021,13 @@
         "Changer d'abonnement"
       ],
       "Upgrade now": [
-        "Mettre à niveau maintenant"
+        "Passer à l'abonnement supérieur"
       ],
       "Upload picture": [
         "Importer une image"
       ],
       "Use ${ label } theme": [
-        "Utiliser le thème « ${ label } »"
+        "Utiliser le thème ${ label }"
       ],
       "Use authentication code": [
         "Utiliser le code d'authentification"
@@ -1106,7 +1109,7 @@
         "Essayez un autre terme de recherche."
       ],
       "You don't have any contacts.": [
-        "Vous n'avez pas de contacts."
+        "Vous n'avez aucun contact."
       ],
       "You don't have any groups.": [
         "Vous n'avez aucun groupe."
@@ -1114,13 +1117,13 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        "Échec de l'ajout d'un participant"
+        "Le participant n'a pas pu être ajouté."
       ],
       "Invitation sent and participant added": [
-        "Invitation envoyée et participants ajoutés"
+        "L'invitation a été envoyée et les participants ont été ajoutés."
       ],
       "Participant added": [
-        "Participant ajouté"
+        "Participant(s) ajouté(s)"
       ]
     },
     "Adding expiration to a message will create an expiring message": {
@@ -1130,7 +1133,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "En quittant maintenant, il est possible que certains contacts ne soient pas importés."
+        "Si vous quittez maintenant, certains contacts ne seront peut-être pas importés."
       ],
       "By leaving now, some events may not be imported": [
         "En quittant maintenant, certains événements pourraient ne pas être importés."
@@ -1156,10 +1159,10 @@
         "E-mail non lu"
       ],
       "Unstar conversation": [
-        "Retirer la conversation des favoris"
+        "Retirer la conversation des Favoris"
       ],
       "Unstar message": [
-        "Retirer le message des favoris"
+        "Retirer le message des Favoris"
       ]
     },
     "Alternative text for conversation image": {
@@ -1195,22 +1198,22 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        "Fichier ICS vide"
+        "Le fichier ICS est vide."
       ],
       "Invalid event": [
-        "Événement non valide"
+        "L'événement n'est pas valide."
       ],
       "Invalid ICS file": [
-        "Fichier ICS non valide"
+        "Le fichier ICS n'est pas valide."
       ],
       "Invalid method": [
-        "Méthode non valide"
+        "La méthode n'est pas valide."
       ],
       "Unsupported calendar component": [
-        "Composant de calendrier non pris en charge"
+        "Le composant de calendrier n'est pas pris en charge."
       ],
       "Unsupported event": [
-        "Événement non pris en charge"
+        "L'événement n'est pas pris en charge."
       ]
     },
     "Attachment radio advanced search": {
@@ -1226,7 +1229,7 @@
     },
     "Attachment signature verification": {
       "Sender verification failed": [
-        "La vérification de l’expéditeur a échoué."
+        "L'expéditeur n'a pas pu être vérifié."
       ],
       "Sender verification passed": [
         "La vérification de l’expéditeur a réussi."
@@ -1234,7 +1237,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'accès à la version bêta vous permet d'utiliser la version bêta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME } avant qu'ils ne soient rendus publics. Cela signifie que vous pouvez être le premier à essayer de nouveaux produits, à obtenir de nouvelles mises à jour et à utiliser de nouvelles fonctionnalités."
+        "L'accès à la version bêta vous permet d'utiliser la version bêta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME } avant leur lancement public. Vous serez donc parmi les premiers à essayer les nouveaux produits, à recevoir les nouvelles mises à jour et à utiliser les nouvelles fonctionnalités."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
@@ -1242,7 +1245,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Problème de l'application"
+        "Problème d'application"
       ],
       "Bridge problem": [
         "Problème avec Bridge"
@@ -1296,7 +1299,7 @@
         "Problème de lenteur du débit"
       ],
       "Speed problem": [
-        "Problème de débit"
+        "Problème de vitesse"
       ],
       "Streaming problem": [
         "Problème de streaming"
@@ -1361,7 +1364,7 @@
         "${ participantName } a demandé les dernières mises à jour d'un événement qui n'existe plus dans votre calendrier."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } a demandé les dernières mises à jour d'un événement qui ne correspond pas aux détails de votre invitation. Veuillez vérifier les détails de l'invitation dans votre calendrier."
+        "${ participantName } a demandé les dernières mises à jour d'un événement qui ne correspond pas aux informations de votre invitation. Vérifiez les informations de l'invitation dans votre calendrier."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } a refusé votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement."
@@ -1385,13 +1388,13 @@
         "${ participantName } a refusé votre invitation à une occurrence de l'événement."
       ],
       "${ participantName } declined your invitation.": [
-        "${ participantName } a décliné votre invitation."
+        "${ participantName } a refusé votre invitation."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } avait accepté une invitation et avait proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition ne sont plus d'actualité."
+        "${ participantName } avait accepté une invitation et proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } avait accepté une invitation et avait proposé un nouvel horaire pour cet événement. La réponse et la proposition ne sont plus d'actualité."
+        "${ participantName } avait accepté une invitation et proposé un nouvel horaire pour cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
         "${ participantName } avait accepté une invitation à une occurrence de l'événement."
@@ -1400,16 +1403,16 @@
         "${ participantName } avait accepté une invitation à cet événement."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } a accepté votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition ne sont plus d'actualité."
+        "${ participantName } avait accepté votre invitation et proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } a accepté votre invitation et a proposé un nouvel horaire pour cet événement. La réponse et la proposition ne sont plus d'actualité."
+        "${ participantName } avait accepté votre invitation et proposé un nouvel horaire pour cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } avait refusé votre invitation et avait proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition ne sont plus d'actualité."
+        "${ participantName } avait refusé votre invitation et proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } avait refusé votre invitation et avait proposé un nouvel horaire pour cet événement. La réponse et la proposition ne sont plus d'actualité."
+        "${ participantName } avait refusé votre invitation et proposé un nouvel horaire pour cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
         "${ participantName } avait refusé une invitation à une occurrence de l'événement."
@@ -1418,16 +1421,16 @@
         "${ participantName } avait refusé une invitation à cet événement."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } a refusé votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition ne sont plus d'actualité."
+        "${ participantName } avait refusé votre invitation et proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } a refusé votre invitation et a proposé un nouvel horaire pour cet événement. La réponse et la proposition ne sont plus d'actualité."
+        "${ participantName } avait refusé votre invitation et proposé un nouvel horaire pour cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        "${ participantName } a déjà accepté votre invitation à une occurrence de l'événement."
+        "${ participantName } avait déjà accepté votre invitation à une occurrence de l'événement."
       ],
       "${ participantName } had previously accepted your invitation.": [
-        "${ participantName } a déjà accepté votre invitation."
+        "${ participantName } avait déjà accepté votre invitation."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
         "${ participantName } a précédemment refusé votre invitation à l’une des occurrences de l'événement."
@@ -1436,13 +1439,13 @@
         "${ participantName } a déjà refusé votre invitation."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } a déjà accepté provisoirement votre invitation à une occurrence de l'événement."
+        "${ participantName } avait déjà accepté provisoirement votre invitation à une occurrence de l'événement."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
-        "${ participantName } a déjà accepté provisoirement votre invitation."
+        "${ participantName } avait déjà accepté provisoirement votre invitation."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
-        "${ participantName } a proposé un nouvel horaire pour une occurrence de cet événement. Cette proposition n'est plus d'actualité."
+        "${ participantName } avait proposé un nouvel horaire pour une occurrence de cet événement. Cette proposition n'est plus d'actualité."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
         "${ participantName } a proposé un nouvel horaire pour une occurrence de cet événement. Cette proposition n'est plus d'actualité. L'événement n'existe plus dans votre calendrier."
@@ -1451,7 +1454,7 @@
         "${ participantName } a proposé un nouvel horaire pour une occurrence de cet événement. Cette proposition n'est plus d'actualité. Vous n'avez pas de rendez-vous."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
-        "${ participantName } a proposé un nouvel horaire pour cet événement. Cette proposition n'est plus d'actualité."
+        "${ participantName } avait proposé un nouvel horaire pour cet événement. Cette proposition n'est plus d'actualité."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
         "${ participantName } a proposé un nouvel horaire pour cet événement. Cette proposition n'est plus d'actualité. L'événement n'existe plus dans votre calendrier."
@@ -1460,10 +1463,10 @@
         "${ participantName } a proposé un nouvel horaire pour cet événement. Cette proposition n'est plus d'actualité. Vous n'avez pas de rendez-vous."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } avait provisoirement accepté votre invitation et avait proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition sont obsolètes."
+        "${ participantName } avait provisoirement accepté votre invitation et proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } avait provisoirement accepté une invitation et avait proposé un nouvel horaire pour cet événement. La réponse et la proposition sont obsolètes."
+        "${ participantName } avait provisoirement accepté une invitation et proposé un nouvel horaire pour cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
         "${ participantName } avait provisoirement accepté votre invitation à une occurrence de l'événement."
@@ -1472,10 +1475,10 @@
         "${ participantName } avait provisoirement accepté une invitation à cet événement."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } a provisoirement accepté votre invitation et a proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition sont obsolètes."
+        "${ participantName } avait provisoirement accepté votre invitation et proposé un nouvel horaire pour une occurrence de cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } a provisoirement accepté votre invitation et a proposé un nouvel horaire pour cet événement. La réponse et la proposition sont obsolètes."
+        "${ participantName } avait provisoirement accepté votre invitation et proposé un nouvel horaire pour cet événement. La réponse et la proposition ne sont plus d'actualité."
       ],
       "${ participantName } is not in the participants list.": [
         "${ participantName } n'est pas dans la liste des participants."
@@ -1544,7 +1547,7 @@
         "Cette nouvelle proposition horaire ne correspond pas aux détails de votre invitation. Vérifiez les détails de l'invitation dans votre calendrier."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Cette réponse ne correspond pas aux détails de votre invitation. Veuillez vérifier les détails de l'invitation dans votre calendrier."
+        "Cette réponse ne correspond pas aux détails de votre invitation. Vérifiez les détails de l'invitation dans votre calendrier."
       ],
       "This response is out of date.": [
         "Cette réponse est obsolète."
@@ -1596,7 +1599,7 @@
         "Le lien du calendrier est temporairement inaccessible."
       ],
       "Failed to sync calendar": [
-        "La synchronisation du calendrier a échoué."
+        "Le calendrier n'a pas pu être synchronisé."
       ],
       "More than 12 hours passed since last update": [
         "La dernière mise à jour remonte à plus de 12 heures."
@@ -1640,7 +1643,7 @@
         "blanc azur"
       ],
       "blanched almond": [
-        "amande blanche"
+        "blanc amande"
       ],
       "blue-gray": [
         "bleu gris"
@@ -1813,7 +1816,7 @@
         "Chiffré par PGP"
       ],
       "PGP-encrypted to verified recipient": [
-        "Chiffrement PGP vers un destinataire vérifié"
+        "Chiffré par PGP vers un destinataire vérifié"
       ],
       "PGP-encrypted. ${ warningsText }": [
         "Chiffré par PGP. ${ warningsText }"
@@ -1911,7 +1914,7 @@
         "Nom"
       ],
       "Note": [
-        "Note"
+        "Notes"
       ],
       "Organization": [
         "Entreprise"
@@ -2796,6 +2799,11 @@
         "Utiliser la valeur générique par défaut (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Utiliser la valeur globale par défaut (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Facture impayée"
@@ -2814,7 +2822,7 @@
         "${ manageBlockedAddressesSettingsLink } dans les paramètres."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Lorsque cette opération sera terminée, vous pourrez télécharger le fichier avec tous vos contacts exportés."
+        "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Suppression des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
@@ -2826,7 +2834,7 @@
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Fusion des contacts en cours, ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette fenêtre."
+        "Fusion des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas délivrés et seront définitivement supprimés.",
@@ -2846,7 +2854,7 @@
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
+        "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
@@ -2860,7 +2868,7 @@
         "De plus, nous avons automatiquement identifié les champs CSV qui correspondent aux champs vCard. Vous pouvez vérifier et modifier cette correspondance manuellement."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Nous avons détecté les champs suivants dans le fichier CSV que vous avez chargé. Vérifiez ceux que vous souhaitez importer."
+        "Nous avons détecté les champs suivants dans le fichier CSV que vous avez chargé. Vérifiez ceux que vous voulez importer."
       ]
     },
     "Desktop notification body": {
@@ -2901,7 +2909,7 @@
         "${ eventTitle } a été mis à jour.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Vous êtes invité à ${ eventTitle }\n${ eventDetailsText }"
+        "Vous êtes invité(e) à ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2997,7 +3005,7 @@
         "${ error.message } pour <${ email }>. Vous pouvez ajouter une autre clé ou désactiver le chiffrement pour ce contact afin de résoudre le problème."
       ],
       "A group with this name already exists": [
-        "Un groupe portant ce nom existe déjà."
+        "Un groupe avec ce nom existe déjà."
       ],
       "A problem occurred, please try again": [
         "Une erreur s'est produite, nous vous invitons à réessayer."
@@ -3006,7 +3014,7 @@
         "La clé privée principale de l’adresse n’a pas été trouvée."
       ],
       "Attachments are limited to 25 MB": [
-        "Les pièces jointes sont limitées à 25 Mo."
+        "La taille des pièces jointes est limitée à 25 Mo."
       ],
       "Authentication canceled.": [
         "L'authentification a été annulée."
@@ -3025,7 +3033,7 @@
         "Choisissez une date dans les ${ SCHEDULED_MAX_DATE_DAYS } prochains jours."
       ],
       "Condition incomplete": [
-        "Condition incomplète"
+        "La condition est incomplète."
       ],
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
@@ -3040,10 +3048,10 @@
         "Contactez l’administrateur de votre organisation pour résoudre ce problème."
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "La recherche de contenu ne peut pas être activée dans ce navigateur. Quittez la navigation privée ou essayez avec un autre navigateur."
+        "La recherche dans le contenu ne peut pas être activée dans ce navigateur. Nous vous invitons à quitter la navigation privée ou à essayer avec un autre navigateur."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Erreur de déchiffrement : le déchiffrement du contenu chiffré de ce message a échoué."
+        "Erreur de déchiffrement : le contenu chiffré de ce message n'a pas pu être déchiffré."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarToFixCount } calendrier",
@@ -3057,7 +3065,7 @@
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
       "Draft could not be saved. Try again.": [
-        "Le brouillon n'a pas pu être enregistré, veuillez réessayer."
+        "Le brouillon n'a pas pu être enregistré. Nous vous invitons à réessayer."
       ],
       "Email address disabled": [
         "L'adresse électronique est désactivée."
@@ -3069,7 +3077,7 @@
         "L'adresse électronique n'est pas valide."
       ],
       "Empty condition": [
-        "Condition vide"
+        "La condition est vide."
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
@@ -3078,19 +3086,19 @@
         "Saisissez un mot de passe"
       ],
       "Error in one of the conditions": [
-        "Erreur dans une des conditions"
+        "Il y a une erreur dans l'une des conditions."
       ],
       "Error while saving draft. Please try again.": [
-        "Erreur lors de l'enregistrement du brouillon. Veuillez réessayer."
+        "Une erreur s'est produite lors de l'enregistrement du brouillon. Nous vous invitons à réessayer."
       ],
       "Error while sending the message. Message is not sent.": [
-        "Erreur lors de l'envoi du message. Le message n'est pas envoyé."
+        "Une erreur s'est produite lors de l'envoi du message. Le message n'a pas été envoyé."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        "Erreur lors du chargement des pièces jointes. Le message n'est pas envoyé."
+        "Une erreur s'est produite lors du téléchargement des pièces jointes. Le message n'a pas été envoyé."
       ],
       "Failed to encrypt attachment. Please try again.": [
-        "Échec du chiffrement de la pièce jointe, veuillez réessayer."
+        "La pièce jointe n'a pas pu être chiffrée. Nous vous invitons à réessayer."
       ],
       "Filter with this name already exists": [
         "Un filtre avec ce nom existe déjà."
@@ -3108,7 +3116,7 @@
         "Le mot de passe de la messagerie n'est pas correct. Veuillez réessayer."
       ],
       "Invalid expiration time": [
-        "Délai d'expiration non valide"
+        "Le délai d'expiration n'est pas valide."
       ],
       "Invalid name": [
         "Le nom n'est pas valide."
@@ -3123,7 +3131,7 @@
         "Le nom du label ne peut pas être vide."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
-        "Nombre maximum de pièces jointes (${ attachmentsCountLimit }) dépassé"
+        "Le nombre maximum de (${ attachmentsCountLimit }) pièces jointes a été dépassé."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
@@ -3136,16 +3144,16 @@
         "Erreur de traitement du message."
       ],
       "Missing key packet": [
-        "Le paquet de clés est manquant."
+        "Il manque le paquet de clés."
       ],
       "Missing signature": [
-        "La signature est manquante."
+        "Il manque la signature."
       ],
       "Network error: Please check your connection and try again.": [
         "Erreur réseau : nous vous invitons à vérifier votre connexion et à réessayer."
       ],
       "No address with keys available to compose a message": [
-        "Aucune adresse avec des clés disponibles pour écrire un message"
+        "Il n'y a aucune adresse avec des clés disponibles pour écrire un message."
       ],
       "No calendars found to import": [
         "Aucun calendrier n'a été trouvé pour l'importation."
@@ -3177,7 +3185,7 @@
         "Les mots de passe ne correspondent pas."
       ],
       "Please activate your content search again": [
-        "Veuillez réactiver votre recherche de contenu."
+        "Veuillez réactiver votre recherche dans le contenu."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
@@ -3218,10 +3226,10 @@
         "La requête a expiré."
       ],
       "Require at least one action": [
-        "Nécessite au moins une action"
+        "Au moins une action est nécessaire."
       ],
       "Require at least one condition": [
-        "Nécessite au moins une condition"
+        "Au moins une condition est nécessaire."
       ],
       "Signature not verified": [
         "La signature n'est pas vérifiée."
@@ -3230,7 +3238,7 @@
         "Erreur de vérification de la signature."
       ],
       "Signature verification failed": [
-        "La vérification de la signature a échoué."
+        "La signature n'a pas pu être vérifiée."
       ],
       "Some contacts could not be deleted": [
         "Certains contacts n’ont pas pu être supprimés."
@@ -3242,19 +3250,19 @@
         "Certains de vos noms de dossier sont réservés. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Certains de vos noms de dossiers ne sont pas disponibles. Personnalisez l'importation pour modifier ces noms."
+        "Certains de vos noms de dossiers ne sont pas disponibles. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Certains de vos noms de dossiers dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Personnalisez l'importation pour modifier ces noms."
+        "Certains de vos noms de dossiers dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "Certains de vos noms de label sont réservés. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Certains de vos noms de labels ne sont pas disponibles. Personnalisez l'importation pour modifier ces noms."
+        "Certains de vos noms de labels ne sont pas disponibles. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Personnalisez l'importation pour modifier ces noms."
+        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
@@ -3282,19 +3290,22 @@
         "Le nom du label est trop long, veuillez en choisir un autre."
       ],
       "The maximum expiration is 4 weeks": [
-        "Le délai d’expiration maximal est de 4 semaines."
+        "Le délai d'expiration est de 4 semaines au maximum."
       ],
       "The sending key is not valid": [
         "La clé d'envoi n'est pas valide."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Il y a trop de dossiers dans votre compte externe. Personnalisez l'importation pour supprimer certains dossiers."
+        "Il y a trop de dossiers dans votre compte externe. Nous vous invitons à personnaliser l'importation pour supprimer certains dossiers."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        "Un problème est survenu avec la recherche de contenu. La recherche par défaut a été utilisée à la place."
+        "Il y a eu un problème avec la recherche dans le contenu. La recherche par défaut a été utilisée à la place."
       ],
       "There was an error when exporting the contacts vCards": [
         "Une erreur s’est produite lors de l’exportation des vCards des contacts."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Ce champ dépasse le maximum de ${ maximumLength } caractères."
       ],
       "This field is required": [
         "Ce champ est nécessaire."
@@ -3336,7 +3347,7 @@
         "Nous n'avons pas pu nous connecter à votre fournisseur de service."
       ],
       "Wrong mailbox password": [
-        "Mot de passe de messagerie incorrect"
+        "Le mot de passe de la messagerie n'est pas correct."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
@@ -3345,8 +3356,8 @@
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtre de composeur à la fois.",
-        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtres de composeur à la fois."
+        "Vous ne pouvez pas ouvrir plus d'${ maxActiveComposer } fenêtre d'éditeur à la fois.",
+        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtres d'éditeur à la fois."
       ],
       "You did not provide a file.": [
         "Vous n'avez pas fourni de fichier."
@@ -3358,7 +3369,7 @@
         "Vous devez définir un nom."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "Vos e-mails ne peuvent pas être déchiffrés en raison d'une récente réinitialisation du mot de passe. Si vous vous souvenez de votre ancien mot de passe, vous pouvez ${ reActivateKeyLink } afin d'accéder à vos messages. ${ learnMoreLink }"
+        "Vos e-mails ne peuvent pas être déchiffrés suite à une récente réinitialisation du mot de passe. Si vous vous souvenez de votre ancien mot de passe, vous pouvez ${ reActivateKeyLink } pour accéder à vos messages. ${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         "Vos e-mails ne peuvent pas être déchiffrés. Ceci peut être dû à une réinitialisation du mot de passe. ${ learnMoreLink }"
@@ -3367,7 +3378,7 @@
         "Votre importation ne sera pas traitée."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        "Trop de résultats correspondants à votre recherche. Limitez votre recherche et essayez à nouveau."
+        "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -3390,7 +3401,7 @@
         "Les messages envoyés ne peuvent pas être déplacés dans le dossier Indésirables/spam."
       ],
       "This action cannot be performed": [
-        "Impossible d'effectuer cette action"
+        "Cette action ne peut pas être effectuée."
       ]
     },
     "Error importing calendar": {
@@ -3414,10 +3425,10 @@
         "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Le format de votre fichier ${ formattedFilename } n'est pas valide et ne peut pas être importé."
+        "Le format de votre fichier ${ formattedFilename } n'est pas valide, il ne peut pas être importé."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "Votre fichier ${ formattedFilename } n'a pas d'événements à importer."
+        "Votre fichier ${ formattedFilename } n'a aucun événement à importer."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Votre fichier ${ formattedFilename } est vide."
@@ -3428,7 +3439,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Échec du chiffrement"
+        "Le chiffrement a échoué."
       ],
       "vCard versions < 3.0 not supported": [
         "versions de vCard < 3.0 non prises en charge"
@@ -3442,7 +3453,7 @@
         "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. Aucun fichier .csv ou .vcf sélectionné."
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. Aucun fichier .csv ou .vcf n'est sélectionné."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Une erreur s'est produite lors du chargement de votre fichier. Aucun fichier n'a été sélectionné."
@@ -3451,7 +3462,7 @@
         "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_CONTACTS_STRING } contacts."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Votre fichier ${ formattedFilename } n'a pas de contacts à importer."
+        "Votre fichier ${ formattedFilename } n'a aucun contact à importer."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Votre fichier ${ formattedFilename } est vide."
@@ -3465,67 +3476,67 @@
         "Calendrier"
       ],
       "Calendar time zone not supported": [
-        "Fuseau horaire du calendrier non pris en charge"
+        "Le fuseau horaire du calendrier n'est pas pris en charge."
       ],
       "Component with wrong format": [
-        "Élément au mauvais format"
+        "L'élément n'a pas le bon format."
       ],
       "Custom timezone": [
         "Fuseau horaire personnalisé"
       ],
       "Edited event not supported": [
-        "Événement modifié non pris en charge"
+        "L'événement modifié n'est pas pris en charge."
       ],
       "Element": [
         "Élément"
       ],
       "Encryption failed": [
-        "Échec du chiffrement"
+        "Le chiffrement a échoué."
       ],
       "End time out of bounds": [
-        "Heure de fin hors limites"
+        "L'heure de fin est hors limites."
       ],
       "Event": [
         "Événement"
       ],
       "Event validation failed": [
-        "Échec de la validation d'événement"
+        "L'événement n'a pas pu être validé."
       ],
       "Floating times not supported": [
-        "Heures variables non prises en charge"
+        "Les heures variables ne sont pas prises en charge."
       ],
       "Free-busy time information": [
         "Information de disponibilité"
       ],
       "Invalid event": [
-        "Événement non valide"
+        "L'événement n'est pas valide."
       ],
       "Journal entry": [
         "Entrée du journal"
       ],
       "Malformed all-day event": [
-        "Événement pour la journée entière mal formaté"
+        "L'événement pour la journée entière est mal formaté."
       ],
       "Malformed end time": [
-        "Heure de fin mal formatée"
+        "L'heure de fin est mal formatée."
       ],
       "Malformed recurring event": [
-        "Événement récurrent mal formaté"
+        "L'événement récurrent est mal formaté."
       ],
       "Malformed start time": [
-        "Heure de début mal formatée"
+        "L'heure de début est mal formatée."
       ],
       "Missing start time": [
-        "Heure de début manquante"
+        "Il manque l'heure de début."
       ],
       "No UID, title or start time": [
-        "Aucun UID, titre ou heure de début"
+        "Il n'y a aucun identifiant unique, titre ou heure de début."
       ],
       "Non-Gregorian": [
         "Non grégorien"
       ],
       "Notification out of bounds": [
-        "Notification hors limites"
+        "La notification est hors limites."
       ],
       "Original recurring event could not be found": [
         "L'événement récurrent original n'a pas pu être trouvé."
@@ -3534,13 +3545,13 @@
         "L'événement récurrent n'a pas d'occurrences."
       ],
       "Recurring rule not supported": [
-        "Récurrence non prise en charge"
+        "La règle de répétition n'est pas prise en charge."
       ],
       "Start time out of bounds": [
-        "Heure de début hors limites"
+        "L'heure de départ est hors limites."
       ],
       "Time zone not supported": [
-        "Fuseau horaire non pris en charge"
+        "Le fuseau horaire n'est pas pris en charge."
       ],
       "Timezone": [
         "Fuseau horaire"
@@ -3552,7 +3563,7 @@
         "Inconnu"
       ],
       "Unsupported event": [
-        "Événement non pris en charge"
+        "L'événement n'est pas pris en charge."
       ]
     },
     "Error message": {
@@ -3560,10 +3571,10 @@
         "Erreur : ${ errorMessage }"
       ],
       "No results found": [
-        "Aucun résultat trouvé"
+        "Aucun résultat n'a été trouvé."
       ],
       "No results found for \"${ query }\"": [
-        "Aucun résultat trouvé pour « ${ query } »"
+        "Aucun résultat n'a été trouvé pour « ${ query } »."
       ],
       "Oops, something went wrong": [
         "Désolé, quelque chose s'est mal passé."
@@ -3581,7 +3592,7 @@
         "Vous n'avez pas encore de contact. Commencez par créer un nouveau contact."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Vous pouvez également ${ refresh } ou réessayer plus tard."
+        "Vous pouvez aussi ${ refresh } ou réessayer plus tard."
       ]
     },
     "Error notification": {
@@ -3591,7 +3602,7 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Aucune image sélectionnée"
+        "Aucune image n'est sélectionnée."
       ]
     },
     "Error notification when score is missing in user feedback form modal": {
@@ -3612,10 +3623,10 @@
         "Le fichier ICS joint n'a pas pu être lu."
       ],
       "Invalid invitation": [
-        "Invitation non valide"
+        "L'invitation n'est pas valide."
       ],
       "Invalid response": [
-        "Réponse non valide"
+        "La réponse n'est pas valide."
       ],
       "The event could not be added to your calendar. No answer was sent": [
         "L'événement ne peut pas être ajouté à votre calendrier. Aucune réponse n'a été envoyée."
@@ -3627,10 +3638,10 @@
         "Erreur inattendue"
       ],
       "Unsupported invitation": [
-        "Invitation non prise en charge"
+        "L'invitation n'est pas prise en charge."
       ],
       "Unsupported response": [
-        "Réponse non prise en charge"
+        "La réponse n'est pas prise en charge."
       ],
       "We could not cancel the event in your calendar": [
         "Nous n'avons pas pu annuler l'événement dans votre calendrier."
@@ -3716,7 +3727,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "Archiver"
+        "Archives"
       ],
       "Do not move": [
         "Ne pas déplacer"
@@ -3776,10 +3787,10 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } mis à jour"
+        "${ Label.Name } a été mis à jour."
       ],
       "Filter ${ Filter.Name } updated": [
-        "Filtre ${ Filter.Name } mis à jour"
+        "Le filtre ${ Filter.Name } a été mis à jour."
       ]
     },
     "Filter option": {
@@ -3833,10 +3844,10 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Nous avons augmenté l'espace de stockage total de votre compte à ${ rewardInGb } Go. Obtenez un espace de stockage supplémentaire et débloquez des fonctionnalités haut de gamme dès aujourd'hui."
+        "Nous avons augmenté l'espace de stockage total de votre compte à ${ rewardInGb } Go. Obtenez plus d'espace et des fonctionnalités premium dès aujourd'hui."
       ],
       "You're all set!": [
-        "Voilà, vous avez tout bon !"
+        "Et voilà !"
       ]
     },
     "Get started checklist incentive": {
@@ -3893,7 +3904,7 @@
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        "Vous pouvez accéder à la liste de vérification à tout moment depuis ici."
+        "Vous pouvez accéder à la checklist quand vous le souhaitez, à partir d'ici."
       ]
     },
     "Get started checklist title": {
@@ -3947,7 +3958,7 @@
         "${ items.length } suggestions trouvées, utilisez le clavier pour naviguer."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Échap pour fermer la boîte de suggestions."
+        "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boîte de suggestions."
       ]
     },
     "Human verification method": {
@@ -3961,7 +3972,7 @@
         "Manuel"
       ],
       "No verification method available": [
-        "Aucune méthode de vérification disponible"
+        "Aucune méthode de vérification n'est disponible."
       ],
       "SMS": [
         "SMS"
@@ -3996,11 +4007,11 @@
         "Chiffrement et ajout d'événements à votre calendrier : ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "L'événement a été importé. Il apparaîtra dans votre calendrier.",
-        "Les événements ont été importés. Ils apparaîtront dans votre calendrier."
+        "L'événement a bien été importé. Il apparaîtra dans votre calendrier.",
+        "Les événements ont bien été importés. Ils apparaîtront dans votre calendrier."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Ne fermez pas l'onglet avant la fin du processus d'importation."
+        "Ne fermez pas l'onglet avant la fin de l'importation."
       ]
     },
     "Import calendar warning": {
@@ -4055,11 +4066,11 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos contacts. ${ totalImported } sur ${ totalToImport } contacts importés correctement."
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos contacts. ${ totalImported } contacts sur ${ totalToImport } ont bien été importés."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Le contact a été importé. Il apparaîtra désormais dans votre liste de contacts.",
-        "Les contacts ont été importés. Ils apparaîtront désormais dans votre liste de contacts."
+        "Le contact a bien été importé. Il apparaîtra dans votre liste de contacts.",
+        "Les contacts ont bien été importés. Ils apparaîtront dans votre liste de contacts."
       ]
     },
     "Import contacts warning": {
@@ -4067,7 +4078,7 @@
         "pour l'instant"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ne prend pas en charge ${ forNow } :"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4099,10 +4110,10 @@
         "L'accès IMAP est activé dans votre compte Yahoo."
       ],
       "Invalid IMAP port": [
-        "Port IMAP non valide"
+        "Le port IMAP n'est pas valide."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Trop de demandes récentes. Nous vous invitons à réessayer dans quelques instants."
+        "Il y a eu trop de demandes récemment. Nous vous invitons à réessayer dans quelques instants."
       ],
       "Use your app password if:": [
         "Utilisez le mot de passe de votre application si :"
@@ -4136,10 +4147,10 @@
     },
     "Import ICS file from Mail": {
       "Calendar event created": [
-        "Événement créé dans le calendrier"
+        "L'événement a été créé dans le calendrier."
       ],
       "Creating calendar event failed": [
-        "Échec de la création de l'événement dans le calendrier"
+        "L'événement n'a pas pu être créé dans le calendrier."
       ]
     },
     "Import instructions": {
@@ -4215,7 +4226,7 @@
         "Sécurité du compte"
       ],
       "app password": [
-        "mot de passe d'application"
+        "mot de passe de l'application"
       ],
       "Can view all details": [
         "Autoriser à voir tous les détails"
@@ -4279,13 +4290,18 @@
         "Allez dans la ${ calendarViewLink } de Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Passez la souris sur le calendrier que vous souhaitez importer et ouvrez le menu déroulant."
+        "Passez la souris sur le calendrier que vous voulez importer et ouvrez le menu déroulant."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Sélectionnez ${ boldExport } pour exporter le calendrier en tant que fichier ICS."
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "Sous ${ boldPublish }, sélectionnez le calendrier que vous souhaitez importer. Définissez l'autorisation à ${ boldCanViewAllDetails } et publiez-le."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Autre"
       ]
     },
     "Import warning": {
@@ -4455,8 +4471,8 @@
         "${ unreadCount } messages non lus"
       ],
       "${ updated } contact updated successfully.": [
-        "${ updated } contact mis à jour.",
-        "${ updated } contacts mis à jour."
+        "${ updated } contact a bien été mis à jour.",
+        "${ updated } contacts ont bien été mis à jour."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
@@ -4507,10 +4523,10 @@
         "Tous (${ totalFoldersCount } labels)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
-        "Tous les messages stockés dans ce dossier seront définitivement supprimés."
+        "Tous les messages dans ce dossier seront définitivement supprimés."
       ],
       "All messages stored with this label will be permanently deleted.": [
-        "Tous les messages stockés avec ce label seront définitivement supprimés."
+        "Tous les messages avec ce label seront définitivement supprimés."
       ],
       "All your calendars are disabled.": [
         "Tous vos calendriers sont désactivés."
@@ -4570,13 +4586,13 @@
         "Couleur d'arrière-plan"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
+        "La navigation et les actions de base restent disponibles, que les raccourcis clavier soient activés ou non dans les paramètres."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
       "Body: ": [
-        "Corps : "
+        "Corps : "
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -4591,10 +4607,10 @@
         "Effacer les données"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "L'effacement des données du navigateur désactive également la recherche de contenu de message sur cet appareil. Tous les messages devront être téléchargés à nouveau pour pouvoir y effectuer des recherches."
+        "En effaçant les données du navigateur, vous désactivez aussi la recherche dans le contenu des messages sur cet appareil. Pour effectuer par la suite une recherche dans vos messages, il faudra télécharger à nouveau tous vos messages."
       ],
       "Clears browser data related to message content search including downloaded messages": [
-        "Efface les données du navigateur liées à la recherche de contenu de message, y compris les messages téléchargés."
+        "Cela efface les données du navigateur liées à la recherche dans le contenu des messages, y compris les messages téléchargés."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
@@ -4659,7 +4675,7 @@
         "Application de messagerie par défaut"
       ],
       "Disable message content search": [
-        "Désactiver la recherche de contenu de message"
+        "Désactiver la recherche dans le contenu des messages"
       ],
       "Do you want to download this attachment anyway?": [
         "Voulez-vous quand même télécharger cette pièce jointe ?",
@@ -4669,7 +4685,7 @@
         "Voulez-vous signer une nouvelle fois les coordonnées du contact et donc faire confiance aux clés avec les empreintes suivantes ?"
       ],
       "Do you want to re-sign the contact details?": [
-        "Souhaitez-vous signer à nouveau les coordonnées du contact ?"
+        "Voulez-vous signer à nouveau les coordonnées du contact ?"
       ],
       "Don't forget to share the password with the recipient": [
         "N'oubliez pas de communiquer le mot de passe au destinataire."
@@ -4681,10 +4697,10 @@
         "Brouillon"
       ],
       "Draft discarded": [
-        "Brouillon abandonné"
+        "Le brouillon a été abandonné."
       ],
       "Draft saved.": [
-        "Brouillon sauvegardé."
+        "Le brouillon a été sauvegardé."
       ],
       "Drop a file here to upload": [
         "Déposer ici un fichier à charger"
@@ -4724,7 +4740,10 @@
         "Les traqueurs dans les e-mails peuvent porter atteinte à votre vie privée. ${ BRAND_NAME } a trouvé et bloqué ${ numberOfTrackers } traqueurs."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Les traqueurs dans les e-mails peuvent violer votre vie privée. Activez la protection contre les traqueurs pour empêcher les expéditeurs de savoir si et quand vous avez ouvert un message."
+        "Les traqueurs dans les e-mails peuvent porter atteinte à votre vie privée. Activez la protection contre les traqueurs pour empêcher les expéditeurs de savoir si et quand vous avez ouvert un message."
+      ],
+      "Emails are automatically signed": [
+        "Les messages sont automatiquement signés."
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Les messages stockés dans ce dossier ne seront pas effacés et pourront toujours être retrouvés dans le dossier Tous les messages."
@@ -4743,7 +4762,7 @@
         "Entrez le code de votre application d'authentification."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Saisissez les identifiants du compte de messagerie depuis lequel vous souhaitez importer."
+        "Saisissez les identifiants du compte de messagerie depuis lequel vous voulez importer."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -4796,7 +4815,7 @@
         "Pour renforcer la sécurité, activez l'authentification à deux facteurs (2FA)."
       ],
       "For messages newer than ${ oldestDate }": [
-        "Pour les messages plus récents que ${ oldestDate }"
+        "Pour les messages après le ${ oldestDate }"
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
@@ -4811,7 +4830,7 @@
         "Obtenez plus d'espace de stockage et des fonctionnalités premium."
       ],
       "Group assignment applied": [
-        "L'affectation de groupe est appliquée."
+        "L'affectation de groupe a été appliquée."
       ],
       "Has ${ numAttachments } attachment": [
         "Avec ${ numAttachments } pièce jointe",
@@ -4855,7 +4874,7 @@
         "URL de l'image"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Les images ont été supprimées, car elles ne sont pas autorisées dans la réponse automatique."
+        "Les images ont été supprimées, elles ne sont pas autorisées dans la réponse automatique."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
@@ -4873,6 +4892,9 @@
       "Import mailbox": [
         "Importer une messagerie"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importez vos e-mails, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ importedEmailAddress } vers ${ toEmail }."
       ],
@@ -4883,7 +4905,7 @@
         "Indexation en pause"
       ],
       "Inherited from parent folder": [
-        "Hérité du dossier parent"
+        "Hérité du dossier dans lequel il est placé."
       ],
       "Insert image": [
         "Insérer une image"
@@ -4910,7 +4932,7 @@
         "Labelliser tous les messages importés comme"
       ],
       "Labels:": [
-        "Labels :"
+        "Labels :"
       ],
       "Large imports can take several days.": [
         "Les importations volumineuses peuvent prendre plusieurs jours."
@@ -4946,7 +4968,7 @@
         "Gérer vos labels"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Nombre maximum de pièces jointes (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) dépassé."
+        "Le nombre maximum de (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) pièces jointes a été dépassé."
       ],
       "Members": [
         "Membres"
@@ -4955,22 +4977,22 @@
         "Fusionné"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Les messages avec une date d'expiration fonctionnent pour l'envoi d'e-mails à d'autres utilisateurs ${ MAIL_APP_NAME }. Pour des destinataires qui n'utilisent pas ${ BRAND_NAME }, nous vous invitons à annuler l’envoi et à ajouter une protection par mot de passe à votre message."
+        "Les messages avec une date d'expiration fonctionnent pour l'envoi d'e-mails à des personnes qui utilisent ${ MAIL_APP_NAME }. Pour des destinataires qui n'utilisent pas ${ BRAND_NAME }, nous vous invitons à annuler l’envoi et à ajouter une protection par mot de passe à votre message."
       ],
       "Message headers": [
         "En-têtes du message"
       ],
       "Message sent": [
-        "Message envoyé"
+        "Le message a été envoyé."
       ],
       "Message sent.": [
-        "Message envoyé."
+        "Le message a été envoyé."
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Le message sera envoyé le ${ dateString } à ${ formattedTime }."
       ],
       "Message will be sent today at ${ formattedTime }": [
-        "Ce message va être envoyé aujourd'hui à ${ formattedTime }."
+        "Le message sera envoyé aujourd'hui à ${ formattedTime }."
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Le message sera envoyé demain à ${ formattedTime }."
@@ -4979,7 +5001,7 @@
         "Chaque mois, ${ onDayString }"
       ],
       "Moving a large amount of messages. This may take a while.": [
-        "Transfert de nombreux messages en cours, cela peut prendre un certain temps."
+        "Le transfert d'un grand nombre de messages est en cours. Cela peut prendre un certain temps."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
@@ -4988,7 +5010,7 @@
         "Nouveau"
       ],
       "No action selected": [
-        "Aucune action sélectionnée"
+        "Aucune action n'est sélectionnée."
       ],
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
@@ -4997,34 +5019,34 @@
         "Aucune adresse électronique"
       ],
       "No email trackers found": [
-        "Aucun traqueur d'e-mail trouvé"
+        "Aucun traqueur d'e-mails n'a été trouvé."
       ],
       "No folder found": [
-        "Aucun dossier trouvé"
+        "Aucun dossier n'a été trouvé."
       ],
       "No folder selected": [
-        "Aucun dossier sélectionné"
+        "Aucun dossier n'est sélectionné."
       ],
       "No group found": [
         "Aucun groupe n'a été trouvé."
       ],
       "No label found": [
-        "Aucun label trouvé"
+        "Aucun label n'a été trouvé."
       ],
       "No label selected": [
-        "Aucun label sélectionné"
+        "Aucun label n'est sélectionné."
       ],
       "No more results found": [
-        "Pas d'autres résultats trouvés"
+        "Aucun autre résultat n'a été trouvé."
       ],
       "No preview available": [
-        "Aucun aperçu disponible"
+        "Aucun aperçu n'est disponible."
       ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking"
+        "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées à cause de la protection contre les traqueurs."
       ],
       "non-${ MAIL_APP_NAME }": [
         "autre que ${ MAIL_APP_NAME }"
@@ -5041,23 +5063,20 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Autres options"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Notre système a marqué ce message comme étant une tentative de phishing/hameçonnage. Nous vous invitons à vérifier qu'il est légitime."
+        "Notre système a marqué ce message comme tentative de phishing/hameçonnage. Nous vous invitons à vérifier qu'il est légitime."
       ],
       "per month.": [
         "par mois."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline est uniquement compatible avec le format texte brut. Notez que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline est uniquement compatible avec le format texte brut."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Notez que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel de l'éditeur."
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -5084,7 +5103,7 @@
         "Sélectionnez les dossiers que vous voulez importer :"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Sélectionnez le type de lien que vous souhaitez insérer et remplissez tous les champs."
+        "Sélectionnez le type de lien que vous voulez insérer et remplissez tous les champs."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupCount } groupe.",
@@ -5124,10 +5143,10 @@
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Recovery phrase copied to clipboard": [
-        "Phrase de récupération copiée dans le presse-papiers"
+        "La phrase de récupération est copiée dans le presse-papiers."
       ],
       "Recovery phrase downloaded": [
-        "Phrase de récupération téléchargée"
+        "La phrase de récupération a été téléchargée."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link } pour résoudre automatiquement la plupart des problèmes."
@@ -5145,7 +5164,7 @@
         "De droite à gauche"
       ],
       "Right-click for options": [
-        "Cliquez avec le bouton droit de la souris pour afficher les options."
+        "Faites un clic droit avec la souris pour afficher les options."
       ],
       "Saved at ${ dateString }": [
         "Enregistré à ${ dateString }"
@@ -5166,10 +5185,10 @@
         "Programmation du message..."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        "La recherche prend trop de temps ? ${ dropdownButton } ou ${ toggleOffButton } de cette session de recherche."
+        "La recherche prend trop de temps ? ${ dropdownButton } ou ${ toggleOffButton } de cette recherche."
       ],
       "Seems like you are all caught up for now": [
-        "Il semble que vous soyez à jour pour le moment."
+        "Vous êtes tout à fait à jour pour le moment."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format d'e-mail que vous voulez utiliser par défaut lors de l'envoi d'un e-mail à cette adresse électronique."
@@ -5190,7 +5209,7 @@
         "Envoi en cours"
       ],
       "Sending message...": [
-        "Envoi du message en cours..."
+        "Envoi du message..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'envoi de messages depuis une adresse @pm.me est une fonctionnalité payante. Votre message sera envoyé à partir de votre adresse par défaut ${ email }."
@@ -5205,7 +5224,7 @@
         "La session a expiré."
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Définissez ${ MAIL_APP_NAME } comme application de messagerie par défaut pour ce navigateur. ${ MAIL_APP_NAME } s'ouvrira automatiquement lorsque vous cliquerez sur un lien de courrier électronique."
+        "Définissez ${ MAIL_APP_NAME } comme application de messagerie par défaut pour ce navigateur. ${ MAIL_APP_NAME } s'ouvrira automatiquement quand vous cliquerez sur un lien d'e-mail."
       ],
       "Set a recovery phrase": [
         "Créer une phrase de récupération"
@@ -5226,7 +5245,7 @@
         "SimpleLogin est un service ${ BRAND_NAME }, et votre compte ${ BRAND_NAME } inclut des alias Hide My Email. Pour commencer à masquer votre adresse e-mail, allez sur SimpleLogin et créez votre premier alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin offre un moyen simple de créer des identifiants sur des sites tiers peu fiables où vous ne voulez pas exposer votre adresse e-mail réelle."
+        "SimpleLogin offre un moyen simple de créer des identifiants sur des sites tiers peu fiables pour lesquels vous ne voulez pas révéler votre véritable adresse électronique."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
@@ -5241,19 +5260,19 @@
         "Objet"
       ],
       "Subject is end-to-end encrypted": [
-        "L'objet est chiffré de bout en bout"
+        "L'objet est chiffré de bout en bout."
       ],
       "Subject:": [
-        "Objet :"
+        "Objet :"
       ],
       "Subject: ": [
-        "Objet : "
+        "Objet : "
       ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
       ],
       "Support privacy by upgrading for": [
-        "Soutenez la vie privée en passant à"
+        "Soutenez la protection de la vie privée en passant à"
       ],
       "support team": [
         "équipe support"
@@ -5286,17 +5305,17 @@
         "L'expéditeur a demandé une confirmation de lecture."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "La vérification de ${ contactName } a échoué : le contact n'est pas signé correctement.\nCeci est peut-être dû à une réinitialisation du mot de passe.\nVous devez signer à nouveau le contact afin d'envoyer un message à ${ contactAddress } ou modifier le contact."
+        "${ contactName } n'a pas pu être vérifié : le contact n'est pas bien signé.\nCela est peut-être dû à une réinitialisation du mot de passe.\nVous devez signer à nouveau le contact pour pouvoir envoyer un message à ${ contactAddress } ou modifier le contact."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "La vérification de ${ contactNames } a échoué : le contact n'est pas signé correctement.\nCeci est peut-être dû à une réinitialisation du mot de passe.\nVous devez signer à nouveau le contact afin d'envoyer un message à ${ contactAddresses } ou modifier le contact.",
-        "La vérification de ${ contactNames } a échoué : les contacts ne sont pas signés correctement.\nCeci est peut-être dû à une réinitialisation du mot de passe.\nVous devez signer à nouveau les contacts afin d'envoyer un message à ${ contactAddresses } ou modifier les contacts."
+        "${ contactNames } n'a pas pu être vérifié : le contact n'est pas correctement signé.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer le contact pour pouvoir envoyer un message à ${ contactAddresses } ou modifier le contact.",
+        "${ contactNames } n'a pas pu être vérifié : les contacts ne sont pas correctement signés.\nCela peut être dû à une réinitialisation du mot de passe.\nVous devez à nouveau signer les contacts pour pouvoir envoyer un message à ${ contactAddresses } ou modifier les contacts."
       ],
       "Themes can give your inbox a new look.": [
         "Les thèmes donnent un nouveau look à votre boite de réception."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
-        "Il y a eu une erreur dans la signature utilisée pour vérifier les coordonnées, pouvant résulter d'une réinitialisation du mot de passe."
+        "Il y a eu une erreur dans la signature utilisée pour vérifier les coordonnées. Cette erreur peut être due à une réinitialisation du mot de passe.\n"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
         "On ne peut pas vous spammer si l'on ne connaît pas votre adresse électronique. Protégez votre boîte aux lettres avec Hide My Email."
@@ -5305,7 +5324,7 @@
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
+        "Cette action téléchargera tous les messages pour qu'ils puissent être recherchés localement. Effacer les données de votre navigateur désactivera cette option."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des e-mails à cette adresse, son propriétaire doit d’abord l’activer."
@@ -5317,17 +5336,17 @@
         "Cette conversation contient un message programmé. L'envoi de ce message sera annulé."
       ],
       "This conversation contains non-trashed messages.": [
-        "Cette conversation contient des messages non placés dans le dossier Corbeille."
+        "Cette conversation a des messages qui ne sont pas dans le dossier Corbeille."
       ],
       "This conversation contains trashed messages.": [
-        "Cette conversation contient des messages placés dans le dossier Corbeille."
+        "Cette conversation a des messages qui sont dans le dossier Corbeille."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Cette conversation sera marquée comme indésirable/spam. Souhaitez-vous aussi vous désinscrire des futurs e-mails ?",
-        "Ces conversations seront marquées comme indésirables/spam. Souhaitez-vous aussi vous désinscrire des futurs e-mails ?"
+        "Cette conversation sera marquée comme indésirable/spam. Voulez-vous aussi vous désinscrire des futurs e-mails ?",
+        "Ces conversations seront marquées comme indésirables/spam. Voulez-vous aussi vous désinscrire des futurs e-mails ?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Cet e-mail a échoué aux tests d'authentification de son domaine. Il a peut-être été falsifié ou transféré incorrectement."
+        "Cet e-mail a échoué aux exigences d'authentification de son domaine. Il a peut-être été falsifié ou transféré de manière incorrecte."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Cette invitation est enregistrée dans un calendrier désactivé."
@@ -5335,8 +5354,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte bancaire."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous n'avez aucun doute sur la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
@@ -5360,8 +5379,8 @@
         "Ce message est signé avec une clé attachée qui n'a pas encore été approuvée."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Ce message sera marqué comme indésirable/spam. Souhaitez-vous aussi vous désinscrire des futurs e-mails ?",
-        "Ces messages seront marqués comme indésirables/spam. Souhaitez-vous aussi vous désinscrire des futurs e-mails ?"
+        "Ce message sera marqué comme indésirable/spam. Voulez-vous aussi vous désinscrire des futurs e-mails ?",
+        "Ces messages seront marqués comme indésirables/spam. Voulez-vous aussi vous désinscrire des futurs e-mails ?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Ce message sera déplacé dans le dossier Brouillons pour que vous puissiez le modifier. Vous devrez reprogrammer la date et l'heure d'envoi."
@@ -5382,13 +5401,13 @@
         "Ce message expirera le ${ formattedDate }."
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Ce message expirera ${ dateString } à ${ formattedTime }."
+        "Ce message expirera le ${ dateString } à ${ formattedTime }."
       ],
       "This message will expire today at ${ formattedTime }": [
         "Ce message expirera aujourd'hui à ${ formattedTime }."
       ],
       "This message will expire tomorrow at ${ formattedTime }": [
-        "Ce message expirera aujourd'hui à ${ formattedTime }."
+        "Ce message expirera demain à ${ formattedTime }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Cette clé publique sera automatiquement utilisée pour chiffrer les e-mails envoyés à cette adresse."
@@ -5399,6 +5418,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous êtes humain."
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Pour importer des événements, créez d'abord un calendrier dans ${ CALENDAR_APP_NAME }. Ce calendrier contiendra les événements après leur importation."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l’aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n’est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
       ],
@@ -5406,7 +5428,7 @@
         "Pour récupérer vos données, vous devez réactiver la clé de chiffrement de contact utilisée au moment de la création des données. Pour cela, vous devez vous souvenir du mot de passe utilisé lors de la création de la clé."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Pour vous désabonner de cette liste de diffusion, un e-mail sera envoyé avec les détails suivants à partir de ${ boldFrom }, tel que défini par l'expéditeur de la lettre d'information :"
+        "Pour vous désinscrire de cette liste de diffusion, un e-mail sera envoyé à partir de ${ boldFrom } avec les détails suivants comme définis par l'expéditeur de la newsletter :"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "Pour vous désabonner de cette liste de diffusion, vous serez dirigé vers l'URL suivante où des instructions seront fournies par l'expéditeur de la newsletter :"
@@ -5415,10 +5437,10 @@
         "Pour utiliser la vérification d’adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celle que vous voulez utiliser pour l’envoi. Cela empêche la falsification des clés de chiffrement."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Trop de messages en attente d'envoi. Attendez qu'un autre message soit envoyé pour programmer celui-ci."
+        "Trop de messages sont en attente d'être envoyés. Vous devez attendre qu'un autre message ait été envoyé pour programmer celui-ci."
       ],
       "Turn off content search. Activation progress won't be lost.": [
-        "Désactiver la recherche de contenu. La progression d'activation ne sera pas perdue."
+        "Désactiver la recherche dans le contenu. La progression d'activation ne sera pas perdue."
       ],
       "Turn on to search the content of your messages": [
         "Activer pour rechercher dans le contenu de vos messages"
@@ -5433,13 +5455,13 @@
         "Débloquer le message"
       ],
       "Unsaved changes": [
-        "Modifications non enregistrées"
+        "Les modifications ne sont pas enregistrées."
       ],
       "Unsupported file": [
-        "Fichier non pris en charge"
+        "Le fichier n'est pas pris en charge."
       ],
       "Updating message content search...": [
-        "Mise à jour de la recherche de contenu de message..."
+        "Mise à jour de la recherche dans le contenu des messages..."
       ],
       "Upgrade to add more addresses to your account.": [
         "Passez à un abonnement supérieur pour ajouter plus d'adresses à votre compte."
@@ -5463,10 +5485,10 @@
         "Passez à l’offre supérieure pour soutenir un internet respectueux de la vie privée."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Passez à l’offre supérieure pour soutenir notre mission de protection de la vie privé pour tous."
+        "Passez à l’offre supérieure pour soutenir notre mission de protéger la vie privée de tous."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Passez à l’offre supérieure pour soutenir la vie privée et obtenir plus de fonctionnalités."
+        "Passez à l’offre supérieure pour soutenir la protection de la vie privée et disposer de plus de fonctionnalités."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Passez à l’offre supérieure pour utiliser ${ MAIL_APP_NAME } avec des logiciels client tiers."
@@ -5502,7 +5524,7 @@
         "Rendez-vous dans notre boutique pour vous procurer des goodies ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Nous nous excusons, il pourrait s'agir d'une erreur de notre part. Pouvez-vous confirmer que vous voulez marquer cet email comme légitime ?"
+        "Nous nous excusons, c'est peut-être une erreur de notre part. Pouvez-vous confirmer que vous voulez marquer cet e-mail comme légitime ?"
       ],
       "We could not verify the sender's trusted keys.": [
         "Nous n'avons pas pu vérifier les clés approuvées de l'expéditeur."
@@ -5526,7 +5548,7 @@
         "Nous sommes désormais sur ${ PROTON_ME_DOMAIN }."
       ],
       "When do you want your message to be sent?": [
-        "Quand souhaitez-vous que votre message soit envoyé ?"
+        "Quand voulez-vous que votre message soit envoyé ?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Lorsque vous communiquez votre e-mail, utilisez un alias unique Hide My Email au lieu de votre véritable adresse e-mail."
@@ -5562,10 +5584,10 @@
         "Vous pouvez suivre la progression ${ importProgressLink }."
       ],
       "You can either update your search query or ${ button }": [
-        "Vous pouvez mettre à jour votre requête de recherche ou ${ button }"
+        "Vous pouvez mettre à jour votre requête de recherche ou ${ button }."
       ],
       "You can either update your search query or clear it": [
-        "Vous pouvez mettre à jour votre recherche ou bien l'effacer."
+        "Vous pouvez mettre à jour votre recherche ou l'effacer."
       ],
       "You can import one data type at a time.": [
         "Vous pouvez importer un type de données à la fois."
@@ -5605,16 +5627,13 @@
         "Vous avez marqué **${ count } messages** avec ce label."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Vous n'avez donné aucun objet/sujet à votre message. Voulez-vous quand même l'envoyer ?"
+        "Votre e-mail n'a pas d'objet. Voulez-vous quand même l'envoyer ?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Vous utilisez 100 % de votre espace de stockage. Nous vous invitons à libérer de l'espace ou à passer à un abonnement avec plus d'espace de stockage pour pouvoir écrire et envoyer de nouveaux messages."
       ],
       "You have reached the maximum number of 5 replies.": [
         "Vous avez atteint le nombre maximum de 5 réponses."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Vous devez avoir un calendrier personnel actif pour importer vos événements."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint ${ spaceDisplayed } % de votre capacité de stockage. ${ freeUpMessage } ${ upgradeLink }"
@@ -5639,7 +5658,7 @@
         "Vous avez sélectionné **${ count } messages** avec ce label."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        "Vous avez écrit « ${ attachmentsFoundKeyword } », mais aucune pièce jointe n’a été ajoutée. Voulez-vous quand même envoyer votre message ?"
+        "Vous avez écrit « ${ attachmentsFoundKeyword } », mais il n'y aucune pièce jointe. Voulez-vous quand même envoyer votre message ?"
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "Votre compte ${ BRAND_NAME } inclut SimpleLogin. Installez l'extension de navigateur en un clic pour commencer."
@@ -5744,8 +5763,8 @@
         "Cliquer sur Approuver la clé créera un nouveau contact et associera cette clé publique à cet expéditeur. Les e-mails provenant de cette adresse seront alors automatiquement vérifiés par cryptographie."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
-        "Souhaitez-vous faire confiance à la clé publique principale avec l'empreinte suivante ?",
-        "Souhaitez-vous faire confiance aux clés publiques principales avec les empreintes suivantes ?"
+        "Voulez-vous faire confiance à la clé publique principale avec l'empreinte suivante ?",
+        "Voulez-vous faire confiance aux clés publiques principales avec les empreintes suivantes ?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Vous avez activé la vérification d'adresse avec des clés de confiance pour cette adresse électronique, mais aucune clé de chiffrement active n'a été approuvée.\nVous devez faire confiance à une clé valide pour envoyer un message à cette adresse électronique.",
@@ -5754,7 +5773,7 @@
     },
     "Key validation warning": {
       "Recipient's key validation failed: ${ validationErrorsMessage }": [
-        "La validation de la clé du destinataire a échoué : ${ validationErrorsMessage }"
+        "La clé du destinataire n'a pas pu être validée : ${ validationErrorsMessage }"
       ]
     },
     "Keyboard shortcut name": {
@@ -5783,34 +5802,34 @@
         "Abandonner le brouillon"
       ],
       "Expand / contract composer": [
-        "Développer/Réduire le composeur"
+        "Développer/Réduire l'éditeur"
       ],
       "Forward": [
         "Transférer"
       ],
       "Go to All Mail": [
-        "Accéder à Tous les messages"
+        "Aller dans le dossier Tous les messages"
       ],
       "Go to Archive": [
-        "Accéder à Archives"
+        "Aller dans le dossier Archives"
       ],
       "Go to Drafts": [
-        "Accéder à Brouillons"
+        "Aller dans le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Aller à la Boite de réception"
+        "Aller dans le dossier Boite de réception"
       ],
       "Go to Sent": [
-        "Accéder à Envoyés"
+        "Aller dans le dossier Envoyés"
       ],
       "Go to Spam": [
-        "Accéder à Indésirable/spam"
+        "Aller dans le dossier Indésirable/spam"
       ],
       "Go to Starred": [
-        "Accéder à Favoris"
+        "Aller dans le dossier Favoris"
       ],
       "Go to Trash": [
-        "Accéder à Corbeille"
+        "Aller dans le dossier Corbeille"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -5837,7 +5856,7 @@
         "Marquer comme non lu"
       ],
       "Minimize / maximize composer": [
-        "Minimiser/Maximiser le composeur"
+        "Réduire/Agrandir l'éditeur"
       ],
       "Move down": [
         "Déplacer vers le bas"
@@ -5849,13 +5868,13 @@
         "Déplacer vers la droite/agrandir"
       ],
       "Move to Archive": [
-        "Déplacer dans Archives"
+        "Déplacer dans le dossier Archives"
       ],
       "Move to Inbox": [
-        "Déplacer dans Boîte de réception"
+        "Déplacer dans le dossier Boîte de réception"
       ],
       "Move to Spam": [
-        "Déplacer dans Indésirables/spam"
+        "Déplacer dans le dossier Indésirables/spam"
       ],
       "Move to Trash": [
         "Déplacer dans le dossier Corbeille"
@@ -5894,7 +5913,7 @@
         "Sélectionner/Désélectionner"
       ],
       "Select / unselect all": [
-        "Sélectionner/Désélectionner tout"
+        "Tout sélectionner/désélectionner"
       ],
       "Send email": [
         "Envoyer un e-mail"
@@ -5923,7 +5942,7 @@
         "Navigation basique"
       ],
       "Composer shortcuts": [
-        "Raccourcis du composeur"
+        "Raccourcis de l'éditeur "
       ],
       "Folder shortcuts": [
         "Raccourcis des dossiers"
@@ -6016,7 +6035,7 @@
         "Enregistrer automatiquement les contacts"
       ],
       "Awful": [
-        "Affreux"
+        "Affreuse"
       ],
       "Bad": [
         "Mauvaise"
@@ -6163,7 +6182,7 @@
         "Comment décririez-vous votre expérience avec le nouveau ${ BRAND_NAME } ?"
       ],
       "I understand the risk": [
-        "Je comprends le risque"
+        "Je comprends le risque."
       ],
       "IF": [
         "SI"
@@ -6256,7 +6275,7 @@
         "Navigation"
       ],
       "No label found": [
-        "Aucun label trouvé"
+        "Aucun label n'a été trouvé."
       ],
       "Notification": [
         "Notification"
@@ -6328,10 +6347,10 @@
         "Rechercher dans"
       ],
       "Select how your composer opens by default.": [
-        "Choisissez comment votre compositeur s'ouvre par défaut."
+        "Choisissez comment s'ouvre votre éditeur."
       ],
       "Select how your list of messages looks like by default.": [
-        "Choisissez comment se présente votre liste de messages par défaut."
+        "Choisissez comment se présente votre liste de messages."
       ],
       "Select how your mailbox looks like by default.": [
         "Choisissez la présentation de votre boîte de réception."
@@ -6433,7 +6452,7 @@
         "sans pièce jointe"
       ],
       "Wonderful": [
-        "Merveilleux"
+        "Merveilleuse"
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
@@ -6497,7 +6516,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } créé"
+        "${ Label.Name } a été créé."
       ]
     },
     "Landmarks": {
@@ -6641,7 +6660,7 @@
         "Vous devez activer vos clés de calendrier pour ajouter cet événement."
       ],
       "You need to activate your calendar keys to answer this invitation": [
-        "Vous devez activer les clés de votre calendrier pour répondre à cette invitation."
+        "Vous devez activer vos clés de calendrier pour répondre à cette invitation."
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "Vous devez activer vos clés de calendrier pour gérer cette invitation."
@@ -6650,7 +6669,7 @@
         "Vous devez activer vos clés de calendrier pour voir l'événement mis à jour."
       ],
       "You need to activate your calendar keys to see the updated invitation": [
-        "Vous devez activer les clés de votre calendrier pour voir l'invitation mise à jour."
+        "Vous devez activer vos clés de calendrier pour voir l'invitation mise à jour."
       ],
       "You need to reactivate your keys to manage this invitation": [
         "Vous devez réactiver vos clés pour gérer cette invitation."
@@ -6770,13 +6789,13 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        "Envoi programmé annulé"
+        "L'envoi programmé a été annulé."
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Programmation annulée. Le message a été déplacé dans le dossier Brouillons."
+        "La programmation a été annulée. Le message a été déplacé dans le dossier Brouillons."
       ],
       "Sending undone": [
-        "Envoi annulé"
+        "L'envoi a été annulé."
       ],
       "Undoing send...": [
         "Annulation de l'envoi..."
@@ -6980,25 +6999,25 @@
     },
     "Notification": {
       "${ Filter.Name } created": [
-        "${ Filter.Name } créé"
+        "${ Filter.Name } a été créé."
       ],
       "Block removed": [
         "Le blocage a été supprimé."
       ],
       "Contact group created": [
-        "Groupe de contacts créé"
+        "Le groupe de contacts a été créé."
       ],
       "Contact group updated": [
-        "Groupe de contacts mis à jour"
+        "Le groupe de contacts a été mis à jour."
       ],
       "Password has been set successfully": [
         "Le mot de passe a bien été défini."
       ],
       "Sender ${ firstSenderAddress } blocked": [
-        "L'expéditeur ${ firstSenderAddress } est bloqué."
+        "L'expéditeur ${ firstSenderAddress } a été bloqué."
       ],
       "Senders blocked": [
-        "Expéditeurs bloqués"
+        "Les expéditeurs ont été bloqués."
       ]
     },
     "Oauth instructions": {
@@ -7114,7 +7133,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } a marqué cette clé comme étant compromise. Cette clé ne peut pas être utilisée pour le chiffrement ou la vérification des signatures."
+        "${ emailAddress } a marqué cette clé comme compromise. Cette clé ne peut pas être utilisée pour le chiffrement ou la vérification des signatures."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } a marqué cette clé comme obsolète. Cette clé peut uniquement être utilisée pour la vérification des signatures."
@@ -7125,7 +7144,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresse électronique non trouvée parmi les identifiants des utilisateurs définis dans la clé d'envoi (${ keyUserIds })."
+        "L'adresse électronique n'a pas été trouvée parmi les identifiants des utilisateurs définis dans la clé d'envoi (${ keyUserIds })."
       ]
     },
     "Placeholder": {
@@ -7227,16 +7246,16 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } sur ${ countContacts } contact exporté.",
-        "${ contactsExported.length } sur ${ countContacts } contacts exportés."
+        "${ contactsExported.length } contact sur ${ countContacts } a bien été exporté.",
+        "${ contactsExported.length } contacts sur ${ countContacts } ont bien été exportés."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } contact sur ${ totalBeDeleted } a été supprimé.",
-        "${ model.deleted.length } contacts sur ${ totalBeDeleted } ont été supprimés."
+        "${ model.deleted.length } contact sur ${ totalBeDeleted } a bien été supprimé.",
+        "${ model.deleted.length } contacts sur ${ totalBeDeleted } ont bien été supprimés."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } contact sur ${ totalBeMerged } a été fusionné.",
-        "${ model.submitted.length } contacts sur ${ totalBeMerged } ont été fusionnés."
+        "${ model.submitted.length } contact sur ${ totalBeMerged } a bien été fusionné.",
+        "${ model.submitted.length } contacts sur ${ totalBeMerged } ont bien été fusionnés."
       ],
       "No contacts exported.": [
         "Aucun contact exporté."
@@ -7306,7 +7325,7 @@
         "Message signé par PGP provenant d'un expéditeur vérifié"
       ],
       "PGP-signed message. Sender verification failed": [
-        "Message signé par PGP. La vérification de l'expéditeur a échoué."
+        "Message signé par PGP. L'expéditeur n'a pas pu être vérifié."
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès"
@@ -7317,21 +7336,21 @@
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
-        "Remarque : le service se rechargera après avoir cliqué sur le bouton Appliquer."
+        "Remarque : le service sera rechargé après que vous aurez cliqué sur le bouton Appliquer."
       ]
     },
     "Reply to calendar invitation": {
       "Answer sent": [
-        "Réponse envoyée"
+        "La réponse a été envoyée."
       ],
       "Answering invitation failed": [
-        "Échec de la réponse à l'invitation"
+        "La réponse à l'invitation a échoué."
       ],
       "Calendar event created": [
-        "Événement créé dans le calendrier"
+        "L'événement a été créé dans le calendrier."
       ],
       "Calendar event updated": [
-        "Événement du calendrier mis à jour"
+        "L'événement a été mis à jour dans le calendrier."
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Impossible d'envoyer à l'adresse de l'organisateur : ${ errorMessage }"
@@ -7342,16 +7361,16 @@
     },
     "Search - no results": {
       "No messages found": [
-        "Aucun message trouvé"
+        "Aucun message n'a été trouvé."
       ],
       "No messages scheduled": [
-        "Aucun message programmé"
+        "Aucun message n'est programmé."
       ],
       "No results found": [
-        "Aucun résultat trouvé"
+        "Aucun résultat n'a été trouvé."
       ],
       "No unread messages found": [
-        "Aucun message non lu trouvé"
+        "Aucun message non lu n'a été trouvé."
       ]
     },
     "Select files": {
@@ -7449,22 +7468,30 @@
     },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Message chiffré par PGP. La vérification de l'expéditeur a échoué : ${ verificationErrorsMessage }"
+        "Message chiffré par PGP. L'expéditeur n'a pas pu être vérifié : ${ verificationErrorsMessage }"
       ],
       "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Message signé par PGP. La vérification de l'expéditeur a échoué : ${ verificationErrorsMessage }"
+        "Message signé par PGP. L'expéditeur n'a pas pu être vérifié : ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
         "L'expéditeur n'a pas pu être vérifié : le message n'est pas signé."
       ],
       "Sender verification failed": [
-        "La vérification de l'expéditeur a échoué."
+        "L'expéditeur n'a pas pu être vérifié."
       ],
       "Sender verification failed: ${ verificationErrorsMessage }": [
-        "La vérification de l'expéditeur a échoué : ${ verificationErrorsMessage }"
+        "L'expéditeur n'a pas pu être vérifié : ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
-        "La vérification des clés de confiance de l'expéditeur a échoué."
+        "Les clés de confiance de l'expéditeur n'ont pas pu être vérifiées."
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Ne pas signer"
+      ],
+      "Sign": [
+        "Signer"
       ]
     },
     "Sort option": {
@@ -7736,7 +7763,7 @@
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
       ],
       "Message Content Search": [
-        "Recherche de contenu de message"
+        "Recherche dans le contenu des messages"
       ],
       "Schedule send": [
         "Programmer l'envoi"
@@ -7751,7 +7778,7 @@
         "Vous pouvez désormais programmer vos messages pour les envoyer plus tard."
       ],
       "You can now search the content of your encrypted emails.": [
-        "Vous pouvez désormais rechercher le contenu de vos e-mails chiffrés."
+        "Vous pouvez désormais faire des recherches dans le contenu de vos e-mails chiffrés."
       ]
     },
     "Status": {
@@ -7872,19 +7899,19 @@
         "${ elementsCount } messages retirés de ${ labelName }."
       ],
       "Address copied to clipboard": [
-        "Adresse copiée dans le presse-papiers"
+        "L'adresse a été copiée dans le presse-papiers."
       ],
       "Address verification disabled": [
-        "Adresse de vérification désactivée"
+        "L'adresse de vérification a été désactivée."
       ],
       "Bug reported": [
-        "Bug signalé"
+        "Le bug a été signalé."
       ],
       "Canceling import": [
         "Annulation de l'importation"
       ],
       "Code sent to ${ methodTo }": [
-        "Code envoyé à ${ methodTo }."
+        "Le code a été envoyé à ${ methodTo }."
       ],
       "Contact deleted": [
         "Contact supprimé",
@@ -7895,106 +7922,106 @@
         "Groupes de contacts supprimés"
       ],
       "Contact saved": [
-        "Contact enregistré"
+        "Le contact a été enregistré."
       ],
       "Contacts deleted": [
-        "Contacts supprimés"
+        "Les contacts ont été supprimés."
       ],
       "Conversation added to ${ labelName }.": [
-        "Conversation ajoutée à ${ labelName }."
+        "La conversation a été ajoutée à ${ labelName }."
       ],
       "Conversation deleted": [
-        "Conversation supprimée"
+        "La conversation a été supprimée."
       ],
       "Conversation marked as read.": [
-        "Conversation marquée comme lue."
+        "La conversation a été marquée comme lue."
       ],
       "Conversation marked as Starred.": [
-        "Conversation marquée comme favorite."
+        "La conversation a été marquée comme favorite."
       ],
       "Conversation marked as unread.": [
-        "Conversation marquée comme non lue."
+        "La conversation a été marquée comme non lue."
       ],
       "Conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "Conversation déplacée dans le dossier ${ folderName } et expéditeur ajouté à votre liste des non indésirables/spam."
+        "La conversation a été déplacée dans le dossier ${ folderName } et l'expéditeur a été ajouté à votre liste de non indésirables/spam."
       ],
       "Conversation moved to ${ folderName }.": [
-        "Conversation déplacée dans le dossier ${ folderName }."
+        "La conversation a été déplacée dans le dossier ${ folderName }."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
-        "Conversation déplacée dans le dossier Indésirables/spam et expéditeur ajouté à votre liste d'indésirables/spam."
+        "La conversation a été déplacée dans le dossier Indésirables/spam et l'expéditeur a été ajouté à votre liste d'indésirables/spam."
       ],
       "Conversation removed from ${ labelName }.": [
-        "Conversation retirée de ${ labelName }."
+        "La conversation a été retirée de ${ labelName }."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
-        "Les conversations de ${ sendersList } seront labélisées comme ${ labelsList }"
+        "Les conversations de ${ sendersList } seront labellisées comme ${ labelsList }"
       ],
       "Conversations from ${ sendersList } will be moved to ${ folder }": [
         "Les conversations de ${ sendersList } seront déplacées dans ${ folder }."
       ],
       "Draft deleted": [
-        "Brouillon supprimé"
+        "Le brouillon a été supprimé."
       ],
       "Email address copied to clipboard": [
-        "Adresse électronique copiée dans le presse-papiers"
+        "L'adresse électronique a été copiée dans le presse-papiers."
       ],
       "Fingerprint copied to clipboard": [
-        "Empreinte copiée dans le presse-papier"
+        "L'empreinte a été copiée dans le presse-papiers."
       ],
       "Folder cleared": [
-        "Dossier effacé"
+        "Le dossier a été effacé."
       ],
       "Import record deleted": [
         "L'enregistrement d'importation a été supprimé."
       ],
       "Keyboard shortcuts preferences updated": [
-        "Préférences des raccourcis clavier mises à jour"
+        "Les préférences des raccourcis clavier ont été mises à jour."
       ],
       "Label cleared": [
-        "Label effacé"
+        "Le label a été effacé."
       ],
       "Labels applied.": [
-        "Labels appliqués."
+        "Les labels ont été appliqués."
       ],
       "Mail list unsubscribed": [
-        "Désabonné de la liste de diffusion"
+        "Le désabonnement de la liste de diffusion a été effectué."
       ],
       "Message added to ${ labelName }.": [
-        "Message ajouté à ${ labelName }."
+        "Le message a été ajouté à ${ labelName }."
       ],
       "Message content search activated": [
-        "Recherche de contenu de message activée"
+        "La recherche dans le contenu des messages a été activée."
       ],
       "Message deleted": [
-        "Message supprimé"
+        "Le message a été supprimé."
       ],
       "Message marked as legitimate": [
-        "Message marqué comme étant légitime"
+        "Le message a été marqué comme légitime."
       ],
       "Message marked as read.": [
-        "Message marqué comme lu."
+        "Le message a été marqué comme lu."
       ],
       "Message marked as Starred.": [
-        "Message marqué comme favori."
+        "Le message a été marqué comme favori."
       ],
       "Message marked as unread.": [
-        "Message marqué comme non lu."
+        "Le message a été marqué comme non lu."
       ],
       "Message moved to ${ folderName } and sender added to your not spam list.": [
-        "Message déplacé dans le dossier ${ folderName } et expéditeur ajouté à votre liste des non indésirables/spam."
+        "Le message a été déplacé dans le dossier ${ folderName } et l'expéditeur a été ajouté à votre liste de non indésirables/spam."
       ],
       "Message moved to ${ folderName }.": [
-        "Message déplacé dans le dossier ${ folderName }."
+        "Le message a été déplacé dans le dossier ${ folderName }."
       ],
       "Message moved to spam and sender added to your spam list.": [
-        "Message déplacé dans le dossier Indésirables/spam et expéditeur ajouté à votre liste d'indésirables/spam."
+        "Le message a été déplacé dans le dossier Indésirables/spam et l'expéditeur a été ajouté à votre liste d'indésirables/spam."
       ],
       "Message removed from ${ labelName }.": [
-        "Message retiré de ${ labelName }."
+        "Le message a été retiré de ${ labelName }."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
-        "Les messages de ${ sendersList } seront labélisés comme ${ labelsList }"
+        "Les messages de ${ sendersList } seront labellisés comme ${ labelsList }"
       ],
       "Messages from ${ sendersList } will be moved to ${ folder }": [
         "Les messages de ${ sendersList } seront déplacés dans ${ folder }."
@@ -8008,31 +8035,31 @@
         "Déplacer ${ selectionCount } messages"
       ],
       "Password copied to clipboard": [
-        "Mot de passe copié dans le presse-papiers"
+        "Le mot de passe a été copié dans le presse-papiers."
       ],
       "Phishing reported": [
-        "Phishing/hameçonnage signalé"
+        "Le phishing/hameçonnage a été signalé."
       ],
       "Phone number copied to clipboard": [
-        "Numéro de téléphone copié dans le presse-papiers"
+        "Le numéro de téléphone a été copié dans le presse-papiers."
       ],
       "Preference saved": [
-        "Préférence enregistrée"
+        "La préférence a été enregistrée."
       ],
       "Preferences saved": [
-        "Préférences enregistrées"
+        "Les préférences ont été enregistrées."
       ],
       "Public key trusted": [
-        "Clé publique approuvée"
+        "La clé publique a été approuvée."
       ],
       "Read receipt sent": [
-        "Confirmation de lecture envoyée"
+        "La confirmation de lecture a été envoyée."
       ],
       "Undo in progress": [
         "Annulation en cours"
       ],
       "Verification successful": [
-        "Vérification réussie"
+        "La vérification est réussie."
       ]
     },
     "Success notification": {
@@ -8042,7 +8069,7 @@
     },
     "Success notification when user send feedback": {
       "Feedback sent": [
-        "Avis envoyé"
+        "Votre commentaire a été envoyé."
       ]
     },
     "Table header": {
@@ -8204,7 +8231,7 @@
         "Effacement des données"
       ],
       "Composer mode": [
-        "Mode du composeur"
+        "Mode de l'éditeur"
       ],
       "Confirm recipient address?": [
         "Confirmer l'adresse du destinataire ?"
@@ -8320,7 +8347,7 @@
         "Adresses électroniques"
       ],
       "Email composer": [
-        "Composeur de message"
+        "Éditeur de messages"
       ],
       "Email content": [
         "Contenu du message"
@@ -8329,7 +8356,7 @@
         "Paramètres d'adresse électronique"
       ],
       "Enable message content search": [
-        "Activer la recherche de contenu de message"
+        "Activer la recherche dans le contenu dans les messages"
       ],
       "Enter your password": [
         "Saisissez votre mot de passe."
@@ -8387,7 +8414,7 @@
         "Insérer des contacts"
       ],
       "Invalid verification code": [
-        "Code de vérification non valide"
+        "Le code de vérification n'est pas valide."
       ],
       "Label as": [
         "Labelliser"
@@ -8492,7 +8519,7 @@
         "Ouvrir le menu des paramètres"
       ],
       "Other information": [
-        "Autre information"
+        "Autres informations"
       ],
       "Other names": [
         "Autres noms"
@@ -8516,10 +8543,10 @@
         "Nouvelle signature des contacts"
       ],
       "Recipient missing": [
-        "Destinataire manquant"
+        "Il manque le destinataire."
       ],
       "Recipients": [
-        "Destinaires"
+        "Destinataires"
       ],
       "Reconnect your account": [
         "Reconnecter votre compte"
@@ -8546,7 +8573,7 @@
         "Choisissez un thème"
       ],
       "Select action to take on contact group": [
-        "Sélectionnez l'action à effectuer sur le groupe de contacts."
+        "Sélectionnez l'action que vous voulez effectuer sur le groupe de contacts."
       ],
       "Select contact group": [
         "Sélectionner le groupe de contacts"
@@ -8600,13 +8627,13 @@
         "Démarrer une nouvelle importation"
       ],
       "Start import process": [
-        "Démarrer le processus d'importation"
+        "Démarrer l'importation"
       ],
       "Storage capacity warning": [
         "Avertissement de capacité de stockage"
       ],
       "Subject missing": [
-        "Votre e-mail n'a pas d'objet"
+        "Il manque l'objet."
       ],
       "To": [
         "À"
@@ -8631,10 +8658,10 @@
         "Se désabonner"
       ],
       "Unsubscribe request sent": [
-        "Demande de désinscription envoyée"
+        "La demande de désabonnement a été envoyée."
       ],
       "Upgrade required": [
-        "Abonnement supérieur nécessaire"
+        "Un abonnement supérieur est nécessaire."
       ],
       "Verification error": [
         "Erreur de vérification"
@@ -8674,7 +8701,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automatique : le format utilisé dans le composeur est utilisé pour l'envoi à cet utilisateur. Texte brut : le message sera toujours converti en texte brut lors de l'envoi."
+        "Automatique : le format utilisé dans l'éditeur est utilisé pour l'envoi à cet utilisateur. Texte brut : le message sera toujours converti en texte brut lors de l'envoi."
       ],
       "Customize import to reduce the number of folders": [
         "Personnalisez l'importation pour réduire le nombre de dossiers."
@@ -8695,7 +8722,7 @@
         "Modifiez les noms des labels."
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "Le chiffrement d'e-mail force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés"
+        "Le chiffrement d'e-mail force la signature des courriers électroniques pour vous aider à authentifier vos messages envoyés."
       ],
       "Encrypted data": [
         "Données chiffrées"
@@ -8704,7 +8731,7 @@
         "Données chiffrées avec une signature numérique vérifiée"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
-        "Gmail catégorise automatiquement certains emails comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces emails."
+        "Gmail catégorise automatiquement certains emails comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces e-mails."
       ],
       "Hide side panel": [
         "Masquer le panneau latéral"
@@ -8779,7 +8806,7 @@
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
       ],
       "Are you sure you want to discard your import?": [
-        "Souhaitez-vous vraiment annuler votre importation ?"
+        "Voulez-vous vraiment annuler votre importation ?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } groupe de contacts ?",
@@ -8802,32 +8829,35 @@
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d'alerte, mais vous perdrez alors définitivement l'accès à toutes les données chiffrées avec cette clé."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Le chat en direct est une fonctionnalité premium pour les utilisateurs avec un abonnement ${ VPN_APP_NAME } payant. Nous vous invitons à ouvrir un ticket à la place."
+        "Le chat en direct est une fonction premium uniquement disponible pour les utilisateurs ayant un abonnement ${ VPN_APP_NAME } payant. Nous vous invitons à ouvrir un ticket à la place."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."
       ],
+      "Skip verification?": [
+        "Ignorer la vérification ?"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Certains contacts à fusionner affichent des erreurs. Veuillez les examiner individuellement."
+        "Certains contacts à fusionner affichent des erreurs. Nous vous invitons à les examiner individuellement."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "La vérification de la signature de la pièce jointe a échoué.\nVous pouvez quand même télécharger cette pièce jointe, mais elle pourrait avoir été altérée.",
-        "La vérification de la signature de certaines pièces jointes a échoué.\nVous pouvez toujours télécharger ces pièces jointes, mais elles pourraient avoir été altérées."
+        "La signature de la pièce jointe n'a pas pu être vérifiée.\nVous pouvez quand même télécharger cette pièce jointe, mais elle pourrait avoir été altérée.",
+        "La signature de certaines pièces jointes n'a pas pu être vérifiée.\nVous pouvez toujours télécharger ces pièces jointes, mais elles pourraient avoir été altérées."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Les données du contact sont corrompues et ne peuvent pas être affichées."
       ],
       "The contact failed to load.": [
-        "Le chargement du contact a échoué."
+        "Le contact n'a pas pu être chargé."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Les paramètres de date et heure de votre appareil ne sont pas synchronisés. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Le déchiffrement du contenu chiffré a échoué."
+        "Le contenu chiffré n'a pas pu être déchiffré."
       ],
       "The verification of the contact details' signature failed.": [
-        "La vérification de la signature des coordonnées a échoué."
+        "La signature des coordonnées n'a pas pu être vérifiée."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Cette action est irréversible. Saisissez le mot ${ boldDanger } dans le champ pour continuer."
@@ -8840,6 +8870,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Nous ne sommes malheureusement pas en ligne pour le moment. Nous vous invitons à remplir le formulaire ci-dessous pour décrire votre problème. Nous l'examinerons et vous contacterons dès que nous serons de nouveau en ligne."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Le serveur de messagerie n'a pas pu être vérifié. Si vous lui faites confiance, vous pouvez ignorer cette vérification."
       ],
       "You will lose any customization you made so far.": [
         "Vous perdrez toutes les personnalisations que vous avez faites jusqu'à présent."
@@ -9069,7 +9102,7 @@
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Chaque ${ interval } an, ${ timesString }",
-        "Tous les ${ interval } ans, à ${ timesString }"
+        "Tous les ${ interval } ans, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
         "Chaque ${ interval } an, ${ untilString }",

@@ -3012,6 +3012,11 @@
         "Predefinição"
       ]
     },
+    "forwardmessage": {
+      "To: ${ toString }": [
+        "Para: ${ toString }"
+      ]
+    },
     "Get started checklist title": {
       "Get started": [
         "Começar"
@@ -3174,7 +3179,7 @@
         "por agora"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "O ProtonContacts não suporta ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3248,6 +3253,11 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Outro"
       ]
     },
     "Import warning": {
@@ -3627,6 +3637,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduzir o código de verificação. Digite ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Insira a sua senha (como administrador da organização)."
       ],
@@ -3842,9 +3855,6 @@
       "of": [
         "de"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Altere estas configurações só se estiver a usar PGP com destinatários não-${ BRAND_NAME }."
-      ],
       "Other options": [
         "Outras opções"
       ],
@@ -3853,12 +3863,6 @@
       ],
       "per month.": [
         "por mês."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "O PGP incorporado só é compatível com o formato Texto simples. Note que o ${ MAIL_APP_NAME } assina sempre as mensagens encriptadas."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "O PGP/MIME envia automaticamente a mensagem usando o modo de compositor atual. Note que o ${ MAIL_APP_NAME } assina sempre as mensagens encriptadas."
       ],
       "Phone number": [
         "Número de telefone"
@@ -4226,6 +4230,9 @@
       "You selected **${ count } message** with this label": [
         "Selecionou **${ count } mensagem** com esta etiqueta",
         "Selecionou *${ count } mensagens** com esta etiqueta"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os emails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor pague quaisquer faturas em atraso."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -5308,6 +5315,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } criado"
+      ],
       "Contact group created": [
         "Grupo de contactos criado"
       ],
@@ -5334,6 +5344,9 @@
       ],
       "Set up your organization": [
         "Configure a sua organização"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "Utilize o seletor de aplicações no canto superior esquerdo para aceder a todos os serviços ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
       ],
       "You can change this anytime in your settings.": [
         "Pode alterar isto a qualquer momento nas definições."
@@ -5676,7 +5689,21 @@
         "Armazenado com encriptação zero acesso"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Administre os seus contactos e veja o seu calendário sem sair da sua aplicação."
+      ],
+      "Try the new side panel": [
+        "Experimente o novo painel lateral"
+      ]
+    },
     "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "Mensagem encriptada por PGP. Falha na verificação do remetente: ${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "Mensagem assinada por PGP. Falha na verificação do remetente: ${ verificationErrorsMessage }"
+      ],
       "Sender could not be verified: Message not signed": [
         "O remetente não pôde ser verificado: mensagem não assinada"
       ],
@@ -5702,6 +5729,11 @@
       ],
       "Smallest first": [
         "Menores primeiro"
+      ]
+    },
+    "Spotlight": {
+      "Schedule send": [
+        "Agendar o envio"
       ]
     },
     "Status": {
@@ -6502,8 +6534,14 @@
       "Encrypted data with verified digital signature": [
         "Dados encriptados com assinatura digital verificada"
       ],
+      "Hide side panel": [
+        "Ocultar o painel lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
+      ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."

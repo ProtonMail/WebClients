@@ -564,6 +564,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } começou em ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } iniciado em ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } começou ontem"
       ],
@@ -572,6 +575,15 @@
       ],
       "${ title } starts now": [
         "${ title } começa agora"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } inicia em ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } inicia em ${ formattedDate } às ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } inicia em ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } começa em ${ formattedDateWithTime }."
@@ -2049,6 +2061,11 @@
         "A sua importação não será processada."
       ]
     },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Endereço convidado não existe"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
         "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. O formato está errado."
@@ -2487,7 +2504,7 @@
         "por agora"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "O ProtonContacts não suporta ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2553,6 +2570,11 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Outro"
       ]
     },
     "Import warning": {
@@ -2767,6 +2789,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduzir o código de verificação. Digite ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Insira a sua senha (como administrador da organização)."
       ],
@@ -2900,17 +2925,8 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Ocorrências previamente actualizadas pelo organizador serão mantidas."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Altere estas configurações só se estiver a usar PGP com destinatários não-${ BRAND_NAME }."
-      ],
       "Other options": [
         "Outras opções"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "O PGP incorporado só é compatível com o formato Texto simples. Note que o ${ MAIL_APP_NAME } assina sempre as mensagens encriptadas."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "O PGP/MIME envia automaticamente a mensagem usando o modo de compositor atual. Note que o ${ MAIL_APP_NAME } assina sempre as mensagens encriptadas."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Por favor, note que os endereços atribuídos a este grupo NÃO serão eliminados."
@@ -3125,6 +3141,9 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "Vai actualizar todos os eventos desta série. Os participantes removidos serão notificados."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os emails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor pague quaisquer faturas em atraso."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
@@ -3504,6 +3523,11 @@
         "O que é isto?"
       ]
     },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Abrir no ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Loading info": {
       "Connecting to your email provider": [
         "A ligar ao seu fornecedor de correio electrónico"
@@ -3543,10 +3567,10 @@
     },
     "Modal for received invitation to share calendar; Title": {
       "Join calendar": [
-        "Junte-se à agenda"
+        "Junte-se ao calendário"
       ],
       "Unable to join more calendars": [
-        "Não é possível se juntar à mais agendas"
+        "Não é possível aderir a mais calendários"
       ]
     },
     "Modal title": {
@@ -3884,6 +3908,9 @@
       "Set up your organization": [
         "Configure a sua organização"
       ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "Utilize o seletor de aplicações no canto superior esquerdo para aceder a todos os serviços ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
+      ],
       "You can change this anytime in your settings.": [
         "Pode alterar isto a qualquer momento nas definições."
       ]
@@ -4123,6 +4150,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Criado por ${ ownerName }"
+      ]
+    },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Administre os seus contactos e veja o seu calendário sem sair da sua aplicação."
+      ],
+      "Try the new side panel": [
+        "Experimente o novo painel lateral"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -4761,8 +4796,14 @@
       "Encrypted data with verified digital signature": [
         "Dados encriptados com assinatura digital verificada"
       ],
+      "Hide side panel": [
+        "Ocultar o painel lateral"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
+      ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
@@ -4826,6 +4867,11 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acção é irreversível. Por favor, insira a palavra ${ boldDanger } no campo para continuar."
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Não pode aderir a este calendário porque o seu endereço de email convidado (${ boldInvitedAddress }) está desativado."
       ]
     },
     "Weekly recurring event, frequency": {

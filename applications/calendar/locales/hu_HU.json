@@ -2794,7 +2794,7 @@
         "egyenlőre"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "A ProtonContacts ${ forNow } nem támogatja:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2972,6 +2972,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "A ${ boldPublish } alatt, válassza ki a naptárat amelyet importálni szeretne. Állítsa a jogosultságokat ${ boldCanViewAllDetails } típusúra és publikálja."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Egyéb"
       ]
     },
     "Import warning": {
@@ -3266,6 +3271,9 @@
       "Import mailbox": [
         "E-mail fiók importálása"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importálja e-mailjeit, naptárait és névjegyeit más szolgáltatóktól a ${ BRAND_NAME }hoz. Lépésről-lépésre követheti az útmutatót az adatok átköltöztetéséhez és titkosításához. Üdvözöljük a biztonságos magánszféra világában."
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
@@ -3359,17 +3367,8 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Egy vagy több megbízható kulcsát a tulajdonosa \"kompromittáltként\" jelölt meg. Javasoljuk, hogy távolítsa el a kulcsok megbízhatóságát."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
-      ],
       "Other options": [
         "Más opciók"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
@@ -3504,9 +3503,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
       ],
@@ -3614,9 +3610,6 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Visszaállította a jelszavát és a következő naptárakhoz tartozó események visszafejtése nem sikerült.\nA korábban létrehozott naptár megosztási hivatkozások nem fognak működni.\nMinden feliratkozott naptár újra szinkronizálásra kerül, pár percen belül."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Az importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"

@@ -360,6 +360,9 @@
       "Font": [
         "Font"
       ],
+      "Generate": [
+        "Hasilkan"
+      ],
       "Generate key": [
         "Hasilkan kunci"
       ],
@@ -368,6 +371,9 @@
       ],
       "Generate recovery phrase": [
         "Buat frasa pemulihan"
+      ],
+      "Generate token": [
+        "Hasilkan token"
       ],
       "Get ${ vpnPlus }": [
         "Dapatkan ${ vpnPlus }"
@@ -495,11 +501,11 @@
       "Not spam": [
         "Bukan spam"
       ],
-      "Ok": [
-        "Ya"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ya"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
@@ -515,6 +521,9 @@
       ],
       "Pay": [
         "Bayar"
+      ],
+      "Pay ${ price } now": [
+        "Bayar ${ price } sekarang"
       ],
       "Preview": [
         "Pratinjau"
@@ -2619,7 +2628,7 @@
         "${ name } gagal dihapus"
       ],
       "${ name } failed to move to not spam List": [
-        "${ name } gagal dipindahkan ke Daftar Bukan Spam"
+        "${ name } failed to move to the not-spam list"
       ],
       "${ name } failed to move to spam list": [
         "${ name } gagal dipindahkan ke daftar spam"
@@ -3148,6 +3157,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
+      ],
       "This field is required": [
         "Kolom ini wajib diisi"
       ],
@@ -3222,6 +3234,9 @@
       ],
       "You must set a name": [
         "Anda harus mengatur nama"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "Anda harus memiliki alamat domain khusus untuk dapat menghasilkan token submisi SMTP."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi seluruh tagihan yang belum dibayar."
@@ -3927,6 +3942,23 @@
         "Nilai / Data / Poin ke"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Created": [
+        "Dibuat"
+      ],
+      "Email address": [
+        "Alamat email"
+      ],
+      "Last used": [
+        "Terakhir digunakan"
+      ],
+      "Token name": [
+        "Nama token"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestions, use keyboard to navigate.": [
         "Menemukan ${ items.length } saran, gunakan papan ketik untuk navigasi."
@@ -4033,7 +4065,7 @@
         "untuk sekarang"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts tidak mendukung ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4924,6 +4956,9 @@
       "Get my ${ BRAND_NAME } address": [
         "Dapatkan alamat ${ BRAND_NAME } saya"
       ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
+        "Berikan token ini nama yang mudah dikenali, seperti nama layanan yang ingin Anda sandingkan dengannya, dan pilih salah satu alamat domain khusus aktif yang Anda miliki. Ke depannya, hanya alamat ini yang dapat mengirim email dengan token ini."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Berikan kunci publik Anda kepada teman, atau sebarkan secara daring, sehingga setiap orang dapat mengirim Anda dengan pesan terenkripsi ujung ke ujung!"
       ],
@@ -5066,7 +5101,7 @@
         "Koneksi internet telah kembali pulih."
       ],
       "Invites successfully sent": [
-        "Undangan berhasil dikirimkan"
+        "Undangan berhasil dikirim"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Sepertinya sebagian data Anda terenkripsi dan terkunci."
@@ -5479,6 +5514,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "SMTP memungkinkan layanan atau perangkat pihak ketiga untuk dapat mengirim email melalui ${ MAIL_APP_NAME }. Fitur ini merupakan fitur baru yang tersedia bagi pengguna layanan bisnis tertentu. Harap email ${ emailLink } untuk meminta izin akses."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "SMTP memungkinkan layanan atau perangkat pihak ketiga untuk dapat mengirim email melalui ${ MAIL_APP_NAME }. Untuk menggunakan fitur ini, mulailah dengan menghasilkan token baru."
+      ],
       "Some keys successfully reactivated": [
         "Sebagian kunci berhasil diaktifkan kembali"
       ],
@@ -5593,11 +5634,14 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Tautan ini mungkin merupakan serangan homograf dan tidak dapat dibuka oleh browser Edge. Apabila Anda yakin tautan tersebut absah, silakan gunakan browser lain untuk membukanya."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
+      ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "Token ini tidak akan tersedia setelah Anda menutup jendela ini, dan Anda disarankan untuk tidak membagikan token ini dengan siapapun."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Pengguna ini saat ini bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
@@ -5748,6 +5792,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } di luar aplikasi resmi kami, semisal melalui Tunnelblick di macOS atau OpenVPN di GNU/Linux."
+      ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "Gunakan alamat email yang dipilih sebagai nama pengguna SMTP dan token yang dihasilkan sebagai kata sandi SMTP pada layanan eksternal."
       ],
       "Verification can take a few minutes.": [
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
@@ -5934,9 +5981,6 @@
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Anda harus memiliki kalender personal yang aktif untuk dapat mengimpor acara dari berkas ICS."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Anda harus punya kalender pribadi aktif supaya bisa mengimpor acara."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
@@ -7147,6 +7191,12 @@
       "Signature": [
         "Tanda tangan"
       ],
+      "SMTP token": [
+        "Token SMTP"
+      ],
+      "SMTP username": [
+        "Nama pengguna SMTP"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7206,6 +7256,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Ke: ${ PMEmailAddress }"
+      ],
+      "Token name": [
+        "Nama token"
       ],
       "Two-password mode": [
         "Mode dua kata sandi"
@@ -8116,26 +8169,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8205,6 +8238,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8964,6 +9017,9 @@
       "Postal code": [
         "Kode pos"
       ],
+      "Printer": [
+        "Printer"
+      ],
       "Search": [
         "Pencarian"
       ],
@@ -9457,6 +9513,14 @@
         "Hemat"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Aktif"
+      ],
+      "Upcoming": [
+        "Akan datang"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
@@ -9591,6 +9655,9 @@
       ],
       "Sessions revoked": [
         "Sesi berhasil dicabut"
+      ],
+      "SMTP token deleted": [
+        "Token SMTP dihapus"
       ],
       "SPF value copied to clipboard": [
         "Nilai SPF disalin ke clipboard"
@@ -9751,6 +9818,11 @@
       ],
       "vCard field": [
         "Kolom vCard"
+      ]
+    },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "Tidak ada token SMTP yang ditemukan"
       ]
     },
     "Time unit": {
@@ -10052,6 +10124,9 @@
       "Delete ${ label.Name } label": [
         "Hapus ${ label.Name } label"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "Hapus ${ tokenNameToRemove }?"
+      ],
       "Delete account": [
         "Hapus akun"
       ],
@@ -10127,6 +10202,9 @@
       "Encryption and keys": [
         "Enkripsi dan kunci"
       ],
+      "End date": [
+        "Tanggal akhir"
+      ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
       ],
@@ -10171,6 +10249,9 @@
       ],
       "Generate new recovery phrase?": [
         "Buat frasa pemulihan baru?"
+      ],
+      "Generate SMTP token": [
+        "Hasilkan token SMTP"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Dapatkan ${ vpnPlus } untuk mengakses seluruh server"
@@ -10246,6 +10327,9 @@
       ],
       "Layout": [
         "Tata letak"
+      ],
+      "Length": [
+        "Durasi"
       ],
       "Link confirmation": [
         "Konfirmasi tautan"
@@ -10324,6 +10408,9 @@
       ],
       "Phone": [
         "Telepon"
+      ],
+      "Plan": [
+        "Paket"
       ],
       "Plan summary": [
         "Ringkasan paket"
@@ -10451,6 +10538,9 @@
       "Signed in to member account": [
         "Terdaftar masuk dengan akun anggota"
       ],
+      "SMTP tokens": [
+        "Token SMTP"
+      ],
       "Sort folders alphabetically": [
         "Urut folder sesuai abjad"
       ],
@@ -10462,6 +10552,9 @@
       ],
       "Start a new import": [
         "Mulai impor baru"
+      ],
+      "Start date": [
+        "Tanggal mulai"
       ],
       "Start import process": [
         "Mulai proses impor"
@@ -10499,6 +10592,9 @@
       "Time zone": [
         "Zona waktu"
       ],
+      "Total paid": [
+        "Total yang dibayarkan"
+      ],
       "Track your referrals": [
         "Lacak rujukan Anda"
       ],
@@ -10519,6 +10615,9 @@
       ],
       "Upgrade plan": [
         "Tingkatkan akun"
+      ],
+      "Users": [
+        "Pengguna"
       ],
       "Users and addresses": [
         "Pengguna dan alamat"
@@ -10579,6 +10678,12 @@
       ],
       "Your recovery status": [
         "Status pemulihan Anda"
+      ],
+      "Your SMTP token": [
+        "Token SMTP Anda"
+      ],
+      "Your subscriptions": [
+        "Langganan Anda"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Anda telah diundang untuk mencoba ${ MAIL_APP_NAME }"
@@ -10742,6 +10847,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Siklus langganan baru akan dimulai pada ${ formattedTime }"
       ],
       "This address has been disabled": [
         "Alamat ini telah dinonaktifkan"
@@ -10975,6 +11083,9 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"
       ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "Perangkat atau layanan yang menggunakan token ini tidak akan lagi dapat mengirim email melalui ${ MAIL_APP_NAME }."
+      ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Impor ini dapat melebihi kapasitas penyimpanan akun ${ BRAND_NAME } Anda yang tersedia. Mohon pertimbangkan untuk menyesuaikan parameter impor Anda."
       ],
@@ -10982,7 +11093,7 @@
         "Tindakan ini akan menghapus seluruh pesan, folder, dan label yang dihasilkan pada saat impor."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Sayangnya, kami saat ini sedang tidak daring. Harap kabarkan masalah yang telah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali daring."
+        "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda mempercayainya, Anda dapat melewati proses verifikasi ini."

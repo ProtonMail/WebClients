@@ -922,6 +922,9 @@
       "Request timed out": [
         "Час очікування запиту завершився"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "У цьому полі перевищено обмеження ${ maximumLength } символів."
+      ],
       "This field is required": [
         "Це поле є обов'язковим"
       ],
