@@ -13,6 +13,7 @@ import { Api } from '../interfaces';
 import { DateTime } from '../interfaces/calendar/Date';
 import {
     FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST,
+    MANUAL_TIMEZONE_EQUIVALENCE,
     MANUAL_TIMEZONE_LINKS,
     unsupportedTimezoneLinks,
 } from './timezoneDatabase';
@@ -203,6 +204,16 @@ export const getTimeZoneOptions: GetTimeZoneOptions = (
                 key: name,
             };
         });
+};
+
+/**
+ * Given two time zone ids, determine if they are equivalent.
+ * */
+export const getIsEquivalentTimeZone = (tzid1: string, tzid2: string) => {
+    const equivalentTimeZone1 = MANUAL_TIMEZONE_EQUIVALENCE[tzid1] || tzid1;
+    const equivalentTimeZone2 = MANUAL_TIMEZONE_EQUIVALENCE[tzid2] || tzid2;
+
+    return equivalentTimeZone1 === equivalentTimeZone2;
 };
 
 /**
