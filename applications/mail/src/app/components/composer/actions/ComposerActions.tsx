@@ -182,7 +182,7 @@ const ComposerActions = ({
                                     <p className="mt0 mb0-5 text-bold">{c('Spotlight').t`Schedule send`}</p>
                                     <p className="m0">{c('Spotlight')
                                         .t`You can now schedule your messages to be sent later`}</p>
-                                    <Href url={getKnowledgeBaseUrl('/scheduled-send')} title="Scheduled send">
+                                    <Href url={getKnowledgeBaseUrl('/schedule-email-send')} title="Scheduled send">
                                         {c('Info').t`Learn more`}
                                     </Href>
                                 </div>
