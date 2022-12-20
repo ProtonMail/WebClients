@@ -154,7 +154,8 @@ export function useLinksActions({
         abortSignal: AbortSignal,
         shareId: string,
         linkIds: string[],
-        query: (batchLinkIds: string[], shareId: string) => any
+        query: (batchLinkIds: string[], shareId: string) => any,
+        maxParallelRequests = MAX_THREADS_PER_REQUEST
     ) => {
         return withLinkLock(shareId, linkIds, async () => {
             const responses: { batchLinkIds: string[]; response: T }[] = [];
@@ -174,7 +175,7 @@ export function useLinksActions({
                             batchLinkIds.forEach((linkId) => (failures[linkId] = error));
                         })
             );
-            await preventLeave(runInQueue(queue, MAX_THREADS_PER_REQUEST));
+            await preventLeave(runInQueue(queue, maxParallelRequests));
             return {
                 responses,
                 successes,
@@ -186,7 +187,8 @@ export function useLinksActions({
     const batchHelperMultipleShares = async (
         abortSignal: AbortSignal,
         ids: { shareId: string; linkId: string }[],
-        query: (batchLinkIds: string[], shareId: string) => any
+        query: (batchLinkIds: string[], shareId: string) => any,
+        maxParallelRequests = MAX_THREADS_PER_REQUEST
     ) => {
         const groupedByShareId = groupWith((a, b) => a.shareId === b.shareId, ids);
 
@@ -196,7 +198,8 @@ export function useLinksActions({
                     abortSignal,
                     group[0].shareId,
                     group.map(({ linkId }) => linkId),
-                    query
+                    query,
+                    maxParallelRequests
                 );
             })
         );
@@ -249,9 +252,18 @@ export function useLinksActions({
         const sortedLinks = links.sort((a, b) => (b.trashed || 0) - (a.trashed || 0));
         const sortedLinkIds = sortedLinks.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }));
 
-        const results = await batchHelperMultipleShares(abortSignal, sortedLinkIds, (batchLinkIds, shareId) => {
-            return queries.queryRestoreLinks(shareId, batchLinkIds);
-        });
+        // Limit restore to one thread at a time only to make sure links are
+        // restored in proper order (parents need to be restored before childs).
+        const maxParallelRequests = 1;
+
+        const results = await batchHelperMultipleShares(
+            abortSignal,
+            sortedLinkIds,
+            (batchLinkIds, shareId) => {
+                return queries.queryRestoreLinks(shareId, batchLinkIds);
+            },
+            maxParallelRequests
+        );
 
         return results;
     };
