@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { ButtonLikeShape } from '@proton/atoms';
 import { ThemeColorUnion } from '@proton/colors';
+import { useCombinedRefs } from '@proton/hooks';
 import { ArmoredKeyWithInfo, parseKeyFiles } from '@proton/shared/lib/keys';
 
 import FileInput from '../../../components/input/FileInput';
-import useCombinedRefs from '../../../hooks/useCombinedRefs';
 
 interface Props {
     onUpload: (keys: ArmoredKeyWithInfo[]) => void;

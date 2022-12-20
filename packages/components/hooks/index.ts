@@ -21,7 +21,6 @@ export * from './useCalendarUserSettings';
 export { default as useCanReactivateKeys } from './useCanReactivateKeys';
 export { useLabels, useFolders, useContactGroups } from './useCategories';
 export { default as useClickOutside } from './useClickOutside';
-export { default as useCombinedRefs } from './useCombinedRefs';
 export { default as useConfig } from './useConfig';
 export { default as useContactEmails } from './useContactEmails';
 export { default as useContactEmailsSortedByName } from './useContactEmailsSortedByName';

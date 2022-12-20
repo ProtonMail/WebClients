@@ -1,6 +1,7 @@
 import { ComponentPropsWithRef, ReactNode, Ref, forwardRef, useEffect, useRef } from 'react';
 
-import { useCombinedRefs } from '../../..';
+import { useCombinedRefs } from '@proton/hooks';
+
 import { classnames } from '../../../helpers';
 import useAutoGrow from '../../../hooks/useAutoGrow';
 
