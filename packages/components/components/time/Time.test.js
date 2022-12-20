@@ -20,11 +20,11 @@ describe('Time component', () => {
     });
 
     it('should support format', () => {
-        const { container } = render(<Time differentDayFormat="PPp">{unixDate}</Time>);
+        const { container } = render(<Time format="PPp">{unixDate}</Time>);
 
         expect(container.firstChild.textContent).toBe(
             readableTime(unixDate, {
-                differentDayFormat: 'PPp',
+                format: 'PPp',
             })
         );
     });
@@ -33,14 +33,14 @@ describe('Time component', () => {
         const todayUnixDate = Math.floor(Date.now() / 1000);
 
         const { container } = render(
-            <Time differentDayFormat="PP" sameDayFormat="PP">
+            <Time format="PP" sameDayFormat="PP">
                 {todayUnixDate}
             </Time>
         );
 
         expect(container.firstChild.textContent).toBe(
             readableTime(todayUnixDate, {
-                differentDayFormat: 'PP',
+                format: 'PP',
                 sameDayFormat: 'PP',
             })
         );

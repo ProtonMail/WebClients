@@ -623,7 +623,7 @@ const WireGuardConfigurationSection = () => {
             setCertificates([...(certificates || []), newCertificate]);
             setCurrentCertificate(newCertificate.id);
             const formattedExpirationDate = readableTime(newCertificate.expirationTime, {
-                differentDayFormat: 'PPp',
+                format: 'PPp',
             });
             createNotification({
                 // translator: formattedExpirationDate is a date+time such as "Jan 31, 2023, 7:57 PM" with format appropriately localized to match current locale

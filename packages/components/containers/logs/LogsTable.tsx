@@ -72,7 +72,7 @@ const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
                                 </TableCell>
                             )}
                             <TableCell className="text-right">
-                                <Time key={key} differentDayFormat="PPp">
+                                <Time key={key} format="PPp">
                                     {time}
                                 </Time>
                             </TableCell>

@@ -3,8 +3,14 @@ import { format as formatDate, fromUnixTime, getUnixTime, isSameDay } from 'date
 import { serverTime } from '@proton/crypto';
 
 export type Options = Parameters<typeof formatDate>[2] & {
+    /**
+     * Date format if `unixTime` argument is today.
+     */
     sameDayFormat?: string;
-    differentDayFormat?: string;
+    /**
+     * Date format in general case
+     */
+    format?: string;
 };
 
 /**
@@ -14,7 +20,7 @@ export type Options = Parameters<typeof formatDate>[2] & {
  */
 export const readableTime = (unixTime: number, options?: Options) => {
     const sameDayFormat = options?.sameDayFormat ?? 'p';
-    const differentDayFormat = options?.differentDayFormat ?? 'PP';
+    const format = options?.format ?? 'PP';
 
     const date = fromUnixTime(unixTime);
 
@@ -22,7 +28,7 @@ export const readableTime = (unixTime: number, options?: Options) => {
         return formatDate(date, sameDayFormat, options);
     }
 
-    return formatDate(date, differentDayFormat, options);
+    return formatDate(date, format, options);
 };
 
 export const getCurrentUnixTimestamp = () => {
