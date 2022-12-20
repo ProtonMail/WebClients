@@ -40,7 +40,6 @@ import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMa
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from '@proton/crypto';
-import useInstance from '@proton/hooks/useInstance';
 import { updateAttendeePartstat, updateMember, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { emailToAttendee, getAttendeeEmail, toApiPartstat } from '@proton/shared/lib/calendar/attendees';
@@ -295,7 +294,6 @@ const InteractiveCalendarView = ({
     const relocalizeText = useRelocalizeText();
     const config = useConfig();
     const isSavingEvent = useRef(false);
-    const sentryLogsIDs = useInstance(() => new Set<string>());
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
 
@@ -1703,7 +1701,6 @@ const InteractiveCalendarView = ({
                             tzid={tzid}
                             weekStartsOn={weekStartsOn}
                             displayNameEmailMap={displayNameEmailMap}
-                            sentryLogsIDs={sentryLogsIDs}
                             formatTime={formatTime}
                             onDelete={(inviteActions) => {
                                 return (

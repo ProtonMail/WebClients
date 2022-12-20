@@ -1,4 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
@@ -70,8 +71,18 @@ export const getAuthorPublicKeysMap = async ({
                 })
                 .map((key) => key.publicKey);
         } else {
-            const { pinnedKeys } = await getEncryptionPreferences(author);
-            publicKeysMap[author] = pinnedKeys;
+            try {
+                const { pinnedKeys } = await getEncryptionPreferences(author);
+                publicKeysMap[author] = pinnedKeys;
+            } catch (error: any) {
+                // We're seeing too many unexpected offline errors in the GET /keys route.
+                // We log them to Sentry and ignore them here (no verification will take place in these cases)
+                const { ID, CalendarID } = event;
+                const errorMessage = error?.message || 'Unknown error';
+                captureMessage('Unexpected error verifying event signature', {
+                    extra: { message: errorMessage, eventID: ID, calendarID: CalendarID },
+                });
+            }
         }
     });
     await Promise.all(promises);
