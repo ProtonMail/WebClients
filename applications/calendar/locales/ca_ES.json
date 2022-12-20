@@ -4,6 +4,14 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "Vista completa (vegeu tots els detalls dels esdeveniments)"
+      ],
+      "Limited view (see only free/busy)": [
+        "Vista limitada (mostra només lliures/ocupats)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introducció a ${ BRAND_NAME }"
@@ -523,10 +531,10 @@
     },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
-        "Compartir amb usuaris de ${ BRAND_NAME }"
+        "Comparteix amb usuaris de ${ BRAND_NAME }"
       ],
       "Share with anyone": [
-        "Compartir amb qualsevol"
+        "Comparteix amb tothom"
       ]
     },
     "Actions message": {
@@ -559,6 +567,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } va començar el ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } va començar el ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } va començar ahir"
       ],
@@ -570,6 +581,9 @@
       ],
       "${ title } starts now": [
         "${ title } comença ara"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } va començar a les ${ formattedDate }"
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title } va començar el ${ formattedDate } a les ${ formattedHour }"
@@ -629,6 +643,11 @@
     "Attendee role": {
       "Optional": [
         "Opcional"
+      ]
+    },
+    "Badge": {
+      "Coming soon": [
+        "Disponible properament"
       ]
     },
     "Beta access description": {
@@ -754,9 +773,24 @@
         "Heu acceptat provisionalment la invitació"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Sou l'únic/a que podeu veure l'etiqueta"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Podeu canviar o eliminar permisos en qualsevol moment."
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "Permisos"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Ja teniu accés a aquest calendari"
       ]
     },
     "Calendar share limit modal": {
@@ -765,6 +799,22 @@
       ],
       "Manage members": [
         "Gestionar membres"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Heu assolit el màxim de ${ MAX_CALENDAR_MEMBERS } membre per aquest calendari.\nPer compartir aquest calendari amb altres comptes de ${ BRAND_NAME }, esborreu-ne algun membre.",
+        "Heu assolit el màxim de ${ MAX_CALENDAR_MEMBERS } membres per aquest calendari.\nPer compartir aquest calendari amb altres comptes de ${ BRAND_NAME }, esborreu-ne algun membre."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Heu assolit el màxim de ${ MAX_LINKS_PER_CALENDAR } enllaç per aquest calendari.\nPer crear un nou enllaç a aquest calendari, esborreu el que hi ha.",
+        "Heu assolit el màxim de ${ MAX_LINKS_PER_CALENDAR } enllaços per aquest calendari.\nPer crear un nou enllaç a aquest calendari, esborreu-ne un dels que hi ha."
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Edita (veu, crea i edita els detalls de l'esdeveniment)"
+      ],
+      "View (see all event details)": [
+        "Mostra tots els detalls de l'esdeveniment"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -829,6 +879,11 @@
       ],
       "Week": [
         "Setmana"
+      ]
+    },
+    "Calendar view selector": {
+      "Change time range to": [
+        "Canvieu a la vista de"
       ]
     },
     "Collapsible tooltip": {
@@ -2125,6 +2180,9 @@
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
       ],
+      "No public key for ${ BRAND_NAME } address": [
+        "L'adreça ${ BRAND_NAME } no té clau pública"
+      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -2305,6 +2363,9 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment.",
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "El fitxer ${ formattedFilename } conté un mètode invàlid i no pot ser importat."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "El vostre fitxer ${ formattedFilename } no conté esdeveniments per importar."
@@ -2723,6 +2784,9 @@
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } actualment no permet determinats tipus d'esdeveniments, detalls i formats."
+      ],
       "vCard versions < 3.0": [
         "versions vCard < 3.0"
       ]
@@ -2783,7 +2847,7 @@
         "per ara"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow } no és compatible amb:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2913,6 +2977,11 @@
     "Import instructions step": {
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Vés a ${ calendarViewLink } a Yahoo."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Altres"
       ]
     },
     "Import warning": {
@@ -3140,6 +3209,9 @@
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada."
       ],
+      "Emails are automatically signed": [
+        "Els correus són signats automàticament"
+      ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra app d'autenticació."
       ],
@@ -3297,17 +3369,8 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les teves claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Et recomanem que marquis aquestes claus com a \"no confiables\"."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Altres opcions"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline només és compatible amb el format de text net. Tingueu en compte que ${ MAIL_APP_NAME } sempre signa els missatges xifrats."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME envia automàticament el missatge utilitzant el mode actual de l'editor. Tingueu en compte que ${ MAIL_APP_NAME } sempre signa els missatges xifrats."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
@@ -3439,6 +3502,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les teves targetes de crèdit."
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
       ],
@@ -3517,6 +3583,9 @@
       "Yearly": [
         "Anual"
       ],
+      "You already joined this calendar": [
+        "Ja us heu unit a aquest calendari"
+      ],
       "You are about to open another browser tab and visit:": [
         "Esteu a punt d'obrir una altra pestanya del navegador i visitar:"
       ],
@@ -3541,8 +3610,8 @@
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Heu restablert la vostra contrasenya i els esdeveniments vinculats als calendaris següents no s'han pogut desxifrar. Qualsevol enllaç de calendari compartit que hàgiu creat prèviament no tornarà a funcionar.\nTots els calendaris subscrits actius es sincronitzaran altra vegada després d'uns minuts."
       ],
-      "You need to have an active personal calendar to import your events.": [
-        "Necessiteu tenir un calendari personal actiu per importar els vostres esdeveniments."
+      "You previously rejected this invitation. Ask the owner for a re-invite": [
+        "Heu rebutjat aquesta invitació prèviament. Demaneu al propietari que us torni a convidar"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
@@ -3745,6 +3814,18 @@
       ],
       "Emails": [
         "Correus electrònics"
+      ],
+      "Emails (all messages)": [
+        "Correus electrònics (tots els missatges)"
+      ],
+      "Emails (last 12 months)": [
+        "Correus electrònics (els darrers 12 mesos)"
+      ],
+      "Emails (last 3 months)": [
+        "Correus electrònics (els darrers 3 mesos)"
+      ],
+      "Emails (last month)": [
+        "Correus electrònics (el mes passat)"
       ],
       "Enable Beta Access": [
         "Activar Accés Beta"
@@ -3999,6 +4080,11 @@
         "${ Label.Name } creada"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Subfinestra lateral"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Calendaris"
@@ -4056,6 +4142,24 @@
         "La importació s'està iniciant"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar tots els missatges d'$${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetés i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -4086,6 +4190,17 @@
       ],
       "Manage calendars": [
         "Gestionar els calendaris"
+      ]
+    },
+    "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "No es poden afegir més calendaris. Heu arribat al màxim de calendaris personals del vostre pla."
+      ],
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "No es poden afegir més calendaris. Heu arribat al màxim de calendaris subscrits del vostre pla."
+      ],
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "No es poden crear més calendaris. Heu arribat al màxim de calendaris personals del vostre pla."
       ]
     },
     "Modal for received invitation to share calendar; Title": {
@@ -4125,7 +4240,7 @@
         "Com importar correus electrònics des de Yahoo"
       ],
       "Share calendar": [
-        "Compartir calendari"
+        "Comparteix el calendari"
       ],
       "Time zone changed": [
         "Fus horari canviat"
@@ -4312,6 +4427,14 @@
         "Membres afegits"
       ]
     },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "S'ha rebutjat la invitació al calendari"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Us heu unit a ${ calendarName } (${ senderEmail })"
+      ]
+    },
     "Notification suffix": {
       "by email": [
         "per correu electrònic"
@@ -4432,6 +4555,9 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Benvingut/da a ${ appName }"
+      ],
+      "Where you can take control of your time and your data.": [
+        "Preneu el control del vostre temps i les vostres dades."
       ]
     },
     "Onboarding Action": {
@@ -4702,10 +4828,25 @@
         "No s'han trobat resultats"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "No s'han pogut actualitzar les preferències"
+      ]
+    },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "Per convidar usuaris fora de ${ BRAND_NAME }, compartiu el vostre calendari amb un enllaç"
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Heu sobrepassat el nombre màxim de ${ MAX_CALENDAR_MEMBERS } membre per calendari",
         "Heu sobrepassat el nombre màxim de ${ MAX_CALENDAR_MEMBERS } membres per calendari"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Afegiu els comptes de ${ BRAND_NAME } amb qui voleu compartir ${ calendarName }. Els enviarem una invitació."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -4715,7 +4856,7 @@
     },
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
-        "Compartir amb usuaris de ${ BRAND_NAME }"
+        "Comparteix amb usuaris de ${ BRAND_NAME }"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -4737,6 +4878,12 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
       ],
+      "Don't miss any events": [
+        "No us perdeu cap esdeveniment"
+      ],
+      "Easily accept invites": [
+        "Accepteu invitacions fàcilment"
+      ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
       ],
@@ -4748,6 +4895,9 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Ara podeu afegir notificacions als calendaris als quals us heu subscrit."
       ],
       "You can subscribe to external calendars and read their events.": [
         "Podeu subscriure-us a calendaris externs i llegir-ne els esdeveniments."
@@ -5097,7 +5247,7 @@
         "Crea un grup nou"
       ],
       "Create public link": [
-        "Crear un enllaç publico"
+        "Crea un enllaç públic"
       ],
       "Currency": [
         "Moneda"

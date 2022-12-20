@@ -360,6 +360,9 @@
       "Font": [
         "Yazı tipi"
       ],
+      "Generate": [
+        "Oluştur"
+      ],
       "Generate key": [
         "Anahtar oluştur"
       ],
@@ -368,6 +371,9 @@
       ],
       "Generate recovery phrase": [
         "Kurtarma ifadesi oluştur"
+      ],
+      "Generate token": [
+        "Kod oluştur"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } alın"
@@ -495,10 +501,10 @@
       "Not spam": [
         "İstenmeyen değil"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -515,6 +521,9 @@
       ],
       "Pay": [
         "Öde"
+      ],
+      "Pay ${ price } now": [
+        "Şimdi ${ price } öde"
       ],
       "Preview": [
         "Ön izle"
@@ -2629,7 +2638,7 @@
         "${ name } silinemedi"
       ],
       "${ name } failed to move to not spam List": [
-        "${ name } istenmeyen değil listesine eklenemedi"
+        "${ name } failed to move to the not-spam list"
       ],
       "${ name } failed to move to spam list": [
         "${ name } istenmeyenler listenize eklenemedi"
@@ -3163,6 +3172,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Dış hesabınızda çok fazla klasör var. Lütfen bazı klasörleri silmek için içe aktarma işlemini özelleştirin."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
+      ],
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
       ],
@@ -3237,6 +3249,9 @@
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "SMTP gönderim kodu oluşturmak için bir özel etki alanı adresiniz olması gerekir."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Hesabınızın ya da kuruluşunuzun ödeme süresi geçmiş bir faturası var. Lütfen ödenmemiş tüm faturaları ödeyin."
@@ -3951,6 +3966,23 @@
         "Değer / Veri / Hedef"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Created": [
+        "Oluşturulma"
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
+      "Last used": [
+        "Son kullanılma"
+      ],
+      "Token name": [
+        "Kod adı"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } öneri bulundu, gezinmek için klavyeyi kullanın.",
@@ -4068,7 +4100,7 @@
         "şimdilik"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow } şunu desteklemiyor:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4983,6 +5015,9 @@
       "Get my ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresimi al"
       ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
+        "Kod için, kullanmayı düşündüğünüz hizmet gibi açıklayıcı bir ad yazın ve etkin özel etki alanı adreslerinizden birini seçin. Bu kod ile yalnızca bu adres e-posta gönderebilir."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Herkese açık anahtarınızı arkadaşlarınıza verin ya da çevrimiçi olarak yayınlayın. Böylece isteyen herkes size uçtan uca şifrelenmiş e-posta gönderebilir!"
       ],
@@ -5543,6 +5578,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "SMTP özelliği ile üçüncü taraf hizmetler ya da aygıtlar ${ MAIL_APP_NAME } üzerinden e-posta gönderebilir. Seçilmiş kurumsal kullanıcılar bu yeni özelliği kullanabilir. Lütfen erişim isteğinde bulunmak için ${ emailLink } adresine bir e-posta gönderin."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "SMTP özelliği ile üçüncü taraf hizmetler ya da aygıtlar ${ MAIL_APP_NAME } üzerinden e-posta gönderebilir. Bu özelliği kullanmaya başlamak için yeni bir kod oluşturun."
+      ],
       "Some keys successfully reactivated": [
         "Bazı anahtarlar yeniden etkinleştirildi"
       ],
@@ -5660,11 +5701,14 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir web sitesine gidiyor olabilir."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge web tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
+      ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "Bu pencereyi kapattığınızda bu kod yeniden görülemeyecek ve artık kimse ile paylaşamayacaksınız."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
@@ -5815,6 +5859,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "${ VPN_APP_NAME } sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
+      ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "SMTP kullanıcı adı olarak seçilmiş dış hizmetin e-posta adresini ve SMTP parolası olarak oluşturulan kodu kullanın."
       ],
       "Verification can take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
@@ -6002,9 +6049,6 @@
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Etkinliklerinizi ICS dosyasından içe aktarmak için etkin bir kişisel takviminiz olmalıdır."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Etkinliklerinizi içe aktarmak için etkin bir kişisel takviminiz olmalıdır."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
@@ -7218,6 +7262,12 @@
       "Signature": [
         "İmza"
       ],
+      "SMTP token": [
+        "SMTP kodu"
+      ],
+      "SMTP username": [
+        "SMTP kullanıcı adı"
+      ],
       "Spam": [
         "İstenmeyen e-posta"
       ],
@@ -7277,6 +7327,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Nereye: ${ PMEmailAddress }"
+      ],
+      "Token name": [
+        "Kod adı"
       ],
       "Two-password mode": [
         "İki parola kipi"
@@ -8210,26 +8263,6 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -8299,6 +8332,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -9069,6 +9122,9 @@
       "Postal code": [
         "Posta kodu"
       ],
+      "Printer": [
+        "Yazıcı"
+      ],
       "Search": [
         "Arama"
       ],
@@ -9577,6 +9633,14 @@
         "Kaydet"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Etkin"
+      ],
+      "Upcoming": [
+        "Yaklaşan"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren e-posta ve takvim çözümü."
@@ -9711,6 +9775,9 @@
       ],
       "Sessions revoked": [
         "Oturumlar kapatıldı"
+      ],
+      "SMTP token deleted": [
+        "SMTP kodu silindi"
       ],
       "SPF value copied to clipboard": [
         "SPF değeri panoya kopyalandı"
@@ -9871,6 +9938,11 @@
       ],
       "vCard field": [
         "vCard alanı"
+      ]
+    },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "Herhangi bir SMTP kodu bulunamadı"
       ]
     },
     "Time unit": {
@@ -10175,6 +10247,9 @@
       "Delete ${ label.Name } label": [
         "${ label.Name } etiketini sil"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "${ tokenNameToRemove } kodu silinsin mi?"
+      ],
       "Delete account": [
         "Hesabı sil"
       ],
@@ -10250,6 +10325,9 @@
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
       ],
+      "End date": [
+        "Bitiş tarihi"
+      ],
       "Enter your password": [
         "Parolanızı yazın"
       ],
@@ -10295,6 +10373,9 @@
       ],
       "Generate new recovery phrase?": [
         "Yeni kurtarma ifadesi oluşturulsun mu?"
+      ],
+      "Generate SMTP token": [
+        "SMTP kodu oluştur"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Tüm sunuculara erişmek için ${ vpnPlus } edinin"
@@ -10371,6 +10452,9 @@
       ],
       "Layout": [
         "Görünüm"
+      ],
+      "Length": [
+        "Uzunluk"
       ],
       "Link confirmation": [
         "Bağlantı onayı"
@@ -10449,6 +10533,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Plan": [
+        "Tarife"
       ],
       "Plan summary": [
         "Tarife özeti"
@@ -10576,6 +10663,9 @@
       "Signed in to member account": [
         "Üye hesabıyla oturum açıldı"
       ],
+      "SMTP tokens": [
+        "SMTP kodları"
+      ],
       "Sort folders alphabetically": [
         "Klasörler alfabetik olarak sıralansın"
       ],
@@ -10587,6 +10677,9 @@
       ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
+      ],
+      "Start date": [
+        "Başlangıç tarihi"
       ],
       "Start import process": [
         "İçe aktarma işlemini başlatın"
@@ -10626,6 +10719,9 @@
       "Time zone": [
         "Saat dilimi"
       ],
+      "Total paid": [
+        "Toplam ödenen"
+      ],
       "Track your referrals": [
         "Önerilerinizi izleyin"
       ],
@@ -10646,6 +10742,9 @@
       ],
       "Upgrade plan": [
         "Tarifeyi yükselt"
+      ],
+      "Users": [
+        "Kullanıcı sayısı"
       ],
       "Users and addresses": [
         "Kullanıcılar ve adresler"
@@ -10706,6 +10805,12 @@
       ],
       "Your recovery status": [
         "Kurtarma durumunuz"
+      ],
+      "Your SMTP token": [
+        "SMTP kodunuz"
+      ],
+      "Your subscriptions": [
+        "Abonelikleriniz"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } uygulamasını denemeye çağrıldınız"
@@ -10869,6 +10974,9 @@
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
       ],
       "This address has been disabled": [
         "Bu adres devre dışı bırakıldı"
@@ -11108,6 +11216,9 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Aygıtınızın tarih ve saat ayarları eşit değil. ${ learnMore }"
+      ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "Bu kodu kullanan aygıt ya da hizmet artık ${ MAIL_APP_NAME } üzerinden e-posta gönderemeyecek."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Bu içe aktarma işlemi, ${ BRAND_NAME } hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."

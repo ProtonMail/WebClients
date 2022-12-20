@@ -3386,6 +3386,9 @@
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment.",
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "El fitxer ${ formattedFilename } conté un mètode invàlid i no pot ser importat."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "El vostre fitxer ${ formattedFilename } no conté esdeveniments per importar."
       ],
@@ -3960,6 +3963,9 @@
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } actualment no permet determinats tipus d'esdeveniments, detalls i formats."
+      ],
       "vCard versions < 3.0": [
         "versions vCard < 3.0"
       ]
@@ -4020,7 +4026,7 @@
         "per ara"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow } no és compatible amb:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4158,6 +4164,11 @@
     "Import instructions step": {
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Vés a ${ calendarViewLink } a Yahoo."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Altres"
       ]
     },
     "Import warning": {
@@ -4595,6 +4606,9 @@
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Els rastrejadors de correu electrònic poden violar la vostra privacitat. Activeu la protecció de rastrejadors per evitar que els remitents sàpiguen si heu obert un missatge o quan ho heu fet."
       ],
+      "Emails are automatically signed": [
+        "Els correus són signats automàticament"
+      ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Els correus electrònics emmagatzemats en aquesta carpeta no s'eliminaran i continuaran trobant-se a la carpeta Tot el correu."
       ],
@@ -4889,9 +4903,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les teves claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Et recomanem que marquis aquestes claus com a \"no confiables\"."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Altres opcions"
       ],
@@ -4900,12 +4911,6 @@
       ],
       "per month.": [
         "al mes."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline només és compatible amb el format de text net. Tingueu en compte que ${ MAIL_APP_NAME } sempre signa els missatges xifrats."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME envia automàticament el missatge utilitzant el mode actual de l'editor. Tingueu en compte que ${ MAIL_APP_NAME } sempre signa els missatges xifrats."
       ],
       "Phone number": [
         "Número de telèfon"
@@ -5167,6 +5172,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les teves targetes de crèdit."
+      ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
@@ -5430,9 +5438,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Heu assolit el nombre màxim de 5 respostes."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Necessiteu tenir un calendari personal actiu per importar els vostres esdeveniments."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
@@ -5896,6 +5901,18 @@
       "Emails": [
         "Correus electrònics"
       ],
+      "Emails (all messages)": [
+        "Correus electrònics (tots els missatges)"
+      ],
+      "Emails (last 12 months)": [
+        "Correus electrònics (els darrers 12 mesos)"
+      ],
+      "Emails (last 3 months)": [
+        "Correus electrònics (els darrers 3 mesos)"
+      ],
+      "Emails (last month)": [
+        "Correus electrònics (el mes passat)"
+      ],
       "Enable Beta Access": [
         "Activar Accés Beta"
       ],
@@ -6282,6 +6299,11 @@
         "${ Label.Name } creada"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Subfinestra lateral"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Columna"
@@ -6467,6 +6489,24 @@
       ],
       "Your import is starting": [
         "La importació s'està iniciant"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar tots els missatges d'$${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetés i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -7295,6 +7335,10 @@
         "${ elementsCount } conversa marcada com a no llegida.",
         "${ elementsCount } converses marcades com a no llegides."
       ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } conversa moguda a ${ folderName } i remitent afegit a la llista de no és correu brossa.",
+        "${ elementsCount } converses mogudes a ${ folderName } i remitents afegits a la llista de no és correu brossa."
+      ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversa moguda a ${ folderName }.",
         "${ elementsCount } converses mogudes a ${ folderName }."
@@ -7322,6 +7366,10 @@
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } missatge marcat com a no llegit.",
         "${ elementsCount } missatges marcats com a no llegits."
+      ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } missatge mogut a ${ folderName } i remitent afegit a la llista de no és correu brossa.",
+        "${ elementsCount } missatges moguts a ${ folderName } i remitent afegit a la Llista d'Autoritzats."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } missatge mogut a ${ folderName }.",

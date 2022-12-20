@@ -206,9 +206,6 @@
       "Pay": [
         "Pagar"
       ],
-      "Pay ${ price }": [
-        "Pagar ${ price }"
-      ],
       "Previous": [
         "Anterior"
       ],
@@ -1395,8 +1392,14 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "O navegador que utiliza não permite que o pagamento seja completamente autorizado. Por favor, utilize outro navegador ou inicie sessão via computador."
       ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "O montante mínimo de crédito que pode ser adicionado é ${ price }"
+      ],
       "The minimum amount that can be donated is ${ price }": [
         "A quantia mínima que pode ser doada é ${ price }"
+      ],
+      "The minimum payment we accept is ${ price }": [
+        "O pagamento mínimo que aceitamos é ${ price }"
       ],
       "This field is required": [
         "Este campo é requerido"
@@ -1646,6 +1649,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduzir o código de verificação. Digite ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Insira a sua senha (como administrador da organização)."
       ],
@@ -1738,6 +1744,9 @@
       ],
       "lose access to all current encrypted data": [
         "perder o acesso a todos os dados encriptados actuais"
+      ],
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Introduza manualmente esta informação no seu dispositivo de autenticação de dois factores para configurar a sua conta. ${ switchButton }."
       ],
       "No payment is required at this time.": [
         "Nenhum pagamento é necessário neste momento."
@@ -1943,6 +1952,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redireccionado para o PayPal para verificar o pagamento."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os emails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor pague quaisquer faturas em atraso."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso em breve será restrito. ${ payInvoiceLink }"
       ],
@@ -2041,6 +2053,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
       ],
+      "${ MAIL_APP_NAME } address": [
+        "Endereço ${ MAIL_APP_NAME }"
+      ],
       "${ n } month": [
         "${ n } mês",
         "${ n } meses"
@@ -2062,9 +2077,6 @@
       ],
       "Billing cycle": [
         "Ciclo de faturação"
-      ],
-      "bonus storage": [
-        "bónus de armazenamento"
       ],
       "Browser": [
         "Navegador"
@@ -2231,6 +2243,9 @@
       "Select your country": [
         "Escolha o seu país"
       ],
+      "Start date": [
+        "Data inicial"
+      ],
       "Subscription options": [
         "Opções da subscrição"
       ],
@@ -2371,6 +2386,11 @@
       ],
       "Switch or add account": [
         "Trocar ou adicionar conta"
+      ]
+    },
+    "new_plans: Action": {
+      "From ${ price } per user": [
+        "A partir de ${ price } por utilizador"
       ]
     },
     "new_plans: feature": {
@@ -2635,6 +2655,10 @@
         "${ n } agenda",
         "${ n } agendas"
       ],
+      "${ n } calendar per user": [
+        "${ n } calendário por utilizador",
+        "${ n } calendários por utilizador"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } ligação VPN de alta velocidade",
         "${ n } ligações VPN de alta velocidade"
@@ -2814,9 +2838,6 @@
       ],
       "Back": [
         "Recuar"
-      ],
-      "Billing": [
-        "Facturação"
       ],
       "Billing cycle": [
         "Ciclo de facturação"

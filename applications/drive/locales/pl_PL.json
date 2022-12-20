@@ -215,6 +215,9 @@
       "Download anyway": [
         "Pobierz mimo to"
       ],
+      "Download the Windows application": [
+        "Pobierz aplikację na Windowsa"
+      ],
       "Drive Locked": [
         "Dysk jest zablokowany"
       ],
@@ -1758,6 +1761,11 @@
         "Użyj ustawień globalnych (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Użyj ustawień globalnych (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Zaległa faktura"
@@ -2116,6 +2124,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Wystąpił błąd podczas eksportowania kontaktów do plików vCard"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
       ],
       "This field is required": [
         "Pole jest wymagane"
@@ -2666,7 +2677,7 @@
         "obecnie"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts nie obsługuje ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2877,6 +2888,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "W sekcji ${ boldPublish } wybierz kalendarz, który chcesz zaimportować. Ustaw uprawnienie na ${ boldCanViewAllDetails } i opublikuj go."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Inny"
       ]
     },
     "Import warning": {
@@ -3272,6 +3288,9 @@
       "Each code can only be used once": [
         "Każdy kod może zostać użyty tylko jeden raz"
       ],
+      "Emails are automatically signed": [
+        "Wiadomości są automatyczne podpisywane"
+      ],
       "Enabling drive search": [
         "Włączanie wyszukiwania dysku"
       ],
@@ -3406,6 +3425,9 @@
       ],
       "Import mailbox": [
         "Importuj skrzynkę pocztową"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }. Poprowadzimy Cię na każdym kroku i zaszyfrujemy dane podczas ich przenoszenia. Witaj w świecie prywatności."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ importedEmailAddress } do ${ toEmail }."
@@ -3563,9 +3585,6 @@
         "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })",
         "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Zmień te ustawienia tylko, gdy używasz PGP z odbiorcami spoza ${ BRAND_NAME }."
-      ],
       "Only the people with the link and the password can access this file.": [
         "Tylko posiadacz linku i hasła ma dostęp do pliku."
       ],
@@ -3581,11 +3600,11 @@
       "Permanently delete all files in your locked drive": [
         "Usuń trwale wszystkie pliki z zablokowanego dysku"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "Schemat PGP/Inline jest kompatybilny tylko z trybem zwykłego tekstu. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "Schemat PGP/Inline jest kompatybilny tylko z trybem zwykłego tekstu."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości."
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora."
       ],
       "Please enter the password to decrypt and view content.": [
         "Wpisz hasło, aby odszyfrować zawartość."
@@ -3764,8 +3783,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić, jest wiarygodny i otwórz go za pomocą innej przeglądarki."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
@@ -3799,6 +3818,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "W celu zaimportowania wydarzeń najpierw utwórz kalendarz ${ CALENDAR_APP_NAME }. W utworzonym kalendarzu pojawią się zaimportowane wydarzenia."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Aby podpisać ponownie kontakty, musimy porównać każdy kontakt z listą dostępnych kluczy szyfrowania na koncie. Jeśli dopasowanie nie zostanie znalezione, kontakt zostanie podpisany ponownie za pomocą głównego klucza szyfrowania."
@@ -3928,9 +3950,6 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "Masz ${ expiresInDays }, aby odebrać bonus powitalny 500 MB i "
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Musisz posiadać aktywny osobisty kalendarz, aby zaimportować wydarzenia."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Wykorzystano ${ spaceDisplayed }% dostępnej przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
@@ -5165,6 +5184,14 @@
         "Wypróbuj nowy panel boczny"
       ]
     },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Nie podpisuj"
+      ],
+      "Sign": [
+        "Podpisz"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Zamknij"
@@ -6081,7 +6108,7 @@
         "Nie masz jeszcze żadnych folderów"
       ],
       "You've got files": [
-        "Masz pliki"
+        "Pobierz pliki"
       ],
       "Your 500 MB bonus": [
         "Twój bonus 500 MB"

@@ -922,11 +922,17 @@
       "Request timed out": [
         "リクエストがタイムアウトしました"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "このフィールドは${ maximumLength }文字の最大値を超えています。"
+      ],
       "This field is required": [
         "この項目の入力は必須です"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "文字・数字・ _.- のみを使用してみてください"
       ],
       "Unknown error": [
         "原因不明なエラーが発生しました"
@@ -1131,6 +1137,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "パスワードは ${ length } 文字以上必要です"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     }
   }

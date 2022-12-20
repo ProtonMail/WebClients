@@ -922,6 +922,9 @@
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
+      ],
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
       ],

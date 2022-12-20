@@ -218,8 +218,8 @@
       "Pay": [
         "Сплатити"
       ],
-      "Pay ${ price }": [
-        "Сплатити ${ price }"
+      "Pay ${ price } now": [
+        "Сплатити ${ price } зараз"
       ],
       "Previous": [
         "Попередній"
@@ -463,9 +463,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Поновлюється автоматично ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Поновлюється автоматично ${ formattedEndTime } за ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1600,6 +1597,9 @@
       "The minimum payment we accept is ${ price }": [
         "Найменший платіж, який ми приймаємо — ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "У цьому полі перевищено обмеження ${ maximumLength } символів."
+      ],
       "This field is required": [
         "Це поле є обов'язковим"
       ],
@@ -2725,9 +2725,6 @@
       "Block malware, ads and trackers": [
         "Блокувати зловмисні програми, рекламу і стеження"
       ],
-      "bonus storage": [
-        "бонусне сховище"
-      ],
       "Browser": [
         "Браузер"
       ],
@@ -2958,6 +2955,9 @@
       ],
       "Select your country": [
         "Виберіть вашу країну"
+      ],
+      "Start date": [
+        "Дата початку"
       ],
       "Subscription options": [
         "Опції передплати"
@@ -4180,6 +4180,14 @@
         "Зберегти"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Активний"
+      ],
+      "Upcoming": [
+        "Невдовзі"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Створена для приватності електронна пошта й календар для ваших повсякденних потреб спілкування."
@@ -4374,9 +4382,6 @@
       "Back": [
         "Назад"
       ],
-      "Billing": [
-        "Оплата"
-      ],
       "Billing cycle": [
         "Платіжний цикл"
       ],
@@ -4470,6 +4475,9 @@
       "Email subscriptions": [
         "Підписки електронної пошти"
       ],
+      "End date": [
+        "Дата завершення"
+      ],
       "Enter your password": [
         "Введіть свій пароль"
       ],
@@ -4505,6 +4513,9 @@
       ],
       "Language": [
         "Мова"
+      ],
+      "Length": [
+        "Довжина"
       ],
       "Login password": [
         "Пароль входу"
@@ -4556,6 +4567,9 @@
       ],
       "Phone": [
         "Телефон"
+      ],
+      "Plan": [
+        "Тарифний план"
       ],
       "Plan summary": [
         "Підсумок плану"
@@ -4614,6 +4628,9 @@
       "Sign out": [
         "Вийти"
       ],
+      "Start date": [
+        "Дата початку"
+      ],
       "Status": [
         "Стан"
       ],
@@ -4622,6 +4639,9 @@
       ],
       "Switch to two-password mode": [
         "Перемкнутися на двопарольний режим"
+      ],
+      "Total paid": [
+        "Усього сплачено"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Випробуйте найкраще у ${ MAIL_APP_NAME } безплатно"
@@ -4640,6 +4660,9 @@
       ],
       "Unsupported browser": [
         "Непідтримуваний браузер"
+      ],
+      "Users": [
+        "Користувачі"
       ],
       "Verification": [
         "Перевірка"
@@ -4671,6 +4694,9 @@
       "Your plan": [
         "Ваш тарифний план"
       ],
+      "Your subscriptions": [
+        "Ваші передплати"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Ви запрошені спробувати ${ MAIL_APP_NAME }"
       ],
@@ -4697,6 +4723,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Новий цикл передплати розпочинається з ${ formattedTime }"
       ]
     },
     "Tor out of date": {

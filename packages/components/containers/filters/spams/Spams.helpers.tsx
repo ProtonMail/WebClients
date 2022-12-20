@@ -47,8 +47,8 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
         },
         unspam: {
             fail: isDomain
-                ? c('Domain spam notification').t`${name} failed to move to not spam List`
-                : c('Email spam notification').t`${name} failed to move to not spam List`,
+                ? c('Domain spam notification').t`${ name } failed to move to the not-spam list`
+                : c('Email spam notification').t`${ name } failed to move to the not-spam list`,
             success: isDomain
                 ? c('Domain spam notification').t`${name} moved to not spam list`
                 : c('Email spam notification').t`${name} moved to not spam list`,

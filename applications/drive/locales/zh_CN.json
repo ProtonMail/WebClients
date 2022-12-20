@@ -2571,7 +2571,7 @@
         "暂时"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts 不支持 ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2782,6 +2782,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "在 ${ boldPublish } 选项中，选择您要导入的日历，并将权限设为 ${ boldCanViewAllDetails }，然后选择发布。"
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "其它"
       ]
     },
     "Import warning": {
@@ -3315,9 +3320,6 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters are allowed": [
         "最多只能允许 ${ MAX_CUSTOM_PASSWORD_LENGTH } 个字符"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
-      ],
       "Only the people with the link and the password can access this file.": [
         "只有同时知道链接和密码的人才能访问此文件。"
       ],
@@ -3332,12 +3334,6 @@
       ],
       "Permanently delete all files in your locked drive": [
         "永久删除锁定的网盘中的所有文件"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline 只能用于纯文本邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME 可使用编辑器中指定的格式发送邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
       ],
       "Please enter the password to decrypt and view content.": [
         "请输入密码解锁并查看内容。"
@@ -3510,9 +3506,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
@@ -3653,9 +3646,6 @@
       ],
       "You cannot undo this action.": [
         "您无法撤销此操作。"
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "导入您的日程之前您需要有一个启用的个人日历。"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已经使用了 ${ spaceDisplayed }% 的存储空间。${ freeUpMessage } ${ upgradeLink }"

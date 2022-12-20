@@ -922,6 +922,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede el máximo de ${ maximumLength } caracteres."
+      ],
       "This field is required": [
         "Este campo es obligatorio"
       ],
@@ -1138,7 +1141,7 @@
       ],
       "Try a shorter username (${ n } character max)": [
         "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)",
-        "Pruebe con un nombre de usuario más corto (${ n } caracteres como máximo)"
+        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     }
   }
