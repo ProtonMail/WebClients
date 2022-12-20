@@ -3570,7 +3570,7 @@
         "για τώρα"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "Το ProtonContacts δεν υποστηρίζει ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3723,6 +3723,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Για εξαγωγή του ημερολογίου ως αρχείου ICS, επιλέξτε ${ boldExport }."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Άλλο"
       ]
     },
     "Import warning": {
@@ -4369,9 +4374,6 @@
       "of": [
         "από"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Άλλες επιλογές"
       ],
@@ -4467,9 +4469,6 @@
       ],
       "Scheduling message...": [
         "Γίνεται προγραμματισμός μηνύματος..."
-      ],
-      "Seems like you are all caught up for now": [
-        "Φαίνεται ότι όλοι είστε παγιδευμένοι για τώρα"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
@@ -4817,9 +4816,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Έχετε φτάσει τον μέγιστο αριθμό των 5 απαντήσεων."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"

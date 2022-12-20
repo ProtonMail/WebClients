@@ -130,6 +130,9 @@
       "Choose a file or drag it here": [
         "ファイルを選択するかここにドラッグしてください"
       ],
+      "Claim it": [
+        "利用可能なアドレス"
+      ],
       "Clear all formatting": [
         "書式をすべて消去"
       ],
@@ -346,6 +349,9 @@
       "Font": [
         "フォント"
       ],
+      "Generate": [
+        "生成"
+      ],
       "Generate key": [
         "鍵を生成"
       ],
@@ -354,6 +360,9 @@
       ],
       "Generate recovery phrase": [
         "回復フレーズを生成"
+      ],
+      "Generate token": [
+        "鍵を生成"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } を入手"
@@ -481,10 +490,10 @@
       "Not spam": [
         "迷惑メールでない"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -501,6 +510,9 @@
       ],
       "Pay": [
         "支払う"
+      ],
+      "Pay ${ price } now": [
+        "${ price } を支払う"
       ],
       "Preview": [
         "プレビュー"
@@ -730,6 +742,9 @@
       "Size": [
         "サイズ"
       ],
+      "Skip verification": [
+        "検証をスキップする"
+      ],
       "Sort": [
         "並べ替え"
       ],
@@ -759,6 +774,9 @@
       ],
       "Try another method": [
         "別の方法を試してください"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
       ],
       "Underline": [
         "下線"
@@ -1267,6 +1285,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "公開リンクには現在アクセスできません。リンクがまだ有効かどうかをご確認ください。"
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "前回の更新から12時間以上経過 — ${ CALENDAR_APP_NAME } は数時間後にカレンダーの更新を試行します。"
       ]
     },
     "Calendar table settings button tooltip": {
@@ -2510,7 +2531,7 @@
         "${ name } の削除に失敗しました"
       ],
       "${ name } failed to move to not spam List": [
-        "${ name } の非迷惑メールリストへの移動に失敗しました"
+        "${ name } failed to move to the not-spam list"
       ],
       "${ name } failed to move to spam list": [
         "${ name } の迷惑メールリストへの移動に失敗しました"
@@ -3036,6 +3057,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "外部アカウントのフォルダーが多すぎます。いくつかのフォルダーを削除するにはインポートをカスタマイズしてください。"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "このフィールドは${ maximumLength }文字の最大値を超えています。"
+      ],
       "This field is required": [
         "この項目の入力は必須です"
       ],
@@ -3053,6 +3077,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "文字・数字・ _.- のみを使用してみてください"
       ],
       "Unknown error": [
         "原因不明なエラーが発生しました"
@@ -3107,6 +3134,9 @@
       ],
       "You must set a name": [
         "名前を設定してください"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "SMTP送信トークンを生成するには、カスタムドメインアドレスが必要です。"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "あなたのアカウントあるいは組織には未払いの請求があります。すべての未払いの請求をお支払いください。"
@@ -3886,7 +3916,7 @@
         "現時点"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts は ${ forNow } をサポートしていません"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4418,6 +4448,9 @@
       "Are you sure you want to delete this calendar?": [
         "このカレンダーを削除してよろしいですか?"
       ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "このカレンダーを削除してもよろしいですか? このカレンダーを共有していたすべてのアドレスは、アクセスできなくなります。"
+      ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "このカレンダーを削除してよろしいですか? カレンダーにあるすべての予定も削除されます。"
       ],
@@ -4646,6 +4679,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "このラベルが付いたメールは削除されず、各フォルダで見つけることができます。"
       ],
+      "Enable this address to join this calendar": [
+        "このアドレスがこのカレンダーに参加できるようにする"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "もう一度回復を有効にすると新しい回復用フレーズが生成されます。"
       ],
@@ -4735,6 +4771,9 @@
       ],
       "here": [
         "こちら"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        "プロキシを介してリモートコンテンツを読み込むことにより、識別情報を非表示にします。コンテンツを添付ファイルとして保存するオプション。"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "別の管理者がこのパスワードを変更した場合、変更した人に新しい組織パスワードを問合せてください。"
@@ -5183,6 +5222,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
       ],
+      "Remove one of your calendars to join this one": [
+        "このカレンダーに参加するには、カレンダーの1つを削除してください"
+      ],
       "Reset password": [
         "パスワードをリセット"
       ],
@@ -5351,8 +5393,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "このリンクはホモグラフ攻撃の可能性があり、Edgeブラウザでは開けません。リンクが確実に正しいと思われる場合は、別のブラウザで開いてください。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
@@ -5675,9 +5717,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "予定を ICS からインポートするには、アクティブなパーソナルカレンダーが必要です。"
       ],
-      "You need to have an active personal calendar to import your events.": [
-        "予定をインポートするには、アクティブなパーソナルカレンダーが必要です。"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5725,6 +5764,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "お客様のアカウントには1つ以上期限が過ぎている請求書があります。お支払いを確認できるまで全てのサービスにおいて制限が課されます。 ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
@@ -7492,6 +7534,9 @@
       "Blocked": [
         "ブロック中"
       ],
+      "Calendar": [
+        "カレンダー"
+      ],
       "Drive": [
         "ドライブ"
       ],
@@ -7801,23 +7846,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7831,8 +7859,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* 12 か月のサブスクリプション その他のサブスクリプションのオプションははチェックアウト時に選択できます。"
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* 15 か月のサブスクリプション その他のサブスクリプションのオプションはチェックアウト時に選択できます。"
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* 24 か月のサブスクリプション その他のサブスクリプションのオプションははチェックアウト時に選択できます。"
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* 30 か月のサブスクリプション その他のサブスクリプションのオプションはチェックアウト時に選択できます。"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "包括的なプライバシーとセキュリティを提供する、すべての ${ BRAND_NAME } サービスが利用できるプランです。"
@@ -7869,6 +7903,23 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -7944,6 +7995,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "どこでも Netflix や Disney+ および Prime Video を含むストリーミングサービスにアクセスします"
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "現在、プロモーション目的やプログラム制御のメールの一括送信はサポートしていません。このような場合は、専用のメールサービスプロバイダーを使用することをおすすめします。"
       ],
@@ -8095,6 +8149,9 @@
       ]
     },
     "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "カレンダーの招待を断る"
+      ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "${ calendarName }に参加しました(${ senderEmail })"
       ]
@@ -9578,6 +9635,9 @@
       "Delete ${ label.Name } label": [
         "${ label.Name } ラベルを削除"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "${ tokenNameToRemove } を削除しますか？"
+      ],
       "Delete account": [
         "アカウントの削除"
       ],
@@ -9653,6 +9713,9 @@
       "Encryption and keys": [
         "暗号化と鍵"
       ],
+      "End date": [
+        "終了日"
+      ],
       "Enter your password": [
         "パスワードを入力"
       ],
@@ -9697,6 +9760,9 @@
       ],
       "Generate new recovery phrase?": [
         "新しい回復用フレーズを生成しますか？"
+      ],
+      "Generate SMTP token": [
+        "SMTPトークンの生成"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "すべてのサーバーに接続するために ${ vpnPlus } を入手"
@@ -9772,6 +9838,9 @@
       ],
       "Layout": [
         "レイアウト"
+      ],
+      "Length": [
+        "長さ"
       ],
       "Link confirmation": [
         "リンクの確認"
@@ -9850,6 +9919,9 @@
       ],
       "Phone": [
         "電話番号"
+      ],
+      "Plan": [
+        "プラン"
       ],
       "Plan summary": [
         "プランの概要"
@@ -9977,6 +10049,9 @@
       "Signed in to member account": [
         "メンバーアカウントでサインイン"
       ],
+      "SMTP tokens": [
+        "SMTPトークン"
+      ],
       "Sort folders alphabetically": [
         "フォルダーをアルファベット順に並べ替え"
       ],
@@ -9988,6 +10063,9 @@
       ],
       "Start a new import": [
         "新しいインポートを開始"
+      ],
+      "Start date": [
+        "開始日"
       ],
       "Start import process": [
         "インポートを開始"
@@ -10025,6 +10103,9 @@
       "Time zone": [
         "タイムゾーン"
       ],
+      "Total paid": [
+        "合計金額"
+      ],
       "Track your referrals": [
         "招待状況を確認"
       ],
@@ -10045,6 +10126,9 @@
       ],
       "Upgrade plan": [
         "プランをアップグレード"
+      ],
+      "Users": [
+        "ユーザー数"
       ],
       "Users and addresses": [
         "ユーザーとアドレス"
@@ -10105,6 +10189,12 @@
       ],
       "Your recovery status": [
         "回復状態"
+      ],
+      "Your SMTP token": [
+        "あなたのSMTPトークン"
+      ],
+      "Your subscriptions": [
+        "あなたのサブスクリプション"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } の試用に招待されました"
@@ -10367,6 +10457,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "パスワードは ${ length } 文字以上必要です"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     },
     "Video control": {
@@ -10462,6 +10555,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"
       ],
+      "Skip verification?": [
+        "検証をスキップしますか?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "デバイスの日時設定を同期できません。${ learnMore }"
       ],
@@ -10470,6 +10566,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "メールサーバーを検証できませんでした。信頼できる場合は、この検証をスキップできます。"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS 構成に問題があります。次の手段に従いレコードを確認してください。それでも問題が解決しない場合は DKIM 署名をオフにする必要があります。"

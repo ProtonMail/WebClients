@@ -218,8 +218,8 @@
       "Pay": [
         "Pagar"
       ],
-      "Pay ${ price }": [
-        "Pagar ${ price }"
+      "Pay ${ price } now": [
+        "Pagar ahora ${ price }"
       ],
       "Previous": [
         "Anterior"
@@ -433,7 +433,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Aplicaciones ${ BRAND_NAME }"
+        "Aplicaciones de ${ BRAND_NAME }"
       ]
     },
     "Badge": {
@@ -459,9 +459,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Se renueva automáticamente el ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Se renueva automáticamente el ${ formattedEndTime } por ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1592,6 +1589,9 @@
       "The minimum payment we accept is ${ price }": [
         "El pago mínimo que aceptamos es de ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede el máximo de ${ maximumLength } caracteres."
+      ],
       "This field is required": [
         "Este campo es obligatorio"
       ],
@@ -2692,9 +2692,6 @@
       "Block malware, ads and trackers": [
         "Bloquear malware, anuncios y rastreadores"
       ],
-      "bonus storage": [
-        "almacenamiento adicional"
-      ],
       "Browser": [
         "Navegador"
       ],
@@ -2762,7 +2759,7 @@
         "Créditos utilizados"
       ],
       "Current display name": [
-        "Nombre para mostrar actual"
+        "Nombre a mostrar actual"
       ],
       "Customize invoices": [
         "Personalizar las facturas"
@@ -2926,6 +2923,9 @@
       "Select your country": [
         "Selecciona tu país"
       ],
+      "Start date": [
+        "Fecha inicial"
+      ],
       "Subscription options": [
         "Opciones de suscripción"
       ],
@@ -2976,7 +2976,7 @@
     },
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
-        "Comunicados de ${ BRAND_NAME } beta"
+        "Comunicados beta de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } company announcements": [
         "Comunicados de la compañía ${ BRAND_NAME }"
@@ -4326,6 +4326,14 @@
         "Ahorra"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Activa"
+      ],
+      "Upcoming": [
+        "Próximo"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "La solución de correo electrónico y calendario, basada en el principio de privacidad, que tus comunicaciones del día a día necesitan."
@@ -4520,9 +4528,6 @@
       "Back": [
         "Atrás"
       ],
-      "Billing": [
-        "Facturación"
-      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -4616,6 +4621,9 @@
       "Email subscriptions": [
         "Suscripciones de correo electrónico"
       ],
+      "End date": [
+        "Fecha final"
+      ],
       "Enter your password": [
         "Introduce tu contraseña"
       ],
@@ -4651,6 +4659,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Length": [
+        "Longitud"
       ],
       "Login password": [
         "Contraseña de inicio de sesión"
@@ -4702,6 +4713,9 @@
       ],
       "Phone": [
         "Teléfono"
+      ],
+      "Plan": [
+        "Plan"
       ],
       "Plan summary": [
         "Resumen del plan"
@@ -4760,6 +4774,9 @@
       "Sign out": [
         "Cerrar sesión"
       ],
+      "Start date": [
+        "Fecha inicial"
+      ],
       "Status": [
         "Estado"
       ],
@@ -4768,6 +4785,9 @@
       ],
       "Switch to two-password mode": [
         "Cambiar al modo de doble contraseña"
+      ],
+      "Total paid": [
+        "Total pagado"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Prueba lo mejor de ${ MAIL_APP_NAME } gratis"
@@ -4786,6 +4806,9 @@
       ],
       "Unsupported browser": [
         "Navegador no soportado"
+      ],
+      "Users": [
+        "Usuarios"
       ],
       "Verification": [
         "Verificación"
@@ -4817,6 +4840,9 @@
       "Your plan": [
         "Tu plan"
       ],
+      "Your subscriptions": [
+        "Tus suscripciones"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Has sido invitado a probar ${ MAIL_APP_NAME }"
       ],
@@ -4843,6 +4869,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si compraste un código de regalo o recibiste uno de nuestro equipo de soporte, puedes agregarlo aquí."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
       ]
     },
     "Tor out of date": {
@@ -4860,7 +4889,7 @@
       ],
       "Try a shorter username (${ n } character max)": [
         "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)",
-        "Pruebe con un nombre de usuario más corto (${ n } caracteres como máximo)"
+        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     },
     "VPN info": {

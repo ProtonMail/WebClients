@@ -939,8 +939,21 @@
       "Please ${ refresh } or check your connection.": [
         "Athugaðu nettenginguna þína eða reyndu að ${ refresh }."
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Það kom upp villa þegar tengst var við ${ BRAND_NAME }."
+      ],
       "You may also ${ refresh } or try again later.": [
         "Þú getur einnig ${ refresh } eða reynt aftur síðar."
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Öryggislykill"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Öryggislykill"
       ]
     },
     "Human verification method": {
@@ -1008,6 +1021,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Við sendum nýjan staðfestingarkóða til ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Þegar þú setur upp tvíþætta auðkenningu þá gefum við upp endurheimtarkóða sem þú getur notað til að skrá þig inn ef þú missir aðgang að auðkenningarforritinu þínu."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Viltu fá sendan nýjan sannvottunarkóða eða nota aðra aðferð til auðkenningar?"

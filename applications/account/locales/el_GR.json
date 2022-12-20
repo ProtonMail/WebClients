@@ -439,11 +439,11 @@
       "No": [
         "Όχι"
       ],
-      "Ok": [
-        "Οκ"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "Οκ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -3264,7 +3264,7 @@
         "για τώρα"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "Το ProtonContacts δεν υποστηρίζει ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4776,9 +4776,6 @@
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Για να μπορέσετε να ακυρώσετε τη συνδρομή σας, πρέπει πρώτα να αφαιρέσετε τυχόν πρόσθετα προσωπικά ημερολόγια και τυχόν κοινοποιημένους συνδέσμους ημερολογίου."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"
@@ -6613,17 +6610,6 @@
         "Διαχείριση ομάδας"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -6642,6 +6628,17 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {

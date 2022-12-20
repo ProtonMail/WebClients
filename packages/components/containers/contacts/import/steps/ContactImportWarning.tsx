@@ -39,7 +39,7 @@ const ContactImportWarning = ({ model, setModel, onClose }: Props) => {
             <ModalTwoHeader title={c('Title').t`Warning`} />
             <ModalTwoContent>
                 <Alert className="mb1" type="warning">
-                    <div>{c('Import contacts warning').jt`ProtonContacts does not support ${forNow}:`}</div>
+                    <div>{c('Import contacts warning').jt`Proton Contacts does not support ${ forNow }:`}</div>
                     <ul>
                         <li>{c('Import calendar warning').t`vCard versions < 3.0`}</li>
                     </ul>

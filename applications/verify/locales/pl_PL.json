@@ -922,6 +922,9 @@
       "Request timed out": [
         "Upłynął limit czasu żądania"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
+      ],
       "This field is required": [
         "Pole jest wymagane"
       ],

@@ -215,6 +215,9 @@
       "Download anyway": [
         "Все равно скачать"
       ],
+      "Download the Windows application": [
+        "Загрузить приложение для Windows"
+      ],
       "Drive Locked": [
         "Хранилище заблокировано"
       ],
@@ -1758,6 +1761,11 @@
         "Использовать глобальное значение по умолчанию (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Использовать общее значение по умолчанию (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Просроченный счёт"
@@ -1920,7 +1928,7 @@
         "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
       ],
       "Device name does not match": [
-        "Название устройства не совпадает"
+        "Имя прибора не совпадает"
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
@@ -2116,6 +2124,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Произошла ошибка при экспорте визитных карточек контактов"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимум ${ maximumLength } символов."
       ],
       "This field is required": [
         "Это обязательное поле"
@@ -2661,7 +2672,7 @@
         "пока"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow } не поддерживает:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2872,6 +2883,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "В разделе ${ boldPublish } выберите календарь, который вы хотите импортировать. Установите разрешение ${ boldCanViewAllDetails } и опубликуйте его."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Другой"
       ]
     },
     "Import warning": {
@@ -3267,6 +3283,9 @@
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
       ],
+      "Emails are automatically signed": [
+        "Электронные письма подписываются автоматически"
+      ],
       "Enabling drive search": [
         "Включается поиск по хранилищу"
       ],
@@ -3401,6 +3420,9 @@
       ],
       "Import mailbox": [
         "Импорт почтового ящика"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Импортируйте электронную почту, календари и контакты из другой службы в ${ BRAND_NAME }. Мы будем сопровождать вас на каждом шагу и шифровать ваши данные при переносе. Добро пожаловать в мир конфиденциальности."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
@@ -3558,9 +3580,6 @@
         "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов",
         "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
-      ],
       "Only the people with the link and the password can access this file.": [
         "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
       ],
@@ -3576,11 +3595,11 @@
       "Permanently delete all files in your locked drive": [
         "Окончательно удалить все файлы в вашем заблокированном хранилище"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline совместимо только с форматом Plain Text."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем."
       ],
       "Please enter the password to decrypt and view content.": [
         "Для расшифровки и просмотра содержимого введите пароль."
@@ -3759,8 +3778,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Эта ссылка может быть омографической атакой и не может быть открыта браузером Edge. Если вы уверены, что ссылка является подлинной, используйте другой браузер, чтобы открыть ее."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
@@ -3776,9 +3795,9 @@
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Это удалит ссылку и лишит доступа к вашему файлу или папке всех, у кого есть эта ссылка.",
-        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылка.",
-        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылка.",
-        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылка."
+        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки.",
+        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки.",
+        "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки."
       ],
       "This will overwrite the existing file": [
         "Существующий файл будет перезаписан"
@@ -3923,9 +3942,6 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "У вас осталось ${ expiresInDays } дней, чтобы забрать свой привественный 500 мегабайтный бонус и "
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Вам нужен активный личный календарь, чтобы начать импорт событий."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
@@ -4930,9 +4946,9 @@
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Просто выполните следующее в ближайший ${ expiresInDays } день:",
-        "Просто выполните следующиее в ближайшие ${ expiresInDays } дня:",
-        "Просто выполните следующиее в ближайшие ${ expiresInDays } дней:",
-        "Просто выполните следующиее в ближайшие ${ expiresInDays } дня:"
+        "Просто выполните следующие в ближайшие ${ expiresInDays } дня:",
+        "Просто выполните следующие в ближайшие ${ expiresInDays } дней:",
+        "Просто выполните следующие в ближайшие ${ expiresInDays } дня:"
       ],
       "Upload a file": [
         "Загрузить файл"
@@ -5158,6 +5174,14 @@
       ],
       "Try the new side panel": [
         "Попробуйте новую боковую панель"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Не подписывать"
+      ],
+      "Sign": [
+        "Подписать"
       ]
     },
     "specialoffer: Action": {
@@ -6177,10 +6201,10 @@
         "Имя не может включать невидимые символы, / или \\."
       ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "Имя должно быть до ${ MAX_NAME_LENGTH } символа",
-        "Имя должно быть до ${ MAX_NAME_LENGTH } символов",
-        "Имя должно быть до ${ MAX_NAME_LENGTH } символов",
-        "Имя должно быть до ${ MAX_NAME_LENGTH } символов"
+        "Имя должно состоять не более чем из ${ MAX_NAME_LENGTH } символа",
+        "Имя должно состоять не более чем из ${ MAX_NAME_LENGTH } символов",
+        "Имя должно состоять не более чем из ${ MAX_NAME_LENGTH } символов",
+        "Имя должно состоять не более чем из ${ MAX_NAME_LENGTH } символов"
       ],
       "Name must not be empty": [
         "Имя не может быть пустым"

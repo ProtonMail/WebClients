@@ -218,8 +218,8 @@
       "Pay": [
         "Betalen"
       ],
-      "Pay ${ price }": [
-        "Betaal ${ price }"
+      "Pay ${ price } now": [
+        "Betaal nu ${ price }"
       ],
       "Previous": [
         "Vorige"
@@ -331,6 +331,9 @@
       ],
       "Try another method": [
         "Andere methode proberen"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
       ],
       "Unlock": [
         "Ontgrendel"
@@ -456,9 +459,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Vernieuwd automatisch op ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Vernieuwd automatisch op ${ formattedEndTime } aan ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1419,6 +1419,11 @@
         "(via ${ entryCountryName })"
       ]
     },
+    "Credits": {
+      "Available credits": [
+        "Beschikbaar tegoed"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/maand"
@@ -1435,6 +1440,9 @@
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bugs of kwaliteitsproblemen"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "Ik gebruik een ander ${ BRAND_NAME }-account"
       ],
       "Missing feature(s)": [
         "Ontbrekend(e) kenmerk(en)"
@@ -1572,17 +1580,26 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
       ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
+      ],
       "The minimum amount that can be donated is ${ price }": [
         "Het minimum bedrag dat kan worden gedoneerd is ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "De minimale betaling die we accepteren is ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
+      ],
       "This field is required": [
         "Dit veld is vereist"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Probeer enkel letters, nummers en _.- te gebruiken"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -2131,6 +2148,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Controleer de kaart in het nieuwe tabblad dat is geopend."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Wacht tot uw wijzigingen gesynchroniseerd zijn met de server."
+      ],
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
       ],
@@ -2437,11 +2457,20 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt en alle diensten zijn nu geblokkeerd tot betaling. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt. Verdere niet-betaling zal leiden tot het blokkeren van uw e-mails een deel-links. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Uw account zal worden bijgewerkt zodra de betaling is gewist."
@@ -2604,9 +2633,6 @@
       "Block malware, ads and trackers": [
         "Blokkeer malware, advertenties en trackers"
       ],
-      "bonus storage": [
-        "bonus opslag"
-      ],
       "Browser": [
         "Browser"
       ],
@@ -2739,6 +2765,9 @@
       "Mailbox password": [
         "Mailboxwachtwoord"
       ],
+      "Main": [
+        "Primair"
+      ],
       "Moderate NAT": [
         "Gemiddelde NAT"
       ],
@@ -2747,6 +2776,9 @@
       ],
       "Name on card": [
         "Naam op de kaart"
+      ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Port Forwarding)"
       ],
       "Navigation": [
         "Navigatie"
@@ -2832,6 +2864,9 @@
       "Select your country": [
         "Selecteer uw land"
       ],
+      "Start date": [
+        "Begindatum"
+      ],
       "Subscription options": [
         "Abonnementsopties"
       ],
@@ -2881,6 +2916,9 @@
       ]
     },
     "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME }-bèta-aankondigingen"
+      ],
       "${ BRAND_NAME } company announcements": [
         "${ BRAND_NAME } bedrijfsaankondigingen"
       ],
@@ -2892,6 +2930,9 @@
       ],
       "${ BRAND_NAME } offers and promotions": [
         "${ BRAND_NAME } aanbiedingen en promoties"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME }-productaankondigingen"
       ]
     },
     "Label on payment method": {
@@ -3683,6 +3724,9 @@
       "I found another service that I like better": [
         "Ik heb een anderen service gevonden die mijn voorkeur heeft"
       ],
+      "I use a different ${ BRAND_NAME } account": [
+        "Ik gebruik een ander ${ BRAND_NAME }-account"
+      ],
       "iOS": [
         "iOS"
       ],
@@ -4124,6 +4168,9 @@
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Nodig vrienden uit voor ${ BRAND_NAME }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probeer ${ DRIVE_APP_NAME }"
       ]
@@ -4218,6 +4265,14 @@
     "Subscription saving": {
       "Save": [
         "Bespaar"
+      ]
+    },
+    "Subscription status": {
+      "Active": [
+        "Actief"
+      ],
+      "Upcoming": [
+        "Binnenkort"
       ]
     },
     "Subtitle for trial plan": {
@@ -4408,11 +4463,11 @@
       "Apply gift code": [
         "Geschenkcode toepassen"
       ],
+      "Are you sure you want to close the preview?": [
+        "Weet u zeker dat u het voorbeeld wil sluiten?"
+      ],
       "Back": [
         "Terug"
-      ],
-      "Billing": [
-        "Facturatie"
       ],
       "Billing cycle": [
         "Factuurperiode"
@@ -4440,6 +4495,9 @@
       ],
       "Confirm downgrade": [
         "Downgrade bevestigen"
+      ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "Bevestig verlies van ${ BRAND_NAME }-bonussen"
       ],
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
@@ -4504,6 +4562,9 @@
       "Email subscriptions": [
         "Nieuwsbrieven"
       ],
+      "End date": [
+        "Einddatum"
+      ],
       "Enter your password": [
         "Voer uw wachtwoord in"
       ],
@@ -4539,6 +4600,9 @@
       ],
       "Language": [
         "Taal"
+      ],
+      "Length": [
+        "Lengte"
       ],
       "Login password": [
         "Inlogwachtwoord"
@@ -4590,6 +4654,9 @@
       ],
       "Phone": [
         "Telefoon"
+      ],
+      "Plan": [
+        "Abonnement"
       ],
       "Plan summary": [
         "Samenvatting abonnement"
@@ -4648,6 +4715,9 @@
       "Sign out": [
         "Uitloggen"
       ],
+      "Start date": [
+        "Begindatum"
+      ],
       "Status": [
         "Status"
       ],
@@ -4656,6 +4726,9 @@
       ],
       "Switch to two-password mode": [
         "Overschakelen naar twee-wachtwoorden modus"
+      ],
+      "Total paid": [
+        "Totaal betaald"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Probeer het beste van ${ MAIL_APP_NAME } gratis"
@@ -4674,6 +4747,9 @@
       ],
       "Unsupported browser": [
         "Niet-ondersteunde browser"
+      ],
+      "Users": [
+        "Gebruikers"
       ],
       "Verification": [
         "Verificatie"
@@ -4696,11 +4772,17 @@
       "You already have a ${ BRAND_NAME } account": [
         "U hebt al een account voor ${ BRAND_NAME }"
       ],
+      "Your changes are not synced yet": [
+        "Uw wijzigingen zijn nog niet gesynchroniseerd"
+      ],
       "Your current plan": [
         "Uw huidige abonnement"
       ],
       "Your plan": [
         "Uw abonnement"
+      ],
+      "Your subscriptions": [
+        "Uw abonnementen"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "U bent uitgenodigd om ${ MAIL_APP_NAME } te proberen"
@@ -4728,6 +4810,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "De nieuwe abonnementscyclus start op ${ formattedTime }"
       ]
     },
     "Tor out of date": {
@@ -4742,6 +4827,10 @@
       "Password must contain at least ${ length } character": [
         "Wachtwoord moet ten minste ${ length } teken bevatten",
         "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     },
     "VPN info": {

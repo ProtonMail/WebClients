@@ -908,6 +908,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduzir o código de verificação. Digite ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Insira a sua senha (como administrador da organização)."
       ],
@@ -940,6 +943,9 @@
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os emails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, por favor pague quaisquer faturas em atraso."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu email só será usado para esta verificação única."
