@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, Ref, useEffect, useRef, useState } from 'react';
 
-import { useCombinedRefs } from '@proton/components/hooks';
+import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 
 import './Scroll.scss';

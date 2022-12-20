@@ -1,12 +1,12 @@
 import { KeyboardEvent, RefObject, forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
+import { useCombinedRefs } from '@proton/hooks';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 
-import { useCombinedRefs } from '../../hooks';
 import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '../autocomplete';
 import Icon from '../icon/Icon';
 import Input, { Props as InputProps } from '../input/Input';
