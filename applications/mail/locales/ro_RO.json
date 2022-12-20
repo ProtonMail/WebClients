@@ -1022,10 +1022,10 @@
         "Actualizare frază de recuperare"
       ],
       "Upgrade": [
-        "Migrare"
+        "Modernizare"
       ],
       "Upgrade now": [
-        "Migrare acum"
+        "Modernizare"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -2808,6 +2808,11 @@
         "Folosire valoare implicită globală (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Folosire valoare implicită globală (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factură restantă"
@@ -3319,6 +3324,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
       "This field is required": [
         "Acest câmp este obligatoriu"
@@ -4112,7 +4120,7 @@
         "momentan"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts nu acceptă ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4331,6 +4339,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "Sub ${ boldPublish }, selectați calendarul pe care doriți să îl importați. Setați permisiunea la ${ boldCanViewAllDetails } și publicați-l."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Altele"
       ]
     },
     "Import warning": {
@@ -4816,6 +4829,9 @@
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Monitorizarea prin e-mail vă pot încălca intimitatea. Activați protecția împotriva urmăririi pentru a împiedica expeditorii să știe dacă și când ați deschis un mesaj."
       ],
+      "Emails are automatically signed": [
+        "Mesajele sunt semnate automat"
+      ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Mesajele stocate în acest folder nu vor fi șterse și pot fi găsite în continuare în folderul «Toate mesajele»"
       ],
@@ -4968,6 +4984,9 @@
       ],
       "Import mailbox": [
         "Importare mesaje"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importați e-mailurile, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }. Vă vom ghida la fiecare pas și vă vom cripta datele pe măsură ce acestea sunt mutate. Bine ați venit în lumea vieții private."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
@@ -5137,9 +5156,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Alte opțiuni"
       ],
@@ -5149,11 +5165,11 @@
       "per month.": [
         "pe lună."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP / Inline este compatibil doar cu formatul de text simplu."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP / MIME trimite automat mesajul folosind modul curent de compunere."
       ],
       "Phone number": [
         "Număr de telefon"
@@ -5434,8 +5450,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
@@ -5542,22 +5558,22 @@
         "Se actualizează căutarea în conținutul mesajelor..."
       ],
       "Upgrade to add more addresses to your account.": [
-        "Treceţi la un plan superior pentru a adăuga mai multe adrese în contul personal."
+        "Treceți la un plan superior pentru a adăuga mai multe adrese în contul personal."
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        "Treceţi la alt plan pentru a configura un răspuns automat de vacanță."
+        "Treceți la alt plan pentru a configura un răspuns automat de vacanță."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Treceţi la alt plan pentru a crea mai multe foldere, filtre și adrese."
+        "Treceți la alt plan pentru a crea mai multe foldere, filtre și adrese."
       ],
       "Upgrade to host emails from your own domain name.": [
-        "Treceţi la un plan superior pentru a putea folosi adrese de e-mail cu nume de domenii proprii."
+        "Treceți la un plan superior pentru a putea folosi adrese de e-mail cu nume de domenii proprii."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "Treceţi la alt plan pentru a trimite e-mailuri de la adrese @pm.me."
+        "Treceți la alt plan pentru a trimite e-mailuri de la adrese @pm.me."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Treceţi la un plan superior pentru a trimite cu ușurință mesaje şi către grupuri de contacte."
+        "Treceți la un plan superior pentru a trimite cu ușurință mesaje și către grupuri de contacte."
       ],
       "Upgrade to support a privacy-first internet.": [
         "Treceți la un plan superior pentru a sprijini un internet bazat pe confidențialitate."
@@ -5566,13 +5582,13 @@
         "Treceți la un plan superior pentru a susține misiunea noastră de confidențialitate pentru toți."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Treceţi la alt plan pentru a beneficia de confidențialitate și a obține mai multe funcții."
+        "Treceți la alt plan pentru a beneficia de confidențialitate și a obține mai multe funcții."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Treceţi la alt plan pentru a utiliza ${ MAIL_APP_NAME } cu clienți desktop de la terți."
+        "Treceți la alt plan pentru a utiliza ${ MAIL_APP_NAME } cu clienți desktop de la terți."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Faceți upgrade astăzi pentru a evita pierderea beneficiilor din ${ planName }."
+        "Treceți la un plan superior astăzi pentru a evita pierderea beneficiilor din ${ planName }."
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -5716,9 +5732,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Ați atins numărul maxim de 5 răspunsuri."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Trebuie să aveți un calendar personal activ pentru a importa evenimentele."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "S-a atins ${ spaceDisplayed }% din capacitatea de stocare. ${ freeUpMessage } ${ upgradeLink }"
@@ -6743,7 +6756,7 @@
         "Gunoi"
       ],
       "Upgrade account": [
-        "Migrare cont"
+        "Modernizare cont"
       ],
       "What’s this?": [
         "Ce este asta?"
@@ -6862,7 +6875,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Perioada de încercare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+        "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7592,6 +7605,14 @@
       ],
       "Sender's trusted keys verification failed": [
         "Verificarea cheilor de încredere a expeditorului a eșuat"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Fără semnare"
+      ],
+      "Sign": [
+        "Semnare"
       ]
     },
     "Sort option": {
@@ -8560,7 +8581,7 @@
         "Solicitare de dezabonare trimisă"
       ],
       "Upgrade required": [
-        "Migrare necesară"
+        "Modernizare necesară"
       ],
       "Verification error": [
         "Eroare verificare"
@@ -8590,7 +8611,7 @@
         "Modificările nu sunt încă sincronizate"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Perioada de încercare gratuită se încheie în curând, la ${ formattedEndDate }"
+        "Perioada de probare gratuită se încheie în curând, la ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8782,7 +8803,7 @@
         "Veți pierde orice modificare făcută până acum."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Perioada de încercare se încheie în curând la ${ textDate }. ${ action }"
+        "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

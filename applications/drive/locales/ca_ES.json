@@ -2135,6 +2135,9 @@
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment.",
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "El fitxer ${ formattedFilename } conté un mètode invàlid i no pot ser importat."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "El vostre fitxer ${ formattedFilename } no conté esdeveniments per importar."
       ],
@@ -2508,6 +2511,9 @@
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } actualment no permet determinats tipus d'esdeveniments, detalls i formats."
+      ],
       "vCard versions < 3.0": [
         "versions vCard < 3.0"
       ]
@@ -2568,7 +2574,7 @@
         "per ara"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow } no és compatible amb:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2698,6 +2704,11 @@
     "Import instructions step": {
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Vés a ${ calendarViewLink } a Yahoo."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Altres"
       ]
     },
     "Import warning": {
@@ -2972,6 +2983,9 @@
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada."
       ],
+      "Emails are automatically signed": [
+        "Els correus són signats automàticament"
+      ],
       "Enabling drive search": [
         "S'està activant la cerca de la unitat"
       ],
@@ -3193,9 +3207,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les teves claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Et recomanem que marquis aquestes claus com a \"no confiables\"."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
-      ],
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest fitxer."
       ],
@@ -3207,12 +3218,6 @@
       ],
       "Paused": [
         "Pausat"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline només és compatible amb el format de text net. Tingueu en compte que ${ MAIL_APP_NAME } sempre signa els missatges xifrats."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME envia automàticament el missatge utilitzant el mode actual de l'editor. Tingueu en compte que ${ MAIL_APP_NAME } sempre signa els missatges xifrats."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
@@ -3347,6 +3352,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les teves targetes de crèdit."
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
       ],
@@ -3466,9 +3474,6 @@
       ],
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Necessiteu tenir un calendari personal actiu per importar els vostres esdeveniments."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
@@ -3676,6 +3681,18 @@
       ],
       "Emails": [
         "Correus electrònics"
+      ],
+      "Emails (all messages)": [
+        "Correus electrònics (tots els missatges)"
+      ],
+      "Emails (last 12 months)": [
+        "Correus electrònics (els darrers 12 mesos)"
+      ],
+      "Emails (last 3 months)": [
+        "Correus electrònics (els darrers 3 mesos)"
+      ],
+      "Emails (last month)": [
+        "Correus electrònics (el mes passat)"
       ],
       "Enable Beta Access": [
         "Activar Accés Beta"
@@ -3980,6 +3997,11 @@
         "${ Label.Name } creada"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Subfinestra lateral"
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
@@ -4027,6 +4049,24 @@
       ],
       "Your import is starting": [
         "La importació s'està iniciant"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar tots els missatges d'$${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetés i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -4106,13 +4146,29 @@
       "\"${ name }\" moved to trash": [
         "S'ha mogut «${ name }» a la paperera"
       ],
+      "${ count } item failed to be decrypted": [
+        "Ha fallat el disxifrat d'${ count } element",
+        "Ha fallat el disxifrat de ${ count } elements"
+      ],
       "${ numberOfItems } item failed to be moved": [
         "${ numberOfItems } element ha fallat al moure",
         "${ numberOfItems } elements han fallat al moure"
       ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "${ numberOfItems } element ha fallat al moure'l a la paperera",
+        "${ numberOfItems } elements han fallat al moure'ls a la paperera"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } element mogut a la Paperera",
         "${ numberOfItems } elements moguts a la Paperera"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } element restaurat de la paperera",
+        "${ numberOfItems } elements restaurats de la paperera"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } element mogut amb èxit",
+        "${ numberOfItems } elements moguts amb èxit"
       ],
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"

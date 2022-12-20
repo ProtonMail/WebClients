@@ -2802,6 +2802,11 @@
         "Genel varsayılan kullanılsın (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Genel varsayılan kullanılsın (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Gecikmiş fatura"
@@ -3301,6 +3306,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard dosyaları dışa aktarılırken bir sorun çıktı"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
       ],
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
@@ -4078,7 +4086,7 @@
         "şimdilik"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow } şunu desteklemiyor:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4297,6 +4305,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "${ boldPublish } altından, içe aktarmak istediğiniz takvimi seçin. İzinleri ${ boldCanViewAllDetails } olarak ayarlayıp yayınlayın."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Diğer"
       ]
     },
     "Import warning": {
@@ -4737,6 +4750,9 @@
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. Göndericinin iletileri açıp açmadığınızı bilmesini önlemek için izleme koruma özelliğini açın."
       ],
+      "Emails are automatically signed": [
+        "E-postalar otomatik olarak imzalanıyor"
+      ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Bu klasörde depolanmış e-postalar silinmeyecek ve hala Tüm e-postalar kutusunda bulunabilecek."
       ],
@@ -4883,6 +4899,9 @@
       ],
       "Import mailbox": [
         "Posta kutusunu içe aktar"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Kişisel gizlilik dünyasına hoş geldiniz."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
@@ -5052,9 +5071,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilir anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
-      ],
       "Other options": [
         "Diğer seçenekler"
       ],
@@ -5064,11 +5080,11 @@
       "per month.": [
         "aylık."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın."
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME geçerli oluşturucu kipinde iletiyi otomatik olarak gönderir."
       ],
       "Phone number": [
         "Telefon numarası"
@@ -5346,8 +5362,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir web sitesine gidiyor olabilir."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge web tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
@@ -5623,9 +5639,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Olabilecek en fazla 5 yanıt sayısına ulaştınız."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Etkinliklerinizi içe aktarmak için etkin bir kişisel takviminiz olmalıdır."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
@@ -7476,6 +7489,14 @@
       ],
       "Sender's trusted keys verification failed": [
         "Göndericinin güvenilen anahtarları doğrulanamadı"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "İmzalama"
+      ],
+      "Sign": [
+        "İmzala"
       ]
     },
     "Sort option": {

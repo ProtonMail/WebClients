@@ -218,8 +218,8 @@
       "Pay": [
         "Öde"
       ],
-      "Pay ${ price }": [
-        "${ price } öde"
+      "Pay ${ price } now": [
+        "Şimdi ${ price } öde"
       ],
       "Previous": [
         "Önceki"
@@ -459,9 +459,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "${ formattedEndTime } tarihinde otomatik olarak yenilenir"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "${ formattedEndTime } tarihinde ${ amount } tutar ile otomatik olarak yenilenir"
       ]
     },
     "Billing cycle option": {
@@ -1592,6 +1589,9 @@
       "The minimum payment we accept is ${ price }": [
         "Kabul ettiğimiz en az ödeme: ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
+      ],
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
       ],
@@ -2697,9 +2697,6 @@
       "Block malware, ads and trackers": [
         "Kötü amaçlı yazılımlar, reklamlar ve etkinlik izleyiciler engellensin"
       ],
-      "bonus storage": [
-        "hediye depolama alanı"
-      ],
       "Browser": [
         "Tarayıcı"
       ],
@@ -2930,6 +2927,9 @@
       ],
       "Select your country": [
         "Ülkenizi seçin"
+      ],
+      "Start date": [
+        "Başlangıç tarihi"
       ],
       "Subscription options": [
         "Abonelik seçenekleri"
@@ -4090,6 +4090,14 @@
         "Kaydet"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Etkin"
+      ],
+      "Upcoming": [
+        "Yaklaşan"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren e-posta ve takvim çözümü."
@@ -4284,9 +4292,6 @@
       "Back": [
         "Geri"
       ],
-      "Billing": [
-        "Faturalama"
-      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -4380,6 +4385,9 @@
       "Email subscriptions": [
         "Eposta abonelikleri"
       ],
+      "End date": [
+        "Bitiş tarihi"
+      ],
       "Enter your password": [
         "Parolanızı yazın"
       ],
@@ -4415,6 +4423,9 @@
       ],
       "Language": [
         "Dil"
+      ],
+      "Length": [
+        "Uzunluk"
       ],
       "Login password": [
         "Oturum açma parolası"
@@ -4466,6 +4477,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Plan": [
+        "Tarife"
       ],
       "Plan summary": [
         "Tarife özeti"
@@ -4524,6 +4538,9 @@
       "Sign out": [
         "Oturumu kapat"
       ],
+      "Start date": [
+        "Başlangıç tarihi"
+      ],
       "Status": [
         "Durum"
       ],
@@ -4532,6 +4549,9 @@
       ],
       "Switch to two-password mode": [
         "İki parola kipine geç"
+      ],
+      "Total paid": [
+        "Toplam ödenen"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "En iyi ${ MAIL_APP_NAME } sürümünü ücretsiz deneyin"
@@ -4550,6 +4570,9 @@
       ],
       "Unsupported browser": [
         "Tarayıcı desteklenmiyor"
+      ],
+      "Users": [
+        "Kullanıcı sayısı"
       ],
       "Verification": [
         "Doğrulama"
@@ -4581,6 +4604,9 @@
       "Your plan": [
         "Tarifeniz"
       ],
+      "Your subscriptions": [
+        "Abonelikleriniz"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } uygulamasını denemeye çağrıldınız"
       ],
@@ -4607,6 +4633,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
       ]
     },
     "Tor out of date": {

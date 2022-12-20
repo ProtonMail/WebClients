@@ -218,8 +218,8 @@
       "Pay": [
         "Payer"
       ],
-      "Pay ${ price }": [
-        "Payer ${ price }"
+      "Pay ${ price } now": [
+        "Payer ${ price } maintenant"
       ],
       "Previous": [
         "Précédent"
@@ -351,7 +351,7 @@
         "Changer d'abonnement"
       ],
       "Use ${ label } theme": [
-        "Utiliser le thème « ${ label } »"
+        "Utiliser le thème ${ label }"
       ],
       "Use a different card": [
         "Utiliser une autre carte"
@@ -459,9 +459,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Se renouvelle automatiquement le ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Se renouvelle automatiquement le ${ formattedEndTime } pour ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -486,7 +483,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Problème de l'application"
+        "Problème d'application"
       ],
       "Bridge problem": [
         "Problème avec Bridge"
@@ -540,7 +537,7 @@
         "Problème de lenteur du débit"
       ],
       "Speed problem": [
-        "Problème de débit"
+        "Problème de vitesse"
       ],
       "Streaming problem": [
         "Problème de streaming"
@@ -1485,7 +1482,7 @@
         "La commande a expiré, nous vous invitons à réessayer."
       ],
       "Code wrong or not valid anymore": [
-        "Code incorrect ou plus valide"
+        "Le code n'est pas correct ou n'est plus valide."
       ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
@@ -1572,7 +1569,7 @@
         "La requête a expiré."
       ],
       "Signature verification failed": [
-        "La vérification de la signature a échoué."
+        "La signature n'a pas pu être vérifiée."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
@@ -1592,6 +1589,9 @@
       "The minimum payment we accept is ${ price }": [
         "Le paiement minimum accepté est de ${ price }."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Ce champ dépasse le maximum de ${ maximumLength } caractères."
+      ],
       "This field is required": [
         "Ce champ est nécessaire."
       ],
@@ -1608,7 +1608,7 @@
         "Le statut du jeton de paiement est inconnu."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "La phrase de récupération est incorrecte. Réessayez ou utilisez une autre méthode de récupération."
+        "La phrase de récupération n'est pas correcte. Réessayez ou utilisez une autre méthode de récupération."
       ],
       "You have no invoices.": [
         "Vous n'avez aucune facture."
@@ -1634,7 +1634,7 @@
         "Il y a eu un problème lors de la connexion à ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Vous pouvez également ${ refresh } ou réessayer plus tard."
+        "Vous pouvez aussi ${ refresh } ou réessayer plus tard."
       ]
     },
     "Error notification": {
@@ -1644,7 +1644,7 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "Aucune image sélectionnée"
+        "Aucune image n'est sélectionnée."
       ]
     },
     "Feature": {
@@ -1840,7 +1840,7 @@
         "Manuel"
       ],
       "No verification method available": [
-        "Aucune méthode de vérification disponible"
+        "Aucune méthode de vérification n'est disponible."
       ],
       "SMS": [
         "SMS"
@@ -1877,7 +1877,7 @@
         "${ vpnPlus } est nécessaire pour la fonctionnalité Secure Core."
       ],
       "* No credit card required.": [
-        "*Aucune carte de crédit n'est nécessaire."
+        "*Aucune carte de crédit n'est nécessaire"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
@@ -1905,7 +1905,7 @@
         "Taille du compte"
       ],
       "Account successfully updated": [
-        "Compte mis à jour"
+        "Le compte a bien été mis à jour."
       ],
       "add a recovery method": [
         "ajouter une méthode de récupération"
@@ -2142,13 +2142,13 @@
         "Saisissez manuellement cette information dans votre dispositif d'authentification à deux facteurs pour configurer votre compte. ${ switchButton }."
       ],
       "No credit card required": [
-        "Aucune carte de crédit n'est nécessaire"
+        "Aucune carte bancaire nécessaire"
       ],
       "No payment is required at this time.": [
         "Aucun paiement n'est nécessaire pour le moment."
       ],
       "No preview available": [
-        "Aucun aperçu disponible"
+        "Aucun aperçu n'est disponible."
       ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
@@ -2367,10 +2367,10 @@
         "Messages illimités"
       ],
       "Unsaved changes": [
-        "Modifications non enregistrées"
+        "Les modifications ne sont pas enregistrées."
       ],
       "Unsupported file": [
-        "Fichier non pris en charge"
+        "Le fichier n'est pas pris en charge."
       ],
       "Update the URL in your password manager": [
         "Mettez à jour l'URL dans votre gestionnaire de mots de passe."
@@ -2692,9 +2692,6 @@
       "Block malware, ads and trackers": [
         "Bloquez les programmes malveillants, publicités et traqueurs"
       ],
-      "bonus storage": [
-        "espace de stockage en bonus"
-      ],
       "Browser": [
         "Navigateur"
       ],
@@ -2925,6 +2922,9 @@
       ],
       "Select your country": [
         "Sélectionnez votre pays"
+      ],
+      "Start date": [
+        "Date de début"
       ],
       "Subscription options": [
         "Options de l'abonnement"
@@ -3759,7 +3759,7 @@
     },
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
-        "Identifiants OpenVPN/IKEv2 regénérés"
+        "Les identifiants OpenVPN/IKEv2 ont été regénérés."
       ]
     },
     "Onboarding": {
@@ -4326,6 +4326,14 @@
         "Économisez"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Active"
+      ],
+      "Upcoming": [
+        "A venir"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "La solution de messagerie et de calendrier respectueuse de la vie privée pour vos besoins de communication quotidiens."
@@ -4336,16 +4344,16 @@
     },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } est copié dans votre presse-papiers."
+        "${ server.Domain } a été copié dans votre presse-papiers."
       ],
       "Account deleted. Logging out...": [
         "Le compte a été supprimé. Déconnexion…"
       ],
       "Bug reported": [
-        "Bug signalé"
+        "Le bug a été signalé."
       ],
       "Code sent to ${ methodTo }": [
-        "Code envoyé à ${ methodTo }."
+        "Le code a été envoyé à ${ methodTo }."
       ],
       "Credits added": [
         "Les crédits ont été ajoutés."
@@ -4354,7 +4362,7 @@
         "Le nom d'affichage a été mis à jour."
       ],
       "Email address copied to clipboard": [
-        "Adresse électronique copiée dans le presse-papiers"
+        "L'adresse électronique a été copiée dans le presse-papiers."
       ],
       "Email updated": [
         "L'adresse électronique a été mise à jour."
@@ -4393,18 +4401,18 @@
         "Le numéro de téléphone a été mis à jour."
       ],
       "Verification successful": [
-        "Vérification réussie"
+        "La vérification est réussie."
       ],
       "You have successfully unsubscribed": [
-        "La désinscription a été effectuée."
+        "La désinscription a bien été effectuée."
       ]
     },
     "Success notification": {
       "Certificate ${ name } revoked": [
-        "Le certificat ${ name } est révoqué."
+        "Le certificat ${ name } a été révoqué."
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        "Le certificat est prolongé jusqu'au ${ formattedExpirationDate }."
+        "Le certificat a été prolongé jusqu'au ${ formattedExpirationDate }."
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
         "La configuration « ${ name } » a été créée, notez que la clé privée n'est pas stockée et ne pourra plus être affichée à nouveau, vous devriez copier ou télécharger cette configuration."
@@ -4520,9 +4528,6 @@
       "Back": [
         "Retour"
       ],
-      "Billing": [
-        "Facturation"
-      ],
       "Billing cycle": [
         "Cycle de facturation"
       ],
@@ -4590,7 +4595,7 @@
         "Supprimer l’organisation ?"
       ],
       "Device connected!": [
-        "Appareil connecté"
+        "L'appareil est connecté !"
       ],
       "Disable two-factor authentication": [
         "Désactiver l'authentification à deux facteurs"
@@ -4615,6 +4620,9 @@
       ],
       "Email subscriptions": [
         "Newsletters"
+      ],
+      "End date": [
+        "Date de fin"
       ],
       "Enter your password": [
         "Saisissez votre mot de passe."
@@ -4644,13 +4652,16 @@
         "Vérification humaine"
       ],
       "Invalid verification code": [
-        "Code de vérification non valide"
+        "Le code de vérification n'est pas valide."
       ],
       "Invoices": [
         "Factures"
       ],
       "Language": [
         "Langue"
+      ],
+      "Length": [
+        "Longueur"
       ],
       "Login password": [
         "Mot de passe de connexion"
@@ -4702,6 +4713,9 @@
       ],
       "Phone": [
         "Téléphone"
+      ],
+      "Plan": [
+        "Abonnement"
       ],
       "Plan summary": [
         "Récapitulatif de l'abonnement"
@@ -4760,6 +4774,9 @@
       "Sign out": [
         "Se déconnecter"
       ],
+      "Start date": [
+        "Date de début"
+      ],
       "Status": [
         "État"
       ],
@@ -4768,6 +4785,9 @@
       ],
       "Switch to two-password mode": [
         "Passer au mode deux mots de passe"
+      ],
+      "Total paid": [
+        "Total payé"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Essayez gratuitement le meilleur de ${ MAIL_APP_NAME }."
@@ -4786,6 +4806,9 @@
       ],
       "Unsupported browser": [
         "Le navigateur n'est pas pris en charge."
+      ],
+      "Users": [
+        "Utilisateurs"
       ],
       "Verification": [
         "Vérification"
@@ -4817,6 +4840,9 @@
       "Your plan": [
         "Votre abonnement"
       ],
+      "Your subscriptions": [
+        "Vos abonnements"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Vous avez été invité à essayer ${ MAIL_APP_NAME }."
       ],
@@ -4843,6 +4869,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si vous avez acheté un code cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Le nouveau cycle d'abonnement commence le ${ formattedTime }."
       ]
     },
     "Tor out of date": {
@@ -4925,7 +4954,7 @@
         "En supprimant ce numéro de téléphone, vous ne pourrez plus récupérer votre compte."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Le chat en direct est une fonctionnalité premium pour les utilisateurs avec un abonnement ${ VPN_APP_NAME } payant. Nous vous invitons à ouvrir un ticket à la place."
+        "Le chat en direct est une fonction premium uniquement disponible pour les utilisateurs ayant un abonnement ${ VPN_APP_NAME } payant. Nous vous invitons à ouvrir un ticket à la place."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Notez qu'en choisissant ce mode de paiement, votre compte ne pourra pas être mis à niveau immédiatement. Nous mettrons votre compte à niveau dès que le paiement aura été effectué."

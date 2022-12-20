@@ -922,6 +922,9 @@
       "Request timed out": [
         "Время запроса истекло"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимум ${ maximumLength } символов."
+      ],
       "This field is required": [
         "Это обязательное поле"
       ],

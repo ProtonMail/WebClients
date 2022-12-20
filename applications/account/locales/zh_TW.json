@@ -357,6 +357,9 @@
       "Font": [
         "字型"
       ],
+      "Generate": [
+        "產生"
+      ],
       "Generate key": [
         "產生金鑰"
       ],
@@ -365,6 +368,9 @@
       ],
       "Generate recovery phrase": [
         "生成還原短語"
+      ],
+      "Generate token": [
+        "產生通證"
       ],
       "Get ${ vpnPlus }": [
         "選購 ${ vpnPlus }"
@@ -492,11 +498,11 @@
       "Not spam": [
         "非垃圾郵件"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -512,6 +518,9 @@
       ],
       "Pay": [
         "付款"
+      ],
+      "Pay ${ price } now": [
+        "繳款金額 ${ price }"
       ],
       "Preview": [
         "預覽"
@@ -2408,6 +2417,11 @@
         "(中轉 ${ entryCountryName })"
       ]
     },
+    "Credits": {
+      "Available credits": [
+        "可用額度"
+      ]
+    },
     "CSV download button": {
       "CSV template": [
         "CSV 範本"
@@ -2538,7 +2552,7 @@
         "${ name } 刪除失敗"
       ],
       "${ name } failed to move to not spam List": [
-        "${ name } 移動到非垃圾郵件清單失敗"
+        "${ name } failed to move to the not-spam list"
       ],
       "${ name } failed to move to spam list": [
         "${ name } 無法移至垃圾郵件黑名單"
@@ -3061,6 +3075,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待匯入的外部帳號裡資料夾過多，請自訂匯入內容並刪除部份資料夾。"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此欄位還剩下 ${ maximumLength } 個字元。"
+      ],
       "This field is required": [
         "此欄位必填"
       ],
@@ -3135,6 +3152,9 @@
       ],
       "You must set a name": [
         "您必須設定名稱"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "若要產生 SMTP 傳送通證，您需要擁有一個自訂網域位址。"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "您的帳號或組織有逾期的帳單。請支付所有未付帳單。"
@@ -3744,6 +3764,11 @@
         "數值 / 資料 / 指向"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "動作"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestions, use keyboard to navigate.": [
         "找到 ${ items.length } 個建議，請使用鍵盤導覽。"
@@ -3850,7 +3875,7 @@
         "暫時"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow }不支援："
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -5381,8 +5406,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向的網站可能試圖竊取您的資訊，例如密碼或信用卡細節 。"
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此連結可能為域名釣魚攻擊，且無法以 Edge 瀏覽器開啟。若您確定這是正常的連結，請使用其他瀏覽器開啟。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
@@ -5443,6 +5468,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "若要匯入行程，須先在 ${ CALENDAR_APP_NAME } 創建新的行事曆。匯入後的行程，都會在此顯示。"
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
         "為了解 ${ BRAND_NAME } 產品的最新開發動態，您可訂購授權我們的各份電子通訊，或不時造訪我們的部落格。"
@@ -5719,9 +5747,6 @@
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "您需要有使用中的個人行事曆才可以從 ICS 匯入您的行程。"
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "您需要有使用中的個人行事曆才可匯入您的行程。"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已使用 ${ spaceDisplayed }% 儲存空間。${ freeUpMessage } ${ upgradeLink }"
@@ -7731,14 +7756,6 @@
         "支援"
       ]
     },
-    "new_plans: Info": {
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -7787,6 +7804,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: Info": {
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
       ]
     },
     "new_plans: Label": {
@@ -7872,6 +7897,12 @@
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "可使用多達 15 組電子郵件位址，支援 3 個自訂電子郵件網域，個性化由您定義"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
+      ],
+      "Boost your storage space to ${ businessStorage } per user": [
+        "將現有儲存空間加大至 ${ businessStorage } 予每位使用者"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "支援 10 個自訂電郵網域更全面性的服務"
@@ -8812,6 +8843,9 @@
       "Access to streaming services globally": [
         "世界每一個角落都能存取影音串流服務"
       ],
+      "Built-in ad blocker (NetShield)": [
+        "內建廣告攔截程式 (NetShield)"
+      ],
       "High-speed VPN on ${ maxVpn } devices": [
         "極速 VPN 裝載多達 ${ maxVpn } 臺裝置"
       ]
@@ -8819,6 +8853,11 @@
     "Subscription saving": {
       "Save": [
         "省下"
+      ]
+    },
+    "Subscription status": {
+      "Active": [
+        "使用中"
       ]
     },
     "Subtitle for trial plan": {
@@ -8958,6 +8997,9 @@
       ],
       "SPF value copied to clipboard": [
         "SFP 字串已複製到剪貼簿"
+      ],
+      "Token copied to clipboard": [
+        "通證已複製到剪貼簿"
       ],
       "Undo in progress": [
         "復原進行中"
@@ -9402,6 +9444,9 @@
       "Delete ${ label.Name } label": [
         "刪除 ${ label.Name } 標籤"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "刪除 ${ tokenNameToRemove }？"
+      ],
       "Delete account": [
         "刪除帳號"
       ],
@@ -9477,6 +9522,9 @@
       "Encryption and keys": [
         "加密和金鑰"
       ],
+      "End date": [
+        "結束日期"
+      ],
       "Enter your password": [
         "請輸入您的密碼"
       ],
@@ -9518,6 +9566,9 @@
       ],
       "Generate new recovery phrase?": [
         "產生新的還原短語？"
+      ],
+      "Generate SMTP token": [
+        "產生 SMTP 通證"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "選購 ${ vpnPlus } 即可存取所有的伺服器"
@@ -9593,6 +9644,9 @@
       ],
       "Layout": [
         "版面配置"
+      ],
+      "Length": [
+        "長度"
       ],
       "Link confirmation": [
         "外部連結確認"
@@ -9671,6 +9725,9 @@
       ],
       "Phone": [
         "電話"
+      ],
+      "Plan": [
+        "方案"
       ],
       "Plan summary": [
         "方案概覽"
@@ -9798,6 +9855,9 @@
       "Signed in to member account": [
         "登入到成員帳號"
       ],
+      "SMTP tokens": [
+        "SMTP 通證"
+      ],
       "Sort folders alphabetically": [
         "按英文字母排序資料夾"
       ],
@@ -9809,6 +9869,9 @@
       ],
       "Start a new import": [
         "開始新匯入"
+      ],
+      "Start date": [
+        "開始日期"
       ],
       "Start import process": [
         "開始匯入流程"
@@ -9846,6 +9909,9 @@
       "Time zone": [
         "時區"
       ],
+      "Total paid": [
+        "合計金額"
+      ],
       "Track your referrals": [
         "追蹤你的介紹紀錄"
       ],
@@ -9866,6 +9932,9 @@
       ],
       "Upgrade plan": [
         "升級方案"
+      ],
+      "Users": [
+        "使用者"
       ],
       "Users and addresses": [
         "使用者及電郵位址"
@@ -9926,6 +9995,12 @@
       ],
       "Your recovery status": [
         "你的復原狀態"
+      ],
+      "Your SMTP token": [
+        "您的 SMTP 通證"
+      ],
+      "Your subscriptions": [
+        "您的訂購授權"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "您已獲邀試用 ${ MAIL_APP_NAME }"

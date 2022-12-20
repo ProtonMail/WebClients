@@ -360,6 +360,9 @@
       "Font": [
         "Skrifttype"
       ],
+      "Generate": [
+        "Generér"
+      ],
       "Generate key": [
         "Generér nøgle"
       ],
@@ -368,6 +371,9 @@
       ],
       "Generate recovery phrase": [
         "Opret gendannelsessætning"
+      ],
+      "Generate token": [
+        "Generér token"
       ],
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
@@ -495,10 +501,10 @@
       "Not spam": [
         "Ikke spam"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -515,6 +521,9 @@
       ],
       "Pay": [
         "Betal"
+      ],
+      "Pay ${ price } now": [
+        "Betal ${ price } nu"
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -743,6 +752,9 @@
       ],
       "Size": [
         "Størrelse"
+      ],
+      "Skip verification": [
+        "Spring e-mail-verifikation over"
       ],
       "Sort": [
         "Sortér"
@@ -2607,7 +2619,7 @@
         "${ name } sletning mislykkedes"
       ],
       "${ name } failed to move to not spam List": [
-        "${ name } kunne ikke flyttes til ikke-spamliste"
+        "${ name } failed to move to the not-spam list"
       ],
       "${ name } failed to move to spam list": [
         "${ name } kunne ikke flyttes til spamliste"
@@ -3141,6 +3153,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Der er for mange mapper i din eksterne konto. Rediger venligst importen for at slette nogle mapper."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
+      ],
       "This field is required": [
         "Feltet er påkrævet"
       ],
@@ -3215,6 +3230,9 @@
       ],
       "You must set a name": [
         "Du skal angive et navn"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "Du skal have en brugerdefineret domæneadresse for at kunne generere et SMTP-indsendelses-token."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisation har en forfalden faktura. Betal venligst alle udestående fakturaer."
@@ -3999,7 +4017,7 @@
         "indtil videre"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonKontakter understøtter ikke ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -5588,8 +5606,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
@@ -5928,9 +5946,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Du skal have en aktiv personlig kalender for at importere dine begivenheder fra ICS."
       ],
-      "You need to have an active personal calendar to import your events.": [
-        "Du skal have en aktiv personlig kalender for at importere dine begivenheder."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -6008,6 +6023,10 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Din eksisterende ${ BRAND_NAME }-konto kan bruges til at tilgå alle ${ BRAND_NAME }-tjenester. Log venligst ind med ${ email }."
+      ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Din import fra ${ accounts } er midlertidigt forsinket.",
+        "Dine importer fra ${ accounts } er midlertidigt forsinket."
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
@@ -7124,6 +7143,12 @@
       "Signature": [
         "Signatur"
       ],
+      "SMTP token": [
+        "SMTP-token"
+      ],
+      "SMTP username": [
+        "SMTP-brugernavn"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7183,6 +7208,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "Til: ${ PMEmailAddress }"
+      ],
+      "Token name": [
+        "Tokennavn"
       ],
       "Two-password mode": [
         "To-adgangskodetilstand"
@@ -8029,20 +8057,6 @@
         "Support"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* Med 1-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
@@ -8073,6 +8087,20 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Den gratis startkonto, der er designet til at give alle mulighed for at få privatlivsbeskyttelse som standard."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8664,6 +8692,9 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Printer": [
+        "Printer"
+      ],
       "Search": [
         "Søg"
       ],
@@ -9167,6 +9198,14 @@
     "Subscription saving": {
       "Save": [
         "Spar"
+      ]
+    },
+    "Subscription status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Upcoming": [
+        "Kommende"
       ]
     },
     "Subtitle for trial plan": {
@@ -9764,6 +9803,9 @@
       "Delete ${ label.Name } label": [
         "Slet ${ label.Name }-etikette"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "Slet ${ tokenNameToRemove }?"
+      ],
       "Delete account": [
         "Slet konto"
       ],
@@ -9839,6 +9881,9 @@
       "Encryption and keys": [
         "Kryptering og nøgler"
       ],
+      "End date": [
+        "Slutdato"
+      ],
       "Enter your password": [
         "Indtast din adgangskode"
       ],
@@ -9884,6 +9929,9 @@
       ],
       "Generate new recovery phrase?": [
         "Opret ny gendannelsessætning?"
+      ],
+      "Generate SMTP token": [
+        "Generér SMTP-token"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Få ${ vpnPlus } for at få adgang til alle servere"
@@ -9960,6 +10008,9 @@
       ],
       "Layout": [
         "Layout"
+      ],
+      "Length": [
+        "Længde"
       ],
       "Link confirmation": [
         "Linkbekræftelse"
@@ -10038,6 +10089,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Plan": [
+        "Abonnement"
       ],
       "Plan summary": [
         "Abonnementoversigt"
@@ -10165,6 +10219,9 @@
       "Signed in to member account": [
         "Logget ind på medlemskonto"
       ],
+      "SMTP tokens": [
+        "SMTP-tokens"
+      ],
       "Sort folders alphabetically": [
         "Sortér mapper alfabetisk"
       ],
@@ -10176,6 +10233,9 @@
       ],
       "Start a new import": [
         "Start en ny import"
+      ],
+      "Start date": [
+        "Startdato"
       ],
       "Start import process": [
         "Start importeringsprocessen"
@@ -10215,6 +10275,9 @@
       "Time zone": [
         "Tidszone"
       ],
+      "Total paid": [
+        "Betalt i alt"
+      ],
       "Track your referrals": [
         "Spor dine henvisninger"
       ],
@@ -10235,6 +10298,9 @@
       ],
       "Upgrade plan": [
         "Opgradér abonnement"
+      ],
+      "Users": [
+        "Brugere"
       ],
       "Users and addresses": [
         "Brugere og adresser"
@@ -10295,6 +10361,12 @@
       ],
       "Your recovery status": [
         "Din gendannelsesstatus"
+      ],
+      "Your SMTP token": [
+        "Dit SMTP-token"
+      ],
+      "Your subscriptions": [
+        "Dine abonnementer"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du er blevet inviteret til at prøve ${ MAIL_APP_NAME }"
@@ -10692,6 +10764,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
+      "Skip verification?": [
+        "Spring e-mail-verifikation over?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Dato- og tidsindstillingerne på din enhed er ikke synkroniseret. ${ learnMore }"
       ],
@@ -10703,6 +10778,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Vi kunne ikke verificere mailserveren. Hvis du stoler på den, kan du springe denne verifikation over."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi fandt et problem med din DNS-konfiguration. Sørg for, at dine poster matcher instruktionerne nedenfor. Hvis problemet fortsætter, er vi nødt til at slå DKIM-signering fra."
