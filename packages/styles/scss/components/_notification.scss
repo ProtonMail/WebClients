@@ -60,10 +60,12 @@
 		display: flex;
 		align-items: center;
 		padding-inline-end: em(8);
-		@extend .text-cut;
+		word-break: break-word;
+		hyphens: auto;
 
 		> span {
-			@extend .text-cut;
+			word-break: break-word;
+			hyphens: auto;
 		}
 
 		.notification__button {
