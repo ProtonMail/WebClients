@@ -315,6 +315,18 @@ blockquote.protonmail_quote
 	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
 	@import '~@proton/styles/scss/helpers/outline';
 
+	.sr-only {
+		border: 0;
+		clip: rect(0 0 0 0);
+		block-size: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		inline-size: 1px;
+		inset-block-start: 0; // needed for Safari dumb and 💩 behaviour
+	}
+
 	font-family: var(--font-family);
 	font-size: 14px;
 	line-height: 1.5;
@@ -476,5 +488,10 @@ blockquote.protonmail_quote
 	.proton-plain-text {
 		color: black;
 		background-color: white;
+	}
+
+	.sr-only,
+	.no-print {
+		display: none;
 	}
 }
