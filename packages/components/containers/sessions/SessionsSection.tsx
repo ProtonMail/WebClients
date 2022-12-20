@@ -108,7 +108,7 @@ const SessionsSection = () => {
                                 key={key}
                                 cells={[
                                     session.LocalizedClientName,
-                                    <Time differentDayFormat="PPp" key={1}>
+                                    <Time format="PPp" key={1}>
                                         {session.CreateTime}
                                     </Time>,
                                     <SessionAction
