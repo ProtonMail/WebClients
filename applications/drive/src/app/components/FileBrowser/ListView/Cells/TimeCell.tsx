@@ -8,9 +8,9 @@ interface Props {
 
 export const TimeCell = ({ time }: Props) => {
     return (
-        <div className="text-ellipsis" title={readableTime(time, { locale: dateLocale, differentDayFormat: 'PP' })}>
+        <div className="text-ellipsis" title={readableTime(time, { locale: dateLocale, format: 'PP' })}>
             <span className="text-pre">
-                <Time differentDayFormat="PPp">{time}</Time>
+                <Time format="PPp">{time}</Time>
             </span>
         </div>
     );

@@ -30,7 +30,7 @@ interface Props extends HTMLAttributes<HTMLTimeElement> {
      * If the current date in browser differs from the date to format then use this format.
      * @see {readableTime}
      */
-    differentDayFormat?: string;
+    format?: string;
     options?: Options;
 }
 

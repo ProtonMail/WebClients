@@ -49,7 +49,7 @@ describe('readableTime()', () => {
     it('should apply custom time format if it is different day', () => {
         expect(
             readableTime(unixTime, {
-                differentDayFormat: 'p',
+                format: 'p',
             })
         ).toMatch(/AM|PM/); // esentially checking that it's X:XX AM or X:XX PM. By using regex, I bypass the problem of the timezones
     });
