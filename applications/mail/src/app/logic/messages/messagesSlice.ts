@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { globalReset } from '../actions';
+import { load as loadElements } from '../elements/elementsActions';
 import {
     cancelScheduled,
     cancelSendMessage,
@@ -33,6 +34,7 @@ import {
     updateExpires as updateExpiresReducer,
     updateScheduled as updateScheduledReducer,
 } from './draft/messagesDraftReducers';
+import { updateFromElements } from './helpers/messagesReducer';
 import { loadEmbedded, loadFakeProxy, loadRemoteDirect, loadRemoteProxy } from './images/messagesImagesActions';
 import {
     loadEmbeddedFulfilled,
@@ -137,6 +139,8 @@ const messagesSlice = createSlice({
         builder.addCase(deleteDraft, deleteDraftReducer);
         builder.addCase(cancelScheduled, cancelScheduledReducer);
         builder.addCase(cancelSendMessage.fulfilled, cancelSendSuccessReducer);
+
+        builder.addCase(loadElements.fulfilled, updateFromElements);
     },
 });
 
