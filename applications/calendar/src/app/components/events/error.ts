@@ -5,7 +5,7 @@ export const getEventErrorMessage = (error: Error) => {
         return '';
     }
     const errorMessage = error.message || '';
-    return errorMessage.includes('decrypt')
+    return errorMessage.toLowerCase().includes('decrypt')
         ? c('Error').t`Decryption error: Decryption of this event's content failed.`
         : c('Error').t`Error: ${errorMessage}`;
 };

@@ -7,6 +7,7 @@ import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendar
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 
 import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
@@ -170,6 +171,16 @@ const useCalendarsEventsReader = (
                         eventRecord.eventPromise = undefined;
                     })
                     .catch((error: any) => {
+                        const errorMessage = error?.message || 'Unknown error';
+                        if (!errorMessage.toLowerCase().includes('decrypt')) {
+                            /**
+                             * (Temporarily) Log to Sentry any error not related to decryption
+                             */
+                            const { ID, CalendarID } = eventRecord.eventData || {};
+                            captureMessage('Unexpected error reading calendar event', {
+                                extra: { message: errorMessage, eventID: ID, calendarID: CalendarID },
+                            });
+                        }
                         eventRecord.eventReadResult = { error };
                         eventRecord.eventPromise = undefined;
                     });
