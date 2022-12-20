@@ -45,4 +45,21 @@ describe('Time component', () => {
             })
         );
     });
+
+    it('should support format forcing (sameDayFormat={false})', () => {
+        const todayUnixDate = Math.floor(Date.now() / 1000);
+
+        const { container } = render(
+            <Time format="PP" sameDayFormat={false}>
+                {todayUnixDate}
+            </Time>
+        );
+
+        expect(container.firstChild.textContent).toBe(
+            readableTime(todayUnixDate, {
+                format: 'PP',
+                sameDayFormat: 'PP',
+            })
+        );
+    });
 });
