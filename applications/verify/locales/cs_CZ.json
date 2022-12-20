@@ -922,6 +922,9 @@
       "Request timed out": [
         "Vypršel časový limit žádosti"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
+      ],
       "This field is required": [
         "Toto pole je povinné"
       ],

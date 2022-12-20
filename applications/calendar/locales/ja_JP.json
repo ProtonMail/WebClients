@@ -443,6 +443,9 @@
       "Skip": [
         "スキップ"
       ],
+      "Skip verification": [
+        "検証をスキップする"
+      ],
       "Start import": [
         "インポート開始"
       ],
@@ -847,6 +850,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "公開リンクには現在アクセスできません。リンクがまだ有効かどうかをご確認ください。"
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "前回の更新から12時間以上経過 — ${ CALENDAR_APP_NAME } は数時間後にカレンダーの更新を試行します。"
       ]
     },
     "Calendar view": {
@@ -1847,6 +1853,11 @@
         "全体の既定値を使用 (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "全体の既定値を使用 (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "未払いの請求"
@@ -2266,6 +2277,9 @@
       "There was an error when exporting the contacts vCards": [
         "連絡先の vCard のエクスポート中にエラーが発生しました"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "このフィールドは${ maximumLength }文字の最大値を超えています。"
+      ],
       "This field is required": [
         "この項目の入力は必須です"
       ],
@@ -2283,6 +2297,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "文字・数字・ _.- のみを使用してみてください"
       ],
       "Unknown error": [
         "原因不明なエラーが発生しました"
@@ -2801,7 +2818,7 @@
         "現時点"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts は ${ forNow } をサポートしていません"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3014,6 +3031,11 @@
         "${ boldPublish } から、インポートしたいカレンダーを選択します。アクセス許可を ${ boldCanViewAllDetails } にし公開します。"
       ]
     },
+    "Import provider": {
+      "Other": [
+        "その他"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
@@ -3212,6 +3234,9 @@
       "Each code can only be used once": [
         "各コードは 1 回のみ使用可能です"
       ],
+      "Emails are automatically signed": [
+        "電子メールは自動的に署名されます"
+      ],
       "Enter the code from your authenticator app": [
         "認証アプリのコードを入力してください"
       ],
@@ -3277,6 +3302,9 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートできます。データを移行し暗号化する手順をわかりやすく解説します。プライバシーの世界へようこそ。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -3374,17 +3402,11 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
-      ],
       "Other options": [
         "その他のオプション"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME は自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline は Plain Text 形式にのみ対応しています。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "グループに割り当てられたアドレスは削除されません。"
@@ -3518,8 +3540,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "このリンクはホモグラフ攻撃の可能性があり、Edgeブラウザでは開けません。リンクが確実に正しいと思われる場合は、別のブラウザで開いてください。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
@@ -3632,9 +3654,6 @@
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "パスワードが変更されたため、以下のカレンダーに登録されていた予定を復号できませんでした。\nパスワードの変更前に共有したリンクにはアクセスできません。\n登録した他人のカレンダーは数分後に同期されます。"
       ],
-      "You need to have an active personal calendar to import your events.": [
-        "予定をインポートするには、アクティブなパーソナルカレンダーが必要です。"
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "一度招待を拒否しているため、主催者からもう一度招待される必要があります。"
       ],
@@ -3673,6 +3692,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "お客様のアカウントには1つ以上期限が過ぎている請求書があります。お支払いを確認できるまで全てのサービスにおいて制限が課されます。 ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
@@ -4439,6 +4461,9 @@
       ]
     },
     "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "カレンダーの招待を断る"
+      ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "${ calendarName }に参加しました(${ senderEmail })"
       ]
@@ -4528,7 +4553,7 @@
         "${ value } 週間前"
       ],
       "${ value } weeks before at ${ time }": [
-        "${ value }週間前の${ time }"
+        "${ value } 週間前の ${ time }"
       ],
       "At time of event": [
         "予定の時間"
@@ -4578,6 +4603,9 @@
       ],
       "Set up your organization": [
         "組織のための設定"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "左上のアプリセレクターで、すべてのアプリにアクセスできます。 ${ BRAND_NAME } サービス: ${ MAIL_SHORT_APP_NAME }・ ${ VPN_SHORT_APP_NAME }・ ${ CALENDAR_SHORT_APP_NAME }・ ${ DRIVE_SHORT_APP_NAME }"
       ],
       "You can change this anytime in your settings.": [
         "この設定はいつでも変更できます。"
@@ -4857,9 +4885,20 @@
         "カレンダーを管理"
       ]
     },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "署名しない"
+      ],
+      "Sign": [
+        "署名"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
+      ],
+      "Don't miss any events": [
+        "予定をお見逃しなく"
       ],
       "Easily accept invites": [
         "招待を簡単に了承できます"
@@ -4878,6 +4917,9 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を試す"
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "登録しているカレンダーに通知を追加できるようになりました。"
       ],
       "You can subscribe to external calendars and read their events.": [
         "外部カレンダーを購読して、イベントを読み込むことができます。"
@@ -4931,6 +4973,9 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } 連絡先は同じようです"
+      ],
       "Address copied to clipboard": [
         "住所がクリップボードにコピーされました"
       ],
@@ -4972,6 +5017,12 @@
       ],
       "Cancellation sent and event deleted": [
         "予定キャンセルの通知を送りました。予定は削除されました。"
+      ],
+      "Cancellation sent and participants removed": [
+        "キャンセルが送信され、参加者が削除されました"
+      ],
+      "Cancellation sent and participants removed from all events": [
+        "キャンセルが送信され、参加者はすべての予定から削除されました"
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
@@ -5021,8 +5072,26 @@
       "Invitation sent and events created": [
         "招待を送信し、予定を作成しました"
       ],
+      "Invitation sent and participants added": [
+        "招待が送信され、参加者が追加されました"
+      ],
+      "Invitation sent and participants added to all events": [
+        "招待が送信され、参加者がすべての予定に追加されました"
+      ],
+      "Participants notified and all events updated": [
+        "参加者に通知され、すべての予定が更新されました"
+      ],
+      "Participants notified and changes saved": [
+        "参加者に通知し、変更を保存しました"
+      ],
+      "Participants notified and event updated": [
+        "参加者に通知され、予定が更新されました"
+      ],
       "Participation status updated": [
         "参加状況が更新されました"
+      ],
+      "Participation status updated for all events": [
+        "すべての予定の参加予定が更新されました"
       ],
       "Phone number copied to clipboard": [
         "電話番号がクリップボードにコピーされました"
@@ -5553,6 +5622,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "パスワードは ${ length } 文字以上必要です"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     },
     "Video control": {
@@ -5602,6 +5674,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"
       ],
+      "Skip verification?": [
+        "検証をスキップしますか?"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "統合時にエラーが発生した連絡先があります。エラー内容をご確認ください。"
       ],
@@ -5631,6 +5706,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "申し訳ありませんが、現在オンラインにおりません。以下のフォームに問題点をご記入ください。お調べして、オンラインに戻り次第ご連絡いたします。"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "メールサーバーを検証できませんでした。信頼できる場合は、この検証をスキップできます。"
       ],
       "You will lose any customization you made so far.": [
         "今までに行ったカスタマイズはすべて失われます。"

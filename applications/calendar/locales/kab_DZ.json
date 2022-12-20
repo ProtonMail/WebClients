@@ -2388,7 +2388,7 @@
         "ɣer tura"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ur issefrak ara ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2501,6 +2501,11 @@
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file.": [
         "Sit ɣef useɣwen ${ boldICS } syen sader afaylu."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Ayen-nniḍen"
       ]
     },
     "Import warning": {
@@ -2831,9 +2836,6 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Timeḍriwin yettwaleqqmen yakan sɣur amsuddes ad qqiment."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur isseqdac ara ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Ugar n iɣewwaṛen"
       ],
@@ -3019,9 +3021,6 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Twennzeḍ awal-ik·im uffir, tidyanin yeqqnen ɣer yiwitay-a ulamek ara asent-yekkes uwgelhen.\nAkk iseɣwan n yiwitayen yettwabḍa i d-terniḍ yakan dayen ur tteddun ara.\n Akk iwitayen urmiden iɣer tjerrdeḍ ad ttumtawin i tikkelt-nniḍen seld kra n tesdatin."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Tesriḍ ad tesɛuḍ awitay urmid udmawen i uktar n yineḍruyen-ik·im."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Tewwḍeḍ ɣer ${ spaceDisplayed }% n tallunt-inek .m n weḥraz. ${ freeUpMessage } ${ upgradeLink }"

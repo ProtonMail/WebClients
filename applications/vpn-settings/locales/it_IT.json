@@ -218,8 +218,8 @@
       "Pay": [
         "Paga"
       ],
-      "Pay ${ price }": [
-        "Paga ${ price }"
+      "Pay ${ price } now": [
+        "Paga ${ price } adesso"
       ],
       "Previous": [
         "Precedente"
@@ -459,9 +459,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Si rinnova automaticamente il ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Si rinnova automaticamente il ${ formattedEndTime } per ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1592,6 +1589,9 @@
       "The minimum payment we accept is ${ price }": [
         "Il pagamento minimo che accettiamo è di ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
+      ],
       "This field is required": [
         "Questo campo è obbligatorio"
       ],
@@ -2692,9 +2692,6 @@
       "Block malware, ads and trackers": [
         "Blocca malware, annunci e tracker"
       ],
-      "bonus storage": [
-        "spazio bonus"
-      ],
       "Browser": [
         "Browser"
       ],
@@ -2925,6 +2922,9 @@
       ],
       "Select your country": [
         "Seleziona il tuo paese"
+      ],
+      "Start date": [
+        "Data d'inizio"
       ],
       "Subscription options": [
         "Opzioni dell'abbonamento"
@@ -4326,6 +4326,14 @@
         "Risparmia"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Attivo"
+      ],
+      "Upcoming": [
+        "In arrivo"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "La soluzione Mail e Calendar al primo posto per la privacy per le tue esigenze di comunicazione quotidiane."
@@ -4520,9 +4528,6 @@
       "Back": [
         "Indietro"
       ],
-      "Billing": [
-        "Fatturazione"
-      ],
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
@@ -4616,6 +4621,9 @@
       "Email subscriptions": [
         "Newsletter"
       ],
+      "End date": [
+        "Data di fine"
+      ],
       "Enter your password": [
         "Inserisci la tua password"
       ],
@@ -4651,6 +4659,9 @@
       ],
       "Language": [
         "Lingua"
+      ],
+      "Length": [
+        "Lunghezza"
       ],
       "Login password": [
         "Password di accesso"
@@ -4702,6 +4713,9 @@
       ],
       "Phone": [
         "Telefono"
+      ],
+      "Plan": [
+        "Piano"
       ],
       "Plan summary": [
         "Riepilogo piano"
@@ -4760,6 +4774,9 @@
       "Sign out": [
         "Esci"
       ],
+      "Start date": [
+        "Data d'inizio"
+      ],
       "Status": [
         "Stato"
       ],
@@ -4768,6 +4785,9 @@
       ],
       "Switch to two-password mode": [
         "Passa alla modalità a doppia password"
+      ],
+      "Total paid": [
+        "Totale pagato"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Prova gratuitamente il meglio di ${ MAIL_APP_NAME }"
@@ -4786,6 +4806,9 @@
       ],
       "Unsupported browser": [
         "Browser non supportato"
+      ],
+      "Users": [
+        "Utenti"
       ],
       "Verification": [
         "Verifica"
@@ -4817,6 +4840,9 @@
       "Your plan": [
         "Il tuo piano"
       ],
+      "Your subscriptions": [
+        "I tuoi abbonamenti"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Sei stato invitato a provare ${ MAIL_APP_NAME }"
       ],
@@ -4843,6 +4869,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se hai acquistato un codice regalo o ne hai ricevuto uno dal nostro team di supporto, puoi inserirlo qui."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Il nuovo ciclo di abbonamento inizia il ${ formattedTime }"
       ]
     },
     "Tor out of date": {

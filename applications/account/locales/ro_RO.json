@@ -501,11 +501,11 @@
       "Not spam": [
         "Acceptată"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
@@ -817,7 +817,7 @@
         "Actualizare frază de recuperare"
       ],
       "Upgrade": [
-        "Migrare"
+        "Modernizare"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -902,10 +902,10 @@
         "Nu, mulțumesc"
       ],
       "Start my 30-day free trial": [
-        "Începere încercare gratuită 30 de zile"
+        "Începere probare gratuită 30 de zile"
       ],
       "Try free for 30 days": [
-        "Încercați gratuit 30 de zile"
+        "Probați gratuit 30 de zile"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -2648,7 +2648,7 @@
         "Ștergerea lui ${ name } a eșuat."
       ],
       "${ name } failed to move to not spam List": [
-        "${ name } nu s-a putut muta în lista de adrese acceptate."
+        "${ name } failed to move to the not-spam list"
       ],
       "${ name } failed to move to spam list": [
         "${ name } nu s-a putut muta în lista de nedorite."
@@ -2854,7 +2854,7 @@
         "Eroare autentificare."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Răspunsurile automate sunt o caracteristică plătită. Treceți la un cont cu plată pentru a utiliza această caracteristică."
+        "Răspunsurile automate sunt o funcție cu plată. Treceți la un cont cu plată pentru a utiliza această funcție."
       ],
       "Calendar cannot be found": [
         "Calendarul nu poate fi găsit."
@@ -3075,7 +3075,7 @@
         "Încercați să vă reautentificați și asigurați-vă că permisiunile sunt setate corect."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a folosi mai mulți utilizatori."
+        "Treceți la un plan de afaceri cu mai mult de un utilizator pentru a folosi mai mulți utilizatori."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
@@ -4130,7 +4130,7 @@
         "momentan"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts nu acceptă ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4663,7 +4663,7 @@
         "Alocare cont admin"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "După efectuarea plății cu Bitcoin, urmați instrucțiunile de mai jos pentru migrare."
+        "După efectuarea plății cu Bitcoin, urmați instrucțiunile de mai jos pentru modernizare."
       ],
       "Align left": [
         "Aliniere la stânga"
@@ -5069,7 +5069,7 @@
       "Get my ${ BRAND_NAME } address": [
         "Vreau adresa mea ${ BRAND_NAME }"
       ],
-      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain address. Only this address will be able to send emails with this token.": [
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dați unu nume descriptiv jetonului (codului de acces), cum ar fi serviciul pe care urmați să-l folosiți și selectați una din adresele de domeniu personale active. Numai această adresă va putea trimite mesaje cu acest cod de acces."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
@@ -5763,8 +5763,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
@@ -5905,7 +5905,7 @@
         "Actualizați-vă adresa URL în managerul de parole."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Faceți upgrade astăzi pentru a evita pierderea beneficiilor din ${ planName }."
+        "Treceți la un plan superior astăzi pentru a evita pierderea beneficiilor din ${ planName }."
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -6058,7 +6058,7 @@
         "Acum puteți închide această fereastră."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Acum puteți primi mesaje la adresa @pm.me. Treceți la un plan cu plată pentru a trimite, de asemenea, e-mailuri folosind adresa dvs. @pm.me și pentru a crea adrese @pm.me suplimentare."
+        "Acum puteți primi mesaje la adresa @pm.me. Treceți la un plan cu plată pentru a trimite și e-mailuri folosind adresa dvs. @pm.me și pentru a crea adrese @pm.me suplimentare."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
@@ -6112,9 +6112,6 @@
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele din fișierul ICS."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Trebuie să aveți un calendar personal activ pentru a importa evenimentele."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "S-a atins ${ spaceDisplayed }% din capacitatea de stocare. ${ freeUpMessage } ${ upgradeLink }"
@@ -6235,10 +6232,10 @@
         "Creare adresă de e-mail"
       ],
       "Day 27: Trial reminder": [
-        "Ziua 27: reamintire perioadă de încercare."
+        "Ziua 27: reamintire perioadă de probare."
       ],
       "Day 30: Trial ends": [
-        "Ziua 30: încercarea se încheie."
+        "Ziua 30: probarea se încheie."
       ],
       "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
         "Bucurați-vă de mesaje pe e-mail sigure, ușor de folosit cu o mulțime de funcții speciale."
@@ -6250,7 +6247,7 @@
         "Încercați Mail Plus"
       ],
       "We’ll email you before your trial ends. Cancel anytime.": [
-        "Veți primi mesaj pe e-mail înainte de expirarea perioadei de încercare. Puteți anula oricând."
+        "Veți primi un mesaj pe e-mail înainte de expirarea perioadei de probare. Puteți anula oricând."
       ],
       "Your new email address is ready to go!": [
         "Noua adresă de e-mail este gata de utilizare!"
@@ -7692,10 +7689,10 @@
         "Aveți probleme la autentificare?"
       ],
       "Upgrade account": [
-        "Migrare cont"
+        "Modernizare cont"
       ],
       "Upgrade your plan": [
-        "Îmbunătăți-vă planul"
+        "Treceți la alt plan"
       ],
       "View guide": [
         "Consultare ghid"
@@ -7804,7 +7801,7 @@
         "Conectați domeniul personal la ${ BRAND_NAME } pentru a configura adrese de e-mail personale (de ex. eu@companiamea.com). Asistentul nostru automat vă va ghida în acest proces."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Perioada de încercare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+        "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -8088,7 +8085,7 @@
         "Schimbare plan"
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
-        "Upgrade la ${ upsellPlanHumanSize }"
+        "Trecere la ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
@@ -8108,7 +8105,7 @@
         "Păstrez contul ${ currentPlanName } $"
       ],
       "Upgrade now": [
-        "Upgrade acum"
+        "Modernizare"
       ]
     },
     "new_plans: attribute": {
@@ -8355,26 +8352,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8446,6 +8423,26 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probare se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } din ${ humanMaxSpace }"
@@ -8491,10 +8488,10 @@
     },
     "new_plans: Title": {
       "${ mailPlanName } Trial": [
-        "Încercare ${ mailPlanName }"
+        "Probare ${ mailPlanName }"
       ],
       "Upgrade to ${ planName }": [
-        "Upgrade la ${ planName }"
+        "Trecere la ${ planName }"
       ],
       "Your account's usage": [
         "Utilizare cont"
@@ -8520,7 +8517,7 @@
         "Schimbare planuri?"
       ],
       "Unlock premium features by upgrading": [
-        "Deblocați funcțiile premium făcând upgrade"
+        "Deblocați funcțiile premium modernizând contul"
       ]
     },
     "new_plans: tooltip": {
@@ -8685,10 +8682,10 @@
     },
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        "Inclus cu ${ plus }, ${ bundle } și ${ BRAND_NAME } pentru afaceri."
+        "Inclus cu ${ plus }, ${ bundle } și ${ BRAND_NAME } for Business."
       ],
       "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Inclus cu toate planurile ${ BRAND_NAME } pentru afaceri."
+        "Inclus cu toate planurile ${ BRAND_NAME } for Business."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9082,13 +9079,13 @@
         "${ upgradeLink } pentru a adăuga mai mulți utilizatori sau eliminați câteva conturi de utilizator pentru a elibera spațiul."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
-        "${ upgradeLink } pentru a obține mai multe conturi sau eliminați accesul ala VPN pentru unii utilizatori."
+        "${ upgradeLink } pentru a obține mai multe conturi sau eliminați accesul la VPN pentru unii utilizatori."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
         "${ upgradeLink } pentru a obține mai multe adrese sau eliminați câteva adrese pentru a elibera spațiu."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink } pentru a obține mai mult spațiu sau eliminați câteva pentru a elibera spațiu."
+        "${ upgradeLink } pentru a obține mai mult spațiu sau eliminați din spațiul alocat pentru a elibera spațiu."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Planul actual mai include maxim o adresă.",
@@ -10515,7 +10512,7 @@
         "Cum să recomandați o persoană și să primiți credite"
       ],
       "How your free trial works": [
-        "Cum funcționează încercarea gratuită"
+        "Cum funcționează probarea gratuită"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -10866,7 +10863,7 @@
         "Navigator nesuportat"
       ],
       "Upgrade plan": [
-        "Migrare plan"
+        "Modernizare plan"
       ],
       "Users": [
         "Utilizatori"
@@ -10920,7 +10917,7 @@
         "Planul curent"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Perioada de încercare gratuită se încheie în curând, la ${ formattedEndDate }"
+        "Perioada de probare gratuită se încheie în curând, la ${ formattedEndDate }"
       ],
       "Your import history": [
         "Istoric importări"
@@ -11200,9 +11197,9 @@
     },
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Treceți la un plan de e-mail cu plată pentru a putea crea până la ${ MAX_CALENDARS_PAID } calendare, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale.",
-        "Treceți la un plan de e-mail cu plată pentru a putea crea până la ${ MAX_CALENDARS_PAID } calendare, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale.",
-        "Treceți la un plan de e-mail cu plată pentru a putea crea până la ${ MAX_CALENDARS_PAID } de calendare, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale."
+        "Treceți la un plan de e-mail cu plată pentru a putea să creați până la un calendar, care vă permite să creați calendare pentru muncă, să le partajați cu prietenii sau doar personale.",
+        "Treceți la un plan de e-mail cu plată pentru a putea să creați până la ${ MAX_CALENDARS_PAID } calendare, care vă permite să creați calendare pentru muncă, să le partajați cu prietenii sau doar personale.",
+        "Treceți la un plan de e-mail cu plată pentru a putea să creați până la ${ MAX_CALENDARS_PAID } de calendare, care vă permite să creați calendare pentru muncă, să le partajați cu prietenii sau doar personale."
       ],
       "Upgrade to a Mail paid plan to share your calendar.": [
         "Treceți la un plan de e-mail cu plată pentru a partaja calendarul."
@@ -11377,7 +11374,7 @@
         "Nu veți mai vedea această înregistrare importată în listă."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Perioada de încercare se încheie în curând la ${ textDate }. ${ action }"
+        "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Fișierul de recuperare este vechi. Nu vă poate recupera datele dacă vă veți reseta contul."

@@ -501,7 +501,7 @@
         "Actualizare frază de recuperare"
       ],
       "Upgrade": [
-        "Migrare"
+        "Modernizare"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -1910,6 +1910,11 @@
         "Folosire valoare implicită globală (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Folosire valoare implicită globală (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factură restantă"
@@ -2355,6 +2360,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
       "This field is required": [
         "Acest câmp este obligatoriu"
@@ -2936,7 +2944,7 @@
         "momentan"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts nu acceptă ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3147,6 +3155,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "Sub ${ boldPublish }, selectați calendarul pe care doriți să îl importați. Setați permisiunea la ${ boldCanViewAllDetails } și publicați-l."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Altele"
       ]
     },
     "Import warning": {
@@ -3398,6 +3411,9 @@
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar odată."
       ],
+      "Emails are automatically signed": [
+        "Mesajele sunt semnate automat"
+      ],
       "Enter the code from your authenticator app": [
         "Introduceți codul din aplicația Authenticator."
       ],
@@ -3465,6 +3481,9 @@
       ],
       "Import mailbox": [
         "Importare mesaje"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importați e-mailurile, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }. Vă vom ghida la fiecare pas și vă vom cripta datele pe măsură ce acestea sunt mutate. Bine ați venit în lumea vieții private."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
@@ -3562,17 +3581,14 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Alte opțiuni"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP / Inline este compatibil doar cu formatul de text simplu."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP / MIME trimite automat mesajul folosind modul curent de compunere."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
@@ -3708,8 +3724,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
@@ -3736,7 +3752,7 @@
         "Actualizare eveniment recurent"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Faceți upgrade astăzi pentru a evita pierderea beneficiilor din ${ planName }."
+        "Treceți la un plan superior astăzi pentru a evita pierderea beneficiilor din ${ planName }."
       ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
@@ -3821,9 +3837,6 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "V-ați resetat parola și evenimentele legate la următoarele calendare nu s-au putut decripta.\nOrice legătură de calendar partajată creată anterior nu va mai funcționa.\nOrice calendar activ abonat se va resincroniza după câteva minute."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Trebuie să aveți un calendar personal activ pentru a importa evenimentele."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Anterior ați respins această invitație. Solicitați proprietarului o reinvitare."
@@ -4339,7 +4352,7 @@
         "Calendare abonate"
       ],
       "Upgrade account": [
-        "Migrare cont"
+        "Modernizare cont"
       ],
       "What’s this?": [
         "Ce este asta?"
@@ -4403,7 +4416,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Perioada de încercare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
+        "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -5162,6 +5175,14 @@
         "Gestionare calendar"
       ]
     },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Fără semnare"
+      ],
+      "Sign": [
+        "Semnare"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } nu mai este în stadiu beta! Oferiți fișierelor aceeași securitate pe care o primesc și e-mailurile."
@@ -5814,7 +5835,7 @@
         "Actualizare eveniment recurent"
       ],
       "Upgrade required": [
-        "Migrare necesară"
+        "Modernizare necesară"
       ],
       "View contacts": [
         "Afișare contacte"
@@ -5838,7 +5859,7 @@
         "Legătură calendar"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Perioada de încercare gratuită se încheie în curând, la ${ formattedEndDate }"
+        "Perioada de probare gratuită se încheie în curând, la ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -6020,7 +6041,7 @@
         "Veți pierde orice modificare făcută până acum."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Perioada de încercare se încheie în curând la ${ textDate }. ${ action }"
+        "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
