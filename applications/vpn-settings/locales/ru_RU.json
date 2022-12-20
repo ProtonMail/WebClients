@@ -218,8 +218,8 @@
       "Pay": [
         "Оплатить"
       ],
-      "Pay ${ price }": [
-        "Оплатить ${ price }"
+      "Pay ${ price } now": [
+        "Оплатите ${ price } сейчас"
       ],
       "Previous": [
         "Предыдущий"
@@ -463,9 +463,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Пролонгируется автоматически ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Пролонгируется автоматически ${ formattedEndTime } за ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1600,6 +1597,9 @@
       "The minimum payment we accept is ${ price }": [
         "Минимальный платеж, который мы принимаем, составляет ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Длина этого поля превысила максимум ${ maximumLength } символов."
+      ],
       "This field is required": [
         "Это обязательное поле"
       ],
@@ -2720,9 +2720,6 @@
       "Block malware, ads and trackers": [
         "Блокировать вредоносные программы, рекламу и трекеры"
       ],
-      "bonus storage": [
-        "бонусное хранилище"
-      ],
       "Browser": [
         "Браузер"
       ],
@@ -2953,6 +2950,9 @@
       ],
       "Select your country": [
         "Выберите вашу страну"
+      ],
+      "Start date": [
+        "Дата начала"
       ],
       "Subscription options": [
         "Параметры подписки"
@@ -4428,6 +4428,14 @@
         "Сэкономьте"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Активный"
+      ],
+      "Upcoming": [
+        "Предстоящий"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Почта и календарь - это решение для повседневных коммуникаций с приоритетом конфиденциальности."
@@ -4622,9 +4630,6 @@
       "Back": [
         "Назад"
       ],
-      "Billing": [
-        "Оплата"
-      ],
       "Billing cycle": [
         "Период оплаты"
       ],
@@ -4718,6 +4723,9 @@
       "Email subscriptions": [
         "Подписки на рассылки"
       ],
+      "End date": [
+        "Дата окончания"
+      ],
       "Enter your password": [
         "Введите свой пароль"
       ],
@@ -4753,6 +4761,9 @@
       ],
       "Language": [
         "Язык"
+      ],
+      "Length": [
+        "Длина"
       ],
       "Login password": [
         "Пароль для входа"
@@ -4804,6 +4815,9 @@
       ],
       "Phone": [
         "Телефон"
+      ],
+      "Plan": [
+        "Тариф"
       ],
       "Plan summary": [
         "Сводка по тарифу"
@@ -4862,6 +4876,9 @@
       "Sign out": [
         "Выйти"
       ],
+      "Start date": [
+        "Дата начала"
+      ],
       "Status": [
         "Состояние"
       ],
@@ -4870,6 +4887,9 @@
       ],
       "Switch to two-password mode": [
         "Переключение в режим с двумя паролями"
+      ],
+      "Total paid": [
+        "Общая стоимость"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
@@ -4888,6 +4908,9 @@
       ],
       "Unsupported browser": [
         "Неподдерживаемый браузер"
+      ],
+      "Users": [
+        "Пользователи"
       ],
       "Verification": [
         "Подтверждение"
@@ -4919,6 +4942,9 @@
       "Your plan": [
         "Ваш тариф"
       ],
+      "Your subscriptions": [
+        "Ваша подписка"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Вас пригласили попробовать ${ MAIL_APP_NAME }"
       ],
@@ -4945,6 +4971,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Новый цикл подписки начинается ${ formattedTime }"
       ]
     },
     "Tor out of date": {

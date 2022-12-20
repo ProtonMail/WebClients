@@ -922,6 +922,9 @@
       "Request timed out": [
         "La requête a expiré."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Ce champ dépasse le maximum de ${ maximumLength } caractères."
+      ],
       "This field is required": [
         "Ce champ est nécessaire."
       ],
@@ -952,7 +955,7 @@
         "Il y a eu un problème lors de la connexion à ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Vous pouvez également ${ refresh } ou réessayer plus tard."
+        "Vous pouvez aussi ${ refresh } ou réessayer plus tard."
       ]
     },
     "fido2: Error": {
@@ -984,7 +987,7 @@
         "Manuel"
       ],
       "No verification method available": [
-        "Aucune méthode de vérification disponible"
+        "Aucune méthode de vérification n'est disponible."
       ],
       "SMS": [
         "SMS"
@@ -1108,10 +1111,10 @@
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "Code envoyé à ${ methodTo }."
+        "Le code a été envoyé à ${ methodTo }."
       ],
       "Verification successful": [
-        "Vérification réussie"
+        "La vérification est réussie."
       ]
     },
     "Title": {
@@ -1122,7 +1125,7 @@
         "Vérification humaine"
       ],
       "Invalid verification code": [
-        "Code de vérification non valide"
+        "Le code de vérification n'est pas valide."
       ],
       "Request new code": [
         "Demander un nouveau code"

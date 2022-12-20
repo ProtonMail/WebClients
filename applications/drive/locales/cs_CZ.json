@@ -215,6 +215,9 @@
       "Download anyway": [
         "Přesto stáhnout"
       ],
+      "Download the Windows application": [
+        "Stáhněte si aplikaci pro Windows"
+      ],
       "Drive Locked": [
         "Disk uzamčen"
       ],
@@ -1758,6 +1761,11 @@
         "Použijte globální výchozí nastavení (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Použít globální výchozí nastavení (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Faktura po splatnosti"
@@ -2116,6 +2124,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Při exportu kontaktů vCard došlo k chybě"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
       ],
       "This field is required": [
         "Toto pole je povinné"
@@ -2661,7 +2672,7 @@
         "prozatím"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts nepodporuje ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2872,6 +2883,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "V části ${ boldPublish } vyberte kalendář, který chcete importovat. Nastavte oprávnění na ${ boldCanViewAllDetails } a zveřejněte jej."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Ostatní"
       ]
     },
     "Import warning": {
@@ -3267,6 +3283,9 @@
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
       ],
+      "Emails are automatically signed": [
+        "E-maily jsou automaticky podepsány"
+      ],
       "Enabling drive search": [
         "Zapínání vyhledávání na disku"
       ],
@@ -3401,6 +3420,9 @@
       ],
       "Import mailbox": [
         "Importovat poštovní schránku"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
@@ -3558,9 +3580,6 @@
         "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků",
         "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
-      ],
       "Only the people with the link and the password can access this file.": [
         "Kdokoli s tímto odkazem a heslem má přístup k tomuto souboru."
       ],
@@ -3576,11 +3595,11 @@
       "Permanently delete all files in your locked drive": [
         "Trvale smazat všechny soubory na vašem zamčeném disku"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline je kompatibilní pouze s formátem prostého textu."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME automaticky odešle zprávu pomocí aktuálního režimu psaní zpráv."
       ],
       "Please enter the password to decrypt and view content.": [
         "Prosím zadejte heslo pro dešifrování a zobrazení obsahu."
@@ -3759,8 +3778,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Tento odkaz může být homografickým útokem a prohlížeč Edge jej nemůže otevřít. Pokud jste si jisti, že je odkaz legitimní, použijte k jeho otevření jiný prohlížeč."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
@@ -3794,6 +3813,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pro opětovné podepsání vašich kontaktů, potřebujeme prověřit každý kontakt oproti seznamu šifrovacích klíčů dostupných ve vašem účtu. Jestliže nebude nalezena shoda, bude kontakt znovu podepsán pomocí výchozího šifrovacího klíče."
@@ -3923,9 +3945,6 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "Zbývá vám ${ expiresInDays } dní na získání uvítacího bonusu 500 MB a "
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Před importováním vašich událostí musíte mít aktivní osobní kalendář."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosáhli jste ${ spaceDisplayed }% kapacity svého úložiště. ${ freeUpMessage } ${ upgradeLink }"
@@ -5158,6 +5177,14 @@
       ],
       "Try the new side panel": [
         "Vyzkoušejte nový postranní panel"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Nepodepisovat"
+      ],
+      "Sign": [
+        "Podepsat"
       ]
     },
     "Spotlight": {

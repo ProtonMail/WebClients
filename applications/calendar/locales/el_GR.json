@@ -2619,7 +2619,7 @@
         "για τώρα"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "Το ProtonContacts δεν υποστηρίζει ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2764,6 +2764,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Για εξαγωγή του ημερολογίου ως αρχείου ICS, επιλέξτε ${ boldExport }."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Άλλο"
       ]
     },
     "Import warning": {
@@ -3116,9 +3121,6 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Άλλες επιλογές"
       ],
@@ -3334,9 +3336,6 @@
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "Εχετε επαναφέρει τον κωδικό πρόσβασης σασ και σαν αποτέλεσμα γεγονότα συνδεδεμένα με τα ακόλουθα ημερολόγια, δε μπορέσανε να αποκρυπτωγραφηθούν.\nΟι συνδέσεις κοινόχρηστου ημερολογίου που δημιουργήσατε προηγουμένως δεν θα λειτουργούν πλέον.\nΟποιαδήποτε ενεργά εγγεγραμμένα ημερολόγια θα συγχρονιστούν ξανά μετά από λίγα λεπτά."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Έχετε προηγουμένως απορρίψει αυτήν την πρόσκληση. Παρακαλώ ρωτήστε τον κάτοχο για μια νέα πρόσκληση"

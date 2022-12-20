@@ -218,8 +218,8 @@
       "Pay": [
         "Zahlen"
       ],
-      "Pay ${ price }": [
-        "${ price } zahlen"
+      "Pay ${ price } now": [
+        "${ price } jetzt zahlen"
       ],
       "Previous": [
         "Zurück"
@@ -459,9 +459,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Verlängert sich automatisch am ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Verlängert sich automatisch am ${ formattedEndTime } für ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1592,6 +1589,9 @@
       "The minimum payment we accept is ${ price }": [
         "Der akzeptierte Mindestzahlbetrag beträgt ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
+      ],
       "This field is required": [
         "Pflichtfeld"
       ],
@@ -2697,9 +2697,6 @@
       "Block malware, ads and trackers": [
         "Malware, Werbung und Tracker blockieren"
       ],
-      "bonus storage": [
-        "Zusätzlicher Speicherplatz"
-      ],
       "Browser": [
         "Browser"
       ],
@@ -2927,6 +2924,9 @@
       ],
       "Select your country": [
         "Wählen Sie Ihr Land"
+      ],
+      "Start date": [
+        "Anfangsdatum"
       ],
       "Subscription options": [
         "Abonnement-Optionen"
@@ -4328,6 +4328,14 @@
         "Spare"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Upcoming": [
+        "Demnächst"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Die datenschutzfreundliche E-Mail- und Kalenderlösung für deine täglichen Kommunikationsbedürfnisse."
@@ -4522,9 +4530,6 @@
       "Back": [
         "Zurück"
       ],
-      "Billing": [
-        "Abrechnung"
-      ],
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
@@ -4618,6 +4623,9 @@
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
       ],
+      "End date": [
+        "Enddatum"
+      ],
       "Enter your password": [
         "Passwort eingeben"
       ],
@@ -4653,6 +4661,9 @@
       ],
       "Language": [
         "Sprache"
+      ],
+      "Length": [
+        "Länge"
       ],
       "Login password": [
         "Anmeldepasswort"
@@ -4704,6 +4715,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Plan": [
+        "Abonnement"
       ],
       "Plan summary": [
         "Abo-Zusammenfassung"
@@ -4762,6 +4776,9 @@
       "Sign out": [
         "Abmelden"
       ],
+      "Start date": [
+        "Startdatum"
+      ],
       "Status": [
         "Status"
       ],
@@ -4770,6 +4787,9 @@
       ],
       "Switch to two-password mode": [
         "Wechseln zum Zwei-Passwörter-Modus"
+      ],
+      "Total paid": [
+        "Insgesamt gezahlt"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Teste das Beste von ${ MAIL_APP_NAME } kostenlos"
@@ -4788,6 +4808,9 @@
       ],
       "Unsupported browser": [
         "Nicht unterstützter Browser"
+      ],
+      "Users": [
+        "Benutzer"
       ],
       "Verification": [
         "Verifizierung"
@@ -4819,6 +4842,9 @@
       "Your plan": [
         "Dein Abonnement"
       ],
+      "Your subscriptions": [
+        "Deine Abonnements"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du wurdest eingeladen, ${ MAIL_APP_NAME } zu testen."
       ],
@@ -4845,6 +4871,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn Sie einen Geschenkgutschein erworben oder von unserem Support-Team erhalten haben, können Sie ihn hier eingeben."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
       ]
     },
     "Tor out of date": {

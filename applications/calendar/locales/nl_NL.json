@@ -453,6 +453,9 @@
       "Skip": [
         "Overslaan"
       ],
+      "Skip verification": [
+        "Verificatie overslaan"
+      ],
       "Start import": [
         "Begin met importeren"
       ],
@@ -909,6 +912,12 @@
     "Calendar view selector": {
       "Change time range to": [
         "Wijzig tijdsbereik naar"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } meer",
+        "${ more } meer"
       ]
     },
     "Collapsible tooltip": {
@@ -1898,6 +1907,11 @@
         "Gebruik globale standaardwaarde (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Gebruik globale standaardwaarde (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Onbetaalde factuur"
@@ -2332,6 +2346,9 @@
       "There was an error when exporting the contacts vCards": [
         "Er is een fout opgetreden bij het exporteren van de contacten vCards"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
+      ],
       "This field is required": [
         "Dit veld is vereist"
       ],
@@ -2349,6 +2366,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Probeer enkel letters, nummers en _.- te gebruiken"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -2883,7 +2903,7 @@
         "momenteel"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ondersteunt geen ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3094,6 +3114,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "Selecteer de agenda die u wilt importeren onder ${ boldPublish }. Stel de machtiging in op ${ boldCanViewAllDetails } en publiceer het."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Overig"
       ]
     },
     "Import warning": {
@@ -3321,6 +3346,9 @@
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
       ],
+      "Emails are automatically signed": [
+        "E-mails zijn automatisch ondertekend"
+      ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw verificatie-app in"
       ],
@@ -3387,6 +3415,9 @@
       ],
       "Import mailbox": [
         "Mailbox importeren"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importeer uw e-mails, agenda's en contacten vanuit een andere dienst naar ${ BRAND_NAME }. We zullen u bij elke stap leiden en uw gegevens versleutelen terwijl het wordt verplaatst. Welkom in de wereld van privacy."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
@@ -3481,17 +3512,14 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
-      ],
       "Other options": [
         "Andere opties"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline is enkel compatibel met Plain Text-formaat."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent."
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME verzendt automatisch het bericht gebruikmakend van de huidige opstelmodus."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
@@ -3626,14 +3654,17 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Deze koppeling kan een homografie-aanval zijn en kan niet geopend worden in Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleuteld die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
@@ -3740,9 +3771,6 @@
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
         "U hebt uw wachtwoord opnieuw ingesteld en afspraken gekoppeld aan de volgende agenda's konden niet worden ontsleuteld.\nAlle gedeelde agendakoppelingen die u eerder hebt gemaakt, werken niet meer.\nAlle actieve geabonneerde agenda's zullen na een paar minuten weer synchroniseren."
       ],
-      "You need to have an active personal calendar to import your events.": [
-        "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "U hebt deze uitnodiging eerder al geweigerd. Vraag de eigenaar naar een nieuwe uitnodiging"
       ],
@@ -3776,8 +3804,17 @@
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt en alle diensten zijn nu geblokkeerd tot betaling. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt. Verdere niet-betaling zal leiden tot het blokkeren van uw e-mails een deel-links. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Uw adres is uitgeschakeld. Een annuleringsmail kan niet worden verzonden naar de deelnemers aan de afspraak. Wilt u alle afspraken in deze serie toch verwijderen?"
@@ -3954,6 +3991,18 @@
       "Emails": [
         "E-mails"
       ],
+      "Emails (all messages)": [
+        "E-mails (alle berichten)"
+      ],
+      "Emails (last 12 months)": [
+        "E-mails (laatste 12 maanden)"
+      ],
+      "Emails (last 3 months)": [
+        "E-mails (laatste 3 maanden)"
+      ],
+      "Emails (last month)": [
+        "E-mails (laatste maand)"
+      ],
       "Enable Beta Access": [
         "Bèta-toegang inschakelen"
       ],
@@ -4040,6 +4089,9 @@
       ],
       "Mailbox password": [
         "Mailboxwachtwoord"
+      ],
+      "Main": [
+        "Primair"
       ],
       "Manage categories": [
         "Beheer categorieën"
@@ -4141,6 +4193,9 @@
       "To: ${ PMEmailAddress }": [
         "Aan: ${ PMEmailAddress }"
       ],
+      "Toolbar": [
+        "Werkbalk"
+      ],
       "Two-factor authentication code": [
         "Tweestapsverificatiecode"
       ],
@@ -4201,6 +4256,11 @@
         "${ Label.Name } aangemaakt"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Zijpaneel"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Agenda's"
@@ -4256,6 +4316,24 @@
       ],
       "Your import is starting": [
         "Uw import begint"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importeer alle berichten van ${ itemsToImportCount } map en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importeer alle berichten van ${ itemsToImportCount } label en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -4695,7 +4773,7 @@
         "Stel uw organisatie in"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Gebruik de app kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }."
+        "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }."
       ],
       "You can change this anytime in your settings.": [
         "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
@@ -4993,6 +5071,14 @@
         "Agenda beheren"
       ]
     },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Niet ondertekenen"
+      ],
+      "Sign": [
+        "Ondertekenen"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Sluiten"
@@ -5247,6 +5333,9 @@
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Nodig vrienden uit voor ${ BRAND_NAME }"
+      ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Uitnodigingen verschijnen nu in uw agenda als afspraken in afwachting. Open de afspraak om te antwoorden. ${ goToSettingsLink }"
       ],
@@ -5311,6 +5400,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contact ziet er identiek uit.",
+        "${ countMergeableContacts } contacten zien er identiek uit."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Een annuleringsmail wordt verzonden naar verwijderde deelnemers voor alle afspraken in deze serie."
       ],
@@ -5950,8 +6043,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
       ],
+      "Hide side panel": [
+        "Verberg zijpaneel"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
+      ],
+      "Show side panel": [
+        "Toon zijpaneel"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
@@ -5970,6 +6069,10 @@
       "Password must contain at least ${ length } character": [
         "Wachtwoord moet ten minste ${ length } teken bevatten",
         "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     },
     "Video control": {
@@ -6021,6 +6124,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
+      "Skip verification?": [
+        "Verificatie overslaan?"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Enkele contactpersonen die moeten worden samengevoegd bevatten fouten. Controleer ze individueel"
       ],
@@ -6050,6 +6156,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "We konden de mailserver niet verifiëren. Als u het vertrouwt dan kan u deze verificatie overslaan."
       ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."

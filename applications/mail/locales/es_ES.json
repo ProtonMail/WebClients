@@ -1193,7 +1193,7 @@
     },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
-        "Aplicaciones ${ BRAND_NAME }"
+        "Aplicaciones de ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -2799,6 +2799,11 @@
         "Utilizar global por defecto (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Utilizar global por defecto (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura atrasada"
@@ -3298,6 +3303,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Hubo un error al exportar los vCards de contactos"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is required": [
         "Este campo es obligatorio"
@@ -4070,7 +4078,7 @@
         "por ahora"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonCalendar no soporta ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4289,6 +4297,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "En ${ boldPublish }, selecciona el calendario que deseas importar. Establece el permiso a ${ boldCanViewAllDetails } y publícalo."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Otro"
       ]
     },
     "Import warning": {
@@ -4729,6 +4742,9 @@
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Los rastreadores de correo pueden violar tu privacidad. Activa la protección de rastreadores para evitar que los remitentes sepan si has abierto un mensaje y cuándo lo has hecho."
       ],
+      "Emails are automatically signed": [
+        "Los correos electrónico son firmados automáticamente"
+      ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Los correos electrónicos almacenados en esta carpeta no se eliminarán y aún se pueden encontrar en la carpeta Todos los correos."
       ],
@@ -4875,6 +4891,9 @@
       ],
       "Import mailbox": [
         "Importar buzón"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importa tus correos electrónicos, calendarios y contactos de otro servicio a ${ BRAND_NAME }. Te guiaremos en cada paso del proceso y cifraremos tus datos a medida que se trasladen. Bienvenido al mundo de la privacidad."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
@@ -5044,9 +5063,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Cambia esta configuración solo si utilizas PGP con destinatarios que no sean de ${ BRAND_NAME }."
-      ],
       "Other options": [
         "Otras opciones"
       ],
@@ -5056,11 +5072,11 @@
       "per month.": [
         "al mes."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline sólo es compatible con texto sin formato. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline solo es compatible con el formato de Texto Plano."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME envía automáticamente el mensaje utilizando el modo de composición actual. Tenga en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME automáticamente envía el mensaje utilizando el modo de composición actual."
       ],
       "Phone number": [
         "Número de teléfono"
@@ -5338,8 +5354,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Este enlace puede ser un ataque homógrafo y no puede ser abierto por el navegador Edge. Si estás seguro de que el enlace es legítimo, usa un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
@@ -5401,6 +5417,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Para importar eventos, primero crea un calendario en ${ CALENDAR_APP_NAME }. Aquí es donde aparecerán los eventos tras la importación."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para volver a firmar tus contactos, necesitamos verificar cada contacto respecto a la lista de claves de cifrado disponibles en tu cuenta. Si no se encuentra ninguna coincidencia, tu contacto volverá a estar firmado con la clave de cifrado principal."
@@ -5615,9 +5634,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Ha alcanzado el número máximo de 5 respuestas."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Necesitas tener un calendario personal activo para importar tus eventos."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Has alcanzado el ${ spaceDisplayed }% de tu capacidad de almacenamiento. ${ freeUpMessage } ${ upgradeLink }"
@@ -7470,6 +7486,14 @@
         "La verificación de las claves de confianza del remitente ha fallado"
       ]
     },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "No firmar"
+      ],
+      "Sign": [
+        "Firmar"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "Más grandes primero"
@@ -8763,7 +8787,7 @@
       ],
       "Try a shorter username (${ n } character max)": [
         "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)",
-        "Pruebe con un nombre de usuario más corto (${ n } caracteres como máximo)"
+        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     },
     "Video control": {

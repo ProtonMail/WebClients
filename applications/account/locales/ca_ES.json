@@ -8,8 +8,14 @@
       "Full view": [
         "Vista completa"
       ],
+      "Full view (see all event details)": [
+        "Vista completa (vegeu tots els detalls dels esdeveniments)"
+      ],
       "Limited view": [
         "Vista limitada"
+      ],
+      "Limited view (see only free/busy)": [
+        "Vista limitada (mostra només lliures/ocupats)"
       ]
     },
     "Action": {
@@ -87,6 +93,9 @@
       ],
       "Apply": [
         "Aplica"
+      ],
+      "Apply to existing messages": [
+        "Aplica als missatges existents"
       ],
       "Attach screenshot(s)": [
         "Adjunta captura(es) de pantalla"
@@ -195,6 +204,9 @@
       ],
       "Create link": [
         "Crear enllaç"
+      ],
+      "Create users": [
+        "Crear usuaris"
       ],
       "Create your own": [
         "Crea la teva pròpia"
@@ -331,6 +343,9 @@
       "Font": [
         "Font"
       ],
+      "Generate": [
+        "Generar"
+      ],
       "Generate key": [
         "Generar clau"
       ],
@@ -339,6 +354,9 @@
       ],
       "Generate recovery phrase": [
         "Genera una frase de recuperació"
+      ],
+      "Generate token": [
+        "Generar token"
       ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
@@ -409,6 +427,9 @@
       "label emails as": [
         "etiquetar correus electrònics com"
       ],
+      "Leave": [
+        "Deixar"
+      ],
       "Load more": [
         "Carregar-ne més"
       ],
@@ -457,11 +478,11 @@
       "Not spam": [
         "No es correu brossa"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "D'acord"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -477,6 +498,9 @@
       ],
       "Pay": [
         "Pagar"
+      ],
+      "Pay ${ price } now": [
+        "Paga ${ price } ara"
       ],
       "Preview": [
         "Vista prèvia"
@@ -531,6 +555,9 @@
       ],
       "Remove this label": [
         "Elimina aquesta etiqueta"
+      ],
+      "Remove this member": [
+        "Elimina aquest membre"
       ],
       "Remove this notification": [
         "Elimina aquesta notificació"
@@ -592,6 +619,9 @@
       "Revoke all other sessions": [
         "Revoca totes les altres sessions"
       ],
+      "Revoke this invitation": [
+        "Revoca aquesta invitació"
+      ],
       "Save": [
         "Desa"
       ],
@@ -621,6 +651,9 @@
       ],
       "Select files": [
         "Seleccioneu fitxers"
+      ],
+      "Select language for invitation emails": [
+        "Seleccioneu la llengua per als correus electrònics d'invitació"
       ],
       "Select timezone": [
         "Seleccionar fus horari"
@@ -919,6 +952,9 @@
     "Badge": {
       "5 users": [
         "5 usuaris"
+      ],
+      "Coming soon": [
+        "Disponible properament"
       ]
     },
     "Badge for domain": {
@@ -1093,9 +1129,24 @@
         "Etiqueta editada"
       ]
     },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "Sou l'únic/a que podeu veure l'etiqueta"
+      ]
+    },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "Podeu canviar o eliminar permisos en qualsevol moment."
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "Permisos"
+      ]
+    },
+    "Calendar self sharing error": {
+      "You already have access to this calendar": [
+        "Ja teniu accés a aquest calendari"
       ]
     },
     "Calendar settings link share description": {
@@ -1125,6 +1176,14 @@
     "Calendar share permission label": {
       "See all event details": [
         "Veure tots els detalls de l'esdeveniment"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Edita (veu, crea i edita els detalls de l'esdeveniment)"
+      ],
+      "View (see all event details)": [
+        "Mostra tots els detalls de l'esdeveniment"
       ]
     },
     "Calendar status": {
@@ -2550,6 +2609,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } és el teu nom d'usuari. Per crear ${ Local }@${ Domain }, si us plau vagi a Preferències > Missatges i redacció > Domini curt (pm.me)."
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -2715,6 +2777,9 @@
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
       ],
+      "No public key for ${ BRAND_NAME } address": [
+        "L'adreça ${ BRAND_NAME } no té clau pública"
+      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -2732,6 +2797,9 @@
       ],
       "Organization key is not decrypted.": [
         "La clau d'organització no está desxifrada."
+      ],
+      "Organization not recognized. Try again.": [
+        "Organització no reconeguda. Torneu-ho a provar."
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
@@ -2763,6 +2831,12 @@
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genereu les claus abans d’intentar canviar la vostra contrasenya."
+      ],
+      "Please set a recovery email first": [
+        "Si us plau primer establiu un número de telèfon de recuperació primer."
       ],
       "Please set a recovery phone number first": [
         "Si us plau primer establiu un número de telèfon de recuperació"
@@ -2945,6 +3019,9 @@
       "You must set a name": [
         "Heu d'establir un nom"
       ],
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        "El vostre compte o organització té actualment una factura endarrerida. Si us plau pagueu totes les factures pendents."
+      ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
       ],
@@ -2971,6 +3048,9 @@
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment.",
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
+      ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "El fitxer ${ formattedFilename } conté un mètode invàlid i no pot ser importat."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "El vostre fitxer ${ formattedFilename } no conté esdeveniments per importar."
@@ -3592,6 +3672,9 @@
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } actualment no permet determinats tipus d'esdeveniments, detalls i formats."
+      ],
       "vCard versions < 3.0": [
         "versions vCard < 3.0"
       ]
@@ -3652,7 +3735,7 @@
         "per ara"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ${ forNow } no és compatible amb:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4910,6 +4993,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les teves targetes de crèdit."
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
       ],
@@ -5162,9 +5248,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Necessiteu tenir un calendari personal actiu per a importar els esdeveniments d'un ICS."
       ],
-      "You need to have an active personal calendar to import your events.": [
-        "Necessiteu tenir un calendari personal actiu per importar els vostres esdeveniments."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5179,6 +5262,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
+      ],
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "El seu compte ${ BRAND_NAME } està associat amb ${ externalEmailAddress }. Per utilitzar ${ toAppName }, necessiteu una adreça de ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Els vostres comptes ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } estan enllaçats. Per suprimir-les, inicieu la sessió a ${ loginLink } i suprimiu-ne el compte."
@@ -5857,6 +5943,9 @@
       "Default language": [
         "Idioma per defecte"
       ],
+      "Default language (${ defaultLanguage })": [
+        "Idioma per defecte (${ defaultLanguage })"
+      ],
       "Default PGP scheme": [
         "Esquema PGP per defecte"
       ],
@@ -5904,6 +5993,18 @@
       ],
       "Emails": [
         "Correus electrònics"
+      ],
+      "Emails (all messages)": [
+        "Correus electrònics (tots els missatges)"
+      ],
+      "Emails (last 12 months)": [
+        "Correus electrònics (els darrers 12 mesos)"
+      ],
+      "Emails (last 3 months)": [
+        "Correus electrònics (els darrers 3 mesos)"
+      ],
+      "Emails (last month)": [
+        "Correus electrònics (el mes passat)"
       ],
       "End date": [
         "Data de finalització"
@@ -6603,6 +6704,24 @@
         "Activa els registres d'autenticació"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar tots els missatges d'$${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetés i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Podeu crear fins a ${ MAX_LINKS_PER_CALENDAR } enllaç per calendari. Per crear un nou enllaç per aquest calendari, elimineu-ne un de la llista següent.",
@@ -7080,11 +7199,6 @@
         "Assistència"
       ]
     },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7094,6 +7208,11 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom de manera predeterminada."
+      ]
+    },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7221,6 +7340,14 @@
       ],
       "Member deleted": [
         "Membre eliminat"
+      ]
+    },
+    "Notification in shared calendar modal": {
+      "Calendar invitation declined": [
+        "S'ha rebutjat la invitació al calendari"
+      ],
+      "Joined ${ calendarName } (${ senderEmail })": [
+        "Us heu unit a ${ calendarName } (${ senderEmail })"
       ]
     },
     "Notification time input": {
@@ -7799,6 +7926,11 @@
         "Organització"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "No s'han pogut actualitzar les preferències"
+      ]
+    },
     "Settings/filters": {
       "Filters": [
         "Filtres"
@@ -7831,10 +7963,20 @@
         "Etiquetes"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "Per convidar usuaris fora de ${ BRAND_NAME }, compartiu el vostre calendari amb un enllaç"
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Heu sobrepassat el nombre màxim de ${ MAX_CALENDAR_MEMBERS } membre per calendari",
         "Heu sobrepassat el nombre màxim de ${ MAX_CALENDAR_MEMBERS } membres per calendari"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Afegiu els comptes de ${ BRAND_NAME } amb qui voleu compartir ${ calendarName }. Els enviarem una invitació."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -7844,7 +7986,7 @@
     },
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
-        "Compartir amb usuaris de ${ BRAND_NAME }"
+        "Comparteix amb usuaris de ${ BRAND_NAME }"
       ]
     },
     "Shared calendar label input placeholder": {
@@ -8504,7 +8646,7 @@
         "Crea diversos comptes d'usuari"
       ],
       "Create public link": [
-        "Crear un enllaç publico"
+        "Crea un enllaç públic"
       ],
       "Create user accounts": [
         "Crea comptes d'usuari"
@@ -8957,6 +9099,9 @@
       "Signed in successfully!": [
         "Heu iniciat la sessió correctament!"
       ],
+      "SMTP tokens": [
+        "Tokens SMTP"
+      ],
       "Sort folders alphabetically": [
         "Ordena les carpetes alfabèticament"
       ],
@@ -9296,6 +9441,12 @@
       ],
       "Your default font will look like following:": [
         "La font predeterminada serà com la següent:"
+      ]
+    },
+    "Upgrade": {
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+        "Actualitzeu a ${ planName } per a connectar fins a ${ n } dispositiu a la vegada a la VPN",
+        "Actualitzeu a ${ planName } per a connectar fins a ${ n } dispositius a la vegada a la VPN"
       ]
     },
     "Upgrade notice": {

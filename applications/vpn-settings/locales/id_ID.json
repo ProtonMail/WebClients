@@ -218,8 +218,8 @@
       "Pay": [
         "Bayar"
       ],
-      "Pay ${ price }": [
-        "Bayar ${ price }"
+      "Pay ${ price } now": [
+        "Bayar ${ price } sekarang"
       ],
       "Previous": [
         "Sebelumnya"
@@ -457,9 +457,6 @@
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Diperbarui secara otomatis pada ${ formattedEndTime }"
-      ],
-      "Renews automatically on ${ formattedEndTime } for ${ amount }": [
-        "Diperbarui secara otomatis pada ${ formattedEndTime } dengan harga ${ amount }"
       ]
     },
     "Billing cycle option": {
@@ -1588,6 +1585,9 @@
       "The minimum payment we accept is ${ price }": [
         "Nominal pembayaran minimal yang kami terima adalah ${ price }"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Kolom ini melebihi panjang maksimal ${ maximumLength } karakter."
+      ],
       "This field is required": [
         "Kolom ini wajib diisi"
       ],
@@ -2683,9 +2683,6 @@
       "Block malware, ads and trackers": [
         "Blokir malware, iklan dan pelacak"
       ],
-      "bonus storage": [
-        "bonus penyimpanan"
-      ],
       "Browser": [
         "Peramban"
       ],
@@ -2916,6 +2913,9 @@
       ],
       "Select your country": [
         "Pilih negara Anda"
+      ],
+      "Start date": [
+        "Mulai tanggal"
       ],
       "Subscription options": [
         "Pilihan langganan"
@@ -4045,6 +4045,14 @@
         "Hemat"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Aktif"
+      ],
+      "Upcoming": [
+        "Akan datang"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
@@ -4239,9 +4247,6 @@
       "Back": [
         "Kembali"
       ],
-      "Billing": [
-        "Penagihan"
-      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -4335,6 +4340,9 @@
       "Email subscriptions": [
         "Email berlangganan"
       ],
+      "End date": [
+        "Tanggal akhir"
+      ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
       ],
@@ -4370,6 +4378,9 @@
       ],
       "Language": [
         "Bahasa"
+      ],
+      "Length": [
+        "Durasi"
       ],
       "Login password": [
         "Kata sandi masuk"
@@ -4421,6 +4432,9 @@
       ],
       "Phone": [
         "Telepon"
+      ],
+      "Plan": [
+        "Paket"
       ],
       "Plan summary": [
         "Ringkasan paket"
@@ -4479,6 +4493,9 @@
       "Sign out": [
         "Keluar"
       ],
+      "Start date": [
+        "Tanggal mulai"
+      ],
       "Status": [
         "Status"
       ],
@@ -4487,6 +4504,9 @@
       ],
       "Switch to two-password mode": [
         "Beralih ke mode dua kata sandi"
+      ],
+      "Total paid": [
+        "Total yang dibayarkan"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Nikmati berbagai fitur unggulan ${ MAIL_APP_NAME } secara gratis"
@@ -4505,6 +4525,9 @@
       ],
       "Unsupported browser": [
         "Browser tidak didukung"
+      ],
+      "Users": [
+        "Pengguna"
       ],
       "Verification": [
         "Verifikasi"
@@ -4536,6 +4559,9 @@
       "Your plan": [
         "Paket anda"
       ],
+      "Your subscriptions": [
+        "Langganan Anda"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Anda telah diundang untuk mencoba ${ MAIL_APP_NAME }"
       ],
@@ -4562,6 +4588,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Siklus langganan baru akan dimulai pada ${ formattedTime }"
       ]
     },
     "Tor out of date": {
@@ -4651,7 +4680,7 @@
         "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Sayangnya, kami saat ini sedang tidak daring. Harap kabarkan masalah yang telah Anda hadapi pada formulir di bawah ini agar kami dapat menanganinya ketika kami kembali daring."
+        "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"

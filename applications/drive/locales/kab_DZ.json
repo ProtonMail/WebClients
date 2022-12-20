@@ -2225,7 +2225,7 @@
         "ɣer tura"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ur issefrak ara ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2338,6 +2338,11 @@
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file.": [
         "Sit ɣef useɣwen ${ boldICS } syen sader afaylu."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Ayen-nniḍen"
       ]
     },
     "Import warning": {
@@ -2762,9 +2767,6 @@
       "of": [
         "si"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur isseqdac ara ${ BRAND_NAME }."
-      ],
       "Only the people with the link and the password can access this file.": [
         "Anagar imdanen i yesɛan aseɣwen d wawal uffir i izemren ad kecmen ɣer ufaylu-a."
       ],
@@ -2957,9 +2959,6 @@
       ],
       "You cannot undo this action.": [
         "Ur tezmireḍ ara ad tesfesxeḍ tigawt-a."
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Tesriḍ ad tesɛuḍ awitay urmid udmawen i uktar n yineḍruyen-ik·im."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Tewwḍeḍ ɣer ${ spaceDisplayed }% n tallunt-inek .m n weḥraz. ${ freeUpMessage } ${ upgradeLink }"

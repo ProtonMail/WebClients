@@ -2567,7 +2567,7 @@
         "pour l'instant"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "ProtonContacts ne prend pas en charge ${ forNow }:"
+        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -2730,6 +2730,11 @@
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         "Sous ${ boldPublish }, sélectionnez le calendrier que vous souhaitez importer. Définissez l'autorisation à ${ boldCanViewAllDetails } et publiez-le."
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Autre"
       ]
     },
     "Import warning": {
@@ -3308,9 +3313,6 @@
         "Seul ${ MAX_CUSTOM_PASSWORD_LENGTH } caractère est autorisé.",
         "Seuls ${ MAX_CUSTOM_PASSWORD_LENGTH } caractères sont autorisés."
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
-      ],
       "Only the people with the link and the password can access this file.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce fichier."
       ],
@@ -3325,12 +3327,6 @@
       ],
       "Permanently delete all files in your locked drive": [
         "Supprimez définitivement tous les fichiers de votre disque dur verrouillé"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "Please enter the password to decrypt and view content.": [
         "Veuillez saisir le mot de passe pour déchiffrer et voir le contenu."
@@ -3498,9 +3494,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
-      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
       ],
@@ -3645,9 +3638,6 @@
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "Il vous reste ${ expiresInDays } jours pour concrétiser votre bonus de bienvenue de 500 Mo et "
-      ],
-      "You need to have an active personal calendar to import your events.": [
-        "Vous devez avoir un calendrier personnel actif pour importer vos événements."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint ${ spaceDisplayed } % de votre capacité de stockage. ${ freeUpMessage } ${ upgradeLink }"

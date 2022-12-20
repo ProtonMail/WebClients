@@ -922,6 +922,9 @@
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
+      ],
       "This field is required": [
         "Pflichtfeld"
       ],
