@@ -21,7 +21,7 @@ const OfferDisableButton = (props: OfferProps) => {
                 await withLoading(handleHide());
                 props.onCloseModal?.();
             }}
-        >{c('specialoffer: Action').t`Don't show this again`}</Button>
+        >{c('specialoffer: Action').t`Don't show this offer again`}</Button>
     );
 };
 

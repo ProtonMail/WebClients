@@ -6,11 +6,17 @@ import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getMailPlusFeatures, getUnlimitedFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import Layout from './Layout';
+import bannerImage from './bf-mail-40-landscape.jpg';
+import bannerImage2x from './bf-mail-40-landscape@2x.jpg';
 
 const config: OfferConfig = {
     ID: 'black-friday-mail-free-2022',
     autoPopUp: 'one-time',
     featureCode: FeatureCode.OfferBlackFridayMailFree2022,
+    images: {
+        bannerImage,
+        bannerImage2x,
+    },
     deals: [
         {
             ref: 'bf_22_mail_free-modal-m1',
