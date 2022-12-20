@@ -1,5 +1,6 @@
 import { JSXElementConstructor, ReactNode } from 'react';
 
+import { ButtonLikeShape } from '@proton/atoms/Button';
 import type { FeatureCode, IconName } from '@proton/components';
 import type { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import type { Currency, Optional, PlanIDs } from '@proton/shared/lib/interfaces';
@@ -40,6 +41,12 @@ export interface Operation {
 
 export type OperationsMap = Record<OfferId, Operation>;
 
+export interface OfferImages {
+    sideImage?: string;
+    sideImage2x?: string;
+    bannerImage?: string;
+    bannerImage2x?: string;
+}
 export interface OfferConfig {
     ID: OfferId;
     featureCode: FeatureCode;
@@ -50,6 +57,8 @@ export interface OfferConfig {
     /** Displays countdown if present */
     periodEnd?: Date;
     getCTAContent?: () => string;
+    shapeButton?: ButtonLikeShape;
+    images?: OfferImages;
 }
 
 interface Feature {

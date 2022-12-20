@@ -30,7 +30,7 @@ const OfferModal = ({ offer, offerConfig, modalProps, currency, onChangeCurrency
             className={clsx(
                 'offer-modal',
                 `offer-${offerConfig.ID}`,
-                offerConfig.deals.length < 2 && 'offer-modal--one-deal'
+                offerConfig.deals.length < 2 && 'offer-modal--one-deal',
             )}
             {...modalProps}
             size="large"
