@@ -4,11 +4,11 @@ import { serverTime } from '@proton/crypto';
 
 export type Options = Parameters<typeof formatDate>[2] & {
     /**
-     * Date format if `unixTime` argument is today.
+     * Date format if `unixTime` argument is today. If false then force `format`. 'p' by default.
      */
-    sameDayFormat?: string;
+    sameDayFormat?: string | false;
     /**
-     * Date format in general case
+     * Date format in general case. 'PP' by default.
      */
     format?: string;
 };
@@ -24,7 +24,7 @@ export const readableTime = (unixTime: number, options?: Options) => {
 
     const date = fromUnixTime(unixTime);
 
-    if (isSameDay(date, Date.now())) {
+    if (sameDayFormat && isSameDay(date, Date.now())) {
         return formatDate(date, sameDayFormat, options);
     }
 
