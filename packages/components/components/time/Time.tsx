@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 
-import { readableTime } from '@proton/shared/lib/helpers/time';
+import { Options, readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 const getValue = (value?: string | number | null) => {
@@ -18,25 +18,19 @@ const getValue = (value?: string | number | null) => {
     return 0;
 };
 
-type Options = Parameters<typeof readableTime>[1];
 interface Props extends HTMLAttributes<HTMLTimeElement> {
     children?: string | number | null;
-    /**
-     * If the current date in browser has the same date as the date to format then use this format.
-     * @see {readableTime}
-     */
-    sameDayFormat?: string;
-    /**
-     * If the current date in browser differs from the date to format then use this format.
-     * @see {readableTime}
-     */
-    format?: string;
+    sameDayFormat?: Options['sameDayFormat'];
+    format?: Options['format'];
     options?: Options;
 }
 
-const Time = ({ children, ...rest }: Props) => {
-    const options: Options = { locale: dateLocale, ...rest };
-    return <time {...rest}>{readableTime(getValue(children), options)}</time>;
+const Time = ({ children, sameDayFormat, format, options, ...rest }: Props) => {
+    return (
+        <time {...rest}>
+            {readableTime(getValue(children), { locale: dateLocale, sameDayFormat, format, ...options })}
+        </time>
+    );
 };
 
 export default Time;
