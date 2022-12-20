@@ -39,7 +39,10 @@
 		.modal-container,
 		.modal,
 		.modal-content-inner,
-		.modal-content {
+		.modal-two-content,
+		.modal-two,
+		.modal-two-dialog,
+		.modal-two-dialog-container {
 			@extend .reset4print;
 		}
 
@@ -50,11 +53,12 @@
 
 		.app-root,
 		.modal-overlay,
-		.modal-header,
-		.modal-footer,
-		.item-icon,
 		.modal-two-backdrop,
-		[class^='scrollshadow-'] {
+		.modal-two-header,
+		.modal-two-footer,
+		.item-icon,
+		.scroll-start-shadow,
+		.scroll-end-shadow {
 			@extend .no-print;
 		}
 	}
