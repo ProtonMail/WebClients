@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { FeatureCode, useIsDarkTheme } from '@proton/components';
 import { useApi, useAuthentication, useFeature, useMailSettings } from '@proton/components/hooks';
@@ -19,10 +19,7 @@ const useSenderImage = (emailAddress: string, fallback: boolean, bimiSelector?: 
     const api = useApi();
     const { UID } = useAuthentication();
     const [url, setUrl] = useState('');
-    const canLoad = useMemo(
-        () => emailAddress && mailSettings?.HideSenderImages === 0 && feature?.Value,
-        [emailAddress, mailSettings?.HideSenderImages, feature?.Value]
-    );
+    const [canLoad, setCanLoad] = useState(emailAddress && mailSettings?.HideSenderImages === 0 && feature?.Value);
 
     useEffect(() => {
         if (!canLoad) {
@@ -31,7 +28,13 @@ const useSenderImage = (emailAddress: string, fallback: boolean, bimiSelector?: 
 
         if (fallback) {
             // Load the image with XHR request and create a blob URL
-            void getSenderLogo(api, emailAddress, imageSizeRef.current, bimiSelector, mode).then(setUrl);
+            void getSenderLogo(api, emailAddress, imageSizeRef.current, bimiSelector, mode).then((fallbackUrl) => {
+                if (fallbackUrl.length) {
+                    setUrl(fallbackUrl);
+                } else {
+                    setCanLoad(false);
+                }
+            });
             return;
         }
 
