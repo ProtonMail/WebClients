@@ -19,7 +19,11 @@ const useSenderImage = (emailAddress: string, fallback: boolean, bimiSelector?: 
     const api = useApi();
     const { UID } = useAuthentication();
     const [url, setUrl] = useState('');
-    const [canLoad, setCanLoad] = useState(emailAddress && mailSettings?.HideSenderImages === 0 && feature?.Value);
+    const [canLoad, setCanLoad] = useState(false);
+
+    useEffect(() => {
+        setCanLoad(emailAddress && mailSettings?.HideSenderImages === 0 && feature?.Value);
+    }, [emailAddress, mailSettings?.HideSenderImages, feature?.Value]);
 
     useEffect(() => {
         if (!canLoad) {
