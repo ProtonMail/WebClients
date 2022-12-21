@@ -1,7 +1,9 @@
+import { Location } from 'history';
+
 import { PaymentParameters } from '@proton/components/containers/payments/interface';
 import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
 import { checkSubscription } from '@proton/shared/lib/api/payments';
-import { PLAN_TYPES } from '@proton/shared/lib/constants';
+import { PLAN_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { Api, Currency, Cycle, Plan, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -56,4 +58,8 @@ export const getSubscriptionPrices = async (
 export const getPlanFromPlanIDs = (plans: Plan[], planIDs?: PlanIDs) => {
     const planIDsList = Object.keys(planIDs || {});
     return plans.find(({ Name, Type }) => Type === PLAN_TYPES.PLAN && planIDsList.includes(Name));
+};
+
+export const isMailTrialSignup = (location: Location) => {
+    return location.pathname.includes(SSO_PATHS.TRIAL);
 };
