@@ -622,7 +622,9 @@ const WireGuardConfigurationSection = () => {
             const newCertificate = getCertificateModel(renewedCertificate, peer, certificate.privateKey);
             setCertificates([...(certificates || []), newCertificate]);
             setCurrentCertificate(newCertificate.id);
-            const formattedExpirationDate = readableTime(newCertificate.expirationTime, 'PPp');
+            const formattedExpirationDate = readableTime(newCertificate.expirationTime, {
+                format: 'PPp',
+            });
             createNotification({
                 // translator: formattedExpirationDate is a date+time such as "Jan 31, 2023, 7:57 PM" with format appropriately localized to match current locale
                 text: c('Success notification').t`Certificate extended until ${formattedExpirationDate}`,

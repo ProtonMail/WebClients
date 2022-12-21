@@ -1,15 +1,7 @@
 import { HTMLAttributes } from 'react';
 
-import { readableTime } from '@proton/shared/lib/helpers/time';
+import { Options, readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
-
-type Options = Parameters<typeof readableTime>[2];
-interface Props extends HTMLAttributes<HTMLTimeElement> {
-    children?: string | number | null;
-    format?: string;
-    forceFormat?: boolean;
-    options?: Options;
-}
 
 const getValue = (value?: string | number | null) => {
     if (typeof value === 'string') {
@@ -18,14 +10,27 @@ const getValue = (value?: string | number | null) => {
             return numberValue;
         }
     }
+
     if (typeof value === 'number') {
         return value;
     }
+
     return 0;
 };
 
-const Time = ({ children, format = 'PP', options = { locale: dateLocale }, forceFormat = false, ...rest }: Props) => {
-    return <time {...rest}>{readableTime(getValue(children), format, options, forceFormat)}</time>;
+interface Props extends HTMLAttributes<HTMLTimeElement> {
+    children?: string | number | null;
+    sameDayFormat?: Options['sameDayFormat'];
+    format?: Options['format'];
+    options?: Options;
+}
+
+const Time = ({ children, sameDayFormat, format, options, ...rest }: Props) => {
+    return (
+        <time {...rest}>
+            {readableTime(getValue(children), { locale: dateLocale, sameDayFormat, format, ...options })}
+        </time>
+    );
 };
 
 export default Time;
