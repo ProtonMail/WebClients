@@ -20,7 +20,7 @@ import {
     Time,
     usePaginationAsync,
 } from '../../components';
-import { useApi, useModals, useSubscription, useUser } from '../../hooks';
+import { useApi, useModals, useSubscribeEventManager, useSubscription, useUser } from '../../hooks';
 import useApiResult from '../../hooks/useApiResult';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
@@ -58,6 +58,12 @@ const InvoicesSection = () => {
     const { result = {}, loading, request } = useApiResult(query, [page, owner]);
     const { Invoices: invoices = [], Total: total = 0 } = result;
     const hasUnpaid = invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
+
+    useSubscribeEventManager(({ Invoices }) => {
+        if (Invoices && Invoices.length > 0) {
+            request();
+        }
+    });
 
     if (isManagedByMozilla) {
         return <MozillaInfoPanel />;
