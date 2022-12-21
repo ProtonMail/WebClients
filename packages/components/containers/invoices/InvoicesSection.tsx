@@ -30,6 +30,7 @@ import InvoiceState from './InvoiceState';
 import InvoiceTextModal from './InvoiceTextModal';
 import InvoiceType from './InvoiceType';
 import InvoicesPreview from './InvoicesPreview';
+import { Invoice, InvoiceResponse } from './interface';
 
 const InvoicesSection = () => {
     const previewRef = useRef();
@@ -37,7 +38,7 @@ const InvoicesSection = () => {
     const [user] = useUser();
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
-    const [{ isManagedByMozilla } = {}] = useSubscription();
+    const [subscription] = useSubscription();
     const { createModal } = useModals();
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
 
@@ -53,10 +54,17 @@ const InvoicesSection = () => {
             Page: page - 1,
             PageSize: ELEMENTS_PER_PAGE,
             Owner: owner,
-        });
+        } as any);
 
-    const { result = {}, loading, request: requestInvoices } = useApiResult(query, [page, owner]);
-    const { Invoices: invoices = [], Total: total = 0 } = result;
+    const {
+        result = {
+            Invoices: [] as Invoice[],
+            Total: 0,
+        },
+        loading,
+        request: requestInvoices,
+    } = useApiResult<InvoiceResponse, any>(query, [page, owner]);
+    const { Invoices: invoices, Total: total } = result;
     const hasUnpaid = invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
 
     useSubscribeEventManager(({ Invoices }) => {
@@ -65,7 +73,11 @@ const InvoicesSection = () => {
         }
     });
 
-    if (isManagedByMozilla) {
+    if (!subscription) {
+        return null;
+    }
+
+    if (subscription.isManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
 
@@ -73,9 +85,10 @@ const InvoicesSection = () => {
         createModal(<InvoiceTextModal />);
     };
 
-    const getFilename = (invoice) => `${c('Title for PDF file').t`${MAIL_APP_NAME} invoice`} ${invoice.ID}.pdf`;
+    const getFilename = (invoice: Invoice) =>
+        `${c('Title for PDF file').t`${MAIL_APP_NAME} invoice`} ${invoice.ID}.pdf`;
 
-    const handleDownload = async (invoice) => {
+    const handleDownload = async (invoice: Invoice) => {
         const buffer = await api(getInvoice(invoice.ID));
         const blob = new Blob([buffer], { type: 'application/pdf' });
         downloadFile(blob, getFilename(invoice));
