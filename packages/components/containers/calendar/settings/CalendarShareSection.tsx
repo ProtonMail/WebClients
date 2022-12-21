@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Card } from '@proton/atoms';
 import { SettingsLink, useModalState } from '@proton/components/components';
-import { FeatureCode, SettingsParagraph } from '@proton/components/containers';
+import { FeatureCode, SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
 import { useApi, useFeature, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
@@ -13,7 +13,6 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import SettingsSection from '../../account/SettingsSection';
 import SubSettingsSection from '../../layout/SubSettingsSection';
 import ShareCalendarModal from '../shareModal/ShareCalendarModal';
 import CalendarShareUrlSection from '../shareURL/CalendarShareUrlSection';
@@ -100,7 +99,7 @@ const CalendarShareSection = ({
     const isMaximumMembersReached = members.length + pendingInvitations.length >= MAX_CALENDAR_MEMBERS;
 
     return (
-        <SettingsSection large className="container-section-sticky-section">
+        <SettingsSectionWide className="container-section-sticky-section">
             {renderShareCalendarModal && (
                 <ShareCalendarModal
                     addresses={addresses}
@@ -111,7 +110,6 @@ const CalendarShareSection = ({
                     onFinish={(invitations) => setInvitations((prevState) => [...prevState, ...invitations])}
                 />
             )}
-
             <SubSettingsSection title={title} id={CALENDAR_SETTINGS_SECTION_ID.SHARE}>
                 {hasPaidMail ? (
                     isCalendarSharingEnabled ? (
@@ -164,7 +162,7 @@ const CalendarShareSection = ({
                     </Card>
                 )}
             </SubSettingsSection>
-        </SettingsSection>
+        </SettingsSectionWide>
     );
 };
 

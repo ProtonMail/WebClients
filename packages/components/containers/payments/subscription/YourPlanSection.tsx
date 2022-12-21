@@ -11,6 +11,7 @@ import {
     useVPNCountriesCount,
     useVPNServersCount,
 } from '../../../hooks';
+import { SettingsSectionWide } from '../../account';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import SubscriptionPanel from './SubscriptionPanel';
@@ -50,28 +51,30 @@ const YourPlanSection = ({ app }: Props) => {
     const currency = getCurrency(user, subscription, plans);
 
     return (
-        <div className="your-plan-section-container flex-gap-2">
-            <SubscriptionPanel
-                app={app}
-                currency={currency}
-                subscription={subscription}
-                organization={organization}
-                user={user}
-                addresses={addresses}
-                vpnCountries={vpnCountries}
-                vpnServers={vpnServers}
-                openSubscriptionModal={openSubscriptionModal}
-            />
-            <UpsellPanel
-                app={app}
-                currency={currency}
-                subscription={subscription}
-                plans={plans}
-                user={user}
-                openSubscriptionModal={openSubscriptionModal}
-            />
-            <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
-        </div>
+        <SettingsSectionWide>
+            <div className="your-plan-section-container flex-gap-2">
+                <SubscriptionPanel
+                    app={app}
+                    currency={currency}
+                    subscription={subscription}
+                    organization={organization}
+                    user={user}
+                    addresses={addresses}
+                    vpnCountries={vpnCountries}
+                    vpnServers={vpnServers}
+                    openSubscriptionModal={openSubscriptionModal}
+                />
+                <UpsellPanel
+                    app={app}
+                    currency={currency}
+                    subscription={subscription}
+                    plans={plans}
+                    user={user}
+                    openSubscriptionModal={openSubscriptionModal}
+                />
+                <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
+            </div>
+        </SettingsSectionWide>
     );
 };
 export default YourPlanSection;

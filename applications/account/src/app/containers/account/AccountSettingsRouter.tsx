@@ -25,6 +25,7 @@ import {
     PrivateMainSettingsArea,
     SessionsSection,
     SettingsPageTitle,
+    SettingsSectionWide,
     SubscriptionModalProvider,
     SubscriptionsSection,
     TwoFactorSection,
@@ -77,11 +78,13 @@ const AccountSettingsRouter = ({
                     <SubscriptionModalProvider app={app}>
                         <PrivateMainArea>
                             <div className="container-section-sticky">
-                                <div className="text-center">
-                                    <SettingsPageTitle className="mt1-5 mb1-5">{c('new_plans: title')
-                                        .t`Unlock premium features by upgrading`}</SettingsPageTitle>
+                                <div className="text-center flex">
+                                    <SettingsSectionWide className="mxauto">
+                                        <SettingsPageTitle className="mt1-5 mb1-5">{c('new_plans: title')
+                                            .t`Unlock premium features by upgrading`}</SettingsPageTitle>
+                                        <PlansSection />
+                                    </SettingsSectionWide>
                                 </div>
-                                <PlansSection />
                             </div>
                         </PrivateMainArea>
                     </SubscriptionModalProvider>
