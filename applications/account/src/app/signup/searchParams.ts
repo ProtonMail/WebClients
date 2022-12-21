@@ -1,5 +1,3 @@
-import * as History from 'history';
-
 import { OtherProductParam, ProductParam, otherProductParamValues } from '@proton/shared/lib/apps/product';
 import { APP_NAMES, DEFAULT_CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
@@ -41,9 +39,8 @@ export const getProductParam = (product: APP_NAMES | undefined, productParam: st
     return product || sanitisedProductParam || defaultProductParam;
 };
 
-export const getSignupSearchParams = (search: History.Search) => {
+export const getSignupSearchParams = (search: string) => {
     const searchParams = new URLSearchParams(search);
-
     const maybeCurrency = searchParams.get('currency')?.toUpperCase() as Currency | undefined;
     const currency = maybeCurrency && ['EUR', 'CHF', 'USD'].includes(maybeCurrency) ? maybeCurrency : undefined;
 
