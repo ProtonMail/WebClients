@@ -42,6 +42,7 @@ export const DRIVE_APP_NAME = `${BRAND_NAME} ${DRIVE_SHORT_APP_NAME}`;
 export const VPN_SHORT_APP_NAME = 'VPN';
 export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
 export const VERIFY_APP_NAME = 'Proton Verify';
+export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -192,6 +193,7 @@ export const SSO_PATHS = {
     SIGNUP: '/signup',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
+    TRIAL: '/trial',
 } as const;
 export const SETUP_ADDRESS_PATH = '/setup-address';
 
