@@ -9,7 +9,7 @@ import { Alert, Block, FormModal, Label, TextArea } from '../../components';
 import { useApiWithoutResult, useEventManager, useNotifications, useUserSettings } from '../../hooks';
 
 export interface Props {
-    onClose: () => void;
+    onClose?: () => void;
 }
 
 const InvoiceTextModal = ({ onClose, ...rest }: Props) => {
@@ -23,7 +23,7 @@ const InvoiceTextModal = ({ onClose, ...rest }: Props) => {
     const handleSubmit = async () => {
         await request();
         await call();
-        onClose();
+        onClose?.();
         createNotification({ text: c('Success').t`Invoice customized` });
     };
 

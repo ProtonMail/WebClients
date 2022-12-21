@@ -29,11 +29,11 @@ import InvoiceAmount from './InvoiceAmount';
 import InvoiceState from './InvoiceState';
 import InvoiceTextModal from './InvoiceTextModal';
 import InvoiceType from './InvoiceType';
-import InvoicesPreview from './InvoicesPreview';
+import InvoicesPreview, { InvoicesPreviewControls } from './InvoicesPreview';
 import { Invoice, InvoiceResponse } from './interface';
 
 const InvoicesSection = () => {
-    const previewRef = useRef();
+    const previewRef = useRef<InvoicesPreviewControls | undefined>();
     const api = useApi();
     const [user] = useUser();
     const { ORGANIZATION, USER } = INVOICE_OWNER;
@@ -164,7 +164,7 @@ const InvoicesSection = () => {
                                                     key={key}
                                                     invoice={invoice}
                                                     fetchInvoices={requestInvoices}
-                                                    onPreview={previewRef.current.preview}
+                                                    onPreview={previewRef.current?.preview}
                                                     onDownload={handleDownload}
                                                 />,
                                             ]}
