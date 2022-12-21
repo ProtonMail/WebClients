@@ -38,7 +38,7 @@ const InvoicesSection = () => {
     const [user] = useUser();
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
-    const [subscription] = useSubscription();
+    const [{ isManagedByMozilla } = { isManagedByMozilla: false }] = useSubscription();
     const { createModal } = useModals();
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
 
@@ -73,11 +73,7 @@ const InvoicesSection = () => {
         }
     });
 
-    if (!subscription) {
-        return null;
-    }
-
-    if (subscription.isManagedByMozilla) {
+    if (isManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
 
