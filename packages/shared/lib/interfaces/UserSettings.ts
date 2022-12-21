@@ -84,7 +84,7 @@ export interface UserSettings {
     };
     Flags: Flags;
     HideSidePanel: DRAWER_VISIBILITY;
-    InvoiceText: number;
+    InvoiceText: string;
     Locale: string;
     LogAuth: SETTINGS_LOG_AUTH_STATE;
     News: number;

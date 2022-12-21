@@ -12,3 +12,9 @@ export interface Invoice {
     AttemptTime: number;
     Attempts: number;
 }
+
+export interface InvoiceResponse {
+    Code: number;
+    Invoices: Invoice[];
+    Total: number;
+}

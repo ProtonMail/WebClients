@@ -8,12 +8,16 @@ import { updateInvoiceText } from '@proton/shared/lib/api/settings';
 import { Alert, Block, FormModal, Label, TextArea } from '../../components';
 import { useApiWithoutResult, useEventManager, useNotifications, useUserSettings } from '../../hooks';
 
-const InvoiceTextModal = ({ onClose, ...rest }) => {
+export interface Props {
+    onClose: () => void;
+}
+
+const InvoiceTextModal = ({ onClose, ...rest }: Props) => {
     const [{ InvoiceText }] = useUserSettings();
+
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [invoiceText, setInvoiceText] = useState(InvoiceText);
-    const handleChange = ({ target }) => setInvoiceText(target.value);
     const { request, loading } = useApiWithoutResult(() => updateInvoiceText(invoiceText));
 
     const handleSubmit = async () => {
@@ -45,7 +49,7 @@ const InvoiceTextModal = ({ onClose, ...rest }) => {
                 value={invoiceText}
                 placeholder={c('Placeholder for custom invoice text')
                     .t`Add your name (or company name) and address to your invoices`}
-                onChange={handleChange}
+                onChange={({ target }) => setInvoiceText(target.value)}
                 disabled={loading}
             />
         </FormModal>
