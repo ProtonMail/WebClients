@@ -25,6 +25,7 @@ import {
 const SLOW_EVENT_BYPASS = {};
 const EVENTS_PER_BATCH = 5;
 const EVENTS_RACE_MS = 300;
+const INVISIBLE_ERROR_MESSAGE = 'Outdated event';
 
 const useCalendarsEventsReader = (
     calendarEvents: CalendarViewEvent[],
@@ -161,7 +162,7 @@ const useCalendarsEventsReader = (
                     promise = getEventAndUpsert(calendarData.ID, eventRecord.eventData.ID, calendarEventsCache).then(
                         () => {
                             // Relies on a re-render happening which would make this error never show up
-                            throw new Error('Outdated event');
+                            throw new Error(INVISIBLE_ERROR_MESSAGE);
                         }
                     );
                 }
@@ -172,7 +173,10 @@ const useCalendarsEventsReader = (
                     })
                     .catch((error: any) => {
                         const errorMessage = error?.message || 'Unknown error';
-                        if (!errorMessage.toLowerCase().includes('decrypt')) {
+                        if (
+                            !errorMessage.toLowerCase().includes('decrypt') &&
+                            errorMessage !== INVISIBLE_ERROR_MESSAGE
+                        ) {
                             /**
                              * (Temporarily) Log to Sentry any error not related to decryption
                              */
