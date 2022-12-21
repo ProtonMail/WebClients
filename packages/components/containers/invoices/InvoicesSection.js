@@ -55,13 +55,13 @@ const InvoicesSection = () => {
             Owner: owner,
         });
 
-    const { result = {}, loading, request } = useApiResult(query, [page, owner]);
+    const { result = {}, loading, request: requestInvoices } = useApiResult(query, [page, owner]);
     const { Invoices: invoices = [], Total: total = 0 } = result;
     const hasUnpaid = invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
 
     useSubscribeEventManager(({ Invoices }) => {
         if (Invoices && Invoices.length > 0) {
-            request();
+            requestInvoices();
         }
     });
 
@@ -150,7 +150,7 @@ const InvoicesSection = () => {
                                                 <InvoiceActions
                                                     key={key}
                                                     invoice={invoice}
-                                                    fetchInvoices={request}
+                                                    fetchInvoices={requestInvoices}
                                                     onPreview={previewRef.current.preview}
                                                     onDownload={handleDownload}
                                                 />,
