@@ -33,9 +33,11 @@ const useSenderImage = (emailAddress: string, fallback: boolean, bimiSelector?: 
         if (fallback) {
             // Load the image with XHR request and create a blob URL
             void getSenderLogo(api, emailAddress, imageSizeRef.current, bimiSelector, mode).then((fallbackUrl) => {
+                // Fallback URL can be empty if the network request fails
                 if (fallbackUrl.length) {
                     setUrl(fallbackUrl);
                 } else {
+                    // In that case, we cannot load an image (and fallback to initials)
                     setCanLoad(false);
                 }
             });
