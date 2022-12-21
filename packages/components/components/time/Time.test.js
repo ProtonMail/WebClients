@@ -22,18 +22,44 @@ describe('Time component', () => {
     it('should support format', () => {
         const { container } = render(<Time format="PPp">{unixDate}</Time>);
 
-        expect(container.firstChild.textContent).toBe(readableTime(unixDate, 'PPp'));
+        expect(container.firstChild.textContent).toBe(
+            readableTime(unixDate, {
+                format: 'PPp',
+            })
+        );
     });
 
     it('should support format forcing', () => {
         const todayUnixDate = Math.floor(Date.now() / 1000);
 
         const { container } = render(
-            <Time format="PP" forceFormat={true}>
+            <Time format="PP" sameDayFormat="PP">
                 {todayUnixDate}
             </Time>
         );
 
-        expect(container.firstChild.textContent).toBe(readableTime(todayUnixDate, 'PP', {}, true));
+        expect(container.firstChild.textContent).toBe(
+            readableTime(todayUnixDate, {
+                format: 'PP',
+                sameDayFormat: 'PP',
+            })
+        );
+    });
+
+    it('should support format forcing (sameDayFormat={false})', () => {
+        const todayUnixDate = Math.floor(Date.now() / 1000);
+
+        const { container } = render(
+            <Time format="PP" sameDayFormat={false}>
+                {todayUnixDate}
+            </Time>
+        );
+
+        expect(container.firstChild.textContent).toBe(
+            readableTime(todayUnixDate, {
+                format: 'PP',
+                sameDayFormat: 'PP',
+            })
+        );
     });
 });

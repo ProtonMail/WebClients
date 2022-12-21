@@ -16,7 +16,7 @@ import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { getShortBillingText } from './helper';
 
 const getRenewalText = (periodEnd: number) => {
-    const formattedEndTime = <Time key="time-text">{periodEnd}</Time>;
+    const formattedEndTime = <Time sameDayFormat={false}>{periodEnd}</Time>;
     // translator: formattedEndTime uses a "long localized date" format ('PP' format in https://date-fns.org/v2.29.3/docs/format). E.g.: formattedEndTime = "Dec 12, 2022"
     return c('Billing cycle').jt`Renews automatically on ${formattedEndTime}`;
 };
@@ -62,10 +62,14 @@ const SubscriptionRow = ({
                 <span>{users}</span>
             </TableCell>
             <TableCell>
-                <Time forceFormat={true}>{PeriodStart}</Time>
+                <Time format="PP" sameDayFormat={false}>
+                    {PeriodStart}
+                </Time>
             </TableCell>
             <TableCell>
-                <Time forceFormat={true}>{PeriodEnd}</Time>
+                <Time format="PP" sameDayFormat={false}>
+                    {PeriodEnd}
+                </Time>
             </TableCell>
             <TableCell className="text-right">
                 <Price currency={Currency}>{PricePerCycle}</Price>
