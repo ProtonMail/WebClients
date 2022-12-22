@@ -3,7 +3,11 @@ import { getUnixTime } from 'date-fns';
 import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { getPaginatedEventsByUID } from '@proton/shared/lib/calendar/api';
-import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/lib/calendar/apiModels';
+import {
+    getHasDefaultNotifications,
+    getHasSharedEventContent,
+    getHasSharedKeyPacket,
+} from '@proton/shared/lib/calendar/apiModels';
 import {
     getAttendeeEmail,
     modifyAttendeesPartstat,
@@ -28,7 +32,7 @@ import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurger
 import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
 import {
     findAttendee,
-    getInvitedEventWithAlarms,
+    getInvitedVeventWithAlarms,
     getResetPartstatActions,
 } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getIsRruleEqual } from '@proton/shared/lib/calendar/recurrence/rruleEqual';
@@ -46,7 +50,7 @@ import {
     getIsAlarmComponent,
     getSequence,
 } from '@proton/shared/lib/calendar/vcalHelper';
-import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { getIsEventCancelled, toApiNotifications, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { Address, Api } from '@proton/shared/lib/interfaces';
@@ -57,7 +61,6 @@ import {
     CalendarUserSettings,
     CalendarWidgetData,
     CalendarWithOwnMembers,
-    DecryptedPersonalVeventMapResult,
     Participant,
     PmInviteData,
     SyncMultipleApiResponse,
@@ -144,33 +147,6 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
         }
     }
     return { calendars, calendarUserSettings };
-};
-
-interface GetVeventWithAlarmsArgs {
-    calendarEvent: CalendarEvent;
-    memberID?: string;
-    getCalendarEventRaw: GetCalendarEventRaw;
-    getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
-}
-const getVeventWithAlarms = async ({
-    calendarEvent,
-    memberID,
-    getCalendarEventRaw,
-    getCalendarEventPersonal,
-}: GetVeventWithAlarmsArgs) => {
-    const [{ veventComponent: vevent, encryptionData }, eventPersonalMap] = await Promise.all([
-        getCalendarEventRaw(calendarEvent),
-        getCalendarEventPersonal(calendarEvent),
-    ]);
-    const personalVevent = memberID ? eventPersonalMap[memberID] : undefined;
-    const valarms = personalVevent ? personalVevent.veventComponent : {};
-    return {
-        veventWithAlarms: {
-            ...valarms,
-            ...vevent,
-        },
-        encryptionData,
-    };
 };
 
 const getRelevantEventsByUID = ({ api, uid, calendarIDs }: { api: Api; uid: string; calendarIDs: string[] }) => {
@@ -280,7 +256,6 @@ type FetchEventInvitation = (args: {
     getAddressKeys: GetAddressKeys;
     getCalendarInfo: GetCalendarInfo;
     getCalendarEventRaw: GetCalendarEventRaw;
-    getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
     calendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
     message: MessageStateWithData;
@@ -303,7 +278,6 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     getAddressKeys,
     getCalendarInfo,
     getCalendarEventRaw,
-    getCalendarEventPersonal,
     calendars,
     defaultCalendar,
     message,
@@ -346,18 +320,11 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     const singleEditData = getSingleEditWidgetData(allEventsWithUID);
     try {
         const veventResults = await Promise.all(
-            [calendarEvent, calendarParentEvent].filter(isTruthy).map((event) =>
-                getVeventWithAlarms({
-                    calendarEvent: event,
-                    memberID: calendarData.memberID,
-                    getCalendarEventRaw,
-                    getCalendarEventPersonal,
-                })
-            )
+            [calendarEvent, calendarParentEvent].filter(isTruthy).map((event) => getCalendarEventRaw(event))
         );
         const [
             {
-                veventWithAlarms: vevent,
+                veventComponent: vevent,
                 encryptionData: { sharedSessionKey, encryptingAddressID },
             },
             parentVeventResult,
@@ -372,7 +339,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         result.invitation = invitation;
         if (parentVeventResult && calendarParentEvent) {
             const { invitation: parentInvitation } = processEventInvitation(
-                { vevent: parentVeventResult.veventWithAlarms, calendarEvent: calendarParentEvent },
+                { vevent: parentVeventResult.veventComponent, calendarEvent: calendarParentEvent },
                 message,
                 contactEmails,
                 ownAddresses
@@ -399,12 +366,14 @@ interface UpdateEventArgs {
     api: Api;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
     calendarData: Required<CalendarWidgetData>;
+    hasDefaultNotifications: boolean;
     createSingleEdit?: boolean;
     updateTime?: number;
     updatePartstat?: ICAL_ATTENDEE_STATUS;
     attendee?: Participant;
     deleteIds?: string[];
     overwrite: boolean;
+    personalEventsDeprecated: boolean;
 }
 const updateEventApi = async ({
     calendarEvent,
@@ -412,12 +381,14 @@ const updateEventApi = async ({
     api,
     getCanonicalEmailsMap,
     calendarData,
+    hasDefaultNotifications,
     createSingleEdit = false,
     updateTime,
     updatePartstat,
     attendee,
     overwrite,
     deleteIds = [],
+    personalEventsDeprecated,
 }: UpdateEventArgs) => {
     const {
         calendar: { ID: calendarID },
@@ -453,6 +424,8 @@ const updateEventApi = async ({
         eventComponent: veventWithPmAttendees,
         isCreateEvent: !!createSingleEdit,
         isSwitchCalendar: false,
+        hasDefaultNotifications,
+        personalEventsDeprecated,
         isAttendee: true,
         ...creationKeys,
     });
@@ -512,6 +485,7 @@ interface UpdateEventInvitationArgs {
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
     overwrite: boolean;
+    personalEventsDeprecated: boolean;
 }
 export const updateEventInvitation = async ({
     isOrganizerMode,
@@ -527,6 +501,7 @@ export const updateEventInvitation = async ({
     contactEmails,
     ownAddresses,
     overwrite,
+    personalEventsDeprecated,
 }: UpdateEventInvitationArgs): Promise<{
     action: UPDATE_ACTION;
     invitation?: RequireSome<EventInvitation, 'calendarEvent' | 'attendee'>;
@@ -594,6 +569,7 @@ export const updateEventInvitation = async ({
                 const updatedCalendarEvent = await updateEventApi({
                     calendarEvent,
                     vevent: updatedVevent,
+                    hasDefaultNotifications: getHasDefaultNotifications(calendarEvent),
                     updateTime,
                     updatePartstat: attendeeIcs.partstat,
                     attendee: attendeeApi,
@@ -601,6 +577,7 @@ export const updateEventInvitation = async ({
                     api,
                     getCanonicalEmailsMap,
                     overwrite: false,
+                    personalEventsDeprecated,
                 });
                 const { invitation: updatedInvitation } = processEventInvitation(
                     { vevent: updatedVevent, calendarEvent: updatedCalendarEvent },
@@ -664,24 +641,25 @@ export const updateEventInvitation = async ({
                     ],
                 };
                 // alarms may need to be dropped when resetting the partstat
-                const updatedVevent = withDtstamp(
-                    getInvitedEventWithAlarms({
-                        vevent: veventIcsWithApiAlarms,
-                        partstat: partstatIcs,
-                        calendarSettings: calendarData.calendarSettings,
-                        oldPartstat: partstatApi,
-                    })
-                );
-                const updatedPmVevent = await withPmAttendees(updatedVevent, getCanonicalEmailsMap, true);
+                const { vevent: updatedVevent, hasDefaultNotifications } = getInvitedVeventWithAlarms({
+                    vevent: veventIcsWithApiAlarms,
+                    oldHasDefaultNotifications: getHasDefaultNotifications(calendarEvent),
+                    partstat: partstatIcs,
+                    calendarSettings: calendarData.calendarSettings,
+                    oldPartstat: partstatApi,
+                });
+                const updatedPmVevent = await withPmAttendees(withDtstamp(updatedVevent), getCanonicalEmailsMap, true);
                 const updatedCalendarEvent = await updateEventApi({
                     calendarEvent,
                     vevent: updatedPmVevent,
+                    hasDefaultNotifications,
                     calendarData,
                     createSingleEdit,
                     deleteIds: singleEditData?.map(({ ID }) => ID),
                     api,
                     getCanonicalEmailsMap,
                     overwrite,
+                    personalEventsDeprecated,
                 });
                 const { invitation: updatedInvitation } = processEventInvitation(
                     { vevent: updatedPmVevent, calendarEvent: updatedCalendarEvent },
@@ -737,17 +715,20 @@ export const updateEventInvitation = async ({
                           sequence: { value: veventIcs.sequence?.value || 0 },
                           status: { value: CANCELLED },
                       };
+                const { vevent, hasDefaultNotifications } = getInvitedVeventWithAlarms({
+                    vevent: updatedVevent,
+                    partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+                });
                 await updateEventApi({
                     calendarEvent,
-                    vevent: getInvitedEventWithAlarms({
-                        vevent: updatedVevent,
-                        partstat: ICAL_ATTENDEE_STATUS.DECLINED,
-                    }),
+                    hasDefaultNotifications,
+                    vevent,
                     calendarData,
                     createSingleEdit,
                     api,
                     getCanonicalEmailsMap,
                     overwrite,
+                    personalEventsDeprecated,
                 });
                 const { invitation: updatedInvitation } = processEventInvitation(
                     { vevent: updatedVevent },
@@ -794,6 +775,7 @@ export const createCalendarEventFromInvitation = async ({
     calendarData,
     pmData,
     overwrite,
+    personalEventsDeprecated,
 }: {
     vevent: VcalVeventComponent;
     vcalAttendee: VcalAttendeeProperty;
@@ -803,6 +785,7 @@ export const createCalendarEventFromInvitation = async ({
     api: Api;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
     overwrite: boolean;
+    personalEventsDeprecated: boolean;
 }) => {
     const { calendar, memberID, addressKeys, calendarKeys, calendarSettings } = calendarData || {};
     if (!calendar || !memberID || !addressKeys || !calendarKeys || !calendarSettings) {
@@ -817,7 +800,11 @@ export const createCalendarEventFromInvitation = async ({
         },
     };
     // add alarms to event if necessary
-    const veventToSave = getInvitedEventWithAlarms({ vevent, partstat, calendarSettings });
+    const { vevent: veventToSave, hasDefaultNotifications } = getInvitedVeventWithAlarms({
+        vevent,
+        partstat,
+        calendarSettings,
+    });
     const { index: attendeeIndex } = findAttendee(getAttendeeEmail(vcalAttendee), veventToSave.attendee);
     if (!veventToSave.attendee || attendeeIndex === undefined || attendeeIndex === -1) {
         throw new Error('Missing data for creating calendar event from invitation');
@@ -841,6 +828,8 @@ export const createCalendarEventFromInvitation = async ({
         isCreateEvent: true,
         isSwitchCalendar: false,
         isInvitation: true,
+        personalEventsDeprecated,
+        hasDefaultNotifications,
         ...(await getCreationKeys({
             newAddressKeys: addressKeys,
             newCalendarKeys: calendarKeys,
@@ -901,6 +890,7 @@ export const updatePartstatFromInvitation = async ({
     calendarData,
     singleEditData,
     api,
+    personalEventsDeprecated,
 }: {
     veventApi: VcalVeventComponent;
     calendarEvent: CalendarEvent;
@@ -913,6 +903,7 @@ export const updatePartstatFromInvitation = async ({
     calendarData?: CalendarWidgetData;
     singleEditData?: CalendarEvent[];
     api: Api;
+    personalEventsDeprecated: boolean;
 }) => {
     const { calendar, memberID, addressKeys, calendarSettings } = calendarData || {};
     const primaryAddressKey = getPrimaryKey(addressKeys);
@@ -965,7 +956,7 @@ export const updatePartstatFromInvitation = async ({
                 ({ eventID, calendarID }) =>
                     () =>
                         api<UpdateEventPartApiResponse>({
-                            ...updatePersonalEventPart(calendarID, eventID, { MemberID: memberID }),
+                            ...updatePersonalEventPart(calendarID, eventID, { MemberID: memberID, Notifications: [] }),
                             silence: true,
                         })
             );
@@ -986,21 +977,23 @@ export const updatePartstatFromInvitation = async ({
         ...veventToUpdate,
         attendee: modifyAttendeesPartstat(veventToUpdate.attendee, { [emailAddress]: partstat }),
     };
-    const veventToSave = getInvitedEventWithAlarms({
+    const { vevent: veventToSave, hasDefaultNotifications } = getInvitedVeventWithAlarms({
         vevent: updatedVevent,
         partstat,
         calendarSettings,
         oldPartstat,
     });
     try {
-        const personalData = await createPersonalEvent({
-            eventComponent: veventToSave,
-            signingKey: primaryAddressKey.privateKey,
-        });
         const payload: CreateSinglePersonalEventData = {
             MemberID: memberID,
-            PersonalEventContent: personalData,
+            Notifications: hasDefaultNotifications ? null : toApiNotifications(veventToSave.components),
         };
+        if (!personalEventsDeprecated) {
+            payload.PersonalEventContent = await createPersonalEvent({
+                eventComponent: veventToSave,
+                signingKey: primaryAddressKey.privateKey,
+            });
+        }
         const { Event } = await api<UpdateEventPartApiResponse>(updatePersonalEventPart(calendar.ID, eventID, payload));
         savedEvent = Event;
     } catch (e: any) {

@@ -37,6 +37,8 @@ interface CreateCalendarEventArguments {
     calendarSessionKey?: SessionKey;
     isCreateEvent: boolean;
     isSwitchCalendar: boolean;
+    hasDefaultNotifications: boolean;
+    personalEventsDeprecated: boolean;
     isAttendee?: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
@@ -49,11 +51,13 @@ export const createCalendarEvent = async ({
     calendarSessionKey: oldCalendarSessionKey,
     isCreateEvent,
     isSwitchCalendar,
+    hasDefaultNotifications,
+    personalEventsDeprecated,
     isAttendee,
     removedAttendeesEmails = [],
     addedAttendeesPublicKeysMap,
 }: CreateCalendarEventArguments) => {
-    const { sharedPart, calendarPart, personalPart, attendeesPart } = getParts(eventComponent);
+    const { sharedPart, calendarPart, personalPart, notificationsPart, attendeesPart } = getParts(eventComponent);
 
     const isCreateOrSwitchCalendar = isCreateEvent || isSwitchCalendar;
     const isAttendeeSwitchingCalendar = isSwitchCalendar && isAttendee;
@@ -103,7 +107,8 @@ export const createCalendarEvent = async ({
         calendarSignedPart,
         calendarEncryptedPart,
         calendarSessionKey: encryptedCalendarSessionKey,
-        personalSignedPart,
+        personalSignedPart: personalEventsDeprecated ? undefined : personalSignedPart,
+        notificationsPart: hasDefaultNotifications ? undefined : notificationsPart,
         attendeesEncryptedPart,
         attendeesClearPart: isAttendeeSwitchingCalendar ? undefined : attendeesPart[CLEAR_TEXT],
         removedAttendeesEmails,

@@ -9,24 +9,37 @@ import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCale
 
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
+import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 import { useGetCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
 import useGetEncryptionPreferences from './useGetEncryptionPreferences';
 
 const useGetCalendarEventRaw = (): GetCalendarEventRaw => {
     const getCalendarKeys = useGetCalendarKeys();
+    const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const getEncryptionPreferences = useGetEncryptionPreferences();
 
     return useCallback(
         async (Event: CalendarEvent) => {
-            const { SharedEvents, CalendarEvents, AttendeesEvents } = Event;
+            const {
+                CalendarID,
+                SharedEvents,
+                CalendarEvents,
+                AttendeesEvents,
+                Attendees,
+                PersonalEvents,
+                Notifications,
+                IsPersonalMigrated,
+                FullDay,
+            } = Event;
             const encryptingAddressID = getIsAutoAddedInvite(Event) ? Event.AddressID : undefined;
             const addresses = await getAddresses();
 
-            const [privateKeys, publicKeysMap] = await Promise.all([
+            const [privateKeys, publicKeysMap, { CalendarSettings: calendarSettings }] = await Promise.all([
                 getCalendarEventDecryptionKeys({ calendarEvent: Event, getAddressKeys, getCalendarKeys }),
                 getAuthorPublicKeysMap({ event: Event, addresses, getAddressKeys, getEncryptionPreferences }),
+                getCalendarBootstrap(CalendarID),
             ]);
             const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
                 calendarEvent: Event,
@@ -37,11 +50,16 @@ const useGetCalendarEventRaw = (): GetCalendarEventRaw => {
                     SharedEvents: withNormalizedAuthors(SharedEvents),
                     CalendarEvents: withNormalizedAuthors(CalendarEvents),
                     AttendeesEvents: withNormalizedAuthors(AttendeesEvents),
-                    Attendees: Event.Attendees,
+                    Attendees,
+                    PersonalEvents,
+                    Notifications,
+                    IsPersonalMigrated,
+                    FullDay,
                 },
                 publicKeysMap,
                 sharedSessionKey,
                 calendarSessionKey,
+                calendarSettings,
                 addresses,
                 encryptingAddressID,
             });

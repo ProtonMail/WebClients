@@ -1,17 +1,17 @@
 import { c } from 'ttag';
 
-import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
+import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { CalendarSettings, EventModel } from '@proton/shared/lib/interfaces/calendar';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { RequireOnly, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { DisplayNameEmail } from '../containers/calendar/interface';
 
 const { NEEDS_ACTION, DECLINED, ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
 export const modifyEventModelPartstat = (
-    model: Partial<EventModel>,
+    model: RequireOnly<EventModel, 'isAllDay'>,
     partstat: ICAL_ATTENDEE_STATUS,
     calendarSettings: CalendarSettings
 ): Partial<EventModel> => {
@@ -19,16 +19,18 @@ export const modifyEventModelPartstat = (
     const selfAttendee = selfAttendeeIndex !== undefined ? attendees[selfAttendeeIndex] : undefined;
     let addDefaultNotifications = false;
     const modelWithPartstat = { ...model };
+    const notificationsKey = isAllDay ? 'fullDayNotifications' : 'partDayNotifications';
     if (modelWithPartstat.attendees && selfAttendee && selfAttendeeIndex !== undefined) {
         addDefaultNotifications =
             [NEEDS_ACTION, DECLINED].includes(selfAttendee.partstat) &&
             [ACCEPTED, TENTATIVE].includes(partstat) &&
-            (isAllDay ? model.fullDayNotifications?.length === 0 : model.partDayNotifications?.length === 0);
+            model[notificationsKey]?.length === 0;
         modelWithPartstat.attendees[selfAttendeeIndex].partstat = partstat;
     }
     if (partstat === DECLINED) {
         return {
             ...modelWithPartstat,
+            hasDefaultNotifications: false,
             partDayNotifications: [],
             fullDayNotifications: [],
         };
@@ -36,14 +38,12 @@ export const modifyEventModelPartstat = (
     if (!addDefaultNotifications) {
         return modelWithPartstat;
     }
-    const { DefaultPartDayNotifications, DefaultFullDayNotifications } = calendarSettings;
 
-    const partDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
-    const fullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
+    const notifications = apiNotificationsToModel({ notifications: null, isAllDay, calendarSettings });
     return {
         ...modelWithPartstat,
-        partDayNotifications,
-        fullDayNotifications,
+        hasDefaultNotifications: true,
+        [notificationsKey]: notifications,
     };
 };
 

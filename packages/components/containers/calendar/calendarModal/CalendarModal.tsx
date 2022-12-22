@@ -11,7 +11,6 @@ import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/h
 import { Nullable } from '@proton/shared/lib/interfaces';
 import { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { FeatureCode } from '../..';
 import {
     ColorPicker,
     Form,
@@ -28,7 +27,7 @@ import {
 } from '../../../components';
 import { SelectChangeEvent } from '../../../components/selectTwo/select';
 import { TruncatedText } from '../../../components/truncatedText';
-import { useFeature, useLoading } from '../../../hooks';
+import { useLoading } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
@@ -83,9 +82,6 @@ export const CalendarModal = ({
         const option = model.addressOptions.find(({ value: ID }) => ID === model.addressID);
         return (option && option.text) || '';
     }, [model.addressID, model.addressOptions]);
-
-    const isSubscribedCalendarReminderFeatureEnabled = !!useFeature(FeatureCode.SubscribedCalendarReminder).feature
-        ?.Value;
 
     const isSubscribedCalendar = initialCalendar && getIsSubscribedCalendar(initialCalendar);
     const subscribeURL =
@@ -269,44 +265,43 @@ export const CalendarModal = ({
         </InputFieldTwo>
     ) : null;
 
-    const defaultNotificationsRow =
-        !isSubscribedCalendar || isSubscribedCalendarReminderFeatureEnabled ? (
-            <>
-                <InputFieldTwo
-                    id="default-notification"
-                    as={Notifications}
-                    label={c('Label').t`Event notifications`}
-                    data-test-id="create-calendar/event-settings:default-notification"
-                    hasType
-                    notifications={model.partDayNotifications}
-                    canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                    defaultNotification={model.defaultPartDayNotification}
-                    onChange={(notifications: NotificationModel[]) => {
-                        setModel({
-                            ...model,
-                            partDayNotifications: notifications,
-                        });
-                    }}
-                />
+    const defaultNotificationsRow = (
+        <>
+            <InputFieldTwo
+                id="default-notification"
+                as={Notifications}
+                label={c('Label').t`Event notifications`}
+                data-test-id="create-calendar/event-settings:default-notification"
+                hasType
+                notifications={model.partDayNotifications}
+                canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                defaultNotification={model.defaultPartDayNotification}
+                onChange={(notifications: NotificationModel[]) => {
+                    setModel({
+                        ...model,
+                        partDayNotifications: notifications,
+                    });
+                }}
+            />
 
-                <InputFieldTwo
-                    id="default-full-day-notification"
-                    as={Notifications}
-                    label={c('Label').t`All-day event notifications`}
-                    data-test-id="create-calendar/event-settings:default-full-day-notification"
-                    hasType
-                    notifications={model.fullDayNotifications}
-                    canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                    defaultNotification={model.defaultFullDayNotification}
-                    onChange={(notifications: NotificationModel[]) => {
-                        setModel({
-                            ...model,
-                            fullDayNotifications: notifications,
-                        });
-                    }}
-                />
-            </>
-        ) : null;
+            <InputFieldTwo
+                id="default-full-day-notification"
+                as={Notifications}
+                label={c('Label').t`All-day event notifications`}
+                data-test-id="create-calendar/event-settings:default-full-day-notification"
+                hasType
+                notifications={model.fullDayNotifications}
+                canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                defaultNotification={model.defaultFullDayNotification}
+                onChange={(notifications: NotificationModel[]) => {
+                    setModel({
+                        ...model,
+                        fullDayNotifications: notifications,
+                    });
+                }}
+            />
+        </>
+    );
 
     const subscribeURLRow =
         subscribeURL &&

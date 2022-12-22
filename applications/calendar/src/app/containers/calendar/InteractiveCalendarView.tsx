@@ -15,6 +15,7 @@ import { c } from 'ttag';
 
 import {
     Dropzone,
+    FeatureCode,
     classnames,
     onlyDragFiles,
     useApi,
@@ -23,6 +24,7 @@ import {
     useConfig,
     useContactEmails,
     useEventManager,
+    useFeature,
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
@@ -33,7 +35,6 @@ import {
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
-import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
@@ -292,6 +293,7 @@ const InteractiveCalendarView = ({
     const getMailSettings = useGetMailSettings();
     const relocalizeText = useRelocalizeText();
     const config = useConfig();
+    const personalEventsDeprecated = !!useFeature(FeatureCode.CalendarPersonalEventsDeprecated).feature?.Value;
     const isSavingEvent = useRef(false);
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
@@ -343,7 +345,6 @@ const InteractiveCalendarView = ({
     const readCalendarBootstrap = useReadCalendarBootstrap();
     const getCalendarKeys = useGetCalendarKeys();
     const getAddressKeys = useGetAddressKeys();
-    const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
     const getEncryptionPreferences = useGetEncryptionPreferences();
@@ -351,8 +352,7 @@ const InteractiveCalendarView = ({
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
         return Promise.all([
             getCalendarEventRaw(eventData),
-            getCalendarEventPersonal(eventData),
-            pick(eventData, ['Permissions', 'IsProtonProtonInvite']),
+            pick(eventData, ['Permissions', 'IsProtonProtonInvite', 'IsPersonalMigrated']),
         ]);
     };
 
@@ -524,10 +524,10 @@ const InteractiveCalendarView = ({
         const [
             {
                 veventComponent: existingVeventComponent,
-                verificationStatus: existingVerificationStatus,
+                hasDefaultNotifications,
+                verificationStatus,
                 selfAddressData: existingSelfAddressData,
             },
-            personalMap,
         ] = eventReadResult.result;
 
         const existingVeventComponentParentPartial = existingVeventComponent['recurrence-id']
@@ -543,27 +543,21 @@ const InteractiveCalendarView = ({
             Member,
             Address,
             isAllDay: false,
-            verificationStatus: existingVerificationStatus,
+            verificationStatus,
             tzid,
         });
 
         const veventComponent = eventRecurrence
             ? withOccurrenceEvent(existingVeventComponent, eventRecurrence)
             : { ...existingVeventComponent };
-        let alarmMember = Member;
         let selfAddressData = existingSelfAddressData;
 
         if (duplicateFromNonWritableCalendarData) {
             /**
              * When duplicating from a disabled calendar, we artificially changed the calendar. In that case we need to:
-             * * retrieve alarms from the old member
              * * change organizer to that of the new calendar
+             * * reset the self address data (otherwise we would have disabled address data in there)
              */
-            alarmMember = getMemberAndAddress(
-                addresses,
-                readCalendarBootstrap(calendarData.ID).Members,
-                eventData.Author
-            )[0];
             selfAddressData = {
                 isOrganizer: !!veventComponent.attendee?.length,
                 isAttendee: false,
@@ -575,12 +569,12 @@ const InteractiveCalendarView = ({
         }
         const eventResult = getExistingEvent({
             veventComponent,
-            veventValarmComponent: personalMap[alarmMember?.ID]?.veventComponent,
+            hasDefaultNotifications,
             veventComponentParentPartial: existingVeventComponentParentPartial,
             tzid,
             isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
-            // When duplicating from a disabled calendar, we need to reset the self address data (otherwise we would have disabled address data in there)
             selfAddressData,
+            calendarSettings: CalendarSettings,
         });
         if (partstat) {
             // The user attends the event and is changing the partstat
@@ -592,6 +586,9 @@ const InteractiveCalendarView = ({
         return {
             ...createResult,
             ...eventResult,
+            hasDefaultNotifications,
+            [eventResult.isAllDay ? 'hasFullDayDefaultNotifications' : 'hasPartDayDefaultNotifications']:
+                hasDefaultNotifications,
         };
     };
 
@@ -1119,7 +1116,7 @@ const InteractiveCalendarView = ({
             throw new Error('Failed to retrieve shared session key. Cannot re-encrypt event');
         }
 
-        await reencryptCalendarSharedEvent({
+        void (await reencryptCalendarSharedEvent({
             calendarEvent,
             sharedSessionKey,
             calendarKeys,
@@ -1128,7 +1125,7 @@ const InteractiveCalendarView = ({
             void calendarCall([calendarID]);
 
             throw new Error(error);
-        });
+        }));
     };
 
     const handleUpdatePartstatActions = async (operations: UpdatePartstatOperation[] = []) => {
@@ -1173,10 +1170,12 @@ const InteractiveCalendarView = ({
             return [];
         }
         const requests = operations.map(
-            ({ data: { addressID, memberID, eventID, calendarID, eventComponent } }) =>
+            ({ data: { addressID, memberID, eventID, calendarID, eventComponent, hasDefaultNotifications } }) =>
                 async () => {
                     const payload = await getUpdatePersonalEventPayload({
                         eventComponent,
+                        hasDefaultNotifications,
+                        personalEventsDeprecated,
                         addressID,
                         memberID,
                         getAddressKeys,
@@ -1231,6 +1230,7 @@ const InteractiveCalendarView = ({
                 addresses,
                 inviteActions,
                 isDuplicatingEvent,
+                personalEventsDeprecated,
                 api,
                 onSaveConfirmation: handleSaveConfirmation,
                 onEquivalentAttendees: handleEquivalentAttendees,
@@ -1323,6 +1323,7 @@ const InteractiveCalendarView = ({
                 getAddressKeys,
                 getCalendarKeys,
                 inviteActions,
+                personalEventsDeprecated,
                 sendIcs: handleSendIcs,
             });
             // some operations may refer to the events to be deleted, so we execute those first

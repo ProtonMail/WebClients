@@ -2,10 +2,6 @@ import { c } from 'ttag';
 
 import { AutoReplyDuration } from '@proton/shared/lib/constants';
 
-export const DAY_SECONDS = 24 * 60 * 60;
-export const HOUR_SECONDS = 60 * 60;
-export const MINUTES_SECONDS = 60;
-
 export const getDurationOptions = () => [
     {
         text: c('Option').t`Fixed duration`,

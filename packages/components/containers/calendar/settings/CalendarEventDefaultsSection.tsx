@@ -5,23 +5,17 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { InputFieldTwo, Option, SelectTwo } from '@proton/components/components';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import {
-    FeatureCode,
-    SettingsLayoutLeft,
-    SettingsSectionWide,
-    useCalendarModelEventManager,
-} from '@proton/components/containers';
+import { SettingsLayoutLeft, SettingsSectionWide, useCalendarModelEventManager } from '@proton/components/containers';
 import {
     getCalendarEventSettingsModel,
     getDefaultModel,
 } from '@proton/components/containers/calendar/calendarModal/calendarModalState';
-import { useApi, useFeature, useLoading, useNotifications } from '@proton/components/hooks';
+import { useApi, useLoading, useNotifications } from '@proton/components/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import {
     CalendarBootstrap,
     NotificationModel,
@@ -43,7 +37,6 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
     const api = useApi();
     const { call } = useCalendarModelEventManager();
     const { createNotification } = useNotifications();
-    const { feature } = useFeature(FeatureCode.SubscribedCalendarReminder);
 
     const [model, setModel] = useState<ReturnType<typeof getCalendarEventSettingsModel>>(() =>
         getCalendarEventSettingsModel(bootstrap.CalendarSettings)
@@ -55,7 +48,6 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
     const [loadingSaveFullDayNotifications, withLoadingSaveFullDayNotifications] = useLoading();
 
     const showDuration = getIsPersonalCalendar(calendar);
-    const showNotifications = !getIsSubscribedCalendar(calendar) || !!feature?.Value;
     const cannotEdit = !canEdit;
 
     const displaySuccessNotification = () => {
@@ -109,7 +101,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
         setHasTouchedFullDayNotifications(false);
     }, [bootstrap]);
 
-    if (!getIsOwnedCalendar(calendar) || (!showDuration && !showNotifications)) {
+    if (!getIsOwnedCalendar(calendar)) {
         return null;
     }
 
@@ -146,84 +138,80 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
-            {showNotifications && (
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="default-part-day-notifications" className="text-semibold">
-                            {c('Label for default event notifications').t`Notifications`}
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="w100">
-                        <Notifications
-                            id="default-part-day-notifications"
-                            data-test-id="create-calendar/event-settings:default-notification"
-                            hasType
-                            fullWidth={false}
-                            notifications={model.partDayNotifications}
-                            canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                            disabled={loadingSavePartDayNotifications || cannotEdit}
-                            addIcon="plus"
-                            defaultNotification={getDefaultModel().defaultPartDayNotification}
-                            onChange={(notifications: NotificationModel[]) => {
-                                setModel({
-                                    ...model,
-                                    partDayNotifications: notifications,
-                                });
-                                setHasTouchedPartDayNotifications(true);
-                            }}
-                        />
-                        <div className="mt0-25">
-                            <Button
-                                color="norm"
-                                onClick={() => handleSaveNotifications(false)}
-                                loading={loadingSavePartDayNotifications}
-                                disabled={!hasTouchedPartDayNotifications || cannotEdit}
-                            >
-                                {c('Action').t`Save`}
-                            </Button>
-                        </div>
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-            )}
-            {showNotifications && (
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="default-full-day-notifications" className="text-semibold">
-                            {c('Label for default event notifications').t`All-day event notifications`}
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="w100">
-                        <Notifications
-                            id="default-full-day-notifications"
-                            data-test-id="create-calendar/event-settings:default-full-day-notification"
-                            hasType
-                            fullWidth={false}
-                            notifications={model.fullDayNotifications}
-                            canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                            disabled={loadingSaveFullDayNotifications || cannotEdit}
-                            addIcon="plus"
-                            defaultNotification={getDefaultModel().defaultFullDayNotification}
-                            onChange={(notifications: NotificationModel[]) => {
-                                setModel({
-                                    ...model,
-                                    fullDayNotifications: notifications,
-                                });
-                                setHasTouchedFullDayNotifications(true);
-                            }}
-                        />
-                        <div className="mt0-25">
-                            <Button
-                                color="norm"
-                                onClick={() => handleSaveNotifications(true)}
-                                loading={loadingSaveFullDayNotifications}
-                                disabled={!hasTouchedFullDayNotifications || cannotEdit}
-                            >
-                                {c('Action').t`Save`}
-                            </Button>
-                        </div>
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-            )}
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="default-part-day-notifications" className="text-semibold">
+                        {c('Label for default event notifications').t`Notifications`}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="w100">
+                    <Notifications
+                        id="default-part-day-notifications"
+                        data-test-id="create-calendar/event-settings:default-notification"
+                        hasType
+                        fullWidth={false}
+                        notifications={model.partDayNotifications}
+                        canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                        disabled={loadingSavePartDayNotifications || cannotEdit}
+                        addIcon="plus"
+                        defaultNotification={getDefaultModel().defaultPartDayNotification}
+                        onChange={(notifications: NotificationModel[]) => {
+                            setModel({
+                                ...model,
+                                partDayNotifications: notifications,
+                            });
+                            setHasTouchedPartDayNotifications(true);
+                        }}
+                    />
+                    <div className="mt0-25">
+                        <Button
+                            color="norm"
+                            onClick={() => handleSaveNotifications(false)}
+                            loading={loadingSavePartDayNotifications}
+                            disabled={!hasTouchedPartDayNotifications || cannotEdit}
+                        >
+                            {c('Action').t`Save`}
+                        </Button>
+                    </div>
+                </SettingsLayoutRight>
+            </SettingsLayout>
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="default-full-day-notifications" className="text-semibold">
+                        {c('Label for default event notifications').t`All-day event notifications`}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="w100">
+                    <Notifications
+                        id="default-full-day-notifications"
+                        data-test-id="create-calendar/event-settings:default-full-day-notification"
+                        hasType
+                        fullWidth={false}
+                        notifications={model.fullDayNotifications}
+                        canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                        disabled={loadingSaveFullDayNotifications || cannotEdit}
+                        addIcon="plus"
+                        defaultNotification={getDefaultModel().defaultFullDayNotification}
+                        onChange={(notifications: NotificationModel[]) => {
+                            setModel({
+                                ...model,
+                                fullDayNotifications: notifications,
+                            });
+                            setHasTouchedFullDayNotifications(true);
+                        }}
+                    />
+                    <div className="mt0-25">
+                        <Button
+                            color="norm"
+                            onClick={() => handleSaveNotifications(true)}
+                            loading={loadingSaveFullDayNotifications}
+                            disabled={!hasTouchedFullDayNotifications || cannotEdit}
+                        >
+                            {c('Action').t`Save`}
+                        </Button>
+                    </div>
+                </SettingsLayoutRight>
+            </SettingsLayout>
         </SettingsSectionWide>
     );
 };

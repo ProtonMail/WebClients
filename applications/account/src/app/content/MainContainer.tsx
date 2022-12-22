@@ -84,10 +84,10 @@ const MainContainer = () => {
         FeatureCode.SmtpToken,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.CalendarSubscription,
-        FeatureCode.SubscribedCalendarReminder,
         FeatureCode.ReferralProgram,
         FeatureCode.EasySwitch,
         FeatureCode.EasySwitchGmailNewScope,
+        FeatureCode.CalendarPersonalEventsDeprecated,
     ]);
     const [
         spyTrackerFeature,
