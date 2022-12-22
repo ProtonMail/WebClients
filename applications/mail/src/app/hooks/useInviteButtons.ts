@@ -1,6 +1,13 @@
 import { useCallback } from 'react';
 
-import { useApi, useConfig, useGetCalendarUserSettings, useRelocalizeText } from '@proton/components';
+import {
+    FeatureCode,
+    useApi,
+    useConfig,
+    useFeature,
+    useGetCalendarUserSettings,
+    useRelocalizeText,
+} from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
@@ -103,6 +110,8 @@ const useInviteButtons = ({
     const getVTimezonesMap = useGetVtimezonesMap();
     const contactEmailsMap = useContactsMap();
 
+    const personalEventsDeprecated = !!useFeature(FeatureCode.CalendarPersonalEventsDeprecated).feature?.Value;
+
     // Returns true if the operation is succesful
     const sendReplyEmail = useCallback(
         async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number) => {
@@ -192,6 +201,7 @@ const useInviteButtons = ({
                     calendarData,
                     pmData,
                     overwrite,
+                    personalEventsDeprecated,
                 });
                 onCreateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };
@@ -221,6 +231,7 @@ const useInviteButtons = ({
                     api,
                     calendarData,
                     singleEditData,
+                    personalEventsDeprecated,
                 });
                 onUpdateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };

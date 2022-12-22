@@ -9,7 +9,6 @@ import {
     Attendee,
     CalendarEvent,
     CalendarEventData,
-    CalendarPersonalEventData,
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 
@@ -17,17 +16,6 @@ const withAuthorCard = (card: Omit<CalendarEventData, 'Author'>, author: string)
     return {
         ...card,
         Author: author,
-    };
-};
-const toApiPersonalEvent = (
-    card: Omit<CalendarEventData, 'Author'>,
-    author: string,
-    memberID: string
-): CalendarPersonalEventData => {
-    return {
-        ...card,
-        Author: author,
-        MemberID: memberID,
     };
 };
 const toApiAttendees = (attende: Omit<Attendee, 'ID' | 'UpdateTime'>[], updateTime = getUnixTime(new Date())) => {
@@ -42,7 +30,6 @@ const toApiAttendees = (attende: Omit<Attendee, 'ID' | 'UpdateTime'>[], updateTi
 export const generateApiCalendarEvent = async ({
     eventComponent,
     author,
-    memberID,
     publicKey,
     privateKey,
     eventID,
@@ -53,7 +40,6 @@ export const generateApiCalendarEvent = async ({
 }: {
     eventComponent: VcalVeventComponent;
     author: string;
-    memberID: string;
     publicKey: PublicKeyReference;
     privateKey: PrivateKeyReference;
     eventID: string;
@@ -61,13 +47,13 @@ export const generateApiCalendarEvent = async ({
     calendarID: string;
     isOrganizer?: boolean;
     isProtonProtonInvite?: boolean;
-}) => {
+}): Promise<CalendarEvent> => {
     const {
         SharedEventContent = [],
         SharedKeyPacket,
         CalendarEventContent = [],
         CalendarKeyPacket,
-        PersonalEventContent,
+        Notifications,
         AttendeesEventContent = [],
         Attendees = [],
     } = await createCalendarEvent({
@@ -76,6 +62,8 @@ export const generateApiCalendarEvent = async ({
         privateKey,
         isCreateEvent: true,
         isSwitchCalendar: false,
+        hasDefaultNotifications: true,
+        personalEventsDeprecated: true,
     });
     const nowTimestamp = getUnixTime(new Date());
     const { dtstart, uid } = eventComponent;
@@ -89,7 +77,8 @@ export const generateApiCalendarEvent = async ({
         ModifyTime: nowTimestamp,
         Permissions: 1,
         IsOrganizer: booleanToNumber(isOrganizer),
-        IsProtonProtonInvite: +isProtonProtonInvite,
+        IsProtonProtonInvite: isProtonProtonInvite ? 1 : 0,
+        IsPersonalMigrated: true,
         Author: author,
         StartTime: getUnixTime(propertyToUTCDate(dtstart)),
         StartTimezone: getPropertyTzid(dtstart) || 'UTC',
@@ -100,14 +89,14 @@ export const generateApiCalendarEvent = async ({
         UID: uid.value,
         RecurrenceID: null,
         Exdates: [],
-        CalendarKeyPacket,
+        CalendarKeyPacket: CalendarKeyPacket || null,
         CalendarEvents: CalendarEventContent.map((card) => withAuthorCard(card, author)),
-        SharedKeyPacket,
+        SharedKeyPacket: SharedKeyPacket || null,
         SharedEvents: SharedEventContent.map((card) => withAuthorCard(card, author)),
         AddressKeyPacket: null,
         AddressID: null,
-        PersonalEvents: PersonalEventContent ? [toApiPersonalEvent(PersonalEventContent, author, memberID)] : undefined,
+        Notifications,
         AttendeesEvents: AttendeesEventContent.map((card) => withAuthorCard(card, author)),
         Attendees: toApiAttendees(Attendees),
-    } as CalendarEvent;
+    };
 };

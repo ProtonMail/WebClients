@@ -5,7 +5,7 @@ import {
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS,
 } from '@proton/shared/lib/calendar/alarms/notificationDefaults';
-import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
+import { apiNotificationsToModel, notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import {
     DAILY_TYPE,
     DEFAULT_EVENT_DURATION,
@@ -21,10 +21,11 @@ import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
-import { Address, Address as tsAddress } from '@proton/shared/lib/interfaces';
+import { Address, RequireOnly, Address as tsAddress } from '@proton/shared/lib/interfaces';
 import {
     AttendeeModel,
     CalendarMember,
+    CalendarSettings,
     DateTimeModel,
     EventModel,
     FrequencyModel,
@@ -217,28 +218,38 @@ export const getInitialModel = ({
         isOrganizer: !!attendees.length,
         isAttendee: false,
         isProtonProtonInvite: false,
+        hasDefaultNotifications: true,
         status: ICAL_EVENT_STATUS.CONFIRMED,
         defaultEventDuration,
         frequencyModel,
         hasTouchedRrule: false,
         ...notificationModel,
-        hasTouchedNotifications: { partDay: false, fullDay: false },
+        hasPartDayDefaultNotifications: true,
+        hasFullDayDefaultNotifications: true,
         ...memberModel,
         ...dateTimeModel,
         ...calendarsModel,
     };
 };
 
-const getParentMerge = (
-    veventComponentParentPartial: SharedVcalVeventComponent,
-    recurrenceStart: DateTimeModel,
-    isProtonProtonInvite: boolean,
-    tzid: string
-) => {
+const getParentMerge = ({
+    veventComponentParentPartial,
+    recurrenceStart,
+    hasDefaultNotifications,
+    isProtonProtonInvite,
+    tzid,
+}: {
+    veventComponentParentPartial: SharedVcalVeventComponent;
+    recurrenceStart: DateTimeModel;
+    hasDefaultNotifications: boolean;
+    isProtonProtonInvite: boolean;
+    tzid: string;
+}) => {
     const isAllDay = getIsAllDay(veventComponentParentPartial);
     const parentModel = propertiesToModel({
         veventComponent: veventComponentParentPartial,
         isAllDay,
+        hasDefaultNotifications,
         isProtonProtonInvite,
         tzid,
     });
@@ -250,26 +261,29 @@ const getParentMerge = (
 
 interface GetExistingEventArguments {
     veventComponent: VcalVeventComponent;
-    veventValarmComponent?: VcalVeventComponent;
+    hasDefaultNotifications: boolean;
     veventComponentParentPartial?: SharedVcalVeventComponent;
     isProtonProtonInvite: boolean;
     tzid: string;
     selfAddressData: SelfAddressData;
+    calendarSettings: CalendarSettings;
 }
 
 export const getExistingEvent = ({
     veventComponent,
-    veventValarmComponent,
+    hasDefaultNotifications,
     veventComponentParentPartial,
     isProtonProtonInvite,
     tzid,
     selfAddressData,
-}: GetExistingEventArguments): Partial<EventModel> => {
+    calendarSettings,
+}: GetExistingEventArguments): RequireOnly<EventModel, 'isAllDay' | 'description'> => {
     const isAllDay = getIsAllDay(veventComponent);
     const recurrenceId = getRecurrenceId(veventComponent);
 
     const newModel = propertiesToModel({
         veventComponent,
+        hasDefaultNotifications,
         selfAddressData,
         isAllDay,
         isProtonProtonInvite,
@@ -277,11 +291,19 @@ export const getExistingEvent = ({
     });
     const strippedDescription = stripAllTags(newModel.description);
 
-    const newNotifications = propertiesToNotificationModel(veventValarmComponent, isAllDay);
+    const notifications = hasDefaultNotifications
+        ? apiNotificationsToModel({ notifications: null, isAllDay, calendarSettings })
+        : propertiesToNotificationModel(veventComponent, isAllDay);
 
     const parentMerge =
         veventComponentParentPartial && recurrenceId
-            ? getParentMerge(veventComponentParentPartial, newModel.start, newModel.isProtonProtonInvite, tzid)
+            ? getParentMerge({
+                  veventComponentParentPartial,
+                  recurrenceStart: newModel.start,
+                  hasDefaultNotifications,
+                  isProtonProtonInvite,
+                  tzid,
+              })
             : {};
 
     return {
@@ -291,10 +313,10 @@ export const getExistingEvent = ({
         ...parentMerge,
         ...(isAllDay
             ? {
-                  fullDayNotifications: newNotifications,
+                  fullDayNotifications: notifications,
               }
             : {
-                  partDayNotifications: newNotifications,
+                  partDayNotifications: notifications,
               }),
     };
 };

@@ -15,7 +15,6 @@ import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { GetCalendarEventPersonal } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventPersonal';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
 import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
@@ -70,8 +69,8 @@ interface Props {
     getAddressKeys: GetAddressKeys;
     getCalendarInfo: GetCalendarInfo;
     getCalendarEventRaw: GetCalendarEventRaw;
-    getCalendarEventPersonal: GetCalendarEventPersonal;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
+    personalEventsDeprecated: boolean;
 }
 const ExtraEvent = ({
     invitationOrError,
@@ -86,8 +85,8 @@ const ExtraEvent = ({
     getAddressKeys,
     getCalendarInfo,
     getCalendarEventRaw,
-    getCalendarEventPersonal,
     getCanonicalEmailsMap,
+    personalEventsDeprecated,
 }: Props) => {
     const [model, setModel] = useState<InvitationModel>(() =>
         getInitialInvitationModel({
@@ -169,7 +168,6 @@ const ExtraEvent = ({
                     getAddressKeys,
                     getCalendarInfo,
                     getCalendarEventRaw,
-                    getCalendarEventPersonal,
                     calendars,
                     defaultCalendar,
                     message,
@@ -257,6 +255,7 @@ const ExtraEvent = ({
                     contactEmails,
                     ownAddresses,
                     overwrite: !!hasDecryptionError,
+                    personalEventsDeprecated,
                 });
                 const newInvitationApi = updatedInvitationApi || invitationApi;
                 const isOutdated =

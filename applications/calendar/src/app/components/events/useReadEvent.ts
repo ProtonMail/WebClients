@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 
+import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getIsAllDay } from '@proton/shared/lib/calendar/vcalHelper';
-import { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarSettings, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
@@ -22,43 +23,46 @@ const DEFAULT_VEVENT: VcalVeventComponent = {
         value: { year: 1970, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: true },
     },
 };
-const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string): EventModelReadView => {
+const useReadEvent = (
+    value: DecryptedEventTupleResult | undefined,
+    tzid: string,
+    calendarSettings?: CalendarSettings
+): EventModelReadView => {
     return useMemo(() => {
         const [
-            { veventComponent = DEFAULT_VEVENT, verificationStatus, selfAddressData },
-            alarmMap = {},
+            { veventComponent = DEFAULT_VEVENT, hasDefaultNotifications, verificationStatus, selfAddressData },
             { IsProtonProtonInvite },
         ] = value || [
             {
                 veventComponent: DEFAULT_VEVENT,
+                hasDefaultNotifications: true,
                 verificationStatus: EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
                 selfAddressData: { isOrganizer: false, isAttendee: false },
             },
-            {},
             { IsProtonProtonInvite: 0 },
         ];
 
         const isAllDay = getIsAllDay(veventComponent);
         const model = propertiesToModel({
             veventComponent,
+            hasDefaultNotifications,
             verificationStatus,
             selfAddressData,
             isAllDay,
             isProtonProtonInvite: !!IsProtonProtonInvite,
             tzid,
         });
-        const notifications = Object.keys(alarmMap)
-            .map((key) => {
-                return propertiesToNotificationModel(alarmMap[key]?.veventComponent, isAllDay);
-            })
-            .flat(1);
+        const notifications =
+            hasDefaultNotifications && calendarSettings
+                ? apiNotificationsToModel({ notifications: null, isAllDay, calendarSettings })
+                : propertiesToNotificationModel(veventComponent, isAllDay);
 
         return {
             ...model,
-            isAllDay,
             notifications,
+            isAllDay,
         };
-    }, [value, tzid]);
+    }, [value, tzid, calendarSettings]);
 };
 
 export default useReadEvent;

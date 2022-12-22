@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { addDays, addHours, fromUnixTime, getUnixTime, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
-import { AutoReplyDuration } from '@proton/shared/lib/constants';
+import { AutoReplyDuration, DAY_IN_SECONDS, HOUR_IN_SECONDS, MINUTE_IN_SECONDS } from '@proton/shared/lib/constants';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -16,7 +16,7 @@ import {
 } from '@proton/shared/lib/date/timezone';
 import { AutoResponder as tsAutoResponder } from '@proton/shared/lib/interfaces';
 
-import { DAY_SECONDS, HOUR_SECONDS, MINUTES_SECONDS, getDurationOptions, getMatchingTimezone } from '../utils';
+import { getDurationOptions, getMatchingTimezone } from '../utils';
 import { AutoReplyFormDate, AutoReplyFormModel } from './interfaces';
 
 const getDefaultFixedTimes = () => ({
@@ -55,10 +55,10 @@ const toDateTimes = (unixTimestamp: number, timezone: string, repeat: AutoReplyD
         };
     }
 
-    const day = Math.floor(unixTimestamp / DAY_SECONDS);
-    const secondsInDay = unixTimestamp % DAY_SECONDS;
-    const hours = Math.floor(secondsInDay / HOUR_SECONDS);
-    const minutes = Math.floor((secondsInDay - hours * HOUR_SECONDS) / 60);
+    const day = Math.floor(unixTimestamp / DAY_IN_SECONDS);
+    const secondsInDay = unixTimestamp % DAY_IN_SECONDS;
+    const hours = Math.floor(secondsInDay / HOUR_IN_SECONDS);
+    const minutes = Math.floor((secondsInDay - hours * HOUR_IN_SECONDS) / 60);
 
     const localTime = new Date(2000, 0, 1, hours, minutes);
 
@@ -119,7 +119,7 @@ const toUnixTime = (
         return 0;
     }
 
-    const utcUnixTime = time.getHours() * HOUR_SECONDS + time.getMinutes() * MINUTES_SECONDS;
+    const utcUnixTime = time.getHours() * HOUR_IN_SECONDS + time.getMinutes() * MINUTE_IN_SECONDS;
 
     switch (repeat) {
         case AutoReplyDuration.FIXED:
@@ -138,9 +138,9 @@ const toUnixTime = (
         case AutoReplyDuration.DAILY:
             return utcUnixTime;
         case AutoReplyDuration.WEEKLY:
-            return day * DAY_SECONDS + utcUnixTime;
+            return day * DAY_IN_SECONDS + utcUnixTime;
         case AutoReplyDuration.MONTHLY:
-            return day * DAY_SECONDS + utcUnixTime;
+            return day * DAY_IN_SECONDS + utcUnixTime;
         default:
             return utcUnixTime;
     }

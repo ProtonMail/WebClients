@@ -1,8 +1,9 @@
 import { useCallback } from 'react';
 
+import { FeatureCode } from '@proton/components/containers';
 import { serverTime } from '@proton/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
-import { getHasSharedEventContent } from '@proton/shared/lib/calendar/apiModels';
+import { getHasDefaultNotifications, getHasSharedEventContent } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail, withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import { DEFAULT_ATTENDEE_PERMISSIONS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey, getCreationKeys } from '@proton/shared/lib/calendar/crypto/helpers';
@@ -33,6 +34,7 @@ import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences'
 import {
     useAddresses,
     useApi,
+    useFeature,
     useGetAddressKeys,
     useGetCalendarInfo,
     useGetCalendarUserSettings,
@@ -56,6 +58,8 @@ const useAddAttendees = () => {
     const relocalizeText = useRelocalizeText();
     const getVTimezonesMap = useGetVtimezonesMap();
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
+
+    const personalEventsDeprecated = !!useFeature(FeatureCode.CalendarPersonalEventsDeprecated).feature?.Value;
 
     return useCallback(
         async ({
@@ -153,6 +157,8 @@ const useAddAttendees = () => {
                 eventComponent: pmVevent,
                 isCreateEvent: false,
                 isSwitchCalendar: false,
+                personalEventsDeprecated,
+                hasDefaultNotifications: getHasDefaultNotifications(calendarEvent),
                 ...(await getCreationKeys({
                     calendarEvent,
                     newAddressKeys: addressKeys,

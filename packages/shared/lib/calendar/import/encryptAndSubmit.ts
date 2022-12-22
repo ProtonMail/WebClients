@@ -24,17 +24,27 @@ import { getComponentIdentifier, splitErrors } from './import';
 
 const BATCH_SIZE = 10;
 
-const encryptEvent = async (
-    eventComponent: VcalVeventComponent,
-    addressKeys: DecryptedKey[],
-    calendarKeys: DecryptedCalendarKey[]
-) => {
+const encryptEvent = async ({
+    eventComponent,
+    addressKeys,
+    calendarKeys,
+    hasDefaultNotifications,
+    personalEventsDeprecated,
+}: {
+    eventComponent: VcalVeventComponent;
+    addressKeys: DecryptedKey[];
+    calendarKeys: DecryptedCalendarKey[];
+    hasDefaultNotifications: boolean;
+    personalEventsDeprecated: boolean;
+}) => {
     const componentId = getComponentIdentifier(eventComponent);
     try {
         const data = await createCalendarEvent({
             eventComponent,
             isCreateEvent: true,
             isSwitchCalendar: false,
+            hasDefaultNotifications,
+            personalEventsDeprecated,
             ...(await getCreationKeys({ newAddressKeys: addressKeys, newCalendarKeys: calendarKeys })),
         });
         if (!getHasSharedKeyPacket(data) || !getHasSharedEventContent(data)) {
@@ -99,13 +109,14 @@ const processResponses = (responses: SyncMultipleApiResponses[], events: Encrypt
 };
 
 interface ProcessData {
-    events: VcalVeventComponent[];
+    events: { eventComponent: VcalVeventComponent; hasDefaultNotifications: boolean }[];
     calendarID: string;
     memberID: string;
     addressKeys: DecryptedKey[];
     calendarKeys: DecryptedCalendarKey[];
     api: Api;
     overwrite?: boolean;
+    personalEventsDeprecated: boolean;
     signal?: AbortSignal;
     onProgress?: (encrypted: EncryptedEvent[], imported: EncryptedEvent[], errors: ImportEventError[]) => void;
 }
@@ -114,10 +125,11 @@ export const processInBatches = async ({
     events,
     calendarID,
     memberID,
-    overwrite = true,
     addressKeys,
     calendarKeys,
     api,
+    overwrite = true,
+    personalEventsDeprecated,
     signal,
     onProgress,
 }: ProcessData) => {
@@ -137,7 +149,17 @@ export const processInBatches = async ({
         }
         const batchedEvents = batches[i];
         const [result] = await Promise.all([
-            Promise.all(batchedEvents.map((event) => encryptEvent(event, addressKeys, calendarKeys))),
+            Promise.all(
+                batchedEvents.map(({ eventComponent, hasDefaultNotifications }) =>
+                    encryptEvent({
+                        eventComponent,
+                        addressKeys,
+                        calendarKeys,
+                        hasDefaultNotifications,
+                        personalEventsDeprecated,
+                    })
+                )
+            ),
             wait(300),
         ]);
         const { errors, rest: encrypted } = splitErrors(result);
@@ -189,6 +211,7 @@ export const processWithJails = async ({
     addressKeys,
     calendarKeys,
     api,
+    personalEventsDeprecated,
     signal,
     onProgress,
 }: ProcessData) => {
@@ -205,7 +228,15 @@ export const processWithJails = async ({
         while (queueToEncrypt.length && !signal?.aborted) {
             const [eventsToEncrypt] = queueToEncrypt;
             const result = await Promise.all(
-                eventsToEncrypt.map((event) => encryptEvent(event, addressKeys, calendarKeys))
+                eventsToEncrypt.map(({ eventComponent, hasDefaultNotifications }) =>
+                    encryptEvent({
+                        eventComponent,
+                        hasDefaultNotifications,
+                        addressKeys,
+                        calendarKeys,
+                        personalEventsDeprecated,
+                    })
+                )
             );
             queueToEncrypt.splice(0, 1);
             const { errors, rest: encrypted } = splitErrors(result);

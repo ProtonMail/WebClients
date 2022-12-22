@@ -73,15 +73,13 @@ const CreateEventCalendarSelect = ({
         const newDefaultPartDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
         const newDefaultFullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
 
-        const partDayNotifications =
-            model.hasTouchedNotifications.partDay || ((!isCreateEvent || isDuplicating) && !model.isAllDay)
-                ? model.partDayNotifications
-                : newDefaultPartDayNotifications;
+        const partDayNotifications = model.hasPartDayDefaultNotifications
+            ? newDefaultPartDayNotifications
+            : model.partDayNotifications;
 
-        const fullDayNotifications =
-            model.hasTouchedNotifications.fullDay || ((!isCreateEvent || isDuplicating) && model.isAllDay)
-                ? model.fullDayNotifications
-                : newDefaultFullDayNotifications;
+        const fullDayNotifications = model.hasFullDayDefaultNotifications
+            ? newDefaultFullDayNotifications
+            : model.fullDayNotifications;
 
         setModel({
             ...model,

@@ -1,3 +1,5 @@
+import { CalendarNotificationSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
+
 import {
     ATTENDEE_STATUS_API,
     CALENDAR_CARD_TYPE,
@@ -46,10 +48,13 @@ export interface CalendarEventBlobData {
     AddressKeyPacket: Nullable<string>;
     AddressID: Nullable<string>;
     SharedEvents: CalendarEventData[];
-    PersonalEvents: CalendarPersonalEventData[];
+    PersonalEvents?: CalendarPersonalEventData[];
+    Notifications?: Nullable<CalendarNotificationSettings[]>;
     AttendeesEvents: CalendarEventData[];
     Attendees: Attendee[];
 }
+
+export type CalendarEventBlobDataWithNotifications = Required<CalendarEventBlobData>;
 
 export interface CalendarEventSharedData {
     ID: string;
@@ -60,6 +65,7 @@ export interface CalendarEventSharedData {
     Permissions: number;
     IsOrganizer: 1 | 0;
     IsProtonProtonInvite: 1 | 0;
+    IsPersonalMigrated: boolean;
     Author: string;
 }
 
@@ -76,6 +82,10 @@ export interface CalendarEventMetadata {
 }
 
 export interface CalendarEvent extends CalendarEventSharedData, CalendarEventBlobData, CalendarEventMetadata {}
+
+export interface CalendarEventWithNotifications
+    extends CalendarEventSharedData,
+        CalendarEventBlobDataWithNotifications {}
 
 export interface CalendarEventWithoutBlob extends CalendarEventSharedData, CalendarEventMetadata {}
 
@@ -163,6 +173,7 @@ export interface EventModelView {
     isOrganizer: boolean; // this property only takes into account the event ICS content. It does not care if the event is in a shared or subscribed calendar
     isAttendee: boolean; // this property only takes into account the event ICS content. It does not care if the event is in a shared or subscribed calendar
     isProtonProtonInvite: boolean;
+    hasDefaultNotifications: boolean;
     selfAttendeeIndex?: number;
     selfAddress?: Address;
     status: ICAL_EVENT_STATUS;
@@ -188,10 +199,8 @@ export interface EventModel extends EventModelView {
     initialTzid: string;
     defaultEventDuration: number;
     hasTouchedRrule: boolean;
-    hasTouchedNotifications: {
-        partDay: boolean;
-        fullDay: boolean;
-    };
+    hasPartDayDefaultNotifications: boolean;
+    hasFullDayDefaultNotifications: boolean;
 }
 
 export interface EventModelErrors {

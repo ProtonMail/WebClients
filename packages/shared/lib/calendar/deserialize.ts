@@ -1,4 +1,7 @@
+import { modelToValarmComponent } from 'proton-calendar/src/app/components/eventModal/eventForm/modelToValarm';
+
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 
 import { getIsAddressActive, getIsAddressExternal } from '../helpers/address';
 import { canonicalizeInternalEmail } from '../helpers/email';
@@ -6,8 +9,8 @@ import { base64StringToUint8Array } from '../helpers/encoding';
 import { Address, Nullable } from '../interfaces';
 import {
     CalendarEvent,
-    CalendarEventData,
-    CalendarPersonalEventData,
+    CalendarNotificationSettings,
+    CalendarSettings,
     VcalAttendeeProperty,
     VcalOrganizerProperty,
     VcalVeventComponent,
@@ -20,7 +23,6 @@ import {
     decryptAndVerifyCalendarEvent,
     getAggregatedEventVerificationStatus,
     getDecryptedSessionKey,
-    verifySignedCard,
 } from './crypto/decrypt';
 import { unwrap } from './helper';
 import { parse } from './vcal';
@@ -55,17 +57,19 @@ export const readSessionKeys = async ({
     return Promise.all([sharedsessionKeyPromise, calendarSessionKeyPromise]);
 };
 
-/**
- * Read the parts of a calendar event into an internal vcal component.
- */
-interface ReadCalendarEventArguments {
-    event: Pick<CalendarEvent, 'SharedEvents' | 'CalendarEvents' | 'AttendeesEvents' | 'Attendees'>;
-    publicKeysMap?: SimpleMap<PublicKeyReference | PublicKeyReference[]>;
-    sharedSessionKey?: SessionKey;
-    calendarSessionKey?: SessionKey;
-    addresses: Address[];
-    encryptingAddressID?: string;
-}
+const fromApiNotifications = ({
+    notifications: apiNotifications,
+    isAllDay,
+    calendarSettings,
+}: {
+    notifications: Nullable<CalendarNotificationSettings[]>;
+    isAllDay: boolean;
+    calendarSettings: CalendarSettings;
+}) => {
+    const modelAlarms = apiNotificationsToModel({ notifications: apiNotifications, isAllDay, calendarSettings });
+
+    return modelAlarms.map((alarm) => modelToValarmComponent(alarm));
+};
 
 export const getSelfAddressData = ({
     organizer,
@@ -196,11 +200,84 @@ export const getSelfAddressData = ({
     };
 };
 
+const readCalendarAlarms = (
+    {
+        PersonalEvents = [],
+        Notifications,
+        IsPersonalMigrated,
+        FullDay,
+    }: Pick<CalendarEvent, 'PersonalEvents' | 'Notifications' | 'IsPersonalMigrated' | 'FullDay'>,
+    calendarSettings: CalendarSettings
+) => {
+    if (!IsPersonalMigrated) {
+        /**
+         * The API always returns an array with a single-valued object: PersonalEvents = [{ MemberID: 'vcal string' }]
+         *
+         * The reason for this complicated structure is that it was built with shared addresses in mind (where there
+         * would be several member IDs in the map). That is not happening any time soon.
+         * Also, we only have alarms in here, so the array contains a single card of type SIGNED.
+         *
+         * This structure will get deprecated soon. Because of that we're ignoring the signature in PersonalEvents.
+         */
+        const personalEvent = PersonalEvents[0]?.Data;
+        const alarmComponents = personalEvent
+            ? (parse(unwrap(personalEvent)) as VcalVeventComponent).components
+            : undefined;
+
+        return {
+            valarmComponents: alarmComponents || [],
+            hasDefaultNotifications: false,
+        };
+    }
+
+    return {
+        valarmComponents: fromApiNotifications({
+            notifications: Notifications || null,
+            isAllDay: !!FullDay,
+            calendarSettings,
+        }),
+        hasDefaultNotifications: !Notifications,
+    };
+};
+
+/**
+ * Read the parts of a calendar event into an internal vcal component.
+ */
+interface ReadCalendarEventArguments {
+    event: Pick<
+        CalendarEvent,
+        | 'SharedEvents'
+        | 'CalendarEvents'
+        | 'AttendeesEvents'
+        | 'Attendees'
+        | 'PersonalEvents'
+        | 'Notifications'
+        | 'IsPersonalMigrated'
+        | 'FullDay'
+    >;
+    publicKeysMap?: SimpleMap<PublicKeyReference | PublicKeyReference[]>;
+    sharedSessionKey?: SessionKey;
+    calendarSessionKey?: SessionKey;
+    calendarSettings: CalendarSettings;
+    addresses: Address[];
+    encryptingAddressID?: string;
+}
+
 export const readCalendarEvent = async ({
-    event: { SharedEvents = [], CalendarEvents = [], AttendeesEvents = [], Attendees = [] },
+    event: {
+        SharedEvents = [],
+        CalendarEvents = [],
+        AttendeesEvents = [],
+        Attendees = [],
+        PersonalEvents = [],
+        Notifications,
+        IsPersonalMigrated,
+        FullDay,
+    },
     publicKeysMap = {},
     sharedSessionKey,
     calendarSessionKey,
+    calendarSettings,
     addresses,
     encryptingAddressID,
 }: ReadCalendarEventArguments) => {
@@ -228,6 +305,10 @@ export const readCalendarEvent = async ({
         return { ...acc, ...parsedComponent };
     }, {} as VcalVeventComponent);
 
+    const { valarmComponents, hasDefaultNotifications } = readCalendarAlarms(
+        { PersonalEvents, Notifications, IsPersonalMigrated, FullDay },
+        calendarSettings
+    );
     const veventAttendees = decryptedAttendeesEvents.reduce<VcalAttendeeProperty[]>((acc, event) => {
         if (!event) {
             return acc;
@@ -239,7 +320,14 @@ export const readCalendarEvent = async ({
         return acc.concat(toInternalAttendee(parsedComponent, Attendees));
     }, []);
 
-    const veventWithAttendees = veventAttendees.length ? { ...vevent, attendee: veventAttendees } : vevent;
+    if (valarmComponents.length) {
+        vevent.components = valarmComponents;
+    }
+
+    if (veventAttendees.length) {
+        vevent.attendee = veventAttendees;
+    }
+
     const selfAddressData = getSelfAddressData({
         organizer: vevent.organizer,
         attendees: veventAttendees,
@@ -250,21 +338,5 @@ export const readCalendarEvent = async ({
         sharedSessionKey,
         calendarSessionKey,
     };
-    return { veventComponent: veventWithAttendees, verificationStatus, selfAddressData, encryptionData };
-};
-
-export const readPersonalPart = async (
-    { Data, Signature }: CalendarEventData,
-    publicKeys: PublicKeyReference | PublicKeyReference[]
-) => {
-    const { data, verificationStatus } = await verifySignedCard(Data, Signature, publicKeys);
-    return { veventComponent: parse(unwrap(data)) as VcalVeventComponent, verificationStatus };
-};
-
-export const getPersonalPartMap = ({ PersonalEvents = [] }: CalendarEvent) => {
-    return PersonalEvents.reduce<{ [key: string]: CalendarPersonalEventData }>((acc, result) => {
-        const { MemberID } = result;
-        acc[MemberID] = result;
-        return acc;
-    }, {});
+    return { veventComponent: vevent, hasDefaultNotifications, verificationStatus, selfAddressData, encryptionData };
 };

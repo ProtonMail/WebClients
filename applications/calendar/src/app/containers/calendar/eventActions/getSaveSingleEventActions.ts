@@ -39,6 +39,8 @@ const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT } = INVITE_ACTION_TYPES;
 interface SaveEventHelperArguments {
     oldEditEventData?: EventOldData;
     newEditEventData: EventNewData;
+    hasDefaultNotifications: boolean;
+    personalEventsDeprecated: boolean;
     selfAddress?: Address;
     isAttendee: boolean;
     inviteActions: InviteActions;
@@ -66,6 +68,8 @@ const getSaveSingleEventActions = async ({
         memberID: newMemberID,
         veventComponent: newVeventComponent,
     },
+    hasDefaultNotifications,
+    personalEventsDeprecated,
     selfAddress,
     isAttendee,
     inviteActions,
@@ -102,6 +106,7 @@ const getSaveSingleEventActions = async ({
         if (!oldEvent || !oldVeventComponent) {
             throw new Error('Missing event');
         }
+
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
         const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
@@ -111,9 +116,11 @@ const getSaveSingleEventActions = async ({
             method
         );
         const updatedInviteActions = inviteActions;
+
         if (!oldCalendarID || !oldAddressID || !oldMemberID) {
             throw new Error('Missing parameters to switch calendar');
         }
+
         if (isSendType) {
             // Temporary hotfix to an API issue
             throw new Error(
@@ -137,6 +144,8 @@ const getSaveSingleEventActions = async ({
         const updateOperation = getUpdateSyncOperation({
             veventComponent: updatedVeventComponent,
             calendarEvent: oldEvent,
+            hasDefaultNotifications,
+            personalEventsDeprecated,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             isAttendee,
         });
@@ -162,11 +171,13 @@ const getSaveSingleEventActions = async ({
         if (!oldEvent || !oldVeventComponent || !oldCalendarID || !oldAddressID || !oldMemberID) {
             throw new Error('Missing parameters to update event');
         }
+
         if (inviteType === CHANGE_PARTSTAT) {
             // the attendee changes answer
             return getChangePartstatActions({
                 inviteActions,
                 eventComponent: newVeventComponent,
+                hasDefaultNotifications,
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
@@ -175,10 +186,12 @@ const getSaveSingleEventActions = async ({
                 reencryptSharedEvent,
             });
         }
+
         if (isAttendee) {
             // the attendee edits notifications. We must do it through the updatePersonalPart route
             return getUpdatePersonalPartActions({
                 eventComponent: newVeventComponent,
+                hasDefaultNotifications,
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
@@ -187,6 +200,7 @@ const getSaveSingleEventActions = async ({
                 reencryptSharedEvent,
             });
         }
+
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
         const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
@@ -197,6 +211,7 @@ const getSaveSingleEventActions = async ({
         );
         let updatedInviteActions = inviteActions;
         let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
+
         if (isSendType) {
             await onSaveConfirmation({
                 type: SAVE_CONFIRMATION_TYPES.SINGLE,
@@ -222,16 +237,21 @@ const getSaveSingleEventActions = async ({
                 });
             }
         }
+
         const updateOperation = getUpdateSyncOperation({
             veventComponent: updatedVeventComponent,
             calendarEvent: oldEvent,
+            hasDefaultNotifications,
+            personalEventsDeprecated,
             isAttendee,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             addedAttendeesPublicKeysMap,
         });
+
         if (!oldCalendarID || !oldAddressID || !oldMemberID) {
             throw new Error('Missing parameters to update event');
         }
+
         const multiSyncActions = [
             {
                 calendarID: oldCalendarID,
@@ -240,6 +260,7 @@ const getSaveSingleEventActions = async ({
                 operations: [updateOperation],
             },
         ];
+
         return { multiSyncActions, inviteActions: updatedInviteActions, hasStartChanged };
     }
 
@@ -248,10 +269,12 @@ const getSaveSingleEventActions = async ({
     let updatedInviteActions = inviteActions;
     let intermediateEvent;
     let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
+
     if (inviteType === SEND_INVITATION) {
         if (!selfAddress) {
             throw new Error('Cannot create an event without user address');
         }
+
         await onSaveConfirmation({
             type: SAVE_CONFIRMATION_TYPES.SINGLE,
             inviteActions,
@@ -272,6 +295,8 @@ const getSaveSingleEventActions = async ({
         // for that we will save the event first without attendees
         const createIntermediateOperation = getCreateSyncOperation({
             veventComponent: omit(updatedVeventComponent, ['attendee']),
+            hasDefaultNotifications,
+            personalEventsDeprecated,
         });
         const syncIntermediateActions = [
             {
@@ -281,6 +306,7 @@ const getSaveSingleEventActions = async ({
                 operations: [createIntermediateOperation],
             },
         ];
+
         const [
             {
                 Responses: [
@@ -291,17 +317,21 @@ const getSaveSingleEventActions = async ({
             },
         ] = await handleSyncActions(syncIntermediateActions);
         intermediateEvent = Event;
+
         if (!intermediateEvent) {
             throw new Error('Failed to generate intermediate event');
         }
+
         const sharedSessionKey = await getBase64SharedSessionKey({
             calendarEvent: intermediateEvent,
             getCalendarKeys,
         });
+
         if (sharedSessionKey) {
             updatedInviteActions.sharedEventID = intermediateEvent.SharedEventID;
             updatedInviteActions.sharedSessionKey = sharedSessionKey;
         }
+
         const {
             veventComponent: finalVeventComponent,
             inviteActions: finalInviteActions,
@@ -316,10 +346,12 @@ const getSaveSingleEventActions = async ({
             // we pass the calendarID here as we want to call the event manager in case the operation fails
             newCalendarID
         );
+
         if (finalVeventComponent) {
             updatedVeventComponent = finalVeventComponent;
             updatedInviteActions = finalInviteActions;
         }
+
         addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
             veventComponent: updatedVeventComponent,
             inviteActions: updatedInviteActions,
@@ -331,10 +363,17 @@ const getSaveSingleEventActions = async ({
         ? getUpdateSyncOperation({
               veventComponent: updatedVeventComponent,
               calendarEvent: intermediateEvent,
+              hasDefaultNotifications,
+              personalEventsDeprecated,
               isAttendee,
               addedAttendeesPublicKeysMap,
           })
-        : getCreateSyncOperation({ veventComponent: updatedVeventComponent, addedAttendeesPublicKeysMap });
+        : getCreateSyncOperation({
+              veventComponent: updatedVeventComponent,
+              hasDefaultNotifications,
+              personalEventsDeprecated,
+              addedAttendeesPublicKeysMap,
+          });
     const multiSyncActions = [
         {
             calendarID: newCalendarID,

@@ -2,14 +2,13 @@ import { CALENDAR_VALIDATION_MODE } from '../calendar/constants';
 import { Attendee, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
 import {
     CalendarCreateArguments,
-    CalendarCreateEventBlobData,
+    CalendarCreateOrUpdateEventBlobData,
     CalendarEventsQuery,
     CalendarExportEventsQuery,
     CalendarKeysResetData,
     CalendarSetupData,
     CreateCalendarMemberData,
     CreatePublicLinks,
-    CreateSingleCalendarEventData,
     CreateSinglePersonalEventData,
     GetEventByUIDArguments,
     QueryCalendarAlarms,
@@ -195,18 +194,6 @@ export const getEventByUID = (params: GetEventByUIDArguments) => ({
     params,
 });
 
-export const createEvent = (calendarID: string, data: CreateSingleCalendarEventData) => ({
-    url: `${CALENDAR_V1}/${calendarID}/events`,
-    method: 'post',
-    data,
-});
-
-export const updateEvent = (calendarID: string, eventID: string, data: CreateSingleCalendarEventData) => ({
-    url: `${CALENDAR_V1}/${calendarID}/events/${eventID}`,
-    method: 'put',
-    data,
-});
-
 export const deleteEvent = (calendarID: string, eventID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}`,
     method: 'delete',
@@ -232,7 +219,7 @@ export const updateAttendeePartstat = (
 export const upgradeP2PInvite = (
     calendarID: string,
     eventID: string,
-    data: Pick<CalendarCreateEventBlobData, 'SharedKeyPacket'>
+    data: Pick<CalendarCreateOrUpdateEventBlobData, 'SharedKeyPacket'>
 ) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}/upgrade`,
     method: 'put',
