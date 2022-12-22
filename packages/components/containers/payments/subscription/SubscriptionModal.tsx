@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { APP_NAMES, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -70,6 +70,7 @@ import { getDefaultSelectedProductPlans } from './helpers';
 import './SubscriptionModal.scss';
 
 interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
+    app: APP_NAMES;
     step?: SUBSCRIPTION_STEPS;
     cycle?: Cycle;
     currency?: Currency;
@@ -130,6 +131,7 @@ export const useProration = (
 };
 
 const SubscriptionModal = ({
+    app,
     step = SUBSCRIPTION_STEPS.PLAN_SELECTION,
     cycle = DEFAULT_CYCLE,
     currency = DEFAULT_CURRENCY,
@@ -283,12 +285,15 @@ const SubscriptionModal = ({
         try {
             setModel({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE });
             await api({
-                ...subscribe({
-                    Plans: model.planIDs,
-                    Codes: getCodes(model),
-                    Cycle: model.cycle,
-                    ...params, // Contains Payment, Amount and Currency
-                }),
+                ...subscribe(
+                    {
+                        Plans: model.planIDs,
+                        Codes: getCodes(model),
+                        Cycle: model.cycle,
+                        ...params, // Contains Payment, Amount and Currency
+                    },
+                    app
+                ),
                 timeout: 60000 * 2, // 2 minutes
             });
             await call();

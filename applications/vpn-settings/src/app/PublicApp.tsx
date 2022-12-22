@@ -8,7 +8,7 @@ import SignupInviteContainer from 'proton-account/src/app/signup/SignupInviteCon
 
 import { ProtonLoginCallback, StandardPublicApp, Unauthenticated } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
-import { CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { setLiteRedirect } from '@proton/shared/lib/subscription/redirect';
 
@@ -51,6 +51,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         </Route>
                         <Route path="/signup">
                             <AccountSignupContainer
+                                productParam={APPS.PROTONVPN_SETTINGS}
                                 clientType={CLIENT_TYPES.VPN}
                                 onLogin={async (args) => onLogin({ ...args, path: '/downloads?prompt' })}
                             />

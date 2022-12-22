@@ -88,6 +88,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                     <SubscriptionModalDisabled {...modalState} />
                 ) : (
                     <SubscriptionModal
+                        app={app}
                         {...subscriptionProps.current}
                         {...modalState}
                         onClose={() => {
