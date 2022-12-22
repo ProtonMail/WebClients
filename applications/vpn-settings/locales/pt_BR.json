@@ -3988,8 +3988,8 @@
       "Close": [
         "Fechar"
       ],
-      "Don't show this again": [
-        "Não mostrar mais esta mensagem"
+      "Don't show this offer again": [
+        "Não mostrar mais esta oferta"
       ],
       "Special offer": [
         "Oferta especial"
@@ -4080,9 +4080,6 @@
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta assinatura será renovada automaticamente a cada dois anos pela mesma taxa até ser cancelada."
-      ],
-      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
-        "Esta assinatura será renovada automaticamente uma vez por ano pela mesma taxa até ser cancelada."
       ]
     },
     "specialoffer: Label": {
@@ -4186,11 +4183,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Nosso plano Visionary que foi descontinuado voltou somente por um período limitado"
       ],
-      "Save more with 1 year of ${ planName }": [
-        "Economize mais com 1 ano de ${ planName }"
+      "Save more with 2 years of ${ planName }": [
+        "Economize mais com 2 anos de ${ planName }"
       ],
-      "Upgrade and save more with ${ planName }": [
-        "Faça upgrade e economize mais com ${ planName }"
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Faça upgrade e economize mais com 2 anos de ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -4334,6 +4331,9 @@
     "Subscription status": {
       "Active": [
         "Ativo"
+      ],
+      "Upcoming": [
+        "Próximo"
       ]
     },
     "Subtitle for trial plan": {
@@ -4787,6 +4787,9 @@
       ],
       "Switch to two-password mode": [
         "Alternar para o modo de duas senhas"
+      ],
+      "Total paid": [
+        "Total pagado"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Experimente o melhor do ${ MAIL_APP_NAME } gratuitamente"

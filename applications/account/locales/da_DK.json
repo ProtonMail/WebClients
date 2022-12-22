@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Rediger abonnement"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
@@ -2618,9 +2615,6 @@
       "${ name } deletion failed": [
         "${ name } sletning mislykkedes"
       ],
-      "${ name } failed to move to not spam List": [
-        "${ name } failed to move to the not-spam list"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } kunne ikke flyttes til spamliste"
       ],
@@ -2734,9 +2728,6 @@
       ],
       "${ name } deletion failed": [
         "${ name } sletning mislykkedes"
-      ],
-      "${ name } failed to move to not spam List": [
-        "${ name } kunne ikke flyttes til ikke-spamliste"
       ],
       "${ name } failed to move to spam list": [
         "${ name } kunne ikke flyttes til spamliste"
@@ -4015,9 +4006,6 @@
     "Import contacts warning": {
       "for now": [
         "indtil videre"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -8057,6 +8045,20 @@
         "Support"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* Med 1-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
@@ -8087,20 +8089,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Den gratis startkonto, der er designet til at give alle mulighed for at få privatlivsbeskyttelse som standard."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {

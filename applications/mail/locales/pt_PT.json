@@ -3177,9 +3177,6 @@
     "Import contacts warning": {
       "for now": [
         "por agora"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -5778,6 +5775,10 @@
       "${ count } message deleted": [
         "${ count } mensagem eliminada",
         "${ count } mensagens eliminadas"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacto parece idêntico.",
+        "${ countMergeableContacts } contactos parecem idênticos."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
         "${ elementsCount } conversa adicionada a ${ labelName }.",

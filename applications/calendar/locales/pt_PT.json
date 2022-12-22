@@ -1855,9 +1855,17 @@
         "${ list } não tem um endereço electrónico válido",
         "Alguns contactos não têm um endereço electrónico válido: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } não tem um endereço eletrónico",
+        "Alguns contactos não têm endereços de email: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } tem endereços inválidos",
         "Alguns grupos têm endereços inválidos: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } não tem contactos",
+        "Alguns grupos não têm contactos: ${ list }"
       ],
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
@@ -2502,9 +2510,6 @@
     "Import contacts warning": {
       "for now": [
         "por agora"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4214,6 +4219,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacto parece idêntico.",
+        "${ countMergeableContacts } contactos parecem idênticos."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Será enviado um cancelamento aos participantes removidos para todos os eventos desta série."
       ],

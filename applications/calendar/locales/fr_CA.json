@@ -538,6 +538,9 @@
       ]
     },
     "Action title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Partager avec des personnes qui utilisent ${ BRAND_NAME }"
+      ],
       "Share with anyone": [
         "Partager avec tout le monde"
       ]
@@ -572,6 +575,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } a commencé le ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } a commencé le ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } a commencé hier"
       ],
@@ -583,6 +589,15 @@
       ],
       "${ title } starts now": [
         "${ title } commence maintenant"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } commence le ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } commence le ${ formattedDate } à ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } commence le ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } commencera à ${ formattedDateWithTime }"
@@ -722,6 +737,11 @@
         "Continuer à utiliser ${ MAIL_APP_NAME }."
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Ajouter des personnes ou des groupes"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Participez-vous?"
@@ -786,6 +806,13 @@
       "Unable to create more calendar links": [
         "Impossible de créer d'autres liens de calendrier"
       ],
+      "Unable to share this calendar with more ${ BRAND_NAME } users": [
+        "Il n'est pas possible de partager ce calendrier avec plus d'utilisateurs ${ BRAND_NAME }"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Vous avez atteint le maximum d'${ MAX_CALENDAR_MEMBERS } membre pour ce calendrier.\nPour partager ce calendrier avec plus de comptes ${ BRAND_NAME }, retirez un ou plusieurs membres actuels.",
+        "Vous avez atteint le maximum de ${ MAX_CALENDAR_MEMBERS } membres pour ce calendrier.\nPour partager ce calendrier avec plus de comptes ${ BRAND_NAME }, retirez un ou plusieurs membres actuels."
+      ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Vous avez atteint le maximum d'${ MAX_LINKS_PER_CALENDAR } lien pour ce calendrier.\nPour créer un nouveau lien vers ce calendrier, supprimez un lien existant.",
         "Vous avez atteint le maximum de ${ MAX_LINKS_PER_CALENDAR } liens pour ce calendrier.\nPour créer un nouveau lien vers ce calendrier, supprimez un lien existant."
@@ -794,6 +821,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Modifier (afficher, créer et modifier les détails de l'événement)"
+      ],
+      "View (see all event details)": [
+        "Voir tous les détails de l'événement"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -868,6 +898,12 @@
     "Calendar view selector": {
       "Change time range to": [
         "Changer la plage horaire pour"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } de plus",
+        "${ more } de plus"
       ]
     },
     "Collapsible tooltip": {
@@ -2017,9 +2053,17 @@
         "${ list } ne contient pas d’adresse électronique valide",
         "Certains contacts ne contiennent pas d’adresse électronique valide: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } n'a pas d'adresse électronique",
+        "Certains contacts n'ont pas d'adresse électronique: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } contient des adresses électroniques non valides",
         "Certains groupes contiennent des adresses électroniques non valides: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } n'a aucun contact",
+        "Certains groupes n'ont aucun contact: ${ list }"
       ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
@@ -2158,11 +2202,17 @@
       "No emails found to import - the account does not have an inbox": [
         "Aucun courriel à importer, le compte n'a pas de Boîte de réception"
       ],
+      "No public key for ${ BRAND_NAME } address": [
+        "Il n'y a pas de clé publique pour l'adresse ${ BRAND_NAME }"
+      ],
       "No valid address found": [
         "Aucune adresse valide trouvée"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Aucune clé WKD récupérée pour l'utilisateur n'est valide pour l'envoi"
+      ],
+      "Not a ${ BRAND_NAME } account": [
+        "Ce n'est pas un compte ${ BRAND_NAME }"
       ],
       "Not a valid number": [
         "Numéro non valide"
@@ -2272,6 +2322,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Une erreur s'est produite lors de l'exportation des vCards des contacts"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Ce champ dépasse le maximum de ${ maximumLength } caractères."
       ],
       "This field is required": [
         "Ce champ est requis"
@@ -2774,6 +2827,9 @@
       ]
     },
     "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Les invitations importées apparaissent dans ${ CALENDAR_APP_NAME } comme de simples événements sans les informations sur l'organisateur et les participants. Pour recevoir les mises à jour des événements et voir les participants, demandez aux organisateurs de vous inviter en utilisant votre adresse électronique ${ BRAND_NAME }."
+      ],
       "This file contains an event invitation:": [
         "Ce fichier contient une invitation à un événement:",
         "Ce fichier contient des invitations à des événements:"
@@ -2824,9 +2880,6 @@
     "Import contacts warning": {
       "for now": [
         "pour l'instant"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3147,8 +3200,15 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Toute personne ayant ce lien peut voir sur votre calendrier si vous êtes libre ou occupé. Les détails de l'événement (comme le titre, le lieu ou les participants) ne sont pas visibles."
       ],
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Un maximum d'${ MAX_ATTENDEES } participant est autorisé par invitation",
+        "Au maximum ${ MAX_ATTENDEES } participants sont autorisés par invitation"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "En partageant toutes les informations des événements de ce calendrier, vous acceptez d'accorder à ${ BRAND_NAME } l'accès aux informations chiffrées de ce calendrier."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -3274,6 +3334,9 @@
       ],
       "Import mailbox": [
         "Importer une boîte aux lettres"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importez vos courriels, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
@@ -3808,6 +3871,18 @@
       "Emails": [
         "Courriels"
       ],
+      "Emails (all messages)": [
+        "Courriels (tous les messages)"
+      ],
+      "Emails (last 12 months)": [
+        "Courriels (12 derniers mois)"
+      ],
+      "Emails (last 3 months)": [
+        "Courriels (3 derniers mois)"
+      ],
+      "Emails (last month)": [
+        "Courriels (mois dernier)"
+      ],
       "Enable Beta Access": [
         "Activer l'accès à la version bêta"
       ],
@@ -4049,6 +4124,11 @@
         "${ Label.Name } créé"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Panneau latéral"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Calendriers"
@@ -4078,6 +4158,11 @@
         "Qu'est-ce que c'est?"
       ]
     },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Ouvrir dans ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Nous y sommes presque"
@@ -4099,6 +4184,24 @@
       ],
       "Your import is starting": [
         "Votre importation commence"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages provenant de ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages provenant de ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -4778,10 +4881,30 @@
         "Impossible de mettre à jour les paramètres"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "Pour inviter des personnes qui n'utilisent pas ${ BRAND_NAME }, partagez votre calendrier avec un lien"
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Vous avez dépassé le nombre maximal de ${ MAX_CALENDAR_MEMBERS } membre par calendrier",
         "Vous avez dépassé le nombre maximal de ${ MAX_CALENDAR_MEMBERS } membres par calendrier"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "Ajoutez les comptes ${ BRAND_NAME } avec lesquels vous souhaitez partager ${ calendarName }. Nous leur enverrons une invitation."
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "Saisissez une adresse électronique ou un nom de groupe"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Partager avec des personnes qui utilisent ${ BRAND_NAME }"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5456,6 +5579,16 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Sélectionner un numéro"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Créer un calendrier"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Modifier le calendrier"
       ]
     },
     "Today icon tooltip in mini calendar": {

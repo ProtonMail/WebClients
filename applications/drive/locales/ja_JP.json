@@ -2580,9 +2580,6 @@
     "Import contacts warning": {
       "for now": [
         "現時点"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3345,6 +3342,9 @@
       ],
       "No synced computers": [
         "同期されたコンピューターがありません"
+      ],
+      "No synced folders": [
+        "同期されたフォルダーがありません"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "アップロードされた鍵はすべて暗号化には使用できないものです。指定のアドレスにメールを送信するには、正しい鍵をアップロードするかメールの暗号化をオフにしてください。"
