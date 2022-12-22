@@ -44,6 +44,7 @@ export interface EventFormProps {
     isMinimal?: boolean;
     isCreateEvent: boolean;
     setParticipantError?: (value: boolean) => void;
+    isWritableCalendar?: boolean;
     isDuplicating?: boolean;
     isDrawerApp?: boolean;
 }
@@ -61,11 +62,12 @@ const EventForm = ({
     canEditSharedEventData = true,
     isCreateEvent,
     setParticipantError,
+    isWritableCalendar = true,
     isDuplicating = false,
     isDrawerApp,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
-    const isOrganizerOfInvitationRef = useRef(!isCreateEvent && !!model.organizer);
+    const isOrganizerOfInvitationRef = useRef(!isCreateEvent && !!model.isOrganizer);
     const isOrganizerOfInvitation = isOrganizerOfInvitationRef.current;
 
     const {
@@ -79,13 +81,12 @@ const EventForm = ({
         partDayNotifications,
         defaultPartDayNotification,
         calendars,
-        calendar: { isSubscribed: isSubscribedCalendar },
     } = model;
     const isSingleEdit = !!model.rest?.['recurrence-id'];
 
     const isImportedEvent = uid && !getIsProtonUID(uid);
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
-    const canChangeCalendar = isAttendee ? !isSingleEdit : !isOrganizerOfInvitation;
+    const canChangeCalendar = isAttendee ? !isSingleEdit : !isOrganizerOfInvitation && isWritableCalendar;
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications = canAddNotifications || notifications.length;
@@ -346,7 +347,7 @@ const EventForm = ({
             {canEditSharedEventData && !isImportedEvent && participantsRow}
             {canEditSharedEventData && locationRow}
             {!isMinimal && showNotifications && notificationsRow}
-            {!isSubscribedCalendar && calendars.length > 0 && calendarRow}
+            {calendars.length > 0 && calendarRow}
             {canEditSharedEventData && descriptionRow}
         </div>
     );

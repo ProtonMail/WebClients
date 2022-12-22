@@ -332,6 +332,7 @@ export const CalendarModal = ({
                     {colorRow}
                     {addressRow}
                     {descriptionRow}
+                    {defaultNotificationsRow}
                 </>
             );
         }
