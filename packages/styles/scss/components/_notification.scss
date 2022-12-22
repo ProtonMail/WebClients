@@ -1,6 +1,6 @@
 .notifications-container {
 	position: fixed;
-	inset-block-end: em(24);
+	inset-block-end: calc(em(24) + env(safe-area-inset-bottom));
 	inset-inline-start: 50%;
 	z-index: $layer-notifications;
 	transform: translateX(-50%);
@@ -13,7 +13,7 @@
 	}
 
 	&--shifted {
-		inset-block-end: var(--shift-custom);
+		inset-block-end: calc(var(--shift-custom) + env(safe-area-inset-bottom));
 	}
 }
 
