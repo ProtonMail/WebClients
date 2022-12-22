@@ -1,5 +1,12 @@
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
+    DEFAULT_FULL_DAY_NOTIFICATION,
+    DEFAULT_FULL_DAY_NOTIFICATIONS,
+    DEFAULT_PART_DAY_NOTIFICATION,
+    DEFAULT_PART_DAY_NOTIFICATIONS,
+} from '@proton/shared/lib/calendar/alarms/notificationDefaults';
+import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
+import {
     DAILY_TYPE,
     DEFAULT_EVENT_DURATION,
     END_TYPE,
@@ -10,13 +17,6 @@ import {
     WEEKLY_TYPE,
     YEARLY_TYPE,
 } from '@proton/shared/lib/calendar/constants';
-import {
-    DEFAULT_FULL_DAY_NOTIFICATION,
-    DEFAULT_FULL_DAY_NOTIFICATIONS,
-    DEFAULT_PART_DAY_NOTIFICATION,
-    DEFAULT_PART_DAY_NOTIFICATIONS,
-} from '@proton/shared/lib/calendar/notificationDefaults';
-import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';

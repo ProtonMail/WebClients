@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { CalendarSettings, EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
