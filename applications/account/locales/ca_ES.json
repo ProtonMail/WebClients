@@ -313,9 +313,6 @@
       "Edit subscription": [
         "Edita la subscripció"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
       ],
@@ -721,6 +718,9 @@
       "Size": [
         "Mida"
       ],
+      "Skip verification": [
+        "Ometre la verificació"
+      ],
       "Sort": [
         "Ordena"
       ],
@@ -750,6 +750,9 @@
       ],
       "Try another method": [
         "Proveu amb un altre mètode"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Intenteu tornar a desar. Ha fallat el desament a causa de: ${ saveError }"
       ],
       "Underline": [
         "Subratllat"
@@ -2965,6 +2968,9 @@
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Intenteu utilitzant només lletres, numèrics, i _.-"
+      ],
       "Unknown error": [
         "Error desconegut"
       ],
@@ -3733,9 +3739,6 @@
     "Import contacts warning": {
       "for now": [
         "per ara"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4424,6 +4427,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Entreu el codi de verificació. Dígit ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Introduïu la informació del vostre compte de ${ BRAND_NAME }."
       ],
@@ -4811,6 +4817,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Verifiqueu la targeta a la pestanya nova que s'ha obert."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
+      ],
       "Plus or Visionary subscription required": [
         "Es requereix una subscripció Plus o Visionary"
       ],
@@ -4834,6 +4843,9 @@
       ],
       "Recovery file downloaded": [
         "S'ha baixat el fitxer de recuperació"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "La informació de recuperació es mantindrà en aquest dispositiu a menys que escolliu eliminar-la."
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
@@ -5037,6 +5049,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Per importar esdeveniments creeu abans un calendari a ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Per mantenir-vos al dia amb els darrers desenvolupaments de ${ BRAND_NAME }, podeu subscriure-us als nostres diversos correus electrònics i visitar el nostre blog de tant en tant."
@@ -5266,11 +5281,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "El seu compte ${ BRAND_NAME } està associat amb ${ externalEmailAddress }. Per utilitzar ${ toAppName }, necessiteu una adreça de ${ MAIL_APP_NAME }."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "El vostre compte ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els vostres enllaços compartits de Drive es bloquejaran, i no podreu carregar-hi nous fitxers. Per a restablir el servei normal pagueu qualsevol factura vençuda."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "El vostre compte ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuraren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius, i no podeu carregar-hi nous fitxers. Per a continuar utilitzant el vostre compte pagueu qualsevol factura vençuda."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Els vostres comptes ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } estan enllaçats. Per suprimir-les, inicieu la sessió a ${ loginLink } i suprimiu-ne el compte."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "El vostre compte té almenys una factura vençuda. El vostre compte està restringit i tots els serveis estan bloquejats fins que es faci el pagament. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "El vostre compte té almenys una factura vençuda. El vostre compte està restringit. La manca de pagament continuada us bloquejarà els correus electrònics i enllaços de compartició. ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
         "S'ha establert el mètode de recuperació del vostre compte"
@@ -5954,6 +5981,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete recovery-related information.": [
+        "Eliminar la informació de recuperació."
       ],
       "Density": [
         "Densitat"
@@ -7199,6 +7229,11 @@
         "Assistència"
       ]
     },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7208,11 +7243,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom de manera predeterminada."
-      ]
-    },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7729,6 +7759,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
+      ],
+      "Please insert link first": [
+        "Inseriu l'enllaç primer"
       ],
       "Postal code": [
         "Codi postal"
@@ -8913,6 +8946,9 @@
       "Messages and composing": [
         "Missatges i redacció"
       ],
+      "Minicalendar": [
+        "Minicalendari"
+      ],
       "Multi-user support": [
         "Suport multi-usuari"
       ],
@@ -9198,6 +9234,9 @@
       "Your calendar link": [
         "Enllaç del vostre calendari"
       ],
+      "Your changes are not synced yet": [
+        "Els vostres canvis encara no estan sincronitzats"
+      ],
       "Your current plan": [
         "El vostre pla actual"
       ],
@@ -9475,6 +9514,10 @@
       "Password must contain at least ${ length } character": [
         "La contrasenya ha de tenir com a mínim ${ length } caràcter",
         "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Intenteu un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Intenteu un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     },
     "Video control": {

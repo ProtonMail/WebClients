@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Abonnement bearbeiten"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
       ],
@@ -2637,11 +2634,11 @@
       "${ name } deletion failed": [
         "${ name } konnte nicht gelöscht werden"
       ],
-      "${ name } failed to move to not spam List": [
-        "${ name } failed to move to the not-spam list"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } konnte nicht in die Spamliste verschoben werden."
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden"
       ],
       "${ name } failed to move to your block list": [
         "${ name } konnte nicht in deine Blockliste verschoben werden."
@@ -2754,11 +2751,11 @@
       "${ name } deletion failed": [
         "${ name } konnte nicht gelöscht werden"
       ],
-      "${ name } failed to move to not spam List": [
-        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden."
-      ],
       "${ name } failed to move to spam list": [
         "${ name } konnte nicht in die Spamliste verschoben werden."
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden"
       ],
       "${ name } failed to move to your block list": [
         "${ name } konnte nicht in deine Blockliste verschoben werden."
@@ -4098,9 +4095,6 @@
     "Import contacts warning": {
       "for now": [
         "derzeit"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -5701,6 +5695,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Dieser Link könnte eine homographischer Angriff sein und kann vom Edge Browser nicht geöffnet werden. Wenn du dir sicher bist, dass der Link seriös ist, nutze bitte einen anderen Browser zum Öffnen."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
       ],
@@ -7052,6 +7049,9 @@
       "Mailbox password": [
         "Postfach-Passwort"
       ],
+      "Main": [
+        "Hauptebene"
+      ],
       "Manage categories": [
         "Kategorien verwalten"
       ],
@@ -8260,6 +8260,26 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -8329,26 +8349,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9483,8 +9483,8 @@
       "Close": [
         "Schließen"
       ],
-      "Don't show this again": [
-        "Nicht erneut anzeigen"
+      "Don't show this offer again": [
+        "Angebot nicht erneut anzeigen"
       ],
       "Special offer": [
         "Sonderangebot"
@@ -9575,9 +9575,6 @@
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
-      ],
-      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
-        "Dieses Abonnement verlängert sich jedes Jahr automatisch, bis es gekündigt wird."
       ]
     },
     "specialoffer: Info": {
@@ -9686,11 +9683,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Unser eingestelltes Visionary-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
       ],
-      "Save more with 1 year of ${ planName }": [
-        "Spare mehr mit einem Jahr ${ planName }"
+      "Save more with 2 years of ${ planName }": [
+        "Spare mehr mit 2 Jahren ${ planName }"
       ],
-      "Upgrade and save more with ${ planName }": [
-        "Upgrade durchführen und mehr sparen mit ${ planName }"
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Führe ein Upgrade durch und spare noch mehr mit 2 Jahren ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {

@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Изменить подписку"
       ],
-      "Emoji": [
-        "Эмоджи"
-      ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
@@ -2657,11 +2654,11 @@
       "${ name } deletion failed": [
         "Удаление ${ name } не удалось"
       ],
-      "${ name } failed to move to not spam List": [
-        "${ name } failed to move to the not-spam list"
-      ],
       "${ name } failed to move to spam list": [
         "Не удалось переместить ${ name } в список спама"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "Не удалось переместить ${ name } в список \"Не спам\""
       ],
       "${ name } failed to move to your block list": [
         "не удалось переместить ${ name } в список блокируемых"
@@ -2774,11 +2771,11 @@
       "${ name } deletion failed": [
         "Удаление ${ name } не удалось"
       ],
-      "${ name } failed to move to not spam List": [
-        "${ name } не удалось переместить в список не спама"
-      ],
       "${ name } failed to move to spam list": [
         "Не удалось переместить ${ name } в список спама"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "Не удалось переместить ${ name } в список \"Не спам\""
       ],
       "${ name } failed to move to your block list": [
         "Не удалось переместить ${ name } в список блокируемых"
@@ -4161,11 +4158,11 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } не поддерживает ${ forNow }:"
+      ],
       "for now": [
         "пока"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -8446,6 +8443,26 @@
         "Управление командами"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Перейдите на пакет для бизнеса с доступом ко всем платным услугам ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Улучшите пакет для обеспечения максимальной конфиденциальности и получите доступ ко всем платным услугам ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся ${ last4 }"
@@ -8515,26 +8532,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Перейдите на пакет для бизнеса с доступом ко всем платным услугам ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Улучшите пакет для обеспечения максимальной конфиденциальности и получите доступ ко всем платным услугам ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9695,7 +9692,7 @@
       "Close": [
         "Закрыть"
       ],
-      "Don't show this again": [
+      "Don't show this offer again": [
         "Больше не показывать"
       ],
       "Special offer": [
@@ -9797,9 +9794,6 @@
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
-      ],
-      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
-        "Подписка будет автоматически продлеваться каждый год по той же цене до тех пор, пока вы ее не отмените."
       ]
     },
     "specialoffer: Info": {
@@ -9910,11 +9904,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Мы снова предлагаем скидку на подписку Visionary, но предложение ограничено!"
       ],
-      "Save more with 1 year of ${ planName }": [
-        "Сэкономьте с тарифом ${ planName } на 1 год"
+      "Save more with 2 years of ${ planName }": [
+        "Экономьте больше целых 2 года с тарифом ${ planName }"
       ],
-      "Upgrade and save more with ${ planName }": [
-        "Перейдите на тариф ${ planName } со скидкой"
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Переходите на тариф ${ planName } и экономьте больше целых 2 года"
       ]
     },
     "specialoffer: Tooltip": {

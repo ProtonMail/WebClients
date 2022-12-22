@@ -313,9 +313,6 @@
       "Edit subscription": [
         "サブスクリプションを編集"
       ],
-      "Emoji": [
-        "絵文字"
-      ],
       "enable desktop notifications": [
         "デスクトップ通知を有効にする"
       ],
@@ -945,6 +942,9 @@
       "Disabled": [
         "無効"
       ],
+      "External": [
+        "外部"
+      ],
       "Missing keys": [
         "キーがありません"
       ],
@@ -1538,6 +1538,9 @@
       ],
       "Remove from the list?": [
         "一覧から削除しますか？"
+      ],
+      "Undo this import?": [
+        "インポートを元に戻しますか?"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -2530,9 +2533,6 @@
       "${ name } deletion failed": [
         "${ name } の削除に失敗しました"
       ],
-      "${ name } failed to move to not spam List": [
-        "${ name } failed to move to the not-spam list"
-      ],
       "${ name } failed to move to spam list": [
         "${ name } の迷惑メールリストへの移動に失敗しました"
       ],
@@ -2646,9 +2646,6 @@
       ],
       "${ name } deletion failed": [
         "${ name } の削除に失敗しました"
-      ],
-      "${ name } failed to move to not spam List": [
-        "${ name } の非迷惑メールリストへの移動に失敗しました"
       ],
       "${ name } failed to move to spam list": [
         "${ name } の迷惑メールリストへの移動に失敗しました"
@@ -3816,6 +3813,17 @@
         "値"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "動作"
+      ],
+      "Email address": [
+        "メールアドレス"
+      ],
+      "Token name": [
+        "トークン名"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestions, use keyboard to navigate.": [
         "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
@@ -3914,9 +3922,6 @@
     "Import contacts warning": {
       "for now": [
         "現時点"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -5060,6 +5065,9 @@
       "of": [
         " / "
       ],
+      "One account. All ${ BRAND_NAME } services.": [
+        "1 つのアカウント。すべての ${ BRAND_NAME } サービス。"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
       ],
@@ -5380,6 +5388,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "この処理には機器により、数秒から数分を要します。"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "これには 15 分ほどかかります。ページを閉じたりインターネットから切断しないでください。"
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
         "これは以前保存した回復用ファイルまたは暗号鍵です。"
@@ -6726,6 +6737,9 @@
       "Name on card": [
         "カード名義人"
       ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (ポート転送)"
+      ],
       "Navigation": [
         "ナビゲーション"
       ],
@@ -6897,6 +6911,12 @@
       "Signature": [
         "署名"
       ],
+      "SMTP token": [
+        "SMTP トークン"
+      ],
+      "SMTP username": [
+        "SMTP ユーザー名"
+      ],
       "Spam": [
         "迷惑メール"
       ],
@@ -6956,6 +6976,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "移行先: ${ PMEmailAddress }"
+      ],
+      "Token name": [
+        "トークン名"
       ],
       "Two-password mode": [
         "2 パスワードモード"
@@ -7846,6 +7869,23 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7903,23 +7943,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -9051,6 +9074,11 @@
         "割引率:"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "有効"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "毎日のコミュニケーションに必要な、プライバシーファーストのメール、カレンダーソリューション"
@@ -9183,8 +9211,14 @@
       "Sessions revoked": [
         "セッションを失効しました"
       ],
+      "SMTP token deleted": [
+        "SMTP トークンを削除しました"
+      ],
       "SPF value copied to clipboard": [
         "SPF 値がクリップボードにコピーされました"
+      ],
+      "Token copied to clipboard": [
+        "トークンをクリップボードにコピーしました"
       ],
       "User created": [
         "ユーザーが作成されました。"
