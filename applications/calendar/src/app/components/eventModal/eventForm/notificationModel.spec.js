@@ -1,5 +1,5 @@
+import { triggerToModel } from '@proton/shared/lib/calendar/alarms/notificationModel';
 import { NOTIFICATION_TYPE_API, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '@proton/shared/lib/calendar/constants';
-import { triggerToModel } from '@proton/shared/lib/calendar/notificationModel';
 import { fromTriggerString } from '@proton/shared/lib/calendar/vcal';
 
 const { DEVICE } = NOTIFICATION_TYPE_API;
