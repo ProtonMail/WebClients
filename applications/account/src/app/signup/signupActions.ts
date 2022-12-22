@@ -214,20 +214,23 @@ export const handleSetupUser = async ({
     // Perform the subscription first to prevent "locked user" while setting up keys.
     if (hasPlanIDs(subscriptionData.planIDs)) {
         await authApi(
-            subscribe({
-                Plans: subscriptionData.planIDs,
-                Currency: subscriptionData.currency,
-                Cycle: subscriptionData.cycle,
-                ...(referralData
-                    ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
-                    : {
-                          Payment: subscriptionData.payment,
-                          Amount: subscriptionData.checkResult.AmountDue,
-                          ...(subscriptionData.checkResult.Coupon?.Code
-                              ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                              : undefined),
-                      }),
-            })
+            subscribe(
+                {
+                    Plans: subscriptionData.planIDs,
+                    Currency: subscriptionData.currency,
+                    Cycle: subscriptionData.cycle,
+                    ...(referralData
+                        ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
+                        : {
+                              Payment: subscriptionData.payment,
+                              Amount: subscriptionData.checkResult.AmountDue,
+                              ...(subscriptionData.checkResult.Coupon?.Code
+                                  ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
+                                  : undefined),
+                          }),
+                },
+                cache.productParam
+            )
         );
     }
 

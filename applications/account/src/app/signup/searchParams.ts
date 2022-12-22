@@ -1,11 +1,39 @@
 import * as History from 'history';
 
-import { DEFAULT_CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { APP_NAMES, DEFAULT_CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { Currency, Plan } from '@proton/shared/lib/interfaces';
 
-import { SERVICES, SERVICES_KEYS } from './interfaces';
+import { SERVICES } from './interfaces';
+
+export const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefined => {
+    return maybeProduct ? SERVICES[maybeProduct] : undefined;
+};
+
+// Returns 'none' when referrer from static site e.g. proton.me, otherwise 'generic'.
+const getDefaultProductParam = () => {
+    try {
+        const url = new URL(document.referrer);
+        const base = getSecondLevelDomain(window.location.hostname);
+        if (base === url.hostname) {
+            return 'none';
+        }
+        return 'generic';
+    } catch (e) {
+        return 'generic';
+    }
+};
+
+export const getProductParam = (
+    product: APP_NAMES | undefined,
+    productParam: string | undefined
+): APP_NAMES | 'generic' | 'none' | undefined => {
+    const sanitisedProductParam = productParam === 'generic' ? productParam : undefined;
+    const defaultProductParam = getDefaultProductParam();
+    return product || sanitisedProductParam || defaultProductParam;
+};
 
 export const getSignupSearchParams = (search: History.Search) => {
     const searchParams = new URLSearchParams(search);
@@ -24,8 +52,8 @@ export const getSignupSearchParams = (search: History.Search) => {
     const maybeDomains = Number(searchParams.get('domains'));
     const domains = maybeDomains >= 1 && maybeDomains <= 100 ? maybeDomains : undefined;
 
-    const maybeService = (searchParams.get('service') || searchParams.get('product')) as SERVICES_KEYS | undefined;
-    const service = maybeService ? SERVICES[maybeService] : undefined;
+    const maybeProductParam = searchParams.get('service') || searchParams.get('product') || undefined;
+    const product = getProduct(maybeProductParam);
 
     // plan is validated by comparing plans after it's loaded
     const maybePreSelectedPlan = searchParams.get('plan');
@@ -43,7 +71,7 @@ export const getSignupSearchParams = (search: History.Search) => {
         cycle: cycle || DEFAULT_CYCLE,
         minimumCycle,
         preSelectedPlan,
-        service,
+        product,
         users,
         domains,
         referrer,
