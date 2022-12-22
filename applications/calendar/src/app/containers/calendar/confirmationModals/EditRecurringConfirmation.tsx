@@ -127,8 +127,8 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
     throw new Error('Unknown confirmation type');
 };
 
-const getRecurringWarningText = (isAttendee: boolean, inviteActions: InviteActions) => {
-    if (!isAttendee) {
+const getRecurringWarningText = (canEditOnlyNotifications: boolean, inviteActions: InviteActions) => {
+    if (!canEditOnlyNotifications) {
         return c('Info').t`Previous modifications on this series will be lost.`;
     }
     if (inviteActions.resetSingleEditsPartstat) {
@@ -148,6 +148,7 @@ interface Props {
     hasRruleModification: boolean;
     hasCalendarModification: boolean;
     isAttendee: boolean;
+    canEditOnlyNotifications: boolean;
     inviteActions: InviteActions;
     onConfirm: ({ type, inviteActions }: { type: RECURRING_TYPES; inviteActions: InviteActions }) => void;
     onClose: () => void;
@@ -160,6 +161,7 @@ const EditRecurringConfirmModal = ({
     hasRruleModification,
     hasCalendarModification,
     isAttendee,
+    canEditOnlyNotifications,
     inviteActions,
     onConfirm,
     onClose,
@@ -171,7 +173,9 @@ const EditRecurringConfirmModal = ({
     const hasPreviousModifications =
         (type === RECURRING_TYPES.ALL && hasSingleModifications) ||
         (type === RECURRING_TYPES.FUTURE && hasSingleModificationsAfter);
-    const recurringWarningText = hasPreviousModifications ? getRecurringWarningText(isAttendee, inviteActions) : '';
+    const recurringWarningText = hasPreviousModifications
+        ? getRecurringWarningText(canEditOnlyNotifications, inviteActions)
+        : '';
 
     const showRruleWarning = !isAttendee && type === RECURRING_TYPES.SINGLE && hasRruleModification;
     const rruleWarningText = showRruleWarning ? getRruleWarningText() : '';
