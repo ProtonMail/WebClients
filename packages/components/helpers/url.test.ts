@@ -131,4 +131,10 @@ describe('punycodeUrl', () => {
         const encodedUrl = punycodeUrl(url);
         expect(encodedUrl).toEqual(url);
     });
+
+    it('should keep the port', () => {
+        const url = 'https://www.äöü.com:8080';
+        const encodedUrl = punycodeUrl(url);
+        expect(encodedUrl).toEqual('https://www.xn--4ca0bs.com:8080');
+    });
 });
