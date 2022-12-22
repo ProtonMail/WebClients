@@ -15,7 +15,6 @@ import { getTitle } from '../../helpers/title';
 import mdx from './Notification.mdx';
 
 export default {
-    component: Notification,
     title: getTitle(__filename, false),
     parameters: {
         docs: {
