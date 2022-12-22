@@ -1,4 +1,3 @@
-import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
     DEFAULT_FULL_DAY_NOTIFICATIONS,
@@ -6,6 +5,7 @@ import {
     DEFAULT_PART_DAY_NOTIFICATIONS,
 } from '@proton/shared/lib/calendar/alarms/notificationDefaults';
 import { apiNotificationsToModel, notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
+import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
     DAILY_TYPE,
     DEFAULT_EVENT_DURATION,
