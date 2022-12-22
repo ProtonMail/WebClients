@@ -2165,9 +2165,6 @@
     "Import contacts warning": {
       "for now": [
         "por agora"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3555,6 +3552,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacto parece idêntico.",
+        "${ countMergeableContacts } contactos parecem idênticos."
+      ],
       "Address copied to clipboard": [
         "Endereço copiado para a área de transferência"
       ],

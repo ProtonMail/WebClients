@@ -2621,11 +2621,11 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } não suporta ${ forNow }:"
+      ],
       "for now": [
         "por enquanto"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3170,6 +3170,9 @@
       "Each code can only be used once": [
         "Cada código só pode ser usado uma única vez"
       ],
+      "Emails are automatically signed": [
+        "Emails são assinados automaticamente"
+      ],
       "Enabling drive search": [
         "Ativando pesquisa de drive"
       ],
@@ -3473,6 +3476,9 @@
       "Permanently delete all files in your locked drive": [
         "Excluir permanentemente todos os arquivos no seu drive bloqueado"
       ],
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME automaticamente envia a mensagem usando o modo compositor atual."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Por favor, insira a senha para descriptografar e visualizar o conteúdo."
       ],
@@ -3648,6 +3654,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Este link pode ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se você tiver certeza de que o link é legítimo, por favor use um navegador diferente para abrí-lo."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
       ],
@@ -3678,6 +3687,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Para importar eventos, primeiro crie um calendário em ${ CALENDAR_APP_NAME }. Aqui que os eventos aparecerão após a importação."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para assinar novamente seus contatos, precisamos comparar todos os contatos com a lista de chaves criptográficas disponíveis em sua conta. Se nenhuma correspondência for encontrada, seu contato será assinado novamente com a chave de criptografia principal."
@@ -4999,8 +5011,8 @@
       "Close": [
         "Fechar"
       ],
-      "Don't show this again": [
-        "Não mostrar mais esta mensagem"
+      "Don't show this offer again": [
+        "Não mostrar mais esta oferta"
       ],
       "Special offer": [
         "Oferta especial"
@@ -5091,9 +5103,6 @@
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta assinatura será renovada automaticamente a cada dois anos pela mesma taxa até ser cancelada."
-      ],
-      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
-        "Esta assinatura será renovada automaticamente uma vez por ano pela mesma taxa até ser cancelada."
       ]
     },
     "specialoffer: Label": {
@@ -5197,11 +5206,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Nosso plano Visionary que foi descontinuado voltou somente por um período limitado"
       ],
-      "Save more with 1 year of ${ planName }": [
-        "Economize mais com 1 ano de ${ planName }"
+      "Save more with 2 years of ${ planName }": [
+        "Economize mais com 2 anos de ${ planName }"
       ],
-      "Upgrade and save more with ${ planName }": [
-        "Faça upgrade e economize mais com ${ planName }"
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Faça upgrade e economize mais com 2 anos de ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -6057,6 +6066,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Não conseguimos verificar o servidor de email. Se você confia no mesmo, você pode pular essa verificação."
       ],
       "You will lose any customization you made so far.": [
         "Você perderá qualquer personalização que tenha feito até agora."
