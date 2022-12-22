@@ -33,7 +33,7 @@ import { getSupportedPlusAlias } from '../../mail/addresses';
 import { MESSAGE_FLAGS } from '../../mail/constants';
 import { RE_PREFIX, formatSubject } from '../../mail/messages';
 import { getAttendeeEmail, toIcsPartstat } from '../attendees';
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, SETTINGS_NOTIFICATION_TYPE } from '../constants';
+import { ICAL_ALARM_ACTION, ICAL_ATTENDEE_STATUS, ICAL_METHOD, NOTIFICATION_TYPE_API } from '../constants';
 import { getSelfAddressData } from '../deserialize';
 import { getDisplayTitle } from '../helper';
 import { getSupportedStringValue } from '../icsSurgery/vcal';
@@ -242,7 +242,7 @@ export const getEventWithCalendarAlarms = (vevent: VcalVeventComponent, calendar
         : calendarSettings.DefaultPartDayNotifications;
     const valarmComponents = notifications.map<VcalValarmComponent>(({ Trigger, Type }) => ({
         component: 'valarm',
-        action: { value: Type === SETTINGS_NOTIFICATION_TYPE.EMAIL ? 'EMAIL' : 'DISPLAY' },
+        action: { value: Type === NOTIFICATION_TYPE_API.EMAIL ? ICAL_ALARM_ACTION.EMAIL : ICAL_ALARM_ACTION.DISPLAY },
         trigger: { value: fromTriggerString(Trigger) },
     }));
 

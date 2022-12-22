@@ -1,12 +1,12 @@
 import { NotificationModel, VcalDurationValue } from '../interfaces/calendar';
 import { normalizeRelativeTrigger, transformBeforeAt } from './alarms/trigger';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from './constants';
+import { NOTIFICATION_TYPE_API, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from './constants';
 
 const getInt = (value: any) => parseInt(value, 10) || 0;
 
 interface TriggerToModelShared {
     when: NOTIFICATION_WHEN;
-    type: SETTINGS_NOTIFICATION_TYPE;
+    type: NOTIFICATION_TYPE_API;
     weeks: number;
     days: number;
     hours: number;
@@ -68,7 +68,7 @@ const partDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }: Trig
 
 interface TriggerToModel {
     isAllDay: boolean;
-    type: SETTINGS_NOTIFICATION_TYPE;
+    type: NOTIFICATION_TYPE_API;
     trigger: Partial<VcalDurationValue>;
 }
 
@@ -94,5 +94,5 @@ export const triggerToModel = ({
 };
 
 export const getDeviceNotifications = (notifications: NotificationModel[]) => {
-    return notifications.filter(({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE);
+    return notifications.filter(({ type }) => type === NOTIFICATION_TYPE_API.DEVICE);
 };

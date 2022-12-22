@@ -13,7 +13,7 @@ import {
 import getAlarmMessageText from './alarms/getAlarmMessageText';
 import { getValarmTrigger } from './alarms/getValarmTrigger';
 import { normalizeDurationToUnit } from './alarms/trigger';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from './constants';
+import { NOTIFICATION_TYPE_API, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from './constants';
 import { getDisplayTitle } from './helper';
 import { getMillisecondsFromTriggerString } from './vcal';
 import { propertyToUTCDate } from './vcalConverter';
@@ -142,4 +142,4 @@ export const dedupeAlarmsWithNormalizedTriggers = (alarms: VcalValarmRelativeCom
     return uniqueBy(sortedAlarms, uniqueAlarmComparator);
 };
 
-export const isEmailNotification = ({ type }: NotificationModel) => type === SETTINGS_NOTIFICATION_TYPE.EMAIL;
+export const isEmailNotification = ({ type }: NotificationModel) => type === NOTIFICATION_TYPE_API.EMAIL;
