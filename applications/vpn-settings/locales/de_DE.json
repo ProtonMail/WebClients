@@ -2829,6 +2829,9 @@
       "Mailbox password": [
         "Postfach-Passwort"
       ],
+      "Main": [
+        "Hauptebene"
+      ],
       "Moderate NAT": [
         "Moderates NAT"
       ],
@@ -3985,8 +3988,8 @@
       "Close": [
         "Schließen"
       ],
-      "Don't show this again": [
-        "Nicht erneut anzeigen"
+      "Don't show this offer again": [
+        "Angebot nicht erneut anzeigen"
       ],
       "Special offer": [
         "Sonderangebot"
@@ -4077,9 +4080,6 @@
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
-      ],
-      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
-        "Dieses Abonnement verlängert sich jedes Jahr automatisch, bis es gekündigt wird."
       ]
     },
     "specialoffer: Label": {
@@ -4183,11 +4183,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Unser eingestelltes Visionary-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
       ],
-      "Save more with 1 year of ${ planName }": [
-        "Spare mehr mit einem Jahr ${ planName }"
+      "Save more with 2 years of ${ planName }": [
+        "Spare mehr mit 2 Jahren ${ planName }"
       ],
-      "Upgrade and save more with ${ planName }": [
-        "Upgrade durchführen und mehr sparen mit ${ planName }"
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Führe ein Upgrade durch und spare noch mehr mit 2 Jahren ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {

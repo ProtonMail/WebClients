@@ -926,6 +926,12 @@
       "Skip": [
         "Omet"
       ],
+      "Skip verification": [
+        "Ometre la verificació"
+      ],
+      "Some images failed to load with tracking protection.": [
+        "La càrrega d'algunes imatges ha fallat amb la protecció de seguiment."
+      ],
       "Star": [
         "Destaca"
       ],
@@ -965,6 +971,9 @@
       ],
       "Try another method": [
         "Proveu amb un altre mètode"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Intenteu tornar a desar. Ha fallat el desament a causa de: ${ saveError }"
       ],
       "Turn on tracker protection": [
         "Activar la protecció de rastreig"
@@ -3299,6 +3308,9 @@
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Intenteu utilitzant només lletres, numèrics, i _.-"
+      ],
       "Unknown error": [
         "Error desconegut"
       ],
@@ -4024,9 +4036,6 @@
     "Import contacts warning": {
       "for now": [
         "per ara"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4593,6 +4602,9 @@
       "Email address": [
         "Adreça de correu electrònic"
       ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "El correu electrònic és reenviat a la vostra bústia de correu; la vostra adreça de correu electrònic resta amagada."
+      ],
       "Email tracker protection is disabled": [
         "La protecció de rastrejador de correu electrònic està desactivada"
       ],
@@ -4630,6 +4642,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Entreu el codi de verificació. Dígit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduïu la vostra contrasenya (com a administrador d'organització)."
@@ -4725,6 +4740,9 @@
       "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
         "Si no recordes la contrasenya, defineix una paraula de seguretat per a ajudar-te a recuperar-la i no perdre accés al teu compte."
       ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Si el vostre àlies és venut, filtrat, o abusat, simplement desactiveu-lo i deixeu de rebre correu brossa."
+      ],
       "Image description": [
         "Descripció de la imatge"
       ],
@@ -4819,6 +4837,9 @@
       "Manage your labels": [
         "Gestioneu les vostres etiquetes"
       ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "S'ha excedit el nombre màxim d'adjunts (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
+      ],
       "Members": [
         "Membres"
       ],
@@ -4848,6 +4869,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
+      ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Movent una gran quantitat de missatges. Pot trigar una estona."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
@@ -4894,6 +4918,12 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "No s'han trobat rastrejadors, però algunes imatges no s'han pogut carregar amb la protecció de seguiment"
       ],
+      "non-${ MAIL_APP_NAME }": [
+        "no-${ MAIL_APP_NAME }"
+      ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Cap de les claus carregades és vàlida per al xifrat. Per a poder enviar missatges a aquesta adreça carregueu una clau vàlida o desactiveu \"Xifra correus electrònics\"."
+      ],
       "Not a valid URL": [
         "No és una URL vàlida"
       ],
@@ -4911,6 +4941,12 @@
       ],
       "per month.": [
         "al mes."
+      ],
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline només és compatible amb format de Text Pla."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME envia automàticament el missatge utilitzant el mode de l'editor actual."
       ],
       "Phone number": [
         "Número de telèfon"
@@ -4946,6 +4982,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Si us plau, espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
       ],
@@ -4969,6 +5008,9 @@
       ],
       "Recipient: ": [
         "Destinatari: "
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "La informació de recuperació es mantindrà en aquest dispositiu a menys que escolliu eliminar-la."
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
@@ -5069,6 +5111,12 @@
       "Sign in": [
         "Inicia la sessió"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin és un servei de ${ BRAND_NAME } i el vostre Compte de ${ BRAND_NAME } inclou àlies Hide My Email. Per començar a emmascarar la vostra adreça de correu electrònic aneu a SimpleLogin i creeu el vostre primer àlies."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "SimpleLogin proporciona una forma fàcil de crear inicis de sessió a llocs de tercers que no són de confiança on no voleu revelar la vostra adreça de correu electrònic actual."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
       ],
@@ -5138,6 +5186,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "S'ha produït un error amb la firma utilitzada per verificar les dades de contacte, que poden ser el resultat d'un restabliment de contrasenya."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "No us poden enviar correu brossa si no saben la vostra adreça de correu electrònic. Protegiu la vostra safata d'entrada amb Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
@@ -5237,6 +5288,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Per importar esdeveniments creeu abans un calendari a ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
       ],
@@ -5327,6 +5381,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilitzeu dreceres de teclat per gestionar el vostre correu electrònic més ràpidament."
       ],
+      "Using SimpleLogin is easy": [
+        "Utilitzar SimpleLogin és fàcil"
+      ],
       "Verified ${ BRAND_NAME } message": [
         "Missatge verificat de ${ BRAND_NAME }"
       ],
@@ -5359,6 +5416,9 @@
       ],
       "When do you want your message to be sent?": [
         "Quan voleu que s'enviï el vostre missatge?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Quan doneu el vostre correu electrònic, utilitzeu un àlies Hide My Email únic, d'ún sol ús en compte de la vostra adreça de correu electrònic real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quan actives les claus de confiança per ${ senderName }, les claus públiques s'afegeixen a les dades de contacte."
@@ -5464,8 +5524,23 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Heu escrit \"${ attachmentsFoundKeyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
       ],
+      "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "El vostre compte ${ BRAND_NAME } inclou SimpleLogin. Instal·leu l'extensió del navegador amb un clic per a començar."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "El vostre compte ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els vostres enllaços compartits de Drive es bloquejaran, i no podreu carregar-hi nous fitxers. Per a restablir el servei normal pagueu qualsevol factura vençuda."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "El vostre compte ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuraren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius, i no podeu carregar-hi nous fitxers. Per a continuar utilitzant el vostre compte pagueu qualsevol factura vençuda."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "El vostre compte té almenys una factura vençuda. El vostre compte està restringit i tots els serveis estan bloquejats fins que es faci el pagament. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "El vostre compte té almenys una factura vençuda. El vostre compte està restringit. La manca de pagament continuada us bloquejarà els correus electrònics i enllaços de compartició. ${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
@@ -5787,6 +5862,12 @@
       "Also archive": [
         "Arxivar també"
       ],
+      "Always label sender's emails": [
+        "Etiquetar sempre els correus electrònics del remitent"
+      ],
+      "Always move sender's emails": [
+        "Moure sempre els correus electrònics del remitent"
+      ],
       "AND": [
         "I"
       ],
@@ -5882,6 +5963,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete recovery-related information.": [
+        "Eliminar la informació de recuperació."
       ],
       "Do not ask again": [
         "No tornis a preguntar"
@@ -6954,6 +7038,9 @@
       "Please describe the problem and include any error messages": [
         "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
       ],
+      "Please insert link first": [
+        "Inseriu l'enllaç primer"
+      ],
       "Search for group name": [
         "Buscar per nom de grup"
       ],
@@ -7427,6 +7514,9 @@
       "Conversation marked as unread.": [
         "Conversa marcada com a no llegida."
       ],
+      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "Conversa moguda a ${ folderName } i remitent afegit a la vostra llista de correu legítim."
+      ],
       "Conversation moved to ${ folderName }.": [
         "Conversa moguda a ${ folderName }."
       ],
@@ -7435,6 +7525,12 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversa esborrada de ${ labelName }."
+      ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Converses de ${ sendersList } s'etiquetaran com a ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Converses de ${ sendersList } es mouran a ${ folder }"
       ],
       "Draft deleted": [
         "Esborrany eliminat"
@@ -7484,6 +7580,9 @@
       "Message marked as unread.": [
         "Missatge marcat com a no llegit."
       ],
+      "Message moved to ${ folderName } and sender added to your not spam list.": [
+        "Missatges moguts a ${ folderName } i remitent afegit a la vostra llista de correu legítim."
+      ],
       "Message moved to ${ folderName }.": [
         "Missatge mogut a ${ folderName }."
       ],
@@ -7492,6 +7591,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Missatge esborrat de ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Missatges de ${ sendersList } s'etiquetaran com a ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Missatges de ${ sendersList } es mouran a ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "Mou ${ selectionCount } conversa",
@@ -7789,6 +7894,9 @@
       "Deleting contacts": [
         "Eliminant contactes"
       ],
+      "Don't give spam a chance": [
+        "No li doneu cap oportunitat al correu brossa"
+      ],
       "Edit contact": [
         "Editar contacte"
       ],
@@ -7848,6 +7956,9 @@
       ],
       "Groups": [
         "Grups"
+      ],
+      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
+        "Amagueu el vostre correu electrònic amb SimpleLogin de ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Verificació humana"
@@ -7918,6 +8029,9 @@
       ],
       "Message will expire": [
         "El missatge caducarà"
+      ],
+      "Minicalendar": [
+        "Minicalendari"
       ],
       "More": [
         "Més"
@@ -8142,6 +8256,9 @@
       "What's new": [
         "Novetats"
       ],
+      "Your changes are not synced yet": [
+        "Els vostres canvis encara no estan sincronitzats"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
       ]
@@ -8233,6 +8350,10 @@
       "Password must contain at least ${ length } character": [
         "La contrasenya ha de tenir com a mínim ${ length } caràcter",
         "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Intenteu un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Intenteu un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     },
     "Video control": {

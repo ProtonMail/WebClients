@@ -2623,9 +2623,6 @@
     "Import contacts warning": {
       "for now": [
         "derzeit"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3170,6 +3167,9 @@
       "Each code can only be used once": [
         "Jeder Code kann nur einmal verwendet werden"
       ],
+      "Emails are automatically signed": [
+        "E-Mails werden automatisch signiert."
+      ],
       "Enabling drive search": [
         "Suche in Drive wird aktiviert"
       ],
@@ -3473,6 +3473,9 @@
       "Permanently delete all files in your locked drive": [
         "Alle Dateien auf dem gesperrten Laufwerk dauerhaft löschen"
       ],
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline ist nur kompatibel mit dem Plain Text-Format."
+      ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus."
       ],
@@ -3650,6 +3653,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
+      ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Dieser Link könnte eine homographischer Angriff sein und kann vom Edge Browser nicht geöffnet werden. Wenn du dir sicher bist, dass der Link seriös ist, nutze bitte einen anderen Browser zum Öffnen."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
@@ -4173,6 +4179,9 @@
       ],
       "Mailbox password": [
         "Postfach-Passwort"
+      ],
+      "Main": [
+        "Hauptebene"
       ],
       "Malware": [
         "Malware"
@@ -5002,8 +5011,8 @@
       "Close": [
         "Schließen"
       ],
-      "Don't show this again": [
-        "Nicht erneut anzeigen"
+      "Don't show this offer again": [
+        "Angebot nicht erneut anzeigen"
       ],
       "Special offer": [
         "Sonderangebot"
@@ -5094,9 +5103,6 @@
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
-      ],
-      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
-        "Dieses Abonnement verlängert sich jedes Jahr automatisch, bis es gekündigt wird."
       ]
     },
     "specialoffer: Label": {
@@ -5200,11 +5206,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Unser eingestelltes Visionary-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
       ],
-      "Save more with 1 year of ${ planName }": [
-        "Spare mehr mit einem Jahr ${ planName }"
+      "Save more with 2 years of ${ planName }": [
+        "Spare mehr mit 2 Jahren ${ planName }"
       ],
-      "Upgrade and save more with ${ planName }": [
-        "Upgrade durchführen und mehr sparen mit ${ planName }"
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Führe ein Upgrade durch und spare noch mehr mit 2 Jahren ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
