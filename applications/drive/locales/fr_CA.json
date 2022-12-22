@@ -2066,6 +2066,9 @@
       "There was an error when exporting the contacts vCards": [
         "Une erreur s'est produite lors de l'exportation des vCards des contacts"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Ce champ dépasse le maximum de ${ maximumLength } caractères."
+      ],
       "This field is required": [
         "Ce champ est requis"
       ],
@@ -2515,6 +2518,9 @@
       ]
     },
     "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "Les invitations importées apparaissent dans ${ CALENDAR_APP_NAME } comme de simples événements sans les informations sur l'organisateur et les participants. Pour recevoir les mises à jour des événements et voir les participants, demandez aux organisateurs de vous inviter en utilisant votre adresse électronique ${ BRAND_NAME }."
+      ],
       "This file contains an event invitation:": [
         "Ce fichier contient une invitation à un événement:",
         "Ce fichier contient des invitations à des événements:"
@@ -2565,9 +2571,6 @@
     "Import contacts warning": {
       "for now": [
         "pour l'instant"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3174,6 +3177,9 @@
       "Import mailbox": [
         "Importer une boîte aux lettres"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importez vos courriels, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
       ],
@@ -3245,6 +3251,9 @@
       ],
       "Loading preview": [
         "Chargement de l'aperçu"
+      ],
+      "Loading...": [
+        "Chargement en cours..."
       ],
       "Makes your account safer": [
         "Sécurise votre compte"
@@ -3867,6 +3876,18 @@
       "Emails": [
         "Courriels"
       ],
+      "Emails (all messages)": [
+        "Courriels (tous les messages)"
+      ],
+      "Emails (last 12 months)": [
+        "Courriels (12 derniers mois)"
+      ],
+      "Emails (last 3 months)": [
+        "Courriels (3 derniers mois)"
+      ],
+      "Emails (last month)": [
+        "Courriels (mois dernier)"
+      ],
       "Enable Beta Access": [
         "Activer l'accès à la version bêta"
       ],
@@ -4176,6 +4197,11 @@
         "${ Label.Name } créé"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Panneau latéral"
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "vider le cache de votre navigateur"
@@ -4223,6 +4249,24 @@
       ],
       "Your import is starting": [
         "Votre importation commence"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages provenant de ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages provenant de ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {

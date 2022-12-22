@@ -450,6 +450,9 @@
       "Skip": [
         "Omet"
       ],
+      "Skip verification": [
+        "Ometre la verificació"
+      ],
       "Start import": [
         "Comença la importació"
       ],
@@ -2319,6 +2322,9 @@
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Intenteu utilitzant només lletres, numèrics, i _.-"
+      ],
       "Unknown error": [
         "Error desconegut"
       ],
@@ -2845,9 +2851,6 @@
     "Import contacts warning": {
       "for now": [
         "per ara"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -3221,6 +3224,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Entreu el codi de verificació. Dígit ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Introduïu la vostra contrasenya (com a administrador d'organització)."
       ],
@@ -3357,6 +3363,9 @@
       "None of the participants can be notified about your changes:": [
         "Cap dels participants pot ser notificat dels canvis:"
       ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Cap de les claus carregades és vàlida per al xifrat. Per a poder enviar missatges a aquesta adreça carregueu una clau vàlida o desactiveu \"Xifra correus electrònics\"."
+      ],
       "Not a valid URL": [
         "No és una URL vàlida"
       ],
@@ -3371,6 +3380,12 @@
       ],
       "Other options": [
         "Altres opcions"
+      ],
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline només és compatible amb format de Text Pla."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME envia automàticament el missatge utilitzant el mode de l'editor actual."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
@@ -3405,6 +3420,9 @@
       ],
       "Priority support": [
         "Suport prioritari"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "La informació de recuperació es mantindrà en aquest dispositiu a menys que escolliu eliminar-la."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
@@ -3510,6 +3528,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Per importar esdeveniments creeu abans un calendari a ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
@@ -3640,8 +3661,20 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Actualitzareu tots els esdeveniments d'aquesta sèrie. El participants eliminats seran norificats."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "El vostre compte ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els vostres enllaços compartits de Drive es bloquejaran, i no podreu carregar-hi nous fitxers. Per a restablir el servei normal pagueu qualsevol factura vençuda."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "El vostre compte ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuraren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius, i no podeu carregar-hi nous fitxers. Per a continuar utilitzant el vostre compte pagueu qualsevol factura vençuda."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "El vostre compte té almenys una factura vençuda. El vostre compte està restringit i tots els serveis estan bloquejats fins que es faci el pagament. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "El vostre compte té almenys una factura vençuda. El vostre compte està restringit. La manca de pagament continuada us bloquejarà els correus electrònics i enllaços de compartició. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "La vostra adreça està desactivada. Els participants a l'esdeveniment no rebran cap correu electrònic de cancel·lació. Voleu esborrar tots els esdeveniments de la sèrie?"
@@ -3796,6 +3829,9 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete recovery-related information.": [
+        "Eliminar la informació de recuperació."
       ],
       "Description": [
         "Descripció"
@@ -5357,6 +5393,9 @@
       "Merging contacts": [
         "Combinant contactes"
       ],
+      "Minicalendar": [
+        "Minicalendari"
+      ],
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
@@ -5606,6 +5645,10 @@
       "Password must contain at least ${ length } character": [
         "La contrasenya ha de tenir com a mínim ${ length } caràcter",
         "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Intenteu un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Intenteu un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     },
     "Video control": {

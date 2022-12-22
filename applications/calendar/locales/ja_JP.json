@@ -871,6 +871,11 @@
         "表示期間の変更"
       ]
     },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } 以上"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "作成"
@@ -2816,9 +2821,6 @@
     "Import contacts warning": {
       "for now": [
         "現時点"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4233,6 +4235,9 @@
       ]
     },
     "Modal for limit of calendars reached": {
+      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "これ以上のカレンダーを追加できません。このプランで作成できる個人用カレンダーの最大数に達しています。"
+      ],
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "これ以上のカレンダーを追加できません。このプランで追加できる購読カレンダーの最大数に達しています。"
       ],
