@@ -43,6 +43,8 @@ END:VEVENT`;
                             isAttendee: false,
                             veventComponent: vcalVeventComponent,
                             removedAttendeesEmails: [],
+                            hasDefaultNotifications: false,
+                            personalEventsDeprecated: true,
                         },
                     },
                 ],

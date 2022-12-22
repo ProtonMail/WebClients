@@ -70,5 +70,6 @@ export interface UpdatePersonalPartOperation {
         eventID: string;
         addressID?: string;
         eventComponent?: VcalVeventComponent;
+        hasDefaultNotifications?: boolean;
     };
 }

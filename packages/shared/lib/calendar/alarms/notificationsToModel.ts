@@ -1,5 +1,6 @@
 import generateUID from '../../helpers/generateUID';
-import { CalendarNotificationSettings } from '../../interfaces/calendar';
+import { Nullable } from '../../interfaces';
+import { CalendarNotificationSettings, CalendarSettings } from '../../interfaces/calendar';
 import { filterFutureNotifications } from '../alarms';
 import { fromTriggerString } from '../vcal';
 import { triggerToModel } from './notificationModel';
@@ -15,4 +16,19 @@ export const notificationsToModel = (notifications: CalendarNotificationSettings
     }));
     // Filter out future alarms
     return filterFutureNotifications(modelNotifications);
+};
+
+export const apiNotificationsToModel = ({
+    notifications: apiNotifications,
+    isAllDay,
+    calendarSettings,
+}: {
+    notifications: Nullable<CalendarNotificationSettings[]>;
+    isAllDay: boolean;
+    calendarSettings: CalendarSettings;
+}) => {
+    const { DefaultPartDayNotifications, DefaultFullDayNotifications } = calendarSettings;
+    const defaultNotifications = isAllDay ? DefaultFullDayNotifications : DefaultPartDayNotifications;
+
+    return notificationsToModel(apiNotifications || defaultNotifications, isAllDay);
 };

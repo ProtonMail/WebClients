@@ -1,3 +1,5 @@
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+
 import { CALENDAR_CARD_TYPE } from '../../lib/calendar/constants';
 import { parse } from '../../lib/calendar/vcal';
 import { getVeventParts } from '../../lib/calendar/veventHelper';
@@ -16,7 +18,7 @@ SUMMARY:dcf
 SEQUENCE:2
 LOCATION:asd
 END:VEVENT
-`);
+`) as VcalVeventComponent;
         const result = getVeventParts(y);
 
         expect(result).toEqual({
@@ -43,6 +45,7 @@ END:VCALENDAR`),
             calendarPart: { [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
             personalPart: { [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
             attendeesPart: { [CLEAR_TEXT]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
+            notificationsPart: [],
         });
     });
 
@@ -65,7 +68,7 @@ ACTION:DISPLAY
 DESCRIPTION:asd
 END:VALARM
 END:VEVENT
-`);
+`) as VcalVeventComponent;
         const result = getVeventParts(y);
         expect(result).toEqual({
             sharedPart: {
@@ -121,6 +124,7 @@ END:VCALENDAR`),
                 [ENCRYPTED_AND_SIGNED]: undefined,
             },
             attendeesPart: { [CLEAR_TEXT]: [], [SIGNED]: undefined, [ENCRYPTED_AND_SIGNED]: undefined },
+            notificationsPart: [{ Type: 1, Trigger: '-PT15H' }],
         });
     });
 });

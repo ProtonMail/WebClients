@@ -18,7 +18,7 @@ import {
     getWeeksBefore,
 } from './notificationOptions';
 
-const { EMAIL, DEVICE /* BOTH */ } = NOTIFICATION_TYPE_API;
+const { EMAIL, DEVICE } = NOTIFICATION_TYPE_API;
 
 interface Props {
     id: string;

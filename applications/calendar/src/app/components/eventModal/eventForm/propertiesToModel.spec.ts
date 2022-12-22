@@ -13,6 +13,7 @@ END:VEVENT`;
         expect(
             propertiesToModel({
                 veventComponent: parse(VEVENT) as VcalVeventComponent,
+                hasDefaultNotifications: true,
                 isAllDay: false,
                 isProtonProtonInvite: false,
                 tzid: 'Europe/Zurich',
@@ -40,6 +41,7 @@ END:VEVENT`;
         expect(
             propertiesToModel({
                 veventComponent: parse(VEVENT) as VcalVeventComponent,
+                hasDefaultNotifications: true,
                 isAllDay: false,
                 isProtonProtonInvite: false,
                 tzid: 'Europe/Zurich',
@@ -66,6 +68,7 @@ END:VEVENT`;
         expect(
             propertiesToModel({
                 veventComponent: parse(VEVENT) as VcalVeventComponent,
+                hasDefaultNotifications: true,
                 isAllDay: true,
                 isProtonProtonInvite: false,
                 tzid: 'Europe/Zurich',

@@ -2,7 +2,6 @@ import { ICAL_METHOD } from '../../calendar/constants';
 import { ImportEventError } from '../../calendar/icsSurgery/ImportEventError';
 import { ImportFatalError } from '../../calendar/import/ImportFatalError';
 import { ImportFileError } from '../../calendar/import/ImportFileError';
-import { RequireSome } from '../utils';
 import { CalendarCreateEventBlobData } from './Api';
 import { VisualCalendar } from './Calendar';
 import { SyncMultipleApiSuccessResponses } from './Event';
@@ -35,7 +34,7 @@ export type VcalCalendarComponentOrError = VcalCalendarComponent | { error: Erro
 
 export interface EncryptedEvent {
     component: VcalVeventComponent;
-    data: RequireSome<CalendarCreateEventBlobData, 'SharedEventContent' | 'SharedKeyPacket'>;
+    data: CalendarCreateEventBlobData;
 }
 
 export interface ImportedEvent extends EncryptedEvent {

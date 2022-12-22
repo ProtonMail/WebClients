@@ -4,11 +4,13 @@ import { InviteActions, ReencryptInviteActionData } from '../../../interfaces/In
 
 export const getUpdatePersonalPartOperation = ({
     eventComponent,
+    hasDefaultNotifications,
     event,
     memberID,
     addressID,
 }: {
     eventComponent: VcalVeventComponent;
+    hasDefaultNotifications: boolean;
     event: CalendarEvent;
     memberID: string;
     addressID: string;
@@ -20,12 +22,14 @@ export const getUpdatePersonalPartOperation = ({
             calendarID: event.CalendarID,
             eventID: event.ID,
             eventComponent,
+            hasDefaultNotifications,
         },
     };
 };
 
 export const getUpdatePersonalPartActions = async ({
     eventComponent,
+    hasDefaultNotifications,
     event,
     memberID,
     addressID,
@@ -34,6 +38,7 @@ export const getUpdatePersonalPartActions = async ({
     reencryptSharedEvent,
 }: {
     eventComponent: VcalVeventComponent;
+    hasDefaultNotifications: boolean;
     event: CalendarEvent;
     memberID: string;
     addressID: string;
@@ -47,6 +52,7 @@ export const getUpdatePersonalPartActions = async ({
     }
     const updatePersonalPartAction = getUpdatePersonalPartOperation({
         eventComponent,
+        hasDefaultNotifications,
         event,
         memberID,
         addressID,

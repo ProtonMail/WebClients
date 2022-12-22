@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { FeatureCode } from '@proton/components/containers';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
@@ -14,16 +15,21 @@ import {
     splitErrors,
     splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
-import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getVeventWithDefaultCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import {
     EncryptedEvent,
     IMPORT_STEPS,
     ImportCalendarModel,
     ImportedEvent,
+    VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 
 import { DynamicProgress } from '../../../components';
-import { useApi, useBeforeUnload, useGetCalendarInfo } from '../../../hooks';
+import { useApi, useBeforeUnload, useFeature, useGetCalendarInfo } from '../../../hooks';
+
+const getEventsWithoutDefaultNotifications = (events: VcalVeventComponent[]) => {
+    return events.map((eventComponent) => ({ eventComponent, hasDefaultNotifications: false }));
+};
 
 interface Props {
     model: ImportCalendarModel;
@@ -33,6 +39,7 @@ interface Props {
 const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
     const getCalendarInfo = useGetCalendarInfo();
+    const personalEventsDeprecated = !!useFeature(FeatureCode.CalendarPersonalEventsDeprecated).feature?.Value;
 
     useBeforeUnload(c('Alert').t`By leaving now, some events may not be imported`);
 
@@ -73,17 +80,20 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 // add calendar alarms to invitations
                 const vevents =
                     model.method !== ICAL_METHOD.PUBLISH
-                        ? model.eventsParsed.map((vevent) => getEventWithCalendarAlarms(vevent, calendarSettings))
+                        ? model.eventsParsed.map((vevent) =>
+                              getVeventWithDefaultCalendarAlarms(vevent, calendarSettings)
+                          )
                         : [...model.eventsParsed];
                 const { withoutRecurrenceId, withRecurrenceId } = splitByRecurrenceId(vevents);
                 const processData = {
-                    events: withoutRecurrenceId,
+                    events: getEventsWithoutDefaultNotifications(withoutRecurrenceId),
                     calendarID: model.calendar.ID,
                     memberID,
                     addressKeys,
                     calendarKeys,
                     api: apiWithAbort,
                     signal,
+                    personalEventsDeprecated,
                     onProgress: handleImportProgress,
                 };
                 const { importedEvents } = await processWithJails(processData);
@@ -95,9 +105,10 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 });
                 const { errors, rest: supportedEventsWithRecurrenceID } = splitErrors(formattedEventsWithRecurrenceId);
                 handleImportProgress([], [], errors);
+
                 const { importedEvents: recurrenceImportedEvents } = await processWithJails({
                     ...processData,
-                    events: supportedEventsWithRecurrenceID,
+                    events: getEventsWithoutDefaultNotifications(supportedEventsWithRecurrenceID),
                 });
                 if (signal.aborted) {
                     return;

@@ -1,7 +1,7 @@
 import { PaginationParams } from '../../api/interface';
 import { ApiResponse } from '../Api';
 import { Nullable, RequireSome } from '../utils';
-import { CALENDAR_DISPLAY, CALENDAR_TYPE } from './Calendar';
+import { CALENDAR_DISPLAY, CALENDAR_TYPE, CalendarNotificationSettings } from './Calendar';
 import { CalendarMember, CalendarMemberInvitation } from './CalendarMember';
 import { Attendee, CalendarEvent, CalendarEventData } from './Event';
 import { ACCESS_LEVEL } from './Link';
@@ -81,18 +81,22 @@ export interface GetEventByUIDArguments extends Partial<PaginationParams> {
     CalendarType?: CALENDAR_TYPE;
 }
 
-export interface CalendarCreateEventBlobData {
+export interface CalendarCreateOrUpdateEventBlobData {
     CalendarKeyPacket?: string;
     CalendarEventContent?: Omit<CalendarEventData, 'Author'>[];
     SharedKeyPacket?: string;
     SharedEventContent?: Omit<CalendarEventData, 'Author'>[];
     PersonalEventContent?: Omit<CalendarEventData, 'Author'>;
+    Notifications: Nullable<CalendarNotificationSettings[]>;
     AttendeesEventContent?: Omit<CalendarEventData, 'Author'>[];
     Attendees?: Omit<Attendee, 'UpdateTime' | 'ID'>[];
 }
+export type CalendarCreateEventBlobData = RequireSome<
+    CalendarCreateOrUpdateEventBlobData,
+    'SharedEventContent' | 'SharedKeyPacket'
+>;
 
-export interface CreateCalendarEventData
-    extends RequireSome<CalendarCreateEventBlobData, 'SharedEventContent' | 'SharedKeyPacket'> {
+interface CalendarCreateOrUpdateEventMetaData {
     Permissions: number;
     IsOrganizer?: 0 | 1;
     RemovedAttendeeAddresses?: string[];
@@ -102,17 +106,18 @@ export interface CreateCalendarEventData
     }[];
 }
 
-export interface CreateSingleCalendarEventData extends CreateCalendarEventData {
-    MemberID: string;
-}
+export interface CreateOrUpdateCalendarEventData
+    extends CalendarCreateOrUpdateEventBlobData,
+        CalendarCreateOrUpdateEventMetaData {}
 
 export interface CreateSinglePersonalEventData {
     MemberID: string;
+    Notifications: Nullable<CalendarNotificationSettings[]>;
     PersonalEventContent?: Omit<CalendarEventData, 'Author'>;
 }
 
 export interface CreateLinkedCalendarEventData
-    extends RequireSome<Partial<CreateCalendarEventData>, 'SharedKeyPacket'> {
+    extends RequireSome<Partial<CreateOrUpdateCalendarEventData>, 'SharedKeyPacket'> {
     UID: string;
     SharedEventID: string;
     SourceCalendarID?: string;
@@ -126,7 +131,7 @@ export interface QueryCalendarAlarms {
 
 export interface CreateCalendarEventSyncData {
     Overwrite?: 0 | 1;
-    Event: CreateCalendarEventData;
+    Event: CreateOrUpdateCalendarEventData;
 }
 
 export interface DeleteCalendarEventSyncData {
@@ -136,7 +141,7 @@ export interface DeleteCalendarEventSyncData {
 
 export interface UpdateCalendarEventSyncData {
     ID: string;
-    Event?: Omit<CreateCalendarEventData, 'SharedKeyPacket' | 'CalendarKeyPacket'>;
+    Event?: Omit<CreateOrUpdateCalendarEventData, 'SharedKeyPacket' | 'CalendarKeyPacket'>;
 }
 
 export interface CreateLinkedCalendarEventsSyncData {

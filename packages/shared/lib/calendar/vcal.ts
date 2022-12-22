@@ -424,7 +424,7 @@ export const fromTriggerString = (trigger = '') => {
     return getInternalDurationValue(ICAL.Duration.fromString(trigger));
 };
 
-export const toTriggerString = (value: VcalDurationValue) => {
+export const toTriggerString = (value: VcalDurationValue): string => {
     return getIcalDurationValue(value).toString();
 };
 

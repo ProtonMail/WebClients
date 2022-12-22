@@ -20,8 +20,8 @@ export interface CalendarEventEncryptionData {
 
 export type DecryptedVeventResult = {
     veventComponent: VcalVeventComponent;
+    hasDefaultNotifications: boolean;
     verificationStatus: EVENT_VERIFICATION_STATUS;
     selfAddressData: SelfAddressData;
     encryptionData: CalendarEventEncryptionData;
 };
-export type DecryptedPersonalVeventMapResult = { [memberID: string]: DecryptedVeventResult | undefined };
