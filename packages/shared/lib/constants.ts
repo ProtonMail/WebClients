@@ -9,7 +9,6 @@ export const RETRY_DELAY_MAX = 10; // seconds
 export const RETRY_ATTEMPTS_MAX = 5; // how many times to try the same request
 export const OFFLINE_RETRY_DELAY = 2000; // how much time in ms to wait before retrying an offline request
 export const OFFLINE_RETRY_ATTEMPTS_MAX = 0; // how many times to try the same request when offline
-export const MILLISECOND = 1;
 export const SECOND = 1000;
 export const MINUTE = 60 * SECOND;
 export const HOUR = 60 * MINUTE;
@@ -17,6 +16,9 @@ export const DAY = 24 * HOUR;
 export const WEEK = 7 * DAY;
 export const MONTH = 4 * WEEK;
 export const YEAR = 12 * MONTH;
+export const MINUTE_IN_SECONDS = 60;
+export const HOUR_IN_SECONDS = 60 * MINUTE_IN_SECONDS;
+export const DAY_IN_SECONDS = 24 * HOUR_IN_SECONDS;
 
 // Max quantity for all addons
 export const MAX_VPN_ADDON = 2000;
