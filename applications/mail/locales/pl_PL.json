@@ -4163,11 +4163,11 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } nie obsługuje ${ forNow }:"
+      ],
       "for now": [
         "obecnie"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4997,7 +4997,7 @@
         "Folder"
       ],
       "For increased security, activate 2FA.": [
-        "Dla większego bezpieczeństwa, włącz uwierzytelnianie dwustopniowe."
+        "Dla większego bezpieczeństwa włącz uwierzytelnianie dwustopniowe."
       ],
       "For messages newer than ${ oldestDate }": [
         "Dla wiadomości nowszych niż ${ oldestDate }"
@@ -5615,7 +5615,7 @@
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "W celu zaimportowania wydarzeń najpierw utwórz kalendarz ${ CALENDAR_APP_NAME }. W utworzonym kalendarzu pojawią się zaimportowane wydarzenia."
+        "Aby zaimportować wydarzenia, utwórz kalendarz w ${ CALENDAR_APP_NAME }. W utworzonym kalendarzu pojawią się zaimportowane wydarzenia."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Aby podpisać ponownie kontakty, musimy porównać każdy kontakt z listą dostępnych kluczy szyfrowania na koncie. Jeśli dopasowanie nie zostanie znalezione, kontakt zostanie podpisany ponownie za pomocą głównego klucza szyfrowania."
@@ -7762,8 +7762,8 @@
       "Close": [
         "Zamknij"
       ],
-      "Don't show this again": [
-        "Nie pokazuj tego ponownie"
+      "Don't show this offer again": [
+        "Nie pokazuj tej oferty ponownie"
       ],
       "Special offer": [
         "Oferta specjalna"
@@ -7864,9 +7864,6 @@
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Subskrypcja będzie odnawiana automatycznie co 2 lata za tę samą cenę aż do momentu anulowania jej."
-      ],
-      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
-        "Subskrypcja będzie odnawiana automatycznie co roku za tę samą cenę aż do momentu anulowania jej."
       ]
     },
     "specialoffer: Label": {
@@ -7972,11 +7969,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Nasz wycofany z dystrybucji plan Visionary powrócił na czas ograniczony"
       ],
-      "Save more with 1 year of ${ planName }": [
-        "Zaoszczędź więcej dzięki rocznej subskrypcji ${ planName }"
+      "Save more with 2 years of ${ planName }": [
+        "Zaoszczędź więcej dzięki 2-letnij subskrypcji ${ planName }"
       ],
-      "Upgrade and save more with ${ planName }": [
-        "Uaktualnij i zaoszczędź więcej dzięki ${ planName }"
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Uaktualnij i zaoszczędź więcej dzięki 2-letniej ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {

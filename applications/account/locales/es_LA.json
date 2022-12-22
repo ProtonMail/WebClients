@@ -324,9 +324,6 @@
       "Edit subscription": [
         "Editar suscripción"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
       ],
@@ -2637,11 +2634,11 @@
       "${ name } deletion failed": [
         "Error al eliminar ${ name }"
       ],
-      "${ name } failed to move to not spam List": [
-        "${ name } failed to move to the not-spam list"
-      ],
       "${ name } failed to move to spam list": [
         "Error al mover ${ name } a la Lista de spam"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } no se pudo mover a la lista de \"no es spam\""
       ],
       "${ name } failed to move to your block list": [
         "Error al mover ${ name } a la Lista de bloqueo"
@@ -2754,11 +2751,11 @@
       "${ name } deletion failed": [
         "Error al eliminar ${ name }"
       ],
-      "${ name } failed to move to not spam List": [
-        "Error al mover ${ name } a la lista de no spam"
-      ],
       "${ name } failed to move to spam list": [
         "Error al mover ${ name } a la Lista de spam"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } no se pudo mover a la lista de \"no es spam\""
       ],
       "${ name } failed to move to your block list": [
         "Error al mover ${ name } a la Lista de bloqueo"
@@ -4091,11 +4088,11 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } no soporta ${ forNow }:"
+      ],
       "for now": [
         "por ahora"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -8261,6 +8258,26 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8330,26 +8347,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9484,8 +9481,8 @@
       "Close": [
         "Cerrar"
       ],
-      "Don't show this again": [
-        "No volver a mostrar esto"
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
       ],
       "Special offer": [
         "Oferta especial"
@@ -9576,9 +9573,6 @@
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
-      ],
-      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente cada año con la misma tarifa hasta que sea cancelada."
       ]
     },
     "specialoffer: Info": {
@@ -9687,11 +9681,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Nuestro legendario Plan Visionary volvió por tiempo limitado"
       ],
-      "Save more with 1 year of ${ planName }": [
-        "Ahorra más dinero contratando ${ planName } durante 1 año"
+      "Save more with 2 years of ${ planName }": [
+        "Ahorre más contratando ${ planName } por 2 años"
       ],
-      "Upgrade and save more with ${ planName }": [
-        "Cambia a un plan mejor y ahorra más dinero con ${ planName }"
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Mejore su plan y ahorre más contratando ${ planName } por 2 años"
       ]
     },
     "specialoffer: Tooltip": {

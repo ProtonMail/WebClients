@@ -2616,11 +2616,11 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ne prend pas en charge ${ forNow } :"
+      ],
       "for now": [
         "pour l'instant"
-      ],
-      "ProtonContacts does not support ${ forNow }:": [
-        "Proton Contacts does not support ${ forNow }:"
       ]
     },
     "Import error": {
@@ -4459,8 +4459,8 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages provenant de ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer tous les messages provenant de ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -5009,8 +5009,8 @@
       "Close": [
         "Fermer"
       ],
-      "Don't show this again": [
-        "Ne plus afficher"
+      "Don't show this offer again": [
+        "Ne plus montrer cette offre"
       ],
       "Special offer": [
         "Offre spéciale"
@@ -5101,9 +5101,6 @@
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même prix jusqu'à ce qu'il soit annulé."
-      ],
-      "This subscription will automatically renew every year at the same rate until it is cancelled.": [
-        "Cet abonnement se renouvellera automatiquement tous les ans au même prix jusqu'à ce qu'il soit annulé."
       ]
     },
     "specialoffer: Label": {
@@ -5199,7 +5196,7 @@
         "Offre de fin d'année"
       ],
       "End of Year Sale": [
-        "Offre fin d'année"
+        "Offre de fin d'année"
       ],
       "Get our premium bundle and save more": [
         "Profitez de notre offre groupée premium et économisez plus"
@@ -5207,11 +5204,11 @@
       "Our discontinued Visionary plan is back for a limited time only": [
         "Notre abonnement Visionary est de retour, pour une durée limitée"
       ],
-      "Save more with 1 year of ${ planName }": [
-        "Économisez plus avec 1 an de ${ planName }"
+      "Save more with 2 years of ${ planName }": [
+        "Économisez plus avec 2 ans de ${ planName }"
       ],
-      "Upgrade and save more with ${ planName }": [
-        "Passez au niveau supérieur et économisez plus avec ${ planName }"
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Passez au niveau supérieur et économisez plus avec 2 ans de ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -6036,7 +6033,7 @@
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."
       ],
       "Skip verification?": [
-        "Ignorer la vérification ?"
+        "Ignorer la vérification ?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Certains contacts à fusionner affichent des erreurs. Nous vous invitons à les examiner individuellement."
