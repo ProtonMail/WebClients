@@ -2,10 +2,11 @@ import { DragEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { EditorMetadata, EllipsisLoader, classnames, onlyDragFiles } from '@proton/components';
+import { EditorMetadata, EllipsisLoader, onlyDragFiles } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
@@ -60,7 +61,7 @@ const ComposerContent = ({
 
     return (
         <section
-            className={classnames([
+            className={clsx([
                 'flex-item-fluid-auto mb0-5 flex flex-column flex-nowrap relative composer-content pt0-5',
                 attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
@@ -75,7 +76,7 @@ const ComposerContent = ({
                 </>
             )}
             <div
-                className={classnames([
+                className={clsx([
                     'flex-item-fluid flex flex-column flex-nowrap relative',
                     isOutside ? 'mx0-5 on-tiny-mobile-ml0 on-tiny-mobile-mr0' : 'w100 mb0-5',
                 ])}
@@ -113,10 +114,7 @@ const ComposerContent = ({
                         collapsable
                         onRemoveAttachment={onRemoveAttachment}
                         onRemoveUpload={onRemoveUpload}
-                        className={classnames([
-                            'composer-attachments-list',
-                            isOutside && 'eo-composer-attachments-list',
-                        ])}
+                        className={clsx(['composer-attachments-list', isOutside && 'eo-composer-attachments-list'])}
                         outsideKey={outsideKey}
                     />
                 </div>
