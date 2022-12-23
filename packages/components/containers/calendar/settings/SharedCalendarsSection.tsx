@@ -17,7 +17,7 @@ import {
     Tooltip,
 } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import { FeatureCode } from '@proton/components/containers';
+import { FeatureCode, SettingsSectionWide } from '@proton/components/containers';
 import CalendarBadge from '@proton/components/containers/calendar/settings/CalendarBadge';
 import { useCalendarShareInvitationActions, useEventManager, useFeature, useLoading } from '@proton/components/hooks';
 import {
@@ -31,8 +31,6 @@ import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-
-import SettingsSection from '../../account/SettingsSection';
 
 const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalendar; displayEmail: boolean }) => {
     const {
@@ -189,7 +187,7 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
     }
 
     return (
-        <SettingsSection>
+        <SettingsSectionWide>
             <Table className="simple-table--has-actions">
                 <TableHeader>
                     <TableRow>
@@ -229,7 +227,7 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
                         })}
                 </TableBody>
             </Table>
-        </SettingsSection>
+        </SettingsSectionWide>
     );
 };
 
