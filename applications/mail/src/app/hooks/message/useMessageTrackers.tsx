@@ -98,7 +98,7 @@ export const useMessageTrackers = ({ message }: Props) => {
                 ? c('Info').t`No trackers found, but some images could not be loaded with tracking protection`
                 : c('Info').t`No email trackers found`;
             nextModalText = c('Info')
-                .t`Email trackers can violate your privacy. ${BRAND_NAME} did not find any trackers on this message.`;
+                .t`Email trackers can violate your privacy. ${BRAND_NAME} did not find any trackers in this message.`;
         } else {
             nextTitle = c('Info').ngettext(
                 msgid`${numberOfTrackers} email tracker blocked`,
