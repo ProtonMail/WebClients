@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
-import { Address, Organization, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
+import { Address, Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { getHasB2BPlan } from '@proton/shared/lib/helpers/subscription';
 
 export const getHasPmMeAddress = (addresses: Address[]) => {
     return addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
@@ -20,20 +19,19 @@ export const getMailAppRoutes = ({
     user,
     addresses,
     organization,
-    subscription,
     isSpyTrackerEnabled,
     isShowSenderImagesEnabled,
     isSmtpTokenEnabled,
 }: {
     user: UserModel;
     addresses: Address[];
-    subscription: Subscription;
     organization: Organization;
     isSpyTrackerEnabled: boolean;
     isShowSenderImagesEnabled: boolean;
     isSmtpTokenEnabled: boolean;
 }) => {
     const hasOrganization = !!organization?.HasKeys;
+    const isB2BOrganization = (organization?.MaxMembers || 0) > 6;
     return <const>{
         header: MAIL_APP_NAME,
         routes: {
@@ -189,7 +187,7 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`SMTP tokens`,
                         id: 'smtp-tokens',
-                        available: isSmtpTokenEnabled && getHasB2BPlan(subscription),
+                        available: isSmtpTokenEnabled && isB2BOrganization,
                     }
                 ],
             },
