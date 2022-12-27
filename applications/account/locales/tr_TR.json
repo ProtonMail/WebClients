@@ -324,6 +324,9 @@
       "Edit subscription": [
         "Aboneliği düzenle"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştirmek"
       ],
@@ -3839,11 +3842,6 @@
         "Varsayılan"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Varsayılan olarak kişisel gizliliği korur."
-      ]
-    },
     "Frequency of news": {
       "(1 email per month)": [
         "(ayda 1 e-posta)"
@@ -5058,7 +5056,7 @@
         "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Daha önce hiç iki aşamalı kimlik doğrulama kullanmadıysanız, kesinlikle ${ guideButton } kullanmanızı öneririz."
+        "Daha önce hiç iki aşamalı kimlik doğrulama kullanmadıysanız, kesinlikle ${ guideButton }. Ardından ayarları yapmanızı öneririz."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Hem SPF hem de DKIM ayarlarını yaptıysanız ve iki denetim de başarısız olursa, DMARC kullanarak diğer e-posta hizmetlerinin etki alanınız için nasıl e-posta sunması gerektiğini belirtebilirsiniz. Böylece istenmeyen e-posta göndericilerinin sizmiş gibi davranmasını zorlaştırabilirsiniz. Ancak bu işlem doğru şekilde yapılmazsa teslim sorunlarına da neden olabilir."
@@ -7466,7 +7464,7 @@
         "${ BRAND_NAME } kurumsal duyuruları"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } Kurumsal bülteni"
+        "${ BRAND_NAME } Business bülteni"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } bülteni"
@@ -8263,26 +8261,6 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -8352,6 +8330,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -8577,7 +8575,7 @@
         "Çevrimiçi yaptıklarınızla ilgili oturum kullanım günlükleri tutmuyoruz ve kişisel gizliliğinizi tehlikeye atabilecek üst verilerin kaydını tutmuyoruz"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "HIPAA/HITECH düzenlemelerine tabi olan müşterilere, korunan sağlık bilgilerini (PHI) koruma konusunda yardımcı olmaya kararlıyız. İmzalı BAA sözleşmeleri, tüm ${ BRAND_NAME } Kurumsal müşterileri tarafından kullanılabilir."
+        "HIPAA/HITECH düzenlemelerine tabi olan müşterilere, korunan sağlık bilgilerini (PHI) koruma konusunda yardımcı olmaya kararlıyız. İmzalı BAA sözleşmeleri, tüm ${ BRAND_NAME } Business müşterileri tarafından kullanılabilir."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "VPN hizmetimize bağlandığınızda, DNS sorgularınız şifreli VPN tünelimiz üzerinden aktarılır ve çevrimiçi kişisel gizliliğinizi ve güvenliğinizi artırır"
@@ -8591,7 +8589,7 @@
     },
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        "${ plus }, ${ bundle } ve ${ BRAND_NAME } Kurumsal tarifelerinde bulunur."
+        "${ plus }, ${ bundle } ve ${ BRAND_NAME } Business tarifelerinde bulunur."
       ],
       "Included with all ${ BRAND_NAME } for Business plans.": [
         "Tüm ${ BRAND_NAME } Business tarifelerinde bulunur."
