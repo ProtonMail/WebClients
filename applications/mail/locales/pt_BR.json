@@ -332,7 +332,7 @@
         "Editar número de telefone"
       ],
       "Edit sign-in details": [
-        "Editar detalhes de login"
+        "Editar detalhes de Início de sessão"
       ],
       "Email settings": [
         "Configurações do e-mail"
@@ -4740,7 +4740,7 @@
       "Email tracker protection is disabled": [
         "A proteção do rastreador de e-mail está desativada"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
         "Rastreadores de e-mail podem violar sua privacidade. ${ BRAND_NAME } não encontrou rastreadores nesta mensagem."
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
@@ -4751,7 +4751,7 @@
         "Rastreadores de e-mail podem violar sua privacidade. Ative a proteção do rastreador para evitar que os remetentes saibam se e quando você abriu uma mensagem."
       ],
       "Emails are automatically signed": [
-        "Emails são assinados automaticamente"
+        "E-mails são assinados automaticamente"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Os emails armazenados nesta pasta não serão excluídos e ainda podem ser encontrados na pasta Todos os emails."
@@ -5079,6 +5079,9 @@
       ],
       "per month.": [
         "por mês."
+      ],
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline é compatível apenas com o formato de Texto Simples."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticamente envia a mensagem usando o modo compositor atual."
@@ -5687,7 +5690,7 @@
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta do ${ BRAND_NAME } ."
       ],
       "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "Seu endereço de e-mail não será alterado. Mas em breve, você precisará fazer login em ${ link }."
+        "Seu endereço de e-mail não será alterado. Mas em breve, você precisará iniciar sessão em ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será utilizado para essa verificação única."
@@ -7157,7 +7160,7 @@
         "Uma maneira de entrar em contato com você"
       ],
       "Confirm password": [
-        "Confirme a senha"
+        "Confirmar senha"
       ],
       "E.g., ": [
         "Ex., "
@@ -8614,7 +8617,7 @@
         "Iniciar sessão e conceder acesso"
       ],
       "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "Faça login em ${ PROTON_ME_DOMAIN }"
+        "Iniciar sessão em ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Encerrar sessão"
@@ -8874,7 +8877,7 @@
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Não conseguimos verificar o servidor de email. Se você confia no mesmo, você pode pular essa verificação."
+        "Não conseguimos verificar o servidor de e-mail. Se você confia no mesmo, você pode pular essa verificação."
       ],
       "You will lose any customization you made so far.": [
         "Você perderá qualquer personalização que tenha feito até agora."
