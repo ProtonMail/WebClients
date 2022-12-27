@@ -1786,11 +1786,6 @@
         "Megabayt"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Varsayılan olarak kişisel gizliliği korur."
-      ]
-    },
     "Frequency of news": {
       "(1 email per month)": [
         "(ayda 1 e-posta)"
@@ -2072,7 +2067,7 @@
         "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Daha önce hiç iki aşamalı kimlik doğrulama kullanmadıysanız, kesinlikle ${ guideButton } kullanmanızı öneririz."
+        "Daha önce hiç iki aşamalı kimlik doğrulama kullanmadıysanız, kesinlikle ${ guideButton }. Ardından ayarları yapmanızı öneririz."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "İki aşamalı kimlik doğrulaması aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki aşamalı kimlik doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
@@ -2987,7 +2982,7 @@
         "${ BRAND_NAME } kurumsal duyuruları"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } Kurumsal bülteni"
+        "${ BRAND_NAME } Business bülteni"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } bülteni"
@@ -3705,7 +3700,7 @@
         "Çevrimiçi yaptıklarınızla ilgili oturum kullanım günlükleri tutmuyoruz ve kişisel gizliliğinizi tehlikeye atabilecek üst verilerin kaydını tutmuyoruz"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "HIPAA/HITECH düzenlemelerine tabi olan müşterilere, korunan sağlık bilgilerini (PHI) koruma konusunda yardımcı olmaya kararlıyız. İmzalı BAA sözleşmeleri, tüm ${ BRAND_NAME } Kurumsal müşterileri tarafından kullanılabilir."
+        "HIPAA/HITECH düzenlemelerine tabi olan müşterilere, korunan sağlık bilgilerini (PHI) koruma konusunda yardımcı olmaya kararlıyız. İmzalı BAA sözleşmeleri, tüm ${ BRAND_NAME } Business müşterileri tarafından kullanılabilir."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "VPN hizmetimize bağlandığınızda, DNS sorgularınız şifreli VPN tünelimiz üzerinden aktarılır ve çevrimiçi kişisel gizliliğinizi ve güvenliğinizi artırır"

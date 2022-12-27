@@ -4517,9 +4517,6 @@
       "Email tracker protection is disabled": [
         "メールトラッカー防止は無効です"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
-        "メールトラッカーはあなたのプライバシーを侵害します。${ BRAND_NAME } はこのメッセージのトラッカーを見つけることができませんでした。"
-      ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
         "メールトラッカーはあなたのプライバシーを侵害します。${ BRAND_NAME } は ${ numberOfTrackers } 件のトラッカーを見つけてブロックしました。"
       ],
@@ -7177,7 +7174,7 @@
     },
     "Side panel spotlight": {
       "Manage your contacts and view your calendar without leaving your app.": [
-        "アプリから去ることなく連絡先を管理したり、カレンダーを表示できます。"
+        "アプリ内で、連絡先の管理やカレンダーの表示ができます。"
       ],
       "Try the new side panel": [
         "新しいサイドパネルを試す"
@@ -7503,6 +7500,9 @@
       ],
       "Read receipt sent": [
         "開封確認が送信されました"
+      ],
+      "Undo in progress": [
+        "取り消し中"
       ],
       "Verification successful": [
         "検証に成功しました"

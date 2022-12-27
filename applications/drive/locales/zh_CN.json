@@ -2525,6 +2525,9 @@
       ]
     },
     "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "导入的邀请在 ${ CALENDAR_APP_NAME } 中显示为没有组织者和参与者详细信息的简单活动。要获取活动更新或者查看参与人员，请让组织者用您的 ${ BRAND_NAME } 邮箱地址邀请您。"
+      ],
       "This file contains event invitations:": [
         "此文件包含活动邀请："
       ],
@@ -3254,6 +3257,9 @@
       "Loading preview": [
         "正在载入预览"
       ],
+      "Loading...": [
+        "加载中..."
+      ],
       "Merged": [
         "已合并"
       ],
@@ -3596,6 +3602,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "我们搬家啦！请使用我们的新域名登录：${ link }。"
+      ],
       "Week": [
         "周"
       ],
@@ -3891,6 +3900,18 @@
       ],
       "Emails": [
         "电子邮件"
+      ],
+      "Emails (all messages)": [
+        "邮件（所有信息）"
+      ],
+      "Emails (last 12 months)": [
+        "邮件（过去 12 个月）"
+      ],
+      "Emails (last 3 months)": [
+        "邮件（过去 3 个月）"
+      ],
+      "Emails (last month)": [
+        "邮件（上个月）"
       ],
       "Enable Beta Access": [
         "启用测试版功能"
@@ -4207,6 +4228,11 @@
         "${ Label.Name } 已创建"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "侧面板"
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "清除浏览器缓存"
@@ -4254,6 +4280,20 @@
       ],
       "Your import is starting": [
         "正在启动导入"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从文件夹 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从标签 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从 ${ selectedItemsToImportCount } / ${ itemsToImportCount } 个文件夹中导入 所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从 ${ selectedItemsToImportCount } / ${ itemsToImportCount } 个标签中导入 所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
