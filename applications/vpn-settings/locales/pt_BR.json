@@ -141,7 +141,7 @@
         "Editar número de telefone"
       ],
       "Edit sign-in details": [
-        "Editar detalhes de login"
+        "Editar detalhes de Início de sessão"
       ],
       "Edit subscription": [
         "Editar assinatura"
@@ -2114,7 +2114,7 @@
         "Conexão com a internet restaurada."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Saiba como fazer login no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
+        "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
       ],
       "Learn more": [
         "Saiba mais"
@@ -2135,7 +2135,7 @@
         "Carregando..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Faça login no ${ MAIL_APP_NAME } para ativar seu endereço"
+        "Inicie sessão no ${ MAIL_APP_NAME } para ativar seu endereço"
       ],
       "lose access to all current encrypted data": [
         "perder o acesso a todos os dados criptografados atuais"
@@ -2981,22 +2981,22 @@
     },
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
-        "Comunicados de ${ BRAND_NAME } beta"
+        "Comunicados do ${ BRAND_NAME } beta"
       ],
       "${ BRAND_NAME } company announcements": [
-        "Comunicados da empresa de ${ BRAND_NAME }"
+        "Comunicados da empresa do ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Boletim de ${ BRAND_NAME } for Business"
+        "Boletim do ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } newsletter": [
-        "Boletim de ${ BRAND_NAME }"
+        "Boletim do ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "Ofertas e promoções de ${ BRAND_NAME }"
+        "Ofertas e promoções do ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
-        "Comunicados de produto de ${ BRAND_NAME }"
+        "Comunicados de produto do ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {
@@ -3541,7 +3541,7 @@
         "Revisar assinatura e pagar"
       ],
       "Start exploring the ${ BRAND_NAME } universe": [
-        "Comece a explorar o universo ${ BRAND_NAME }"
+        "Comece a explorar o universo do ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Mudar de plano?"
@@ -4567,7 +4567,7 @@
         "Parabéns por escolher a privacidade!"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Crie suaconta do ${ BRAND_NAME }"
+        "Crie sua conta do ${ BRAND_NAME }"
       ],
       "Create your ${ BRAND_NAME } address": [
         "Criar seu endereço de ${ BRAND_NAME }"
@@ -4871,6 +4871,9 @@
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "O novo ciclo de assinatura começa em ${ formattedTime }"
       ]
     },
     "Tor out of date": {
