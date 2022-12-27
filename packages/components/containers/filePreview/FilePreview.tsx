@@ -19,6 +19,7 @@ import CloseModal from './CloseModal';
 import Header, { SharedStatus } from './Header';
 import ImagePreview from './ImagePreview';
 import PDFPreview from './PDFPreview';
+import PreviewError from './PreviewError';
 import PreviewLoader from './PreviewLoader';
 import SignatureIssue from './SignatureIssue';
 import TextPreview from './TextPreview';
@@ -28,6 +29,7 @@ import VideoPreview from './VideoPreview';
 interface Props {
     isMetaLoading?: boolean;
     isLoading: boolean;
+    error?: string;
 
     fileName?: string;
     mimeType?: string;
@@ -49,6 +51,7 @@ const FilePreview = (
     {
         isMetaLoading = false,
         isLoading = false,
+        error,
 
         contents,
         fileName,
@@ -134,6 +137,10 @@ const FilePreview = (
     ]);
 
     const renderPreview = () => {
+        if (error) {
+            return <PreviewError error={error} />;
+        }
+
         if (!imgThumbnailUrl && isLoading) {
             return <PreviewLoader />;
         }

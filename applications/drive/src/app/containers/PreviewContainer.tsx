@@ -1,5 +1,7 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { RouteComponentProps, useLocation } from 'react-router-dom';
+
+import { c } from 'ttag';
 
 import { FilePreview, NavigationControl, useModals } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
@@ -30,7 +32,6 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const { shareId, linkId } = match.params;
     const { navigateToLink, navigateToSharedURLs, navigateToTrash, navigateToRoot, navigateToSearch } = useNavigate();
     const { setFolder } = useActiveShare();
-    const [, setError] = useState();
     const { createModal, removeModal } = useModals();
     const { query: lastQuery } = useSearchResults();
     const { saveFile } = useActions();
@@ -61,20 +62,17 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     }, [shareId, link?.parentLinkId]);
 
     useEffect(() => {
-        if (error) {
-            if (
-                // Block not found (storage response).
-                error.status === HTTP_STATUS_CODE.NOT_FOUND ||
-                // Meta data not found (API response).
-                error.data?.Code === RESPONSE_CODE.NOT_FOUND ||
-                error.data?.Code === RESPONSE_CODE.INVALID_ID
-            ) {
-                navigateToRoot();
-            } else {
-                setError(() => {
-                    throw error;
-                });
-            }
+        if (!error) {
+            return;
+        }
+        if (
+            // Block not found (storage response).
+            error.status === HTTP_STATUS_CODE.NOT_FOUND ||
+            // Meta data not found (API response).
+            error.data?.Code === RESPONSE_CODE.NOT_FOUND ||
+            error.data?.Code === RESPONSE_CODE.INVALID_ID
+        ) {
+            navigateToRoot();
         }
     }, [error]);
 
@@ -168,6 +166,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         <FilePreview
             isMetaLoading={isLinkLoading}
             isLoading={isContentLoading}
+            error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
             contents={contents}
             fileName={link?.name}
             mimeType={link?.mimeType}
