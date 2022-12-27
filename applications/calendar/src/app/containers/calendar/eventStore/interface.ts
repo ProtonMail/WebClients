@@ -3,6 +3,7 @@ import createIntervalTree from '@protontech/interval-tree';
 import { SHARED_SIGNED_FIELDS } from '@proton/shared/lib/calendar/constants';
 import { OccurrenceIterationCache } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { RequireSome } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, CalendarEventSharedData, DecryptedVeventResult } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
@@ -45,7 +46,14 @@ export interface CalendarEventStoreRecord {
     eventComponent: SharedVcalVeventComponent | MetadataVcalVeventComponent;
     eventReadResult?: EventReadResult;
     eventPromise?: Promise<void>;
+    eventReadRetry?: () => Promise<void>;
 }
+
+export const getEventStoreRecordHasEventData = (
+    record: CalendarEventStoreRecord
+): record is RequireSome<CalendarEventStoreRecord, 'eventData'> => {
+    return !!record.eventData;
+};
 
 export type RecurringEventsCache = Map<string, RecurringCache>;
 export type EventsCache = Map<string, CalendarEventStoreRecord>;
@@ -68,6 +76,7 @@ export interface CalendarsEventsCache {
     };
     getCachedEvent: (calendarID: string, eventID: string) => CalendarEvent | undefined;
     getCachedRecurringEvent: (calendarID: string, uid: string) => RecurringCache | undefined;
+    retryReadEvent: (calendarID: string, eventID: string) => Promise<void>;
     rerender?: () => void;
 }
 
