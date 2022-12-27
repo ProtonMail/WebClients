@@ -539,6 +539,9 @@
       ]
     },
     "Action title": {
+      "Share with ${ BRAND_NAME } users": [
+        "与 ${ BRAND_NAME } 用户分享"
+      ],
       "Share with anyone": [
         "分享至他人"
       ]
@@ -573,6 +576,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } 开始于 ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } 开始于 ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } 于昨天开始"
       ],
@@ -584,6 +590,15 @@
       ],
       "${ title } starts now": [
         "${ title } 现在开始"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "${ title } 开始于 ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } 开始于 ${ formattedDate } ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "${ title } 开始于 ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "${ title } 在 ${ formattedDateWithTime } 开始"
@@ -728,6 +743,11 @@
         "继续使用 ${ MAIL_APP_NAME }。"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "添加用户或群组"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "是否出席？"
@@ -792,6 +812,12 @@
       "Unable to create more calendar links": [
         "无法创建更多日历链接"
       ],
+      "Unable to share this calendar with more ${ BRAND_NAME } users": [
+        "无法与更多 ${ BRAND_NAME } 用户分享此日历"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "一份日历最多只能有 ${ MAX_CALENDAR_MEMBERS } 人加入。要与更多 ${ BRAND_NAME } 账户分享该日历，请移除部分用户。"
+      ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } links for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "你已经达到了该日历最大${ MAX_LINKS_PER_CALENDAR } 链接数。\n若要创建此日历的新链接，请删除一个现有的链接。"
       ]
@@ -799,6 +825,9 @@
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "编辑（查看、创建、编辑日程详情）"
+      ],
+      "View (see all event details)": [
+        "查看（查看所有活动详细信息）"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -876,6 +905,11 @@
     "Calendar view selector": {
       "Change time range to": [
         "将时间范围改为"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "还有 ${ more } 个"
       ]
     },
     "Collapsible tooltip": {
@@ -2150,11 +2184,17 @@
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
       ],
+      "No public key for ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } 地址无公钥"
+      ],
       "No valid address found": [
         "未找到有效地址"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "没有为内部用户检索到的密钥用于发送"
+      ],
+      "Not a ${ BRAND_NAME } account": [
+        "不是 ${ BRAND_NAME } 账户"
       ],
       "Not a valid number": [
         "无效号码"
@@ -2207,6 +2247,9 @@
       "Some contacts don't have a valid email address: ${ list }": [
         "某个/些联系人没有有效的电子邮件地址: ${ list }"
       ],
+      "Some contacts have no email addresses: ${ list }": [
+        "某些联系人没有电子邮件地址： ${ list }"
+      ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "部分联系人没有邮箱地址：${ noEmailsContactNamesList }"
       ],
@@ -2215,6 +2258,9 @@
       ],
       "Some groups have invalid emails: ${ list }": [
         "某个/些群组存在无效的电子邮件地址: ${ list }"
+      ],
+      "Some groups have no contacts: ${ list }": [
+        "某些群组没有联系人：${ list }"
       ],
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "某个/些群组没有联系人：${ noContactGroupList } "
@@ -2759,6 +2805,9 @@
       ]
     },
     "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
+        "导入的邀请在 ${ CALENDAR_APP_NAME } 中显示为没有组织者和参与者详细信息的简单活动。要获取活动更新或者查看参与人员，请让组织者用您的 ${ BRAND_NAME } 邮箱地址邀请您。"
+      ],
       "This file contains event invitations:": [
         "此文件包含活动邀请："
       ],
@@ -3149,8 +3198,14 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "任何有此链接的人都可以在日历上看到您的状态 (空闲/忙碌)。他们无法查看事件详细信息，例如标题、地点或参与者。"
       ],
+      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
+        "每个邀请最多可以使 ${ MAX_ATTENDEES } 人参与"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
+      ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "分享此日历的全部事件详情，即表示您同意授权 ${ BRAND_NAME } 访问此日历的加密信息。"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
@@ -3542,6 +3597,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
+      "We've moved! Please sign in at our new domain: ${ link }.": [
+        "我们搬家啦！请使用我们的新域名登录：${ link }。"
+      ],
       "Week": [
         "周"
       ],
@@ -3834,6 +3892,18 @@
       "Emails": [
         "电子邮件"
       ],
+      "Emails (all messages)": [
+        "邮件（所有信息）"
+      ],
+      "Emails (last 12 months)": [
+        "邮件（过去 12 个月）"
+      ],
+      "Emails (last 3 months)": [
+        "邮件（过去 3 个月）"
+      ],
+      "Emails (last month)": [
+        "邮件（上个月）"
+      ],
       "Enable Beta Access": [
         "启用测试版功能"
       ],
@@ -4080,6 +4150,11 @@
         "${ Label.Name } 已创建"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "侧面板"
+      ]
+    },
     "Link": {
       "Calendars": [
         "日历"
@@ -4109,6 +4184,11 @@
         "这是什么？"
       ]
     },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "在 ${ CALENDAR_APP_NAME } 中打开"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "即将准备就绪"
@@ -4130,6 +4210,20 @@
       ],
       "Your import is starting": [
         "正在启动导入"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从文件夹 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从标签 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从 ${ selectedItemsToImportCount } / ${ itemsToImportCount } 个文件夹中导入 所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从 ${ selectedItemsToImportCount } / ${ itemsToImportCount } 个标签中导入 所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -4786,9 +4880,29 @@
         "未能更新设置"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+        "分享日历链接即可邀请非 ${ BRAND_NAME } 用户"
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
         "每份日历最多只能有 ${ MAX_CALENDAR_MEMBERS } 名成员"
+      ]
+    },
+    "Share calendar modal description": {
+      "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
+        "添加您想分享 ${ calendarName } 的 ${ BRAND_NAME } 账号，我们会为您发送邀请。"
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "输入一个邮件地址或组名"
+      ]
+    },
+    "Share calendar modal title": {
+      "Share with ${ BRAND_NAME } users": [
+        "与 ${ BRAND_NAME } 用户分享"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5451,6 +5565,16 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "选择一个数字"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "创建日历"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "编辑日历"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -4904,8 +4904,8 @@
       "Email tracker protection is disabled": [
         "Защита от трекеров электронной почты отключена"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers on this message.": [
-        "Трекеры электронной почты могут нарушить вашу конфиденциальность. ${ BRAND_NAME } не обнаружил никаких трекеров на этом сообщении."
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
+        "Отслеживания электронной почты могут нарушить вашу конфиденциальность. ${ BRAND_NAME } не обнаружил отслеживание в этом сообщении."
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
         "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашел и заблокировал ${ numberOfTrackers } трекер.",
@@ -5611,6 +5611,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Чтобы импортировать события, сначала создайте календарь в ${ CALENDAR_APP_NAME }. Именно в нем события будут отображаться после импорта."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Для повторной подписи контактов нам необходимо проверить каждый контакт с помощью списка ключей шифрования, доступных в вашем аккаунте. Если совпадение не найдено, ваш контакт будет повторно подписан основным ключом шифрования."

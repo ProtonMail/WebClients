@@ -238,7 +238,7 @@
         "Excluir"
       ],
       "Delete link": [
-        "Deletar link"
+        "Excluir link"
       ],
       "Delete permanently": [
         "Excluir permanentemente"
@@ -319,10 +319,13 @@
         "Editar Sieve"
       ],
       "Edit sign-in details": [
-        "Editar detalhes de login"
+        "Editar detalhes de Início de sessão"
       ],
       "Edit subscription": [
         "Editar assinatura"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
@@ -559,7 +562,7 @@
         "atualizar a página"
       ],
       "Reload": [
-        "Atualizar"
+        "Recarregar"
       ],
       "Remove": [
         "Remover"
@@ -772,7 +775,7 @@
         "Suporte"
       ],
       "Switch account": [
-        "Trocar de conta"
+        "Alternar de conta"
       ],
       "Top up": [
         "Recarregar"
@@ -2637,6 +2640,9 @@
       "${ name } failed to move to spam list": [
         "${ name } falhou ao mover para a lista de spam"
       ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } falhou ao mover para a lista de não spam"
+      ],
       "${ name } failed to move to your block list": [
         "${ name } falhou ao mover para a sua lista de bloqueio"
       ],
@@ -2750,6 +2756,9 @@
       ],
       "${ name } failed to move to spam list": [
         "${ name } falhou ao mover para a lista de spam"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } falhou ao mover para a lista de não spam"
       ],
       "${ name } failed to move to your block list": [
         "${ name } falhou ao mover para a sua lista de bloqueio"
@@ -3240,6 +3249,9 @@
       ],
       "You must set a name": [
         "Você deve especificar um nome"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "Você precisa ter um endereço de domínio personalizado para gerar um token de envio SMTP."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Sua conta ou organização tem uma fatura vencida. Por favor, pague todas as faturas pendentes."
@@ -4729,7 +4741,7 @@
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Antes de começar a receber emails em endereços de domínio personalizados no ${ MAIL_APP_NAME }, você precisa adicionar o seguinte registro MX ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
+        "Antes de começar a receber e-mails em endereços de domínio personalizados no ${ MAIL_APP_NAME }, você precisa adicionar o seguinte registro MX ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails de seus novos endereços, você precisa criar chaves de criptografia para eles."
@@ -4838,7 +4850,7 @@
         "Exclua quaisquer outros registros MX ou certifique-se de que a prioridade do ${ MAIL_APP_NAME } é o menor número."
       ],
       "Delete link?": [
-        "Deletar link?"
+        "Excluir link?"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "NÃO esqueça esta senha. Se você esquecê-la, você não poderá acessar sua conta ou descriptografar suas mensagens."
@@ -5183,7 +5195,7 @@
         "Grandes importações podem levar vários dias."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Saiba como fazer login no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
+        "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
       ],
       "Learn more": [
         "Saiba mais"
@@ -5225,7 +5237,7 @@
         "Carregando..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Faça login no ${ MAIL_APP_NAME } para ativar seu endereço"
+        "Inicie sessão no ${ MAIL_APP_NAME } para ativar seu endereço"
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Os registros incluem tentativas de autenticação para todos os serviços do ${ BRAND_NAME } que usam suas credenciais ${ BRAND_NAME }."
@@ -5565,6 +5577,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "O SMTP permite que serviços ou dispositivos de terceiros enviem e-mails através do ${ MAIL_APP_NAME }. É um novo recurso disponível para usuários comerciais selecionados. Envie um e-mail para ${ emailLink } para solicitar acesso."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "O SMTP permite que serviços ou dispositivos de terceiros enviem e-mails através do ${ MAIL_APP_NAME }. Para usar esse recurso, comece gerando um novo token."
       ],
       "Some keys successfully reactivated": [
         "Algumas chaves foram reativadas com sucesso"
@@ -5957,7 +5975,7 @@
         "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
       ],
       "You are signed in to the account ${ memberAddress }.": [
-        "Você está conectado à conta ${ memberAddress }."
+        "Você iniciou sessão à conta ${ memberAddress }."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Você pode mesclar calendários importados com calendários existentes de ${ BRAND_NAME } ."
@@ -5975,7 +5993,7 @@
         "Você pode importar um tipo de dado por vez."
       ],
       "You can now access and manage the account as an administrator.": [
-        "You can now access and manage the account as an administrator."
+        "Você agora pode acessar e gerenciar a conta como um administrador."
       ],
       "You can now close this window.": [
         "Já pode fechar esta janela."
@@ -7445,22 +7463,22 @@
     },
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
-        "Comunicados de ${ BRAND_NAME } beta"
+        "Comunicados do ${ BRAND_NAME } beta"
       ],
       "${ BRAND_NAME } company announcements": [
-        "Comunicados da empresa de ${ BRAND_NAME }"
+        "Comunicados da empresa do ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Boletim de ${ BRAND_NAME } for Business"
+        "Boletim do ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } newsletter": [
-        "Boletim de ${ BRAND_NAME }"
+        "Boletim do ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "Ofertas e promoções de ${ BRAND_NAME }"
+        "Ofertas e promoções do ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
-        "Comunicados de produto de ${ BRAND_NAME }"
+        "Comunicados de produto do ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -8248,32 +8266,12 @@
         "Gerenciamento de equipes"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium do ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium do ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
-        "A ${ BRAND_NAME } permite que você crie endereços de e-mail e gerencie contas para subusuários. Ideal para famílias e organizações."
+        "O ${ BRAND_NAME } permite que você crie endereços de e-mail e gerencie contas para subusuários. Ideal para famílias e organizações."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* Com a assinatura de 1 mês. Outras opções de assinatura estão disponíveis na finalização da compra."
@@ -8337,6 +8335,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium do ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium do ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8406,7 +8424,7 @@
         "Revisar assinatura e pagar"
       ],
       "Start exploring the ${ BRAND_NAME } universe": [
-        "Comece a explorar o universo ${ BRAND_NAME }"
+        "Comece a explorar o universo do ${ BRAND_NAME }"
       ],
       "Switch plans?": [
         "Mudar de plano?"
@@ -9063,7 +9081,7 @@
         "Confirmar"
       ],
       "Confirm password": [
-        "Confirme a senha"
+        "Confirmar senha"
       ],
       "domain.com": [
         "dominio.com"
@@ -10416,7 +10434,7 @@
         "Criar contas de usuários"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Crie suaconta do ${ BRAND_NAME }"
+        "Crie sua conta do ${ BRAND_NAME }"
       ],
       "Create your ${ BRAND_NAME } address": [
         "Criar seu endereço de ${ BRAND_NAME }"
@@ -10892,7 +10910,7 @@
         "Iniciado sessão com sucesso!"
       ],
       "Signed in to member account": [
-        "Conectado à conta de membro"
+        "Iniciado sessão à conta de membro"
       ],
       "SMTP tokens": [
         "Tokens SMTP"
@@ -11168,7 +11186,7 @@
         "Ativar/desativar notificações na área de trabalho e dispositivos móveis"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Habilitar logs avançados registra o endereço IP para cada evento no registro de segurança."
+        "Habilitar registros avançados registra o endereço IP para cada evento no registro de segurança."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente categoriza alguns e-mails como Social e Promoções. Você pode selecionar para onde importar esses e-mails."
@@ -11205,6 +11223,9 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "O novo ciclo de assinatura começa em ${ formattedTime }"
       ],
       "This address has been disabled": [
         "Este endereço foi desativado"
@@ -11446,7 +11467,7 @@
         "As configurações de data e hora em seu dispositivo estão dessincronizadas. ${ learnMore }"
       ],
       "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "O dispositivo ou serviço que utiliza esse token não poderá mais enviar e-mail através de ${ MAIL_APP_NAME }."
+        "O dispositivo ou serviço que utiliza esse token não poderá mais enviar e-mail através do ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta do ${ BRAND_NAME }. Por favor, considere realizar sua importação de forma personalizada."
@@ -11458,7 +11479,7 @@
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Não conseguimos verificar o servidor de email. Se você confia no mesmo, você pode pular essa verificação."
+        "Não conseguimos verificar o servidor de e-mail. Se você confia no mesmo, você pode pular essa verificação."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectamos um problema com a configuração do seu DNS. Por favor, certifique-se de que seus registros estejam de acordo com as instruções abaixo. Se o problema persistir, teremos que desativar o DKIM."
