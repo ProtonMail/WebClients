@@ -2,8 +2,8 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox } from '../input';
-import { Label } from '../label';
+import { Checkbox } from '../../input';
+import { Label } from '../../label';
 
 interface Props {
     link: string;
