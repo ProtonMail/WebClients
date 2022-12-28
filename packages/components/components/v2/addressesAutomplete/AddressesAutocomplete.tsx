@@ -1,5 +1,6 @@
 import { KeyboardEvent, RefObject, forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
+import { useCombinedRefs } from '@proton/hooks';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
@@ -8,7 +9,6 @@ import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useCombinedRefs } from '../../../hooks';
 import {
     AddressesAutocompleteItem,
     GroupsWithContactsMap,

@@ -2,8 +2,9 @@ import { MouseEvent, ReactNode, RefObject, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames, useCombinedRefs, useHotkeys } from '@proton/components';
+import { classnames, useHotkeys } from '@proton/components';
 import { highlightNode } from '@proton/encrypted-search';
+import { useCombinedRefs } from '@proton/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';

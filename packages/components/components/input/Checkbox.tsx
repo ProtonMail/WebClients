@@ -1,9 +1,9 @@
 import { InputHTMLAttributes, LabelHTMLAttributes, forwardRef, useEffect, useRef } from 'react';
 
+import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { classnames } from '../../helpers';
-import { useCombinedRefs } from '../../hooks';
 import Icon from '../icon/Icon';
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
