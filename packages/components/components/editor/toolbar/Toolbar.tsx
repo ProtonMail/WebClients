@@ -73,7 +73,6 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     className={classnames(['flex-item-noshrink', config.bold.isActive && 'is-active'])}
                     title={c('Action').t`Bold`}
                     data-testid="editor-bold"
-                    tabIndex={-1}
                 >
                     <Icon name="text-bold" className="mauto" alt={c('Action').t`Bold`} />
                 </ToolbarButton>
@@ -83,7 +82,6 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     className={classnames(['flex-item-noshrink', config.italic.isActive && 'is-active'])}
                     title={c('Action').t`Italic`}
                     data-testid="editor-italic"
-                    tabIndex={-1}
                 >
                     <Icon name="text-italic" className="mauto" alt={c('Action').t`Italic`} />
                 </ToolbarButton>
@@ -93,7 +91,6 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     className={classnames(['flex-item-noshrink', config.underline.isActive && 'is-active'])}
                     title={c('Action').t`Underline`}
                     data-testid="editor-underline"
-                    tabIndex={-1}
                 >
                     <Icon name="text-underline" className="mauto" alt={c('Action').t`Underline`} />
                 </ToolbarButton>
@@ -106,7 +103,6 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         className={classnames(['flex-item-noshrink', config.unorderedList.isActive && 'is-active'])}
                         title={c('Action').t`Unordered list`}
                         data-testid="editor-unordered-list"
-                        tabIndex={-1}
                     >
                         <Icon name="list-bullets" className="mauto on-rtl-mirror" alt={c('Action').t`Unordered list`} />
                     </ToolbarButton>
@@ -116,7 +112,6 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         className={classnames(['flex-item-noshrink', config.orderedList.isActive && 'is-active'])}
                         title={c('Action').t`Ordered list`}
                         data-testid="editor-ordered-list"
-                        tabIndex={-1}
                     >
                         <Icon name="list-numbers" className="mauto on-rtl-mirror" alt={c('Action').t`Ordered list`} />
                     </ToolbarButton>
@@ -138,7 +133,6 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         className={classnames(['flex-item-noshrink', config.blockquote.isActive && 'is-active'])}
                         title={c('Action').t`Quote`}
                         data-testid="editor-quote"
-                        tabIndex={-1}
                     >
                         <Icon name="text-quote" className="mauto" alt={c('Action').t`Quote`} />
                     </ToolbarButton>
@@ -147,7 +141,6 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         className="flex-item-noshrink"
                         title={c('Action').t`Insert link`}
                         data-testid="editor-insert-link"
-                        tabIndex={-1}
                     >
                         <Icon name="link" className="mauto" alt={c('Action').t`Insert link`} />
                     </ToolbarButton>
@@ -156,7 +149,6 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                         className="flex-item-noshrink"
                         title={c('Action').t`Clear all formatting`}
                         data-testid="editor-clear-formatting"
-                        tabIndex={-1}
                     >
                         <Icon name="eraser" className="mauto" alt={c('Action').t`Clear all formatting`} />
                     </ToolbarButton>
@@ -167,7 +159,6 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                                 onClick={config.image.showModal}
                                 className="flex-item-noshrink"
                                 title={c('Action').t`Insert image`}
-                                tabIndex={-1}
                             >
                                 <Icon name="file-image" className="mauto" alt={c('Action').t`Insert image`} />
                             </ToolbarButton>
