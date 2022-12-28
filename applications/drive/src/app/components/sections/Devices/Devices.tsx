@@ -87,6 +87,7 @@ function Devices({ view }: Props) {
                 position={browserItemContextMenu.position}
             />
             <FileBrowser
+                isMultiSelectionDisabled={true}
                 caption={sectionTitle}
                 items={browserItems}
                 headerItems={headerItems}

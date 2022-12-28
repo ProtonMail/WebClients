@@ -25,6 +25,8 @@ interface ListItemData<T extends FileBrowserBaseItem> {
 
     Cells: React.FC<{ item: T }>[];
 
+    isMultiSelectionDisabled: boolean;
+
     onItemContextMenu?: (e: any) => void;
     onItemOpen?: (id: BrowserItemId) => void;
     onItemRender?: (item: T) => void;
@@ -43,6 +45,8 @@ const ListItemRow = <T extends FileBrowserBaseItem>({ index, style, data }: List
         itemCount,
 
         Cells,
+
+        isMultiSelectionDisabled,
 
         onItemContextMenu,
         onItemOpen,
@@ -70,6 +74,7 @@ const ListItemRow = <T extends FileBrowserBaseItem>({ index, style, data }: List
             style={style}
             item={item}
             Cells={Cells}
+            isMultiSelectionDisabled={isMultiSelectionDisabled}
             onItemContextMenu={onItemContextMenu}
             onItemOpen={onItemOpen}
             onItemRender={onItemRender}
@@ -110,6 +115,8 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
     loading = false,
     sortParams,
 
+    isMultiSelectionDisabled,
+
     Cells,
 
     onItemContextMenu,
@@ -139,6 +146,8 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
         isDesktop,
         itemCount,
         loading,
+
+        isMultiSelectionDisabled,
 
         Cells,
 

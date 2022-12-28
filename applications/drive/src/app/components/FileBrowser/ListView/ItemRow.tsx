@@ -13,6 +13,8 @@ export interface ListItemProps<T extends FileBrowserBaseItem> {
     item: T;
     style?: React.CSSProperties;
 
+    isMultiSelectionDisabled?: boolean;
+
     onItemContextMenu?: (e: any) => void;
     onItemOpen?: (id: string) => void;
     onItemRender?: (item: any) => void;
@@ -25,6 +27,8 @@ const ItemRow = <T extends FileBrowserBaseItem>({
     item,
     Cells,
 
+    isMultiSelectionDisabled,
+
     onItemContextMenu,
     onItemOpen,
     onItemRender,
@@ -35,6 +39,7 @@ const ItemRow = <T extends FileBrowserBaseItem>({
         isItemLocked: item.isLocked,
         onItemOpen,
         onItemContextMenu: onItemContextMenu,
+        isMultiSelectionDisabled,
     });
     const dragnDropControls = useDragAndDrop({
         item,
