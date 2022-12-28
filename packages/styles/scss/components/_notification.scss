@@ -13,7 +13,7 @@
 	}
 
 	&--shifted {
-		inset-block-end: calc(var(--shift-custom) + env(safe-area-inset-bottom));
+		inset-block-end: calc(var(--shift-custom-y) + env(safe-area-inset-bottom));
 	}
 }
 

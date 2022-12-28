@@ -51,6 +51,7 @@ export const notificationManager = {
     removeNotification: jest.fn(),
     hideNotification: jest.fn(),
     clearNotifications: jest.fn(),
+    setOffset: jest.fn(),
 };
 export const eventManager = {
     start: jest.fn(),

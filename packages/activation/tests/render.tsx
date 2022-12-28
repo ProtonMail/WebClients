@@ -68,6 +68,7 @@ const notificationsManager = {
     createNotification: () => 0,
     hideNotification: () => {},
     removeNotification: () => {},
+    setOffset: () => {},
 };
 
 let history = createMemoryHistory();
