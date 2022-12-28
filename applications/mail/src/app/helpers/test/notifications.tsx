@@ -4,6 +4,7 @@ import NotificationsContainer from '@proton/components/containers/notifications/
 import { NotificationOptions } from '@proton/components/containers/notifications/interfaces';
 import createNotificationManager from '@proton/components/containers/notifications/manager';
 import NotificationsContext from '@proton/components/containers/notifications/notificationsContext';
+import noop from '@proton/utils/noop';
 
 import { useLongLivingState } from '../../hooks/useLongLivingState';
 
@@ -22,7 +23,7 @@ const NotificationsTestProvider = ({ children }: Props) => {
     const managerRef = useRef<ReturnType<typeof createNotificationManager>>();
 
     if (!managerRef.current) {
-        managerRef.current = createNotificationManager(setNotifications as any);
+        managerRef.current = createNotificationManager(setNotifications as any, noop);
     }
 
     const manager = managerRef.current;
