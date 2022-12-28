@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
 
-import { BrowserItemId, DragMoveControls } from '../interface';
+import { BrowserItemId } from '../interface';
 import { useSelection } from '../state/useSelection';
 
 const DOUBLE_CLICK_MS = 500;
@@ -8,16 +8,18 @@ const DOUBLE_CLICK_MS = 500;
 interface Options {
     id: BrowserItemId;
     isItemLocked?: boolean;
+    isMultiSelectionDisabled?: boolean;
+
     onItemOpen?: (id: BrowserItemId) => void;
-    dragMoveControls?: DragMoveControls;
     onItemContextMenu?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 
 function useFileBrowserItem({
     id,
     isItemLocked,
-    onItemContextMenu,
+    isMultiSelectionDisabled = false,
 
+    onItemContextMenu,
     onItemOpen,
 }: Options) {
     const selection = useSelection();
@@ -26,7 +28,7 @@ function useFileBrowserItem({
     const clickTimerIdRef = useRef<NodeJS.Timeout | undefined>(undefined);
     const touchStarted = useRef(false);
 
-    const isSelected = selection ? selection.selectedItemIds.some((selectedItemId) => selectedItemId === id) : false;
+    const isSelected = selection?.isSelected(id);
     const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (isItemLocked ? undefined : fn);
 
     const handleClick = unlessDisabled(
@@ -47,13 +49,15 @@ function useFileBrowserItem({
                     if (!id) {
                         return;
                     }
-                    if (e.shiftKey) {
+
+                    if (e.shiftKey && !isMultiSelectionDisabled) {
                         selection?.toggleRange(id);
-                    } else if (e.ctrlKey || e.metaKey) {
+                    } else if ((e.ctrlKey || e.metaKey) && !isMultiSelectionDisabled) {
                         selection?.toggleSelectItem(id);
                     } else {
                         selection?.selectItem(id);
                     }
+
                     clickTimerIdRef.current = setTimeout(() => {
                         clickTimerIdRef.current = undefined;
                     }, DOUBLE_CLICK_MS);
