@@ -35,17 +35,27 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
         async ({ oldIndex, newIndex }) => {
             try {
                 const newList = move(list, oldIndex, newIndex);
-                const { isDisabled, isDefault } = getStatus(newList[0], 0);
+                const { isExternal, isDisabled } = getStatus(newList[0], 0);
 
                 if (isDeepEqual(list, newList)) {
                     return;
                 }
 
-                if (isDisabled && isDefault) {
-                    createNotification({
-                        type: 'error',
-                        text: c('Notification').t`A disabled address cannot be primary`,
-                    });
+                if (newIndex === 0 && (isDisabled || isExternal)) {
+                    const errorMessage = (() => {
+                        if (isDisabled) {
+                            return c('Notification').t`A disabled address cannot be default`;
+                        }
+                        if (isExternal) {
+                            return c('Notification').t`An external address cannot be default`;
+                        }
+                    })();
+                    if (errorMessage) {
+                        createNotification({
+                            type: 'error',
+                            text: errorMessage,
+                        });
+                    }
                     setAddresses(formatAddresses(addresses));
                     return;
                 }
