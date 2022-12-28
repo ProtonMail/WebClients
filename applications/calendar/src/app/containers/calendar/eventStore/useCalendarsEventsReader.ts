@@ -6,6 +6,7 @@ import { useApi, useGetCalendarEventRaw } from '@proton/components';
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
+import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -152,7 +153,7 @@ const setEventRecordPromise = ({
 
     const onError = (error: any) => {
         const errorMessage = error?.message || 'Unknown error';
-        if (!errorMessage.toLowerCase().includes('decrypt')) {
+        if (!naiveGetIsDecryptionError(error)) {
             /**
              * (Temporarily) Log to Sentry any error not related to decryption
              */

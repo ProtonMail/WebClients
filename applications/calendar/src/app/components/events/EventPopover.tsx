@@ -12,6 +12,7 @@ import {
     FeatureCode,
     Icon,
     Loader,
+    ReloadSpinner,
     Tooltip,
     useCalendarBootstrap,
     useFeature,
@@ -20,7 +21,7 @@ import {
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { getIsCalendarDisabled, getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
-import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
+import { getLinkToCalendarEvent, naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
@@ -52,6 +53,7 @@ const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 interface Props {
     formatTime: (date: Date) => string;
     onEdit: () => void;
+    onRefresh: () => Promise<void>;
     onDuplicate?: () => void;
     onChangePartstat: (inviteActions: InviteActions) => Promise<void>;
     onDelete: (inviteActions: InviteActions) => Promise<void>;
@@ -69,6 +71,7 @@ interface Props {
 const EventPopover = ({
     formatTime,
     onEdit,
+    onRefresh,
     onDuplicate,
     onChangePartstat,
     onDelete,
@@ -86,6 +89,7 @@ const EventPopover = ({
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
 
     const [loadingDelete, withLoadingDelete] = useLoading();
+    const [loadingRefresh, withLoadingRefresh] = useLoading();
 
     const targetEventData = targetEvent?.data || {};
     const { eventReadResult, eventData, calendarData } = targetEventData;
@@ -189,8 +193,14 @@ const EventPopover = ({
         [start, end, isAllDay, isAllPartDay, formatTime]
     );
 
+    const editText = c('Edit event button tooltip').t`Edit event`;
+    const deleteText = c('Delete event button tooltip').t`Delete event`;
+    const duplicateText = c('Duplicate event button tooltip').t`Duplicate event`;
+    const reloadText = c('Reload event button tooltip').t`Reload event`;
+    const viewText = c('View event button tooltip').t`Open in a new tab`;
+
     const editButton = isCalendarWritable && !isCalendarDisabled && (
-        <Tooltip title={c('Event edit button tooltip').t`Edit event`}>
+        <Tooltip title={editText}>
             <ButtonLike
                 data-test-id="event-popover:edit"
                 shape="ghost"
@@ -199,12 +209,12 @@ const EventPopover = ({
                 icon
                 size="small"
             >
-                <Icon name="pen" alt={c('Event edit button tooltip').t`Edit event`} />
+                <Icon name="pen" alt={editText} />
             </ButtonLike>
         </Tooltip>
     );
     const deleteButton = isCalendarWritable && (
-        <Tooltip title={c('Event delete button tooltip').t`Delete event`}>
+        <Tooltip title={deleteText}>
             <ButtonLike
                 data-test-id="event-popover:delete"
                 shape="ghost"
@@ -213,12 +223,12 @@ const EventPopover = ({
                 icon
                 size="small"
             >
-                <Icon name="trash" alt={c('Event delete button tooltip').t`Delete event`} />
+                <Icon name="trash" alt={deleteText} />
             </ButtonLike>
         </Tooltip>
     );
     const duplicateButton = !isSubscribedCalendar && !model.isAttendee && !!onDuplicate && (
-        <Tooltip title={c('Event duplicate button tooltip').t`Duplicate event`}>
+        <Tooltip title={duplicateText}>
             <ButtonLike
                 data-test-id="event-popover:duplicate"
                 shape="ghost"
@@ -227,13 +237,26 @@ const EventPopover = ({
                 icon
                 size="small"
             >
-                <Icon name="squares" alt={c('Event duplicate button tooltip').t`Duplicate event`} />
+                <Icon name="squares" alt={duplicateText} />
             </ButtonLike>
         </Tooltip>
     );
 
+    const reloadButton = (
+        <Tooltip title={reloadText}>
+            <ButtonLike
+                data-test-id="event-popover:refresh"
+                shape="ghost"
+                onClick={loadingRefresh ? noop : () => withLoadingRefresh(onRefresh())}
+                icon
+                size="small"
+            >
+                <ReloadSpinner refreshing={loadingRefresh} alt={reloadText} />
+            </ButtonLike>
+        </Tooltip>
+    );
     const viewEventButton = getIsCalendarAppInDrawer(view) && (
-        <Tooltip title={c('View event button tooltip').t`Open in a new tab`}>
+        <Tooltip title={viewText}>
             <AppLink
                 to={linkTo || '/'}
                 selfOpening
@@ -277,12 +300,19 @@ const EventPopover = ({
     };
 
     if (eventReadError) {
+        const showReload = !naiveGetIsDecryptionError(eventReadError);
+
+        const actions =
+            deleteButton || showReload ? (
+                <>
+                    {showReload && <div className="flex flex-nowrap flex-justify-end">{reloadButton}</div>}
+                    {deleteButton && <div className="flex flex-nowrap flex-justify-end">{deleteButton}</div>}
+                </>
+            ) : null;
+
         return (
             <PopoverContainer {...commonContainerProps} className={containerClassName}>
-                <PopoverHeader
-                    {...commonHeaderProps}
-                    actions={deleteButton && <div className="flex flex-nowrap flex-justify-end">{deleteButton}</div>}
-                >
+                <PopoverHeader {...commonHeaderProps} actions={actions}>
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
                 <Alert className="mb1" type="error">

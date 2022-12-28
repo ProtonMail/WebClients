@@ -69,6 +69,7 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
@@ -1717,6 +1718,20 @@ const InteractiveCalendarView = ({
                                 }
 
                                 return handleEditEvent(newTemporaryEvent);
+                            }}
+                            onRefresh={async () => {
+                                // make the loader always spin for one second (same as Mail "update message in folder")
+                                const dummySpin = () => wait(SECOND);
+                                const { eventData } = targetEvent.data;
+                                if (!eventData) {
+                                    return dummySpin();
+                                }
+                                const { CalendarID, ID } = eventData;
+
+                                await Promise.all([
+                                    calendarsEventsCacheRef.current.retryReadEvent(CalendarID, ID),
+                                    dummySpin(),
+                                ]);
                             }}
                             onDuplicate={
                                 isEventCreationDisabled
