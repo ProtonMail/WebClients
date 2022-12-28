@@ -7,9 +7,9 @@ import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 
-import { useApi, useEventManager } from '../../hooks';
-import { Form } from '../form';
-import { ModalProps, ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../modalTwo';
+import { useApi, useEventManager } from '../../../hooks';
+import { Form } from '../../form';
+import { ModalProps, ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';
 import LinkConfirmationModalLink from './LinkConfirmationModalLink';
 import LinkConfirmationModalPhishing from './LinkConfirmationModalPhishing';
 
