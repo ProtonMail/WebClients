@@ -14,11 +14,12 @@ import {
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useCombinedRefs } from '@proton/hooks';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
 import { classnames, generateUID } from '../../helpers';
-import { useCombinedRefs, useIsClosing } from '../../hooks';
+import { useIsClosing } from '../../hooks';
 import { Icon } from '../icon';
 import { PopperPlacement, usePopper, usePopperState } from '../popper';
 import { shouldShowSideRadius } from '../popper/utils';

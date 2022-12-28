@@ -3730,6 +3730,7 @@ __metadata:
   resolution: "@proton/hooks@workspace:packages/hooks"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@testing-library/react": ^12.1.5
     "@testing-library/react-hooks": ^8.0.1
     "@types/jest": ^27.5.2
     eslint: ^8.30.0

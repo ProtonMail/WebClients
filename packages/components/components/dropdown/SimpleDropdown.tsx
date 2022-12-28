@@ -1,7 +1,8 @@
 import { CSSProperties, ElementType, MouseEventHandler, ReactNode, forwardRef, useState } from 'react';
 
+import { useCombinedRefs } from '@proton/hooks';
+
 import { generateUID } from '../../helpers';
-import { useCombinedRefs } from '../../hooks';
 import { PopperPlacement, usePopperAnchor } from '../popper';
 import Dropdown from './Dropdown';
 import DropdownButton, { DropdownButtonProps } from './DropdownButton';
