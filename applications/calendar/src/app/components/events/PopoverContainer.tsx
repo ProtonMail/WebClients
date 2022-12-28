@@ -1,7 +1,8 @@
 import { Ref, forwardRef, useRef } from 'react';
 import * as React from 'react';
 
-import { classnames, useCombinedRefs, useFocusTrap, useHotkeys } from '@proton/components';
+import { classnames, useFocusTrap, useHotkeys } from '@proton/components';
+import { useCombinedRefs } from '@proton/hooks';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     isOpen?: boolean;

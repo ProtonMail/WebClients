@@ -12,12 +12,12 @@ import {
     useState,
 } from 'react';
 
+import { useCombinedRefs } from '@proton/hooks';
 import useInstance from '@proton/hooks/useInstance';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { classnames, generateUID } from '../../helpers';
-import useCombinedRefs from '../../hooks/useCombinedRefs';
 import { Popper, PopperPlacement, usePopper } from '../popper';
 import { TooltipExclusiveContext } from './TooltipExclusive';
 import useTooltipHandlers from './useTooltipHandlers';

@@ -1,19 +1,18 @@
-import { Ref, useEffect, useRef, useState } from 'react';
+import { ComponentPropsWithoutRef, Ref, useEffect, useRef, useState } from 'react';
 
-import { classnames } from '../../helpers';
-import { useCombinedRefs } from '../../hooks';
+import { useCombinedRefs } from '@proton/hooks';
+import clsx from '@proton/utils/clsx';
 
 import './Scroll.scss';
 
 const TOLERANCE = 4;
 
-interface ScrollProps extends React.ComponentPropsWithoutRef<'div'> {
+export interface ScrollProps extends ComponentPropsWithoutRef<'div'> {
     horizontal?: boolean;
-    setHasScrollShadow?: (hasScrollShadow: boolean) => void;
     customContainerRef?: Ref<HTMLElement>;
 }
 
-const Scroll = ({ children, horizontal, setHasScrollShadow, className, customContainerRef, ...rest }: ScrollProps) => {
+const Scroll = ({ children, horizontal, className, customContainerRef, ...rest }: ScrollProps) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const scrollChildRef = useRef<HTMLDivElement>(null);
     const [showStartShadow, setShowStartShadow] = useState(false);
@@ -23,10 +22,6 @@ const Scroll = ({ children, horizontal, setHasScrollShadow, className, customCon
         ? [scrollContainerRef, customContainerRef as Ref<HTMLDivElement>]
         : [scrollContainerRef];
     const containerRefs = useCombinedRefs(...containersRefs);
-
-    useEffect(() => {
-        setHasScrollShadow?.(showStartShadow);
-    }, [showStartShadow]);
 
     const setShadows = (container: HTMLDivElement, child: HTMLDivElement) => {
         if (!container || !child) {
@@ -103,21 +98,19 @@ const Scroll = ({ children, horizontal, setHasScrollShadow, className, customCon
         setShadows(scrollContainer, scrollChild);
     };
 
-    const outerClassName = classnames([className, horizontal ? 'scroll-outer-horizontal' : 'scroll-outer-vertical']);
-
-    const startShadowClassName = classnames([
-        'scroll-start-shadow no-pointer-events',
-        showStartShadow && 'scroll-start-shadow-visible',
-    ]);
-    const endShadowClassName = classnames([
-        'scroll-end-shadow no-pointer-events',
-        showEndShadow && 'scroll-end-shadow-visible',
-    ]);
-
     return (
-        <div {...rest} className={outerClassName}>
-            <div className={startShadowClassName} aria-hidden="true" />
-            <div className={endShadowClassName} aria-hidden="true" />
+        <div {...rest} className={clsx(horizontal ? 'scroll-outer-horizontal' : 'scroll-outer-vertical', className)}>
+            <div
+                className={clsx(
+                    'scroll-start-shadow no-pointer-events',
+                    showStartShadow && 'scroll-start-shadow-visible'
+                )}
+                aria-hidden="true"
+            />
+            <div
+                className={clsx('scroll-end-shadow no-pointer-events', showEndShadow && 'scroll-end-shadow-visible')}
+                aria-hidden="true"
+            />
             <div className="scroll-inner" ref={containerRefs} onScroll={handleScroll}>
                 <div className="scroll-child" ref={scrollChildRef}>
                     {children}

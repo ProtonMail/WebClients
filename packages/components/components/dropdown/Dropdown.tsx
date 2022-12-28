@@ -12,18 +12,12 @@ import {
 
 import { c } from 'ttag';
 
+import { useCombinedRefs } from '@proton/hooks';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import noop from '@proton/utils/noop';
 
 import { classnames } from '../../helpers';
-import {
-    HotkeyTuple,
-    useCombinedRefs,
-    useDropdownArrowNavigation,
-    useElementRect,
-    useHotkeys,
-    useIsClosing,
-} from '../../hooks';
+import { HotkeyTuple, useDropdownArrowNavigation, useElementRect, useHotkeys, useIsClosing } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { PopperPlacement, PopperPosition, allPopperPlacements, usePopper } from '../popper';
 import Portal from '../portal/Portal';

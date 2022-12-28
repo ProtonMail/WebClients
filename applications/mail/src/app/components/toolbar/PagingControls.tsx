@@ -2,15 +2,8 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
-import {
-    DropdownMenu,
-    DropdownMenuButton,
-    EllipsisLoader,
-    Icon,
-    Scroll,
-    ToolbarButton,
-    classnames,
-} from '@proton/components';
+import { Scroll } from '@proton/atoms';
+import { DropdownMenu, DropdownMenuButton, EllipsisLoader, Icon, ToolbarButton, classnames } from '@proton/components';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch as testIsSearch } from '../../helpers/elements';
