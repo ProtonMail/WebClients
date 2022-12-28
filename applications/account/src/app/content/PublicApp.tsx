@@ -208,23 +208,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         }
     };
 
-    const setProtonMeOn = () =>
-        new Promise<ProgressEvent<EventTarget>>((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.onload = resolve;
-            xhr.onerror = reject;
-            xhr.open('GET', `https://proton.me/on`);
-            xhr.withCredentials = true;
-            xhr.send();
-        });
-
     const handleLogin = async (args: OnLoginCallbackArguments) => {
-        if (!window.location.hostname.endsWith('protonmail.com')) {
-            try {
-                await setProtonMeOn();
-            } catch (error) {}
-        }
-
         const { keyPassword, UID, User: user, LocalID, persistent, trusted, appIntent: maybeFlowAppIntent } = args;
         const toAppIntent = maybeFlowAppIntent?.app || maybePreAppIntent;
         // Special case for external users to redirect to VPN until more apps are supported, when no app intent is provided.
