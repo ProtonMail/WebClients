@@ -4,9 +4,12 @@ import DOMPurify from 'dompurify';
 
 import { isElement } from '@proton/shared/lib/helpers/dom';
 
-import { CreateNotificationOptions, NotificationOptions } from './interfaces';
+import { CreateNotificationOptions, NotificationOffset, NotificationOptions } from './interfaces';
 
-function createNotificationManager(setNotifications: Dispatch<SetStateAction<NotificationOptions[]>>) {
+function createNotificationManager(
+    setNotifications: Dispatch<SetStateAction<NotificationOptions[]>>,
+    setNotificationOffset: Dispatch<NotificationOffset | undefined>
+) {
     let idx = 1;
     const intervalIds = new Map<number, any>();
 
@@ -142,6 +145,7 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
     };
 
     return {
+        setOffset: setNotificationOffset,
         createNotification,
         removeNotification,
         hideNotification,

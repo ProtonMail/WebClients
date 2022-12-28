@@ -4,6 +4,11 @@ import { IconName } from '@proton/components/components';
 
 export type NotificationType = 'error' | 'warning' | 'info' | 'success';
 
+export interface NotificationOffset {
+    y?: number;
+    x?: number;
+}
+
 export interface NotificationOptions {
     id: number;
     key: Key;

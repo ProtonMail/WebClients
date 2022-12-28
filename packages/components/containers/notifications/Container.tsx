@@ -1,7 +1,9 @@
 import { Key, useEffect, useRef, useState } from 'react';
 
+import clsx from '@proton/utils/clsx';
+
 import Notification from './Notification';
-import { NotificationOptions } from './interfaces';
+import { NotificationOffset, NotificationOptions } from './interfaces';
 
 const notificationGap = 4;
 
@@ -37,9 +39,10 @@ interface Props {
     notifications: NotificationOptions[];
     removeNotification: (id: number) => void;
     hideNotification: (id: number) => void;
+    offset?: NotificationOffset;
 }
 
-const NotificationsContainer = ({ notifications, removeNotification, hideNotification }: Props) => {
+const NotificationsContainer = ({ notifications, removeNotification, hideNotification, offset }: Props) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const notificationRefs = useRef<{ [key: Key]: HTMLDivElement }>({});
     const [rects, setRects] = useState<{ [key: Key]: DOMRect }>({});
@@ -105,7 +108,17 @@ const NotificationsContainer = ({ notifications, removeNotification, hideNotific
     });
 
     return (
-        <div ref={containerRef} className="notifications-container flex flex-column flex-align-items-center no-print">
+        <div
+            ref={containerRef}
+            className={clsx(
+                'notifications-container flex flex-column flex-align-items-center no-print',
+                offset?.y || offset?.x || 0 > 0 ? 'notifications-container--shifted' : undefined
+            )}
+            style={{
+                ...(offset?.y && { '--shift-custom-y': `${offset.y}px` }),
+                ...(offset?.x && { '--shift-custom-x': `${offset.x}px` }),
+            }}
+        >
             {list}
         </div>
     );

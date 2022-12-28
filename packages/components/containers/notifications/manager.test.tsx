@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import noop from '@proton/utils/noop';
+
 import { NotificationOptions } from './interfaces';
 import createNotificationManager from './manager';
 
@@ -10,7 +12,7 @@ describe('notification manager', () => {
         const { result } = renderHook(() => useState<NotificationOptions[]>([]));
         const [, setState] = result.current;
 
-        const manager = createNotificationManager(setState);
+        const manager = createNotificationManager(setState, noop);
         expect(result.current[0]).toStrictEqual([]);
         act(() => {
             manager.createNotification({
@@ -27,7 +29,7 @@ describe('notification manager', () => {
                 const { result } = renderHook(() => useState<NotificationOptions[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -57,7 +59,7 @@ describe('notification manager', () => {
                 const { result } = renderHook(() => useState<NotificationOptions[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -87,7 +89,7 @@ describe('notification manager', () => {
                 const { result } = renderHook(() => useState<NotificationOptions[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -113,7 +115,7 @@ describe('notification manager', () => {
                 const { result } = renderHook(() => useState<NotificationOptions[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -139,7 +141,7 @@ describe('notification manager', () => {
                 const { result } = renderHook(() => useState<NotificationOptions[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -165,7 +167,7 @@ describe('notification manager', () => {
                 const { result } = renderHook(() => useState<NotificationOptions[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -192,7 +194,7 @@ describe('notification manager', () => {
             const { result } = renderHook(() => useState<NotificationOptions[]>([]));
             const [, setState] = result.current;
 
-            const manager = createNotificationManager(setState);
+            const manager = createNotificationManager(setState, noop);
             act(() => {
                 manager.createNotification({
                     text: <div>text</div>,
@@ -228,7 +230,7 @@ describe('notification manager', () => {
         const { result } = renderHook(() => useState<NotificationOptions[]>([]));
         const [, setState] = result.current;
 
-        const manager = createNotificationManager(setState);
+        const manager = createNotificationManager(setState, noop);
         act(() => {
             manager.createNotification({
                 text: 'Foo <a href="https://foo.bar">text</a>',

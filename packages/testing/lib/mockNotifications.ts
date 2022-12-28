@@ -7,4 +7,5 @@ export const mockNotifications: ReturnType<typeof useNotifications> = {
     removeNotification: jest.fn(),
     hideNotification: jest.fn(),
     clearNotifications: jest.fn(),
+    setOffset: jest.fn(),
 };
