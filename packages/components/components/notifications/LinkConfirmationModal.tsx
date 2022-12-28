@@ -4,43 +4,33 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
-import { isEdge, isIE11, openNewTab } from '@proton/shared/lib/helpers/browser';
+import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useApi, useEventManager } from '../../hooks';
 import { Form } from '../form';
-import { Checkbox } from '../input';
-import { Label } from '../label';
-import { Href } from '../link';
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../modalTwo';
+import { ModalProps, ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../modalTwo';
+import LinkConfirmationModalLink from './LinkConfirmationModalLink';
+import LinkConfirmationModalPhishing from './LinkConfirmationModalPhishing';
 
 interface Props extends ModalProps {
     link?: string;
     isOutside?: boolean;
     isPhishingAttempt?: boolean;
+    modalProps: ModalStateProps;
 }
 
-const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt = false, ...rest }: Props) => {
+const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt = false, modalProps }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [dontAskAgain, setDontAskAgain] = useState(false);
     const [understandRisk, setUnderstandRisk] = useState(false);
 
-    const { onClose } = rest;
-
     // https://jira.protontech.ch/browse/SEC-574
     const linkToShow = rtlSanitize(link);
 
     // Both are not able to open the link
-    const punyCodeLink = /:\/\/xn--/.test(link);
-
-    const punyCodeLinkText =
-        isEdge() || isIE11()
-            ? c('Info')
-                  .t`This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.`
-            : c('Info')
-                  .t`This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.`;
+    const isPunnyCodeLink = /:\/\/xn--/.test(link);
 
     const handleConfirm = async () => {
         openNewTab(link);
@@ -50,62 +40,35 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
             await call();
         }
 
-        onClose?.();
+        modalProps.onClose();
     };
 
-    const content = isPhishingAttempt ? (
-        <>
-            {`${c('Info')
-                .t`This link leads to a website that might be trying to steal your information, such as passwords and credit card details.`} `}
-            <br />
-            <span className="text-bold text-break">{linkToShow}</span>
-
-            <Label className="flex">
-                <Checkbox
-                    className="mr0-5"
-                    checked={understandRisk}
-                    onChange={() => setUnderstandRisk(!understandRisk)}
-                />
-                {c('Label').t`I understand the risk`}
-            </Label>
-        </>
-    ) : (
-        <>
-            {`${c('Info').t`You are about to open another browser tab and visit:`} `}
-            <span className="text-bold text-break">{linkToShow}</span>
-
-            {punyCodeLink && (
-                <>
-                    {`${punyCodeLinkText} `}
-                    <Href url={getKnowledgeBaseUrl('/homograph-attacks')} title="What are homograph attacks?">
-                        {c('Info').t`Learn more`}
-                    </Href>
-                </>
-            )}
-
-            {!isOutside && (
-                <Label className="flex">
-                    <Checkbox
-                        checked={dontAskAgain}
-                        onChange={() => setDontAskAgain(!dontAskAgain)}
-                        className="mr0-5"
-                    />
-                    {c('Label').t`Do not ask again`}
-                </Label>
-            )}
-        </>
-    );
-
     return (
-        <ModalTwo size="large" as={Form} onSubmit={handleConfirm} {...rest}>
+        <ModalTwo size="large" as={Form} onSubmit={handleConfirm} {...modalProps}>
             <ModalTwoHeader
                 title={
                     isPhishingAttempt ? c('Title').t`Warning: suspected fake website` : c('Title').t`Link confirmation`
                 }
             />
-            <ModalTwoContent>{content}</ModalTwoContent>
+            <ModalTwoContent>
+                {isPhishingAttempt ? (
+                    <LinkConfirmationModalPhishing
+                        link={linkToShow}
+                        onToggle={() => setUnderstandRisk(!understandRisk)}
+                        value={understandRisk}
+                    />
+                ) : (
+                    <LinkConfirmationModalLink
+                        value={dontAskAgain}
+                        isOutside={isOutside}
+                        isPunnyCoded={isPunnyCodeLink}
+                        link={linkToShow}
+                        onToggle={() => setDontAskAgain(!dontAskAgain)}
+                    />
+                )}
+            </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button onClick={modalProps.onClose}>{c('Action').t`Cancel`}</Button>
                 {/* translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com */}
                 <Button
                     color="norm"
