@@ -162,7 +162,7 @@ export const useLinkHandler: UseLinkHandler = (
             link={link}
             isOutside={isOutside}
             isPhishingAttempt={isPhishingAttempt}
-            {...linkConfirmationModalProps}
+            modalProps={linkConfirmationModalProps}
         />
     );
 
