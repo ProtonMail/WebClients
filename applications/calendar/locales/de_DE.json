@@ -2907,6 +2907,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } unterstützt folgende Funktionen ${ forNow } nicht:"
+      ],
       "for now": [
         "derzeit"
       ]
