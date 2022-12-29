@@ -114,7 +114,7 @@ const finalizeLogin = async ({
 
     const validatedSession = await maybeResumeSessionByUser(api, User);
     if (validatedSession) {
-        authApi(revoke()).catch(noop);
+        await authApi(revoke()).catch(noop);
         return {
             to: AuthStep.DONE,
             session: validatedSession,
