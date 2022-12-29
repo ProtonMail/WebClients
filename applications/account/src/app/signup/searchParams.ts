@@ -6,7 +6,7 @@ import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { Currency, Plan } from '@proton/shared/lib/interfaces';
 
-import { SERVICES } from './interfaces';
+import { OtherProductParam, ProductParam, SERVICES, otherProductParamValues } from './interfaces';
 
 export const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefined => {
     return maybeProduct ? SERVICES[maybeProduct] : undefined;
@@ -26,11 +26,16 @@ const getDefaultProductParam = () => {
     }
 };
 
-export const getProductParam = (
-    product: APP_NAMES | undefined,
-    productParam: string | undefined
-): APP_NAMES | 'generic' | 'none' | undefined => {
-    const sanitisedProductParam = productParam === 'generic' ? productParam : undefined;
+const productParams = new Set(otherProductParamValues);
+
+const getSanitisedProductParam = (value: string | undefined): OtherProductParam | undefined => {
+    if (productParams.has(value as any)) {
+        return value as OtherProductParam;
+    }
+};
+
+export const getProductParam = (product: APP_NAMES | undefined, productParam: string | undefined): ProductParam => {
+    const sanitisedProductParam = getSanitisedProductParam(productParam);
     const defaultProductParam = getDefaultProductParam();
     return product || sanitisedProductParam || defaultProductParam;
 };
