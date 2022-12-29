@@ -65,6 +65,7 @@ import { getPlanFromPlanIDs, getSubscriptionPrices } from './helper';
 import {
     InviteData,
     PlanIDs,
+    ProductParam,
     SIGNUP_STEPS,
     SignupActionResponse,
     SignupCacheResult,
@@ -99,7 +100,7 @@ const {
 
 interface Props {
     onLogin: OnLoginCallback;
-    productParam: APP_NAMES | 'generic' | 'none' | undefined;
+    productParam: ProductParam;
     toApp?: APP_NAMES;
     toAppName?: string;
     onBack?: () => void;
