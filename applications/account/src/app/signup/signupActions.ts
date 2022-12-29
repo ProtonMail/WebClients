@@ -27,12 +27,35 @@ import noop from '@proton/utils/noop';
 import {
     HumanVerificationData,
     HumanVerificationTrigger,
-    SIGNUP_STEPS,
     SignupActionResponse,
     SignupCacheResult,
+    SignupSteps,
     SignupType,
     SubscriptionData,
 } from './interfaces';
+
+const getSignupTypeQuery = (accountData: SignupCacheResult['accountData'], setupVPN: boolean) => {
+    // VPN requests the recovery email, and does not create the address (avoid passing Domain)
+    if (accountData.signupType === SignupType.VPN) {
+        let extra = {};
+        if (setupVPN) {
+            extra = { Domain: accountData.domain };
+        }
+        return { ...extra, Email: accountData.recoveryEmail };
+    }
+    if (accountData.signupType === SignupType.Username) {
+        return { Domain: accountData.domain };
+    }
+};
+
+const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) => {
+    if (referralData) {
+        return {
+            ReferralID: referralData.invite,
+            ReferralIdentifier: referralData.referrer,
+        };
+    }
+};
 
 const hvHandler = (error: any, trigger: HumanVerificationData['trigger']): HumanVerificationData => {
     const { code, details } = getApiError(error);
@@ -57,32 +80,38 @@ export const handleDone = async ({
     cache: SignupCacheResult;
     appIntent?: AppIntent;
 }): Promise<SignupActionResponse> => {
-    const { persistent, trusted, setupData } = cache;
+    const {
+        persistent,
+        trusted,
+        setupData,
+        accountData: { password },
+    } = cache;
     if (!setupData?.authResponse) {
         throw new Error('Missing auth response');
     }
+    const { authResponse, user, keyPassword } = setupData;
+
     return {
         session: {
-            ...setupData.authResponse,
+            ...authResponse,
             persistent,
             trusted,
-            User: setupData.user,
-            keyPassword: setupData.keyPassword,
+            User: user,
+            loginPassword: password,
+            keyPassword: keyPassword,
             flow: 'signup',
             appIntent: appIntent,
         },
-        to: SIGNUP_STEPS.DONE,
+        to: SignupSteps.Done,
     };
 };
 
 export const handleSaveRecovery = async ({
     cache,
-    api,
     recoveryEmail,
     recoveryPhone,
 }: {
     cache: SignupCacheResult;
-    api: Api;
     recoveryEmail?: string;
     recoveryPhone?: string;
 }): Promise<SignupActionResponse> => {
@@ -92,8 +121,7 @@ export const handleSaveRecovery = async ({
         accountData: { password, signupType },
     } = cache;
 
-    const { authResponse } = setupData!;
-    const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
+    const { authApi } = setupData!;
 
     await Promise.all([
         !!recoveryPhone &&
@@ -121,26 +149,23 @@ export const handleSaveRecovery = async ({
 
     return {
         cache,
-        to: SIGNUP_STEPS.EXPLORE,
+        to: SignupSteps.Explore,
     };
 };
 
 export const handleDisplayName = async ({
     cache,
-    api,
     displayName,
 }: {
     cache: SignupCacheResult;
-    api: Api;
     displayName: string;
 }): Promise<SignupActionResponse> => {
     const { setupData, accountData, ignoreExplore } = cache;
 
     const {
-        authResponse,
+        authApi,
         addresses: [firstAddress],
     } = setupData!;
-    const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
 
     await authApi(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
     // Re-fetch the user to get the updated display name
@@ -149,10 +174,10 @@ export const handleDisplayName = async ({
     const to = (() => {
         if (accountData.signupType === SignupType.Email) {
             // Ignore recovery step if signing up with an external email address because it's automatically set.
-            return ignoreExplore ? undefined : SIGNUP_STEPS.EXPLORE;
+            return ignoreExplore ? undefined : SignupSteps.Explore;
         }
         // The next step is recovery by default
-        return SIGNUP_STEPS.SAVE_RECOVERY;
+        return SignupSteps.SaveRecovery;
     })();
 
     if (!to) {
@@ -183,12 +208,11 @@ export const handleSetupUser = async ({
         referralData,
         subscriptionData,
         persistent,
-        generateKeys,
         clientType,
     } = cache;
 
     const userEmail = (() => {
-        if (signupType === SignupType.Username || (signupType === SignupType.VPN && generateKeys)) {
+        if (signupType === SignupType.Username) {
             return `${username}@${domain}`;
         }
         if (signupType === SignupType.VPN) {
@@ -237,7 +261,7 @@ export const handleSetupUser = async ({
     const [{ keyPassword, user, addresses }] = await Promise.all([
         (async () => {
             // NOTE: For VPN signup, the API doesn't automatically create an address, so this will simply return an empty
-            // array and we won't set up any keys.
+            // array, and keys won't be setup.
             const addresses = await getAllAddresses(authApi);
 
             const keyPassword = addresses.length
@@ -256,9 +280,9 @@ export const handleSetupUser = async ({
     ]);
 
     const trusted = false;
-    await persistSession({ ...authResponse, User: user, keyPassword, api, persistent, trusted });
+    await persistSession({ ...authResponse, User: user, keyPassword, api: authApi, persistent, trusted });
 
-    const newCache = {
+    const newCache: SignupCacheResult = {
         ...cache,
         trusted,
         setupData: {
@@ -266,6 +290,7 @@ export const handleSetupUser = async ({
             keyPassword,
             addresses,
             authResponse,
+            authApi,
         },
     };
 
@@ -276,7 +301,7 @@ export const handleSetupUser = async ({
 
     return {
         cache: newCache,
-        to: SIGNUP_STEPS.CONGRATULATIONS,
+        to: SignupSteps.Congratulations,
     };
 };
 
@@ -288,16 +313,16 @@ const handleCreateUser = async ({
     api: Api;
 }): Promise<SignupActionResponse> => {
     const {
-        accountData: { username, domain, email, password, payload },
+        accountData: { signupType, username, email, password, payload },
         accountData,
         humanVerificationResult,
         inviteData,
         referralData,
         clientType,
-        generateKeys,
+        setupVPN,
     } = cache;
 
-    if (accountData.signupType === SignupType.Username || accountData.signupType === SignupType.VPN) {
+    if (signupType === SignupType.Username || signupType === SignupType.VPN) {
         const humanVerificationParameters = (() => {
             if (humanVerificationResult) {
                 return {
@@ -321,27 +346,15 @@ const handleCreateUser = async ({
                     humanVerificationParameters?.tokenType,
                     queryCreateUser({
                         Type: clientType,
-                        // VPN requests the recovery email, and does not create the address (avoid passing Domain)
-                        ...(accountData.signupType === SignupType.VPN
-                            ? { Email: accountData.recoveryEmail }
-                            : undefined),
-                        ...(accountData.signupType === SignupType.Username ||
-                        (accountData.signupType === SignupType.VPN && generateKeys)
-                            ? { Domain: domain }
-                            : undefined),
                         Username: username,
                         Payload: payload,
-                        ...(referralData
-                            ? {
-                                  ReferralID: referralData.invite,
-                                  ReferralIdentifier: referralData.referrer,
-                              }
-                            : undefined),
+                        ...getSignupTypeQuery(accountData, setupVPN),
+                        ...getReferralDataQuery(referralData),
                     })
                 ),
             });
             return {
-                to: SIGNUP_STEPS.CREATING_ACCOUNT,
+                to: SignupSteps.CreatingAccount,
                 cache: {
                     ...cache,
                     userData: {
@@ -370,12 +383,12 @@ const handleCreateUser = async ({
                     ...cache,
                     humanVerificationData,
                 },
-                to: SIGNUP_STEPS.HUMAN_VERIFICATION,
+                to: SignupSteps.HumanVerification,
             };
         }
     }
 
-    if (accountData.signupType === SignupType.Email) {
+    if (signupType === SignupType.Email) {
         const { User } = await srpVerify<{ User: User }>({
             api,
             credentials: { password },
@@ -390,7 +403,7 @@ const handleCreateUser = async ({
             ),
         });
         return {
-            to: SIGNUP_STEPS.CREATING_ACCOUNT,
+            to: SignupSteps.CreatingAccount,
             cache: {
                 ...cache,
                 userData: {
@@ -451,7 +464,7 @@ export const handleSelectPlan = async ({
                 ...cache,
                 subscriptionData,
             },
-            to: SIGNUP_STEPS.PAYMENT,
+            to: SignupSteps.Payment,
         };
     }
 
@@ -474,8 +487,9 @@ export const handleCreateAccount = async ({
     const {
         accountData: { username, email, domain, signupType },
         humanVerificationResult,
+        setupVPN,
     } = cache;
-    if (signupType === SignupType.Username || (signupType === SignupType.VPN && cache.generateKeys)) {
+    if (signupType === SignupType.Username || (signupType === SignupType.VPN && setupVPN)) {
         await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
     } else if (signupType === SignupType.VPN) {
         await api(queryCheckUsernameAvailability(username));
@@ -495,7 +509,7 @@ export const handleCreateAccount = async ({
                     ...cache,
                     humanVerificationData,
                 },
-                to: SIGNUP_STEPS.HUMAN_VERIFICATION,
+                to: SignupSteps.HumanVerification,
             };
         }
     }
@@ -503,21 +517,21 @@ export const handleCreateAccount = async ({
     if (cache.referralData?.referrer) {
         return {
             cache,
-            to: SIGNUP_STEPS.TRIAL_PLAN,
+            to: SignupSteps.TrialPlan,
         };
     }
 
     if (cache.subscriptionData.checkResult.Amount > 0 && hasPlanIDs(cache.subscriptionData.planIDs)) {
         return {
             cache,
-            to: SIGNUP_STEPS.PAYMENT,
+            to: SignupSteps.Payment,
         };
     }
 
     if (!cache.subscriptionData.skipUpsell) {
         return {
             cache,
-            to: SIGNUP_STEPS.UPSELL,
+            to: SignupSteps.Upsell,
         };
     }
 

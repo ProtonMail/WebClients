@@ -159,6 +159,12 @@ export const APPS_CONFIGURATION = {
     },
 } as const;
 
+export enum PRODUCT_BIT {
+    Mail = 1,
+    Drive = 2,
+    VPN = 4,
+}
+
 export type APP_KEYS = keyof typeof APPS;
 export type APP_NAMES = typeof APPS[APP_KEYS];
 export type APP_CLIENT_IDS = typeof APPS_CONFIGURATION[keyof typeof APPS_CONFIGURATION]['clientID'] | 'android_tv-vpn';
@@ -175,6 +181,7 @@ export const SSO_PATHS = {
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
 } as const;
+export const SETUP_ADDRESS_PATH = '/setup-address';
 
 export const VPN_HOSTNAME = 'account.protonvpn.com';
 

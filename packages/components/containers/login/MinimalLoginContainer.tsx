@@ -292,15 +292,15 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                     onSubmit={(username, password, payload) => {
                         return handleLogin({
                             appName: APP_NAME,
+                            toApp: APP_NAME,
                             username,
                             password,
                             payload,
                             api: silentApi,
-                            hasGenerateKeys: false,
                             ignoreUnlock,
-                            hasInternalAddressSetup: false,
                             hasTrustedDeviceRecovery: false,
                             persistent: false,
+                            setupVPN: false,
                         })
                             .then(handleResult)
                             .catch(handleError);

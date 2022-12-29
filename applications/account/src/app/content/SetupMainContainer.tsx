@@ -1,13 +1,15 @@
 import { Route, Switch } from 'react-router-dom';
 
-import SetupInternalAccountContainer from '../containers/SetupInternalAccountContainer';
+import { SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
+
+import SetupAddressContainer from '../containers/SetupAddressContainer';
 import MainContainer from './MainContainer';
 
 const SetupMainContainer = () => {
     return (
         <Switch>
-            <Route path="/setup-internal-address">
-                <SetupInternalAccountContainer />
+            <Route path={SETUP_ADDRESS_PATH}>
+                <SetupAddressContainer />
             </Route>
             <Route path="*">
                 <MainContainer />

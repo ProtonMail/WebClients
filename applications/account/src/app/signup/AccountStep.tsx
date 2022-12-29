@@ -24,6 +24,7 @@ import {
     useLoading,
     useModalState,
 } from '@proton/components';
+import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
     APPS,
     APP_NAMES,
@@ -49,7 +50,6 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
-import { getIsVPNApp } from '../public/helper';
 import Loader from './Loader';
 import { SignupType } from './interfaces';
 
