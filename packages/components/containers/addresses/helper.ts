@@ -51,8 +51,9 @@ export const getPermissions = ({
     const isMemberReadable = member?.Private === MEMBER_PRIVATE.READABLE;
     const isDefault = addressIndex === 0;
     const isEnabled = Status === ADDRESS_STATUS.STATUS_ENABLED;
+    const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
 
-    const canMakeDefault = !isDefault && isEnabled;
+    const canMakeDefault = !isDefault && isEnabled && !isExternal;
 
     /*
      * Keys can be generated if the organisation key is decrypted, and you are an admin,
