@@ -452,10 +452,10 @@
         "既定として設定"
       ],
       "Mark as not spam": [
-        "迷惑メールでないとしてマーク"
+        "迷惑メールでないと指定"
       ],
       "Mark as spam": [
-        "迷惑メールとしてマーク"
+        "迷惑メールと指定"
       ],
       "mark emails as": [
         "メールをマーク"
@@ -2415,6 +2415,11 @@
         "検索結果が見つかりません"
       ]
     },
+    "Credits": {
+      "Available credits": [
+        "使用可能なクレジット"
+      ]
+    },
     "CSV download button": {
       "CSV template": [
         "CSV テンプレート"
@@ -2543,7 +2548,7 @@
         "${ name } のブロックリストへの移動に失敗しました"
       ],
       "${ name } moved to not spam list": [
-        "${ name } が非迷惑メールリストに移動されました"
+        "${ name } が迷惑メールでないリストに移動されました"
       ],
       "${ name } moved to spam list": [
         "${ name } が迷惑メールリストに移動されました"
@@ -2657,7 +2662,7 @@
         "${ name } のブロックリストへの移動に失敗しました"
       ],
       "${ name } moved to not spam list": [
-        "${ name } が非迷惑メールリストに移動されました"
+        "${ name } が迷惑メールでないリストに移動されました"
       ],
       "${ name } moved to spam list": [
         "${ name } が迷惑メールリストに移動されました"
@@ -4992,6 +4997,9 @@
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "${ MAIL_APP_NAME } にログインしてアドレスをアクティブにします"
       ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "すべての ${ BRAND_NAME } サービスへの、あなたの ${ BRAND_NAME } 認証情報による認証の試行がログに記録されます。"
+      ],
       "lose access to all current encrypted data": [
         "すべての暗号化されたデータにアクセスできなくなります"
       ],
@@ -6779,7 +6787,7 @@
         "標準的ではないポート"
       ],
       "Not spam": [
-        "迷惑メールではない"
+        "迷惑メールでない"
       ],
       "Notification": [
         "通知"
@@ -7880,6 +7888,23 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7937,23 +7962,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -9266,12 +9274,12 @@
     },
     "Success message after sorting folders": {
       "Folders sorted": [
-        "フォルダーの順番"
+        "フォルダーを並べ替えました"
       ]
     },
     "Success message after sorting labels": {
       "Labels sorted": [
-        "ラベルを並び替えました"
+        "ラベルを並べ替えました"
       ]
     },
     "Success notification": {
@@ -9366,7 +9374,7 @@
         "インポート"
       ],
       "Marked as": [
-        "マーキング"
+        "指定"
       ],
       "Name": [
         "名前"
@@ -9482,7 +9490,7 @@
         "Sieve フィルターの追加"
       ],
       "Add to Not spam list": [
-        "迷惑メールから除外"
+        "迷惑メールでないリストに追加"
       ],
       "Add to spam list": [
         "迷惑メールリストに追加"
@@ -9734,7 +9742,7 @@
         "クレジット・デビットカードの編集"
       ],
       "Edit display name": [
-        "公開名の編集"
+        "表示名の編集"
       ],
       "Edit domain": [
         "ドメインの編集"
@@ -10274,7 +10282,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        "${ MAIL_APP_NAME } 招待"
+        "${ MAIL_APP_NAME } 請求書"
       ]
     },
     "Title header": {

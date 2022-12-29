@@ -106,7 +106,7 @@
         "Lampirkan tangkapan layar"
       ],
       "Authenticate": [
-        "Otentikasi"
+        "Autentikasi"
       ],
       "Back": [
         "Kembali"
@@ -832,7 +832,7 @@
         "Gunakan metode pembayaran lainnya"
       ],
       "Use authentication code": [
-        "Gunakan kode otentikasi"
+        "Gunakan kode autentikasi"
       ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
@@ -2828,10 +2828,10 @@
         "Jumlah di bawah minimum."
       ],
       "Authentication canceled.": [
-        "Otentikasi dibatalkan."
+        "Autentikasi dibatalkan."
       ],
       "Authentication error.": [
-        "Kesalahan otentikasi."
+        "Kesalahan autentikasi."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Pesan balasan otomatis merupakan fitur berbayar. Silakan tingkatkan akun Anda ke akun berbayar untuk dapat menggunakan fitur ini."
@@ -3630,7 +3630,7 @@
         "Silakan nonaktifkan 2FA via kunci keamanan sebelum menonaktifkan TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Terdapat kesalahan dalam mendaftarkan kunci keamanan Anda. Silakan coba lagi."
@@ -3671,7 +3671,7 @@
         "Verifikasi identitas Anda dengan kunci keamanan fisik U2F atau FIDO2"
       ],
       "Your two-factor authentication key is ready to use.": [
-        "Kunci otentikasi dua faktor Anda siap digunakan."
+        "Kunci autentikasi dua faktor Anda siap digunakan."
       ]
     },
     "fido2: Label": {
@@ -5002,7 +5002,7 @@
         "Apabila Anda memiliki kode hadiah yang valid, masukkan kode tersebut pada kolom di bawah ini untuk mendapatkan diskon Anda."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Apabila Anda belum pernah menggunakan otentikasi dua faktor sebelumnya, kami sangat menyarankan Anda untuk ${ guideButton }."
+        "Apabila Anda belum pernah menggunakan autentikasi dua faktor sebelumnya, kami sangat menyarankan Anda untuk ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Jika Anda telah menyetel SPF dan DKIM, DMARC memungkinkan Anda untuk menentukan bagaimana layanan email lain harus mengirimkan email untuk domain Anda jika pemeriksaan SPF dan DKIM gagal. Hal ini dapat mempersulit pelaku spam yang berpura-pura menjadi Anda, tetapi juga dapat menyebabkan masalah pengiriman jika tidak dilakukan dengan benar."
@@ -5014,7 +5014,7 @@
         "Apabila Anda kehilangan rincian login Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda tidak lagi akan dapat mengakses seluruh email, kontak, serta berkas yang Anda miliki setelahnya."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses otentikasi dua faktor, kode-kode berikut akan dapat digunakan sebagai pengganti kode otentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
+        "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses autentikasi dua faktor, kode berikut akan dapat digunakan sebagai pengganti kode autentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
@@ -5062,7 +5062,7 @@
         "Impor email, kalender, dan kontak yang Anda miliki dari layanan email Anda terdahulu ke ${ BRAND_NAME }. Kami akan memandu Anda untuk memindahkan dan mengenkripsi data selangkah demi selangkah. Selamat datang di dunia privasi."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat otentikasi dua faktor Anda."
+        "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat autentikasi dua faktor Anda."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "PENTING: Beberapa registrar tidak menerima nilai CNAME dengan titik di belakang (sementara yang lain menerima). Jika registrar Anda tidak menerima data CNAME Anda, mohon hapus titik di belakang pada setiap nilai CNAME dan coba lagi."
@@ -5179,7 +5179,7 @@
         "Masuk ke ${ MAIL_APP_NAME } untuk mengaktifkan alamat Anda"
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "Log mencakup segala upaya otentikasi yang terhubung dengan kredensial ${ BRAND_NAME } Anda pada seluruh layanan ${ BRAND_NAME }."
+        "Catatan mencakup segala upaya autentikasi yang terhubung dengan kredensial ${ BRAND_NAME } Anda pada seluruh layanan ${ BRAND_NAME }."
       ],
       "lose access to all current encrypted data": [
         "kehilangan akses ke semua data yang terenkripsi"
@@ -5191,7 +5191,7 @@
         "Pastikan Anda menyimpan frasa keamanan Anda di tempat yang privat."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Masukkan informasi ini secara manual ke perangkat otentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
+        "Masukkan informasi ini secara manual ke perangkat autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
       ],
       "Member": [
         "Anggota"
@@ -5394,6 +5394,9 @@
       "Preview": [
         "Pratinjau"
       ],
+      "Preview failed to be loaded": [
+        "Pratinjau gagal dimuat"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
       ],
@@ -5410,7 +5413,7 @@
         "Ditempatkan dalam antrian"
       ],
       "read our two-factor authentication guide first": [
-        "terlebih dahulu membaca panduan seputar otentikasi dua faktor berikut"
+        "baca panduan autentikasi dua faktor kami terlebih dahulu"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Direkomendasikan pada perangkat yang Anda percaya. ${ keepMeSignedInLearnMoreLink }"
@@ -5467,7 +5470,7 @@
         "Pindai kode QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Pindai kode berikut dengan perangkat otentikasi dua faktor yang Anda miliki untuk mengatur akun Anda. ${ switchButton }."
+        "Pindai kode berikut dengan perangkat autentikasi dua faktor yang Anda miliki untuk mengatur akun Anda. ${ switchButton }."
       ],
       "Securing your account": [
         "Mengamankan akun Anda"
@@ -5647,7 +5650,7 @@
         "Pengguna ini saat ini bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
-        "Dengan ini, otentikasi dua faktor untuk akun ini akan dinonaktifkan."
+        "Dengan ini, autentikasi dua faktor untuk akun ini akan dinonaktifkan."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
@@ -5674,10 +5677,10 @@
         "Kata sandi ini akan menggantikan kata sandi sementara Anda. Ke depannya, Anda akan menggunakan kata sandi ini untuk mengakses akun ${ BRAND_NAME } Anda."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan otentikasi dua faktor."
+        "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan autentikasi dua faktor."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Proses ini akan mengaktifkan Otentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun ${ BRAND_NAME } Anda. Kami sangat menyarankan Anda untuk mengaktifkan otentikasi dua faktor karena metode otentikasi ini akan membuat akun ${ BRAND_NAME } Anda lebih aman."
+        "Proses ini akan mengaktifkan Autentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun ${ BRAND_NAME } Anda. Kami sangat menyarankan Anda untuk mengaktifkan autentikasi dua faktor karena metode autentikasi ini akan membuat akun ${ BRAND_NAME } Anda lebih aman."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Untuk mencegah hilangnya data, mohon hapus kunci ini hanya apabila Anda telah benar-benar paham akan segala resikonya atau apabila Anda telah mengekspor kunci duplikatnya."
@@ -5740,7 +5743,7 @@
         "Oentikasi dua faktor dinonaktifkan"
       ],
       "Two-factor authentication enabled": [
-        "Otentikasi dua faktor diaktifkan"
+        "Autentikasi dua faktor diaktifkan"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
         "Mode dua kata sandi mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi kotak surat Anda. (Fitur lanjutan)"
@@ -7601,7 +7604,7 @@
         "Aktifkan log lanjutan"
       ],
       "Enable authentication logs": [
-        "Aktifkan log otentikasi"
+        "Aktifkan catatan autentikasi"
       ]
     },
     "Mail import summary": {
@@ -8131,7 +8134,7 @@
         "Tor via VPN"
       ],
       "Two-factor authentication": [
-        "Otentikasi dua faktor"
+        "Autentikasi dua faktor"
       ],
       "Unlimited filters": [
         "Tanpa batasan jumlah filter"
@@ -8170,6 +8173,26 @@
       ],
       "Team management": [
         "Manajemen tim"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8241,26 +8264,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8445,7 +8448,7 @@
         "Mengharuskan Anda untuk memasukkan kode yang terkirim ke ponsel Anda sebelum Anda dapat masuk. Hal ini memastikan bahwa bahkan apabila kata sandi Anda sampai bocor sekalipun, akun Anda akan tetap aman."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Atur ulang kata sandi dan status otentikasi dua faktor pengguna"
+        "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik"
@@ -10155,7 +10158,7 @@
         "Nonaktifkan ${ email }"
       ],
       "Disable two-factor authentication": [
-        "Nonaktifkan otentikasi dua faktor"
+        "Nonaktifkan autentikasi dua faktor"
       ],
       "Display name and signature": [
         "Nama tampilan dan tanda tangan"
@@ -10521,7 +10524,7 @@
         "Atur kata sandi organisasi"
       ],
       "Set up two-factor authentication": [
-        "Aktifkan otentikasi dua faktor"
+        "Aktifkan autentikasi dua faktor"
       ],
       "Settings": [
         "Pengaturan"
@@ -10608,7 +10611,7 @@
         "Nikmati berbagai fitur unggulan ${ MAIL_APP_NAME } secara gratis"
       ],
       "Two-factor authentication": [
-        "Otentikasi dua faktor"
+        "Autentikasi dua faktor"
       ],
       "Type": [
         "Tipe"
