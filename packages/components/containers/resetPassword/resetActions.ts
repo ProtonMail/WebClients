@@ -99,7 +99,6 @@ export const handleNewPassword = async ({
                 password,
                 addresses,
                 domains,
-                hasAddressKeyMigrationGeneration: user.ToMigrate === 1,
             });
             // Refetch the user to update the keys that got generated
             user = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
