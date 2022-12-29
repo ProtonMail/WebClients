@@ -129,8 +129,8 @@ const LoginContainer = ({
             return onBack;
         }
         if (step === AuthStep.GENERATE_INTERNAL) {
-            return () => {
-                cache?.authApi(revoke()).catch(noop);
+            return async () => {
+                await cache?.authApi(revoke()).catch(noop);
                 handleCancel();
             };
         }
