@@ -4,13 +4,14 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
 import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/lib/calendar/sharing/shareUrl/shareUrl';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { ACCESS_LEVEL, CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
@@ -48,10 +49,11 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) => {
     const [links, setLinks] = useState<CalendarLink[]>([]);
     const [isLoadingLinks, withLoadingLinks] = useLoading();
-    const [isLoadingMap, setIsLoadingMap] = useState<Partial<Record<string, boolean>>>({});
+    const [isLoadingMap, setIsLoadingMap] = useState<Partial<SimpleMap<boolean>>>({});
     const api = useApi();
     const { createNotification } = useNotifications();
     const getCalendarInfo = useGetCalendarInfo();
+    const isMounted = useIsMounted();
 
     const notifyLinkCopied = () => {
         createNotification({ type: 'info', text: c('Info').t`Link copied to clipboard` });
@@ -133,6 +135,9 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
             const { privateKeys } = splitKeys(calendarKeys);
 
             try {
+                if (!isMounted()) {
+                    return;
+                }
                 const { CalendarUrls } = await api<{ CalendarUrls: CalendarUrl[] }>(getPublicLinks(calendarID));
                 const links = await transformLinksFromAPI({
                     calendarUrls: CalendarUrls,
@@ -142,6 +147,9 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                 });
                 const sortedLinks = sortLinks(links);
 
+                if (!isMounted()) {
+                    return;
+                }
                 setLinks(sortedLinks);
             } catch (e: any) {
                 handleError(e);
