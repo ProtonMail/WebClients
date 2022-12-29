@@ -48,7 +48,7 @@
         "Lampirkan tangkapan layar"
       ],
       "Authenticate": [
-        "Otentikasi"
+        "Autentikasi"
       ],
       "Back": [
         "Kembali"
@@ -606,7 +606,7 @@
         "Gunakan tema ${ label }"
       ],
       "Use authentication code": [
-        "Gunakan kode otentikasi"
+        "Gunakan kode autentikasi"
       ],
       "Use for sending": [
         "Gunakan untuk pengiriman"
@@ -1889,10 +1889,10 @@
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
       "Authentication canceled.": [
-        "Otentikasi dibatalkan."
+        "Autentikasi dibatalkan."
       ],
       "Authentication error.": [
-        "Kesalahan otentikasi."
+        "Kesalahan autentikasi."
       ],
       "Calendar limit reached": [
         "Batas kalender tercapai"
@@ -2411,7 +2411,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
@@ -3456,6 +3456,9 @@
       "Preview": [
         "Pratinjau"
       ],
+      "Preview failed to be loaded": [
+        "Pratinjau gagal dimuat"
+      ],
       "Primary": [
         "Utama"
       ],
@@ -3653,6 +3656,9 @@
       ],
       "Trash": [
         "Sampah"
+      ],
+      "Unknown error": [
+        "Kesalahan yang tidak diketahui"
       ],
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
@@ -4263,7 +4269,7 @@
         "Toolbar"
       ],
       "Two-factor authentication code": [
-        "Kode otentikasi dua faktor"
+        "Kode autentikasi dua faktor"
       ],
       "Type": [
         "Tipe"
@@ -5498,7 +5504,7 @@
         "Sampah"
       ],
       "Two-factor authentication": [
-        "Otentikasi dua faktor"
+        "Autentikasi dua faktor"
       ],
       "Type": [
         "Tipe"
@@ -5571,7 +5577,7 @@
         "Sesuaikan impor untuk mengurangi jumlah label"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Menandatangani email secara digital akan membantu sistem kami dalam mengotentikasi pesan yang Anda kirim"
+        "Menandatangani email secara digital akan membantu sistem kami dalam mengautentikasi pesan yang Anda kirim"
       ],
       "Each imported email will have this label": [
         "Masing-masing email yang diimpor akan memiliki label ini"

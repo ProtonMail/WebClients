@@ -30,7 +30,7 @@
         "Lampirkan tangkapan layar"
       ],
       "Authenticate": [
-        "Otentikasi"
+        "Autentikasi"
       ],
       "Back": [
         "Kembali"
@@ -360,7 +360,7 @@
         "Gunakan metode pembayaran lainnya"
       ],
       "Use authentication code": [
-        "Gunakan kode otentikasi"
+        "Gunakan kode autentikasi"
       ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
@@ -1676,7 +1676,7 @@
         "Silakan nonaktifkan 2FA via kunci keamanan sebelum menonaktifkan TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Terdapat kesalahan dalam mendaftarkan kunci keamanan Anda. Silakan coba lagi."
@@ -1717,7 +1717,7 @@
         "Verifikasi identitas Anda dengan kunci keamanan fisik U2F atau FIDO2"
       ],
       "Your two-factor authentication key is ready to use.": [
-        "Kunci otentikasi dua faktor Anda siap digunakan."
+        "Kunci autentikasi dua faktor Anda siap digunakan."
       ]
     },
     "fido2: Label": {
@@ -2059,10 +2059,10 @@
         "Apabila Anda memiliki kode hadiah yang valid, masukkan kode tersebut pada kolom di bawah ini untuk mendapatkan diskon Anda."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Apabila Anda belum pernah menggunakan otentikasi dua faktor sebelumnya, kami sangat menyarankan Anda untuk ${ guideButton }."
+        "Apabila Anda belum pernah menggunakan autentikasi dua faktor sebelumnya, kami sangat menyarankan Anda untuk ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses otentikasi dua faktor, kode-kode berikut akan dapat digunakan sebagai pengganti kode otentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
+        "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses autentikasi dua faktor, kode berikut akan dapat digunakan sebagai pengganti kode autentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
@@ -2077,7 +2077,7 @@
         "Apabila Anda ingin menggabungkan akun ini dengan akun lain, JANGAN hapus akun ini."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat otentikasi dua faktor Anda."
+        "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat autentikasi dua faktor Anda."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Pasang berkas konfigurasi negara untuk tersambung ke server secara acak di negara pilihan Anda."
@@ -2131,7 +2131,7 @@
         "Pastikan Anda ${ addARecoveryMethod } agar Anda dapat kembali mengakses akun apabila Anda lupa kata sandi."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Masukkan informasi ini secara manual ke perangkat otentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
+        "Masukkan informasi ini secara manual ke perangkat autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
       ],
       "No credit card required": [
         "Tanpa perlu kartu kredit"
@@ -2202,6 +2202,9 @@
       "Preview": [
         "Pratinjau"
       ],
+      "Preview failed to be loaded": [
+        "Pratinjau gagal dimuat"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
       ],
@@ -2209,7 +2212,7 @@
         "Dukungan prioritas"
       ],
       "read our two-factor authentication guide first": [
-        "terlebih dahulu membaca panduan seputar otentikasi dua faktor berikut"
+        "baca panduan autentikasi dua faktor kami terlebih dahulu"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Direkomendasikan pada perangkat yang Anda percaya. ${ keepMeSignedInLearnMoreLink }"
@@ -2227,7 +2230,7 @@
         "Pindai kode QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Pindai kode berikut dengan perangkat otentikasi dua faktor yang Anda miliki untuk mengatur akun Anda. ${ switchButton }."
+        "Pindai kode berikut dengan perangkat autentikasi dua faktor yang Anda miliki untuk mengatur akun Anda. ${ switchButton }."
       ],
       "Securing your account": [
         "Mengamankan akun Anda"
@@ -2281,7 +2284,7 @@
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
-        "Dengan ini, otentikasi dua faktor untuk akun ini akan dinonaktifkan."
+        "Dengan ini, autentikasi dua faktor untuk akun ini akan dinonaktifkan."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
@@ -2296,10 +2299,10 @@
         "Kata sandi ini akan menggantikan kata sandi sementara Anda. Ke depannya, Anda akan menggunakan kata sandi ini untuk mengakses akun ${ BRAND_NAME } Anda."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan otentikasi dua faktor."
+        "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan autentikasi dua faktor."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Proses ini akan mengaktifkan Otentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun ${ BRAND_NAME } Anda. Kami sangat menyarankan Anda untuk mengaktifkan otentikasi dua faktor karena metode otentikasi ini akan membuat akun ${ BRAND_NAME } Anda lebih aman."
+        "Proses ini akan mengaktifkan Autentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun ${ BRAND_NAME } Anda. Kami sangat menyarankan Anda untuk mengaktifkan autentikasi dua faktor karena metode autentikasi ini akan membuat akun ${ BRAND_NAME } Anda lebih aman."
       ],
       "to continue to ${ toAppName }": [
         "untuk melanjutkan ke ${ toAppName }"
@@ -2341,7 +2344,7 @@
         "Oentikasi dua faktor dinonaktifkan"
       ],
       "Two-factor authentication enabled": [
-        "Otentikasi dua faktor diaktifkan"
+        "Autentikasi dua faktor diaktifkan"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
         "Mode dua kata sandi mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi kotak surat Anda. (Fitur lanjutan)"
@@ -3331,7 +3334,7 @@
         "Tor via VPN"
       ],
       "Two-factor authentication": [
-        "Otentikasi dua faktor"
+        "Autentikasi dua faktor"
       ],
       "Unlimited filters": [
         "Tanpa batasan jumlah filter"
@@ -3636,7 +3639,7 @@
         "Mengharuskan Anda untuk memasukkan kode yang terkirim ke ponsel Anda sebelum Anda dapat masuk. Hal ini memastikan bahwa bahkan apabila kata sandi Anda sampai bocor sekalipun, akun Anda akan tetap aman."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Atur ulang kata sandi dan status otentikasi dua faktor pengguna"
+        "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Alihkan lalu lintas Internet Anda melalui jaringan Tor dengan sekali klik"
@@ -4317,7 +4320,7 @@
         "Perangkat tersambung!"
       ],
       "Disable two-factor authentication": [
-        "Nonaktifkan otentikasi dua faktor"
+        "Nonaktifkan autentikasi dua faktor"
       ],
       "Downgrade account": [
         "Turunkan jenis akun"
@@ -4482,7 +4485,7 @@
         "Atur kata sandi baru"
       ],
       "Set up two-factor authentication": [
-        "Aktifkan otentikasi dua faktor"
+        "Aktifkan autentikasi dua faktor"
       ],
       "Settings": [
         "Pengaturan"
@@ -4515,7 +4518,7 @@
         "Masuk TV"
       ],
       "Two-factor authentication": [
-        "Otentikasi dua faktor"
+        "Autentikasi dua faktor"
       ],
       "Type": [
         "Tipe"

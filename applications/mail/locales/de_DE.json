@@ -4082,6 +4082,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } unterstützt folgende Funktionen ${ forNow } nicht:"
+      ],
       "for now": [
         "derzeit"
       ]
@@ -5128,6 +5131,9 @@
       ],
       "Preview": [
         "Vorschau"
+      ],
+      "Preview failed to be loaded": [
+        "Vorschau konnte nicht geladen werden"
       ],
       "Primary": [
         "Primär"

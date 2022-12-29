@@ -93,7 +93,7 @@
         "Lampiran"
       ],
       "Authenticate": [
-        "Otentikasi"
+        "Autentikasi"
       ],
       "Back": [
         "Kembali"
@@ -1026,7 +1026,7 @@
         "Gunakan tema ${ label }"
       ],
       "Use authentication code": [
-        "Gunakan kode otentikasi"
+        "Gunakan kode autentikasi"
       ],
       "Use for sending": [
         "Gunakan untuk pengiriman"
@@ -3005,10 +3005,10 @@
         "Lampiran terbatas hingga 25 MB"
       ],
       "Authentication canceled.": [
-        "Otentikasi dibatalkan."
+        "Autentikasi dibatalkan."
       ],
       "Authentication error.": [
-        "Kesalahan otentikasi."
+        "Kesalahan autentikasi."
       ],
       "Calendar limit reached": [
         "Batas kalender tercapai"
@@ -3647,7 +3647,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
@@ -5035,6 +5035,9 @@
       "Preview": [
         "Pratinjau"
       ],
+      "Preview failed to be loaded": [
+        "Pratinjau gagal dimuat"
+      ],
       "Primary": [
         "Utama"
       ],
@@ -5258,7 +5261,7 @@
         "Percakapan ini berisi pesan yang dibuang."
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Email ini tidak memenuhi syarat otentikasi domainnya. Email ini mungkin telah dipalsukan atau tidak diteruskan dengan benar!"
+        "Email ini tidak memenuhi syarat autentikasi domainnya. Email ini mungkin telah dipalsukan atau tidak diteruskan dengan benar!"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Undangan ini disimpan di kalender nonaktif."
@@ -6313,7 +6316,7 @@
         "Toolbar"
       ],
       "Two-factor authentication code": [
-        "Kode otentikasi dua faktor"
+        "Kode autentikasi dua faktor"
       ],
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
@@ -8249,7 +8252,7 @@
         "Percaya kunci publik?"
       ],
       "Two-factor authentication": [
-        "Otentikasi dua faktor"
+        "Autentikasi dua faktor"
       ],
       "Unsubscribe": [
         "Berhenti berlangganan"
@@ -8307,7 +8310,7 @@
         "Sesuaikan impor untuk mengurangi jumlah label"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Menandatangani email secara digital akan membantu sistem kami dalam mengotentikasi pesan yang Anda kirim"
+        "Menandatangani email secara digital akan membantu sistem kami dalam mengautentikasi pesan yang Anda kirim"
       ],
       "Each imported email will have this label": [
         "Masing-masing email yang diimpor akan memiliki label ini"

@@ -4735,6 +4735,9 @@
       "Email tracker protection is disabled": [
         "E-posta izleme koruması devre dışı"
       ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
+        "E-posta izleyicileri kişisel gizliliğinizi ihlal edebilir. ${ BRAND_NAME }, bu iletide herhangi bir izleyici bulamadı."
+      ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
         "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. ${ BRAND_NAME } ${ numberOfTrackers } izleyici buldu ve engelledi.",
         "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. ${ BRAND_NAME } ${ numberOfTrackers } izleyici buldu ve engelledi."
@@ -5123,6 +5126,9 @@
       ],
       "Preview": [
         "Ön izle"
+      ],
+      "Preview failed to be loaded": [
+        "Ön izleme yüklenemedi"
       ],
       "Primary": [
         "Birincil"
