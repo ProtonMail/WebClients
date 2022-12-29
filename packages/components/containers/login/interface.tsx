@@ -7,13 +7,13 @@ import {
     KeySalt as tsKeySalt,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
-import { InternalAddressGenerationSetup } from '@proton/shared/lib/keys';
+import { AddressGenerationSetup, ClaimableAddress } from '@proton/shared/lib/keys';
 
-export interface InternalAddressGeneration {
+export interface AddressGeneration {
     externalEmailAddress: Address | undefined;
     availableDomains: string[];
-    setup: InternalAddressGenerationSetup;
-    claimableAddress: { username: string; domain: string } | undefined;
+    setup: AddressGenerationSetup;
+    claimableAddress: ClaimableAddress | undefined;
 }
 
 export enum AuthStep {
@@ -21,7 +21,7 @@ export enum AuthStep {
     TWO_FA,
     UNLOCK,
     NEW_PASSWORD,
-    GENERATE_INTERNAL,
+    SETUP,
     DONE,
 }
 
@@ -33,20 +33,21 @@ export interface AuthTypes {
 
 export interface AuthCacheResult {
     appName: APP_NAMES;
+    toApp: APP_NAMES | undefined;
+    shouldSetup?: boolean;
     authVersion: AuthVersion;
-    authResult: AuthResponse;
+    authResponse: AuthResponse;
     api: Api;
     authApi: Api;
-    userSaltResult?: [tsUser, tsKeySalt[]];
+    data: { user?: tsUser; salts?: tsKeySalt[]; addresses?: Address[] };
     authTypes: AuthTypes;
     username: string;
     persistent: boolean;
     loginPassword: string;
-    hasGenerateKeys: boolean;
-    hasInternalAddressSetup: boolean;
     hasTrustedDeviceRecovery: boolean;
     ignoreUnlock: boolean;
-    internalAddressSetup?: InternalAddressGeneration;
+    addressGeneration?: AddressGeneration;
+    setupVPN: boolean;
 }
 
 export type AuthFlows = 'signup' | 'reset' | 'switch' | undefined;
@@ -58,11 +59,12 @@ export interface AppIntent {
 
 export interface AuthSession {
     UID: string;
+    EventID?: string;
+    LocalID: number;
     User: tsUser;
     Addresses?: tsAddress[];
-    EventID?: string;
     keyPassword?: string;
-    LocalID?: number;
+    loginPassword?: string;
     path?: string;
     flow?: AuthFlows;
     appIntent?: AppIntent;

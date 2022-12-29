@@ -8,7 +8,7 @@ export const queryAddresses = (params?: PaginationParams) => ({
     params,
 });
 
-export const getAllAddresses = (api: Api) => {
+export const getAllAddresses = (api: Api): Promise<Address[]> => {
     return queryPages((page, pageSize) => {
         return api<{ Addresses: Address[]; Total: number }>(
             queryAddresses({

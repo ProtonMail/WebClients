@@ -13,7 +13,7 @@ export * from './keyImport';
 export * from './generatePrivateMemberKeys';
 export * from './signedKeyList';
 export * from './setupKeys';
-export * from './setupInternalAddress';
+export * from './setupAddress';
 export * from './setupAddressKeys';
 export * from './keyMigration';
 export * from './keyAlgorithm';

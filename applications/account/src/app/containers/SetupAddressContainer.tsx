@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -11,35 +12,33 @@ import {
     useApi,
     useAuthentication,
     useErrorHandler,
-    useGetAddresses,
     useGetUser,
     useModalState,
     useTheme,
 } from '@proton/components';
-import { InternalAddressGeneration } from '@proton/components/containers/login/interface';
-import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { AddressGeneration } from '@proton/components/containers/login/interface';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { externalApps, getToApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
-import { UserType } from '@proton/shared/lib/interfaces';
 import {
-    getClaimableAddress,
-    getInternalAddressSetupMode,
-    handleInternalAddressGeneration,
+    getAddressGenerationSetup,
+    getDecryptedSetupBlob,
+    getRequiresAddressSetup,
+    handleAddressGeneration,
 } from '@proton/shared/lib/keys';
 import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
-import GenerateInternalAddressStep from '../login/GenerateInternalAddressStep';
+import GenerateAddressStep from '../login/GenerateAddressStep';
 import Footer from '../public/Footer';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import SupportDropdown from '../public/SupportDropdown';
-import { externalApps, getToAppName } from '../public/helper';
 
 const SetupSupportDropdown = () => {
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
@@ -61,7 +60,9 @@ const SetupSupportDropdown = () => {
     );
 };
 
-const SetupInternalAccountContainer = () => {
+const SetupAddressContainer = () => {
+    const history = useHistory();
+    const location = useLocation();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
@@ -70,11 +71,10 @@ const SetupInternalAccountContainer = () => {
     const toAppRef = useRef<APP_NAMES | null>(null);
     const fromAppRef = useRef<APP_NAMES>(externalApps[0]);
     const authentication = useAuthentication();
-    const getAddresses = useGetAddresses();
     const getUser = useGetUser();
     const [, setTheme] = useTheme();
 
-    const generateInternalAddressRef = useRef<InternalAddressGeneration | undefined>(undefined);
+    const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
 
     const handleBack = () => {
         // Always forces a refresh for the theme
@@ -93,54 +93,47 @@ const SetupInternalAccountContainer = () => {
 
     useEffect(() => {
         return () => {
-            generateInternalAddressRef.current = undefined;
+            generateAddressRef.current = undefined;
         };
     }, []);
 
     useEffect(() => {
         const run = async () => {
-            const searchParams = new URLSearchParams(window.location.search);
-            fromAppRef.current = getValidatedApp(searchParams.get('from') || '') || externalApps[0];
-            const toApp = getValidatedApp(searchParams.get('to') || searchParams.get('app') || '');
+            const searchParams = new URLSearchParams(location.search);
+            const validatedFromApp = getValidatedApp(searchParams.get('from') || '');
+            const validatedToApp = getValidatedApp(searchParams.get('to') || searchParams.get('app') || '');
 
-            if (!toApp || externalApps.includes(toApp as any)) {
+            const user = await getUser();
+
+            fromAppRef.current = getToApp(validatedFromApp, user);
+
+            if (!validatedToApp) {
                 handleBack();
                 return new Promise(noop);
             }
 
-            const [user, addresses, domains] = await Promise.all([
-                getUser(),
-                getAddresses(),
-                silentApi<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains),
-            ]);
-
-            if (user.Type !== UserType.EXTERNAL) {
-                handleToApp(toApp);
+            if (!getRequiresAddressSetup(validatedToApp, user)) {
+                handleToApp(validatedToApp);
                 return new Promise(noop);
             }
+
+            const hash = location.hash.slice(1);
+            const blob = hash ? await getDecryptedSetupBlob(silentApi, hash).catch(noop) : undefined;
+
+            history.replace({ ...location, hash: '' });
 
             // Special case to reset the user's theme since it's logged in at this point. Does not care about resetting it back since it always redirects back to the application.
             setTheme(PROTON_DEFAULT_THEME);
 
             // Stop the event manager since we're setting a new password (and it'd automatically log out) and we refresh once we're done
             stop();
-            toAppRef.current = toApp;
-            const externalEmailAddress = addresses?.[0];
-            const claimableAddress = await getClaimableAddress({
+            toAppRef.current = validatedToApp;
+            generateAddressRef.current = await getAddressGenerationSetup({
+                user,
                 api: silentApi,
-                email: externalEmailAddress?.Email,
-                domains,
-            }).catch(noop);
-            generateInternalAddressRef.current = {
-                externalEmailAddress,
-                availableDomains: domains,
-                claimableAddress,
-                setup: getInternalAddressSetupMode({
-                    User: user,
-                    loginPassword: undefined,
-                    keyPassword: authentication.getPassword(),
-                }),
-            };
+                loginPassword: blob?.loginPassword,
+                keyPassword: authentication.getPassword(),
+            });
             setLoading(false);
         };
 
@@ -167,27 +160,23 @@ const SetupInternalAccountContainer = () => {
     const toApp = toAppRef.current!;
     const toAppName = getToAppName(toApp);
 
-    const generateInternalAddress = generateInternalAddressRef.current;
-    const externalEmailAddress = generateInternalAddress?.externalEmailAddress?.Email;
+    const generateAddress = generateAddressRef.current;
 
-    if (!generateInternalAddress) {
+    if (!generateAddress) {
         throw new Error('Missing dependencies');
     }
 
     return (
         <Layout hasDecoration={false}>
             <Main>
-                <GenerateInternalAddressStep
+                <GenerateAddressStep
                     onBack={handleBack}
                     api={silentApi}
                     toAppName={toAppName}
-                    availableDomains={generateInternalAddress.availableDomains}
-                    externalEmailAddress={externalEmailAddress}
-                    setup={generateInternalAddress.setup}
-                    claimableAddress={generateInternalAddress.claimableAddress}
+                    data={generateAddress}
                     onSubmit={async (payload) => {
                         try {
-                            const keyPassword = await handleInternalAddressGeneration({
+                            const keyPassword = await handleAddressGeneration({
                                 api: silentApi,
                                 setup: payload.setup,
                                 domain: payload.domain,
@@ -223,4 +212,4 @@ const SetupInternalAccountContainer = () => {
     );
 };
 
-export default SetupInternalAccountContainer;
+export default SetupAddressContainer;

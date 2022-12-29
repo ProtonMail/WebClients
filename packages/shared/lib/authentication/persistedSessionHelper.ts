@@ -10,7 +10,7 @@ import { getAppFromPathnameSafe } from '../apps/slugHelper';
 import { SECOND, isSSOMode } from '../constants';
 import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from '../drawer/helpers';
 import { DRAWER_EVENTS } from '../drawer/interfaces';
-import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
+import { withUIDHeaders } from '../fetch/headers';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
 import { Api, User as tsUser } from '../interfaces';
 import { getKey } from './cryptoHelper';
@@ -21,7 +21,6 @@ import {
     getPersistedSession,
     getPersistedSessions,
     removePersistedSession,
-    setPersistedSession,
     setPersistedSessionWithBlob,
 } from './persistedSessionStorage';
 
@@ -196,22 +195,23 @@ export const persistSession = async ({
     User,
     UID,
     LocalID,
-    AccessToken,
     RefreshToken,
     persistent,
     trusted,
 }: PersistLoginArgs) => {
-    const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
-
     if (isSSOMode) {
-        if (keyPassword) {
-            await persistSessionWithPassword({ api: authApi, UID, User, LocalID, keyPassword, persistent, trusted });
-        } else {
-            setPersistedSession(LocalID, { UID, UserID: User.ID, persistent, trusted });
-        }
+        await persistSessionWithPassword({
+            api,
+            UID,
+            User,
+            LocalID,
+            keyPassword: keyPassword || '',
+            persistent,
+            trusted,
+        });
     }
 
-    await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
+    await api(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
 };
 
 export const getActiveSessionByUserID = (UserID: string, isSubUser: boolean) => {

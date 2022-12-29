@@ -1,6 +1,6 @@
 import { ChallengeResult } from '@proton/components';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
-import { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
+import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { Payment } from '@proton/components/containers/payments/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
@@ -8,6 +8,7 @@ import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import {
     Address,
+    Api,
     Currency,
     Cycle,
     HumanVerificationMethodType,
@@ -21,18 +22,19 @@ export const otherProductParamValues = ['generic', 'business'] as const;
 export type OtherProductParam = typeof otherProductParamValues[number];
 export type ProductParam = APP_NAMES | OtherProductParam | 'none' | undefined;
 
-export enum SIGNUP_STEPS {
-    NO_SIGNUP = 'no-signup',
-    ACCOUNT_CREATION_USERNAME = 'account-creation-username',
-    SAVE_RECOVERY = 'save-recovery',
-    CONGRATULATIONS = 'congratulations',
-    UPSELL = 'plans',
-    PAYMENT = 'payment',
-    HUMAN_VERIFICATION = 'human-verification',
-    CREATING_ACCOUNT = 'creating-account',
-    TRIAL_PLAN = 'trial-plan',
-    EXPLORE = 'explore',
-    DONE = 'done',
+export enum SignupSteps {
+    NoSignup = 'no-signup',
+    AccountCreationUsername = 'account-creation-username',
+    SaveRecovery = 'save-recovery',
+    Congratulations = 'congratulations',
+    Upsell = 'plans',
+    Payment = 'payment',
+    HumanVerification = 'human-verification',
+    CreatingAccount = 'creating-account',
+    TrialPlan = 'trial-plan',
+    Explore = 'explore',
+    Done = 'done',
+    SetupAddress = 'setup-address',
 }
 
 export const SERVICES: { [key: string]: APP_NAMES } = {
@@ -133,6 +135,7 @@ interface SetupData {
     addresses: Address[];
     keyPassword: string | undefined;
     authResponse: AuthResponse;
+    authApi: Api;
 }
 
 export interface UserData {
@@ -144,13 +147,14 @@ export interface SignupCacheResult {
     productParam: ProductParam;
     userData?: UserData;
     setupData?: SetupData;
+    setupVPN: boolean;
     accountData: AccountData;
     subscriptionData: SubscriptionData;
     inviteData: InviteData | undefined;
     referralData: ReferralData | undefined;
+    addressGeneration?: AddressGeneration;
     persistent: boolean;
     trusted: boolean;
-    generateKeys: boolean;
     clientType: CLIENT_TYPES;
     ignoreExplore: boolean;
     humanVerificationData?: HumanVerificationData;
@@ -163,10 +167,10 @@ export interface SignupCacheResult {
 
 export type SignupActionResponse =
     | {
-          to: SIGNUP_STEPS.DONE;
+          to: SignupSteps.Done;
           session: AuthSession;
       }
     | {
           cache: SignupCacheResult;
-          to: Exclude<SIGNUP_STEPS, SIGNUP_STEPS.DONE>;
+          to: Exclude<SignupSteps, SignupSteps.Done>;
       };

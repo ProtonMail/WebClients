@@ -26,7 +26,7 @@ import {
     handleRequestToken,
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
@@ -44,10 +44,11 @@ import ValidateResetTokenForm from './ValidateResetTokenForm';
 
 interface Props {
     onLogin: OnLoginCallback;
-    hasGenerateKeys?: boolean;
+    toApp: APP_NAMES | undefined;
+    setupVPN: boolean;
 }
 
-const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
+const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
     const { APP_NAME } = useConfig();
     const history = useHistory();
     const location = useLocation();
@@ -81,11 +82,11 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
         const { username, persistent } = cacheRef.current || {};
         cacheRef.current = undefined;
         cacheRef.current = {
+            setupVPN,
             appName: APP_NAME,
             persistent: persistent ?? true,
             username: username ?? '',
             Methods: [],
-            hasGenerateKeys,
             hasTrustedDeviceRecovery,
         };
         setStep(STEPS.REQUEST_RECOVERY_METHODS);
@@ -153,11 +154,11 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
         setStep(STEPS.LOADING);
 
         cacheRef.current = {
+            setupVPN,
             appName: APP_NAME,
             persistent: persistent ?? true,
             username: username ?? '',
             Methods: [],
-            hasGenerateKeys,
             hasTrustedDeviceRecovery,
         };
 
@@ -189,11 +190,11 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
 
                 handleValidateResetToken({
                     cache: {
+                        setupVPN,
                         appName: APP_NAME,
                         username,
                         Methods: [],
                         persistent,
-                        hasGenerateKeys,
                         hasTrustedDeviceRecovery,
                     },
                     api: silentApi,
@@ -258,8 +259,8 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
                             defaultUsername={cache?.username || automaticVerification.username}
                             onSubmit={(username) => {
                                 return handleRequestRecoveryMethods({
+                                    setupVPN,
                                     appName: APP_NAME,
-                                    hasGenerateKeys,
                                     hasTrustedDeviceRecovery,
                                     username,
                                     persistent,

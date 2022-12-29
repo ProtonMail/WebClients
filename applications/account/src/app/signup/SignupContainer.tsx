@@ -8,7 +8,6 @@ import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } 
 import { OfferGlobalFeatureCodeValue } from '@proton/components/containers/offers/interface';
 import {
     useApi,
-    useConfig,
     useErrorHandler,
     useExperiment,
     useFeature,
@@ -21,6 +20,7 @@ import {
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
     APPS,
     APP_NAMES,
@@ -43,13 +43,13 @@ import {
     PaymentMethodStatus,
     Plan,
 } from '@proton/shared/lib/interfaces';
-import { getLocalPart } from '@proton/shared/lib/keys/setupInternalAddress';
+import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import Layout from '../public/Layout';
-import { defaultPersistentKey, getHasAppExternalSignup, getIsVPNApp } from '../public/helper';
+import { defaultPersistentKey } from '../public/helper';
 import AccountStep from './AccountStep';
 import CongratulationsStep from './CongratulationsStep';
 import ExploreStep from './ExploreStep';
@@ -66,10 +66,10 @@ import {
     InviteData,
     PlanIDs,
     ProductParam,
-    SIGNUP_STEPS,
     SignupActionResponse,
     SignupCacheResult,
     SignupModel,
+    SignupSteps,
     SignupType,
     SubscriptionData,
 } from './interfaces';
@@ -86,17 +86,17 @@ import {
 } from './signupActions';
 
 const {
-    ACCOUNT_CREATION_USERNAME,
-    NO_SIGNUP,
-    SAVE_RECOVERY,
-    CONGRATULATIONS,
-    UPSELL,
-    TRIAL_PLAN,
-    PAYMENT,
-    HUMAN_VERIFICATION,
-    CREATING_ACCOUNT,
-    EXPLORE,
-} = SIGNUP_STEPS;
+    AccountCreationUsername,
+    NoSignup,
+    SaveRecovery,
+    Congratulations,
+    Upsell,
+    TrialPlan,
+    Payment,
+    HumanVerification,
+    CreatingAccount,
+    Explore,
+} = SignupSteps;
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -105,10 +105,10 @@ interface Props {
     toAppName?: string;
     onBack?: () => void;
     clientType: CLIENT_TYPES;
+    setupVPN: boolean;
 }
 
-const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam }: Props) => {
-    const { APP_NAME } = useConfig();
+const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam, setupVPN }: Props) => {
     const normalApi = useApi();
     const history = useHistory();
     const location = useLocation<{ invite?: InviteData }>();
@@ -128,9 +128,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const offersFeature = useFeature<OfferGlobalFeatureCodeValue>(FeatureCode.Offers);
     const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const referralExperiment = useExperiment(ExperimentCode.ReferralProgramSignup);
-    const [[previousSteps, step], setStep] = useState<[SIGNUP_STEPS[], SIGNUP_STEPS]>([
+    const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
-        SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME,
+        SignupSteps.AccountCreationUsername,
     ]);
     const [humanVerificationStep, setHumanVerificationStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
 
@@ -273,7 +273,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
 
         void withLoading(
             fetchDependencies().catch(() => {
-                setStep([[], NO_SIGNUP]);
+                setStep([[], NoSignup]);
             })
         );
 
@@ -291,12 +291,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         setStep([newSteps, newStep]);
     };
 
-    const handleStep = (to: SIGNUP_STEPS) => {
+    const handleStep = (to: SignupSteps) => {
         setStep([[...previousSteps, step], to]);
     };
 
     const handleResult = (result: SignupActionResponse) => {
-        if (result.to === SIGNUP_STEPS.DONE) {
+        if (result.to === SignupSteps.Done) {
             return onLogin(result.session);
         }
         cacheRef.current = result.cache;
@@ -306,7 +306,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         errorHandler(error);
     };
 
-    if (step === NO_SIGNUP) {
+    if (step === NoSignup) {
         throw new Error('Missing dependencies');
     }
 
@@ -382,10 +382,10 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const verificationModel = cache?.humanVerificationResult?.verificationModel;
 
     const handleBackStep = (() => {
-        if (step === ACCOUNT_CREATION_USERNAME) {
+        if (step === AccountCreationUsername) {
             return onBack && !model.referralData ? onBack : undefined;
         }
-        if (step === HUMAN_VERIFICATION) {
+        if (step === HumanVerification) {
             return () => {
                 if (humanVerificationStep === HumanVerificationSteps.ENTER_DESTINATION) {
                     handleBack();
@@ -394,7 +394,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                 }
             };
         }
-        if ([PAYMENT, UPSELL, TRIAL_PLAN, SAVE_RECOVERY].includes(step)) {
+        if ([Payment, Upsell, TrialPlan, SaveRecovery].includes(step)) {
             return handleBack;
         }
     })();
@@ -424,7 +424,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
 
         const isExternalAccountFlow = signupType.type === SignupType.Email;
         if (isExternalAccountFlow) {
-            if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
+            if (step === SignupSteps.AccountCreationUsername) {
                 return {
                     activeStep: 0,
                     steps: [
@@ -435,7 +435,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                 };
             }
 
-            if (step === SIGNUP_STEPS.HUMAN_VERIFICATION || step === SIGNUP_STEPS.UPSELL) {
+            if (step === SignupSteps.HumanVerification || step === SignupSteps.Upsell) {
                 return {
                     activeStep: 1,
                     steps: [
@@ -446,7 +446,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                 };
             }
 
-            if (step === SIGNUP_STEPS.PAYMENT) {
+            if (step === SignupSteps.Payment) {
                 return {
                     activeStep: 2,
                     steps: [stepLabels.accountSetup, stepLabels.verification, stepLabels.payment],
@@ -454,22 +454,22 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             }
         }
 
-        if (step === SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME) {
+        if (step === SignupSteps.AccountCreationUsername) {
             return {
                 activeStep: 0,
                 steps: [stepLabels.accountSetup, hasPaidPlanPreSelected ? stepLabels.payment : stepLabels.verification],
             };
         }
 
-        if (step === SIGNUP_STEPS.UPSELL) {
+        if (step === SignupSteps.Upsell) {
             return { activeStep: 0, steps: [stepLabels.accountSetup, stepLabels.verification] };
         }
 
-        if (step === SIGNUP_STEPS.HUMAN_VERIFICATION) {
+        if (step === SignupSteps.HumanVerification) {
             return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.verification] };
         }
 
-        if (step === SIGNUP_STEPS.PAYMENT) {
+        if (step === SignupSteps.Payment) {
             return { activeStep: 1, steps: [stepLabels.accountSetup, stepLabels.payment] };
         }
 
@@ -485,7 +485,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     ))}
                 </Stepper>
             )}
-            {step === ACCOUNT_CREATION_USERNAME && (
+            {step === AccountCreationUsername && (
                 <AccountStep
                     toApp={toApp}
                     clientType={clientType}
@@ -545,9 +545,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                                   }
                                 : undefined,
                             productParam,
+                            setupVPN,
                             // Internal app or oauth app or vpn
                             ignoreExplore: Boolean(toApp || toAppName || signupType === SignupType.VPN),
-                            generateKeys: APP_NAME === APPS.PROTONACCOUNT,
                             accountData,
                             subscriptionData,
                             inviteData: model.inviteData,
@@ -567,7 +567,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     loading={loading || externalSignupFeature.loading}
                 />
             )}
-            {step === HUMAN_VERIFICATION && (
+            {step === HumanVerification && (
                 <VerificationStep
                     onBack={handleBackStep}
                     defaultCountry={defaultCountry}
@@ -605,7 +605,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     }}
                 />
             )}
-            {step === TRIAL_PLAN && (
+            {step === TrialPlan && (
                 <ReferralStep
                     experiment={referralExperiment}
                     onBack={handleBackStep}
@@ -617,7 +617,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     }}
                 />
             )}
-            {step === UPSELL && (
+            {step === Upsell && (
                 <UpsellStep
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
@@ -642,7 +642,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     }}
                 />
             )}
-            {step === PAYMENT && model.paymentMethodStatus && (
+            {step === Payment && model.paymentMethodStatus && (
                 <PaymentStep
                     onBack={handleBackStep}
                     api={normalApi}
@@ -672,7 +672,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     }}
                 />
             )}
-            {step === CREATING_ACCOUNT && (
+            {step === CreatingAccount && (
                 <LoadingStep
                     toApp={toApp}
                     hasPayment={
@@ -691,7 +691,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     }}
                 />
             )}
-            {step === CONGRATULATIONS && (
+            {step === Congratulations && (
                 <CongratulationsStep
                     defaultName={
                         cache?.accountData.username ||
@@ -707,14 +707,13 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                         return handleDisplayName({
                             displayName,
                             cache,
-                            api: silentApi,
                         })
                             .then(handleResult)
                             .catch(handleError);
                     }}
                 />
             )}
-            {step === SAVE_RECOVERY && (
+            {step === SaveRecovery && (
                 <RecoveryStep
                     onBack={handleBackStep}
                     defaultCountry={defaultCountry}
@@ -728,13 +727,13 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                         if (!cache) {
                             throw new Error('Missing cache');
                         }
-                        return handleSaveRecovery({ cache, api: silentApi, recoveryEmail, recoveryPhone })
+                        return handleSaveRecovery({ cache, recoveryEmail, recoveryPhone })
                             .then(handleResult)
                             .catch(handleError);
                     }}
                 />
             )}
-            {step === EXPLORE && (
+            {step === Explore && (
                 <ExploreStep
                     onExplore={async (app) => {
                         if (!cache) {
@@ -752,7 +751,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         </>
     );
 
-    const hasDecoration = [ACCOUNT_CREATION_USERNAME].includes(step);
+    const hasDecoration = [AccountCreationUsername].includes(step);
 
     return (
         <Layout
