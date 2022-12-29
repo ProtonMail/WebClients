@@ -175,7 +175,7 @@ const getSaveSingleEventActions = async ({
                 reencryptSharedEvent,
             });
         }
-        if (!oldEvent.IsOrganizer) {
+        if (isAttendee) {
             // the attendee edits notifications. We must do it through the updatePersonalPart route
             return getUpdatePersonalPartActions({
                 eventComponent: newVeventComponent,
