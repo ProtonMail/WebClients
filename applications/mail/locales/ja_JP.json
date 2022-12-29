@@ -570,7 +570,7 @@
         "統合"
       ],
       "Merge contacts": [
-        "連絡先の統合"
+        "連絡先を統合"
       ],
       "Messages from this sender": [
         "この差出人からのメッセージ"
@@ -597,10 +597,10 @@
         "移動"
       ],
       "Move all conversations from this folder": [
-        "このフォルダーからすべてのやりとりを移動"
+        "このフォルダーからすべての会話を移動"
       ],
       "Move all conversations from this label": [
-        "このラベルのすべてのやりとりを移動"
+        "このラベルからすべての会話を移動"
       ],
       "Move all messages from this folder": [
         "このフォルダーからすべてのメッセージを移動"
@@ -624,7 +624,7 @@
         "受信トレイに移動"
       ],
       "Move to inbox (not spam)": [
-        "受信トレイに移動（迷惑メールから除外）"
+        "受信トレイに移動 (迷惑メールではありません)"
       ],
       "Move to spam": [
         "迷惑メールに移動"
@@ -4517,6 +4517,9 @@
       "Email tracker protection is disabled": [
         "メールトラッカー防止は無効です"
       ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
+        "メールトラッカーはあなたのプライバシーを侵害します。${ BRAND_NAME } はこのメッセージのトラッカーを見つけることができませんでした。"
+      ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
         "メールトラッカーはあなたのプライバシーを侵害します。${ BRAND_NAME } は ${ numberOfTrackers } 件のトラッカーを見つけてブロックしました。"
       ],
@@ -7292,7 +7295,7 @@
     },
     "Success": {
       "${ count } conversations deleted": [
-        "${ count }件のやりとりを削除しました"
+        "${ count } 件の会話が削除されました"
       ],
       "${ count } drafts deleted": [
         "${ count } 件の下書きが削除されました"
@@ -7382,13 +7385,13 @@
         "会話が削除されました"
       ],
       "Conversation marked as read.": [
-        "やりとりを既読にしました。"
+        "会話を既読にしました。"
       ],
       "Conversation marked as Starred.": [
-        "やりとりに星をつけました。"
+        "会話に星印をつけました。"
       ],
       "Conversation marked as unread.": [
-        "やりとりを未読にしました。"
+        "会話を未読にしました。"
       ],
       "Conversation moved to ${ folderName } and sender added to your not spam list.": [
         "やりとりを${ folderName }に移動し、差出人のアドレスは迷惑メールから除外されました。"
@@ -7475,7 +7478,7 @@
         "${ sendersList } からのメッセージを ${ folder } に移動します"
       ],
       "Move ${ selectionCount } conversations": [
-        "${ selectionCount }件のやりとりを移動"
+        "${ selectionCount } 件の会話を移動"
       ],
       "Move ${ selectionCount } messages": [
         "${ selectionCount } 件のメッセージを移動"
@@ -7689,7 +7692,7 @@
         "部分的なインポートを続行しますか?"
       ],
       "Conversation list": [
-        "やりとりの一覧"
+        "会話リスト"
       ],
       "Create contact": [
         "連絡先の作成"
@@ -7722,10 +7725,10 @@
         "${ count } 件の連絡先を削除"
       ],
       "Delete ${ count } contacts": [
-        "${ count } 件の連絡先の削除"
+        "${ count } 件の連絡先を削除"
       ],
       "Delete ${ count } conversations": [
-        "${ count }件のやりとりを削除"
+        "${ count } 件の会話を削除"
       ],
       "Delete ${ count } drafts": [
         "${ count } 件の下書きを削除"
@@ -7917,7 +7920,7 @@
         "受信トレイに移動"
       ],
       "Move to inbox (not spam)": [
-        "受信トレイに移動（迷惑メールから除外）"
+        "受信トレイに移動 (迷惑メールではありません)"
       ],
       "Move to spam": [
         "迷惑メールに移動"
@@ -8049,10 +8052,10 @@
         "サインアウト"
       ],
       "Sort conversations": [
-        "やりとりの並べ替え"
+        "会話の並べ替え"
       ],
       "Sort messages": [
-        "メッセージをソート"
+        "メッセージの並べ替え"
       ],
       "Start a new import": [
         "新しいインポートを開始"

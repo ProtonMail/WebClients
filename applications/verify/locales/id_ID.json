@@ -6,7 +6,7 @@
   "contexts": {
     "Action": {
       "Authenticate": [
-        "Otentikasi"
+        "Autentikasi"
       ],
       "Back": [
         "Kembali"
@@ -54,7 +54,7 @@
         "Coba metode lain"
       ],
       "Use authentication code": [
-        "Gunakan kode otentikasi"
+        "Gunakan kode autentikasi"
       ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
@@ -960,7 +960,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Terdapat kesalahan dalam mengotentikasi kunci keamanan Anda. Silakan coba lagi."
+        "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
       ]
     },
     "fido2: Info": {
@@ -1131,7 +1131,7 @@
         "Minta kode baru"
       ],
       "Two-factor authentication": [
-        "Otentikasi dua faktor"
+        "Autentikasi dua faktor"
       ]
     },
     "Validation": {
