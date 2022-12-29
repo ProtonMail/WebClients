@@ -3785,6 +3785,9 @@
       ],
       "Subject: ${ subject }": [
         "主题：${ subject }"
+      ],
+      "To: ${ toString }": [
+        "收件人：${ toString }"
       ]
     },
     "Get started checklist completion": {
@@ -8304,6 +8307,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
+      ],
+      "Skip verification?": [
+        "跳过验证？"
       ],
       "Some of the attachments' signatures failed verification.\nYou can still download these attachments but they might have been tampered with.": [
         "该附件的签名验证失败。\n你仍然可以下载这个附件，但它可能被篡改了。"
