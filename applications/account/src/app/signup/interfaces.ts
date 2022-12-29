@@ -17,6 +17,10 @@ import {
     User,
 } from '@proton/shared/lib/interfaces';
 
+export const otherProductParamValues = ['generic', 'business'] as const;
+export type OtherProductParam = typeof otherProductParamValues[number];
+export type ProductParam = APP_NAMES | OtherProductParam | 'none' | undefined;
+
 export enum SIGNUP_STEPS {
     NO_SIGNUP = 'no-signup',
     ACCOUNT_CREATION_USERNAME = 'account-creation-username',
@@ -137,7 +141,7 @@ export interface UserData {
 
 export interface SignupCacheResult {
     appIntent?: AppIntent;
-    productParam: APP_NAMES | 'generic' | 'none' | undefined;
+    productParam: ProductParam;
     userData?: UserData;
     setupData?: SetupData;
     accountData: AccountData;
