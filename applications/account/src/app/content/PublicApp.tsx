@@ -64,7 +64,7 @@ const getPathFromLocation = (location: H.Location) => {
 export const getSearchParams = (search: string) => {
     const searchParams = new URLSearchParams(search);
 
-    const maybeProductParam = searchParams.get('service') || searchParams.get('product') || undefined;
+    const maybeProductParam = (searchParams.get('service') || searchParams.get('product') || undefined)?.toLowerCase();
     const product = getProduct(maybeProductParam);
     const productParam = getProductParam(product, maybeProductParam);
 
