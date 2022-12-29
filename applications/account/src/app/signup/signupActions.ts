@@ -269,7 +269,6 @@ export const handleSetupUser = async ({
                       api: authApi,
                       addresses,
                       password,
-                      hasAddressKeyMigrationGeneration: true,
                   })
                 : undefined;
 

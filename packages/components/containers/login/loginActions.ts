@@ -308,7 +308,6 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
         password: newPassword,
         addresses,
         domains,
-        hasAddressKeyMigrationGeneration: user.ToMigrate === 1,
     });
 
     cache.data.user = undefined;

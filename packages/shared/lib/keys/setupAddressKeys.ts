@@ -28,12 +28,11 @@ interface SetupAddressKeysArgs {
     username: string;
     addresses: tsAddress[];
     domains: string[];
-    hasAddressKeyMigrationGeneration: boolean;
 }
 
-export const handleSetupAddressKeys = async ({ username, password, api, addresses, domains, hasAddressKeyMigrationGeneration }: SetupAddressKeysArgs) => {
+export const handleSetupAddressKeys = async ({ username, password, api, addresses, domains }: SetupAddressKeysArgs) => {
     const addressesToUse =
         addresses?.length > 0 ? addresses : await handleSetupAddress({ api, domain: domains[0], username });
 
-    return handleSetupKeys({ api, addresses: addressesToUse, password, hasAddressKeyMigrationGeneration });
+    return handleSetupKeys({ api, addresses: addressesToUse, password });
 };
