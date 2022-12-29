@@ -304,7 +304,7 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
         const validatedSession = await resumeSession(api, LocalID);
 
         // Revoke the discarded forked session
-        api(withAuthHeaders(UID, AccessToken, revoke({ Child: 1 }))).catch(noop);
+        await api(withAuthHeaders(UID, AccessToken, revoke({ Child: 1 }))).catch(noop);
 
         return {
             ...validatedSession,
