@@ -158,6 +158,9 @@
       "Create new folder": [
         "Δημιουργία νέου φακέλου"
       ],
+      "Create new text file": [
+        "Δημιουργία νέου αρχείου κειμένου"
+      ],
       "Customize": [
         "Προσαρμογή"
       ],
@@ -198,6 +201,9 @@
       ],
       "Download": [
         "Λήψη"
+      ],
+      "Download (${ count })": [
+        "Κατεβάστε (${ count })"
       ],
       "Download all": [
         "Λήψη όλων"
@@ -249,6 +255,9 @@
       ],
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
+      ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Απόκτηση ${ DRIVE_APP_NAME }"
       ],
       "Get link": [
         "Λάβετε σύνδεσμο"
@@ -406,11 +415,17 @@
       "Remove": [
         "Αφαίρεση"
       ],
+      "Remove device": [
+        "Διαγραφή συσκευής"
+      ],
       "Remove from this list": [
         "Κατάργηση από αυτή τη λίστα"
       ],
       "Rename": [
         "Μετονομασία"
+      ],
+      "Replace file": [
+        "Αντικατάσταση αρχείου"
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
@@ -435,6 +450,9 @@
       ],
       "Restore from trash": [
         "Επαναφορά από Διαγραμμένα"
+      ],
+      "Resume all": [
+        "Συνέχιση όλων"
       ],
       "Resume download": [
         "Συνέχιση λήψης"
@@ -559,6 +577,9 @@
       "Upload file": [
         "Ανέβασμα αρχείου"
       ],
+      "Upload files": [
+        "Ανέβασμα αρχείων"
+      ],
       "Upload folder": [
         "Ανέβασμα φακέλου"
       ],
@@ -585,6 +606,9 @@
       ],
       "View invoice": [
         "Προβολή τιμολογίου"
+      ],
+      "Your 500 MB bonus": [
+        "Το 500 MB μπόνους σας"
       ],
       "Zoom in": [
         "Μεγέθυνση"
@@ -1742,6 +1766,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" υπάρχει ήδη"
+      ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
@@ -1773,6 +1800,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο ή",
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια ή"
+      ],
+      "Device name does not match": [
+        "Το όνομα της συσκευής δεν ταιριάζει"
       ],
       "Email address invalid": [
         "Η διεύθυνση E-mail δεν είναι έγκυρη"
@@ -2686,6 +2716,9 @@
       "and": [
         "και"
       ],
+      "And access it from anywhere": [
+        "Και αποκτήστε πρόσβαση σε αυτό από οπουδήποτε"
+      ],
       "Anyone with this link can access your file.": [
         "Οποιοσδήποτε έχει αυτόν τον σύνδεσμο μπορεί να προσπελάσει το αρχείο σας."
       ],
@@ -2777,11 +2810,30 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
       ],
+      "Delete locked drive": [
+        "Διαγραφή κλειδωμένης μονάδας δίσκου",
+        "Διαγραφή κλειδωμένων μονάδων δίσκου"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο ανέβηκε διασφαλισμένα από ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος ανέβηκε διασφαλισμένα από ${ emailAddress }."
+      ],
+      "double your storage": [
+        "διπλασιάστε τον αποθηκευτικό σας χώρο"
+      ],
+      "Download canceled": [
+        "Η λήψη ακυρώθηκε"
+      ],
+      "Download failed": [
+        "Η λήψη απέτυχε"
+      ],
+      "Download failed due to ${ error }": [
+        "Η λήψη απέτυχε λόγω του ${ error }"
+      ],
+      "Download finished": [
+        "Η λήψη ολοκληρώθηκε"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Η λήψη του ${ downloadFileName } θα ματαιωθεί"
@@ -2800,6 +2852,9 @@
       ],
       "Enabling drive search": [
         "Ενεργοποίηση τοπικής αναζήτησης"
+      ],
+      "Encrypted": [
+        "Κρυπτογραφημένα"
       ],
       "Encrypted search is here": [
         "Η κρυπτογραφημένη αναζήτηση έφτασε"
@@ -2858,6 +2913,9 @@
       ],
       "Folder will not be uploaded": [
         "Ο φάκελος δεν θα ανεβεί"
+      ],
+      "Folders you sync from your computer will appear here.": [
+        "Οι φάκελοι που συγχρονίζετε από τον υπολογιστή σας θα εμφανιστούν εδώ."
       ],
       "Free up some space or add more storage space.": [
         "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
@@ -2926,6 +2984,9 @@
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
       ],
+      "It’s easy and secure": [
+        "Είναι εύκολο και ασφαλές"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
@@ -2952,6 +3013,9 @@
       ],
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
+      ],
+      "Makes your account safer": [
+        "Κάνει τον λογαριασμό σας ασφαλέστερο"
       ],
       "Merged": [
         "Συγχωνευμένα"
@@ -2995,14 +3059,27 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
+      "No synced computers": [
+        "Δεν υπάρχουν συγχρονισμένοι υπολογιστές"
+      ],
+      "No synced folders": [
+        "Δεν υπάρχουν συγχρονισμένοι φάκελοι"
+      ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
+      ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "Δεν μεταφέρθηκαν όλα τα αρχεία. Δοκιμάστε ξανά να τα ανεβάσετε ή να τα κατεβάσετε."
       ],
       "of": [
         "από"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Μια κρυπτογραφημένη αρχειοθήκη σας είναι κλειδωμένη, πιθανότατα λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Επιτρέπεται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρας",
+        "Επιτρέπονται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρες"
       ],
       "Only the people with the link and the password can access this file.": [
         "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
@@ -3067,6 +3144,9 @@
       "Search Enabled": [
         "Αναζήτηση Ενεργοποιημένη"
       ],
+      "Secure sharing": [
+        "Ασφαλής κοινή χρήση"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Επιλέξτε ένα ανεβασμένο αρχείο ή φάκελο και δημιουργήστε έναν σύνδεσμο προς αυτό."
       ],
@@ -3094,6 +3174,9 @@
       "Shareable link for ${ boldNameText }": [
         "Κοινοποιήσιμος σύνδεσμος για το ${ boldNameText }"
       ],
+      "Shared link failed to be loaded": [
+        "Αποτυχία φόρτωσης κοινόχρηστου σύνδεσμου"
+      ],
       "Signature check will be ignored": [
         "Ο έλεγχος υπογραφής θα αγνοηθεί"
       ],
@@ -3111,6 +3194,9 @@
       ],
       "support team": [
         "ομάδα υποστήριξης"
+      ],
+      "Swiss privacy": [
+        "Ελβετική ιδιωτικότητα"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
@@ -3158,6 +3244,12 @@
       "This will overwrite the existing folder": [
         "Αυτή η εγγραφή θα διαγράψει τον φάκελο που ήδη υπάρχει"
       ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+      ],
+      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, χρειάζεται να δεικτοδοτήσουμε τα αρχεία σας τοπικά. Μπορείτε να συνεχίσετε τη χρήση του ${ DRIVE_APP_NAME } κανονικά - θα σας ενημερώσουμε όταν η δεικτοδότηση ολοκληρωθεί."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
@@ -3184,6 +3276,9 @@
       ],
       "Trash": [
         "Διαγραμμένα"
+      ],
+      "Unknown error": [
+        "Άγνωστο σφάλμα"
       ],
       "Unlimited folders, labels, and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
@@ -3421,8 +3516,17 @@
       "Copy": [
         "Αντιγραφή"
       ],
+      "Copyright infringement": [
+        "Παραβίαση πνευματικών δικαιωμάτων"
+      ],
       "Country": [
         "Χώρα"
+      ],
+      "Create ${ BRAND_NAME } account": [
+        "Δημιουργία ${ BRAND_NAME } λογαριασμού"
+      ],
+      "Create a share link": [
+        "Δημιουργία συνδέσμου κοινής χρήσης"
       ],
       "Created": [
         "Δημιουργήθηκε"
@@ -3436,6 +3540,12 @@
       ],
       "Deleted": [
         "Διαγράφηκαν"
+      ],
+      "Device": [
+        "Συσκευή"
+      ],
+      "Device name": [
+        "Όνομα συσκευής"
       ],
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
@@ -3460,6 +3570,9 @@
       ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
+      ],
+      "Enter device name": [
+        "Εισάγετε όνομα συσκευής"
       ],
       "Expired": [
         "Έχει λήξει"
@@ -3596,6 +3709,9 @@
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
+      "Please provide full details to help us take appropriate action": [
+        "Παρακαλούμε δώστε πλήρεις λεπτομέρειες για να μας βοηθήσετε να λάβουμε τα κατάλληλα μέτρα"
+      ],
       "Port": [
         "Θύρα"
       ],
@@ -3631,6 +3747,9 @@
       ],
       "Set expiration date": [
         "Ορισμός ημερομηνίας λήξης"
+      ],
+      "Set recovery method": [
+        "Ορισμός μεθόδου ανάκτησης"
       ],
       "Sign emails": [
         "Υπογραφεί ηλεκτρονικών ταχυδρομείων"
@@ -3697,6 +3816,9 @@
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
+      ],
+      "Upload your first file": [
+        "Ανεβάστε το πρώτο σας αρχείο"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Όνομα χρήστη ή διεύθυνση ${ MAIL_APP_NAME }"
@@ -3885,11 +4007,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "Αποτυχία επαναφοράς του \"${ name }\" από τα Διαγραμμένα"
       ],
+      "\"${ name }\" failed to be saved": [
+        "\"${ name }\" απέτυχε να αποθηκευτεί"
+      ],
       "\"${ name }\" moved to trash": [
         "Το \"${ name }\" μετακινήθηκε στα Διαγραμμένα"
       ],
       "\"${ name }\" restored from trash": [
         "Το \"${ name }\" επαναφέρθηκε από τα Διαγραμμένα"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" αποθηκεύτηκε με επιτυχία"
       ],
       "\"${ name }\" successfully moved": [
         "Επιτυχής μετακίνηση του \"${ name }\""
@@ -3944,6 +4072,18 @@
       ],
       "Contact group updated": [
         "Η ομάδα επαφών ενημερώθηκε"
+      ],
+      "Device failed to be removed": [
+        "Αποτυχία διαγραφής συσκευής"
+      ],
+      "Device failed to be renamed": [
+        "Αποτυχία μετονόμασης συσκευής"
+      ],
+      "Device removed": [
+        "Η συσκευή διαγράφηκε"
+      ],
+      "Device renamed": [
+        "Η συσκευή μετονομάστηκε"
       ],
       "Encrypted search activated": [
         "Κρυπτογραφημένη αναζήτηση ενεργή"
@@ -4015,6 +4155,12 @@
       "The link to \"${ name }\" was deleted": [
         "Ο σύνδεσμος προς το \"${ name }\" διαγράφηκε"
       ],
+      "The link to your item failed to be deleted": [
+        "Αποτυχία διαγραφής του σύνδεσμου προς το στοιχείο σας"
+      ],
+      "The link to your item was deleted": [
+        "Ο σύνδεσμος προς το στοιχείο σας διαγράφηκε"
+      ],
       "Trash failed to be emptied": [
         "Αποτυχία εκκαθάρισης Διαγραμμένων"
       ],
@@ -4036,6 +4182,24 @@
     "Onboarding Action": {
       "Next": [
         "Επόμενο"
+      ],
+      "Start using ${ DRIVE_APP_NAME }": [
+        "Έναρξη χρήσης του ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "Onboarding Info": {
+      "Create a share link": [
+        "Δημιουργία συνδέσμου κοινής χρήσης"
+      ],
+      "Set a recovery method": [
+        "Ορίστε μέθοδο ανάκτησης"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Απλά ολοκληρώστε τα ακόλουθα στην επόμενη ${ expiresInDays } ημέρα:",
+        "Απλά ολοκληρώστε τα ακόλουθα στις επόμενες ${ expiresInDays } ημέρες:"
+      ],
+      "Upload a file": [
+        "Φόρτωση αρχείου"
       ]
     },
     "Onboarding Proton": {
@@ -4050,6 +4214,14 @@
       ],
       "You can change this anytime in your settings.": [
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
+      ]
+    },
+    "Onboarding Title": {
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Καλώς ήρθατε στο ${ DRIVE_APP_NAME }"
+      ],
+      "Your welcome bonus": [
+        "Το μπόνους καλωσορίσματος σας"
       ]
     },
     "Option": {
@@ -4096,8 +4268,17 @@
       "E.g., ": [
         "Για παράδειγμα, "
       ],
+      "Enter a new file name": [
+        "Εισάγετε ένα νέο όνομα αρχείου"
+      ],
       "Enter a new folder name": [
         "Παρακαλώ εισάγετε ένα νέο όνομα φακέλου"
+      ],
+      "Enter device name": [
+        "Εισάγετε όνομα συσκευής"
+      ],
+      "Enter your email address": [
+        "Καταχωρίστε τη διεύθυνση email σας"
       ],
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
@@ -4359,6 +4540,10 @@
         "${ emailsCount } μέλος",
         "${ emailsCount } μέλη"
       ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } αποτυχημένη μεταφορά",
+        "${ numberOfFailedTransfer.total } αποτυχημένες μεταφορές"
+      ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
@@ -4399,6 +4584,9 @@
       "Completed": [
         "Ολοκληρωμένα"
       ],
+      "Computers": [
+        "Υπολογιστές"
+      ],
       "Contact details": [
         "Στοιχεία επαφής"
       ],
@@ -4413,6 +4601,9 @@
       ],
       "Continue with partial import?": [
         "Συνέχιση με μερική εισαγωγή;"
+      ],
+      "Create a new file": [
+        "Δημιουργία νέου αρχείου"
       ],
       "Create a new folder": [
         "Δημιουργία νέου φακέλου"
@@ -4438,6 +4629,9 @@
       "Date": [
         "Ραντεβού"
       ],
+      "Decrypting": [
+        "Γίνεται Αποκρυπτογράφηση"
+      ],
       "Delete ${ count } contact": [
         "Διαγραφή ${ count } επαφής",
         "Διαγραφή ${ count } επαφών"
@@ -4460,6 +4654,9 @@
       ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
+      ],
+      "Download shared file": [
+        "Λήψη κοινόχρηστου αρχείου"
       ],
       "Download unverified file?": [
         "Λήψη μη επαληθευμένου αρχείου;"
@@ -4531,6 +4728,9 @@
         "Βρέθηκε ${ searchView.numberOfResults } αποτέλεσμα",
         "Βρέθηκαν ${ searchView.numberOfResults } αποτελέσματα"
       ],
+      "Getting files": [
+        "Λήψη αρχείων"
+      ],
       "Groups": [
         "Ομάδες"
       ],
@@ -4552,6 +4752,9 @@
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Item details": [
+        "Λεπτομέρειες αντικειμένου"
       ],
       "Items details": [
         "Λεπτομέρειες αντικειμένου"
@@ -4631,11 +4834,17 @@
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
+      "Remove device?": [
+        "Διαγραφή συσκευής;"
+      ],
       "Rename a file": [
         "Μετονομασία αρχείου"
       ],
       "Rename a folder": [
         "Μετονομασία Φακέλου"
+      ],
+      "Rename device": [
+        "Μετονομασία συσκευής"
       ],
       "Report a problem": [
         "Αναφορά προβλήματος"
@@ -4712,6 +4921,9 @@
       "The link either does not exist or has expired": [
         "Ο σύνδεσμος είτε δεν υπάρχει είτε έχει λήξει"
       ],
+      "The link expired": [
+        "Ο σύνδεσμος έληξε"
+      ],
       "The link failed to be loaded": [
         "Αποτυχία φόρτωσης συνδέσμου"
       ],
@@ -4765,6 +4977,15 @@
       ],
       "You have no folders yet": [
         "Δεν έχετε ακόμη φακέλους"
+      ],
+      "You've got files": [
+        "Έχετε αρχεία"
+      ],
+      "Your 500 MB bonus": [
+        "Το 500 MB μπόνους σας"
+      ],
+      "You’ve got 1 GB of storage": [
+        "Έχετε 1 GB αποθηκευτικού χώρου"
       ]
     },
     "Today icon tooltip in mini calendar": {
