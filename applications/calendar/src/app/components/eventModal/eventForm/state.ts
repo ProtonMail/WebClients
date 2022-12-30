@@ -1,3 +1,4 @@
+import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
     DAILY_TYPE,
     DEFAULT_EVENT_DURATION,
@@ -124,12 +125,14 @@ const getCalendarsModel = (Calendar: VisualCalendar, Calendars: VisualCalendar[]
             color: calendar.Color,
             permissions: calendar.Permissions,
             isSubscribed: getIsSubscribedCalendar(calendar),
+            isOwned: getIsOwnedCalendar(calendar),
         })),
         calendar: {
             id: Calendar.ID,
             color: Calendar.Color,
             permissions: Calendar.Permissions,
             isSubscribed: getIsSubscribedCalendar(Calendar),
+            isOwned: getIsOwnedCalendar(Calendar),
         },
     };
 };
