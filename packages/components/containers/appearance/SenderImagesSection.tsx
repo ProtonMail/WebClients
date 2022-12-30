@@ -12,7 +12,7 @@ const SenderImagesSection = () => {
                     <span className="mr0-5">{c('Label').t`Show sender images`}</span>
                     <Info
                         title={c('Tooltip')
-                            .t`Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.`}
+                            .t`Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.`}
                     />
                 </label>
             </SettingsLayoutLeft>
