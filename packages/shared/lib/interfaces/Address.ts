@@ -1,4 +1,4 @@
-import { ADDRESS_STATUS, ADDRESS_TYPE } from '../constants';
+import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../constants';
 import { AddressKey } from './Key';
 import { SignedKeyListEpochs } from './SignedKeyList';
 
@@ -12,8 +12,8 @@ export interface Address {
     SignedKeyList: SignedKeyListEpochs | null;
     Order: number;
     Priority: number;
-    Receive: number;
-    Send: number;
+    Receive: ADDRESS_RECEIVE;
+    Send: ADDRESS_SEND;
     Signature: string;
     Status: ADDRESS_STATUS;
     Type: ADDRESS_TYPE;
