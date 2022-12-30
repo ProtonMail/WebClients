@@ -20,6 +20,7 @@ import {
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
     APPS,
@@ -65,7 +66,6 @@ import { getPlanFromPlanIDs, getSubscriptionPrices } from './helper';
 import {
     InviteData,
     PlanIDs,
-    ProductParam,
     SignupActionResponse,
     SignupCacheResult,
     SignupModel,

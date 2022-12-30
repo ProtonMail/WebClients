@@ -343,13 +343,16 @@ const handleCreateUser = async ({
                 config: withVerificationHeaders(
                     humanVerificationParameters?.token,
                     humanVerificationParameters?.tokenType,
-                    queryCreateUser({
-                        Type: clientType,
-                        Username: username,
-                        Payload: payload,
-                        ...getSignupTypeQuery(accountData, setupVPN),
-                        ...getReferralDataQuery(referralData),
-                    })
+                    queryCreateUser(
+                        {
+                            Type: clientType,
+                            Username: username,
+                            Payload: payload,
+                            ...getSignupTypeQuery(accountData, setupVPN),
+                            ...getReferralDataQuery(referralData),
+                        },
+                        cache.productParam
+                    )
                 ),
             });
             return {
@@ -394,11 +397,14 @@ const handleCreateUser = async ({
             config: withVerificationHeaders(
                 cache.humanVerificationResult?.token,
                 cache.humanVerificationResult?.tokenType,
-                queryCreateUserExternal({
-                    Type: clientType,
-                    Email: email,
-                    Payload: payload,
-                })
+                queryCreateUserExternal(
+                    {
+                        Type: clientType,
+                        Email: email,
+                        Payload: payload,
+                    },
+                    cache.productParam
+                )
             ),
         });
         return {

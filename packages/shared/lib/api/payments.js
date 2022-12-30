@@ -1,3 +1,5 @@
+import { getProductHeaders } from '../apps/product';
+
 export const getSubscription = () => ({
     url: 'payments/subscription',
     method: 'get',
@@ -15,21 +17,11 @@ export const checkSubscription = (data) => ({
     data,
 });
 
-const normalizeProduct = (product) => {
-    // Converts:
-    // proton-mail -> mail
-    // proton-vpn-settings -> vpn
-    if (product === 'proton-vpn-settings') {
-        return 'vpn';
-    }
-    return product.replace('proton-', '');
-};
-
 export const subscribe = (data, product) => ({
     url: 'payments/subscription',
     method: 'post',
     data,
-    headers: product ? { 'x-pm-product': normalizeProduct(product) } : undefined,
+    headers: getProductHeaders(product),
 });
 
 export const queryInvoices = ({ Page, PageSize, Owner, State, Type }) => ({
