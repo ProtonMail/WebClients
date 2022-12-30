@@ -15,7 +15,6 @@ import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/component
 import {
     handleFido2,
     handleLogin,
-    handleSetupInternalAddress,
     handleSetupPassword,
     handleTotp,
     handleUnlock,
@@ -24,7 +23,7 @@ import { revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import getIsProtonMailDomain from '@proton/shared/lib/browser/getIsProtonMailDomain';
-import { APPS, APP_NAMES, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
@@ -33,7 +32,6 @@ import Header from '../public/Header';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import Text from '../public/Text';
-import GenerateInternalAddressStep from './GenerateInternalAddressStep';
 import LoginForm from './LoginForm';
 import LoginSupportDropdown from './LoginSupportDropdown';
 import SetPasswordForm from './SetPasswordForm';
@@ -42,14 +40,13 @@ import UnlockForm from './UnlockForm';
 
 interface Props {
     onLogin: OnLoginCallback;
-    shouldSetupInternalAddress?: boolean;
     toAppName?: string;
     toApp?: APP_NAMES;
     showContinueTo?: boolean;
     onBack?: () => void;
     hasRemember?: boolean;
-    hasGenerateKeys?: boolean;
     hasActiveSessions?: boolean;
+    setupVPN: boolean;
 }
 
 const LoginContainer = ({
@@ -58,9 +55,8 @@ const LoginContainer = ({
     toAppName,
     toApp,
     showContinueTo,
-    shouldSetupInternalAddress,
+    setupVPN,
     hasRemember = true,
-    hasGenerateKeys = true,
     hasActiveSessions = false,
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -121,14 +117,12 @@ const LoginContainer = ({
     };
 
     const cache = cacheRef.current;
-    const generateInternalAddress = cache?.internalAddressSetup;
-    const externalEmailAddress = generateInternalAddress?.externalEmailAddress?.Email;
 
     const handleBackStep = (() => {
         if (step === AuthStep.LOGIN) {
             return onBack;
         }
-        if (step === AuthStep.GENERATE_INTERNAL) {
+        if (step === AuthStep.SETUP) {
             return async () => {
                 await cache?.authApi(revoke()).catch(noop);
                 handleCancel();
@@ -169,12 +163,12 @@ const LoginContainer = ({
                                     password,
                                     persistent,
                                     api: silentApi,
-                                    hasGenerateKeys,
                                     hasTrustedDeviceRecovery,
                                     appName: APP_NAME,
+                                    toApp,
                                     ignoreUnlock: false,
-                                    hasInternalAddressSetup: !!shouldSetupInternalAddress,
                                     payload,
+                                    setupVPN,
                                 })
                                     .then(handleResult)
                                     .catch((e) => {
@@ -191,7 +185,7 @@ const LoginContainer = ({
                     <Header title={c('Title').t`Two-factor authentication`} onBack={handleBackStep} />
                     <Content>
                         <TwoFactorStep
-                            fido2={cache.authResult?.['2FA']?.FIDO2}
+                            fido2={cache.authResponse?.['2FA']?.FIDO2}
                             authTypes={cache.authTypes}
                             onSubmit={(data) => {
                                 if (data.type === 'code') {
@@ -269,28 +263,6 @@ const LoginContainer = ({
                         />
                     </Content>
                 </>
-            )}
-            {step === AuthStep.GENERATE_INTERNAL && generateInternalAddress && (
-                <GenerateInternalAddressStep
-                    api={cache?.authApi}
-                    onBack={handleBackStep}
-                    toAppName={toAppName || MAIL_APP_NAME}
-                    availableDomains={generateInternalAddress.availableDomains}
-                    externalEmailAddress={externalEmailAddress}
-                    claimableAddress={generateInternalAddress.claimableAddress}
-                    setup={generateInternalAddress.setup}
-                    onSubmit={async (payload) => {
-                        return handleSetupInternalAddress({
-                            cache,
-                            payload,
-                        })
-                            .then(handleResult)
-                            .catch((e: any) => {
-                                handleError(e);
-                                handleCancel();
-                            });
-                    }}
-                />
             )}
         </Main>
     );

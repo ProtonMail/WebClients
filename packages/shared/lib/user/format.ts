@@ -1,6 +1,8 @@
+import { User } from '@proton/shared/lib/interfaces';
+
 import { canPay, isAdmin, isFree, isMember, isPaid } from './helpers';
 
-const format = (user) => {
+const format = (user: User) => {
     return {
         ...user,
         isFree: isFree(user),

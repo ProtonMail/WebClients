@@ -4,6 +4,7 @@ import * as H from 'history';
 import AccountLoginContainer from 'proton-account/src/app/login/LoginContainer';
 
 import { ProtonLoginCallback } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 import { isMember } from '@proton/shared/lib/user/helpers';
 
 interface Props {
@@ -15,7 +16,8 @@ const LoginContainer = ({ onLogin }: Props) => {
 
     return (
         <AccountLoginContainer
-            hasGenerateKeys={false}
+            toApp={APPS.PROTONVPN_SETTINGS}
+            setupVPN={false}
             hasRemember={false}
             onLogin={async (data) => {
                 const { User } = data;

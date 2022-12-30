@@ -1,20 +1,21 @@
 import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
 
-import { requiresNonDelinquent, requiresProtonAccount } from 'proton-account/src/app/public/helper';
 import { c } from 'ttag';
 
 import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { APPS } from '@proton/shared/lib/constants';
+import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
+import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
 import { destroyCryptoWorker, loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { User, UserSettings, UserType } from '@proton/shared/lib/interfaces';
+import { User, UserSettings } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { Model } from '@proton/shared/lib/interfaces/Model';
+import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
@@ -106,12 +107,10 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             cache,
         };
 
-        const hasInternalEmailAddressRequirement = requiresProtonAccount.includes(APP_NAME);
-
         const featuresPromise = getFeature([FeatureCode.EarlyAccessScope, ...preloadFeatures]);
 
         let earlyAccessRefresher: undefined | (() => void);
-        let shouldSetupInternalAddress = false;
+        let shouldSetupAddress = false;
 
         const userModelPromise = loadModels([UserModel], loadModelsArgs).then((result: any) => {
             const [user] = result as [User];
@@ -120,7 +119,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             const hasNonDelinquentScope = getHasNonDelinquentScope(user);
             hasDelinquentBlockRef.current = hasNonDelinquentRequirement && !hasNonDelinquentScope;
 
-            shouldSetupInternalAddress = hasInternalEmailAddressRequirement && user.Type === UserType.EXTERNAL;
+            shouldSetupAddress = getRequiresAddressSetup(APP_NAME, user);
         });
 
         const models = unique([UserSettingsModel, ...preloadModels]).filter((model) => model !== UserModel);
@@ -176,8 +175,8 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                     earlyAccessRefresher();
                     await new Promise(noop);
                 }
-                if (shouldSetupInternalAddress) {
-                    appLink(`/setup-internal-address?to=${APP_NAME}`, APPS.PROTONACCOUNT);
+                if (shouldSetupAddress) {
+                    appLink(`${SETUP_ADDRESS_PATH}?to=${APP_NAME}`, APPS.PROTONACCOUNT);
                     await new Promise(noop);
                 }
             }

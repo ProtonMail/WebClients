@@ -4,39 +4,27 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { Api } from '@proton/shared/lib/interfaces';
+import {
+    requiredValidator,
+    usernameCharacterValidator,
+    usernameLengthValidator,
+} from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
 interface Props {
-    onSubmit: (username: string, domain: string) => void;
+    onSubmit: (username: string, domain: string) => Promise<void>;
     availableDomains?: string[];
-    api: Api;
     defaultUsername?: string;
 }
 
-const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, availableDomains, api }: Props) => {
+const GenerateAddressform = ({ defaultUsername = '', onSubmit, availableDomains }: Props) => {
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
-    const [usernameError, setUsernameError] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
 
     const trimmedUsername = username.trim();
     const domain = availableDomains?.length ? availableDomains[0] : '';
-
-    const handleSubmit = async () => {
-        try {
-            await api(queryCheckUsernameAvailability(`${trimmedUsername}@${domain}`, true));
-        } catch (e: any) {
-            const errorText = getApiErrorMessage(e) || c('Error').t`Can't check username, try again later`;
-            setUsernameError(errorText);
-            throw e;
-        }
-        onSubmit(trimmedUsername, domain);
-    };
 
     return (
         <form
@@ -46,7 +34,7 @@ const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, available
                 if (loading || !onFormSubmit()) {
                     return;
                 }
-                withLoading(handleSubmit()).catch(noop);
+                withLoading(onSubmit(trimmedUsername, domain)).catch(noop);
             }}
             method="post"
         >
@@ -54,14 +42,15 @@ const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, available
                 bigger
                 id="username"
                 label={c('Label').t`Username`}
-                error={validator([requiredValidator(trimmedUsername), usernameError])}
+                error={validator([
+                    requiredValidator(trimmedUsername),
+                    usernameCharacterValidator(trimmedUsername),
+                    usernameLengthValidator(trimmedUsername),
+                ])}
                 autoFocus
                 disableChange={loading}
                 value={username}
-                onValue={(value: string) => {
-                    setUsernameError('');
-                    setUsername(value);
-                }}
+                onValue={setUsername}
                 suffix={`@${domain}`}
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
@@ -71,4 +60,4 @@ const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, available
     );
 };
 
-export default GenerateInternalAddressForm;
+export default GenerateAddressform;

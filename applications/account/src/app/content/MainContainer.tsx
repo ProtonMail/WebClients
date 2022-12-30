@@ -34,13 +34,12 @@ import ContactEmailsProvider from '@proton/components/containers/contacts/Contac
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APPS } from '@proton/shared/lib/constants';
-import { UserType } from '@proton/shared/lib/interfaces';
+import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
+import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 
 import FinalMigrationModal from '../components/FinalMigrationModal';
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
-import { requiresProtonAccount } from '../public/helper';
 import AccountSidebar from './AccountSidebar';
 import SettingsSearch from './SettingsSearch';
 import { getRoutes } from './routes';
@@ -228,8 +227,8 @@ const MainContainer = () => {
             <Redirect to={`/${appSlug}${getDefaultRedirect(routes.account)}`} />
         );
 
-    if (requiresProtonAccount.includes(app) && user.Type === UserType.EXTERNAL) {
-        return <Redirect to={`/setup-internal-address?to=${app}`} />;
+    if (getRequiresAddressSetup(app, user)) {
+        return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}`} />;
     }
 
     return (

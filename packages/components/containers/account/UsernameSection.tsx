@@ -5,7 +5,15 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { APPS, APP_NAMES, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import {
+    APPS,
+    APP_NAMES,
+    BRAND_NAME,
+    MAIL_APP_NAME,
+    SETUP_ADDRESS_PATH,
+    SSO_PATHS,
+} from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { Address, UserType } from '@proton/shared/lib/interfaces';
 
@@ -42,7 +50,7 @@ const UsernameSection = ({ app }: Props) => {
                         <ButtonLike
                             as={AppLink}
                             toApp={APPS.PROTONACCOUNT}
-                            to={`/setup-internal-address?to=${APPS.PROTONMAIL}&from=${app}`}
+                            to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}`}
                         >
                             {c('Info').t`Get my ${BRAND_NAME} address`}
                         </ButtonLike>
@@ -92,9 +100,11 @@ const UsernameSection = ({ app }: Props) => {
                                 <div className="text-pre-wrap break user-select">{primaryAddress.Email}</div>
                             ) : (
                                 <Href
-                                    url="https://account.proton.me/switch?product=mail"
+                                    url={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
                                     title={c('Info').t`Log in to ${MAIL_APP_NAME} to activate your address`}
-                                >{c('Link').t`Not activated`}</Href>
+                                >
+                                    {c('Link').t`Not activated`}
+                                </Href>
                             )}
                         </SettingsLayoutRight>
                     </SettingsLayout>
