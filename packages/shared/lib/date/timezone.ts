@@ -121,10 +121,6 @@ const guessTimezone = (timezones: string[]) => {
 export const getTimezone = () => {
     const ianaTimezones = listTimeZones();
     const timezone = guessTimezone(ianaTimezones);
-    // Special case for UTC since the API calls it UTC and not Etc/UTC
-    if (timezone === 'Etc/UTC') {
-        return 'UTC';
-    }
     // If the guessed timezone is undefined, there's not much we can do
     if (!timezone) {
         return ALLOWED_TIMEZONES_LIST[0];
