@@ -354,12 +354,12 @@ export enum ADDRESS_TYPE {
     TYPE_EXTERNAL = 5,
 }
 
-export enum RECEIVE_ADDRESS {
+export enum ADDRESS_RECEIVE {
     RECEIVE_YES = 1,
     RECEIVE_NO = 0,
 }
 
-export enum SEND_ADDRESS {
+export enum ADDRESS_SEND {
     SEND_YES = 1,
     SEND_NO = 0,
 }

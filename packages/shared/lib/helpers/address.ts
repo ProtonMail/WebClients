@@ -1,6 +1,6 @@
 import unary from '@proton/utils/unary';
 
-import { ADDRESS_STATUS, ADDRESS_TYPE, RECEIVE_ADDRESS, SEND_ADDRESS } from '../constants';
+import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../constants';
 import { Address, Recipient } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
 import { canonicalizeInternalEmail } from './email';
@@ -16,8 +16,8 @@ export const getIsAddressDisabled = (address: Address) => {
 export const getIsAddressActive = (address: Address) => {
     return (
         address.Status === ADDRESS_STATUS.STATUS_ENABLED &&
-        address.Receive === RECEIVE_ADDRESS.RECEIVE_YES &&
-        address.Send === SEND_ADDRESS.SEND_YES
+        address.Receive === ADDRESS_RECEIVE.RECEIVE_YES &&
+        address.Send === ADDRESS_SEND.SEND_YES
     );
 };
 

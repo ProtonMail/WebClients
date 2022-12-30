@@ -1,10 +1,8 @@
 import { useState } from 'react';
 
-
-
 import { c } from 'ttag';
 
-import { ADDRESS_STATUS, RECEIVE_ADDRESS } from '@proton/shared/lib/constants';
+import { ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -36,7 +34,7 @@ const AddressesTable = ({ domain, domainAddresses }: Props) => {
                     const key = address.ID;
                     const { Status, Receive } = address;
                     const isAddressActive =
-                        Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === RECEIVE_ADDRESS.RECEIVE_YES;
+                        Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === ADDRESS_RECEIVE.RECEIVE_YES;
                     return (
                         <TableRow
                             key={key}
