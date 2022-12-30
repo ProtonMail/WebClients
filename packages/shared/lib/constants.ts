@@ -914,7 +914,7 @@ export const FORKABLE_APPS = new Set(
 
 export const EXTENSIONS = {
     [APPS.PROTONEXTENSION]: { ID: 'ghmbeldphafepmbegfdlkpapadhbakde' },
-    [APPS.PROTONVPNBROWSEREXTENSION]: { ID: 'dcdfibmpfdhihdhfmihgejaedilieoho' },
+    [APPS.PROTONVPNBROWSEREXTENSION]: { ID: 'jplgfhpmjnbigmhklmmbgecoobifkmpa' },
 } as const;
 
 export const AES256 = 'aes256';
