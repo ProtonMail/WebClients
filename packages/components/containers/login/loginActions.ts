@@ -10,7 +10,7 @@ import { getUser } from '@proton/shared/lib/api/user';
 import { Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -18,18 +18,14 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     Api,
     UserSettings,
-    UserType,
     Address as tsAddress,
     KeySalt as tsKeySalt,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
 import {
-    InternalAddressGenerationPayload,
-    getClaimableAddress,
     getDecryptedUserKeysHelper,
-    getInternalAddressSetupMode,
+    getRequiresPasswordSetup,
     getSentryError,
-    handleInternalAddressGeneration,
     migrateUser,
 } from '@proton/shared/lib/keys';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
@@ -48,6 +44,24 @@ import { ChallengeResult } from '../challenge';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 
+const syncUser = async (cache: AuthCacheResult): Promise<tsUser> => {
+    const user = await cache.authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+    cache.data.user = user;
+    return user;
+};
+
+const syncAddresses = async (cache: AuthCacheResult): Promise<tsAddress[]> => {
+    const addresses = await getAllAddresses(cache.authApi);
+    cache.data.addresses = addresses;
+    return addresses;
+};
+
+const syncSalts = async (cache: AuthCacheResult): Promise<tsKeySalt[]> => {
+    const salts = await cache.authApi<{ KeySalts: tsKeySalt[] }>(getKeySalts()).then(({ KeySalts }) => KeySalts);
+    cache.data.salts = salts;
+    return salts;
+};
+
 /**
  * Finalize login can be called without a key password in these cases:
  * 1) The admin panel
@@ -57,25 +71,12 @@ const finalizeLogin = async ({
     cache,
     loginPassword,
     keyPassword,
-    user: maybeUser,
-    addresses: maybeAddresses,
 }: {
     cache: AuthCacheResult;
     loginPassword: string;
     keyPassword?: string;
-    user?: tsUser;
-    addresses?: tsAddress[];
 }): Promise<AuthActionResponse> => {
-    const {
-        authResult,
-        authVersion,
-        api,
-        authApi,
-        persistent,
-        hasInternalAddressSetup,
-        appName,
-        hasTrustedDeviceRecovery,
-    } = cache;
+    const { authResponse, authVersion, api, authApi, persistent, appName, hasTrustedDeviceRecovery } = cache;
 
     if (authVersion < AUTH_VERSION) {
         await srpVerify({
@@ -85,39 +86,36 @@ const finalizeLogin = async ({
         });
     }
 
-    let User = !maybeUser ? await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User) : maybeUser;
+    if (appName !== APPS.PROTONACCOUNT) {
+        const user = cache.data.user || (await syncUser(cache));
+        const trusted = false;
 
-    if (hasInternalAddressSetup && User.Type === UserType.EXTERNAL) {
-        const [{ Domains = [] }, addresses] = await Promise.all([
-            authApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-            maybeAddresses || getAllAddresses(authApi),
-        ]);
-        const externalEmailAddress = addresses?.[0];
-        const claimableAddress = await getClaimableAddress({
-            api: authApi,
-            email: externalEmailAddress?.Email,
-            domains: Domains,
-        }).catch(noop);
+        await persistSession({ ...authResponse, User: user, keyPassword, api: authApi, persistent, trusted });
+
         return {
-            to: AuthStep.GENERATE_INTERNAL,
-            cache: {
-                ...cache,
-                internalAddressSetup: {
-                    availableDomains: Domains,
-                    externalEmailAddress,
-                    claimableAddress,
-                    setup: getInternalAddressSetupMode({ User, loginPassword, keyPassword }),
-                },
+            to: AuthStep.DONE,
+            session: {
+                ...authResponse,
+                keyPassword,
+                loginPassword,
+                persistent,
+                trusted,
+                User: user,
             },
         };
     }
 
-    const validatedSession = await maybeResumeSessionByUser(api, User);
+    let [user, addresses] = await Promise.all([
+        cache.data.user || syncUser(cache),
+        cache.data.addresses || syncAddresses(cache),
+    ]);
+
+    const validatedSession = await maybeResumeSessionByUser(api, user);
     if (validatedSession) {
         await authApi(revoke()).catch(noop);
         return {
             to: AuthStep.DONE,
-            session: validatedSession,
+            session: { ...validatedSession, loginPassword },
         };
     }
 
@@ -125,25 +123,22 @@ const finalizeLogin = async ({
     if (hasTrustedDeviceRecovery && keyPassword) {
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
             api: authApi,
-            user: User,
-            addresses: maybeAddresses,
+            user,
+            addresses,
             keyPassword,
         }).catch(noop);
 
         if (numberOfReactivatedKeys !== undefined && numberOfReactivatedKeys > 0) {
-            // Refetch user with new reactivated keys
-            User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
-            maybeAddresses = undefined;
+            cache.data.user = undefined;
+            cache.data.addresses = undefined;
+            [user, addresses] = await Promise.all([syncUser(cache), syncAddresses(cache)]);
         }
 
         // Store device recovery information
         if (persistent) {
-            const [userKeys, addresses] = await Promise.all([
-                getDecryptedUserKeysHelper(User, keyPassword),
-                getAllAddresses(authApi),
-            ]);
+            const [userKeys] = await Promise.all([getDecryptedUserKeysHelper(user, keyPassword)]);
             const isDeviceRecoveryAvailable = getIsDeviceRecoveryAvailable({
-                user: User,
+                user,
                 addresses,
                 userKeys,
                 appName,
@@ -155,130 +150,66 @@ const finalizeLogin = async ({
                 );
 
                 if (userSettings.DeviceRecovery) {
-                    await storeDeviceRecovery({ api: authApi, user: User, userKeys });
+                    await storeDeviceRecovery({ api: authApi, user, userKeys });
                     trusted = true;
                 }
             }
         } else {
-            removeDeviceRecovery(User.ID);
+            removeDeviceRecovery(user.ID);
         }
     }
 
-    await persistSession({ ...authResult, User, keyPassword, api, persistent, trusted });
+    await persistSession({
+        ...authResponse,
+        User: user,
+        keyPassword,
+        api: authApi,
+        persistent,
+        trusted,
+    });
 
     return {
         to: AuthStep.DONE,
         session: {
-            ...authResult,
-            User,
-            Addresses: maybeAddresses,
+            ...authResponse,
             keyPassword,
+            loginPassword,
             persistent,
             trusted,
+            User: user,
         },
     };
-};
-
-export const handleSetupInternalAddress = async ({
-    cache,
-    payload,
-}: {
-    cache: AuthCacheResult;
-    payload: InternalAddressGenerationPayload;
-}): Promise<AuthActionResponse> => {
-    const { authApi } = cache;
-
-    const passphrase = await handleInternalAddressGeneration({
-        api: authApi,
-        setup: payload.setup,
-        domain: payload.domain,
-        username: payload.username,
-    });
-
-    return finalizeLogin({
-        cache,
-        loginPassword: cache.loginPassword,
-        keyPassword: passphrase,
-    });
-};
-
-const handleKeyMigration = async ({
-    cache,
-    loginPassword,
-    keyPassword,
-    user: maybeUser,
-    addresses: maybeAddresses,
-}: {
-    cache: AuthCacheResult;
-    loginPassword: string;
-    keyPassword?: string;
-    user?: tsUser;
-    addresses?: tsAddress[];
-}) => {
-    const { authApi, hasGenerateKeys } = cache;
-
-    const [User, Addresses] = await Promise.all([
-        maybeUser || authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
-        maybeAddresses || hasGenerateKeys ? getAllAddresses(authApi) : undefined,
-    ]);
-
-    let hasDoneMigration = false;
-    if (keyPassword && Addresses) {
-        hasDoneMigration = await migrateUser({
-            api: authApi,
-            keyPassword,
-            user: User,
-            addresses: Addresses,
-        }).catch((e) => {
-            const error = getSentryError(e);
-            if (error) {
-                captureMessage('Key migration error', { extra: { error } });
-            }
-            return false;
-        });
-    }
-
-    return finalizeLogin({
-        cache,
-        loginPassword,
-        keyPassword,
-        // If migration was performed in the previous step, reset the user and addresses value to get updated keys and values
-        ...(hasDoneMigration
-            ? undefined
-            : {
-                  user: User,
-                  addresses: Addresses,
-              }),
-    });
 };
 
 const handleKeyUpgrade = async ({
     cache,
     loginPassword,
     clearKeyPassword,
-    keyPassword,
-    user: maybeUser,
+    keyPassword: maybeKeyPassword,
     isOnePasswordMode,
 }: {
     cache: AuthCacheResult;
     loginPassword: string;
     clearKeyPassword: string;
     keyPassword: string;
-    user?: tsUser;
-    addresses?: tsAddress;
     isOnePasswordMode?: boolean;
 }) => {
-    const { authApi, hasGenerateKeys } = cache;
+    const { appName, authApi } = cache;
+    let keyPassword = maybeKeyPassword;
 
-    const [User, Addresses] = await Promise.all([
-        maybeUser || authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
-        hasGenerateKeys ? getAllAddresses(authApi) : undefined,
+    if (appName !== APPS.PROTONACCOUNT) {
+        return finalizeLogin({ cache, loginPassword, keyPassword });
+    }
+
+    let [user, addresses] = await Promise.all([
+        cache.data.user || syncUser(cache),
+        cache.data.addresses || syncAddresses(cache),
     ]);
 
-    if (Addresses && getHasV2KeysToUpgrade(User, Addresses)) {
+    if (getHasV2KeysToUpgrade(user, addresses)) {
         const newKeyPassword = await upgradeV2KeysHelper({
-            user: User,
-            addresses: Addresses,
+            user,
+            addresses,
             loginPassword,
             keyPassword,
             clearKeyPassword,
@@ -292,24 +223,32 @@ const handleKeyUpgrade = async ({
             return undefined;
         });
         if (newKeyPassword !== undefined) {
-            return handleKeyMigration({
-                cache,
-                loginPassword,
-                keyPassword: newKeyPassword,
-                // undefined user and addresses to trigger a refresh
-                user: undefined,
-                addresses: undefined,
-            });
+            cache.data.user = undefined;
+            cache.data.addresses = undefined;
+            [user, addresses] = await Promise.all([syncUser(cache), syncAddresses(cache)]);
+            keyPassword = newKeyPassword;
         }
     }
 
-    return handleKeyMigration({
-        cache,
-        loginPassword,
+    const hasDoneMigration = await migrateUser({
+        api: authApi,
         keyPassword,
-        user: User,
-        addresses: Addresses,
+        user,
+        addresses,
+    }).catch((e) => {
+        const error = getSentryError(e);
+        if (error) {
+            captureMessage('Key migration error', { extra: { error } });
+        }
+        return false;
     });
+
+    if (hasDoneMigration) {
+        cache.data.user = undefined;
+        cache.data.addresses = undefined;
+    }
+
+    return finalizeLogin({ cache, loginPassword, keyPassword });
 };
 
 /**
@@ -325,17 +264,19 @@ export const handleUnlock = async ({
     clearKeyPassword: string;
     isOnePasswordMode: boolean;
 }) => {
-    const { userSaltResult, loginPassword } = cache;
-    if (!userSaltResult) {
+    const {
+        data: { salts, user },
+        loginPassword,
+    } = cache;
+
+    if (!salts || !user) {
         throw new Error('Invalid state');
     }
 
-    const [User, KeySalts] = userSaltResult;
-
     await wait(500);
 
-    const result = await handleUnlockKey(User, KeySalts, clearKeyPassword).catch(() => undefined);
-    if (!result) {
+    const unlockResult = await handleUnlockKey(user, salts, clearKeyPassword).catch(() => undefined);
+    if (!unlockResult) {
         const error = new Error(c('Error').t`Incorrect mailbox password. Please try again.`);
         error.name = 'PasswordError';
         throw error;
@@ -345,8 +286,7 @@ export const handleUnlock = async ({
         cache,
         loginPassword,
         clearKeyPassword,
-        keyPassword: result.keyPassword,
-        user: User,
+        keyPassword: unlockResult.keyPassword,
         isOnePasswordMode,
     });
 };
@@ -355,29 +295,33 @@ export const handleUnlock = async ({
  * Setup keys and address for users that have not setup.
  */
 export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthCacheResult; newPassword: string }) => {
-    const { userSaltResult, authApi, username } = cache;
-    if (!userSaltResult) {
-        throw new Error('Invalid state');
-    }
-    const [User] = userSaltResult;
+    const { authApi, username } = cache;
+
+    const [domains, addresses] = await Promise.all([
+        authApi<{ Domains: string[] }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
+        cache.data.addresses || (await syncAddresses(cache)),
+    ]);
+
     const keyPassword = await handleSetupAddressKeys({
         api: authApi,
         username,
         password: newPassword,
-        hasAddressKeyMigrationGeneration: User.ToMigrate === 1,
+        addresses,
+        domains,
     });
+
+    cache.data.user = undefined;
+    cache.data.addresses = undefined;
 
     return finalizeLogin({
         cache,
         loginPassword: newPassword,
         keyPassword,
-        // Undefined user to force refresh to get keys that were just setup
-        user: undefined,
     });
 };
 
 const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep }): Promise<AuthActionResponse> => {
-    const { authTypes, authApi, authResult, ignoreUnlock, hasGenerateKeys, loginPassword } = cache;
+    const { appName, authTypes, ignoreUnlock, authResponse, loginPassword } = cache;
 
     if (from === AuthStep.LOGIN) {
         if (authTypes.fido2 || authTypes.totp) {
@@ -390,29 +334,23 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
 
     // Special case for the admin panel, return early since it can not get key salts.
     if (ignoreUnlock) {
-        return finalizeLogin({
-            cache,
-            loginPassword,
-        });
+        return finalizeLogin({ cache, loginPassword });
     }
 
-    if (!cache.userSaltResult) {
-        cache.userSaltResult = await Promise.all([
-            authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
-            authApi<{ KeySalts: tsKeySalt[] }>(getKeySalts()).then(({ KeySalts }) => KeySalts),
-        ]);
-    }
+    const [user] = await Promise.all([
+        cache.data.user || syncUser(cache),
+        cache.data.salts || syncSalts(cache),
+        cache.data.addresses || syncAddresses(cache),
+    ]);
 
-    const [User] = cache.userSaltResult;
-
-    if (User.Keys.length === 0) {
-        if (hasGenerateKeys) {
-            if (authResult.TemporaryPassword) {
-                return { cache, to: AuthStep.NEW_PASSWORD };
-            }
+    if (user.Keys.length === 0) {
+        if (appName === APPS.PROTONACCOUNT && authResponse.TemporaryPassword) {
+            return { cache, to: AuthStep.NEW_PASSWORD };
+        }
+        if (getRequiresPasswordSetup(user, cache.setupVPN)) {
             return handleSetupPassword({ cache, newPassword: loginPassword });
         }
-        return finalizeLogin({ cache, loginPassword, user: User });
+        return finalizeLogin({ cache, loginPassword });
     }
 
     if (authTypes.unlock) {
@@ -472,47 +410,48 @@ export const handleLogin = async ({
     persistent,
     api,
     ignoreUnlock,
-    hasGenerateKeys,
     hasTrustedDeviceRecovery,
     appName,
-    hasInternalAddressSetup,
+    toApp,
     payload,
+    setupVPN,
 }: {
     username: string;
     password: string;
     persistent: boolean;
     api: Api;
     ignoreUnlock: boolean;
-    hasGenerateKeys: boolean;
     hasTrustedDeviceRecovery: boolean;
     appName: APP_NAMES;
-    hasInternalAddressSetup: boolean;
+    toApp: APP_NAMES | undefined;
     payload?: ChallengeResult;
+    setupVPN: boolean;
 }): Promise<AuthActionResponse> => {
     const infoResult = await api<InfoResponse>(getInfo(username));
-    const { authVersion, result: authResult } = await loginWithFallback({
+    const { authVersion, result: authResponse } = await loginWithFallback({
         api,
         credentials: { username, password },
         initialAuthInfo: infoResult,
         payload,
     });
-    const { UID, AccessToken } = authResult;
+    const { UID, AccessToken } = authResponse;
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
 
     const cache: AuthCacheResult = {
-        authResult,
+        authResponse,
         authVersion,
         api,
         appName,
+        toApp,
+        data: {},
         authApi,
-        authTypes: getAuthTypes(authResult, appName),
+        authTypes: getAuthTypes(authResponse, appName),
         username,
         persistent,
         loginPassword: password,
         ignoreUnlock,
-        hasGenerateKeys,
-        hasInternalAddressSetup,
         hasTrustedDeviceRecovery,
+        setupVPN,
     };
 
     return next({ cache, from: AuthStep.LOGIN });

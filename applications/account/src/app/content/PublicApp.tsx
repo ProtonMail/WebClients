@@ -16,9 +16,11 @@ import { ActiveSessionData, ProduceForkData, SSOType } from '@proton/components/
 import { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
+import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getAppHref, getClientID, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { getIsVPNApp, getToApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import {
@@ -30,6 +32,7 @@ import {
     APPS,
     APPS_CONFIGURATION,
     CLIENT_TYPES,
+    SETUP_ADDRESS_PATH,
     SSO_PATHS,
     UNPAID_STATE,
     isSSOMode,
@@ -37,8 +40,9 @@ import {
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { UserType } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
 
 import HandleLogout from '../containers/HandleLogout';
 import LoginContainer from '../login/LoginContainer';
@@ -50,7 +54,6 @@ import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
 import RemoveRecoveryEmailContainer from '../public/RemoveRecoveryEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyRecoveryEmailContainer from '../public/VerifyRecoveryEmailContainer';
-import { externalApps, getIsVPNApp, getToAppName, requiresProtonAccount } from '../public/helper';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
@@ -80,7 +83,7 @@ const getLocalRedirect = (pathname?: string) => {
         return undefined;
     }
     // Special case to not add the slug...
-    if (pathname.includes('/setup-internal-address')) {
+    if (pathname.includes(SETUP_ADDRESS_PATH)) {
         return {
             pathname,
             toApp: DEFAULT_APP,
@@ -156,9 +159,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         maybeLocalRedirect?.toApp ||
         maybeQueryAppIntent;
 
-    // Require internal setup if an app is specified. Otherwise, external accounts will get redirected to vpn (without having to setup an internal address)
-    const shouldSetupInternalAddress = maybePreAppIntent ? requiresProtonAccount.includes(maybePreAppIntent) : false;
-
     const handleProduceFork = async (data: ProduceForkData) => {
         if (data.type === SSOType.Proton) {
             const extension = getExtension(data.payload.app);
@@ -209,10 +209,18 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     };
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
-        const { keyPassword, UID, User: user, LocalID, persistent, trusted, appIntent: maybeFlowAppIntent } = args;
-        const toAppIntent = maybeFlowAppIntent?.app || maybePreAppIntent;
-        // Special case for external users to redirect to VPN until more apps are supported, when no app intent is provided.
-        const toApp = toAppIntent || (user.Type === UserType.EXTERNAL ? externalApps[0] : DEFAULT_APP);
+        const { loginPassword, keyPassword, UID, LocalID, User: user, persistent, trusted, appIntent } = args;
+
+        const toApp = getToApp(appIntent?.app || maybePreAppIntent, user);
+        if (getRequiresAddressSetup(toApp, user)) {
+            const blob = loginPassword
+                ? await getEncryptedSetupBlob(getUIDApi(UID, api), loginPassword).catch(noop)
+                : undefined;
+            return onLogin({
+                ...args,
+                path: `${SETUP_ADDRESS_PATH}?to=${toApp}#${blob || ''}`,
+            });
+        }
 
         // Handle special case going for internal vpn on account settings.
         const localRedirect =
@@ -273,8 +281,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
         if (args.flow === 'signup') {
             url.searchParams.append('welcome', 'true');
-            if (maybeFlowAppIntent?.ref !== undefined) {
-                url.searchParams.append('ref', maybeFlowAppIntent.ref);
+            if (appIntent?.ref !== undefined) {
+                url.searchParams.append('ref', appIntent.ref);
             }
         }
 
@@ -356,6 +364,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const toAppName = toOAuthName || toInternalAppName;
 
     const clientType = getIsVPNApp(maybePreAppIntent) ? CLIENT_TYPES.VPN : CLIENT_TYPES.MAIL;
+    const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
     return (
         <>
@@ -437,7 +446,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         }}
                                                         onCancel={() => {
                                                             // Force a hard refresh to get active sessions to refresh when signing up
-                                                            window.location.pathname = '/switch';
+                                                            window.location.pathname = SSO_PATHS.SWITCH;
                                                         }}
                                                     />
                                                 </Route>
@@ -459,10 +468,15 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     toAppName={toAppName}
                                                     onLogin={handleLogin}
                                                     onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
+                                                    setupVPN={setupVPN}
                                                 />
                                             </Route>
                                             <Route path={SSO_PATHS.RESET_PASSWORD}>
-                                                <ResetPasswordContainer onLogin={handleLogin} />
+                                                <ResetPasswordContainer
+                                                    toApp={maybePreAppIntent}
+                                                    onLogin={handleLogin}
+                                                    setupVPN={setupVPN}
+                                                />
                                             </Route>
                                             <Route path={SSO_PATHS.FORGOT_USERNAME}>
                                                 <ForgotUsernameContainer />
@@ -473,9 +487,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     toAppName={toAppName}
                                                     toApp={maybePreAppIntent}
                                                     showContinueTo={!!toOAuthName}
-                                                    shouldSetupInternalAddress={shouldSetupInternalAddress}
                                                     onLogin={handleLogin}
                                                     onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
+                                                    setupVPN={setupVPN}
                                                 />
                                             </Route>
                                             <Redirect to={SSO_PATHS.LOGIN} />

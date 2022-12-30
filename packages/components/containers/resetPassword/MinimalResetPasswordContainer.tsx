@@ -298,11 +298,11 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                         });
                         return handleRequestToken({
                             cache: {
+                                setupVPN: false,
                                 appName: APP_NAME,
                                 persistent: false,
                                 username,
                                 Methods: [],
-                                hasGenerateKeys: false,
                                 hasTrustedDeviceRecovery: false,
                             },
                             username,

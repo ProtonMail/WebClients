@@ -298,13 +298,14 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
     const path = `${url.pathname}${url.search}${url.hash}`;
 
     const { UID, AccessToken, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
+    const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
 
     try {
         // Resume and use old session if it exists
         const validatedSession = await resumeSession(api, LocalID);
 
         // Revoke the discarded forked session
-        await api(withAuthHeaders(UID, AccessToken, revoke({ Child: 1 }))).catch(noop);
+        await authApi(revoke({ Child: 1 })).catch(noop);
 
         return {
             ...validatedSession,
@@ -328,7 +329,7 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
         }
     }
 
-    const User = await api<{ User: tsUser }>(withAuthHeaders(UID, AccessToken, getUser())).then(({ User }) => User);
+    const User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
 
     const result = {
         User,
@@ -341,7 +342,7 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
         RefreshToken,
     };
 
-    await persistSession({ api, ...result });
+    await persistSession({ api: authApi, ...result });
 
     return {
         ...result,

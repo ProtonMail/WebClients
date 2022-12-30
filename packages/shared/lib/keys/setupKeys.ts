@@ -8,10 +8,9 @@ interface Args {
     api: Api;
     addresses: Address[];
     password: string;
-    hasAddressKeyMigrationGeneration: boolean;
 }
 
-export const handleSetupKeys = async ({ api, addresses, password, hasAddressKeyMigrationGeneration }: Args) => {
+export const handleSetupKeys = async ({ api, addresses, password }: Args) => {
     if (!addresses.length) {
         throw new Error('An address is required to setup keys');
     }
@@ -20,7 +19,7 @@ export const handleSetupKeys = async ({ api, addresses, password, hasAddressKeyM
     const { userKeyPayload, addressKeysPayload } = await getResetAddressesKeys({
         addresses,
         passphrase,
-        hasAddressKeyMigrationGeneration,
+        hasAddressKeyMigrationGeneration: true,
     });
 
     if (!userKeyPayload || !addressKeysPayload) {

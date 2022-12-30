@@ -4,49 +4,56 @@ import { c } from 'ttag';
 
 import { useModalState } from '@proton/components/components';
 import { UnlockModal } from '@proton/components/containers';
+import { AddressGeneration } from '@proton/components/containers/login/interface';
+import { useErrorHandler } from '@proton/components/hooks';
+import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
-import { InternalAddressGenerationPayload, InternalAddressGenerationSetup } from '@proton/shared/lib/keys';
+import { AddressGenerationPayload, ClaimableAddressType } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Text from '../public/Text';
 import ClaimInternalAddressForm from './ClaimInternalAddressForm';
-import GenerateInternalAddressForm from './GenerateInternalAddressForm';
+import GenerateAddressform from './GenerateAddressform';
 
 interface Props {
-    externalEmailAddress?: string;
-    claimableAddress?: { username: string; domain: string };
     onBack?: () => void;
-    onSubmit: (payload: InternalAddressGenerationPayload) => Promise<void>;
+    onSubmit: (payload: AddressGenerationPayload) => Promise<void>;
     toAppName: string;
-    availableDomains: string[];
     api: Api;
-    setup: InternalAddressGenerationSetup;
+    data: AddressGeneration;
 }
 
-const GenerateInternalAddressStep = ({
-    externalEmailAddress: externalEmailAddressValue,
+const GenerateAddressStep = ({
     onBack,
     onSubmit,
     toAppName,
-    availableDomains,
-    claimableAddress,
     api,
-    setup,
+    data: { externalEmailAddress: externalEmailAddressValue, claimableAddress, availableDomains, setup },
 }: Props) => {
     const payloadRef = useRef<{ username: string; domain: string; address: string } | null>(null);
+    const errorHandler = useErrorHandler();
     const [step, setStep] = useState<0 | 1>(0);
     const payload = payloadRef.current;
     const [unlockModalProps, setUnlockModalOpen, renderUnlockModal] = useModalState();
-    const externalEmailAddress = externalEmailAddressValue ? (
-        <strong key="bold">{externalEmailAddressValue}</strong>
+    const externalEmailAddress = externalEmailAddressValue?.Email ? (
+        <strong key="bold">{externalEmailAddressValue?.Email}</strong>
     ) : (
         ''
     );
 
     const handleSubmit = async (username: string, domain: string) => {
+        if (claimableAddress?.type !== ClaimableAddressType.Fixed) {
+            try {
+                await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
+            } catch (e) {
+                errorHandler(e);
+                return;
+            }
+        }
+
         const payload = {
             username,
             domain,
@@ -92,27 +99,30 @@ const GenerateInternalAddressStep = ({
             />
             <Content>
                 <Text>
-                    {c('Info')
-                        .jt`Your ${BRAND_NAME} Account is associated with ${externalEmailAddress}. To use ${toAppName}, you need a ${MAIL_APP_NAME} address.`}
+                    {externalEmailAddress && [
+                        c('Info').jt`Your ${BRAND_NAME} Account is associated with ${externalEmailAddress}.`,
+                        ' ',
+                    ]}
+                    {c('Info').jt`To use ${toAppName}, you need a ${MAIL_APP_NAME} address.`}
                 </Text>
                 {!claimableAddress || step === 1 ? (
-                    <GenerateInternalAddressForm
-                        api={api}
+                    <GenerateAddressform
+                        onSubmit={handleSubmit}
                         defaultUsername={payload?.username}
                         availableDomains={availableDomains}
-                        onSubmit={handleSubmit}
                     />
                 ) : (
                     <ClaimInternalAddressForm
-                        onSubmit={() => {
-                            return handleSubmit(claimableAddress.username, claimableAddress.domain);
-                        }}
+                        onSubmit={handleSubmit}
                         domain={claimableAddress.domain}
                         username={claimableAddress.username}
-                        api={api}
-                        onEdit={() => {
-                            setStep(1);
-                        }}
+                        onEdit={
+                            claimableAddress.type === ClaimableAddressType.Any
+                                ? () => {
+                                      setStep(1);
+                                  }
+                                : undefined
+                        }
                     />
                 )}
             </Content>
@@ -120,4 +130,4 @@ const GenerateInternalAddressStep = ({
     );
 };
 
-export default GenerateInternalAddressStep;
+export default GenerateAddressStep;
