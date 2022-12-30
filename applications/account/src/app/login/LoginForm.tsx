@@ -21,13 +21,14 @@ import {
     useLocalState,
 } from '@proton/components';
 import { Icon } from '@proton/components';
+import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APP_NAMES, BRAND_NAME, SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import SupportDropdown from '../public/SupportDropdown';
-import { defaultPersistentKey, getIsVPNApp } from '../public/helper';
+import { defaultPersistentKey } from '../public/helper';
 import Loader from '../signup/Loader';
 
 interface Props {

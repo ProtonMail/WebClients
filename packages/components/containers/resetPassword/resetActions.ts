@@ -1,6 +1,7 @@
 import { CryptoProxy } from '@proton/crypto';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
 import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
 import { getSettings } from '@proton/shared/lib/api/settings';
@@ -15,6 +16,7 @@ import { Api, UserSettings, User as tsUser } from '@proton/shared/lib/interfaces
 import {
     generateKeySaltAndPassphrase,
     getDecryptedUserKeysHelper,
+    getRequiresPasswordSetup,
     getResetAddressesKeys,
     handleSetupAddressKeys,
 } from '@proton/shared/lib/keys';
@@ -81,20 +83,26 @@ export const handleNewPassword = async ({
         config: auth({ Username: username }),
     }).then((response): Promise<AuthResponse> => response.json());
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
-    let User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
-
+    let user = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
     let keyPassword = passphrase;
-    // This is intended to deal with setting up an address & generating keys for username-only (VPN) accounts if
-    // resetting the password through the account application.
-    if (cache.hasGenerateKeys && !User.Keys.length) {
-        keyPassword = await handleSetupAddressKeys({
-            api: authApi,
-            username,
-            password,
-            hasAddressKeyMigrationGeneration: User.ToMigrate === 1,
-        });
-        // Refetch the user to update the keys that got generated
-        User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+
+    if (user.Keys.length === 0) {
+        if (getRequiresPasswordSetup(user, cache.setupVPN)) {
+            const [domains, addresses] = await Promise.all([
+                authApi<{ Domains: string[] }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
+                await getAllAddresses(authApi),
+            ]);
+
+            keyPassword = await handleSetupAddressKeys({
+                api: authApi,
+                username,
+                password,
+                addresses,
+                domains,
+            });
+            // Refetch the user to update the keys that got generated
+            user = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+        }
     }
 
     let trusted = false;
@@ -102,21 +110,21 @@ export const handleNewPassword = async ({
         const addresses = await getAllAddresses(authApi);
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
             api: authApi,
-            user: User,
+            user,
             addresses,
             keyPassword,
         }).catch(noop);
 
         if (numberOfReactivatedKeys !== undefined && numberOfReactivatedKeys > 0) {
             // Refetch user with new reactivated keys
-            User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+            user = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
         }
 
         // Store device recovery information
         if (persistent) {
-            const userKeys = await getDecryptedUserKeysHelper(User, keyPassword);
+            const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
             const isDeviceRecoveryAvailable = getIsDeviceRecoveryAvailable({
-                user: User,
+                user,
                 addresses,
                 userKeys,
                 appName,
@@ -128,16 +136,16 @@ export const handleNewPassword = async ({
                 );
 
                 if (userSettings.DeviceRecovery) {
-                    await storeDeviceRecovery({ api: authApi, user: User, userKeys });
+                    await storeDeviceRecovery({ api: authApi, user, userKeys });
                     trusted = true;
                 }
             }
         } else {
-            removeDeviceRecovery(User.ID);
+            removeDeviceRecovery(user.ID);
         }
     }
 
-    await persistSession({ ...authResponse, persistent, trusted, User, keyPassword, api });
+    await persistSession({ ...authResponse, persistent, trusted, User: user, keyPassword, api: authApi });
 
     return {
         to: STEPS.DONE,
@@ -145,7 +153,8 @@ export const handleNewPassword = async ({
             ...authResponse,
             persistent,
             trusted,
-            User,
+            User: user,
+            loginPassword: password,
             keyPassword,
             flow: 'reset',
         },
@@ -188,8 +197,8 @@ export const handleNewPasswordMnemonic = async ({
     });
 
     const trusted = false;
-    const User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
-    await persistSession({ ...authResponse, persistent, trusted, User, keyPassword, api: authApi });
+    const user = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+    await persistSession({ ...authResponse, persistent, trusted, User: user, keyPassword, api: authApi });
 
     return {
         to: STEPS.DONE,
@@ -197,7 +206,8 @@ export const handleNewPasswordMnemonic = async ({
             ...authResponse,
             persistent,
             trusted,
-            User,
+            User: user,
+            loginPassword: password,
             keyPassword,
             flow: 'reset',
         },
@@ -339,18 +349,18 @@ export const handleValidateResetToken = async ({
 };
 
 export const handleRequestRecoveryMethods = async ({
+    setupVPN,
     appName,
     username,
     persistent,
     api,
-    hasGenerateKeys,
     hasTrustedDeviceRecovery,
 }: {
+    setupVPN: boolean;
     appName: APP_NAMES;
     username: string;
     persistent: boolean;
     api: Api;
-    hasGenerateKeys: boolean;
     hasTrustedDeviceRecovery: boolean;
 }): Promise<ResetActionResponse> => {
     try {
@@ -361,13 +371,13 @@ export const handleRequestRecoveryMethods = async ({
             await api(requestLoginResetToken({ Username: username, Email: username }));
             return {
                 cache: {
+                    setupVPN,
                     appName,
                     username,
                     persistent,
                     value: username,
                     method: 'email',
                     Methods,
-                    hasGenerateKeys,
                     hasTrustedDeviceRecovery,
                 },
                 to: STEPS.VALIDATE_RESET_TOKEN,
@@ -383,11 +393,11 @@ export const handleRequestRecoveryMethods = async ({
 
         return {
             cache: {
+                setupVPN,
                 appName,
                 username,
                 persistent,
                 Methods,
-                hasGenerateKeys,
                 hasTrustedDeviceRecovery,
             },
             to: STEPS.REQUEST_RESET_TOKEN,

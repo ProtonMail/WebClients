@@ -109,17 +109,3 @@ export const setPersistedSessionWithBlob = async (
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));
 };
-
-export const setPersistedSession = (
-    localID: number,
-    data: { UID: string; UserID: string; persistent: boolean; trusted: boolean }
-) => {
-    const persistedSession: PersistedSession = {
-        UserID: data.UserID,
-        UID: data.UID,
-        isSubUser: false,
-        persistent: data.persistent,
-        trusted: data.trusted,
-    };
-    setItem(getKey(localID), JSON.stringify(persistedSession));
-};
