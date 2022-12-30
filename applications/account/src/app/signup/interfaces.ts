@@ -4,6 +4,7 @@ import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/co
 import { Payment } from '@proton/components/containers/payments/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import {
@@ -17,10 +18,6 @@ import {
     SubscriptionCheckResponse,
     User,
 } from '@proton/shared/lib/interfaces';
-
-export const otherProductParamValues = ['generic', 'business'] as const;
-export type OtherProductParam = typeof otherProductParamValues[number];
-export type ProductParam = APP_NAMES | OtherProductParam | 'none' | undefined;
 
 export enum SignupSteps {
     NoSignup = 'no-signup',

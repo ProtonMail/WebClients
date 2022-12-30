@@ -1,12 +1,13 @@
 import * as History from 'history';
 
+import { OtherProductParam, ProductParam, otherProductParamValues } from '@proton/shared/lib/apps/product';
 import { APP_NAMES, DEFAULT_CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { Currency, Plan } from '@proton/shared/lib/interfaces';
 
-import { OtherProductParam, ProductParam, SERVICES, otherProductParamValues } from './interfaces';
+import { SERVICES } from './interfaces';
 
 export const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefined => {
     return maybeProduct ? SERVICES[maybeProduct] : undefined;
