@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { BasicModal, Form } from '@proton/components';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
-import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -17,6 +17,34 @@ import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import EventForm from './EventForm';
 import validateEventModel from './eventForm/validateEventModel';
 import { ACTION, useForm } from './hooks/useForm';
+
+const getCanEditSharedEventData = ({
+    isSubscribedCalendar,
+    permissions,
+    isOrganizer,
+    isAttendee,
+    selfAddress,
+}: {
+    isSubscribedCalendar: boolean;
+    permissions: number;
+    isOrganizer: boolean;
+    isAttendee: boolean;
+    selfAddress?: Address;
+}) => {
+    if (isSubscribedCalendar) {
+        return false;
+    }
+    if (!getCanWrite(permissions)) {
+        return false;
+    }
+    if (isAttendee) {
+        return false;
+    }
+    if (isOrganizer) {
+        return selfAddress ? getIsAddressActive(selfAddress) : false;
+    }
+    return true;
+};
 
 interface Props {
     isNarrow: boolean;
@@ -61,22 +89,29 @@ const CreateEventModal = ({
         onSave,
         onDelete,
     });
-    const isCancelled = model.status === ICAL_EVENT_STATUS.CANCELLED;
-    const { selfAddress, selfAttendeeIndex, attendees } = model;
+    const { isOrganizer, isAttendee, selfAddress, selfAttendeeIndex, attendees, status } = model;
+    const { isSubscribed: isSubscribedCalendar, permissions } = model.calendar;
+
+    const isCancelled = status === ICAL_EVENT_STATUS.CANCELLED;
     const cannotSave = model.isOrganizer && attendees.length > MAX_ATTENDEES;
     const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
     const isSelfAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
     const userPartstat = selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
     const sendCancellationNotice =
         !isCancelled && [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
-    const displayTitle = model.isAttendee || model.selfAddress?.Status === ADDRESS_STATUS.STATUS_DISABLED;
+    const canEditSharedEventData = getCanEditSharedEventData({
+        isSubscribedCalendar,
+        permissions,
+        isOrganizer,
+        isAttendee,
+        selfAddress,
+    });
     // new events have no uid yet
     const inviteActions = {
         // the type will be more properly assessed in getSaveEventActions
         type: model.isAttendee ? INVITE_ACTION_TYPES.NONE : INVITE_ACTION_TYPES.SEND_INVITATION,
         selfAddress,
     };
-    const { isSubscribed: isSubscribedCalendar } = model.calendar;
 
     const handleSubmitWithInviteActions = () => handleSubmit(inviteActions);
     const submitButton = (
@@ -138,7 +173,8 @@ const CreateEventModal = ({
                     handleSubmitWithInviteActions();
                 }
             }}
-            title={displayTitle ? getDisplayTitle(model.title) : undefined}
+            // if the user can't edit shared event data, the modal will have a reduced form
+            title={canEditSharedEventData ? undefined : getDisplayTitle(model.title)}
             footer={
                 <>
                     <Button
@@ -162,9 +198,9 @@ const CreateEventModal = ({
                 model={model}
                 setModel={setModel}
                 tzid={tzid}
+                canEditSharedEventData={canEditSharedEventData}
                 isCreateEvent={isCreateEvent}
                 setParticipantError={setParticipantError}
-                isSubscribedCalendar={isSubscribedCalendar}
                 isDuplicating={isDuplicating}
                 isDrawerApp={isDrawerApp}
             />
