@@ -1,7 +1,6 @@
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import unary from '@proton/utils/unary';
 
-import { getIsAddressDisabled } from '../helpers/address';
+import { getIsAddressActive, getIsAddressExternal } from '../helpers/address';
 import { canonicalizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';
 import { Address, Nullable } from '../interfaces';
@@ -84,13 +83,14 @@ export const getSelfAddressData = ({
             isAttendee: false,
         };
     }
-    const ownCanonicalizedEmailsMap = addresses.reduce<SimpleMap<string>>((acc, { Email }) => {
+    const internalAddresses = addresses.filter((address) => !getIsAddressExternal(address));
+    const ownCanonicalizedEmailsMap = internalAddresses.reduce<SimpleMap<string>>((acc, { Email }) => {
         acc[Email] = canonicalizeInternalEmail(Email);
         return acc;
     }, {});
 
     const organizerEmail = canonicalizeInternalEmail(getAttendeeEmail(organizer));
-    const organizerAddress = addresses.find(({ Email }) => ownCanonicalizedEmailsMap[Email] === organizerEmail);
+    const organizerAddress = internalAddresses.find(({ Email }) => ownCanonicalizedEmailsMap[Email] === organizerEmail);
 
     if (organizerAddress) {
         return {
@@ -102,8 +102,21 @@ export const getSelfAddressData = ({
 
     const canonicalAttendeeEmails = attendees.map((attendee) => canonicalizeInternalEmail(getAttendeeEmail(attendee)));
 
+    // split active and inactive addresses
+    const { activeAddresses, inactiveAddresses } = internalAddresses.reduce<{
+        activeAddresses: Address[];
+        inactiveAddresses: Address[];
+    }>(
+        (acc, address) => {
+            const addresses = getIsAddressActive(address) ? acc.activeAddresses : acc.inactiveAddresses;
+            addresses.push(address);
+
+            return acc;
+        },
+        { activeAddresses: [], inactiveAddresses: [] }
+    );
+
     // start checking active addresses
-    const activeAddresses = addresses.filter(({ Status }) => Status !== 0);
     const { selfActiveAttendee, selfActiveAddress, selfActiveAttendeeIndex } = activeAddresses.reduce<{
         selfActiveAttendee?: VcalAttendeeProperty;
         selfActiveAttendeeIndex?: number;
@@ -143,11 +156,11 @@ export const getSelfAddressData = ({
             selfAttendeeIndex: selfActiveAttendeeIndex,
         };
     }
-    const disabledAddresses = addresses.filter(unary(getIsAddressDisabled));
-    const { selfDisabledAttendee, selfDisabledAddress, selfDisabledAttendeeIndex } = disabledAddresses.reduce<{
-        selfDisabledAttendee?: VcalAttendeeProperty;
-        selfDisabledAttendeeIndex?: number;
-        selfDisabledAddress?: Address;
+    // check inactive addresses
+    const { selfInactiveAttendee, selfInactiveAddress, selfInactiveAttendeeIndex } = inactiveAddresses.reduce<{
+        selfInactiveAttendee?: VcalAttendeeProperty;
+        selfInactiveAttendeeIndex?: number;
+        selfInactiveAddress?: Address;
         answeredAttendeeFound: boolean;
     }>(
         (acc, address) => {
@@ -162,11 +175,11 @@ export const getSelfAddressData = ({
             const attendee = attendees[index];
             const partstat = getAttendeePartstat(attendee);
             const answeredAttendeeFound = partstat !== ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
-            if (answeredAttendeeFound || !(acc.selfDisabledAttendee && acc.selfDisabledAddress)) {
+            if (answeredAttendeeFound || !(acc.selfInactiveAttendee && acc.selfInactiveAddress)) {
                 return {
-                    selfDisabledAttendee: attendee,
-                    selfDisabledAttendeeIndex: index,
-                    selfDisabledAddress: address,
+                    selfInactiveAttendee: attendee,
+                    selfInactiveAttendeeIndex: index,
+                    selfInactiveAddress: address,
                     answeredAttendeeFound,
                 };
             }
@@ -176,10 +189,10 @@ export const getSelfAddressData = ({
     );
     return {
         isOrganizer: false,
-        isAttendee: !!selfDisabledAttendee,
-        selfAttendee: selfDisabledAttendee,
-        selfAddress: selfDisabledAddress,
-        selfAttendeeIndex: selfDisabledAttendeeIndex,
+        isAttendee: !!selfInactiveAttendee,
+        selfAttendee: selfInactiveAttendee,
+        selfAddress: selfInactiveAddress,
+        selfAttendeeIndex: selfInactiveAttendeeIndex,
     };
 };
 

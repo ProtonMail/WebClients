@@ -29,8 +29,12 @@ export const hasAddresses = (addresses: Address[] | undefined): boolean => {
     return Array.isArray(addresses) && addresses.length > 0;
 };
 
+export const getIsAddressExternal = ({ Type }: Address) => {
+    return Type === ADDRESS_TYPE.TYPE_EXTERNAL;
+};
+
 export const getHasOnlyExternalAddresses = (addresses: Address[]) => {
-    return addresses.length >= 1 && addresses.every(({ Type }) => Type === ADDRESS_TYPE.TYPE_EXTERNAL);
+    return addresses.length >= 1 && addresses.every((address) => getIsAddressExternal(address));
 };
 
 export const contactToRecipient = (contact: Partial<ContactEmail> = {}, groupPath?: string): Partial<Recipient> => ({
