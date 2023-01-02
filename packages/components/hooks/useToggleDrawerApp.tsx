@@ -27,8 +27,7 @@ const useToggleDrawerApp = ({ appInView, setAppInView, iframeSrcMap, setIframeSr
 
         setAppInView(isAppOpened ? undefined : app);
 
-        // If we show again the app that was cached, we post a message to the child app.
-        // Then the app will know that it needs to make calls to event managers so that it's being updated
+        // If we show again the child app that was cached, we post a message to it in case it needs to take some actions upon becoming visible again (like updating its state)
         if (!isAppOpened) {
             postMessageToIframe(
                 {
