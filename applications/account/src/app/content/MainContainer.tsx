@@ -21,11 +21,8 @@ import {
     useDeviceRecovery,
     useFeatures,
     useIsDataRecoveryAvailable,
-    useIsProtonMailDomainMigrationEnabled,
-    useModalState,
     useOrganization,
     useRecoveryNotification,
-    useSearchParamsEffect,
     useToggle,
     useUser,
     useUserSettings,
@@ -37,7 +34,6 @@ import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/sha
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 
-import FinalMigrationModal from '../components/FinalMigrationModal';
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import AccountSidebar from './AccountSidebar';
@@ -77,8 +73,6 @@ const MainContainer = () => {
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
-    const [isProtonMailDomainMigrationEnabled, isProtonMailDomainMigrationEnabledLoading] =
-        useIsProtonMailDomainMigrationEnabled();
 
     const features = useFeatures([
         FeatureCode.SpyTrackerProtection,
@@ -137,29 +131,6 @@ const MainContainer = () => {
     }, [location.pathname, location.hash]);
 
     useDeviceRecovery();
-
-    const [migrationModal, setMigrationModal, renderMigrationModal] = useModalState();
-
-    useSearchParamsEffect(
-        (params) => {
-            if (!isProtonMailDomainMigrationEnabled || isProtonMailDomainMigrationEnabledLoading) {
-                return;
-            }
-
-            const actionParam = params.get('action');
-            if (!actionParam) {
-                return;
-            }
-
-            if (actionParam === 'show-migration-modal') {
-                setMigrationModal(true);
-
-                params.delete('action');
-                return params;
-            }
-        },
-        [isProtonMailDomainMigrationEnabledLoading]
-    );
 
     const app = getAppFromPathnameSafe(location.pathname) || DEFAULT_APP;
     const appSlug = getSlugFromApp(app);
@@ -233,8 +204,7 @@ const MainContainer = () => {
 
     return (
         <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
-            {renderMigrationModal && <FinalMigrationModal {...migrationModal} />}
-            {!migrationModal.open && <ReferralModalContainer />}
+            <ReferralModalContainer />
             <Switch>
                 <Route path={anyAccountAppRoute}>
                     <AccountSettingsRouter

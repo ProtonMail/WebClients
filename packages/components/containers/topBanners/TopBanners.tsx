@@ -4,7 +4,6 @@ import BadAppVersionBanner from './BadAppVersionBanner';
 import DelinquentTopBanner from './DelinquentTopBanner';
 import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
 import DriveReleaseTopBanner from './DriveReleaseTopBanner';
-import NudgeTopBanner from './NudgeTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
 import ReferralTopBanner from './ReferralTopBanner';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
@@ -18,7 +17,6 @@ interface Props {
 const TopBanners = ({ children }: Props) => {
     return (
         <>
-            <NudgeTopBanner />
             <DelinquentTopBanner />
             <OnlineTopBanner />
             <TimeOutOfSyncTopBanner />

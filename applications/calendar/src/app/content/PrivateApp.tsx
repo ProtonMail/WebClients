@@ -6,7 +6,6 @@ import {
     useAppTitle,
     useDrawer,
     useDrawerParent,
-    useProtonMailMigrationRedirect,
 } from '@proton/components';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
@@ -45,8 +44,6 @@ interface Props {
 }
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
-
-    useProtonMailMigrationRedirect();
 
     useAppTitle('');
 
