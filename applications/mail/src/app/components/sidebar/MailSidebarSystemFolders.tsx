@@ -3,7 +3,7 @@ import { DragEvent, DragEventHandler, useEffect, useRef, useState } from 'react'
 import { Location } from 'history';
 import { c } from 'ttag';
 
-import { FeatureCode, SimpleSidebarListItemHeader, classnames, useFeature } from '@proton/components';
+import { SimpleSidebarListItemHeader, classnames } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
@@ -48,7 +48,6 @@ const MailSidebarSystemFolders = ({
     const { ShowMoved } = mailSettings || { ShowMoved: 0 };
     const [sidebarElements, moveSidebarElement] = useMoveSystemFolders({ showMoved: ShowMoved, showScheduled });
     const isConversation = isConversationMode(currentLabelID, mailSettings, location);
-    const canDragAndDropFolders = useFeature(FeatureCode.ReorderSystemFolders).feature?.Value === true;
 
     const lastDragTimeRef = useRef<number>();
     const isDragging = useRef<boolean>();
@@ -211,7 +210,7 @@ const MailSidebarSystemFolders = ({
                 .filter((element) => element.display === SYSTEM_FOLDER_SECTION.MAIN)
                 .map((element) => (
                     <DnDElementWrapper
-                        isDnDAllowed={canDragAndDropFolders}
+                        isDnDAllowed
                         key={element.ID}
                         onDragStart={handleDragStart(element.labelID)}
                         onDragEnd={handleResetDragState}
@@ -233,7 +232,7 @@ const MailSidebarSystemFolders = ({
                     </DnDElementWrapper>
                 ))}
             <DnDElementWrapper
-                isDnDAllowed={canDragAndDropFolders}
+                isDnDAllowed
                 key={'MORE_FOLDER_ITEM'}
                 onDragOver={handleDragOver(DND_MORE_FOLDER_ID)}
                 onDrop={handleDrop('MORE_FOLDER_ITEM', draggedElementId)}
@@ -252,7 +251,7 @@ const MailSidebarSystemFolders = ({
                       .filter((element) => element.display === SYSTEM_FOLDER_SECTION.MORE)
                       .map((element) => (
                           <DnDElementWrapper
-                              isDnDAllowed={canDragAndDropFolders}
+                              isDnDAllowed
                               onClick={(e) => e.stopPropagation()}
                               key={element.ID}
                               onDragStart={handleDragStart(element.labelID)}

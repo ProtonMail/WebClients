@@ -50,7 +50,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             }}
             onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             locales={locales}
-            preloadFeatures={[FeatureCode.ReorderSystemFolders, FeatureCode.Drawer]}
+            preloadFeatures={[FeatureCode.Drawer]}
             preloadModels={[
                 UserModel,
                 UserSettingsModel,
