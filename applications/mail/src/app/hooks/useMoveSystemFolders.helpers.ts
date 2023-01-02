@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ACCENT_COLORS, MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS, LINKED_LABEL_IDS, MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
 import move from '@proton/utils/move';
 import orderBy from '@proton/utils/orderBy';
 
@@ -45,6 +45,21 @@ const reorderItems = (collection: SystemFolder[]): SystemFolder[] =>
         return nextItem;
     });
 
+const moveItems = (systemFolders: SystemFolder[], draggedItemIndex: number, droppedItemIndex: number) => {
+    const movedItems = move(systemFolders, draggedItemIndex, droppedItemIndex);
+    const draggedID = systemFolders[draggedItemIndex].labelID;
+    const linkedID = LINKED_LABEL_IDS[draggedID];
+
+    if (linkedID) {
+        const allSentIndex = systemFolders.findIndex((item) => item.labelID === linkedID);
+        if (allSentIndex !== -1) {
+            return move(movedItems, allSentIndex, droppedItemIndex);
+        }
+    }
+
+    return movedItems;
+};
+
 export const moveSystemFolders: MoveSystemFolders = (draggedID, droppedId, systemFolders) => {
     if (draggedID === MAILBOX_LABEL_IDS.INBOX) {
         return systemFolders;
@@ -69,7 +84,7 @@ export const moveSystemFolders: MoveSystemFolders = (draggedID, droppedId, syste
             return systemFolders;
         }
         const droppedItem = systemFolders[droppedItemIndex];
-        const movedItems = move(systemFolders, draggedItemIndex, droppedItemIndex);
+        const movedItems = moveItems(systemFolders, draggedItemIndex, droppedItemIndex);
         const reorderedItems = reorderItems(movedItems);
         const nextItems = reorderedItems.map((item) => {
             const clonedItem = cloneItem(item);
@@ -91,7 +106,7 @@ export const moveSystemFolders: MoveSystemFolders = (draggedID, droppedId, syste
             return systemFolders;
         }
         const inboxItem = systemFolders[inboxItemIndex];
-        const movedItems = move(systemFolders, draggedItemIndex, inboxItemIndex + 1);
+        const movedItems = moveItems(systemFolders, draggedItemIndex, inboxItemIndex + 1);
         const reorderedItems = reorderItems(movedItems);
         const nextItems = reorderedItems.map((item) => {
             const clonedItem = cloneItem(item);
@@ -116,7 +131,7 @@ export const moveSystemFolders: MoveSystemFolders = (draggedID, droppedId, syste
         const lastMoreSectionItemIndex = getLastSectionElementIndex(systemFolders, SYSTEM_FOLDER_SECTION.MORE);
         const lastMainSectionItemIndex = getLastSectionElementIndex(systemFolders, SYSTEM_FOLDER_SECTION.MAIN);
 
-        const movedItems = move(
+        const movedItems = moveItems(
             systemFolders,
             draggedItemIndex,
             draggedItem.display === SYSTEM_FOLDER_SECTION.MAIN
@@ -253,6 +268,16 @@ export const getDefaultSytemFolders = (
         ID: 'allmail',
         visible: true,
         order: 11,
+        display: SYSTEM_FOLDER_SECTION.MORE,
+    },
+    {
+        labelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+        icon: 'envelopes',
+        text: c('Link').t`All mail`,
+        shortcutText: '[G] [M]',
+        ID: 'almostallmail',
+        visible: false,
+        order: 13,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
