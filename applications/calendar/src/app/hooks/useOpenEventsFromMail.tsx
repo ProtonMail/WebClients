@@ -125,6 +125,13 @@ export const useOpenEventsFromMail = ({
                         void call([event.data.payload.calendarID]);
                     }
                     break;
+                case DRAWER_EVENTS.SHOW:
+                    {
+                        // When showing again the cached calendar app, we need to call the event manager for all calendars to get all updates
+                        const allCalendarIDs = calendars.map(({ ID }) => ID);
+                        void call(allCalendarIDs);
+                    }
+                    break;
                 default:
                     break;
             }
