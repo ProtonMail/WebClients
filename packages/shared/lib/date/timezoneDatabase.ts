@@ -1187,6 +1187,7 @@ export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
     'utc-09': 'Pacific/Gambier',
     'utc-11': 'Pacific/Niue',
     'utc+12': 'Pacific/Auckland',
+    'utc+13': 'Pacific/Fakaofo',
     uzbekistan: 'Asia/Tashkent',
     vanuatu: 'Pacific/Efate',
     venezuela: 'America/Caracas',
