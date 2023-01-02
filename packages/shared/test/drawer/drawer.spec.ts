@@ -1,18 +1,22 @@
 import { Feature } from '@proton/components/containers';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
+
 import {
     addParentAppToUrl,
     authorizedApps,
+    drawerAuthorizedApps,
     drawerIframeApps,
     drawerNativeApps,
     getDisplayContactsInDrawer,
     getIsAuthorizedApp,
     getIsIframedDrawerApp,
     getIsNativeDrawerApp,
-} from '@proton/shared/lib/drawer/helpers';
-import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
+    isAuthorizedDrawerUrl,
+} from '../../lib/drawer/helpers';
+import { mockWindowLocation, resetWindowLocation } from './url.helper';
 
-// const windowHostname = 'mail.proton.me';
+const windowHostname = 'mail.proton.me';
 
 describe('drawer helpers', () => {
     describe('isNativeDrawerApp', () => {
@@ -47,30 +51,30 @@ describe('drawer helpers', () => {
         });
     });
 
-    // describe('isAuthorizedDrawerUrl', () => {
-    //     beforeEach(() => {
-    //         mockWindowLocation(undefined, windowHostname);
-    //     });
-    //
-    //     afterEach(() => {
-    //         resetWindowLocation();
-    //     });
-    //
-    //     it('should be a url from an authorized domain', () => {
-    //         drawerAuthorizedApps.forEach((appDomain) => {
-    //             const url = `https://${appDomain}.proton.me`;
-    //
-    //             expect(isAuthorizedDrawerUrl(url)).toBeTruthy();
-    //         });
-    //     });
-    //
-    //     it('should not be a url from an authorized domain', () => {
-    //         const url1 = 'https://scam.proton.me';
-    //         const url2 = 'https://mail.scam.me';
-    //         expect(isAuthorizedDrawerUrl(url1)).toBeFalsy();
-    //         expect(isAuthorizedDrawerUrl(url2)).toBeFalsy();
-    //     });
-    // });
+    describe('isAuthorizedDrawerUrl', () => {
+        beforeEach(() => {
+            mockWindowLocation(undefined, windowHostname);
+        });
+
+        afterEach(() => {
+            resetWindowLocation();
+        });
+
+        it('should be a url from an authorized domain', () => {
+            drawerAuthorizedApps.forEach((appDomain) => {
+                const url = `https://${appDomain}.proton.me`;
+
+                expect(isAuthorizedDrawerUrl(url)).toBeTruthy();
+            });
+        });
+
+        it('should not be a url from an authorized domain', () => {
+            const url1 = 'https://scam.proton.me';
+            const url2 = 'https://mail.scam.me';
+            expect(isAuthorizedDrawerUrl(url1)).toBeFalsy();
+            expect(isAuthorizedDrawerUrl(url2)).toBeFalsy();
+        });
+    });
 
     describe('getIsAuthorizedApp', () => {
         it('should be an authorized app', () => {
