@@ -1,4 +1,4 @@
-import { FeatureCode, StandardPrivateApp, useApi, useDrawer, useProtonMailMigrationRedirect } from '@proton/components';
+import { FeatureCode, StandardPrivateApp, useApi, useDrawer } from '@proton/components';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
@@ -34,8 +34,6 @@ const getAppContainer = () => import('./MainContainer');
 
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
-
-    useProtonMailMigrationRedirect();
 
     const { setShowDrawerSidebar } = useDrawer();
 

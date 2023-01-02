@@ -46,7 +46,6 @@ jest.mock('@proton/components/hooks/useAddresses', () => ({
     ]),
     useGetAddresses: jest.fn(),
 }));
-jest.mock('@proton/components/hooks/useIsProtonMailDomainMigrationEnabled', () => jest.fn(() => [true]));
 
 function renderComponent(props?: Partial<CalendarsSectionProps>) {
     const defaultProps: CalendarsSectionProps = {
