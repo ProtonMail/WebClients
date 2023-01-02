@@ -4,7 +4,7 @@ import useInstance from '@proton/hooks/useInstance';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import NotificationsChildrenContext from './childrenContext';
-import { NotificationOffset, NotificationOptions } from './interfaces';
+import { Notification, NotificationOffset } from './interfaces';
 import createManager from './manager';
 import NotificationsContext from './notificationsContext';
 
@@ -20,7 +20,7 @@ const offsetReducer = (oldState: NotificationOffset | undefined, newState: Notif
 };
 
 const NotificationsProvider = ({ children }: Props) => {
-    const [notifications, setNotifications] = useState<NotificationOptions[]>([]);
+    const [notifications, setNotifications] = useState<Notification[]>([]);
     const [offset, setNotificationOffset] = useReducer<
         Reducer<NotificationOffset | undefined, NotificationOffset | undefined>
     >(offsetReducer, undefined);

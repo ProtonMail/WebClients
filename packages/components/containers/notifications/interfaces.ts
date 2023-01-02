@@ -9,7 +9,7 @@ export interface NotificationOffset {
     x?: number;
 }
 
-export interface NotificationOptions {
+export interface Notification {
     id: number;
     key: Key;
     text: ReactNode;
@@ -18,16 +18,15 @@ export interface NotificationOptions {
     showCloseButton?: boolean;
     icon?: IconName;
     deduplicate?: boolean;
+    duplicate: { old: Notification | undefined; state: 'init' | 'removed'; key: number };
 }
 
 export interface CreateNotificationOptions
-    extends Omit<NotificationOptions, 'id' | 'type' | 'isClosing' | 'key' | 'showCloseButton' | 'icon'> {
+    extends Pick<Notification, 'text' | 'icon' | 'showCloseButton' | 'deduplicate'> {
     id?: number;
     key?: Key;
     type?: NotificationType;
     isClosing?: boolean;
-    showCloseButton?: boolean;
-    icon?: IconName;
     expiration?: number;
 }
 

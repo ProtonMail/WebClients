@@ -4,10 +4,10 @@ import DOMPurify from 'dompurify';
 
 import { isElement } from '@proton/shared/lib/helpers/dom';
 
-import { CreateNotificationOptions, NotificationOffset, NotificationOptions } from './interfaces';
+import { CreateNotificationOptions, Notification, NotificationOffset } from './interfaces';
 
 function createNotificationManager(
-    setNotifications: Dispatch<SetStateAction<NotificationOptions[]>>,
+    setNotifications: Dispatch<SetStateAction<Notification[]>>,
     setNotificationOffset: Dispatch<NotificationOffset | undefined>
 ) {
     let idx = 1;
@@ -98,7 +98,7 @@ function createNotificationManager(
         }
 
         setNotifications((oldNotifications) => {
-            const newNotification: NotificationOptions = {
+            const newNotification: Notification = {
                 id,
                 key: key!,
                 type,
@@ -107,6 +107,11 @@ function createNotificationManager(
                 isClosing: false,
                 showCloseButton,
                 icon,
+                duplicate: {
+                    key: 1,
+                    state: 'init',
+                    old: undefined,
+                },
             };
 
             if (deduplicate) {
@@ -117,8 +122,17 @@ function createNotificationManager(
                     removeInterval(duplicateOldNotification.id);
                     return oldNotifications.map((oldNotification) => {
                         if (oldNotification === duplicateOldNotification) {
+                            const hasOldDuplicate =
+                                !!oldNotification.duplicate.old || oldNotification.duplicate.state === 'init';
                             return {
                                 ...newNotification,
+                                duplicate: {
+                                    old: hasOldDuplicate ? oldNotification.duplicate.old : oldNotification,
+                                    state: oldNotification.duplicate.state,
+                                    key: hasOldDuplicate
+                                        ? oldNotification.duplicate.key
+                                        : oldNotification.duplicate.key + 1,
+                                },
                                 key: duplicateOldNotification.key,
                             };
                         }
@@ -134,6 +148,24 @@ function createNotificationManager(
         return id;
     };
 
+    const removeDuplicate = (id: number) => {
+        return setNotifications((oldNotifications) => {
+            return oldNotifications.map((oldNotification) => {
+                if (oldNotification.id !== id) {
+                    return oldNotification;
+                }
+                return {
+                    ...oldNotification,
+                    duplicate: {
+                        old: undefined,
+                        state: 'removed',
+                        key: oldNotification.duplicate.key,
+                    },
+                };
+            });
+        });
+    };
+
     const clearNotifications = () => {
         intervalIds.forEach((intervalId) => {
             clearTimeout(intervalId);
@@ -146,6 +178,7 @@ function createNotificationManager(
 
     return {
         setOffset: setNotificationOffset,
+        removeDuplicate,
         createNotification,
         removeNotification,
         hideNotification,
