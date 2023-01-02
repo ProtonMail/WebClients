@@ -5,6 +5,7 @@ import { getAppHref } from '../apps/helper';
 import { getLocalIDFromPathname } from '../authentication/pathnameHelper';
 import { APPS, APPS_CONFIGURATION, APP_NAMES } from '../constants';
 import { DrawerFeatureFlag } from '../interfaces/Drawer';
+import window from '../window';
 import { DRAWER_ACTION, DRAWER_APPS, DRAWER_EVENTS } from './interfaces';
 
 const { PROTONMAIL, PROTONCALENDAR, PROTONDRIVE } = APPS;

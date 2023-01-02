@@ -1,5 +1,6 @@
 import { Feature } from '@proton/components/containers';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION, APP_NAMES } from '@proton/shared/lib/constants';
+import { DRAWER_ACTION, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 
 import {
@@ -10,10 +11,13 @@ import {
     drawerNativeApps,
     getDisplayContactsInDrawer,
     getIsAuthorizedApp,
+    getIsDrawerPostMessage,
     getIsIframedDrawerApp,
     getIsNativeDrawerApp,
     isAuthorizedDrawerUrl,
+    postMessageFromIframe,
 } from '../../lib/drawer/helpers';
+import window from '../../lib/window';
 import { mockWindowLocation, resetWindowLocation } from './url.helper';
 
 const windowHostname = 'mail.proton.me';
@@ -92,106 +96,107 @@ describe('drawer helpers', () => {
         });
     });
 
-    // describe('getIsDrawerPostMessage', () => {
-    //     beforeEach(() => {
-    //         mockWindowLocation(undefined, windowHostname);
-    //     });
-    //
-    //     afterEach(() => {
-    //         resetWindowLocation();
-    //     });
-    //
-    //     it('should be a drawer message', () => {
-    //         drawerAuthorizedApps.forEach((app) => {
-    //             const event = {
-    //                 origin: `https://${app}.proton.me`,
-    //                 data: {
-    //                     type: DRAWER_EVENTS.READY,
-    //                 },
-    //             } as MessageEvent;
-    //
-    //             expect(getIsDrawerPostMessage(event)).toBeTruthy();
-    //         });
-    //     });
-    //
-    //     it('should not be a drawer message when app is not authorized', () => {
-    //         Object.values(APPS).forEach((app) => {
-    //             if (!drawerAuthorizedApps.includes(APPS_CONFIGURATION[app].subdomain)) {
-    //                 const appSubdomain = APPS_CONFIGURATION[app].subdomain;
-    //
-    //                 const event = {
-    //                     origin: `https://${appSubdomain}.proton.me`,
-    //                     data: {
-    //                         type: DRAWER_EVENTS.READY,
-    //                     },
-    //                 } as MessageEvent;
-    //
-    //                 expect(getIsDrawerPostMessage(event)).toBeFalsy();
-    //             }
-    //         });
-    //     });
-    //
-    //     it('should not be a drawer message when event type is invalid', () => {
-    //         const appSubdomain = drawerAuthorizedApps[0];
-    //
-    //         const event = {
-    //             origin: `https://${appSubdomain}.proton.me`,
-    //             data: {
-    //                 type: 'something else',
-    //             },
-    //         } as MessageEvent;
-    //
-    //         expect(getIsDrawerPostMessage(event)).toBeFalsy();
-    //     });
-    // });
+    describe('getIsDrawerPostMessage', () => {
+        beforeEach(() => {
+            mockWindowLocation(undefined, windowHostname);
+        });
 
-    // describe('postMessageFromIframe', () => {
-    //     beforeEach(() => {
-    //         mockWindowLocation(undefined, windowHostname);
-    //     });
-    //
-    //     afterEach(() => {
-    //         resetWindowLocation();
-    //     });
-    //
-    //     it('should not post a message from the iframe', () => {
-    //         window.parent.postMessage = jest.fn();
-    //
-    //         const message: DRAWER_ACTION = {
-    //             type: DRAWER_EVENTS.READY,
-    //         };
-    //
-    //         authorizedApps.forEach((app) => {
-    //             const parentApp = app as APP_NAMES;
-    //
-    //             postMessageFromIframe(message, parentApp);
-    //
-    //             const sentMessage = {
-    //                 ...message,
-    //             };
-    //
-    //             const targetOrigin = `http://${APPS_CONFIGURATION[parentApp].subdomain}.proton.me`;
-    //
-    //             expect(window.parent.postMessage).toHaveBeenCalledWith(sentMessage, targetOrigin);
-    //         });
-    //     });
-    //
-    //     it('should not post a message from the iframe', () => {
-    //         window.parent.postMessage = jest.fn();
-    //
-    //         const message: DRAWER_ACTION = {
-    //             type: DRAWER_EVENTS.READY,
-    //         };
-    //
-    //         Object.values(APPS).forEach((app) => {
-    //             if (!drawerAuthorizedApps.includes(APPS_CONFIGURATION[app].subdomain)) {
-    //                 postMessageFromIframe(message, app);
-    //
-    //                 expect(window.parent.postMessage).not.toHaveBeenCalled();
-    //             }
-    //         });
-    //     });
-    // });
+        afterEach(() => {
+            resetWindowLocation();
+        });
+
+        it('should be a drawer message', () => {
+            drawerAuthorizedApps.forEach((app) => {
+                const event = {
+                    origin: `https://${app}.proton.me`,
+                    data: {
+                        type: DRAWER_EVENTS.READY,
+                    },
+                } as MessageEvent;
+
+                expect(getIsDrawerPostMessage(event)).toBeTruthy();
+            });
+        });
+
+        it('should not be a drawer message when app is not authorized', () => {
+            Object.values(APPS).forEach((app) => {
+                if (!drawerAuthorizedApps.includes(APPS_CONFIGURATION[app].subdomain)) {
+                    const appSubdomain = APPS_CONFIGURATION[app].subdomain;
+
+                    const event = {
+                        origin: `https://${appSubdomain}.proton.me`,
+                        data: {
+                            type: DRAWER_EVENTS.READY,
+                        },
+                    } as MessageEvent;
+
+                    expect(getIsDrawerPostMessage(event)).toBeFalsy();
+                }
+            });
+        });
+
+        it('should not be a drawer message when event type is invalid', () => {
+            const appSubdomain = drawerAuthorizedApps[0];
+
+            const event = {
+                origin: `https://${appSubdomain}.proton.me`,
+                data: {
+                    type: 'something else',
+                },
+            } as MessageEvent;
+
+            expect(getIsDrawerPostMessage(event)).toBeFalsy();
+        });
+    });
+
+    describe('postMessageFromIframe', () => {
+        beforeEach(() => {
+            mockWindowLocation(undefined, windowHostname);
+        });
+
+        afterEach(() => {
+            resetWindowLocation();
+        });
+
+        it('should post a message from the iframe', () => {
+            const spy = spyOn(window.parent, 'postMessage');
+
+            const message: DRAWER_ACTION = {
+                type: DRAWER_EVENTS.READY,
+            };
+
+            authorizedApps.forEach((app) => {
+                const parentApp = app as APP_NAMES;
+
+                postMessageFromIframe(message, parentApp);
+
+                const sentMessage = {
+                    ...message,
+                };
+
+                const targetOrigin = `http://${APPS_CONFIGURATION[parentApp].subdomain}.proton.me`;
+
+                // @ts-ignore
+                expect(spy).toHaveBeenCalledWith(sentMessage, targetOrigin);
+            });
+        });
+
+        it('should not post a message from the iframe', () => {
+            const spy = spyOn(window.parent, 'postMessage');
+
+            const message: DRAWER_ACTION = {
+                type: DRAWER_EVENTS.READY,
+            };
+
+            Object.values(APPS).forEach((app) => {
+                if (!drawerAuthorizedApps.includes(APPS_CONFIGURATION[app].subdomain)) {
+                    postMessageFromIframe(message, app);
+
+                    expect(spy).not.toHaveBeenCalled();
+                }
+            });
+        });
+    });
 
     describe('addParentAppToUrl', () => {
         it('should add parent app to URL and replace path', () => {
