@@ -1,10 +1,4 @@
-import {
-    FeatureCode,
-    LoaderPage,
-    StandardPrivateApp,
-    useDrawer,
-    useProtonMailMigrationRedirect,
-} from '@proton/components';
+import { FeatureCode, LoaderPage, StandardPrivateApp, useDrawer } from '@proton/components';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
@@ -28,8 +22,6 @@ interface Props {
 
 const PrivateAppInner = ({ onLogout, locales }: Props) => {
     const { loadUserSettings } = useUserSettings();
-
-    useProtonMailMigrationRedirect();
 
     const { setShowDrawerSidebar } = useDrawer();
 
