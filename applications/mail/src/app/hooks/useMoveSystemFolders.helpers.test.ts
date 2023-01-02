@@ -45,6 +45,20 @@ const SENT: SystemFolder = {
     visible: true,
 };
 
+const ALL_SENT: SystemFolder = {
+    labelID: MAILBOX_LABEL_IDS.ALL_SENT,
+    display: SYSTEM_FOLDER_SECTION.MAIN,
+    order: 4,
+    payloadExtras: {
+        Color: 'white',
+        Name: 'undefined',
+    },
+    icon: 'alias',
+    ID: 'payloadID',
+    text: 'text',
+    visible: false,
+};
+
 const SCHEDULED: SystemFolder = {
     labelID: MAILBOX_LABEL_IDS.SCHEDULED,
     display: SYSTEM_FOLDER_SECTION.MAIN,
@@ -196,6 +210,18 @@ describe('moveSystemFolders', () => {
                 { ...ALL_MAIL_MORE, order: 5 },
                 { ...ARCHIVE_MORE, order: 6 },
                 SPAM_MORE,
+            ]);
+        });
+
+        it('should move linked label such as sent, all sent', () => {
+            const navItems: SystemFolder[] = [INBOX, DRAFTS, SENT, ALL_SENT, SCHEDULED];
+
+            expect(moveSystemFolders(MAILBOX_LABEL_IDS.SENT, MAILBOX_LABEL_IDS.INBOX, navItems)).toEqual([
+                INBOX,
+                { ...ALL_SENT, order: 2 },
+                { ...SENT, order: 3 },
+                { ...DRAFTS, order: 4 },
+                { ...SCHEDULED, order: 5 },
             ]);
         });
     });
