@@ -39,7 +39,6 @@ jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/components/hooks/useCalendarSubscribeFeature', () =>
     jest.fn(() => ({ enabled: true, unavailable: false }))
 );
-jest.mock('@proton/components/hooks/useIsProtonMailDomainMigrationEnabled', () => jest.fn(() => [true]));
 
 function renderComponent(props?: Partial<SubscribedCalendarsSectionProps>) {
     const defaultProps: SubscribedCalendarsSectionProps = {

@@ -64,7 +64,6 @@ export enum FeatureCode {
     MailServiceWorker = 'MailServiceWorker',
     MailContextMenu = 'MailContextMenu',
     ShowSenderImages = 'ShowSenderImages',
-    NudgeProton = 'NudgeProton',
     EORedesign = 'EORedesign',
     Drawer = 'Drawer',
     SpotlightDrawer = 'SpotlightDrawer',
@@ -96,10 +95,8 @@ export enum FeatureCode {
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     BulkUserUpload = 'BulkUserUpload',
     DriveMyDevices = 'DriveWebMyDevices',
-    MigrationModalLastShown = 'MigrationModalLastShown',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     ProtonBadge = 'ProtonBadge',
-    ProtonMailDomainMigrationEnabled = 'ProtonMailDomainMigrationEnabled',
     TelemetrySetting = 'TelemetrySetting',
 }
 
