@@ -1,12 +1,12 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { FeatureCode, IconName, useApi, useFeature } from '@proton/components';
+import { IconName, useApi } from '@proton/components';
 import { useSystemFolders } from '@proton/components/hooks/useCategories';
 import { orderSystemFolders, updateSystemFolders } from '@proton/shared/lib/api/labels';
-import { ACCENT_COLORS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
-import { getDefaultSytemFolders, getSidebarNavItems, moveSystemFolders } from './useMoveSystemFolders.helpers';
+import { getSidebarNavItems, moveSystemFolders } from './useMoveSystemFolders.helpers';
 
 export interface UseMoveSystemFoldersProps {
     showMoved: MailSettings['ShowMoved'];
@@ -60,11 +60,8 @@ const useMoveSystemFolders = ({
     const api = useApi();
     const abortUpdateOrderCallRef = useRef<AbortController>(new AbortController());
     const [systemFoldersFromApi, loading] = useSystemFolders();
-    const reorderSystemFoldersFeature = useFeature(FeatureCode.ReorderSystemFolders);
-    const canReorderSystemFolders = reorderSystemFoldersFeature.feature?.Value === true;
-
     const [systemFolders, setSystemFolders] = useState<SystemFolder[]>([]);
-    const visibleSystemFolders = useMemo(() => systemFolders.filter((element) => element.visible), [systemFolders]);
+    const visibleSystemFolders = systemFolders.filter((element) => element.visible);
 
     const moveItem = (draggedID: MAILBOX_LABEL_IDS, droppedID: MAILBOX_LABEL_IDS | 'MORE_FOLDER_ITEM') => {
         if (draggedID === droppedID) {
@@ -93,13 +90,13 @@ const useMoveSystemFolders = ({
         abortUpdateOrderCallRef.current = new AbortController();
 
         if (hasSectionChanged) {
-            void api({
-                ...updateSystemFolders(nextDraggedItem.labelID, {
+            void api(
+                updateSystemFolders(nextDraggedItem.labelID, {
                     Display: nextDraggedItem.display,
                     Color: nextDraggedItem.payloadExtras.Color,
                     Name: nextDraggedItem.payloadExtras.Name,
-                }),
-            });
+                })
+            );
         }
 
         void api({
@@ -109,9 +106,8 @@ const useMoveSystemFolders = ({
     };
 
     useEffect(() => {
-        if (systemFoldersFromApi?.length && canReorderSystemFolders === true) {
-            const labels = systemFoldersFromApi || [];
-            const formattedLabels: SystemFolderPayload[] = labels
+        if (systemFoldersFromApi?.length) {
+            const formattedLabels: SystemFolderPayload[] = systemFoldersFromApi
                 .map((label) => ({
                     ID: label.ID as MAILBOX_LABEL_IDS,
                     Display: label.Display ?? SYSTEM_FOLDER_SECTION.MAIN,
@@ -120,22 +116,10 @@ const useMoveSystemFolders = ({
                     Name: label.Name,
                 }))
                 .filter((item) => !!item.ID);
-
-            const formattedSystemFolders = getSidebarNavItems(showMoved, showScheduled, formattedLabels);
-            setSystemFolders(formattedSystemFolders);
+            const systemFolders = getSidebarNavItems(showMoved, showScheduled, formattedLabels);
+            setSystemFolders(systemFolders);
         }
-    }, [systemFoldersFromApi, showScheduled, canReorderSystemFolders]);
-
-    if (!canReorderSystemFolders) {
-        const defaultSystemFolders = getDefaultSytemFolders(showMoved, showScheduled);
-        return [
-            defaultSystemFolders
-                .map((folder) => ({ ...folder, payloadExtras: { Color: ACCENT_COLORS[0], Name: folder.ID } }))
-                .filter((folder) => folder.visible === true),
-            () => {},
-            false,
-        ];
-    }
+    }, [systemFoldersFromApi, showMoved, showScheduled]);
 
     return [visibleSystemFolders, moveItem, loading];
 };
