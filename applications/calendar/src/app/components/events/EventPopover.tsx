@@ -28,11 +28,10 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Calendar, CalendarBootstrap, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
-import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
@@ -52,9 +51,9 @@ const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
 interface Props {
     formatTime: (date: Date) => string;
-    onEdit: (event: CalendarEvent, calendarData: Calendar) => void;
-    onDuplicate?: (event: CalendarEvent, calendarData: Calendar) => void;
-    onChangePartstat: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
+    onEdit: () => void;
+    onDuplicate?: () => void;
+    onChangePartstat: (inviteActions: InviteActions) => Promise<void>;
     onDelete: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
     style: any;
@@ -86,7 +85,7 @@ const EventPopover = ({
 }: Props) => {
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
 
-    const [loadingAction, withLoadingAction] = useLoading();
+    const [loadingDelete, withLoadingDelete] = useLoading();
 
     const targetEventData = targetEvent?.data || {};
     const { eventReadResult, eventData, calendarData } = targetEventData;
@@ -139,42 +138,40 @@ const EventPopover = ({
     ]);
 
     const handleDelete = () => {
-        if (eventData && getIsCalendarEvent(eventData)) {
-            const sendCancellationNotice =
-                !eventReadError && !isCalendarDisabled && !isCancelled && [ACCEPTED, TENTATIVE].includes(userPartstat);
-            const inviteActions = model.isAttendee
-                ? {
-                      type: isSelfAddressActive
-                          ? INVITE_ACTION_TYPES.DECLINE_INVITATION
-                          : INVITE_ACTION_TYPES.DECLINE_DISABLED,
-                      isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
-                      sendCancellationNotice,
-                      selfAddress: model.selfAddress,
-                      selfAttendeeIndex: model.selfAttendeeIndex,
-                      partstat: ICAL_ATTENDEE_STATUS.DECLINED,
-                  }
-                : {
-                      type: isSelfAddressActive
-                          ? INVITE_ACTION_TYPES.CANCEL_INVITATION
-                          : INVITE_ACTION_TYPES.CANCEL_DISABLED,
-                      isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
-                      selfAddress: model.selfAddress,
-                      selfAttendeeIndex: model.selfAttendeeIndex,
-                  };
-            withLoadingAction(onDelete(inviteActions)).catch(noop);
-        }
+        const sendCancellationNotice =
+            !eventReadError && !isCalendarDisabled && !isCancelled && [ACCEPTED, TENTATIVE].includes(userPartstat);
+        const inviteActions = model.isAttendee
+            ? {
+                  type: isSelfAddressActive
+                      ? INVITE_ACTION_TYPES.DECLINE_INVITATION
+                      : INVITE_ACTION_TYPES.DECLINE_DISABLED,
+                  isProtonProtonInvite: model.isProtonProtonInvite,
+                  sendCancellationNotice,
+                  selfAddress: model.selfAddress,
+                  selfAttendeeIndex: model.selfAttendeeIndex,
+                  partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+              }
+            : {
+                  type: isSelfAddressActive
+                      ? INVITE_ACTION_TYPES.CANCEL_INVITATION
+                      : INVITE_ACTION_TYPES.CANCEL_DISABLED,
+                  isProtonProtonInvite: model.isProtonProtonInvite,
+                  selfAddress: model.selfAddress,
+                  selfAttendeeIndex: model.selfAttendeeIndex,
+              };
+        withLoadingDelete(onDelete(inviteActions));
     };
 
-    const handleEdit = () => {
-        if (eventData && getIsCalendarEvent(eventData)) {
-            onEdit(eventData, calendarData);
-        }
-    };
+    const handleChangePartstat = (partstat: ICAL_ATTENDEE_STATUS) => {
+        const inviteActions = {
+            isProtonProtonInvite: model.isProtonProtonInvite,
+            type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
+            partstat,
+            selfAddress: model.selfAddress,
+            selfAttendeeIndex: model.selfAttendeeIndex,
+        };
 
-    const handleDuplicate = () => {
-        if (eventData && getIsCalendarEvent(eventData)) {
-            onDuplicate?.(eventData, calendarData);
-        }
+        return onChangePartstat(inviteActions);
     };
 
     const dateHeader = useMemo(
@@ -197,8 +194,8 @@ const EventPopover = ({
             <ButtonLike
                 data-test-id="event-popover:edit"
                 shape="ghost"
-                onClick={handleEdit}
-                disabled={loadingAction}
+                onClick={onEdit}
+                disabled={loadingDelete}
                 icon
                 size="small"
             >
@@ -211,8 +208,8 @@ const EventPopover = ({
             <ButtonLike
                 data-test-id="event-popover:delete"
                 shape="ghost"
-                onClick={loadingAction ? noop : handleDelete}
-                loading={loadingAction}
+                onClick={loadingDelete ? noop : handleDelete}
+                loading={loadingDelete}
                 icon
                 size="small"
             >
@@ -225,8 +222,8 @@ const EventPopover = ({
             <ButtonLike
                 data-test-id="event-popover:duplicate"
                 shape="ghost"
-                onClick={handleDuplicate}
-                disabled={loadingAction}
+                onClick={onDuplicate}
+                disabled={loadingDelete}
                 icon
                 size="small"
             >
@@ -248,9 +245,9 @@ const EventPopover = ({
     );
 
     const actions = {
-        accept: () => onChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
-        acceptTentatively: () => onChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
-        decline: () => onChangePartstat(ICAL_ATTENDEE_STATUS.DECLINED),
+        accept: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
+        acceptTentatively: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
+        decline: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.DECLINED),
         retryCreateEvent: () => wait(0),
         retryUpdateEvent: () => wait(0),
     };
