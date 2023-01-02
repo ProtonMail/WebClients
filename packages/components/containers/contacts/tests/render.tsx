@@ -50,6 +50,7 @@ export const notificationManager = {
     createNotification: jest.fn(),
     removeNotification: jest.fn(),
     hideNotification: jest.fn(),
+    removeDuplicate: jest.fn(),
     clearNotifications: jest.fn(),
     setOffset: jest.fn(),
 };

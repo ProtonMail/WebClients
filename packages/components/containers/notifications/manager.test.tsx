@@ -4,12 +4,12 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import noop from '@proton/utils/noop';
 
-import { NotificationOptions } from './interfaces';
+import { Notification } from './interfaces';
 import createNotificationManager from './manager';
 
 describe('notification manager', () => {
     it('should create a notification', () => {
-        const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+        const { result } = renderHook(() => useState<Notification[]>([]));
         const [, setState] = result.current;
 
         const manager = createNotificationManager(setState, noop);
@@ -26,7 +26,7 @@ describe('notification manager', () => {
     describe('deduplication', () => {
         describe('when deduplicate true', () => {
             it('should remove duplicate notifications', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
                 const manager = createNotificationManager(setState, noop);
@@ -56,7 +56,7 @@ describe('notification manager', () => {
 
         describe('when deduplicate false', () => {
             it('should not remove duplicate notifications', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
                 const manager = createNotificationManager(setState, noop);
@@ -86,7 +86,7 @@ describe('notification manager', () => {
 
         describe('when deduplicate is undefined', () => {
             it('should deduplicate a success notification', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
                 const manager = createNotificationManager(setState, noop);
@@ -112,7 +112,7 @@ describe('notification manager', () => {
             });
 
             it('should deduplicate a warning notification', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
                 const manager = createNotificationManager(setState, noop);
@@ -138,7 +138,7 @@ describe('notification manager', () => {
             });
 
             it('should deduplicate a info notification', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
                 const manager = createNotificationManager(setState, noop);
@@ -164,7 +164,7 @@ describe('notification manager', () => {
             });
 
             it('should deduplicate an error notification', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
                 const manager = createNotificationManager(setState, noop);
@@ -191,7 +191,7 @@ describe('notification manager', () => {
         });
 
         it('should deduplicate react elements using the provided key', () => {
-            const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+            const { result } = renderHook(() => useState<Notification[]>([]));
             const [, setState] = result.current;
 
             const manager = createNotificationManager(setState, noop);
@@ -227,7 +227,7 @@ describe('notification manager', () => {
     });
 
     it('should allow to create notifications with raw html text and deduplicate it', () => {
-        const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+        const { result } = renderHook(() => useState<Notification[]>([]));
         const [, setState] = result.current;
 
         const manager = createNotificationManager(setState, noop);

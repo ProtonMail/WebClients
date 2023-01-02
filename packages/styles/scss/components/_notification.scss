@@ -121,6 +121,13 @@
 		animation-name: anime-notification-out;
 	}
 
+	&--out-duplicate {
+		animation-duration: 0.25s;
+		animation-fill-mode: both;
+		animation-timing-function: easing(ease-in-quad);
+		animation-name: anime-notification-out;
+	}
+
 	&--error,
 	&--warning {
 		background-color: var(--signal-danger);

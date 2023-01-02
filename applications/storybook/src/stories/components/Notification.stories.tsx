@@ -159,6 +159,7 @@ export const Basic = () => {
 
                     <Button
                         onClick={handleClick({
+                            key: byoText,
                             type: byoType,
                             text: <ByoContent />,
                             showCloseButton: byoCloseButton,
@@ -188,7 +189,7 @@ export const Basic = () => {
             </Button>
             <Button
                 color="info"
-                onClick={handleClick({ type: 'info', text: <CloseableNotification /> })}
+                onClick={handleClick({ key: 'close', type: 'info', text: <CloseableNotification /> })}
                 className="mr1 mb1"
             >
                 Default with action
@@ -202,7 +203,12 @@ export const Basic = () => {
             </Button>
             <Button
                 color="info"
-                onClick={handleClick({ type: 'info', text: <CloseableNotification />, showCloseButton: false })}
+                onClick={handleClick({
+                    key: 'close2',
+                    type: 'info',
+                    text: <CloseableNotification />,
+                    showCloseButton: false,
+                })}
                 className="mr1 mb1"
             >
                 Default without close button but with an action
@@ -210,6 +216,7 @@ export const Basic = () => {
             <Button
                 color="success"
                 onClick={handleClick({
+                    key: 'spinner',
                     type: 'success',
                     showCloseButton: false,
                     text: (
@@ -235,28 +242,38 @@ export const Basic = () => {
             </Button>
             <Button
                 color="warning"
-                onClick={handleClick({ type: 'warning', text: <WarningNotification /> })}
+                onClick={handleClick({ key: 'warning', type: 'warning', text: <WarningNotification /> })}
                 className="mr1 mb1"
             >
                 Warning with action
             </Button>
             <Button
                 color="warning"
-                onClick={handleClick({ type: 'warning', text: 'Dammit', showCloseButton: false })}
+                onClick={handleClick({ key: 'warning2', type: 'warning', text: 'Dammit', showCloseButton: false })}
                 className="mr1 mb1"
             >
                 Warning without close button
             </Button>
             <Button
                 color="warning"
-                onClick={handleClick({ type: 'warning', text: <WarningNotification />, showCloseButton: false })}
+                onClick={handleClick({
+                    key: 'warning3',
+                    type: 'warning',
+                    text: <WarningNotification />,
+                    showCloseButton: false,
+                })}
                 className="mr1 mb1"
             >
                 Warning without close button but with an action
             </Button>
             <Button
                 color="info"
-                onClick={handleClick({ type: 'info', text: <ExpandableNotification />, expiration: -1 })}
+                onClick={handleClick({
+                    key: 'expandable',
+                    type: 'info',
+                    text: <ExpandableNotification />,
+                    expiration: -1,
+                })}
                 className="mr1 mb1"
             >
                 Expandable notification

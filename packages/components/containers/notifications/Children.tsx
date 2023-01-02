@@ -12,6 +12,7 @@ const NotificationsChildren = () => {
         <NotificationsContainer
             notifications={notifications}
             offset={offset}
+            removeDuplicate={manager.removeDuplicate}
             removeNotification={manager.removeNotification}
             hideNotification={manager.hideNotification}
         />
