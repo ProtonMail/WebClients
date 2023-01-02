@@ -82,7 +82,12 @@ export default function useUploadFolder() {
         const lowercaseName = folderName.toLowerCase();
 
         return queuedFunction(`upload_empty_folder:${lowercaseName}`, async () => {
-            const { filename: newName, hasDraft } = await findAvailableName(abortSignal, shareId, parentId, folderName);
+            const { filename: newName, drarftLinkId } = await findAvailableName(
+                abortSignal,
+                shareId,
+                parentId,
+                folderName
+            );
             checkSignal(abortSignal, folderName);
             if (folderName === newName) {
                 return createEmptyFolder(abortSignal, shareId, parentId, folderName, modificationTime);
@@ -91,7 +96,7 @@ export default function useUploadFolder() {
             const link = await getLinkByName(abortSignal, shareId, parentId, folderName);
             const originalIsFolder = link ? !link.isFile : false;
             checkSignal(abortSignal, folderName);
-            const conflictStrategy = await getFolderConflictStrategy(abortSignal, hasDraft, originalIsFolder);
+            const conflictStrategy = await getFolderConflictStrategy(abortSignal, !!drarftLinkId, originalIsFolder);
             if (conflictStrategy === TransferConflictStrategy.Rename) {
                 return createEmptyFolder(abortSignal, shareId, parentId, newName, modificationTime);
             }
