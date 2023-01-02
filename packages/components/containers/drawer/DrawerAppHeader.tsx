@@ -119,6 +119,7 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
 
             switch (event.data.type) {
                 case DRAWER_EVENTS.CALL_EVENT_MANAGER_FROM_OUTSIDE:
+                case DRAWER_EVENTS.SHOW:
                     void call();
                     break;
                 case DRAWER_EVENTS.UPDATE_THEME:
