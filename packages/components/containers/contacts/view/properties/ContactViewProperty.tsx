@@ -37,6 +37,7 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
                     className={classnames([
                         'contact-view-row-content mr0-5 flex-item-fluid pl2 pt0-5 on-mobile-pl0',
                         !['note'].includes(field) && 'text-ellipsis',
+                        ['note'].includes(field) && 'text-pre',
                     ])}
                 >
                     {children}
