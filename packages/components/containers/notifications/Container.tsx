@@ -1,9 +1,10 @@
-import { Key, useEffect, useRef, useState } from 'react';
+import React, { Fragment, Key, useEffect, useRef, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import Notification from './Notification';
-import { NotificationOffset, NotificationOptions } from './interfaces';
+import { NotificationOffset, Notification as NotificationType } from './interfaces';
 
 const notificationGap = 4;
 
@@ -19,7 +20,7 @@ const getRects = (notifications: { [key: Key]: HTMLDivElement }) => {
 
 type Position = number;
 
-const getPositions = (notifications: NotificationOptions[], rects: ReturnType<typeof getRects>) => {
+const getPositions = (notifications: NotificationType[], rects: ReturnType<typeof getRects>) => {
     let top = 0;
 
     return notifications.reduce<{ [key: Key]: Position }>((acc, notification) => {
@@ -36,13 +37,20 @@ const getPositions = (notifications: NotificationOptions[], rects: ReturnType<ty
 };
 
 interface Props {
-    notifications: NotificationOptions[];
+    notifications: NotificationType[];
     removeNotification: (id: number) => void;
     hideNotification: (id: number) => void;
+    removeDuplicate: (id: number) => void;
     offset?: NotificationOffset;
 }
 
-const NotificationsContainer = ({ notifications, removeNotification, hideNotification, offset }: Props) => {
+const NotificationsContainer = ({
+    notifications,
+    removeNotification,
+    hideNotification,
+    removeDuplicate,
+    offset,
+}: Props) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const notificationRefs = useRef<{ [key: Key]: HTMLDivElement }>({});
     const [rects, setRects] = useState<{ [key: Key]: DOMRect }>({});
@@ -75,7 +83,7 @@ const NotificationsContainer = ({ notifications, removeNotification, hideNotific
 
     const positions = getPositions(notifications, rects);
 
-    const list = notifications.map(({ id, key, type, text, isClosing, showCloseButton, icon }) => {
+    const list = notifications.map(({ id, key, type, text, isClosing, showCloseButton, icon, duplicate }) => {
         if (!callbackRefs.current[key]) {
             callbackRefs.current[key] = (el: HTMLDivElement | null) => {
                 if (el === null) {
@@ -91,19 +99,37 @@ const NotificationsContainer = ({ notifications, removeNotification, hideNotific
             };
         }
         return (
-            <Notification
-                key={key}
-                top={positions[key]}
-                ref={callbackRefs.current[key]}
-                isClosing={isClosing}
-                icon={icon}
-                type={type}
-                onClose={() => hideNotification(id)}
-                onExit={() => removeNotification(id)}
-                showCloseButton={showCloseButton}
-            >
-                {text}
-            </Notification>
+            <Fragment key={key}>
+                {duplicate.old && (
+                    <Notification
+                        top={positions[key]}
+                        isClosing={true}
+                        isDuplicate={true}
+                        icon={duplicate.old.icon}
+                        type={duplicate.old.type}
+                        onClose={noop}
+                        onEnter={noop}
+                        onExit={noop}
+                        showCloseButton={duplicate.old.showCloseButton}
+                    >
+                        {text}
+                    </Notification>
+                )}
+                <Notification
+                    key={duplicate.key}
+                    onEnter={() => removeDuplicate(id)}
+                    top={positions[key]}
+                    ref={callbackRefs.current[key]}
+                    isClosing={isClosing}
+                    icon={icon}
+                    type={type}
+                    onClose={() => hideNotification(id)}
+                    onExit={() => removeNotification(id)}
+                    showCloseButton={showCloseButton}
+                >
+                    {text}
+                </Notification>
+            </Fragment>
         );
     });
 

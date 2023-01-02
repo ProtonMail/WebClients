@@ -17,6 +17,7 @@ const CLASSES = {
     NOTIFICATION: 'notification',
     NOTIFICATION_IN: 'notification--in',
     NOTIFICATION_OUT: 'notification--out',
+    NOTIFICATION_OUT_DUPLICATE: 'notification--out-duplicate',
 };
 
 const ANIMATIONS = {
@@ -28,19 +29,24 @@ interface Props {
     children: ReactNode;
     type: NotificationType;
     isClosing: boolean;
+    isDuplicate?: boolean;
     onExit: () => void;
     onClick?: (e: MouseEvent<HTMLElement>) => void;
     onClose?: () => void;
+    onEnter: () => void;
     showCloseButton?: boolean;
     icon?: IconName;
     top: number | undefined;
 }
 
 const NotificationBase = (
-    { children, type, top, isClosing, onClick, showCloseButton, onClose, onExit, icon }: Props,
+    { children, type, top, isClosing, isDuplicate, onClick, showCloseButton, onClose, onExit, onEnter, icon }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
+        if (animationName === ANIMATIONS.NOTIFICATION_IN) {
+            onEnter();
+        }
         if (animationName === ANIMATIONS.NOTIFICATION_OUT && isClosing) {
             onExit();
         }
@@ -55,7 +61,7 @@ const NotificationBase = (
                 CLASSES.NOTIFICATION,
                 CLASSES.NOTIFICATION_IN,
                 TYPES_CLASS[type] || TYPES_CLASS.success,
-                isClosing && CLASSES.NOTIFICATION_OUT,
+                isClosing && (isDuplicate ? CLASSES.NOTIFICATION_OUT_DUPLICATE : CLASSES.NOTIFICATION_OUT),
                 icon && 'notification--has-icon',
                 onClose && 'notification--has-close-button',
             ])}
