@@ -104,13 +104,6 @@
 			padding-inline-end: rem(1);
 		}
 
-		&::after {
-			// trick to keep space in case of loooooooong email with scroll and last one
-			content: '';
-			inline-size: 100%;
-			block-size: rem(1);
-		}
-
 		&-line:not(:first-child) {
 			padding-inline-end: rem(30);
 		}

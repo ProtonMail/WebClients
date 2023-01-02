@@ -187,17 +187,17 @@ const AddressesInput = ({
     );
 
     return (
-        <div className={classnames(['composer-addresses-autocomplete w100 flex-item-fluid relative', classname])}>
+        <div className={classnames(['composer-addresses-autocomplete w100 flex flex-item-fluid relative', classname])}>
             <div
                 className={classnames([
-                    'composer-addresses-container flex-no-min-children flex-item-fluid',
+                    'composer-addresses-container flex flex-nowrap flex-item-fluid',
                     !expanded && 'composer-addresses-container-closed field',
                     hasLighterFieldDesign && 'composer-light-field',
                 ])}
                 onClick={handleClick}
                 {...containerDragHandlers}
             >
-                <div className="flex-item-fluid flex max-w100 max-h100 relative">
+                <div className="flex-item-fluid flex flex-wrap max-w100 max-h100 relative">
                     {recipientsOrGroups.map((recipientOrGroup, index) => (
                         <Fragment key={getRecipientOrGroupKey(recipientOrGroup)}>
                             {index === placeholderPosition && dragPlaceholder}
