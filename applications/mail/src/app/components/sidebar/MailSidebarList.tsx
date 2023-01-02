@@ -117,7 +117,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         const element = sidebarRef?.current?.querySelector(`[data-shortcut-target~="${item}"]`) as HTMLElement;
         // If the active element is already contained inside the item, don't re-focus the parent. This can happen when there's a button
         // inside the item which we want to take focus instead of the parent.
-        if (document.activeElement === element || element.contains(document.activeElement)) {
+        if (element?.contains(document.activeElement) || document.activeElement === element) {
             return;
         }
         element?.focus();
