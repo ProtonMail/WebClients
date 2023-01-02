@@ -27,18 +27,24 @@ export default function useUploadHelper() {
         }
 
         const [namePart, extension] = splitLinkName(filename);
+        const hash = await generateLookupHash(filename, parentHashKey);
 
         const findAdjustedName = async (
             start = 0
         ): Promise<{
             filename: string;
             hash: string;
-            linkId?: string;
+            drarftLinkId?: string;
             clientUid?: string;
-            hasDraft?: boolean;
         }> => {
             const hashesToCheck = await Promise.all(
                 range(start, start + HASH_CHECK_AMOUNT).map(async (i) => {
+                    if (i === 0) {
+                        return {
+                            filename,
+                            hash,
+                        };
+                    }
                     const adjustedFileName = adjustName(i, namePart, extension);
                     return {
                         filename: adjustedFileName,
@@ -61,7 +67,7 @@ export default function useUploadHelper() {
                 if (availableName) {
                     return {
                         ...availableName,
-                        linkId: pendingAvailableHashes[0].LinkID,
+                        drarftLinkId: pendingAvailableHashes[0].LinkID,
                         clientUid: pendingAvailableHashes[0].ClientUID,
                     };
                 }
@@ -77,11 +83,11 @@ export default function useUploadHelper() {
             }
 
             const draftHashes = PendingHashes.filter(({ ClientUID }) => !isClientUidAvailable(ClientUID));
-            const hasDraft = draftHashes.length > 0;
+            const drarftLinkId = draftHashes.find(({ Hash }) => Hash === hash)?.LinkID;
 
             return {
                 ...availableName,
-                hasDraft,
+                drarftLinkId,
             };
         };
         return findAdjustedName();
