@@ -48,7 +48,6 @@ const reorderItems = (collection: SystemFolder[]): SystemFolder[] =>
 const moveItems = (systemFolders: SystemFolder[], draggedItemIndex: number, droppedItemIndex: number) => {
     const movedItems = move(systemFolders, draggedItemIndex, droppedItemIndex);
     const draggedID = systemFolders[draggedItemIndex].labelID;
-    // @ts-expect-error
     const linkedID = LINKED_LABEL_IDS[draggedID];
 
     if (linkedID) {
