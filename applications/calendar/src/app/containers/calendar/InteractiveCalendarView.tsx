@@ -123,7 +123,6 @@ import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import {
     CleanSendIcsActionData,
-    INVITE_ACTION_TYPES,
     InviteActions,
     RecurringActionData,
     ReencryptInviteActionData,
@@ -1756,8 +1755,9 @@ const InteractiveCalendarView = ({
                                           });
                                       }
                             }
-                            onChangePartstat={async (partstat: ICAL_ATTENDEE_STATUS) => {
-                                if (!targetEvent) {
+                            onChangePartstat={async (inviteActions: InviteActions) => {
+                                const { partstat } = inviteActions;
+                                if (!targetEvent || !partstat) {
                                     return;
                                 }
                                 const newTemporaryModel = getUpdateModel({
@@ -1767,13 +1767,6 @@ const InteractiveCalendarView = ({
                                 if (!newTemporaryModel) {
                                     return;
                                 }
-                                const inviteActions = {
-                                    isProtonProtonInvite: newTemporaryModel.isProtonProtonInvite,
-                                    type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
-                                    partstat,
-                                    selfAddress: newTemporaryModel.selfAddress,
-                                    selfAttendeeIndex: newTemporaryModel.selfAttendeeIndex,
-                                };
 
                                 const newTemporaryEvent = getTemporaryEvent(
                                     getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid),
