@@ -126,7 +126,7 @@ const MessageOnlyView = ({
     useEffect(() => {
         if (messageID && isMessageReady) {
             const element = handleGetMessageElement();
-            element?.focus();
+            element?.focus({ preventScroll: true });
             setIsMessageFocused(true);
         }
     }, [messageID, isMessageReady]);
