@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { updateThemeType } from '@proton/shared/lib/api/settings';
-import {getIsIframedDrawerApp, postMessageToIframe} from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_APPS, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import { ThemeCards, useTheme } from '.';
@@ -13,7 +13,7 @@ import { useApi, useDrawer } from '../../hooks';
 const ThemesModal = (props: ModalProps) => {
     const api = useApi();
     const [theme, setTheme] = useTheme();
-    const { appInView } = useDrawer();
+    const { iframeSrcMap } = useDrawer();
 
     const handleThemeChange = async (newThemeType: ThemeTypes) => {
         setTheme(newThemeType);
@@ -21,8 +21,13 @@ const ThemesModal = (props: ModalProps) => {
 
         // If the drawer is open, we need to make the app inside the iframe to call the event manager
         // Otherwise, the theme is not updated before the next event manager call
-        if (appInView && getIsIframedDrawerApp(appInView)) {
-            postMessageToIframe({ type: DRAWER_EVENTS.UPDATE_THEME, payload: { theme: newThemeType } }, appInView);
+        if (iframeSrcMap) {
+            Object.keys(iframeSrcMap).map((app) => {
+                postMessageToIframe(
+                    { type: DRAWER_EVENTS.UPDATE_THEME, payload: { theme: newThemeType } },
+                    app as DRAWER_APPS
+                );
+            });
         }
     };
 
