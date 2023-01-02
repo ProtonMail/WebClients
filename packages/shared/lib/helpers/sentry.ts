@@ -14,8 +14,7 @@ import { ProtonConfig } from '../interfaces';
 
 const isLocalhost = (host: string) => host.startsWith('localhost');
 
-const isProduction = (host: string) =>
-    host.endsWith('.protonmail.com') || host.endsWith('.proton.me') || host === VPN_HOSTNAME;
+const isProduction = (host: string) => host.endsWith('.proton.me') || host === VPN_HOSTNAME;
 
 let authHeaders: { [key: string]: string } = {};
 
