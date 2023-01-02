@@ -3,8 +3,6 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Href, ProtonLogo, PublicTopBanners, classnames, getAppVersion, useConfig } from '@proton/components';
-import NudgeTopBanner from '@proton/components/containers/topBanners/NudgeTopBanner';
-import getIsProtonMailDomain from '@proton/shared/lib/browser/getIsProtonMailDomain';
 import { APPS } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
@@ -27,18 +25,16 @@ export interface Props {
     headerClassName?: string;
 }
 
-const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, onBack, headerClassName }: Props) => {
+const Layout = ({ children, hasDecoration, bottomRight, onBack, headerClassName }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
-
-    const welcome = getIsProtonMailDomain() ? <NudgeTopBanner /> : null;
 
     const protonLogo = <ProtonLogo variant="full" className={classnames([onBack && 'on-mobile-ml1'])} />;
 
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
-            <PublicTopBanners>{hasWelcome ? welcome : null}</PublicTopBanners>
+            <PublicTopBanners />
             <header
                 className={clsx(
                     headerClassName,

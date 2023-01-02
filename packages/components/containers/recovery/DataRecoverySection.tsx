@@ -27,7 +27,6 @@ import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
 import { FeatureCode } from '../features';
 import { DisableMnemonicModal, GenerateMnemonicModal } from '../mnemonic';
-import GenerateMnemonicForResetModal from '../mnemonic/GenerateMnemonicForResetModal';
 import ExportRecoveryFileButton from './ExportRecoveryFileButton';
 import VoidRecoveryFilesModal from './VoidRecoveryFilesModal';
 
@@ -49,8 +48,6 @@ const DataRecoverySection = () => {
     const [generateMnemonicModalToggle, setGenerateMnemonicModalToggleOpen, renderGenerateMnemonicModalToggle] =
         useModalState();
     const [voidRecoveryFilesModal, setVoidRecoveryFilesModalOpen, renderVoidRecoveryFilesModal] = useModalState();
-    const [generateMnemonicModalForReset, setGenerateMnemonicModalForResetOpen, renderGenerateMnemonicForResetModal] =
-        useModalState();
 
     const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
     const recoverySecrets = useRecoverySecrets();
@@ -67,13 +64,6 @@ const DataRecoverySection = () => {
             const actionParam = params.get('action');
             if (!actionParam) {
                 return;
-            }
-
-            if (actionParam === 'generate-recovery-phrase-account-reset') {
-                setGenerateMnemonicModalForResetOpen(true);
-
-                params.delete('action');
-                return params;
             }
 
             if (actionParam === 'generate-recovery-phrase') {
@@ -110,9 +100,6 @@ const DataRecoverySection = () => {
                     trustedDeviceRecovery={trustedDeviceRecoveryFeature.feature?.Value}
                     {...voidRecoveryFilesModal}
                 />
-            )}
-            {renderGenerateMnemonicForResetModal && (
-                <GenerateMnemonicForResetModal {...generateMnemonicModalForReset} />
             )}
 
             <SettingsSection>
