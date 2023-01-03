@@ -23,10 +23,10 @@ jest.mock('../../_utils/errorHandler', () => {
     };
 });
 
-const mockRequst = jest.fn();
+const mockRequest = jest.fn();
 jest.mock('../../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
-        return mockRequst;
+        return mockRequest;
     };
     return useDebouncedRequest;
 });
@@ -86,8 +86,8 @@ describe('useLinksListing', () => {
     });
 
     it('fetches children all pages with the same sorting', async () => {
-        mockRequst.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(0, PAGE_SIZE)) });
-        mockRequst.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(PAGE_SIZE)) });
+        mockRequest.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(0, PAGE_SIZE)) });
+        mockRequest.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(PAGE_SIZE)) });
         await act(async () => {
             await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId', {
                 sortField: 'createTime',
@@ -99,7 +99,7 @@ describe('useLinksListing', () => {
             });
         });
         // Check fetch calls - two pages.
-        expect(mockRequst.mock.calls.map(([{ params }]) => params)).toMatchObject([
+        expect(mockRequest.mock.calls.map(([{ params }]) => params)).toMatchObject([
             { Page: 0, Sort: 'CreateTime', Desc: 0 },
             { Page: 1, Sort: 'CreateTime', Desc: 0 },
         ]);
@@ -115,7 +115,7 @@ describe('useLinksListing', () => {
 
     it('fetches from the beginning when sorting changes', async () => {
         const links = LINKS.slice(0, PAGE_SIZE);
-        mockRequst.mockReturnValue({ Links: linksToApiLinks(links) });
+        mockRequest.mockReturnValue({ Links: linksToApiLinks(links) });
         await act(async () => {
             await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId', {
                 sortField: 'createTime',
@@ -127,7 +127,7 @@ describe('useLinksListing', () => {
             });
         });
         // Check fetch calls - twice starting from the first page.
-        expect(mockRequst.mock.calls.map(([{ params }]) => params)).toMatchObject([
+        expect(mockRequest.mock.calls.map(([{ params }]) => params)).toMatchObject([
             { Page: 0, Sort: 'CreateTime', Desc: 0 },
             { Page: 0, Sort: 'CreateTime', Desc: 1 },
         ]);
@@ -143,13 +143,13 @@ describe('useLinksListing', () => {
 
     it('skips fetch if all was fetched', async () => {
         const links = LINKS.slice(0, 5);
-        mockRequst.mockReturnValue({ Links: linksToApiLinks(links) });
+        mockRequest.mockReturnValue({ Links: linksToApiLinks(links) });
         await act(async () => {
             await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId');
             await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId');
         });
         // Check fetch calls - first call fetched all, no need to call the second.
-        expect(mockRequst).toBeCalledTimes(1);
+        expect(mockRequest).toBeCalledTimes(1);
         expect(hook.current.getCachedChildren(abortSignal, 'shareId', 'parentLinkId')).toMatchObject({
             links,
             isDecrypting: false,
@@ -157,20 +157,20 @@ describe('useLinksListing', () => {
     });
 
     it('loads the whole folder', async () => {
-        mockRequst.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(0, PAGE_SIZE)) });
-        mockRequst.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(PAGE_SIZE)) });
+        mockRequest.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(0, PAGE_SIZE)) });
+        mockRequest.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(PAGE_SIZE)) });
         await act(async () => {
             await hook.current.loadChildren(abortSignal, 'shareId', 'parentLinkId');
         });
-        expect(mockRequst.mock.calls.map(([{ params }]) => params)).toMatchObject([
+        expect(mockRequest.mock.calls.map(([{ params }]) => params)).toMatchObject([
             { Page: 0, Sort: 'CreateTime', Desc: 0 },
             { Page: 1, Sort: 'CreateTime', Desc: 0 },
         ]);
     });
 
     it('continues the load of the whole folder where it ended', async () => {
-        mockRequst.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(0, PAGE_SIZE)) });
-        mockRequst.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(PAGE_SIZE)) });
+        mockRequest.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(0, PAGE_SIZE)) });
+        mockRequest.mockReturnValueOnce({ Links: linksToApiLinks(LINKS.slice(PAGE_SIZE)) });
         await act(async () => {
             await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId', {
                 sortField: 'metaDataModifyTime', // Make sure it is not default.
@@ -178,7 +178,7 @@ describe('useLinksListing', () => {
             });
             await hook.current.loadChildren(abortSignal, 'shareId', 'parentLinkId');
         });
-        expect(mockRequst.mock.calls.map(([{ params }]) => params)).toMatchObject([
+        expect(mockRequest.mock.calls.map(([{ params }]) => params)).toMatchObject([
             { Page: 0, Sort: 'ModifyTime', Desc: 0 }, // Done by fetchChildrenNextPage.
             { Page: 1, Sort: 'ModifyTime', Desc: 0 }, // Done by loadChildren, continues with the same sorting.
         ]);
@@ -187,11 +187,11 @@ describe('useLinksListing', () => {
     it("can count link's children", async () => {
         const PAGE_LENGTH = 5;
         const links = LINKS.slice(0, PAGE_LENGTH);
-        mockRequst.mockReturnValueOnce({ Links: linksToApiLinks(links) });
+        mockRequest.mockReturnValueOnce({ Links: linksToApiLinks(links) });
         await act(async () => {
             await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId');
         });
-        expect(mockRequst).toBeCalledTimes(1);
+        expect(mockRequest).toBeCalledTimes(1);
         expect(hook.current.getCachedChildrenCount('shareId', 'parentLinkId')).toBe(PAGE_LENGTH);
     });
 });
