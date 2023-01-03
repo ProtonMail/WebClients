@@ -16,15 +16,18 @@ import {
     useLocalState,
     useMailSettings,
     useMessageCounts,
+    useSystemFolders,
     useUser,
 } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { getCounterMap } from '../../helpers/elements';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { LabelActionsContextProvider } from './EditLabelContext';
@@ -48,6 +51,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const [mailSettings] = useMailSettings();
+    const [systemFolders] = useSystemFolders();
     const [labels] = useLabels();
     const [folders, loadingFolders] = useFolders();
     const numFolders = folders?.length || 0;
@@ -56,13 +60,9 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const [displayFolders, toggleFolders] = useLocalState(numFolders > 0, `${user.ID || 'item'}-display-folders`);
     const [displayLabels, toggleLabels] = useLocalState(numLabels > 0, `${user.ID || 'item'}-display-labels`);
     const [displayMoreItems, toggleDisplayMoreItems] = useLocalState(false, `${user.ID || 'item'}-display-more-items`);
-
     const sidebarRef = useRef<HTMLDivElement>(null);
-
     const [focusedItem, setFocusedItem] = useState<string | null>(null);
-
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
-
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
 
     useEffect(() => {
@@ -153,19 +153,45 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     }, [messageCounts, conversationCounts, labels, folders, mailSettings, location]);
 
     const showScheduled = scheduledFeature?.Value && (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
-
+    const visibleSystemFolders = systemFolders?.filter((systemFolder) => {
+        if (systemFolder.ID === MAILBOX_LABEL_IDS.OUTBOX) {
+            return false;
+        }
+        if (systemFolder.ID === MAILBOX_LABEL_IDS.ALL_SENT) {
+            return hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT);
+        }
+        if (systemFolder.ID === MAILBOX_LABEL_IDS.SENT) {
+            return !hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT);
+        }
+        if (systemFolder.ID === MAILBOX_LABEL_IDS.ALL_DRAFTS) {
+            return hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS);
+        }
+        if (systemFolder.ID === MAILBOX_LABEL_IDS.DRAFTS) {
+            return !hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS);
+        }
+        if (systemFolder.ID === MAILBOX_LABEL_IDS.SCHEDULED) {
+            return showScheduled;
+        }
+        return true;
+    });
     const sidebarListItems = useMemo(() => {
         const foldersArray = folders?.length ? reduceFolderTreeview : ['add-folder'];
         const labelsArray = labels?.length ? labels.map((f) => f.ID) : ['add-label'];
+        const topSystemFolders: string[] = [];
+        const bottomSystemFolders: string[] = [];
+        visibleSystemFolders?.forEach((folder) => {
+            const humanLabelID = LABEL_IDS_TO_HUMAN[folder.ID as MAILBOX_LABEL_IDS];
+            if (folder.Display) {
+                topSystemFolders.push(humanLabelID);
+            } else {
+                bottomSystemFolders.push(humanLabelID);
+            }
+        });
 
         return [
-            'inbox',
-            'drafts',
-            showScheduled && 'scheduled',
-            'sent',
-            'starred',
+            topSystemFolders?.length && topSystemFolders,
             'toggle-more-items',
-            displayMoreItems && ['archive', 'spam', 'trash', 'allmail'],
+            displayMoreItems && bottomSystemFolders?.length && bottomSystemFolders,
             'toggle-folders',
             displayFolders && foldersArray,
             'toggle-labels',
@@ -173,7 +199,16 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         ]
             .flat(1)
             .filter(isTruthy);
-    }, [reduceFolderTreeview, folders, labels, showScheduled, displayFolders, displayLabels, displayMoreItems]);
+    }, [
+        reduceFolderTreeview,
+        folders,
+        labels,
+        visibleSystemFolders,
+        showScheduled,
+        displayFolders,
+        displayLabels,
+        displayMoreItems,
+    ]);
 
     const shortcutHandlers: HotkeyTuple[] = [
         [
