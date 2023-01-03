@@ -177,7 +177,7 @@ const CalendarSidebarListItems = ({
                                     {Name}
                                 </div>
                                 {!isCalendarDisabled && isNotSyncedInfo && (
-                                    <div className="flex-item-noshrink">
+                                    <div className="flex-item-noshrink max-w100 text-ellipsis">
                                         &nbsp;
                                         <Tooltip title={isNotSyncedInfo.text}>
                                             <span>({isNotSyncedInfo.label})</span>
