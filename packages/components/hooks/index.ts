@@ -19,7 +19,7 @@ export { default as useCalendarShareInvitations } from './useCalendarShareInvita
 export { default as useCalendarShareInvitationActions } from './useCalendarShareInvitationActions';
 export * from './useCalendarUserSettings';
 export { default as useCanReactivateKeys } from './useCanReactivateKeys';
-export { useLabels, useFolders, useContactGroups } from './useCategories';
+export { useLabels, useFolders, useSystemFolders, useContactGroups } from './useCategories';
 export { default as useClickOutside } from './useClickOutside';
 export { default as useConfig } from './useConfig';
 export { default as useContactEmails } from './useContactEmails';
