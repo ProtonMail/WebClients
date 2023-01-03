@@ -21,7 +21,6 @@ const apiMock = jest.fn<Promise<any>, any>(async (args: any) => {
     if (entry) {
         return entry.handler({ ...args });
     }
-    console.log('api', args, apiMocks);
     return {};
 });
 

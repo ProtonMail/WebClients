@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
+import { ApiImporterError, ApiImporterState } from '@proton/activation/api/api.interface';
 import { Badge, Icon, Progress, Tooltip } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-
-import { ApiImporterError, ApiImporterState } from '../../../logic/types/api.types';
 
 interface Props {
     processed: number;

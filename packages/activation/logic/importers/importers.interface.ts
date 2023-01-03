@@ -1,6 +1,5 @@
+import { ApiImporter, ApiImporterActive, ApiImporterFolder } from '@proton/activation/api/api.interface';
 import { ImportType } from '@proton/activation/interface';
-
-import { ApiImporter, ApiImporterActive, ApiImporterFolder } from '../types/api.types';
 
 /**
  * TODO: Change typing depending on IMAP and OAUTH context

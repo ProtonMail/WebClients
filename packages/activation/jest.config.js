@@ -10,6 +10,9 @@ module.exports = {
         'modals/**/*.{js,jsx,ts,tsx}',
         'steps/**/*.{js,jsx,ts,tsx}',
         'utils/**/*.{js,jsx,ts,tsx}',
+        '_legacy/**/*.{js,jsx,ts,tsx}',
+        '!./**/*.interface.ts',
+        '!./**/(interface|interfaces).ts',
     ],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: [
