@@ -7,6 +7,8 @@ import { EasySwitchState } from '../store';
 const selectImapDraft = (state: EasySwitchState) => state.imapDraft;
 const selectOauthDraft = (state: EasySwitchState) => state.oauthDraft;
 
+export const selectImapDraftProduct = createSelector(selectImapDraft, (draft) => draft.product);
+
 type DraftModal = 'select-product' | `import-${ImportType}` | 'read-instructions' | 'oauth' | null;
 export const selectDraftModal = createSelector(
     selectImapDraft,

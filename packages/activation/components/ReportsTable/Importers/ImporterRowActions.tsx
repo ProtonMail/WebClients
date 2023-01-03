@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { createToken, getImport, resumeImport, updateImport } from '@proton/activation/api';
+import { getScopeFromProvider } from '@proton/activation/_legacy/EasySwitchOauthModal.helpers';
+import { createToken, resumeImport, updateImport } from '@proton/activation/api';
+import { ApiImporterError, ApiImporterState } from '@proton/activation/api/api.interface';
 import useOAuthPopup from '@proton/activation/hooks/useOAuthPopup';
 import {
     AuthenticationMethod,
@@ -11,27 +13,15 @@ import {
     OAUTH_PROVIDER,
     OAuthProps,
 } from '@proton/activation/interface';
+import { reconnectImapImport } from '@proton/activation/logic/draft/imapDraft/imapDraft.actions';
+import { cancelImporter } from '@proton/activation/logic/importers/importers.actions';
+import { ActiveImportID } from '@proton/activation/logic/importers/importers.interface';
+import { selectActiveImporterById, selectImporterById } from '@proton/activation/logic/importers/importers.selectors';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
 import { Button } from '@proton/atoms';
 import { Alert, AlertModal, DropdownActions, FeatureCode, useModalState } from '@proton/components';
-import {
-    useAddresses,
-    useApi,
-    useEventManager,
-    useFeature,
-    useLoading,
-    useModals,
-    useNotifications,
-} from '@proton/components/hooks';
+import { useApi, useEventManager, useFeature, useLoading, useNotifications } from '@proton/components/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-
-import { getScopeFromProvider } from '../../../EasySwitchOauthModal.helpers';
-import { cancelImporter } from '../../../logic/importers/importers.actions';
-import { ActiveImportID } from '../../../logic/importers/importers.interface';
-import { selectActiveImporterById, selectImporterById } from '../../../logic/importers/importers.selectors';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
-import { ApiImporterError, ApiImporterState } from '../../../logic/types/api.types';
-import ImportMailModal from '../../../mail/modals/ImportMailModal';
-import { getDeprecatedImporterFormatByID } from './ImporterRow.helpers';
 
 interface Props {
     activeImporterID: ActiveImportID;
@@ -48,9 +38,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
     const useNewScopeFeature = useFeature(FeatureCode.EasySwitchGmailNewScope);
 
     const api = useApi();
-    const [addresses, loadingAddresses] = useAddresses();
     const { call } = useEventManager();
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
     const [loadingSecondaryAction, withLoadingSecondaryAction] = useLoading();
@@ -97,9 +85,10 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
     };
 
     const handleReconnect = async (importerID: string) => {
-        const apiImporterResponse = await api(getImport(importerID));
-        const activeImport = getDeprecatedImporterFormatByID(apiImporterResponse);
-        await createModal(<ImportMailModal addresses={addresses} currentImport={activeImport} />);
+        await dispatch(reconnectImapImport(importerID));
+        // const apiImporterResponse = await api<ApiImportResponse>(getImport(importerID));
+        // const activeImport = getDeprecatedImporterFormatByID(apiImporterResponse);
+        // await createModal(<ImportMailModal addresses={addresses} currentImport={activeImport} />);
     };
 
     const handleResume = async (ImporterID: string) => {
@@ -115,7 +104,6 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
 
     const isAuthError = errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION;
 
-    // TODO: Move actions list to store
     const list = [
         ...(importState === ApiImporterState.PAUSED
             ? [
@@ -133,7 +121,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
                           return withLoadingSecondaryAction(handleResume(ID));
                       },
                       loading: loadingConfig || loadingSecondaryAction,
-                      disabled: loadingAddresses,
+                      'data-testid': 'ReportsTable:reconnectImporter',
                   },
               ]
             : []),

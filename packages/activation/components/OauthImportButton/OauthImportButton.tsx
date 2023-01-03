@@ -1,11 +1,10 @@
-import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/activation/interface';
+import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportProvider, ImportType } from '@proton/activation/interface';
+import { startOauthDraft } from '@proton/activation/logic/draft/oauthDraft/oauthDraft.actions';
+import { useEasySwitchDispatch } from '@proton/activation/logic/store';
 import { FeatureCode } from '@proton/components/containers/features';
 import { useFeature, useUser } from '@proton/components/hooks';
 
-import { startOauthDraft } from '../../logic/draft/oauthDraft/oauthDraft.actions';
-import { useEasySwitchDispatch } from '../../logic/store';
-import { ImportProvider } from '../../logic/types/shared.types';
-import GoogleButton from '../GoogleButton/GoogleButton';
+import GoogleButton from './GoogleButton';
 
 interface Props {
     className?: string;

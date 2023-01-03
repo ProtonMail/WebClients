@@ -35,7 +35,9 @@ const YahooCalendarInstructions = () => {
 
     return (
         <>
-            <div className="mb1">{yahooCalendarMessage}</div>
+            <div className="mb1" data-testid="Instruction:yahooCalendarInstructions">
+                {yahooCalendarMessage}
+            </div>
 
             <ol className="pl1 ml2 mr2">
                 <li className="mb0-5">{step1}</li>

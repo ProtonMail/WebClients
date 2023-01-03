@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { loadDashboard } from '@proton/activation/logic/actions';
+import { selectActiveImporterIdsByDate } from '@proton/activation/logic/importers/importers.selectors';
+import { selectReportSummaryIdsByDate } from '@proton/activation/logic/reports/reports.selectors';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
 import { SettingsParagraph, Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
 
-import { loadDashboard } from '../../logic/actions';
-import { selectActiveImporterIdsByDate } from '../../logic/importers/importers.selectors';
-import { selectReportSummaryIdsByDate } from '../../logic/reports/reports.selectors';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '../../logic/store';
 import ImporterRow from './Importers/ImporterRow';
 import ReportRow from './Reports/ReportRow';
 import ReportsTableInfos from './ReportsTableInfos';
@@ -25,7 +25,10 @@ const ReportsTable = () => {
     }, []);
 
     if (reportIds.length === 0 && activeImporterIds.length === 0) {
-        return <SettingsParagraph>{c('Info').t`No imports to display.`}</SettingsParagraph>;
+        return (
+            <SettingsParagraph data-testid="reportsTable:noImports">{c('Info')
+                .t`No imports to display.`}</SettingsParagraph>
+        );
     }
 
     return (

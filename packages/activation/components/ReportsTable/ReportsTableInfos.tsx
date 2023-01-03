@@ -1,13 +1,12 @@
 import { c, msgid } from 'ttag';
 
+import { selectActiveImportersErrors } from '@proton/activation/logic/importers/importers.selectors';
+import { useEasySwitchSelector } from '@proton/activation/logic/store';
 import { Alert, Href, SettingsParagraph } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { selectActiveImportersErrors } from '../../logic/importers/importers.selectors';
-import { useEasySwitchSelector } from '../../logic/store';
-
-const DashboardInfos = () => {
+const ReportsTableInfos = () => {
     const { importErrors, delayedImportAccounts } = useEasySwitchSelector(selectActiveImportersErrors);
     const delayedImportsCount = delayedImportAccounts.length;
     const accounts = delayedImportAccounts.join(', ');
@@ -57,4 +56,4 @@ const DashboardInfos = () => {
     );
 };
 
-export default DashboardInfos;
+export default ReportsTableInfos;
