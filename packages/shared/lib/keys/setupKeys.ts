@@ -2,7 +2,7 @@ import { setupKeys } from '../api/keys';
 import { Address, Api } from '../interfaces';
 import { srpVerify } from '../srp';
 import { generateKeySaltAndPassphrase } from './keys';
-import { getResetAddressesKeys } from './resetKeys';
+import { getResetAddressesKeysV2 } from './resetKeys';
 
 interface Args {
     api: Api;
@@ -16,10 +16,9 @@ export const handleSetupKeys = async ({ api, addresses, password }: Args) => {
     }
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
 
-    const { userKeyPayload, addressKeysPayload } = await getResetAddressesKeys({
+    const { userKeyPayload, addressKeysPayload } = await getResetAddressesKeysV2({
         addresses,
         passphrase,
-        hasAddressKeyMigrationGeneration: true,
     });
 
     if (!userKeyPayload || !addressKeysPayload) {
