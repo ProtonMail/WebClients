@@ -211,21 +211,23 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const handleLogin = async (args: OnLoginCallbackArguments) => {
         const { loginPassword, keyPassword, UID, LocalID, User: user, persistent, trusted, appIntent } = args;
 
-        const toApp = getToApp(appIntent?.app || maybePreAppIntent, user);
-        if (getRequiresAddressSetup(toApp, user)) {
-            const blob = loginPassword
-                ? await getEncryptedSetupBlob(getUIDApi(UID, api), loginPassword).catch(noop)
-                : undefined;
-            return onLogin({
-                ...args,
-                path: `${SETUP_ADDRESS_PATH}?to=${toApp}#${blob || ''}`,
-            });
-        }
+        const toApp = getToApp(appIntent?.app || maybePreAppIntent || maybeLocalRedirect?.toApp, user);
 
         // Handle special case going for internal vpn on account settings.
         const localRedirect =
             maybeLocalRedirect ||
             (toApp === APPS.PROTONVPN_SETTINGS ? getLocalRedirect(APPS_CONFIGURATION[toApp].settingsSlug) : undefined);
+
+        if (getRequiresAddressSetup(toApp, user) && !localRedirect) {
+            const blob = loginPassword
+                ? await getEncryptedSetupBlob(getUIDApi(UID, api), loginPassword).catch(noop)
+                : undefined;
+            const path = `${SETUP_ADDRESS_PATH}?to=${toApp}#${blob || ''}`;
+            return onLogin({
+                ...args,
+                path,
+            });
+        }
 
         // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
         if (user.Delinquent >= UNPAID_STATE.DELINQUENT) {
