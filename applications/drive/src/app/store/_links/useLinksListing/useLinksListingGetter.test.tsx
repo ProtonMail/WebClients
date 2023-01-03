@@ -15,10 +15,10 @@ jest.mock('../../_utils/errorHandler', () => {
     };
 });
 
-const mockRequst = jest.fn();
+const mockRequest = jest.fn();
 jest.mock('../../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
-        return mockRequst;
+        return mockRequest;
     };
     return useDebouncedRequest;
 });
@@ -101,7 +101,7 @@ describe('useLinksListing', () => {
     it('re-decrypts only stale links if listing is fetching (and decrypting)', async () => {
         // Make some delay to make sure fetching is in progress when
         // getCachedChildren is called.
-        mockRequst.mockImplementation(async () => {
+        mockRequest.mockImplementation(async () => {
             await wait(200);
             return { Links: [] };
         });

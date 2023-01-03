@@ -10,10 +10,10 @@ jest.mock('@proton/shared/lib/keys/driveKeys');
 
 jest.mock('@proton/shared/lib/keys/drivePassphrase');
 
-const mockRequst = jest.fn();
+const mockRequest = jest.fn();
 jest.mock('../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
-        return mockRequst;
+        return mockRequest;
     };
     return useDebouncedRequest;
 });
@@ -203,7 +203,7 @@ describe('useLink', () => {
         await act(async () => {
             await hook.current.loadLinkThumbnail(abortSignal, 'shareId', 'linkId', downloadCallbackMock);
         });
-        expect(mockRequst).not.toBeCalled();
+        expect(mockRequest).not.toBeCalled();
         expect(downloadCallbackMock).not.toBeCalled();
         expect(mockLinksState.setCachedThumbnail).not.toBeCalled();
     });
@@ -232,11 +232,11 @@ describe('useLink', () => {
         });
         expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token');
         expect(mockLinksState.setCachedThumbnail).toBeCalledWith('shareId', 'linkId', expect.any(String));
-        expect(mockRequst).not.toBeCalled();
+        expect(mockRequest).not.toBeCalled();
     });
 
     it('loads link thumbnail with expired cached link thumbnail info', async () => {
-        mockRequst.mockReturnValue({
+        mockRequest.mockReturnValue({
             ThumbnailBareURL: 'bareUrl',
             ThumbnailToken: 'token2', // Requested new non-expired token.
         });
@@ -264,13 +264,13 @@ describe('useLink', () => {
             await hook.current.loadLinkThumbnail(abortSignal, 'shareId', 'linkId', downloadCallbackMock);
         });
         expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token'); // First attempted with expired token.
-        expect(mockRequst).toBeCalledTimes(1); // Then requested the new token.
+        expect(mockRequest).toBeCalledTimes(1); // Then requested the new token.
         expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token2'); // And the new one used for final download.
         expect(mockLinksState.setCachedThumbnail).toBeCalledWith('shareId', 'linkId', expect.any(String));
     });
 
     it('loads link thumbnail with its url on API', async () => {
-        mockRequst.mockReturnValue({
+        mockRequest.mockReturnValue({
             ThumbnailBareURL: 'bareUrl',
             ThumbnailToken: 'token',
         });
@@ -292,7 +292,7 @@ describe('useLink', () => {
         await act(async () => {
             await hook.current.loadLinkThumbnail(abortSignal, 'shareId', 'linkId', downloadCallbackMock);
         });
-        expect(mockRequst).toBeCalledTimes(1);
+        expect(mockRequest).toBeCalledTimes(1);
         expect(downloadCallbackMock).toBeCalledWith('bareUrl', 'token');
         expect(mockLinksState.setCachedThumbnail).toBeCalledWith('shareId', 'linkId', expect.any(String));
     });
@@ -311,7 +311,7 @@ describe('useLink', () => {
                 },
             },
         });
-        mockRequst.mockReturnValue({
+        mockRequest.mockReturnValue({
             ThumbnailBareURL: 'bareUrl',
             ThumbnailToken: 'token',
         });
