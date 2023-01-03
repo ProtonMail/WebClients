@@ -867,6 +867,16 @@
         "Prova gratuïta de 30 dies"
       ]
     },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Acceptar"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Rebutjar"
+      ]
+    },
     "Addon": {
       "+ ${ domains } custom domain": [
         "+ ${ domains } dominis personalitzats",
@@ -1109,11 +1119,24 @@
       ],
       "Send": [
         "Enviar"
+      ],
+      "Tweet": [
+        "Piulada"
       ]
     },
     "Calendar access select label": {
       "Add people or groups": [
         "Afegir persones o grups"
+      ]
+    },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "Editar calendari"
+      ]
+    },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Podeu importar fitxers ICS d'un altre calendari a ${ CALENDAR_APP_NAME }. D'aquesta manera podeu importar ràpidament un esdeveniment o tota la vostra agenda."
       ]
     },
     "Calendar invite status label": {
@@ -1239,6 +1262,9 @@
       ]
     },
     "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "L'enllaç del calendari no és accessible des de fora de l'ecosistema del proveïdor del calendari."
+      ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Siusplau, verifiqueu que l'enllaç segueix essent vàlid."
       ],
@@ -2488,6 +2514,11 @@
         "Els subdominis \"www\" normalment no s'utilitzen per enviar missatges de correu electrònic. Està segur que vol utilitzar aquest valor de domini?"
       ]
     },
+    "Domain spam notification": {
+      "${ name } successfully deleted": [
+        "${ name }\" eliminat"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Errors o problema de qualitat"
@@ -2698,6 +2729,9 @@
       "Error in one of the conditions": [
         "Errada en una de les condicions"
       ],
+      "Failed to get active sessions. Please ${ refresh } or try again later.": [
+        "No s'han pogut obtenir sessions actives. ${ refresh } o torneu-ho a provar més tard."
+      ],
       "Filter with this name already exist": [
         "Ja existeix un filtre amb aquest nom"
       ],
@@ -2852,6 +2886,9 @@
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
+      ],
+      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
+        "Actualitzi a un pla Business amb més d'1 usuari per obtenir suport multiusuari."
       ],
       "Primary address key is not decrypted": [
         "La clau de la adreça primària no està desxifrada"
@@ -3441,6 +3478,9 @@
       "Archive": [
         "Arxivar"
       ],
+      "Do not move": [
+        "No moure"
+      ],
       "Inbox": [
         "Safata d'entrada"
       ],
@@ -3627,6 +3667,17 @@
         "Valor / Dades / Punts a"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "Accions"
+      ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
+      "Token name": [
+        "Nom del token"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
@@ -3740,6 +3791,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "El ${ CONTACTS_APP_NAME } no admet ${ forNow }:"
+      ],
       "for now": [
         "per ara"
       ]
@@ -4474,6 +4528,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "allibereu espai suprimint missatges antics o altres dades"
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "La generació d’una nova frase de recuperació desactivarà la vostra antiga."
       ],
       "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
         "Obteniu una adreça ${ BRAND_NAME } per utilitzar tots els serveis ${ BRAND_NAME } inclosos Mail i Calendar."
@@ -5790,6 +5847,9 @@
       "Address": [
         "Adreça"
       ],
+      "Address type": [
+        "Tipus d'adreça"
+      ],
       "Addresses": [
         "Adreces"
       ],
@@ -5844,8 +5904,14 @@
       "Authenticator app": [
         "Aplicació d'autenticació"
       ],
+      "Auto-detect primary time zone": [
+        "Detectar automàticament el fus horari primari"
+      ],
       "Auto-reply": [
         "Resposta automàtica"
+      ],
+      "Auto-unsubscribe": [
+        "Anul·lar la subscripció automàticament"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -5855,6 +5921,9 @@
       ],
       "Block malware only": [
         "Bloqueja només el programari maliciós"
+      ],
+      "Block malware, ads and trackers": [
+        "Bloquejar programari maliciós, anuncis i rastrejadors"
       ],
       "Browser": [
         "Navegador"
@@ -5954,6 +6023,9 @@
       ],
       "Credits used": [
         "Crèdits utilitzats"
+      ],
+      "Current display name": [
+        "Nom a mostrar actual"
       ],
       "Customize invoices": [
         "Personalitzar factures"
@@ -6129,6 +6201,9 @@
       "Interval": [
         "Interval"
       ],
+      "Invite via email": [
+        "Convidar per correu"
+      ],
       "Keep messages in Sent/Drafts": [
         "Mantenir els missatges a Enviats/Esborranys"
       ],
@@ -6186,6 +6261,9 @@
       "Message": [
         "Missatge"
       ],
+      "Moderate NAT": [
+        "NAT Moderat"
+      ],
       "Move to": [
         "Moure a"
       ],
@@ -6201,8 +6279,14 @@
       "Name on card": [
         "Nom de la targeta"
       ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (redirecció de ports)"
+      ],
       "Navigation": [
         "Navegació"
+      ],
+      "New display name": [
+        "Nou nom a mostrar"
       ],
       "New login password": [
         "Nova contrasenya d'inici de sessió"
@@ -6218,6 +6302,9 @@
       ],
       "No label found": [
         "No s'ha trobat cap etiqueta"
+      ],
+      "Non-standard ports": [
+        "Ports no estàndar"
       ],
       "Not spam": [
         "No és correu brossa"
@@ -6269,6 +6356,9 @@
       ],
       "Payment method": [
         "Forma de pagament"
+      ],
+      "Pending": [
+        "Pendent"
       ],
       "Phone number": [
         "Número de telèfon"
@@ -6339,6 +6429,9 @@
       "Send auto-reply": [
         "Enviar resposta automàtica"
       ],
+      "Send crash reports": [
+        "Enviar informes d'accidents"
+      ],
       "Show secondary time zone": [
         "Mostrar fus horari secundari"
       ],
@@ -6353,6 +6446,12 @@
       ],
       "Signature": [
         "Signatura"
+      ],
+      "SMTP token": [
+        "Token SMTP"
+      ],
+      "SMTP username": [
+        "Nom d'usuari SMTP"
       ],
       "Spam": [
         "Correu brossa"
@@ -6414,6 +6513,9 @@
       "To: ${ PMEmailAddress }": [
         "Per: ${ PMEmailAddress }"
       ],
+      "Token name": [
+        "Nom del token"
+      ],
       "Two-password mode": [
         "Mode de dues contrasenyes"
       ],
@@ -6446,6 +6548,9 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ens sap greu que marxeu. Si us plau expliqueu perquè us n'aneu per ajudar-nos a millorar."
@@ -6485,6 +6590,9 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
+      ],
+      "Your referral link": [
+        "Enllaç de la vostra recomanació"
       ],
       "ZIP code": [
         "Codi postal"
@@ -7020,6 +7128,9 @@
     "new_plans": {
       "Highest VPN speed": [
         "La velocitat VPN més alta"
+      ],
+      "Medium VPN speed": [
+        "Velocitat VPN mitjana"
       ]
     },
     "new_plans: action": {
@@ -7187,6 +7298,9 @@
       "Priority support": [
         "Suport prioritari"
       ],
+      "Router support": [
+        "Suport per a router"
+      ],
       "Secure Core servers": [
         "Servidors Secure Core"
       ],
@@ -7198,6 +7312,9 @@
       ],
       "Share files and folders via link": [
         "Compartir fitxers i carpetes mitjançant un enllaç"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Split tunneling (Android i Windows)"
       ],
       "Strict no-logs policy": [
         "Política estricta de no conservar registres"
@@ -7232,11 +7349,6 @@
         "Assistència"
       ]
     },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7246,6 +7358,11 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom de manera predeterminada."
+      ]
+    },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7309,6 +7426,9 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
         "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "Suport per a protocols de compartició fitxers com BitTorrent"
       ]
     },
     "new_plans: upgrade": {
@@ -7349,9 +7469,6 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } creat"
-      ],
-      "A disabled address cannot be primary": [
-        "Una adreça desactivada no pot ser primària"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "La clau amb empremta digital ${ fp } s'ha suprimit."
@@ -7769,6 +7886,9 @@
       "Postal code": [
         "Codi postal"
       ],
+      "Printer": [
+        "Impressora"
+      ],
       "Search": [
         "Cerca"
       ],
@@ -7815,6 +7935,9 @@
     "Primary timezone": {
       "Primary time zone": [
         "Zona horària principal"
+      ],
+      "Secondary time zone": [
+        "Fus horari secundari"
       ]
     },
     "Private Member": {
@@ -7860,6 +7983,9 @@
       ],
       "Cancel": [
         "Cancel·la"
+      ],
+      "Verify now": [
+        "Verificar ara"
       ],
       "Verify with email": [
         "Verificar amb correu electrònic"
@@ -8582,6 +8708,9 @@
       "Appearance": [
         "Aparença"
       ],
+      "Apply filter to existing messages": [
+        "Aplica el filtre als missatges existents"
+      ],
       "Apply gift code": [
         "Aplicar el codi regal"
       ],
@@ -8750,6 +8879,9 @@
       "Delete ${ label.Name } label": [
         "Eliminar l'etiqueta ${ label.Name }"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "Esborrar ${ tokenNameToRemove }?"
+      ],
       "Delete account": [
         "Eliminar compte"
       ],
@@ -8825,6 +8957,9 @@
       "Encryption and keys": [
         "Xifratge i claus"
       ],
+      "End date": [
+        "Data final"
+      ],
       "Enter your password": [
         "Introdueix la teva contrasenya"
       ],
@@ -8866,6 +9001,9 @@
       ],
       "Generate new recovery phrase?": [
         "Generar una frase de recuperació?"
+      ],
+      "Generate SMTP token": [
+        "Generar token SMTP"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obteniu ${ vpnPlus } per accedir a tots els servidors"
@@ -8936,6 +9074,9 @@
       ],
       "Layout": [
         "Disposició"
+      ],
+      "Length": [
+        "Llargada"
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
@@ -9014,6 +9155,9 @@
       ],
       "Phone": [
         "Telèfon"
+      ],
+      "Plan": [
+        "Pla"
       ],
       "Plan summary": [
         "Resum del pla"
@@ -9153,6 +9297,9 @@
       "Start a new import": [
         "Iniciar una nova importació"
       ],
+      "Start date": [
+        "Data d'inici"
+      ],
       "Start import process": [
         "Iniciar el procés d'importació"
       ],
@@ -9183,6 +9330,9 @@
       "Time zone": [
         "Zona horària"
       ],
+      "Track your referrals": [
+        "Seguiu les vostres recomanacions"
+      ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
       ],
@@ -9197,6 +9347,9 @@
       ],
       "Upgrade plan": [
         "Millora el pla"
+      ],
+      "Users": [
+        "Usuaris"
       ],
       "Users and addresses": [
         "Usuaris i adreces"
@@ -9495,6 +9648,9 @@
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Actualitzeu-vos a un pla de pagament Mail per crear fins a ${ MAX_CALENDARS_PAID } calendari, amb la possibilitat de crear calendaris per la feina, per compartir amb amics o simplement per a ús personal.",
         "Actualitzeu-vos a un pla de pagament Mail per crear fins a ${ MAX_CALENDARS_PAID } calendaris, amb la possibilitat de crear calendaris per la feina, per compartir amb amics o simplement per a ús personal."
+      ],
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "Actualitzeu a un pla Mail de pagament per compartir el vostre calendari."
       ]
     },
     "User referee signed up using referral link": {

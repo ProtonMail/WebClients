@@ -209,6 +209,9 @@
       "Download anyway": [
         "ダウンロード"
       ],
+      "Download the Windows application": [
+        "Windows アプリをダウンロード"
+      ],
       "Drive Locked": [
         "ドライブはロックされています"
       ],
@@ -330,7 +333,7 @@
         "削除マーク"
       ],
       "Maximize transfers": [
-        "転送一覧を最大化する"
+        "転送一覧を最大化"
       ],
       "Merge": [
         "統合"
@@ -339,7 +342,7 @@
         "連絡先を統合"
       ],
       "Minimize transfers": [
-        "転送一覧を最小化する"
+        "転送一覧を最小化"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
@@ -417,7 +420,7 @@
         "削除"
       ],
       "Remove device": [
-        "強制ログアウト"
+        "デバイスを削除"
       ],
       "Remove from this list": [
         "この一覧から削除"
@@ -2578,6 +2581,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } は ${ forNow } をサポートしていません。"
+      ],
       "for now": [
         "現時点"
       ]
@@ -2809,17 +2815,20 @@
       ],
       "No event can be imported. Expand for details.": [
         "予定をインポートできませんでした。クリックして詳細を展開します。"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount }件ダウンロード中"
+        "ダウンロード中 ${ activeDownloadsCount } 件"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount }件ダウンロード中（${ downloadProgress }%）"
+        "ダウンロード中 ${ activeDownloadsCount } 件 (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount }件アップロード中（${ uploadProgress }%）"
+        "アップロード中 ${ activeUploadsCount } 件 (${ uploadProgress }%)"
       ],
       "${ addressCount } email addresses": [
         "${ addressCount } 件のメールアドレス"
@@ -2837,7 +2846,7 @@
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
       "${ canceledCount } canceled": [
-        "${ canceledCount }件キャンセルしました"
+        "キャンセル ${ canceledCount } 件"
       ],
       "${ contactCount } contacts contain multiple email addresses.": [
         "${ contactCount } 件の連絡先に複数のメールアドレスが含まれています。"
@@ -2852,16 +2861,16 @@
         "${ contactsCount } の連絡先が見つかりました"
       ],
       "${ doneCount } finished": [
-        "${ doneCount }件完了しました"
+        "完了 ${ doneCount } 件"
       ],
       "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount }件ダウンロードしました"
+        "ダウンロード完了 ${ doneDownloadsCount } 件"
       ],
       "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount }件アップロードしました"
+        "アップロード完了 ${ doneUploadsCount } 件"
       ],
       "${ errorCount } failed": [
-        "${ errorCount }件失敗"
+        "失敗 ${ errorCount } 件"
       ],
       "${ groupCounts } groups found": [
         "${ groupCounts } 件のグループが見つかりました"
@@ -2873,7 +2882,7 @@
         "${ numContacts } 件の連絡先"
       ],
       "${ pausedCount } paused": [
-        "${ pausedCount }件一時停止中"
+        "一時停止 ${ pausedCount } 件"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } 件のフォルダーが存在"
@@ -3233,7 +3242,7 @@
         "親フォルダーから継承"
       ],
       "Initializing": [
-        "処理中"
+        "初期化中"
       ],
       "Internet connection lost": [
         "インターネット接続が切断されました"
@@ -3380,7 +3389,7 @@
         "その他のオプション"
       ],
       "Paused": [
-        "一時停止中"
+        "一時停止"
       ],
       "Permanently delete all files in your locked drive": [
         "ドライブからすべてのファイルを完全に削除"
@@ -3434,7 +3443,7 @@
         "プライベート検索が有効化されました。このダイアログを閉じ、ファイルまたはフォルダーを検索することができます。"
       ],
       "Queued": [
-        "転送予定"
+        "順番待ち"
       ],
       "recommended browser": [
         "推奨ブラウザー"
@@ -3618,6 +3627,9 @@
       ],
       "Trash": [
         "ごみ箱"
+      ],
+      "Unknown error": [
+        "不明なエラー"
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
@@ -4362,6 +4374,11 @@
         "インポートが開始しました"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ itemsToImportCount } つのラベルから${ periodFragment } の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
+      ]
+    },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "試用は終了しました。アカウントへのアクセスはまもなく無効になります。${ action }"
@@ -4440,22 +4457,22 @@
         "「${ name }」を作成しました"
       ],
       "\"${ name }\" deleted permanently from trash": [
-        "「${ name }」をごみ箱から完全に削除しました"
+        "「${ name }」がごみ箱から完全に削除されました"
       ],
       "\"${ name }\" failed to be created": [
         "「${ name }」を作成に失敗しました"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "「${ name }」をごみ箱から完全に削除できませんでした"
+        "「${ name }」のごみ箱からの完全な削除に失敗しました"
       ],
       "\"${ name }\" failed to be moved": [
         "「${ name }」の移動に失敗しました"
       ],
       "\"${ name }\" failed to be moved to trash": [
-        "「${ name }」をごみ箱に移動できませんでした"
+        "「${ name }」のごみ箱への移動に失敗しました"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        "「${ name }」をごみ箱から復元できませんでした"
+        "「${ name }」のごみ箱からの復元に失敗しました"
       ],
       "\"${ name }\" failed to be saved": [
         "「${ name }」の保存に失敗しました"
@@ -4464,7 +4481,7 @@
         "「${ name }」がごみ箱に移動されました"
       ],
       "\"${ name }\" restored from trash": [
-        "「${ name }」をごみ箱から復元しました"
+        "「${ name }」がごみ箱から復元されました"
       ],
       "\"${ name }\" saved successfully": [
         "「${ name }」を正常にを保存しました"
@@ -4488,10 +4505,10 @@
         "${ numberOfItems }件のアイテムをごみ箱から完全に削除できませんでした"
       ],
       "${ numberOfItems } items failed to be moved": [
-        "${ numberOfItems }件のアイテムの移動に失敗しました"
+        "${ numberOfItems } 件のアイテムの移動に失敗しました"
       ],
       "${ numberOfItems } items failed to be moved to trash": [
-        "${ numberOfItems }件のアイテムをごみ箱への移動できませんでした"
+        "${ numberOfItems } 件のアイテムのごみ箱への移動に失敗しました"
       ],
       "${ numberOfItems } items failed to be restored from trash": [
         "${ numberOfItems }件のアイテムをごみ箱から復元できませんでした"
@@ -4521,16 +4538,16 @@
         "連絡先グループが更新されました"
       ],
       "Device failed to be removed": [
-        "デバイスのログアウトに失敗しました"
+        "デバイスの削除に失敗しました"
       ],
       "Device failed to be renamed": [
         "デバイス名の変更に失敗しました"
       ],
       "Device removed": [
-        "デバイスをログアウトさせました"
+        "デバイスが削除されました"
       ],
       "Device renamed": [
-        "デバイス名を変更しました"
+        "デバイス名が変更されました"
       ],
       "Encrypted search activated": [
         "暗号化検索が有効になりました"
@@ -4560,22 +4577,22 @@
         "リンクの読み込みに失敗しました"
       ],
       "Move ${ itemsToMoveCount } files": [
-        "${ itemsToMoveCount }件のファイルを移動"
+        "${ itemsToMoveCount } 件のファイルを移動"
       ],
       "Move ${ itemsToMoveCount } folders": [
-        "${ itemsToMoveCount }件のフォルダーを移動"
+        "${ itemsToMoveCount } 件のフォルダーを移動"
       ],
       "Move ${ itemsToMoveCount } items": [
-        "${ itemsToMoveCount }件のアイテムを移動"
+        "${ itemsToMoveCount } 件のアイテムを移動"
       ],
       "Move ${ movingCount } files": [
-        "${ movingCount }件のファイルを移動"
+        "${ movingCount } 件のファイルの移動"
       ],
       "Move ${ movingCount } folders": [
-        "${ movingCount }件のフォルダーを移動"
+        "${ movingCount } 件のフォルダーの移動"
       ],
       "Move ${ movingCount } items": [
-        "${ movingCount }件のアイテムを移動"
+        "${ movingCount } 件のアイテムの移動"
       ],
       "Next page failed to be loaded": [
         "次のページの読み込みに失敗しました"
@@ -4742,7 +4759,7 @@
         "フォルダー名を入力"
       ],
       "Enter device name": [
-        "デバイス名を入力してください"
+        "デバイス名を入力"
       ],
       "Enter your email address": [
         "メールアドレスを入力"
@@ -5083,7 +5100,7 @@
         "データのクリア中"
       ],
       "Completed": [
-        "完了済み"
+        "完了"
       ],
       "Computers": [
         "コンピューター"
@@ -5206,7 +5223,7 @@
         "連絡先のエクスポート中"
       ],
       "Failed": [
-        "失敗したもの"
+        "失敗"
       ],
       "Feedback": [
         "フィードバック"
@@ -5338,7 +5355,7 @@
         "データを復元する"
       ],
       "Remove device?": [
-        "このデバイスをログアウトさせてよろしいですか？"
+        "デバイスを削除しますか？"
       ],
       "Rename a file": [
         "ファイル名の変更"

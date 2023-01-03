@@ -354,6 +354,9 @@
       "Filters are being applied. This might take a few minutes.": [
         "Les filtres sont en train d'être appliqués. Cela peut prendre quelques minutes."
       ],
+      "Fit to window": [
+        "Ajuster à la fenêtre"
+      ],
       "Font": [
         "Police"
       ],
@@ -600,6 +603,9 @@
       "Requires a verified recovery email address": [
         "Nécessite une adresse courriel de récupération vérifiée"
       ],
+      "Resend code": [
+        "Renvoyer le code"
+      ],
       "Reset credentials": [
         "Réinitialiser les identifiants"
       ],
@@ -747,6 +753,9 @@
       "Size": [
         "Taille"
       ],
+      "Skip verification": [
+        "Ignorer la vérification"
+      ],
       "Sort": [
         "Trier"
       ],
@@ -776,6 +785,9 @@
       ],
       "Try another method": [
         "Essayer une autre méthode"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Réessayez d'enregistrer. L'enregistrement a échoué pour la raison suivante: ${ saveError }"
       ],
       "Underline": [
         "Souligné"
@@ -967,6 +979,11 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Cela déconnectera tous les routeurs et les clients utilisant ce certificat."
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "applications ${ BRAND_NAME }"
       ]
     },
     "Attached ics file error": {
@@ -1337,6 +1354,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "Le lien du calendrier est temporairement inaccessible. Veuillez vérifier que le lien du fournisseur de calendrier est toujours valide."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "La dernière mise à jour remonte à plus de 12 heures. ${ CALENDAR_APP_NAME } essaiera de mettre à jour le calendrier dans quelques heures."
       ]
     },
     "Calendar table settings button tooltip": {
@@ -2620,6 +2640,9 @@
       "${ name } failed to move to spam list": [
         "${ name } n'a pas pu être déplacé vers la liste des indésirables"
       ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } n'a pas pu être placé dans la liste des non indésirables"
+      ],
       "${ name } failed to move to your block list": [
         "${ name } n'a pas pu être déplacé vers la liste de blocages"
       ],
@@ -2733,6 +2756,9 @@
       ],
       "${ name } failed to move to spam list": [
         "${ name } n'a pas pu être déplacé vers la liste des indésirables"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } n'a pas pu être placé dans la liste des non indésirables"
       ],
       "${ name } failed to move to your block list": [
         "${ name } n'a pas pu être déplacé vers la liste de blocages"
@@ -2932,6 +2958,10 @@
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
+      ],
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant",
+        "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants"
       ],
       "Missing key packet": [
         "Paquet de clé manquant"
@@ -3162,6 +3192,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes: _ . -"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -3424,6 +3457,9 @@
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
+      ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Il y a eu un problème lors de la connexion à ${ BRAND_NAME }."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Trop de sessions enfants, veuillez effacer vos témoins de connexion et vous reconnecter."
@@ -4055,11 +4091,29 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ne prend pas en charge ${ forNow }:"
+      ],
       "for now": [
         "pour l'instant"
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } n'arrive pas à se connecter à votre compte. Assurez-vous que:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } n'arrive pas à se connecter à votre compte externe. Assurez-vous que l'adresse du serveur de messagerie et le numéro de port sont corrects."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "${ BRAND_NAME } n'arrive pas à se connecter à votre compte externe. Assurez-vous que:"
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } n'arrive pas à se connecter à votre compte Yahoo. Assurez-vous que l'adresse du serveur de messagerie et le numéro de port sont corrects."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } n'arrive pas à se connecter à votre compte Yahoo. Assurez-vous que:"
+      ],
       "2-step verification is enabled in your external account.": [
         "La vérification en deux étapes est activée dans votre compte externe."
       ],
@@ -4117,8 +4171,17 @@
       "Click ${ boldManage } to expand the options menu.": [
         "Cliquez sur ${ boldManage } pour développer le menu des options."
       ],
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Selon votre fournisseur de messagerie, vous devrez peut-être d'abord générer un ${ knowledgeBaseLink } avant de pouvoir importer vers ${ BRAND_NAME }."
+      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Développez le menu déroulant en cliquant sur les 3 points (...)."
+      ],
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Générez un ${ boldAppPassword } et utilisez-le à la place de votre mot de passe habituel quand ${ BRAND_NAME } vous le demandera."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Générez le ${ boldAppPassword } et utilisez-le à la place de votre mot de passe habituel quand ${ BRAND_NAME } vous le demandera."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Allez dans les ${ boldAccountInfo } sous votre profil dans ${ yahooMailLink }."
@@ -4143,6 +4206,30 @@
       ],
       "Select ${ boldExportCSV }.": [
         "Sélectionnez ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pour importer un calendrier dans ${ BRAND_NAME }, vous avez besoin du ${ knowledgeBaseLink }. Téléchargez-le depuis Outlook en 3 étapes simples:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pour importer un calendrier dans ${ BRAND_NAME }, vous avez besoin du ${ knowledgeBaseLink }. Téléchargez-le sur Yahoo en 3 étapes simples:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Pour importer un calendrier dans ${ BRAND_NAME }, vous avez besoin du ${ knowledgeBaseLink }. Téléchargez-le avant de lancer l'importation."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
+        "Pour importer des contacts vers ${ BRAND_NAME }, vous avez besoin d'un ${ knowledgeBaseLink }. Téléchargez-le depuis Outlook en 3 étapes simples:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Pour importer des contacts vers ${ BRAND_NAME }, vous avez besoin d'un ${ knowledgeBaseLink }. Téléchargez-le sur Yahoo en 3 étapes simples:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Pour importer des contacts vers ${ BRAND_NAME }, vous avez besoin d'un ${ knowledgeBaseLink }. Téléchargez-le avant de lancer l'importation."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
+        "Pour importer des e-mails vers ${ BRAND_NAME }, vous avez besoin d'un ${ appPasswordLink } Outlook. Obtenez-le en suivant ces étapes:"
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Pour importer des courriels vers ${ BRAND_NAME }, vous avez besoin d'un ${ appPasswordLink } Yahoo. Obtenez-le en suivant ces étapes:"
       ]
     },
     "Import instructions emphasis": {
@@ -4869,6 +4956,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Enter verification code. Digit ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Saisissez les identifiants de votre compte ${ BRAND_NAME }."
       ],
@@ -5354,11 +5444,17 @@
       "Please verify the card in the new tab which was opened.": [
         "Veuillez vérifier la carte dans le nouvel onglet qui a été ouvert."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Veuillez attendre que vos modifications soient synchronisées avec le serveur."
+      ],
       "Plus or Visionary subscription required": [
         "Abonnement Plus ou Visionary requis"
       ],
       "Preview": [
         "Aperçu"
+      ],
+      "Preview failed to be loaded": [
+        "L'aperçu n'a pas pu être chargé"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
@@ -5470,6 +5566,9 @@
       ],
       "Show original message": [
         "Afficher le message original"
+      ],
+      "Sign in": [
+        "Se connecter"
       ],
       "Signed up": [
         "Inscrit·e"
@@ -5600,6 +5699,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous n'avez aucun doute sur la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
       ],
@@ -5663,6 +5765,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les pourriels et les abus, veuillez vérifier que vous êtes humain."
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Pour importer des événements, créez d'abord un calendrier dans ${ CALENDAR_APP_NAME }. Ce calendrier contiendra les événements après leur importation."
+      ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Pour rester au courant des actualités et évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes infolettres et consulter notre blogue de temps en temps."
       ],
@@ -5722,6 +5827,9 @@
       ],
       "Unlimited messages": [
         "Messages illimités"
+      ],
+      "Unsaved changes": [
+        "Les modifications ne sont pas enregistrées"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
@@ -5867,6 +5975,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Vous êtes connecté·e au compte ${ memberAddress }."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Vous pouvez aussi fusionner des calendriers importés avec des calendriers ${ BRAND_NAME } existants."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Vous pouvez vérifier la progression ${ importProgressLink }."
       ],
@@ -5979,11 +6090,23 @@
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Votre compte ${ BRAND_NAME } est associé au courriel ${ externalEmailAddress }. Pour utiliser ${ toAppName }, vous avez besoin d'une adresse ${ MAIL_APP_NAME }."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les courriels ne seront plus envoyés dans votre boîte de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Votre compte ${ BRAND_NAME } est suspendu. Les courriels ne sont plus envoyés dans votre boîte de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Vos comptes ${ VPN_APP_NAME } et ${ MAIL_APP_NAME } sont liés. Pour les supprimer, veuillez vous connecter à ${ loginLink } et supprimer votre compte depuis là-bas."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Votre compte ayant au moins une facture en retard, il est restreint et tous les services sont bloqués jusqu'au paiement. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Votre compte ayant au moins une facture en retard, il est restreint. Vos courriels et liens de partage seront bloqués en cas de non-paiement. ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
         "Votre méthode de récupération de compte est définie"
@@ -5993,6 +6116,9 @@
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Pour des raisons de sécurité, votre banque exige une vérification 3-D Secure."
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
       ],
       "Your data recovery method is set": [
         "Votre méthode de récupération de données est définie"
@@ -6460,6 +6586,9 @@
       "${ BRAND_NAME } email or username": [
         "courriel ou nom d'utilisateur ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } username": [
+        "Nom d'utilisateur ${ BRAND_NAME }"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } sur ${ humanMaxSpace }"
       ],
@@ -6891,6 +7020,9 @@
       "Key strength": [
         "Force de la clé"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Raccourci clavier: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Raccourcis clavier"
       ],
@@ -6920,6 +7052,9 @@
       ],
       "Mailbox password": [
         "Mot de passe de la messagerie"
+      ],
+      "Main": [
+        "Principale"
       ],
       "Manage categories": [
         "Gérer les catégories"
@@ -6956,6 +7091,9 @@
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (transfert de port)"
+      ],
+      "Navigation": [
+        "Navigation"
       ],
       "New display name": [
         "Nouveau nom d'affichage"
@@ -8126,26 +8264,6 @@
         "Gestion de l'équipe"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Passez au pack pour entreprises avec l'accès à tous les services premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Passez à la protection la plus complète de votre vie privée et accédez à tous les services premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Votre essai se termine le ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -8215,6 +8333,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un prix promotionnel pour votre abonnement actuel. Si vous rétrogradez votre compte, vous perdrez ce prix promotionnel et il ne sera plus disponible si vous cherchez à vous réabonner."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Passez au pack pour entreprises avec l'accès à tous les services premium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Passez à la protection la plus complète de votre vie privée et accédez à tous les services premium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Votre essai se termine le ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8506,8 +8644,14 @@
       ]
     },
     "Notification": {
-      "A disabled address cannot be primary": [
-        "Une adresse désactivée ne peut pas être principale"
+      "${ Filter.Name } created": [
+        "${ Filter.Name } a été créé"
+      ],
+      "A disabled address cannot be default": [
+        "Une adresse désactivée ne peut pas être une adresse par défaut"
+      ],
+      "An external address cannot be default": [
+        "Une adresse externe ne peut pas être une adresse par défaut"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "La clé avec l'empreinte ${ fp } a été supprimée."
@@ -8579,6 +8723,11 @@
       "week before": [
         "semaine précédente",
         "semaines précédentes"
+      ]
+    },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Ensuite, vous devrez vous connecter à votre compte Google et autoriser ${ BRAND_NAME } à accéder à vos données."
       ]
     },
     "Oauth instructions video": {
@@ -9344,6 +9493,9 @@
       "Get up to ${ credits } in credits.": [
         "Recevez jusqu'à ${ credits } en crédits."
       ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Inviter des amis à rejoindre ${ BRAND_NAME }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Essayez ${ DRIVE_APP_NAME }"
       ]
@@ -9819,6 +9971,9 @@
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
+      "${ MAIL_APP_NAME } Keyboard Shortcuts": [
+        "Raccourcis clavier ${ MAIL_APP_NAME }"
+      ],
       "1. Give a name to the config to be generated": [
         "1. Donnez un nom à la configuration à générer"
       ],
@@ -9926,6 +10081,9 @@
       ],
       "Apply gift code": [
         "Appliquer un code cadeau"
+      ],
+      "Are you sure you want to close the preview?": [
+        "Voulez-vous vraiment fermer la fenêtre d'aperçu?"
       ],
       "Are you sure you want to close?": [
         "Êtes-vous sûr·e de vouloir fermer?"
@@ -10637,6 +10795,9 @@
       "Your calendar link": [
         "Lien de votre calendrier"
       ],
+      "Your changes are not synced yet": [
+        "Vos modifications ne sont pas encore synchronisées"
+      ],
       "Your current plan": [
         "Votre offre actuelle"
       ],
@@ -10952,6 +11113,10 @@
       "Password must contain at least ${ length } character": [
         "Le mot de passe doit comporter au moins ${ length } caractère",
         "Le mot de passe doit comporter au moins ${ length } caractères"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum)",
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)"
       ]
     },
     "Video control": {
@@ -11005,6 +11170,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } fusionnera tous les dossiers portant le même nom. Si vous voulez éviter ceci, il faut changer les noms avant l'importation."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
+      ],
       "Are you sure you want to delete the address?": [
         "Êtes-vous sûr·e de vouloir supprimer cette adresse?"
       ],
@@ -11047,17 +11218,26 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports d’erreur ne sont pas chiffrés de bout en bout, merci de ne pas envoyer d'informations sensibles."
       ],
+      "Skip verification?": [
+        "Ignorer la vérification?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Les paramètres de date et heure de votre appareil ne sont pas synchronisés. ${ learnMore }"
       ],
       "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
         "L'appareil ou le service utilisant ce jeton ne sera plus capable d'envoyer des courriels via ${ MAIL_APP_NAME }."
       ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Cette importation peut dépasser la capacité de stockage actuellement disponible sur votre compte ${ BRAND_NAME }. Nous vous invitons à personnaliser votre importation."
+      ],
       "This will remove all messages, folders, and labels created during the import.": [
         "Ceci supprimera tous les messages, dossiers et labels créés pendant l'importation."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Malheureusement, nous ne sommes pas en ligne pour le moment. Veuillez remplir le formulaire ci-dessous pour décrire votre problème, et nous l'examinerons et vous contacterons lorsque nous serons de nouveau en ligne."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Le serveur de messagerie n'a pas pu être vérifié. Si vous lui faites confiance, vous pouvez ignorer cette vérification."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Nous avons détecté un problème avec votre configuration DNS. Veuillez vous assurer que vos enregistrements correspondent aux instructions ci-dessous. Si le problème persiste, nous devrons annuler la signature DKIM."

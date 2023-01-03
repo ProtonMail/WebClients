@@ -4345,6 +4345,10 @@
         "${ contactEmailsLength } Lid",
         "${ contactEmailsLength } Leden"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } gebruiker)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } gebruikers)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } bevat meerdere e-mailadressen."
       ],

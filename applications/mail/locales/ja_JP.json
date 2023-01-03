@@ -816,10 +816,10 @@
         "保存中${ ellipsis }"
       ],
       "Schedule message": [
-        "メッセージをスケジュール"
+        "メッセージを送信予約"
       ],
       "Schedule send": [
-        "スケジュールを送信"
+        "送信予約"
       ],
       "Search": [
         "検索"
@@ -3909,6 +3909,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } は ${ forNow } をサポートしていません。"
+      ],
       "for now": [
         "現時点"
       ]
@@ -4148,6 +4151,9 @@
       ],
       "No event can be imported. Expand for details.": [
         "予定をインポートできませんでした。クリックして詳細を展開します。"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
     "Info": {
@@ -4257,7 +4263,7 @@
         "${ unread } 件の未読のメッセージ"
       ],
       "${ unreadCount } scheduled messages": [
-        "${ unreadCount } 件の送信予約されたメッセージ"
+        "${ unreadCount } 件の送信予約メッセージ"
       ],
       "${ unreadCount } unread conversations": [
         "${ unreadCount } 件の未読の会話"
@@ -5112,7 +5118,7 @@
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "この会話には送信予約されたメールが含まれます。送信予約はキャンセルされます。"
+        "この会話には送信予約メッセージが含まれます。送信予約はキャンセルされます。"
       ],
       "This conversation contains non-trashed messages.": [
         "このやりとりには、ごみ箱に入れられていないメールもあります。"
@@ -5205,7 +5211,7 @@
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "送信予定のメールがたくさんあるため、これ以上追加できません。メールが送られ次第、追加できるようになります。"
+        "送信予約メッセージが多すぎます。他のメッセージが送信されれば、このメッセージを送信予約できます。"
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "メッセージ内容の検索をオフにします。アクティベーションの進行状況は失われません。"
@@ -5316,7 +5322,7 @@
         "${ PROTON_ME_DOMAIN }に移行しました。"
       ],
       "When do you want your message to be sent?": [
-        "いつメッセージを送信したいですか?"
+        "いつメッセージを送信しますか？"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "メールアドレスを伝える際に、本来のメールアドレスではなく専用の使い捨て Hide My Email エイリアスを使用します。"
@@ -6384,7 +6390,7 @@
         "登録を申請"
       ],
       "Scheduled": [
-        "計画休止の利用"
+        "送信予約"
       ],
       "Sent": [
         "送信済み"
@@ -6471,6 +6477,11 @@
         "インポートが開始しました"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ itemsToImportCount } つのラベルから${ periodFragment } の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "アーカイブ"
@@ -6482,7 +6493,7 @@
         "受信トレイ"
       ],
       "Scheduled": [
-        "計画休止の利用"
+        "送信予約"
       ],
       "Sent": [
         "送信済み"
@@ -6526,7 +6537,7 @@
         "送信予約を取り消しました"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "送信予約がキャンセルされました。メッセージは下書きに移動されました"
+        "送信予約がキャンセルされました。メッセージは下書きに移動されました。"
       ],
       "Sending undone": [
         "送信が取り消されました"
@@ -7092,7 +7103,7 @@
         "メッセージが見つかりませんでした"
       ],
       "No messages scheduled": [
-        "送信予約されているメッセージはありません"
+        "送信予約メッセージはありません"
       ],
       "No results found": [
         "該当する結果が見つかりませんでした"
@@ -7242,7 +7253,7 @@
         "メッセージの内容を検索"
       ],
       "Schedule send": [
-        "スケジュールを送信"
+        "送信予約"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を試す"
@@ -7251,7 +7262,7 @@
         "デフォルトで画像を読み込みつつ、送信者があなたをトラッキングするのを防ぎます。これは ${ settingsLink } で変更できます。"
       ],
       "You can now schedule your messages to be sent later": [
-        "あとでメッセージを送信するようスケジュールしました"
+        "メッセージの送信を予約できます"
       ],
       "You can now search the content of your encrypted emails.": [
         "暗号化されたメールの内容の検索ができるようになりました。"
@@ -7929,7 +7940,7 @@
         "ごみ箱に移動"
       ],
       "Moving a scheduled message": [
-        "送信予約されたメッセージを移動しています"
+        "送信予約メッセージを移動中"
       ],
       "New message": [
         "新規メッセージ"
@@ -8001,7 +8012,7 @@
         "新しいコードを発行"
       ],
       "Schedule send": [
-        "スケジュールを送信"
+        "送信予約"
       ],
       "Select a theme": [
         "テーマを選択"
