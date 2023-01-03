@@ -3326,6 +3326,9 @@
       "Internet connection restored.": [
         "Conexión a internet restaurada."
       ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Parece ser que recientemente ha intentado subir ${ uploadName }. Si la carga falló, ${ replaceFile }. Si la carta está en proceso, reemplazarla cancelará la carga en curso."
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Es tan sencillo como arrastrar y soltar o seleccionando archivos"
       ],

@@ -866,6 +866,9 @@
       ]
     },
     "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "L'enllaç del calendari no és accessible des de fora de l'ecosistema del proveïdor del calendari."
+      ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Siusplau, verifiqueu que l'enllaç segueix essent vàlid."
       ],
@@ -1882,6 +1885,11 @@
         "Utilitzeu la configuració predeterminada global (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Utilitzar la configuració predeterminada global (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura vençuda"
@@ -2855,6 +2863,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "El ${ CONTACTS_APP_NAME } no admet ${ forNow }:"
+      ],
       "for now": [
         "per ara"
       ]
@@ -4914,6 +4925,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Gestiona el calendari"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "No signar"
+      ],
+      "Sign": [
+        "Signar"
       ]
     },
     "Spotlight": {
