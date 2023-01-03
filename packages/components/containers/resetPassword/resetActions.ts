@@ -17,7 +17,7 @@ import {
     generateKeySaltAndPassphrase,
     getDecryptedUserKeysHelper,
     getRequiresPasswordSetup,
-    getResetAddressesKeys,
+    getResetAddressesKeysV2,
     handleSetupAddressKeys,
 } from '@proton/shared/lib/keys';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
@@ -56,13 +56,10 @@ export const handleNewPassword = async ({
     }
     const { Addresses: addresses } = resetResponse;
 
-    const hasAddressKeyMigration = resetResponse.ToMigrate === 1;
-
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
-    const { addressKeysPayload, userKeyPayload } = await getResetAddressesKeys({
+    const { addressKeysPayload, userKeyPayload } = await getResetAddressesKeysV2({
         addresses,
         passphrase,
-        hasAddressKeyMigrationGeneration: hasAddressKeyMigration,
     });
 
     await srpVerify({
