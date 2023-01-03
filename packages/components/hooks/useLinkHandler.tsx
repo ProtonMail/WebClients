@@ -8,7 +8,7 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useModalState } from '../components';
-import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
+import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal/LinkConfirmationModal';
 import { getHostname, isExternal, isSubDomain, punycodeUrl } from '../helpers/url';
 import { useHandler, useNotifications } from './index';
 
@@ -162,7 +162,7 @@ export const useLinkHandler: UseLinkHandler = (
             link={link}
             isOutside={isOutside}
             isPhishingAttempt={isPhishingAttempt}
-            {...linkConfirmationModalProps}
+            modalProps={linkConfirmationModalProps}
         />
     );
 
