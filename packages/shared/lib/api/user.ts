@@ -1,3 +1,4 @@
+import { ProductParam, getProductHeaders } from '../apps/product';
 import { HumanVerificationMethodType } from '../interfaces';
 
 export const getUser = () => ({
@@ -5,40 +6,27 @@ export const getUser = () => ({
     method: 'get',
 });
 
-export const queryCreateOldUser = (data: {
-    Username: string;
-    Email: string;
-    Token?: string;
-    TokenType?: HumanVerificationMethodType;
-    Type: 1 | 2; // 1 = mail, 2 = VPN
-    Referrer?: string;
-    Payload?: {
-        [key: string]: string;
-    };
-    Salt?: string;
-}) => ({
-    url: 'users',
-    method: 'post',
-    data,
-});
-
-export const queryCreateUser = (data: {
-    Username: string;
-    Domain?: string;
-    Email?: string;
-    Phone?: string;
-    Type: 1 | 2; // 1 = mail, 2 = VPN
-    Referrer?: string;
-    ReferralIdentifier?: string;
-    ReferralID?: string; // Invite
-    Payload?: {
-        [key: string]: string;
-    };
-    Salt?: string;
-}) => ({
+export const queryCreateUser = (
+    data: {
+        Username: string;
+        Domain?: string;
+        Email?: string;
+        Phone?: string;
+        Type: 1 | 2; // 1 = mail, 2 = VPN
+        Referrer?: string;
+        ReferralIdentifier?: string;
+        ReferralID?: string; // Invite
+        Payload?: {
+            [key: string]: string;
+        };
+        Salt?: string;
+    },
+    product: ProductParam
+) => ({
     url: 'v4/users',
     method: 'post',
     data,
+    headers: getProductHeaders(product),
 });
 
 export const getRecoveryMethods = (Username: string) => ({
@@ -47,20 +35,24 @@ export const getRecoveryMethods = (Username: string) => ({
     params: { Username },
 });
 
-export const queryCreateUserExternal = (data: {
-    Email: string;
-    Token?: string;
-    TokenType?: HumanVerificationMethodType;
-    Type: 1 | 2; // 1 = mail, 2 = VPN
-    Referrer?: string;
-    Payload?: {
-        [key: string]: string;
-    };
-    Salt?: string;
-}) => ({
+export const queryCreateUserExternal = (
+    data: {
+        Email: string;
+        Token?: string;
+        TokenType?: HumanVerificationMethodType;
+        Type: 1 | 2; // 1 = mail, 2 = VPN
+        Referrer?: string;
+        Payload?: {
+            [key: string]: string;
+        };
+        Salt?: string;
+    },
+    product: ProductParam
+) => ({
     url: 'users/external',
     method: 'post',
     data,
+    headers: getProductHeaders(product),
 });
 
 export const queryUnlock = () => ({
