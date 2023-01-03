@@ -5,14 +5,14 @@ import { PrivateMainSettingsArea, SettingsAreaConfig } from '@proton/components/
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import EasySwitchStoreProvider from '../../logic/StoreProvider';
-import ProviderCards from '../ProviderCards/ProviderCards';
 import ReportsTable from '../ReportsTable/ReportsTable';
+import ProviderCards from './ProviderCards/ProviderCards';
 
 interface Props {
     config: SettingsAreaConfig;
 }
 
-const EasySwitchSettingsArea = ({ config }: Props) => (
+const SettingsArea = ({ config }: Props) => (
     <EasySwitchStoreProvider>
         <PrivateMainSettingsArea config={config}>
             <SettingsSectionWide>
@@ -29,4 +29,4 @@ const EasySwitchSettingsArea = ({ config }: Props) => (
     </EasySwitchStoreProvider>
 );
 
-export default EasySwitchSettingsArea;
+export default SettingsArea;

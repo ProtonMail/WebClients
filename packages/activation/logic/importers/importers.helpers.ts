@@ -1,6 +1,6 @@
+import { ApiImportListResponse, ApiImporter } from '@proton/activation/api/api.interface';
 import { ImportType } from '@proton/activation/interface';
 
-import { ApiImportListResponse, ApiImporter } from '../types/api.types';
 import { ActiveImporter, ActiveImportersMap, Importer, ImportersMap } from './importers.interface';
 
 export const normalizeImporter = (apiImporter: ApiImporter) => {

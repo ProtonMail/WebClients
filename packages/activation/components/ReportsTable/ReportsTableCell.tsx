@@ -11,7 +11,7 @@ interface Props {
     title: string;
 }
 
-const DashboardTableImportCell = ({ product: app, date, title }: Props) => (
+const ReportsTableCell = ({ product: app, date, title }: Props) => (
     <TableCell>
         <div className="flex">
             <div className="flex-item-noshrink mr0-5 no-mobile">
@@ -36,4 +36,4 @@ const DashboardTableImportCell = ({ product: app, date, title }: Props) => (
     </TableCell>
 );
 
-export default DashboardTableImportCell;
+export default ReportsTableCell;

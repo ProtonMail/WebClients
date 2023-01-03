@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
+import { ApiImporterState, ApiReportRollbackState } from '@proton/activation/api/api.interface';
 import { Badge } from '@proton/components';
-
-import { ApiImporterState, ApiReportRollbackState } from '../../../logic/types/api.types';
 
 interface Props {
     status: ApiImporterState;

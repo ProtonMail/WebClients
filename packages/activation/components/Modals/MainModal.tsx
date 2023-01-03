@@ -1,14 +1,14 @@
 import { ImportType } from '@proton/activation/interface';
-import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
-
-import { selectDraftModal } from '../../logic/draft/draft.selector';
+import { selectDraftModal } from '@proton/activation/logic/draft/draft.selector';
 import {
     readImapInstructions,
     resetImapDraft,
-    selectImapProductToImport,
-} from '../../logic/draft/imapDraft/imapDraft.actions';
-import { resetOauthDraft } from '../../logic/draft/oauthDraft/oauthDraft.actions';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '../../logic/store';
+    selectImapProduct,
+} from '@proton/activation/logic/draft/imapDraft/imapDraft.actions';
+import { resetOauthDraft } from '@proton/activation/logic/draft/oauthDraft/oauthDraft.actions';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
+import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
+
 import CalendarModal from './Imap/CalendarModal/CalendarModal';
 import ImapMailModal from './Imap/ImapMailModal/ImapMailModal';
 import ImapProductsModal from './Imap/ImapProductsModal/ImapProductsModal';
@@ -25,7 +25,7 @@ const MainModal = () => {
         return (
             <ImapProductsModal
                 onClick={(selectedProduct: ImportType) => {
-                    dispatch(selectImapProductToImport({ product: selectedProduct }));
+                    dispatch(selectImapProduct({ product: selectedProduct }));
                 }}
                 onClose={() => dispatch(resetImapDraft())}
             />
@@ -44,7 +44,7 @@ const MainModal = () => {
     }
 
     if (modal === 'import-Mail') {
-        return <ImapMailModal onClose={() => dispatch(resetImapDraft())} />;
+        return <ImapMailModal />;
     }
 
     if (modal === 'import-Calendar') {
