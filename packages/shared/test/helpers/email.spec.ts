@@ -28,6 +28,13 @@ describe('email', () => {
             expect(results).toEqual(expected);
         });
 
+        it('should accept Web3 domains', () => {
+            const domains = ['alice.eth.x', 'bob.888'];
+            const results = domains.map((domain) => validateDomain(domain));
+            const expected = domains.map(() => true);
+            expect(results).toEqual(expected);
+        });
+
         it('should reject invalid domains', () => {
             const domains = [
                 'protonmail',
@@ -68,6 +75,8 @@ describe('email', () => {
                 'mailhost!username@example.org',
                 'user%example.com@example.org',
                 'customer/department=shipping@example.com',
+                'web3@eth.b',
+                'crypto@charlie.2b2',
                 '!def!xyz%abc@example.com',
                 '1234567890123456789012345678901234567890123456789012345678901234+x@a.example.com',
             ];
@@ -83,7 +92,6 @@ describe('email', () => {
                 'test@[192.168.1.1.2]',
                 'test(rare)@[19245.168.12.23]',
                 'test@domain',
-                'test@domain.b',
                 'test@-domain.com',
                 'test@domain-.com',
                 'test@test@domain.com',
