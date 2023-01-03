@@ -4,6 +4,7 @@ import { ACCENT_COLORS, LINKED_LABEL_IDS, MAILBOX_LABEL_IDS, SHOW_MOVED } from '
 import move from '@proton/utils/move';
 import orderBy from '@proton/utils/orderBy';
 
+import { LABEL_IDS_TO_HUMAN } from '../constants';
 import {
     BaseSystemFolder,
     SYSTEM_FOLDER_SECTION,
@@ -163,7 +164,7 @@ export const getDefaultSytemFolders = (
 ): BaseSystemFolder[] => [
     {
         labelID: MAILBOX_LABEL_IDS.INBOX,
-        ID: 'inbox',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX],
         icon: 'inbox',
         text: c('Link').t`Inbox`,
         shortcutText: '[G] [I]',
@@ -173,7 +174,7 @@ export const getDefaultSytemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
-        ID: 'all-drafts',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_DRAFTS],
         icon: 'file-lines',
         text: c('Link').t`Drafts`,
         shortcutText: '[G] [D]',
@@ -183,7 +184,7 @@ export const getDefaultSytemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.DRAFTS,
-        ID: 'drafts',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.DRAFTS],
         icon: 'file-lines',
         text: c('Link').t`Drafts`,
         shortcutText: '[G] [D]',
@@ -195,14 +196,14 @@ export const getDefaultSytemFolders = (
         labelID: MAILBOX_LABEL_IDS.SCHEDULED,
         icon: 'clock',
         text: c('Link').t`Scheduled`,
-        ID: 'scheduled',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED],
         visible: !!showScheduled,
         order: 4,
         display: SYSTEM_FOLDER_SECTION.MAIN,
     },
     {
         labelID: MAILBOX_LABEL_IDS.ALL_SENT,
-        ID: 'all-sent',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_SENT],
         icon: 'paper-plane',
         text: c('Link').t`Sent`,
         shortcutText: '[G] [E]',
@@ -212,7 +213,7 @@ export const getDefaultSytemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.SENT,
-        ID: 'sent',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SENT],
         icon: 'paper-plane',
         text: c('Link').t`Sent`,
         shortcutText: '[G] [E]',
@@ -225,7 +226,7 @@ export const getDefaultSytemFolders = (
         icon: 'star',
         text: c('Link').t`Starred`,
         shortcutText: '[G] [*]',
-        ID: 'starred',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.STARRED],
         visible: true,
         order: 7,
         display: SYSTEM_FOLDER_SECTION.MAIN,
@@ -235,7 +236,7 @@ export const getDefaultSytemFolders = (
         icon: 'archive-box',
         text: c('Link').t`Archive`,
         shortcutText: '[G] [A]',
-        ID: 'archive',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ARCHIVE],
         visible: true,
         order: 8,
         display: SYSTEM_FOLDER_SECTION.MORE,
@@ -245,7 +246,7 @@ export const getDefaultSytemFolders = (
         icon: 'fire',
         text: c('Link').t`Spam`,
         shortcutText: '[G] [S]',
-        ID: 'spam',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SPAM],
         visible: true,
         order: 9,
         display: SYSTEM_FOLDER_SECTION.MORE,
@@ -255,7 +256,7 @@ export const getDefaultSytemFolders = (
         icon: 'trash',
         text: c('Link').t`Trash`,
         shortcutText: '[G] [T]',
-        ID: 'trash',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.TRASH],
         visible: true,
         order: 10,
         display: SYSTEM_FOLDER_SECTION.MORE,
@@ -265,7 +266,7 @@ export const getDefaultSytemFolders = (
         icon: 'envelopes',
         text: c('Link').t`All mail`,
         shortcutText: '[G] [M]',
-        ID: 'all-mail',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL],
         visible: true,
         order: 11,
         display: SYSTEM_FOLDER_SECTION.MORE,
@@ -275,7 +276,7 @@ export const getDefaultSytemFolders = (
         icon: 'envelopes',
         text: c('Link').t`All mail`,
         shortcutText: '[G] [M]',
-        ID: 'almost-all-mail',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
         visible: false,
         order: 13,
         display: SYSTEM_FOLDER_SECTION.MORE,
@@ -285,7 +286,7 @@ export const getDefaultSytemFolders = (
         labelID: MAILBOX_LABEL_IDS.OUTBOX,
         icon: 'arrow-right',
         text: c('Link').t`Outbox`,
-        ID: 'outbox',
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.OUTBOX],
         order: 12,
         visible: false,
         display: SYSTEM_FOLDER_SECTION.MORE,
