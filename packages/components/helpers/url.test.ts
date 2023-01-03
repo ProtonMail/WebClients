@@ -137,4 +137,14 @@ describe('punycodeUrl', () => {
         const encodedUrl = punycodeUrl(url);
         expect(encodedUrl).toEqual('https://www.xn--4ca0bs.com:8080');
     });
+
+    it('should keep the trailing slash if hash or search after', () => {
+        const sUrl = 'https://www.dude.com/r/?dude=buddy';
+        const encodedSUrl = punycodeUrl(sUrl);
+        expect(encodedSUrl).toEqual('https://www.dude.com/r/?dude=buddy');
+
+        const hUrl = 'https://www.dude.com/r/#dude';
+        const encodedHUrl = punycodeUrl(hUrl);
+        expect(encodedHUrl).toEqual('https://www.dude.com/r/#dude');
+    });
 });

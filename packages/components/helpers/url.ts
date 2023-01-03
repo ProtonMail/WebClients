@@ -54,6 +54,6 @@ export const isURLProtonInternal = (url: string) => {
 export const punycodeUrl = (url: string) => {
     const { protocol, hostname, pathname, search, hash, port } = new URL(url);
     const punycodeHostname = punycode.toASCII(hostname); // Even if modern browsers support IDN, we still need to convert it to punycode for old browsers
-    const cleanPathname = pathname.replace(/\/$/, ''); // Remove trailing slash
+    const cleanPathname = search || hash ? pathname : pathname.replace(/\/$/, ''); // Remove trailing slash if no search or hash after
     return `${protocol}//${punycodeHostname}${port ? `:${port}` : ''}${cleanPathname}${search}${hash}`;
 };
