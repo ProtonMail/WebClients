@@ -179,8 +179,10 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         const labelsArray = labels?.length ? labels.map((f) => f.ID) : ['add-label'];
         const topSystemFolders: string[] = [];
         const bottomSystemFolders: string[] = [];
+
         visibleSystemFolders?.forEach((folder) => {
             const humanLabelID = LABEL_IDS_TO_HUMAN[folder.ID as MAILBOX_LABEL_IDS];
+
             if (folder.Display) {
                 topSystemFolders.push(humanLabelID);
             } else {
