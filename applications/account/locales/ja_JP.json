@@ -1236,6 +1236,11 @@
         "ほかの人に共有"
       ]
     },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "${ email } の権限を変更しました"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "有効"
@@ -3928,6 +3933,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } は ${ forNow } をサポートしていません。"
+      ],
       "for now": [
         "現時点"
       ]
@@ -4217,6 +4225,9 @@
       ],
       "No event can be imported. Expand for details.": [
         "予定をインポートできませんでした。クリックして詳細を展開します。"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
     "Info": {
@@ -5214,7 +5225,7 @@
         "追加ストレージを購入する"
       ],
       "Queued": [
-        "転送予定"
+        "順番待ち"
       ],
       "read our two-factor authentication guide first": [
         "はじめに 2 要素認証ガイドをお読みください"
@@ -5695,6 +5706,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "管理者としてのアカウントでアクセスし管理することが可能です。"
+      ],
+      "You can now close this window.": [
+        "このウィンドウを閉じることができます。"
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "@pm.me アドレスを使ってメッセージを受信できるようになりました。 有料プランにアップグレードすると、@pm.me アドレスを使用してメールを送信したり、追加の @pm.me アドレスを作成することもできます。"
@@ -7340,6 +7354,11 @@
         "認証ログを有効にする"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ itemsToImportCount } つのラベルから${ periodFragment } の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "共有リンクは一つのカレンダーごとに${ MAX_LINKS_PER_CALENDAR }個まで作成できます。新しいリンクを作成するには、以下の中から一つ削除してください。"
@@ -7888,23 +7907,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7962,6 +7964,23 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8166,8 +8185,8 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } が作成されました"
       ],
-      "A disabled address cannot be primary": [
-        "無効にされたアドレスはプライマリーにすることができません"
+      "A disabled address cannot be default": [
+        "無効にされたアドレスは既定にすることができません"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "フィンガープリント ${ fp } の鍵が削除されました。"
@@ -8916,6 +8935,11 @@
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
         "カレンダーのメンバーの上限 ${ MAX_CALENDAR_MEMBERS } を超過しました。"
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "メールアドレスまたはグループ名を入力してください"
       ]
     },
     "Share calendar modal title": {

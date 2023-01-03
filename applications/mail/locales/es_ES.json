@@ -4732,6 +4732,9 @@
       "Email tracker protection is disabled": [
         "Protección contra rastreo para el correo electrónico deshabilitada"
       ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
+        "Los rastreadores de correo pueden violar tu privacidad. ${ BRAND_NAME } no encontró ningún rastreador en este mensaje."
+      ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
         "Los rastreadores de correo pueden violar tu privacidad. ${ BRAND_NAME } encontró y bloqueó ${ numberOfTrackers } rastreador.",
         "Los rastreadores de correo pueden violar tu privacidad. ${ BRAND_NAME } encontró y bloqueó ${ numberOfTrackers } rastreadores."
@@ -5120,6 +5123,9 @@
       ],
       "Preview": [
         "Previsualizar"
+      ],
+      "Preview failed to be loaded": [
+        "No se pudo cargar la vista previa"
       ],
       "Primary": [
         "Principal"

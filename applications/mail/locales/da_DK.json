@@ -4074,6 +4074,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } understøtter ikke ${ forNow }:"
+      ],
       "for now": [
         "indtil videre"
       ]
@@ -4728,6 +4731,9 @@
       ],
       "Email tracker protection is disabled": [
         "Beskyttelse mod sporing af e-mail er deaktiveret"
+      ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
+        "Sporing af e-mails kan krænke dit privatliv. ${ BRAND_NAME } fandt ingen sporing af denne besked."
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
         "Sporing af e-mails kan krænke dit privatliv. ${ BRAND_NAME } fandt og blokerede ${ numberOfTrackers } tracker.",
