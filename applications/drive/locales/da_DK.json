@@ -2616,6 +2616,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } understøtter ikke ${ forNow }:"
+      ],
       "for now": [
         "indtil videre"
       ]
@@ -3706,6 +3709,9 @@
       ],
       "Trash": [
         "Papirkurv"
+      ],
+      "Unknown error": [
+        "Ukendt fejl"
       ],
       "Unlimited folders, labels, and filters": [
         "Ubegrænsede mapper / etiketter / filtre"

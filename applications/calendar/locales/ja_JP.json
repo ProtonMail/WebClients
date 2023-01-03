@@ -525,6 +525,11 @@
         "はい、参加します"
       ]
     },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "このリンクを知っている人は、カレンダー表示することができます"
+      ]
+    },
     "Action title": {
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME } ユーザーに共有"
@@ -2819,6 +2824,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } は ${ forNow } をサポートしていません。"
+      ],
       "for now": [
         "現時点"
       ]
@@ -3050,6 +3058,9 @@
       ],
       "No event can be imported. Expand for details.": [
         "予定をインポートできませんでした。クリックして詳細を展開します。"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
     "Info": {
@@ -4202,6 +4213,11 @@
         "インポートが開始しました"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ itemsToImportCount } つのラベルから${ periodFragment } の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
+      ]
+    },
     "Message": {
       "Fw:": [
         "Fw:"
@@ -4865,6 +4881,11 @@
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
         "カレンダーのメンバーの上限 ${ MAX_CALENDAR_MEMBERS } を超過しました。"
+      ]
+    },
+    "Share calendar modal input placeholder": {
+      "Enter an email address or group name": [
+        "メールアドレスまたはグループ名を入力してください"
       ]
     },
     "Share calendar modal title": {

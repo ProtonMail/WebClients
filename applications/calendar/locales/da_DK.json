@@ -914,6 +914,12 @@
         "Ændr tidsinterval til"
       ]
     },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } mere",
+        "${ more } mere"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Fold sammen"
@@ -2901,6 +2907,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } understøtter ikke ${ forNow }:"
+      ],
       "for now": [
         "indtil videre"
       ]

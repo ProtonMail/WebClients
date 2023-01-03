@@ -1603,6 +1603,9 @@
       ]
     },
     "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "L'enllaç del calendari no és accessible des de fora de l'ecosistema del proveïdor del calendari."
+      ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Siusplau, verifiqueu que l'enllaç segueix essent vàlid."
       ],
@@ -2790,6 +2793,11 @@
         "Utilitzeu la configuració predeterminada global (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Utilitzar la configuració predeterminada global (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura vençuda"
@@ -2804,6 +2812,9 @@
       ]
     },
     "Description": {
+      "${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ manageBlockedAddressesSettingsLink } a la configuració"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Desxifrant contactes… Pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
       ],
@@ -3695,6 +3706,9 @@
       "Archive": [
         "Arxivar"
       ],
+      "Do not move": [
+        "No moure"
+      ],
       "Inbox": [
         "Safata d'entrada"
       ],
@@ -4034,6 +4048,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "El ${ CONTACTS_APP_NAME } no admet ${ forNow }:"
+      ],
       "for now": [
         "per ara"
       ]
@@ -4607,6 +4624,9 @@
       ],
       "Email tracker protection is disabled": [
         "La protecció de rastrejador de correu electrònic està desactivada"
+      ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
+        "Els rastrejadors de correu electrònic poden violar la vostra privacitat. ${ BRAND_NAME } no ha trobat cap rastrejador en aquest missatge."
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
         "Els rastrejadors de correu electrònic poden violar la vostra privacitat. ${ BRAND_NAME } ha trobat i bloquejat ${ numberOfTrackers } rastrejador.",
@@ -6856,6 +6876,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } creat"
       ],
+      "Block removed": [
+        "Bloqueig suprimit"
+      ],
       "Contact group created": [
         "Grup de contactes creat"
       ],
@@ -7313,6 +7336,14 @@
         "La verificació de les claus de confiança del remitent ha fallat"
       ]
     },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "No signar"
+      ],
+      "Sign": [
+        "Signar"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "Més grans primer"
@@ -7330,6 +7361,9 @@
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
+      ],
+      "Email tracking protection": [
+        "Protecció de seguiment de correu electrònic"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"

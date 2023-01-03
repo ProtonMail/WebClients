@@ -158,6 +158,9 @@
       "Create new folder": [
         "Crea una carpeta"
       ],
+      "Create new text file": [
+        "Crear un nou fitxer de text"
+      ],
       "Customize": [
         "Personalitza"
       ],
@@ -207,6 +210,9 @@
       ],
       "Download anyway": [
         "Baixa igualment"
+      ],
+      "Download the Windows application": [
+        "Descarregar l'aplicació de Windows"
       ],
       "Drive Locked": [
         "Unitat bloquejada"
@@ -801,6 +807,9 @@
       ]
     },
     "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "L'enllaç del calendari no és accessible des de fora de l'ecosistema del proveïdor del calendari."
+      ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Siusplau, verifiqueu que l'enllaç segueix essent vàlid."
       ],
@@ -1745,6 +1754,11 @@
         "Utilitzeu la configuració predeterminada global (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Utilitzar la configuració predeterminada global (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura vençuda"
@@ -1862,6 +1876,9 @@
       ]
     },
     "Error": {
+      "\"${ name }\" already exists": [
+        "\"${ name }\" ja existeix."
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -1896,6 +1913,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Desmarqueu almenys ${ calendarToFixCount } calendari o",
         "Desmarqueu almenys ${ calendarToFixCount } calendaris o"
+      ],
+      "Device name does not match": [
+        "El nom del dispositiu no coincideix."
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -2579,6 +2599,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "El ${ CONTACTS_APP_NAME } no admet ${ forNow }:"
+      ],
       "for now": [
         "per ara"
       ]
@@ -2736,6 +2759,18 @@
       ]
     },
     "Info": {
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } descarregant",
+        "${ activeDownloadsCount } descarregant"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } descarregant (${ downloadProgress }%)",
+        "${ activeDownloadsCount } descarregant (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } carregant (${ uploadProgress }%)",
+        "${ activeUploadsCount } carregant (${ uploadProgress }%)"
+      ],
       "${ addressCount } email address": [
         "${ addressCount } adreça de correu electrònic",
         "${ addressCount } adreces de correu electrònic"
@@ -3331,11 +3366,17 @@
       "Shareable link for ${ boldNameText }": [
         "Enllaç per a compartir ${ boldNameText }"
       ],
+      "Shared link failed to be loaded": [
+        "L'enllaç compartit no s'ha pogut carregar."
+      ],
       "Sign in": [
         "Inicia la sessió"
       ],
       "Signature issue": [
         "Problema de signatura"
+      ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Alguns dels vostres arxius ja no són accessibles. Restaureu l'accés als vostres arxius. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "Alguna cosa ha anat malament, siusplau, intenta-ho més tard."
@@ -3387,6 +3428,13 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Aquest enllaç es desactivarà permanentment. Ningú podrà accedir al fitxer amb aquest enllaç. Per a tornar a compartir-lo, necessitareu un enllaç nou."
+      ],
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Aquest enllaç es desactivarà permanentment. Ningú podrà accedir a la carpeta amb aquest enllaç. Per a tornar a compartir-la, necessitareu un enllaç nou."
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Això suprimirà l'enllaç i eliminarà l'accés al vostre fitxer o carpeta per a qualsevol persona que el tingui.",
+        "Això suprimirà els enllaços i eliminarà l'accés als vostres fitxers o carpetes per a qualsevol persona que els tingui."
       ],
       "This will overwrite the existing file": [
         "Se sobreescriurà el fitxer actual"
@@ -3538,6 +3586,9 @@
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Els vostres arxius ja no són accessibles a causa d'un restabliment de contrasenya. Torneu a carregar la clau de xifratge antiga per recuperar-ne l'accés. ${ KeyReactivationButton }"
+      ],
       "Your files will be encrypted and then saved.": [
         "Es xifraran els fitxers i després es desaran."
       ],
@@ -3633,6 +3684,9 @@
       "Apply to all duplicated folders": [
         "Aplicar a totes les carpetes duplicades"
       ],
+      "Apply to all unverified items": [
+        "Aplica-ho a tots els elements no verificats"
+      ],
       "Attach screenshot(s)": [
         "Adjunta captura/es de pantalla"
       ],
@@ -3693,6 +3747,12 @@
       "Country": [
         "País"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "Crear un compte de ${ BRAND_NAME }"
+      ],
+      "Create a share link": [
+        "Crear un enllaç per a compartir"
+      ],
       "Created": [
         "Creat"
       ],
@@ -3708,6 +3768,12 @@
       ],
       "Deleted": [
         "Esborrat"
+      ],
+      "Device": [
+        "Dispositiu"
+      ],
+      "Device name": [
+        "Nom del dispositiu"
       ],
       "Do not ask again": [
         "No tornis a preguntar"
@@ -3744,6 +3810,9 @@
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
+      ],
+      "Enter device name": [
+        "Introdueix el nom del dispositiu"
       ],
       "Expired": [
         "Vençuda"
@@ -3930,6 +3999,9 @@
       ],
       "Set expiration date": [
         "Definir data d'expiració"
+      ],
+      "Set recovery method": [
+        "Establir un mètode de recuperació"
       ],
       "Sign emails": [
         "Signar correu electrònics"
@@ -4188,12 +4260,34 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        "\"${ name }\" creat"
+      ],
+      "\"${ name }\" failed to be created": [
+        "No s'han pogut crear \"${ name }\"."
+      ],
+      "\"${ name }\" failed to be saved": [
+        "No s'han pogut desar \"${ name }\"."
+      ],
       "\"${ name }\" moved to trash": [
         "S'ha mogut «${ name }» a la paperera"
+      ],
+      "\"${ name }\" saved successfully": [
+        "\"${ name }\" desat"
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        "No s'han pogut canviar el nom de \"${ newName }\"."
+      ],
+      "\"${ newName }\" renamed successfully": [
+        "Nom de \"${ newName }\" canviat"
       ],
       "${ count } item failed to be decrypted": [
         "Ha fallat el disxifrat d'${ count } element",
         "Ha fallat el disxifrat de ${ count } elements"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } element esborrat permanentment de la paperera",
+        "${ numberOfItems } elements esborrats permanentment de la paperera"
       ],
       "${ numberOfItems } item failed to be moved": [
         "${ numberOfItems } element ha fallat al moure",
@@ -4215,6 +4309,14 @@
         "${ numberOfItems } element mogut amb èxit",
         "${ numberOfItems } elements moguts amb èxit"
       ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "No s'ha pogut suprimir l'enllaç ${ numberOfItems } a l'element.",
+        "No s'han pogut suprimir els enllaços ${ numberOfItems } als elements."
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "S'ha suprimit l'enllaç ${ numberOfItems } al vostre element.",
+        "S'han suprimit els enllaços ${ numberOfItems } als vostres elements."
+      ],
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"
       ],
@@ -4223,6 +4325,12 @@
       ],
       "Contact group updated": [
         "Grup de contactes actualitzat"
+      ],
+      "Encrypted search activated": [
+        "Cerca xifrada activada"
+      ],
+      "Failed to download files: ${ err }": [
+        "Error descarregant fitxers: ${ err }"
       ],
       "Failed to move, please try again": [
         "No s'ha pogut moure, torneu-ho a provar"
@@ -4239,6 +4347,9 @@
       ],
       "File or folder is missing a name": [
         "Falta un nom pel fitxer o carpeta"
+      ],
+      "Item failed to be verified": [
+        "Ha fallat la verificació de l'element."
       ],
       "Link failed to be loaded": [
         "No s'ha pogut carregar l'enllaç"
@@ -4303,6 +4414,10 @@
       ],
       "Set a recovery method": [
         "Configura un mètode de recuperació"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Completeu el següent pas abans d'${ expiresInDays } dia:",
+        "Completeu els següents passos abans d'${ expiresInDays } dia:"
       ],
       "Upload a file": [
         "Puja un fitxer"
@@ -4513,6 +4628,14 @@
     "Side panel spotlight": {
       "Try the new side panel": [
         "Provar la nova subfinestra lateral"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "No signar"
+      ],
+      "Sign": [
+        "Signar"
       ]
     },
     "Spotlight": {
@@ -4731,6 +4854,9 @@
       "Completed": [
         "Completat"
       ],
+      "Computers": [
+        "Ordinadors"
+      ],
       "Contact details": [
         "Detalls del contacte"
       ],
@@ -4745,6 +4871,9 @@
       ],
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
+      ],
+      "Create a new file": [
+        "Crear un nou fitxer"
       ],
       "Create a new folder": [
         "Crear una nova carpeta"
