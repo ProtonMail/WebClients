@@ -50,9 +50,13 @@ const Header = ({
             return;
         }
         withSaving(
-            onSave().catch((err) => {
-                setSaveError(err?.message || err?.toString?.());
-            })
+            onSave()
+                .then(() => {
+                    setSaveError(undefined);
+                })
+                .catch((err) => {
+                    setSaveError(err?.message || err?.toString?.());
+                })
         );
     };
 
