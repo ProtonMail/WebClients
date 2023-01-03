@@ -302,8 +302,7 @@ describe('MailSidebar', () => {
             assertFocus(Drafts);
             range(0, 3).forEach(down);
             assertFocus(More);
-            range(0, 5).forEach(down);
-
+            down();
             assertFocus(Folders);
             down();
             assertFocus(Folder);
