@@ -57,7 +57,7 @@ export const validateDomain = (domain: string) => {
         return false;
     }
     const topLevelDomain = dnsLabels.pop() as string;
-    if (!/^[a-z]{2,}$/.test(topLevelDomain)) {
+    if (!/^[a-z0-9]+$/.test(topLevelDomain)) {
         return false;
     }
     return !dnsLabels.some((label) => {
