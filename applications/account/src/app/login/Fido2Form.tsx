@@ -21,6 +21,7 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
         <>
             <AuthSecurityKeyContent error={fidoError} />
             <Button
+                autoFocus={true}
                 size="large"
                 color="norm"
                 type="submit"
