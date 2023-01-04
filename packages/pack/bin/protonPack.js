@@ -122,8 +122,10 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
         );
     });
 
-addGlobalOptions(program.command('config').description('write config')).action(async (options) => {
-    await writeConfig(getConfigFile(getConfigData(options)));
-});
+addGlobalOptions(program.command('config').description('write config'))
+    .option('--version <version>', 'override the default (based on the tag) version number')
+    .action(async (options) => {
+        await writeConfig(getConfigFile(getConfigData(options)));
+    });
 
 program.parse(process.argv);
