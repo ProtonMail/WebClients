@@ -139,11 +139,12 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
 
             const inputs = splitBySeparator(trimmedInput);
             const recipients = inputs.map((input) => inputToRecipient(input));
+            const validRecipients = recipients.filter(({ Address }) => !validate(Address || ''));
             const errors = recipients.map(({ Address }) => validate(Address || '')).filter(isTruthy);
 
-            if (!errors.length) {
-                handleAddRecipient(recipients);
-            } else {
+            handleAddRecipient(validRecipients);
+
+            if (errors.length) {
                 onAddInvalidEmail?.();
                 setEmailError(errors[0]);
             }
