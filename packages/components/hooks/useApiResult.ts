@@ -12,7 +12,7 @@ interface Result<R, U extends any[]> {
     request: (...args: U) => Promise<R>;
 }
 
-const useApiResult = <R, F extends QueryFunction>(
+const useApiResult = <R, F extends QueryFunction = QueryFunction>(
     fn: QueryFunction,
     dependencies?: any[]
 ): Result<R, Parameters<F>> => {
