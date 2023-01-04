@@ -1,3 +1,4 @@
+import window from '@proton/shared/lib/window';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getLocalIDPath, stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
