@@ -64,7 +64,7 @@ export const useConversationsEvent = () => {
 
                     dispatch(eventConversationUpdate({ ID, updatedConversation }));
 
-                    if (updatedConversation.NumMessages !== currentConversation?.Messages?.length) {
+                    if (Conversation?.NumMessages !== currentConversation?.Conversation?.NumMessages) {
                         void dispatch(loadAction({ api, conversationID: ID, messageID: undefined }));
                     }
                 } catch (error: any) {
