@@ -1,6 +1,7 @@
 import punycode from 'punycode.js';
 
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
+import window from '@proton/shared/lib/window';
 import isTruthy from '@proton/utils/isTruthy';
 
 export const isSubDomain = (hostname: string, domain: string) => {
