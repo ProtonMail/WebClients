@@ -183,12 +183,15 @@ export const messagesToLoadMoreES = createSelector(
  * Warning: this value has been proved not to be 100% consistent
  * Has to be used only for non sensitive behaviors
  */
-export const dynamicTotal = createSelector([params, currentCounts], (params, { counts, loading }) => {
-    if (isSearch(params.search) || loading) {
-        return undefined;
+export const dynamicTotal = createSelector(
+    [params, currentCounts, bypassFilter],
+    (params, { counts, loading }, bypassFilter) => {
+        if (isSearch(params.search) || loading) {
+            return undefined;
+        }
+        return getTotal(counts, params.labelID, params.filter, bypassFilter.length);
     }
-    return getTotal(counts, params.labelID, params.filter);
-});
+);
 
 /**
  * Computed up to date number of elements on the current page
