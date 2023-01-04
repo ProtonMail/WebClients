@@ -58,6 +58,7 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
                       }
                     : undefined
             }
+            data-testid={`label-item:container-${label.name}`}
         >
             {label.onClick ? (
                 <button
@@ -69,6 +70,7 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
                     onClick={(e) => handleLabelClick(e)}
                     title={label.title}
                     ref={anchorRef}
+                    data-testid="label-item:body-button"
                 >
                     <span className="label-stack-item-text">{label.name}</span>
                 </button>
@@ -84,18 +86,26 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
                     className="label-stack-item-delete label-stack-item-button flex-item-noshrink"
                     onClick={label.onDelete}
                     title={`${c('Action').t`Remove`} ${label.title}`}
+                    data-testid="label-item:close-button"
                 >
                     <Icon name="cross-small" className="label-stack-item-delete-icon" alt={c('Action').t`Remove`} />
                 </button>
             )}
 
             {showDropdown && (
-                <Dropdown anchorRef={anchorRef} isOpen={isOpen} originalPlacement="bottom" onClose={close}>
+                <Dropdown
+                    anchorRef={anchorRef}
+                    isOpen={isOpen}
+                    originalPlacement="bottom"
+                    onClose={close}
+                    data-testid="label-item:dropdown-button"
+                >
                     <DropdownMenu>
                         <DropdownMenuButton
                             className="text-left "
                             onClick={(e) => handleLabelOpen(e)}
                             title={`${c('Action').t`Go to label`} ${label.title}`}
+                            data-testid="label-item:dropdown--open-label"
                         >
                             {c('Action').t`Go to label`}
                         </DropdownMenuButton>
@@ -105,6 +115,7 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
                                 className="text-left"
                                 onClick={(e) => handleLabelRemove(e)}
                                 title={`${c('Action').t`Remove`} ${label.title}`}
+                                data-testid="label-item:dropdown--remove-label"
                             >
                                 {c('Action').t`Remove`}
                             </DropdownMenuButton>

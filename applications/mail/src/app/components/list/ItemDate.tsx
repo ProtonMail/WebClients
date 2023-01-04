@@ -60,15 +60,12 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
                 className={className}
                 title={useTooltip ? undefined : fullDate}
                 aria-hidden="true"
-                data-testid="item-date"
+                data-testid={`item-date-${mode}`}
             >
                 {formattedDate}
             </span>
-            <span className="sr-only">
-                {fullDate}
-            </span>
+            <span className="sr-only">{fullDate}</span>
         </>
-
     );
 
     if (useTooltip) {
