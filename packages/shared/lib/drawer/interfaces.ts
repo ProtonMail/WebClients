@@ -18,6 +18,7 @@ export interface OpenDrawerArgs {
 export enum DRAWER_EVENTS {
     // Global inside iframe events
     CLOSE = 'close',
+    SHOW = 'show',
     SWITCH = 'switch',
     READY = 'ready',
     SESSION = 'session',
@@ -49,6 +50,10 @@ interface CLOSE {
         app: DRAWER_APPS;
         closeDefinitely?: boolean;
     };
+}
+
+interface SHOW {
+    type: DRAWER_EVENTS.SHOW;
 }
 
 interface SWITCH {
@@ -162,6 +167,7 @@ interface REFRESH_WIDGET {
 
 export type DRAWER_ACTION =
     | CLOSE
+    | SHOW
     | SWITCH
     | READY
     | SESSION
