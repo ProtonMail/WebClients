@@ -63,6 +63,7 @@ interface Props {
     elementID?: string;
     messageID?: string;
     isComposerOpened: boolean;
+    toolbarBordered?: boolean;
 }
 
 const MailboxContainer = ({
@@ -73,6 +74,7 @@ const MailboxContainer = ({
     elementID,
     messageID,
     isComposerOpened,
+    toolbarBordered,
 }: Props) => {
     const location = useLocation();
     const history = useHistory();
@@ -325,6 +327,7 @@ const MailboxContainer = ({
                             onDelete={handleDelete}
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
+                            bordered={toolbarBordered}
                         />
                     </ErrorBoundary>
                 )}
