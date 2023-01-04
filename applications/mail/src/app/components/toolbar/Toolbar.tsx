@@ -93,7 +93,7 @@ const Toolbar = ({
             ref={toolbarRef}
             className={clsx(
                 'toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between',
-                bordered && '' // TODO
+                bordered && 'toolbar--bordered'
             )}
             data-shortcut-target="mailbox-toolbar"
             aria-label={c('Label').t`Toolbar`}
