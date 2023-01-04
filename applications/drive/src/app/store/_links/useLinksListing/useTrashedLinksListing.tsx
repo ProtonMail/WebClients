@@ -7,10 +7,15 @@ import { useDebouncedRequest } from '../../_api';
 import useVolumesState from '../../_volumes/useVolumesState';
 import { DecryptedLink, EncryptedLink } from './../interface';
 import useLinksState from './../useLinksState';
-import { DEFAULT_SORTING, FetchMeta, FetchResponse, PAGE_SIZE, useLinksListingHelpers } from './useLinksListingHelpers';
+import { DEFAULT_SORTING, FetchMeta, PAGE_SIZE, SortParams, useLinksListingHelpers } from './useLinksListingHelpers';
+
+interface FetchTrashMeta extends FetchMeta {
+    lastPage: number;
+    lastSorting: SortParams;
+}
 
 type TrashFetchState = {
-    [volumeId: string]: FetchMeta;
+    [volumeId: string]: FetchTrashMeta;
 };
 
 type FetchLoadLinksMeta = (
@@ -23,6 +28,9 @@ type FetchLoadLinksMeta = (
     parents: EncryptedLink[];
 }>;
 
+/**
+ * Custom hook for managing and fetching trashed links for a given volume.
+ */
 export function useTrashedLinksListing() {
     const debouncedRequest = useDebouncedRequest();
     const linksState = useLinksState();
@@ -31,7 +39,7 @@ export function useTrashedLinksListing() {
     const { loadFullListing, cacheLoadedLinks, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
     const trashFetchState = useRef<TrashFetchState>({});
 
-    const getTrashFetchState = (volumeId: string): FetchMeta => {
+    const getTrashFetchState = useCallback((volumeId: string) => {
         if (trashFetchState.current[volumeId]) {
             return trashFetchState.current[volumeId];
         }
@@ -42,6 +50,35 @@ export function useTrashedLinksListing() {
         };
 
         return trashFetchState.current[volumeId];
+    }, []);
+
+    const queryVolumeTrashPage = async (
+        volumeId: string,
+        page: number
+    ): Promise<{ response: ListDriveVolumeTrashPayload; hasNextPage: boolean }> => {
+        const response = await debouncedRequest<ListDriveVolumeTrashPayload>(
+            queryVolumeTrash(volumeId, { Page: page, PageSize: PAGE_SIZE })
+        );
+
+        const hasNextPage = Object.values(response.Trash).some((share) => share.LinkIDs.length === PAGE_SIZE);
+
+        return {
+            response,
+            hasNextPage,
+        };
+    };
+
+    const loadTrashedLinksMeta = async (
+        signal: AbortSignal,
+        transformedResponse: {
+            [shareId: string]: { linkIds: string[]; parentIds: string[] };
+        },
+        loadLinksMeta: FetchLoadLinksMeta
+    ) => {
+        for (const shareId in transformedResponse) {
+            const result = await loadLinksMeta(signal, 'trash', shareId, transformedResponse[shareId].linkIds);
+            await cacheLoadedLinks(signal, shareId, result.links, result.parents);
+        }
     };
 
     const fetchTrashedLinksNextPage = async (
@@ -51,60 +88,26 @@ export function useTrashedLinksListing() {
     ): Promise<boolean> => {
         let trashFetchMeta = getTrashFetchState(volumeId);
 
-        const handleVolumePage = async () => {
-            const queryLinkIds = async () => {
-                const response = await debouncedRequest<ListDriveVolumeTrashPayload>(
-                    queryVolumeTrash(volumeId, { Page: trashFetchMeta.lastPage, PageSize: 5 })
-                );
+        if (trashFetchMeta.isEverythingFetched) {
+            return false;
+        }
 
-                const hasNextPage = Object.values(response.Trash).some((share) => {
-                    return share.LinkIDs.length < PAGE_SIZE;
-                });
+        const { response, hasNextPage } = await queryVolumeTrashPage(volumeId, trashFetchMeta.lastPage);
+        const volumeShareIds = response.Trash.map((share) => share.ShareID);
+        volumesState.setVolumeShareIds(volumeId, volumeShareIds);
 
-                return {
-                    hasNextPage,
-                    response,
-                };
-            };
+        const transformedResponse = transformTrashResponseToLinkMap(response);
+        await loadTrashedLinksMeta(signal, transformedResponse, loadLinksMeta);
 
-            const { response, hasNextPage } = await queryLinkIds();
+        trashFetchMeta.lastPage++;
+        trashFetchMeta.isEverythingFetched = !hasNextPage;
 
-            const volumeShareIds = response.Trash.map((share) => share.ShareID);
-            volumesState.setVolumeShareIds(volumeId, volumeShareIds);
-
-            const transformedResponse = response.Trash.reduce(
-                (acc, share) => {
-                    acc[share.ShareID] = { linkIds: share.LinkIDs, parentIds: share.ParentIDs };
-                    return acc;
-                },
-                {} as {
-                    [shareId: string]: {
-                        linkIds: string[];
-                        parentIds: string[];
-                    };
-                }
-            );
-
-            const links: FetchResponse['links'] = [];
-            const parents: FetchResponse['parents'] = [];
-
-            // Loading links meta
-            for (const shareId in transformedResponse) {
-                const result = await loadLinksMeta(signal, 'trash', shareId, transformedResponse[shareId].linkIds);
-                links.push(...result.links);
-                parents.push(...result.parents);
-
-                await cacheLoadedLinks(signal, shareId, result.links, result.parents);
-            }
-
-            trashFetchMeta.lastPage!++;
-
-            return hasNextPage;
-        };
-
-        return handleVolumePage();
+        return hasNextPage;
     };
 
+    /**
+     * Loads trashed links for a given volume.
+     */
     const loadTrashedLinks = async (
         signal: AbortSignal,
         volumeId: string,
@@ -113,6 +116,9 @@ export function useTrashedLinksListing() {
         return loadFullListing(() => fetchTrashedLinksNextPage(signal, volumeId, loadLinksMeta));
     };
 
+    /**
+     * Gets trashed links that have already been fetched and cached.
+     */
     const getCachedTrashed = useCallback(
         (abortSignal: AbortSignal, volumeId?: string): { links: DecryptedLink[]; isDecrypting: boolean } => {
             if (!volumeId) {
@@ -151,4 +157,26 @@ export function useTrashedLinksListing() {
         loadTrashedLinks,
         getCachedTrashed,
     };
+}
+
+/**
+ * Transforms a trash response from the API into an object with share IDs as keys,
+ * and link IDs and parent IDs as values.
+ */
+function transformTrashResponseToLinkMap(response: ListDriveVolumeTrashPayload) {
+    return response.Trash.reduce(
+        (acc, share) => {
+            acc[share.ShareID] = {
+                linkIds: share.LinkIDs,
+                parentIds: share.ParentIDs,
+            };
+            return acc;
+        },
+        {} as {
+            [shareId: string]: {
+                linkIds: string[];
+                parentIds: string[];
+            };
+        }
+    );
 }
