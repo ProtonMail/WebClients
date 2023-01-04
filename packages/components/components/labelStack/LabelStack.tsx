@@ -58,7 +58,7 @@ const LabelStack = ({
             {labelsOverflow.length > 0 && (
                 <li className="label-stack-overflow-count flex">
                     <Tooltip title={labelsOverflow.map((label) => label.name).join(', ')}>
-                        <span>+{labelsOverflow.length}</span>
+                        <span data-testid="label-stack:labels-overflow">+{labelsOverflow.length}</span>
                     </Tooltip>
                 </li>
             )}

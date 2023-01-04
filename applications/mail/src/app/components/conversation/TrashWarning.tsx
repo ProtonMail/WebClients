@@ -48,7 +48,11 @@ const TrashWarning = ({ inTrash, filter, onToggle }: Props, ref: React.Ref<HTMLD
                         : c('Info').t`This conversation contains trashed messages.`}
                 </span>
             </div>
-            <InlineLinkButton onClick={onToggle} className="ml0-5 text-underline">
+            <InlineLinkButton
+                onClick={onToggle}
+                className="ml0-5 text-underline"
+                data-testid="conversation-view:toggle-trash-messages-button"
+            >
                 {inTrash
                     ? filter
                         ? c('Action').t`Show messages`

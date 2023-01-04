@@ -42,6 +42,11 @@ const RecipientsList = ({
                     isExpanded={true}
                     onContactDetails={onContactDetails}
                     onContactEdit={onContactEdit}
+                    customDataTestId={`recipients:item-${
+                        recipientOrGroup.group
+                            ? recipientOrGroup.group.group?.Name
+                            : recipientOrGroup.recipient?.Address
+                    }`}
                 />
                 {isPrintModal && index < recipientsOrGroup.length - 1 && <span>, </span>}
             </Fragment>

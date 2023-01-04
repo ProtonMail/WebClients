@@ -39,7 +39,7 @@ const ConversationErrorBanner = ({ errors = {}, onRetry }: Props, ref: React.Ref
             <Icon name="exclamation-circle" className="mr1" />
             <span className="pl0-5 pr0-5 flex-item-fluid">{getTranslations(errorType)}</span>
             <span className="flex-item-noshrink flex">
-                <Button size="small" onClick={onRetry}>
+                <Button size="small" onClick={onRetry} data-testid="conversation-view:error-banner-button">
                     {c('Action').t`Try again`}
                 </Button>
             </span>

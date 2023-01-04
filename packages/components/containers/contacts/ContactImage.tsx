@@ -36,11 +36,12 @@ const ContactImage = ({ email, name, className, bimiSelector }: Props) => {
                 src={url}
                 onError={handleError}
                 loading="lazy" // Lazy load the image only when it's in the viewport
+                data-testid="contact-image"
             />
         );
     }
 
-    return <span>{getInitials(name)}</span>;
+    return <span data-testid="contact-initials">{getInitials(name)}</span>;
 };
 
 export default ContactImage;
