@@ -180,7 +180,7 @@ const AttachmentList = ({
             />
             <div
                 className="flex flex-row w100 pt0-5 flex-justify-space-between composer-attachment-list-wrapper"
-                data-testid="attachments-header"
+                data-testid="attachment-list:header"
             >
                 <TagButton
                     type="button"
@@ -189,10 +189,14 @@ const AttachmentList = ({
                     className="flex flex-align-items-center outline-none"
                     onClick={handleToggleExpand}
                 >
-                    {size !== 0 && <strong className="mr0-5">{sizeLabel}</strong>}
+                    {size !== 0 && (
+                        <strong className="mr0-5" data-testid="attachment-list:size">
+                            {sizeLabel}
+                        </strong>
+                    )}
                     {pureAttachmentsCount > 0 && (
                         <span className="mr0-5 color-weak">
-                            <span>{pureAttachmentsCount}</span>&nbsp;
+                            <span data-testid="attachment-list:pure-count">{pureAttachmentsCount}</span>&nbsp;
                             <span>
                                 {c('Info').ngettext(msgid`file attached`, `files attached`, pureAttachmentsCount)}
                                 {embeddedAttachmentsCount > 0 && ','}
@@ -201,14 +205,14 @@ const AttachmentList = ({
                     )}
                     {embeddedAttachmentsCount > 0 && (
                         <span className="mr0-5 color-weak">
-                            <span>{embeddedAttachmentsCount}</span>&nbsp;
+                            <span data-testid="attachment-list:embedded-count">{embeddedAttachmentsCount}</span>&nbsp;
                             <span>
                                 {c('Info').ngettext(msgid`embedded image`, `embedded images`, embeddedAttachmentsCount)}
                             </span>
                         </span>
                     )}
                     {showCollapseButton && (
-                        <span className="link align-baseline text-left mr0-5" data-testid="attachment-list-toggle">
+                        <span className="link align-baseline text-left mr0-5" data-testid="attachment-list:toggle">
                             {expanded ? c('Action').t`Hide` : c('Action').t`Show`}
                         </span>
                     )}
@@ -224,6 +228,7 @@ const AttachmentList = ({
                                 disabled={!message.messageDocument?.initialized}
                                 className="ml0-5"
                                 loading={showLoader}
+                                data-testid="attachment-list:download-all"
                             >
                                 <Icon name="arrow-down-line" alt={c('Download attachments').t`Download all`} />
                             </Button>

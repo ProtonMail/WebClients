@@ -33,7 +33,10 @@ const ExtraSpamScore = ({ message }: Props) => {
 
     if (isDMARCValidationFailure(message.data)) {
         return (
-            <div className="bg-norm rounded px0-5 py0-25 mb0-85 flex flex-nowrap">
+            <div
+                className="bg-norm rounded px0-5 py0-25 mb0-85 flex flex-nowrap"
+                data-testid="spam-banner:failed-dmarc-validation"
+            >
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink mt0-4 ml0-2 color-danger" />
                 <span className="pl0-5 pr0-5 pb0-25 mt0-2 flex-item-fluid">
                     {c('Info')
@@ -61,7 +64,7 @@ const ExtraSpamScore = ({ message }: Props) => {
         return (
             <div
                 className="bg-danger border border-danger rounded pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap"
-                data-testid="phishing-banner"
+                data-testid="spam-banner:phishing-banner"
             >
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink ml0-2 mt0-4" />
                 <span className="pl0-5 mt0-2 pr0-5 flex-item-fluid">
@@ -80,6 +83,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                         fullWidth
                         onClick={() => setSpamScoreModalOpen(true)}
                         disabled={loading}
+                        data-testid="spam-banner:mark-legitimate"
                     >
                         {c('Action').t`Mark legitimate`}
                     </Button>

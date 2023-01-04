@@ -135,6 +135,7 @@ const AttachmentItem = ({
                         title={primaryActionTitle}
                         type="button"
                         onClick={handleAction(true)}
+                        data-testid={`attachment-item:${name}--primary-action`}
                     >
                         <span className="myauto flex flex-align-items-baseline flex-nowrap pr0-5">
                             <FileNameDisplay text={name} />
@@ -153,9 +154,9 @@ const AttachmentItem = ({
                         className="inline-flex p0-5 pl0-25 no-pointer-events-children relative flex-item-noshrink message-attachmentSecondaryAction interactive"
                         onClick={handleAction(false)}
                         title={secondaryActionTitle}
-                        data-testid={`attachment-remove-${name}`}
                         disabled={loading}
                         aria-busy={loading}
+                        data-testid={`attachment-item:${name}--secondary-action`}
                     >
                         <span className="message-attachmentSecondaryAction-size color-weak" aria-hidden="true">
                             {humanAttachmentSize}

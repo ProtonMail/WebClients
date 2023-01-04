@@ -261,7 +261,12 @@ const HeaderMoreDropdown = ({
             <ButtonGroup className="mr1 mb0-5">
                 {isSpam ? (
                     <Tooltip title={titleMoveInboxNotSpam}>
-                        <Button icon disabled={!messageLoaded} onClick={handleMove(INBOX, SPAM)}>
+                        <Button
+                            icon
+                            disabled={!messageLoaded}
+                            onClick={handleMove(INBOX, SPAM)}
+                            data-testid="message-header-expanded:move-spam-to-inbox"
+                        >
                             <Icon name="fire-slash" alt={c('Title').t`Move to inbox (not spam)`} />
                         </Button>
                     </Tooltip>
@@ -279,7 +284,12 @@ const HeaderMoreDropdown = ({
                 )}
                 {isInTrash ? (
                     <Tooltip title={titleMoveInbox}>
-                        <Button icon disabled={!messageLoaded} onClick={handleMove(INBOX, TRASH)}>
+                        <Button
+                            icon
+                            disabled={!messageLoaded}
+                            onClick={handleMove(INBOX, TRASH)}
+                            data-testid="message-header-expanded:move-trashed-to-inbox"
+                        >
                             <Icon name="inbox" alt={c('Title').t`Move to inbox`} />
                         </Button>
                     </Tooltip>
@@ -390,6 +400,7 @@ const HeaderMoreDropdown = ({
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={handleStar}
+                                        data-testid="message-view-more-dropdown:star"
                                     >
                                         <Icon name={isStarred ? 'star-slash' : 'star'} className="mr0-5" />
                                         <span className="flex-item-fluid myauto">{staringText}</span>
@@ -400,6 +411,7 @@ const HeaderMoreDropdown = ({
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={handleMove(ARCHIVE, fromFolderID)}
+                                        data-testid="message-view-more-dropdown:archive"
                                     >
                                         <Icon name="archive-box" className="mr0-5" />
                                         <span className="flex-item-fluid myauto">{c('Action').t`Archive`}</span>
@@ -437,6 +449,7 @@ const HeaderMoreDropdown = ({
                                         <DropdownMenuButton
                                             className="text-left flex flex-nowrap flex-align-items-center"
                                             onClick={handleUnread}
+                                            data-testid="message-view-more-dropdown:unread"
                                         >
                                             <Icon name="eye-slash" className="mr0-5" />
                                             <span className="flex-item-fluid myauto">{c('Action')
@@ -446,6 +459,7 @@ const HeaderMoreDropdown = ({
                                         <DropdownMenuButton
                                             className="text-left flex flex-nowrap flex-align-items-center"
                                             onClick={handleMove(SPAM, fromFolderID)}
+                                            data-testid="message-view-more-dropdown:move-to-spam"
                                         >
                                             <Icon name="fire" className="mr0-5" />
                                             <span className="flex-item-fluid myauto">{c('Action')
@@ -456,6 +470,7 @@ const HeaderMoreDropdown = ({
                                         <DropdownMenuButton
                                             className="text-left flex flex-nowrap flex-align-items-center"
                                             onClick={() => setMessagePermanentDeleteModalOpen(true)}
+                                            data-testid="message-view-more-dropdown:delete"
                                         >
                                             <Icon name="cross-circle" className="mr0-5" />
                                             <span className="flex-item-fluid myauto">{c('Action').t`Delete`}</span>
@@ -467,6 +482,7 @@ const HeaderMoreDropdown = ({
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={handleExport}
+                                        data-testid="message-view-more-dropdown:export"
                                     >
                                         <Icon name="arrow-up-from-square" className="mr0-5" />
                                         <span className="flex-item-fluid myauto">{c('Action').t`Export`}</span>
@@ -474,6 +490,7 @@ const HeaderMoreDropdown = ({
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => setMessagePrintModalOpen(true)}
+                                        data-testid="message-view-more-dropdown:print"
                                     >
                                         <Icon name="printer" className="mr0-5" />
                                         <span className="flex-item-fluid myauto">{c('Action').t`Print`}</span>
@@ -484,6 +501,7 @@ const HeaderMoreDropdown = ({
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => setMessageDetailsModalOpen(true)}
+                                        data-testid="message-view-more-dropdown:view-message-details"
                                     >
                                         <Icon name="list-bullets" className="mr0-5" />
                                         <span className="flex-item-fluid myauto">{c('Action')
@@ -492,6 +510,7 @@ const HeaderMoreDropdown = ({
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => setMessageHeaderModalOpen(true)}
+                                        data-testid="message-view-more-dropdown:view-message-headers"
                                     >
                                         <Icon name="window-terminal" className="mr0-5" />
                                         <span className="flex-item-fluid myauto">{c('Action').t`View headers`}</span>
@@ -500,6 +519,7 @@ const HeaderMoreDropdown = ({
                                         <DropdownMenuButton
                                             className="text-left flex flex-nowrap flex-align-items-center"
                                             onClick={() => onSourceMode(true)}
+                                            data-testid="message-view-more-dropdown:view-html"
                                         >
                                             <Icon name="code" className="mr0-5" />
                                             <span className="flex-item-fluid myauto">{c('Action').t`View HTML`}</span>
@@ -509,6 +529,7 @@ const HeaderMoreDropdown = ({
                                         <DropdownMenuButton
                                             className="text-left flex flex-nowrap flex-align-items-center"
                                             onClick={() => onSourceMode(false)}
+                                            data-testid="message-view-more-dropdown:view-rendered-html"
                                         >
                                             <Icon name="window-image" className="mr0-5" />
                                             <span className="flex-item-fluid myauto">{c('Action')
@@ -521,6 +542,7 @@ const HeaderMoreDropdown = ({
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap flex-align-items-center color-danger"
                                         onClick={() => setMessagePhishingModalOpen(true)}
+                                        data-testid="message-view-more-dropdown:report-phishing"
                                     >
                                         <Icon name="hook" className="mr0-5" />
                                         <span className="flex-item-fluid myauto">{c('Action').t`Report phishing`}</span>

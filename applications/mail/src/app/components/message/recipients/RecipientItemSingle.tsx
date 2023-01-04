@@ -27,6 +27,7 @@ interface Props {
     hideAddress?: boolean;
     isRecipient?: boolean;
     isExpanded?: boolean;
+    customDataTestId?: string;
 }
 
 const RecipientItemSingle = ({
@@ -46,6 +47,7 @@ const RecipientItemSingle = ({
     hideAddress = false,
     isRecipient = false,
     isExpanded = false,
+    customDataTestId,
 }: Props) => {
     const [uid] = useState(generateUID('dropdown-recipient'));
 
@@ -108,6 +110,7 @@ const RecipientItemSingle = ({
             }
             isOutside={isOutside}
             isRecipient={isRecipient}
+            customDataTestId={customDataTestId}
         />
     );
 };
