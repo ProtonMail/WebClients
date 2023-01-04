@@ -62,10 +62,10 @@ export const useConversationsEvent = () => {
                         Conversation as Conversation & LabelIDsChanges
                     );
 
+                    dispatch(eventConversationUpdate({ ID, updatedConversation }));
+
                     if (updatedConversation.NumMessages !== currentConversation?.Messages?.length) {
                         void dispatch(loadAction({ api, conversationID: ID, messageID: undefined }));
-                    } else {
-                        void dispatch(eventConversationUpdate({ ID, updatedConversation }));
                     }
                 } catch (error: any) {
                     console.warn('Something went wrong on updating a conversation from an event.', error);
