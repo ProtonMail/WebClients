@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useLoading, useNotifications, useDrawer } from '@proton/components';
+import { useDrawer, useLoading, useNotifications } from '@proton/components';
 import useAddAttendees from '@proton/components/containers/calendar/hooks/useAddAttendees';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { getAttendeeEmail, withPartstat } from '@proton/shared/lib/calendar/attendees';
