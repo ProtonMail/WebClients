@@ -34,7 +34,7 @@ const DriveWindow = ({ children }: Props) => {
     const [user] = useUser();
     const { state: expanded, toggle: toggleExpanded } = useToggle();
 
-    const [recoveryBannerVisible, setReoveryBannerVisible] = useState(true);
+    const [recoveryBannerVisible, setRecoveryBannerVisible] = useState(true);
 
     const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
     const { showDrawerSidebar } = useDrawer();
@@ -49,7 +49,7 @@ const DriveWindow = ({ children }: Props) => {
     const fileRecoveryBanner = recoveryBannerVisible ? (
         <FileRecoveryBanner
             onClose={() => {
-                setReoveryBannerVisible(false);
+                setRecoveryBannerVisible(false);
             }}
         />
     ) : null;
