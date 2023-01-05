@@ -2682,9 +2682,6 @@
       "Calendar limit reached": [
         "Límit de calendari assolit"
       ],
-      "Can't check username, try again later": [
-        "No es pot comprovar el nom d'usuari, torneu a intentar-ho més tard"
-      ],
       "Checkout expired, please try again": [
         "El pagament ha expirat. Torneu-ho a provar"
       ],
@@ -4421,9 +4418,6 @@
       "Download recovery file": [
         "Descarrega el fitxer de recuperació"
       ],
-      "Download recovery phrase": [
-        "Descarrega la frase de recuperació"
-      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarrega la teva aplicació favorita avui i porta la privadesa amb tú allà on vagis."
       ],
@@ -4820,9 +4814,6 @@
       "Paid for a monthly plan": [
         "Ha pagat un pla mensual"
       ],
-      "password reset": [
-        "restabliment de contrasenya"
-      ],
       "Payment can take a few minutes to fully verify.": [
         "El pagament pot trigar uns minuts en verificar-se completament."
       ],
@@ -4925,9 +4916,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
-      "Reset password": [
-        "Restableix la contrasenya"
-      ],
       "Revoke certificate ${ name }": [
         "Revoca el certificat ${ name }"
       ],
@@ -4978,9 +4966,6 @@
       ],
       "Show original message": [
         "Mostra el missatge original"
-      ],
-      "Sign in": [
-        "Inicia la sessió"
       ],
       "Signed up": [
         "Registat"
@@ -5337,9 +5322,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
-      ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "El seu compte ${ BRAND_NAME } està associat amb ${ externalEmailAddress }. Per utilitzar ${ toAppName }, necessiteu una adreça de ${ MAIL_APP_NAME }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els vostres enllaços compartits de Drive es bloquejaran, i no podreu carregar-hi nous fitxers. Per a restablir el servei normal pagueu qualsevol factura vençuda."
@@ -7349,6 +7331,11 @@
         "Assistència"
       ]
     },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7358,11 +7345,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom de manera predeterminada."
-      ]
-    },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {

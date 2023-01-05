@@ -47,9 +47,6 @@
       "Chat with us": [
         "Chat met ons"
       ],
-      "Claim it": [
-        "Eis het op"
-      ],
       "Close": [
         "Sluiten"
       ],
@@ -79,9 +76,6 @@
       ],
       "Create account": [
         "Account aanmaken"
-      ],
-      "Create your own": [
-        "Maak uw eigen"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -1475,9 +1469,6 @@
       "Amount below minimum.": [
         "Bedrag onder het minimum."
       ],
-      "Can't check username, try again later": [
-        "Kan gebruikersnaam niet controleren, probeer het later opnieuw"
-      ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
       ],
@@ -1676,7 +1667,33 @@
         "Sleutel verwijderen"
       ]
     },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Schakel 2FA via een beveiligingssleutel uit voordat u TOTP uitschakelt"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Er is iets fout gegaan bij het registreren van uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
     "fido2: Info": {
+      "2FA via security key disabled": [
+        "2FA via beveiligingssleutel uitgeschakeld"
+      ],
+      "Add a name to identify your security key with.": [
+        "Voeg een naam to om uw beveiligingssleutel mee te identificeren."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Steek uw beveiligingssleutel in de USB-poort van uw apparaat."
+      ],
       "Security key": [
         "Beveiligingssleutel"
       ],
@@ -1685,6 +1702,18 @@
       ],
       "Security key updated": [
         "Veiligheidssleutel bijgewerkt"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Dit zal alle beveiligingssleutels voor uw account verwijderen."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Om 2FA via een beveiligingssleutel in te schakelen, moet u 2FA via een authenticatorapp activeren"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Verifieer uw identiteit met een fysieke U2F of FIDO2 beveiligingssleutel"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Uw tweestapsverificatiesleutel is klaar voor gebruik."
       ]
     },
     "fido2: Label": {
@@ -1699,8 +1728,20 @@
       "Delete security key?": [
         "Beveiligingssleutel verwijderen?"
       ],
+      "Disable 2FA via security key?": [
+        "2FA via een beveiligingssleutel uitschakelen?"
+      ],
+      "Name your security key": [
+        "Geef uw beveiligingssleutel een naam"
+      ],
+      "Register your security key": [
+        "Registreer uw beveiligingssleutel"
+      ],
       "Registered security keys": [
         "Geregistreerde beveiligingssleutels"
+      ],
+      "Security key registered": [
+        "Veiligheidssleutel geregistreerd"
       ]
     },
     "file size format": {
@@ -2220,9 +2261,6 @@
       "support team": [
         "ondersteuningsteam"
       ],
-      "The following address is available:": [
-        "Het volgende adres is beschikbaar:"
-      ],
       "The securest way to browse, stream, and be online.": [
         "De veiligste manier om te browsen, streamen en online te zijn."
       ],
@@ -2373,9 +2411,6 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "We zijn verhuisd! Meld u aan op ons nieuw domein: ${ link }."
-      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
       ],
@@ -2462,9 +2497,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "U zult ingelogd blijven, zelfs als u de browser sluit."
-      ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "Uw ${ BRAND_NAME }-account is gekoppeld aan ${ externalEmailAddress }. Maak een ${ MAIL_APP_NAME }-adres aan om ${ toAppName } te gebruiken."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
@@ -2890,9 +2922,6 @@
       ],
       "User's new password": [
         "Nieuw wachtwoord van gebruiker"
-      ],
-      "Username": [
-        "Gebruikersnaam"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -4516,9 +4545,6 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Maak uw ${ BRAND_NAME }-account"
-      ],
-      "Create your ${ BRAND_NAME } address": [
-        "Maak uw ${ BRAND_NAME }-adres aan"
       ],
       "Credits": [
         "Tegoed"
