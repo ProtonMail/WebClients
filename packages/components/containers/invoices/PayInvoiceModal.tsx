@@ -4,26 +4,33 @@ import { c } from 'ttag';
 import { checkInvoice, payInvoice } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { toPrice } from '@proton/shared/lib/helpers/string';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
 import { useApi, useApiResult, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
 import Payment from '../payments/Payment';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
+import { PaymentParameters } from '../payments/interface';
 import { handlePaymentToken } from '../payments/paymentTokenHelper';
 import usePayment from '../payments/usePayment';
+import { Invoice } from './interface';
 
-const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
+const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
     const api = useApi();
-    const { result = {}, loading: loadingCheck } = useApiResult(() => checkInvoice(invoice.ID), []);
-    const { AmountDue, Amount, Currency, Credit } = result;
+    const { result, loading: loadingCheck } = useApiResult<CheckInvoiceResponse, typeof checkInvoice>(
+        () => checkInvoice(invoice.ID),
+        []
+    );
 
-    const handleSubmit = async (params) => {
+    const { AmountDue, Amount, Currency, Credit } = result ?? {};
+
+    const handleSubmit = async (params: PaymentParameters) => {
         const requestBody = await handlePaymentToken({
-            params: { ...params, Amount: AmountDue, Currency },
+            params: { ...params, Amount: AmountDue as number, Currency: Currency as Currency },
             api,
             createModal,
         });
@@ -32,20 +39,20 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
             call(), // Update user.Delinquent to hide TopBanner
             fetchInvoices(),
         ]);
-        rest.onClose();
+        onClose?.();
         createNotification({ text: c('Success').t`Invoice paid` });
     };
 
     const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
         usePayment({
-            amount: AmountDue,
-            currency: Currency,
+            amount: AmountDue as number,
+            currency: Currency as Currency,
             onPay: handleSubmit,
         });
 
     const submit =
         method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-            <StyledPayPalButton paypal={paypal} flow="invoice" amount={AmountDue} />
+            <StyledPayPalButton paypal={paypal} flow="invoice" amount={AmountDue ?? 0} />
         ) : (
             <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action').t`Pay`}</PrimaryButton>
         );
@@ -72,7 +79,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
                                 <Label>{c('Label').t`Amount`}</Label>
                                 <Field className="text-right">
                                     <Price className="label" currency={Currency}>
-                                        {Amount}
+                                        {Amount ?? 0}
                                     </Price>
                                 </Field>
                             </Row>
@@ -96,7 +103,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
                             />
                         </Field>
                     </Row>
-                    {AmountDue > 0 ? (
+                    {AmountDue && AmountDue > 0 ? (
                         <Payment
                             type="invoice"
                             paypal={paypal}
@@ -122,3 +129,18 @@ PayInvoiceModal.propTypes = {
 };
 
 export default PayInvoiceModal;
+
+interface CheckInvoiceResponse {
+    Code: number;
+    Currency: Currency;
+    Amount: number;
+    Gift: number;
+    Credit: number;
+    AmountDue: number;
+}
+
+export interface Props {
+    invoice: Invoice;
+    fetchInvoices: () => void;
+    onClose?: () => void;
+}

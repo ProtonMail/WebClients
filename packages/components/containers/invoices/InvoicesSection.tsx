@@ -20,8 +20,7 @@ import {
     Time,
     usePaginationAsync,
 } from '../../components';
-import { useApi, useModals, useSubscription, useUser } from '../../hooks';
-import useApiResult from '../../hooks/useApiResult';
+import { useApi, useApiResult, useModals, useSubscribeEventManager, useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import InvoiceActions from './InvoiceActions';
@@ -29,16 +28,18 @@ import InvoiceAmount from './InvoiceAmount';
 import InvoiceState from './InvoiceState';
 import InvoiceTextModal from './InvoiceTextModal';
 import InvoiceType from './InvoiceType';
-import InvoicesPreview from './InvoicesPreview';
+import InvoicesPreview, { InvoicesPreviewControls } from './InvoicesPreview';
+import { Invoice, InvoiceResponse } from './interface';
 
 const InvoicesSection = () => {
-    const previewRef = useRef();
+    const previewRef = useRef<InvoicesPreviewControls | undefined>();
     const api = useApi();
     const [user] = useUser();
     const { ORGANIZATION, USER } = INVOICE_OWNER;
     const [owner, setOwner] = useState(USER);
-    const [{ isManagedByMozilla } = {}] = useSubscription();
+    const [{ isManagedByMozilla } = { isManagedByMozilla: false }] = useSubscription();
     const { createModal } = useModals();
+
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
 
     const handleOwner =
@@ -53,11 +54,24 @@ const InvoicesSection = () => {
             Page: page - 1,
             PageSize: ELEMENTS_PER_PAGE,
             Owner: owner,
-        });
+        } as any);
 
-    const { result = {}, loading, request } = useApiResult(query, [page, owner]);
-    const { Invoices: invoices = [], Total: total = 0 } = result;
+    const {
+        result = {
+            Invoices: [] as Invoice[],
+            Total: 0,
+        },
+        loading,
+        request: requestInvoices,
+    } = useApiResult<InvoiceResponse, typeof queryInvoices>(query, [page, owner]);
+    const { Invoices: invoices, Total: total } = result;
     const hasUnpaid = invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
+
+    useSubscribeEventManager(({ Invoices } = {}) => {
+        if (Invoices && Invoices.length > 0) {
+            requestInvoices();
+        }
+    });
 
     if (isManagedByMozilla) {
         return <MozillaInfoPanel />;
@@ -67,9 +81,10 @@ const InvoicesSection = () => {
         createModal(<InvoiceTextModal />);
     };
 
-    const getFilename = (invoice) => `${c('Title for PDF file').t`${MAIL_APP_NAME} invoice`} ${invoice.ID}.pdf`;
+    const getFilename = (invoice: Invoice) =>
+        `${c('Title for PDF file').t`${MAIL_APP_NAME} invoice`} ${invoice.ID}.pdf`;
 
-    const handleDownload = async (invoice) => {
+    const handleDownload = async (invoice: Invoice) => {
         const buffer = await api(getInvoice(invoice.ID));
         const blob = new Blob([buffer], { type: 'application/pdf' });
         downloadFile(blob, getFilename(invoice));
@@ -144,8 +159,8 @@ const InvoicesSection = () => {
                                                 <InvoiceActions
                                                     key={key}
                                                     invoice={invoice}
-                                                    fetchInvoices={request}
-                                                    onPreview={previewRef.current.preview}
+                                                    fetchInvoices={requestInvoices}
+                                                    onPreview={previewRef.current?.preview}
                                                     onDownload={handleDownload}
                                                 />,
                                             ]}

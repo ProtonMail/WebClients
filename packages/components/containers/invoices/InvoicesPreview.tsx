@@ -6,7 +6,7 @@ import { useApi } from '../../hooks';
 import { FilePreview, NavigationControl } from '../filePreview';
 import { Invoice } from './interface';
 
-interface InvoicesPreviewControls {
+export interface InvoicesPreviewControls {
     preview: (invoice: Invoice) => void;
 }
 
