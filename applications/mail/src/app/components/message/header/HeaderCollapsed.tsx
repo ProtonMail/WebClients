@@ -68,10 +68,11 @@ const HeaderCollapsed = ({
     return (
         <div
             className={classnames([
-                'message-header message-header-collapsed px1-25 flex flex-nowrap flex-align-items-center cursor-pointer',
+                'message-header message-header-collapsed px1-25 flex flex-nowrap flex-align-items-center',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'is-unread',
                 !messageLoaded && 'is-loading',
+                !message.draftFlags?.sending && 'cursor-pointer',
             ])}
             onClick={handleClick}
             data-testid={`message-header-collapsed:${conversationIndex}`}
