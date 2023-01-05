@@ -170,7 +170,7 @@
         "${ nameToDisplay } ${ maybeEmailInBrackets } で続行"
       ],
       "Continue with Google": [
-        "Googleで続行"
+        "Google で続行"
       ],
       "Copy": [
         "コピー"
@@ -2628,13 +2628,13 @@
     },
     "Email body for invitation (date part)": {
       "When: ${ formattedStart }": [
-        "時期: ${ formattedStart }"
+        "日時: ${ formattedStart }"
       ],
       "When: ${ formattedStart } (all day)": [
         "日時: ${ formattedStart } (終日)"
       ],
       "When: ${ formattedStart } - ${ formattedEnd }": [
-        "時期: ${ formattedStart } - ${ formattedEnd }"
+        "日時: ${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (location part)": {
@@ -2644,13 +2644,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } は${ eventTitle } への招待を承諾しました"
+        "${ emailAddress } は ${ eventTitle } への招待を承諾しました"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } は${ eventTitle } への招待を辞退しました"
+        "${ emailAddress } は ${ eventTitle } への招待を辞退しました"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } は、${ eventTitle } への招待を暫定的に承認しました"
+        "${ emailAddress } は ${ eventTitle } への招待を仮承諾しました"
       ]
     },
     "Email spam notification": {
@@ -2754,9 +2754,6 @@
       ],
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
-      ],
-      "Can't check username, try again later": [
-        "ユーザー名を確認できません。後ほどお試しください。"
       ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
@@ -3295,7 +3292,7 @@
         "元の定期的な予定が見つかりませんでした"
       ],
       "Recurring event has no occurrences": [
-        "定期予定の中に行事はありません。"
+        "定期的な予定に繰り返しがありません"
       ],
       "Recurring rule not supported": [
         "繰り返しルールはサポートされていません"
@@ -4669,9 +4666,6 @@
       "Download recovery file": [
         "回復用ファイルをダウンロード"
       ],
-      "Download recovery phrase": [
-        "回復フレーズをダウンロード"
-      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
       ],
@@ -5137,9 +5131,6 @@
       "Paid for a monthly plan": [
         "月額プランに課金"
       ],
-      "password reset": [
-        "パスワードリセット"
-      ],
       "Payment can take a few minutes to fully verify.": [
         "お支払いの検証完了まで数分を要する場合があります。"
       ],
@@ -5261,10 +5252,7 @@
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
       ],
       "Remove one of your calendars to join this one": [
-        "このカレンダーに参加するには、カレンダーの1つを削除してください"
-      ],
-      "Reset password": [
-        "パスワードをリセット"
+        "このカレンダーに参加するには、いずれかのカレンダーを削除してください"
       ],
       "Revoke certificate ${ name }": [
         "証明書 ${ name } を失効させます"
@@ -5319,9 +5307,6 @@
       ],
       "Show original message": [
         "元のメッセージを表示"
-      ],
-      "Sign in": [
-        "ログイン"
       ],
       "Signed up": [
         "サインアップ済み"
@@ -5494,6 +5479,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
+      ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
         "各種メールニュースやブログで ${ BRAND_NAME } プロダクトの最新情報を配信しています。"
       ],
@@ -5502,6 +5490,9 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "インターネット接続を保護するには、${ VPN_APP_NAME } アプリケーションをダウンロードおよびインストールして、サーバーに接続してください。"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "${ toAppName } を使用するには、${ MAIL_APP_NAME } アドレスが必要です。"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "正常に動作させるには、それぞれのフィルターに正しい名前と有効な Sieve スクリプトが含まれている必要があります。${ link }ことができます。"
@@ -5628,9 +5619,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
-      ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "移動しました。私たちの新しいドメイン ${ link } でサインインしてください。"
       ],
       "Web URL": [
         "Web URL"
@@ -5794,8 +5782,8 @@
       "You'll stay signed in even after you close the browser.": [
         "ブラウザを閉じてもサインインを維持します。"
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "あなたの ${ BRAND_NAME } アカウントは ${ externalEmailAddress } に関連付けされています。${ toAppName } を使うには、${ MAIL_APP_NAME } アドレスが必要です。"
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "あなたの ${ BRAND_NAME } アカウントは、${ externalEmailAddress } に関連付けられています。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
@@ -7907,6 +7895,23 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7964,23 +7969,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -9369,6 +9357,11 @@
         "個人向け"
       ]
     },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "私と共有"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "操作"
@@ -10236,9 +10229,6 @@
       "Warning: suspected fake website": [
         "警告: 偽のウェブサイトの疑いがあります"
       ],
-      "We have moved to ${ PROTON_ME_DOMAIN }": [
-        "ドメインは ${ PROTON_ME_DOMAIN } に移動されました"
-      ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
       ],
@@ -10516,6 +10506,9 @@
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendars, allowing you to make calendars for work, to share with friends, and just for yourself.": [
         "Mail の有料プランにアップグレードすると、最大 ${ MAX_CALENDARS_PAID } 件のカレンダーを作成できるようになり、仕事用、友人との共有用、個人用などのカレンダーを作成できます。"
+      ],
+      "Upgrade to a Mail paid plan to share your calendar.": [
+        "カレンダーを共有するには、Mail 有料プランにアップグレードしてください。"
       ]
     },
     "User referee invited via email": {

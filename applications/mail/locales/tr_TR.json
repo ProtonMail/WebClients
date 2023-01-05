@@ -4864,9 +4864,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Parolanızı bilmiyorsanız, hesabınıza ve verilerinize erişimi kaybetmeyeceğinizden emin olmak için bir kurtarma ifadesi ayarlayın."
-      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Takma adınız satılırsa, sızdırılırsa veya kötü amaçla kullanılırsa, istenmeyen e-postalar almayı durdurmak için takma adı devre dışı bırakmanız yeterlidir."
       ],
@@ -5235,17 +5232,11 @@
       "Set a recovery phrase": [
         "Bir kurtarma ifadesi ayarla"
       ],
-      "Set recovery phrase": [
-        "Kurtarma ifadesini ayarla"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
       "Show original message": [
         "Özgün iletiyi göster"
-      ],
-      "Sign in": [
-        "Oturum aç"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin bir ${ BRAND_NAME } hizmetidir ve ${ BRAND_NAME } hesabınızda E-postamı gizle takma adları kullanılmasını sağlar. E-posta adresinizi gizlemeye başlamak için SimpleLogin sitesine gidin ve ilk takma adınızı oluşturun."
@@ -5541,17 +5532,11 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Taşındık. Lütfen yeni etki alanımızı kullanarak oturum açın: ${ link }."
-      ],
       "Web URL": [
         "Web adresi"
       ],
       "Week": [
         "Hafta"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "${ PROTON_ME_DOMAIN } üzerine taşınıyoruz."
       ],
       "When do you want your message to be sent?": [
         "İletinizin ne zaman gönderilmesini istersiniz?"
@@ -5686,9 +5671,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "E-posta adresiniz değişmeyecek. Ancak yakında ${ link } adresinden oturum açmanız gerekecek."
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -8375,9 +8357,6 @@
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
-      ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "${ PROTON_ME_DOMAIN } üzerinde oturum aç"
       ],
       "Sign out": [
         "Oturumu kapat"

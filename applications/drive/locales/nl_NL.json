@@ -2419,7 +2419,15 @@
         "Uw feedback"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
+      ],
       "Security key": [
         "Beveiligingssleutel"
       ]
@@ -3111,6 +3119,10 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
       ],
+      "Delete locked drive": [
+        "Verwijder vergrendelde drive",
+        "Verwijder vergrendelde drives"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitale handtekening geverifieerd. Dit bestand werd veilig geüpload door ${ emailAddress }."
       ],
@@ -3241,6 +3253,9 @@
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Maak kennis met ${ DRIVE_APP_NAME } en verdien uw 500 MB opslagbonus! Onderneem vandaag nog actie."
       ],
+      "Go ahead, upload a file": [
+        "Ga je gang, upload een bestand"
+      ],
       "Go to \"My files\" and upload some files first.": [
         "Ga naar \"Mijn bestanden\" en upload eerst enkele bestanden."
       ],
@@ -3261,9 +3276,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
-      ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Als u uw wachtwoord niet weet, stel dan een herstelzin in zodat u zeker de toegang tot uw account en gegevens niet verliest."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
@@ -3310,6 +3322,12 @@
       ],
       "Internet connection restored.": [
         "Internetverbinding hersteld."
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Het lijkt erop dat u recent heeft geprobeerd ${ uploadName } te uploaden. Als de upload mislukt is, ${ replaceFile }. Als de upload nog bezig is, zal het vervangen van het bestand de huidige upload annuleren."
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "Het is zo makkelijk als slepen en neerzetten, of selecteren van bestanden"
       ],
       "It’s easy and secure": [
         "Het is eenvoudig en veilig"
@@ -3410,6 +3428,9 @@
       "No synced folders": [
         "Geen gesynchroniseerde mappen"
       ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Geen van de geüploadet sleutels zijn geldig voor versleuteling. Upload een geldige sleutel of schakel \"E-mails versleutelen\" uit om berichten te kunnen versturen naar dit adres."
+      ],
       "Not a valid URL": [
         "Ongeldige link"
       ],
@@ -3443,6 +3464,9 @@
       ],
       "Paused": [
         "Gepauzeerd"
+      ],
+      "Permanently delete all files in your locked drive": [
+        "Verwijder permanent alle bestanden op uw vergrendelde schijf"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
@@ -3544,9 +3568,6 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
-      "Set recovery phrase": [
-        "Herstelzin instellen"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
       ],
@@ -3558,9 +3579,6 @@
       ],
       "Shared link failed to be loaded": [
         "De gedeelde link kon niet worden geladen"
-      ],
-      "Sign in": [
-        "Inloggen"
       ],
       "Signature check will be ignored": [
         "Handtekeningcontrole zal genegeerd worden"
@@ -3743,14 +3761,8 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "We zijn verhuisd! Meld u aan op ons nieuw domein: ${ link }."
-      ],
       "Week": [
         "Week"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "We verhuizen naar ${ PROTON_ME_DOMAIN }."
       ],
       "What do you want to do?": [
         "Wat wilt u doen?"
@@ -3826,9 +3838,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "Uw e-mailadres zal niet veranderen, maar binnenkort moet u zich inloggen via ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -4783,6 +4792,9 @@
     "Onboarding Title": {
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Welkom bij ${ DRIVE_APP_NAME }"
+      ],
+      "Your welcome bonus": [
+        "Uw welkomsbonus"
       ]
     },
     "Option": {
@@ -5759,9 +5771,6 @@
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
-      ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "Inloggen via ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Uitloggen"
