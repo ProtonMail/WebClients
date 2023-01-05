@@ -80,7 +80,7 @@ const PlanCard = ({
                     </h2>
                     <span className="ml0-5 mb0-5">{badgeMultiUser}</span>
                 </div>
-                <p className="text-lg plan-selection-info color-weak mb1">{info}</p>
+                <p className="text-lg plan-selection-info text-left color-weak mb1">{info}</p>
                 <div className="mb1 flex flex-wrap flex-align-items-baseline plan-selection-price">
                     <span className="mr0-5">
                         <Price large currency={currency}>
