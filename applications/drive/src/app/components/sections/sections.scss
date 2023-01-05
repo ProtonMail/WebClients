@@ -6,3 +6,7 @@
 .section-toolbar--hide-alone:first-child {
 	display: none;
 }
+
+.sections--empty-trash-bar {
+	background-color: var(--signal-info);
+}
