@@ -7,7 +7,6 @@ import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contac
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
-import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import {
@@ -139,14 +138,30 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
 
             const inputs = splitBySeparator(trimmedInput);
             const recipients = inputs.map((input) => inputToRecipient(input));
-            const validRecipients = recipients.filter(({ Address }) => !validate(Address || ''));
-            const errors = recipients.map(({ Address }) => validate(Address || '')).filter(isTruthy);
+            const { validRecipients, invalidRecipients, errors } = recipients.reduce<{
+                validRecipients: Recipient[];
+                invalidRecipients: Recipient[];
+                errors: string[];
+            }>(
+                (acc, recipient) => {
+                    const error = validate(recipient.Address || '');
+                    if (error) {
+                        acc.errors.push(error);
+                        acc.invalidRecipients.push(recipient);
+                    } else {
+                        acc.validRecipients.push(recipient);
+                    }
+                    return acc;
+                },
+                { validRecipients: [], invalidRecipients: [], errors: [] }
+            );
 
             handleAddRecipient(validRecipients);
 
             if (errors.length) {
                 onAddInvalidEmail?.();
                 setEmailError(errors[0]);
+                setInput(invalidRecipients.map(({ Address }) => Address).join(', '));
             }
         };
 
