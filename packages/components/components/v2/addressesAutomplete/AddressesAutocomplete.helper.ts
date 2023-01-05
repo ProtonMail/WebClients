@@ -1,15 +1,18 @@
 import isTruthy from '@proton/utils/isTruthy';
 
 const SEPARATOR_REGEX = /[,;]/;
-const BRACKETS_REGEX = /[<>]/g;
 
 /**
- * Trim and remove brackets
+ * Trim and remove surrounding chevrons
  * @param value
  * @returns {string}
  */
 export const clearValue = (value: string) => {
-    return value.trim().replace(BRACKETS_REGEX, '');
+    const trimmed = value.trim();
+    if (trimmed.startsWith('<') && trimmed.endsWith('>')) {
+        return trimmed.slice(1, -1);
+    }
+    return trimmed;
 };
 
 /**
