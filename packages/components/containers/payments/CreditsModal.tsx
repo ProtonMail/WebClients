@@ -15,8 +15,8 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import {
-    Alert,
     Form,
+    Href,
     ModalProps,
     ModalTwo,
     ModalTwoContent,
@@ -98,15 +98,21 @@ const CreditsModal = (props: ModalProps) => {
             <ModalTwoHeader title={c('Title').t`Add credits`} />
             <ModalTwoContent>
                 <PaymentInfo method={method} />
-                <Alert
-                    className="mb1"
-                    learnMore={
-                        APP_NAME === APPS.PROTONVPN_SETTINGS
-                            ? 'https://protonvpn.com/support/vpn-credit-proration/'
-                            : getKnowledgeBaseUrl('/credit-proration-coupons')
-                    }
-                >{c('Info')
-                    .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}</Alert>
+                <div className="mb1">
+                    <div>
+                        {c('Info')
+                            .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}
+                    </div>
+                    <Href
+                        url={
+                            APP_NAME === APPS.PROTONVPN_SETTINGS
+                                ? 'https://protonvpn.com/support/vpn-credit-proration/'
+                                : getKnowledgeBaseUrl('/credit-proration-coupons')
+                        }
+                    >
+                        {c('Link').t`Learn more`}
+                    </Href>
+                </div>
                 <AmountRow
                     method={method}
                     amount={amount}
