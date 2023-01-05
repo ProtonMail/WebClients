@@ -1,3 +1,8 @@
 .section--header {
 	font-size: 1.1em;
 }
+
+// This prevent separator to be alone
+.section-toolbar--hide-alone:first-child {
+	display: none;
+}
