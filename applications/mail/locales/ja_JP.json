@@ -201,7 +201,7 @@
         "インポートを続行"
       ],
       "Continue with Google": [
-        "Googleで続行"
+        "Google で続行"
       ],
       "Contract composer": [
         "元に戻す"
@@ -1140,7 +1140,10 @@
         "転送済み"
       ],
       "Replied to": [
-        "返信先"
+        "返信済み"
+      ],
+      "Replied to all": [
+        "全員に返信済み"
       ],
       "Star conversation": [
         "会話に星印をつける"
@@ -1165,7 +1168,7 @@
     },
     "Alternative text for simple login image": {
       "Simple Login": [
-        "シンプルログイン"
+        "Simple Login"
       ]
     },
     "Alternative text for SimpleLogin image": {
@@ -1322,80 +1325,188 @@
       ]
     },
     "Calendar invite info": {
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を承諾し、いずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。"
+      ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        "${ participantName } は以前にこの予定内の行事の招待を承認していました。"
+        "${ participantName } はいずれかの予定への招待を承諾しました。"
       ],
       "${ participantName } accepted an invitation to this event.": [
-        "${ participantName } はこの予定の招待を承認しました。"
+        "${ participantName } はこの予定への招待を承諾しました。"
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を承諾し、いずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。"
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
-        "${ participantName } は以前にこの予定内の行事の招待を承認していました。"
+        "${ participantName } はいずれかの予定への招待を承諾しました。"
       ],
       "${ participantName } accepted your invitation.": [
-        "${ participantName } は招待を受け入れました。"
+        "${ participantName } は招待を承諾しました。"
+      ],
+      "${ participantName } asked for the latest event updates.": [
+        "${ participantName } は予定の最新情報を問い合わせてきました。"
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
+        "${ participantName } はもう存在しない予定の最新情報を問い合わせてきました。カレンダーがありません。"
+      ],
+      "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
+        "${ participantName } はあなたのカレンダーにもう存在しない予定の最新情報を問い合わせてきました。"
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } は招待の詳細と一致しない予定の最新情報を問い合わせてきました。カレンダーで招待の詳細を確認してください。"
+      ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を辞退し、いずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。"
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "${ participantName } は以前にこの予定内の行事の招待を拒否していました。"
+        "${ participantName } はいずれかの予定への招待を辞退しました。"
       ],
       "${ participantName } declined an invitation to this event.": [
-        "${ participantName } はこの予定の招待を拒否しました。"
+        "${ participantName } はこの予定への招待を辞退しました。"
+      ],
+      "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を辞退し、いずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } declined your invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。"
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
-        "${ participantName } は以前にこの予定内の行事の招待を拒否していました。"
+        "${ participantName } はいずれかの予定への招待を辞退しました。"
       ],
       "${ participantName } declined your invitation.": [
-        "${ participantName } は招待を断りました。"
+        "${ participantName } は招待を辞退しました。"
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName }は以前にこの予定内の行事の招待を承認していました。"
+        "${ participantName } はいずれかの予定への招待を承諾しました。"
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        "${ participantName } は以前にこの予定の招待を承認していました。"
+        "${ participantName } はこの予定への招待を承諾しました。"
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を承諾し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を辞退し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName } は以前にこの予定内の行事の招待を拒否していました。"
+        "${ participantName } はいずれかの予定への招待を辞退しました。"
       ],
       "${ participantName } had declined an invitation to this event.": [
-        "${ participantName } はこの予定の招待を拒否していました。"
+        "${ participantName } はこの予定への招待を辞退しました。"
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を辞退し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を辞退し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        "${ participantName }は以前にこの予定内の行事の招待を承認していました。"
+        "${ participantName } は以前にいずれかの予定への招待を承諾していました。"
       ],
       "${ participantName } had previously accepted your invitation.": [
-        "${ participantName } は以前に招待を受け入れていました。"
+        "${ participantName } は以前に招待を承諾していました。"
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        "${ participantName } は以前にこの予定内の行事の招待を拒否していました。"
+        "${ participantName } は以前にいずれかの予定への招待を辞退していました。"
       ],
       "${ participantName } had previously declined your invitation.": [
-        "${ participantName } は以前に招待を断っていました。"
+        "${ participantName } は以前に招待を辞退していました。"
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } は以前にこの予定内の行事の招待を仮承認していました。"
+        "${ participantName } は以前にいずれかの予定への招待を仮承諾していました。"
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
-        "${ participantName } は以前に招待を仮承認していました。"
+        "${ participantName } は以前に招待を仮承諾していました。"
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
+        "${ participantName } はいずれかの予定の新しい時間を提案しました。この提案は古くなっています。"
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } はいずれかの予定の新しい時間を提案しました。この提案は古くなっています。この予定はあなたのカレンダーに存在しません。"
+      ],
+      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } はいずれかの予定の新しい時間を提案しました。この提案は古くなっています。カレンダーがありません。"
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
+        "${ participantName } はこの予定の新しい時間を提案しました。この提案は古くなっています。"
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
+        "${ participantName } はこの予定の新しい時間を提案しました。この提案は古くなっています。この予定はあなたのカレンダーに存在しません。"
+      ],
+      "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
+        "${ participantName } はこの予定の新しい時間を提案しました。この提案は古くなっています。カレンダーがありません。"
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を仮承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を仮承諾し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } は以前にこの予定内の行事の招待を仮承認していました。"
+        "${ participantName } はいずれかの予定への招待を仮承諾しました。"
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        "${ participantName } はこの予定の招待を仮承認していました。"
+        "${ participantName } はこの予定への招待を仮承諾しました。"
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を仮承諾し、いずれかの予定の新しい時間を提案しました。回答と提案は古くなっています。"
+      ],
+      "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } は招待を仮承諾し、この予定の新しい時間を提案しました。回答と提案は古くなっています。"
       ],
       "${ participantName } is not in the participants list.": [
         "${ participantName } は招待リストにいません。"
       ],
+      "${ participantName } proposed a new time for one occurrence of this event.": [
+        "${ participantName } はいずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } proposed a new time for this event.": [
+        "${ participantName } はこの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を仮承諾し、いずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を仮承諾し、この予定の新しい時間を提案しました。"
+      ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } は以前にこの予定内の行事の招待を仮承認していました。"
+        "${ participantName } はいずれかの予定への招待を仮承諾しました。"
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        "${ participantName } はこの予定の招待を仮承認しました。"
+        "${ participantName } はこの予定への招待を仮承諾しました。"
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } は招待を仮承諾し、いずれかの予定の新しい時間を提案しました。"
+      ],
+      "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
+        "${ participantName } は招待を仮承諾し、この予定の新しい時間を提案しました。"
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } は以前にこの予定内の行事の招待を仮承認していました。"
+        "${ participantName } はいずれかの予定への招待を仮承諾しました。"
       ],
       "${ participantName } tentatively accepted your invitation.": [
-        "${ participantName } はとりあえず招待を受け入れました。"
+        "${ participantName } は招待を仮承諾しました。"
       ],
       "(Attendance optional)": [
         "(参加は任意です)"
@@ -1410,10 +1521,10 @@
         "予定の再スケジュールは現在サポートされていません"
       ],
       "This event has been canceled.": [
-        "この予定は中止されました。"
+        "この予定はキャンセルされました。"
       ],
       "This event has been updated.": [
-        "予定が更新されました。"
+        "この予定は更新されました。"
       ],
       "This invitation is out of date. The event has been canceled.": [
         "この招待は古くなっています。この予定はキャンセルされました。"
@@ -1424,26 +1535,29 @@
       "This invitation is out of date. The event has been updated.": [
         "この招待は古くなっています。この予定は更新されました。"
       ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "この新しい時間の提案は、招待の詳細と一致しません。カレンダーで招待の詳細を確認してください。"
+      ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "この返信は招待の詳細と一致しません。カレンダーの招待の詳細を確認してください。"
+        "この回答は招待の詳細と一致しません。カレンダーで招待の詳細を確認してください。"
       ],
       "This response is out of date.": [
-        "このレスポンスは古くなっています。"
+        "この回答は古くなっています。"
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "この回答は古いものです。当該予定はカレンダーに存在しません。"
       ],
       "This response is out of date. You have no calendars.": [
-        "レスポンスが古くなってます。カレンダーがありません。"
+        "この回答は古くなっています。カレンダーがありません。"
       ],
       "You already accepted this invitation.": [
-        "すでにこの招待を受け入れています。"
+        "この招待を承諾済みです。"
       ],
       "You already declined this invitation.": [
-        "すでにこの招待を断っています。"
+        "この招待を辞退済みです。"
       ],
       "You already tentatively accepted this invitation.": [
-        "すでにこの招待をとりあえず受け入れています。"
+        "この招待を仮承諾済みです。"
       ],
       "Your email address is not in the participants list": [
         "あなたのメールアドレスは参加者リストにありません"
@@ -2786,13 +2900,13 @@
     },
     "Email body for invitation (date part)": {
       "When: ${ formattedStart }": [
-        "時期: ${ formattedStart }"
+        "日時: ${ formattedStart }"
       ],
       "When: ${ formattedStart } (all day)": [
         "日時: ${ formattedStart } (終日)"
       ],
       "When: ${ formattedStart } - ${ formattedEnd }": [
-        "時期: ${ formattedStart } - ${ formattedEnd }"
+        "日時: ${ formattedStart } - ${ formattedEnd }"
       ]
     },
     "Email body for invitation (location part)": {
@@ -2802,13 +2916,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } は${ eventTitle } への招待を承諾しました"
+        "${ emailAddress } は ${ eventTitle } への招待を承諾しました"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } は${ eventTitle } への招待を辞退しました"
+        "${ emailAddress } は ${ eventTitle } への招待を辞退しました"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } は、${ eventTitle } への招待を暫定的に承認しました"
+        "${ emailAddress } は ${ eventTitle } への招待を仮承諾しました"
       ]
     },
     "Email reminder banner": {
@@ -3401,7 +3515,7 @@
         "元の定期的な予定が見つかりませんでした"
       ],
       "Recurring event has no occurrences": [
-        "定期予定の中に行事はありません。"
+        "定期的な予定に繰り返しがありません"
       ],
       "Recurring rule not supported": [
         "繰り返しルールはサポートされていません"
@@ -4218,10 +4332,10 @@
         "会話内に ${ NumMessages } 件の会話"
       ],
       "${ numOccurrences } occurrences found": [
-        "${ numOccurrences }件の行事が見つかりました"
+        "${ numOccurrences } 件見つかりました"
       ],
       "${ numOccurrences } occurrences found in the mail content": [
-        "メール内に${ numOccurrences }件の行事が見つかりました"
+        "メールコンテンツ内に ${ numOccurrences } 件見つかりました"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } 件のフォルダーが存在"
@@ -4646,9 +4760,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "パスワードを忘れた時のため、回復フレーズを設定してアカウントとデータにアクセスできるようにしておきましょう。"
-      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "エイリアス (使い捨てのメールアドレス) の情報が売却、漏洩、悪用された場合は、そのエイリアスを無効にするだけで迷惑メールを遮断できます。"
       ],
@@ -4859,6 +4970,9 @@
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline は Plain Text 形式にのみ対応しています。"
       ],
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME は、現在の新規作成時のモードを使用して自動的にメッセージを送信します。"
+      ],
       "Phone number": [
         "電話番号"
       ],
@@ -5009,17 +5123,11 @@
       "Set a recovery phrase": [
         "回復フレーズを設定"
       ],
-      "Set recovery phrase": [
-        "回復用フレーズを設定"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP を設定すると、PGP 対応のサービスを使用する ${ BRAND_NAME } 以外のユーザー宛に、エンドツーエンド暗号化された電子メールを送信できます。"
       ],
       "Show original message": [
         "元のメッセージを表示"
-      ],
-      "Sign in": [
-        "ログイン"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin は ${ BRAND_NAME } サービスであり、あなたの ${ BRAND_NAME } アカウントには Hide My Email エイリアスが含まれています。SimpleLogin でエイリアスを作成し、あなたのメールアドレスを保護しましょう。"
@@ -5195,6 +5303,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
       ],
@@ -5309,17 +5420,11 @@
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "移動しました。私たちの新しいドメイン ${ link } でサインインしてください。"
-      ],
       "Web URL": [
         "Web URL"
       ],
       "Week": [
         "週"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "${ PROTON_ME_DOMAIN }に移行しました。"
       ],
       "When do you want your message to be sent?": [
         "いつメッセージを送信しますか？"
@@ -5446,9 +5551,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "メールアドレスは変わりません。しかし、近いうちに${ link }でログインしなければなりません。"
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
@@ -6522,6 +6624,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } の新しいバージョンが利用可能です。 ${ reloadButton }"
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
+        "SimpleLogin by ${ BRAND_NAME } から配信されました"
       ]
     },
     "Message image": {
@@ -8055,9 +8162,6 @@
       ],
       "Sign in and grant access": [
         "サインインして権限を付与"
-      ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "${ PROTON_ME_DOMAIN }でサインイン"
       ],
       "Sign out": [
         "サインアウト"

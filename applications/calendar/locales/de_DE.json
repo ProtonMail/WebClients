@@ -3405,9 +3405,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Falls du dein Passwort nicht mehr weißt, lege eine Wiederherstellungsphrase fest, um sicherzustellen, dass du den Zugang zu deinem Konto und deinen Daten nicht verlierst."
-      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
       ],
@@ -3590,14 +3587,8 @@
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
       ],
-      "Set recovery phrase": [
-        "Wiederherstellungsphrase festlegen"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
-      ],
-      "Sign in": [
-        "Anmelden"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Einige deiner Antworten auf Termine, die zuvor vom Organisator aktualisiert wurden, gehen verloren."
@@ -3704,14 +3695,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Wir sind umgezogen! Bitte melde dich bei unserer neuen Domain an: ${ link }."
-      ],
       "Week": [
         "Woche"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "Wir wechseln zu ${ PROTON_ME_DOMAIN }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
@@ -3835,9 +3820,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "Deine E-Mail-Adresse wird sich nicht ändern. Aber bald wirst du dich unter ${ link } anmelden müssen."
       ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
@@ -5947,9 +5929,6 @@
       ],
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
-      ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "Bei ${ PROTON_ME_DOMAIN } anmelden"
       ],
       "Sign out": [
         "Abmelden"

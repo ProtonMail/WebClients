@@ -3282,9 +3282,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Falls du dein Passwort nicht mehr weißt, lege eine Wiederherstellungsphrase fest, um sicherzustellen, dass du den Zugang zu deinem Konto und deinen Daten nicht verlierst."
-      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
@@ -3576,9 +3573,6 @@
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
       ],
-      "Set recovery phrase": [
-        "Wiederherstellungsphrase festlegen"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Die Einrichtung von PGP ermöglicht es dir, Nachrichten mit Ende-zu-Ende-Verschlüsselung an einen Nicht-${ BRAND_NAME }-Benutzer zu senden, wenn dieser einen PGP-kompatiblen Dienst verwendet."
       ],
@@ -3590,9 +3584,6 @@
       ],
       "Shared link failed to be loaded": [
         "Geteilter Link konnte nicht geladen werden"
-      ],
-      "Sign in": [
-        "Anmelden"
       ],
       "Signature check will be ignored": [
         "Signaturprüfung wird ignoriert"
@@ -3775,14 +3766,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Wir sind umgezogen! Bitte melde dich bei unserer neuen Domain an: ${ link }."
-      ],
       "Week": [
         "Woche"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "Wir wechseln zu ${ PROTON_ME_DOMAIN }."
       ],
       "What do you want to do?": [
         "Was möchtest du tun?"
@@ -3858,9 +3843,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "Deine E-Mail-Adresse wird sich nicht ändern. Aber bald wirst du dich unter ${ link } anmelden müssen."
       ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
@@ -5797,9 +5779,6 @@
       ],
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
-      ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "Bei ${ PROTON_ME_DOMAIN } anmelden"
       ],
       "Sign out": [
         "Abmelden"
