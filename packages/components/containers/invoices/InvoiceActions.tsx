@@ -12,7 +12,7 @@ import { Invoice } from './interface';
 interface Props {
     invoice: Invoice;
     fetchInvoices: () => void;
-    onPreview: (invoice: Invoice) => void;
+    onPreview?: (invoice: Invoice) => void;
     onDownload: (invoice: Invoice) => void;
 }
 
@@ -45,7 +45,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
             text: c('Action').t`View`,
             onClick: async () => {
                 const handler = async () => {
-                    onPreview(invoice);
+                    onPreview?.(invoice);
                 };
                 await withViewLoading(handler());
             },

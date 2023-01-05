@@ -36,7 +36,7 @@ interface Props {
 }
 
 const InvoiceType = ({ invoice }: Props) => {
-    return getType(invoice.Type);
+    return <>{getType(invoice.Type)}</>;
 };
 
 export default InvoiceType;
