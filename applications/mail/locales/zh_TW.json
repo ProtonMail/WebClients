@@ -4769,9 +4769,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "倘若您擔心記不住密碼，可設定復原片語， 存取帳號和資料即可萬無一失。"
-      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "倘若您的別名位址被不當販售、洩漏或甚至是濫用，只需簡單地停用該別名，就可停止收受垃圾郵件。"
       ],
@@ -5138,17 +5135,11 @@
       "Set a recovery phrase": [
         "設定還原短語"
       ],
-      "Set recovery phrase": [
-        "設定還原短語"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
       ],
       "Show original message": [
         "顯示原始訊息"
-      ],
-      "Sign in": [
-        "登入"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin 是 ${ BRAND_NAME } 的服務，您的 ${ BRAND_NAME } 帳戶包含 「藏起我的郵箱」別名。要開始藏起您的電子郵件地址，造訪 SimpleLogin並建立起您的第一個別名。"
@@ -5441,17 +5432,11 @@
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "我們搬家啦！請登入新網域： ${ link }。"
-      ],
       "Web URL": [
         "網頁 URL"
       ],
       "Week": [
         "週"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "我們搬家嘍，點擊這裡 ${ PROTON_ME_DOMAIN }。"
       ],
       "When do you want your message to be sent?": [
         "您想在什麼時候傳送郵件？"
@@ -5578,9 +5563,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "您的電郵位址毋需變更。 不過日後就得在 ${ link } 進行登入。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
@@ -8206,9 +8188,6 @@
       ],
       "Sign in and grant access": [
         "登入並授予存取權"
-      ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "點擊登入 ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "登出"

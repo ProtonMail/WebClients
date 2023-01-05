@@ -3249,9 +3249,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Arra az esetre, ha nem tudja a jelszavát, állítson be helyreállító jelmondatot, hogy ne veszíthesse el a hozzáférést fiókjához és adataihoz."
-      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
       ],
@@ -3425,14 +3422,8 @@
       "Session timed out": [
         "A munkamenet lejárt"
       ],
-      "Set recovery phrase": [
-        "Helyreállító jelmondat beállítása"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
-      ],
-      "Sign in": [
-        "Bejelentkezés"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "A szervező által korábban frissített eseményekre adott egyes válaszai elvesznek."
@@ -3533,14 +3524,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Költöztünk! Kérjük, lépjen be az új címen: ${ link }."
-      ],
       "Week": [
         "Hét"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "Átköltözünk a ${ PROTON_ME_DOMAIN } webcímre."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
@@ -3636,7 +3621,7 @@
         "A sorozat összes eseményét frissíteni fogja. Az eltávolított résztvevők értesítést kapnak."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva e-mailek nem fognak a fiókjába érkezni, a Drive megosztási linkjei blokkolva lesznek, és nem lesz képes új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
+        "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva az e-mailek nem fognak megérkezni a fiókjába, a Drive megosztások kikapcsolásra kerülnek, és nem lesz lehetősége új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
@@ -3658,9 +3643,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Az adatok a ${ BRAND_NAME } fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "E-mail címe nem változik meg, de hamarosan már a ${ link } webcímen kell bejelentkeznie."
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -4148,16 +4130,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Az összes üzenet importálása a(z) ${ itemsToImportCount } címkéből és megcímkézni őket így: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Az összes üzenet importálása a(z) ${ itemsToImportCount } címkékből és megcímkézni őket így: ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Az összes üzenet importálása ${ itemsToImportCount } címkéből és megcímkézés így: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Az összes üzenet importálása ${ itemsToImportCount } címkéből és megcímkézés így: ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } mappából, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } mappákból, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összesen ${ itemsToImportCount } mappa van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összesen ${ itemsToImportCount } mappa van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } címkéből, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } címkékből, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összesen ${ itemsToImportCount } címke van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összesen ${ itemsToImportCount } címke van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -4822,7 +4804,7 @@
         "Kezelje névjegyeit és tekintse meg naptárát anélkül, hogy elhagyná az alkalmazást."
       ],
       "Try the new side panel": [
-        "Próbálja ki az új oldalsó panelt"
+        "Próbálja ki az új oldalsávot"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -4899,8 +4881,8 @@
     },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } kapcsolat azonosnak tűnik.",
-        "${ countMergeableContacts } kapcsolatok azonosnak tűnnek."
+        "${ countMergeableContacts } névjegy azonosnak tűnik.",
+        "${ countMergeableContacts } névjegy azonosnak tűnik."
       ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "A sorozatban szereplő összes esemény eltávolított résztvevőinek lemondási értesítő kerül elküldésre."
@@ -5432,9 +5414,6 @@
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
       ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "Bejelentkezés a ${ PROTON_ME_DOMAIN } címen"
-      ],
       "Sign out": [
         "Kijelentkezés"
       ],
@@ -5536,13 +5515,13 @@
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
       "Hide side panel": [
-        "Oldalpanel elrejtése"
+        "Oldalsáv elrejtése"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
       ],
       "Show side panel": [
-        "Oldalsó panel megjelenítése"
+        "Oldalsáv megjelenítése"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"

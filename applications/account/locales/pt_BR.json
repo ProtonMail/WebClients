@@ -2852,9 +2852,6 @@
       "Calendar limit reached": [
         "Limite de calendários atingido"
       ],
-      "Can't check username, try again later": [
-        "Não foi possível verificar o nome de usuário, tente novamente mais tarde"
-      ],
       "Checkout expired, please try again": [
         "Pedido expirado. Por favor, tente novamente"
       ],
@@ -4746,9 +4743,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails de seus novos endereços, você precisa criar chaves de criptografia para eles."
       ],
-      "Before you reset your password, download your recovery phrase.": [
-        "Antes de redefinir sua senha, baixe sua frase de recuperação."
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "As transações em Bitcoin podem levar algum tempo para serem confirmadas (até 24 horas). Uma vez confirmada, adicionaremos os créditos na sua conta. Após a confirmação da transação, você pode pagar sua fatura com os créditos."
       ],
@@ -4882,9 +4876,6 @@
       ],
       "Download recovery file": [
         "Baixar o arquivo de recuperação"
-      ],
-      "Download recovery phrase": [
-        "Baixar frase de recuperação"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
@@ -5047,12 +5038,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
-      ],
-      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
-        "Se você não souber sua senha, precisará fazer um ${ boldPasswordReset } para acessar o novo site."
-      ],
-      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "Se você precisar redefinir sua senha novamente, precisará inserir esta frase para voltar à sua conta e desbloquear seus dados."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Se você tem um domínio personalizado com o ${ MAIL_APP_NAME }, você pode definir um email catch-all que receberá mensagens enviadas para o seu domínio, mas com um endereço de email inválido (por exemplo, devido a erros de digitação)."
@@ -5248,9 +5233,6 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Certifique-se de ${ addARecoveryMethod } para poder voltar à sua conta se esquecer sua senha."
       ],
-      "Make sure you keep your recovery phrase somewhere private.": [
-        "Certifique-se de manter sua frase de recuperação em algum lugar privado."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
       ],
@@ -5372,9 +5354,6 @@
       "Paid for a monthly plan": [
         "Pago para o plano mensal"
       ],
-      "password reset": [
-        "redefinição de senha"
-      ],
       "Payment can take a few minutes to fully verify.": [
         "O pagamento pode demorar alguns minutos para ser totalmente verificado."
       ],
@@ -5399,7 +5378,7 @@
         "Por favor adicione os endereços de e-mail para esses usuários nas linhas"
       ],
       "Please check your file for errors, or contact customer support for more information.": [
-        "Por favor, verifique seu arquivo por erros ou entre em contato com o suporte ao cliente para maiores informações."
+        "Por favor, verifique seu arquivo por erros ou entre em contato com o suporte ao cliente para mais informações."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Por favor, verifique seu arquivo, ou tente usar nossa ${ csvTemplateButton }."
@@ -5515,9 +5494,6 @@
       "Remove one of your calendars to join this one": [
         "Ative este endereço para juntar-se a este calendário"
       ],
-      "Reset password": [
-        "Redefinir Senha"
-      ],
       "Revoke certificate ${ name }": [
         "Revogar certificado ${ name }"
       ],
@@ -5571,9 +5547,6 @@
       ],
       "Show original message": [
         "Exibir mensagem original"
-      ],
-      "Sign in": [
-        "Iniciar sessão"
       ],
       "Signed up": [
         "Criar conta"
@@ -5664,9 +5637,6 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "A maneira mais segura de navegar, transmitir e estar online."
-      ],
-      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
-        "Não houve alterações em seu endereço de e-mail ou em sua conta do ${ BRAND_NAME }. Basta iniciar sessão em ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estes arquivos de configuração permitem escolher a qual servidor do ${ VPN_APP_NAME } você será conectado ao usar um aplicativo de VPN de terceiros ou ao configurar uma conexão de VPN em um roteador."
@@ -5784,6 +5754,9 @@
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "para usar ${ toAppName } e todos os serviços de ${ BRAND_NAME }"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Para usar ${ toAppName } necessita de um endereço do ${ MAIL_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Para funcionar corretamente, cada filtro deve conter pelo menos um nome e um script Sieve válido. Você pode ${ link }."
@@ -5913,9 +5886,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
-      ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Nós nos mudamos! Inicie sessão em nosso novo domínio: ${ link }."
       ],
       "Web URL": [
         "URL da Web"
@@ -6092,8 +6062,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Você permanecerá conectado mesmo depois de fechar o navegador."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }. Para usar o ${ toAppName }, você precisa de um ${ MAIL_APP_NAME } endereço."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Sua conta de ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá fazer upload de novos arquivos. Para retomar o serviço normal, favor pagar qualquer fatura vencida."
@@ -6168,7 +6138,7 @@
     },
     "info": {
       "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Por favor envie individualmente para mais informações."
+        "Chaves adicionais duplicadas detectadas. Por favor, envie individualmente para mais informações."
       ],
       "Create an email address": [
         "Criar um endereço de e-mail"
@@ -7684,16 +7654,16 @@
         "Importar todas as mensagens da pasta desde a ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens do marcador ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens dos marcadores ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todas as mensagens de ${ itemsToImportCount } marcador e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ itemsToImportCount } marcadores e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ selectedItemsToImportCount } da pasta ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ selectedItemsToImportCount } das pastas ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } pasta e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } pastas e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ selectedItemsToImportCount } do marcador ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ selectedItemsToImportCount } dos marcadores ${ itemsToImportCount } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcador e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8269,6 +8239,26 @@
         "Gerenciamento de equipes"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium do ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium do ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -8338,26 +8328,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium do ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium do ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -11021,9 +10991,6 @@
       ],
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
-      ],
-      "We have moved to ${ PROTON_ME_DOMAIN }": [
-        "Mudamos para ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "O que você gostaria de importar?"
