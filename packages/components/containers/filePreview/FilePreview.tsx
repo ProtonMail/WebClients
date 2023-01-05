@@ -202,7 +202,7 @@ const FilePreview = (
     };
 
     return (
-        <div className="file-preview ui-prominent" ref={combinedRefs} {...focusTrapProps}>
+        <div className="file-preview ui-prominent" ref={combinedRefs} data-test-id="file-preview" {...focusTrapProps}>
             <Header
                 mimeType={mimeType}
                 name={fileName}
