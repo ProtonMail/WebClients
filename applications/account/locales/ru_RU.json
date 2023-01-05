@@ -2872,9 +2872,6 @@
       "Calendar limit reached": [
         "Достигнут лимит календаря"
       ],
-      "Can't check username, try again later": [
-        "Не удается проверить имя пользователя, повторите попытку позже"
-      ],
       "Checkout expired, please try again": [
         "Срок оформления истек, пожалуйста, попробуйте снова"
       ],
@@ -4855,9 +4852,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования."
       ],
-      "Before you reset your password, download your recovery phrase.": [
-        "Перед сбросом пароля скачайте фразу восстановления."
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Транзакции Bitcoin могут занять некоторое время для подтверждения (до 24 часов). Сразу после подтверждения мы добавим кредиты на ваш счет. После подтверждения транзакции вы сможете оплатить свой счет кредитами."
       ],
@@ -4995,9 +4989,6 @@
       ],
       "Download recovery file": [
         "Скачать файл восстановления"
-      ],
-      "Download recovery phrase": [
-        "Скачать фразу для восстановления"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
@@ -5160,12 +5151,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
-      ],
-      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
-        "Если вы не знаете свой пароль, вам нужно будет выполнить ${ boldPasswordReset }, чтобы получить доступ к новому сайту."
-      ],
-      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "Если вам когда-нибудь снова понадобится сбросить пароль, вам нужно будет ввести эту фразу, чтобы вернуться в свой аккаунт и разблокировать данные."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Если у вас есть свой домен с ${ MAIL_APP_NAME }, вы можете установить адреса электронной почты для приема всех сообщений, отправленных на ваш домен, но на недействительный адрес электронной почты (например, из-за опечаток)."
@@ -5365,9 +5350,6 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Убедитесь, что вы ${ addARecoveryMethod }, чтобы попасть в свой аккаунт, если забудете пароль."
       ],
-      "Make sure you keep your recovery phrase somewhere private.": [
-        "Убедитесь, что вы сохранили свою фразу восстановления в надежном месте."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Введите эту информацию вручную в устройство двухфакторной аутентификации, чтобы настроить учетную запись. ${ switchButton }."
       ],
@@ -5490,9 +5472,6 @@
       ],
       "Paid for a monthly plan": [
         "Оплачен тариф на месяц"
-      ],
-      "password reset": [
-        "сброс пароля"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Полная проверка платежа может занять несколько минут."
@@ -5638,9 +5617,6 @@
       "Remove one of your calendars to join this one": [
         "Удалите один из своих календарей, чтобы присоединиться к этому"
       ],
-      "Reset password": [
-        "Сбросить пароль"
-      ],
       "Revoke certificate ${ name }": [
         "Отозвать сертификат ${ name }"
       ],
@@ -5694,9 +5670,6 @@
       ],
       "Show original message": [
         "Показать исходное сообщение"
-      ],
-      "Sign in": [
-        "Войти"
       ],
       "Signed up": [
         "Зарегистрировались"
@@ -5793,9 +5766,6 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Самый безопасный способ просматривать веб-страницы, смотреть трансляции и находиться онлайн."
-      ],
-      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
-        "Никаких изменений в вашем адресе электронной почты или в вашем ${ BRAND_NAME } аккаунте не было. Просто войдите в систему по ссылке ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
@@ -5913,6 +5883,9 @@
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "использовать ${ toAppName } и все службы ${ BRAND_NAME }"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Чтобы использовать ${ toAppName }, вам нужен адрес ${ MAIL_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Для правильной работы каждый фильтр должен содержать как минимум имя и действительный скрипт Sieve. Вы можете ${ link }."
@@ -6042,9 +6015,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
-      ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Мы переехали! Пожалуйста, зарегистрируйтесь на нашем новом домене: ${ link }."
       ],
       "Web URL": [
         "Сетевой URL"
@@ -6223,8 +6193,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Вы сохраните авторизацию даже после закрытия браузера."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "Ваш аккаунт ${ BRAND_NAME } связан с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, вам необходим адрес ${ MAIL_APP_NAME }."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "Ваша учетная запись ${ BRAND_NAME } связана с ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
@@ -8452,6 +8422,26 @@
         "Управление командами"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Перейдите на пакет для бизнеса с доступом ко всем платным услугам ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Улучшите пакет для обеспечения максимальной конфиденциальности и получите доступ ко всем платным услугам ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся ${ last4 }"
@@ -8521,26 +8511,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Перейдите на пакет для бизнеса с доступом ко всем платным услугам ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Улучшите пакет для обеспечения максимальной конфиденциальности и получите доступ ко всем платным услугам ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -11282,9 +11252,6 @@
       ],
       "Warning: suspected fake website": [
         "Предупреждение: предполагаемый поддельный сайт"
-      ],
-      "We have moved to ${ PROTON_ME_DOMAIN }": [
-        "Мы перешли на ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"

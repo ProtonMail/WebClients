@@ -4731,9 +4731,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "如果您已忘记密码，请先设置恢复密语，以免届时无法登录账户并导致个人数据丢失。"
-      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "倘若临时邮箱地址被泄露、被贩卖、被滥用，只需予以销毁即可免受垃圾邮件袭扰。"
       ],
@@ -5088,17 +5085,11 @@
       "Set a recovery phrase": [
         "设置恢复密语"
       ],
-      "Set recovery phrase": [
-        "设置恢复密语"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
       ],
       "Show original message": [
         "显示原始邮件"
-      ],
-      "Sign in": [
-        "登录"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "您可以使用 ${ BRAND_NAME } 提供的 SimpleLogin 服务隐藏您的邮箱地址，只需前往 SimpleLogin 创建邮箱别名即可。"
@@ -5385,17 +5376,11 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "我们搬家啦！请使用我们的新域名登录：${ link }。"
-      ],
       "Web URL": [
         "网址"
       ],
       "Week": [
         "周"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "我们的域名现已变更为 ${ PROTON_ME_DOMAIN }。"
       ],
       "When do you want your message to be sent?": [
         "您想要什么时候发送您的邮件？"
@@ -5519,9 +5504,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "您的邮箱地址不会变化，但近期您将需要通过 ${ link } 重新登录。"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
@@ -8098,9 +8080,6 @@
       ],
       "Sign in and grant access": [
         "登录并授予权限"
-      ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "前往 ${ PROTON_ME_DOMAIN } 登录"
       ],
       "Sign out": [
         "退出"

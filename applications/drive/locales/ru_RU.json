@@ -3397,9 +3397,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Если вы не знаете пароль, то установите секретную фразу, чтобы не потерять доступ к вашему аккаунту и данным."
-      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
@@ -3697,9 +3694,6 @@
       "Session timed out": [
         "Время сеанса истекло"
       ],
-      "Set recovery phrase": [
-        "Установить фразу для восстановления"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту, защифрованную сквозным метом с пользователем, не являющимся ${ BRAND_NAME }, который использует службу, совместимую с PGP."
       ],
@@ -3711,9 +3705,6 @@
       ],
       "Shared link failed to be loaded": [
         "Сбой при загрузке ссылки для распространения"
-      ],
-      "Sign in": [
-        "Войти"
       ],
       "Signature check will be ignored": [
         "Проверка подписи будет проигнорирована"
@@ -3898,14 +3889,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Мы переехали! Пожалуйста, зарегистрируйтесь на нашем новом домене: ${ link }."
-      ],
       "Week": [
         "Неделя"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "Перемещаемся в ${ PROTON_ME_DOMAIN }."
       ],
       "What do you want to do?": [
         "Что вы хотите сделать?"
@@ -3981,9 +3966,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт ${ BRAND_NAME }."
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "Скоро вам необходимо будет войти через ${ link }. Ваш адрес электронной почты не изменится."
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
@@ -6014,9 +5996,6 @@
       ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
-      ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "Войти через ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Выйти"

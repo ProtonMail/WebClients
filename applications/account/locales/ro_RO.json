@@ -2862,9 +2862,6 @@
       "Calendar limit reached": [
         "Limita de calendare a fost atinsă."
       ],
-      "Can't check username, try again later": [
-        "Nu se poate verifica numele de utilizator, reîncercați mai târziu."
-      ],
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat, mai reîncercați."
       ],
@@ -4798,9 +4795,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
       ],
-      "Before you reset your password, download your recovery phrase.": [
-        "Înainte de a vă reseta parola, descărcați fraza de recuperare."
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Tranzacțiile cu Bitcoin pot dura mai mult până la confirmare (până la 24 de ore). După confirmarea tranzacției, vă vom adăuga creditul în cont și veți putea plăti factura cu acesta."
       ],
@@ -4936,9 +4930,6 @@
       ],
       "Download recovery file": [
         "Descărcare fișier de recuperare"
-      ],
-      "Download recovery phrase": [
-        "Descărcați fraza de recuperare"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
@@ -5101,12 +5092,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
-      ],
-      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
-        "Dacă nu vă cunoașteți parola, va trebui să vă ${ boldPasswordReset } pentru a accesa noul site."
-      ],
-      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "Dacă va trebui să vă resetați parola din nou, va trebui să introduceți această frază pentru a intra din nou în cont și a vă debloca datele."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Dacă aveți un domeniu personal cu ${ MAIL_APP_NAME }, puteți seta o adresă de e-mail „colectoare\", pentru a primi mesajele trimise către domeniul propriu, dar la o adresă de e-mail inexistentă (ex: greșeli de redactare)."
@@ -5304,9 +5289,6 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asigurați-vă că ați ${ addARecoveryMethod } astfel încât să puteți accesa contul chiar dacă uitați parola."
       ],
-      "Make sure you keep your recovery phrase somewhere private.": [
-        "Asigurați-vă că vă păstrați fraza de recuperare într-un loc privat."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Introduceți manual această informație în dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ switchButton }."
       ],
@@ -5428,9 +5410,6 @@
       ],
       "Paid for a monthly plan": [
         "Plătit pentru un plan lunar"
-      ],
-      "password reset": [
-        "resetare parolă"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Verificarea plății poate dura câteva minute."
@@ -5574,9 +5553,6 @@
       "Remove one of your calendars to join this one": [
         "Eliminați unul din calendare pentru a vă alătura acestuia"
       ],
-      "Reset password": [
-        "Resetare parolă"
-      ],
       "Revoke certificate ${ name }": [
         "Anulare certificat ${ name }"
       ],
@@ -5630,9 +5606,6 @@
       ],
       "Show original message": [
         "Afișare mesaj original"
-      ],
-      "Sign in": [
-        "Autentificare"
       ],
       "Signed up": [
         "Înscris"
@@ -5726,9 +5699,6 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Cea mai sigură cale de navigare, redare în flux și de a fi online."
-      ],
-      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
-        "Nu au existat modificări la adresa de e-mail sau la contul ${ BRAND_NAME }. Doar conectați-vă la ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Aceste fișiere de configurare vă permit să alegeți la care server ${ VPN_APP_NAME } vă conectați atunci când utilizați o aplicație VPN terță sau când configurați o conexiune VPN pe un ruter."
@@ -5846,6 +5816,9 @@
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "pentru a utiliza ${ toAppName } și toate serviciile ${ BRAND_NAME }"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Pentru a folosi ${ toAppName }, vă trebuie o adresă ${ MAIL_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pentru a funcționa corect, fiecare filtru trebuie să conțină cel puțin un nume și un script Sieve valid. Puteți să ${ link }."
@@ -5975,9 +5948,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
-      ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Ne-am mutat! Conectați-vă pe noul nostri domeniu: ${ link }."
       ],
       "Web URL": [
         "Adresa URL"
@@ -6155,8 +6125,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Conexiunea va rămâne activă chiar și după ce închideți navigatorul."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "Contul ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }. Pentru a utiliza ${ toAppName }, aveți nevoie de o adresă ${ MAIL_APP_NAME }."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "Contul ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
@@ -8358,6 +8328,26 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probare se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8427,26 +8417,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probare se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10900,9 +10870,6 @@
       ],
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
-      ],
-      "We have moved to ${ PROTON_ME_DOMAIN }": [
-        "Ne-am mutat la ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "Ce ați dori să importați?"

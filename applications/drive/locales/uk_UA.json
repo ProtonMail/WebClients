@@ -3402,9 +3402,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Якщо ви не знаєте пароль, налаштуйте фразу відновлення, щоб не втратити доступ до свого облікового запису та даних."
-      ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
@@ -3702,9 +3699,6 @@
       "Session timed out": [
         "Сеанс завершився"
       ],
-      "Set recovery phrase": [
-        "Встановити фразу відновлення"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Встановлення PGP дозволяє вам надсилати наскрізно зашифровані повідомлення користувачам за межами ${ BRAND_NAME }, які використовують PGP-сумісну службу."
       ],
@@ -3716,9 +3710,6 @@
       ],
       "Shared link failed to be loaded": [
         "Не вдалося завантажити спільне посилання"
-      ],
-      "Sign in": [
-        "Увійти"
       ],
       "Signature check will be ignored": [
         "Перевіркою підпису буде знехтувано"
@@ -3903,14 +3894,8 @@
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Ми переїхали! Будь ласка, увійдіть на нашому новому домені: ${ link }."
-      ],
       "Week": [
         "Тиждень"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "Ми переходимо на ${ PROTON_ME_DOMAIN }."
       ],
       "What do you want to do?": [
         "Що ви бажаєте зробити?"
@@ -3986,9 +3971,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "Ваша електронна адреса не зміниться. Але незабаром вам потрібно буде входити використовуючи ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
@@ -5769,9 +5751,6 @@
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
-      ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "Увійти використовуючи ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Вийти"
