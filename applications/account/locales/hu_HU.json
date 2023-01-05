@@ -463,7 +463,7 @@
         "További információk: ${ safeTitle }"
       ],
       "More info: Keyboard shortcuts": [
-        "Több információ: billentyűzetes rövidítések"
+        "Több információ: gyorsbillentyűk"
       ],
       "move emails to": [
         "áthelyezés ide:"
@@ -2796,9 +2796,6 @@
       "Calendar limit reached": [
         "Elérte a naptárak maximális számát"
       ],
-      "Can't check username, try again later": [
-        "Nem lehet ellenőrizni a felhasználónevet, próbálkozzon újra később"
-      ],
       "Checkout expired, please try again": [
         "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
       ],
@@ -4617,9 +4614,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Mielőtt elkezdhetne küldeni és fogadni e-maileket az új címével, létre kell hoznia titkosítási kulcsokat hozzá."
       ],
-      "Before you reset your password, download your recovery phrase.": [
-        "Mielőtt visszaállítja jelszavát, töltse le a helyreállítási kifejezést."
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "A Bitcoin tranzakciók visszaigazolása időbe telhet (akár 24 órába). Amint a visszaigazolás megtörténik, jóváírjuk a fiókján. A tranzakció megerősítését követően fizetheti a számláit a jóváírt összeggel."
       ],
@@ -4913,9 +4907,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
-      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "Ha valaha újra vissza kell állítania jelszavát, akkor ezt a kifejezést kell beírnia, hogy visszatérjen fiókjába, és feloldja adatait."
-      ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Ha saját domain névvel használja a ${ MAIL_APP_NAME }t, létrehozhat egy gyűjtő e-mail címet, amelyre minden olyan levél meg fog érkezni, amelyet nem létező címre küldenek (pl. elírások miatt)."
       ],
@@ -5107,11 +5098,8 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Feltétlenül ${ addARecoveryMethod }, hogy akkor is visszatérhessen a fiókjához, ha elfelejtené a jelszavát."
       ],
-      "Make sure you keep your recovery phrase somewhere private.": [
-        "Ügyeljen arra, hogy a helyreállítási kifejezést titokban tartsa."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Fiókjának beállításához kézileg írja be ezt a kódot a kétlépcsős hitelesítéshez használt eszközén. ${ switchButton }."
+        "Fiókjának beállításához írja be ezt a kódot a kétlépcsős hitelesítéshez használt eszközén. ${ switchButton }."
       ],
       "Member": [
         "Tag"
@@ -5230,9 +5218,6 @@
       ],
       "Paid for a monthly plan": [
         "Előfizetett a havidíjas csomagra"
-      ],
-      "password reset": [
-        "jelszó visszaállítás"
       ],
       "Payment can take a few minutes to fully verify.": [
         "A kifizetés ellenőrzése néhány percet is igénybe vehet."
@@ -5371,9 +5356,6 @@
       "Remove one of your calendars to join this one": [
         "Töröljön egy naptárat, hogy ehhez csatlakozhasson"
       ],
-      "Reset password": [
-        "Jelszó visszaállítása"
-      ],
       "Revoke certificate ${ name }": [
         "${ name } tanúsítvány visszavonása"
       ],
@@ -5427,9 +5409,6 @@
       ],
       "Show original message": [
         "Eredeti üzenet megjelenítése"
-      ],
-      "Sign in": [
-        "Bejelentkezés"
       ],
       "Signed up": [
         "Feliratkozott"
@@ -5514,9 +5493,6 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "A böngészés, videózás és online tevékenységek legbiztonságosabb módja."
-      ],
-      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
-        "E-mail címe és ${ BRAND_NAME } fiókja nem változott. Csak jelentkezzen be a ${ link } címen."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ezekkel a beállítási fájlokkal egy külső VPN alkalmazással csatlakozhat a ${ VPN_APP_NAME }-hez, vagy a routerén állíthatja be a kapcsolatot."
@@ -5752,9 +5728,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Költöztünk! Kérjük, lépjen be az új címen: ${ link }."
-      ],
       "Web URL": [
         "Weblap link"
       ],
@@ -5930,11 +5903,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Bejelentkezve marad, a böngésző bezárása után is."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "A ${ BRAND_NAME } fiókja ${ externalEmailAddress } címhez kapcsolódik. A ${ toAppName } használatához, egy ${ MAIL_APP_NAME } címre lesz szüksége."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva e-mailek nem fognak a fiókjába érkezni, a Drive megosztási linkjei blokkolva lesznek, és nem lesz képes új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
+        "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva az e-mailek nem fognak megérkezni a fiókjába, a Drive megosztások kikapcsolásra kerülnek, és nem lesz lehetősége új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
@@ -6467,7 +6437,7 @@
         "MIND"
       ],
       "Allow notifications by email": [
-        "Emailes értesítések engedélyezése"
+        "E-mailes értesítések engedélyezése"
       ],
       "Allow recovery by email": [
         "Helyreállítás engedélyezése e-mail címmel"
@@ -7484,16 +7454,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Az összes üzenet importálása a(z) ${ itemsToImportCount } címkéből és megcímkézni őket így: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Az összes üzenet importálása a(z) ${ itemsToImportCount } címkékből és megcímkézni őket így: ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Az összes üzenet importálása ${ itemsToImportCount } címkéből és megcímkézés így: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Az összes üzenet importálása ${ itemsToImportCount } címkéből és megcímkézés így: ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } mappából, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } mappákból, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összesen ${ itemsToImportCount } mappa van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összesen ${ itemsToImportCount } mappa van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } címkéből, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása innen: ${ selectedItemsToImportCount }, ${ itemsToImportCount } címkékből, és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összesen ${ itemsToImportCount } címke van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összesen ${ itemsToImportCount } címke van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8069,6 +8039,26 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -8138,26 +8128,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8769,6 +8739,10 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } további tárhely eléréshez, vagy szabadítson fel tárhelyet."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "A csomagja maximum ${ availableNumberOfMembers } további szervezeti felhasználót tesz lehetővé.",
+        "A csomagja maximum ${ availableNumberOfMembers } további szervezeti felhasználót tesz lehetővé."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "A csomag legfeljebb ${ humanReadableAvailableSpace } további tárhelyet tartalmaz."
@@ -9898,7 +9872,7 @@
       ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } felhasználói fiók létrehozása",
-        "${ selectedUserIds.length } felhasználói fiókok létrehozása"
+        "${ selectedUserIds.length } felhasználói fiók létrehozása"
       ],
       "Create multiple user accounts": [
         "Több felhasználói fiók létrehozása"
@@ -10066,8 +10040,8 @@
         "Külső PGP beállítások"
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
-        "${ failedUsers.length } felhasznlói fiók létrehozása sikertelen.",
-        "${ failedUsers.length } felhasznlói fiókok létrehozása sikertelen."
+        "${ failedUsers.length } felhasználói fiók létrehozása sikertelen.",
+        "${ failedUsers.length } felhasználói fiók létrehozása sikertelen."
       ],
       "Filters": [
         "Szűrők"
@@ -10399,7 +10373,7 @@
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
         "${ localSuccessfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
-        "${ localSuccessfullyCreatedUsers.length } felhasználói fiókok sikeresen létrehozva"
+        "${ localSuccessfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
@@ -10448,7 +10422,7 @@
         "Ellenőrzés"
       ],
       "Verify email address": [
-        "Erősítsd meg az email címed"
+        "E-mail cím megerősítése"
       ],
       "VPN apps": [
         "VPN alkalmazások"
@@ -10499,7 +10473,7 @@
         "A helyreállítási állapota"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Meghívást kaptál, hogy kipróbáld a ${ MAIL_APP_NAME } alkalmazást"
+        "Meghívás a ${ MAIL_APP_NAME } alkalmazás kipróbálására"
       ],
       "ZIP / postal code": [
         "Irányítószám"
@@ -10707,7 +10681,7 @@
         "A DKIM aláírás megfelelően működik."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
-        "A külső fiókja nagy eséllyel elérte a 24-órás sávszélesség limitét. A ${ BRAND_NAME } meg fogja próbálni folytatni az importálást amilyen gyorsan lehetséges."
+        "A külső fiókja nagy eséllyel elérte a 24-órás sávszélesség korlátját. A ${ BRAND_NAME } meg fogja próbálni folytatni az importálást amilyen hamar csak lehetséges."
       ]
     },
     "Tooltip automatically attach public key": {

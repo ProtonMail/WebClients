@@ -4861,9 +4861,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
-      "If you don’t know your password, set a recovery phrase to make sure you don’t lose access to your account and data.": [
-        "Hvis du ikke kender din adgangskode, skal du angive en gendannelsessætning for at sikre, at du ikke mister adgangen til din konto og dine data."
-      ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Hvis dit alias bliver solgt, lækket eller misbrugt, skal du blot deaktivere det for at stoppe med at modtage spam."
       ],
@@ -5229,17 +5226,11 @@
       "Set a recovery phrase": [
         "Indstil en gendannelsessætning"
       ],
-      "Set recovery phrase": [
-        "Opsæt gendannelsessætning"
-      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Opsætning af PGP giver dig mulighed for at sende end-to-end krypterede e-mails til en ikke-${ BRAND_NAME } bruger, der benytter en PGP-kompatibel tjeneste."
       ],
       "Show original message": [
         "Vis oprindelig besked"
-      ],
-      "Sign in": [
-        "Log ind"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin er en ${ BRAND_NAME }-tjeneste, og din ${ BRAND_NAME }-konto omfatter Skjul min e-mail-aliasser. Hvis du vil begynde at sløre din e-mailadresse, skal du gå til SimpleLogin og oprette dit første alias."
@@ -5418,6 +5409,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
       ],
@@ -5532,17 +5526,11 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Vi er flyttet! Log venligst ind på vores nye domæne: ${ link }."
-      ],
       "Web URL": [
         "Webadresse"
       ],
       "Week": [
         "Uge"
-      ],
-      "We’re moving to ${ PROTON_ME_DOMAIN }.": [
-        "Vi flytter til ${ PROTON_ME_DOMAIN }."
       ],
       "When do you want your message to be sent?": [
         "Hvornår skal din besked sendes?"
@@ -5677,9 +5665,6 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
-      ],
-      "Your email address will not change. But soon, you’ll need to sign in at ${ link }.": [
-        "Din e-mailadresse ændres ikke. Men snart skal du logge ind på ${ link }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
@@ -8366,9 +8351,6 @@
       ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
-      ],
-      "Sign in at ${ PROTON_ME_DOMAIN }": [
-        "Log ind på ${ PROTON_ME_DOMAIN }"
       ],
       "Sign out": [
         "Log ud"

@@ -2872,9 +2872,6 @@
       "Calendar limit reached": [
         "Dosažen limit kalendářů"
       ],
-      "Can't check username, try again later": [
-        "Nelze zkontrolovat uživatelské jméno, zkuste to znovu později"
-      ],
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
       ],
@@ -4855,9 +4852,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
       ],
-      "Before you reset your password, download your recovery phrase.": [
-        "Před obnovením hesla si stáhněte obnovovací frázi."
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Potvrzení Bitcoin transakcí může nějakou dobu trvat (až 24 hodin). Jakmile bude transakce potvrzena, kredity připíšeme na Váš účet. Po potvrzené transakci můžete fakturu uhradit kredity."
       ],
@@ -4995,9 +4989,6 @@
       ],
       "Download recovery file": [
         "Stáhnout soubor pro obnovení"
-      ],
-      "Download recovery phrase": [
-        "Stáhnout obnovovací frázi"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stáhněte si svou oblíbenou aplikaci ještě dnes a vezměte soukromí do svých rukou, ať jste kdekoli."
@@ -5160,12 +5151,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
-      ],
-      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
-        "Pokud své heslo neznáte, budete muset pro přístup k novému webu provést ${ boldPasswordReset }."
-      ],
-      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "Pokud budete někdy potřebovat znovu obnovit heslo, musíte zadat tuto frázi, abyste se dostali zpět do svého účtu a odemkli svá data."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Pokud máte vlastní doménu s ${ MAIL_APP_NAME }, můžete nastavit \"spádovou\" e-mailovou adresu, která bude dostávat zprávy odeslané do Vaší domény, ale na neplatnou e-mailovou adresu (např. kvůli překlepům)."
@@ -5365,9 +5350,6 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Ujistěte se, že jste ${ addARecoveryMethod }, abyste se mohli vrátit ke svému účtu, pokud zapomenete heslo."
       ],
-      "Make sure you keep your recovery phrase somewhere private.": [
-        "Ujistěte se, že uchováváte obnovovací frázi na soukromém místě."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Ručně zadejte tyto informace do zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
       ],
@@ -5490,9 +5472,6 @@
       ],
       "Paid for a monthly plan": [
         "Zaplaceno za měsíční tarif"
-      ],
-      "password reset": [
-        "obnovení hesla"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Než bude platba zcela ověřena, může to trvat i několik minut."
@@ -5638,9 +5617,6 @@
       "Remove one of your calendars to join this one": [
         "Odstraňte jeden ze svých kalendářů a připojte se k tomuto"
       ],
-      "Reset password": [
-        "Obnovit heslo"
-      ],
       "Revoke certificate ${ name }": [
         "Zrušit certifikát ${ name }"
       ],
@@ -5694,9 +5670,6 @@
       ],
       "Show original message": [
         "Zobrazit původní zprávu"
-      ],
-      "Sign in": [
-        "Přihlásit se"
       ],
       "Signed up": [
         "Zaregistrováno"
@@ -5793,9 +5766,6 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Nejbezpečnější způsob, jak procházet, streamovat a být online."
-      ],
-      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
-        "Na vaší e-mailové adrese ani ve vašem účtu ${ BRAND_NAME } nedošlo k žádným změnám. Stačí se přihlásit na ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Tyto konfigurační soubory vám umožní vybrat, ke kterému ${ VPN_APP_NAME } serveru se připojíte, pokud používáte alternativní VPN aplikace nebo nastavujete VPN na routeru."
@@ -5913,6 +5883,9 @@
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "pro používání ${ toAppName } a všech služeb ${ BRAND_NAME }"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Chcete-li použít ${ toAppName }, potřebujete adresu ${ MAIL_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pro správnou funkci musí každý filtr obsahovat alespoň název a platný skript Sieve. Můžete ${ link }."
@@ -6042,9 +6015,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
-      ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Přestěhovali jsme se! Přihlaste se prosím na naší nové doméně: ${ link }."
       ],
       "Web URL": [
         "Adresa URL"
@@ -6223,8 +6193,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Zůstanete přihlášeni i po uzavření prohlížeče."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "Váš účet ${ BRAND_NAME } je spojen s ${ externalEmailAddress }. Chcete-li použít ${ toAppName }, potřebujete ${ MAIL_APP_NAME } adresu."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "Váš účet ${ BRAND_NAME } je přidružen k adrese ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
@@ -8452,6 +8422,26 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -8521,26 +8511,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -11027,9 +10997,6 @@
       ],
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
-      ],
-      "We have moved to ${ PROTON_ME_DOMAIN }": [
-        "Přesunuli jsme se na ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"

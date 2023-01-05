@@ -4,6 +4,11 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "Niet gelabeld"
+      ]
+    },
     "Access level": {
       "Full view": [
         "Volledige weergave"
@@ -1207,6 +1212,12 @@
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "U hebt het maximale aantal persoonlijke agenda's bereikt dat u binnen uw abonnement kunt aanmaken."
+      ],
+      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "U heeft het maximaal aantal persoonlijke agenda's die u kunt gebruiken bereikt. Om openstaande agenda-uitnodigingen te accepteren, moet u sommige van uw agenda's verwijderen."
+      ],
+      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "U heeft het maximaal aantal gedeelde agenda's die u kunt gebruiken bereikt. Om openstaande agenda-uitnodigingen te accepteren, moet u sommige van uw agenda's verwijderen."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "U hebt het maximum van ${ MAX_SUBSCRIBED_CALENDARS } geabonneerde agenda bereikt.",
@@ -2626,8 +2637,14 @@
       "${ name } deletion failed": [
         "Verwijdering van ${ name } is mislukt"
       ],
+      "${ name } failed to move to spam list": [
+        "${ name } niet verplaatst naar spamlijst"
+      ],
       "${ name } failed to move to the not-spam list": [
         "${ name } kom niet verplaatst worden naar toegestane lijst"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } is niet verplaatst naar de blokkeringslijst"
       ],
       "${ name } moved to not spam list": [
         "${ name } verplaatst naar niet-Spamlijst"
@@ -2737,14 +2754,23 @@
       "${ name } deletion failed": [
         "Verwijdering van ${ name } is mislukt"
       ],
+      "${ name } failed to move to spam list": [
+        "${ name } niet verplaatst naar spamlijst"
+      ],
       "${ name } failed to move to the not-spam list": [
         "${ name } kom niet verplaatst worden naar toegestane lijst"
+      ],
+      "${ name } failed to move to your block list": [
+        "${ name } is niet verplaatst naar de blokkeringslijst"
       ],
       "${ name } moved to not spam list": [
         "${ name } verplaatst naar niet-Spamlijst"
       ],
       "${ name } moved to spam list": [
         "${ name } verplaatst naar spamlijst"
+      ],
+      "${ name } moved to your block list": [
+        "${ name } verplaatst naar blokkeringslijst"
       ],
       "${ name } successfully deleted": [
         "${ name } succesvol verwijderd"
@@ -2825,9 +2851,6 @@
       ],
       "Calendar limit reached": [
         "Agendalimiet bereikt"
-      ],
-      "Can't check username, try again later": [
-        "Kan gebruikersnaam niet controleren, probeer het later opnieuw"
       ],
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
@@ -3618,7 +3641,33 @@
         "Sleutel verwijderen"
       ]
     },
+    "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Schakel 2FA via een beveiligingssleutel uit voordat u TOTP uitschakelt"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Er is iets fout gegaan bij het registreren van uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
     "fido2: Info": {
+      "2FA via security key disabled": [
+        "2FA via beveiligingssleutel uitgeschakeld"
+      ],
+      "Add a name to identify your security key with.": [
+        "Voeg een naam to om uw beveiligingssleutel mee te identificeren."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Voeg een beveiligingssleutel in die gekoppeld is aan uw ${ BRAND_NAME }-account."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Steek uw beveiligingssleutel in de USB-poort van uw apparaat."
+      ],
       "Security key": [
         "Beveiligingssleutel"
       ],
@@ -3627,6 +3676,18 @@
       ],
       "Security key updated": [
         "Veiligheidssleutel bijgewerkt"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Dit zal alle beveiligingssleutels voor uw account verwijderen."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Om 2FA via een beveiligingssleutel in te schakelen, moet u 2FA via een authenticatorapp activeren"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Verifieer uw identiteit met een fysieke U2F of FIDO2 beveiligingssleutel"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Uw tweestapsverificatiesleutel is klaar voor gebruik."
       ]
     },
     "fido2: Label": {
@@ -3641,8 +3702,20 @@
       "Delete security key?": [
         "Beveiligingssleutel verwijderen?"
       ],
+      "Disable 2FA via security key?": [
+        "2FA via een beveiligingssleutel uitschakelen?"
+      ],
+      "Name your security key": [
+        "Geef uw beveiligingssleutel een naam"
+      ],
+      "Register your security key": [
+        "Registreer uw beveiligingssleutel"
+      ],
       "Registered security keys": [
         "Geregistreerde beveiligingssleutels"
+      ],
+      "Security key registered": [
+        "Veiligheidssleutel geregistreerd"
       ]
     },
     "file size format": {
@@ -4665,9 +4738,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
       ],
-      "Before you reset your password, download your recovery phrase.": [
-        "Download uw herstelzin voordat u uw wachtwoord opnieuw instelt."
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Het kan even duren voordat Bitcoin-transacties worden bevestigd (tot 24 uur), waarna wij de credits aan uw account zullen toevoegen. Na de transactiebevestiging kunt u uw factuur met de credits betalen."
       ],
@@ -4801,9 +4871,6 @@
       ],
       "Download recovery file": [
         "Herstelbestand downloaden"
-      ],
-      "Download recovery phrase": [
-        "Download de herstelzin"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
@@ -4966,12 +5033,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
-      ],
-      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
-        "Als u uw wachtwoord niet meer weet, moet u een ${ boldPasswordReset } uitvoeren om toegang te krijgen tot de nieuwe website."
-      ],
-      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "Indien u ooit uw wachtwoord opnieuw zou moeten instellen, dan zult u deze zin moeten ingeven om terug toegang te krijgen tot uw account en uw data."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Als u een eigen domein heeft met ${ MAIL_APP_NAME }, kunt u een catch-all e-mailadres instellen dat berichten zal ontvangen die naar uw domein worden verzonden, maar op een ongeldig e-mailadres (bijv. door typo's)."
@@ -5167,9 +5228,6 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Zorg ervoor dat u ${ addARecoveryMethod }, zodat u terug toegang kunt krijgen tot uw account wanneer u uw wachtwoord vergeten bent."
       ],
-      "Make sure you keep your recovery phrase somewhere private.": [
-        "Bewaar uw herstelzin op een private veilige plaats."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ switchButton }."
       ],
@@ -5290,9 +5348,6 @@
       ],
       "Paid for a monthly plan": [
         "Betaald voor een maandelijks abonnement"
-      ],
-      "password reset": [
-        "wachtwoordreset"
       ],
       "Payment can take a few minutes to fully verify.": [
         "De betaling bevestigen kan een paar minuten duren."
@@ -5434,9 +5489,6 @@
       "Remove one of your calendars to join this one": [
         "Verwijderen één van uw agenda's om lid te worden van deze"
       ],
-      "Reset password": [
-        "Wachtwoord resetten"
-      ],
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
       ],
@@ -5490,9 +5542,6 @@
       ],
       "Show original message": [
         "Toon origineel bericht"
-      ],
-      "Sign in": [
-        "Inloggen"
       ],
       "Signed up": [
         "Geregistreerd"
@@ -5583,9 +5632,6 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "De veiligste manier om te browsen, streamen en online te zijn."
-      ],
-      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
-        "Er waren geen wijzigingen aan uw e-mailadres of uw ${ BRAND_NAME }-account. Log in op ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Deze configuratiebestanden laten u kiezen met welke ${ VPN_APP_NAME }-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
@@ -5703,6 +5749,9 @@
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "om ${ toAppName } en alle ${ BRAND_NAME }-diensten"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Om ${ toAppName } te gebruiken, heeft u een ${ MAIL_APP_NAME }-adres nodig."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Om goed te werken, moet elk filter minstens een naam en een geldig Sieve-script bevatten. U kunt ${ link }."
@@ -5833,9 +5882,6 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "We zijn verhuisd! Meld u aan op ons nieuw domein: ${ link }."
-      ],
       "Web URL": [
         "Website (URL)"
       ],
@@ -5913,6 +5959,9 @@
       ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
+      ],
+      "You can now access and manage the account as an administrator.": [
+        "U heeft nu toegang tot het account als administrator en kan deze beheren."
       ],
       "You can now close this window.": [
         "U mag dit venster nu sluiten."
@@ -6008,8 +6057,8 @@
       "You'll stay signed in even after you close the browser.": [
         "U zult ingelogd blijven, zelfs als u de browser sluit."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "Uw ${ BRAND_NAME }-account is gekoppeld aan ${ externalEmailAddress }. Maak een ${ MAIL_APP_NAME }-adres aan om ${ toAppName } te gebruiken."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "Uw ${ BRAND_NAME }-account wordt geassocieerd met ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
@@ -8185,6 +8234,26 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium ${ BRAND_NAME }-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium ${ BRAND_NAME }-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -8254,26 +8323,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium ${ BRAND_NAME }-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium ${ BRAND_NAME }-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10831,6 +10880,9 @@
       "Signed in successfully!": [
         "Succesvol ingelogd!"
       ],
+      "Signed in to member account": [
+        "Ingelogd op een gebruikersaccount"
+      ],
       "SMTP tokens": [
         "SMTP-tokens"
       ],
@@ -10934,9 +10986,6 @@
       ],
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
-      ],
-      "We have moved to ${ PROTON_ME_DOMAIN }": [
-        "We zijn verhuisd naar ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "Wat zou u willen importeren?"
@@ -11130,6 +11179,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Stelt de volgende voet in voor de e-mails die u verstuurt: ${ signature } De link verwijst naar uw doorverwijslink. De voet verschijnt onder uw handtekening. U kan uw handtekening op elk moment personaliseren via de instellingen."
+      ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "Toon de afbeelding van elke afzender in deze berichtlijst. De afzenders initialen zullen worden getoond als er geen foto beschikbaar is."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Ondertekeningen die met deze sleutel gemaakt zijn worden als ongeldig behandeld en deze sleutel kan niet gebruikt worden voor het versleutelen"

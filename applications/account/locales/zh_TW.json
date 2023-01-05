@@ -950,6 +950,9 @@
       "Disabled": [
         "已停用"
       ],
+      "External": [
+        "外部"
+      ],
       "Missing keys": [
         "遺失金鑰"
       ],
@@ -1022,6 +1025,11 @@
     "Badge for user sessions table": {
       "Current session": [
         "目前工作階段"
+      ]
+    },
+    "Billing cycle": {
+      "Payable every month": [
+        "按月付款"
       ]
     },
     "Billing cycle option": {
@@ -2760,9 +2768,6 @@
       "Calendar limit reached": [
         "行事曆數量已達上限"
       ],
-      "Can't check username, try again later": [
-        "無法檢查使用者名稱，請稍後再試"
-      ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
       ],
@@ -3051,8 +3056,14 @@
       "The label name is too long. Please choose a different name.": [
         "標籤名稱太長。請選擇其它名稱。"
       ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "每次儲值的最低金額為 ${ price }"
+      ],
       "The minimum amount that can be donated is ${ price }": [
         "每筆捐款的最低金額為 ${ price }"
+      ],
+      "The minimum payment we accept is ${ price }": [
+        "付款的最低金額為 ${ price }"
       ],
       "The organization key must be activated first": [
         "必須先啟用組織機構的金鑰"
@@ -3454,6 +3465,9 @@
       ],
       "Loading events": [
         "載入行程中"
+      ],
+      "Some of your events could not be exported.": [
+        "您的部份事件無法匯出。"
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "您現在可儲存已成功匯出行程的 ICS 檔案。"
@@ -4485,9 +4499,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需建立加密金鑰，才可用來傳送和接收電郵。"
       ],
-      "Before you reset your password, download your recovery phrase.": [
-        "在重設密碼字元前，先下載您的恢復短語。"
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "比特幣交易可能需時確認 (可能長達 24 小時)。一俟確認，儲值將撥入您的帳號。在交易確認後，您即可使用儲值餘額支付您的帳單。"
       ],
@@ -4619,9 +4630,6 @@
       ],
       "Download recovery file": [
         "下載帳號救援檔案"
-      ],
-      "Download recovery phrase": [
-        "下載復原短語"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "現在就下載您最愛的應用程式，隱私隨身帶著走。"
@@ -4781,9 +4789,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
-      ],
-      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "如要重設密碼字元，您需輸入此恢復短語，才能進入帳號和解除資料鎖定。"
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "若您在 ${ MAIL_APP_NAME } 自訂了一個網域，您可以啟用「全部擷取電郵位址」，以接收任何寄到您的網域但收件人不存在(可能是因為拼寫錯誤)的郵件。"
@@ -4977,8 +4982,8 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "請確保 ${ addARecoveryMethod } ，如果忘記密碼您還能恢復存取帳號。"
       ],
-      "Make sure you keep your recovery phrase somewhere private.": [
-        "請記錄並保管您的恢復短語。"
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。${ switchButton }。"
       ],
       "Member": [
         "成員"
@@ -5055,6 +5060,9 @@
       "of": [
         "/"
       ],
+      "One account. All ${ BRAND_NAME } services.": [
+        "單一帳號用於所有 ${ BRAND_NAME } 服務。"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "當您使用 PGP 傳送郵件給非 ${ BRAND_NAME } 收件人時，才需變更下列設定。"
       ],
@@ -5093,9 +5101,6 @@
       ],
       "Paid for a monthly plan": [
         "以每月方案付費"
-      ],
-      "password reset": [
-        "密碼重設"
       ],
       "Payment can take a few minutes to fully verify.": [
         "付款或需時數分鐘才驗證完成。"
@@ -5196,6 +5201,9 @@
       "read our two-factor authentication guide first": [
         "先閱讀我們的兩步驟驗證指南"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "建議僅用於受信任的裝置。 ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "已下載帳號救援金鑰"
       ],
@@ -5228,9 +5236,6 @@
       ],
       "Remove one of your calendars to join this one": [
         "移除其中一個行事曆以加入目前這個"
-      ],
-      "Reset password": [
-        "重設密碼"
       ],
       "Revoke certificate ${ name }": [
         "撤銷憑證 ${ name }"
@@ -5285,9 +5290,6 @@
       ],
       "Show original message": [
         "顯示原始訊息"
-      ],
-      "Sign in": [
-        "登入"
       ],
       "Signed up": [
         "註冊"
@@ -5354,6 +5356,9 @@
       ],
       "The following addresses are unavailable.": [
         "以下的電子郵件地址不可用."
+      ],
+      "The following addresses were not created.": [
+        "以下的電子郵件地址還未建立。"
       ],
       "The format of your CSV file is incorrect.": [
         "您的 CSV 檔案格式不正確。"
@@ -5604,9 +5609,6 @@
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "我們搬家啦！請登入新網域： ${ link }。"
-      ],
       "Web URL": [
         "網頁 URL"
       ],
@@ -5777,9 +5779,6 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使關閉瀏覽器，您仍會維持登入狀態。"
-      ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "您的 ${ BRAND_NAME } 帳號目前已設定關聯至 ${ externalEmailAddress }。 若要使用 ${ toAppName }，您需要一組 ${ MAIL_APP_NAME } 電郵位址。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
@@ -6936,6 +6935,12 @@
       "Signature": [
         "簽名"
       ],
+      "SMTP token": [
+        "SMTP 權杖"
+      ],
+      "SMTP username": [
+        "SMTP 使用者名稱"
+      ],
       "Spam": [
         "垃圾郵件"
       ],
@@ -6995,6 +7000,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "收件者：${ PMEmailAddress }"
+      ],
+      "Token name": [
+        "權杖名稱"
       ],
       "Two-password mode": [
         "雙重密碼模式"
@@ -7751,6 +7759,17 @@
     "new_plans: heading": {
       "Support": [
         "支援"
+      ],
+      "Team management": [
+        "團隊管理"
+      ]
+    },
+    "new_plans: Info": {
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
       ]
     },
     "new_plans: info": {
@@ -7803,14 +7822,6 @@
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
-    "new_plans: Info": {
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -7854,6 +7865,9 @@
       ],
       "Start exploring the ${ BRAND_NAME } universe": [
         "開始探索 ${ BRAND_NAME } 世界"
+      ],
+      "Switch plans?": [
+        "切換方案？"
       ]
     },
     "new_plans: tooltip": {
@@ -7923,6 +7937,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } 已建立"
+      ],
+      "A disabled address cannot be default": [
+        "已停用的電郵位址不能成為預設"
+      ],
+      "An external address cannot be default": [
+        "外部的電郵位址不能成為預設"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "指紋為 ${ fp } 的金鑰已刪除。"
@@ -8259,6 +8279,15 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } 點擊取得更多儲存空間；或移除一些分配儲存以釋出可用空間。"
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more addresses.": [
+        "您的方案包含多達 ${ availableAddresses } 組電子郵件位址。"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational users.": [
+        "您的方案包含多達 ${ availableNumberOfMembers } 位單位組織使用者。"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN accounts.": [
+        "您的方案包含多達 ${ availableVPNAccess } 個 VPN 帳號。"
       ]
     },
     "OS compatibility": {
@@ -8376,6 +8405,9 @@
       ],
       "Postal code": [
         "郵遞區號"
+      ],
+      "Printer": [
+        "印表機"
       ],
       "Search": [
         "搜尋"
@@ -8844,6 +8876,11 @@
         "極速 VPN 裝載多達 ${ maxVpn } 臺裝置"
       ]
     },
+    "Subscription price": {
+      "For": [
+        "為"
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "省下"
@@ -8852,6 +8889,9 @@
     "Subscription status": {
       "Active": [
         "使用中"
+      ],
+      "Upcoming": [
+        "即將到來"
       ]
     },
     "Subtitle for trial plan": {
@@ -8988,6 +9028,9 @@
       ],
       "Sessions revoked": [
         "作業階段已撤銷"
+      ],
+      "SMTP token deleted": [
+        "SMTP 權杖已刪除"
       ],
       "SPF value copied to clipboard": [
         "SFP 字串已複製到剪貼簿"
@@ -9366,6 +9409,9 @@
       "Couldn’t create accounts": [
         "無法建立帳號"
       ],
+      "Create ${ selectedUserIds.length } users": [
+        "建立 ${ selectedUserIds.length } 使用者"
+      ],
       "Create multiple user accounts": [
         "新增多個使用者帳號"
       ],
@@ -9539,6 +9585,9 @@
       ],
       "External PGP settings": [
         "外部 PGP 設定"
+      ],
+      "Failed to create ${ failedUsers.length } user accounts.": [
+        "建立 ${ failedUsers.length } 使用者帳號失敗。"
       ],
       "Filters": [
         "篩選器"
@@ -9951,9 +10000,6 @@
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
       ],
-      "We have moved to ${ PROTON_ME_DOMAIN }": [
-        "我們已搬家至 ${ PROTON_ME_DOMAIN }"
-      ],
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
       ],
@@ -10174,6 +10220,9 @@
       "This key is encrypted with an old password": [
         "此金鑰以舊密碼加密"
       ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "此金鑰用於 ${ MAIL_APP_NAME } 以加密您的聯絡人資訊"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我們偵測到您的 DNS 配置有問題。請確保您的 DNS 記錄符合下列指示。如果問題持續，我們將需要關閉 DKIM 簽章。"
       ],
@@ -10191,6 +10240,9 @@
       ],
       "You have locally decrypted this key": [
         "您已在本機解密此金鑰"
+      ],
+      "Your ${ MAIL_APP_NAME } inbox is almost full": [
+        "您的 ${ MAIL_APP_NAME } 收件匣快滿了"
       ],
       "Your DKIM signing is working.": [
         "您的 DKIM 簽章運作正常。"

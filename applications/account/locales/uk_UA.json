@@ -2872,9 +2872,6 @@
       "Calendar limit reached": [
         "Досягнуто ліміту календарів"
       ],
-      "Can't check username, try again later": [
-        "Не вдається перевірити ім'я користувача. Спробуйте ще раз пізніше"
-      ],
       "Checkout expired, please try again": [
         "Час оформлення минув, повторіть спробу"
       ],
@@ -4860,9 +4857,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
       ],
-      "Before you reset your password, download your recovery phrase.": [
-        "Перед скиданням пароля, завантажте фразу відновлення."
-      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Підтвердження транзакцій з Bitcoin можуть тривати деякий час (до 24 годин). Після підтвердження ми додамо кошти до вашого облікового запису. Після підтвердження транзакції ви можете сплатити свій рахунок, використавши ці кошти."
       ],
@@ -5000,9 +4994,6 @@
       ],
       "Download recovery file": [
         "Завантажити файл відновлення"
-      ],
-      "Download recovery phrase": [
-        "Завантажити фразу відновлення"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
@@ -5165,12 +5156,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
-      ],
-      "If you don’t know your password, you’ll need to do a ${ boldPasswordReset } to access the new site.": [
-        "Якщо ви не знаєте свій пароль, вам потрібно буде ${ boldPasswordReset }, щоб отримати доступ до нового сайту."
-      ],
-      "If you ever need to reset your password again, you’ll need to enter this phrase to get back into your account and unlock your data.": [
-        "Якщо вам коли-небудь знову знадобиться скинути пароль, вам потрібно буде ввести цю фразу, щоб знову ввійти до свого облікового запису та розблокувати свої дані."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Якщо у вас є власний домен з ${ MAIL_APP_NAME }, ви можете налаштувати електронну адресу catch-all для отримання повідомлень, надісланих на ваш домен, але з неправильною адресою (наприклад, через помилки)."
@@ -5370,9 +5355,6 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Обов'язково ${ addARecoveryMethod }, щоб мати можливість отримати доступ до свого облікового запису в разі втрати пароля."
       ],
-      "Make sure you keep your recovery phrase somewhere private.": [
-        "Переконайтеся, що ви зберігаєте свою фразу відновлення в захищеному місці."
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ switchButton }."
       ],
@@ -5495,9 +5477,6 @@
       ],
       "Paid for a monthly plan": [
         "Передплачено місячний тарифний план"
-      ],
-      "password reset": [
-        "скинути пароль"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Повна перевірка оплати може тривати кілька хвилин."
@@ -5643,9 +5622,6 @@
       "Remove one of your calendars to join this one": [
         "Вилучіть один з ваших календарів, щоб приєднатися до цього"
       ],
-      "Reset password": [
-        "Скинути пароль"
-      ],
       "Revoke certificate ${ name }": [
         "Відкликати сертифікат ${ name }"
       ],
@@ -5699,9 +5675,6 @@
       ],
       "Show original message": [
         "Показати оригінальне повідомлення"
-      ],
-      "Sign in": [
-        "Увійти"
       ],
       "Signed up": [
         "Зареєстровано"
@@ -5798,9 +5771,6 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Найзахищеніший спосіб переглядати, передавати та бути онлайн."
-      ],
-      "There have been no changes to your email address or your ${ BRAND_NAME } Account. Just sign in over at ${ link }.": [
-        "У вашій адресі електронної пошти або в обліковому записі ${ BRAND_NAME } не відбулося жодних змін. Просто ввійдіть за посиланням ${ link }."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ці файли конфігурації дають змогу обрати сервер ${ VPN_APP_NAME }, з яким ви з'єднуєтесь під час користування стороннім застосунком VPN або налаштованим VPN-з'єднанням маршрутизатора."
@@ -5918,6 +5888,9 @@
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "щоб користуватися ${ toAppName } і всіма службами ${ BRAND_NAME }"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Щоб користуватися ${ toAppName }, вам потрібна адреса ${ MAIL_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Для належної роботи кожен фільтр повинен містити принаймні назву й дійсний скрипт Sieve. Ви можете ${ link }."
@@ -6047,9 +6020,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
-      ],
-      "We've moved! Please sign in at our new domain: ${ link }.": [
-        "Ми переїхали! Будь ласка, увійдіть на нашому новому домені: ${ link }."
       ],
       "Web URL": [
         "URL-адреса"
@@ -6228,8 +6198,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Сеанс буде активним навіть після закриття браузера."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Щоб користуватися ${ toAppName }, вам потрібна адреса ${ MAIL_APP_NAME }."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. За 28 днів електронні листи перестануть надходити до вашої поштової скриньки, посилання на спільний доступ до Drive будуть заблоковані, і ви не зможете завантажувати нові файли. Щоб відновити звичайну роботу, будь ласка, сплатіть несплачені рахунки."
@@ -8457,6 +8427,26 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -8526,26 +8516,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -11032,9 +11002,6 @@
       ],
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
-      ],
-      "We have moved to ${ PROTON_ME_DOMAIN }": [
-        "Ми перейшли на ${ PROTON_ME_DOMAIN }"
       ],
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"
