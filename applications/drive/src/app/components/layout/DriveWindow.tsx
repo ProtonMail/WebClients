@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import {
     CalendarDrawerAppButton,
@@ -22,9 +21,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
-import UploadSidebarButton from '../sections/Drive/UploadButton';
-import ShareFileSidebarButton from '../sections/SharedLinks/ShareFileSidebarButton';
-import EmptyTrashSidebarButton from '../sections/Trash/EmptyTrashSidebarButton';
+import UploadButton from '../sections/Drive/UploadButton';
 import { DriveHeaderPrivate } from './DriveHeader';
 import DriveSidebar from './DriveSidebar/DriveSidebar';
 import { getDriveDrawerPermissions } from './drawerPermissions';
@@ -34,7 +31,6 @@ interface Props {
 }
 
 const DriveWindow = ({ children }: Props) => {
-    const location = useLocation();
     const [user] = useUser();
     const { state: expanded, toggle: toggleExpanded } = useToggle();
 
@@ -60,22 +56,8 @@ const DriveWindow = ({ children }: Props) => {
 
     const top = <TopBanners>{fileRecoveryBanner}</TopBanners>;
 
-    let PrimaryButton = UploadSidebarButton;
-    if (location.pathname === '/trash') {
-        PrimaryButton = EmptyTrashSidebarButton;
-    } else if (location.pathname === '/shared-urls') {
-        PrimaryButton = ShareFileSidebarButton;
-    }
-
     const logo = <MainLogo to="/" />;
-    const header = (
-        <DriveHeaderPrivate
-            logo={logo}
-            floatingPrimary={PrimaryButton && <PrimaryButton mobileVersion />}
-            isHeaderExpanded={expanded}
-            toggleHeaderExpanded={toggleExpanded}
-        />
-    );
+    const header = <DriveHeaderPrivate logo={logo} isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
 
     const permissions = getDriveDrawerPermissions({ user, drawerFeature });
     const drawerSidebarButtons = [
@@ -86,7 +68,7 @@ const DriveWindow = ({ children }: Props) => {
     const sidebar = (
         <DriveSidebar
             logo={logo}
-            primary={PrimaryButton && <PrimaryButton />}
+            primary={<UploadButton className="no-mobile" />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />
