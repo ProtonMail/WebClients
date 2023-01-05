@@ -41,8 +41,9 @@ describe('CryptoProxy', () => {
         // we don't care about returned value
         await CryptoProxy.generateKey({ userIDs: [], date: undefined }); // explicitly passing undefined should not overwrite the server time
         updateServerTime(now); // restore current time
-        // the proxy is expected to pass the server time at each function call
-        expect(passedDate).to.deep.equal(zero);
+        // the proxy is expected to pass the server time at each function call.
+        // `generateKey` also applies an offset to account for time skew across servers.
+        expect(passedDate).to.be.lessThan(zero);
 
         await CryptoProxy.releaseEndpoint();
     });

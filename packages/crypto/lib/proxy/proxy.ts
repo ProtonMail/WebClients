@@ -1,4 +1,4 @@
-import { VERIFICATION_STATUS } from 'pmcrypto-v7/lib/constants';
+import { DEFAULT_OFFSET, VERIFICATION_STATUS } from 'pmcrypto-v7/lib/constants';
 
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
@@ -132,7 +132,8 @@ export const CryptoProxy: CryptoProxyInterface = {
 
     importPrivateKey: async (opts) => assertNotNull(endpoint).importPrivateKey(opts),
     importPublicKey: async (opts) => assertNotNull(endpoint).importPublicKey(opts),
-    generateKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).generateKey({ ...opts, date }),
+    generateKey: async ({ date = new Date(+serverTime() + DEFAULT_OFFSET), ...opts }) =>
+        assertNotNull(endpoint).generateKey({ ...opts, date }),
     reformatKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).reformatKey({ ...opts, date }),
     exportPublicKey: async (opts) => assertNotNull(endpoint).exportPublicKey(opts),
     exportPrivateKey: async (opts) => assertNotNull(endpoint).exportPrivateKey(opts),
