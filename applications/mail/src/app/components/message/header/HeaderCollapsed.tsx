@@ -9,7 +9,6 @@ import {
     hasAttachments,
     isDraft,
     isExpiring,
-    isOutbox,
     isScheduled,
 } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
@@ -60,7 +59,7 @@ const HeaderCollapsed = ({
     };
 
     const isDraftMessage = isDraft(message.data) && !message.draftFlags?.sending;
-    const isOutboxMessage = isOutbox(message.data) || message.draftFlags?.sending;
+    const isOutboxMessage = message.draftFlags?.sending;
     const isScheduledMessage = isScheduled(message.data);
     const isExpiringMessage = isExpiring(message.data);
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
