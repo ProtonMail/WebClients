@@ -2,7 +2,7 @@ import { ReactNode, createContext, useContext } from 'react';
 
 import { MESSAGE_ACTIONS } from '../constants';
 import { mailtoParser } from '../helpers/url';
-import { OnCompose } from '../hooks/composer/useCompose';
+import { ComposeTypes, OnCompose } from '../hooks/composer/useCompose';
 
 const ComposeProviderContext = createContext<OnCompose>(null as any);
 
@@ -15,7 +15,7 @@ export const useOnMailTo = () => {
 
     return (src: string) => {
         const referenceMessage = mailtoParser(src);
-        onCompose({ action: MESSAGE_ACTIONS.NEW, referenceMessage });
+        onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW, referenceMessage });
     };
 };
 

@@ -1,14 +1,17 @@
 import { checkContrast } from '@proton/shared/lib/helpers/dom';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 
 import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
+import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
-import { findSender } from '../addresses';
 import { parseInDiv } from '../dom';
+import { findSender } from '../message/messageRecipients';
 import { toText } from '../parserHtml';
 import { textToHtml } from '../textToHtml';
+import { locateBlockquote } from './messageBlockquote';
+import { generateBlockquote } from './messageDraft';
 
 export const getPlainTextContent = (message: PartialMessageState) => {
     return message.messageDocument?.plainText || '';
@@ -23,7 +26,7 @@ export const getDocumentContent = (document: Element | undefined) => {
  * Get current processed message document html content
  */
 export const getContent = (message: PartialMessageState) => {
-    if (isPlainText(message.data)) {
+    if (testIsPlainText(message.data)) {
         return getPlainTextContent(message);
     }
 
@@ -52,7 +55,7 @@ export const setDocumentContent = (document: Element | undefined, content: strin
  * Set current processed message document html
  */
 export const setContent = (message: MessageState, content: string) => {
-    if (isPlainText(message.data)) {
+    if (testIsPlainText(message.data)) {
         setPlainTextContent(message, content);
     } else {
         const document = setDocumentContent(message.messageDocument?.document, content);
@@ -77,7 +80,7 @@ export const exportPlainText = (content: string) => {
  * the html body to plaintext if downconvert is set. If downconvert is disabled it will return false.
  */
 export const getPlainText = (message: MessageState, downconvert: boolean) => {
-    if (isPlainText(message.data)) {
+    if (testIsPlainText(message.data)) {
         return getPlainTextContent(message);
     }
 
@@ -139,4 +142,44 @@ export const canSupportDarkStyle = (iframe: HTMLIFrameElement | null) => {
     const contrastResult = checkContrast(container, window);
 
     return contrastResult;
+};
+
+export const getContentWithoutBlockquotes = (
+    message: MessageState,
+    referenceMessage: MessageState,
+    mailSettings: MailSettings,
+    userSettings: UserSettings,
+    addresses: Address[],
+    action: MESSAGE_ACTIONS
+) => {
+    if (testIsPlainText(message.data)) {
+        const blockquotes = generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses, action);
+        const plainBlockquotes = toText(blockquotes);
+
+        return message.messageDocument?.plainText?.replace(plainBlockquotes, '');
+    }
+
+    const [contentBeforeBlockquotes] = locateBlockquote(message.messageDocument?.document);
+
+    return contentBeforeBlockquotes;
+};
+
+export const getContentWithBlockquotes = (
+    content: string,
+    isPlainText: boolean,
+    referenceMessage: MessageState,
+    mailSettings: MailSettings,
+    userSettings: UserSettings,
+    addresses: Address[],
+    action: MESSAGE_ACTIONS
+) => {
+    const blockquotes = generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses, action);
+
+    if (isPlainText) {
+        const plainBlockquotes = toText(blockquotes);
+
+        return `${content}${plainBlockquotes}`;
+    } else {
+        return `${content}${blockquotes.toString()}`;
+    }
 };

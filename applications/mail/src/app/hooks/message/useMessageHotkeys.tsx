@@ -16,6 +16,7 @@ import { Element } from '../../models/element';
 import { MARK_AS_STATUS, useMarkAs } from '../actions/useMarkAs';
 import { useMoveToFolder } from '../actions/useMoveToFolder';
 import { useStar } from '../actions/useStar';
+import { ComposeTypes } from '../composer/useCompose';
 
 const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -131,7 +132,7 @@ export const useMessageHotkeys = (
                 if (draft) {
                     e.stopPropagation();
                     e.preventDefault();
-                    onCompose({ existingDraft: message, fromUndo: false });
+                    onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
                 }
             },
         ],
@@ -171,6 +172,7 @@ export const useMessageHotkeys = (
                     e.preventDefault();
                     e.stopPropagation();
                     onCompose({
+                        type: ComposeTypes.newMessage,
                         action: MESSAGE_ACTIONS.REPLY,
                         referenceMessage: message,
                     });
@@ -184,6 +186,7 @@ export const useMessageHotkeys = (
                     e.preventDefault();
                     e.stopPropagation();
                     onCompose({
+                        type: ComposeTypes.newMessage,
                         action: MESSAGE_ACTIONS.REPLY_ALL,
                         referenceMessage: message,
                     });
@@ -197,6 +200,7 @@ export const useMessageHotkeys = (
                     e.preventDefault();
                     e.stopPropagation();
                     onCompose({
+                        type: ComposeTypes.newMessage,
                         action: MESSAGE_ACTIONS.FORWARD,
                         referenceMessage: message,
                     });

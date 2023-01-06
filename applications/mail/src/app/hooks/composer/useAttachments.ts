@@ -40,7 +40,7 @@ interface UseAttachmentsParameters {
     message: MessageState;
     onChange: MessageChange;
     onSaveNow: () => Promise<void>;
-    editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
+    editorActionsRef?: MutableRefObject<ExternalEditorActions | undefined>;
     onMessageAlreadySent: () => void;
 }
 
@@ -135,7 +135,7 @@ export const useAttachments = ({
             });
 
             if (action === ATTACHMENT_ACTION.INLINE) {
-                editorActionsRef.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
+                editorActionsRef?.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
             }
 
             removePendingUpload(pendingUpload);
@@ -246,7 +246,7 @@ export const useAttachments = ({
 
             if (embeddedImage) {
                 setTimeout(() => {
-                    editorActionsRef.current?.removeEmbedded(embeddedImage.attachment);
+                    editorActionsRef?.current?.removeEmbedded(embeddedImage.attachment);
                 });
             }
 

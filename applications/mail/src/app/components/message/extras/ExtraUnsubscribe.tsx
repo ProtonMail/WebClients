@@ -34,7 +34,7 @@ import { getOriginalTo, isUnsubscribed } from '@proton/shared/lib/mail/messages'
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useOnCompose } from '../../../containers/ComposeProvider';
-import { findSender } from '../../../helpers/addresses';
+import { findSender } from '../../../helpers/message/messageRecipients';
 import { useSendMessage } from '../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
 import { useGetMessage } from '../../../hooks/message/useMessage';

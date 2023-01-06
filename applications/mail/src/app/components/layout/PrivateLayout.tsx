@@ -19,6 +19,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { Breakpoints } from '../../models/utils';
 import MailHeader from '../header/MailHeader';
 import MailSidebar from '../sidebar/MailSidebar';
@@ -51,6 +52,7 @@ const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }:
 
     const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
         onCompose({
+            type: ComposeTypes.newMessage,
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: emails }, draftFlags: { initialAttachments: attachments } },
         });

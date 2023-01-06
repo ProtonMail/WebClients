@@ -20,9 +20,18 @@ interface Args {
     delaySendSeconds?: number;
     autoSaveContacts?: number;
     scheduledAt?: number;
+    sendingFrom?: string;
 }
 
-export const sendFormatter = ({ ID, packages, expiresIn, delaySendSeconds, autoSaveContacts, scheduledAt }: Args) => {
+export const sendFormatter = ({
+    ID,
+    packages,
+    expiresIn,
+    delaySendSeconds,
+    autoSaveContacts,
+    scheduledAt,
+    sendingFrom,
+}: Args) => {
     const payload: any = {};
 
     serializeJsonToFormData(payload, `Packages`, packages);
@@ -40,5 +49,5 @@ export const sendFormatter = ({ ID, packages, expiresIn, delaySendSeconds, autoS
         payload.DeliveryTime = scheduledAt;
     }
 
-    return sendMessageForm(ID, payload);
+    return sendMessageForm(ID, payload, sendingFrom);
 };

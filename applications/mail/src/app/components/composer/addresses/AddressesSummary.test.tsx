@@ -2,7 +2,7 @@ import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
 
-import { getRecipientLabel } from '../../../helpers/addresses';
+import { getRecipientLabel } from '../../../helpers/message/messageRecipients';
 import { clearAll, render } from '../../../helpers/test/helper';
 import { refresh } from '../../../logic/contacts/contactsActions';
 import { store } from '../../../logic/store';

@@ -111,11 +111,14 @@ export const sendMessage = (
     data: { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds, DeliveryTime },
 });
 
-export const sendMessageForm = (messageID: string, data: any) => ({
+export const sendMessageForm = (messageID: string, data: any, sendingFrom?: string) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}`,
     input: 'form',
     data,
+    params: {
+        Source: sendingFrom,
+    },
 });
 
 interface SendMessageDirectData {

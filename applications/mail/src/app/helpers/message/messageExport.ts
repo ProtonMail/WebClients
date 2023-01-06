@@ -128,6 +128,7 @@ export const createMessage = async (
             AttachmentKeyPackets,
         })
     );
+
     return restorePasswordFromResults(updatedMessage, message.data);
 };
 

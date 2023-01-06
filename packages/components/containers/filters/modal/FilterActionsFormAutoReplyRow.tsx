@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import noop from '@proton/utils/noop';
 
 import { Editor, EditorActions, Toggle, Tooltip } from '../../../components';
@@ -33,6 +34,10 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
     useEffect(() => {
         handleUpdateActions({ autoReply: editorVisible ? editorValue : '' });
     }, [editorVisible]);
+
+    const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
+        {}
+    );
 
     return (
         <>
@@ -78,6 +83,12 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                             handleUpdateActions({ autoReply: value });
                         }}
                         simple
+                        openEmojiPickerRef={openEmojiPickerRef}
+                        toolbarConfig={toolbarConfig}
+                        setToolbarConfig={setToolbarConfig}
+                        modalLink={modalLink}
+                        modalImage={modalImage}
+                        modalDefaultFont={modalDefaultFont}
                     />
                 </div>
             )}
