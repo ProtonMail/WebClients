@@ -78,7 +78,8 @@ const ComposerContent = ({
             <div
                 className={clsx([
                     'flex-item-fluid flex flex-column flex-nowrap relative',
-                    isOutside ? 'mx0-5 on-tiny-mobile-ml0 on-tiny-mobile-mr0' : 'w100 mb0-5',
+                    isOutside && 'mx0-5 on-tiny-mobile-ml0 on-tiny-mobile-mr0',
+                    !isOutside && 'w100 mb0-5',
                 ])}
                 data-testid="composer-content"
             >

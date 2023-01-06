@@ -43,9 +43,10 @@ const content = `<div>
   </div>
 </div>`;
 
-jest.mock('../../../helpers/dom', () => {
-    return { preloadImage: jest.fn(() => Promise.resolve()) };
-});
+jest.mock('../../../helpers/dom', () => ({
+    ...jest.requireActual('../../../helpers/dom'),
+    preloadImage: jest.fn(() => Promise.resolve()),
+}));
 
 describe('Message images', () => {
     afterEach(clearAll);

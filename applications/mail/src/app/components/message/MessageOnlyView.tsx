@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Scroll } from '@proton/atoms';
 import { classnames, useHotkeys, useLabels } from '@proton/components';
@@ -11,6 +12,7 @@ import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
+import { removeAllQuickReplyFlags } from '../../logic/messages/draft/messagesDraftActions';
 import { Breakpoints } from '../../models/utils';
 import ConversationHeader from '../conversation/ConversationHeader';
 import MessageView, { MessageViewRef } from './MessageView';
@@ -45,6 +47,8 @@ const MessageOnlyView = ({
     const { message, messageLoaded, bodyLoaded } = useMessage(messageID);
     const load = useLoadMessage(message.data || ({ ID: messageID } as MessageWithOptionalBody));
 
+    const dispatch = useDispatch();
+
     useShouldMoveOut({ conversationMode: false, elementID: messageID, loading: !bodyLoaded, onBack, labelID });
 
     // Manage loading the message
@@ -53,6 +57,11 @@ const MessageOnlyView = ({
             void load();
         }
     }, [messageLoaded]);
+
+    useEffect(() => {
+        // When the user is switching message we need to remove potential quick replies draft flags
+        dispatch(removeAllQuickReplyFlags());
+    }, [messageID]);
 
     // Message content could be undefined
     const data = message.data || ({ ID: messageID } as Message);
@@ -102,12 +111,21 @@ const MessageOnlyView = ({
         };
     }, [messageID]);
 
+    const handleGetMessageElement = () => {
+        const selector = `[data-shortcut-target="message-container"][data-message-id="${messageID}"]`;
+
+        return document.querySelector(selector) as HTMLElement;
+    };
+
+    const handleOpenQuickReply = () => {
+        const element = handleGetMessageElement();
+
+        element?.scrollIntoView({ block: 'end', behavior: 'smooth' });
+    };
+
     useEffect(() => {
         if (messageID && isMessageReady) {
-            const selector = `[data-shortcut-target="message-container"][data-message-id="${messageID}"]`;
-
-            const element = document.querySelector(selector) as HTMLElement;
-
+            const element = handleGetMessageElement();
             element?.focus();
             setIsMessageFocused(true);
         }
@@ -141,6 +159,7 @@ const MessageOnlyView = ({
                         onBlur={handleBlurCallback}
                         onFocus={handleFocusCallback}
                         hasFocus={isMessageFocused}
+                        onOpenQuickReply={handleOpenQuickReply}
                     />
                 </div>
             </Scroll>

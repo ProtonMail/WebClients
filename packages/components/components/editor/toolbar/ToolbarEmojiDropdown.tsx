@@ -5,6 +5,7 @@ import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
 import { DropdownSizeUnit, Icon } from '@proton/components/components';
+import { classnames } from '@proton/components/helpers';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 
 import { useTheme } from '../../../containers/themes';
@@ -42,9 +43,10 @@ const EmojiPicker = (props: any) => {
 interface Props {
     onInsert: (emoji: Emoji) => void;
     openRef: Ref<() => void>;
+    className?: string;
 }
 
-const ToolbarEmojiDropdown = ({ onInsert, openRef }: Props) => {
+const ToolbarEmojiDropdown = ({ onInsert, openRef, className }: Props) => {
     const dropdownRef = useRef<ToolbarDropdownAction>(null);
 
     const [theme] = useTheme();
@@ -66,7 +68,7 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef }: Props) => {
             ref={dropdownRef}
             dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
             content={<Icon name="emoji" alt={c('Action').t`Emoji`} />}
-            className="flex-item-noshrink"
+            className={classnames(['flex-item-noshrink', className])}
             title={c('Action').t`Emoji`}
             autoClose={false}
             autoCloseOutside={true}

@@ -1,4 +1,5 @@
 import { RefObject, memo, useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Scroll } from '@proton/atoms';
 import { classnames, useLabels, useToggle } from '@proton/components';
@@ -14,8 +15,10 @@ import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import { useConversation } from '../../hooks/conversation/useConversation';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
+import { useGetMessage } from '../../hooks/message/useMessage';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
+import { removeAllQuickReplyFlags } from '../../logic/messages/draft/messagesDraftActions';
 import { Breakpoints } from '../../models/utils';
 import MessageView, { MessageViewRef } from '../message/MessageView';
 import ConversationErrorBanner from './ConversationErrorBanner';
@@ -54,6 +57,8 @@ const ConversationView = ({
     isComposerOpened,
     containerRef,
 }: Props) => {
+    const dispatch = useDispatch();
+    const getMessage = useGetMessage();
     const { isSearchResult } = useEncryptedSearchContext();
     const [labels = []] = useLabels();
     const {
@@ -84,33 +89,41 @@ const ConversationView = ({
     const filteredMessages = messages.filter(
         (message) => inAllMail || inTrash === hasLabel(message, TRASH) || isSearchResult(message.ID)
     );
+
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
+
+    const messagesWithoutQuickReplies = messagesToShow.filter((message) => {
+        const messageFromState = getMessage(message.ID);
+        return !messageFromState?.draftFlags?.isQuickReply;
+    });
+
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
     const messageInUrl = conversationState?.Messages?.find((message) => message.ID === messageID);
     const loading = loadingConversation || loadingMessages;
     const showConversationError = !loading && conversationState?.Conversation?.Subject === undefined;
     const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
 
-    const { focusIndex, handleFocus, handleBlur, getFocusedId } = useConversationFocus(messagesToShow);
+    const { focusIndex, handleFocus, handleScrollToMessage, handleBlur, getFocusedId } =
+        useConversationFocus(messagesWithoutQuickReplies);
 
     const expandMessage = (messageID: string | undefined, scrollTo = false) => {
         messageViewsRefs.current[messageID || '']?.expand();
         const index = messagesToShow.findIndex((message) => message.ID === messageID);
         // isEditing is used to prevent the focus to be set on the message when the user is editing, otherwise it triggers shortcuts
         if (index !== undefined && !isEditing()) {
-            handleFocus(index, { scrollTo });
+            handleFocus(index, {scrollTo});
         }
     };
 
     const { elementRef } = useConversationHotkeys(
-        { messages: messagesToShow, focusIndex },
+        { messages: messagesWithoutQuickReplies, focusIndex },
         { handleFocus, getFocusedId, expandMessage }
     );
 
     // Open the first message of a conversation if none selected in URL
     useEffect(() => {
         if (!loadingMessages && !messageID) {
-            expandMessage(findMessageToExpand(labelID, messagesToShow)?.ID);
+            expandMessage(findMessageToExpand(labelID, messagesWithoutQuickReplies)?.ID);
         }
     }, [conversationID, messageID, loadingMessages]);
 
@@ -124,6 +137,15 @@ const ConversationView = ({
     useEffect(() => {
         setFilter(DEFAULT_FILTER_VALUE);
     }, [inputConversationID]);
+
+    useEffect(() => {
+        // When the user is switching conversation we need to remove potential quick replies draft flags
+        dispatch(removeAllQuickReplyFlags());
+    }, [conversationID]);
+
+    const handleOpenQuickReply = (messageIndex?: number) => {
+        handleScrollToMessage(messageIndex, 'end');
+    };
 
     const handleClickUnread = (messageID: string) => {
         expandMessage(messageID);
@@ -165,7 +187,7 @@ const ConversationView = ({
                                 onToggle={toggleFilter}
                             />
                         )}
-                        {messagesToShow.map((message, index) => (
+                        {messagesWithoutQuickReplies.map((message, index) => (
                             <MessageView
                                 key={message.ID}
                                 ref={(ref) => {
@@ -189,6 +211,7 @@ const ConversationView = ({
                                 isComposerOpened={isComposerOpened}
                                 containerRef={containerRef}
                                 wrapperRef={wrapperRef}
+                                onOpenQuickReply={handleOpenQuickReply}
                             />
                         ))}
                     </div>

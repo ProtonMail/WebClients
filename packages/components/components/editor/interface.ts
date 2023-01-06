@@ -30,6 +30,7 @@ export interface EditorActions {
     isDisposed: () => boolean;
     showModalLink?: () => void;
     openEmojiPicker?: () => void;
+    scroll?: (scrollToOption: ScrollToOptions) => void;
 }
 
 export type OnEditorEventListened = (editorEvent: PluginEvent, editor: IEditor) => void;

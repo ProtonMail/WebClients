@@ -2,6 +2,7 @@ import { ChangeEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
 
@@ -44,6 +45,10 @@ const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
         createNotification({ text: c('Success').t`Address updated` });
     };
 
+    const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
+        {}
+    );
+
     return (
         <FormModal
             onClose={onClose}
@@ -70,7 +75,17 @@ const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
                 </Field>
             </Row>
             <Row>
-                <Editor onReady={handleReady} onChange={handleSignature} simple />
+                <Editor
+                    onReady={handleReady}
+                    onChange={handleSignature}
+                    simple
+                    openEmojiPickerRef={openEmojiPickerRef}
+                    toolbarConfig={toolbarConfig}
+                    setToolbarConfig={setToolbarConfig}
+                    modalLink={modalLink}
+                    modalImage={modalImage}
+                    modalDefaultFont={modalDefaultFont}
+                />
             </Row>
         </FormModal>
     );

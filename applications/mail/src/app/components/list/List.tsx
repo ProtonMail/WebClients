@@ -28,6 +28,7 @@ import { useGetStartedChecklist, usePaidUserChecklist } from '../../containers/c
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { usePaging } from '../../hooks/usePaging';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
@@ -268,7 +269,10 @@ const List = (
                                                 onItemSelection={(key: ChecklistKey) => () => {
                                                     switch (key) {
                                                         case ChecklistKey.SendMessage: {
-                                                            onCompose({ action: MESSAGE_ACTIONS.NEW });
+                                                            onCompose({
+                                                                type: ComposeTypes.newMessage,
+                                                                action: MESSAGE_ACTIONS.NEW,
+                                                            });
                                                             break;
                                                         }
 
@@ -302,7 +306,10 @@ const List = (
                                                 onItemSelection={(key: ChecklistKey) => () => {
                                                     switch (key) {
                                                         case ChecklistKey.SendMessage: {
-                                                            onCompose({ action: MESSAGE_ACTIONS.NEW });
+                                                            onCompose({
+                                                                type: ComposeTypes.newMessage,
+                                                                action: MESSAGE_ACTIONS.NEW,
+                                                            });
                                                             break;
                                                         }
                                                         case ChecklistKey.MobileApp: {

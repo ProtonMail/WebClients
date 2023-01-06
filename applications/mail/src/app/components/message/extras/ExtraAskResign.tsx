@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Href, Icon, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { getContactEmail } from '../../../helpers/addresses';
+import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import { MessageVerification, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import ContactResignModal from '../modals/ContactResignModal';

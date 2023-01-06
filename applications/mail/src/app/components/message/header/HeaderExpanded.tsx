@@ -30,6 +30,7 @@ import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { isSelfAddress } from '../../../helpers/addresses';
 import { MessageViewIcons } from '../../../helpers/message/icon';
+import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../../models/utils';
@@ -131,6 +132,7 @@ const HeaderExpanded = ({
 
     const handleCompose = (action: MESSAGE_ACTIONS) => async () => {
         onCompose({
+            type: ComposeTypes.newMessage,
             action,
             referenceMessage: message,
         });

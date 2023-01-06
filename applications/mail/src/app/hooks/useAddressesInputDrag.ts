@@ -4,7 +4,7 @@ import { generateUID, useCache, useDragOver, useHandler } from '@proton/componen
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { DRAG_ADDRESS_KEY } from '../constants';
-import { matchRecipientOrGroup, recipientOrGroupToRecipients } from '../helpers/addresses';
+import { matchRecipientOrGroup, recipientOrGroupToRecipients } from '../helpers/message/messageRecipients';
 import { RecipientOrGroup } from '../models/address';
 
 export const ADDRESS_DRAG_CACHE_KEY = 'ADDRESS_DRAG';

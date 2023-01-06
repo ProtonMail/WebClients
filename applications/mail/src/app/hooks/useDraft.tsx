@@ -15,8 +15,8 @@ import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
 import { MESSAGE_ACTIONS } from '../constants';
-import { findSender } from '../helpers/addresses';
 import { cloneDraft, createNewDraft } from '../helpers/message/messageDraft';
+import { findSender } from '../helpers/message/messageRecipients';
 import { createDraft as createDraftAction } from '../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
 import { useAppDispatch } from '../logic/store';
@@ -78,7 +78,7 @@ export const useDraft = () => {
     }, [cache, addresses, mailSettings]);
 
     const createDraft = useCallback(
-        async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageState) => {
+        async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageState, isQuickReply?: boolean) => {
             const [mailSettings, addresses] = await Promise.all([getMailSettings(), getAddresses()]);
 
             await draftVerifications(action, referenceMessage);
@@ -94,7 +94,9 @@ export const useDraft = () => {
                     mailSettings,
                     userSettings,
                     addresses,
-                    getAttachment
+                    getAttachment,
+                    false,
+                    isQuickReply
                 ) as MessageState;
             }
 
