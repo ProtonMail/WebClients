@@ -4,8 +4,6 @@ const SEPARATOR_REGEX = /[,;]/;
 
 /**
  * Trim and remove surrounding chevrons
- * @param value
- * @returns {string}
  */
 export const clearValue = (value: string) => {
     const trimmed = value.trim();
@@ -17,8 +15,6 @@ export const clearValue = (value: string) => {
 
 /**
  * Split input content by comma or semicolon
- * @param input
- * @returns {string[]}
  */
 export const splitBySeparator = (input: string) => {
     return input
