@@ -70,7 +70,7 @@ export const getPermissions = ({
     const canGenerateSelf = isSelf && user.Private === MEMBER_PRIVATE.UNREADABLE;
     const canGenerate = !HasKeys && (canGenerateMember || canGenerateSelf);
 
-    let canDisable = isEnabled && isAdmin && !isSpecialAddress;
+    let canDisable = isEnabled && isAdmin && !isSpecialAddress && !isExternal;
 
     const isManagedUser = member?.Type === MEMBER_TYPE.MANAGED;
     if (isManagedUser) {
