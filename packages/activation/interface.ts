@@ -176,6 +176,13 @@ export enum IMPORT_ERROR {
     ACCOUNT_DOES_NOT_EXIST = 2011,
 }
 
+//TODO complete this once backend is more stable
+export enum SYNC_ERROR {
+    MISSING_PRODUCT = 2000,
+    WRONG_PRODUCT = 2001,
+    AUTH_ERROR = 2501,
+}
+
 interface ImportedFolder {
     SourceFolder: string;
     DestinationFolder?: MailImportDestinationFolder;

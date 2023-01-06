@@ -205,3 +205,24 @@ export interface ApiStartImportParams {
     [ImportType.CONTACTS]?: ContactsImporterPayload;
 }
 export interface ApiStartImportResponse extends ApiResponse {}
+
+/**
+ * importer/v1/sync
+ */
+
+export enum ApiSyncState {
+    STOPPED = 0,
+    ACTIVE = 1,
+}
+export interface ApiSync {
+    Account: string;
+    ID: string;
+    ImporterID: string;
+    Product: ImportType;
+    State: ApiSyncState;
+    CreateTime: number;
+}
+
+export interface APIImportSyncListResponse extends ApiResponse {
+    Syncs: ApiSync[];
+}
