@@ -36,7 +36,15 @@ async function startUploadJob(
     networkErrorCallback: (error: string) => void,
     uploadBlockDataCallback = uploadBlockData
 ) {
-    for await (const block of generator) {
+    // Ideally here would be this line:
+    //   for await (const block of generator)
+    // But there is an issue at least in Chrome 108 that rejection from a for loop
+    // is not propagated above and then upload is stuck forever.
+    while (true) {
+        const { done, value: block } = await generator.next();
+        if (done) {
+            break;
+        }
         await pauser.waitIfPaused();
         await uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback);
     }
