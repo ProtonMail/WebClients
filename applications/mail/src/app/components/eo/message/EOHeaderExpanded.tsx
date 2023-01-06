@@ -8,7 +8,7 @@ import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import { recipientsToRecipientOrGroup } from '../../../helpers/addresses';
+import { recipientsToRecipientOrGroup } from '../../../helpers/message/messageRecipients';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../../models/utils';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';

@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 import { c } from 'ttag';
 
 import { useEventManager, useHandler, useNotifications } from '@proton/components';
@@ -15,6 +17,7 @@ import { useAppDispatch } from '../../logic/store';
 import { MapSendInfo } from '../../models/crypto';
 import { useGetMessage } from '../message/useMessage';
 import { PromiseHandlers } from '../usePromise';
+import { ComposeTypes } from './useCompose';
 import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';
 
@@ -23,7 +26,7 @@ export interface UseSendHandlerParameters {
     getModelMessage: () => MessageState;
     ensureMessageContent: () => void;
     mapSendInfo: MapSendInfo;
-    promiseUpload: Promise<void>;
+    promiseUpload?: Promise<void>;
     pendingSave: PromiseHandlers<void>;
     pendingAutoSave: PromiseHandlers<void>;
     autoSave: ((message: MessageState) => Promise<void>) & Cancellable;
@@ -33,6 +36,8 @@ export interface UseSendHandlerParameters {
     handleNoRecipients?: () => void;
     handleNoSubjects?: () => void;
     handleNoAttachments?: (keyword: string) => void;
+    setIsSending?: Dispatch<SetStateAction<boolean>>;
+    isQuickReply?: boolean;
 }
 
 export const useSendHandler = ({
@@ -49,6 +54,8 @@ export const useSendHandler = ({
     handleNoRecipients,
     handleNoSubjects,
     handleNoAttachments,
+    setIsSending,
+    isQuickReply,
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const { call } = useEventManager();
@@ -100,7 +107,7 @@ export const useSendHandler = ({
             };
         } catch {
             hideNotification(notifManager.ID);
-            onCompose({ existingDraft: getModelMessage(), fromUndo: true });
+            onCompose({ type: ComposeTypes.existingDraft, existingDraft: getModelMessage(), fromUndo: true });
             return;
         }
 
@@ -112,6 +119,7 @@ export const useSendHandler = ({
                 alreadySaved,
                 sendingMessageNotificationManager: notifManager,
                 useSilentApi: true,
+                sendingFrom: isQuickReply ? 'quick-reply' : 'composer',
             });
         } catch (error: any) {
             hideNotification(notifManager.ID);
@@ -169,10 +177,14 @@ export const useSendHandler = ({
         ensureMessageContent();
 
         try {
+            setIsSending?.(true);
             dispatch(startSending(localID));
 
             // Closing the composer instantly, all the send process will be in background
-            onClose();
+            // In quick reply however, we want to keep the editor opened while saving
+            if (!isQuickReply) {
+                onClose();
+            }
 
             try {
                 await promiseUpload;
@@ -183,7 +195,7 @@ export const useSendHandler = ({
                     type: 'error',
                 });
                 console.error('Error while uploading attachments.', error);
-                onCompose({ existingDraft: getModelMessage(), fromUndo: true });
+                onCompose({ type: ComposeTypes.existingDraft, existingDraft: getModelMessage(), fromUndo: true });
                 throw error;
             }
 
@@ -195,6 +207,12 @@ export const useSendHandler = ({
                 await call();
                 // Whatever happens once the composer is closed, the sending flag is reset when finished
                 dispatch(endSending(localID));
+
+                setIsSending?.(false);
+                // If quick reply we can close the editor
+                if (isQuickReply) {
+                    onClose();
+                }
             };
             void asyncFinally();
         }

@@ -13,14 +13,15 @@ import SavingDraftNotification, {
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import { PromiseHandlers } from '../usePromise';
+import { ComposeTypes } from './useCompose';
 
 export interface UseCloseHandlerParameters {
     modelMessage: MessageState;
     syncedMessage: MessageState;
     lock: boolean;
     ensureMessageContent: () => void;
-    uploadInProgress: boolean;
-    promiseUpload: Promise<void>;
+    uploadInProgress?: boolean;
+    promiseUpload?: Promise<void>;
     pendingAutoSave: PromiseHandlers<void>;
     autoSave: ((message: MessageState) => Promise<void>) & Cancellable;
     saveNow: (message: MessageState) => Promise<void>;
@@ -143,7 +144,7 @@ export const useCloseHandler = ({
                     text: c('Error').t`Draft could not be saved. Try again.`,
                     type: 'error',
                 });
-                onCompose({ existingDraft: modelMessage, fromUndo: true });
+                onCompose({ type: ComposeTypes.existingDraft, existingDraft: modelMessage, fromUndo: true });
             }
         }
     });

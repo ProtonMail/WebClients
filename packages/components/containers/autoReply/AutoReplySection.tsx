@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import { AutoReplyDuration, BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
@@ -128,6 +129,10 @@ const AutoReplySection = () => {
         ],
     ]);
 
+    const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
+        {}
+    );
+
     const renderForm = () => (
         <form
             onSubmit={async (e) => {
@@ -152,6 +157,12 @@ const AutoReplySection = () => {
                             onReady={handleEditorReady}
                             onChange={updateModel('message')}
                             simple
+                            openEmojiPickerRef={openEmojiPickerRef}
+                            toolbarConfig={toolbarConfig}
+                            setToolbarConfig={setToolbarConfig}
+                            modalLink={modalLink}
+                            modalImage={modalImage}
+                            modalDefaultFont={modalDefaultFont}
                         />
                     </div>
 

@@ -9,7 +9,7 @@ import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettin
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
-import { getSendersToBlock } from '../helpers/addresses';
+import { getSendersToBlock } from '../helpers/message/messageRecipients';
 import { addBlockAddresses } from '../logic/incomingDefaults/incomingDefaultsActions';
 import { useAppDispatch } from '../logic/store';
 import { Element } from '../models/element';

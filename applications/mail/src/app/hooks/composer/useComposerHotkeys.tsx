@@ -1,52 +1,53 @@
 import { MutableRefObject, RefObject, useRef } from 'react';
 
-import { HotkeyTuple, useHotkeys } from '@proton/components';
+import { EditorActions, HotkeyTuple, useHotkeys } from '@proton/components';
 import { isSafari as checkIsSafari } from '@proton/shared/lib/helpers/browser';
 import { editorShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import noop from '@proton/utils/noop';
 
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
+import { EditorTypes } from './useComposerContent';
 
-export interface ComposerHotkeysHandlers {
-    composerRef: RefObject<HTMLDivElement>;
+interface ComposerHotkeysHandlers {
+    type: EditorTypes.composer;
     handleClose: () => Promise<void>;
+    toggleMinimized: () => void;
+    handlePassword: () => void;
+    handleExpiration: () => void;
+    editorRef: MutableRefObject<ExternalEditorActions | undefined>;
+}
+
+interface QuickReplyHotkeysHandlers {
+    type: EditorTypes.quickReply;
+    editorRef: MutableRefObject<EditorActions | undefined>;
+}
+
+export type EditorHotkeysHandlers = (ComposerHotkeysHandlers | QuickReplyHotkeysHandlers) & {
+    composerRef: RefObject<HTMLDivElement>;
     handleSend: () => Promise<void>;
     handleDelete: () => Promise<void>;
     handleManualSave: () => Promise<void>;
-    toggleMinimized: () => void;
     toggleMaximized: () => void;
-    handlePassword: () => void;
-    handleExpiration: () => void;
     lock: boolean;
     saving: boolean;
-    editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
     hasHotkeysEnabled: boolean;
-}
+};
 
-export const useComposerHotkeys = ({
-    composerRef,
-    handleClose,
-    handleSend,
-    handleDelete,
-    handleManualSave,
-    toggleMaximized,
-    toggleMinimized,
-    handlePassword,
-    handleExpiration,
-    lock,
-    saving,
-    editorActionsRef,
-    hasHotkeysEnabled,
-}: ComposerHotkeysHandlers) => {
+export const useComposerHotkeys = (args: EditorHotkeysHandlers) => {
+    const { composerRef, handleSend, handleDelete, toggleMaximized, handleManualSave, lock, saving, hasHotkeysEnabled,  type } = args;
     const isSafari = checkIsSafari();
+
+    const isComposer = type === EditorTypes.composer;
 
     const attachmentTriggerRef = useRef<() => void>(noop);
 
     const keyHandlers = {
         close: async (e: KeyboardEvent) => {
-            e.preventDefault();
-            e.stopPropagation();
-            await handleClose();
+            if (isComposer) {
+                e.preventDefault();
+                e.stopPropagation();
+                await args.handleClose();
+            }
         },
         send: async (e: KeyboardEvent) => {
             e.preventDefault();
@@ -68,9 +69,11 @@ export const useComposerHotkeys = ({
             }
         },
         minimize: (e: KeyboardEvent) => {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleMinimized();
+            if (isComposer) {
+                e.preventDefault();
+                e.stopPropagation();
+                args.toggleMinimized();
+            }
         },
         maximize: (e: KeyboardEvent) => {
             e.preventDefault();
@@ -78,29 +81,39 @@ export const useComposerHotkeys = ({
             toggleMaximized();
         },
         addAttachment: (e: KeyboardEvent) => {
-            e.preventDefault();
-            e.stopPropagation();
-            attachmentTriggerRef.current?.();
+            if (attachmentTriggerRef.current) {
+                e.preventDefault();
+                e.stopPropagation();
+                attachmentTriggerRef.current();
+            }
         },
         encrypt: (e: KeyboardEvent) => {
-            e.preventDefault();
-            e.stopPropagation();
-            handlePassword();
+            if (isComposer) {
+                e.preventDefault();
+                e.stopPropagation();
+                args.handlePassword();
+            }
         },
         addExpiration: (e: KeyboardEvent) => {
-            e.preventDefault();
-            e.stopPropagation();
-            handleExpiration();
+            if (isComposer) {
+                e.preventDefault();
+                e.stopPropagation();
+                args.handleExpiration();
+            }
         },
         linkModal: (e: KeyboardEvent) => {
-            e.preventDefault();
-            e.stopPropagation();
-            editorActionsRef.current?.showLinkModal();
+            if (isComposer && args.editorRef?.current) {
+                e.preventDefault();
+                e.stopPropagation();
+                args.editorRef.current?.showLinkModal?.();
+            }
         },
         emojiPicker: (e: KeyboardEvent) => {
-            e.preventDefault();
-            e.stopPropagation();
-            editorActionsRef.current?.openEmojiPicker();
+            if (args.editorRef?.current) {
+                e.preventDefault();
+                e.stopPropagation();
+                args.editorRef.current?.openEmojiPicker?.();
+            }
         },
     };
 

@@ -22,7 +22,7 @@ import noop from '@proton/utils/noop';
 
 import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useOnMailTo } from '../../../containers/ComposeProvider';
-import { getContactEmail } from '../../../helpers/addresses';
+import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import { MessageSendInfo, useUpdateRecipientSendInfo } from '../../../hooks/useSendInfo';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';

@@ -11,11 +11,15 @@ import {
     endSending,
     endUndo,
     openDraft,
+    removeAllQuickReplyFlags,
     removeInitialAttachments,
+    removeQuickReplyFlag,
+    updateDraftContent,
     sendModifications,
     sent,
     startSending,
     updateExpires,
+    updateIsSavingFlag,
     updateScheduled,
 } from './draft/messagesDraftActions';
 import {
@@ -27,11 +31,15 @@ import {
     endSending as endSendingReducer,
     endUndo as endUndoReducer,
     openDraft as openDraftReducer,
+    removeAllQuickReplyFlags as removeAllQuickReplyFlagsReducer,
     removeInitialAttachments as removeInitialAttachmentsReducer,
+    removeQuickReplyFlag as removeQuickReplyFlagReducer,
+    updateDraftContent as updateDraftContentReducer,
     sendModifications as sendModificationsReducer,
     sent as sentReducer,
     startSending as startSendingReducer,
     updateExpires as updateExpiresReducer,
+    updateIsSavingFlag as updateIsSavingFlagReducer,
     updateScheduled as updateScheduledReducer,
 } from './draft/messagesDraftReducers';
 import { updateFromElements } from './helpers/messagesReducer';
@@ -128,6 +136,10 @@ const messagesSlice = createSlice({
         builder.addCase(createDraft, createDraftReducer);
         builder.addCase(openDraft, openDraftReducer);
         builder.addCase(removeInitialAttachments, removeInitialAttachmentsReducer);
+        builder.addCase(removeQuickReplyFlag, removeQuickReplyFlagReducer);
+        builder.addCase(removeAllQuickReplyFlags, removeAllQuickReplyFlagsReducer);
+        builder.addCase(updateIsSavingFlag, updateIsSavingFlagReducer);
+        builder.addCase(updateDraftContent, updateDraftContentReducer);
         builder.addCase(draftSaved, draftSavedSelector);
         builder.addCase(updateScheduled, updateScheduledReducer);
         builder.addCase(updateExpires, updateExpiresReducer);

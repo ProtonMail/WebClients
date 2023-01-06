@@ -32,7 +32,7 @@ const BLOCKQUOTE_SELECTOR = BLOCKQUOTE_SELECTORS.map((selector) => `${selector}:
  * Returns content before and after match in the source
  * Beware, String.prototype.split does almost the same but will not if there is several match
  */
-const split = (source: string, match: string): [string, string] => {
+export const split = (source: string, match: string): [string, string] => {
     const index = source.indexOf(match);
     if (index === -1) {
         return [source, ''];

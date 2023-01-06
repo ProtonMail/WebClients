@@ -24,7 +24,7 @@ import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/cont
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { isInternal } from '@proton/shared/lib/mail/messages';
 
-import { getContactEmail } from '../../../helpers/addresses';
+import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import { MessageVerification, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
