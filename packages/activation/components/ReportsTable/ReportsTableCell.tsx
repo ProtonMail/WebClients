@@ -9,13 +9,14 @@ interface Props {
     product: ImportType;
     date: number;
     title: string;
+    isSync?: boolean;
 }
 
-const ReportsTableCell = ({ product: app, date, title }: Props) => (
+const ReportsTableCell = ({ product: app, date, title, isSync }: Props) => (
     <TableCell>
         <div className="flex">
             <div className="flex-item-noshrink mr0-5 no-mobile">
-                <Icon name={getImportIconNameByProduct(app)} className="color-weak" />
+                <Icon name={getImportIconNameByProduct(app, isSync)} className="color-weak" />
             </div>
             <div className="flex-item-fluid">
                 <div className="w100 text-ellipsis" title={title}>
