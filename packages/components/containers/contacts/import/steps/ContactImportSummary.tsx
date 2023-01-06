@@ -48,19 +48,27 @@ const ContactImportSummary = ({ model, setModel, onClose }: Props) => {
     let alertMessage;
     if (isSuccess) {
         alertMessage = c('Import contacts').ngettext(
-            msgid`Contact successfully imported. The imported contact will now appear in your contact list.`,
-            `Contacts successfully imported. The imported contacts will now appear in your contact list.`,
+            msgid`${totalImported} contact successfully imported. The imported contact will now appear in your contact list.`,
+            `${totalImported} contacts successfully imported. The imported contacts will now appear in your contact list.`,
             totalImported
         );
     } else if (isPartialSuccess) {
-        alertMessage = c('Import contacts')
-            .t`An error occurred while encrypting and adding your contacts. ${totalImported} out of ${totalToImport} contacts successfully imported.`;
-    } else {
-        alertMessage = c('Import contact').ngettext(
-            msgid`An error occurred while encrypting and adding your contact. No contact could be imported.`,
-            `An error occurred while encrypting and adding your contacts. No contact could be imported.`,
+        alertMessage = c('Import contacts').ngettext(
+            msgid`An error occurred while encrypting and adding your contact. ${totalImported} out of ${totalToImport} contact successfully imported.`,
+            `An error occurred while encrypting and adding your contacts. ${totalImported} out of ${totalToImport} contacts successfully imported.`,
             totalToImport
         );
+    } else {
+        alertMessage =
+            totalToImport === 1
+                ? c('Import contacts')
+                      .t`An error occurred while encrypting and adding your contact. No contact could be imported.`
+                : // translator: the single version won't be used, it's only there for plural management. Please do keep the variable inside the translated version, otherwise our library will fail. Single version will be in another string: "An error occurred while encrypting and adding your contact. No contact could be imported."
+                  c('Import contacts').ngettext(
+                      msgid`An error occurred while encrypting and adding your ${totalToImport} contact. No contact could be imported.`,
+                      `An error occurred while encrypting and adding your ${totalToImport} contacts. No contact could be imported.`,
+                      totalToImport
+                  );
     }
 
     const displayMessage =
