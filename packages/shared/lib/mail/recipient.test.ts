@@ -12,4 +12,10 @@ describe('inputToRecipient', () => {
         const result = inputToRecipient(input);
         expect(result).toEqual({ Name: 'domain@debye.proton.black', Address: 'domain@debye.proton.black' });
     });
+
+    it('should extract name and email address', () => {
+        const input = 'Panda <panda@proton.me>';
+        const result = inputToRecipient(input);
+        expect(result).toEqual({ Name: 'Panda', Address: 'panda@proton.me' });
+    });
 });
