@@ -14,7 +14,11 @@ export const getImportProductName = (type: ImportType) => {
     }
 };
 
-export const getImportIconNameByProduct = (type: ImportType): IconName => {
+export const getImportIconNameByProduct = (type: ImportType, isSync?: boolean): IconName => {
+    if (isSync) {
+        return 'arrows-rotate';
+    }
+
     switch (type) {
         case ImportType.MAIL:
             return 'envelope';
