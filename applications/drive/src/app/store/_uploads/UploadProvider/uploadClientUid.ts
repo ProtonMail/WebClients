@@ -1,5 +1,7 @@
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 
+import { sendErrorReport } from '../../../utils/errorHandling';
+
 enum UploadingState {
     // File is being uploading - do not automatically replace file.
     Uploading = 'uploading',
@@ -26,16 +28,31 @@ export function generateClientUid(clientUid?: string) {
     }
     const key = getStorageKey(clientUid);
 
-    localStorage.setItem(key, UploadingState.Uploading);
+    // LocalStorage can fail when setting values, which will fail the
+    // transfer. We can ignore this.
+    //
+    // The worst case scenario would be not knowing the state, but it's
+    // better to at least upload the file than fail here.
+    try {
+        localStorage.setItem(key, UploadingState.Uploading);
+    } catch (e) {
+        sendErrorReport(e);
+    }
 
     const uploadFailed = () => {
-        localStorage.setItem(key, UploadingState.Failed);
+        try {
+            localStorage.setItem(key, UploadingState.Failed);
+        } catch (e) {
+            sendErrorReport(e);
+        }
         removeEventListener('unload', uploadFailed);
     };
+
     const uploadFinished = () => {
         localStorage.removeItem(key);
         removeEventListener('unload', uploadFailed);
     };
+
     // If file is not finished and page is closed, we consider it
     // as failed upload which is safe to automatically replace with
     // next upload attempt by the user.
