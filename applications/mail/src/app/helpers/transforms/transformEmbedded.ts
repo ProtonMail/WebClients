@@ -2,9 +2,8 @@ import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasShowEmbedded } from '@proton/shared/lib/mail/images';
-import { getAttachments, isDMARCValidationFailure, isDraft } from '@proton/shared/lib/mail/messages';
+import { getAttachments, isDraft } from '@proton/shared/lib/mail/messages';
 
-import { WHITE_LISTED_ADDRESSES } from '../../constants';
 import { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../logic/messages/messagesTypes';
 import {
     decryptEmbeddedImages,
@@ -27,8 +26,7 @@ export const transformEmbedded = async (
     const showEmbeddedImages =
         message.messageImages?.showEmbeddedImages === true ||
         hasShowEmbedded(mailSettings) ||
-        (WHITE_LISTED_ADDRESSES.includes(message.data?.Sender?.Address || '') &&
-            !isDMARCValidationFailure(message.data));
+        !!message.data?.Sender.IsProton;
 
     const existingEmbeddedImage = getEmbeddedImages(message);
     let newEmbeddedImages: MessageEmbeddedImage[] = [];
