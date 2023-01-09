@@ -3,16 +3,27 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateInvoiceText } from '@proton/shared/lib/api/settings';
 
-import { Alert, Block, FormModal, Label, TextArea } from '../../components';
+import {
+    Form,
+    InputFieldTwo,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    PrimaryButton,
+    TextAreaTwo,
+} from '../../components';
 import { useApiWithoutResult, useEventManager, useNotifications, useUserSettings } from '../../hooks';
 
 export interface Props {
     onClose?: () => void;
 }
 
-const InvoiceTextModal = ({ onClose, ...rest }: Props) => {
+const InvoiceTextModal = (props: ModalProps) => {
     const [{ InvoiceText }] = useUserSettings();
 
     const { createNotification } = useNotifications();
@@ -23,36 +34,33 @@ const InvoiceTextModal = ({ onClose, ...rest }: Props) => {
     const handleSubmit = async () => {
         await request();
         await call();
-        onClose?.();
+        props.onClose?.();
         createNotification({ text: c('Success').t`Invoice customized` });
     };
 
     return (
-        <FormModal
-            small
-            onClose={onClose}
-            onSubmit={handleSubmit}
-            loading={loading}
-            close={c('Action').t`Close`}
-            submit={c('Action').t`Save`}
-            title={c('Title').t`Add invoice details`}
-            {...rest}
-        >
-            <Alert className="mb1">{c('Info message for custom invoice modal')
-                .t`Add your name (or company name) and address to your invoices.`}</Alert>
-            <Block>
-                <Label htmlFor="invoiceTextarea">{c('Label').t`Customize invoices`}</Label>
-            </Block>
-            <TextArea
-                id="invoiceTextarea"
-                autoFocus
-                value={invoiceText}
-                placeholder={c('Placeholder for custom invoice text')
-                    .t`Add your name (or company name) and address to your invoices`}
-                onChange={({ target }) => setInvoiceText(target.value)}
-                disabled={loading}
-            />
-        </FormModal>
+        <ModalTwo as={Form} onSubmit={handleSubmit} {...props}>
+            <ModalTwoHeader title={c('Title').t`Add invoice details`} />
+            <ModalTwoContent>
+                <div className="mb1">{c('Info message for custom invoice modal')
+                    .t`Add your name (or company name) and address to your invoices.`}</div>
+                <InputFieldTwo
+                    as={TextAreaTwo}
+                    rows={3}
+                    autoFocus
+                    value={invoiceText}
+                    onValue={setInvoiceText}
+                    label={c('Label').t`Customize invoices`}
+                    placeholder={c('Placeholder for custom invoice text')
+                        .t`Add your name (or company name) and address to your invoices`}
+                />
+            </ModalTwoContent>
+
+            <ModalTwoFooter>
+                <Button onClick={props.onClose}>{c('Action').t`Close`}</Button>
+                <PrimaryButton onClick={handleSubmit} loading={loading}>{c('Action').t`Save`}</PrimaryButton>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
