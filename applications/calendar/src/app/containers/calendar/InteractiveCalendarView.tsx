@@ -601,10 +601,10 @@ const InteractiveCalendarView = ({
                 return;
             }
 
-            const targetCalendar = (event && event.data && event.data.calendarData) || undefined;
+            const targetCalendar = event.data.calendarData;
 
             const isAllowedToTouchEvent = true;
-            const isInvitation = event.data.eventData ? !event.data.eventData.IsOrganizer : false;
+            const isInvitation = !!event.data.eventReadResult?.result?.[0].selfAddressData.isAttendee;
             let isAllowedToMoveEvent =
                 getIsCalendarProbablyActive(targetCalendar) && getIsCalendarWritable(targetCalendar) && !isInvitation;
 
