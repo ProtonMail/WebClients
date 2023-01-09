@@ -9,10 +9,11 @@ import { useFileUploadInput } from '../../../store';
 
 interface Props {
     className?: string;
+    disabled?: boolean;
     children?: ReactNode;
 }
 
-export const UploadButton = ({ className, children = c('Action').t`New upload` }: Props) => {
+export const UploadButton = ({ className, disabled, children = c('Action').t`New upload` }: Props) => {
     const { activeFolder } = useActiveShare();
     const {
         inputRef: fileInput,
@@ -23,7 +24,7 @@ export const UploadButton = ({ className, children = c('Action').t`New upload` }
     return (
         <>
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
-            <SidebarPrimaryButton className={className} onClick={handleClick}>
+            <SidebarPrimaryButton disabled={disabled} className={className} onClick={handleClick}>
                 {children}
             </SidebarPrimaryButton>
         </>
