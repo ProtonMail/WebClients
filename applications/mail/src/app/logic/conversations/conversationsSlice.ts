@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { globalReset } from '../actions';
-import { load as loadElements } from '../elements/elementsActions';
+import { eventUpdates, load as loadElements } from '../elements/elementsActions';
 import {
     applyLabelsOnConversation,
     applyLabelsOnConversationMessages,
@@ -37,6 +37,7 @@ import {
     retryLoading as retryLoadingReducer,
     updateConversation as updateConversationReducer,
     updateFromElements,
+    updateFromLoadElements,
 } from './conversationsReducers';
 import { ConversationsState } from './conversationsTypes';
 
@@ -63,6 +64,7 @@ const conversationSlice = createSlice({
         builder.addCase(eventDelete, deleteConversationReducer);
         builder.addCase(eventConversationUpdate, eventConversationUpdateReducer);
         builder.addCase(loadElements.fulfilled, updateFromElements);
+        builder.addCase(eventUpdates.fulfilled, updateFromLoadElements);
     },
 });
 

@@ -2,6 +2,7 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
 
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { mergeConversations } from '../../helpers/conversation';
 import { isConversation, parseLabelIDsInEvent } from '../../helpers/elements';
@@ -15,7 +16,8 @@ import {
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 import { MarkAsChanges, applyMarkAsChangesOnConversation } from '../../hooks/optimistic/useOptimisticMarkAs';
 import { Conversation } from '../../models/conversation';
-import { QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';
+import { Element } from '../../models/element';
+import { EventUpdates, QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';
 import { RootState } from '../store';
 import { allConversations, conversationByID } from './conversationsSelectors';
 import {
@@ -273,6 +275,7 @@ export const eventConversationUpdate = (
     }
 };
 
+// Update conversations from fetch elements
 export const updateFromElements = (
     state: Draft<ConversationsState>,
     action: PayloadAction<
@@ -294,12 +297,28 @@ export const updateFromElements = (
     if (Elements && Elements.length) {
         Elements.forEach((element) => {
             if (isConversation(element)) {
-                const conversation = state[element.ID];
+                const conversationState = state[element.ID];
 
-                if (conversation) {
-                    conversation.Conversation = element;
+                if (conversationState) {
+                    conversationState.Conversation = element;
                 }
             }
         });
     }
+};
+
+// Update conversations from individual element load
+export const updateFromLoadElements = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<(Element | undefined)[], string, { arg: EventUpdates }>
+) => {
+    action.payload.filter(isTruthy).forEach((element) => {
+        if (isConversation(element)) {
+            const conversationState = state[element.ID];
+
+            if (conversationState) {
+                conversationState.Conversation = element;
+            }
+        }
+    });
 };
