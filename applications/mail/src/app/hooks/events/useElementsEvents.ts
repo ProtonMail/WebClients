@@ -61,7 +61,7 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
                 if (Action === EVENT_ACTIONS.CREATE) {
                     toCreate.push(Element as Element);
                 } else if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                    toUpdate.push({ ID, ...Element });
+                    toUpdate.push(Element as Element);
                 } else if (Action === EVENT_ACTIONS.DELETE) {
                     toDelete.push(ID);
                 }
@@ -74,24 +74,22 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
         // Not the elements ids "in view" but all in the cache
         const elementIDs = Object.keys(store.getState().elements.elements);
 
-        const { toUpdate, toLoad } = toUpdateOrLoad
-            .filter(({ ID = '' }) => !toDelete.includes(ID)) // No need to get deleted element
-            .reduce<Pick<EventUpdates, 'toUpdate' | 'toLoad'>>(
-                ({ toUpdate, toLoad }, element) => {
-                    const existingElement = elementIDs.includes(element.ID || '');
+        const { toUpdate, toLoad } = toUpdateOrLoad.reduce<Pick<EventUpdates, 'toUpdate' | 'toLoad'>>(
+            ({ toUpdate, toLoad }, element) => {
+                const existingElement = elementIDs.includes(element.ID || '');
 
-                    if (existingElement) {
-                        toUpdate.push(element);
-                    }
-                    // Long tasks trigger too much element update to be able to load them all
-                    else if (taskRunning.labelIDs.length === 0) {
-                        toLoad.push(element.ID || '');
-                    }
+                if (existingElement) {
+                    toUpdate.push(element);
+                }
+                // Long tasks trigger too much element update to be able to load them all
+                else if (taskRunning.labelIDs.length === 0) {
+                    toLoad.push(element.ID || '');
+                }
 
-                    return { toUpdate, toLoad };
-                },
-                { toUpdate: [], toLoad: [] }
-            );
+                return { toUpdate, toLoad };
+            },
+            { toUpdate: [], toLoad: [] }
+        );
 
         void dispatch(eventUpdates({ api, conversationMode, toCreate, toUpdate, toLoad, toDelete }));
     });
