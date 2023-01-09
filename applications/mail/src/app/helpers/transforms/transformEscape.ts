@@ -52,6 +52,14 @@ export const attachBase64 = (element: Element, cache: Base64Cache) => {
 };
 
 /**
+ * Remove all comments from an HTML string
+ * @param content String in which we want to remove all comments
+ */
+export const removeHTMLComments = (content = '') => {
+    return content.replaceAll(/<!--(.*?)-->/g, '');
+};
+
+/**
  * Escape content for a message
  * Content can be a Document when we open a message, it's useful
  * in order to bind the base if it exists
@@ -59,7 +67,10 @@ export const attachBase64 = (element: Element, cache: Base64Cache) => {
  * @param action Type of action
  */
 export const transformEscape = (content = '', cache?: Base64Cache) => {
-    const value = removeBase64(content, cache);
+    // We are removing all comments from the HTML string,
+    // so that we can avoid having potential issues when removing Base 64 images wrongly formatted
+    const withoutComment = removeHTMLComments(content);
+    const value = removeBase64(withoutComment, cache);
     const document = purifyHTML(value, true);
     return document;
 };
