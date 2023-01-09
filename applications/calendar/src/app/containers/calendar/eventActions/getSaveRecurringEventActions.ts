@@ -132,7 +132,7 @@ const getSaveRecurringEventActions = async ({
                     reencryptSharedEvent,
                 });
             }
-            if (!oldEvent.IsOrganizer) {
+            if (isAttendee) {
                 // the attendee edits notifications. We must do it through the updatePersonalPart route
                 return getUpdatePersonalPartActions({
                     eventComponent: newVeventComponent,
@@ -308,7 +308,7 @@ const getSaveRecurringEventActions = async ({
                 sendActions,
             };
         }
-        if (!oldEvent.IsOrganizer && !isSwitchCalendar) {
+        if (isAttendee && !isSwitchCalendar) {
             // the attendee edits notifications. We must do it through the updatePersonalPart route
             return getUpdatePersonalPartActions({
                 eventComponent: newVeventComponent,
