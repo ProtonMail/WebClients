@@ -6,12 +6,12 @@ import { MessageImage, MessageState } from '../../../logic/messages/messagesType
 import { createDocument } from '../../test/message';
 import { transformEmbedded } from '../transformEmbedded';
 
-const mailSettings = {
+const defaultMailSettings = {
     HideEmbeddedImages: SHOW_IMAGES.SHOW,
 } as MailSettings;
 
 describe('transformEmbedded', () => {
-    const setup = (message: MessageState) => {
+    const setup = (message: MessageState, mailSettings = defaultMailSettings) => {
         return transformEmbedded(
             message,
             mailSettings,
@@ -142,5 +142,67 @@ describe('transformEmbedded', () => {
         expect(embeddedImages[0].cloc).toEqual('');
         expect(embeddedImages[0].type).toEqual('embedded');
         expect(embeddedImages[0].status).toEqual('not-loaded');
+    });
+
+    it('should load embedded images by default whatever the loading setting value when Sender is Proton verified', async () => {
+        const cid = 'imageCID';
+        const content = `<div><img src='cid:${cid}'/></div>`;
+
+        const message: MessageState = {
+            localID: 'messageWithEmbedded',
+            data: {
+                ID: 'messageID',
+                Attachments: [{ Headers: { 'content-id': cid } } as Attachment],
+                Sender: {
+                    Name: 'Verified address',
+                    Address: 'verified@proton.me',
+                    IsProton: 1,
+                },
+            } as Message,
+            messageDocument: { document: createDocument(content) },
+        };
+
+        const mailSettings = {
+            HideEmbeddedImages: SHOW_IMAGES.HIDE,
+        } as MailSettings;
+
+        const { showEmbeddedImages, embeddedImages, hasEmbeddedImages } = await setup(message, mailSettings);
+        expect(showEmbeddedImages).toBeTruthy();
+        expect(hasEmbeddedImages).toBeTruthy();
+        expect(embeddedImages[0].attachment.Headers?.['content-id']).toEqual(cid);
+        expect(embeddedImages[0].cid).toEqual(cid);
+        expect(embeddedImages[0].cloc).toEqual('');
+        expect(embeddedImages[0].type).toEqual('embedded');
+    });
+
+    it('should not load embedded images by default when Sender is not Proton verified', async () => {
+        const cid = 'imageCID';
+        const content = `<div><img src='cid:${cid}'/></div>`;
+
+        const message: MessageState = {
+            localID: 'messageWithEmbedded',
+            data: {
+                ID: 'messageID',
+                Attachments: [{ Headers: { 'content-id': cid } } as Attachment],
+                Sender: {
+                    Name: 'Normal address',
+                    Address: 'normal@proton.me',
+                    IsProton: 0,
+                },
+            } as Message,
+            messageDocument: { document: createDocument(content) },
+        };
+
+        const mailSettings = {
+            HideEmbeddedImages: SHOW_IMAGES.HIDE,
+        } as MailSettings;
+
+        const { showEmbeddedImages, embeddedImages, hasEmbeddedImages } = await setup(message, mailSettings);
+        expect(showEmbeddedImages).toBeFalsy();
+        expect(hasEmbeddedImages).toBeTruthy();
+        expect(embeddedImages[0].attachment.Headers?.['content-id']).toEqual(cid);
+        expect(embeddedImages[0].cid).toEqual(cid);
+        expect(embeddedImages[0].cloc).toEqual('');
+        expect(embeddedImages[0].type).toEqual('embedded');
     });
 });
