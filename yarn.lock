@@ -3939,8 +3939,6 @@ __metadata:
     asmcrypto.js: ^2.3.2
     bcryptjs: ^2.4.3
     eslint: ^8.30.0
-    jsdom: ^20.0.3
-    jsdom-global: ^3.0.2
     mocha: ^10.2.0
     prettier: ^2.8.1
     typescript: ^4.9.4
@@ -7404,16 +7402,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn-globals@npm:^7.0.0":
-  version: 7.0.1
-  resolution: "acorn-globals@npm:7.0.1"
-  dependencies:
-    acorn: ^8.1.0
-    acorn-walk: ^8.0.2
-  checksum: 2a2998a547af6d0db5f0cdb90acaa7c3cbca6709010e02121fb8b8617c0fbd8bab0b869579903fde358ac78454356a14fadcc1a672ecb97b04b1c2ccba955ce8
-  languageName: node
-  linkType: hard
-
 "acorn-import-assertions@npm:^1.7.6":
   version: 1.7.6
   resolution: "acorn-import-assertions@npm:1.7.6"
@@ -7439,7 +7427,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn-walk@npm:^8.0.2, acorn-walk@npm:^8.1.1":
+"acorn-walk@npm:^8.1.1":
   version: 8.2.0
   resolution: "acorn-walk@npm:8.2.0"
   checksum: 1715e76c01dd7b2d4ca472f9c58968516a4899378a63ad5b6c2d668bba8da21a71976c14ec5f5b75f887b6317c4ae0b897ab141c831d741dc76024d8745f1ad1
@@ -7464,7 +7452,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.1.0, acorn@npm:^8.4.1, acorn@npm:^8.5.0, acorn@npm:^8.6.0, acorn@npm:^8.7.1, acorn@npm:^8.8.0, acorn@npm:^8.8.1":
+"acorn@npm:^8.4.1, acorn@npm:^8.5.0, acorn@npm:^8.6.0, acorn@npm:^8.7.1, acorn@npm:^8.8.0":
   version: 8.8.1
   resolution: "acorn@npm:8.8.1"
   bin:
@@ -12344,7 +12332,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"data-urls@npm:^3.0.1, data-urls@npm:^3.0.2":
+"data-urls@npm:^3.0.1":
   version: 3.0.2
   resolution: "data-urls@npm:3.0.2"
   dependencies:
@@ -12457,7 +12445,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decimal.js@npm:^10.3.1, decimal.js@npm:^10.4.2":
+"decimal.js@npm:^10.3.1":
   version: 10.4.2
   resolution: "decimal.js@npm:10.4.2"
   checksum: 536cd6816a3197f2e1aa3da4860856cb5a2db73f6fafe8cb3b924ccc63f9b7d78296acc13dccbd419bd958ccc6357921fb15467f883b37cab04bfba7044cada2
@@ -17105,7 +17093,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"https-proxy-agent@npm:5, https-proxy-agent@npm:^5.0.0, https-proxy-agent@npm:^5.0.1":
+"https-proxy-agent@npm:5, https-proxy-agent@npm:^5.0.0":
   version: 5.0.1
   resolution: "https-proxy-agent@npm:5.0.1"
   dependencies:
@@ -19298,15 +19286,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jsdom-global@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "jsdom-global@npm:3.0.2"
-  peerDependencies:
-    jsdom: ">=10.0.0"
-  checksum: 5c665a412c244d8cfe541da784ff6888c0ed041da3f4c03d7d4ab514215b3f50a934f89c33b543b7848765d841029978a2592dc04b2e0a8734b4bb54809e67d7
-  languageName: node
-  linkType: hard
-
 "jsdom@npm:^19.0.0":
   version: 19.0.0
   resolution: "jsdom@npm:19.0.0"
@@ -19344,45 +19323,6 @@ fsevents@^1.2.7:
     canvas:
       optional: true
   checksum: 94b693bf4a394097dd96705550bb7b6cd3c8db3c5414e6e9c92a0995ed8b61067597da2f37fca6bed4b5a2f1ef33960ee759522156dccd0b306311988ea87cfb
-  languageName: node
-  linkType: hard
-
-"jsdom@npm:^20.0.3":
-  version: 20.0.3
-  resolution: "jsdom@npm:20.0.3"
-  dependencies:
-    abab: ^2.0.6
-    acorn: ^8.8.1
-    acorn-globals: ^7.0.0
-    cssom: ^0.5.0
-    cssstyle: ^2.3.0
-    data-urls: ^3.0.2
-    decimal.js: ^10.4.2
-    domexception: ^4.0.0
-    escodegen: ^2.0.0
-    form-data: ^4.0.0
-    html-encoding-sniffer: ^3.0.0
-    http-proxy-agent: ^5.0.0
-    https-proxy-agent: ^5.0.1
-    is-potential-custom-element-name: ^1.0.1
-    nwsapi: ^2.2.2
-    parse5: ^7.1.1
-    saxes: ^6.0.0
-    symbol-tree: ^3.2.4
-    tough-cookie: ^4.1.2
-    w3c-xmlserializer: ^4.0.0
-    webidl-conversions: ^7.0.0
-    whatwg-encoding: ^2.0.0
-    whatwg-mimetype: ^3.0.0
-    whatwg-url: ^11.0.0
-    ws: ^8.11.0
-    xml-name-validator: ^4.0.0
-  peerDependencies:
-    canvas: ^2.5.0
-  peerDependenciesMeta:
-    canvas:
-      optional: true
-  checksum: 6e2ae21db397133a061b270c26d2dbc0b9051733ea3b896a7ece78d79f475ff0974f766a413c1198a79c793159119169f2335ddb23150348fbfdcfa6f3105536
   languageName: node
   linkType: hard
 
@@ -22579,7 +22519,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"nwsapi@npm:^2.2.0, nwsapi@npm:^2.2.2":
+"nwsapi@npm:^2.2.0":
   version: 2.2.2
   resolution: "nwsapi@npm:2.2.2"
   checksum: 43769106292bc95f776756ca2f3513dab7b4d506a97c67baec32406447841a35f65f29c1f95ab5d42785210fd41668beed33ca16fa058780be43b101ad73e205
@@ -27113,15 +27053,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"saxes@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "saxes@npm:6.0.0"
-  dependencies:
-    xmlchars: ^2.2.0
-  checksum: d3fa3e2aaf6c65ed52ee993aff1891fc47d5e47d515164b5449cbf5da2cbdc396137e55590472e64c5c436c14ae64a8a03c29b9e7389fc6f14035cf4e982ef3b
-  languageName: node
-  linkType: hard
-
 "scheduler@npm:^0.20.2":
   version: 0.20.2
   resolution: "scheduler@npm:0.20.2"
@@ -29496,7 +29427,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"tough-cookie@npm:^4.0.0, tough-cookie@npm:^4.1.2":
+"tough-cookie@npm:^4.0.0":
   version: 4.1.2
   resolution: "tough-cookie@npm:4.1.2"
   dependencies:
@@ -30844,15 +30775,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"w3c-xmlserializer@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "w3c-xmlserializer@npm:4.0.0"
-  dependencies:
-    xml-name-validator: ^4.0.0
-  checksum: eba070e78deb408ae8defa4d36b429f084b2b47a4741c4a9be3f27a0a3d1845e277e3072b04391a138f7e43776842627d1334e448ff13ff90ad9fb1214ee7091
-  languageName: node
-  linkType: hard
-
 "wait-port@npm:^1.0.1":
   version: 1.0.1
   resolution: "wait-port@npm:1.0.1"
@@ -31871,7 +31793,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.11.0, ws@npm:^8.2.3, ws@npm:^8.4.2":
+"ws@npm:^8.2.3, ws@npm:^8.4.2":
   version: 8.11.0
   resolution: "ws@npm:8.11.0"
   peerDependencies:
