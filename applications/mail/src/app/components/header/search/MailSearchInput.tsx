@@ -1,4 +1,4 @@
-import { Ref, forwardRef } from 'react';
+import { Ref, forwardRef, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,8 +15,16 @@ interface Props {
 }
 
 const MailSearchInput = ({ value, onOpen, onChange, loading }: Props, ref: Ref<HTMLInputElement>) => {
+    const inputRef = useRef<HTMLInputElement>(null);
+
     const handleClear = () => {
         onChange('');
+        onOpen();
+    };
+
+    const handleFocus = () => {
+        // Blur the input to avoid the focus to be triggered after search submission
+        inputRef.current?.blur();
         onOpen();
     };
 
@@ -24,13 +32,14 @@ const MailSearchInput = ({ value, onOpen, onChange, loading }: Props, ref: Ref<H
         <div className="searchbox flex" role="search">
             <div ref={ref} className="w100 mauto">
                 <InputTwo
+                    ref={inputRef}
                     inputClassName="cursor-text"
                     disabled={loading}
                     value={value}
                     placeholder={c('Placeholder').t`Search messages`}
-                    onClick={onOpen}
-                    onKeyDown={onOpen}
+                    onFocus={handleFocus}
                     data-testid="search-keyword"
+                    readOnly
                     prefix={
                         <Button
                             type="submit"
