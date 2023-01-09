@@ -59,7 +59,6 @@ const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
                 numberOfTrackers={numberOfTrackers}
                 needsMoreProtection={needsMoreProtection}
                 title={title}
-                isStandaloneIcon={!isSimpleLoginIntegration}
                 openSpyTrackerModal={onClickIcon}
             />
         </div>
