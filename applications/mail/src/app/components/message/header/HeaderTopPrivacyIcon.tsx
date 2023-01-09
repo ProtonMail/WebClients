@@ -46,7 +46,6 @@ const HeaderTopPrivacyIcon = ({ message }: Props) => {
     const itemSpyTrackerIcon = (
         <ItemSpyTrackerIcon
             message={message}
-            className={isSimpleLoginIntegration ? undefined : 'ml0-25'}
             onClickIcon={isSimpleLoginIntegration ? undefined : () => setSpyTrackerModalOpen(true)}
         />
     );
