@@ -205,39 +205,3 @@ export const EO_MAX_REPLIES_NUMBER = 5;
 export const EO_TOKEN_KEY = 'proton:eo_token';
 export const EO_DECRYPTED_TOKEN_KEY = 'proton:eo_decrypted_token';
 export const EO_PASSWORD_KEY = 'proton:eo_password';
-
-// Address white listed so that we can load remote and embedded images automatically
-export const WHITE_LISTED_ADDRESSES = [
-    // v3
-    'notify@protonmail.com',
-    // v4
-    'no-reply@news.protonmail.com',
-    'no-reply@news.protonvpn.com',
-    'no-reply@app.protonmail.com',
-    'no-reply@notify.protonmail.com',
-    'no-reply@offer.protonmail.com',
-    'no-reply@offer.protonvpn.com',
-    'no-reply@notify.protonmail.com',
-    'no-reply@notify.protonvpn.com',
-    'no-reply@verify.protonmail.com',
-    'no-reply@notify.protonmail.com',
-    'no-reply@partners.protonvpn.com',
-    'no-reply@notify.protonmail.com',
-    // v5
-    'no-reply@news.proton.me',
-    'no-reply@news.protonvpn.com',
-    'no-reply@news.proton.me',
-    'no-reply@news.protonvpn.com',
-    'no-reply@mail.proton.me',
-    'no-reply@calendar.proton.me',
-    'no-reply@drive.proton.me',
-    'no-reply@vpn.proton.me',
-    'no-reply@offers.proton.me',
-    'no-reply@offer.protonvpn.com',
-    'no-reply@notify.proton.me',
-    'no-reply@notify.protonvpn.com',
-    'no-reply@verify.proton.me',
-    'no-reply@recovery.proton.me',
-    'no-reply@partners.proton.me',
-    'no-reply@referrals.proton.me',
-];
