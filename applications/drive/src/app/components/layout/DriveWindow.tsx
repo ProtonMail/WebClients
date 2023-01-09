@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import {
     CalendarDrawerAppButton,
@@ -19,6 +20,7 @@ import {
 import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useIsActiveLinkReadOnly } from '../../store/_views/utils';
 import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
 import UploadButton from '../sections/Drive/UploadButton';
@@ -36,8 +38,11 @@ const DriveWindow = ({ children }: Props) => {
 
     const [recoveryBannerVisible, setRecoveryBannerVisible] = useState(true);
 
+    const { isReadOnly } = useIsActiveLinkReadOnly();
+
     const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
     const { showDrawerSidebar } = useDrawer();
+    const location = useLocation();
 
     const drawerSpotlightSeenRef = useRef(false);
     const markSpotlightAsSeen = () => {
@@ -65,10 +70,12 @@ const DriveWindow = ({ children }: Props) => {
         permissions.calendar && <CalendarDrawerAppButton onClick={markSpotlightAsSeen} />,
     ].filter(isTruthy);
 
+    const isNewUploadDisabled = location.pathname === '/devices' || isReadOnly;
+
     const sidebar = (
         <DriveSidebar
             logo={logo}
-            primary={<UploadButton className="no-mobile" />}
+            primary={<UploadButton disabled={isNewUploadDisabled} className="no-mobile" />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />
