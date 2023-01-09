@@ -1,4 +1,3 @@
-import 'jsdom-global/register';
 import { after, before } from 'mocha';
 
 import { CryptoProxy } from '@proton/crypto';
