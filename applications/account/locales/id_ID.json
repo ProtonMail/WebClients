@@ -3982,23 +3982,23 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } events successfully imported. The imported events will now appear in your calendar.": [
+        "${ totalImported } acara berhasil diimpor. Acara yang diimpor akan muncul pada kalender Anda."
+      ],
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } acara telah dienkripsi dan ditambahkan ke kalender Anda"
       ],
+      "An error occurred while encrypting and adding your ${ totalToImport } events. No event could be imported.": [
+        "Terjadi kesalahan pada saat mengenkripsi dan menambahkan ${ totalToImport } acara Anda. Tidak ada acara yang dapat diimpor."
+      ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
-      ],
-      "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. Tidak ada acara yang berhasil diimpor."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Mengenkripsi dan menambah kontak: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Mengenkripsi dan menambahkan acara ke kalender: ${ totalImported }/${ totalToImport }"
-      ],
-      "Events successfully imported. The imported events will now appear in your calendar.": [
-        "Acara berhasil diimpor. Acara tersebut akan muncul pada kalender Anda."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Mohon untuk tidak menutup tab ini sebelum proses impor selesai."
@@ -4029,9 +4029,6 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Ada kesalahan saat mengenkripsi dan menambah kontak. Kontak tidak dapat diimpor."
       ]
     },
     "Import contact error": {
@@ -4050,11 +4047,17 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Ada kesalahan saat mengenkripsi dan menambah kontak. ${ totalImported } dari ${ totalToImport } kontak berhasil diimpor."
+      "${ totalImported } contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "${ totalImported } kontak berhasil diimpor. Kontak yang diimpor akan muncul pada daftar kontak Anda."
       ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Kontak berhasil diimpor. Kontak yang diimpor akan muncul di daftar kontak Anda."
+      "An error occurred while encrypting and adding your ${ totalToImport } contacts. No contact could be imported.": [
+        "Terjadi kesalahan pada saat mengenkripsi dan menambahkan ${ totalToImport } kontak Anda. Tidak ada kontak yang dapat diimpor."
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Terjadi kesalahan pada saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Terjadi kesalahan pada saat mengenkripsi dan menambahkan kontak Anda. ${ totalImported } dari ${ totalToImport } berhasil diimpor."
       ]
     },
     "Import contacts warning": {
@@ -4941,8 +4944,8 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
-        "Dapatkan alamat ${ BRAND_NAME } untuk digunakan di seluruh layanan ${ BRAND_NAME } termasuk Mail dan Calendar."
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Dapatkan alamat ${ BRAND_NAME } untuk menggunakan seluruh layanan ${ BRAND_NAME }, termasuk ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Dapatkan alamat ${ BRAND_NAME } saya"
@@ -8145,26 +8148,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8234,6 +8217,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {

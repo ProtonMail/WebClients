@@ -164,6 +164,9 @@
       "Close": [
         "Fermer"
       ],
+      "Close & discard": [
+        "Fermer & abandonner"
+      ],
       "Close composer": [
         "Fermer l'éditeur"
       ],
@@ -683,6 +686,9 @@
       "Open calendar": [
         "Ouvrir le calendrier"
       ],
+      "Open composer": [
+        "Ouvrir l'éditeur"
+      ],
       "Open get started checklist modal": [
         "Ouvrir la checklist de démarrage"
       ],
@@ -779,6 +785,12 @@
       "Rename": [
         "Renommer"
       ],
+      "Reply": [
+        "Répondre"
+      ],
+      "Reply all": [
+        "Répondre à tous"
+      ],
       "Reply securely": [
         "Répondre en toute sécurité"
       ],
@@ -859,6 +871,9 @@
       ],
       "Send feedback": [
         "Envoyer un avis"
+      ],
+      "Send quick reply": [
+        "Envoyer une réponse rapide"
       ],
       "Send read receipt": [
         "Envoyer une confirmation de lecture"
@@ -1096,6 +1111,9 @@
     "action": {
       "Search messages": [
         "Rechercher des messages"
+      ],
+      "Send quick reply": [
+        "Envoyer une réponse rapide"
       ]
     },
     "Actions message": {
@@ -3988,27 +4006,27 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } événement a été importé. Il apparaîtra dans votre calendrier.",
+        "${ totalImported } événements ont été importés. Ils apparaissent dans votre calendrier."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } événement a été chiffré et ajouté à votre calendrier.",
         "${ totalImported }/${ totalToImport } événements ont été chiffrés et ajoutés à votre calendrier."
       ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } événement sur ${ totalToImport } a bien été importé.",
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } événements sur ${ totalToImport } ont bien été importés."
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout d'${ totalToImport } événement. Aucun événement n’a pu être importé.",
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de ${ totalToImport } événements. Aucun événement n’a pu être importé."
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. Aucun événement n'a pu être importé.",
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } événement sur ${ totalToImport } a été importé.",
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } événements sur ${ totalToImport } ont été importés."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout des contacts : ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout d'événements à votre calendrier : ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "L'événement a bien été importé. Il apparaîtra dans votre calendrier.",
-        "Les événements ont bien été importés. Ils apparaîtront dans votre calendrier."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Ne fermez pas l'onglet avant la fin de l'importation."
@@ -4042,10 +4060,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contact chiffré et ajouté à votre liste de contacts.",
         "${ totalImported }/${ totalToImport } contacts chiffrés et ajoutés à votre liste de contacts."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Une erreur s’est produite lors du chiffrement et de l’ajout de votre contact. Aucun contact n’a pu être importé.",
-        "Une erreur s’est produite lors du chiffrement et de l’ajout de vos contacts. Aucun contact n’a pu être importé."
       ]
     },
     "Import contact error": {
@@ -4065,12 +4079,20 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos contacts. ${ totalImported } contacts sur ${ totalToImport } ont bien été importés."
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "${ totalImported } contact a été importé. Il apparaît maintenant dans votre liste de contacts.",
+        "${ totalImported } contacts ont été importés. Ils apparaissent maintenant dans votre liste de contacts."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Le contact a bien été importé. Il apparaîtra dans votre liste de contacts.",
-        "Les contacts ont bien été importés. Ils apparaîtront dans votre liste de contacts."
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout d'${ totalToImport } contact. Aucun contact n’a pu être importé.",
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de ${ totalToImport } contacts. Aucun contact n’a pu être importé."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de votre contact. ${ totalImported } contact sur ${ totalToImport } a été importé.",
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de vos contacts. ${ totalImported } contacts sur ${ totalToImport } ont été importés."
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de votre contact. Aucun contact n’a pu être importé."
       ]
     },
     "Import contacts warning": {
@@ -4471,8 +4493,8 @@
         "${ unreadCount } messages non lus"
       ],
       "${ updated } contact updated successfully.": [
-        "${ updated } contact a bien été mis à jour.",
-        "${ updated } contacts ont bien été mis à jour."
+        "${ updated } contact a été mis à jour.",
+        "${ updated } contacts ont été mis à jour."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
@@ -5135,6 +5157,12 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Protégez votre adresse électronique des fuites vers les listes de diffusion ou les spammeurs avec ${ maskMyEmailButton }."
+      ],
+      "Quick reply": [
+        "Réponse rapide"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "Réponse rapide à ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Destinataire : "
@@ -6996,7 +7024,7 @@
         "Le groupe de contacts a été mis à jour."
       ],
       "Password has been set successfully": [
-        "Le mot de passe a bien été défini."
+        "Le mot de passe a été défini."
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "L'expéditeur ${ firstSenderAddress } a été bloqué."
@@ -7231,16 +7259,16 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } contact sur ${ countContacts } a bien été exporté.",
-        "${ contactsExported.length } contacts sur ${ countContacts } ont bien été exportés."
+        "${ contactsExported.length } contact sur ${ countContacts } a été exporté.",
+        "${ contactsExported.length } contacts sur ${ countContacts } ont été exportés."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } contact sur ${ totalBeDeleted } a bien été supprimé.",
-        "${ model.deleted.length } contacts sur ${ totalBeDeleted } ont bien été supprimés."
+        "${ model.deleted.length } contact sur ${ totalBeDeleted } a été supprimé.",
+        "${ model.deleted.length } contacts sur ${ totalBeDeleted } ont été supprimés."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } contact sur ${ totalBeMerged } a bien été fusionné.",
-        "${ model.submitted.length } contacts sur ${ totalBeMerged } ont bien été fusionnés."
+        "${ model.submitted.length } contact sur ${ totalBeMerged } a été fusionné.",
+        "${ model.submitted.length } contacts sur ${ totalBeMerged } ont été fusionnés."
       ],
       "No contacts exported.": [
         "Aucun contact exporté."

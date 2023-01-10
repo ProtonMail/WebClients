@@ -1914,7 +1914,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Gecikmiş fatura"
+        "Süresi geçmiş fatura"
       ]
     },
     "Description": {
@@ -2821,27 +2821,27 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz.",
+        "${ totalImported } etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi"
       ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "${ totalToImport } etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı.",
+        "${ totalToImport } etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
+      ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı.",
-        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kişiler ekleniyor ve şifreleniyor: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Etkinlikler şifrelenip takviminze ekleniyor: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz.",
-        "Etkinlikler içe aktarıldı. İçe aktarılan etkinlikleri takviminizde görebilirsiniz."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Lütfen içe aktarma işlemi bitmeden önce sekmeyi kapatmayın."
@@ -2875,10 +2875,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi",
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı.",
-        "Kişileriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
       ]
     },
     "Import contact error": {
@@ -2898,12 +2894,20 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "${ totalImported } kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz.",
+        "${ totalImported } kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "${ totalToImport } kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı.",
+        "${ totalToImport } kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Kişiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı.",
         "Kişileriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz.",
-        "Kişiler içe aktarıldı. İçe aktarılan kişileri kişi listenizde görebilirsiniz."
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
       ]
     },
     "Import contacts warning": {
@@ -3422,7 +3426,7 @@
         "Posta kutusunu içe aktar"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Kişisel gizlilik dünyasına hoş geldiniz."
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
@@ -3699,7 +3703,7 @@
         "Hafta"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "Which event would you like to delete?": [
         "Hangi etkinliği silmek istiyorsunuz?"
@@ -3804,7 +3808,7 @@
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
+        "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
@@ -4190,7 +4194,7 @@
         "Araç çubuğu"
       ],
       "Two-factor authentication code": [
-        "İki aşamalı kimlik doğrulama kodu"
+        "İki aşamalı doğrulama kodu"
       ],
       "Upload file": [
         "Dosya yükle"
@@ -5702,7 +5706,7 @@
         "İçe aktarma işlemini başlatın"
       ],
       "Two-factor authentication": [
-        "İki aşamalı kimlik doğrulama"
+        "İki aşamalı doğrulama"
       ],
       "Update event": [
         "Etkinliği güncelle"

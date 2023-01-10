@@ -164,6 +164,9 @@
       "Close": [
         "Închidere"
       ],
+      "Close & discard": [
+        "Închidere și eliminare"
+      ],
       "Close composer": [
         "Închidere panou editare"
       ],
@@ -686,6 +689,9 @@
       "Open calendar": [
         "Deschidere calendar"
       ],
+      "Open composer": [
+        "Deschidere editor mesaje"
+      ],
       "Open get started checklist modal": [
         "Deschidere panou listă de opțiuni de la pornire"
       ],
@@ -782,6 +788,12 @@
       "Rename": [
         "Redenumire"
       ],
+      "Reply": [
+        "Răspuns"
+      ],
+      "Reply all": [
+        "Răspuns tuturor"
+      ],
       "Reply securely": [
         "Răspuns în siguranță"
       ],
@@ -862,6 +874,9 @@
       ],
       "Send feedback": [
         "Trimitere feedback"
+      ],
+      "Send quick reply": [
+        "Trimitere răspuns rapid"
       ],
       "Send read receipt": [
         "Trimitere confirmare de citire"
@@ -1100,6 +1115,9 @@
     "action": {
       "Search messages": [
         "Căutare mesaje"
+      ],
+      "Send quick reply": [
+        "Trimitere răspuns rapid"
       ]
     },
     "Actions message": {
@@ -4020,31 +4038,31 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "A fost importat un eveniment. Acesta va apărea acum în calendar.",
+        "Au fost importate ${ totalImported } evenimente. Acestea vor apărea acum în calendar.",
+        "Au fost importate ${ totalImported } de evenimente. Acestea vor apărea acum în calendar."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "Un eveniment din ${ totalToImport } a fost criptat și adăugat în calendar.",
         "${ totalImported } evenimente din ${ totalToImport } au fost criptate și adăugate în calendar.",
         "${ totalImported } de evenimente din ${ totalToImport } au fost criptate și adăugate în calendar."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "S-a produs o eroare în timpul criptării și adăugării unui eveniment. Nu s-a importat niciun eveniment.",
+        "S-a produs o eroare în timpul criptării și adăugării a ${ totalToImport } evenimente. Nu s-a importat niciun eveniment.",
+        "S-a produs o eroare în timpul criptării și adăugării a ${ totalToImport } de evenimente. Nu s-a importat niciun eveniment."
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "A apărut o eroare la criptarea și adăugarea evenimentului. Niciun eveniment nu a putut fi importat.",
-        "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat.",
-        "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare contacte: ${ totalImported }}/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare evenimente în calendar: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Eveniment importat cu succes. Evenimentul importat va apărea acum în calendar.",
-        "Evenimente importate cu succes. Evenimentele importate vor apărea acum în calendar.",
-        "Evenimente importate cu succes. Evenimentele importate vor apărea acum în calendar."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Nu închideţi fila înainte de terminarea procesului de importare."
@@ -4081,11 +4099,6 @@
         "S-a criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } contact.",
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } contacte.",
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "A apărut o eroare la criptarea și adăugarea contactului. Nu s-a importat niciun contact.",
-        "A apărut o eroare la criptarea și adăugarea contactelor. Nu s-a importat niciun contact.",
-        "A apărut o eroare la criptarea și adăugarea contactelor. Nu s-a importat niciun contact."
       ]
     },
     "Import contact error": {
@@ -4106,13 +4119,23 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "A apărut o eroare la criptarea și adăugarea contactelor. ${ totalImported } din ${ totalToImport } contacte au fost importate cu succes."
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "A fost importat un contact. Acesta va apărea acum în lista de contacte.",
+        "Au fost importate ${ totalImported } contacte. Acestea vor apărea acum în lista de contacte.",
+        "Au fost importate ${ totalImported } de contacte. Acestea vor apărea acum în lista de contacte."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contactul a fost importat. Contactul importat va apărea acum în lista de contacte.",
-        "Contactele au fost importate. Contactele importate vor apărea acum în lista de contacte.",
-        "Contactele au fost importate. Contactele importate vor apărea acum în lista de contacte."
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "S-a produs o eroare în timpul criptării și adăugării unui contact. Nu s-a importat niciun contact.",
+        "S-a produs o eroare în timpul criptării și adăugării a ${ totalToImport } contacte. Nu a putut fi importat niciun contact.",
+        "S-a produs o eroare în timpul criptării și adăugării a ${ totalToImport } de contacte. Nu a putut fi importat niciun contact."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "A apărut o eroare în timpul criptării și adăugării unui contact. S-au importat ${ totalImported } din ${ totalToImport } contacte.",
+        "A apărut o eroare în timpul criptării și adăugării contactelor. S-au importat ${ totalImported } din ${ totalToImport } contacte.",
+        "A apărut o eroare în timpul criptării și adăugării contactelor. S-au importat ${ totalImported } din ${ totalToImport } de contacte."
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "A apărut o eroare la criptarea și adăugarea contactului. Nu s-a importat niciun contact."
       ]
     },
     "Import contacts warning": {
@@ -5229,6 +5252,12 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Împiedicați divulgarea adresei e-mail către liste de mesagerie sau mesaje nedorite cu ${ maskMyEmailButton }."
+      ],
+      "Quick reply": [
+        "Răspuns rapid"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "Răspuns rapid către ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Destinatar: "

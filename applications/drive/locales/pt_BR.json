@@ -2535,27 +2535,27 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "O evento ${ totalImported } importado com sucesso. O evento importado agora aparecerá em sua agenda.",
+        "${ totalImported } importados com sucesso. Os eventos importados agora aparecerão em sua agenda."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } evento criptografado e adicionado ao seu calendário",
         "${ totalImported }/${ totalToImport } eventos criptografados e adicionados ao seu calendário"
       ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "Ocorreu um erro ao criptografar e adicionar seu evento. Nenhum evento ${ totalToImport } pôde ser importado.",
+        "Ocorreu um erro ao criptografar e adicionar seus eventos. Nenhum evento ${ totalToImport } pôde ser importado."
+      ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } evento importado com sucesso.",
         "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Ocorreu um erro ao criptografar e adicionar seu evento. Nenhum evento pôde ser importado.",
-        "Ocorreu um erro ao criptografar e adicionar seus eventos. Nenhum evento pôde ser importado."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Criptografando e adicionando contatos: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Criptografando e adicionando eventos ao seu calendário: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Evento importado com sucesso. O evento importado agora aparecerá em sua agenda.",
-        "Eventos importados com sucesso. Os eventos importados agora aparecerão em sua agenda."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Por favor, não feche a aba antes que o processo de importação termine."
@@ -2589,10 +2589,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contato criptografado e adicionado à sua lista de contatos",
         "${ totalImported }/${ totalToImport } contatos criptografados e adicionados à sua lista de contatos"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Ocorreu um erro ao criptografar e adicionar seu contato. Nenhum contato pôde ser importado.",
-        "Ocorreu um erro ao criptografar e adicionar seus contatos. Nenhum contato pôde ser importado."
       ]
     },
     "Import contact error": {
@@ -2612,12 +2608,20 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "O contato ${ totalImported } importado com sucesso. O contato importado aparecerá em sua lista de contatos.",
+        "O ${ totalImported } importados com sucesso. Os contatos importados aparecerão em sua lista de contatos."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "Ocorreu um erro ao criptografar e adicionar seu contato. Nenhum contato ${ totalToImport } pôde ser importado.",
+        "Ocorreu um erro ao criptografar e adicionar seus contatos. Nenhum contato ${ totalToImport } pôde ser importado."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Um erro ocorreu durante a encriptação e inclusão de seu contato. ${ totalImported } de ${ totalToImport } evento importado com sucesso.",
         "Ocorreu um erro ao criptografar e adicionar seus contatos. ${ totalImported } de ${ totalToImport } contatos importados com sucesso."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contato importado com sucesso. O contato importado aparecerá em sua lista de contatos.",
-        "Contatos importados com sucesso. Os contatos importados aparecerão em sua lista de contatos."
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Ocorreu um erro ao criptografar e adicionar seu contato. Nenhum contato pôde ser importado."
       ]
     },
     "Import contacts warning": {

@@ -3710,19 +3710,11 @@
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "S'ha produït un error xifrant i afegint el teu esdeveniment. No s’ha pogut importar cap esdeveniment.",
-        "S'ha produït un error xifrant i afegint els teus esdeveniments. No s’ha pogut importar cap esdeveniment."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint esdeveniments al calendari: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Esdeveniment importat amb èxit. L’esdeveniment importat ara apareixerà al vostre calendari.",
-        "Esdeveniments importats amb èxit. Els esdeveniments importats ara apareixeràn al vostre calendari."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No tanqueu la pestanya abans de finalitzar el procés d'importació."
@@ -3756,10 +3748,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contacte xifrat i afegit a la vostra llista de contactes",
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "S'ha produït un error xifrant i afegint el vostre contacte. No s'ha pogut importar cap contacte.",
-        "S'ha produït un error xifrant i afegint els vostres contactes. No s'ha pogut importar cap contacte."
       ]
     },
     "Import contact error": {
@@ -3776,15 +3764,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "desconegut/da"
-      ]
-    },
-    "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "S'ha produït un error xifrant i afegint els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats amb èxit."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contacte importat amb èxit. El contacte importat ja apareix a la vostra llista de contactes.",
-        "Contactes importats amb èxit. Els contactes importats ja apareixen a la vostra llista de contactes."
       ]
     },
     "Import contacts warning": {
@@ -4525,9 +4504,6 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generació d’una nova frase de recuperació desactivarà la vostra antiga."
-      ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
-        "Obteniu una adreça ${ BRAND_NAME } per utilitzar tots els serveis ${ BRAND_NAME } inclosos Mail i Calendar."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Obté la meva adreça ${ BRAND_NAME }"
@@ -7331,11 +7307,6 @@
         "Assistència"
       ]
     },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7345,6 +7316,11 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom de manera predeterminada."
+      ]
+    },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
