@@ -164,6 +164,9 @@
       "Close": [
         "Zavřít"
       ],
+      "Close & discard": [
+        "Zavřít & zahodit"
+      ],
       "Close composer": [
         "Zavřít editor"
       ],
@@ -689,6 +692,9 @@
       "Open calendar": [
         "Otevřít kalendář"
       ],
+      "Open composer": [
+        "Otevřít editor"
+      ],
       "Open get started checklist modal": [
         "Otevřít průvodce pro začátečníky"
       ],
@@ -785,6 +791,12 @@
       "Rename": [
         "Přejmenovat"
       ],
+      "Reply": [
+        "Odpovědět"
+      ],
+      "Reply all": [
+        "Odpovědět všem"
+      ],
       "Reply securely": [
         "Odpovědět bezpečně"
       ],
@@ -865,6 +877,9 @@
       ],
       "Send feedback": [
         "Odeslat zpětnou vazbu"
+      ],
+      "Send quick reply": [
+        "Poslat rychlou odpověď"
       ],
       "Send read receipt": [
         "Odeslat potvrzení o přečtení"
@@ -1104,6 +1119,9 @@
     "action": {
       "Search messages": [
         "Prohledat zprávy"
+      ],
+      "Send quick reply": [
+        "Poslat rychlou odpověď"
       ]
     },
     "Actions message": {
@@ -4052,11 +4070,23 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } událost byla úspěšně importována. Importovaná událost se nyní objeví ve vašem kalendáři.",
+        "${ totalImported } události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři.",
+        "${ totalImported } událostí bylo úspěšně importováno. Importované události se nyní objeví ve vašem kalendáři.",
+        "${ totalImported } událostí bylo úspěšně importováno. Importované události se nyní objeví ve vašem kalendáři."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } události zašifrována a přidána do kalendáře",
         "${ totalImported }/${ totalToImport } událostí zašifrovány a přidány do kalendáře",
         "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře",
         "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře"
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "Nastala chyba při šifrování a přidávání vaší ${ totalToImport } události. Událost nemohla být importována.",
+        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } událostí. Události nemohly být importovány.",
+        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } událostí. Události nemohly být importovány.",
+        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } událostí. Události nemohly být importovány."
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } události byla úspěšně importována.",
@@ -4064,23 +4094,11 @@
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Nastal problém při šifrování a přidávání vaší události. Událost nemohla být importována.",
-        "Nastal problém při šifrování a přidávání vašich událostí. Události nemohly být importovány.",
-        "Nastal problém při šifrování a přidávání vašich událostí. Události nemohly být importovány.",
-        "Nastal problém při šifrování a přidávání vašich událostí. Události nemohly být importovány."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifrování a přidávaní kontaktů: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Šifrování a přidávání událostí do Vašeho kalendáře: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Událost byla úspěšně importována. Importovaná událost se nyní objeví ve vašem kalendáři.",
-        "Události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři.",
-        "Události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři.",
-        "Události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Prosíme nezavírejte kartu před dokončením importu."
@@ -4120,12 +4138,6 @@
         "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do Vašeho listu kontaktů",
         "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů",
         "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Objevila se chyba při šifrování a přidávání kontaktu. Kontakt nebyl importován.",
-        "Objevila se chyba při šifrování a přidávání kontaktů. Kontakty nebyly importovány.",
-        "Objevila se chyba při šifrování a přidávání kontaktů. Kontakty nebyly importovány.",
-        "Objevila se chyba při šifrování a přidávání kontaktů. Kontakty nebyly importovány."
       ]
     },
     "Import contact error": {
@@ -4147,14 +4159,26 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Nastala chyba při šifrování a editaci kontaktů. ${ totalImported } mimo ${ totalToImport } kontakty úspěšně importovány."
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "${ totalImported } kontakt byl úspěšně importován. Importovaný kontakt se nyní zobrazí v seznamu kontaktů.",
+        "${ totalImported } kontakty byly úspěšně importovány. Importované kontakty se objeví ve vašem seznamu kontaktů.",
+        "${ totalImported } kontaktů bylo úspěšně importováno. Importované kontakty se nyní objeví v seznamu kontaktů.",
+        "${ totalImported } kontaktů bylo úspěšně importováno. Importované kontakty se nyní objeví v seznamu kontaktů."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kontakt byl úspěšně importován. Importovaný kontakt se objeví ve vašem seznamu kontaktů.",
-        "Kontakty byly úspěšně importovány. Importované kontakty se objeví ve vašem seznamu kontaktů.",
-        "Kontakty byly úspěšně importovány. Importované kontakty se objeví ve vašem seznamu kontaktů.",
-        "Kontakty byly úspěšně importovány. Importované kontakty se objeví ve vašem seznamu kontaktů."
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "Nastala chyba při šifrování a přidávání vašeho ${ totalToImport } kontaktu. Kontakt nemohl být importován.",
+        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } kontaktů. Kontakty nemohly být importovány.",
+        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } kontaktů. Kontakty nemohly být importovány.",
+        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } kontaktů. Kontakty nemohly být importovány."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Nastala chyba při šifrování a přidávání kontaktu. ${ totalImported } z ${ totalToImport } kontaktu byl úspěšně importován.",
+        "Nastala chyba při šifrování a přidávání kontaktů. ${ totalImported } z ${ totalToImport } kontaktů bylo úspěšně importováno.",
+        "Nastala chyba při šifrování a přidávání kontaktů. ${ totalImported } z ${ totalToImport } kontaktů bylo úspěšně importováno.",
+        "Nastala chyba při šifrování a přidávání kontaktů. ${ totalImported } z ${ totalToImport } kontaktů bylo úspěšně importováno."
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Nastala chyba při šifrování a přidávání kontaktu. Kontakt nebyl importován."
       ]
     },
     "Import contacts warning": {
@@ -5323,6 +5347,12 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Chraňte svůj e-mail před únikem do seznamů e-mailových schránek nebo spammerů pomocí ${ maskMyEmailButton }."
+      ],
+      "Quick reply": [
+        "Rychlá odpověď"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "Rychle odpovědět ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Příjemce: "

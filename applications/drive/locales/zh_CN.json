@@ -1749,6 +1749,11 @@
         "遵循系统设置 (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "遵循系统设置 (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "逾期账单"
@@ -1957,6 +1962,9 @@
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
+      ],
+      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "将至少 ${ calendarToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Missing key packet": [
         "缺少密钥数据包"
@@ -2494,23 +2502,20 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } events successfully imported. The imported events will now appear in your calendar.": [
+        "${ totalImported }日程导入成功，已显示在您的日历中。"
+      ],
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
-      "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "加密并添加日程时出错，未能导入任何日程。"
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加联系人：已完成 ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加日程：已完成 ${ totalImported }/${ totalToImport }"
-      ],
-      "Events successfully imported. The imported events will now appear in your calendar.": [
-        "日程导入成功，已显示在您的日历中。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "导入结束前请勿关闭此网页。"
@@ -2541,9 +2546,6 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "加密并添加联系人时出错，未能导入任何联系人。"
       ]
     },
     "Import contact error": {
@@ -2562,14 +2564,14 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "加密并添加联系人时出错，${ totalImported }/${ totalToImport } 联系人已成功导入。"
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "联系人导入成功，已显示在您的通讯录中。"
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "加密并添加联系人时出错，未能导入任何联系人"
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ${ forNow } 不支持:"
+      ],
       "for now": [
         "暂时"
       ]
@@ -2936,6 +2938,9 @@
       "and": [
         "并"
       ],
+      "And access it from anywhere": [
+        "并从任何地方访问它"
+      ],
       "Anyone with this link can access your file.": [
         "任何知道此链接的人都能访问您的文件。"
       ],
@@ -2953,6 +2958,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "确定要从回收站中永久删除所选项吗？"
+      ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
@@ -2992,6 +3000,9 @@
       ],
       "Conflict": [
         "冲突"
+      ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "继续使用 ${ DRIVE_APP_NAME } 并稍后解锁网盘"
       ],
       "Continue with ${ planName }": [
         "升级至 ${ planName } 并继续"
@@ -3037,6 +3048,9 @@
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "数字签名已验证，此文件夹是由 ${ emailAddress } 用户安全上传。"
+      ],
+      "double your storage": [
+        "获得双倍的储存"
       ],
       "Download canceled": [
         "下载已取消"
@@ -3146,6 +3160,9 @@
       "Free up some space or contact your administrator.": [
         "释放一些空间或联系您的管理员。"
       ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "了解${ DRIVE_APP_NAME }并获得500MB的存储奖励! 今天就采取行动吧。"
+      ],
       "Go ahead, upload a file": [
         "来吧，上传文件"
       ],
@@ -3169,6 +3186,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
@@ -3211,6 +3231,9 @@
       ],
       "It’s as easy as drag and drop or selecting files": [
         "只需拖拽或选择文件"
+      ],
+      "It’s easy and secure": [
+        "它简单、安全"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交给我们即可。"
@@ -3256,6 +3279,9 @@
       ],
       "Loading...": [
         "加载中..."
+      ],
+      "Makes your account safer": [
+        "使你的账户更安全"
       ],
       "Merged": [
         "已合并"
@@ -3313,6 +3339,9 @@
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "并非所有文件都已传输。请尝试重新上传或下载文件。"
+      ],
+      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "请注意：安装过 ${ DRIVE_APP_NAME } 的设备上仍可能存在本地数据。"
       ],
       "of": [
         "，共"
@@ -3494,6 +3523,9 @@
       "There are no files yet": [
         "还没有文件"
       ],
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
+        "这些文件是使用端到端加密共享的。 为了确保它们的安全，以及所有文档、照片和文件的私密性，请将其存储在${ DRIVE_APP_NAME } 中。 使用方便，而且免费。"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
       ],
@@ -3527,6 +3559,9 @@
       "This will overwrite the existing folder": [
         "这将覆盖现有文件夹"
       ],
+      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "为了实现真正的私人搜索，我们需要在本地对你的文件进行索引。你仍然可以正常使用${ DRIVE_APP_NAME } - 索引完成后我们会通知你。"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
@@ -3553,6 +3588,9 @@
       ],
       "Trash": [
         "回收站"
+      ],
+      "Unknown error": [
+        "未知错误"
       ],
       "Unlimited folders, labels, and filters": [
         "文件夹、标签、筛选规则不限量"
@@ -3586,6 +3624,9 @@
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用这张表单通知我们有不合适、非法或恶意分享的文件，您将要举报以下行为："
+      ],
+      "Way to go, you’ve just doubled your free storage!": [
+        "干得好，你刚刚把你的免费存储空间增加了一倍！"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
@@ -3643,6 +3684,9 @@
       ],
       "You cannot undo this action.": [
         "您无法撤销此操作。"
+      ],
+      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+        "您还有${ expiresInDays } 天来申请您的 500 MB 欢迎奖金和 "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已经使用了 ${ spaceDisplayed }% 的存储空间。${ freeUpMessage } ${ upgradeLink }"
@@ -3997,6 +4041,9 @@
       "Mailbox password": [
         "邮箱密码"
       ],
+      "Main": [
+        "主要"
+      ],
       "Malware": [
         "恶意软件"
       ],
@@ -4134,6 +4181,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "导入到：${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "工具栏"
       ],
       "Two-factor authentication code": [
         "双重验证码"
@@ -4543,11 +4593,17 @@
     "Onboarding Action": {
       "Next": [
         "下一步"
+      ],
+      "Start using ${ DRIVE_APP_NAME }": [
+        "开始使用 ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
       "Create a share link": [
         "创建分享链接"
+      ],
+      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
+        "现在开始使用${ DRIVE_APP_NAME }，我们会将您的免费空间加倍到 1GB！"
       ],
       "Set a recovery method": [
         "设置恢复方法"
@@ -4580,6 +4636,9 @@
       ]
     },
     "Onboarding Title": {
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "欢迎来到 ${ DRIVE_APP_NAME }"
+      ],
       "Your welcome bonus": [
         "您的欢迎奖励"
       ]
@@ -4653,6 +4712,9 @@
       ],
       "Filter groups": [
         "查找群组"
+      ],
+      "Group name": [
+        "群组名称"
       ],
       "Image URL": [
         "图像 URL"
@@ -5371,6 +5433,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您的免费试用将在 ${ formattedEndDate } 后过期。"
+      ],
+      "Your welcome actions": [
+        "您的欢迎行动"
       ],
       "You’ve got 1 GB of storage": [
         "您已获得 1 GB 存储空间"

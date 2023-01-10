@@ -164,6 +164,9 @@
       "Close": [
         "Zamknij"
       ],
+      "Close & discard": [
+        "Zamknij i odrzuć"
+      ],
       "Close composer": [
         "Zamknij edytor"
       ],
@@ -689,6 +692,9 @@
       "Open calendar": [
         "Otwórz kalendarz"
       ],
+      "Open composer": [
+        "Otwórz edytor"
+      ],
       "Open get started checklist modal": [
         "Otwórz okno listy kontrolnej"
       ],
@@ -785,6 +791,12 @@
       "Rename": [
         "Zmień nazwę"
       ],
+      "Reply": [
+        "Odpowiedz"
+      ],
+      "Reply all": [
+        "Odpowiedz wszystkim"
+      ],
       "Reply securely": [
         "Odpowiedz bezpiecznie"
       ],
@@ -865,6 +877,9 @@
       ],
       "Send feedback": [
         "Wyślij opinię"
+      ],
+      "Send quick reply": [
+        "Wyślij szybką odpowiedź"
       ],
       "Send read receipt": [
         "Wyślij potwierdzenie odczytu"
@@ -1104,6 +1119,9 @@
     "action": {
       "Search messages": [
         "Szukaj wiadomości"
+      ],
+      "Send quick reply": [
+        "Wyślij szybką odpowiedź"
       ]
     },
     "Actions message": {
@@ -4057,11 +4075,23 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "Wydarzenie zostało zaimportowane i pojawi się w Twoim kalendarzu.",
+        "${ totalImported } wydarzenia zostały zaimportowane i pojawią się w Twoim kalendarzu.",
+        "${ totalImported } wydarzeń zostało zaimportowanych i pojawią się w Twoim kalendarzu.",
+        "${ totalImported } wydarzeń zostało zaimportowanych i pojawią się w Twoim kalendarzu."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
         "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
         "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }",
         "Zaszyfrowanych i dodanych wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }"
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie może zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania ${ totalToImport } wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania ${ totalToImport } wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania ${ totalToImport } wydarzeń. Wydarzenia nie mogą zostać zaimportowane."
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie zostało zaimportowane.",
@@ -4070,22 +4100,13 @@
         "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Liczba zaimportowanych wydarzeń: ${ totalImported } na ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie może zostać zaimportowane.",
-        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
-        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane.",
-        "Wystąpił błąd podczas szyfrowania i dodawania wydarzeń. Wydarzenia nie mogą zostać zaimportowane."
+        "Wystąpił błąd podczas szyfrowania i dodawania wydarzenia. Wydarzenie nie może zostać zaimportowane."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Szyfrowanie i dodawanie kontaktów: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Szyfrowanie i dodawanie wydarzeń do kalendarza: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Wydarzenie zostało zaimportowane i pojawi się w Twoim kalendarzu.",
-        "Wydarzenia zostały zaimportowane i pojawią się w Twoim kalendarzu.",
-        "Wydarzenia zostały zaimportowane i pojawią się w Twoim kalendarzu.",
-        "Wydarzenia zostały zaimportowane i pojawią się w Twoim kalendarzu."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Nie zamykaj karty przed zaimportowaniem danych."
@@ -4125,12 +4146,6 @@
         "Zaszyfrowanych i dodanych kontaktów: ${ totalImported }/${ totalToImport }",
         "Zaszyfrowanych i dodanych kontaktów: ${ totalImported }/${ totalToImport }",
         "Zaszyfrowanych i dodanych kontaktów: ${ totalImported }/${ totalToImport }"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Wystąpił błąd podczas szyfrowania i dodawania kontaktu. Kontakt nie może zostać zaimportowany.",
-        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Kontakty nie mogą zostać zaimportowane.",
-        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Kontakty nie mogą zostać zaimportowane.",
-        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Kontakty nie mogą zostać zaimportowane."
       ]
     },
     "Import contact error": {
@@ -4152,14 +4167,26 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Pomyślnie zaimportowano ${ totalImported } z ${ totalToImport } kontaktów."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kontakt został zaimportowany i pojawi się w Twojej liście kontaktów.",
-        "Kontakty zostały zaimportowane i pojawią się w Twojej liście kontaktów.",
-        "Kontakty zostały zaimportowane i pojawią się w Twojej liście kontaktów.",
-        "Kontakty zostały zaimportowane i pojawią się w Twojej liście kontaktów."
+        "${ totalImported } kontakty zostały zaimportowane i pojawią się w Twojej liście kontaktów.",
+        "${ totalImported } kontaktów zostało zaimportowanych i pojawią się w Twojej liście kontaktów.",
+        "${ totalImported } kontaktów zostało zaimportowanych i pojawią się w Twojej liście kontaktów."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "Wystąpił błąd podczas szyfrowania i dodawania kontaktu. Kontakt nie może zostać zaimportowany.",
+        "Wystąpił błąd podczas szyfrowania i dodawania ${ totalToImport } kontaktów. Kontakty nie mogą zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania ${ totalToImport } kontaktów. Kontakty nie mogą zostać zaimportowane.",
+        "Wystąpił błąd podczas szyfrowania i dodawania ${ totalToImport } kontaktów. Kontakty nie mogą zostać zaimportowane."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Wystąpił błąd podczas szyfrowania i dodawania kontaktu. Kontakt nie został zaimportowany.",
+        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Liczba zaimportowanych kontaktów: ${ totalImported } na ${ totalToImport }.",
+        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Liczba zaimportowanych kontaktów: ${ totalImported } na ${ totalToImport }.",
+        "Wystąpił błąd podczas szyfrowania i dodawania kontaktów. Liczba zaimportowanych kontaktów: ${ totalImported } na ${ totalToImport }."
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Wystąpił błąd podczas szyfrowania i dodawania kontaktu. Kontakt nie może zostać zaimportowany."
       ]
     },
     "Import contacts warning": {
@@ -5328,6 +5355,12 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Chroń swój adres e-mail przed ujawnieniem go w listach mailingowych lub przez spammerów za pomocą funkcji ${ maskMyEmailButton }."
+      ],
+      "Quick reply": [
+        "Szybka odpowiedź"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "Szybka odpowiedź do ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Odbiorca: "

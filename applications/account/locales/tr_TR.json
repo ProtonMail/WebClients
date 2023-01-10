@@ -2582,7 +2582,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Gecikmiş fatura"
+        "Süresi geçmiş fatura"
       ]
     },
     "Description": {
@@ -3224,7 +3224,7 @@
         "Doğrulama kodu yanlış. Lütfen doğrulama kodunu doğru bir şekilde kopyaladığınızdan emin olun ve yeniden deneyin. Değişikliklerin etkili olması 24 saati bulabilir."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Kuruluş anahtarlarınıza erişiminizi kaybettiniz. Geri yükleme işlemini yapmadan yeni kullanıcılar ekleyemez, var olan kullanıcılara adres ekleyemez veya kişisel olmayan kullanıcı hesaplarına erişemezsiniz."
+        "Kuruluş anahtarlarınıza erişiminizi kaybettiniz. Geri yükleme işlemini yapmadan yeni kullanıcılar ekleyemez, var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
       ],
       "You have no invoices.": [
         "Herhangi bir faturanız yok."
@@ -3239,7 +3239,7 @@
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Kuruluş anahtarlarınızı etkinleştirmelisiniz. Etkinleştirme işlemini yapmadan yeni kullanıcılar ekleyemez, var olan kullanıcılara adres ekleyemez veya kişisel olmayan kullanıcı hesaplarına erişemezsiniz."
+        "Kuruluş anahtarlarınızı etkinleştirmelisiniz. Etkinleştirme işlemini yapmadan yeni kullanıcılar ekleyemez, var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
       ],
       "You must privatize all users before generating new organization keys": [
         "Yeni kuruluş anahtarları oluşturmadan önce tüm kullanıcıları kişiselleştirmelisiniz"
@@ -3251,7 +3251,7 @@
         "SMTP gönderim kodu oluşturmak için bir özel etki alanı adresiniz olması gerekir."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "Hesabınızın ya da kuruluşunuzun ödeme süresi geçmiş bir faturası var. Lütfen ödenmemiş tüm faturaları ödeyin."
+        "Hesabınızın ya da kuruluşunuzun ödenmemiş bir faturası var. Lütfen süresi geçmiş tüm faturaları ödeyin."
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
@@ -3643,7 +3643,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Tek kullanımlık zamana dayalı parolayı devre dışı bırakmadan önce lütfen güvenlik anahtarı kullanan iki aşamalı kimlik doğrulamasını devre dışı bırakın"
+        "Tek kullanımlık zamana dayalı parolayı devre dışı bırakmadan önce lütfen güvenlik anahtarı kullanan iki aşamalı doğrulamayı devre dışı bırakın"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
@@ -3681,13 +3681,13 @@
         "Bu işlem, hesabınızla bağlantılı tüm güvenlik anahtarlarını siler."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Güvenlik anahtarı kullanarak iki aşamalı kimlik doğrulaması yapmak için, kimlik doğrulama uygulaması üzerinden iki aşamalı kimlik doğrulamayı etkinleştirmeniz gerekir"
+        "Güvenlik anahtarı kullanarak iki aşamalı doğrulama yapmak için, kimlik doğrulama uygulaması üzerinden iki aşamalı doğrulamayı etkinleştirmeniz gerekir"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
       ],
       "Your two-factor authentication key is ready to use.": [
-        "İki aşamalı kimlik doğrulama anahtarınız kullanılmaya hazır."
+        "İki aşamalı doğrulama anahtarınız kullanılmaya hazır."
       ]
     },
     "fido2: Label": {
@@ -4002,27 +4002,27 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz.",
+        "${ totalImported } etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi"
       ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "${ totalToImport } etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı.",
+        "${ totalToImport } etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
+      ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı.",
-        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kişiler ekleniyor ve şifreleniyor: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Etkinlikler şifrelenip takviminze ekleniyor: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz.",
-        "Etkinlikler içe aktarıldı. İçe aktarılan etkinlikleri takviminizde görebilirsiniz."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Lütfen içe aktarma işlemi bitmeden önce sekmeyi kapatmayın."
@@ -4056,10 +4056,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi",
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı.",
-        "Kişileriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
       ]
     },
     "Import contact error": {
@@ -4079,12 +4075,20 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "${ totalImported } kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz.",
+        "${ totalImported } kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "${ totalToImport } kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı.",
+        "${ totalToImport } kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Kişiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı.",
         "Kişileriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz.",
-        "Kişiler içe aktarıldı. İçe aktarılan kişileri kişi listenizde görebilirsiniz."
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
       ]
     },
     "Import contacts warning": {
@@ -4580,7 +4584,7 @@
         "Bir kurtarma telefonu numarası ekle"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açtığınızda iki aşamalı kimlik doğrulaması ile siz olduğunuzu doğrulamanız gerekir."
+        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açtığınızda iki aşamalı doğrulama ile siz olduğunuzu doğrulamanız gerekir."
       ],
       "Add image URL": [
         "Adresten görsel ekle"
@@ -4685,7 +4689,7 @@
         "Bu etiketi silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "İki aşamalı kimlik doğrulamayı devre dışı bırakmak istediğinize emin misiniz?"
+        "İki aşamalı doğrulamayı devre dışı bırakmak istediğinize emin misiniz?"
       ],
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
@@ -4873,7 +4877,7 @@
         "Kurtarma dosyasını indir"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Kullanmak istediğiniz uygulamayı indirin ve kişisel gizliliğinizi gittiğiniz her yere götürün."
+        "Kullanmak istediğiniz uygulamayı indirin ve gizliliğinizi gittiğiniz her yere götürün."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "PGP anahtarlarınızı diğer PGP uyumlu hizmetlerle kullanmak için indirin."
@@ -4995,8 +4999,8 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Yeni bir kurtarma ifadesi oluşturmak önceki ifadeyi devre dışı bırakır."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
-        "E-posta ve Takvim ile birlikte tüm ${ BRAND_NAME } hizmetlerini kullanmak için bir ${ BRAND_NAME } adresi alın."
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } gibi tüm ${ BRAND_NAME } hizmetlerini kullanabilmek için bir ${ BRAND_NAME } adresi edinin."
       ],
       "Get my ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresimi al"
@@ -5041,7 +5045,7 @@
         "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Daha önce hiç iki aşamalı kimlik doğrulama kullanmadıysanız, kesinlikle ${ guideButton }. Ardından ayarları yapmanızı öneririz."
+        "Daha önce hiç iki aşamalı doğrulama kullanmadıysanız, kesinlikle ${ guideButton }. Ardından ayarları yapmanızı öneririz."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Hem SPF hem de DKIM ayarlarını yaptıysanız ve iki denetim de başarısız olursa, DMARC kullanarak diğer e-posta hizmetlerinin etki alanınız için nasıl e-posta sunması gerektiğini belirtebilirsiniz. Böylece istenmeyen e-posta göndericilerinin sizmiş gibi davranmasını zorlaştırabilirsiniz. Ancak bu işlem doğru şekilde yapılmazsa teslim sorunlarına da neden olabilir."
@@ -5053,7 +5057,7 @@
         "Oturum açma bilgilerinizi kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, bir ${ boldAccountAndRecovery } olması gerekir. Yoksa e-postalarınıza, kişilerinize ve dosyalarınıza erişemeyebilirsiniz."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "İki aşamalı kimlik doğrulaması aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki aşamalı kimlik doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
+        "İki aşamalı doğrulama aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki aşamalı doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
@@ -5099,10 +5103,10 @@
         "Posta kutusunu içe aktar"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Kişisel gizlilik dünyasına hoş geldiniz."
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki aşamalı kimlik doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
+        "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki aşamalı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "ÖNEMLİ: Bazı kayıt kuruluşları, sonunda nokta bulunan CNAME değerlerini kabul etmez (bazıları ise bulunmasını ister). Kayıt kuruluşunuz CNAME kayıtlarınızı kabul etmiyorsa, her CNAME değerinin sonundaki noktayı silerek yeniden deneyin."
@@ -5151,7 +5155,7 @@
         "zorunlu olarak"
       ],
       "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Bir süredir kişisel gizliliğimi koruyan ${ MAIL_APP_NAME } e-posta hizmetini kullanıyorum ve senin de beğeneceğini düşündüm. Ücretli özellikleri bir ay süreyle ücretsiz olarak kullanmak için bu bağlantıya giderek bir hesap açabilirsin: ${ referrerLink }"
+        "Bir süredir gizliliğimi koruyan ${ MAIL_APP_NAME } e-posta hizmetini kullanıyorum ve senin de beğeneceğini düşündüm. Ücretli özellikleri bir ay süreyle ücretsiz olarak kullanmak için bu bağlantıya giderek bir hesap açabilirsin: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
@@ -5187,7 +5191,7 @@
         "Soldan sağa"
       ],
       "Let your contacts know you care about their privacy.": [
-        "Kişilerinizin, kişisel gizliliklerine önem verdiğinizi bilmelerini sağlayın."
+        "Kişilerinize, onların gizliliğine önem verdiğinizi gösterin."
       ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
@@ -5229,7 +5233,7 @@
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Hesabınızı kurmak için bu bilgileri iki aşamalı kimlik doğrulama aygıtınıza el ile yazın. ${ switchButton }."
+        "Hesabınızı kurmak için bu bilgileri iki aşamalı doğrulama aygıtınıza el ile yazın. ${ switchButton }."
       ],
       "Member": [
         "Üye"
@@ -5298,7 +5302,7 @@
         "Adres geçersiz"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Kullandığınız bilgisayar sizin değil mi? Arkanızda bir iz bırakmamak için gizli pencere kullanın. ${ learnMore }"
+        "Kullandığınız aygıt sizin değil mi? Arkanızda bir iz bırakmamak için özel/gizli pencere kullanın. ${ learnMore }"
       ],
       "Number of users": [
         "Kullanıcı sayısı"
@@ -5353,7 +5357,7 @@
         "Ödeme işleminin tamamen doğrulanması birkaç dakika sürebilir."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
-        "Ödemeler TLS şifrelemesi ve İsviçre kişisel gizlilik yasaları ile korunmaktadır."
+        "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Giden iletiler imzalanırsa, PGP istemcilerinin PGP anahtarlarınızı otomatik olarak algılama olasılığı yükselir."
@@ -5451,7 +5455,7 @@
         "Sıraya alındı"
       ],
       "read our two-factor authentication guide first": [
-        "önce iki aşamalı kimlik doğrulama rehberimizi okuyun"
+        "önce iki aşamalı doğrulama rehberimizi okuyun"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Güvenilir aygıtlar üzerinde önerilir. ${ keepMeSignedInLearnMoreLink }"
@@ -5505,7 +5509,7 @@
         "Bunun yerine QR kodunu tarayın"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Hesabınızı kurmak için bu kodu iki aşamalı kimlik doğrulama aygıtınızla tarayın. ${ switchButton }."
+        "Hesabınızı kurmak için bu kodu iki aşamalı doğrulama aygıtınızla tarayın. ${ switchButton }."
       ],
       "Securing your account": [
         "Hesabınız korunuyor"
@@ -5682,7 +5686,7 @@
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
-        "Bu işlem ayrıca, bu hesapla ilişkili iki aşamalı kimlik doğrulama yöntemlerini de devre dışı bırakır."
+        "Bu işlem ayrıca, bu hesapla ilişkili iki aşamalı doğrulama yöntemlerini de devre dışı bırakır."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı avantajlarını kaybetmenize sebep olacak. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
@@ -5712,7 +5716,7 @@
         "Bu seçenek, tüm etkin oturumlarınızın kapatılmasını ve 2 aşamalı kimlik doğrulamasının devre dışı bırakılmasını sağlar."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki aşamalı kimlik doğrulamayı (2FA) etkinleştirir. ${ BRAND_NAME } hesabınızı daha güvenli kılacağından iki aşamalı kimlik doğrulamayı etkinleştirmenizi öneririz."
+        "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki aşamalı doğrulamayı (2FA) etkinleştirir. ${ BRAND_NAME } hesabınızı daha güvenli kılacağından iki aşamalı doğrulamayı etkinleştirmenizi öneririz."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Veri kaybını engellemek için bu anahtarı, yalnızca ne yaptığınızdan eminseniz ya da dışa aktardıysanız silin."
@@ -5724,7 +5728,7 @@
         "${ toAppName } uygulamasına ilerlemek için"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir 3. taraf ile paylaşılmıyor."
+        "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir üçüncü taraf ile paylaşılmıyor."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Parola sıfırlandıktan sonra erişilmesi engellenen verilerinizin şifresini çözmek ve bunları görüntülemek için bir kurtarma yöntemi belirleyin."
@@ -5775,10 +5779,10 @@
         "Toplam VPN bağlantısı"
       ],
       "Two-factor authentication disabled": [
-        "İki aşamalı kimlik doğrulaması devre dışı bırakıldı"
+        "İki aşamalı doğrulama devre dışı bırakıldı"
       ],
       "Two-factor authentication enabled": [
-        "İki aşamalı kimlik doğrulaması etkinleştirildi"
+        "İki aşamalı doğrulama etkinleştirildi"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
         "İki parola kipinde iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
@@ -5910,7 +5914,7 @@
         "Bir tarifeye abone olduklarında, aboneliğiniz ile kullanabileceğiniz krediler kazanacaksınız."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm kredileri kullanacağız."
@@ -5922,7 +5926,7 @@
         "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME } hizmetlerini kullanabilirsiniz"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Etkinleştirme yapılmadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya kişisel olmayan kullanıcı hesaplarına erişemezsiniz."
+        "Etkinleştirme yapılmadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -6070,7 +6074,7 @@
         "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
+        "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
@@ -6116,7 +6120,7 @@
         "Kuruluşunuzun e-posta adresleri, kuruluş anahtarı ile uçtan uca şifreleme ile korunur. Bu parmak izi, hesabınızdaki tüm yöneticilerin aynı anahtara sahip olduğunu doğrulamak için kullanılabilir."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre kişisel gizlilik yasaları ile korunmaktadır."
+        "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -7423,7 +7427,7 @@
         "Yönetici"
       ],
       "Private": [
-        "Kişisel"
+        "Korunan"
       ],
       "VPN connections": [
         "VPN bağlantısı"
@@ -7437,7 +7441,7 @@
         "${ BRAND_NAME } kurumsal duyuruları"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } Business bülteni"
+        "${ BRAND_NAME } for Business bülteni"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } bülteni"
@@ -8193,7 +8197,7 @@
         "VPN üzerinden Tor"
       ],
       "Two-factor authentication": [
-        "İki aşamalı kimlik doğrulama"
+        "İki aşamalı doğrulama"
       ],
       "Unlimited filters": [
         "Sınırsız süzgeç"
@@ -8234,26 +8238,6 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -8280,7 +8264,7 @@
         "Uygulanabilir krediler, eşit dağıtım ve kuponlar sonraki adımda uygulanacak"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı kişisel gizlilik ve güvenlik."
+        "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Hesabınızı silerseniz tüm ${ visionary } tarifesi avantajlarını kaybedersiniz ve daha sonra yeni bir hesap açtığınızda yeniden abone olamazsınız."
@@ -8298,7 +8282,7 @@
         "Beğenilen"
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri ile birlikte kuruluşlar için kişisel gizlilik ve güvenlik paketi."
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri ile birlikte kuruluşlar için gizlilik ve güvenlik paketi."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolaması."
@@ -8316,13 +8300,33 @@
         "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan özel VPN çözümü."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Ücretsiz başlangıç hesabı kişisel gizliliği doğal sayan herkesin gereksinimlerine göre tasarlanmıştır."
+        "Ücretsiz başlangıç hesabı gizliliği doğal sayan herkesin gereksinimlerine göre tasarlanmıştır."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesabınızı silerseniz, fırsat fiyatınızı kaybedersiniz ve yeni bir hesap açtığınızda bu fiyatı kullanamazsınız."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal gizlilik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey gizlilik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -8476,7 +8480,7 @@
         "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın ${ BRAND_NAME } VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda ${ BRAND_NAME } VPN bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        "Kişisel olmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
+        "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
         "Kuruluş yönetimi aracı yöneticilerin kullanıcı ekleyip silmesini, kullanıcılara depolama alanı atamasını, etki alanlarını yapılandırmasını ve diğer işlemleri yapmasını sağlar"
@@ -8509,7 +8513,7 @@
         "Oturum açmak için bir cep telefonuna bir kod gönderilmesi gerekir. Böylece bir parola ele geçirilmiş olsa bile hesap güvende kalır."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Kullanıcı parolalarını ve kullanıcıların iki aşamalı kimlik doğrulamasını sıfırlayın"
+        "Kullanıcı parolalarını ve kullanıcıların iki aşamalı doğrulamayı sıfırlayın"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
@@ -8545,13 +8549,13 @@
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Çevrimiçi yaptıklarınızla ilgili oturum kullanım günlükleri tutmuyoruz ve kişisel gizliliğinizi tehlikeye atabilecek üst verilerin kaydını tutmuyoruz"
+        "Çevrimiçi yaptıklarınızla ilgili oturum kullanım günlükleri tutmuyoruz ve gizliliğinizi tehlikeye atabilecek üst verilerin kaydını tutmuyoruz"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "HIPAA/HITECH düzenlemelerine tabi olan müşterilere, korunan sağlık bilgilerini (PHI) koruma konusunda yardımcı olmaya kararlıyız. İmzalı BAA sözleşmeleri, tüm ${ BRAND_NAME } Business müşterileri tarafından kullanılabilir."
+        "HIPAA/HITECH düzenlemelerine tabi olan müşterilere, korunan sağlık bilgilerini (PHI) koruma konusunda yardımcı olmaya kararlıyız. İmzalı BAA sözleşmeleri, tüm ${ BRAND_NAME } for Business müşterileri tarafından kullanılabilir."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "VPN hizmetimize bağlandığınızda, DNS sorgularınız şifreli VPN tünelimiz üzerinden aktarılır ve çevrimiçi kişisel gizliliğinizi ve güvenliğinizi artırır"
+        "VPN hizmetimize bağlandığınızda, DNS sorgularınız şifreli VPN tünelimiz üzerinden aktarılır ve çevrimiçi gizliliğinizi ve güvenliğinizi artırır"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
         "Diğer ${ MAIL_APP_NAME } kullanıcılarına gönderilen e-postalar otomatik olarak şifrelenir. ${ MAIL_APP_NAME } dışındaki kullanıcılara şifrelenmiş e-posta göndermek için, göndermeden önce bir şifre ayarlanması gerekir."
@@ -8562,10 +8566,10 @@
     },
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        "${ plus }, ${ bundle } ve ${ BRAND_NAME } Business tarifelerinde bulunur."
+        "${ plus }, ${ bundle } ve ${ BRAND_NAME } for Business tarifelerinde bulunur."
       ],
       "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Tüm ${ BRAND_NAME } Business tarifelerinde bulunur."
+        "Tüm ${ BRAND_NAME } for Business tarifelerinde bulunur."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8948,7 +8952,7 @@
         "İçerik vekil sunucu üzerinden yüklensin (önerilir)"
       ],
       "Load content via proxy and store as attachments": [
-        "İçerik vekil sunucu üzerinden yüklensin veek dosyalar olarak kaydedilsin"
+        "İçerik vekil sunucu üzerinden yüklensin ve ek dosyalar olarak kaydedilsin"
       ]
     },
     "Organization capacity error": {
@@ -9321,7 +9325,7 @@
         "Parola değişikliği nedeniyle kuruluş yöneticinizin yetkileri kısıtlandı. Artık aşağıdaki işlemlere izin verilmiyor:"
       ],
       "Reading emails of non-private users": [
-        "Kişisel olmayan kullanıcıların e-postalarını okuma"
+        "Korunmayan kullanıcıların e-postalarını okuma"
       ]
     },
     "Select file": {
@@ -9347,7 +9351,7 @@
     },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
-        "Kişisel gizliliğe geçiş yapın. Zahmetsizce ve güvenli bir şekilde."
+        "Gizliliğe geçin. Zahmetsizce ve güvenli bir şekilde."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Tek bir iletiye birden çok etiket uygulayabilirsiniz. Ancak iletiler genellikle yalnızca tek bir klasörde olabilir. Klasör ve etiketlerin sıralamasını sürükleyip bırakarak değiştirebilirsiniz."
@@ -9617,7 +9621,7 @@
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren e-posta ve takvim çözümü."
+        "Günlük iletişim gereksinimleriniz için gizliliğe öncelik veren e-posta ve takvim çözümü."
       ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Bu teklif yalnızca yeni ${ BRAND_NAME } kullanıcıları için geçerlidir. Kredi kartı gerekmez."
@@ -10134,7 +10138,7 @@
         "Telefon numarasını onaylayın"
       ],
       "Congratulations on choosing privacy!": [
-        "Kişisel gizliliği korumayı seçtiğiniz için teşekkürler!"
+        "Gizliliği korumayı seçtiğiniz için teşekkürler!"
       ],
       "Connect ${ name }": [
         "${ name } bağlantısı kur"
@@ -10249,7 +10253,7 @@
         "${ email } adresini devre dışı bırak"
       ],
       "Disable two-factor authentication": [
-        "İki aşamalı kimlik doğrulamayı devre dışı bırak"
+        "İki aşamalı doğrulamayı devre dışı bırak"
       ],
       "Display name and signature": [
         "Görüntülenecek ad ve imza"
@@ -10521,7 +10525,7 @@
         "Önceki"
       ],
       "Privacy and data collection": [
-        "Kişisel gizlilik ve veri toplama"
+        "Gizlilik ve veri toplama"
       ],
       "Processing...": [
         "İşleniyor..."
@@ -10575,7 +10579,7 @@
         "İsviçre merkezli güvenli e-posta"
       ],
       "Security and privacy": [
-        "Güvenlik ve kişisel gizlilik"
+        "Güvenlik ve gizlilik"
       ],
       "Security logs": [
         "Güvenlik günlükleri"
@@ -10617,7 +10621,7 @@
         "Kuruluş parolasını ayarla"
       ],
       "Set up two-factor authentication": [
-        "İki aşamalı kimlik doğrulamayı ayarla"
+        "İki aşamalı doğrulamayı ayarla"
       ],
       "Settings": [
         "Ayarlar"
@@ -10706,7 +10710,7 @@
         "En iyi ${ MAIL_APP_NAME } sürümünü ücretsiz deneyin"
       ],
       "Two-factor authentication": [
-        "İki aşamalı kimlik doğrulama"
+        "İki aşamalı doğrulama"
       ],
       "Type": [
         "Tür"
@@ -10983,7 +10987,7 @@
         "Bir yazışmadaki bir iletiyi etiketlediğinizde, bu etiket yazışmada göndereceğiniz veya alacağınız tüm yeni iletilere otomatik olarak uygulanır."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Bir bağlantıya tıkladığınızda, bu kimlik avını önleme özelliği web sayfasının adresini onaylamanızı ister."
+        "Bir bağlantıya tıkladığınızda, bu kimlik avı girişimi önleme özelliği, web sayfasının adresini onaylamanızı ister."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Bir e-postayı İstenmeyen kutusuna taşımanız göndericinin e-posta listesinden otomatik olarak ayrılmanızı sağlar."
@@ -11210,7 +11214,7 @@
         "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Kişisel olmayan bir üyeye bir e-posta adresi eklemeden önce kuruluş anahtarlarına ${ activateLink } işlemini yapmanız gerekir."
+        "Korunmayan bir üyeye bir e-posta adresi eklemeden önce kuruluş anahtarlarına ${ activateLink } işlemini yapmanız gerekir."
       ],
       "You will lose any customization you made so far.": [
         "Şu ana kadar yaptığınız tüm özelleştirmeler silinecek."

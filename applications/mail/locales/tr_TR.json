@@ -164,6 +164,9 @@
       "Close": [
         "Kapat"
       ],
+      "Close & discard": [
+        "Vazgeçip kapat"
+      ],
       "Close composer": [
         "Oluşturucuyu kapat"
       ],
@@ -686,6 +689,9 @@
       "Open calendar": [
         "Takvimi aç"
       ],
+      "Open composer": [
+        "Oluşturucuyu aç"
+      ],
       "Open get started checklist modal": [
         "Başlarken kontrol listesi penceresini aç"
       ],
@@ -782,6 +788,12 @@
       "Rename": [
         "Yeniden adlandır"
       ],
+      "Reply": [
+        "Yanıtla"
+      ],
+      "Reply all": [
+        "Tümünü yanıtla"
+      ],
       "Reply securely": [
         "Güvenli yanıtla"
       ],
@@ -789,7 +801,7 @@
         "Bir sorun bildireceğim"
       ],
       "Report phishing": [
-        "Kimlik avı bildir"
+        "Kimlik avı girişimi bildir"
       ],
       "Request a feature": [
         "Bir özellik istiyorum"
@@ -862,6 +874,9 @@
       ],
       "Send feedback": [
         "Geri bildirim gönder"
+      ],
+      "Send quick reply": [
+        "Hızlı yanıt gönder"
       ],
       "Send read receipt": [
         "Okundu bilgisi gönderilsin"
@@ -1099,6 +1114,9 @@
     "action": {
       "Search messages": [
         "İleti arama"
+      ],
+      "Send quick reply": [
+        "Hızlı yanıt gönder"
       ]
     },
     "Actions message": {
@@ -2809,7 +2827,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Gecikmiş fatura"
+        "Süresi geçmiş fatura"
       ]
     },
     "Density mode": {
@@ -3991,27 +4009,27 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz.",
+        "${ totalImported } etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi"
       ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "${ totalToImport } etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı.",
+        "${ totalToImport } etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
+      ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı.",
-        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kişiler ekleniyor ve şifreleniyor: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Etkinlikler şifrelenip takviminze ekleniyor: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz.",
-        "Etkinlikler içe aktarıldı. İçe aktarılan etkinlikleri takviminizde görebilirsiniz."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Lütfen içe aktarma işlemi bitmeden önce sekmeyi kapatmayın."
@@ -4045,10 +4063,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi",
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı.",
-        "Kişileriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
       ]
     },
     "Import contact error": {
@@ -4068,12 +4082,20 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "${ totalImported } kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz.",
+        "${ totalImported } kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "${ totalToImport } kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı.",
+        "${ totalToImport } kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Kişiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı.",
         "Kişileriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz.",
-        "Kişiler içe aktarıldı. İçe aktarılan kişileri kişi listenizde görebilirsiniz."
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
       ]
     },
     "Import contacts warning": {
@@ -4334,7 +4356,7 @@
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
       "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } kişisel güvenliğinizi ihlal ederek para kazanmaz."
+        "${ BRAND_NAME } gizliliğinizi ihlal ederek para kazanmaz."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
@@ -4625,7 +4647,7 @@
         "Çıkmak için bu ekranı kapatın."
       ],
       "Confirm phishing report": [
-        "Kimlik avı bildirimini onayla"
+        "Kimlik avı girişimi bildirimini onayla"
       ],
       "Continue with ${ planName }": [
         "${ planName } aboneliğini kullanmayı sürdür"
@@ -4736,14 +4758,14 @@
         "E-posta izleme koruması devre dışı"
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "E-posta izleyicileri kişisel gizliliğinizi ihlal edebilir. ${ BRAND_NAME }, bu iletide herhangi bir izleyici bulamadı."
+        "E-posta izleyicileri gizliliğinizi ihlal edebilir. ${ BRAND_NAME }, bu iletide herhangi bir izleyici bulamadı."
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. ${ BRAND_NAME } ${ numberOfTrackers } izleyici buldu ve engelledi.",
-        "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. ${ BRAND_NAME } ${ numberOfTrackers } izleyici buldu ve engelledi."
+        "E-posta izleyiciler gizliliğinizi ihlal edebilir. ${ BRAND_NAME } ${ numberOfTrackers } izleyici buldu ve engelledi.",
+        "E-posta izleyiciler gizliliğinizi ihlal edebilir. ${ BRAND_NAME } ${ numberOfTrackers } izleyici buldu ve engelledi."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "E-posta izleyiciler kişisel gizliliğinizi ihlal edebilir. Göndericinin iletileri açıp açmadığınızı bilmesini önlemek için izleme koruma özelliğini açın."
+        "E-posta izleyiciler gizliliğinizi ihlal edebilir. Göndericinin iletileri açıp açmadığınızı bilmesini önlemek için izleme koruma özelliğini açın."
       ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
@@ -4893,7 +4915,7 @@
         "Posta kutusunu içe aktar"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Kişisel gizlilik dünyasına hoş geldiniz."
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
@@ -5139,6 +5161,12 @@
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } ile e-posta adresinizin, posta listeleri veya istenmeyen e-posta gönderenlere sızmasından korunun."
       ],
+      "Quick reply": [
+        "Hızlı yanıt"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "${ recipientsAsString } alıcısına hızlı yanıt"
+      ],
       "Recipient: ": [
         "Alıcı: "
       ],
@@ -5269,7 +5297,7 @@
         "1 özel e-posta etki alanı desteği"
       ],
       "Support privacy by upgrading for": [
-        "Yükselterek kişisel güvenliği destekleyin"
+        "Tarifenizi yükselterek gizliliği destekleyin"
       ],
       "support team": [
         "destek ekibi"
@@ -5479,13 +5507,13 @@
         "Kişi gruplarına kolayca e-posta göndermek için yükseltin."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Kişisel gizliğe öncelik veren interneti desteklemek için yükseltin."
+        "Gizliğe öncelik veren interneti desteklemek için tarifenizi yükseltin."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Herkes için kişisel gizlilik misyonumuza destek olmak için yükseltin."
+        "Herkes için gizlilik misyonumuza destek olmak için tarifenizi yükseltin."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Kişisel gizliliği desteklemek ve daha fazla özellikten yararlanmak için yükseltin."
+        "Gizliliği desteklemek ve daha fazla özellikten yararlanmak için tarifenizi yükseltin."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Üçüncü taraf masaüstü uygulamaları ile ${ MAIL_APP_NAME } kullanmak için yükseltin."
@@ -5503,7 +5531,7 @@
         "Adres: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Takviminizi kişisel tutmak için ${ CALENDAR_APP_NAME } kullanın."
+        "Takviminizi güvende tutmak için ${ CALENDAR_APP_NAME } kullanın."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "E-postanızı daha hızlı yönetmek için klavye kısayollarını kullanın."
@@ -5548,7 +5576,7 @@
         "${ senderName } için güvenilen anahtarları etkinleştirdiğinizde, kişi bilgilerine herkese açık anahtarlar eklenir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -5661,7 +5689,7 @@
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
+        "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
@@ -6404,7 +6432,7 @@
         "Araç çubuğu"
       ],
       "Two-factor authentication code": [
-        "İki aşamalı kimlik doğrulama kodu"
+        "İki aşamalı doğrulama kodu"
       ],
       "Undisclosed Recipients": [
         "Gizli alıcılar"
@@ -6769,7 +6797,7 @@
     },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
-        "Görsel kişisel gizliliğinizi korumak için yüklenmedi."
+        "Görsel, gizliliğinizi korumak için yüklenmedi."
       ],
       "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
         "Web tarayıcınız uzak sunucunun kimliğini doğrulayamadı. Görsel, http iletişim kuralı ile sunuluyor olabilir."
@@ -7023,7 +7051,7 @@
         "${ appName } hoş geldiniz"
       ],
       "Where privacy and security meet productivity and ease of use.": [
-        "Kişisel gizililik ve güvenliğin üretkenlik ile bir arada kolayca kullanıldığı yerdesiniz."
+        "Gizlilik ve güvenliğin üretkenlik ile bir arada kolayca kullanıldığı yerdesiniz."
       ]
     },
     "Onboarding Action": {
@@ -7785,7 +7813,7 @@
         "Parola panoya kopyalandı"
       ],
       "Phishing reported": [
-        "Kimlik avı bildirildi"
+        "Kimlik avı girişimi bildirildi"
       ],
       "Phone number copied to clipboard": [
         "Telefon numarası panoya kopyalandı"
@@ -8396,7 +8424,7 @@
         "Herkese açık anahtara güvenilsin mi?"
       ],
       "Two-factor authentication": [
-        "İki aşamalı kimlik doğrulama"
+        "İki aşamalı doğrulama"
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"

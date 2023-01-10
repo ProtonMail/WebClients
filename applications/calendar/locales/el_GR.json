@@ -523,6 +523,22 @@
         "Ναι, θα παρευρεθώ"
       ]
     },
+    "Action subline": {
+      "Anyone with the link can view your calendar": [
+        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στο ημερολόγιο σας"
+      ],
+      "They can view or edit your calendar": [
+        "Μπορούν να δουν ή να επεξεργαστούν το ημερολόγιό σας"
+      ]
+    },
+    "Action title": {
+      "Share with ${ BRAND_NAME } users": [
+        "Κοινοποίηση με ${ BRAND_NAME } χρήστες"
+      ],
+      "Share with anyone": [
+        "Κοινοποίηση με οποιονδήποτε"
+      ]
+    },
     "Actions message": {
       "${ addContact } or ${ importContact }.": [
         "${ addContact } ή ${ importContact }."
@@ -553,6 +569,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } ξεκίνησε στις ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } ξεκίνησε στις ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } ξεκίνησε χθες"
       ],
@@ -564,6 +583,15 @@
       ],
       "${ title } starts now": [
         "${ title } ξεκινά τώρα"
+      ],
+      "${ title } starts on ${ formattedDate }": [
+        "Το ${ title } ξεκινά την ${ formattedDate }"
+      ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "Το ${ title } ξεκινά την ${ formattedDate } στις ${ formattedHour }"
+      ],
+      "${ title } starts on ${ formattedDateWithoutTime }": [
+        "Το ${ title } ξεκινά την ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
         "Το ${ title } ξεκινά την ${ formattedDateWithTime }"
@@ -754,6 +782,28 @@
         "Έχετε ήδη πρόσβαση σε αυτό το ημερολόγιο"
       ]
     },
+    "Calendar share limit modal": {
+      "Manage links": [
+        "Διαχείριση συνδέσμων"
+      ],
+      "Manage members": [
+        "Διαχείριση μελών"
+      ],
+      "Unable to create more calendar links": [
+        "Δεν είναι δυνατή η δημιουργία περισσότερων συνδέσμων ημερολογίου"
+      ],
+      "Unable to share this calendar with more ${ BRAND_NAME } users": [
+        "Δεν είναι δυνατή η κοινωποίηση αυτού του ημερολογίου με περισσότερους χρήστες ${ BRAND_NAME }"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Έχετε φτάσει το όριο του ${ MAX_CALENDAR_MEMBERS } μέλους για το παρόν ημερολόγιο. Για να μοιράσετε αυτό το ημερολόγιο με άλλους ${ BRAND_NAME } λογαριασμούς, θα χρειαστεί να διαγράψετε κάποια μέλη.",
+        "Έχετε φτάσει το όριο των ${ MAX_CALENDAR_MEMBERS } μελών για το παρόν ημερολόγιο. Για να μοιράσετε αυτό το ημερολόγιο με άλλους ${ BRAND_NAME } λογαριασμούς, θα χρειαστεί να διαγράψετε κάποια μέλη."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Έχετε φτάσει το μέγιστο του συνδέσμου ${ MAX_LINKS_PER_CALENDAR } για αυτό το ημερολόγιο.\nΓια να δημιουργήσετε μια νέα σύνδεση σε αυτό το ημερολόγιο, διαγράψτε ένα υπάρχοντα.",
+        "Έχετε φτάσει το μέγιστο συνδέσμων ${ MAX_LINKS_PER_CALENDAR } για αυτό το ημερολόγιο.\nΓια να δημιουργήσετε μια νέα σύνδεση σε αυτό το ημερολόγιο, διαγράψτε ένα υπάρχοντα."
+      ]
+    },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Επεξεργασία (προβολή, δημιουργία, τροποποίηση λεπτομερειών συμβάντος)"
@@ -768,6 +818,11 @@
       ],
       "More options": [
         "Περισσότερες επιλογές"
+      ]
+    },
+    "Calendar sidebar; Calendar info": {
+      "Shared with me": [
+        "Κοινοποιημένο με εμένα"
       ]
     },
     "Calendar status": {
@@ -818,6 +873,12 @@
     "Calendar view selector": {
       "Change time range to": [
         "Αλλαγή χρονικής έκτασης σε"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } επιπλέον",
+        "${ more } επιπλέον"
       ]
     },
     "colon": {
@@ -1907,9 +1968,17 @@
         "${ list } δεν έχει έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "Ορισμένες επαφές δεν έχουν έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου: ${ list }"
       ],
+      "${ list } doesn't have an email address": [
+        "${ list } δεν έχει μια διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "Καποιες επαφές δεν έχουν διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ list }"
+      ],
       "${ list } has invalid emails": [
         "${ list } έχει μη έγκυρα μηνύματα ηλεκτρονικού ταχυδρομείου",
         "Ορισμένες ομάδες έχουν μη έγκυρα μηνύματα ηλεκτρονικού ταχυδρομείου: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } δεν έχει επαφές",
+        "Κάποιες ομάδες δεν έχουν επαφές: : ${ list }"
       ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
@@ -2081,6 +2150,10 @@
       "Primary key is not valid for sending": [
         "Το πρωτεύον κλειδί δεν είναι έγκυρο για αποστολή"
       ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Αφαιρέθηκε διπλότυπος παραλήπτης: ${ joinedRecipients }",
+        "Διαγράφτηκαν οι εξής διπλότυποι παραλήπτες: ${ joinedRecipients }"
+      ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
@@ -2176,6 +2249,11 @@
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ]
+    },
+    "Error accepting calendar invitation": {
+      "Invited address does not exist": [
+        "Η προσκεκλημένη διεύθυνση δεν υπάρχει"
       ]
     },
     "Error importing calendar": {
@@ -2379,6 +2457,11 @@
         "Διαγραφή γεγονότος"
       ]
     },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        "Διπλότυπο γεγονός"
+      ]
+    },
     "Event edit button tooltip": {
       "Edit event": [
         "Επεξεργασία γεγονότος"
@@ -2533,23 +2616,27 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } γεγονός εισήχθη επιτυχώς. Το εισαγόμενο γεγονός θα εμφανιστεί τώρα στο ημερολόγιό σας.",
+        "${ totalImported } γεγονότα εισήχθησαν επιτυχώς. Τα εισαγόμενα γεγονότα θα εμφανιστούν τώρα στο ημερολόγιό σας."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
         "${ totalImported }/${ totalToImport } εκδηλώσεις κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος.",
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και προσθήκη των συμβάντων σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος."
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } γεγονότος σας. Δεν ήταν δυνατή η εισαγωγή γεγονότος.",
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } γεγονότα σας. Δεν ήταν δυνατή η εισαγωγή γεγονότος."
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονός εισήχθηκε επιτυχώς.",
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη των γεγονότων. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη επαφών: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη γεγονότων στο ημερολόγιό σας: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Το συμβάν εισήχθη επιτυχώς. Το εισαγόμενο γεγονός θα εμφανιστεί τώρα στο ημερολόγιό σας.",
-        "Τα γεγονότα εισήχθησαν επιτυχώς. Τα εισαγόμενα γεγονότα θα εμφανιστούν τώρα στο ημερολόγιό σας."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Παρακαλώ μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
@@ -2583,10 +2670,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } επαφή κρυπτογραφήθηκε και προστέθηκε στη λίστα επαφών σας",
         "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής.",
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφών σας. Δεν ήταν δυνατή η εισαγωγή επαφών."
       ]
     },
     "Import contact error": {
@@ -2606,12 +2689,20 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "${ totalImported } επαφή εισήχθει με επιτυχία. Η εισαχθείσα επαφή θα εμφανιστεί τώρα στη λίστα επαφών σας.",
+        "${ totalImported } επαφές εισήχθει με επιτυχία. Η εισαχθείσες επαφές θα εμφανιστούν τώρα στη λίστα επαφών σας."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής.",
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } επαφών σας. Δεν ήταν δυνατή η εισαγωγή επαφής."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. ${ totalImported } από ${ totalToImport } επαφές εισήχθησαν με επιτυχία.",
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη των επαφών σας. ${ totalImported } από ${ totalToImport } επαφές εισήχθησαν με επιτυχία."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Η επαφή εισάχθηκε με επιτυχία. Η εισαχθέντη επαφή θα εμφανιστεί τώρα στη λίστα επαφών σας.",
-        "Η επαφές εισάχθηκαν με επιτυχία. Η εισαχθέντες επαφές θα εμφανιστεί τώρα στη λίστα επαφών σας."
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής."
       ]
     },
     "Import contacts warning": {
@@ -2908,6 +2999,10 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να δει αν είστε ελεύθεροι ή απασχολημένοι στο ημερολόγιο σας. Όμως δεν μπορούν να δουν τις λεπτομέρειες των συμβάντων, όπως τον τίτλο, την τοποθεσία και τους συμμετέχοντες."
+      ],
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντας επιτρέπεται ανά πρόσκληση",
+        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
@@ -3515,6 +3610,18 @@
       "Emails": [
         "Μηνύματα"
       ],
+      "Emails (all messages)": [
+        "Μηνύματα ηλεκτρονικού ταχυδρομείου (όλα τα μηνύματα)"
+      ],
+      "Emails (last 12 months)": [
+        "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίοι 12 μήνες)"
+      ],
+      "Emails (last 3 months)": [
+        "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίοι 3 μήνες)"
+      ],
+      "Emails (last month)": [
+        "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
+      ],
       "Enable Beta Access": [
         "Ενεργοποίηση Πρόσβασης Beta"
       ],
@@ -3753,6 +3860,11 @@
         "${ Label.Name } δημιουργήθηκε"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Πλαϊνό πλαίσιο"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Ημερολόγιο"
@@ -3779,6 +3891,11 @@
         "Αναβάθμιση λογαριασμού"
       ]
     },
+    "Link to calendar app": {
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Άνοιγμα σε ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Ακόμα λίγο"
@@ -3800,6 +3917,24 @@
       ],
       "Your import is starting": [
         "Η εισαγωγή σας εκκινεί"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φακέλους και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέττες και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φάκελο και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φακέλους και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτα και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέττες και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -3840,6 +3975,19 @@
       ],
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
         "Δεν είναι δυνατή η δημιουργία περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των προσωπικών ημερολογίων που παρέχει το πλάνο που επιλέξατε."
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } κοινοποίησε το ημερολόγιο του ${ boldCalendarName } με εσάς."
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Εγγραφή στο ημερολόγιο"
+      ],
+      "Unable to join more calendars": [
+        "Δεν είναι δυνατή η εγγραφή σε περισσότερα ημερόλογια"
       ]
     },
     "Modal title": {
@@ -4288,6 +4436,11 @@
         "Εσείς"
       ]
     },
+    "Participants collapse button label": {
+      "Collapse participants list": [
+        "Σύμπτυξη λίστας συμμετεχόντων"
+      ]
+    },
     "Participants expand button label": {
       "Expand participants list": [
         "Επέκταση λίστας συμμετεχόντων"
@@ -4467,6 +4620,11 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Κοινοποίηση με ${ BRAND_NAME } χρήστες"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Δημιουργήθηκε από ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5254,6 +5412,14 @@
       ],
       "You will lose any customization you made so far.": [
         "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."
+      ]
+    },
+    "Warning in modal to accept calendar invitation; Description": {
+      "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
+        "Για να αποκτήσετε πρόσβαση σε αυτό το κοινόχρηστο ημερολόγιο, ενεργοποιήστε αυτήν τη διεύθυνση ή ζητήστε από το ${ boldCalendarOwnerEmail } να στείλει μια πρόσκληση σε μια ενεργή διεύθυνση."
+      ],
+      "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
+        "Δεν μπορείτε να συμμετάσχετε σε αυτό το ημερολόγιο επειδή η διεύθυνση ηλεκτρονικού ταχυδρομείου που έχετε προσκληθεί (${ boldInvitedAddress }) είναι απενεργοποιημένη."
       ]
     },
     "Weekly recurring event, frequency": {
