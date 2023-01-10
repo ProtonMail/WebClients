@@ -158,3 +158,11 @@ export const getLinkToCalendarEvent = ({
 
     return `/event?${params.toString()}`;
 };
+
+export const naiveGetIsDecryptionError = (error: any) => {
+    // We sometimes need to detect if an error produced while reading an event is due to a failed decryption.
+    // We don't have a great way of doing this as the error comes from openpgp
+    const errorMessage = error?.message || '';
+
+    return errorMessage.toLowerCase().includes('decrypt');
+};
