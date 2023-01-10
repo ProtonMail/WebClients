@@ -3974,19 +3974,11 @@
         "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
         "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Hiba történt az esemény titkosításakor és tárolásakor. Az esemény nem került importálásra.",
-        "Hiba történt az események titkosításakor és tárolásakor. Az események nem kerültek importálásra."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Névjegyek titkosítása és tárolása: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Események titkosítása és tárolása a naptárában: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Esemény sikeresen importálva. Az importált esemény azonnal elérhető a naptárában.",
-        "Események sikeresen importálva. Az importált események azonnal elérhetők a naptárában."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Ne zárja be a böngészőfület mielőtt az importálás befejeződik."
@@ -4020,10 +4012,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez",
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Hiba történt a névjegy titkosításakor és tárolásakor. A névjegy nem került importálásra.",
-        "Hiba történt a névjegyek titkosításakor és tárolásakor. Nem került importálásra névjegy."
       ]
     },
     "Import contact error": {
@@ -4040,15 +4028,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "ismeretlen"
-      ]
-    },
-    "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Hiba történt a névjegyek titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } névjegyből sikeresen importálva."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Névjegy sikeresen importálva. Az importált névjegy azonnal elérhető a névjegyeknél.",
-        "Névjegyek sikeresen importálva. Az importált névjegyek azonnal elérhetők a névjegyeknél."
       ]
     },
     "Import contacts warning": {

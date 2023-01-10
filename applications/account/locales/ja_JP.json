@@ -8,8 +8,14 @@
       "Full view": [
         "フルビュー"
       ],
+      "Full view (see all event details)": [
+        "すべて表示 (すべてのイベント詳細)"
+      ],
       "Limited view": [
         "限定ビュー"
+      ],
+      "Limited view (see only free/busy)": [
+        "一部だけ表示 (空きまたは忙しい)"
       ]
     },
     "Action": {
@@ -1188,6 +1194,11 @@
         "ICS ファイルを他のカレンダーから ${ CALENDAR_APP_NAME } にインポートすることができます。これにより、予定やエントリー全体を簡単にインポートできます。"
       ]
     },
+    "Calendar invite status label": {
+      "Declined": [
+        "拒否済み"
+      ]
+    },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "現在のプランで作成できるパーソナルカレンダーの最大数に達しています。"
@@ -1205,6 +1216,11 @@
       ],
       "Label edited": [
         "ラベルが編集されました"
+      ]
+    },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "ラベルが見えるのはあなただけです。"
       ]
     },
     "Calendar permissions label": {
@@ -1321,7 +1337,7 @@
     },
     "Checkout row": {
       "${ users } users": [
-        "${ users } ユーザー"
+        "${ users } 人のユーザー"
       ],
       "Total for ${ n } months": [
         "合計 ${ n } か月"
@@ -2887,6 +2903,9 @@
       "No emails found to import - the account does not have an inbox": [
         "インポートするメールがありません - アカウントに受信箱がありません"
       ],
+      "No public key for ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } アドレスの公開鍵がありません"
+      ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
@@ -3827,8 +3846,14 @@
       "Actions": [
         "動作"
       ],
+      "Created": [
+        "作成日時"
+      ],
       "Email address": [
         "メールアドレス"
+      ],
+      "Last used": [
+        "最終使用日時"
       ],
       "Token name": [
         "トークン名"
@@ -3866,17 +3891,11 @@
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
       ],
-      "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "予定を暗号化し、カレンダーに追加中...${ totalToImport }件中${ totalImported }件が完了"
-      ],
-      "Events successfully imported. The imported events will now appear in your calendar.": [
-        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "インポートが完了するまでタブを閉じないでください。"
@@ -3901,9 +3920,6 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 件の連絡先が暗号化され、連絡先リストに追加されました"
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
       ]
     },
     "Import contact error": {
@@ -3919,14 +3935,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "不明"
-      ]
-    },
-    "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先が正常にインポートされました。"
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
       ]
     },
     "Import contacts warning": {
@@ -4346,7 +4354,7 @@
         "+${ organization.BonusVPN } 件の ${ VPN_APP_NAME } 接続 (より多くのデバイスを VPN に接続可能)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
-        "1. フレンドを ${ BRAND_NAME } に招待"
+        "1. 友達を ${ BRAND_NAME } に招待"
       ],
       "10 email addresses": [
         "10 件のメールアドレス"
@@ -4355,7 +4363,7 @@
         "2. 友達は ${ planName } を試すことができます"
       ],
       "3. You earn credits": [
-        "3. クレジットを得ます"
+        "3. あなたにクレジットが付与されます"
       ],
       "30-day money-back guarantee.": [
         "30日間の返金保証。"
@@ -4415,7 +4423,7 @@
         "アドレスの検証は高度なセキュリティ機能です。これが何であるかを理解している場合にのみ、有効にしてください。"
       ],
       "addresses": [
-        "メールアドレス"
+        "アドレス"
       ],
       "Admin account allocation": [
         "管理者アカウント割り当て"
@@ -4942,6 +4950,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
       ],
+      "Just send them your personal referral link.": [
+        "個人用の紹介リンクを送信。"
+      ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "DKIM を使用し続ける限り、これらのレコードを DNS に登録したままにしておいてください。"
       ],
@@ -5206,6 +5217,9 @@
       "Preview": [
         "プレビュー"
       ],
+      "Preview failed to be loaded": [
+        "プレビューの読み込みに失敗しました"
+      ],
       "Priority support": [
         "優先的なサポート"
       ],
@@ -5372,7 +5386,7 @@
         "次のアドレスに間違いがあります。"
       ],
       "The following addresses are unavailable.": [
-        "次のアドレスはご利用になれません。"
+        "次のアドレスは利用できません。"
       ],
       "The following addresses were not created.": [
         "次のアドレスは作成されませんでした。"
@@ -5394,6 +5408,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "この設定ファイルを WireGuard ルーターや公式クライアントで使用できます。"
+      ],
+      "They'll receive a free month of ${ planName }.": [
+        "友達は1か月間 ${ planName } を無料で利用できます。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -5643,6 +5660,9 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "通知を有効にすると、${ MAIL_APP_NAME } アカウントに新しいメッセージがある場合に回復用メールアドレスに通知を送信します。"
+      ],
+      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
+        "紹介した友達がプランに登録すると、あなたのプランに使用できるクレジットが付与されます。"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2 要素認証の設定時に、回復用コードを提供します。回復用コードは、認証アプリにアクセスできなくなった際のサインインに使用できます。"
@@ -7695,7 +7715,7 @@
         "${ n } 件の独自メールドメイン"
       ],
       "${ n } email addresses per user": [
-        "$1 ユーザーあたり ${ n } 件のメールアドレス"
+        "1 ユーザーあたり ${ n } 件のメールアドレス"
       ],
       "${ n } email addresses/aliases": [
         "${ n } 件のメールアドレス / エイリアス"
@@ -7895,23 +7915,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7969,6 +7972,23 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8628,6 +8648,9 @@
       ],
       "Postal code": [
         "郵便番号"
+      ],
+      "Printer": [
+        "プリンター"
       ],
       "Search": [
         "検索"

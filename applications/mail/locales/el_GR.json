@@ -155,6 +155,9 @@
       "Close": [
         "Κλείσιμο"
       ],
+      "Close & discard": [
+        "Κλείσιμο & απόρριψη"
+      ],
       "Close composer": [
         "Κλείσιμο συντάκτη"
       ],
@@ -644,6 +647,9 @@
       "Open calendar": [
         "Άνοιγμα ημερολόγιου"
       ],
+      "Open composer": [
+        "Άνοιγμα συντάκτη"
+      ],
       "Open get started checklist modal": [
         "Άνοιγμα παραθύρου λίστας ελέγχου εκκίνησης"
       ],
@@ -737,6 +743,12 @@
       "Rename": [
         "Μετονομασία"
       ],
+      "Reply": [
+        "Απάντηση"
+      ],
+      "Reply all": [
+        "Απάντηση σε όλους"
+      ],
       "Reply securely": [
         "Απάντηση με διασφάλιση"
       ],
@@ -805,6 +817,9 @@
       ],
       "Send feedback": [
         "Αποστολή σχολίων"
+      ],
+      "Send quick reply": [
+        "Αποστολή γρήγορης απάντησης"
       ],
       "Send read receipt": [
         "Αποστολή αποδεικτικού ανάγνωσης"
@@ -1030,6 +1045,9 @@
     "action": {
       "Search messages": [
         "Αναζήτηση μηνυμάτων"
+      ],
+      "Send quick reply": [
+        "Αποστολή γρήγορης απάντησης"
       ]
     },
     "Actions message": {
@@ -3484,23 +3502,27 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } γεγονός εισήχθη επιτυχώς. Το εισαγόμενο γεγονός θα εμφανιστεί τώρα στο ημερολόγιό σας.",
+        "${ totalImported } γεγονότα εισήχθησαν επιτυχώς. Τα εισαγόμενα γεγονότα θα εμφανιστούν τώρα στο ημερολόγιό σας."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
         "${ totalImported }/${ totalToImport } εκδηλώσεις κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος.",
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και προσθήκη των συμβάντων σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος."
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } γεγονότος σας. Δεν ήταν δυνατή η εισαγωγή γεγονότος.",
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } γεγονότα σας. Δεν ήταν δυνατή η εισαγωγή γεγονότος."
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονός εισήχθηκε επιτυχώς.",
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη των γεγονότων. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη επαφών: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη γεγονότων στο ημερολόγιό σας: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Το συμβάν εισήχθη επιτυχώς. Το εισαγόμενο γεγονός θα εμφανιστεί τώρα στο ημερολόγιό σας.",
-        "Τα γεγονότα εισήχθησαν επιτυχώς. Τα εισαγόμενα γεγονότα θα εμφανιστούν τώρα στο ημερολόγιό σας."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Παρακαλώ μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
@@ -3534,10 +3556,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } επαφή κρυπτογραφήθηκε και προστέθηκε στη λίστα επαφών σας",
         "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής.",
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφών σας. Δεν ήταν δυνατή η εισαγωγή επαφών."
       ]
     },
     "Import contact error": {
@@ -3557,12 +3575,20 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "${ totalImported } επαφή εισήχθει με επιτυχία. Η εισαχθείσα επαφή θα εμφανιστεί τώρα στη λίστα επαφών σας.",
+        "${ totalImported } επαφές εισήχθει με επιτυχία. Η εισαχθείσες επαφές θα εμφανιστούν τώρα στη λίστα επαφών σας."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής.",
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } επαφών σας. Δεν ήταν δυνατή η εισαγωγή επαφής."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. ${ totalImported } από ${ totalToImport } επαφές εισήχθησαν με επιτυχία.",
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη των επαφών σας. ${ totalImported } από ${ totalToImport } επαφές εισήχθησαν με επιτυχία."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Η επαφή εισάχθηκε με επιτυχία. Η εισαχθέντη επαφή θα εμφανιστεί τώρα στη λίστα επαφών σας.",
-        "Η επαφές εισάχθηκαν με επιτυχία. Η εισαχθέντες επαφές θα εμφανιστεί τώρα στη λίστα επαφών σας."
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής."
       ]
     },
     "Import contacts warning": {
@@ -4425,6 +4451,12 @@
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
       ],
+      "Quick reply": [
+        "Γρήγορη απάντηση"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "Γρήγορη απάντησης σε ${ recipientsAsString }"
+      ],
       "Recipient: ": [
         "Παραλήπτης: "
       ],
@@ -5246,6 +5278,18 @@
       "Emails": [
         "Μηνύματα"
       ],
+      "Emails (all messages)": [
+        "Μηνύματα ηλεκτρονικού ταχυδρομείου (όλα τα μηνύματα)"
+      ],
+      "Emails (last 12 months)": [
+        "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίοι 12 μήνες)"
+      ],
+      "Emails (last 3 months)": [
+        "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίοι 3 μήνες)"
+      ],
+      "Emails (last month)": [
+        "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
+      ],
       "Enable Beta Access": [
         "Ενεργοποίηση Πρόσβασης Beta"
       ],
@@ -5608,6 +5652,11 @@
         "${ Label.Name } δημιουργήθηκε"
       ]
     },
+    "Landmarks": {
+      "Side panel": [
+        "Πλαϊνό πλαίσιο"
+      ]
+    },
     "Layout mode": {
       "Column": [
         "Στήλη"
@@ -5776,6 +5825,24 @@
       ],
       "Your import is starting": [
         "Η εισαγωγή σας εκκινεί"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φακέλους και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέττες και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φάκελο και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φακέλους και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτα και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέττες και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
