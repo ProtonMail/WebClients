@@ -2535,27 +2535,27 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } Termin erfolgreich importiert. Der importierte Termin erscheint nun in deinem Kalender.",
+        "${ totalImported } Termine erfolgreich importiert. Die importierten Termine erscheinen nun in deinem Kalender."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } Termin wurde verschlüsselt und deinem Kalender hinzugefügt",
         "${ totalImported }/${ totalToImport } Termine wurden verschlüsselt und deinem Kalender hinzugefügt"
       ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "Das Verschlüsseln und Hinzufügen deines Termins ist fehlgeschlagen. Es wurde kein Termin importiert.",
+        "Das Verschlüsseln und Hinzufügen deiner ${ totalToImport } Termine ist fehlgeschlagen. Es wurde kein Termin importiert."
+      ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Termin wurde erfolgreich importiert.",
         "Beim Verschlüsseln und Hinzufügen deiner Termine ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Terminen wurden erfolgreich importiert."
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Das Verschlüsseln und Hinzufügen deines Termins ist fehlgeschlagen. Es wurde kein Termin importiert.",
-        "Das Verschlüsseln und Hinzufügen deiner Termine ist fehlgeschlagen. Es wurde kein Termin importiert."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kontakte werden verschlüsselt und hinzugefügt: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Termine werden verschlüsselt und deinem Kalender hinzugefügt: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Termin erfolgreich importiert. Der importierte Termin ist nun in deinem Kalender verfügbar.",
-        "Termine erfolgreich importiert. Die importierten Termine sind nun in deinem Kalender verfügbar."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Bitte schließe den Tab nicht, bevor das Importieren abgeschlossen ist."
@@ -2589,10 +2589,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } Kontakt verschlüsselt und zu deiner Kontaktliste hinzugefügt",
         "${ totalImported }/${ totalToImport } Kontakte verschlüsselt und zu deiner Kontaktliste hinzugefügt"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Beim Verschlüsseln und Hinzufügen des Kontakts ist ein Fehler aufgetreten. Kein Kontakt konnte importiert werden.",
-        "Beim Verschlüsseln und Hinzufügen der Kontakte ist ein Fehler aufgetreten. Kein Kontakt konnte importiert werden."
       ]
     },
     "Import contact error": {
@@ -2612,12 +2608,20 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontakt erfolgreich importiert. Der importierte Kontakt wird nun in deiner Kontaktliste angezeigt.",
+        "${ totalImported } Kontakte erfolgreich importiert. Die importierten Kontakte werden nun in deiner Kontaktliste angezeigt."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "Das Verschlüsseln und Hinzufügen deines Kontakts ist fehlgeschlagen. Es wurde kein Kontakt importiert.",
+        "Das Verschlüsseln und Hinzufügen deiner ${ totalToImport } Kontakte ist fehlgeschlagen. Es wurde kein Kontakt importiert."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Beim Verschlüsseln und Hinzufügen des Kontakts ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Kontakt erfolgreich importiert.",
         "Beim Verschlüsseln und Hinzufügen der Kontakte ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Kontakten erfolgreich importiert."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kontakt erfolgreich importiert. Der importierte Kontakte wird nun in deiner Kontaktliste angezeigt.",
-        "Kontakt erfolgreich importiert. Die importierten Kontakte werden nun in deiner Kontaktliste angezeigt."
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Beim Verschlüsseln und Hinzufügen deines Kontakts ist ein Fehler aufgetreten. Es konnte kein Kontakt importiert werden."
       ]
     },
     "Import contacts warning": {

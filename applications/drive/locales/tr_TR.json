@@ -1764,7 +1764,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Gecikmiş fatura"
+        "Süresi geçmiş fatura"
       ]
     },
     "Description": {
@@ -2530,27 +2530,27 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz.",
+        "${ totalImported } etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi"
       ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "${ totalToImport } etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı.",
+        "${ totalToImport } etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
+      ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı.",
-        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kişiler ekleniyor ve şifreleniyor: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Etkinlikler şifrelenip takviminze ekleniyor: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz.",
-        "Etkinlikler içe aktarıldı. İçe aktarılan etkinlikleri takviminizde görebilirsiniz."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Lütfen içe aktarma işlemi bitmeden önce sekmeyi kapatmayın."
@@ -2584,10 +2584,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi",
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı.",
-        "Kişileriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
       ]
     },
     "Import contact error": {
@@ -2607,12 +2603,20 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "${ totalImported } kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz.",
+        "${ totalImported } kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "${ totalToImport } kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı.",
+        "${ totalToImport } kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Kişiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı.",
         "Kişileriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz.",
-        "Kişiler içe aktarıldı. İçe aktarılan kişileri kişi listenizde görebilirsiniz."
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
       ]
     },
     "Import contacts warning": {
@@ -3297,7 +3301,7 @@
         "Posta kutusunu içe aktar"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Kişisel gizlilik dünyasına hoş geldiniz."
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
@@ -3521,7 +3525,7 @@
         "Öncelikli destek"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Kişisel arama etkinleştirildi. Bu pencereyi kapatarak dosya ve klasörlerde arama yapabilirsiniz."
+        "Gizli arama etkinleştirildi. Bu pencereyi kapatarak dosya ve klasörlerde arama yapabilirsiniz."
       ],
       "Queued": [
         "Sıraya alındı"
@@ -3608,7 +3612,7 @@
         "destek ekibi"
       ],
       "Swiss privacy": [
-        "İsviçre kişisel gizliliği"
+        "İsviçre gizliliği"
       ],
       "Tap the + button to upload a file or folder": [
         "Bir dosya ya da klasör yüklemek için + düğmesine dokunun"
@@ -3617,13 +3621,13 @@
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Hesabın yeni bir anahtarı olabilir ya da şu ögeler kurcalanmış olabilir: ${ items }. Yalnızca güveniyorsanuz açın."
+        "Hesabın yeni bir anahtarı olabilir ya da şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Şu ögeler kurcalanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
+        "Şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Hâlâ aktarılması gereken dosyalar var. Aktarma yöneticisinin kapatılması tüm işlemleri sonlandıracaktır."
@@ -3632,7 +3636,7 @@
         "Henüz bir dosya yok"
       ],
       "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Bu dosyalar uçtan uca şifreleme kullanılarak paylaşıldı. Bu dosyaları ve diğer tüm belgelerinizi, fotoğraflarınızı ve dosyalarınızı kişisel gizliliğinizi koruyarak saklamak için kendi ${ DRIVE_APP_NAME } depolama alanınızı kullanın. Kolay kullanılır ve ücretsizdir."
+        "Bu dosyalar uçtan uca şifreleme kullanılarak paylaşıldı. Bu dosyaları ve diğer tüm belgelerinizi, fotoğraflarınızı ve dosyalarınızı gizliliğinizi koruyarak saklamak için kendi ${ DRIVE_APP_NAME } depolama alanınızı kullanın. Kolay kullanılır ve ücretsizdir."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -3675,7 +3679,7 @@
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Gerçekten kişisel gizliliği koruyan aramayı etkinleştirmek için dosyalarınızın yerel dizinini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
+        "Gerçek gizliliği koruyan aramayı etkinleştirmek için dosyalarınızın yerel dizinini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -3771,7 +3775,7 @@
         "Ne yapmak istersiniz?"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki aşamalı kimlik doğrulamasını kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -3825,7 +3829,7 @@
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
+        "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişiminiz kısıtlandı ve ödeme yapılana kadar tüm hizmetler engellendi. ${ payInvoiceLink }"
@@ -4311,7 +4315,7 @@
         "Araç çubuğu"
       ],
       "Two-factor authentication code": [
-        "İki aşamalı kimlik doğrulama kodu"
+        "İki aşamalı doğrulama kodu"
       ],
       "Type": [
         "Tür"
@@ -5463,7 +5467,7 @@
         "Telefon numaraları"
       ],
       "Privacy settings": [
-        "Kişisel gizlilik ayarları"
+        "Gizlilik ayarları"
       ],
       "Re-sign all contacts": [
         "Tüm kişileri yeniden imzala"
@@ -5586,7 +5590,7 @@
         "Çöpe at"
       ],
       "Two-factor authentication": [
-        "İki aşamalı kimlik doğrulama"
+        "İki aşamalı doğrulama"
       ],
       "Type": [
         "Tür"

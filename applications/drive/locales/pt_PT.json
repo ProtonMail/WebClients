@@ -2091,19 +2091,11 @@
         "Ocorreu um erro ao encriptar e adicionar o seu evento. ${ totalImported } de ${ totalToImport } evento importado.",
         "Ocorreu um erro ao encriptar e adicionar os seus eventos. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Ocorreu um erro ao encriptar e adicionar o evento. Nenhum evento foi importado.",
-        "Ocorreu um erro ao encriptar e adicionar os eventos. Nenhum evento foi importado."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "A encriptar e adicionar contactos: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Encriptar e adicionar eventos à agenda: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Evento importado. Já o pode ver na sua agenda.",
-        "Eventos importados. Já os pode ver na sua agenda."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Por favor, não feche o separador antes de o processo de importação terminar."
@@ -2131,10 +2123,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contacto encriptado e adicionado à lista de contactos",
         "${ totalImported }/${ totalToImport } contactos encriptados e adicionados à lista de contactos"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Ocorreu um erro ao encriptar e adicionar o seu contacto. Nenhum contacto pôde ser importado.",
-        "Ocorreu um erro ao encriptar e adicionar os seus contactos. Nenhum contacto pôde ser importado."
       ]
     },
     "Import contact error": {
@@ -2151,15 +2139,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "desconhecido"
-      ]
-    },
-    "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Ocorreu um erro ao encriptar e adicionar os seus contactos. ${ totalImported } de ${ totalToImport } contactos importados com sucesso."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contacto importado com sucesso. O contacto importado aparecerá agora na sua lista de contactos.",
-        "Contactos importados com sucesso. Os contactos importados aparecerão agora na sua lista de contactos."
       ]
     },
     "Import contacts warning": {

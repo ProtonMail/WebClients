@@ -1812,11 +1812,6 @@
         "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Došlo je do pogreške prilikom šifriranja i dodavanja vašeg kontakta. Nije moguće uvesti nijedan kontakt.",
-        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših kontakta. Nije moguće uvesti nijedan kontakt.",
-        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših kontakta. Nije moguće uvesti nijedan kontakt."
       ]
     },
     "Import contact error": {
@@ -1834,16 +1829,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "nepoznato"
-      ]
-    },
-    "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših kontakata. ${ totalImported } od ${ totalToImport } kontakata uspješno je uvezeno."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kontakt je uspješno uvezen. Uvezeni kontakt će se sada pojaviti u vašoj listi kontakata.",
-        "Kontakti su uspješno uvezeni. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata.",
-        "Kontakti su uspješno uvezeni. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
       ]
     },
     "Import contacts warning": {

@@ -4,6 +4,14 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "Access level": {
+      "Full view (see all event details)": [
+        "すべて表示 (すべてのイベント詳細)"
+      ],
+      "Limited view (see only free/busy)": [
+        "一部だけ表示 (空きまたは忙しい)"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } の紹介"
@@ -528,6 +536,9 @@
     "Action subline": {
       "Anyone with the link can view your calendar": [
         "このリンクを知っている人は、カレンダー表示することができます"
+      ],
+      "They can view or edit your calendar": [
+        "カレンダーを表示したり編集できます"
       ]
     },
     "Action title": {
@@ -772,6 +783,11 @@
       ],
       "You tentatively accepted the invitation": [
         "あなたが招待を仮承諾しました"
+      ]
+    },
+    "Calendar link sharing label input assistive text": {
+      "Only you can see the label": [
+        "ラベルが見えるのはあなただけです。"
       ]
     },
     "Calendar permissions label": {
@@ -2166,6 +2182,9 @@
       "No emails found to import - the account does not have an inbox": [
         "インポートするメールがありません - アカウントに受信箱がありません"
       ],
+      "No public key for ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } アドレスの公開鍵がありません"
+      ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
@@ -2765,17 +2784,11 @@
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
       ],
-      "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "予定を暗号化し、カレンダーに追加中...${ totalToImport }件中${ totalImported }件が完了"
-      ],
-      "Events successfully imported. The imported events will now appear in your calendar.": [
-        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "インポートが完了するまでタブを閉じないでください。"
@@ -2800,9 +2813,6 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 件の連絡先が暗号化され、連絡先リストに追加されました"
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
       ]
     },
     "Import contact error": {
@@ -2818,14 +2828,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "不明"
-      ]
-    },
-    "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先が正常にインポートされました。"
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
       ]
     },
     "Import contacts warning": {
