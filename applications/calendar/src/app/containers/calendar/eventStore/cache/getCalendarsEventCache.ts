@@ -22,6 +22,12 @@ const getCalendarsEventCache = (): CalendarsEventsCache => {
         return calendarCache.recurringEvents.get(uid);
     };
 
+    const retryReadEvent = async (calendarID: string, eventID: string) => {
+        const calendarCache = calendarsCache[calendarID];
+
+        return calendarCache?.events.get(eventID)?.eventReadRetry?.();
+    };
+
     const ref = 0;
     const isUnmounted = false;
 
@@ -31,6 +37,7 @@ const getCalendarsEventCache = (): CalendarsEventsCache => {
         calendars: calendarsCache,
         getCachedEvent,
         getCachedRecurringEvent,
+        retryReadEvent,
     };
 };
 

@@ -1,9 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Icon, classnames, useMailSettings } from '@proton/components';
+import { ReloadSpinner, classnames, useMailSettings } from '@proton/components';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
-
-import './RefreshRotation.scss';
 
 interface Props {
     unreadCount?: number;
@@ -50,12 +48,9 @@ const LocationAside = ({
     return (
         <>
             {active && (
-                <Icon
-                    className={classnames([
-                        unreadCount > 0 ? 'mr0-5' : 'mr0-15',
-                        refreshing && 'location-refresh-rotate',
-                    ])}
-                    name="arrow-rotate-right"
+                <ReloadSpinner
+                    className={classnames([unreadCount > 0 ? 'mr0-5' : 'mr0-15'])}
+                    refreshing={refreshing}
                     data-testid="navigation-link:refresh-folder"
                 />
             )}
