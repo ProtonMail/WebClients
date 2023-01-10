@@ -12,6 +12,55 @@ import { useGetContactGroups } from '../../../../hooks/useCategories';
 import { extractTotals } from '../encryptAndSubmit';
 import ContactImportWarningErrorDetails from './ContactImportWarningErrorDetails';
 
+interface GetMessageParams {
+    isSuccess: boolean;
+    isPartialSuccess: boolean;
+    totalImported: number;
+    totalToImport: number;
+}
+
+const getAlertMessage = ({ isSuccess, isPartialSuccess, totalImported, totalToImport }: GetMessageParams) => {
+    if (isSuccess) {
+        return totalImported === 1
+            ? c('Import contact')
+                  .t`Contact successfully imported. The imported contact will now appear in your contact list.`
+            : // translator: "Contacts" below is meant as multiple (more than one) contacts generically. The exact number of contacts imported is mentioned elsewhere
+              c('Import contact')
+                  .t`Contacts successfully imported. The imported contacts will now appear in your contact list.`;
+    }
+    if (isPartialSuccess) {
+        return c('Import contact')
+            .t`An error occurred while encrypting and adding your contacts. ${totalImported} out of ${totalToImport} contacts successfully imported.`;
+    }
+    return totalImported === 1
+        ? c('Import contact')
+              .t`An error occurred while encrypting and adding your contact. No contact could be imported.`
+        : // translator: "Contacts" below is meant as multiple (more than one) contacts generically. The exact number of contacts we tried to import is mentioned elsewhere
+          c('Import contact')
+              .t`An error occurred while encrypting and adding your contacts. No contact could be imported.`;
+};
+
+const getDisplayMessage = ({ isSuccess, isPartialSuccess, totalImported, totalToImport }: GetMessageParams) => {
+    if (!isSuccess && !isPartialSuccess) {
+        return '';
+    }
+    return c('Import contact').ngettext(
+        msgid`${totalImported}/${totalToImport} contact encrypted and added to your contact list`,
+        `${totalImported}/${totalToImport} contacts encrypted and added to your contact list`,
+        totalToImport
+    );
+};
+
+const getAlertType = ({ isSuccess, isPartialSuccess }: Pick<GetMessageParams, 'isSuccess' | 'isPartialSuccess'>) => {
+    if (isSuccess) {
+        return 'info';
+    }
+    if (isPartialSuccess) {
+        return 'warning';
+    }
+    return 'error';
+};
+
 interface Props {
     model: ImportContactsModel;
     setModel: Dispatch<SetStateAction<ImportContactsModel>>;
@@ -45,55 +94,15 @@ const ContactImportSummary = ({ model, setModel, onClose }: Props) => {
         }
     };
 
-    let alertMessage;
-    if (isSuccess) {
-        alertMessage = c('Import contacts').ngettext(
-            msgid`${totalImported} contact successfully imported. The imported contact will now appear in your contact list.`,
-            `${totalImported} contacts successfully imported. The imported contacts will now appear in your contact list.`,
-            totalImported
-        );
-    } else if (isPartialSuccess) {
-        alertMessage = c('Import contacts').ngettext(
-            msgid`An error occurred while encrypting and adding your contact. ${totalImported} out of ${totalToImport} contact successfully imported.`,
-            `An error occurred while encrypting and adding your contacts. ${totalImported} out of ${totalToImport} contacts successfully imported.`,
-            totalToImport
-        );
-    } else {
-        alertMessage =
-            totalToImport === 1
-                ? c('Import contacts')
-                      .t`An error occurred while encrypting and adding your contact. No contact could be imported.`
-                : // translator: the single version won't be used, it's only there for plural management. Please do keep the variable inside the translated version, otherwise our library will fail. Single version will be in another string: "An error occurred while encrypting and adding your contact. No contact could be imported."
-                  c('Import contacts').ngettext(
-                      msgid`An error occurred while encrypting and adding your ${totalToImport} contact. No contact could be imported.`,
-                      `An error occurred while encrypting and adding your ${totalToImport} contacts. No contact could be imported.`,
-                      totalToImport
-                  );
-    }
-
-    const displayMessage =
-        isPartialSuccess || isSuccess
-            ? c('Import contact').ngettext(
-                  msgid`${totalImported}/${totalToImport} contact encrypted and added to your contact list`,
-                  `${totalImported}/${totalToImport} contacts encrypted and added to your contact list`,
-                  totalToImport
-              )
-            : '';
-
-    let type: 'info' | 'warning' | 'error';
-    if (isSuccess) {
-        type = 'info';
-    } else if (isPartialSuccess) {
-        type = 'warning';
-    } else {
-        type = 'error';
-    }
+    const alertMessage = getAlertMessage({ isSuccess, isPartialSuccess, totalImported, totalToImport });
+    const displayMessage = getDisplayMessage({ isSuccess, isPartialSuccess, totalImported, totalToImport });
+    const alertType = getAlertType({ isSuccess, isPartialSuccess });
 
     return (
         <form className="modal-two-dialog-container h100" onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Import contacts`} />
             <ModalTwoContent>
-                <Alert className="mb1" type={type}>
+                <Alert className="mb1" type={alertType}>
                     {alertMessage}
                 </Alert>
                 <DynamicProgress
