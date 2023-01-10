@@ -29,11 +29,11 @@
         "@types/react": "^17.0.52",
         "@types/react-dom": "^17.0.18",
         "date-fns": "^2.29.3",
-        "dompurify": "^2.4.1",
+        "dompurify": "^2.4.3",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-helmet": "^6.1.0",
-        "tinycolor2": "^1.5.1",
+        "tinycolor2": "^1.5.2",
         "ttag": "^1.7.24"
     },
     "devDependencies": {
@@ -49,11 +49,11 @@
         "babel-jest": "^28.1.3",
         "babel-plugin-transform-require-context": "^0.1.1",
         "cross-env": "^7.0.3",
-        "eslint": "^8.30.0",
+        "eslint": "^8.31.0",
         "jest": "^28.1.3",
         "jest-environment-jsdom": "^28.1.3",
         "jest-junit": "^14.0.1",
-        "prettier": "^2.8.1",
+        "prettier": "^2.8.2",
         "typescript": "^4.9.4"
     }
 }
