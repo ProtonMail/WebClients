@@ -20,7 +20,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@types/jasmine": "^4.3.1",
-        "eslint": "^8.30.0",
+        "eslint": "^8.31.0",
         "jasmine": "^4.5.0",
         "jasmine-core": "^4.5.0",
         "karma": "^6.4.1",
@@ -28,7 +28,7 @@
         "karma-jasmine": "^5.1.0",
         "karma-spec-reporter": "^0.0.36",
         "karma-webpack": "^5.0.0",
-        "playwright": "^1.29.1",
+        "playwright": "^1.29.2",
         "ts-loader": "^9.4.2",
         "typescript": "^4.9.4",
         "webpack": "^5.75.0"

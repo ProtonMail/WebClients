@@ -21,7 +21,7 @@
         "@types/jest": "^27.5.2",
         "@types/react": "^17.0.52",
         "@types/react-dom": "^17.0.18",
-        "memfs": "^3.4.12",
+        "memfs": "^3.4.13",
         "safe-buffer": "^5.2.1"
     },
     "dependencies": {
@@ -33,13 +33,13 @@
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.0.0",
-        "husky": "^8.0.2",
+        "husky": "^8.0.3",
         "lint-staged": "^13.1.0",
-        "prettier": "^2.8.1",
+        "prettier": "^2.8.2",
         "sort-package-json": "^2.1.0"
     },
     "packageManager": "yarn@3.3.1",
     "engines": {
-        "node": ">= v18.12.1"
+        "node": ">= v18.13.0"
     }
 }
