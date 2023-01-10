@@ -1,4 +1,5 @@
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import { Environment } from '@proton/shared/lib/environment/helper';
 import { generateContentKeys, generateNodeKeys, sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
 import { ecryptFileExtendedAttributes } from '../../_links';
@@ -66,11 +67,20 @@ async function start(
     addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
     privateKey: PrivateKeyReference,
-    sessionKey: SessionKey
+    sessionKey: SessionKey,
+    environment: Environment | undefined
 ) {
     buffer
         .feedEncryptedBlocks(
-            generateEncryptedBlocks(file, thumbnailData?.thumbnailData, addressPrivateKey, privateKey, sessionKey)
+            generateEncryptedBlocks(
+                file,
+                thumbnailData?.thumbnailData,
+                addressPrivateKey,
+                privateKey,
+                sessionKey,
+                environment,
+                (e) => uploadWorker.postNotifySentry(e)
+            )
         )
         .catch((err) => uploadWorker.postError(getErrorString(err)));
 
