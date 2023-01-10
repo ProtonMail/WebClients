@@ -1,6 +1,15 @@
 .calendar-loader-container {
 	@extend .notifications-container;
 
+	position: absolute;
+	inset-block-start: em(160);
+	inset-block-end: unset;
+	inset-inline-start: 50%;
+
+	@include respond-to($breakpoint-small, 'min') {
+		inset-block-start: em(140);
+	}
+
 	.notification {
 		--top-custom: 0;
 	}

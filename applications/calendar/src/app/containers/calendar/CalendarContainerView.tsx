@@ -585,7 +585,6 @@ const CalendarContainerView = ({
             drawerApp={isDrawerApp ? null : <DrawerApp contactCustomActions={contactCustomActions} />}
             mainBordered={canShowDrawer && showDrawerSidebar}
         >
-            {loader}
             <div className="only-print p1">
                 {tzid} <br />
                 {calendars
@@ -630,6 +629,7 @@ const CalendarContainerView = ({
                 />
             )}
             <PrivateMainArea hasToolbar data-test-id="calendar-view:events-area">
+                {loader}
                 {children}
             </PrivateMainArea>
         </PrivateAppContainer>
