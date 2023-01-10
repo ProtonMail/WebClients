@@ -1,5 +1,6 @@
 import { isValid } from 'date-fns';
 
+import { getDateFromVCardProperty } from '@proton/shared/lib/contacts/property';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
@@ -13,7 +14,7 @@ interface Props {
 const ContactFieldDate = ({ vCardProperty, onChange, ...rest }: Props) => {
     const label = (getAllFieldLabels() as any)[vCardProperty.field] || '';
 
-    const date = isValid(vCardProperty.value?.date) ? vCardProperty.value.date : new Date();
+    const date = getDateFromVCardProperty(vCardProperty);
 
     const handleChange = (date?: Date) => {
         if (!date || !isValid(date)) {

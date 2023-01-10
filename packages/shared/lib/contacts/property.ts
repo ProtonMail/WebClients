@@ -1,3 +1,7 @@
+import { isValid } from 'date-fns';
+
+import { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { ContactValue } from '../interfaces/contacts';
 
 const UNESCAPE_REGEX = /\\\\|\\,|\\;/gi;
@@ -121,4 +125,25 @@ export const getType = (types: string | string[] = []): string => {
         return types[0];
     }
     return types;
+};
+
+/**
+ * Get a date from a VCardProperty<VCardDateOrText>.
+ * Returns the vCardProperty.date if present and valid
+ * Or tries to return the converted date from vCardProperty.text
+ * If none of the above, return today date
+ * @param vCardProperty birthday or anniversary vCardProperty
+ */
+export const getDateFromVCardProperty = ({ value: { date, text } }: VCardProperty<VCardDateOrText>) => {
+    if (date && isValid(date)) {
+        return date;
+    } else if (text) {
+        // Try to convert the text into a valid date
+        const textToDate = new Date(text);
+        if (isValid(textToDate)) {
+            return textToDate;
+        }
+    }
+
+    return new Date();
 };
