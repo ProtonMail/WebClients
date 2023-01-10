@@ -19,6 +19,7 @@ import {
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/helpers';
+import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
@@ -388,7 +389,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     } catch (e: any) {
         // We need to detect if the error is due to a failed decryption of the event.
         // We don't have a great way of doing this as the error comes from openpgp
-        return { calendarData, hasDecryptionError: e.message.includes('decrypt'), calendarEvent };
+        return { calendarData, hasDecryptionError: naiveGetIsDecryptionError(e), calendarEvent };
     }
 };
 

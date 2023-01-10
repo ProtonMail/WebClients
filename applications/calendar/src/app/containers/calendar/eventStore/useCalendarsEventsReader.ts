@@ -5,10 +5,15 @@ import { c } from 'ttag';
 import { useApi, useGetCalendarEventRaw } from '@proton/components';
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
+import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
+import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { Api, RequireSome } from '@proton/shared/lib/interfaces';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { GetCalendarEventPersonal } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventPersonal';
+import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
 import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import getAllEventsByUID from '../getAllEventsByUID';
@@ -16,16 +21,196 @@ import { CalendarViewEvent } from '../interface';
 import { getIsCalendarEvent } from './cache/helper';
 import upsertCalendarApiEvent from './cache/upsertCalendarApiEvent';
 import {
+    CalendarEventStoreRecord,
     CalendarEventsCache,
     CalendarsEventsCache,
     DecryptedEventTupleResult,
     SharedVcalVeventComponent,
+    getEventStoreRecordHasEventData,
 } from './interface';
 
 const SLOW_EVENT_BYPASS = {};
 const EVENTS_PER_BATCH = 5;
 const EVENTS_RACE_MS = 300;
-const INVISIBLE_ERROR_MESSAGE = 'Outdated event';
+
+const GET_EVENT_ERROR_MESSAGE = 'Failed to get event';
+
+const getEventAndUpsert = async ({
+    calendarID,
+    eventID,
+    calendarEventsCache,
+    api,
+    getOpenedMailEvents,
+}: {
+    calendarID: string;
+    eventID: string;
+    calendarEventsCache: CalendarEventsCache;
+    api: Api;
+    getOpenedMailEvents?: () => OpenedMailEvent[];
+}): Promise<void> => {
+    try {
+        const { Event } = await api<{ Event: CalendarEvent }>({
+            ...getEventRoute(calendarID, eventID),
+            silence: true,
+        });
+        upsertCalendarApiEvent(Event, calendarEventsCache, getOpenedMailEvents);
+    } catch (error: any) {
+        throw new Error(GET_EVENT_ERROR_MESSAGE);
+    }
+};
+
+const getDecryptedEvent = ({
+    calendarEvent,
+    getCalendarEventRaw,
+    getCalendarEventPersonal,
+}: {
+    calendarEvent: CalendarEvent;
+    getCalendarEventRaw: GetCalendarEventRaw;
+    getCalendarEventPersonal: GetCalendarEventPersonal;
+}): Promise<DecryptedEventTupleResult> => {
+    return Promise.all([
+        getCalendarEventRaw(calendarEvent),
+        getCalendarEventPersonal(calendarEvent),
+        pick(calendarEvent, ['Permissions', 'IsOrganizer', 'IsProtonProtonInvite']),
+    ]);
+};
+
+// Single edits are not always tied to the parent. Ensure that if the parent exists, it's in the cache before viewing it.
+const getRecurringEventAndUpsert = ({
+    eventComponent,
+    calendarEvent,
+    cacheRef,
+    calendarEventsCache,
+    api,
+    getOpenedMailEvents,
+}: {
+    eventComponent: SharedVcalVeventComponent;
+    calendarEvent: CalendarEvent;
+    cacheRef: MutableRefObject<CalendarsEventsCache>;
+    calendarEventsCache: CalendarEventsCache;
+    api: Api;
+    getOpenedMailEvents?: () => OpenedMailEvent[];
+}): Promise<void> | undefined => {
+    if (!eventComponent['recurrence-id'] || !eventComponent.uid) {
+        return;
+    }
+
+    const cache = cacheRef.current;
+    const uid = eventComponent.uid.value;
+    const calendarID = calendarEvent.CalendarID;
+
+    const getParentEvent = () => {
+        const recurringEventsCache = cache.getCachedRecurringEvent(calendarID, uid);
+        const parentEventID = recurringEventsCache?.parentEventID;
+        if (!parentEventID) {
+            return;
+        }
+        return cache.getCachedEvent(calendarID, parentEventID);
+    };
+
+    if (getParentEvent()) {
+        return;
+    }
+
+    const oldFetchPromise = calendarEventsCache.fetchUidCache.get(uid);
+    if (oldFetchPromise?.promise) {
+        return oldFetchPromise.promise;
+    }
+
+    const newFetchPromise = getAllEventsByUID(api, calendarID, uid)
+        .then((eventOccurrences) => {
+            eventOccurrences.forEach((eventOccurrence) => {
+                upsertCalendarApiEvent(eventOccurrence, calendarEventsCache, getOpenedMailEvents);
+            });
+        })
+        .catch(() => {
+            calendarEventsCache.fetchUidCache.set(uid, { promise: undefined });
+            throw new Error(c('Error').t`Failed to get original occurrence in series`);
+        });
+    calendarEventsCache.fetchUidCache.set(uid, { promise: newFetchPromise });
+
+    return newFetchPromise;
+};
+
+const setEventRecordPromise = ({
+    eventRecord,
+    getCalendarEventRaw,
+    getCalendarEventPersonal,
+    cacheRef,
+    calendarEventsCache,
+    api,
+    getOpenedMailEvents,
+}: {
+    eventRecord: RequireSome<CalendarEventStoreRecord, 'eventData'>;
+    getCalendarEventRaw: GetCalendarEventRaw;
+    getCalendarEventPersonal: GetCalendarEventPersonal;
+    cacheRef: MutableRefObject<CalendarsEventsCache>;
+    calendarEventsCache: CalendarEventsCache;
+    api: Api;
+    getOpenedMailEvents?: () => OpenedMailEvent[];
+}) => {
+    const { eventData: calendarEvent, eventComponent } = eventRecord;
+
+    const onError = (error: any) => {
+        const errorMessage = error?.message || 'Unknown error';
+        if (!naiveGetIsDecryptionError(error)) {
+            /**
+             * (Temporarily) Log to Sentry any error not related to decryption
+             */
+            const { ID, CalendarID } = eventRecord.eventData || {};
+            captureMessage('Unexpected error reading calendar event', {
+                extra: { message: errorMessage, eventID: ID, calendarID: CalendarID },
+            });
+        }
+        eventRecord.eventReadResult = { error };
+        eventRecord.eventPromise = undefined;
+    };
+
+    if (!getIsCalendarEvent(calendarEvent)) {
+        const promise = getEventAndUpsert({
+            calendarID: calendarEvent.CalendarID,
+            eventID: calendarEvent.ID,
+            calendarEventsCache,
+            api,
+            getOpenedMailEvents,
+        })
+            .then(() => {
+                // getEventAndUpsert is already clearing these. Repeating here for safety
+                eventRecord.eventReadResult = undefined;
+                eventRecord.eventPromise = undefined;
+            })
+            .catch(onError);
+        eventRecord.eventPromise = promise;
+
+        return promise;
+    }
+
+    const promise = Promise.all([
+        getDecryptedEvent({
+            calendarEvent,
+            getCalendarEventRaw,
+            getCalendarEventPersonal,
+        }),
+        getRecurringEventAndUpsert({
+            eventComponent: eventComponent,
+            calendarEvent,
+            cacheRef,
+            calendarEventsCache,
+            api,
+        }),
+    ])
+        .then(([eventDecrypted]) => {
+            return eventDecrypted;
+        })
+        .then((result) => {
+            eventRecord.eventReadResult = { result };
+            eventRecord.eventPromise = undefined;
+        })
+        .catch(onError);
+    eventRecord.eventPromise = promise;
+
+    return promise;
+};
 
 const useCalendarsEventsReader = (
     calendarEvents: CalendarViewEvent[],
@@ -52,76 +237,7 @@ const useCalendarsEventsReader = (
         if (!signal) {
             throw new Error('Required variables');
         }
-
-        const getEventAndUpsert = async (
-            calendarID: string,
-            eventID: string,
-            calendarEventsCache: CalendarEventsCache
-        ): Promise<void> => {
-            try {
-                const { Event } = await api<{ Event: CalendarEvent }>({
-                    ...getEventRoute(calendarID, eventID),
-                    silence: true,
-                    signal,
-                });
-                upsertCalendarApiEvent(Event, calendarEventsCache, getOpenedMailEvents);
-            } catch (error: any) {
-                throw new Error('Failed to get event');
-            }
-        };
-
-        const getDecryptedEvent = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
-            return Promise.all([
-                getCalendarEventRaw(eventData),
-                getCalendarEventPersonal(eventData),
-                pick(eventData, ['Permissions', 'IsOrganizer', 'IsProtonProtonInvite']),
-            ]);
-        };
-
-        // Single edits are not always tied to the parent. Ensure that if the parent exists, it's in the cache before viewing it.
-        const getRecurringEventAndUpsert = (
-            eventComponent: SharedVcalVeventComponent,
-            eventData: CalendarEvent,
-            calendarEventsCache: CalendarEventsCache
-        ): Promise<void> | undefined => {
-            if (!eventComponent['recurrence-id'] || !eventComponent.uid) {
-                return;
-            }
-
-            const cache = cacheRef.current;
-            const uid = eventComponent.uid.value;
-            const calendarID = eventData.CalendarID;
-
-            const getParentEvent = () => {
-                const recurringEventsCache = cache.getCachedRecurringEvent(calendarID, uid);
-                const parentEventID = recurringEventsCache?.parentEventID;
-                if (!parentEventID) {
-                    return;
-                }
-                return cache.getCachedEvent(calendarID, parentEventID);
-            };
-
-            if (getParentEvent()) {
-                return;
-            }
-
-            const oldFetchPromise = calendarEventsCache.fetchUidCache.get(uid);
-            if (oldFetchPromise?.promise) {
-                return oldFetchPromise.promise;
-            }
-
-            const newFetchPromise = getAllEventsByUID(api, calendarID, uid)
-                .then((eventOccurrences) => {
-                    eventOccurrences.forEach((eventOccurrence) => {
-                        upsertCalendarApiEvent(eventOccurrence, calendarEventsCache, getOpenedMailEvents);
-                    });
-                })
-                .catch(() => {
-                    throw new Error(c('Error').t`Failed to get original occurrence in series`);
-                });
-            calendarEventsCache.fetchUidCache.set(uid, { promise: newFetchPromise });
-            return newFetchPromise;
-        };
+        const apiWithAbort = getApiWithAbort(api, signal);
 
         const seen = new Set();
 
@@ -140,56 +256,30 @@ const useCalendarsEventsReader = (
             // To ignore recurring events
             seen.add(eventRecord);
 
-            if (!eventRecord.eventData) {
+            if (!getEventStoreRecordHasEventData(eventRecord)) {
                 eventRecord.eventReadResult = { error: new Error('Unknown process') };
                 return acc;
             }
 
-            if (!eventRecord.eventPromise) {
-                let promise;
-                if (getIsCalendarEvent(eventRecord.eventData)) {
-                    promise = Promise.all([
-                        getDecryptedEvent(eventRecord.eventData),
-                        getRecurringEventAndUpsert(
-                            eventRecord.eventComponent,
-                            eventRecord.eventData,
-                            calendarEventsCache
-                        ),
-                    ]).then(([eventDecrypted]) => {
-                        return eventDecrypted;
-                    });
-                } else {
-                    promise = getEventAndUpsert(calendarData.ID, eventRecord.eventData.ID, calendarEventsCache).then(
-                        () => {
-                            // Relies on a re-render happening which would make this error never show up
-                            throw new Error(INVISIBLE_ERROR_MESSAGE);
-                        }
-                    );
-                }
-                eventRecord.eventPromise = promise
-                    .then((result) => {
-                        eventRecord.eventReadResult = { result };
-                        eventRecord.eventPromise = undefined;
-                    })
-                    .catch((error: any) => {
-                        const errorMessage = error?.message || 'Unknown error';
-                        if (
-                            !errorMessage.toLowerCase().includes('decrypt') &&
-                            errorMessage !== INVISIBLE_ERROR_MESSAGE
-                        ) {
-                            /**
-                             * (Temporarily) Log to Sentry any error not related to decryption
-                             */
-                            const { ID, CalendarID } = eventRecord.eventData || {};
-                            captureMessage('Unexpected error reading calendar event', {
-                                extra: { message: errorMessage, eventID: ID, calendarID: CalendarID },
-                            });
-                        }
-                        eventRecord.eventReadResult = { error };
-                        eventRecord.eventPromise = undefined;
-                    });
+            const getPromise = () =>
+                setEventRecordPromise({
+                    eventRecord,
+                    getCalendarEventRaw,
+                    getCalendarEventPersonal,
+                    cacheRef,
+                    calendarEventsCache,
+                    api: apiWithAbort,
+                    getOpenedMailEvents,
+                });
+
+            if (!eventRecord.eventReadRetry) {
+                eventRecord.eventReadRetry = () => getPromise().then(rerender);
             }
-            acc.push(eventRecord.eventPromise);
+
+            if (!eventRecord.eventPromise) {
+                acc.push(getPromise());
+            }
+
             return acc;
         }, []);
 

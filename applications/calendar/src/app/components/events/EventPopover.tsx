@@ -12,6 +12,7 @@ import {
     FeatureCode,
     Icon,
     Loader,
+    ReloadSpinner,
     Tooltip,
     useCalendarBootstrap,
     useFeature,
@@ -20,7 +21,7 @@ import {
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { getIsCalendarDisabled, getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
-import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
+import { getLinkToCalendarEvent, naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
@@ -28,11 +29,10 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Calendar, CalendarBootstrap, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
-import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
@@ -52,9 +52,10 @@ const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
 interface Props {
     formatTime: (date: Date) => string;
-    onEdit: (event: CalendarEvent, calendarData: Calendar) => void;
-    onDuplicate?: (event: CalendarEvent, calendarData: Calendar) => void;
-    onChangePartstat: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
+    onEdit: () => void;
+    onRefresh: () => Promise<void>;
+    onDuplicate?: () => void;
+    onChangePartstat: (inviteActions: InviteActions) => Promise<void>;
     onDelete: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
     style: any;
@@ -70,6 +71,7 @@ interface Props {
 const EventPopover = ({
     formatTime,
     onEdit,
+    onRefresh,
     onDuplicate,
     onChangePartstat,
     onDelete,
@@ -86,7 +88,8 @@ const EventPopover = ({
 }: Props) => {
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
 
-    const [loadingAction, withLoadingAction] = useLoading();
+    const [loadingDelete, withLoadingDelete] = useLoading();
+    const [loadingRefresh, withLoadingRefresh] = useLoading();
 
     const targetEventData = targetEvent?.data || {};
     const { eventReadResult, eventData, calendarData } = targetEventData;
@@ -139,42 +142,40 @@ const EventPopover = ({
     ]);
 
     const handleDelete = () => {
-        if (eventData && getIsCalendarEvent(eventData)) {
-            const sendCancellationNotice =
-                !eventReadError && !isCalendarDisabled && !isCancelled && [ACCEPTED, TENTATIVE].includes(userPartstat);
-            const inviteActions = model.isAttendee
-                ? {
-                      type: isSelfAddressActive
-                          ? INVITE_ACTION_TYPES.DECLINE_INVITATION
-                          : INVITE_ACTION_TYPES.DECLINE_DISABLED,
-                      isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
-                      sendCancellationNotice,
-                      selfAddress: model.selfAddress,
-                      selfAttendeeIndex: model.selfAttendeeIndex,
-                      partstat: ICAL_ATTENDEE_STATUS.DECLINED,
-                  }
-                : {
-                      type: isSelfAddressActive
-                          ? INVITE_ACTION_TYPES.CANCEL_INVITATION
-                          : INVITE_ACTION_TYPES.CANCEL_DISABLED,
-                      isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
-                      selfAddress: model.selfAddress,
-                      selfAttendeeIndex: model.selfAttendeeIndex,
-                  };
-            withLoadingAction(onDelete(inviteActions)).catch(noop);
-        }
+        const sendCancellationNotice =
+            !eventReadError && !isCalendarDisabled && !isCancelled && [ACCEPTED, TENTATIVE].includes(userPartstat);
+        const inviteActions = model.isAttendee
+            ? {
+                  type: isSelfAddressActive
+                      ? INVITE_ACTION_TYPES.DECLINE_INVITATION
+                      : INVITE_ACTION_TYPES.DECLINE_DISABLED,
+                  isProtonProtonInvite: model.isProtonProtonInvite,
+                  sendCancellationNotice,
+                  selfAddress: model.selfAddress,
+                  selfAttendeeIndex: model.selfAttendeeIndex,
+                  partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+              }
+            : {
+                  type: isSelfAddressActive
+                      ? INVITE_ACTION_TYPES.CANCEL_INVITATION
+                      : INVITE_ACTION_TYPES.CANCEL_DISABLED,
+                  isProtonProtonInvite: model.isProtonProtonInvite,
+                  selfAddress: model.selfAddress,
+                  selfAttendeeIndex: model.selfAttendeeIndex,
+              };
+        withLoadingDelete(onDelete(inviteActions));
     };
 
-    const handleEdit = () => {
-        if (eventData && getIsCalendarEvent(eventData)) {
-            onEdit(eventData, calendarData);
-        }
-    };
+    const handleChangePartstat = (partstat: ICAL_ATTENDEE_STATUS) => {
+        const inviteActions = {
+            isProtonProtonInvite: model.isProtonProtonInvite,
+            type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
+            partstat,
+            selfAddress: model.selfAddress,
+            selfAttendeeIndex: model.selfAttendeeIndex,
+        };
 
-    const handleDuplicate = () => {
-        if (eventData && getIsCalendarEvent(eventData)) {
-            onDuplicate?.(eventData, calendarData);
-        }
+        return onChangePartstat(inviteActions);
     };
 
     const dateHeader = useMemo(
@@ -192,51 +193,70 @@ const EventPopover = ({
         [start, end, isAllDay, isAllPartDay, formatTime]
     );
 
+    const editText = c('Edit event button tooltip').t`Edit event`;
+    const deleteText = c('Delete event button tooltip').t`Delete event`;
+    const duplicateText = c('Duplicate event button tooltip').t`Duplicate event`;
+    const reloadText = c('Reload event button tooltip').t`Reload event`;
+    const viewText = c('View event button tooltip').t`Open in a new tab`;
+
     const editButton = isCalendarWritable && !isCalendarDisabled && (
-        <Tooltip title={c('Event edit button tooltip').t`Edit event`}>
+        <Tooltip title={editText}>
             <ButtonLike
                 data-test-id="event-popover:edit"
                 shape="ghost"
-                onClick={handleEdit}
-                disabled={loadingAction}
+                onClick={onEdit}
+                disabled={loadingDelete}
                 icon
                 size="small"
             >
-                <Icon name="pen" alt={c('Event edit button tooltip').t`Edit event`} />
+                <Icon name="pen" alt={editText} />
             </ButtonLike>
         </Tooltip>
     );
     const deleteButton = isCalendarWritable && (
-        <Tooltip title={c('Event delete button tooltip').t`Delete event`}>
+        <Tooltip title={deleteText}>
             <ButtonLike
                 data-test-id="event-popover:delete"
                 shape="ghost"
-                onClick={loadingAction ? noop : handleDelete}
-                loading={loadingAction}
+                onClick={loadingDelete ? noop : handleDelete}
+                loading={loadingDelete}
                 icon
                 size="small"
             >
-                <Icon name="trash" alt={c('Event delete button tooltip').t`Delete event`} />
+                <Icon name="trash" alt={deleteText} />
             </ButtonLike>
         </Tooltip>
     );
     const duplicateButton = !isSubscribedCalendar && !model.isAttendee && !!onDuplicate && (
-        <Tooltip title={c('Event duplicate button tooltip').t`Duplicate event`}>
+        <Tooltip title={duplicateText}>
             <ButtonLike
                 data-test-id="event-popover:duplicate"
                 shape="ghost"
-                onClick={handleDuplicate}
-                disabled={loadingAction}
+                onClick={onDuplicate}
+                disabled={loadingDelete}
                 icon
                 size="small"
             >
-                <Icon name="squares" alt={c('Event duplicate button tooltip').t`Duplicate event`} />
+                <Icon name="squares" alt={duplicateText} />
             </ButtonLike>
         </Tooltip>
     );
 
+    const reloadButton = (
+        <Tooltip title={reloadText}>
+            <ButtonLike
+                data-test-id="event-popover:refresh"
+                shape="ghost"
+                onClick={loadingRefresh ? noop : () => withLoadingRefresh(onRefresh())}
+                icon
+                size="small"
+            >
+                <ReloadSpinner refreshing={loadingRefresh} alt={reloadText} />
+            </ButtonLike>
+        </Tooltip>
+    );
     const viewEventButton = getIsCalendarAppInDrawer(view) && (
-        <Tooltip title={c('View event button tooltip').t`Open in a new tab`}>
+        <Tooltip title={viewText}>
             <AppLink
                 to={linkTo || '/'}
                 selfOpening
@@ -248,9 +268,9 @@ const EventPopover = ({
     );
 
     const actions = {
-        accept: () => onChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
-        acceptTentatively: () => onChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
-        decline: () => onChangePartstat(ICAL_ATTENDEE_STATUS.DECLINED),
+        accept: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
+        acceptTentatively: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
+        decline: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.DECLINED),
         retryCreateEvent: () => wait(0),
         retryUpdateEvent: () => wait(0),
     };
@@ -280,12 +300,19 @@ const EventPopover = ({
     };
 
     if (eventReadError) {
+        const showReload = !naiveGetIsDecryptionError(eventReadError);
+
+        const actions =
+            deleteButton || showReload ? (
+                <>
+                    {showReload && <div className="flex flex-nowrap flex-justify-end">{reloadButton}</div>}
+                    {deleteButton && <div className="flex flex-nowrap flex-justify-end">{deleteButton}</div>}
+                </>
+            ) : null;
+
         return (
             <PopoverContainer {...commonContainerProps} className={containerClassName}>
-                <PopoverHeader
-                    {...commonHeaderProps}
-                    actions={deleteButton && <div className="flex flex-nowrap flex-justify-end">{deleteButton}</div>}
-                >
+                <PopoverHeader {...commonHeaderProps} actions={actions}>
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
                 <Alert className="mb1" type="error">

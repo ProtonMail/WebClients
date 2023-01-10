@@ -69,6 +69,7 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
@@ -123,7 +124,6 @@ import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import {
     CleanSendIcsActionData,
-    INVITE_ACTION_TYPES,
     InviteActions,
     RecurringActionData,
     ReencryptInviteActionData,
@@ -1719,6 +1719,20 @@ const InteractiveCalendarView = ({
 
                                 return handleEditEvent(newTemporaryEvent);
                             }}
+                            onRefresh={async () => {
+                                // make the loader always spin for one second (same as Mail "update message in folder")
+                                const dummySpin = () => wait(SECOND);
+                                const { eventData } = targetEvent.data;
+                                if (!eventData) {
+                                    return dummySpin();
+                                }
+                                const { CalendarID, ID } = eventData;
+
+                                await Promise.all([
+                                    calendarsEventsCacheRef.current.retryReadEvent(CalendarID, ID),
+                                    dummySpin(),
+                                ]);
+                            }}
                             onDuplicate={
                                 isEventCreationDisabled
                                     ? undefined
@@ -1756,8 +1770,9 @@ const InteractiveCalendarView = ({
                                           });
                                       }
                             }
-                            onChangePartstat={async (partstat: ICAL_ATTENDEE_STATUS) => {
-                                if (!targetEvent) {
+                            onChangePartstat={async (inviteActions: InviteActions) => {
+                                const { partstat } = inviteActions;
+                                if (!targetEvent || !partstat) {
                                     return;
                                 }
                                 const newTemporaryModel = getUpdateModel({
@@ -1767,13 +1782,6 @@ const InteractiveCalendarView = ({
                                 if (!newTemporaryModel) {
                                     return;
                                 }
-                                const inviteActions = {
-                                    isProtonProtonInvite: newTemporaryModel.isProtonProtonInvite,
-                                    type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
-                                    partstat,
-                                    selfAddress: newTemporaryModel.selfAddress,
-                                    selfAttendeeIndex: newTemporaryModel.selfAttendeeIndex,
-                                };
 
                                 const newTemporaryEvent = getTemporaryEvent(
                                     getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid),
