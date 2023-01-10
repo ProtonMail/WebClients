@@ -3996,19 +3996,11 @@
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } sur ${ totalToImport } événement correctement importé.",
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } sur ${ totalToImport } événements correctement importés."
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. Aucun événement n'a pu être importé.",
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout des contacts: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout d'événements à votre calendrier: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Événement correctement importé. L'événement importé apparaîtra maintenant dans votre calendrier.",
-        "Événements correctement importés. Les événements importés apparaîtront maintenant dans votre calendrier."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Veuillez ne pas fermer l'onglet avant la fin du processus d'importation."
@@ -4042,10 +4034,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contact chiffré et ajouté à votre liste de contacts",
         "${ totalImported }/${ totalToImport } contacts chiffrés et ajoutés à votre liste de contacts"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre contact. Aucun contact n'a pu être importé.",
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos contacts. Aucun contact n'a pu être importé."
       ]
     },
     "Import contact error": {
@@ -4062,15 +4050,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "inconnu"
-      ]
-    },
-    "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos contacts. ${ totalImported } sur ${ totalToImport } contacts importés correctement."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contact importé correctement. Le contact importé apparaîtra maintenant dans votre liste de contacts.",
-        "Contacts importés correctement. Les contacts importés vont maintenant apparaître dans votre liste de contacts."
       ]
     },
     "Import contacts warning": {

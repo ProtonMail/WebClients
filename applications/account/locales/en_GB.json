@@ -1,0 +1,5318 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "en_GB"
+  },
+  "contexts": {
+    "Action": {
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } introduction"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } shop"
+      ],
+      "activate": [
+        "activate"
+      ],
+      "Activate organization key": [
+        "Activate organization key"
+      ],
+      "Activate recovery": [
+        "Activate recovery"
+      ],
+      "Add address": [
+        "Add address"
+      ],
+      "Add condition": [
+        "Add condition"
+      ],
+      "Add credit / debit card": [
+        "Add credit / debit card"
+      ],
+      "Add credits": [
+        "Add credits"
+      ],
+      "Add domain": [
+        "Add domain"
+      ],
+      "Add filter": [
+        "Add filter"
+      ],
+      "Add folder": [
+        "Add folder"
+      ],
+      "Add label": [
+        "Add label"
+      ],
+      "Add notification": [
+        "Add notification"
+      ],
+      "Add PayPal": [
+        "Add PayPal"
+      ],
+      "Add user": [
+        "Add user"
+      ],
+      "Align center": [
+        "Align center"
+      ],
+      "Align left": [
+        "Align left"
+      ],
+      "Align right": [
+        "Align right"
+      ],
+      "Alignment": [
+        "Alignment"
+      ],
+      "Apply": [
+        "Apply"
+      ],
+      "Attach screenshot(s)": [
+        "Attach screenshot(s)"
+      ],
+      "Authenticate": [
+        "Authenticate"
+      ],
+      "Back": [
+        "Back"
+      ],
+      "Bold": [
+        "Bold"
+      ],
+      "Cancel": [
+        "Cancel"
+      ],
+      "Change mailbox password": [
+        "Change mailbox password"
+      ],
+      "Change organization keys": [
+        "Change organization keys"
+      ],
+      "Change other email subscriptions": [
+        "Change other email subscriptions"
+      ],
+      "Change password": [
+        "Change password"
+      ],
+      "Chat with us": [
+        "Chat with us"
+      ],
+      "Check import progress": [
+        "Check import progress"
+      ],
+      "Choose a file or drag it here": [
+        "Choose a file or drag it here"
+      ],
+      "Clear all formatting": [
+        "Clear all formatting"
+      ],
+      "Close": [
+        "Close"
+      ],
+      "Close navigation": [
+        "Close navigation"
+      ],
+      "Close this banner": [
+        "Close this page"
+      ],
+      "Color": [
+        "Color"
+      ],
+      "Confirm": [
+        "Confirm"
+      ],
+      "Confirm opening of link ${ linkToShow }": [
+        "Confirm opening of link ${ linkToShow }"
+      ],
+      "Contact support": [
+        "Contact support"
+      ],
+      "Continue": [
+        "Continue"
+      ],
+      "Continue with Google": [
+        "Continue with Google"
+      ],
+      "Copy": [
+        "Copy"
+      ],
+      "Copy email to clipboard": [
+        "Copied to clipboard"
+      ],
+      "Create": [
+        "Create"
+      ],
+      "Create folder": [
+        "Create folder"
+      ],
+      "Create label": [
+        "Create label"
+      ],
+      "Create link": [
+        "Create link"
+      ],
+      "Customize": [
+        "Customise"
+      ],
+      "Customize import": [
+        "Customize import"
+      ],
+      "Decrease": [
+        "Decrease"
+      ],
+      "Decrypt": [
+        "Decrypt"
+      ],
+      "Delete": [
+        "Delete"
+      ],
+      "Delete permanently": [
+        "Delete permanently"
+      ],
+      "Delete record": [
+        "Delete record"
+      ],
+      "Delete your account": [
+        "Delete your account"
+      ],
+      "Details": [
+        "Details"
+      ],
+      "Didn't receive a code?": [
+        "Didn't receive a code?"
+      ],
+      "Disable": [
+        "Disable"
+      ],
+      "Disable recovery phrase": [
+        "Create new recovery phrase"
+      ],
+      "Disable recovery phrase?": [
+        "Create new recovery phrase?"
+      ],
+      "Discard": [
+        "Discard"
+      ],
+      "Done": [
+        "Done"
+      ],
+      "Downgrade": [
+        "Downgrade"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Download all configurations": [
+        "Download all configurations"
+      ],
+      "Edit": [
+        "Edit"
+      ],
+      "Edit email address": [
+        "Edit email address"
+      ],
+      "Edit label": [
+        "Edit label"
+      ],
+      "Edit phone number": [
+        "Edit phone number"
+      ],
+      "Edit sieve": [
+        "Edit sieve"
+      ],
+      "Edit sign-in details": [
+        "Edit sign-in details"
+      ],
+      "Emoji": [
+        "Emoji"
+      ],
+      "enable desktop notifications": [
+        "enable desktop notifications"
+      ],
+      "Enable multi-user support": [
+        "Enable multi-user support"
+      ],
+      "Export": [
+        "Export"
+      ],
+      "Export key": [
+        "Export key"
+      ],
+      "Font": [
+        "Font"
+      ],
+      "Generate recovery phrase": [
+        "Generate recovery phrase"
+      ],
+      "Get verification code": [
+        "Get verification code"
+      ],
+      "Go to label": [
+        "Go to label"
+      ],
+      "Got it": [
+        "Got it"
+      ],
+      "Hide": [
+        "Hide"
+      ],
+      "Hide folders": [
+        "Hide folders"
+      ],
+      "Hide labels": [
+        "Hide labels"
+      ],
+      "I have a question": [
+        "I have a question"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Import contacts": [
+        "Import contacts"
+      ],
+      "Import key": [
+        "Import key"
+      ],
+      "Increase": [
+        "Increase"
+      ],
+      "Insert": [
+        "Insert"
+      ],
+      "Insert image": [
+        "Insert image"
+      ],
+      "Insert link": [
+        "Insert link"
+      ],
+      "Italic": [
+        "Italic"
+      ],
+      "Keep": [
+        "Keep"
+      ],
+      "label emails as": [
+        "label emails as"
+      ],
+      "Load more": [
+        "Load more"
+      ],
+      "Loading verification": [
+        "Loading verification"
+      ],
+      "Mark as default": [
+        "Mark as default"
+      ],
+      "mark emails as": [
+        "mark emails as"
+      ],
+      "More": [
+        "More"
+      ],
+      "More info: ${ safeTitle }": [
+        "More info: ${ safeTitle }"
+      ],
+      "move emails to": [
+        "move emails to"
+      ],
+      "Next": [
+        "Next"
+      ],
+      "Next month": [
+        "Next month"
+      ],
+      "No": [
+        "No"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Ok": [
+        "Ok"
+      ],
+      "Open navigation": [
+        "Open navigation"
+      ],
+      "Ordered list": [
+        "Ordered list"
+      ],
+      "Organization": [
+        "Organization"
+      ],
+      "Pay": [
+        "Pay"
+      ],
+      "Preview": [
+        "Preview"
+      ],
+      "Previous": [
+        "Previous"
+      ],
+      "Previous month": [
+        "Previous month"
+      ],
+      "Quit": [
+        "Quit"
+      ],
+      "Quote": [
+        "Quote"
+      ],
+      "Reactivate keys": [
+        "Reactivate keys"
+      ],
+      "Reconnect": [
+        "Reconnect"
+      ],
+      "Recover data": [
+        "Recover data"
+      ],
+      "Refer a friend": [
+        "Refer a friend"
+      ],
+      "Refresh status": [
+        "Refresh status"
+      ],
+      "Refresh the page": [
+        "Refresh the page"
+      ],
+      "refresh the page": [
+        "refresh the page"
+      ],
+      "Remove": [
+        "Remove"
+      ],
+      "Remove bonuses": [
+        "Remove bonuses"
+      ],
+      "Remove gift code": [
+        "Remove gift code"
+      ],
+      "Remove this label": [
+        "Remove this label"
+      ],
+      "Remove this notification": [
+        "Remove this notification"
+      ],
+      "Rename": [
+        "Rename"
+      ],
+      "Report a problem": [
+        "Report a problem"
+      ],
+      "Request a feature": [
+        "Request a feature"
+      ],
+      "Request new code": [
+        "Request new code"
+      ],
+      "Reset credentials": [
+        "Reset credentials"
+      ],
+      "Reset password": [
+        "Reset password"
+      ],
+      "Reset to default": [
+        "Reset to default"
+      ],
+      "Restore administrator privileges": [
+        "Restore administrator privileges"
+      ],
+      "Resubscribe": [
+        "Resubscribe"
+      ],
+      "Resume": [
+        "Resume"
+      ],
+      "Return to sign in": [
+        "Return to login"
+      ],
+      "Review": [
+        "Review"
+      ],
+      "Revoke all other sessions": [
+        "Revoke all other sessions"
+      ],
+      "Save": [
+        "Save"
+      ],
+      "Search": [
+        "Search"
+      ],
+      "Search countries": [
+        "Search countries"
+      ],
+      "Select files": [
+        "Select files"
+      ],
+      "Select timezone": [
+        "Select timezone"
+      ],
+      "send auto-reply email": [
+        "send auto-reply email"
+      ],
+      "Send code": [
+        "Send code"
+      ],
+      "Send my username": [
+        "Send my username"
+      ],
+      "Set catch-all": [
+        "Set catch-all"
+      ],
+      "Set recovery phrase": [
+        "Set recovery phrase"
+      ],
+      "Share": [
+        "Share"
+      ],
+      "Share via link": [
+        "Share via link"
+      ],
+      "Sharing options": [
+        "Sharing options"
+      ],
+      "Show": [
+        "Show"
+      ],
+      "Show folders": [
+        "Show folders"
+      ],
+      "Show labels": [
+        "Show labels"
+      ],
+      "Show less": [
+        "Show less"
+      ],
+      "Show preview": [
+        "Show preview"
+      ],
+      "Sign in": [
+        "Sign in"
+      ],
+      "Sign out": [
+        "Sign out"
+      ],
+      "Signing out": [
+        "Signing out"
+      ],
+      "Size": [
+        "Size"
+      ],
+      "Sort": [
+        "Sort"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Start import": [
+        "Start import"
+      ],
+      "Stay": [
+        "Stay"
+      ],
+      "Submit": [
+        "Submit"
+      ],
+      "Support": [
+        "Support"
+      ],
+      "Top up": [
+        "Top up"
+      ],
+      "Try again": [
+        "Try again"
+      ],
+      "Try another method": [
+        "Try another method"
+      ],
+      "Underline": [
+        "Underline"
+      ],
+      "Unlock": [
+        "Unlock"
+      ],
+      "Unlock data": [
+        "Unlock data"
+      ],
+      "Unordered list": [
+        "Unordered list"
+      ],
+      "Unsubscribe": [
+        "Unsubscribe"
+      ],
+      "Update": [
+        "Update"
+      ],
+      "Update recovery file": [
+        "Update recovery file"
+      ],
+      "Update recovery phrase": [
+        "Update recovery phrase"
+      ],
+      "Upgrade": [
+        "Upgrade"
+      ],
+      "Upload picture": [
+        "Upload picture"
+      ],
+      "Use ${ label } theme": [
+        "Use ${ label } theme"
+      ],
+      "Use a different card": [
+        "Use a different card"
+      ],
+      "Use a different payment method": [
+        "Use a different payment method"
+      ],
+      "Use recovery code": [
+        "Use recovery code"
+      ],
+      "Use “${ label }” setting": [
+        "Use “${ label }” setting"
+      ],
+      "User": [
+        "User"
+      ],
+      "Verify": [
+        "Verify"
+      ],
+      "Verify account": [
+        "Verify account"
+      ],
+      "View": [
+        "View"
+      ],
+      "View invoice": [
+        "View invoice"
+      ],
+      "Void": [
+        "Void"
+      ],
+      "Wipe": [
+        "Wipe"
+      ],
+      "Yes": [
+        "Yes"
+      ],
+      "Zoom in": [
+        "Zoom in"
+      ],
+      "Zoom out": [
+        "Zoom out"
+      ]
+    },
+    "Action for user session": {
+      "Revoke": [
+        "Revoke"
+      ]
+    },
+    "Addon": {
+      "+ ${ domains } custom domain": [
+        "+ ${ domains } custom domain",
+        "+ ${ domains } custom domains"
+      ]
+    },
+    "Address action": {
+      "Delete": [
+        "Delete"
+      ],
+      "Disable": [
+        "Disable"
+      ],
+      "Enable": [
+        "Enable"
+      ],
+      "Generate missing keys": [
+        "Generate missing keys"
+      ]
+    },
+    "Address status": {
+      "Active": [
+        "Active"
+      ],
+      "Default": [
+        "Default"
+      ],
+      "Disabled": [
+        "Disabled"
+      ],
+      "Missing keys": [
+        "Missing keys"
+      ],
+      "Orphan": [
+        "Orphan"
+      ]
+    },
+    "Alert": {
+      "By leaving now, some contacts may not be imported": [
+        "By leaving now, some contacts may not be imported"
+      ]
+    },
+    "Attached ics file error": {
+      "Empty ICS file": [
+        "Empty ICS file"
+      ],
+      "Invalid method": [
+        "Invalid method"
+      ],
+      "Unsupported calendar component": [
+        "Unsupported calendar component"
+      ]
+    },
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "I'm out of the office with limited access to my email."
+      ]
+    },
+    "Badge for domain": {
+      "Disabled": [
+        "Disabled"
+      ],
+      "Enabled": [
+        "Enabled"
+      ],
+      "Missing keys": [
+        "Missing keys"
+      ]
+    },
+    "Badge for user sessions table": {
+      "Current session": [
+        "Current session"
+      ]
+    },
+    "Billing cycle option": {
+      "Annually": [
+        "Annually"
+      ],
+      "Monthly": [
+        "Monthly"
+      ],
+      "Two-year": [
+        "Two-year"
+      ]
+    },
+    "Bug category": {
+      "Application problem": [
+        "Application problem"
+      ],
+      "Bridge problem": [
+        "Bridge problem"
+      ],
+      "Calendar problem": [
+        "Calendar problem"
+      ],
+      "Connection problem": [
+        "Connection problem"
+      ],
+      "Contacts problem": [
+        "Contacts problem"
+      ],
+      "Custom domain problem": [
+        "Custom domain problem"
+      ],
+      "Drive problem": [
+        "Drive problem"
+      ],
+      "Feature request": [
+        "Feature request"
+      ],
+      "Import / export problem": [
+        "Import / export problem"
+      ],
+      "Installation problem": [
+        "Installation problem"
+      ],
+      "Mail problem": [
+        "Mail problem"
+      ],
+      "Manual setup problem": [
+        "Manual setup problem"
+      ],
+      "Other": [
+        "Other"
+      ],
+      "Payments problem": [
+        "Payments problem"
+      ],
+      "Sign in problem": [
+        "Sign in problem"
+      ],
+      "Sign up problem": [
+        "Sign up problem"
+      ],
+      "Signup problem": [
+        "Signup problem"
+      ],
+      "Slow speed problem": [
+        "Slow speed problem"
+      ],
+      "Speed problem": [
+        "Speed problem"
+      ],
+      "Streaming problem": [
+        "Streaming problem"
+      ],
+      "Update problem": [
+        "Update problem"
+      ],
+      "VPN problem": [
+        "VPN problem"
+      ],
+      "Website access problem": [
+        "Website access problem"
+      ]
+    },
+    "Button": {
+      "Copy": [
+        "Copy"
+      ],
+      "Send": [
+        "Send"
+      ]
+    },
+    "Calendar view": {
+      "Day": [
+        "Day"
+      ],
+      "Month": [
+        "Month"
+      ],
+      "Week": [
+        "Week"
+      ]
+    },
+    "Checkbox label": {
+      "All": [
+        "All"
+      ]
+    },
+    "Condition for custom filter": {
+      "begins with": [
+        "begins with"
+      ],
+      "contains": [
+        "contains"
+      ],
+      "does not begin with": [
+        "does not begin with"
+      ],
+      "does not contain": [
+        "does not contain"
+      ],
+      "does not end with": [
+        "does not end with"
+      ],
+      "does not match": [
+        "does not match"
+      ],
+      "ends with": [
+        "ends with"
+      ],
+      "is exactly": [
+        "is exactly"
+      ],
+      "is not": [
+        "is not"
+      ],
+      "matches": [
+        "matches"
+      ]
+    },
+    "Confirm modal title": {
+      "Import is incomplete!": [
+        "Import is incomplete!"
+      ],
+      "Quit import?": [
+        "Quit import?"
+      ],
+      "Remove from the list?": [
+        "Remove from the list?"
+      ]
+    },
+    "Confirmation message to delete payment method": {
+      "Are you sure you want to delete this payment method?": [
+        "Are you sure you want to delete this payment method?"
+      ]
+    },
+    "Confirmation title": {
+      "Delete payment method": [
+        "Delete payment method"
+      ]
+    },
+    "Contact field label": {
+      "Address": [
+        "Address"
+      ],
+      "Anniversary": [
+        "Anniversary"
+      ],
+      "Birthday": [
+        "Birthday"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Gender": [
+        "Gender"
+      ],
+      "Geo": [
+        "Geo"
+      ],
+      "Language": [
+        "Language"
+      ],
+      "Logo": [
+        "Logo"
+      ],
+      "Member": [
+        "Member"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Note": [
+        "Note"
+      ],
+      "Organization": [
+        "Organization"
+      ],
+      "Phone": [
+        "Phone"
+      ],
+      "Photo": [
+        "Photo"
+      ],
+      "Role": [
+        "Role"
+      ],
+      "Timezone": [
+        "Timezone"
+      ],
+      "Title": [
+        "Title"
+      ],
+      "URL": [
+        "URL"
+      ]
+    },
+    "Contact type label": {
+      "Fax": [
+        "Fax"
+      ],
+      "Main": [
+        "Main"
+      ],
+      "Mobile": [
+        "Mobile"
+      ],
+      "Other": [
+        "Other"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Personal": [
+        "Personal"
+      ],
+      "Work": [
+        "Work"
+      ],
+      "Yomi": [
+        "Yomi"
+      ]
+    },
+    "CountryInfo": {
+      "(via ${ entryCountryName })": [
+        "(via ${ entryCountryName })"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } time",
+        "${ count } times"
+      ],
+      "Daily": [
+        "Daily"
+      ],
+      "Daily, ${ timesString }": [
+        "Daily, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Daily, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Every ${ interval } days",
+        "Every ${ interval } days"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Every ${ interval } days, ${ timesString }",
+        "Every ${ interval } days, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Every ${ interval } days, ${ untilString }",
+        "Every ${ interval } days, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "until ${ dateString }"
+      ]
+    },
+    "Day": {
+      "Friday": [
+        "Friday"
+      ],
+      "Monday": [
+        "Monday"
+      ],
+      "Saturday": [
+        "Saturday"
+      ],
+      "Sunday": [
+        "Sunday"
+      ],
+      "Thursday": [
+        "Thursday"
+      ],
+      "Tuesday": [
+        "Tuesday"
+      ],
+      "Wednesday": [
+        "Wednesday"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Unknown"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Overdue invoice"
+      ]
+    },
+    "Description of the purpose of the import CSV modal": {
+      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
+        "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually."
+      ],
+      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
+        "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import."
+      ]
+    },
+    "Domain label": {
+      "Verified": [
+        "Verified"
+      ]
+    },
+    "Domain modal": {
+      "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
+        "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 minutes"
+      ],
+      "30 minutes": [
+        "30 minutes"
+      ],
+      "60 minutes": [
+        "60 minutes"
+      ],
+      "90 minutes": [
+        "90 minutes"
+      ]
+    },
+    "Email body for description (description part)": {
+      "Description: ${ eventDescription }": [
+        "Description: ${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } has been updated.\n${ eventDetailsText }": [
+        "${ eventTitle } has been updated.\n${ eventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
+        "You are invited to ${ eventTitle }\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "When: ${ formattedStart }": [
+        "When: ${ formattedStart }"
+      ],
+      "When: ${ formattedStart } (all day)": [
+        "When: ${ formattedStart } (all day)"
+      ],
+      "When: ${ formattedStart } - ${ formattedEnd }": [
+        "When: ${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "Where: ${ eventLocation }": [
+        "Where: ${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } has accepted your invitation to ${ eventTitle }"
+      ],
+      "${ emailAddress } has declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } has declined your invitation to ${ eventTitle }"
+      ],
+      "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }"
+      ]
+    },
+    "Email subject": {
+      "Cancellation of an event on ${ formattedStart }": [
+        "Cancellation of an event on ${ formattedStart }"
+      ],
+      "Cancellation of an event starting on ${ formattedStart }": [
+        "Cancellation of an event starting on ${ formattedStart }"
+      ],
+      "Invitation for an event on ${ formattedStart }": [
+        "Invitation for an event on ${ formattedStart }"
+      ],
+      "Invitation for an event starting on ${ formattedStart }": [
+        "Invitation for an event starting on ${ formattedStart }"
+      ],
+      "Update for an event on ${ formattedStart }": [
+        "Update for an event on ${ formattedStart }"
+      ],
+      "Update for an event starting on ${ formattedStart }": [
+        "Update for an event starting on ${ formattedStart }"
+      ]
+    },
+    "Email Unsubscribe": {
+      "You resubscribed to ${ categoriesJsx } emails.": [
+        "You resubscribed to ${ categoriesJsx } emails."
+      ],
+      "You unsubscribed from ${ categoriesJsx } emails.": [
+        "You unsubscribed from ${ categoriesJsx } emails."
+      ]
+    },
+    "Email Unsubscribe Categories": {
+      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
+        "${ allCategoriesExceptTheLastOne } and ${ lastCategory }"
+      ]
+    },
+    "Error": {
+      "A group with this name already exists": [
+        "A group with this name already exists"
+      ],
+      "Address primary private key not found": [
+        "Address primary private key not found"
+      ],
+      "All storage space has been allocated. Please reduce storage allocated to other users.": [
+        "All storage space has been allocated. Please reduce storage allocated to other users."
+      ],
+      "Amount above the maximum.": [
+        "Amount above the maximum."
+      ],
+      "Amount below minimum.": [
+        "Amount below minimum."
+      ],
+      "Authentication canceled.": [
+        "Authentication canceled."
+      ],
+      "Authentication error.": [
+        "Authentication error."
+      ],
+      "Condition incomplete": [
+        "Condition incomplete"
+      ],
+      "Contact signature could not be verified": [
+        "Contact signature could not be verified"
+      ],
+      "Contact signature not verified": [
+        "Contact signature not verified"
+      ],
+      "Email address disabled": [
+        "Email address disabled"
+      ],
+      "Email is not valid": [
+        "Invalid email"
+      ],
+      "Empty condition": [
+        "Empty condition"
+      ],
+      "Enter 6 digits": [
+        "Enter 6 digits verification code"
+      ],
+      "Error": [
+        "Error"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Error connecting to the Bitcoin API."
+      ],
+      "Error in one of the conditions": [
+        "Error in one of the conditions"
+      ],
+      "Filter with this name already exist": [
+        "Filter with this name already exist"
+      ],
+      "Filter with this name already exists": [
+        "Filter with this name already exists"
+      ],
+      "Incorrect password": [
+        "Incorrect password"
+      ],
+      "Invalid ${ name } code": [
+        "Invalid ${ name } code"
+      ],
+      "Invalid card number": [
+        "Invalid card number"
+      ],
+      "Invalid code": [
+        "Invalid code"
+      ],
+      "Invalid domain": [
+        "Invalid domain"
+      ],
+      "Invalid email address": [
+        "Invalid email address"
+      ],
+      "Invalid expiration date": [
+        "Invalid expiration date"
+      ],
+      "Invalid name": [
+        "Invalid name"
+      ],
+      "Invalid postal code": [
+        "Invalid postal code"
+      ],
+      "Invalid private key file": [
+        "Invalid private key file"
+      ],
+      "Invalid Sieve code": [
+        "Invalid Sieve code"
+      ],
+      "Invalid verification code": [
+        "Invalid verification code"
+      ],
+      "Missing signature": [
+        "Missing signature"
+      ],
+      "Name on card required": [
+        "Name on card required"
+      ],
+      "Name required": [
+        "Name required"
+      ],
+      "No active sessions": [
+        "No active sessions"
+      ],
+      "No WKD key retrieved for user is valid for sending": [
+        "No WKD key retrieved for user is valid for sending"
+      ],
+      "Not a valid number": [
+        "Invalid number"
+      ],
+      "Organization key is not decrypted.": [
+        "Organization key is not decrypted."
+      ],
+      "Passwords do not match": [
+        "Password doesn’t match"
+      ],
+      "Payment process cancelled": [
+        "Payment process cancelled"
+      ],
+      "Payment process consumed": [
+        "Payment process consumed"
+      ],
+      "Payment process failed": [
+        "Payment process failed"
+      ],
+      "Payment process not supported": [
+        "Payment process not supported"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Payments are currently not available, please try again later"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permission denied, administrator privileges have been restricted."
+      ],
+      "Please configure a custom domain before adding users to your organization.": [
+        "Please configure a custom domain before adding users to your organization."
+      ],
+      "Please enable multi-user support before adding users to your organization.": [
+        "Please enable multi-user support before adding users to your organization."
+      ],
+      "Please set a recovery phone number first": [
+        "Please set a recovery phone number first"
+      ],
+      "Please set a recovery/notification email first": [
+        "Please set a recovery/notification email first"
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        "Please try to re-authenticate and make sure the permissions are set correctly."
+      ],
+      "Process aborted": [
+        "Process aborted"
+      ],
+      "Require at least one action": [
+        "Require at least one action"
+      ],
+      "Require at least one condition": [
+        "Require at least one condition"
+      ],
+      "Signature not verified": [
+        "Signature not verified"
+      ],
+      "Signature verification failed": [
+        "Signature verification failed"
+      ],
+      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
+        "Some of your folder names are unavailable. Please customise the import to edit these names."
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }."
+      ],
+      "Tab closed": [
+        "Tab closed"
+      ],
+      "The address might be misspelled": [
+        "The address might be misspelled"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "The minimum amount that can be donated is ${ price }"
+      ],
+      "The organization key must be activated first.": [
+        "The organization key must be activated first."
+      ],
+      "The sending key is not valid": [
+        "The sending key is not valid"
+      ],
+      "The session has expired. Please sign in again.": [
+        "The session has expired. Please sign in again."
+      ],
+      "This field is required": [
+        "This field is required"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "This field requires a minimum of ${ minimumLength } characters."
+      ],
+      "Trusted keys are not valid for sending": [
+        "Trusted keys are not valid for sending"
+      ],
+      "Unknown error": [
+        "Unknown error"
+      ],
+      "Unknown payment token status": [
+        "Unknown payment token status"
+      ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Uploaded file is not a valid private key. Please verify and try again."
+      ],
+      "Uploaded files are not valid private keys. Please verify and try again.": [
+        "Uploaded file is not a valid private key. Please verify and try again."
+      ],
+      "Verification did not succeed, please try again in an hour.": [
+        "Verification did not succeed, please try again in an hour."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing."
+      ],
+      "We were unable to connect to your service provider.": [
+        "We were unable to connect to your service provider."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Wrong recovery phrase. Try again or use another recovery method."
+      ],
+      "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
+        "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect."
+      ],
+      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
+      ],
+      "You have no invoices.": [
+        "You have no invoices."
+      ],
+      "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
+        "You have used all addresses in your plan. Please upgrade your plan to add a new address."
+      ],
+      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
+        "You have used all users in your plan. Please upgrade your plan to add a new user."
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
+      ],
+      "You must set a name": [
+        "Name Required"
+      ],
+      "Your import will not be processed.": [
+        "Your import will not be processed."
+      ],
+      "Zero keys reactivated": [
+        "{} keys reactivated"
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "An error occurred uploading your file. No file has been selected."
+      ],
+      "An unexpected error occurred. Import must be restarted.": [
+        "An unexpected error occurred. Import must be restarted."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Your file ${ formattedFilename } is empty."
+      ]
+    },
+    "Error importing contact": {
+      "Encryption failed": [
+        "Encryption failed"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard versions < 3.0 not supported"
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
+        "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected"
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "An error occurred uploading your file. No file has been selected."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
+        "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts."
+      ],
+      "Your file ${ formattedFilename } has no contacts to be imported.": [
+        "Your file ${ formattedFilename } has no contacts to be imported."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Your file ${ formattedFilename } is empty."
+      ]
+    },
+    "Error importing event": {
+      "Component with wrong format": [
+        "Component with wrong format"
+      ],
+      "Custom timezone": [
+        "Custom timezone"
+      ],
+      "Edited event not supported": [
+        "Edited event not supported"
+      ],
+      "Encryption failed": [
+        "Encryption failed"
+      ],
+      "End time out of bounds": [
+        "End time out of bounds"
+      ],
+      "Event validation failed": [
+        "Event validation failed"
+      ],
+      "Floating times not supported": [
+        "Floating times not supported"
+      ],
+      "Free-busy time information": [
+        "Free-busy time information"
+      ],
+      "Journal entry": [
+        "Journal entry"
+      ],
+      "Malformed all-day event": [
+        "Malformed all-day event"
+      ],
+      "Malformed end time": [
+        "Malformed end time"
+      ],
+      "Malformed recurring event": [
+        "Malformed recurring event"
+      ],
+      "Malformed start time": [
+        "Malformed start time"
+      ],
+      "Missing start time": [
+        "Missing start time"
+      ],
+      "Non-Gregorian": [
+        "Non-Gregorian"
+      ],
+      "Notification out of bounds": [
+        "Notification out of bounds"
+      ],
+      "Original recurring event could not be found": [
+        "Original recurring event could not be found"
+      ],
+      "Recurring rule not supported": [
+        "Recurring rule not supported"
+      ],
+      "Start time out of bounds": [
+        "Start time out of bounds"
+      ],
+      "Timezone": [
+        "Timezone"
+      ],
+      "To-do entry": [
+        "To-do entry"
+      ],
+      "Unknown": [
+        "Unknown"
+      ]
+    },
+    "Error importing users": {
+      "An error occurred uploading your file. No file has been selected.": [
+        "An error occurred uploading your file. No file has been selected."
+      ]
+    },
+    "Error message": {
+      "Error: ${ errorMessage }": [
+        "Error: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Oops, something went wrong"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "Please ${ refresh } or check your connection."
+      ]
+    },
+    "Error notification": {
+      "First name and last name cannot be unchecked at the same time": [
+        "First name and last name cannot be unchecked at the same time"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "No image selected"
+      ]
+    },
+    "Event invitation error": {
+      "Invalid invitation": [
+        "Invalid invitation"
+      ],
+      "Invalid response": [
+        "Invalid response"
+      ],
+      "Unsupported invitation": [
+        "Unsupported invitation"
+      ],
+      "Unsupported response": [
+        "Unsupported response"
+      ],
+      "We could not cancel the event in your calendar": [
+        "We could not cancel the event in your calendar"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "We could not retrieve the event from your calendar"
+      ],
+      "We could not update the event in your calendar": [
+        "We could not update the event in your calendar"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Your answer was sent, but the event could not be added to your calendar"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(no title)"
+      ]
+    },
+    "Export calendar": {
+      "Loading events": [
+        "Loading events"
+      ]
+    },
+    "Feature": {
+      "Access to all countries": [
+        "Access to all countries"
+      ],
+      "Fastest VPN servers": [
+        "Fastest VPN servers"
+      ],
+      "Secure Core servers": [
+        "Secure Core servers"
+      ],
+      "Secure streaming support": [
+        "Secure streaming support"
+      ],
+      "Torrenting support (P2P)": [
+        "Torrenting support (P2P)"
+      ]
+    },
+    "file size format": {
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ]
+    },
+    "Filter Actions": {
+      "Archive": [
+        "Archive"
+      ],
+      "Inbox": [
+        "Inbox"
+      ],
+      "Select a folder": [
+        "Select a folder"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Trash": [
+        "Bin"
+      ]
+    },
+    "Filter modal operators": {
+      "All conditions must be fulfilled (AND)": [
+        "All conditions must be fulfilled (AND)"
+      ],
+      "One condition must be fulfilled (OR)": [
+        "One condition must be fulfilled (OR)"
+      ]
+    },
+    "Filter modal type": {
+      "Select…": [
+        "Select…"
+      ],
+      "The attachment": [
+        "The attachment"
+      ],
+      "The recipient": [
+        "The recipient"
+      ],
+      "The sender": [
+        "The sender"
+      ],
+      "The subject": [
+        "The subject"
+      ]
+    },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } updated"
+      ],
+      "Filter ${ Filter.Name } updated": [
+        "Filter ${ Filter.Name } updated"
+      ]
+    },
+    "Filter preview": {
+      "read": [
+        "read"
+      ],
+      "starred": [
+        "starred"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Account"
+      ],
+      "Apps": [
+        "Apps"
+      ],
+      "Network": [
+        "Network"
+      ],
+      "Other category": [
+        "Other category"
+      ],
+      "Services": [
+        "Services"
+      ]
+    },
+    "Header": {
+      "Action": [
+        "Action"
+      ],
+      "Actions": [
+        "Actions"
+      ],
+      "Event": [
+        "Event"
+      ],
+      "Folders": [
+        "Folders"
+      ],
+      "Key type": [
+        "Key type"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Notifications": [
+        "Notifications"
+      ],
+      "Organization key fingerprint": [
+        "Organization key fingerprint"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Time": [
+        "Time"
+      ],
+      "User": [
+        "User"
+      ]
+    },
+    "Header for addresses table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Address": [
+        "Address"
+      ],
+      "Domain": [
+        "Domain"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Username": [
+        "Username"
+      ]
+    },
+    "Header for domain modal": {
+      "Host name": [
+        "Host name"
+      ],
+      "Priority": [
+        "Priority"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "Value / Data": [
+        "Value / Data"
+      ],
+      "Value / Data / Points to": [
+        "Value / Data / Points to"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Found ${ items.length } suggestion, use keyboard to navigate.",
+        "Found ${ items.length } suggestions, use keyboard to navigate."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Manual": [
+        "Manual"
+      ],
+      "No verification method available": [
+        "No verification method available"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
+    "Import calendar": {
+      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
+        "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }"
+      ]
+    },
+    "Import calendar warning": {
+      "vCard versions < 3.0": [
+        "vCard versions < 3.0"
+      ]
+    },
+    "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list",
+        "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list"
+      ]
+    },
+    "Import contact error": {
+      "Contact ${ contactId }: ": [
+        "Contact ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } contact",
+        "${ totalContacts } contacts"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "unknown"
+      ]
+    },
+    "Import contacts warning": {
+      "for now": [
+        "for now"
+      ]
+    },
+    "Import error": {
+      "Invalid IMAP port": [
+        "Invalid IMAP port"
+      ],
+      "Too many recent requests. Please try again in a few moments.": [
+        "Too many recent requests. Please try again in a few moments."
+      ],
+      "Use your app password if:": [
+        "Use your app password if:"
+      ],
+      "Use your app password instead of your regular password if:": [
+        "Use your app password instead of your regular password if:"
+      ]
+    },
+    "Import error emphasis": {
+      "not": [
+        "not"
+      ]
+    },
+    "Import error link": {
+      "bandwidth limit": [
+        "bandwidth limit"
+      ]
+    },
+    "Import instructions emphasis": {
+      "Account info": [
+        "Account info"
+      ],
+      "Account security": [
+        "Account security"
+      ],
+      "Export": [
+        "Export"
+      ],
+      "Export contacts": [
+        "Export contacts"
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Other"
+      ]
+    },
+    "Import status": {
+      "${ percentageValue }% paused": [
+        "${ percentageValue }% paused"
+      ],
+      "Canceled": [
+        "Canceled"
+      ],
+      "Canceling": [
+        "Canceling"
+      ],
+      "Completed": [
+        "Completed"
+      ],
+      "Delayed": [
+        "Delayed"
+      ],
+      "Failed": [
+        "Failed"
+      ],
+      "Paused": [
+        "Paused"
+      ],
+      "Started": [
+        "Started"
+      ]
+    },
+    "Import type": {
+      "Contacts": [
+        "Contacts"
+      ]
+    },
+    "Import warning": {
+      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
+        "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details"
+      ],
+      "No contact can be imported. Click for details": [
+        "No contact can be imported. Click for details"
+      ]
+    },
+    "Info": {
+      "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
+        "${ appName } needs your permission to ${ enableDesktopNotifications }."
+      ],
+      "${ n } address": [
+        "${ n } address",
+        "${ n } addresses"
+      ],
+      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
+        "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security."
+      ],
+      "${ number } city": [
+        "${ number } city",
+        "${ number } cities"
+      ],
+      "${ number } server": [
+        "${ number } server",
+        "${ number } servers"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.",
+        "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again."
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } folder found",
+        "${ providerFoldersNumLocalized } folders found"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } label found in Gmail",
+        "${ providerFoldersNumLocalized } labels found in Gmail"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } folder selected",
+        "${ selectedFoldersCountLocalized } folders selected"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } label selected",
+        "${ selectedFoldersCountLocalized } labels selected"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } member)",
+        "(${ memberCount } members)"
+      ],
+      "(Filter if ALL of the following conditions are met)": [
+        "(Filter if ALL of the following conditions are met)"
+      ],
+      "(Filter if ANY of the following conditions are met)": [
+        "(Filter if ANY of the following conditions are met)"
+      ],
+      "+${ bonusSpace } bonus storage": [
+        "+${ bonusSpace } bonus storage"
+      ],
+      "Account access restricted due to unpaid invoices. Please contact your administrator.": [
+        "Account access restricted due to unpaid invoices. Please contact your administrator."
+      ],
+      "Add image URL": [
+        "Add image URL"
+      ],
+      "Add label": [
+        "Add label"
+      ],
+      "address": [
+        "address",
+        "addresses"
+      ],
+      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
+        "Address verification is an advanced security feature. Only turn this on if you know what it does."
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        "After making your Bitcoin payment, please follow the instructions below to upgrade."
+      ],
+      "Align left": [
+        "Align left"
+      ],
+      "Align right": [
+        "Align right"
+      ],
+      "All keys successfully reactivated": [
+        "All keys successfully reactivated"
+      ],
+      "All your changes will be lost.": [
+        "All your changes will be lost."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "Amount below minimum (${ amount })."
+      ],
+      "and": [
+        "and"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Are you sure you want to delete this address?"
+      ],
+      "Are you sure you want to delete this domain?": [
+        "Are you sure you want to delete this domain?"
+      ],
+      "Are you sure you want to delete this filter?": [
+        "Are you sure you want to delete this filter?"
+      ],
+      "Are you sure you want to delete this label?": [
+        "Are you sure you want to delete this label?"
+      ],
+      "Are you sure you want to disable two-factor authentication?": [
+        "Are you sure you want to disable two-factor authentication?"
+      ],
+      "Are you sure you want to discard your changes?": [
+        "Are you sure you want to discard your changes?"
+      ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Are you sure you want to permanently delete all your logs?"
+      ],
+      "Are you sure you want to remove administrative privileges from this user?": [
+        "Are you sure you want to remove administrative privileges from this user?"
+      ],
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Auto-reply is active each month between the selected start and end time."
+      ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Auto-reply is active each week between the selected start and end time."
+      ],
+      "Auto-reply is active from the start time to the end time.": [
+        "Auto-reply is active from the start time to the end time."
+      ],
+      "Auto-reply is active until you turn it off.": [
+        "Auto-reply is active until you turn it off."
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Auto-reply is always active on the days of the week you select, between the selected hours."
+      ],
+      "Available on macOS, Windows, and Linux.": [
+        "Available on macOS, Windows, and Linux."
+      ],
+      "Background color": [
+        "Background color"
+      ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings."
+      ],
+      "Basic, Plus or Visionary subscription required": [
+        "Basic, Plus or Visionary subscription required"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address."
+      ],
+      "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
+        "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them."
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits."
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future."
+      ],
+      "By leaving now, changes may not be saved": [
+        "By leaving now, changes may not be saved"
+      ],
+      "Center": [
+        "Center"
+      ],
+      "Check the status of current and previous imports.": [
+        "Check the status of current and previous imports."
+      ],
+      "Choose the look and feel of the application.": [
+        "Choose the look and feel of the application."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it."
+      ],
+      "Continue anyway?": [
+        "Continue anyway?"
+      ],
+      "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
+        "Create and manage sub-accounts and assign them email addresses on your custom domain."
+      ],
+      "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
+        "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account."
+      ],
+      "Custom": [
+        "Custom"
+      ],
+      "Daily": [
+        "Daily"
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
+        "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
+        "Do NOT forget this password. If you forget it, you will not be able to manage your organization."
+      ],
+      "Do you want to revoke all other sessions than the current one?": [
+        "Do you want to revoke all other sessions than the current one?"
+      ],
+      "domain used": [
+        "domain used",
+        "domains used"
+      ],
+      "Done": [
+        "Done"
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "Download your favorite app today and take privacy with you everywhere you go."
+      ],
+      "Drop a file here to upload": [
+        "Drop a file here to upload"
+      ],
+      "Drop the file here to upload": [
+        "Drop the file here to upload"
+      ],
+      "Edit label": [
+        "Edit label"
+      ],
+      "Edit link": [
+        "Edit link"
+      ],
+      "Email address": [
+        "Email address"
+      ],
+      "Encryption setting updated": [
+        "Encryption setting updated"
+      ],
+      "Enter key manually instead": [
+        "Enter key manually instead"
+      ],
+      "Enter the code sent to your phone number ${ phone }.": [
+        "Enter the code sent to your phone number ${ phone }."
+      ],
+      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
+        "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder."
+      ],
+      "Enter the credentials of the email account you want to import from.": [
+        "Enter the credentials of the email account you want to import from."
+      ],
+      "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
+        "Enter the Organization Password to restore administrator privileges. ${ learnMore }"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Enter the verification code that was sent to ${ destinationText }."
+      ],
+      "Expired": [
+        "Expired"
+      ],
+      "Failed to fetch logs.": [
+        "Failed to fetch logs."
+      ],
+      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
+        "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action."
+      ],
+      "Free up some space or add more storage space.": [
+        "Free up some space or add more storage space."
+      ],
+      "Free up some space or contact your administrator.": [
+        "Free up some space or contact your administrator."
+      ],
+      "free up space by deleting older messages or other data": [
+        "free up space by deleting older messages or other data"
+      ],
+      "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
+        "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!"
+      ],
+      "here": [
+        "here"
+      ],
+      "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
+        "If another administrator changed this password, you will need to ask them for the new Organization Password."
+      ],
+      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "If you are having trouble creating your account, please request an invitation and we will respond within one business day."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "If you don't find the email in your inbox, please check your spam folder."
+      ],
+      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
+        "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }."
+      ],
+      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
+        "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly."
+      ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once."
+      ],
+      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
+        "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records."
+      ],
+      "If you wish to combine this account with another one, do NOT delete it.": [
+        "If you wish to combine this account with another one, do NOT delete it."
+      ],
+      "Image description": [
+        "Image description"
+      ],
+      "Image URL": [
+        "Image URL"
+      ],
+      "Import mailbox": [
+        "Import mailbox"
+      ],
+      "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
+        "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device."
+      ],
+      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
+        "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again."
+      ],
+      "Inherited from parent folder": [
+        "Inherited from parent folder"
+      ],
+      "Insert image": [
+        "Insert image"
+      ],
+      "Insert link": [
+        "Insert link"
+      ],
+      "Install a Country configuration file to connect to a random server in the country of your choice.": [
+        "Install a Country configuration file to connect to a random server in the country of your choice."
+      ],
+      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
+        "Install a Free server configuration file to connect to a specific server in one of the three free locations."
+      ],
+      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
+        "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise."
+      ],
+      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
+        "Install a Server configuration file to connect to a specific server in the country of your choice."
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Internet connection lost. Please check your device's connectivity."
+      ],
+      "Internet connection restored.": [
+        "Internet connection restored."
+      ],
+      "Keep those records in your DNS for as long as you want to use DKIM.": [
+        "Keep those records in your DNS for as long as you want to use DKIM."
+      ],
+      "Label all imported messages as": [
+        "Label all imported messages as"
+      ],
+      "Learn more": [
+        "Learn more"
+      ],
+      "Left to Right": [
+        "Left to Right"
+      ],
+      "Link type": [
+        "Link type"
+      ],
+      "Loading": [
+        "Loading"
+      ],
+      "Loading ${ appName }": [
+        "Loading ${ appName }"
+      ],
+      "Loading preview": [
+        "Loading preview"
+      ],
+      "lose access to all current encrypted data": [
+        "lose access to all current encrypted data"
+      ],
+      "Monthly ${ onDayString }": [
+        "Monthly ${ onDayString }"
+      ],
+      "more": [
+        "more"
+      ],
+      "Multi-user support not enabled.": [
+        "Multi-user support not enabled."
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder."
+      ],
+      "No action selected": [
+        "No action selected"
+      ],
+      "No addresses exist": [
+        "No addresses exist"
+      ],
+      "No contact encryption keys exist": [
+        "No contact encryption keys exist"
+      ],
+      "No folder selected": [
+        "No folder selected"
+      ],
+      "No imports to display.": [
+        "No imports to display."
+      ],
+      "No label selected": [
+        "No label selected"
+      ],
+      "No logs yet.": [
+        "No logs yet."
+      ],
+      "No payment is required at this time.": [
+        "No payment is required at this time."
+      ],
+      "No preview available": [
+        "No preview available"
+      ],
+      "No results found": [
+        "No results found"
+      ],
+      "Not a valid URL": [
+        "Not a valid URL"
+      ],
+      "of": [
+        "of"
+      ],
+      "Organization keys activated": [
+        "Organization keys activated"
+      ],
+      "Organization keys restored": [
+        "Organization keys restored"
+      ],
+      "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
+        "Other administrators exist in your organization, you are responsible for communicating the new password to them."
+      ],
+      "P2P": [
+        "P2P"
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        "Payment can take a few minutes to fully verify."
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "Payments are protected with TLS encryption and Swiss privacy laws."
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed."
+      ],
+      "Phone number": [
+        "Phone number"
+      ],
+      "Plan upgrade required": [
+        "Plan upgrade required"
+      ],
+      "Please fill out this field.": [
+        "Please fill in this field."
+      ],
+      "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
+        "Please note that if you delete this address, you will no longer be able to send or receive emails using this address."
+      ],
+      "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
+        "Please note that if you delete this domain, all the addresses associated with it will be disabled."
+      ],
+      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
+        "Please note that if you delete this filter, we will stop processing all the automated actions it triggers."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining."
+      ],
+      "Please provide an email address in case we need to contact you.": [
+        "Please provide an email address in case we need to contact you."
+      ],
+      "Please select the type of link you want to insert and fill in all the fields.": [
+        "Please select the type of link you want to insert and fill in all the fields."
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        "Please try again, use a different payment method, or call your bank for assistance."
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "Please try again, use a different payment method, or contact PayPal for assistance."
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        "Please verify payment at the new tab which was opened."
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        "Please verify the card in the new tab which was opened."
+      ],
+      "Plus or Visionary subscription required": [
+        "Plus or Visionary subscription required"
+      ],
+      "Preview": [
+        "Preview"
+      ],
+      "purchase additional storage": [
+        "purchase additional storage"
+      ],
+      "Queued": [
+        "Queued"
+      ],
+      "Recovery phrase copied to clipboard": [
+        "Recovery phrase copied to clipboard"
+      ],
+      "Recovery phrase has been disabled": [
+        "Recovery phrase has been disabled"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Refreshing the page or ${ link } will automatically resolve most issues."
+      ],
+      "Right to Left": [
+        "Right to Left"
+      ],
+      "Scan QR code instead": [
+        "Scan QR code instead"
+      ],
+      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }."
+      ],
+      "Server is currently down": [
+        "Server is currently down"
+      ],
+      "Server load": [
+        "Server load"
+      ],
+      "Set recovery phrase": [
+        "Set recovery phrase"
+      ],
+      "Show original message": [
+        "Show original message"
+      ],
+      "Some keys successfully reactivated": [
+        "All keys successfully reactivated"
+      ],
+      "support team": [
+        "support team"
+      ],
+      "Test link": [
+        "Test link"
+      ],
+      "Text color": [
+        "Text color"
+      ],
+      "Text to display": [
+        "Text to display"
+      ],
+      "The name will be visible to your users while they are logged in.": [
+        "The name will be visible to your users while they are logged in."
+      ],
+      "This can take a few seconds or a few minutes depending on your device": [
+        "This can take a few seconds or a few minutes depending on your device"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "This link leads to a website that might be trying to steal your information, such as passwords or credit card details."
+      ],
+      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
+        "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it."
+      ],
+      "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
+        "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization."
+      ],
+      "This will also disable any two-factor authentication method associated with this account.": [
+        "This will also disable any two-factor authentication method associated with this account."
+      ],
+      "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
+        "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys."
+      ],
+      "This will permanently delete the data and all email addresses associated with this user.": [
+        "This will permanently delete the data and all email addresses associated with this user."
+      ],
+      "To confirm, please enter the name of the user you wish to delete.": [
+        "To confirm, please enter the name of the user you wish to delete."
+      ],
+      "to continue to ${ toAppName }": [
+        "to continue to ${ toAppName }"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "To fight spam and abuse, please verify you are human."
+      ],
+      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
+        "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent."
+      ],
+      "Tor": [
+        "Tor"
+      ],
+      "Two-factor authentication disabled": [
+        "Two-factor authentication disabled"
+      ],
+      "Two-factor authentication enabled": [
+        "Two-factor authentication enabled"
+      ],
+      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
+        "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password."
+      ],
+      "Unfortunately there is no recovery method saved for this account.": [
+        "Unfortunately there is no recovery method saved for this account."
+      ],
+      "Unsupported file": [
+        "Unsupported file"
+      ],
+      "Update recovery file": [
+        "Update recovery file"
+      ],
+      "Update recovery phrase": [
+        "Update recovery phrase"
+      ],
+      "Upload picture": [
+        "Upload picture"
+      ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Uploaded file is not a valid private key. Please verify and try again."
+      ],
+      "URL link": [
+        "URL link"
+      ],
+      "Verification can take a few minutes.": [
+        "Verification can take a few minutes."
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        "Verification will open a new tab, please disable any popup blockers."
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately."
+      ],
+      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
+        "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts."
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        "We use 3-D Secure to protect your payments."
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "We'll send a new verification code to ${ strong }"
+      ],
+      "Web URL": [
+        "Web URL"
+      ],
+      "Week": [
+        "Week"
+      ],
+      "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
+        "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Would you like to receive a new verification code or use an alternative verification method?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Would you like to receive a new verification code?"
+      ],
+      "Yearly": [
+        "Yearly"
+      ],
+      "You already have a free account": [
+        "You already have a free account"
+      ],
+      "You are about to open another browser tab and visit:": [
+        "You are about to open another browser tab and visit:"
+      ],
+      "You can customize and download your invoices for accounting purposes.": [
+        "You can customize and download your invoices for accounting purposes."
+      ],
+      "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
+      ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "You can turn on notifications to get alerts when new email messages arrive in this folder."
+      ],
+      "You have no saved payment methods.": [
+        "You have no saved payment methods."
+      ],
+      "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
+        "You must activate your organization private key with the backup organization key password provided to you by your organization administrator."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method."
+      ],
+      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
+        "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
+        "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
+        "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password."
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        "You will be soon redirected to your bank to verify your payment."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "You will soon be redirected to PayPal to verify your payment."
+      ],
+      "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
+        "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }"
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        "Your account will be updated once the payment is cleared."
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        "Your bank requires 3-D Secure verification for security purposes."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Your email will only be used for this one-time verification."
+      ],
+      "Your import will not be processed.": [
+        "Your import will not be processed."
+      ],
+      "Your login information will not be saved after the import is completed.": [
+        "Your login information will not be saved after the import is completed."
+      ],
+      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
+        "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe."
+      ],
+      "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
+        "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key."
+      ],
+      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
+        "Your payment details are protected with TLS encryption and Swiss privacy laws."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Your phone number will only be used for this one-time verification."
+      ],
+      "Your recovery phrase": [
+        "Your recovery phrase"
+      ],
+      "Your recovery phrase is a series of 12 words in a specific order.": [
+        "Your recovery phrase is a series of 12 words in a specific order."
+      ],
+      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
+        "Your subscription is managed by Mozilla. Please contact Mozilla support."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Additional duplicate keys detected. Please upload individually for more information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Key ${ fingerprint } has already been uploaded"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "When enabled, sub-folders inherit the color of the parent folder."
+      ]
+    },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        "Please contact us at ${ email } for instructions on how to pay us with cash."
+      ]
+    },
+    "Info for domain modal": {
+      "Add a new address for any user of your organization.": [
+        "Add a new address for any user of your organization."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Add a new user to your organization and create an address for it."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
+        "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Add your name (or company name) and address to your invoices.": [
+        "Add your name (or company name) and address to your invoices."
+      ]
+    },
+    "Info on errors": {
+      "Click for details": [
+        "Click for details"
+      ]
+    },
+    "Info when deleting payment method": {
+      "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
+        "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time."
+      ]
+    },
+    "Input placeholder": {
+      "Add label": [
+        "Add label"
+      ]
+    },
+    "Invoice state display as badge": {
+      "Billed": [
+        "Billed"
+      ],
+      "Paid": [
+        "Paid"
+      ],
+      "Unpaid": [
+        "Unpaid"
+      ],
+      "Void": [
+        "Void"
+      ]
+    },
+    "Invoice type display as badge": {
+      "Addition": [
+        "Addition"
+      ],
+      "Cancellation": [
+        "Cancellation"
+      ],
+      "Chargeback": [
+        "Chargeback"
+      ],
+      "Credit": [
+        "Credit"
+      ],
+      "Donation": [
+        "Donation"
+      ],
+      "Modification": [
+        "Modification"
+      ],
+      "Other": [
+        "Other"
+      ],
+      "Refund": [
+        "Refund"
+      ],
+      "Renewal": [
+        "Renewal"
+      ],
+      "Subscription": [
+        "Subscription"
+      ]
+    },
+    "Key state badge": {
+      "Active": [
+        "Active"
+      ],
+      "Compromised": [
+        "Compromised"
+      ],
+      "Disabled": [
+        "Disabled"
+      ],
+      "Inactive": [
+        "Inactive"
+      ],
+      "Obsolete": [
+        "Obsolete"
+      ],
+      "Primary": [
+        "Primary"
+      ]
+    },
+    "Keyboard shortcut name": {
+      "Add encryption": [
+        "Add encryption"
+      ],
+      "Add expiration time": [
+        "Add expiration time"
+      ],
+      "Apply / open": [
+        "Apply / open"
+      ],
+      "Attach file": [
+        "Attach file"
+      ],
+      "Cancel / close": [
+        "Cancel / close"
+      ],
+      "Close draft": [
+        "Close draft"
+      ],
+      "Delete permanently": [
+        "Delete permanently"
+      ],
+      "Discard draft": [
+        "Discard draft"
+      ],
+      "Expand / contract composer": [
+        "Expand / contract composer"
+      ],
+      "Forward": [
+        "Forward"
+      ],
+      "Go to All Mail": [
+        "Go to All Mail"
+      ],
+      "Go to Archive": [
+        "Go to Archive"
+      ],
+      "Go to Drafts": [
+        "Go to Drafts"
+      ],
+      "Go to Inbox": [
+        "Go to Inbox"
+      ],
+      "Go to Sent": [
+        "Go to Sent"
+      ],
+      "Go to Spam": [
+        "Go to Spam"
+      ],
+      "Go to Starred": [
+        "Go to Starred"
+      ],
+      "Go to Trash": [
+        "Go to Bin"
+      ],
+      "Insert link": [
+        "Insert link"
+      ],
+      "Jump to first": [
+        "Jump to first"
+      ],
+      "Jump to last": [
+        "Jump to last"
+      ],
+      "Label as...": [
+        "Label as..."
+      ],
+      "Load embedded images": [
+        "Load embedded images"
+      ],
+      "Load remote content": [
+        "Load remote content"
+      ],
+      "Mark as read": [
+        "Mark as read"
+      ],
+      "Mark as unread": [
+        "Mark as unread"
+      ],
+      "Minimize / maximize composer": [
+        "Minimize / maximize composer"
+      ],
+      "Move down": [
+        "Move down"
+      ],
+      "Move left / collapse": [
+        "Move left / collapse"
+      ],
+      "Move right / expand": [
+        "Move right / expand"
+      ],
+      "Move to Archive": [
+        "Move to Archive"
+      ],
+      "Move to Inbox": [
+        "Move to Inbox"
+      ],
+      "Move to Spam": [
+        "Move to Spam"
+      ],
+      "Move to Trash": [
+        "Move to Bin"
+      ],
+      "Move to...": [
+        "Move to..."
+      ],
+      "Move up": [
+        "Move up"
+      ],
+      "New message": [
+        "New message"
+      ],
+      "Open next message": [
+        "Open next message"
+      ],
+      "Open previous message": [
+        "Open previous message"
+      ],
+      "Open this modal": [
+        "Open this modal"
+      ],
+      "Reply": [
+        "Reply"
+      ],
+      "Reply all": [
+        "Reply all"
+      ],
+      "Save draft": [
+        "Save draft"
+      ],
+      "Search": [
+        "Search"
+      ],
+      "Select / unselect": [
+        "Select / unselect"
+      ],
+      "Select / unselect all": [
+        "Select / unselect all"
+      ],
+      "Send email": [
+        "Send email"
+      ],
+      "Show all emails": [
+        "Show all emails"
+      ],
+      "Show original message": [
+        "Show original message"
+      ],
+      "Show unread emails": [
+        "Show unread emails"
+      ],
+      "Star": [
+        "Star"
+      ]
+    },
+    "Keyboard shortcut section name": {
+      "Action shortcuts": [
+        "Action shortcuts"
+      ],
+      "Basic actions": [
+        "Basic actions"
+      ],
+      "Basic navigation": [
+        "Basic navigation"
+      ],
+      "Composer shortcuts": [
+        "Composer shortcuts"
+      ],
+      "Folder shortcuts": [
+        "Folder shortcuts"
+      ],
+      "List shortcuts": [
+        "List shortcuts"
+      ],
+      "Message shortcuts": [
+        "Message shortcuts"
+      ]
+    },
+    "Keys actions": {
+      "Delete": [
+        "Delete"
+      ],
+      "Disables encryption with this key": [
+        "Disables encryption with this key"
+      ],
+      "Disables signature verification and encryption with this key": [
+        "Disables signature verification and encryption with this key"
+      ],
+      "Enable encryption with this key": [
+        "Enable encryption with this key"
+      ],
+      "Enable signature verification and encryption with this key": [
+        "Enable signature verification and encryption with this key"
+      ],
+      "Export": [
+        "Export"
+      ],
+      "Export private key": [
+        "Export private key"
+      ],
+      "Make primary": [
+        "Make primary"
+      ],
+      "Mark compromised": [
+        "Mark compromised"
+      ],
+      "Mark not compromised": [
+        "Mark not compromised"
+      ],
+      "Mark not obsolete": [
+        "Mark not obsolete"
+      ],
+      "Mark obsolete": [
+        "Mark obsolete"
+      ]
+    },
+    "Knowledge base link label": {
+      "Learn more": [
+        "Learn more"
+      ]
+    },
+    "Label": {
+      " and ": [
+        " and "
+      ],
+      " and ${ l }": [
+        " and ${ l }"
+      ],
+      "Account storage": [
+        "Account storage"
+      ],
+      "Actions": [
+        "Actions"
+      ],
+      "Address": [
+        "Address"
+      ],
+      "Addresses": [
+        "Addresses"
+      ],
+      "ALL": [
+        "ALL"
+      ],
+      "Allow recovery by recovery phrase": [
+        "Recovery method: Allow recovery phrase"
+      ],
+      "Amount": [
+        "Amount"
+      ],
+      "Amount due": [
+        "Amount due"
+      ],
+      "AND": [
+        "AND"
+      ],
+      "and": [
+        "and"
+      ],
+      "And": [
+        "And"
+      ],
+      "ANY": [
+        "ANY"
+      ],
+      "App password": [
+        "App password"
+      ],
+      "Attach public key": [
+        "Attach public key"
+      ],
+      "Attach screenshot(s)": [
+        "Attach screenshot(s)"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browser version"
+      ],
+      "BTC address:": [
+        "BTC address:"
+      ],
+      "BTC amount:": [
+        "BTC amount:"
+      ],
+      "Card holder": [
+        "Card holder"
+      ],
+      "Card number": [
+        "Card number"
+      ],
+      "Cash": [
+        "Cash"
+      ],
+      "Category": [
+        "Category"
+      ],
+      "Code": [
+        "Code"
+      ],
+      "Color": [
+        "Color"
+      ],
+      "Composer": [
+        "Composer"
+      ],
+      "Composer default font/size": [
+        "Composer default font/size"
+      ],
+      "Composer mode": [
+        "Composer mode"
+      ],
+      "Composer text direction": [
+        "Composer text direction"
+      ],
+      "Conditions": [
+        "Conditions"
+      ],
+      "Confirm login password": [
+        "Confirm login password"
+      ],
+      "Confirm mailbox password": [
+        "Confirm mailbox password"
+      ],
+      "Confirm new password": [
+        "Confirm new password"
+      ],
+      "Confirm organization password": [
+        "Confirm organization password"
+      ],
+      "Contacts": [
+        "Contacts"
+      ],
+      "Copy": [
+        "Copy"
+      ],
+      "Country": [
+        "Country"
+      ],
+      "Credits used": [
+        "Credits used"
+      ],
+      "Customize invoices": [
+        "Customize invoices"
+      ],
+      "Daily email notifications": [
+        "Daily email notifications"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Date format": [
+        "Date format"
+      ],
+      "Days of the week": [
+        "Days of the week"
+      ],
+      "Default language": [
+        "Default language"
+      ],
+      "Delete": [
+        "Delete"
+      ],
+      "Density": [
+        "Density"
+      ],
+      "Description": [
+        "Description"
+      ],
+      "Digits": [
+        "Digits"
+      ],
+      "Display name": [
+        "Display name"
+      ],
+      "Do not ask again": [
+        "Do not ask again"
+      ],
+      "Domain": [
+        "Domain"
+      ],
+      "Domain name": [
+        "Domain name"
+      ],
+      "Duration": [
+        "Duration"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Email address": [
+        "Email address"
+      ],
+      "Email or username": [
+        "Email or username"
+      ],
+      "End date": [
+        "End date"
+      ],
+      "End day of month": [
+        "End day of month"
+      ],
+      "End time": [
+        "End time"
+      ],
+      "End weekday": [
+        "End weekday"
+      ],
+      "Enter password": [
+        "Enter password"
+      ],
+      "Enter the password for key with fingerprint: ${ fingerprintCode }": [
+        "Enter the password for key with fingerprint: ${ fingerprintCode }"
+      ],
+      "Expires": [
+        "Expires"
+      ],
+      "File": [
+        "File"
+      ],
+      "Filter Name": [
+        "Filter Name"
+      ],
+      "Folder location": [
+        "Folder location"
+      ],
+      "Gift code": [
+        "Gift code"
+      ],
+      "Here is a basic DMARC record that does nothing except email you reports.": [
+        "Here is a basic DMARC record that does nothing except email you reports."
+      ],
+      "Hide password": [
+        "Hide password"
+      ],
+      "IF": [
+        "IF"
+      ],
+      "If": [
+        "If"
+      ],
+      "Inbox": [
+        "Inbox"
+      ],
+      "Inherit color from parent folder": [
+        "Inherit color from parent folder"
+      ],
+      "Interval": [
+        "Interval"
+      ],
+      "Key": [
+        "Key"
+      ],
+      "Key strength": [
+        "Key strength"
+      ],
+      "Keyboard shortcuts": [
+        "Keyboard shortcuts"
+      ],
+      "Label as": [
+        "Label as"
+      ],
+      "Mail Server (IMAP)": [
+        "Mail Server (IMAP)"
+      ],
+      "Mailbox password": [
+        "Mailbox password"
+      ],
+      "Mark as": [
+        "Mark as"
+      ],
+      "Message": [
+        "Message"
+      ],
+      "Move to": [
+        "Move to"
+      ],
+      "Move to Archive": [
+        "Move to Archive"
+      ],
+      "Move to Inbox": [
+        "Move to Inbox"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Name on card": [
+        "Name on card"
+      ],
+      "New login password": [
+        "New login password"
+      ],
+      "New mailbox password": [
+        "New mailbox password"
+      ],
+      "New organization password": [
+        "New organization password"
+      ],
+      "New password": [
+        "New password"
+      ],
+      "No label found": [
+        "No label found"
+      ],
+      "Notification": [
+        "Notification"
+      ],
+      "OpenVPN / IKEv2 password": [
+        "OpenVPN / IKEv2 password"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "OpenVPN / IKEv2 username"
+      ],
+      "Operating system": [
+        "Operating system"
+      ],
+      "Operating system version": [
+        "Operating system version"
+      ],
+      "Optional": [
+        "Optional"
+      ],
+      "OR": [
+        "OR"
+      ],
+      "or": [
+        "or"
+      ],
+      "Or": [
+        "Or"
+      ],
+      "Organization name": [
+        "Organization name"
+      ],
+      "Organization password": [
+        "Organization password"
+      ],
+      "Password": [
+        "Password"
+      ],
+      "Payer": [
+        "Payer"
+      ],
+      "Phone number": [
+        "Phone number"
+      ],
+      "Phrase": [
+        "Phrase"
+      ],
+      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
+        "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update."
+      ],
+      "Please add the following MX record. Note, DNS records can take several hours to update.": [
+        "Please add the following MX record. Note, DNS records can take several hours to update."
+      ],
+      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
+        "Please add the following TXT record. Note, DNS records can take several hours to update."
+      ],
+      "Please select files to upload": [
+        "Please select files to upload"
+      ],
+      "Port": [
+        "Port"
+      ],
+      "Postal code": [
+        "Postal code"
+      ],
+      "Prompt to trust keys": [
+        "Prompt to trust keys"
+      ],
+      "Proration": [
+        "Proration"
+      ],
+      "Read": [
+        "Read"
+      ],
+      "Recovery phrase": [
+        "Recovery phone"
+      ],
+      "Repeat password": [
+        "Repeat password"
+      ],
+      "Reveal password": [
+        "Reveal password"
+      ],
+      "Select your country": [
+        "Select your country"
+      ],
+      "Send auto-reply": [
+        "Send auto-reply"
+      ],
+      "Sign external messages": [
+        "Sign external messages"
+      ],
+      "Signature": [
+        "Signature"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Starred": [
+        "Starred"
+      ],
+      "Start date": [
+        "Start date"
+      ],
+      "Start day of month": [
+        "Start day of month"
+      ],
+      "Start time": [
+        "Start time"
+      ],
+      "Start weekday": [
+        "Start weekday"
+      ],
+      "Statement": [
+        "Statement"
+      ],
+      "System information": [
+        "System information"
+      ],
+      "The email was sent ${ attachment }": [
+        "The email was sent ${ attachment }"
+      ],
+      "the email was sent ${ attachment }": [
+        "the email was sent ${ attachment }"
+      ],
+      "The email was sent ${ attachmentStrong }": [
+        "The email was sent ${ attachmentStrong }"
+      ],
+      "the email was sent ${ label }": [
+        "the email was sent ${ label }"
+      ],
+      "Then": [
+        "Then"
+      ],
+      "Time format": [
+        "Time format"
+      ],
+      "Timezone": [
+        "Timezone"
+      ],
+      "Undo send": [
+        "Undo send"
+      ],
+      "Upload file": [
+        "Upload file"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Use folder colors": [
+        "Use folder colors"
+      ],
+      "User": [
+        "User"
+      ],
+      "User's new password": [
+        "User's new password"
+      ],
+      "Username": [
+        "Username"
+      ],
+      "Verification code": [
+        "Verification code"
+      ],
+      "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
+        "We are sorry to see you go. Please explain why you are leaving to help us improve."
+      ],
+      "Week start": [
+        "Week start"
+      ],
+      "What happened?": [
+        "What happened?"
+      ],
+      "What is the main reason you are cancelling?": [
+        "What is the main reason you are cancelling?"
+      ],
+      "What is the main reason you are deleting your account?": [
+        "What is the main reason you are deleting your account?"
+      ],
+      "With attachment": [
+        "With attachment"
+      ],
+      "with attachments": [
+        "with attachments"
+      ],
+      "Without attachment": [
+        "Without attachment"
+      ],
+      "without attachment": [
+        "without attachment"
+      ],
+      "without attachments": [
+        "without attachments"
+      ],
+      "Yes, I want to permanently delete this account and all its data.": [
+        "Yes, I want to permanently delete this account and all its data."
+      ],
+      "Your password (admin)": [
+        "Your password (admin)"
+      ]
+    },
+    "label": {
+      "Recovery phrase": [
+        "Recovery phone"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Duration"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record:": [
+        "Please add the following TXT record:"
+      ]
+    },
+    "Label for new member": {
+      "Admin": [
+        "Admin"
+      ],
+      "Private": [
+        "Private"
+      ]
+    },
+    "Label in domain modal": {
+      "Addresses": [
+        "Addresses"
+      ],
+      "Domain": [
+        "Domain"
+      ],
+      "Verify": [
+        "Verify"
+      ]
+    },
+    "Label on payment method": {
+      "Default": [
+        "Default"
+      ],
+      "Expired": [
+        "Expired"
+      ]
+    },
+    "Label to change composer mode": {
+      "Maximized": [
+        "Maximized"
+      ],
+      "Normal": [
+        "Normal"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Comfortable"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Column"
+      ],
+      "Row": [
+        "Row"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Create folder"
+      ],
+      "Create label": [
+        "Create label"
+      ],
+      "Edit folder": [
+        "Edit folder"
+      ],
+      "Edit label": [
+        "Edit label"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } created"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } updated"
+      ],
+      "Preference saved": [
+        "Preference saved"
+      ]
+    },
+    "Link": {
+      "Add a gift code": [
+        "Add a gift code"
+      ],
+      "Calendars": [
+        "Calendars"
+      ],
+      "clearing your browser cache": [
+        "clearing your browser cache"
+      ],
+      "click here": [
+        "click here"
+      ],
+      "Forgot username?": [
+        "Forgot username?"
+      ],
+      "General": [
+        "General"
+      ],
+      "Learn more": [
+        "Learn more"
+      ],
+      "Pay invoice": [
+        "Pay invoice"
+      ],
+      "Request an invite": [
+        "Request an invite"
+      ],
+      "Reset password": [
+        "Reset password"
+      ],
+      "Sign in": [
+        "Sign in"
+      ],
+      "Upgrade account": [
+        "Upgrade account"
+      ],
+      "View guide": [
+        "View guide"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "What is the difference between UDP and TCP protocols?"
+      ]
+    },
+    "Member action": {
+      "Delete": [
+        "Delete"
+      ],
+      "Edit": [
+        "Edit"
+      ],
+      "Revoke sessions": [
+        "Revoke sessions"
+      ],
+      "Sign in": [
+        "Sign in"
+      ]
+    },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "A new version of ${ appName } is available. ${ reloadButton }."
+      ]
+    },
+    "Monetary unit": {
+      "Dollar": [
+        "Dollar"
+      ],
+      "Euro": [
+        "Euro"
+      ],
+      "Swiss franc": [
+        "Swiss franc"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Every ${ interval } month ${ onDayString }",
+        "Every ${ interval } months ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Every ${ interval } month ${ onDayString }, ${ timesString }",
+        "Every ${ interval } months ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Every ${ interval } month ${ onDayString }, ${ untilString }",
+        "Every ${ interval } months ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "Monthly ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Monthly ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Monthly ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "on day ${ dayOfMonth }"
+      ],
+      "on the first Friday": [
+        "on the first Friday"
+      ],
+      "on the first Monday": [
+        "on the first Monday"
+      ],
+      "on the first Saturday": [
+        "on the first Saturday"
+      ],
+      "on the first Sunday": [
+        "on the first Sunday"
+      ],
+      "on the first Thursday": [
+        "on the first Thursday"
+      ],
+      "on the first Tuesday": [
+        "on the first Tuesday"
+      ],
+      "on the first Wednesday": [
+        "on the first Wednesday"
+      ],
+      "on the fourth Friday": [
+        "on the fourth Friday"
+      ],
+      "on the fourth Monday": [
+        "on the fourth Monday"
+      ],
+      "on the fourth Saturday": [
+        "on the fourth Saturday"
+      ],
+      "on the fourth Sunday": [
+        "on the fourth Sunday"
+      ],
+      "on the fourth Thursday": [
+        "on the fourth Thursday"
+      ],
+      "on the fourth Tuesday": [
+        "on the fourth Tuesday"
+      ],
+      "on the fourth Wednesday": [
+        "on the fourth Wednesday"
+      ],
+      "on the last Friday": [
+        "on the last Friday"
+      ],
+      "on the last Monday": [
+        "on the last Monday"
+      ],
+      "on the last Saturday": [
+        "on the last Saturday"
+      ],
+      "on the last Sunday": [
+        "on the last Sunday"
+      ],
+      "on the last Thursday": [
+        "on the last Thursday"
+      ],
+      "on the last Tuesday": [
+        "on the last Tuesday"
+      ],
+      "on the last Wednesday": [
+        "on the last Wednesday"
+      ],
+      "on the second Friday": [
+        "on the second Friday"
+      ],
+      "on the second Monday": [
+        "on the second Monday"
+      ],
+      "on the second Saturday": [
+        "on the second Saturday"
+      ],
+      "on the second Sunday": [
+        "on the second Sunday"
+      ],
+      "on the second Thursday": [
+        "on the second Thursday"
+      ],
+      "on the second Tuesday": [
+        "on the second Tuesday"
+      ],
+      "on the second Wednesday": [
+        "on the second Wednesday"
+      ],
+      "on the third Friday": [
+        "on the third Friday"
+      ],
+      "on the third Monday": [
+        "on the third Monday"
+      ],
+      "on the third Saturday": [
+        "on the third Saturday"
+      ],
+      "on the third Sunday": [
+        "on the third Sunday"
+      ],
+      "on the third Thursday": [
+        "on the third Thursday"
+      ],
+      "on the third Tuesday": [
+        "on the third Tuesday"
+      ],
+      "on the third Wednesday": [
+        "on the third Wednesday"
+      ]
+    },
+    "Navigation": {
+      "All": [
+        "All"
+      ],
+      "Back": [
+        "Back"
+      ],
+      "Spam": [
+        "Spam"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Color"
+      ],
+      "Folder name": [
+        "Folder name"
+      ],
+      "Label name": [
+        "Label name"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Delete account"
+      ],
+      "Got it": [
+        "Got it"
+      ]
+    },
+    "new_plans: feature": {
+      "Secure Core servers": [
+        "Secure Core servers"
+      ],
+      "Two-factor authentication": [
+        "Two-factor authentication"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Support"
+      ]
+    },
+    "new_plans: signup": {
+      "Subscription": [
+        "Subscription"
+      ]
+    },
+    "Notification": {
+      "OpenVPN / IKEv2 credentials regenerated": [
+        "OpenVPN / IKEv2 credentials regenerated"
+      ]
+    },
+    "Notification time input": {
+      "at": [
+        "at"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "at time of event"
+      ],
+      "day before": [
+        "day before",
+        "days before"
+      ],
+      "hour before": [
+        "hour before",
+        "hours before"
+      ],
+      "minute before": [
+        "minute before",
+        "minutes before"
+      ],
+      "on the same day": [
+        "on the same day"
+      ],
+      "week before": [
+        "week before",
+        "weeks before"
+      ]
+    },
+    "Option": {
+      "10th of the month": [
+        "10th of the month"
+      ],
+      "11th of the month": [
+        "11th of the month"
+      ],
+      "12th of the month": [
+        "12th of the month"
+      ],
+      "13th of the month": [
+        "13th of the month"
+      ],
+      "14th of the month": [
+        "14th of the month"
+      ],
+      "15th of the month": [
+        "15th of the month"
+      ],
+      "16th of the month": [
+        "16th of the month"
+      ],
+      "17th of the month": [
+        "17th of the month"
+      ],
+      "18th of the month": [
+        "18th of the month"
+      ],
+      "19th of the month": [
+        "19th of the month"
+      ],
+      "1st of the month": [
+        "1st of the month"
+      ],
+      "20th of the month": [
+        "20th of the month"
+      ],
+      "21st of the month": [
+        "21st of the month"
+      ],
+      "22nd of the month": [
+        "22nd of the month"
+      ],
+      "23rd of the month": [
+        "23rd of the month"
+      ],
+      "24th of the month": [
+        "24th of the month"
+      ],
+      "25th of the month": [
+        "25th of the month"
+      ],
+      "26th of the month": [
+        "26th of the month"
+      ],
+      "27th of the month": [
+        "27th of the month"
+      ],
+      "28th of the month": [
+        "28th of the month"
+      ],
+      "29th of the month": [
+        "29th of the month"
+      ],
+      "2nd of the month": [
+        "2nd of the month"
+      ],
+      "30th of the month": [
+        "30th of the month"
+      ],
+      "31st of the month": [
+        "31st of the month"
+      ],
+      "3rd of the month": [
+        "3rd of the month"
+      ],
+      "4th of the month": [
+        "4th of the month"
+      ],
+      "5th of the month": [
+        "5th of the month"
+      ],
+      "6th of the month": [
+        "6th of the month"
+      ],
+      "7th of the month": [
+        "7th of the month"
+      ],
+      "8th of the month": [
+        "8th of the month"
+      ],
+      "9th of the month": [
+        "9th of the month"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "Automatic (${ defaultDay })": [
+        "Automatic (${ defaultDay })"
+      ],
+      "Automatic (${ defaultFormat })": [
+        "Automatic (${ defaultFormat })"
+      ],
+      "Country configs": [
+        "Country configs"
+      ],
+      "Create new group": [
+        "Create new group"
+      ],
+      "Fixed duration": [
+        "Fixed duration"
+      ],
+      "Free server configs": [
+        "Free server configs"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "I found another service that I like better": [
+        "I found another service that I like better"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "It's missing a key feature that I need": [
+        "It's missing a key feature that I need"
+      ],
+      "It's too expensive": [
+        "It's too expensive"
+      ],
+      "Left to Right": [
+        "Left to Right"
+      ],
+      "My reason isn't listed": [
+        "My reason isn't listed"
+      ],
+      "No parent folder": [
+        "No parent folder"
+      ],
+      "Normal": [
+        "Normal"
+      ],
+      "Permanent": [
+        "Permanent"
+      ],
+      "Plain text": [
+        "Plain text"
+      ],
+      "Repeat daily": [
+        "Repeat daily"
+      ],
+      "Repeat monthly": [
+        "Repeat monthly"
+      ],
+      "Repeat weekly": [
+        "Repeat weekly"
+      ],
+      "Right to Left": [
+        "Right to Left"
+      ],
+      "Router": [
+        "Router"
+      ],
+      "Secure Core configs": [
+        "Secure Core configs"
+      ],
+      "Standard server configs": [
+        "Standard server configs"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
+      ]
+    },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0 seconds"
+      ],
+      "10 seconds": [
+        "10 seconds"
+      ],
+      "20 seconds": [
+        "20 seconds"
+      ],
+      "5 seconds": [
+        "5 seconds"
+      ]
+    },
+    "Option group": {
+      "Custom folders": [
+        "Custom folders"
+      ],
+      "Default folders": [
+        "Default folders"
+      ],
+      "Move to...": [
+        "Move to..."
+      ]
+    },
+    "OS compatibility": {
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (for Debian/Ubuntu)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10.12 or later)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (for Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (for other distributions)"
+      ]
+    },
+    "Participant name": {
+      "You": [
+        "You"
+      ]
+    },
+    "Payment method option": {
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "PayPal": [
+        "PayPal"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Email address not found among user ids defined in sending key (${ keyUserIds })"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "A way to contact you"
+      ],
+      "Add a calendar description": [
+        "Add a calendar description"
+      ],
+      "Add a calendar name": [
+        "Add a calendar name"
+      ],
+      "Address": [
+        "Address"
+      ],
+      "Choose a name": [
+        "Choose a name"
+      ],
+      "Choose display name": [
+        "Choose display name"
+      ],
+      "Confirm": [
+        "Confirm"
+      ],
+      "E.g., ": [
+        "E.g., "
+      ],
+      "Email address": [
+        "Email address"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "Gift code": [
+        "Gift code"
+      ],
+      "Link": [
+        "Link"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Other": [
+        "Other"
+      ],
+      "Password": [
+        "Password"
+      ],
+      "Phone number": [
+        "Phone number"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Please describe the problem and include any error messages"
+      ],
+      "Postal code": [
+        "Postal code"
+      ],
+      "Search": [
+        "Search"
+      ],
+      "Search users": [
+        "Search users"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Type text or keyword": [
+        "Type text or keyword"
+      ],
+      "yourdomain.com": [
+        "yourdomain.com"
+      ],
+      "ZIP": [
+        "ZIP"
+      ]
+    },
+    "Placeholder for custom invoice text": {
+      "Add your name (or company name) and address to your invoices": [
+        "Add your name (or company name) and address to your invoices"
+      ]
+    },
+    "Price": {
+      "Free": [
+        "Free"
+      ]
+    },
+    "Private Member": {
+      "private": [
+        "private"
+      ]
+    },
+    "Property type": {
+      "Address": [
+        "Address"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Fax": [
+        "Fax"
+      ],
+      "Home": [
+        "Home"
+      ],
+      "Main": [
+        "Main"
+      ],
+      "Mobile": [
+        "Mobile"
+      ],
+      "Other": [
+        "Other"
+      ],
+      "Pager": [
+        "Pager"
+      ],
+      "Phone": [
+        "Phone"
+      ],
+      "Work": [
+        "Work"
+      ]
+    },
+    "Recovery Email": {
+      "Cancel": [
+        "Cancel"
+      ]
+    },
+    "Recovery method": {
+      "Email": [
+        "Email"
+      ],
+      "Phone number": [
+        "Phone number"
+      ],
+      "Phrase": [
+        "Phrase"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Cancel"
+      ]
+    },
+    "Restore administrator panel": {
+      "Changing organization keys": [
+        "Changing organization keys"
+      ],
+      "Changing organization password": [
+        "Changing organization password"
+      ],
+      "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
+        "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:"
+      ]
+    },
+    "Select files": {
+      "Browse": [
+        "Browse"
+      ],
+      "Upload": [
+        "Upload"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "No results found"
+      ]
+    },
+    "Settings section title": {
+      "Account": [
+        "Account"
+      ],
+      "Organization": [
+        "Organization"
+      ]
+    },
+    "Settings/filters": {
+      "Filters": [
+        "Filters"
+      ]
+    },
+    "Settings/filters - table": {
+      "Action": [
+        "Action"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Order": [
+        "Order"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Labels/Folders"
+      ]
+    },
+    "Settings/labels - table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Labels": [
+        "Labels"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Add label"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Display name"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Username": [
+        "Username"
+      ]
+    },
+    "State": {
+      "Downgrading your account, please wait": [
+        "Downgrading your account, please wait"
+      ]
+    },
+    "Step in filter modal": {
+      "Actions": [
+        "Actions"
+      ],
+      "Conditions": [
+        "Conditions"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Preview": [
+        "Preview"
+      ]
+    },
+    "Storage": {
+      "Release notes": [
+        "Release notes"
+      ],
+      "Upgrade storage": [
+        "Upgrade storage"
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "Save"
+      ]
+    },
+    "Success": {
+      "Account deleted. Logging out...": [
+        "Account deleted. Logging out..."
+      ],
+      "Address added": [
+        "Address added"
+      ],
+      "Address updated": [
+        "Address updated"
+      ],
+      "Auto-reply updated": [
+        "Auto-reply updated"
+      ],
+      "Bug reported": [
+        "Bug reported"
+      ],
+      "Calendar created": [
+        "Calendar created"
+      ],
+      "Calendar updated": [
+        "Calendar updated"
+      ],
+      "Catch-all address updated": [
+        "Catch-all address updated"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Code sent to ${ methodTo }"
+      ],
+      "Credits added": [
+        "Credits added"
+      ],
+      "Domain verified": [
+        "Domain verified"
+      ],
+      "Email address copied to clipboard": [
+        "Email address copied to clipboard"
+      ],
+      "Email updated": [
+        "Email updated"
+      ],
+      "Gift code applied": [
+        "Gift code applied"
+      ],
+      "Import record deleted": [
+        "Import record deleted"
+      ],
+      "Invoice customized": [
+        "Invoice customized"
+      ],
+      "Invoice paid": [
+        "Invoice paid"
+      ],
+      "Keyboard shortcuts preferences updated": [
+        "Keyboard shortcuts preferences updated"
+      ],
+      "Keys updated": [
+        "Keys updated"
+      ],
+      "Locale updated": [
+        "Locale updated"
+      ],
+      "Organization activated": [
+        "Organization activated"
+      ],
+      "Password updated": [
+        "Password updated"
+      ],
+      "Payment method added": [
+        "Payment method added"
+      ],
+      "Payment method deleted": [
+        "Payment method deleted"
+      ],
+      "Payment method updated": [
+        "Payment method updated"
+      ],
+      "Phone number updated": [
+        "Phone number updated"
+      ],
+      "Preference saved": [
+        "Preference saved"
+      ],
+      "Premium address created": [
+        "Premium address created"
+      ],
+      "Session revoked": [
+        "Session revoked"
+      ],
+      "Sessions revoked": [
+        "Sessions revoked"
+      ],
+      "User created": [
+        "User created"
+      ],
+      "User updated": [
+        "User updated"
+      ],
+      "Verification successful": [
+        "Verification successful"
+      ],
+      "You have successfully unsubscribed": [
+        "You have successfully unsubscribed"
+      ]
+    },
+    "Success message": {
+      "Domain deleted": [
+        "Domain deleted"
+      ],
+      "Sessions revoked": [
+        "Sessions revoked"
+      ],
+      "User deleted": [
+        "User deleted"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Labels sorted"
+      ]
+    },
+    "Success notification": {
+      "${ label.Name } removed": [
+        "${ label.Name } removed"
+      ],
+      "Address deleted": [
+        "Address deleted"
+      ],
+      "Address disabled": [
+        "Address disabled"
+      ],
+      "Address enabled": [
+        "Address enabled"
+      ],
+      "Filter removed": [
+        "Filter removed"
+      ],
+      "Status updated": [
+        "Status updated"
+      ]
+    },
+    "Tab in domain modal": {
+      "Addresses": [
+        "Addresses"
+      ]
+    },
+    "TableHeader": {
+      "Action": [
+        "Action"
+      ],
+      "City": [
+        "City"
+      ],
+      "Country": [
+        "Country"
+      ],
+      "Display name": [
+        "Display name"
+      ],
+      "Edit": [
+        "Edit"
+      ],
+      "Email address": [
+        "Email address"
+      ],
+      "Email addresses": [
+        "Email addresses"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } hour",
+        "${ hours } hours"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minute",
+        "${ minutes } minutes"
+      ]
+    },
+    "Title": {
+      "1. Select platform": [
+        "1. Select platform"
+      ],
+      "2. Select protocol": [
+        "2. Select protocol"
+      ],
+      "3-D Secure verification failed": [
+        "3-D Secure verification failed"
+      ],
+      "3. Select config file and download": [
+        "3. Select config file and download"
+      ],
+      "Action": [
+        "Action"
+      ],
+      "Activate organization key": [
+        "Activate organization key"
+      ],
+      "Add address": [
+        "Add address"
+      ],
+      "Add another notification to remind you of this event": [
+        "Add another notification to remind you of this event"
+      ],
+      "Add credit/debit card": [
+        "Add credit/debit card"
+      ],
+      "Add credits": [
+        "Add credits"
+      ],
+      "Add domain": [
+        "Add domain"
+      ],
+      "Add filter": [
+        "Add filter"
+      ],
+      "Add invoice details": [
+        "Add invoice details"
+      ],
+      "Add PayPal payment method": [
+        "Add PayPal payment method"
+      ],
+      "Add Sieve filter": [
+        "Add Sieve filter"
+      ],
+      "Add user": [
+        "Add user"
+      ],
+      "Address verification": [
+        "Address verification"
+      ],
+      "Allocate storage": [
+        "Allocate storage"
+      ],
+      "Amount": [
+        "Amount"
+      ],
+      "Amount due": [
+        "Amount due"
+      ],
+      "App": [
+        "App"
+      ],
+      "Appearance": [
+        "Appearance"
+      ],
+      "Apply gift code": [
+        "Apply gift code"
+      ],
+      "Are you sure you want to close?": [
+        "Are you sure you want to close?"
+      ],
+      "Automatically sign outgoing messages?": [
+        "Automatically sign outgoing messages?"
+      ],
+      "Back": [
+        "Back"
+      ],
+      "Billing cycle": [
+        "Billing cycle"
+      ],
+      "Card verification": [
+        "Card verification"
+      ],
+      "Card verification in progress": [
+        "Card verification in progress"
+      ],
+      "Catch-all address": [
+        "Catch-all address"
+      ],
+      "Change login password": [
+        "Change login password"
+      ],
+      "Change mailbox password": [
+        "Change mailbox password"
+      ],
+      "Change organization keys": [
+        "Change organization keys"
+      ],
+      "Change organization name": [
+        "Change organization name"
+      ],
+      "Change organization password": [
+        "Change organization password"
+      ],
+      "Change password": [
+        "Change password"
+      ],
+      "Change role": [
+        "Change role"
+      ],
+      "Choose an account": [
+        "Choose an account"
+      ],
+      "Clear": [
+        "Clear"
+      ],
+      "Confirm address": [
+        "Confirm address"
+      ],
+      "Confirm downgrade": [
+        "Confirm downgrade"
+      ],
+      "Confirm phone number": [
+        "Confirm phone number"
+      ],
+      "Contact encryption keys": [
+        "Contact encryption keys"
+      ],
+      "Credits": [
+        "Credits"
+      ],
+      "Currency": [
+        "Currency"
+      ],
+      "Custom filters": [
+        "Custom filters"
+      ],
+      "Dashboard": [
+        "Dashboard"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Decrypt key": [
+        "Decrypt key"
+      ],
+      "Delete ${ domain.DomainName }": [
+        "Delete ${ domain.DomainName }"
+      ],
+      "Delete account": [
+        "Delete account"
+      ],
+      "Delete logs": [
+        "Delete logs"
+      ],
+      "Delete user": [
+        "Delete user"
+      ],
+      "Disable two-factor authentication": [
+        "Disable two-factor authentication"
+      ],
+      "Edit credit/debit card": [
+        "Edit credit/debit card"
+      ],
+      "Edit domain": [
+        "Edit domain"
+      ],
+      "Edit filter": [
+        "Edit filter"
+      ],
+      "Edit Sieve filter": [
+        "Edit Sieve filter"
+      ],
+      "Edit user": [
+        "Edit user"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Email encryption keys": [
+        "Email encryption keys"
+      ],
+      "Email subscriptions": [
+        "Email subscriptions"
+      ],
+      "Enter your password": [
+        "Enter your password"
+      ],
+      "Error": [
+        "Error"
+      ],
+      "Export": [
+        "Export"
+      ],
+      "Export private key": [
+        "Export private key"
+      ],
+      "Export public key": [
+        "Export public key"
+      ],
+      "External PGP settings": [
+        "External PGP settings"
+      ],
+      "Filters": [
+        "Filters"
+      ],
+      "Find email or username": [
+        "Find email or username"
+      ],
+      "Folders": [
+        "Folders"
+      ],
+      "General": [
+        "General"
+      ],
+      "Generate missing keys": [
+        "Generate missing keys"
+      ],
+      "Gift code": [
+        "Gift code"
+      ],
+      "Human verification": [
+        "Human verification"
+      ],
+      "IMAP/SMTP": [
+        "IMAP/SMTP"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Import contacts": [
+        "Import contacts"
+      ],
+      "Import key": [
+        "Import key"
+      ],
+      "Import-Export app": [
+        "Import-Export app"
+      ],
+      "Invalid verification code": [
+        "Invalid verification code"
+      ],
+      "Invoices": [
+        "Invoices"
+      ],
+      "Keyboard shortcuts": [
+        "Keyboard shortcuts"
+      ],
+      "Labels": [
+        "Labels"
+      ],
+      "Layout": [
+        "Layout"
+      ],
+      "Link confirmation": [
+        "Link confirmation"
+      ],
+      "Login password": [
+        "Login password"
+      ],
+      "Messages": [
+        "Messages"
+      ],
+      "Multi-user support": [
+        "Multi-user support"
+      ],
+      "My addresses": [
+        "My addresses"
+      ],
+      "Network error": [
+        "Network error"
+      ],
+      "Next": [
+        "Next"
+      ],
+      "No recovery method": [
+        "No recovery method"
+      ],
+      "Open actions dropdown": [
+        "Open actions dropdown"
+      ],
+      "Open pagination": [
+        "Open pagination"
+      ],
+      "OpenVPN configuration files": [
+        "OpenVPN configuration files"
+      ],
+      "Organization": [
+        "Organization"
+      ],
+      "Password": [
+        "Password"
+      ],
+      "Pay invoice": [
+        "Pay invoice"
+      ],
+      "Payment methods": [
+        "Payment methods"
+      ],
+      "Payment verification": [
+        "Payment verification"
+      ],
+      "Payment verification in progress": [
+        "Payment verification in progress"
+      ],
+      "PayPal verification failed": [
+        "PayPal verification failed"
+      ],
+      "Phone": [
+        "Phone"
+      ],
+      "Plan summary": [
+        "Plan summary"
+      ],
+      "Previous": [
+        "Previous"
+      ],
+      "Processing...": [
+        "Processing..."
+      ],
+      "Reconnect your account": [
+        "Reconnect your account"
+      ],
+      "Recover data": [
+        "Recover data"
+      ],
+      "Refer a friend": [
+        "Refer a friend"
+      ],
+      "Report a problem": [
+        "Report a problem"
+      ],
+      "Request new code": [
+        "Request new code"
+      ],
+      "Reset password": [
+        "Reset password"
+      ],
+      "Reset password?": [
+        "Reset password?"
+      ],
+      "Restore administrator privileges": [
+        "Restore administrator privileges"
+      ],
+      "Select a plan": [
+        "Select a plan"
+      ],
+      "Select the time to send this notification": [
+        "Select the time to send this notification"
+      ],
+      "Select the way to send this notification": [
+        "Select the way to send this notification"
+      ],
+      "Select when you want this notification to be sent": [
+        "Select when you want this notification to be sent"
+      ],
+      "Session management": [
+        "Session management"
+      ],
+      "Set new password": [
+        "Set new password"
+      ],
+      "Set organization keys": [
+        "Set organization keys"
+      ],
+      "Set organization name": [
+        "Set organization name"
+      ],
+      "Set organization password": [
+        "Set organization password"
+      ],
+      "Set up two-factor authentication": [
+        "Set up two-factor authentication"
+      ],
+      "Settings": [
+        "Settings"
+      ],
+      "Short domain (@pm.me)": [
+        "Short domain (@pm.me)"
+      ],
+      "Sign in": [
+        "Sign in"
+      ],
+      "Sign out": [
+        "Sign out"
+      ],
+      "Sort labels alphabetically": [
+        "Sort labels alphabetically"
+      ],
+      "Start a new import": [
+        "Start a new import"
+      ],
+      "Start import process": [
+        "Start import process"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Success": [
+        "Success"
+      ],
+      "Switch to one-password mode": [
+        "Switch to one-password mode"
+      ],
+      "Switch to two-password mode": [
+        "Switch to two-password mode"
+      ],
+      "Theme": [
+        "Theme"
+      ],
+      "Time zone": [
+        "Time zone"
+      ],
+      "Two-factor authentication": [
+        "Two-factor authentication"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "Unlock your mailbox": [
+        "Unlock your mailbox"
+      ],
+      "Unsupported browser": [
+        "Unsupported browser"
+      ],
+      "Warning": [
+        "Warning"
+      ],
+      "Warning!": [
+        "Warning!"
+      ],
+      "What's new": [
+        "What's New"
+      ],
+      "ZIP / postal code": [
+        "ZIP / postal code"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "Choose a number"
+      ]
+    },
+    "Title for payment methods table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Method": [
+        "Method"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Actions"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Size": [
+        "Size"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Title header for addresses domain table": {
+      "Address": [
+        "Address"
+      ],
+      "Catch-All": [
+        "Catch-All"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Actions"
+      ],
+      "Fingerprint": [
+        "Fingerprint"
+      ],
+      "Key type": [
+        "Key type"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Title header for members table": {
+      "Addresses": [
+        "Addresses"
+      ],
+      "Features": [
+        "Features"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Role": [
+        "Role"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Today"
+      ]
+    },
+    "Tooltip": {
+      "Account is disconnected": [
+        "Account is disconnected"
+      ],
+      "Customize import to reduce the number of folders": [
+        "Customize import to reduce the number of folders"
+      ],
+      "Edit folder names": [
+        "Edit folder names"
+      ],
+      "Enable/disable desktop and mobile notifications": [
+        "Enable/disable desktop and mobile notifications"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "If you purchased a gift code or received one from our support team, you can enter it here."
+      ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "Signatures produced by this key are treated as invalid and this key cannot be used for encryption"
+      ],
+      "This address has been disabled": [
+        "This address has been disabled"
+      ],
+      "This feature is only available for paid users": [
+        "This feature is only available for paid users"
+      ],
+      "This key cannot be used for encryption": [
+        "This key cannot be used for encryption"
+      ],
+      "This key is encrypted with an old password": [
+        "This key is encrypted with an old password"
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off."
+      ],
+      "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
+        "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing."
+      ],
+      "You have locally decrypted this key": [
+        "You have locally decrypted this key"
+      ],
+      "Your DKIM signing is working.": [
+        "Your DKIM signing is working."
+      ]
+    },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you."
+      ]
+    },
+    "User role": {
+      "Admin": [
+        "Admin"
+      ],
+      "Member": [
+        "Member"
+      ],
+      "Primary admin": [
+        "Primary admin"
+      ]
+    },
+    "VPN info": {
+      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ]
+    },
+    "Warning": {
+      "Are you sure you want to delete the address?": [
+        "Are you sure you want to delete the address?"
+      ],
+      "Are you sure you want to delete the phone number?": [
+        "Are you sure you want to delete the phone number?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Are you sure you want to discard your import?"
+      ],
+      "By deleting this address, you will no longer be able to receive daily email notifications.": [
+        "By deleting this address, you will no longer be able to receive daily email notifications."
+      ],
+      "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
+        "By deleting this address, you will no longer be able to recover your account or receive daily email notifications."
+      ],
+      "By deleting this address, you will no longer be able to recover your account.": [
+        "By deleting this address, you will no longer be able to recover your account."
+      ],
+      "By deleting this phone number, you will no longer be able to recover your account.": [
+        "By deleting this phone number, you will no longer be able to recover your account."
+      ],
+      "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
+        "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?"
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared."
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online."
+      ],
+      "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
+        "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off."
+      ],
+      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
+        "You must ${ activateLink } organization keys before adding an email address to a non-private member."
+      ],
+      "You will not see this import record in the list anymore.": [
+        "You will not see this import record in the list anymore."
+      ]
+    },
+    "Warning for domain modal": {
+      "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
+        "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain."
+      ],
+      "It can take up to a day for DNS changes to update.": [
+        "It can take up to a day for DNS changes to update."
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Every ${ interval } week on ${ multipleDaysString }",
+        "Every ${ interval } weeks on ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }",
+        "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }",
+        "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Every ${ interval } week on all days",
+        "Every ${ interval } weeks on all days"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Every ${ interval } week on all days, ${ timesString }",
+        "Every ${ interval } weeks on all days, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Every ${ interval } week on all days, ${ untilString }",
+        "Every ${ interval } weeks on all days, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Every ${ interval } week on Friday",
+        "Every ${ interval } weeks on Friday"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Every ${ interval } week on Friday, ${ timesString }",
+        "Every ${ interval } weeks on Friday, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Every ${ interval } week on Friday, ${ untilString }",
+        "Every ${ interval } weeks on Friday, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Every ${ interval } week on Monday",
+        "Every ${ interval } weeks on Monday"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Every ${ interval } week on Monday, ${ timesString }",
+        "Every ${ interval } weeks on Monday, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Every ${ interval } week on Monday, ${ untilString }",
+        "Every ${ interval } weeks on Monday, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Every ${ interval } week on Saturday",
+        "Every ${ interval } weeks on Saturday"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Every ${ interval } week on Saturday, ${ timesString }",
+        "Every ${ interval } weeks on Saturday, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Every ${ interval } week on Saturday, ${ untilString }",
+        "Every ${ interval } weeks on Saturday, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Every ${ interval } week on Sunday",
+        "Every ${ interval } weeks on Sunday"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Every ${ interval } week on Sunday, ${ timesString }",
+        "Every ${ interval } weeks on Sunday, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Every ${ interval } week on Sunday, ${ untilString }",
+        "Every ${ interval } weeks on Sunday, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Every ${ interval } week on Thursday",
+        "Every ${ interval } weeks on Thursday"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Every ${ interval } week on Thursday, ${ timesString }",
+        "Every ${ interval } weeks on Thursday, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Every ${ interval } week on Thursday, ${ untilString }",
+        "Every ${ interval } weeks on Thursday, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Every ${ interval } week on Tuesday",
+        "Every ${ interval } weeks on Tuesday"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Every ${ interval } week on Tuesday, ${ timesString }",
+        "Every ${ interval } weeks on Tuesday, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Every ${ interval } week on Tuesday, ${ untilString }",
+        "Every ${ interval } weeks on Tuesday, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Every ${ interval } week on Wednesday",
+        "Every ${ interval } weeks on Wednesday"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Every ${ interval } week on Wednesday, ${ timesString }",
+        "Every ${ interval } weeks on Wednesday, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Every ${ interval } week on Wednesday, ${ untilString }",
+        "Every ${ interval } weeks on Wednesday, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Weekly on ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Weekly on ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Weekly on ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days": [
+        "Weekly on all days"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Weekly on all days, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Weekly on all days, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Weekly on Friday"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Weekly on Friday, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Weekly on Friday, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Weekly on Monday"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Weekly on Monday, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Weekly on Monday, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Weekly on Saturday"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Weekly on Saturday, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Weekly on Saturday, ${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "Weekly on Sunday"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Weekly on Sunday, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Weekly on Sunday, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Weekly on Thursday"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Weekly on Thursday, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Weekly on Thursday, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Weekly on Tuesday"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Weekly on Tuesday, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Weekly on Tuesday, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Weekly on Wednesday"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Weekly on Wednesday, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Weekly on Wednesday, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "Friday"
+      ],
+      "Monday": [
+        "Monday"
+      ],
+      "Saturday": [
+        "Saturday"
+      ],
+      "Sunday": [
+        "Sunday"
+      ],
+      "Thursday": [
+        "Thursday"
+      ],
+      "Tuesday": [
+        "Tuesday"
+      ],
+      "Wednesday": [
+        "Wednesday"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Yearly",
+        "Yearly"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Every ${ interval } year, ${ timesString }",
+        "Every ${ interval } years, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Every ${ interval } year, ${ untilString }",
+        "Every ${ interval } years, ${ untilString }"
+      ],
+      "Yearly": [
+        "Yearly"
+      ],
+      "Yearly, ${ timesString }": [
+        "Yearly, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Yearly, ${ untilString }"
+      ]
+    }
+  }
+}
