@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useEarlyAccess } from '@proton/components/hooks';
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import {
     queryCreateFile,
@@ -60,6 +61,7 @@ export default function useUploadFile() {
     const { trashLinks, deleteChildrenLinks } = useLinksActions();
     const { getPrimaryAddressKey } = useDriveCrypto();
     const { findAvailableName, getLinkByName } = useUploadHelper();
+    const { currentEnvironment } = useEarlyAccess();
     const driveEventManager = useDriveEventManager();
 
     const initFileUpload = (
@@ -281,7 +283,7 @@ export default function useUploadFile() {
         // with created file or revision to do proper clean-up.
         let createdFileRevisionPromise: Promise<FileRevision>;
 
-        return initUploadFileWorker(file, {
+        return initUploadFileWorker(file, currentEnvironment, {
             initialize: async (abortSignal: AbortSignal) => {
                 const [addressKeyInfo, parentPrivateKey] = await Promise.all([
                     addressKeyInfoPromise,
