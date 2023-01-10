@@ -1085,6 +1085,7 @@ export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
     'pacific standard time (mexico)': 'America/Tijuana',
     'pacific time (us & canada)': 'America/Los_Angeles',
     'pacific time (us & canada); tijuana': 'America/Los_Angeles',
+    'pacific/kanton': 'Pacific/Fakaofo',
     pakistan: 'Asia/Karachi',
     'pakistan standard time': 'Asia/Karachi',
     palau: 'Pacific/Palau',
