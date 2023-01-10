@@ -1896,7 +1896,7 @@
         "Taille du compte"
       ],
       "Account successfully updated": [
-        "Le compte a bien été mis à jour."
+        "Le compte a été mis à jour."
       ],
       "add a recovery method": [
         "ajouter une méthode de récupération"
@@ -2036,8 +2036,8 @@
       "Free up some space or contact your administrator.": [
         "Libérez de l’espace ou contactez votre administrateur."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
-        "Obtenez une adresse ${ BRAND_NAME } pour utiliser tous les services ${ BRAND_NAME } dont Mail et Calendar."
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Obtenez une adresse ${ BRAND_NAME } pour utiliser tous les services ${ BRAND_NAME }, y compris ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Obtenir mon adresse ${ BRAND_NAME }"
@@ -2815,9 +2815,6 @@
       "Moderate NAT": [
         "NAT modéré"
       ],
-      "Name": [
-        "Nom"
-      ],
       "Name on card": [
         "Nom sur la carte"
       ],
@@ -2922,6 +2919,9 @@
       ],
       "User's new password": [
         "Nouveau mot de passe utilisateur"
+      ],
+      "Username": [
+        "Nom d'utilisateur"
       ],
       "Verification code": [
         "Code de vérification"
@@ -4383,7 +4383,7 @@
         "La vérification est réussie."
       ],
       "You have successfully unsubscribed": [
-        "La désinscription a bien été effectuée."
+        "La désinscription a été effectuée."
       ]
     },
     "Success notification": {
@@ -4535,7 +4535,7 @@
         "Confirmer le passage à un abonnement inférieur"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
-        "Confirmez la perte des bonus ${ BRAND_NAME }"
+        "Confirmer la perte des bonus ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
         "Confirmer le numéro de téléphone"

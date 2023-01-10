@@ -4002,27 +4002,27 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } evento importado con éxito. El evento importado aparecerá ahora en tu calendario.",
+        "${ totalImported } eventos importados con éxito. Los eventos importados aparecerán ahora en tu calendario."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } evento cifrado y añadido a tu calendario",
         "${ totalImported }/${ totalToImport } eventos cifrados y añadidos a tu calendario"
       ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "Se ha producido un error al cifrar y añadir tu ${ totalToImport } evento. No se ha podido importar ningún evento.",
+        "Se ha producido un error al cifrar y añadir tus ${ totalToImport } eventos. No se ha podido importar ningún evento."
+      ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Se produjo un error al encriptar y añadir tu evento. ${ totalImported } de ${ totalToImport } evento importados con éxito.",
         "Se produjo un error al encriptar y añadir tus eventos. ${ totalImported } de ${ totalToImport } eventos importados con éxito."
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Se ha producido un error al cifrar y añadir el evento. No se ha podido importar ningún evento.",
-        "Se ha producido un error al cifrar y añadir los eventos. No se ha podido importar ningún evento."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Cifrando y agregando contactos: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Cifrando y agregando eventos a tu calendario: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Evento importado con éxito. El evento importado aparecerá ahora en tu calendario.",
-        "Eventos importados con éxito. Los eventos importados aparecerán ahora en tu calendario."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No cierres la pestaña antes de que el proceso de importación haya terminado."
@@ -4056,10 +4056,6 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contacto cifrado y agregado a tu lista de contactos",
         "${ totalImported }/${ totalToImport } contactos cifrados y agregados a tu lista de contactos"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Ha ocurrido un error al cifrar y agregar tu contacto. No se ha podido importar ningún contacto.",
-        "Ha ocurrido un error al cifrar y agregar tus contactos. No se ha podido importar ningún contacto."
       ]
     },
     "Import contact error": {
@@ -4079,12 +4075,20 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "${ totalImported } contacto importado correctamente. El contacto importado aparecerá ahora en tu lista de contactos.",
+        "${ totalImported } contactos importados correctamente. Los contactos importados aparecerán ahora en tu lista de contactos."
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "Se ha producido un error al cifrar y añadir tu ${ totalToImport } contacto. No se ha podido importar ningún contacto.",
+        "Se ha producido un error al cifrar y añadir tus ${ totalToImport } contactos. No se ha podido importar ningún contacto."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Ha ocurrido un error al cifrar y agregar tu contacto. ${ totalImported } de ${ totalToImport } contacto importado con éxito.",
         "Ha ocurrido un error al cifrar y agregar tus contactos. ${ totalImported } de ${ totalToImport } contactos importados con éxito."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contacto importado correctamente. El contacto importado aparecerá ahora en tu lista de contactos.",
-        "Contactos importados correctamente. Los contactos importados aparecerán ahora en tu lista de contactos."
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Ha ocurrido un error al cifrar y agregar tu contacto. No se ha podido importar ningún contacto."
       ]
     },
     "Import contacts warning": {
@@ -4995,8 +4999,8 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generar una frase de recuperación nueva deshabilitará la anterior."
       ],
-      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including Mail and Calendar.": [
-        "Conseguir una dirección ${ BRAND_NAME } para usar todos los servicios ${ BRAND_NAME } incluyendo Mail y Calendar."
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Consigue una dirección ${ BRAND_NAME } para usar todos los servicios ${ BRAND_NAME } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Obtener mi dirección ${ BRAND_NAME }"
@@ -8234,26 +8238,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "La prueba acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8323,6 +8307,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "La prueba acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {

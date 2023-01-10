@@ -2797,17 +2797,11 @@
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
       ],
-      "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密並加入聯絡人：${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "正在加密並加入事件到您的行事曆中：${ totalImported }/${ totalToImport }"
-      ],
-      "Events successfully imported. The imported events will now appear in your calendar.": [
-        "行程已成功匯入。已匯入的行程現將顯示於行事曆中。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "在匯入過程完成之前，請勿關閉此索引標籤。"
@@ -2838,9 +2832,6 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 個聯絡人已加密並加入至您的通訊錄"
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "加密及加入聯絡人時發生錯誤。無法匯入任何聯絡人。"
       ]
     },
     "Import contact error": {
@@ -2856,14 +2847,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "未知"
-      ]
-    },
-    "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "加密及加入聯絡人時發生錯誤。${ totalImported }/${ totalToImport } 聯絡人已成功匯入。"
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "聯絡人已成功匯入。已匯入的聯絡人現將顯示於通訊錄中。"
       ]
     },
     "Import contacts warning": {

@@ -2881,11 +2881,23 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
+        "${ totalImported } подію успішно імпортовано. Тепер вона з'явиться у вашому календарі.",
+        "${ totalImported } події успішно імпортовано. Тепер вони з'являться у вашому календарі.",
+        "${ totalImported } подій успішно імпортовано. Тепер вони з'являться у вашому календарі.",
+        "${ totalImported } подій успішно імпортовано. Тепер вони з'являться у вашому календарі."
+      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } подію зашифровано та додано до вашого календаря",
         "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря",
         "${ totalImported }/${ totalToImport } подій зашифровано та додано до вашого календаря",
         "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря"
+      ],
+      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
+        "Під час шифрування та додавання ${ totalToImport } вашої події сталася помилка. Неможливо імпортувати подію.",
+        "Під час шифрування та додавання ${ totalToImport } ваших подій сталася помилка. Неможливо імпортувати події.",
+        "Під час шифрування та додавання ${ totalToImport } ваших подій сталася помилка. Неможливо імпортувати події.",
+        "Під час шифрування та додавання ${ totalToImport } ваших подій сталася помилка. Неможливо імпортувати події."
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "При шифруванні та додаванні вашої події сталася помилка. ${ totalImported } із ${ totalToImport } події успішно імпортовано.",
@@ -2893,23 +2905,11 @@
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
       ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "При шифруванні та додаванні вашої події сталася помилка. Неможливо імпортувати подію.",
-        "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події.",
-        "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події.",
-        "При шифруванні та додаванні ваших подій сталася помилка. Неможливо імпортувати події."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шифрування та додавання контактів: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Шифрування та додавання подій до вашого календаря: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Подію успішно імпортовано. Тепер вона з'явиться у вашому календарі.",
-        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі.",
-        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі.",
-        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Не закривайте цю вкладку доки не завершиться процес імпортування."
@@ -2949,12 +2949,6 @@
         "${ totalImported }/${ totalToImport } контакти зашифровано та додано до вашого списку контактів",
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів",
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "При шифруванні та додаванні вашого контакту сталася помилка. Неможливо імпортувати контакт.",
-        "При шифруванні та додаванні ваших контактів сталася помилка. Неможливо імпортувати контакти.",
-        "При шифруванні та додаванні ваших контактів сталася помилка. Неможливо імпортувати контакти.",
-        "При шифруванні та додаванні ваших контактів сталася помилка. Неможливо імпортувати контакти."
       ]
     },
     "Import contact error": {
@@ -2976,14 +2970,26 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "При шифруванні та додаванні ваших контактів сталася помилка. ${ totalImported } із ${ totalToImport } контактів успішно імпортовано."
+      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
+        "${ totalImported } контакт успішно імпортовано. Тепер він з'явиться у вашому списку контактів.",
+        "${ totalImported } контакти успішно імпортовано. Тепер вони з'являться у вашому списку контактів.",
+        "${ totalImported } контактів успішно імпортовано. Тепер вони з'являться у вашому списку контактів.",
+        "${ totalImported } контактів успішно імпортовано. Тепер вони з'являться у вашому списку контактів."
       ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Контакт успішно імпортовано. Тепер він з'явиться у вашому списку контактів.",
-        "Контакти успішно імпортовано. Тепер вони з'являться у вашому списку контактів.",
-        "Контакти успішно імпортовано. Тепер вони з'являться у вашому списку контактів.",
-        "Контакти успішно імпортовано. Тепер вони з'являться у вашому списку контактів."
+      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
+        "Під час шифрування та додавання ${ totalToImport } вашого контакту сталася помилка. Неможливо імпортувати контакт.",
+        "Під час шифрування та додавання ${ totalToImport } ваших контактів сталася помилка. Неможливо імпортувати контакти.",
+        "Під час шифрування та додавання ${ totalToImport } ваших контактів сталася помилка. Неможливо імпортувати контакти.",
+        "Під час шифрування та додавання ${ totalToImport } ваших контактів сталася помилка. Неможливо імпортувати контакти."
+      ],
+      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
+        "Під час шифрування та додавання вашого контакту сталася помилка. ${ totalImported } із ${ totalToImport } контакт успішно імпортовано.",
+        "Під час шифрування та додавання ваших контактів сталася помилка. ${ totalImported } із ${ totalToImport } контактів успішно імпортовано.",
+        "Під час шифрування та додавання ваших контактів сталася помилка. ${ totalImported } із ${ totalToImport } контактів успішно імпортовано.",
+        "Під час шифрування та додавання ваших контактів сталася помилка. ${ totalImported } із ${ totalToImport } контактів успішно імпортовано."
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Під час шифрування й додавання вашого контакту сталася помилка. Неможливо імпортувати контакт."
       ]
     },
     "Import contacts warning": {

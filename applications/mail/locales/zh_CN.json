@@ -1514,6 +1514,9 @@
       "Event rescheduling is not supported for the moment": [
         "暂不支持重新安排活动"
       ],
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "此回复无法添加到 ${ CALENDAR_APP_NAME } 中，因为目前仅支持对全系列事件的回复。"
+      ],
       "This event has been canceled.": [
         "此活动已被取消。"
       ],
@@ -2781,6 +2784,11 @@
         "遵循系统设置 (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "遵循系统设置 (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "逾期账单"
@@ -3103,6 +3111,9 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "最多只能有 ${ attachmentsCountLimit } 个附件"
+      ],
+      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "将至少 ${ calendarToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Message needs to be sent first": [
         "需要先发送邮件"
@@ -3933,23 +3944,20 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported } events successfully imported. The imported events will now appear in your calendar.": [
+        "${ totalImported }日程导入成功，已显示在您的日历中。"
+      ],
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
-      "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "加密并添加日程时出错，未能导入任何日程。"
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加联系人：已完成 ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加日程：已完成 ${ totalImported }/${ totalToImport }"
-      ],
-      "Events successfully imported. The imported events will now appear in your calendar.": [
-        "日程导入成功，已显示在您的日历中。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "导入结束前请勿关闭此网页。"
@@ -3980,9 +3988,6 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "加密并添加联系人时出错，未能导入任何联系人。"
       ]
     },
     "Import contact error": {
@@ -4001,14 +4006,14 @@
       ]
     },
     "Import contacts": {
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "加密并添加联系人时出错，${ totalImported }/${ totalToImport } 联系人已成功导入。"
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "联系人导入成功，已显示在您的通讯录中。"
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "加密并添加联系人时出错，未能导入任何联系人"
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ${ forNow } 不支持:"
+      ],
       "for now": [
         "暂时"
       ]
@@ -4616,6 +4621,9 @@
       ],
       "Email tracker protection is disabled": [
         "已禁用电子邮件跟踪保护"
+      ],
+      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
+        "邮件跟踪器会侵害您的隐私，${ BRAND_NAME } 在此邮件中未发现跟踪器。"
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
         "邮件跟踪器会侵害您的隐私，${ BRAND_NAME } 已发现并屏蔽了 ${ numberOfTrackers } 个跟踪器。"
@@ -6056,6 +6064,9 @@
       "Mailbox password": [
         "邮箱密码"
       ],
+      "Main": [
+        "主要"
+      ],
       "Manage categories": [
         "管理分类"
       ],
@@ -6226,6 +6237,9 @@
       ],
       "To: ${ PMEmailAddress }": [
         "导入到：${ PMEmailAddress }"
+      ],
+      "Toolbar": [
+        "工具栏"
       ],
       "Two-factor authentication code": [
         "双重验证码"
@@ -6803,6 +6817,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } 规则已创建"
+      ],
       "Block removed": [
         "移除屏蔽"
       ],
@@ -6970,6 +6987,9 @@
       ],
       "Filter labels": [
         "搜索标签"
+      ],
+      "Group name": [
+        "群组名称"
       ],
       "Hint": [
         "提示"
@@ -7246,6 +7266,12 @@
       ]
     },
     "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP 加密邮件，发件人验证失败：${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "PGP 签名邮件，发件人验证失败：${ verificationErrorsMessage }"
+      ],
       "Sender could not be verified: Message not signed": [
         "无法验证发件人：邮件未签名"
       ],
@@ -7285,6 +7311,9 @@
       ],
       "Message Content Search": [
         "邮件全文搜索"
+      ],
+      "Schedule send": [
+        "定时发送"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "体验 ${ DRIVE_APP_NAME }"
