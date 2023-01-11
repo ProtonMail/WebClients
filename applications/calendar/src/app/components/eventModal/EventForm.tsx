@@ -2,14 +2,7 @@ import { HTMLAttributes } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Alert,
-    MemoizedIconRow as IconRow,
-    InputTwo,
-    Notifications,
-    TextAreaTwo,
-    classnames,
-} from '@proton/components';
+import { MemoizedIconRow as IconRow, InputTwo, Notifications, TextAreaTwo, classnames } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
 import {
@@ -77,14 +70,13 @@ const EventForm = ({
         frequencyModel,
         start,
         isAllDay,
-        isOrganizer,
         isAttendee,
         fullDayNotifications,
         defaultFullDayNotification,
         partDayNotifications,
         defaultPartDayNotification,
         calendars,
-        calendar: { isSubscribed: isSubscribedCalendar, isOwned },
+        calendar: { isSubscribed: isSubscribedCalendar },
     } = model;
     const isSingleEdit = !!model.rest?.['recurrence-id'];
 
@@ -94,7 +86,6 @@ const EventForm = ({
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications = canAddNotifications || notifications.length;
-    const isTrueOrganizer = isOrganizer && !isSubscribedCalendar && isOwned;
 
     const dateRow = isMinimal ? (
         <MiniDateTimeRows
@@ -345,18 +336,8 @@ const EventForm = ({
         </IconRow>
     );
 
-    const organizerCannotSendAlert = (
-        <Alert className="mb1" type="warning">
-            <span className="mr0-25">
-                {c('Info')
-                    .t`You can only modify personal event properties as you can't send emails from the organizer address.`}
-            </span>
-        </Alert>
-    );
-
     return (
         <div className="mt0-5" {...props}>
-            {!canEditSharedEventData && isTrueOrganizer && organizerCannotSendAlert}
             {canEditSharedEventData && titleRow}
             {canEditSharedEventData && dateRow}
             {canEditSharedEventData && !isMinimal && frequencyRow}
