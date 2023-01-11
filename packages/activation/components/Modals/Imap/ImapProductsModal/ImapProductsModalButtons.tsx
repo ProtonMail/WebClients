@@ -42,6 +42,7 @@ const ImportTypeButton = ({ importType, onClick, disabled }: ImportTypeButtonPro
             shape="outline"
             title={typeMap[importType].title}
             type="button"
+            data-testid="MailModal:ProductButton"
         >
             <span className="flex flex-nowrap flex-column pl1 pr1">
                 <img src={typeMap[importType].illustration} alt="" className="w5e mb1" />
@@ -58,7 +59,7 @@ interface Props {
     disabledTooltipTitle: string;
 }
 
-const ImapModalButton = ({ importType, onClick, disabled, disabledTooltipTitle }: Props) => {
+const ImapProductsModalButtons = ({ importType, onClick, disabled, disabledTooltipTitle }: Props) => {
     const button = <ImportTypeButton importType={importType} onClick={onClick} disabled={disabled} />;
 
     return disabled ? (
@@ -70,4 +71,4 @@ const ImapModalButton = ({ importType, onClick, disabled, disabledTooltipTitle }
     );
 };
 
-export default ImapModalButton;
+export default ImapProductsModalButtons;

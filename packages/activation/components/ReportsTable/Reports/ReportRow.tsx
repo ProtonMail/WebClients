@@ -2,13 +2,13 @@ import { memo } from 'react';
 
 import { format } from 'date-fns';
 
+import { ReportSummaryID } from '@proton/activation/logic/reports/reports.interface';
+import { selectReportById, selectReportSummaryById } from '@proton/activation/logic/reports/reports.selectors';
+import { useEasySwitchSelector } from '@proton/activation/logic/store';
 import { TableCell, TableRow } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { ReportSummaryID } from '../../../logic/reports/reports.interface';
-import { selectReportById, selectReportSummaryById } from '../../../logic/reports/reports.selectors';
-import { useEasySwitchSelector } from '../../../logic/store';
 import ReportsTableCell from '../ReportsTableCell';
 import ReportRowActions from './ReportRowActions';
 import ReportRowStatus from './ReportRowStatus';
@@ -25,7 +25,7 @@ const ReportRow = ({ reportSummaryId }: Props) => {
     const { account, endDate } = report;
 
     return (
-        <TableRow>
+        <TableRow data-testid="reportsTable:reportRow">
             <ReportsTableCell product={product} title={account} date={endDate} />
             <TableCell>
                 <div className="on-mobile-text-center">

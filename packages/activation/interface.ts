@@ -1,10 +1,23 @@
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
+export enum ImportAuthType {
+    IMAP = 'IMAP',
+    OAUTH = 'OAUTH',
+}
+
+export enum ImportProvider {
+    GOOGLE = 'google',
+    YAHOO = 'yahoo',
+    OUTLOOK = 'outlook',
+    DEFAULT = 'default',
+}
+
 export enum OAUTH_PROVIDER {
     GOOGLE = 1,
     OUTLOOK = 2,
 }
 
+/** @deprecated should be cleaned up and replaced by ImportProvider */
 export enum NON_OAUTH_PROVIDER {
     YAHOO = 'yahoo',
     OUTLOOK = 'outlook',
@@ -63,12 +76,6 @@ export interface IAOauthModalModel {
     isImportError?: boolean;
 }
 
-export type ImportPayloadType =
-    | MailImporterPayload
-    | CalendarImporterPayload
-    | ContactsImporterPayload
-    | DriveImporterPayload;
-
 export type CheckedProductMap = {
     [K in ImportType.MAIL | ImportType.CALENDAR | ImportType.CONTACTS /* | ImportType.DRIVE */]: boolean;
 };
@@ -125,10 +132,16 @@ export interface MailImportMapping {
 
 export interface MailImporterPayload {
     AddressID: string;
+    /** User app password */
     Code?: string;
+    /** Label used on  */
     ImportLabel?: Pick<Label, 'Name' | 'Color' | 'Type'>;
+    /** Unix timestamp. Received emails import starts after this date. */
     StartTime?: Date | number;
+    /** Unix timestamp. Received emails import stops after this date. */
+    EndTime?: number;
     Mapping: MailImportMapping[];
+    /** Bitmap of custom settings */
     CustomFields?: number;
 }
 
@@ -163,7 +176,7 @@ export enum IMPORT_ERROR {
     ACCOUNT_DOES_NOT_EXIST = 2011,
 }
 
-export interface ImportedFolder {
+interface ImportedFolder {
     SourceFolder: string;
     DestinationFolder?: MailImportDestinationFolder;
     Processed: number;
@@ -177,6 +190,7 @@ export enum MailImportGmailCategories {
     UPDATES = 'Updates',
 }
 
+/** @deprecated prefer using ApiMailImportFolder  */
 export interface ImportedMailFolder {
     DestinationCategory?: MailImportGmailCategories;
     DestinationFolder?: MailImportDestinationFolder;
@@ -189,10 +203,12 @@ export interface ImportedMailFolder {
 
 export enum MailImportPayloadError {
     MAX_FOLDERS_LIMIT_REACHED = 'Max folders limit reached',
-    FOLDER_NAMES_TOO_LONG = 'Folder names too long',
-    LABEL_NAMES_TOO_LONG = 'Label names too long',
-    UNAVAILABLE_NAMES = 'Unavailable names',
-    RESERVED_NAMES = 'Reserved names',
+    FOLDER_NAMES_TOO_LONG = 'Folder names too long', //OK
+    LABEL_NAMES_TOO_LONG = 'Label names too long', //ok
+    UNAVAILABLE_NAMES = 'Unavailable names', //ok
+    RESERVED_NAMES = 'Reserved names', //ok
+    EMPTY = 'EMPTY', //ok
+    MERGE_WARNING = 'MERGE_WARNING',
 }
 
 export enum CustomFieldsBitmap {
@@ -254,6 +270,7 @@ export enum ImportStatus {
     DELAYED = 6,
 }
 
+/** @deprecated prefer using ApiReportRollbackState */
 export enum ImportReportRollbackState {
     CANNOT_ROLLBACK = 0,
     CAN_ROLLBACK = 1,
@@ -261,7 +278,7 @@ export enum ImportReportRollbackState {
     ROLLED_BACK = 3,
 }
 
-export interface ImporterActiveProps {
+interface ImporterActiveProps {
     CreateTime: number;
     State: ImportStatus;
     ErrorCode?: ImportError;

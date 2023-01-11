@@ -1,6 +1,8 @@
 import '@testing-library/jest-dom';
 import fetch from 'cross-fetch';
 
+import ResizeObserver from './tests/mock/ResizeObserver';
+
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
 console.error = () => {};
 console.warn = () => {};
@@ -13,6 +15,7 @@ let prevFetch;
 beforeAll(() => {
     prevFetch = fetch;
     global.fetch = fetch;
+    window.ResizeObserver = ResizeObserver;
 });
 afterAll(() => {
     global.fetch = prevFetch;

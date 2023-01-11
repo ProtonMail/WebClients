@@ -15,7 +15,11 @@ const DefaultContactsInstructions = () => {
     const defaultContactsMessage = c('Import instructions')
         .jt`To import contacts to ${BRAND_NAME}, you need a ${knowledgeBaseLink}. Download this before you start the import process.`;
 
-    return <div className="mb1">{defaultContactsMessage}</div>;
+    return (
+        <div className="mb1" data-testid="Instruction:defaultContactInstructions">
+            {defaultContactsMessage}
+        </div>
+    );
 };
 
 export default DefaultContactsInstructions;

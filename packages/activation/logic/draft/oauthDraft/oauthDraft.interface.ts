@@ -1,6 +1,5 @@
 import { ImportType } from '@proton/activation/interface';
-
-import { ImportProvider } from '../../types/shared.types';
+import { ImportProvider } from '@proton/activation/interface';
 
 export type OauthDraftState = {
     step: 'idle' | 'started';

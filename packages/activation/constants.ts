@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import {
+    ImportProvider,
     MailImportGmailCategories,
     NON_OAUTH_PROVIDER,
     OAUTH_PROVIDER,
@@ -54,9 +55,10 @@ export const PORTS = {
 };
 
 export const EASY_SWITCH_EMAIL_PLACEHOLDER = {
-    [NON_OAUTH_PROVIDER.YAHOO]: `${USERNAME_PLACEHOLDER}@yahoo.com`,
-    [NON_OAUTH_PROVIDER.OUTLOOK]: `${USERNAME_PLACEHOLDER}@outlook.com`,
-    [NON_OAUTH_PROVIDER.DEFAULT]: EMAIL_PLACEHOLDER,
+    [ImportProvider.YAHOO]: `${USERNAME_PLACEHOLDER}@yahoo.com`,
+    [ImportProvider.OUTLOOK]: `${USERNAME_PLACEHOLDER}@outlook.com`,
+    [ImportProvider.GOOGLE]: `${USERNAME_PLACEHOLDER}@google.com`,
+    [ImportProvider.DEFAULT]: EMAIL_PLACEHOLDER,
 };
 
 /* Calendar specific */
