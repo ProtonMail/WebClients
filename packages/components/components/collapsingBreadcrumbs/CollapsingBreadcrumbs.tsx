@@ -2,6 +2,7 @@ import { Fragment, useMemo } from 'react';
 
 import { omit } from '@proton/shared/lib/helpers/object';
 
+import { classnames } from '../..';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import Icon from '../icon/Icon';
 import Breadcrumb from './Breadcrumb';
@@ -11,10 +12,11 @@ import { BreadcrumbInfo } from './interfaces';
 export type GroupedBreadcrumbs = (BreadcrumbInfo | BreadcrumbInfo[])[];
 
 interface Props {
+    className?: string;
     breadcrumbs: BreadcrumbInfo[];
 }
 
-const CollapsingBreadcrumbs = ({ breadcrumbs }: Props) => {
+const CollapsingBreadcrumbs = ({ breadcrumbs, className }: Props) => {
     const { isTinyMobile, isDesktop } = useActiveBreakpoint();
 
     const groupedBreadcrumbs = useMemo(
@@ -45,7 +47,7 @@ const CollapsingBreadcrumbs = ({ breadcrumbs }: Props) => {
     );
 
     return (
-        <ul className="collapsing-breadcrumbs unstyled">
+        <ul className={classnames(['collapsing-breadcrumbs unstyled', className])}>
             {groupedBreadcrumbs.map((group, i, arr) => {
                 const { key, text, richText, highlighted, ...breadcrumbProps } =
                     group instanceof Array ? group[0] : group;

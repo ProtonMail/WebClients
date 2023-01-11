@@ -76,6 +76,9 @@ export const expirationDate = {
 
 export const placeholder = {
     type: HeaderCellsPresets.Placeholder,
+    props: {
+        className: 'file-browser-list--context-menu-column',
+    },
 };
 
 export default {
