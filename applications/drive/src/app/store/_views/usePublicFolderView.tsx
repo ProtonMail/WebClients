@@ -10,8 +10,8 @@ import { usePublicLinksListing } from '../_links';
 import { useAbortSignal, useLinkName, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
-const DEFAULT_SORT = {
-    sortField: 'name' as SortField,
+export const DEFAULT_SORT = {
+    sortField: SortField.name,
     sortOrder: SORT_DIRECTION.ASC,
 };
 

@@ -1,0 +1,19 @@
+@import '~@proton/styles/scss/config';
+
+.shared-url-file-browser {
+	overflow: hidden;
+
+	@include media('<=small') {
+		margin-inline: -2.5vw;
+	}
+}
+
+.flex .shared-url-file-browser {
+	flex: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.opacity-on-hover-only-desktop.file-browser-list--download-button[disabled] {
+		opacity: 0;
+	}
+}

@@ -60,7 +60,7 @@ export const querySharedURLChildren = (
     return {
         method: 'get',
         url: `drive/urls/${token}/folders/${linkId}/children`,
-        params: { Page, PageSize, Sort, Desc, Thumbnails: 0 },
+        params: { Page, PageSize, Sort, Desc, Thumbnails: 1 },
     };
 };
 
