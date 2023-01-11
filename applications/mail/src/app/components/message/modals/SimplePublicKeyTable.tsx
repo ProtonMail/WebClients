@@ -69,9 +69,9 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
             <thead>
                 <tr>
                     <th scope="col" className="text-ellipsis">{c('Table header').t`Fingerprint`}</th>
-                    {!isNarrow && <th scope="col" className="text-ellipsis">{c('Table header').t`Created`}</th>}
-                    {!isTinyMobile && <th scope="col" className="text-ellipsis">{c('Table header').t`Expires`}</th>}
-                    {!isNarrow && <th scope="col" className="text-ellipsis">{c('Table header').t`Type`}</th>}
+                    {!isNarrow && <th scope="col" className="text-ellipsis w20">{c('Table header').t`Created`}</th>}
+                    {!isTinyMobile && <th scope="col" className="text-ellipsis w15">{c('Table header').t`Expires`}</th>}
+                    {!isNarrow && <th scope="col" className="text-ellipsis w15">{c('Table header').t`Type`}</th>}
                 </tr>
             </thead>
             <TableBody>
