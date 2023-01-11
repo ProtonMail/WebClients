@@ -8,10 +8,10 @@
 /**
  * A series that measures this and that
  */
-export interface MyDataSeries {
-    value: number;
-    labels: {
-        foo: 'bar' | 'baz';
-        foo2: 'bar2' | 'baz2';
-    };
+export interface MyDataSeriesV1 {
+  Value: number;
+  Labels: {
+    foo: "bar" | "baz";
+    foo_bar: "foobar" | "foobaz";
+  };
 }
