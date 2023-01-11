@@ -16,7 +16,11 @@ const DefaultCalendarInstructions = () => {
     const defaultCalendarMessage = c('Import instructions')
         .jt`To import a calendar to ${BRAND_NAME}, you need the ${knowledgeBaseLink}. Download this before you start the import process.`;
 
-    return <div className="mb1">{defaultCalendarMessage}</div>;
+    return (
+        <div className="mb1" data-testid="Instruction:defaultCalendarInstructions">
+            {defaultCalendarMessage}
+        </div>
+    );
 };
 
 export default DefaultCalendarInstructions;

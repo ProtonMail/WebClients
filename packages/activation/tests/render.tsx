@@ -5,6 +5,7 @@ import { Router } from 'react-router';
 import { render as originalRender } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
+import EasySwitchStoreProvider from '@proton/activation/logic/StoreProvider';
 import {
     ApiProvider,
     CacheProvider,
@@ -20,7 +21,6 @@ import FeaturesProvider from '@proton/components/containers/features/FeaturesPro
 import { APPS } from '@proton/shared/lib/constants';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 
-import EasySwitchStoreProvider from '../logic/StoreProvider';
 import fakeCache from './fakeCache';
 
 /**

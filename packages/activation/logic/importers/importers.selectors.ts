@@ -1,9 +1,9 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import { ApiImporterError, ApiImporterState } from '@proton/activation/api/api.interface';
 import orderBy from '@proton/utils/orderBy';
 
 import { EasySwitchState } from '../store';
-import { ApiImporterError, ApiImporterState } from '../types/api.types';
 import { ActiveImportID, ActiveImporter, ActiveImportersMap, Importer, ImportersMap } from './importers.interface';
 
 const selectImportersMap = (state: EasySwitchState): ImportersMap => state.importers.importers;

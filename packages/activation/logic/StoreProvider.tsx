@@ -1,11 +1,11 @@
 import { Provider } from 'react-redux';
 
+import { ApiEvent } from '@proton/activation/api/api.interface';
+import MainModal from '@proton/activation/components/Modals/MainModal';
 import { useSubscribeEventManager } from '@proton/components/hooks';
 
-import MainModal from '../components/Modals/MainModal';
 import { event } from './actions';
 import { useEasySwitchDispatch, useGenerateEasySwitchStore } from './store';
-import { ApiEvent } from './types/events.types';
 
 interface Props {
     children: JSX.Element | (JSX.Element | null)[] | null;

@@ -2,12 +2,12 @@ import { memo } from 'react';
 
 import { format } from 'date-fns';
 
+import { ActiveImportID } from '@proton/activation/logic/importers/importers.interface';
+import { selectActiveImporterById, selectImporterById } from '@proton/activation/logic/importers/importers.selectors';
+import { useEasySwitchSelector } from '@proton/activation/logic/store';
 import { TableCell, TableRow } from '@proton/components';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { ActiveImportID } from '../../../logic/importers/importers.interface';
-import { selectActiveImporterById, selectImporterById } from '../../../logic/importers/importers.selectors';
-import { useEasySwitchSelector } from '../../../logic/store';
 import ReportsTableCell from '../ReportsTableCell';
 import { getActiveImporterProgress } from './ImporterRow.helpers';
 import ImporterRowActions from './ImporterRowActions';

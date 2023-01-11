@@ -1,16 +1,20 @@
-import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType, OAUTH_PROVIDER } from '@proton/activation/interface';
+import EasySwitchOauthModal from '@proton/activation/_legacy/EasySwitchOauthModal';
+import {
+    EASY_SWITCH_SOURCE,
+    EasySwitchFeatureFlag,
+    ImportProvider,
+    ImportType,
+    OAUTH_PROVIDER,
+} from '@proton/activation/interface';
+import {
+    selectOauthDraftProducts,
+    selectOauthDraftProvider,
+} from '@proton/activation/logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchSelector } from '@proton/activation/logic/store';
 import { FeatureCode } from '@proton/components/containers/features';
 import { useAddresses, useFeature } from '@proton/components/hooks';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-
-import EasySwitchOauthModal from '../../../EasySwitchOauthModal';
-import {
-    selectOauthDraftProducts,
-    selectOauthDraftProvider,
-} from '../../../logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchSelector } from '../../../logic/store';
-import { ImportProvider } from '../../../logic/types/shared.types';
 
 interface Props {
     onClose: () => void;

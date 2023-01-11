@@ -1,29 +1,36 @@
-import { useAddresses } from '@proton/components/hooks';
-import noop from '@proton/utils/noop';
+import { useEffect } from 'react';
 
-import { selectImapDraftProvider } from '../../../../logic/draft/imapDraft/imapDraft.selector';
-import { useEasySwitchSelector } from '../../../../logic/store';
-import ImportMailModal from '../../../../mail/modals/ImportMailModal';
-import { newToOldImapProvider } from '../../../../utils';
+import { initImapMailImport } from '@proton/activation/logic/draft/imapDraft/imapDraft.actions';
+import {
+    selectImapDraftMailConfirmModalDisplay,
+    selectImapDraftMailImportStep,
+} from '@proton/activation/logic/draft/imapDraft/imapDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
 
-interface Props {
-    onClose: () => void;
-}
+import ConfirmLeaveModal from './ConfirmLeaveModal';
+import StepForm from './StepForm/StepForm';
+import StepImporting from './StepImporting/StepImporting';
+import StepPrepare from './StepPrepare/StepPrepare';
 
-const ImapMailModal = ({ onClose }: Props) => {
-    const [adresses, loadingAddresses] = useAddresses();
-    const provider = useEasySwitchSelector(selectImapDraftProvider);
+const ImapMailModal = () => {
+    const confirmLeave = useEasySwitchSelector(selectImapDraftMailConfirmModalDisplay);
+    const dispatch = useEasySwitchDispatch();
+    const step = useEasySwitchSelector(selectImapDraftMailImportStep);
 
-    const displayModal = !loadingAddresses && !!provider;
+    useEffect(() => {
+        if (step === undefined) {
+            dispatch(initImapMailImport());
+        }
+    }, []);
 
-    return displayModal ? (
-        <ImportMailModal
-            onExit={noop}
-            onClose={onClose}
-            addresses={adresses}
-            provider={newToOldImapProvider(provider)}
-        />
-    ) : null;
+    return (
+        <>
+            {confirmLeave && <ConfirmLeaveModal />}
+            {step && ['form', 'reconnect-form'].includes(step) && <StepForm />}
+            {step === 'prepare-import' && <StepPrepare />}
+            {step === 'importing' && <StepImporting />}
+        </>
+    );
 };
 
 export default ImapMailModal;
