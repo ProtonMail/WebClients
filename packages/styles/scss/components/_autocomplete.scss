@@ -21,7 +21,7 @@
 	}
 
 	div {
-		@extend .interactive;
+		@extend .interactive-pseudo;
 
 		&.selected {
 			background-color: var(--interaction-norm);

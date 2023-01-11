@@ -31,13 +31,29 @@
 	}
 
 	&:hover,
-	&:focus,
-	&:focus-within,
 	&.is-hover {
 		border-color: var(--button-hover-border-color, transparent);
 		background-color: var(--button-hover-background-color, transparent);
 		color: var(--button-hover-text-color, inherit);
 		opacity: 1; // In case the button is invisible as default
+	}
+
+	@supports not selector(:focus-visible) {
+		&:focus,
+		&:focus-within {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			color: var(--button-default-text-color, inherit);
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible,
+		&:has(*:focus-visible) {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			color: var(--button-default-text-color, inherit);
+		}
 	}
 
 	&:active,
@@ -72,8 +88,9 @@
 }
 
 .button-underline {
+	position: relative;
 	display: inline-block;
-	padding-block: em(5) em(6);
+	padding-block: em(7);
 	outline: none; // be careful of a11y
 	color: var(--button-default-text-color, inherit);
 	text-decoration: underline;
@@ -82,6 +99,38 @@
 	@supports selector(:focus-visible) {
 		// had to do this because of Safari
 		outline: unset;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset-block: em(4);
+		inset-inline: em(-3);
+		z-index: 1;
+		border-radius: var(--border-radius-md);
+		border: 1px solid transparent;
+		pointer-events: none;
+		transition: 0.15s easing(ease-out-quad);
+	}
+
+	@supports not selector(:focus-visible) {
+		&:focus,
+		&:focus-within {
+			&::after {
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible,
+		&:has(*:focus-visible) {
+			&::after {
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+		}
 	}
 
 	&,

@@ -29,8 +29,9 @@
     --field-norm: #bcbcd0;
     --field-hover: #aaaabd;
     --field-disabled: #ced2df;
-    --field-focus: #9397cd;
-    --field-highlight: #9397cd33;
+
+    --focus-outline: #9397cd;
+    --focus-ring: #9397cd33;
 
     --border-norm: #ced2df;
     --border-weak: #d9dfe8;

@@ -199,18 +199,20 @@
 	&-item {
 		&-button,
 		&-link {
-			@extend .interactive;
+			@extend .interactive-pseudo-inset;
+
+			position: relative;
+
+			&::after {
+				z-index: 2;
+			}
 
 			&,
 			&:hover,
-			&:focus,
+			&:focus-visible,
 			&:active {
 				color: var(--text-norm);
 				text-decoration: none;
-			}
-
-			&.active {
-				background-color: var(--interaction-default-hover);
 			}
 		}
 
@@ -235,6 +237,32 @@
 				color: var(--interaction-norm-contrast);
 				pointer-events: none;
 			}
+
+			@supports not selector(:focus-visible) {
+				&:focus {
+					z-index: 0;
+					background-color: unset;
+
+					&::after {
+						background-color: var(--interaction-norm);
+						box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+						z-index: -1;
+					}
+				}
+			}
+
+			@supports selector(:focus-visible) {
+				&:focus-visible {
+					z-index: 0;
+					background-color: unset;
+
+					&::after {
+						background-color: var(--interaction-norm);
+						box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+						z-index: -1;
+					}
+				}
+			}
 		}
 
 		// Dropdown item container which contains several elements
@@ -244,7 +272,7 @@
 
 			&,
 			&:hover,
-			&:focus,
+			&:focus-visible,
 			&:active {
 				color: var(--text-norm);
 				text-decoration: none;
@@ -287,6 +315,7 @@
 		padding: 1rem;
 		background-color: var(--background-norm);
 		box-shadow: var(--shadow-norm);
+		z-index: 1;
 
 		&-no-result {
 			color: var(--text-weak);

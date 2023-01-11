@@ -3,6 +3,7 @@
 		@extend .interactive;
 
 		border-radius: var(--border-radius-md);
+		border: 1px solid transparent;
 		padding: 0.25em;
 		margin-inline-end: -0.5em;
 

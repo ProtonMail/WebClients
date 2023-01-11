@@ -544,8 +544,9 @@ const HeaderMoreDropdown = ({
                                         onClick={() => setMessagePhishingModalOpen(true)}
                                         data-testid="message-view-more-dropdown:report-phishing"
                                     >
-                                        <Icon name="hook" className="mr0-5" />
-                                        <span className="flex-item-fluid myauto">{c('Action').t`Report phishing`}</span>
+                                        <Icon name="hook" className="mr0-5 color-danger" />
+                                        <span className="flex-item-fluid myauto color-danger">{c('Action')
+                                            .t`Report phishing`}</span>
                                     </DropdownMenuButton>
                                 </DropdownMenu>
                             );
