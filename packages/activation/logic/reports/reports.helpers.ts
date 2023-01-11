@@ -1,6 +1,6 @@
+import { ApiImportReportListResponse, ApiReport } from '@proton/activation/api/api.interface';
 import { ImportType } from '@proton/activation/interface';
 
-import { ApiImportReportListResponse, ApiReport } from '../types/api.types';
 import { Report, ReportSummariesMap, ReportSummary, ReportsMap } from './reports.interface';
 
 type NormalizeReport = (apiReport: ApiReport) => { report: Report; reportSummaries: ReportSummary[] };

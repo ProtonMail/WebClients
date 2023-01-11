@@ -2,9 +2,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { cancelImport, getImportsList } from '@proton/activation/api';
+import { ApiImportListResponse } from '@proton/activation/api/api.interface';
 
 import { EasySwitchThunkExtra } from '../store';
-import { ApiImportListResponse } from '../types/api.types';
 import { ActiveImportID } from './importers.interface';
 
 export const loadImporters = createAsyncThunk<ApiImportListResponse, undefined, EasySwitchThunkExtra>(

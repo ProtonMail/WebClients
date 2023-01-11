@@ -7,7 +7,7 @@ import { FeatureCode, Loader, ModalTwo, ModalTwoContent, ModalTwoHeader, useFeat
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 import useUserCalendars from '../CalendarModal/useUserCalendars';
-import ImapModalButton from './ImapProductsModalButtons';
+import ImapProductsModalButtons from './ImapProductsModalButtons';
 
 interface Props {
     onClick: (importType: ImportType) => void;
@@ -20,7 +20,14 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
     const loading = FFLoading || calendarLoading;
 
     return (
-        <ModalTwo key="easy-switch-imap-modal" className="easy-switch-modal" size="large" open onClose={onClose}>
+        <ModalTwo
+            key="easy-switch-imap-modal"
+            className="easy-switch-modal"
+            size="large"
+            open
+            onClose={onClose}
+            data-testid="MailModal:ProductModal"
+        >
             <ModalTwoHeader title={c('Title').t`What would you like to import?`} />
             <ModalTwoContent className="mb2">
                 {loading ? (
@@ -29,13 +36,13 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
                     <div>
                         <div className="mb2">{c('Info').t`You can import one data type at a time.`}</div>
                         <div className="import-buttons">
-                            <ImapModalButton
+                            <ImapProductsModalButtons
                                 importType={ImportType.MAIL}
                                 onClick={() => onClick(ImportType.MAIL)}
                                 disabled={!feature?.Value?.OtherMail}
                                 disabledTooltipTitle={c('Info').t`Temporarily unavailable. Please check back later.`}
                             />
-                            <ImapModalButton
+                            <ImapProductsModalButtons
                                 importType={ImportType.CALENDAR}
                                 onClick={() => onClick(ImportType.CALENDAR)}
                                 disabled={!feature?.Value?.OtherCalendar || userActiveCalendars.length === 0}
@@ -46,7 +53,7 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
                                         : c('Info').t`Temporarily unavailable. Please check back later.`
                                 }
                             />
-                            <ImapModalButton
+                            <ImapProductsModalButtons
                                 importType={ImportType.CONTACTS}
                                 onClick={() => onClick(ImportType.CONTACTS)}
                                 disabled={!feature?.Value?.OtherContacts}

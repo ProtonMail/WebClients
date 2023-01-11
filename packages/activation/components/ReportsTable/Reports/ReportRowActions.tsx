@@ -1,19 +1,17 @@
 import { c } from 'ttag';
 
-import { ImportReportRollbackState } from '@proton/activation/interface';
+import { ApiReportRollbackState } from '@proton/activation/api/api.interface';
+import { deleteReportSummary, rollbackReportSummary } from '@proton/activation/logic/reports/reports.actions';
+import { ReportSummaryID } from '@proton/activation/logic/reports/reports.interface';
+import { useEasySwitchDispatch } from '@proton/activation/logic/store';
 import { Button } from '@proton/atoms';
 import { Alert, AlertModal, DropdownActions, useModalState } from '@proton/components';
 import { useLoading } from '@proton/components/hooks';
 
-import { deleteReportSummary, rollbackReportSummary } from '../../../logic/reports/reports.actions';
-import { ReportSummaryID } from '../../../logic/reports/reports.interface';
-import { useEasySwitchDispatch } from '../../../logic/store';
-import { ApiReportRollbackState } from '../../../logic/types/api.types';
-
 interface Props {
     reportSummaryID: ReportSummaryID;
     // TODO: Remove ImportReportRollbackState when redux migration done
-    rollbackState: ImportReportRollbackState | ApiReportRollbackState | undefined;
+    rollbackState: ApiReportRollbackState | undefined;
 }
 
 const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
@@ -24,17 +22,17 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
     const [loadingDeleteRecord, withLoadingDeleteRecord] = useLoading();
     const [loadingUndoRecord, withLoadingUndoRecord] = useLoading();
 
-    // TODO: Move actions list to store
     const list =
-        loadingUndoRecord || rollbackState === ImportReportRollbackState.ROLLING_BACK
+        loadingUndoRecord || rollbackState === ApiReportRollbackState.ROLLING_BACK
             ? []
             : [
                   {
                       text: c('Action').t`Delete record`,
                       onClick: () => showDeleteModal(true),
                       loading: loadingDeleteRecord,
+                      'data-testid': 'ReportsTable:deleteReport',
                   },
-                  ...(rollbackState === ImportReportRollbackState.CAN_ROLLBACK && !loadingDeleteRecord
+                  ...(rollbackState === ApiReportRollbackState.CAN_ROLLBACK && !loadingDeleteRecord
                       ? [
                             {
                                 text: c('Action').t`Undo import`,
@@ -62,6 +60,7 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
                         >{c('Action').t`Remove`}</Button>,
                         <Button color="weak" onClick={() => showDeleteModal(false)}>{c('Action').t`Keep`}</Button>,
                     ]}
+                    data-testid="ReportsTable:deleteModal"
                 >
                     <Alert className="mb1" type="error">
                         {c('Warning').t`You will not see this import record in the list anymore.`}

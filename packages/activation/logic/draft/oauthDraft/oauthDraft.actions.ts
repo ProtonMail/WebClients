@@ -1,8 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import { ImportType } from '@proton/activation/interface';
-
-import { ImportProvider } from '../../types/shared.types';
+import { ImportProvider } from '@proton/activation/interface';
 
 const ACTION_PREFIX = 'draft/oauth';
 
