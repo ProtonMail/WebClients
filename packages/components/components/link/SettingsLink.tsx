@@ -7,6 +7,18 @@ import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { useConfig } from '../../hooks';
 import AppLink, { AppLinkProps } from './AppLink';
 
+const canOpenInSameTab = (APP_NAME: APP_NAMES, settingsApp: APP_NAMES | undefined, toSettingsForApp: APP_NAMES) => {
+    const isIframe = window.self !== window.top;
+
+    // If app is displayed inside an iframe, open settings in another tab
+    if (isIframe) {
+        return false;
+    }
+
+    // If in the "settings app", otherwise if any other app
+    return settingsApp ? settingsApp === toSettingsForApp : APP_NAME === toSettingsForApp;
+};
+
 export interface Props extends Omit<AppLinkProps, 'to' | 'toApp'> {
     path: string;
     app?: APP_NAMES;
@@ -30,16 +42,13 @@ const SettingsLink = ({ path, app, children, ...rest }: Props, ref: Ref<HTMLAnch
     const toSettingsForApp = (app !== APPS.PROTONACCOUNT ? app : undefined) || settingsApp || APP_NAME;
     const slug = getSlugFromApp(toSettingsForApp);
 
-    // If in the "settings app", otherwise if any other app
-    const isGoingToSameSettings = settingsApp ? settingsApp === toSettingsForApp : APP_NAME === toSettingsForApp;
-
     return (
         <AppLink
             to={`/${slug}${path}`}
             ref={ref}
             toApp={APPS.PROTONACCOUNT}
             // If going to settings for the same app
-            target={isGoingToSameSettings ? '_self' : '_blank'}
+            target={canOpenInSameTab(APP_NAME, settingsApp, toSettingsForApp) ? '_self' : '_blank'}
             {...rest}
         >
             {children}
