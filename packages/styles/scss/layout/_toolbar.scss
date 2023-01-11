@@ -21,6 +21,7 @@
 		display: flex; // alignment fix on Chrome
 		padding-inline: var(--padding-toolbar-button);
 		border-radius: var(--border-radius-md);
+		border: 1px solid transparent;
 
 		// Increase click area to toolbar height
 		&::before {
@@ -56,7 +57,7 @@
 	.select {
 		@extend .interactive;
 
-		border: unset;
+		border-color: transparent;
 		background-color: unset;
 		color: currentcolor;
 		block-size: auto;

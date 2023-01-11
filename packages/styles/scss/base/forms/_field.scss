@@ -64,8 +64,8 @@ $field-container: rem(260) !default;
 	&.focus,
 	&:focus-within,
 	&[aria-expanded='true']:not([aria-controls]) {
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 		background-color: var(--field-focus-background-color);
 		color: var(--field-focus-text-color);
 	}
@@ -73,8 +73,8 @@ $field-container: rem(260) !default;
 	@supports selector(:focus-visible) {
 		&:focus-visible {
 			// might seem useless for inputs like text (they DO trigger focus-visible), but will be useful for "fake" select (selectV2) - also separated for old Safaris < 15.3
-			border-color: var(--field-focus);
-			box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 			background-color: var(--field-focus-background-color);
 			color: var(--field-focus-text-color);
 		}

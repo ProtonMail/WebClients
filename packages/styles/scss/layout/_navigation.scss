@@ -79,17 +79,6 @@ $padding-block-link: rem(7) !default;
 		text-decoration: none;
 	}
 
-	&:focus {
-		border-color: transparent;
-		box-shadow: none;
-	}
-
-	&:focus-visible {
-		background-color: unset;
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
-	}
-
 	&--collapsible {
 		padding-block: rem(5.5);
 	}
@@ -97,16 +86,26 @@ $padding-block-link: rem(7) !default;
 
 // special case for calendar, label has checkbox inside
 label.navigation-link {
-	&:focus {
-		background-color: unset;
-		border-color: transparent;
-		box-shadow: none;
+	@supports not selector(:focus-visible) {
+		&:focus {
+			background-color: unset;
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		}
 	}
 
-	&:focus-within {
-		background-color: unset;
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+	@supports selector(:focus-visible) {
+		&:focus {
+			background-color: unset;
+			border-color: transparent;
+			box-shadow: none;
+		}
+
+		&:focus-within {
+			background-color: unset;
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		}
 	}
 }
 
@@ -152,12 +151,6 @@ label.navigation-link {
 		color: var(--text-norm);
 	}
 
-	&:focus-visible {
-		background-color: unset;
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
-	}
-
 	&[aria-expanded='true'],
 	&:focus-within {
 		background: var(--interaction-default);
@@ -197,17 +190,10 @@ label.navigation-link {
 			color: inherit;
 		}
 	}
-
-	&:focus-visible {
-		background-color: unset;
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
-	}
 }
 
 .navigation-link--expand:focus,
 .navigation-link--expand:hover,
-// .navigation-link-header-group-link:focus,
 .navigation-link-header-group-link:hover {
 	.navigation-icon--expand {
 		color: inherit;
