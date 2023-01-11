@@ -337,11 +337,7 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
         return finalizeLogin({ cache, loginPassword });
     }
 
-    const [user] = await Promise.all([
-        cache.data.user || syncUser(cache),
-        cache.data.salts || syncSalts(cache),
-        cache.data.addresses || syncAddresses(cache),
-    ]);
+    const [user] = await Promise.all([cache.data.user || syncUser(cache), cache.data.salts || syncSalts(cache)]);
 
     if (user.Keys.length === 0) {
         if (appName === APPS.PROTONACCOUNT && authResponse.TemporaryPassword) {
