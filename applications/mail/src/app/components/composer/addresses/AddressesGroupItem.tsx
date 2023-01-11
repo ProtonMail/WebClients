@@ -103,7 +103,7 @@ const AddressesGroupItem = ({
                 ref={itemRef}
                 {...dragHandlers}
             >
-                <span className="interactive flex flex-row flex-nowrap">
+                <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
                     <span className="inline-flex composer-addresses-item-icon pl0-5 ml0-1 pr0-25 no-pointer-events-children h100">
                         <Icon name="users" size={12} color={recipientGroup?.group?.Color} className="mauto" />
                     </span>
@@ -121,7 +121,7 @@ const AddressesGroupItem = ({
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
-                        className="composer-addresses-item-remove inline-flex p0-5 no-pointer-events-children h100 interactive"
+                        className="composer-addresses-item-remove inline-flex p0-5 no-pointer-events-children h100 relative interactive-pseudo-inset"
                         onClick={handleRemove}
                     >
                         <Icon name="cross" size={12} className="mauto" />

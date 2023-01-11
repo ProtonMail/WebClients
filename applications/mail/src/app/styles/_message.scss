@@ -337,9 +337,18 @@ $container-to-width: 4em !default;
 .message-container {
 	outline: none;
 
-	&:focus-visible {
-		border-color: var(--field-focus);
-		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+	@supports not selector(:focus-visible) {
+		&:focus {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		}
 	}
 }
 

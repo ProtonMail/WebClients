@@ -47,6 +47,10 @@
 	&-emoji-button {
 		padding: em(9); // to override toolbar-button padding
 
+		&::after {
+			content: unset; // remove interactive-pseudo styling here
+		}
+
 		// Specific to dark styles because the emoji button is displayed on top of the Rooster editor (which is white)
 		&-dark-style {
 			&,
@@ -68,5 +72,5 @@
 
 .is-focused {
 	border-color: var(--field-focus);
-	box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+	box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 }

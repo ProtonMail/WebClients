@@ -69,7 +69,7 @@ const ToolbarDropdown = (
                     disabled={disabled}
                     caretClassName="editor-toolbar-icon"
                     className={classnames([
-                        'editor-toolbar-button interactive composer-toolbar-fontDropDown max-w100 flex flex-align-items-center flex-nowrap',
+                        'editor-toolbar-button interactive-pseudo-inset composer-toolbar-fontDropDown max-w100 flex flex-align-items-center flex-nowrap',
                         className,
                     ])}
                     title={title}

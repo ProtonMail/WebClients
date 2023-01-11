@@ -183,7 +183,7 @@
 	.button-group-outline-#{$color} {
 		--button-group-border-color: var(--#{dash-join($group, $color, 'major-1')});
 
-		.button-group-item {
+		.button-group-item:not(:focus-visible) {
 			border-color: transparent;
 		}
 	}

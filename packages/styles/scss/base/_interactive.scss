@@ -1,7 +1,4 @@
-/*
- * Interactive gives only default colors on every states
- */
-.interactive {
+%interactive {
 	outline: none; // be careful of a11y
 	@supports selector(:focus-visible) {
 		// had to do this because of Safari
@@ -12,15 +9,14 @@
 	color: inherit;
 	transition: 0.15s easing(ease-out-quint), background-position 0s;
 
-	&:hover,
-	&:focus,
-	&:focus-within {
+	&:hover {
 		background-color: var(--interaction-default-hover);
 		color: inherit;
 	}
 
 	&:active,
 	&.is-active,
+	&.active,
 	&[aria-expanded='true'] {
 		background-color: var(--interaction-default-active);
 		color: inherit;
@@ -33,5 +29,103 @@
 		&:not([aria-busy='true']) {
 			opacity: 0.5;
 		}
+	}
+}
+
+/*
+ * Interactive gives only default colors on every states
+ * Default focus states
+ */
+.interactive {
+	@extend %interactive;
+
+	@supports not selector(:focus-visible) {
+		&:focus,
+		&:focus-within {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			color: inherit;
+
+			&:hover {
+				background-color: var(--interaction-default-hover);
+			}
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible,
+		&:has(*:focus-visible) {
+			border-color: var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			color: inherit;
+
+			&:hover {
+				background-color: var(--interaction-default-hover);
+			}
+		}
+	}
+}
+
+/*
+ * Interactive gives only default colors on every states
+ * Focus states as pseudo element (dropdown options, minicalendar,...)
+ */
+.interactive-pseudo {
+	@extend %interactive;
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		border-radius: var(--border-radius-sm);
+		border: 1px solid transparent;
+		pointer-events: none;
+		transition: 0.15s easing(ease-out-quad);
+	}
+
+	@supports not selector(:focus-visible) {
+		&:focus,
+		&:focus-within {
+			&::after {
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+
+			&:hover {
+				&::after {
+					background-color: var(--interaction-default-hover);
+				}
+			}
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible,
+		&:has(*:focus-visible) {
+			&::after {
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+
+			&:hover {
+				&::after {
+					background-color: var(--interaction-default-hover);
+				}
+			}
+		}
+	}
+}
+
+/*
+ * Interactive gives only default colors on every states
+ * Focus states as pseudo element with inset to deal with overflow-hidden
+ */
+.interactive-pseudo-inset {
+	@extend %interactive;
+	@extend .interactive-pseudo;
+
+	&::after {
+		inset: $focus-ring-size;
 	}
 }
