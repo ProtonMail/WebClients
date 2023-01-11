@@ -108,24 +108,24 @@
 	}
 
 	&--in {
-		animation-duration: 0.3s;
+		animation-duration: 0.35s;
 		animation-fill-mode: both;
-		animation-timing-function: easing(ease-out-quad);
+		animation-timing-function: easing(ease-in-out);
 		animation-name: anime-notification-in;
 	}
 
 	&--out {
-		animation-duration: 0.25s;
+		animation-duration: 0.3s;
 		animation-fill-mode: both;
-		animation-timing-function: easing(ease-in-quad);
+		animation-timing-function: easing(ease-in-out);
 		animation-name: anime-notification-out;
 	}
 
 	&--out-duplicate {
-		animation-duration: 0.25s;
+		animation-duration: 0.3s;
 		animation-fill-mode: both;
-		animation-timing-function: easing(ease-in-quad);
-		animation-name: anime-notification-out;
+		animation-timing-function: easing(ease-in-out);
+		animation-name: anime-notification-out-duplicate;
 	}
 
 	&--error,
@@ -156,6 +156,18 @@
 	100% {
 		opacity: 0;
 		transform: translateY(-20%);
+	}
+}
+
+@keyframes anime-notification-out-duplicate {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(0);
 	}
 }
 
