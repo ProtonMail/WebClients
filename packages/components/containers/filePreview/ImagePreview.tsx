@@ -7,19 +7,26 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../..';
 import useElementRect from '../../hooks/useElementRect';
 import UnsupportedPreview from './UnsupportedPreview';
 import ZoomControl from './ZoomControl';
 
 interface Props {
     mimeType: string;
+    fileName?: string;
     onDownload?: () => void;
     contents?: Uint8Array[];
     placeholderSrc?: string;
     isLoading: boolean;
+    isZoomEnabled?: boolean;
 }
+
+type ElementDimensions = {
+    height: number;
+    width: number;
+};
 
 const FALLBACK_IMAGE_DIMENSION_VALUE = window.innerHeight / 2;
 
@@ -34,7 +41,7 @@ const DEFAULT_IMAGE_DIMENSION_LIMIT_HEIGHT = 1400;
  * will be used, so the image preview is visible.
  * https://bugzilla.mozilla.org/show_bug.cgi?id=1328124
  */
-function getImageNaturalDimensions(imageElement: HTMLImageElement | null) {
+function getImageDimensions(imageElement: HTMLImageElement | null): ElementDimensions {
     return {
         height: imageElement?.naturalHeight || FALLBACK_IMAGE_DIMENSION_VALUE,
         width: imageElement?.naturalWidth || FALLBACK_IMAGE_DIMENSION_VALUE,
@@ -57,41 +64,72 @@ function sanitizeSVG(contents: Uint8Array[]): Uint8Array[] {
     return [stringToUint8Array(sanitzedSVG)];
 }
 
-const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, placeholderSrc }: Props) => {
-    const imageRef = useRef<HTMLImageElement>(null);
+function calcImageScaleToFitContainer(imageDimensions: ElementDimensions, containerDimensions: DOMRect) {
+    const heightLimit = Math.min(containerDimensions.height, DEFAULT_IMAGE_DIMENSION_LIMIT_HEIGHT);
+    const widthLimit = Math.min(containerDimensions.width, DEFAULT_IMAGE_DIMENSION_LIMIT_WIDTH);
+
+    const heightRatio = heightLimit / imageDimensions.height;
+    const widthRatio = widthLimit / imageDimensions.width;
+
+    const scale = Math.min(heightRatio, widthRatio);
+
+    return scale;
+}
+
+const scaleDimensions = (dimensions: ElementDimensions, scale: number) => {
+    return {
+        height: dimensions.height * scale,
+        width: dimensions.width * scale,
+    };
+};
+
+const ImagePreview = ({
+    isLoading = false,
+    isZoomEnabled = true,
+    mimeType,
+    contents,
+    onDownload,
+    placeholderSrc,
+    fileName,
+}: Props) => {
+    const imageLowResRef = useRef<HTMLImageElement>(null);
+    const imageHiResRef = useRef<HTMLImageElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const containerBounds = useElementRect(containerRef);
 
+    const [imageData, setImageData] = useState({ src: '' });
     const [error, setError] = useState(false);
-    const [thumbnailScale, setThumbnailScale] = useState(0);
-    const [scale, setScale] = useState(0);
-    const [imageData, setImageData] = useState({
-        src: '',
-    });
-    const [ready, setReady] = useState(false);
+    const [imageScale, setImageScale] = useState(0);
+    const [isHiResImageRendered, setIsHiResImageRendered] = useState(false);
+    const [isLowResImageHidden, setIsLowResImageHidden] = useState(false);
+    const [imageStyles, setImageStyles] = useState({});
+    const [fullImageDimensions, setFullImageDimensions] = useState<{ width: number; height: number } | null>(null);
+
     const timeoutId = useRef<ReturnType<typeof setTimeout>>();
 
-    const handleZoomOut = () => setScale((zoom) => (zoom ? zoom * 0.9 : 1));
-    const handleZoomIn = () => setScale((zoom) => (zoom ? zoom * 1.1 : 1));
+    const handleZoomOut = () => setImageScale((zoom) => (zoom ? zoom * 0.9 : 1));
 
-    const fitToContainer = () => {
-        if (!imageRef.current || !containerBounds) {
+    const handleZoomIn = () => setImageScale((zoom) => (zoom ? zoom * 1.1 : 1));
+
+    useEffect(() => {
+        if (!fullImageDimensions) {
+            return;
+        }
+        setImageStyles(scaleDimensions(fullImageDimensions, imageScale));
+    }, [fullImageDimensions, imageScale]);
+
+    const fitImageToContainer = (imageElement: HTMLImageElement | null) => {
+        if (!containerBounds || !imageElement) {
             return;
         }
 
-        const heightLimit = Math.min(containerBounds.height, DEFAULT_IMAGE_DIMENSION_LIMIT_HEIGHT);
-        const widthLimit = Math.min(containerBounds.width, DEFAULT_IMAGE_DIMENSION_LIMIT_WIDTH);
+        // There is issue with svg since during zoom they change their size, so we used the original savedSize
+        const dimensions = fullImageDimensions ? fullImageDimensions : getImageDimensions(imageElement);
 
-        const dimensions = getImageNaturalDimensions(imageRef.current);
-        const heightRatio = heightLimit / dimensions.height;
-        const widthRatio = widthLimit / dimensions.width;
-
-        const scale = Math.min(heightRatio, widthRatio);
-
-        if (isLoading) {
-            setThumbnailScale(scale);
-        } else {
-            setScale(scale);
+        const scale = calcImageScaleToFitContainer(dimensions, containerBounds);
+        if (scale) {
+            setImageScale(scale);
+            setImageStyles(scaleDimensions(dimensions, scale));
         }
     };
 
@@ -109,22 +147,20 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
             // 1. Data of full-size image loads
             // 2. We hide the thumbnail
             // 3. Before the full image is properly inserted into DOM, we see preview overlay background
-            setTimeout(() => setReady(true), 200);
+            setTimeout(() => setIsHiResImageRendered(true), 200);
         } else {
-            setReady(true);
+            setIsHiResImageRendered(true);
         }
 
-        fitToContainer();
+        fitImageToContainer(imageHiResRef.current);
+        setFullImageDimensions(getImageDimensions(imageHiResRef.current));
     };
 
-    const dimensions = getImageNaturalDimensions(imageRef.current);
-    const scaledDimensions = {
-        height: dimensions.height * (scale || thumbnailScale),
-        width: dimensions.width * (scale || thumbnailScale),
+    const handleTransitionEnd = (e: React.TransitionEvent) => {
+        if (e.propertyName === 'opacity') {
+            setIsLowResImageHidden(isHiResImageRendered);
+        }
     };
-
-    const styles = isLoading ? {} : scaledDimensions;
-    const shouldHideZoomControls = !ready;
 
     useEffect(() => {
         if (error) {
@@ -170,68 +206,64 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
                     <div
                         className="flex-no-min-children mauto relative"
                         style={{
-                            ...scaledDimensions,
-                            // TODO: fix dimensions calculation and uncomment
-                            // Add checkered background to override any theme
-                            // so transparent images are better visible.
-                            // background: isLoading
-                            //     ? ''
-                            //     : 'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%) 50% / 20px 20px',
+                            ...imageStyles,
+                            overflow: !isLowResImageHidden && placeholderSrc ? 'hidden' : 'initial',
                         }}
                     >
                         {!isLoading && (
-                            <img
-                                onLoad={handleFullImageLoaded}
-                                onError={handleBrokenImage}
-                                className={classnames(['file-preview-image file-preview-image-full-size'])}
-                                style={styles}
-                                src={imageData.src}
-                                alt={c('Info').t`Preview`}
+                            <div
+                                className={clsx(['file-preview-image file-preview-image-full-size'])}
+                                style={{
+                                    ...imageStyles,
+                                    background: 'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%)',
+                                    backgroundSize: '40px 40px',
+                                    transform: 'scale(0.99)',
+                                }}
                             />
                         )}
-                        <div
-                            style={{
-                                ...scaledDimensions,
-                                overflow: 'hidden',
-                                // restrict blurred image to container by faking a new viewport
-                                transform: 'translateZ(0)',
-                            }}
-                        >
+                        {!isLoading && (
                             <img
-                                ref={imageRef}
-                                onLoad={fitToContainer}
+                                ref={imageHiResRef}
+                                onLoad={handleFullImageLoaded}
                                 onError={handleBrokenImage}
-                                className={classnames(['file-preview-image w100', ready && 'hide'])}
+                                className={clsx(['file-preview-image file-preview-image-full-size'])}
+                                style={imageStyles}
+                                src={imageData.src}
+                                alt={c('Info').t`${fileName}: full-size image`}
+                            />
+                        )}
+                        {!isLowResImageHidden && placeholderSrc && (
+                            <img
+                                ref={imageLowResRef}
+                                onLoad={() => fitImageToContainer(imageLowResRef.current)}
+                                onError={handleBrokenImage}
+                                className={clsx(['file-preview-image', isHiResImageRendered && 'hide'])}
                                 style={{
+                                    ...imageStyles,
                                     // Blurring an image this way leads to its edges to become transparent.
                                     // To compensate this, we apply scale transformation.
                                     filter: 'blur(3px)',
                                     transform: 'scale(1.03)',
                                 }}
                                 src={placeholderSrc}
-                                alt={c('Info').t`Preview`}
+                                alt={c('Info').t`${fileName}: low-resolution preview`}
+                                onTransitionEnd={handleTransitionEnd}
                             />
-                        </div>
+                        )}
                     </div>
                 )}
             </div>
-            {/* TODO: check if these conditions can be simplified/cleaned up. Those for loading
-            should more or less match the ones for zoom controls. */}
-            {!ready && (
-                <div
-                    className={classnames([
-                        'file-preview-loading w100 mb2 flex flex-justify-center flex-align-items-center',
-                    ])}
-                >
+            {!isHiResImageRendered && (
+                <div className="file-preview-loading w100 mb2 flex flex-justify-center flex-align-items-center">
                     <CircleLoader />
                     <span className="ml1">{c('Info').t`Loading...`}</span>
                 </div>
             )}
-            {!error && (
+            {isZoomEnabled && !error && (
                 <ZoomControl
-                    className={shouldHideZoomControls ? 'visibility-hidden' : ''}
-                    onReset={fitToContainer}
-                    scale={scale}
+                    className={isHiResImageRendered ? '' : 'visibility-hidden'}
+                    onReset={() => fitImageToContainer(imageHiResRef.current)}
+                    scale={imageScale}
                     onZoomIn={handleZoomIn}
                     onZoomOut={handleZoomOut}
                 />

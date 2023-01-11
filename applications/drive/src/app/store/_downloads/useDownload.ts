@@ -174,7 +174,7 @@ export default function useDownload() {
                     getKeys: getKeysGenerator(),
                     onError: reject,
                     onNetworkError: reject,
-                    onSignatureIssue: async (abortSignal, link, signatureIssues) => {
+                    onSignatureIssue: async (abortSignal, _link, signatureIssues) => {
                         // Ignore manifest as that needs to download the whole file.
                         if (signatureIssues.manifest) {
                             delete signatureIssues.manifest;

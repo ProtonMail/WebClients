@@ -1,0 +1,41 @@
+@import '~@proton/styles/scss/config';
+
+.shared-page-layout {
+	&-loader {
+		color: var(--primary);
+	}
+
+	&-container {
+		inline-size: 95vw;
+		max-inline-size: rem(1024);
+		margin-inline: auto;
+		border-radius: var(--border-radius-lg);
+		min-block-size: rem(315); // To fit exactly 4 items on different screens before its expanded.
+		padding-block: 2em;
+
+		@include media('>small') {
+			padding-block-end: 3em;
+		}
+
+		@include media('>1230px') {
+			padding-block-end: 0;
+		}
+	}
+
+	&-encryption-block-text {
+		color: var(--signal-success);
+	}
+}
+
+.shared-folder-empty-placeholder-container {
+	position: relative;
+	padding-block-start: rem(38);
+}
+
+.shared-folder-empty-placeholder-text {
+	max-inline-size: rem(380);
+}
+
+.collapsing-breadcrumbs.shared-folder-header-breadcrumbs {
+	margin-inline-start: -0.25em;
+}
