@@ -1,3 +1,22 @@
+## Release 5.0.15.0 — December 18th, 2022
+
+### New features
+
+-   Added a right-hand side panel giving users the ability to use Proton Mail and view upcoming Proton Calendar events or contacts in parallel
+_   Enabled SMTP submission setting for Mail Business plans
+
+### Improvements
+
+-   Added fallback fonts in the composer when not supported by the OS
+
+### Bug fixes
+
+-   Removed block domain option to match the app capability
+-   Fixed deleted drafts that are opened from the encrypted search results
+_   Fixed ordered list display when the font size is big in the composer
+_   Fix port number missing in link confirmation
+_   Other small bug fixes
+
 ## Release 5.0.14.0 — December 14th, 2022
 
 ### Bug fixes
