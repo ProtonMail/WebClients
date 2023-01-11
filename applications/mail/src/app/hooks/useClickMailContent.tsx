@@ -13,12 +13,13 @@ export const useClickMailContent = (handler: (event: Event) => void) => {
 
     const mailContentRef = useContext(MailContentRefContext);
 
+    // mousedown and touchstart avoid issue with the click in portal (modal, notification, composer, dropdown)
     useEffect(() => {
-        mailContentRef.current?.addEventListener('click', stableHandler, { passive: true });
+        mailContentRef.current?.addEventListener('mousedown', stableHandler, { passive: true });
         mailContentRef.current?.addEventListener('touchstart', stableHandler, { passive: true });
 
         return () => {
-            mailContentRef.current?.removeEventListener('click', stableHandler);
+            mailContentRef.current?.removeEventListener('mousedown', stableHandler);
             mailContentRef.current?.removeEventListener('touchstart', stableHandler);
         };
     }, []);
