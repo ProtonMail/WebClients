@@ -58,7 +58,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     const init = (conversationID: string): ConversationStateOptional | undefined => {
         if (conversationState) {
             // Conversation updated from elements can be desynchronized with messages in store
-            if (conversationState.Conversation.NumMessages === conversationState.Messages?.length) {
+            if (conversationState.Conversation.NumMessages !== conversationState.Messages?.length) {
                 void call();
             }
             return conversationState;
