@@ -1,6 +1,5 @@
 import { useApi, useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { parseLabelIDsInEvent } from '../../helpers/elements';
@@ -55,14 +54,7 @@ export const useConversationsEvent = () => {
             if (Action === EVENT_ACTIONS.DELETE) {
                 void dispatch(eventDelete(ID));
             }
-            if (Action === EVENT_ACTIONS.CREATE) {
-                captureMessage('Create conversation event received when it should not be possible');
-            }
-            if (
-                Action === EVENT_ACTIONS.UPDATE_DRAFT ||
-                Action === EVENT_ACTIONS.UPDATE_FLAGS ||
-                Action === EVENT_ACTIONS.CREATE
-            ) {
+            if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
                 // Try to update the conversation from event data without reloading it
                 try {
                     const updatedConversation: Conversation = parseLabelIDsInEvent(
@@ -71,10 +63,6 @@ export const useConversationsEvent = () => {
                     );
 
                     dispatch(eventConversationUpdate({ ID, updatedConversation }));
-
-                    if (Conversation?.NumMessages !== currentConversation?.Conversation?.NumMessages) {
-                        void dispatch(loadAction({ api, conversationID: ID, messageID: undefined }));
-                    }
                 } catch (error: any) {
                     console.warn('Something went wrong on updating a conversation from an event.', error);
                     void dispatch(loadAction({ api, conversationID: ID, messageID: undefined }));
