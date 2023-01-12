@@ -23,7 +23,7 @@ export default (modals: Modal[], setModals: Dispatch<SetStateAction<Modal[]>>): 
         });
     };
 
-    const createModal = (content: JSX.Element | undefined, id = Math.random().toString(36).substr(2, 9)) => {
+    const createModal = (content: JSX.Element | undefined, id = Math.random().toString(36).slice(2, 11)) => {
         setModals((oldModals) => {
             return oldModals.find(({ id: otherId }) => id === otherId)
                 ? oldModals
