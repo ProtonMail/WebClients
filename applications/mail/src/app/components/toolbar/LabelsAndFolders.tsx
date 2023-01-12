@@ -2,7 +2,7 @@ import { Ref } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd, Vr } from '@proton/atoms';
+import { Kbd } from '@proton/atoms';
 import { DropdownSizeUnit, Icon, useMailSettings } from '@proton/components';
 
 import { Breakpoints } from '../../models/utils';
@@ -53,7 +53,6 @@ const LabelsAndFolders = ({
 
     return (
         <>
-            <Vr />
             <ToolbarDropdown
                 autoClose={false}
                 dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
