@@ -483,10 +483,10 @@
       "Not spam": [
         "Nem levélszemét"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -534,11 +534,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Reload": [
         "Újratöltés"
@@ -2992,9 +2992,6 @@
       "Please set a recovery/notification email first": [
         "Először állítson be egy helyreállítási és értesítési e-mailt"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Próbálja meg újra az azonosítást vagy ellenőrizze a jogosultságok megadását."
-      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Váltson nagyobb üzleti csomagra, egynél több felhasználval, a többfelhasználós lehetőségekhez"
       ],
@@ -3145,9 +3142,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Nem lehet kapcsolódni a szolgáltatójához."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Hibás helyreállító jelmondat. Próbálja meg újra vagy próbáljon másik helyreállítási módot."
@@ -4005,9 +3999,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "Az IMAP elérés engedélyezve van a Yahoo fiókon."
       ],
-      "Invalid IMAP port": [
-        "Érvénytelen IMAP port"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Túl sok lekérdezés történt. Próbálja újra egy kis várakozás után."
       ],
@@ -4047,17 +4038,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Kattintson a ${ boldManage } elemre a lehetőségek megnyitásához."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a ${ BRAND_NAME }ba importál."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Hozzon létre egy ${ boldAppPassword }-t és azt használja a belépési jelszava helyett amikor a ${ BRAND_NAME } kéri."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Nyissa meg a ${ boldAccountInfo } részt a személyes adatainál, a ${ yahooMailLink } fiókjában."
@@ -4065,20 +4050,8 @@
       "Go to ${ boldAccountSecurity }.": [
         "Nyissa meg a ${ boldAccountSecurity } részt."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Nyissa meg az Outlook ${ securitySettingsLink } részt."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Ha a kétlépéses hitelesítés ki van kapcsolva, kapcsolja be."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Nyissa meg a ${ yahooMailLink } névjegyeket."
-      ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Nyissa meg az Outlook ${ outlookContactsLink } részt."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Válassza ki a ${ boldExportContacts } elemet és adja meg, hogy mely névjegyeket exportálja."
       ],
       "Select ${ boldExportCSV }.": [
         "Válassza az ${ boldExportCSV } elemet."
@@ -4094,26 +4067,11 @@
       "app password": [
         "alkalmazásjelszó"
       ],
-      "Can view all details": [
-        "Megjeleníthet minden részletet"
-      ],
       "Export": [
         "Exportálás"
       ],
-      "Export contacts": [
-        "Névjegyek exportálása"
-      ],
       "Export to CSV file": [
         "Exportálás CSV fájlba"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Kezelés"
-      ],
-      "Publish a calendar": [
-        "Naptár publikálása"
       ]
     },
     "Import instructions link": {
@@ -4122,9 +4080,6 @@
       ],
       "app password or enable IMAP": [
         "alkalmazásjelszavat vagy engedélyezni az IMAP elérést"
-      ],
-      "contacts": [
-        "névjegyek"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV vagy VCF (vCard) fájl"
@@ -4135,23 +4090,11 @@
       "ICS file": [
         "ICS fájl"
       ],
-      "security settings": [
-        "biztonsági beállítások"
-      ],
-      "shared calendars": [
-        "megosztott naptárak"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Kattintson az ${ boldICS } hivatkozásra és töltse le a fájlt."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Nyissa meg a ${ calendarLink } részt az Outlook beállításaiban."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Nyissa meg a ${ calendarViewLink }-t a Yahoo Mailben."
       ],
@@ -4160,9 +4103,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Válassza az ${ boldExport } elemet a naptár ICS fájlként való exportálásához."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "A ${ boldPublish } alatt, válassza ki a naptárat amelyet importálni szeretne. Állítsa a jogosultságokat ${ boldCanViewAllDetails } típusúra és publikálja."
       ]
     },
     "Import key": {
@@ -4501,7 +4441,7 @@
         "Az összeg a minimum alatt (${ amount })."
       ],
       "An error occured while communicating with the extension": [
-        "Hiba lépett fel a kiegészítővel való kommunikáció során"
+        "An error occurred while communicating with the extension"
       ],
       "and": [
         "és"
@@ -6736,14 +6676,8 @@
       "Folder location": [
         "Mappa helye"
       ],
-      "From: ${ emailFrom }": [
-        "Forrás: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "Forrás: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Forrás: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Ajándék kód"
@@ -7092,12 +7026,6 @@
       ],
       "To: ${ emailAddress }": [
         "Ide: ${ emailAddress }"
-      ],
-      "To: ${ emailTo }": [
-        "Cél: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "Cél: ${ PMEmailAddress }"
       ],
       "Two-password mode": [
         "Két jelszavas mód"
@@ -7493,26 +7421,17 @@
       "How to import calendars from another service": [
         "Naptárak importálása más szolgáltatótól"
       ],
-      "How to import calendars from Outlook": [
-        "Naptárak importálása az Outlookból"
-      ],
       "How to import calendars from Yahoo": [
         "Naptárak importálása a Yahoo-tól"
       ],
       "How to import contacts from another service": [
         "Névjegyek importálása más szolgáltatótól"
       ],
-      "How to import contacts from Outlook": [
-        "Névjegyek importálása az Outlookból"
-      ],
       "How to import contacts from Yahoo": [
         "Névjegyek importálása a Yahoo-tól"
       ],
       "How to import emails from another service": [
         "E-mailek importálása más szolgáltatótól"
-      ],
-      "How to import emails from Outlook": [
-        "E-mailek importálása az Outlookból"
       ],
       "How to import emails from Yahoo": [
         "E-mailek importálása a Yahoo-tól"

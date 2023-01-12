@@ -425,10 +425,10 @@
       "Not spam": [
         "Não é spam"
       ],
-      "OK": [
+      "Ok": [
         "Aceitar"
       ],
-      "Ok": [
+      "OK": [
         "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -476,11 +476,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -2326,9 +2326,6 @@
       "Please set a recovery/notification email first": [
         "Por favor, defina um email de recuperação/notificação"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Por favor, tente autenticar novamente e certifique-se de que as permissões estão definidas correctamente."
-      ],
       "Process aborted": [
         "Processo abortado"
       ],
@@ -2410,9 +2407,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Por favor, siga as instruções abaixo para retomar a assinatura."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Impossível ligar ao seu fornecedor de serviços."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Código de verificação errado. Por favor, verifique se copiou o código de verificação correctamente e tente de novo. Pode levar até 24 horas para que as alterações surtam efeito."
@@ -2994,9 +2988,6 @@
       "2-step verification is enabled in your external account.": [
         "A verificação em 2 passos está ativada na sua conta externa."
       ],
-      "Invalid IMAP port": [
-        "Porta IMAP inválida"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiados pedidos recentes. Por favor, tente mais tarde."
       ],
@@ -3032,29 +3023,14 @@
       ],
       "Export": [
         "Exportar"
-      ],
-      "Export contacts": [
-        "Exportar contactos"
-      ],
-      "Manage": [
-        "Gerir"
       ]
     },
     "Import instructions link": {
       "app password": [
         "senha da aplicação"
       ],
-      "contacts": [
-        "contactos"
-      ],
       "ICS file": [
         "Ficheiro ICS"
-      ],
-      "security settings": [
-        "definições de segurança"
-      ],
-      "shared calendars": [
-        "agendas partilhadas"
       ],
       "Yahoo": [
         "Yahoo"
@@ -5374,26 +5350,17 @@
       "How to import calendars from another service": [
         "Como importar agendas de outro serviço"
       ],
-      "How to import calendars from Outlook": [
-        "Como importar agendas do Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Como importar agendas do Yahoo"
       ],
       "How to import contacts from another service": [
         "Como importar contatos de outro serviço"
       ],
-      "How to import contacts from Outlook": [
-        "Como importar contatos do Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Como importar contatos do Yahoo"
       ],
       "How to import emails from another service": [
         "Como importar e-mails de outro serviço"
-      ],
-      "How to import emails from Outlook": [
-        "Como importar e-mails do Outlook"
       ],
       "How to import emails from Yahoo": [
         "Como importar e-mails do Yahoo"

@@ -459,6 +459,12 @@
       "Manage communication preferences": [
         "Hantera kommunikationsinställningar"
       ],
+      "Manage folders": [
+        "Hantera mappar"
+      ],
+      "Manage labels": [
+        "Hantera etiketter"
+      ],
       "Mark as default": [
         "Markera som standard"
       ],
@@ -501,11 +507,11 @@
       "Not spam": [
         "Inte skräppost"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -555,11 +561,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -2872,6 +2878,9 @@
       "Email address disabled": [
         "E-postadress inaktiverad"
       ],
+      "Email address is required": [
+        "E-postadress är obligatoriskt"
+      ],
       "Email is not valid": [
         "E-post är inte giltig"
       ],
@@ -2901,6 +2910,9 @@
       ],
       "Folder name cannot be empty.": [
         "Mappnamn kan inte vara tomt."
+      ],
+      "IMAP server is required": [
+        "IMAP-server är obligatoriskt"
       ],
       "Incorrect login credentials. Please try again.": [
         "Felaktiga inloggningsuppgifter. Försök igen."
@@ -3005,6 +3017,9 @@
       "Organization not recognized. Try again.": [
         "Organisation känns inte igen. Försök igen."
       ],
+      "Password is required": [
+        "Lösenord är obligatoriskt"
+      ],
       "Passwords do not match": [
         "Lösenorden matchar inte"
       ],
@@ -3048,14 +3063,14 @@
       "Please set a recovery/notification email first": [
         "Ställ in en e-postadress för återställning/avisering först"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Försök att återautentisera och se till att behörigheterna är korrekt inställda."
-      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Uppgradera till en företagsprenumeration med mer än 1 användare för att få support för flera användare"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
+      ],
+      "Port is required": [
+        "Port är obligatoriskt"
       ],
       "Primary address key is not decrypted": [
         "Primär adressnyckel är inte avkrypterad"
@@ -3207,9 +3222,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi stoppade DKIM-signering på grund av problem med din DNS-konfiguration. Följ instruktionerna nedan för att återuppta signeringen."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Vi kunde inte ansluta till din tjänsteleverantör."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
@@ -4095,9 +4107,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "IMAP-åtkomst är aktiverat i ditt Yahoo-konto."
       ],
-      "Invalid IMAP port": [
-        "Ogiltig IMAP-port"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "För många förfrågningar. Försök igen lite senare."
       ],
@@ -4137,17 +4146,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Klicka på ${ boldManage } för att expandera alternativmenyn."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "Beroende på din e-postleverantör kan du behöva skapa en ${ knowledgeBaseLink } först innan du kan importera till ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Expandera rullgardinsmenyn genom att klicka på de 3 prickarna (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Generera ett ${ boldAppPassword } och använd det istället för ditt vanliga lösenord när du uppmanas av ${ BRAND_NAME }."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Generera ett ${ boldAppPassword } och använd det istället för ditt vanliga lösenord när du uppmanas av ${ BRAND_NAME }."
@@ -4158,26 +4161,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "Gå till ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Gå till Outlook ${ securitySettingsLink }."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Om tvåstegsverifiering är avstängd, slå på det."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Öppna dina ${ yahooMailLink }-kontakter."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Öppna din Outlook ${ outlookContactsLink }."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Välj ${ boldExportContacts } och välj vilka kontakter som ska exporteras."
-      ],
       "Select ${ boldExportCSV }.": [
         "Välj ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "För att importera en kalender till ${ BRAND_NAME } behöver du ${ knowledgeBaseLink }. Ladda ner den från Outlook i tre enkla steg:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "För att importera en kalender till ${ BRAND_NAME } behöver du ${ knowledgeBaseLink }. Ladda ner den från Yahoo i tre enkla steg:"
@@ -4185,17 +4173,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "För att importera en kalender till ${ BRAND_NAME } behöver du ${ knowledgeBaseLink }. Ladda ner denna innan du startar importprocessen."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "För att importera kontakter till ${ BRAND_NAME } behöver du en ${ knowledgeBaseLink }. Ladda ner den från Outlook i tre enkla steg:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "För att importera kontakter till ${ BRAND_NAME } behöver du en ${ knowledgeBaseLink }. Ladda ner den från Yahoo i tre enkla steg:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "För att importera en kalender till ${ BRAND_NAME } behöver du ${ knowledgeBaseLink }. Ladda ner denna innan du startar importprocessen."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "För att importera e-post till ${ BRAND_NAME } behöver du en ${ appPasswordLink } från Outlook. Skaffa den genom att följa dessa steg:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "För att importera e-post till ${ BRAND_NAME } behöver du en ${ appPasswordLink } från Yahoo. Skaffa den genom att följa dessa steg:"
@@ -4211,26 +4193,11 @@
       "app password": [
         "applösenord"
       ],
-      "Can view all details": [
-        "Kan visa alla detaljer"
-      ],
       "Export": [
         "Exportera"
       ],
-      "Export contacts": [
-        "Exportera kontakter"
-      ],
       "Export to CSV file": [
         "Importera till CSV-fil"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Hantera"
-      ],
-      "Publish a calendar": [
-        "Publicera en kalender"
       ]
     },
     "Import instructions link": {
@@ -4239,9 +4206,6 @@
       ],
       "app password or enable IMAP": [
         "app-lösenord eller aktivera IMAP"
-      ],
-      "contacts": [
-        "kontakter"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV- eller en VCF-fil (vCard)"
@@ -4252,23 +4216,11 @@
       "ICS file": [
         "ICS-fil"
       ],
-      "security settings": [
-        "säkerhetsinställningar"
-      ],
-      "shared calendars": [
-        "delade kalendrar"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Klicka på ${ boldICS }-länken och ladda ner filen."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Gå till ${ calendarLink } i dina Outlook-inställningar."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Gå till ${ calendarViewLink } i Yahoo."
       ],
@@ -4277,9 +4229,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Välj ${ boldExport } för att exportera kalendern som en ICS-fil."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "Under ${ boldPublish } väljer du den kalender du vill importera. Ställ in behörigheten till ${ boldCanViewAllDetails } och publicera den."
       ]
     },
     "Import key": {
@@ -4618,7 +4567,7 @@
         "Belopp under minimum (${ amount })."
       ],
       "An error occured while communicating with the extension": [
-        "Ett fel uppstod i kommunikationen med tillägget"
+        "An error occurred while communicating with the extension"
       ],
       "and": [
         "och"
@@ -4966,6 +4915,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Om en ny återställningsfras skapas kommer den gamla inaktiveras."
+      ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Skaffa en ${ BRAND_NAME }-adress för att använda alla ${ BRAND_NAME }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Skaffa min ${ BRAND_NAME }-adress"
@@ -6890,14 +6842,14 @@
       "Folder location": [
         "Mappens plats"
       ],
-      "From: ${ emailFrom }": [
-        "Från: ${ emailFrom }"
+      "From: ${ from }": [
+        "Från: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Från: ${ fromEmail }"
       ],
       "From: ${ importedEmail }": [
         "Från: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Från: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Presentkod"
@@ -7256,11 +7208,11 @@
       "To: ${ emailAddress }": [
         "Till: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Till: ${ emailTo }"
+      "To: ${ to }": [
+        "Till: ${ to }"
       ],
-      "To: ${ PMEmailAddress }": [
-        "Till: ${ PMEmailAddress }"
+      "To: ${ toEmail }": [
+        "Till: ${ toEmail }"
       ],
       "Two-password mode": [
         "Två-lösenordsläge"
@@ -7657,26 +7609,17 @@
       "How to import calendars from another service": [
         "Hur man importerar kalendrar från en annan tjänst"
       ],
-      "How to import calendars from Outlook": [
-        "Hur man importerar kalendrar från Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Hur man importerar kalendrar från Yahoo"
       ],
       "How to import contacts from another service": [
         "Hur man importerar kontakter från en annan tjänst"
       ],
-      "How to import contacts from Outlook": [
-        "Hur man importerar kontakter från Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Hur man importerar kontakter från Yahoo"
       ],
       "How to import emails from another service": [
         "Hur man importerar e-post från en annan tjänst"
-      ],
-      "How to import emails from Outlook": [
-        "Hur man importerar e-post från Outlook"
       ],
       "How to import emails from Yahoo": [
         "Hur man importerar e-post från Yahoo"

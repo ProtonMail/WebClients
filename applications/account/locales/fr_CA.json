@@ -501,10 +501,10 @@
       "Not spam": [
         "Pas indésirable"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -555,11 +555,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "Refresh the page": [
-        "Rafraîchir la page"
-      ],
       "refresh the page": [
         "actualiser la page"
+      ],
+      "Refresh the page": [
+        "Rafraîchir la page"
       ],
       "Reload": [
         "Recharger"
@@ -3054,9 +3054,6 @@
       "Please set a recovery/notification email first": [
         "Veuillez d'abord définir une adresse courriel de récupération/notification"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Veuillez essayer de vous authentifier à nouveau et assurez-vous que les autorisations soient définies correctement."
-      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Veuillez passer à un abonnement entreprise avec plus d'un utilisateur pour obtenir une assistance multiutilisateur"
       ],
@@ -3213,9 +3210,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Nous avons arrêté la signature DKIM en raison de problèmes avec votre configuration DNS. Veuillez suivre les instructions ci-dessous pour la reprendre."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Nous n'avons pas pu nous connecter à votre fournisseur de services."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Phrase de récupération erronée. Veuillez réessayer ou utiliser une autre méthode de récupération."
@@ -4102,9 +4096,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "L'accès IMAP est activé dans votre compte Yahoo."
       ],
-      "Invalid IMAP port": [
-        "Port IMAP invalide"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Trop de demandes récentes. Veuillez réessayer dans quelques instants."
       ],
@@ -4144,17 +4135,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Cliquez sur ${ boldManage } pour développer le menu des options."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "Selon votre fournisseur de messagerie, vous devrez peut-être d'abord générer un ${ knowledgeBaseLink } avant de pouvoir importer vers ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Développez le menu déroulant en cliquant sur les 3 points (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Générez un ${ boldAppPassword } et utilisez-le à la place de votre mot de passe habituel quand ${ BRAND_NAME } vous le demandera."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Générez le ${ boldAppPassword } et utilisez-le à la place de votre mot de passe habituel quand ${ BRAND_NAME } vous le demandera."
@@ -4165,26 +4150,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "Allez dans la ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Allez dans les ${ securitySettingsLink } Outlook."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Si la validation en deux étapes est désactivée, activez-la."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Ouvrez vos contacts ${ yahooMailLink }."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Ouvrez vos ${ outlookContactsLink } Outlook."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Sélectionnez ${ boldExportContacts } et choisissez les contacts à exporter."
-      ],
       "Select ${ boldExportCSV }.": [
         "Sélectionnez ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Pour importer un calendrier dans ${ BRAND_NAME }, vous avez besoin du ${ knowledgeBaseLink }. Téléchargez-le depuis Outlook en 3 étapes simples:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Pour importer un calendrier dans ${ BRAND_NAME }, vous avez besoin du ${ knowledgeBaseLink }. Téléchargez-le sur Yahoo en 3 étapes simples:"
@@ -4192,17 +4162,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Pour importer un calendrier dans ${ BRAND_NAME }, vous avez besoin du ${ knowledgeBaseLink }. Téléchargez-le avant de lancer l'importation."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Pour importer des contacts vers ${ BRAND_NAME }, vous avez besoin d'un ${ knowledgeBaseLink }. Téléchargez-le depuis Outlook en 3 étapes simples:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Pour importer des contacts vers ${ BRAND_NAME }, vous avez besoin d'un ${ knowledgeBaseLink }. Téléchargez-le sur Yahoo en 3 étapes simples:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Pour importer des contacts vers ${ BRAND_NAME }, vous avez besoin d'un ${ knowledgeBaseLink }. Téléchargez-le avant de lancer l'importation."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Pour importer des e-mails vers ${ BRAND_NAME }, vous avez besoin d'un ${ appPasswordLink } Outlook. Obtenez-le en suivant ces étapes:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Pour importer des courriels vers ${ BRAND_NAME }, vous avez besoin d'un ${ appPasswordLink } Yahoo. Obtenez-le en suivant ces étapes:"
@@ -4218,26 +4182,11 @@
       "app password": [
         "mot de passe d'application"
       ],
-      "Can view all details": [
-        "Autoriser à voir tous les détails"
-      ],
       "Export": [
         "Exporter"
       ],
-      "Export contacts": [
-        "Exporter les contacts"
-      ],
       "Export to CSV file": [
         "Exporter vers un fichier CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Gérer"
-      ],
-      "Publish a calendar": [
-        "Publier un calendrier"
       ]
     },
     "Import instructions link": {
@@ -4246,9 +4195,6 @@
       ],
       "app password or enable IMAP": [
         "mot de passe d'application ou activer l'IMAP"
-      ],
-      "contacts": [
-        "contacts"
       ],
       "CSV or a VCF (vCard) file": [
         "Fichier CSV ou VCF (vCard)"
@@ -4259,23 +4205,11 @@
       "ICS file": [
         "fichier ICS"
       ],
-      "security settings": [
-        "paramètres de sécurité"
-      ],
-      "shared calendars": [
-        "calendriers partagés"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Cliquez sur le lien ${ boldICS } et téléchargez le fichier."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Allez dans ${ calendarLink } dans vos paramètres Outlook."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Allez dans la ${ calendarViewLink } de Yahoo."
       ],
@@ -4284,9 +4218,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Sélectionnez ${ boldExport } pour exporter le calendrier en tant que fichier ICS."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "Sous ${ boldPublish }, sélectionnez le calendrier que vous souhaitez importer. Définissez l'autorisation à ${ boldCanViewAllDetails } et publiez-le."
       ]
     },
     "Import key": {
@@ -4625,7 +4556,7 @@
         "Montant inférieur au minimum requis (${ amount })."
       ],
       "An error occured while communicating with the extension": [
-        "Une erreur s'est produite lors de la communication avec l'extension"
+        "An error occurred while communicating with the extension"
       ],
       "and": [
         "et"
@@ -6897,14 +6828,8 @@
       "Folder location": [
         "Emplacement du dossier"
       ],
-      "From: ${ emailFrom }": [
-        "De: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "De: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Code cadeau"
@@ -7263,12 +7188,6 @@
       "To: ${ emailAddress }": [
         "À: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "À: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "À: ${ PMEmailAddress }"
-      ],
       "Token name": [
         "Nom du jeton"
       ],
@@ -7614,10 +7533,6 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages provenant de ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer tous les messages provenant de ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -7682,26 +7597,17 @@
       "How to import calendars from another service": [
         "Comment importer des calendriers d'un autre service"
       ],
-      "How to import calendars from Outlook": [
-        "Comment importer des calendriers depuis Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Comment importer des calendriers depuis Yahoo"
       ],
       "How to import contacts from another service": [
         "Comment importer des contacts d'un autre service"
       ],
-      "How to import contacts from Outlook": [
-        "Comment importer des contacts depuis Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Comment importer des contacts depuis Yahoo"
       ],
       "How to import emails from another service": [
         "Comment importer des courriels d'un autre service"
-      ],
-      "How to import emails from Outlook": [
-        "Comment importer des courriels d'Outlook"
       ],
       "How to import emails from Yahoo": [
         "Comment importer des courriels de Yahoo"
