@@ -2,14 +2,7 @@ import { HTMLAttributes } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Alert,
-    MemoizedIconRow as IconRow,
-    InputTwo,
-    Notifications,
-    TextAreaTwo,
-    classnames,
-} from '@proton/components';
+import { MemoizedIconRow as IconRow, InputTwo, Notifications, TextAreaTwo, classnames } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
 import {
@@ -26,7 +19,6 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 
@@ -48,10 +40,10 @@ export interface EventFormProps {
     model: EventModel;
     setModel: (value: EventModel) => void;
     tzid?: string;
+    canEditSharedEventData?: boolean;
     isMinimal?: boolean;
     isCreateEvent: boolean;
     setParticipantError?: (value: boolean) => void;
-    isSubscribedCalendar?: boolean;
     isDuplicating?: boolean;
     isDrawerApp?: boolean;
 }
@@ -66,9 +58,9 @@ const EventForm = ({
     setModel,
     tzid,
     isMinimal,
+    canEditSharedEventData = true,
     isCreateEvent,
     setParticipantError,
-    isSubscribedCalendar,
     isDuplicating = false,
     isDrawerApp,
     ...props
@@ -78,28 +70,22 @@ const EventForm = ({
         frequencyModel,
         start,
         isAllDay,
-        isOrganizer,
         isAttendee,
         fullDayNotifications,
         defaultFullDayNotification,
         partDayNotifications,
         defaultPartDayNotification,
         calendars,
-        selfAddress,
+        calendar: { isSubscribed: isSubscribedCalendar },
     } = model;
     const isSingleEdit = !!model.rest?.['recurrence-id'];
 
     const isImportedEvent = uid && !getIsProtonUID(uid);
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
-    // selfAddress may not need be defined
-    const isSelfAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
-    const canEditSharedEventData = !isSubscribedCalendar && !isAttendee && isSelfAddressActive;
-    const showParticipants = !isImportedEvent && canEditSharedEventData;
     const canChangeCalendar = isAttendee ? !isSingleEdit : isCreateEvent || !model.organizer;
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications = canAddNotifications || notifications.length;
-    const isOrganizerDisabled = !isSubscribedCalendar && isOrganizer && !isSelfAddressActive;
 
     const dateRow = isMinimal ? (
         <MiniDateTimeRows
@@ -350,22 +336,12 @@ const EventForm = ({
         </IconRow>
     );
 
-    const organizerDisabledAlert = isOrganizerDisabled ? (
-        <Alert className="mb1" type="warning">
-            <span className="mr0-25">
-                {c('Info')
-                    .t`You can only modify personal event properties as you can't send emails from the organizer address.`}
-            </span>
-        </Alert>
-    ) : null;
-
     return (
         <div className="mt0-5" {...props}>
-            {organizerDisabledAlert}
             {canEditSharedEventData && titleRow}
             {canEditSharedEventData && dateRow}
-            {!isMinimal && canEditSharedEventData && frequencyRow}
-            {showParticipants && participantsRow}
+            {canEditSharedEventData && !isMinimal && frequencyRow}
+            {canEditSharedEventData && !isImportedEvent && participantsRow}
             {canEditSharedEventData && locationRow}
             {!isMinimal && showNotifications && notificationsRow}
             {!isSubscribedCalendar && calendars.length > 0 && calendarRow}

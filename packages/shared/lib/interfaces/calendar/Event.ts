@@ -137,6 +137,7 @@ export interface CalendarViewModel {
     color: string;
     permissions: number;
     isSubscribed: boolean;
+    isOwned: boolean;
 }
 
 export interface CalendarsModel {
@@ -145,6 +146,7 @@ export interface CalendarsModel {
     color: string;
     permissions: number;
     isSubscribed: boolean;
+    isOwned: boolean;
 }
 
 export interface EventModelView {
@@ -158,8 +160,8 @@ export interface EventModelView {
     end: DateTimeModel;
     attendees: AttendeeModel[];
     organizer?: OrganizerModel;
-    isOrganizer: boolean;
-    isAttendee: boolean;
+    isOrganizer: boolean; // this property only takes into account the event ICS content. It does not care if the event is in a shared or subscribed calendar
+    isAttendee: boolean; // this property only takes into account the event ICS content. It does not care if the event is in a shared or subscribed calendar
     isProtonProtonInvite: boolean;
     selfAttendeeIndex?: number;
     selfAddress?: Address;
