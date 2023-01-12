@@ -484,10 +484,10 @@
       "Not spam": [
         "هرزنامه نیست"
       ],
-      "OK": [
+      "Ok": [
         "تایید"
       ],
-      "Ok": [
+      "OK": [
         "تایید"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -535,10 +535,10 @@
       "Refresh status": [
         "وضعیت بازخوانی"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "بازخوانی صفحه"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "بازخوانی صفحه"
       ],
       "Reload": [
@@ -2894,9 +2894,6 @@
       "Please set a recovery/notification email first": [
         "لطفا ابتدا یک رایانامه بازیابی/اعلان تنظیم کنید"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "لطفا دوباره احراز هویت کنید و اطمینان حاصل کنید که سطوح دسترسی به‌درستی تنظیم شده‌اند."
-      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "لطفا به طرح کسب وکار با بیش از 1 کاربر ارتقا دهید تا از پشتیبانی چند کاربره بهره ببرید"
       ],
@@ -3050,9 +3047,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "ما به دلیل مشکل در پیکربندی DNS شما، امضای DKIM را متوقف کردیم. لطفا برای از سرگیری امضا دستورالعمل‌های زیر را دنبال کنید."
-      ],
-      "We were unable to connect to your service provider.": [
-        "ما قادر به برقراری ارتباط با ارائه دهنده خدمات شما نبودیم."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "عبارت بازیابی اشتباه است. دوباره امتحان کنید یا از شیوه دیگری برای بازیابی استفاده کنید."
@@ -3808,9 +3802,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "دسترسی IMAP در حساب Yahoo شما فعال شده است."
       ],
-      "Invalid IMAP port": [
-        "درگاه IMAP نامعتبر است"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "تعداد درخواست‌های اخیر بیش از حد زیاد بوده است. لطفاً طی چند لحظه دوباره امتحان کنید."
       ],
@@ -3850,9 +3841,6 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "${ boldManage } را کلیک کنید تا منو تنظیمات باز شود."
-      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "با کلیک کردن بر روی ۳ نقطه (...) منوی کرکره ای را باز کنید."
       ],
@@ -3862,20 +3850,8 @@
       "Go to ${ boldAccountSecurity }.": [
         "برو به ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "به ${ securitySettingsLink } Outlook بروید."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "اگر تایید 2 مرحله ای خاموش است، آنرا روشن کن."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "مخاطبین ${ yahooMailLink } خود را باز کنید."
-      ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Outlook خود را باز کنید ${ outlookContactsLink }."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "${ boldExportContacts } را انتخاب کرده و مخاطبینی که میخواهید خارج سازی شوند را انتخاب کنید."
       ],
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } را انتخاب کنید."
@@ -3891,26 +3867,11 @@
       "app password": [
         "رمزعبور برنامه"
       ],
-      "Can view all details": [
-        "میتواند همه جزئیات را ببیند"
-      ],
       "Export": [
         "برون‌برد"
       ],
-      "Export contacts": [
-        "برون‌برد مخاطبین"
-      ],
       "Export to CSV file": [
         "خارج سازی به فایل CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "مدیریت"
-      ],
-      "Publish a calendar": [
-        "تقویمی را منتشر کنید"
       ]
     },
     "Import instructions link": {
@@ -3920,32 +3881,17 @@
       "app password or enable IMAP": [
         "رمزعبور برنامه یا فعال سازی IMAP"
       ],
-      "contacts": [
-        "مخاطبین"
-      ],
       "full calendar view": [
         "نمای تقویم کامل"
       ],
       "ICS file": [
         "فایل ICS"
       ],
-      "security settings": [
-        "تنظیمات امنیتی"
-      ],
-      "shared calendars": [
-        "تقویم اشتراک گذاشته شده"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "بر روی لینک ${ boldICS } کلیک کنید و فایل را دانلود کنید."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "به ${ calendarLink } در تنظیمات Outlook خود بروید."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "در Yahoo به ${ calendarViewLink } بروید."
       ],
@@ -3954,9 +3900,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "${ boldExport } را برای خارج سازی بعنوان یک فایل ICS انتخاب کنید."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "زیر ${ boldPublish }، تقویمی که میخواهید واردسازی کنید را انتخاب کنید. اجازه دسترسی را به ${ boldCanViewAllDetails } تغییر داده و منتشر کنید."
       ]
     },
     "Import key": {
@@ -6346,14 +6289,8 @@
       "Folder location": [
         "مکان پوشه"
       ],
-      "From: ${ emailFrom }": [
-        "از: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "از: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "از: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "کد هدیه"
@@ -6702,12 +6639,6 @@
       ],
       "To: ${ emailAddress }": [
         "به: ${ emailAddress }"
-      ],
-      "To: ${ emailTo }": [
-        "به: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "به: ${ PMEmailAddress }"
       ],
       "Two-password mode": [
         "حالت دوگذرواژه"
@@ -7078,26 +7009,17 @@
       "How to import calendars from another service": [
         "چگونگی واردسازی تقویم ها از سرویسی دیگر"
       ],
-      "How to import calendars from Outlook": [
-        "چگونگی واردسازی تقویم ها از Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "چگونگی واردسازی تقویم ها از Yahoo"
       ],
       "How to import contacts from another service": [
         "چگونگی واردسازی مخاطبین از سرویسی دیگر"
       ],
-      "How to import contacts from Outlook": [
-        "چگونگی واردسازی مخاطبین از Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "چگونگی واردسازی مخاطبین از Yahoo"
       ],
       "How to import emails from another service": [
         "چگونگی واردسازی ایمیل ها از سرویسی دیگر"
-      ],
-      "How to import emails from Outlook": [
-        "چگونگی واردسازی ایمیل ها از Outlook"
       ],
       "How to import emails from Yahoo": [
         "چگونگی واردسازی ایمیل ها از Yahoo"

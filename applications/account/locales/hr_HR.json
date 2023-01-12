@@ -329,10 +329,10 @@
       "No": [
         "Ne"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -380,11 +380,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -1288,9 +1288,6 @@
       "Please set a recovery/notification email first": [
         "Prvo postavite adresu e-pošte za oporavak/obavijesti"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
-      ],
       "Process aborted": [
         "Proces je prekinut"
       ],
@@ -1353,9 +1350,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Prestali smo s potpisivanjem DKIM-a zbog problema s vašim DNS postavkama. Slijedite dolje navedene upute za nastavak potpisivanja."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Neuspješno povezivanje s vašim davateljem usluga."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Pogrešan kôd za provjeru. Provjerite jeste li ispravno kopirali kôd za provjeru i pokušajte ponovo. Može potrajati do 24 sata kako bi promjene stupile na snagu."
@@ -1837,9 +1831,6 @@
       ]
     },
     "Import error": {
-      "Invalid IMAP port": [
-        "Nevažeći IMAP port"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Previše nedavnih zahtjeva. Pokušajte ponovno za nekoliko trenutaka."
       ],
@@ -1869,9 +1860,6 @@
       ],
       "Export": [
         "Izvoz"
-      ],
-      "Export contacts": [
-        "Uvezi kontakte"
       ]
     },
     "Import provider": {

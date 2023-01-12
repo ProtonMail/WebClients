@@ -776,6 +776,12 @@
       "Rename": [
         "名前を変更"
       ],
+      "Reply": [
+        "返信"
+      ],
+      "Reply all": [
+        "全員に返信"
+      ],
       "Reply securely": [
         "安全に返信"
       ],
@@ -3169,9 +3175,6 @@
       "Please set a password": [
         "パスワードを設定してください"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "再認証を行い、権限が正しく設定されていることを確認してください。"
-      ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
       ],
@@ -3318,9 +3321,6 @@
       ],
       "Unknown error.": [
         "不明なエラーが発生しました。"
-      ],
-      "We were unable to connect to your service provider.": [
-        "サービスプロバイダーに接続できませんでした。"
       ],
       "Wrong mailbox password": [
         "メールボックスのパスワードが間違っています"
@@ -4041,9 +4041,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "IMAP アクセスは Yahoo アカウントで有効になっています。"
       ],
-      "Invalid IMAP port": [
-        "無効な IMAP ポート番号"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "最近のリクエストが多すぎます。しばらくしてから再度お試しください。"
       ],
@@ -4086,17 +4083,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "${ boldManage } をクリックしてオプション メニューを展開してください。"
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "手順がメールサービスプロバイダーによって異なるため、${ BRAND_NAME } にメールをインポートする前に${ knowledgeBaseLink }を生成することをおすすめします。"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3 点リーダー（...）をクリックしてドロップダウンを展開します。"
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "${ boldAppPassword } を生成し、${ BRAND_NAME } からプロンプトが表示に通常のパスワードの代わりに入力してください。"
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "${ boldAppPassword }を生成し、${ BRAND_NAME } からプロンプトが表示に通常のパスワードの代わりに入力してください。"
@@ -4107,26 +4098,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "${ boldAccountSecurity }に移動します。"
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Outlook ${ securitySettingsLink } へ移動してください。"
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "2 段階認証がオフの場合、オンにしてください。"
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "${ yahooMailLink } の連絡先を開きます。"
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Outlook ${ outlookContactsLink } を開きます。"
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "${ boldExportContacts } を選択し、どの連絡先をエクスポートするか選びます。"
-      ],
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } を選択します。"
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
@@ -4134,17 +4110,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "カレンダーを ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。インポート作業の開始前にダウンロードしてください。"
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Outlook からダウンロードするには簡単な 3 つのステップを行います:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink }が必要です。Yahoo からダウンロードするには簡単な 3 つのステップを行います:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "連絡先を ${ BRAND_NAME } にインポートするには、${ knowledgeBaseLink } が必要です。インポート作業の開始前にダウンロードしてください。"
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "メールを ${ BRAND_NAME } へインポートするには、Outlook から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "メールを ${ BRAND_NAME } へインポートするには、Yahoo から${ appPasswordLink }を取得する必要があります。以下の手順に従ってください。"
@@ -4160,26 +4130,11 @@
       "app password": [
         "アプリ パスワード"
       ],
-      "Can view all details": [
-        "すべての詳細を閲覧可能"
-      ],
       "Export": [
         "エクスポート"
       ],
-      "Export contacts": [
-        "連絡先のエクスポート"
-      ],
       "Export to CSV file": [
         "CSV ファイルでエクスポート"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "管理"
-      ],
-      "Publish a calendar": [
-        "予定表を公開する"
       ]
     },
     "Import instructions link": {
@@ -4188,9 +4143,6 @@
       ],
       "app password or enable IMAP": [
         "IMAP を有効にするか、アプリ パスワード"
-      ],
-      "contacts": [
-        "連絡先"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV または VCF (vCard) ファイル"
@@ -4201,23 +4153,11 @@
       "ICS file": [
         "ICS ファイル"
       ],
-      "security settings": [
-        "セキュリティ設定"
-      ],
-      "shared calendars": [
-        "共有されたカレンダー"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "${ boldICS } をクリックしてファイルをダウンロードします。"
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Outlook 設定から ${ calendarLink } へ移動してください。"
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Yahoo の ${ calendarViewLink } へ移動してください。"
       ],
@@ -4226,9 +4166,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "${ boldPublish } から、インポートしたいカレンダーを選択します。アクセス許可を ${ boldCanViewAllDetails } にし公開します。"
       ]
     },
     "Import provider": {
@@ -6011,14 +5948,8 @@
       "From:": [
         "差出人："
       ],
-      "From: ${ emailFrom }": [
-        "差出人: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "移行元: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "移行元: ${ importedEmailAddress }"
       ],
       "Good": [
         "いい"
@@ -6256,12 +6187,6 @@
       ],
       "To: ${ emailAddress }": [
         "移行先: ${ emailAddress }"
-      ],
-      "To: ${ emailTo }": [
-        "宛先: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "移行先: ${ PMEmailAddress }"
       ],
       "Toolbar": [
         "ツールバー"
@@ -6651,26 +6576,17 @@
       "How to import calendars from another service": [
         "その他のサービスからカレンダーをインポートする方法"
       ],
-      "How to import calendars from Outlook": [
-        "Outlook からカレンダーをインポートする方法"
-      ],
       "How to import calendars from Yahoo": [
         "Yahoo からカレンダーをインポートする方法"
       ],
       "How to import contacts from another service": [
         "その他のサービスから連絡先をインポートする方法"
       ],
-      "How to import contacts from Outlook": [
-        "Outlook から連絡先をインポートする方法"
-      ],
       "How to import contacts from Yahoo": [
         "Yahoo から連絡先をインポートする方法"
       ],
       "How to import emails from another service": [
         "その他のサービスからメールをインポートする方法"
-      ],
-      "How to import emails from Outlook": [
-        "Outlook からメールをインポートする方法"
       ],
       "How to import emails from Yahoo": [
         "Yahoo からメールをインポートする方法"

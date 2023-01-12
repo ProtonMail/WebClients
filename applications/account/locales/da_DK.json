@@ -501,10 +501,10 @@
       "Not spam": [
         "Ikke spam"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -555,11 +555,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "Refresh the page": [
-        "Opdater siden"
-      ],
       "refresh the page": [
         "opdater siden"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -3029,9 +3029,6 @@
       "Please set a recovery/notification email first": [
         "Angiv en gendannelses-/notifikations-e-mail"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Prøv at verificere igen og sørg for at tilladelserne er angivet korrekt."
-      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at få support til flere brugere"
       ],
@@ -3188,9 +3185,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi stoppede DKIM-signering grundet problemer med din DNS-konfiguration. Følg instruktionerne nedenfor for at genoptage signeringen."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Vi kunne ikke oprette forbindelse til din tjenesteudbyder."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Forkert gendannelsessætning. Prøv igen eller brug en anden gendannelsesmetode."
@@ -3940,11 +3934,20 @@
         "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret.",
         "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. Ingen begivenheder kunne importeres."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kryptering og tilføjelse af kontakter: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Kryptering og tilføjelse af begivenheder til din kalender: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Begivenhed importeret. Den importerede begivenhed vises nu i din kalender."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Begivenheder importeret. De importerede begivenheder vises nu i din kalender."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Luk ikke fanen før importprocessen er afsluttet."
@@ -3978,6 +3981,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontakt krypteret og føjet til din kontaktliste",
         "${ totalImported }/${ totalToImport } kontakter krypteret og føjet til din kontaktliste"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din kontakt. Ingen kontakt kunne importeres."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af dine kontakter. ${ totalImported } ud af ${ totalToImport } kontakter blev importeret."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af dine kontakter. Ingen kontakt kunne importeres."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontakt importeret. Den importerede kontakt vises nu på din kontaktliste."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Kontakter importeret. De importerede kontakter vises nu på din kontaktliste."
       ]
     },
     "Import contact error": {
@@ -4032,9 +4050,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "IMAP-adgang er aktiveret på din Yahoo-konto."
       ],
-      "Invalid IMAP port": [
-        "Ugyldig IMAP- port"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "For mange nylige anmodninger. Forsøg igen lidt senere."
       ],
@@ -4074,17 +4089,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Klik på ${ boldManage } for at udvide menu med valgmuligheder."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Opret et ${ boldAppPassword } og brug det i stedet for din almindelige adgangskode, når ${ BRAND_NAME } anmoder om det."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Generer ${ boldAppPassword }, og brug den i stedet for din almindelige adgangskode, når du bliver bedt om det af ${ BRAND_NAME }."
@@ -4095,26 +4104,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "Gå til ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Gå til Outlook ${ securitySettingsLink }."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Hvis 2-trinsbekræftelse er slået fra, skal du slå det til."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Åbn dine ${ yahooMailLink }-kontakter."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Åbn dit Outlook ${ outlookContactsLink }."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Vælg ${ boldExportContacts } og vælg, hvilke kontakter der skal eksporteres."
-      ],
       "Select ${ boldExportCSV }.": [
         "Vælg ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "For at importere en kalender til ${ BRAND_NAME } skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "For at importere en kalender til ${ BRAND_NAME } skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
@@ -4122,17 +4116,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "For at importere en kalender til ${ BRAND_NAME }, skal du bruge ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "For at importere kontakter til ${ BRAND_NAME } skal du bruge et ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "For at importere kontakter til ${ BRAND_NAME } skal du bruge et ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "For at importere kontakter til ${ BRAND_NAME }, skal du bruge et ${ knowledgeBaseLink }. Download dette, før du starter importprocessen."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "For at importere e-mails til ${ BRAND_NAME }, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "For at importere e-mails til ${ BRAND_NAME }, skal du bruge et ${ appPasswordLink } fra Yahoo. Få det ved at følge disse trin:"
@@ -4148,26 +4136,11 @@
       "app password": [
         "app-adgangskode"
       ],
-      "Can view all details": [
-        "Kan se alle detaljer"
-      ],
       "Export": [
         "Exportér"
       ],
-      "Export contacts": [
-        "Eksportér kontakter"
-      ],
       "Export to CSV file": [
         "Eksportér til CSV-fil"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Administrer"
-      ],
-      "Publish a calendar": [
-        "Offentliggør en kalender"
       ]
     },
     "Import instructions link": {
@@ -4176,9 +4149,6 @@
       ],
       "app password or enable IMAP": [
         "app-adgangskode eller aktivér IMAP"
-      ],
-      "contacts": [
-        "kontakter"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV eller en VCF-fil (vCard)"
@@ -4189,23 +4159,11 @@
       "ICS file": [
         "ICS fil"
       ],
-      "security settings": [
-        "sikkerhedsindstillinger"
-      ],
-      "shared calendars": [
-        "delte kalendere"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Klik på ${ boldICS }-linket og download filen."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Gå til ${ calendarLink } i dine Outlook-indstillinger."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Gå til ${ calendarViewLink } i Yahoo."
       ],
@@ -4214,9 +4172,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "Under ${ boldPublish } skal du vælge den kalender, du vil importere. Indstil tilladelsen til ${ boldCanViewAllDetails }, og udgiv den."
       ]
     },
     "Import key": {
@@ -4901,6 +4856,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Få en ${ BRAND_NAME }-adresse for at bruge alle ${ BRAND_NAME }-tjenester, herunder ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "FÅ min ${ BRAND_NAME }-adresse"
       ],
@@ -5331,6 +5289,9 @@
       ],
       "Preview": [
         "Forhåndsvisning"
+      ],
+      "Preview failed to be loaded": [
+        "Forhåndsvisning kunne ikke indlæses"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
@@ -6791,14 +6752,8 @@
       "Folder location": [
         "Mappeplacering"
       ],
-      "From: ${ emailFrom }": [
-        "Fra: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "Fra: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Fra: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Gavekode"
@@ -7157,12 +7112,6 @@
       "To: ${ emailAddress }": [
         "Til: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Til: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "Til: ${ PMEmailAddress }"
-      ],
       "Token name": [
         "Tokennavn"
       ],
@@ -7505,10 +7454,6 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -7573,26 +7518,17 @@
       "How to import calendars from another service": [
         "Sådan importerer du kalendere fra en anden tjeneste"
       ],
-      "How to import calendars from Outlook": [
-        "Sådan importerer du kalendere fra Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Sådan importerer du kalendere fra Yahoo"
       ],
       "How to import contacts from another service": [
         "Sådan importerer du kontakter fra en anden tjeneste"
       ],
-      "How to import contacts from Outlook": [
-        "Sådan importerer du kontakter fra Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Sådan importerer du kontakter fra Yahoo"
       ],
       "How to import emails from another service": [
         "Sådan importerer du e-mails fra en anden tjeneste"
-      ],
-      "How to import emails from Outlook": [
-        "Sådan importerer du e-mails fra Outlook"
       ],
       "How to import emails from Yahoo": [
         "Sådan importerer du e-mails fra Yahoo"
