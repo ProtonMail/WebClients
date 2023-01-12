@@ -42,4 +42,8 @@
 	@include respond-to($breakpoint-small) {
 		display: none;
 	}
+
+	@media print {
+		display: none;
+	}
 }
