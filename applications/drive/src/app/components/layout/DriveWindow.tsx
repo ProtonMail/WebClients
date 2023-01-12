@@ -7,6 +7,7 @@ import {
     ContactDrawerAppButton,
     DrawerApp,
     DrawerSidebar,
+    DrawerVisibilityButton,
     FeatureCode,
     MainLogo,
     PrivateAppContainer,
@@ -14,8 +15,8 @@ import {
     useDrawer,
     useFeature,
     useToggle,
+    useUser,
 } from '@proton/components';
-import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -26,6 +27,7 @@ import ShareFileSidebarButton from '../sections/SharedLinks/ShareFileSidebarButt
 import EmptyTrashSidebarButton from '../sections/Trash/EmptyTrashSidebarButton';
 import { DriveHeaderPrivate } from './DriveHeader';
 import DriveSidebar from './DriveSidebar/DriveSidebar';
+import { getDriveDrawerPermissions } from './drawerPermissions';
 
 interface Props {
     children?: JSX.Element | JSX.Element[];
@@ -33,6 +35,7 @@ interface Props {
 
 const DriveWindow = ({ children }: Props) => {
     const location = useLocation();
+    const [user] = useUser();
     const { state: expanded, toggle: toggleExpanded } = useToggle();
 
     const [recoveryBannerVisible, setReoveryBannerVisible] = useState(true);
@@ -74,9 +77,10 @@ const DriveWindow = ({ children }: Props) => {
         />
     );
 
+    const permissions = getDriveDrawerPermissions({ user, drawerFeature });
     const drawerSidebarButtons = [
-        drawerFeature?.Value.ContactsInDrive && <ContactDrawerAppButton onClick={markSpotlightAsSeen} />,
-        drawerFeature?.Value.CalendarInDrive && <CalendarDrawerAppButton onClick={markSpotlightAsSeen} />,
+        permissions.contacts && <ContactDrawerAppButton onClick={markSpotlightAsSeen} />,
+        permissions.calendar && <CalendarDrawerAppButton onClick={markSpotlightAsSeen} />,
     ].filter(isTruthy);
 
     const sidebar = (
