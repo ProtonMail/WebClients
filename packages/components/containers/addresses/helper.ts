@@ -1,9 +1,9 @@
 import {
+    ADDRESS_RECEIVE,
     ADDRESS_STATUS,
     ADDRESS_TYPE,
     MEMBER_PRIVATE,
     MEMBER_TYPE,
-    RECEIVE_ADDRESS,
 } from '@proton/shared/lib/constants';
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 
@@ -12,7 +12,7 @@ const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 export const getStatus = (address: Address, i: number) => {
     const { Type, Status, Receive, DomainID, HasKeys } = address;
 
-    const isActive = Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === RECEIVE_ADDRESS.RECEIVE_YES;
+    const isActive = Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === ADDRESS_RECEIVE.RECEIVE_YES;
     const isDisabled = Status === ADDRESS_STATUS.STATUS_DISABLED;
     const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
     const isOrphan = DomainID === null && !isExternal;
