@@ -26,7 +26,7 @@ const DrawerApp = ({ onCompose, onMailTo, contactCustomActions }: Props) => {
     return (
         <aside
             className={clsx([
-                'drawer-app border-left bg-norm overflow-hidden',
+                'drawer-app border-left bg-norm overflow-hidden no-print',
                 !appInView && 'hidden',
                 appInView !== APPS.PROTONCONTACTS && 'drawer-app--hide-on-mobile',
             ])}
