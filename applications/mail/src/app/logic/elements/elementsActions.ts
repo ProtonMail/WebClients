@@ -4,7 +4,6 @@ import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Api } from '@proton/shared/lib/interfaces';
 import diff from '@proton/utils/diff';
-import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
 import { Element } from '../../models/element';
@@ -79,7 +78,9 @@ export const invalidate = createAction<void>('elements/invalidate');
 export const eventUpdates = createAsyncThunk<(Element | undefined)[], EventUpdates>(
     'elements/eventUpdates',
     async ({ api, conversationMode, toLoad }) => {
-        return Promise.all(toLoad.map(async (elementID) => queryElement(api, conversationMode, elementID).catch(noop)));
+        return Promise.all(
+            toLoad.map(async (element) => queryElement(api, conversationMode, element.ID).catch(() => element))
+        );
     }
 );
 
