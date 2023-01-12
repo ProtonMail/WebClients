@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ADDRESS_STATUS, RECEIVE_ADDRESS } from '@proton/shared/lib/constants';
+import { ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { Badge } from '../../components';
@@ -16,7 +16,7 @@ const DomainAddressStatus = ({ address }: Props) => {
         return <Badge type="warning" className="text-nowrap">{c('Badge for domain').t`Missing keys`}</Badge>;
     }
 
-    if (Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === RECEIVE_ADDRESS.RECEIVE_YES) {
+    if (Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === ADDRESS_RECEIVE.RECEIVE_YES) {
         return <Badge type="success" className="text-nowrap">{c('Badge for domain').t`Enabled`}</Badge>;
     }
 
