@@ -501,10 +501,10 @@
       "Not spam": [
         "Geen spam"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -555,11 +555,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
       "refresh the page": [
         "pagina vernieuwen"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
       ],
       "Reload": [
         "Opnieuw laden"
@@ -3054,9 +3054,6 @@
       "Please set a recovery/notification email first": [
         "Geef eerst een herstel/notificatie e-mailadres op"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Probeer opnieuw te verifiëren en zorg ervoor dat de machtigingen correct zijn ingesteld."
-      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om multi-gebruiker ondersteuning te ontvangen"
       ],
@@ -3213,9 +3210,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "We zijn gestopt met het ondertekenen van DKIM-ondertekening, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
-      ],
-      "We were unable to connect to your service provider.": [
-        "We kunnen geen verbinding maken met uw serviceprovider."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Verkeerde herstelzijn. Probeer opnieuw of probeer een andere herstelmethode."
@@ -4102,9 +4096,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "IMAP toegang is ingeschakeld in uw Yahoo account."
       ],
-      "Invalid IMAP port": [
-        "Ongeldige IMAP poort"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Te veel recente pogingen. Probeer over enkele ogenblikken opnieuw."
       ],
@@ -4144,17 +4135,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Klik op ${ boldManage } om het keuzemenu uit te vouwen."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "Afhankelijk van uw e-mail-serviceprovider moet u mogelijk eerst een ${ knowledgeBaseLink } voordat u kunt importeren naar ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Vouw het dropdown-menu uit door te klikken op de 3 puntjes (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Genereer een ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door ${ BRAND_NAME }."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Genereer het ${ boldAppPassword } en gebruik het in plaats van uw gewone wachtwoord wanneer u hierom wordt gevraagd door ${ BRAND_NAME }."
@@ -4165,26 +4150,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "Ga naar ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Ga naar Outlook ${ securitySettingsLink }."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Als 2-staps-verificatie uit staat, schakelt u deze in."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Open de contacten van uw ${ yahooMailLink }."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Open uw Outlook ${ outlookContactsLink }."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Selecteer ${ boldExportContacts } en kies welke contactpersonen u wilt exporteren."
-      ],
       "Select ${ boldExportCSV }.": [
         "Selecteer ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Om een agenda te importeren naar ${ BRAND_NAME } heeft u het ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Om een agenda te importeren naar ${ BRAND_NAME } heeft u het ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
@@ -4192,17 +4162,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Om een agenda te importeren naar ${ BRAND_NAME } heeft u het ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Om contacten te importeren naar ${ BRAND_NAME } heeft u een ${ knowledgeBaseLink } nodig. Download het van Outlook in 3 simpele stappen:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Om contacten te importeren naar ${ BRAND_NAME } heeft u een ${ knowledgeBaseLink } nodig. Download het van Yahoo in 3 simpele stappen:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Om contacten te importeren naar ${ BRAND_NAME } heeft u een ${ knowledgeBaseLink } nodig. Download dit voordat u start met het importproces."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Om uw e-mails te importeren naar ${ BRAND_NAME } heeft u een ${ appPasswordLink } nodig van Outlook. Krijg het door deze stappen te volgen:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Om uw e-mails te importeren naar ${ BRAND_NAME } heeft u een ${ appPasswordLink } nodig van Yahoo. Krijg het door deze stappen te volgen:"
@@ -4218,26 +4182,11 @@
       "app password": [
         "app-wachtwoord"
       ],
-      "Can view all details": [
-        "Kan alle details bekijken"
-      ],
       "Export": [
         "Exporteren"
       ],
-      "Export contacts": [
-        "Contactpersonen exporteren"
-      ],
       "Export to CSV file": [
         "Exporteer naar CSV bestand"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Beheren"
-      ],
-      "Publish a calendar": [
-        "Publiceer een agenda"
       ]
     },
     "Import instructions link": {
@@ -4246,9 +4195,6 @@
       ],
       "app password or enable IMAP": [
         "appwachtwoord of IMAP inschakelen"
-      ],
-      "contacts": [
-        "contactpersonen"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV of een VCF (vCard) bestand"
@@ -4259,23 +4205,11 @@
       "ICS file": [
         "ICS-bestand"
       ],
-      "security settings": [
-        "beveiligingsinstellingen"
-      ],
-      "shared calendars": [
-        "gedeelde agenda's"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Klik op de ${ boldICS }-link en download het bestand."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Ga naar ${ calendarLink } in uw Outlook-instellingen."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Ga naar ${ calendarViewLink } in Yahoo."
       ],
@@ -4284,9 +4218,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "Selecteer de agenda die u wilt importeren onder ${ boldPublish }. Stel de machtiging in op ${ boldCanViewAllDetails } en publiceer het."
       ]
     },
     "Import key": {
@@ -4625,7 +4556,7 @@
         "Bedrag onder minimum (${ amount })."
       ],
       "An error occured while communicating with the extension": [
-        "Er is een fout opgetreden tijdens de communicatie met de extensie"
+        "An error occurred while communicating with the extension"
       ],
       "and": [
         "en"
@@ -6903,14 +6834,8 @@
       "Folder location": [
         "Map locatie"
       ],
-      "From: ${ emailFrom }": [
-        "Van: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "Van: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Van: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Geschenkcode"
@@ -7269,12 +7194,6 @@
       "To: ${ emailAddress }": [
         "Naar: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Naar: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "Aan: ${ PMEmailAddress }"
-      ],
       "Token name": [
         "Tokennaam"
       ],
@@ -7620,10 +7539,6 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ itemsToImportCount } map en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importeer alle berichten van ${ itemsToImportCount } label en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importeer alle berichten van ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -7688,26 +7603,17 @@
       "How to import calendars from another service": [
         "Hoe u agenda's importeert uit een andere dienst"
       ],
-      "How to import calendars from Outlook": [
-        "Hoe u agenda's importeert uit Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Hoe u agenda's importeert uit Yahoo"
       ],
       "How to import contacts from another service": [
         "Hoe u contacten importeert uit een andere dienst"
       ],
-      "How to import contacts from Outlook": [
-        "Hoe u contacten importeert uit Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Hoe u contacten importeert uit Yahoo"
       ],
       "How to import emails from another service": [
         "Hoe u e-mails importeert uit een andere dienst"
-      ],
-      "How to import emails from Outlook": [
-        "Hoe u e-mails importeert uit Outlook"
       ],
       "How to import emails from Yahoo": [
         "Hoe u e-mails importeert uit Yahoo"

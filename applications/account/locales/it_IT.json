@@ -501,11 +501,11 @@
       "Not spam": [
         "Non spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -555,11 +555,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "Refresh the page": [
-        "Aggiorna la pagina"
-      ],
       "refresh the page": [
         "aggiorna la pagina"
+      ],
+      "Refresh the page": [
+        "Aggiorna la pagina"
       ],
       "Reload": [
         "Ricarica"
@@ -3054,9 +3054,6 @@
       "Please set a recovery/notification email first": [
         "Per favore imposta prima un'email di recupero/notifica"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Prova a riautenticarti e assicurati che i permessi siano impostati correttamente."
-      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Esegui l'upgrade a un piano aziendale con più di 1 utente per ottenere il supporto multiutente"
       ],
@@ -3213,9 +3210,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Abbiamo interrotto la firma DKIM a causa di problemi con i tuoi DNS. Per favore segui le istruzioni di seguito per riprendere la firma."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Non siamo riusciti a connetterci al tuo fornitore di servizi."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase di recupero sbagliata. Riprova o usa un altro metodo di ripristino."
@@ -4002,27 +3996,28 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
-        "${ totalImported } evento importato con successo. L'evento importato apparirà ora nel tuo calendario.",
-        "${ totalImported } eventi importati con successo. Gli eventi importati appariranno ora nel tuo calendario."
-      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } evento cifrato e aggiunto al tuo calendario",
         "${ totalImported }/${ totalToImport } eventi cifrati e aggiunti al tuo calendario"
       ],
-      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
-        "Si è verificato un errore durante la crittografia e l'aggiunta di ${ totalToImport } evento. Non è stato possibile importare alcun evento.",
-        "Si è verificato un errore durante la crittografia e l'aggiunta di ${ totalToImport } eventi. Non è stato possibile importare alcun evento."
-      ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Si è verificato un errore durante la crittografia e l'aggiunta del tuo evento. ${ totalImported } su ${ totalToImport } evento importato con successo.",
         "Si è verificato un errore durante la crittografia e l'aggiunta dei tuoi eventi. ${ totalImported } su ${ totalToImport } eventi importati con successo."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Si è verificato un errore durante la crittografia e l'aggiunta degli eventi. Non è stato possibile importare alcun evento."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Cifratura ed aggiunta dei contatti: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Cifratura ed aggiunta degli eventi: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Evento importato con successo. L'evento importato apparirà ora nel tuo calendario."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Eventi importati con successo. Gli eventi importati appariranno ora nel tuo calendario."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Non chiudere la scheda prima che il processo di importazione sia terminato."
@@ -4056,6 +4051,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contatto cifrato e aggiunto alla tua lista contatti",
         "${ totalImported }/${ totalToImport } contatti cifrati e aggiunti alla tua lista contatti"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Si è verificato un errore durante la crittografia e l'aggiunta del contatto. Non è stato possibile importare alcun contatto."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Si è verificato un errore durante la crittografia e l'aggiunta dei contatti. ${ totalImported } su ${ totalToImport } contatti importati con successo."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Si è verificato un errore durante la crittografia e l'aggiunta dei contatti. Non è stato possibile importare alcun contatto."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contatto importato con successo. Il contatto importato apparirà ora nella tua lista contatti."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contatti importati con successo. I contatti importati appariranno ora nella tua lista contatti."
       ]
     },
     "Import contact error": {
@@ -4072,23 +4082,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "sconosciuto"
-      ]
-    },
-    "Import contacts": {
-      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
-        "${ totalImported } contatto importato con successo. Il contatto importato apparirà ora nella tua lista contatti.",
-        "${ totalImported } contatti importati con successo. I contatti importati appariranno ora nella tua lista contatti."
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
-        "Si è verificato un errore durante la crittografia e l'aggiunta di ${ totalToImport } contatto. Non è stato possibile importare alcun contatto.",
-        "Si è verificato un errore durante la crittografia e l'aggiunta di ${ totalToImport } contatti. Non è stato possibile importare alcun contatto."
-      ],
-      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
-        "Si è verificato un errore durante la crittografia e l'aggiunta del contatto. ${ totalImported } su ${ totalToImport } contatto importato con successo.",
-        "Si è verificato un errore durante la crittografia e l'aggiunta dei contatti. ${ totalImported } su ${ totalToImport } contatti importati con successo."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Si è verificato un errore durante la crittografia e l'aggiunta del contatto. Non è stato possibile importare alcun contatto."
       ]
     },
     "Import contacts warning": {
@@ -4126,9 +4119,6 @@
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "L'accesso IMAP è abilitato nel tuo account Yahoo."
-      ],
-      "Invalid IMAP port": [
-        "Porta IMAP non valida"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Troppe richieste recenti. Per favore riprova tra qualche istante."
@@ -4169,17 +4159,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Clicca ${ boldManage } per espandere il menu delle opzioni."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "A seconda del tuo provider di servizi email, potresti aver bisogno di generare una ${ knowledgeBaseLink } prima di poter importare su ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Espandi il menu a tendina cliccando sui 3 puntini (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Genera una ${ boldAppPassword } e usala al posto della tua password regolare quando richiesto da ${ BRAND_NAME }."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Genera la ${ boldAppPassword } e usala al posto della tua password regolare quando richiesto da ${ BRAND_NAME }."
@@ -4190,26 +4174,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "Vai a ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Vai su Outlook ${ securitySettingsLink }."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Se la verifica in due passaggi è disattivata, attivala."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Apri i contatti di ${ yahooMailLink }."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Apri il tuo Outlook ${ outlookContactsLink }."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Seleziona ${ boldExportContacts } e scegli quali contatti esportare."
-      ],
       "Select ${ boldExportCSV }.": [
         "Seleziona ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Per importare un calendario su ${ BRAND_NAME }, necessiti del ${ knowledgeBaseLink }. Scaricala da Outlook in 3 facili passaggi:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Per importare un calendario su ${ BRAND_NAME }, necessiti del ${ knowledgeBaseLink }. Scaricala da Yahoo in 3 semplici passaggi:"
@@ -4217,17 +4186,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Per importare un calendario su ${ BRAND_NAME }, necessiti del ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Per importare i contatti su ${ BRAND_NAME }, hai bisogno di un ${ knowledgeBaseLink }. Scaricalo da Outlook in 3 semplici passaggi:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Per importare i contatti su ${ BRAND_NAME }, hai bisogno di un ${ knowledgeBaseLink }. Scaricalo da Yahoo in 3 semplici passaggi:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Per importare i contatti su ${ BRAND_NAME }, hai bisogno di un ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Per importare le email su ${ BRAND_NAME }, necessiti di una ${ appPasswordLink } da Outlook. Ottienila seguendo questi passaggi:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Per importare le email su ${ BRAND_NAME }, necessiti di una ${ appPasswordLink } da Yahoo. Ottienila seguendo questi passaggi:"
@@ -4243,26 +4206,11 @@
       "app password": [
         "password per le app"
       ],
-      "Can view all details": [
-        "Può visualizzare tutti i dettagli"
-      ],
       "Export": [
         "Esporta"
       ],
-      "Export contacts": [
-        "Esporta contatti"
-      ],
       "Export to CSV file": [
         "Esporta in file CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Gestisci"
-      ],
-      "Publish a calendar": [
-        "Pubblica un calendario"
       ]
     },
     "Import instructions link": {
@@ -4271,9 +4219,6 @@
       ],
       "app password or enable IMAP": [
         "password per le app o abilitare IMAP"
-      ],
-      "contacts": [
-        "contatti"
       ],
       "CSV or a VCF (vCard) file": [
         "un file CSV o VCF (vCard)"
@@ -4284,23 +4229,11 @@
       "ICS file": [
         "File ICS"
       ],
-      "security settings": [
-        "impostazioni sicurezza"
-      ],
-      "shared calendars": [
-        "calendari condivisi"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Clicca sul collegamento ${ boldICS } e scarica il file."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Vai a ${ calendarLink } nelle impostazioni di Outlook."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Vai al ${ calendarViewLink } in Yahoo."
       ],
@@ -4309,9 +4242,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Seleziona ${ boldExport } per esportare il calendario come file ICS."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "In ${ boldPublish }, seleziona il calendario che desideri importare. Imposta il permesso su ${ boldCanViewAllDetails } e pubblicalo."
       ]
     },
     "Import key": {
@@ -4650,7 +4580,7 @@
         "Importo inferiore al minimo (${ amount })."
       ],
       "An error occured while communicating with the extension": [
-        "Si è verificato un errore durante la connessione all'estensione"
+        "An error occurred while communicating with the extension"
       ],
       "and": [
         "e"
@@ -6931,14 +6861,8 @@
       "Folder location": [
         "Percorso cartella"
       ],
-      "From: ${ emailFrom }": [
-        "Da: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "Da: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Da: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Codice regalo"
@@ -7297,12 +7221,6 @@
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "A: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "A: ${ PMEmailAddress }"
-      ],
       "Token name": [
         "Nome token"
       ],
@@ -7648,10 +7566,6 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tutti i messaggi dalla cartella ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tutti i messaggi dalle cartelle ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importa tutti i messaggi da ${ itemsToImportCount } etichetta ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importa tutti i messaggi da ${ itemsToImportCount } etichette ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -7716,26 +7630,17 @@
       "How to import calendars from another service": [
         "Come importare i calendari da un altro servizio"
       ],
-      "How to import calendars from Outlook": [
-        "Come importare i calendari da Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Come importare i calendari da Yahoo"
       ],
       "How to import contacts from another service": [
         "Come importare i contatti da un altro servizio"
       ],
-      "How to import contacts from Outlook": [
-        "Come importare i contatti da Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Come importare i contatti da Yahoo"
       ],
       "How to import emails from another service": [
         "Come importare le email da un altro servizio"
-      ],
-      "How to import emails from Outlook": [
-        "Come importare le email da Outlook"
       ],
       "How to import emails from Yahoo": [
         "Come importare le email da Yahoo"

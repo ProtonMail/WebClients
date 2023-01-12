@@ -280,6 +280,12 @@
       "Manage addresses": [
         "Kelola alamat"
       ],
+      "Manage folders": [
+        "Kelola folder"
+      ],
+      "Manage labels": [
+        "Kelola label"
+      ],
       "Mark for deletion": [
         "Tandai untuk dihapus"
       ],
@@ -1902,6 +1908,11 @@
         "Gunakan nilai default global (${ globalDefaultText })"
       ]
     },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "Hapus acara"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Tagihan jatuh tempo"
@@ -1969,6 +1980,11 @@
         "Tambah kalender"
       ]
     },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "Gandakan acara"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 menit"
@@ -1991,6 +2007,11 @@
     "Early Access Enabled": {
       "On": [
         "Aktif"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "Sunting acara"
       ]
     },
     "Email body for description (description part)": {
@@ -2111,6 +2132,9 @@
       "Email address invalid": [
         "Alamat email tidak valid"
       ],
+      "Email address is required": [
+        "Alamat email diperlukan"
+      ],
       "Email is not valid": [
         "Email tidak valid"
       ],
@@ -2137,6 +2161,9 @@
       ],
       "Image upload failed": [
         "Pengunggahan gambar gagal"
+      ],
+      "IMAP server is required": [
+        "Server IMAP diperlukan"
       ],
       "Incorrect login credentials. Please try again.": [
         "Kredensial masuk salah. Silakan coba lagi."
@@ -2213,6 +2240,9 @@
       "Number of occurrences cannot be empty": [
         "Nomor peristiwa tidak boleh kosong"
       ],
+      "Password is required": [
+        "Kata sandi diperlukan"
+      ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
       ],
@@ -2222,8 +2252,8 @@
       "Please fix the highlighted conflicts to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Coba autentikasi ulang dan pastikan izin disetel dengan benar."
+      "Port is required": [
+        "Nomor port diperlukan"
       ],
       "Primary address key is not decrypted": [
         "Kunci alamat utama tidak didekripsi"
@@ -2353,9 +2383,6 @@
       ],
       "Validation error": [
         "Kesalahan validasi"
-      ],
-      "We were unable to connect to your service provider.": [
-        "Kami tidak dapat terhubung dengan penyedia layanan email Anda."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
@@ -2585,21 +2612,6 @@
         "dibatalkan"
       ]
     },
-    "Event delete button tooltip": {
-      "Delete event": [
-        "Hapus acara"
-      ]
-    },
-    "Event duplicate button tooltip": {
-      "Duplicate event": [
-        "Gandakan acara"
-      ]
-    },
-    "Event edit button tooltip": {
-      "Edit event": [
-        "Sunting acara"
-      ]
-    },
     "Event form": {
       "${ numberOfParticipants } participants": [
         "${ numberOfParticipants } peserta"
@@ -2791,23 +2803,26 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported } events successfully imported. The imported events will now appear in your calendar.": [
-        "${ totalImported } acara berhasil diimpor. Acara yang diimpor akan muncul pada kalender Anda."
-      ],
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } acara telah dienkripsi dan ditambahkan ke kalender Anda"
       ],
-      "An error occurred while encrypting and adding your ${ totalToImport } events. No event could be imported.": [
-        "Terjadi kesalahan pada saat mengenkripsi dan menambahkan ${ totalToImport } acara Anda. Tidak ada acara yang dapat diimpor."
-      ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Terjadi kesalahan saat mengimpor dan menambahkan acara Anda. Tidak ada acara yang berhasil diimpor."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Mengenkripsi dan menambah kontak: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Mengenkripsi dan menambahkan acara ke kalender: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Acara berhasil diimpor. Acara tersebut akan muncul pada kalender Anda."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Acara berhasil diimpor. Acara tersebut akan muncul pada kalender Anda."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Mohon untuk tidak menutup tab ini sebelum proses impor selesai."
@@ -2838,6 +2853,21 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. ${ totalImported } dari ${ totalToImport } berhasil diimpor."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Terjadi kesalahan saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontak berhasil diimpor. Kontak yang diimpor akan muncul pada daftar kontak Anda."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Kontak berhasil diimpor. Kontak yang diimpor akan muncul pada daftar kontak Anda."
       ]
     },
     "Import contact error": {
@@ -2853,20 +2883,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "tidak dikenal"
-      ]
-    },
-    "Import contacts": {
-      "${ totalImported } contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "${ totalImported } kontak berhasil diimpor. Kontak yang diimpor akan muncul pada daftar kontak Anda."
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } contacts. No contact could be imported.": [
-        "Terjadi kesalahan pada saat mengenkripsi dan menambahkan ${ totalToImport } kontak Anda. Tidak ada kontak yang dapat diimpor."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Terjadi kesalahan pada saat mengenkripsi dan menambahkan kontak Anda. Tidak ada kontak yang dapat diimpor."
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Terjadi kesalahan pada saat mengenkripsi dan menambahkan kontak Anda. ${ totalImported } dari ${ totalToImport } berhasil diimpor."
       ]
     },
     "Import contacts warning": {
@@ -2905,9 +2921,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "Akses IMAP telah diaktifkan pada akun Yahoo Anda."
       ],
-      "Invalid IMAP port": [
-        "Port IMAP tidak valid"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
       ],
@@ -2942,17 +2955,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Klik ${ boldManage } untuk menampilkan menu pengaturan selengkapnya."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "Tergantung dari layanan email Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengklik tombol 3 titik (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh ${ BRAND_NAME }."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh ${ BRAND_NAME }."
@@ -2963,26 +2970,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "Tuju ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Tuju ${ securitySettingsLink } Outlook."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Apabila verifikasi 2 langkah belum aktif, aktifkan terlebih dahulu."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Buka kontak ${ yahooMailLink } Anda."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Buka ${ outlookContactsLink } Outlook Anda."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Pilih ${ boldExportContacts } dan tentukan kontak mana saja yang hendak Anda ekspor."
-      ],
       "Select ${ boldExportCSV }.": [
         "Pilih ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Untuk mengimpor kalender ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh berkas ini dari Outlook dengan mengikuti 3 langkah mudah berikut:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Untuk mengimpor kalender ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh berkas ini dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
@@ -2990,17 +2982,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Untuk mengimpor kalender ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Harap unduh berkas ini sebelum memulai proses impor."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh berkas ini dari Outlook dengan mengikuti 3 langkah mudah berikut:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Unduh berkas ini dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Harap unduh berkas ini sebelum memulai proses impor."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Untuk mengimpor email ke ${ BRAND_NAME }, Anda akan membutuhkan ${ appPasswordLink } dari Outlook. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Untuk mengimpor email ke ${ BRAND_NAME }, Anda akan memerlukan ${ appPasswordLink } dari Yahoo. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
@@ -3016,26 +3002,11 @@
       "app password": [
         "kata sandi aplikasi"
       ],
-      "Can view all details": [
-        "Dapat melihat seluruh rincian"
-      ],
       "Export": [
         "Ekspor"
       ],
-      "Export contacts": [
-        "Ekspor kontak"
-      ],
       "Export to CSV file": [
         "Ekspor ke berkas CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Kelola"
-      ],
-      "Publish a calendar": [
-        "Terbitkan kalender"
       ]
     },
     "Import instructions link": {
@@ -3044,9 +3015,6 @@
       ],
       "app password or enable IMAP": [
         "kata sandi aplikasi atau mengaktifkan IMAP"
-      ],
-      "contacts": [
-        "kontak"
       ],
       "CSV or a VCF (vCard) file": [
         "Berkas CSV atau VCF (vCard)"
@@ -3057,23 +3025,11 @@
       "ICS file": [
         "Berkas ICS"
       ],
-      "security settings": [
-        "pengaturan keamanan"
-      ],
-      "shared calendars": [
-        "kalender yang dibagikan"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Klik tautan ${ boldICS } dan unduh berkas tersebut."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Tuju ${ calendarLink } pada pengaturan Outlook Anda."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Tuju ${ calendarViewLink } di Yahoo."
       ],
@@ -3082,9 +3038,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Pilih ${ boldExport } untuk mengekspor kalender yang bersangkutan dalam bentuk berkas ICS."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "Pada ${ boldPublish }, pilih kalender mana saja yang hendak Anda impor. Apabila sudah, berikan kalender tersebut izin ${ boldCanViewAllDetails } dan terbitkan."
       ]
     },
     "Import provider": {
@@ -3963,14 +3916,14 @@
       "Frequency": [
         "Frekuensi"
       ],
-      "From: ${ emailFrom }": [
-        "Dari: ${ emailFrom }"
+      "From: ${ from }": [
+        "Dari: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Dari: ${ fromEmail }"
       ],
       "From: ${ importedEmail }": [
         "Dari: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Dari: ${ importedEmailAddress }"
       ],
       "Good": [
         "Baik"
@@ -4116,11 +4069,11 @@
       "To: ${ emailAddress }": [
         "Ke: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Kepada: ${ emailTo }"
+      "To: ${ to }": [
+        "Kepada: ${ to }"
       ],
-      "To: ${ PMEmailAddress }": [
-        "Ke: ${ PMEmailAddress }"
+      "To: ${ toEmail }": [
+        "Kepada: ${ toEmail }"
       ],
       "Toolbar": [
         "Toolbar"
@@ -4248,8 +4201,8 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ itemsToImportCount } folder dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Impor seluruh pesan dari folder ${ itemsToImportCount } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Impor seluruh pesan dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -4321,26 +4274,17 @@
       "How to import calendars from another service": [
         "Cara untuk mengimpor kalender-kalender dari layanan email lainnya"
       ],
-      "How to import calendars from Outlook": [
-        "Cara untuk mengimpor kalender-kalender dari Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Cara untuk mengimpor kalender-kalender dari Yahoo"
       ],
       "How to import contacts from another service": [
         "Cara untuk mengimpor kontak dari layanan email lainnya"
       ],
-      "How to import contacts from Outlook": [
-        "Cara untuk mengimpor kontak dari Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Cara untuk mengimpor kontak dari Yahoo"
       ],
       "How to import emails from another service": [
         "Cara untuk mengimpor email-email dari layanan email lainnya"
-      ],
-      "How to import emails from Outlook": [
-        "Cara untuk mengimpor email-email dari Outlook"
       ],
       "How to import emails from Yahoo": [
         "Cara untuk mengimpor email-email dari Yahoo"
@@ -4904,6 +4848,11 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Catatan: layanan akan dimuat setelah Anda menekan tombol Terapkan."
+      ]
+    },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "Muat ulang acara"
       ]
     },
     "Select files": {

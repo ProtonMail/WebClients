@@ -332,6 +332,12 @@
       "Log in": [
         "Přihlásit se"
       ],
+      "Manage folders": [
+        "Spravovat složky"
+      ],
+      "Manage labels": [
+        "Spravovat štítky"
+      ],
       "Manage link": [
         "Správa odkazu"
       ],
@@ -1936,6 +1942,9 @@
       "Email address invalid": [
         "E-mailová adresa je neplatná"
       ],
+      "Email address is required": [
+        "Je vyžadována e-mailová adresa"
+      ],
       "Email is not valid": [
         "E-mailová adresa není platná"
       ],
@@ -1962,6 +1971,9 @@
       ],
       "Image upload failed": [
         "Nahrávání obrázku se nezdařilo"
+      ],
+      "IMAP server is required": [
+        "Je vyžadován IMAP server"
       ],
       "Incorrect login credentials. Please try again.": [
         "Nesprávné přihlašovací údaje. Zkuste to prosím znovu."
@@ -2023,6 +2035,9 @@
         "Některé skupiny neobsahují žádné kontakty: ${ noContactGroupList } ",
         "Některé skupiny neobsahují žádné kontakty: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Heslo je povinná položka"
+      ],
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
@@ -2035,8 +2050,8 @@
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty."
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Zkuste se znovu ověřit a zkontrolujte, zda jsou oprávnění nastavena správně."
+      "Port is required": [
+        "Port je povinná položka"
       ],
       "Primary address key is not decrypted": [
         "Klíč primární adresy nebyl dešifrován"
@@ -2148,9 +2163,6 @@
       ],
       "Unknown error": [
         "Neznámá chyba"
-      ],
-      "We were unable to connect to your service provider.": [
-        "Nebyli jsme schopni se připojit k vašemu poskytovateli služeb."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
@@ -2562,23 +2574,11 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
-        "${ totalImported } událost byla úspěšně importována. Importovaná událost se nyní objeví ve vašem kalendáři.",
-        "${ totalImported } události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři.",
-        "${ totalImported } událostí bylo úspěšně importováno. Importované události se nyní objeví ve vašem kalendáři.",
-        "${ totalImported } událostí bylo úspěšně importováno. Importované události se nyní objeví ve vašem kalendáři."
-      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } události zašifrována a přidána do kalendáře",
         "${ totalImported }/${ totalToImport } událostí zašifrovány a přidány do kalendáře",
         "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře",
         "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře"
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
-        "Nastala chyba při šifrování a přidávání vaší ${ totalToImport } události. Událost nemohla být importována.",
-        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } událostí. Události nemohly být importovány.",
-        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } událostí. Události nemohly být importovány.",
-        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } událostí. Události nemohly být importovány."
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } události byla úspěšně importována.",
@@ -2586,11 +2586,20 @@
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Nastala chyba při šifrování a přidávání vašich událostí. Události nemohly být importovány."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifrování a přidávaní kontaktů: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Šifrování a přidávání událostí do Vašeho kalendáře: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Událost byla úspěšně importována. Importovaná událost se nyní objeví ve vašem kalendáři."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Události byly úspěšně importovány. Importované události se nyní objeví ve vašem kalendáři."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Prosíme nezavírejte kartu před dokončením importu."
@@ -2630,6 +2639,21 @@
         "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do Vašeho listu kontaktů",
         "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů",
         "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Nastala chyba při šifrování a přidávání kontaktu. Kontakt nebyl importován."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Nastala chyba při šifrování a přidávání kontaktů. ${ totalImported } z ${ totalToImport } kontaktů bylo úspěšně importováno."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Nastala chyba při šifrování a přidávání kontaktů. Kontakty nebyly importovány."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontakt byl úspěšně importován. Importovaný kontakt se objeví ve vašem seznamu kontaktů."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Kontakty byly úspěšně importovány. Importované kontakty se objeví ve vašem seznamu kontaktů."
       ]
     },
     "Import contact error": {
@@ -2648,29 +2672,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "neznámé"
-      ]
-    },
-    "Import contacts": {
-      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
-        "${ totalImported } kontakt byl úspěšně importován. Importovaný kontakt se nyní zobrazí v seznamu kontaktů.",
-        "${ totalImported } kontakty byly úspěšně importovány. Importované kontakty se objeví ve vašem seznamu kontaktů.",
-        "${ totalImported } kontaktů bylo úspěšně importováno. Importované kontakty se nyní objeví v seznamu kontaktů.",
-        "${ totalImported } kontaktů bylo úspěšně importováno. Importované kontakty se nyní objeví v seznamu kontaktů."
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
-        "Nastala chyba při šifrování a přidávání vašeho ${ totalToImport } kontaktu. Kontakt nemohl být importován.",
-        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } kontaktů. Kontakty nemohly být importovány.",
-        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } kontaktů. Kontakty nemohly být importovány.",
-        "Nastala chyba při šifrování a přidávání vašich ${ totalToImport } kontaktů. Kontakty nemohly být importovány."
-      ],
-      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
-        "Nastala chyba při šifrování a přidávání kontaktu. ${ totalImported } z ${ totalToImport } kontaktu byl úspěšně importován.",
-        "Nastala chyba při šifrování a přidávání kontaktů. ${ totalImported } z ${ totalToImport } kontaktů bylo úspěšně importováno.",
-        "Nastala chyba při šifrování a přidávání kontaktů. ${ totalImported } z ${ totalToImport } kontaktů bylo úspěšně importováno.",
-        "Nastala chyba při šifrování a přidávání kontaktů. ${ totalImported } z ${ totalToImport } kontaktů bylo úspěšně importováno."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Nastala chyba při šifrování a přidávání kontaktu. Kontakt nebyl importován."
       ]
     },
     "Import contacts warning": {
@@ -2709,9 +2710,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "IMAP přístup je zapnut ve vašem účtu Yahoo."
       ],
-      "Invalid IMAP port": [
-        "Neplatný IMAP port"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
       ],
@@ -2746,17 +2744,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Kliknutím na ${ boldManage } rozbalíte nabídku možností."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "V závislosti na vašem poskytovateli e-mailové služby bude možná nutné nejprve vygenerovat ${ knowledgeBaseLink } než budete moci provést import do ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Rozbalte nabídku kliknutím na 3 tečky (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Vygenerujte ${ boldAppPassword } a na výzvu ${ BRAND_NAME } jej použijte místo běžného hesla."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Vygenerujte ${ boldAppPassword } a na výzvu ${ BRAND_NAME } ho použijte místo běžného hesla."
@@ -2767,26 +2759,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "Jděte do ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Přejít na Outlook ${ securitySettingsLink }."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Pokud je dvoufázové ověřování vypnuté, zapněte ho."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Otevřít vaše ${ yahooMailLink } kontakty."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Otevřete vaše Outlook ${ outlookContactsLink }."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Vyberte ${ boldExportContacts } a zvolte kontakty, které chcete exportovat."
-      ],
       "Select ${ boldExportCSV }.": [
         "Vybrat ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Chcete-li importovat kalendář do ${ BRAND_NAME }, potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z aplikace Outlook ve 3 snadných krocích:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Chcete-li importovat kalendář do ${ BRAND_NAME }, potřebujete ${ knowledgeBaseLink }. Stáhněte si ho z Yahoo ve 3 snadných krocích:"
@@ -2794,17 +2771,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Chcete-li importovat kalendář do ${ BRAND_NAME }, potřebujete ${ knowledgeBaseLink }. Stáhněte si ho před zahájením importu."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Pro import kontaktů do ${ BRAND_NAME } potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z aplikace Outlook ve 3 snadných krocích:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Pro import kontaktů do ${ BRAND_NAME } potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z Yahoo ve 3 snadných krocích:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Chcete-li importovat kontakty do ${ BRAND_NAME }, potřebujete ${ knowledgeBaseLink }. Stáhněte si ho před zahájením importu."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Chcete-li importovat e-maily do ${ BRAND_NAME }, potřebujete ${ appPasswordLink } z aplikace Outlook. Získáte jej podle následujících kroků:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Pro import e-mailů do ${ BRAND_NAME } potřebujete ${ appPasswordLink } od Yahoo. Získáte ho pomocí následujících kroků:"
@@ -2820,26 +2791,11 @@
       "app password": [
         "heslo aplikace"
       ],
-      "Can view all details": [
-        "Lze zobrazit všechny podrobnosti"
-      ],
       "Export": [
         "Exportovat"
       ],
-      "Export contacts": [
-        "Exportovat kontakty"
-      ],
       "Export to CSV file": [
         "Exportovat do CSV souboru"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Spravovat"
-      ],
-      "Publish a calendar": [
-        "Zveřejnit kalendář"
       ]
     },
     "Import instructions link": {
@@ -2848,9 +2804,6 @@
       ],
       "app password or enable IMAP": [
         "heslo aplikace nebo povolit IMAP"
-      ],
-      "contacts": [
-        "kontakty"
       ],
       "CSV or a VCF (vCard) file": [
         "Soubor CSV nebo VCF (vCard)"
@@ -2861,23 +2814,11 @@
       "ICS file": [
         "Soubor ICS"
       ],
-      "security settings": [
-        "nastavení zabezpečení"
-      ],
-      "shared calendars": [
-        "sdílené kalendáře"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Klikněte na odkaz ${ boldICS } a stáhněte si soubor."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Přejít na ${ calendarLink } v nastavení Outlook."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Přejít na ${ calendarViewLink } v Yahoo."
       ],
@@ -2886,9 +2827,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Chcete-li kalendář exportovat jako ICS soubor, vyberte ${ boldExport }."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "V části ${ boldPublish } vyberte kalendář, který chcete importovat. Nastavte oprávnění na ${ boldCanViewAllDetails } a zveřejněte jej."
       ]
     },
     "Import provider": {
@@ -3566,7 +3504,7 @@
         "Ne všechny soubory byly přeneseny. Zkuste soubory znovu nahrát nebo stáhnout."
       ],
       "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Poznámka: Na zařízeních, kde jste nainstalovali ${ DRIVE_APP_NAME }, mohou být data stále dostupná lokálně."
+        "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "z"
@@ -4242,14 +4180,14 @@
       "Folder name": [
         "Název složky"
       ],
-      "From: ${ emailFrom }": [
-        "Od: ${ emailFrom }"
+      "From: ${ from }": [
+        "Od: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Od: ${ fromEmail }"
       ],
       "From: ${ importedEmail }": [
         "Od: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Od: ${ importedEmailAddress }"
       ],
       "Good": [
         "Dobré"
@@ -4437,11 +4375,11 @@
       "To: ${ emailAddress }": [
         "Pro: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Komu: ${ emailTo }"
+      "To: ${ to }": [
+        "Komu: ${ to }"
       ],
-      "To: ${ PMEmailAddress }": [
-        "Komu: ${ PMEmailAddress }"
+      "To: ${ toEmail }": [
+        "Komu: ${ toEmail }"
       ],
       "Toolbar": [
         "Panel nástrojů"
@@ -4582,11 +4520,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy ze složky ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ze složek ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ze složek ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ze složek ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importovat všechny zprávy z ${ itemsToImportCount } složky a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ze ${ itemsToImportCount } složek a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importovat všechny zprávy se štítkem ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -4629,26 +4567,17 @@
       "How to import calendars from another service": [
         "Jak importovat kalendáře z jiné služby"
       ],
-      "How to import calendars from Outlook": [
-        "Jak importovat kalendáře z Outlooku"
-      ],
       "How to import calendars from Yahoo": [
         "Jak importovat kalendáře z Yahoo"
       ],
       "How to import contacts from another service": [
         "Jak importovat kontakty z jiné služby"
       ],
-      "How to import contacts from Outlook": [
-        "Jak importovat kontakty z Outlooku"
-      ],
       "How to import contacts from Yahoo": [
         "Jak importovat kontakty z Yahoo"
       ],
       "How to import emails from another service": [
         "Jak importovat e-maily z jiné služby"
-      ],
-      "How to import emails from Outlook": [
-        "Jak importovat e-maily z Outlooku"
       ],
       "How to import emails from Yahoo": [
         "Jak importovat e-maily z Yahoo"

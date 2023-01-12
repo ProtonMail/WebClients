@@ -2002,9 +2002,6 @@
       "Please fix the highlighted conflicts to proceed.": [
         "請先修正已標示的衝突以便繼續。"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "請嘗試重新認證並確保權限設定正確。"
-      ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被解密"
       ],
@@ -2121,9 +2118,6 @@
       ],
       "Unknown error": [
         "未知錯誤"
-      ],
-      "We were unable to connect to your service provider.": [
-        "我們無法連接到您的服務提供者。"
       ],
       "You can't send a mail to more than 100 recipients": [
         "您無法將電郵傳送給超過100位收件人"
@@ -2520,11 +2514,20 @@
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密並加入聯絡人：${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "正在加密並加入事件到您的行事曆中：${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "行程已成功匯入。已匯入的行程現將顯示於行事曆中。"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "行程已成功匯入。已匯入的行程現將顯示於行事曆中。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "在匯入過程完成之前，請勿關閉此索引標籤。"
@@ -2555,6 +2558,21 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 個聯絡人已加密並加入至您的通訊錄"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "加密及加入聯絡人時發生錯誤。無法匯入任何聯絡人。"
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "加密及加入聯絡人時發生錯誤。${ totalImported }/${ totalToImport } 聯絡人已成功匯入。"
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "加密及加入聯絡人時發生錯誤。無法匯入任何聯絡人。"
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "聯絡人已成功匯入。已匯入的聯絡人現將顯示於通訊錄中。"
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "聯絡人已成功匯入。已匯入的聯絡人現將顯示於通訊錄中。"
       ]
     },
     "Import contact error": {
@@ -2608,9 +2626,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "您的 Yahoo 帳號已啟用 IMAP 存取。"
       ],
-      "Invalid IMAP port": [
-        "無效的 IMAP 連接埠"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "最近的請求太多。請容後再試。"
       ],
@@ -2645,17 +2660,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "點擊 ${ boldManage } 以展開選項功能表。"
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "取決於您的電子郵件服務提供者，您可能需要先產生 ${ knowledgeBaseLink } 才能匯入到 ${ BRAND_NAME }。"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "點擊三個點 (...) 展開下拉式選單"
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "進行生成一組 ${ boldAppPassword } ，當 ${ BRAND_NAME } 出現提示時，即以該密碼取代您舊有的一般密碼。"
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "進行生成一組 ${ boldAppPassword } ，當 ${ BRAND_NAME } 出現提示時，即以該密碼取代您舊有的一般密碼。"
@@ -2666,26 +2675,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "前往 ${ boldAccountSecurity }。"
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "前往 Outlook ${ securitySettingsLink }."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "若雙重驗證仍待用中，建議您啟用它。"
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "開啟您的 ${ yahooMailLink } 通訊錄。"
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "開啟您的 Outlook 通訊錄 ${ outlookContactsLink }."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "選取 ${ boldExportContacts } 並選擇您要匯出的通訊錄。"
-      ],
       "Select ${ boldExportCSV }.": [
         "選取匯出 ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "要匯入行事曆到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "要匯入行事曆到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
@@ -2693,17 +2687,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "要匯入行事曆到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "要匯入聯絡人到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "要匯入聯絡人到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "要匯入聯絡人到 ${ BRAND_NAME }，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案。"
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "要匯入電子郵件到 ${ BRAND_NAME }，您需要來自 Outlook 的 ${ appPasswordLink }。請按照以下步驟取得："
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "要匯入電子郵件到 ${ BRAND_NAME }，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
@@ -2719,26 +2707,11 @@
       "app password": [
         "應用程式密碼"
       ],
-      "Can view all details": [
-        "可以檢視所有詳細資訊"
-      ],
       "Export": [
         "匯出"
       ],
-      "Export contacts": [
-        "匯出聯絡人"
-      ],
       "Export to CSV file": [
         "匯出為 CSV 檔案"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "管理"
-      ],
-      "Publish a calendar": [
-        "發佈行事曆"
       ]
     },
     "Import instructions link": {
@@ -2747,9 +2720,6 @@
       ],
       "app password or enable IMAP": [
         "應用程式密碼或啟用 IMAP"
-      ],
-      "contacts": [
-        "聯絡人"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV 或 VCF (vCard) 檔案"
@@ -2760,23 +2730,11 @@
       "ICS file": [
         "ICS 檔案"
       ],
-      "security settings": [
-        "安全性設定"
-      ],
-      "shared calendars": [
-        "已分享的行事曆"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "點擊 ${ boldICS } 連結並下載檔案。"
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "前往您 Outlook. com 設定中的 ${ calendarLink }。"
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "前往 Yahoo 郵件中的 ${ calendarViewLink }。"
       ],
@@ -2785,9 +2743,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案。"
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "在 ${ boldPublish } 下，選取您要匯入的行事曆。設定權限給 ${ boldCanViewAllDetails } 並發佈它。"
       ]
     },
     "Import provider": {
@@ -3360,7 +3315,7 @@
         "並非所有檔案皆已傳輸。請嘗試重新上載或下載檔案。"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "備註：資料將會持續在安裝 ${ DRIVE_APP_NAME } 的裝置上保持可用狀態。"
+        "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "/"
@@ -4024,14 +3979,8 @@
       "Folder name": [
         "資料夾名稱"
       ],
-      "From: ${ emailFrom }": [
-        "寄件者：${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "寄件者：${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "寄件者： ${ importedEmailAddress }"
       ],
       "Good": [
         "很好"
@@ -4219,12 +4168,6 @@
       "To: ${ emailAddress }": [
         "收件者：${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "收件者：${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "收件者：${ PMEmailAddress }"
-      ],
       "Toolbar": [
         "工具列"
       ],
@@ -4364,9 +4307,6 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入來自 ${ itemsToImportCount } 資料夾的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
       "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
       ],
@@ -4399,26 +4339,17 @@
       "How to import calendars from another service": [
         "如何從其它服務匯入行事曆"
       ],
-      "How to import calendars from Outlook": [
-        "如何從 Outlook 匯入行事曆"
-      ],
       "How to import calendars from Yahoo": [
         "如何從 Yahoo 匯入行事曆"
       ],
       "How to import contacts from another service": [
         "如何從其它服務匯入聯絡人"
       ],
-      "How to import contacts from Outlook": [
-        "如何從 Outlook 匯入聯絡人"
-      ],
       "How to import contacts from Yahoo": [
         "如何從 Yahoo 匯入聯絡人"
       ],
       "How to import emails from another service": [
         "如何從其它服務匯入電郵"
-      ],
-      "How to import emails from Outlook": [
-        "如何從 Outlook 匯入電郵"
       ],
       "How to import emails from Yahoo": [
         "如何從 Yahoo 匯入電郵"

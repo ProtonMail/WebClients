@@ -1996,9 +1996,6 @@
       "Please fix the highlighted conflicts to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "请尝试重新验证并确保权限正确。"
-      ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
       ],
@@ -2109,9 +2106,6 @@
       ],
       "Unknown error": [
         "未知错误"
-      ],
-      "We were unable to connect to your service provider.": [
-        "我们无法连接到您的服务提供商。"
       ],
       "You can't send a mail to more than 100 recipients": [
         "收件人不能超过 100 个"
@@ -2502,9 +2496,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported } events successfully imported. The imported events will now appear in your calendar.": [
-        "${ totalImported }日程导入成功，已显示在您的日历中。"
-      ],
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
       ],
@@ -2563,11 +2554,6 @@
         "未知"
       ]
     },
-    "Import contacts": {
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "加密并添加联系人时出错，未能导入任何联系人"
-      ]
-    },
     "Import contacts warning": {
       "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
         "${ CONTACTS_APP_NAME } ${ forNow } 不支持:"
@@ -2604,9 +2590,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "您的 Yahoo 账户已开启 IMAP 访问。"
       ],
-      "Invalid IMAP port": [
-        "IMAP 端口号无效"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "请求过于频繁，请稍后再试。"
       ],
@@ -2641,17 +2624,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "点击 ${ boldManage } 下拉菜单."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "各类邮箱操作步骤不尽相同，您可能需要先${ knowledgeBaseLink }才能导入至 ${ BRAND_NAME }。"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "点击三点图标（...）展开下拉菜单。"
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "生成 ${ boldAppPassword } 并在 ${ BRAND_NAME } 中根据提示使用。"
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "生成 ${ boldAppPassword } 并在 ${ BRAND_NAME } 中根据提示使用。"
@@ -2662,26 +2639,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "前往 ${ boldAccountSecurity }。"
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "前往 Outlook. com ${ securitySettingsLink }。"
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "如果双重验证已关闭，请予以开启."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "打开您的 ${ yahooMailLink } 通讯录。"
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "打开您的 Outlook ${ outlookContactsLink }."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "点击 ${ boldExportContacts } 并选择需要导出的联系人."
-      ],
       "Select ${ boldExportCSV }.": [
         "选择 ${ boldExportCSV }"
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "将 Outlook 日程导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "将 Yahoo 日程导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
@@ -2689,17 +2651,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "如需将日程导入 ${ BRAND_NAME }，您需要先下载一份 ${ knowledgeBaseLink }。"
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "将 Outlook 通讯录导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "将 Yahoo 通讯录导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "如需将通讯录导入 ${ BRAND_NAME }，您需要先下载一份 ${ knowledgeBaseLink }。"
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "将 Outlook 邮件导入 ${ BRAND_NAME }，需要按以下步骤获取 ${ appPasswordLink }："
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "将 Yahoo 邮件导入 ${ BRAND_NAME }，需要按以下步骤获取 ${ appPasswordLink }："
@@ -2715,26 +2671,11 @@
       "app password": [
         "应用专用密码"
       ],
-      "Can view all details": [
-        "可查看所有详细信息"
-      ],
       "Export": [
         "导出"
       ],
-      "Export contacts": [
-        "导出联系人"
-      ],
       "Export to CSV file": [
         "导出至 CSV 文件"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "管理"
-      ],
-      "Publish a calendar": [
-        "发布日历"
       ]
     },
     "Import instructions link": {
@@ -2743,9 +2684,6 @@
       ],
       "app password or enable IMAP": [
         "生成应用专用密码或开启 IMAP 功能"
-      ],
-      "contacts": [
-        "通讯录"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV 或 VCF（vCard）文件"
@@ -2756,23 +2694,11 @@
       "ICS file": [
         "ICS 文件"
       ],
-      "security settings": [
-        "安全设置"
-      ],
-      "shared calendars": [
-        "共享日历"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "点击 ${ boldICS } 文件链接即可下载文件."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "转至 Outlook. com 设置中的“${ calendarLink }”选项。"
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "转至 Yahoo Mail 中的 ${ calendarViewLink }."
       ],
@@ -2781,9 +2707,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "选择 ${ boldExport } 将日历作为 ICS 文件下载."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "在 ${ boldPublish } 选项中，选择您要导入的日历，并将权限设为 ${ boldCanViewAllDetails }，然后选择发布。"
       ]
     },
     "Import provider": {
@@ -3341,7 +3264,7 @@
         "并非所有文件都已传输。请尝试重新上传或下载文件。"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "请注意：安装过 ${ DRIVE_APP_NAME } 的设备上仍可能存在本地数据。"
+        "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "，共"
@@ -3981,14 +3904,8 @@
       "Folder name": [
         "文件夹名称"
       ],
-      "From: ${ emailFrom }": [
-        "来自: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "来自：${ importedEmailAddress }"
       ],
       "Good": [
         "很好"
@@ -4176,12 +4093,6 @@
       "To: ${ emailAddress }": [
         "导入到：${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "导入到：${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "导入到：${ PMEmailAddress }"
-      ],
       "Toolbar": [
         "工具栏"
       ],
@@ -4321,9 +4232,6 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从文件夹 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
       "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "从标签 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
@@ -4356,26 +4264,17 @@
       "How to import calendars from another service": [
         "如何从其他服务导入日历"
       ],
-      "How to import calendars from Outlook": [
-        "如何从Outlook导入日历"
-      ],
       "How to import calendars from Yahoo": [
         "如何从Yahoo导入日历"
       ],
       "How to import contacts from another service": [
         "如何从其他服务导入联系人"
       ],
-      "How to import contacts from Outlook": [
-        "如何从Outlook导入联系人"
-      ],
       "How to import contacts from Yahoo": [
         "如何从Yahoo导入联系人"
       ],
       "How to import emails from another service": [
         "如何从其他邮件服务导入邮件"
-      ],
-      "How to import emails from Outlook": [
-        "如何从Outlook导入邮件"
       ],
       "How to import emails from Yahoo": [
         "如何从Yahoo导入邮件"

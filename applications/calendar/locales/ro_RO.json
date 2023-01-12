@@ -284,6 +284,12 @@
       "Manage addresses": [
         "Gestionare adrese"
       ],
+      "Manage folders": [
+        "Gestionare foldere"
+      ],
+      "Manage labels": [
+        "Gestionare etichete"
+      ],
       "Mark for deletion": [
         "Marcare pentru ștergere"
       ],
@@ -1922,6 +1928,11 @@
         "Folosire valoare implicită globală (${ globalDefaultText })"
       ]
     },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "Ștergere eveniment"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factură restantă"
@@ -1991,6 +2002,11 @@
         "Adăugare calendar"
       ]
     },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "Duplicare eveniment"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 de minute"
@@ -2013,6 +2029,11 @@
     "Early Access Enabled": {
       "On": [
         "Activat"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "Editare eveniment"
       ]
     },
     "Email body for description (description part)": {
@@ -2157,6 +2178,9 @@
       "Email address invalid": [
         "Adresă de e-mail nevalidă"
       ],
+      "Email address is required": [
+        "Adresa de e-mail este obligatorie"
+      ],
       "Email is not valid": [
         "E-mailul nu este valid"
       ],
@@ -2183,6 +2207,9 @@
       ],
       "Image upload failed": [
         "Eșuare încărcare imagine"
+      ],
+      "IMAP server is required": [
+        "Serverul IMAP este obligatoriu"
       ],
       "Incorrect login credentials. Please try again.": [
         "Date de conectare incorecte. Reîncercați."
@@ -2271,6 +2298,9 @@
         "Câteva grupuri nu au contacte: ${ noContactGroupList }",
         "Câteva grupuri nu au contacte: ${ noContactGroupList }"
       ],
+      "Password is required": [
+        "Parola este obligatorie"
+      ],
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
@@ -2282,8 +2312,8 @@
         "Remediați conflictele evidențiate pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua."
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Încercați să vă reautentificați și asigurați-vă că permisiunile sunt setate corect."
+      "Port is required": [
+        "Portul este obligatoriu"
       ],
       "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
@@ -2397,9 +2427,6 @@
       ],
       "Validation error": [
         "Eroare validare."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Nu am reușit să ne conectăm la furnizorul dvs. de servicii."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
@@ -2631,21 +2658,6 @@
         "anulat"
       ]
     },
-    "Event delete button tooltip": {
-      "Delete event": [
-        "Ștergere eveniment"
-      ]
-    },
-    "Event duplicate button tooltip": {
-      "Duplicate event": [
-        "Duplicare eveniment"
-      ]
-    },
-    "Event edit button tooltip": {
-      "Edit event": [
-        "Editare eveniment"
-      ]
-    },
     "Event form": {
       "${ numberOfParticipants } participant": [
         "Un participant",
@@ -2851,31 +2863,30 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
-        "A fost importat un eveniment. Acesta va apărea acum în calendar.",
-        "Au fost importate ${ totalImported } evenimente. Acestea vor apărea acum în calendar.",
-        "Au fost importate ${ totalImported } de evenimente. Acestea vor apărea acum în calendar."
-      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "Un eveniment din ${ totalToImport } a fost criptat și adăugat în calendar.",
         "${ totalImported } evenimente din ${ totalToImport } au fost criptate și adăugate în calendar.",
         "${ totalImported } de evenimente din ${ totalToImport } au fost criptate și adăugate în calendar."
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
-        "S-a produs o eroare în timpul criptării și adăugării unui eveniment. Nu s-a importat niciun eveniment.",
-        "S-a produs o eroare în timpul criptării și adăugării a ${ totalToImport } evenimente. Nu s-a importat niciun eveniment.",
-        "S-a produs o eroare în timpul criptării și adăugării a ${ totalToImport } de evenimente. Nu s-a importat niciun eveniment."
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare contacte: ${ totalImported }}/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Criptare și adăugare evenimente în calendar: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Evenimentul a fost importat. Acesta va apărea acum în calendar."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Evenimentele au fost importate. Acestea vor apărea acum în calendar."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Nu închideţi fila înainte de terminarea procesului de importare."
@@ -2912,6 +2923,21 @@
         "S-a criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } contact.",
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } contacte.",
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "A apărut o eroare la criptarea și adăugarea contactului. Nu s-a importat niciun contact."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "A apărut o eroare în timpul criptării și adăugării contactelor. S-au importat ${ totalImported } din ${ totalToImport } contacte."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "A apărut o eroare la criptarea și adăugarea contactelor. Nu s-a importat niciun contact."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contactul a fost importat. Acesta va apărea acum în lista de contacte."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contactele au fost importate. Acestea vor apărea acum în lista de contacte."
       ]
     },
     "Import contact error": {
@@ -2929,26 +2955,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "necunoscut"
-      ]
-    },
-    "Import contacts": {
-      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
-        "A fost importat un contact. Acesta va apărea acum în lista de contacte.",
-        "Au fost importate ${ totalImported } contacte. Acestea vor apărea acum în lista de contacte.",
-        "Au fost importate ${ totalImported } de contacte. Acestea vor apărea acum în lista de contacte."
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
-        "S-a produs o eroare în timpul criptării și adăugării unui contact. Nu s-a importat niciun contact.",
-        "S-a produs o eroare în timpul criptării și adăugării a ${ totalToImport } contacte. Nu a putut fi importat niciun contact.",
-        "S-a produs o eroare în timpul criptării și adăugării a ${ totalToImport } de contacte. Nu a putut fi importat niciun contact."
-      ],
-      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
-        "A apărut o eroare în timpul criptării și adăugării unui contact. S-au importat ${ totalImported } din ${ totalToImport } contacte.",
-        "A apărut o eroare în timpul criptării și adăugării contactelor. S-au importat ${ totalImported } din ${ totalToImport } contacte.",
-        "A apărut o eroare în timpul criptării și adăugării contactelor. S-au importat ${ totalImported } din ${ totalToImport } de contacte."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "A apărut o eroare la criptarea și adăugarea contactului. Nu s-a importat niciun contact."
       ]
     },
     "Import contacts warning": {
@@ -2987,9 +2993,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "Accesul IMAP este activat în contul Yahoo."
       ],
-      "Invalid IMAP port": [
-        "Port IMAP nevalid"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Prea multe solicitări recente. Reîncercați mai târziu."
       ],
@@ -3024,17 +3027,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Faceți clic pe ${ boldManage } pentru a extinde meniul de opțiuni."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "În funcție de furnizorul de e-mail, s-ar putea să trebuiască să generați ${ knowledgeBaseLink } înainte de a putea importa datele în ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Extindeți meniul derulant făcând clic pe cele 3 puncte (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Generați o ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită ${ BRAND_NAME }."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Generați ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită ${ BRAND_NAME }."
@@ -3045,26 +3042,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "Salt la ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Accesați ${ securitySettingsLink } din Outlook."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Dacă verificarea în doi pași este dezactivată, activați-o."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Deschideți lista de contacte ${ yahooMailLink }."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Deschideți ${ outlookContactsLink } din Outlook."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Selectați ${ boldExportContacts } și alegeți contactele ce trebuie exportate."
-      ],
       "Select ${ boldExportCSV }.": [
         "Selectați ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Pentru a importa un calendar în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Pentru a importa un calendar în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
@@ -3072,17 +3054,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Pentru a importa un calendar în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Pentru a importa contacte la ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Pentru a importa contacte la ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Pentru a importa contacte în ${ BRAND_NAME }, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Pentru a importa e-mailuri la ${ BRAND_NAME }, trebuie să obțineți ${ appPasswordLink } de la Outlook. Obțineți-o urmând acești pași:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Pentru a importa e-mailuri la ${ BRAND_NAME }, trebuie să obțineți ${ appPasswordLink } de la Yahoo. Obțineți-o urmând acești pași:"
@@ -3098,26 +3074,11 @@
       "app password": [
         "parola aplicației"
       ],
-      "Can view all details": [
-        "Poate vedea toate detaliile"
-      ],
       "Export": [
         "Exportare"
       ],
-      "Export contacts": [
-        "Exportare contacte"
-      ],
       "Export to CSV file": [
         "Exportare în fișier CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Gestionare"
-      ],
-      "Publish a calendar": [
-        "Publicare calendar"
       ]
     },
     "Import instructions link": {
@@ -3126,9 +3087,6 @@
       ],
       "app password or enable IMAP": [
         "parola aplicației sau să activați IMAP"
-      ],
-      "contacts": [
-        "contacte"
       ],
       "CSV or a VCF (vCard) file": [
         "Un fişier CSV sau VCF (vCard)"
@@ -3139,23 +3097,11 @@
       "ICS file": [
         "fișier ICS"
       ],
-      "security settings": [
-        "setări securitate"
-      ],
-      "shared calendars": [
-        "calendare partajate"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Faceți clic pe ${ boldICS } și descărcați fișierul."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Accesați ${ calendarLink } din setările Outlook."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Accesați ${ calendarViewLink } din Yahoo."
       ],
@@ -3164,9 +3110,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Selectați ${ boldExport } pentru a exporta calendarul ca fișier ICS."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "Sub ${ boldPublish }, selectați calendarul pe care doriți să îl importați. Setați permisiunea la ${ boldCanViewAllDetails } și publicați-l."
       ]
     },
     "Import provider": {
@@ -4097,14 +4040,14 @@
       "Frequency": [
         "Frecvența"
       ],
-      "From: ${ emailFrom }": [
-        "De la: ${ emailFrom }"
+      "From: ${ from }": [
+        "De la: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De la: ${ fromEmail }"
       ],
       "From: ${ importedEmail }": [
         "De la: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "De la: ${ importedEmailAddress }"
       ],
       "Good": [
         "Bună"
@@ -4252,11 +4195,11 @@
       "To: ${ emailAddress }": [
         "Către: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Către: ${ emailTo }"
+      "To: ${ to }": [
+        "Către: ${ to }"
       ],
-      "To: ${ PMEmailAddress }": [
-        "Către: ${ PMEmailAddress }"
+      "To: ${ toEmail }": [
+        "Către: ${ toEmail }"
       ],
       "Toolbar": [
         "Bară de unelte"
@@ -4384,10 +4327,10 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importare toate mesajele din ${ itemsToImportCount } dosar și etichetează-l ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } dosare și etichetează-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } dosare și etichetează-le ca ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele dintr-o etichetă și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -4465,26 +4408,17 @@
       "How to import calendars from another service": [
         "Cum se importă calendarele din alt serviciu"
       ],
-      "How to import calendars from Outlook": [
-        "Cum se importă calendarele din Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Cum se importă calendarele din Yahoo"
       ],
       "How to import contacts from another service": [
         "Cum se importă contactele din alt serviciu"
       ],
-      "How to import contacts from Outlook": [
-        "Cum se importă contactele din Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Cum se importă contactele din Yahoo"
       ],
       "How to import emails from another service": [
         "Cum se importă e-mailurile din alt serviciu"
-      ],
-      "How to import emails from Outlook": [
-        "Cum se importă e-mailurile din Outlook"
       ],
       "How to import emails from Yahoo": [
         "Cum se importă e-mailurile din Yahoo"
@@ -5110,6 +5044,11 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
+      ]
+    },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "Reîncărcare eveniment"
       ]
     },
     "Select files": {
