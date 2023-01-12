@@ -1,5 +1,6 @@
 import {
     ADDRESS_RECEIVE,
+    ADDRESS_SEND,
     ADDRESS_STATUS,
     ADDRESS_TYPE,
     MEMBER_PRIVATE,
@@ -19,7 +20,7 @@ export const getStatus = (address: Address, i: number) => {
     const isMissingKeys = !HasKeys;
 
     return {
-        isDefault: i === 0 && !isDisabled && isActive,
+        isDefault: i === 0,
         isActive,
         isExternal,
         isDisabled,
@@ -28,9 +29,19 @@ export const getStatus = (address: Address, i: number) => {
     };
 };
 
+export const getIsNonDefault = (address: Address) => {
+    return (
+        address.Status === ADDRESS_STATUS.STATUS_DISABLED ||
+        address.Type === ADDRESS_TYPE.TYPE_EXTERNAL ||
+        address.Receive === ADDRESS_RECEIVE.RECEIVE_NO ||
+        address.Send === ADDRESS_SEND.SEND_NO
+    );
+};
+
 export const getPermissions = ({
     member,
     address: { ID, Status, HasKeys, Type, Priority },
+    address,
     addresses,
     user,
     organizationKey,
@@ -53,7 +64,7 @@ export const getPermissions = ({
     const isEnabled = Status === ADDRESS_STATUS.STATUS_ENABLED;
     const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
 
-    const canMakeDefault = !isDefault && isEnabled && !isExternal;
+    const canMakeDefault = !isDefault && !getIsNonDefault(address);
 
     /*
      * Keys can be generated if the organisation key is decrypted, and you are an admin,
@@ -98,12 +109,11 @@ export const getPermissions = ({
     };
 };
 
-// Moves disabled addresses to the back of the list, and sorts by order.
 const addressSort = (a: Address, b: Address) => {
-    if (a.Status === ADDRESS_STATUS.STATUS_DISABLED) {
+    if (getIsNonDefault(a)) {
         return 1;
     }
-    if (b.Status === ADDRESS_STATUS.STATUS_DISABLED) {
+    if (getIsNonDefault(b)) {
         return -1;
     }
     return a.Order - b.Order;
