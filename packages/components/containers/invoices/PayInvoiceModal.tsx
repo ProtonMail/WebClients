@@ -84,7 +84,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) =>
             close={c('Action').t`Close`}
             submit={submit}
             title={c('Title').t`Pay invoice`}
-            onClose={() => onClose?.()}
+            onClose={onClose}
             {...rest}
         >
             {!isLoading && (
