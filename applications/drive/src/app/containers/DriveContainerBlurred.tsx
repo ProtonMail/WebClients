@@ -18,6 +18,7 @@ import {
     useActiveBreakpoint,
     useFeature,
     useToggle,
+    useUser,
 } from '@proton/components';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
@@ -28,6 +29,7 @@ import { ListView } from '../components/FileBrowser';
 import { ListViewHeaderItem } from '../components/FileBrowser/interface';
 import { DriveHeader } from '../components/layout/DriveHeader';
 import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
+import { getDriveDrawerPermissions } from '../components/layout/drawerPermissions';
 import { DriveItem } from '../components/sections/Drive/Drive';
 import { ModifiedCell, NameCell, SizeCell } from '../components/sections/FileBrowser/contentCells';
 import headerItems from '../components/sections/FileBrowser/headerCells';
@@ -40,6 +42,7 @@ const headerItemsDesktop: ListViewHeaderItem[] = [headerItems.name, headerItems.
 const headerItemsMobile: ListViewHeaderItem[] = [headerItems.name, headerItems.placeholder];
 
 const DriveContainerBlurred = () => {
+    const [user] = useUser();
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: toggleExpanded } = useToggle();
     const { isDesktop } = useActiveBreakpoint();
@@ -102,9 +105,10 @@ const DriveContainerBlurred = () => {
 
     const Cells = isDesktop ? desktopCells : mobileCells;
 
+    const permissions = getDriveDrawerPermissions({ user, drawerFeature });
     const drawerSidebarButtons = [
-        drawerFeature?.Value.ContactsInDrive && <ContactDrawerAppButton />,
-        drawerFeature?.Value.CalendarInDrive && <CalendarDrawerAppButton />,
+        permissions.contacts && <ContactDrawerAppButton />,
+        permissions.calendar && <CalendarDrawerAppButton />,
     ].filter(isTruthy);
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
