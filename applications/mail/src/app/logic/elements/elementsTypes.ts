@@ -128,7 +128,7 @@ export interface EventUpdates {
     conversationMode: boolean;
     toCreate: (Element & LabelIDsChanges)[];
     toUpdate: (Element & LabelIDsChanges)[];
-    toLoad: string[];
+    toLoad: (Element & LabelIDsChanges)[];
     toDelete: string[];
 }
 
