@@ -11,7 +11,7 @@ import { Alert, OrderableTable, OrderableTableBody, OrderableTableHeader, Ordera
 import { useAddresses, useApi, useEventManager, useNotifications } from '../../hooks';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
-import { formatAddresses, getPermissions, getStatus } from './helper';
+import { formatAddresses, getIsNonDefault, getPermissions, getStatus } from './helper';
 
 interface Props {
     user: UserModel;
@@ -108,7 +108,7 @@ const AddressesUser = ({ user, member, organizationKey }: Props) => {
                             const addressStatuses = getStatus(address, i);
                             return (
                                 <OrderableTableRow
-                                    disableSort={addressStatuses.isDisabled}
+                                    disableSort={getIsNonDefault(address)}
                                     key={i}
                                     index={i}
                                     cells={[
