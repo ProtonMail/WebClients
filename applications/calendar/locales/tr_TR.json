@@ -1912,6 +1912,11 @@
         "Genel varsayılan kullanılsın (${ globalDefaultText })"
       ]
     },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "Etkinliği sil"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Süresi geçmiş fatura"
@@ -1980,6 +1985,11 @@
         "Takvim ekle"
       ]
     },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "Etkinliği kopyala"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 dakika"
@@ -2002,6 +2012,11 @@
     "Early Access Enabled": {
       "On": [
         "Açık"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "Etkinlik ekle"
       ]
     },
     "Email body for description (description part)": {
@@ -2261,9 +2276,6 @@
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Lütfen yeniden kimlik doğrulaması yapmayı deneyin ve izinlerin doğru ayarlanmış olduğundan emin olun."
-      ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
       ],
@@ -2375,9 +2387,6 @@
       ],
       "Validation error": [
         "Doğrulama hatası"
-      ],
-      "We were unable to connect to your service provider.": [
-        "Hizmet sağlayıcınızla bağlantı kuramadık."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
@@ -2608,21 +2617,6 @@
         "iptal edildi"
       ]
     },
-    "Event delete button tooltip": {
-      "Delete event": [
-        "Etkinliği sil"
-      ]
-    },
-    "Event duplicate button tooltip": {
-      "Duplicate event": [
-        "Etkinliği kopyala"
-      ]
-    },
-    "Event edit button tooltip": {
-      "Edit event": [
-        "Etkinliği düzenle"
-      ]
-    },
     "Event form": {
       "${ numberOfParticipants } participant": [
         "${ numberOfParticipants } katılımcı",
@@ -2821,27 +2815,28 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
-        "${ totalImported } etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz.",
-        "${ totalImported } etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz."
-      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
         "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi"
       ],
-      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
-        "${ totalToImport } etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı.",
-        "${ totalToImport } etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
-      ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Kişiler ekleniyor ve şifreleniyor: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Etkinlikler şifrelenip takviminze ekleniyor: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Etkinlik içe aktarıldı. İçe aktarılan etkinliği takviminizde görebilirsiniz."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Etkinlikler içe aktarıldı. İçe aktarılan etkinlikleri takviminizde görebilirsiniz."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Lütfen içe aktarma işlemi bitmeden önce sekmeyi kapatmayın."
@@ -2875,6 +2870,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi",
         "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Kişi şifrelenirken ve eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Kişileriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Kişileriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Kişiler içe aktarıldı. İçe aktarılan kişileri kişi listenizde görebilirsiniz."
       ]
     },
     "Import contact error": {
@@ -2891,23 +2901,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "bilinmiyor"
-      ]
-    },
-    "Import contacts": {
-      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
-        "${ totalImported } kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz.",
-        "${ totalImported } kişi içe aktarıldı. İçe aktarılan kişiyi kişi listenizde görebilirsiniz."
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
-        "${ totalToImport } kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı.",
-        "${ totalToImport } kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
-      ],
-      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
-        "Kişiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı.",
-        "Kişileriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } kişi içe aktarıldı."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Kişiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
       ]
     },
     "Import contacts warning": {
@@ -2946,9 +2939,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "Yahoo hesabınızda IMAP erişimi etkinleştirildi."
       ],
-      "Invalid IMAP port": [
-        "IMAP bağlantı noktası geçersiz"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
       ],
@@ -2983,17 +2973,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Seçenekler menüsü açmak için ${ boldManage } üzerine tıklayın."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "E-posta hizmeti sağlayıcınıza bağlı olarak, ${ BRAND_NAME } içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3 nokta (...) üzerine tıklayarak menüyü açın."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Bir ${ boldAppPassword } oluşturun ve ${ BRAND_NAME } tarafından sorulduğunda normal parolanız yerine bunu yazın."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "${ boldAppPassword } oluşturun ve ${ BRAND_NAME } tarafından sorulduğunda normal parolanız yerine bunu yazın."
@@ -3004,26 +2988,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "${ boldAccountSecurity } bölümüne gidin."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Outlook ${ securitySettingsLink } bölümüne gidin."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "2 aşamalı kimlik doğrulaması kapalı ise açın."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "${ yahooMailLink } kişilerinizi açın."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Outlook ${ outlookContactsLink } bölümünü açın."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "${ boldExportContacts } seçin ve dışa aktarmak istediğiniz kişileri seçin."
-      ],
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } seçin."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
@@ -3031,17 +3000,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Bir takvimi ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } işlemini yapmalısınız. 3 kolay adımda Outlook üzerinden indirin:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } işlemini yapmalısınız. 3 kolay adımda Yahoo üzerinden indirin:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Kişileri ${ BRAND_NAME } içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "E-postaları ${ BRAND_NAME } içine aktarmak için şu adımları izleyerek Outlook üzerinden ${ appPasswordLink } almalısınız:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "E-postaları ${ BRAND_NAME } içine aktarmak için şu adımları izleyerek Yahoo üzerinden ${ appPasswordLink } almalısınız:"
@@ -3057,26 +3020,11 @@
       "app password": [
         "uygulama parolası"
       ],
-      "Can view all details": [
-        "Tüm ayrıntıları görebilir"
-      ],
       "Export": [
         "Dışa aktar"
       ],
-      "Export contacts": [
-        "Kişileri dışa aktar"
-      ],
       "Export to CSV file": [
         "CSV olarak dışa aktar"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Yönet"
-      ],
-      "Publish a calendar": [
-        "Bir takvimi yayınla"
       ]
     },
     "Import instructions link": {
@@ -3085,9 +3033,6 @@
       ],
       "app password or enable IMAP": [
         "uygulama parolası ya da IMAP etkinleştirin"
-      ],
-      "contacts": [
-        "kişiler"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV ya da VCF (vCard) dosyası"
@@ -3098,23 +3043,11 @@
       "ICS file": [
         "ICS dosyası"
       ],
-      "security settings": [
-        "güvenlik ayarları"
-      ],
-      "shared calendars": [
-        "paylaşılmış takvimler"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "${ boldICS } bağlantısına tıklayıp dosyayı indirin."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Outlook ayarlarınızdan ${ calendarLink } bölümüne gidin."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Yahoo üzerinde ${ calendarViewLink } bölümüne gidin."
       ],
@@ -3123,9 +3056,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Takvimi ICS olarak dışa aktarmak için ${ boldExport } seçin."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "${ boldPublish } altından, içe aktarmak istediğiniz takvimi seçin. İzinleri ${ boldCanViewAllDetails } olarak ayarlayıp yayınlayın."
       ]
     },
     "Import provider": {
@@ -4030,14 +3960,8 @@
       "Frequency": [
         "Sıklık"
       ],
-      "From: ${ emailFrom }": [
-        "Nereden: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "Nereden: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Nereden: ${ importedEmailAddress }"
       ],
       "Good": [
         "İyi"
@@ -4184,12 +4108,6 @@
       "To: ${ emailAddress }": [
         "Nereye: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Kime: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "Nereye: ${ PMEmailAddress }"
-      ],
       "Toolbar": [
         "Araç çubuğu"
       ],
@@ -4316,10 +4234,6 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
-      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
         "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
@@ -4393,26 +4307,17 @@
       "How to import calendars from another service": [
         "Başka bir e-posta hizmeti sağlayıcısının takvimleri nasıl içe aktarılır"
       ],
-      "How to import calendars from Outlook": [
-        "Outlook takvimleri nasıl içe aktarılır"
-      ],
       "How to import calendars from Yahoo": [
         "Yahoo takvimleri nasıl içe aktarılır"
       ],
       "How to import contacts from another service": [
         "Başka bir e-posta hizmeti sağlayıcısının kişileri nasıl içe aktarılır"
       ],
-      "How to import contacts from Outlook": [
-        "Outlook kişileri nasıl içe aktarılır"
-      ],
       "How to import contacts from Yahoo": [
         "Yahoo kişileri nasıl içe aktarılır"
       ],
       "How to import emails from another service": [
         "Başka bir e-posta hizmeti sağlayıcısının e-postaları nasıl içe aktarılır"
-      ],
-      "How to import emails from Outlook": [
-        "Outlook e-postaları nasıl içe aktarılır"
       ],
       "How to import emails from Yahoo": [
         "Yahoo e-postaları nasıl içe aktarılır"
@@ -5007,6 +4912,11 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Not: Uygula düğmesine tıkladıktan sonra hizmet yeniden yüklenir."
+      ]
+    },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "Etkinliği yeniden yükle"
       ]
     },
     "Select files": {

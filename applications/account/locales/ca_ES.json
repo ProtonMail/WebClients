@@ -478,11 +478,11 @@
       "Not spam": [
         "No es correu brossa"
       ],
-      "OK": [
-        "D'acord"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -532,11 +532,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Actualitza la pàgina"
-      ],
       "refresh the page": [
         "refresqueu la pàgina"
+      ],
+      "Refresh the page": [
+        "Actualitza la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -2881,9 +2881,6 @@
       "Please set a recovery/notification email first": [
         "Si us plau primer establiu un correu electrònic de recuperació/notificació"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
-      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Actualitzi a un pla Business amb més d'1 usuari per obtenir suport multiusuari."
       ],
@@ -3028,9 +3025,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
-      ],
-      "We were unable to connect to your service provider.": [
-        "No hem pogut connectar-nos al vostre proveïdor de serveis."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
@@ -3802,9 +3796,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "L’accés IMAP està habilitat al vostre compte de Yahoo."
       ],
-      "Invalid IMAP port": [
-        "Port IMAP no vàlid"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
       ],
@@ -3864,40 +3855,19 @@
       "Export": [
         "Exporta"
       ],
-      "Export contacts": [
-        "Exportar contactes"
-      ],
       "Export to CSV file": [
         "Exporta a fitxer CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Gestionar"
-      ],
-      "Publish a calendar": [
-        "Publica un calendari"
       ]
     },
     "Import instructions link": {
       "app password": [
         "contrasenya de l'aplicació"
       ],
-      "contacts": [
-        "contactes"
-      ],
       "full calendar view": [
         "vista de calendari completa"
       ],
       "ICS file": [
         "Fitxer ICS"
-      ],
-      "security settings": [
-        "configuració de seguretat"
-      ],
-      "shared calendars": [
-        "calendaris compartits"
       ],
       "Yahoo": [
         "Yahoo"
@@ -4804,6 +4774,14 @@
       ],
       "Plan upgrade required": [
         "Es requereix una millora del pla"
+      ],
+      "Please add a password for the user on row": [
+        "Afegiu la contrasenya per a l'usuari de la fila",
+        "Afegiu la contrasenya per als usuaris de cada fila"
+      ],
+      "Please add an email address for the user on row": [
+        "Afegiu l'adreça de correu per a l'usuari de la fila",
+        "Afegiu l'adreça de correu per als usuaris de cada fila"
       ],
       "Please fill out this field.": [
         "Empleneu aquest camp."
@@ -6111,14 +6089,8 @@
       "Folder location": [
         "Ubicació de la carpeta"
       ],
-      "From: ${ emailFrom }": [
-        "Des de: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "De: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Codi regal"
@@ -6465,12 +6437,6 @@
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Per a: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "Per: ${ PMEmailAddress }"
-      ],
       "Token name": [
         "Nom del token"
       ],
@@ -6804,10 +6770,6 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar tots els missatges d'$${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -6866,26 +6828,17 @@
       "How to import calendars from another service": [
         "Com importar calendaris des d'un altre servei"
       ],
-      "How to import calendars from Outlook": [
-        "Com importar calendaris des d'Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Com importar calendaris des de Yahoo"
       ],
       "How to import contacts from another service": [
         "Com importar contactes des d'un altre servei"
       ],
-      "How to import contacts from Outlook": [
-        "Com importar contactes des d'Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Com importar contactes des de Yahoo"
       ],
       "How to import emails from another service": [
         "Com importar correus electrònics des d'un altre servei"
-      ],
-      "How to import emails from Outlook": [
-        "Com importar correus electrònics des d'Outlook"
       ],
       "How to import emails from Yahoo": [
         "Com importar correus electrònics des de Yahoo"
@@ -9272,6 +9225,10 @@
       ],
       "Success": [
         "Èxit"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "S'ha creat correctament ${ successfullyCreatedUsers.length } compte d'usuari",
+        "S'han creat correctament ${ successfullyCreatedUsers.length } comptes d'usuari"
       ],
       "Switch to one-password mode": [
         "Canviar al mode d'una sola contrasenya"

@@ -2233,9 +2233,6 @@
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Si us plau, proveu de tornar-vos a autenticar i assegureu-vos que els permisos estan correctament configurats."
-      ],
       "Primary address key is not decrypted": [
         "La clau de la adreça primària no està desxifrada"
       ],
@@ -2344,9 +2341,6 @@
       ],
       "Validation error": [
         "Error de validació"
-      ],
-      "We were unable to connect to your service provider.": [
-        "No hem pogut connectar-nos al vostre proveïdor de serveis."
       ],
       "You can't send a mail to more than 100 recipients": [
         "No podeu enviar un correu a més de 100 destinataris"
@@ -2570,21 +2564,6 @@
     "Event canceled status badge": {
       "canceled": [
         "cancel·lat"
-      ]
-    },
-    "Event delete button tooltip": {
-      "Delete event": [
-        "Suprimir l'esdeveniment"
-      ]
-    },
-    "Event duplicate button tooltip": {
-      "Duplicate event": [
-        "Duplica l'esdeveniment"
-      ]
-    },
-    "Event edit button tooltip": {
-      "Edit event": [
-        "Editar l'esdeveniment"
       ]
     },
     "Event form": {
@@ -2877,9 +2856,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "L’accés IMAP està habilitat al vostre compte de Yahoo."
       ],
-      "Invalid IMAP port": [
-        "Port IMAP no vàlid"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Masses peticions recents. Torneu-ho a provar d'aquí a una estona."
       ],
@@ -2934,40 +2910,19 @@
       "Export": [
         "Exporta"
       ],
-      "Export contacts": [
-        "Exportar contactes"
-      ],
       "Export to CSV file": [
         "Exporta a fitxer CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Gestionar"
-      ],
-      "Publish a calendar": [
-        "Publica un calendari"
       ]
     },
     "Import instructions link": {
       "app password": [
         "contrasenya de l'aplicació"
       ],
-      "contacts": [
-        "contactes"
-      ],
       "full calendar view": [
         "vista de calendari completa"
       ],
       "ICS file": [
         "Fitxer ICS"
-      ],
-      "security settings": [
-        "configuració de seguretat"
-      ],
-      "shared calendars": [
-        "calendaris compartits"
       ],
       "Yahoo": [
         "Yahoo"
@@ -3874,14 +3829,8 @@
       "Frequency": [
         "Freqüència"
       ],
-      "From: ${ emailFrom }": [
-        "Des de: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "De: ${ importedEmailAddress }"
       ],
       "Good": [
         "Bona"
@@ -4028,12 +3977,6 @@
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Per a: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "Per: ${ PMEmailAddress }"
-      ],
       "Toolbar": [
         "Barra d'eines"
       ],
@@ -4160,10 +4103,6 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar tots els missatges d'$${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -4232,26 +4171,17 @@
       "How to import calendars from another service": [
         "Com importar calendaris des d'un altre servei"
       ],
-      "How to import calendars from Outlook": [
-        "Com importar calendaris des d'Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Com importar calendaris des de Yahoo"
       ],
       "How to import contacts from another service": [
         "Com importar contactes des d'un altre servei"
       ],
-      "How to import contacts from Outlook": [
-        "Com importar contactes des d'Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Com importar contactes des de Yahoo"
       ],
       "How to import emails from another service": [
         "Com importar correus electrònics des d'un altre servei"
-      ],
-      "How to import emails from Outlook": [
-        "Com importar correus electrònics des d'Outlook"
       ],
       "How to import emails from Yahoo": [
         "Com importar correus electrònics des de Yahoo"

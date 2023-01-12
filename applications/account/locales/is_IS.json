@@ -311,6 +311,9 @@
       "Extend": [
         "Framlengja"
       ],
+      "Fit to window": [
+        "Aðlaga að glugga"
+      ],
       "Font": [
         "Letur"
       ],
@@ -437,10 +440,10 @@
       "Not spam": [
         "Ekki ruslpóstur"
       ],
-      "OK": [
+      "Ok": [
         "Í lagi"
       ],
-      "Ok": [
+      "OK": [
         "Í lagi"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -488,11 +491,11 @@
       "Refresh status": [
         "Endurlesa stöðu"
       ],
-      "Refresh the page": [
-        "Endurlesa síðuna"
-      ],
       "refresh the page": [
         "endurlesa síðuna"
+      ],
+      "Refresh the page": [
+        "Endurlesa síðuna"
       ],
       "Reload": [
         "Endurhlaða"
@@ -529,6 +532,9 @@
       ],
       "Requires a verified recovery email address": [
         "Krefst staðfests endurheimtunetfangs"
+      ],
+      "Resend code": [
+        "Endursenda kóða"
       ],
       "Reset credentials": [
         "Frumstilla auðkenni"
@@ -668,6 +674,9 @@
       "Size": [
         "Stærð"
       ],
+      "Skip verification": [
+        "Sleppa sannvottun"
+      ],
       "Sort": [
         "Röðun"
       ],
@@ -697,6 +706,9 @@
       ],
       "Try another method": [
         "Prófa aðra aðferð"
+      ],
+      "Try to save again. Saving failed due to: ${ saveError }": [
+        "Reyndu að vista aftur. Vistun mistókst vegna: ${ saveError }"
       ],
       "Underline": [
         "Undirstrikað"
@@ -848,6 +860,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Ef þú hættir núna, gætu sumir atburðir ekki verið fluttir inn"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } forrit"
       ]
     },
     "Attached ics file error": {
@@ -1043,6 +1060,9 @@
       "Calendar is syncing": [
         "Dagatal er í samstillingu"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Dagatalið er í samstillingu: það getur tekið nokkrar mínútur þar til allir viðburðir þess birtast."
+      ],
       "Calendar is too big": [
         "Dagatal er of stórt"
       ],
@@ -1060,6 +1080,17 @@
       ],
       "Unsupported calendar format": [
         "Óstutt dagatalssnið"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Dagatalstengillinn er ekki aðgengilegur utan vistkerfis dagatalsveitunnar."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Dagatalstengillinn er óaðgengilegur tímabundið. Vinsamlegast staðfestið að hlekkurinn frá dagatalsveitunni sé enn í gildi."
+      ],
+      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
+        "Meira en 12 klukkustundir liðnar frá síðustu uppfærslu — ${ CALENDAR_APP_NAME } mun reyna að uppfæra dagatalið eftir nokkrar klukkustundir."
       ]
     },
     "Calendar view": {
@@ -2247,6 +2278,10 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Það lítur út fyrir að tengiliðalistinn sem þú ert að flytja inn innihaldi nokkra hópa. Vinsamlegast skoðaðu hvernig ætti að flytja inn þessa hópa."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Skráin ætti að hafa hámarksstærð upp á ${ MAX_IMPORT_FILE_SIZE_STRING } og hafa ${ MAX_IMPORT_CONTACTS_STRING } tengilið. Ef skráin þín er stærri skaltu skipta henni í smærri skrár.",
+        "Skráin ætti að hafa hámarksstærð upp á ${ MAX_IMPORT_FILE_SIZE_STRING } og hafa allt að ${ MAX_IMPORT_CONTACTS_STRING } tengiliði. Ef skráin þín er stærri skaltu skipta henni í smærri skrár."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Þú getur flutt inn atburði á iCal-sniði (ICS skrár). Skráin ætti að vera í mesta lagi ${ MAX_IMPORT_FILE_SIZE_STRING } og innihalda allt að ${ MAX_IMPORT_EVENTS_STRING } tengiliði. Ef skráin þín er stærri, ættirðu að skipta henni upp í smærri skrár."
       ]
@@ -2575,9 +2610,6 @@
       "Please set a recovery/notification email first": [
         "Settu fyrst inn endurheimtu/tilkynningapóstfang"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Vinsamlega reyndu að sannvotta aftur og ganga úr skugga um að heimildirnar séu rétt stilltar."
-      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Vinsamlegast uppfærðu í viðskiptaáætlun með fleiri en 1 notanda til að fá stuðning fyrir marga notendur"
       ],
@@ -2708,6 +2740,9 @@
       "Trusted keys are not valid for sending": [
         "Treystir dulritunarlyklar eru ekki gildir fyrir sendingu"
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prófaðu að nota aðeins bókstafi, tölustafi og _.-"
+      ],
       "Unknown error": [
         "Óþekkt villa"
       ],
@@ -2725,9 +2760,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Við stöðvuðum DKIM-undirritun vegna vandamála með DNS-uppsetninguna þína. Farðu eftir leiðbeiningunum hér fyrir neðan til að halda undirritun áfram."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Við gátum ekki tengst þjónustuveitanda þínum."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Röng endurheimtusetning. Reyndu aftur eða notaðu aðra endurheimtuaðferð."
@@ -2954,6 +2986,9 @@
       "Please ${ refresh } or check your connection.": [
         "Athugaðu nettenginguna þína eða reyndu að ${ refresh }."
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Eitthvað fór úrskeiðis. Endurnýjaðu síðuna eða reyndu aftur síðar."
+      ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
         "Það kom upp villa þegar tengst var við ${ BRAND_NAME }."
       ],
@@ -3053,7 +3088,15 @@
         "Eyða lykli"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Eitthvað fór úrskeiðis við auðkenningu með öryggislyklinum þínum. Vinsamlegast reyndu aftur."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Settu inn öryggislykil sem er tengdur við þinn ${ BRAND_NAME } reikning."
+      ],
       "Security key": [
         "Öryggislykill"
       ]
@@ -3306,11 +3349,20 @@
         "${ totalImported }/${ totalToImport } atburður var dulritaður og bætt við dagatalið þitt.",
         "${ totalImported }/${ totalToImport } atburðir voru dulritaðir og bætt við dagatalið þitt."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Villa kom upp við að dulkóða og bæta við atburðum þínum. Enginn viðburður var fluttur inn."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Dulrita og bæti við tengiliðum: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Dulrita og bæti atburðum við dagatalið þitt: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Viðburður fluttur inn. Innflutti viðburðurinn mun nú birtast í dagatalinu þínu."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Viðburðir fluttir inn. Innfluttu viðburðirnir munu nú birtast í dagatalinu þínu."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Ekki loka flipanum fyrr enn innflutningsferlinu er lokið."
@@ -3325,6 +3377,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } tengiliður var dulritaður og bætt við á tengiliðalistann þinn.",
         "${ totalImported }/${ totalToImport } tengiliðir voru dulritaðir og bætt við á tengiliðalistann þinn."
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Villa kom upp við að dulkóða og bæta við tengiliðnum þínum. Enginn tengiliður var fluttur inn."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Villa kom upp við að dulkóða og bæta við tengiliðum þínum. ${ totalImported } af ${ totalToImport } tengiliðir fluttir inn."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Villa kom upp við að dulkóða og bæta við tengiliðum þínum. Enginn tengiliður var fluttur inn."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Tengiliður fluttur inn. Innflutti tengiliðurinn mun nú birtast á tengiliðalistanum þínum."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Tengiliðir fluttir inn. Innfluttir tengiliðir munu nú birtast á tengiliðalistanum þínum."
       ]
     },
     "Import contact error": {
@@ -3344,6 +3411,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } styður ekki ${ forNow }:"
+      ],
       "for now": [
         "í augnablikinu"
       ]
@@ -3361,6 +3431,9 @@
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } getur ekki tengst við Yahoo-aðganginn þinn. Gakktu úr skugga um að vistfang póstþjónsins og númer gáttar séu rétt."
       ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } getur ekki tengst Yahoo reikningnum þínum. Vinsamlegast vertu viss um að:"
+      ],
       "2-step verification is enabled in your external account.": [
         "2-þrepa sannvottun sé virk á fjartengda notandaaðgangnum þínum."
       ],
@@ -3372,9 +3445,6 @@
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "Aðgangur að IMAP er virkjaður á Yahoo- notandaaðgangnum þínum."
-      ],
-      "Invalid IMAP port": [
-        "Ógild IMAP-gátt"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Of margar nýlegar beiðnir. Prófaðu aftur eftir andartak."
@@ -3415,11 +3485,41 @@
       ]
     },
     "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Það fer eftir tölvupóstþjónustuveitunni þinni, þú gætir þurft að búa til ${ knowledgeBaseLink } fyrst áður en þú getur flutt inn í ${ BRAND_NAME }."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Stækkaðu fellivalmyndina með því að smella á punktana 3 (...)."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Búðu til ${ boldAppPassword } og notaðu það í stað venjulegs lykilorðs þíns þegar beðið er um það af ${ BRAND_NAME }."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Farðu í ${ boldAccountInfo } undir prófílnum þínum í ${ yahooMailLink }."
+      ],
       "Go to ${ boldAccountSecurity }.": [
         "Fara í ${ boldAccountSecurity }."
       ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Opnaðu þína ${ yahooMailLink } tengiliði."
+      ],
       "Select ${ boldExportCSV }.": [
         "Veldu ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Til að flytja inn dagatal inn í ${ BRAND_NAME }, þú þarft ${ knowledgeBaseLink }. Sæktu það frá Yahoo í 3 einföldum skrefum:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Til að flytja inn dagatal inn í ${ BRAND_NAME }, þá þarftu ${ knowledgeBaseLink }. Sæktu þetta áður en þú byrjar innflutningsferlið."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Til að flytja inn tengiliði inn í ${ BRAND_NAME }, þá þarftu ${ knowledgeBaseLink }. Sæktu það frá Yahoo í 3 einföldum skrefum:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Til að flytja inn tengiliði inn í ${ BRAND_NAME }, þá þarftu ${ knowledgeBaseLink }. Sæktu þetta áður en þú byrjar innflutningsferlið."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Til að flytja tölvupóst inn í ${ BRAND_NAME }, þá þarftu ${ appPasswordLink } frá Yahoo. Fáðu það með því að fylgja þessum skrefum:"
       ]
     },
     "Import instructions emphasis": {
@@ -3435,34 +3535,39 @@
       "Export": [
         "Flytja út"
       ],
-      "Export contacts": [
-        "Flytja út tengiliði"
-      ],
       "Export to CSV file": [
         "Flytja út í CSV-skrá"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Stjórna"
       ]
     },
     "Import instructions link": {
       "app password": [
         "lykilorð forrits"
       ],
-      "contacts": [
-        "tengiliðir"
+      "app password or enable IMAP": [
+        "lykilorð forrits eða virkja IMAP"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV eða VCF (vCard) skrá"
+      ],
+      "full calendar view": [
+        "full dagatalssýn"
       ],
       "ICS file": [
         "ICS-skrá"
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Farðu í ${ calendarViewLink } í Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Færðu músina yfir dagatalið sem þú vilt flytja inn og opnaðu fellivalmyndina."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Veldu ${ boldExport } til að flytja dagatalið út sem ICS skrá."
       ]
     },
     "Import provider": {
@@ -4016,6 +4121,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Settu inn sannvottunarkóðann sem sendur var til ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Sláðu inn staðfestingarkóða. Tala ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Sláðu inn þínum ${ BRAND_NAME } reikningsupplýsingum."
       ],
@@ -4445,6 +4553,9 @@
       "Please verify the card in the new tab which was opened.": [
         "Yfirfarðu greiðslukortaupplýsingarnar í nýja flipanum sem opnaðist."
       ],
+      "Please wait till your changes are synced with the server.": [
+        "Vinsamlegast bíddu þar til breytingarnar þínar eru samstilltar við netþjóninn."
+      ],
       "Plus or Visionary subscription required": [
         "Plus eða Visionary áskriftar krafist"
       ],
@@ -4700,6 +4811,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Til að koma í veg fyrir ruslpóstsendingar og aðra misnotkun, verðum við að ganga úr skugga um að þú sért mannvera."
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Til að flytja inn viðburði skaltu fyrst búa til dagatal í ${ CALENDAR_APP_NAME }. Þetta er þar sem atburðir munu birtast eftir innflutning."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Til að halda áfram skaltu velja aðferð til að endurheimta reikning svo við getum staðfest beiðnina."
       ],
@@ -4943,11 +5057,23 @@
       "You'll stay signed in even after you close the browser.": [
         "Þú verður áfram skráður inn jafnvel eftir að þú lokar vafranum."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Þinn ${ BRAND_NAME } reikningur er frystur núna. Eftir 28 daga verður tölvupóstur ekki lengur sendur í pósthólfið þitt, Drive deilitenglar þínir verða lokaðir og þú munt ekki geta hlaðið upp nýjum skrám. Til að halda áfram eðlilegri þjónustu, vinsamlegast greiddu alla gjaldfallna reikninga."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Þinn ${ BRAND_NAME } reikningur er frystur núna. Tölvupóstur er ekki lengur sendur í pósthólfið þitt. Drive deilitenglar þínir eru ekki lengur virkir og þú getur ekki hlaðið upp nýjum skrám. Til að halda áfram að nota reikninginn þinn, vinsamlegast greiddu alla gjaldfallna reikninga."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Þínir ${ VPN_APP_NAME } og ${ MAIL_APP_NAME } notandaaðgangar eru tengdir. Til að eyða þeim báðum skaltu skrá þig inn á ${ loginLink } og eyða notandaaðgangnum þínum þar."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Aðgangurinn þinn er með a.m.k. einn ógreiddan reikning. Endilega borgaðu alla ógreidda reikninga sem fyrst. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Reikningurinn þinn hefur að minnsta kosti einn gjaldfallinn reikning. Reikningurinn þinn er takmarkaður og allar þjónustur eru nú lokaðar þar til greitt er. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Reikningurinn þinn hefur að minnsta kosti einn gjaldfallinn reikning. Reikningurinn þinn er takmarkaður. Áframhaldandi vangreiðsla mun loka fyrir tölvupóstinn þinn og deilingartengla. ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
         "Endurheimtuaðferð fyrir reikninginn þinn er stillt"
@@ -5395,6 +5521,9 @@
       "App password": [
         "Lykilorð"
       ],
+      "Apply filter to existing emails": [
+        "Notaðu síu á núverandi tölvupóst"
+      ],
       "Attach public key": [
         "Hengja dreifilykil við"
       ],
@@ -5632,14 +5761,8 @@
       "Folder location": [
         "Staðsetning möppu"
       ],
-      "From: ${ emailFrom }": [
-        "Frá: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "Frá: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Frá: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Gjafakóði"
@@ -5694,6 +5817,9 @@
       ],
       "Key strength": [
         "Styrkur dulritunarlykils"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Lyklaborðs flýtileið: ${ shortcut }"
       ],
       "Keyboard shortcuts": [
         "Flýtileiðir á lyklaborði"
@@ -5959,12 +6085,6 @@
       "To: ${ emailAddress }": [
         "Til: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Til: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "Til: ${ PMEmailAddress }"
-      ],
       "Two-password mode": [
         "Tveggja-lykilorða hamur"
       ],
@@ -6222,6 +6342,9 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Fjöldi dagatala útbúin: ${ createdCalendars } af ${ calendarsToBeCreated }"
       ],
+      "Connecting to your email provider": [
+        "Tengist tölvupóstveitunni þinni"
+      ],
       "Creating new calendars": [
         "Útbý ný dagatöl"
       ],
@@ -6257,6 +6380,26 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Ný útgáfa af ${ appName } er tiltæk. ${ reloadButton }."
+      ]
+    },
+    "Modal title": {
+      "How to import calendars from another service": [
+        "Hvernig á að flytja inn dagatöl frá annarri þjónustu"
+      ],
+      "How to import calendars from Yahoo": [
+        "Hvernig á að flytja inn dagatöl frá Yahoo"
+      ],
+      "How to import contacts from another service": [
+        "Hvernig á að flytja inn tengiliði frá annarri þjónustu"
+      ],
+      "How to import contacts from Yahoo": [
+        "Hvernig á að flytja inn tengiliði frá Yahoo"
+      ],
+      "How to import emails from another service": [
+        "Hvernig á að flytja inn tölvupóst frá annarri þjónustu"
+      ],
+      "How to import emails from Yahoo": [
+        "Hvernig á að flytja inn tölvupóst frá Yahoo"
       ]
     },
     "Modal title and action": {
@@ -7185,6 +7328,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } er úr beta! Gefðu þínum skrám sama öryggi tölvupósturinn þinn fær."
       ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "Bjóddu vinum til ${ BRAND_NAME }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prófaðu ${ DRIVE_APP_NAME }"
       ]
@@ -7600,6 +7746,9 @@
       ],
       "Apply gift code": [
         "Gjafakóði"
+      ],
+      "Are you sure you want to close the preview?": [
+        "Ertu viss um að þú viljir loka forskoðuninni?"
       ],
       "Are you sure you want to close?": [
         "Ertu viss að þú viljir loka?"
@@ -8223,6 +8372,9 @@
       "Your calendar link": [
         "Þín dagatalskrækja"
       ],
+      "Your changes are not synced yet": [
+        "Breytingarnar þínar eru ekki samstilltar ennþá"
+      ],
       "Your current plan": [
         "Þín núverandi áskrift"
       ],
@@ -8474,6 +8626,10 @@
       "Password must contain at least ${ length } character": [
         "Lykilorð verður að innihalda að lágmarki ${ length } stafi",
         "Lykilorð verður að innihalda að lágmarki ${ length } stafi"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Reyndu styttra notendanafn (${ n } stafur að hámarki)",
+        "Reyndu styttra notendanafn (${ n } stafir að hámarki)"
       ]
     },
     "Video control": {
@@ -8555,6 +8711,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Skýrslur eru ekki dulkóðaðar frá enda til enda, vinsamlegast sendið engar viðkvæmar upplýsingar."
       ],
+      "Skip verification?": [
+        "Sleppa sannvottun?"
+      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Dagsetningar- og tímastillingar á þínu tæki eru ekki samstilltar. ${ learnMore }"
       ],
@@ -8563,6 +8722,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Því miður erum við ekki á netinu eins og er. Vinsamlega fylltu út eyðublaðið hér að neðan til að lýsa vandamálinu þínu og við munum skoða það og hafa samband þegar við erum komin aftur á netið."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "Við gátum ekki sannprófað póstþjóninn. Ef þú treystir honum, geturðu sleppt þessari sannprófun."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Við rákumst á vandamál í DNS-uppsetningunni þinni. Gakktu úr skugga um að færslurnar þínar samsvari leiðbeiningunum hér fyrir neðan. Ef vandamálið er viðvarandi neyðumst við til að slökkva á DKIM-undirritunum."
