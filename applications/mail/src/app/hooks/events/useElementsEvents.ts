@@ -80,10 +80,12 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
 
                 if (existingElement) {
                     toUpdate.push(element);
-                }
-                // Long tasks trigger too much element update to be able to load them all
-                else if (taskRunning.labelIDs.length === 0) {
+                } else if (taskRunning.labelIDs.length === 0) {
+                    // Long tasks trigger too much element update to be able to load them all
                     toLoad.push(element);
+                } else {
+                    // We can't loose the element, so we create it
+                    toCreate.push(element);
                 }
 
                 return { toUpdate, toLoad };
