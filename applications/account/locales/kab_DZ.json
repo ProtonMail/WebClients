@@ -434,11 +434,11 @@
       "No": [
         "Ala"
       ],
-      "OK": [
-        "Ih"
-      ],
       "Ok": [
         "IH"
+      ],
+      "OK": [
+        "Ih"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
@@ -485,11 +485,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "Refresh the page": [
-        "Smiren asebter"
-      ],
       "refresh the page": [
         "smiren asebter"
+      ],
+      "Refresh the page": [
+        "Smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -2399,9 +2399,6 @@
       "Please set a recovery/notification email first": [
         "Ttxil sbadu qbel tansa imayl n tiririt/alɣu"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Ttxil-k·m εreḍ ad talseḍ asesteb, tḍemneḍ tisirag ttuwassetent akken iwata."
-      ],
       "Primary address key is not decrypted": [
         "Tasarut n tansa tagejdant ur tettwawgelhen ara"
       ],
@@ -2509,9 +2506,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Nsewḥel azmul DKIM ssebba d uguren yellan d twila-inek·inem n DNS. Ttxil-k·m ḍfer iwellihen ddaw i wakken ad d-terreḍ azmul."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Ur nessaweḍ ara ad neqqen ɣer usaǧǧaw-inek·inem n umeẓlu."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Tafyirt n tririt teɣleḍ. Ɛreḍ tikkelt-nniḍen neɣ seqdec tarrayt-nniḍen n tririt."
@@ -3038,9 +3032,6 @@
       "IMAP access is enabled in your Yahoo account.": [
         "Anekcum IMAP yermed deg umiḍan-ik·im Yahoo."
       ],
-      "Invalid IMAP port": [
-        "Tawwurt IMAP tarmeɣtut"
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Aṭas n yisutar n melmi kan. Ttxil-k·m εreḍ tikkelt-nniḍen deg kra n wakud."
       ],
@@ -3089,26 +3080,11 @@
       "app password": [
         "awal uffir n usnas"
       ],
-      "Can view all details": [
-        "Sireg timeẓriwt n telqayt"
-      ],
       "Export": [
         "Sifeḍ"
       ],
-      "Export contacts": [
-        "Kter inermisen"
-      ],
       "Export to CSV file": [
         "Sifeḍ s afaylu CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Sefrek"
-      ],
-      "Publish a calendar": [
-        "Suffeɣ-d awitay"
       ]
     },
     "Import instructions link": {
@@ -3118,28 +3094,14 @@
       "app password or enable IMAP": [
         "awal uffir n usnas neɣ rmed IMAP"
       ],
-      "contacts": [
-        "inermisen"
-      ],
       "full calendar view": [
         "tamuɣli taččurant n uwitay"
       ],
       "ICS file": [
         "Afaylu ICS"
       ],
-      "security settings": [
-        "iɣewwaren n tɣellist"
-      ],
-      "shared calendars": [
-        "iwitayen yettwabḍan"
-      ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Sit ɣef useɣwen ${ boldICS } syen sader afaylu."
       ]
     },
     "Import provider": {
@@ -5007,14 +4969,8 @@
       "Folder location": [
         "Ideg n ukaram"
       ],
-      "From: ${ emailFrom }": [
-        "Sɣur: ${ emailFrom }"
-      ],
       "From: ${ importedEmail }": [
         "Sɣur: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Seg: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Tangalt n usefk"
@@ -5306,12 +5262,6 @@
       ],
       "To: ${ emailAddress }": [
         "I: ${ emailAddress }"
-      ],
-      "To: ${ emailTo }": [
-        "I: ${ emailTo }"
-      ],
-      "To: ${ PMEmailAddress }": [
-        "I: ${ PMEmailAddress }"
       ],
       "Two-password mode": [
         "Askar n sin-wawalen-uffiren"
@@ -5609,26 +5559,17 @@
       "How to import calendars from another service": [
         "Amek ara tketreḍ iwitayen seg yimeẓluyen-nniḍen"
       ],
-      "How to import calendars from Outlook": [
-        "Amek ara tketreḍ iwitayen si Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Amek ara tketreḍ iwitayen si Yahoo"
       ],
       "How to import contacts from another service": [
         "Amek ara tketreḍ inermisen seg yimeẓluyen-nniḍen"
       ],
-      "How to import contacts from Outlook": [
-        "Amek ara tketreḍ inermisen si Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Amek ara tketreḍ inermisen si Yahoo"
       ],
       "How to import emails from another service": [
         "Amek ara tketreḍ imaylen seg yimeẓluyen-nniḍen"
-      ],
-      "How to import emails from Outlook": [
-        "Amek ara tketreḍ imaylen si Outlook"
       ],
       "How to import emails from Yahoo": [
         "Amek ara tketreḍ imaylen si Yahoo"
