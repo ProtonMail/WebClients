@@ -322,6 +322,12 @@
       "Log in": [
         "Είσοδος"
       ],
+      "Manage folders": [
+        "Διαχείριση φακέλων"
+      ],
+      "Manage labels": [
+        "Διαχείριση ετικετών"
+      ],
       "Manage link": [
         "Διαχείριση συνδέσμου"
       ],
@@ -474,6 +480,9 @@
       ],
       "Search drive": [
         "Τοπική αναζήτηση"
+      ],
+      "See plan features": [
+        "Δείτε τα χαρακτηριστικά πακέτου"
       ],
       "Select all": [
         "Επιλογή όλων"
@@ -1807,6 +1816,9 @@
       "Email address invalid": [
         "Η διεύθυνση E-mail δεν είναι έγκυρη"
       ],
+      "Email address is required": [
+        "Η διεύθυνση email είναι υποχρεωτική"
+      ],
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
       ],
@@ -1833,6 +1845,9 @@
       ],
       "Image upload failed": [
         "Αποτυχία ανεβάσματος εικόνας"
+      ],
+      "IMAP server is required": [
+        "Ο διακομιστής IMAP είναι υποχρεωτικός"
       ],
       "Incorrect login credentials. Please try again.": [
         "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
@@ -1872,6 +1887,9 @@
         "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
         "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList }"
       ],
+      "Password is required": [
+        "Ο κωδικός πρόσβασης είναι υποχρεωτικός"
+      ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
@@ -1879,8 +1897,8 @@
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Παρακαλούμε βεβαιωθείτε ότι τα δικαιώματα έχουν οριστεί σωστά και δοκιμάστε την ταυτοποίηση ξανά."
+      "Port is required": [
+        "Η θύρα είναι υποχρεωτική"
       ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
@@ -1977,9 +1995,6 @@
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
-      ],
-      "We were unable to connect to your service provider.": [
-        "Δεν ήταν δυνατή η σύνδεση με τον πάροχο υπηρεσιών σας."
       ],
       "You can't send a mail to more than 100 recipients": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
@@ -2313,27 +2328,28 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
-        "${ totalImported } γεγονός εισήχθη επιτυχώς. Το εισαγόμενο γεγονός θα εμφανιστεί τώρα στο ημερολόγιό σας.",
-        "${ totalImported } γεγονότα εισήχθησαν επιτυχώς. Τα εισαγόμενα γεγονότα θα εμφανιστούν τώρα στο ημερολόγιό σας."
-      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
         "${ totalImported }/${ totalToImport } εκδηλώσεις κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
       ],
-      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } γεγονότος σας. Δεν ήταν δυνατή η εισαγωγή γεγονότος.",
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } γεγονότα σας. Δεν ήταν δυνατή η εισαγωγή γεγονότος."
-      ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονός εισήχθηκε επιτυχώς.",
         "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη των γεγονότων. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
+      ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και προσθήκη των συμβάντων σας. Δεν ήταν δυνατή η εισαγωγή συμβάντος."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη επαφών: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Κρυπτογράφηση και προσθήκη γεγονότων στο ημερολόγιό σας: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Το συμβάν εισήχθη επιτυχώς. Το εισαγόμενο γεγονός θα εμφανιστεί τώρα στο ημερολόγιό σας."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Τα γεγονότα εισήχθησαν επιτυχώς. Τα εισαγόμενα γεγονότα θα εμφανιστούν τώρα στο ημερολόγιό σας."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Παρακαλώ μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
@@ -2367,6 +2383,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } επαφή κρυπτογραφήθηκε και προστέθηκε στη λίστα επαφών σας",
         "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη των επαφών σας. ${ totalImported } από ${ totalToImport } επαφές εισήχθησαν με επιτυχία."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφών σας. Δεν ήταν δυνατή η εισαγωγή επαφών."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Η επαφή εισάχθηκε με επιτυχία. Η εισαχθέντη επαφή θα εμφανιστεί τώρα στη λίστα επαφών σας."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Η επαφές εισήχθησαν με επιτυχία. Η εισαχθείσες επαφές θα εμφανιστούν τώρα στη λίστα επαφών σας."
       ]
     },
     "Import contact error": {
@@ -2385,23 +2416,6 @@
         "άγνωστο"
       ]
     },
-    "Import contacts": {
-      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
-        "${ totalImported } επαφή εισήχθει με επιτυχία. Η εισαχθείσα επαφή θα εμφανιστεί τώρα στη λίστα επαφών σας.",
-        "${ totalImported } επαφές εισήχθει με επιτυχία. Η εισαχθείσες επαφές θα εμφανιστούν τώρα στη λίστα επαφών σας."
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής.",
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη ${ totalToImport } επαφών σας. Δεν ήταν δυνατή η εισαγωγή επαφής."
-      ],
-      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. ${ totalImported } από ${ totalToImport } επαφές εισήχθησαν με επιτυχία.",
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη των επαφών σας. ${ totalImported } από ${ totalToImport } επαφές εισήχθησαν με επιτυχία."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής."
-      ]
-    },
     "Import contacts warning": {
       "for now": [
         "για τώρα"
@@ -2416,9 +2430,6 @@
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Yahoo."
-      ],
-      "Invalid IMAP port": [
-        "Μη έγκυρη θύρα IMAP"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
@@ -2445,9 +2456,6 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Κάντε κλικ στο ${ boldManage } για ανάπτυξη του μενού επιλογών."
-      ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Ανοίξτε το αναδιπλούμενο μενού κάνοντας κλικ στις 3 τελείες (...)."
       ],
@@ -2457,20 +2465,8 @@
       "Go to ${ boldAccountSecurity }.": [
         "Πηγαίνετε στο ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Πηγαίνετε στο Outlook ${ securitySettingsLink }."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Αν η διπαραγοντική επαλήθευση είναι απενεργοποιημένη, ενεργοποιήστε την."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Ανοίξτε τις επαφές σας στο ${ yahooMailLink }."
-      ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Ανοίξτε τις ${ outlookContactsLink } σας στο Outlook."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Επιλέξτε ${ boldExportContacts } και διαλέξτε ποιες επαφές να εξαχθούν."
       ],
       "Select ${ boldExportCSV }.": [
         "Επιλέξτε ${ boldExportCSV }."
@@ -2486,26 +2482,11 @@
       "app password": [
         "κωδικός πρόσβασης εφαρμογής"
       ],
-      "Can view all details": [
-        "Μπορεί να δει κάθε λεπτομέρεια"
-      ],
       "Export": [
         "Εξαγωγή"
       ],
-      "Export contacts": [
-        "Εξαγωγή Επαφών"
-      ],
       "Export to CSV file": [
         "Εξαγωγή σε αρχείο CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Διαχείριση"
-      ],
-      "Publish a calendar": [
-        "Δημοσίευση ημερολογίου"
       ]
     },
     "Import instructions link": {
@@ -2515,32 +2496,17 @@
       "app password or enable IMAP": [
         "κωδικός εφαρμογής ή ενεργοποίηση IMAP"
       ],
-      "contacts": [
-        "επαφές"
-      ],
       "full calendar view": [
         "πλήρης προβολή ημερολογίου"
       ],
       "ICS file": [
         "αρχείο ICS"
       ],
-      "security settings": [
-        "ρυθμίσεις διασφάλισης"
-      ],
-      "shared calendars": [
-        "κοινόχρηστα ημερολόγια"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Κάντε κλικ στον σύνδεσμο ${ boldICS } και κατεβάστε το αρχείο."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Πηγαίνετε στο ${ calendarLink } στις ρυθμίσεις του Outlook."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Πηγαίνετε στο ${ calendarViewLink } στο Yahoo."
       ],
@@ -3013,11 +2979,17 @@
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
+      "Links failed to be loaded": [
+        "Αποτυχία φόρτωσης συνδέσμων"
+      ],
       "Loading": [
         "Φόρτωση"
       ],
       "Loading ${ appName }": [
         "Φόρτωση ${ appName }"
+      ],
+      "Loading links": [
+        "Φόρτωση συνδέσμων"
       ],
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
@@ -3136,6 +3108,9 @@
       ],
       "Queued": [
         "Σε αναμονή"
+      ],
+      "recommended browser": [
+        "συνιστώμενο πρόγραμμα περιήγησης"
       ],
       "Recovery process might take some time.": [
         "Η διαδικασία ανάκτησης ίσως πάρει κάποια ώρα."
@@ -3618,14 +3593,14 @@
       "Folder name": [
         "Όνομα φακέλου"
       ],
-      "From: ${ emailFrom }": [
-        "Από: ${ emailFrom }"
+      "From: ${ from }": [
+        "Από: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Από: ${ fromEmail }"
       ],
       "From: ${ importedEmail }": [
         "Από: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Από: ${ importedEmailAddress }"
       ],
       "Good": [
         "Καλή"
@@ -3801,11 +3776,11 @@
       "To: ${ emailAddress }": [
         "Προς: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Προς: ${ emailTo }"
+      "To: ${ to }": [
+        "Προς: ${ to }"
       ],
-      "To: ${ PMEmailAddress }": [
-        "Προς: ${ PMEmailAddress }"
+      "To: ${ toEmail }": [
+        "Προς: ${ toEmail }"
       ],
       "Two-factor authentication code": [
         "Κωδικός ταυτοποίησης δύο παραγόντων"
@@ -3940,7 +3915,7 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }",
         "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φακέλους και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
@@ -3974,26 +3949,17 @@
       "How to import calendars from another service": [
         "Πώς να εισάγετε ημερολόγια από μια άλλη υπηρεσία"
       ],
-      "How to import calendars from Outlook": [
-        "Πώς να εισάγετε ημερολόγια από το Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Πώς να εισάγετε ημερολόγια από το Yahoo"
       ],
       "How to import contacts from another service": [
         "Πώς να εισάγετε επαφές από μια άλλη υπηρεασία"
       ],
-      "How to import contacts from Outlook": [
-        "Πώς να εισάγετε επαφές από το Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Πώς να εισάγετε επαφές από το Yahoo"
       ],
       "How to import emails from another service": [
         "Πώς να εισάγετε email από μια άλλη υπηρεσία"
-      ],
-      "How to import emails from Outlook": [
-        "Πώς να εισάγετε email από το Outlook"
       ],
       "How to import emails from Yahoo": [
         "Πώς να εισάγετε email από το Yahoo"
@@ -4584,6 +4550,10 @@
         "${ numberOfFailedTransfer.total } αποτυχημένη μεταφορά",
         "${ numberOfFailedTransfer.total } αποτυχημένες μεταφορές"
       ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } αποτυχημένη μεταφόρτωση",
+        "${ numberOfFailedTransfer.total } αποτυχημένη μεταφορτώσεις"
+      ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
@@ -4972,6 +4942,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Αυτός ο φάκελος έχει απούσα ή μη έγκυρη υπογραφή. Για πληροφορίες, μεταβείτε στο Μενού (⋮) → Λεπτομέρειες."
+      ],
+      "This link is password protected": [
+        "Αυτός ο σύνδεσμος προστατεύεται με κωδικό πρόσβασης"
       ],
       "Total size": [
         "Συνολικό μέγεθος"

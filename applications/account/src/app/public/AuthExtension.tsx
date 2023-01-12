@@ -44,7 +44,7 @@ const getDefaults = (): { [key in AuthExtensionState['type']]: ExtensionForkResu
     },
     error: {
         title: c('Error message').t`Oops, something went wrong`,
-        message: c('Info').t`An error occured while communicating with the extension`,
+        message: c('Info').t`An error occurred while communicating with the extension`,
     },
 });
 

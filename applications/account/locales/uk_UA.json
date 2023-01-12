@@ -459,6 +459,12 @@
       "Manage communication preferences": [
         "Керування комунікаційними налаштуваннями"
       ],
+      "Manage folders": [
+        "Керувати теками"
+      ],
+      "Manage labels": [
+        "Керувати мітками"
+      ],
       "Mark as default": [
         "Позначити типовим"
       ],
@@ -501,11 +507,11 @@
       "Not spam": [
         "Не спам"
       ],
-      "OK": [
-        "Застосувати"
-      ],
       "Ok": [
         "Гаразд"
+      ],
+      "OK": [
+        "Застосувати"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -555,11 +561,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "Refresh the page": [
-        "Оновити сторінку"
-      ],
       "refresh the page": [
         "оновити сторінку"
+      ],
+      "Refresh the page": [
+        "Оновити сторінку"
       ],
       "Reload": [
         "Перезавантажити"
@@ -2902,6 +2908,9 @@
       "Email address disabled": [
         "Адреса е-пошти вимкнена"
       ],
+      "Email address is required": [
+        "Адреса е-пошти обов'язкова"
+      ],
       "Email is not valid": [
         "Е-пошта недійсна"
       ],
@@ -2931,6 +2940,9 @@
       ],
       "Folder name cannot be empty.": [
         "Тека не може бути без назви."
+      ],
+      "IMAP server is required": [
+        "Сервер IMAP обов'язковий"
       ],
       "Incorrect login credentials. Please try again.": [
         "Неправильні дані входу. Спробуйте ще раз."
@@ -3037,6 +3049,9 @@
       "Organization not recognized. Try again.": [
         "Організацію не розпізнано. Спробуйте знову."
       ],
+      "Password is required": [
+        "Пароль обов'язковий"
+      ],
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
@@ -3082,14 +3097,14 @@
       "Please set a recovery/notification email first": [
         "Спершу вкажіть е-пошту для відновлення/сповіщень"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Спробуйте пройти перевірку ще раз і переконайтеся, що дозволи встановлено належним чином."
-      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Для підтримки декількох користувачів, перейдіть на тарифний план для бізнесу"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Для керування декількома користувачами, перейдіть на тарифний план для бізнесу."
+      ],
+      "Port is required": [
+        "Порт обов'язковий"
       ],
       "Primary address key is not decrypted": [
         "Основний ключ адреси не розшифрований"
@@ -3243,9 +3258,6 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Ми зупинили підписання DKIM через проблеми з конфігурацією вашого DNS. Будь ласка, дотримуйтесь наведених нижче інструкцій, щоб відновити підпис."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Не вдається з'єднатися з вашим постачальником послуг."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Неправильна фраза відновлення. Спробуйте знову, або використайте інший спосіб відновлення."
@@ -4057,23 +4069,11 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
-        "${ totalImported } подію успішно імпортовано. Тепер вона з'явиться у вашому календарі.",
-        "${ totalImported } події успішно імпортовано. Тепер вони з'являться у вашому календарі.",
-        "${ totalImported } подій успішно імпортовано. Тепер вони з'являться у вашому календарі.",
-        "${ totalImported } подій успішно імпортовано. Тепер вони з'являться у вашому календарі."
-      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } подію зашифровано та додано до вашого календаря",
         "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря",
         "${ totalImported }/${ totalToImport } подій зашифровано та додано до вашого календаря",
         "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря"
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
-        "Під час шифрування та додавання ${ totalToImport } вашої події сталася помилка. Неможливо імпортувати подію.",
-        "Під час шифрування та додавання ${ totalToImport } ваших подій сталася помилка. Неможливо імпортувати події.",
-        "Під час шифрування та додавання ${ totalToImport } ваших подій сталася помилка. Неможливо імпортувати події.",
-        "Під час шифрування та додавання ${ totalToImport } ваших подій сталася помилка. Неможливо імпортувати події."
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "При шифруванні та додаванні вашої події сталася помилка. ${ totalImported } із ${ totalToImport } події успішно імпортовано.",
@@ -4081,11 +4081,20 @@
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Сталася помилка під час шифрування й додавання ваших подій. Жодна подія не може бути імпортована."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шифрування та додавання контактів: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Шифрування та додавання подій до вашого календаря: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Подію успішно імпортовано. Тепер вона з'явиться у вашому календарі."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Не закривайте цю вкладку доки не завершиться процес імпортування."
@@ -4125,6 +4134,21 @@
         "${ totalImported }/${ totalToImport } контакти зашифровано та додано до вашого списку контактів",
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів",
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Сталася помилка під час шифрування й додавання контакту. Жоден контакт не може бути імпортовано."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Сталася помилка під час шифрування та додавання контактів. ${ totalImported } із ${ totalToImport } контактів успішно імпортовано."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Сталася помилка під час шифрування й додавання контактів. Жоден контакт не може бути імпортовано."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Контакт успішно імпортовано. Тепер він з'явиться у вашому списку контактів."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Контакти успішно імпортовано. Тепер вони з'являться у вашому списку контактів."
       ]
     },
     "Import contact error": {
@@ -4143,29 +4167,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "невідомо"
-      ]
-    },
-    "Import contacts": {
-      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
-        "${ totalImported } контакт успішно імпортовано. Тепер він з'явиться у вашому списку контактів.",
-        "${ totalImported } контакти успішно імпортовано. Тепер вони з'являться у вашому списку контактів.",
-        "${ totalImported } контактів успішно імпортовано. Тепер вони з'являться у вашому списку контактів.",
-        "${ totalImported } контактів успішно імпортовано. Тепер вони з'являться у вашому списку контактів."
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
-        "Під час шифрування та додавання ${ totalToImport } вашого контакту сталася помилка. Неможливо імпортувати контакт.",
-        "Під час шифрування та додавання ${ totalToImport } ваших контактів сталася помилка. Неможливо імпортувати контакти.",
-        "Під час шифрування та додавання ${ totalToImport } ваших контактів сталася помилка. Неможливо імпортувати контакти.",
-        "Під час шифрування та додавання ${ totalToImport } ваших контактів сталася помилка. Неможливо імпортувати контакти."
-      ],
-      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
-        "Під час шифрування та додавання вашого контакту сталася помилка. ${ totalImported } із ${ totalToImport } контакт успішно імпортовано.",
-        "Під час шифрування та додавання ваших контактів сталася помилка. ${ totalImported } із ${ totalToImport } контактів успішно імпортовано.",
-        "Під час шифрування та додавання ваших контактів сталася помилка. ${ totalImported } із ${ totalToImport } контактів успішно імпортовано.",
-        "Під час шифрування та додавання ваших контактів сталася помилка. ${ totalImported } із ${ totalToImport } контактів успішно імпортовано."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Під час шифрування й додавання вашого контакту сталася помилка. Неможливо імпортувати контакт."
       ]
     },
     "Import contacts warning": {
@@ -4203,9 +4204,6 @@
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "Доступ до IMAP увімкнено в вашому обліковому записі Yahoo."
-      ],
-      "Invalid IMAP port": [
-        "Неправильний порт IMAP"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Забагато недавніх запитів. Будь ласка, спробуйте ще раз за хвильку."
@@ -4246,17 +4244,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Натисніть ${ boldManage }, щоб розгорнути меню опцій."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "Залежно від вашого постачальника е-пошти, вам, можливо, доведеться згенерувати ${ knowledgeBaseLink }, перш ніж ви зможете імпортувати до ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Розгорніть випадне меню, натиснувши на 3 крапки (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Згенеруйте ${ boldAppPassword } і скористайтеся ним замість свого звичайного пароля під час запиту від ${ BRAND_NAME }."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Згенеруйте ${ boldAppPassword } і скористайтеся ним замість свого звичайного пароля під час запиту від ${ BRAND_NAME }."
@@ -4267,26 +4259,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "Відкрийте ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Перейдіть до Outlook ${ securitySettingsLink }."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Якщо двоетапна перевірка вимкнена, увімкніть її."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Відкрийте свої контакти ${ yahooMailLink }."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Відкрийте свої Outlook ${ outlookContactsLink }."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Виберіть ${ boldExportContacts } та вкажіть, які контакти потрібно експортувати."
-      ],
       "Select ${ boldExportCSV }.": [
         "Виберіть ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Щоб імпортувати календар до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Щоб імпортувати календар до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
@@ -4294,17 +4271,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Щоб імпортувати календар до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його до початку процесу імпортування."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Щоб імпортувати контакти до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Щоб імпортувати контакти до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Щоб імпортувати контакти до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його до початку процесу імпортування."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Щоб імпортувати листи до ${ BRAND_NAME }, вам необхідний ${ appPasswordLink } від Outlook. Отримайте його, дотримуючись цих кроків:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Щоб імпортувати листи до ${ BRAND_NAME }, вам необхідний ${ appPasswordLink } від Yahoo. Отримайте його, дотримуючись цих кроків:"
@@ -4320,26 +4291,11 @@
       "app password": [
         "пароль програм"
       ],
-      "Can view all details": [
-        "Може переглядати всі подробиці"
-      ],
       "Export": [
         "Експортувати"
       ],
-      "Export contacts": [
-        "Експортувати контакти"
-      ],
       "Export to CSV file": [
         "Експортувати у файл CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Керувати"
-      ],
-      "Publish a calendar": [
-        "Оприлюднити календар"
       ]
     },
     "Import instructions link": {
@@ -4348,9 +4304,6 @@
       ],
       "app password or enable IMAP": [
         "пароль програм чи увімкніть IMAP"
-      ],
-      "contacts": [
-        "контакти"
       ],
       "CSV or a VCF (vCard) file": [
         "Файл CSV або VCF (vCard)"
@@ -4361,23 +4314,11 @@
       "ICS file": [
         "файл ICS"
       ],
-      "security settings": [
-        "налаштування безпеки"
-      ],
-      "shared calendars": [
-        "спільні календарі"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Натисніть посилання ${ boldICS } та завантажте файл."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Перейдіть до ${ calendarLink } в налаштуваннях Outlook."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Перейдіть до ${ calendarViewLink } в Yahoo."
       ],
@@ -4386,9 +4327,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "Під ${ boldPublish } виберіть календар для імпортування. Встановіть дозвіл ${ boldCanViewAllDetails } та оприлюдніть його."
       ]
     },
     "Import key": {
@@ -4771,7 +4709,7 @@
         "Сума нижче найменшої (${ amount })."
       ],
       "An error occured while communicating with the extension": [
-        "Під час зв'язку з внутрішнім номером виникла помилка"
+        "An error occurred while communicating with the extension"
       ],
       "and": [
         "та"
@@ -7080,14 +7018,14 @@
       "Folder location": [
         "Розташування теки"
       ],
-      "From: ${ emailFrom }": [
-        "Від: ${ emailFrom }"
+      "From: ${ from }": [
+        "Від: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Від: ${ fromEmail }"
       ],
       "From: ${ importedEmail }": [
         "Від: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "Від: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Подарунковий код"
@@ -7446,11 +7384,11 @@
       "To: ${ emailAddress }": [
         "Кому: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Кому: ${ emailTo }"
+      "To: ${ to }": [
+        "Кому: ${ to }"
       ],
-      "To: ${ PMEmailAddress }": [
-        "Кому: ${ PMEmailAddress }"
+      "To: ${ toEmail }": [
+        "Кому: ${ toEmail }"
       ],
       "Token name": [
         "Назва токена"
@@ -7797,11 +7735,11 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -7877,26 +7815,17 @@
       "How to import calendars from another service": [
         "Як імпортувати календарі з іншого сервісу"
       ],
-      "How to import calendars from Outlook": [
-        "Як імпортувати календарі з Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Як імпортувати календарі з Yahoo"
       ],
       "How to import contacts from another service": [
         "Як імпортувати контакти з іншого сервісу"
       ],
-      "How to import contacts from Outlook": [
-        "Як імпортувати контакти з Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Як імпортувати контакти з Yahoo"
       ],
       "How to import emails from another service": [
         "Як імпортувати листи з іншого сервісу"
-      ],
-      "How to import emails from Outlook": [
-        "Як імпортувати листи з Outlook"
       ],
       "How to import emails from Yahoo": [
         "Як імпортувати листи з Yahoo"

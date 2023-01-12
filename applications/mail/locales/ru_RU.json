@@ -554,6 +554,12 @@
       "Mailbox layout": [
         "Вид почтового ящика"
       ],
+      "Manage folders": [
+        "Управление папками"
+      ],
+      "Manage labels": [
+        "Управление метками"
+      ],
       "Mark as read": [
         "Отметить как прочитанное"
       ],
@@ -3121,6 +3127,9 @@
       "Email address invalid": [
         "Недействительный адрес электронной почты"
       ],
+      "Email address is required": [
+        "Нужно указать адрес электронной почты"
+      ],
       "Email is not valid": [
         "Эл. почта недействительна"
       ],
@@ -3156,6 +3165,9 @@
       ],
       "Image upload failed": [
         "Не удалось загрузить изображение"
+      ],
+      "IMAP server is required": [
+        "Нужно укзать IMAP-сервер"
       ],
       "Incorrect login credentials. Please try again.": [
         "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
@@ -3235,6 +3247,9 @@
         "В ${ noContactGroupList } группах нет контактов ",
         "В ${ noContactGroupList } группы нет контактов "
       ],
+      "Password is required": [
+        "Нужно ввести пароль"
+      ],
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
@@ -3253,8 +3268,8 @@
       "Please set a password": [
         "Пожалуйста, задайте пароль"
       ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Попробуйте повторить аутентификацию и убедитесь, что разрешения установлены правильно."
+      "Port is required": [
+        "Нужно указать порт"
       ],
       "Primary address key is not decrypted": [
         "Ключ первичного адреса не расшифрован"
@@ -3402,9 +3417,6 @@
       ],
       "Unknown error.": [
         "Неизвестная ошибка."
-      ],
-      "We were unable to connect to your service provider.": [
-        "Не удалось подключиться к вашему поставщику услуг."
       ],
       "Wrong mailbox password": [
         "Неправильный пароль почтового ящика"
@@ -4070,23 +4082,11 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported } event successfully imported. The imported event will now appear in your calendar.": [
-        "${ totalImported } событие успешно импортировано. Теперь импортированное событие появится в вашем календаре.",
-        "${ totalImported } события успешно импортированы. Теперь импортированные события появятся в вашем календаре.",
-        "${ totalImported } событий успешно импортированы. Теперь импортированные события появятся в вашем календаре.",
-        "${ totalImported } событий успешно импортированы. Теперь импортированные события появятся в вашем календаре."
-      ],
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } событие зашифровано и импортировано в ваш календарь",
         "${ totalImported }/${ totalToImport } события зашифрованы и импортированы в ваш календарь",
         "${ totalImported }/${ totalToImport } событий зашифровано и импортировано в ваш календарь",
         "${ totalImported }/${ totalToImport } событий зашифрованы и импортированы в ваш календарь"
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } event. No event could be imported.": [
-        "Произошла ошибка при шифровании и добавлении ${ totalToImport } вашего события. Ни одно событие не может быть импортировано.",
-        "Произошла ошибка при шифровании и добавлении ${ totalToImport } ваших событий. Ни одно событие не может быть импортировано.",
-        "Произошла ошибка при шифровании и добавлении ${ totalToImport } ваших событий. Ни одно событие не может быть импортировано.",
-        "Произошла ошибка при шифровании и добавлении ${ totalToImport } ваших событий. Ни одно событие не может быть импортировано."
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "При шифровании и добавлении события произошла ошибка. ${ totalImported } из ${ totalToImport } события было успешно импортировано.",
@@ -4094,11 +4094,20 @@
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Произошла ошибка при шифровании и добавлении ваших событий. Не удалось импортировать ни одно событие."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шифруем и добавляем контакты: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Шифруем и добавляем события в ваш календарь: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Событие успешно импортировано. Сейчас оно появится в вашем календаре."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "События успешно импортированы. Сейчас они появятся в вашем календаре."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Пожалуйста, не закрывайте вкладку до завершения импорта."
@@ -4138,6 +4147,21 @@
         "${ totalImported }/${ totalToImport } контакта зашифрованы и добавлены в ваш список контактов",
         "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов",
         "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Произошла ошибка при шифровании и добавлении вашего контакта. Его не удалось импортировать."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "При шифровании и добавлении контактов произошла ошибка. ${ totalImported } из ${ totalToImport } контактов импортированы успешно."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "При шифровании и добавлении контактов произошла ошибка. Не удалось импортировать ни один из них."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Контакт успешно импортирован. Сейчас он появится в вашем списке контактов."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Контакты успешно импортированы. Сейчас они появятся в вашем списке контактов."
       ]
     },
     "Import contact error": {
@@ -4156,29 +4180,6 @@
     "Import contact. Contact identifier": {
       "unknown": [
         "неизвестно"
-      ]
-    },
-    "Import contacts": {
-      "${ totalImported } contact successfully imported. The imported contact will now appear in your contact list.": [
-        "${ totalImported } контакт успешно импортирован. Теперь импортированный контакт появится в списке контактов.",
-        "${ totalImported } контакта успешно импортированы. Теперь импортированные контакты появится в списке контактов.",
-        "${ totalImported } контактов успешно импортированы. Теперь импортированные контакты появится в списке контактов.",
-        "${ totalImported } контактов успешно импортированы. Теперь импортированные контакты появится в списке контактов."
-      ],
-      "An error occurred while encrypting and adding your ${ totalToImport } contact. No contact could be imported.": [
-        "Произошла ошибка при шифровании и добавлении ${ totalToImport } контакта. Ни один контакт не может быть импортирован.",
-        "Произошла ошибка при шифровании и добавлении ${ totalToImport } контактов. Ни один контакт не может быть импортирован.",
-        "Произошла ошибка при шифровании и добавлении ${ totalToImport } контактов. Ни один контакт не может быть импортирован.",
-        "Произошла ошибка при шифровании и добавлении ${ totalToImport } контактов. Ни один контакт не может быть импортирован."
-      ],
-      "An error occurred while encrypting and adding your contact. ${ totalImported } out of ${ totalToImport } contact successfully imported.": [
-        "Произошла ошибка при шифровании и добавлении вашего контакта. ${ totalImported } из ${ totalToImport } контакт успешно импортирован.",
-        "При шифровании и добавлении контактов произошла ошибка. ${ totalImported } из ${ totalToImport } контактов успешно импортированы.",
-        "При шифровании и добавлении контактов произошла ошибка. ${ totalImported } из ${ totalToImport } контактов успешно импортированы.",
-        "При шифровании и добавлении контактов произошла ошибка. ${ totalImported } из ${ totalToImport } контактов успешно импортированы."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Произошла ошибка при шифровании и добавлении вашего контакта. Ни один контакт не может быть импортирован."
       ]
     },
     "Import contacts warning": {
@@ -4216,9 +4217,6 @@
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "Доступ по протоколу IMAP включен в вашей учетной записи Yahoo."
-      ],
-      "Invalid IMAP port": [
-        "Недействительный порт IMAP"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Слишком много запросов за последнее время. Пожалуйста, повторите попытку позднее."
@@ -4262,17 +4260,11 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        "Нажмите ${ boldManage }, чтобы развернуть меню параметров."
-      ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
         "В зависимости от поставщика услуг электронной почты вам может потребоваться сначала создать ${ knowledgeBaseLink }, прежде чем вы сможете импортировать в ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Разверните выпадающее меню, нажав на 3 точки (...)."
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Сгенерируйте пароль ${ boldAppPassword } и используйте его вместо обычного пароля при запросе ${ BRAND_NAME }."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Сгенерируйте пароль ${ boldAppPassword } и используйте его вместо обычного пароля при запросе ${ BRAND_NAME }."
@@ -4283,26 +4275,11 @@
       "Go to ${ boldAccountSecurity }.": [
         "Перейдите в ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        "Перейдите в ${ securitySettingsLink } в Outlook."
-      ],
-      "If 2-step verification is off, turn it on.": [
-        "Если двухэтапная аутентификация выключена, включите ее."
-      ],
       "Open your ${ yahooMailLink } contacts.": [
         "Откройте контакты ${ yahooMailLink }."
       ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        "Откройте свои ${ outlookContactsLink } Outlook."
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        "Выберите ${ boldExportContacts } и определите, какие контакты нужно экспортировать."
-      ],
       "Select ${ boldExportCSV }.": [
         "Выберите ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Чтобы импортировать календарь в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите его из Outlook в 3 простых шага:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Чтобы импортировать календарь в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите его с сайта Yahoo в 3 простых шага:"
@@ -4310,17 +4287,11 @@
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Чтобы импортировать календарь в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта."
       ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        "Чтобы импортировать контакты в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите ее из Outlook в 3 простых шага:"
-      ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Чтобы импортировать контакты в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите ее с сайта Yahoo в 3 простых шага:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Чтобы импортировать контакты в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите его перед началом процесса импорта."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "Чтобы импортировать электронные письма в ${ BRAND_NAME }, вам понадобится ${ appPasswordLink } из Outlook. Получите ее, выполнив следующие действия:"
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Для импорта электронной почты в ${ BRAND_NAME } вам понадобится ${ appPasswordLink } от Yahoo. Получите ее, выполнив следующие действия:"
@@ -4336,26 +4307,11 @@
       "app password": [
         "пароль приложения"
       ],
-      "Can view all details": [
-        "Можно просмотреть всю информацию"
-      ],
       "Export": [
         "Экспорт"
       ],
-      "Export contacts": [
-        "Экспортировать контакты"
-      ],
       "Export to CSV file": [
         "Экспорт в файл CSV"
-      ],
-      "ICS": [
-        "ICS"
-      ],
-      "Manage": [
-        "Управлять"
-      ],
-      "Publish a calendar": [
-        "Опубликовать календарь"
       ]
     },
     "Import instructions link": {
@@ -4364,9 +4320,6 @@
       ],
       "app password or enable IMAP": [
         "пароль приложения или включить IMAP"
-      ],
-      "contacts": [
-        "контакты"
       ],
       "CSV or a VCF (vCard) file": [
         "Файл CSV или VCF (vCard)"
@@ -4377,23 +4330,11 @@
       "ICS file": [
         "файл ICS"
       ],
-      "security settings": [
-        "настройки безопасности"
-      ],
-      "shared calendars": [
-        "общие календари"
-      ],
       "Yahoo": [
         "Yahoo"
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        "Нажмите на ссылку ${ boldICS } и скачайте файл."
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        "Перейдите к ${ calendarLink } в настройках Outlook."
-      ],
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Перейти в ${ calendarViewLink } в Yahoo."
       ],
@@ -4402,9 +4343,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        "В разделе ${ boldPublish } выберите календарь, который вы хотите импортировать. Установите разрешение ${ boldCanViewAllDetails } и опубликуйте его."
       ]
     },
     "Import provider": {
@@ -6391,14 +6329,14 @@
       "From:": [
         "От:"
       ],
-      "From: ${ emailFrom }": [
-        "От: ${ emailFrom }"
+      "From: ${ from }": [
+        "От: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "От: ${ fromEmail }"
       ],
       "From: ${ importedEmail }": [
         "От: ${ importedEmail }"
-      ],
-      "From: ${ importedEmailAddress }": [
-        "От: ${ importedEmailAddress }"
       ],
       "Good": [
         "Хорошо"
@@ -6637,11 +6575,11 @@
       "To: ${ emailAddress }": [
         "Кому: ${ emailAddress }"
       ],
-      "To: ${ emailTo }": [
-        "Кому: ${ emailTo }"
+      "To: ${ to }": [
+        "Кому: ${ to }"
       ],
-      "To: ${ PMEmailAddress }": [
-        "Кому: ${ PMEmailAddress }"
+      "To: ${ toEmail }": [
+        "Кому: ${ toEmail }"
       ],
       "Toolbar": [
         "Панель инструментов"
@@ -6946,12 +6884,6 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder since and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортировать все сообщения с ${ itemsToImportCount } ярлыком и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -7052,26 +6984,17 @@
       "How to import calendars from another service": [
         "Как импортировать календари из другой службы"
       ],
-      "How to import calendars from Outlook": [
-        "Как импортировать календари из Outlook"
-      ],
       "How to import calendars from Yahoo": [
         "Как импортировать календари из Yahoo"
       ],
       "How to import contacts from another service": [
         "Как импортировать контакты из другой службы"
       ],
-      "How to import contacts from Outlook": [
-        "Как импортировать контакты из Outlook"
-      ],
       "How to import contacts from Yahoo": [
         "Как импортировать контакты из Yahoo"
       ],
       "How to import emails from another service": [
         "Как импортировать электронную почту из другой службы"
-      ],
-      "How to import emails from Outlook": [
-        "Как импортировать электронную почту из Outlook"
       ],
       "How to import emails from Yahoo": [
         "Как импортировать электронную почту из Yahoo"

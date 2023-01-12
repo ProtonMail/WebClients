@@ -41,6 +41,9 @@
       "Request new code": [
         "Biðja um nýjan kóða"
       ],
+      "Resend code": [
+        "Endursenda kóða"
+      ],
       "Search countries": [
         "Leita að löndum"
       ],
@@ -925,6 +928,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Þessi reitur krefst að lágmarki ${ minimumLength } stafi."
       ],
+      "Try using only letters, numerals, and _.-": [
+        "Prófaðu að nota aðeins bókstafi, tölustafi og _.-"
+      ],
       "Unknown error": [
         "Óþekkt villa"
       ]
@@ -939,6 +945,9 @@
       "Please ${ refresh } or check your connection.": [
         "Athugaðu nettenginguna þína eða reyndu að ${ refresh }."
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Eitthvað fór úrskeiðis. Endurnýjaðu síðuna eða reyndu aftur síðar."
+      ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
         "Það kom upp villa þegar tengst var við ${ BRAND_NAME }."
       ],
@@ -946,7 +955,15 @@
         "Þú getur einnig ${ refresh } eða reynt aftur síðar."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Eitthvað fór úrskeiðis við auðkenningu með öryggislyklinum þínum. Vinsamlegast reyndu aftur."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Settu inn öryggislykil sem er tengdur við þinn ${ BRAND_NAME } reikning."
+      ],
       "Security key": [
         "Öryggislykill"
       ]
@@ -989,6 +1006,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Settu inn sannvottunarkóðann sem sendur var til ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Sláðu inn staðfestingarkóða. Tala ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Settu inn þitt eigið lykilorð (sem stjórnandi fyrirtækis/stofnunar/samtaka/félags)."
       ],
@@ -1030,6 +1050,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Viltu fá nýjan sannvottunarkóða?"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Þinn ${ BRAND_NAME } reikningur er frystur núna. Eftir 28 daga verður tölvupóstur ekki lengur sendur í pósthólfið þitt, Drive deilitenglar þínir verða lokaðir og þú munt ekki geta hlaðið upp nýjum skrám. Til að halda áfram eðlilegri þjónustu, vinsamlegast greiddu alla gjaldfallna reikninga."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Þinn ${ BRAND_NAME } reikningur er frystur núna. Tölvupóstur er ekki lengur sendur í pósthólfið þitt. Drive deilitenglar þínir eru ekki lengur virkir og þú getur ekki hlaðið upp nýjum skrám. Til að halda áfram að nota reikninginn þinn, vinsamlegast greiddu alla gjaldfallna reikninga."
       ],
       "Your email will only be used for this one-time verification.": [
         "Netfangið þitt verður aðeins notað við þessa einu sinni staðfestingu."
@@ -1109,6 +1135,10 @@
       "Password must contain at least ${ length } character": [
         "Lykilorð verður að innihalda að lágmarki ${ length } stafi",
         "Lykilorð verður að innihalda að lágmarki ${ length } stafi"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Reyndu styttra notendanafn (${ n } stafur að hámarki)",
+        "Reyndu styttra notendanafn (${ n } stafir að hámarki)"
       ]
     }
   }
