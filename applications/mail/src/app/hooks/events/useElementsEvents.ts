@@ -83,7 +83,7 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
                 }
                 // Long tasks trigger too much element update to be able to load them all
                 else if (taskRunning.labelIDs.length === 0) {
-                    toLoad.push(element.ID || '');
+                    toLoad.push(element);
                 }
 
                 return { toUpdate, toLoad };
