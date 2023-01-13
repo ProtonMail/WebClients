@@ -1,4 +1,4 @@
-import { IMetricsApi } from './MetricsApi';
+import { IMetricsRequestService } from './MetricsRequestService';
 
 // These are from https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels
 const metricRegexp = /^[a-zA-Z_:][a-zA-Z0-9_:]*$/;
@@ -24,32 +24,32 @@ abstract class Metric<D extends MetricSchema> {
 
     private version: MetricVersions;
 
-    private api: IMetricsApi;
+    private requestService: IMetricsRequestService;
 
-    constructor(config: { name: string; version: MetricVersions }, api: IMetricsApi) {
+    constructor(config: { name: string; version: MetricVersions }, requestService: IMetricsRequestService) {
         this.name = config.name;
         this.version = config.version;
-        this.api = api;
+        this.requestService = requestService;
 
         if (!validateMetricName(this.name)) {
             throw new Error('Invalid metric name');
         }
     }
 
-    protected async post(data: D) {
+    protected addToRequestQueue(data: D) {
         const labelNames = Object.keys(data.Labels);
         if (!validateLabelName(labelNames)) {
+            /**
+             * TODO: should we really throw here?
+             */
             throw new Error('Invalid label name');
         }
 
-        await this.api.fetch(`data/v1/metrics`, {
-            method: 'post',
-            body: JSON.stringify({
-                Name: this.name,
-                Version: this.version,
-                TimeStamp: Date.now(),
-                Data: data,
-            }),
+        this.requestService.report({
+            Name: this.name,
+            Version: this.version,
+            TimeStamp: Date.now(),
+            Data: data,
         });
     }
 }
