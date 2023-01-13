@@ -51,7 +51,7 @@ export const updateFromElements = (
                 const messageState = getMessage(state, element.ID);
 
                 if (messageState) {
-                    messageState.data = element as Message;
+                    messageState.data = { ...messageState.data, ...(element as Message) };
                 }
             }
         });
