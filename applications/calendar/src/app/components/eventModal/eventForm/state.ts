@@ -137,7 +137,7 @@ const getCalendarsModel = (Calendar: VisualCalendar, Calendars: VisualCalendar[]
     };
 };
 
-export const getOrganizerModel = ({
+export const getOrganizerAndSelfAddressModel = ({
     attendees,
     addressID,
     addresses,
@@ -147,15 +147,18 @@ export const getOrganizerModel = ({
     addresses: Address[];
 }) => {
     if (!attendees.length) {
-        return {
-            organizer: undefined,
-        };
+        return {};
     }
+
     const organizerAddress = addresses.find(({ ID }) => ID === addressID);
-    const { Email: email = '', DisplayName: cn = '' } = organizerAddress || {};
+
+    if (!organizerAddress) {
+        return {};
+    }
 
     return {
-        organizer: { email, cn },
+        organizer: { email: organizerAddress.Email, cn: organizerAddress.DisplayName },
+        selfAddress: organizerAddress,
     };
 };
 
@@ -194,7 +197,7 @@ export const getInitialModel = ({
     const notificationModel = getNotificationModels(CalendarSettings);
     const memberModel = getInitialMemberModel(Addresses, Members, Member, Address);
     const calendarsModel = getCalendarsModel(Calendar, Calendars);
-    const organizerModel = getOrganizerModel({
+    const organizerModel = getOrganizerAndSelfAddressModel({
         attendees,
         addressID: memberModel.member.addressID,
         addresses: Addresses,
