@@ -1,5 +1,7 @@
 import { listTimeZones } from '@protontech/timezone-support';
 
+import { SimpleMap } from '@proton/shared/lib/interfaces';
+
 import {
     ALLOWED_TIMEZONES_LIST,
     convertUTCDateTimeToZone,
@@ -167,6 +169,16 @@ describe('getSupportedTimezone', () => {
         const results = manual.map((tzid) => getSupportedTimezone(tzid));
         const expected = Object.values(MANUAL_TIMEZONE_LINKS);
         expect(results).toEqual(expected);
+    });
+
+    it('should convert time zones we do not support yet', () => {
+        const expectedMap: SimpleMap<string> = {
+            'Pacific/Kanton': 'Pacific/Fakaofo',
+        };
+
+        Object.keys(expectedMap).forEach((tzid) => {
+            expect(getSupportedTimezone(tzid)).toBe(expectedMap[tzid]);
+        });
     });
 
     it('should be robust', () => {
