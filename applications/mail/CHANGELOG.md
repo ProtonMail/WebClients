@@ -1,4 +1,4 @@
-## Release 5.0.15.0 — December 18th, 2022
+## Release 5.0.15.0 — January 18th, 2023
 
 ### New features
 
