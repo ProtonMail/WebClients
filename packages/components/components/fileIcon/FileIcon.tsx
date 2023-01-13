@@ -56,6 +56,10 @@ const iconsMap: { [mimeType: string]: MimeName } = {
     'application/vnd.ms-fontobject': 'font',
     'application/font-sfnt': 'font', // ttf
     'application/vnd.oasis.opendocument.formula-template': 'font', // otf
+
+    'application/vnd.apple.pages': 'pages',
+    'application/vnd.apple.numbers': 'numbers',
+    'application/vnd.apple.keynote': 'keynote',
 };
 
 const getIconName = (mimeType: string) => {
