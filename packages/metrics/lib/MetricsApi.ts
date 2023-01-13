@@ -6,10 +6,10 @@ export interface IMetricsApi {
 }
 
 class MetricsApi implements IMetricsApi {
-    private authHeaders: { [key: string]: string };
+    private _authHeaders: { [key: string]: string };
 
     constructor(uid?: string) {
-        this.authHeaders = this.getAuthHeaders(uid);
+        this._authHeaders = this.getAuthHeaders(uid);
     }
 
     private getAuthHeaders(uid?: string) {
@@ -21,7 +21,7 @@ class MetricsApi implements IMetricsApi {
     }
 
     public setAuthHeaders(uid: string) {
-        this.authHeaders = this.getAuthHeaders(uid);
+        this._authHeaders = this.getAuthHeaders(uid);
     }
 
     public fetch(requestInfo: RequestInfo | URL, requestInit?: RequestInit) {
@@ -30,7 +30,7 @@ class MetricsApi implements IMetricsApi {
             headers: {
                 ...requestInit?.headers,
                 'content-type': 'application/json',
-                ...this.authHeaders,
+                ...this._authHeaders,
             },
         });
     }
