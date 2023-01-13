@@ -33,6 +33,9 @@ const Steps = {
     TokenValue: 1,
 };
 
+const SMTP_SERVER = 'smtp.protonmail.ch';
+const SMTP_PORT = '587';
+
 interface Props extends ModalProps {
     addresses: Address[];
     onCreate: () => void; // fetch new tokens
@@ -73,6 +76,14 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
 
     const handleCopyToken = () => {
         createNotification({ type: 'success', text: c('Success').t`Token copied to clipboard` });
+    };
+
+    const handleCopyServer = () => {
+        createNotification({ type: 'success', text: c('Success').t`Server copied to clipboard` });
+    };
+
+    const handleCopyPort = () => {
+        createNotification({ type: 'success', text: c('Success').t`Port copied to clipboard` });
     };
 
     const content = () => {
@@ -144,8 +155,41 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         onCopy={handleCopyToken}
                     />
                 </div>
-                <p className="color-weak">{c('Info')
+                <p className="color-danger">{c('Info')
                     .t`This token won’t be available after you close this window, and you should not share it with anyone.`}</p>
+                <div className="flex flex-align-items-center flex-nowrap mb1">
+                    <InputFieldTwo
+                        id="server"
+                        label={c('Label').t`SMTP server`}
+                        readOnly
+                        value={SMTP_SERVER}
+                        inputClassName="bg-weak"
+                    />
+                    <Copy
+                        color="norm"
+                        shape="solid"
+                        value={SMTP_SERVER}
+                        className="smtp-token-copy relative flex-item-noshrink ml0-5"
+                        onCopy={handleCopyServer}
+                    />
+                </div>
+                <div className="flex flex-align-items-center flex-nowrap mb1">
+                    <InputFieldTwo
+                        id="port"
+                        label={c('Label').t`SMTP port`}
+                        readOnly
+                        value={SMTP_PORT}
+                        inputClassName="bg-weak"
+                    />
+                    <Copy
+                        color="norm"
+                        shape="solid"
+                        value={SMTP_PORT}
+                        className="smtp-token-copy relative flex-item-noshrink ml0-5"
+                        onCopy={handleCopyPort}
+                    />
+                </div>
+                <p>{c('Info').t`Enable TLS or SSL on the external service if it is supported.`}</p>
             </>
         );
     };
