@@ -66,15 +66,9 @@ export const useShouldMoveOut = ({ conversationMode, elementID = '', labelID, lo
         }
 
         // Move out of a non existing element
-        if (!loading) {
-            if (!cacheEntry) {
-                onBack();
-                return;
-            }
-            if (cacheEntryIsFailedLoading(conversationMode, cacheEntry)) {
-                onBack();
-                return;
-            }
+        if (!loading && (!cacheEntry || cacheEntryIsFailedLoading(conversationMode, cacheEntry))) {
+            onBack();
+            return;
         }
     }, [elementID, loading, conversationMode, cacheEntry]);
 };
