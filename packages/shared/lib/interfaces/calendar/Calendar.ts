@@ -1,4 +1,4 @@
-import { SETTINGS_NOTIFICATION_TYPE } from '../../calendar/constants';
+import { NOTIFICATION_TYPE_API } from '../../calendar/constants';
 import { Nullable } from '../utils';
 import { CalendarKey } from './CalendarKey';
 import { CalendarMember, CalendarOwner } from './CalendarMember';
@@ -63,7 +63,7 @@ export interface CalendarUserSettings {
 }
 
 export interface CalendarNotificationSettings {
-    Type: SETTINGS_NOTIFICATION_TYPE;
+    Type: NOTIFICATION_TYPE_API;
     Trigger: string;
 }
 

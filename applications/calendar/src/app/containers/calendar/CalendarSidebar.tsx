@@ -98,11 +98,7 @@ const CalendarSidebar = ({
     const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(otherCalendars);
 
     const canShowSubscribedSpotlights = !isWelcomeFlow && enabled && !unavailable && !isNarrow;
-    const canShowSubscribedRemindersSpotlight = canShowSubscribedSpotlights && !!otherCalendars.length;
     const canShowSubscribedCalendarsSpotlight = canShowSubscribedSpotlights && !otherCalendars.length;
-    const { show: showSubscribedRemindersSpotlight, onDisplayed: onSubscribedRemindersSpotlightDisplayed } =
-        useSpotlightOnFeature(FeatureCode.SpotlightSubscribedCalendarReminder, canShowSubscribedRemindersSpotlight);
-    const shouldShowSubscribedRemindersSpotlight = useSpotlightShow(showSubscribedRemindersSpotlight);
     const {
         show: showSubscribedCalendars,
         onDisplayed: onSubscribedCalendarsSpotlightDisplayed,
@@ -270,41 +266,26 @@ const CalendarSidebar = ({
     );
 
     const subscribedCalendarsList = otherCalendars.length ? (
-        <Spotlight
-            show={shouldShowSubscribedRemindersSpotlight}
-            onDisplayed={onSubscribedRemindersSpotlightDisplayed}
-            type="new"
-            content={
-                <>
-                    <div className="text-lg text-bold mb0-25">{c('Spotlight').t`Don't miss any events`}</div>
-                    <p className="m0">
-                        {c('Spotlight').t`You can now add notifications to calendars you subscribed to.`}
-                    </p>
-                </>
-            }
-            anchorRef={headerRef}
-        >
-            <SidebarList>
-                <SimpleSidebarListItemHeader
-                    toggle={displayOtherCalendars}
-                    onToggle={() => setDisplayOtherCalendars((prevState) => !prevState)}
-                    text={c('Link').t`Subscribed calendars`}
-                    testId="calendar-sidebar:subscribed-calendars-button"
-                    headerRef={headerRef}
+        <SidebarList>
+            <SimpleSidebarListItemHeader
+                toggle={displayOtherCalendars}
+                onToggle={() => setDisplayOtherCalendars((prevState) => !prevState)}
+                text={c('Link').t`Subscribed calendars`}
+                testId="calendar-sidebar:subscribed-calendars-button"
+                headerRef={headerRef}
+            />
+            {displayOtherCalendars && (
+                <CalendarSidebarListItems
+                    actionsDisabled={loadingSubscribedCalendars}
+                    calendars={loadingSubscribedCalendars ? otherCalendars : subscribedCalendars}
+                    onChangeVisibility={(calendarID, value) =>
+                        withLoadingAction(handleChangeVisibility(calendarID, value))
+                    }
+                    addresses={addresses}
+                    loading={loadingAction}
                 />
-                {displayOtherCalendars && (
-                    <CalendarSidebarListItems
-                        actionsDisabled={loadingSubscribedCalendars}
-                        calendars={loadingSubscribedCalendars ? otherCalendars : subscribedCalendars}
-                        onChangeVisibility={(calendarID, value) =>
-                            withLoadingAction(handleChangeVisibility(calendarID, value))
-                        }
-                        addresses={addresses}
-                        loading={loadingAction}
-                    />
-                )}
-            </SidebarList>
-        </Spotlight>
+            )}
+        </SidebarList>
     ) : null;
 
     return (

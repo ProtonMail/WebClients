@@ -181,6 +181,8 @@ const mockSharedCalendar: VisualCalendar = {
 const getImportButton = () => screen.queryByText(/Import events/) as HTMLButtonElement;
 const getImportModal = () => screen.queryByText(/ImportModal/);
 
+let memoryHistory = createMemoryHistory();
+
 function renderComponent(props?: Partial<CalendarSidebarListItemsProps>) {
     const defaultProps: CalendarSidebarListItemsProps = {
         onChangeVisibility: jest.fn(),
@@ -195,7 +197,7 @@ function renderComponent(props?: Partial<CalendarSidebarListItemsProps>) {
         ],
     };
     return (
-        <Router history={createMemoryHistory()}>
+        <Router history={memoryHistory}>
             <CacheProvider cache={createCache()}>
                 <CalendarSidebarListItems {...defaultProps} {...props} />
             </CacheProvider>

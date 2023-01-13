@@ -1,5 +1,4 @@
 import { FREQUENCY, ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
-import { getAggregatedEventVerificationStatus } from '@proton/shared/lib/calendar/crypto/decrypt';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
@@ -12,18 +11,7 @@ const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventM
 
     const isTemporaryEvent = getIsTemporaryViewEvent(calendarViewEvent);
     const tmpData = isTemporaryEvent ? (calendarViewEvent as CalendarViewEventTemporaryEvent).tmpData : undefined;
-
     const isEventReadLoading = !isTemporaryEvent && !eventReadResult;
-    const eventReadError = eventReadResult?.error;
-    const decryptedPersonalVeventMap = eventReadResult?.result?.[1] || {};
-    const verificationStatusPersonal = Object.values(decryptedPersonalVeventMap).map(
-        (result) => result?.verificationStatus
-    );
-    const verificationStatusRest = eventReadResult?.result?.[0]?.verificationStatus;
-    const verificationStatus = getAggregatedEventVerificationStatus([
-        ...verificationStatusPersonal,
-        verificationStatusRest,
-    ]);
 
     const calendarColor = tmpData?.calendar.color || calendarData.Color;
     const eventTitleSafe = getDisplayTitle(tmpData?.title || model.title);
@@ -38,9 +26,9 @@ const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventM
         isEventReadLoading,
         tmpData,
         calendarColor,
-        eventReadError,
+        eventReadError: eventReadResult?.error,
         eventTitleSafe,
-        verificationStatus,
+        verificationStatus: eventReadResult?.result?.[0]?.verificationStatus,
         isCancelled,
         isRecurring,
         isSingleEdit,

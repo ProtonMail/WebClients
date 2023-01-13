@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useDrawer, useLoading, useNotifications } from '@proton/components';
 import { useAddEvents } from '@proton/components/containers/calendar/hooks';
-import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getVeventWithDefaultCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
@@ -31,10 +31,6 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
         calendarData,
         invitationIcs: { vevent },
     } = model;
-
-    const veventToSave = calendarData?.calendarSettings
-        ? getEventWithCalendarAlarms(vevent, calendarData.calendarSettings)
-        : vevent;
 
     const handleSuccess = useCallback(([{ response, component }]: ImportedEvent[]) => {
         const invitationApiToSave = {
@@ -62,13 +58,14 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
     }, []);
 
     const handleAdd = async () => {
-        const { calendar, isCalendarDisabled } = calendarData || {};
-        if (!calendar || isCalendarDisabled) {
+        const { calendar, isCalendarDisabled, calendarSettings } = calendarData || {};
+        if (!calendar || isCalendarDisabled || !calendarSettings) {
             return noop();
         }
         try {
+            const veventWithAlarms = getVeventWithDefaultCalendarAlarms(vevent, calendarSettings);
             const { importedEvents, importErrors } = await addEvents({
-                events: [veventToSave],
+                events: [{ eventComponent: veventWithAlarms, hasDefaultNotifications: true }],
                 calendarID: calendar.ID,
             });
             if (importedEvents.length) {

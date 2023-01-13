@@ -1,8 +1,8 @@
 import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
 import {
     NOTIFICATION_INPUT_ID,
+    NOTIFICATION_TYPE_API,
     NOTIFICATION_UNITS_MAX,
-    SETTINGS_NOTIFICATION_TYPE,
 } from '@proton/shared/lib/calendar/constants';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 
@@ -17,7 +17,7 @@ import {
     getWeeksBefore,
 } from './notificationOptions';
 
-const { EMAIL, DEVICE /* BOTH */ } = SETTINGS_NOTIFICATION_TYPE;
+const { EMAIL, DEVICE /* BOTH */ } = NOTIFICATION_TYPE_API;
 
 interface Props {
     id: string;

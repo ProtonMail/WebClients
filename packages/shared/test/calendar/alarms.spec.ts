@@ -9,7 +9,7 @@ import {
     sortNotificationsByAscendingTrigger,
 } from '../../lib/calendar/alarms';
 import { normalizeTrigger } from '../../lib/calendar/alarms/trigger';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from '../../lib/calendar/constants';
+import { NOTIFICATION_TYPE_API, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../lib/calendar/constants';
 import { propertyToUTCDate } from '../../lib/calendar/vcalConverter';
 import { DAY, HOUR, MINUTE, WEEK } from '../../lib/constants';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, toUTCDate } from '../../lib/date/timezone';
@@ -263,7 +263,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.MINUTE,
-                type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                type: NOTIFICATION_TYPE_API.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 0,
                 isAllDay,
@@ -271,7 +271,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 0,
                 isAllDay,
@@ -279,7 +279,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                type: NOTIFICATION_TYPE_API.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 0,
                 isAllDay,
@@ -287,7 +287,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 0,
                 isAllDay,
@@ -297,7 +297,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.MINUTE,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay,
@@ -305,7 +305,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                type: NOTIFICATION_TYPE_API.EMAIL,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 2,
                 isAllDay,
@@ -313,7 +313,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay,
@@ -323,14 +323,14 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.MINUTE,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 isAllDay,
             },
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.MINUTE,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 1,
                 isAllDay,
@@ -338,7 +338,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                type: NOTIFICATION_TYPE_API.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 2,
                 isAllDay,
@@ -346,7 +346,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 1,
                 isAllDay,
@@ -363,7 +363,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 0,
                 isAllDay,
@@ -371,7 +371,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                type: NOTIFICATION_TYPE_API.EMAIL,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 0,
                 isAllDay,
@@ -379,7 +379,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                type: NOTIFICATION_TYPE_API.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 0,
                 isAllDay,
@@ -387,7 +387,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 0,
                 isAllDay,
@@ -397,7 +397,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay,
@@ -405,7 +405,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                type: NOTIFICATION_TYPE_API.EMAIL,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 2,
                 isAllDay,
@@ -413,7 +413,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay,
@@ -423,14 +423,14 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 isAllDay,
             },
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 1,
                 isAllDay,
@@ -438,7 +438,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                type: NOTIFICATION_TYPE_API.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 2,
                 isAllDay,
@@ -446,7 +446,7 @@ describe('filterFutureNotifications', () => {
             {
                 id: '1',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 1,
                 isAllDay,
@@ -608,7 +608,7 @@ describe('dedupeNotifications', () => {
             {
                 id: 'one',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay: false,
@@ -616,7 +616,7 @@ describe('dedupeNotifications', () => {
             {
                 id: 'two',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 7,
                 isAllDay: false,
@@ -624,7 +624,7 @@ describe('dedupeNotifications', () => {
             {
                 id: 'three',
                 unit: NOTIFICATION_UNITS.HOUR,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 168,
                 isAllDay: false,
@@ -632,7 +632,7 @@ describe('dedupeNotifications', () => {
             {
                 id: 'four',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay: true,
@@ -641,7 +641,7 @@ describe('dedupeNotifications', () => {
             {
                 id: 'five',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 7,
                 isAllDay: true,
@@ -650,7 +650,7 @@ describe('dedupeNotifications', () => {
             {
                 id: 'six',
                 unit: NOTIFICATION_UNITS.HOUR,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 168,
                 isAllDay: true,
@@ -662,7 +662,7 @@ describe('dedupeNotifications', () => {
             {
                 id: 'one',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay: false,
@@ -671,7 +671,7 @@ describe('dedupeNotifications', () => {
                 id: 'six',
                 at: new Date(2000, 1, 1),
                 isAllDay: true,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 unit: NOTIFICATION_UNITS.HOUR,
                 value: 168,
                 when: NOTIFICATION_WHEN.BEFORE,
@@ -684,7 +684,7 @@ describe('dedupeNotifications', () => {
             {
                 id: '14-days',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 14,
                 isAllDay: false,
@@ -692,7 +692,7 @@ describe('dedupeNotifications', () => {
             {
                 id: '24-hours',
                 unit: NOTIFICATION_UNITS.HOUR,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 24,
                 isAllDay: false,
@@ -700,7 +700,7 @@ describe('dedupeNotifications', () => {
             {
                 id: 'two-weeks',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 2,
                 isAllDay: false,
@@ -708,7 +708,7 @@ describe('dedupeNotifications', () => {
             {
                 id: '1-day',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay: false,
@@ -719,7 +719,7 @@ describe('dedupeNotifications', () => {
             {
                 id: '1-day',
                 unit: NOTIFICATION_UNITS.DAY,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay: false,
@@ -727,7 +727,7 @@ describe('dedupeNotifications', () => {
             {
                 id: 'two-weeks',
                 unit: NOTIFICATION_UNITS.WEEK,
-                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                type: NOTIFICATION_TYPE_API.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 2,
                 isAllDay: false,
@@ -926,28 +926,28 @@ describe('sortNotificationsByAscendingTrigger()', () => {
     it('sorts case 1 correctly', () => {
         const a = {
             unit: NOTIFICATION_UNITS.MINUTE,
-            type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+            type: NOTIFICATION_TYPE_API.DEVICE,
             when: NOTIFICATION_WHEN.AFTER,
             value: 0,
             isAllDay: false,
         };
         const b = {
             unit: NOTIFICATION_UNITS.HOUR,
-            type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+            type: NOTIFICATION_TYPE_API.DEVICE,
             when: NOTIFICATION_WHEN.BEFORE,
             value: 1,
             isAllDay: false,
         };
         const c = {
             unit: NOTIFICATION_UNITS.HOUR,
-            type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+            type: NOTIFICATION_TYPE_API.DEVICE,
             when: NOTIFICATION_WHEN.BEFORE,
             value: 1,
             isAllDay: false,
         };
         const d = {
             unit: NOTIFICATION_UNITS.MINUTE,
-            type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+            type: NOTIFICATION_TYPE_API.DEVICE,
             when: NOTIFICATION_WHEN.BEFORE,
             value: 60,
             isAllDay: false,
@@ -960,7 +960,7 @@ describe('sortNotificationsByAscendingTrigger()', () => {
     it('sorts case 2 correctly', () => {
         const a = {
             unit: NOTIFICATION_UNITS.DAY,
-            type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+            type: NOTIFICATION_TYPE_API.DEVICE,
             when: NOTIFICATION_WHEN.AFTER,
             at: new Date(2000, 0, 1, 12, 30),
             value: 1,
@@ -969,7 +969,7 @@ describe('sortNotificationsByAscendingTrigger()', () => {
 
         const b = {
             unit: NOTIFICATION_UNITS.DAY,
-            type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+            type: NOTIFICATION_TYPE_API.DEVICE,
             when: NOTIFICATION_WHEN.BEFORE,
             at: new Date(2000, 0, 1, 1, 30),
             value: 1,
@@ -978,7 +978,7 @@ describe('sortNotificationsByAscendingTrigger()', () => {
 
         const c = {
             unit: NOTIFICATION_UNITS.DAY,
-            type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+            type: NOTIFICATION_TYPE_API.DEVICE,
             when: NOTIFICATION_WHEN.BEFORE,
             at: new Date(2000, 0, 1, 9, 30),
             value: 1,
@@ -987,7 +987,7 @@ describe('sortNotificationsByAscendingTrigger()', () => {
 
         const d = {
             unit: NOTIFICATION_UNITS.DAY,
-            type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+            type: NOTIFICATION_TYPE_API.DEVICE,
             when: NOTIFICATION_WHEN.BEFORE,
             at: new Date(2000, 0, 1, 9, 30),
             value: 7,
@@ -996,7 +996,7 @@ describe('sortNotificationsByAscendingTrigger()', () => {
 
         const e = {
             unit: NOTIFICATION_UNITS.WEEK,
-            type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+            type: NOTIFICATION_TYPE_API.DEVICE,
             when: NOTIFICATION_WHEN.BEFORE,
             at: new Date(2000, 0, 1, 9, 30),
             value: 1,

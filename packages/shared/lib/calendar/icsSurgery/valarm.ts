@@ -1,3 +1,4 @@
+import { DAY_IN_SECONDS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { normalize } from '../../helpers/string';
@@ -9,15 +10,17 @@ import {
     VcalValarmRelativeComponent,
 } from '../../interfaces/calendar';
 import { getIsAbsoluteTrigger, normalizeDurationToUnit, normalizeTrigger } from '../alarms/trigger';
-import { MAX_NOTIFICATIONS, NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX } from '../constants';
+import { ICAL_ALARM_ACTION, MAX_NOTIFICATIONS, NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX } from '../constants';
 import { getIsDateTimeValue, getIsPropertyAllDay } from '../vcalHelper';
 
-const getSupportedAlarmAction = (action: VcalStringProperty) => {
+const { DISPLAY, EMAIL, AUDIO } = ICAL_ALARM_ACTION;
+
+export const getSupportedAlarmAction = (action: VcalStringProperty) => {
     if (normalize(action.value) === 'email') {
-        return { value: 'EMAIL' };
+        return { value: EMAIL };
     }
 
-    return { value: 'DISPLAY' };
+    return { value: DISPLAY };
 };
 
 /**
@@ -25,7 +28,9 @@ const getSupportedAlarmAction = (action: VcalStringProperty) => {
  */
 export const getIsValidAlarm = (alarm: VcalValarmComponent) => {
     const { action, trigger, duration, repeat } = alarm;
-    if (!['AUDIO', 'DISPLAY', 'EMAIL'].includes(action?.value)) {
+    const supportedActions: string[] = [DISPLAY, EMAIL, AUDIO];
+
+    if (!supportedActions.includes(action?.value)) {
         return false;
     }
     if (!trigger) {
@@ -66,7 +71,7 @@ export const getSupportedAlarm = (
     const triggerDurationInSeconds = normalizeDurationToUnit(normalizedTrigger, 1);
 
     const inFuture = getIsPropertyAllDay(dtstart)
-        ? !normalizedTrigger.isNegative && triggerDurationInSeconds >= 24 * 60 * 60
+        ? !normalizedTrigger.isNegative && triggerDurationInSeconds >= DAY_IN_SECONDS
         : !normalizedTrigger.isNegative && triggerDurationInSeconds !== 0;
     const nonSupportedTrigger =
         normalizedTrigger.seconds !== 0 ||

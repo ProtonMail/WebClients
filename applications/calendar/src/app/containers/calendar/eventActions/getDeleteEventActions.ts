@@ -7,7 +7,6 @@ import { Address, Api } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
-import noop from '@proton/utils/noop';
 
 import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
 import { EventOldData } from '../../../interfaces/EventData';
@@ -115,6 +114,7 @@ interface Arguments {
     getCalendarKeys: GetCalendarKeys;
     getEventDecrypted: GetDecryptedEventCb;
     inviteActions: InviteActions;
+    personalEventsDeprecated: boolean;
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
@@ -132,6 +132,7 @@ const getDeleteEventActions = async ({
     getAddressKeys,
     getCalendarKeys,
     inviteActions,
+    personalEventsDeprecated,
     sendIcs,
 }: Arguments): Promise<{
     syncActions: SyncEventActionOperations[];
@@ -143,13 +144,13 @@ const getDeleteEventActions = async ({
     if (!calendarBootstrap) {
         throw new Error('Trying to delete event without calendar information');
     }
-    if (!oldEventData || !getIsCalendarEvent(oldEventData)) {
+    if (!oldEventData || !getIsCalendarEvent(oldEventData) || !eventReadResult?.result) {
         throw new Error('Trying to delete event without event information');
     }
 
     const oldEditEventData = getEditEventData({
         eventData: oldEventData,
-        eventResult: eventReadResult?.result,
+        eventResult: eventReadResult.result,
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
     const sharedSessionKey = await getBase64SharedSessionKey({
@@ -196,7 +197,7 @@ const getDeleteEventActions = async ({
 
     // If this is a single edit, get the original event data
     if (originalEventData && originalEventData.ID !== oldEventData.ID) {
-        const originalEventResult = await getEventDecrypted(originalEventData).catch(noop);
+        const originalEventResult = await getEventDecrypted(originalEventData);
 
         originalEditEventData = getEditEventData({
             eventData: originalEventData,
@@ -246,6 +247,7 @@ const getDeleteEventActions = async ({
         recurrences,
         originalEditEventData,
         oldEditEventData,
+        personalEventsDeprecated,
         isAttendee,
         inviteActions: updatedInviteActions,
         selfAttendeeToken,

@@ -243,7 +243,6 @@ const getSetup = async ({
             generateApiCalendarEvent({
                 eventComponent,
                 author: userEmailAddress,
-                memberID,
                 publicKey: alternativeCalendarKey?.publicKeys[0] || calendarKey.publicKeys[0],
                 privateKey: alternativeAddressKey?.privateKeys[0] || addressKey.privateKeys[0],
                 eventID,
@@ -1021,7 +1020,6 @@ END:VCALENDAR`;
             const savedEvent = await generateApiCalendarEvent({
                 eventComponent: savedVevent,
                 author: dummyUserEmailAddress,
-                memberID: dummyMemberID,
                 publicKey: (await dummyCalendarKeysAndPassphrasePromise).calendarKey.publicKeys[0],
                 privateKey: dummyAddressKey.privateKeys[0],
                 eventID: dummyEventID,

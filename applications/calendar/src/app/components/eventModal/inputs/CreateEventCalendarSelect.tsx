@@ -1,7 +1,7 @@
 import { useGetAddresses, useGetCalendarBootstrap, useLoading } from '@proton/components';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
-import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
@@ -73,15 +73,13 @@ const CreateEventCalendarSelect = ({
         const newDefaultPartDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
         const newDefaultFullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
 
-        const partDayNotifications =
-            model.hasTouchedNotifications.partDay || ((!isCreateEvent || isDuplicating) && !model.isAllDay)
-                ? model.partDayNotifications
-                : newDefaultPartDayNotifications;
+        const partDayNotifications = model.hasPartDayDefaultNotifications
+            ? newDefaultPartDayNotifications
+            : model.partDayNotifications;
 
-        const fullDayNotifications =
-            model.hasTouchedNotifications.fullDay || ((!isCreateEvent || isDuplicating) && model.isAllDay)
-                ? model.fullDayNotifications
-                : newDefaultFullDayNotifications;
+        const fullDayNotifications = model.hasFullDayDefaultNotifications
+            ? newDefaultFullDayNotifications
+            : model.fullDayNotifications;
 
         setModel({
             ...model,

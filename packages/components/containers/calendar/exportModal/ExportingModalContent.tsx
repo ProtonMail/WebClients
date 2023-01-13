@@ -23,7 +23,6 @@ import {
     useGetCalendarKeys,
     useGetCalendarUserSettings,
 } from '../../../hooks';
-import useGetCalendarEventPersonal from '../../../hooks/useGetCalendarEventPersonal';
 
 interface Props {
     model: ExportCalendarModel;
@@ -34,7 +33,6 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
     const getAddresses = useGetAddresses();
     const getCalendarInfo = useGetCalendarInfo();
-    const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getAddressKeys = useGetAddressKeys();
     const getCalendarKeys = useGetCalendarKeys();
     const getCalendarUserSettings = useGetCalendarUserSettings();
@@ -69,7 +67,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
         const process = async () => {
             try {
-                const [addresses, { memberID }, calendarUserSettings] = await Promise.all([
+                const [addresses, { calendarSettings }, calendarUserSettings] = await Promise.all([
                     getAddresses(),
                     getCalendarInfo(model.calendar.ID),
                     getCalendarUserSettings(),
@@ -94,10 +92,9 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     onProgress: handleExportProgress,
                     getAddressKeys,
                     getCalendarKeys,
-                    getCalendarEventPersonal,
-                    memberID,
                     totalToProcess,
                     weekStartsOn: model.weekStartsOn,
+                    calendarSettings,
                     defaultTzid: calendarUserSettings.PrimaryTimezone,
                 });
 

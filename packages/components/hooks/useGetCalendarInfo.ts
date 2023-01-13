@@ -23,10 +23,10 @@ export const useGetCalendarInfo = (): GetCalendarInfo => {
 
             const [{ ID: memberID }, { ID: addressID }] = getMemberAndAddress(Addresses, Members);
 
-            const { decryptedCalendarKeys, decryptedPassphrase, passphraseID } =
-                await getDecryptedPassphraseAndCalendarKeys(calendarID);
-
-            const addressKeys = await getAddressKeys(addressID);
+            const [{ decryptedCalendarKeys, decryptedPassphrase, passphraseID }, addressKeys] = await Promise.all([
+                getDecryptedPassphraseAndCalendarKeys(calendarID),
+                getAddressKeys(addressID),
+            ]);
 
             return {
                 memberID,
