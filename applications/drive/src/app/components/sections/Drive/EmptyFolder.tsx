@@ -45,9 +45,7 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
                 >
                     <h3 className="text-bold">{c('Info').t`Go ahead, upload a file`}</h3>
                     <p className="color-weak">
-                        {!isNarrow
-                            ? c('Info').t`It’s as easy as drag and drop or selecting files`
-                            : c('Info').t`Tap the + button to upload a file or folder`}
+                        {!isNarrow ? c('Info').t`It’s as easy as drag and drop or selecting files` : ''}
                     </p>
                     {!isNarrow && (
                         <div className="flex flex-justify-center">
