@@ -26,7 +26,7 @@ export const getIsAbsoluteTrigger = (trigger: VcalTriggerProperty): trigger is V
     return (trigger as VcalDateTimeProperty).parameters?.type === 'date-time';
 };
 
-const absoluteToRelative = (trigger: VcalDateTimeProperty, dtstart: VcalDateOrDateTimeProperty) => {
+export const absoluteToRelativeTrigger = (trigger: VcalDateTimeProperty, dtstart: VcalDateOrDateTimeProperty) => {
     const utcStartDate = propertyToUTCDate(dtstart);
     const triggerDate = propertyToUTCDate(trigger);
     const durationInMinutes = differenceInMinutes(utcStartDate, triggerDate);
@@ -35,6 +35,7 @@ const absoluteToRelative = (trigger: VcalDateTimeProperty, dtstart: VcalDateOrDa
     const days = Math.floor((duration % WEEK) / DAY);
     const hours = Math.floor((duration % DAY) / HOUR);
     const minutes = Math.floor((duration % HOUR) / MINUTE);
+
     return { weeks, days, hours, minutes, seconds: 0, isNegative: durationInMinutes >= 0 };
 };
 
@@ -87,6 +88,6 @@ export const normalizeRelativeTrigger = (duration: VcalDurationValue, isAllDay: 
 };
 
 export const normalizeTrigger = (trigger: VcalTriggerProperty, dtstart: VcalDateOrDateTimeProperty) => {
-    const duration = getIsAbsoluteTrigger(trigger) ? absoluteToRelative(trigger, dtstart) : trigger.value;
+    const duration = getIsAbsoluteTrigger(trigger) ? absoluteToRelativeTrigger(trigger, dtstart) : trigger.value;
     return normalizeRelativeTrigger(duration, getIsPropertyAllDay(dtstart));
 };

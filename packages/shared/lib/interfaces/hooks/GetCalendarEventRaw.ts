@@ -3,6 +3,7 @@ import { CalendarEvent, CalendarEventEncryptionData, SelfAddressData, VcalVevent
 
 export type GetCalendarEventRaw = (Event: CalendarEvent) => Promise<{
     veventComponent: VcalVeventComponent;
+    hasDefaultNotifications: boolean;
     verificationStatus: EVENT_VERIFICATION_STATUS;
     selfAddressData: SelfAddressData;
     encryptionData: CalendarEventEncryptionData;

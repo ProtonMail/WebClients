@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
@@ -9,27 +9,23 @@ import {
     AppLink,
     Badge,
     CalendarInviteButtons,
-    FeatureCode,
     Icon,
     Loader,
     ReloadSpinner,
     Tooltip,
-    useCalendarBootstrap,
-    useFeature,
     useLoading,
+    useReadCalendarBootstrap,
 } from '@proton/components';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { getIsCalendarDisabled, getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getLinkToCalendarEvent, naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
-import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
@@ -90,9 +86,11 @@ const EventPopover = ({
 
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
+    const readCalendarBootstrap = useReadCalendarBootstrap();
 
     const targetEventData = targetEvent?.data || {};
     const { eventReadResult, eventData, calendarData } = targetEventData;
+    const calendarBootstrap = readCalendarBootstrap(calendarData.ID);
 
     const recurrenceDate = toLocalDate(fromUTCDate(start));
     const recurrenceTimestamp = getUnixTime(recurrenceDate);
@@ -106,40 +104,11 @@ const EventPopover = ({
 
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
     const isSubscribedCalendar = getIsSubscribedCalendar(calendarData);
-    const [calendarBootstrap]: [CalendarBootstrap, boolean, any] = useCalendarBootstrap(calendarData.ID);
-    const isSubscribedCalendarReminderFeatureEnabled = !!useFeature(FeatureCode.SubscribedCalendarReminder).feature
-        ?.Value;
     const isCalendarWritable = getIsCalendarWritable(calendarData);
 
-    const model = useReadEvent(eventReadResult?.result, tzid);
+    const model = useReadEvent(eventReadResult?.result, tzid, calendarBootstrap?.CalendarSettings);
     const { eventReadError, isEventReadLoading, eventTitleSafe, isCancelled, userPartstat, isSelfAddressActive } =
         getEventInformation(targetEvent, model);
-
-    useEffect(() => {
-        if (
-            !isSubscribedCalendar ||
-            !isSubscribedCalendarReminderFeatureEnabled ||
-            !calendarBootstrap ||
-            isEventReadLoading
-        ) {
-            return;
-        }
-
-        const {
-            CalendarSettings: { DefaultFullDayNotifications, DefaultPartDayNotifications },
-        } = calendarBootstrap;
-
-        model.notifications = notificationsToModel(
-            model.isAllDay ? DefaultFullDayNotifications : DefaultPartDayNotifications,
-            model.isAllDay
-        );
-    }, [
-        isEventReadLoading,
-        calendarBootstrap,
-        isSubscribedCalendar,
-        isSubscribedCalendarReminderFeatureEnabled,
-        model,
-    ]);
 
     const handleDelete = () => {
         const sendCancellationNotice =

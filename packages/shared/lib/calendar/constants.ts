@@ -96,6 +96,12 @@ export enum ICAL_ATTENDEE_STATUS {
     DELEGATED = 'DELEGATED',
 }
 
+export enum ICAL_ALARM_ACTION {
+    DISPLAY = 'DISPLAY',
+    EMAIL = 'EMAIL',
+    AUDIO = 'AUDIO',
+}
+
 export enum ATTENDEE_STATUS_API {
     NEEDS_ACTION = 0,
     TENTATIVE = 1,
@@ -303,7 +309,7 @@ export const TAKEN_KEYS = [
     ]),
 ] as const;
 
-export enum SETTINGS_NOTIFICATION_TYPE {
+export enum NOTIFICATION_TYPE_API {
     EMAIL = 0,
     DEVICE = 1,
 }

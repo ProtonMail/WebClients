@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import {
+    FeatureCode,
     useAddresses,
     useApi,
     useContactEmails,
     useEventManager,
+    useFeature,
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetCalendarInfo,
@@ -14,7 +16,6 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
-import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { arrayToBinaryString, decodeUtf8 } from '@proton/crypto/lib/utils';
@@ -74,8 +75,8 @@ const ExtraEvents = ({ message }: Props) => {
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const getCalendarInfo = useGetCalendarInfo();
     const getCalendarEventRaw = useGetCalendarEventRaw();
-    const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
+    const personalEventsDeprecated = !!useFeature(FeatureCode.CalendarPersonalEventsDeprecated).feature?.Value;
 
     const [loadingWidget, withLoadingWidget] = useLoading();
     const [loadedWidget, setLoadedWidget] = useState('');
@@ -258,8 +259,8 @@ const ExtraEvents = ({ message }: Props) => {
                         getAddressKeys={getAddressKeys}
                         getCalendarInfo={getCalendarInfo}
                         getCalendarEventRaw={getCalendarEventRaw}
-                        getCalendarEventPersonal={getCalendarEventPersonal}
                         getCanonicalEmailsMap={getCanonicalEmailsMap}
+                        personalEventsDeprecated={personalEventsDeprecated}
                     />
                 );
             })}

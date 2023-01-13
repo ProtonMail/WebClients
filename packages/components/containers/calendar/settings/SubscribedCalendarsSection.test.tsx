@@ -40,6 +40,8 @@ jest.mock('@proton/components/hooks/useCalendarSubscribeFeature', () =>
     jest.fn(() => ({ enabled: true, unavailable: false }))
 );
 
+let memoryHistory = createMemoryHistory();
+
 function renderComponent(props?: Partial<SubscribedCalendarsSectionProps>) {
     const defaultProps: SubscribedCalendarsSectionProps = {
         addresses: [{ Status: 1, Receive: 1, Send: 1 }] as Address[],
@@ -49,7 +51,7 @@ function renderComponent(props?: Partial<SubscribedCalendarsSectionProps>) {
 
     return (
         <ModalsProvider>
-            <Router history={createMemoryHistory()}>
+            <Router history={memoryHistory}>
                 <CacheProvider cache={createCache()}>
                     <SubscribedCalendarsSection {...defaultProps} {...props} />
                 </CacheProvider>

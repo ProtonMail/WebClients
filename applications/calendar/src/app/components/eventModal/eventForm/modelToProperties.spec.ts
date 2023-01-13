@@ -1,8 +1,4 @@
-import {
-    NOTIFICATION_UNITS,
-    NOTIFICATION_WHEN,
-    SETTINGS_NOTIFICATION_TYPE,
-} from '@proton/shared/lib/calendar/constants';
+import { NOTIFICATION_TYPE_API, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '@proton/shared/lib/calendar/constants';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 import { modelToValarmComponents } from './modelToProperties';
@@ -15,19 +11,19 @@ describe('model to valarm', () => {
                 partDayNotifications: [
                     {
                         value: 1,
-                        type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                        type: NOTIFICATION_TYPE_API.EMAIL,
                         unit: NOTIFICATION_UNITS.HOUR,
                         when: NOTIFICATION_WHEN.AFTER,
                     },
                     {
                         value: 15,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.MINUTE,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
                     {
                         value: 10,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.MINUTE,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
@@ -93,31 +89,31 @@ describe('model to valarm', () => {
                 partDayNotifications: [
                     {
                         value: 1,
-                        type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                        type: NOTIFICATION_TYPE_API.EMAIL,
                         unit: NOTIFICATION_UNITS.HOUR,
                         when: NOTIFICATION_WHEN.AFTER,
                     },
                     {
                         value: 1,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.HOUR,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
                     {
                         value: 60,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.MINUTE,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
                     {
                         value: 15,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.MINUTE,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
                     {
                         value: 15,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.MINUTE,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
@@ -183,7 +179,7 @@ describe('model to valarm', () => {
                 fullDayNotifications: [
                     {
                         value: 1,
-                        type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                        type: NOTIFICATION_TYPE_API.EMAIL,
                         unit: NOTIFICATION_UNITS.DAY,
                         when: NOTIFICATION_WHEN.AFTER,
                         isAllDay: true,
@@ -191,7 +187,7 @@ describe('model to valarm', () => {
                     },
                     {
                         value: 1,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.DAY,
                         when: NOTIFICATION_WHEN.BEFORE,
                         isAllDay: true,
@@ -199,7 +195,7 @@ describe('model to valarm', () => {
                     },
                     {
                         value: 2,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.DAY,
                         when: NOTIFICATION_WHEN.BEFORE,
                         isAllDay: true,
@@ -265,7 +261,7 @@ describe('model to valarm', () => {
                 fullDayNotifications: [
                     {
                         value: 1,
-                        type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                        type: NOTIFICATION_TYPE_API.EMAIL,
                         unit: NOTIFICATION_UNITS.DAY,
                         when: NOTIFICATION_WHEN.AFTER,
                         isAllDay: true,
@@ -273,7 +269,7 @@ describe('model to valarm', () => {
                     },
                     {
                         value: 1,
-                        type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
+                        type: NOTIFICATION_TYPE_API.EMAIL,
                         unit: NOTIFICATION_UNITS.DAY,
                         when: NOTIFICATION_WHEN.AFTER,
                         isAllDay: true,
@@ -281,7 +277,7 @@ describe('model to valarm', () => {
                     },
                     {
                         value: 1,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.DAY,
                         when: NOTIFICATION_WHEN.AFTER,
                         isAllDay: true,
@@ -289,7 +285,7 @@ describe('model to valarm', () => {
                     },
                     {
                         value: 1,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.DAY,
                         when: NOTIFICATION_WHEN.AFTER,
                         isAllDay: true,
@@ -297,7 +293,7 @@ describe('model to valarm', () => {
                     },
                     {
                         value: 1,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.DAY,
                         when: NOTIFICATION_WHEN.BEFORE,
                         isAllDay: true,
@@ -305,7 +301,7 @@ describe('model to valarm', () => {
                     },
                     {
                         value: 2,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.DAY,
                         when: NOTIFICATION_WHEN.BEFORE,
                         isAllDay: true,
@@ -313,7 +309,7 @@ describe('model to valarm', () => {
                     },
                     {
                         value: 0,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.DAY,
                         when: NOTIFICATION_WHEN.BEFORE,
                         isAllDay: true,
@@ -321,7 +317,7 @@ describe('model to valarm', () => {
                     },
                     {
                         value: 0,
-                        type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                        type: NOTIFICATION_TYPE_API.DEVICE,
                         unit: NOTIFICATION_UNITS.WEEK,
                         when: NOTIFICATION_WHEN.BEFORE,
                         isAllDay: true,

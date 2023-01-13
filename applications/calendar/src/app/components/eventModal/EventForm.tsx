@@ -194,11 +194,9 @@ const EventForm = ({
                 onChange: (notifications: NotificationModel[]) => {
                     setModel({
                         ...model,
+                        hasDefaultNotifications: false,
                         fullDayNotifications: notifications,
-                        hasTouchedNotifications: {
-                            ...model.hasTouchedNotifications,
-                            fullDay: true,
-                        },
+                        hasFullDayDefaultNotifications: false,
                     });
                 },
             }}
@@ -215,11 +213,9 @@ const EventForm = ({
                 onChange: (notifications: NotificationModel[]) => {
                     setModel({
                         ...model,
+                        hasDefaultNotifications: false,
                         fullDayNotifications: notifications,
-                        hasTouchedNotifications: {
-                            ...model.hasTouchedNotifications,
-                            fullDay: true,
-                        },
+                        hasFullDayDefaultNotifications: false,
                     });
                 },
             }}
@@ -237,11 +233,9 @@ const EventForm = ({
                 onChange: (notifications: NotificationModel[]) => {
                     setModel({
                         ...model,
+                        hasDefaultNotifications: false,
                         partDayNotifications: notifications,
-                        hasTouchedNotifications: {
-                            ...model.hasTouchedNotifications,
-                            partDay: true,
-                        },
+                        hasPartDayDefaultNotifications: false,
                     });
                 },
             }}
@@ -258,11 +252,9 @@ const EventForm = ({
                 onChange: (notifications: NotificationModel[]) => {
                     setModel({
                         ...model,
+                        hasDefaultNotifications: false,
                         partDayNotifications: notifications,
-                        hasTouchedNotifications: {
-                            ...model.hasTouchedNotifications,
-                            partDay: true,
-                        },
+                        hasPartDayDefaultNotifications: false,
                     });
                 },
             }}

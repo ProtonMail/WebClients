@@ -1,15 +1,15 @@
 import { c } from 'ttag';
 
 import { sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
-import { DEFAULT_EVENT_DURATION } from '@proton/shared/lib/calendar/constants';
-import { modelToNotifications } from '@proton/shared/lib/calendar/modelToNotifications';
+import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
     DEFAULT_FULL_DAY_NOTIFICATIONS,
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS,
-} from '@proton/shared/lib/calendar/notificationDefaults';
-import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+} from '@proton/shared/lib/calendar/alarms/notificationDefaults';
+import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
+import { DEFAULT_EVENT_DURATION } from '@proton/shared/lib/calendar/constants';
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 import {

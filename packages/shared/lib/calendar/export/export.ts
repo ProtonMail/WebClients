@@ -22,6 +22,7 @@ import { dateLocale } from '../../i18n';
 import { Address, Api, Key } from '../../interfaces';
 import {
     CalendarEvent,
+    CalendarSettings,
     EXPORT_EVENT_ERROR_TYPES,
     ExportError,
     VcalVeventComponent,
@@ -29,7 +30,6 @@ import {
 } from '../../interfaces/calendar';
 import { CalendarExportEventsQuery } from '../../interfaces/calendar/Api';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
-import { GetCalendarEventPersonal } from '../../interfaces/hooks/GetCalendarEventPersonal';
 import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { withNormalizedAuthors } from '../author';
 import { readCalendarEvent, readSessionKeys } from '../deserialize';
@@ -107,62 +107,64 @@ const getDecryptionErrorType = async (event: CalendarEvent, keys: Key[]) => {
 
 const decryptEvent = async ({
     event,
+    calendarSettings,
     defaultTzid,
     weekStartsOn,
     addresses,
     getAddressKeys,
     getCalendarKeys,
-    getCalendarEventPersonal,
-    memberID,
 }: {
     event: CalendarEvent;
+    calendarSettings: CalendarSettings;
     addresses: Address[];
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: GetCalendarKeys;
-    getCalendarEventPersonal: GetCalendarEventPersonal;
-    memberID: string;
     weekStartsOn: WeekStartsOn;
     defaultTzid: string;
 }) => {
     const defaultParams = { event, defaultTzid, weekStartsOn };
-    const [eventDecryptionKeys, eventPersonalMap] = await Promise.all([
-        getCalendarEventDecryptionKeys({
-            calendarEvent: event,
-            getAddressKeys,
-            getCalendarKeys,
-        }),
-        getCalendarEventPersonal(event),
-    ]);
+    const eventDecryptionKeys = await getCalendarEventDecryptionKeys({
+        calendarEvent: event,
+        getAddressKeys,
+        getCalendarKeys,
+    });
 
     try {
-        const personalVevent = memberID ? eventPersonalMap[memberID] : undefined;
-        const valarms = personalVevent ? personalVevent.veventComponent : {};
-
         const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
             calendarEvent: event,
             privateKeys: eventDecryptionKeys,
         });
 
-        const { SharedEvents, CalendarEvents, AttendeesEvents, Attendees } = event;
+        const {
+            SharedEvents,
+            CalendarEvents,
+            AttendeesEvents,
+            Attendees,
+            PersonalEvents,
+            Notifications,
+            IsPersonalMigrated,
+            FullDay,
+        } = event;
         const { veventComponent } = await readCalendarEvent({
             event: {
                 SharedEvents: withNormalizedAuthors(SharedEvents),
                 CalendarEvents: withNormalizedAuthors(CalendarEvents),
                 AttendeesEvents: withNormalizedAuthors(AttendeesEvents),
-                Attendees: Attendees,
+                Attendees,
+                PersonalEvents,
+                Notifications,
+                IsPersonalMigrated,
+                FullDay,
             },
+            calendarSettings,
             sharedSessionKey,
             calendarSessionKey,
             addresses,
             encryptingAddressID: getIsAutoAddedInvite(event) ? event.AddressID : undefined,
         });
-        const veventWithAlarmsAndSummary: VcalVeventComponent = {
-            ...valarms,
-            // SUMMARY is mandatory in a PUBLISH ics
-            ...withSummary(veventComponent),
-        };
 
-        return veventWithAlarmsAndSummary;
+        // SUMMARY is mandatory in a PUBLISH ics
+        return withSummary(veventComponent);
     } catch (error: any) {
         const inactiveKeys = addresses.flatMap(({ Keys }) => Keys.filter(({ Active }) => !Active));
         return getError({
@@ -177,7 +179,6 @@ interface ProcessData {
     addresses: Address[];
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: GetCalendarKeys;
-    getCalendarEventPersonal: GetCalendarEventPersonal;
     api: Api;
     signal: AbortSignal;
     onProgress: (
@@ -186,7 +187,7 @@ interface ProcessData {
         exportErrors: ExportError[]
     ) => void;
     totalToProcess: number;
-    memberID: string;
+    calendarSettings: CalendarSettings;
     weekStartsOn: WeekStartsOn;
     defaultTzid: string;
 }
@@ -197,11 +198,10 @@ export const processInBatches = async ({
     signal,
     onProgress,
     addresses,
-    getCalendarEventPersonal,
     totalToProcess,
-    memberID,
     getAddressKeys,
     getCalendarKeys,
+    calendarSettings,
     weekStartsOn,
     defaultTzid,
 }: ProcessData): Promise<[VcalVeventComponent[], ExportError[], number]> => {
@@ -249,13 +249,12 @@ export const processInBatches = async ({
             exportableEvents.map((event) =>
                 decryptEvent({
                     event,
+                    calendarSettings,
                     defaultTzid,
                     weekStartsOn,
                     addresses,
                     getAddressKeys,
                     getCalendarKeys,
-                    getCalendarEventPersonal,
-                    memberID,
                 })
             )
         )

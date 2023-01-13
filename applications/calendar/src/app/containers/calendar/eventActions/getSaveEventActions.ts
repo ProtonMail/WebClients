@@ -54,6 +54,8 @@ const getSaveSingleEventActionsHelper = async ({
     reencryptSharedEvent,
     onSendPrefsErrors,
     inviteActions,
+    hasDefaultNotifications,
+    personalEventsDeprecated,
     isAttendee,
     onEquivalentAttendees,
     handleSyncActions,
@@ -75,6 +77,8 @@ const getSaveSingleEventActionsHelper = async ({
     onSaveConfirmation: OnSaveConfirmationCb;
     onEquivalentAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     inviteActions: InviteActions;
+    hasDefaultNotifications: boolean;
+    personalEventsDeprecated: boolean;
     isAttendee: boolean;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }) => {
@@ -103,6 +107,8 @@ const getSaveSingleEventActionsHelper = async ({
         getCalendarKeys,
         onSaveConfirmation,
         inviteActions: updatedInviteActions,
+        hasDefaultNotifications,
+        personalEventsDeprecated,
         isAttendee,
         sendIcs,
         reencryptSharedEvent,
@@ -129,6 +135,7 @@ interface Arguments {
     addresses: Address[];
     inviteActions: InviteActions;
     isDuplicatingEvent: boolean;
+    personalEventsDeprecated: boolean;
     onSaveConfirmation: OnSaveConfirmationCb;
     onEquivalentAttendees: (attendees: string[][]) => Promise<void>;
     api: Api;
@@ -157,6 +164,7 @@ const getSaveEventActions = async ({
     addresses,
     inviteActions,
     isDuplicatingEvent,
+    personalEventsDeprecated,
     onSaveConfirmation,
     onEquivalentAttendees,
     api,
@@ -184,6 +192,7 @@ const getSaveEventActions = async ({
             calendar: { id: newCalendarID },
             member: { memberID: newMemberID, addressID: newAddressID },
             frequencyModel,
+            hasDefaultNotifications,
         },
     } = temporaryEvent;
     const isAttendee = !!tmpData.isAttendee;
@@ -245,6 +254,8 @@ const getSaveEventActions = async ({
                 ...newEditEventData,
                 veventComponent: newVeventWithSequence,
             },
+            hasDefaultNotifications,
+            personalEventsDeprecated,
             isAttendee,
             selfAddress,
             inviteActions: updatedInviteActions,
@@ -302,6 +313,8 @@ const getSaveEventActions = async ({
             newEditEventData,
             oldEditEventData,
             inviteActions: inviteActionsWithSelfAddress,
+            hasDefaultNotifications,
+            personalEventsDeprecated,
             isAttendee,
             getCalendarKeys,
             onSaveConfirmation,
@@ -322,6 +335,8 @@ const getSaveEventActions = async ({
             newEditEventData,
             oldEditEventData,
             inviteActions: inviteActionsWithSelfAddress,
+            hasDefaultNotifications,
+            personalEventsDeprecated,
             isAttendee,
             getCalendarKeys,
             onSaveConfirmation,
@@ -407,6 +422,8 @@ const getSaveEventActions = async ({
         oldEditEventData,
         originalEditEventData,
         inviteActions: updatedInviteActions,
+        hasDefaultNotifications,
+        personalEventsDeprecated,
         isAttendee,
         sendIcs,
         reencryptSharedEvent,

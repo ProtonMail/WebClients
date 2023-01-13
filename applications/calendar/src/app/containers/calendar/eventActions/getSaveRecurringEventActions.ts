@@ -1,4 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
+import { getHasDefaultNotifications } from '@proton/shared/lib/calendar/apiModels';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
@@ -47,6 +48,8 @@ interface SaveRecurringArguments {
     newEditEventData: EventNewData;
     recurrence: CalendarEventRecurring;
     updateAllPossibilities: UpdateAllPossibilities;
+    hasDefaultNotifications: boolean;
+    personalEventsDeprecated: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
     sendIcs: (data: SendIcsActionData) => Promise<{
@@ -79,6 +82,8 @@ const getSaveRecurringEventActions = async ({
     recurrence,
     updateAllPossibilities,
     inviteActions,
+    hasDefaultNotifications,
+    personalEventsDeprecated,
     isAttendee,
     sendIcs,
     reencryptSharedEvent,
@@ -113,6 +118,8 @@ const getSaveRecurringEventActions = async ({
                   getUpdateSyncOperation({
                       veventComponent: originalVeventWithSequence,
                       calendarEvent: originalEvent,
+                      hasDefaultNotifications,
+                      personalEventsDeprecated,
                       isAttendee,
                   }),
               ]
@@ -124,6 +131,7 @@ const getSaveRecurringEventActions = async ({
                 return getChangePartstatActions({
                     inviteActions,
                     eventComponent: newVeventComponent,
+                    hasDefaultNotifications,
                     event: oldEvent,
                     memberID: newMemberID,
                     addressID: newAddressID,
@@ -136,6 +144,7 @@ const getSaveRecurringEventActions = async ({
                 // the attendee edits notifications. We must do it through the updatePersonalPart route
                 return getUpdatePersonalPartActions({
                     eventComponent: newVeventComponent,
+                    hasDefaultNotifications,
                     event: oldEvent,
                     memberID: newMemberID,
                     addressID: newAddressID,
@@ -166,6 +175,8 @@ const getSaveRecurringEventActions = async ({
             const updateOperation = getUpdateSyncOperation({
                 veventComponent: newVeventWithSequence,
                 calendarEvent: oldEvent,
+                hasDefaultNotifications,
+                personalEventsDeprecated,
                 isAttendee,
             });
 
@@ -192,6 +203,8 @@ const getSaveRecurringEventActions = async ({
         const hasStartChanged = getHasStartChanged(newRecurrenceVeventComponent, oldRecurrenceVeventComponent);
         const createOperation = getCreateSyncOperation({
             veventComponent: withUpdatedDtstampAndSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent),
+            hasDefaultNotifications,
+            personalEventsDeprecated,
         });
 
         return {
@@ -237,10 +250,14 @@ const getSaveRecurringEventActions = async ({
                 recurrence.occurrenceNumber
             ),
             calendarEvent: originalEvent,
+            hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
+            personalEventsDeprecated,
             isAttendee,
         });
         const createOperation = getCreateSyncOperation({
             veventComponent: createFutureRecurrence(newVeventWithSequence, originalVeventWithSequence, recurrence),
+            hasDefaultNotifications,
+            personalEventsDeprecated,
         });
 
         const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventWithSequence, recurrence);
@@ -271,6 +288,7 @@ const getSaveRecurringEventActions = async ({
             const { updatePartstatActions, updatePersonalPartActions, sendActions } = await getChangePartstatActions({
                 inviteActions,
                 eventComponent: newVeventComponent,
+                hasDefaultNotifications,
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
@@ -312,6 +330,7 @@ const getSaveRecurringEventActions = async ({
             // the attendee edits notifications. We must do it through the updatePersonalPart route
             return getUpdatePersonalPartActions({
                 eventComponent: newVeventComponent,
+                hasDefaultNotifications,
                 event: oldEvent,
                 memberID: newMemberID,
                 addressID: newAddressID,
@@ -372,6 +391,8 @@ const getSaveRecurringEventActions = async ({
         const updateOperation = getUpdateSyncOperation({
             veventComponent: updatedVeventComponent,
             calendarEvent: originalEvent,
+            hasDefaultNotifications,
+            personalEventsDeprecated,
             isAttendee,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             addedAttendeesPublicKeysMap,

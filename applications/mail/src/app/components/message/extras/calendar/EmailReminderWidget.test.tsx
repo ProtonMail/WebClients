@@ -95,6 +95,7 @@ describe('EmailReminderWidget', () => {
             () => () =>
                 Promise.resolve({
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
+                    hasDefaultNotifications: true,
                     selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: veventBuilder(),
                     encryptionData: {
@@ -181,6 +182,7 @@ describe('EmailReminderWidget', () => {
             () => () =>
                 Promise.resolve({
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
+                    hasDefaultNotifications: true,
                     selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: veventBuilder({ overrides: { sequence: { value: 2 } } }),
                     encryptionData: {
@@ -310,6 +312,7 @@ describe('EmailReminderWidget', () => {
         mockedUseGetCalendarEventRaw.mockImplementation(
             () => () =>
                 Promise.resolve({
+                    hasDefaultNotifications: true,
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
                     selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: {
@@ -342,6 +345,7 @@ describe('EmailReminderWidget', () => {
         mockedUseGetCalendarEventRaw.mockImplementation(
             () => () =>
                 Promise.resolve({
+                    hasDefaultNotifications: true,
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
                     selfAddressData: { isOrganizer: false, isAttendee: false },
                     veventComponent: {

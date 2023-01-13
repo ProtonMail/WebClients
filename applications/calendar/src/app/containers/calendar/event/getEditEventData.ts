@@ -2,13 +2,12 @@ import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/vcalHelper';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, CalendarMember } from '@proton/shared/lib/interfaces/calendar';
 
-import { getComponentWithPersonalPart } from '../../../helpers/event';
 import { DecryptedEventTupleResult } from '../eventStore/interface';
 import parseMainEventData from './parseMainEventData';
 
 interface GetEditEventDataArguments {
     eventData: CalendarEvent;
-    eventResult?: DecryptedEventTupleResult;
+    eventResult: DecryptedEventTupleResult;
     memberResult: [CalendarMember, Address];
 }
 
@@ -23,14 +22,8 @@ const getEditEventData = ({ eventData, eventResult, memberResult: [member, addre
         throw new Error('Event without UID');
     }
 
+    const { veventComponent } = eventResult[0];
     const recurrenceID = getRecurrenceIdDate(mainVeventComponent);
-
-    const veventComponentFull = eventResult
-        ? getComponentWithPersonalPart({
-              decryptedEventResult: eventResult,
-              memberID: member.ID,
-          })
-        : undefined;
 
     return {
         eventData,
@@ -38,7 +31,7 @@ const getEditEventData = ({ eventData, eventResult, memberResult: [member, addre
         memberID: member.ID,
         addressID: address.ID,
         mainVeventComponent,
-        veventComponent: veventComponentFull,
+        veventComponent,
         uid,
         recurrenceID,
     };
