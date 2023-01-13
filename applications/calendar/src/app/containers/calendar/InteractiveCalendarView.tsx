@@ -42,7 +42,7 @@ import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from '@proton/crypto';
 import { updateAttendeePartstat, updateMember, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
-import { emailToAttendee, getAttendeeEmail, toApiPartstat } from '@proton/shared/lib/calendar/attendees';
+import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
 import {
     getIsCalendarDisabled,
     getIsCalendarProbablyActive,
@@ -61,7 +61,7 @@ import { getIcsMessageWithPreferences } from '@proton/shared/lib/calendar/mailIn
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';
 import { getProdId } from '@proton/shared/lib/calendar/vcalConfig';
-import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
+import { buildVcalOrganizer, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
@@ -112,7 +112,6 @@ import {
     getExistingEvent,
     getInitialFrequencyModel,
     getInitialModel,
-    getOrganizerModel,
 } from '../../components/eventModal/eventForm/state';
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import EventPopover from '../../components/events/EventPopover';
@@ -522,10 +521,17 @@ const InteractiveCalendarView = ({
         const { Members = [], CalendarSettings } = readCalendarBootstrap(targetCalendar.ID);
         const [Member, Address] = getMemberAndAddress(addresses, Members, eventData.Author);
 
-        const [{ veventComponent, verificationStatus, selfAddressData }, personalMap] = eventReadResult.result;
+        const [
+            {
+                veventComponent: existingVeventComponent,
+                verificationStatus: existingVerificationStatus,
+                selfAddressData: existingSelfAddressData,
+            },
+            personalMap,
+        ] = eventReadResult.result;
 
-        const veventComponentParentPartial = veventComponent['recurrence-id']
-            ? getVeventComponentParent(veventComponent.uid.value, eventData.CalendarID)
+        const existingVeventComponentParentPartial = existingVeventComponent['recurrence-id']
+            ? getVeventComponentParent(existingVeventComponent.uid.value, eventData.CalendarID)
             : undefined;
         const createResult = getInitialModel({
             initialDate,
@@ -537,46 +543,47 @@ const InteractiveCalendarView = ({
             Member,
             Address,
             isAllDay: false,
-            verificationStatus,
+            verificationStatus: existingVerificationStatus,
             tzid,
         });
 
-        const originalOrOccurrenceEvent = eventRecurrence
-            ? withOccurrenceEvent(veventComponent, eventRecurrence)
-            : veventComponent;
-        /**
-         * When duplicating from a disabled calendar, we artificially changed the calendar. In that case we need to:
-         * * retrieve alarms from the old member
-         * * compute organizer model for the new calendar
-         */
-        const existingAlarmMember = duplicateFromNonWritableCalendarData
-            ? getMemberAndAddress(addresses, readCalendarBootstrap(calendarData.ID).Members, eventData.Author)[0]
-            : Member;
-        const organizerModel = duplicateFromNonWritableCalendarData
-            ? getOrganizerModel({
-                  attendees: (veventComponent.attendee || []).map((attendee) =>
-                      emailToAttendee(getAttendeeEmail(attendee))
-                  ),
-                  addresses,
-                  addressID: Address.ID,
-              })
-            : undefined;
+        const veventComponent = eventRecurrence
+            ? withOccurrenceEvent(existingVeventComponent, eventRecurrence)
+            : { ...existingVeventComponent };
+        let alarmMember = Member;
+        let selfAddressData = existingSelfAddressData;
+
+        if (duplicateFromNonWritableCalendarData) {
+            /**
+             * When duplicating from a disabled calendar, we artificially changed the calendar. In that case we need to:
+             * * retrieve alarms from the old member
+             * * change organizer to that of the new calendar
+             */
+            alarmMember = getMemberAndAddress(
+                addresses,
+                readCalendarBootstrap(calendarData.ID).Members,
+                eventData.Author
+            )[0];
+            selfAddressData = {
+                isOrganizer: !!veventComponent.attendee?.length,
+                isAttendee: false,
+                selfAddress: Address,
+            };
+            if (existingVeventComponent.organizer) {
+                veventComponent.organizer = buildVcalOrganizer(Address.Email, Address.DisplayName);
+            }
+        }
         const eventResult = getExistingEvent({
-            veventComponent: originalOrOccurrenceEvent,
-            veventValarmComponent: personalMap[existingAlarmMember?.ID]?.veventComponent,
-            veventComponentParentPartial,
+            veventComponent,
+            veventValarmComponent: personalMap[alarmMember?.ID]?.veventComponent,
+            veventComponentParentPartial: existingVeventComponentParentPartial,
             tzid,
             isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
             // When duplicating from a disabled calendar, we need to reset the self address data (otherwise we would have disabled address data in there)
-            selfAddressData: duplicateFromNonWritableCalendarData
-                ? {
-                      isOrganizer: !!originalOrOccurrenceEvent.attendee?.length,
-                      isAttendee: false,
-                      selfAddress: Address,
-                  }
-                : selfAddressData,
+            selfAddressData,
         });
         if (partstat) {
+            // The user attends the event and is changing the partstat
             return {
                 ...createResult,
                 ...modifyEventModelPartstat(eventResult, partstat, CalendarSettings),
@@ -585,7 +592,6 @@ const InteractiveCalendarView = ({
         return {
             ...createResult,
             ...eventResult,
-            ...organizerModel,
         };
     };
 

@@ -5,7 +5,7 @@ import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsT
 import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
-import { getInitialMemberModel, getOrganizerModel } from '../eventForm/state';
+import { getInitialMemberModel, getOrganizerAndSelfAddressModel } from '../eventForm/state';
 
 export interface Props extends Omit<SelectProps<string>, 'children'> {
     model: EventModel;
@@ -87,7 +87,7 @@ const CreateEventCalendarSelect = ({
             ...model,
             calendar: { id: newId, color, permissions, isOwned, isSubscribed },
             ...getInitialMemberModel(addresses, Members, Member, address),
-            ...getOrganizerModel({ attendees: model.attendees, addresses, addressID: address.ID }),
+            ...getOrganizerAndSelfAddressModel({ attendees: model.attendees, addresses, addressID: address.ID }),
             defaultEventDuration,
             partDayNotifications,
             fullDayNotifications,
