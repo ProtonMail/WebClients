@@ -23,7 +23,7 @@ import { Address } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 
 import createHandlers from './eventForm/createPropFactory';
-import { getOrganizerModel } from './eventForm/state';
+import { getOrganizerAndSelfAddressModel } from './eventForm/state';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
 import CustomFrequencySelector from './inputs/CustomFrequencySelector';
 import FrequencyInput from './inputs/FrequencyInput';
@@ -285,7 +285,7 @@ const EventForm = ({
             ...model,
             attendees: value,
             isOrganizer: !!value.length,
-            ...getOrganizerModel({ attendees: value, addressID: model.member.addressID, addresses }),
+            ...getOrganizerAndSelfAddressModel({ attendees: value, addressID: model.member.addressID, addresses }),
         });
     };
 
