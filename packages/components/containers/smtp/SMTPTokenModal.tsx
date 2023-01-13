@@ -79,11 +79,11 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
     };
 
     const handleCopyServer = () => {
-        createNotification({ type: 'success', text: c('Success').t`SMTP server copied to clipboard` });
+        createNotification({ type: 'success', text: c('Success').t`Server copied to clipboard` });
     };
 
     const handleCopyPort = () => {
-        createNotification({ type: 'success', text: c('Success').t`SMTP port copied to clipboard` });
+        createNotification({ type: 'success', text: c('Success').t`Port copied to clipboard` });
     };
 
     const content = () => {
