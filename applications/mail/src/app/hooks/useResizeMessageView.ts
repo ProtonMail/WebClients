@@ -121,7 +121,7 @@ export const useResizeMessageView = (
         return () => {
             document.removeEventListener('mousemove', resizeThrottle);
             document.removeEventListener('mouseup', disableResize);
-            document.addEventListener('mouseleave', disableResize);
+            document.removeEventListener('mouseleave', disableResize);
         };
     }, [disableResize, resize]);
 
