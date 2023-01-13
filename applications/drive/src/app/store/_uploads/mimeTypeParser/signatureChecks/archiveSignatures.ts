@@ -79,6 +79,11 @@ export default function archiveSignatures({ check, sourceBuffer }: ReturnType<ty
             } else {
                 offset += compressedSize;
             }
+
+            // Apple known format, mime type will be based on file extension
+            if (filename === 'Index/Document.iwa' || filename.startsWith('Data/') || filename === 'index.xml') {
+                return undefined;
+            }
         }
 
         return SupportedMimeTypes.zip;
