@@ -175,7 +175,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                 </div>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
                     <InputFieldTwo
-                        id="server"
+                        id="port"
                         label={c('Label').t`SMTP port`}
                         readOnly
                         value={port}
@@ -189,8 +189,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         onCopy={handleCopyPort}
                     />
                 </div>
-                <p className="color-weak">{c('Info')
-                    .t`Enable TLS or SSL on the external service if it is supported.`}</p>
+                <p>{c('Info').t`Enable TLS or SSL on the external service if it is supported.`}</p>
             </>
         );
     };
