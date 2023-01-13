@@ -155,6 +155,8 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         onCopy={handleCopyToken}
                     />
                 </div>
+                <p className="color-danger">{c('Info')
+                    .t`This token won’t be available after you close this window, and you should not share it with anyone.`}</p>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
                     <InputFieldTwo
                         id="server"
@@ -188,7 +190,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                     />
                 </div>
                 <p className="color-weak">{c('Info')
-                    .t`This token won’t be available after you close this window, and you should not share it with anyone.`}</p>
+                    .t`Enable TLS or SSL on the external service if it is supported.`}</p>
             </>
         );
     };
