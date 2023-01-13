@@ -42,7 +42,7 @@ const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
     return (
         <Main>
             <Content>
-                <div className="text-center on-mobile-pt2">
+                <div className="text-center on-mobile-pt2" role="alert">
                     <img className="m1" width="140" height="140" src={accountSetupImg} alt="" />
 
                     <hr className="mb2 mt2" />
