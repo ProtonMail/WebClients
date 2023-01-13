@@ -1,5 +1,6 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
+import { asyncGeneratorToArray } from '../../../utils/test/generator';
 import ArchiveGenerator from './archiveGenerator';
 
 type TestLink = {
@@ -30,42 +31,28 @@ async function* generateLinks(links: TestLink[]) {
 }
 
 describe('ArchiveGenerator', () => {
-    const mockWrite = jest.fn();
-    const mockInitZipWriter = jest.fn();
-
     beforeEach(() => {
         jest.clearAllMocks();
-
-        mockInitZipWriter.mockReturnValue({
-            writable: {
-                getWriter: jest.fn().mockReturnValue({
-                    write: mockWrite,
-                    close: jest.fn(),
-                    abort: jest.fn(),
-                }),
-            },
-        });
     });
 
     const checkWritingLinks = async (links: TestLink[]) => {
-        const archiver = new ArchiveGenerator(mockInitZipWriter);
-        await archiver.writeLinks(generateLinks(links));
-        links.forEach((link) => {
-            const path = link.expectedPath || (link.path || []).join('/');
-            const fileName = link.expectedName || link.name;
-            const name = path ? `${path}/${fileName}` : fileName;
-            expect(mockWrite).toBeCalledWith(
-                link.isFile
+        const archiver = new ArchiveGenerator();
+        const transformedLinks = await asyncGeneratorToArray(archiver.transformLinksToZipItems(generateLinks(links)));
+        expect(transformedLinks).toMatchObject(
+            links.map((link) => {
+                const path = link.expectedPath || (link.path || []).join('/');
+                const fileName = link.expectedName || link.name;
+                const name = path ? `${path}/${fileName}` : fileName;
+                return link.isFile
                     ? {
                           name,
-                          stream: expect.anything(),
+                          input: expect.anything(),
                       }
                     : {
                           name,
-                          directory: true,
-                      }
-            );
-        });
+                      };
+            })
+        );
     };
 
     it('generates two files and one folder in the root', async () => {
