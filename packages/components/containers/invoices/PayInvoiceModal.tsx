@@ -30,7 +30,7 @@ export interface Props {
     onClose?: () => void;
 }
 
-const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) => {
+const PayInvoiceModal = ({ invoice, fetchInvoices, ...props }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -54,7 +54,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) =>
             call(), // Update user.Delinquent to hide TopBanner
             fetchInvoices(),
         ]);
-        onClose?.();
+        props.onClose?.();
         createNotification({ text: c('Success').t`Invoice paid` });
     };
 
@@ -84,8 +84,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) =>
             close={c('Action').t`Close`}
             submit={submit}
             title={c('Title').t`Pay invoice`}
-            onClose={onClose}
-            {...rest}
+            {...props}
         >
             {!isLoading && (
                 <>
