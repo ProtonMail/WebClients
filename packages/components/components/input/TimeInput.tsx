@@ -28,12 +28,18 @@ const formatDuration = (label: string, minutes: number) => {
     const hoursInt = Math.ceil(hours);
     return hours >= 1 ? (
         <>
-            <span aria-hidden="true">{c('Time unit').t`${hours} h`}</span>
+            <span aria-hidden="true">{
+                // translator: 'h' is for hour, please translate with an abbreviated version
+                c('Time unit').t`${hours} h`
+            }</span>
             <span className="sr-only">{c('Time unit').ngettext(msgid`${hours} hour`, `${hours} hours`, hoursInt)}</span>
         </>
     ) : (
         <>
-            <span aria-hidden="true">{c('Time unit').t`${minutes} min`}</span>
+            <span aria-hidden="true">{
+                // translator: 'min' is for minute, please translate with an abbreviated version
+                c('Time unit').t`${minutes} min`
+            }</span>
             <span className="sr-only">
                 {c('Time unit').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes)}
             </span>
