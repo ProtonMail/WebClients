@@ -210,7 +210,7 @@ export const updateConversation = (
     state: Draft<ConversationsState>,
     { payload: { ID, updates } }: PayloadAction<{ ID: string; updates: Partial<ConversationState> }>
 ) => {
-    const currentConversation = state[ID];
+    const currentConversation = getConversation(state, ID);
     const updatedConversation = mergeConversations(currentConversation, updates);
 
     state[ID] = updatedConversation;
@@ -297,10 +297,10 @@ export const updateFromElements = (
     if (Elements && Elements.length) {
         Elements.forEach((element) => {
             if (isConversation(element)) {
-                const conversationState = state[element.ID];
+                const conversationState = getConversation(state, element.ID);
 
                 if (conversationState) {
-                    conversationState.Conversation = element;
+                    conversationState.Conversation = { ...conversationState.Conversation, ...element };
                 }
             }
         });
@@ -314,7 +314,7 @@ export const updateFromLoadElements = (
 ) => {
     action.payload.filter(isTruthy).forEach((element) => {
         if (isConversation(element)) {
-            const conversationState = state[element.ID];
+            const conversationState = getConversation(state, element.ID);
 
             if (conversationState) {
                 conversationState.Conversation = element;
