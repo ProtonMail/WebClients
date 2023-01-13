@@ -69,7 +69,7 @@ const HumanVerificationModal = <T,>({
     };
 
     return (
-        <Modal className="human-verification-modal" size="small" onClose={onClose} {...rest}>
+        <Modal className="human-verification-modal" size="small" onClose={onClose} data-testid="verification" {...rest}>
             <ModalHeader title={title} />
             <ModalContent>
                 <HumanVerificationForm

@@ -12,7 +12,7 @@ interface Props extends HumanVerificationFormProps {
 
 const VerificationStep = ({ title, onBack, ...rest }: Props) => {
     return (
-        <Main>
+        <Main data-testid="verification">
             <Header title={title} onBack={onBack} />
             <Content>
                 <HumanVerificationForm {...rest} />
