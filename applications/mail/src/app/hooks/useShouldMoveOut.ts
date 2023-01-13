@@ -30,6 +30,7 @@ interface Props {
 export const useShouldMoveOut = ({ conversationMode, elementID = '', labelID, loading, onBack }: Props) => {
     const message = useSelector((state: RootState) => messageByID(state, { ID: elementID }));
     const conversation = useSelector((state: RootState) => conversationByID(state, { ID: elementID }));
+    const cacheEntry = conversationMode ? conversation : message;
 
     const onChange = (labelIds: string[] | undefined) => {
         // Move out if the element is not present in the cache anymore
@@ -64,11 +65,10 @@ export const useShouldMoveOut = ({ conversationMode, elementID = '', labelID, lo
             return;
         }
 
-        const cacheEntry = conversationMode ? conversation : message;
-
-        // Move out of a non existing message
-        if (!loading && cacheEntryIsFailedLoading(conversationMode, cacheEntry)) {
+        // Move out of a non existing element
+        if (!loading && (!cacheEntry || cacheEntryIsFailedLoading(conversationMode, cacheEntry))) {
             onBack();
+            return;
         }
-    }, [elementID, loading]);
+    }, [elementID, loading, conversationMode, cacheEntry]);
 };
