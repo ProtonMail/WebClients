@@ -59,7 +59,7 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
     return (
         <nav
             aria-label={c('Landmarks').t`Side panel`}
-            className={clsx('drawer-sidebar', appInView && 'drawer-sidebar--hide-on-tablet')}
+            className={clsx('drawer-sidebar no-print', appInView && 'drawer-sidebar--hide-on-tablet')}
         >
             <Spotlight
                 content={
