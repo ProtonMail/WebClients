@@ -33,8 +33,8 @@ const Steps = {
     TokenValue: 1,
 };
 
-const server = 'smtp.protonmail.ch';
-const port = '587';
+const SMTP_SERVER = 'smtp.protonmail.ch';
+const SMTP_PORT = '587';
 
 interface Props extends ModalProps {
     addresses: Address[];
@@ -162,13 +162,13 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         id="server"
                         label={c('Label').t`SMTP server`}
                         readOnly
-                        value={server}
+                        value={SMTP_SERVER}
                         inputClassName="bg-weak"
                     />
                     <Copy
                         color="norm"
                         shape="solid"
-                        value={server}
+                        value={SMTP_SERVER}
                         className="smtp-token-copy relative flex-item-noshrink ml0-5"
                         onCopy={handleCopyServer}
                     />
@@ -178,13 +178,13 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         id="port"
                         label={c('Label').t`SMTP port`}
                         readOnly
-                        value={port}
+                        value={SMTP_PORT}
                         inputClassName="bg-weak"
                     />
                     <Copy
                         color="norm"
                         shape="solid"
-                        value={port}
+                        value={SMTP_PORT}
                         className="smtp-token-copy relative flex-item-noshrink ml0-5"
                         onCopy={handleCopyPort}
                     />
