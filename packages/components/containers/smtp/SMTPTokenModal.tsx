@@ -33,6 +33,9 @@ const Steps = {
     TokenValue: 1,
 };
 
+const server = 'smtp.protonmail.ch';
+const port = '587';
+
 interface Props extends ModalProps {
     addresses: Address[];
     onCreate: () => void; // fetch new tokens
@@ -73,6 +76,14 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
 
     const handleCopyToken = () => {
         createNotification({ type: 'success', text: c('Success').t`Token copied to clipboard` });
+    };
+
+    const handleCopyServer = () => {
+        createNotification({ type: 'success', text: c('Success').t`SMTP server copied to clipboard` });
+    };
+
+    const handleCopyPort = () => {
+        createNotification({ type: 'success', text: c('Success').t`SMTP port copied to clipboard` });
     };
 
     const content = () => {
@@ -142,6 +153,38 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         value={token}
                         className="smtp-token-copy relative flex-item-noshrink ml0-5"
                         onCopy={handleCopyToken}
+                    />
+                </div>
+                <div className="flex flex-align-items-center flex-nowrap mb1">
+                    <InputFieldTwo
+                        id="server"
+                        label={c('Label').t`SMTP server`}
+                        readOnly
+                        value={server}
+                        inputClassName="bg-weak"
+                    />
+                    <Copy
+                        color="norm"
+                        shape="solid"
+                        value={server}
+                        className="smtp-token-copy relative flex-item-noshrink ml0-5"
+                        onCopy={handleCopyServer}
+                    />
+                </div>
+                <div className="flex flex-align-items-center flex-nowrap mb1">
+                    <InputFieldTwo
+                        id="server"
+                        label={c('Label').t`SMTP port`}
+                        readOnly
+                        value={port}
+                        inputClassName="bg-weak"
+                    />
+                    <Copy
+                        color="norm"
+                        shape="solid"
+                        value={port}
+                        className="smtp-token-copy relative flex-item-noshrink ml0-5"
+                        onCopy={handleCopyPort}
                     />
                 </div>
                 <p className="color-weak">{c('Info')
