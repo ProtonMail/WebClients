@@ -105,7 +105,7 @@ describe('addresses with user', () => {
             const { onSortEnd, createNotification } = setup();
             const { container } = render(<AddressesWithUser user={user} />);
 
-            onSortEnd({ newIndex: 0, oldIndex: 1 } as any, {} as any);
+            onSortEnd({ newIndex: 0, oldIndex: 2 } as any, {} as any);
             expect(createNotification).toHaveBeenCalledWith({
                 type: 'error',
                 text: 'An external address cannot be default',
