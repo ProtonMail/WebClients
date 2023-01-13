@@ -54,7 +54,11 @@ export const useConversationsEvent = () => {
             if (Action === EVENT_ACTIONS.DELETE) {
                 void dispatch(eventDelete(ID));
             }
-            if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+            if (
+                Action === EVENT_ACTIONS.UPDATE_DRAFT ||
+                Action === EVENT_ACTIONS.UPDATE_FLAGS ||
+                Action === EVENT_ACTIONS.CREATE
+            ) {
                 // Try to update the conversation from event data without reloading it
                 try {
                     const updatedConversation: Conversation = parseLabelIDsInEvent(
