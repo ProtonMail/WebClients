@@ -58,6 +58,7 @@ export const getUpdatePartstatOperation = ({
 
 const getAutoUpdatePersonalPartOperation = ({
     eventComponent,
+    hasDefaultNotifications,
     event,
     inviteActions,
     memberID,
@@ -65,6 +66,7 @@ const getAutoUpdatePersonalPartOperation = ({
     partstat,
 }: {
     eventComponent: VcalVeventComponent;
+    hasDefaultNotifications: boolean;
     event: CalendarEvent;
     inviteActions: InviteActions;
     memberID: string;
@@ -91,6 +93,7 @@ const getAutoUpdatePersonalPartOperation = ({
     }
     return getUpdatePersonalPartOperation({
         eventComponent,
+        hasDefaultNotifications,
         event,
         memberID,
         addressID,
@@ -100,6 +103,7 @@ const getAutoUpdatePersonalPartOperation = ({
 interface ChangePartstaActionsArguments {
     inviteActions: InviteActions;
     eventComponent: VcalVeventComponent;
+    hasDefaultNotifications: boolean;
     event: CalendarEvent;
     memberID: string;
     addressID: string;
@@ -112,6 +116,7 @@ interface ChangePartstaActionsArguments {
 const getChangePartstatActions = async ({
     inviteActions,
     eventComponent,
+    hasDefaultNotifications,
     event,
     memberID,
     addressID,
@@ -151,6 +156,7 @@ const getChangePartstatActions = async ({
     }
     const personalPartOperation = getAutoUpdatePersonalPartOperation({
         eventComponent,
+        hasDefaultNotifications,
         event,
         inviteActions,
         memberID,

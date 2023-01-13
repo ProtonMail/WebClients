@@ -3,7 +3,6 @@ import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi, useGetCalendarEventRaw } from '@proton/components';
-import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
@@ -12,7 +11,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Api, RequireSome } from '@proton/shared/lib/interfaces';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import { GetCalendarEventPersonal } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventPersonal';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
 import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
@@ -62,16 +60,13 @@ const getEventAndUpsert = async ({
 const getDecryptedEvent = ({
     calendarEvent,
     getCalendarEventRaw,
-    getCalendarEventPersonal,
 }: {
     calendarEvent: CalendarEvent;
     getCalendarEventRaw: GetCalendarEventRaw;
-    getCalendarEventPersonal: GetCalendarEventPersonal;
 }): Promise<DecryptedEventTupleResult> => {
     return Promise.all([
         getCalendarEventRaw(calendarEvent),
-        getCalendarEventPersonal(calendarEvent),
-        pick(calendarEvent, ['Permissions', 'IsOrganizer', 'IsProtonProtonInvite']),
+        pick(calendarEvent, ['Permissions', 'IsOrganizer', 'IsProtonProtonInvite', 'IsPersonalMigrated']),
     ]);
 };
 
@@ -135,7 +130,6 @@ const getRecurringEventAndUpsert = ({
 const setEventRecordPromise = ({
     eventRecord,
     getCalendarEventRaw,
-    getCalendarEventPersonal,
     cacheRef,
     calendarEventsCache,
     api,
@@ -143,7 +137,6 @@ const setEventRecordPromise = ({
 }: {
     eventRecord: RequireSome<CalendarEventStoreRecord, 'eventData'>;
     getCalendarEventRaw: GetCalendarEventRaw;
-    getCalendarEventPersonal: GetCalendarEventPersonal;
     cacheRef: MutableRefObject<CalendarsEventsCache>;
     calendarEventsCache: CalendarEventsCache;
     api: Api;
@@ -189,7 +182,6 @@ const setEventRecordPromise = ({
         getDecryptedEvent({
             calendarEvent,
             getCalendarEventRaw,
-            getCalendarEventPersonal,
         }),
         getRecurringEventAndUpsert({
             eventComponent: eventComponent,
@@ -218,7 +210,6 @@ const useCalendarsEventsReader = (
     rerender: () => void,
     getOpenedMailEvents: () => OpenedMailEvent[]
 ) => {
-    const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const api = useApi();
     const [loading, setLoading] = useState(false);
@@ -265,7 +256,6 @@ const useCalendarsEventsReader = (
                 setEventRecordPromise({
                     eventRecord,
                     getCalendarEventRaw,
-                    getCalendarEventPersonal,
                     cacheRef,
                     calendarEventsCache,
                     api: apiWithAbort,

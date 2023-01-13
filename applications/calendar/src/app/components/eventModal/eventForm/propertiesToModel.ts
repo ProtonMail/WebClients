@@ -16,6 +16,7 @@ const DEFAULT_TIME = {
 
 export const propertiesToModel = ({
     veventComponent,
+    hasDefaultNotifications,
     verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
     selfAddressData,
     isAllDay,
@@ -23,6 +24,7 @@ export const propertiesToModel = ({
     tzid,
 }: {
     veventComponent: VcalVeventComponent;
+    hasDefaultNotifications: boolean;
     verificationStatus?: EVENT_VERIFICATION_STATUS;
     selfAddressData?: SelfAddressData;
     isAllDay: boolean;
@@ -60,6 +62,7 @@ export const propertiesToModel = ({
         verificationStatus,
         isOrganizer: !!selfAddressData?.isOrganizer,
         isAttendee: !!selfAddressData?.isAttendee,
+        hasDefaultNotifications,
         selfAttendeeIndex,
         selfAddress,
         start,

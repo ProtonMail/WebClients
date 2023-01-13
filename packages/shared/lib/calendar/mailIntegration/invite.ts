@@ -33,7 +33,7 @@ import { getSupportedPlusAlias } from '../../mail/addresses';
 import { MESSAGE_FLAGS } from '../../mail/constants';
 import { RE_PREFIX, formatSubject } from '../../mail/messages';
 import { getAttendeeEmail, toIcsPartstat } from '../attendees';
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, SETTINGS_NOTIFICATION_TYPE } from '../constants';
+import { ICAL_ALARM_ACTION, ICAL_ATTENDEE_STATUS, ICAL_METHOD, NOTIFICATION_TYPE_API } from '../constants';
 import { getSelfAddressData } from '../deserialize';
 import { getDisplayTitle } from '../helper';
 import { getSupportedStringValue } from '../icsSurgery/vcal';
@@ -234,15 +234,16 @@ export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = 
     return { index, attendee };
 };
 
-export const getEventWithCalendarAlarms = (vevent: VcalVeventComponent, calendarSettings: CalendarSettings) => {
+export const getVeventWithDefaultCalendarAlarms = (vevent: VcalVeventComponent, calendarSettings: CalendarSettings) => {
     const { components } = vevent;
+
     const isAllDay = getIsAllDay(vevent);
     const notifications = isAllDay
         ? calendarSettings.DefaultFullDayNotifications
         : calendarSettings.DefaultPartDayNotifications;
     const valarmComponents = notifications.map<VcalValarmComponent>(({ Trigger, Type }) => ({
         component: 'valarm',
-        action: { value: Type === SETTINGS_NOTIFICATION_TYPE.EMAIL ? 'EMAIL' : 'DISPLAY' },
+        action: { value: Type === NOTIFICATION_TYPE_API.EMAIL ? ICAL_ALARM_ACTION.EMAIL : ICAL_ALARM_ACTION.DISPLAY },
         trigger: { value: fromTriggerString(Trigger) },
     }));
 
@@ -252,41 +253,55 @@ export const getEventWithCalendarAlarms = (vevent: VcalVeventComponent, calendar
     };
 };
 
-export const getInvitedEventWithAlarms = ({
+export const getInvitedVeventWithAlarms = ({
     vevent,
     partstat,
     calendarSettings,
+    oldHasDefaultNotifications,
     oldPartstat,
 }: {
     vevent: VcalVeventComponent;
     partstat: ICAL_ATTENDEE_STATUS;
     calendarSettings?: CalendarSettings;
+    oldHasDefaultNotifications?: boolean;
     oldPartstat?: ICAL_ATTENDEE_STATUS;
 }) => {
     const { components } = vevent;
+    const alarmComponents = components?.filter((component) => getIsAlarmComponent(component));
     const otherComponents = components?.filter((component) => !getIsAlarmComponent(component));
 
     if ([ICAL_ATTENDEE_STATUS.DECLINED, ICAL_ATTENDEE_STATUS.NEEDS_ACTION].includes(partstat)) {
         // remove all alarms in this case
         if (otherComponents?.length) {
             return {
-                ...vevent,
-                components: otherComponents,
+                vevent: { ...vevent, components: otherComponents },
+                hasDefaultNotifications: false,
             };
         }
-        return omit(vevent, ['components']);
+        return {
+            vevent: { ...vevent, components: [] },
+            hasDefaultNotifications: false,
+        };
     }
-    if (oldPartstat && [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(oldPartstat)) {
-        // Leave alarms as they are
-        return { ...vevent };
+    const leaveAlarmsUntouched = oldPartstat
+        ? [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(oldPartstat) ||
+          !!alarmComponents?.length
+        : false;
+    if (leaveAlarmsUntouched) {
+        return {
+            vevent,
+            hasDefaultNotifications: oldHasDefaultNotifications || false,
+        };
     }
-
-    // otherwise add calendar alarms
+    // otherwise add default calendar alarms
     if (!calendarSettings) {
         throw new Error('Cannot retrieve calendar default notifications');
     }
 
-    return getEventWithCalendarAlarms(vevent, calendarSettings);
+    return {
+        vevent: getVeventWithDefaultCalendarAlarms(vevent, calendarSettings),
+        hasDefaultNotifications: true,
+    };
 };
 
 export const getSelfAttendeeToken = (vevent?: VcalVeventComponent, addresses: Address[] = []) => {
@@ -406,19 +421,15 @@ const getEmailBodyTexts = (vevent: VcalVeventComponent, dateFormatOptions?: Opti
     const eventDescription = description?.value;
 
     const whenText = getWhenText(vevent, dateFormatOptions);
-    const locationText = eventLocation
-        ? c('Email body for invitation (location part)').t`Where: ${eventLocation}`
-        : undefined;
+    const locationText = eventLocation ? c('Email body for invitation (location part)').t`Where: ${eventLocation}` : '';
     const descriptionText = eventDescription
         ? c('Email body for description (description part)').t`Description: ${eventDescription}`
-        : undefined;
+        : '';
     const locationAndDescriptionText =
         locationText && descriptionText
             ? `${locationText}
 ${descriptionText}`
-            : locationText || descriptionText
-            ? `${locationText || descriptionText}`
-            : '';
+            : `${locationText || descriptionText}`;
     const eventDetailsText = locationAndDescriptionText
         ? `${whenText}
 ${locationAndDescriptionText}`

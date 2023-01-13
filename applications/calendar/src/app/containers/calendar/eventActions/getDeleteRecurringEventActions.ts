@@ -1,3 +1,4 @@
+import { getHasDefaultNotifications } from '@proton/shared/lib/calendar/apiModels';
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
@@ -31,6 +32,7 @@ interface DeleteRecurringArguments {
     recurrences: CalendarEvent[];
     originalEditEventData: EventOldData;
     oldEditEventData: EventOldData;
+    personalEventsDeprecated: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
     selfAttendeeToken?: string;
@@ -51,6 +53,7 @@ export const getDeleteRecurringEventActions = async ({
         memberID: originalMemberID,
     },
     oldEditEventData: { eventData: oldEvent, veventComponent: oldVeventComponent },
+    personalEventsDeprecated,
     isAttendee,
     inviteActions,
     selfAttendeeToken,
@@ -86,6 +89,8 @@ export const getDeleteRecurringEventActions = async ({
         const originalExdateOperation = getUpdateSyncOperation({
             veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
             calendarEvent: originalEvent,
+            hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
+            personalEventsDeprecated,
             isAttendee,
         });
 
@@ -123,6 +128,8 @@ export const getDeleteRecurringEventActions = async ({
         const updateOperation = getUpdateSyncOperation({
             veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
             calendarEvent: originalEvent,
+            hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
+            personalEventsDeprecated,
             isAttendee,
         });
 

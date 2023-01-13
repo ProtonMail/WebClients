@@ -1,4 +1,5 @@
 import { serverTime } from '@proton/crypto';
+import { absoluteToRelativeTrigger, getIsAbsoluteTrigger } from '@proton/shared/lib/calendar/alarms/trigger';
 
 import { fromUTCDate } from '../date/timezone';
 import { omit, pick } from '../helpers/object';
@@ -7,6 +8,7 @@ import {
     AttendeePart,
     CalendarEvent,
     CalendarEventData,
+    VcalDateOrDateTimeProperty,
     VcalValarmComponent,
     VcalVeventComponent,
 } from '../interfaces/calendar';
@@ -17,6 +19,7 @@ import {
     CALENDAR_ENCRYPTED_FIELDS,
     CALENDAR_SIGNED_FIELDS,
     ICAL_EVENT_STATUS,
+    NOTIFICATION_TYPE_API,
     REQUIRED_SET,
     SHARED_ENCRYPTED_FIELDS,
     SHARED_SIGNED_FIELDS,
@@ -25,7 +28,7 @@ import {
     USER_SIGNED_FIELDS,
 } from './constants';
 import { generateProtonCalendarUID, hasMoreThan, wrap } from './helper';
-import { parse, serialize } from './vcal';
+import { parse, serialize, toTriggerString } from './vcal';
 import { prodId } from './vcalConfig';
 import { dateTimeToProperty } from './vcalConverter';
 import { getEventStatus, getIsCalendar, getIsEventComponent } from './vcalHelper';
@@ -168,6 +171,36 @@ const toResultOptimized = (
         : undefined;
 };
 
+export const toApiNotifications = (components?: VcalValarmComponent[], dtstart?: VcalDateOrDateTimeProperty) => {
+    if (!components) {
+        return [];
+    }
+
+    return components.map(({ trigger, action }) => {
+        const Type =
+            action.value.toLowerCase() === 'email' ? NOTIFICATION_TYPE_API.EMAIL : NOTIFICATION_TYPE_API.DEVICE;
+
+        if (getIsAbsoluteTrigger(trigger)) {
+            if (!dtstart) {
+                throw new Error('Cannot convert absolute trigger without DTSTART');
+            }
+            const relativeTrigger = {
+                value: absoluteToRelativeTrigger(trigger, dtstart),
+            };
+
+            return {
+                Type,
+                Trigger: toTriggerString(relativeTrigger.value),
+            };
+        }
+
+        return {
+            Type,
+            Trigger: toTriggerString(trigger.value),
+        };
+    });
+};
+
 /**
  * Split the internal vevent component into the parts expected by the API.
  */
@@ -204,5 +237,6 @@ export const getVeventParts = ({ components, ...properties }: VcalVeventComponen
             [ENCRYPTED_AND_SIGNED]: toResultOptimized(attendeesPart[ENCRYPTED_AND_SIGNED]),
             [CLEAR_TEXT]: attendeesPart[CLEAR_TEXT],
         },
+        notificationsPart: toApiNotifications(components),
     };
 };

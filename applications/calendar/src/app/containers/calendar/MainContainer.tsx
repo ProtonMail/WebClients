@@ -44,8 +44,8 @@ const MainContainer = () => {
 
     useFeatures([
         FeatureCode.SpotlightSubscribedCalendars,
-        FeatureCode.SubscribedCalendarReminder,
         FeatureCode.CalendarSharingEnabled,
+        FeatureCode.CalendarPersonalEventsDeprecated,
     ]);
 
     const memoedCalendars = useMemo(() => sortCalendars(getVisualCalendars(calendars || [])), [calendars]);

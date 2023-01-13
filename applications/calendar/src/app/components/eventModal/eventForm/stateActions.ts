@@ -13,6 +13,9 @@ export const getAllDayCheck = ({
     oldModel: EventModel;
     isAllDay: boolean;
 }): Partial<EventModel> => {
+    const hasDefaultNotifications =
+        oldModel[isAllDay ? 'hasFullDayDefaultNotifications' : 'hasPartDayDefaultNotifications'];
+
     if (!isAllDay && oldModel.isAllDay) {
         // If switching to a part day event and there is no time, assume it has never been set.
         if (isZeroHoursMinutes(oldModel.start.time) && isZeroHoursMinutes(oldModel.end.time)) {
@@ -29,6 +32,7 @@ export const getAllDayCheck = ({
                 isAllDay,
                 start: { tzid: oldModel.initialTzid, date: newStartDate, time: startTime },
                 end: { tzid: oldModel.initialTzid, date: newEndDate, time: endTime },
+                hasDefaultNotifications,
             };
         }
         // If switching to a part day event and there is time, make sure the end time is not earlier than the start time
@@ -38,11 +42,13 @@ export const getAllDayCheck = ({
             return {
                 isAllDay,
                 end: { tzid: oldModel.initialTzid, date: oldModel.start.date, time: oldModel.start.time },
+                hasDefaultNotifications,
             };
         }
     }
 
     return {
         isAllDay,
+        hasDefaultNotifications,
     };
 };

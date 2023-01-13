@@ -1,7 +1,8 @@
 import { generateUID } from '@proton/components';
 import { filterFutureNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
-import { SETTINGS_NOTIFICATION_TYPE } from '@proton/shared/lib/calendar/constants';
-import { triggerToModel } from '@proton/shared/lib/calendar/notificationModel';
+import { triggerToModel } from '@proton/shared/lib/calendar/alarms/notificationModel';
+import { ICAL_ALARM_ACTION, NOTIFICATION_TYPE_API } from '@proton/shared/lib/calendar/constants';
+import { getSupportedAlarmAction } from '@proton/shared/lib/calendar/icsSurgery/valarm';
 import { getIsAlarmComponent } from '@proton/shared/lib/calendar/vcalHelper';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
@@ -13,9 +14,10 @@ export const propertiesToNotificationModel = (
 ): NotificationModel[] => {
     const modelNotifications = components.filter(unary(getIsAlarmComponent)).map(({ trigger, action }) => {
         const type =
-            action?.value?.toLowerCase() === 'email'
-                ? SETTINGS_NOTIFICATION_TYPE.EMAIL
-                : SETTINGS_NOTIFICATION_TYPE.DEVICE;
+            getSupportedAlarmAction(action).value === ICAL_ALARM_ACTION.EMAIL
+                ? NOTIFICATION_TYPE_API.EMAIL
+                : NOTIFICATION_TYPE_API.DEVICE;
+
         return {
             id: generateUID('notification'),
             ...triggerToModel({
