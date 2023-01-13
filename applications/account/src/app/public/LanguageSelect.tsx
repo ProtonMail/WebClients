@@ -5,7 +5,7 @@ import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useConfig, useF
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
-import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
+import { getBrowserLocale, getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
@@ -38,21 +38,28 @@ const LanguageSelect = ({ className, locales = {}, outlined, globe }: Props) => 
     const menu = (
         <DropdownMenu>
             {Object.keys(LOCALES).map((value) => (
-                <DropdownMenuButton className="text-left" key={value} onClick={() => handleChange(value)}>
+                <DropdownMenuButton
+                    className="text-left"
+                    lang={getLanguageCode(value)}
+                    key={value}
+                    onClick={() => handleChange(value)}
+                >
                     {LOCALES[value]}
                 </DropdownMenuButton>
             ))}
         </DropdownMenu>
     );
 
-    const content = globe ? (
+    const content = (
         <>
-            <Icon className="mr0-5 flex-item-noshrink no-tiny-mobile" name="globe" />{' '}
-            <span className="text-ellipsis">{LOCALES[localeCode]}</span>
-        </>
-    ) : (
-        <>
-            <span className="text-ellipsis">{LOCALES[localeCode]}</span>
+            {globe && (
+                <>
+                    <Icon className="mr0-5 flex-item-noshrink no-tiny-mobile" name="globe" />{' '}
+                </>
+            )}
+            <span className="text-ellipsis" lang={getLanguageCode(localeCode)}>
+                {LOCALES[localeCode]}
+            </span>
         </>
     );
 
