@@ -22,8 +22,11 @@ const TrashView = () => {
         <FileBrowserStateProvider itemIds={trashView.items.map(({ linkId }) => linkId)}>
             <TrashToolbar items={trashView.items} />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <EmptyTrashNotification disabled={trashView.isLoading || trashView.items.length === 0} />
-                <div className="p1 text-strong border-bottom section--header">{c('Info').t`Trash`}</div>
+                <div className="p1 text-strong section--header">{c('Info').t`Trash`}</div>
+                <EmptyTrashNotification
+                    className="border-bottom"
+                    disabled={trashView.isLoading || trashView.items.length === 0}
+                />
                 <Trash shareId={activeShareId} trashView={trashView} />
             </PrivateMainArea>
         </FileBrowserStateProvider>
