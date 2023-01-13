@@ -43,10 +43,10 @@ const Stepper = ({ activeStep, position = 'center', className, children, ...rest
     return (
         <StepperContext.Provider value={contextValue}>
             <div className={clsx('stepper', className)} {...rest}>
-                <ul className={clsx('stepper-indicators', sharedUlClasses)}>{stepIndicators}</ul>
-                <ul className={clsx('stepper-labels', sharedUlClasses)} aria-hidden="true">
-                    {steps}
+                <ul className={clsx('stepper-indicators', sharedUlClasses)} aria-hidden="true">
+                    {stepIndicators}
                 </ul>
+                <ul className={clsx('stepper-labels', sharedUlClasses)}>{steps}</ul>
             </div>
         </StepperContext.Provider>
     );
