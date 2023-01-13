@@ -26,9 +26,19 @@ const fromFormatted = (value: string, locale: Locale) => {
 const formatDuration = (label: string, minutes: number) => {
     const hours = withDecimalPrecision(minutes / 60, 1);
     const hoursInt = Math.ceil(hours);
-    return hours >= 1
-        ? c('Time unit').ngettext(msgid`${hours} hour`, `${hours} hours`, hoursInt)
-        : c('Time unit').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes);
+    return hours >= 1 ? (
+        <>
+            <span aria-hidden="true">{c('Time unit').t`${hours} h`}</span>
+            <span className="sr-only">{c('Time unit').ngettext(msgid`${hours} hour`, `${hours} hours`, hoursInt)}</span>
+        </>
+    ) : (
+        <>
+            <span aria-hidden="true">{c('Time unit').t`${minutes} min`}</span>
+            <span className="sr-only">
+                {c('Time unit').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes)}
+            </span>
+        </>
+    );
 };
 
 const getMinutes = (date: Date) => date.getHours() * 60 + date.getMinutes();
@@ -183,7 +193,14 @@ const TimeInput = ({
             return {
                 minutes,
                 value,
-                label: displayDuration ? `${label} (${formatDuration(label, minutes)})` : label,
+                label,
+                display: displayDuration ? (
+                    <>
+                        {label} ({formatDuration(label, minutes)})
+                    </>
+                ) : (
+                    label
+                ),
             };
         });
     }, [normalizedMinutes, base]);
@@ -257,12 +274,13 @@ const TimeInput = ({
                 disableDefaultArrowNavigation
             >
                 <DropdownMenu listRef={listRef}>
-                    {filteredOptions.map(({ label, value: otherValue }, i) => {
+                    {filteredOptions.map(({ label, display, value: otherValue }, i) => {
                         // Only highlight if the text includes the input (where 13:05 is centered but not highlighted)
                         const isSelected = i === matchingIndex && label.includes(temporaryInput);
                         return (
                             <DropdownMenuButton
                                 key={i}
+                                className="text-left text-nowrap"
                                 isSelected={isSelected}
                                 style={{ pointerEvents: 'auto' }} // Lets the user select the time during typing
                                 onClick={() => {
@@ -270,7 +288,7 @@ const TimeInput = ({
                                     close();
                                 }}
                             >
-                                {label}
+                                {display}
                             </DropdownMenuButton>
                         );
                     })}
