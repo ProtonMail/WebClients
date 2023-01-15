@@ -1,3 +1,14 @@
+## Release: 5.0.7 — January 25, 2023
+
+### Improvements
+
+-   Add reload mechanism for events that failed to be decrypted because of network issues
+-   Improve notification update system for all calendar types
+
+### Fixes
+
+-   Update for some time zones conversion to canonical time zones
+
 ## Release: 5.0.6 — December 14, 2022
 
 ### New features
