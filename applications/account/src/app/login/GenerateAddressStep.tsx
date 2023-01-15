@@ -98,7 +98,7 @@ const GenerateAddressStep = ({
                 }}
             />
             <Content>
-                <Text>
+                <Text data-testid="text:generate-internal-address">
                     {externalEmailAddress && [
                         c('Info').jt`Your ${BRAND_NAME} Account is associated with ${externalEmailAddress}.`,
                         ' ',
