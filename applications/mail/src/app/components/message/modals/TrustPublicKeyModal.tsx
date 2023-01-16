@@ -143,7 +143,7 @@ const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
         and emails from this address will be automatically cryptographically verified.`;
 
     return (
-        <ModalTwo as={Form} onSubmit={() => withLoading(handleSubmit())} {...rest}>
+        <ModalTwo as={Form} onSubmit={() => withLoading(handleSubmit())} size="xlarge" {...rest}>
             <ModalTwoHeader title={c('Title').t`Trust public key?`} />
             <ModalTwoContent>
                 <div className="mb1">
