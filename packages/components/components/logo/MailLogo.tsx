@@ -21,10 +21,12 @@ const MailLogo = ({ variant = 'with-wordmark', className, size, hasTitle = true,
             width={logoWidth}
             height="36"
             fill="none"
+            role="img"
             className={classnames(['logo', size && variant === 'glyph-only' && `icon-${size}p`, variant, className])}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >
+            {hasTitle && <title id={`${uid}-title`}>{MAIL_APP_NAME}</title>}
             {variant === 'glyph-only' && (
                 <>
                     <path
@@ -52,8 +54,8 @@ const MailLogo = ({ variant = 'with-wordmark', className, size, hasTitle = true,
                             y2="-9.469"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stopColor="#E3D9FF"/>
-                            <stop offset="1" stopColor="#7341FF"/>
+                            <stop stopColor="#E3D9FF" />
+                            <stop offset="1" stopColor="#7341FF" />
                         </linearGradient>
                         <linearGradient
                             id={`${uid}-c`}
@@ -63,8 +65,8 @@ const MailLogo = ({ variant = 'with-wordmark', className, size, hasTitle = true,
                             y2="-3.075"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".271" stopColor="#E3D9FF"/>
-                            <stop offset="1" stopColor="#7341FF"/>
+                            <stop offset=".271" stopColor="#E3D9FF" />
+                            <stop offset="1" stopColor="#7341FF" />
                         </linearGradient>
                         <radialGradient
                             id={`${uid}-b`}
@@ -74,8 +76,8 @@ const MailLogo = ({ variant = 'with-wordmark', className, size, hasTitle = true,
                             gradientTransform="matrix(27.9882 0 0 26.381 27.895 13.077)"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".556" stopColor="#6D4AFF"/>
-                            <stop offset=".994" stopColor="#AA8EFF"/>
+                            <stop offset=".556" stopColor="#6D4AFF" />
+                            <stop offset=".994" stopColor="#AA8EFF" />
                         </radialGradient>
                     </defs>
                 </>
@@ -116,8 +118,8 @@ const MailLogo = ({ variant = 'with-wordmark', className, size, hasTitle = true,
                             y2="-9.469"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stopColor="#E3D9FF"/>
-                            <stop offset="1" stopColor="#7341FF"/>
+                            <stop stopColor="#E3D9FF" />
+                            <stop offset="1" stopColor="#7341FF" />
                         </linearGradient>
                         <linearGradient
                             id={`${uid}-c`}
@@ -127,8 +129,8 @@ const MailLogo = ({ variant = 'with-wordmark', className, size, hasTitle = true,
                             y2="-3.075"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".271" stopColor="#E3D9FF"/>
-                            <stop offset="1" stopColor="#7341FF"/>
+                            <stop offset=".271" stopColor="#E3D9FF" />
+                            <stop offset="1" stopColor="#7341FF" />
                         </linearGradient>
                         <radialGradient
                             id={`${uid}-b`}
@@ -138,14 +140,12 @@ const MailLogo = ({ variant = 'with-wordmark', className, size, hasTitle = true,
                             gradientTransform="matrix(27.9882 0 0 26.381 23.895 13.077)"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".556" stopColor="#6D4AFF"/>
-                            <stop offset=".994" stopColor="#AA8EFF"/>
+                            <stop offset=".556" stopColor="#6D4AFF" />
+                            <stop offset=".994" stopColor="#AA8EFF" />
                         </radialGradient>
                     </defs>
                 </>
             )}
-
-            {hasTitle && <title id={`${uid}-title`}>{MAIL_APP_NAME}</title>}
         </svg>
     );
 };
