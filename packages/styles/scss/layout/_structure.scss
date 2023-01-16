@@ -99,10 +99,19 @@ html,
 .logo-container {
 	padding-block: 0;
 	padding-inline: 1em;
-	inline-size: rem($width-sidebar);
 
 	& > a {
 		display: flex;
+		align-self: baseline;
+	}
+
+	@include respond-to($breakpoint-small, 'min') {
+		block-size: rem($header-height);
+		inline-size: rem($width-sidebar);
+
+		& > a {
+			align-self: center;
+		}
 	}
 }
 
