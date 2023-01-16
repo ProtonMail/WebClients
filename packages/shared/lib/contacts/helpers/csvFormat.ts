@@ -1,5 +1,4 @@
-import { isValid, parseISO } from 'date-fns';
-
+import { guessDateFromText } from '@proton/shared/lib/contacts/property';
 import capitalize from '@proton/utils/capitalize';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -591,8 +590,8 @@ const getFirstValue = (preVcards: PreVcardProperty[]): string =>
 
 const getDateValue = (preVcards: PreVcardProperty[]) => {
     const text = getFirstValue(preVcards);
-    const date = parseISO(text);
-    return isValid(date) ? { date } : { text };
+    const date = guessDateFromText(text);
+    return date ? { date } : { text };
 };
 
 /**
