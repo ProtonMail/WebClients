@@ -23,7 +23,9 @@ const UnsupportedPreview = ({ onDownload, type = 'file' }: Props) => {
                 alt={c('Info').t`Unsupported file`}
             />
 
-            <h2 className={classnames(['p0-25 text-bold', isNarrow && 'h3'])}>{c('Info').t`No preview available`}</h2>
+            <h2 className={classnames(['p0-25 text-bold', isNarrow && 'h3'])} data-testid="preview:no-preview">{c(
+                'Info'
+            ).t`No preview available`}</h2>
 
             {onDownload && (
                 <PrimaryButton size={!isNarrow ? 'large' : undefined} className="text-bold" onClick={onDownload}>{c(

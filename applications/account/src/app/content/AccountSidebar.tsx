@@ -46,6 +46,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
                         target="_self"
                         title={backButtonTitle}
                         aria-label={backButtonTitle}
+                        data-testid={`account:back-to-app`}
                     >
                         {backButtonText}
                     </SidebarBackButton>
