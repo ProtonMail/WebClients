@@ -23,26 +23,66 @@ const fromFormatted = (value: string, locale: Locale) => {
     return parse(value, 'p', new Date(), { locale });
 };
 
-const formatDuration = (label: string, minutes: number) => {
+export const formatDuration = (label: string, minutes: number) => {
     const hours = withDecimalPrecision(minutes / 60, 1);
-    const hoursInt = Math.ceil(hours);
-    return hours >= 1 ? (
+    const hoursInt = Math.floor(hours);
+
+    if (hours >= 1) {
+        if (hours === hoursInt) {
+            // hours is an integer
+            return {
+                // translator: 'h' stands for hour and the rendered string is a duration, e.g.: 1 h, 3 h. Please translate with the shortest possible version in your language.
+                shortText: c('Time unit for duration; displayed in the time picker').ngettext(
+                    msgid`${hours} h`,
+                    `${hours} h`,
+                    hours
+                ),
+                longText: c('Time unit for duration; vocalized in the time picker').ngettext(
+                    msgid`${hours} hour`,
+                    `${hours} hours`,
+                    hours
+                ),
+            };
+        }
+        // else hours is a half-integer
+        return {
+            // translator: 'h' stands for hour and the rendered string is a duration, with the variable hoursInt being an integer but the duration being a half-integer, e.g.: 1.5 h, 3.5 h. Please translate with the shortest possible version in your language.
+            shortText: c('Time unit for duration; displayed in the time picker').ngettext(
+                msgid`${hoursInt}.5 h`,
+                `${hoursInt}.5 h`,
+                hoursInt
+            ),
+            // translator: The variable hoursInt is an integer but the duration is a half-integer bigger than 1, e.g.: 1.5 hours, 3.5 hours.
+            longText: c('Time unit for duration; vocalized in the time picker').ngettext(
+                msgid`${hoursInt}.5 hour`,
+                `${hoursInt}.5 hours`,
+                hoursInt
+            ),
+        };
+    }
+
+    return {
+        // translator: 'min' stands for minute and the rendered string is a duration, e.g.: 15 min, 30 min. Please translate with the shortest possible version in your language.
+        shortText: c('Time unit for duration; displayed in the time picker').ngettext(
+            msgid`${minutes} min`,
+            `${minutes} min`,
+            minutes
+        ),
+        longText: c('Time unit for duration; vocalized in the time picker').ngettext(
+            msgid`${minutes} minute`,
+            `${minutes} minutes`,
+            minutes
+        ),
+    };
+};
+
+const getDurationOptionDisplay = (label: string, minutes: number) => {
+    const { shortText, longText } = formatDuration(label, minutes);
+
+    return (
         <>
-            <span aria-hidden="true">{
-                // translator: 'h' is for hour, please translate with an abbreviated version
-                c('Time unit').t`${hours} h`
-            }</span>
-            <span className="sr-only">{c('Time unit').ngettext(msgid`${hours} hour`, `${hours} hours`, hoursInt)}</span>
-        </>
-    ) : (
-        <>
-            <span aria-hidden="true">{
-                // translator: 'min' is for minute, please translate with an abbreviated version
-                c('Time unit').t`${minutes} min`
-            }</span>
-            <span className="sr-only">
-                {c('Time unit').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes)}
-            </span>
+            <span aria-hidden="true">{shortText}</span>
+            <span className="sr-only">{longText}</span>
         </>
     );
 };
@@ -202,7 +242,7 @@ const TimeInput = ({
                 label,
                 display: displayDuration ? (
                     <>
-                        {label} ({formatDuration(label, minutes)})
+                        {label} ({getDurationOptionDisplay(label, minutes)})
                     </>
                 ) : (
                     label
