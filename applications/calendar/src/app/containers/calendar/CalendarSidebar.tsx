@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
+    AppsDropdown,
     DropdownMenu,
     DropdownMenuButton,
     FeatureCode,
@@ -291,6 +292,7 @@ const CalendarSidebar = ({
 
     return (
         <Sidebar
+            appsDropdown={<AppsDropdown app={APPS.PROTONCALENDAR} />}
             logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}

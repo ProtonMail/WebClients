@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import {
-    AppsDropdown,
     PrivateHeader,
     RebrandingFeedbackModal,
     TopNavbarListItemContactsDropdown,
@@ -24,13 +23,11 @@ import { SearchField } from './search/SearchField';
 interface Props {
     isHeaderExpanded: boolean;
     toggleHeaderExpanded: () => void;
-    logo: ReactNode;
     searchBox?: ReactNode;
     title?: string;
 }
 
 export const DriveHeader = ({
-    logo,
     isHeaderExpanded,
     toggleHeaderExpanded,
     title = c('Title').t`Drive`,
@@ -46,14 +43,12 @@ export const DriveHeader = ({
         <>
             {renderOnboardingModal && <DriveOnboardingModal showGenericSteps {...onboardingModal} />}
             <PrivateHeader
-                appsDropdown={<AppsDropdown app={APPS.PROTONDRIVE} />}
                 feedbackButton={
                     hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />
                     ) : null
                 }
                 userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModal(true)} />}
-                logo={logo}
                 title={title}
                 contactsButton={displayContactsInHeader && <TopNavbarListItemContactsDropdown />}
                 settingsButton={
