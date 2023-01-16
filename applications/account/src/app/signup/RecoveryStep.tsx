@@ -125,7 +125,9 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 id="save-phone"
                                 checked={savePhone}
                                 onChange={loading ? noop : () => setSavePhone(!savePhone)}
-                            />
+                            >
+                                <span className="sr-only">{c('Label').t`Use a recovery phone number`}</span>
+                            </Checkbox>
                         </div>
                         <div className="flex-item-fluid pl0-5 mt0-1">
                             <InputFieldTwo
@@ -152,7 +154,9 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 id="save-email"
                                 checked={saveEmail}
                                 onChange={loading ? noop : () => setSaveEmail(!saveEmail)}
-                            />
+                            >
+                                <span className="sr-only">{c('Label').t`Use a recovery email address`}</span>
+                            </Checkbox>
                         </div>
                         <div className="flex-item-fluid pl0-5 mt0-1">
                             <InputFieldTwo
