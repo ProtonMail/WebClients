@@ -21,10 +21,12 @@ const VpnLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, 
             width={logoWidth}
             height="36"
             fill="none"
+            role="img"
             className={classnames(['logo', size && variant === 'glyph-only' && `icon-${size}p`, variant, className])}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >
+            {hasTitle && <title id={`${uid}-title`}>{VPN_APP_NAME}</title>}
             {variant === 'glyph-only' && (
                 <>
                     <path
@@ -46,9 +48,9 @@ const VpnLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, 
                             y2="-1.922"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".066" stopColor="#8EFFEE"/>
-                            <stop offset=".45" stopColor="#C9C7FF"/>
-                            <stop offset="1" stopColor="#7341FF"/>
+                            <stop offset=".066" stopColor="#8EFFEE" />
+                            <stop offset=".45" stopColor="#C9C7FF" />
+                            <stop offset="1" stopColor="#7341FF" />
                         </linearGradient>
                         <linearGradient
                             id={`${uid}-b`}
@@ -58,8 +60,8 @@ const VpnLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, 
                             y2="31.512"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".48" stopColor="#6D4AFF"/>
-                            <stop offset=".994" stopColor="#00F0C3"/>
+                            <stop offset=".48" stopColor="#6D4AFF" />
+                            <stop offset=".994" stopColor="#00F0C3" />
                         </linearGradient>
                     </defs>
                 </>
@@ -94,9 +96,9 @@ const VpnLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, 
                             y2="-1.922"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".066" stopColor="#8EFFEE"/>
-                            <stop offset=".45" stopColor="#C9C7FF"/>
-                            <stop offset="1" stopColor="#7341FF"/>
+                            <stop offset=".066" stopColor="#8EFFEE" />
+                            <stop offset=".45" stopColor="#C9C7FF" />
+                            <stop offset="1" stopColor="#7341FF" />
                         </linearGradient>
                         <linearGradient
                             id={`${uid}-b`}
@@ -106,14 +108,12 @@ const VpnLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, 
                             y2="31.512"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".48" stopColor="#6D4AFF"/>
-                            <stop offset=".994" stopColor="#00F0C3"/>
+                            <stop offset=".48" stopColor="#6D4AFF" />
+                            <stop offset=".994" stopColor="#00F0C3" />
                         </linearGradient>
                     </defs>
                 </>
             )}
-
-            {hasTitle && <title id={`${uid}-title`}>{VPN_APP_NAME}</title>}
         </svg>
     );
 };

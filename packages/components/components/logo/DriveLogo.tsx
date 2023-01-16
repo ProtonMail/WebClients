@@ -21,16 +21,15 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true
             width={logoWidth}
             height="36"
             fill="none"
+            role="img"
             className={classnames(['logo', size && variant === 'glyph-only' && `icon-${size}p`, variant, className])}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >
+            {hasTitle && <title id={`${uid}-title`}>{DRIVE_APP_NAME}</title>}
             {variant === 'glyph-only' && (
                 <>
-                    <path
-                        fill={`url(#${uid}-a)`}
-                        d="m4 9 4-2 7 4h12v17l-1 1H7a3 3 0 0 1-3-3V9Z"
-                    />
+                    <path fill={`url(#${uid}-a)`} d="m4 9 4-2 7 4h12v17l-1 1H7a3 3 0 0 1-3-3V9Z" />
                     <path
                         fill={`url(#${uid}-b)`}
                         fillRule="evenodd"
@@ -46,8 +45,8 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true
                             gradientTransform="matrix(42.9176 0 0 45.5519 28.926 -8.114)"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".556" stopColor="#6D4AFF"/>
-                            <stop offset="1" stopColor="#FF50C3"/>
+                            <stop offset=".556" stopColor="#6D4AFF" />
+                            <stop offset="1" stopColor="#FF50C3" />
                         </radialGradient>
                         <linearGradient
                             id={`${uid}-b`}
@@ -57,9 +56,9 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true
                             y2="32.431"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stopColor="#7341FF"/>
-                            <stop offset=".359" stopColor="#B487FF"/>
-                            <stop offset="1" stopColor="#FFC8FF"/>
+                            <stop stopColor="#7341FF" />
+                            <stop offset=".359" stopColor="#B487FF" />
+                            <stop offset="1" stopColor="#FFC8FF" />
                         </linearGradient>
                     </defs>
                 </>
@@ -67,10 +66,7 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true
 
             {variant === 'with-wordmark' && (
                 <>
-                    <path
-                        fill={`url(#${uid}-a)`}
-                        d="m0 9 4-2 7 4h12v17l-1 1H3a3 3 0 0 1-3-3V9Z"
-                    />
+                    <path fill={`url(#${uid}-a)`} d="m0 9 4-2 7 4h12v17l-1 1H3a3 3 0 0 1-3-3V9Z" />
                     <path
                         fill={`url(#${uid}-b)`}
                         fillRule="evenodd"
@@ -87,33 +83,31 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true
                     />
                     <defs>
                         <radialGradient
-                        id={`${uid}-a`}
-                        cx="0"
-                        cy="0"
-                        r="1"
-                        gradientTransform="matrix(42.9176 0 0 45.5519 24.926 -8.114)"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                            <stop offset=".556" stopColor="#6D4AFF"/>
-                            <stop offset="1" stopColor="#FF50C3"/>
+                            id={`${uid}-a`}
+                            cx="0"
+                            cy="0"
+                            r="1"
+                            gradientTransform="matrix(42.9176 0 0 45.5519 24.926 -8.114)"
+                            gradientUnits="userSpaceOnUse"
+                        >
+                            <stop offset=".556" stopColor="#6D4AFF" />
+                            <stop offset="1" stopColor="#FF50C3" />
                         </radialGradient>
                         <linearGradient
-                        id={`${uid}-b`}
-                        x1="-.369"
-                        x2="34.345"
-                        y1="-6.003"
-                        y2="32.431"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                            <stop stopColor="#7341FF"/>
-                            <stop offset=".359" stopColor="#B487FF"/>
-                            <stop offset="1" stopColor="#FFC8FF"/>
+                            id={`${uid}-b`}
+                            x1="-.369"
+                            x2="34.345"
+                            y1="-6.003"
+                            y2="32.431"
+                            gradientUnits="userSpaceOnUse"
+                        >
+                            <stop stopColor="#7341FF" />
+                            <stop offset=".359" stopColor="#B487FF" />
+                            <stop offset="1" stopColor="#FFC8FF" />
                         </linearGradient>
                     </defs>
                 </>
             )}
-
-            {hasTitle && <title id={`${uid}-title`}>{DRIVE_APP_NAME}</title>}
         </svg>
     );
 };
