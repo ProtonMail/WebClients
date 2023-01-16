@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,7 +9,7 @@ import isTruthy from '@proton/utils/isTruthy';
 interface Props {
     types: RECURRING_TYPES[];
     type: RECURRING_TYPES;
-    setType: React.Dispatch<React.SetStateAction<RECURRING_TYPES>>;
+    setType: Dispatch<SetStateAction<RECURRING_TYPES>>;
     'data-test-id': string;
 }
 
