@@ -15,13 +15,28 @@ import { handlePaymentToken } from '../payments/paymentTokenHelper';
 import usePayment from '../payments/usePayment';
 import { Invoice } from './interface';
 
-const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) => {
+interface CheckInvoiceResponse {
+    Code: number;
+    Currency: Currency;
+    Amount: number;
+    Gift: number;
+    Credit: number;
+    AmountDue: number;
+}
+
+export interface Props {
+    invoice: Invoice;
+    fetchInvoices: () => void;
+    onClose?: () => void;
+}
+
+const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
     const api = useApi();
-    const { result, loading: loadingCheck } = useApiResult<CheckInvoiceResponse, typeof checkInvoice>(
+    const { result, loading: isLoading } = useApiResult<CheckInvoiceResponse, typeof checkInvoice>(
         () => checkInvoice(invoice.ID),
         []
     );
@@ -39,7 +54,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) =>
             call(), // Update user.Delinquent to hide TopBanner
             fetchInvoices(),
         ]);
-        onClose?.();
+        rest.onClose?.();
         createNotification({ text: c('Success').t`Invoice paid` });
     };
 
@@ -71,9 +86,9 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) =>
             title={c('Title').t`Pay invoice`}
             {...rest}
         >
-            {loadingCheck ? null : (
+            {!isLoading && (
                 <>
-                    {Credit ? (
+                    {!!Credit && (
                         <>
                             <Row>
                                 <Label>{c('Label').t`Amount`}</Label>
@@ -92,7 +107,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) =>
                                 </Field>
                             </Row>
                         </>
-                    ) : null}
+                    )}
                     <Row>
                         <Label>{c('Label').t`Amount due`}</Label>
                         <Field>
@@ -103,7 +118,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) =>
                             />
                         </Field>
                     </Row>
-                    {AmountDue && AmountDue > 0 ? (
+                    {AmountDue && AmountDue > 0 && (
                         <Payment
                             type="invoice"
                             paypal={paypal}
@@ -116,7 +131,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, onClose, ...rest }: Props) =>
                             onCard={setCard}
                             cardErrors={cardErrors}
                         />
-                    ) : null}
+                    )}
                 </>
             )}
         </FormModal>
@@ -129,18 +144,3 @@ PayInvoiceModal.propTypes = {
 };
 
 export default PayInvoiceModal;
-
-interface CheckInvoiceResponse {
-    Code: number;
-    Currency: Currency;
-    Amount: number;
-    Gift: number;
-    Credit: number;
-    AmountDue: number;
-}
-
-export interface Props {
-    invoice: Invoice;
-    fetchInvoices: () => void;
-    onClose?: () => void;
-}
