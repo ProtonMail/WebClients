@@ -3,8 +3,8 @@
     "description": "Metrics library",
     "scripts": {
         "check-types": "tsc",
-        "generate-schema-types": "rimraf json-schema-registry && git clone $SCHEMA_REPOSITORY && json2ts -i 'json-schema-registry/**/*.schema.json' -o types/ --no-additionalProperties",
-        "generate-schema-types:mock": "json2ts -i 'mockSchemas/**/*.schema.json' -o types/ --no-additionalProperties",
+        "generate-schema-types": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && json2ts -i 'json-schema-registry/**/*.schema.json' -o types/ --no-additionalProperties",
+        "generate-schema-types:mock": "rimraf types && json2ts -i 'mockSchemas/**/*.schema.json' -o types/ --no-additionalProperties",
         "lint": "eslint . --ext ts --quiet --cache"
     },
     "dependencies": {
