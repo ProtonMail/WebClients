@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 
 // TODO: handle it with containers
@@ -13,5 +13,5 @@ export const useSearchParams = () => {
         updateValue(extractSearchParameters(location));
     }, [location]);
 
-    return [value, updateValue] as [string, React.Dispatch<React.SetStateAction<string>>];
+    return [value, updateValue] as [string, Dispatch<SetStateAction<string>>];
 };
