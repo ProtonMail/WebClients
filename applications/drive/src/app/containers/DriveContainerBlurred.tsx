@@ -52,7 +52,7 @@ const DriveContainerBlurred = () => {
     );
     const dummyFolderTitle = c('Title').t`My files`;
 
-    const header = <DriveHeader logo={logo} isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
+    const header = <DriveHeader isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
 
     const sidebar = (
         <DriveSidebar
