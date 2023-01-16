@@ -165,7 +165,7 @@ const ParticipantsInput = ({
                     )}
                 </Alert>
             )}
-            {value.length > 0 &&
+            {numberOfParticipants > 0 &&
                 (collapsible ? (
                     <Details className="border-none mt0-25" open>
                         <Summary>
@@ -180,7 +180,7 @@ const ParticipantsInput = ({
                 ) : (
                     participantRows
                 ))}
-            {organizer && (
+            {numberOfParticipants > 0 && organizer && (
                 <div className="pt0-25">
                     <OrganizerRow organizer={organizer} />
                 </div>
