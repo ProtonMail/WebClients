@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import {
     Copy,
     Form,
+    Href,
     InputFieldTwo,
     ModalProps,
     ModalTwo,
@@ -23,6 +24,7 @@ import {
 import { createToken } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -121,8 +123,12 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
         }
         return (
             <>
-                <p>{c('Info')
-                    .t`Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.`}</p>
+                <p>
+                    {c('Info')
+                        .t`Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.`}
+                    <br />
+                    <Href url={getKnowledgeBaseUrl('/smtp-submission')}>{c('Link').t`Learn more`}</Href>
+                </p>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
                     <InputFieldTwo
                         id="smtp-username"
