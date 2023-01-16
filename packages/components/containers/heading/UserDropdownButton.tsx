@@ -1,5 +1,7 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, Ref, forwardRef } from 'react';
 
+import { c } from 'ttag';
+
 import { NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -48,7 +50,11 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
                 <span className="mauto">{initials}</span>
             </span>
             {notification && (
-                <NotificationDot color={notification} className="absolute top right notification-dot--top-right" />
+                <NotificationDot
+                    color={notification}
+                    className="absolute top right notification-dot--top-right"
+                    alt={c('Info').t`Attention required`}
+                />
             )}
         </button>
     );
