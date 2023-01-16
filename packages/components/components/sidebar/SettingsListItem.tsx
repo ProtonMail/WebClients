@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { c } from 'ttag';
+
 import { NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
 
@@ -19,7 +21,9 @@ const SettingsListItem = ({ to, icon, children, notification }: Props) => {
             <SidebarListItemLink to={to}>
                 <SidebarListItemContent
                     left={<SidebarListItemContentIcon name={icon} />}
-                    right={notification && <NotificationDot color={notification} />}
+                    right={
+                        notification && <NotificationDot color={notification} alt={c('Info').t`Attention required`} />
+                    }
                 >
                     {children}
                 </SidebarListItemContent>
