@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -65,6 +65,9 @@ const EventForm = ({
     isDrawerApp,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
+    const isOrganizerOfInvitationRef = useRef(!isCreateEvent && !!model.organizer);
+    const isOrganizerOfInvitation = isOrganizerOfInvitationRef.current;
+
     const {
         uid,
         frequencyModel,
@@ -82,7 +85,7 @@ const EventForm = ({
 
     const isImportedEvent = uid && !getIsProtonUID(uid);
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
-    const canChangeCalendar = isAttendee ? !isSingleEdit : isCreateEvent || !model.organizer;
+    const canChangeCalendar = isAttendee ? !isSingleEdit : !isOrganizerOfInvitation;
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications = canAddNotifications || notifications.length;
@@ -273,11 +276,18 @@ const EventForm = ({
     );
 
     const handleChangeAttendees = (value: AttendeeModel[]) => {
+        const { organizer: newOrganizer, selfAddress: newSelfAddress } = getOrganizerAndSelfAddressModel({
+            attendees: value,
+            addressID: model.member.addressID,
+            addresses,
+        });
+
         setModel({
             ...model,
             attendees: value,
             isOrganizer: !!value.length,
-            ...getOrganizerAndSelfAddressModel({ attendees: value, addressID: model.member.addressID, addresses }),
+            organizer: isOrganizerOfInvitation ? model.organizer : newOrganizer,
+            selfAddress: isOrganizerOfInvitation ? model.selfAddress : newSelfAddress,
         });
     };
 
