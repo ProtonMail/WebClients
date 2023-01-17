@@ -44,20 +44,10 @@ interface Props {
     showContinueTo?: boolean;
     onBack?: () => void;
     hasRemember?: boolean;
-    hasActiveSessions?: boolean;
     setupVPN: boolean;
 }
 
-const LoginContainer = ({
-    onLogin,
-    onBack,
-    toAppName,
-    toApp,
-    showContinueTo,
-    setupVPN,
-    hasRemember = true,
-    hasActiveSessions = false,
-}: Props) => {
+const LoginContainer = ({ onLogin, onBack, toAppName, toApp, showContinueTo, setupVPN, hasRemember = true }: Props) => {
     const { APP_NAME } = useConfig();
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
@@ -147,7 +137,6 @@ const LoginContainer = ({
                             signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                             defaultUsername={previousUsernameRef.current}
                             hasRemember={hasRemember}
-                            hasActiveSessions={hasActiveSessions}
                             trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
                             onSubmit={async ({ username, password, payload, persistent }) => {
                                 return handleLogin({

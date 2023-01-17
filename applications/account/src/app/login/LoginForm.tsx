@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, Card } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import {
     Challenge,
     ChallengeError,
@@ -22,7 +22,7 @@ import {
 } from '@proton/components';
 import { Icon } from '@proton/components';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
-import { APP_NAMES, BRAND_NAME, SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -42,7 +42,6 @@ interface Props {
     signInText?: string;
     defaultUsername?: string;
     hasRemember?: boolean;
-    hasActiveSessions?: boolean;
     trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
 }
 
@@ -52,7 +51,6 @@ const LoginForm = ({
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
     hasRemember,
-    hasActiveSessions,
     trustedDeviceRecoveryFeature,
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -60,8 +58,6 @@ const LoginForm = ({
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
     const [persistent, setPersistent] = useLocalState(false, defaultPersistentKey);
-
-    const [showPasswordManagerHint, setShowPasswordManagerHint] = useState(false);
 
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
@@ -71,23 +67,6 @@ const LoginForm = ({
     const isVPN = getIsVPNApp(APP_NAME) || getIsVPNApp(toApp);
 
     const loading = Boolean(challengeLoading || trustedDeviceRecoveryFeature?.loading);
-
-    useEffect(() => {
-        if (hasActiveSessions) {
-            setShowPasswordManagerHint(false);
-            return;
-        }
-
-        if (showPasswordManagerHint || password) {
-            return;
-        }
-
-        let id = setTimeout(() => {
-            setShowPasswordManagerHint(true);
-        }, 10 * SECOND);
-
-        return () => clearTimeout(id);
-    }, [hasActiveSessions, password]);
 
     useEffect(() => {
         if (loading) {
@@ -262,14 +241,6 @@ const LoginForm = ({
                         </Link>
                     </SupportDropdown>
                 </div>
-
-                {showPasswordManagerHint && (
-                    <Card className="text-center mt2" rounded>
-                        <Href key="update-password-manager-url" url={getKnowledgeBaseUrl('/update-password-manager')}>
-                            {c('Info').t`Update the URL in your password manager`}
-                        </Href>
-                    </Card>
-                )}
             </form>
         </>
     );
