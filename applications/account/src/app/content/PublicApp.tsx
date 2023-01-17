@@ -485,7 +485,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                             </Route>
                                             <Route path={SSO_PATHS.LOGIN}>
                                                 <LoginContainer
-                                                    hasActiveSessions={Boolean(activeSessions?.length)}
                                                     toAppName={toAppName}
                                                     toApp={maybePreAppIntent}
                                                     showContinueTo={!!toOAuthName}
