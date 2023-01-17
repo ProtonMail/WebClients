@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-import { getRandomLabelColor } from '@proton/activation/helpers/errorsMapping';
+import getRandomLabelColor from '@proton/activation/helpers/getRandomLabelColor';
 import { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 
