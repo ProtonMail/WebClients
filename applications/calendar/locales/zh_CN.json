@@ -451,6 +451,9 @@
       "Skip": [
         "跳过"
       ],
+      "Skip verification": [
+        "跳过验证"
+      ],
       "Start import": [
         "开始导入"
       ],
@@ -1899,6 +1902,11 @@
         "遵循系统设置 (${ globalDefaultText })"
       ]
     },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "删除事件"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "逾期账单"
@@ -1966,6 +1974,11 @@
         "添加日历"
       ]
     },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "复制事件"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 分钟"
@@ -1988,6 +2001,11 @@
     "Early Access Enabled": {
       "On": [
         "开"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "编辑事件"
       ]
     },
     "Email body for description (description part)": {
@@ -2767,11 +2785,20 @@
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "加密并添加日程时出错。未能导入任何日程。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加联系人：已完成 ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加日程：已完成 ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "日程导入成功。已显示在您的日历中。"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "日程导入成功。已显示在您的日历中。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "导入结束前请勿关闭此网页。"
@@ -2802,6 +2829,21 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "加密并添加联系人时出错。未能导入任何联系人。"
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "加密并添加联系人时出错。${ totalImported }/${ totalToImport } 联系人已成功导入。"
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "加密并添加联系人时出错。未能导入任何联系人。"
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "联系人导入成功，已显示在您的通讯录中"
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "联系人导入成功。已显示在您的通讯录中。"
       ]
     },
     "Import contact error": {
@@ -3465,6 +3507,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
@@ -3558,9 +3603,6 @@
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
       ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "您只能修改个人活动属性，因为您无法从组织者地址发送电子邮件"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
       ],
@@ -3599,6 +3641,9 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "您将更新该系列活动中的所有活动，移除的参与者将收到通知"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "您的 ${ BRAND_NAME } 账户已被停用，无法继续收取新邮件，并且网盘分享链接已全部失效，新文件也无法上传。如需恢复账户正常功能，请付清逾期账单。"
@@ -3826,6 +3871,12 @@
       "Frequency": [
         "重复频率"
       ],
+      "From: ${ from }": [
+        "发件人：${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "发件人：${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
       ],
@@ -3972,6 +4023,12 @@
       ],
       "To: ${ emailAddress }": [
         "导入到：${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "收件人：${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "收件人：${ toEmail }"
       ],
       "Toolbar": [
         "工具栏"
@@ -4742,6 +4799,11 @@
         "请注意：点击「应用」按钮后网页将重新加载。"
       ]
     },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "重新加载事件"
+      ]
+    },
     "Select files": {
       "Upload": [
         "上传"
@@ -4792,12 +4854,14 @@
         "管理日历"
       ]
     },
+    "Signing preference for emails": {
+      "Sign": [
+        "签名"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 现已正式发布！您的文档也可以具备与邮件同等的安全性。"
-      ],
-      "Don't miss any events": [
-        "不会错过任何事件"
       ],
       "Easily accept invites": [
         "轻松接受邀请"
@@ -4813,9 +4877,6 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "体验 ${ DRIVE_APP_NAME }"
-      ],
-      "You can now add notifications to calendars you subscribed to.": [
-        "您现在可以向订阅的日历添加通知了。"
       ],
       "You can subscribe to external calendars and read their events.": [
         "您可以通过订阅外部日历来获取其日程。"

@@ -680,6 +680,9 @@
       "Open calendar": [
         "打开日历"
       ],
+      "Open composer": [
+        "打开邮件编辑区"
+      ],
       "Open get started checklist modal": [
         "打开入门清单"
       ],
@@ -776,6 +779,12 @@
       "Rename": [
         "重命名"
       ],
+      "Reply": [
+        "回复"
+      ],
+      "Reply all": [
+        "回复所有人"
+      ],
       "Reply securely": [
         "安全回复"
       ],
@@ -811,6 +820,9 @@
       ],
       "Save": [
         "保存"
+      ],
+      "Saving${ ellipsis }": [
+        "保存${ ellipsis }"
       ],
       "Schedule message": [
         "定时邮件"
@@ -922,6 +934,9 @@
       ],
       "Skip": [
         "跳过"
+      ],
+      "Skip verification": [
+        "跳过验证"
       ],
       "Some images failed to load with tracking protection.": [
         "跟踪防护已阻止加载部分图像。"
@@ -3944,11 +3959,20 @@
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "加密并添加日程时出错。未能导入任何日程。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加联系人：已完成 ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加日程：已完成 ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "日程导入成功。已显示在您的日历中。"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "日程导入成功。已显示在您的日历中。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "导入结束前请勿关闭此网页。"
@@ -3979,6 +4003,21 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "加密并添加联系人时出错。未能导入任何联系人。"
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "加密并添加联系人时出错。${ totalImported }/${ totalToImport } 联系人已成功导入。"
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "加密并添加联系人时出错。未能导入任何联系人。"
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "联系人导入成功，已显示在您的通讯录中"
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "联系人导入成功。已显示在您的通讯录中。"
       ]
     },
     "Import contact error": {
@@ -5136,6 +5175,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
@@ -5420,6 +5462,9 @@
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
         "您的 ${ BRAND_NAME } 账户自带 SimpleLogin 服务，一键安装浏览器扩展程序即可开始使用。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "您的 ${ BRAND_NAME } 账户已被停用，无法继续收取新邮件，并且网盘分享链接已全部失效，新文件也无法上传。如需恢复账户正常功能，请付清逾期账单。"
@@ -5909,6 +5954,12 @@
       "From:": [
         "发件人："
       ],
+      "From: ${ from }": [
+        "发件人：${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "发件人：${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
       ],
@@ -6148,6 +6199,12 @@
       ],
       "To: ${ emailAddress }": [
         "导入到：${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "收件人：${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "收件人：${ toEmail }"
       ],
       "Toolbar": [
         "工具栏"
@@ -7182,6 +7239,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "已信任的发件人密钥验证失败"
+      ]
+    },
+    "Signing preference for emails": {
+      "Sign": [
+        "签名"
       ]
     },
     "Sort option": {

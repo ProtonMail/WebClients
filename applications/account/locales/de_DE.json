@@ -507,10 +507,10 @@
       "Not spam": [
         "Kein Spam"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -561,11 +561,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ],
       "Reload": [
         "Neu laden"
@@ -1409,7 +1409,7 @@
         "Apfel"
       ],
       "azureish white": [
-        "azurblaues Weiß"
+        "Azurblaues Weiß"
       ],
       "blanched almond": [
         "blanchierte Mandel"
@@ -1475,7 +1475,7 @@
         "Zitronengelb"
       ],
       "light carmine pink": [
-        "helles Karminrosa"
+        "Helles Karminrosa"
       ],
       "light moss green": [
         "Helles Moosgrün"
@@ -1517,7 +1517,7 @@
         "Persisches Rot"
       ],
       "philippine gray": [
-        "Philippinisch Grau"
+        "Philippinisches Grau"
       ],
       "philippine silver": [
         "Philippinisches Silber"
@@ -1565,7 +1565,7 @@
         "Erdbeere"
       ],
       "vivid auburn": [
-        "leuchtendes Rotbraun"
+        "Leuchtendes Rotbraun"
       ],
       "white": [
         "Weiß"
@@ -4144,7 +4144,7 @@
         "Der IMAP-Zugang in deinem Yahoo-Konto aktiviert ist."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Zu viele neue Anfragen. Bitte versuche es in wenigen Augenblicken erneut."
+        "Zu viele kürzliche Anfragen. Bitte versuche es in wenigen Augenblicken erneut."
       ],
       "Use your app password if:": [
         "Verwende dein App-Passwort, wenn:"
@@ -4602,8 +4602,8 @@
       "Amount below minimum (${ amount }).": [
         "Mindestbetrag unterschritten (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
+      "An error occurred while communicating with the extension": [
+        "Bei der Kommunikation mit der Erweiterung ist ein Fehler aufgetreten."
       ],
       "and": [
         "und"
@@ -4870,6 +4870,9 @@
       ],
       "Enable this address to join this calendar": [
         "Diese Adresse aktivieren, um diesem Kalender beizutreten"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Aktiviere TLS oder SSL für den externen Dienst, falls dies unterstützt wird."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Wenn du die Wiederherstellung mittels Phrase erneut aktivierst, wird eine neue Wiederherstellungsphrase generiert."
@@ -5357,7 +5360,7 @@
         "Bitte beachte, dass durch das Löschen dieses Filters die Verarbeitung aller automatisiert ausgelösten Aktionen beendet wird."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleiben."
+        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Bitte gib eine E‐Mail‐Adresse an, falls wir dich kontaktieren müssen."
@@ -7190,6 +7193,12 @@
       "Signature": [
         "Signatur"
       ],
+      "SMTP port": [
+        "SMTP-Port"
+      ],
+      "SMTP server": [
+        "SMTP-Server"
+      ],
       "SMTP token": [
         "SMTP-Token"
       ],
@@ -8566,10 +8575,10 @@
         "${ Filter.Name } erstellt"
       ],
       "A disabled address cannot be default": [
-        "Eine deaktivierte Adresse kann nicht als Standardadresse verwendet werden"
+        "Eine deaktivierte Adresse kann nicht als Standardadresse verwendet werden."
       ],
       "An external address cannot be default": [
-        "Eine externe Adresse kann nicht als Standardadresse verwendet werden"
+        "Eine externe Adresse kann nicht als Standardadresse verwendet werden."
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Schlüssel mit dem Fingerabdruck ${ fp } wurde gelöscht."
@@ -9926,6 +9935,9 @@
       "Phone number updated": [
         "Telefonnummer aktualisiert"
       ],
+      "Port copied to clipboard": [
+        "Port in Zwischenablage kopiert"
+      ],
       "Preference saved": [
         "Einstellung gespeichert"
       ],
@@ -9934,6 +9946,9 @@
       ],
       "Resuming import": [
         "Import wird fortgesetzt"
+      ],
+      "Server copied to clipboard": [
+        "Server in Zwischenablage kopiert"
       ],
       "Session revoked": [
         "Sitzung zurückgenommen"

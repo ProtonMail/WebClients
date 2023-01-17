@@ -280,6 +280,12 @@
       "Manage addresses": [
         "管理電郵位址"
       ],
+      "Manage folders": [
+        "管理資料夾"
+      ],
+      "Manage labels": [
+        "管理標籤"
+      ],
       "Mark for deletion": [
         "標記作刪除"
       ],
@@ -2126,6 +2132,9 @@
       "Email address invalid": [
         "電郵位址無效"
       ],
+      "Email address is required": [
+        "電郵位址為必填"
+      ],
       "Email is not valid": [
         "電郵無效"
       ],
@@ -2152,6 +2161,9 @@
       ],
       "Image upload failed": [
         "影像上載失敗"
+      ],
+      "IMAP server is required": [
+        "IMAP 伺服器為必填"
       ],
       "Incorrect login credentials. Please try again.": [
         "登入憑證不正確。請再試一次。"
@@ -2228,6 +2240,9 @@
       "Number of occurrences cannot be empty": [
         "重複次數不能為空"
       ],
+      "Password is required": [
+        "密碼為必填"
+      ],
       "Passwords do not match": [
         "密碼不一致"
       ],
@@ -2236,6 +2251,9 @@
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "請先修正已標示的衝突以便繼續。"
+      ],
+      "Port is required": [
+        "通訊埠為必填"
       ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被解密"
@@ -3627,9 +3645,6 @@
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
       ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "您僅可以修改個人事件屬性，因為您無法以召集人電郵位址傳送電郵。"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
       ],
@@ -3898,6 +3913,12 @@
       "Frequency": [
         "頻率"
       ],
+      "From: ${ from }": [
+        "寄件者: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "寄件者: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "寄件者：${ importedEmail }"
       ],
@@ -4045,6 +4066,12 @@
       "To: ${ emailAddress }": [
         "收件者：${ emailAddress }"
       ],
+      "To: ${ to }": [
+        "收件者：${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "收件者：${ toEmail }"
+      ],
       "Toolbar": [
         "工具列"
       ],
@@ -4171,6 +4198,9 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
       ],
@@ -4892,9 +4922,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
       ],
-      "Don't miss any events": [
-        "別錯過任何活動"
-      ],
       "Easily accept invites": [
         "簡單地同意邀請"
       ],
@@ -4912,9 +4939,6 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試看 ${ DRIVE_APP_NAME }"
-      ],
-      "You can now add notifications to calendars you subscribed to.": [
-        "你已可以添加提醒到你訂閱的行事曆了。"
       ],
       "You can subscribe to external calendars and read their events.": [
         "您可以訂閱外部行事曆並讀取其活動。"

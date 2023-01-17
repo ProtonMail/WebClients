@@ -507,11 +507,11 @@
       "Not spam": [
         "Não é spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -561,11 +561,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -4602,8 +4602,8 @@
       "Amount below minimum (${ amount }).": [
         "Valor total abaixo do mínimo (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
+      "An error occurred while communicating with the extension": [
+        "Ocorreu um erro durante a comunicação com a extensão"
       ],
       "and": [
         "e"
@@ -4870,6 +4870,9 @@
       ],
       "Enable this address to join this calendar": [
         "Ative este endereço para juntar-se a este calendário"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Habilite TLS ou SSL no serviço externo, se houver suporte."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Habilitar recuperação por frase novamente irá gerar uma nova frase de recuperação."
@@ -7189,6 +7192,12 @@
       ],
       "Signature": [
         "Assinatura"
+      ],
+      "SMTP port": [
+        "Porta SMTP"
+      ],
+      "SMTP server": [
+        "Servidor SMTP"
       ],
       "SMTP token": [
         "Token SMTP"
@@ -9926,6 +9935,9 @@
       "Phone number updated": [
         "Número de telefone atualizado"
       ],
+      "Port copied to clipboard": [
+        "Porta copiada para a área de transferência"
+      ],
       "Preference saved": [
         "Preferência salva"
       ],
@@ -9934,6 +9946,9 @@
       ],
       "Resuming import": [
         "Retomando a importação"
+      ],
+      "Server copied to clipboard": [
+        "Servidor copiado para a área de transferência"
       ],
       "Session revoked": [
         "Sessão revogada"
@@ -10865,8 +10880,8 @@
         "Sucesso"
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Conta de usuário ${ localSuccessfullyCreatedUsers.length } criada com sucesso",
-        "Contas de usuário ${ localSuccessfullyCreatedUsers.length } criadas com sucesso"
+        "${ localSuccessfullyCreatedUsers.length } conta de usuário criada com sucesso",
+        "${ localSuccessfullyCreatedUsers.length } contas de usuário criadas com sucesso"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "Conta de usuário ${ successfullyCreatedUsers.length } criada com sucesso",
@@ -10888,7 +10903,7 @@
         "Fuso horário"
       ],
       "Total paid": [
-        "Total pagado"
+        "Total pago"
       ],
       "Track your referrals": [
         "Acompanhe suas referências"

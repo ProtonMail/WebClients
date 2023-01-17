@@ -104,6 +104,9 @@
       "Continue": [
         "Nastavi"
       ],
+      "Continue import": [
+        "Nastavi uvoz"
+      ],
       "Continue with Google": [
         "Nastavi s Googleom"
       ],
@@ -360,6 +363,9 @@
       "Request new code": [
         "Zatraži novi kôd"
       ],
+      "Resend code": [
+        "Ponovno pošalji kôd"
+      ],
       "Reset to default": [
         "Vrati na zadane postavke"
       ],
@@ -374,6 +380,9 @@
       ],
       "Send": [
         "Pošalji"
+      ],
+      "Send feedback": [
+        "Pošalji povratne informacije"
       ],
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
@@ -547,6 +556,9 @@
       ]
     },
     "Beta access description": {
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Beta pristup vam omogućava upotrebu beta verzije ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME } aplikacija prije nego što budu dostupne za javnost. To znači da možete prvi isprobati nove proizvode, dobiti nova ažuriranja i koristiti nove značajke."
+      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ako naiđete na probleme, uvijek možete onemogućiti beta pristup."
       ]
@@ -622,6 +634,11 @@
         "Problem s pristupom web stanici"
       ]
     },
+    "Calendar invite buttons label": {
+      "Attending?": [
+        "Prisustvujete?"
+      ]
+    },
     "Calendar invite info": {
       "${ name } accepted the invitation": [
         "${ name } je prihvatio vašu pozivnicu"
@@ -653,6 +670,14 @@
         "Više opcija"
       ]
     },
+    "Calendar status": {
+      "Not synced": [
+        "Nije sinkronizirano"
+      ],
+      "Syncing": [
+        "Sinkronizacija"
+      ]
+    },
     "Calendar view": {
       "Day": [
         "Dan"
@@ -664,7 +689,15 @@
         "Tjedan"
       ]
     },
+    "Collapsible tooltip": {
+      "Expand": [
+        "Proširi"
+      ]
+    },
     "Confirm modal title": {
+      "Quit import customization?": [
+        "Zatvori prilagođavanje uvoza?"
+      ],
       "Quit import?": [
         "Zaustavi uvoz?"
       ]
@@ -749,6 +782,770 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abhazija"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Albanija"
+      ],
+      "Algeria": [
+        "Alžir"
+      ],
+      "American Samoa": [
+        "Američka Samoa"
+      ],
+      "Andorra": [
+        "Andora"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Angvila"
+      ],
+      "Antarctica": [
+        "Antarktika"
+      ],
+      "Antigua and Barbuda": [
+        "Antigva i Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenija"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Otok Ascension"
+      ],
+      "Australia": [
+        "Australija"
+      ],
+      "Austria": [
+        "Austrija"
+      ],
+      "Azerbaijan": [
+        "Azerbajdžan"
+      ],
+      "Bahamas": [
+        "Bahami"
+      ],
+      "Bahrain": [
+        "Bahrein"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Bjelorusija"
+      ],
+      "Belgium": [
+        "Belgija"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermudi"
+      ],
+      "Bhutan": [
+        "Butan"
+      ],
+      "Bolivia": [
+        "Bolivija"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius i Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosna i Hercegovina"
+      ],
+      "Botswana": [
+        "Bocvana"
+      ],
+      "Bouvet Island": [
+        "Otok Bouvet"
+      ],
+      "Brazil": [
+        "Brazil"
+      ],
+      "British Indian Ocean Territory": [
+        "Britanski Indijskooceanski teritorij"
+      ],
+      "Brunei Darussalam": [
+        "Brunej Darussalam"
+      ],
+      "Bulgaria": [
+        "Bugarska"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kambodža"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Zelenortska Republika"
+      ],
+      "Cayman Islands": [
+        "Kajmanski otoci"
+      ],
+      "Central African Republic": [
+        "Srednjoafrička Republika"
+      ],
+      "Chad": [
+        "Čad"
+      ],
+      "Chile": [
+        "Čile"
+      ],
+      "China": [
+        "Kina"
+      ],
+      "Christmas Island": [
+        "Božični otoci"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Kokosovi (Keelingovi) otoci"
+      ],
+      "Colombia": [
+        "Kolumbija"
+      ],
+      "Comoros": [
+        "Komori"
+      ],
+      "Congo": [
+        "Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Kongo (Demokratska Republika)"
+      ],
+      "Cook Islands": [
+        "Cookovo Otočje"
+      ],
+      "Costa Rica": [
+        "Kostarika"
+      ],
+      "Croatia": [
+        "Hrvatska"
+      ],
+      "Cuba": [
+        "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Cipar"
+      ],
+      "Czech Republic": [
+        "Češka"
+      ],
+      "Côte d'Ivoire": [
+        "Obala Bjelokosti"
+      ],
+      "Denmark": [
+        "Danska"
+      ],
+      "Djibouti": [
+        "Džibuti"
+      ],
+      "Dominica": [
+        "Dominika"
+      ],
+      "Dominican Republic": [
+        "Dominikanska Republika"
+      ],
+      "Ecuador": [
+        "Ekvador"
+      ],
+      "Egypt": [
+        "Egipat"
+      ],
+      "El Salvador": [
+        "Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Ekvatorska Gvineja"
+      ],
+      "Eritrea": [
+        "Eritreja"
+      ],
+      "Estonia": [
+        "Estonija"
+      ],
+      "Eswatini": [
+        "Svazi"
+      ],
+      "Ethiopia": [
+        "Etiopija"
+      ],
+      "Falkland Islands": [
+        "Falklandski Otoci"
+      ],
+      "Faroe Islands": [
+        "Farski Otoci"
+      ],
+      "Federated States of Micronesia": [
+        "Savezne Države Mikronezije"
+      ],
+      "Fiji": [
+        "Fidži"
+      ],
+      "Finland": [
+        "Finska"
+      ],
+      "France": [
+        "Francuska"
+      ],
+      "French Guiana": [
+        "Francuska Gvajana"
+      ],
+      "French Polynesia": [
+        "Francuska Polinezija"
+      ],
+      "French Southern Territories": [
+        "Francuske južne zemlje"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambija"
+      ],
+      "Georgia": [
+        "Gruzija"
+      ],
+      "Germany": [
+        "Njemačka"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grčka"
+      ],
+      "Greenland": [
+        "Grenland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Gvadalupa"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Gvatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Gvineja"
+      ],
+      "Guinea-Bissau": [
+        "Gvineja Bisau"
+      ],
+      "Guyana": [
+        "Gvajana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Otok Heard i otočje McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Sveta Stolica (Država Vatikanskoga Grada)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Mađarska"
+      ],
+      "Iceland": [
+        "Island"
+      ],
+      "India": [
+        "Indija"
+      ],
+      "Indonesia": [
+        "Indonezija"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irska"
+      ],
+      "Isle of Man": [
+        "Otok Man"
+      ],
+      "Israel": [
+        "Izrael"
+      ],
+      "Italy": [
+        "Italija"
+      ],
+      "Jamaica": [
+        "Jamajka"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordan"
+      ],
+      "Kazakhstan": [
+        "Kazahstan"
+      ],
+      "Kenya": [
+        "Kenija"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuvajt"
+      ],
+      "Kyrgyzstan": [
+        "Kirgistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Latvija"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesoto"
+      ],
+      "Liberia": [
+        "Liberija"
+      ],
+      "Libya": [
+        "Libija"
+      ],
+      "Liechtenstein": [
+        "Lihtenštajn"
+      ],
+      "Lithuania": [
+        "Litva"
+      ],
+      "Luxembourg": [
+        "Luksemburg"
+      ],
+      "Macao": [
+        "Makao"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malavi"
+      ],
+      "Malaysia": [
+        "Malezija"
+      ],
+      "Maldives": [
+        "Maldivi"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Maršalovi otoci"
+      ],
+      "Martinique": [
+        "Martinik"
+      ],
+      "Mauritania": [
+        "Mauritanija"
+      ],
+      "Mauritius": [
+        "Mauricijus"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Meksiko"
+      ],
+      "Moldova": [
+        "Moldavija"
+      ],
+      "Monaco": [
+        "Monako"
+      ],
+      "Mongolia": [
+        "Mongolija"
+      ],
+      "Montenegro": [
+        "Crna Gora"
+      ],
+      "Montserrat": [
+        "Montserat"
+      ],
+      "Morocco": [
+        "Maroko"
+      ],
+      "Mozambique": [
+        "Mozambik"
+      ],
+      "Myanmar": [
+        "Mjanmar"
+      ],
+      "Namibia": [
+        "Namibija"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Nizozemska"
+      ],
+      "New Caledonia": [
+        "Nova Kaledonija"
+      ],
+      "New Zealand": [
+        "Novi Zeland"
+      ],
+      "Nicaragua": [
+        "Nikaragva"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigerija"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Otok Norfolk"
+      ],
+      "North Korea": [
+        "Sjeverna Koreja"
+      ],
+      "North Macedonia": [
+        "Sjeverna Makedonija"
+      ],
+      "Northern Mariana Islands": [
+        "Sjeverni Marijanski Otoci"
+      ],
+      "Norway": [
+        "Norveška"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Nova Gvineja"
+      ],
+      "Paraguay": [
+        "Paragvaj"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipini"
+      ],
+      "Pitcairn": [
+        "Otočje Pitcairn"
+      ],
+      "Poland": [
+        "Poljska"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Portoriko"
+      ],
+      "Qatar": [
+        "Katar"
+      ],
+      "Reunion": [
+        "Reunion"
+      ],
+      "Romania": [
+        "Rumunjska"
+      ],
+      "Russia": [
+        "Rusija"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Sveti Bartolomej"
+      ],
+      "Saint Helena": [
+        "Sveta Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Sveti Kristofor i Nevis"
+      ],
+      "Saint Lucia": [
+        "Sveta Lucija"
+      ],
+      "Saint Martin (French Part)": [
+        "Sveti Martin (francuski dio)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Sveti Petar i Mikelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Sveti Vincent i Grenadini"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sveti Toma i Prinsipe"
+      ],
+      "Saudi Arabia": [
+        "Saudijska Arabija"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Srbija"
+      ],
+      "Seychelles": [
+        "Sejšeli"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slovačka"
+      ],
+      "Slovenia": [
+        "Slovenija"
+      ],
+      "Solomon Islands": [
+        "Solomonski otoci"
+      ],
+      "Somalia": [
+        "Somalija"
+      ],
+      "South Africa": [
+        "Južna Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Južna Georgija i otočje Južni Sandwich"
+      ],
+      "South Korea": [
+        "Južna Koreja"
+      ],
+      "South Ossetia": [
+        "Južna Osetija"
+      ],
+      "South Sudan": [
+        "Južni Sudan"
+      ],
+      "Spain": [
+        "Španjolska"
+      ],
+      "Sri Lanka": [
+        "Šri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard i Jan Mayen otoci"
+      ],
+      "Sweden": [
+        "Švedska"
+      ],
+      "Switzerland": [
+        "Švicarska"
+      ],
+      "Syria": [
+        "Sirija"
+      ],
+      "Taiwan": [
+        "Tajvan"
+      ],
+      "Tajikistan": [
+        "Tadžikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Tajland"
+      ],
+      "Timor-Leste": [
+        "Istočni Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad i Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunis"
+      ],
+      "Turkey": [
+        "Turska"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Otoci Turks i Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukrajina"
+      ],
+      "United Arab Emirates": [
+        "Ujedinjeni Arapski Emirati"
+      ],
+      "United Kingdom": [
+        "Ujedinjeno Kraljevstvo"
+      ],
+      "United States": [
+        "Sjedinjene Američke Države"
+      ],
+      "United States Minor Outlying Islands": [
+        "Mali udaljeni otoci SAD-a"
+      ],
+      "Uruguay": [
+        "Urugvaj"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venecuela"
+      ],
+      "Vietnam": [
+        "Vijetnam"
+      ],
+      "Virgin Islands, British": [
+        "Britanski Djevičanski otoci"
+      ],
+      "Virgin Islands, U.S.": [
+        "Američki Djevičanski otoci"
+      ],
+      "Wallis and Futuna": [
+        "Wallis i Futuna"
+      ],
+      "Western Sahara": [
+        "Zapadna Sahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Zambija"
+      ],
+      "Zimbabwe": [
+        "Zimbabve"
+      ],
+      "Åland Islands": [
+        "Ålandski otoci"
       ]
     },
     "Custom frequency option": {
@@ -876,6 +1673,9 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } je otkazan."
+      ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } je ažuriran.\n${ eventDetailsText }"
       ],
@@ -1077,6 +1877,12 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Neki nazivi vaših mapa nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "Neki nazivi vaših oznaka nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Neki nazivi vaših oznaka premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
       ],
@@ -1089,6 +1895,9 @@
       "The sending key is not valid": [
         "Ključ slanja nije važeći"
       ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "Vaš vanjski račun ima previše mapa. Prilagodite uvoz kako biste izbrisali neke mape."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Došlo je do pogreške prilikom izvoza vCards-a kontakata"
       ],
@@ -1097,6 +1906,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "Naziv mape nije dostupan. Odaberite drugi naziv."
       ],
       "Trusted keys are not valid for sending": [
         "Pouzdani ključevi nisu valjani za slanje"
@@ -1249,6 +2061,9 @@
       "Please ${ refresh } or check your connection.": [
         "Molimo ${ refresh } ili provjerite vezu."
       ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Došlo je do problema pri povezivanju s ${ BRAND_NAME }om."
+      ],
       "You may also ${ refresh } or try again later.": [
         "Možete ${ refresh } ili pokušati ponovo kasnije."
       ]
@@ -1282,6 +2097,9 @@
       "Invalid response": [
         "Nevažeći odgovor"
       ],
+      "Unexpected error": [
+        "Neočekivana pogreška"
+      ],
       "Unsupported invitation": [
         "Nepodržana pozivnica"
       ],
@@ -1299,6 +2117,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Vaš je odgovor poslan, ali događaj nije moguće dodati u vaš kalendar"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Vaš je odgovor poslan, ali događaj nije moguće ažurirati u vašem kalendaru"
       ]
     },
     "Event title": {
@@ -1420,6 +2241,27 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
+        "${ BRAND_NAME } se ne može povezati s vašim računom. Molimo osigurajte sljedeće:"
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } se ne može povezati s vašim vanjskim računom. Molimo provjerite jesu li adresa poslužitelja pošte i broj porta ispravni."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "${ BRAND_NAME } se ne može povezati s vašim Yahoo računom. Molimo osigurajte sljedeće:"
+      ],
+      "2-step verification is enabled in your external account.": [
+        "Dvofaktorska autentikacija je omogućena na vašem vanjskom računu."
+      ],
+      "2-step verification is enabled in your external email account.": [
+        "Dvofaktorska autentikacija je omogućena na vašem računu e-pošte."
+      ],
+      "IMAP access is enabled in your external account.": [
+        "IMAP pristup je omogućen za vaš vanjski račun."
+      ],
+      "IMAP access is enabled in your Yahoo account.": [
+        "IMAP pristup je omogućen za vaš Yahoo račun."
+      ],
       "Too many recent requests. Please try again in a few moments.": [
         "Previše nedavnih zahtjeva. Pokušajte ponovno za nekoliko trenutaka."
       ],
@@ -1428,6 +2270,24 @@
       ],
       "Use your app password instead of your regular password if:": [
         "Upotrijebite lozinku za aplikaciju umjesto vaše uobičajene lozinke ako:"
+      ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Vaša lozinka za aplikaciju je točna. ${ boldNot } koristite vašu uobičajenu lozinku."
+      ],
+      "Your email account requires an app password to export your data.": [
+        "Vaš račun e-pošte zahtijeva lozinku aplikacije za izvoz podataka."
+      ],
+      "Your email account requires one to export your data.": [
+        "Vaš račun e-pošte zahtijeva jedan za izvoz podataka."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Vaša adresa e-pošte i lozinka za aplikaciju su točne. ${ boldNot } koristite vašu uobičajenu lozinku."
+      ],
+      "Your email address and password are correct.": [
+        "Vaša adresa e-pošte i lozinka su točni."
+      ],
+      "Your password is correct.": [
+        "Vaša lozinka je točna."
       ]
     },
     "Import error emphasis": {
@@ -1444,6 +2304,17 @@
       ],
       "Export": [
         "Izvoz"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "lozinka aplikacije"
+      ],
+      "ICS file": [
+        "ICS datoteka"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import provider": {
@@ -1717,6 +2588,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
       ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ${ BRAND_NAME }a, ali koriste PGP kompatibilne usluge."
+      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Ukloniti će se neki vaši odgovori na događaje koje je organizator prethodno ažurirao."
       ],
@@ -1821,9 +2695,6 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Otvoriti će te još jednu karticu preglednika i posjetiti:"
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Možete mijenjati samo svojstva osobnih događaja pošto ne možete slati e-poruke s adrese organizatora."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
@@ -1938,6 +2809,9 @@
       "Browser version": [
         "Verzija preglednika"
       ],
+      "Calendar": [
+        "Kalendar"
+      ],
       "Category": [
         "Kategorija"
       ],
@@ -2000,6 +2874,9 @@
       ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Location": [
+        "Lokacija"
       ],
       "Mail Server (IMAP)": [
         "Poslužitelj e-pošte (IMAP)"
@@ -2151,6 +3028,9 @@
       ],
       "Upgrade account": [
         "Nadogradi račun"
+      ],
+      "What’s this?": [
+        "Što je ovo?"
       ]
     },
     "Loading info": {
@@ -2336,6 +3216,11 @@
         "Naziv oznake"
       ]
     },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Povratne informacije"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Kontaktna grupa je stvorena"
@@ -2473,9 +3358,17 @@
         "Nepoznato"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Dobrodošli u ${ appName }"
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "Sljedeće"
+      ],
+      "Start using ${ appName }": [
+        "Započnite koristiti ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -2619,6 +3512,9 @@
       ],
       "Search for name or email": [
         "Pretraga po imenu ili adresi e-pošte"
+      ],
+      "Select": [
+        "Odaberi"
       ],
       "Start typing an email address": [
         "Započnite pisati adresu e-pošte"
@@ -2845,6 +3741,11 @@
         "Uspješna provjera"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Povratna informacija je poslana"
+      ]
+    },
     "Table header": {
       "Action": [
         "Radnja"
@@ -2981,6 +3882,9 @@
       "Clearing data": [
         "Brisanje podataka"
       ],
+      "Contact details": [
+        "Detalji o kontaktu"
+      ],
       "Contact Details": [
         "Detalji o kontaktu"
       ],
@@ -3039,6 +3943,9 @@
       "Enter your password": [
         "Unesite vašu lozinku"
       ],
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Unesite korisničko ime ili ${ MAIL_APP_NAME } adresu e-pošte"
+      ],
       "Error": [
         "Pogreška"
       ],
@@ -3050,6 +3957,9 @@
       ],
       "Exporting contacts": [
         "Izvoz kontakata"
+      ],
+      "Feedback": [
+        "Povratne informacije"
       ],
       "Groups": [
         "Grupe"
@@ -3183,6 +4093,9 @@
       "Select which calendar to add this event to": [
         "Odaberite u koji kalendar će se dodati ovaj događaj"
       ],
+      "Send feedback": [
+        "Pošalji povratne informacije"
+      ],
       "Send invitation": [
         "Pošalji pozivnicu"
       ],
@@ -3218,6 +4131,9 @@
       ],
       "Warning": [
         "Upozorenje"
+      ],
+      "Warning: suspected fake website": [
+        "Upozorenje: sumnja na lažnu web-stranicu"
       ],
       "What's new": [
         "Što je novo"
@@ -3264,6 +4180,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Odaberite PGP shemu koja će se koristiti prilikom potpisivanja ili šifriranja korisniku. Imajte na umu da PGP/Inline prisilno šalje obične tekstualne poruke"
       ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "Podmape sustava prikazat će se kao zasebne mape u ${ MAIL_APP_NAME }u"
+      ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prenesite javni ključ za omogućavanje slanja end-to-end šifriranih e-poruka na ovu adresu e-pošte"
       ],
@@ -3279,6 +4198,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } će spojiti sve mape s istim imenom. Da biste to izbjegli, promijenite imena prije uvoza."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } će prenijeti što više podataka, počevši od vaših najnovijih poruka."
+      ],
       "Are you sure you want to discard your import?": [
         "Jeste li sigurni da želite odbaciti vaš uvoz?"
       ],
@@ -3321,6 +4246,12 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Ova radnja je nepovratna. Unesite riječ ${ boldDanger }} u polje da biste nastavili."
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Ova značajka zahtijeva plaćeni ${ BRAND_NAME } račun"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Ovaj uvoz može premašiti kapacitet prostora za pohranu koji je trenutno dostupan na vašem ${ BRAND_NAME } računu. Razmislite o prilagodbi uvoza."
       ]
     },
     "Weekly recurring event, frequency": {

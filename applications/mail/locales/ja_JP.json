@@ -164,6 +164,9 @@
       "Close": [
         "閉じる"
       ],
+      "Close & discard": [
+        "閉じて破棄"
+      ],
       "Close composer": [
         "閉じる"
       ],
@@ -542,6 +545,12 @@
       "Mailbox layout": [
         "受信トレイのレイアウト"
       ],
+      "Manage folders": [
+        "フォルダーを管理"
+      ],
+      "Manage labels": [
+        "ラベルを管理"
+      ],
       "Mark as read": [
         "既読にする"
       ],
@@ -679,6 +688,9 @@
       ],
       "Open calendar": [
         "カレンダーを開く"
+      ],
+      "Open composer": [
+        "作成画面を開く"
       ],
       "Open get started checklist modal": [
         "“始めましょう” チェックリストモーダルを開く"
@@ -862,6 +874,9 @@
       ],
       "Send feedback": [
         "フィードバックを送信"
+      ],
+      "Send quick reply": [
+        "クイック返信を送信"
       ],
       "Send read receipt": [
         "開封確認を送信する"
@@ -1098,6 +1113,9 @@
     "action": {
       "Search messages": [
         "メッセージを検索"
+      ],
+      "Send quick reply": [
+        "クイック返信を送信"
       ]
     },
     "Actions message": {
@@ -3061,6 +3079,9 @@
       "Email address invalid": [
         "メールアドレスが不正です"
       ],
+      "Email address is required": [
+        "メールアドレスは必須です"
+      ],
       "Email is not valid": [
         "メールアドレスが無効です"
       ],
@@ -3096,6 +3117,9 @@
       ],
       "Image upload failed": [
         "画像のアップロードに失敗しました"
+      ],
+      "IMAP server is required": [
+        "IMAP サーバーは必須です"
       ],
       "Incorrect login credentials. Please try again.": [
         "無効なログイン情報です。再度お試しください。"
@@ -3160,6 +3184,9 @@
       "Not a valid number": [
         "無効な番号です"
       ],
+      "Password is required": [
+        "パスワードは必須です"
+      ],
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
@@ -3174,6 +3201,9 @@
       ],
       "Please set a password": [
         "パスワードを設定してください"
+      ],
+      "Port is required": [
+        "ポートは必須です"
       ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
@@ -3959,11 +3989,20 @@
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "予定を暗号化し、カレンダーに追加中...${ totalToImport }件中${ totalImported }件が完了"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "インポートが完了するまでタブを閉じないでください。"
@@ -3988,6 +4027,21 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 件の連絡先が暗号化され、連絡先リストに追加されました"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先が正常にインポートされました。"
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
       ]
     },
     "Import contact error": {
@@ -4952,6 +5006,12 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "ニュースレターや迷惑メールの配信リストから、${ maskMyEmailButton }で自分のアドレスを守りましょう。"
+      ],
+      "Quick reply": [
+        "クイック返信"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "${ recipientsAsString } にクイック返信"
       ],
       "Recipient: ": [
         "宛先 "

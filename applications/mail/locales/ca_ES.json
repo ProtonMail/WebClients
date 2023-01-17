@@ -164,6 +164,9 @@
       "Close": [
         "Tanca"
       ],
+      "Close & discard": [
+        "Tancar i descartar"
+      ],
       "Close composer": [
         "Tancar l'editor"
       ],
@@ -683,6 +686,9 @@
       "Open calendar": [
         "Obrir el calendari"
       ],
+      "Open composer": [
+        "Obrir el redactor"
+      ],
       "Open get started checklist modal": [
         "Obrir la finestra de llista de comprovació per a començar"
       ],
@@ -779,6 +785,12 @@
       "Rename": [
         "Canvia el nom"
       ],
+      "Reply": [
+        "Respondre"
+      ],
+      "Reply all": [
+        "Respondre a tothom"
+      ],
       "Reply securely": [
         "Respon de manera segura"
       ],
@@ -856,6 +868,9 @@
       ],
       "Send feedback": [
         "Enviar comentaris"
+      ],
+      "Send quick reply": [
+        "Enviar una resposta ràpida"
       ],
       "Send read receipt": [
         "Enviar confirmació de lectura"
@@ -1093,6 +1108,9 @@
     "action": {
       "Search messages": [
         "Cerqueu missatges"
+      ],
+      "Send quick reply": [
+        "Enviar una resposta ràpida"
       ]
     },
     "Actions message": {
@@ -3185,6 +3203,9 @@
       "Please set a password": [
         "Establiu una contrassenya"
       ],
+      "Port is required": [
+        "Es requereix el port"
+      ],
       "Primary address key is not decrypted": [
         "La clau de la adreça primària no està desxifrada"
       ],
@@ -3808,6 +3829,9 @@
       ],
       "Subject: ${ subject }": [
         "Assumpte: ${ subject }"
+      ],
+      "To: ${ toString }": [
+        "Per: ${ toString }"
       ]
     },
     "Get started checklist completion": {
@@ -3964,11 +3988,20 @@
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "S'ha produït un error xifrant i afegint els teus esdeveniments. No s’ha pogut importar cap esdeveniment."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint esdeveniments al calendari: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esdeveniment importat. L’esdeveniment importat ara apareixerà al vostre calendari."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Esdeveniments importats. Els esdeveniments importats ara apareixeran al vostre calendari."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No tanqueu la pestanya abans de finalitzar el procés d'importació."
@@ -4002,6 +4035,18 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contacte xifrat i afegit a la vostra llista de contactes",
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "S'ha produït un error xifrant i afegint el vostre contacte. No s'ha pogut importar cap contacte."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "S'ha produït un error xifrant i afegint els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contacte importat. El contacte importat ja apareix a la vostra llista de contactes."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contactes importats. Els contactes importats ja apareixen a la vostra llista de contactes."
       ]
     },
     "Import contact error": {
@@ -4794,6 +4839,9 @@
       "Loading preview": [
         "S'està carregant la previsualització"
       ],
+      "Loading...": [
+        "Carregant..."
+      ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
       ],
@@ -4968,6 +5016,12 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Protegiu el vostre correu electrònic de filtracions a llistes de correu brossa amb ${ maskMyEmailButton }."
+      ],
+      "Quick reply": [
+        "Resposta ràpida"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "Resposta ràpida a ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Destinatari: "
@@ -5975,6 +6029,12 @@
       "From:": [
         "De:"
       ],
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
       ],
@@ -6214,6 +6274,12 @@
       ],
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "Per: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Per: ${ toEmail }"
       ],
       "Toolbar": [
         "Barra d'eines"
@@ -6796,6 +6862,9 @@
       ],
       "Password has been set successfully": [
         "La contrasenya s'ha establert correctament"
+      ],
+      "Senders blocked": [
+        "Remitents bloquejats"
       ]
     },
     "Onboarding": {

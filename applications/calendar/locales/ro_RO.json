@@ -3769,9 +3769,6 @@
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
       ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Puteți modifica doar proprietățile evenimentelor personale deoarece nu puteți trimite e-mailuri de la adresa organizatorului."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
@@ -4328,9 +4325,9 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele din ${ itemsToImportCount } dosar și etichetează-l ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } dosare și etichetează-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } dosare și etichetează-le ca ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele dintr-o etichetă și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -5123,9 +5120,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } nu mai este în stadiu beta! Oferiți fișierelor aceeași securitate pe care o primesc și e-mailurile."
       ],
-      "Don't miss any events": [
-        "Nu ratați niciun eveniment"
-      ],
       "Easily accept invites": [
         "Acceptați ușor invitații"
       ],
@@ -5143,9 +5137,6 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Încercați ${ DRIVE_APP_NAME }"
-      ],
-      "You can now add notifications to calendars you subscribed to.": [
-        "Acum puteți adăuga notificări la calendarele la care v-ați abonat."
       ],
       "You can subscribe to external calendars and read their events.": [
         "Vă puteți abona la calendare externe și să le citiți evenimentele."
