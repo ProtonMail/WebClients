@@ -10,16 +10,15 @@ interface Props {
     isLabelMapping: boolean;
     mapping: MailImportFields['mapping'];
     onChange: (nextMapping: MailImportFields['mapping']) => void;
+    onErroredInputSaved: (fieldId: MailImportFields['mapping'][number]['id']) => void;
     toEmail: MailImportFields['importAddress']['Email'];
-    setNoEdits: (value: boolean) => void;
 }
 
-const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, setNoEdits }: Props) => {
-    const { handleToggleCheckbox, items, updateIsEditing, handleRenameItem } = useManageFolders({
+const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, onErroredInputSaved }: Props) => {
+    const { handleToggleCheckbox, items, handleRenameItem } = useManageFolders({
         isLabelMapping,
         mapping,
         onChange,
-        setNoEdits,
     });
 
     return (
@@ -35,8 +34,8 @@ const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, 
                                 index={index}
                                 folderItem={item}
                                 onRename={handleRenameItem}
+                                onErrorSaved={() => onErroredInputSaved(item.id)}
                                 onToggleCheck={handleToggleCheckbox}
-                                updateEditing={updateIsEditing}
                             />
                         ))}
                     </ul>

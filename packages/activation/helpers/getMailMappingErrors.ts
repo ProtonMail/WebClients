@@ -1,20 +1,10 @@
-import { FolderMapItem } from '@proton/activation/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
 import { MAX_FOLDER_LIMIT } from '@proton/activation/constants';
 import { MailImportPayloadError } from '@proton/activation/interface';
 import { Label } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
-import {
-    hasMergeWarning,
-    isNameAlreadyUsed,
-    isNameEmpty,
-    isNameReserved,
-    isNameTooLong,
-    mappingHasNameTooLong,
-    mappingHasReservedNames,
-    mappingHasUnavailableNames,
-} from './errorsMapping';
+import { hasMergeWarning, isNameAlreadyUsed, isNameEmpty, isNameReserved, isNameTooLong } from './errorsMapping';
 
 const {
     EMPTY,
@@ -26,63 +16,27 @@ const {
     MERGE_WARNING,
 } = MailImportPayloadError;
 
-export const getMailMappingErrors = (
-    mapping: MailImportFolder[],
-    isLabelMapping: boolean,
-    labels: Label[],
-    folders: Folder[]
-): MailImportPayloadError[] => {
-    const checkedMapping = mapping.filter((m) => m.checked);
-
-    const hasMaxFoldersError = checkedMapping.length + folders.length >= MAX_FOLDER_LIMIT;
-    const hasUnavailableNamesError = mappingHasUnavailableNames(
-        checkedMapping,
-        isLabelMapping ? folders : labels,
-        isLabelMapping
-    );
-    const hasNameTooLong = mappingHasNameTooLong(checkedMapping);
-    const hasReservedNamesError = mappingHasReservedNames(checkedMapping);
-
-    const errors = [];
-
-    if (hasMaxFoldersError) {
-        errors.push(MAX_FOLDERS_LIMIT_REACHED);
-    }
-    if (hasNameTooLong) {
-        errors.push(isLabelMapping ? LABEL_NAMES_TOO_LONG : FOLDER_NAMES_TOO_LONG);
-    }
-    if (hasUnavailableNamesError) {
-        errors.push(UNAVAILABLE_NAMES);
-    }
-    if (hasReservedNamesError) {
-        errors.push(RESERVED_NAMES);
-    }
-
-    return errors;
-};
-
 export const getMailMappingError = (
-    item: FolderMapItem,
+    item: MailImportFolder,
     labels: Label[],
     folders: Folder[],
-    collection: FolderMapItem[],
+    collection: MailImportFolder[],
     isLabelMapping: boolean
 ): MailImportPayloadError[] => {
     const errors: MailImportPayloadError[] = [];
 
-    const paths = [
+    const unavailableNameErrorPaths = [
         // item ids who are checked and not current item
         ...collection.filter((item) => item.id !== item.id && item.checked).map((m) => m.id),
-        ...labels.map((item) => item.Path),
-        ...folders.map((item) => item.Path),
+        ...(isLabelMapping ? labels.map((item) => item.Path) : folders.map((item) => item.Path)),
     ];
 
     const itemName = item.protonPath[item.protonPath.length - 1];
     const hasFoldersTooLongError = item.checked && isNameTooLong(itemName);
     const hasReservedNamesError = item.checked && isNameReserved(itemName);
-    const hasUnavailableNamesError = isNameAlreadyUsed(itemName, paths);
+    const hasUnavailableNamesError = isNameAlreadyUsed(itemName, unavailableNameErrorPaths);
     const hasEmptyError = isNameEmpty(itemName);
-    const hasMergeWarningError = hasMergeWarning(collection, item);
+    const hasMergeWarningError = hasMergeWarning(collection, item, isLabelMapping);
 
     if (hasFoldersTooLongError) {
         errors.push(isLabelMapping ? LABEL_NAMES_TOO_LONG : FOLDER_NAMES_TOO_LONG);
@@ -101,4 +55,42 @@ export const getMailMappingError = (
     }
 
     return errors;
+};
+
+type GetMailMappingErrorsResult = {
+    errors: MailImportPayloadError[];
+    erroredIds: MailImportFolder['id'][];
+};
+export const getMailMappingErrors = (
+    importMapping: MailImportFolder[],
+    isLabelMapping: boolean,
+    labels: Label[],
+    folders: Folder[]
+): GetMailMappingErrorsResult => {
+    const checkedMapping = importMapping.filter((m) => m.checked);
+
+    const hasMaxFoldersError = checkedMapping.length + folders.length >= MAX_FOLDER_LIMIT;
+
+    const errorsSet = new Set<MailImportPayloadError>([]);
+    const erroredIds: MailImportFolder['id'][] = [];
+
+    importMapping.forEach((item) => {
+        const itemErrors = getMailMappingError(item, labels, folders, importMapping, isLabelMapping);
+        if (itemErrors.length) {
+            itemErrors.forEach((error) => {
+                errorsSet.add(error);
+            });
+            erroredIds.push(item.id);
+        }
+    });
+
+    // Check only on mapping
+    if (hasMaxFoldersError) {
+        errorsSet.add(MAX_FOLDERS_LIMIT_REACHED);
+    }
+
+    return {
+        errors: Array.from(errorsSet),
+        erroredIds,
+    };
 };

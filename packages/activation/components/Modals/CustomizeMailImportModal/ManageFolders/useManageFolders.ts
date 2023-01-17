@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import { useFolders, useLabels } from '@proton/components/hooks';
 
 import { FolderMapItem, MailImportFields } from '../CustomizeMailImportModal.interface';
@@ -9,21 +7,13 @@ interface Props {
     mapping: MailImportFields['mapping'];
     onChange: (nextMapping: MailImportFields['mapping']) => void;
     isLabelMapping: boolean;
-    setNoEdits: (value: boolean) => void;
 }
 
-const useManageFolders = ({ mapping, isLabelMapping, onChange, setNoEdits }: Props) => {
+const useManageFolders = ({ mapping, isLabelMapping, onChange }: Props) => {
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
 
     const items: FolderMapItem[] = formatItems({ mapping, isLabelMapping, folders, labels });
-    const [isEditing, setIsEditing] = useState<boolean[]>(() => items.map((item) => item.errors.length > 0));
-
-    const updateIsEditing = (index: number) => {
-        const newIsEditing = [...isEditing];
-        newIsEditing[index] = false;
-        setIsEditing(newIsEditing);
-    };
 
     const handleToggleCheckbox = (index: number, checked: boolean) => {
         const newFolders = [...items];
@@ -52,15 +42,8 @@ const useManageFolders = ({ mapping, isLabelMapping, onChange, setNoEdits }: Pro
         onChange(formatMapping(newFolders));
     };
 
-    useEffect(() => {
-        if (isEditing.every((item) => !item)) {
-            setNoEdits(true);
-        }
-    }, [isEditing]);
-
     return {
         items,
-        updateIsEditing,
         handleRenameItem,
         handleToggleCheckbox,
     };
