@@ -11,6 +11,7 @@ interface Props {
     itemOptions?: React.ReactNode;
     shouldDisplayTotal: boolean;
     hideCountOnHover: boolean;
+    onRefresh?: (event: React.MouseEvent<Element>) => void;
 }
 
 const { GROUP } = VIEW_MODE;
@@ -20,6 +21,7 @@ const LocationAside = ({
     unreadCount = 0,
     active = false,
     refreshing = false,
+    onRefresh,
     weak = false,
     shouldDisplayTotal,
     hideCountOnHover,
@@ -51,6 +53,7 @@ const LocationAside = ({
                 <ReloadSpinner
                     className={classnames([unreadCount > 0 ? 'mr0-5' : 'mr0-15'])}
                     refreshing={refreshing}
+                    onRefresh={onRefresh}
                     data-testid="navigation-link:refresh-folder"
                 />
             )}
