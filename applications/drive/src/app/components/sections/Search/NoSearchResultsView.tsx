@@ -33,7 +33,9 @@ export const NoSearchResultsView = () => {
     return (
         <EmptyViewContainer imageProps={{ src: noResultSearchSvg, alt: c('Info').t`No results found` }}>
             <h3 className="text-bold">{c('Title').t`No results found`}</h3>
-            <p data-if="folder">{c('Info').t`Try different keywords`}</p>
+            <p data-if="folder" className="color-weak mb0-5">{c('Info')
+                .t`Try searching by file name, date, or type.`}</p>
+            <p className="color-weak mt0">{c('Info').t`Also try looking in Trash.`}</p>
         </EmptyViewContainer>
     );
 };
