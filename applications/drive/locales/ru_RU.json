@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
       "Authenticate": [
         "Аутентифицировать"
       ],
@@ -336,7 +339,7 @@
         "Управление папками"
       ],
       "Manage labels": [
-        "Управление метками"
+        "Управление ярлыками"
       ],
       "Manage link": [
         "Управлять ссылкой"
@@ -1973,7 +1976,7 @@
         "Не удалось загрузить изображение"
       ],
       "IMAP server is required": [
-        "Нужно укзать IMAP-сервер"
+        "Нужно укзать сервер IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
         "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
@@ -3095,6 +3098,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы уверены, что хотите безвозвратно удалить выбранные элементы из корзины?"
       ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
@@ -3503,8 +3509,8 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Не все файлы были переданы. Попробуйте загрузить или скачать файлы еще раз."
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }."
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Примечание: данные все еще могут быть доступны локально на устройствах, на которых вы установили ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "из"
@@ -4520,6 +4526,12 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортировать все сообщения с ${ itemsToImportCount } ярлыком и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",

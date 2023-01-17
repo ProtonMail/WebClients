@@ -459,6 +459,12 @@
       "Manage communication preferences": [
         "Beheer communicatievoorkeuren"
       ],
+      "Manage folders": [
+        "Mappen beheren"
+      ],
+      "Manage labels": [
+        "Labels beheeren"
+      ],
       "Mark as default": [
         "Markeren als standaard"
       ],
@@ -501,10 +507,10 @@
       "Not spam": [
         "Geen spam"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -555,11 +561,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Reload": [
         "Opnieuw laden"
@@ -2878,6 +2884,9 @@
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
       ],
+      "Email address is required": [
+        "E-mailadres is vereist"
+      ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
       ],
@@ -2907,6 +2916,9 @@
       ],
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
+      ],
+      "IMAP server is required": [
+        "IMAP-server is vereist"
       ],
       "Incorrect login credentials. Please try again.": [
         "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
@@ -3011,6 +3023,9 @@
       "Organization not recognized. Try again.": [
         "Organisatie niet herkend. Probeer opnieuw."
       ],
+      "Password is required": [
+        "Wachtwoord is vereist"
+      ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
@@ -3059,6 +3074,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
+      ],
+      "Port is required": [
+        "Poort is vereist"
       ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet ontsleuteld"
@@ -4004,11 +4022,20 @@
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. Er kon geen enkele afspraak worden geïmporteerd."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Versleutelen en toevoegen van contacten: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Versleutelen en toevoegen van afspraken aan uw agenda: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Afspraak succesvol geïmporteerd. De geïmporteerde afspraak zal nu in uw agenda verschijnen."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Afspraken succesvol geïmporteerd. De geïmporteerde afspraken zullen nu in uw agenda verschijnen."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Gelieve het tabblad niet te sluiten voordat het importproces is voltooid."
@@ -4042,6 +4069,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contact versleuteld en toegevoegd aan uw contactenlijst",
         "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contact. Er kon geen contact worden geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contacten. ${ totalImported } van ${ totalToImport } contacten succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contacten. Er kon geen contact worden geïmporteerd."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contactpersoon succesvol geïmporteerd. Het geïmporteerde contact zal nu in uw adresboek verschijnen."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contacten succesvol geïmporteerd. De geïmporteerde contacten zullen nu in uw adresboek verschijnen."
       ]
     },
     "Import contact error": {
@@ -4555,9 +4597,6 @@
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
-      ],
       "and": [
         "en"
       ],
@@ -4904,6 +4943,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Als u een nieuwe herstelzin genereert, wordt uw oude zin gedeactiveerd."
+      ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Kies een ${ BRAND_NAME } e-mailadres om gebruik te maken van alle ${ BRAND_NAME } diensten met inbegrip van ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Haal mijn ${ BRAND_NAME }-adres"
@@ -6834,6 +6876,12 @@
       "Folder location": [
         "Map locatie"
       ],
+      "From: ${ from }": [
+        "Van: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Van: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Van: ${ importedEmail }"
       ],
@@ -7194,6 +7242,12 @@
       "To: ${ emailAddress }": [
         "Naar: ${ emailAddress }"
       ],
+      "To: ${ to }": [
+        "Aan: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Naar: ${ toEmail }"
+      ],
       "Token name": [
         "Tokennaam"
       ],
@@ -7539,6 +7593,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importeer alle berichten van ${ itemsToImportCount } map en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importeer alle berichten van ${ itemsToImportCount } label en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importeer alle berichten van ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"

@@ -2318,7 +2318,7 @@
         "Fuseau horaire"
       ],
       "To-do entry": [
-        "Tâche à réaliser"
+        "Entrée de type tâche à réaliser"
       ],
       "Unknown": [
         "Inconnu"
@@ -3389,8 +3389,8 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Certains fichiers n'ont pas été transférés. Essayez à nouveau de les charger/télécharger."
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }."
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Remarque : les données peuvent encore être disponibles localement sur les appareils sur lesquels vous avez installé ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "sur"
@@ -4398,6 +4398,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"

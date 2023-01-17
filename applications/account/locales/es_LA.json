@@ -507,11 +507,11 @@
       "Not spam": [
         "No es spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -561,11 +561,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "refresque la página"
-      ],
       "Refresh the page": [
         "Refrescar la página"
+      ],
+      "refresh the page": [
+        "refresque la página"
       ],
       "Reload": [
         "Recargar"
@@ -4597,8 +4597,8 @@
       "Amount below minimum (${ amount }).": [
         "Cantidad inferior al mínimo (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
+      "An error occurred while communicating with the extension": [
+        "Ocurrió un error al comunicarse con la extensión"
       ],
       "and": [
         "y"
@@ -4865,6 +4865,9 @@
       ],
       "Enable this address to join this calendar": [
         "Habilite esta dirección para unirse a este calendario"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Habilite TLS o SSL en el servicio externo si está soportado."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Habilitar la recuperación por frase otra vez generará una frase de recuperación nueva."
@@ -7184,6 +7187,12 @@
       ],
       "Signature": [
         "Firma"
+      ],
+      "SMTP port": [
+        "Puerto SMTP"
+      ],
+      "SMTP server": [
+        "Servidor SMTP"
       ],
       "SMTP token": [
         "Token SMTP"
@@ -9921,6 +9930,9 @@
       "Phone number updated": [
         "Número de teléfono actualizado"
       ],
+      "Port copied to clipboard": [
+        "Puerto copiado al portapapeles"
+      ],
       "Preference saved": [
         "Preferencia guardada"
       ],
@@ -9929,6 +9941,9 @@
       ],
       "Resuming import": [
         "Reanudando la importación"
+      ],
+      "Server copied to clipboard": [
+        "Servidor copiado al portapapeles"
       ],
       "Session revoked": [
         "Sesión revocada"

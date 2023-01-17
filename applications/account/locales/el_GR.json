@@ -136,6 +136,9 @@
       "Choose a file or drag it here": [
         "Επιλέξτε ένα αρχείο ή σύρετέ το εδώ"
       ],
+      "Claim it": [
+        "Διεκδικήστε το"
+      ],
       "Clear all formatting": [
         "Απαλοιφή μορφοποιήσεων"
       ],
@@ -490,11 +493,11 @@
       "Not spam": [
         "Μη ανεπιθύμητο"
       ],
-      "Ok": [
-        "Οκ"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "Οκ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -544,11 +547,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Reload": [
         "Ανανέωση"
@@ -588,6 +591,9 @@
       ],
       "Requires a verified recovery email address": [
         "Απαιτεί επαληθευμένη διεύθυνση ανάκτησης"
+      ],
+      "Resend code": [
+        "Επαναποστολή κωδικού"
       ],
       "Reset credentials": [
         "Επαναφορά διαπιστευτηρίων"
@@ -721,6 +727,9 @@
       "Sign out": [
         "Αποσύνδεση"
       ],
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Αποσυνδεθείτε από ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
       "Sign out of all accounts": [
         "Έξοδος από όλους τους λογαριασμούς"
       ],
@@ -804,6 +813,9 @@
       ],
       "Use a different payment method": [
         "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
+      ],
+      "Use authentication code": [
+        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
       ],
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
@@ -1182,6 +1194,17 @@
         "Έχετε ήδη πρόσβαση σε αυτό το ημερολόγιο"
       ]
     },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Κοινοποίηση ημερολογίου"
+      ],
+      "Share with ${ BRAND_NAME } users": [
+        "Κοινοποίηση με ${ BRAND_NAME } χρήστες"
+      ],
+      "Share with anyone": [
+        "Κοινοποίηση με οποιονδήποτε"
+      ]
+    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Εμφάνιση ${ remainingItems } παραπάνω"
@@ -1291,11 +1314,17 @@
       "cerise": [
         "κεράσι"
       ],
+      "cinnabar": [
+        "κιννάβαρη"
+      ],
       "cobalt": [
         "κοβάλτιο"
       ],
       "copper": [
         "χαλκός"
+      ],
+      "cyan-blue azure": [
+        "κυανό-μπλε γαλάζιο"
       ],
       "dandelion": [
         "ραδίκι"
@@ -1305,6 +1334,9 @@
       ],
       "dark midnight blue": [
         "μπλε μεσονυκτίου"
+      ],
+      "dim gray": [
+        "αχνό γκρι"
       ],
       "fern": [
         "φτέρη"
@@ -1317,6 +1349,9 @@
       ],
       "lemon yellow": [
         "λεμονί"
+      ],
+      "light carmine pink": [
+        "ανοιχτό ροζ καρμίνη"
       ],
       "light red": [
         "ανοιχτό κόκκινο"
@@ -1342,6 +1377,15 @@
       "pale cerulean": [
         "χλωμός ουρανός"
       ],
+      "pastel gray": [
+        "παστέλ γκρι"
+      ],
+      "persian plum": [
+        "περσικό δαμασκηνί"
+      ],
+      "persian red": [
+        "περσικό κόκκινο"
+      ],
       "pickle": [
         "τουρσί"
       ],
@@ -1365,6 +1409,9 @@
       ],
       "reef": [
         "ύφαλος"
+      ],
+      "ruddy pink": [
+        "κατακόκκινο ροζ"
       ],
       "sahara": [
         "Σαχάρα"
@@ -1611,6 +1658,9 @@
       "Bolivia": [
         "Βολιβία"
       ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Μπονέρ, Άγιος Ευστάθιος και Σάμπα"
+      ],
       "Bosnia and Herzegovina": [
         "Βοσνία Ερζεγοβίνη"
       ],
@@ -1622,6 +1672,9 @@
       ],
       "Brazil": [
         "Βραζιλία"
+      ],
+      "British Indian Ocean Territory": [
+        "Βρετανικό Έδαφος Ινδικού Ωκεανού"
       ],
       "Brunei Darussalam": [
         "Μπρουνέι"
@@ -1698,6 +1751,9 @@
       "Czech Republic": [
         "Τσεχία"
       ],
+      "Côte d'Ivoire": [
+        "Ακτή Ελεφαντοστού"
+      ],
       "Denmark": [
         "Δανία"
       ],
@@ -1728,6 +1784,9 @@
       "Estonia": [
         "Εσθονία"
       ],
+      "Eswatini": [
+        "Εσουατίνη"
+      ],
       "Ethiopia": [
         "Αιθιοπία"
       ],
@@ -1736,6 +1795,9 @@
       ],
       "Faroe Islands": [
         "Φερόες"
+      ],
+      "Federated States of Micronesia": [
+        "Ομόσπονδες Πολιτείες της Μικρονησίας"
       ],
       "Fiji": [
         "Φίτζι"
@@ -1751,6 +1813,9 @@
       ],
       "French Polynesia": [
         "Γαλλική Πολυνησία"
+      ],
+      "French Southern Territories": [
+        "Γαλλικά Νότια και Ανταρκτικά Εδάφη"
       ],
       "Gabon": [
         "Γκαμπόν"
@@ -1788,6 +1853,9 @@
       "Guatemala": [
         "Γουατεμάλα"
       ],
+      "Guernsey": [
+        "Γκέρνζι"
+      ],
       "Guinea": [
         "Γουινέα"
       ],
@@ -1799,6 +1867,9 @@
       ],
       "Haiti": [
         "Αϊτή"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Νήσοι Χερντ και Μακντόναλντ"
       ],
       "Holy See (Vatican City State)": [
         "Βατικανό"
@@ -1955,6 +2026,9 @@
       ],
       "Mozambique": [
         "Μοζαμβίκη"
+      ],
+      "Myanmar": [
+        "Μιανμάρ"
       ],
       "Namibia": [
         "Ναμίμπια"
@@ -2121,6 +2195,9 @@
       "South Africa": [
         "Νότια Αφρική"
       ],
+      "South Georgia and the South Sandwich Islands": [
+        "Νήσοι Νότια Γεωργία και Νότιες Σάντουιτς"
+      ],
       "South Korea": [
         "Νότια Κορέα"
       ],
@@ -2214,6 +2291,9 @@
       "United States": [
         "Ηνωμένες Πολιτείες"
       ],
+      "United States Minor Outlying Islands": [
+        "Απομακρυσμένες Νησίδες των Ηνωμένων Πολιτειών"
+      ],
       "Uruguay": [
         "Ουρουγουάη"
       ],
@@ -2234,6 +2314,9 @@
       ],
       "Virgin Islands, U.S.": [
         "Αμερικανικές Παρθένες Νήσοι"
+      ],
+      "Wallis and Futuna": [
+        "Ουαλίς και Φουτουνά"
       ],
       "Western Sahara": [
         "Δυτική Σαχάρα"
@@ -2566,6 +2649,9 @@
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο ή",
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια ή"
       ],
+      "Domain not available, try again later": [
+        "Ο τομέας δεν είναι διαθέσιμος. Προσπαθήστε ξανά αργότερα."
+      ],
       "Email address disabled": [
         "Η διεύθυνση email έχει απενεργοποιηθεί"
       ],
@@ -2652,6 +2738,10 @@
       ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
+      ],
+      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
+        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -2741,6 +2831,9 @@
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να λάβετε υποστήριξη πολλαπλών χρηστών"
       ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
+      ],
       "Port is required": [
         "Η θύρα είναι υποχρεωτική"
       ],
@@ -2752,6 +2845,9 @@
       ],
       "Primary key is not valid for sending": [
         "Το πρωτεύον κλειδί δεν είναι έγκυρο για αποστολή"
+      ],
+      "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
+        "Το πρωτεύον κλειδί που ανακτήθηκε για τον ${ BRAND_NAME } χρήστη δεν είναι έγκυρο για αποστολή"
       ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
@@ -2852,6 +2948,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης."
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -2985,6 +3084,9 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
+      "Calendar time zone not supported": [
+        "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
+      ],
       "Component with wrong format": [
         "Συνθετικό λανθασμένης μορφής"
       ],
@@ -3056,6 +3158,9 @@
       ],
       "Start time out of bounds": [
         "Ώρα έναρξης εκτός ορίων"
+      ],
+      "Time zone not supported": [
+        "Μη υποστηριζόμενη ζώνη ώρας"
       ],
       "Timezone": [
         "Ζώνη ώρας"
@@ -3186,6 +3291,9 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να ενημερωθεί στο ημερολόγιό σας."
       ]
     },
     "Event title": {
@@ -3198,8 +3306,14 @@
         "${ totalProcessed }/${ totalToProcess } γεγονός εξάγεται",
         "${ totalProcessed }/${ totalToProcess } γεγονότα εξάγονται"
       ],
+      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
+        "Γίνεται αποκρυπτογράφηση εκδηλώσεων από το ημερολόγιό σας: ${ totalProcessed }/${ totalToProcess }"
+      ],
       "Loading events": [
         "Φόρτωση γεγονότων"
+      ],
+      "None of the events could be exported.": [
+        "Κανένα από τα συμβάντα δεν μπορούσε να εξαχθεί."
       ],
       "Please don't close the tab before the exporting process is finished.": [
         "Παρακαλούμε μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εξαγωγής."
@@ -3361,6 +3475,9 @@
       ]
     },
     "Header": {
+      "Access": [
+        "Πρόσβαση"
+      ],
       "Action": [
         "Ενέργεια"
       ],
@@ -3379,6 +3496,9 @@
       "Key type": [
         "Τύπος κλειδιού"
       ],
+      "Label": [
+        "Ετικέτα"
+      ],
       "Name": [
         "Όνομα"
       ],
@@ -3387,6 +3507,9 @@
       ],
       "Organization key fingerprint": [
         "Αποτύπωμα κλειδιού οργανισμού"
+      ],
+      "Permissions": [
+        "Δικαιώματα"
       ],
       "Status": [
         "Κατάσταση"
@@ -3559,6 +3682,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } δεν υποστηρίζει ${ forNow }:"
+      ],
       "for now": [
         "για τώρα"
       ]
@@ -3747,6 +3873,12 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Αν συνεχίσετε, θα χάσετε την πρόσβαση σε όλα τα τωρινά κρυπτογραφημένα δεδομένα εντός του λογαριασμού σας."
       ],
+      "${ BRAND_NAME } ${ planName } credits earned": [
+        "Κερδήθηκαν πιστώσεις για ${ BRAND_NAME } ${ planName }"
+      ],
+      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "Η ${ BRAND_NAME } διέκοψε μια εισαγωγή επειδή έχασε τη σύνδεση με την άλλη υπηρεσία παροχής ηλεκτρονικού ταχυδρομείου. Παρακαλώ επανασύνδεσε."
+      ],
       "${ calendarName } will be set as default calendar.": [
         "Το ${ calendarName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
       ],
@@ -3764,6 +3896,9 @@
       ],
       "${ emailAddress } is invalid": [
         "Η ${ emailAddress } είναι μη έγκυρη"
+      ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "Το ${ firstRemainingCalendarName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης, ο οποίος αντικαθιστά τόσο τον κωδικό εισόδου όσο και τον κωδικό πρόσβασης θυρίδας. Για μετάβαση σε λειτουργία μονού κωδικού πρόσβασης, πληκτρολογήστε αυτόν που θέλετε και πατήστε Αποθήκευση."
@@ -3867,6 +4002,9 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ένα όνομα που σας βοηθά να αναγνωρίζετε πού το χρησιμοποιείτε, ώστε αργότερα να μπορείτε εύκολα να το ανακαλέσετε ή επεκτείνετε."
       ],
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "Ένα αρχείο ανάκτησης επιτρέπει το ξεκλείδωμα και άνοιγμα των δεδομένων σας μετά από επαναφορά λογαριασμού."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Χρήστης νοείται ένας λογαριασμός συσχετισμένος με μοναδικό όνομα, θυρίδα και πρόσωπο"
       ],
@@ -3890,6 +4028,9 @@
       ],
       "Add a recovery email address": [
         "Προσθήκη ηλ. διεύθυνσης ανάκτησης"
+      ],
+      "add a recovery method": [
+        "προσθήκη μεθόδου ανάκτησης"
       ],
       "Add a recovery phone number": [
         "Προσθήκη ενός τηλεφωνικού αριθμού ανάκτησης"
@@ -3953,6 +4094,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Ποσό χαμηλότερο από το ελάχιστο. (${ amount })."
+      ],
+      "An error occurred while communicating with the extension": [
+        "Παρουσιάστηκε σφάλμα κατά την επικοινωνία με την επέκταση"
       ],
       "and": [
         "και"
@@ -4022,6 +4166,12 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Basic, Plus ή Visionary"
+      ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Πρωτού να δημιουργήσετε αυτήν τη διεύθυνση, πρέπει να δώσετε έναν κωδικό πρόσβασης και να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτήν."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Πρωτού να ενεργοποιήσετε αυτό το λογαριασμό, πρέπει να δώσετε έναν κωδικό πρόσβασης και να δημιουργήσετε κλειδιά κρυπτογράφησης για τη νέα διεύθυνση."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
@@ -4184,6 +4334,9 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Συμπεριλαμβάνεται φιλοξενία email για 10 προσαρμοσμένους τομείς email δωρεάν. Επιπρόσθετοι τομείς μπορούν να προστεθούν έναντι ${ price }."
       ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
+      ],
       "Emailing preference saved": [
         "Η προτίμηση email αποθηκεύτηκε"
       ],
@@ -4195,6 +4348,9 @@
       ],
       "Enable this address to join this calendar": [
         "Ενεργοποιήστε αυτή τη διεύθυνση για συμμετάσχετε σε αυτό το ημερολόγιο"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Ενεργοποιήστε το TLS ή το SSL στην εξωτερική υπηρεσία, εάν υποστηρίζεται."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Η ενεργοποίηση ξανά της ανάκτησης μέσω φράσης θα παράξει μια νέα φράση ανάκτησης."
@@ -4277,6 +4433,9 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Εάν ένας άλλος διαχειριστής άλλαξε αυτόν τον κωδικό πρόσβασης, θα πρέπει να του ζητήσετε τον νέο κωδικό οργανισμού."
       ],
+      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
+        "Εάν η ζώνη ώρας του συστήματος δεν ταιριάζει με την τρέχουσα προτίμηση ζώνης ώρας, θα σας ζητηθεί να την ενημερώσετε (το πολύ μία φορά την ημέρα)."
+      ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Εάν αυτός ο τομέας λαμβάνει αυτή τη στιγμή email, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις email πριν αλλάξετε την εγγραφή MX για να εξασφαλίσετε μια ομαλή μετάβαση."
       ],
@@ -4356,6 +4515,9 @@
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Εισάγετε τα email σας, τα ημερολόγια, και τις επαφές σας από μια άλλη υπηρεσία στην ${ BRAND_NAME }. Θα σας καθοδηγήσουμε σε κάθε βήμα της διαδικασίας και θα κρυπτογραφήσουμε τα δεδομένα κατά τη μετακίνηση. Καλώς ήρθατε στον κόσμο της ιδιωτικότητας."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Σημαντικό: Βεβαιωθείτε ότι έχετε αποθηκεύσει τους κωδικούς ανάκτησης. Διαφορετικά, μπορείτε να χάσετε μόνιμα την πρόσβαση στο λογαριασμό σας αν χάσετε τη συσκευή ελέγχου ταυτότητας δύο παραγόντων."
       ],
@@ -4405,6 +4567,9 @@
       "it’s imperative": [
         "είναι υποχρεωτικό"
       ],
+      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Χρησιμοποιώ το ${ MAIL_APP_NAME } και σκέφτηκα πως θα σου αρέσει. Είναι μια ασφαλής υπηρεσία email που προστατεύει την ιδιωτικότητά σου. Εγγράψου με αυτόν τον σύνδεσμο για να λάβεις 1 μήνα προηγμένων δυνατοτήτων δωρεάν: ${ referrerLink }."
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
       ],
@@ -4419,6 +4584,9 @@
       ],
       "Label all imported messages as": [
         "Επισήμανση όλων των εισαγόμενων μηνυμάτων ως"
+      ],
+      "Labels:": [
+        "Ετικέτες:"
       ],
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
@@ -4462,11 +4630,17 @@
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Για ενεργοποίηση της διεύθυνσής σας, εισέλθετε στο ${ MAIL_APP_NAME }"
       ],
+      "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Τα αρχεία καταγραφής περιλαμβάνουν προσπάθειες ταυτοποίησης για όλες τις υπηρεσίες ${ BRAND_NAME } που χρησιμοποιούν τα διαπιστευτήριά σας ${ BRAND_NAME }."
+      ],
       "lose access to all current encrypted data": [
         "χάσετε την πρόσβαση σε όλα τα τρέχοντα κρυπτογραφημένα δεδομένα"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στη συσκευή επαλήθευσης ταυτότητας δύο παραγόντων ώστε να ρυθμίσετε το λογαριασμό σας. ${ switchButton }."
+      ],
+      "Member": [
+        "Μέλος"
       ],
       "Merged": [
         "Συγχωνευμένα"
@@ -4595,6 +4769,17 @@
       "Plan upgrade required": [
         "Απαιτείται αναβάθμιση πακέτου"
       ],
+      "Please add a password for the user on row": [
+        "Παρακαλούμε προσθέστε ένα κωδικό πρόσβασης για το χρήστη στη σειρά",
+        "Παρακαλούμε προσθέστε κωδικούς πρόσβασης για τους χρήστες στις σειρές"
+      ],
+      "Please add an email address for the user on row": [
+        "Παρακαλούμε προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου για το χρήστη στη σειρά",
+        "Παρακαλούμε προσθέστε διευθύνσεις ηλεκτρονικού ταχυδρομείου για τους χρήστες στις σειρές"
+      ],
+      "Please contact the administrator of the organisation to manage the subscription.": [
+        "Για διαχείριση της συνδρομής, παρακαλούμε επικοινωνήστε με τον διαχειριστή του οργανισμού."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Παρακαλούμε εισαγάγετε τη 12-λεκτη φράση ανάκτησης που σχετίζεται με τον λογαριασμό σας."
       ],
@@ -4709,8 +4894,14 @@
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
       ],
+      "Select what you want to import.": [
+        "Επιλέξτε τι θέλετε να εισάγετε."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Στάλθηκε με διασφαλισμένο ταχυδρομείο <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Ο διακομιστής είναι προσωρινά εκτός"
@@ -4792,6 +4983,10 @@
         "Οι ακόλουθη διευθύνση δεν είναι διαθέσιμη.",
         "Οι ακόλουθες διευθύνσεις δεν είναι διαθέσιμες."
       ],
+      "The following address was not created.": [
+        "Η ακόλουθη διεύθυνση δεν δημιουργήθηκε.",
+        "Η ακόλουθη διευθύνσεις δεν δημιουργήθηκαν."
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Η εφαρμογή Import-Export επιτρέπει την εξαγωγή μηνυμάτων για τοπικά αντίγραφα ασφαλείας και την επαναφορά προηγουμένων αντιγράφων ασφαλείας στον λογαριασμό σας."
       ],
@@ -4852,6 +5047,9 @@
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Αυτό θα κατεβάσει ένα αρχείο με περιεχόμενο το ιδιωτικό σας κλειδί. Προστατέψτε το αρχείο, κρυπτογραφώντας το με κωδικό πρόσβασης."
       ],
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο ${ BRAND_NAME }. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Αυτό θα διαγράψει μόνιμα τα δεδομένα και όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου που σχετίζονται με αυτόν τον χρήστη."
       ],
@@ -4863,6 +5061,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Αυτό θα σας βγάλει εκτός κάθε ενεργής συνεδρίας και θα απενεργοποιήσει την ταυτοποίηση δύο παραγόντων."
+      ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "Αυτός ο οδηγός θα ενεργοποιήσει τον έλεγχο ταυτότητας δύο παραγόντων (2FA) στον λογαριασμό σας ${ BRAND_NAME }. Ο έλεγχος ταυτότητας δύο παραγόντων θα κάνει τον λογαριασμό σας ${ BRAND_NAME } πιο ασφαλή, γι αυτό συνιστούμε να τον ενεργοποιήσετε."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Προς αποφυγή απώλειας δεδομένων, διαγράψτε το μόνο εφόσον γνωρίζετε τι κάνετε ή έχετε εξάγει αντίγραφο."
@@ -4881,6 +5082,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Για να ακολουθείτε την τελευταία εξέλιξη στα προϊόντα ${ BRAND_NAME }, μπορείτε να εγγραφείτε στα διάφορα email μας και να επισκέπτεστε το blog μας κατά διαστήματα."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Για συνέχεια, επιλέξτε μια μέθοδο ανάκτησης λογαριασμού, ώστε να επαληθεύσουμε το αίτημα."
@@ -5044,6 +5248,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
       ],
+      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
+        "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }."
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
       ],
@@ -5071,6 +5278,9 @@
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "Δεν μπορείτε να αποστέλλετε περισσότερη από ${ emailSendLimitNumber } πρόσκληση email για τις επόμενες 24 ώρες",
         "Δεν μπορείτε να αποστέλλετε περισσότερα από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Δεν μπορείτε να προτείνετε χρήστες του ${ MAIL_APP_NAME }."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Δεν μπορείτε να χρησιμοποιήσετε τα διαπιστευτήρια OpenVPN / IKEv2 για να εισέλθετε σε εφαρμογές του ${ VPN_APP_NAME } ή στον πίνακα ελέγχου του. ${ learnMore }"
@@ -5146,6 +5356,9 @@
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Η τράπεζα σας, απαιτεί ασφαλή επαλήθευση 3-D για λόγους ασφαλείας."
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
+        "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
       ],
       "Your data recovery method is set": [
         "Η μέθοδος ανάκτησης των δεδομένων σας έχει οριστεί"
@@ -5589,6 +5802,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } από ${ humanMaxSpace }"
       ],
+      "${ MAIL_APP_NAME } address": [
+        "Διεύθυνση ${ MAIL_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } footer": [
         "Υποσέλιδο ${ MAIL_APP_NAME }"
       ],
@@ -5660,6 +5876,9 @@
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
+      "Auto-detect primary time zone": [
+        "Αυτόματη ανίχνευση κύριας ζώνης ώρας"
+      ],
       "Auto-reply": [
         "Αυτόματη απάντηση"
       ],
@@ -5674,6 +5893,9 @@
       ],
       "Block malware, ads and trackers": [
         "Αποκλεισμός κακόβουλου λογισμικού, διαφημίσεων και ιχνηλατών"
+      ],
+      "Blocked": [
+        "Αποκλεισμένο"
       ],
       "Browser": [
         "Πρόγραμμα περιήγησης"
@@ -5713,6 +5935,9 @@
       ],
       "Color": [
         "Χρώμα"
+      ],
+      "Coming soon": [
+        "Ερχεται σύντομα"
       ],
       "Composer": [
         "Συντάκτης"
@@ -5774,6 +5999,9 @@
       "Create password": [
         "Δημιουργία κωδικού πρόσβασης"
       ],
+      "Credits": [
+        "Πιστώσεις"
+      ],
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
       ],
@@ -5795,8 +6023,14 @@
       "Default language": [
         "Προεπιλεγμένη γλώσσα"
       ],
+      "Default language (${ defaultLanguage })": [
+        "Προεπιλεγμένη γλώσσα (${ defaultLanguage })"
+      ],
       "Default PGP scheme": [
         "Προεπιλεγμένο σχήμα PGP"
+      ],
+      "Default view": [
+        "Προεπιλεγμένη προβολή"
       ],
       "Delete": [
         "Διαγραφή"
@@ -5981,11 +6215,17 @@
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
       ],
+      "Link label": [
+        "Ετικέτα συνδέσμου"
+      ],
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
       ],
       "Mailbox password": [
         "Κωδικός Θυρίδας"
+      ],
+      "Main": [
+        "Κύριο"
       ],
       "Manage folders": [
         "Διαχείριση φακέλων"
@@ -6017,6 +6257,9 @@
       "Name on card": [
         "Όνομα πάνω στην κάρτα"
       ],
+      "Navigation": [
+        "Πλοήγηση"
+      ],
       "New login password": [
         "Νέος κωδικός σύνδεσης"
       ],
@@ -6037,6 +6280,9 @@
       ],
       "Non-standard ports": [
         "Μη τυποποιημένες θύρες"
+      ],
+      "Not spam": [
+        "Μη ανεπιθύμητο"
       ],
       "Notification": [
         "Ειδοποίηση"
@@ -6085,6 +6331,9 @@
       ],
       "Payment method": [
         "Μέθοδος πληρωμής"
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
@@ -6155,11 +6404,26 @@
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
       ],
+      "Send in": [
+        "Αποστολή στα"
+      ],
+      "Show secondary time zone": [
+        "Εμφάνιση δευτερεύουσας ζώνης ώρας"
+      ],
+      "Show week numbers": [
+        "Εμφάνιση αριθμών εβδομάδων"
+      ],
       "Sign external messages": [
         "Υπογράψτε εξωτερικά μηνύματα"
       ],
       "Signature": [
         "Υπογραφή"
+      ],
+      "SMTP port": [
+        "Θύρα SMTP"
+      ],
+      "SMTP server": [
+        "Διακομιστής SMTP"
       ],
       "SMTP token": [
         "Διακριτικό SMTP"
@@ -6320,6 +6584,9 @@
       ]
     },
     "Label for default event notifications": {
+      "All-day event notifications": [
+        "Ολοήμερες ειδοποιήσεις συμβάντος"
+      ],
       "Notifications": [
         "Ειδοποιήσεις"
       ]
@@ -6343,6 +6610,23 @@
       ],
       "VPN connections": [
         "Συνδέσεις VPN"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } company announcements": [
+        "Ανακοινώσεις εταιρείας του ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Ενημερωτικό δελτίο ${ BRAND_NAME } για επιχειρήσεις"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Ενημερωτικό δελτίο ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Προσφορές και προωθήσεις της ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Ανακοινώσεις προϊόντων του ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -6432,6 +6716,9 @@
       "Common sign up issues": [
         "Συνηθισμένα ζητήματα εγγραφής"
       ],
+      "Create account": [
+        "Δημιουργία λογαριασμού"
+      ],
       "Encryption and keys": [
         "Κρυπτογράφηση και κλειδιά"
       ],
@@ -6443,6 +6730,9 @@
       ],
       "How to unlock data": [
         "Πώς να ξεκλειδώσετε τα δεδομένα"
+      ],
+      "Import/export": [
+        "Εισαγωγή/εξαγωγή"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -6479,6 +6769,9 @@
       ],
       "Upgrade account": [
         "Αναβάθμιση λογαριασμού"
+      ],
+      "Upgrade your plan": [
+        "Αναβαθμίστε το πλάνο σας"
       ],
       "View guide": [
         "Προβολή οδηγού"
@@ -7060,8 +7353,14 @@
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* Με διετή συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
       ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Ολοκληρωμένη ιδιωτικότητα και ασφάλεια με όλες τις συνδιασμένες υπηρεσίες ${ BRAND_NAME }."
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
       ]
     },
     "new_plans: Info": {
@@ -7692,6 +7991,14 @@
         "Δωρεάν"
       ]
     },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Κύρια ζώνη ώρας"
+      ],
+      "Secondary time zone": [
+        "Δευτερεύουσα ζώνη ώρας"
+      ]
+    },
     "Private Member": {
       "private": [
         "ιδιωτικό"
@@ -7751,6 +8058,9 @@
       "Verify recovery email?": [
         "Επαλήθευση ηλ. διεύθυνσης ανάκτησης;"
       ],
+      "Verify with email": [
+        "Επαλήθευση με email"
+      ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Η επαλήθευση της ηλ. διεύθυνσής σας αυξάνει τη διασφάλιση του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
       ],
@@ -7789,8 +8099,14 @@
       ]
     },
     "Remove calendar section title": {
+      "Delete calendar?": [
+        "Διαγραφή ημερολογίου?"
+      ],
       "Remove calendar": [
         "Αφαίρεση ημερολογίου"
+      ],
+      "Unsubscribe?": [
+        "Απεγγραφή?"
       ]
     },
     "Restore administrator panel": {
@@ -8209,6 +8525,9 @@
       "Phone number updated": [
         "Ο αριθμός τηλεφώνου ενημερώθηκε"
       ],
+      "Port copied to clipboard": [
+        "Η θύρα αντιγράφηκε στο πρόχειρο"
+      ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
       ],
@@ -8217,6 +8536,9 @@
       ],
       "Resuming import": [
         "Γίνεται συνέχιση εισαγωγής"
+      ],
+      "Server copied to clipboard": [
+        "Ο διακομιστής αντιγράφηκε στο πρόχειρο"
       ],
       "Session revoked": [
         "Η συνεδρία ανακλήθηκε"
@@ -8580,6 +8902,9 @@
       "Confirm downgrade": [
         "Επιβεβαιώστε την υποβάθμιση"
       ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "Επιβεβαιώστε την απώλεια μπόνους ${ BRAND_NAME }"
+      ],
       "Confirm phone number": [
         "Επιβεβαίωση αριθμού τηλεφώνου"
       ],
@@ -8598,8 +8923,15 @@
       "Couldn’t create accounts": [
         "Αποτυχία δημιουργίας λογαριασμών"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Δημιουργία ${ selectedUserIds.length } χρήστη",
+        "Δημιουργία ${ selectedUserIds.length } χρηστών"
+      ],
       "Create public link": [
         "Δημιουργία δημόσιου συνδέσμου"
+      ],
+      "Create user accounts": [
+        "Δημιουργήστε λογαριασμούς χρηστών"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Δημιουργία Λογαριασμού ${ BRAND_NAME }"
@@ -8944,6 +9276,9 @@
       "Previous": [
         "Προηγούμενο"
       ],
+      "Privacy and data collection": [
+        "Απόρρητο και συλλογή δεδομένων"
+      ],
       "Processing...": [
         "Γίνεται επεξεργασία..."
       ],
@@ -8995,6 +9330,9 @@
       "Secure email based in Switzerland": [
         "Ασφαλές email με έδρα την Ελεβετία"
       ],
+      "Security and privacy": [
+        "Ασφάλεια και απόρρητο"
+      ],
       "Security logs": [
         "Καταγραφές διασφάλισης"
       ],
@@ -9015,6 +9353,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
+      ],
+      "Sender image": [
+        "Εικόνα αποστολέα"
       ],
       "Session management": [
         "Διαχείριση συνεδρίας"
@@ -9372,6 +9713,9 @@
       ],
       "Your DKIM signing is working.": [
         "Η υπογραφή σας DKIM λειτουργεί."
+      ],
+      "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
+        "Ίσως ο εξωτερικός λογαριασμός σας έχει εξαντλήσει το όριό του στη μετάδοση ανά 24ωρο. Το ${ BRAND_NAME } θα δοκιμάσει να συνεχίσει την εισαγωγή το συντομότερο δυνατό."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -9500,6 +9844,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "Το ${ BRAND_NAME } θα συγχωνεύσει όλους τους φακέλους ίδιου ονόματος. Για αποφυγή της συγχώνευσης, αλλάξτε τα ονόματα πριν την εισαγωγή."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
+      ],
       "Are you sure you want to delete the address?": [
         "Θέλετε σίγουρα να διαγράψετε τη διεύθυνση;"
       ],
@@ -9524,6 +9874,12 @@
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "Η απενεργοποίηση των αρχείων καταγραφής θα κάνει επίσης πλήρη εκκαθάριση του καταγεγραμμένου ιστορικού σας. Θέλετε σίγουρα να απενεργοποιήσετε τα αρχεία καταγραφής;"
       ],
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "Απενεργοποιώντας αυτήν τη διεύθυνση, δεν θα μπορείτε πλέον να στέλνετε ή να λαμβάνετε μηνύματα χρησιμοποιώντας την, ενώ επίσης θα απενεργοποιηθούν όλα τα συνδεδεμένα προϊόντα ${ BRAND_NAME }. Θέλετε σίγουρα να απενεργοποιήσετε αυτήν τη διεύθυνση;"
+      ],
+      "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
+        "Εάν ακυρώσετε αυτήν την εισαγωγή, δεν θα μπορέσετε να τη συνεχίσετε. Το ${ BRAND_NAME } αποθήκευσε όλη την πρόοδο στον λογαριασμό σας. Ακύρωση οπωσδήποτε;"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
       ],
@@ -9532,6 +9888,9 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Οι ρυθμίσεις ημερομηνίας και ώρας στη συσκευή σας είναι εκτός συγχρονισμού. ${ learnMore }"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας ${ BRAND_NAME }. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."
