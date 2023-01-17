@@ -7,9 +7,9 @@ import {
     isNameEmpty,
     isNameReserved,
     isNameTooLong,
+    mappingHasNameTooLong,
     mappingHasReservedNames,
     mappingHasUnavailableNames,
-    mappinghasNameTooLong,
 } from './errorsMapping';
 
 const smallString = '6NLaLHynY3YPM8gGLncefo5PP7n2Db';
@@ -19,30 +19,26 @@ const longString =
 describe('Acrivation errors mapping', () => {
     describe('isNameTooLong', () => {
         it('Should return false if the folder/label name is smaller than limit', () => {
-            const res = isNameTooLong(true, smallString);
+            const res = isNameTooLong(smallString);
             expect(res).toBe(false);
         });
         it('Should return true if the folder/label name is longer than limit', () => {
-            const res = isNameTooLong(true, longString);
+            const res = isNameTooLong(longString);
             expect(res).toBe(true);
-        });
-        it('Should return false if checked is false but string is too long', () => {
-            const res = isNameTooLong(false, longString);
-            expect(res).toBe(false);
         });
     });
 
     describe('isNameReserved', () => {
         it('Should return false if the name is not reserverd', () => {
-            const res = isNameReserved(true, 'folder');
+            const res = isNameReserved('folder');
             expect(res).toBe(false);
         });
         it('Should return true if the name is reserverd and capitalized', () => {
-            const res = isNameReserved(true, 'Scheduled');
+            const res = isNameReserved('Scheduled');
             expect(res).toBe(true);
         });
         it('Should return true if the name is reserverd and lowercase', () => {
-            const res = isNameReserved(true, 'scheduled');
+            const res = isNameReserved('scheduled');
             expect(res).toBe(true);
         });
     });
@@ -86,34 +82,30 @@ describe('Acrivation errors mapping', () => {
         it('Should return false if the folders/labels mapping has no issue', () => {
             const mapping = [
                 {
-                    checked: true,
                     protonPath: ['parent', 'child'],
                     separator: '/',
                 } as MailImportFolder,
                 {
-                    checked: true,
                     protonPath: ['parent', 'child2'],
                     separator: '/',
                 } as MailImportFolder,
             ];
-            const res = mappinghasNameTooLong(mapping);
+            const res = mappingHasNameTooLong(mapping);
             expect(res).toBe(false);
         });
         it('Should return true if the folders mapping has a name too long', () => {
             const mapping = [
                 {
-                    checked: true,
                     protonPath: ['parent', longString],
                     separator: '/',
                 } as MailImportFolder,
                 {
-                    checked: true,
                     protonPath: ['parent', 'child2'],
                     separator: '/',
                 } as MailImportFolder,
             ];
 
-            const res = mappinghasNameTooLong(mapping);
+            const res = mappingHasNameTooLong(mapping);
             expect(res).toBe(true);
         });
     });
@@ -122,12 +114,10 @@ describe('Acrivation errors mapping', () => {
         it('Should return false if the mapping has no duplicate folder names', () => {
             const mapping = [
                 {
-                    checked: true,
                     protonPath: ['parent', 'child'],
                     separator: '/',
                 } as MailImportFolder,
                 {
-                    checked: true,
                     protonPath: ['parent', 'child2'],
                     separator: '/',
                 } as MailImportFolder,
@@ -164,12 +154,10 @@ describe('Acrivation errors mapping', () => {
         it('Should return false if the mapping has no duplicate label names', () => {
             const mapping = [
                 {
-                    checked: true,
                     protonPath: ['parent', 'child'],
                     separator: '/',
                 } as MailImportFolder,
                 {
-                    checked: true,
                     protonPath: ['parent', 'child2'],
                     separator: '/',
                 } as MailImportFolder,
@@ -204,12 +192,10 @@ describe('Acrivation errors mapping', () => {
         it('Should return true if the mapping has duplicate folder names', () => {
             const mapping = [
                 {
-                    checked: true,
                     protonPath: ['folder1'],
                     separator: '/',
                 } as MailImportFolder,
                 {
-                    checked: true,
                     protonPath: ['folder2'],
                     separator: '/',
                 } as MailImportFolder,
@@ -246,12 +232,10 @@ describe('Acrivation errors mapping', () => {
         it('Should return false if the mapping has duplicate label names', () => {
             const mapping = [
                 {
-                    checked: true,
                     protonPath: ['label1'],
                     separator: '/',
                 } as MailImportFolder,
                 {
-                    checked: true,
                     protonPath: ['label2'],
                     separator: '/',
                 } as MailImportFolder,
@@ -289,12 +273,10 @@ describe('Acrivation errors mapping', () => {
         it('Should return false if no names are reserved in folder mapping', () => {
             const mapping = [
                 {
-                    checked: true,
                     protonPath: ['label1'],
                     separator: '/',
                 } as MailImportFolder,
                 {
-                    checked: true,
                     protonPath: ['label2'],
                     separator: '/',
                 } as MailImportFolder,
@@ -306,12 +288,10 @@ describe('Acrivation errors mapping', () => {
         it('Should return false if no names are reserved in label mapping', () => {
             const mapping = [
                 {
-                    checked: true,
                     protonPath: ['label1'],
                     separator: '/',
                 } as MailImportFolder,
                 {
-                    checked: true,
                     protonPath: ['label2'],
                     separator: '/',
                 } as MailImportFolder,
@@ -323,7 +303,6 @@ describe('Acrivation errors mapping', () => {
         it('Should return true if a folder name is reserved', () => {
             const mapping = [
                 {
-                    checked: true,
                     protonPath: ['Scheduled'],
                     separator: '/',
                 } as MailImportFolder,
@@ -335,7 +314,6 @@ describe('Acrivation errors mapping', () => {
         it('Should return true if a lowercase folder name is reserved in folder mapping', () => {
             const mapping = [
                 {
-                    checked: true,
                     protonPath: ['scheduled'],
                     separator: '/',
                 } as MailImportFolder,
