@@ -21,10 +21,12 @@ const ProtonLogo = ({ variant = 'full', size, className, ...rest }: Props) => {
             width="96"
             height="36"
             fill="none"
+            role="img"
             className={classnames(['logo', size && `icon-${size}p`, variant, className])}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >
+            <title id={`${uid}-title`}>{BRAND_NAME}</title>
             <path
                 fill="#6351E1"
                 d="M0 23.793v6.265h4.397v-5.993a2.199 2.199 0 0 1 2.199-2.199h4.509a7.933 7.933 0 0 0 7.932-7.932A7.932 7.932 0 0 0 11.105 6H0v7.83h4.397v-3.69h6.41a3.754 3.754 0 0 1 3.753 3.753 3.754 3.754 0 0 1-3.753 3.753h-4.66A6.146 6.146 0 0 0 0 23.793z"
@@ -50,7 +52,6 @@ const ProtonLogo = ({ variant = 'full', size, className, ...rest }: Props) => {
                     <stop offset="1" stopColor="#1C0554" />
                 </linearGradient>
             </defs>
-            <title id={`${uid}-title`}>{BRAND_NAME}</title>
         </svg>
     ) : (
         <svg
@@ -64,6 +65,7 @@ const ProtonLogo = ({ variant = 'full', size, className, ...rest }: Props) => {
             aria-labelledby={`${uid}-title`}
             {...rest}
         >
+            <title id={`${uid}-title`}>{BRAND_NAME}</title>
             <path
                 fill={`url(#${uid}-a)`}
                 d="M3.78 26.584v9.36h6.57V26.99a3.285 3.285 0 0 1 3.284-3.285h6.737a11.852 11.852 0 0 0 11.851-11.852A11.851 11.851 0 0 0 20.371 0H3.779v11.7h6.57V6.183h9.577a5.608 5.608 0 1 1 0 11.215h-6.963a9.18 9.18 0 0 0-9.184 9.186z"
@@ -96,7 +98,6 @@ const ProtonLogo = ({ variant = 'full', size, className, ...rest }: Props) => {
                     <stop offset="1" stopColor="#1C0554" />
                 </linearGradient>
             </defs>
-            <title id={`${uid}-title`}>{BRAND_NAME}</title>
         </svg>
     );
 };
