@@ -106,6 +106,14 @@ const SidebarItem = ({
         }
     };
 
+    const handleRefresh = (event: React.MouseEvent<Element>) => {
+        if (refreshing) {
+            return;
+        }
+        event.preventDefault();
+        void withRefreshing(Promise.all([call(), wait(1000)]));
+    };
+
     const canDrop = () => {
         const isSameLabel = currentLabelID === labelID;
         const isNonDroppableFolder = NO_DROP.includes(labelID);
@@ -156,6 +164,7 @@ const SidebarItem = ({
                             weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
                             active={active}
                             refreshing={refreshing}
+                            onRefresh={handleRefresh}
                             shouldDisplayTotal={needsTotalDisplay}
                             hideCountOnHover={hideCountOnHover}
                             itemOptions={itemOptions}
