@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
+      "Attention required": [
+        "需要您的處理"
+      ],
       "Authenticate": [
         "驗證"
       ],
@@ -325,6 +328,12 @@
       ],
       "Log in": [
         "登入"
+      ],
+      "Manage folders": [
+        "管理資料夾"
+      ],
+      "Manage labels": [
+        "管理標籤"
       ],
       "Manage link": [
         "管理連結"
@@ -1921,6 +1930,9 @@
       "Email address invalid": [
         "電郵位址無效"
       ],
+      "Email address is required": [
+        "電郵位址為必填"
+      ],
       "Email is not valid": [
         "電郵無效"
       ],
@@ -1947,6 +1959,9 @@
       ],
       "Image upload failed": [
         "影像上載失敗"
+      ],
+      "IMAP server is required": [
+        "IMAP 伺服器為必填"
       ],
       "Incorrect login credentials. Please try again.": [
         "登入憑證不正確。請再試一次。"
@@ -1993,6 +2008,9 @@
       "Not a valid number": [
         "號碼無效"
       ],
+      "Password is required": [
+        "密碼為必填"
+      ],
       "Passwords do not match": [
         "密碼不一致"
       ],
@@ -2001,6 +2019,9 @@
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "請先修正已標示的衝突以便繼續。"
+      ],
+      "Port is required": [
+        "通訊埠為必填"
       ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被解密"
@@ -2918,6 +2939,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "您確定要從垃圾桶中永久刪除已所選取的項目嗎？"
       ],
+      "Attention required": [
+        "需要您的處理"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
@@ -3314,8 +3338,8 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "並非所有檔案皆已傳輸。請嘗試重新上載或下載檔案。"
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }."
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "備註：資料將會持續在安裝 ${ DRIVE_APP_NAME } 的裝置上保持可用狀態。"
       ],
       "of": [
         "/"
@@ -3979,6 +4003,12 @@
       "Folder name": [
         "資料夾名稱"
       ],
+      "From: ${ from }": [
+        "寄件者: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "寄件者: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "寄件者：${ importedEmail }"
       ],
@@ -4168,6 +4198,12 @@
       "To: ${ emailAddress }": [
         "收件者：${ emailAddress }"
       ],
+      "To: ${ to }": [
+        "收件者：${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "收件者：${ toEmail }"
+      ],
       "Toolbar": [
         "工具列"
       ],
@@ -4307,6 +4343,9 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
       ],

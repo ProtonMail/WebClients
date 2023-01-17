@@ -3446,9 +3446,6 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Nu au fost transferate toate fișierele. Încercați să încărcați sau să descărcați din nou fișierele."
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }."
-      ],
       "of": [
         "din"
       ],
@@ -4460,9 +4457,9 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele din ${ itemsToImportCount } dosar și etichetează-l ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } dosare și etichetează-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } dosare și etichetează-le ca ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele dintr-o etichetă și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",

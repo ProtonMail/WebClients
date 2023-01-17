@@ -328,6 +328,12 @@
       "Log in": [
         "Accedi"
       ],
+      "Manage folders": [
+        "Gestisci cartelle"
+      ],
+      "Manage labels": [
+        "Gestisci etichette"
+      ],
       "Manage link": [
         "Gestisci link"
       ],
@@ -1926,6 +1932,9 @@
       "Email address invalid": [
         "Indirizzo email non valido"
       ],
+      "Email address is required": [
+        "L'indirizzo email è obbligatorio"
+      ],
       "Email is not valid": [
         "Email non valida"
       ],
@@ -1952,6 +1961,9 @@
       ],
       "Image upload failed": [
         "Caricamento dell'immagine fallito"
+      ],
+      "IMAP server is required": [
+        "È richiesto il server IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenziali di accesso non valide. Si prega di riprovare."
@@ -2007,6 +2019,9 @@
         "Uno dei gruppi non ha contatti: ${ noContactGroupList }",
         "Alcuni gruppi non hanno contatti: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Password necessaria"
+      ],
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
@@ -2016,6 +2031,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
+      ],
+      "Port is required": [
+        "La porta è obbligatoria"
       ],
       "Primary address key is not decrypted": [
         "Chiave dell'indirizzo principale non decriptata"
@@ -3371,8 +3389,8 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Non tutti i file sono stati trasferiti. Prova nuovamente a caricare o scaricare i file."
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }."
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Nota: i dati potrebbero essere ancora disponibili localmente sui dispositivi su cui hai installato ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "di"
@@ -4040,6 +4058,12 @@
       "Folder name": [
         "Nome cartella"
       ],
+      "From: ${ from }": [
+        "Da: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Da: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Da: ${ importedEmail }"
       ],
@@ -4229,6 +4253,12 @@
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
       ],
+      "To: ${ to }": [
+        "A: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "A: ${ toEmail }"
+      ],
       "Toolbar": [
         "Barra degli strumenti"
       ],
@@ -4368,6 +4398,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi da ${ itemsToImportCount } cartella ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ itemsToImportCount } cartelle ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importa tutti i messaggi da ${ itemsToImportCount } etichetta ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importa tutti i messaggi da ${ itemsToImportCount } etichette ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"

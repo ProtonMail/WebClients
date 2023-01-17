@@ -507,11 +507,11 @@
       "Not spam": [
         "Acceptată"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
@@ -561,11 +561,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "împrospătați pagina"
       ],
       "Reload": [
         "Reîncărcare"
@@ -4650,8 +4650,8 @@
       "Amount below minimum (${ amount }).": [
         "Suma este sub minimul acceptat (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
+      "An error occurred while communicating with the extension": [
+        "A apărut o eroare în timpul comunicării cu extensia."
       ],
       "and": [
         "și"
@@ -7664,9 +7664,9 @@
     },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele din ${ itemsToImportCount } dosar și etichetează-l ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } dosare și etichetează-le ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } dosare și etichetează-le ca ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importare toate mesajele dintr-o etichetă și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",

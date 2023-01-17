@@ -463,7 +463,7 @@
         "Управление папками"
       ],
       "Manage labels": [
-        "Управление метками"
+        "Управление ярлыками"
       ],
       "Mark as default": [
         "Установить по умолчанию"
@@ -507,11 +507,11 @@
       "Not spam": [
         "Не спам"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
@@ -561,11 +561,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -2942,7 +2942,7 @@
         "Имя папки не может быть пустым."
       ],
       "IMAP server is required": [
-        "Нужно укзать IMAP-сервер"
+        "Нужно укзать сервер IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
         "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
@@ -4703,8 +4703,8 @@
       "Amount below minimum (${ amount }).": [
         "Сумма ниже допустимого минимума (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
+      "An error occurred while communicating with the extension": [
+        "Произошла ошибка во время связи с расширением"
       ],
       "and": [
         "и"
@@ -4975,6 +4975,9 @@
       ],
       "Enable this address to join this calendar": [
         "Включите этот адрес, чтобы присоединиться к этому календарю"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Включите TLS или SSL внешней почтовой службы, если она поддерживает данные протоколы."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Повторное включение восстановления по фразе приведет к созданию новой фразы восстановления."
@@ -7319,6 +7322,12 @@
       "Signature": [
         "Подпись"
       ],
+      "SMTP port": [
+        "Порт SMTP"
+      ],
+      "SMTP server": [
+        "Сервер SMTP"
+      ],
       "SMTP token": [
         "SMTP токен"
       ],
@@ -7730,6 +7739,12 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортировать все сообщения с ${ itemsToImportCount } ярлыком и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -10159,6 +10174,9 @@
       "Phone number updated": [
         "Номер телефона обновлён"
       ],
+      "Port copied to clipboard": [
+        "Порт скопирован в буфер обмена"
+      ],
       "Preference saved": [
         "Настройки сохранены"
       ],
@@ -10167,6 +10185,9 @@
       ],
       "Resuming import": [
         "Импорт заканчивается"
+      ],
+      "Server copied to clipboard": [
+        "Сервер скопирован в буфер обмена"
       ],
       "Session revoked": [
         "Сессия прервана"

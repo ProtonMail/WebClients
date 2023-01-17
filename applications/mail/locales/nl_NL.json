@@ -164,6 +164,9 @@
       "Close": [
         "Sluiten"
       ],
+      "Close & discard": [
+        "Sluit & verwijder"
+      ],
       "Close composer": [
         "Opstelvenster sluiten"
       ],
@@ -545,6 +548,12 @@
       "Mailbox layout": [
         "Mailbox lay-out"
       ],
+      "Manage folders": [
+        "Mappen beheren"
+      ],
+      "Manage labels": [
+        "Labels beheeren"
+      ],
       "Mark as read": [
         "Markeer als gelezen"
       ],
@@ -683,6 +692,9 @@
       "Open calendar": [
         "Agenda openen"
       ],
+      "Open composer": [
+        "Open het opstelvenster"
+      ],
       "Open get started checklist modal": [
         "Open get started checklist modal"
       ],
@@ -779,6 +791,12 @@
       "Rename": [
         "Hernoem"
       ],
+      "Reply": [
+        "Antwoord"
+      ],
+      "Reply all": [
+        "Antwoord allen"
+      ],
       "Reply securely": [
         "Veilig beantwoorden"
       ],
@@ -859,6 +877,9 @@
       ],
       "Send feedback": [
         "Feedback versturen"
+      ],
+      "Send quick reply": [
+        "Stuur een snel antwoord"
       ],
       "Send read receipt": [
         "Leesbevestiging verzenden"
@@ -1096,6 +1117,9 @@
     "action": {
       "Search messages": [
         "Doorzoek berichten"
+      ],
+      "Send quick reply": [
+        "Stuur een snel antwoord"
       ]
     },
     "Actions message": {
@@ -3073,6 +3097,9 @@
       "Email address invalid": [
         "E-mailadres is ongeldig"
       ],
+      "Email address is required": [
+        "E-mailadres is vereist"
+      ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
       ],
@@ -3108,6 +3135,9 @@
       ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
+      ],
+      "IMAP server is required": [
+        "IMAP-server is vereist"
       ],
       "Incorrect login credentials. Please try again.": [
         "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
@@ -3181,6 +3211,9 @@
         "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
         "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Wachtwoord is vereist"
+      ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
@@ -3196,6 +3229,9 @@
       ],
       "Please set a password": [
         "Stel een wachtwoord in"
+      ],
+      "Port is required": [
+        "Poort is vereist"
       ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet ontsleuteld"
@@ -3990,11 +4026,20 @@
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. Er kon geen enkele afspraak worden geïmporteerd."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Versleutelen en toevoegen van contacten: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Versleutelen en toevoegen van afspraken aan uw agenda: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Afspraak succesvol geïmporteerd. De geïmporteerde afspraak zal nu in uw agenda verschijnen."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Afspraken succesvol geïmporteerd. De geïmporteerde afspraken zullen nu in uw agenda verschijnen."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Gelieve het tabblad niet te sluiten voordat het importproces is voltooid."
@@ -4028,6 +4073,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contact versleuteld en toegevoegd aan uw contactenlijst",
         "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contact. Er kon geen contact worden geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contacten. ${ totalImported } van ${ totalToImport } contacten succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contacten. Er kon geen contact worden geïmporteerd."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contactpersoon succesvol geïmporteerd. Het geïmporteerde contact zal nu in uw adresboek verschijnen."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contacten succesvol geïmporteerd. De geïmporteerde contacten zullen nu in uw adresboek verschijnen."
       ]
     },
     "Import contact error": {
@@ -4959,7 +5019,7 @@
         "niet-${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Geen van de geüploadet sleutels zijn geldig voor versleuteling. Upload een geldige sleutel of schakel \"E-mails versleutelen\" uit om berichten te kunnen versturen naar dit adres."
+        "Geen van de geüploade sleutels zijn geldig voor versleuteling. Upload een geldige sleutel of schakel \"E-mails versleutelen\" uit om berichten te kunnen versturen naar dit adres."
       ],
       "Not a valid URL": [
         "Ongeldige link"
@@ -5045,6 +5105,12 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Voorkom dat uw e-mailadres gelekt wordt naar nieuwsbrieven of spammers met ${ maskMyEmailButton }."
+      ],
+      "Quick reply": [
+        "Snel antwoord"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "Snel antwoord naar ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Ontvanger: "
@@ -6055,6 +6121,12 @@
       "From:": [
         "Van:"
       ],
+      "From: ${ from }": [
+        "Van: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Van: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Van: ${ importedEmail }"
       ],
@@ -6294,6 +6366,12 @@
       ],
       "To: ${ emailAddress }": [
         "Naar: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "Aan: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Naar: ${ toEmail }"
       ],
       "Toolbar": [
         "Werkbalk"
@@ -6598,6 +6676,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importeer alle berichten van ${ itemsToImportCount } map en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importeer alle berichten van ${ itemsToImportCount } label en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importeer alle berichten van ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"

@@ -92,6 +92,9 @@
       "Attachment": [
         "Вложение"
       ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
       "Authenticate": [
         "Аутентифицировать"
       ],
@@ -558,7 +561,7 @@
         "Управление папками"
       ],
       "Manage labels": [
-        "Управление метками"
+        "Управление ярлыками"
       ],
       "Mark as read": [
         "Отметить как прочитанное"
@@ -3167,7 +3170,7 @@
         "Не удалось загрузить изображение"
       ],
       "IMAP server is required": [
-        "Нужно укзать IMAP-сервер"
+        "Нужно укзать сервер IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
         "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
@@ -4709,6 +4712,9 @@
       ],
       "Attach public key": [
         "Присоединить открытый ключ"
+      ],
+      "Attention required": [
+        "Требуется внимание"
       ],
       "Background color": [
         "Цвет фона"
@@ -6884,6 +6890,12 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортировать все сообщения с ${ itemsToImportCount } ярлыком и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
