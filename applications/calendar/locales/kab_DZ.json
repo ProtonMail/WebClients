@@ -527,6 +527,9 @@
       "${ title } started on ${ formattedDateWithoutTime }": [
         "${ title } yebda deg ${ formattedDateWithoutTime }"
       ],
+      "${ title } started on ${ formattedDateWithTime }": [
+        "${ title } yebda deg ${ formattedDateWithTime }"
+      ],
       "${ title } started yesterday": [
         "${ title } yebda iḍelli"
       ],
@@ -2572,6 +2575,15 @@
       "and": [
         "akked"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Yal yiwen yesεan aseɣwen-a yezmer ad iwali meṛṛa talqayt n tedyanin n uwitay-a am uzwel, adig neɣ imttekkiyen."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Yal yiwen yesεan aseɣwen-a yezmer ad iwali ma yella d ilelli i telliḍ neɣ tceɣleḍ ɣef uwitay-ik·im. Ur zmiren ad walin talqayt n tedyanin am uzwel, adig neɣ imttekkiyen."
+      ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "S beṭṭu n telqayt tummidt n tedyant n uwitay-a, ad tqebleḍ ad tmuddeḍ i ${ BRAND_NAME } anekcum ɣer talɣut-a yettwawgelhen n uwitay."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Ur tezmireḍ ara ad d-temmektiḍ awal uffir-inek•m? Nezmer ad k-nɛiwen akken ad tsefḍeḍ isefka iwgelhanen n yinermisen meṛṛa iwgelhen s tsarut-agi akked telɣut n uzgel."
       ],
@@ -2942,9 +2954,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Tzemreḍ ad tesneqdeḍ asesfer n ${ importProgressLink }."
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Tzemreḍ kan ad tbeddleḍ timeẓla n tedyant tudmawant imi ur tezmireḍ ara ad tazneḍ seg tansa n umsuddes."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Tzemreḍ ad tremdeḍ ilɣuyen i wakken ad teṭṭfeḍ alɣu mi ara d-awwḍen yiznan imaynuten deg ukaram-a."

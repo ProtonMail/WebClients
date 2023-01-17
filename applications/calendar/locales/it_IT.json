@@ -282,6 +282,12 @@
       "Manage addresses": [
         "Gestisci indirizzi"
       ],
+      "Manage folders": [
+        "Gestisci cartelle"
+      ],
+      "Manage labels": [
+        "Gestisci etichette"
+      ],
       "Mark for deletion": [
         "Seleziona per la cancellazione"
       ],
@@ -1987,7 +1993,7 @@
     },
     "Duplicate event button tooltip": {
       "Duplicate event": [
-        "Duplica l'evento"
+        "Duplica evento"
       ]
     },
     "Duration": {
@@ -2155,6 +2161,9 @@
       "Email address invalid": [
         "Indirizzo email non valido"
       ],
+      "Email address is required": [
+        "L'indirizzo email è obbligatorio"
+      ],
       "Email is not valid": [
         "Email non valida"
       ],
@@ -2181,6 +2190,9 @@
       ],
       "Image upload failed": [
         "Caricamento dell'immagine fallito"
+      ],
+      "IMAP server is required": [
+        "È richiesto il server IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenziali di accesso non valide. Si prega di riprovare."
@@ -2266,6 +2278,9 @@
         "Uno dei gruppi non ha contatti: ${ noContactGroupList }",
         "Alcuni gruppi non hanno contatti: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Password necessaria"
+      ],
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
@@ -2275,6 +2290,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
+      ],
+      "Port is required": [
+        "La porta è obbligatoria"
       ],
       "Primary address key is not decrypted": [
         "Chiave dell'indirizzo principale non decriptata"
@@ -3689,9 +3707,6 @@
       "You can import one data type at a time.": [
         "Puoi importare un tipo di dati alla volta."
       ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "È possibile modificare solo le proprietà degli eventi personali in quanto non è possibile inviare email dall'indirizzo dell'organizzatore."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
       ],
@@ -3960,6 +3975,12 @@
       "Frequency": [
         "Frequenza"
       ],
+      "From: ${ from }": [
+        "Da: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Da: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Da: ${ importedEmail }"
       ],
@@ -4108,6 +4129,12 @@
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
       ],
+      "To: ${ to }": [
+        "A: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "A: ${ toEmail }"
+      ],
       "Toolbar": [
         "Barra degli strumenti"
       ],
@@ -4234,6 +4261,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi da ${ itemsToImportCount } cartella ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ itemsToImportCount } cartelle ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importa tutti i messaggi da ${ itemsToImportCount } etichetta ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importa tutti i messaggi da ${ itemsToImportCount } etichette ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -5228,9 +5259,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } è uscito dalla fase beta! Garantite ai vostri file la stessa sicurezza delle vostre e-mail."
       ],
-      "Don't miss any events": [
-        "Non mancare alcun evento"
-      ],
       "Easily accept invites": [
         "Accetta gli inviti facilmente"
       ],
@@ -5248,9 +5276,6 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
-      ],
-      "You can now add notifications to calendars you subscribed to.": [
-        "Ora puoi aggiungere delle notifiche ai calendari a cui sei sottoscritto."
       ],
       "You can subscribe to external calendars and read their events.": [
         "Puoi iscriverti a calendari esterni e leggere i loro eventi."

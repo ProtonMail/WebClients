@@ -507,11 +507,11 @@
       "Not spam": [
         "To nie jest spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -561,10 +561,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -4711,8 +4711,8 @@
       "Amount below minimum (${ amount }).": [
         "Kwota poniżej minimum (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
+      "An error occurred while communicating with the extension": [
+        "Wystąpił błąd podczas komunikacji z rozszerzeniem"
       ],
       "and": [
         "i"
@@ -4983,6 +4983,9 @@
       ],
       "Enable this address to join this calendar": [
         "Włącz ten adres, aby dołączyć do kalendarza"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Jeśli w zewnętrznej usłudze szyfrowanie TLS lub SSL jest obsługiwane, włącz je."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Włączenie odzyskiwania za pomocą hasła wygeneruje nowe hasło odzyskiwania."
@@ -7326,6 +7329,12 @@
       ],
       "Signature": [
         "Podpis"
+      ],
+      "SMTP port": [
+        "Port SMTP"
+      ],
+      "SMTP server": [
+        "Serwer SMTP"
       ],
       "SMTP token": [
         "Token SMTP"
@@ -10173,6 +10182,9 @@
       "Phone number updated": [
         "Numer telefonu został zaktualizowany"
       ],
+      "Port copied to clipboard": [
+        "Port został skopiowany do schowka"
+      ],
       "Preference saved": [
         "Ustawienia zostały zapisane"
       ],
@@ -10181,6 +10193,9 @@
       ],
       "Resuming import": [
         "Wznawianie procesu importowania"
+      ],
+      "Server copied to clipboard": [
+        "Serwer został skopiowany do schowka"
       ],
       "Session revoked": [
         "Sesja została unieważniona"

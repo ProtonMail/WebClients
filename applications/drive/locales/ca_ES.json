@@ -2011,6 +2011,9 @@
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
       ],
+      "Port is required": [
+        "Es requereix el port"
+      ],
       "Primary address key is not decrypted": [
         "La clau de la adreça primària no està desxifrada"
       ],
@@ -2515,11 +2518,20 @@
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "S'ha produït un error xifrant i afegint els teus esdeveniments. No s’ha pogut importar cap esdeveniment."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint esdeveniments al calendari: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esdeveniment importat. L’esdeveniment importat ara apareixerà al vostre calendari."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Esdeveniments importats. Els esdeveniments importats ara apareixeran al vostre calendari."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No tanqueu la pestanya abans de finalitzar el procés d'importació."
@@ -2553,6 +2565,18 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contacte xifrat i afegit a la vostra llista de contactes",
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "S'ha produït un error xifrant i afegint el vostre contacte. No s'ha pogut importar cap contacte."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "S'ha produït un error xifrant i afegint els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contacte importat. El contacte importat ja apareix a la vostra llista de contactes."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contactes importats. Els contactes importats ja apareixen a la vostra llista de contactes."
       ]
     },
     "Import contact error": {
@@ -2949,6 +2973,10 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "S'admeten fitxers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions així com els formats vCard 3.1 i 4.0 (codificació UTF-8)."
       ],
+      "Delete locked drive": [
+        "Elimina la unitat bloquejada",
+        "Elimina les unitats bloquejades"
+      ],
       "Download canceled": [
         "S'ha cancel·lat la baixada"
       ],
@@ -3145,6 +3173,9 @@
       ],
       "Loading preview": [
         "S'està carregant la previsualització"
+      ],
+      "Loading...": [
+        "Carregant..."
       ],
       "Merged": [
         "Combinats"
@@ -3775,6 +3806,12 @@
       "Folder name": [
         "Nom de carpeta"
       ],
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
       ],
@@ -3960,6 +3997,12 @@
       ],
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "Per: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Per: ${ toEmail }"
       ],
       "Toolbar": [
         "Barra d'eines"
@@ -4198,6 +4241,10 @@
         "${ numberOfItems } element esborrat permanentment de la paperera",
         "${ numberOfItems } elements esborrats permanentment de la paperera"
       ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "${ numberOfItems } element no s'ha pogut eliminar permanentment de la paperera.",
+        "${ numberOfItems } elements no s'han pogut eliminar permanentment de la paperera."
+      ],
       "${ numberOfItems } item failed to be moved": [
         "${ numberOfItems } element ha fallat al moure",
         "${ numberOfItems } elements han fallat al moure"
@@ -4205,6 +4252,10 @@
       "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } element ha fallat al moure'l a la paperera",
         "${ numberOfItems } elements han fallat al moure'ls a la paperera"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "${ numberOfItems } element no s'ha pogut restaurar de la paperera.",
+        "${ numberOfItems } elements no s'han pogut restaurar de la paperera."
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } element mogut a la Paperera",
@@ -4234,6 +4285,9 @@
       ],
       "Contact group updated": [
         "Grup de contactes actualitzat"
+      ],
+      "Device removed": [
+        "Dispositiu suprimit"
       ],
       "Encrypted search activated": [
         "Cerca xifrada activada"

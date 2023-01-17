@@ -434,11 +434,11 @@
       "No": [
         "Ala"
       ],
-      "Ok": [
-        "IH"
-      ],
       "OK": [
         "Ih"
+      ],
+      "Ok": [
+        "IH"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
@@ -485,11 +485,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "refresh the page": [
-        "smiren asebter"
-      ],
       "Refresh the page": [
         "Smiren asebter"
+      ],
+      "refresh the page": [
+        "smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -2867,6 +2867,11 @@
         "(1-2 yimaylen i wayyur)"
       ]
     },
+    "Go to sign in": {
+      "Already have an account? ${ signIn }": [
+        "Tesɛiḍ yakan amiḍan? ${ signIn }"
+      ]
+    },
     "Group": {
       "Account": [
         "Amiḍan"
@@ -3161,6 +3166,15 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "${ BRAND_NAME } iseḥbes akatar i kra n wakud acku truḥ-as tuqqna d usaǧǧaw-nniḍen n yimayl-ik·im. Ttxil-k·m ales tuqqna."
+      ],
+      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
+        "${ BRAND_NAME } yesseḥbes akatar i kra n wakud acku amiḍan-ik·im txuṣṣ deg-s tallunt. Tzemreḍ:"
+      ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } ad yeεreḍ ad ikemmel aktar akken kan ara iwennez usaǧǧaw n yimayl-ik·im ${ bandwithLimitLink } amiḍan-ik·im. Ur teḥwaǧeḍ ad tgeḍ kra. Ma yella tesfesxeḍ aktar-inek·inem, ur tezmireḍ ara ad t-tkemmleḍ, ilaq ad as-d-tεawdeḍ seg tazwara."
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } ad yettusbadu d awitay amezwer."
       ],
@@ -3355,6 +3369,12 @@
       "and": [
         "akked"
       ],
+      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
+        "Yal yiwen yesεan aseɣwen-a yezmer ad iwali meṛṛa talqayt n tedyanin n uwitay-a am uzwel, adig neɣ imttekkiyen."
+      ],
+      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
+        "Yal yiwen yesεan aseɣwen-a yezmer ad iwali ma yella d ilelli i telliḍ neɣ tceɣleḍ ɣef uwitay-ik·im. Ur zmiren ad walin talqayt n tedyanin am uzwel, adig neɣ imttekkiyen."
+      ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Yal win yesεan aseɣwen-a ur yettizmir ara ad yemtawi neɣ ad yawi ileqman i d-iteddun n uwitay-inek·inem. Ma yella tebɣiḍ ad asen-tmuddeḍ anekcum i tikkelt-nniḍen, ilaq ad ternuḍ aseɣwen amaynut-nniḍen."
       ],
@@ -3426,6 +3446,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "Ma teffɣeḍ tura, isenfal yezmer ur ttuseklasen ara"
+      ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "S beṭṭu n telqayt tummidt n tedyant n uwitay-a, ad tqebleḍ ad tmuddeḍ i ${ BRAND_NAME } anekcum ɣer talɣut-a yettwawgelhen n uwitay."
       ],
       "Center": [
         "Slemmes"
@@ -4254,6 +4277,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ad tettuwellheḍ ɣer PyPal i usenqed n uxelleṣ-ik•im."
+      ],
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "Amiḍan-ik·im ${ BRAND_NAME } icudd ɣer ${ externalEmailAddress }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Imiḍanen-ik·im ${ VPN_APP_NAME } d ${ MAIL_APP_NAME } ttwacudden. I wakken ad ten-tekkseḍ i sin, ttxil-k·m kcem ɣer ${ loginLink } syen kkes amiḍan-ik·im dinna."
@@ -6588,6 +6614,14 @@
       ],
       "Username": [
         "Isem n useqdac"
+      ]
+    },
+    "Signup step": {
+      "Payment": [
+        "Lexlaṣ"
+      ],
+      "Verification": [
+        "Asenqed"
       ]
     },
     "State": {

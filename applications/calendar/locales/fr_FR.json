@@ -2580,7 +2580,7 @@
         "Fuseau horaire"
       ],
       "To-do entry": [
-        "Tâche à réaliser"
+        "Entrée de type tâche à réaliser"
       ],
       "Unknown": [
         "Inconnu"
@@ -3707,9 +3707,6 @@
       "You can import one data type at a time.": [
         "Vous pouvez importer un type de données à la fois."
       ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Vous ne pouvez modifier que les propriétés personnelles de l'événement, car vous ne pouvez pas envoyer d'e-mails à partir de l'adresse de l'organisateur."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
       ],
@@ -4264,6 +4261,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -5258,9 +5259,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos e-mails."
       ],
-      "Don't miss any events": [
-        "Ne manquez aucun événement"
-      ],
       "Easily accept invites": [
         "Acceptez facilement les invitations"
       ],
@@ -5278,9 +5276,6 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Essayez ${ DRIVE_APP_NAME }"
-      ],
-      "You can now add notifications to calendars you subscribed to.": [
-        "Vous pouvez maintenant ajouter des notifications aux calendriers auxquels vous êtes abonné."
       ],
       "You can subscribe to external calendars and read their events.": [
         "Vous pouvez vous abonner à des calendriers externes et voir leurs événements."
