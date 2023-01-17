@@ -28,7 +28,7 @@ import { MessageState, MessageStateWithData, PartialMessageState } from '../../l
 import { Event } from '../../models/event';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
-import ComposerActions from './actions/ComposerActions';
+import ComposerActions from './actions/ComposerActions/ComposerActions';
 import { ExternalEditorActions } from './editor/EditorWrapper';
 import ComposerInnerModals from './modals/ComposerInnerModals';
 
@@ -289,25 +289,25 @@ const Composer = (
                     />
                 </div>
                 <ComposerActions
+                    addressesBlurRef={addressesBlurRef}
+                    attachmentTriggerRef={attachmentTriggerRef}
                     className={hasVerticalScroll ? 'composer-actions--has-scroll' : undefined}
-                    message={modelMessage}
                     date={date}
-                    lock={opening}
-                    opening={opening}
-                    syncInProgress={pendingSave.isPending}
+                    editorActionsRef={editorRef}
+                    editorMetadata={metadata}
+                    loadingScheduleCount={loadingScheduleCount}
+                    message={modelMessage}
                     onAddAttachments={handleAddAttachmentsStart}
+                    onChange={handleChange}
+                    onChangeFlag={handleChangeFlag}
+                    onDelete={handleDeleteDraft}
                     onExpiration={handleExpiration}
                     onPassword={handlePassword}
                     onScheduleSendModal={handleScheduleSendModal}
+                    onScheduleSend={handleScheduleSend}
                     onSend={handleSend}
-                    onDelete={handleDeleteDraft}
-                    addressesBlurRef={addressesBlurRef}
-                    attachmentTriggerRef={attachmentTriggerRef}
-                    loadingScheduleCount={loadingScheduleCount}
-                    onChangeFlag={handleChangeFlag}
-                    editorActionsRef={editorRef}
-                    editorMetadata={metadata}
-                    onChange={handleChange}
+                    opening={opening}
+                    syncInProgress={pendingSave.isPending}
                 />
             </div>
             {waitBeforeScheduleModal}

@@ -14,6 +14,8 @@ import { LabelCount } from '@proton/shared/lib/interfaces';
 import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { updateScheduled } from '../../logic/messages/scheduled/scheduledActions';
+import { useAppDispatch } from '../../logic/store';
 import { useSendVerifications } from './useSendVerifications';
 
 interface Props {
@@ -38,6 +40,7 @@ export const useScheduleSend = ({
     handleNoAttachments,
 }: Props) => {
     const location = useLocation();
+    const dispatch = useAppDispatch();
 
     const [waitBeforeScheduleModalProps, setWaitBeforeScheduleModalOpen] = useModalState();
 
@@ -81,22 +84,32 @@ export const useScheduleSend = ({
                 setInnerModal(ComposerInnerModal.ScheduleSend);
             } catch {
                 /* Nothing to do but an error is expected if preliminaryVerifications fails
-                   Catching the error is mandatory to make testing pass for some jest sorcery
+                Catching the error is mandatory to make testing pass for some jest sorcery
                 */
             }
         }
     };
 
-    const handleScheduleSend = (scheduledAt: number) => {
-        setModelMessage({
-            ...modelMessage,
-            draftFlags: {
-                ...modelMessage.draftFlags,
-                scheduledAt,
-            },
-        });
+    const handleScheduleSend = async (scheduledAt: number) => {
+        try {
+            // check if all needed composer fields are filled
+            await preliminaryVerifications(modelMessage);
 
-        setTimeout(handleSend);
+            // Save scheduled at in store
+            dispatch(updateScheduled({ ID: modelMessage.localID, scheduledAt }));
+
+            // Save scheduled at in message model
+            setModelMessage({
+                ...modelMessage,
+                draftFlags: {
+                    ...modelMessage.draftFlags,
+                    scheduledAt,
+                },
+            });
+
+            // Handle send
+            setTimeout(handleSend);
+        } catch {}
     };
 
     return { scheduleCount, loadingScheduleCount, handleScheduleSendModal, handleScheduleSend, modal };

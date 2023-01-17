@@ -29,7 +29,7 @@ const MainContainer = () => {
     const [{ feature: featureSw, loading: loadingSw }] = useFeatures([
         FeatureCode.MailServiceWorker,
         FeatureCode.EarlyAccessScope,
-        FeatureCode.ScheduledSend,
+        FeatureCode.ScheduledSendFreemium,
         FeatureCode.SpotlightScheduledSend,
         FeatureCode.BundlePromoShown,
         FeatureCode.SpotlightEncryptedSearch,

@@ -3,6 +3,7 @@ import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
 
 import { getMessageHasData } from '../../../helpers/message/messages';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import useScheduleSendFeature from '../../composer/actions/scheduleSend/useScheduleSendFeature';
 import ExtraAskResign from '../extras/ExtraAskResign';
 import ExtraAutoReply from '../extras/ExtraAutoReply';
 import ExtraBlockedSender from '../extras/ExtraBlockedSender';
@@ -39,7 +40,7 @@ const HeaderExtra = ({
     const [mailSettings] = useMailSettings();
     const received = isReceived(message.data);
 
-    const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const { canScheduleSend } = useScheduleSendFeature();
     const { feature: blockSenderFeature } = useFeature(FeatureCode.BlockSender);
     const isScheduledMessage = isScheduled(message.data);
     const showCalendarWidget = messageLoaded && received;
@@ -73,7 +74,7 @@ const HeaderExtra = ({
 
             {showCalendarWidget ? <EmailReminderWidget message={message.data} errors={message.errors} /> : null}
             {showCalendarWidget ? <ExtraEvents message={message} /> : null}
-            {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
+            {isScheduledMessage && canScheduleSend ? <ExtraScheduledMessage message={message} /> : null}
 
             <span className="inline-flex flex-row on-mobile-w100 hidden-empty">
                 <ExtraExpirationTime displayAsButton message={message} />

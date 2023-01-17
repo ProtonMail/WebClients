@@ -15,13 +15,14 @@ import {
 } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { DateInput, Href, InputFieldTwo, TimeInput, generateUID } from '@proton/components';
+import { DateInput, Href, InputFieldTwo, TimeInput, generateUID, useUserSettings } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
-import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
+import { SCHEDULED_MAX_DATE_DAYS, SCHEDULED_SEND_BUFFER } from '../../../constants';
 import { getMinScheduleTime } from '../../../helpers/schedule';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import { updateScheduled } from '../../../logic/messages/sheduled/scheduledActions';
+import { updateScheduled } from '../../../logic/messages/scheduled/scheduledActions';
 import { useAppDispatch } from '../../../logic/store';
 import ComposerInnerModal from './ComposerInnerModal';
 
@@ -45,6 +46,7 @@ interface Props {
 
 const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
     const dispatch = useAppDispatch();
+    const [userSettings] = useUserSettings();
 
     const defaultDate =
         message && message.draftFlags?.scheduledAt
@@ -52,7 +54,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
             : addDays(new Date(), 1);
 
     if (!message || (message && !message.draftFlags?.scheduledAt)) {
-        defaultDate.setHours(9, 0, 0, 0);
+        defaultDate.setHours(8, 0, 0, 0);
     }
 
     const [date, setDate] = useState(defaultDate);
@@ -131,7 +133,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
             timeInputDate.setHours(time.getHours(), time.getMinutes());
 
             // It should be impossible to schedule a message within the next 120s
-            const limit = addSeconds(new Date(), 120);
+            const limit = addSeconds(new Date(), SCHEDULED_SEND_BUFFER);
 
             // If the scheduled date is in the past or within the next 120s, we need to disable the schedule button
             const isDateToEarly = isToday(date) && timeInputDate <= limit;
@@ -147,7 +149,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
     }, [date, time]);
 
     const disabled = useMemo(() => {
-        const min = addSeconds(Date.now(), 120);
+        const min = addSeconds(Date.now(), SCHEDULED_SEND_BUFFER);
         return !date || !time || scheduleDateTime < min || scheduleDateTime > endOfDay(maxDate);
     }, [date, time, scheduleDateTime, minDate, maxDate]);
 
@@ -160,7 +162,8 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
             onCancel={handleCancel}
         >
             <div className="mb1 flex">
-                <span>{c('Info').t`When do you want your message to be sent?`}</span>
+                <span data-testid="composer:schedule-send:custom-modal:title">{c('Info')
+                    .t`When do you want your message to be sent?`}</span>
                 <Href className="underline inline-block" url={getKnowledgeBaseUrl('/schedule-email-send')}>{c('Link')
                     .t`Learn more`}</Href>
             </div>
@@ -172,6 +175,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
                     onChange={handleChangeDate}
                     value={date}
                     min={minDate}
+                    weekStartsOn={getWeekStartsOn({ WeekStart: userSettings.WeekStart })}
                     max={maxDate}
                     toFormatter={formatDateInput}
                     preventValueReset

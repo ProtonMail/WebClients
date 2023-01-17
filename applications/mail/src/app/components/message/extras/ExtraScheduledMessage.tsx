@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
@@ -10,18 +11,21 @@ import {
     classnames,
     useApi,
     useEventManager,
+    useMailSettings,
     useModalState,
     useNotifications,
 } from '@proton/components';
 import { cancelSend } from '@proton/shared/lib/api/messages';
+import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
 
-import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
+import { LABEL_IDS_TO_HUMAN, PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { formatDateToHuman } from '../../../helpers/date';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
-import { cancelScheduled } from '../../../logic/messages/sheduled/scheduledActions';
+import { cancelScheduled } from '../../../logic/messages/scheduled/scheduledActions';
 import { useAppDispatch } from '../../../logic/store';
 
 interface Props {
@@ -30,8 +34,13 @@ interface Props {
 const ExtraScheduledMessage = ({ message }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
-    const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
+    const { createNotification } = useNotifications();
+    const location = useLocation();
+    const history = useHistory();
+    const [mailSettings] = useMailSettings();
+    const [loading, setLoading] = useState(false);
+
     const [nowDate, setNowDate] = useState(() => Date.now());
 
     const onCompose = useOnCompose();
@@ -54,17 +63,24 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     }, []);
 
     const handleUnscheduleMessage = async () => {
-        /* Reset the load retry so that if the user schedules again the message and clicks on the view message link,
-           the body of message can be loaded. Without the reset, the message can have a loadRetry > 3, which will block
-           the loading of the mail body.
-         */
-        await dispatch(cancelScheduled(message.localID));
+        setLoading(true);
+        await dispatch(cancelScheduled({ ID: message.localID, scheduledAt: message.data.Time }));
         await api(cancelSend(message.data.ID));
+        setEditScheduleModalOpen(false);
+        setLoading(false);
         await call();
+
         createNotification({
             text: c('Message notification').t`Scheduling cancelled. Message has been moved to Drafts.`,
         });
         onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
+
+        if (location.pathname.includes(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED])) {
+            const redirectToLoation = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS)
+                ? MAILBOX_LABEL_IDS.ALL_DRAFTS
+                : MAILBOX_LABEL_IDS.DRAFTS;
+            history.push(LABEL_IDS_TO_HUMAN[redirectToLoation]);
+        }
     };
 
     const getScheduleBannerMessage = () => {
@@ -126,11 +142,13 @@ const ExtraScheduledMessage = ({ message }: Props) => {
                 title={c('Confirm modal title').t`Edit and reschedule`}
                 buttons={[
                     <Button
+                        disabled={loading}
                         color="norm"
                         onClick={handleUnscheduleMessage}
                         data-testid="message:modal-edit-draft-button"
                     >{c('Action').t`Edit draft`}</Button>,
-                    <Button onClick={editScheduleModalProps.onClose}>{c('Action').t`Cancel`}</Button>,
+                    <Button disabled={loading} onClick={editScheduleModalProps.onClose}>{c('Action')
+                        .t`Cancel`}</Button>,
                 ]}
                 {...editScheduleModalProps}
             >
