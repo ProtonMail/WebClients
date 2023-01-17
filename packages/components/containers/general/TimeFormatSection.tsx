@@ -39,7 +39,7 @@ const TimeSection = () => {
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
-                <label className="text-semibold" htmlFor="time-format-select">
+                <label className="text-semibold" htmlFor="time-format-select" id="label-time-format">
                     {c('Label').t`Time format`}
                 </label>
             </SettingsLayoutLeft>
@@ -49,6 +49,7 @@ const TimeSection = () => {
                     value={userSettings.TimeFormat}
                     loading={loading}
                     onChange={({ value }) => withLoading(handleTimeFormat(value))}
+                    aria-describedby="label-time-format"
                 >
                     {[
                         {
