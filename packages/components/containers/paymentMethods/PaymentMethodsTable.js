@@ -34,7 +34,7 @@ const PaymentMethodsTable = ({ methods, loading }) => {
     const orderedMethods = orderBy(methods, 'Order');
 
     return (
-        <Table hasActions>
+        <Table hasActions responsive="cards">
             <TableHeader
                 cells={[
                     c('Title for payment methods table').t`Method`,
