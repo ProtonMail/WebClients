@@ -75,30 +75,34 @@ export const formatPrepareStepPayload = ({
         throw new Error('Importer ID should be defined');
     }
 
-    const mapping = fields.mapping.map((folder) => {
-        const Destinations: MailImportMapping['Destinations'] = {
-            FolderPath: folder.category ? fields.importCategoriesDestination : folder.protonPath.join(folder.separator),
-        };
+    const mapping = fields.mapping
+        .filter((field) => field.checked)
+        .map((folder) => {
+            const Destinations: MailImportMapping['Destinations'] = {
+                FolderPath: folder.category
+                    ? fields.importCategoriesDestination
+                    : folder.protonPath.join(folder.separator),
+            };
 
-        if (isLabelMapping && !folder.category && !folder.systemFolder) {
-            Destinations.Labels = [
-                {
-                    Name: folder.protonPath.join('-'),
-                    Color: folder.color,
-                },
-            ];
-        }
+            if (isLabelMapping && !folder.category && !folder.systemFolder) {
+                Destinations.Labels = [
+                    {
+                        Name: folder.protonPath.join('-'),
+                        Color: folder.color,
+                    },
+                ];
+            }
 
-        if (GMAIL_CATEGORIES.includes(folder.id as MailImportGmailCategories)) {
-            Destinations.Category = folder.category;
-        }
+            if (GMAIL_CATEGORIES.includes(folder.id as MailImportGmailCategories)) {
+                Destinations.Category = folder.category;
+            }
 
-        return {
-            Source: folder.id,
-            Destinations,
-            checked: true,
-        };
-    });
+            return {
+                Source: folder.id,
+                Destinations,
+                checked: true,
+            };
+        });
 
     return {
         ImporterID: data.importerID,
