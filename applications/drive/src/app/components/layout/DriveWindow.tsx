@@ -75,7 +75,7 @@ const DriveWindow = ({ children }: Props) => {
     const sidebar = (
         <DriveSidebar
             logo={logo}
-            primary={<UploadButton disabled={isNewUploadDisabled} />}
+            primary={<UploadButton className="no-mobile" disabled={isNewUploadDisabled} />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />

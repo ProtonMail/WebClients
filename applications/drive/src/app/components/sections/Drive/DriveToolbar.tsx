@@ -62,11 +62,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                             <Vr />
                         </>
                     ) : null}
-                    {isDesktop && !isLinkReadOnly ? (
-                        <>
-                            <UploadFolderButton />
-                        </>
-                    ) : null}
+                    {isDesktop && !isLinkReadOnly ? <UploadFolderButton /> : null}
                     {!isLinkReadOnly ? (
                         <>
                             <UploadFileButton />
