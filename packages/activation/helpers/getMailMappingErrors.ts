@@ -11,9 +11,9 @@ import {
     isNameEmpty,
     isNameReserved,
     isNameTooLong,
+    mappingHasNameTooLong,
     mappingHasReservedNames,
     mappingHasUnavailableNames,
-    mappinghasNameTooLong,
 } from './errorsMapping';
 
 const {
@@ -32,26 +32,29 @@ export const getMailMappingErrors = (
     labels: Label[],
     folders: Folder[]
 ): MailImportPayloadError[] => {
-    /* Mail mapping errors */
-    const hasMaxFoldersError = (mapping: MailImportFolder[]) =>
-        mapping.filter((m) => m.checked).length + folders.length >= MAX_FOLDER_LIMIT;
-    const hasUnavailableNamesError = (mapping: MailImportFolder[]) =>
-        mappingHasUnavailableNames(mapping, isLabelMapping ? folders : labels, isLabelMapping);
-    const hasNameTooLong = (mapping: MailImportFolder[]) => mappinghasNameTooLong(mapping);
-    const hasReservedNamesError = (mapping: MailImportFolder[]) => mappingHasReservedNames(mapping);
+    const checkedMapping = mapping.filter((m) => m.checked);
+
+    const hasMaxFoldersError = checkedMapping.length + folders.length >= MAX_FOLDER_LIMIT;
+    const hasUnavailableNamesError = mappingHasUnavailableNames(
+        checkedMapping,
+        isLabelMapping ? folders : labels,
+        isLabelMapping
+    );
+    const hasNameTooLong = mappingHasNameTooLong(checkedMapping);
+    const hasReservedNamesError = mappingHasReservedNames(checkedMapping);
 
     const errors = [];
 
-    if (hasMaxFoldersError(mapping)) {
+    if (hasMaxFoldersError) {
         errors.push(MAX_FOLDERS_LIMIT_REACHED);
     }
-    if (hasNameTooLong(mapping)) {
+    if (hasNameTooLong) {
         errors.push(isLabelMapping ? LABEL_NAMES_TOO_LONG : FOLDER_NAMES_TOO_LONG);
     }
-    if (hasUnavailableNamesError(mapping)) {
+    if (hasUnavailableNamesError) {
         errors.push(UNAVAILABLE_NAMES);
     }
-    if (hasReservedNamesError(mapping)) {
+    if (hasReservedNamesError) {
         errors.push(RESERVED_NAMES);
     }
 
@@ -67,18 +70,16 @@ export const getMailMappingError = (
 ): MailImportPayloadError[] => {
     const errors: MailImportPayloadError[] = [];
 
-    const collectionWithoutCurrentItem = collection.filter((m) => m.id !== item.id);
-
     const paths = [
-        ...collectionWithoutCurrentItem.map((m) => m.id),
+        // item ids who are checked and not current item
+        ...collection.filter((item) => item.id !== item.id && item.checked).map((m) => m.id),
         ...labels.map((item) => item.Path),
         ...folders.map((item) => item.Path),
     ];
 
     const itemName = item.protonPath[item.protonPath.length - 1];
-
-    const hasFoldersTooLongError = isNameTooLong(item.checked, itemName);
-    const hasReservedNamesError = isNameReserved(item.checked, itemName);
+    const hasFoldersTooLongError = item.checked && isNameTooLong(itemName);
+    const hasReservedNamesError = item.checked && isNameReserved(itemName);
     const hasUnavailableNamesError = isNameAlreadyUsed(itemName, paths);
     const hasEmptyError = isNameEmpty(itemName);
     const hasMergeWarningError = hasMergeWarning(collection, item);

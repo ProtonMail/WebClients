@@ -7,21 +7,14 @@ import { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersPar
 
 export const RESERVED_NAMES = ['scheduled'];
 
-export const isNameTooLong = (checked: boolean, folderPath: string) => {
-    return checked && folderPath.length >= 100;
-};
+export const isNameTooLong = (folderPath: string) => folderPath.length >= 100;
 
-export const isNameReserved = (checked: boolean, folderPath: string) => {
-    return checked && RESERVED_NAMES.includes(folderPath.toLowerCase());
-};
+export const isNameReserved = (folderPath: string) => RESERVED_NAMES.includes(folderPath.toLowerCase());
 
-export const isNameAlreadyUsed = (name: string, paths: string[]) => {
-    return paths.some((i) => i.toLowerCase() === name.toLowerCase());
-};
+export const isNameAlreadyUsed = (name: string, paths: string[]) =>
+    paths.some((i) => i.toLowerCase() === name.toLowerCase());
 
-export const isNameEmpty = (name: string | undefined) => {
-    return !name || !name.trim();
-};
+export const isNameEmpty = (name: string | undefined) => !name || !name.trim();
 
 export const hasMergeWarning = (collection: FolderMapItem[], folderItem: FolderMapItem) => {
     return collection.some((item) => {
@@ -38,12 +31,11 @@ export const hasMergeWarning = (collection: FolderMapItem[], folderItem: FolderM
     });
 };
 
-export const mappinghasNameTooLong = (mapping: MailImportFolder[]) => {
-    return mapping.some((m) => {
-        const tooLong = isNameTooLong(m.checked, m.protonPath[m.protonPath.length - 1]);
+export const mappingHasNameTooLong = (mapping: MailImportFolder[]) =>
+    mapping.some((m) => {
+        const tooLong = isNameTooLong(m.protonPath[m.protonPath.length - 1]);
         return tooLong;
     });
-};
 
 export const mappingHasUnavailableNames = (
     mapping: MailImportFolder[],
@@ -51,7 +43,6 @@ export const mappingHasUnavailableNames = (
     isLabelMapping: boolean
 ) => {
     const destinations = mapping
-        .filter((m) => m.checked)
         .map((m) => (isLabelMapping ? m.protonPath.join(m.separator) : m.protonPath.join(m.separator)))
         .filter(isTruthy);
 
@@ -60,6 +51,5 @@ export const mappingHasUnavailableNames = (
     return destinations.some((dest) => isNameAlreadyUsed(dest, paths));
 };
 
-export const mappingHasReservedNames = (mapping: MailImportFolder[]) => {
-    return mapping.some((m) => isNameReserved(m.checked, m.protonPath.join(m.separator)));
-};
+export const mappingHasReservedNames = (mapping: MailImportFolder[]) =>
+    mapping.some((m) => isNameReserved(m.protonPath.join(m.separator)));
