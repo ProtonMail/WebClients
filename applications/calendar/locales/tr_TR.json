@@ -282,6 +282,12 @@
       "Manage addresses": [
         "Adres yönetimi"
       ],
+      "Manage folders": [
+        "Klasör yönetimi"
+      ],
+      "Manage labels": [
+        "Etiket yönetimi"
+      ],
       "Mark for deletion": [
         "Silinecek olarak işaretle"
       ],
@@ -2155,6 +2161,9 @@
       "Email address invalid": [
         "E-posta adresi geçersiz"
       ],
+      "Email address is required": [
+        "E-posta adresinin yazılması zorunludur"
+      ],
       "Email is not valid": [
         "E-posta geçersiz"
       ],
@@ -2181,6 +2190,9 @@
       ],
       "Image upload failed": [
         "Görsel yüklenemedi"
+      ],
+      "IMAP server is required": [
+        "IMAP sunucusunun yazılması zorunludur"
       ],
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
@@ -2266,6 +2278,9 @@
         "Gruplardan birinde kişi yok: ${ noContactGroupList }",
         "Gruplardan bazılarında kişi yok: ${ noContactGroupList }"
       ],
+      "Password is required": [
+        "Parolanın yazılması zorunludur"
+      ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
@@ -2275,6 +2290,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
+      ],
+      "Port is required": [
+        "Bağlantı noktasının yazılması zorunludur"
       ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
@@ -3689,9 +3707,6 @@
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
       ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Düzenleyici adresinden e-posta gönderemeyeceğiniz için yalnızca kişisel etkinlik özelliklerini değiştirebilirsiniz."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
       ],
@@ -3960,6 +3975,12 @@
       "Frequency": [
         "Sıklık"
       ],
+      "From: ${ from }": [
+        "Kimden: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Kimden: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Nereden: ${ importedEmail }"
       ],
@@ -4108,6 +4129,12 @@
       "To: ${ emailAddress }": [
         "Nereye: ${ emailAddress }"
       ],
+      "To: ${ to }": [
+        "Kime: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Kime: ${ toEmail }"
+      ],
       "Toolbar": [
         "Araç çubuğu"
       ],
@@ -4234,6 +4261,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
         "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
@@ -4990,9 +5021,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
       ],
-      "Don't miss any events": [
-        "Hiçbir etkinliği kaçırmayın"
-      ],
       "Easily accept invites": [
         "Davetleri kolayca onaylayın"
       ],
@@ -5010,9 +5038,6 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } uygulamasını deneyin"
-      ],
-      "You can now add notifications to calendars you subscribed to.": [
-        "Artık abone olduğunuz takvimlere bildirim ekleyebilirsiniz."
       ],
       "You can subscribe to external calendars and read their events.": [
         "Dış takvimlere abone olarak etkinliklerini okuyabilirsiniz."

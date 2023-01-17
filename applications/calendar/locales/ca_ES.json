@@ -2233,6 +2233,9 @@
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
       ],
+      "Port is required": [
+        "Es requereix el port"
+      ],
       "Primary address key is not decrypted": [
         "La clau de la adreça primària no està desxifrada"
       ],
@@ -2764,11 +2767,20 @@
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "S'ha produït un error xifrant i afegint els teus esdeveniments. No s’ha pogut importar cap esdeveniment."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint esdeveniments al calendari: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esdeveniment importat. L’esdeveniment importat ara apareixerà al vostre calendari."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Esdeveniments importats. Els esdeveniments importats ara apareixeran al vostre calendari."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No tanqueu la pestanya abans de finalitzar el procés d'importació."
@@ -2802,6 +2814,18 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contacte xifrat i afegit a la vostra llista de contactes",
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "S'ha produït un error xifrant i afegint el vostre contacte. No s'ha pogut importar cap contacte."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "S'ha produït un error xifrant i afegint els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contacte importat. El contacte importat ja apareix a la vostra llista de contactes."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contactes importats. Els contactes importats ja apareixen a la vostra llista de contactes."
       ]
     },
     "Import contact error": {
@@ -3558,9 +3582,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Només podeu modificar propietats personals de l'esdeveniment perquè no podeu enviar correus des de l'adreça organitzadora."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
       ],
@@ -3829,6 +3850,12 @@
       "Frequency": [
         "Freqüència"
       ],
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
       ],
@@ -3976,6 +4003,12 @@
       ],
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "Per: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Per: ${ toEmail }"
       ],
       "Toolbar": [
         "Barra d'eines"
@@ -4833,9 +4866,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
       ],
-      "Don't miss any events": [
-        "No us perdeu cap esdeveniment"
-      ],
       "Easily accept invites": [
         "Accepteu invitacions fàcilment"
       ],
@@ -4850,9 +4880,6 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
-      ],
-      "You can now add notifications to calendars you subscribed to.": [
-        "Ara podeu afegir notificacions als calendaris als quals us heu subscrit."
       ],
       "You can subscribe to external calendars and read their events.": [
         "Podeu subscriure-us a calendaris externs i llegir-ne els esdeveniments."

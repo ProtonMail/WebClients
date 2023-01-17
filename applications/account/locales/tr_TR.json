@@ -459,6 +459,12 @@
       "Manage communication preferences": [
         "İletişim ayarları yönetimi"
       ],
+      "Manage folders": [
+        "Klasör yönetimi"
+      ],
+      "Manage labels": [
+        "Etiket yönetimi"
+      ],
       "Mark as default": [
         "Varsayılan olarak işaretle"
       ],
@@ -501,10 +507,10 @@
       "Not spam": [
         "İstenmeyen değil"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -555,11 +561,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -2878,6 +2884,9 @@
       "Email address disabled": [
         "E-posta adresi devre dışı"
       ],
+      "Email address is required": [
+        "E-posta adresinin yazılması zorunludur"
+      ],
       "Email is not valid": [
         "E-posta geçersiz"
       ],
@@ -2907,6 +2916,9 @@
       ],
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
+      ],
+      "IMAP server is required": [
+        "IMAP sunucusunun yazılması zorunludur"
       ],
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
@@ -3011,6 +3023,9 @@
       "Organization not recognized. Try again.": [
         "Kuruluş belirlenemedi. Yeniden deneyin."
       ],
+      "Password is required": [
+        "Parolanın yazılması zorunludur"
+      ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
@@ -3059,6 +3074,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye yükseltin."
+      ],
+      "Port is required": [
+        "Bağlantı noktasının yazılması zorunludur"
       ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
@@ -4579,8 +4597,8 @@
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
+      "An error occurred while communicating with the extension": [
+        "Eklenti ile iletişim kurulurken bir sorun çıktı"
       ],
       "and": [
         "ve"
@@ -4847,6 +4865,9 @@
       ],
       "Enable this address to join this calendar": [
         "Takvime katılmak için bu adresi etkinleştirin"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Destekleniyorsa, dış hizmette TLS ya da SSL kullanın."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "İfade ile kurtarma seçeneğini yeniden etkinleştirdiğinizde, yeni bir kurtarma ifadesi oluşturulur."
@@ -6861,6 +6882,12 @@
       "Folder location": [
         "Klasör konumu"
       ],
+      "From: ${ from }": [
+        "Kimden: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Kimden: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Nereden: ${ importedEmail }"
       ],
@@ -7161,6 +7188,12 @@
       "Signature": [
         "İmza"
       ],
+      "SMTP port": [
+        "SMTP bağlantı noktası"
+      ],
+      "SMTP server": [
+        "SMTP sunucu"
+      ],
       "SMTP token": [
         "SMTP kodu"
       ],
@@ -7220,6 +7253,12 @@
       ],
       "To: ${ emailAddress }": [
         "Nereye: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "Kime: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Kime: ${ toEmail }"
       ],
       "Token name": [
         "Kod adı"
@@ -7566,6 +7605,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
         "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
@@ -9644,6 +9687,9 @@
       "Phone number updated": [
         "Telefon numarası güncellendi"
       ],
+      "Port copied to clipboard": [
+        "Bağlantı noktası panoya kopyalandı"
+      ],
       "Preference saved": [
         "Ayar kaydedildi"
       ],
@@ -9652,6 +9698,9 @@
       ],
       "Resuming import": [
         "İçe aktarma sürdürülüyor"
+      ],
+      "Server copied to clipboard": [
+        "Sunucu panoya kopyalandı"
       ],
       "Session revoked": [
         "Oturum kapatıldı"

@@ -282,6 +282,12 @@
       "Manage addresses": [
         "Adressen beheren"
       ],
+      "Manage folders": [
+        "Mappen beheren"
+      ],
+      "Manage labels": [
+        "Labels beheeren"
+      ],
       "Mark for deletion": [
         "Markeren voor verwijderen"
       ],
@@ -1912,6 +1918,11 @@
         "Gebruik globale standaardwaarde (${ globalDefaultText })"
       ]
     },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "Afspraak verwijderen"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Onbetaalde factuur"
@@ -1980,6 +1991,11 @@
         "Agenda toevoegen"
       ]
     },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "Afspraak dupliceren"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minuten"
@@ -2002,6 +2018,11 @@
     "Early Access Enabled": {
       "On": [
         "Aan"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "Afspraak bewerken"
       ]
     },
     "Email body for description (description part)": {
@@ -2140,6 +2161,9 @@
       "Email address invalid": [
         "E-mailadres is ongeldig"
       ],
+      "Email address is required": [
+        "E-mailadres is vereist"
+      ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
       ],
@@ -2166,6 +2190,9 @@
       ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
+      ],
+      "IMAP server is required": [
+        "IMAP-server is vereist"
       ],
       "Incorrect login credentials. Please try again.": [
         "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
@@ -2251,6 +2278,9 @@
         "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
         "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Wachtwoord is vereist"
+      ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
@@ -2260,6 +2290,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
+      ],
+      "Port is required": [
+        "Poort is vereist"
       ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet ontsleuteld"
@@ -2808,11 +2841,20 @@
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. Er kon geen enkele afspraak worden geïmporteerd."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Versleutelen en toevoegen van contacten: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Versleutelen en toevoegen van afspraken aan uw agenda: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Afspraak succesvol geïmporteerd. De geïmporteerde afspraak zal nu in uw agenda verschijnen."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Afspraken succesvol geïmporteerd. De geïmporteerde afspraken zullen nu in uw agenda verschijnen."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Gelieve het tabblad niet te sluiten voordat het importproces is voltooid."
@@ -2846,6 +2888,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contact versleuteld en toegevoegd aan uw contactenlijst",
         "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contact. Er kon geen contact worden geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contacten. ${ totalImported } van ${ totalToImport } contacten succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contacten. Er kon geen contact worden geïmporteerd."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contactpersoon succesvol geïmporteerd. Het geïmporteerde contact zal nu in uw adresboek verschijnen."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contacten succesvol geïmporteerd. De geïmporteerde contacten zullen nu in uw adresboek verschijnen."
       ]
     },
     "Import contact error": {
@@ -3401,7 +3458,7 @@
         "Geen van de deelnemers kan op de hoogte worden gebracht van uw wijzigingen:"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Geen van de geüploadet sleutels zijn geldig voor versleuteling. Upload een geldige sleutel of schakel \"E-mails versleutelen\" uit om berichten te kunnen versturen naar dit adres."
+        "Geen van de geüploade sleutels zijn geldig voor versleuteling. Upload een geldige sleutel of schakel \"E-mails versleutelen\" uit om berichten te kunnen versturen naar dit adres."
       ],
       "Not a valid URL": [
         "Ongeldige link"
@@ -3649,9 +3706,6 @@
       ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
-      ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "U kunt alleen persoonlijke eigenschappen van afspraken aanpassen omdat u geen e-mails vanuit de organisator kunt verzenden."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
@@ -3921,6 +3975,12 @@
       "Frequency": [
         "Frequentie"
       ],
+      "From: ${ from }": [
+        "Van: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Van: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Van: ${ importedEmail }"
       ],
@@ -4069,6 +4129,12 @@
       "To: ${ emailAddress }": [
         "Naar: ${ emailAddress }"
       ],
+      "To: ${ to }": [
+        "Aan: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Naar: ${ toEmail }"
+      ],
       "Toolbar": [
         "Werkbalk"
       ],
@@ -4195,6 +4261,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importeer alle berichten van ${ itemsToImportCount } map en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importeer alle berichten van ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importeer alle berichten van ${ itemsToImportCount } label en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importeer alle berichten van ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -4875,6 +4945,11 @@
         "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
       ]
     },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "Afspraak herladen"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Uploaden"
@@ -5184,9 +5259,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
       ],
-      "Don't miss any events": [
-        "Mis geen afspraken"
-      ],
       "Easily accept invites": [
         "Accepteer eenvoudig uitnodigingen"
       ],
@@ -5204,9 +5276,6 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probeer ${ DRIVE_APP_NAME }"
-      ],
-      "You can now add notifications to calendars you subscribed to.": [
-        "U kan nu meldingen toevoegen aan agenda's waarop u geabonneerd bent."
       ],
       "You can subscribe to external calendars and read their events.": [
         "U kunt zich abonneren op externe agenda's en de bijbehorende gebeurtenissen lezen."

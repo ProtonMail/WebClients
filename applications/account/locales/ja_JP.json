@@ -454,6 +454,12 @@
       "Manage communication preferences": [
         "コミュニケーション設定を管理する"
       ],
+      "Manage folders": [
+        "フォルダーを管理"
+      ],
+      "Manage labels": [
+        "ラベルを管理"
+      ],
       "Mark as default": [
         "既定として設定"
       ],
@@ -496,10 +502,10 @@
       "Not spam": [
         "迷惑メールでない"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -550,10 +556,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -1223,6 +1229,11 @@
         "ラベルが見えるのはあなただけです。"
       ]
     },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "権限はいつでも変更や削除できます。"
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "権限"
@@ -1250,6 +1261,14 @@
       ],
       "Share with anyone": [
         "ほかの人に共有"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "編集 (予定詳細を閲覧、作成、編集できます)"
+      ],
+      "View (see all event details)": [
+        "閲覧 (すべての予定詳細を閲覧できます)"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -2795,6 +2814,9 @@
       "Email address disabled": [
         "メールアドレスが無効です"
       ],
+      "Email address is required": [
+        "メールアドレスは必須です"
+      ],
       "Email is not valid": [
         "メールアドレスが無効です"
       ],
@@ -2824,6 +2846,9 @@
       ],
       "Folder name cannot be empty.": [
         "フォルダー名は空にできません。"
+      ],
+      "IMAP server is required": [
+        "IMAP サーバーは必須です"
       ],
       "Incorrect login credentials. Please try again.": [
         "無効なログイン情報です。再度お試しください。"
@@ -2927,6 +2952,9 @@
       "Organization not recognized. Try again.": [
         "組織が認識されていません。再度お試しください。"
       ],
+      "Password is required": [
+        "パスワードは必須です"
+      ],
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
@@ -2974,6 +3002,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "複数のユーザーを管理するには、複数のユーザーを含むビジネスプランにアップグレードしてください。"
+      ],
+      "Port is required": [
+        "ポートは必須です"
       ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
@@ -3885,11 +3916,20 @@
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "予定を暗号化し、カレンダーに追加中...${ totalToImport }件中${ totalImported }件が完了"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "インポートが完了するまでタブを閉じないでください。"
@@ -3914,6 +3954,21 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 件の連絡先が暗号化され、連絡先リストに追加されました"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先が正常にインポートされました。"
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
       ]
     },
     "Import contact error": {
@@ -5032,7 +5087,7 @@
         " / "
       ],
       "One account. All ${ BRAND_NAME } services.": [
-        "1 つのアカウント。すべての ${ BRAND_NAME } サービス。"
+        "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで。"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
@@ -5439,6 +5494,9 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "インターネット接続を保護するには、${ VPN_APP_NAME } アプリケーションをダウンロードおよびインストールして、サーバーに接続してください。"
       ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "${ toAppName } とすべての ${ BRAND_NAME } サービスを使用します"
+      ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ toAppName } を使用するには、${ MAIL_APP_NAME } アドレスが必要です。"
       ],
@@ -5717,6 +5775,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "支払いの検証のため、まもなく銀行のサイトへリダイレクトされます。"
+      ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "この鍵で暗号化されたすべてのメッセージ、ファイル、その他のデータは復号できなくなります。"
@@ -7977,6 +8038,9 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "どこでも Netflix や Disney+ および Prime Video を含むストリーミングサービスにアクセスします"
       ],
+      "Advanced security VPN with global network": [
+        "高度なセキュリティを備えた VPN のグローバルネットワーク"
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "現在、プロモーション目的やプログラム制御のメールの一括送信はサポートしていません。このような場合は、専用のメールサービスプロバイダーを使用することをおすすめします。"
       ],
@@ -8000,6 +8064,9 @@
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP サポートは ${ MAIL_APP_NAME } Bridge を経由したデスクトップアプリ (Outlook、メール (Apple)、Thunderbird) のみに制限されます。クラウドベースの IMAP 統合は現在サポートされていません。"
+      ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "誤って VPN サーバーから切断してしまってもネットワーク接続をブロックすることであなたを保護します。"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "ラベルはメッセージを簡単に探したり、フィルターを適用できるようにするシンプルなタグです"
@@ -8689,6 +8756,9 @@
       ],
       "You can safely close this tab.": [
         "安全にタブを閉じることができます。"
+      ],
+      "Your recovery email has been successfully removed.": [
+        "回復用メールアドレスは正常に削除されました。"
       ],
       "Your recovery email has been successfully verified.": [
         "回復用メールアドレスは正常に検証されました。"
@@ -10373,6 +10443,9 @@
       "This feature is only available for paid users": [
         "この機能は課金ユーザーのみが利用できます"
       ],
+      "This feature is unavailable for the moment": [
+        "この機能は現在利用できません"
+      ],
       "This key cannot be used for encryption": [
         "この鍵は暗号化に使用できません"
       ],
@@ -10589,6 +10662,9 @@
       ],
       "You will lose any customization you made so far.": [
         "今までに行ったカスタマイズはすべて失われます。"
+      ],
+      "You will not see this import record in the list anymore.": [
+        "このインポートの記録は一覧に表示されなくなります。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "無料トライアルは ${ textDate } に終了します。${ action }"

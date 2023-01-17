@@ -290,7 +290,7 @@
         "Управление папками"
       ],
       "Manage labels": [
-        "Управление метками"
+        "Управление ярлыками"
       ],
       "Mark for deletion": [
         "Отметить для удаления"
@@ -2226,7 +2226,7 @@
         "Не удалось загрузить изображение"
       ],
       "IMAP server is required": [
-        "Нужно укзать IMAP-сервер"
+        "Нужно укзать сервер IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
         "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
@@ -3831,9 +3831,6 @@
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
       ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "Вы можете изменять только свою копию события, так как вы не можете отправлять письма с адреса организатора."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений электронной почты в этой папке."
       ],
@@ -4390,6 +4387,12 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Импортировать все сообщения с ${ itemsToImportCount } ярлыком и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
         "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
@@ -5466,9 +5469,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } вышел из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронной почте."
       ],
-      "Don't miss any events": [
-        "Не пропускайте события"
-      ],
       "Easily accept invites": [
         "Легко принимайте приглашения"
       ],
@@ -5486,9 +5486,6 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Попробуйте ${ DRIVE_APP_NAME }"
-      ],
-      "You can now add notifications to calendars you subscribed to.": [
-        "Теперь можно добавлять уведомления для календарей, на которые вы подписаны."
       ],
       "You can subscribe to external calendars and read their events.": [
         "Можно подписаться на внешние календари и читать события из них."

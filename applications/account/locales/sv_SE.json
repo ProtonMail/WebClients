@@ -507,11 +507,11 @@
       "Not spam": [
         "Inte skräppost"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -561,11 +561,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -4015,6 +4015,9 @@
         "Ett fel uppstod vid kryptering och skapande av din händelse. ${ totalImported } av ${ totalToImport } händelse lyckades importeras.",
         "Ett fel uppstod vid kryptering och skapande av dina händelser. ${ totalImported } av ${ totalToImport } händelse lyckades importeras."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Ett fel uppstod vid kryptering och när dina händelser skulle läggas till. Ingen händelse kunde importeras."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Krypterar och lägger till kontakter: ${ totalImported }/${ totalToImport }"
       ],
@@ -4053,6 +4056,12 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontakt krypterad och tillagd i din kontaktlista",
         "${ totalImported }/${ totalToImport } kontakter krypterade och tillagda i din kontaktlista"
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontakten har importerats. Den importerade kontakten kommer nu att visas i din kontaktlista."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Kontakterna har importerats. De importerade kontakterna kommer nu att visas i din kontaktlista."
       ]
     },
     "Import contact error": {
@@ -4566,9 +4575,6 @@
       "Amount below minimum (${ amount }).": [
         "Belopp under minimum (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
-      ],
       "and": [
         "och"
       ],
@@ -4834,6 +4840,9 @@
       ],
       "Enable this address to join this calendar": [
         "Aktivera denna adress för att gå med i denna kalender"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Aktivera TLS eller SSL på den externa tjänsten om det stöds."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Aktivering av återställning med fras kommer att skapa en ny lösenfras."
@@ -7147,6 +7156,12 @@
       ],
       "Signature": [
         "Signatur"
+      ],
+      "SMTP port": [
+        "SMTP-port"
+      ],
+      "SMTP server": [
+        "SMTP-server"
       ],
       "SMTP token": [
         "SMTP-token"
@@ -9623,6 +9638,9 @@
       "Phone number updated": [
         "Telefonnummer uppdaterat"
       ],
+      "Port copied to clipboard": [
+        "Port kopierad till urklipp"
+      ],
       "Preference saved": [
         "Preferens sparad"
       ],
@@ -9631,6 +9649,9 @@
       ],
       "Resuming import": [
         "Återupptar import"
+      ],
+      "Server copied to clipboard": [
+        "Server kopierad till urklipp"
       ],
       "Session revoked": [
         "Session återkallad"
