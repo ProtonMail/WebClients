@@ -4,6 +4,11 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "Sense etiqueta"
+      ]
+    },
     "Access level": {
       "Full view": [
         "Vista completa"
@@ -478,11 +483,11 @@
       "Not spam": [
         "No es correu brossa"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "D'acord"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -532,11 +537,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresqueu la pàgina"
-      ],
       "Refresh the page": [
         "Actualitza la pàgina"
+      ],
+      "refresh the page": [
+        "refresqueu la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -960,6 +965,11 @@
         "Esdeveniment no suportat"
       ]
     },
+    "Auto import invitations setting": {
+      "Add to calendar and mark as pending": [
+        "Afegir al calendari i marcar com a pendent"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Sóc fora de l'oficina i amb accés limitat al meu correu electrònic."
@@ -1154,6 +1164,9 @@
       "Label added": [
         "Etiqueta afegida"
       ],
+      "Label deleted": [
+        "Etiqueta esborrada"
+      ],
       "Label edited": [
         "Etiqueta editada"
       ]
@@ -1270,6 +1283,11 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Fa més de 12 hores de la darrera actualització — ${ CALENDAR_APP_NAME } provarà d'actualitzar-lo en les hores vinents."
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "Obre la configuració"
       ]
     },
     "Calendar view": {
@@ -2515,6 +2533,9 @@
       ]
     },
     "Domain spam notification": {
+      "${ name } added": [
+        "${ name } afegit"
+      ],
       "${ name } successfully deleted": [
         "${ name }\" eliminat"
       ]
@@ -2883,6 +2904,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Actualitzi a un pla Business amb més d'1 usuari per obtenir suport multiusuari."
+      ],
+      "Port is required": [
+        "Es requereix el port"
       ],
       "Primary address key is not decrypted": [
         "La clau de la adreça primària no està desxifrada"
@@ -3359,11 +3383,44 @@
       "Calendar successfully exported. You can now save the ICS file.": [
         "Calendari exportat satisfactòriament. Ja podeu desar l'arxiu ICS."
       ],
+      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
+        "Desxifrant esdeveniments del vostre calendari: ${ totalProcessed }/${ totalToProcess }"
+      ],
+      "Due to a password reset, none of your events could be decrypted and exported.": [
+        "A causa del restabliment de contrasenya, cap dels vostres esdeveniments s'han pogut desxifrar i exportar."
+      ],
+      "Due to a password reset, some of your events could not be decrypted and exported.": [
+        "A causa del restabliment de contrasenya, alguns dels vostres esdeveniments no s'han pogut desxifrar i exportar."
+      ],
       "Error decrypting event": [
         "Error desxifrant l'esdeveniment"
       ],
+      "Learn how to restore encrypted events with old password": [
+        "Apreneu a restablir esdeveniments xifrats amb l'antiga contrasenya."
+      ],
       "Loading events": [
         "Carregant esdeveniments"
+      ],
+      "None of the events could be exported.": [
+        "No s'ha pogut exportar cap dels esdeveniments."
+      ],
+      "Password reset - event cannot be decrypted": [
+        "Restabliment de contrasenya: un esdeveniment no es pot desxifrar."
+      ],
+      "Password reset - multiple events cannot be decrypted": [
+        "Restabliment de contrasenya: diversos esdeveniments no es poden desxifrar."
+      ],
+      "Please don't close the tab before the exporting process is finished.": [
+        "No tanqueu la pestanya abans de finalitzar el procés d'exportació."
+      ],
+      "Some of your events could not be exported.": [
+        "Alguns dels vostres esdeveniments no s'han pogut exportar."
+      ],
+      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
+        "La connexió d'internet s'ha interromput, causant la fallada del procés d'exportació. Torneu-ho a intentar."
+      ],
+      "You can save an ICS file of the events that were successfully exported.": [
+        "Podeu desar l'arxiu ICS dels esdeveniments que han estat exportats satisfactòriament."
       ]
     },
     "Feature": {
@@ -3704,11 +3761,20 @@
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "S'ha produït un error xifrant i afegint els teus esdeveniments. No s’ha pogut importar cap esdeveniment."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Xifrant i afegint esdeveniments al calendari: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esdeveniment importat. L’esdeveniment importat ara apareixerà al vostre calendari."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Esdeveniments importats. Els esdeveniments importats ara apareixeran al vostre calendari."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No tanqueu la pestanya abans de finalitzar el procés d'importació."
@@ -3742,6 +3808,18 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contacte xifrat i afegit a la vostra llista de contactes",
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "S'ha produït un error xifrant i afegint el vostre contacte. No s'ha pogut importar cap contacte."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "S'ha produït un error xifrant i afegint els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Contacte importat. El contacte importat ja apareix a la vostra llista de contactes."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Contactes importats. Els contactes importats ja apareixen a la vostra llista de contactes."
       ]
     },
     "Import contact error": {
@@ -4651,6 +4729,9 @@
       "Loading preview": [
         "S'està carregant la previsualització"
       ],
+      "Loading...": [
+        "Carregant..."
+      ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Accedeix a ${ MAIL_APP_NAME } per activar la teva adreça"
       ],
@@ -4878,6 +4959,9 @@
       ],
       "Save your password somewhere safe.": [
         "Guardeu la vostra contrasenya a un lloc segur."
+      ],
+      "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
+        "Guardeu les seves contrasenyes en un lloc segur. Feu clic a la icona per confirmar que ha escrit la contrasenya correctament."
       ],
       "Scan QR code instead": [
         "Escanejar codi QR"
@@ -5276,6 +5360,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
+      ],
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "El seu compte ${ BRAND_NAME } està associat amb ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els vostres enllaços compartits de Drive es bloquejaran, i no podreu carregar-hi nous fitxers. Per a restablir el servei normal pagueu qualsevol factura vençuda."
@@ -6089,6 +6176,12 @@
       "Folder location": [
         "Ubicació de la carpeta"
       ],
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
       ],
@@ -6229,6 +6322,9 @@
       ],
       "New password": [
         "Contrasenya nova"
+      ],
+      "No filter": [
+        "Sense filtre"
       ],
       "No label found": [
         "No s'ha trobat cap etiqueta"
@@ -6436,6 +6532,12 @@
       ],
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "Per: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Per: ${ toEmail }"
       ],
       "Token name": [
         "Nom del token"
@@ -7895,6 +7997,9 @@
       "Cancel": [
         "Cancel·la"
       ],
+      "sign in": [
+        "iniciar la sessió"
+      ],
       "Verify now": [
         "Verificar ara"
       ],
@@ -8156,6 +8261,11 @@
         "Aquest enllaç podria ser erroni"
       ]
     },
+    "Subscribed calendar section description": {
+      "Add public, external, or shared calendars using a URL.": [
+        "Afegiu calendaris públics, externs, o compartits utilitzant una URL."
+      ]
+    },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
         "L'adreça és massa llarga"
@@ -8215,6 +8325,9 @@
       ],
       "1 VPN connection": [
         "1 connexió VPN"
+      ],
+      "Access to streaming services globally": [
+        "Accediu a serveis de reproducció en línia globalment"
       ],
       "Built-in ad blocker (NetShield)": [
         "Bloquejador d'anuncis integrat (NetShield)"

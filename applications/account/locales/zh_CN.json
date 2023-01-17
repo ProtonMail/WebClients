@@ -495,10 +495,10 @@
       "Not spam": [
         "非垃圾邮件"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -549,10 +549,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -746,6 +746,9 @@
       ],
       "Size": [
         "字号"
+      ],
+      "Skip verification": [
+        "跳过验证"
       ],
       "Sort": [
         "自动排序"
@@ -2472,6 +2475,9 @@
       "Error on row ${ erroredRowsString }.": [
         "第 ${ erroredRowsString } 行出现错误。"
       ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "您的文件可能缺少'${ options.fieldName }'的头部内容。"
+      ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "导入时检测到多行错误，请检查您的 csv 文件。"
       ]
@@ -3549,6 +3555,11 @@
         "支持 BT 下载 (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Delete key": [
+        "删除密钥"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥进行身份验证时出错。请重试。"
@@ -3662,6 +3673,9 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "定制筛选规则可以自动执行某些操作，例如加标签或将邮件存档。使用 Sieve 编程语言可以直接创建或修改规则。"
+      ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "在您或 ${ BRAND_NAME } 标记出某封垃圾邮件后，对应邮箱发送的所有邮件都会被收入您的垃圾邮件文件夹。如果您仍想接受来自该邮箱的邮件，请将其标记为“非垃圾邮件”。"
       ],
       "Emails from blocked addresses won't be delivered.": [
         "您将不会收到来自屏蔽邮箱地址的邮件"
@@ -3796,6 +3810,14 @@
         "数据"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "操作"
+      ],
+      "Email address": [
+        "电子邮件地址"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestions, use keyboard to navigate.": [
         "找到 ${ items.length } 建议，使用键盘导航。"
@@ -3828,11 +3850,20 @@
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "加密并添加日程时出错。未能导入任何日程。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加联系人：已完成 ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加日程：已完成 ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "日程导入成功。已显示在您的日历中。"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "日程导入成功。已显示在您的日历中。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "导入结束前请勿关闭此网页。"
@@ -3863,6 +3894,21 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "加密并添加联系人时出错。未能导入任何联系人。"
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "加密并添加联系人时出错。${ totalImported }/${ totalToImport } 联系人已成功导入。"
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "加密并添加联系人时出错。未能导入任何联系人。"
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "联系人导入成功，已显示在您的通讯录中"
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "联系人导入成功。已显示在您的通讯录中。"
       ]
     },
     "Import contact error": {
@@ -5305,6 +5351,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
@@ -5646,6 +5695,9 @@
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "您的 ${ BRAND_NAME } 账户已被停用，无法继续收取新邮件，并且网盘分享链接已全部失效，新文件也无法上传。如需恢复账户正常功能，请付清逾期账单。"
@@ -6145,6 +6197,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "共 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
       ],
+      "${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } 地址"
+      ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } 标识"
       ],
@@ -6496,6 +6551,12 @@
       "Folder location": [
         "文件夹位置"
       ],
+      "From: ${ from }": [
+        "发件人：${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "发件人：${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
       ],
@@ -6784,6 +6845,9 @@
       "Signature": [
         "落款"
       ],
+      "SMTP username": [
+        "SMTP 用户名"
+      ],
       "Spam": [
         "垃圾"
       ],
@@ -6837,6 +6901,12 @@
       ],
       "To: ${ emailAddress }": [
         "导入到：${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "收件人：${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "收件人：${ toEmail }"
       ],
       "Two-password mode": [
         "双密码模式"
@@ -7205,6 +7275,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
+        "所有过滤器操作将应用于 ${ MAIL_APP_NAME } 账户中的所有邮件。 不会发送自动回复电子邮件。"
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "将域名与 ${ BRAND_NAME } 关联即可使用您自己的域名设立邮箱地址（如 you@yourcompany.com）。我们将全程指导您完成设置。"
       ],
@@ -7398,6 +7471,9 @@
       ],
       "Blocked": [
         "已屏蔽"
+      ],
+      "Calendar": [
+        "日历"
       ],
       "Drive": [
         "云盘"
@@ -8540,6 +8616,9 @@
       ],
       "Postal code": [
         "邮政编码"
+      ],
+      "Printer": [
+        "打印机"
       ],
       "Search": [
         "搜索"

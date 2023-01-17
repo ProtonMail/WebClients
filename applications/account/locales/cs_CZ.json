@@ -507,11 +507,11 @@
       "Not spam": [
         "Není spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -561,11 +561,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -4703,8 +4703,8 @@
       "Amount below minimum (${ amount }).": [
         "Částka je nižší než minimální možná hodnota (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
+      "An error occurred while communicating with the extension": [
+        "Při komunikaci s rozšířením došlo k chybě"
       ],
       "and": [
         "a"
@@ -4975,6 +4975,9 @@
       ],
       "Enable this address to join this calendar": [
         "Povolte tuto adresu, aby se připojila k tomuto kalendáři"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Povolte TLS nebo SSL u externí služby, pokud je podporováno."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Opětovné povolení obnovení pomocí fráze vygeneruje novou frázi pro obnovení."
@@ -7318,6 +7321,12 @@
       ],
       "Signature": [
         "Podpis"
+      ],
+      "SMTP port": [
+        "SMTP port"
+      ],
+      "SMTP server": [
+        "SMTP server"
       ],
       "SMTP token": [
         "SMTP token"
@@ -9910,6 +9919,9 @@
       "Phone number updated": [
         "Telefonní číslo bylo aktualizováno"
       ],
+      "Port copied to clipboard": [
+        "Port zkopírován do schránky"
+      ],
       "Preference saved": [
         "Nastavení uloženo"
       ],
@@ -9918,6 +9930,9 @@
       ],
       "Resuming import": [
         "Obnovuji import"
+      ],
+      "Server copied to clipboard": [
+        "Server zkopírován do schránky"
       ],
       "Session revoked": [
         "Relace byla zrušena"

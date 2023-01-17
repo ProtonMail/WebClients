@@ -507,10 +507,10 @@
       "Not spam": [
         "Non indésirables/spam"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -561,11 +561,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Reload": [
         "Recharger"
@@ -3425,7 +3425,7 @@
         "Fuseau horaire"
       ],
       "To-do entry": [
-        "Tâche à réaliser"
+        "Entrée de type tâche à réaliser"
       ],
       "Unknown": [
         "Inconnu"
@@ -4597,8 +4597,8 @@
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum de (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
+      "An error occurred while communicating with the extension": [
+        "Une erreur s'est produite lors de la communication avec l'extension."
       ],
       "and": [
         "et"
@@ -4865,6 +4865,9 @@
       ],
       "Enable this address to join this calendar": [
         "Activez cette adresse pour rejoindre ce calendrier."
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Activer l'utilisation de TLS ou SSL sur le service externe s'il le supporte."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Réactiver la récupération par phrase générera une nouvelle phrase de récupération."
@@ -5340,7 +5343,7 @@
         "Complétez ce champ."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Nous vous invitons à le garder en sécurité. Vous en aurez besoin pour accéder à votre compte et déchiffrer vos données en cas de réinitialisation du mot de passe."
+        "Nous vous invitons garder cela en sécurité. Vous en aurez besoin pour accéder à votre compte et déchiffrer vos données en cas de réinitialisation du mot de passe."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Notez que si vous supprimez cette adresse, vous ne pourrez plus l'utiliser pour envoyer ou recevoir des messages."
@@ -7185,6 +7188,12 @@
       "Signature": [
         "Signature"
       ],
+      "SMTP port": [
+        "Port SMTP"
+      ],
+      "SMTP server": [
+        "Serveur SMTP"
+      ],
       "SMTP token": [
         "Jeton SMTP"
       ],
@@ -7596,6 +7605,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -9791,7 +9804,7 @@
     },
     "Subscription status": {
       "Active": [
-        "Active"
+        "Actif"
       ],
       "Upcoming": [
         "À venir"
@@ -9917,6 +9930,9 @@
       "Phone number updated": [
         "Le numéro de téléphone a été mis à jour."
       ],
+      "Port copied to clipboard": [
+        "Le numéro de port a été copié dans le presse-papiers"
+      ],
       "Preference saved": [
         "La préférence a été enregistrée."
       ],
@@ -9925,6 +9941,9 @@
       ],
       "Resuming import": [
         "Reprendre l'importation"
+      ],
+      "Server copied to clipboard": [
+        "L'adresse du serveur a été copiée dans le presse-papiers"
       ],
       "Session revoked": [
         "La session a été révoquée."
@@ -10613,7 +10632,7 @@
         "Disposition"
       ],
       "Length": [
-        "Longueur"
+        "Durée"
       ],
       "Link confirmation": [
         "Confirmation du lien"

@@ -280,6 +280,12 @@
       "Manage addresses": [
         "アドレスの管理"
       ],
+      "Manage folders": [
+        "フォルダーを管理"
+      ],
+      "Manage labels": [
+        "ラベルを管理"
+      ],
       "Mark for deletion": [
         "削除マーク"
       ],
@@ -790,6 +796,11 @@
         "ラベルが見えるのはあなただけです。"
       ]
     },
+    "Calendar permissions hint": {
+      "You can change or remove permissions at any time.": [
+        "権限はいつでも変更や削除できます。"
+      ]
+    },
     "Calendar permissions label": {
       "Permissions": [
         "権限"
@@ -818,6 +829,14 @@
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } links for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "カレンダーごとに作成できるリンクは最大 ${ MAX_LINKS_PER_CALENDAR } 件です。このカレンダーの新しいリンクを作成するには、リンクをひとつ削除してください。"
+      ]
+    },
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "編集 (予定詳細を閲覧、作成、編集できます)"
+      ],
+      "View (see all event details)": [
+        "閲覧 (すべての予定詳細を閲覧できます)"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1889,6 +1908,11 @@
         "全体の既定値を使用 (${ globalDefaultText })"
       ]
     },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "予定を削除"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "未払いの請求"
@@ -1956,6 +1980,11 @@
         "カレンダーを追加"
       ]
     },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "予定を複製"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120分"
@@ -1978,6 +2007,11 @@
     "Early Access Enabled": {
       "On": [
         "有効"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "予定を編集"
       ]
     },
     "Email body for description (description part)": {
@@ -2098,6 +2132,9 @@
       "Email address invalid": [
         "メールアドレスが不正です"
       ],
+      "Email address is required": [
+        "メールアドレスは必須です"
+      ],
       "Email is not valid": [
         "メールアドレスが無効です"
       ],
@@ -2124,6 +2161,9 @@
       ],
       "Image upload failed": [
         "画像のアップロードに失敗しました"
+      ],
+      "IMAP server is required": [
+        "IMAP サーバーは必須です"
       ],
       "Incorrect login credentials. Please try again.": [
         "無効なログイン情報です。再度お試しください。"
@@ -2200,6 +2240,9 @@
       "Number of occurrences cannot be empty": [
         "行事の数を設定してください"
       ],
+      "Password is required": [
+        "パスワードは必須です"
+      ],
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
@@ -2208,6 +2251,9 @@
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
+      ],
+      "Port is required": [
+        "ポートは必須です"
       ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
@@ -2763,11 +2809,20 @@
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "連絡先の暗号化と追加: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "予定を暗号化し、カレンダーに追加中...${ totalToImport }件中${ totalImported }件が完了"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "予定は正常にインポートされました。インポートされた予定はカレンダーに表示されます。"
       ],
       "Please don't close the tab before the importing process is finished.": [
         "インポートが完了するまでタブを閉じないでください。"
@@ -2792,6 +2847,21 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 件の連絡先が暗号化され、連絡先リストに追加されました"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。${ totalToImport } 件のうち ${ totalImported } 件の連絡先が正常にインポートされました。"
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "連絡先が正常にインポートされました。インポートされた連絡先が連絡先リストに表示されます。"
       ]
     },
     "Import contact error": {
@@ -3569,9 +3639,6 @@
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
       ],
-      "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "主催者のアドレスからメールを送信できないため、個人の予定プロパティのみ変更できます。"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
@@ -4158,6 +4225,11 @@
       ],
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
         "これ以上のカレンダーを作成できません。このプランで作成できる個人用カレンダーの最大数に達しています。"
+      ]
+    },
+    "Modal for received invitation to share calendar; text": {
+      "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
+        "${ calendarOwnerDisplayName } がカレンダー ${ boldCalendarName } をあなたに共有しました。"
       ]
     },
     "Modal for received invitation to share calendar; Title": {
@@ -4748,6 +4820,11 @@
         "注意: 「適用」をクリックするとサービスが再読み込みされます。"
       ]
     },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "予定を再読み込み"
+      ]
+    },
     "Select files": {
       "Upload": [
         "アップロード"
@@ -4813,9 +4890,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
       ],
-      "Don't miss any events": [
-        "予定をお見逃しなく"
-      ],
       "Easily accept invites": [
         "招待を簡単に了承できます"
       ],
@@ -4833,9 +4907,6 @@
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を試す"
-      ],
-      "You can now add notifications to calendars you subscribed to.": [
-        "登録しているカレンダーに通知を追加できるようになりました。"
       ],
       "You can subscribe to external calendars and read their events.": [
         "外部カレンダーを購読して、イベントを読み込むことができます。"

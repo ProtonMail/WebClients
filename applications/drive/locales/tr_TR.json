@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
+      "Attention required": [
+        "İlgilenmeniz gerekiyor"
+      ],
       "Authenticate": [
         "Kimliği doğrula"
       ],
@@ -327,6 +330,12 @@
       ],
       "Log in": [
         "Oturum aç"
+      ],
+      "Manage folders": [
+        "Klasör yönetimi"
+      ],
+      "Manage labels": [
+        "Etiket yönetimi"
       ],
       "Manage link": [
         "Bağlantıyı yönet"
@@ -1926,6 +1935,9 @@
       "Email address invalid": [
         "E-posta adresi geçersiz"
       ],
+      "Email address is required": [
+        "E-posta adresinin yazılması zorunludur"
+      ],
       "Email is not valid": [
         "E-posta geçersiz"
       ],
@@ -1952,6 +1964,9 @@
       ],
       "Image upload failed": [
         "Görsel yüklenemedi"
+      ],
+      "IMAP server is required": [
+        "IMAP sunucusunun yazılması zorunludur"
       ],
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
@@ -2007,6 +2022,9 @@
         "Gruplardan birinde kişi yok: ${ noContactGroupList }",
         "Gruplardan bazılarında kişi yok: ${ noContactGroupList }"
       ],
+      "Password is required": [
+        "Parolanın yazılması zorunludur"
+      ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
@@ -2016,6 +2034,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
+      ],
+      "Port is required": [
+        "Bağlantı noktasının yazılması zorunludur"
       ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
@@ -2971,6 +2992,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Seçilmiş ögeleri çöp kutusundan kalıcı olarak silmek istediğinizden emin misiniz?"
       ],
+      "Attention required": [
+        "İlgilenmeniz gerekiyor"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
@@ -3371,8 +3395,8 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Tüm dosyalar aktarılmadı. Dosyaları yeniden yüklemeyi veya indirmeyi deneyin."
       ],
-      "Note: Data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }."
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Not: Veriler, ${ DRIVE_APP_NAME } kurulu aygıtlarda yerel olarak bulunmayı sürdürebilir."
       ],
       "of": [
         "/"
@@ -4040,6 +4064,12 @@
       "Folder name": [
         "Klasör adı"
       ],
+      "From: ${ from }": [
+        "Kimden: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Kimden: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Nereden: ${ importedEmail }"
       ],
@@ -4229,6 +4259,12 @@
       "To: ${ emailAddress }": [
         "Nereye: ${ emailAddress }"
       ],
+      "To: ${ to }": [
+        "Kime: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Kime: ${ toEmail }"
+      ],
       "Toolbar": [
         "Araç çubuğu"
       ],
@@ -4368,6 +4404,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
         "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"

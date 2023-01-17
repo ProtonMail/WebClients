@@ -459,6 +459,12 @@
       "Manage communication preferences": [
         "Gestisci le preferenze di comunicazione"
       ],
+      "Manage folders": [
+        "Gestisci cartelle"
+      ],
+      "Manage labels": [
+        "Gestisci etichette"
+      ],
       "Mark as default": [
         "Segna come predefinito"
       ],
@@ -501,11 +507,11 @@
       "Not spam": [
         "Non spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -555,11 +561,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Reload": [
         "Ricarica"
@@ -2878,6 +2884,9 @@
       "Email address disabled": [
         "Indirizzo email disabilitato"
       ],
+      "Email address is required": [
+        "L'indirizzo email è obbligatorio"
+      ],
       "Email is not valid": [
         "Email non valida"
       ],
@@ -2907,6 +2916,9 @@
       ],
       "Folder name cannot be empty.": [
         "Il nome della cartella non può essere vuoto."
+      ],
+      "IMAP server is required": [
+        "È richiesto il server IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenziali di accesso non valide. Si prega di riprovare."
@@ -3011,6 +3023,9 @@
       "Organization not recognized. Try again.": [
         "Organizzazione non riconosciuta. Riprova."
       ],
+      "Password is required": [
+        "Password necessaria"
+      ],
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
@@ -3059,6 +3074,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Esegui l'upgrade a un piano aziendale con più di 1 utente per gestire più utenti."
+      ],
+      "Port is required": [
+        "La porta è obbligatoria"
       ],
       "Primary address key is not decrypted": [
         "Chiave dell'indirizzo principale non decriptata"
@@ -4579,8 +4597,8 @@
       "Amount below minimum (${ amount }).": [
         "Importo inferiore al minimo (${ amount })."
       ],
-      "An error occured while communicating with the extension": [
-        "An error occurred while communicating with the extension"
+      "An error occurred while communicating with the extension": [
+        "Si è verificato un errore durante la connessione all'estensione"
       ],
       "and": [
         "e"
@@ -6861,6 +6879,12 @@
       "Folder location": [
         "Percorso cartella"
       ],
+      "From: ${ from }": [
+        "Da: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Da: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Da: ${ importedEmail }"
       ],
@@ -7161,6 +7185,12 @@
       "Signature": [
         "Firma"
       ],
+      "SMTP port": [
+        "Porta SMTP"
+      ],
+      "SMTP server": [
+        "Server SMTP"
+      ],
       "SMTP token": [
         "Token SMTP"
       ],
@@ -7220,6 +7250,12 @@
       ],
       "To: ${ emailAddress }": [
         "A: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "A: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "A: ${ toEmail }"
       ],
       "Token name": [
         "Nome token"
@@ -7566,6 +7602,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tutti i messaggi da ${ itemsToImportCount } cartella ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importa tutti i messaggi da ${ itemsToImportCount } cartelle ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importa tutti i messaggi da ${ itemsToImportCount } etichetta ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importa tutti i messaggi da ${ itemsToImportCount } etichette ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -9887,6 +9927,9 @@
       "Phone number updated": [
         "Numero di telefono aggiornato"
       ],
+      "Port copied to clipboard": [
+        "Numero di porta copiato negli appunti"
+      ],
       "Preference saved": [
         "Preferenze salvate"
       ],
@@ -9895,6 +9938,9 @@
       ],
       "Resuming import": [
         "Ripresa importazione"
+      ],
+      "Server copied to clipboard": [
+        "Indirizzo server copiato negli appunti"
       ],
       "Session revoked": [
         "Sessione revocata"
