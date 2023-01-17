@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { EmptyViewContainer, Icon, useActiveBreakpoint, usePopperAnchor } from '@proton/components';
+import uploadSvgMobile from '@proton/styles/assets/img/illustrations/upload-mobile.svg';
 import uploadSvg from '@proton/styles/assets/img/illustrations/upload.svg';
 
 import { FolderContextMenu } from './FolderContextMenu';
@@ -40,7 +41,10 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
         <>
             <div role="presentation" ref={anchorRef} onClick={close} className="flex w100 flex flex-item-fluid">
                 <EmptyViewContainer
-                    imageProps={{ src: uploadSvg, title: c('Info').t`There are no files yet` }}
+                    imageProps={{
+                        src: !isNarrow ? uploadSvg : uploadSvgMobile,
+                        title: c('Info').t`There are no files yet`,
+                    }}
                     data-test-id="my-files-empty-placeholder"
                 >
                     <h3 className="text-bold">{c('Info').t`Go ahead, upload a file`}</h3>
