@@ -161,5 +161,23 @@ describe('Step prepare helpers tests', () => {
                 formatPrepareStepPayload({ isLabelMapping, data: faultyData, fields, updatedFields })
             ).toThrowError('Importer ID should be defined');
         });
+
+        it('Should not submit unchecked folders', () => {
+            const fields: StepPrepareData['fields'] = {
+                mapping: new MailImportFoldersParser(providerLabels, isLabelMapping).folders.map((folder) => ({
+                    ...folder,
+                    checked: false,
+                })),
+                importLabel: { Color: '#fff', Name: 'label', Type: 1 },
+                importPeriod: TIME_PERIOD.BIG_BANG,
+                importAddress: address,
+                importCategoriesDestination: MailImportDestinationFolder.INBOX,
+            };
+
+            expect(
+                formatPrepareStepPayload({ isLabelMapping, data: correctData, fields, updatedFields }).Mail.Mapping
+                    .length
+            ).toBe(0);
+        });
     });
 });
