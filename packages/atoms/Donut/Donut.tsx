@@ -69,7 +69,7 @@ const Donut = ({ segments, gap = 4 }: DonutProps) => {
     const scale = sumOfAllChunks > 100 ? 100 / sumOfAllChunks : 1;
 
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox={`0 0 ${box} ${box}`}>
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox={`0 0 ${box} ${box}`}>
             {gap > 0 && (
                 <defs>
                     <mask id={uid}>
