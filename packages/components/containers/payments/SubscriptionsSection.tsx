@@ -88,7 +88,7 @@ const SubscriptionRow = ({
 const SubscriptionsSection = () => {
     const [plans, loadingPlans] = usePlans();
     const [current, loadingSubscription] = useSubscription();
-    const upcoming = current?.upcoming;
+    const upcoming = current?.UpcomingSubscription;
 
     if (loadingSubscription || loadingPlans) {
         return <Loader />;
