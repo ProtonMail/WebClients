@@ -94,7 +94,6 @@ const SidebarItem = ({
     const needsTotalDisplay = shouldDisplayTotal(labelID);
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-        console.log('handleClick', event);
         if (
             history.location.pathname.endsWith(link) &&
             // No search, no paging, nothing
