@@ -10,12 +10,12 @@ import { EncryptedLink, LinkShareUrl, useSearchView, useThumbnailsDownload } fro
 import { SortField } from '../../../store/_views/utils/useSorting';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import EmptySearch from '../Drive/EmptySearch';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { LocationCell, ModifiedCell, NameCell, SizeCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';
 import { getSelectedItems } from '../helpers';
+import { NoSearchResultsView } from './NoSearchResultsView';
 import { SearchItemContextMenu } from './SearchItemContextMenu';
 
 export interface SearchItem extends FileBrowserBaseItem {
@@ -129,7 +129,7 @@ export const Search = ({ shareId, searchView }: Props) => {
     const headerItems = isDesktop ? headerItemsDesktop : headerItemsMobile;
 
     if (!items.length && !isLoading) {
-        return <EmptySearch />;
+        return <NoSearchResultsView />;
     }
     return (
         <>
