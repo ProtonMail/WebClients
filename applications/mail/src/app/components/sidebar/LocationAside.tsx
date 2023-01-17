@@ -11,7 +11,7 @@ interface Props {
     itemOptions?: React.ReactNode;
     shouldDisplayTotal: boolean;
     hideCountOnHover: boolean;
-    onRefresh?: (event: React.MouseEvent<Element>) => void;
+    onRefresh?: () => void;
 }
 
 const { GROUP } = VIEW_MODE;
