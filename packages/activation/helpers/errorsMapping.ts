@@ -1,4 +1,3 @@
-import { FolderMapItem } from '@proton/activation/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import isTruthy from '@proton/utils/isTruthy';
@@ -16,14 +15,18 @@ export const isNameAlreadyUsed = (name: string, paths: string[]) =>
 
 export const isNameEmpty = (name: string | undefined) => !name || !name.trim();
 
-export const hasMergeWarning = (collection: FolderMapItem[], folderItem: FolderMapItem) => {
+export const hasMergeWarning = (
+    collection: MailImportFolder[],
+    folderItem: MailImportFolder,
+    isLabelMapping: boolean
+) => {
     return collection.some((item) => {
         const isNotCurrentFolderRow = item.id !== folderItem.id;
         const isSameInitialPath = item.id === folderItem.protonPath.join(folderItem.separator);
 
         return (
             folderItem.checked &&
-            !folderItem.isLabel &&
+            !isLabelMapping &&
             !folderItem.systemFolder &&
             isNotCurrentFolderRow &&
             isSameInitialPath
