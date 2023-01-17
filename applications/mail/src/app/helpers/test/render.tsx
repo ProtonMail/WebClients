@@ -15,6 +15,7 @@ import {
     ModalsProvider,
     PrivateAuthenticationStore,
 } from '@proton/components';
+import SpotlightProvider from '@proton/components/components/spotlight/Provider';
 import ApiContext from '@proton/components/containers/api/apiContext';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
@@ -76,33 +77,35 @@ const TestProvider = ({ children }: Props) => {
                         <AuthenticationProvider store={authentication}>
                             <CacheProvider cache={cache}>
                                 <FeaturesProvider>
-                                    <DrawerProvider>
-                                        <ExperimentsProvider>
-                                            <ModalsChildren />
-                                            <EventModelListener
-                                                models={[ConversationCountsModel, MessageCountsModel]}
-                                            />
-                                            <ReduxProvider store={store}>
-                                                <MailContentRefProvider mailContentRef={contentRef}>
-                                                    <MailboxContainerContextProvider
-                                                        isResizing={false}
-                                                        containerRef={contentRef}
-                                                        elementID={undefined}
-                                                    >
-                                                        <ComposeProvider onCompose={onCompose}>
-                                                            <Router history={history}>
-                                                                <Route path={MAIN_ROUTE_PATH}>
-                                                                    <EncryptedSearchProvider>
-                                                                        {children}
-                                                                    </EncryptedSearchProvider>
-                                                                </Route>
-                                                            </Router>
-                                                        </ComposeProvider>
-                                                    </MailboxContainerContextProvider>
-                                                </MailContentRefProvider>
-                                            </ReduxProvider>
-                                        </ExperimentsProvider>
-                                    </DrawerProvider>
+                                    <SpotlightProvider>
+                                        <DrawerProvider>
+                                            <ExperimentsProvider>
+                                                <ModalsChildren />
+                                                <EventModelListener
+                                                    models={[ConversationCountsModel, MessageCountsModel]}
+                                                />
+                                                <ReduxProvider store={store}>
+                                                    <MailContentRefProvider mailContentRef={contentRef}>
+                                                        <MailboxContainerContextProvider
+                                                            isResizing={false}
+                                                            containerRef={contentRef}
+                                                            elementID={undefined}
+                                                        >
+                                                            <ComposeProvider onCompose={onCompose}>
+                                                                <Router history={history}>
+                                                                    <Route path={MAIN_ROUTE_PATH}>
+                                                                        <EncryptedSearchProvider>
+                                                                            {children}
+                                                                        </EncryptedSearchProvider>
+                                                                    </Route>
+                                                                </Router>
+                                                            </ComposeProvider>
+                                                        </MailboxContainerContextProvider>
+                                                    </MailContentRefProvider>
+                                                </ReduxProvider>
+                                            </ExperimentsProvider>
+                                        </DrawerProvider>
+                                    </SpotlightProvider>
                                 </FeaturesProvider>
                             </CacheProvider>
                         </AuthenticationProvider>

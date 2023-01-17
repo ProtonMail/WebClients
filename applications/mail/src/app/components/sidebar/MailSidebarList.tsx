@@ -4,12 +4,10 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import {
-    FeatureCode,
     HotkeyTuple,
     SidebarList,
     SimpleSidebarListItemHeader,
     useConversationCounts,
-    useFeature,
     useFolders,
     useHotkeys,
     useLabels,
@@ -47,7 +45,6 @@ const formatFolderID = (folderID: string): string => `folder_expanded_state_${fo
 const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const location = useLocation();
     const [user] = useUser();
-    const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const [mailSettings] = useMailSettings();
@@ -152,7 +149,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         return unreadCounterMap;
     }, [messageCounts, conversationCounts, labels, folders, mailSettings, location]);
 
-    const showScheduled = scheduledFeature?.Value && (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
+    const showScheduled = (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
     const visibleSystemFolders = systemFolders?.filter((systemFolder) => {
         if (systemFolder.ID === MAILBOX_LABEL_IDS.OUTBOX) {
             return false;

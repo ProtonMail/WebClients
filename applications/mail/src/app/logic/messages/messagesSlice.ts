@@ -12,8 +12,8 @@ import * as msgOptimisticAction from './optimistic/messagesOptimisticActions';
 import * as msgOptimisticReducer from './optimistic/messagesOptimisticReducers';
 import * as msgReadAction from './read/messagesReadActions';
 import * as msgReadReducer from './read/messagesReadReducers';
-import * as scheduledAction from './sheduled/scheduledActions';
-import * as scheduledReducer from './sheduled/scheduledReducers';
+import * as scheduledAction from './scheduled/scheduledActions';
+import * as scheduledReducer from './scheduled/scheduledReducers';
 
 const messagesSlice = createSlice({
     name: 'messages',
