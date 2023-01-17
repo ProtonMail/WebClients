@@ -94,6 +94,7 @@ const SidebarItem = ({
     const needsTotalDisplay = shouldDisplayTotal(labelID);
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        console.log('handleClick', event);
         if (
             history.location.pathname.endsWith(link) &&
             // No search, no paging, nothing
@@ -106,11 +107,7 @@ const SidebarItem = ({
         }
     };
 
-    const handleRefresh = (event: React.MouseEvent<Element>) => {
-        if (refreshing) {
-            return;
-        }
-        event.preventDefault();
+    const handleRefresh = () => {
         void withRefreshing(Promise.all([call(), wait(1000)]));
     };
 
