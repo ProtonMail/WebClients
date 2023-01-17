@@ -32,7 +32,7 @@ const DateFormatSection = () => {
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
-                <label className="text-semibold" htmlFor="date-format-select">
+                <label className="text-semibold" htmlFor="date-format-select" id="label-date-format-select">
                     {c('Label').t`Date format`}
                 </label>
             </SettingsLayoutLeft>
@@ -42,6 +42,7 @@ const DateFormatSection = () => {
                     value={userSettings.DateFormat}
                     loading={loading}
                     onChange={({ value }) => withLoading(handleDateFormat(value))}
+                    aria-describedby="label-date-format-select"
                 >
                     <Option
                         title={c('Option').t`Automatic (${defaultFormat})`}
