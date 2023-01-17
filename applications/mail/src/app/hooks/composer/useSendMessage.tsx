@@ -26,7 +26,7 @@ import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { cancelSendMessage, endUndo, sent, updateExpires } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageStateWithData, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
-import { cancelScheduled } from '../../logic/messages/sheduled/scheduledActions';
+import { cancelScheduled } from '../../logic/messages/scheduled/scheduledActions';
 import { useAppDispatch } from '../../logic/store';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
@@ -85,7 +85,7 @@ export const useSendMessage = () => {
                 const isScheduledMessage = savedMessage.draftFlags?.scheduledAt;
                 const request = async () => {
                     if (isScheduledMessage) {
-                        await dispatch(cancelScheduled(savedMessage.localID));
+                        await dispatch(cancelScheduled({ ID: savedMessage.localID }));
                         await dispatch(cancelSendMessage({ messageID: savedMessage.data.ID, api })).unwrap();
                     } else {
                         await dispatch(cancelSendMessage({ messageID: savedMessage.data.ID, api })).unwrap();
