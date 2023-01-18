@@ -77,7 +77,7 @@ const OAuthImportSelectionModal = ({ modalProps, onClose }: Props) => {
     return (
         <AlertModal
             {...modalProps}
-            title="What do you want to do?"
+            title={c('loc_nightly:account').t`What do you want to do?`}
             buttons={[
                 <PrimaryButton onClick={handleSynchronizeClick} loading={loading}>
                     {c('loc_nightly:account').t`Sync future emails`}
