@@ -8,8 +8,6 @@ import {
     ContactDrawerAppButton,
     DrawerSidebar,
     FeatureCode,
-    FloatingButton,
-    Icon,
     MainLogo,
     ModalsChildren,
     PrivateAppContainer,
@@ -54,18 +52,7 @@ const DriveContainerBlurred = () => {
     );
     const dummyFolderTitle = c('Title').t`My files`;
 
-    const header = (
-        <DriveHeader
-            logo={logo}
-            floatingPrimary={
-                <FloatingButton title={c('Action').t`New upload`}>
-                    <Icon size={24} name="plus" className="mauto" />
-                </FloatingButton>
-            }
-            isHeaderExpanded={expanded}
-            toggleHeaderExpanded={toggleExpanded}
-        />
-    );
+    const header = <DriveHeader logo={logo} isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
 
     const sidebar = (
         <DriveSidebar

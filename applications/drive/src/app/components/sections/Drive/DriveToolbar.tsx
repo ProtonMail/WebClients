@@ -60,15 +60,12 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                             <CreateNewFolderButton />
                             {isEditEnabled && <CreateNewFileButton />}
                             <Vr />
-                        </>
-                    ) : null}
-                    {isDesktop && !isLinkReadOnly ? (
-                        <>
-                            <UploadFolderButton />
+                            {isDesktop && <UploadFolderButton />}
                             <UploadFileButton />
                             <Vr />
                         </>
                     ) : null}
+
                     {shouldShowShareButton && <ShareButton shareId={shareId} />}
                 </>
             );

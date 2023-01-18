@@ -30,7 +30,7 @@ const TrashToolbar = ({ items }: Props) => {
             <>
                 <PreviewButton selectedLinks={selectedItems} />
                 <DownloadButton selectedLinks={selectedItems} disabledFolders />
-                <Vr />
+                <Vr className="section-toolbar--hide-alone" />
                 <DetailsButton selectedLinks={selectedItems} />
                 <Vr />
                 <RestoreFromTrashButton selectedLinks={selectedItems} />
