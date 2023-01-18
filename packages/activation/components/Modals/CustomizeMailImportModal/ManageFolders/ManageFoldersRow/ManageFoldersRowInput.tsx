@@ -8,7 +8,7 @@ interface Props {
     disabled: boolean;
     errors: MailImportPayloadError[];
     handleChange: (val: any) => void;
-    handleSave: (val: any) => void;
+    handleSave: () => void;
     hasError: boolean;
     inputRef: Ref<any>;
     inputValue: string;
@@ -61,7 +61,7 @@ const ManageFolderRowInput = ({
                     if (hasError) {
                         return;
                     }
-                    handleSave(e);
+                    handleSave();
                 }
             }}
             dense

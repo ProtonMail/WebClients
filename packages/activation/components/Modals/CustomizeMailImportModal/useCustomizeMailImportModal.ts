@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
 
 import { getMailMappingErrors } from '@proton/activation/helpers/getMailMappingErrors';
 import { useFolders, useLabels } from '@proton/components/index';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
-import { MailImportFields } from './CustomizeMailImportModal.interface';
+import { FolderMapItem, MailImportFields } from './CustomizeMailImportModal.interface';
 
 interface Props {
     fields: MailImportFields;
@@ -17,8 +17,6 @@ interface Props {
 const useCustomiseMailImportModal = ({ fields, onClose, onSubmit, openConfirmModal, isLabelMapping }: Props) => {
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const [noEdit, setNoEdits] = useState(true);
-
     const [customFields, setCustomFields] = useState<MailImportFields>({
         importAddress: fields.importAddress,
         mapping: fields.mapping,
@@ -26,11 +24,27 @@ const useCustomiseMailImportModal = ({ fields, onClose, onSubmit, openConfirmMod
         importPeriod: fields.importPeriod,
         importCategoriesDestination: fields.importCategoriesDestination,
     });
-    const mappingValues = Object.values(customFields.mapping);
+    const [savedErroredIds, setSavedErroredIds] = useState<FolderMapItem['id'][]>([]);
 
-    const totalFoldersCount = mappingValues.filter((folder) => !folder.category).length;
-    const selectedFoldersCount = mappingValues.filter((folder) => folder.checked && !folder.category).length;
-    const submitDisabled = !selectedFoldersCount || !noEdit;
+    // [Errors] 1. Lets parse errors once when we open the modal
+    const initialErrors = useMemo(
+        () => getMailMappingErrors(customFields.mapping, isLabelMapping, labels, folders),
+        []
+    );
+    // [Errors] 2. Lets keep track of saved errored inputs and checked/unchecked folders
+    // to determine if errors are able to be submitted
+    const mappingInfos = useMemo(() => {
+        const checkedIds = customFields.mapping.filter((item) => item.checked).map((item) => item.id);
+        return {
+            hasErrors:
+                initialErrors.erroredIds.filter((id) => checkedIds.includes(id) && !savedErroredIds.includes(id))
+                    .length > 0,
+            totalFoldersCount: customFields.mapping.filter((folder) => !folder.category).length,
+            selectedFoldersCount: customFields.mapping.filter((folder) => folder.checked && !folder.category).length,
+        };
+    }, [customFields.mapping, savedErroredIds]);
+
+    const submitDisabled = mappingInfos.selectedFoldersCount === 0 || mappingInfos.hasErrors;
 
     const hasChanged = () => {
         const changed = Object.keys(customFields).every((key) => {
@@ -60,7 +74,9 @@ const useCustomiseMailImportModal = ({ fields, onClose, onSubmit, openConfirmMod
         setCustomFields(nextCustomFields);
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.stopPropagation();
+
         if (submitDisabled) {
             return;
         }
@@ -71,20 +87,19 @@ const useCustomiseMailImportModal = ({ fields, onClose, onSubmit, openConfirmMod
         }
     };
 
-    useEffect(() => {
-        const mappingErrors = getMailMappingErrors(customFields.mapping, isLabelMapping, labels, folders);
-        setNoEdits(mappingErrors.length === 0);
-    }, []);
+    const handleSaveErroredInput = (fieldId: FolderMapItem['id']) => {
+        setSavedErroredIds([...savedErroredIds, fieldId]);
+    };
 
     return {
         customFields,
         handleCancel,
         handleChangeField,
         handleSubmit,
+        handleSaveErroredInput,
+        selectedFoldersCount: mappingInfos.selectedFoldersCount,
         submitDisabled,
-        selectedFoldersCount,
-        setNoEdits,
-        totalFoldersCount,
+        totalFoldersCount: mappingInfos.totalFoldersCount,
     };
 };
 

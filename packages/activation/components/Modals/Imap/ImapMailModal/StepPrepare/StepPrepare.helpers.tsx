@@ -1,7 +1,7 @@
 import { getUnixTime, subMonths, subYears } from 'date-fns';
 
 import { ApiStartImportParams } from '@proton/activation/api/api.interface';
-import { GMAIL_CATEGORIES } from '@proton/activation/constants';
+import { GMAIL_CATEGORIES, MAX_FOLDERS_DEPTH } from '@proton/activation/constants';
 import {
     CustomFieldsBitmap,
     ImportType,
@@ -75,30 +75,45 @@ export const formatPrepareStepPayload = ({
         throw new Error('Importer ID should be defined');
     }
 
-    const mapping = fields.mapping.map((folder) => {
-        const Destinations: MailImportMapping['Destinations'] = {
-            FolderPath: folder.category ? fields.importCategoriesDestination : folder.protonPath.join(folder.separator),
-        };
+    const mapping = fields.mapping
+        .filter((field) => field.checked)
+        .map((folder) => {
+            const Destinations: MailImportMapping['Destinations'] = (() => {
+                let result = '';
 
-        if (isLabelMapping && !folder.category && !folder.systemFolder) {
-            Destinations.Labels = [
-                {
-                    Name: folder.protonPath.join('-'),
-                    Color: folder.color,
-                },
-            ];
-        }
+                if (folder.category) {
+                    result = fields.importCategoriesDestination;
+                } else if (folder.protonPath.length < MAX_FOLDERS_DEPTH || folder.separator !== '/') {
+                    result = folder.protonPath.join(folder.separator);
+                }
+                // Here separator is '/'
+                else {
+                    const itemsWithoutLast = folder.protonPath.slice(0, -1);
+                    const escapedLastItem = (folder.protonPath.slice(-1).pop() || '').split('/').join('\\/');
+                    result = [...itemsWithoutLast, escapedLastItem].join('/');
+                }
+                return { FolderPath: result };
+            })();
 
-        if (GMAIL_CATEGORIES.includes(folder.id as MailImportGmailCategories)) {
-            Destinations.Category = folder.category;
-        }
+            if (isLabelMapping && !folder.category && !folder.systemFolder) {
+                Destinations.Labels = [
+                    {
+                        Name: folder.protonPath.join('-'),
+                        Color: folder.color,
+                    },
+                ];
+            }
 
-        return {
-            Source: folder.id,
-            Destinations,
-            checked: true,
-        };
-    });
+            if (GMAIL_CATEGORIES.includes(folder.id as MailImportGmailCategories)) {
+                Destinations.Category = folder.category;
+            }
+
+            return {
+                Source: folder.id,
+                Destinations,
+                checked: true,
+            };
+        });
 
     return {
         ImporterID: data.importerID,

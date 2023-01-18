@@ -38,6 +38,7 @@ export const getTimeUnitLabels = () => ({
     [TIME_PERIOD.LAST_MONTH]: c('Label').t`Last month only`,
 });
 
+export const MAX_FOLDERS_DEPTH = 3;
 export const MAX_FOLDER_LIMIT = 20000;
 
 export const IMAPS = {

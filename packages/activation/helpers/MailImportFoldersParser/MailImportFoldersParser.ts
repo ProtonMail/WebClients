@@ -1,6 +1,7 @@
 import { cloneDeep } from 'lodash';
 
 import { ApiMailImporterFolder } from '@proton/activation/api/api.interface';
+import { MAX_FOLDERS_DEPTH } from '@proton/activation/constants';
 import { MailImportDestinationFolder } from '@proton/activation/interface';
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import move from '@proton/utils/move';
@@ -209,7 +210,7 @@ class MailImportFoldersParser {
             return [path.join('-')];
         }
 
-        if (path.length <= 3) {
+        if (path.length <= MAX_FOLDERS_DEPTH) {
             return path;
         }
 

@@ -121,8 +121,8 @@ const useStepPrepare = ({ user, handleCloseCustomizeModal }: Props) => {
         return fields;
     });
 
-    const errors = getMailMappingErrors(customFields.mapping.value, isLabelMapping, labels, folders);
-    const hasErrors = errors.length > 0;
+    const mailMappingErrors = getMailMappingErrors(customFields.mapping.value, isLabelMapping, labels, folders);
+    const hasErrors = mailMappingErrors.errors.length > 0;
     const selectedFolders = customFields.mapping.value.filter((folder) => folder.checked);
     const importSize = selectedFolders.reduce((acc, folder) => {
         acc += folder.size;
@@ -215,7 +215,7 @@ const useStepPrepare = ({ user, handleCloseCustomizeModal }: Props) => {
 
     return {
         email,
-        errors,
+        errors: mailMappingErrors.errors,
         fields,
         handleCancel,
         handleReset,
