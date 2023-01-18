@@ -11,16 +11,13 @@ import {
 } from '@proton/components';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { CALENDAR_TYPE_EXTENDED } from '@proton/shared/lib/calendar/constants';
 import getHasUserReachedCalendarsLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarsLimit';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import {
-    CALENDAR_TYPE_EXTENDED,
-    CalendarMemberInvitation,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
+import { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 export interface SharedCalendarModalOwnProps {
     addresses: Address[];
