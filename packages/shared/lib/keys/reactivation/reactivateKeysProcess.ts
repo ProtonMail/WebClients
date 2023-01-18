@@ -12,6 +12,7 @@ export const reactivateKeysProcess = async ({
     keyReactivationRecords,
     keyPassword,
     onReactivation,
+    keyTransparencyVerify,
 }: Arguments) => {
     const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
 
@@ -24,6 +25,7 @@ export const reactivateKeysProcess = async ({
             userKeys,
             addresses,
             onReactivation,
+            keyTransparencyVerify,
         });
     }
 
@@ -32,5 +34,6 @@ export const reactivateKeysProcess = async ({
         keyReactivationRecords,
         keyPassword,
         onReactivation,
+        keyTransparencyVerify,
     });
 };

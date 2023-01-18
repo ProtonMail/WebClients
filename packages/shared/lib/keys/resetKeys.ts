@@ -1,5 +1,5 @@
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
-import { Address, AddressKeyPayloadV2, EncryptionConfig } from '../interfaces';
+import { Address, AddressKeyPayloadV2, EncryptionConfig, PreAuthKTVerify } from '../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeyObject, getNormalizedActiveKeys } from './getActiveKeys';
 import { getDefaultKeyFlags } from './keyFlags';
@@ -10,10 +10,12 @@ export const getResetAddressesKeysV2 = async ({
     addresses = [],
     passphrase = '',
     encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+    preAuthKTVerify,
 }: {
     addresses: Address[];
     passphrase: string;
     encryptionConfig?: EncryptionConfig;
+    preAuthKTVerify: PreAuthKTVerify;
 }): Promise<
     | { userKeyPayload: string; addressKeysPayload: AddressKeyPayloadV2[] }
     | { userKeyPayload: undefined; addressKeysPayload: undefined }
@@ -25,6 +27,10 @@ export const getResetAddressesKeysV2 = async ({
         passphrase,
         encryptionConfig,
     });
+
+    const keyTransparencyVerify = preAuthKTVerify([
+        { ID: userKey.getKeyID(), privateKey: userKey, publicKey: userKey },
+    ]);
 
     const addressKeysPayload = await Promise.all(
         addresses.map(async (address) => {
@@ -44,7 +50,11 @@ export const getResetAddressesKeysV2 = async ({
                 flags: getDefaultKeyFlags(address),
             });
 
-            const signedKeyList = await getSignedKeyList(getNormalizedActiveKeys(address, [newPrimaryKey]));
+            const signedKeyList = await getSignedKeyList(
+                getNormalizedActiveKeys(address, [newPrimaryKey]),
+                address,
+                keyTransparencyVerify
+            );
             return {
                 AddressID,
                 PrivateKey: privateKeyArmored,

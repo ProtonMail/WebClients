@@ -1,6 +1,6 @@
 import { PublicKeyReference } from '@proton/crypto';
 
-import { Address, Recipient } from './Address';
+import { Address } from './Address';
 import { DecryptedKey } from './Key';
 import { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
 
@@ -47,18 +47,7 @@ export type VerifyOutboundPublicKeys = (
     IgnoreKT?: IGNORE_KT
 ) => Promise<void>;
 
-export type CommitOutboundPublicKeys = ({
-    ToList,
-    CCList,
-    BCCList,
-}: {
-    ToList: Recipient[];
-    CCList: Recipient[];
-    BCCList: Recipient[];
-}) => Promise<void>;
-
 export interface KTContext {
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-    commitOutboundPublicKeys: CommitOutboundPublicKeys;
     getKTState: () => React.MutableRefObject<KeyTransparencyState>;
 }

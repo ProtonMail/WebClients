@@ -1,7 +1,15 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import unique from '@proton/utils/unique';
 
-import { DecryptedKey, Key, KeyPair, SignedKeyList, Address as tsAddress, User as tsUser } from '../../interfaces';
+import {
+    DecryptedKey,
+    Key,
+    KeyPair,
+    KeyTransparencyVerify,
+    SignedKeyList,
+    Address as tsAddress,
+    User as tsUser,
+} from '../../interfaces';
 import { getActiveKeys, getNormalizedActiveKeys, getReactivatedKeyFlag } from '../getActiveKeys';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getSignedKeyList } from '../signedKeyList';
@@ -12,6 +20,7 @@ interface GetReactivatedAddressKeys {
     newUserKeys: KeyPair[];
     user: tsUser;
     keyPassword: string;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 type GetReactivateAddressKeysReturnValue =
@@ -32,6 +41,7 @@ export const getReactivatedAddressKeys = async ({
     oldUserKeys,
     newUserKeys,
     keyPassword,
+    keyTransparencyVerify,
 }: GetReactivatedAddressKeys): Promise<GetReactivateAddressKeysReturnValue> => {
     const empty = {
         address,
@@ -82,7 +92,7 @@ export const getReactivatedAddressKeys = async ({
     return {
         address,
         reactivatedKeys,
-        signedKeyList: await getSignedKeyList(newActiveKeysFormatted),
+        signedKeyList: await getSignedKeyList(newActiveKeysFormatted, address, keyTransparencyVerify),
     };
 };
 
@@ -116,6 +126,7 @@ interface GetReactivatedAddressesKeys {
     newUserKeys: KeyPair[];
     user: tsUser;
     keyPassword: string;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const getReactivatedAddressesKeys = async ({
@@ -124,6 +135,7 @@ export const getReactivatedAddressesKeys = async ({
     newUserKeys,
     user,
     keyPassword,
+    keyTransparencyVerify,
 }: GetReactivatedAddressesKeys) => {
     const promises = addresses.map((address) =>
         getReactivatedAddressKeys({
@@ -132,6 +144,7 @@ export const getReactivatedAddressesKeys = async ({
             newUserKeys,
             user,
             keyPassword,
+            keyTransparencyVerify,
         })
     );
     const results = await Promise.all(promises);

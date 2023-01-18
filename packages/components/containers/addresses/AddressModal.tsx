@@ -49,6 +49,7 @@ import {
     usePremiumDomains,
     useUser,
 } from '../../hooks';
+import { useKTVerifier } from '../keyTransparency';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 import useAddressDomains from './useAddressDomains';
 
@@ -88,6 +89,7 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
     const domainOptions = addressDomains.map((DomainName) => ({ text: DomainName, value: DomainName }));
     const selectedDomain = model.domain || domainOptions[0]?.text;
     const getUserKeys = useGetUserKeys();
+    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     const shouldGenerateKeys =
         !selectedMember || selectedMember.Self || selectedMember.Private === MEMBER_PRIVATE.READABLE;
@@ -129,15 +131,18 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
         const encryptionConfig = ENCRYPTION_CONFIGS[encryptionType];
 
         if (shouldGenerateKeys) {
+            const userKeys = await getUserKeys();
+
             if (shouldGenerateSelfKeys) {
                 await missingKeysSelfProcess({
                     api,
-                    userKeys: await getUserKeys(),
+                    userKeys,
                     addresses,
                     addressesToGenerate: [Address],
                     password: authentication.getPassword(),
                     encryptionConfig,
                     onUpdate: noop,
+                    keyTransparencyVerify,
                 });
             } else {
                 if (!organizationKey?.privateKey) {
@@ -153,6 +158,8 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                         memberAddresses,
                         password,
                         api,
+                        keyTransparencyVerify,
+                        keyTransparencyCommit,
                     });
                 } else {
                     await missingKeysMemberProcess({
@@ -164,9 +171,12 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                         memberAddresses,
                         onUpdate: noop,
                         organizationKey: organizationKey.privateKey,
+                        keyTransparencyVerify,
                     });
                 }
             }
+
+            await keyTransparencyCommit(userKeys);
         }
 
         await call();

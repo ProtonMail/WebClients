@@ -1,6 +1,6 @@
 import { createUserKeyRoute } from '../../api/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
-import { Address, Api, DecryptedKey, EncryptionConfig } from '../../interfaces';
+import { Address, Api, DecryptedKey, EncryptionConfig, KeyTransparencyVerify } from '../../interfaces';
 import { getActiveKeys } from '../getActiveKeys';
 import { getPrimaryKey } from '../getPrimaryKey';
 import { getHasMigratedAddressKeys } from '../keyMigration';
@@ -15,6 +15,7 @@ interface AddAddressKeysProcessArguments {
     addresses: Address[];
     encryptionConfig: EncryptionConfig;
     keyPassword: string;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const addAddressKeysProcess = async ({
@@ -25,6 +26,7 @@ export const addAddressKeysProcess = async ({
     addressKeys,
     userKeys,
     keyPassword,
+    keyTransparencyVerify,
 }: AddAddressKeysProcessArguments) => {
     const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
 
@@ -41,6 +43,7 @@ export const addAddressKeysProcess = async ({
             encryptionConfig,
             activeKeys,
             address,
+            keyTransparencyVerify,
         });
     }
 
@@ -50,6 +53,7 @@ export const addAddressKeysProcess = async ({
         encryptionConfig,
         passphrase: keyPassword,
         activeKeys,
+        keyTransparencyVerify,
     });
 };
 
