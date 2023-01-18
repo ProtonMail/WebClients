@@ -67,7 +67,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                                 <span className="mr0-25">{c('Label').t`Security code`}</span>
                                 <Info
                                     title={c('Info')
-                                        .t`For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.`}
+                                        .t`For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.`}
                                 />
                             </>
                         }
