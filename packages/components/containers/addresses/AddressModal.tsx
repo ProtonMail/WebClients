@@ -194,11 +194,15 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
             <ModalHeader title={c('Title').t`Add address`} />
             <ModalContent>
                 <div className="mb1-5">
-                    <div className="text-semibold mb0-25">{c('Label').t`User`}</div>
+                    <div className="text-semibold mb0-25" id="label-user-select">{c('Label').t`User`}</div>
                     {member || members?.length === 1 ? (
                         <div className="text-ellipsis">{member?.Name || members?.[0].Name}</div>
                     ) : (
-                        <SelectTwo value={model.id} onChange={({ value }) => setModel({ ...model, id: value })}>
+                        <SelectTwo
+                            aria-describedby="label-user-select"
+                            value={model.id}
+                            onChange={({ value }) => setModel({ ...model, id: value })}
+                        >
                             {members.map((member) => (
                                 <Option value={member.ID} title={member.Name}>
                                     {member.Name}
