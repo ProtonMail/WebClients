@@ -41,9 +41,9 @@ const Wrapper = ({ checked, editMode, disabled, checkboxId, children }: WrapperP
 interface Props {
     index: number;
     folderItem: FolderMapItem;
-    updateEditing: (index: number) => void;
     onRename: (index: number, Name: string) => void;
     onToggleCheck: (index: number, checked: boolean) => void;
+    onErrorSaved: () => void;
 }
 
 const debouncedRenameCallback = debounce((callback) => callback(), 150);
@@ -51,7 +51,7 @@ const indentStyle = (level: number) => {
     return { '--margin-left-custom': `${level}em` };
 };
 
-const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, updateEditing }: Props) => {
+const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorSaved }: Props) => {
     const hasError = folderItem.errors.length > 0;
 
     const inputRef = useRef<HTMLInputElement>(null);
@@ -65,12 +65,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, updateEd
 
     const handleSave = () => {
         setEditMode(false);
-        onRename(index, inputValue);
-    };
-
-    const handleSaveClick = () => {
-        handleSave();
-        updateEditing(index);
+        onErrorSaved();
     };
 
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -207,7 +202,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, updateEd
                     </div>
                     {((editMode && !folderItem.disabled) || hasError) && (
                         <InlineLinkButton
-                            onClick={handleSaveClick}
+                            onClick={handleSave}
                             className={clsx(['ml0-5 p0-5', hasError && DIMMED_OPACITY_CLASSNAME])}
                             aria-disabled={hasError}
                             disabled={hasError || !folderItem.checked}

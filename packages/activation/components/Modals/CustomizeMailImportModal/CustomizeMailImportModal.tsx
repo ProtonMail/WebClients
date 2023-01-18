@@ -47,11 +47,11 @@ const CustomizeMailImportModal = ({
         customFields,
         handleCancel,
         handleChangeField,
+        handleSaveErroredInput,
         handleSubmit,
         selectedFoldersCount,
-        setNoEdits,
-        totalFoldersCount,
         submitDisabled,
+        totalFoldersCount,
     } = useCustomizeMailImportModal({
         fields,
         isLabelMapping,
@@ -104,7 +104,7 @@ const CustomizeMailImportModal = ({
                             isLabelMapping={isLabelMapping}
                             mapping={customFields.mapping}
                             onChange={(nextMapping) => handleChangeField('mapping', nextMapping)}
-                            setNoEdits={setNoEdits}
+                            onErroredInputSaved={handleSaveErroredInput}
                         />
                     )}
                 </ModalContent>
