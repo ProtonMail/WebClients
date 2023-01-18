@@ -11,12 +11,12 @@
 
 	// not enough place
 	&--size-tablet {
-		@include respond-to(780) {
+		@include media('<=#{em(780, 16)}') {
 			--label-width: 15em;
 		}
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		grid-template-columns: auto;
 		gap: 0.5em;
 

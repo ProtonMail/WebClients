@@ -114,13 +114,13 @@
 			}
 		}
 
-		@include respond-to($breakpoint-small, 'max') {
+		@include media('<=small') {
 			.label-stack-item-delete {
 				display: none;
 			}
 		}
 
-		@include respond-to($breakpoint-small, 'min') {
+		@include media('>small') {
 			&:hover,
 			&:focus-within {
 				.label-stack-item {

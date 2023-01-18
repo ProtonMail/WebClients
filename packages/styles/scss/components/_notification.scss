@@ -11,11 +11,11 @@
 		}
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		text-align: center;
 	}
 
-	@include respond-to($breakpoint-tiny) {
+	@include media('<=xsmall') {
 		[class*='notification-'] {
 			transform: none;
 			inset-inline: 1em;

@@ -19,7 +19,7 @@
 			inline-size: 100%;
 		}
 
-		@include respond-to($breakpoint-tiny) {
+		@include media('<=xsmall') {
 			grid-template-columns: 1fr;
 		}
 	}
