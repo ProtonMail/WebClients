@@ -44,7 +44,7 @@ const WeekStartSection = () => {
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
-                <label className="text-semibold" htmlFor="week-start-select">
+                <label className="text-semibold" htmlFor="week-start-select" id="label-week-start-select">
                     {c('Label').t`Week start`}
                 </label>
             </SettingsLayoutLeft>
@@ -54,6 +54,7 @@ const WeekStartSection = () => {
                     value={userSettings.WeekStart}
                     loading={loading}
                     onChange={({ value }) => withLoading(handleWeekStart(value))}
+                    aria-describedby="label-week-start-select"
                 >
                     <Option
                         title={c('Option').t`Automatic (${defaultDay})`}

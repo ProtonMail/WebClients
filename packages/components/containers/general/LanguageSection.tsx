@@ -54,7 +54,7 @@ const LanguageSection = ({ locales = {} }: Props) => {
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
-                <label className="text-semibold" htmlFor="languageSelect">
+                <label className="text-semibold" htmlFor="languageSelect" id="label-languageSelect">
                     {c('Label').t`Default language`}
                 </label>
             </SettingsLayoutLeft>
@@ -66,6 +66,7 @@ const LanguageSection = ({ locales = {} }: Props) => {
                     onChange={({ value }) => {
                         withLoading(handleChange(value));
                     }}
+                    aria-describedby="label-languageSelect"
                 >
                     {options.map((option) => (
                         <Option key={option.value} {...option} />
