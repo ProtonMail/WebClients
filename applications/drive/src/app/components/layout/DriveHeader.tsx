@@ -23,7 +23,6 @@ import { SearchField } from './search/SearchField';
 interface Props {
     isHeaderExpanded: boolean;
     toggleHeaderExpanded: () => void;
-    floatingPrimary: ReactNode;
     logo: ReactNode;
     searchBox?: ReactNode;
     title?: string;
@@ -33,7 +32,6 @@ export const DriveHeader = ({
     logo,
     isHeaderExpanded,
     toggleHeaderExpanded,
-    floatingPrimary,
     title = c('Title').t`Drive`,
     searchBox,
 }: Props) => {
@@ -64,7 +62,6 @@ export const DriveHeader = ({
                 expanded={isHeaderExpanded}
                 onToggleExpand={toggleHeaderExpanded}
                 isNarrow={isNarrow}
-                floatingButton={floatingPrimary}
                 searchBox={searchBox}
             />
 
