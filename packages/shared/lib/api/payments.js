@@ -88,7 +88,7 @@ export const payInvoice = (invoiceID, data) => ({
     data,
 });
 
-export const getPaymentMethodStatus = () => ({
+export const queryPaymentMethodStatus = () => ({
     url: 'payments/status',
     method: 'get',
 });
