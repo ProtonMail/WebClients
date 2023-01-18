@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
 
 import { getMailMappingErrors } from '@proton/activation/helpers/getMailMappingErrors';
 import { useFolders, useLabels } from '@proton/components/index';
@@ -74,7 +74,9 @@ const useCustomiseMailImportModal = ({ fields, onClose, onSubmit, openConfirmMod
         setCustomFields(nextCustomFields);
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.stopPropagation();
+
         if (submitDisabled) {
             return;
         }
