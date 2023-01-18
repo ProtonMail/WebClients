@@ -24,6 +24,7 @@ export interface ApiEvent {
     Refresh?: number;
     Imports?: ApiImportEvent[];
     ImportReports?: ApiImportReportEvent[];
+    ImporterSyncs?: ApiSyncEvent[];
 }
 
 export interface ApiImportReportEvent extends ApiEventType {
@@ -32,6 +33,10 @@ export interface ApiImportReportEvent extends ApiEventType {
 
 export interface ApiImportEvent extends ApiEventType {
     Importer?: ApiImporter;
+}
+
+export interface ApiSyncEvent extends ApiEventType {
+    ImporterSync?: ApiSync;
 }
 
 /**
