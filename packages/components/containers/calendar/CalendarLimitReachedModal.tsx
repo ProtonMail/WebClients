@@ -3,8 +3,8 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import { CALENDAR_TYPE, CALENDAR_TYPE_EXTENDED, EXTENDED_CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import { CALENDAR_TYPE, CALENDAR_TYPE_EXTENDED, EXTENDED_CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
 
 import { AlertModal } from '../../components/alertModal';
 import { SettingsLink } from '../../components/link';

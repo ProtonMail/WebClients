@@ -9,11 +9,10 @@ import {
     DEFAULT_PART_DAY_NOTIFICATIONS,
 } from '@proton/shared/lib/calendar/alarms/notificationDefaults';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
-import { DEFAULT_EVENT_DURATION } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_TYPE, DEFAULT_EVENT_DURATION } from '@proton/shared/lib/calendar/constants';
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
-    CALENDAR_TYPE,
     CalendarErrors,
     CalendarSettings,
     CalendarViewModelFull,

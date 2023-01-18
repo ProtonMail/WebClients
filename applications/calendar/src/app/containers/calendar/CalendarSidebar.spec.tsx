@@ -9,12 +9,13 @@ import { CacheProvider } from '@proton/components/containers/cache';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import {
     CALENDAR_FLAGS,
+    CALENDAR_TYPE,
     MAX_CALENDARS_PAID,
     MAX_SUBSCRIBED_CALENDARS,
     SETTINGS_VIEW,
 } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { CALENDAR_SUBSCRIPTION_STATUS, CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { generateOwnedPersonalCalendars, generateSubscribedCalendars } from '@proton/testing/lib/builders';
 
 import CalendarSidebar, { CalendarSidebarProps } from './CalendarSidebar';
