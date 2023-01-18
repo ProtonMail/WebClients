@@ -144,13 +144,13 @@ const getDeleteEventActions = async ({
     if (!calendarBootstrap) {
         throw new Error('Trying to delete event without calendar information');
     }
-    if (!oldEventData || !getIsCalendarEvent(oldEventData) || !eventReadResult?.result) {
+    if (!oldEventData || !getIsCalendarEvent(oldEventData)) {
         throw new Error('Trying to delete event without event information');
     }
 
     const oldEditEventData = getEditEventData({
         eventData: oldEventData,
-        eventResult: eventReadResult.result,
+        eventResult: eventReadResult?.result,
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
     const sharedSessionKey = await getBase64SharedSessionKey({
