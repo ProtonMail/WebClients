@@ -99,7 +99,7 @@ function Trash({ trashView }: Props) {
             if (!item.isFile) {
                 return;
             }
-            navigateToLink(id, item.rootShareId, item.isFile);
+            navigateToLink(item.rootShareId, id, item.isFile);
         },
         [navigateToLink, browserItems]
     );
