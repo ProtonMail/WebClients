@@ -1,18 +1,14 @@
+@use 'config/functions/im-to-em' as *;
+
 // Variables specific overrides
-$breakpoint-medium: 1000;
-$breakpoint-small: 870;
-$breakpoint-tiny: 520;
-$breakpoints: (
-	// 1500px
-	'xlarge': 93.75em,
-	// 1100px
-	'large': 68.75em,
-	// 1000px
-	'medium': 62.5em,
-	// 870px
-	'small': 54.375em,
-	// 520px
-	'xsmall': 32.5em
+$breakpoints: im-to-em(
+	(
+		'xlarge': 1500px,
+		'large': 1100px,
+		'medium': 1000px,
+		'small': 870px,
+		'xsmall': 520px,
+	)
 );
 
 // Configuration

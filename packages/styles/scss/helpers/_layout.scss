@@ -179,7 +179,7 @@
 		inline-size: auto;
 	}
 
-	@media (hover: hover) and (pointer: fine) {
+	@include media('mouse') {
 		&-container:hover &,
 		&-container:hover &-only-desktop {
 			opacity: 1;

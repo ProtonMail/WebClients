@@ -10,9 +10,9 @@ pre code {
 	line-height: 1.5 !important;
 }
 
-// dirty fixes while whaiting to have better solutions
+// dirty fixes while waiting to have better solutions
 .language-markup code {
-	width: 100%;
+	inline-size: 100%;
 	white-space: pre-wrap;
 }
 
@@ -36,19 +36,19 @@ pre code {
 	margin-block-end: 0.5em !important;
 }
 
-@include respond-to($breakpoint-medium) {
+@include media('<=medium') {
 	.on-tablet-m1 {
 		margin: 1em !important;
 	}
 }
 
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	.on-mobile-m1 {
 		margin: 1em !important;
 	}
 }
 
-@include respond-to($breakpoint-tiny) {
+@include media('<=xsmall') {
 	.on-tiny-mobile-m1 {
 		margin: 1em !important;
 	}
@@ -60,7 +60,8 @@ pre code {
 		position: absolute;
 		inset-block-start: 0.75em;
 		inset-inline-end: 0;
-		padding: 0 0.5em 0 0;
+		padding-block: 0;
+		padding-inline: 0 0.5em;
 		font-size: 2em;
 	}
 }

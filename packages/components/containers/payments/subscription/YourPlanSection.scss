@@ -4,7 +4,7 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 
-	@include respond-to($breakpoint-medium) {
+	@include media('<=medium') {
 		grid-template-columns: repeat(1, 1fr);
 	}
 }

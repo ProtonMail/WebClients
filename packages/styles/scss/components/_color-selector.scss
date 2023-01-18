@@ -4,7 +4,7 @@
 		flex-flow: row wrap;
 		gap: em(8);
 
-		@include respond-to($breakpoint-small, 'min') {
+		@include media('>small') {
 			max-inline-size: em((40 * 5) + (8 * 4)); // items + gaps
 			box-sizing: content-box;
 		}

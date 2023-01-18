@@ -25,7 +25,7 @@ $container-to-width: 4em !default;
 		&::before {
 			inline-size: 25%;
 
-			@include respond-to($breakpoint-small) {
+			@include media('<=small') {
 				inline-size: 50%;
 			}
 		}

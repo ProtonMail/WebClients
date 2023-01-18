@@ -4034,7 +4034,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/styles@workspace:packages/styles"
   dependencies:
-    include-media: ^1.4.10
+    include-media: "https://github.com/eduardoboucas/include-media#2.0-release"
     inter-ui: ^3.19.3
     prettier: ^2.8.3
     sass: ^1.57.1
@@ -17504,10 +17504,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"include-media@npm:^1.4.10":
-  version: 1.4.10
-  resolution: "include-media@npm:1.4.10"
-  checksum: e5187b9632994db07d05f384b0a40b45938c017bf12a5abaece929635267c41fd5bb264928582f00f1df7f23e069b8601968252dfafe33de1631f0eefe0d5991
+"include-media@https://github.com/eduardoboucas/include-media#2.0-release":
+  version: 2.0.0
+  resolution: "include-media@https://github.com/eduardoboucas/include-media.git#commit=a3c0288e5b22cc746cc2d320d0a374b2ed9d0aeb"
+  checksum: 4f28ff0addab4d07a809d3e61a6751d7c8e022af66866cf29684b1401c725bd73d2dd224aaa08f32a3cdd9c948766a8aa0d05866ed9acb2d6d0141f33d3af37c
   languageName: node
   linkType: hard
 
