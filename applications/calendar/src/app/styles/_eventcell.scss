@@ -189,7 +189,7 @@
 		word-break: break-word;
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		&-title,
 		&-timestring {
 			font-size: rem(12);

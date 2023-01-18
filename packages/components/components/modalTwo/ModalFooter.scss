@@ -8,13 +8,13 @@
 	flex-wrap: wrap-reverse;
 	flex-shrink: 0;
 
-	@include respond-to($breakpoint-tiny) {
+	@include media('<=xsmall') {
 		flex-direction: column-reverse;
 		align-items: stretch;
 	}
 
 	&--full {
-		@include respond-to($breakpoint-tiny, 'min') {
+		@include media('>xsmall') {
 			justify-content: flex-end;
 
 			& > *:not(:first-child) {

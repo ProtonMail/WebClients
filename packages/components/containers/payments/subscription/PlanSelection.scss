@@ -3,7 +3,7 @@
 /*
  * cycle selector
 */
-@include respond-to(1100) {
+@include media('<=#{em(1100, 16)}') {
 	.cycle-currency-selectors {
 		&.flex-nowrap {
 			flex-wrap: wrap;
@@ -35,12 +35,12 @@
 		min-block-size: rem(22); // just to keep elements aligned
 
 		&:empty {
-			@include respond-to($breakpoint-small) {
+			@include media('<=small') {
 				min-block-size: 0;
 			}
 		}
 
-		@include respond-to(1250) {
+		@include media('<=#{em(1250, 16)}') {
 			// to check with l10n issues
 			min-inline-size: 100%;
 		}
@@ -80,30 +80,30 @@
 		&-info {
 			min-block-size: 6em;
 
-			@include respond-to(1100) {
+			@include media('<=#{em(1100, 16)}') {
 				min-block-size: 7em;
 			}
 
-			@include respond-to(970) {
+			@include media('<=#{em(970, 16)}') {
 				min-block-size: 8.5em;
 			}
 
-			@include respond-to($breakpoint-medium) {
+			@include media('<=medium') {
 				min-block-size: 7em;
 			}
 
-			@include respond-to($breakpoint-small) {
+			@include media('<=small') {
 				min-block-size: 0;
 			}
 		}
 	}
 
-	@include respond-to($breakpoint-medium) {
+	@include media('<=medium') {
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 2.2em 1em;
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		grid-template-columns: repeat(1, 1fr);
 	}
 
@@ -119,15 +119,15 @@
 	&-column {
 		inline-size: rem(360); // as design request
 
-		@include respond-to($breakpoint-medium) {
+		@include media('<=medium') {
 			inline-size: rem(300); // to avoid left content shrinking too much
 		}
 
-		@include respond-to(800) {
+		@include media('<=#{em(800, 16)}') {
 			inline-size: 100%; // a bit earlier than mobile breakpoint, same reason as above
 		}
 	}
-	@include respond-to(800) {
+	@include media('<=#{em(800, 16)}') {
 		&-container {
 			position: static;
 		}
@@ -140,7 +140,7 @@
 		}
 	}
 
-	@include respond-to(800, 'min') {
+	@include media('>#{em(800, 16)}') {
 		&-top-container {
 			display: flex;
 			flex-wrap: nowrap;
@@ -150,7 +150,7 @@
 
 .plan-customiser {
 	& &-addon-label {
-		@include respond-to($breakpoint-medium) {
+		@include media('<=medium') {
 			min-inline-size: 8em;
 		}
 	}

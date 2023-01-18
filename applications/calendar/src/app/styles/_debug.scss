@@ -10,7 +10,7 @@
 	}
 }
 
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	.is-day-view,
 	.is-week-view,
 	.is-month-view {

@@ -12,7 +12,7 @@
 	th {
 		padding: em(9);
 		border-block-end: 1px solid var(--border-norm);
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			&.on-mobile-pl0 {
 				@extend .on-mobile-pl0;
 			}
@@ -30,7 +30,7 @@
 			@extend .text-right;
 		}
 
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			&.on-mobile-text-center {
 				@extend .on-mobile-text-center;
 			}

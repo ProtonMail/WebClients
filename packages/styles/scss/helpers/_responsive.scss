@@ -8,7 +8,7 @@
 /**
  * medium/tablet landscape minor breakpoint
  */
-@include respond-to($breakpoint-medium-landscape) {
+@include media('<=large') {
 	@include spacing-generator(
 		// coordinates
 		(p, pt, pr, pb, pl),
@@ -22,7 +22,7 @@
 /**
  * medium/tablet breakpoint
  */
-@include respond-to($breakpoint-medium, 'min') {
+@include media('>medium') {
 	.on-desktop {
 		&-h100 {
 			block-size: 100%;
@@ -33,7 +33,7 @@
 /**
  * medium/tablet breakpoint
  */
-@include respond-to($breakpoint-medium) {
+@include media('<=medium') {
 	// For global structure adaptation in JS (page / skip links / header / main content / footer)
 	@include body-before('tablet');
 
@@ -134,7 +134,7 @@
 /**
  * small/mobile breakpoint
  */
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	// For global structure adaptation in JS (page / skip links / header / main content / footer)
 	@include body-before('mobile');
 
@@ -313,7 +313,7 @@
 /**
  * tiny/small mobile breakpoint
  */
-@include respond-to($breakpoint-tiny) {
+@include media('<=xsmall') {
 	// For global structure adaptation in JS (page / skip links / header / main content / footer)
 	@include body-before('tinymobile');
 

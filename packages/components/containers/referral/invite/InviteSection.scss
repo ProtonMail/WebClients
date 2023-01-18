@@ -1,7 +1,7 @@
 @import '~@proton/styles/scss/config';
 
 .invite-section {
-	@include respond-to(1200) {
+	@include media('<=#{em(1200, 16)}') {
 		flex-direction: column;
 
 		& > * {
@@ -11,7 +11,7 @@
 	}
 
 	&-share-link {
-		@include respond-to(800) {
+		@include media('<=#{em(800, 16)}') {
 			flex-direction: column;
 
 			& > * {
