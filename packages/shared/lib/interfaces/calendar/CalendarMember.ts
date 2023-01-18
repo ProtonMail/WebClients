@@ -1,4 +1,4 @@
-import { CALENDAR_DISPLAY } from './Calendar';
+import { CALENDAR_DISPLAY } from '../../calendar/constants';
 
 export enum MEMBER_INVITATION_STATUS {
     PENDING = 0,

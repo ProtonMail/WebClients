@@ -1,25 +1,9 @@
-import { NOTIFICATION_TYPE_API } from '../../calendar/constants';
+import { CALENDAR_DISPLAY, CALENDAR_TYPE, NOTIFICATION_TYPE_API, SETTINGS_VIEW } from '../../calendar/constants';
 import { Nullable } from '../utils';
 import { CalendarKey } from './CalendarKey';
 import { CalendarMember, CalendarOwner } from './CalendarMember';
 import { NotificationModel } from './Notification';
 import { Passphrase } from './Passphrase';
-
-export enum CALENDAR_TYPE {
-    PERSONAL = 0,
-    SUBSCRIPTION = 1,
-}
-
-export enum CALENDAR_TYPE_EXTENDED {
-    SHARED = 2,
-}
-
-export type EXTENDED_CALENDAR_TYPE = CALENDAR_TYPE | CALENDAR_TYPE_EXTENDED;
-
-export enum CALENDAR_DISPLAY {
-    HIDDEN = 0,
-    VISIBLE = 1,
-}
 
 export interface Calendar {
     ID: string;
@@ -39,14 +23,6 @@ export interface VisualCalendar extends CalendarWithOwnMembers {
     Email: string;
     Flags: number;
     Permissions: number;
-}
-
-export enum SETTINGS_VIEW {
-    DAY = 0,
-    WEEK = 1,
-    MONTH = 2,
-    YEAR = 3,
-    PLANNING = 4,
 }
 
 export interface CalendarUserSettings {

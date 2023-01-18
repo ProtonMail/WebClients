@@ -5,7 +5,6 @@ import unary from '@proton/utils/unary';
 import { hasBit, toggleBit } from '../helpers/bitset';
 import { Address, Api } from '../interfaces';
 import {
-    CALENDAR_TYPE,
     Calendar,
     CalendarUserSettings,
     CalendarWithOwnMembers,
@@ -13,7 +12,7 @@ import {
     VisualCalendar,
 } from '../interfaces/calendar';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
-import { CALENDAR_FLAGS, MAX_CALENDARS_FREE, MAX_CALENDARS_PAID, SETTINGS_VIEW } from './constants';
+import { CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CALENDARS_FREE, MAX_CALENDARS_PAID, SETTINGS_VIEW } from './constants';
 import { reactivateCalendarsKeys } from './keys/reactivateCalendarKeys';
 
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
