@@ -7,6 +7,7 @@ import { PrivateMainArea, useAppTitle } from '@proton/components';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useTrashView } from '../../../store';
 import { FileBrowserStateProvider } from '../../FileBrowser';
+import EmptyTrashNotification from './EmptyTrashNotification';
 import Trash from './Trash';
 import TrashToolbar from './TrashToolbar';
 
@@ -21,7 +22,11 @@ const TrashView = () => {
         <FileBrowserStateProvider itemIds={trashView.items.map(({ linkId }) => linkId)}>
             <TrashToolbar items={trashView.items} />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
-                <div className="p1 text-strong border-bottom section--header">{c('Info').t`Trash`}</div>
+                <div className="p1 text-strong section--header">{c('Info').t`Trash`}</div>
+                <EmptyTrashNotification
+                    className="border-bottom"
+                    disabled={trashView.isLoading || trashView.items.length === 0}
+                />
                 <Trash shareId={activeShareId} trashView={trashView} />
             </PrivateMainArea>
         </FileBrowserStateProvider>

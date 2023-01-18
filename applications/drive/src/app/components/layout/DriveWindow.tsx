@@ -20,11 +20,10 @@ import {
 import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useIsActiveLinkReadOnly } from '../../store/_views/utils';
 import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
-import UploadSidebarButton from '../sections/Drive/UploadButton';
-import ShareFileSidebarButton from '../sections/SharedLinks/ShareFileSidebarButton';
-import EmptyTrashSidebarButton from '../sections/Trash/EmptyTrashSidebarButton';
+import UploadButton from '../sections/Drive/UploadButton';
 import { DriveHeaderPrivate } from './DriveHeader';
 import DriveSidebar from './DriveSidebar/DriveSidebar';
 import { getDriveDrawerPermissions } from './drawerPermissions';
@@ -34,14 +33,16 @@ interface Props {
 }
 
 const DriveWindow = ({ children }: Props) => {
-    const location = useLocation();
     const [user] = useUser();
     const { state: expanded, toggle: toggleExpanded } = useToggle();
 
-    const [recoveryBannerVisible, setReoveryBannerVisible] = useState(true);
+    const [recoveryBannerVisible, setRecoveryBannerVisible] = useState(true);
+
+    const { isReadOnly } = useIsActiveLinkReadOnly();
 
     const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
     const { showDrawerSidebar } = useDrawer();
+    const location = useLocation();
 
     const drawerSpotlightSeenRef = useRef(false);
     const markSpotlightAsSeen = () => {
@@ -53,29 +54,15 @@ const DriveWindow = ({ children }: Props) => {
     const fileRecoveryBanner = recoveryBannerVisible ? (
         <FileRecoveryBanner
             onClose={() => {
-                setReoveryBannerVisible(false);
+                setRecoveryBannerVisible(false);
             }}
         />
     ) : null;
 
     const top = <TopBanners>{fileRecoveryBanner}</TopBanners>;
 
-    let PrimaryButton = UploadSidebarButton;
-    if (location.pathname === '/trash') {
-        PrimaryButton = EmptyTrashSidebarButton;
-    } else if (location.pathname === '/shared-urls') {
-        PrimaryButton = ShareFileSidebarButton;
-    }
-
     const logo = <MainLogo to="/" />;
-    const header = (
-        <DriveHeaderPrivate
-            logo={logo}
-            floatingPrimary={PrimaryButton && <PrimaryButton mobileVersion />}
-            isHeaderExpanded={expanded}
-            toggleHeaderExpanded={toggleExpanded}
-        />
-    );
+    const header = <DriveHeaderPrivate logo={logo} isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
 
     const permissions = getDriveDrawerPermissions({ user, drawerFeature });
     const drawerSidebarButtons = [
@@ -83,10 +70,12 @@ const DriveWindow = ({ children }: Props) => {
         permissions.calendar && <CalendarDrawerAppButton onClick={markSpotlightAsSeen} />,
     ].filter(isTruthy);
 
+    const isNewUploadDisabled = location.pathname === '/devices' || isReadOnly;
+
     const sidebar = (
         <DriveSidebar
             logo={logo}
-            primary={PrimaryButton && <PrimaryButton />}
+            primary={<UploadButton className="no-mobile" disabled={isNewUploadDisabled} />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />
