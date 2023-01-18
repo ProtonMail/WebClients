@@ -7,7 +7,7 @@ import parseMainEventData from './parseMainEventData';
 
 interface GetEditEventDataArguments {
     eventData: CalendarEvent;
-    eventResult: DecryptedEventTupleResult;
+    eventResult?: DecryptedEventTupleResult;
     memberResult: [CalendarMember, Address];
 }
 
@@ -22,7 +22,7 @@ const getEditEventData = ({ eventData, eventResult, memberResult: [member, addre
         throw new Error('Event without UID');
     }
 
-    const { veventComponent } = eventResult[0];
+    const { veventComponent } = eventResult?.[0] || {};
     const recurrenceID = getRecurrenceIdDate(mainVeventComponent);
 
     return {
