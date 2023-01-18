@@ -1,3 +1,4 @@
+import { Environment } from '@proton/shared/lib/environment/helper';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
@@ -16,6 +17,7 @@ import { UploadWorkerController } from './workerController';
 
 export function initUploadFileWorker(
     file: File,
+    environment: Environment | undefined,
     { initialize, createFileRevision, createBlockLinks, finalize, onError }: UploadCallbacks
 ): UploadFileControls {
     const abortController = new AbortController();
@@ -52,7 +54,8 @@ export function initUploadFileWorker(
                                             fileRevision.address.privateKey,
                                             fileRevision.address.email,
                                             fileRevision.privateKey,
-                                            fileRevision.sessionKey
+                                            fileRevision.sessionKey,
+                                            environment
                                         );
                                     });
                                 }
@@ -77,6 +80,9 @@ export function initUploadFileWorker(
                 },
                 onError: (error: string) => {
                     reject(new Error(error));
+                },
+                notifySentry: (error: Error) => {
+                    traceError(error);
                 },
                 onCancel: () => {
                     reject(new TransferCancel({ message: `Transfer canceled for ${file.name}` }));

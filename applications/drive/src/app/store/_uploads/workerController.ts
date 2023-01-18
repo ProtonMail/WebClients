@@ -1,4 +1,5 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
+import { Environment } from '@proton/shared/lib/environment/helper';
 
 import {
     BlockToken,
@@ -27,6 +28,7 @@ type StartMessage = {
     addressEmail: string;
     privateKey: Uint8Array;
     sessionKey: SessionKey;
+    environment: Environment | undefined;
 };
 
 type CreatedBlocksMessage = {
@@ -67,7 +69,8 @@ interface WorkerHandlers {
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
-        sessionKey: SessionKey
+        sessionKey: SessionKey,
+        currentEnvironment: Environment | undefined
     ) => void;
     createdBlocks: (fileLinks: Link[], thumbnailLink?: Link) => void;
     pause: () => void;
@@ -114,6 +117,11 @@ type ErrorMessage = {
     error: string;
 };
 
+type NotifySentryMessage = {
+    command: 'notify_sentry';
+    error: Error;
+};
+
 /**
  * WorkerEvent contains all possible events which can come from the upload
  * web worker to the main thread.
@@ -125,7 +133,8 @@ type WorkerEvent = {
         | ProgressMessage
         | DoneMessage
         | NetworkErrorMessage
-        | ErrorMessage;
+        | ErrorMessage
+        | NotifySentryMessage;
 };
 
 /**
@@ -141,6 +150,7 @@ interface WorkerControllerHandlers {
     onNetworkError: (error: string) => void;
     onError: (error: string) => void;
     onCancel: () => void;
+    notifySentry: (error: Error) => void;
 }
 
 /**
@@ -193,7 +203,8 @@ export class UploadWorker {
                             addressPrivateKey,
                             data.addressEmail,
                             privateKey,
-                            data.sessionKey
+                            data.sessionKey,
+                            data.environment
                         );
                     })(data).catch((err) => {
                         this.postError(err);
@@ -286,6 +297,13 @@ export class UploadWorker {
             error,
         } as ErrorMessage);
     }
+
+    postNotifySentry(error: Error) {
+        this.worker.postMessage({
+            command: 'notify_sentry',
+            error,
+        } as NotifySentryMessage);
+    }
 }
 
 /**
@@ -308,6 +326,7 @@ export class UploadWorkerController {
             onNetworkError,
             onError,
             onCancel,
+            notifySentry,
         }: WorkerControllerHandlers
     ) {
         this.worker = worker;
@@ -347,6 +366,9 @@ export class UploadWorkerController {
                     break;
                 case 'error':
                     onError(data.error);
+                    break;
+                case 'notify_sentry':
+                    notifySentry(data.error);
                     break;
                 default:
                     // Type linters should prevent this error.
@@ -389,11 +411,13 @@ export class UploadWorkerController {
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
-        sessionKey: SessionKey
+        sessionKey: SessionKey,
+        environment: Environment | undefined
     ) {
         this.worker.postMessage({
             command: 'start',
             file,
+            environment,
             thumbnailData,
             addressPrivateKey: await CryptoProxy.exportPrivateKey({
                 privateKey: addressPrivateKey,
