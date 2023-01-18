@@ -16,6 +16,7 @@ interface Props {
 const TopBanner = ({ children, className, onClose }: Props) => {
     return (
         <div
+            role="alert"
             className={classnames([
                 'flex flex-item-noshrink flex-nowrap text-center relative text-bold no-print',
                 className,
