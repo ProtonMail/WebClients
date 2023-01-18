@@ -31,7 +31,6 @@ const address: Address = {
     Type: ADDRESS_TYPE.TYPE_ORIGINAL,
 };
 
-const isLabelMapping = true;
 const providerLabels = labels.map((label) => {
     return { ...label, Size: 1 } as ApiMailImporterFolder;
 });
@@ -48,31 +47,32 @@ const updatedFields = {
     updatedMapping: true,
 };
 
+const isLabelMapping = true;
+function getBaseFields() {
+    return {
+        mapping: new MailImportFoldersParser(providerLabels, isLabelMapping).folders,
+        importLabel: { Color: '#fff', Name: 'label', Type: 1 },
+        importPeriod: TIME_PERIOD.BIG_BANG,
+        importAddress: address,
+        importCategoriesDestination: MailImportDestinationFolder.INBOX,
+    };
+}
+
 describe('Step prepare helpers tests', () => {
     describe('formatPrepareStepPayload', () => {
         it('Should return a standard payload (All time)', () => {
-            const fields: StepPrepareData['fields'] = {
-                mapping: new MailImportFoldersParser(providerLabels, isLabelMapping).folders,
-                importLabel: { Color: '#fff', Name: 'label', Type: 1 },
-                importPeriod: TIME_PERIOD.BIG_BANG,
-                importAddress: address,
-                importCategoriesDestination: MailImportDestinationFolder.INBOX,
-            };
+            const fields: StepPrepareData['fields'] = getBaseFields();
             const res = formatPrepareStepPayload({ isLabelMapping, data: correctData, fields, updatedFields });
             expect(res).toEqual(standardFolderResponse);
         });
 
         it('Should return a standard payload (last year)', () => {
             const fieldsOneYear: StepPrepareData['fields'] = {
-                mapping: new MailImportFoldersParser(providerLabels, isLabelMapping).folders,
-                importLabel: { Color: '#fff', Name: 'label', Type: 1 },
+                ...getBaseFields(),
                 importPeriod: TIME_PERIOD.LAST_YEAR,
-                importAddress: address,
-                importCategoriesDestination: MailImportDestinationFolder.INBOX,
             };
             const res = formatPrepareStepPayload({
                 isLabelMapping,
-
                 data: correctData,
                 fields: fieldsOneYear,
                 updatedFields,
@@ -91,15 +91,11 @@ describe('Step prepare helpers tests', () => {
 
         it('Should return a standard payload (3 last months)', () => {
             const fieldsThreeMonts: StepPrepareData['fields'] = {
-                mapping: new MailImportFoldersParser(providerLabels, isLabelMapping).folders,
-                importLabel: { Color: '#fff', Name: 'label', Type: 1 },
+                ...getBaseFields(),
                 importPeriod: TIME_PERIOD.LAST_3_MONTHS,
-                importAddress: address,
-                importCategoriesDestination: MailImportDestinationFolder.INBOX,
             };
             const res = formatPrepareStepPayload({
                 isLabelMapping,
-
                 data: correctData,
                 fields: fieldsThreeMonts,
                 updatedFields,
@@ -118,11 +114,8 @@ describe('Step prepare helpers tests', () => {
 
         it('Should return a standard payload (last month)', () => {
             const fieldsOneMonth: StepPrepareData['fields'] = {
-                mapping: new MailImportFoldersParser(providerLabels, isLabelMapping).folders,
-                importLabel: { Color: '#fff', Name: 'label', Type: 1 },
+                ...getBaseFields(),
                 importPeriod: TIME_PERIOD.LAST_MONTH,
-                importAddress: address,
-                importCategoriesDestination: MailImportDestinationFolder.INBOX,
             };
             const res = formatPrepareStepPayload({
                 isLabelMapping,
@@ -143,13 +136,7 @@ describe('Step prepare helpers tests', () => {
         });
 
         it('Should throw an error if importer ID is undefined ', () => {
-            const fields: StepPrepareData['fields'] = {
-                mapping: new MailImportFoldersParser(providerLabels, isLabelMapping).folders,
-                importLabel: { Color: '#fff', Name: 'label', Type: 1 },
-                importPeriod: TIME_PERIOD.BIG_BANG,
-                importAddress: address,
-                importCategoriesDestination: MailImportDestinationFolder.INBOX,
-            };
+            const fields: StepPrepareData['fields'] = getBaseFields();
             const faultyData = {
                 email: 'string',
                 providerFolders: providerLabels,
@@ -160,6 +147,44 @@ describe('Step prepare helpers tests', () => {
             expect(() =>
                 formatPrepareStepPayload({ isLabelMapping, data: faultyData, fields, updatedFields })
             ).toThrowError('Importer ID should be defined');
+        });
+
+        it('Should not submit unchecked folders', () => {
+            const fields: StepPrepareData['fields'] = {
+                ...getBaseFields(),
+                mapping: new MailImportFoldersParser(providerLabels, isLabelMapping).folders.map((folder) => ({
+                    ...folder,
+                    checked: false,
+                })),
+            };
+
+            expect(
+                formatPrepareStepPayload({ isLabelMapping, data: correctData, fields, updatedFields }).Mail.Mapping
+                    .length
+            ).toBe(0);
+        });
+
+        it('Should send correctly formatted folders depth into payload', () => {
+            const isLabelMapping = false;
+            const fields: StepPrepareData['fields'] = {
+                ...getBaseFields(),
+                mapping: new MailImportFoldersParser(
+                    ['dude 1', 'dude 1/dude 2', 'dude 1/dude 2/dude 3', 'dude 1/dude 2/dude 3/dude 4'].map(
+                        (path) =>
+                            ({
+                                Source: path,
+                                Separator: '/',
+                            } as ApiMailImporterFolder)
+                    ),
+                    isLabelMapping
+                ).folders,
+            };
+
+            expect(
+                formatPrepareStepPayload({ isLabelMapping, data: correctData, fields, updatedFields }).Mail.Mapping.map(
+                    (item) => item.Destinations.FolderPath
+                )
+            ).toEqual(['dude 1', 'dude 1/dude 2', 'dude 1/dude 2/dude 3', 'dude 1/dude 2/dude 3\\/dude 4']);
         });
     });
 });
