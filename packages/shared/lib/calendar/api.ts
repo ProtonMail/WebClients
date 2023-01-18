@@ -1,6 +1,7 @@
-import { getEventByUID } from '@proton/shared/lib/api/calendars';
-import { Api } from '@proton/shared/lib/interfaces';
-import { CALENDAR_TYPE, CalendarEvent, GetEventByUIDArguments } from '@proton/shared/lib/interfaces/calendar';
+import { getEventByUID } from '../api/calendars';
+import { Api } from '../interfaces';
+import { CalendarEvent, GetEventByUIDArguments } from '../interfaces/calendar';
+import { CALENDAR_TYPE } from './constants';
 
 const MAX_ITERATIONS = 100;
 

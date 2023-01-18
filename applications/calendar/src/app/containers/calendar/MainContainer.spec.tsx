@@ -8,9 +8,13 @@ import { CacheProvider } from '@proton/components/containers/cache';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import useCalendars from '@proton/components/hooks/useCalendars';
-import { CALENDAR_FLAGS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import {
+    CALENDAR_DISPLAY,
+    CALENDAR_FLAGS,
+    CALENDAR_TYPE,
+    MAX_LENGTHS_API,
+} from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import MainContainer from './MainContainer';
