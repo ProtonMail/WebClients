@@ -1,6 +1,6 @@
 import { PrivateKeyReference } from '@proton/crypto';
 
-import { Address, Api, EncryptionConfig, Member } from '../interfaces';
+import { Address, Api, EncryptionConfig, KeyTransparencyVerify, Member } from '../interfaces';
 import { getHasMemberMigratedAddressKeys } from './keyMigration';
 import { createMemberAddressKeysLegacy, createMemberAddressKeysV2, getDecryptedMemberKey } from './memberKeys';
 
@@ -15,6 +15,7 @@ interface MissingKeysMemberProcessArguments {
     member: Member;
     memberAddresses: Address[];
     memberAddressesToGenerate: Address[];
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const missingKeysMemberProcess = async ({
@@ -26,6 +27,7 @@ export const missingKeysMemberProcess = async ({
     memberAddresses,
     memberAddressesToGenerate,
     organizationKey,
+    keyTransparencyVerify,
 }: MissingKeysMemberProcessArguments) => {
     const PrimaryKey = member.Keys.find(({ Primary }) => Primary === 1);
 
@@ -51,6 +53,7 @@ export const missingKeysMemberProcess = async ({
                         encryptionConfig,
                         memberUserKey: primaryMemberUserKey,
                         organizationKey,
+                        keyTransparencyVerify,
                     });
                 } else {
                     await createMemberAddressKeysLegacy({
@@ -61,6 +64,7 @@ export const missingKeysMemberProcess = async ({
                         encryptionConfig,
                         memberUserKey: primaryMemberUserKey,
                         organizationKey,
+                        keyTransparencyVerify,
                     });
                 }
 

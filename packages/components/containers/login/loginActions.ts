@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { verifyPoAExistence } from '@proton/key-transparency';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth2FA, getInfo, revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -13,6 +14,7 @@ import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/aut
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
@@ -29,7 +31,7 @@ import {
     migrateUser,
 } from '@proton/shared/lib/keys';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
-import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
+import { getHasV2KeysToUpgrade, getV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
 import {
     attemptDeviceRecovery,
     getIsDeviceRecoveryAvailable,
@@ -41,6 +43,7 @@ import { AUTH_VERSION } from '@proton/srp';
 import noop from '@proton/utils/noop';
 
 import { ChallengeResult } from '../challenge';
+import { createPreAuthKTVerifier } from '../keyTransparency';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 
@@ -76,7 +79,16 @@ const finalizeLogin = async ({
     loginPassword: string;
     keyPassword?: string;
 }): Promise<AuthActionResponse> => {
-    const { authResponse, authVersion, api, authApi, persistent, appName, hasTrustedDeviceRecovery } = cache;
+    const {
+        authResponse,
+        authVersion,
+        api,
+        authApi,
+        persistent,
+        appName,
+        hasTrustedDeviceRecovery,
+        preAuthKTVerifier,
+    } = cache;
 
     if (authVersion < AUTH_VERSION) {
         await srpVerify({
@@ -127,6 +139,7 @@ const finalizeLogin = async ({
             user,
             addresses,
             keyPassword,
+            preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
         }).catch(noop);
 
         if (numberOfReactivatedKeys !== undefined && numberOfReactivatedKeys > 0) {
@@ -169,6 +182,8 @@ const finalizeLogin = async ({
         trusted,
     });
 
+    await preAuthKTVerifier.preAuthKTCommit(user.ID);
+
     return {
         to: AuthStep.DONE,
         session: {
@@ -196,7 +211,7 @@ const handleKeyUpgrade = async ({
     keyPassword: string;
     isOnePasswordMode?: boolean;
 }) => {
-    const { appName, authApi } = cache;
+    const { appName, authApi, preAuthKTVerifier } = cache;
     let keyPassword = maybeKeyPassword;
 
     if (appName !== APPS.PROTONACCOUNT) {
@@ -208,7 +223,22 @@ const handleKeyUpgrade = async ({
         cache.data.addresses || syncAddresses(cache),
     ]);
 
+    const { preAuthKTVerify } = preAuthKTVerifier;
+
     if (getHasV2KeysToUpgrade(user, addresses)) {
+        // Key uprade can be triggered by the server. Since the only legitimate
+        // case in which this can happen is when an address is not in KT (otherwise
+        // its keys must have been already upgraded and migrated), we check whether
+        // this is the case by verifying that an absence proof exists and verifies.
+        // If either is not satisfied, key upgrade is considered to be malicious
+        await Promise.all(
+            addresses.map(async ({ Keys, Email }) => {
+                if (getV2KeysToUpgrade(Keys).length > 0) {
+                    await verifyPoAExistence(authApi, canonicalizeInternalEmail(Email));
+                }
+            })
+        );
+
         const newKeyPassword = await upgradeV2KeysHelper({
             user,
             addresses,
@@ -217,6 +247,7 @@ const handleKeyUpgrade = async ({
             clearKeyPassword,
             isOnePasswordMode,
             api: authApi,
+            preAuthKTVerify,
         }).catch((e) => {
             const error = getSentryError(e);
             if (error) {
@@ -237,6 +268,8 @@ const handleKeyUpgrade = async ({
         keyPassword,
         user,
         addresses,
+        preAuthKTVerify,
+        verifyPoAExistence,
     }).catch((e) => {
         const error = getSentryError(e);
         if (error) {
@@ -297,7 +330,7 @@ export const handleUnlock = async ({
  * Setup keys and address for users that have not setup.
  */
 export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthCacheResult; newPassword: string }) => {
-    const { authApi, username } = cache;
+    const { authApi, username, preAuthKTVerifier } = cache;
 
     const [domains, addresses] = await Promise.all([
         authApi<{ Domains: string[] }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
@@ -310,6 +343,7 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
         password: newPassword,
         addresses,
         domains,
+        preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
     });
 
     cache.data.user = undefined;
@@ -450,6 +484,7 @@ export const handleLogin = async ({
         ignoreUnlock,
         hasTrustedDeviceRecovery,
         setupVPN,
+        preAuthKTVerifier: createPreAuthKTVerifier(authApi),
     };
 
     return next({ cache, from: AuthStep.LOGIN });

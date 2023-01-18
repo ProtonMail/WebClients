@@ -1,4 +1,5 @@
 import { ProtonApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
+import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
@@ -12,6 +13,7 @@ import './app.scss';
 
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
+setupGuestCrossStorage();
 newVersionUpdater(config);
 sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
 setVcalProdId(getProdId(config));

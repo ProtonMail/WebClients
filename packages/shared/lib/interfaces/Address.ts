@@ -1,6 +1,6 @@
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../constants';
 import { AddressKey } from './Key';
-import { SignedKeyListEpochs } from './SignedKeyList';
+import { ActiveSignedKeyList, SignedKeyList } from './SignedKeyList';
 
 export interface Address {
     DisplayName: string;
@@ -9,7 +9,7 @@ export interface Address {
     HasKeys: number;
     ID: string;
     Keys: AddressKey[];
-    SignedKeyList: SignedKeyListEpochs | null;
+    SignedKeyList: ActiveSignedKeyList | null;
     Order: number;
     Priority: number;
     Receive: ADDRESS_RECEIVE;
@@ -26,10 +26,7 @@ export interface DomainAddress extends Omit<Address, 'SignedKeyList' | 'Keys'> {
 export interface AddressKeyPayload {
     AddressID: string;
     PrivateKey: string;
-    SignedKeyList: {
-        Data: string;
-        Signature: string;
-    };
+    SignedKeyList: SignedKeyList;
 }
 
 export interface AddressKeyPayloadV2 {
@@ -37,10 +34,7 @@ export interface AddressKeyPayloadV2 {
     Token: string;
     Signature: string;
     PrivateKey: string;
-    SignedKeyList: {
-        Data: string;
-        Signature: string;
-    };
+    SignedKeyList: SignedKeyList;
 }
 
 export interface Recipient {

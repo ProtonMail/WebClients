@@ -81,7 +81,9 @@
         "typescript": "^4.9.5"
     },
     "peerDependencies": {
+        "@proton/cross-storage": "*",
         "@proton/crypto": "*",
+        "@proton/key-transparency": "*",
         "@proton/shared": "*",
         "@proton/srp": "*",
         "date-fns": "^2.29.3",

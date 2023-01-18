@@ -32,6 +32,7 @@ import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { createPreAuthKTVerifier } from '../keyTransparency';
 import {
     AccountType,
     RecoveryMethod,
@@ -56,10 +57,13 @@ export const handleNewPassword = async ({
     }
     const { Addresses: addresses } = resetResponse;
 
+    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(api);
+
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
     const { addressKeysPayload, userKeyPayload } = await getResetAddressesKeysV2({
         addresses,
         passphrase,
+        preAuthKTVerify,
     });
 
     await srpVerify({
@@ -96,6 +100,7 @@ export const handleNewPassword = async ({
                 password,
                 addresses,
                 domains,
+                preAuthKTVerify,
             });
             // Refetch the user to update the keys that got generated
             user = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
@@ -110,6 +115,7 @@ export const handleNewPassword = async ({
             user,
             addresses,
             keyPassword,
+            preAuthKTVerify,
         }).catch(noop);
 
         if (numberOfReactivatedKeys !== undefined && numberOfReactivatedKeys > 0) {
@@ -143,6 +149,8 @@ export const handleNewPassword = async ({
     }
 
     await persistSession({ ...authResponse, persistent, trusted, User: user, keyPassword, api: authApi });
+
+    await preAuthKTCommit(user.ID);
 
     return {
         to: STEPS.DONE,

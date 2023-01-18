@@ -1,5 +1,5 @@
 import { setupAddress as setupAddressRoute } from '../api/addresses';
-import { Api, Address as tsAddress } from '../interfaces';
+import { Api, PreAuthKTVerify, Address as tsAddress } from '../interfaces';
 import { handleSetupKeys } from './setupKeys';
 
 interface SetupAddressArgs {
@@ -28,11 +28,19 @@ interface SetupAddressKeysArgs {
     username: string;
     addresses: tsAddress[];
     domains: string[];
+    preAuthKTVerify: PreAuthKTVerify;
 }
 
-export const handleSetupAddressKeys = async ({ username, password, api, addresses, domains }: SetupAddressKeysArgs) => {
+export const handleSetupAddressKeys = async ({
+    username,
+    password,
+    api,
+    addresses,
+    domains,
+    preAuthKTVerify,
+}: SetupAddressKeysArgs) => {
     const addressesToUse =
         addresses?.length > 0 ? addresses : await handleSetupAddress({ api, domain: domains[0], username });
 
-    return handleSetupKeys({ api, addresses: addressesToUse, password });
+    return handleSetupKeys({ api, addresses: addressesToUse, password, preAuthKTVerify });
 };

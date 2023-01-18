@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+import { verifyPoAExistence } from '@proton/key-transparency';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { User } from '@proton/shared/lib/interfaces';
 import {
@@ -26,6 +27,7 @@ import {
     useGetUserKeys,
 } from '../../hooks';
 import useApi from '../../hooks/useApi';
+import { useKTVerifier } from '../keyTransparency';
 
 interface Props {
     hasPrivateMemberKeyGeneration?: boolean;
@@ -47,6 +49,7 @@ const KeyBackgroundManager = ({
     const { subscribe, call } = useEventManager();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
 
     useEffect(() => {
         const run = async () => {
@@ -67,10 +70,14 @@ const KeyBackgroundManager = ({
                               userKeys,
                               keyPassword,
                               api: silentApi,
+                              keyTransparencyVerify,
                           });
                       })
                   )
-                      .then(call)
+                      .then(async () => {
+                          await keyTransparencyCommit(userKeys);
+                          await call();
+                      })
                       .catch(traceError)
                 : undefined;
 
@@ -84,15 +91,24 @@ const KeyBackgroundManager = ({
                       userKeys,
                       keyPassword,
                       api: silentApi,
+                      keyTransparencyVerify,
                   })
-                      .then(call)
+                      .then(async () => {
+                          await keyTransparencyCommit(userKeys);
+                          await call();
+                      })
                       .catch(traceError)
                 : undefined;
             return Promise.all([activationPromise, generationPromise]);
         };
 
         const runMigration = async () => {
-            const [user, organization, addresses] = await Promise.all([getUser(), getOrganization(), getAddresses()]);
+            const [user, organization, addresses, userKeys] = await Promise.all([
+                getUser(),
+                getOrganization(),
+                getAddresses(),
+                getUserKeys(),
+            ]);
 
             if (!(user.ToMigrate === 1 || organization.ToMigrate === 1)) {
                 return;
@@ -106,21 +122,29 @@ const KeyBackgroundManager = ({
                 user,
                 keyPassword,
                 addresses,
+                preAuthKTVerify: () => keyTransparencyVerify,
+                verifyPoAExistence,
             });
 
             if (hasDoneMigration) {
+                await keyTransparencyCommit(userKeys);
                 // Force a refresh directly so they're good to be used
                 await call();
                 hasMigratedAddressKeys = true;
             }
 
             if (hasMigratedAddressKeys) {
-                await migrateMemberAddressKeys({
+                const hasDoneAddressKeysMigration = await migrateMemberAddressKeys({
                     api: silentApi,
                     user,
                     organization,
                     keyPassword,
+                    keyTransparencyVerify,
                 });
+
+                if (typeof hasDoneAddressKeysMigration === 'undefined') {
+                    await keyTransparencyCommit(userKeys);
+                }
             }
         };
 
@@ -135,6 +159,8 @@ const KeyBackgroundManager = ({
                 api: silentApi,
                 user,
                 keyPassword: authentication.getPassword(),
+                keyTransparencyVerify,
+                keyTransparencyCommit,
             });
         };
 
