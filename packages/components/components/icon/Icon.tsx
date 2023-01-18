@@ -72,6 +72,7 @@ export type IconName =
     | 'brand-apple'
     | 'brand-bitcoin'
     | 'brand-chrome'
+    | 'brand-discover'
     | 'brand-linux'
     | 'brand-mastercard'
     | 'brand-paypal'
