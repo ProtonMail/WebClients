@@ -24,10 +24,14 @@ export const Basic = () => {
                 <Checkbox id="tofu">Tofu</Checkbox>
             </div>
             <div className="my1">
-                <Checkbox id="spaghetti">Spaghetti</Checkbox>
+                <Checkbox id="spaghetti" checked>
+                    Spaghetti
+                </Checkbox>
             </div>
             <div className="my1">
-                <Checkbox id="upsetti">Upsetti</Checkbox>
+                <Checkbox id="upsetti" checked disabled>
+                    Upsetti
+                </Checkbox>
             </div>
             <div className="my1">
                 <Checkbox id="overflow">

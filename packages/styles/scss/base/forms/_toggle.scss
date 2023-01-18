@@ -12,7 +12,6 @@ $toggle-width-button: em(24) !default;
 		inline-size: $toggle-width;
 		min-block-size: $toggle-width-button;
 		max-block-size: $toggle-width-button;
-		box-shadow: inset 0 0 0 1px var(--field-norm);
 		border-radius: #{math.div($toggle-width, 2)};
 		background-color: var(--background-norm);
 	}
@@ -28,6 +27,18 @@ $toggle-width-button: em(24) !default;
 		border-radius: $toggle-width-button;
 		background-color: var(--field-norm);
 		transition: transform 0.25s easing(ease-out-back), background-color 0.25s easing(ease-out-cubic);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset-block: 0;
+		inset-inline-start: 0;
+		inline-size: $toggle-width;
+		z-index: 1;
+		border-radius: #{math.div($toggle-width, 2)};
+		border: 1px solid var(--field-norm);
+		transition: 0.15s easing(ease-out-cubic);
 	}
 
 	& > .toggle-label-text {
@@ -159,14 +170,30 @@ $toggle-width-button: em(24) !default;
 	}
 
 	&:not(.toggle-label--disabled) {
-		&:hover,
-		&:focus-within {
+		&:hover {
 			&::before {
 				background-color: var(--field-hover);
 			}
 		}
 
-		&.toggle-label--checked:focus-within,
+		@supports not selector(:focus-visible) {
+			&:focus-within {
+				&::after {
+					border-color: var(--focus-outline);
+					box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+				}
+			}
+		}
+
+		@supports selector(:focus-visible) {
+			&:has(*:focus-visible) {
+				&::after {
+					border-color: var(--focus-outline);
+					box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+				}
+			}
+		}
+
 		&.toggle-label--checked:hover {
 			&::before {
 				background-color: var(--interaction-norm-hover);
