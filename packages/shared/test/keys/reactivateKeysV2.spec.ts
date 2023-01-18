@@ -270,6 +270,7 @@ describe('reactivate keys', () => {
             keyReactivationRecords,
             keyPassword,
             onReactivation,
+            keyTransparencyVerify: async () => {},
         });
         expect(api.calls.count()).toEqual(1);
         expect(onReactivation.calls.count()).toEqual(3);
@@ -308,6 +309,7 @@ describe('reactivate keys', () => {
             keyReactivationRecords,
             keyPassword,
             onReactivation,
+            keyTransparencyVerify: async () => {},
         });
 
         expect(onReactivation.calls.count()).toEqual(7);
@@ -384,6 +386,7 @@ describe('reactivate keys', () => {
             keyReactivationRecords,
             keyPassword,
             onReactivation,
+            keyTransparencyVerify: async () => {},
         });
 
         expect(onReactivation.calls.count()).toEqual(2);

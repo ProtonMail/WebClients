@@ -9,7 +9,7 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 import { setNewRecoverySecret } from '../api/settingsRecovery';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import { Address, Api, DecryptedKey, KeyPair, User } from '../interfaces';
+import { Address, Api, DecryptedKey, KeyPair, PreAuthKTVerify, User } from '../interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper, reactivateKeysProcess } from '../keys';
 import {
     generateRecoveryFileMessage,
@@ -58,11 +58,13 @@ export const attemptDeviceRecovery = async ({
     addresses,
     keyPassword,
     api,
+    preAuthKTVerify,
 }: {
     user: User;
     addresses: Address[] | undefined;
     keyPassword: string;
     api: Api;
+    preAuthKTVerify: PreAuthKTVerify;
 }) => {
     const privateUser = Boolean(user.Private);
     if (!addresses || !privateUser) {
@@ -123,6 +125,8 @@ export const attemptDeviceRecovery = async ({
         })
         .filter(isTruthy);
 
+    const keyTransparencyVerify = preAuthKTVerify(userKeys);
+
     let numberOfReactivatedKeys = 0;
     await reactivateKeysProcess({
         api,
@@ -136,6 +140,7 @@ export const attemptDeviceRecovery = async ({
                 numberOfReactivatedKeys++;
             }
         },
+        keyTransparencyVerify,
     });
 
     return numberOfReactivatedKeys;

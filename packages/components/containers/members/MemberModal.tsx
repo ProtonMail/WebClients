@@ -40,7 +40,8 @@ import {
     Toggle,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager, useGetAddresses, useLoading, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useGetAddresses, useGetUser, useLoading, useNotifications } from '../../hooks';
+import { useKTVerifier } from '../keyTransparency';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 
@@ -71,6 +72,7 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
         vpn: hasVPN && organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS,
         storage: clamp(5 * GIGA, storageRange.min, storageRange.max),
     });
+    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
 
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
     const [submitting, withLoading] = useLoading();
@@ -121,6 +123,8 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
                 organizationKey: organizationKey.privateKey,
                 encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
                 password: model.password,
+                keyTransparencyVerify,
+                keyTransparencyCommit,
             });
         }
 

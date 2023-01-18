@@ -2,7 +2,7 @@ import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { createAddressKeyRouteV2 } from '../../api/keys';
-import { Address, Api, DecryptedKey } from '../../interfaces';
+import { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
 import { generateAddressKeyTokens } from '../addressKeys';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
 import { getInactiveKeys } from '../getInactiveKeys';
@@ -19,6 +19,7 @@ export interface ImportKeysProcessV2Arguments {
     address: Address;
     addressKeys: DecryptedKey[];
     userKey: PrivateKeyReference;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 const importKeysProcessV2 = async ({
@@ -28,6 +29,7 @@ const importKeysProcessV2 = async ({
     address,
     addressKeys,
     userKey,
+    keyTransparencyVerify,
 }: ImportKeysProcessV2Arguments) => {
     const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
     const inactiveKeys = await getInactiveKeys(address.Keys, activeKeys);
@@ -60,7 +62,7 @@ const importKeysProcessV2 = async ({
                 flags: getDefaultKeyFlags(address),
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
-            const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
+            const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
 
             const { Key } = await api(
                 createAddressKeyRouteV2({
@@ -91,6 +93,7 @@ const importKeysProcessV2 = async ({
         userKey,
         keysToReactivate,
         onReactivation: onImport,
+        keyTransparencyVerify,
     });
 };
 

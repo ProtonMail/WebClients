@@ -3,7 +3,14 @@ import noop from '@proton/utils/noop';
 
 import { KEY_FLAG, MIME_TYPES, RECIPIENT_TYPES } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
-import { Api, ApiKeysConfig, ProcessedApiKey, SignedKeyListEpochs } from '../../interfaces';
+import {
+    Api,
+    ApiKeysConfig,
+    FetchedSignedKeyList,
+    IGNORE_KT,
+    ProcessedApiKey,
+    VerifyOutboundPublicKeys,
+} from '../../interfaces';
 import { getPublicKeys } from '../keys';
 
 const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID } = API_CUSTOM_ERROR_CODES;
@@ -16,6 +23,7 @@ const EMAIL_ERRORS = [KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GE
 const getPublicKeysEmailHelper = async (
     api: Api,
     Email: string,
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys,
     silence = false,
     noCache = false
 ): Promise<ApiKeysConfig> => {
@@ -24,12 +32,18 @@ const getPublicKeysEmailHelper = async (
         if (noCache) {
             config.cache = 'no-cache';
         }
-        const { Keys = [], ...rest } = await api<{
+        const {
+            Keys = [],
+            SignedKeyList,
+            IgnoreKT,
+            ...rest
+        } = await api<{
             RecipientType: RECIPIENT_TYPES;
             MIMEType: MIME_TYPES;
             Keys: { PublicKey: string; Flags: KEY_FLAG }[];
-            SignedKeyList: SignedKeyListEpochs[];
+            SignedKeyList: FetchedSignedKeyList | null;
             Warnings: string[];
+            IgnoreKT?: IGNORE_KT;
         }>(config);
         const publicKeys: ProcessedApiKey[] = Keys.map(({ Flags, PublicKey }) => ({
             armoredKey: PublicKey,
@@ -45,15 +59,20 @@ const getPublicKeysEmailHelper = async (
                 }
             })
         );
-
+        await verifyOutboundPublicKeys(Keys, Email, SignedKeyList, IgnoreKT);
         return {
             ...rest,
             publicKeys,
+            SignedKeyList,
         };
     } catch (error: any) {
         const { data = {} } = error;
         if (EMAIL_ERRORS.includes(data.Code)) {
-            return { publicKeys: [], Errors: [data.Error] };
+            return {
+                publicKeys: [],
+                Errors: [data.Error],
+                SignedKeyList: null,
+            };
         }
         throw error;
     }

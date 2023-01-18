@@ -3,7 +3,7 @@ import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
-import { ActiveKey, Address, Api, EncryptionConfig } from '../../interfaces';
+import { ActiveKey, Address, Api, EncryptionConfig, KeyTransparencyVerify } from '../../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from '../addressKeys';
 import { getActiveKeyObject, getNormalizedActiveKeys } from '../getActiveKeys';
 import { getSignedKeyList } from '../signedKeyList';
@@ -14,6 +14,7 @@ interface CreateAddressKeyLegacyArguments {
     address: Address;
     passphrase: string;
     activeKeys: ActiveKey[];
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 const removePrimary = (activeKey: ActiveKey): ActiveKey => {
@@ -32,6 +33,7 @@ export const createAddressKeyLegacy = async ({
     encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
     passphrase,
     activeKeys,
+    keyTransparencyVerify,
 }: CreateAddressKeyLegacyArguments) => {
     const { privateKey, privateKeyArmored } = await generateAddressKey({
         email: address.Email,
@@ -44,7 +46,7 @@ export const createAddressKeyLegacy = async ({
         flags: getDefaultKeyFlags(address),
     });
     const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey, ...activeKeys.map(removePrimary)]);
-    const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
+    const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
 
     const { Key } = await api(
         createAddressKeyRoute({
@@ -65,6 +67,7 @@ interface CreateAddressKeyV2Arguments {
     encryptionConfig?: EncryptionConfig;
     address: Address;
     activeKeys: ActiveKey[];
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const createAddressKeyV2 = async ({
@@ -73,6 +76,7 @@ export const createAddressKeyV2 = async ({
     encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
     address,
     activeKeys,
+    keyTransparencyVerify,
 }: CreateAddressKeyV2Arguments) => {
     const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
     const { privateKey, privateKeyArmored } = await generateAddressKey({
@@ -86,7 +90,7 @@ export const createAddressKeyV2 = async ({
         flags: getDefaultKeyFlags(address),
     });
     const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey, ...activeKeys.map(removePrimary)]);
-    const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
+    const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
 
     const { Key } = await api(
         createAddressKeyRouteV2({

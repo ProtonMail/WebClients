@@ -10,7 +10,7 @@ import {
 } from '../constants';
 import { Address } from './Address';
 import { MailSettings } from './MailSettings';
-import { SignedKeyListEpochs } from './SignedKeyList';
+import { FetchedSignedKeyList } from './SignedKeyList';
 
 export interface PublicKeyWithPref {
     publicKey: PublicKeyReference;
@@ -36,7 +36,7 @@ export interface ApiKeysConfig {
     Code?: number;
     RecipientType?: RECIPIENT_TYPES;
     MIMEType?: MIME_TYPES;
-    SignedKeyList?: SignedKeyListEpochs[];
+    SignedKeyList: FetchedSignedKeyList | null;
     Warnings?: string[];
     Errors?: string[];
 }

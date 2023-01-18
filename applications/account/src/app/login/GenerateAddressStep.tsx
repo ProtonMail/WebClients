@@ -20,7 +20,7 @@ import GenerateAddressform from './GenerateAddressform';
 
 interface Props {
     onBack?: () => void;
-    onSubmit: (payload: AddressGenerationPayload) => Promise<void>;
+    onSubmit: (payload: Omit<AddressGenerationPayload, 'preAuthKTVerify'>) => Promise<void>;
     toAppName: string;
     api: Api;
     data: AddressGeneration;
