@@ -1,15 +1,10 @@
 import { c } from 'ttag';
 
+import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 import { EVENT_ACTIONS, HOUR } from '../../constants';
-import {
-    CALENDAR_SUBSCRIPTION_STATUS,
-    CALENDAR_TYPE,
-    Calendar,
-    SubscribedCalendar,
-    VisualCalendar,
-} from '../../interfaces/calendar';
+import { CALENDAR_SUBSCRIPTION_STATUS, Calendar, SubscribedCalendar, VisualCalendar } from '../../interfaces/calendar';
 import {
     CalendarSubscriptionEventManager,
     CalendarSubscriptionEventManagerCreate,

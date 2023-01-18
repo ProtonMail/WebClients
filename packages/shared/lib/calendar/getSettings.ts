@@ -1,5 +1,5 @@
-import { CalendarUserSettings, SETTINGS_VIEW } from '../interfaces/calendar';
-import { VIEWS } from './constants';
+import { CalendarUserSettings } from '../interfaces/calendar';
+import { SETTINGS_VIEW, VIEWS } from './constants';
 
 export const getAutoDetectPrimaryTimezone = (calendarUserSettings: CalendarUserSettings) => {
     return !!calendarUserSettings.AutoDetectPrimaryTimezone;
