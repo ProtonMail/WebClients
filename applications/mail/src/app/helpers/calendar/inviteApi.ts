@@ -21,7 +21,12 @@ import {
     getVisualCalendars,
     getWritableCalendars,
 } from '@proton/shared/lib/calendar/calendar';
-import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import {
+    CALENDAR_TYPE,
+    ICAL_ATTENDEE_STATUS,
+    ICAL_EVENT_STATUS,
+    ICAL_METHOD,
+} from '@proton/shared/lib/calendar/constants';
 import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/helpers';
 import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import {
@@ -55,7 +60,6 @@ import { API_CODES } from '@proton/shared/lib/constants';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import {
-    CALENDAR_TYPE,
     CalendarEvent,
     CalendarEventEncryptionData,
     CalendarUserSettings,

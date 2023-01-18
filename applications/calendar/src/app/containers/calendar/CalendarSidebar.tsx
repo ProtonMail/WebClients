@@ -35,13 +35,14 @@ import SubscribedCalendarModal from '@proton/components/containers/calendar/subs
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { getIsPersonalCalendar, sortCalendars } from '@proton/shared/lib/calendar/calendar';
+import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import getHasUserReachedCalendarsLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarsLimit';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address } from '@proton/shared/lib/interfaces';
-import { CALENDAR_TYPE, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import partition from '@proton/utils/partition';
 
 import CalendarSidebarListItems from './CalendarSidebarListItems';

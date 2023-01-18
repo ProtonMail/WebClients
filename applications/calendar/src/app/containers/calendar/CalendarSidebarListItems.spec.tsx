@@ -7,7 +7,7 @@ import { createMemoryHistory } from 'history';
 import { CacheProvider } from '@proton/components/containers/cache';
 import useUser from '@proton/components/hooks/useUser';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import {
     getCalendarHasSubscriptionParameters,
@@ -15,7 +15,7 @@ import {
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CalendarSidebarListItems, { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
 

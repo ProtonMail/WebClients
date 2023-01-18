@@ -48,6 +48,22 @@ export enum CALENDAR_FLAGS {
     SUPER_OWNER_DISABLED = 64,
 }
 
+export enum CALENDAR_TYPE {
+    PERSONAL = 0,
+    SUBSCRIPTION = 1,
+}
+
+export enum CALENDAR_TYPE_EXTENDED {
+    SHARED = 2,
+}
+
+export type EXTENDED_CALENDAR_TYPE = CALENDAR_TYPE | CALENDAR_TYPE_EXTENDED;
+
+export enum CALENDAR_DISPLAY {
+    HIDDEN = 0,
+    VISIBLE = 1,
+}
+
 export enum ICAL_CALSCALE {
     GREGORIAN = 'GREGORIAN',
 }
