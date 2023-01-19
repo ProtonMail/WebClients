@@ -43,7 +43,7 @@ export default function useLink() {
                 // (it might be a helper function for a background job). Hence,
                 // there are potential cases when displaying such messages will
                 // confuse the user. Every higher-level caller should handle it
-                //based on the context.
+                // based on the context.
                 silence: true,
             },
             abortSignal
