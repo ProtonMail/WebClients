@@ -92,6 +92,9 @@
       "Attachment": [
         "Lampiran"
       ],
+      "Attention required": [
+        "Diperlukan perhatian"
+      ],
       "Authenticate": [
         "Autentikasi"
       ],
@@ -4380,10 +4383,10 @@
         "(${ memberCount } anggota)"
       ],
       "(Filter if ALL of the following conditions are met)": [
-        "(Saring jika SEMUA kondisi terpenuhi)"
+        "(Saring apabila SEMUA kondisi terpenuhi)"
       ],
       "(Filter if ANY of the following conditions are met)": [
-        "(Saring jika ADA kondisi terpenuhi)"
+        "(Saring apabila ADA kondisi yang terpenuhi)"
       ],
       "(No Recipient)": [
         "(Tidak Ada Penerima)"
@@ -4452,7 +4455,7 @@
         "Apakah Anda yakin ingin menghapus label ini?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Apakah Anda yakin untuk membatalkan perubahan-perubahan Anda?"
+        "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Apakah Anda yakin untuk memindahkan seluruh pesan yang ada pada lokasi ini ke Sampah?"
@@ -4477,6 +4480,9 @@
       ],
       "Attach public key": [
         "Lampirkan kunci publik"
+      ],
+      "Attention required": [
+        "Diperlukan perhatian"
       ],
       "Background color": [
         "Warna latar belakang"
@@ -4911,7 +4917,7 @@
         "Tidak ada folder yang dipilih"
       ],
       "No group found": [
-        "Grup tidak ditemukan"
+        "Tidak ada grup yang ditemukan"
       ],
       "No label found": [
         "Tidak ada label yang ditemukan"
@@ -5154,7 +5160,7 @@
         "Subjek: "
       ],
       "Support for 1 custom email domain": [
-        "Dukungan 1 alamat email dengan domain khusus"
+        "Dukungan 1 domain email khusus"
       ],
       "Support privacy by upgrading for": [
         "Dukung privasi dengan meningkatkan akun mulai dari"
@@ -5445,7 +5451,7 @@
         "Tahunan"
       ],
       "You are about to open another browser tab and visit:": [
-        "Anda akan membuka tab browser lain dan mengunjungi:"
+        "Anda akan membuka tab browser baru dan mengunjungi:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Anda saat ini sedang masuk sebagai ${ user.Name } (${ user.Email })."
@@ -5502,7 +5508,7 @@
         "Anda belum menulis subjek email. Apakah Anda yakin untuk tetap mengirim email ini?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Kuota penyimpanan Anda telah 100% terpakai. Mohon hapus pesan-pesan yang sudah tidak lagi digunakan atau tingkatkan akun Anda untuk memperoleh kuota penyimpanan tambahan."
+        "Anda telah mencapai batas kapasitas penyimpanan Anda. Silakan kosongkan ruang penyimpanan Anda atau tingkatkan akun Anda ke paket dengan kapasitas penyimpanan yang lebih besar untuk menulis pesan baru."
       ],
       "You have reached the maximum number of 5 replies.": [
         "Anda telah mencapai jumlah pesan balasan maksimum (5 pesan) yang dapat dikirim."
@@ -8614,9 +8620,6 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } years": [
-        "Yearly"
-      ],
       "Every ${ interval } years, ${ timesString }": [
         "Setiap ${ interval } tahun, ${ timesString }"
       ],

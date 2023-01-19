@@ -1527,6 +1527,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Dešifriranje kontakata… Ovo može potrajati nekoliko minuta. Nakon dovršetka možete preuzeti datoteku koja sadrži vaše sve kontakte."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje i uvoz kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
       ],
@@ -1655,8 +1658,17 @@
       "Enter 6 digits": [
         "Unesite 6 znamenki"
       ],
+      "Folder name cannot be empty.": [
+        "Naziv mape ne može biti prazan."
+      ],
       "Image upload failed": [
         "Neuspješno učitavanje slike"
+      ],
+      "Incorrect login credentials. Please try again.": [
+        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno."
+      ],
+      "Incorrect mailbox password. Please try again.": [
+        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno."
       ],
       "Incorrect password. Please try again.": [
         "Netočna lozinka. Pokušajte ponovo."
@@ -1689,6 +1701,9 @@
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
       ],
+      "Please activate your content search again": [
+        "Ponovno aktivirajte vašu pretragu sadržaja"
+      ],
       "Signature not verified": [
         "Potpis nije ovjeren"
       ],
@@ -1713,6 +1728,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
       ],
+      "The folder name is too long. Please choose a different name.": [
+        "Naziv mape je predugačak. Odaberite drugi naziv."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Vaš vanjski račun ima previše mapa. Prilagodite uvoz kako biste izbrisali neke mape."
       ],
@@ -1727,6 +1745,12 @@
       ],
       "This folder name is not available. Please choose a different name.": [
         "Naziv mape nije dostupan. Odaberite drugi naziv."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "Naziv oznake nije dostupan. Odaberite drugi naziv."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti."
       ],
       "Unknown error": [
         "Nepoznata pogreška"
@@ -1835,6 +1859,9 @@
       "Missing start time": [
         "Nedostaje početno vrijeme"
       ],
+      "No UID, title or start time": [
+        "Nema UID, naslov ili početno vrijeme"
+      ],
       "Non-Gregorian": [
         "Ne gregorijanski"
       ],
@@ -1903,6 +1930,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nije odabrana nijedna slika"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Ocjena je zabilježena"
       ]
     },
     "Event invitation error": {
@@ -2014,8 +2046,17 @@
       ]
     },
     "Import calendar": {
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših događaja. Nije moguće uvesti nijedan događaj."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifriranje i dodavanje kontakata: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Događaj je uspješno uvezen. Uvezeni događaj će se sada pojaviti u vašem kalendaru."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Događaji su uspješno uvezeni. Uvezeni događaji će se sada pojaviti u vašem kalendaru."
       ]
     },
     "Import calendar warning": {
@@ -2028,6 +2069,21 @@
         "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vašeg kontakta. Nije moguće uvesti nijedan kontakt."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših kontakata. ${ totalImported } od ${ totalToImport } kontakata uspješno je uvezeno."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših kontakta. Nije moguće uvesti nijedan kontakt."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontakt je uspješno uvezen. Uvezeni kontakt će se sada pojaviti u vašoj listi kontakata."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Kontakta su uspješno uvezena. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
       ]
     },
     "Import contact error": {
@@ -2048,6 +2104,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ne podržava ${ forNow }:"
+      ],
       "for now": [
         "za sada"
       ]
@@ -2113,6 +2172,9 @@
       ],
       "Account security": [
         "Sigurnost računa"
+      ],
+      "app password": [
+        "lozinka aplikacije"
       ],
       "Export": [
         "Izvoz"
@@ -2189,6 +2251,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } prostora za pohranu"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt je uspješno ažuriran.",
         "${ updated } kontakta su uspješno ažurirana.",
@@ -2198,6 +2263,9 @@
         "(${ memberCount } član)",
         "(${ memberCount } člana)",
         "(${ memberCount } članova)"
+      ],
+      "10 email addresses": [
+        "10 adresa e-pošte"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
@@ -2237,6 +2305,9 @@
       ],
       "Conflict": [
         "Sukob"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "Stvorite oznaku za uvezene poruke, vremenski raspon za taj uvoz i mape koje želite uvesti."
       ],
       "Create a new contact group": [
         "Stvori novu grupu kontakata"
@@ -2318,6 +2389,12 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
+      "Import from": [
+        "Uvoz iz"
+      ],
+      "Import in progress": [
+        "Uvoz u tijeku"
+      ],
       "Import mailbox": [
         "Uvezi poštanski sandučić"
       ],
@@ -2326,6 +2403,9 @@
       ],
       "Initializing": [
         "Pokretanje"
+      ],
+      "Internet connection lost": [
+        "Prekinuta je internetska veza"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Nema internetske veze. Molimo provjerite povezanost uređaja."
@@ -2338,6 +2418,9 @@
       ],
       "Label all imported messages as": [
         "Označi sve uvezene poruke kao"
+      ],
+      "Labels:": [
+        "Oznake:"
       ],
       "Learn more": [
         "Saznajte više"
@@ -2365,6 +2448,9 @@
       ],
       "Network issue": [
         "Problem s mrežom"
+      ],
+      "New": [
+        "Novo"
       ],
       "No": [
         "Ne"
@@ -2420,6 +2506,9 @@
       "Primary": [
         "Glavno"
       ],
+      "Priority support": [
+        "Prioritetna podrška"
+      ],
       "Queued": [
         "Na čekanju"
       ],
@@ -2431,6 +2520,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
+      ],
+      "Session timed out": [
+        "Sesija je istekla"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ${ BRAND_NAME }a, ali koriste PGP kompatibilne usluge."
@@ -2459,6 +2551,12 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ovaj preglednik ne podržava pregled PDF dokumenata. Preuzmite datoteku."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Ova poveznica vodi do web-mjesta koje možda pokušava ukrasti vaše podatke, kao što su lozinke i podaci o kreditnoj kartici."
+      ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
       ],
@@ -2482,6 +2580,9 @@
       ],
       "Trash": [
         "Otpad"
+      ],
+      "Unlimited messages": [
+        "Neograničene poruke"
       ],
       "Unsupported file": [
         "Nepodržana datoteka"
@@ -2609,6 +2710,9 @@
       "Browser version": [
         "Verzija preglednika"
       ],
+      "Calendars": [
+        "Kalendari"
+      ],
       "Cancel download": [
         "Zaustavi preuzimanje"
       ],
@@ -2648,6 +2752,9 @@
       "Email format": [
         "Format e-pošte"
       ],
+      "Emails": [
+        "E-pošta"
+      ],
       "Enable Beta Access": [
         "Omogući Beta pristup"
       ],
@@ -2681,14 +2788,38 @@
       "Folder name": [
         "Naziv mape"
       ],
+      "From: ${ importedEmail }": [
+        "Od: ${ importedEmail }"
+      ],
       "Hide password": [
         "Sakrij lozinku"
       ],
       "Image": [
         "Slika"
       ],
+      "Import all messages": [
+        "Uvoz svih poruka"
+      ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Import interval": [
+        "Interval uvoza"
+      ],
+      "Import to email address": [
+        "Uvoz na adresu e-pošte"
+      ],
+      "Label messages as": [
+        "Označi poruku kao"
+      ],
+      "Last 12 months only": [
+        "Samo zadnjih 12 mjeseci"
+      ],
+      "Last 3 months only": [
+        "Samo zadnja 3 mjeseca"
+      ],
+      "Last month only": [
+        "Samo posljednji mjesec"
       ],
       "Location": [
         "Lokacija"
@@ -2698,6 +2829,15 @@
       ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
+      ],
+      "Main": [
+        "Glavno"
+      ],
+      "Manage folders": [
+        "Upravljanje mapama"
+      ],
+      "Manage labels": [
+        "Upravljanje oznakama"
       ],
       "Merge a folder": [
         "Spoji mapu"
@@ -2713,6 +2853,9 @@
       ],
       "Name": [
         "Naziv"
+      ],
+      "Navigation": [
+        "Navigacija"
       ],
       "Never": [
         "Nikad"
@@ -2791,6 +2934,12 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "To: ${ emailAddress }": [
+        "Za: ${ emailAddress }"
+      ],
+      "Toolbar": [
+        "Alatna traka"
       ],
       "Two-factor authentication code": [
         "Kôd dvofaktorske autentikacije"
@@ -3016,6 +3165,9 @@
       ],
       "Filter groups": [
         "Filtrirajte grupe"
+      ],
+      "Group name": [
+        "Naziv grupe"
       ],
       "Image URL": [
         "URL slike"
@@ -3700,6 +3852,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Ovaj uvoz može premašiti kapacitet prostora za pohranu koji je trenutno dostupan na vašem ${ BRAND_NAME } računu. Razmislite o prilagodbi uvoza."
+      ],
+      "You will lose any customization you made so far.": [
+        "Izgubiti će te sve prilagodbe koje ste do sada napravili."
       ]
     }
   }

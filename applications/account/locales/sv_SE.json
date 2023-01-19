@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
       ],
+      "Attention required": [
+        "Uppmärksamhet krävs"
+      ],
       "Authenticate": [
         "Autentisera"
       ],
@@ -3826,7 +3829,7 @@
         "E-post från adresser flaggade som skräppost av dig eller ${ BRAND_NAME } kommer att hamna i din skräppostmapp. Flagga som \"inte skräppost\" om du vill tillåta e-post från någon av dessa adresser."
       ],
       "Emails from blocked addresses won't be delivered.": [
-        "E-postmeddelanden från blockerade adresser kommer inte att levereras."
+        "E-post från blockerade adresser kommer inte att levereras."
       ],
       "Search list": [
         "Sök i"
@@ -4623,6 +4626,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Är du säker på att du vill ta bort administrativa behörigheter från denna användare?"
       ],
+      "Attention required": [
+        "Uppmärksamhet krävs"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Autosvar är aktivt varje månad mellan vald start- och sluttid."
       ],
@@ -4881,7 +4887,7 @@
         "Skriv in verifieringskoden. Siffra ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        "Skriv in dina kontouppgifter för ${ BRAND_NAME }."
+        "Ange dina kontodetaljer för ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ange e-postadressen eller användarnamnet för ditt ${ BRAND_NAME }-konto."
@@ -5321,7 +5327,7 @@
         "Förvara den säkert. Du kommer behöva den för att logga in och avkryptera ditt konto om du återställer lösenordet."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Observera att om du tar bort denna adress kommer du inte längre att kunna skicka eller ta emot e-postmeddelanden med den här adressen."
+        "Observera att om du tar bort denna adress kommer du inte längre att kunna skicka eller ta emot e-post med denna adress."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Observera att om du tar bort denna domän kommer alla adresser som är associerade med den att inaktiveras."
@@ -7140,7 +7146,7 @@
         "Skicka kraschrapporter"
       ],
       "Send in": [
-        "Skicka in"
+        "Skicka på"
       ],
       "Show secondary time zone": [
         "Visa sekundär tidszon"
@@ -7246,6 +7252,12 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use a recovery email address": [
+        "Använd en e-postadress för återställning"
+      ],
+      "Use a recovery phone number": [
+        "Använd ett telefonnummer för återställning"
       ],
       "Use folder colors": [
         "Använd mappfärger"
@@ -8786,10 +8798,10 @@
         "Upprepa dagligen"
       ],
       "Repeat monthly": [
-        "Upprepas månadsvis"
+        "Upprepa varje månad"
       ],
       "Repeat weekly": [
-        "Upprepas veckovis"
+        "Upprepa varje vecka"
       ],
       "Right to Left": [
         "Höger till vänster"
