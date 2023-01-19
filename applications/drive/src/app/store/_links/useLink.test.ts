@@ -196,8 +196,6 @@ describe('useLink', () => {
 
         expect(mockLinksState.getLink).toBeCalledWith('shareId', 'linkId');
         expect(mockFetchLink).toBeCalledTimes(2); // linkId once and linkId2
-
-        jest.useRealTimers();
     });
 
     it('skips load of already cached thumbnail', async () => {
