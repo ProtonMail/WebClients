@@ -7,6 +7,7 @@ import { selectDraftModal } from './draft.selector';
 const BASE_STATE: Omit<EasySwitchState, 'oauthDraft' | 'imapDraft'> = {
     importers: { importers: {}, activeImporters: {}, loading: 'idle' },
     reports: { reports: {}, summaries: {}, loading: 'idle' },
+    sync: { syncs: {}, listLoading: 'idle', creatingLoading: 'idle' },
 };
 
 describe('EasySwitch draft selectors', () => {

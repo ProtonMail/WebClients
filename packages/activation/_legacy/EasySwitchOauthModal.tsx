@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import {
-    createImporter,
+    createImport,
     createToken,
     getCalendarImportData,
     getContactsImportData,
@@ -302,7 +302,7 @@ const EasySwitchOauthModal = ({
                             createImportPayload[ImportType.CONTACTS] = {};
                         }
 
-                        const { ImporterID } = await api(createImporter(createImportPayload));
+                        const { ImporterID } = await api(createImport(createImportPayload));
 
                         const importErrorsClone = [...importError];
                         const importsRawData = await Promise.all(

@@ -11,7 +11,23 @@ export const createToken = (
     data,
 });
 
-export const createImporter = (data: CreateImportPayload) => ({
+export const createSync = (importerID: string) => ({
+    url: 'importer/v1/sync',
+    method: 'POST',
+    data: { ImporterID: importerID, Product: 'Mail' },
+});
+
+export const getSyncList = () => ({
+    url: 'importer/v1/sync',
+    method: 'get',
+});
+
+export const deleteSync = (syncId: String) => ({
+    url: `importer/v1/sync/${syncId}`,
+    method: 'DELETE',
+});
+
+export const createImport = (data: CreateImportPayload) => ({
     url: 'importer/v1/importers',
     method: 'post',
     data,

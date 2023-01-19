@@ -12,6 +12,7 @@ import imapDraft from './draft/imapDraft/imapDraft.slice';
 import oauthDraft from './draft/oauthDraft/oauthDraft.slice';
 import importers from './importers/importers.slice';
 import reports from './reports/reports.slice';
+import sync from './sync/sync.slice';
 
 export const useGenerateEasySwitchStore = () => {
     const api = useApi();
@@ -19,7 +20,7 @@ export const useGenerateEasySwitchStore = () => {
     const eventManager = useEventManager();
     const store = useMemo(() => {
         return configureStore({
-            reducer: { reports, importers, oauthDraft, imapDraft },
+            reducer: { reports, importers, sync, oauthDraft, imapDraft },
             middleware: (getDefaultMiddleware) =>
                 getDefaultMiddleware({
                     thunk: { extraArgument: { api, notificationManager, eventManager } },

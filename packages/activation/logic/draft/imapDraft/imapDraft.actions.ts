@@ -1,6 +1,6 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { createImporter, getImport, getMailImportData, resumeImport, startImportTask } from '@proton/activation/api';
+import { createImport, getImport, getMailImportData, resumeImport, startImportTask } from '@proton/activation/api';
 import {
     ApiCreateImporterResponse,
     ApiImportResponse,
@@ -51,7 +51,7 @@ export const submitImapMailCredentials = createAsyncThunk<
         const sasl = AuthenticationMethod.PLAIN;
         const { email, domain, port, password, allowSelfSigned } = formValues;
         const { ImporterID } = await thunkApi.extra.api<ApiCreateImporterResponse>({
-            ...createImporter({
+            ...createImport({
                 [ImportType.MAIL]: {
                     Account: email,
                     ImapHost: domain,
