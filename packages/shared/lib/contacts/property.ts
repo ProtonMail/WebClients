@@ -3,6 +3,7 @@ import { isValid, parseISO } from 'date-fns';
 import { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { ContactValue } from '../interfaces/contacts';
+import { CONTACT_NAME_MAX_LENGTH } from './constants';
 
 const UNESCAPE_REGEX = /\\\\|\\,|\\;/gi;
 const UNESCAPE_EXTENDED_REGEX = /\\\\|\\:|\\,|\\;/gi;
@@ -165,4 +166,11 @@ export const getDateFromVCardProperty = ({ value: { date, text } = {} }: VCardPr
     }
 
     return new Date();
+};
+
+/**
+ * Check that the contact name is valid, the backend has a limit of 190 chars for a contact name
+ */
+export const isContactNameValid = (contactName: string) => {
+    return contactName.length <= CONTACT_NAME_MAX_LENGTH;
 };

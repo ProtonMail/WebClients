@@ -10,6 +10,7 @@ import {
     removeVCardProperty,
     updateVCardContact,
 } from '@proton/shared/lib/contacts/properties';
+import { isContactNameValid } from '@proton/shared/lib/contacts/property';
 import { prepareForEdition } from '@proton/shared/lib/contacts/surgery';
 import { isMultiValue } from '@proton/shared/lib/contacts/vcard';
 import { getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
@@ -151,7 +152,7 @@ const ContactEditModal = ({
     }, [loadingContactEmails, vCardContact.email]);
 
     const isFormValid = () => {
-        const nameFilled = !!nameProperty?.value;
+        const nameFilled = !!nameProperty?.value && isContactNameValid(nameProperty.value);
         return nameFilled;
     };
 
