@@ -20,8 +20,8 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
 import { getMinScheduleTime } from '../../../helpers/schedule';
-import { updateScheduled } from '../../../logic/messages/draft/messagesDraftActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { updateScheduled } from '../../../logic/messages/sheduled/scheduledActions';
 import { useAppDispatch } from '../../../logic/store';
 import ComposerInnerModal from './ComposerInnerModal';
 
