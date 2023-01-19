@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
+      "Attention required": [
+        "Aufmerksamkeit erforderlich"
+      ],
       "Authenticate": [
         "Authentifizieren"
       ],
@@ -4653,6 +4656,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Möchten Sie diesem Benutzer wirklich die Administratorrechte entziehen?"
       ],
+      "Attention required": [
+        "Aufmerksamkeit erforderlich"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Das automatische Antworten ist jeden Monat zwischen der gewählten Start- und Endzeit aktiv."
       ],
@@ -5711,7 +5717,7 @@
         "um ${ toAppName } und alle weiteren ${ BRAND_NAME }-Dienste zu nutzen."
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "Um ${ toAppName } verwenden zu können, benötigen Sie eine ${ MAIL_APP_NAME }-Adresse."
+        "Um ${ toAppName } verwenden zu können, benötigst du eine ${ MAIL_APP_NAME }-Adresse."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Jeder Filter muss mindestens einen Namen und ein gültiges Sieve-Skript enthalten, damit er richtig funktioniert. Erfahre ${ link }."
@@ -7285,6 +7291,12 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use a recovery email address": [
+        "E-Mail-Adresse für die Wiederherstellung verwenden"
+      ],
+      "Use a recovery phone number": [
+        "Telefonnummer für die Wiederherstellung verwenden"
       ],
       "Use folder colors": [
         "Farben für Ordner verwenden"

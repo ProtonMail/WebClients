@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
+      "Attention required": [
+        "Потребує уваги"
+      ],
       "Authenticate": [
         "Автентифікація"
       ],
@@ -4759,6 +4762,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Ви впевнені, що хочете забрати права адміністратора у цього користувача?"
       ],
+      "Attention required": [
+        "Потребує уваги"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Автовідповідач активний щомісяця між заданим початковим та кінцевим часом."
       ],
@@ -4980,6 +4986,9 @@
       ],
       "Enable this address to join this calendar": [
         "Дозвольте цій адресі приєднатися до цього календаря"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Увімкнути TLS або SSL на зовнішньому сервісі, якщо підтримується."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Увімкнувши відновлення за фразою знову, буде згенерована нова фраза."
@@ -7324,6 +7333,12 @@
       "Signature": [
         "Підпис"
       ],
+      "SMTP port": [
+        "Порт SMTP"
+      ],
+      "SMTP server": [
+        "Сервер SMTP"
+      ],
       "SMTP token": [
         "Токен SMTP"
       ],
@@ -7410,6 +7425,12 @@
       ],
       "URL": [
         "URL-адреса"
+      ],
+      "Use a recovery email address": [
+        "Використати е-пошту для відновлення доступу"
+      ],
+      "Use a recovery phone number": [
+        "Використати номер телефону для відновлення доступу"
       ],
       "Use folder colors": [
         "Використати кольори тек"
@@ -8623,7 +8644,7 @@
         "Налаштуйте свій підпис з використанням логотипів, зображень, піктограм соціальних мереж, посилань на свої контакти та інших можливостей"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Підтримка телефоном доступна клієнтам з 6-ма та більше користувачами під час європейського робочого часу"
+        "Команда підтримки ${ BRAND_NAME } надає допомогу в телефонному режимі впродовж європейського робочого часу клієнтам, які мають 6 або більше користувачів"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Запобігає доступу до повідомлень ${ BRAND_NAME } чи сторонніх осіб. Відправник та отримувач повідомлень – єдині, хто може читати повідомлення."
@@ -8752,10 +8773,10 @@
         "${ Filter.Name } створено"
       ],
       "A disabled address cannot be default": [
-        "Вимкнена адреса не може бути типовою"
+        "Неможливо зробити типовою вимкнену адресу"
       ],
       "An external address cannot be default": [
-        "Зовнішня адреса не може бути типовою"
+        "Неможливо зробити типовою зовнішню адресу"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Ключ з відбитком ${ fp } було видалено."
@@ -9915,6 +9936,9 @@
       "Phone number updated": [
         "Номер телефону оновлено"
       ],
+      "Port copied to clipboard": [
+        "Порт скопійовано до буфера обміну"
+      ],
       "Preference saved": [
         "Налаштування збережено"
       ],
@@ -9923,6 +9947,9 @@
       ],
       "Resuming import": [
         "Відновлення імпорту"
+      ],
+      "Server copied to clipboard": [
+        "Сервер скопійовано до буфера обміну"
       ],
       "Session revoked": [
         "Сеанс відкликано"
@@ -9937,7 +9964,7 @@
         "Значення SPF скопійовано в буфер обміну"
       ],
       "Token copied to clipboard": [
-        "Токен скопійовано в буфер обміну"
+        "Токен скопійовано до буфера обміну"
       ],
       "Undo in progress": [
         "Скасовується"

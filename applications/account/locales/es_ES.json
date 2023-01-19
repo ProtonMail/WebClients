@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
       ],
+      "Attention required": [
+        "Atención requerida"
+      ],
       "Authenticate": [
         "Confirmar"
       ],
@@ -4597,6 +4600,9 @@
       "Amount below minimum (${ amount }).": [
         "Cantidad por debajo del mínimo (${ amount })."
       ],
+      "An error occurred while communicating with the extension": [
+        "Se ha producido un error al comunicarse con la extensión"
+      ],
       "and": [
         "y"
       ],
@@ -4644,6 +4650,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "¿Estás seguro que quieres eliminar los privilegios administrativos de este usuario?"
+      ],
+      "Attention required": [
+        "Atención requerida"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La respuesta automática estará activa cada mes entre la fecha inicial y la fecha final seleccionadas."
@@ -4862,6 +4871,9 @@
       ],
       "Enable this address to join this calendar": [
         "Habilita esta dirección para unirte a este calendario"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Activar TLS o SSL en el servico externo si está soportado."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Habilitar la recuperación por frase nuevamente generará una nueva frase de recuperación."
@@ -5907,7 +5919,7 @@
         "Puedes habilitar el registro de autenticación para ver cuándo se accede a tu cuenta y desde qué IP. Registraremos la dirección IP que accede a la cuenta y la hora, así como los intentos fallidos."
       ],
       "You can import one data type at a time.": [
-        "Puede importar un tipo de datos a la vez."
+        "Puedes importar un tipo de datos a la vez."
       ],
       "You can now access and manage the account as an administrator.": [
         "Ahora puedes acceder y gestionar la cuenta como administrador."
@@ -7182,6 +7194,12 @@
       "Signature": [
         "Firma"
       ],
+      "SMTP port": [
+        "Puerto SMTP"
+      ],
+      "SMTP server": [
+        "Servidor SMTP"
+      ],
       "SMTP token": [
         "Token SMTP"
       ],
@@ -7268,6 +7286,12 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use a recovery email address": [
+        "Usar una dirección de correo electrónico de recuperación"
+      ],
+      "Use a recovery phone number": [
+        "Usar un número de teléfono de recuperación"
       ],
       "Use folder colors": [
         "Utilizar colores de carpetas"
@@ -9918,6 +9942,9 @@
       "Phone number updated": [
         "Número de teléfono actualizado"
       ],
+      "Port copied to clipboard": [
+        "Puerto copiado al portapapeles"
+      ],
       "Preference saved": [
         "Preferencia guardada"
       ],
@@ -9926,6 +9953,9 @@
       ],
       "Resuming import": [
         "Reanudando la importación"
+      ],
+      "Server copied to clipboard": [
+        "Servidor copiado al portapapeles"
       ],
       "Session revoked": [
         "Sesión revocada"

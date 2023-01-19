@@ -48,7 +48,7 @@
         "Adjuntar captura(s) de pantalla"
       ],
       "Attention required": [
-        "Atención solicitada"
+        "Atención requerida"
       ],
       "Authenticate": [
         "Confirmar"
@@ -2993,7 +2993,7 @@
         "¿Estás seguro de que quieres eliminar permanentemente los elementos seleccionados de la papelera?"
       ],
       "Attention required": [
-        "Atención solicitada"
+        "Atención requerida"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
@@ -3395,6 +3395,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "No se transfirieron todos los archivos. Intenta subir o descargar los archivos de nuevo."
       ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que hayas instalado ${ DRIVE_APP_NAME }."
+      ],
       "of": [
         "de"
       ],
@@ -3753,7 +3756,7 @@
         "Puedes comprobar el progreso ${ importProgressLink }."
       ],
       "You can import one data type at a time.": [
-        "Puede importar un tipo de datos a la vez."
+        "Puedes importar un tipo de datos a la vez."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
