@@ -20,8 +20,8 @@ import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { formatDateToHuman } from '../../../helpers/date';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
-import { cancelScheduled } from '../../../logic/messages/draft/messagesDraftActions';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import { cancelScheduled } from '../../../logic/messages/sheduled/scheduledActions';
 import { useAppDispatch } from '../../../logic/store';
 
 interface Props {
