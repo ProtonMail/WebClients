@@ -1,3 +1,7 @@
+@use 'sass:math';
+
+@import '~@proton/styles/scss/config';
+
 /* fix bug on Chrome */
 body {
 	@extend .no-scroll;
@@ -47,6 +51,10 @@ html,
 	flex-shrink: 0;
 	background-color: var(--header-background-color);
 	color: var(--header-text-color, var(--text-norm));
+}
+
+.searchbox {
+	inline-size: calc(100vw * #{math.div($conversations-column-width, 100%)});
 }
 
 .footer {

@@ -5,8 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, InputTwo } from '@proton/components';
 
-import './SearchInput.scss';
-
 interface Props {
     onOpen: () => void;
     value: string;
