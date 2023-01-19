@@ -35,6 +35,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
 
     return (
         <Sidebar
+            app={app}
             primary={
                 backButtonTitle &&
                 backButtonText && (

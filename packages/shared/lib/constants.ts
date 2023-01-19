@@ -59,7 +59,17 @@ export const APPS = {
     PROTONEXTENSION: 'proton-extension',
 } as const;
 
-export const APPS_CONFIGURATION = {
+interface AppConfiguration {
+    publicPath: string;
+    subdomain: string;
+    name: string;
+    bareName: string;
+    clientID: string;
+    icon: string;
+    settingsSlug: string;
+}
+
+export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     [APPS.PROTONACCOUNT]: {
         publicPath: '',
         subdomain: 'account',
@@ -125,7 +135,7 @@ export const APPS_CONFIGURATION = {
     },
     [APPS.PROTONEXTENSION]: {
         publicPath: '',
-        subdomain: 'extension',
+        subdomain: '',
         name: 'Proton Extension',
         bareName: 'Extension',
         clientID: 'web-account',
@@ -159,7 +169,7 @@ export const APPS_CONFIGURATION = {
         icon: 'brand-proton',
         settingsSlug: '',
     },
-} as const;
+};
 
 export enum PRODUCT_BIT {
     Mail = 1,
@@ -168,8 +178,10 @@ export enum PRODUCT_BIT {
 }
 
 export type APP_KEYS = keyof typeof APPS;
-export type APP_NAMES = typeof APPS[APP_KEYS];
-export type APP_CLIENT_IDS = typeof APPS_CONFIGURATION[keyof typeof APPS_CONFIGURATION]['clientID'] | 'android_tv-vpn';
+export type APP_NAMES = (typeof APPS)[APP_KEYS];
+export type APP_CLIENT_IDS =
+    | (typeof APPS_CONFIGURATION)[keyof typeof APPS_CONFIGURATION]['clientID']
+    | 'android_tv-vpn';
 export const SSO_PATHS = {
     OAUTH_AUTHORIZE: '/oauth/authorize',
     OAUTH_CONFIRM_FORK: '/oauth/confirm',

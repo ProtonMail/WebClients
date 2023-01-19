@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import {
     AppLink,
+    AppsDropdown,
     ContactDrawerAppButton,
     DrawerApp,
     DrawerAppFooter,
@@ -461,6 +462,7 @@ const CalendarContainerView = ({
         <>
             {renderOnboardingModal && <CalendarOnboardingModal showGenericSteps {...onboardingModal} />}
             <PrivateHeader
+                appsDropdown={<AppsDropdown app={APPS.PROTONCALENDAR} />}
                 userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModal(true)} />}
                 logo={logo}
                 settingsButton={
