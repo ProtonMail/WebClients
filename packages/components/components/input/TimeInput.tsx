@@ -23,12 +23,68 @@ const fromFormatted = (value: string, locale: Locale) => {
     return parse(value, 'p', new Date(), { locale });
 };
 
-const formatDuration = (label: string, minutes: number) => {
+export const formatDuration = (label: string, minutes: number) => {
     const hours = withDecimalPrecision(minutes / 60, 1);
-    const hoursInt = Math.ceil(hours);
-    return hours >= 1
-        ? c('Time unit').ngettext(msgid`${hours} hour`, `${hours} hours`, hoursInt)
-        : c('Time unit').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes);
+    const hoursInt = Math.floor(hours);
+
+    if (hours >= 1) {
+        if (hours === hoursInt) {
+            // hours is an integer
+            return {
+                // translator: 'h' stands for hour and the rendered string is a duration, e.g.: 1 h, 3 h. Please translate with the shortest possible version in your language.
+                shortText: c('Time unit for duration; displayed in the time picker').ngettext(
+                    msgid`${hours} h`,
+                    `${hours} h`,
+                    hours
+                ),
+                longText: c('Time unit for duration; vocalized in the time picker').ngettext(
+                    msgid`${hours} hour`,
+                    `${hours} hours`,
+                    hours
+                ),
+            };
+        }
+        // else hours is a half-integer
+        return {
+            // translator: 'h' stands for hour and the rendered string is a duration, with the variable hoursInt being an integer but the duration being a half-integer, e.g.: 1.5 h, 3.5 h. Please translate with the shortest possible version in your language.
+            shortText: c('Time unit for duration; displayed in the time picker').ngettext(
+                msgid`${hoursInt}.5 h`,
+                `${hoursInt}.5 h`,
+                hoursInt
+            ),
+            // translator: The variable hoursInt is an integer but the duration is a half-integer bigger than 1, e.g.: 1.5 hours, 3.5 hours.
+            longText: c('Time unit for duration; vocalized in the time picker').ngettext(
+                msgid`${hoursInt}.5 hour`,
+                `${hoursInt}.5 hours`,
+                hoursInt
+            ),
+        };
+    }
+
+    return {
+        // translator: 'min' stands for minute and the rendered string is a duration, e.g.: 15 min, 30 min. Please translate with the shortest possible version in your language.
+        shortText: c('Time unit for duration; displayed in the time picker').ngettext(
+            msgid`${minutes} min`,
+            `${minutes} min`,
+            minutes
+        ),
+        longText: c('Time unit for duration; vocalized in the time picker').ngettext(
+            msgid`${minutes} minute`,
+            `${minutes} minutes`,
+            minutes
+        ),
+    };
+};
+
+const getDurationOptionDisplay = (label: string, minutes: number) => {
+    const { shortText, longText } = formatDuration(label, minutes);
+
+    return (
+        <>
+            <span aria-hidden="true">{shortText}</span>
+            <span className="sr-only">{longText}</span>
+        </>
+    );
 };
 
 const getMinutes = (date: Date) => date.getHours() * 60 + date.getMinutes();
@@ -183,7 +239,14 @@ const TimeInput = ({
             return {
                 minutes,
                 value,
-                label: displayDuration ? `${label} (${formatDuration(label, minutes)})` : label,
+                label,
+                display: displayDuration ? (
+                    <>
+                        {label} ({getDurationOptionDisplay(label, minutes)})
+                    </>
+                ) : (
+                    label
+                ),
             };
         });
     }, [normalizedMinutes, base]);
@@ -257,12 +320,13 @@ const TimeInput = ({
                 disableDefaultArrowNavigation
             >
                 <DropdownMenu listRef={listRef}>
-                    {filteredOptions.map(({ label, value: otherValue }, i) => {
+                    {filteredOptions.map(({ label, display, value: otherValue }, i) => {
                         // Only highlight if the text includes the input (where 13:05 is centered but not highlighted)
                         const isSelected = i === matchingIndex && label.includes(temporaryInput);
                         return (
                             <DropdownMenuButton
                                 key={i}
+                                className="text-left text-nowrap"
                                 isSelected={isSelected}
                                 style={{ pointerEvents: 'auto' }} // Lets the user select the time during typing
                                 onClick={() => {
@@ -270,7 +334,7 @@ const TimeInput = ({
                                     close();
                                 }}
                             >
-                                {label}
+                                {display}
                             </DropdownMenuButton>
                         );
                     })}
