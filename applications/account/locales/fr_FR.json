@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Authenticate": [
         "S'authentifier"
       ],
@@ -2885,7 +2888,7 @@
         "L'adresse électronique est désactivée."
       ],
       "Email address is required": [
-        "L'adresse électronique est obligatoire"
+        "L'adresse électronique est nécessaire."
       ],
       "Email is not valid": [
         "L'adresse électronique n'est pas valide."
@@ -2918,7 +2921,7 @@
         "Le nom de dossier ne peut pas être vide."
       ],
       "IMAP server is required": [
-        "Le serveur IMAP est obligatoire"
+        "Le serveur IMAP est nécessaire."
       ],
       "Incorrect login credentials. Please try again.": [
         "Les identifiants de connexion ne sont pas corrects. Veuillez réessayer."
@@ -3024,7 +3027,7 @@
         "L'organisation n'est pas reconnue. Nous vous invitons à réessayer."
       ],
       "Password is required": [
-        "Le mot de passe est obligatoire"
+        "Le mot de passe est nécessaire."
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
@@ -3076,7 +3079,7 @@
         "Nous vous invitons à passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
       ],
       "Port is required": [
-        "Le port est obligatoire"
+        "Le port est nécessaire."
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée."
@@ -4648,6 +4651,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Voulez-vous vraiment supprimer les privilèges d'administration de cet utilisateur ?"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La réponse automatique est active chaque mois entre l'heure de début et l'heure de fin sélectionnées."
       ],
@@ -4867,7 +4873,7 @@
         "Activez cette adresse pour rejoindre ce calendrier."
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
-        "Activer l'utilisation de TLS ou SSL sur le service externe s'il le supporte."
+        "Activer TLS ou SSL sur le service externe s'il le supporte."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Réactiver la récupération par phrase générera une nouvelle phrase de récupération."
@@ -7280,6 +7286,12 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use a recovery email address": [
+        "Utiliser une adresse électronique de récupération"
+      ],
+      "Use a recovery phone number": [
+        "Utiliser un numéro de téléphone de récupération"
       ],
       "Use folder colors": [
         "Utiliser les couleurs de dossier"
@@ -9931,7 +9943,7 @@
         "Le numéro de téléphone a été mis à jour."
       ],
       "Port copied to clipboard": [
-        "Le numéro de port a été copié dans le presse-papiers"
+        "Le port a été copié dans le presse-papiers"
       ],
       "Preference saved": [
         "La préférence a été enregistrée."
@@ -9943,7 +9955,7 @@
         "Reprendre l'importation"
       ],
       "Server copied to clipboard": [
-        "L'adresse du serveur a été copiée dans le presse-papiers"
+        "Le serveur a été copié dans le presse-papiers"
       ],
       "Session revoked": [
         "La session a été révoquée."

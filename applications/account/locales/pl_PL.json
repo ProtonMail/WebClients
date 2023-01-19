@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
+      "Attention required": [
+        "Wymagana uwaga"
+      ],
       "Authenticate": [
         "Uwierzytelnij"
       ],
@@ -3149,7 +3152,7 @@
         "Niektóre nazwy folderów są niedostępne. Dostosuj proces importowania, aby zmienić te nazwy."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Niektóre nazwy folderów przekraczają maksymalny limit znaków. Dostosuj proces importowania, aby zmienić te nazwy."
+        "Niektóre nazwy folderów przekraczają maksymalny limit znaków ${ MAIL_APP_NAME }. Dostosuj proces importowania, aby zmienić te nazwy."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "Niektóre nazwy etykiet są zarezerwowane. Dostosuj proces importowania, aby zmienić te nazwy."
@@ -3158,7 +3161,7 @@
         "Niektóre nazwy etykiet są niedostępne. Dostosuj proces importowania, aby zmienić te nazwy."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Niektóre nazwy etykiet przekraczają maksymalny limit znaków. Dostosuj proces importowania, aby zmienić te nazwy."
+        "Niektóre nazwy etykiet przekraczają maksymalny limit znaków ${ MAIL_APP_NAME }. Dostosuj proces importowania, aby zmienić te nazwy."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
@@ -4761,6 +4764,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Czy na pewno chcesz cofnąć uprawnienia administratora temu użytkownikowi?"
+      ],
+      "Attention required": [
+        "Wymagana uwaga"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Autoresponder jest aktywny co miesiąc w wybranym przedziale czasowym."
@@ -7422,6 +7428,12 @@
       ],
       "URL": [
         "Adres URL"
+      ],
+      "Use a recovery email address": [
+        "Użyj adresu pomocniczego"
+      ],
+      "Use a recovery phone number": [
+        "Użyj numeru pomocniczego"
       ],
       "Use folder colors": [
         "Użyj kolorów folderu"

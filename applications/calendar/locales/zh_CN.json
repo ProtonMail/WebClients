@@ -280,6 +280,12 @@
       "Manage addresses": [
         "管理邮箱地址"
       ],
+      "Manage folders": [
+        "管理文件夹"
+      ],
+      "Manage labels": [
+        "管理标签"
+      ],
       "Mark for deletion": [
         "标记以删除"
       ],
@@ -5855,9 +5861,6 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } years": [
-        "Yearly"
-      ],
       "Every ${ interval } years, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"
       ],
