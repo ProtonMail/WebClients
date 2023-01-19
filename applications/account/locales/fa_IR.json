@@ -4207,6 +4207,9 @@
       "Amount below minimum (${ amount }).": [
         "مبلغ کمتر از حداقل است (${ amount })."
       ],
+      "An error occurred while communicating with the extension": [
+        "یک خطا در حین برقرای ارتباط با افزونه رخ داد"
+      ],
       "and": [
         "و"
       ],
@@ -4460,6 +4463,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "ایمیل های نشان دار شده با این تگ حذف نخواهند شد و همچنان می‌توانند در یک پوشه مخصوص به خود یافت شوند."
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "TLS یا SSL را بر روی سرویس خارجی فعال کنید در صورتی که پشتیبانی می شود."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "با دوباره فعال کردن عبارت بازیابی، یک عبارت جدید تولید می‌شود."
@@ -6586,6 +6592,12 @@
       "Signature": [
         "امضا"
       ],
+      "SMTP port": [
+        "پورت SMTP"
+      ],
+      "SMTP server": [
+        "سرور SMTP"
+      ],
       "Spam": [
         "هرزنامه"
       ],
@@ -6657,6 +6669,12 @@
       ],
       "URL": [
         "تارنشانی"
+      ],
+      "Use a recovery email address": [
+        "استفاده از یک آدرس ایمیل بازیابی"
+      ],
+      "Use a recovery phone number": [
+        "استفاده از یک شماره تلفن بازیابی"
       ],
       "Use folder colors": [
         "از رنگ پوشه‌ها استفاده کنید"
@@ -8884,6 +8902,9 @@
       "Phone number updated": [
         "شماره تلفن بروز شد"
       ],
+      "Port copied to clipboard": [
+        "پورت در کلیپ بورد کپی شد"
+      ],
       "Preference saved": [
         "تنظیمات ذخیره شد"
       ],
@@ -8892,6 +8913,9 @@
       ],
       "Resuming import": [
         "در حال ادامه واردات"
+      ],
+      "Server copied to clipboard": [
+        "سرور در کلیپ بورد کپی شد"
       ],
       "Session revoked": [
         "نشست لغو شد"

@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
+      "Attention required": [
+        "需要您的處理"
+      ],
       "Authenticate": [
         "驗證"
       ],
@@ -140,6 +143,9 @@
       ],
       "Choose a file or drag it here": [
         "選擇檔案或拖曳到此處"
+      ],
+      "Claim it": [
+        "就是它了"
       ],
       "Clear all formatting": [
         "清除所有格式"
@@ -977,6 +983,11 @@
         "若您現在離開，有一些事件或會無法匯入"
       ]
     },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        "這將會把使用此憑證的所有路由器和客戶端都中斷連線。"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 應用程式"
@@ -1206,6 +1217,15 @@
       ]
     },
     "Calendar limit warning": {
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "您已用鑿方案裡提供的創建個人行事曆的最多數量。"
+      ],
+      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "您已取得最高限數的私人行事曆。若要接受擱置的行事曆邀請，您需先行移除您需先行移除一些行事曆。"
+      ],
+      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
+        "您已取得最高限數的共用行事曆。若要接受擱置的行事曆邀請，您需先行移除一些行事曆。"
+      ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendars.": [
         "您已達到最高限數 ${ MAX_SUBSCRIBED_CALENDARS } 訂購授權行事曆。"
       ]
@@ -1239,6 +1259,11 @@
     "Calendar self sharing error": {
       "You already have access to this calendar": [
         "您已可存取此行事曆"
+      ]
+    },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
+        "創建一組導向您行事曆的連結，${ BRAND_NAME } 外部的人即可存取共享資源。唯獨您有權限可加入或移除行程。"
       ]
     },
     "Calendar settings private share description": {
@@ -2553,6 +2578,9 @@
       ]
     },
     "Description": {
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
+        "恭喜！您已賺取上限 ${ rewardsLimit } 個月免費 ${ plusPlanName }."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此交談方塊。"
       ],
@@ -3518,6 +3546,9 @@
       "Calendar successfully exported. You can now save the ICS file.": [
         "行事曆已成功匯出。您現在可儲存 ICS 檔案。"
       ],
+      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
+        "正從您的行事曆解密事件：${ totalProcessed }/${ totalToProcess }"
+      ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
         "由於密碼已重設，您的全部行程皆無法解密和匯出。"
       ],
@@ -3541,6 +3572,9 @@
       ],
       "Password reset - multiple events cannot be decrypted": [
         "密碼重設 - 無法解密多個事件"
+      ],
+      "Please don't close the tab before the exporting process is finished.": [
+        "在匯出過程完成之前，請勿關閉此索引標籤。"
       ],
       "Some of your events could not be exported.": [
         "您的部份事件無法匯出。"
@@ -3586,6 +3620,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "註冊您的安全金鑰時出現問題。請再試一次。"
       ]
     },
     "fido2: Info": {
@@ -4478,6 +4515,9 @@
       "Amount below minimum (${ amount }).": [
         "金額低於下限 (${ amount })。"
       ],
+      "An error occurred while communicating with the extension": [
+        "與延伸功能通訊時發生錯誤"
+      ],
       "and": [
         "和"
       ],
@@ -4525,6 +4565,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "您確定要移除這位使用者的管理權限？"
+      ],
+      "Attention required": [
+        "需要您的處理"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "每月在選取的開始及結束時間內啟用自動回覆。"
@@ -4825,6 +4868,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "產生新的復原短語並廢棄舊的。"
+      ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "獲取一個 ${ BRAND_NAME } 位址並用於全部 ${ BRAND_NAME } 服務包括 ${ MAIL_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }。"
       ],
       "Get my ${ BRAND_NAME } address": [
         "獲取我的 ${ BRAND_NAME } 電郵位址"
@@ -5851,6 +5897,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使關閉瀏覽器，您仍會維持登入狀態。"
+      ],
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "您的 ${ BRAND_NAME } 帳號已與 ${ externalEmailAddress } 關聯。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期帳單。"
@@ -8010,6 +8059,9 @@
       "Applicable credits, proration, and coupons are applied in the next step": [
         "適用的餘額、價差與優惠券將在下一步時套用"
       ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "結合所有 ${ BRAND_NAME } 服務的全面隱私與安全性。"
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "若你將帳號刪除，你將失去所有 ${ visionary } 帶來的福利，且即使你決定重新建立帳號，也不能再次選擇該方案。"
       ],
@@ -8031,6 +8083,9 @@
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "設定自動回覆，可告知來訪者您不在辦公室或暫時無法親自回應。"
       ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "完全免費的新手版帳號，旨在提供所有人以隱私權為首要使命的服務。"
+      ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "你正在當前的計畫中享受促銷價格。若你刪除你的帳號，你將會永遠失去此促銷價，即使你決定建立一個新帳號也是。"
       ],
@@ -8039,6 +8094,15 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
       "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
         "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
       ],
@@ -8152,8 +8216,14 @@
       "End-to-end encrypted file storage": [
         "端到端加密檔案儲存"
       ],
+      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "最重要的是，新增多達 5 個來自朋友、家庭、同事與組織的行事曆。"
+      ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "我們以多層密碼完整加密伺服器上的硬碟，即使硬碟被整顆拔走，您的資料仍具備防護力"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "一按即可把您的網際網路流量繞經 Tor 網路"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield 保護您的裝置並透過封鎖廣告、追蹤程式與惡意軟體來加快您的瀏覽速度"
@@ -8862,11 +8932,17 @@
       ]
     },
     "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "取消訂購授權後，您將無法再存取這個行事曆。此行事曆中的所有事件都將從您的帳號中刪除，但是仍然會保留在原始的公開連結中。"
+      ],
       "You will no longer have access to this calendar.": [
         "您將無法再存取此行事曆。"
       ]
     },
     "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "如果您離開此行事曆，您必須詢問擁有者才能再次加入。"
+      ],
       "This calendar will be removed from your account.": [
         "此行事曆將會從您的帳號中移除。"
       ]
@@ -9390,6 +9466,9 @@
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
         "憑證展延至 ${ formattedExpirationDate }"
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        "組態檔 \"${ name }\" 創建完成， 請注意，私密金鑰並未儲存，也不會再次顯示，您必須複製或下載此組態。"
       ],
       "Creating config file for ${ serverName }": [
         "創建組態檔供用於伺服器 ${ serverName }"
@@ -10556,11 +10635,24 @@
       ],
       "Your DKIM signing is working.": [
         "您的 DKIM 簽章運作正常。"
+      ],
+      "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
+        "您的外部帳號可能已達其24小時頻寬限制。${ BRAND_NAME } 將會盡快重試匯入。"
       ]
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "這會將您的公鑰自動附加到您傳送的每一封郵件。收件人可藉此驗證您的郵件真實性，並傳送加密郵件給您。"
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "選擇與非 ${ BRAND_NAME } PGP 使用者簽署或加密郵件所使用的預設 PGP 設定。請注意：內嵌式 PGP 強制採用純文字郵件。瞭解更多"
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "當收到來自另一個 ${ MAIL_APP_NAME } 使用者的電子郵件時，若您的通訊錄中未包含其已信任的金鑰，將顯示橫幅詢問您是否要啟用已信任金鑰。"
       ]
     },
     "Tooltip sign external messages": {
@@ -10706,6 +10798,9 @@
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "停用記錄將一併清除您整個記錄歷程。您確定要停用記錄嗎？"
+      ],
+      "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
+        "停用此電郵位址後，您將不能再以此電郵位址傳送或接收電郵，而且所有已連結的 ${ BRAND_NAME } 產品亦將隨之停用。您確定要停用此電郵位址嗎？"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "如果您取消此匯入，您將無法復原。 ${ BRAND_NAME } 已將所有進度儲存在您的帳號中。無論無何都要取消嗎？"
@@ -10960,9 +11055,6 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } years": [
-        "Yearly"
-      ],
       "Every ${ interval } years, ${ timesString }": [
         "每${ interval }年，${ timesString }"
       ],

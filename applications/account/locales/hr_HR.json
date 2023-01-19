@@ -506,6 +506,9 @@
       "Show labels": [
         "Prikaži oznake"
       ],
+      "Show less": [
+        "Prikaži manje"
+      ],
       "Show more": [
         "Prikaži više"
       ],
@@ -835,6 +838,23 @@
     "Collapsible tooltip": {
       "Expand": [
         "Proširi"
+      ]
+    },
+    "color": {
+      "dim gray": [
+        "zagasito siva"
+      ],
+      "gainsboro": [
+        "svijetla plavkastosiva"
+      ],
+      "light red": [
+        "svijetlocrvena"
+      ],
+      "outer space": [
+        "vanjski prostor"
+      ],
+      "white": [
+        "bijela"
       ]
     },
     "Condition for custom filter": {
@@ -1988,6 +2008,15 @@
       "Filter with this name already exists": [
         "Filtar s ovim nazivom već postoji"
       ],
+      "Folder name cannot be empty.": [
+        "Naziv mape ne može biti prazan."
+      ],
+      "Incorrect login credentials. Please try again.": [
+        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno."
+      ],
+      "Incorrect mailbox password. Please try again.": [
+        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno."
+      ],
       "Incorrect password": [
         "Nevažeća lozinka"
       ],
@@ -2114,6 +2143,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
       ],
+      "The folder name is too long. Please choose a different name.": [
+        "Naziv mape je predugačak. Odaberite drugi naziv."
+      ],
       "The minimum amount that can be donated is ${ price }": [
         "Minimalni iznos koji se može donirati je ${ price }"
       ],
@@ -2137,6 +2169,12 @@
       ],
       "This folder name is not available. Please choose a different name.": [
         "Naziv mape nije dostupan. Odaberite drugi naziv."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "Naziv oznake nije dostupan. Odaberite drugi naziv."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti."
       ],
       "Trusted keys are not valid for sending": [
         "Pouzdani ključevi nisu valjani za slanje"
@@ -2268,6 +2306,9 @@
       ],
       "Missing start time": [
         "Nedostaje početno vrijeme"
+      ],
+      "No UID, title or start time": [
+        "Nema UID, naslov ili početno vrijeme"
       ],
       "Non-Gregorian": [
         "Ne gregorijanski"
@@ -2603,8 +2644,17 @@
       ]
     },
     "Import calendar": {
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših događaja. Nije moguće uvesti nijedan događaj."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifriranje i dodavanje kontakata: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Događaj je uspješno uvezen. Uvezeni događaj će se sada pojaviti u vašem kalendaru."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Događaji su uspješno uvezeni. Uvezeni događaji će se sada pojaviti u vašem kalendaru."
       ]
     },
     "Import calendar warning": {
@@ -2617,6 +2667,21 @@
         "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vašeg kontakta. Nije moguće uvesti nijedan kontakt."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših kontakata. ${ totalImported } od ${ totalToImport } kontakata uspješno je uvezeno."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših kontakta. Nije moguće uvesti nijedan kontakt."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontakt je uspješno uvezen. Uvezeni kontakt će se sada pojaviti u vašoj listi kontakata."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Kontakta su uspješno uvezena. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
       ]
     },
     "Import contact error": {
@@ -2637,6 +2702,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ne podržava ${ forNow }:"
+      ],
       "for now": [
         "za sada"
       ]
@@ -2707,6 +2775,9 @@
       ],
       "Account security": [
         "Sigurnost računa"
+      ],
+      "app password": [
+        "lozinka aplikacije"
       ],
       "Export": [
         "Izvoz"
@@ -2809,6 +2880,9 @@
         "${ selectedFoldersCountLocalized } oznake odabrane",
         "${ selectedFoldersCountLocalized } oznaka odabrano"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } prostora za pohranu"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } član)",
         "(${ memberCount } člana)",
@@ -2822,6 +2896,12 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
+      ],
+      "10 email addresses": [
+        "10 adresa e-pošte"
+      ],
+      "30-day money-back guarantee.": [
+        "Povrat novca do 30 dana."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
@@ -2939,6 +3019,9 @@
       "Continue anyway?": [
         "Svejedno nastavi?"
       ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "Stvorite oznaku za uvezene poruke, vremenski raspon za taj uvoz i mape koje želite uvesti."
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Stvaranje i upravljanje pod-računima te dodjeljivanje im adrese e-pošte vaše prilagođene domene."
       ],
@@ -2980,6 +3063,9 @@
       "Done": [
         "Gotovo"
       ],
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "Snižavanje statusa prekida sve veze s plaćenim ${ VPN_APP_NAME } poslužiteljima."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Preuzmite svoju omiljenu aplikaciju danas i ponesite privatnost sa sobom gdje god idete."
       ],
@@ -2994,6 +3080,9 @@
       ],
       "Edit label": [
         "Uredi oznaku"
+      ],
+      "Edit link": [
+        "Uredi poveznicu"
       ],
       "Email address": [
         "Adresa e-pošte"
@@ -3037,6 +3126,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Svaki filtar mora sadržavati barem naziv, uvjet i radnju."
       ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Za Visa i MasterCard, tri znamenke na poleđini kartice. Za American Express, četiri znamenke na prednjoj strani vaše kartice."
+      ],
       "Free up some space or add more storage space.": [
         "Oslobodite malo prostora ili dodajte više prostora za pohranu."
       ],
@@ -3079,11 +3171,23 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Ukoliko izgubite svoj uređaj za dvofaktorsku autentikaciju, ovi kôdovi se mogu upotrijebiti umjesto 6-znamenkastog kôda dvofaktorske autentikacije da bi se prijavili na vaš račun. Svaki kôd može se upotrijebiti samo jednom."
       ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ${ MAIL_APP_NAME } i ${ VPN_APP_NAME } značajkama."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Ako nastavite s snižavanjem statusa, izgubiti će te pristup plaćenim značajkama ${ MAIL_APP_NAME }-a, uključujući dodatni prostor za pohranu i filtre."
+      ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Ako želite zadržati postojeći SPF zapis, možete jednostavno dodati ${ spf } u njega nakon ${ spfValue }. Ne stvarajte više SPF zapisa."
       ],
       "Image URL": [
         "URL slike"
+      ],
+      "Import from": [
+        "Uvoz iz"
+      ],
+      "Import in progress": [
+        "Uvoz u tijeku"
       ],
       "Import mailbox": [
         "Uvezi poštanski sandučić"
@@ -3115,6 +3219,9 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instalirajte konfiguracijsku datoteku za poslužitelja da biste se povezali sa određenim poslužiteljem u državi vašeg izbora."
       ],
+      "Internet connection lost": [
+        "Prekinuta je internetska veza"
+      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Nema internetske veze. Molimo provjerite povezanost uređaja."
       ],
@@ -3126,6 +3233,9 @@
       ],
       "Label all imported messages as": [
         "Označi sve uvezene poruke kao"
+      ],
+      "Labels:": [
+        "Oznake:"
       ],
       "Learn more": [
         "Saznajte više"
@@ -3151,6 +3261,9 @@
       "lose access to all current encrypted data": [
         "gubitak pristupa svim trenutnim šifriranim podacima"
       ],
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ switchButton }."
+      ],
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
       ],
@@ -3165,6 +3278,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dodijelite naziv svojoj novoj mapi i odaberite roditeljsku mapu u koju je želite staviti. Ako ne odaberete roditeljsku mapu, nova će se mapa stvoriti kao mapa najviše razine."
+      ],
+      "New": [
+        "Novo"
       ],
       "No action selected": [
         "Nije odabrana nijedna radnja"
@@ -3198,6 +3314,9 @@
       ],
       "Not a valid URL": [
         "Nije valjani URL"
+      ],
+      "Number of users": [
+        "Broj korisnika"
       ],
       "of": [
         "od"
@@ -3265,6 +3384,9 @@
       "Preview": [
         "Pregled"
       ],
+      "Priority support": [
+        "Prioritetna podrška"
+      ],
       "purchase additional storage": [
         "kupite dodatni prostor za pohranu"
       ],
@@ -3291,6 +3413,9 @@
       ],
       "Server load": [
         "Opterećenje poslužitelja"
+      ],
+      "Session timed out": [
+        "Sesija je istekla"
       ],
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
@@ -3328,6 +3453,12 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Ovo može potrajati nekoliko sekundi ili nekoliko minuta, ovisno o uređaju"
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Ova poveznica vodi do web-mjesta koje možda pokušava ukrasti vaše podatke, kao što su lozinke i podaci o kreditnoj kartici."
+      ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
       ],
@@ -3343,6 +3474,9 @@
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Ovo će stvoriti ključ za šifriranje za vašu organizaciju. 4096-bitni ključevi rade samo na računalima s visokim performansama, a za većinu korisnika preporučujemo upotrebu 2048-bitnih ključeva."
       ],
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Ovo će omogućiti PayPalu da se koristi za plaćanje vaše ${ BRAND_NAME } pretplate. Preusmjerit ćemo vas na PayPal u novoj kartici preglednika. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Ovim ćete trajno izbrisati podatke i sve adrese e-pošte povezane s ovim korisnikom."
       ],
@@ -3351,6 +3485,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Ovo će zamijeniti vašu privremenu lozinku. Ubuduće će te ga koristiti za pristup vašem ${ BRAND_NAME } računu."
+      ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "Ovaj čarobnjak omogućiti će dvofaktorsku autentikaciju na ${ BRAND_NAME } računu. Dvofaktorska autentikacija će vaš ${ BRAND_NAME } račun učiniti sigurnijim pa vam preporučujemo da opciju omogućite."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Za potvrdu unesite ime korisnika kojeg želite izbrisati."
@@ -3385,6 +3522,9 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Osim ako se ne odjavite s vašeg računa ili promijenite lozinku, vaše sesije ostaju aktivne. Sesije ističu nakon 60 dana neaktivnosti."
       ],
+      "Unlimited messages": [
+        "Neograničene poruke"
+      ],
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
@@ -3408,6 +3548,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proces potvrde otvorit će se u novoj kartici preglednika, stoga onemogućite sve blokade skočnih prozora. Neće vam biti naplaćeno. Bilo koji iznos korišten za potvrdu kartice bit će vraćen odmah."
+      ],
+      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
+        "Upozorenje: Brisanje je trajno. Ovo također uklanja pristup svim povezanim uslugama i briše sve vaše kontakte."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Za zaštitu vaših plaćanja koristimo 3-D Secure."
@@ -3451,6 +3594,9 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
       ],
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "${ MAIL_APP_NAME } možete koristiti sa bilo kojim desktop klijentom za e-poštu koji podržava IMAP/SMTP, uključujući Outlook, Apple Mail i Thunderbird."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Vi niste postavili metodu za oporavak, stoga je oporavak računa nemogućen u slučaju da zaboravite lozinku. Želite nastaviti bez načina za oporavak?"
       ],
@@ -3459,6 +3605,9 @@
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Morate aktivirati privatni ključ organizacije, pomoću rezervne lozinke ključa organizacije koju vam je dao administrator organizacije."
+      ],
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "Morate onemogućiti ili ukloniti sve dodatne korisnike ${ MAIL_APP_NAME }-a, adrese i prilagođene domene prije nego što možete sniziti status."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom kako biste ga mogli dodati kao način plaćanja."
@@ -3480,6 +3629,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "Vaši ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } računi su povezani. Da biste ih izbrisali, prijavite se u ${ loginLink } i tamo Izbrišite svoj račun."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
@@ -3610,6 +3762,26 @@
       ],
       "Subscription": [
         "Pretplata"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "Ključ s istim algoritmom za šifriranje već je aktivan za ovu adresu.\nStvaranje drugog ključa uzrokovat će sporije učitavanje računa, a brisanje tog ključa može uzrokovati probleme.\nAko stvarate novi ključ jer je stari ključ ugrožen, označite taj ključ kao ugrožen.\nJeste li sigurni da želite nastaviti?"
+      ],
+      "Generate key": [
+        "Stvori ključ"
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        "Ključ s otiskom prsta ${ fp } je uspješno stvoren."
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Stvaraju se ključevi za šifriranje. To može potrajati nekoliko minuta i privremeno zamrznuti preglednik."
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Stvaraju se ključevi za šifriranje vaše adrese e-pošte. To može potrajati nekoliko minuta i privremeno zamrznuti preglednik."
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "Možete stvoriti novi ključ za šifriranje ako mislite da je vaš prethodni ključ bio ugrožen."
       ]
     },
     "Key state badge": {
@@ -3920,6 +4092,9 @@
       "BTC amount:": [
         "BTC iznos:"
       ],
+      "Calendars": [
+        "Kalendari"
+      ],
       "Card holder": [
         "Vlasnik kartice"
       ],
@@ -3961,6 +4136,9 @@
       ],
       "Confirm organization password": [
         "Potvrdite organizacijsku lozinku"
+      ],
+      "Confirm password": [
+        "Potvrdi lozinku"
       ],
       "Contacts": [
         "Kontakti"
@@ -4031,6 +4209,9 @@
       "Email or username": [
         "Adresa e-pošte ili korisničko ime"
       ],
+      "Emails": [
+        "E-pošta"
+      ],
       "End date": [
         "Krajnji datum"
       ],
@@ -4061,6 +4242,9 @@
       "Folder location": [
         "Lokacija mape"
       ],
+      "From: ${ importedEmail }": [
+        "Od: ${ importedEmail }"
+      ],
       "Gift code": [
         "Darovni kôd"
       ],
@@ -4075,6 +4259,15 @@
       ],
       "If": [
         "Ako"
+      ],
+      "Import all messages": [
+        "Uvoz svih poruka"
+      ],
+      "Import interval": [
+        "Interval uvoza"
+      ],
+      "Import to email address": [
+        "Uvoz na adresu e-pošte"
       ],
       "Inbox": [
         "Pristigla pošta"
@@ -4094,17 +4287,41 @@
       "Key strength": [
         "Jačina ključa"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tipkovni prečac: ${ shortcut }"
+      ],
       "Keyboard shortcuts": [
         "Tipkovni prečaci"
       ],
       "Label as": [
         "Označi kao"
       ],
+      "Label messages as": [
+        "Označi poruku kao"
+      ],
+      "Last 12 months only": [
+        "Samo zadnjih 12 mjeseci"
+      ],
+      "Last 3 months only": [
+        "Samo zadnja 3 mjeseca"
+      ],
+      "Last month only": [
+        "Samo posljednji mjesec"
+      ],
       "Mail Server (IMAP)": [
         "Poslužitelj e-pošte (IMAP)"
       ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
+      ],
+      "Main": [
+        "Glavno"
+      ],
+      "Manage folders": [
+        "Upravljanje mapama"
+      ],
+      "Manage labels": [
+        "Upravljanje oznakama"
       ],
       "Mark as": [
         "Označi kao"
@@ -4126,6 +4343,9 @@
       ],
       "Name on card": [
         "Ime na kartici"
+      ],
+      "Navigation": [
+        "Navigacija"
       ],
       "New login password": [
         "Nova lozinka za prijavu"
@@ -4276,6 +4496,9 @@
       ],
       "Timezone": [
         "Vremenska zona"
+      ],
+      "To: ${ emailAddress }": [
+        "Za: ${ emailAddress }"
       ],
       "Two-password mode": [
         "Način rada s dvije lozinke"
@@ -4700,6 +4923,11 @@
         "Shvaćam"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: feature": {
       "Encrypted contact details": [
         "Šifrirani podaci o kontaktu"
@@ -4719,6 +4947,24 @@
     "new_plans: signup": {
       "Subscription": [
         "Pretplata"
+      ]
+    },
+    "new_plans: Title": {
+      "Upgrade to ${ planName }": [
+        "Nadogradite za ${ planName }"
+      ]
+    },
+    "new_plans: title": {
+      "Delete account?": [
+        "Izbriši račun?"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Priority support": [
+        "Prioritetna podrška"
+      ],
+      "Unlimited messages": [
+        "Neograničene poruke"
       ]
     },
     "Notification": {
@@ -5167,6 +5413,14 @@
         "Poništi"
       ]
     },
+    "Remark about a key type option": {
+      "Compatibility": [
+        "Kompatibilnost"
+      ],
+      "State of the art": [
+        "Najmodernije"
+      ]
+    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "Mijenjanje organizacijskih ključeva"
@@ -5185,6 +5439,9 @@
       ]
     },
     "Select files": {
+      "Browse": [
+        "Pregled"
+      ],
       "Upload": [
         "Učitaj"
       ]
@@ -5283,6 +5540,17 @@
       ],
       "Your current storage:": [
         "Vaš trenutni prostor za pohranu:"
+      ]
+    },
+    "Subscription attribute": {
+      "1 email address": [
+        "1 adresa e-pošte"
+      ],
+      "1 VPN connection": [
+        "1 VPN veza"
+      ],
+      "Built-in ad blocker (NetShield)": [
+        "Ugrađeni bloker oglasa (NetShield)"
       ]
     },
     "Subscription saving": {
@@ -6268,6 +6536,9 @@
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Morate ${ activateLink } ključeve organizacije prije dodavanja adrese e-pošte ne privatnom članu."
+      ],
+      "You will lose any customization you made so far.": [
+        "Izgubiti će te sve prilagodbe koje ste do sada napravili."
       ],
       "You will not see this import record in the list anymore.": [
         "Ovaj zapis o uvozu više nećete vidjeti na popisu."

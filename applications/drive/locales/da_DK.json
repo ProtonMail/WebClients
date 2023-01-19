@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
+      "Attention required": [
+        "Opmærksomhed påkrævet"
+      ],
       "Authenticate": [
         "Godkend"
       ],
@@ -327,6 +330,12 @@
       ],
       "Log in": [
         "Log ind"
+      ],
+      "Manage folders": [
+        "Administrer mapper"
+      ],
+      "Manage labels": [
+        "Administrer etiketter"
       ],
       "Manage link": [
         "Håndter link"
@@ -2971,6 +2980,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Er du sikker på, at du ønsker at slette de valgte elementer permanent fra papirkurven?"
       ],
+      "Attention required": [
+        "Opmærksomhed påkrævet"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
@@ -3370,6 +3382,9 @@
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Nogle filer blev ikke overført. Prøv at overføre eller hente filerne igen."
+      ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Bemærk: Data kan stadig være tilgængelige lokalt på enheder, hvor du har installeret ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "af"
@@ -4365,6 +4380,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
