@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
+      "Attention required": [
+        "Opmærksomhed påkrævet"
+      ],
       "Authenticate": [
         "Godkend"
       ],
@@ -458,6 +461,12 @@
       ],
       "Manage communication preferences": [
         "Administrer kommunikationspræferencer"
+      ],
+      "Manage folders": [
+        "Administrer mapper"
+      ],
+      "Manage labels": [
+        "Administrer etiketter"
       ],
       "Mark as default": [
         "Markér som standard"
@@ -4557,6 +4566,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker på, at du vil fjerne administrative privilegier fra denne bruger?"
       ],
+      "Attention required": [
+        "Opmærksomhed påkrævet"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Autosvar er aktivt hver måned i det valgte tidsrum."
       ],
@@ -7454,6 +7466,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer alle beskeder fra ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -8117,6 +8133,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } oprettet"
+      ],
+      "A disabled address cannot be default": [
+        "En deaktiveret adresse kan ikke være standard"
+      ],
+      "An external address cannot be default": [
+        "En ekstern adresse kan ikke være standard"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Nøgle med fingeraftryk ${ fp } slettet."

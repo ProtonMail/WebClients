@@ -542,6 +542,12 @@
       "Mailbox layout": [
         "邮箱布局"
       ],
+      "Manage folders": [
+        "管理文件夹"
+      ],
+      "Manage labels": [
+        "管理标签"
+      ],
       "Mark as read": [
         "标为已读"
       ],
@@ -8508,9 +8514,6 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } years": [
-        "Yearly"
-      ],
       "Every ${ interval } years, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"
       ],
