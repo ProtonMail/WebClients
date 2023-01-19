@@ -240,6 +240,9 @@
       "Delete folder": [
         "Izbriši mapu"
       ],
+      "Delete label": [
+        "Izbriši oznaku"
+      ],
       "Delete permanently": [
         "Ukloni trajno"
       ],
@@ -306,6 +309,9 @@
       "Expand composer": [
         "Proširi prozor za novu poruku"
       ],
+      "Expand URL": [
+        "Proširi URL"
+      ],
       "Expiration time": [
         "Vrijeme isteka"
       ],
@@ -317,6 +323,9 @@
       ],
       "Export contacts": [
         "Uvezi kontakte"
+      ],
+      "Filter on...": [
+        "Filtar za..."
       ],
       "Font": [
         "Font"
@@ -572,6 +581,9 @@
       "OK": [
         "U redu"
       ],
+      "Open ${ CALENDAR_APP_NAME }": [
+        "Otvori ${ CALENDAR_APP_NAME }"
+      ],
       "Open calendar": [
         "Otvori kalendar"
       ],
@@ -665,6 +677,9 @@
       "Reply all": [
         "Odgovori svima"
       ],
+      "Reply securely": [
+        "Odgovori na siguran način"
+      ],
       "Report a problem": [
         "Prijavi problem"
       ],
@@ -680,6 +695,9 @@
       "Resend code": [
         "Ponovno pošalji kôd"
       ],
+      "Reset": [
+        "Ponovno pokreni"
+      ],
       "Reset to default": [
         "Vrati na zadane postavke"
       ],
@@ -688,6 +706,9 @@
       ],
       "Save": [
         "Spremi"
+      ],
+      "Saving${ ellipsis }": [
+        "Spremanje${ ellipsis }"
       ],
       "Schedule message": [
         "Zakaži poruku"
@@ -758,6 +779,9 @@
       "Show labels": [
         "Prikaži oznake"
       ],
+      "Show less": [
+        "Prikaži manje"
+      ],
       "Show messages": [
         "Prikaži poruke"
       ],
@@ -810,6 +834,9 @@
         "Ključ povjerenja",
         "Ključevi povjerenja",
         "Ključevi povjerenja"
+      ],
+      "Trust public key": [
+        "Vjeruj javnom ključu"
       ],
       "Try again": [
         "Pokušaj ponovno"
@@ -1243,6 +1270,23 @@
     "Collapsible tooltip": {
       "Expand": [
         "Proširi"
+      ]
+    },
+    "color": {
+      "dim gray": [
+        "zagasito siva"
+      ],
+      "gainsboro": [
+        "svijetla plavkastosiva"
+      ],
+      "light red": [
+        "svijetlocrvena"
+      ],
+      "outer space": [
+        "vanjski prostor"
+      ],
+      "white": [
+        "bijela"
       ]
     },
     "Composer email icon": {
@@ -2257,6 +2301,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Dešifriranje kontakata… Ovo može potrajati nekoliko minuta. Nakon dovršetka možete preuzeti datoteku koja sadrži vaše sve kontakte."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje i uvoz kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
       ],
@@ -2265,6 +2312,12 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Spajanje kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
+      ],
+      "No folders": [
+        "Nema mapa"
+      ],
+      "No labels": [
+        "Bez oznake"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Upotrijebite povlačenje i ispuštanje da biste rangirali prioritet među kontaktima. Odznačite kontakte koje ne želite spojiti."
@@ -2450,8 +2503,17 @@
       "Filter with this name already exists": [
         "Filtar s ovim nazivom već postoji"
       ],
+      "Folder name cannot be empty.": [
+        "Naziv mape ne može biti prazan."
+      ],
       "Image upload failed": [
         "Neuspješno učitavanje slike"
+      ],
+      "Incorrect login credentials. Please try again.": [
+        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno."
+      ],
+      "Incorrect mailbox password. Please try again.": [
+        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno."
       ],
       "Invalid expiration time": [
         "Nevažeći datum isteka"
@@ -2498,6 +2560,9 @@
       ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
+      ],
+      "Please activate your content search again": [
+        "Ponovno aktivirajte vašu pretragu sadržaja"
       ],
       "Please set a password": [
         "Molimo postavite lozinku."
@@ -2546,6 +2611,9 @@
         "Privitke nije bilo moguće dešifrirati.\nAko imate odgovarajući privatni ključ, i dalje će te moći dešifrirati\ndatoteke s programom kao što je GnuPG.",
         "Privitke nije bilo moguće dešifrirati.\nAko imate odgovarajući privatni ključ, i dalje će te moći dešifrirati\ndatoteke s programom kao što je GnuPG."
       ],
+      "The folder name is too long. Please choose a different name.": [
+        "Naziv mape je predugačak. Odaberite drugi naziv."
+      ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Svojstva ključa za ${ emailAddress } nemogu se izdvojiti"
       ],
@@ -2573,8 +2641,14 @@
       "This folder name is not available. Please choose a different name.": [
         "Naziv mape nije dostupan. Odaberite drugi naziv."
       ],
+      "This label name is not available. Please choose a different name.": [
+        "Naziv oznake nije dostupan. Odaberite drugi naziv."
+      ],
       "This message has already been sent": [
         "Ova poruka je već poslana."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Previše aktivnih filtara. Nadogradite na plaćeni plan da aktivirate više filtara."
@@ -2706,6 +2780,9 @@
       "Missing start time": [
         "Nedostaje početno vrijeme"
       ],
+      "No UID, title or start time": [
+        "Nema UID, naslov ili početno vrijeme"
+      ],
       "Non-Gregorian": [
         "Ne gregorijanski"
       ],
@@ -2768,6 +2845,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nije odabrana nijedna slika"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Ocjena je zabilježena"
       ]
     },
     "Event invitation error": {
@@ -3020,8 +3102,17 @@
       ]
     },
     "Import calendar": {
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših događaja. Nije moguće uvesti nijedan događaj."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifriranje i dodavanje kontakata: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Događaj je uspješno uvezen. Uvezeni događaj će se sada pojaviti u vašem kalendaru."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Događaji su uspješno uvezeni. Uvezeni događaji će se sada pojaviti u vašem kalendaru."
       ]
     },
     "Import calendar warning": {
@@ -3034,6 +3125,21 @@
         "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vašeg kontakta. Nije moguće uvesti nijedan kontakt."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših kontakata. ${ totalImported } od ${ totalToImport } kontakata uspješno je uvezeno."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Došlo je do pogreške prilikom šifriranja i dodavanja vaših kontakta. Nije moguće uvesti nijedan kontakt."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Kontakt je uspješno uvezen. Uvezeni kontakt će se sada pojaviti u vašoj listi kontakata."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Kontakta su uspješno uvezena. Uvezeni kontakti će se sada pojaviti u vašoj listi kontakata."
       ]
     },
     "Import contact error": {
@@ -3054,6 +3160,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ne podržava ${ forNow }:"
+      ],
       "for now": [
         "za sada"
       ]
@@ -3127,6 +3236,9 @@
       ],
       "Account security": [
         "Sigurnost računa"
+      ],
+      "app password": [
+        "lozinka aplikacije"
       ],
       "Export": [
         "Izvoz"
@@ -3220,6 +3332,9 @@
         "${ selectedFoldersCountLocalized } oznake odabrane",
         "${ selectedFoldersCountLocalized } oznaka odabrano"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } prostora za pohranu"
+      ],
       "${ total } conversation": [
         "${ total } razgovor",
         "${ total } razgovora",
@@ -3268,6 +3383,9 @@
       ],
       "(No Recipient)": [
         "(Nema primatelja)"
+      ],
+      "10 email addresses": [
+        "10 adresa e-pošte"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Zahtjev za otkazivanje pretplate s ove mailing liste poslat će se pošiljatelju biltena i automatski obraditi."
@@ -3332,6 +3450,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Jeste li sigurni da želite trajno izbrisati ovu poruku?"
       ],
+      "Attach public key": [
+        "Pridodajte javni ključ"
+      ],
       "Background color": [
         "Pozadinska boja"
       ],
@@ -3364,6 +3485,9 @@
       ],
       "Copied to clipboard": [
         "Kopirano u međuspremnik"
+      ],
+      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
+        "Stvorite oznaku za uvezene poruke, vremenski raspon za taj uvoz i mape koje želite uvesti."
       ],
       "Create a new contact group": [
         "Stvori novu grupu kontakata"
@@ -3402,6 +3526,9 @@
       "Do you want to re-sign the contact details?": [
         "Želite li ponovno potpisati detalje kontakta?"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Preuzimanje poruke ${ esProgress } od ${ totalProgressToShow }"
+      ],
       "Draft": [
         "Skica"
       ],
@@ -3419,6 +3546,9 @@
       ],
       "Duplicate key updated": [
         "Ažuriran je duplicirani ključ"
+      ],
+      "Edit link": [
+        "Uredi poveznicu"
       ],
       "Email address": [
         "Adresa e-pošte"
@@ -3444,6 +3574,9 @@
       ],
       "Estimating time remaining...": [
         "Procjena preostalog vremena..."
+      ],
+      "Expiration time": [
+        "Vrijeme isteka"
       ],
       "Expires": [
         "Ističe"
@@ -3505,6 +3638,12 @@
       "Image URL": [
         "URL slike"
       ],
+      "Import from": [
+        "Uvoz iz"
+      ],
+      "Import in progress": [
+        "Uvoz u tijeku"
+      ],
       "Import mailbox": [
         "Uvezi poštanski sandučić"
       ],
@@ -3523,6 +3662,9 @@
       "Insert link": [
         "Umetni poveznicu"
       ],
+      "Internet connection lost": [
+        "Prekinuta je internetska veza"
+      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Nema internetske veze. Molimo provjerite povezanost uređaja."
       ],
@@ -3534,6 +3676,9 @@
       ],
       "Label all imported messages as": [
         "Označi sve uvezene poruke kao"
+      ],
+      "Labels:": [
+        "Oznake:"
       ],
       "Learn more": [
         "Saznajte više"
@@ -3565,17 +3710,26 @@
       "Members": [
         "Članovi"
       ],
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "Istek poruka radi po zadanom prilikom slanja e-pošte drugim korisnicima ${ MAIL_APP_NAME }a. Za slanje e-poruka koje istječu, korisnicima koji nisu korisnici ${ BRAND_NAME }a, molimo otkažite i dodajte zaštitu lozinkom za svoju e-poštu."
+      ],
       "Message headers": [
         "Zaglavlja poruke"
       ],
       "Message sent": [
         "Poruka je poslana"
       ],
+      "Message sent.": [
+        "Poruka je poslana."
+      ],
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dodijelite naziv svojoj novoj mapi i odaberite roditeljsku mapu u koju je želite staviti. Ako ne odaberete roditeljsku mapu, nova će se mapa stvoriti kao mapa najviše razine."
+      ],
+      "New": [
+        "Novo"
       ],
       "No action selected": [
         "Nije odabrana nijedna radnja"
@@ -3610,6 +3764,9 @@
       "No results found": [
         "Nema rezultata"
       ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        "Nisu pronađeni tragovi, ali neke slike nije bilo moguće učitati sa zaštitom praćenja"
+      ],
       "Not a valid URL": [
         "Nije valjani URL"
       ],
@@ -3619,11 +3776,17 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Naš je sustav ovu e-poruku označio kao pokušaj krađe identiteta. Molimo provjerite je li legitimna poruka."
       ],
+      "per month.": [
+        "mjesečno."
+      ],
       "Phone number": [
         "Broj telefona"
       ],
       "Plain text": [
         "Običan tekst"
+      ],
+      "Please add at least one recipient.": [
+        "Molim unesite barem jednog primatelja."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Imajte na umu da adrese dodijeljene ovoj grupi NEĆE biti izbrisane."
@@ -3648,6 +3811,9 @@
       ],
       "Print email": [
         "Ispiši e-poštu"
+      ],
+      "Priority support": [
+        "Prioritetna podrška"
       ],
       "Recipient: ": [
         "Primatelj: "
@@ -3691,11 +3857,20 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Slanje poruka s @pm.me adrese je plaćena značajka. Vaša će poruka biti poslana s Vaše zadane adrese ${ email }"
       ],
+      "Session timed out": [
+        "Sesija je istekla"
+      ],
+      "Set a recovery phrase": [
+        "Postavite frazu za oporavak"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Postavljanje PGP-a omogućuje vam slanje end-to-end šifriranih e-poruka korisnicima koji nisu dio ${ BRAND_NAME }a, ali koriste PGP kompatibilne usluge."
       ],
       "Show original message": [
         "Prikaži originalnu poruku"
+      ],
+      "Sorry, this message does not exist or has already expired.": [
+        "Žao nam je. Ova poruka ne postoji ili je istekla."
       ],
       "Subject": [
         "Predmet"
@@ -3771,6 +3946,12 @@
       "This invitation is saved in a disabled calendar.": [
         "Ova pozivnica je spremljena u onemogućeni kalendar."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Ova poveznica vodi do web-mjesta koje možda pokušava ukrasti vaše podatke, kao što su lozinke i podaci o kreditnoj kartici."
+      ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
       ],
@@ -3822,6 +4003,9 @@
       "Turn off content search. Activation progress won't be lost.": [
         "Isključite pretraživanje sadržaja. Napredak aktivacije neće se izgubiti."
       ],
+      "Unlimited messages": [
+        "Neograničene poruke"
+      ],
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
@@ -3836,6 +4020,9 @@
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
+      "Version ${ appVersion }": [
+        "Verzija ${ appVersion }"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ispričavamo se. To je možda bila pogreška s naše strane. Možete li potvrditi da ovu e-poštu želite označiti kao legitimnu?"
@@ -4215,6 +4402,9 @@
       "Calendar": [
         "Kalendar"
       ],
+      "Calendars": [
+        "Kalendari"
+      ],
       "Carbon Copy": [
         "Indigo kopija"
       ],
@@ -4229,6 +4419,9 @@
       ],
       "Conditions": [
         "Uvjeti"
+      ],
+      "Confirm password": [
+        "Potvrdi lozinku"
       ],
       "Contacts": [
         "Kontakti"
@@ -4251,6 +4444,9 @@
       "Do not ask again": [
         "Ne pitaj ponovno"
       ],
+      "Don't show this again": [
+        "Ne prikazuj ponovno"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -4259,6 +4455,9 @@
       ],
       "Email format": [
         "Format e-pošte"
+      ],
+      "Emails": [
+        "E-pošta"
       ],
       "Enable Beta Access": [
         "Omogući Beta pristup"
@@ -4278,11 +4477,17 @@
       "Folder location": [
         "Lokacija mape"
       ],
+      "Frequency": [
+        "Frekvencija"
+      ],
       "From": [
         "Od"
       ],
       "From:": [
         "Od:"
+      ],
+      "From: ${ importedEmail }": [
+        "Od: ${ importedEmail }"
       ],
       "Group": [
         "Grupa"
@@ -4296,8 +4501,20 @@
       "If": [
         "Ako"
       ],
+      "Import all messages": [
+        "Uvoz svih poruka"
+      ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Import interval": [
+        "Interval uvoza"
+      ],
+      "Import to email address": [
+        "Uvoz na adresu e-pošte"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tipkovni prečac: ${ shortcut }"
       ],
       "Keyboard shortcuts": [
         "Tipkovni prečaci"
@@ -4308,6 +4525,18 @@
       "Label as": [
         "Označi kao"
       ],
+      "Label messages as": [
+        "Označi poruku kao"
+      ],
+      "Last 12 months only": [
+        "Samo zadnjih 12 mjeseci"
+      ],
+      "Last 3 months only": [
+        "Samo zadnja 3 mjeseca"
+      ],
+      "Last month only": [
+        "Samo posljednji mjesec"
+      ],
       "Location": [
         "Lokacija"
       ],
@@ -4316,6 +4545,15 @@
       ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
+      ],
+      "Main": [
+        "Glavno"
+      ],
+      "Manage folders": [
+        "Upravljanje mapama"
+      ],
+      "Manage labels": [
+        "Upravljanje oznakama"
       ],
       "Mark as": [
         "Označi kao"
@@ -4331,6 +4569,9 @@
       ],
       "Name": [
         "Naziv"
+      ],
+      "Navigation": [
+        "Navigacija"
       ],
       "No label found": [
         "Nema pronađene oznake"
@@ -4356,8 +4597,14 @@
       "Or": [
         "Ili"
       ],
+      "Participants": [
+        "Sudionici"
+      ],
       "Password": [
         "Lozinka"
+      ],
+      "Password hint": [
+        "Podsjetnik za lozinku"
       ],
       "Phone number": [
         "Broj telefona"
@@ -4382,6 +4629,9 @@
       ],
       "Region": [
         "Regija"
+      ],
+      "Remember my choice": [
+        "Zapamti moj odabir"
       ],
       "Reveal password": [
         "Prikaži lozinku"
@@ -4442,6 +4692,12 @@
       ],
       "To:": [
         "Za:"
+      ],
+      "To: ${ emailAddress }": [
+        "Za: ${ emailAddress }"
+      ],
+      "Toolbar": [
+        "Alatna traka"
       ],
       "Two-factor authentication code": [
         "Kôd dvofaktorske autentikacije"
@@ -5002,6 +5258,9 @@
       "Filter labels": [
         "Filtriraj oznake"
       ],
+      "Group name": [
+        "Naziv grupe"
+      ],
       "Hint": [
         "Savjet"
       ],
@@ -5295,6 +5554,11 @@
         "Prvo najmanje"
       ]
     },
+    "Spotlight": {
+      "Schedule send": [
+        "Zakaži slanje"
+      ]
+    },
     "Status": {
       "This message is from a mailing list.": [
         "Ovo poruka je s mailing liste."
@@ -5412,6 +5676,9 @@
       "Contacts deleted": [
         "Kontakti su uklonjeni"
       ],
+      "Conversation added to ${ labelName }.": [
+        "Razgovor dodan u ${ labelName }."
+      ],
       "Conversation deleted": [
         "Razgovor izbrisan"
       ],
@@ -5451,6 +5718,9 @@
       "Mail list unsubscribed": [
         "Otkazana pretplata na bilten"
       ],
+      "Message added to ${ labelName }.": [
+        "Poruka dodana u ${ labelName }."
+      ],
       "Message content search activated": [
         "Aktivirano je pretraživanje sadržaja poruka"
       ],
@@ -5459,6 +5729,9 @@
       ],
       "Message marked as legitimate": [
         "Poruka označena legitimnom"
+      ],
+      "Message marked as read.": [
+        "Poruka označena kao pročitana."
       ],
       "Message marked as Starred.": [
         "Poruka je označena sa zvijezdicom."
@@ -5782,6 +6055,9 @@
       "Feedback": [
         "Povratne informacije"
       ],
+      "Filter on...": [
+        "Filtar za..."
+      ],
       "Forward": [
         "Proslijedi"
       ],
@@ -5907,6 +6183,9 @@
       ],
       "Re-signing contacts": [
         "Ponovno potpisivanje kontakata"
+      ],
+      "Recipients": [
+        "Primatelji"
       ],
       "Reconnect your account": [
         "Ponovno povežite vaš račun"
@@ -6144,6 +6423,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Ovaj uvoz može premašiti kapacitet prostora za pohranu koji je trenutno dostupan na vašem ${ BRAND_NAME } računu. Razmislite o prilagodbi uvoza."
+      ],
+      "You will lose any customization you made so far.": [
+        "Izgubiti će te sve prilagodbe koje ste do sada napravili."
       ]
     },
     "Weekly recurring event, frequency": {

@@ -92,6 +92,9 @@
       "Attachment": [
         "Pièce jointe"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Authenticate": [
         "S'authentifier"
       ],
@@ -3098,7 +3101,7 @@
         "L'adresse électronique n'est pas valide."
       ],
       "Email address is required": [
-        "L'adresse électronique est obligatoire"
+        "L'adresse électronique est nécessaire."
       ],
       "Email is not valid": [
         "L'adresse électronique n'est pas valide."
@@ -3137,7 +3140,7 @@
         "L'image n'a pas pu être chargée."
       ],
       "IMAP server is required": [
-        "Le serveur IMAP est obligatoire"
+        "Le serveur IMAP est nécessaire."
       ],
       "Incorrect login credentials. Please try again.": [
         "Les identifiants de connexion ne sont pas corrects. Veuillez réessayer."
@@ -3212,7 +3215,7 @@
         "Certains groupes n'ont aucun contact : ${ noContactGroupList } "
       ],
       "Password is required": [
-        "Le mot de passe est obligatoire"
+        "Le mot de passe est nécessaire."
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
@@ -3231,7 +3234,7 @@
         "Veuillez créer un mot de passe."
       ],
       "Port is required": [
-        "Le port est obligatoire"
+        "Le port est nécessaire."
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée."
@@ -4551,6 +4554,9 @@
       ],
       "Attach public key": [
         "Joindre une clé publique"
+      ],
+      "Attention required": [
+        "Attention requise"
       ],
       "Background color": [
         "Couleur d'arrière-plan"

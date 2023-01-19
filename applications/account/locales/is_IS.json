@@ -83,6 +83,9 @@
       "Attach screenshot(s)": [
         "Hengja við skjámynd(ir)"
       ],
+      "Attention required": [
+        "Athygli krafist"
+      ],
       "Authenticate": [
         "Auðkenna"
       ],
@@ -3083,6 +3086,16 @@
         "Hleð inn atburðum"
       ]
     },
+    "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN tenging",
+        "${ MaxVPN } VPN tengingar"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Tenging fyrir allt að ${ plusVpnConnections } tæki",
+        "Tenging fyrir allt að ${ plusVpnConnections } tæki"
+      ]
+    },
     "fido2: Action": {
       "Delete key": [
         "Eyða lykli"
@@ -3894,6 +3907,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Ertu viss um að þú viljir fjarlægja kerfisstjórnunarheimildir af þessum notanda ?"
       ],
+      "Attention required": [
+        "Athygli krafist"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Sjálfvirk-svörun er virk í hverjum mánuði á milli upphafs- og\n lokadagsetningar."
       ],
@@ -4511,6 +4527,14 @@
       "Plan upgrade required": [
         "Það þarf að uppfæra áskrift"
       ],
+      "Please add a password for the user on row": [
+        "Vinsamlegast bættu við lykilorði fyrir notandann í röð",
+        "Vinsamlegast bættu við lykilorði fyrir notendur í röðum"
+      ],
+      "Please add an email address for the user on row": [
+        "Vinsamlegast bættu við netfangi fyrir notandann í röð",
+        "Vinsamlegast bættu við netfangi fyrir notendur í röðum"
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vinsamlega sláðu inn 12 orða endurheimtusetninguna sem tengist reikningnum þínum."
       ],
@@ -4714,6 +4738,14 @@
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Netfangið sem þú setur efst í listann er sjálfgefna netfangið þitt. Dragðu og slepptu til að endurraða netföngunum þínum."
+      ],
+      "The following address is invalid.": [
+        "Eftirfarandi heimilisfang er ógilt.",
+        "Eftirfarandi heimilisföng eru ógild."
+      ],
+      "The following address is unavailable.": [
+        "Eftirfarandi heimilisfang er ekki tiltækt.",
+        "Eftirfarandi heimilisföng eru ekki tiltæk."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Innflutnings-Útflutnings forritið gerir þér kleift að flytja út skilaboð í staðbundið afrit og að endurheimta fyrri afrit inn á reikninginn þinn."
@@ -6358,6 +6390,18 @@
         "Innflutningur þinn er að hefjast"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Þú getur búið til allt að ${ MAX_LINKS_PER_CALENDAR } hlekk á dagatal. Til að búa til nýjan hlekk á þetta dagatal skaltu eyða einum af listanum hér að neðan.",
+        "Þú getur búið til allt að ${ MAX_LINKS_PER_CALENDAR } hlekki á dagatal. Til að búa til nýjan hlekk á þetta dagatal skaltu eyða einum af listanum hér að neðan."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Þú hefur náð hámarki með ${ MAX_CALENDAR_MEMBERS } meðlimi.",
+        "Þú hefur náð hámarki með ${ MAX_CALENDAR_MEMBERS } meðlimum."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Eyða"
@@ -7392,15 +7436,31 @@
       ]
     },
     "Subscription attribute": {
+      "${ n } calendar": [
+        "${ n } dagatal",
+        "${ n } dagatöl"
+      ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } af ${ MaxAddresses } netfangi",
         "${ UsedAddresses } af ${ MaxAddresses } netföngum"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } af ${ MaxDomains } sérsniðnu léni",
+        "${ UsedDomains } af ${ MaxDomains } sérsniðnum lénum"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } af ${ MaxMembers } notanda",
+        "${ UsedMembers } af ${ MaxMembers } notendum"
       ],
       "1 email address": [
         "1 tölvupóstfang"
       ],
       "1 VPN connection": [
         "1 VPN-nettenging"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "Háhraða VPN á ${ maxVpn } tæki",
+        "Háhraða VPN á ${ maxVpn } tækjum"
       ]
     },
     "Subscription saving": {
@@ -8303,6 +8363,10 @@
       "Success": [
         "Tókst"
       ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Tókst að stofna ${ successfullyCreatedUsers.length } notandareikning",
+        "Tókst að stofna ${ successfullyCreatedUsers.length } notandareikninga"
+      ],
       "Switch to one-password mode": [
         "Skipta yfir í eins-lykilorðs ham"
       ],
@@ -8609,6 +8673,12 @@
       ],
       "Your default font will look like following:": [
         "Sjálfgefin leturgerð mun líta svona út:"
+      ]
+    },
+    "Upgrade notice": {
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "Uppfærðu í áskrift að póstþjónustu til að búa til allt að ${ MAX_CALENDARS_PAID } dagatal, sem gerir þér kleift að búa til dagatöl fyrir vinnuna, til að deila með vinum og bara fyrir sjálfan þig.",
+        "Uppfærðu í áskrift að póstþjónustu til að búa til allt að ${ MAX_CALENDARS_PAID } dagatöl, sem gerir þér kleift að búa til dagatöl fyrir vinnuna, til að deila með vinum og bara fyrir sjálfan þig."
       ]
     },
     "User role": {

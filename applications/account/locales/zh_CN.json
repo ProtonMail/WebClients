@@ -210,6 +210,9 @@
       "Create users": [
         "创建用户"
       ],
+      "Create your own": [
+        "创建账号"
+      ],
       "Current plan": [
         "当前等级"
       ],
@@ -452,6 +455,12 @@
       ],
       "Manage communication preferences": [
         "管理通讯偏好设置"
+      ],
+      "Manage folders": [
+        "管理文件夹"
+      ],
+      "Manage labels": [
+        "管理标签"
       ],
       "Mark as default": [
         "标记为默认"
@@ -10815,9 +10824,6 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } years": [
-        "Yearly"
-      ],
       "Every ${ interval } years, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"
       ],

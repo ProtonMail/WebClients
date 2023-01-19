@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Authenticate": [
         "S'authentifier"
       ],
@@ -1933,7 +1936,7 @@
         "L'adresse électronique n'est pas valide."
       ],
       "Email address is required": [
-        "L'adresse électronique est obligatoire"
+        "L'adresse électronique est nécessaire."
       ],
       "Email is not valid": [
         "L'adresse électronique n'est pas valide."
@@ -1963,7 +1966,7 @@
         "L'image n'a pas pu être chargée."
       ],
       "IMAP server is required": [
-        "Le serveur IMAP est obligatoire"
+        "Le serveur IMAP est nécessaire."
       ],
       "Incorrect login credentials. Please try again.": [
         "Les identifiants de connexion ne sont pas corrects. Veuillez réessayer."
@@ -2020,7 +2023,7 @@
         "Certains groupes n'ont aucun contact : ${ noContactGroupList } "
       ],
       "Password is required": [
-        "Le mot de passe est obligatoire"
+        "Le mot de passe est nécessaire."
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
@@ -2033,7 +2036,7 @@
         "Corrigez les conflits en surbrillance pour continuer."
       ],
       "Port is required": [
-        "Le port est obligatoire"
+        "Le port est nécessaire."
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée."
@@ -2989,6 +2992,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Voulez-vous vraiment définitivement supprimer les éléments sélectionnés du dossier Corbeille ?"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
@@ -3390,7 +3396,7 @@
         "Certains fichiers n'ont pas été transférés. Essayez à nouveau de les charger/télécharger."
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Remarque : les données peuvent encore être disponibles localement sur les appareils sur lesquels vous avez installé ${ DRIVE_APP_NAME }."
+        "Remarque : les données peuvent encore être disponibles localement sur les appareils où vous avez installé ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "sur"

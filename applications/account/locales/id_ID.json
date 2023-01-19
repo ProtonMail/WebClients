@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
+      "Attention required": [
+        "Diperlukan perhatian"
+      ],
       "Authenticate": [
         "Autentikasi"
       ],
@@ -4415,10 +4418,10 @@
         "(${ memberCount } anggota)"
       ],
       "(Filter if ALL of the following conditions are met)": [
-        "(Saring jika SEMUA kondisi terpenuhi)"
+        "(Saring apabila SEMUA kondisi terpenuhi)"
       ],
       "(Filter if ANY of the following conditions are met)": [
-        "(Saring jika ADA kondisi terpenuhi)"
+        "(Saring apabila ADA kondisi yang terpenuhi)"
       ],
       "* No credit card required.": [
         "* Tanpa perlu kartu kredit."
@@ -4592,13 +4595,16 @@
         "Anda yakin ingin mematikan pemeriksaan dua-faktor?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Apakah Anda yakin untuk membatalkan perubahan-perubahan Anda?"
+        "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Apakah Anda yakin untuk menghapus seluruh log Anda secara permanen?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Apakah Anda yakin untuk menghapus hak administratif pengguna ini?"
+      ],
+      "Attention required": [
+        "Diperlukan perhatian"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Pesan balasan otomatis akan terkirim setiap bulannya pada rentang waktu yang ditentukan."
@@ -4815,6 +4821,9 @@
       ],
       "Enable this address to join this calendar": [
         "Izinkan alamat ini bergabung ke kalender"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Aktifkan TLS atau SSL pada layanan eksternal apabila didukung."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Mengaktifkan ulang frasa pemulihan akan membuat frasa pemulihan baru."
@@ -5477,7 +5486,7 @@
         "Simpan kata sandi dan berkas ini di tempat yang aman. Anda akan membutuhkan keduanya untuk mengimpor kunci Anda."
       ],
       "Support for 1 custom email domain": [
-        "Dukungan 1 alamat email dengan domain khusus"
+        "Dukungan 1 domain email khusus"
       ],
       "support team": [
         "tim dukungan"
@@ -5831,7 +5840,7 @@
         "Anda telah memiliki akun gratis"
       ],
       "You are about to open another browser tab and visit:": [
-        "Anda akan membuka tab browser lain dan mengunjungi:"
+        "Anda akan membuka tab browser baru dan mengunjungi:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Anda saat ini sedang masuk sebagai ${ user.Name } (${ user.Email })."
@@ -7123,6 +7132,12 @@
       "Signature": [
         "Tanda tangan"
       ],
+      "SMTP port": [
+        "Port SMTP"
+      ],
+      "SMTP server": [
+        "Server SMTP"
+      ],
       "SMTP token": [
         "Token SMTP"
       ],
@@ -7209,6 +7224,12 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use a recovery email address": [
+        "Gunakan alamat email pemulihan"
+      ],
+      "Use a recovery phone number": [
+        "Gunakan nomor telepon pemulihan"
       ],
       "Use folder colors": [
         "Gunakan folder berwarna"
@@ -9567,6 +9588,9 @@
       "Phone number updated": [
         "Nomor telepon telah diperbarui"
       ],
+      "Port copied to clipboard": [
+        "Port disalin ke papan klip"
+      ],
       "Preference saved": [
         "Preferensi disimpan"
       ],
@@ -9575,6 +9599,9 @@
       ],
       "Resuming import": [
         "Melanjutkan proses impor"
+      ],
+      "Server copied to clipboard": [
+        "Server disalin ke papan klip"
       ],
       "Session revoked": [
         "Sesi berhasil dicabut"
@@ -11247,9 +11274,6 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } years": [
-        "Yearly"
-      ],
       "Every ${ interval } years, ${ timesString }": [
         "Setiap ${ interval } tahun, ${ timesString }"
       ],
