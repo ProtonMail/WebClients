@@ -20,11 +20,12 @@ import { AddressGeneration } from '@proton/components/containers/login/interface
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { externalApps, getToApp, getToAppName } from '@proton/shared/lib/authentication/apps';
+import { getToAppName } from '@proton/shared/lib/authentication/apps';
 import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
+import { User } from '@proton/shared/lib/interfaces';
 import {
     getAddressGenerationSetup,
     getDecryptedSetupBlob,
@@ -39,6 +40,35 @@ import Footer from '../public/Footer';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import SupportDropdown from '../public/SupportDropdown';
+
+interface From {
+    type: 'settings' | 'app' | 'switch';
+    app: APP_NAMES;
+}
+
+const defaultSwitchResult = { type: 'switch', app: APPS.PROTONACCOUNT } as const;
+
+const getApp = (app: string) => {
+    if (app === APPS.PROTONVPN_SETTINGS) {
+        return app;
+    }
+    return getValidatedApp(app);
+};
+
+const getValidatedFrom = ({ from, type, user }: { type: string; from: string; user: User }): From => {
+    if (!from || from === 'switch') {
+        return defaultSwitchResult;
+    }
+    const validatedApp = getApp(from);
+    if (!validatedApp) {
+        return defaultSwitchResult;
+    }
+    if (getRequiresAddressSetup(validatedApp, user)) {
+        return defaultSwitchResult;
+    }
+    const validatedType = type === 'settings' ? 'settings' : 'app';
+    return { app: validatedApp, type: validatedType };
+};
 
 const SetupSupportDropdown = () => {
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
@@ -69,7 +99,7 @@ const SetupAddressContainer = () => {
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
     const toAppRef = useRef<APP_NAMES | null>(null);
-    const fromAppRef = useRef<APP_NAMES>(externalApps[0]);
+    const fromAppRef = useRef<From>(defaultSwitchResult);
     const authentication = useAuthentication();
     const getUser = useGetUser();
     const [, setTheme] = useTheme();
@@ -77,14 +107,19 @@ const SetupAddressContainer = () => {
     const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
 
     const handleBack = () => {
-        // Always forces a refresh for the theme
-        document.location.assign(
-            getAppHref(
-                `/${getSlugFromApp(fromAppRef.current)}/dashboard`,
-                APPS.PROTONACCOUNT,
-                authentication.getLocalID()
-            )
-        );
+        const from = fromAppRef.current;
+        if (from.type === 'switch') {
+            document.location.assign(getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT));
+            return;
+        }
+        let url = '';
+        const localID = authentication.getLocalID();
+        if (from.app === APPS.PROTONVPN_SETTINGS || from.type === 'settings') {
+            url = getAppHref(`/${getSlugFromApp(from.app)}/dashboard`, APPS.PROTONACCOUNT, localID);
+        } else {
+            url = getAppHref('/', from.app, localID);
+        }
+        document.location.assign(url);
     };
 
     const handleToApp = (toApp: APP_NAMES) => {
@@ -99,13 +134,15 @@ const SetupAddressContainer = () => {
 
     useEffect(() => {
         const run = async () => {
-            const searchParams = new URLSearchParams(location.search);
-            const validatedFromApp = getValidatedApp(searchParams.get('from') || '');
-            const validatedToApp = getValidatedApp(searchParams.get('to') || searchParams.get('app') || '');
-
             const user = await getUser();
 
-            fromAppRef.current = getToApp(validatedFromApp, user);
+            const searchParams = new URLSearchParams(location.search);
+            const validatedToApp = getApp(searchParams.get('to') || searchParams.get('app') || '');
+            fromAppRef.current = getValidatedFrom({
+                from: searchParams.get('from') || '',
+                type: searchParams.get('type') || '',
+                user,
+            });
 
             if (!validatedToApp) {
                 handleBack();
