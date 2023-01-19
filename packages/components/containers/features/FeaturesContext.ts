@@ -98,6 +98,7 @@ export enum FeatureCode {
     ProtonBadge = 'ProtonBadge',
     TelemetrySetting = 'TelemetrySetting',
     QuickReply = 'QuickReply',
+    EasySwitchGmailSync = 'EasySwitchGmailSync',
 }
 
 export interface FeaturesContextValue {
