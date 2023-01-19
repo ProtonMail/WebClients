@@ -16,6 +16,10 @@ const emptyExtendedAttributes = {
 };
 
 describe('extended attrbiutes', () => {
+    beforeAll(() => {
+        jest.spyOn(global.console, 'warn').mockReturnValue();
+    });
+
     beforeEach(() => {
         mockGlobalFile();
     });
