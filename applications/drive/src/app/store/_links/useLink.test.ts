@@ -54,6 +54,13 @@ describe('useLink', () => {
         current: ReturnType<typeof useLinkInner>;
     };
 
+    beforeAll(() => {
+        // Time relative function can have issue with test environments
+        // To prevent hanging async function we use Timer Mocks from jest
+        // https://jestjs.io/docs/timer-mocks
+        jest.useFakeTimers();
+    });
+
     beforeEach(() => {
         jest.resetAllMocks();
 
@@ -180,16 +187,17 @@ describe('useLink', () => {
     it('skips failing fetch if already attempted before', async () => {
         const err = { data: { Code: RESPONSE_CODE.NOT_FOUND } };
         mockFetchLink.mockRejectedValue(err);
-        await act(async () => {
-            const link = hook.current.getLink(abortSignal, 'shareId', 'linkId');
-            await expect(link).rejects.toMatchObject(err);
-            const link2 = hook.current.getLink(abortSignal, 'shareId', 'linkId');
-            await expect(link2).rejects.toMatchObject(err);
-            const link3 = hook.current.getLink(abortSignal, 'shareId', 'linkId2');
-            await expect(link3).rejects.toMatchObject(err);
-        });
+        const link = hook.current.getLink(abortSignal, 'shareId', 'linkId');
+        await expect(link).rejects.toMatchObject(err);
+        const link2 = hook.current.getLink(abortSignal, 'shareId', 'linkId');
+        await expect(link2).rejects.toMatchObject(err);
+        const link3 = hook.current.getLink(abortSignal, 'shareId', 'linkId2');
+        await expect(link3).rejects.toMatchObject(err);
+
         expect(mockLinksState.getLink).toBeCalledWith('shareId', 'linkId');
         expect(mockFetchLink).toBeCalledTimes(2); // linkId once and linkId2
+
+        jest.useRealTimers();
     });
 
     it('skips load of already cached thumbnail', async () => {
