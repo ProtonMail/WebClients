@@ -55,7 +55,7 @@ const UsernameSection = ({ app }: Props) => {
                         <ButtonLike
                             as={AppLink}
                             toApp={APPS.PROTONACCOUNT}
-                            to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}`}
+                            to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&type=settings`}
                             color="norm"
                         >
                             {c('Info').t`Get my ${BRAND_NAME} address`}

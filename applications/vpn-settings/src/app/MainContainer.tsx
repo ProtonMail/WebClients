@@ -134,6 +134,7 @@ const MainContainer = () => {
 
     const header = (
         <PrivateHeader
+            appsDropdown={null}
             userDropdown={
                 <UserDropdown
                     onOpenChat={
@@ -152,7 +153,6 @@ const MainContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
-            appsDropdown={null}
         />
     );
 

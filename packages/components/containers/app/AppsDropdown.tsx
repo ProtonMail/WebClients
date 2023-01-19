@@ -1,25 +1,18 @@
-import { ForwardedRef, Fragment, forwardRef } from 'react';
+import { Children, ForwardedRef, Fragment, forwardRef, isValidElement } from 'react';
 
 import { c } from 'ttag';
 
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { AppLink, Icon, Logo, SettingsLink, SimpleDropdown, VpnLogo } from '../../components';
-import { useApps } from '../../hooks';
+import { Icon, SimpleDropdown } from '../../components';
+import AppsLinks from './AppsLinks';
 
 interface AppsDropdownProps {
     onDropdownClick?: () => void;
+    app: APP_NAMES;
 }
 
-const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
-    const applications = useApps();
-
-    const apps = applications.map((app) => ({
-        app: app,
-        name: getAppName(app),
-    }));
-
+const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
     const itemClassName =
         'dropdown-item-link w100 flex flex-nowrap flex-align-items-center py0-5 pl1 pr1-5 color-norm text-no-decoration';
 
@@ -39,26 +32,16 @@ const AppsDropdown = ({ onDropdownClick, ...rest }: AppsDropdownProps, ref: Forw
             {...rest}
         >
             <ul className="unstyled mt0 mb0">
-                {apps.map(({ app, name }) => {
-                    return (
-                        <Fragment key={app}>
-                            <li className="dropdown-item">
-                                <AppLink key={app} to="/" toApp={app} className={itemClassName} title={name}>
-                                    <Logo appName={app} variant="glyph-only" className="flex-item-noshrink mr0-5" />
-                                    {name}
-                                </AppLink>
-                            </li>
-                            <li className="dropdown-item-hr" aria-hidden="true" />
-                        </Fragment>
-                    );
-                })}
-
-                <li className="dropdown-item">
-                    <SettingsLink path="/" app={APPS.PROTONVPN_SETTINGS} title={VPN_APP_NAME} className={itemClassName}>
-                        <VpnLogo variant="glyph-only" className="mr0-5" />
-                        {VPN_APP_NAME}
-                    </SettingsLink>
-                </li>
+                {Children.toArray(<AppsLinks app={app} itemClassName={itemClassName} name />)
+                    .filter(isValidElement)
+                    .map((child, i, array) => {
+                        return (
+                            <Fragment key={child.key}>
+                                <li className="dropdown-item">{child}</li>
+                                {i !== array.length - 1 && <li className="dropdown-item-hr" aria-hidden="true" />}
+                            </Fragment>
+                        );
+                    })}
             </ul>
         </SimpleDropdown>
     );

@@ -218,11 +218,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             maybeLocalRedirect ||
             (toApp === APPS.PROTONVPN_SETTINGS ? getLocalRedirect(APPS_CONFIGURATION[toApp].settingsSlug) : undefined);
 
-        if (getRequiresAddressSetup(toApp, user) && !localRedirect) {
+        if (getRequiresAddressSetup(toApp, user) && !localRedirect?.pathname.includes(SETUP_ADDRESS_PATH)) {
             const blob = loginPassword
                 ? await getEncryptedSetupBlob(getUIDApi(UID, api), loginPassword).catch(noop)
                 : undefined;
-            const path = `${SETUP_ADDRESS_PATH}?to=${toApp}#${blob || ''}`;
+            const params = new URLSearchParams();
+            params.set('to', toApp);
+            params.set('from', 'switch');
+            const path = `${SETUP_ADDRESS_PATH}?${params.toString()}#${blob || ''}`;
             return onLogin({
                 ...args,
                 path,

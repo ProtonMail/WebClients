@@ -11,7 +11,6 @@ import Header, { Props as HeaderProps } from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 import { useConfig } from '../../hooks';
-import { AppsDropdown } from '../app';
 
 interface Props extends HeaderProps {
     logo?: ReactNode;
@@ -24,7 +23,7 @@ interface Props extends HeaderProps {
     upsellButton?: ReactNode;
     searchBox?: ReactNode;
     searchDropdown?: ReactNode;
-    appsDropdown?: ReactNode;
+    appsDropdown: ReactNode;
     title: string;
     expanded: boolean;
     onToggleExpand?: () => void;
@@ -33,7 +32,7 @@ interface Props extends HeaderProps {
 
 const PrivateHeader = ({
     isNarrow,
-    appsDropdown: AppsDropdownComponent = <AppsDropdown />,
+    appsDropdown,
     upsellButton,
     userDropdown,
     logo,
@@ -75,7 +74,7 @@ const PrivateHeader = ({
             <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
             <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
                 {logo}
-                {AppsDropdownComponent}
+                {appsDropdown}
             </div>
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
             {title && isNarrow ? <span className="text-xl lh-rg myauto text-ellipsis">{title}</span> : null}
