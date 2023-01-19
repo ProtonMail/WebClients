@@ -127,12 +127,12 @@
   --interaction-norm-major-2: #8a6eff;
   --interaction-norm-major-3: #9980ff;
   --interaction-norm-contrast: #ffffff;
-  --interaction-weak-minor-2: #0f0b1d;
-  --interaction-weak-minor-1: #16112b;
-  --interaction-weak: #4a398f;
-  --interaction-weak-major-1: #5c4d9a;
-  --interaction-weak-major-2: #6e61a5;
-  --interaction-weak-major-3: #8074b1;
+  --interaction-weak-minor-2: #0f0a24;
+  --interaction-weak-minor-1: #171035;
+  --interaction-weak: #4c34b2;
+  --interaction-weak-major-1: #5e48ba;
+  --interaction-weak-major-2: #705dc1;
+  --interaction-weak-major-3: #8271c9;
   --interaction-weak-contrast: #ffffff;
   --text-norm: #ded7ff;
   --text-weak: #9282d4;
@@ -151,7 +151,7 @@
   --background-strong: #38277a;
   --interaction-default: transparent;
   --interaction-default-hover: rgb(74 54 143 / 0.3);
-  --interaction-default-active: rgb(74 57 143 / 0.4);
+  --interaction-default-active: rgb(74 57 143 / 0.5);
   --shadow-norm-opacity: 0.32;
   --shadow-lifted-opacity: 0.4;
   --backdrop-norm: rgb(0 0 0 / 0.32);
