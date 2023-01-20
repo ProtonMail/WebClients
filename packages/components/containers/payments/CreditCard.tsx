@@ -9,7 +9,7 @@ import ExpInput from './ExpInput';
 import { CardModel } from './interface';
 
 interface Props {
-    onChange: (key: string, value: string) => void;
+    onChange: (key: keyof CardModel, value: string) => void;
     loading?: boolean;
     card: CardModel;
     errors: Partial<CardModel>;
