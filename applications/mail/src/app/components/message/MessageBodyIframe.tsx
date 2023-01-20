@@ -121,6 +121,7 @@ const MessageBodyIframe = ({
                     isPrint={isPrint}
                     messageImages={message.messageImages}
                     localID={message.localID}
+                    useProxy={!!mailSettings?.ImageProxy}
                 />
             )}
             {showToggle &&

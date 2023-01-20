@@ -9,9 +9,10 @@ interface Props {
     isPrint: boolean;
     onImagesLoaded?: () => void;
     localID: string;
+    useProxy: boolean;
 }
 
-const MessageBodyImages = ({ messageImages, iframeRef, isPrint, onImagesLoaded, localID }: Props) => {
+const MessageBodyImages = ({ messageImages, iframeRef, isPrint, onImagesLoaded, localID, useProxy }: Props) => {
     const hasTriggeredLoaded = useRef<boolean>(false);
 
     useEffect(() => {
@@ -33,6 +34,7 @@ const MessageBodyImages = ({ messageImages, iframeRef, isPrint, onImagesLoaded, 
                           image={image}
                           isPrint={isPrint}
                           localID={localID}
+                          useProxy={useProxy}
                       />
                   ))
                 : null}

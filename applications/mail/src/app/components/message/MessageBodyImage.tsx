@@ -66,6 +66,7 @@ interface Props {
     isPrint?: boolean;
     iframeRef: RefObject<HTMLIFrameElement>;
     localID: string;
+    useProxy: boolean;
 }
 
 const MessageBodyImage = ({
@@ -76,6 +77,7 @@ const MessageBodyImage = ({
     isPrint,
     iframeRef,
     localID,
+    useProxy,
 }: Props) => {
     const dispatch = useAppDispatch();
     const api = useApi();
@@ -109,7 +111,10 @@ const MessageBodyImage = ({
         // If the image fails to load from the URL, we have no way to know why it has failed
         // But depending on the error, we want to handle it differently
         // In that case, we try to load the image "the old way", we will have more control on the error
-        if (type === 'remote') {
+        // Only make this call when user is using proxy.
+        // - Without proxy we are already trying to load direct
+        // - With EO, we are also already trying to load direct
+        if (type === 'remote' && useProxy) {
             await dispatch(loadRemoteProxy({ ID: localID, imageToLoad: image, api }));
         }
     };

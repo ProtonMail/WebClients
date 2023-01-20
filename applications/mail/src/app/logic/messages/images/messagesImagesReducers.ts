@@ -114,54 +114,59 @@ export const loadRemoteProxyFulFilled = (
 };
 
 export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: PayloadAction<LoadRemoteFromURLParams>) => {
-    const { imageToLoad, ID, uid } = action.payload;
+    const { imagesToLoad, ID, uid } = action.payload;
 
     const messageState = getMessage(state, ID);
 
-    if (messageState && messageState.messageImages && uid) {
-        const imageToLoadState = getStateImage({ image: imageToLoad }, messageState);
-        const { image, inputImage } = imageToLoadState;
-        let newImage: MessageRemoteImage = { ...inputImage };
+    if (messageState) {
+        imagesToLoad.forEach((imageToLoad) => {
+            if (messageState.messageImages) {
+                const imageToLoadState = getStateImage({ image: imageToLoad }, messageState);
+                const { image, inputImage } = imageToLoadState;
+                let newImage: MessageRemoteImage = { ...inputImage };
 
-        if (imageToLoad.url) {
-            // Forge proxy URL
-            const encodedImageUrl = encodeImageUri(imageToLoad.url);
-            const loadingURL = forgeImageURL(encodedImageUrl, uid);
+                if (imageToLoad.url && uid) {
+                    const encodedImageUrl = encodeImageUri(imageToLoad.url);
+                    const loadingURL = forgeImageURL(encodedImageUrl, uid);
 
-            if (image) {
-                image.status = 'loaded';
-                image.originalURL = image.url;
-                image.url = loadingURL;
-                image.error = undefined;
-            } else if (Array.isArray(messageState.messageImages.images)) {
-                newImage = {
-                    ...newImage,
-                    status: 'loaded',
-                    originalURL: inputImage.url,
-                    url: loadingURL,
-                };
-                messageState.messageImages.images.push(newImage);
+                    // Image is already in state, we only need to put it as loaded
+                    if (image) {
+                        image.status = 'loaded';
+                        image.originalURL = image.url;
+                        image.error = undefined;
+                        image.url = loadingURL;
+                    } else if (Array.isArray(messageState.messageImages.images)) {
+                        // Image not found in the state, we need to add it
+                        newImage = {
+                            ...newImage,
+                            status: 'loaded',
+                            originalURL: inputImage.url,
+                            url: loadingURL,
+                        };
+                        messageState.messageImages.images.push(newImage);
+                    }
+
+                    messageState.messageImages.showRemoteImages = true;
+
+                    loadImages([image ? image : newImage], messageState.messageDocument?.document);
+
+                    loadBackgroundImages({
+                        document: messageState.messageDocument?.document,
+                        images: [image ? image : newImage],
+                    });
+                } else {
+                    if (image) {
+                        image.error = 'No URL';
+                    } else if (Array.isArray(messageState.messageImages.images)) {
+                        messageState.messageImages.images.push({
+                            ...inputImage,
+                            error: 'No URL',
+                            status: 'loaded',
+                        });
+                    }
+                }
             }
-
-            messageState.messageImages.showRemoteImages = true;
-
-            loadImages([image ? image : newImage], messageState.messageDocument?.document);
-
-            loadBackgroundImages({
-                document: messageState.messageDocument?.document,
-                images: [image ? image : newImage],
-            });
-        } else {
-            if (image) {
-                image.error = 'No URL';
-            } else if (Array.isArray(messageState.messageImages.images)) {
-                messageState.messageImages.images.push({
-                    ...inputImage,
-                    error: 'No URL',
-                    status: 'loaded',
-                });
-            }
-        }
+        });
     }
 };
 
@@ -203,34 +208,64 @@ export const loadFakeProxyFulFilled = (
     }
 };
 
-export const loadRemoteDirectFulFilled = (
+export const loadRemoteDirectFromURL = (
     state: Draft<MessagesState>,
-    {
-        payload,
-        meta: {
-            arg: { ID },
-        },
-    }: PayloadAction<LoadRemoteResults, string, { arg: LoadRemoteParams }>
+    action: PayloadAction<LoadRemoteFromURLParams>
 ) => {
+    const { imagesToLoad, ID } = action.payload;
+
     const messageState = getMessage(state, ID);
 
-    if (messageState && messageState.messageImages) {
-        const { image, error } = getStateImage(payload, messageState);
+    if (messageState) {
+        imagesToLoad.forEach((imageToLoad) => {
+            if (messageState.messageImages) {
+                const imageToLoadState = getStateImage({ image: imageToLoad }, messageState);
+                const { image, inputImage } = imageToLoadState;
+                let newImage: MessageRemoteImage = { ...inputImage };
 
-        if (image) {
-            // Could have been removed before
-            image.url = image.originalURL;
-            if (image.original instanceof HTMLElement) {
-                image.original.setAttribute('src', image.originalURL as string);
-                image.original.removeAttribute('proton-src');
+                if (imageToLoad.url || imageToLoad.originalURL) {
+                    // Image is already in state, we only need to put it as loaded
+                    if (image) {
+                        image.status = 'loaded';
+                        image.error = undefined;
+                        if (image.url) {
+                            image.originalURL = image.url;
+                        } else {
+                            // When using load direct, imageToLoad.url might have been removed
+                            image.url = imageToLoad.originalURL;
+                            image.originalURL = imageToLoad.url;
+                        }
+                    } else if (Array.isArray(messageState.messageImages.images)) {
+                        // Image not found in the state, we need to add it
+                        newImage = {
+                            ...newImage,
+                            status: 'loaded',
+                            originalURL: inputImage.url,
+                            url: inputImage.url,
+                        };
+                        messageState.messageImages.images.push(newImage);
+                    }
+
+                    messageState.messageImages.showRemoteImages = true;
+
+                    loadImages([image ? image : newImage], messageState.messageDocument?.document);
+
+                    loadBackgroundImages({
+                        document: messageState.messageDocument?.document,
+                        images: [image ? image : newImage],
+                    });
+                } else {
+                    if (image) {
+                        image.error = 'No URL';
+                    } else if (Array.isArray(messageState.messageImages.images)) {
+                        messageState.messageImages.images.push({
+                            ...inputImage,
+                            error: 'No URL',
+                            status: 'loaded',
+                        });
+                    }
+                }
             }
-            image.error = error;
-            image.status = 'loaded';
-        }
-
-        messageState.messageImages.showRemoteImages = true;
-
-        loadImages([image], messageState.messageDocument?.document);
-        loadBackgroundImages({ document: messageState.messageDocument?.document, images: [image] });
+        });
     }
 };
