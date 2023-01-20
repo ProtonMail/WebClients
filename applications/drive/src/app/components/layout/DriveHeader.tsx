@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import {
+    AppsDropdown,
     PrivateHeader,
     RebrandingFeedbackModal,
     TopNavbarListItemContactsDropdown,
@@ -45,6 +46,7 @@ export const DriveHeader = ({
         <>
             {renderOnboardingModal && <DriveOnboardingModal showGenericSteps {...onboardingModal} />}
             <PrivateHeader
+                appsDropdown={<AppsDropdown app={APPS.PROTONDRIVE} />}
                 feedbackButton={
                     hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />

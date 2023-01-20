@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import {
+    AppsDropdown,
     DropdownMenuButton,
     FloatingButton,
     Icon,
@@ -109,6 +110,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     return (
         <>
             <PrivateHeader
+                appsDropdown={<AppsDropdown app={APPS.PROTONMAIL} />}
                 userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModalOpen(true)} />}
                 logo={logo}
                 backUrl={showBackButton && backUrl ? backUrl : undefined}
