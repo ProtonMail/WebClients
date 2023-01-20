@@ -14,10 +14,10 @@ import {
     removeAllQuickReplyFlags,
     removeInitialAttachments,
     removeQuickReplyFlag,
-    updateDraftContent,
     sendModifications,
     sent,
     startSending,
+    updateDraftContent,
     updateExpires,
     updateIsSavingFlag,
     updateScheduled,
@@ -34,10 +34,10 @@ import {
     removeAllQuickReplyFlags as removeAllQuickReplyFlagsReducer,
     removeInitialAttachments as removeInitialAttachmentsReducer,
     removeQuickReplyFlag as removeQuickReplyFlagReducer,
-    updateDraftContent as updateDraftContentReducer,
     sendModifications as sendModificationsReducer,
     sent as sentReducer,
     startSending as startSendingReducer,
+    updateDraftContent as updateDraftContentReducer,
     updateExpires as updateExpiresReducer,
     updateIsSavingFlag as updateIsSavingFlagReducer,
     updateScheduled as updateScheduledReducer,
@@ -46,7 +46,7 @@ import { updateFromElements } from './helpers/messagesReducer';
 import {
     loadEmbedded,
     loadFakeProxy,
-    loadRemoteDirect,
+    loadRemoteDirectFromURL,
     loadRemoteProxy,
     loadRemoteProxyFromURL,
 } from './images/messagesImagesActions';
@@ -54,7 +54,7 @@ import {
     loadEmbeddedFulfilled,
     loadFakeProxyFulFilled,
     loadFakeProxyPending,
-    loadRemoteDirectFulFilled,
+    loadRemoteDirectFromURL as loadRemoteDirectFromURLReducer,
     loadRemotePending,
     loadRemoteProxyFromURL as loadRemoteProxyFromURLReducer,
     loadRemoteProxyFulFilled,
@@ -131,8 +131,7 @@ const messagesSlice = createSlice({
         builder.addCase(loadRemoteProxy.fulfilled, loadRemoteProxyFulFilled);
         builder.addCase(loadFakeProxy.pending, loadFakeProxyPending);
         builder.addCase(loadFakeProxy.fulfilled, loadFakeProxyFulFilled);
-        builder.addCase(loadRemoteDirect.pending, loadRemotePending);
-        builder.addCase(loadRemoteDirect.fulfilled, loadRemoteDirectFulFilled);
+        builder.addCase(loadRemoteDirectFromURL, loadRemoteDirectFromURLReducer);
         builder.addCase(loadRemoteProxyFromURL, loadRemoteProxyFromURLReducer);
 
         builder.addCase(optimisticApplyLabels, optimisticApplyLabelsReducer);

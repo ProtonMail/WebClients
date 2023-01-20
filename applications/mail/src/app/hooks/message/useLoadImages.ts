@@ -4,19 +4,18 @@ import { useApi, useAuthentication, useMailSettings } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { updateImages } from '../../helpers/message/messageImages';
+import {
+    handleDispatchLoadFakeImagesProxy,
+    handleDispatchLoadImagesProxy,
+    handleDispatchLoadRemoteImagesDirect,
+    updateImages,
+} from '../../helpers/message/messageImages';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import {
-    loadEmbedded,
-    loadFakeProxy,
-    loadRemoteDirect,
-    loadRemoteProxyFromURL,
-} from '../../logic/messages/images/messagesImagesActions';
+import { loadEmbedded } from '../../logic/messages/images/messagesImagesActions';
 import {
     LoadEmbeddedResults,
-    LoadRemoteResults,
     MessageRemoteImage,
     MessageState,
     MessageStateWithData,
@@ -37,26 +36,15 @@ export const useLoadRemoteImages = (localID: string) => {
         const message = getMessage(localID) as MessageState;
 
         const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
-            const dispatchResult = imagesToLoad.map((image) => {
-                return dispatch(
-                    loadRemoteProxyFromURL({ ID: localID, imageToLoad: image, uid: authentication.getUID() })
-                );
-            });
-            return dispatchResult as any as Promise<LoadRemoteResults[]>;
+            return handleDispatchLoadImagesProxy(localID, imagesToLoad, authentication, dispatch);
         };
 
         const handleLoadFakeImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
-            const dispatchResult = imagesToLoad.map((image) => {
-                return dispatch(loadFakeProxy({ ID: localID, imageToLoad: image, api }));
-            });
-            return dispatchResult as any as Promise<LoadRemoteResults[]>;
+            return handleDispatchLoadFakeImagesProxy(localID, imagesToLoad, api, dispatch);
         };
 
         const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
-            const dispatchResult = imagesToLoad.map((image) => {
-                return dispatch(loadRemoteDirect({ ID: localID, imageToLoad: image, api }));
-            });
-            return dispatchResult as any as Promise<LoadRemoteResults[]>;
+            return handleDispatchLoadRemoteImagesDirect(localID, imagesToLoad, dispatch);
         };
 
         transformRemote(

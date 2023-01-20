@@ -4,7 +4,6 @@ import { getImage } from '@proton/shared/lib/api/images';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
 import { get } from '../../../helpers/attachment/attachmentLoader';
-import { preloadImage } from '../../../helpers/dom';
 import { createBlob } from '../../../helpers/message/messageEmbeddeds';
 import encodeImageUri from '../helpers/encodeImageUri';
 import {
@@ -109,16 +108,4 @@ export const loadFakeProxy = createAsyncThunk<LoadRemoteResults | undefined, Loa
     }
 );
 
-export const loadRemoteDirect = createAsyncThunk<LoadRemoteResults, LoadRemoteParams>(
-    'messages/remote/load/direct',
-    async ({ imageToLoad }) => {
-        try {
-            // First load, use url, second try, url is blank, use originalURL
-            const url = imageToLoad.originalURL || imageToLoad.url || '';
-            await preloadImage(url);
-            return { image: imageToLoad };
-        } catch (error) {
-            return { image: imageToLoad, error };
-        }
-    }
-);
+export const loadRemoteDirectFromURL = createAction<LoadRemoteFromURLParams>('messages/remote/load/direct/url');
