@@ -39,9 +39,9 @@ export interface PaypalPayment {
 
 export type Payment = CardPayment | TokenPayment | PaypalPayment;
 
-export interface PaymentParameters {
+export interface PaymentParameters<T extends Payment = Payment> {
     PaymentMethodID?: string;
-    Payment?: Payment;
+    Payment?: T;
 }
 
 export interface Params extends PaymentParameters {
