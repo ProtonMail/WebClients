@@ -62,7 +62,7 @@ const DriveWindow = ({ children }: Props) => {
     const top = <TopBanners>{fileRecoveryBanner}</TopBanners>;
 
     const logo = <MainLogo to="/" />;
-    const header = <DriveHeaderPrivate logo={logo} isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
+    const header = <DriveHeaderPrivate isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
 
     const permissions = getDriveDrawerPermissions({ user, drawerFeature });
     const drawerSidebarButtons = [
