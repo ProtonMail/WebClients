@@ -1,5 +1,6 @@
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AppIntent } from '@proton/components/containers/login/interface';
+import { isTokenPayment } from '@proton/components/containers/payments/interface';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -312,8 +313,7 @@ export const handlePayment = ({
 
     if (
         (cache.accountData.signupType === SignupType.Username || cache.accountData.signupType === SignupType.VPN) &&
-        subscriptionData.payment &&
-        'Token' in (subscriptionData.payment.Details ?? {})
+        isTokenPayment(subscriptionData.payment)
     ) {
         // Use payment token to prove humanity for a username paid account
         humanVerificationResult = {
