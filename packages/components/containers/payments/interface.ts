@@ -1,4 +1,4 @@
-import { CYCLE, PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
+import { CYCLE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Currency, PlanIDs } from '@proton/shared/lib/interfaces';
 
 interface TokenPaymentDetails {
@@ -15,10 +15,29 @@ interface CardPaymentDetails {
     Country: string;
 }
 
-export interface Payment {
-    Type: PAYMENT_METHOD_TYPE;
-    Details: TokenPaymentDetails | CardPaymentDetails;
+export interface CardPayment {
+    Type: PAYMENT_METHOD_TYPES.CARD;
+    Details: CardPaymentDetails;
 }
+
+interface TokenPaymentDetails {
+    Token: string;
+}
+
+export interface TokenPayment {
+    Type: PAYMENT_METHOD_TYPES.TOKEN;
+    Details: TokenPaymentDetails;
+}
+
+export function isTokenPayment(payment?: Payment): payment is TokenPayment {
+    return payment?.Type === PAYMENT_METHOD_TYPES.TOKEN || !!(payment as any)?.Details?.Token;
+}
+
+export interface PaypalPayment {
+    Type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
+}
+
+export type Payment = CardPayment | TokenPayment | PaypalPayment;
 
 export interface PaymentParameters {
     PaymentMethodID?: string;
