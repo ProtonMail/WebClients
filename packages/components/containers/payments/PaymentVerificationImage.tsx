@@ -1,5 +1,4 @@
 import creditCardType from 'credit-card-type';
-import PropTypes from 'prop-types';
 
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import treeDSecureSvg from '@proton/styles/assets/img/bank-icons/3d-secure.svg';
@@ -9,31 +8,39 @@ import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/master
 import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure.svg';
 
-const getImage = (type) => {
-    const images = {
+import { CardPayment, PaypalPayment, isCardPayment, isPaypalPayment } from './interface';
+
+const getImage = (type: string): string => {
+    const images: Record<string, string> = {
         'american-express': americanExpressSafekeySvg,
         discover: discoverProtectBuySvg,
         mastercard: mastercardSecurecodeSvg,
         visa: verifiedByVisaSvg,
     };
 
-    return images[type] || treeDSecureSvg;
+    return images[type] ?? treeDSecureSvg;
 };
 
-const PaymentVerificationImage = ({ payment = {}, type: paymentMethodType = PAYMENT_METHOD_TYPES.CARD }) => {
-    if ([PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT].includes(paymentMethodType)) {
+const PaymentVerificationImage = ({ payment, type }: Props) => {
+    const isPaypalType = [PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT].includes(type);
+
+    if (isPaypalPayment(payment) || isPaypalType) {
         return <img src={paypalSvg} alt="PayPal" />;
     }
 
-    const { Details = {} } = payment;
-    const [{ type, niceType } = {}] = creditCardType(Details.Number) || [];
+    if (!isCardPayment(payment)) {
+        return null;
+    }
 
-    return <img src={getImage(type)} alt={niceType} />;
+    const cardTypes = creditCardType(payment.Details.Number);
+    const { type: cardType, niceType } = cardTypes[0] ?? { type: '', niceType: '' };
+
+    return <img src={getImage(cardType)} alt={niceType} />;
 };
 
-PaymentVerificationImage.propTypes = {
-    payment: PropTypes.object,
-    type: PropTypes.string,
-};
+export interface Props {
+    payment: PaypalPayment | CardPayment | {};
+    type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
+}
 
 export default PaymentVerificationImage;

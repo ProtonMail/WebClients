@@ -20,6 +20,10 @@ export interface CardPayment {
     Details: CardPaymentDetails;
 }
 
+export function isCardPayment(payment: any): payment is CardPayment {
+    return payment?.Type === PAYMENT_METHOD_TYPES.CARD && !!payment?.Details;
+}
+
 interface TokenPaymentDetails {
     Token: string;
 }
@@ -35,6 +39,12 @@ export function isTokenPayment(payment?: Payment): payment is TokenPayment {
 
 export interface PaypalPayment {
     Type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
+}
+
+export function isPaypalPayment(payment: any): payment is PaypalPayment {
+    return (
+        payment && (payment.Type === PAYMENT_METHOD_TYPES.PAYPAL || payment.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT)
+    );
 }
 
 export type Payment = CardPayment | TokenPayment | PaypalPayment;
