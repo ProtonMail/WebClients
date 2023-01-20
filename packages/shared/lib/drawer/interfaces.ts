@@ -12,6 +12,11 @@ export interface OpenDrawerArgs {
     path?: string;
 }
 
+export interface DrawerLocalStorageValue {
+    app: DRAWER_APPS;
+    url?: string;
+}
+
 /**
  * Events sent from or to the drawer app
  */
@@ -25,6 +30,7 @@ export enum DRAWER_EVENTS {
     API_REQUEST = 'api-request',
     API_RESPONSE = 'api-response',
     ABORT_REQUEST = 'api-request-abort',
+    CHILD_URL_UPDATE = 'child-url-update',
 
     // Global outside iframe events
     CALL_EVENT_MANAGER_FROM_OUTSIDE = 'outside-call-event-manager',
@@ -106,6 +112,14 @@ interface API_ABORT_REQUEST {
     };
 }
 
+interface CHILD_URL_UPDATE {
+    type: DRAWER_EVENTS.CHILD_URL_UPDATE;
+    payload: {
+        url: string;
+        app: DRAWER_APPS;
+    };
+}
+
 // Global outside iframe events
 interface CALL_EVENT_MANAGER_OUTSIDE {
     type: DRAWER_EVENTS.CALL_EVENT_MANAGER_FROM_OUTSIDE;
@@ -174,6 +188,7 @@ export type DRAWER_ACTION =
     | API_REQUEST
     | API_RESPONSE
     | API_ABORT_REQUEST
+    | CHILD_URL_UPDATE
     | CALL_EVENT_MANAGER_OUTSIDE
     | DRAWER_UPDATE_THEME
     | CALENDAR_OPEN_EVENT

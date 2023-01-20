@@ -14,6 +14,7 @@ import {
     TopBanners,
     useDrawer,
     useFeature,
+    useOpenDrawerOnLoad,
     useToggle,
     useUser,
 } from '@proton/components';
@@ -42,6 +43,7 @@ const DriveWindow = ({ children }: Props) => {
 
     const { isReadOnly } = useIsActiveLinkReadOnly();
 
+    useOpenDrawerOnLoad();
     const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
     const { showDrawerSidebar, appInView } = useDrawer();
     const location = useLocation();

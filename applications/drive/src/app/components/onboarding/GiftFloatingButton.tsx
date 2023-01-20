@@ -11,9 +11,9 @@ import {
     Spotlight,
     useActiveBreakpoint,
     useAuthentication,
+    useDrawerWidth,
     useLocalState,
 } from '@proton/components';
-import { useDrawerWidth } from '@proton/components/hooks/useDrawerWidth';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';

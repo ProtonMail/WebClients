@@ -3,8 +3,7 @@ import { useStore } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useBeforeUnload, useHandler } from '@proton/components';
-import { useDrawerWidth } from '@proton/components/hooks/useDrawerWidth';
+import { useBeforeUnload, useHandler, useDrawerWidth } from '@proton/components';
 
 import ComposerFrame from '../components/composer/ComposerFrame';
 import { MAX_ACTIVE_COMPOSER_DESKTOP, MAX_ACTIVE_COMPOSER_MOBILE } from '../helpers/composerPositioning';

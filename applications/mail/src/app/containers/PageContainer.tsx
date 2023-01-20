@@ -13,6 +13,7 @@ import {
     useLabels,
     useMailSettings,
     useModalState,
+    useOpenDrawerOnLoad,
     useUserSettings,
     useWelcomeFlags,
 } from '@proton/components';
@@ -53,6 +54,7 @@ const PageContainer = (
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
     const { showDrawerSidebar, appInView } = useDrawer();
 
+    useOpenDrawerOnLoad();
     const { getFeature } = useFeatures([FeatureCode.Drawer, FeatureCode.LegacyMessageMigrationEnabled]);
     const { feature: drawerFeature } = getFeature(FeatureCode.Drawer);
     const { feature: runLegacyMessageFeature } = getFeature(FeatureCode.LegacyMessageMigrationEnabled);
