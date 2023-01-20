@@ -6,7 +6,6 @@ export { default as useApi } from './useApi';
 export { default as useApiResult } from './useApiResult';
 export { default as useApiWithoutResult } from './useApiWithoutResult';
 export { default as useAppTitle } from './useAppTitle';
-export { default as useApps } from './useApps';
 export { default as useAuthentication } from './useAuthentication';
 export { default as useAutocompleteAriaProps } from './useAutocompleteAriaProps';
 export { default as useBeforeUnload } from './useBeforeUnload';
