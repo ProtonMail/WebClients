@@ -661,7 +661,7 @@ describe('SubscriptionsSection', () => {
     });
 
     it('should render current upcoming subscription', () => {
-        subscription.upcoming = upcoming;
+        subscription.UpcomingSubscription = upcoming;
 
         const { container } = render(<SubscriptionsSection />);
 
@@ -680,7 +680,7 @@ describe('SubscriptionsSection', () => {
     });
 
     it('should show renewal date as end of the upcoming subscription if there is one', () => {
-        subscription.upcoming = upcoming;
+        subscription.UpcomingSubscription = upcoming;
         const { container } = render(<SubscriptionsSection />);
         expect(container).toHaveTextContent('* Renews automatically on Dec 21, 2024');
     });
