@@ -18,7 +18,7 @@
         "@proton/utils": "workspace:packages/utils",
         "@reduxjs/toolkit": "^1.9",
         "@types/jest": "^28.1.8",
-        "@types/react": "^17.0.52",
+        "@types/react": "^17.0.53",
         "@types/react-dom": "^17.0.18",
         "cross-env": "^7.0.3",
         "date-fns": "^2.29.3",
@@ -30,19 +30,19 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "@testing-library/dom": "^8.19.1",
+        "@testing-library/dom": "^8.20.0",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^12.1.5",
         "@testing-library/react-hooks": "^8.0.1",
         "babel-jest": "^28.1.3",
         "babel-plugin-transform-require-context": "^0.1.1",
         "cross-fetch": "^3.1.5",
-        "eslint": "^8.31.0",
+        "eslint": "^8.32.0",
         "jest": "^28.1.3",
         "jest-environment-jsdom": "^28.1.3",
         "jest-junit": "^14.0.1",
-        "msw": "^0.49.2",
-        "prettier": "^2.8.2",
+        "msw": "^0.49.3",
+        "prettier": "^2.8.3",
         "typescript": "^4.9.4"
     }
 }

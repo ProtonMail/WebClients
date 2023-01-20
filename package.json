@@ -19,7 +19,7 @@
     "resolutions": {
         "@noble/ed25519@1.7.1": "patch:@noble/ed25519@npm:1.7.1#.yarn/patches/@noble-ed25519-npm-1.6.0-59c82563e0",
         "@types/jest": "^27.5.2",
-        "@types/react": "^17.0.52",
+        "@types/react": "^17.0.53",
         "@types/react-dom": "^17.0.18",
         "client-zip@2.3.0": "patch:client-zip@npm:2.3.0#.yarn/patches/client-zip-npm-2.3.0-366ca56ce9.patch",
         "memfs": "^3.4.13",
@@ -36,7 +36,7 @@
         "@trivago/prettier-plugin-sort-imports": "^4.0.0",
         "husky": "^8.0.3",
         "lint-staged": "^13.1.0",
-        "prettier": "^2.8.2",
+        "prettier": "^2.8.3",
         "sort-package-json": "^2.1.0"
     },
     "packageManager": "yarn@3.3.1",
