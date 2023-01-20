@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import {
     AppLink,
-    AppsDropdown,
     FeatureCode,
     Logo,
     PrivateAppContainer,
@@ -156,11 +155,9 @@ const MainContainer = () => {
 
     const header = (
         <PrivateHeader
-            appsDropdown={<AppsDropdown app={app} />}
             userDropdown={<UserDropdown />}
             // No onboarding in account
             upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} />}
-            logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}

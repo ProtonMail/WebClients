@@ -3,17 +3,14 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { useNoBFCookie } from '../..';
 import { AppLink, Hamburger, Icon } from '../../components';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
-import { useConfig } from '../../hooks';
 
 interface Props extends HeaderProps {
-    logo?: ReactNode;
     settingsButton?: ReactNode;
     userDropdown?: ReactNode;
     contactsButton?: ReactNode;
@@ -23,7 +20,6 @@ interface Props extends HeaderProps {
     upsellButton?: ReactNode;
     searchBox?: ReactNode;
     searchDropdown?: ReactNode;
-    appsDropdown: ReactNode;
     title: string;
     expanded: boolean;
     onToggleExpand?: () => void;
@@ -32,10 +28,8 @@ interface Props extends HeaderProps {
 
 const PrivateHeader = ({
     isNarrow,
-    appsDropdown,
     upsellButton,
     userDropdown,
-    logo,
     settingsButton,
     contactsButton,
     feedbackButton,
@@ -48,7 +42,6 @@ const PrivateHeader = ({
     title,
 }: Props) => {
     useNoBFCookie();
-    const { APP_NAME } = useConfig();
 
     if (backUrl) {
         return (
@@ -71,11 +64,6 @@ const PrivateHeader = ({
 
     return (
         <Header>
-            <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-            <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
-                {logo}
-                {appsDropdown}
-            </div>
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
             {title && isNarrow ? <span className="text-xl lh-rg myauto text-ellipsis">{title}</span> : null}
             {isNarrow ? null : searchBox}

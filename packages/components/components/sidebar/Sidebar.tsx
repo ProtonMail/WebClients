@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef, ReactNode, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
@@ -26,11 +27,13 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     version?: ReactNode;
     storageGift?: ReactNode;
     hasAppLinks?: boolean;
+    appsDropdown: ReactNode;
 }
 
 const Sidebar = ({
     app,
     expanded = false,
+    appsDropdown,
     onToggleExpand,
     hasAppLinks = true,
     logo,
@@ -84,9 +87,11 @@ const Sidebar = ({
             {...rest}
             {...focusTrapProps}
         >
-            <div className="no-desktop no-tablet flex-item-noshrink">
-                <div className="flex flex-justify-space-between flex-align-items-center pl1 pr1">
-                    {logo}
+            <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
+            <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap">
+                {logo}
+                <div className="no-mobile">{appsDropdown}</div>
+                <div className="no-desktop no-tablet flex-item-noshrink">
                     <Hamburger expanded={expanded} onToggle={onToggleExpand} />
                 </div>
             </div>
