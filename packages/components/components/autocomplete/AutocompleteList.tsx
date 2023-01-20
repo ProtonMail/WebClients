@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Dropdown, DropdownSizeUnit } from '../dropdown';
 import { Props as OptionProps } from '../option/Option';
+import { verticalPopperPlacements } from '../popper/utils';
 
 interface Props<V> {
     id: string;
@@ -53,6 +54,7 @@ const AutocompleteList = <V,>({ id, children, onClose, isOpen, highlightedIndex,
                 onClose={onClose}
                 offset={4}
                 noCaret
+                availablePlacements={verticalPopperPlacements}
                 size={{
                     width: DropdownSizeUnit.Anchor,
                     height: DropdownSizeUnit.Dynamic,
