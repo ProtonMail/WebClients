@@ -36,16 +36,21 @@ const HeaderCell = <T,>({
 }) => {
     const selectionControls = useSelection();
     if (item.type === HeaderCellsPresets.Checkbox && selectionControls) {
-        const allSelected = Boolean(itemCount && itemCount === selectionControls.selectedItemIds.length);
+        const selectedCount = selectionControls?.selectedItemIds.length;
+        const allSelected = Boolean(itemCount && itemCount === selectedCount);
+        const isIndeterminate = !allSelected && Boolean(selectedCount);
 
         return (
             <TableHeaderCell className="file-browser-header-checkbox-cell">
                 <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
                     <Checkbox
+                        indeterminate={isIndeterminate}
                         className="increase-click-surface"
                         disabled={!itemCount}
-                        checked={allSelected}
-                        onChange={selectionControls.toggleAllSelected}
+                        checked={Boolean(selectedCount)}
+                        onChange={
+                            isIndeterminate ? selectionControls.clearSelections : selectionControls.toggleAllSelected
+                        }
                     />
                 </div>
             </TableHeaderCell>
