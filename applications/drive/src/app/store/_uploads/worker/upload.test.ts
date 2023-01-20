@@ -12,6 +12,10 @@ describe('upload jobs', () => {
 
     let pauser: Pauser;
 
+    beforeAll(() => {
+        jest.spyOn(global.console, 'warn').mockReturnValue();
+    });
+
     beforeEach(() => {
         jest.clearAllMocks();
 
