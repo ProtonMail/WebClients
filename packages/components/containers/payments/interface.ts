@@ -1,5 +1,5 @@
 import { CYCLE, PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
-import { PlanIDs } from '@proton/shared/lib/interfaces';
+import { Currency, PlanIDs } from '@proton/shared/lib/interfaces';
 
 interface TokenPaymentDetails {
     Token: string;
@@ -27,7 +27,7 @@ export interface PaymentParameters {
 
 export interface Params extends PaymentParameters {
     Amount: number;
-    Currency: string;
+    Currency: Currency;
 }
 
 export interface CardModel {
