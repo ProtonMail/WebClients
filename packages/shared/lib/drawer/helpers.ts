@@ -127,14 +127,14 @@ export const addParentAppToUrl = (url: string, currentApp: APP_NAMES, replacePat
 
 export const getDisplayContactsInDrawer = (app: APP_NAMES, drawerFeature?: Feature<DrawerFeatureFlag>) => {
     if (app === APPS.PROTONMAIL) {
-        return drawerFeature?.Value.ContactsInMail;
+        return !!drawerFeature?.Value.ContactsInMail;
     } else if (app === APPS.PROTONCALENDAR) {
-        return drawerFeature?.Value.ContactsInCalendar;
+        return !!drawerFeature?.Value.ContactsInCalendar;
     } else if (app === APPS.PROTONDRIVE) {
-        return drawerFeature?.Value.ContactsInDrive;
+        return !!drawerFeature?.Value.ContactsInDrive;
     }
 
-    return undefined;
+    return false;
 };
 
 export const closeDrawerFromChildApp = (parentApp: APP_NAMES, currentApp: APP_NAMES, closeDefinitely?: boolean) => {
@@ -153,4 +153,26 @@ export const closeDrawerFromChildApp = (parentApp: APP_NAMES, currentApp: APP_NA
 
 export const isAppInView = (currentApp: DRAWER_APPS, appInView?: DRAWER_APPS) => {
     return appInView ? appInView === currentApp : false;
+};
+
+export const getDisplayCalendarInDrawer = (app: APP_NAMES, drawerFeature: Feature<DrawerFeatureFlag>) => {
+    if (app === APPS.PROTONMAIL) {
+        return !!drawerFeature?.Value.CalendarInMail;
+    } else if (app === APPS.PROTONDRIVE) {
+        return !!drawerFeature?.Value.CalendarInDrive;
+    }
+
+    return false;
+};
+
+export const getDisplayDrawerApp = (
+    currentApp: APP_NAMES,
+    toOpenApp: DRAWER_APPS,
+    drawerFeature: Feature<DrawerFeatureFlag>
+) => {
+    if (toOpenApp === APPS.PROTONCALENDAR) {
+        return getDisplayCalendarInDrawer(currentApp, drawerFeature);
+    } else if (toOpenApp === APPS.PROTONCONTACTS) {
+        return getDisplayContactsInDrawer(currentApp, drawerFeature);
+    }
 };

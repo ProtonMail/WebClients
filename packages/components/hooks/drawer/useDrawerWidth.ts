@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { useDrawer } from '@proton/components/hooks/index';
+import { useDrawer } from '@proton/components/hooks';
 
-export const useDrawerWidth = () => {
+const useDrawerWidth = () => {
     const [sidebarWidth, setSidebarWidth] = useState(0);
     const [appWidth, setAppWidth] = useState(0);
     const { showDrawerSidebar, drawerSidebarMounted } = useDrawer();
@@ -40,3 +40,5 @@ export const useDrawerWidth = () => {
 
     return appWidth + sidebarWidth;
 };
+
+export default useDrawerWidth;

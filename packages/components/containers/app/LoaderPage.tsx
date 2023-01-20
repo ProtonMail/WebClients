@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { closeDrawerFromChildApp, getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
+import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
 
 import { Icon, TextLoader, Tooltip } from '../../components';
@@ -21,7 +22,7 @@ interface Props {
 const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
     const { APP_NAME } = useConfig();
 
-    const isIframe = window.self !== window.top;
+    const isIframe = getIsIframe();
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const isDrawerApp = isIframe && !!parentApp && getIsAuthorizedApp(parentApp);
 

@@ -17,7 +17,7 @@ import {
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { SSO_PATHS, isSSOMode } from '@proton/shared/lib/constants';
 import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import { getIsIframe, replaceUrl } from '@proton/shared/lib/helpers/browser';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
@@ -32,7 +32,7 @@ import { Icons } from '../../components';
 import { GlobalLoader, GlobalLoaderProvider } from '../../components/globalLoader';
 import SpotlightProvider from '../../components/spotlight/Provider';
 import { PreventLeaveProvider } from '../../hooks';
-import { DrawerProvider } from '../../hooks/useDrawer';
+import { DrawerProvider } from '../../hooks/drawer/useDrawer';
 import StandardApiProvider from '../api/ApiProvider';
 import DrawerApiProvider from '../api/DrawerApiProvider';
 import AuthenticationProvider from '../authentication/Provider';
@@ -300,7 +300,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
         document.querySelector('.app-root-loader')?.classList.add('hidden');
     }, []);
 
-    const isIframe = window.self !== window.top;
+    const isIframe = getIsIframe();
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const isDrawerApp = isIframe && parentApp && getIsAuthorizedApp(parentApp);
 

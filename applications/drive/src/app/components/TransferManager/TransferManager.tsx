@@ -6,12 +6,12 @@ import { c, msgid } from 'ttag';
 import {
     Tabs,
     useActiveBreakpoint,
+    useDrawerWidth,
     useElementRect,
     useRightToLeft,
     useToggle,
     useWindowSize,
 } from '@proton/components';
-import { useDrawerWidth } from '@proton/components/hooks/useDrawerWidth';
 import busy from '@proton/shared/lib/busy';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';

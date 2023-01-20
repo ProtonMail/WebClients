@@ -1,11 +1,12 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import { useConfig, useOnline } from '@proton/components/hooks/index';
+import { useConfig, useOnline } from '@proton/components/hooks';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { addParentAppToUrl, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_APPS, DRAWER_EVENTS, IframeSrcMap, OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
+import window from '@proton/shared/lib/window';
 
 interface Props {
     appInView: DRAWER_APPS | undefined;
@@ -38,7 +39,6 @@ const useToggleDrawerApp = ({ appInView, setAppInView, iframeSrcMap, setIframeSr
         }
 
         if (getIsIframedDrawerApp(app) && !iframeSrcMap[app] && isAppReachable) {
-            // load the iframe
             const localID = getLocalIDFromPathname(window.location.pathname);
             const appHref = getAppHref(path, app, localID);
 

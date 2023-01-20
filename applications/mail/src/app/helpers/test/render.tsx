@@ -20,7 +20,7 @@ import ApiContext from '@proton/components/containers/api/apiContext';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import FeaturesProvider from '@proton/components/containers/features/FeaturesProvider';
-import { DrawerProvider } from '@proton/components/hooks/useDrawer';
+import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
