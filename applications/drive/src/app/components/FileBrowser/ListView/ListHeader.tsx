@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { c } from 'ttag';
+
 import { Checkbox, TableHeaderCell, TableRowSticky } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
@@ -35,8 +37,8 @@ const HeaderCell = <T,>({
     sortParams?: SortParams<T>;
 }) => {
     const selectionControls = useSelection();
+    const selectedCount = selectionControls?.selectedItemIds.length;
     if (item.type === HeaderCellsPresets.Checkbox && selectionControls) {
-        const selectedCount = selectionControls?.selectedItemIds.length;
         const allSelected = Boolean(itemCount && itemCount === selectedCount);
         const isIndeterminate = !allSelected && Boolean(selectedCount);
 
@@ -51,10 +53,16 @@ const HeaderCell = <T,>({
                         onChange={
                             isIndeterminate ? selectionControls.clearSelections : selectionControls.toggleAllSelected
                         }
-                    />
+                    >
+                        {selectedCount ? <span className="ml1">{c('Info').jt`${selectedCount} selected`}</span> : null}
+                    </Checkbox>
                 </div>
             </TableHeaderCell>
         );
+    }
+
+    if (!!selectedCount) {
+        return null;
     }
 
     if (item.type === HeaderCellsPresets.Placeholder) {
