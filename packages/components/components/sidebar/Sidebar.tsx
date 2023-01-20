@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, ReactNode, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import percentage from '@proton/utils/percentage';
@@ -17,6 +17,7 @@ import Hamburger from './Hamburger';
 import MobileAppsLinks from './MobileAppsLinks';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
+    app?: APP_NAMES;
     logo?: ReactNode;
     expanded?: boolean;
     onToggleExpand?: () => void;
@@ -28,6 +29,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 }
 
 const Sidebar = ({
+    app,
     expanded = false,
     onToggleExpand,
     hasAppLinks = true,
@@ -126,7 +128,7 @@ const Sidebar = ({
                 </div>
             )}
 
-            {hasAppLinks ? <MobileAppsLinks /> : null}
+            {hasAppLinks ? <MobileAppsLinks app={app || APP_NAME} /> : null}
         </div>
     );
 };

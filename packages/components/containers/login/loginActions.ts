@@ -101,6 +101,7 @@ const finalizeLogin = async ({
                 persistent,
                 trusted,
                 User: user,
+                flow: 'login',
             },
         };
     }
@@ -115,7 +116,7 @@ const finalizeLogin = async ({
         await authApi(revoke()).catch(noop);
         return {
             to: AuthStep.DONE,
-            session: { ...validatedSession, loginPassword },
+            session: { ...validatedSession, loginPassword, flow: 'login' },
         };
     }
 
@@ -177,6 +178,7 @@ const finalizeLogin = async ({
             persistent,
             trusted,
             User: user,
+            flow: 'login',
         },
     };
 };
