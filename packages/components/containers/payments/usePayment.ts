@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES, isExistingPaymentMethod } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { CardPayment, PaymentParameters, TokenPayment } from './interface';
@@ -9,6 +9,11 @@ import useCard from './useCard';
 import usePayPal from './usePayPal';
 
 const { CARD, BITCOIN, CASH, PAYPAL, PAYPAL_CREDIT } = PAYMENT_METHOD_TYPES;
+
+function isExistingPaymentMethod(paymentMethod: string) {
+    const newPaymentMethods: string[] = Object.values(PAYMENT_METHOD_TYPES);
+    return !newPaymentMethods.includes(paymentMethod);
+}
 
 interface Props {
     amount: number;

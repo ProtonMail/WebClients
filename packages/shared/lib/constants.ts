@@ -802,10 +802,6 @@ export enum PAYMENT_METHOD_TYPES {
 }
 
 export type PAYMENT_METHOD_TYPE = PAYMENT_METHOD_TYPES | string;
-export function isExistingPaymentMethod(paymentMethod: string) {
-    const newPaymentMethods: string[] = Object.values(PAYMENT_METHOD_TYPES);
-    return !newPaymentMethods.includes(paymentMethod);
-}
 
 export enum CLIENT_TYPES {
     MAIL = 1,
