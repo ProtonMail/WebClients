@@ -1,12 +1,15 @@
-import PropTypes from 'prop-types';
-
 import { DOMAIN_STATE } from '@proton/shared/lib/constants';
+import { Domain } from '@proton/shared/lib/interfaces';
 
 import { Icon } from '../../components';
 
 const { DOMAIN_STATE_DEFAULT, DOMAIN_STATE_ACTIVE, DOMAIN_STATE_WARN } = DOMAIN_STATE;
 
-const DomainName = ({ domain }) => {
+export interface Props {
+    domain: Domain;
+}
+
+const DomainName = ({ domain }: Props) => {
     const ICONS = {
         [DOMAIN_STATE_DEFAULT]: (
             <Icon className="color-danger flex-item-noshrink" type="error" name="cross-circle-filled" />
@@ -19,16 +22,12 @@ const DomainName = ({ domain }) => {
 
     return (
         <span className="flex flex-nowrap flex-align-items-center">
-            {ICONS[domain.State]}
+            {ICONS[domain.State as DOMAIN_STATE]}
             <span className="text-ellipsis ml0-5" title={domain.DomainName}>
                 {domain.DomainName}
             </span>
         </span>
     );
-};
-
-DomainName.propTypes = {
-    domain: PropTypes.object.isRequired,
 };
 
 export default DomainName;
