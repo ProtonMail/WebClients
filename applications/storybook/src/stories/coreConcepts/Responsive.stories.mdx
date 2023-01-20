@@ -1,0 +1,129 @@
+import { Meta, Source } from '@storybook/addon-docs';
+
+import { Alert } from '@proton/components';
+
+import { getTitle } from '../../helpers/title';
+
+<Meta title={getTitle(__filename)} />
+
+# Responsive and media queries
+
+In order to be able to write CSS/SCSS media queries in an easy and maintainable way with a natural and simplistic syntax, we are using the [include-media library](https://eduardoboucas.github.io/include-media/).
+
+## Basics
+
+The library comes with a list of default breakpoints that we changed for our needs:
+
+<Source
+    language="css"
+    format
+    copy={false}
+    code={`
+/* Variable set in the design system's config. You don't have to create another one. */
+$breakpoints: im-to-em((
+    'xlarge': 1500px,
+    'large' : 1100px,
+    'medium': 910px,
+    'small' : 680px,
+    'xsmall': 450px,
+));
+ 
+/* Inclusive and exclusive operators for a finer control over the intervals */
+@include media(">small", "<=medium") {
+    width: 50%;
+}
+ 
+/* Use ligatured operators if you fancy a slicker declaration */
+@include media(">small", "≤medium") {
+    line-height: 1.5;
+}
+`}
+/>
+
+Those value are already overrided for some apps, Mail and Calendar as I'm writing this line.
+
+`$breakpoints` is a map variable specific to include-media.
+
+`im-to-em`, standing for _include media to em unit_, is a specific helper for converting pixel values into em values. This way, these values are kept as reachable as possible.
+
+Due to the wide variety of devices, and their diversity in size, we no longer mention any device in the naming. From now on, it will be graduated sizes from `xsmall` to `xlarge`, leaving us the possibility to extend the list as needed.
+
+<Alert type="warning">
+    As a recommandation, please always use inclusive value for max witdh (
+    <b>
+        <code>&lt;=</code>
+    </b>
+    ) and exclusive value for min width (<b>
+        <code>&gt;</code>
+    </b>
+    ).
+</Alert>
+
+## On-the-fly breakpoints
+
+Some elements require additional rules on intermediate breakpoints, so you can create media queries that use both global breakpoints and case-specific values.
+
+<Alert type="warning">Always make sure that you need a specific breakpoint. Challenge the design if necessary.</Alert>
+
+<Source
+    language="css"
+    format
+    copy={false}
+    code={`
+@include media('<=#{em(640, 16)}') {
+    display: none;
+}
+`}
+/>
+
+Here, we need to convert the pixel value `640` into an em value, so we are using the `em` function with the `16` base font size, which is the browser default.
+
+<Alert type="warning">
+    Always convert media query pixel breakpoints into <code>em</code>… or use an <code>em</code> value directly. This
+    makes the breapoint browser zooming compatible.
+</Alert>
+
+## Smart support for media types
+
+Media types and static expressions are optional and automatically deferred. The list of media types is declared by `$media-expressions`.
+
+<Source
+    language="css"
+    format
+    copy={false}
+    code={`
+/* Variable set in the design system's config. You don't have to create another one. */
+$media-expressions: (
+    'screen': 'screen',
+    'print': 'print',
+    'mouse': '(hover: hover) and (pointer: fine)',
+    'touch': '(hover: hover) and (pointer: coarse), (hover: none)',
+    'landscape': '(orientation: landscape)',
+    'portrait': '(orientation: portrait)',
+    'reduced-motion': '(prefers-reduced-motion: reduce)',
+);
+ 
+@include media('mouse', '>small') {
+    display: inline-flex;
+}
+`}
+/>
+
+## Height-based media queries
+
+All expressions result in a `min-width` or `max-width` expression by default, but you can explicitly use any breakpoint with `min-height` and `max-height` instead.
+
+<Source
+    language="css"
+    format
+    copy={false}
+    code={`
+@include media('height>small', 'height<=#{em(600, 16)}') {
+    height: 50%;
+}
+`}
+/>
+
+## Other Features
+
+For further features, check the [include-media full documentation](https://eduardoboucas.github.io/include-media/documentation/).
