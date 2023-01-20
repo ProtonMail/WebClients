@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
 import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
-import { OfferGlobalFeatureCodeValue } from '@proton/components/containers/offers/interface';
 import {
     useApi,
+    useConfig,
     useErrorHandler,
     useExperiment,
     useFeature,
@@ -109,6 +109,21 @@ interface Props {
 }
 
 const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam, setupVPN }: Props) => {
+    const { APP_NAME } = useConfig();
+    const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
+    const experimentCode = (() => {
+        // Generic or VPN target
+        if (!toApp || toApp === APPS.PROTONVPN_SETTINGS || APP_NAME === APPS.PROTONVPN_SETTINGS) {
+            return ExperimentCode.ExternalSignupGeneric;
+        }
+        // Drive target
+        if (toApp === APPS.PROTONDRIVE) {
+            return ExperimentCode.ExternalSignupDrive;
+        }
+        // Anything else just reuses generic
+        return ExperimentCode.ExternalSignupGeneric;
+    })();
+    const externalSignupExperiment = useExperiment(experimentCode);
     const normalApi = useApi();
     const history = useHistory();
     const location = useLocation<{ invite?: InviteData }>();
@@ -125,8 +140,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const [vpnCountries] = useVPNCountriesCount();
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
-    const offersFeature = useFeature<OfferGlobalFeatureCodeValue>(FeatureCode.Offers);
-    const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const referralExperiment = useExperiment(ExperimentCode.ReferralProgramSignup);
     const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
@@ -144,15 +157,25 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const cache = cacheRef.current;
     const accountData = cache?.accountData;
 
-    const isExternalSignupEnabled = externalSignupFeature.feature?.Value;
+    const isExternalSignupEnabled =
+        Boolean(externalSignupFeature.feature?.Value) &&
+        ((experimentCode === ExperimentCode.ExternalSignupGeneric && externalSignupExperiment.value === 'B') ||
+            experimentCode === ExperimentCode.ExternalSignupDrive);
 
     const signupTypes = (() => {
         if (isExternalSignupEnabled && signupParameters.type !== 'vpn') {
             if (toApp && getHasAppExternalSignup(toApp)) {
+                if (experimentCode === ExperimentCode.ExternalSignupDrive) {
+                    if (externalSignupExperiment.value === 'A') {
+                        return [SignupType.Email, SignupType.Username];
+                    } else {
+                        return [SignupType.Username, SignupType.Email];
+                    }
+                }
                 return [SignupType.Email, SignupType.Username];
             }
             // Only on account.protonvpn.com do we suggest external only sign up
-            if (clientType === CLIENT_TYPES.VPN) {
+            if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
                 return [SignupType.Email];
             }
             if (!toApp) {
@@ -226,40 +249,33 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         const fetchDependencies = async () => {
             const { referrer, invite } = signupParameters;
 
-            const [{ Domains: domains }, paymentMethodStatus, referralData, Plans, offersFeatureValue] =
-                await Promise.all([
-                    normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-                    silentApi<PaymentMethodStatus>(getPaymentMethodStatus()),
-                    referrer
-                        ? await silentApi(checkReferrer(referrer))
-                              .then(() => ({
-                                  referrer: referrer || '',
-                                  invite: invite || '',
-                              }))
-                              .catch(() => undefined)
-                        : undefined,
-                    silentApi<{ Plans: Plan[] }>(
-                        queryPlans(
-                            signupParameters.currency
-                                ? {
-                                      Currency: signupParameters.currency,
-                                  }
-                                : undefined
-                        )
-                    ).then(({ Plans }) => Plans),
-                    offersFeature.get().catch(() => undefined),
-                ]);
+            const [{ Domains: domains }, paymentMethodStatus, referralData, Plans] = await Promise.all([
+                normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
+                silentApi<PaymentMethodStatus>(getPaymentMethodStatus()),
+                referrer
+                    ? await silentApi(checkReferrer(referrer))
+                          .then(() => ({
+                              referrer: referrer || '',
+                              invite: invite || '',
+                          }))
+                          .catch(() => undefined)
+                    : undefined,
+                silentApi<{ Plans: Plan[] }>(
+                    queryPlans(
+                        signupParameters.currency
+                            ? {
+                                  Currency: signupParameters.currency,
+                              }
+                            : undefined
+                    )
+                ).then(({ Plans }) => Plans),
+            ]);
 
             if (location.pathname === SSO_PATHS.REFER && !referralData) {
                 history.replace(SSO_PATHS.SIGNUP);
             }
 
             const subscriptionData = await getSubscriptionData(silentApi, Plans, signupParameters);
-
-            const entries = Object.entries(offersFeatureValue?.Value || {});
-            if (entries.some(([key, value]) => key.includes('black-friday') && value)) {
-                subscriptionData.skipUpsell = true;
-            }
 
             setModelDiff({
                 domains,
@@ -564,7 +580,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             .catch(handleError);
                     }}
                     hasChallenge={!accountData?.payload || !Object.keys(accountData.payload).length}
-                    loading={loading || externalSignupFeature.loading}
+                    loading={loading || externalSignupFeature.loading || externalSignupExperiment.loading}
                 />
             )}
             {step === HumanVerification && (
