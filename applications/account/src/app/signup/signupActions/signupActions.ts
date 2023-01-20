@@ -5,13 +5,7 @@ import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
-import {
-    getUser,
-    queryCheckEmailAvailability,
-    queryCheckUsernameAvailability,
-    queryCreateUser,
-    queryCreateUserExternal,
-} from '@proton/shared/lib/api/user';
+import { getUser, queryCheckEmailAvailability, queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { CLIENT_TYPES, COUPON_CODES, TOKEN_TYPES } from '@proton/shared/lib/constants';
@@ -21,7 +15,7 @@ import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
 import { handleSetupKeys } from '@proton/shared/lib/keys';
-import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
+import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import {
@@ -32,9 +26,10 @@ import {
     SignupSteps,
     SignupType,
     SubscriptionData,
-} from './interfaces';
+} from '../interfaces';
+import { handleCreateUser } from './handleCreateUser';
 
-const getSignupTypeQuery = (accountData: SignupCacheResult['accountData'], setupVPN: boolean) => {
+export const getSignupTypeQuery = (accountData: SignupCacheResult['accountData'], setupVPN: boolean) => {
     // VPN requests the recovery email, and does not create the address (avoid passing Domain)
     if (accountData.signupType === SignupType.VPN) {
         let extra = {};
@@ -48,7 +43,7 @@ const getSignupTypeQuery = (accountData: SignupCacheResult['accountData'], setup
     }
 };
 
-const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) => {
+export const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) => {
     if (referralData) {
         return {
             ReferralID: referralData.invite,
@@ -57,7 +52,7 @@ const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) =
     }
 };
 
-const hvHandler = (error: any, trigger: HumanVerificationData['trigger']): HumanVerificationData => {
+export const hvHandler = (error: any, trigger: HumanVerificationData['trigger']): HumanVerificationData => {
     const { code, details } = getApiError(error);
     if (code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {
         if (!details?.HumanVerificationToken) {
@@ -304,123 +299,6 @@ export const handleSetupUser = async ({
     };
 };
 
-const handleCreateUser = async ({
-    cache,
-    api,
-}: {
-    cache: SignupCacheResult;
-    api: Api;
-}): Promise<SignupActionResponse> => {
-    const {
-        accountData: { signupType, username, email, password, payload },
-        accountData,
-        humanVerificationResult,
-        inviteData,
-        referralData,
-        clientType,
-        setupVPN,
-    } = cache;
-
-    if (signupType === SignupType.Username || signupType === SignupType.VPN) {
-        const humanVerificationParameters = (() => {
-            if (humanVerificationResult) {
-                return {
-                    token: humanVerificationResult.token,
-                    tokenType: humanVerificationResult.tokenType,
-                };
-            }
-            if (inviteData) {
-                return {
-                    token: `${inviteData.selector}:${inviteData.token}`,
-                    tokenType: 'invite' as const,
-                };
-            }
-        })();
-        try {
-            const { User } = await srpVerify<{ User: User }>({
-                api,
-                credentials: { password },
-                config: withVerificationHeaders(
-                    humanVerificationParameters?.token,
-                    humanVerificationParameters?.tokenType,
-                    queryCreateUser(
-                        {
-                            Type: clientType,
-                            Username: username,
-                            Payload: payload,
-                            ...getSignupTypeQuery(accountData, setupVPN),
-                            ...getReferralDataQuery(referralData),
-                        },
-                        cache.productParam
-                    )
-                ),
-            });
-            return {
-                to: SignupSteps.CreatingAccount,
-                cache: {
-                    ...cache,
-                    userData: {
-                        User,
-                    },
-                },
-            };
-        } catch (error) {
-            const { code } = getApiError(error);
-            if (
-                code === API_CUSTOM_ERROR_CODES.USER_CREATE_TOKEN_INVALID &&
-                humanVerificationParameters?.tokenType === 'invite'
-            ) {
-                // Automatically try again if the invite was invalid for some reason, HV will be prompted.
-                return handleCreateUser({
-                    cache: {
-                        ...cache,
-                        inviteData: undefined,
-                    },
-                    api,
-                });
-            }
-            const humanVerificationData = hvHandler(error, HumanVerificationTrigger.UserCreation);
-            return {
-                cache: {
-                    ...cache,
-                    humanVerificationData,
-                },
-                to: SignupSteps.HumanVerification,
-            };
-        }
-    }
-
-    if (signupType === SignupType.Email) {
-        const { User } = await srpVerify<{ User: User }>({
-            api,
-            credentials: { password },
-            config: withVerificationHeaders(
-                cache.humanVerificationResult?.token,
-                cache.humanVerificationResult?.tokenType,
-                queryCreateUserExternal(
-                    {
-                        Type: clientType,
-                        Email: email,
-                        Payload: payload,
-                    },
-                    cache.productParam
-                )
-            ),
-        });
-        return {
-            to: SignupSteps.CreatingAccount,
-            cache: {
-                ...cache,
-                userData: {
-                    User,
-                },
-            },
-        };
-    }
-
-    throw new Error('Unknown signup type');
-};
-
 export const handlePayment = ({
     api,
     cache,
@@ -435,7 +313,7 @@ export const handlePayment = ({
     if (
         (cache.accountData.signupType === SignupType.Username || cache.accountData.signupType === SignupType.VPN) &&
         subscriptionData.payment &&
-        'Token' in subscriptionData.payment.Details
+        'Token' in (subscriptionData.payment.Details ?? {})
     ) {
         // Use payment token to prove humanity for a username paid account
         humanVerificationResult = {
