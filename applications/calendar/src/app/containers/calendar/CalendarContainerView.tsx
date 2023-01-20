@@ -37,6 +37,7 @@ import {
     useHasRebrandingFeedback,
     useModalState,
     useNotifications,
+    useOpenDrawerOnLoad,
     useSpotlightOnFeature,
     useSpotlightShow,
     useToggle,
@@ -150,6 +151,7 @@ const CalendarContainerView = ({
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
 
+    useOpenDrawerOnLoad();
     const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
     const displayContactsInHeader = useDisplayContactsWidget();
     const { showDrawerSidebar, appInView } = useDrawer();
