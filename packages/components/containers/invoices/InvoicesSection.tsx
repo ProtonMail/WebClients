@@ -54,7 +54,7 @@ const InvoicesSection = () => {
             Page: page - 1,
             PageSize: ELEMENTS_PER_PAGE,
             Owner: owner,
-        } as any);
+        });
 
     const {
         result = {
@@ -63,7 +63,7 @@ const InvoicesSection = () => {
         },
         loading,
         request: requestInvoices,
-    } = useApiResult<InvoiceResponse, typeof queryInvoices>(query, [page, owner]);
+    } = useApiResult<InvoiceResponse, typeof query>(query, [page, owner]);
     const { Invoices: invoices, Total: total } = result;
     const hasUnpaid = invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
 
