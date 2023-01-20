@@ -13,19 +13,18 @@ import { getPureAttachments } from '../../helpers/attachment/attachment';
 import { isUnreadMessage } from '../../helpers/elements';
 import { isNetworkError } from '../../helpers/errors';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
+import {
+    handleDispatchLoadFakeImagesProxy,
+    handleDispatchLoadImagesProxy,
+    handleDispatchLoadRemoteImagesDirect,
+} from '../../helpers/message/messageImages';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { Preparation, prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import {
-    loadEmbedded,
-    loadFakeProxy,
-    loadRemoteDirect,
-    loadRemoteProxyFromURL,
-} from '../../logic/messages/images/messagesImagesActions';
+import { loadEmbedded } from '../../logic/messages/images/messagesImagesActions';
 import {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
-    LoadRemoteResults,
     MessageErrors,
     MessageImages,
     MessageRemoteImage,
@@ -152,26 +151,15 @@ export const useInitializeMessage = () => {
             };
 
             const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
-                const dispatchResult = imagesToLoad.map((image) => {
-                    return dispatch(
-                        loadRemoteProxyFromURL({ ID: localID, imageToLoad: image, uid: authentication.getUID() })
-                    );
-                });
-                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+                return handleDispatchLoadImagesProxy(localID, imagesToLoad, authentication, dispatch);
             };
 
             const handleLoadFakeImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
-                const dispatchResult = imagesToLoad.map((image) => {
-                    return dispatch(loadFakeProxy({ ID: localID, imageToLoad: image, api }));
-                });
-                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+                return handleDispatchLoadFakeImagesProxy(localID, imagesToLoad, api, dispatch);
             };
 
             const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
-                const dispatchResult = imagesToLoad.map((image) => {
-                    return dispatch(loadRemoteDirect({ ID: localID, imageToLoad: image, api }));
-                });
-                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+                return handleDispatchLoadRemoteImagesDirect(localID, imagesToLoad, dispatch);
             };
 
             preparation = isPlainText({ MIMEType })

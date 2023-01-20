@@ -70,14 +70,12 @@ export const loadImages = (images: MessageRemoteImage[], messageDocument?: Eleme
 
                 // Find the corresponding image to get its url (same url if loading without proxy, or blob if loading through proxy)
                 // Check its originalUrl because url field can be a blob at this point
-                const elementWithOriginalURL = images.find((el) => {
-                    return elementValue === el.originalURL;
+                images.forEach((el) => {
+                    if (elementValue === el.originalURL && el.url) {
+                        // Set attribute with the right URL (normal or blob depending on the setting)
+                        element.setAttribute(attr, el.url);
+                    }
                 });
-
-                // Set attribute with the right URL (normal or blob depending on the setting)
-                if (elementWithOriginalURL && elementWithOriginalURL.url) {
-                    element.setAttribute(attr, elementWithOriginalURL.url);
-                }
             }
         });
     });

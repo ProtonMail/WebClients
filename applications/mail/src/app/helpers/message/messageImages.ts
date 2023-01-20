@@ -1,7 +1,16 @@
+import { PrivateAuthenticationStore } from '@proton/components/containers';
 import { getImage } from '@proton/shared/lib/api/images';
 import { createUrl } from '@proton/shared/lib/fetch/helpers';
+import { Api } from '@proton/shared/lib/interfaces';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import {
+    loadFakeProxy,
+    loadRemoteDirectFromURL,
+    loadRemoteProxyFromURL,
+} from '../../logic/messages/images/messagesImagesActions';
+import {
+    LoadRemoteResults,
     MessageEmbeddedImage,
     MessageImage,
     MessageImages,
@@ -201,4 +210,37 @@ export const forgeImageURL = (url: string, uid: string) => {
     const prefixedUrl = `api/${config.url}`; // api/ is required to set the AUTH cookie
     const urlToLoad = createUrl(prefixedUrl, config.params);
     return urlToLoad.toString();
+};
+
+export const handleDispatchLoadImagesProxy = (
+    ID: string,
+    imagesToLoad: MessageRemoteImage[],
+    authentication: PrivateAuthenticationStore,
+    dispatch: (action: any) => void
+) => {
+    const dispatchResult = dispatch(loadRemoteProxyFromURL({ ID, imagesToLoad, uid: authentication.getUID() }));
+    return dispatchResult as any as Promise<LoadRemoteResults[]>;
+};
+
+export const handleDispatchLoadFakeImagesProxy = (
+    ID: string,
+    imagesToLoad: MessageRemoteImage[],
+    api: Api,
+    dispatch: (action: any) => void
+) => {
+    // Make one call per image, it's possible that several images in the message have the same URL.
+    const uniqueImages = uniqueBy(imagesToLoad, (image) => image.url);
+    const dispatchResult = uniqueImages.map((image) => {
+        return dispatch(loadFakeProxy({ ID, imageToLoad: image, api }));
+    });
+    return dispatchResult as any as Promise<LoadRemoteResults[]>;
+};
+
+export const handleDispatchLoadRemoteImagesDirect = (
+    ID: string,
+    imagesToLoad: MessageRemoteImage[],
+    dispatch: (action: any) => void
+) => {
+    const dispatchResult = dispatch(loadRemoteDirectFromURL({ ID, imagesToLoad }));
+    return dispatchResult as any as Promise<LoadRemoteResults[]>;
 };
