@@ -35,7 +35,7 @@ interface Props {
     paypal: any;
     paypalCredit: any;
     card: CardModel;
-    onCard: (key: string, value: string) => void;
+    onCard: (key: keyof CardModel, value: string) => void;
     cardErrors: Partial<CardModel>;
     noMaxWidth?: boolean;
     paymentMethodStatus?: PaymentMethodStatus;
