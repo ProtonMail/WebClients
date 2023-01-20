@@ -35,7 +35,7 @@
         "chalk": "4.1.2",
         "commander": "^9.5.0",
         "copy-webpack-plugin": "^11.0.0",
-        "core-js": "^3.27.1",
+        "core-js": "^3.27.2",
         "cross-env": "^7.0.3",
         "css-loader": "^6.7.3",
         "css-minimizer-webpack-plugin": "^4.2.2",
@@ -44,7 +44,7 @@
         "execa": "^5.1.1",
         "favicons": "^7.0.2",
         "favicons-webpack-plugin": "^6.0.0",
-        "fork-ts-checker-webpack-plugin": "^7.2.14",
+        "fork-ts-checker-webpack-plugin": "^7.3.0",
         "html-webpack-plugin": "^5.5.0",
         "mini-css-extract-plugin": "^2.7.2",
         "po-gettext-loader": "^1.0.0",
@@ -66,8 +66,8 @@
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
-        "eslint": "^8.31.0",
-        "prettier": "^2.8.2"
+        "eslint": "^8.32.0",
+        "prettier": "^2.8.3"
     },
     "engines": {
         "node": ">= v18.13.0"
