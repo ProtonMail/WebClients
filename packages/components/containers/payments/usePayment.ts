@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES, isExistingPaymentMethod } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { CardPayment, PaymentParameters, TokenPayment } from './interface';
@@ -42,10 +42,7 @@ const usePayment = ({ amount, currency, onPay, defaultMethod }: Props) => {
             return {};
         }
 
-        const paymentMethods: string[] = [CARD, PAYPAL, CASH, BITCOIN];
-        const isExistingPaymentMethod = !paymentMethods.includes(method);
-
-        if (isExistingPaymentMethod) {
+        if (isExistingPaymentMethod(method)) {
             return { PaymentMethodID: method };
         }
 
