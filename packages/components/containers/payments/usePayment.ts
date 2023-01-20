@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import { PaymentParameters } from './interface';
 import toDetails from './toDetails';
@@ -11,7 +12,7 @@ const { CARD, BITCOIN, CASH, PAYPAL, PAYPAL_CREDIT } = PAYMENT_METHOD_TYPES;
 
 interface Props {
     amount: number;
-    currency: string;
+    currency: Currency;
     onPay: (data: PaymentParameters) => void;
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
 }
