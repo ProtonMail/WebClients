@@ -63,7 +63,7 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
 
     const locationTranslations: { [key in SignatureIssueLocation]: string } = {
         passphrase: c('Item').t`keys`,
-        hash: c('Item').t`name hash`,
+        hash: c('Item').t`hash key`,
         name: c('Item').t`name`,
         xattrs: c('Item').t`file attributes`,
         contentKeyPacket: c('Item').t`file data key`,
