@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { PaymentParameters } from './interface';
+import { CardPayment, PaymentParameters, TokenPayment } from './interface';
 import toDetails from './toDetails';
 import useCard from './useCard';
 import usePayPal from './usePayPal';
@@ -16,13 +16,6 @@ interface Props {
     onPay: (data: PaymentParameters) => void;
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
 }
-
-const hasToken = (parameters: PaymentParameters): boolean => {
-    const { Payment } = parameters;
-    const { Details } = Payment || {};
-    const { Token = '' } = (Details as any) || {};
-    return !!Token;
-};
 
 const usePayment = ({ amount, currency, onPay, defaultMethod }: Props) => {
     const { card, setCard, errors: cardErrors, isValid } = useCard();
@@ -44,12 +37,15 @@ const usePayment = ({ amount, currency, onPay, defaultMethod }: Props) => {
         onPay,
     });
 
-    const paymentParameters = useMemo((): PaymentParameters => {
+    const paymentParameters = useMemo((): PaymentParameters<TokenPayment | CardPayment> => {
         if (!method) {
             return {};
         }
 
-        if (![CARD, PAYPAL, CASH, BITCOIN].includes(method as any)) {
+        const paymentMethods: string[] = [CARD, PAYPAL, CASH, BITCOIN];
+        const isExistingPaymentMethod = !paymentMethods.includes(method);
+
+        if (isExistingPaymentMethod) {
             return { PaymentMethodID: method };
         }
 
@@ -83,14 +79,13 @@ const usePayment = ({ amount, currency, onPay, defaultMethod }: Props) => {
             return false;
         }
 
-        if ([BITCOIN, CASH].includes(method as any)) {
+        const methodsWithDifferentProcessing: string[] = [BITCOIN, CASH, PAYPAL];
+        if (methodsWithDifferentProcessing.includes(method)) {
             return false;
         }
 
-        if (method === PAYPAL && !hasToken(paymentParameters)) {
-            return false;
-        }
-
+        // Essentially, credit card or existing method. Existing methods could be previously saved credit card or
+        // previously saved paypal
         return true;
     };
 
