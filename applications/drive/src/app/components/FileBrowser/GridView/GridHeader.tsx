@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { c } from 'ttag';
+
 import { Checkbox, TableHeaderCell, TableRowSticky } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
@@ -62,10 +64,14 @@ export const GridHeader = <T extends string>({
                             disabled={!itemCount}
                             checked={allSelected}
                             onChange={onToggleAllSelected}
-                        />
+                        >
+                            {selectedCount ? (
+                                <span className="ml1">{c('Info').jt`${selectedCount} selected`}</span>
+                            ) : null}
+                        </Checkbox>
                     </div>
                 </TableHeaderCell>
-                {sortFields?.length && sortField && (
+                {!selectedCount && sortFields?.length && sortField && (
                     <>
                         <TableHeaderCell
                             className="w10e"
