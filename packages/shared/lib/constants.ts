@@ -978,3 +978,5 @@ export enum SIMPLE_LOGIN_EXTENSION_LINKS {
     MAIN_PAGE = 'https://simplelogin.io',
     DASHBOARD = 'https://app.simplelogin.io/dashboard/',
 }
+
+export const OPEN_OFFER_MODAL_EVENT = 'openoffermodal';

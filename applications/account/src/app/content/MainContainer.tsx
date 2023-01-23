@@ -10,7 +10,6 @@ import {
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainAreaLoading,
-    ReferralModalContainer,
     SectionConfig,
     TopBanners,
     TopNavbarUpsell,
@@ -37,6 +36,7 @@ import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import AccountSidebar from './AccountSidebar';
+import AccountStartupModals from './AccountStartupModals';
 import SettingsSearch from './SettingsSearch';
 import { getRoutes } from './routes';
 
@@ -203,7 +203,7 @@ const MainContainer = () => {
 
     return (
         <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
-            <ReferralModalContainer />
+            <AccountStartupModals />
             <Switch>
                 <Route path={anyAccountAppRoute}>
                     <AccountSettingsRouter
