@@ -1,10 +1,15 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { BrowserItemId } from '../interface';
 
 export function useSelectionControls({ itemIds }: { itemIds: string[] }) {
     const [selectedItemIds, setSelectedItems] = useState<BrowserItemId[]>([]);
     const [multiSelectStartId, setMultiSelectStartId] = useState<BrowserItemId>();
+
+    const isIndeterminate = useMemo(
+        () => selectedItemIds.length > 0 && selectedItemIds.length !== itemIds.length,
+        [selectedItemIds, itemIds]
+    );
 
     useEffect(() => {
         const isItemInFolder = (itemId: BrowserItemId) => itemIds.some((folderItemIds) => folderItemIds === itemId);
@@ -90,5 +95,6 @@ export function useSelectionControls({ itemIds }: { itemIds: string[] }) {
         clearSelections,
         toggleRange,
         isSelected,
+        isIndeterminate,
     };
 }

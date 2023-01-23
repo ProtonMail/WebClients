@@ -36,23 +36,18 @@ const HeaderCell = <T,>({
     onSort: (key: T) => void;
     sortParams?: SortParams<T>;
 }) => {
-    const selectionControls = useSelection();
-    const selectedCount = selectionControls?.selectedItemIds.length;
-    if (item.type === HeaderCellsPresets.Checkbox && selectionControls) {
-        const allSelected = Boolean(itemCount && itemCount === selectedCount);
-        const isIndeterminate = !allSelected && Boolean(selectedCount);
-
+    const selection = useSelection();
+    const selectedCount = selection?.selectedItemIds.length;
+    if (item.type === HeaderCellsPresets.Checkbox && selection) {
         return (
             <TableHeaderCell className="file-browser-header-checkbox-cell">
                 <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
                     <Checkbox
-                        indeterminate={isIndeterminate}
+                        indeterminate={selection.isIndeterminate}
                         className="increase-click-surface"
                         disabled={!itemCount}
-                        checked={Boolean(selectedCount)}
-                        onChange={
-                            isIndeterminate ? selectionControls.clearSelections : selectionControls.toggleAllSelected
-                        }
+                        checked={selectedCount === itemCount}
+                        onChange={selection.isIndeterminate ? selection.clearSelections : selection.toggleAllSelected}
                     >
                         {selectedCount ? <span className="ml1">{c('Info').jt`${selectedCount} selected`}</span> : null}
                     </Checkbox>
