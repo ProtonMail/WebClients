@@ -13,7 +13,6 @@ import { useSelection } from '../state/useSelection';
 interface Props<T> {
     isLoading?: boolean;
     itemCount: number;
-    onToggleAllSelected: () => void;
     scrollAreaRef: React.RefObject<HTMLDivElement>;
 
     // sorting
@@ -28,7 +27,6 @@ export const GridHeader = <T extends string>({
     isLoading,
     sortFields,
     onSort,
-    onToggleAllSelected,
     itemCount,
     scrollAreaRef,
     activeSortingText,
@@ -37,7 +35,6 @@ export const GridHeader = <T extends string>({
     sortOrder,
 }: Props<T>) => {
     const selection = useSelection();
-    const selectedItemIds = selection?.selectedItemIds || [];
 
     const handleSort = (key: T) => {
         if (!sortField || !sortOrder || !onSort) {
@@ -52,7 +49,7 @@ export const GridHeader = <T extends string>({
 
     const getSortDirectionForKey = (key: T) => (sortField === key ? sortOrder : undefined);
 
-    const allSelected = Boolean(itemCount) && itemCount === selectedItemIds.length;
+    const selectedCount = selection?.selectedItemIds.length;
 
     return (
         <thead onContextMenu={stopPropagation}>
@@ -60,10 +57,13 @@ export const GridHeader = <T extends string>({
                 <TableHeaderCell className="file-browser-header-checkbox-cell">
                     <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
                         <Checkbox
+                            indeterminate={selection?.isIndeterminate}
                             className="increase-click-surface"
                             disabled={!itemCount}
-                            checked={allSelected}
-                            onChange={onToggleAllSelected}
+                            checked={selectedCount === itemCount}
+                            onChange={
+                                selection?.isIndeterminate ? selection?.clearSelections : selection?.toggleAllSelected
+                            }
                         >
                             {selectedCount ? (
                                 <span className="ml1">{c('Info').jt`${selectedCount} selected`}</span>

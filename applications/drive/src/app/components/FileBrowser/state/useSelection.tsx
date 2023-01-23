@@ -17,6 +17,7 @@ interface SelectionFunctions {
     clearSelections: () => void;
     toggleRange: (selectedBrowserItemId: BrowserItemId) => void;
     isSelected: (linkId: string) => boolean;
+    isIndeterminate: boolean;
 }
 
 const SelectionContext = createContext<SelectionFunctions | null>(null);
