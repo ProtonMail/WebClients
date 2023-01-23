@@ -13,7 +13,8 @@ export type OfferId =
     | 'black-friday-mail-pro-2022'
     | 'black-friday-vpn-1-deal-2022'
     | 'black-friday-vpn-2-deal-2022'
-    | 'black-friday-vpn-3-deal-2022';
+    | 'black-friday-vpn-3-deal-2022'
+    | 'mail-trial-2023';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
