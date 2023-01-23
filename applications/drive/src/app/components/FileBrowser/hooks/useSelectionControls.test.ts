@@ -58,4 +58,27 @@ describe('useSelection', () => {
         });
         expect(hook.current.selectedItemIds).toMatchObject([]);
     });
+
+    it('isSelected', () => {
+        act(() => {
+            hook.current.selectItem('2');
+        });
+
+        expect(hook.current.isSelected('2')).toBe(true);
+        expect(hook.current.isSelected('1')).toBe(false);
+    });
+
+    it('isIndeterminate', () => {
+        act(() => {
+            hook.current.selectItem('2');
+            hook.current.selectItem('1');
+        });
+
+        expect(hook.current.isIndeterminate).toBe(true);
+
+        act(() => {
+            hook.current.toggleAllSelected();
+        });
+        expect(hook.current.isIndeterminate).toBe(false);
+    });
 });
