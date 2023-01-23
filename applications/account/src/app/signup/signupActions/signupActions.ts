@@ -20,7 +20,6 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import {
-    HumanVerificationData,
     HumanVerificationTrigger,
     SignupActionResponse,
     SignupCacheResult,
@@ -29,45 +28,7 @@ import {
     SubscriptionData,
 } from '../interfaces';
 import { handleCreateUser } from './handleCreateUser';
-
-export const getSignupTypeQuery = (accountData: SignupCacheResult['accountData'], setupVPN: boolean) => {
-    // VPN requests the recovery email, and does not create the address (avoid passing Domain)
-    if (accountData.signupType === SignupType.VPN) {
-        let extra = {};
-        if (setupVPN) {
-            extra = { Domain: accountData.domain };
-        }
-        return { ...extra, Email: accountData.recoveryEmail };
-    }
-    if (accountData.signupType === SignupType.Username) {
-        return { Domain: accountData.domain };
-    }
-};
-
-export const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) => {
-    if (referralData) {
-        return {
-            ReferralID: referralData.invite,
-            ReferralIdentifier: referralData.referrer,
-        };
-    }
-};
-
-export const hvHandler = (error: any, trigger: HumanVerificationData['trigger']): HumanVerificationData => {
-    const { code, details } = getApiError(error);
-    if (code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {
-        if (!details?.HumanVerificationToken) {
-            throw error;
-        }
-        return {
-            title: details.Title,
-            methods: details.HumanVerificationMethods || [],
-            token: details.HumanVerificationToken || '',
-            trigger,
-        };
-    }
-    throw error;
-};
+import { hvHandler } from './helpers';
 
 export const handleDone = async ({
     cache,
