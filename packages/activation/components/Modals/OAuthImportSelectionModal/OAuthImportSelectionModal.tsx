@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL_NEW_SCOPE } from '@proton/activation/constants';
+import { G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL } from '@proton/activation/constants';
 import useOAuthPopup from '@proton/activation/hooks/useOAuthPopup';
 import {
     EASY_SWITCH_SOURCE,
@@ -16,7 +16,15 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button';
-import { AlertModal, CreateNotificationOptions, ModalStateProps, PrimaryButton } from '@proton/components/index';
+import {
+    CreateNotificationOptions,
+    ModalStateProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    PrimaryButton,
+} from '@proton/components/index';
 
 interface Props {
     modalProps: ModalStateProps;
@@ -41,7 +49,7 @@ const OAuthImportSelectionModal = ({ modalProps, onClose }: Props) => {
     const loadingState = useEasySwitchSelector(selectCreateSyncState);
     const loading = loadingState === 'pending';
 
-    const scopes = [...G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL_NEW_SCOPE];
+    const scopes = [...G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL];
 
     useEffect(() => {
         if (loadingState === 'success') {
@@ -75,23 +83,21 @@ const OAuthImportSelectionModal = ({ modalProps, onClose }: Props) => {
     };
 
     return (
-        <AlertModal
-            {...modalProps}
-            title={c('loc_nightly:account').t`What do you want to do?`}
-            buttons={[
+        <ModalTwo {...modalProps} size="small">
+            <ModalTwoHeader title={c('loc_nightly:account').t`What would you like to do?`} />
+            <ModalTwoContent>
+                {c('loc_nightly:account')
+                    .t`You can either import your Gmail emails, calendars and contacts or automatically synchronize all incoming Gmail emails.`}
+            </ModalTwoContent>
+            <ModalTwoFooter className="flex flex-column">
                 <PrimaryButton onClick={handleSynchronizeClick} loading={loading}>
                     {c('loc_nightly:account').t`Sync future emails`}
-                </PrimaryButton>,
+                </PrimaryButton>
                 <Button onClick={handleImportClick} disabled={loading}>
-                    {c('loc_nightly:account').t`Import past emails`}
-                </Button>,
-            ]}
-        >
-            <p>
-                {c('loc_nightly:account')
-                    .t`You can either import your Gmail emails or automatically synchronize all incoming emails.`}
-            </p>
-        </AlertModal>
+                    {c('loc_nightly:account').t`Import past emails, calendars and contacts`}
+                </Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
