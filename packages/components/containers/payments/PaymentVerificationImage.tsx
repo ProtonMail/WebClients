@@ -21,6 +21,11 @@ const getImage = (type: string): string => {
     return images[type] ?? treeDSecureSvg;
 };
 
+export interface Props {
+    payment: PaypalPayment | CardPayment | {};
+    type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
+}
+
 const PaymentVerificationImage = ({ payment, type }: Props) => {
     const isPaypalType = [PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT].includes(type);
 
@@ -37,10 +42,5 @@ const PaymentVerificationImage = ({ payment, type }: Props) => {
 
     return <img src={getImage(cardType)} alt={niceType} />;
 };
-
-export interface Props {
-    payment: PaypalPayment | CardPayment | {};
-    type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
-}
 
 export default PaymentVerificationImage;
