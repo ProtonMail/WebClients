@@ -39,7 +39,7 @@
 			visibility: hidden;
 		}
 
-		@media (hover: hover) and (pointer: fine) {
+		@include media('mouse') {
 			body &:not(:hover, :focus, :focus-within) {
 				&::-webkit-scrollbar-thumb {
 					visibility: hidden;

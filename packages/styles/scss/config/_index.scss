@@ -12,6 +12,7 @@
 @import
 	'functions/em',
 	'functions/rem',
+	'functions/im-to-em',
 	'functions/line-height',
 	'functions/margin-em',
 	'functions/logical',
@@ -24,6 +25,5 @@
 	'mixins/rhythm',
 	'mixins/vendor-prefix',
 	'mixins/spacing-generator',
-	'mixins/respond-to',
 	'mixins/body-before',
 	'mixins/transform-origins';

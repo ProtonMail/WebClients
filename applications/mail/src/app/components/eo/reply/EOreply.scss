@@ -15,7 +15,7 @@
 		// need to size it, because EO does not have dimensions like the composer container
 		block-size: em(300);
 		margin-inline: 1em;
-		@include respond-to($breakpoint-tiny) {
+		@include media('<=xsmall') {
 			margin-inline: 0;
 		}
 
@@ -26,7 +26,7 @@
 		.editor {
 			border: 0;
 			padding-inline: 0.5em;
-			@include respond-to($breakpoint-tiny) {
+			@include media('<=xsmall') {
 				padding-inline: 0;
 			}
 		}

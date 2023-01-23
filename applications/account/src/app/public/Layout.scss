@@ -8,7 +8,7 @@
 		margin-inline: 2em;
 		margin-block: 1em 4em;
 
-		@include respond-to($breakpoint-small, 'max') {
+		@include media('<=small') {
 			margin-inline: 1em;
 			margin-block: 1em;
 		}
@@ -17,7 +17,7 @@
 	&-bg {
 		background-color: var(--background-norm);
 
-		@include respond-to($breakpoint-tiny, 'min') {
+		@include media('>xsmall') {
 			background: top center / cover no-repeat #f7f5ff;
 		}
 
@@ -26,48 +26,35 @@
 		 * depending on viewport width and orientation
 		 */
 
-		@media (orientation: landscape)
-			and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-small, $root-default-font-size)}) {
+		@include media('landscape', '>xsmall', '<=small') {
 			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-landscape.jpg);
 		}
 
-		@media (orientation: portrait)
-			and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-small, $root-default-font-size)}) {
+		@include media('portrait', '>xsmall', '<=small') {
 			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-portrait.jpg);
 		}
 
-		@media (orientation: landscape)
-			and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-medium, $root-default-font-size)}) {
+		@include media('landscape', '>small', '<=medium') {
 			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-landscape.jpg);
 		}
 
-		@media (orientation: portrait)
-			and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-medium, $root-default-font-size)}) {
+		@include media('portrait', '>small', '<=medium') {
 			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-portrait.jpg);
 		}
 
-		@media (orientation: landscape)
-			and (min-width: #{em($breakpoint-medium + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-medium-landscape, $root-default-font-size)}) {
+		@include media('landscape', '>medium', '<=large') {
 			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-landscape.jpg);
 		}
 
-		@media (orientation: portrait)
-			and (min-width: #{em($breakpoint-medium + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-medium-landscape, $root-default-font-size)}) {
+		@include media('portrait', '>medium', '<=large') {
 			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-portrait.jpg);
 		}
 
-		@media (min-width: #{em($breakpoint-medium-landscape + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-large, $root-default-font-size)}) {
+		@include media('>large', '<=xlarge') {
 			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1500.jpg);
 		}
 
-		@media (min-width: #{em($breakpoint-large + 1, $root-default-font-size)}) {
+		@include media('>xlarge') {
 			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-2000.jpg);
 		}
 	}
@@ -87,7 +74,7 @@
 	}
 
 	// had to add this adaptation because not enough space for back button as we increased size of main content
-	@include respond-to(1120) {
+	@include media('<=#{em(1120, 16)}') {
 		&-two-column {
 			&#{&} {
 				flex-direction: column;
@@ -99,7 +86,7 @@
 			}
 		}
 	}
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		&-two-column {
 			&#{&} {
 				.sign-layout-upsell {
@@ -112,7 +99,7 @@
 			}
 		}
 	}
-	@include respond-to($breakpoint-tiny) {
+	@include media('<=xsmall') {
 		&-two-column {
 			&#{&} {
 				.sign-layout-upsell {
@@ -132,11 +119,11 @@
 		padding-inline: em(44);
 		padding-block: 0.5em 0;
 
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			padding-inline: em(20);
 		}
 
-		@include respond-to($breakpoint-tiny, 'max') {
+		@include media('<=xsmall') {
 			padding: 0;
 		}
 	}
@@ -145,7 +132,7 @@
 		font-size: em(28);
 		font-weight: normal;
 
-		@include respond-to($breakpoint-tiny, 'max') {
+		@include media('<=xsmall') {
 			padding-inline: 0;
 			@include rhythm(map-get($title-sizes, 'h3'));
 		}
@@ -155,13 +142,13 @@
 		padding-inline: em(44);
 		padding-block: em(24) em(44);
 
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			padding-inline: em(20);
 			padding-block-start: 0;
 			padding-block-end: em(20);
 		}
 
-		@include respond-to($breakpoint-tiny, 'max') {
+		@include media('<=xsmall') {
 			padding-inline: 0;
 		}
 	}
@@ -172,7 +159,7 @@
 }
 
 .sign-layout-container {
-	@include respond-to($breakpoint-small, 'max') {
+	@include media('<=small') {
 		padding-inline: 1em;
 	}
 
@@ -190,7 +177,7 @@
 		padding-inline: 1em;
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		.payment-left,
 		.payment-right {
 			inline-size: 100%;
@@ -205,19 +192,19 @@
 	// special case for Signup in Proton-Account :-\
 	// this overrides only what's needed just below this
 	.payment-side-fields {
-		@include respond-to(768) {
+		@include media('<=#{em(768, 16)}') {
 			grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 		}
 
-		@include respond-to(720) {
+		@include media('<=#{em(720, 16)}') {
 			grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
 		}
 
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
 		}
 
-		@include respond-to($breakpoint-tiny) {
+		@include media('<=xsmall') {
 			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 		}
 	}
@@ -229,15 +216,15 @@
 	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 	grid-gap: 1em;
 
-	@include respond-to(768) {
+	@include media('<=#{em(768, 16)}') {
 		grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
 	}
 
-	@include respond-to($breakpoint-tiny) {
+	@include media('<=xsmall') {
 		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 	}
 }
@@ -248,7 +235,7 @@
 	--label-width: #{$label-width};
 }
 
-@include respond-to($breakpoint-medium) {
+@include media('<=medium') {
 	.payment-container {
 		--label-width: 45%;
 	}
@@ -258,7 +245,7 @@
 .account-form-cycle-currency-selectors {
 	inline-size: calc((100% - 3em) / 4); // 4 plans
 
-	@include respond-to(1100) {
+	@include media('<=#{em(1100, 16)}') {
 		&.flex-nowrap {
 			flex-wrap: wrap;
 
