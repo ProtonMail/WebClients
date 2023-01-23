@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Meter, usePlans, useUser } from '@proton/components';
-import { BRAND_NAME, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 
 interface Props {
@@ -12,8 +12,7 @@ interface Props {
 const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
     const [user] = useUser();
     const [plans = []] = usePlans();
-
-    const planName = PLAN_NAMES[PLANS.MAIL];
+    
     const mailPlusPlan = plans.find(({ Name }) => Name === PLANS.MAIL);
     const price = Math.round((mailPlusPlan?.Pricing[CYCLE.MONTHLY] || 0) / 100) * 100; // Price rounded to 500
     const current = humanPriceWithCurrency(rewards * price, user.Currency);
@@ -22,7 +21,7 @@ const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
     return (
         <div className="flex flex-justify-space-between flex-align-items-center flex-gap-1 on-tablet-flex-column">
             <div className="flex-item-fluid">
-                <b>{c('Info').t`${BRAND_NAME} ${planName} credits earned`}</b>
+                <b>{c('Info').t`Credits earned`}</b>
             </div>
             <div className="flex-item-fluid">{rewards > 0 && <Meter value={rewards} max={rewardsLimit} />}</div>
             <div className="flex-item-fluid text-right">{
