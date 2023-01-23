@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
 import * as globalAction from '../actions';
-import { changeCreateLoadingState, createSyncItem, deleteSyncItem, loadSyncList } from './sync.actions';
+import { changeCreateLoadingState, createSyncItem, loadSyncList } from './sync.actions';
 import { formatApiSync, formatApiSyncs } from './sync.helpers';
 import { SyncMap, SyncState } from './sync.interface';
 
@@ -53,11 +53,6 @@ const syncSlice = createSlice({
             }, {});
 
             state.syncs = formattedSync;
-        });
-
-        builder.addCase(deleteSyncItem.fulfilled, (state, action) => {
-            const id = action.payload;
-            delete state.syncs[id];
         });
 
         builder.addCase(globalAction.event, (state, action) => {
