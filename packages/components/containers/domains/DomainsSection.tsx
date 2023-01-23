@@ -56,6 +56,10 @@ const DomainsSectionInternal = () => {
         await loadModels([DomainsModel], { api, cache, useCache: false });
     };
 
+    const reviewText = c('Action').t`Review`;
+    const setCatchAllText = c('Action').t`Set catch-all`;
+    const deleteText = c('Action').t`Delete`;
+
     return (
         <SettingsSectionWide>
             {renderNewDomain && <DomainModal {...newDomainModalProps} />}
@@ -115,7 +119,8 @@ const DomainsSectionInternal = () => {
                                                     size="small"
                                                     list={[
                                                         {
-                                                            text: c('Action').t`Review`,
+                                                            text: reviewText,
+                                                            'aria-label': `${reviewText} ${domain.DomainName}`,
                                                             onClick: () => {
                                                                 setTmpDomainProps({ domain, domainAddresses });
                                                                 setEditDomainModalOpen(true);
@@ -124,14 +129,16 @@ const DomainsSectionInternal = () => {
                                                         Array.isArray(domainAddresses) &&
                                                             domainAddresses.length &&
                                                             ({
-                                                                text: c('Action').t`Set catch-all`,
+                                                                text: setCatchAllText,
+                                                                'aria-label': `${setCatchAllText} (${domain.DomainName})`,
                                                                 onClick: () => {
                                                                     setTmpDomainProps({ domain, domainAddresses });
                                                                     setCatchAllDomainModalOpen(true);
                                                                 },
                                                             } as const),
                                                         {
-                                                            text: c('Action').t`Delete`,
+                                                            text: deleteText,
+                                                            'aria-label': `${deleteText} ${domain.DomainName}`,
                                                             actionType: 'delete',
                                                             onClick: () => {
                                                                 setTmpDomainProps({ domain, domainAddresses });
