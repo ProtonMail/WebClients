@@ -30,10 +30,9 @@ module.exports = (...env) => {
         // }
 
         // The order is important so that the unsupported file is loaded after
-        config.entry = {
-            eo: [path.resolve('./src/app/eo.tsx'), require.resolve('@proton/shared/lib/browser/supported.js')],
-            ...config.entry,
-        };
+        config.entry = getConfig.mergeEntry(config.entry, {
+            eo: [path.resolve('./src/app/eo.tsx'), require.resolve('@proton/shared/lib/supported/supported.ts')],
+        });
 
         config.devServer.historyApiFallback.rewrites = [{ from: /^\/eo/, to: '/eo.html' }];
 
