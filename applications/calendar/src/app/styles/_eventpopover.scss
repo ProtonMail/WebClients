@@ -11,13 +11,13 @@
 	animation: eventpopoverIn ease 0.15s;
 	animation-fill-mode: both;
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		inset: 0;
 		inline-size: 100%;
 		block-size: 100%;
 	}
 
-	@include respond-to($breakpoint-small, 'min') {
+	@include media('>small') {
 		inline-size: rem(500);
 		max-inline-size: rem(392);
 		max-block-size: 100%;
@@ -25,7 +25,7 @@
 		box-shadow: var(--shadow-lifted);
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		padding-inline: rem(16);
 	}
 

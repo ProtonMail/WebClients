@@ -12,7 +12,7 @@
 	}
 }
 
-@include respond-to($breakpoint-medium, 'min') {
+@include media('>medium') {
 	// Set height to avoid it switching between steps
 	.subscription-modal--fixed-height {
 		block-size: rem(900);

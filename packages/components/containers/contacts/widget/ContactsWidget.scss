@@ -18,7 +18,7 @@
 	.ReactVirtualized__Grid__innerScrollContainer {
 		border: 0;
 	}
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		&.dropdown {
 			padding-inline: 5%;
 		}

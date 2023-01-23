@@ -7,7 +7,7 @@
 	border-radius: 50%;
 	display: inline-flex;
 
-	@media not print {
+	@include media('screen') {
 		outline: rem(2) solid var(--background-norm);
 	}
 
@@ -17,6 +17,7 @@
 
 	&--bordered {
 		--calendar-select-color-size: #{rem(10)};
+
 		border: 1px solid;
 	}
 }

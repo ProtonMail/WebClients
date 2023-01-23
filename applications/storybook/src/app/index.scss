@@ -36,19 +36,19 @@ pre code {
 	margin-block-end: 0.5em !important;
 }
 
-@include respond-to($breakpoint-medium) {
+@include media('<=medium') {
 	.on-tablet-m1 {
 		margin: 1em !important;
 	}
 }
 
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	.on-mobile-m1 {
 		margin: 1em !important;
 	}
 }
 
-@include respond-to($breakpoint-tiny) {
+@include media('<=xsmall') {
 	.on-tiny-mobile-m1 {
 		margin: 1em !important;
 	}
