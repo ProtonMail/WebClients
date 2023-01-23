@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { BrowserItemId } from '../interface';
 
-export function useSelectionControls({ itemIds }: { itemIds: string[] }) {
+export function useSelectionControls({ itemIds }: { itemIds: BrowserItemId[] }) {
     const [selectedItemIds, setSelectedItems] = useState<BrowserItemId[]>([]);
     const [multiSelectStartId, setMultiSelectStartId] = useState<BrowserItemId>();
 
@@ -85,7 +85,7 @@ export function useSelectionControls({ itemIds }: { itemIds: string[] }) {
         setMultiSelectStartId(undefined);
     }, []);
 
-    const isSelected = (linkId: string) => selectedItemIds.some((id) => id === linkId);
+    const isSelected = (itemId: BrowserItemId) => selectedItemIds.some((id) => id === itemId);
 
     return {
         selectedItemIds,
