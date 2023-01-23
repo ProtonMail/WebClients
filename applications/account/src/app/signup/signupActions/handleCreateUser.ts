@@ -12,7 +12,30 @@ import {
     SignupSteps,
     SignupType,
 } from '../interfaces';
-import { getReferralDataQuery, getSignupTypeQuery, hvHandler } from './signupActions';
+import { hvHandler } from './helpers';
+
+const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) => {
+    if (referralData) {
+        return {
+            ReferralID: referralData.invite,
+            ReferralIdentifier: referralData.referrer,
+        };
+    }
+};
+
+const getSignupTypeQuery = (accountData: SignupCacheResult['accountData'], setupVPN: boolean) => {
+    // VPN requests the recovery email, and does not create the address (avoid passing Domain)
+    if (accountData.signupType === SignupType.VPN) {
+        let extra = {};
+        if (setupVPN) {
+            extra = { Domain: accountData.domain };
+        }
+        return { ...extra, Email: accountData.recoveryEmail };
+    }
+    if (accountData.signupType === SignupType.Username) {
+        return { Domain: accountData.domain };
+    }
+};
 
 export const handleCreateUser = async ({
     cache,
