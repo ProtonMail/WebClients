@@ -14,7 +14,7 @@ describe('useSelection', () => {
         hook = result;
     });
 
-    it('toggleSelectItem', async () => {
+    it('toggleSelectItem', () => {
         const itemIdToToggle = '1';
         act(() => {
             hook.current.toggleSelectItem(itemIdToToggle);
@@ -22,14 +22,14 @@ describe('useSelection', () => {
         expect(hook.current.selectedItemIds).toMatchObject([itemIdToToggle]);
     });
 
-    it('toggleAllSelected', async () => {
+    it('toggleAllSelected', () => {
         act(() => {
             hook.current.toggleAllSelected();
         });
         expect(hook.current.selectedItemIds).toMatchObject(ALL_IDS);
     });
 
-    it('toggleRange', async () => {
+    it('toggleRange', () => {
         act(() => {
             hook.current.selectItem('3');
         });
@@ -39,7 +39,7 @@ describe('useSelection', () => {
         expect(hook.current.selectedItemIds).toMatchObject(['3', '4', '5']);
     });
 
-    it('selectItem', async () => {
+    it('selectItem', () => {
         act(() => {
             hook.current.selectItem('1');
         });
@@ -49,7 +49,7 @@ describe('useSelection', () => {
         expect(hook.current.selectedItemIds).toMatchObject(['3']);
     });
 
-    it('clearSelection', async () => {
+    it('clearSelection', () => {
         act(() => {
             hook.current.toggleAllSelected();
         });
