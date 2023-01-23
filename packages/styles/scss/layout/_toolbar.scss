@@ -70,7 +70,7 @@
 		&-container {
 			margin-inline-start: em(16);
 
-			@include respond-to($breakpoint-small, 'min') {
+			@include media('>small') {
 				margin-inline-start: em(25);
 			}
 		}
@@ -85,14 +85,14 @@
 		.select-all-container {
 			margin-inline-start: em(10);
 
-			@include respond-to($breakpoint-small, 'min') {
+			@include media('>small') {
 				margin-inline-start: em(7);
 				padding-inline-start: 0;
 			}
 		}
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		border-radius: 0;
 	}
 }

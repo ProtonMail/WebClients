@@ -74,7 +74,7 @@ html,
 	background-color: var(--sidebar-background-color);
 	color: var(--sidebar-text-color, var(--text-norm));
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		position: fixed;
 		inset: 0;
 		z-index: $layer-mobile-navigation;
@@ -113,7 +113,7 @@ html,
 		align-self: baseline;
 	}
 
-	@include respond-to($breakpoint-small, 'min') {
+	@include media('>small') {
 		block-size: rem($header-height);
 		inline-size: rem($width-sidebar);
 
@@ -124,14 +124,14 @@ html,
 }
 
 .hamburger {
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		flex-shrink: 0; // this has to stay
 		margin-inline-end: 0.1em; // just for not touching the text on hover state :)
 	}
 }
 
 .topnav-container {
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		flex-shrink: 0; // this has to stay
 		margin-inline-start: auto; // case of mail display
 	}
@@ -153,7 +153,7 @@ html,
 		border-inline-end-width: 1px;
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		margin-inline-end: 0;
 		border-radius: 0;
 		border-inline-start-width: 0;
@@ -194,7 +194,7 @@ $height-for-mobile: 8em !default;
 	block-size: $height-for-tablet;
 }
 
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	.main-area--padding-fix {
 		padding-block-end: $height-for-mobile;
 

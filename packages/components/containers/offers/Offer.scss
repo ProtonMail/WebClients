@@ -14,14 +14,14 @@ $amount-size: 36;
 
 			.modal-two-content {
 				margin-block-end: 0;
-				@include respond-to($breakpoint-small, 'min') {
+				@include media('>small') {
 					display: flex;
 					inline-size: 100%;
 				}
 			}
 
 			// kill scroll only for desktop
-			@include respond-to($breakpoint-small, 'min') {
+			@include media('>small') {
 				.scroll-outer-vertical .scroll-inner,
 				.scroll-child {
 					overflow: hidden;
@@ -47,11 +47,11 @@ $amount-size: 36;
 
 	// for some promotions
 	&-proton-logo {
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			inline-size: em(30); // just to avoid having images going to another next line on mobile
 		}
 	}
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		&-proton-logo {
 			inline-size: em(30); // just to avoid having images going to another next line on mobile
 		}
@@ -62,13 +62,13 @@ $amount-size: 36;
 	&-modal &-main-wrapper {
 		margin-inline: -2rem;
 		margin-block-start: -0.5em;
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			margin-inline: 0;
 		}
 	}
 
 	&-modal:not(.offer-modal--one-deal) {
-		@include respond-to($breakpoint-small, 'min') {
+		@include media('>small') {
 			.offer-close-button {
 				color: white; // always above a banner, so hardcoded to white
 			}
@@ -76,7 +76,7 @@ $amount-size: 36;
 
 		.offer-main-content {
 			margin-inline: 2rem;
-			@include respond-to($breakpoint-small) {
+			@include media('<=small') {
 				margin-inline: 0;
 			}
 		}
@@ -87,10 +87,10 @@ $amount-size: 36;
 	&-side-image {
 		min-inline-size: 400px;
 
-		@include respond-to(1100) {
+		@include media('<=#{em(1100, 16)}') {
 			min-inline-size: 300px;
 		}
-		@include respond-to(900) {
+		@include media('<=#{em(900, 16)}') {
 			min-inline-size: 250px;
 		}
 	}
@@ -118,11 +118,11 @@ $amount-size: 36;
 
 		&:not(:first-child) {
 			margin-inline-start: 1em;
-			@include respond-to($breakpoint-small) {
+			@include media('<=small') {
 				margin-inline-start: 0;
 			}
 		}
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			max-inline-size: none;
 
 			&--mostPopular {
@@ -134,10 +134,10 @@ $amount-size: 36;
 
 	&-plan {
 		padding-inline: em(24);
-		@include respond-to(850) {
+		@include media('<=#{em(850, 16)}') {
 			padding-inline: em(18);
 		}
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			padding-inline: em(24);
 		}
 
@@ -169,7 +169,7 @@ $amount-size: 36;
 		}
 
 		// hidden when empty on mobile
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			&:empty {
 				display: none;
 			}
@@ -178,11 +178,11 @@ $amount-size: 36;
 
 	&-plan-namePeriod {
 		.offer-modal:not(.offer-modal--one-deal) & {
-			@include respond-to(850) {
+			@include media('<=#{em(850, 16)}') {
 				min-block-size: 6em; // proton unlimited on 2 lines
-				@include respond-to($breakpoint-small) {
-					min-block-size: 0;
-				}
+			}
+			@include media('<=small') {
+				min-block-size: 0;
 			}
 		}
 	}
@@ -194,7 +194,7 @@ $amount-size: 36;
 		.currency {
 			font-size: em($amount-size);
 			font-weight: var(--font-weight-bold);
-			@include respond-to(1020) {
+			@include media('<=#{em(1020, 16)}') {
 				font-size: em(28);
 			}
 		}
@@ -205,12 +205,12 @@ $amount-size: 36;
 			display: inline-block;
 
 			.offer-modal:not(.offer-modal--one-deal) & {
-				@include respond-to(900) {
+				@include media('<=#{em(900, 16)}') {
 					min-inline-size: 100%;
 					position: relative;
 					inset-block-start: -0.5em;
 				}
-				@include respond-to($breakpoint-small) {
+				@include media('<=small') {
 					min-inline-size: 0;
 					position: static;
 				}

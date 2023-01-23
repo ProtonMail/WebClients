@@ -2,7 +2,7 @@
 
 .move-dropdown {
 	&-container {
-		@include respond-to($breakpoint-small, 'min') {
+		@include media('>small') {
 			max-inline-size: 22em;
 			max-block-size: 15.5em;
 		}

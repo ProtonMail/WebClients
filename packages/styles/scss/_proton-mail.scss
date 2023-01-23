@@ -1,5 +1,15 @@
+@use 'config/functions/im-to-em' as *;
+
 // Variables specific overrides
-$breakpoint-medium: 940;
+$breakpoints: im-to-em(
+	(
+		'xlarge': 1500px,
+		'large': 1100px,
+		'medium': 940px,
+		'small': 680px,
+		'xsmall': 450px,
+	)
+);
 $use-height-auto-td: false;
 $use-height-auto-img: false;
 $use-height-auto-table: false;
