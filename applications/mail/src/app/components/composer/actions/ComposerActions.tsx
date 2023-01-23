@@ -176,7 +176,7 @@ const ComposerActions = ({
                         <>
                             <div className="flex flex-nowrap mt0-5 mb0-5">
                                 <div className="flex-item-noshrink mr1">
-                                    <img src={scheduledImg} className="w4e" />
+                                    <img src={scheduledImg} className="w4e" alt="" />
                                 </div>
                                 <div>
                                     <p className="mt0 mb0-5 text-bold">{c('Spotlight').t`Schedule send`}</p>
