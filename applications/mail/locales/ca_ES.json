@@ -4881,9 +4881,6 @@
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Movent una gran quantitat de missatges. Pot trigar una estona."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
@@ -4910,6 +4907,9 @@
       ],
       "No group found": [
         "No s'ha trobat cap grup"
+      ],
+      "No imports to display.": [
+        "No hi ha importacions per mostrar."
       ],
       "No label found": [
         "No s'ha trobat cap etiqueta"
@@ -7717,17 +7717,9 @@
         "${ daysCountLeft } dia",
         "${ daysCountLeft } dies"
       ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hores"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } hora",
         "${ hoursCountLeft } hores"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuts"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minut",
@@ -8269,6 +8261,23 @@
         "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Accions"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importació"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "Status": [
+        "Estat"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Avui"
@@ -8666,8 +8675,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Cada ${ interval } any",
+        "Cada ${ interval } anys"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada ${ interval } any, ${ timesString }",

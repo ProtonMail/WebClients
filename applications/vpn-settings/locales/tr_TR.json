@@ -29,6 +29,9 @@
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
+      "Attention required": [
+        "İlgilenmeniz gerekiyor"
+      ],
       "Authenticate": [
         "Kimliği doğrula"
       ],
@@ -423,11 +426,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Bu işlem bu sertifikayı kullanan tüm yöneltici ve istemcilerin bağlantısını kesecek."
-      ]
-    },
-    "Apps dropdown": {
-      "${ BRAND_NAME } applications": [
-        "${ BRAND_NAME } uygulamaları"
       ]
     },
     "Badge": {
@@ -1922,6 +1920,9 @@
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
+      "Attention required": [
+        "İlgilenmeniz gerekiyor"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus veya Visionary aboneliği gerekli"
       ],
@@ -2362,9 +2363,6 @@
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
-      ],
-      "Update the URL in your password manager": [
-        "Parola yöneticinizdeki adresi güncelleyin"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
@@ -2916,6 +2914,12 @@
       ],
       "Two-password mode": [
         "İki parola kipi"
+      ],
+      "Use a recovery email address": [
+        "Kurtarma e-posta adresi kullanılsın"
+      ],
+      "Use a recovery phone number": [
+        "Kurtarma telefon numarası kullanılsın"
       ],
       "User's new password": [
         "Kullanıcının yeni parolası"

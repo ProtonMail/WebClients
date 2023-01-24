@@ -425,10 +425,10 @@
       "Not spam": [
         "Não é spam"
       ],
-      "OK": [
+      "Ok": [
         "Aceitar"
       ],
-      "Ok": [
+      "OK": [
         "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6573,16 +6573,6 @@
         "Campo vCard"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuto"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Procurar fusos horários"
@@ -7745,8 +7735,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "A cada ${ interval } ano",
+        "A cada ${ interval } anos"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

@@ -4907,9 +4907,6 @@
       "Monthly ${ onDayString }": [
         "Mensuellement le ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Transfert de nombreux messages en cours, cela peut prendre un certain temps."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez le dossier parent dans lequel vous voulez le mettre. Si vous ne sélectionnez pas un dossier parent, ce nouveau dossier sera créé en tant que dossier de premier niveau."
       ],
@@ -4936,6 +4933,9 @@
       ],
       "No group found": [
         "Aucun groupe trouvé"
+      ],
+      "No imports to display.": [
+        "Aucune importation à afficher."
       ],
       "No label found": [
         "Aucun label trouvé"
@@ -7768,17 +7768,9 @@
         "${ daysCountLeft } jour",
         "${ daysCountLeft } jours"
       ],
-      "${ hours } hour": [
-        "${ hours } heure",
-        "${ hours } heures"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } heure",
         "${ hoursCountLeft } heures"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minute",
@@ -8320,6 +8312,23 @@
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Actions"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Import": [
+        "Importer"
+      ],
+      "Size": [
+        "Taille"
+      ],
+      "Status": [
+        "État"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
@@ -8723,8 +8732,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Chaque année ${ interval }",
+        "Tous les ${ interval } ans"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Chaque ${ interval } année, à ${ timesString }",

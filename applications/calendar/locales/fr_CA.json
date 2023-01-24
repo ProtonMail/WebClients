@@ -3394,6 +3394,9 @@
       "No group found": [
         "Aucun groupe trouvé"
       ],
+      "No imports to display.": [
+        "Aucune importation à afficher."
+      ],
       "No results found": [
         "Aucun résultat trouvé"
       ],
@@ -5220,16 +5223,6 @@
         "Paramètres"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } heure",
-        "${ hours } heures"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Rechercher des fuseaux horaires"
@@ -5602,6 +5595,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Sélectionner un numéro"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Actions"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Import": [
+        "Importer"
+      ],
+      "Size": [
+        "Taille"
+      ],
+      "Status": [
+        "État"
       ]
     },
     "Title; create calendar modal": {
@@ -6001,8 +6011,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Chaque année ${ interval }",
+        "Tous les ${ interval } ans"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Chaque ${ interval } année, à ${ timesString }",

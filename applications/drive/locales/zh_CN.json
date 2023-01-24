@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "添加截图"
       ],
+      "Attention required": [
+        "需要关注"
+      ],
       "Authenticate": [
         "认证"
       ],
@@ -209,6 +212,9 @@
       "Download anyway": [
         "仍要下载"
       ],
+      "Download the Windows application": [
+        "下载 Windows 应用程序"
+      ],
       "Drive Locked": [
         "网盘已锁定"
       ],
@@ -258,7 +264,7 @@
         "作为附件转发"
       ],
       "Get ${ DRIVE_APP_NAME }": [
-        "获得 ${ DRIVE_APP_NAME }"
+        "注册 ${ DRIVE_APP_NAME }"
       ],
       "Get link": [
         "生成共享链接"
@@ -630,7 +636,7 @@
         "查看账单"
       ],
       "Your 500 MB bonus": [
-        "您的500 MB 奖励"
+        "您的 500 MB 奖励"
       ],
       "Zoom in": [
         "放大"
@@ -1760,7 +1766,7 @@
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "遵循系统设置 (${ globalDefaultText })"
+        "遵循系统设置（${ globalDefaultText }）"
       ]
     },
     "Delinquent modal title": {
@@ -1924,6 +1930,9 @@
       "Email address invalid": [
         "邮箱格式不正确"
       ],
+      "Email address is required": [
+        "邮箱地址必须填写"
+      ],
       "Email is not valid": [
         "无效邮箱"
       ],
@@ -1950,6 +1959,9 @@
       ],
       "Image upload failed": [
         "图像上传失败"
+      ],
+      "IMAP server is required": [
+        "IMAP 服务器必须填写"
       ],
       "Incorrect login credentials. Please try again.": [
         "登录凭据不正确，请重试。"
@@ -1996,6 +2008,9 @@
       "Not a valid number": [
         "无效号码"
       ],
+      "Password is required": [
+        "密码必须填写"
+      ],
       "Passwords do not match": [
         "密码不匹配"
       ],
@@ -2004,6 +2019,9 @@
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "请修复高亮的冲突以继续。"
+      ],
+      "Port is required": [
+        "端口号必须填写"
       ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
@@ -2098,6 +2116,9 @@
       "There was an error when exporting the contacts vCards": [
         "导出联系人 vCards 时出错"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此项超过了 ${ maximumLength } 个字符的长度限制。"
+      ],
       "This field is required": [
         "此项必须填写"
       ],
@@ -2112,6 +2133,9 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "此邮件可能含有当前浏览器无法正确打开的链接。"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unknown error": [
         "未知错误"
@@ -2895,13 +2919,13 @@
         "并"
       ],
       "And access it from anywhere": [
-        "并从任何地方访问它"
+        "即可随时随地下载"
       ],
       "Anyone with this link can access your file.": [
-        "任何知道此链接的人都能访问您的文件。"
+        "任何持有此链接的人都能下载您的文件。"
       ],
       "Anyone with this link can access your folder.": [
-        "任何知道此链接的人都能访问您的文件夹。"
+        "任何持有此链接的人都能下载您的文件夹。"
       ],
       "Are you sure you want to discard your changes?": [
         "确定要放弃修改吗？"
@@ -2914,6 +2938,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "确定要从回收站中永久删除所选项吗？"
+      ],
+      "Attention required": [
+        "需要关注"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
@@ -3006,7 +3033,7 @@
         "数字签名已验证，此文件夹是由 ${ emailAddress } 用户安全上传。"
       ],
       "double your storage": [
-        "获得双倍的储存"
+        "存储空间翻倍"
       ],
       "Download canceled": [
         "下载已取消"
@@ -3041,11 +3068,14 @@
       "Each code can only be used once": [
         "每条恢复码只能使用一次"
       ],
+      "Emails are automatically signed": [
+        "自动对邮件进行数字签名"
+      ],
       "Enabling drive search": [
         "正在启用网盘搜索"
       ],
       "Encrypted": [
-        "已加密"
+        "文件加密"
       ],
       "Encrypted search is here": [
         "已推出加密搜索功能"
@@ -3058,6 +3088,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入你的密码（作为组织管理员）。"
@@ -3090,7 +3123,7 @@
         "文件缺少签名，我们无法验证 ${ fileName } 由谁上传。"
       ],
       "File will not be uploaded": [
-        "将不会上传文件"
+        "文件将不会上传"
       ],
       "Finalizing": [
         "即将完成"
@@ -3108,7 +3141,10 @@
         "文件夹缺少签名，我们无法验证 ${ fileName } 由谁上传。"
       ],
       "Folder will not be uploaded": [
-        "将不会上传文件夹"
+        "文件夹将不会上传"
+      ],
+      "Folders you sync from your computer will appear here.": [
+        "从您的电脑同步的文件夹将显示在这里。"
       ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
@@ -3117,10 +3153,10 @@
         "释放一些空间或联系您的管理员。"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
-        "了解${ DRIVE_APP_NAME }并获得500MB的存储奖励! 今天就采取行动吧。"
+        "了解 ${ DRIVE_APP_NAME } 即可获得 500 MB 存储空间奖励，赶快行动吧！"
       ],
       "Go ahead, upload a file": [
-        "来吧，上传文件"
+        "上传您的第一个文件"
       ],
       "Go to \"My files\" and upload some files first.": [
         "请先转到“我的文件”并上传一些文件。"
@@ -3161,6 +3197,9 @@
       "Import mailbox": [
         "导入收件箱"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "其他邮箱中的邮件、日程和通讯录也可以轻松导入 ${ BRAND_NAME }，我们将全程指导您操作并自动为您加密数据。欢迎进入隐私优先的世界。"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
@@ -3185,11 +3224,17 @@
       "Internet connection restored.": [
         "网络连接已恢复。"
       ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "您最近似乎曾尝试上传 ${ uploadName }，如果上传失败，请${ replaceFile }。如果上传仍在进行中，替换文件将导致上传中止。"
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "若不手动删除，回收站中的文件将一直保留"
+      ],
       "It’s as easy as drag and drop or selecting files": [
-        "只需拖拽或选择文件"
+        "只需将文件拖至此处或点击下方按钮即可"
       ],
       "It’s easy and secure": [
-        "它简单、安全"
+        "简便与安全兼得"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交给我们即可。"
@@ -3237,7 +3282,7 @@
         "加载中..."
       ],
       "Makes your account safer": [
-        "使你的账户更安全"
+        "增强账户安全性"
       ],
       "Merged": [
         "已合并"
@@ -3275,6 +3320,9 @@
       "No group found": [
         "未找到群组"
       ],
+      "No imports to display.": [
+        "无导入记录。"
+      ],
       "No preview available": [
         "无法预览此文件"
       ],
@@ -3295,6 +3343,9 @@
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "并非所有文件都已传输。请尝试重新上传或下载文件。"
+      ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "请注意：安装过 ${ DRIVE_APP_NAME } 的设备上仍可能存在本地数据。"
       ],
       "of": [
         "，共"
@@ -3322,6 +3373,12 @@
       ],
       "Permanently delete all files in your locked drive": [
         "永久删除锁定的网盘中的所有文件"
+      ],
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline 只能用于纯文本邮件。"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME 可使用编辑器中指定的格式发送邮件。"
       ],
       "Please enter the password to decrypt and view content.": [
         "请输入密码解锁并查看内容。"
@@ -3358,6 +3415,9 @@
       ],
       "Preview": [
         "预览"
+      ],
+      "Preview failed to be loaded": [
+        "预览加载失败"
       ],
       "Primary": [
         "主要"
@@ -3453,10 +3513,7 @@
         "客服团队"
       ],
       "Swiss privacy": [
-        "瑞士隐私"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "点击 + 按钮来上传文件或文件夹。"
+        "瑞士级隐私保护"
       ],
       "Temporarily unavailable. Please check back later.": [
         "暂时不可用。请稍后再试。"
@@ -3474,10 +3531,10 @@
         "当前仍有待传输的文件，关闭传输管理器将中断所有操作。"
       ],
       "There are no files yet": [
-        "还没有文件"
+        "暂无文件"
       ],
       "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "这些文件是使用端到端加密共享的。 为了确保它们的安全，以及所有文档、照片和文件的私密性，请将其存储在${ DRIVE_APP_NAME } 中。 使用方便，而且免费。"
+        "这些文件采用了端到端加密技术共享，使用免费便捷的 ${ DRIVE_APP_NAME } 还可以安全地存储您自己的文档、照片等各类文件。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
@@ -3492,7 +3549,7 @@
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
+        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
@@ -3510,16 +3567,22 @@
         "这将删除链接并移除任何拥有该链接的人对您文件（夹）的访问权限。"
       ],
       "This will overwrite the existing file": [
-        "这将覆盖现有文件"
+        "现有文件将被覆盖"
       ],
       "This will overwrite the existing folder": [
-        "这将覆盖现有文件夹"
+        "现有文件夹将被覆盖"
+      ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "为了实现真正的私人搜索，我们需要在本地对你的文件进行索引。你仍然可以正常使用${ DRIVE_APP_NAME } - 索引完成后我们会通知你。"
+        "为了保证搜索过程的安全性，文件索引需要在此设备上完成。您可以继续正常使用 ${ DRIVE_APP_NAME }，索引完成后我们将通知您。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名。"
@@ -3578,11 +3641,14 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "一次上传数百个文件可能会影响性能。"
       ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
+        "使用桌面版网盘即可将电脑文件同步至 ${ DRIVE_APP_NAME }。同步的文件将显示在此处，随时随地均可下载。${ LearnMore }"
+      ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "使用这张表单通知我们有不合适、非法或恶意分享的文件，您将要举报以下行为："
       ],
       "Way to go, you’ve just doubled your free storage!": [
-        "干得好，你刚刚把你的免费存储空间增加了一倍！"
+        "恭喜，您已获得双倍免费存储空间！"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
@@ -3600,7 +3666,7 @@
         "周"
       ],
       "What do you want to do?": [
-        "您想要做什么？"
+        "您希望如何处理？"
       ],
       "What would you like to do?": [
         "您想要做些什么？"
@@ -3642,7 +3708,7 @@
         "您无法撤销此操作。"
       ],
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "您还有${ expiresInDays } 天来申请您的 500 MB 欢迎奖金和 "
+        "您还有 ${ expiresInDays } 天有机会获得 500 MB 存储空间奖励并将"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已经使用了 ${ spaceDisplayed }% 的存储空间。${ freeUpMessage } ${ upgradeLink }"
@@ -3723,9 +3789,6 @@
       "name": [
         "名称"
       ],
-      "name hash": [
-        "名称哈希值"
-      ],
       "thumbnail": [
         "缩略图"
       ]
@@ -3794,7 +3857,7 @@
         "音频文件"
       ],
       "Authenticator app": [
-        "验证器应用程序"
+        "身份验证应用"
       ],
       "Automatically save contacts": [
         "自动保存联系人"
@@ -3893,7 +3956,7 @@
         "电子邮件"
       ],
       "Emails (all messages)": [
-        "邮件（所有信息）"
+        "所有邮件"
       ],
       "Emails (last 12 months)": [
         "邮件（过去 12 个月）"
@@ -4115,7 +4178,7 @@
         "跳过文件夹"
       ],
       "Spam": [
-        "垃圾"
+        "垃圾邮件"
       ],
       "Stolen data": [
         "偷窃"
@@ -4227,7 +4290,7 @@
     },
     "Landmarks": {
       "Side panel": [
-        "侧面板"
+        "侧边栏"
       ]
     },
     "Link": {
@@ -4280,6 +4343,9 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "导入 ${ itemsToImportCount } 个文件夹中的所有邮件，并标为 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "从标签 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
@@ -4376,11 +4442,17 @@
       "\"${ name }\" failed to be restored from trash": [
         "\"${ name }\" 从回收站还原失败"
       ],
+      "\"${ name }\" failed to be saved": [
+        "${ name } 保存失败"
+      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" 已移动到回收站"
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" 已从回收站恢复"
+      ],
+      "\"${ name }\" saved successfully": [
+        "${ name } 已成功保存"
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" 移动成功"
@@ -4419,10 +4491,10 @@
         "${ numberOfItems } 个项目移动成功"
       ],
       "${ numberOfItems } links to your items failed to be deleted": [
-        "${ numberOfItems } 个项目链接删除失败"
+        "${ numberOfItems } 个共享链接删除失败"
       ],
       "${ numberOfItems } links to your items were deleted": [
-        "${ numberOfItems } 个项目链接已删除"
+        "${ numberOfItems } 个共享链接已删除"
       ],
       "All items will soon be permanently deleted from trash": [
         "所有项目将很快从回收站永久删除"
@@ -4509,10 +4581,10 @@
         "\"${ name }\" 链接已删除"
       ],
       "The link to your item failed to be deleted": [
-        "项目链接删除失败"
+        "共享链接删除失败"
       ],
       "The link to your item was deleted": [
-        "项目链接已删除"
+        "共享链接已删除"
       ],
       "Trash failed to be emptied": [
         "未能清空回收站"
@@ -4550,7 +4622,7 @@
         "创建分享链接"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
-        "现在开始使用${ DRIVE_APP_NAME }，我们会将您的免费空间加倍到 1GB！"
+        "完成 ${ DRIVE_APP_NAME } 使用入门即可将您的免费存储空间提升至 1 GB！"
       ],
       "Set a recovery method": [
         "设置恢复方法"
@@ -4577,6 +4649,9 @@
       ],
       "Set up your organization": [
         "填写机构信息"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 和 ${ DRIVE_SHORT_APP_NAME }。"
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
@@ -4764,9 +4839,20 @@
         "上传"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "无需切换应用即可管理联系人和日程。"
+      ],
+      "Try the new side panel": [
+        "体验新版侧边栏"
+      ]
+    },
     "Signing preference for emails": {
+      "Don't sign": [
+        "无数字签名"
+      ],
       "Sign": [
-        "签名"
+        "数字签名"
       ]
     },
     "Spotlight": {
@@ -4775,6 +4861,9 @@
       ],
       "Encrypted search is here": [
         "已推出加密搜索功能"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "最高可获 ${ credits } 余额奖励。"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "邀请好友注册 ${ BRAND_NAME }"
@@ -4798,6 +4887,9 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } 位联系人信息似乎完全相同。"
+      ],
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
       ],
@@ -4842,6 +4934,9 @@
       ],
       "The link to your file was successfully copied": [
         "已成功复制文件链接"
+      ],
+      "Undo in progress": [
+        "正在撤销"
       ],
       "Verification successful": [
         "验证成功"
@@ -4909,9 +5004,23 @@
         "设置"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 小时"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 小时"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分钟"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } 小时"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 小时"
       ],
       "${ minutes } minutes": [
         "${ minutes } 分钟"
@@ -5375,10 +5484,10 @@
         "您尚未添加文件夹"
       ],
       "You've got files": [
-        "你已获得文件"
+        "您已收到文件"
       ],
       "Your 500 MB bonus": [
-        "您的500 MB 奖励"
+        "您的 500 MB 奖励"
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
@@ -5387,10 +5496,27 @@
         "您的免费试用将在 ${ formattedEndDate } 后过期。"
       ],
       "Your welcome actions": [
-        "您的欢迎行动"
+        "您的新人礼包"
       ],
       "You’ve got 1 GB of storage": [
         "您已获得 1 GB 存储空间"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "操作"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Import": [
+        "导入"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "状态"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5432,8 +5558,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
+      "Hide side panel": [
+        "隐藏侧边栏"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
+      ],
+      "Show side panel": [
+        "显示侧边栏"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
@@ -5451,6 +5583,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "密码必须至少包含 ${ length } 个字符"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
       ]
     },
     "Validation Error": {
@@ -5547,6 +5682,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "邮件服务器验证失败，如果您信任该服务器，可以跳过此项验证。"
       ],
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"

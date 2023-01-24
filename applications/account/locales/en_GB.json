@@ -326,11 +326,11 @@
       "No": [
         "No"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open navigation": [
         "Open navigation"
@@ -4407,16 +4407,6 @@
         "Status"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hour",
-        "${ hours } hours"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
-      ]
-    },
     "Title": {
       "1. Select platform": [
         "1. Select platform"
@@ -5281,8 +5271,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Every ${ interval } year",
+        "Every ${ interval } years"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Every ${ interval } year, ${ timesString }",

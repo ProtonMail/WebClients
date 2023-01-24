@@ -510,11 +510,11 @@
       "Not spam": [
         "Není spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -4349,6 +4349,9 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% pozastaveno"
       ],
+      "Active": [
+        "Aktivní"
+      ],
       "Canceled": [
         "Zrušeno"
       ],
@@ -4372,6 +4375,9 @@
       ],
       "Started": [
         "Zahájeno"
+      ],
+      "Stopped": [
+        "Zastaveno"
       ]
     },
     "Import type": {
@@ -4801,6 +4807,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
+      ],
+      "Billing cycle: ${ text }": [
+        "Fakturační cyklus: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Potvrzení Bitcoin transakcí může nějakou dobu trvat (až 24 hodin). Jakmile bude transakce potvrzena, kredity připíšeme na Váš účet. Po potvrzené transakci můžete fakturu uhradit kredity."
@@ -5899,9 +5908,6 @@
       ],
       "Update recovery phrase": [
         "Aktualizovat obnovovací frázi"
-      ],
-      "Update the URL in your password manager": [
-        "Aktualizujte adresu URL ve Vašem správci hesel"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Navyšte účet ještě dnes, abyste nepřišli o následující výhody ${ planName }."
@@ -10124,12 +10130,38 @@
         "Nebyl nalezen žádný SMTP token"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } hodina",
         "${ hours } hodiny",
         "${ hours } hodin",
         "${ hours } hodin"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny"
       ],
       "${ minutes } minute": [
         "${ minutes } minuta",
@@ -11741,8 +11773,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "${ interval }",
+        "Každé ${ interval } roky",
         "Každých ${ interval } roků",
         "Každých ${ interval } roků"
       ],

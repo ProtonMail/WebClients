@@ -510,11 +510,11 @@
       "Not spam": [
         "非垃圾郵件"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -5661,9 +5661,6 @@
       "Update recovery phrase": [
         "更新還原短語"
       ],
-      "Update the URL in your password manager": [
-        "在您的密碼管理程式中更新網址"
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "今天就升級，不要錯過 ${ planName } 特賞限時福利！"
       ],
@@ -9568,14 +9565,6 @@
         "找不到 SMTP 權杖"
       ]
     },
-    "Time unit": {
-      "${ hours } hours": [
-        "${ hours } 小時"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分鐘"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "搜尋時區"
@@ -11055,6 +11044,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "每 ${ interval } 年"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "每${ interval }年，${ timesString }"
       ],

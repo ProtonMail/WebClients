@@ -3384,6 +3384,9 @@
       "No group found": [
         "グループが見つかりませんでした"
       ],
+      "No imports to display.": [
+        "表示するインポートはありません。"
+      ],
       "No results found": [
         "該当する項目がありません"
       ],
@@ -5158,9 +5161,23 @@
         "設定"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 時間"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 時間"
       ],
       "${ minutes } minutes": [
         "${ minutes } 分"
@@ -5535,6 +5552,23 @@
         "番号を選択"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "操作"
+      ],
+      "Date": [
+        "日付"
+      ],
+      "Import": [
+        "インポート"
+      ],
+      "Size": [
+        "サイズ"
+      ],
+      "Status": [
+        "状態"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "カレンダーを作成"
@@ -5897,6 +5931,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "${ interval } 年毎"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "${ interval } 年毎、${ timesString }"
       ],
