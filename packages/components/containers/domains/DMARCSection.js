@@ -21,7 +21,7 @@ const DMARCSection = () => {
                     .t`If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.`}
             </Alert>
             <Label>{c('Label').t`Here is a basic DMARC record that does nothing except email you reports.`}</Label>
-            <Table>
+            <Table responsive="cards">
                 <TableHeader
                     cells={[
                         c('Header for domain modal').t`Type`,
@@ -31,6 +31,11 @@ const DMARCSection = () => {
                 />
                 <TableBody>
                     <TableRow
+                        labels={[
+                            c('Header for domain modal').t`Type`,
+                            c('Header for domain modal').t`Host name`,
+                            c('Header for domain modal').t`Value / Data / Points to`,
+                        ]}
                         cells={[
                             <code key="txt">TXT</code>,
                             <code key="dmarc">_dmarc</code>,

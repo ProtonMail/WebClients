@@ -181,22 +181,22 @@ const Spams = () => {
 
             {'displayResults' === status && (
                 <>
-                    <Table>
+                    <Table hasActions responsive="cards">
                         <TableHeader>
                             <tr>
                                 <TableCell type="header">{c('TableHeader').t`Email address`}</TableCell>
                                 <TableCell type="header">{c('TableHeader').t`Marked as`}</TableCell>
-                                <TableCell type="header" className="text-right">{c('TableHeader').t`Edit`}</TableCell>
+                                <TableCell type="header">{c('TableHeader').t`Edit`}</TableCell>
                             </tr>
                         </TableHeader>
                         <TableBody>
                             {list.map((item) => (
                                 <TableRow key={item.id}>
                                     <TableCell>{'domain' in item ? item.domain : item.email}</TableCell>
-                                    <TableCell>
+                                    <TableCell label={c('TableHeader').t`Marked as`}>
                                         <LabelStack labels={[getLabelByLocation(item.location)]} />
                                     </TableCell>
-                                    <TableCell className="text-right">
+                                    <TableCell>
                                         <SpamsButtonDropdown
                                             title="…"
                                             actions={getActionsByLocation(

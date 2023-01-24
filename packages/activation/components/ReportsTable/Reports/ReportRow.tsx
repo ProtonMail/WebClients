@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 import { format } from 'date-fns';
+import { c } from 'ttag';
 
 import { ReportSummaryID } from '@proton/activation/logic/reports/reports.interface';
 import { selectReportById, selectReportSummaryById } from '@proton/activation/logic/reports/reports.selectors';
@@ -26,16 +27,16 @@ const ReportRow = ({ reportSummaryId }: Props) => {
 
     return (
         <TableRow data-testid="reportsTable:reportRow">
-            <ReportsTableCell product={product} title={account} date={endDate} />
+            <ReportsTableCell product={product} title={account} />
             <TableCell>
-                <div className="on-mobile-text-center">
+                <div>
                     <ReportRowStatus status={state} rollbackState={rollbackState} />
                 </div>
             </TableCell>
             <TableCell>
                 <time>{format(endDate * 1000, 'PPp', { locale: dateLocale })}</time>
             </TableCell>
-            <TableCell>{humanSize(size)}</TableCell>
+            <TableCell label={c('Title header').t`Size`}>{humanSize(size)}</TableCell>
             <TableCell>
                 <ReportRowActions key="button" reportSummaryID={reportSummaryId} rollbackState={rollbackState} />
             </TableCell>

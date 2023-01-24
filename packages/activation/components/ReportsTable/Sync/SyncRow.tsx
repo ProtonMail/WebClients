@@ -21,7 +21,7 @@ const SyncRow = ({ syncId }: Props) => {
 
     return (
         <TableRow>
-            <ReportsTableCell product={product} title={account} date={startDate} isSync />
+            <ReportsTableCell product={product} title={account} isSync />
             <TableCell>
                 <div className="on-mobile-text-center">
                     <SyncRowStatus state={state} />
