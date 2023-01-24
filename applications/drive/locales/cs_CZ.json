@@ -3398,6 +3398,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Vypadá to, že jste se nedávno pokusili nahrát ${ uploadName }. Pokud se nahrávání nezdařilo, nahrajte prosím ${ replaceFile }. Pokud nahrávání stále probíhá, nahrazení zruší probíhající nahrávání."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Položky v koši zde zůstanou, dokud je trvale neodstraníte"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Je to stejně snadné jako přesouvání nebo výběr souborů"
       ],
@@ -3487,6 +3490,9 @@
       ],
       "No group found": [
         "Nebyla nalezena žádná skupina"
+      ],
+      "No imports to display.": [
+        "Žádné importy k zobrazení."
       ],
       "No preview available": [
         "Náhled není k dispozici"
@@ -3685,9 +3691,6 @@
       ],
       "Swiss privacy": [
         "Švýcarské soukromí"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Klepnutím na tlačítko + nahrajete soubor nebo složku"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -3965,9 +3968,6 @@
       ],
       "name": [
         "název"
-      ],
-      "name hash": [
-        "hash názvu"
       ],
       "thumbnail": [
         "miniatura"
@@ -5277,12 +5277,38 @@
         "Nastavení"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } hodina",
         "${ hours } hodiny",
         "${ hours } hodin",
         "${ hours } hodin"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny"
       ],
       "${ minutes } minute": [
         "${ minutes } minuta",
@@ -5792,6 +5818,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "Máte k dispozici 1 GB úložného prostoru"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Akce"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Size": [
+        "Velikost"
+      ],
+      "Status": [
+        "Stav"
       ]
     },
     "Today icon tooltip in mini calendar": {

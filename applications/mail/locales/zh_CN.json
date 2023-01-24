@@ -92,6 +92,9 @@
       "Attachment": [
         "上传为附件"
       ],
+      "Attention required": [
+        "需要关注"
+      ],
       "Authenticate": [
         "认证"
       ],
@@ -163,6 +166,9 @@
       ],
       "Close": [
         "关闭"
+      ],
+      "Close & discard": [
+        "放弃修改并关闭"
       ],
       "Close composer": [
         "关闭编辑窗"
@@ -828,7 +834,7 @@
         "保存"
       ],
       "Saving${ ellipsis }": [
-        "保存${ ellipsis }"
+        "正在保存${ ellipsis }"
       ],
       "Schedule message": [
         "定时邮件"
@@ -871,6 +877,9 @@
       ],
       "Send feedback": [
         "发送反馈"
+      ],
+      "Send quick reply": [
+        "发送快速回复"
       ],
       "Send read receipt": [
         "发送回执"
@@ -1107,6 +1116,9 @@
     "action": {
       "Search messages": [
         "搜索邮件"
+      ],
+      "Send quick reply": [
+        "发送快速回复"
       ]
     },
     "Actions message": {
@@ -2807,7 +2819,7 @@
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "遵循系统设置 (${ globalDefaultText })"
+        "遵循系统设置（${ globalDefaultText }）"
       ]
     },
     "Delinquent modal title": {
@@ -3073,6 +3085,9 @@
       "Email address invalid": [
         "邮箱格式不正确"
       ],
+      "Email address is required": [
+        "邮箱地址必须填写"
+      ],
       "Email is not valid": [
         "无效邮箱"
       ],
@@ -3108,6 +3123,9 @@
       ],
       "Image upload failed": [
         "图像上传失败"
+      ],
+      "IMAP server is required": [
+        "IMAP 服务器必须填写"
       ],
       "Incorrect login credentials. Please try again.": [
         "登录凭据不正确，请重试。"
@@ -3172,6 +3190,9 @@
       "Not a valid number": [
         "无效号码"
       ],
+      "Password is required": [
+        "密码必须填写"
+      ],
       "Passwords do not match": [
         "密码不匹配"
       ],
@@ -3186,6 +3207,9 @@
       ],
       "Please set a password": [
         "请设置密码"
+      ],
+      "Port is required": [
+        "端口号必须填写"
       ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
@@ -3295,6 +3319,9 @@
       "There was an error when exporting the contacts vCards": [
         "导出联系人 vCards 时出错"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此项超过了 ${ maximumLength } 个字符的长度限制。"
+      ],
       "This field is required": [
         "此项必须填写"
       ],
@@ -3321,6 +3348,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unknown error": [
         "未知错误"
@@ -4284,6 +4314,9 @@
       "${ numContacts } contacts": [
         "${ numContacts } 名联系人"
       ],
+      "${ NumMessages } messages in conversation": [
+        "会话包含 ${ NumMessages } 封邮件"
+      ],
       "${ numOccurrences } occurrences found": [
         "找到 ${ numOccurrences } 条结果"
       ],
@@ -4443,6 +4476,9 @@
       "Attach public key": [
         "附上公钥"
       ],
+      "Attention required": [
+        "需要关注"
+      ],
       "Background color": [
         "背景颜色"
       ],
@@ -4599,6 +4635,9 @@
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "邮件跟踪器会威胁到您的隐私，开启跟踪器防护可以避免发件人得知您在何时何地阅览了此邮件。"
       ],
+      "Emails are automatically signed": [
+        "自动对邮件进行数字签名"
+      ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "放在此文件夹中的邮件不会被删除，且仍可在 \"所有邮件\" 文件夹中找到。"
       ],
@@ -4619,6 +4658,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入你的密码（作为组织管理员）。"
@@ -4734,6 +4776,9 @@
       "Import mailbox": [
         "导入收件箱"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "其他邮箱中的邮件、日程和通讯录也可以轻松导入 ${ BRAND_NAME }，我们将全程指导您操作并自动为您加密数据。欢迎进入隐私优先的世界。"
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
@@ -4839,8 +4884,8 @@
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "正在移动大量邮件，可能需要一段时间。"
+      "Moving messages. This may take a while.": [
+        "正在移动邮件，可能需要一段时间。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
@@ -4868,6 +4913,9 @@
       ],
       "No group found": [
         "未找到群组"
+      ],
+      "No imports to display.": [
+        "无导入记录。"
       ],
       "No label found": [
         "未找到标签"
@@ -4910,6 +4958,12 @@
       ],
       "per month.": [
         "/月。"
+      ],
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline 只能用于纯文本邮件。"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME 可使用编辑器中指定的格式发送邮件。"
       ],
       "Phone number": [
         "电话号码"
@@ -4956,6 +5010,9 @@
       "Preview": [
         "预览"
       ],
+      "Preview failed to be loaded": [
+        "预览加载失败"
+      ],
       "Primary": [
         "主要"
       ],
@@ -4967,6 +5024,12 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "使用 ${ maskMyEmailButton } 功能即可防止您的邮箱地址泄露，免受垃圾邮件干扰。"
+      ],
+      "Quick reply": [
+        "快速回复"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "快速回复 ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "收件人："
@@ -5182,7 +5245,7 @@
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
+        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
@@ -5240,6 +5303,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名。"
@@ -5829,7 +5895,7 @@
         "附件"
       ],
       "Authenticator app": [
-        "验证器应用程序"
+        "身份验证应用"
       ],
       "Automatically save contacts": [
         "自动保存联系人"
@@ -5922,7 +5988,7 @@
         "电子邮件"
       ],
       "Emails (all messages)": [
-        "邮件（所有信息）"
+        "所有邮件"
       ],
       "Emails (last 12 months)": [
         "邮件（过去 12 个月）"
@@ -6321,7 +6387,7 @@
     },
     "Landmarks": {
       "Side panel": [
-        "侧面板"
+        "侧边栏"
       ]
     },
     "Layout mode": {
@@ -6515,6 +6581,9 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "导入 ${ itemsToImportCount } 个文件夹中的所有邮件，并标为 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "从标签 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
@@ -6839,6 +6908,9 @@
       ],
       "Set up your organization": [
         "填写机构信息"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 和 ${ DRIVE_SHORT_APP_NAME }。"
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
@@ -7227,6 +7299,14 @@
         "全封闭加密存储"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "无需切换应用即可管理联系人和日程。"
+      ],
+      "Try the new side panel": [
+        "体验新版侧边栏"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP 加密邮件，发件人验证失败：${ verificationErrorsMessage }"
@@ -7248,8 +7328,11 @@
       ]
     },
     "Signing preference for emails": {
+      "Don't sign": [
+        "无数字签名"
+      ],
       "Sign": [
-        "签名"
+        "数字签名"
       ]
     },
     "Sort option": {
@@ -7272,6 +7355,9 @@
       ],
       "Email tracking protection": [
         "邮件追踪防护"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "最高可获 ${ credits } 余额奖励。"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "邀请好友注册 ${ BRAND_NAME }"
@@ -7340,6 +7426,9 @@
       ],
       "${ count } messages deleted": [
         "${ count } 封邮件已删除"
+      ],
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } 位联系人信息似乎完全相同。"
       ],
       "${ elementsCount } conversations added to ${ labelName }.": [
         "${ elementsCount } 条会话已添加 ${ labelName } 标签。"
@@ -7539,6 +7628,9 @@
       "Read receipt sent": [
         "回执已发送"
       ],
+      "Undo in progress": [
+        "正在撤销"
+      ],
       "Verification successful": [
         "验证成功"
       ]
@@ -7619,20 +7711,36 @@
       "${ daysCountLeft } days": [
         "${ daysCountLeft } 天"
       ],
-      "${ hours } hours": [
-        "${ hours } 小时"
-      ],
       "${ hoursCountLeft } hours": [
         "${ hoursCountLeft } 小时"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分钟"
       ],
       "${ minutesCountLeft } minutes": [
         "${ minutesCountLeft } 分钟"
       ],
       "${ secondsCountLeft } seconds": [
         "${ secondsCountLeft } 秒"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 小时"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 小时"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分钟"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hours": [
+        "${ hours } 小时"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 小时"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分钟"
       ]
     },
     "Title": {
@@ -8156,6 +8264,23 @@
         "您的免费试用将在 ${ formattedEndDate } 后过期。"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "操作"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Import": [
+        "导入"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "状态"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今天"
@@ -8195,8 +8320,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
+      "Hide side panel": [
+        "隐藏侧边栏"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
+      ],
+      "Show side panel": [
+        "显示侧边栏"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
@@ -8239,6 +8370,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "密码必须至少包含 ${ length } 个字符"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
       ]
     },
     "Video control": {
@@ -8318,6 +8452,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "邮件服务器验证失败，如果您信任该服务器，可以跳过此项验证。"
       ],
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"
@@ -8514,6 +8651,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "每 ${ interval } 年"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"
       ],

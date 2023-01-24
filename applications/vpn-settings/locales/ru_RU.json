@@ -29,6 +29,9 @@
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
       "Authenticate": [
         "Аутентифицировать"
       ],
@@ -156,7 +159,7 @@
         "Получить ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
-        "Получение нового зашифрованного адреса электронной почты"
+        "Получите новый зашифрованный адрес электронной почты"
       ],
       "Get verification code": [
         "Получить проверочный код"
@@ -360,7 +363,7 @@
         "Использовать код восстановления"
       ],
       "Use your current email instead": [
-        "Используйте свою текущую электронную почту"
+        "Вместо этого используйте свой текущий адрес электронной почты"
       ],
       "User": [
         "Пользователь"
@@ -427,11 +430,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Это приведет к отключению всех маршрутизаторов и клиентов, использующих данный сертификат."
-      ]
-    },
-    "Apps dropdown": {
-      "${ BRAND_NAME } applications": [
-        "Приложения ${ BRAND_NAME }"
       ]
     },
     "Badge": {
@@ -1589,7 +1587,7 @@
         "Минимальный платеж, который мы принимаем, составляет ${ price }"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Длина этого поля превысила максимум ${ maximumLength } символов."
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
       ],
       "This field is required": [
         "Это обязательное поле"
@@ -1815,7 +1813,7 @@
     },
     "Go to sign up": {
       "New to ${ BRAND_NAME }? ${ signUp }": [
-        "Как ${ BRAND_NAME }? ${ signUp }"
+        "Впервые в ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -1948,11 +1946,17 @@
       "Are you sure you want to discard your changes?": [
         "Вы уверены, что хотите отменить изменения?"
       ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Требуется подписка Basic, Plus или Visionary"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
+      ],
+      "Billing cycle: ${ text }": [
+        "Платежный цикл: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Транзакции Bitcoin могут занять некоторое время для подтверждения (до 24 часов). Сразу после подтверждения мы добавим кредиты на ваш счет. После подтверждения транзакции вы сможете оплатить свой счет кредитами."
@@ -2048,7 +2052,7 @@
         "Введите свой резервный номер телефона, и мы отправим вам ваше имя пользователя или адрес электронной почты."
       ],
       "Expired": [
-        "Истек"
+        "Истёкший"
       ],
       "expires ${ expirationDate }": [
         "истекает ${ expirationDate }"
@@ -2153,7 +2157,7 @@
         "потеряете доступ ко всем текущим зашифрованным данным"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
-        "Убедитесь, что вы ${ addARecoveryMethod }, чтобы попасть в свой аккаунт, если забудете пароль."
+        "Убедитесь, что вы ${ addARecoveryMethod }, чтобы вы могли попась в ваш аккаунт, если забудете пароль."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Введите эту информацию вручную в устройство двухфакторной аутентификации, чтобы настроить учетную запись. ${ switchButton }."
@@ -2288,7 +2292,7 @@
         "служба поддержки"
       ],
       "The securest way to browse, stream, and be online.": [
-        "Самый безопасный способ просматривать веб-страницы, смотреть трансляции и находиться онлайн."
+        "Самый безопасный способ просматривать сайты, смотреть видео и находиться онлайн."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
@@ -2342,7 +2346,7 @@
         "Чтобы защитить свое подключение к Интернету, скачайте и установите приложение ${ VPN_APP_NAME } для своего устройства и подключитесь к серверу."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "использовать ${ toAppName } и все службы ${ BRAND_NAME }"
+        "чтобы использовать ${ toAppName } и все службы ${ BRAND_NAME }"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Пополняйте свой счет кредитами, которые вы можете использовать для подписки на новый тариф или продления своего текущего тарифа. Вы получаете один кредит за каждый потраченный ${ i18nCurrency }."
@@ -2388,9 +2392,6 @@
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
-      ],
-      "Update the URL in your password manager": [
-        "Обновите URL в менеджере паролей"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
@@ -2650,7 +2651,7 @@
         "Другое"
       ],
       "Refund": [
-        "Refund"
+        "Возврат средств"
       ],
       "Renewal": [
         "Обновление"
@@ -2661,7 +2662,7 @@
     },
     "Label": {
       "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME } электронная почта или имя пользователя"
+        "Эл. почта или имя пользователя ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "имя пользователя ${ BRAND_NAME }"
@@ -2760,7 +2761,7 @@
         "Не могли бы вы сообщить нам, какой именно поставщик услуг?"
       ],
       "Could you please specify which streaming service?": [
-        "Не могли бы вы уточнить, какая именно служба трансляции?"
+        "Не могли бы вы уточнить, какой именно стриминговый сервис?"
       ],
       "Could you please specify?": [
         "Не могли бы вы уточнить?"
@@ -2826,7 +2827,7 @@
         "Интервал"
       ],
       "Keep me signed in": [
-        "Сохранить мою авторизацию"
+        "Оставаться в системе"
       ],
       "Key": [
         "Ключ"
@@ -2945,6 +2946,12 @@
       "Two-password mode": [
         "Режим с двумя паролями"
       ],
+      "Use a recovery email address": [
+        "Используйте адрес электронной почты для восстановления"
+      ],
+      "Use a recovery phone number": [
+        "Используйте номер телефона для восстановления"
+      ],
       "User's new password": [
         "Новый пароль пользователя"
       ],
@@ -2986,19 +2993,19 @@
     },
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } бета-объявления"
+        "Бета-объявления ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } company announcements": [
         "Объявления компании ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } для бизнес-рассылки"
+        "Рассылки ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } рассылка"
+        "Рассылка ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } предложения и акции"
+        "Предложения и акции ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
         "Объявления о продукции ${ BRAND_NAME }"
@@ -3009,7 +3016,7 @@
         "По умолчанию"
       ],
       "Expired": [
-        "Истёк"
+        "Истёкший"
       ]
     },
     "Link": {
@@ -3248,13 +3255,13 @@
         "${ n } подключение к VPN",
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
-        "Подключений к VPN: ${ n }"
+        "${ n } подключений к VPN"
       ],
       "${ n } VPN connection per user": [
         "${ n } подключение к VPN на пользователя",
         "${ n } подключения к VPN на пользователя",
         "${ n } подключений к VPN на пользователя",
-        "VPN-подключений на пользователя: ${ n }"
+        "${ n } подключений к VPN на пользователя"
       ],
       "${ size } attachment size": [
         "Размер вложения: ${ size }"
@@ -3435,7 +3442,7 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        "${ brand } заканчивающийся ${ last4 }"
+        "${ brand }, заканчивающаяся на ${ last4 }"
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* При подписке на 1 месяц. Другие варианты подписки доступны при оформлении заказа."
@@ -3595,7 +3602,7 @@
     },
     "new_plans: tooltip": {
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Доступ к содержимому служб трансляции, включая Netflix, Disney+ и Prime Video, из любой точки мира"
+        "Доступ к содержимому стриминговых сервисов, включая Netflix, Disney+ и Prime Video, из любой точки мира"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "В адресах есть полный функционал для отправки и получения сообщений. Одному пользователю можно назначить несколько адресов, однако один адрес нельзя назначить разным пользователям"
@@ -3748,7 +3755,7 @@
         "При подключении к нашей сети VPN ваши запросы DNS проходят через зашифрованный туннель VPN, что повышает уровень конфиденциальности и безопасности в Интернете"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "При отправке сообщений другим пользователям ${ MAIL_APP_NAME }, шифрование выполняется автоматически. Отправка письма пользователю вне ${ MAIL_APP_NAME } предполагает предварительную установку для него пароля."
+        "При отправке сообщений другим пользователям ${ MAIL_APP_NAME }, шифрование выполняется автоматически. Отправка письма пользователю вне ${ MAIL_APP_NAME } предполагает предварительную установку пароля."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату"
@@ -4043,36 +4050,36 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дня"
-      ],
-      "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
         "${ hours } часа"
       ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минуты"
+      "${ hours } hour": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
       ],
-      "${ seconds } second": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунды"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
+      "${ minutes } minute": [
         "${ n } месяц БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО",
         "${ n } месяцев БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО"
+      ],
+      "${ seconds } second": [
+        "за ${ n } месяц ",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
       ]
     },
     "specialoffer: Deal details": {
@@ -4096,9 +4103,6 @@
       ],
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Платная версия Drive"
@@ -4184,10 +4188,10 @@
         "Оплата ${ amount } за 30 месяцев."
       ],
       "for ${ n } month": [
-        "за ${ n } месяц ",
-        "за ${ n } месяца",
-        "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
       ],
       "Get the deal": [
         "Получить скидку"
@@ -4409,7 +4413,7 @@
     },
     "Subscription status": {
       "Active": [
-        "Активный"
+        "Активна"
       ],
       "Upcoming": [
         "Предстоящий"
@@ -4537,7 +4541,7 @@
         "Имя"
       ],
       "Status": [
-        "Состояние"
+        "Статус"
       ]
     },
     "Themes": {
@@ -4739,7 +4743,7 @@
         "Язык"
       ],
       "Length": [
-        "Длина"
+        "Длительность"
       ],
       "Login password": [
         "Пароль для входа"
@@ -4865,7 +4869,7 @@
         "Переключение в режим с двумя паролями"
       ],
       "Total paid": [
-        "Общая стоимость"
+        "Всего оплачено"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
@@ -4919,7 +4923,7 @@
         "Ваш тариф"
       ],
       "Your subscriptions": [
-        "Ваша подписка"
+        "Ваши подписки"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Вас пригласили попробовать ${ MAIL_APP_NAME }"
@@ -4982,13 +4986,13 @@
     "VPN Plan Feature": {
       "${ n } server": [
         "${ n } сервер",
-        "${ n } сервера",
-        "${ n } серверов",
-        "${ n } серверов"
+        "${ n }+ сервера",
+        "${ n }+ серверов",
+        "${ n }+ серверов"
       ],
       "${ n } VPN connection": [
         "${ n } подключение к VPN",
-        "${ n } подключений к VPN",
+        "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
       ],

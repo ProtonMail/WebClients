@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Allega screenshot"
       ],
+      "Attention required": [
+        "Attenzione"
+      ],
       "Authenticate": [
         "Autentica"
       ],
@@ -3236,6 +3239,9 @@
         "È ammesso al massimo ${ MAX_ATTENDEES } partecipante per invito",
         "Sono ammessi al massimo ${ MAX_ATTENDEES } partecipanti per invito"
       ],
+      "Attention required": [
+        "Attenzione"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
       ],
@@ -3450,6 +3456,9 @@
       ],
       "No group found": [
         "Nessun gruppo trovato"
+      ],
+      "No imports to display.": [
+        "Nessuna importazione da visualizzare."
       ],
       "No results found": [
         "Nessun risultato trovato"
@@ -5035,26 +5044,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } giorno",
-        "${ days } giorni"
-      ],
-      "${ hours } hour": [
         "${ hours } ora",
         "${ hours } ore"
       ],
+      "${ hours } hour": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuti"
+        "${ n } mese GRATIS",
+        "${ n } mesi GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } secondo",
-        "${ seconds } secondi"
+        "per ${ n } mese",
+        "per ${ n } mesi"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mese GRATIS",
-        "${ n } mesi GRATIS"
+        "${ seconds } secondo",
+        "${ seconds } secondi"
       ]
     },
     "specialoffer: Deal details": {
@@ -5078,9 +5087,6 @@
       ],
       "Highest VPN speed": [
         "Massima velocità della VPN"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Drive premium"
@@ -5135,9 +5141,6 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Vai ai piani di abbonamento"
-      ],
-      "Upgrade": [
-        "Upgrade"
       ]
     },
     "specialoffer: Offers": {
@@ -5166,8 +5169,8 @@
         "Addebito di ${ amount } per 30 mesi"
       ],
       "for ${ n } month": [
-        "per ${ n } mese",
-        "per ${ n } mesi"
+        "${ minutes } minuto",
+        "${ minutes } minuti"
       ],
       "Get the deal": [
         "Acquista"
@@ -5536,10 +5539,28 @@
         "Impostazioni"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } o",
+        "${ hours } o"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 o",
+        "${ hoursInt }.5 o"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } ora",
         "${ hours } ore"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 ora",
+        "${ hoursInt }.5 ore"
       ],
       "${ minutes } minute": [
         "${ minutes } minuto",
@@ -5918,6 +5939,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Scegli un numero"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importa"
+      ],
+      "Size": [
+        "Dimensione"
+      ],
+      "Status": [
+        "Stato"
       ]
     },
     "Title; create calendar modal": {
@@ -6317,8 +6355,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Ogni ${ interval } anno",
+        "Ogni ${ interval } anni"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Ogni ${ interval } anno, ${ timesString }",

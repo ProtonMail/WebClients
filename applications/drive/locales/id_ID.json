@@ -3232,6 +3232,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sepertinya baru-baru ini Anda mencoba untuk mengunggah ${ uploadName }. Apabila unggahan gagal, silakan ${ replaceFile }. Apabila unggahan masih berlangsung, mengubah berkas akan membatalkan unggahan yang telah ada."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Item di sampah akan tetap ada di sini sampai Anda menghapusnya secara permanen"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Mengunggah berkas semudah menarik atau memilih berkas"
       ],
@@ -3321,6 +3324,9 @@
       ],
       "No group found": [
         "Tidak ada grup yang ditemukan"
+      ],
+      "No imports to display.": [
+        "Tidak ada impor untuk ditampilkan."
       ],
       "No preview available": [
         "Pratinjau tidak tersedia"
@@ -3513,9 +3519,6 @@
       ],
       "Swiss privacy": [
         "Privasi Swiss"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Ketuk tombol + untuk mengunggah berkas atau folder"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
@@ -3785,14 +3788,14 @@
       "file data order": [
         "urutan data berkas"
       ],
+      "hash key": [
+        "kunci hash"
+      ],
       "keys": [
         "kunci"
       ],
       "name": [
         "nama"
-      ],
-      "name hash": [
-        "hash nama"
       ],
       "thumbnail": [
         "thumbnail"
@@ -5009,9 +5012,23 @@
         "Pengaturan"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } j"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 j"
+      ],
+      "${ minutes } min": [
+        "${ minutes } mnt"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } jam"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 jam"
       ],
       "${ minutes } minutes": [
         "${ minutes } menit"
@@ -5491,6 +5508,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "Anda mendapatkan kuota penyimpanan 1 GB"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Date": [
+        "Tanggal"
+      ],
+      "Import": [
+        "Impor"
+      ],
+      "Size": [
+        "Ukuran"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

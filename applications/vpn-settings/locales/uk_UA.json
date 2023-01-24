@@ -29,6 +29,9 @@
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
+      "Attention required": [
+        "Потребує уваги"
+      ],
       "Authenticate": [
         "Автентифікація"
       ],
@@ -427,11 +430,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Це від'єднає всі маршрутизатори та клієнти, котрі використовують цей сертифікат."
-      ]
-    },
-    "Apps dropdown": {
-      "${ BRAND_NAME } applications": [
-        "Застосунки ${ BRAND_NAME }"
       ]
     },
     "Badge": {
@@ -1953,11 +1951,17 @@
       "Are you sure you want to discard your changes?": [
         "Ви справді хочете відхилити зміни?"
       ],
+      "Attention required": [
+        "Потребує уваги"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Необхідна передплата Basic, Plus або Visionary"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
+      ],
+      "Billing cycle: ${ text }": [
+        "Платіжний цикл: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Підтвердження транзакцій з Bitcoin можуть тривати деякий час (до 24 годин). Після підтвердження ми додамо кошти до вашого облікового запису. Після підтвердження транзакції ви можете сплатити свій рахунок, використавши ці кошти."
@@ -2393,9 +2397,6 @@
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
-      ],
-      "Update the URL in your password manager": [
-        "Оновіть URL-адресу у своєму менеджері паролів"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
@@ -2949,6 +2950,12 @@
       ],
       "Two-password mode": [
         "Двопарольний режим"
+      ],
+      "Use a recovery email address": [
+        "Використати е-пошту для відновлення доступу"
+      ],
+      "Use a recovery phone number": [
+        "Використати номер телефону для відновлення доступу"
       ],
       "User's new password": [
         "Новий пароль користувача"
@@ -4494,7 +4501,7 @@
         "Мова"
       ],
       "Length": [
-        "Довжина"
+        "Тривалість"
       ],
       "Login password": [
         "Пароль входу"

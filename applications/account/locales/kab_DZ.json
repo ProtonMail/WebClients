@@ -434,11 +434,11 @@
       "No": [
         "Ala"
       ],
-      "OK": [
-        "Ih"
-      ],
       "Ok": [
         "IH"
+      ],
+      "OK": [
+        "Ih"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
@@ -3437,6 +3437,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Uqbel ad tizmireḍ ad tazneḍ neɣ ad teṭṭfeḍ imaylen s tansiwin-ik timaynutin, ilaq ad asent-id-tesnulfuḍ tisura n uwgelhen."
+      ],
+      "Billing cycle: ${ text }": [
+        "Asellek yal:${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Tinigawin s Bitcoin zemrent ad ṭṭfent kra n wakud i wakken ad ttwasentment (ugar n 24 n isragen). Ticki tettwasentem, ad nernu asmad ar umiḍan-ik. Seld asentem n tnigawt, ad tizmired ad txellseḍ tafaturt-ik s usmad."
@@ -6964,16 +6967,6 @@
         "urti vCard"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } n tesdat",
-        "${ minutes } n tesdatin"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Nadi timnaḍin tisraganin"
@@ -8234,8 +8227,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Yal ${ interval } n useggas",
+        "Yal ${ interval } n yiseggasen"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Yal ${ interval } n useggas, ${ timesString }",

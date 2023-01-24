@@ -3649,7 +3649,7 @@
         "Încă nu aveți niciun contact. Începeți prin a crea un contact nou."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Puteți ${ refresh } sau reîncerca mai târziu."
+        "Puteți să ${ refresh } sau reîncerca mai târziu."
       ]
     },
     "Error notification": {
@@ -5062,8 +5062,8 @@
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Se mută un număr mare de mesaje. Ar putea dura ceva timp."
+      "Moving messages. This may take a while.": [
+        "Se mută mesajele. Aceasta ar putea dura un timp."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
@@ -5091,6 +5091,9 @@
       ],
       "No group found": [
         "Nu există grupuri"
+      ],
+      "No imports to display.": [
+        "Nu există importări de afișat"
       ],
       "No label found": [
         "Nu există etichete"
@@ -8001,20 +8004,10 @@
         "${ daysCountLeft } zile",
         "${ daysCountLeft } de zile"
       ],
-      "${ hours } hour": [
-        "O oră",
-        "${ hours } ore",
-        "${ hours } de ore"
-      ],
       "${ hoursCountLeft } hour": [
         "O oră",
         "${ hoursCountLeft } ore",
         "${ hoursCountLeft } de ore"
-      ],
-      "${ minutes } minute": [
-        "Un minut",
-        "${ minutes } minute",
-        "${ minutes } de minute"
       ],
       "${ minutesCountLeft } minute": [
         "Un minut",
@@ -8025,6 +8018,40 @@
         "O secundă",
         "${ secondsCountLeft } secunde",
         "${ secondsCountLeft } de secunde"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } oră",
+        "${ hours } ore",
+        "${ hours } de ore"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 de ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minute",
+        "${ minutes } de minute"
       ]
     },
     "Title": {
@@ -8568,6 +8595,23 @@
         "Perioada de probare gratuită se încheie în curând, la ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importare"
+      ],
+      "Size": [
+        "Mărime"
+      ],
+      "Status": [
+        "Stare"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Astăzi"
@@ -9003,8 +9047,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Anual",
+        "La fiecare ${ interval } ani",
         "La fiecare ${ interval } de ani"
       ],
       "Every ${ interval } year, ${ timesString }": [

@@ -4884,9 +4884,6 @@
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "正在移動大量的郵件訊息。 此步驟會耗時一會兒。"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
       ],
@@ -4913,6 +4910,9 @@
       ],
       "No group found": [
         "未找到群組"
+      ],
+      "No imports to display.": [
+        "未有任何匯入可供顯示。"
       ],
       "No label found": [
         "找不到標籤"
@@ -7708,14 +7708,8 @@
       "${ daysCountLeft } days": [
         "${ daysCountLeft } 天"
       ],
-      "${ hours } hours": [
-        "${ hours } 小時"
-      ],
       "${ hoursCountLeft } hours": [
         "${ hoursCountLeft } 小時"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分鐘"
       ],
       "${ minutesCountLeft } minutes": [
         "${ minutesCountLeft } 分鐘"
@@ -8245,6 +8239,23 @@
         "您專屬的免費試用即將結束，到期日為 ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "動作"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Import": [
+        "匯入"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "狀態"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今天"
@@ -8615,6 +8626,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "每 ${ interval } 年"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "每${ interval }年，${ timesString }"
       ],

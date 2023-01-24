@@ -3055,6 +3055,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Φαίνεται ότι πρόσφατα προσπαθήσατε να ανεβάσετε το ${ uploadName }. Εάν η μεταφόρτωση απέτυχε, παρακαλούμε ${ replaceFile }. Αν η μεταφόρτωση βρίσκεται ακόμη σε εξέλιξη, η αντικατάστασή της θα ακυρώσει τη μεταφόρτωση που βρίσκεται σε εξέλιξη."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Τα στοιχεία στον κάδο απορριμμάτων θα παραμείνουν εκεί μέχρι να τα διαγράψετε οριστικά"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Είναι τόσο εύκολο όσο η μεταφορά και απόθεση ή επιλέξτε αρχεία"
       ],
@@ -3141,6 +3144,9 @@
       ],
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
+      ],
+      "No imports to display.": [
+        "Δεν υπάρχουν εισαγωγές προς εμφάνιση."
       ],
       "No preview available": [
         "Δεν υπάρχει διαθέσιμη προεπισκόπηση"
@@ -3304,9 +3310,6 @@
       ],
       "Swiss privacy": [
         "Ελβετική ιδιωτικότητα"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Για ανέβασμα ενός αρχείου ή φακέλου, πιέστε το κουμπί +."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
@@ -4731,16 +4734,6 @@
         "Ρυθμίσεις"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } ώρα",
-        "${ hours } ώρες"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } λεπτό",
-        "${ minutes } λεπτά"
-      ]
-    },
     "Title": {
       "# of accesses": [
         "# των προσβάσεων"
@@ -5209,6 +5202,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "Έχετε 1 GB αποθηκευτικού χώρου"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Ενέργειες"
+      ],
+      "Date": [
+        "Ημερομηνία"
+      ],
+      "Import": [
+        "Εισαγωγή"
+      ],
+      "Size": [
+        "Μέγεθος"
+      ],
+      "Status": [
+        "Κατάσταση"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
+      "Attention required": [
+        "Wymagana uwaga"
+      ],
       "Authenticate": [
         "Uwierzytelnij"
       ],
@@ -3357,6 +3360,9 @@
         "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników",
         "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników"
       ],
+      "Attention required": [
+        "Wymagana uwaga"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
       ],
@@ -3575,6 +3581,9 @@
       ],
       "No group found": [
         "Nie znaleziono grupy"
+      ],
+      "No imports to display.": [
+        "Brak importów do wyświetlenia."
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
@@ -5236,36 +5245,36 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } dzień",
-        "${ days } dni",
-        "${ days } dni",
-        "${ days } dnia"
-      ],
-      "${ hours } hour": [
         "${ hours } godzina",
         "${ hours } godziny",
         "${ hours } godzin",
         "${ hours } godziny"
       ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuty",
-        "${ minutes } minut",
-        "${ minutes } minuty"
+      "${ hours } hour": [
+        "${ days } dzień",
+        "${ days } dni",
+        "${ days } dni",
+        "${ days } dnia"
       ],
-      "${ seconds } second": [
-        "${ seconds } sekunda",
-        "${ seconds } sekundy",
-        "${ seconds } sekund",
-        "${ seconds } sekundy"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
+      "${ minutes } minute": [
         "${ n } miesiąc BEZPŁATNIE",
         "${ n } miesiące BEZPŁATNIE",
         "${ n } miesięcy BEZPŁATNIE",
         "${ n } miesiąca BEZPŁATNIE"
+      ],
+      "${ seconds } second": [
+        "za ${ n } miesiąc",
+        "za ${ n } miesiące",
+        "za ${ n } miesięcy",
+        "za ${ n } miesiąca"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekundy"
       ]
     },
     "specialoffer: Deal details": {
@@ -5377,10 +5386,10 @@
         "Płatne ${ amount } za 30 miesięcy"
       ],
       "for ${ n } month": [
-        "za ${ n } miesiąc",
-        "za ${ n } miesiące",
-        "za ${ n } miesięcy",
-        "za ${ n } miesiąca"
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minuty"
       ],
       "Get the deal": [
         "Uzyskaj ofertę"
@@ -5755,12 +5764,38 @@
         "Ustawienia"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } godz.",
+        "${ hours } godz.",
+        "${ hours } godz.",
+        "${ hours } godz."
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 godz.",
+        "${ hoursInt },5 godz.",
+        "${ hoursInt },5 godz.",
+        "${ hoursInt },5 godz."
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } godzina",
         "${ hours } godziny",
         "${ hours } godzin",
         "${ hours } godziny"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 godziny",
+        "${ hoursInt },5 godziny",
+        "${ hoursInt },5 godziny",
+        "${ hoursInt },5 godziny"
       ],
       "${ minutes } minute": [
         "${ minutes } minuta",
@@ -6151,6 +6186,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Wybierz numer"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Akcje"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importuj"
+      ],
+      "Size": [
+        "Rozmiar"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Title; create calendar modal": {
@@ -6612,8 +6664,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Co rok",
+        "Co ${ interval } lata",
         "Co ${ interval } lat",
         "Co ${ interval } roku"
       ],

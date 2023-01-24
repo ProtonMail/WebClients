@@ -96,7 +96,7 @@
         "Atención requerida"
       ],
       "Authenticate": [
-        "Confirmar"
+        "Autenticar"
       ],
       "Back": [
         "Atrás"
@@ -252,7 +252,7 @@
         "Personalizar importación"
       ],
       "Default email application": [
-        "Aplicación de correo por defecto"
+        "Aplicación de correo electrónico por defecto"
       ],
       "Delete": [
         "Eliminar"
@@ -660,7 +660,7 @@
         "No mostrar nunca"
       ],
       "New message": [
-        "Mensaje nuevo"
+        "Nuevo mensaje"
       ],
       "Next": [
         "Siguiente"
@@ -1000,7 +1000,7 @@
         "Prueba con otro método"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Intenta guardar de nuevo. El guardado falló debido a: ${ saveError }"
+        "Intenta guardar de nuevo. Error al guardar debido a: ${ saveError }"
       ],
       "Turn on tracker protection": [
         "Activar la protección contra rastreadores"
@@ -1024,7 +1024,7 @@
         "No destacar"
       ],
       "Unsubscribe": [
-        "Desuscribirse"
+        "Cancelar suscripción"
       ],
       "Unsubscribing": [
         "Cancelando suscripción"
@@ -1045,10 +1045,10 @@
         "Mejorar"
       ],
       "Upgrade now": [
-        "Mejorar ahora"
+        "Actualizar ahora"
       ],
       "Upload picture": [
-        "Subir imagen"
+        "Cargar imagen"
       ],
       "Use ${ label } theme": [
         "Utilizar tema ${ label }"
@@ -1163,7 +1163,7 @@
         "Al salir ahora, algunos contactos pueden no ser importados"
       ],
       "By leaving now, some events may not be imported": [
-        "Si sales ahora, algunos eventos no serían importados"
+        "Si sales ahora, algunos eventos pueden no ser importados."
       ]
     },
     "Alt": {
@@ -1256,7 +1256,7 @@
     },
     "Attachment signature verification": {
       "Sender verification failed": [
-        "Falló la verificación del remitente"
+        "Error al verificar el remitente"
       ],
       "Sender verification passed": [
         "Se ha aprobado la verificación del remitente"
@@ -1320,7 +1320,7 @@
         "Problema con el registro"
       ],
       "Signup problem": [
-        "Problema con el registro"
+        "Problema de registro"
       ],
       "Slow speed problem": [
         "Problema de velocidad baja"
@@ -1553,7 +1553,7 @@
         "La reprogramación de eventos no es compatible por el momento"
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
-        "Esta respuesta no puede añadirse a ${ CALENDAR_APP_NAME } porque solo admitimos respuestas a todos los eventos de una serie"
+        "Esta respuesta no puede añadirse a ${ CALENDAR_APP_NAME } porque solo admitimos respuestas a todos los eventos de una serie."
       ],
       "This event has been canceled.": [
         "Este evento ha sido cancelado."
@@ -1656,7 +1656,7 @@
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Minimizar tamaño"
+        "Minimizar"
       ],
       "Expand": [
         "Expandir"
@@ -1843,7 +1843,7 @@
         "Cifrado con PGP"
       ],
       "PGP-encrypted to verified recipient": [
-        "Cifrado PGP al destinatario verificado"
+        "Cifrado con PGP al destinatario verificado"
       ],
       "PGP-encrypted. ${ warningsText }": [
         "Cifrado PGP. ${ warningsText }"
@@ -1900,7 +1900,7 @@
         "Editar y reprogramar"
       ],
       "Message saved to Drafts": [
-        "Mensaje movido a Borradores"
+        "Mensaje guardado en Borradores"
       ],
       "Quit import customization?": [
         "¿Quiere salir de la importación personalizada?"
@@ -2828,7 +2828,7 @@
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "Utilizar global por defecto (${ globalDefaultText })"
+        "Utilizar el valor global por defecto (${ globalDefaultText })"
       ]
     },
     "Delinquent modal title": {
@@ -2871,7 +2871,7 @@
         "Los correos nuevos de ${ senderEmailAddress } no serán entregados y serán eliminados de forma permanente."
       ],
       "No folders": [
-        "No hay directorios"
+        "Sin carpetas"
       ],
       "No labels": [
         "No hay etiquetas"
@@ -2884,7 +2884,7 @@
         "Usa arrastrar y soltar para clasificar la prioridad entre contactos. Desmarca los contactos que no deseas combinar."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Puedes importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
+        "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puedes marcar para eliminar los contactos que no deseas ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado"
@@ -3221,7 +3221,7 @@
         "Las contraseñas no coinciden"
       ],
       "Please activate your content search again": [
-        "Por favor, activa de nuevo tu búsqueda de contenido"
+        "Activa de nuevo tu búsqueda de contenido."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, arregla el conflicto resaltado para continuar.",
@@ -3246,7 +3246,7 @@
         "La clave principal no es válida para realizar el envío"
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
-        "La clave principal recuperada para el usuario ${ BRAND_NAME }, no es válida para envíos"
+        "La clave principal recuperada para el usuario ${ BRAND_NAME }, no es válida para envíos."
       ],
       "Public key could not be trusted": [
         "No se ha podido verificar la clave pública"
@@ -3458,7 +3458,7 @@
         "Tu archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Su archivo ${ formattedFilename } tiene un método no válido y no se puede importar."
+        "Tu archivo ${ formattedFilename } tiene un método no válido y no se puede importar."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Tu archivo ${ formattedFilename } no tiene eventos para importar."
@@ -3604,7 +3604,7 @@
         "Error: ${ errorMessage }"
       ],
       "No results found": [
-        "No se han encontrado resultados"
+        "No se han encontrado resultados."
       ],
       "No results found for \"${ query }\"": [
         "No se han encontrado resultados para \"${ query }\""
@@ -3619,7 +3619,7 @@
         "Algo salió mal. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Hubo un problema al conectarse a ${ BRAND_NAME }."
+        "Ha ocurrido un problema al conectarse a ${ BRAND_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Aún no tienes ningún contacto. Empieza creando un nuevo contacto"
@@ -3662,7 +3662,7 @@
         "Respuesta no válida"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "No se pudo actualizar el evento en tu calendario. No se envió respuesta"
+        "No se ha podido añadir el evento a tu calendario. No se ha enviado ninguna respuesta."
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "No se pudo actualizar el evento en tu calendario. No se envió respuesta"
@@ -3704,7 +3704,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo salió mal al autenticar con tu clave de seguridad. Por favor, inténtelo de nuevo."
+        "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -4026,8 +4026,11 @@
         "${ totalImported }/${ totalToImport } eventos cifrados y añadidos a tu calendario"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Se produjo un error al encriptar y añadir tu evento. ${ totalImported } de ${ totalToImport } evento importados con éxito.",
-        "Se produjo un error al encriptar y añadir tus eventos. ${ totalImported } de ${ totalToImport } eventos importados con éxito."
+        "Se ha producido un error al encriptar y al añadir tu evento. ${ totalImported } de ${ totalToImport } evento importado.",
+        "Se ha producido un error al encriptar y al añadir tus eventos. ${ totalImported } de ${ totalToImport } eventos importados."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Se ha producido un error al cifrar y añadir el evento. No se ha podido importar ningún evento."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Se ha producido un error al cifrar y añadir los eventos. No se ha podido importar ningún evento."
@@ -4039,10 +4042,10 @@
         "Cifrando y agregando eventos a tu calendario: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Evento importado con éxito. El evento importado aparecerá ahora en tu calendario."
+        "Evento importado: el evento importado aparecerá en tu calendario."
       ],
       "Events successfully imported. The imported events will now appear in your calendar.": [
-        "Eventos importados con éxito. Los eventos importados aparecerán ahora en tu calendario."
+        "Eventos importados: los eventos importados aparecerán en tu calendario."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "No cierres la pestaña antes de que el proceso de importación haya terminado."
@@ -4050,7 +4053,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } no admite actualmente ciertos tipos de eventos, detalles y formatos."
+        "${ CALENDAR_APP_NAME } no admite actualmente algunos tipos de eventos, detalles y formatos."
       ],
       "vCard versions < 3.0": [
         "Versiones vCard menores a 3.0"
@@ -4081,16 +4084,16 @@
         "Se ha producido un error al cifrar y añadir tu contacto. No se ha podido importar ningún contacto."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Se ha producido un error al cifrar y añadir tus contactos. ${ totalImported } de ${ totalToImport } contactos importados con éxito."
+        "Se ha producido un error al cifrar y añadir tus contactos. ${ totalImported } de ${ totalToImport } contactos importados."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "Se ha producido un error al cifrar y añadir tus contactos. No se ha podido importar ningún contacto."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contacto importado correctamente. El contacto importado aparecerá ahora en tu lista de contactos."
+        "Contacto importado: el contacto importado aparecerá en tu lista de contactos."
       ],
       "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Contactos importados correctamente. Los contactos importados aparecerán ahora en tu lista de contactos."
+        "Contactos importados: los contactos importados aparecerán en tu lista de contactos."
       ]
     },
     "Import contact error": {
@@ -4221,7 +4224,7 @@
         "Para importar contactos a ${ BRAND_NAME }, necesitas un ${ knowledgeBaseLink }. Descárgalo antes de iniciar el proceso de importación."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Para importar correos electrónicos a ${ BRAND_NAME }, necesitas una ${ appPasswordLink } de Yahoo. Consíguelo siguiendo estos pasos:"
+        "Para importar correos electrónicos a ${ BRAND_NAME }, necesitas una ${ appPasswordLink } de Yahoo. Consíguela siguiendo estos pasos:"
       ]
     },
     "Import instructions emphasis": {
@@ -4282,17 +4285,17 @@
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no serán importados. Haz clic para obtener más detalles"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Despliegue para ver los detalles.",
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Despliegue para ver los detalles."
+        "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Despliega para ver los detalles.",
+        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Despliega para ver los detalles."
       ],
       "No contact can be imported. Click for details": [
         "No se puede importar ningún contacto. Haz clic para obtener detalles"
       ],
       "No event can be imported. Expand for details.": [
-        "No se puede importar ningún evento. Despliegue para ver los detalles."
+        "No se puede importar ningún evento. Despliega para ver los detalles."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
-        "Parte del contenido de su calendario no es compatible y no se importará."
+        "Parte del contenido de tu calendario no es compatible y no se importará."
       ]
     },
     "Info": {
@@ -4327,8 +4330,8 @@
         "${ contactEmailsLength } Miembros"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } contacto)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } contactos)"
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } miembro)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } miembros)"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } contiene múltiples direcciones de correo."
@@ -4444,8 +4447,8 @@
         "${ unreadCount } mensajes sin leer"
       ],
       "${ updated } contact updated successfully.": [
-        "${ updated } contacto actualizado con éxito.",
-        "${ updated } contactos actualizados con éxito."
+        "${ updated } contacto actualizado.",
+        "${ updated } contactos actualizados."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } miembro)",
@@ -4476,7 +4479,7 @@
         "Activación en proceso"
       ],
       "Add image URL": [
-        "Agregar URL de imagen"
+        "Añadir URL de imagen"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está habilitada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
@@ -4520,7 +4523,7 @@
         "¿Está seguro de que quiere eliminar todos los mensajes con esta etiqueta?"
       ],
       "Are you sure you want to delete this folder? All children folders will also be deleted.": [
-        "¿Estás seguro de que quieres borrar esta carpeta? Todas sus carpetas secundarias se borraran también."
+        "¿Estás seguro de que quieres borrar esta carpeta? Todas sus carpetas secundarias se borrarán también."
       ],
       "Are you sure you want to delete this label?": [
         "¿Estás seguro de que quieres eliminar esta etiqueta?"
@@ -4648,7 +4651,7 @@
         "Días"
       ],
       "Default email application": [
-        "Aplicación de correo electrónico predeterminada"
+        "Aplicación de correo electrónico por defecto"
       ],
       "Disable message content search": [
         "Desactivar la búsqueda del contenido de mensajes"
@@ -4688,7 +4691,7 @@
         "Clave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código únicamente puede ser usado una vez"
+        "Cada código únicamente puede ser usado una vez."
       ],
       "Edit encryption": [
         "Editar cifrado"
@@ -4719,7 +4722,7 @@
         "Los rastreadores de correo pueden violar tu privacidad. Activa la protección de rastreadores para evitar que los remitentes sepan si has abierto un mensaje y cuándo lo has hecho."
       ],
       "Emails are automatically signed": [
-        "Los correos electrónico son firmados automáticamente"
+        "Los correos electrónicos son firmados automáticamente."
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Los correos electrónicos almacenados en esta carpeta no se eliminarán y aún se pueden encontrar en la carpeta Todos los correos."
@@ -4866,7 +4869,7 @@
         "Importar buzón"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importa tus correos electrónicos, calendarios y contactos de otro servicio a ${ BRAND_NAME }. Te guiaremos en cada paso del proceso y cifraremos tus datos a medida que se trasladen. Bienvenido al mundo de la privacidad."
+        "Importa tus correos electrónicos, calendarios y contactos de otro servicio a ${ BRAND_NAME }. Te guiaremos en cada paso del proceso y cifraremos tus datos a medida que se trasladen. Te damos la bienvenida al mundo de la privacidad."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
@@ -4973,8 +4976,8 @@
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Moviendo una gran cantidad de mensajes. Esto puede tardar un rato."
+      "Moving messages. This may take a while.": [
+        "Moviendo mensajes. Esto puede tardar un rato."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
@@ -4992,7 +4995,7 @@
         "No hay dirección de correo electrónico"
       ],
       "No email trackers found": [
-        "No se encontraron rastreadores de correo"
+        "No se han encontrado rastreadores de correo electrónico."
       ],
       "No folder found": [
         "No se ha encontrado ninguna carpeta"
@@ -5002,6 +5005,9 @@
       ],
       "No group found": [
         "No se ha encontrado ningún grupo"
+      ],
+      "No imports to display.": [
+        "No hay importaciones que mostrar."
       ],
       "No label found": [
         "No se ha encontrado ninguna etiqueta"
@@ -5016,7 +5022,7 @@
         "Vista previa no disponible"
       ],
       "No results found": [
-        "No se han encontrado resultados"
+        "No se han encontrado resultados."
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Algunas de las imágenes no pudieron ser cargadas con la protección contra rastreo"
@@ -5046,7 +5052,7 @@
         "al mes."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline solo es compatible con el formato de Texto Plano."
+        "PGP/Inline solo es compatible con el formato de texto plano."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automáticamente envía el mensaje utilizando el modo de composición actual."
@@ -5206,7 +5212,7 @@
         "El tiempo de la sesión ha expirado"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Configure ${ MAIL_APP_NAME } como su aplicación de correo electrónico predeterminada para este navegador. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
+        "Configura ${ MAIL_APP_NAME } como tu aplicación de correo electrónico por defecto para este navegador. ${ MAIL_APP_NAME } se abrirá automáticamente al hacer clic en un enlace de correo electrónico."
       ],
       "Set a recovery phrase": [
         "Configura una frase de recuperación"
@@ -5245,7 +5251,7 @@
         "Asunto: "
       ],
       "Support for 1 custom email domain": [
-        "Soporte para 1 dominio de correo personalizado"
+        "1 dominio de correo electrónico personalizado"
       ],
       "Support privacy by upgrading for": [
         "Apoye la privacidad actualizando a"
@@ -5300,7 +5306,7 @@
         "Esta cuenta ha sido suspendida debido a una posible violación de la política."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acción descargará todos los mensajes para que la búsqueda pueda ser local. Limpiar los datos de su navegador desactivará esta opción."
+        "Esta acción descargará todos los mensajes para que la búsqueda pueda ser local. Borrar los datos de tu navegador desactivará esta opción."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está deshabilitada. Para poder enviar a esta dirección, el propietario debe habilitar la dirección en primer lugar."
@@ -5331,7 +5337,7 @@
         "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homógrafo y no puede ser abierto por el navegador Edge. Si estás seguro de que el enlace es legítimo, usa un navegador diferente para abrirlo."
+        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, usa un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
@@ -5395,7 +5401,7 @@
         "Para luchar contra el spam y el abuso, verifica que eres humano."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Para importar eventos, primero crea un calendario en ${ CALENDAR_APP_NAME }. Aquí es donde aparecerán los eventos tras la importación."
+        "Para importar eventos, primero crea un calendario en ${ CALENDAR_APP_NAME }. En este calendario aparecerán los eventos tras la importación."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para volver a firmar tus contactos, necesitamos verificar cada contacto respecto a la lista de claves de cifrado disponibles en tu cuenta. Si no se encuentra ninguna coincidencia, tu contacto volverá a estar firmado con la clave de cifrado principal."
@@ -5431,7 +5437,7 @@
         "Desbloquear mensaje"
       ],
       "Unsaved changes": [
-        "Cambios sin guardar"
+        "Cambios no guardados"
       ],
       "Unsupported file": [
         "Fichero no soportado"
@@ -5634,7 +5640,7 @@
         "Tu cuenta ${ BRAND_NAME } incluye SimpleLogin. Instala la extensión en tu navegador con un clic para comenzar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive serán bloqueados y no podrás subir nuevos archivos. Para restablecer el servicion normal, por favor, abona las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu Drive serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, por favor paga las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive están bloqueados y no puedes subir nuevos archivos. Para continuar usando tu cuenta, por favor, abona las facturas pendientes."
@@ -5820,7 +5826,7 @@
         "Marcar como leído"
       ],
       "Mark as unread": [
-        "Marcar como no leido"
+        "Marcar como no leído"
       ],
       "Minimize / maximize composer": [
         "Minimizar / maximizar el editor"
@@ -6212,10 +6218,10 @@
         "Administrar categorías"
       ],
       "Manage folders": [
-        "Gestionar carpetas"
+        "Administrar carpetas"
       ],
       "Manage labels": [
-        "Gestionar etiquetas"
+        "Administrar etiquetas"
       ],
       "Manage my addresses": [
         "Gestionar mis direcciones"
@@ -6248,7 +6254,7 @@
         "Notificación"
       ],
       "OK": [
-        "Está bien"
+        "OK"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -6272,7 +6278,7 @@
         "Contraseña"
       ],
       "Password hint": [
-        "Pista de la contraseña"
+        "Pista de contraseña"
       ],
       "PGP scheme": [
         "Esquema PGP"
@@ -6383,7 +6389,7 @@
         "Barra de herramientas"
       ],
       "Two-factor authentication code": [
-        "Código de autenticación de doble factor"
+        "Código de autenticación de dos factores"
       ],
       "Undisclosed Recipients": [
         "Destinatarios desconocidos"
@@ -6392,7 +6398,7 @@
         "Subir archivo"
       ],
       "Upload picture": [
-        "Subir imagen"
+        "Cargar imagen"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Nombre de usuario o correo de ${ MAIL_APP_NAME }"
@@ -6691,12 +6697,12 @@
         "Importar todos los mensajes de ${ itemsToImportCount } etiquetas y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } carpeta y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } carpetas y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } carpeta y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } carpetas y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiqueta y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiquetas y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiqueta y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiquetas y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -6743,7 +6749,7 @@
     },
     "Message has been sent to the user via a SimpleLogin alias": {
       "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Entregado a través de SimpleLogin por ${ BRAND_NAME }"
+        "Entregado con SimpleLogin por ${ BRAND_NAME }"
       ]
     },
     "Message image": {
@@ -6969,7 +6975,7 @@
         "Grupo de contactos actualizado"
       ],
       "Password has been set successfully": [
-        "La contraseña ha sido cambiada con éxito"
+        "La contraseña ha sido cambiada."
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "Remitente ${ firstSenderAddress } bloqueado"
@@ -6980,7 +6986,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "A continuación, deberás iniciar sesión en tu cuenta de Google y permitir a ${ BRAND_NAME } acceder a sus datos."
+        "A continuación, deberás iniciar sesión en tu cuenta de Google y permitir a ${ BRAND_NAME } acceder a tus datos."
       ]
     },
     "Oauth instructions video": {
@@ -7046,7 +7052,7 @@
         "Carpetas personalizadas"
       ],
       "Default folders": [
-        "Carpetas predeterminadas"
+        "Carpetas por defecto"
       ],
       "Move to...": [
         "Mover a..."
@@ -7067,7 +7073,7 @@
     },
     "Paid user checklist item": {
       "Get mobile app": [
-        "Obtener la aplicación móvil"
+        "Descargar la aplicación móvil"
       ],
       "Import contacts or emails": [
         "Importar contactos o correos electrónicos"
@@ -7119,7 +7125,7 @@
         "Dirección de correo electrónico"
       ],
       "End date": [
-        "Fecha de finalización"
+        "Fecha final"
       ],
       "Filter folders": [
         "Filtrar carpetas"
@@ -7179,7 +7185,7 @@
         "Seleccionar"
       ],
       "Start date": [
-        "Fecha inicial"
+        "Fecha de inicio"
       ],
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico"
@@ -7204,16 +7210,16 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contacto exportado con éxito.",
-        "${ contactsExported.length } de ${ countContacts } contactos exportados con éxito."
+        "${ contactsExported.length } de ${ countContacts } contacto exportado.",
+        "${ contactsExported.length } de ${ countContacts } contactos exportados."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado con éxito.",
-        "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados con éxito."
+        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } de ${ totalBeMerged } contacto combinado con éxito.",
-        "${ model.submitted.length } de ${ totalBeMerged } contactos combinados con éxito."
+        "${ model.submitted.length } de ${ totalBeMerged } contacto combinado.",
+        "${ model.submitted.length } de ${ totalBeMerged } contactos combinados."
       ],
       "No contacts exported.": [
         "Ningún contacto exportado."
@@ -7283,7 +7289,7 @@
         "Mensaje firmado con PGP de un remitente verificado"
       ],
       "PGP-signed message. Sender verification failed": [
-        "Mensaje firmado con PGP. La verificación del remitente ha fallado"
+        "Mensaje firmado con PGP. La verificación del remitente ha fallado."
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero"
@@ -7325,7 +7331,7 @@
         "No hay mensajes programados"
       ],
       "No results found": [
-        "No se ha encontrado ningún resultado"
+        "No se han encontrado resultados."
       ],
       "No unread messages found": [
         "No se encontraron mensajes sin leer"
@@ -7399,11 +7405,11 @@
         "Firmado con PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso-cero"
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso-cero a destinatario verificado",
-        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso-cero a destinatarios verificados"
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero a un destinatario verificado",
+        "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero a destinatarios verificados"
       ],
       "Sent by you with end-to-end encryption": [
         "Enviado por ti con cifrado de extremo a extremo"
@@ -7426,19 +7432,19 @@
     },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Mensaje cifrado con PGP. La verificación del remitente ha fallado: ${ verificationErrorsMessage }"
+        "Mensaje cifrado con PGP. Error al verificar el remitente: ${ verificationErrorsMessage }"
       ],
       "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
-        "Mensaje firmado con PGP. La verificación del remitente ha fallado: ${ verificationErrorsMessage }"
+        "Mensaje firmado con PGP. Error al verificar el remitente: ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
         "El remitente no ha podido ser verificado: mensaje no firmado"
       ],
       "Sender verification failed": [
-        "La verificación del remitente ha fallado"
+        "Error al verificar el remitente"
       ],
       "Sender verification failed: ${ verificationErrorsMessage }": [
-        "La verificación del remitente ha fallado: ${ verificationErrorsMessage }"
+        "Error al verificar el remitente: ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
         "La verificación de las claves de confianza del remitente ha fallado"
@@ -7464,244 +7470,6 @@
       ],
       "Smallest first": [
         "Más pequeño primero"
-      ]
-    },
-    "specialoffer: Action": {
-      "Close": [
-        "Cerrar"
-      ],
-      "Don't show this offer again": [
-        "No volver a mostrar esta oferta"
-      ],
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
-    "specialoffer: Action, Unlimited is a plan name": {
-      "Go Unlimited": [
-        "Pásate a Unlimited"
-      ]
-    },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } día",
-        "${ days } días"
-      ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ],
-      "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
-      ]
-    },
-    "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } de almacenamiento total"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 usuarios"
-      ],
-      "64 countries": [
-        "64 países"
-      ],
-      "All paid Mail and Calendar features": [
-        "Todas las funciones de pago de Mail y Calendar"
-      ],
-      "High speed VPN": [
-        "VPN de alta velocidad"
-      ],
-      "Highest VPN speed": [
-        "VPN de máxima velocidad"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
-      ],
-      "Premium Drive": [
-        "Drive prémium"
-      ],
-      "Premium early access": [
-        "Acceso anticipado prémium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail y Calendar prémium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Mail, Calendar y Drive prémium"
-      ],
-      "Premium VPN": [
-        "VPN prémium"
-      ],
-      "Secure cloud storage": [
-        "Almacenamiento seguro en la nube"
-      ],
-      "Secure streaming": [
-        "Transmisiones seguras"
-      ],
-      "Support online privacy": [
-        "Apoya la privacidad en línea"
-      ]
-    },
-    "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Los descuentos se basan en la cuota estándar mensual."
-      ],
-      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente cada 2 años al mismo precio hasta su cancelación."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Oferta de por vida"
-      ],
-      "Limited time only": [
-        "Solo por tiempo limitado"
-      ],
-      "Most popular": [
-        "Más popular"
-      ],
-      "Offer ends soon": [
-        "La oferta acaba pronto"
-      ],
-      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
-        "El descuento seguirá aplicándose en cada renovación hasta que canceles o modifiques la suscripción"
-      ]
-    },
-    "specialoffer: Link": {
-      "Go to subscription plans": [
-        "Ir a los planes de suscripción"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ]
-    },
-    "specialoffer: Offers": {
-      "/ month": [
-        "/ mes"
-      ],
-      "1 year": [
-        "1 año"
-      ],
-      "2 years": [
-        "2 años"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Al precio de ${ amount } durante 1 mes"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Al precio de ${ amount } durante 12 meses"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Al precio de ${ amount } durante 15 meses"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Al precio de ${ amount } durante 24 meses"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Al precio de ${ amount } durante 30 meses"
-      ],
-      "for ${ n } month": [
-        "durante ${ n } mes",
-        "durante ${ n } meses"
-      ],
-      "Get the deal": [
-        "Aprovecha la oportunidad"
-      ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Transcurrido 1 año, se renovará al precio de ${ discountedAmount }, que lleva aplicado un descuento del ${ discount } % con respecto al estándar (${ regularAmount })"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Transcurridos 2 años, se renovará al precio de ${ discountedAmount }, que lleva aplicado un descuento del ${ discount } % con respecto al estándar (${ regularAmount })"
-      ],
-      "Save ${ discount }%": [
-        "Ahorra un ${ discount } %"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Precio estándar ${ amount } durante 1 mes"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Precio estándar ${ amount } durante 12 meses"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Precio estándar ${ amount } durante 15 meses"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Precio estándar ${ amount } durante 24 meses"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Precio estándar ${ amount } durante 30 meses"
-      ]
-    },
-    "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Oferta del Black Friday"
-      ],
-      "Cyber Week Sale": [
-        "Oferta de la Cyber Week"
-      ],
-      "End of year offer": [
-        "Oferta de fin de año"
-      ],
-      "End of Year Sale": [
-        "Oferta de final de año"
-      ],
-      "Get our premium bundle and save more": [
-        "Contrata nuestro paquete prémium y ahorra más dinero"
-      ],
-      "Our discontinued Visionary plan is back for a limited time only": [
-        "Nuestro económico plan Visionary está de nuevo disponible por tiempo limitado"
-      ],
-      "Save more with 2 years of ${ planName }": [
-        "Ahorra más dinero contratando ${ planName } durante 2 años"
-      ],
-      "Upgrade and save more with 2 years of ${ planName }": [
-        "Cambia de plan y ahorra más dinero contratando ${ planName } durante 2 años"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accede a contenido bloqueado y navega con privacidad. Incluye 1700 servidores en más de 60 países, VPN de máxima velocidad, 10 conexiones VPN por usuario, servicios de streaming de todo el mundo, bloqueadores de malware y anuncios, etc."
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accede a contenido bloqueado y navega con privacidad. Incluye 1700 servidores en más de 60 países, VPN de máxima velocidad, 10 conexiones VPN, servicios de streaming de todo el mundo, bloqueadores de malware y anuncios, etc."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video."
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos nuestros servicios prémium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, seudónimos ilimitados de Hide My Email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 Hide My Email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de Hide My Email, posibilidad de compartir calendario, etc."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited Hide My Email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, seudónimos ilimitados de Hide My Email, posibilidad de compartir calendario, etc."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfecto para familias o equipos pequeños. Cada miembro puede tener su propia bandeja de entrada y seudónimo. Requiere un dominio personalizado."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Disfruta sin coste adicional de las versiones de pago de todos los nuevos servicios de privacidad que lancemos en el futuro, así como de acceso anticipado a todas nuestras futuras funciones y productos."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye sincronización automática, posibilidad de compartir archivos cifrados, etc."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "El espacio de almacenamiento se reparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -7741,7 +7509,7 @@
         "Este mensaje proviene de una lista de correo."
       ],
       "Unsubscribed": [
-        "Cancelar suscripción"
+        "Suscripción cancelada"
       ]
     },
     "Step in filter modal": {
@@ -7846,8 +7614,8 @@
         "${ elementsCount } mensajes movidos a ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } mensaje movido a spam y remitente añadido a la lista negra.",
-        "${ elementsCount } mensajes movidos a spam y remitentes añadidos a la lista negra."
+        "${ elementsCount } mensaje movido a la carpeta Spam y remitente añadido a la lista negra.",
+        "${ elementsCount } mensajes movidos a la carpeta Spam y remitentes añadidos a la lista negra."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensaje eliminado de ${ labelName }.",
@@ -8014,7 +7782,7 @@
         "Deshacer en progreso"
       ],
       "Verification successful": [
-        "Verificación completada con éxito"
+        "Verificación completada"
       ]
     },
     "Success notification": {
@@ -8094,17 +7862,9 @@
         "${ daysCountLeft } día",
         "${ daysCountLeft } días"
       ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } hora",
         "${ hoursCountLeft } hours"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minuto",
@@ -8113,6 +7873,34 @@
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } segundo",
         "${ secondsCountLeft } segundos"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 horas",
+        "${ hoursInt },5 horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ]
     },
     "Title": {
@@ -8192,7 +7980,7 @@
         "¿Confirmar dirección del destinatario?"
       ],
       "Contact details": [
-        "Detalles del contacto"
+        "Datos del contacto"
       ],
       "Contact Details": [
         "Datos del contacto"
@@ -8219,7 +8007,7 @@
         "Crear etiqueta"
       ],
       "Create new group": [
-        "Crear un nuevo grupo"
+        "Crear nuevo grupo"
       ],
       "Currency": [
         "Moneda"
@@ -8456,7 +8244,7 @@
         "Nuevo mensaje"
       ],
       "Next conversation": [
-        "Siguiente conversación"
+        "Conversación siguiente"
       ],
       "Next message": [
         "Siguiente mensaje"
@@ -8525,7 +8313,7 @@
         "Programar envío"
       ],
       "Select a theme": [
-        "Selecciona un tema"
+        "Seleccionar un tema"
       ],
       "Select action to take on contact group": [
         "Selecciona la acción a realizar en el grupo de contactos"
@@ -8604,7 +8392,7 @@
         "¿Confiar en la clave pública?"
       ],
       "Two-factor authentication": [
-        "Autenticación de doble factor"
+        "Autenticación de dos factores"
       ],
       "Unsubscribe": [
         "Cancelar suscripción"
@@ -8640,10 +8428,27 @@
         "Novedades"
       ],
       "Your changes are not synced yet": [
-        "Tus cambios todavía no están sincronizados"
+        "Tus cambios todavía no están sincronizados."
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Tu periodo de prueba gratuito acaba el ${ formattedEndDate }"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Date": [
+        "Fecha"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Size": [
+        "Tamaño"
+      ],
+      "Status": [
+        "Estado"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8701,7 +8506,7 @@
         "La importación comenzará con los mensajes más recientes."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acción descargará todos los mensajes para que puedan ser buscados localmente. Limpiar los datos de tu navegador deshabilitará esta opción."
+        "Esta acción descargará todos los mensajes para que la búsqueda pueda ser local. Borrar los datos de tu navegador desactivará esta opción."
       ],
       "This feature is only available for paid users": [
         "Esta función solo está disponible para usuarios de pago"
@@ -8818,7 +8623,7 @@
         "Esta función requiere una cuenta de pago de ${ BRAND_NAME }"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Esta importación podría exceder la capacidad de almacenamiento disponible en tu cuenta de ${ BRAND_NAME }. Por favor, considera la posibilidad de personalizar tu importación."
+        "Esta importación podría exceder la capacidad de almacenamiento disponible en tu cuenta de ${ BRAND_NAME }. Considera la posibilidad de personalizar tu importación."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Desafortunadamente, no estamos en línea en este momento. Complete el siguiente formulario para describir su problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
@@ -9049,8 +8854,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Cada año ${ interval }",
+        "Cada ${ interval } años"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada año, ${ timesString } ${ interval }",

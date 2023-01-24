@@ -6,7 +6,7 @@
   "contexts": {
     "Action": {
       "Authenticate": [
-        "Confirmar"
+        "Autenticar"
       ],
       "Back": [
         "Atrás"
@@ -952,7 +952,7 @@
         "Algo salió mal. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Hubo un problema al conectarse a ${ BRAND_NAME }."
+        "Ha ocurrido un problema al conectarse a ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "También puedes ${ refresh } o intentarlo de nuevo más tarde."
@@ -960,7 +960,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo salió mal al autenticar con tu clave de seguridad. Por favor, inténtelo de nuevo."
+        "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
       ]
     },
     "fido2: Info": {
@@ -1001,7 +1001,7 @@
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
       ],
       "Each code can only be used once": [
-        "Cada código únicamente puede ser usado una vez"
+        "Cada código únicamente puede ser usado una vez."
       ],
       "Enter the code from your authenticator app": [
         "Introduce el código de tu aplicación de autenticación"
@@ -1031,7 +1031,7 @@
         "Cargando"
       ],
       "No results found": [
-        "No se han encontrado resultados"
+        "No se han encontrado resultados."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
@@ -1055,7 +1055,7 @@
         "¿Quiere recibir un código de verificación nuevo?"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive serán bloqueados y no podrás subir nuevos archivos. Para restablecer el servicion normal, por favor, abona las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu Drive serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, por favor paga las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive están bloqueados y no puedes subir nuevos archivos. Para continuar usando tu cuenta, por favor, abona las facturas pendientes."
@@ -1114,7 +1114,7 @@
         "Código enviado a ${ methodTo }"
       ],
       "Verification successful": [
-        "Verificación completada con éxito"
+        "Verificación completada"
       ]
     },
     "Title": {
@@ -1131,7 +1131,7 @@
         "Solicitar un nuevo código"
       ],
       "Two-factor authentication": [
-        "Autenticación de doble factor"
+        "Autenticación de dos factores"
       ]
     },
     "Validation": {

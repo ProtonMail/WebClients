@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
+      "Attention required": [
+        "Aufmerksamkeit erforderlich"
+      ],
       "Authenticate": [
         "Authentifizieren"
       ],
@@ -3236,6 +3239,9 @@
         "Pro Einladung ist maximal ${ MAX_ATTENDEES } Teilnehmer erlaubt",
         "Pro Einladung sind maximal ${ MAX_ATTENDEES } Teilnehmer erlaubt"
       ],
+      "Attention required": [
+        "Aufmerksamkeit erforderlich"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
@@ -3450,6 +3456,9 @@
       ],
       "No group found": [
         "Keine Gruppe gefunden"
+      ],
+      "No imports to display.": [
+        "Keine Importe verfügbar."
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
@@ -4569,7 +4578,7 @@
     },
     "Notification when": {
       "at time of event": [
-        "zum Zeitpunkt des Termins"
+        "Zum Zeitpunkt des Termins"
       ],
       "day before": [
         "Tag vorher",
@@ -5035,26 +5044,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } Tag",
-        "${ days } Tage"
-      ],
-      "${ hours } hour": [
         "${ hours } Stunde",
         "${ hours } Stunden"
       ],
+      "${ hours } hour": [
+        "${ days } Tag",
+        "${ days } Tage"
+      ],
       "${ minutes } minute": [
-        "${ minutes } Minute",
-        "${ minutes } Minuten"
+        "${ n } Monat KOSTENLOS",
+        "${ n } Monate KOSTENLOS"
       ],
       "${ seconds } second": [
-        "${ seconds } Sekunde",
-        "${ seconds } Sekunden"
+        "für ${ n } Monat",
+        "für ${ n } Monate"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } Monat KOSTENLOS",
-        "${ n } Monate KOSTENLOS"
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
       ]
     },
     "specialoffer: Deal details": {
@@ -5078,9 +5087,6 @@
       ],
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Premium-Drive"
@@ -5166,8 +5172,8 @@
         "Für 30 Monate mit ${ amount } abgerechnet"
       ],
       "for ${ n } month": [
-        "für ${ n } Monat",
-        "für ${ n } Monate"
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
       ],
       "Get the deal": [
         "Jetzt zugreifen"
@@ -5536,10 +5542,28 @@
         "Einstellungen"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } Stunde",
         "${ hours } Stunden"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 Stunden",
+        "${ hoursInt }.5 Stunden"
       ],
       "${ minutes } minute": [
         "${ minutes } Minute",
@@ -5918,6 +5942,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Anzahl auswählen"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Aktionen"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Import": [
+        "Importieren"
+      ],
+      "Size": [
+        "Größe"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Title; create calendar modal": {
@@ -6317,8 +6358,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Alle ${ interval } Jahre",
+        "Alle ${ interval } Jahre"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Alle ${ interval } Jahre, ${ timesString }",

@@ -4973,8 +4973,8 @@
       "Monthly ${ onDayString }": [
         "Mensual los ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Moviendo una gran cantidad de mensajes. Esto puede tardar un rato."
+      "Moving messages. This may take a while.": [
+        "Moviendo mensajes. Esto puede tardar un rato."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nombre su carpeta nueva y seleccione la carpeta padre en la que desea colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
@@ -5002,6 +5002,9 @@
       ],
       "No group found": [
         "Ningún grupo encontrado"
+      ],
+      "No imports to display.": [
+        "No hay importaciones que mostrar."
       ],
       "No label found": [
         "Ninguna etiqueta encontrada"
@@ -7484,26 +7487,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } día",
-        "${ days } días"
-      ],
-      "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
       ],
+      "${ hours } hour": [
+        "${ days } día",
+        "${ days } días"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "${ n } mes GRATIS",
+        "${ n } meses GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "for ${ n } mes",
+        "for ${ n } meses"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {
@@ -7615,8 +7618,8 @@
         "Al precio de ${ amount } durante 30 meses"
       ],
       "for ${ n } month": [
-        "for ${ n } mes",
-        "for ${ n } meses"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "Get the deal": [
         "Obtener la oferta"
@@ -8094,17 +8097,9 @@
         "${ daysCountLeft } día",
         "${ daysCountLeft } día"
       ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hora"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } hora",
         "${ hoursCountLeft } hora"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuto"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minuto",
@@ -8113,6 +8108,34 @@
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } segundo",
         "${ secondsCountLeft } segundo"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 horas",
+        "${ hoursInt },5 horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ]
     },
     "Title": {
@@ -8646,6 +8669,23 @@
         "Su prueba gratuita termina pronto, en ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Date": [
+        "Fecha"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Size": [
+        "Tamaño"
+      ],
+      "Status": [
+        "Estado"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoy"
@@ -9049,8 +9089,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Cada año ${ interval }",
+        "Cada año ${ interval }"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada año, ${ timesString } ${ interval }",

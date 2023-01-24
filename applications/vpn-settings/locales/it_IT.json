@@ -29,6 +29,9 @@
       "Attach screenshot(s)": [
         "Allega screenshot"
       ],
+      "Attention required": [
+        "Attenzione"
+      ],
       "Authenticate": [
         "Autentica"
       ],
@@ -423,11 +426,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Questo disconnetterà tutti i router e client che utilizzano questo certificato."
-      ]
-    },
-    "Apps dropdown": {
-      "${ BRAND_NAME } applications": [
-        "${ BRAND_NAME } applicazioni"
       ]
     },
     "Badge": {
@@ -1922,11 +1920,17 @@
       "Are you sure you want to discard your changes?": [
         "Vuoi davvero ignorare le modifiche?"
       ],
+      "Attention required": [
+        "Attenzione"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Abbonamento Base, Plus o Visionary richiesto"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
+      ],
+      "Billing cycle: ${ text }": [
+        "Ciclo di fatturazione: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Le transazioni in Bitcoin potrebbero richiedere un po' di tempo per essere confermate (fino a 24 ore). Una volta confermate, aggiungeremo il credito al tuo account. Dopo la conferma della transazione, potrai pagare la tua fattura con il credito."
@@ -2362,9 +2366,6 @@
       ],
       "Unsupported file": [
         "File non supportato"
-      ],
-      "Update the URL in your password manager": [
-        "Aggiorna l'URL nel tuo gestore di password"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Usa il miglior server in base al carico corrente e alla posizione: ${ formattedBestServerName }"
@@ -2916,6 +2917,12 @@
       ],
       "Two-password mode": [
         "Modalità a due password"
+      ],
+      "Use a recovery email address": [
+        "Usa un indirizzo email di recupero"
+      ],
+      "Use a recovery phone number": [
+        "Usa un numero di telefono di recupero"
       ],
       "User's new password": [
         "Nuova password dell'utente"
@@ -3979,26 +3986,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } giorno",
-        "${ days } giorni"
-      ],
-      "${ hours } hour": [
         "${ hours } ora",
         "${ hours } ore"
       ],
+      "${ hours } hour": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuti"
+        "${ n } mese GRATIS",
+        "${ n } mesi GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } secondo",
-        "${ seconds } secondi"
+        "per ${ n } mese",
+        "per ${ n } mesi"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mese GRATIS",
-        "${ n } mesi GRATIS"
+        "${ seconds } secondo",
+        "${ seconds } secondi"
       ]
     },
     "specialoffer: Deal details": {
@@ -4022,9 +4029,6 @@
       ],
       "Highest VPN speed": [
         "Massima velocità della VPN"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Drive premium"
@@ -4079,9 +4083,6 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Vai ai piani di abbonamento"
-      ],
-      "Upgrade": [
-        "Upgrade"
       ]
     },
     "specialoffer: Offers": {
@@ -4110,8 +4111,8 @@
         "Addebito di ${ amount } per 30 mesi"
       ],
       "for ${ n } month": [
-        "per ${ n } mese",
-        "per ${ n } mesi"
+        "${ minutes } minuto",
+        "${ minutes } minuti"
       ],
       "Get the deal": [
         "Acquista"

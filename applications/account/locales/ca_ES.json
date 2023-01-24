@@ -483,11 +483,11 @@
       "Not spam": [
         "No es correu brossa"
       ],
-      "OK": [
-        "D'acord"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -8620,16 +8620,6 @@
         "Camp vCard"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hores"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuts"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Cercar fus horari"
@@ -10055,8 +10045,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Cada ${ interval } any",
+        "Cada ${ interval } anys"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada ${ interval } any, ${ timesString }",

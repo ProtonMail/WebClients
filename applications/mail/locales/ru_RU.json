@@ -3383,7 +3383,7 @@
         "Произошла ошибка при экспорте визитных карточек контактов"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Длина этого поля превысила максимум ${ maximumLength } символов."
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
       ],
       "This field is required": [
         "Это обязательное поле"
@@ -4417,8 +4417,8 @@
         "${ contactEmailsLength } адресатов"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } участник)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } участника)",
+        "${ contactGroupName } (${ numberOfSelectedContacts } из ${ numberOfContactsInGroup } участника)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } участников)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } участников)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } участников)"
       ],
@@ -5151,8 +5151,8 @@
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Перемещение большого количества сообщений. Это может занять некоторое время."
+      "Moving messages. This may take a while.": [
+        "Перемещение сообщений. Это может занять некоторое время."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назовите новую папку и выберите родительскую папку, в которую вы хотите ее поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
@@ -5180,6 +5180,9 @@
       ],
       "No group found": [
         "Группа не найдена"
+      ],
+      "No imports to display.": [
+        "Нет импорта для отображения."
       ],
       "No label found": [
         "Ярлыки не найдены"
@@ -7724,36 +7727,36 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дня"
-      ],
-      "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
         "${ hours } часа"
       ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минуты"
+      "${ hours } hour": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
       ],
-      "${ seconds } second": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунды"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
+      "${ minutes } minute": [
         "${ n } месяц БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО",
         "${ n } месяцев БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО"
+      ],
+      "${ seconds } second": [
+        "за ${ n } месяц ",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
       ]
     },
     "specialoffer: Deal details": {
@@ -7777,9 +7780,6 @@
       ],
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Платная версия Drive"
@@ -7865,10 +7865,10 @@
         "Оплата ${ amount } за 30 месяцев."
       ],
       "for ${ n } month": [
-        "за ${ n } месяц ",
-        "за ${ n } месяца",
-        "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
       ],
       "Get the deal": [
         "Получить скидку"
@@ -8396,23 +8396,11 @@
         "${ daysCountLeft } дней",
         "${ daysCountLeft } дней"
       ],
-      "${ hours } hour": [
-        "${ hours } час",
-        "${ hours } часа",
-        "${ hours } часов",
-        "${ hours } часов"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } час",
         "${ hoursCountLeft } часа",
         "${ hoursCountLeft } часов",
         "${ hoursCountLeft } часов"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минут"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } минута",
@@ -8425,6 +8413,46 @@
         "${ secondsCountLeft } секунды",
         "${ secondsCountLeft } секунд",
         "${ secondsCountLeft } секунд"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч"
+      ],
+      "${ minutes } min": [
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часов",
+        "${ hoursInt }.5 часов"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минута"
       ]
     },
     "Title": {
@@ -8978,6 +9006,23 @@
         "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Действия"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Import": [
+        "Импорт"
+      ],
+      "Size": [
+        "Размер"
+      ],
+      "Status": [
+        "Состояние"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сегодня"
@@ -9445,8 +9490,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Каждый ${ interval } год",
+        "Каждые ${ interval } года",
         "Каждые ${ interval } лет",
         "Каждые ${ interval } лет"
       ],

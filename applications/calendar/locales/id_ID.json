@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
+      "Attention required": [
+        "Diperlukan perhatian"
+      ],
       "Authenticate": [
         "Autentikasi"
       ],
@@ -3177,6 +3180,9 @@
       "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
         "Hanya ${ MAX_ATTENDEES } peserta yang dapat diundang per undangannya"
       ],
+      "Attention required": [
+        "Diperlukan perhatian"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
@@ -3389,6 +3395,9 @@
       ],
       "No group found": [
         "Tidak ada grup yang ditemukan"
+      ],
+      "No imports to display.": [
+        "Tidak ada impor untuk ditampilkan."
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
@@ -5193,9 +5202,23 @@
         "Pengaturan"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } j"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 j"
+      ],
+      "${ minutes } min": [
+        "${ minutes } mnt"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } jam"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 jam"
       ],
       "${ minutes } minutes": [
         "${ minutes } menit"
@@ -5570,6 +5593,23 @@
         "Pilih angka"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Date": [
+        "Tanggal"
+      ],
+      "Import": [
+        "Impor"
+      ],
+      "Size": [
+        "Ukuran"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Buat kalender"
@@ -5935,6 +5975,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "Setiap ${ interval } tahun"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "Setiap ${ interval } tahun, ${ timesString }"
       ],
