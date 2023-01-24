@@ -65,7 +65,7 @@ function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: (dismiss?: boolean) =
     const spotlightContent = (
         <div className="flex flex-nowrap">
             <figure className="flex-item flex-item-noshrink mr1">
-                <img src={spotlightIcon} />
+                <img src={spotlightIcon} alt="" />
             </figure>
             <div className="flex-item">
                 <h6 className="text-semibold">{c('Title').t`You’ve got 1 GB of storage`}</h6>
@@ -104,7 +104,7 @@ function WelcomeActionsSpotlight({
     const spotlightContent = showPopup ? (
         <div className="flex flex-nowrap">
             <figure className="flex-item flex-item-noshrink mr1">
-                <img src={spotlightIcon} />
+                <img src={spotlightIcon} alt="" />
             </figure>
             <div className="flex-item">
                 <h6 className="text-semibold">{c('Title').t`Your 500 MB bonus`}</h6>

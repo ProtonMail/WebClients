@@ -31,7 +31,7 @@ const GetStartedChecklistComplete = ({ rewardInGb }: { rewardInGb: number }) => 
 
     return (
         <div className="p1 text-center">
-            <img className="mb1-5 mt1-5" src={gift} width={48} />
+            <img className="mb1-5 mt1-5" src={gift} width={48} alt="" />
             <p className="h3 mb0 text-bold">{c('Get started checklist completion').t`You're all set!`}</p>
             <p className="color-weak mt0-5 mb1-5">
                 <span className="get-started_completion-text inline-block">
