@@ -1,3 +1,23 @@
+# Release 5.0.10.0 – January 25, 2023
+
+## Improved
+
+-   Added ability to preview LaTeX and other source files
+-   Improved detection of Pages, Numbers, and Keynote files
+-   Sanity validation & automatic re-encryption to prevent bitflip issues
+-   Improved mobile web UX by remove floating action button & moving actions to toolbar
+-   Added empty trash action to toolbar in Trash section
+-   Improved UI by making the main CTA to always be "New Upload"
+
+## Fixed
+
+-   Resolved issue related to zip files that contained files over 4 GB when downloaded (support of 64-bit archives)
+-   Previewing in Trash now works as expected
+-   Restoration of deep folder structure from Trash
+-   Replacing file after previously failed upload
+-   Detection of duplicate files after previously failed upload
+-   Improved performance when uploads get stuck in the middle
+
 # Release 5.0.9.0 – December 14, 2022
 
 ## Improved
