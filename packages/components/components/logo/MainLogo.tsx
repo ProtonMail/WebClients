@@ -7,7 +7,12 @@ const MainLogo = (props: AppLinkProps) => {
     const { APP_NAME } = useConfig();
 
     return (
-        <AppLink toApp={APP_NAME} target="_self" {...props}>
+        <AppLink
+            toApp={APP_NAME}
+            target="_self"
+            className="relative interactive-pseudo-protrude interactive--no-background"
+            {...props}
+        >
             <Logo appName={APP_NAME} />
         </AppLink>
     );

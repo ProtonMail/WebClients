@@ -23,6 +23,10 @@
 				background-color: var(--interaction-default-active);
 			}
 		}
+
+		&::after {
+			border-radius: var(--border-radius-md);
+		}
 	}
 
 	&-text {
