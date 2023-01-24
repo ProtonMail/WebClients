@@ -98,7 +98,7 @@ const DomainsSectionInternal = () => {
                         >{c('Action').t`Refresh status`}</Button>
                     </div>
                     {!!domains?.length && domainsAddressesMap && (
-                        <Table className="simple-table--has-actions">
+                        <Table hasActions responsive="cards">
                             <TableHeader
                                 cells={[
                                     c('Header for addresses table').t`Domain`,
@@ -112,6 +112,11 @@ const DomainsSectionInternal = () => {
                                     return (
                                         <TableRow
                                             key={domain.ID}
+                                            labels={[
+                                                c('Header for addresses table').t`Domain`,
+                                                c('Header for addresses table').t`Status`,
+                                                '',
+                                            ]}
                                             cells={[
                                                 <DomainName domain={domain} />,
                                                 <DomainStatus domain={domain} domainAddresses={domainAddresses} />,

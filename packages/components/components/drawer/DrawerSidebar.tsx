@@ -65,7 +65,7 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
                 content={
                     <div className="flex flex-nowrap mt0-5 mb0-5">
                         <div className="flex-item-noshrink mr1">
-                            <img src={drawerImg} className="w4e" />
+                            <img src={drawerImg} className="w4e" alt="" />
                         </div>
                         <div>
                             <div className="text-lg text-bold mb0-25">{c('Side panel spotlight')

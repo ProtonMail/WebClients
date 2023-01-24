@@ -237,7 +237,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     />
                 </div>
             </Block>
-            <Table className="simple-table--has-actions no-tablet no-mobile">
+            <Table hasActions responsive="cards">
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
@@ -248,8 +248,21 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                             <TableRow
                                 key={member.ID}
                                 className="py1"
+                                labels={[
+                                    '',
+                                    <>
+                                        <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
+                                        <Info url={getKnowledgeBaseUrl('/user-roles')} />
+                                    </>,
+                                    c('Title header for members table').t`Addresses`,
+                                    c('Title header for members table').t`Features`,
+                                    '',
+                                ]}
                                 cells={[
-                                    <span className="py1 flex flex-nowrap flex-align-items-center" title={member.Name}>
+                                    <div
+                                        className="on-desktop-py1 flex flex-nowrap flex-align-items-center"
+                                        title={member.Name}
+                                    >
                                         <Avatar className="mr1 flex-item-noshrink">{getInitials(member.Name)}</Avatar>
                                         <div>
                                             <span className="block text-ellipsis flex-item-fluid">{member.Name}</span>
@@ -257,17 +270,13 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                                 <Badge type="light">{c('Private Member').t`private`}</Badge>
                                             )}
                                         </div>
-                                    </span>,
-                                    <span className="py1 pr1 text-cut max-w100">
+                                    </div>,
+                                    <div className="pr1 text-cut max-w100">
                                         <MemberRole member={member} />
-                                    </span>,
-                                    <span className="py1">
-                                        <MemberAddresses addresses={memberAddresses} />
-                                    </span>,
-                                    <span className="py1">
-                                        <MemberFeatures member={member} />
-                                    </span>,
-                                    <span className="py1">
+                                    </div>,
+                                    <MemberAddresses addresses={memberAddresses} />,
+                                    <MemberFeatures member={member} />,
+                                    <div>
                                         <MemberActions
                                             onEdit={handleEditUser}
                                             onDelete={handleDeleteUser}
@@ -278,77 +287,13 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                             organization={organization}
                                             organizationKey={organizationKey}
                                         />
-                                    </span>,
+                                    </div>,
                                 ]}
                             />
                         );
                     })}
                 </TableBody>
             </Table>
-
-            <div className="no-desktop">
-                {membersSelected.map((member) => {
-                    const memberAddresses = memberAddressesMap?.[member.ID] || [];
-                    return (
-                        <div key={member.ID} className="py1 border-bottom">
-                            <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">
-                                <div className="text-bold min-w7e mr1">
-                                    {c('Title header for members table').t`Name`}
-                                </div>
-                                <div>
-                                    <span className="block">{member.Name}</span>
-                                    {Boolean(member.Private) && (
-                                        <Badge type="light">{c('Private Member').t`private`}</Badge>
-                                    )}
-                                </div>
-                            </div>
-                            <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">
-                                <div className="text-bold min-w7e mr1">
-                                    <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
-                                    <span className="no-mobile">
-                                        <Info url={getKnowledgeBaseUrl('/user-roles')} />
-                                    </span>
-                                </div>
-                                <div className="flex-item-fluid">
-                                    <MemberRole member={member} />
-                                </div>
-                            </div>
-                            <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">
-                                <div className="text-bold min-w7e mr1">
-                                    {c('Title header for members table').t`Addresses`}
-                                </div>
-                                <div className="flex-item-fluid text-ellipsis">
-                                    <MemberAddresses addresses={memberAddresses} />
-                                </div>
-                            </div>
-                            <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">
-                                <div className="text-bold min-w7e mr1">
-                                    <span
-                                        className="text-ellipsis inline-block align-bottom max-w100"
-                                        title={c('Title header for members table').t`Features`}
-                                    >{c('Title header for members table').t`Features`}</span>
-                                </div>
-                                <div>
-                                    <MemberFeatures member={member} />
-                                </div>
-                            </div>
-                            <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">
-                                <div className="min-w14e mr1" />
-                                <MemberActions
-                                    onEdit={handleEditUser}
-                                    onDelete={handleDeleteUser}
-                                    onRevoke={handleRevokeUserSessions}
-                                    onLogin={handleLoginUser}
-                                    member={member}
-                                    addresses={memberAddresses}
-                                    organization={organization}
-                                    organizationKey={organizationKey}
-                                />
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
         </SettingsSectionWide>
     );
 };
