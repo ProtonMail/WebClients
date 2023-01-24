@@ -39,6 +39,7 @@ const DrawerApp = ({ onCompose, onMailTo, contactCustomActions }: Props) => {
                     .map(([app, src]) => (
                         <iframe
                             key={app}
+                            title={app}
                             id="drawer-app-iframe"
                             className={clsx(['drawer-app-view h100 w100', appInView !== app && 'hidden'])}
                             src={src}
