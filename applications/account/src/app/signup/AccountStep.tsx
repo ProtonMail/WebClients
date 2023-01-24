@@ -45,6 +45,7 @@ import {
 } from '@proton/shared/lib/helpers/formValidators';
 import { hasProtonDomain } from '@proton/shared/lib/helpers/string';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
@@ -278,7 +279,21 @@ const AccountStep = ({
     return (
         <Main>
             {renderLoginModal && <SignInPromptModal email={recoveryEmail} {...loginModal} />}
-            <Header title={title} subTitle={subTitle} onBack={onBack} />
+            <Header
+                title={title}
+                subTitle={
+                    isLoadingView ? (
+                        /**
+                         * Take up required space whilst loading
+                         * and prevent a layout shift in most cases.
+                         */
+                        <>&#x200b;</>
+                    ) : (
+                        subTitle
+                    )
+                }
+                onBack={onBack}
+            />
             <Content>
                 {isLoadingView && (
                     <div className="text-center absolute absolute-center">
@@ -347,7 +362,7 @@ const AccountStep = ({
                         innerChallenge
                     )}
                     {signupTypes.includes(SignupType.Email) && signupTypes.length > 1 ? (
-                        <div className="text-center mb1">
+                        <div className={clsx('text-center mb1', isLoadingView && 'hidden')}>
                             <InlineLinkButton
                                 id="existing-email-button"
                                 onClick={() => {
