@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, Ref, forwardRef } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 type InlineLinkButtonProps = ComponentPropsWithRef<'button'>;
 
@@ -9,7 +9,7 @@ const InlineLinkButton = forwardRef<HTMLButtonElement, InlineLinkButtonProps>(
         return (
             <button
                 type="button"
-                className={classnames(['link align-baseline text-left', className])}
+                className={clsx(['link link-focus align-baseline text-left', className])}
                 ref={ref}
                 {...rest}
             >

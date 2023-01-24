@@ -39,7 +39,7 @@ const DealFeatures = ({ isExpanded, expand }: Props) => {
                             <span className={clsx(['text-left', feature.disabled && 'color-disabled'])}>
                                 {feature.name}
                             </span>
-                            {!!feature.tooltip && <Info className="ml0-5" title={feature.tooltip} />}
+                            {!!feature.tooltip && <Info buttonClass="ml-2" title={feature.tooltip} />}
                         </StripedItem>
                     ))}
                 </StripedList>
