@@ -29,6 +29,9 @@
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
+      "Attention required": [
+        "Atenção necessária"
+      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -423,11 +426,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Isso irá desconectar todos os roteadores e clientes usando esse certificado."
-      ]
-    },
-    "Apps dropdown": {
-      "${ BRAND_NAME } applications": [
-        "Aplicativos do ${ BRAND_NAME }"
       ]
     },
     "Badge": {
@@ -1927,11 +1925,17 @@
       "Are you sure you want to discard your changes?": [
         "Você tem certeza que deseja descartar suas alterações?"
       ],
+      "Attention required": [
+        "Atenção necessária"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "É necessária a assinatura Basic, Plus ou Visionary"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+      ],
+      "Billing cycle: ${ text }": [
+        "Ciclo de faturamento: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "As transações em Bitcoin podem levar algum tempo para serem confirmadas (até 24 horas). Uma vez confirmada, adicionaremos os créditos na sua conta. Após a confirmação da transação, você pode pagar sua fatura com os créditos."
@@ -2198,7 +2202,7 @@
         "Por favor, verifique o cartão na nova guia que foi aberta."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Por favor, espera que suas alterações serão sincronizadas com o servidor."
+        "Por favor, aguarde até que suas alterações sejam sincronizadas com o servidor."
       ],
       "Plus or Visionary subscription required": [
         "É necessária a assinatura Plus ou Visionária"
@@ -2367,9 +2371,6 @@
       ],
       "Unsupported file": [
         "Arquivo não suportado"
-      ],
-      "Update the URL in your password manager": [
-        "Atualize a URL no seu gerenciador de senhas"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
@@ -2921,6 +2922,12 @@
       ],
       "Two-password mode": [
         "Modo de duas senhas"
+      ],
+      "Use a recovery email address": [
+        "Usar um e-mail de recuperação"
+      ],
+      "Use a recovery phone number": [
+        "Usar um número de telefone de recuperação"
       ],
       "User's new password": [
         "Nova senha do usuário"
@@ -3984,26 +3991,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } dia",
-        "${ days } dias"
-      ],
-      "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
       ],
+      "${ hours } hour": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
       ],
       "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "por ${ n } mês",
+        "por ${ n } meses"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mês GRÁTIS",
-        "${ n } meses GRÁTIS"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {
@@ -4038,7 +4045,7 @@
         "Acesso antecipado premium"
       ],
       "Premium Mail and Calendar": [
-        "Mail e Calendário Premium"
+        "Mail e Calendar Premium"
       ],
       "Premium Mail, Calendar and Drive": [
         "Mail, Calendar e Drive premium"
@@ -4115,8 +4122,8 @@
         "Com o preço de ${ amount } por 30 meses"
       ],
       "for ${ n } month": [
-        "por ${ n } mês",
-        "por ${ n } meses"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "Get the deal": [
         "Aproveite a oferta"
@@ -4148,7 +4155,7 @@
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
-        "Promoção de Black Friday"
+        "Promoção da Black Friday"
       ],
       "Cyber Week Sale": [
         "Promoção da Cyber Week"
@@ -4180,7 +4187,7 @@
         "Acesse conteúdo bloqueado e navegue com privacidade. Inclui 1.700 servidores em +60 países, máxima velocidade de VPN, 10 conexões de VPN, serviços de streaming no mundo todo, malware e ad-blocker e muito mais."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Acesse conteúdo em serviços de streaming como Netflix, Disney+ e Prime Video de qualquer lugar."
+        "Acesse conteúdo em serviços de streaming, como Netflix, Disney+ e Prime Video de qualquer lugar."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide My Email, compartilhamento de calendário, armazenamento criptografado na nuvem e compartilhamento de arquivo e muito mais."

@@ -1937,7 +1937,7 @@
         "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
       ],
       "Device name does not match": [
-        "Имя прибора не совпадает"
+        "Название устройства не совпадает"
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
@@ -2144,7 +2144,7 @@
         "Произошла ошибка при экспорте визитных карточек контактов"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Длина этого поля превысила максимум ${ maximumLength } символов."
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
       ],
       "This field is required": [
         "Это обязательное поле"
@@ -3398,6 +3398,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Похоже, что вы недавно пытались загрузить ${ uploadName }. Если загрузка не удалась, ${ replaceFile }. Если загрузка еще продолжается, замена файла отменит текущую загрузку."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Элементы будут находиться в Корзине до тех пор, пока вы не удалите их окончательно"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Это так же просто, как перетаскивание или выбор файлов"
       ],
@@ -3487,6 +3490,9 @@
       ],
       "No group found": [
         "Группа не найдена"
+      ],
+      "No imports to display.": [
+        "Нет импорта для отображения."
       ],
       "No preview available": [
         "Предпросмотр недоступен"
@@ -3685,9 +3691,6 @@
       ],
       "Swiss privacy": [
         "Швейцарская конфиденциальность"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Нажмите кнопку \"+\", чтобы загрузить файл или папку"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
@@ -3960,14 +3963,14 @@
       "file data order": [
         "порядок данных в файле"
       ],
+      "hash key": [
+        "хеш-ключ"
+      ],
       "keys": [
         "ключи"
       ],
       "name": [
         "имя"
-      ],
-      "name hash": [
-        "хеш имени"
       ],
       "thumbnail": [
         "значок"
@@ -4979,7 +4982,7 @@
         "Введите новое имя папки"
       ],
       "Enter device name": [
-        "Ввести название устройства"
+        "Введите название устройства"
       ],
       "Enter your email address": [
         "Введите адрес вашей электронной почты"
@@ -5134,36 +5137,36 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дня"
-      ],
-      "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
         "${ hours } часа"
       ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минуты"
+      "${ hours } hour": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
       ],
-      "${ seconds } second": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунды"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
+      "${ minutes } minute": [
         "${ n } месяц БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО",
         "${ n } месяцев БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО"
+      ],
+      "${ seconds } second": [
+        "за ${ n } месяц ",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
       ]
     },
     "specialoffer: Deal details": {
@@ -5187,9 +5190,6 @@
       ],
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Платная версия Drive"
@@ -5275,10 +5275,10 @@
         "Оплата ${ amount } за 30 месяцев."
       ],
       "for ${ n } month": [
-        "за ${ n } месяц ",
-        "за ${ n } месяца",
-        "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
       ],
       "Get the deal": [
         "Получить скидку"
@@ -5527,18 +5527,44 @@
         "Настройки"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч"
+      ],
+      "${ minutes } min": [
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
         "${ hours } часов"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часов",
+        "${ hoursInt }.5 часов"
+      ],
       "${ minutes } minute": [
         "${ minutes } минута",
         "${ minutes } минуты",
         "${ minutes } минут",
-        "${ minutes } минут"
+        "${ minutes } минута"
       ]
     },
     "Title": {
@@ -6042,6 +6068,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "У вас 1 ГБ хралинища"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Действия"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Import": [
+        "Импорт"
+      ],
+      "Size": [
+        "Размер"
+      ],
+      "Status": [
+        "Состояние"
       ]
     },
     "Today icon tooltip in mini calendar": {

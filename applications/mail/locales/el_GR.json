@@ -4536,9 +4536,6 @@
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Μετακίνηση μεγάλου αριθμού μηνυμάτων. Ίσως πάρει λίγη ώρα."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
@@ -4565,6 +4562,9 @@
       ],
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
+      ],
+      "No imports to display.": [
+        "Δεν υπάρχουν εισαγωγές προς εμφάνιση."
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
@@ -7133,17 +7133,9 @@
         "${ daysCountLeft } ημέρα",
         "${ daysCountLeft } ημέρες"
       ],
-      "${ hours } hour": [
-        "${ hours } ώρα",
-        "${ hours } ώρες"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } ώρα",
         "${ hoursCountLeft } ώρες"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } λεπτό",
-        "${ minutes } λεπτά"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } λεπτό",
@@ -7640,6 +7632,23 @@
         "Τι νέο υπάρχει"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Ενέργειες"
+      ],
+      "Date": [
+        "Ημερομηνία"
+      ],
+      "Import": [
+        "Εισαγωγή"
+      ],
+      "Size": [
+        "Μέγεθος"
+      ],
+      "Status": [
+        "Κατάσταση"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Σήμερα"
@@ -8009,8 +8018,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Κάθε ${ interval } χρόνο",
+        "Κάθε ${ interval } χρόνια"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Κάθε ${ interval } χρόνο, ${ timesString }",

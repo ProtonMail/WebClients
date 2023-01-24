@@ -322,6 +322,12 @@
       "Log in": [
         "Bejelentkezés"
       ],
+      "Manage folders": [
+        "Mappák kezelése"
+      ],
+      "Manage labels": [
+        "Címkék kezelése"
+      ],
       "Manage link": [
         "Hivatkozás kezelése"
       ],
@@ -2510,11 +2516,20 @@
         "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
         "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Hiba történt az események titkosításakor és tárolásakor. Az események nem kerültek importálásra."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Névjegyek titkosítása és tárolása: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Események titkosítása és tárolása a naptárában: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esemény sikeresen importálva. Az importált esemény azonnal elérhető a naptárában."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Események sikeresen importálva. Az importált események azonnal elérhetők a naptárában."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Ne zárja be a böngészőfület mielőtt az importálás befejeződik."
@@ -2548,6 +2563,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez",
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Hiba történt a névjegy titkosításakor és tárolásakor. A névjegy nem került importálásra."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Hiba történt a névjegyek titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } névjegyből sikeresen importálva."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Hiba történt a névjegyek titkosításakor és tárolásakor. Nem került importálásra névjegy."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Névjegy sikeresen importálva. Az importált névjegy azonnal elérhető a névjegyeknél."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Névjegyek sikeresen importálva. Az importált névjegyek azonnal elérhetők a névjegyeknél."
       ]
     },
     "Import contact error": {
@@ -2567,6 +2597,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "A ${ CONTACTS_APP_NAME } ${ forNow } nem támogatja:"
+      ],
       "for now": [
         "egyenlőre"
       ]
@@ -3258,6 +3291,9 @@
       "No group found": [
         "Nem található csoport"
       ],
+      "No imports to display.": [
+        "Nincs megjelenítendő importálás."
+      ],
       "No preview available": [
         "Előnézet nem érhető el"
       ],
@@ -3272,6 +3308,9 @@
       ],
       "Not a valid URL": [
         "Érvénytelen URL-cím"
+      ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Megjegyzés: az adatok még mindig elérhetők lehetnek helyileg olyan eszközökön, ahol telepítette a ${ DRIVE_APP_NAME } alkalmazást."
       ],
       "of": [
         "/"
@@ -3418,9 +3457,6 @@
       "Swiss privacy": [
         "Svájci adatbiztonság"
       ],
-      "Tap the + button to upload a file or folder": [
-        "Bökjön a + gombra, hogy feltöltsön egy fájlt vagy mappát"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
       ],
@@ -3502,6 +3538,9 @@
       ],
       "Trash": [
         "Lomtár"
+      ],
+      "Unknown error": [
+        "Ismeretlen hiba"
       ],
       "Unlimited folders, labels, and filters": [
         "Korlátlan számú mappa, címke és szűrő"
@@ -3677,9 +3716,6 @@
       ],
       "name": [
         "név"
-      ],
-      "name hash": [
-        "név ellenőrzőösszeg"
       ],
       "thumbnail": [
         "miniatűr"
@@ -4492,6 +4528,11 @@
         "A beállítások módosítása sikeresen megtörtént"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze a ${ BRAND_NAME }nak az adatokhoz való hozzáférést."
+      ]
+    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
@@ -4506,6 +4547,9 @@
       ]
     },
     "Onboarding Info": {
+      "Create a share link": [
+        "Megosztási hivatkozás készítése"
+      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Teljesítse az alábbit a következő ${ expiresInDays } napon belül:",
         "Teljesítse az alábbiakat a következő ${ expiresInDays } napon belül:"
@@ -4874,16 +4918,6 @@
     "Text": {
       "Settings": [
         "Beállítások"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } óra",
-        "${ hours } óra"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } perc",
-        "${ minutes } perc"
       ]
     },
     "Title": {
@@ -5345,6 +5379,23 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ formattedEndDate }"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Műveletek"
+      ],
+      "Date": [
+        "Dátum"
+      ],
+      "Import": [
+        "Importálás"
+      ],
+      "Size": [
+        "Méret"
+      ],
+      "Status": [
+        "Állapot"
       ]
     },
     "Today icon tooltip in mini calendar": {

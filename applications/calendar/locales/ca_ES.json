@@ -3329,6 +3329,9 @@
       "No group found": [
         "No s'ha trobat cap grup"
       ],
+      "No imports to display.": [
+        "No hi ha importacions per mostrar."
+      ],
       "No results found": [
         "No s'han trobat resultats"
       ],
@@ -5132,16 +5135,6 @@
         "Preferències"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hores"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuts"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Cercar fus horari"
@@ -5514,6 +5507,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Tria un número"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Accions"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importació"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "Status": [
+        "Estat"
       ]
     },
     "Title; create calendar modal": {
@@ -5899,8 +5909,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Cada ${ interval } any",
+        "Cada ${ interval } anys"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada ${ interval } any, ${ timesString }",

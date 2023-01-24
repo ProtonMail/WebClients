@@ -2369,7 +2369,7 @@
         "A apărut o problemă la conectarea la ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Puteți ${ refresh } sau reîncerca mai târziu."
+        "Puteți să ${ refresh } sau reîncerca mai târziu."
       ],
       "You may also refresh the page or try again later.": [
         "Puteți împrospăta pagina sau încercați mai târziu."
@@ -3341,6 +3341,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Se pare că ați încercat recent să încărcați ${ uploadName }. Dacă încărcarea a eșuat, ${ replaceFile }. Dacă încă este în desfășurare, înlocuirea va anula încărcarea în desfășurare."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Elementele din gunoi vor sta aici până când le veți șterge permanent."
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Este simplu, doar atrageți și plasați sau selectați un fișier."
       ],
@@ -3430,6 +3433,9 @@
       ],
       "No group found": [
         "Nu există grupuri"
+      ],
+      "No imports to display.": [
+        "Nu există importări de afișat"
       ],
       "No preview available": [
         "Nu e disponibilă examinarea"
@@ -3626,9 +3632,6 @@
       ],
       "Swiss privacy": [
         "Confidențialitate elvețiană"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Atingeți butonul „+” pentru a încărca un fișier sau folder"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
@@ -3900,14 +3903,14 @@
       "file data order": [
         "ordine fișiere date"
       ],
+      "hash key": [
+        "cheie hash"
+      ],
       "keys": [
         "chei"
       ],
       "name": [
         "nume"
-      ],
-      "name hash": [
-        "hash nume"
       ],
       "thumbnail": [
         "miniatură"
@@ -5187,14 +5190,36 @@
         "Setări"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
-        "O oră",
+        "${ hours } oră",
         "${ hours } ore",
         "${ hours } de ore"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 de ore"
+      ],
       "${ minutes } minute": [
-        "Un minut",
+        "${ minutes } minut",
         "${ minutes } minute",
         "${ minutes } de minute"
       ]
@@ -5691,6 +5716,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "Ați primit 1 GB spațiu de stocare"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importare"
+      ],
+      "Size": [
+        "Mărime"
+      ],
+      "Status": [
+        "Stare"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -2467,6 +2467,9 @@
       "No group found": [
         "Nije pronađena nijedna grupa"
       ],
+      "No imports to display.": [
+        "Nema uvoza za prikaz."
+      ],
       "No preview available": [
         "Pregled nije dostupan"
       ],
@@ -3387,18 +3390,6 @@
         "Postavke"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } sat",
-        "${ hours } sata",
-        "${ hours } sati"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minute",
-        "${ minutes } minuta"
-      ]
-    },
     "Title": {
       "# of accesses": [
         "Broj pristupanja"
@@ -3728,6 +3719,23 @@
       ],
       "You have no folders yet": [
         "Nema mapa"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Radnje"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Import": [
+        "Uvoz"
+      ],
+      "Size": [
+        "Veličina"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

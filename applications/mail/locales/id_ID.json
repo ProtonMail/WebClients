@@ -555,7 +555,7 @@
         "Kelola label"
       ],
       "Mark as read": [
-        "Tandai sudah dibaca"
+        "Tandai telah dibaca"
       ],
       "Mark as unread": [
         "Tandai belum dibaca"
@@ -4889,8 +4889,8 @@
       "Monthly ${ onDayString }": [
         "Bulanan ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Memindahkan pesan dalam jumlah yang banyak. Proses ini dapat memakan waktu."
+      "Moving messages. This may take a while.": [
+        "Memindahkan pesan. Proses ini dapat memakan waktu sejenak."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
@@ -4918,6 +4918,9 @@
       ],
       "No group found": [
         "Tidak ada grup yang ditemukan"
+      ],
+      "No imports to display.": [
+        "Tidak ada impor untuk ditampilkan."
       ],
       "No label found": [
         "Tidak ada label yang ditemukan"
@@ -5721,7 +5724,7 @@
         "Tandai sudah dibaca"
       ],
       "Mark as unread": [
-        "Tandai sebagai belum dibaca"
+        "Tandai belum dibaca"
       ],
       "Minimize / maximize composer": [
         "Minimalkan / maksimalkan komposer"
@@ -7713,20 +7716,36 @@
       "${ daysCountLeft } days": [
         "${ daysCountLeft } hari"
       ],
-      "${ hours } hours": [
-        "${ hours } jam"
-      ],
       "${ hoursCountLeft } hours": [
         "${ hoursCountLeft } jam"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } menit"
       ],
       "${ minutesCountLeft } minutes": [
         "${ minutesCountLeft } menit"
       ],
       "${ secondsCountLeft } seconds": [
         "${ secondsCountLeft } detik"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } j"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 j"
+      ],
+      "${ minutes } min": [
+        "${ minutes } mnt"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hours": [
+        "${ hours } jam"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 jam"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } menit"
       ]
     },
     "Title": {
@@ -8250,6 +8269,23 @@
         "Masa uji coba gratis Anda akan segera berakhir pada ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Date": [
+        "Tanggal"
+      ],
+      "Import": [
+        "Impor"
+      ],
+      "Size": [
+        "Ukuran"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hari ini"
@@ -8620,6 +8656,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "Setiap ${ interval } tahun"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "Setiap ${ interval } tahun, ${ timesString }"
       ],

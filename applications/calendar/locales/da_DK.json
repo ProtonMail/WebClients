@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
+      "Attention required": [
+        "Opmærksomhed påkrævet"
+      ],
       "Authenticate": [
         "Godkend"
       ],
@@ -2161,6 +2164,9 @@
       "Email address invalid": [
         "Ugyldig e-mailadresse"
       ],
+      "Email address is required": [
+        "E-mailadresse er påkrævet."
+      ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
       ],
@@ -2187,6 +2193,9 @@
       ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
+      ],
+      "IMAP server is required": [
+        "IMAP-server er påkrævet."
       ],
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
@@ -2272,6 +2281,9 @@
         "En af grupperne har ingen kontakter: ${ noContactGroupList }",
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Adgangskode er påkrævet."
+      ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
@@ -2281,6 +2293,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
+      ],
+      "Port is required": [
+        "Port er påkrævet."
       ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
@@ -3224,6 +3239,9 @@
         "Højst ${ MAX_ATTENDEES } deltager er tilladt pr. invitation",
         "Højst ${ MAX_ATTENDEES } deltagere er tilladt pr. invitation"
       ],
+      "Attention required": [
+        "Opmærksomhed påkrævet"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
@@ -3438,6 +3456,9 @@
       ],
       "No group found": [
         "Ingen gruppe fundet"
+      ],
+      "No imports to display.": [
+        "Ingen importer at vise."
       ],
       "No results found": [
         "Ingen resultater fundet"
@@ -3963,6 +3984,12 @@
       "Frequency": [
         "Frekvens"
       ],
+      "From: ${ from }": [
+        "Fra: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Fra: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Fra: ${ importedEmail }"
       ],
@@ -4110,6 +4137,12 @@
       ],
       "To: ${ emailAddress }": [
         "Til: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "Til: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Til: ${ toEmail }"
       ],
       "Toolbar": [
         "Værktøjslinje"
@@ -5274,16 +5307,6 @@
         "Indstillinger"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minutter"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Søg tidszoner"
@@ -5656,6 +5679,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Vælg et nummer"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Date": [
+        "Dato"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Title; create calendar modal": {
@@ -6055,8 +6095,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Hver ${ interval } år",
+        "Hver ${ interval } år"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Hver ${ interval } år, ${ timesString }",

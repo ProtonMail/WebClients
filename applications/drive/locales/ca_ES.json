@@ -3213,6 +3213,9 @@
       "No group found": [
         "No s'ha trobat cap grup"
       ],
+      "No imports to display.": [
+        "No hi ha importacions per mostrar."
+      ],
       "No preview available": [
         "No hi ha previsualització disponible"
       ],
@@ -3363,9 +3366,6 @@
       ],
       "Swiss privacy": [
         "Privacitat suïssa"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Toqueu el botó + per a pujar un fitxer o carpeta"
       ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalment. Comproveu-ho de nou més tard."
@@ -4744,16 +4744,6 @@
         "Preferències"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hores"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuts"
-      ]
-    },
     "Title": {
       "# of accesses": [
         "# d'accessos"
@@ -5237,6 +5227,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "Teniu 1 GB de emmagatzematge"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Accions"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importació"
+      ],
+      "Size": [
+        "Mida"
+      ],
+      "Status": [
+        "Estat"
       ]
     },
     "Today icon tooltip in mini calendar": {

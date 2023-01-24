@@ -502,10 +502,10 @@
       "Not spam": [
         "迷惑メールでない"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -4168,6 +4168,9 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% 一時停止"
       ],
+      "Active": [
+        "アクティブ"
+      ],
       "Canceled": [
         "キャンセル"
       ],
@@ -5560,9 +5563,6 @@
       "Update recovery phrase": [
         "回復用フレーズを更新"
       ],
-      "Update the URL in your password manager": [
-        "パスワードマネージャーの URL を更新してください"
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "次の ${ planName } 特典を失わないために今すぐアップグレードしてください。"
       ],
@@ -6938,6 +6938,12 @@
       "Signature": [
         "署名"
       ],
+      "SMTP port": [
+        "SMTP ポート"
+      ],
+      "SMTP server": [
+        "SMTP サーバー"
+      ],
       "SMTP token": [
         "SMTP トークン"
       ],
@@ -7018,6 +7024,12 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use a recovery email address": [
+        "回復用メールアドレスを使用"
+      ],
+      "Use a recovery phone number": [
+        "回復用電話番号を使用"
       ],
       "Use folder colors": [
         "フォルダーの色を使用"
@@ -9417,9 +9429,23 @@
         "SMTP トークンがありません"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 時間"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 時間"
       ],
       "${ minutes } minutes": [
         "${ minutes } 分"
@@ -10872,6 +10898,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "${ interval } 年毎"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "${ interval } 年毎、${ timesString }"
       ],

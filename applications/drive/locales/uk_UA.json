@@ -3403,6 +3403,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Схоже, що ви нещодавно намагалися завантажити ${ uploadName }. Якщо не вдалося завантажити, ${ replaceFile }. Якщо завантаження досі триває, заміна файлу скасує поточне завантаження."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Елементи в кошику залишатимуться тут, доки ви не видалите їх остаточно"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Це так само просто, як перетягування або вибір файлів"
       ],
@@ -3492,6 +3495,9 @@
       ],
       "No group found": [
         "Групу не знайдено"
+      ],
+      "No imports to display.": [
+        "Немає імпортувань для показу."
       ],
       "No preview available": [
         "Перегляд недоступний"
@@ -3690,9 +3696,6 @@
       ],
       "Swiss privacy": [
         "Швейцарська приватність"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Торкніться кнопки +, щоб вивантажити файл або теку"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
@@ -3965,14 +3968,14 @@
       "file data order": [
         "порядок файлів даних"
       ],
+      "hash key": [
+        "хеш-ключ"
+      ],
       "keys": [
         "ключі"
       ],
       "name": [
         "назва"
-      ],
-      "name hash": [
-        "хеш назви"
       ],
       "thumbnail": [
         "мініатюра"
@@ -5282,12 +5285,38 @@
         "Налаштування"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } година",
         "${ hours } години",
         "${ hours } годин",
-        "${ hours } годин"
+        "${ hours } години"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 годин",
+        "${ hoursInt }.5 години"
       ],
       "${ minutes } minute": [
         "${ minutes } хвилина",
@@ -5797,6 +5826,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "Відтепер обсяг вашого сховища – 1 ГБ"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Дії"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Import": [
+        "Імпорт"
+      ],
+      "Size": [
+        "Розмір"
+      ],
+      "Status": [
+        "Стан"
       ]
     },
     "Today icon tooltip in mini calendar": {

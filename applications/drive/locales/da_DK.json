@@ -1935,6 +1935,9 @@
       "Email address invalid": [
         "Ugyldig e-mailadresse"
       ],
+      "Email address is required": [
+        "E-mailadresse er påkrævet."
+      ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
       ],
@@ -1961,6 +1964,9 @@
       ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
+      ],
+      "IMAP server is required": [
+        "IMAP-server er påkrævet."
       ],
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
@@ -2016,6 +2022,9 @@
         "En af grupperne har ingen kontakter: ${ noContactGroupList }",
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Adgangskode er påkrævet."
+      ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
@@ -2025,6 +2034,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
+      ],
+      "Port is required": [
+        "Port er påkrævet."
       ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
@@ -3272,6 +3284,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det ser ud til, at du for nylig har forsøgt at uploade ${ uploadName }. Hvis upload mislykkedes, bedes du ${ replaceFile }. Hvis upload stadig er i gang, vil det annullere den igangværende upload, hvis du erstatter den."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Indhold i papirkurven forbliver der, indtil du sletter det permanent"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Det er lige så nemt som at trække og slippe eller vælge filer"
       ],
@@ -3361,6 +3376,9 @@
       ],
       "No group found": [
         "Ingen gruppe fundet"
+      ],
+      "No imports to display.": [
+        "Ingen importer at vise."
       ],
       "No preview available": [
         "Ingen forhåndsvisning tilgængelig"
@@ -3555,9 +3573,6 @@
       ],
       "Swiss privacy": [
         "Schweizisk fortrolighed"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Tryk på + knappen for at overføre en fil eller mappe"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
@@ -3834,9 +3849,6 @@
       "name": [
         "navn"
       ],
-      "name hash": [
-        "navne hash"
-      ],
       "thumbnail": [
         "miniature"
       ]
@@ -4052,6 +4064,12 @@
       "Folder name": [
         "Mappenavn"
       ],
+      "From: ${ from }": [
+        "Fra: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Fra: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Fra: ${ importedEmail }"
       ],
@@ -4240,6 +4258,12 @@
       ],
       "To: ${ emailAddress }": [
         "Til: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "Til: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Til: ${ toEmail }"
       ],
       "Toolbar": [
         "Værktøjslinje"
@@ -5073,16 +5097,6 @@
         "Indstillinger"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minutter"
-      ]
-    },
     "Title": {
       "# of accesses": [
         "# af adgange"
@@ -5566,6 +5580,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "Du har 1 GB lagerplads"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Date": [
+        "Dato"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

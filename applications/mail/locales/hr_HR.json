@@ -3749,6 +3749,9 @@
       "No group found": [
         "Nije pronađena nijedna grupa"
       ],
+      "No imports to display.": [
+        "Nema uvoza za prikaz."
+      ],
       "No label found": [
         "Nema pronađene oznake"
       ],
@@ -5852,20 +5855,10 @@
         "${ daysCountLeft } dana",
         "${ daysCountLeft } dana"
       ],
-      "${ hours } hour": [
-        "${ hours } sat",
-        "${ hours } sata",
-        "${ hours } sati"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } sat",
         "${ hoursCountLeft } sata",
         "${ hoursCountLeft } sati"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minute",
-        "${ minutes } minuta"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minuta",
@@ -6307,6 +6300,23 @@
         "Što je novo"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Radnje"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Import": [
+        "Uvoz"
+      ],
+      "Size": [
+        "Veličina"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Danas"
@@ -6671,8 +6681,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Svaku ${ interval } godinu",
+        "Svake ${ interval } godine",
         "Svakih ${ interval } godina"
       ],
       "Every ${ interval } year, ${ timesString }": [

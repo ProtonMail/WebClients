@@ -29,6 +29,9 @@
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
+      "Attention required": [
+        "Diperlukan perhatian"
+      ],
       "Authenticate": [
         "Autentikasi"
       ],
@@ -421,11 +424,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Tindakan ini akan memutuskan seluruh sambungan router dan klien yang menggunakan sertifikat ini."
-      ]
-    },
-    "Apps dropdown": {
-      "${ BRAND_NAME } applications": [
-        "Aplikasi ${ BRAND_NAME }"
       ]
     },
     "Badge": {
@@ -1914,11 +1912,17 @@
       "Are you sure you want to discard your changes?": [
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
+      "Attention required": [
+        "Diperlukan perhatian"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Dibutuhkan langganan Basic, Plus atau Visionary"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
+      ],
+      "Billing cycle: ${ text }": [
+        "Siklus tagihan: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Transaksi Bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
@@ -2354,9 +2358,6 @@
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
-      ],
-      "Update the URL in your password manager": [
-        "Perbarui URL pada aplikasi pengelola kata sandi Anda"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
@@ -2907,6 +2908,12 @@
       ],
       "Two-password mode": [
         "Mode dua kata sandi"
+      ],
+      "Use a recovery email address": [
+        "Gunakan alamat email pemulihan"
+      ],
+      "Use a recovery phone number": [
+        "Gunakan nomor telepon pemulihan"
       ],
       "User's new password": [
         "Kata sandi baru pengguna"

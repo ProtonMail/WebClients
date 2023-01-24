@@ -501,10 +501,10 @@
       "Not spam": [
         "Pas indésirable"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5714,9 +5714,6 @@
       "Update recovery phrase": [
         "Mettre à jour la phrase de récupération"
       ],
-      "Update the URL in your password manager": [
-        "Mettez à jour l'URL dans votre gestionnaire de mots de passe"
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Passez à l'offre supérieure dès aujourd'hui pour conserver les avantages suivants de ${ planName }."
       ],
@@ -9795,16 +9792,6 @@
         "Aucun jeton SMTP trouvé"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } heure",
-        "${ hours } heures"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Rechercher des fuseaux horaires"
@@ -11330,8 +11317,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Chaque année ${ interval }",
+        "Tous les ${ interval } ans"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Chaque ${ interval } année, à ${ timesString }",

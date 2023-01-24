@@ -4869,9 +4869,6 @@
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "巨大な量のメッセージを移動しています。これにはしばらくかかります。"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
@@ -4898,6 +4895,9 @@
       ],
       "No group found": [
         "グループが見つかりませんでした"
+      ],
+      "No imports to display.": [
+        "表示するインポートはありません。"
       ],
       "No label found": [
         "ラベルが見つかりませんでした"
@@ -7667,20 +7667,36 @@
       "${ daysCountLeft } days": [
         "${ daysCountLeft } 日"
       ],
-      "${ hours } hours": [
-        "${ hours } 時間"
-      ],
       "${ hoursCountLeft } hours": [
         "${ hoursCountLeft } 時間"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分"
       ],
       "${ minutesCountLeft } minutes": [
         "${ minutesCountLeft } 分"
       ],
       "${ secondsCountLeft } seconds": [
         "${ secondsCountLeft } 秒"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 時間"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hours": [
+        "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 時間"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分"
       ]
     },
     "Title": {
@@ -8204,6 +8220,23 @@
         "無料トライアルは ${ formattedEndDate } に終了します。"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "操作"
+      ],
+      "Date": [
+        "日付"
+      ],
+      "Import": [
+        "インポート"
+      ],
+      "Size": [
+        "サイズ"
+      ],
+      "Status": [
+        "状態"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今日"
@@ -8574,6 +8607,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "${ interval } 年毎"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "${ interval } 年毎、${ timesString }"
       ],

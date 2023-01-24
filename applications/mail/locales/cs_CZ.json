@@ -5151,8 +5151,8 @@
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Přesun velkého množství zpráv. Bude to chvíli trvat."
+      "Moving messages. This may take a while.": [
+        "Přesouvání zpráv. Může to chvíli trvat."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
@@ -5180,6 +5180,9 @@
       ],
       "No group found": [
         "Nebyla nalezena žádná skupina"
+      ],
+      "No imports to display.": [
+        "Žádné importy k zobrazení."
       ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
@@ -8146,23 +8149,11 @@
         "${ daysCountLeft } dní",
         "${ daysCountLeft } dní"
       ],
-      "${ hours } hour": [
-        "${ hours } hodina",
-        "${ hours } hodiny",
-        "${ hours } hodin",
-        "${ hours } hodin"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } hodina",
         "${ hoursCountLeft } hodiny",
         "${ hoursCountLeft } hodin",
         "${ hoursCountLeft } hodin"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuty",
-        "${ minutes } minut",
-        "${ minutes } minut"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minuta",
@@ -8175,6 +8166,46 @@
         "${ secondsCountLeft } sekundy",
         "${ secondsCountLeft } sekund",
         "${ secondsCountLeft } sekund"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hodina",
+        "${ hours } hodiny",
+        "${ hours } hodin",
+        "${ hours } hodin"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minut"
       ]
     },
     "Title": {
@@ -8728,6 +8759,23 @@
         "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Akce"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Size": [
+        "Velikost"
+      ],
+      "Status": [
+        "Stav"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Dnes"
@@ -9195,8 +9243,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "${ interval }",
+        "Každé ${ interval } roky",
         "Každých ${ interval } roků",
         "Každých ${ interval } roků"
       ],
