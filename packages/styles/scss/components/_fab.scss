@@ -16,7 +16,7 @@
 			z-index: 0;
 		}
 
-		@include respond-to($breakpoint-small, 'min') {
+		@include media('>small') {
 			inset-block-end: 1em;
 		}
 	}
