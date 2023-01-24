@@ -1,4 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
+import { orderBy } from 'lodash';
 
 import { EasySwitchState } from '../store';
 import { SyncMap, SyncState } from './sync.interface';
@@ -16,4 +17,8 @@ export const selectSyncById = createSelector(
     selectSync,
     (_: EasySwitchState, ID: string) => ID,
     (selectMap, ID) => selectMap[ID]
+);
+
+export const selectSyncIdsByDate = createSelector(selectSync, (sync) =>
+    orderBy(sync, 'startDate', 'desc').map((sync) => sync.id)
 );
