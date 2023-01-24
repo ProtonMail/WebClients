@@ -26,7 +26,7 @@ const ItemLabels = ({
     labels = [],
     className = '',
     isCollapsed = true,
-    maxNumber,
+    maxNumber = 4,
     showDropdown = true,
 }: Props) => {
     const applyLabels = useApplyLabels();

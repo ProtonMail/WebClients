@@ -33,11 +33,11 @@ const LabelStack = ({
     showDelete = false,
     isStacked = false,
     leftToRight = false,
-    maxNumber,
+    maxNumber = 1,
     showDropDown,
     className,
 }: Props) => {
-    const labelsToShow = labels.slice(0, maxNumber);
+    const labelsToShow = labels.slice(0, maxNumber > labels.length ? labels.length : maxNumber);
     const labelsOverflow = labels.slice(maxNumber || labels.length);
 
     // translator: this text is not visible in the interface, it will be vocalized for blind people, to give them context of label buttons, like "Labels: <vocalisation of labels buttons>"

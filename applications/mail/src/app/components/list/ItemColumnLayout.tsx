@@ -43,6 +43,7 @@ interface Props {
     onBack: () => void;
     isSelected: boolean;
     hasVerifiedBadge?: boolean;
+    maxLabels?: number;
 }
 
 const ItemColumnLayout = ({
@@ -61,6 +62,7 @@ const ItemColumnLayout = ({
     onBack,
     isSelected,
     hasVerifiedBadge = false,
+    maxLabels = 4,
 }: Props) => {
     const [userSettings] = useUserSettings();
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
@@ -174,7 +176,7 @@ const ItemColumnLayout = ({
                                         labels={labels}
                                         element={element}
                                         labelID={labelID}
-                                        maxNumber={1}
+                                        maxNumber={maxLabels}
                                     />
                                 )}
                                 {hasExpiration && (

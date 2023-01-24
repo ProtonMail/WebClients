@@ -37,6 +37,7 @@ interface Props {
     loading: boolean;
     onBack: () => void;
     hasVerifiedBadge?: boolean;
+    maxLabels?: number;
 }
 
 const ItemRowLayout = ({
@@ -54,6 +55,7 @@ const ItemRowLayout = ({
     loading,
     onBack,
     hasVerifiedBadge = false,
+    maxLabels = 4,
 }: Props) => {
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -146,7 +148,7 @@ const ItemRowLayout = ({
                 labels={labels}
                 element={element}
                 labelID={labelID}
-                maxNumber={1}
+                maxNumber={maxLabels}
                 className="flex-item-noshrink mlauto"
                 showDropdown={false}
                 isCollapsed={false}
