@@ -15,6 +15,7 @@ import { LocationCell, ModifiedCell, NameCell, SizeCell } from '../FileBrowser/c
 import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';
 import { getSelectedItems } from '../helpers';
+import { NoSearchResultsView } from './NoSearchResultsView';
 import { SearchItemContextMenu } from './SearchItemContextMenu';
 
 export interface SearchItem extends FileBrowserBaseItem {
@@ -127,6 +128,9 @@ export const Search = ({ shareId, searchView }: Props) => {
     const Cells = isDesktop ? desktopCells : mobileCells;
     const headerItems = isDesktop ? headerItemsDesktop : headerItemsMobile;
 
+    if (!items.length && !isLoading) {
+        return <NoSearchResultsView />;
+    }
     return (
         <>
             <SearchItemContextMenu
