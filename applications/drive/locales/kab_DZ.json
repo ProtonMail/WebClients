@@ -2701,6 +2701,9 @@
       "No group found": [
         "Ulac agraw"
       ],
+      "No imports to display.": [
+        "Ulacaktaren ara yettwaskanen."
+      ],
       "No preview available": [
         "Ulac taskant i yellan"
       ],
@@ -3885,16 +3888,6 @@
         "Iɣewwaren"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } n tesdat",
-        "${ minutes } n tesdatin"
-      ]
-    },
     "Title": {
       "# of accesses": [
         "# n yinekcumen"
@@ -4293,6 +4286,23 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Aneɛruḍ-inek n baṭel ad yekfu deg ${ formattedEndDate }"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Tigawin"
+      ],
+      "Date": [
+        "Azemz"
+      ],
+      "Import": [
+        "Kter"
+      ],
+      "Size": [
+        "Tiddi"
+      ],
+      "Status": [
+        "Addad"
       ]
     },
     "Today icon tooltip in mini calendar": {

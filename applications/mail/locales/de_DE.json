@@ -4981,8 +4981,8 @@
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Eine große Menge an Nachrichten wird verschoben. Dies kann eine Weile dauern."
+      "Moving messages. This may take a while.": [
+        "Nachrichten werden verschoben. Dies kann eine Weile dauern."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
@@ -5010,6 +5010,9 @@
       ],
       "No group found": [
         "Keine Gruppe gefunden"
+      ],
+      "No imports to display.": [
+        "Keine Importe verfügbar."
       ],
       "No label found": [
         "Keine Kategorie gefunden"
@@ -7492,26 +7495,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } Tag",
-        "${ days } Tage"
-      ],
-      "${ hours } hour": [
         "${ hours } Stunde",
         "${ hours } Stunden"
       ],
+      "${ hours } hour": [
+        "${ days } Tag",
+        "${ days } Tage"
+      ],
       "${ minutes } minute": [
-        "${ minutes } Minute",
-        "${ minutes } Minuten"
+        "${ n } Monat KOSTENLOS",
+        "${ n } Monate KOSTENLOS"
       ],
       "${ seconds } second": [
-        "${ seconds } Sekunde",
-        "${ seconds } Sekunden"
+        "für ${ n } Monat",
+        "für ${ n } Monate"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } Monat KOSTENLOS",
-        "${ n } Monate KOSTENLOS"
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
       ]
     },
     "specialoffer: Deal details": {
@@ -7535,9 +7538,6 @@
       ],
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Premium-Drive"
@@ -7623,8 +7623,8 @@
         "Für 30 Monate mit ${ amount } abgerechnet"
       ],
       "for ${ n } month": [
-        "für ${ n } Monat",
-        "für ${ n } Monate"
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
       ],
       "Get the deal": [
         "Jetzt zugreifen"
@@ -8102,17 +8102,9 @@
         "${ daysCountLeft } Tag",
         "${ daysCountLeft } Tage"
       ],
-      "${ hours } hour": [
-        "${ hours } Stunde",
-        "${ hours } Stunden"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } Stunde",
         "${ hoursCountLeft } Stunden"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } Minute",
-        "${ minutes } Minuten"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } Minute",
@@ -8121,6 +8113,34 @@
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } Sekunde",
         "${ secondsCountLeft } Sekunden"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } Stunde",
+        "${ hours } Stunden"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 Stunden",
+        "${ hoursInt }.5 Stunden"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
       ]
     },
     "Title": {
@@ -8654,6 +8674,23 @@
         "Deine kostenlose Testversion endet demnächst, am ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Aktionen"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Import": [
+        "Importieren"
+      ],
+      "Size": [
+        "Größe"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Heute"
@@ -9057,8 +9094,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Alle ${ interval } Jahre",
+        "Alle ${ interval } Jahre"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Alle ${ interval } Jahre, ${ timesString }",

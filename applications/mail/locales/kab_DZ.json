@@ -4081,6 +4081,9 @@
       "No group found": [
         "Ulac agraw"
       ],
+      "No imports to display.": [
+        "Ulacaktaren ara yettwaskanen."
+      ],
       "No label found": [
         "Ulac tabzimt yettwafen"
       ],
@@ -6394,17 +6397,9 @@
         "${ daysCountLeft } n wass",
         "${ daysCountLeft } n wussan"
       ],
-      "${ hours } hour": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } n usrag",
         "${ hoursCountLeft } n yisragen"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } n tesdat",
-        "${ minutes } n tesdatin"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } n tesdat",
@@ -6881,6 +6876,23 @@
         "Aneɛruḍ-inek n baṭel ad yekfu deg ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Tigawin"
+      ],
+      "Date": [
+        "Azemz"
+      ],
+      "Import": [
+        "Kter"
+      ],
+      "Size": [
+        "Tiddi"
+      ],
+      "Status": [
+        "Addad"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Ass-a"
@@ -7241,8 +7253,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Yal ${ interval } n useggas",
+        "Yal ${ interval } n yiseggasen"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Yal ${ interval } n useggas, ${ timesString }",

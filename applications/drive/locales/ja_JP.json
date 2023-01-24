@@ -3305,6 +3305,9 @@
       "No group found": [
         "グループが見つかりませんでした"
       ],
+      "No imports to display.": [
+        "表示するインポートはありません。"
+      ],
       "No preview available": [
         "プレビューは利用できません"
       ],
@@ -3493,9 +3496,6 @@
       ],
       "Swiss privacy": [
         "スイス法準拠のプライバシー"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "＋ボタンをタップするとファイルやフォルダーをアップロードできます。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
@@ -3770,9 +3770,6 @@
       ],
       "name": [
         "名前"
-      ],
-      "name hash": [
-        "名前ハッシュ"
       ],
       "thumbnail": [
         "サムネイル"
@@ -4968,9 +4965,23 @@
         "設定"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 時間"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 時間"
       ],
       "${ minutes } minutes": [
         "${ minutes } 分"
@@ -5450,6 +5461,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "1 GB のストレージを手に入れました"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "操作"
+      ],
+      "Date": [
+        "日付"
+      ],
+      "Import": [
+        "インポート"
+      ],
+      "Size": [
+        "サイズ"
+      ],
+      "Status": [
+        "状態"
       ]
     },
     "Today icon tooltip in mini calendar": {

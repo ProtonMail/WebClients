@@ -510,10 +510,10 @@
       "Not spam": [
         "Ikke spam"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2862,6 +2862,9 @@
       "Email address disabled": [
         "E-mailadresse deaktiveret"
       ],
+      "Email address is required": [
+        "E-mailadresse er påkrævet."
+      ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
       ],
@@ -2891,6 +2894,9 @@
       ],
       "Folder name cannot be empty.": [
         "Mappenavn må ikke være tomt."
+      ],
+      "IMAP server is required": [
+        "IMAP-server er påkrævet."
       ],
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
@@ -2995,6 +3001,9 @@
       "Organization not recognized. Try again.": [
         "Organisation ikke genkendt. Prøv igen."
       ],
+      "Password is required": [
+        "Adgangskode er påkrævet."
+      ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
@@ -3043,6 +3052,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at administrere flere brugere."
+      ],
+      "Port is required": [
+        "Port er påkrævet."
       ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
@@ -4205,6 +4217,9 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% sat på pause"
       ],
+      "Active": [
+        "Aktiv"
+      ],
       "Canceled": [
         "Annulleret"
       ],
@@ -4610,6 +4625,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
+      ],
+      "Billing cycle: ${ text }": [
+        "Faktureringsperiode: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Bitcoin-transaktioner kan tage noget tid at bekræfte (op til 24 timer). Efter bekræftelsen vil vi tilføje kreditter til din konto. Efter transaktionsbekræftelsen kan du betale din faktura med kreditterne."
@@ -5671,9 +5689,6 @@
       "Update recovery phrase": [
         "Opdater gendannelsessætning"
       ],
-      "Update the URL in your password manager": [
-        "Opdater url'en i din adgangskodeapp"
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
       ],
@@ -5908,6 +5923,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Du vil forblive logget på selv efter du lukker browseren."
+      ],
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "Din ${ BRAND_NAME } konto er tilknyttet ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Efter 28 dage vil e-mails ikke længere blive leveret til din indbakke, dine Drive-delingslinks vil blive blokeret, og du vil ikke længere kunne uploade nye filer. For at genoptage normal service skal du betale alle forfaldne fakturaer."
@@ -6764,6 +6782,12 @@
       "Folder location": [
         "Mappeplacering"
       ],
+      "From: ${ from }": [
+        "Fra: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Fra: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Fra: ${ importedEmail }"
       ],
@@ -7064,6 +7088,12 @@
       "Signature": [
         "Signatur"
       ],
+      "SMTP port": [
+        "SMTP-port"
+      ],
+      "SMTP server": [
+        "SMTP-server"
+      ],
       "SMTP token": [
         "SMTP-token"
       ],
@@ -7123,6 +7153,12 @@
       ],
       "To: ${ emailAddress }": [
         "Til: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "Til: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Til: ${ toEmail }"
       ],
       "Token name": [
         "Tokennavn"
@@ -7890,6 +7926,9 @@
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
+      "DNS leak prevention": [
+        "Forebyggelse af DNS-lækage"
+      ],
       "Encrypted contact details": [
         "Krypterede kontaktoplysninger"
       ],
@@ -7902,6 +7941,9 @@
       "High-speed VPN on ${ n } device": [
         "Højhastigheds VPN på ${ n } enhed",
         "Højhastigheds VPN på ${ n } enheder"
+      ],
+      "HTML signatures": [
+        "HTML signatur"
       ],
       "Limited support": [
         "Begrænset support"
@@ -9234,6 +9276,9 @@
       "Phone number updated": [
         "Telefonnummer opdateret"
       ],
+      "Port copied to clipboard": [
+        "Port kopieret til udklipsholder."
+      ],
       "Preference saved": [
         "Præferencer gemt"
       ],
@@ -9243,6 +9288,9 @@
       "Resuming import": [
         "Genoptager import"
       ],
+      "Server copied to clipboard": [
+        "Server kopieret til Udklipsholder."
+      ],
       "Session revoked": [
         "Session tilbagekaldt"
       ],
@@ -9251,6 +9299,9 @@
       ],
       "SPF value copied to clipboard": [
         "SPF-værdi kopieret til udklipsholder"
+      ],
+      "Token copied to clipboard": [
+        "Token kopieret til udklipsholder."
       ],
       "Undo in progress": [
         "Annullering i gang"
@@ -9408,16 +9459,6 @@
       ],
       "vCard field": [
         "vCard-felt"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minutter"
       ]
     },
     "Timezone search placeholder": {
@@ -10939,8 +10980,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Hver ${ interval } år",
+        "Hver ${ interval } år"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Hver ${ interval } år, ${ timesString }",

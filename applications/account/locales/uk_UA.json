@@ -510,11 +510,11 @@
       "Not spam": [
         "Не спам"
       ],
-      "OK": [
-        "Застосувати"
-      ],
       "Ok": [
         "Гаразд"
+      ],
+      "OK": [
+        "Застосувати"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -4354,6 +4354,9 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% зупинено"
       ],
+      "Active": [
+        "Активно"
+      ],
       "Canceled": [
         "Скасовано"
       ],
@@ -4377,6 +4380,9 @@
       ],
       "Started": [
         "Запущено"
+      ],
+      "Stopped": [
+        "Припинено"
       ]
     },
     "Import type": {
@@ -4806,6 +4812,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
+      ],
+      "Billing cycle: ${ text }": [
+        "Платіжний цикл: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Підтвердження транзакцій з Bitcoin можуть тривати деякий час (до 24 годин). Після підтвердження ми додамо кошти до вашого облікового запису. Після підтвердження транзакції ви можете сплатити свій рахунок, використавши ці кошти."
@@ -5904,9 +5913,6 @@
       ],
       "Update recovery phrase": [
         "Оновити фразу відновлення"
-      ],
-      "Update the URL in your password manager": [
-        "Оновіть URL-адресу у своєму менеджері паролів"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Оновіть тарифний план сьогодні, щоб не втратити ці переваги ${ planName }."
@@ -10129,12 +10135,38 @@
         "SMTP-токенів не знайдено"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } година",
         "${ hours } години",
         "${ hours } годин",
-        "${ hours } годин"
+        "${ hours } години"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 годин",
+        "${ hoursInt }.5 години"
       ],
       "${ minutes } minute": [
         "${ minutes } хвилина",
@@ -10648,7 +10680,7 @@
         "Макет"
       ],
       "Length": [
-        "Довжина"
+        "Тривалість"
       ],
       "Link confirmation": [
         "Підтвердження посилання"
@@ -11746,8 +11778,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Щороку",
+        "Кожні ${ interval } роки",
         "Кожні ${ interval } років",
         "Кожні ${ interval } років"
       ],

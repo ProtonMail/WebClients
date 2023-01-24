@@ -29,6 +29,9 @@
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
+      "Attention required": [
+        "Aufmerksamkeit erforderlich"
+      ],
       "Authenticate": [
         "Authentifizieren"
       ],
@@ -423,11 +426,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Dadurch werden alle Router und Clients, die dieses Zertifikat verwenden, getrennt."
-      ]
-    },
-    "Apps dropdown": {
-      "${ BRAND_NAME } applications": [
-        "${ BRAND_NAME }-Anwendungen"
       ]
     },
     "Badge": {
@@ -1927,11 +1925,17 @@
       "Are you sure you want to discard your changes?": [
         "Möchten Sie Ihre Änderungen wirklich verwerfen?"
       ],
+      "Attention required": [
+        "Aufmerksamkeit erforderlich"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Basic-, Plus‐ oder Visionary‐Abonnement benötigt"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
+      ],
+      "Billing cycle: ${ text }": [
+        "Abrechnungszeitraum: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Die Bestätigung von Bitcoin-Transaktionen kann einige Zeit in Anspruch nehmen (bis zu 24 Stunden). Sobald die Bestätigung eingegangen ist, werden wir das Guthaben Ihrem Konto gutschreiben. Nach der Transaktionsbestätigung können Sie Ihre Rechnung mit dem Guthaben begleichen."
@@ -2367,9 +2371,6 @@
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
-      ],
-      "Update the URL in your password manager": [
-        "Bitte aktualisiere die URL in deinem Passwort-Manager"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Verwende den besten Server je nach aktueller Auslastung und Standort: ${ formattedBestServerName }"
@@ -2921,6 +2922,12 @@
       ],
       "Two-password mode": [
         "Zwei-Passwort-Modus"
+      ],
+      "Use a recovery email address": [
+        "E-Mail-Adresse für die Wiederherstellung verwenden"
+      ],
+      "Use a recovery phone number": [
+        "Telefonnummer für die Wiederherstellung verwenden"
       ],
       "User's new password": [
         "Neues Passwort des Benutzers"
@@ -3612,7 +3619,7 @@
         "Darüber hinaus kannst du bis zu 5 Kalender von Freunden und Familie, Kollegen und Organisationen hinzufügen."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Eine VPN-Verbindung erlaubt es einem Gerät, sich jederzeit mit ${ BRAND_NAME }-VPN zu verbinden. Um beispielsweise ein Handy und einen Laptop mit ${ BRAND_NAME }-VPN gleichzeitig verbinden zu können, brauchst du zwei VPN-Verbindungen."
+        "Eine VPN-Verbindung erlaubt es einem Gerät, sich jederzeit mit ${ BRAND_NAME }-VPN zu verbinden. Um beispielsweise ein Handy und einen Laptop gleichzeitig mit ${ BRAND_NAME }-VPN zu verbinden, brauchst du zwei VPN-Verbindungen."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
@@ -3984,26 +3991,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } Tag",
-        "${ days } Tage"
-      ],
-      "${ hours } hour": [
         "${ hours } Stunde",
         "${ hours } Stunden"
       ],
+      "${ hours } hour": [
+        "${ days } Tag",
+        "${ days } Tage"
+      ],
       "${ minutes } minute": [
-        "${ minutes } Minute",
-        "${ minutes } Minuten"
+        "${ n } Monat KOSTENLOS",
+        "${ n } Monate KOSTENLOS"
       ],
       "${ seconds } second": [
-        "${ seconds } Sekunde",
-        "${ seconds } Sekunden"
+        "für ${ n } Monat",
+        "für ${ n } Monate"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } Monat KOSTENLOS",
-        "${ n } Monate KOSTENLOS"
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
       ]
     },
     "specialoffer: Deal details": {
@@ -4027,9 +4034,6 @@
       ],
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Premium-Drive"
@@ -4115,8 +4119,8 @@
         "Für 30 Monate mit ${ amount } abgerechnet"
       ],
       "for ${ n } month": [
-        "für ${ n } Monat",
-        "für ${ n } Monate"
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
       ],
       "Get the deal": [
         "Jetzt zugreifen"

@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
       "Authenticate": [
         "Аутентифицировать"
       ],
@@ -822,7 +825,7 @@
         "Управляйте ссылками"
       ],
       "Manage members": [
-        "Управление участниками"
+        "Управляйте участниками"
       ],
       "Unable to create more calendar links": [
         "Невозможно создать больше ссылок на календарь"
@@ -930,10 +933,10 @@
     },
     "Calendar view; more events collapsed": {
       "${ more } more": [
-        "Еще ${ more }",
-        "Еще ${ more }",
-        "Еще ${ more }",
-        "Еще ${ more }"
+        "Ещё ${ more }",
+        "Ещё ${ more }",
+        "Ещё ${ more }",
+        "Ещё ${ more }"
       ]
     },
     "Collapsible tooltip": {
@@ -2421,7 +2424,7 @@
         "Произошла ошибка при экспорте визитных карточек контактов"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Длина этого поля превысила максимум ${ maximumLength } символов."
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
       ],
       "This field is required": [
         "Это обязательное поле"
@@ -3354,6 +3357,9 @@
         "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников",
         "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников"
       ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
@@ -3572,6 +3578,9 @@
       ],
       "No group found": [
         "Группа не найдена"
+      ],
+      "No imports to display.": [
+        "Нет импорта для отображения."
       ],
       "No results found": [
         "Результаты не найдены"
@@ -5233,36 +5242,36 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дня"
-      ],
-      "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
         "${ hours } часа"
       ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минуты"
+      "${ hours } hour": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
       ],
-      "${ seconds } second": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунды"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
+      "${ minutes } minute": [
         "${ n } месяц БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО",
         "${ n } месяцев БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО"
+      ],
+      "${ seconds } second": [
+        "за ${ n } месяц ",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
       ]
     },
     "specialoffer: Deal details": {
@@ -5286,9 +5295,6 @@
       ],
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Платная версия Drive"
@@ -5374,10 +5380,10 @@
         "Оплата ${ amount } за 30 месяцев."
       ],
       "for ${ n } month": [
-        "за ${ n } месяц ",
-        "за ${ n } месяца",
-        "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
       ],
       "Get the deal": [
         "Получить скидку"
@@ -5752,18 +5758,44 @@
         "Настройки"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч"
+      ],
+      "${ minutes } min": [
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
         "${ hours } часов"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часов",
+        "${ hoursInt }.5 часов"
+      ],
       "${ minutes } minute": [
         "${ minutes } минута",
         "${ minutes } минуты",
         "${ minutes } минут",
-        "${ minutes } минут"
+        "${ minutes } минута"
       ]
     },
     "Timezone search placeholder": {
@@ -6150,6 +6182,23 @@
         "Выберите количество"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Действия"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Import": [
+        "Импорт"
+      ],
+      "Size": [
+        "Размер"
+      ],
+      "Status": [
+        "Состояние"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Создать календарь"
@@ -6157,7 +6206,7 @@
     },
     "Title; edit calendar modal": {
       "Edit calendar": [
-        "Изменить календарь"
+        "Редактировать календарь"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6336,7 +6385,7 @@
         "Чтобы получить доступ к этому общему календарю, включите этот адрес или попросите ${ boldCalendarOwnerEmail } отправить приглашение на активный адрес."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "Вы не можете присоединиться к этому календарю, потому что приглашенный вами адрес электронной почты (${ boldInvitedAddress }) отключен."
+        "Вы не можете присоединиться к этому календарю, потому что ваш приглашенный адрес электронной почты (${ boldInvitedAddress }) отключен."
       ]
     },
     "Weekly recurring event, frequency": {
@@ -6609,8 +6658,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Каждый ${ interval } год",
+        "Каждые ${ interval } года",
         "Каждые ${ interval } лет",
         "Каждые ${ interval } лет"
       ],

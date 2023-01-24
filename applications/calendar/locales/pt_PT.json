@@ -2855,6 +2855,9 @@
       "No group found": [
         "Nenhum grupo encontrado"
       ],
+      "No imports to display.": [
+        "Sem importações para mostrar."
+      ],
       "No results found": [
         "Nenhum resultado"
       ],
@@ -4328,16 +4331,6 @@
         "Definições"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuto"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Procurar fusos horários"
@@ -4691,6 +4684,23 @@
         "Escolha um número"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Acções"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Estado"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
@@ -5015,8 +5025,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "A cada ${ interval } ano",
+        "A cada ${ interval } anos"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",
