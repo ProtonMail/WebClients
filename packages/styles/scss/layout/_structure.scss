@@ -111,6 +111,10 @@ html,
 	& > a {
 		display: flex;
 		align-self: baseline;
+
+		&::after {
+			border-radius: var(--border-radius-md);
+		}
 	}
 
 	@include media('>small') {

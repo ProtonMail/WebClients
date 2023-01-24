@@ -2,7 +2,9 @@ import { ComponentPropsWithoutRef, MouseEvent, ReactNode, useState } from 'react
 
 import { c } from 'ttag';
 
-import { classnames, generateUID } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
+import { generateUID } from '../../helpers';
 import Icon, { IconProps } from '../icon/Icon';
 import Tooltip from '../tooltip/Tooltip';
 
@@ -22,7 +24,7 @@ const Info = ({
     originalPlacement = 'top',
     url,
     title = undefined,
-    buttonClass = 'inline-flex color-inherit',
+    buttonClass,
     buttonTabIndex,
     className = '',
     questionMark = false,
@@ -61,14 +63,17 @@ const Info = ({
         >
             <button
                 tabIndex={buttonTabIndex}
-                className={buttonClass}
+                className={clsx(
+                    'inline-flex color-inherit relative interactive-pseudo-protrude interactive--no-background',
+                    buttonClass
+                )}
                 onClick={handleClick}
                 aria-describedby={uid}
                 type="button"
                 role={url ? 'link' : undefined}
             >
                 <Icon
-                    className={classnames(['icon-16p', colorPrimary && 'color-primary', className])}
+                    className={clsx(['icon-16p', colorPrimary && 'color-primary', className])}
                     name={icon()}
                     alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}

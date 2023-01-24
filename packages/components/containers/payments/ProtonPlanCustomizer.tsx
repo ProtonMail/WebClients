@@ -209,7 +209,7 @@ const AccountSizeCustomiser = ({
                 >
                     {c('Info').t`Number of users`}
                     <Info
-                        className="ml0-5"
+                        buttonClass="ml-2"
                         title={c('Info').t`A user is an account associated with a single username, mailbox, and person`}
                     />
                 </label>
