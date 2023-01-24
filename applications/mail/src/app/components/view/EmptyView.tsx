@@ -88,7 +88,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
                     ? c('Search - no results').t`No messages scheduled`
                     : c('Search - no results').t`No messages found`}
             </h3>
-            <p data-if="folder">
+            <p>
                 {isSearch
                     ? // TODO: Add a link on clear it when search will work
                       c('Info').t`You can either update your search query or clear it`
