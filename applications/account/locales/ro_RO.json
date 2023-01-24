@@ -510,11 +510,11 @@
       "Not spam": [
         "Acceptată"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
@@ -2921,7 +2921,7 @@
         "Eroare în una dintre condiții"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        "Nu s-a reușit obțininerea unei sesiuni active. Vă rugăm să ${ refresh } sau reîncercați mai târziu."
+        "Nu s-a reușit obținerea unei sesiuni active. Vă rugăm să ${ refresh } sau reîncercați mai târziu."
       ],
       "Filter with this name already exist": [
         "Filtrul cu acest nume există deja"
@@ -3493,7 +3493,7 @@
         "Prea multe sesiuni secundare, ștergeți fişierele cookie și reconectați-vă."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Puteți ${ refresh } sau reîncerca mai târziu."
+        "Puteți să ${ refresh } sau reîncerca mai târziu."
       ]
     },
     "Error message, recovery": {
@@ -4318,6 +4318,9 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% întrerupt"
       ],
+      "Active": [
+        "Activă"
+      ],
       "Canceled": [
         "Anulat"
       ],
@@ -4341,6 +4344,9 @@
       ],
       "Started": [
         "Început"
+      ],
+      "Stopped": [
+        "Oprită"
       ]
     },
     "Import type": {
@@ -4748,6 +4754,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
+      ],
+      "Billing cycle: ${ text }": [
+        "Ciclu facturare: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Tranzacțiile cu Bitcoin pot dura mai mult până la confirmare (până la 24 de ore). După confirmarea tranzacției, vă vom adăuga creditul în cont și veți putea plăti factura cu acesta."
@@ -5836,9 +5845,6 @@
       ],
       "Update recovery phrase": [
         "Actualizare frază de recuperare"
-      ],
-      "Update the URL in your password manager": [
-        "Actualizați-vă adresa URL în managerul de parole."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Treceți la un plan superior astăzi pentru a evita pierderea beneficiilor din ${ planName }."
@@ -10008,14 +10014,36 @@
         "Nu s-au găsit coduri de acces SMTP"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
-        "O oră",
+        "${ hours } oră",
         "${ hours } ore",
         "${ hours } de ore"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 de ore"
+      ],
       "${ minutes } minute": [
-        "Un minut",
+        "${ minutes } minut",
         "${ minutes } minute",
         "${ minutes } de minute"
       ]
@@ -11584,8 +11612,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Anual",
+        "La fiecare ${ interval } ani",
         "La fiecare ${ interval } de ani"
       ],
       "Every ${ interval } year, ${ timesString }": [

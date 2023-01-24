@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
+      "Attention required": [
+        "Aandacht vereist"
+      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -2989,6 +2992,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Weet u zeker dat u de geselecteerde items permanent wilt verwijderen uit de prullenbak?"
       ],
+      "Attention required": [
+        "Aandacht vereist"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
@@ -3278,6 +3284,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Het lijkt erop dat u recent heeft geprobeerd ${ uploadName } te uploaden. Als de upload mislukt is, ${ replaceFile }. Als de upload nog bezig is, zal het vervangen van het bestand de huidige upload annuleren."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Items in de prullenbak blijven daar tot u ze permanent verwijdert"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Het is zo makkelijk als slepen en neerzetten of selecteren van bestanden"
       ],
@@ -3368,6 +3377,9 @@
       "No group found": [
         "Geen groep gevonden"
       ],
+      "No imports to display.": [
+        "Geen imports om weer te geven."
+      ],
       "No preview available": [
         "Geen voorbeeld beschikbaar"
       ],
@@ -3388,6 +3400,9 @@
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Niet alle bestanden zijn overgeplaatst. Probeer de bestanden opnieuw te up- of downloaden."
+      ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Opmerking: Gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ DRIVE_APP_NAME } hebt geïnstalleerd."
       ],
       "of": [
         "van"
@@ -3558,9 +3573,6 @@
       ],
       "Swiss privacy": [
         "Zwitserse privacy"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Tik de +-knop om een bestand of folder te uploaden."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
@@ -3833,9 +3845,6 @@
       ],
       "name": [
         "naam"
-      ],
-      "name hash": [
-        "naam hash"
       ],
       "thumbnail": [
         "miniatuur"
@@ -4948,26 +4957,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ hours } hour": [
         "${ hours } uur",
         "${ hours } uur"
       ],
+      "${ hours } hour": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
+        "${ seconds } seconde",
+        "${ seconds } seconden"
       ]
     },
     "specialoffer: Deal details": {
@@ -4992,12 +5001,6 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
-      ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -5006,9 +5009,6 @@
       ],
       "Premium Mail, Calendar and Drive": [
         "Premium Mail, Calendar en Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
@@ -5079,8 +5079,8 @@
         "U betaalt ${ amount } voor 30 maanden"
       ],
       "for ${ n } month": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ],
       "Get the deal": [
         "Kies deze deal"
@@ -5111,12 +5111,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Black Friday Sale"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Week Sale"
-      ],
       "End of year offer": [
         "Eindejaarsaanbieding"
       ],
@@ -5323,10 +5317,28 @@
         "Instellingen"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } u",
+        "${ hours } u"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 u",
+        "${ hoursInt },5 u"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } uur",
         "${ hours } uren"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 uur",
+        "${ hoursInt },5 uren"
       ],
       "${ minutes } minute": [
         "${ minutes } minuut",
@@ -5816,6 +5828,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "U heeft 1 GB aan opslag"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Acties"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Import": [
+        "Importeren"
+      ],
+      "Size": [
+        "Grootte"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Today icon tooltip in mini calendar": {

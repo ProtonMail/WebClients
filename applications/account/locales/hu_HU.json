@@ -354,6 +354,9 @@
       "Font": [
         "Betűtípus"
       ],
+      "Generate": [
+        "Generálás"
+      ],
       "Generate key": [
         "Kulcs generálása"
       ],
@@ -432,6 +435,9 @@
       "label emails as": [
         "címke hozzáadása:"
       ],
+      "Leave": [
+        "Kilépés"
+      ],
       "Load more": [
         "Több betöltése"
       ],
@@ -440,6 +446,12 @@
       ],
       "Make default": [
         "Legyen alapértelmezett"
+      ],
+      "Manage folders": [
+        "Mappák kezelése"
+      ],
+      "Manage labels": [
+        "Címkék kezelése"
       ],
       "Mark as default": [
         "Megjelölés alapértelmezettként"
@@ -483,10 +495,10 @@
       "Not spam": [
         "Nem levélszemét"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3881,6 +3893,14 @@
         "Érték / Adat / Cél cím"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "Műveletek"
+      ],
+      "Email address": [
+        "E-mail cím"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz.",
@@ -3916,11 +3936,20 @@
         "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
         "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Hiba történt az események titkosításakor és tárolásakor. Az események nem kerültek importálásra."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Névjegyek titkosítása és tárolása: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Események titkosítása és tárolása a naptárában: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esemény sikeresen importálva. Az importált esemény azonnal elérhető a naptárában."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Események sikeresen importálva. Az importált események azonnal elérhetők a naptárában."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Ne zárja be a böngészőfület mielőtt az importálás befejeződik."
@@ -3954,6 +3983,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez",
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Hiba történt a névjegy titkosításakor és tárolásakor. A névjegy nem került importálásra."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Hiba történt a névjegyek titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } névjegyből sikeresen importálva."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Hiba történt a névjegyek titkosításakor és tárolásakor. Nem került importálásra névjegy."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Névjegy sikeresen importálva. Az importált névjegy azonnal elérhető a névjegyeknél."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Névjegyek sikeresen importálva. Az importált névjegyek azonnal elérhetők a névjegyeknél."
       ]
     },
     "Import contact error": {
@@ -3973,6 +4017,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "A ${ CONTACTS_APP_NAME } ${ forNow } nem támogatja:"
+      ],
       "for now": [
         "egyenlőre"
       ]
@@ -4440,6 +4487,9 @@
       "Amount below minimum (${ amount }).": [
         "Az összeg a minimum alatt (${ amount })."
       ],
+      "An error occurred while communicating with the extension": [
+        "Hiba lépett fel a kiegészítővel való kommunikáció során"
+      ],
       "and": [
         "és"
       ],
@@ -4787,6 +4837,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Új helyreállító jelmondat létrehozása érvényteleníti a korábbit."
       ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Szerezzen ${ BRAND_NAME } címet és használja az összes ${ BRAND_NAME } szolgáltatást, mint például a ${ MAIL_SHORT_APP_NAME } és a ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Get my ${ BRAND_NAME } address": [
         "Saját ${ BRAND_NAME } cím létrehozása"
       ],
@@ -4977,6 +5030,9 @@
       ],
       "Link copied to clipboard": [
         "Hivatkozás a vágólapra másolva"
+      ],
+      "Link created": [
+        "Hivatkozás létrehozva"
       ],
       "Link deleted": [
         "Hivatkozás törölve"
@@ -5575,9 +5631,6 @@
       "Update recovery phrase": [
         "Helyreállító jelmondat frissítése"
       ],
-      "Update the URL in your password manager": [
-        "Javítsa az URL-t a jelszókezelőjében"
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Váltson ma nagyobb csomagra, hogy elkerülje az alábbi ${ planName } előnyök elvesztését."
       ],
@@ -5815,6 +5868,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Bejelentkezve marad, a böngésző bezárása után is."
+      ],
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "A ${ BRAND_NAME } fiókja ${ externalEmailAddress } címhez kapcsolódik."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva az e-mailek nem fognak megérkezni a fiókjába, a Drive megosztások kikapcsolásra kerülnek, és nem lesz lehetősége új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
@@ -6348,6 +6404,9 @@
       ],
       "ALL": [
         "MIND"
+      ],
+      "All-day event notifications": [
+        "Egész napos esemény értesítések"
       ],
       "Allow notifications by email": [
         "E-mailes értesítések engedélyezése"
@@ -6970,6 +7029,12 @@
       "Signature": [
         "Aláírás"
       ],
+      "SMTP server": [
+        "SMTP szerver"
+      ],
+      "SMTP username": [
+        "SMTP felhasználónév"
+      ],
       "Spam": [
         "Levélszemét"
       ],
@@ -7155,8 +7220,14 @@
       "${ BRAND_NAME } company announcements": [
         "${ BRAND_NAME } céges hírek"
       ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } üzleti hírlevél"
+      ],
       "${ BRAND_NAME } offers and promotions": [
         "${ BRAND_NAME } ajánlatok és promóciók"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } termékekkel kapcsolatos hírek"
       ]
     },
     "Label in domain modal": {
@@ -8368,6 +8439,11 @@
         "héttel előtte"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze a ${ BRAND_NAME }nak az adatokhoz való hozzáférést."
+      ]
+    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
@@ -9243,6 +9319,11 @@
         "Megtakarítás"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "Aktív"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "A magánszférát előtérben tartó E-mail és Naptár megoldás, a mindennapi kommunikációjához."
@@ -9534,16 +9615,6 @@
       ],
       "vCard field": [
         "vCard mező"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } óra",
-        "${ hours } óra"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } perc",
-        "${ minutes } perc"
       ]
     },
     "Timezone search placeholder": {
@@ -9910,6 +9981,9 @@
       "Encryption and keys": [
         "Titkosítás és kulcsok"
       ],
+      "End date": [
+        "Befejező dátum"
+      ],
       "Enter your password": [
         "Adja meg a jelszavát"
       ],
@@ -10032,6 +10106,9 @@
       "Layout": [
         "Elrendezés"
       ],
+      "Length": [
+        "Hosszúság"
+      ],
       "Link confirmation": [
         "Link jóváhagyása"
       ],
@@ -10109,6 +10186,9 @@
       ],
       "Phone": [
         "Telefonszám"
+      ],
+      "Plan": [
+        "Csomag"
       ],
       "Plan summary": [
         "Csomag összefoglaló"
@@ -10247,6 +10327,9 @@
       ],
       "Start a new import": [
         "Új importálás indítása"
+      ],
+      "Start date": [
+        "Kezdő dátum"
       ],
       "Start import process": [
         "Importálási folyamat indítása"
@@ -11029,8 +11112,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Minden ${ interval }. évben",
+        "Minden ${ interval }. évben"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Minden ${ interval }. évben, ${ timesString }",

@@ -5159,8 +5159,8 @@
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Переміщення великої кількості повідомлень. Це може тривати деякий час."
+      "Moving messages. This may take a while.": [
+        "Переміщення повідомлень. Це може тривати деякий час."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
@@ -5188,6 +5188,9 @@
       ],
       "No group found": [
         "Групу не знайдено"
+      ],
+      "No imports to display.": [
+        "Немає імпортувань для показу."
       ],
       "No label found": [
         "Мітку не знайдено"
@@ -8154,23 +8157,11 @@
         "${ daysCountLeft } днів",
         "${ daysCountLeft } днів"
       ],
-      "${ hours } hour": [
-        "${ hours } година",
-        "${ hours } години",
-        "${ hours } годин",
-        "${ hours } годин"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } година",
         "${ hoursCountLeft } години",
         "${ hoursCountLeft } годин",
         "${ hoursCountLeft } годин"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } хвилина",
-        "${ minutes } хвилини",
-        "${ minutes } хвилин",
-        "${ minutes } хвилин"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } хвилина",
@@ -8183,6 +8174,46 @@
         "${ secondsCountLeft } секунди",
         "${ secondsCountLeft } секунд",
         "${ secondsCountLeft } секунд"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } години"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 годин",
+        "${ hoursInt }.5 години"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
       ]
     },
     "Title": {
@@ -8736,6 +8767,23 @@
         "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Дії"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Import": [
+        "Імпорт"
+      ],
+      "Size": [
+        "Розмір"
+      ],
+      "Status": [
+        "Стан"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сьогодні"
@@ -9203,8 +9251,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Щороку",
+        "Кожні ${ interval } роки",
         "Кожні ${ interval } років",
         "Кожні ${ interval } років"
       ],

@@ -510,11 +510,11 @@
       "Not spam": [
         "Bukan spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ya"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
@@ -4261,6 +4261,9 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% dijeda"
       ],
+      "Active": [
+        "Aktif"
+      ],
       "Canceled": [
         "Dibatalkan"
       ],
@@ -4284,6 +4287,9 @@
       ],
       "Started": [
         "Dimulai"
+      ],
+      "Stopped": [
+        "Terhenti"
       ]
     },
     "Import type": {
@@ -4647,6 +4653,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Sebelum Anda dapat mulai mengirim dan menerima email dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
+      ],
+      "Billing cycle: ${ text }": [
+        "Siklus tagihan: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Transaksi Bitcoin membutuhkan waktu untuk dikonfirmasi (hingga 24 jam). Setelah dikonfirmasi, kami akan menambahkan kredit ke akun Anda. Setelah konfirmasi transaksi, Anda dapat membayar tagihan Anda dengan kredit."
@@ -5716,9 +5725,6 @@
       "Update recovery phrase": [
         "Perbarui frasa pemulihan"
       ],
-      "Update the URL in your password manager": [
-        "Perbarui URL pada aplikasi pengelola kata sandi Anda"
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ planName } berikut."
       ],
@@ -6300,7 +6306,7 @@
         "Tandai sudah dibaca"
       ],
       "Mark as unread": [
-        "Tandai sebagai belum dibaca"
+        "Tandai belum dibaca"
       ],
       "Minimize / maximize composer": [
         "Minimalkan / maksimalkan komposer"
@@ -9781,9 +9787,23 @@
         "Tidak ada token SMTP yang ditemukan"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } j"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 j"
+      ],
+      "${ minutes } min": [
+        "${ minutes } mnt"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } jam"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 jam"
       ],
       "${ minutes } minutes": [
         "${ minutes } menit"
@@ -11274,6 +11294,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "Setiap ${ interval } tahun"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "Setiap ${ interval } tahun, ${ timesString }"
       ],

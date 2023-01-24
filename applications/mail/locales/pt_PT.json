@@ -3786,6 +3786,9 @@
       "No group found": [
         "Nenhum grupo encontrado"
       ],
+      "No imports to display.": [
+        "Sem importações para mostrar."
+      ],
       "No label found": [
         "Nenhuma etiqueta encontrada"
       ],
@@ -5980,17 +5983,9 @@
         "${ daysCountLeft } dia",
         "${ daysCountLeft } dias"
       ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } hora",
         "${ hoursCountLeft } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuto"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minuto",
@@ -6445,6 +6440,23 @@
         "O que há de novo"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Acções"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Estado"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
@@ -6766,8 +6778,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "A cada ${ interval } ano",
+        "A cada ${ interval } anos"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

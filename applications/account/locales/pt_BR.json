@@ -510,11 +510,11 @@
       "Not spam": [
         "Não é spam"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -4292,6 +4292,9 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% pausado"
       ],
+      "Active": [
+        "Ativo"
+      ],
       "Canceled": [
         "Cancelado"
       ],
@@ -4315,6 +4318,9 @@
       ],
       "Started": [
         "Iniciado"
+      ],
+      "Stopped": [
+        "Parado"
       ]
     },
     "Import type": {
@@ -4700,6 +4706,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails de seus novos endereços, você precisa criar chaves de criptografia para eles."
+      ],
+      "Billing cycle: ${ text }": [
+        "Ciclo de faturamento: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "As transações em Bitcoin podem levar algum tempo para serem confirmadas (até 24 horas). Uma vez confirmada, adicionaremos os créditos na sua conta. Após a confirmação da transação, você pode pagar sua fatura com os créditos."
@@ -5390,7 +5399,7 @@
         "Por favor, verifique o cartão na nova guia que foi aberta."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Por favor, espera que suas alterações serão sincronizadas com o servidor."
+        "Por favor, aguarde até que suas alterações sejam sincronizadas com o servidor."
       ],
       "Plus or Visionary subscription required": [
         "É necessária a assinatura Plus ou Visionária"
@@ -5779,9 +5788,6 @@
       "Update recovery phrase": [
         "Atualizar frase de recuperação"
       ],
-      "Update the URL in your password manager": [
-        "Atualize a URL no seu gerenciador de senhas"
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Faça upgrade hoje para não perder os benefícios ${ planName }."
       ],
@@ -5912,7 +5918,7 @@
         "Você iniciou sessão à conta ${ memberAddress }."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "Você pode mesclar calendários importados com calendários existentes de ${ BRAND_NAME } ."
+        "Você pode mesclar calendários importados com calendários existentes de ${ BRAND_NAME }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
@@ -6054,7 +6060,7 @@
         "Por motivos de segurança, seu banco requer a verificação de segurança 3-D."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta do ${ BRAND_NAME } ."
+        "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta do ${ BRAND_NAME }."
       ],
       "Your data recovery method is set": [
         "Seu método para recuperação de dados está definido"
@@ -9443,26 +9449,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } dia",
-        "${ days } dias"
-      ],
-      "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
       ],
+      "${ hours } hour": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
       ],
       "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "por ${ n } mês",
+        "por ${ n } meses"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mês GRÁTIS",
-        "${ n } meses GRÁTIS"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {
@@ -9479,7 +9485,7 @@
         "64 países"
       ],
       "All paid Mail and Calendar features": [
-        "Todos os recursos de pagamento de Mail e Calendar"
+        "Todos os recursos de pagamento de Mail e Calendário"
       ],
       "High speed VPN": [
         "VPN de alta velocidade"
@@ -9579,17 +9585,17 @@
         "Com o preço de ${ amount } por 30 meses"
       ],
       "for ${ n } month": [
-        "por ${ n } mês",
-        "por ${ n } meses"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "Get the deal": [
         "Aproveite a oferta"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "É renovado após 1 ano com valor promocional de ${ discountedAmount } em vez de ${ regularAmount } (${ discount }% desconto)"
+        "É renovado após 1 ano com valor promocional de ${ discountedAmount } em vez de ${ regularAmount } (${ discount }% discount)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "É renovado após 2 anos com o valor promocional de ${ discountedAmount } em vez de ${ regularAmount } (${ discount }% desconto)"
+        "É renovado após 2 anos com o valor promocional de ${ discountedAmount } em vez de ${ regularAmount } (${ discount }% discount)"
       ],
       "Save ${ discount }%": [
         "Economize ${ discount }%"
@@ -9612,7 +9618,7 @@
     },
     "specialoffer: Title": {
       "Black Friday Sale": [
-        "Promoção de Black Friday"
+        "Promoção da Black Friday"
       ],
       "Cyber Week Sale": [
         "Promoção da Cyber Week"
@@ -9644,7 +9650,7 @@
         "Acesse conteúdo bloqueado e navegue com privacidade. Inclui 1.700 servidores em +60 países, máxima velocidade de VPN, 10 conexões de VPN, serviços de streaming no mundo todo, malware e ad-blocker e muito mais."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Acesse conteúdo em serviços de streaming como Netflix, Disney+ e Prime Video de qualquer lugar."
+        "Acesse conteúdo em serviços de streaming, como Netflix, Disney+ e Prime Video de qualquer lugar."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited Hide My Email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide My Email, compartilhamento de calendário, armazenamento criptografado na nuvem e compartilhamento de arquivo e muito mais."
@@ -10140,10 +10146,28 @@
         "Sem tokens de SMTP encontrados"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hora",
+        "${ hoursInt }.5 horas"
       ],
       "${ minutes } minute": [
         "${ minutes } minuto",
@@ -11675,8 +11699,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "A cada ${ interval } ano",
+        "A cada ${ interval } anos"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

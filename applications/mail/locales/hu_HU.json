@@ -542,6 +542,12 @@
       "Mailbox layout": [
         "Elrendezés"
       ],
+      "Manage folders": [
+        "Mappák kezelése"
+      ],
+      "Manage labels": [
+        "Címkék kezelése"
+      ],
       "Mark as read": [
         "Megjelölés olvasottként"
       ],
@@ -775,6 +781,12 @@
       ],
       "Rename": [
         "Átnevezés"
+      ],
+      "Reply": [
+        "Válasz"
+      ],
+      "Reply all": [
+        "Válasz mindenkinek"
       ],
       "Reply securely": [
         "Válasz biztonságosan"
@@ -3968,11 +3980,20 @@
         "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
         "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Hiba történt az események titkosításakor és tárolásakor. Az események nem kerültek importálásra."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Névjegyek titkosítása és tárolása: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Események titkosítása és tárolása a naptárában: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esemény sikeresen importálva. Az importált esemény azonnal elérhető a naptárában."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Események sikeresen importálva. Az importált események azonnal elérhetők a naptárában."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Ne zárja be a böngészőfület mielőtt az importálás befejeződik."
@@ -4006,6 +4027,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez",
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Hiba történt a névjegy titkosításakor és tárolásakor. A névjegy nem került importálásra."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Hiba történt a névjegyek titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } névjegyből sikeresen importálva."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Hiba történt a névjegyek titkosításakor és tárolásakor. Nem került importálásra névjegy."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Névjegy sikeresen importálva. Az importált névjegy azonnal elérhető a névjegyeknél."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Névjegyek sikeresen importálva. Az importált névjegyek azonnal elérhetők a névjegyeknél."
       ]
     },
     "Import contact error": {
@@ -4025,6 +4061,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "A ${ CONTACTS_APP_NAME } ${ forNow } nem támogatja:"
+      ],
       "for now": [
         "egyenlőre"
       ]
@@ -4190,6 +4229,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
+        "A ${ BRAND_NAME } nem abból él, hogy a személyes adatokkal visszaéljen."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár",
@@ -4849,9 +4891,6 @@
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Nagy mennyiségű üzenet áthelyezése. Ez eltarthat egy ideig."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Adjon nevet a mappának és válassza ki a szülő mappát amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
       ],
@@ -4878,6 +4917,9 @@
       ],
       "No group found": [
         "Nem található csoport"
+      ],
+      "No imports to display.": [
+        "Nincs megjelenítendő importálás."
       ],
       "No label found": [
         "Nem található címke"
@@ -5074,6 +5116,9 @@
       ],
       "Show original message": [
         "Eredeti üzenet megjelenítése"
+      ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME } Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "A SimpleLogin egy ${ BRAND_NAME } szolgáltatás és a ${ BRAND_NAME } fiókja tartalmazza a Hide My Email címeit. E-mail címének elrejtéséhez, nyissa meg a SimpleLogin oldalt és hozza létre első alternatív e-mail címeit."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "A SimpleLogin egy egyszerű lehetőséget biztosít arra, hogy nem teljesen megbízhatónak ítélt oldalakon, a saját e-mail címének felfedése nélkül regisztráljon."
@@ -5338,6 +5383,9 @@
       ],
       "Version ${ appVersion }": [
         "Verzió: ${ appVersion }"
+      ],
+      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
+        "Nyissa meg a webboltunkat a ${ BRAND_NAME } portékákért."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Elnézést, ez egy téves kiértékelés lehetett a mi részünkről. Megerősíti, hogy ez az üzenet helyénvaló?"
@@ -6796,6 +6844,11 @@
         "Feladók letiltva"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze a ${ BRAND_NAME }nak az adatokhoz való hozzáférést."
+      ]
+    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
@@ -7658,17 +7711,9 @@
         "${ daysCountLeft } nap",
         "${ daysCountLeft } nap"
       ],
-      "${ hours } hour": [
-        "${ hours } óra",
-        "${ hours } óra"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } óra",
         "${ hoursCountLeft } óra"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } perc",
-        "${ minutes } perc"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } perc",
@@ -8201,6 +8246,23 @@
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Műveletek"
+      ],
+      "Date": [
+        "Dátum"
+      ],
+      "Import": [
+        "Importálás"
+      ],
+      "Size": [
+        "Méret"
+      ],
+      "Status": [
+        "Állapot"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Ma"
@@ -8601,8 +8663,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Minden ${ interval }. évben",
+        "Minden ${ interval }. évben"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Minden ${ interval }. évben, ${ timesString }",

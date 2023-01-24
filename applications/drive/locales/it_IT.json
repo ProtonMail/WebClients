@@ -3284,6 +3284,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sembra che tu abbia provato a caricare ${ uploadName } di recente. Se il caricamento non è riuscito, ${ replaceFile }. Se il caricamento è ancora in corso, sostituirlo annullerà il caricamento in corso."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Gli elementi eliminati rimarranno nel cestino finché non li elimini definitivamente"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "È semplicissimo, trascina e rilascia o seleziona i file"
       ],
@@ -3373,6 +3376,9 @@
       ],
       "No group found": [
         "Nessun gruppo trovato"
+      ],
+      "No imports to display.": [
+        "Nessuna importazione da visualizzare."
       ],
       "No preview available": [
         "Anteprima non disponibile"
@@ -3567,9 +3573,6 @@
       ],
       "Swiss privacy": [
         "Privacy svizzera"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Tocca il pulsante + per caricare un file o una cartella"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
@@ -3840,14 +3843,14 @@
       "file data order": [
         "ordine dei dati del file"
       ],
+      "hash key": [
+        "chiave hash"
+      ],
       "keys": [
         "chiavi"
       ],
       "name": [
         "nome"
-      ],
-      "name hash": [
-        "hash nome"
       ],
       "thumbnail": [
         "miniatura"
@@ -4960,26 +4963,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } giorno",
-        "${ days } giorni"
-      ],
-      "${ hours } hour": [
         "${ hours } ora",
         "${ hours } ore"
       ],
+      "${ hours } hour": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuti"
+        "${ n } mese GRATIS",
+        "${ n } mesi GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } secondo",
-        "${ seconds } secondi"
+        "per ${ n } mese",
+        "per ${ n } mesi"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mese GRATIS",
-        "${ n } mesi GRATIS"
+        "${ seconds } secondo",
+        "${ seconds } secondi"
       ]
     },
     "specialoffer: Deal details": {
@@ -5003,9 +5006,6 @@
       ],
       "Highest VPN speed": [
         "Massima velocità della VPN"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Drive premium"
@@ -5060,9 +5060,6 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Vai ai piani di abbonamento"
-      ],
-      "Upgrade": [
-        "Upgrade"
       ]
     },
     "specialoffer: Offers": {
@@ -5091,8 +5088,8 @@
         "Addebito di ${ amount } per 30 mesi"
       ],
       "for ${ n } month": [
-        "per ${ n } mese",
-        "per ${ n } mesi"
+        "${ minutes } minuto",
+        "${ minutes } minuti"
       ],
       "Get the deal": [
         "Acquista"
@@ -5335,10 +5332,28 @@
         "Impostazioni"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } o",
+        "${ hours } o"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 o",
+        "${ hoursInt }.5 o"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } ora",
         "${ hours } ore"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 ora",
+        "${ hoursInt }.5 ore"
       ],
       "${ minutes } minute": [
         "${ minutes } minuto",
@@ -5828,6 +5843,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "Tu hai 1 GB di memoria"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Azioni"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importa"
+      ],
+      "Size": [
+        "Dimensione"
+      ],
+      "Status": [
+        "Stato"
       ]
     },
     "Today icon tooltip in mini calendar": {

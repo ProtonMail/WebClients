@@ -3243,6 +3243,9 @@
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
       ],
+      "No imports to display.": [
+        "Δεν υπάρχουν εισαγωγές προς εμφάνιση."
+      ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
@@ -4970,16 +4973,6 @@
         "Ρυθμίσεις"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } ώρα",
-        "${ hours } ώρες"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } λεπτό",
-        "${ minutes } λεπτά"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Αναζήτηση ζώνης ώρας"
@@ -5343,6 +5336,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Επιλέξτε έναν αριθμό"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Ενέργειες"
+      ],
+      "Date": [
+        "Ημερομηνία"
+      ],
+      "Import": [
+        "Εισαγωγή"
+      ],
+      "Size": [
+        "Μέγεθος"
+      ],
+      "Status": [
+        "Κατάσταση"
       ]
     },
     "Title; create calendar modal": {
@@ -5714,8 +5724,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Κάθε ${ interval } χρόνο",
+        "Κάθε ${ interval } χρόνια"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Κάθε ${ interval } χρόνο, ${ timesString }",

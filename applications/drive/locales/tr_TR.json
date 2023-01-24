@@ -2678,11 +2678,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
+      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -3278,6 +3284,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Yakın zamanda ${ uploadName } dosyasını yüklemeyi denemişsiniz gibi görünüyor. Yüklenemediyse, lütfen ${ replaceFile }in. Yükleme hala sürüyorsa, dosyanın değiştirilmesi süren yükleme işlemini iptal eder."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Çöp kutusundaki ögeler siz onları kalıcı olarak silene kadar tutulur"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Kolayca dosyaları sürükleyip bırakın ya da seçin"
       ],
@@ -3367,6 +3376,9 @@
       ],
       "No group found": [
         "Grup bulunamadı"
+      ],
+      "No imports to display.": [
+        "Görüntülenecek bir içe aktarma işlemi yok."
       ],
       "No preview available": [
         "Ön izleme yok"
@@ -3561,9 +3573,6 @@
       ],
       "Swiss privacy": [
         "İsviçre gizliliği"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Bir dosya ya da klasör yüklemek için + düğmesine dokunun"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -3839,9 +3848,6 @@
       ],
       "name": [
         "ad"
-      ],
-      "name hash": [
-        "ad karması"
       ],
       "thumbnail": [
         "küçük görsel"
@@ -5091,10 +5097,28 @@
         "Ayarlar"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } s",
+        "${ hours } s"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 s",
+        "${ hoursInt }.5 s"
+      ],
+      "${ minutes } min": [
+        "${ minutes } dk",
+        "${ minutes } dk"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } saat",
         "${ hours } saat"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 saat",
+        "${ hoursInt }.5 saat"
       ],
       "${ minutes } minute": [
         "${ minutes } dakika",
@@ -5584,6 +5608,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "1 GB depolama alanı kazandınız"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Date": [
+        "Tarih"
+      ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Size": [
+        "Boyut"
+      ],
+      "Status": [
+        "Durum"
       ]
     },
     "Today icon tooltip in mini calendar": {

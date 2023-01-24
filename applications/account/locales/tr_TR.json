@@ -510,10 +510,10 @@
       "Not spam": [
         "İstenmeyen değil"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -4150,11 +4150,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
+      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -4281,6 +4287,9 @@
       "${ percentageValue }% paused": [
         "%${ percentageValue } duraklatıldı"
       ],
+      "Active": [
+        "Etkin"
+      ],
       "Canceled": [
         "İptal edildi"
       ],
@@ -4304,6 +4313,9 @@
       ],
       "Started": [
         "Başlatıldı"
+      ],
+      "Stopped": [
+        "Durduruldu"
       ]
     },
     "Import type": {
@@ -5767,9 +5779,6 @@
       ],
       "Update recovery phrase": [
         "Kurtarma ifadesini güncelle"
-      ],
-      "Update the URL in your password manager": [
-        "Parola yöneticinizdeki adresi güncelleyin"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "${ planName } avantajlarını kaybetmemek için tarifenizi bugün yükseltin."
@@ -7280,6 +7289,12 @@
       ],
       "URL": [
         "İnternet adresi"
+      ],
+      "Use a recovery email address": [
+        "Kurtarma e-posta adresi kullanılsın"
+      ],
+      "Use a recovery phone number": [
+        "Kurtarma telefon numarası kullanılsın"
       ],
       "Use folder colors": [
         "Klasör renkleri kullanılsın"
@@ -9880,10 +9895,28 @@
         "Herhangi bir SMTP kodu bulunamadı"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } s",
+        "${ hours } s"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 s",
+        "${ hoursInt }.5 s"
+      ],
+      "${ minutes } min": [
+        "${ minutes } dk",
+        "${ minutes } dk"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } saat",
         "${ hours } saat"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 saat",
+        "${ hoursInt }.5 saat"
       ],
       "${ minutes } minute": [
         "${ minutes } dakika",
@@ -11415,8 +11448,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "${ interval } yılda bir",
+        "${ interval } yılda bir"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval } yılda bir, ${ timesString }",

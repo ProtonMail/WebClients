@@ -493,11 +493,11 @@
       "Not spam": [
         "Μη ανεπιθύμητο"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "Οκ"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -4182,6 +4182,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
       ],
+      "Billing cycle: ${ text }": [
+        "Κύκλος χρέωσης: ${ text }"
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Οι συναλλαγές σε Bitcoin χρειάζονται ένα διάστημα για να επιβεβαιωθούν (μέχρι 24 ώρες). Με την επιβεβαίωση, θα πιστώσουμε μονάδες στον λογαριασμό σας. Μετά την επιβεβαίωση της συναλλαγής, μπορείτε να αποπληρώσετε το τιμολόγιό σας με τις πιστωτικές μονάδες."
       ],
@@ -5139,9 +5142,6 @@
       ],
       "Update recovery phrase": [
         "Ενημέρωση φράσης ανάκτησης"
-      ],
-      "Update the URL in your password manager": [
-        "Ενημερώστε το URL στον διαχειριστή σας κωδικών πρόσβασης"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ planName }."
@@ -8718,16 +8718,6 @@
         "Δε βρέθηκαν διακριτικά SMTP"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } ώρα",
-        "${ hours } ώρες"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } λεπτό",
-        "${ minutes } λεπτά"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Αναζήτηση ζώνης ώρας"
@@ -10152,8 +10142,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Κάθε ${ interval } χρόνο",
+        "Κάθε ${ interval } χρόνια"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Κάθε ${ interval } χρόνο, ${ timesString }",

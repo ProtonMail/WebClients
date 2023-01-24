@@ -2769,6 +2769,9 @@
       "No group found": [
         "Ulac agraw"
       ],
+      "No imports to display.": [
+        "Ulacaktaren ara yettwaskanen."
+      ],
       "No results found": [
         "Ulac igmaḍ"
       ],
@@ -4158,16 +4161,6 @@
         "Iɣewwaren"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } n tesdat",
-        "${ minutes } n tesdatin"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Nadi timnaḍin tisraganin"
@@ -4514,6 +4507,23 @@
         "Fren uṭṭun"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Tigawin"
+      ],
+      "Date": [
+        "Azemz"
+      ],
+      "Import": [
+        "Kter"
+      ],
+      "Size": [
+        "Tiddi"
+      ],
+      "Status": [
+        "Addad"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Ass-a"
@@ -4848,8 +4858,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Yal ${ interval } n useggas",
+        "Yal ${ interval } n yiseggasen"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Yal ${ interval } n useggas, ${ timesString }",
