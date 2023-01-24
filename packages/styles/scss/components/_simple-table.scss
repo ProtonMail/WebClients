@@ -21,7 +21,7 @@
 
 	// NEW RESPONSIVE TABLES
 	&--responsive {
-		@include respond-to($breakpoint-medium) {
+		@include media('<=medium') {
 			td:not(.no-mobile, .no-tablet) {
 				display: block;
 				margin: 0;
@@ -40,7 +40,7 @@
 	}
 
 	&--responsive-stacked {
-		@include respond-to($breakpoint-medium) {
+		@include media('<=medium') {
 			tr {
 				margin-block-end: em(8);
 				border-block-end: 1px solid var(--border-norm);
@@ -53,7 +53,7 @@
 	}
 
 	&--responsive-cards {
-		@include respond-to($breakpoint-medium) {
+		@include media('<=medium') {
 			tr {
 				padding: em(12);
 				border: 1px solid var(--border-norm);
@@ -75,7 +75,7 @@
 	&--responsive &__th-small {
 		display: none;
 
-		@include respond-to($breakpoint-medium) {
+		@include media('<=medium') {
 			display: flex;
 			align-content: center;
 			font-weight: var(--font-weight-medium);
@@ -177,7 +177,7 @@
 	}
 
 	// TODO: refactor this
-	@include respond-to($breakpoint-medium) {
+	@include media('<=medium') {
 		&--responsive#{&}--has-actions {
 			td,
 			th {

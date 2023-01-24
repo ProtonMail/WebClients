@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import DrawerContactView from '@proton/components/components/drawer/views/DrawerContactView';
 import { CustomAction } from '@proton/components/containers/contacts/widget/types';
 import { APPS } from '@proton/shared/lib/constants';
@@ -40,6 +42,7 @@ const DrawerApp = ({ onCompose, onMailTo, contactCustomActions }: Props) => {
                             id="drawer-app-iframe"
                             className={clsx(['drawer-app-view h100 w100', appInView !== app && 'hidden'])}
                             src={src}
+                            title={c('Info').t`Calendar side panel`}
                         />
                     ))}
                 {appInView === APPS.PROTONCONTACTS && (
