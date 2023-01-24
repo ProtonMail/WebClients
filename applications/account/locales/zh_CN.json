@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "添加截图"
       ],
+      "Attention required": [
+        "需要关注"
+      ],
       "Authenticate": [
         "认证"
       ],
@@ -140,6 +143,9 @@
       ],
       "Choose a file or drag it here": [
         "选择文件或将文件拖至此处"
+      ],
+      "Claim it": [
+        "使用该地址"
       ],
       "Clear all formatting": [
         "清除所有格式"
@@ -211,7 +217,7 @@
         "创建用户"
       ],
       "Create your own": [
-        "创建账号"
+        "自行创建"
       ],
       "Current plan": [
         "当前等级"
@@ -370,7 +376,7 @@
         "生成恢复密语"
       ],
       "Generate token": [
-        "生成 token"
+        "生成专用密码"
       ],
       "Get ${ vpnPlus }": [
         "开通 ${ vpnPlus }"
@@ -504,10 +510,10 @@
       "Not spam": [
         "非垃圾邮件"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -526,7 +532,7 @@
         "支付"
       ],
       "Pay ${ price } now": [
-        "现在支付 ${ price }"
+        "立即支付 ${ price }"
       ],
       "Preview": [
         "预览"
@@ -959,6 +965,9 @@
       "Disabled": [
         "已禁用"
       ],
+      "External": [
+        "第三方"
+      ],
       "Missing keys": [
         "丢失的密钥"
       ],
@@ -1043,13 +1052,13 @@
         "每12个月应付"
       ],
       "Payable every 15 months": [
-        "每15个月应付"
+        "每隔 15 个月扣费"
       ],
       "Payable every 24 months": [
         "每24个月应付"
       ],
       "Payable every 30 months": [
-        "每30个月应付"
+        "每隔 30 个月扣费"
       ],
       "Payable every month": [
         "每月应付"
@@ -1266,6 +1275,9 @@
       "Share calendar": [
         "共享日历"
       ],
+      "Share outside ${ BRAND_NAME }": [
+        "与非 ${ BRAND_NAME } 用户共享"
+      ],
       "Share with ${ BRAND_NAME } users": [
         "与 ${ BRAND_NAME } 用户分享"
       ],
@@ -1285,10 +1297,10 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "编辑（查看、创建、编辑日程详情）"
+        "允许查看、创建及修改日程"
       ],
       "View (see all event details)": [
-        "查看（查看所有活动详细信息）"
+        "允许查看所有日程详情"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -2475,6 +2487,11 @@
         "没有搜索结果"
       ]
     },
+    "Credits": {
+      "Available credits": [
+        "可用余额"
+      ]
+    },
     "CSV download button": {
       "CSV template": [
         "csv 模板"
@@ -2485,7 +2502,7 @@
         "第 ${ erroredRowsString } 行出现错误。"
       ],
       "It looks like your file is missing the '${ options.fieldName }' header.": [
-        "您的文件可能缺少'${ options.fieldName }'的头部内容。"
+        "您的文件似乎缺少 ${ options.fieldName } 字段。"
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "导入时检测到多行错误，请检查您的 csv 文件。"
@@ -2575,11 +2592,17 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "邀请好友注册 ${ BRAND_NAME }，最高可得 ${ credits } 余额奖励。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
+      "Track the status and activity of your referrals.": [
+        "实时跟踪已发出的邀请动态。"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "您可以继续邀请朋友，但不能再赚取更多奖励。"
@@ -2616,8 +2639,14 @@
       "${ name } failed to move to spam list": [
         "将 ${ name } 移入垃圾邮件名单失败"
       ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } 标为非垃圾邮件失败"
+      ],
       "${ name } failed to move to your block list": [
         "将 ${ name } 移入黑名单失败"
+      ],
+      "${ name } moved to not spam list": [
+        "已将 ${ name } 移入非垃圾邮件名单"
       ],
       "${ name } moved to spam list": [
         "已将 ${ name } 移入垃圾邮件名单"
@@ -2632,6 +2661,9 @@
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bug 或质量问题"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "我要改用其他 ${ BRAND_NAME } 账户"
       ],
       "Missing feature(s)": [
         "缺失功能"
@@ -2723,6 +2755,9 @@
       ],
       "${ name } failed to move to spam list": [
         "将 ${ name } 移入垃圾邮件名单失败"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } 标为非垃圾邮件失败"
       ],
       "${ name } failed to move to your block list": [
         "将 ${ name } 移入黑名单失败"
@@ -2840,6 +2875,9 @@
       "Email address disabled": [
         "邮件地址已禁用"
       ],
+      "Email address is required": [
+        "邮箱地址必须填写"
+      ],
       "Email is not valid": [
         "无效邮箱"
       ],
@@ -2869,6 +2907,9 @@
       ],
       "Folder name cannot be empty.": [
         "文件夹名称不能为空。"
+      ],
+      "IMAP server is required": [
+        "IMAP 服务器必须填写"
       ],
       "Incorrect login credentials. Please try again.": [
         "登录凭据不正确，请重试。"
@@ -2972,6 +3013,9 @@
       "Organization not recognized. Try again.": [
         "无法识别机构，请重试。"
       ],
+      "Password is required": [
+        "密码必须填写"
+      ],
       "Passwords do not match": [
         "密码不匹配"
       ],
@@ -3019,6 +3063,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "请升级到包含多个用户的商务版套餐以管理多用户。"
+      ],
+      "Port is required": [
+        "端口号必须填写"
       ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
@@ -3101,8 +3148,14 @@
       "The label name is too long. Please choose a different name.": [
         "标签名称过长，请重新填写。"
       ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "充值金额不能低于 ${ price }"
+      ],
       "The minimum amount that can be donated is ${ price }": [
         "捐款金额不应低于 ${ price }"
+      ],
+      "The minimum payment we accept is ${ price }": [
+        "支付金额不能低于 ${ price }"
       ],
       "The organization key must be activated first": [
         "必须先激活机构密钥"
@@ -3118,6 +3171,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
       "This field is required": [
         "此项必须填写"
@@ -3136,6 +3192,9 @@
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unknown error": [
         "未知错误"
@@ -3187,6 +3246,9 @@
       ],
       "You must set a name": [
         "请输入名称（必填）"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "您需要设置自有域名地址才能生成 SMTP 投递专用密码。"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "您的账户或机构有逾期未付的账单，请前往未付。"
@@ -3404,10 +3466,13 @@
     },
     "Error message, recovery": {
       "Please ${ signIn } to resend a recovery email verification request.": [
-        "请${ signIn } 后重新发送验证邮件。"
+        "请${ signIn }后重新发送验证邮件。"
       ],
       "sign in": [
         "登录"
+      ],
+      "There was a problem removing your email address.": [
+        "移除邮箱地址失败。"
       ],
       "There was a problem verifying your email address.": [
         "验证邮箱地址失败。"
@@ -3565,26 +3630,88 @@
       ]
     },
     "fido2: Action": {
+      "Add security key": [
+        "添加安全密钥"
+      ],
       "Delete key": [
         "删除密钥"
       ]
     },
     "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "关闭 TOTP 前请先关闭安全密钥双重验证"
+      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥进行身份验证时出错。请重试。"
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "安全密钥注册失败，请重试。"
       ]
     },
     "fido2: Info": {
+      "2FA via security key disabled": [
+        "安全密钥双重验证已关闭"
+      ],
+      "Add a name to identify your security key with.": [
+        "填写您的安全密钥名称。"
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "确定要删除安全密钥 ${ name } 吗？"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "插入与 ${ BRAND_NAME } 账户关联的安全密匙"
+      ],
+      "Insert your security key into your device's USB port.": [
+        "将您的安全密钥插入设备 USB 接口中。"
+      ],
+      "Security key": [
+        "安全密钥"
+      ],
+      "Security key removed": [
+        "安全密钥已移除"
+      ],
+      "Security key updated": [
+        "安全密钥信息已更新"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "此操作将删除您的账户关联的所有安全密钥。"
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "开启身份验证应用后方可启用安全密钥双重验证"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "使用 U2F 或 FIDO2 物理安全密钥验证身份"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "您的双重验证密钥已就绪，可以使用了。"
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "密钥名称"
       ],
       "Security key": [
         "安全密钥"
       ]
     },
-    "fido2: Label": {
-      "Security key": [
-        "安全密钥"
+    "fido2: Title": {
+      "Delete security key?": [
+        "删除安全密钥？"
+      ],
+      "Disable 2FA via security key?": [
+        "关闭安全密钥双重验证？"
+      ],
+      "Name your security key": [
+        "安全密钥命名"
+      ],
+      "Register your security key": [
+        "注册安全密钥"
+      ],
+      "Registered security keys": [
+        "已注册的安全密钥"
+      ],
+      "Security key registered": [
+        "安全密钥已注册"
       ]
     },
     "file size format": {
@@ -3684,10 +3811,13 @@
         "定制筛选规则可以自动执行某些操作，例如加标签或将邮件存档。使用 Sieve 编程语言可以直接创建或修改规则。"
       ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "在您或 ${ BRAND_NAME } 标记出某封垃圾邮件后，对应邮箱发送的所有邮件都会被收入您的垃圾邮件文件夹。如果您仍想接受来自该邮箱的邮件，请将其标记为“非垃圾邮件”。"
+        "邮件被 ${ BRAND_NAME } 识别或被您手动标记为垃圾邮件后，来自其发件人的后续邮件都将被归为垃圾邮件。如需正常接收其邮件，请将对应发件人地址标为非垃圾邮件。"
       ],
       "Emails from blocked addresses won't be delivered.": [
         "您将不会收到来自屏蔽邮箱地址的邮件"
+      ],
+      "Search list": [
+        "搜索名单"
       ]
     },
     "Font Face Default": {
@@ -3823,8 +3953,17 @@
       "Actions": [
         "操作"
       ],
+      "Created": [
+        "创建时间"
+      ],
       "Email address": [
-        "电子邮件地址"
+        "邮箱地址"
+      ],
+      "Last used": [
+        "上次使用"
+      ],
+      "Token name": [
+        "专用密码名称"
       ]
     },
     "Hint": {
@@ -4105,9 +4244,20 @@
         "其它"
       ]
     },
+    "Import rollback status": {
+      "Undo finished": [
+        "撤销完成"
+      ],
+      "Undo in progress": [
+        "正在撤销"
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% 已暂停"
+      ],
+      "Active": [
+        "进行中"
       ],
       "Canceled": [
         "已取消"
@@ -4132,6 +4282,9 @@
       ],
       "Started": [
         "已开始"
+      ],
+      "Stopped": [
+        "已停止"
       ]
     },
     "Import type": {
@@ -4170,10 +4323,19 @@
         "${ boldWarning } 如果继续，您将无法访问您账户中的所有当前加密数据。"
       ],
       "${ BRAND_NAME } ${ planName } credits earned": [
-        "${ BRAND_NAME } ${ planName } 奖励体验期"
+        "已获得的 ${ BRAND_NAME } ${ planName } 余额奖励"
+      ],
+      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "与邮件服务商的连接中断，${ BRAND_NAME } 已暂停导入。请重新连接。"
+      ],
+      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
+        "您的账户存储空间不足，${ BRAND_NAME } 已暂停导入。您可以："
       ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "一旦您的电子邮件提供商重置了您账户的 ${ bandwithLimitLink }，${ BRAND_NAME } 将会尝试恢复导入。您不需要做任何事情。如果您取消导入，您将无法恢复导入，您需要重新开始。"
+        "邮箱服务商解除您的账户${ bandwithLimitLink }后，${ BRAND_NAME } 将立即尝试继续导入，您不需要采取任何操作。如果取消导入，当前进度将丢失，以后需要从头开始导入过程。"
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } 将设置为默认日历。"
@@ -4248,7 +4410,7 @@
         "${ storageSize } 存储空间"
       ],
       "${ vpnPlus } required for Country level connection.": [
-        "国家级链接需要 ${ vpnPlus }。"
+        "指定国家连接需要开通 ${ vpnPlus }。"
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "使用安全核心功能需要 ${ vpnPlus } 。"
@@ -4328,6 +4490,9 @@
       "Add a recovery phone number": [
         "添加密保手机"
       ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "登录时要求输入双重验证码，为您的账户安全再增设一道防线。"
+      ],
       "Add image URL": [
         "添加图片地址"
       ],
@@ -4388,6 +4553,9 @@
       "Amount below minimum (${ amount }).": [
         "金额 (${ amount }) 过小。"
       ],
+      "An error occurred while communicating with the extension": [
+        "与扩展程序传输数据失败"
+      ],
       "and": [
         "并"
       ],
@@ -4436,6 +4604,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "您确定要移除此用户的管理权限吗？"
       ],
+      "Attention required": [
+        "需要关注"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "在每个月的指定时段开启自动回复。"
       ],
@@ -4478,6 +4649,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "使用新地址收发邮件前，您需要先为其创建密钥。"
       ],
+      "Billing cycle: ${ text }": [
+        "计费周期：${ text }"
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "比特币付款需要一段时间（最长 24 小时）来确认交易，确认后金额将充入您的账户余额中，然后您就可以用余额支付了。"
       ],
@@ -4516,6 +4690,9 @@
       ],
       "Continue with ${ planName }": [
         "升级至 ${ planName } 并继续"
+      ],
+      "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
+        "继续操作将把您的 ${ BRAND_NAME } 账户与 ${ name } 连接。"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "新建 ${ calendarsToBeCreated } 份日历"
@@ -4649,6 +4826,9 @@
       "Enable this address to join this calendar": [
         "启用此地址以加入日历"
       ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "请尽可能在使用专用密码的服务中开启 TLS 或 SSL 功能。"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "再次启用通过密语恢复将生成一个新的恢复密语。"
       ],
@@ -4660,6 +4840,9 @@
       ],
       "Enter key manually instead": [
         "手动输入密钥"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "输入用户 ${ userName } 的新密码。"
       ],
       "Enter the code from your authenticator app": [
         "请输入您的双重验证应用中显示的验证码"
@@ -4678,6 +4861,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "请输入您的 ${ BRAND_NAME } 账户信息。"
@@ -4723,6 +4909,15 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "新生成的恢复密语将取代旧的。"
+      ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "注册 ${ BRAND_NAME } 邮箱地址即可使用 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等所有 ${ BRAND_NAME } 服务。"
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "注册 ${ BRAND_NAME } 地址"
+      ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
+        "为专用密码设置一个清晰的名称，以便说明其用途；然后选择一个自有域名地址，只有所选地址能够使用该专用密码发送邮件。"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "把公钥发给亲朋好友，或者挂到网上，这样大家就都能给你发端到端加密的邮件了！"
@@ -4816,6 +5011,9 @@
       ],
       "Import mailbox": [
         "导入收件箱"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "其他邮箱中的邮件、日程和通讯录也可以轻松导入 ${ BRAND_NAME }，我们将全程指导您操作并自动为您加密数据。欢迎进入隐私优先的世界。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "注意：请务必妥善保管恢复码，否则一旦丢失双重验证设备，您可能再也无法登录此账户。"
@@ -4935,10 +5133,13 @@
         "登录至 ${ MAIL_APP_NAME } 以激活您的地址"
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
-        "日志的登入纪录包含所有使用${ BRAND_NAME } 密码的 ${ BRAND_NAME } 服务。"
+        "试图使用您的 ${ BRAND_NAME } 账户登录任何 ${ BRAND_NAME } 产品的操作都会被记录。"
       ],
       "lose access to all current encrypted data": [
         "所有加密数据"
+      ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "请务必${ addARecoveryMethod }，否则如果不慎忘记密码将无法找回账户。"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "在验证设备上手动输入下列信息完成账户设置，或${ switchButton }。"
@@ -5018,6 +5219,9 @@
       "of": [
         "，共"
       ],
+      "One account. All ${ BRAND_NAME } services.": [
+        "一个账户，所有 ${ BRAND_NAME } 服务通用。"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
       ],
@@ -5085,7 +5289,7 @@
         "请检查您的文件，或尝试${ csvTemplateButton }。"
       ],
       "Please contact the administrator of the organisation to manage the subscription.": [
-        "请联系组织管理员以管理订阅."
+        "请联系机构管理员管理账户等级。"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "请输入与您的账户关联的 12 字恢复密语。"
@@ -5137,6 +5341,9 @@
       ],
       "Preview": [
         "预览"
+      ],
+      "Preview failed to be loaded": [
+        "预览加载失败"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "价格包括所有适用的基于周期的折扣与保存在您账户中的未过期的优惠券。"
@@ -5252,6 +5459,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "第三方服务或设备可以通过 SMTP 功能发送 ${ MAIL_APP_NAME } 邮件。这项新功能仅对部分商业用户开放，如有需要请联系 ${ emailLink } 申请开通。"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "第三方服务或设备可以通过 SMTP 功能发送 ${ MAIL_APP_NAME } 邮件。使用此功能需要生成专用密码。"
+      ],
       "Some keys successfully reactivated": [
         "已成功重新激活某些密钥"
       ],
@@ -5303,6 +5516,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "置顶列表的电子邮件地址是您的默认电子邮件地址，拖放可重新排列。"
       ],
+      "The following address is available:": [
+        "以下地址可以使用："
+      ],
       "The following addresses are invalid.": [
         "下列地址无效。"
       ],
@@ -5331,7 +5547,7 @@
         "这些配置可用于 WireGuard 路由器和官方客户端。"
       ],
       "They'll receive a free month of ${ planName }.": [
-        "2. 他们会收到一个月的免费 ${ planName }。"
+        "2. 好友可免费体验 ${ planName } 一个月。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
@@ -5361,10 +5577,13 @@
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
+        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
+      ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "关闭此窗口后该密码将不再允许查看，您也不应将此密码透露给他人。"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此用户负责为您的组织付款。降低其权限后，您将负责此组织的付款。"
@@ -5396,6 +5615,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "您的所有设备都将退出登录状态，双重验证功能也会关闭。"
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
+        "接下来将为您的 ${ BRAND_NAME } 账户开启双重验证，提升账户安全性。"
+      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "为避免丢失数据，删除密钥前请确认您了解执行该操作的后果，并确保此密钥已妥善备份。"
       ],
@@ -5417,6 +5639,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
+      ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
         "您可以订阅我们的各类邮件或阅读我们的博客了解 ${ BRAND_NAME } 产品的动态。"
       ],
@@ -5425,6 +5650,12 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "若需要保护与互联网之间的连接，下载并安装 ${ VPN_APP_NAME } 应用程序并连接至服务器。"
+      ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "即可使用 ${ toAppName } 和所有 ${ BRAND_NAME } 服务"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "创建 ${ MAIL_APP_NAME } 地址即可使用 ${ toAppName }。"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "每条筛选规则至少应有名称和一段有效的 Sieve 代码才能正常运作。您可以${ link }。"
@@ -5486,9 +5717,6 @@
       "Update recovery phrase": [
         "更新恢复密语"
       ],
-      "Update the URL in your password manager": [
-        "请在密码管理器中更新本站网址"
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "立即升级账户即可继续享有下列 ${ planName } 权益。"
       ],
@@ -5507,6 +5735,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "若不安装官方客户端，例如在 macOS 上使用 Tunnelblick 或在 GNU/Linux 上使用 OpenVPN 时，需要使用下列账号连接 ${ VPN_APP_NAME }。"
       ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "发送邮件时使用所选邮箱地址作为 SMTP 用户名，生成的专用密码作为 SMTP 密码。"
+      ],
       "Verification can take a few minutes.": [
         "验证可能需要数分钟。"
       ],
@@ -5515,6 +5746,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "验证将在新标签页中进行，请停止拦截弹窗。您不必为此付费，验证结束后所用金额将立即退还。"
+      ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "通过应用程序根据时间生成的一次性验证码确认身份"
       ],
       "Verifying your payment": [
         "确认支付"
@@ -5573,6 +5807,9 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "开启通知后，我们将通过密保邮箱提醒您 ${ MAIL_APP_NAME } 收到的新邮件。"
       ],
+      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
+        "好友开通付费账户后，您也将获得余额奖励。"
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双重验证后，我们会为您提供恢复码。当您无法使用授权应用时，可以使用恢复码登录。"
       ],
@@ -5581,6 +5818,9 @@
       ],
       "Why?": [
         "为什么？"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "拥有 ${ BRAND_NAME } 地址即可使用所有 ${ BRAND_NAME } 服务"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "若不激活，您将无法添加用户、地址或登录非私密的成员账户。"
@@ -5603,6 +5843,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "您已登录账户 ${ memberAddress }。"
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "您也可以将导入的日历与 ${ BRAND_NAME } 现有日历合并。"
       ],
@@ -5617,6 +5860,12 @@
       ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
+      ],
+      "You can now access and manage the account as an administrator.": [
+        "作为机构管理员，您可以对账户执行管理操作。"
+      ],
+      "You can now close this window.": [
+        "您现在可以关闭此窗口了。"
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "您现在可以开始使用以 @pm.me 为域名的邮箱地址接收邮件了，若想使用 @pm.me 为后缀发信，或创建更多的 @pm.me 地址，请升级到付费计划。"
@@ -5647,6 +5896,9 @@
       ],
       "You have no saved payment methods.": [
         "您尚未添加支付方式。"
+      ],
+      "You may now start using the extension": [
+        "扩展程序可以使用了"
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "您需要使用机构管理员提供给您的备份机构密码激活您的机构私钥。"
@@ -5686,6 +5938,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "即将为您转至银行网站完成验证。"
+      ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME } 还需注册 ${ BRAND_NAME } 邮箱地址"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "您将不能解密使用此密钥加密的任何信件、文件及任何其他数据。"
@@ -6245,6 +6500,9 @@
       "All-day event notifications": [
         "全天事件通知"
       ],
+      "Allow notifications by email": [
+        "允许邮件通知"
+      ],
       "Allow recovery by email": [
         "允许通过电子邮件恢复"
       ],
@@ -6288,7 +6546,7 @@
         "截图"
       ],
       "Authenticator app": [
-        "验证器应用程序"
+        "身份验证应用"
       ],
       "Auto show embedded images": [
         "自动显示嵌入图像"
@@ -6304,6 +6562,9 @@
       ],
       "Auto-unsubscribe": [
         "自动退订邮件"
+      ],
+      "Awarded": [
+        "已奖励"
       ],
       "Billing cycle": [
         "计费周期"
@@ -6431,6 +6692,9 @@
       "Credits used": [
         "扣除余额"
       ],
+      "Current display name": [
+        "当前称呼"
+      ],
       "Customize invoices": [
         "自定义账单"
       ],
@@ -6507,7 +6771,7 @@
         "电子邮件"
       ],
       "Emails (all messages)": [
-        "邮件（所有信息）"
+        "所有邮件"
       ],
       "Emails (last 12 months)": [
         "邮件（过去 12 个月）"
@@ -6692,8 +6956,14 @@
       "Name on card": [
         "持卡人姓名"
       ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP（端口转发）"
+      ],
       "Navigation": [
         "导航栏"
+      ],
+      "New display name": [
+        "新称呼"
       ],
       "New login password": [
         "新登录密码"
@@ -6766,6 +7036,9 @@
       ],
       "Payment method": [
         "付款方式"
+      ],
+      "Pending": [
+        "等待"
       ],
       "Phone number": [
         "电话号码"
@@ -6845,6 +7118,9 @@
       "Show secondary time zone": [
         "显示次要时区"
       ],
+      "Show sender images": [
+        "显示发件人头像"
+      ],
       "Show week numbers": [
         "显示周数"
       ],
@@ -6854,11 +7130,20 @@
       "Signature": [
         "落款"
       ],
+      "SMTP port": [
+        "SMTP 端口号"
+      ],
+      "SMTP server": [
+        "SMTP 服务器"
+      ],
+      "SMTP token": [
+        "SMTP 专用密码"
+      ],
       "SMTP username": [
         "SMTP 用户名"
       ],
       "Spam": [
-        "垃圾"
+        "垃圾邮件"
       ],
       "Starred": [
         "星标邮件"
@@ -6917,6 +7202,9 @@
       "To: ${ toEmail }": [
         "收件人：${ toEmail }"
       ],
+      "Token name": [
+        "专用密码名称"
+      ],
       "Two-password mode": [
         "双密码模式"
       ],
@@ -6934,6 +7222,12 @@
       ],
       "URL": [
         "网址"
+      ],
+      "Use a recovery email address": [
+        "使用密保邮箱"
+      ],
+      "Use a recovery phone number": [
+        "使用密保手机"
       ],
       "Use folder colors": [
         "文件夹附带颜色"
@@ -7045,8 +7339,23 @@
       ]
     },
     "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } 公测通知"
+      ],
+      "${ BRAND_NAME } company announcements": [
+        "${ BRAND_NAME } 公司公告"
+      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } 商业通讯"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } 通讯"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } 优惠与促销"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } 产品公告"
       ]
     },
     "Label in domain modal": {
@@ -7244,6 +7553,9 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "导入 ${ itemsToImportCount } 个文件夹中的所有邮件，并标为 ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "从标签 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
@@ -7467,13 +7779,16 @@
     },
     "Navigation": {
       "All": [
-        "不限"
+        "全部"
       ],
       "Back": [
         "后退"
       ],
       "Back to calendar": [
         "返回日历"
+      ],
+      "Back to files": [
+        "返回文件"
       ],
       "Back to inbox": [
         "回到收件箱"
@@ -7489,6 +7804,9 @@
       ],
       "Inbox": [
         "收件箱"
+      ],
+      "Not spam": [
+        "非垃圾邮件"
       ],
       "Spam": [
         "垃圾邮件"
@@ -7806,8 +8124,14 @@
       "* With 12-month subscription. Other subscription options available at checkout.": [
         "* 此为年费价格，结算时可选择其他计费方式。"
       ],
+      "* With 15-month subscription. Other subscription options available at checkout.": [
+        "* 此为 15 个月付费价，结算时可选择其他计费方式。"
+      ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* 此为两年付费价格，结算时可选择其他计费方式。"
+      ],
+      "* With 30-month subscription. Other subscription options available at checkout.": [
+        "* 此为 30 个月付费价，结算时可选择其他计费方式。"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "可用余额、当前等级结余与优惠券将在下一步显示"
@@ -8024,7 +8348,7 @@
         "除此之外，您还可以添加来自朋友、家人、同事和组织等最多5个日历。"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "一个VPN连接允许一台设备在任何给定时间连接到${ BRAND_NAME }。 例如，要同时将手机和笔记本电脑连接到${ BRAND_NAME } ，您需要两个VPN连接。"
+        "例如手机和电脑同时连接就属于 2 台设备同时接入 ${ BRAND_NAME } VPN。"
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "可查看非私密用户的邮件全文与联系人详情"
@@ -8166,6 +8490,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } 规则已创建"
+      ],
+      "A disabled address cannot be default": [
+        "已停用的地址不能作为首选地址"
+      ],
+      "An external address cannot be default": [
+        "其他邮箱的地址不能作为首选地址"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "带有指纹 ${ fp } 的密钥已删除。"
@@ -8376,6 +8706,9 @@
       "I found another service that I like better": [
         "不如别的产品好用"
       ],
+      "I use a different ${ BRAND_NAME } account": [
+        "我要改用其他 ${ BRAND_NAME } 账户"
+      ],
       "Ignore group": [
         "忽略分组"
       ],
@@ -8501,13 +8834,16 @@
         "点击 ${ upgradeLink } 升级添加更多储存空间，或删除一些内容。"
       ],
       "Your plan includes a maximum of ${ availableAddresses } more addresses.": [
-        "您的计划最多还能添加 ${ availableAddresses } 个邮箱地址。"
+        "当前等级最多还能添加 ${ availableAddresses } 个邮箱地址。"
       ],
       "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational users.": [
-        "您的计划还能最多包含 ${ availableNumberOfMembers } 个组织用户。"
+        "当前等级最多还能包含 ${ availableNumberOfMembers } 个机构用户。"
       ],
       "Your plan includes a maximum of ${ availableVPNAccess } more VPN accounts.": [
-        "您的计划最多还能添加 ${ availableVPNAccess } 个 VPN 账户。"
+        "当前等级最多还能添加 ${ availableVPNAccess } 个 VPN 账户。"
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "您的账户等级最多还能再添加 ${ humanReadableAvailableSpace } 存储空间"
       ]
     },
     "OS compatibility": {
@@ -8757,6 +9093,9 @@
       "You can safely close this tab.": [
         "您可以安全地关闭此页面了。"
       ],
+      "Your recovery email has been successfully removed.": [
+        "密保邮箱已成功移除。"
+      ],
       "Your recovery email has been successfully verified.": [
         "您的密保邮箱已完成验证。"
       ]
@@ -8941,7 +9280,7 @@
     },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
-        "输入一个邮件地址或组名"
+        "输入邮箱地址或群组名称"
       ]
     },
     "Share calendar modal title": {
@@ -8984,6 +9323,9 @@
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 现已正式发布！您的文档也可以具备与邮件同等的安全性。"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "最高可获 ${ credits } 余额奖励。"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "邀请好友注册 ${ BRAND_NAME }"
@@ -9121,7 +9463,7 @@
         "使用隐私至上的邮箱和日历服务满足您的日常通讯需求。"
       ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "此优惠仅适用于${ BRAND_NAME }新用户。无需信用卡。"
+        "此优惠仅限首次注册 ${ BRAND_NAME } 用户。无需信用卡。"
       ]
     },
     "Success": {
@@ -9236,6 +9578,9 @@
       "Phone number updated": [
         "电话号码已更改"
       ],
+      "Port copied to clipboard": [
+        "端口号已复制"
+      ],
       "Preference saved": [
         "设置已生效"
       ],
@@ -9245,14 +9590,26 @@
       "Resuming import": [
         "正在恢复导入"
       ],
+      "Server copied to clipboard": [
+        "服务器已复制"
+      ],
       "Session revoked": [
         "该设备已下线"
       ],
       "Sessions revoked": [
         "设备已下线"
       ],
+      "SMTP token deleted": [
+        "SMTP 专用密码已删除"
+      ],
       "SPF value copied to clipboard": [
         "SPF 内容已复制到剪贴板"
+      ],
+      "Token copied to clipboard": [
+        "专用密码已复制"
+      ],
+      "Undo in progress": [
+        "正在撤销"
       ],
       "User created": [
         "用户已创建"
@@ -9409,9 +9766,28 @@
         "vCard 字段"
       ]
     },
-    "Time unit": {
+    "TableRow": {
+      "No SMTP tokens found": [
+        "未找到 SMTP 专用密码"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 小时"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 小时"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分钟"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } 小时"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 小时"
       ],
       "${ minutes } minutes": [
         "${ minutes } 分钟"
@@ -9612,6 +9988,9 @@
       "Confirm downgrade": [
         "确认降级"
       ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "确定放弃 ${ BRAND_NAME } 特权"
+      ],
       "Confirm phone number": [
         "确认电话号码"
       ],
@@ -9631,7 +10010,7 @@
         "无法创建账户"
       ],
       "Create ${ selectedUserIds.length } users": [
-        "创建 ${ selectedUserIds.length } 个账户"
+        "创建 ${ selectedUserIds.length } 位用户"
       ],
       "Create multiple user accounts": [
         "创建多个账户"
@@ -9644,6 +10023,9 @@
       ],
       "Create your ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "创建 ${ BRAND_NAME } 地址"
       ],
       "Creating user accounts": [
         "正在创建账户"
@@ -9701,6 +10083,9 @@
       ],
       "Delete ${ label.Name } label": [
         "删除 ${ label.Name } 标签"
+      ],
+      "Delete ${ tokenNameToRemove }?": [
+        "删除 ${ tokenNameToRemove }？"
       ],
       "Delete account": [
         "删除账户"
@@ -9777,6 +10162,9 @@
       "Encryption and keys": [
         "加密与密钥"
       ],
+      "End date": [
+        "结束日期"
+      ],
       "Enter your password": [
         "输入密码"
       ],
@@ -9799,7 +10187,7 @@
         "对外 PGP 设置"
       ],
       "Failed to create ${ failedUsers.length } user accounts.": [
-        "无法创建 ${ failedUsers.length } 个账户。"
+        "创建 ${ failedUsers.length } 位用户失败。"
       ],
       "Filters": [
         "筛选规则"
@@ -9823,19 +10211,22 @@
         "生成新的恢复密语吗?"
       ],
       "Generate SMTP token": [
-        "生成 SMTP token"
+        "生成 SMTP 专用密码"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "获取 ${ vpnPlus } 以访问所有服务器"
       ],
       "Gift": [
-        "礼物"
+        "礼品码"
       ],
       "Gift code": [
         "礼品码"
       ],
       "How does it work?": [
         "如何操作？"
+      ],
+      "How to refer a friend and get credits": [
+        "如何邀请好友并获得奖励"
       ],
       "How your free trial works": [
         "您的免费试用版如何运作"
@@ -9898,7 +10289,7 @@
         "布局"
       ],
       "Length": [
-        "长度"
+        "时长"
       ],
       "Link confirmation": [
         "确认打开链接"
@@ -10065,6 +10456,9 @@
       "Select when you want this notification to be sent": [
         "选择您希望发送该通知的时间"
       ],
+      "Sender image": [
+        "发件人头像"
+      ],
       "Session management": [
         "登录设备管理"
       ],
@@ -10098,6 +10492,15 @@
       "Sign out": [
         "退出"
       ],
+      "Signed in successfully!": [
+        "登录成功！"
+      ],
+      "Signed in to member account": [
+        "已登录成员账户"
+      ],
+      "SMTP tokens": [
+        "SMTP 专用密码"
+      ],
       "Sort folders alphabetically": [
         "按字母顺序排列文件夹"
       ],
@@ -10109,6 +10512,9 @@
       ],
       "Start a new import": [
         "开始导入"
+      ],
+      "Start date": [
+        "开始日期"
       ],
       "Start import process": [
         "开始导入过程"
@@ -10126,7 +10532,7 @@
         "成功"
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "已成功创建 ${ localSuccessfullyCreatedUsers.length } 个账户"
+        "${ localSuccessfullyCreatedUsers.length } 位用户创建成功"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
         "已成功创建 ${ successfullyCreatedUsers.length } 个账户"
@@ -10146,6 +10552,9 @@
       "Time zone": [
         "时区"
       ],
+      "Track your referrals": [
+        "跟踪邀请进展"
+      ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "免费体验 ${ MAIL_APP_NAME } 的出色功能"
       ],
@@ -10164,11 +10573,17 @@
       "Upgrade plan": [
         "升级账户"
       ],
+      "Users": [
+        "用户"
+      ],
       "Users and addresses": [
         "用户和地址"
       ],
       "Verification": [
         "验证"
+      ],
+      "Verify email address": [
+        "验证邮箱地址"
       ],
       "VPN apps": [
         "VPN apps"
@@ -10194,6 +10609,9 @@
       "WireGuard configuration": [
         "WireGuard 配置"
       ],
+      "You already have a ${ BRAND_NAME } account": [
+        "您已拥有 ${ BRAND_NAME } 账户"
+      ],
       "Your calendar link": [
         "您的日历链接"
       ],
@@ -10216,7 +10634,13 @@
         "您的恢复状态"
       ],
       "Your SMTP token": [
-        "您的 SMTP token"
+        "您的 SMTP 专用密码"
+      ],
+      "Your subscriptions": [
+        "您的账户等级"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "诚邀您体验 ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
         "邮编"
@@ -10366,6 +10790,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "在您发出的邮件中通过来源标识分享您的邀请链接，如：${ signature }这段标识文字将置于您的落款下方。您可以随时在设置中修改落款。"
       ],
+      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+        "在邮件列表中显示发件人的头像，无头像则显示发件人名称首字母。"
+      ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "此密钥不能再用于加密，并且其生成的数字签名都将被视为无效"
       ],
@@ -10374,6 +10801,9 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "新的计费周期将从 ${ formattedTime } 开始"
       ],
       "This address has been disabled": [
         "此地址已被停用"
@@ -10392,6 +10822,9 @@
       ],
       "This key is encrypted with an old password": [
         "此密钥是由以前的密码加密的"
+      ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "${ MAIL_APP_NAME } 使用此密钥加密您的通讯录数据"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
@@ -10416,6 +10849,9 @@
       ],
       "Your DKIM signing is working.": [
         "您的 DKIM 签名机制已就绪。"
+      ],
+      "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
+        "您的外部帐户可能已达到24小时带宽上限。${ BRAND_NAME } 将尽快恢复导入。"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -10494,6 +10930,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "密码必须至少包含 ${ length } 个字符"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
       ]
     },
     "Video control": {
@@ -10595,11 +11034,20 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "您设备上的日期和时间设置未同步。${ learnMore }"
       ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "使用此专用密码的设备或服务将无法再通过 ${ MAIL_APP_NAME } 发送邮件。"
+      ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "此次导入可能会耗尽您的 ${ BRAND_NAME } 账户存储空间，请考虑缩减导入内容。"
       ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "此次导入的所有邮件、文件夹和标签都将被删除。"
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "邮件服务器验证失败，如果您信任该服务器，可以跳过此项验证。"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "我们检测到您的 DNS 配置存在问题，请确认您的记录与下方所示一致。若问题仍存在，我们将关闭 DKIM 签名功能。"
@@ -10824,6 +11272,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "每 ${ interval } 年"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"
       ],

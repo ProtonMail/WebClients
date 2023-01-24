@@ -281,7 +281,7 @@
         "Excluir pasta"
       ],
       "Delete label": [
-        "Remover marcador"
+        "Excluir marcador"
       ],
       "Delete permanently": [
         "Excluir permanentemente"
@@ -4365,8 +4365,8 @@
         "${ messagesNotAuthorizedToMove } mensagens não puderam ser movidas."
       ],
       "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } rastreador de e-mails encontrado",
-        "${ numberOfTrackers } rastreadores de e-mails encontrados"
+        "${ numberOfTrackers } rastreador de e-mails bloqueado",
+        "${ numberOfTrackers } rastreadores de e-mails bloqueados"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grupo de contatos",
@@ -4472,7 +4472,7 @@
         "10 endereços de e-mail"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Uma frase de recuperação é uma das formas mais seguras de proteger o acesso à sua conta. Você pode usá-la para acessar sua conta e recuperar seus dados criptografados, se alguma vez esquecer sua senha."
+        "Uma frase de recuperação é uma das formas mais seguras de proteger o acesso à sua conta. Você pode usá-la para acessar sua conta e recuperar seus dados criptografados caso você esqueça sua senha."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Um pedido para cancelar a inscrição desta lista de discussão será enviado para o remetente do boletim informativo e processado automaticamente."
@@ -4834,7 +4834,7 @@
         "Como Hide My Email funciona"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
-        "Estou enviando essa mensagem para um não-usuário do ${ MAIL_APP_NAME } ."
+        "Estou enviando essa mensagem para um não-usuário do ${ MAIL_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
@@ -4981,8 +4981,8 @@
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Movendo muitas mensagens. Isso pode demorar um pouco."
+      "Moving messages. This may take a while.": [
+        "Movendo mensagens. Isso pode demorar um pouco."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
@@ -5010,6 +5010,9 @@
       ],
       "No group found": [
         "Nenhum grupo encontrado"
+      ],
+      "No imports to display.": [
+        "Nenhuma importação para exibir."
       ],
       "No label found": [
         "Nenhum marcador encontrado"
@@ -5094,7 +5097,7 @@
         "Por favor, selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Por favor, espera que suas alterações serão sincronizadas com o servidor."
+        "Por favor, aguarde até que suas alterações sejam sincronizadas com o servidor."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
@@ -5326,8 +5329,8 @@
         "Esta conversa contém mensagens na lixeira."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Essas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
-        "Essas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
+        "Esta mensagem será marcada como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
+        "Estas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Este e-mail falhou nos requisitos de autenticação de domínio. Ele pode ser falsificado ou encaminhado incorretamente!"
@@ -5364,7 +5367,7 @@
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Esta mensagem será marcada como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
-        "Essas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
+        "Estas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Esta mensagem será movida para Rascunhos para que você possa editá-la. Você precisará reagendar quando ela será enviada."
@@ -5556,7 +5559,7 @@
         "Você pode adicioná-la como anexo ou exibi-la no corpo do e-mail."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "Você pode mesclar calendários importados com calendários existentes de ${ BRAND_NAME } ."
+        "Você pode mesclar calendários importados com calendários existentes de ${ BRAND_NAME }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
@@ -5657,7 +5660,7 @@
         "Sua conta tem pelo menos uma fatura vencida. Sua conta é restrita. O não pagamento contínuo bloqueará seus e-mails e links de compartilhamento. ${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta do ${ BRAND_NAME } ."
+        "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta do ${ BRAND_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será utilizado para essa verificação única."
@@ -7492,26 +7495,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } dia",
-        "${ days } dias"
-      ],
-      "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
       ],
+      "${ hours } hour": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
       ],
       "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "por ${ n } mês",
+        "por ${ n } meses"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mês GRÁTIS",
-        "${ n } meses GRÁTIS"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {
@@ -7623,8 +7626,8 @@
         "Com o preço de ${ amount } por 30 meses"
       ],
       "for ${ n } month": [
-        "por ${ n } mês",
-        "por ${ n } meses"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "Get the deal": [
         "Aproveite a oferta"
@@ -7822,8 +7825,8 @@
         "${ elementsCount } conversas movidas para ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } conversação movida para o spam e o remetente adicionado à sua lista de spam.",
-        "${ elementsCount } conversações movidas para o spam e os remetentes adicionados à sua lista de spam."
+        "${ elementsCount } conversa movida para o spam e o remetente adicionado à sua lista de spam.",
+        "${ elementsCount } conversas movidas para o spam e os remetentes adicionados à sua lista de spam."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
@@ -8102,17 +8105,9 @@
         "${ daysCountLeft } dia",
         "${ daysCountLeft } dias"
       ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } hora",
         "${ hoursCountLeft } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minuto",
@@ -8121,6 +8116,34 @@
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } segundo",
         "${ secondsCountLeft } segundos"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hora",
+        "${ hoursInt }.5 horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ]
     },
     "Title": {
@@ -8654,6 +8677,23 @@
         "Sua avaliação gratuita termina em breve, em ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Ações"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
@@ -9057,8 +9097,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "A cada ${ interval } ano",
+        "A cada ${ interval } anos"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

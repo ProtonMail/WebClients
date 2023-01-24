@@ -484,10 +484,10 @@
       "Not spam": [
         "هرزنامه نیست"
       ],
-      "OK": [
+      "Ok": [
         "تایید"
       ],
-      "Ok": [
+      "OK": [
         "تایید"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3443,6 +3443,11 @@
         "پشتیبانی تورنت (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Delete key": [
+        "حذف کلید"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "مشکلی در صحت سنجی کلید امنیتی شما پیش آمد. لطفا دوباره امتحان کنید."
@@ -5267,9 +5272,6 @@
       "Update recovery phrase": [
         "بروزرسانی عبارت بازیابی"
       ],
-      "Update the URL in your password manager": [
-        "URL را در مدیریت کننده رمزعبور خود بروزرسانی کنید"
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "همین امروز طرح خود را ارتقا دهدید تا مزایای ${ planName } را از دست ندهید."
       ],
@@ -6783,6 +6785,11 @@
       ],
       "VPN connections": [
         "اتصالات VPN"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } offers and promotions": [
+        "$پیشنهادات و تبلیغات ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9084,16 +9091,6 @@
         "کادر vCard"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } ساعت",
-        "${ hours } ساعت"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } دقیقه",
-        "${ minutes } دقیقه"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "جستجوی منطقه‌های زمانی"
@@ -10533,8 +10530,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "هر ${ interval } سال",
+        "هر ${ interval } سال"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "هر ${ interval } سال، ${ timesString }",

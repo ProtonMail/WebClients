@@ -2583,6 +2583,9 @@
       "No group found": [
         "Nenhum grupo encontrado"
       ],
+      "No imports to display.": [
+        "Sem importações para mostrar."
+      ],
       "No preview available": [
         "Antevisão indisponível"
       ],
@@ -3598,16 +3601,6 @@
         "Definições"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuto"
-      ]
-    },
     "Title": {
       "# of accesses": [
         "Número de acessos"
@@ -3952,6 +3945,23 @@
       ],
       "You have no folders yet": [
         "Ainda não tem pastas"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Acções"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Size": [
+        "Tamanho"
+      ],
+      "Status": [
+        "Estado"
       ]
     },
     "Today icon tooltip in mini calendar": {

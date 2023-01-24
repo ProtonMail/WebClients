@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
+      "Attention required": [
+        "Потребує уваги"
+      ],
       "Authenticate": [
         "Автентифікація"
       ],
@@ -3354,6 +3357,9 @@
         "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників",
         "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників"
       ],
+      "Attention required": [
+        "Потребує уваги"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
@@ -3572,6 +3578,9 @@
       ],
       "No group found": [
         "Групу не знайдено"
+      ],
+      "No imports to display.": [
+        "Немає імпортувань для показу."
       ],
       "No results found": [
         "Результатів не знайдено"
@@ -5502,12 +5511,38 @@
         "Налаштування"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } година",
         "${ hours } години",
         "${ hours } годин",
-        "${ hours } годин"
+        "${ hours } години"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 годин",
+        "${ hoursInt }.5 години"
       ],
       "${ minutes } minute": [
         "${ minutes } хвилина",
@@ -5898,6 +5933,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Виберіть номер"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Дії"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Import": [
+        "Імпорт"
+      ],
+      "Size": [
+        "Розмір"
+      ],
+      "Status": [
+        "Стан"
       ]
     },
     "Title; create calendar modal": {
@@ -6359,8 +6411,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Щороку",
+        "Кожні ${ interval } роки",
         "Кожні ${ interval } років",
         "Кожні ${ interval } років"
       ],

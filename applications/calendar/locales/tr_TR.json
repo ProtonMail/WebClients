@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
+      "Attention required": [
+        "İlgilenmeniz gerekiyor"
+      ],
       "Authenticate": [
         "Kimliği doğrula"
       ],
@@ -2966,11 +2969,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
+      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -3230,6 +3239,9 @@
         "Bir davette en fazla ${ MAX_ATTENDEES } katılımcı bulunabilir",
         "Bir davette en fazla ${ MAX_ATTENDEES } katılımcı bulunabilir"
       ],
+      "Attention required": [
+        "İlgilenmeniz gerekiyor"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
@@ -3444,6 +3456,9 @@
       ],
       "No group found": [
         "Grup bulunamadı"
+      ],
+      "No imports to display.": [
+        "Görüntülenecek bir içe aktarma işlemi yok."
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
@@ -5292,10 +5307,28 @@
         "Ayarlar"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } s",
+        "${ hours } s"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 s",
+        "${ hoursInt }.5 s"
+      ],
+      "${ minutes } min": [
+        "${ minutes } dk",
+        "${ minutes } dk"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } saat",
         "${ hours } saat"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 saat",
+        "${ hoursInt }.5 saat"
       ],
       "${ minutes } minute": [
         "${ minutes } dakika",
@@ -5674,6 +5707,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Bir sayı seçin"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "Date": [
+        "Tarih"
+      ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Size": [
+        "Boyut"
+      ],
+      "Status": [
+        "Durum"
       ]
     },
     "Title; create calendar modal": {
@@ -6073,8 +6123,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "${ interval } yılda bir",
+        "${ interval } yılda bir"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval } yılda bir, ${ timesString }",

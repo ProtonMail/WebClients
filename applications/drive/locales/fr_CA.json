@@ -3326,6 +3326,9 @@
       "No group found": [
         "Aucun groupe trouvé"
       ],
+      "No imports to display.": [
+        "Aucune importation à afficher."
+      ],
       "No preview available": [
         "Aucun aperçu disponible"
       ],
@@ -3516,9 +3519,6 @@
       ],
       "Swiss privacy": [
         "Confidentialité suisse"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Tapotez sur le bouton + pour charger un fichier ou un dossier"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Veuillez vérifier plus tard."
@@ -3794,9 +3794,6 @@
       ],
       "name": [
         "nom"
-      ],
-      "name hash": [
-        "somme de contrôle du nom"
       ],
       "thumbnail": [
         "miniature"
@@ -5030,16 +5027,6 @@
         "Paramètres"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } heure",
-        "${ hours } heures"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
-      ]
-    },
     "Title": {
       "# of accesses": [
         "Nb d'accès"
@@ -5523,6 +5510,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "Vous avez 1 Go d'espace de stockage"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Actions"
+      ],
+      "Date": [
+        "Date"
+      ],
+      "Import": [
+        "Importer"
+      ],
+      "Size": [
+        "Taille"
+      ],
+      "Status": [
+        "État"
       ]
     },
     "Today icon tooltip in mini calendar": {

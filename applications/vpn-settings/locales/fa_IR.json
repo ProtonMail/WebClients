@@ -1636,6 +1636,11 @@
         "پشتیبانی تورنت (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Delete key": [
+        "حذف کلید"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "مشکلی در صحت سنجی کلید امنیتی شما پیش آمد. لطفا دوباره امتحان کنید."
@@ -2211,9 +2216,6 @@
       "Unsupported file": [
         "فایل پشتیبانی نشده"
       ],
-      "Update the URL in your password manager": [
-        "URL را در مدیریت کننده رمزعبور خود بروزرسانی کنید"
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "بهترین سرور را براساس میزان بار و مکان استفاده کنید: ${ formattedBestServerName }"
       ],
@@ -2735,6 +2737,12 @@
       "Two-password mode": [
         "حالت دوگذرواژه"
       ],
+      "Use a recovery email address": [
+        "استفاده از یک آدرس ایمیل بازیابی"
+      ],
+      "Use a recovery phone number": [
+        "استفاده از یک شماره تلفن بازیابی"
+      ],
       "User's new password": [
         "گذرواژه جدید کاربر"
       ],
@@ -2772,6 +2780,11 @@
     "label": {
       "Recovery phone number": [
         "شماره تلفن بازیابی"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } offers and promotions": [
+        "$پیشنهادات و تبلیغات ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {

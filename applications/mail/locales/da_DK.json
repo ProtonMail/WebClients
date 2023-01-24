@@ -3100,6 +3100,9 @@
       "Email address invalid": [
         "Ugyldig e-mailadresse"
       ],
+      "Email address is required": [
+        "E-mailadresse er påkrævet."
+      ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
       ],
@@ -3135,6 +3138,9 @@
       ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
+      ],
+      "IMAP server is required": [
+        "IMAP-server er påkrævet."
       ],
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
@@ -3208,6 +3214,9 @@
         "En af grupperne har ingen kontakter: ${ noContactGroupList }",
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Adgangskode er påkrævet."
+      ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
@@ -3223,6 +3232,9 @@
       ],
       "Please set a password": [
         "Opsæt en adgangskode"
+      ],
+      "Port is required": [
+        "Port er påkrævet."
       ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
@@ -4961,9 +4973,6 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Flytter en stor mængde beskeder. Dette kan tage et stykke tid."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
@@ -4990,6 +4999,9 @@
       ],
       "No group found": [
         "Ingen gruppe fundet"
+      ],
+      "No imports to display.": [
+        "Ingen importer at vise."
       ],
       "No label found": [
         "Ingen etikette fundet"
@@ -6115,6 +6127,12 @@
       "From:": [
         "Fra:"
       ],
+      "From: ${ from }": [
+        "Fra: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Fra: ${ fromEmail }"
+      ],
       "From: ${ importedEmail }": [
         "Fra: ${ importedEmail }"
       ],
@@ -6354,6 +6372,12 @@
       ],
       "To: ${ emailAddress }": [
         "Til: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "Til: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Til: ${ toEmail }"
       ],
       "Toolbar": [
         "Værktøjslinje"
@@ -7832,17 +7856,9 @@
         "${ daysCountLeft } dag",
         "${ daysCountLeft } dage"
       ],
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } time",
         "${ hoursCountLeft } timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minutter"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minut",
@@ -8384,6 +8400,23 @@
         "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Date": [
+        "Dato"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Size": [
+        "Størrelse"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "I dag"
@@ -8787,8 +8820,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Hver ${ interval } år",
+        "Hver ${ interval } år"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Hver ${ interval } år, ${ timesString }",

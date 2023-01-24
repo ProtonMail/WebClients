@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
       ],
+      "Attention required": [
+        "Atención requerida"
+      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -3236,6 +3239,9 @@
         "A lo sumo ${ MAX_ATTENDEES } participante está permitido por invitación",
         "A lo sumo ${ MAX_ATTENDEES } participantes están permitidos por invitación"
       ],
+      "Attention required": [
+        "Atención requerida"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
@@ -3450,6 +3456,9 @@
       ],
       "No group found": [
         "Ningún grupo encontrado"
+      ],
+      "No imports to display.": [
+        "No hay importaciones que mostrar."
       ],
       "No results found": [
         "No se encontraron resultados"
@@ -5035,26 +5044,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } día",
-        "${ days } días"
-      ],
-      "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
       ],
+      "${ hours } hour": [
+        "${ days } día",
+        "${ days } días"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "${ n } mes GRATIS",
+        "${ n } meses GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "for ${ n } mes",
+        "for ${ n } meses"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {
@@ -5166,8 +5175,8 @@
         "Al precio de ${ amount } durante 30 meses"
       ],
       "for ${ n } month": [
-        "for ${ n } mes",
-        "for ${ n } meses"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "Get the deal": [
         "Obtener la oferta"
@@ -5536,14 +5545,32 @@
         "Ajustes"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } hora",
-        "${ hours } hora"
+        "${ hours } horas"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 horas",
+        "${ hoursInt },5 horas"
       ],
       "${ minutes } minute": [
         "${ minutes } minuto",
-        "${ minutes } minuto"
+        "${ minutes } minutos"
       ]
     },
     "Timezone search placeholder": {
@@ -5918,6 +5945,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Elija un número"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Date": [
+        "Fecha"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Size": [
+        "Tamaño"
+      ],
+      "Status": [
+        "Estado"
       ]
     },
     "Title; create calendar modal": {
@@ -6317,8 +6361,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Cada año ${ interval }",
+        "Cada año ${ interval }"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada año, ${ timesString } ${ interval }",

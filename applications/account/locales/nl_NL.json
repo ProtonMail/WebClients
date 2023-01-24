@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
+      "Attention required": [
+        "Aandacht vereist"
+      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -507,10 +510,10 @@
       "Not spam": [
         "Geen spam"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -4284,6 +4287,9 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% gepauzeerd"
       ],
+      "Active": [
+        "Actief"
+      ],
       "Canceled": [
         "Geannuleerd"
       ],
@@ -4307,6 +4313,9 @@
       ],
       "Started": [
         "Gestart"
+      ],
+      "Stopped": [
+        "Gestopt"
       ]
     },
     "Import type": {
@@ -4597,6 +4606,9 @@
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
+      "An error occurred while communicating with the extension": [
+        "Er is een fout opgetreden tijdens de communicatie met de extensie"
+      ],
       "and": [
         "en"
       ],
@@ -4644,6 +4656,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Weet u zeker dat u beheerdersbevoegdheden van deze gebruiker wilt wegnemen?"
+      ],
+      "Attention required": [
+        "Aandacht vereist"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatisch antwoord is elke maand tussen de geselecteerde begin- en eindtijd actief."
@@ -4862,6 +4877,9 @@
       ],
       "Enable this address to join this calendar": [
         "Schakel dit adres in om lid te worden van deze agenda"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Activeer TLS of SSL op de externe dienst indien dit wordt ondersteund."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Het opnieuw inschakelen van herstel per uitdrukking zal een nieuwe herstelzin genereren."
@@ -5761,9 +5779,6 @@
       ],
       "Update recovery phrase": [
         "Herstelzin bijwerken"
-      ],
-      "Update the URL in your password manager": [
-        "Werk de URL in uw wachtwoordmanager bij"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
@@ -7182,6 +7197,12 @@
       "Signature": [
         "Handtekening"
       ],
+      "SMTP port": [
+        "SMTP poort"
+      ],
+      "SMTP server": [
+        "SMTP server"
+      ],
       "SMTP token": [
         "SMTP-token"
       ],
@@ -7268,6 +7289,12 @@
       ],
       "URL": [
         "Website"
+      ],
+      "Use a recovery email address": [
+        "Gebruik een herstel-e-mailadres"
+      ],
+      "Use a recovery phone number": [
+        "Gebruik een herstel-telefoonnummer"
       ],
       "Use folder colors": [
         "Gebruik mapkleuren"
@@ -9414,26 +9441,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ hours } hour": [
         "${ hours } uur",
         "${ hours } uur"
       ],
+      "${ hours } hour": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
+        "${ seconds } seconde",
+        "${ seconds } seconden"
       ]
     },
     "specialoffer: Deal details": {
@@ -9458,12 +9485,6 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
-      ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -9472,9 +9493,6 @@
       ],
       "Premium Mail, Calendar and Drive": [
         "Premium Mail, Calendar en Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
@@ -9550,8 +9568,8 @@
         "U betaalt ${ amount } voor 30 maanden"
       ],
       "for ${ n } month": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ],
       "Get the deal": [
         "Kies deze deal"
@@ -9582,12 +9600,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Black Friday Sale"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Week Sale"
-      ],
       "End of year offer": [
         "Eindejaarsaanbieding"
       ],
@@ -9918,6 +9930,9 @@
       "Phone number updated": [
         "Telefoonnummer bijgewerkt"
       ],
+      "Port copied to clipboard": [
+        "Poort gekopieerd naar klembord"
+      ],
       "Preference saved": [
         "Voorkeur opgeslagen"
       ],
@@ -9926,6 +9941,9 @@
       ],
       "Resuming import": [
         "Hervat import"
+      ],
+      "Server copied to clipboard": [
+        "Server gekopieerd naar klembord"
       ],
       "Session revoked": [
         "Sessie ingetrokken"
@@ -10105,10 +10123,28 @@
         "Geen SMTP-tokens gevonden"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } u",
+        "${ hours } u"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 u",
+        "${ hoursInt },5 u"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } uur",
         "${ hours } uren"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 uur",
+        "${ hoursInt },5 uren"
       ],
       "${ minutes } minute": [
         "${ minutes } minuut",
@@ -11640,8 +11676,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Elk jaar",
+        "Elke ${ interval } jaar"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Elke jaar, ${ timesString }",

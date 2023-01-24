@@ -335,10 +335,10 @@
       "No": [
         "Ne"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5758,18 +5758,6 @@
         "vCard polje"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } sat",
-        "${ hours } sata",
-        "${ hours } sati"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minute",
-        "${ minutes } minuta"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Pretražite vremensku zonu"
@@ -6795,8 +6783,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Svaku ${ interval } godinu",
+        "Svake ${ interval } godine",
         "Svakih ${ interval } godina"
       ],
       "Every ${ interval } year, ${ timesString }": [

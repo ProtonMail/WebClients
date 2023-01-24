@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
+      "Attention required": [
+        "Vyžadována pozornost"
+      ],
       "Authenticate": [
         "Ověřit"
       ],
@@ -3354,6 +3357,9 @@
         "Na jednu pozvánku je povoleno nejvýše ${ MAX_ATTENDEES } účastníků",
         "Na jednu pozvánku je povoleno nejvýše ${ MAX_ATTENDEES } účastníků"
       ],
+      "Attention required": [
+        "Vyžadována pozornost"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
@@ -3572,6 +3578,9 @@
       ],
       "No group found": [
         "Nebyla nalezena žádná skupina"
+      ],
+      "No imports to display.": [
+        "Žádné importy k zobrazení."
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
@@ -5502,12 +5511,38 @@
         "Nastavení"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } hodina",
         "${ hours } hodiny",
         "${ hours } hodin",
         "${ hours } hodin"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny"
       ],
       "${ minutes } minute": [
         "${ minutes } minuta",
@@ -5898,6 +5933,23 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Vyberte číslo"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Akce"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Size": [
+        "Velikost"
+      ],
+      "Status": [
+        "Stav"
       ]
     },
     "Title; create calendar modal": {
@@ -6359,8 +6411,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "${ interval }",
+        "Každé ${ interval } roky",
         "Každých ${ interval } roků",
         "Každých ${ interval } roků"
       ],

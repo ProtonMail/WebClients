@@ -80,6 +80,9 @@
       "Apply": [
         "Virkja"
       ],
+      "Apply to existing messages": [
+        "Setja á fyrirliggjandi skilaboð"
+      ],
       "Attach screenshot(s)": [
         "Hengja við skjámynd(ir)"
       ],
@@ -122,6 +125,9 @@
       "Choose a file or drag it here": [
         "Veldu skrá eða dragðu hana hingað"
       ],
+      "Claim it": [
+        "Krefjast þess"
+      ],
       "Clear all formatting": [
         "Hreinsa öll snið"
       ],
@@ -155,6 +161,9 @@
       "Continue to ${ name }": [
         "Halda áfram í ${ name }"
       ],
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Halda áfram með ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
       "Continue with Google": [
         "Halda áfram með Google"
       ],
@@ -181,6 +190,12 @@
       ],
       "Create link": [
         "Búa til tengil"
+      ],
+      "Create users": [
+        "Búa til notendaaðganga"
+      ],
+      "Create your own": [
+        "Búðu til þitt eigið"
       ],
       "Current plan": [
         "Núverandi áskriftarleið"
@@ -254,6 +269,9 @@
       "Download all configurations": [
         "Sækja allar stillingar"
       ],
+      "Download CSV sample": [
+        "Sækja CSV sýnishorn"
+      ],
       "Download ICS": [
         "Sækja ICS"
       ],
@@ -314,6 +332,9 @@
       "Extend": [
         "Framlengja"
       ],
+      "Filters are being applied. This might take a few minutes.": [
+        "Verið er að beita síum. Þetta gæti tekið nokkrar mínútur."
+      ],
       "Fit to window": [
         "Aðlaga að glugga"
       ],
@@ -332,8 +353,14 @@
       "Generate recovery phrase": [
         "Útbúa endurheimtusetningu"
       ],
+      "Generate token": [
+        "Útbúa tákn"
+      ],
       "Get ${ vpnPlus }": [
         "Ná í ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Fáðu nýtt dulkóðað netfang"
       ],
       "Get verification code": [
         "Sækja staðfestingarkóða"
@@ -398,6 +425,9 @@
       "label emails as": [
         "setja skýringu á tölvupósta sem"
       ],
+      "Leave": [
+        "Fara"
+      ],
       "Load more": [
         "Hlaða inn fleiri"
       ],
@@ -407,8 +437,20 @@
       "Make default": [
         "Gera sjálfgefið"
       ],
+      "Manage communication preferences": [
+        "Stjórna samskiptastillingum"
+      ],
+      "Manage folders": [
+        "Sýsla með möppur"
+      ],
+      "Manage labels": [
+        "Sýsla með merkingar"
+      ],
       "Mark as default": [
         "Merkja sem sjálfgefið"
+      ],
+      "Mark as not spam": [
+        "Merktu sem ekki ruslpóst"
       ],
       "Mark as spam": [
         "Merkja sem ruslpóst"
@@ -424,6 +466,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Meiri upplýsingar: ${ safeTitle }"
+      ],
+      "More info: Keyboard shortcuts": [
+        "Frekari upplýsingar: Lyklaborðsflýtivísar"
       ],
       "move emails to": [
         "flytja póst í"
@@ -443,10 +488,10 @@
       "Not spam": [
         "Ekki ruslpóstur"
       ],
-      "OK": [
+      "Ok": [
         "Í lagi"
       ],
-      "Ok": [
+      "OK": [
         "Í lagi"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -463,6 +508,9 @@
       ],
       "Pay": [
         "Borga"
+      ],
+      "Pay ${ price } now": [
+        "Greiða ${ price } núna"
       ],
       "Preview": [
         "Forskoðun"
@@ -506,6 +554,9 @@
       "Remove": [
         "Fjarlægja"
       ],
+      "Remove Block": [
+        "Fjarlægja Hindrun"
+      ],
       "Remove bonuses": [
         "Fjarlægja bónusa"
       ],
@@ -517,6 +568,9 @@
       ],
       "Remove this label": [
         "Fjarlægja þessa merkingu"
+      ],
+      "Remove this member": [
+        "Fjarlægja þennan meðlim"
       ],
       "Remove this notification": [
         "Fjarlægja þessa áminningu"
@@ -581,6 +635,9 @@
       "Revoke all other sessions": [
         "Afturkalla allar aðrar setur"
       ],
+      "Revoke this invitation": [
+        "Afturkalla þetta boð"
+      ],
       "Save": [
         "Vista"
       ],
@@ -601,6 +658,9 @@
       ],
       "Search settings": [
         "Leitarstillingar"
+      ],
+      "See plan features": [
+        "Sjá áskriftareiginleika"
       ],
       "Select ${ planTitle }": [
         "Velja ${ planTitle }"
@@ -665,6 +725,9 @@
       "Sign out": [
         "Skrá út"
       ],
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Skráðu þig út frá ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
       "Sign out of all accounts": [
         "Skrá út af öllum aðgöngum"
       ],
@@ -716,6 +779,9 @@
       "Underline": [
         "Undirstrikað"
       ],
+      "Undo import": [
+        "Afturkalla innflutning"
+      ],
       "Unlock": [
         "Aflæsa"
       ],
@@ -758,6 +824,9 @@
       "Use recovery code": [
         "Nota endurheimtukóða"
       ],
+      "Use your current email instead": [
+        "Nota núverandi netfang þitt í staðinn"
+      ],
       "Use “${ label }” setting": [
         "Nota “${ label }” stillingu"
       ],
@@ -788,11 +857,17 @@
       "Void all recovery files?": [
         "Ógilda allar endurheimtuskrár?"
       ],
+      "What do I get?": [
+        "Hvað fæ ég?"
+      ],
       "Wipe": [
         "Þurrka út"
       ],
       "Yes": [
         "Já"
+      ],
+      "Yes, undo": [
+        "Já, afturkalla"
       ],
       "Zoom in": [
         "Renna að"
@@ -1116,6 +1191,10 @@
       "${ users } user": [
         "${ users } notandi",
         "${ users } notendur"
+      ],
+      "Total for ${ n } month": [
+        "Samtals fyrir ${ n } mánuð",
+        "Samtals fyrir ${ n } mánuði"
       ]
     },
     "Collapsible tooltip": {
@@ -2390,6 +2469,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } er notandanafnið þitt. Til að búa til ${ Local }@${ Domain }, farðu þá í Stillingar > Skilaboð og að semja > Stutt lén (pm.me)"
+      ],
       "A group with this name already exists": [
         "Hópur með þessu nafni er þegar til"
       ],
@@ -2413,6 +2495,9 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Sjálfvirk svör er kostuð aðgerð. Vinsamlegast uppfærðu í kostaðan reikning til að nota þesssa aðgerð."
+      ],
+      "Calendar cannot be found": [
+        "Dagatalið finnst ekki"
       ],
       "Calendar limit reached": [
         "Dagatals takmarki náð"
@@ -2443,6 +2528,9 @@
       "Email address disabled": [
         "Netfang er óvirkt"
       ],
+      "Email address is required": [
+        "Netfang er áskilið"
+      ],
       "Email is not valid": [
         "Netfang ekki gilt"
       ],
@@ -2472,6 +2560,9 @@
       ],
       "Folder name cannot be empty.": [
         "Heiti möppu getur ekki verið autt."
+      ],
+      "IMAP server is required": [
+        "IMAP þjónn er nauðsynlegur"
       ],
       "Incorrect login credentials. Please try again.": [
         "Röng innskráningarauðkenni, reyndu aftur."
@@ -2570,6 +2661,9 @@
       "Organization not recognized. Try again.": [
         "Stofnun ekki þekkt. Reyndu aftur."
       ],
+      "Password is required": [
+        "Lykilorð er áskilið"
+      ],
       "Passwords do not match": [
         "Lykilorð passa ekki saman"
       ],
@@ -2618,6 +2712,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Vinsamlegast uppfærðu í viðskiptaáætlun með fleiri en 1 notanda til að fá stuðning fyrir marga notendur."
+      ],
+      "Port is required": [
+        "Port er áskilið"
       ],
       "Primary address key is not decrypted": [
         "Aðaldulritunarlykill er ekki afkóðaður"
@@ -2725,6 +2822,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Það eru of margar möppur á ytri reikningnum þínum. Vinsamlega aðlagaðu innflutninginn með því að eyða nokkrum möppum."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Þessi reitur fer yfir hámarkið á ${ maximumLength } stöfum."
+      ],
       "This field is required": [
         "Þessi reitur er skilyrtur"
       ],
@@ -2793,6 +2893,9 @@
       ],
       "You must set a name": [
         "Þú verður að setja nafn"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "Þú þarft að hafa sérsniðið lén til að búa til SMTP skilalykil."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Aðgangurinn þinn eða stofnunar er með ógreiddan reikning. Endilega borgaðu alla ógreidda reikninga sem fyrst."
@@ -3883,6 +3986,12 @@
       "Are you sure you want to delete this calendar?": [
         "Ertu viss um að þú viljir eyða þessu dagatali?"
       ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "Ertu viss um að þú viljir eyða þessu dagatali? Öll netföng sem þú deildir þessu dagatali með munu missa aðgang að því."
+      ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "Ertu viss um að þú viljir eyða þessu dagatali? Öllum viðburðum í henni verður eytt."
+      ],
       "Are you sure you want to delete this domain?": [
         "Ertu viss um að þú viljir eyða þessu léni?"
       ],
@@ -4110,6 +4219,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Tölvupóstar sem merktir eru með þessu merki verður ekki eytt og er enn að finna í viðkomandi möppu."
       ],
+      "Enable this address to join this calendar": [
+        "Virkjaðu þetta netfang til að tengjast þessu dagatali"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Ef endurheimtusetning er virkjuð aftur þá mun það útbúa nýja endurheimtusetningu."
       ],
@@ -4196,6 +4308,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ef annar stjórnandi breytti þessu lykilorði, þarftu að spyrja viðkomandi um\n nýja lykilorðið stofnunarinnar."
+      ],
+      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
+        "Ef tímabelti kerfisins passar ekki við núverandi vali á tímabelti verður þú beðinn um að uppfæra það (í mesta lagi einu sinni á dag)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Ef þetta lén er þegar virkt í móttöku á tölvupósti, þá ættirðu að velja ${ boldAddresses } flipann og bæta við öllum virkum tölvupóstföngum áður en MX-færslu er breytt til að tryggja hnökralausa millifærslu."
@@ -4631,6 +4746,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Að endurlesa síðuna eða ${ link } leysir sjálfkrafa mörg vandamál."
       ],
+      "Remove one of your calendars to join this one": [
+        "Fjarlægðu eitt af dagatölunum þínum til að taka þátt í þessu"
+      ],
       "Revoke certificate ${ name }": [
         "Afturkalla skilríki ${ name }"
       ],
@@ -4746,6 +4864,10 @@
       "The following address is unavailable.": [
         "Eftirfarandi heimilisfang er ekki tiltækt.",
         "Eftirfarandi heimilisföng eru ekki tiltæk."
+      ],
+      "The following address was not created.": [
+        "Eftirfarandi netfang var ekki útbúið.",
+        "Eftirfarandi netföng voru ekki útbúin."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Innflutnings-Útflutnings forritið gerir þér kleift að flytja út skilaboð í staðbundið afrit og að endurheimta fyrri afrit inn á reikninginn þinn."
@@ -4900,9 +5022,6 @@
       "Update recovery phrase": [
         "Uppfæra endurheimtusetningu"
       ],
-      "Update the URL in your password manager": [
-        "Uppfærðu slóðina í lykilorðastjóranum þínum"
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Uppfærðu í dag til að forðast að tapa eftirfarandi ${ planName } kostum."
       ],
@@ -4917,6 +5036,9 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Notaðu besta netþjóninn í samræmi við núverandi álag og stöðu: ${ formattedBestServerName }"
+      ],
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Notaðu eftirfarandi skilríki þegar þú tengist ${ VPN_APP_NAME } netþjóna án forrits. Dæmi um notkunartilvik eru: Tunnelblick á macOS, OpenVPN á GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Sannvottun getur tekið nokkrar mínútur."
@@ -5035,11 +5157,18 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Þú getur notað eftirfarandi skilríki til að tengjast ${ VPN_APP_NAME } miðlara með því að nota þriðja aðila, opinn VPN forrit, eins og Tunnelblick fyrir macOS eða OpenVPN fyrir GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Þú getur ekki sent meira en ${ emailSendLimitNumber } boð í tölvupósti fyrir næsta sólarhring",
+        "Þú getur ekki sent meira en ${ emailSendLimitNumber } boð í tölvupósti fyrir næsta sólarhring"
+      ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Þú getur ekki notað OpenVPN / IKEv2 skilríki til að skrá þig inn í ${ VPN_APP_NAME } forrit eða í stjórnborð ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Þú settir ekki upp endurheimtuaðferð þannig að endurheimt reiknings er ómöguleg ef þú gleymir lykilorðinu þínu. Halda áfram án endurheimtuaðferðar?"
+      ],
+      "You have no personal calendars to export.": [
+        "Þú hefur engin persónuleg dagatöl til að flytja út."
       ],
       "You have no saved payment methods.": [
         "Þú ert ekki með neina vistaða greiðslumáta."
@@ -5086,6 +5215,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Þér verður fljótlega endurbeint til PayPal til að sannreyna greiðsluna þína."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "Þú munt ekki geta endurheimt læst gögn með því að nota endurheimtuskrárnar þínar. Þetta mun einnig ógilda traustar upplýsingar um endurheimt tækis."
+      ],
       "You'll stay signed in even after you close the browser.": [
         "Þú verður áfram skráður inn jafnvel eftir að þú lokar vafranum."
       ],
@@ -5127,6 +5259,10 @@
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "Þinn fyrirliggjandi ${ BRAND_NAME } reikning er hægt að nota til að fá aðgang að öllum ${ BRAND_NAME } þjónustum. Vinsamlega skráðu þig inn með ${ email }."
+      ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Innflutningi þínum frá ${ accounts } er tímabundið seinkað.",
+        "Innflutningi þínum frá ${ accounts } er tímabundið seinkað."
       ],
       "Your import will not be processed.": [
         "Innflutningurinn þinn verður ekki meðhöndlaður."
@@ -6390,6 +6526,12 @@
         "Innflutningur þinn er að hefjast"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Flytja inn öll skilaboð frá ${ itemsToImportCount } möppu og merktu þær sem ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Flytja inn öll skilaboð frá ${ itemsToImportCount } möppu og merktu þær sem ${ LABEL_MARKUP_PLACEHOLDER }"
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Þú getur búið til allt að ${ MAX_LINKS_PER_CALENDAR } hlekk á dagatal. Til að búa til nýjan hlekk á þetta dagatal skaltu eyða einum af listanum hér að neðan.",
@@ -6654,7 +6796,61 @@
         "Uppfæra núna"
       ]
     },
+    "new_plans: attribute": {
+      "Get ${ connections } high-speed VPN connection": [
+        "Fáðu ${ connections } háhraða VPN tengingu",
+        "Fáðu ${ connections } háhraða VPN tengingar"
+      ],
+      "Get ${ connections } high-speed VPN connection per user": [
+        "Fáðu ${ connections } háhraða VPN tengingu á hvern notanda",
+        "Fáðu ${ connections } háhraða VPN tengingar á hvern notanda"
+      ]
+    },
     "new_plans: feature": {
+      "${ n } custom email domain": [
+        "${ n } sérsniðið tölvupóstlén",
+        "${ n } sérsniðin tölvupóstlén"
+      ],
+      "${ n } email address": [
+        "${ n } netfang",
+        "${ n } netföng/dulnefni"
+      ],
+      "${ n } email address per user": [
+        "${ n } netfang á hvern notanda",
+        "${ n } netföng á hvern notanda"
+      ],
+      "${ n } filter": [
+        "${ n } sía",
+        "${ n } síur"
+      ],
+      "${ n } folder": [
+        "${ n } mappa",
+        "${ n } möppur"
+      ],
+      "${ n } folder and label": [
+        "${ n } mappa og merki",
+        "${ n } möppur og merki"
+      ],
+      "${ n } label": [
+        "${ n } merki",
+        "${ n } merki"
+      ],
+      "${ n } message per day": [
+        "${ n } skilaboð á dag",
+        "${ n } skilaboð á dag"
+      ],
+      "${ n } personal calendar": [
+        "${ n } persónulegt dagatal",
+        "${ n } persónuleg dagatöl"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN tenging",
+        "${ n } VPN tengingar"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN tenging á hvern notanda",
+        "${ n } VPN tengingar á hvern notanda"
+      ],
       "${ size } storage": [
         "${ size } geymslurými"
       ],
@@ -6678,6 +6874,10 @@
       ],
       "End-to-end encryption": [
         "Enda-í-enda dulritun"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "Háhraða VPN á ${ n } tæki",
+        "Háhraða VPN á ${ n } tækjum"
       ],
       "Limited support": [
         "Takmörkuð aðstoð"
@@ -6728,6 +6928,12 @@
         "/mánuði"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "Þú hefur enn ${ daysRemaining } dag eftir á þínum ${ currentPlanName } reikningi.",
+        "Þú hefur enn ${ daysRemaining } daga eftir á þínum ${ currentPlanName } reikningi."
+      ]
+    },
     "new_plans: signup": {
       "Payment details": [
         "Greiðsluupplýsingar"
@@ -6745,6 +6951,10 @@
       ]
     },
     "new_plans: tooltip": {
+      "Create up to ${ n } custom calendar.": [
+        "Búa til allt að ${ n } sérsniðið dagatal.",
+        "Búa til allt að ${ n } sérsniðin dagatöl."
+      ],
       "Route your internet traffic through the Tor network with a single click": [
         "Beindu allri þinni umferð í gegnum Tor-netið með einum smelli"
       ],
@@ -6756,6 +6966,10 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "Create ${ numberOfPersonalCalendars } personal calendar": [
+        "Stofnaðu ${ numberOfPersonalCalendars } persónulegt dagatal",
+        "Stofnaðu allt að ${ numberOfPersonalCalendars } persónuleg dagatöl"
+      ],
       "Priority support": [
         "Forgangsstuðningur"
       ],
@@ -6772,6 +6986,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } útbúið"
+      ],
+      "A disabled address cannot be default": [
+        "Óvirkt netfang getur ekki verið sjálfgefið"
+      ],
+      "An external address cannot be default": [
+        "Ytra netfang getur ekki verið sjálfgefið"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Lykli með fingrafarið ${ fp } hefur verið eytt."
@@ -7054,6 +7274,20 @@
         "Sameina við dagatal"
       ]
     },
+    "Organization capacity error": {
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Áskrift þín inniheldur að hámarki ${ availableAddresses } fleiru netfangi.",
+        "Áskrift þín inniheldur að hámarki ${ availableAddresses } fleirum netföngum."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Áskrift þín inniheldur að hámarki ${ availableNumberOfMembers } fleiri fyrirtækjanotanda.",
+        "Áskrift þín inniheldur að hámarki ${ availableNumberOfMembers } fleiri fyrirtækjanotendur."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Áskrift þín inniheldur að hámarki ${ availableVPNAccess } fleiri VPN reikningi.",
+        "Áskrift þín inniheldur að hámarki ${ availableVPNAccess } fleirum VPN reikningum."
+      ]
+    },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
         ".deb (fyrir Debian/Ubuntu)"
@@ -7192,6 +7426,10 @@
     "plan customizer, users": {
       "contact": [
         "tengiliður"
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Ef þú þarft meira en ${ maxUsers } notandareikning, vinsamlega ${ contact } Söluteymið okkar.",
+        "Ef þú þarft meira en ${ maxUsers } notandareikninga, vinsamlega ${ contact } Söluteymið okkar."
       ]
     },
     "Price": {
@@ -7436,13 +7674,45 @@
       ]
     },
     "Subscription attribute": {
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } háhraða VPN tenging",
+        "${ maxVpn } háhraða VPN tengingar"
+      ],
       "${ n } calendar": [
         "${ n } dagatal",
         "${ n } dagatöl"
       ],
+      "${ n } calendar per user": [
+        "${ n } dagatal á hvern notanda",
+        "${ n } dagatöl á hvern notanda"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } háhraða VPN tenging",
+        "${ n } háhraða VPN tengingar"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } háhraða VPN tenging á hvern notanda",
+        "${ n } háhraða VPN tengingar á hvern notanda"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN tenging",
+        "${ n } VPN tengingar"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN tenging á hvern notanda",
+        "${ n } VPN tengingar á hvern notanda"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } netfang",
+        "${ UsedAddresses } netföng"
+      ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } af ${ MaxAddresses } netfangi",
         "${ UsedAddresses } af ${ MaxAddresses } netföngum"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } dagatal",
+        "${ UsedCalendars } dagatöl"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } af ${ MaxDomains } sérsniðnu léni",
@@ -7697,10 +7967,28 @@
         "vCard-gagnasvið"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } kl.",
+        "${ hours } kl."
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 kl.",
+        "${ hoursInt }.5 kl."
+      ],
+      "${ minutes } min": [
+        "${ minutes } mín.",
+        "${ minutes } mín."
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } klukkustund",
         "${ hours } klukkustundir"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 klukkustund",
+        "${ hoursInt }.5 klukkustundir"
       ],
       "${ minutes } minute": [
         "${ minutes } mínúta",
@@ -7750,6 +8038,9 @@
       "Action": [
         "Aðgerð"
       ],
+      "Activate account and generate keys": [
+        "Virkjaðu reikning og búðu til lykla"
+      ],
       "Activate organization key": [
         "Virkja dulritunarlykil fyrir stofnun"
       ],
@@ -7783,6 +8074,15 @@
       "Add Sieve filter": [
         "Bæta við Sieve-síu"
       ],
+      "Add to Not spam list": [
+        "Bæta við EKKi ruslpóstlista"
+      ],
+      "Add to spam list": [
+        "Bæta á ruslpóstlista"
+      ],
+      "Add to your block list": [
+        "Bæta á þinn bannlista"
+      ],
       "Add user": [
         "Bæta við notanda"
       ],
@@ -7803,6 +8103,9 @@
       ],
       "Appearance": [
         "Útlit"
+      ],
+      "Apply filter to existing messages": [
+        "Notaðu síu á núverandi skilaboð"
       ],
       "Apply gift code": [
         "Gjafakóði"
@@ -7830,6 +8133,9 @@
       ],
       "Bridge for ${ platform }": [
         "Brú fyrir ${ platform }"
+      ],
+      "Cancel Mail subscription": [
+        "Hætta tölvupóstáskrift"
       ],
       "Card verification": [
         "Sannvottun greiðslukorts"
@@ -7897,8 +8203,27 @@
       "Continue with partial import?": [
         "Halda áfram með innflutning að hluta?"
       ],
+      "Couldn’t create accounts": [
+        "Gat ekki búið til reikninga"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Stofna ${ selectedUserIds.length } notanda",
+        "Stofna ${ selectedUserIds.length } notendur"
+      ],
+      "Create multiple user accounts": [
+        "Búðu til marga notendareikninga"
+      ],
+      "Create user accounts": [
+        "Búa til notendareikninga"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Stofnaðu þinn ${ BRAND_NAME } reikning"
+      ],
+      "Create your ${ BRAND_NAME } address": [
+        "Búðu til þitt ${ BRAND_NAME } netfang"
+      ],
+      "Creating user accounts": [
+        "Útbúa notendareikninga"
       ],
       "Credentials": [
         "Skilríki"
@@ -7953,6 +8278,9 @@
       ],
       "Delete ${ label.Name } label": [
         "Eyða ${ label.Name } merki"
+      ],
+      "Delete ${ tokenNameToRemove }?": [
+        "Eyða ${ tokenNameToRemove }?"
       ],
       "Delete account": [
         "Eyða notandaaðgangi"
@@ -8053,6 +8381,10 @@
       "External PGP settings": [
         "Ytri PGP-stillingar"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Tókst ekki að stofna ${ failedUsers.length } notandareikning.",
+        "Tókst ekki að stofna ${ failedUsers.length } notandareikninga."
+      ],
       "Filters": [
         "Síur"
       ],
@@ -8074,6 +8406,9 @@
       "Generate new recovery phrase?": [
         "Útbúa nýja endurheimtusetningu?"
       ],
+      "Generate SMTP token": [
+        "Útbúa SMTP tákn"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Fáðu ${ vpnPlus } til að fá aðgang að öllum netþjónum"
       ],
@@ -8086,6 +8421,12 @@
       "How does it work?": [
         "Hvernig virkar það?"
       ],
+      "How to refer a friend and get credits": [
+        "Hvernig á að vísa á vin og fá inneign"
+      ],
+      "How your free trial works": [
+        "Hvernig þín ókeypis prufuáskrift virkar"
+      ],
       "Human verification": [
         "Mennskupróf"
       ],
@@ -8097,6 +8438,9 @@
       ],
       "Import": [
         "Flytja inn"
+      ],
+      "Import and export": [
+        "Innflutningur og útflutningur"
       ],
       "Import as simple event?": [
         "Flytja inn sem einfaldan viðburð?",
@@ -8231,6 +8575,9 @@
       "Previous": [
         "Fyrra"
       ],
+      "Privacy and data collection": [
+        "Persónuvernd og gagnasöfnun"
+      ],
       "Processing...": [
         "Í vinnslu..."
       ],
@@ -8282,6 +8629,9 @@
       "Secure email based in Switzerland": [
         "Öruggur tölvupóstur hýstur í Sviss"
       ],
+      "Security and privacy": [
+        "Öryggi og persónuvernd"
+      ],
       "Security logs": [
         "Öryggisskrá"
       ],
@@ -8302,6 +8652,9 @@
       ],
       "Select when you want this notification to be sent": [
         "Veldu hvenær þú vilt að þessi tilkynning sé send"
+      ],
+      "Sender image": [
+        "Mynd sendanda"
       ],
       "Session management": [
         "Setustýring"
@@ -8336,11 +8689,23 @@
       "Sign out": [
         "Skrá út"
       ],
+      "Signed in successfully!": [
+        "Innskráning tókst!"
+      ],
+      "Signed in to member account": [
+        "Skráður inn á meðlimareikning"
+      ],
+      "SMTP tokens": [
+        "SMTP tákn"
+      ],
       "Sort folders alphabetically": [
         "Raða möppum í stafrófsröð"
       ],
       "Sort labels alphabetically": [
         "Raða merkingum í stafrófsröð"
+      ],
+      "Spam and block list": [
+        "Ruslpóstur og bannlisti"
       ],
       "Start a new import": [
         "Hefja nýjan innflutning"
@@ -8363,6 +8728,10 @@
       "Success": [
         "Tókst"
       ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Tókst að stofna ${ localSuccessfullyCreatedUsers.length } notandareikning",
+        "Tókst að stofna ${ localSuccessfullyCreatedUsers.length } notandareikninga"
+      ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "Tókst að stofna ${ successfullyCreatedUsers.length } notandareikning",
         "Tókst að stofna ${ successfullyCreatedUsers.length } notandareikninga"
@@ -8381,6 +8750,12 @@
       ],
       "Time zone": [
         "Tímabelti"
+      ],
+      "Total paid": [
+        "Samtals greitt"
+      ],
+      "Track your referrals": [
+        "Fylgstu með tilvísunum þínum"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Reyndu það besta af ${ MAIL_APP_NAME } ókeypis"
@@ -8409,6 +8784,9 @@
       "Verification": [
         "Sannvottun"
       ],
+      "Verify email address": [
+        "Staðfestu netfang"
+      ],
       "VPN apps": [
         "VPN forrit"
       ],
@@ -8433,6 +8811,9 @@
       "WireGuard configuration": [
         "WireGuard stilling"
       ],
+      "You already have a ${ BRAND_NAME } account": [
+        "Þú hefur nú þegar ${ BRAND_NAME } reikning"
+      ],
       "Your calendar link": [
         "Þín dagatalskrækja"
       ],
@@ -8453,6 +8834,12 @@
       ],
       "Your recovery status": [
         "Þín endurheimtustaða"
+      ],
+      "Your SMTP token": [
+        "Þitt SMTP tákn"
+      ],
+      "Your subscriptions": [
+        "Þínar áskriftir"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Þér hefur verið boðið að prófa ${ MAIL_APP_NAME }"
@@ -8673,6 +9060,12 @@
       ],
       "Your default font will look like following:": [
         "Sjálfgefin leturgerð mun líta svona út:"
+      ]
+    },
+    "Upgrade": {
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+        "Uppfærðu í ${ planName } til að tengja allt að ${ n } tæki við VPN í einu",
+        "Uppfærðu í ${ planName } til að tengja allt að ${ n } tæki við VPN í einu"
       ]
     },
     "Upgrade notice": {
@@ -9036,8 +9429,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Á ${ interval } árs fresti",
+        "Á ${ interval } ára fresti"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Á ${ interval } árs fresti, ${ timesString }",

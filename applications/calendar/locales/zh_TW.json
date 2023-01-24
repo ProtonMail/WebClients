@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
+      "Attention required": [
+        "需要您的處理"
+      ],
       "Authenticate": [
         "驗證"
       ],
@@ -3177,6 +3180,9 @@
       "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
         "您最多可以一次邀請 ${ MAX_ATTENDEES } 位參與者"
       ],
+      "Attention required": [
+        "需要您的處理"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
       ],
@@ -3389,6 +3395,9 @@
       ],
       "No group found": [
         "未找到群組"
+      ],
+      "No imports to display.": [
+        "未有任何匯入可供顯示。"
       ],
       "No results found": [
         "找不到相符的結果"
@@ -5193,14 +5202,6 @@
         "設定"
       ]
     },
-    "Time unit": {
-      "${ hours } hours": [
-        "${ hours } 小時"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分鐘"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "搜尋時區"
@@ -5570,6 +5571,23 @@
         "請選擇一個數字"
       ]
     },
+    "Title header": {
+      "Actions": [
+        "動作"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "Import": [
+        "匯入"
+      ],
+      "Size": [
+        "大小"
+      ],
+      "Status": [
+        "狀態"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "建立行事曆"
@@ -5935,6 +5953,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "每 ${ interval } 年"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "每${ interval }年，${ timesString }"
       ],

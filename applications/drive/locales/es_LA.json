@@ -3284,6 +3284,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece ser que recientemente ha intentado subir ${ uploadName }. Si la carga falló, ${ replaceFile }. Si la carta está en proceso, reemplazarla cancelará la carga en curso."
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Los elementos de la papelera permanecerán aquí hasta que los borre permanentemente"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "Es tan sencillo como arrastrar y soltar o seleccionando archivos"
       ],
@@ -3373,6 +3376,9 @@
       ],
       "No group found": [
         "Ningún grupo encontrado"
+      ],
+      "No imports to display.": [
+        "No hay importaciones que mostrar."
       ],
       "No preview available": [
         "Vista previa no disponible"
@@ -3567,9 +3573,6 @@
       ],
       "Swiss privacy": [
         "Privacidad suiza"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Pulse el botón + para cargar un archivo o carpeta"
       ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalmente. Compruebe más tarde."
@@ -3840,14 +3843,14 @@
       "file data order": [
         "orden de datos de archivo"
       ],
+      "hash key": [
+        "clave hash"
+      ],
       "keys": [
         "claves"
       ],
       "name": [
         "nombre"
-      ],
-      "name hash": [
-        "nombre hash"
       ],
       "thumbnail": [
         "miniatura"
@@ -4960,26 +4963,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } día",
-        "${ days } días"
-      ],
-      "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
       ],
+      "${ hours } hour": [
+        "${ days } día",
+        "${ days } días"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "${ n } mes GRATIS",
+        "${ n } meses GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "for ${ n } mes",
+        "for ${ n } meses"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {
@@ -5091,8 +5094,8 @@
         "Al precio de ${ amount } durante 30 meses"
       ],
       "for ${ n } month": [
-        "for ${ n } mes",
-        "for ${ n } meses"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "Get the deal": [
         "Obtener la oferta"
@@ -5335,14 +5338,32 @@
         "Ajustes"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } hora",
-        "${ hours } hora"
+        "${ hours } horas"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 horas",
+        "${ hoursInt },5 horas"
       ],
       "${ minutes } minute": [
         "${ minutes } minuto",
-        "${ minutes } minuto"
+        "${ minutes } minutos"
       ]
     },
     "Title": {
@@ -5828,6 +5849,23 @@
       ],
       "You’ve got 1 GB of storage": [
         "Ha obtenido 1 GB de almacenamiento"
+      ]
+    },
+    "Title header": {
+      "Actions": [
+        "Acciones"
+      ],
+      "Date": [
+        "Fecha"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Size": [
+        "Tamaño"
+      ],
+      "Status": [
+        "Estado"
       ]
     },
     "Today icon tooltip in mini calendar": {

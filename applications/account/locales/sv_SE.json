@@ -510,11 +510,11 @@
       "Not spam": [
         "Inte skräppost"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -2856,7 +2856,7 @@
         "Kalendergräns nådd"
       ],
       "Checkout expired, please try again": [
-        "Utcheckningen är inte giltig längre, vänligen försök igen"
+        "Kassan löpt ut, försök igen"
       ],
       "Condition incomplete": [
         "Villkor ofullständig"
@@ -3149,7 +3149,7 @@
         "Nycklarna i din återställningsfil kan inte valideras. Kontakta support."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "Nycklarna i din återställningsfil kan inte valideras. Vänligen ladda upp dem en i taget för mer information."
+        "Nycklarna i dina återställningsfiler kan inte valideras. Ladda upp individuellt för mer information."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Etikettnamnet är ogiltigt. Välj ett annat namn."
@@ -4027,6 +4027,12 @@
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Krypterar och lägger till händelser i din kalender: ${ totalImported }/${ totalToImport }"
       ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Händelse har importerats. Den importerade händelsen kommer nu att visas i din kalender."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Händelser har importerats. De importerade händelserna kommer nu att visas i din kalender."
+      ],
       "Please don't close the tab before the importing process is finished.": [
         "Stäng inte fliken innan importprocessen är klar."
       ]
@@ -4059,6 +4065,12 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontakt krypterad och tillagd i din kontaktlista",
         "${ totalImported }/${ totalToImport } kontakter krypterade och tillagda i din kontaktlista"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Ett fel uppstod när din kontakt skulle krypteras och läggas till. Ingen kontakt kunde importeras."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Ett fel uppstod när dina kontakter krypterades och lades till. Ingen kontakt kunde importeras."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kontakten har importerats. Den importerade kontakten kommer nu att visas i din kontaktlista."
@@ -4265,6 +4277,9 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% pausad"
       ],
+      "Active": [
+        "Aktiv"
+      ],
       "Canceled": [
         "Avbruten"
       ],
@@ -4288,6 +4303,9 @@
       ],
       "Started": [
         "Startad"
+      ],
+      "Stopped": [
+        "Stoppad"
       ]
     },
     "Import type": {
@@ -5742,9 +5760,6 @@
       ],
       "Update recovery phrase": [
         "Uppdatera återställningsfras"
-      ],
-      "Update the URL in your password manager": [
-        "Uppdatera URL i din lösenordshanterare"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Uppgradera idag för att undvika att förlora följande ${ planName }-förmåner."
@@ -9055,8 +9070,8 @@
         "Välj antalet användare som ska inkluderas i ditt paket. Varje ytterligare användare kostar ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Om du behöver mer än ${ maxUsers } användarkonto, vänligen ${ contact } vårt säljteam.",
-        "Om du behöver fler än ${ maxUsers } användarkonton, vänligen ${ contact } vårt säljteam."
+        "Skulle du behöva fler än ${ maxUsers } användarkonto, ${ contact } vårt säljteam.",
+        "Skulle du behöva fler än ${ maxUsers } användarkonton, ${ contact } vårt säljteam."
       ]
     },
     "Price": {
@@ -9843,7 +9858,7 @@
         "Inga SMTP-tokens hittades"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } timme",
         "${ hours } timmar"
@@ -10969,8 +10984,8 @@
     },
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Uppgradera till ett betalt paket för att skapa upp till ${ MAX_CALENDARS_PAID }-kalender, så att du kan skapa kalendrar för jobbet, för att dela med vänner och bara för dig själv.",
-        "Uppgradera till ett betalt paket för att skapa upp till ${ MAX_CALENDARS_PAID }-kalendrar så att du kan skapa kalendrar för jobbet, för att dela med vänner och bara för dig själv."
+        "Uppgradera till ett betalt paket för Mail för att skapa upp till ${ MAX_CALENDARS_PAID } kalender, så att du kan skapa kalendrar för jobbet, för att dela med vänner och bara för dig själv.",
+        "Uppgradera till ett betalt paket för Mail för att skapa upp till ${ MAX_CALENDARS_PAID } kalendrar, så att du kan skapa kalendrar för jobbet, att dela med vänner och bara för dig själv."
       ],
       "Upgrade to a Mail paid plan to share your calendar.": [
         "Uppgradera till ett betalt paket för Mail för att dela din kalender."
@@ -11378,8 +11393,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Varje år",
+        "Vart ${ interval }:e år"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Varje år, ${ timesString }",
