@@ -64,7 +64,7 @@ const useStepPrepare = ({ user, handleCloseCustomizeModal }: Props) => {
     const [folders = []] = useFolders();
     const data = useEasySwitchSelector(selectImapDraftMailImport);
     if (!data) {
-        throw new Error('Datas should be defined');
+        throw new Error('Data should be defined');
     }
 
     const {
