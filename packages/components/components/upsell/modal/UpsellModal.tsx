@@ -47,7 +47,7 @@ const UpsellBox = ({ description, handleUpgrade, title, features }: UpsellBoxPro
                                 <div className="flex-item-fluid">
                                     {feature.getText()}
                                     {feature.getTooltip ? (
-                                        <Info className="ml0-5" title={feature.getTooltip()} />
+                                        <Info buttonClass="ml-2" title={feature.getTooltip()} />
                                     ) : null}
                                 </div>
                             </div>

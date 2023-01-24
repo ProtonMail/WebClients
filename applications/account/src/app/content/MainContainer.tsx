@@ -132,7 +132,12 @@ const MainContainer = () => {
     const prefixPath = `/${appSlug}`;
 
     const logo = (
-        <AppLink to={to} toApp={toApp} target="_self">
+        <AppLink
+            to={to}
+            toApp={toApp}
+            target="_self"
+            className="relative interactive-pseudo-protrude interactive--no-background"
+        >
             <Logo appName={app} />
         </AppLink>
     );
