@@ -188,7 +188,7 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
 
     return (
         <SettingsSectionWide>
-            <Table className="simple-table--has-actions">
+            <Table hasActions>
                 <TableHeader>
                     <TableRow>
                         <TableHeaderCell className="text-left w50">

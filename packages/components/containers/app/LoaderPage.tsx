@@ -47,7 +47,12 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
                 {isDrawerApp && <CircleLoader className="mauto color-primary" size="medium" />}
                 {!isIframe && (
                     <div>
-                        <img className={classnames(['w10e', loaderClassName])} src={protonSpinner} aria-hidden="true" />
+                        <img
+                            className={classnames(['w10e', loaderClassName])}
+                            src={protonSpinner}
+                            aria-hidden="true"
+                            alt=""
+                        />
                     </div>
                 )}
                 <TextLoader className="color-weak">{textToDisplay}</TextLoader>

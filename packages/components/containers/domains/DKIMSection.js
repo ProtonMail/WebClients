@@ -36,7 +36,7 @@ const DKIMSection = ({ domain }) => {
                 {c('Label')
                     .t`Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.`}
             </p>
-            <Table>
+            <Table responsive="cards">
                 <TableHeader>
                     <TableRow>
                         <TableCell type="header" className="w15">
@@ -51,13 +51,13 @@ const DKIMSection = ({ domain }) => {
                 <TableBody>
                     {Config.map((row) => (
                         <TableRow key={row.Hostname}>
-                            <TableCell>
+                            <TableCell label={c('Header for domain modal').t`Type`}>
                                 <code>CNAME</code>
                             </TableCell>
-                            <TableCell>
+                            <TableCell label={c('Header for domain modal').t`Host name`}>
                                 <code>{row.Hostname}</code>
                             </TableCell>
-                            <TableCell>
+                            <TableCell label={c('Header for domain modal').t`Value / Data`}>
                                 <div className="flex flex-nowrap flex-align-items-center">
                                     <Copy
                                         onCopy={handleCopy}

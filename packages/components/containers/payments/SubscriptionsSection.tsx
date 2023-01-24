@@ -53,32 +53,32 @@ const SubscriptionRow = ({
 }: SubscriptionRowProps) => {
     return (
         <TableRow>
-            <TableCell>
+            <TableCell label={c('Title').t`Plan`}>
                 <span>
                     {planTitle}
                     {asterisk}
                 </span>
             </TableCell>
-            <TableCell>
+            <TableCell label={c('Title').t`Length`}>
                 <span>{getShortBillingText(Cycle)}</span>
             </TableCell>
-            <TableCell>
+            <TableCell label={c('Title').t`Users`}>
                 <span>{users}</span>
             </TableCell>
-            <TableCell>
+            <TableCell label={c('Title').t`Start date`}>
                 <Time format="PP" sameDayFormat={false}>
                     {PeriodStart}
                 </Time>
             </TableCell>
-            <TableCell>
+            <TableCell label={c('Title').t`End date`}>
                 <Time format="PP" sameDayFormat={false}>
                     {PeriodEnd}
                 </Time>
             </TableCell>
-            <TableCell className="text-right">
+            <TableCell label={c('Title').t`Total paid`} className="on-mobile-text-left on-tablet-text-left text-right">
                 <Price currency={Currency}>{PricePerCycle}</Price>
             </TableCell>
-            <TableCell className="text-right">
+            <TableCell className="on-mobile-text-left on-tablet-text-left text-right">
                 <Badge type={status.type}>{status.label}</Badge>
             </TableCell>
         </TableRow>
@@ -120,7 +120,7 @@ const SubscriptionsSection = () => {
     return (
         <SettingsSectionWide>
             <div style={{ overflow: 'auto' }}>
-                <Table className="table-auto">
+                <Table className="table-auto" responsive="cards">
                     <TableHeader>
                         <TableRow>
                             <TableCell type="header">{c('Title').t`Plan`}</TableCell>
@@ -152,7 +152,7 @@ const SubscriptionsSection = () => {
                     </TableBody>
                 </Table>
                 <div className="flex w100 mb1 color-weak text-right mt1">
-                    <div className="text-right w100">
+                    <div className="on-mobile-text-left on-tablet-text-left text-right w100">
                         {asterisk}
                         {getRenewalText(renewalDate)}
                     </div>

@@ -26,19 +26,18 @@ const LinkTable = ({ links, onCopyLink, onDelete, onEdit, isLoadingMap, user }: 
         return null;
     }
 
+    const accessHeader = c('Header').t`Access`;
+    const labelHeader = (
+        <span className="flex flex-align-items-center">
+            <span className="mr0-5">{c('Header').t`Label`}</span>
+            <Info title={c('Info').t`Only you can see the labels.`} />
+        </span>
+    );
+
     return (
         <>
-            <Table className="simple-table--has-actions">
-                <TableHeader
-                    cells={[
-                        c('Header').t`Access`,
-                        <>
-                            <span className="mr0-5">{c('Header').t`Label`}</span>
-                            <Info title={c('Info').t`Only you can see the labels.`} />
-                        </>,
-                        c('Header').t`Actions`,
-                    ]}
-                />
+            <Table hasActions responsive="cards">
+                <TableHeader cells={[accessHeader, labelHeader, c('Header').t`Actions`]} />
                 <TableBody>
                     {links.map(({ CalendarID, CalendarUrlID, AccessLevel: accessLevel, link, purpose, CreateTime }) => {
                         const list = [
@@ -70,6 +69,7 @@ const LinkTable = ({ links, onCopyLink, onDelete, onEdit, isLoadingMap, user }: 
                         return (
                             <TableRow
                                 key={CalendarUrlID}
+                                labels={[accessHeader, labelHeader, '']}
                                 cells={[
                                     <div key="calendar">
                                         <div className="flex flex-align-items-center">
