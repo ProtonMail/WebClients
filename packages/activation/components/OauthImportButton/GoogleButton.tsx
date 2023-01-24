@@ -13,7 +13,7 @@ interface Props {
 const GoogleButton = ({ className, disabled, onClick }: Props) => {
     return (
         <Button className={clsx(['inline-flex flex-justify-center', className])} disabled={disabled} onClick={onClick}>
-            <img src={googleLogo} className="mr0-5 flex-align-self-center" />
+            <img src={googleLogo} className="mr0-5 flex-align-self-center" alt="" />
             {c('Action').t`Continue with Google`}
         </Button>
     );

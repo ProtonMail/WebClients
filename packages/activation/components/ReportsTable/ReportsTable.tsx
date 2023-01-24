@@ -7,7 +7,7 @@ import { selectActiveImporterIdsByDate } from '@proton/activation/logic/importer
 import { selectReportSummaryIdsByDate } from '@proton/activation/logic/reports/reports.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
 import { loadSyncList } from '@proton/activation/logic/sync/sync.actions';
-import { selectSyncIds } from '@proton/activation/logic/sync/sync.selectors';
+import { selectSyncIdsByDate } from '@proton/activation/logic/sync/sync.selectors';
 import {
     FeatureCode,
     SettingsParagraph,
@@ -27,7 +27,7 @@ import SyncRow from './Sync/SyncRow';
 const ReportsTable = () => {
     const reportIds = useEasySwitchSelector(selectReportSummaryIdsByDate);
     const activeImporterIds = useEasySwitchSelector(selectActiveImporterIdsByDate);
-    const syncIdsArray = useEasySwitchSelector(selectSyncIds);
+    const syncIdsArray = useEasySwitchSelector(selectSyncIdsByDate);
     const dispatch = useEasySwitchDispatch();
 
     const gmailSync = useFeature(FeatureCode.EasySwitchGmailSync);
@@ -38,7 +38,7 @@ const ReportsTable = () => {
         }
 
         if (gmailSync.feature && gmailSync.feature.Value) {
-            dispatch(loadSyncList());
+            void dispatch(loadSyncList());
         }
     }, [gmailSync.loading]);
 
