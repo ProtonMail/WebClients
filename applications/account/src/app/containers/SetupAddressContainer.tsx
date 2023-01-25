@@ -204,7 +204,7 @@ const SetupAddressContainer = () => {
     }
 
     return (
-        <Layout hasDecoration={false}>
+        <Layout onBack={handleBack} hasDecoration={false}>
             <Main>
                 <GenerateAddressStep
                     onBack={handleBack}
