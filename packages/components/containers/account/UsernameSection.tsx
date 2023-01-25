@@ -45,7 +45,7 @@ const UsernameSection = ({ app }: Props) => {
         <>
             {renderModal && tmpAddress && <EditDisplayNameModal {...modalProps} address={tmpAddress} />}
             <SettingsSection>
-                {user.Type === UserType.EXTERNAL && primaryAddress && (
+                {user.Type === UserType.EXTERNAL && primaryAddress && APP_NAME === APPS.PROTONACCOUNT && (
                     <Card className="mb2" rounded bordered={false}>
                         <div className="mb0-5">
                             {c('Info')
