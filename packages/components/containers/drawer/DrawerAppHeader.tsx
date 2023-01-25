@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { useTheme } from '@proton/components/containers';
 import {
+    closeDrawerFromChildApp,
     getIsDrawerPostMessage,
-    getIsIframedDrawerApp,
     getIsNativeDrawerApp,
     postMessageFromIframe,
 } from '@proton/shared/lib/drawer/helpers';
@@ -97,16 +97,7 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
                 );
             } else {
                 // Otherwise, we only want to close the iframed app
-                if (!getIsIframedDrawerApp(currentApp)) {
-                    throw new Error('Cannot close non-iframed app');
-                }
-                postMessageFromIframe(
-                    {
-                        type: DRAWER_EVENTS.CLOSE,
-                        payload: { app: currentApp, closeDefinitely },
-                    },
-                    parentApp
-                );
+                closeDrawerFromChildApp(parentApp, currentApp, closeDefinitely);
             }
         }
     };
