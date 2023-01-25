@@ -11,7 +11,7 @@ import {
     FREQUENCY,
     FREQUENCY_INPUT_ID,
     LOCATION_INPUT_ID,
-    MAX_LENGTHS_API,
+    MAX_CHARS_API,
     MAX_NOTIFICATIONS,
     NOTIFICATION_INPUT_ID,
     PARTICIPANTS_INPUT_ID,
@@ -116,7 +116,7 @@ const EventForm = ({
                 placeholder={c('Placeholder').t`Add title`}
                 title={c('Title').t`Add event title`}
                 autoFocus
-                maxLength={MAX_LENGTHS_API.TITLE}
+                maxLength={MAX_CHARS_API.TITLE}
                 {...createHandlers({ model, setModel, field: 'title' }).native}
             />
         </IconRow>
@@ -157,7 +157,7 @@ const EventForm = ({
             <InputTwo
                 id={LOCATION_INPUT_ID}
                 placeholder={c('Placeholder').t`Add location`}
-                maxLength={MAX_LENGTHS_API.LOCATION}
+                maxLength={MAX_CHARS_API.LOCATION}
                 title={c('Title').t`Add event location`}
                 {...createHandlers({ model, setModel, field: 'location' }).native}
             />
@@ -176,7 +176,7 @@ const EventForm = ({
                 minRows={2}
                 autoGrow
                 placeholder={c('Placeholder').t`Add description`}
-                maxLength={MAX_LENGTHS_API.EVENT_DESCRIPTION}
+                maxLength={MAX_CHARS_API.EVENT_DESCRIPTION}
                 className="max-h-custom"
                 title={c('Title').t`Add more information related to this event`}
                 {...createHandlers({ model, setModel, field: 'description' }).native}

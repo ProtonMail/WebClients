@@ -125,7 +125,7 @@ export enum ATTENDEE_STATUS_API {
     ACCEPTED = 3,
 }
 
-export const MAX_LENGTHS_API = {
+export const MAX_CHARS_API = {
     UID: 191,
     CALENDAR_NAME: 100,
     CALENDAR_DESCRIPTION: 255,
