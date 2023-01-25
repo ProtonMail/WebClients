@@ -111,13 +111,6 @@ html,
 	& > a {
 		display: flex;
 		align-self: baseline;
-
-		@include media('<=small') {
-			// fix for Admin
-			&.on-mobile-flex-align-self-center {
-				align-self: center;
-			}
-		}
 	}
 
 	@include media('>small') {
