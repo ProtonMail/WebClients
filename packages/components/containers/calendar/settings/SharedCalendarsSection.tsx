@@ -29,6 +29,7 @@ import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRout
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -45,9 +46,16 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
     const { badges } = getCalendarStatusBadges(calendar);
     const filteredBadges = badges.filter(({ statusType }) => statusType === CALENDAR_STATUS_TYPE.DISABLED);
 
+    const statusHeader = (
+        <div className="flex flex-align-items-center">
+            <span className="mr0-5">{c('Header').t`Status`}</span>
+            <Info url={getKnowledgeBaseUrl('/calendar-status')} />
+        </div>
+    );
+
     return (
         <TableRow>
-            <TableCell>
+            <TableCell label={c('Header').t`Name`}>
                 <div className="grid-align-icon-center">
                     <CalendarSelectIcon color={Color} className="mr0-75 flex-item-noshrink keep-left" />
                     <div className="flex flex-align-items-center flex-nowrap overflow-hidden">
@@ -58,7 +66,7 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
                     {displayEmail && <div className="text-ellipsis text-sm m0 color-weak">{memberEmail}</div>}
                 </div>
             </TableCell>
-            <TableCell>
+            <TableCell label={filteredBadges.length > 0 && statusHeader}>
                 <div data-test-id="calendar-settings-page:calendar-status" key="status">
                     {filteredBadges.map(({ statusType, badgeType, text, tooltipText }) => (
                         <CalendarBadge key={statusType} badgeType={badgeType} text={text} tooltipText={tooltipText} />
@@ -186,14 +194,15 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
         return null;
     }
 
+    const sharedWithMeTitle = c('Table header; invitations to share calendar').t`Shared with me`;
+
     return (
         <SettingsSectionWide>
-            <Table hasActions>
+            <h4 className="no-desktop text-bold text-rg mb0-5">{sharedWithMeTitle}</h4>
+            <Table hasActions responsive="cards">
                 <TableHeader>
                     <TableRow>
-                        <TableHeaderCell className="text-left w50">
-                            {c('Table header; invitations to share calendar').t`Shared with me`}
-                        </TableHeaderCell>
+                        <TableHeaderCell className="text-left w50">{sharedWithMeTitle}</TableHeaderCell>
                         <TableHeaderCell className="w20">{''}</TableHeaderCell>
                         <TableHeaderCell>{''}</TableHeaderCell>
                     </TableRow>
