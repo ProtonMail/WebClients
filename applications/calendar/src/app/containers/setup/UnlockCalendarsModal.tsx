@@ -14,6 +14,8 @@ import {
     SettingsLink,
     useApi,
     useCache,
+    useConfig,
+    useDrawer,
     useGetAddressKeys,
     useGetAddresses,
     useLoading,
@@ -24,6 +26,7 @@ import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { process } from '@proton/shared/lib/calendar/crypto/keys/resetHelper';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { closeDrawerFromChildApp } from '@proton/shared/lib/drawer/helpers';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -45,6 +48,8 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
     const cache = useCache();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
+    const { parentApp } = useDrawer();
+    const { APP_NAME: currentApp } = useConfig();
 
     const { calendarsToReset, calendarsToReactivate } = calendars.reduce<FilteredCalendars>(
         (acc, calendar) => {
@@ -128,6 +133,12 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
             });
     };
 
+    const closeDrawer = () => {
+        if (parentApp) {
+            closeDrawerFromChildApp(parentApp, currentApp, true);
+        }
+    };
+
     const calendarAppBareName = APPS_CONFIGURATION[APPS.PROTONCALENDAR].bareName.toLowerCase();
 
     return (
@@ -160,7 +171,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
                         />
                     </ModalContent>
                     <ModalFooter>
-                        <ButtonLike as={SettingsLink} path={'/recovery'}>
+                        <ButtonLike as={SettingsLink} path={'/recovery'} onClick={closeDrawer}>
                             {c('Action').t`Recover data`}
                         </ButtonLike>
                         <PrimaryButton type="submit" loading={isLoading} onClick={handleReset}>
@@ -175,7 +186,13 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
                     {...rest}
                     title={c('Title').t`Reshare your calendars`}
                     buttons={[
-                        <ButtonLike as={SettingsLink} type="submit" color="norm" path={getCalendarsSettingsPath()}>
+                        <ButtonLike
+                            as={SettingsLink}
+                            type="submit"
+                            color="norm"
+                            path={getCalendarsSettingsPath()}
+                            onClick={closeDrawer}
+                        >
                             {c('Action').t`Open settings`}
                         </ButtonLike>,
                         <Button onClick={onDone}>{c('Action').t`Close`}</Button>,

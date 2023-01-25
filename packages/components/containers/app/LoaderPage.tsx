@@ -6,8 +6,7 @@ import { CircleLoader } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
-import { getIsAuthorizedApp, postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+import { closeDrawerFromChildApp, getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
 
 import { Icon, TextLoader, Tooltip } from '../../components';
@@ -35,12 +34,7 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
         if (!parentApp) {
             return;
         }
-        postMessageFromIframe(
-            {
-                type: DRAWER_EVENTS.CLOSE,
-            },
-            parentApp
-        );
+        closeDrawerFromChildApp(parentApp, APP_NAME);
     };
 
     const preventDefaultEvent = (e: SyntheticEvent) => e.preventDefault();
