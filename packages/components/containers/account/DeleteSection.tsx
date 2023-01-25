@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 
 import { Href, Loader } from '../../components';
@@ -24,7 +24,10 @@ const DeleteSection = () => {
         return <Loader />;
     }
 
-    if (APP_NAME === APPS.PROTONVPN_SETTINGS && addresses.length) {
+    if (
+        APP_NAME === APPS.PROTONVPN_SETTINGS &&
+        addresses.some((address) => address.Type !== ADDRESS_TYPE.TYPE_EXTERNAL)
+    ) {
         const loginLink = (
             <Href key="0" url="https://account.proton.me/login?product=mail">
                 mail.proton.me
