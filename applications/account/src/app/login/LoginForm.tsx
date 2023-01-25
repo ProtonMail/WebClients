@@ -43,6 +43,7 @@ interface Props {
     defaultUsername?: string;
     hasRemember?: boolean;
     trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
+    signupOptions: Record<string, string | number | undefined>;
 }
 
 const LoginForm = ({
@@ -52,6 +53,7 @@ const LoginForm = ({
     signInText = c('Action').t`Sign in`,
     hasRemember,
     trustedDeviceRecoveryFeature,
+    signupOptions = {},
 }: Props) => {
     const { APP_NAME } = useConfig();
     const [submitting, withSubmitting] = useLoading();
@@ -97,8 +99,23 @@ const LoginForm = ({
         </Href>
     );
 
+    const signUpParams: Record<string, string> = {};
+
+    Object.keys(signupOptions).forEach(key => {
+        if (typeof signupOptions[key] !== 'undefined') {
+            signUpParams[key] = `${signupOptions[key]}`;
+        }
+    });
+
     const signUp = (
-        <Link key="signup" className="link text-nowrap" to={SSO_PATHS.SIGNUP}>
+        <Link
+            key="signup"
+            className="link text-nowrap"
+            to={SSO_PATHS.SIGNUP + (Object.keys(signUpParams).length
+                ? '?' + new URLSearchParams(signUpParams).toString()
+                : ''
+            )}
+        >
             {c('Link').t`Create account`}
         </Link>
     );

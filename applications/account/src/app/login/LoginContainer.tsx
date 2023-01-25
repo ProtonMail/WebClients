@@ -45,9 +45,19 @@ interface Props {
     onBack?: () => void;
     hasRemember?: boolean;
     setupVPN: boolean;
+    signupOptions: Record<string, string | number | undefined>;
 }
 
-const LoginContainer = ({ onLogin, onBack, toAppName, toApp, showContinueTo, setupVPN, hasRemember = true }: Props) => {
+const LoginContainer = ({
+    onLogin,
+    onBack,
+    toAppName,
+    toApp,
+    showContinueTo,
+    setupVPN,
+    hasRemember = true,
+    signupOptions = {},
+}: Props) => {
     const { APP_NAME } = useConfig();
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
@@ -135,6 +145,7 @@ const LoginContainer = ({ onLogin, onBack, toAppName, toApp, showContinueTo, set
                         <LoginForm
                             toApp={toApp}
                             signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
+                            signupOptions={signupOptions}
                             defaultUsername={previousUsernameRef.current}
                             hasRemember={hasRemember}
                             trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
