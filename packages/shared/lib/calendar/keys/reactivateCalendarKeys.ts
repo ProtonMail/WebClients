@@ -5,7 +5,7 @@ import { getAllCalendarKeys, getPassphrases, queryMembers, reactivateCalendarKey
 import { Address, Api } from '../../interfaces';
 import { Calendar, CalendarKey, CalendarMember, Passphrase, ReenableKeyResponse } from '../../interfaces/calendar';
 import { splitKeys } from '../../keys';
-import { decryptPassphrase } from '../../keys/calendarKeys';
+import { decryptPassphrase } from '../crypto/calendarKeys';
 import { getMemberAddressWithAdminPermissions } from '../getMemberWithAdmin';
 
 interface ReactivateCalendarsKeysArgumentsShared {
