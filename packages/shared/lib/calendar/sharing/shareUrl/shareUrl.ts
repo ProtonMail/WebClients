@@ -47,13 +47,9 @@ export const generateEncryptedPurpose = async ({
     purpose,
     publicKey,
 }: {
-    purpose?: string;
+    purpose: string;
     publicKey: PublicKeyReference;
 }) => {
-    if (!purpose) {
-        return null;
-    }
-
     return (
         await CryptoProxy.encryptMessage({ textData: purpose, stripTrailingSpaces: true, encryptionKeys: publicKey })
     ).message;
