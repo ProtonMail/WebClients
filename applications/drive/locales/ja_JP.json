@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
+      "Attention required": [
+        "注意が必要です"
+      ],
       "Authenticate": [
         "認証"
       ],
@@ -2930,6 +2933,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "選択したアイテムをごみ箱から完全に削除してよろしいですか？"
       ],
+      "Attention required": [
+        "注意が必要です"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
@@ -3328,6 +3334,9 @@
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "一部転送が完了していないファイルがあります。当該ファイルの再ダウンロード・アップロードをお試しください。"
+      ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "補足: データはまだ ${ DRIVE_APP_NAME } をインストールしているデバイスで開くことができる場合があります。"
       ],
       "of": [
         " / "
@@ -3764,6 +3773,9 @@
       ],
       "file data order": [
         "ファイルデータオーダー"
+      ],
+      "hash key": [
+        "ハッシュキー"
       ],
       "keys": [
         "鍵"

@@ -244,6 +244,9 @@
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
       ],
+      "Enable drive search": [
+        "Drive durchsuchen aktivieren"
+      ],
       "Expand": [
         "Erweitern"
       ],
@@ -2970,6 +2973,9 @@
       "All your changes will be lost.": [
         "Alle Ihre Änderungen gehen dabei verloren."
       ],
+      "Also try looking in Trash.": [
+        "Versuchen, auch den Papierkorb zu durchsuchen."
+      ],
       "An active recovery file": [
         "Eine aktive Wiederherstellungsdatei"
       ],
@@ -3008,6 +3014,9 @@
       ],
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Massen-Uploads können die Leistung deines Computers beeinträchtigen. Ziehe es in Erwägung, speicherintensive Aktivitäten wie Streaming während des Uploads einzuschränken. Oder versuche die Dateien stapelweise hochzuladen."
+      ],
+      "Calendar side panel": [
+        "Kalender-Seitenleiste"
       ],
       "Canceled": [
         "Abgebrochen"
@@ -3130,6 +3139,9 @@
       ],
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
+      ],
+      "Enable drive search": [
+        "Drive durchsuchen aktivieren"
       ],
       "Enabling drive search": [
         "Suche in Drive wird aktiviert"
@@ -3640,6 +3652,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Um eine wirklich private Suche zu ermöglichen, muss ${ DRIVE_APP_NAME } deine Dateien lokal indexieren."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Um eine wirklich private Suche zu ermöglichen, müssen wir deine Dateien lokal indizieren. Du kannst ${ DRIVE_APP_NAME } wie gewohnt weiternutzen - wir informieren dich, sobald die Indexierung erfolgt ist."
       ],
@@ -3672,6 +3687,9 @@
       ],
       "Trash": [
         "Papierkorb"
+      ],
+      "Try searching by file name, date, or type.": [
+        "Versuche, nach Dateiname, Datum oder Typ zu suchen."
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -5544,6 +5562,9 @@
       "Empty trash": [
         "Papierkorb leeren"
       ],
+      "Enable drive search": [
+        "Drive durchsuchen aktivieren"
+      ],
       "Enter your password": [
         "Passwort eingeben"
       ],
@@ -5641,6 +5662,9 @@
       ],
       "Name": [
         "Name"
+      ],
+      "No results found": [
+        "Keine Ergebnisse gefunden"
       ],
       "Number of files": [
         "Anzahl der Dateien"
