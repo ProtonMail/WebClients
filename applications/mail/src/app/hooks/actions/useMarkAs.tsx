@@ -77,7 +77,7 @@ export const useMarkAs = () => {
         const markAsUnreadAction = isMessage ? markMessageAsUnread : markConversationsAsUnread;
         const action = status === MARK_AS_STATUS.READ ? markAsReadAction : markAsUnreadAction;
 
-        let rollback = () => {};
+        let rollback: (() => void) | undefined = () => {};
 
         const request = async () => {
             let token;
@@ -94,7 +94,7 @@ export const useMarkAs = () => {
                 );
                 token = UndoToken.Token;
             } catch (error: any) {
-                rollback();
+                rollback?.();
                 throw error;
             } finally {
                 dispatch(backendActionFinished());
@@ -114,7 +114,7 @@ export const useMarkAs = () => {
                 try {
                     // Stop the event manager to prevent race conditions
                     stop();
-                    rollback();
+                    rollback?.();
                     const token = await promise;
                     await api(undoActions(token));
                 } finally {
