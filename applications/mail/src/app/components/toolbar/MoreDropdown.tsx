@@ -18,7 +18,12 @@ const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, S
     MAILBOX_LABEL_IDS;
 
 const canMoveAll = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {
-    return !labelIncludes(labelID, TRASH, ALL_MAIL) && elementIDs.length > 0 && selectedIDs.length === 0 && !isSearch;
+    return (
+        !labelIncludes(labelID, TRASH, ALL_MAIL, SCHEDULED) &&
+        elementIDs.length > 0 &&
+        selectedIDs.length === 0 &&
+        !isSearch
+    );
 };
 
 const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {
