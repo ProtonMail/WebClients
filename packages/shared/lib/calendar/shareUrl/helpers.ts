@@ -42,19 +42,20 @@ export const decryptPurpose = async ({
             decryptionKeys: privateKeys,
         })
     ).data;
+
 export const generateEncryptedPurpose = async ({
     purpose,
-    publicKeys,
+    publicKey,
 }: {
     purpose?: string;
-    publicKeys: PublicKeyReference[];
+    publicKey: PublicKeyReference;
 }) => {
     if (!purpose) {
         return null;
     }
 
     return (
-        await CryptoProxy.encryptMessage({ textData: purpose, stripTrailingSpaces: true, encryptionKeys: publicKeys })
+        await CryptoProxy.encryptMessage({ textData: purpose, stripTrailingSpaces: true, encryptionKeys: publicKey })
     ).message;
 };
 export const generateEncryptedPassphrase = ({
