@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import { useApi, useGetCalendarInfo, useNotifications } from '@proton/components/hooks';
 import { createPublicLink } from '@proton/shared/lib/api/calendars';
+import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/calendarKeys';
 import {
     buildLink,
     generateEncryptedPurpose,
@@ -50,9 +51,10 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
         try {
             setIsLoading(true);
             const { calendarKeys, passphrase, passphraseID } = await getCalendarInfo(calendarID);
+            const { publicKey } = getPrimaryCalendarKey(calendarKeys);
             const { publicKeys } = splitKeys(calendarKeys);
 
-            const encryptedPurpose = purpose ? await generateEncryptedPurpose({ purpose, publicKeys }) : null;
+            const encryptedPurpose = purpose ? await generateEncryptedPurpose({ purpose, publicKey }) : null;
 
             const { payload, passphraseKey, cacheKey } = await getCreatePublicLinkPayload({
                 accessLevel,

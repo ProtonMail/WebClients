@@ -8,10 +8,10 @@ import { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { getPrimaryKey, splitKeys } from '../../keys';
-import { getPrimaryCalendarKey } from '../../keys/calendarKeys';
 import { toSessionKey } from '../../keys/sessionKey';
 import { readSessionKeys } from '../deserialize';
 import { getCalendarEventDecryptionKeys } from '../keys/getCalendarEventDecryptionKeys';
+import { getPrimaryCalendarKey } from './calendarKeys';
 
 interface GetCreationKeysArguments {
     calendarEvent?: CalendarEvent;
