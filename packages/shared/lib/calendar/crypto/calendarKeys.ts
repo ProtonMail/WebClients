@@ -10,13 +10,18 @@ import {
 } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getEncryptedSessionKey } from '../calendar/crypto/encrypt';
-import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
-import { hasBit } from '../helpers/bitset';
-import { uint8ArrayToBase64String } from '../helpers/encoding';
-import { Address, EncryptionConfig, Nullable, SimpleMap } from '../interfaces';
-import { CalendarKeyFlags, CalendarMember, DecryptedCalendarKey, CalendarKey as tsKey } from '../interfaces/calendar';
-import { CalendarSetupData } from '../interfaces/calendar/Api';
+import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../constants';
+import { hasBit } from '../../helpers/bitset';
+import { uint8ArrayToBase64String } from '../../helpers/encoding';
+import { Address, EncryptionConfig, Nullable, SimpleMap } from '../../interfaces';
+import {
+    CalendarKeyFlags,
+    CalendarMember,
+    DecryptedCalendarKey,
+    CalendarKey as tsKey,
+} from '../../interfaces/calendar';
+import { CalendarSetupData } from '../../interfaces/calendar/Api';
+import { getEncryptedSessionKey } from './encrypt';
 
 export const generatePassphrase = () => {
     const value = crypto.getRandomValues(new Uint8Array(32));
