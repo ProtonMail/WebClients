@@ -22,6 +22,7 @@ const config: OfferConfig = {
             cycle: CYCLE.YEARLY,
             popular: false,
             features: getMailPlusFeatures,
+            getCTAContent: () => c('Action').t`Upgrade now`,
         },
         {
             ref: 'plus_referral_trial-modal-u2',
@@ -32,6 +33,7 @@ const config: OfferConfig = {
             cycle: CYCLE.TWO_YEARS,
             popular: true,
             features: getUnlimitedFeatures,
+            getCTAContent: () => c('Action').t`Upgrade now`,
         },
         {
             ref: 'plus_referral_trial-modal-u1',
@@ -42,6 +44,7 @@ const config: OfferConfig = {
             cycle: CYCLE.YEARLY,
             popular: false,
             features: getUnlimitedFeatures,
+            getCTAContent: () => c('Action').t`Upgrade now`,
         },
     ],
     layout: Layout,
