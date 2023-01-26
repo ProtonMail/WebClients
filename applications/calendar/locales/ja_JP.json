@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
+      "Attention required": [
+        "注意が必要です"
+      ],
       "Authenticate": [
         "認証"
       ],
@@ -1972,7 +1975,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Don't ask again": [
-        "再度表示しない"
+        "Do not ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3170,6 +3173,9 @@
       ],
       "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
         "1 つの招待につき ${ MAX_ATTENDEES } 人までが許可されています"
+      ],
+      "Attention required": [
+        "注意が必要です"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
