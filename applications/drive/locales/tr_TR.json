@@ -244,6 +244,9 @@
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştirmek"
       ],
+      "Enable drive search": [
+        "Drive aramasını etkinleştir"
+      ],
       "Expand": [
         "Genişlet"
       ],
@@ -1864,7 +1867,7 @@
         "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından reddedildi"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından belirsiz olarak kabul edildi"
+        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından kesin olmamakla birlikte kabul edildi"
       ]
     },
     "Email subject": {
@@ -1875,16 +1878,16 @@
         "${ formattedStart } tarihinde başlayan bir etkinliğin iptal bilgilendirmesi"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için davet"
+        "${ formattedStart } zamanındaki etkinlik daveti"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için davet"
+        "${ formattedStart } zamanında başlayan etkinlik daveti"
       ],
       "Update for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için güncelleme"
+        "${ formattedStart } zamanındaki etkinlik için güncelleme"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için güncelleme"
+        "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
     "Error": {
@@ -2965,6 +2968,9 @@
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
       ],
+      "Also try looking in Trash.": [
+        "Çöp kutusuna da bakmayı deneyin."
+      ],
       "An active recovery file": [
         "Etkn bir kurtarma dosyası"
       ],
@@ -3003,6 +3009,9 @@
       ],
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Toplu yüklemeler bilgisayarınızın başarımını düşürebilir. Yükleme sırasında yayın akışı izlemek gibi yoğun bellek kullanan işlemleri sınırlamayı deneyin. Ya da yüklemeleri gruplar halinde yapın."
+      ],
+      "Calendar side panel": [
+        "Takvim yan panosu"
       ],
       "Canceled": [
         "İptal edildi"
@@ -3125,6 +3134,9 @@
       ],
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
+      ],
+      "Enable drive search": [
+        "Drive aramasını etkinleştir"
       ],
       "Enabling drive search": [
         "Drive araması etkinleştiriliyor"
@@ -3635,6 +3647,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Gerçek gizliliği koruyan aramayı etkinleştirmek için dosyalarınızın yerel dizinini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
       ],
@@ -3667,6 +3682,9 @@
       ],
       "Trash": [
         "Çöp kutusu"
+      ],
+      "Try searching by file name, date, or type.": [
+        "Dosya adına, tarihine ya da türüne göre aramayı deneyin."
       ],
       "Unknown error": [
         "Bilinmeyen hata"
@@ -3842,6 +3860,9 @@
       ],
       "file data order": [
         "dosya verileri sıralaması"
+      ],
+      "hash key": [
+        "karma anahtarı"
       ],
       "keys": [
         "anahtarlar"
@@ -5301,6 +5322,9 @@
       "Empty trash": [
         "Çöp kutusunu boşalt"
       ],
+      "Enable drive search": [
+        "Drive aramasını etkinleştir"
+      ],
       "Enter your password": [
         "Parolanızı yazın"
       ],
@@ -5398,6 +5422,9 @@
       ],
       "Name": [
         "Ad"
+      ],
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
       ],
       "Number of files": [
         "Dosya sayısı"

@@ -242,6 +242,9 @@
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
       ],
+      "Enable drive search": [
+        "Aktifkan pencarian drive"
+      ],
       "Expand": [
         "Lebarkan"
       ],
@@ -2045,7 +2048,7 @@
         "Verifikasi tanda tangan gagal"
       ],
       "Some contacts could not be deleted": [
-        "Beberapa kontak tidak dapat dihapus"
+        "Sebagian kontak tidak dapat dihapus"
       ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "Kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
@@ -2917,6 +2920,9 @@
       "All your changes will be lost.": [
         "Seluruh perubahan yang belum Anda simpan akan hilang."
       ],
+      "Also try looking in Trash.": [
+        "Cobalah juga untuk mencari di Sampah."
+      ],
       "An active recovery file": [
         "Berkas pemulihan yang aktif"
       ],
@@ -2955,6 +2961,9 @@
       ],
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Mengunggah banyak berkas secara bersamaan dapat menurunkan performa komputer Anda. Cobalah untuk membatasi aktivitas yang membutuhkan banyak memori (seperti streaming) selama proses pengunggahan berlangsung, atau bagi unggahan Anda ke dalam beberapa batch."
+      ],
+      "Calendar side panel": [
+        "Panel samping kalender"
       ],
       "Canceled": [
         "Dibatalkan"
@@ -3075,6 +3084,9 @@
       ],
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
+      ],
+      "Enable drive search": [
+        "Aktifkan pencarian drive"
       ],
       "Enabling drive search": [
         "Mengaktifkan pencarian drive"
@@ -3580,6 +3592,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Untuk mengaktifkan mode pencarian yang sepenuhnya privat, ${ DRIVE_APP_NAME } perlu untuk terlebih dahulu mengindeks berkas Anda secara lokal."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Untuk dapat melangsungkan pencarian yang benar-benar privat, kami perlu untuk mengindeks berkas Anda secara lokal. Anda tetap akan dapat menggunakan ${ DRIVE_APP_NAME } seperti biasa - kami akan memberitahukan Anda apabila proses ini telah selesai."
       ],
@@ -3612,6 +3627,9 @@
       ],
       "Trash": [
         "Sampah"
+      ],
+      "Try searching by file name, date, or type.": [
+        "Cobalah untuk mencari berdasarkan nama, tanggal pembuatan, atau tipe berkas."
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
@@ -5203,6 +5221,9 @@
       "Empty trash": [
         "Kosongkan sampah"
       ],
+      "Enable drive search": [
+        "Aktifkan pencarian drive"
+      ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
       ],
@@ -5298,6 +5319,9 @@
       ],
       "Name": [
         "Nama"
+      ],
+      "No results found": [
+        "Tidak ada hasil yang ditemukan"
       ],
       "Number of files": [
         "Jumlah berkas"

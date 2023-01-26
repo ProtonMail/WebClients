@@ -204,7 +204,7 @@ const FeedbackDowngradeModal = ({ onSubmit, onClose, user, ...rest }: Props) => 
             <ModalContent>
                 <InputFieldTwo
                     as={SelectTwo}
-                    label={c('Label').t`What is the main reason you are cancelling?`}
+                    label={c('Label').t`What is the main reason you are canceling?`}
                     placeholder={c('Placeholder').t`Select a reason`}
                     id="reason"
                     autoFocus

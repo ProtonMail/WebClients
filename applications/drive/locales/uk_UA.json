@@ -248,6 +248,9 @@
       "enable desktop notifications": [
         "увімкнути сповіщення на робочому столі"
       ],
+      "Enable drive search": [
+        "Увімкнути пошук на диску"
+      ],
       "Expand": [
         "Розгорнути"
       ],
@@ -3076,6 +3079,9 @@
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
       ],
+      "Also try looking in Trash.": [
+        "Також пошукайте у смітнику."
+      ],
       "An active recovery file": [
         "Активний файл відновлення"
       ],
@@ -3114,6 +3120,9 @@
       ],
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Масове завантаження може знизити швидкодію комп’ютера. Спробуйте обмежити дії, які потребують значного обсягу пам’яті, як-от потокове передавання під час завантаження. Або спробуйте завантажувати пакетами."
+      ],
+      "Calendar side panel": [
+        "Бічна панель календаря"
       ],
       "Canceled": [
         "Скасовано"
@@ -3240,6 +3249,9 @@
       ],
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
+      ],
+      "Enable drive search": [
+        "Увімкнути пошук на диску"
       ],
       "Enabling drive search": [
         "Увімкнення пошуку на диску"
@@ -3404,7 +3416,7 @@
         "Схоже, що ви нещодавно намагалися завантажити ${ uploadName }. Якщо не вдалося завантажити, ${ replaceFile }. Якщо завантаження досі триває, заміна файлу скасує поточне завантаження."
       ],
       "Items in the trash will stay here until you delete them permanently": [
-        "Елементи в кошику залишатимуться тут, доки ви не видалите їх остаточно"
+        "Елементи залишатимуться у смітнику, доки ви не видалите їх остаточно"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Це так само просто, як перетягування або вибір файлів"
@@ -3760,6 +3772,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Щоб увімкнути справді приватний пошук ${ DRIVE_APP_NAME } потрібно індексувати ваші файли локально."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Для забезпечення дійсно приватного пошуку нам необхідно індексувати ваші локальні файли. Ви й надалі можете користуватися ${ DRIVE_APP_NAME } як зазвичай – ми повідомимо, коли індексування завершиться."
       ],
@@ -3792,6 +3807,9 @@
       ],
       "Trash": [
         "Смітник"
+      ],
+      "Try searching by file name, date, or type.": [
+        "Спробуйте пошук за назвою, датою або типом файлу."
       ],
       "Unknown error": [
         "Невідома помилка"
@@ -5515,6 +5533,9 @@
       "Empty trash": [
         "Спорожнити смітник"
       ],
+      "Enable drive search": [
+        "Увімкнути пошук на диску"
+      ],
       "Enter your password": [
         "Введіть свій пароль"
       ],
@@ -5616,6 +5637,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "No results found": [
+        "Результатів не знайдено"
       ],
       "Number of files": [
         "Кількість файлів"

@@ -244,6 +244,9 @@
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
       ],
+      "Enable drive search": [
+        "Ativar pesquisa de drive"
+      ],
       "Expand": [
         "Expandir"
       ],
@@ -2214,10 +2217,10 @@
         "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não tem o formato correto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ocorreu um erro ao carregar seu arquivo ${ formattedFilename }. Nenhum arquivo .csv ou .vcf foi selecionado"
+        "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. Nenhum arquivo .csv ou .vcf foi selecionado"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Ocorreu um erro ao carregar o seu arquivo. Nenhum arquivo foi selecionado."
@@ -2229,7 +2232,7 @@
         "O arquivo ${ formattedFilename } não tem contatos para serem importados."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "O arquivo ${ formattedFilename } está vazio."
+        "O seu arquivo ${ formattedFilename } está vazio."
       ]
     },
     "Error importing event": {
@@ -3009,6 +3012,9 @@
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Os envios em massa podem reduzir o desempenho do seu computador. Considere limitar atividades com uso intensivo de memória, como streaming durante o envio. Ou tente fazer o envio em lotes."
       ],
+      "Calendar side panel": [
+        "Painel lateral de calendário"
+      ],
       "Canceled": [
         "Cancelado"
       ],
@@ -3130,6 +3136,9 @@
       ],
       "Emails are automatically signed": [
         "E-mails são assinados automaticamente"
+      ],
+      "Enable drive search": [
+        "Ativar pesquisa de drive"
       ],
       "Enabling drive search": [
         "Ativando pesquisa de drive"
@@ -3639,6 +3648,9 @@
       ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+      ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Para ativar a pesquisa verdadeiramente privada, o ${ DRIVE_APP_NAME } precisa indexar seus arquivos localmente."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Para ativar uma pesquisa verdadeiramente privada, precisamos indexar seus arquivos localmente. Você ainda pode usar ${ DRIVE_APP_NAME } normalmente - nós o informaremos quando a indexação estiver concluída."
@@ -4346,7 +4358,7 @@
         "Criar marcador"
       ],
       "Edit folder": [
-        "Editar a pasta"
+        "Editar pasta"
       ],
       "Edit label": [
         "Editar marcador"
@@ -5533,7 +5545,7 @@
         "Editar grupo de contatos"
       ],
       "Edit email settings": [
-        "Editar configurações de e-mail"
+        "Editar configurações do e-mail"
       ],
       "Edit image": [
         "Editar imagem"
@@ -5542,10 +5554,13 @@
         "Endereços de e-mail"
       ],
       "Email settings": [
-        "Configurações de e-mail"
+        "Configurações do e-mail"
       ],
       "Empty trash": [
         "Esvaziar lixeira"
+      ],
+      "Enable drive search": [
+        "Ativar pesquisa de drive"
       ],
       "Enter your password": [
         "Digite sua senha"
@@ -5644,6 +5659,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "No results found": [
+        "Nenhum resultado encontrado"
       ],
       "Number of files": [
         "Número de arquivos"
