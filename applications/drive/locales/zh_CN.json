@@ -242,6 +242,9 @@
       "enable desktop notifications": [
         "开启推送通知"
       ],
+      "Enable drive search": [
+        "启用网盘搜索"
+      ],
       "Expand": [
         "展开"
       ],
@@ -2912,6 +2915,9 @@
       "All your changes will be lost.": [
         "您的所有改动都将丢失。"
       ],
+      "Also try looking in Trash.": [
+        "或者查看回收站中是否有您需要的文件。"
+      ],
       "An active recovery file": [
         "一个激活的恢复文件"
       ],
@@ -3070,6 +3076,9 @@
       ],
       "Emails are automatically signed": [
         "自动对邮件进行数字签名"
+      ],
+      "Enable drive search": [
+        "启用网盘搜索"
       ],
       "Enabling drive search": [
         "正在启用网盘搜索"
@@ -3575,6 +3584,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "为了在搜索过程中保护您的隐私，${ DRIVE_APP_NAME } 需要将文件下载至本设备后进行索引。"
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "为了保证搜索过程的安全性，文件索引需要在此设备上完成。您可以继续正常使用 ${ DRIVE_APP_NAME }，索引完成后我们将通知您。"
       ],
@@ -3607,6 +3619,9 @@
       ],
       "Trash": [
         "回收站"
+      ],
+      "Try searching by file name, date, or type.": [
+        "尝试搜索文件名称、日期或类型。"
       ],
       "Unknown error": [
         "未知错误"
@@ -3778,10 +3793,13 @@
         "文件数据"
       ],
       "file data key": [
-        "文件数据密匙"
+        "文件数据密钥"
       ],
       "file data order": [
         "文件数据顺序"
+      ],
+      "hash key": [
+        "散列密钥"
       ],
       "keys": [
         "密钥"
@@ -5195,6 +5213,9 @@
       "Empty trash": [
         "清空回收站"
       ],
+      "Enable drive search": [
+        "启用网盘搜索"
+      ],
       "Enter your password": [
         "输入密码"
       ],
@@ -5290,6 +5311,9 @@
       ],
       "Name": [
         "名称"
+      ],
+      "No results found": [
+        "搜索无结果"
       ],
       "Number of files": [
         "文件数"

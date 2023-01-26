@@ -2831,10 +2831,10 @@
         "Pengguna sudah merupakan anggota kalender"
       ],
       "Amount above the maximum.": [
-        "Jumlah di atas maksimum."
+        "Jumlah melebihi nilai maksimum."
       ],
       "Amount below minimum.": [
-        "Jumlah di bawah minimum."
+        "Jumlah berada di bawah nilai minimum."
       ],
       "Authentication canceled.": [
         "Autentikasi dibatalkan."
@@ -2891,7 +2891,7 @@
         "Galat"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Gagal sambung ke API Bitcoin."
+        "Terdapat kesalahan dalam menyambungkan ke API Bitcoin."
       ],
       "Error in one of the conditions": [
         "Kesalahan pada salah satu kondisi"
@@ -2900,7 +2900,7 @@
         "Gagal memperoleh sesi yang aktif. Silakan ${ refresh } atau coba lagi nanti."
       ],
       "Filter with this name already exist": [
-        "Filter dengan nama ini sudah ada"
+        "Filter with this name already exists"
       ],
       "Filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
@@ -2972,7 +2972,7 @@
         "Nama tidak cocok"
       ],
       "Name on card required": [
-        "Wajib isi nama di kartu"
+        "Nama pada kartu dibutuhkan"
       ],
       "Name required": [
         "Nama dibutuhkan"
@@ -3023,7 +3023,7 @@
         "Proses pembayaran dibatalkan"
       ],
       "Payment process consumed": [
-        "Proses pembayaran terlalu lama"
+        "Proses pembayaran telah melewati batas tenggat waktu"
       ],
       "Payment process failed": [
         "Proses pembayaran gagal"
@@ -3032,7 +3032,7 @@
         "Proses pembayaran tidak didukung"
       ],
       "Payments are currently not available, please try again later": [
-        "Pembayaran tidak bisa dilakukan. Coba lagi nanti"
+        "Pembayaran saat ini tidak tersedia. Silakan coba lagi nanti"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Izin ditolak, hak istimewa administrator telah dibatasi."
@@ -7265,7 +7265,7 @@
         "Apa yang terjadi?"
       ],
       "What is the main reason you are cancelling?": [
-        "Apa alasan utama Anda membatalkan?"
+        "What is the main reason you are canceling?"
       ],
       "What is the main reason you are deleting your account?": [
         "Apa alasan utama Anda menghapus akun?"

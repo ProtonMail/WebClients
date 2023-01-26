@@ -244,6 +244,9 @@
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
+      "Enable drive search": [
+        "Activer la recherche dans Drive"
+      ],
       "Expand": [
         "Développer"
       ],
@@ -2965,6 +2968,9 @@
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
       ],
+      "Also try looking in Trash.": [
+        "Vérifiez aussi dans le dossier Corbeille."
+      ],
       "An active recovery file": [
         "Un fichier de récupération actif"
       ],
@@ -3125,6 +3131,9 @@
       ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
+      ],
+      "Enable drive search": [
+        "Activer la recherche dans Drive"
       ],
       "Enabling drive search": [
         "Activation de la recherche dans Drive"
@@ -3402,7 +3411,7 @@
         "Certains fichiers n'ont pas été transférés. Essayez à nouveau de les charger/télécharger."
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Remarque : les données peuvent encore être disponibles localement sur les appareils où vous avez installé ${ DRIVE_APP_NAME }."
+        "Remarque : les données peuvent encore être disponibles localement sur les appareils sur lesquels vous avez installé ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "sur"
@@ -3635,6 +3644,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Pour que la recherche soit réellement privée, ${ DRIVE_APP_NAME } doit indexer vos fichiers localement."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Pour permettre une recherche vraiment privée, nous devons indexer vos fichiers localement. Vous pouvez utiliser ${ DRIVE_APP_NAME } normalement, nous vous informerons quand l'indexation sera terminée."
       ],
@@ -3667,6 +3679,9 @@
       ],
       "Trash": [
         "Corbeille"
+      ],
+      "Try searching by file name, date, or type.": [
+        "Essayez une recherche par nom, date ou type de fichier."
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -3842,6 +3857,9 @@
       ],
       "file data order": [
         "ordre des données du fichier"
+      ],
+      "hash key": [
+        "clé de hachage"
       ],
       "keys": [
         "clés"
@@ -5536,6 +5554,9 @@
       "Empty trash": [
         "Vider le dossier Corbeille"
       ],
+      "Enable drive search": [
+        "Activer la recherche dans Drive"
+      ],
       "Enter your password": [
         "Saisissez votre mot de passe."
       ],
@@ -5633,6 +5654,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "No results found": [
+        "Aucun résultat n'a été trouvé."
       ],
       "Number of files": [
         "Nombre de fichiers"

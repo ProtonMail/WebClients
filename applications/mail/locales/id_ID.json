@@ -627,7 +627,7 @@
         "pindahkan email ke"
       ],
       "Move to": [
-        "Pindah ke"
+        "Pindahkan ke"
       ],
       "Move to archive": [
         "Pindahkan ke arsip"
@@ -2987,7 +2987,7 @@
         "Acara dibatalkan"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        "Waktu acara telah diperbaharui. Pengingat ini sudah tidak lagi sesuai jadwal."
+        "Waktu acara telah diperbarui. Pengingat ini tidak lagi sesuai dengan jadwal."
       ]
     },
     "Email subject": {
@@ -3065,7 +3065,7 @@
         "Pencarian konten tidak dapat dilangsungkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Kesalahan dekripsi: dekripsi isi pesan terenkripsi gagal."
+        "Kesalahan dekripsi: konten terenkripsi yang terdapat pada pesan ini gagal didekripsi."
       ],
       "Deselect at least ${ calendarToFixCount } calendars": [
         "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan"
@@ -3158,7 +3158,7 @@
         "Pesan perlu dikirim terlebih dahulu"
       ],
       "Message processing error.": [
-        "Kesalahan pemprosesan pesan."
+        "Kesalahan pemrosesan pesan."
       ],
       "Missing key packet": [
         "Paket kunci hilang"
@@ -3167,7 +3167,7 @@
         "Tanda tangan hilang"
       ],
       "Network error: Please check your connection and try again.": [
-        "Kesalahan jaringan: Cek koneksi Anda dan coba lagi."
+        "Kesalahan jaringan: Mohon periksa koneksi internet Anda dan coba lagi."
       ],
       "No address with keys available to compose a message": [
         "Tidak ada alamat dengan kunci yang tersedia untuk dapat menulis pesan"
@@ -3245,13 +3245,13 @@
         "Tanda tangan tidak terverifikasi"
       ],
       "Signature verification error.": [
-        "Galat verifikasi tanda tangan."
+        "Kesalahan verifikasi tanda tangan."
       ],
       "Signature verification failed": [
         "Verifikasi tanda tangan gagal"
       ],
       "Some contacts could not be deleted": [
-        "Beberapa kontak tidak dapat dihapus"
+        "Sebagian kontak tidak dapat dihapus"
       ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "Kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
@@ -3356,7 +3356,7 @@
         "Kesalahan yang tidak diketahui"
       ],
       "Unknown error.": [
-        "Galat tidak diketahui."
+        "Kesalahan yang tidak diketahui."
       ],
       "Wrong mailbox password": [
         "Kata sandi kotak pesan salah"
@@ -4495,6 +4495,9 @@
       ],
       "Body: ": [
         "Isi: "
+      ],
+      "Calendar side panel": [
+        "Panel samping kalender"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
