@@ -1,4 +1,4 @@
-import { addDays, fromUnixTime } from 'date-fns';
+import { addDays, fromUnixTime, subDays } from 'date-fns';
 
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { Subscription } from '@proton/shared/lib/interfaces';
@@ -20,8 +20,10 @@ export const getShouldOpenReferralModal = ({
     const startDate = fromUnixTime(subscription.CreateTime);
     const nowDate = new Date();
     // Should be in trial since a week
-    const shouldOpen = addDays(startDate, 7) < nowDate;
-    const open = shouldOpen && feature?.Value === false;
+    const isExperienced = addDays(startDate, 7) < nowDate;
+    // 3 days before the end of the trial
+    const willExpire = subDays(endDate, 3) < nowDate;
+    const open = (isExperienced && feature?.Value === false) || willExpire;
 
     return { open, endDate };
 };
