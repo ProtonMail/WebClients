@@ -6,18 +6,8 @@ import { loadDashboard } from '@proton/activation/logic/actions';
 import { selectActiveImporterIdsByDate } from '@proton/activation/logic/importers/importers.selectors';
 import { selectReportSummaryIdsByDate } from '@proton/activation/logic/reports/reports.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
-import { loadSyncList } from '@proton/activation/logic/sync/sync.actions';
 import { selectSyncIdsByDate } from '@proton/activation/logic/sync/sync.selectors';
-import {
-    FeatureCode,
-    SettingsParagraph,
-    Table,
-    TableBody,
-    TableHeader,
-    TableHeaderCell,
-    TableRow,
-    useFeature,
-} from '@proton/components';
+import { SettingsParagraph, Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
 
 import ImporterRow from './Importers/ImporterRow';
 import ReportRow from './Reports/ReportRow';
@@ -29,18 +19,6 @@ const ReportsTable = () => {
     const activeImporterIds = useEasySwitchSelector(selectActiveImporterIdsByDate);
     const syncIdsArray = useEasySwitchSelector(selectSyncIdsByDate);
     const dispatch = useEasySwitchDispatch();
-
-    const gmailSync = useFeature(FeatureCode.EasySwitchGmailSync);
-
-    useEffect(() => {
-        if (gmailSync.loading) {
-            return;
-        }
-
-        if (gmailSync.feature && gmailSync.feature.Value) {
-            void dispatch(loadSyncList());
-        }
-    }, [gmailSync.loading]);
 
     useEffect(() => {
         const request = dispatch(loadDashboard());
