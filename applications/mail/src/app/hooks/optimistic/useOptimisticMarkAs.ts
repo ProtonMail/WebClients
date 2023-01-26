@@ -41,11 +41,6 @@ const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes
     };
 };
 
-// const applyMarkAsChangesOnMessage = (message: Message, { status }: MarkAsChanges) => ({
-//     ...message,
-//     Unread: status === MARK_AS_STATUS.UNREAD ? 1 : 0,
-// });
-
 export const applyMarkAsChangesOnConversation = (
     conversation: Conversation,
     labelID: string,
@@ -114,6 +109,11 @@ export const useOptimisticMarkAs = () => {
         const updatedElements = [] as Element[];
         let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
         let { value: conversationCounters } = globalCache.get(ConversationCountsModel.key) as CacheEntry<LabelCount[]>;
+
+        // If no counter is found in the cache, we cannot do optimistic on counters
+        if (!messageCounters || !conversationCounters) {
+            return;
+        }
 
         elements.forEach((element) => {
             rollbackChanges.push({ element, changes: computeRollbackMarkAsChanges(element, labelID, changes) });
