@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { FeatureCode } from '@proton/components/containers/features';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 
@@ -43,6 +45,7 @@ const config: OfferConfig = {
         },
     ],
     layout: Layout,
+    getCTAContent: () => c('Action').t`Upgrade`,
     shapeButton: 'outline',
     images: {
         bannerImage,
