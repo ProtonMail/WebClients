@@ -2906,7 +2906,7 @@
         "Misslyckades att hämta aktiva sessioner. ${ refresh } eller försök igen senare."
       ],
       "Filter with this name already exist": [
-        "Filter med detta namn finns redan"
+        "Filter with this name already exists"
       ],
       "Filter with this name already exists": [
         "Filter med detta namn finns redan"
@@ -7302,7 +7302,7 @@
         "Vad hände?"
       ],
       "What is the main reason you are cancelling?": [
-        "Vad är den främsta anledningen till att du avbryter?"
+        "What is the main reason you are canceling?"
       ],
       "What is the main reason you are deleting your account?": [
         "Vad är den främsta anledningen till att du tar bort ditt konto?"
@@ -9856,6 +9856,12 @@
     "TableRow": {
       "No SMTP tokens found": [
         "Inga SMTP-tokens hittades"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } timme",
+        "${ hours } timmar"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {

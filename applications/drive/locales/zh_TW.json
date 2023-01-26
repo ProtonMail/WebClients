@@ -242,6 +242,9 @@
       "enable desktop notifications": [
         "啟用桌面通知"
       ],
+      "Enable drive search": [
+        "啟用磁碟搜尋"
+      ],
       "Expand": [
         "展開"
       ],
@@ -2912,6 +2915,9 @@
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
       ],
+      "Also try looking in Trash.": [
+        "也別忘記看看垃圾桶。"
+      ],
       "An active recovery file": [
         "作用的還原檔案"
       ],
@@ -2950,6 +2956,9 @@
       ],
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "大量上載或會降低您的電腦效能。上載其間，請考慮限制佔用記憶體的活動 (例如串流)。又或者嘗試分批上載。"
+      ],
+      "Calendar side panel": [
+        "行事曆側面板"
       ],
       "Canceled": [
         "已取消"
@@ -3070,6 +3079,9 @@
       ],
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
+      ],
+      "Enable drive search": [
+        "啟用 Drive 搜尋"
       ],
       "Enabling drive search": [
         "正在啟用硬碟搜尋"
@@ -3572,6 +3584,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "${ DRIVE_APP_NAME } 需在您的機器上建立索引，以啟用真正的私密搜尋。"
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "要啟用真正的隱私搜尋，我們必須在本機索引您的檔案。您仍然可以正常使用 ${ DRIVE_APP_NAME }，我們將會在索引完成後通知您。"
       ],
@@ -3604,6 +3619,9 @@
       ],
       "Trash": [
         "垃圾桶"
+      ],
+      "Try searching by file name, date, or type.": [
+        "試著搜尋檔案名稱、日期與類型。"
       ],
       "Unknown error": [
         "未知錯誤"
@@ -5170,6 +5188,9 @@
       "Empty trash": [
         "清空垃圾桶"
       ],
+      "Enable drive search": [
+        "啟用磁碟搜尋"
+      ],
       "Enter your password": [
         "請輸入您的密碼"
       ],
@@ -5265,6 +5286,9 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "No results found": [
+        "查無結果"
       ],
       "Number of files": [
         "檔案數量"

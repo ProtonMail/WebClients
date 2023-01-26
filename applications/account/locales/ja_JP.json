@@ -100,6 +100,9 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
+      "Attention required": [
+        "注意が必要です"
+      ],
       "Authenticate": [
         "認証"
       ],
@@ -2839,7 +2842,7 @@
         "アクティブなセッションを取得できませんでした。${ refresh } するか、後ほど再度お試しください。"
       ],
       "Filter with this name already exist": [
-        "この名前のフィルターが既に存在します"
+        "Filter with this name already exists"
       ],
       "Filter with this name already exists": [
         "この名前のフィルターが既に存在します"
@@ -4504,6 +4507,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "このユーザーから管理者権限を削除してもよろしいですか？"
       ],
+      "Attention required": [
+        "注意が必要です"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "自動返信は、毎月設定された日の開始時刻と終了時刻の間有効です。"
       ],
@@ -4539,6 +4545,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "新しいアドレスからメールの送受信を開始する前に、暗号化キーを作成する必要があります。"
+      ],
+      "Billing cycle: ${ text }": [
+        "支払いサイクル: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "ビットコイン取引は確認に最大で24時間かかります。確認完了後、お客様のアカウントにクレジットを追加しますので、そのクレジットでお支払いください。"
@@ -7059,7 +7068,7 @@
         "どのような問題が発生しましたか?"
       ],
       "What is the main reason you are cancelling?": [
-        "キャンセルの主な理由は何ですか?"
+        "What is the main reason you are canceling?"
       ],
       "What is the main reason you are deleting your account?": [
         "アカウントを削除する主な理由は何ですか?"

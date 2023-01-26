@@ -1373,10 +1373,10 @@
         "${ participantName } bu etkinlik davetini kabul etti."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName }, yaptığınız daveti kabul etti ve yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi kabul etti ve yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } accepted your invitation and proposed a new time for this event.": [
-        "${ participantName }, yaptığınız daveti kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
         "${ participantName }, yinelenen etkinliğin bir tanesine yaptığınız daveti kabul etti."
@@ -1409,10 +1409,10 @@
         "${ participantName } bu etkinlik davetini reddetti."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName }, yaptığınız daveti reddetti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi reddetti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } declined your invitation and proposed a new time for this event.": [
-        "${ participantName }, yaptığınız daveti reddetti ve bu etkinlik için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi reddetti ve bu etkinlik için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
         "${ participantName }, yinelenen etkinliğin bir tanesine yaptığınız daveti reddetti."
@@ -1436,7 +1436,7 @@
         "${ participantName }, yapıtığınız daveti kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName }, yaptığınız daveti kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, davetinizi kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName }, yapılmış bir daveti reddetmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
@@ -1454,7 +1454,7 @@
         "${ participantName }, yapıtığınız daveti reddetmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName }, yaptığınız daveti reddetmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, davetinizi reddetmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
         "${ participantName } daha önce yinelenen etkinliğin bir tanesine yapılmış daveti kabul etmişti."
@@ -1466,13 +1466,13 @@
         "${ participantName } daha önce yinelenen etkinliğin bir tanesine yapılmış daveti reddetmişti."
       ],
       "${ participantName } had previously declined your invitation.": [
-        "${ participantName } daha önce yaptığınız daveti reddetmişti."
+        "${ participantName } daha önce davetinizi reddetmişti."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName }, daha önce yinelenen etkinliğin bir tanesine yaptığınız daveti belirsiz olarak kabul etmişti."
+        "${ participantName }, daha önce yinelenen etkinliğin bir tanesine yaptığınız daveti kesin olmamakla birlikte kabul etmişti."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
-        "${ participantName } daha önce yaptığınız daveti belirsiz olarak kabul etmişti."
+        "${ participantName } daha önce yaptığınız daveti kesin olmamakla birlikte kabul etmişti."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
         "${ participantName }, bu etkinliğin olduğu bir gün için yeni saat önerisinde bulundu. Bu önerinin süresi dolmuş."
@@ -1493,22 +1493,22 @@
         "${ participantName }, bu etkinlik için yeni bir saat önerisinde bulundu. Bu öneri güncel değil. Herhangi bir takviminiz yok."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName }, yapılmış bir daveti belirsiz olarak kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, yapılmış bir daveti kesin olmamakla birlikte kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName }, yapılmış bir daveti belirsiz olarak kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, yapılmış bir daveti kesin olmamakla birlikte kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName }, yinelenen etkinliğin bir tanesine yapılmış daveti belirsiz olarak kabul etmişti."
+        "${ participantName }, yinelenen etkinliğin bir tanesine yapılmış daveti kesin olmamakla birlikte kabul etmişti."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        "${ participantName } bu etkinliğe yapılmış daveti belirsiz olarak kabul etmişti."
+        "${ participantName } bu etkinliğe yapılmış daveti kesin olmamakla birlikte kabul etmişti."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName }, yaptığınız daveti belirsiz olarak kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, davetinizi kesin olmamakla birlikte kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName }, yaptığınız daveti belirsiz olarak kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, davetinizi kesin olmamakla birlikte kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } is not in the participants list.": [
         "${ participantName } katılımcılar listesinde yok."
@@ -1520,28 +1520,28 @@
         "${ participantName }, bu etkinlik için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName }, yapılmış bir daveti belirsiz olarak kabul etti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
+        "${ participantName }, yapılmış bir daveti kesin olmamakla birlikte kabul etti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        "${ participantName }, yapılmış bir daveti belirsiz olarak kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
+        "${ participantName }, yapılmış bir daveti kesin olmamakla birlikte kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName }, yinelenen etkinliğin bir tanesine yapılmış daveti belirsiz olarak kabul etti."
+        "${ participantName }, yinelenen etkinliğin bir tanesine yapılmış daveti kesin olmamakla birlikte kabul etti."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        "${ participantName } bu etkinlik davetini belirsiz olarak kabul etti."
+        "${ participantName } bu etkinlik davetini kesin olmamakla birlikte kabul etti."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName }, yaptığınız daveti belirsiz olarak kabul etti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi kesin olmamakla birlikte kabul etti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
-        "${ participantName }, yaptığınız daveti belirsiz olarak kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi kesin olmamakla birlikte kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName }, yinelenen etkinliğin bir tanesine yaptığınız daveti belirsiz olarak kabul etti."
+        "${ participantName }, yinelenen etkinliğin bir tanesine yaptığınız daveti kesin olmamakla birlikte kabul etti."
       ],
       "${ participantName } tentatively accepted your invitation.": [
-        "${ participantName } davetinizi belirsiz olarak kabul etti."
+        "${ participantName } davetinizi kesin olmamakla birlikte kabul etti."
       ],
       "(Attendance optional)": [
         "(Katılım isteğe bağlı)"
@@ -1595,7 +1595,7 @@
         "Bu daveti zaten reddetmişsiniz."
       ],
       "You already tentatively accepted this invitation.": [
-        "Bu daveti zaten belirsiz olarak kabul etmişsiniz."
+        "Bu daveti zaten kesin olmamakla birlikte kabul etmişsiniz."
       ],
       "Your email address is not in the participants list": [
         "E-posta adresiniz katılımcılar listesinde yok"
@@ -2966,7 +2966,7 @@
         "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından reddedildi"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından belirsiz olarak kabul edildi"
+        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından kesin olmamakla birlikte kabul edildi"
       ]
     },
     "Email reminder banner": {
@@ -3013,16 +3013,16 @@
         "${ formattedStart } tarihinde başlayan bir etkinliğin iptal bilgilendirmesi"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için davet"
+        "${ formattedStart } zamanındaki etkinlik daveti"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için davet"
+        "${ formattedStart } zamanında başlayan etkinlik daveti"
       ],
       "Update for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için güncelleme"
+        "${ formattedStart } zamanındaki etkinlik için güncelleme"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için güncelleme"
+        "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
     "Encrypted Headers": {
@@ -4572,6 +4572,9 @@
       ],
       "Body: ": [
         "İçerik: "
+      ],
+      "Calendar side panel": [
+        "Takvim yan panosu"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."

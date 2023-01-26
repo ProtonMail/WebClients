@@ -778,7 +778,7 @@
         "${ name } daveti henüz yanıtlamadı"
       ],
       "${ name } tentatively accepted the invitation": [
-        "${ name } daveti belirsiz olarak kabul etti"
+        "${ name } daveti kesin olmamakla birlikte kabul etti"
       ],
       "This event has been canceled": [
         "Bu etkinlik iptal edildi"
@@ -793,7 +793,7 @@
         "Daveti henüz yanıtlamadınız"
       ],
       "You tentatively accepted the invitation": [
-        "Daveti belirsiz olarak kabul ettiniz"
+        "Daveti kesin olmamakla birlikte kabul ettiniz"
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -1986,7 +1986,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Don't ask again": [
-        "Bir daha sorma"
+        "Do not ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2068,7 +2068,7 @@
         "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından reddedildi"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından belirsiz olarak kabul edildi"
+        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından kesin olmamakla birlikte kabul edildi"
       ]
     },
     "Email subject": {
@@ -2079,16 +2079,16 @@
         "${ formattedStart } tarihinde başlayan bir etkinliğin iptal bilgilendirmesi"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için davet"
+        "${ formattedStart } zamanındaki etkinlik daveti"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için davet"
+        "${ formattedStart } zamanında başlayan etkinlik daveti"
       ],
       "Update for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için güncelleme"
+        "${ formattedStart } zamanındaki etkinlik için güncelleme"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için güncelleme"
+        "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
     "Error": {
@@ -3247,6 +3247,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Bu takvimin tüm etkinlik ayrıntılarını paylaşarak, bu takvimin şifrelenmiş bilgilerine ${ BRAND_NAME } tarafından erişilmesine izin vermiş olursunuz."
+      ],
+      "Calendar side panel": [
+        "Takvim yan panosu"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
