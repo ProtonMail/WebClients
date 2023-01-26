@@ -1,7 +1,15 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { createImport, createSync, createToken, deleteSync, getSyncList } from '@proton/activation/api';
+import {
+    createImport,
+    createSync,
+    createToken,
+    deleteSync,
+    getSyncList,
+    resumeSync,
+    updateImport,
+} from '@proton/activation/api';
 import { APIImportSyncListResponse } from '@proton/activation/api/api.interface';
 import {
     AuthenticationMethod,
@@ -96,6 +104,42 @@ export const createSyncItem = createAsyncThunk<
         const { ImporterID } = await thunkApi.extra.api(createImport(createImportPayload));
         await thunkApi.extra.api(createSync(ImporterID));
         await thunkApi.extra.eventManager.call();
+        thunkApi.extra.notificationManager.createNotification(notification);
+        return;
+    } catch (error: any) {
+        return thunkApi.rejectWithValue(error.data as SubmitError);
+    }
+});
+
+interface ResumeSyncProps extends CreateSyncProps {
+    syncId: string;
+    importerId: string;
+}
+
+export const resumeSyncItem = createAsyncThunk<
+    any,
+    ResumeSyncProps,
+    EasySwitchThunkExtra & {
+        rejectValue: SubmitError;
+    }
+>('sync/resume', async (props, thunkApi) => {
+    try {
+        const { Code, Provider, RedirectUri, Source, notification, syncId, importerId } = props;
+
+        const { Token }: { Token: ImportToken } = await thunkApi.extra.api(
+            createToken({
+                Provider,
+                Code,
+                RedirectUri,
+                Source,
+                Products: [ImportType.MAIL],
+            })
+        );
+
+        await thunkApi.extra.api(updateImport(importerId, { TokenID: Token.ID }));
+        await thunkApi.extra.api(resumeSync(syncId));
+        await thunkApi.extra.eventManager.call();
+
         thunkApi.extra.notificationManager.createNotification(notification);
         return;
     } catch (error: any) {
