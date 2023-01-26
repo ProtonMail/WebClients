@@ -11,11 +11,10 @@ module.exports = (...env) => {
     });
     const htmlPlugin = config.plugins[htmlIndex];
 
-    config.entry = {
-        lite: [path.resolve('./src/lite/index.tsx'), require.resolve('@proton/shared/lib/browser/supported.js')],
+    config.entry = getConfig.mergeEntry(config.entry, {
+        lite: [path.resolve('./src/lite/index.tsx'), require.resolve('@proton/shared/lib/supported/supported.ts')],
         storage: path.resolve('./src/app/storage.ts'),
-        ...config.entry,
-    };
+    });
 
     config.devServer.historyApiFallback.rewrites = [{ from: /^\/lite/, to: '/lite.html' }];
 
@@ -80,7 +79,7 @@ module.exports = (...env) => {
             template: path.resolve('./src/lite.ejs'),
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
-            chunks: ['unsupported', 'lite'],
+            chunks: ['pre', 'lite', 'unsupported'],
             inject: 'body',
         })
     );
