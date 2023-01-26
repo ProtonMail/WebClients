@@ -143,6 +143,7 @@ export const setup = async ({
         { LabelID: props.labelID, Total: totalConversations, Unread: totalConversations },
     ]);
     addToCache('MailSettings', props.mailSettings);
+    addToCache('Calendars', []);
 
     const result = await render(<Component {...props} />, false);
     const rerender = (propsArgs: PropsArgs) => result.rerender(<Component {...getProps(propsArgs)} />);
