@@ -1,22 +1,19 @@
 import { c } from 'ttag';
 
 import { serverTime } from '@proton/crypto';
-import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/calendars';
-import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { SECOND } from '@proton/shared/lib/constants';
-import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
-import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import { Api, SimpleMap } from '@proton/shared/lib/interfaces';
-import {
-    CalendarMemberInvitation,
-    MEMBER_INVITATION_STATUS,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
-import { decryptPassphrase, signPassphrase } from '@proton/shared/lib/keys/calendarKeys';
+
+import { acceptInvitation, rejectInvitation } from '../api/calendars';
+import { getIsOwnedCalendar } from '../calendar/calendar';
+import { getIsSubscribedCalendar } from '../calendar/subscribe/helpers';
+import { SECOND } from '../constants';
+import { getContactDisplayNameEmail } from '../contacts/contactEmail';
+import { canonicalizeEmail } from '../helpers/email';
+import { Api, SimpleMap } from '../interfaces';
+import { CalendarMemberInvitation, MEMBER_INVITATION_STATUS, VisualCalendar } from '../interfaces/calendar';
+import { ContactEmail } from '../interfaces/contacts';
+import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
+import { getPrimaryKey } from '../keys';
+import { decryptPassphrase, signPassphrase } from './crypto/calendarKeys';
 
 export const getIsInvitationExpired = ({ ExpirationTime }: CalendarMemberInvitation) => {
     if (!ExpirationTime) {

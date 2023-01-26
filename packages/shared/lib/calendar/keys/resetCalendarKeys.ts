@@ -7,7 +7,7 @@ import { getCalendarGroupReset, queryMembers, resetCalendarGroup } from '../../a
 import { Address, Api } from '../../interfaces';
 import { Calendar, CalendarMember } from '../../interfaces/calendar';
 import { getPrimaryKey } from '../../keys';
-import { generateCalendarKeyPayload } from '../../keys/calendarKeys';
+import { generateCalendarKeyPayload } from '../crypto/calendarKeys';
 import { getMemberAddressWithAdminPermissions } from '../getMemberWithAdmin';
 
 interface ResetCalendarKeysArguments {

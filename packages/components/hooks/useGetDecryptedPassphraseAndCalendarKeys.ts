@@ -1,16 +1,16 @@
 import { useCallback } from 'react';
 
-import { Address } from '@proton/shared/lib/interfaces';
-import { MemberPassphrase } from '@proton/shared/lib/interfaces/calendar';
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { GetDecryptedPassphraseAndCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetDecryptedPassphraseAndCalendarKeys';
-import { splitKeys } from '@proton/shared/lib/keys';
 import {
     decryptPassphrase,
     decryptPassphraseSessionKey,
     getAddressesMembersMap,
     getDecryptedCalendarKeys,
-} from '@proton/shared/lib/keys/calendarKeys';
+} from '@proton/shared/lib/calendar/crypto/calendarKeys';
+import { Address } from '@proton/shared/lib/interfaces';
+import { MemberPassphrase } from '@proton/shared/lib/interfaces/calendar';
+import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import { GetDecryptedPassphraseAndCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetDecryptedPassphraseAndCalendarKeys';
+import { splitKeys } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { useGetAddresses } from './useAddresses';

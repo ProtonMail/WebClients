@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 
-import { decryptPassphrase } from '../../lib/keys/calendarKeys';
+import { decryptPassphrase } from '../../lib/calendar/crypto/calendarKeys';
 import { DecryptableKey } from './keys.data';
 
 const armoredPassphrase = `

@@ -4,7 +4,7 @@ import { upgradeP2PInvite } from '../../api/calendars';
 import { uint8ArrayToBase64String } from '../../helpers/encoding';
 import { Api } from '../../interfaces';
 import { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
-import { getPrimaryCalendarKey } from '../../keys/calendarKeys';
+import { getPrimaryCalendarKey } from '../crypto/calendarKeys';
 import { getEncryptedSessionKey } from '../crypto/encrypt';
 
 export const reencryptCalendarSharedEvent = async ({
