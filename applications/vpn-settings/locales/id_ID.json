@@ -1458,10 +1458,10 @@
     },
     "Error": {
       "Amount above the maximum.": [
-        "Jumlah di atas maksimum."
+        "Jumlah melebihi nilai maksimum."
       ],
       "Amount below minimum.": [
-        "Jumlah di bawah minimum."
+        "Jumlah berada di bawah nilai minimum."
       ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
@@ -1479,7 +1479,7 @@
         "Masukkan 6 digit"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Gagal sambung ke API Bitcoin."
+        "Terdapat kesalahan dalam menyambungkan ke API Bitcoin."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Apabila waktu yang tertera pada TV Anda telah habis, klik Muat Ulang pada TV Anda dan masukkan kode Anda kembali."
@@ -1512,7 +1512,7 @@
         "Kode verifikasi tidak valid"
       ],
       "Name on card required": [
-        "Wajib isi nama di kartu"
+        "Nama pada kartu dibutuhkan"
       ],
       "Not a valid number": [
         "Nomor telepon tidak valid"
@@ -1527,7 +1527,7 @@
         "Proses pembayaran dibatalkan"
       ],
       "Payment process consumed": [
-        "Proses pembayaran terlalu lama"
+        "Proses pembayaran telah melewati batas tenggat waktu"
       ],
       "Payment process failed": [
         "Proses pembayaran gagal"
@@ -1536,7 +1536,7 @@
         "Proses pembayaran tidak didukung"
       ],
       "Payments are currently not available, please try again later": [
-        "Pembayaran tidak bisa dilakukan. Coba lagi nanti"
+        "Pembayaran saat ini tidak tersedia. Silakan coba lagi nanti"
       ],
       "Please generate keys before you try to change your password": [
         "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
@@ -2934,7 +2934,7 @@
         "Apa yang terjadi?"
       ],
       "What is the main reason you are cancelling?": [
-        "Apa alasan utama Anda membatalkan?"
+        "What is the main reason you are canceling?"
       ],
       "What is the main reason you are deleting your account?": [
         "Apa alasan utama Anda menghapus akun?"

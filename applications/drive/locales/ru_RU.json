@@ -248,6 +248,9 @@
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
+      "Enable drive search": [
+        "Включить поиск по хранилищу"
+      ],
       "Expand": [
         "Развернуть"
       ],
@@ -1881,7 +1884,7 @@
         "Отмена события, начинающегося ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Приглашение на мероприятие, начинающееся ${ formattedStart }"
+        "Приглашение на событие, начинающееся ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Приглашение на событие, начинающееся ${ formattedStart }"
@@ -2299,7 +2302,7 @@
         "Запись журнала"
       ],
       "Malformed all-day event": [
-        "Неправильное мероприятие на весь день"
+        "Неправильный формат события на весь день"
       ],
       "Malformed end time": [
         "Неправильный формат времени окончания"
@@ -2621,10 +2624,10 @@
         "Импортированные приглашения появляются в ${ CALENDAR_APP_NAME } как простые события без сведений об организаторах и участниках. Чтобы получать обновления событий и видеть участников, попросите организаторов пригласить вас, используя ваш адрес электронной почты ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
-        "Этот файл содержит приглашение на мероприятие:",
-        "Этот файл содержит приглашения на мероприятие:",
-        "Этот файл содержит приглашения на мероприятие:",
-        "Этот файл содержит приглашения на мероприятие:"
+        "Этот файл содержит приглашение на событие:",
+        "Этот файл содержит приглашения на событие:",
+        "Этот файл содержит приглашения на событие:",
+        "Этот файл содержит приглашения на событие:"
       ],
       "This file contains an invitation response:": [
         "Этот файл содержит ответ на приглашение:",
@@ -3071,6 +3074,9 @@
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
       ],
+      "Also try looking in Trash.": [
+        "Попробуйте поискать и в Корзине."
+      ],
       "An active recovery file": [
         "Активный файл восстановления"
       ],
@@ -3235,6 +3241,9 @@
       ],
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
+      ],
+      "Enable drive search": [
+        "Включить поиск по хранилищу"
       ],
       "Enabling drive search": [
         "Включается поиск по хранилищу"
@@ -3755,6 +3764,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Чтобы обеспечить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должно проиндексировать ваши файлы локально."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Чтобы включить действительно конфиденциальный поиск, нам надо проиндексировать ваши файлы локально. Вы по-прежнему можете использовать ${ DRIVE_APP_NAME } в обычном режиме. Мы сообщим вам, когда индексирование будет завершено."
       ],
@@ -3787,6 +3799,9 @@
       ],
       "Trash": [
         "Корзина"
+      ],
+      "Try searching by file name, date, or type.": [
+        "Попробуйте выполнить поиск по имени файла, дате или типу."
       ],
       "Unknown error": [
         "Неизвестная ошибка"
@@ -5757,6 +5772,9 @@
       "Empty trash": [
         "Очистить корзину"
       ],
+      "Enable drive search": [
+        "Включить поиск по хранилищу"
+      ],
       "Enter your password": [
         "Введите свой пароль"
       ],
@@ -5858,6 +5876,9 @@
       ],
       "Name": [
         "Имя"
+      ],
+      "No results found": [
+        "Результатов не найдено"
       ],
       "Number of files": [
         "Количество файлов"

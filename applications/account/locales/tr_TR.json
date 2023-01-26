@@ -2753,7 +2753,7 @@
         "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından reddedildi"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından belirsiz olarak kabul edildi"
+        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından kesin olmamakla birlikte kabul edildi"
       ]
     },
     "Email spam notification": {
@@ -2793,16 +2793,16 @@
         "${ formattedStart } tarihinde başlayan bir etkinliğin iptal bilgilendirmesi"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için davet"
+        "${ formattedStart } zamanındaki etkinlik daveti"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için davet"
+        "${ formattedStart } zamanında başlayan etkinlik daveti"
       ],
       "Update for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için güncelleme"
+        "${ formattedStart } zamanındaki etkinlik için güncelleme"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için güncelleme"
+        "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
     "Email Unsubscribe": {
@@ -2912,7 +2912,7 @@
         "Etkin oturumlar alınamadı. Lütfen ${ refresh }yin ya da bir süre sonra yeniden deneyin."
       ],
       "Filter with this name already exist": [
-        "Aynı adlı bir süzgeç zaten var"
+        "Filter with this name already exists"
       ],
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
@@ -4701,6 +4701,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Yeni adreslerinizden e-posta gönderip almaya başlamadan önce, adresler için şifreleme anahtarlarını oluşturmalısınız."
+      ],
+      "Billing cycle: ${ text }": [
+        "Faturalama dönemi: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Bitcoin işlemlerinin onaylanması biraz zaman alabilir (24 saate kadar). Onaylandıktan sonra hesabınıza kredi ekleyeceğiz. İşlem onayından sonra, faturanızı kredilerle ödeyebilirsiniz."
@@ -7324,7 +7327,7 @@
         "Ne oldu?"
       ],
       "What is the main reason you are cancelling?": [
-        "İptal etmenizin ana nedeni nedir?"
+        "What is the main reason you are canceling?"
       ],
       "What is the main reason you are deleting your account?": [
         "Hesabınızı silmenizin ana nedeni nedir?"

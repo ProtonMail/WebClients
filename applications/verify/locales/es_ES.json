@@ -943,16 +943,16 @@
         "Error: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Ups, algo salió mal"
+        "Lo sentimos, se ha producido un error."
       ],
       "Please ${ refresh } or check your connection.": [
-        "Por favor, ${ refresh } o comprueba tu conexión."
+        "${ refresh } o comprueba tu conexión."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Algo salió mal. Actualiza la página o inténtalo de nuevo más tarde."
+        "Se ha producido un error. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Ha ocurrido un problema al conectarse a ${ BRAND_NAME }."
+        "Ha ocurrido un problema al conectarte a ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "También puedes ${ refresh } o intentarlo de nuevo más tarde."
@@ -995,7 +995,7 @@
     },
     "Info": {
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación revise su carpeta de spam y compruebe que ${ strong } la dirección es correcta."
+        "Antes de solicitar un nuevo código de verificación revisa tu carpeta de spam y comprueba que ${ strong } la dirección es correcta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
@@ -1016,10 +1016,10 @@
         "Introduce tu propia contraseña (como administrador de la organización)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si tienes problemas para crear tu cuenta, por favor solicita una invitación y responderemos en un día hábil."
+        "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
+        "Si no encuentras el correo electrónico en tu bandeja de entrada, comprueba tu carpeta de spam."
       ],
       "Internet connection lost": [
         "Se ha perdido la conexión a Internet"
@@ -1034,7 +1034,7 @@
         "No se han encontrado resultados."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
+        "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos"
       ],
       "Session timed out": [
         "El tiempo de la sesión ha expirado"
@@ -1055,10 +1055,10 @@
         "¿Quiere recibir un código de verificación nuevo?"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu Drive serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, por favor paga las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive están bloqueados y no puedes subir nuevos archivos. Para continuar usando tu cuenta, por favor, abona las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que abonar las facturas pendientes."
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación única."
@@ -1140,7 +1140,7 @@
         "La contraseña debe contener al menos ${ length } caracteres"
       ],
       "Try a shorter username (${ n } character max)": [
-        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)",
+        "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
         "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     }

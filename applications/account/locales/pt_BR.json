@@ -2912,7 +2912,7 @@
         "Falha ao obter sessões ativas. Por favor, ${ refresh } ou tente novamente mais tarde."
       ],
       "Filter with this name already exist": [
-        "Já existe um filtro com este nome"
+        "Filter with this name already exists"
       ],
       "Filter with this name already exists": [
         "Já existe um filtro com este nome"
@@ -3321,10 +3321,10 @@
         "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não tem o formato correto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ocorreu um erro ao carregar seu arquivo ${ formattedFilename }. Nenhum arquivo .csv ou .vcf foi selecionado"
+        "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. Nenhum arquivo .csv ou .vcf foi selecionado"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Ocorreu um erro ao carregar o seu arquivo. Nenhum arquivo foi selecionado."
@@ -3336,7 +3336,7 @@
         "O arquivo ${ formattedFilename } não tem contatos para serem importados."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "O arquivo ${ formattedFilename } está vazio."
+        "O seu arquivo ${ formattedFilename } está vazio."
       ]
     },
     "Error importing event": {
@@ -3442,7 +3442,7 @@
         "Ocorreu um erro ao ler o arquivo \"${ formattedFilename }\". O arquivo não tem o formato correto."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao enviar o arquivo \"${ formattedFilename }\". O tamanho máximo permitido é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao carregar o seu arquivo \"${ formattedFilename }\". O tamanho máximo permitido é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Ocorreu um erro ao carregar o seu arquivo. Nenhum arquivo foi selecionado."
@@ -3451,7 +3451,7 @@
         "Envie um arquivo CSV com ${ MAX_NUMBER_OF_USER_ROWS } usuários ou menos."
       ],
       "Your file \"${ formattedFilename }\" is empty.": [
-        "O arquivo \"${ formattedFilename }\" está vazio."
+        "O seu arquivo ${ formattedFilename } está vazio."
       ]
     },
     "Error message": {
@@ -7332,7 +7332,7 @@
         "O que aconteceu?"
       ],
       "What is the main reason you are cancelling?": [
-        "Qual é o principal motivo pelo qual você está cancelando?"
+        "What is the main reason you are canceling?"
       ],
       "What is the main reason you are deleting your account?": [
         "Qual é a principal razão pela qual você está excluindo sua conta?"
@@ -7484,7 +7484,7 @@
         "Criar marcador"
       ],
       "Edit folder": [
-        "Editar a pasta"
+        "Editar pasta"
       ],
       "Edit label": [
         "Editar marcador"

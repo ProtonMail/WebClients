@@ -2900,7 +2900,7 @@
         "未能获取已登录的账户，请${ refresh }或稍后再试。"
       ],
       "Filter with this name already exist": [
-        "这个名称已经用过了"
+        "Filter with this name already exists"
       ],
       "Filter with this name already exists": [
         "这个名称已经用过了"
@@ -5603,6 +5603,9 @@
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "将下载含有您私钥的文件，请使用密码加密保护这个文件。"
       ],
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "完成此操作后您就可以在 ${ BRAND_NAME } 中使用 PayPal 支付了。我们将在新标签页中为您打开 PayPal，如果您使用了弹窗屏蔽插件，请关闭后再继续。"
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "此操作将永久删除该用户的相关数据和所有邮箱地址。"
       ],
@@ -7257,7 +7260,7 @@
         "发生了什么？"
       ],
       "What is the main reason you are cancelling?": [
-        "您取消的主要原因是什么？"
+        "What is the main reason you are canceling?"
       ],
       "What is the main reason you are deleting your account?": [
         "您删除账户的主要原因是？"
@@ -11015,6 +11018,9 @@
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
         "停用此地址后，您将无法用该地址收发邮件，与其相关联的 ${ BRAND_NAME } 服务也将被停用。您确定要停用此地址吗？"
+      ],
+      "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
+        "取消导入后您将无法恢复当前进度，但已导入的内容 ${ BRAND_NAME } 会正常保存。确定要取消吗？"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "只有付费 ${ VPN_APP_NAME } 账户才能与客服实时交流，请通过表单提交反馈。"

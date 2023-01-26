@@ -248,6 +248,9 @@
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
       ],
+      "Enable drive search": [
+        "Włącz wyszukiwanie dysku"
+      ],
       "Expand": [
         "Rozwiń"
       ],
@@ -3079,6 +3082,9 @@
       "All your changes will be lost.": [
         "Wszystkie zmiany zostaną utracone."
       ],
+      "Also try looking in Trash.": [
+        "Spróbuj przeszukać Kosz."
+      ],
       "An active recovery file": [
         "Aktywny plik odzyskiwania"
       ],
@@ -3117,6 +3123,9 @@
       ],
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Masowe przesyłanie może zmniejszyć wydajność komputera. Rozważ ograniczenie aktywności wymagających dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
+      ],
+      "Calendar side panel": [
+        "Panel boczny kalendarza"
       ],
       "Canceled": [
         "Anulowano"
@@ -3243,6 +3252,9 @@
       ],
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
+      ],
+      "Enable drive search": [
+        "Włącz wyszukiwanie dysku"
       ],
       "Enabling drive search": [
         "Włączanie wyszukiwania dysku"
@@ -3763,6 +3775,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Aby włączyć prywatne wyszukiwanie, aplikacja ${ DRIVE_APP_NAME } musi lokalnie zaindeksować pliki."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Aby włączyć prywatne wyszukiwanie, musimy lokalnie zaindeksować pliki. Możesz nadal używać aplikacji ${ DRIVE_APP_NAME }. Powiadomimy Cię, kiedy indeksowanie zostanie zakończone."
       ],
@@ -3795,6 +3810,9 @@
       ],
       "Trash": [
         "Kosz"
+      ],
+      "Try searching by file name, date, or type.": [
+        "Spróbuj wyszukać za pomocą nazwy, daty lub typu."
       ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
@@ -5768,6 +5786,9 @@
       "Empty trash": [
         "Opróżnij kosz"
       ],
+      "Enable drive search": [
+        "Włącz wyszukiwanie dysku"
+      ],
       "Enter your password": [
         "Wpisz hasło"
       ],
@@ -5869,6 +5890,9 @@
       ],
       "Name": [
         "Nazwa"
+      ],
+      "No results found": [
+        "Nie znaleziono żadnych wyników"
       ],
       "Number of files": [
         "Liczba plików"

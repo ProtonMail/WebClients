@@ -145,7 +145,7 @@
         "Elige un archivo o arrástralo aquí"
       ],
       "Claim it": [
-        "Solicitar dirección"
+        "Solicitarla"
       ],
       "Clear all formatting": [
         "Borrar todo el formato"
@@ -457,7 +457,7 @@
         "Cargando verificación"
       ],
       "Make default": [
-        "Establecer como predeterminada"
+        "Establecer como por defecto"
       ],
       "Manage communication preferences": [
         "Administrar las preferencias de comunicación"
@@ -469,7 +469,7 @@
         "Administrar etiquetas"
       ],
       "Mark as default": [
-        "Marcar como predeterminado"
+        "Marcar como por defecto"
       ],
       "Mark as not spam": [
         "Marcar como no es spam"
@@ -796,7 +796,7 @@
         "Prueba con otro método"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Intenta guardar de nuevo. Error al guardar debido a: ${ saveError }"
+        "Error al guardar debido a: ${ saveError }. Intenta guardar de nuevo."
       ],
       "Underline": [
         "Subrayado"
@@ -951,7 +951,7 @@
         "Generar claves faltantes"
       ],
       "Make default": [
-        "Establecer como predeterminada"
+        "Establecer como por defecto"
       ],
       "Saving": [
         "Guardando"
@@ -982,7 +982,7 @@
         "Al salir ahora, algunos contactos pueden no ser importados"
       ],
       "By leaving now, some events may not be imported": [
-        "Si sales ahora, algunos eventos pueden no ser importados."
+        "Si sales ahora, no se puede importar algunos eventos."
       ]
     },
     "Alter": {
@@ -1223,10 +1223,10 @@
         "Has alcanzado el número máximo de calendarios personales que puedes crear dentro de tu plan."
       ],
       "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Has alcanzado el máximo número de calendarios personales que puedes tener. Para aceptar invitaciones pendientes a calendarios, debes borrar alguno de tus calendarios actuales."
+        "Has alcanzado el máximo número de calendarios personales que puedes tener. Para aceptar invitaciones pendientes a calendarios, debes borrar algunos de tus calendarios actuales."
       ],
       "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Has alcanzado el máximo número de calendarios compartidos que puedes tener. Para aceptar invitaciones pendientes a calendarios, debes borrar alguno de tus calendarios actuales."
+        "Has alcanzado el máximo número de calendarios compartidos que puedes tener. Para aceptar invitaciones pendientes a calendarios, debes borrar algunos de tus calendarios actuales."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "Has alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS } calendario suscrito.",
@@ -1266,7 +1266,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Crea un enlace a tu calendario y compártelo con cualquier persona fuera de ${ BRAND_NAME }. Sólo tú puedes agregar o eliminar eventos."
+        "Crea un enlace a tu calendario y compártelo con cualquier persona fuera de ${ BRAND_NAME }. Solo tú puedes añadir o eliminar eventos."
       ]
     },
     "Calendar settings private share description": {
@@ -2507,7 +2507,7 @@
         "Error en la fila ${ erroredRowsString }."
       ],
       "It looks like your file is missing the '${ options.fieldName }' header.": [
-        "Parece que a tu archivo le falta la cabecera '${ options.fieldName }'."
+        "Parece que falta el encabezado \"${ options.fieldName }\" a tu archivo ."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Hemos detectado errores en varias filas durante la importación. Averigua tu archivo CSV."
@@ -2605,7 +2605,7 @@
         "Obtén hasta ${ credits } créditos por invitar amigos a ${ BRAND_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Parece que la lista de contactos que estás importando contiene algunos grupos. Revisa cómo deben importarse estos grupos."
+        "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
@@ -2615,7 +2615,7 @@
         "Sigue el estado y actividad de tus referencias."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Puede seguir invitando amigos, pero no podrá ganar más créditos"
+        "Puedes seguir invitando amigos, pero no podrás ganar más créditos."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
@@ -2626,7 +2626,7 @@
         "Además, hemos emparejado automáticamente los campos CSV con los campos vCard. Puedes verificar y cambiar este emparejamiento manualmente."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Hemos detectado los siguientes campos en el archivo CSV que has subido. Verifica los que deseas importar."
+        "Hemos detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que deseas importar."
       ]
     },
     "Domain label": {
@@ -2679,7 +2679,7 @@
         "Faltan funciones"
       ],
       "My reason isn't listed, please comment": [
-        "Mi razón no está en la lista, por favor comente"
+        "Mi razón no está en la lista. Déjanos un comentario."
       ],
       "Streaming service unsupported": [
         "Servicio de streaming no compatible"
@@ -2691,7 +2691,7 @@
         "Cambiando a otro proveedor"
       ],
       "Temporary need, may come back in the future": [
-        "Necesidad temporal, puede volver en el futuro"
+        "Necesidad temporal que puede volver en el futuro"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2853,7 +2853,7 @@
         "Error de autenticación."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Las respuestas automáticas son una función de pago. Por favor, actualiza a una cuenta de pago para usar esta función."
+        "Las respuestas automáticas son una función de pago. Actualiza a una cuenta de pago para usar esta función."
       ],
       "Calendar cannot be found": [
         "No se ha encontrado el calendario"
@@ -2912,7 +2912,7 @@
         "Error al obtener las sesiones activas. ${ refresh } o inténtalo de nuevo más tarde."
       ],
       "Filter with this name already exist": [
-        "Ya existe un filtro con este nombre"
+        "Filter with this name already exists"
       ],
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre"
@@ -2924,10 +2924,10 @@
         "Servidor IMAP requerido"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciales de acceso incorrectas. Por favor, inténtelo de nuevo."
+        "Credenciales de acceso incorrectas. Inténtalo de nuevo."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Contraseña de buzón incorrecta. Por favor, inténtelo de nuevo."
+        "Contraseña de buzón incorrecta. Inténtalo de nuevo."
       ],
       "Incorrect password": [
         "Contraseña incorrecta"
@@ -3024,7 +3024,7 @@
         "La clave de organización no está descifrada."
       ],
       "Organization not recognized. Try again.": [
-        "Organización no reconocida: inténtalo de nuevo."
+        "Organización no reconocida - inténtalo de nuevo."
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -3054,11 +3054,11 @@
         "Configura un dominio personalizado antes de agregar usuarios a tu organización."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Por favor, habilita el soporte multiusuario antes de añadir usuarios a tu organización."
+        "Habilita el soporte multiusuario antes de añadir usuarios a tu organización."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Por favor, arregla el conflicto resaltado para continuar.",
-        "Por favor, arregla los conflictos resaltados para continuar."
+        "Arregla el conflicto resaltado para continuar.",
+        "Arregla los conflictos resaltados para continuar."
       ],
       "Please generate keys before you try to change your password": [
         "Genera claves antes de intentar cambiar tu contraseña."
@@ -3067,10 +3067,10 @@
         "Establece primero un correo electrónico de recuperación."
       ],
       "Please set a recovery phone number first": [
-        "Por favor, establece primero un número de teléfono de recuperación"
+        "Establece primero un número de teléfono de recuperación."
       ],
       "Please set a recovery/notification email first": [
-        "Por favor, primero establece un correo electrónico de recuperación/notificación"
+        "Establece primero un correo electrónico de recuperación/notificación."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Actualiza a un plan de empresa con más de 1 usuario para un soporte multiusuario."
@@ -3116,25 +3116,25 @@
         "La verificación de la firma ha fallado"
       ],
       "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Algunos de tus nombres de carpetas están reservados. Por favor, personaliza la importación para editar estos nombres."
+        "Algunos de tus nombres de carpetas están reservados. Personaliza la importación para editar estos nombres."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Algunos de tus nombres de carpetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
+        "Algunos de tus nombres de carpetas no están disponibles. Personaliza la importación para editar estos nombres."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de los nombres de sus carpetas superan el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación para editar estos nombres."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Algunos de tus nombres de etiquetas están reservados. Por favor, personaliza la importación para editar estos nombres."
+        "Algunos de tus nombres de etiquetas están reservados. Personaliza la importación para editar estos nombres."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Algunos de sus nombres de etiquetas no están disponibles. Por favor, personalice la importación para editar estos nombres."
+        "Algunos de tus nombres de etiquetas no están disponibles. Personaliza la importación para editar estos nombres."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Algunos de sus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Por favor, modifique la importación para editar estos nombres."
+        "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Modifica la importación para editar estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, póngase en contacto con nuestro ${ supportTeam }."
+        "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
       ],
       "Tab closed": [
         "Pestaña cerrada"
@@ -3143,13 +3143,13 @@
         "La dirección podría estar mal escrita"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "El navegador que estás utilizando no permite que el pago sea autorizado. Por favor, utiliza un navegador diferente o inicia sesión a través de un ordenador."
+        "El navegador que estás utilizando no permite que el pago sea autorizado. Utiliza un navegador diferente o inicia sesión desde un ordenador."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "El nombre de la carpeta es inválido. Por favor, elige un nombre diferente."
+        "El nombre de la carpeta es inválido. Elige un nombre diferente."
       ],
       "The folder name is too long. Please choose a different name.": [
-        "El nombre de la carpeta es demasiado largo. Por favor, elija un nombre diferente."
+        "El nombre de la carpeta es demasiado largo. Elige un nombre diferente."
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
         "No se puede validar las claves de tu archivo de recuperación. Póngate en contacto con el servicio de asistencia."
@@ -3158,10 +3158,10 @@
         "No se puede validar las claves de tu archivo de recuperación. Cárgalas de forma individual para obtener más información."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "El nombre de la etiqueta no es válido. Por favor, elija un nombre diferente."
+        "El nombre de la etiqueta no es válido. Elige un nombre diferente."
       ],
       "The label name is too long. Please choose a different name.": [
-        "El nombre de la etiqueta es demasiado largo. Por favor, elija un nombre diferente."
+        "El nombre de la etiqueta es demasiado largo. Elige un nombre diferente."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
@@ -3185,7 +3185,7 @@
         "Tu sesión ha expirado. Inicia sesión de nuevo."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Hay demasiadas carpetas en su cuenta externa. Por favor, personalice la importación para eliminar algunas carpetas."
+        "Hay demasiadas carpetas en tu cuenta externa. Personaliza la importación para eliminar algunas carpetas."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
@@ -3197,13 +3197,13 @@
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Este nombre de carpeta no está disponible. Por favor, elija un nombre diferente."
+        "Este nombre de carpeta no está disponible. Elige un nombre diferente."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Este nombre de etiqueta no está disponible. Por favor, elija un nombre diferente."
+        "Este nombre de etiqueta no está disponible. Elige un nombre diferente."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Este mensaje podría contener enlaces que no se pueden abrir correctamente en su navegador actual."
+        "Este mensaje podría contener enlaces que no se pueden abrir correctamente en tu navegador actual."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
@@ -3248,10 +3248,10 @@
         "Has alcanzado el número máximo de calendarios personales. No se pudieron importar algunos calendarios."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Has utilizado todas las direcciones de tu plan. Por favor, actualiza tu plan para añadir una nueva dirección."
+        "Has utilizado todas las direcciones de tu plan. Actualiza tu plan para añadir una nueva dirección."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Has utilizado todos los usuarios de tu plan. Por favor, actualiza tu plan para añadir un nuevo usuario."
+        "Has utilizado todos los usuarios de tu plan. Actualiza tu plan para añadir un nuevo usuario."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Debes activar las claves de tu organización. Sin la activación no serás capaz de crear nuevos usuarios, agregar direcciones a los usuarios o acceder a cuentas de usuario no privadas."
@@ -3324,7 +3324,7 @@
         "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ha ocurrido un error al subir el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf"
+        "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Ha ocurrido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
@@ -3448,7 +3448,7 @@
         "Ha ocurrido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
-        "Sube un archivo CSV con un máximo de ${ MAX_NUMBER_OF_USER_ROWS } cuentas de usuario."
+        "Carga un archivo CSV con un máximo de ${ MAX_NUMBER_OF_USER_ROWS } cuentas de usuario."
       ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "Tu archivo \"${ formattedFilename }\" está vacío."
@@ -3462,19 +3462,19 @@
         "URL no válida"
       ],
       "Oops, something went wrong": [
-        "Ups, algo salió mal"
+        "Lo sentimos, se ha producido un error."
       ],
       "Please ${ refresh } or check your connection.": [
-        "Por favor, ${ refresh } o comprueba tu conexión."
+        "${ refresh } o comprueba tu conexión."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Algo salió mal. Actualiza la página o inténtalo de nuevo más tarde."
+        "Se ha producido un error. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Ha ocurrido un problema al conectarse a ${ BRAND_NAME }."
+        "Ha ocurrido un problema al conectarte a ${ BRAND_NAME }."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        "Demasiadas sesiones secundarias, por favor borre sus cookies y vuelva a iniciar sesión."
+        "Hay demasiadas sesiones secundarias. Borra tus cookies y vuelve a iniciar sesión."
       ],
       "You may also ${ refresh } or try again later.": [
         "También puedes ${ refresh } o intentarlo de nuevo más tarde."
@@ -3587,37 +3587,37 @@
         "Descifrando eventos de tu calendario: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Debido a un restablecimiento de contraseña, ninguno de tus eventos se ha podido descifrar y exportar."
+        "Debido a un restablecimiento de contraseña, no se ha podido descifrar y exportar ninguno de tus eventos."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Debido a un restablecimiento de contraseña, algunos de sus eventos no han podido ser descifrados y exportados."
+        "Debido a un restablecimiento de contraseña, no se ha podido descifrar y exportar algunos de tus eventos."
       ],
       "Error decrypting event": [
         "Error al descifrar el evento"
       ],
       "Learn how to restore encrypted events with old password": [
-        "Aprende a restaurar eventos cifrados con una contraseña antigua"
+        "Aprende a restaurar eventos cifrados con una contraseña antigua."
       ],
       "Loading events": [
         "Cargando eventos"
       ],
       "None of the events could be exported.": [
-        "Ninguno de los eventos ha podido ser exportado."
+        "No se ha podido exportar ninguno de los eventos."
       ],
       "Password reset - event cannot be decrypted": [
-        "Restablecimiento de contraseña - no se puede descifrar el evento"
+        "Restablecimiento de contraseña - no se puede descifrar el evento."
       ],
       "Password reset - multiple events cannot be decrypted": [
         "Restablecimiento de contraseña - no se pueden descifrar eventos múltiples"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "No cierres la pestaña hasta que el proceso de exportación haya terminado."
+        "No cierres la pestaña hasta que la exportación haya terminado."
       ],
       "Some of your events could not be exported.": [
-        "Algunos de tus eventos no se han podido exportar."
+        "No se ha podido exportar algunos de tus eventos."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "La conexión a internet fue interrumpida, causando el fallo del proceso de exportación. Por favor, inténtalo de nuevo."
+        "La conexión a internet fue interrumpida, causando el fallo del proceso de exportación. Inténtalo de nuevo."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Puedes guardar un archivo ICS de los eventos exportados."
@@ -3658,7 +3658,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Deshabilita 2FA con la clave de seguridad antes de desactivar la clave de uso único de duración definida."
+        "Deshabilita 2FA con la clave de seguridad antes de desactivar la clave TOTP."
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
@@ -4022,7 +4022,7 @@
         "${ totalImported }/${ totalToImport } eventos cifrados y añadidos a tu calendario"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Se ha producido un error al encriptar y al añadir tu evento. ${ totalImported } de ${ totalToImport } evento importado.",
+        "Se ha producido un error al cifrar y al añadir tu evento. ${ totalImported } de ${ totalToImport } evento importado.",
         "Se ha producido un error al encriptar y al añadir tus eventos. ${ totalImported } de ${ totalToImport } eventos importados."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
@@ -4032,10 +4032,10 @@
         "Se ha producido un error al cifrar y añadir los eventos. No se ha podido importar ningún evento."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Cifrando y agregando contactos: ${ totalImported }/${ totalToImport }"
+        "Cifrando y añadiendo contactos: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Cifrando y agregando eventos a tu calendario: ${ totalImported }/${ totalToImport }"
+        "Cifrando y añadiendo eventos a tu calendario: ${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "Evento importado: el evento importado aparecerá en tu calendario."
@@ -4073,8 +4073,8 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contacto cifrado y agregado a tu lista de contactos",
-        "${ totalImported }/${ totalToImport } contactos cifrados y agregados a tu lista de contactos"
+        "${ totalImported }/${ totalToImport } contacto cifrado y añadido a tu lista de contactos",
+        "${ totalImported }/${ totalToImport } contactos cifrados y añadidos a tu lista de contactos"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Se ha producido un error al cifrar y añadir tu contacto. No se ha podido importar ningún contacto."
@@ -4270,7 +4270,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "¿Estás seguro de querer importar una clave privada? La importación de una clave privada generada de forma insegura o filtrada puede perjudicar la seguridad de rus correos electrónicos.\n\nTen en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no deseas publicar, edita la clave antes de importarla."
+        "¿Estás seguro de querer importar una clave privada? La importación de una clave privada generada de forma insegura o filtrada puede perjudicar la seguridad de tus correos electrónicos.\n\nTen en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como tu nombre completo) que no deseas publicar, edita la clave antes de importarla."
       ]
     },
     "Import provider": {
@@ -4361,7 +4361,7 @@
         "Créditos ganados de ${ BRAND_NAME } ${ planName }"
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } ha pausado una importación porque ha perdido la conexión con tu otro proveedor de correo electrónico. Por favor, vuelve a conectar."
+        "${ BRAND_NAME } ha pausado una importación porque ha perdido la conexión con tu otro proveedor de correo electrónico. Vuelve a conectar."
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } ha pausado una importación porque queda poco espacio en tu cuenta. Puedes:"
@@ -4400,7 +4400,7 @@
         "Se puede también usar ${ MAIL_APP_NAME } con una única contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que deseas utilizar y haz clic en Guardar."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } admite DKIM para los dominios personalizados. Para utilizar la autenticación DKIM, añade el siguiente registro CNAME en tu configuración DNS para este dominio. Esto puede hacerse normalmente en el panel de control de tu registrador de nombres de dominio."
+        "${ MAIL_APP_NAME } admite las firmas DKIM para los dominios personalizados. Para utilizar la autenticación DKIM, añade el siguiente registro CNAME en tu configuración DNS para este dominio. Esto puede hacerse normalmente en el panel de control de tu registrador de nombres de dominio."
       ],
       "${ n } address": [
         "${ n } dirección",
@@ -4505,16 +4505,16 @@
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
-        "Un archivo de recuperación te permite desbloquear y ver tus datos después de un restablecimiento de la cuenta"
+        "Un archivo de recuperación te permite desbloquear y ver tus datos después de un restablecimiento de la cuenta."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "Una frase de recuperación te permite acceder a tu cuenta y recuperar tus mensajes cifrados si olvidas tu contraseña"
+        "Una frase de recuperación te permite acceder a tu cuenta y recuperar tus mensajes cifrados si olvidas tu contraseña."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada a un único nombre de usuario, bandeja de entrada y persona"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Por favor, contacta con tu administrador."
+        "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
       ],
       "account recovery and data recovery method": [
         "método de recuperación de la cuenta y de los datos"
@@ -4586,7 +4586,7 @@
         "Todo (${ totalFoldersCount } etiquetas)"
       ],
       "All keys successfully reactivated": [
-        "Todas las contraseñas han sido reactivadas satisfactoriamente"
+        "Todas las claves han sido reactivadas."
       ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
@@ -4631,7 +4631,7 @@
         "¿Estás seguro de que quieres eliminar este calendario?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "¿Seguro que quieres eliminar este calendario? Las direcciones con las que has compartido este calendario dejarán de tener acceso a él."
+        "¿Estás seguro de que quieres eliminar este calendario? Las direcciones con las que has compartido este calendario no tendrán acceso."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "¿Estás seguro de que quieres eliminar este calendario? Todos los eventos que contenga serán eliminados."
@@ -4685,7 +4685,7 @@
         "Color de fondo"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
+        "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en la configuración."
       ],
       "Basic, Plus or Visionary subscription required": [
         "Se requiere suscripción Basic, Plus o Visionary"
@@ -4697,7 +4697,7 @@
         "Antes de activar la cuenta necesitas proporcionar una contraseña y crear las claves de cifrado para las nuevas direcciones."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación revise su carpeta de spam y compruebe que ${ strong } la dirección es correcta."
+        "Antes de solicitar un nuevo código de verificación revisa tu carpeta de spam y comprueba que ${ strong } la dirección es correcta."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Antes de poder recibir correos electrónicos para tus direcciones de dominio personalizadas en ${ MAIL_APP_NAME }, debes añadir los siguientes registros MX a tu DNS. Esto puede hacerse normalmente en el panel de control de tu registrador de nombres de dominio."
@@ -4718,7 +4718,7 @@
         "Al degradar a un plan gratuito, perderás permanentemente estos beneficios, incluso si actualizas de nuevo tu cuenta en el futuro."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Bajar tu suscripción a una menor, te hará perder los siguientes beneficios. ¿Estas seguro de hacerlo?"
+        "Al pasar a un plan con menos funciones perderás los siguientes beneficios. ¿Estás seguro de que deseas continuar?"
       ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
@@ -4761,13 +4761,13 @@
         "Crea una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las etiquetas que te gustaría importar."
       ],
       "Create a new account and share the email address and password with the user.": [
-        "Crear una nueva cuenta y compartir la dirección de correo electrónico y la contraseña con el usuario."
+        "Crea una nueva cuenta y comparte la dirección de correo electrónico y la contraseña con el usuario."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea y administra subcuentas y asígnales direcciones de correo electrónico en tu dominio personalizado."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Crea direcciones de correo electrónico para otras personas, administra ${ MAIL_APP_NAME } para un negocio, escuela o grupo. Comienza agregando el nombre de tu organización y el dominio personalizado (por ejemplo, @tuempresa.com)."
+        "Crea direcciones de correo electrónico para otras personas, administra ${ MAIL_APP_NAME } para un negocio, una escuela o un grupo. Comienza añadiendo el nombre de tu organización y el dominio personalizado (por ejemplo, @tuempresa.com). "
       ],
       "Create in": [
         "Crear en"
@@ -4779,7 +4779,7 @@
         "Crédito por la parte no utilizada de tu anterior suscripción al plan"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Actualmente todo el almacenamiento disponible está asignado a la cuenta del administrador. Por favor, reduce la asignación de la cuenta del administrador para liberar espacio para usuarios adicionales. Puedes aumentar el almacenamiento total en cualquier momento mejorando tu cuenta."
+        "Actualmente todo el almacenamiento disponible está asignado a la cuenta del administrador. Reduce la asignación de la cuenta del administrador para liberar espacio para usuarios adicionales. Puedes aumentar el almacenamiento total en cualquier momento mejorando tu cuenta."
       ],
       "Custom": [
         "Personalizado"
@@ -4834,10 +4834,10 @@
         "¡Listo! Hemos enviado un código a ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Al bajar de categoría se terminarán las conexiones a los servidores de pago de ${ VPN_APP_NAME }."
+        "Al cambiar por un plan con menos funciones se terminarán las conexiones a los servidores de pago de ${ VPN_APP_NAME }."
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
-        "Descarga nuestra plantilla CSV, rellena los detalles de usuario, y luego sube tu archivo CSV completo para crear cuentas para estos usuarios."
+        "Descarga nuestra plantilla CSV, rellena los detalles de los usuarios, y luego carga tu archivo CSV completo para crear cuentas para estos usuarios."
       ],
       "Download recovery file": [
         "Descargar archivo de recuperación"
@@ -4867,7 +4867,7 @@
         "Dirección de correo electrónico"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se pueden añadir dominios adicionales por ${ price }."
+        "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para dominios que posees. El registro de dominios no está disponible a través de ${ BRAND_NAME }. Puedes alojar correos electrónicos para dominios registrados en cualquier registrador de dominios."
@@ -4885,7 +4885,7 @@
         "Habilita esta dirección para unirte a este calendario."
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
-        "Activar TLS o SSL en el servico externo si está soportado."
+        "Activa el protocolo TLS o SSL en el servicio externo si está compatible."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Habilitar la recuperación por frase nuevamente generará una nueva frase de recuperación."
@@ -4909,7 +4909,7 @@
         "Introduce el código enviado a tu número de teléfono ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Introduce el código que se ha enviado a ${ email }. Si no encuentras el mensaje en tu bandeja de entrada, revisa tu carpeta de spam."
+        "Introduce el código que se ha enviado a ${ email }. Si no encuentras el mensaje en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduce las credenciales de la cuenta de correo electrónico desde la que quieres importar."
@@ -4939,7 +4939,7 @@
         "Introduce tu número de teléfono de recuperación y te enviaremos tu nombre de usuario o dirección de correo electrónico."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        "Las invitaciones a eventos y las confirmaciones de asistencia (RSVP) se enviarán en este idioma."
+        "Las invitaciones a eventos y las confirmaciones de asistencia se enviarán en este idioma."
       ],
       "Expired": [
         "Expirado"
@@ -4954,7 +4954,7 @@
         "Los filtros funcionan en todos los correos electrónicos, incluidos los entrantes o enviados. Cada filtro debe contener al menos un nombre, una condición y una acción."
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Para Visa, MasterCard y Discover, los 3 dígitos de la parte trasera de la tarjeta. Para American Express, los 4 dígitos de la parte frontal de la tarjeta."
+        "Para Visa y Mastercard, los 3 dígitos están detrás de la tarjeta. Para American Express, los 4 dígitos de la parte están en la frente de la tarjeta."
       ],
       "Free up some space or add more storage space.": [
         "Libera algo de espacio o añade más espacio de almacenamiento."
@@ -4996,16 +4996,16 @@
         "Si este dominio está recibiendo correos electrónicos, selecciona la pestaña ${ boldAddresses } y agrega todas las direcciones activas antes de cambiar el registro MX para asegurar una transición suave."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
-        "Si esto se debe a que restableció la contraseña anterior, puede evitar que el mensaje se muestre de nuevo"
+        "Si esto se debe a un restablecimiento de contraseña anterior, puedes evitar que el mensaje se vuelva a mostrar."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si tienes problemas para crear tu cuenta, por favor solicita una invitación y responderemos en un día hábil."
+        "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Si crees que esto es un error, por favor contáctanos ${ contactLink }."
+        "Si crees que esto es un error, contáctanos ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
+        "Si no encuentras el correo electrónico en tu bandeja de entrada, comprueba tu carpeta de spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Si tienes un dominio personalizado con ${ MAIL_APP_NAME }, puedes establecer una dirección de correo electrónico \"catch-all\" para recibir mensajes enviados a tu dominio pero a una dirección de correo electrónico no válida (por ejemplo, debido a errores tipográficos)."
@@ -5035,10 +5035,10 @@
         "Si continúas con la baja, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME }, incluyendo filtros y almacenamiento adicionales."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        "Si continúas con la baja, perderás el acceso a las funciones de pago de ${ VPN_APP_NAME }."
+        "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Si has restablecido recientemente tu contraseña, puedes usar un método de recuperación de datos para desbloquear tus datos"
+        "Si has restablecido recientemente tu contraseña, puedes usar un método de recuperación de datos para desbloquear tus datos."
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Si quieres mantener un registro SPF existente, solo agrega ${ spf } a él después de ${ spfValue }. No crees múltiples registros SPF."
@@ -5075,7 +5075,7 @@
         "Importa tus correos electrónicos, calendarios y contactos de otro servicio a ${ BRAND_NAME }. Te guiaremos en cada paso del proceso y cifraremos tus datos a medida que se trasladen. Te damos la bienvenida al mundo de la privacidad."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Importante: Por favor, asegúrate de que has guardado los códigos de recuperación. De lo contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de dos factores."
+        "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de dos factores."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "IMPORTANTE: Algunos registradores no aceptan valores CNAME con un punto al final (mientras que otros lo requieren). Si tu registrador no acepta sus registros CNAME, elimina el punto al final de cada valor CNAME e inténtalo de nuevo."
@@ -5127,7 +5127,7 @@
         "He estado usando ${ MAIL_APP_NAME } y creo que puede gustarte. Es un servicio de correo electrónico seguro que protege tu privacidad. Regístrate a través de este enlace para obtener gratis 1 mes de funciones premium: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Sólo tiene que confirmar su selección y nosotros haremos el resto."
+        "Solo tienes que confirmar tu selección y nosotros haremos el resto."
       ],
       "Just send them your personal referral link.": [
         "Solo tienes que enviarles tu enlace de referencia personal."
@@ -5229,7 +5229,7 @@
         "Nuevo"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "No se ha establecido un método de recuperación de la cuenta; corre el riesgo de perder el acceso"
+        "No se ha establecido un método de recuperación de la cuenta. Corres el riesgo de perder el acceso."
       ],
       "No action selected": [
         "Ninguna acción seleccionada"
@@ -5304,10 +5304,10 @@
         "Otras opciones"
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        "Archivo de recuperación obsoleto; actualícelo para garantizar el acceso a sus datos"
+        "Archivo de recuperación obsoleto. Actualízalo para garantizar el acceso a tus datos"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        "Métodos de recuperación obsoletos; actualícelos para garantizar el acceso a sus datos"
+        "Métodos de recuperación obsoletos. Actualízalos para garantizar el acceso a tus datos."
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
         "Frase de recuperación desactualizada; actualízala para garantizar el acceso a tus datos"
@@ -5338,18 +5338,18 @@
         "Se requiere actualizar el plan"
       ],
       "Please add a password for the user on row": [
-        "Por favor, añade una contraseña para el usuario en fila",
-        "Por favor, añade contraseñas para los usuarios en filas"
+        "Añade una contraseña para el usuario en fila.",
+        "Añade contraseñas para los usuarios en filas."
       ],
       "Please add an email address for the user on row": [
         "Añade una dirección de correo para el usuario seleccionado.",
         "Añade direcciones de correo para los usuarios seleccionados."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
-        "Por favor, comprueba los posibles errores de tu archivo o contacta con el servicio al cliente para más información."
+        "Comprueba los posibles errores de tu archivo o contacta con el servicio al cliente para más información."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
-        "Por favor, revisa tu archivo o prueba a usar nuestro ${ csvTemplateButton }."
+        "Verifica tu archivo o prueba a usar nuestro ${ csvTemplateButton }."
       ],
       "Please contact the administrator of the organisation to manage the subscription.": [
         "Contacta al administrador de la organización para administrar la suscripción."
@@ -5358,7 +5358,7 @@
         "Introduce la frase de recuperación de 12 palabras asociada a tu cuenta."
       ],
       "Please fill out this field.": [
-        "Por favor, rellene este campo."
+        "Rellena este campo."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Manténla a salvo. La necesitarás para acceder a tu cuenta y descifrar tus datos en caso de un restablecimiento de contraseña."
@@ -5370,7 +5370,7 @@
         "Ten en cuenta que si eliminas este dominio, todas las direcciones asociadas serán desactivadas."
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Por favor, ten en cuenta que si eliminas este filtro, dejaremos de procesar todas las acciones automatizadas que desencadena."
+        "Ten en cuenta que si eliminas este filtro, dejaremos de procesar todas las acciones automatizadas que desencadena."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
@@ -5379,22 +5379,22 @@
         "Proporciona una dirección de correo electrónico en caso de que necesitemos contactarte."
       ],
       "Please select the folders you would like to import:": [
-        "Por favor, seleccione las carpetas que le gustaría importar:"
+        "Selecciona las carpetas que te gustaría importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecciona el tipo de enlace que quieres insertar y completa todos los campos."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Por favor inténtalo de nuevo, utiliza un método de pago diferente o llama a tu banco para obtener ayuda."
+        "Inténtalo de nuevo. Utiliza un método de pago diferente o llama a tu banco para obtener ayuda."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Por favor inténtalo de nuevo, utiliza un método de pago diferente o ponte en contacto con PayPal para obtener ayuda."
+        "Inténtalo de nuevo. Utiliza un método de pago diferente o ponte en contacto con PayPal para obtener ayuda."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Verifica el pago en la nueva pestaña que se abrió."
       ],
       "Please verify the card in the new tab which was opened.": [
-        "Por favor, verifica la tarjeta en la nueva pestaña que se ha abierto."
+        "Verifica la tarjeta en la nueva pestaña que se ha abierto."
       ],
       "Please wait till your changes are synced with the server.": [
         "Espera hasta que tus cambios estén sincronizados con el servidor."
@@ -5424,7 +5424,7 @@
         "En cola"
       ],
       "read our two-factor authentication guide first": [
-        "lea primero nuestra guía de autenticación de dos factores"
+        "lee primero nuestra guía de autenticación de dos factores"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
@@ -5448,10 +5448,10 @@
         "La frase de recuperación ha sido deshabilitada"
       ],
       "Recovery phrase is not associated with any keys.": [
-        "La frase de recuperación no debe estar asociada a ninguna contraseña."
+        "La frase de recuperación no está asociada con ninguna clave."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        "La frase de recuperación no debe estar asociada a contraseñas anteriores."
+        "La frase de recuperación no está asociada con ninguna clave obsoleta."
       ],
       "Referral link copied to your clipboard": [
         "El enlace de referencia se ha copiado a tu portapapeles"
@@ -5502,7 +5502,7 @@
         "Carga del servidor"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
+        "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos"
       ],
       "Session timed out": [
         "El tiempo de la sesión ha expirado"
@@ -5523,16 +5523,16 @@
         "Como eres un usuario leal, tu cuenta tiene habilitadas características adicionales."
       ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME }. Es una nueva funcionalidad disponible para usuarios de empresas selectas. Envía un correo electrónico a ${ emailLink } para solicitar acceso."
+        "El protocolo SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME }. Es una nueva función disponible para algunos usuarios profesionales. Envía un correo electrónico a ${ emailLink } para solicitar acceso."
       ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME }. Para utilizar esta funcionalidad, comienza generando un nuevo token."
+        "El protocolo SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME }. Para utilizar esta función, comienza generando un nuevo token."
       ],
       "Some keys successfully reactivated": [
-        "Varias contraseñas han sido reactivadas satisfactoriamente"
+        "Algunas claves han sido reactivadas."
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF es usado para especificar a quién se le permite enviar correo electrónico para el dominio, por lo que recomendamos encarecidamente incluir ${ MAIL_APP_NAME } en su registro SPF. Añada el siguiente registro TXT en su DNS. Esto puede hacerse normalmente en el panel de control de su registrador de nombres de dominio."
+        "Se usa el metodo SPF para especificar a quién està autorizado a enviar correo electrónico para el dominio. Recomendamos encarecidamente incluir ${ MAIL_APP_NAME } en su registro SPF. Añade el siguiente registro TXT en tu DNS. Esto puede hacerse normalmente en el panel de control de tu registrador de nombres de dominio."
       ],
       "Storage allocated to other users in this organisation": [
         "Almacenamiento asignado a otros usuarios de esta organización"
@@ -5559,7 +5559,7 @@
         "equipo de soporte"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporalmente no disponible. Vuelva a comprobarlo más tarde."
+        "Temporalmente no disponible. Vuelve a comprobarlo más tarde."
       ],
       "Test link": [
         "Enlace de prueba"
@@ -5571,13 +5571,13 @@
         "Texto a mostrar"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
-        "El mensaje ${ boldDataLocked } ya no se mostrará, pero podrá seguir desbloqueando sus datos en ${ encryptionAndKeysLink }."
+        "El mensaje ${ boldDataLocked } ya no se mostrará, pero podrá seguir desbloqueando tus datos en ${ encryptionAndKeysLink }."
       ],
       "The calendar will be removed from your account.": [
         "El calendario se eliminará de tu cuenta."
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "La dirección de correo electrónico que has colocado en la parte superior de la lista es tu dirección de correo electrónico predeterminada. Arrastra y suelta para reordenar tus direcciones."
+        "La dirección de correo electrónico que has colocado en la parte superior de la lista es tu dirección de correo electrónico por defecto. Arrastra y suelta para reordenar tus direcciones."
       ],
       "The following address is available:": [
         "La siguiente dirección está disponible:"
@@ -5619,34 +5619,34 @@
         "Esta cuenta ha sido suspendida debido a una posible violación de la política."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Este navegador no admite la previsualización de documentos PDF. Por favor, descarga el archivo."
+        "Este navegador no admite la previsualización de documentos PDF. Descarga el archivo."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        "Esto puede tomar unos segundos o minutos dependiendo de tu dispositivo"
+        "Esto puede tardar unos segundos o minutos dependiendo de tu dispositivo."
       ],
       "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
-        "Esto puede tardar hasta 15 minutos. Por favor, no cerrar está página ni desconectarse de internet."
+        "Esto puede tardar hasta 15 minutos. No cierres está página ni te desconectes de internet."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
-        "Esta es una frase de 12 palabras que se te pidió que establecieras."
+        "Esta es una frase de 12 palabras que se te ha solicitado establecer."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
-        "Es un archivo de recuperación, o la clave de encriptación no es la que se guardo anteriormente."
+        "Es un archivo de recuperación o la clave de cifrado que puedes haber guardado anteriormente."
       ],
       "This is an encryption key you may have previously saved.": [
-        "Esta es una clave de encriptación que no es la que se guardó anteriormente."
+        "Esta es una clave de cifrado que puedes haber guardado anteriormente."
       ],
       "This is the password you used before the password reset.": [
         "Esta es la contraseña que usabas antes de restablecer la contraseña."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
+        "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, usa un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
+        "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Este token no estará disponible tras cerrar esta ventana y no deberías compartirlo."
@@ -5700,7 +5700,7 @@
         "Para mejorar continuamente nuestros servicios, a veces recopilamos datos para controlar el buen funcionamiento de nuestras aplicaciones. Esta información no se comparte con ningún servicio de terceros."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        "Selecciona el método de recuperación para desencriptar y ver los datos protegidos después de restablecer la contraseña."
+        "Selecciona el método de recuperación para descifrar y ver los datos protegidos después de restablecer la contraseña."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "Para garantizar el acceso continuo a tu cuenta, establece un método de recuperación de cuenta."
@@ -5802,7 +5802,7 @@
         "Utiliza el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Utiliza las siguientes credenciales cuando te conectes a servidores ${ VPN_APP_NAME } sin aplicación. Algunos ejemplos de uso son: Tunnelblick en macOS, OpenVPN en GNU/Linux."
+        "Utiliza las siguientes credenciales cuando te conectes a servidores ${ VPN_APP_NAME } sin aplicación como conTunnelblick en macOSu OpenVPN en GNU/Linux."
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Utiliza la dirección de correo electrónico seleccionada como nombre de usuario SMTP en el servicio externo y el token generado como contraseña SMTP."
@@ -5838,13 +5838,13 @@
         "Recomendamos usar tu frase de recuperación en su lugar."
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "Almacenamos de manera segura información de recuperación en tu dispositivo de confianza para evitar que pierdas tus datos."
+        "Almacenamos de manera segura la información de recuperación en tu dispositivo de confianza para evitar que pierdas tus datos."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Utilizamos 3-D Secure para proteger tus pagos."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Te redirigiremos a PayPal en una nueva pestaña del navegador para completar esta transacción. Si utilizas cualquier bloqueador emergente, por favor desactívalo para continuar."
+        "Te redirigiremos a PayPal en una nueva pestaña del navegador para completar esta transacción. Si utilizas cualquier bloqueador emergente, desactívalo para continuar."
       ],
       "We'll notify you when the import is done.": [
         "Le avisaremos cuando la importación esté terminada."
@@ -5859,7 +5859,7 @@
         "Semana"
       ],
       "Week and month views only apply to desktop.": [
-        "Las vistas semanales y mensuales sólo se aplican al escritorio."
+        "Las vistas semanales y mensuales solo se aplican al escritorio."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Te enviaremos un código de restablecimiento a la dirección de correo electrónico que nos has proporcionado para recuperar la cuenta."
@@ -5868,7 +5868,7 @@
         "Te enviaremos un código de restablecimiento al número de teléfono que nos has proporcionado para recuperar la cuenta."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Estamos actualizando tu plan actual a un plan mejorado que ofrece más por el mismo precio. Mientras nuestros sistemas se actualizan, no podrás cambiarlo. Te enviaremos un correo electrónico en cuanto esté listo."
+        "Estamos actualizando tu plan actual a un plan que ofrece más por el mismo precio. Mientras nuestros sistemas se actualizan, no podrás cambiarlo. Te enviaremos un correo electrónico en cuanto esté listo."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Cuando está deshabilitado, esto evita que los archivos de imagen se carguen en tu dispositivo sin tu conocimiento.\t"
@@ -5949,8 +5949,8 @@
         "Puede utilizar las siguientes credenciales para conectarse a un servidor ${ VPN_APP_NAME } utilizando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
-        "No puedes enviar más de ${ emailSendLimitNumber } invitación de correo hasta pasadas 24 horas",
-        "No puedes enviar más de ${ emailSendLimitNumber } invitaciones de correo hasta pasadas 24 horas"
+        "No puedes enviar más de ${ emailSendLimitNumber } invitación de correo hasta pasadas 24 horas.",
+        "No puedes enviar más de ${ emailSendLimitNumber } invitaciones de correo hasta pasadas 24 horas."
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "No puedes recomendar a usuarios de ${ MAIL_APP_NAME }."
@@ -5959,7 +5959,7 @@
         "No puedes utilizar las credenciales de OpenVPN/IKEv2 para iniciar sesión en las aplicaciones de ${ VPN_APP_NAME } o en el panel de control de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "No has establecido un método de recuperación por lo que la recuperación de cuentas es imposible si olvidas tu contraseña. ¿Continuar sin método de recuperación?"
+        "No has establecido un método de recuperación por lo que la recuperación de cuentas es imposible si olvidas tu contraseña. ¿Quieres continuar sin método de recuperación?"
       ],
       "You have no personal calendars to export.": [
         "No tienes calendarios personales para exportar."
@@ -5974,7 +5974,7 @@
         "Debes activar la clave privada de tu organización con la copia de seguridad suministrada por el administrador de la organización."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debe desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder bajar de categoría."
+        "Debes desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta PayPal para poder añadirla como método de pago."
@@ -5998,7 +5998,7 @@
         "Has alcanzado el 100% de tu capacidad de almacenamiento. No podrás enviar o recibir nuevos correos electrónicos. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "Deberías exportar una copia de seguridad de esta clave por si necesitas restaurar los datos que encriptó."
+        "Deberías exportar una copia de seguridad de esta clave por si necesitas restaurar los datos que ha encriptado."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Todavía tienes que responder a las invitaciones para que el anfitrión vea tu respuesta."
@@ -6013,7 +6013,7 @@
         "Necesitarás una dirección ${ BRAND_NAME } para usar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "NO podrá descifrar los mensajes, archivos y otros datos cifrados con esta clave."
+        "NO podrás descifrar los mensajes, archivos y otros datos cifrados con esta clave."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
@@ -6031,10 +6031,10 @@
         "Tu cuenta ${ BRAND_NAME } está asociada a ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu Drive serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, por favor paga las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive están bloqueados y no puedes subir nuevos archivos. Para continuar usando tu cuenta, por favor, abona las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que abonar las facturas pendientes."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Tus cuentas ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } están vinculadas. Para eliminar ambas, inicia sesión en ${ loginLink } y elimina tu cuenta allí."
@@ -6070,8 +6070,8 @@
         "Tu cuenta actual de ${ BRAND_NAME } puede utilizarse para acceder a todos los servicios de ${ BRAND_NAME }. Inicia sesión con ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
-        "Tu importación de ${ accounts } se ha postergado temporalmente.",
-        "Tus importaciones de ${ accounts } se han postergado temporalmente."
+        "Tu importación desde ${ accounts } se ha retrasado temporalmente.",
+        "Tus importaciones desde ${ accounts } se han retrasado temporalmente."
       ],
       "Your import will not be processed.": [
         "Tu importación no será procesada."
@@ -6080,7 +6080,7 @@
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "La contraseña de tu organización puede compartirse con otros usuarios a los que desees otorgar privilegios administrativos. También es un código de recuperación de emergencia para tener acceso a tu organización en caso de que pierdas el acceso a tu cuenta. Por favor, guarda esta contraseña y mantenla segura."
+        "La contraseña de tu organización puede compartirse con otros usuarios a los que desees otorgar privilegios administrativos. También es un código de recuperación de emergencia para tener acceso a tu organización en caso de que pierdas el acceso a tu cuenta. Guarda esta contraseña y mantenla segura."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Los correos electrónicos de tu organización están protegidos con cifrado de extremo a extremo utilizando la clave de la organización. Esta huella digital puede ser usada para verificar que todos los administradores en tu cuenta tienen la misma clave."
@@ -6098,7 +6098,7 @@
         "Tu frase de recuperación es una serie de 12 palabras en un orden específico."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Tu suscripción está gestionada por Mozilla. Por favor, contacta con el soporte de Mozilla."
+        "Tu suscripción está gestionada por Mozilla. Contacta con el soporte de Mozilla."
       ]
     },
     "info": {
@@ -6115,13 +6115,13 @@
         "Día 30: Fin de la prueba"
       ],
       "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Disfruta de un envío de correo electrónico seguro y fácil de usar con un montón de funciones premium."
+        "Disfruta de un envío de correo electrónico seguro y fácil de usar con un montón de funciones prémium."
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "La clave ${ fingerprint } ya ha sido cargada."
       ],
       "Try Mail Plus": [
-        "Pruebe Mail Plus"
+        "Prueba Mail Plus"
       ],
       "We’ll email you before your trial ends. Cancel anytime.": [
         "Te enviaremos un correo electrónico antes de que termine tu prueba. Cancela en cualquier momento."
@@ -6140,7 +6140,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Por favor, contáctanos a ${ email } para obtener instrucciones sobre cómo pagarnos en efectivo."
+        "Contáctanos a ${ email } para obtener instrucciones sobre cómo pagarnos en efectivo."
       ]
     },
     "Info for domain modal": {
@@ -6156,7 +6156,7 @@
     },
     "Info for members section": {
       "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "Agrega, elimina y administra usuarios dentro de tu organización. Aquí puedes ajustar su espacio de almacenamiento asignado, conceder derechos de administrador, y más. Selecciona un usuario para administrar sus direcciones de correo electrónico. La dirección de correo electrónico en la parte superior de la lista se seleccionará automáticamente como dirección de correo electrónico predeterminada."
+        "Añade, elimina y administra usuarios dentro de tu organización. Aquí puedes ajustar su espacio de almacenamiento asignado, conceder derechos de administrador, y más. Selecciona un usuario para administrar sus direcciones de correo electrónico. La dirección de correo electrónico en la parte superior de la lista se seleccionará automáticamente como dirección de correo electrónico por defecto."
       ]
     },
     "Info for payment methods": {
@@ -6176,7 +6176,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "Para evitar cualquier interrupción del servicio debido a facturas vencidas, por favor asegúrate de tener al menos un método de pago válido guardado en todo momento."
+        "Para evitar cualquier interrupción del servicio debido a facturas vencidas, asegúrate de tener al menos un método de pago válido guardado en todo momento."
       ]
     },
     "Input label": {
@@ -6246,7 +6246,7 @@
         "Ya existe una clave con el mismo algoritmo de cifrado. Generar otra clave hará que la carga de la cuenta sea más lenta. ¿Estás seguro de que quieres continuar?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Una clave con el mismo algoritmo de encriptación ya está activa para esta dirección. Generar otra clave hará que la carga de la cuenta sea más lenta y la eliminación de esta clave puede causar problemas. Si estás generando una nueva clave porque la anterior está comprometida, marca esa clave como comprometida. ¿Estás seguro de que quieres continuar?"
+        "Una clave con el mismo algoritmo de cifrado ya está activa para esta dirección. Generar otra clave hará que la carga de la cuenta sea más lenta y la eliminación de esta clave puede causar problemas. Si estás generando una nueva clave porque la anterior está comprometida, marca esa clave como comprometida. ¿Estás seguro de que quieres continuar?"
       ],
       "Generate key": [
         "Generar clave"
@@ -6634,7 +6634,7 @@
         "Respuesta automática"
       ],
       "Auto-unsubscribe": [
-        "De-suscripción automática"
+        "Darte de baja automáticamente"
       ],
       "Awarded": [
         "Galardonado"
@@ -6787,7 +6787,7 @@
         "Idioma por defecto"
       ],
       "Default language (${ defaultLanguage })": [
-        "Idioma predeterminado (${ defaultLanguage })"
+        "Idioma por defecto (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Esquema PGP por defecto"
@@ -7069,7 +7069,7 @@
         "Contraseña OpenVPN / IKEv2"
       ],
       "OpenVPN / IKEv2 username": [
-        "Usuario OpenVPN / IKEv2"
+        "Nombre de usuario de OpenVPN / IKEv2"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -7123,16 +7123,16 @@
         "La frase consiste en 12 palabras únicas en un orden específico."
       ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Por favor, añade los siguientes tres registros CNAME. Ten en cuenta que los registros DNS pueden tardar varias horas en propagarse."
+        "Añade los siguientes tres registros CNAME. Ten en cuenta que los registros DNS pueden tardar varias horas en propagarse."
       ],
       "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Por favor, añade el siguiente registro MX. Ten en cuenta que los registros DNS pueden tardar varias horas en propagarse."
+        "Añade el siguiente registro MX. Ten en cuenta que los registros DNS pueden tardar varias horas en propagarse."
       ],
       "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Por favor, añade el siguiente registro TXT. Ten en cuenta que los registros DNS pueden tardar varias horas en propagarse."
+        "Añade el siguiente registro TXT. Ten en cuenta que los registros DNS pueden tardar varias horas en propagarse."
       ],
       "Please select files to upload": [
-        "Por favor, selecciona los archivos a subir"
+        "Selecciona los archivos a cargar."
       ],
       "Port": [
         "Puerto"
@@ -7249,13 +7249,13 @@
         "El correo electrónico ha sido enviado ${ attachment }"
       ],
       "the email was sent ${ attachment }": [
-        "el correo electrónico fue enviado ${ attachment }"
+        "el correo electrónico ha sido enviado ${ attachment }"
       ],
       "The email was sent ${ attachmentStrong }": [
         "El correo electrónico ha sido enviado ${ attachmentStrong }"
       ],
       "the email was sent ${ label }": [
-        "el correo electrónico fue enviado ${ label }"
+        "el correo electrónico ha sido enviado ${ label }"
       ],
       "Then": [
         "Entonces"
@@ -7288,10 +7288,10 @@
         "Carga 1 o más claves de cifrado"
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        "Sube 1 o más archivos de recuperación o claves de encriptación"
+        "Carga uno o más archivos de recuperación o claves de cifrado."
       ],
       "Upload file": [
-        "Subir archivo"
+        "Cargar archivo"
       ],
       "URL": [
         "URL"
@@ -7321,7 +7321,7 @@
         "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Lamentamos que te vayas. Por favor, explica por qué te vas para ayudarnos a mejorar."
+        "Lamentamos que te vayas. Explica por qué te vas para ayudarnos a mejorar."
       ],
       "Week start": [
         "Inicio de semana"
@@ -7330,7 +7330,7 @@
         "¿Qué ha ocurrido?"
       ],
       "What is the main reason you are cancelling?": [
-        "¿Cuál es la razón principal por la que estás cancelando?"
+        "What is the main reason you are canceling?"
       ],
       "What is the main reason you are deleting your account?": [
         "¿Cuál es el motivo principal por el que eliminas tu cuenta?"
@@ -7397,7 +7397,7 @@
     },
     "Label for domain modal": {
       "Please add the following TXT record:": [
-        "Por favor, añade el siguiente registro TXT:"
+        "Añade el siguiente registro TXT:"
       ]
     },
     "Label for new member": {
@@ -7602,7 +7602,7 @@
         "Cantidad de calendarios creados: ${ createdCalendars } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
-        "Conectando con tu proveedor de correo eléctronico"
+        "Conectando con tu proveedor de correo electrónico"
       ],
       "Creating new calendars": [
         "Creando calendarios nuevos"
@@ -8051,7 +8051,7 @@
         "Consola de administración"
       ],
       "Advanced sharing security": [
-        "Protección avanzada cuando se comparten elementos"
+        "Seguridad avanzada al compartir archivos"
       ],
       "Auto-reply": [
         "Respuesta automática"
@@ -8242,7 +8242,7 @@
         "Si te pasas a un plan inferior, perderás todas las ventajas que tiene ser ${ visionary } y no podrás volver al mismo plan suscribiéndote de nuevo."
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Si te cambias de plan, perderás todas las ventajas que tiene ser ${ visionary } y no podrás volver al plan ${ visionary }."
+        "Si te cambias de plan, perderás todas las ventajas del plan ${ visionary } y no podrás volver al plan ${ visionary }."
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ya no ofrecemos el plan ${ visionary } a quienes se suscriben por primera vez porque es un plan especial que incluye funciones y ventajas exclusivas para quienes ya tienen ${ BRAND_NAME }."
@@ -8266,7 +8266,7 @@
         "Crea respuestas automáticas para que tus contactos sepan que estás fuera de la oficina o que no puedes responder."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Una solución específica de VPN con conexión a internet segura, de alta velocidad y sin restricciones."
+        "La solución específica de VPN con conexión a internet segura, de alta velocidad y sin restricciones."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "La cuenta inicial sin coste ofrece privacidad por defecto a todo el mundo."
@@ -8280,10 +8280,10 @@
     },
     "new_plans: Info": {
       "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
+        "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y se desactivará."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
@@ -8292,7 +8292,7 @@
         "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
       ],
       "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+        "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "La prueba acaba el ${ formattedTrialExpirationDate }"
@@ -8356,7 +8356,7 @@
         "¿Eliminar cuenta?"
       ],
       "Downgrade account?": [
-        "¿Plan inferior?"
+        "¿Pasar a plan con menos funciones?"
       ],
       "Improved plans coming soon!": [
         "¡Pronto habrán planes mejores!"
@@ -8371,15 +8371,15 @@
         "¿Cambiar planes?"
       ],
       "Unlock premium features by upgrading": [
-        "Desbloquea funciones premium al actualizar"
+        "Desbloquea funciones prémium al actualizar"
       ]
     },
     "new_plans: tooltip": {
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ y Prime Video"
+        "Accede desde cualquier lugar al contenido de servicios de streaming como Netflix, Disney+ y Prime Video."
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        "Con las direcciones proporcionadas tienes plenas capacidades de envío y recepción de correos. Un usuario puede tener varias direcciones asignadas, pero una dirección no puede asignarse a varios usuarios."
+        "Con estas direcciones puedes enviar y recibir correos electrónicos. Un usuario puede tener varias direcciones, pero una dirección no puede asignarse a varios usuarios."
       ],
       "Advanced security VPN with global network": [
         "Seguridad de VPN avanzada con una red global"
@@ -8391,20 +8391,20 @@
         "Te permite responder automáticamente a los mensajes que recibes."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Por el momento, no se pueden enviar correos electrónicos programáticos ni promocionales de forma masiva. Te recomendamos tener un proveedor de servicios de correo que te permita hacerlo si esa es tu intención."
+        "Por el momento, no se puede enviar correos electrónicos mediante programación ni promocionales de forma masiva. Te recomendamos tener un proveedor de servicios de correo que te permita hacerlo si esa es tu intención."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Controla el acceso a tus archivos compartidos mediante enlaces con fechas de caducidad y contraseña."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
-        "Crea varias direcciones de correo electrónico para tus identidades de internet, como JohnShopper@${ domain } para las cuentas destinadas a compras o JohnNews@${ domain } para las suscripciones a medios de comunicación"
+        "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
       ],
       "Create up to ${ n } custom calendar.": [
         "Cree hasta ${ n } calendario personalizado.",
         "Cree hasta ${ n } calendarios personalizados."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de internet por varios servidores"
+        "Te defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de internet por varios servidores."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Comparte calendarios con compañeros, familiares y amigos fácilmente mediante un enlace"
@@ -8419,7 +8419,7 @@
         "Almacenamiento de archivos cifrado de extremo a extremo"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        "Te garantiza que recibes todos los correos que se envían a tu dominio aunque la dirección no exista, haya dejado de existir o no se haya escrito bien."
+        "Te garantiza que recibes todos los correos que se envían a tu dominio aunque la dirección no exista, incluso si la dirección de correo no existe, ya no existe o tiene un error tipográfico."
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Impón el cierre de sesión cuando se sospeche de que las credenciales del usuario están en peligro."
@@ -8428,10 +8428,10 @@
         "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Apple Mail o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
-        "Le mantiene protegido bloqueando todas las conexiones de red cuando se desconecta inesperadamente de nuestro servidor VPN."
+        "Te mantiene protegido bloqueando todas las conexiones de red cuando te desconectas inesperadamente de nuestro servidor VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        "Las etiquetas son muy fáciles de añadir a los mensajes y te permiten encontrarlos fácilmente o aplicar filtros"
+        "Las etiquetas son muy fáciles de añadir a los mensajes y te permiten encontrarlos fácilmente o aplicar filtros."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Administra tu suscripción y personaliza también tu plan. Puedes pagar con tarjeta de crédito, PayPal, criptomonedas y transferencia."
@@ -8446,7 +8446,7 @@
         "Además, puedes añadir hasta 5 calendarios de amigos, familiares, compañeros y organizaciones."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
-        "Cada conexión VPN permite que un solo dispositivo se conecte a ${ BRAND_NAME } VPN en cualquier momento; por ejemplo, para conectar un teléfono y un portátil a ${ BRAND_NAME } VPN a la vez necesitas dos conexiones VPN."
+        "Cada conexión VPN permite que un solo dispositivo se conecte a ${ BRAND_NAME } VPN en cualquier momento. Por ejemplo, para conectar un teléfono y un portátil a ${ BRAND_NAME } VPN a la vez, necesitas dos conexiones VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
@@ -8458,7 +8458,7 @@
         "Nuestra sólida infraestructura garantiza que podrás acceder a tu cuenta cuando lo necesites."
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        "Los discos duros de nuestros servidores están completamente cifrados con numerosas capas de contraseñas, por lo que tus datos estarán protegidos aunque nuestro hardware se vea amenazado"
+        "Los discos duros de nuestros servidores están completamente cifrados con numerosas capas de contraseñas, por lo que tus datos estarán protegidos aunque nuestro hardware se vea comprometido."
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliza tu firma de correo electrónico con logotipos, imágenes, iconos de redes sociales, enlaces en tus datos de contacto, etc."
@@ -8470,7 +8470,7 @@
         "Impide que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        "Protege todos los dispositivos que se conecten a tu red wifi. También resulta muy útil si tienes dispositivos que no admitan directamente los ajustes de la VPN."
+        "Protege todos los dispositivos que se conecten a tu red wifi. También resulta muy útil si tienes dispositivos que no admitan directamente la configuración de la VPN."
       ],
       "Quickly set up out-of-office messages": [
         "Configura rápidamente mensajes para informar de que no estás en la oficina"
@@ -8479,13 +8479,13 @@
         "Transfiere rápidamente correos, calendarios y contactos desde cualquier proveedor"
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        "Tienes que introducir el código recibido en un móvil para poder iniciar sesión. Así, la cuenta estará protegida incluso cuando la contraseña esté en peligro."
+        "Tienes que introducir el código recibido en un móvil para poder iniciar sesión. Así, la cuenta estará protegida incluso cuando la contraseña esté comprometida."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Cambia las contraseñas de los usuarios y restablece la autenticación de dos factores en sus cuentas."
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        "Asigna el tráfico de internet a la red Tor con un solo clic"
+        "Asigna el tráfico de internet a la red Tor con un solo clic."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Guarda a buen recaudo los datos de tus contactos (teléfono, dirección, cumpleaños y notas personales). El cifrado de acceso cero garantiza que ni ${ BRAND_NAME } pueda acceder a ellos."
@@ -8515,16 +8515,16 @@
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Usa tus propias direcciones de correo personalizadas; por ejemplo, tu@tunombre.com"
+        "Usa tus propias direcciones de correo personalizadas como por ejemplo, tu@tunombre.com."
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "No guardamos ningún registro de lo que haces cuando tienes iniciada la sesión ni registramos metadatos que vulneren tu privacidad"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Tenemos el firme compromiso de ayudar a los clientes que deben cumplir las normativas HIPAA y HITECH a salvaguardar la información sanitaria protegida que se les proporciona. Todos los clientes de ${ BRAND_NAME } para negocios pueden solicitar un acuerdo de sociedad comercial firmado."
+        "Tenemos el firme compromiso de ayudar a los clientes que deben cumplir las normativas HIPAA y HITECH a salvaguardar la información sanitaria protegida que se les proporciona. Todos los clientes de ${ BRAND_NAME } para negocios pueden solicitar un acuerdo de sociedad comercial firmado (BAA)."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Mientras estás conectado a nuestra VPN, las consultas de DNS pasan por nuestro túnel VPN cifrado, por lo que tendrás todavía más privacidad y seguridad en internet"
+        "Mientras estás conectado a nuestra VPN, las consultas de DNS pasan por nuestro túnel VPN cifrado, por lo que tendrás todavía más privacidad y seguridad en internet."
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
         "Los correos que envías a usuarios de ${ MAIL_APP_NAME } se cifran automáticamente. Si el destinatario no usa ${ MAIL_APP_NAME }, tendrás que establecer una contraseña antes de enviar el mensaje."
@@ -8564,8 +8564,8 @@
         "Más posibilidades con 10 dominios de correo electrónico personalizados"
       ],
       "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Capacidad para crear ${ numberOfPersonalCalendars } calendario personal",
-        "Capacidad para crear ${ numberOfPersonalCalendars } calendario personal"
+        "Crea ${ numberOfPersonalCalendars } calendario personal.",
+        "Crea hasta ${ numberOfPersonalCalendars } calendarios personales."
       ],
       "Everything in ${ vpnPlanName }": [
         "Todo en ${ vpnPlanName }"
@@ -8628,7 +8628,7 @@
     },
     "Notification success": {
       "Event defaults updated": [
-        "Ajustes de evento actualizados"
+        "Configuración por defecto de eventos actualizada"
       ]
     },
     "Notification time input": {
@@ -8680,7 +8680,7 @@
     },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
-        "Bienvenido/a a ${ VPN_APP_NAME }"
+        "Te damos la bienvenida a ${ VPN_APP_NAME }"
       ]
     },
     "Option": {
@@ -8778,7 +8778,7 @@
         "9º del mes"
       ],
       "Add to existing group": [
-        "Agregar al grupo existente"
+        "Añadir al grupo existente"
       ],
       "Android": [
         "Android"
@@ -9061,10 +9061,10 @@
         "Número de teléfono"
       ],
       "Please describe the problem and include any error messages": [
-        "Por favor, describe el problema e incluye cualquier mensaje de error"
+        "Describe el problema e incluye cualquier mensaje de error."
       ],
       "Please insert link first": [
-        "Por favor, introduzca el enlace primero"
+        "Introduzca el enlace primero."
       ],
       "Postal code": [
         "Código postal"
@@ -9299,7 +9299,7 @@
     },
     "Select file": {
       "Upload CSV file": [
-        "Subir un archivo CSV"
+        "Cargar un archivo CSV"
       ]
     },
     "Select files": {
@@ -9307,10 +9307,10 @@
         "Navegar"
       ],
       "Upload": [
-        "Subir"
+        "Cargar"
       ],
       "Upload additional files": [
-        "Subir archivos adicionales"
+        "Cargar archivos adicionales"
       ]
     },
     "Select search results": {
@@ -9445,7 +9445,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Degradando tu cuenta, por favor espera"
+        "Espera: estamos modificando tu cuenta."
       ]
     },
     "Step in filter modal": {
@@ -9898,7 +9898,7 @@
     },
     "TableRow": {
       "No SMTP tokens found": [
-        "No se han encontrado tokens SMTP"
+        "No se han encontrado tokens SMTP."
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -9987,10 +9987,10 @@
         "Añadir dirección"
       ],
       "Add another notification to remind you of this event": [
-        "Agrega otra notificación para recordarte de este evento"
+        "Añade otra notificación para recordarte de este evento"
       ],
       "Add contact group name": [
-        "Agregar nombre del grupo de contactos"
+        "Añadir nombre del grupo de contactos"
       ],
       "Add credit/debit card": [
         "Añadir tarjeta de crédito/débito"
@@ -10047,7 +10047,7 @@
         "Aplicar el filtro a los mensajes existentes"
       ],
       "Apply gift code": [
-        "Añadir código promocional"
+        "Aplicar código de regalo"
       ],
       "Are you sure you want to close the preview?": [
         "¿Estás seguro de que quieres cerrar la previsualización?"
@@ -10617,7 +10617,7 @@
         "Configurar autenticación de dos factores"
       ],
       "Settings": [
-        "Ajustes"
+        "Configuración"
       ],
       "Short domain (@pm.me)": [
         "Dominio corto (@pm.me)"
@@ -10926,10 +10926,10 @@
         "Establece el aspecto de tu lista de mensajes por defecto."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Establece el tamaño predeterminado de la ventana emergente de compositor como pequeña o pantalla completa."
+        "Establece el tamaño por defecto de la ventana emergente de compositor como pequeña o pantalla completa."
       ],
       "Set the default layout for your Inbox.": [
-        "Establece el diseño predeterminado para tu bandeja de entrada."
+        "Establece el diseño por defecto para tu bandeja de entrada."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Establece el siguiente pie de página en los correos electrónicos que envíes: ${ signature } El enlace apunta a tu enlace de referencia. El pie de página aparecerá debajo de tu firma. Puedes personalizar tu firma en cualquier momento en los ajustes."
@@ -10980,7 +10980,7 @@
         "Cuando añadas una etiqueta a un mensaje en una conversación, se aplicará automáticamente a todos los mensajes futuros que envíes o recibas en esa conversación."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Al hacer clic en un enlace, esta función de anti suplantación te pedirá que confirmes la URL de la página web."
+        "Al hacer clic en un enlace, esta función contra la suplantación de identidad te pedirá que confirmes la URL de la página web."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Cuando mueves un correo a spam, se cancelará automáticamente tu suscripción a esa lista de correo."
@@ -11005,7 +11005,7 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        "Selecciona la configuración PGP por defecto que se utiliza para firmar o cifrar mensajes con usuarios no-${ BRAND_NAME } PGP. Ten en cuenta que la función Inline/PGP fuerza los mensajes en texto plano. Más información"
+        "Selecciona la configuración PGP por defecto que se utiliza para firmar o cifrar mensajes con usuarios PGP que no sean de ${ BRAND_NAME }. Ten en cuenta que la función Inline/PGP fuerza los mensajes en texto plano. Más información"
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -11015,7 +11015,7 @@
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Firma automáticamente todos tus mensajes salientes para que los usuarios puedan verificar la autenticidad de tus mensajes. Esto se hace en combinación con la configuración predeterminada de PGP que se puede configurar a continuación."
+        "Firma automáticamente todos tus mensajes salientes para que los usuarios puedan verificar la autenticidad de tus mensajes. Esto se hace en combinación con la configuración de PGP por defecto que se puede configurar a continuación."
       ]
     },
     "Tor out of date": {
@@ -11023,7 +11023,7 @@
         "versión estable"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Esta versión de Tor Browser no es soportada. Por favor actualice a la última ${ stableRelease }"
+        "Esta versión del navegador Tor no es compatible. Actualiza a la última ${ stableRelease }."
       ]
     },
     "Update font modal": {
@@ -11045,8 +11045,8 @@
     },
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Actualiza a un plan de pago para crear hasta ${ MAX_CALENDARS_PAID } calendario, permitiéndote hacer calendarios para el trabajo, para compartir con tus amigos y sólo para ti.",
-        "Actualiza a un plan de pago para crear hasta ${ MAX_CALENDARS_PAID } calendarios, permitiéndote hacer calendarios para el trabajo, para compartir con tus amigos y sólo para ti."
+        "Actualiza a un plan de pago para crear hasta ${ MAX_CALENDARS_PAID } calendario, permitiéndote hacer calendarios para el trabajo, para compartir con tus amigos y solo para ti.",
+        "Actualiza a un plan de pago para crear hasta ${ MAX_CALENDARS_PAID } calendarios, permitiéndote hacer calendarios para el trabajo, para compartir con tus amigos o solo para ti."
       ],
       "Upgrade to a Mail paid plan to share your calendar.": [
         "Actualiza tu plan a uno de pago para compartir tus calendarios."
@@ -11079,7 +11079,7 @@
         "La contraseña debe contener al menos ${ length } caracteres"
       ],
       "Try a shorter username (${ n } character max)": [
-        "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)",
+        "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
         "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
       ]
     },
@@ -11165,7 +11165,7 @@
         "Al deshabilitar los registros, también borrarás todo el historial. ¿Estás seguro que quieres deshabilitar los registros?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Al deshabilitar esta dirección, no podrás enviar o recibir correos utilizando esta dirección y todos los productos de ${ BRAND_NAME } enlazados también se deshabilitarán. ¿Estás seguro que quieres deshabilitar la dirección?"
+        "Al deshabilitar esta dirección, no podrás enviar o recibir correos electrónicos utilizando esta dirección y todos los productos de ${ BRAND_NAME } enlazados también se deshabilitarán. ¿Estás seguro de que quieres deshabilitar la dirección?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Si cancelas esta importación, no podrás reanudarla. ${ BRAND_NAME } ha guardado todo el progreso en tu cuenta. ¿Quieres cancelarla de todos modos?"
@@ -11174,7 +11174,7 @@
         "El chat en vivo es una función premium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Por favor, ten en cuenta que al elegir este método de pago, tu cuenta no será actualizada inmediatamente. Actualizaremos tu cuenta una vez que el pago se haya completado."
+        "Ten en cuenta que al elegir este método de pago, tu cuenta no será actualizada inmediatamente. Actualizaremos tu cuenta una vez que el pago se haya completado."
       ],
       "Please provide at least one recipient": [
         "Añade al menos un destinatario."

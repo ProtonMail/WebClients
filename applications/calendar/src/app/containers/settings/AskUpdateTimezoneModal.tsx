@@ -62,7 +62,7 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
                     className="mr0-5 flex-item-noshrink"
                     reverse
                 />
-                {c("Don't ask to update timezone checkbox label").t`Don't ask again`}
+                {c("Don't ask to update timezone checkbox label").t`Do not ask again`}
             </div>
         </AlertModal>
     );

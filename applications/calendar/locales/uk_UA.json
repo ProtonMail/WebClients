@@ -2008,7 +2008,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Don't ask again": [
-        "Не питати знову"
+        "Do not ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3366,6 +3366,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Поширюючи всі подробиці про подію з цього календаря, ви погоджуєтеся надати доступ для ${ BRAND_NAME } до зашифрованої інформації цього календаря."
       ],
+      "Calendar side panel": [
+        "Бічна панель календаря"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можете згадати свій пароль? Ми можемо допомогти вам стерти зашифровані дані в усіх контактах, які були зашифровані цим ключем, а також в процесі відхилити попередження."
       ],
@@ -3847,7 +3850,7 @@
         "Ви повторно активували свої ключі, тому тепер можна розшифрувати події, пов'язані з указаними календарями."
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Ви скинули свій пароль, а події, пов'язані з цими календарями, не можуть бути розшифровані.\nБудь-які посилання на календарі, якими ви поділились, надалі не працюватимуть.\nБудь-які активні календарі, на які ви підписані знову синхронізуються за кілька хвилин."
+        "Ви скинули свій пароль, тому неможливо розшифрувати події, пов'язані з цими календарями.\nБудь-які посилання на календарі, якими ви поділились, надалі не працюватимуть.\nБудь-які активні підписні календарі знову синхронізуються за кілька хвилин."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Ви раніше відхилили це запрошення. Зверніться до власника з проханням про повторне запрошення"
