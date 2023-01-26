@@ -14,7 +14,7 @@ const ReferralTopBanner = () => {
     const protonConfig = useConfig();
     const isVpn = protonConfig.APP_NAME === APPS.PROTONVPN_SETTINGS;
     const trial = isTrial(subscription);
-    const { PeriodEnd = 0 } = subscription;
+    const { PeriodEnd = 0 } = subscription || {};
     const willExpire = willTrialExpire(subscription);
     const isExpired = isTrialExpired(subscription);
     const textAction = c('Button').t`Continue using ${MAIL_APP_NAME}.`;
