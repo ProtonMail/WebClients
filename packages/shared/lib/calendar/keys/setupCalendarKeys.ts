@@ -6,7 +6,7 @@ import { setupCalendar } from '../../api/calendars';
 import { Api } from '../../interfaces';
 import { CalendarWithOwnMembers } from '../../interfaces/calendar';
 import { getPrimaryKey } from '../../keys';
-import { generateCalendarKeyPayload, isCalendarSetupData } from '../../keys/calendarKeys';
+import { generateCalendarKeyPayload, isCalendarSetupData } from '../crypto/calendarKeys';
 
 interface SetupCalendarKeysArgumentsShared {
     api: Api;
