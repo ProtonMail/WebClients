@@ -1,3 +1,5 @@
+import { CalendarKey, CalendarPassphrase } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
+
 import { PaginationParams } from '../../api/interface';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '../../calendar/constants';
 import { ApiResponse } from '../Api';
@@ -33,6 +35,11 @@ export interface CalendarSetupData {
         DataPacket: string;
         KeyPacket: string;
     };
+}
+
+export interface CalendarSetupResponse extends ApiResponse {
+    Key: CalendarKey;
+    Passphrase: CalendarPassphrase;
 }
 
 export interface GenerateCalendarPayload {

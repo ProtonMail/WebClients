@@ -45,18 +45,33 @@ const setupCalendarHelper = async ({ addresses, api, getAddressKeys }: Args) => 
         AutoDetectPrimaryTimezone: 1,
     };
 
-    await Promise.all([
-        api(updateCalendarUserSettings(updatedCalendarUserSettings)),
+    const [
+        {
+            Passphrase: { Flags },
+        },
+    ] = await Promise.all([
         setupCalendarKey({
             api,
             calendarID: Calendar.ID,
             addressID,
             getAddressKeys,
         }),
+        api(updateCalendarUserSettings(updatedCalendarUserSettings)),
     ]);
 
+    // There is only one member in the calendar at this point
+    const calendarWithUpdatedFlags = {
+        ...Calendar,
+        Members: [
+            {
+                ...Calendar.Members[0],
+                Flags,
+            },
+        ],
+    };
+
     return {
-        calendar: Calendar,
+        calendar: calendarWithUpdatedFlags,
         updatedCalendarUserSettings,
     };
 };
