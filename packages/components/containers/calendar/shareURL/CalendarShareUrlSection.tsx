@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
+import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/calendarKeys';
 import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/lib/calendar/shareUrl/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -187,10 +188,10 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
 
                         return tryLoadingAction(urlID, async () => {
                             const { calendarKeys } = await getCalendarInfo(calendarID);
-                            const { publicKeys } = splitKeys(calendarKeys);
+                            const { publicKey } = getPrimaryCalendarKey(calendarKeys);
                             const purpose = untrimmedPurpose.trim();
                             const encryptedPurpose = purpose
-                                ? await generateEncryptedPurpose({ purpose, publicKeys })
+                                ? await generateEncryptedPurpose({ purpose, publicKey })
                                 : null;
 
                             await api<void>(editPublicLink({ calendarID, urlID, encryptedPurpose }));
