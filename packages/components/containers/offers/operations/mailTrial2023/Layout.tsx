@@ -22,7 +22,8 @@ const Layout = (props: OfferLayoutProps) => {
             <OfferHeader {...props}>
                 <h1 className="h2 text-center text-bold">{c('Title')
                     .t`Your Mail Plus free trial ends on ${textDate}`}</h1>
-                <p>{c('Info').t`Upgrade now to get premium features, products and storage at a special price`}</p>
+                <p className="text-center">{c('Info')
+                    .t`Upgrade now to get premium features, products and storage at a special price`}</p>
             </OfferHeader>
 
             <Deals {...props} />
