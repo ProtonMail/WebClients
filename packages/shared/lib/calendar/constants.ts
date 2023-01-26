@@ -135,6 +135,10 @@ export const MAX_CHARS_API = {
     CALENDAR_URL: 10000,
 };
 
+export const MAX_CHARS_CLEARTEXT = {
+    PURPOSE: 500,
+};
+
 export const MINIMUM_DATE = new Date(1970, 0, 1);
 export const MINIMUM_DATE_UTC = new Date(
     Date.UTC(MINIMUM_DATE.getFullYear(), MINIMUM_DATE.getMonth(), MINIMUM_DATE.getDate())
