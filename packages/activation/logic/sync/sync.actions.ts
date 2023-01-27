@@ -11,7 +11,7 @@ import {
     ImportType,
     OAUTH_PROVIDER,
 } from '@proton/activation/interface';
-import { CreateNotificationOptions } from '@proton/components/index';
+import { CreateNotificationOptions } from '@proton/components';
 
 import { EasySwitchThunkExtra } from '../store';
 import { LoadingState } from './sync.interface';

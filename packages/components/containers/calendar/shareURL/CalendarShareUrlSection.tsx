@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
-import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/calendarKeys';
+import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/lib/calendar/shareUrl/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

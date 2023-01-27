@@ -1,6 +1,6 @@
 import { EasyTrans } from '@proton/activation/helpers/easyTrans';
 import { MailImportPayloadError } from '@proton/activation/interface';
-import { Icon, Tooltip } from '@proton/components/index';
+import { Icon, Tooltip } from '@proton/components';
 
 interface Props {
     checked: boolean;

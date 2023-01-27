@@ -13,7 +13,7 @@ import {
 } from '../interfaces/calendar';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
 import { CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CALENDARS_FREE, MAX_CALENDARS_PAID, SETTINGS_VIEW } from './constants';
-import { reactivateCalendarsKeys } from './keys/reactivateCalendarKeys';
+import { reactivateCalendarsKeys } from './crypto/keys/reactivateCalendarKeys';
 
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);
