@@ -3,6 +3,7 @@ import { createContext, useContext, useRef, useState } from 'react';
 import { useApi } from '@proton/components';
 import { queryInitSRPHandshake, queryShareURLAuth } from '@proton/shared/lib/api/drive/sharing';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { srpAuth } from '@proton/shared/lib/srp';
@@ -89,7 +90,7 @@ function usePublicSessionProvider() {
 
     const shouldReauth = (error: any) => {
         const apiError = getApiError(error);
-        return apiError.code === ERROR_CODE_INVALID_SRP_PARAMS;
+        return apiError.status === HTTP_ERROR_CODES.UNAUTHORIZED;
     };
 
     const reauth = async () => {
