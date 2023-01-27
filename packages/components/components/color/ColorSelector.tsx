@@ -12,13 +12,20 @@ interface Props {
     onChange: (color: string) => void;
     className?: string;
     colors: { value: string; label?: string }[];
+    inline?: boolean;
 }
 
-const ColorSelector = ({ selected, onChange, className, colors }: Props) => {
+const ColorSelector = ({ selected, onChange, className, colors, inline = false }: Props) => {
     const uid = useInstance(() => generateUID('color-selector'));
 
     return (
-        <ul className={classnames(['color-selector-container unstyled', className])}>
+        <ul
+            className={classnames([
+                'color-selector-container unstyled m0',
+                inline && 'color-selector-container-inline',
+                className,
+            ])}
+        >
             {colors.map(({ value: color, label }) => {
                 const isSelected = selected?.toLowerCase() === color?.toLowerCase();
 
