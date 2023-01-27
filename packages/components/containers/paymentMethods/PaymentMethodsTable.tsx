@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
@@ -8,12 +7,17 @@ import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
 
-const PaymentMethodsTable = ({ methods, loading }) => {
+export interface Props {
+    methods: any[];
+    loading: boolean;
+}
+
+const PaymentMethodsTable = ({ methods, loading }: Props) => {
     if (!loading && !methods.length) {
         return <p>{c('Info').t`You have no saved payment methods.`}</p>;
     }
 
-    const getMethod = (method) => {
+    const getMethod = (method: any) => {
         switch (method.Type) {
             case PAYMENT_METHOD_TYPES.CARD:
                 return `${method.Details.Brand} (•••• ${method.Details.Last4})`;
@@ -63,11 +67,6 @@ const PaymentMethodsTable = ({ methods, loading }) => {
             </TableBody>
         </Table>
     );
-};
-
-PaymentMethodsTable.propTypes = {
-    methods: PropTypes.array.isRequired,
-    loading: PropTypes.bool.isRequired,
 };
 
 export default PaymentMethodsTable;
