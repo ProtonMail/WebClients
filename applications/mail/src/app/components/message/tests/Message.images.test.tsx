@@ -1,5 +1,6 @@
 import { findByTestId, fireEvent } from '@testing-library/dom';
 
+import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -48,7 +49,17 @@ jest.mock('../../../helpers/dom', () => ({
     preloadImage: jest.fn(() => Promise.resolve()),
 }));
 
+const windowHostname = 'https://mail.proton.pink';
+
 describe('Message images', () => {
+    beforeEach(() => {
+        mockWindowLocation(windowHostname);
+    });
+
+    afterEach(() => {
+        resetWindowLocation();
+    });
+
     afterEach(clearAll);
 
     it('should display all elements other than images', async () => {
@@ -114,7 +125,7 @@ describe('Message images', () => {
     });
 
     it('should load correctly all elements other than images with proxy', async () => {
-        const forgedURL = 'http://localhost/api/core/v4/images?Url=imageURL&DryRun=0&UID=uid';
+        const forgedURL = `${windowHostname}/api/core/v4/images?Url=imageURL&DryRun=0&UID=uid`;
         const document = createDocument(content);
 
         const message: MessageState = {
