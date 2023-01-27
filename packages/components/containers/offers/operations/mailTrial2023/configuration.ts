@@ -6,8 +6,8 @@ import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getMailPlusFeatures, getUnlimitedFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import Layout from './Layout';
-import bannerImage from './mail-trial-2023-landscape.png';
-import bannerImage2x from './mail-trial-2023-landscape@2x.png';
+import bannerImage from './upsell_mail-plus-free-trial.png';
+import bannerImage2x from './upsell_mail-plus-free-trial@2x.png';
 
 const config: OfferConfig = {
     ID: 'mail-trial-2023',
