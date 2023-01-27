@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 
 import { useEasySwitchSelector } from '@proton/activation/logic/store';
 import { selectSyncById } from '@proton/activation/logic/sync/sync.selectors';
-import { TableCell, TableRow } from '@proton/components/index';
+import { TableCell, TableRow } from '@proton/components';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import ReportsTableCell from '../ReportsTableCell';

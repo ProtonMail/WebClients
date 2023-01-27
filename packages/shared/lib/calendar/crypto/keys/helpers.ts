@@ -1,26 +1,59 @@
 import { c } from 'ttag';
 
+import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { uint8ArrayToBase64String } from '../../helpers/encoding';
-import { DecryptedKey } from '../../interfaces';
-import { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
-import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
-import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
-import { getPrimaryKey, splitKeys } from '../../keys';
-import { toSessionKey } from '../../keys/sessionKey';
-import { readSessionKeys } from '../deserialize';
-import { getCalendarEventDecryptionKeys } from '../keys/getCalendarEventDecryptionKeys';
-import { getPrimaryCalendarKey } from './calendarKeys';
+import { hasBit } from '../../../helpers/bitset';
+import { uint8ArrayToBase64String } from '../../../helpers/encoding';
+import { Address, DecryptedKey } from '../../../interfaces';
+import {
+    CalendarEvent,
+    CalendarKeyFlags,
+    CalendarMember,
+    CalendarSetupData,
+    DecryptedCalendarKey,
+    GenerateCalendarPayload,
+} from '../../../interfaces/calendar';
+import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
+import { GetCalendarKeys } from '../../../interfaces/hooks/GetCalendarKeys';
+import { getPrimaryKey, splitKeys } from '../../../keys';
+import { toSessionKey } from '../../../keys/sessionKey';
+import { getIsAutoAddedInvite } from '../../apiModels';
+import { readSessionKeys } from '../../deserialize';
 
-interface GetCreationKeysArguments {
-    calendarEvent?: CalendarEvent;
-    newAddressKeys: DecryptedKey[];
-    oldAddressKeys?: DecryptedKey[];
-    newCalendarKeys: DecryptedCalendarKey[];
-    oldCalendarKeys?: DecryptedCalendarKey[];
-    decryptedSharedKeyPacket?: string;
-}
+export const getPrimaryCalendarKey = (calendarKeys: DecryptedCalendarKey[]) => {
+    const primaryKey = calendarKeys.find(({ Key: { Flags } }) => hasBit(Flags, CalendarKeyFlags.PRIMARY));
+    if (!primaryKey) {
+        throw new Error('Calendar primary key not found');
+    }
+    return primaryKey;
+};
+
+export const getCalendarEventDecryptionKeys = async ({
+    calendarEvent,
+    addressKeys,
+    calendarKeys,
+    getAddressKeys,
+    getCalendarKeys,
+}: {
+    calendarEvent: CalendarEvent;
+    addressKeys?: DecryptedKey[];
+    calendarKeys?: DecryptedCalendarKey[];
+    getAddressKeys?: GetAddressKeys;
+    getCalendarKeys?: GetCalendarKeys;
+}) => {
+    const { CalendarID } = calendarEvent;
+    if (getIsAutoAddedInvite(calendarEvent)) {
+        if (!addressKeys && !getAddressKeys) {
+            return;
+        }
+        return splitKeys(addressKeys || (await getAddressKeys?.(calendarEvent.AddressID))).privateKeys;
+    }
+    if (!calendarKeys && !getCalendarKeys) {
+        return;
+    }
+    return splitKeys(calendarKeys || (await getCalendarKeys?.(CalendarID))).privateKeys;
+};
 
 export const getCreationKeys = async ({
     calendarEvent,
@@ -29,7 +62,14 @@ export const getCreationKeys = async ({
     newCalendarKeys,
     oldCalendarKeys,
     decryptedSharedKeyPacket,
-}: GetCreationKeysArguments) => {
+}: {
+    calendarEvent?: CalendarEvent;
+    newAddressKeys: DecryptedKey[];
+    oldAddressKeys?: DecryptedKey[];
+    newCalendarKeys: DecryptedCalendarKey[];
+    oldCalendarKeys?: DecryptedCalendarKey[];
+    decryptedSharedKeyPacket?: string;
+}) => {
     const primaryAddressKey = getPrimaryKey(newAddressKeys);
     const primaryPrivateAddressKey = primaryAddressKey ? primaryAddressKey.privateKey : undefined;
     if (!primaryPrivateAddressKey) {
@@ -107,3 +147,18 @@ export const getBase64SharedSessionKey = async ({
 
     return sessionKey ? uint8ArrayToBase64String(sessionKey.data) : undefined;
 };
+
+export const getAddressesMembersMap = (Members: CalendarMember[], Addresses: Address[]) => {
+    return Members.reduce<{ [key: string]: Address }>((acc, Member) => {
+        const Address = Addresses.find(({ Email }) => Email === Member.Email);
+        if (!Address) {
+            return acc;
+        }
+        acc[Member.ID] = Address;
+        return acc;
+    }, {});
+};
+
+export const isCalendarSetupData = (
+    payload: GenerateCalendarPayload | CalendarSetupData
+): payload is CalendarSetupData => isTruthy(payload.Passphrase.KeyPacket);

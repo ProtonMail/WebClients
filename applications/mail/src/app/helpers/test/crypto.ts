@@ -1,5 +1,5 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/calendarKeys';
+import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, KEY_FLAG, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 
 import { base64ToArray } from '../base64';

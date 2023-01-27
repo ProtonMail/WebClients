@@ -13,7 +13,7 @@ import {
     useLoading,
 } from '@proton/components';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
-import { process } from '@proton/shared/lib/calendar/keys/resetHelper';
+import { process } from '@proton/shared/lib/calendar/crypto/keys/resetHelper';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';

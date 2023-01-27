@@ -4,8 +4,8 @@ import { ImportProvider, ImportType } from '@proton/activation/interface';
 import { startImapDraft } from '@proton/activation/logic/draft/imapDraft/imapDraft.actions';
 import { startOauthDraft } from '@proton/activation/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/logic/store';
+import { FeatureCode, useModalState } from '@proton/components';
 import { useFeature, useUser } from '@proton/components/hooks';
-import { FeatureCode, useModalState } from '@proton/components/index';
 
 import OAuthImportSelectionModal from '../../Modals/OAuthImportSelectionModal/OAuthImportSelectionModal';
 import ProviderCard from './ProviderCard';
