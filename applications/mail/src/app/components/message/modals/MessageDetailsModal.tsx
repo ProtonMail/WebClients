@@ -105,7 +105,7 @@ const MessageDetailsModal = ({
     const sender = message.data?.Sender;
 
     return (
-        <ModalTwo {...rest}>
+        <ModalTwo data-testid="message-details:modal" {...rest}>
             <ModalTwoHeader title={c('Title').t`Message details`} />
             <ModalTwoContent>
                 <div
@@ -138,7 +138,7 @@ const MessageDetailsModal = ({
                             </span>
                         </div>
                     )}
-                    <div className="mb0-5 flex flex-nowrap">
+                    <div className="mb0-5 flex flex-nowrap" data-testid="message-details:date">
                         <span className="mr0-5 flex">
                             <Icon name="calendar-grid" className="mauto" alt={c('Label').t`Date:`} />
                         </span>
@@ -163,7 +163,7 @@ const MessageDetailsModal = ({
                             {locationText}
                         </span>
                     </div>
-                    <div className="mb0-5 flex flex-nowrap">
+                    <div className="mb0-5 flex flex-nowrap" data-testid="message-details:size">
                         <span className="mr0-5 flex">
                             <Icon name="filing-cabinet" className="mauto" alt={c('Label').t`Size:`} />
                         </span>

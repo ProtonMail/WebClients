@@ -58,7 +58,11 @@ const KeysTable = ({
                                         value={fingerprint}
                                         className="flex-item-noshrink mr1 on-mobile-mr0-5"
                                     />
-                                    <code className="max-w100 inline-block text-ellipsis" title={fingerprint}>
+                                    <code
+                                        className="max-w100 inline-block text-ellipsis"
+                                        data-testid="fingerprint"
+                                        title={fingerprint}
+                                    >
                                         {fingerprint}
                                     </code>
                                     {status.isWeak && (
