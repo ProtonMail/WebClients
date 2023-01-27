@@ -54,9 +54,9 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 <Icon name="chevron-left" size={16} alt={c('Action').t`Previous`} />
             </Button>
             <span className="ml0-5 mr0-5">
-                <span>{current}</span>
+                <span data-testid="preview:current-attachment">{current}</span>
                 <span className="ml0-25 mr0-25 color-weak text-sm">{c('Info').t`of`}</span>
-                <span>{total}</span>
+                <span data-testid="preview:all-attachments">{total}</span>
             </span>
             <Button
                 icon
