@@ -62,7 +62,7 @@ export interface Subscription {
 
 export interface SubscriptionModel extends Subscription {
     isManagedByMozilla: boolean;
-    UpcomingSubscription?: Subscription;
+    UpcomingSubscription?: Subscription | null;
 }
 
 export type PlanIDs = Partial<{
