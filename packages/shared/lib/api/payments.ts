@@ -1,3 +1,4 @@
+import { Params } from '@proton/components/containers/payments/interface';
 import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 
 import { getProductHeaders } from '../apps/product';
@@ -106,7 +107,7 @@ export const createPayPalPayment = (Amount: number, Currency: Currency) => ({
     data: { Amount, Currency },
 });
 
-export const payInvoice = (invoiceID: string, data: any) => ({
+export const payInvoice = (invoiceID: string, data: Params) => ({
     url: `payments/invoices/${invoiceID}`,
     method: 'post',
     data,
