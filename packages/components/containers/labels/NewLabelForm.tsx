@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { LABEL_TYPE } from '@proton/shared/lib/constants';
+import { ACCENT_COLORNAMES, LABEL_TYPE } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
 
-import { ColorPicker, Field, Info, InputFieldTwo, Label, Row, Toggle } from '../../components';
+import { ColorPicker, Info, InputFieldTwo, Label, Toggle } from '../../components';
 import { useMailSettings } from '../../hooks';
 import ParentFolderSelector from './ParentFolderSelector';
 
@@ -28,20 +28,35 @@ function NewLabelForm({
 }: Props) {
     const [mailSettings] = useMailSettings();
 
+    const colorName = (color: string) =>
+        Object.values(ACCENT_COLORNAMES)
+            .filter((item) => item.color.includes(color.toUpperCase()))[0]
+            .getName() || undefined;
+    const ColorPickerLabel = (color: string) => (
+        <>
+            <span>{c('New Label form').t`Color`}:</span>
+            {colorName(color) && (
+                <span className="color-weak text-capitalize text-no-bold ml0-5">{colorName(color)}</span>
+            )}
+        </>
+    );
+
     const labelRenderer = () => {
         const label = labelOrFolder as tsLabel;
+
         return (
-            <Row>
-                <Label htmlFor="color-button">{c('New Label form').t`Color`} </Label>
-                <Field>
-                    <ColorPicker
-                        id="color-button"
-                        data-testid="color-button"
-                        color={label.Color}
-                        onChange={onChangeColor}
-                    />
-                </Field>
-            </Row>
+            <div>
+                <InputFieldTwo
+                    as={ColorPicker}
+                    layout="inline"
+                    label={ColorPickerLabel(label.Color)}
+                    // labelContainerClassName="sr-only"
+                    id="color-button"
+                    data-testid="color-button"
+                    color={label.Color}
+                    onChange={onChangeColor}
+                />
+            </div>
         );
     };
 
@@ -50,50 +65,53 @@ function NewLabelForm({
 
         return (
             <>
-                <Row>
-                    <Label htmlFor="parentID">{c('Label').t`Folder location`}</Label>
-                    <Field>
-                        <ParentFolderSelector
-                            id="parentID"
-                            value={folder.ParentID || 0}
-                            onChange={onChangeParentID}
-                            disableOptions={[folder.ID]}
-                        />
-                    </Field>
-                </Row>
+                <div>
+                    <ParentFolderSelector
+                        id="parentID"
+                        label={c('Label').t`Folder location`}
+                        value={folder.ParentID || 0}
+                        onChange={onChangeParentID}
+                        disableOptions={[folder.ID]}
+                    />
+                </div>
                 {mailSettings?.EnableFolderColor ? (
-                    <Row>
-                        <Label htmlFor="color-button">{c('New Label form').t`Color`} </Label>
-                        <Field>
-                            {mailSettings?.InheritParentFolderColor && folder.ParentID ? (
+                    <div>
+                        {mailSettings?.InheritParentFolderColor && folder.ParentID ? (
+                            <div className="mb1">
+                                <strong className="text-semibold">{c('New Label form').t`Color`} </strong>
                                 <div className="mt0-5">{c('Info').t`Inherited from parent folder`}</div>
-                            ) : (
-                                <ColorPicker
-                                    id="color-button"
-                                    data-testid="color-button"
-                                    color={folder.Color}
-                                    onChange={onChangeColor}
-                                />
-                            )}
-                        </Field>
-                    </Row>
+                            </div>
+                        ) : (
+                            <InputFieldTwo
+                                as={ColorPicker}
+                                layout="inline"
+                                label={ColorPickerLabel(folder.Color)}
+                                id="color-button"
+                                data-testid="color-button"
+                                color={folder.Color}
+                                onChange={onChangeColor}
+                            />
+                        )}
+                    </div>
                 ) : null}
-                <Row>
-                    <Label htmlFor="notification">
-                        <span className="mr0-5">{c('Label').t`Notification`}</span>
-                        <Info
-                            title={c('Info')
-                                .t`You can turn on notifications to get alerts when new email messages arrive in this folder.`}
-                        />
+                <div className="flex flex-justify-start flex-align-items-center">
+                    <Label htmlFor="notification" className="wauto">
+                        <span className="inline-flex flex-align-items-center">
+                            <span className="mr0-5 text-semibold">{c('Label').t`Notification`}</span>
+                            <Info
+                                title={c('Info')
+                                    .t`You can turn on notifications to get alerts when new email messages arrive in this folder.`}
+                            />
+                        </span>
                     </Label>
-                    <Field className="pt0-5">
+                    <div className="pt0-5 ml1">
                         <Toggle
                             id="notification"
                             checked={folder.Notify === 1}
                             onChange={({ target }) => onChangeNotify?.(+target.checked)}
                         />
-                    </Field>
-                </Row>
+                    </div>
+                </div>
             </>
         );
     };
@@ -106,28 +124,26 @@ function NewLabelForm({
                         .t`Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.`}
                 </div>
             ) : null}
-            <Row>
-                <Label htmlFor="folder">
-                    {labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER
-                        ? c('New Label form').t`Folder name`
-                        : c('New Label form').t`Label name`}
-                </Label>
-                <Field>
-                    <InputFieldTwo
-                        id="folder"
-                        value={labelOrFolder.Name}
-                        onValue={onChangeName}
-                        placeholder={
-                            labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER
-                                ? c('New Label form').t`Folder name`
-                                : c('New Label form').t`Label name`
-                        }
-                        data-test-id="label/folder-modal:name"
-                        autoFocus
-                        error={validator([requiredValidator(labelOrFolder.Name)])}
-                    />
-                </Field>
-            </Row>
+            <div>
+                <InputFieldTwo
+                    id="folder"
+                    label={
+                        labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER
+                            ? c('New Label form').t`Folder name`
+                            : c('New Label form').t`Label name`
+                    }
+                    value={labelOrFolder.Name}
+                    onValue={onChangeName}
+                    placeholder={
+                        labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER
+                            ? c('New Label form').t`Folder name`
+                            : c('New Label form').t`Label name`
+                    }
+                    data-test-id="label/folder-modal:name"
+                    autoFocus
+                    error={validator([requiredValidator(labelOrFolder.Name)])}
+                />
+            </div>
             {labelOrFolder.Type === LABEL_TYPE.MESSAGE_LABEL && labelRenderer()}
             {labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER && folderRenderer()}
         </div>
