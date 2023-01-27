@@ -83,6 +83,8 @@ export const formatPrepareStepPayload = ({
 
                 if (folder.category) {
                     result = fields.importCategoriesDestination;
+                } else if (folder.systemFolder) {
+                    result = folder.systemFolder;
                 } else if (folder.protonPath.length < MAX_FOLDERS_DEPTH || folder.separator !== '/') {
                     result = folder.protonPath.join(folder.separator);
                 }
@@ -102,6 +104,9 @@ export const formatPrepareStepPayload = ({
                         Color: folder.color,
                     },
                 ];
+
+                //We delete the FolderPath if we're in folder mapping to avoid creating folders
+                delete Destinations.FolderPath;
             }
 
             if (GMAIL_CATEGORIES.includes(folder.id as MailImportGmailCategories)) {

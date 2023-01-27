@@ -73,7 +73,6 @@ export const standardFolderResponse = {
             {
                 Source: 'a folder name',
                 Destinations: {
-                    FolderPath: 'a folder name',
                     Labels: [
                         {
                             Name: 'a folder name',
@@ -86,7 +85,6 @@ export const standardFolderResponse = {
             {
                 Source: 'aaa',
                 Destinations: {
-                    FolderPath: 'aaa',
                     Labels: [
                         {
                             Name: 'aaa',
@@ -99,7 +97,6 @@ export const standardFolderResponse = {
             {
                 Source: 'aaa/child a',
                 Destinations: {
-                    FolderPath: 'aaa-child a',
                     Labels: [
                         {
                             Name: 'aaa-child a',
@@ -112,7 +109,6 @@ export const standardFolderResponse = {
             {
                 Source: 'aaa/child aa',
                 Destinations: {
-                    FolderPath: 'aaa-child aa',
                     Labels: [
                         {
                             Name: 'aaa-child aa',
@@ -125,7 +121,6 @@ export const standardFolderResponse = {
             {
                 Source: 'aaa/child aaa',
                 Destinations: {
-                    FolderPath: 'aaa-child aaa',
                     Labels: [
                         {
                             Name: 'aaa-child aaa',
@@ -138,7 +133,6 @@ export const standardFolderResponse = {
             {
                 Source: 'hello another test',
                 Destinations: {
-                    FolderPath: 'hello another test',
                     Labels: [
                         {
                             Name: 'hello another test',
@@ -151,7 +145,6 @@ export const standardFolderResponse = {
             {
                 Source: 'hello another test/a child test',
                 Destinations: {
-                    FolderPath: 'hello another test-a child test',
                     Labels: [
                         {
                             Name: 'hello another test-a child test',
@@ -164,7 +157,6 @@ export const standardFolderResponse = {
             {
                 Source: 'hello another test/a child test/a child of child',
                 Destinations: {
-                    FolderPath: 'hello another test-a child test-a child of child',
                     Labels: [
                         {
                             Name: 'hello another test-a child test-a child of child',
@@ -177,7 +169,6 @@ export const standardFolderResponse = {
             {
                 Source: 'hello another test/another child test',
                 Destinations: {
-                    FolderPath: 'hello another test-another child test',
                     Labels: [
                         {
                             Name: 'hello another test-another child test',
@@ -190,7 +181,6 @@ export const standardFolderResponse = {
             {
                 Source: 'Important',
                 Destinations: {
-                    FolderPath: 'Important',
                     Labels: [
                         {
                             Name: 'Important',
