@@ -2,7 +2,7 @@ import { ElementType, useState } from 'react';
 
 import tinycolor from 'tinycolor2';
 
-import { ACCENT_COLORNAMES } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
 import noop from '@proton/utils/noop';
 
 import { classnames, generateUID } from '../../helpers';
@@ -33,16 +33,12 @@ const ColorPicker = <T extends ElementType>({
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const colors = Object.values(ACCENT_COLORNAMES).map(({ color, getName }) => ({ value: color, label: getName() }));
-
-    const colorName =
-        Object.values(ACCENT_COLORNAMES)
-            .filter((item) => item.color.includes(color.toUpperCase()))[0]
-            .getName() || undefined;
+    const options = Object.values(ACCENT_COLORS_MAP).map(({ color, getName }) => ({ value: color, label: getName() }));
+    const colorName = getColorName(color);
 
     return (
         <>
-            {layout === 'inline' && <ColorSelector selected={color} onChange={onChange} colors={colors} inline />}
+            {layout === 'inline' && <ColorSelector selected={color} onChange={onChange} colors={options} inline />}
             {layout === 'dropdown' && (
                 <>
                     <DropdownButton
@@ -71,7 +67,7 @@ const ColorPicker = <T extends ElementType>({
                         onClose={close}
                         disableDefaultArrowNavigation
                     >
-                        <ColorSelector selected={color} onChange={onChange} colors={colors} className="p1" />
+                        <ColorSelector selected={color} onChange={onChange} colors={options} className="p1" />
                     </Dropdown>
                 </>
             )}
