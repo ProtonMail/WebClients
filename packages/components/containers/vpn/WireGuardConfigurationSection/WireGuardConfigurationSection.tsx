@@ -380,10 +380,7 @@ const WireGuardConfigurationSection = () => {
 
         const serverName = `${certificate?.features?.peerName || peer.name}`.substring(0, 20);
 
-        downloadFile(
-            new Blob([certificate.config || '']),
-            normalize((certificate.name || certificate.publicKeyFingerprint) + '-' + serverName) + '.conf'
-        );
+        downloadFile(new Blob([certificate.config || '']), 'wg.' + normalize(serverName).toLowerCase() + '.conf');
     };
 
     const add = async (addedPeer?: Peer, silent = false) => {
