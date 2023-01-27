@@ -15,6 +15,7 @@ import PaymentMethodsTable from './PaymentMethodsTable';
 const PaymentMethodsSection = () => {
     const { APP_NAME } = useConfig();
     const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
+    // @ts-ignore
     const [{ isManagedByMozilla } = {}, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
 
@@ -27,14 +28,15 @@ const PaymentMethodsSection = () => {
     }
 
     const handleCard = () => {
-        createModal(<EditCardModal />);
+        const UntypedEditCardModal: any = EditCardModal;
+        createModal(<UntypedEditCardModal />);
     };
 
     const handlePayPal = () => {
         createModal(<PayPalModal />);
     };
 
-    const hasPayPal = paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL);
+    const hasPayPal = paymentMethods.some((method: any) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL);
 
     const learnMoreUrl =
         APP_NAME === APPS.PROTONVPN_SETTINGS
