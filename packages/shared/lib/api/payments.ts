@@ -1,3 +1,5 @@
+import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
+
 import { getProductHeaders } from '../apps/product';
 import { Currency } from '../interfaces';
 
@@ -32,7 +34,21 @@ export const subscribe = (data: any, product: any) => ({
     headers: getProductHeaders(product),
 });
 
-export const queryInvoices = ({ Page, PageSize, Owner, State, Type }: any) => ({
+export interface QueryInvoicesPayload {
+    /**
+     * Starts with 0
+     */
+    Page: number;
+    PageSize: number;
+    Owner: INVOICE_OWNER;
+    State?: INVOICE_STATE;
+    Type?: INVOICE_TYPE;
+}
+
+/**
+ * Query list of invoices for the current user. The response is {@link InvoiceResponse}
+ */
+export const queryInvoices = ({ Page, PageSize, Owner, State, Type }: QueryInvoicesPayload) => ({
     url: 'payments/invoices',
     method: 'get',
     params: { Page, PageSize, Owner, State, Type },
