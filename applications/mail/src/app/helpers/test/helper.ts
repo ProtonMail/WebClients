@@ -20,8 +20,6 @@ export * from './event-manager';
 export * from './message';
 export * from './assertion';
 
-const initialWindowLocation: Location = window.location;
-
 const savedConsole = { ...console };
 
 export const clearAll = () => {
@@ -121,13 +119,3 @@ export const waitForNoNotification = () =>
             timeout: 5000,
         }
     );
-
-export const mockWindowLocation = (windowOrigin = 'https://mail.proton.pink') => {
-    // @ts-ignore
-    delete window.location;
-    window.location = { ...initialWindowLocation, origin: windowOrigin };
-};
-
-export const resetWindowLocation = () => {
-    window.location = initialWindowLocation;
-};
