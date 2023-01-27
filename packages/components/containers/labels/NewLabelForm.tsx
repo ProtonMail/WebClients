@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { ACCENT_COLORNAMES, LABEL_TYPE } from '@proton/shared/lib/constants';
+import { getColorName } from '@proton/shared/lib/colors';
+import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
@@ -28,18 +29,16 @@ function NewLabelForm({
 }: Props) {
     const [mailSettings] = useMailSettings();
 
-    const colorName = (color: string) =>
-        Object.values(ACCENT_COLORNAMES)
-            .filter((item) => item.color.includes(color.toUpperCase()))[0]
-            .getName() || undefined;
-    const ColorPickerLabel = (color: string) => (
-        <>
-            <span>{c('New Label form').t`Color`}:</span>
-            {colorName(color) && (
-                <span className="color-weak text-capitalize text-no-bold ml0-5">{colorName(color)}</span>
-            )}
-        </>
-    );
+    const ColorPickerLabel = (color: string) => {
+        const colorName = getColorName(color);
+
+        return (
+            <>
+                <span>{c('New Label form').t`Color`}:</span>
+                {colorName && <span className="color-weak text-capitalize text-no-bold ml0-5">{colorName}</span>}
+            </>
+        );
+    };
 
     const labelRenderer = () => {
         const label = labelOrFolder as tsLabel;
@@ -50,7 +49,6 @@ function NewLabelForm({
                     as={ColorPicker}
                     layout="inline"
                     label={ColorPickerLabel(label.Color)}
-                    // labelContainerClassName="sr-only"
                     id="color-button"
                     data-testid="color-button"
                     color={label.Color}

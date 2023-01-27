@@ -3,7 +3,7 @@ import { cloneDeep } from 'lodash';
 import { ApiMailImporterFolder } from '@proton/activation/api/api.interface';
 import { MAX_FOLDERS_DEPTH } from '@proton/activation/constants';
 import { MailImportDestinationFolder } from '@proton/activation/interface';
-import { ACCENT_COLORS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import move from '@proton/utils/move';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
