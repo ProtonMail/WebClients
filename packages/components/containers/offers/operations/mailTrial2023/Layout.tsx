@@ -1,6 +1,9 @@
+import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import BlackFridayFooter from '../../components/blackFriday/BlackFridayFooter';
+import { useSubscription } from '@proton/components/hooks';
+import { dateLocale } from '@proton/shared/lib/i18n';
+
 import OfferFooter from '../../components/shared/OfferFooter';
 import OfferHeader from '../../components/shared/OfferHeader';
 import OfferLayout from '../../components/shared/OfferLayout';
@@ -11,16 +14,23 @@ import hasOffer from '../../helpers/hasOffer';
 import { OfferLayoutProps } from '../../interface';
 
 const Layout = (props: OfferLayoutProps) => {
+    const [subscription] = useSubscription();
+    const { PeriodEnd = 0 } = subscription || {};
+    const textDate = format(fromUnixTime(PeriodEnd), 'PPP', { locale: dateLocale });
+
     return hasOffer(props) ? (
         <OfferLayout {...props}>
             <OfferHeader {...props}>
-                <OfferTitle>{c('specialoffer: Title').t`End of year offer`}</OfferTitle>
+                <OfferTitle>{c('Title').t`Your Mail Plus free trial ends on ${textDate}`}</OfferTitle>
+                <p className="text-center">{c('Info')
+                    .t`Upgrade now to get premium features, products and storage at a special price`}</p>
             </OfferHeader>
 
             <Deals {...props} />
 
             <OfferFooter {...props}>
-                <BlackFridayFooter {...props} />
+                <p className="text-sm text-center mb1 color-weak">{c('specialoffer: Footer')
+                    .t`This subscription will automatically renew every 2 years at the same rate until it is cancelled.`}</p>
             </OfferFooter>
         </OfferLayout>
     ) : (

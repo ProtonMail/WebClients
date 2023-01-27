@@ -68,12 +68,6 @@ $amount-size: 36;
 	}
 
 	&-modal:not(.offer-modal--one-deal) {
-		@include media('>small') {
-			.offer-close-button {
-				color: white; // always above a banner, so hardcoded to white
-			}
-		}
-
 		.offer-main-content {
 			margin-inline: 2rem;
 			@include media('<=small') {
