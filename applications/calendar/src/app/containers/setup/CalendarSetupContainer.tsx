@@ -9,8 +9,8 @@ import {
     useGetAddressKeys,
     useGetAddresses,
 } from '@proton/components';
-import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
-import { setupCalendarKeys } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
+import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
+import { setupCalendarKeys } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarUserSettingsModel, CalendarsModel } from '@proton/shared/lib/models';

@@ -2,27 +2,24 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/components/hooks';
 
-import { setupCalendar } from '../../api/calendars';
-import { Api } from '../../interfaces';
-import { CalendarWithOwnMembers } from '../../interfaces/calendar';
-import { getPrimaryKey } from '../../keys';
-import { generateCalendarKeyPayload, isCalendarSetupData } from '../crypto/calendarKeys';
+import { setupCalendar } from '../../../api/calendars';
+import { Api } from '../../../interfaces';
+import { CalendarWithOwnMembers } from '../../../interfaces/calendar';
+import { getPrimaryKey } from '../../../keys';
+import { generateCalendarKeyPayload } from './calendarKeys';
+import { isCalendarSetupData } from './helpers';
 
-interface SetupCalendarKeysArgumentsShared {
+export const setupCalendarKey = async ({
+    calendarID,
+    api,
+    addressID,
+    getAddressKeys,
+}: {
     api: Api;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
-}
-
-interface SetupCalendarKeyArguments extends SetupCalendarKeysArgumentsShared {
     calendarID: string;
     addressID: string;
-}
-
-interface SetupCalendarKeysArguments extends SetupCalendarKeysArgumentsShared {
-    calendars: CalendarWithOwnMembers[];
-}
-
-export const setupCalendarKey = async ({ calendarID, api, addressID, getAddressKeys }: SetupCalendarKeyArguments) => {
+}) => {
     const { privateKey, publicKey } = getPrimaryKey(await getAddressKeys(addressID)) || {};
 
     if (!privateKey || !publicKey) {
@@ -42,7 +39,15 @@ export const setupCalendarKey = async ({ calendarID, api, addressID, getAddressK
     return api(setupCalendar(calendarID, calendarKeyPayload));
 };
 
-export const setupCalendarKeys = async ({ api, calendars, getAddressKeys }: SetupCalendarKeysArguments) => {
+export const setupCalendarKeys = async ({
+    api,
+    calendars,
+    getAddressKeys,
+}: {
+    api: Api;
+    calendars: CalendarWithOwnMembers[];
+    getAddressKeys: ReturnType<typeof useGetAddressKeys>;
+}) => {
     return Promise.all(
         calendars.map(async ({ ID: calendarID, Members }) => {
             const addressID = Members[0]?.AddressID;

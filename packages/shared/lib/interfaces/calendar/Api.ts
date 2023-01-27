@@ -1,7 +1,7 @@
 import { PaginationParams } from '../../api/interface';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '../../calendar/constants';
 import { ApiResponse } from '../Api';
-import { Nullable, RequireSome } from '../utils';
+import { Nullable, RequireSome, SimpleMap } from '../utils';
 import { CalendarNotificationSettings } from './Calendar';
 import { CalendarMember, CalendarMemberInvitation } from './CalendarMember';
 import { Attendee, CalendarEvent, CalendarEventData } from './Event';
@@ -32,6 +32,17 @@ export interface CalendarSetupData {
     Passphrase: {
         DataPacket: string;
         KeyPacket: string;
+    };
+}
+
+export interface GenerateCalendarPayload {
+    AddressID: string;
+    Signature: string;
+    PrivateKey: string;
+    Passphrase: {
+        DataPacket: string;
+        KeyPacket?: string;
+        KeyPackets?: SimpleMap<string>;
     };
 }
 

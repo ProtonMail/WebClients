@@ -57,7 +57,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getPersonalCalendars, getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
-import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
+import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
 import { ACCENT_COLORS, PRODUCT_NAMES } from '@proton/shared/lib/constants';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';

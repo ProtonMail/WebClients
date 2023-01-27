@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAuthorPublicKeysMap, withNormalizedAuthors } from '@proton/shared/lib/calendar/author';
+import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { readCalendarEvent, readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
-import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/keys/getCalendarEventDecryptionKeys';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
