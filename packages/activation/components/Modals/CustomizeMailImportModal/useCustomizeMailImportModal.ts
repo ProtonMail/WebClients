@@ -1,7 +1,7 @@
 import { FormEvent, useMemo, useState } from 'react';
 
 import { getMailMappingErrors } from '@proton/activation/helpers/getMailMappingErrors';
-import { useFolders, useLabels } from '@proton/components/index';
+import { useFolders, useLabels } from '@proton/components';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { FolderMapItem, MailImportFields } from './CustomizeMailImportModal.interface';

@@ -15,7 +15,7 @@ import { PublicKeyReference } from '@proton/crypto';
 import { addMember } from '@proton/shared/lib/api/calendars';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
-import { encryptPassphraseSessionKey } from '@proton/shared/lib/calendar/crypto/calendarKeys';
+import { encryptPassphraseSessionKey } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/share';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
