@@ -9,7 +9,7 @@ import { Alert, ConfirmModal, DropdownActions, ErrorButton } from '../../compone
 import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
 import EditCardModal from '../payments/EditCardModal';
 
-const toCard = ({ Details = {}, Type }) => {
+const toCard = ({ Details = {}, Type }: any) => {
     if (Type === 'card') {
         return {
             fullname: Details.Name,
@@ -24,7 +24,7 @@ const toCard = ({ Details = {}, Type }) => {
     return Details;
 };
 
-const PaymentMethodActions = ({ method, methods, index }) => {
+const PaymentMethodActions = ({ method, methods, index }: any) => {
     const card = toCard(method);
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -38,7 +38,7 @@ const PaymentMethodActions = ({ method, methods, index }) => {
     };
 
     const markAsDefault = async () => {
-        const IDs = methods.map(({ ID }) => ID);
+        const IDs = methods.map(({ ID }: any) => ID);
 
         IDs.splice(index, 1);
         IDs.unshift(method.ID);
@@ -47,7 +47,7 @@ const PaymentMethodActions = ({ method, methods, index }) => {
         createNotification({ text: c('Success').t`Payment method updated` });
     };
 
-    const list = [
+    const list: any = [
         method.Type === PAYMENT_METHOD_TYPES.CARD && {
             text: c('Action').t`Edit`,
             onClick: () => createModal(<EditCardModal card={card} />),
