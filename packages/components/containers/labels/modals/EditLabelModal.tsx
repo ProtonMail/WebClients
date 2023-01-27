@@ -178,7 +178,7 @@ const EditLabelModal = ({
     };
 
     return (
-        <ModalTwo size="large" data-testid="label-modal" {...rest} onClose={handleClose}>
+        <ModalTwo size="small" data-testid="label-modal" {...rest} onClose={handleClose}>
             <ModalTwoHeader title={getTitle()} />
             <ModalTwoContent>
                 <NewLabelForm
