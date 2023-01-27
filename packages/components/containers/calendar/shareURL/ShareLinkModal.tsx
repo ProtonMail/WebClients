@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import { useApi, useGetCalendarInfo, useNotifications } from '@proton/components/hooks';
 import { createPublicLink } from '@proton/shared/lib/api/calendars';
-import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/calendarKeys';
+import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import {
     buildLink,
     generateEncryptedPurpose,

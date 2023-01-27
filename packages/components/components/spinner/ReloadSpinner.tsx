@@ -1,4 +1,4 @@
-import { Icon, IconProps, classnames } from '@proton/components/index';
+import { Icon, IconProps, classnames } from '@proton/components';
 
 import './ReloadSpinner.scss';
 

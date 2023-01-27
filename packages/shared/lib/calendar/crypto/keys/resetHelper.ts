@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys, useGetAddresses } from '@proton/components';
 
-import { Api } from '../../interfaces';
-import { Calendar } from '../../interfaces/calendar';
-import { CalendarsModel } from '../../models';
-import { loadModels } from '../../models/helper';
+import { Api } from '../../../interfaces';
+import { Calendar } from '../../../interfaces/calendar';
+import { CalendarsModel } from '../../../models';
+import { loadModels } from '../../../models/helper';
 import { reactivateCalendarsKeys } from './reactivateCalendarKeys';
 import { resetCalendarKeys } from './resetCalendarKeys';
 

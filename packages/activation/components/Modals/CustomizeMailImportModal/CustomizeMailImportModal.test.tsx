@@ -4,7 +4,7 @@ import { ApiMailImporterFolder } from '@proton/activation/api/api.interface';
 import MailImportFoldersParser from '@proton/activation/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/interface';
 import { easySwitchRender } from '@proton/activation/tests/render';
-import { ModalStateProps } from '@proton/components/index';
+import { ModalStateProps } from '@proton/components';
 import { ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 

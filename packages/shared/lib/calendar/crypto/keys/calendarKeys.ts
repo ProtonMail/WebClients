@@ -10,30 +10,16 @@ import {
 } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../constants';
-import { hasBit } from '../../helpers/bitset';
-import { uint8ArrayToBase64String } from '../../helpers/encoding';
-import { Address, EncryptionConfig, Nullable, SimpleMap } from '../../interfaces';
-import {
-    CalendarKeyFlags,
-    CalendarMember,
-    DecryptedCalendarKey,
-    CalendarKey as tsKey,
-} from '../../interfaces/calendar';
-import { CalendarSetupData } from '../../interfaces/calendar/Api';
-import { getEncryptedSessionKey } from './encrypt';
+import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../../constants';
+import { uint8ArrayToBase64String } from '../../../helpers/encoding';
+import { EncryptionConfig, Nullable, SimpleMap } from '../../../interfaces';
+import { DecryptedCalendarKey, GenerateCalendarPayload, CalendarKey as tsKey } from '../../../interfaces/calendar';
+import { CalendarSetupData } from '../../../interfaces/calendar/Api';
+import { getEncryptedSessionKey } from '../encrypt';
 
 export const generatePassphrase = () => {
     const value = crypto.getRandomValues(new Uint8Array(32));
     return uint8ArrayToBase64String(value);
-};
-
-export const getPrimaryCalendarKey = (calendarKeys: DecryptedCalendarKey[]) => {
-    const primaryKey = calendarKeys.find(({ Key: { Flags } }) => hasBit(Flags, CalendarKeyFlags.PRIMARY));
-    if (!primaryKey) {
-        throw new Error('Calendar primary key not found');
-    }
-    return primaryKey;
 };
 
 /**
@@ -192,17 +178,6 @@ export const decryptPassphraseSessionKey = async ({
     return sessionKey;
 };
 
-export const getAddressesMembersMap = (Members: CalendarMember[], Addresses: Address[]) => {
-    return Members.reduce<{ [key: string]: Address }>((acc, Member) => {
-        const Address = Addresses.find(({ Email }) => Email === Member.Email);
-        if (!Address) {
-            return acc;
-        }
-        acc[Member.ID] = Address;
-        return acc;
-    }, {});
-};
-
 /**
  * Decrypt the calendar keys.
  * @param Keys - the calendar keys as coming from the API
@@ -231,21 +206,6 @@ export const getDecryptedCalendarKeys = async (
         return result.filter(isTruthy);
     });
 };
-
-export const isCalendarSetupData = (
-    payload: GenerateCalendarPayload | CalendarSetupData
-): payload is CalendarSetupData => isTruthy(payload.Passphrase.KeyPacket);
-
-interface GenerateCalendarPayload {
-    AddressID: string;
-    Signature: string;
-    PrivateKey: string;
-    Passphrase: {
-        DataPacket: string;
-        KeyPacket?: string;
-        KeyPackets?: SimpleMap<string>;
-    };
-}
 
 export const generateCalendarKeyPayload = async ({
     addressID,

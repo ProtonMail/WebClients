@@ -2,8 +2,6 @@ import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
-import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
-import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import partition from '@proton/utils/partition';
 import unique from '@proton/utils/unique';
 
@@ -31,9 +29,11 @@ import {
 import { CalendarExportEventsQuery } from '../../interfaces/calendar/Api';
 import { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
+import { getIsAutoAddedInvite } from '../apiModels';
 import { withNormalizedAuthors } from '../author';
+import { getIsOwnedCalendar } from '../calendar';
+import { getCalendarEventDecryptionKeys } from '../crypto/keys/helpers';
 import { readCalendarEvent, readSessionKeys } from '../deserialize';
-import { getCalendarEventDecryptionKeys } from '../keys/getCalendarEventDecryptionKeys';
 import { getTimezonedFrequencyString } from '../recurrence/getFrequencyString';
 import { fromRruleString } from '../vcal';
 import { getDateProperty } from '../vcalConverter';
