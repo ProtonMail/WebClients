@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useFolderTree } from '../../../../store';
+import { useFolderTree } from '../../../../../store';
 import DriveSidebarFoldersRoot from './DriveSidebarFoldersRoot';
 import DriveSidebarSubfolders from './DriveSidebarSubfolders';
 

@@ -7,7 +7,7 @@ import {
     SidebarListItemLink,
 } from '@proton/components';
 
-import { TreeItem } from '../../../../store';
+import { TreeItem } from '../../../../../store';
 import { generateSidebarItemStyle } from '../utils';
 import ExpandButton from './ExpandButton';
 import useSubfolderLoading from './useSubfolderLoading';

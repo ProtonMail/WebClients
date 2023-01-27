@@ -3,10 +3,10 @@ import { ReactNode, useEffect, useState } from 'react';
 import { AppsDropdown, Sidebar, SidebarNav } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
-import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { useDebug } from '../../../hooks/drive/useDebug';
-import { ShareWithKey, useDefaultShare } from '../../../store';
-import { useCreateDevice } from '../../../store/_shares/useCreateDevice';
+import useActiveShare from '../../../../hooks/drive/useActiveShare';
+import { useDebug } from '../../../../hooks/drive/useDebug';
+import { ShareWithKey, useDefaultShare } from '../../../../store';
+import { useCreateDevice } from '../../../../store/_shares/useCreateDevice';
 import DriveSidebarFooter from './DriveSidebarFooter';
 import DriveSidebarList from './DriveSidebarList';
 
