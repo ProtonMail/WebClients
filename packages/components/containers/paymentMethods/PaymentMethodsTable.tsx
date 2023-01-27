@@ -27,7 +27,7 @@ const MethodCell = ({ method }: { method: PaymentMethod }) => {
     if (isCardDetails(method.Details)) {
         return (
             <span>
-                `${method.Details.Brand} (•••• ${method.Details.Last4})`
+                {method.Details.Brand} (•••• {method.Details.Last4})
             </span>
         );
     }
