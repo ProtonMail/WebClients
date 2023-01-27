@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
@@ -24,7 +23,13 @@ const toCard = ({ Details = {}, Type }: any) => {
     return Details;
 };
 
-const PaymentMethodActions = ({ method, methods, index }: any) => {
+export interface Props {
+    index: number;
+    method: any;
+    methods: any;
+}
+
+const PaymentMethodActions = ({ method, methods, index }: Props) => {
     const card = toCard(method);
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -78,12 +83,6 @@ const PaymentMethodActions = ({ method, methods, index }: any) => {
     ].filter(Boolean);
 
     return <DropdownActions size="small" list={list} />;
-};
-
-PaymentMethodActions.propTypes = {
-    method: PropTypes.object.isRequired,
-    methods: PropTypes.array.isRequired,
-    index: PropTypes.number.isRequired,
 };
 
 export default PaymentMethodActions;
