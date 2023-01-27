@@ -62,7 +62,10 @@ const Header = ({
 
     return (
         <div className="flex flex-justify-space-between flex-align-items-center p2 relative">
-            <div className="file-preview-filename flex flex-align-items-center flex-nowrap">
+            <div
+                className="file-preview-filename flex flex-align-items-center flex-nowrap"
+                data-testid="preview:file-name"
+            >
                 {mimeType && <FileIcon mimeType={mimeType} className="mr0-5" />}
                 <FileNameDisplay text={name} />
                 {signatureStatus}
