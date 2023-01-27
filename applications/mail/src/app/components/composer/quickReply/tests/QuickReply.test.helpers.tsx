@@ -59,6 +59,7 @@ export const setupQuickReplyTests = async ({
 
     addKeysToAddressKeysCache(addressID, meKeys);
     addApiKeys(false, fromFields.fromAddress, []);
+    addApiKeys(false, fromFields.toAddress, []);
 
     // Reference message
     const message = getMessage(!!isSender, !!isPlainText, referenceMessageBody);
