@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { isExpired } from '@proton/shared/lib/helpers/card';
+import { PaymentMethod } from '@proton/shared/lib/interfaces';
 
 import { Alert, ConfirmModal, DropdownActions, ErrorButton } from '../../components';
 import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
@@ -25,8 +26,8 @@ const toCard = ({ Details = {}, Type }: any) => {
 
 export interface Props {
     index: number;
-    method: any;
-    methods: any;
+    method: PaymentMethod;
+    methods: PaymentMethod[];
 }
 
 const PaymentMethodActions = ({ method, methods, index }: Props) => {
@@ -43,7 +44,7 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
     };
 
     const markAsDefault = async () => {
-        const IDs = methods.map(({ ID }: any) => ID);
+        const IDs = methods.map(({ ID }) => ID);
 
         IDs.splice(index, 1);
         IDs.unshift(method.ID);
@@ -58,7 +59,7 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
             onClick: () => createModal(<EditCardModal card={card} />),
         },
         index > 0 &&
-            !isExpired(method.Details) && {
+            !isExpired(method.Details as any) && {
                 text: c('Action').t`Mark as default`,
                 onClick: markAsDefault,
             },
