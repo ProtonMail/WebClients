@@ -3,14 +3,14 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/components';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import { createCalendar, updateCalendarUserSettings } from '../../api/calendars';
-import { ACCENT_COLORS } from '../../constants';
-import { CalendarWithOwnMembers } from '../../interfaces/calendar';
-import { getTimezone } from '../../date/timezone';
-import { getActiveAddresses } from '../../helpers/address';
-import { Address, Api } from '../../interfaces';
-import { getPrimaryKey } from '../../keys';
-import { DEFAULT_CALENDAR } from '../constants';
+import { createCalendar, updateCalendarUserSettings } from '../../../api/calendars';
+import { ACCENT_COLORS } from '../../../constants';
+import { getTimezone } from '../../../date/timezone';
+import { getActiveAddresses } from '../../../helpers/address';
+import { Address, Api } from '../../../interfaces';
+import { CalendarWithOwnMembers } from '../../../interfaces/calendar';
+import { getPrimaryKey } from '../../../keys';
+import { DEFAULT_CALENDAR } from '../../constants';
 import { setupCalendarKey } from './setupCalendarKeys';
 
 interface Args {

@@ -3,9 +3,9 @@ import { useCallback } from 'react';
 import {
     decryptPassphrase,
     decryptPassphraseSessionKey,
-    getAddressesMembersMap,
     getDecryptedCalendarKeys,
-} from '@proton/shared/lib/calendar/crypto/calendarKeys';
+} from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
+import { getAddressesMembersMap } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { Address } from '@proton/shared/lib/interfaces';
 import { MemberPassphrase } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';

@@ -27,14 +27,14 @@ import {
     ICAL_EVENT_STATUS,
     ICAL_METHOD,
 } from '@proton/shared/lib/calendar/constants';
-import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
+import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
 import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
-import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
 import {
     findAttendee,
     getInvitedVeventWithAlarms,

@@ -2,7 +2,7 @@ import { PublicKeyReference } from '@proton/crypto';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
-import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getUpdatedInviteVevent } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { omit } from '@proton/shared/lib/helpers/object';

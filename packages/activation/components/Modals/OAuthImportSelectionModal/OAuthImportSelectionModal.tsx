@@ -24,7 +24,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     PrimaryButton,
-} from '@proton/components/index';
+} from '@proton/components';
 
 interface Props {
     modalProps: ModalStateProps;

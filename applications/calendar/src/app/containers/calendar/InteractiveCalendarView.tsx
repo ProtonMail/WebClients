@@ -57,7 +57,7 @@ import {
     RECURRING_TYPES,
     SAVE_CONFIRMATION_TYPES,
 } from '@proton/shared/lib/calendar/constants';
-import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getIcsMessageWithPreferences } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';

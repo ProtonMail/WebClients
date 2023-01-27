@@ -13,7 +13,7 @@ import { CalendarMemberInvitation, MEMBER_INVITATION_STATUS, VisualCalendar } fr
 import { ContactEmail } from '../interfaces/contacts';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '../keys';
-import { decryptPassphrase, signPassphrase } from './crypto/calendarKeys';
+import { decryptPassphrase, signPassphrase } from './crypto/keys/calendarKeys';
 
 export const getIsInvitationExpired = ({ ExpirationTime }: CalendarMemberInvitation) => {
     if (!ExpirationTime) {
