@@ -1,7 +1,7 @@
+import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { MessageImage, MessageImages, MessageState } from '../../logic/messages/messagesTypes';
-import { mockWindowLocation, resetWindowLocation } from '../test/helper';
 import { createDocument } from '../test/message';
 import { forgeImageURL, removeProxyURLAttributes, replaceProxyWithOriginalURLAttributes } from './messageImages';
 
