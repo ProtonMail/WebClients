@@ -155,7 +155,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
                 </Row>
                 <Row>
                     <Label htmlFor="contactGroupColor">{c('Label for contact group color').t`Color`}</Label>
-                    <Field>
+                    <Field className="w100">
                         <ColorPicker id="contactGroupColor" color={model.color} onChange={handleChangeColor} />
                     </Field>
                 </Row>
