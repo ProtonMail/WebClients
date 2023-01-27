@@ -41,5 +41,38 @@ export const formatItems = ({ isLabelMapping, mapping, labels, folders }: Format
         });
 };
 
+/**
+ * Rename all child folders with new name when a parent is updated
+ * @param newFolder the current folder that is renamed
+ * @param newFolders the list of all folders in the current mapping
+ * @param newName the new name of the folder
+ * @returns an updated mapping where all childIDs of the updated folder are renamed
+ */
+export const renameChildFolders = (newFolder: FolderMapItem, newFolders: FolderMapItem[], newName: string) => {
+    const foldersCopy = [...newFolders];
+
+    if (newFolder.folderChildIDS && newFolder.folderChildIDS.length) {
+        newFolder.folderChildIDS.forEach((childId) => {
+            const childFolderIndex = foldersCopy.findIndex((val) => val.id === childId);
+            const childFolder = { ...foldersCopy[childFolderIndex] };
+            if (!childFolder) {
+                return;
+            }
+
+            const providerPathIndex = childFolder.providerPath.findIndex((item) => item === newFolder.id);
+            if (providerPathIndex === -1) {
+                return;
+            }
+
+            childFolder.protonPath = [...childFolder.protonPath];
+            childFolder.protonPath[providerPathIndex] = newName;
+
+            foldersCopy[childFolderIndex] = childFolder;
+        });
+    }
+
+    return foldersCopy;
+};
+
 export const formatMapping = (nextItems: FolderMapItem[]): MailImportFields['mapping'] =>
     nextItems.map((item) => omit(item, ['disabled', 'errors', 'isLabel']));

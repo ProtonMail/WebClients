@@ -1,7 +1,7 @@
 import { useFolders, useLabels } from '@proton/components/hooks';
 
 import { FolderMapItem, MailImportFields } from '../CustomizeMailImportModal.interface';
-import { formatItems, formatMapping } from './useManageFolders.helpers';
+import { formatItems, formatMapping, renameChildFolders } from './useManageFolders.helpers';
 
 interface Props {
     mapping: MailImportFields['mapping'];
@@ -39,7 +39,10 @@ const useManageFolders = ({ mapping, isLabelMapping, onChange }: Props) => {
         newFolder.protonPath[newFolder.protonPath.length - 1] = newName;
 
         newFolders[index] = newFolder;
-        onChange(formatMapping(newFolders));
+
+        const updatedFolders = renameChildFolders(newFolder, newFolders, newName);
+
+        onChange(formatMapping(updatedFolders));
     };
 
     return {

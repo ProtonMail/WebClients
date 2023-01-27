@@ -2,8 +2,10 @@ import { differenceInMonths, fromUnixTime } from 'date-fns';
 
 import { ApiMailImporterFolder } from '@proton/activation/api/api.interface';
 import MailImportFoldersParser from '@proton/activation/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import { MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/interface';
+import { MailImportDestinationFolder, MailImportMapping, TIME_PERIOD } from '@proton/activation/interface';
 import { standardFolderResponse } from '@proton/activation/tests/data/gmail.formattedResponse';
+import { gmailImapResponse } from '@proton/activation/tests/data/gmail.imap.formattedResponse';
+import gmailImapModalLabels from '@proton/activation/tests/data/gmail.imap.providerFolders';
 import labels from '@proton/activation/tests/data/gmail.providerFolders';
 import { ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -48,9 +50,9 @@ const updatedFields = {
 };
 
 const isLabelMapping = true;
-function getBaseFields() {
+function getBaseFields(labels?: ApiMailImporterFolder[]) {
     return {
-        mapping: new MailImportFoldersParser(providerLabels, isLabelMapping).folders,
+        mapping: new MailImportFoldersParser(labels ?? providerLabels, isLabelMapping).folders,
         importLabel: { Color: '#fff', Name: 'label', Type: 1 },
         importPeriod: TIME_PERIOD.BIG_BANG,
         importAddress: address,
@@ -185,6 +187,60 @@ describe('Step prepare helpers tests', () => {
                     (item) => item.Destinations.FolderPath
                 )
             ).toEqual(['dude 1', 'dude 1/dude 2', 'dude 1/dude 2/dude 3', 'dude 1/dude 2/dude 3\\/dude 4']);
+        });
+
+        it('Should return correct payload when using Gmail account on IMAP modal', () => {
+            const gmailImapLabels = gmailImapModalLabels.map((label) => {
+                return { ...label, Size: 1 } as ApiMailImporterFolder;
+            });
+            const fields: StepPrepareData['fields'] = getBaseFields(gmailImapLabels);
+
+            const res = formatPrepareStepPayload({
+                isLabelMapping,
+                data: correctData,
+                fields,
+                updatedFields,
+            });
+            expect(res).toEqual(gmailImapResponse);
+        });
+
+        describe('Should add `folderPath` and `label` on specific conditions', () => {
+            const labels = getBaseFields(
+                ['Inbox', 'dude 1', 'dude 1/dude 2'].map(
+                    (path) =>
+                        ({
+                            Source: path,
+                            Separator: '/',
+                            ...(path === 'Inbox' ? { DestinationFolder: 'Inbox' } : {}),
+                        } as ApiMailImporterFolder)
+                )
+            );
+            const res = formatPrepareStepPayload({
+                isLabelMapping,
+                data: correctData,
+                fields: labels,
+                updatedFields,
+            });
+
+            it('should contain folderPath if destination folder', () => {
+                const destinationFolder = res.Mail.Mapping.find(
+                    (label) => label.Source === 'Inbox'
+                ) as MailImportMapping;
+
+                expect(destinationFolder.Source).toEqual('Inbox');
+                expect('Labels' in destinationFolder.Destinations).toBe(false);
+                expect('FolderPath' in destinationFolder.Destinations).toBe(true);
+                expect(destinationFolder.Destinations.FolderPath).toBe('Inbox');
+            });
+
+            it('should contain Label if label', () => {
+                const parentFolder = res.Mail.Mapping.find((label) => label.Source === 'dude 1') as MailImportMapping;
+
+                expect(parentFolder.Source).toEqual('dude 1');
+                expect('Labels' in parentFolder.Destinations).toBe(true);
+                expect('FolderPath' in parentFolder.Destinations).toBe(false);
+                expect(parentFolder.Destinations.Labels?.[0].Name).toBe('dude 1');
+            });
         });
     });
 });
