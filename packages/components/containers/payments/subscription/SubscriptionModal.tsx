@@ -61,10 +61,10 @@ import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarnin
 import PlanSelection from './PlanSelection';
 import SubscriptionCycleSelector from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
-import SubscriptionThanks from './SubscriptionThanks';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
 import { getDefaultSelectedProductPlans } from './helpers';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
+import SubscriptionThanks from './modal-components/SubscriptionThanks';
 
 import './SubscriptionModal.scss';
 
