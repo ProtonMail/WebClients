@@ -16,7 +16,7 @@ export const ContextMenuCell = ({ item }: { item: FileBrowserBaseItem }) => {
     return (
         <TableCell
             className="m0 file-browser-list--icon-column flex flex-align-items-center"
-            data-testid="column-options"
+            data-testid="column-options-to-remove"
         >
             <Button
                 shape="ghost"
