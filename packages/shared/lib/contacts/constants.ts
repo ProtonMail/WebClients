@@ -1,7 +1,15 @@
 // BACK-END DATA
 import { BASE_SIZE } from '../constants';
 
-export const VCARD_KEY_FIELDS = ['key', 'x-pm-mimetype', 'x-pm-encrypt', 'x-pm-sign', 'x-pm-scheme', 'x-pm-tls'];
+export const VCARD_KEY_FIELDS = [
+    'key',
+    'x-pm-mimetype',
+    'x-pm-encrypt',
+    'x-pm-encrypt-untrusted',
+    'x-pm-sign',
+    'x-pm-scheme',
+    'x-pm-tls',
+];
 export const CLEAR_FIELDS = ['version', 'prodid', 'categories'];
 export const SIGNED_FIELDS = ['version', 'prodid', 'fn', 'uid', 'email'].concat(VCARD_KEY_FIELDS);
 

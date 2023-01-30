@@ -260,6 +260,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                     if (trustedKey) {
                                         setModel({
                                             ...model,
+                                            encrypt: true,
                                             publicKeys: {
                                                 ...model.publicKeys,
                                                 pinnedKeys: [...model.publicKeys.pinnedKeys, trustedKey],
@@ -307,15 +308,21 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                     const encryptionCapableFingerprints = new Set(model.encryptionCapableFingerprints);
                                     trustedFingerprints.delete(fingerprint);
                                     encryptionCapableFingerprints.delete(fingerprint);
+                                    const pinnedKeys = model.publicKeys.pinnedKeys.filter(
+                                        (publicKey) => publicKey.getFingerprint() !== fingerprint
+                                    );
+                                    const hasEncryptionKeys =
+                                        model.publicKeys.apiKeys.length > 0 || pinnedKeys.length > 0;
+
                                     setModel({
                                         ...model,
+                                        // If no more encryption keys are available, then we switch off the encryption toggle.
+                                        encrypt: hasEncryptionKeys ? model.encrypt : undefined,
                                         trustedFingerprints,
                                         encryptionCapableFingerprints,
                                         publicKeys: {
                                             ...model.publicKeys,
-                                            pinnedKeys: model.publicKeys.pinnedKeys.filter(
-                                                (publicKey) => publicKey.getFingerprint() !== fingerprint
-                                            ),
+                                            pinnedKeys,
                                             verifyingPinnedKeys: model.publicKeys.verifyingPinnedKeys.filter(
                                                 (publicKey) => publicKey.getFingerprint() !== fingerprint
                                             ),
