@@ -3,11 +3,13 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon, Tooltip, classnames } from '@proton/components';
+import { Icon, Tooltip, classnames, useApi } from '@proton/components';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import { getAnchor } from '../../helpers/message/messageImages';
+import { loadRemoteProxy } from '../../logic/messages/images/messagesImagesActions';
 import { MessageImage } from '../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../logic/store';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 
@@ -63,9 +65,22 @@ interface Props {
     anchor: HTMLElement;
     isPrint?: boolean;
     iframeRef: RefObject<HTMLIFrameElement>;
+    localID: string;
+    useProxy: boolean;
 }
 
-const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor, isPrint, iframeRef }: Props) => {
+const MessageBodyImage = ({
+    showRemoteImages,
+    showEmbeddedImages,
+    image,
+    anchor,
+    isPrint,
+    iframeRef,
+    localID,
+    useProxy,
+}: Props) => {
+    const dispatch = useAppDispatch();
+    const api = useApi();
     const imageRef = useRef<HTMLImageElement>(null);
     const { type, error, url, status, original } = image;
     const showPlaceholder =
@@ -92,10 +107,22 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor,
         }
     }, [showImage]);
 
+    const handleError = async () => {
+        // If the image fails to load from the URL, we have no way to know why it has failed
+        // But depending on the error, we want to handle it differently
+        // In that case, we try to load the image "the old way", we will have more control on the error
+        // Only make this call when user is using proxy.
+        // - Without proxy we are already trying to load direct
+        // - With EO, we are also already trying to load direct
+        if (type === 'remote' && useProxy) {
+            await dispatch(loadRemoteProxy({ ID: localID, imageToLoad: image, api }));
+        }
+    };
+
     if (showImage) {
         // attributes are the provided by the code just above, coming from original message source
         // eslint-disable-next-line jsx-a11y/alt-text
-        return <img ref={imageRef} src={url} />;
+        return <img ref={imageRef} src={url} loading="lazy" onError={handleError}  />;
     }
 
     const showLoader = status === 'loading';

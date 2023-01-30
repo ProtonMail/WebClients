@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { PayloadAction } from '@reduxjs/toolkit';
 
-import { FeatureCode, useApi, useFeature, useMailSettings } from '@proton/components';
+import { FeatureCode, useApi, useAuthentication, useFeature, useMailSettings } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -13,19 +13,18 @@ import { getPureAttachments } from '../../helpers/attachment/attachment';
 import { isUnreadMessage } from '../../helpers/elements';
 import { isNetworkError } from '../../helpers/errors';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
+import {
+    handleDispatchLoadFakeImagesProxy,
+    handleDispatchLoadImagesProxy,
+    handleDispatchLoadRemoteImagesDirect,
+} from '../../helpers/message/messageImages';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { Preparation, prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import {
-    loadEmbedded,
-    loadFakeProxy,
-    loadRemoteDirect,
-    loadRemoteProxy,
-} from '../../logic/messages/images/messagesImagesActions';
+import { loadEmbedded } from '../../logic/messages/images/messagesImagesActions';
 import {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
-    LoadRemoteResults,
     MessageErrors,
     MessageImages,
     MessageRemoteImage,
@@ -55,6 +54,7 @@ export const useInitializeMessage = () => {
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
     const { verifyKeys } = useKeyVerification();
+    const authentication = useAuthentication();
 
     const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
 
@@ -151,24 +151,15 @@ export const useInitializeMessage = () => {
             };
 
             const handleLoadRemoteImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
-                const dispatchResult = imagesToLoad.map((image) => {
-                    return dispatch(loadRemoteProxy({ ID: localID, imageToLoad: image, api }));
-                });
-                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+                return handleDispatchLoadImagesProxy(localID, imagesToLoad, authentication, dispatch);
             };
 
             const handleLoadFakeImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
-                const dispatchResult = imagesToLoad.map((image) => {
-                    return dispatch(loadFakeProxy({ ID: localID, imageToLoad: image, api }));
-                });
-                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+                return handleDispatchLoadFakeImagesProxy(localID, imagesToLoad, api, dispatch);
             };
 
             const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
-                const dispatchResult = imagesToLoad.map((image) => {
-                    return dispatch(loadRemoteDirect({ ID: localID, imageToLoad: image, api }));
-                });
-                return dispatchResult as any as Promise<LoadRemoteResults[]>;
+                return handleDispatchLoadRemoteImagesDirect(localID, imagesToLoad, dispatch);
             };
 
             preparation = isPlainText({ MIMEType })
