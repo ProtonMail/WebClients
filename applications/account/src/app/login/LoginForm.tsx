@@ -24,7 +24,7 @@ import { Icon } from '@proton/components';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getKnowledgeBaseUrl, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import SupportDropdown from '../public/SupportDropdown';
@@ -43,6 +43,7 @@ interface Props {
     defaultUsername?: string;
     hasRemember?: boolean;
     trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
+    signupOptions: Record<string, string | undefined>;
 }
 
 const LoginForm = ({
@@ -52,6 +53,7 @@ const LoginForm = ({
     signInText = c('Action').t`Sign in`,
     hasRemember,
     trustedDeviceRecoveryFeature,
+    signupOptions = {},
 }: Props) => {
     const { APP_NAME } = useConfig();
     const [submitting, withSubmitting] = useLoading();
@@ -98,7 +100,7 @@ const LoginForm = ({
     );
 
     const signUp = (
-        <Link key="signup" className="link text-nowrap" to={SSO_PATHS.SIGNUP}>
+        <Link key="signup" className="link text-nowrap" to={SSO_PATHS.SIGNUP + stringifySearchParams(signupOptions)}>
             {c('Link').t`Create account`}
         </Link>
     );

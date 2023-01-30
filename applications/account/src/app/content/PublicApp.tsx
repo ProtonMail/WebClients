@@ -361,10 +361,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         history.push('/login');
     };
 
-    const toOAuthName =
+    const [toOAuthName, plan] =
         forkState?.type === SSOType.OAuth
-            ? forkState.payload.clientInfo.Name
-            : confirmForkData?.payload.clientInfo.Name;
+            ? [forkState.payload.clientInfo.Name, undefined]
+            : [confirmForkData?.payload.clientInfo.Name, forkState?.payload?.plan];
     const toInternalAppName = maybePreAppIntent && getToAppName(maybePreAppIntent);
     const toAppName = toOAuthName || toInternalAppName;
 
@@ -494,6 +494,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     onLogin={handleLogin}
                                                     onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
                                                     setupVPN={setupVPN}
+                                                    signupOptions={{plan}}
                                                 />
                                             </Route>
                                             <Redirect to={SSO_PATHS.LOGIN} />
