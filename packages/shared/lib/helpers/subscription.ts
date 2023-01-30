@@ -136,7 +136,7 @@ export const getBaseAmount = (
         }, 0);
 };
 
-export const getPlanIDs = (subscription: Subscription | undefined): PlanIDs => {
+export const getPlanIDs = (subscription: Subscription | undefined | null): PlanIDs => {
     return (subscription?.Plans || []).reduce<PlanIDs>((acc, { Name, Quantity }) => {
         acc[Name] = (acc[Name] || 0) + Quantity;
         return acc;
