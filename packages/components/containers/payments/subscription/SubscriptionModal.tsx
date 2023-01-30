@@ -68,7 +68,7 @@ import SubscriptionThanks from './modal-components/SubscriptionThanks';
 
 import './SubscriptionModal.scss';
 
-interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
+export interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     app: APP_NAMES;
     step?: SUBSCRIPTION_STEPS;
     cycle?: Cycle;

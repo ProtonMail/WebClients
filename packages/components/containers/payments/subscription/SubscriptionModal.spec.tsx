@@ -1,9 +1,32 @@
+import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
+import {
+    useApi,
+    useEventManager,
+    useGetCalendars,
+    useModals,
+    useNotifications,
+    useOrganization,
+    usePlans,
+    useSubscription,
+    useUser,
+    useVPNCountriesCount,
+    useVPNServersCount,
+} from '@proton/components/hooks';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import {
+    Audience,
+    Organization,
+    PlansMap,
+    SubscriptionCheckResponse,
+    SubscriptionModel,
+    UserModel,
+    VPNCountries,
+    VPNServers,
+} from '@proton/shared/lib/interfaces';
 
-import { Model, useProration } from './SubscriptionModal';
+import SubscriptionModal, { Model, Props, useProration } from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 describe('useProration', () => {
@@ -180,5 +203,69 @@ describe('useProration', () => {
         checkResult.Proration = 0;
         const { result } = renderHook(() => useProration(model, subscriptionModel, plansMap, checkResult));
         expect(result.current.showProration).toEqual(false);
+    });
+});
+
+jest.mock('../../../hooks/useApi');
+jest.mock('../../../hooks/useUser');
+jest.mock('../../../hooks/useSubscription');
+jest.mock('../../../hooks/useEventManager');
+jest.mock('../../../hooks/useModals');
+jest.mock('../../../hooks/useNotifications');
+jest.mock('../../../hooks/usePlans');
+jest.mock('../../../hooks/useVPNServersCount');
+jest.mock('../../../hooks/useVPNCountriesCount');
+jest.mock('../../../hooks/useOrganization');
+jest.mock('../../../hooks/useCalendars', () => ({
+    __esModule: true,
+    useGetCalendars: jest.fn(),
+}));
+
+describe('SubscriptionModal', () => {
+    let defaultProps: Props;
+    beforeEach(() => {
+        defaultProps = {
+            app: 'proton-account',
+            defaultSelectedProductPlans: {
+                [Audience.B2C]: PLANS.MAIL,
+                [Audience.B2B]: PLANS.MAIL_PRO,
+            },
+        };
+
+        let api = jest.fn();
+        (useApi as jest.Mock).mockReturnValue(api);
+
+        let user: UserModel = {};
+        (useUser as jest.Mock).mockReturnValue([user]);
+
+        let subscription: SubscriptionModel = {};
+        (useSubscription as jest.Mock).mockReturnValue([subscription]);
+
+        let call = jest.fn();
+        (useEventManager as jest.Mock).mockReturnValue({ call });
+
+        let createModal = jest.fn();
+        (useModals as jest.Mock).mockReturnValue({ createModal });
+
+        let createNotification = jest.fn();
+        (useNotifications as jest.Mock).mockReturnValue({ createNotification });
+
+        (usePlans as jest.Mock).mockReturnValue([]);
+
+        let vpnServers: VPNServers = { free_vpn: 0, [PLANS.VPN]: 0 };
+        (useVPNServersCount as jest.Mock).mockReturnValue([vpnServers]);
+
+        let vpnCountries: VPNCountries = { free_vpn: { count: 0 }, [PLANS.VPN]: { count: 0 } };
+        (useVPNCountriesCount as jest.Mock).mockReturnValue([vpnCountries]);
+
+        let organization: Organization = {};
+        (useOrganization as jest.Mock).mockReturnValue([organization]);
+
+        let getCalendars = jest.fn();
+        (useGetCalendars as jest.Mock).mockReturnValue(getCalendars);
+    });
+
+    it('should render', () => {
+        render(<SubscriptionModal {...defaultProps} />);
     });
 });
