@@ -22,7 +22,7 @@ export const SubscriptionModel = {
          * There are two possible cases in the events: UpcomingSubscription created and UpcomingSubscription deleted.
          * This branch handles the deletion case, whereas {@link updateObject()} above handles the creation case.
          */
-        if (!events.UpcomingSubscription) {
+        if (events.UpcomingSubscription === undefined) {
             delete eventsSubscription.UpcomingSubscription;
         }
 

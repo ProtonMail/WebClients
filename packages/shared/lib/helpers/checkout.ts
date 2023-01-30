@@ -240,7 +240,9 @@ export const getOptimisticCheckResult = ({
     };
 };
 
-export const getCheckResultFromSubscription = (subscription: Subscription | undefined): RequiredCheckResponse => {
+export const getCheckResultFromSubscription = (
+    subscription: Subscription | undefined | null
+): RequiredCheckResponse => {
     const Amount = subscription?.Amount || 0;
     const Discount = subscription?.Discount || 0;
     const Cycle = subscription?.Cycle || DEFAULT_CYCLE;
