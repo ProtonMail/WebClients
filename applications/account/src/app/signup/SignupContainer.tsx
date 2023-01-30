@@ -19,7 +19,7 @@ import {
 } from '@proton/components/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { getPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
@@ -251,7 +251,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
 
             const [{ Domains: domains }, paymentMethodStatus, referralData, Plans] = await Promise.all([
                 normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-                silentApi<PaymentMethodStatus>(getPaymentMethodStatus()),
+                silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
                 referrer
                     ? await silentApi(checkReferrer(referrer))
                           .then(() => ({
