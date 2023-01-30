@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { getPaymentMethodStatus } from '@proton/shared/lib/api/payments';
+import { queryPaymentMethodStatus } from '@proton/shared/lib/api/payments';
 import { INVOICE_STATE } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -27,7 +27,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
         invoice.State === INVOICE_STATE.UNPAID && {
             text: c('Action').t`Pay`,
             async onClick() {
-                const { Card, Paypal } = await api(getPaymentMethodStatus());
+                const { Card, Paypal } = await api(queryPaymentMethodStatus());
                 const canPay = Card || Paypal;
 
                 if (!canPay) {
