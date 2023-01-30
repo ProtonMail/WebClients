@@ -24,7 +24,7 @@ import { Icon } from '@proton/components';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getKnowledgeBaseUrl, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import SupportDropdown from '../public/SupportDropdown';
@@ -43,7 +43,7 @@ interface Props {
     defaultUsername?: string;
     hasRemember?: boolean;
     trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
-    signupOptions: Record<string, string | number | undefined>;
+    signupOptions: Record<string, string | undefined>;
 }
 
 const LoginForm = ({
@@ -99,23 +99,8 @@ const LoginForm = ({
         </Href>
     );
 
-    const signUpParams: Record<string, string> = {};
-
-    Object.keys(signupOptions).forEach(key => {
-        if (typeof signupOptions[key] !== 'undefined') {
-            signUpParams[key] = `${signupOptions[key]}`;
-        }
-    });
-
     const signUp = (
-        <Link
-            key="signup"
-            className="link text-nowrap"
-            to={SSO_PATHS.SIGNUP + (Object.keys(signUpParams).length
-                ? '?' + new URLSearchParams(signUpParams).toString()
-                : ''
-            )}
-        >
+        <Link key="signup" className="link text-nowrap" to={SSO_PATHS.SIGNUP + stringifySearchParams(signupOptions)}>
             {c('Link').t`Create account`}
         </Link>
     );
