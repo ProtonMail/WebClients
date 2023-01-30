@@ -59,12 +59,12 @@ import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanCustomization from './PlanCustomization';
 import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
-import SubscriptionCheckout from './SubscriptionCheckout';
 import SubscriptionCycleSelector from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import SubscriptionThanks from './SubscriptionThanks';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
 import { getDefaultSelectedProductPlans } from './helpers';
+import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 
 import './SubscriptionModal.scss';
 
