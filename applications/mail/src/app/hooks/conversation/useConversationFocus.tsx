@@ -87,7 +87,7 @@ export const useConversationFocus = (messages: Message[]) => {
     }, [focusIndex]);
 
     useEffect(() => {
-        if (focusIndex && nextScrollTo) {
+        if (focusIndex !== undefined && nextScrollTo) {
             let element = document.querySelector(
                 `[data-shortcut-target="message-container"][data-message-id="${messages[focusIndex]?.ID}"]`
             ) as HTMLElement | null;
