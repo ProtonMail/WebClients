@@ -11,6 +11,7 @@ import {
     useItemsSelection,
     useLabels,
 } from '@proton/components';
+import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
@@ -168,6 +169,8 @@ const MailboxContainer = ({
     // Launch two calendar-specific API calls here to boost calendar widget performance
     useCalendars();
     useCalendarUserSettings();
+    // listen to calendar "core" updates
+    useCalendarsInfoCoreListener();
 
     const elementsLength = loading ? placeholderCount : elements.length;
     const showToolbar = !breakpoints.isNarrow || !elementID;

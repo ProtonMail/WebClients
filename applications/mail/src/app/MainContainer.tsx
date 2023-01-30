@@ -10,7 +10,6 @@ import {
     useActiveBreakpoint,
     useFeatures,
 } from '@proton/components';
-import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 
 import { MAIN_ROUTE_PATH } from './constants';
@@ -66,8 +65,6 @@ const MainContainer = () => {
             void action();
         }
     }, [featureSw, loadingSw]);
-
-    useCalendarsInfoCoreListener();
 
     return (
         <ReduxProvider store={store}>
