@@ -4,7 +4,7 @@ import { useGetAddressKeys } from '@proton/components/hooks';
 
 import { setupCalendar } from '../../../api/calendars';
 import { Api } from '../../../interfaces';
-import { CalendarWithOwnMembers } from '../../../interfaces/calendar';
+import { CalendarSetupResponse, CalendarWithOwnMembers } from '../../../interfaces/calendar';
 import { getPrimaryKey } from '../../../keys';
 import { generateCalendarKeyPayload } from './calendarKeys';
 import { isCalendarSetupData } from './helpers';
@@ -36,7 +36,7 @@ export const setupCalendarKey = async ({
         throw new Error(c('Error').t`Missing key packet`);
     }
 
-    return api(setupCalendar(calendarID, calendarKeyPayload));
+    return api<CalendarSetupResponse>(setupCalendar(calendarID, calendarKeyPayload));
 };
 
 export const setupCalendarKeys = async ({

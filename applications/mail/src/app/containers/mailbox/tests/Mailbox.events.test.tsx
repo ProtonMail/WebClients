@@ -46,7 +46,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(7);
+        expect(api.mock.calls.length).toBe(6);
     });
 
     it('should not reload the list on an update event if a filter is active', async () => {
@@ -62,7 +62,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(6);
+        expect(api.mock.calls.length).toBe(5);
     });
 
     it('should not reload the list on an update event if has list from start', async () => {
@@ -75,7 +75,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(6);
+        expect(api.mock.calls.length).toBe(5);
     });
 
     it('should reload the list on an update event if has not list from start', async () => {
@@ -93,7 +93,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, PAGE_SIZE, false);
-        expect(api.mock.calls.length).toBe(7);
+        expect(api.mock.calls.length).toBe(6);
     });
 
     it('should reload the list on an delete event if a search is active', async () => {
@@ -107,7 +107,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(7);
+        expect(api.mock.calls.length).toBe(6);
     });
 
     it('should not reload the list on count event when a search is active', async () => {
@@ -122,7 +122,7 @@ describe('Mailbox elements list reacting to events', () => {
             MessageCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }],
         });
 
-        expect(api.mock.calls.length).toBe(6);
+        expect(api.mock.calls.length).toBe(5);
     });
 
     it('should not show the loader if not live cache but params has not changed', async () => {
@@ -134,6 +134,7 @@ describe('Mailbox elements list reacting to events', () => {
 
         addToCache('ConversationCounts', []);
         addToCache('MessageCounts', [{ LabelID: labelID, Total: total }]);
+        addToCache('Calendars', []);
         const resolve = addApiResolver('mail/v4/messages');
 
         const { getAllByTestId } = await render(<MailboxContainer {...getProps({ search })} />);
