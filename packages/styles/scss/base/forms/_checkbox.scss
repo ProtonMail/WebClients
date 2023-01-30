@@ -30,12 +30,6 @@
 		color: var(--field-text-color);
 		transition: 0.15s easing(ease-out-cubic);
 
-		&:hover {
-			border-color: var(--field-hover);
-			background-color: var(--field-hover-background-color);
-			color: var(--field-hover-text-color);
-		}
-
 		&-img {
 			margin: auto;
 			transform: scale(0);
@@ -43,10 +37,36 @@
 		}
 	}
 
-	&-input:focus + &-fakecheck {
+	&-input:hover + &-fakecheck {
 		border-color: var(--interaction-norm);
-		background-color: var(--field-focus-background-color);
-		color: var(--field-focus-text-color);
+		background-color: var(--field-hover-background-color);
+		color: var(--field-hover-text-color);
+	}
+
+	@supports not selector(:focus-visible) {
+		&-input:focus + &-fakecheck {
+			border-color: var(--interaction-norm);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			background-color: var(--field-focus-background-color);
+			color: var(--field-focus-text-color);
+		}
+
+		&-input:focus:hover + &-fakecheck {
+			border-color: var(--interaction-norm-hover);
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&-input:focus-visible + &-fakecheck {
+			border-color: var(--interaction-norm);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			background-color: var(--field-focus-background-color);
+			color: var(--field-focus-text-color);
+		}
+
+		&-input:focus-visible:hover + &-fakecheck {
+			border-color: var(--interaction-norm-hover);
+		}
 	}
 
 	&-input[aria-invalid='true'] + &-fakecheck {
@@ -68,18 +88,39 @@
 		border-color: var(--interaction-norm);
 		background-color: var(--interaction-norm);
 		color: var(--interaction-norm-contrast);
-
-		&:hover {
-			border-color: var(--interaction-norm-hover);
-			background-color: var(--interaction-norm-hover);
-			color: var(--interaction-norm-contrast);
-		}
 	}
 
-	&-input:checked:focus + &-fakecheck {
+	&-input:checked:hover + &-fakecheck {
 		border-color: var(--interaction-norm-hover);
 		background-color: var(--interaction-norm-hover);
 		color: var(--interaction-norm-contrast);
+	}
+
+	@supports not selector(:focus-visible) {
+		&-input:checked:focus + &-fakecheck {
+			border-color: var(--interaction-norm);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			background-color: var(--interaction-norm);
+			color: var(--interaction-norm-contrast);
+		}
+
+		&-input:checked:focus:hover + &-fakecheck {
+			border-color: var(--interaction-norm-hover);
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&-input:checked:focus-visible + &-fakecheck {
+			border-color: var(--interaction-norm);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			background-color: var(--interaction-norm);
+			color: var(--interaction-norm-contrast);
+		}
+
+		&-input:checked:focus-visible:hover + &-fakecheck {
+			border-color: var(--interaction-norm-hover);
+			background-color: var(--interaction-norm-hover);
+		}
 	}
 
 	&-input:checked[aria-invalid='true'] + &-fakecheck {

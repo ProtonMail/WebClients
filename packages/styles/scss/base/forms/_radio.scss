@@ -18,9 +18,35 @@
 		}
 	}
 
-	&:focus + &-fakeradio {
+	&:hover + &-fakeradio {
 		border-color: var(--interaction-norm);
 		background-color: var(--field-focus-background-color, var(--background-norm));
+	}
+
+	@supports not selector(:focus-visible) {
+		&:focus + &-fakeradio {
+			border-color: var(--interaction-norm);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			background-color: var(--field-focus-background-color);
+			color: var(--field-focus-text-color);
+		}
+
+		&:focus:hover + &-fakeradio {
+			border-color: var(--interaction-norm-hover);
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible + &-fakeradio {
+			border-color: var(--interaction-norm);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			background-color: var(--field-focus-background-color);
+			color: var(--field-focus-text-color);
+		}
+
+		&:focus-visible:hover + &-fakeradio {
+			border-color: var(--interaction-norm-hover);
+		}
 	}
 
 	&[aria-invalid='true'] + &-fakeradio {
@@ -41,8 +67,10 @@
 			transform: scale(1);
 			background-color: var(--interaction-norm);
 		}
+	}
 
-		&:hover {
+	@supports not selector(:focus-visible) {
+		&:checked:focus:hover + &-fakeradio {
 			border-color: var(--interaction-norm-hover);
 
 			&::before {
@@ -51,11 +79,13 @@
 		}
 	}
 
-	&:checked:focus + &-fakeradio {
-		border-color: var(--interaction-norm-hover);
+	@supports selector(:focus-visible) {
+		&:checked:focus-visible:hover + &-fakeradio {
+			border-color: var(--interaction-norm-hover);
 
-		&::before {
-			background-color: var(--interaction-norm-hover);
+			&::before {
+				background-color: var(--interaction-norm-hover);
+			}
 		}
 	}
 
