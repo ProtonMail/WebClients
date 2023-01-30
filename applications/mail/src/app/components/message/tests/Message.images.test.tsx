@@ -1,5 +1,6 @@
 import { findByTestId, fireEvent } from '@testing-library/dom';
 
+import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -48,7 +49,17 @@ jest.mock('../../../helpers/dom', () => ({
     preloadImage: jest.fn(() => Promise.resolve()),
 }));
 
+const windowHostname = 'https://mail.proton.pink';
+
 describe('Message images', () => {
+    beforeEach(() => {
+        mockWindowLocation(windowHostname);
+    });
+
+    afterEach(() => {
+        resetWindowLocation();
+    });
+
     afterEach(clearAll);
 
     it('should display all elements other than images', async () => {
@@ -114,14 +125,7 @@ describe('Message images', () => {
     });
 
     it('should load correctly all elements other than images with proxy', async () => {
-        addApiMock(`core/v4/images`, () => {
-            const response = {
-                headers: { get: jest.fn() },
-                blob: () => new Blob(),
-            };
-            return Promise.resolve(response);
-        });
-
+        const forgedURL = `${windowHostname}/api/core/v4/images?Url=imageURL&DryRun=0&UID=uid`;
         const document = createDocument(content);
 
         const message: MessageState = {
@@ -173,17 +177,17 @@ describe('Message images', () => {
 
         // Check that proton attribute has been removed after images loading
         const updatedElementBackground = await findByTestId(iframeRerendered, 'image-background');
-        expect(updatedElementBackground.getAttribute('background')).toEqual(blobURL);
+        expect(updatedElementBackground.getAttribute('background')).toEqual(forgedURL);
 
         const updatedElementPoster = await findByTestId(iframeRerendered, 'image-poster');
-        expect(updatedElementPoster.getAttribute('poster')).toEqual(blobURL);
+        expect(updatedElementPoster.getAttribute('poster')).toEqual(forgedURL);
 
         // srcset attribute is not loaded, so we need to check proton-srcset
         const updatedElementSrcset = await findByTestId(iframeRerendered, 'image-srcset');
         expect(updatedElementSrcset.getAttribute('proton-srcset')).toEqual(imageURL);
 
         const updatedElementXlinkhref = await findByTestId(iframeRerendered, 'image-xlinkhref');
-        expect(updatedElementXlinkhref.getAttribute('xlink:href')).toEqual(blobURL);
+        expect(updatedElementXlinkhref.getAttribute('xlink:href')).toEqual(forgedURL);
     });
 
     it('should be able to load direct when proxy failed at loading', async () => {
@@ -225,11 +229,19 @@ describe('Message images', () => {
         let loadButton = getByTestId('remote-content:load');
         fireEvent.click(loadButton);
 
-        // Rerender the message view to check that images have been loaded
+        // Rerender the message view to check that images have been loaded through URL
         await rerender(<MessageView {...defaultProps} />);
         const iframeRerendered = await getIframeRootDiv(container);
 
-        const placeholder = iframeRerendered.querySelector('.proton-image-placeholder') as HTMLImageElement;
+        // Make the loading through URL fail
+        const imageInBody = await findByTestId(iframeRerendered, 'image');
+        fireEvent.error(imageInBody, { Code: 2902, Error: 'TEST error message' });
+
+        // Rerender again the message view to check that images have been loaded through normal api call
+        await rerender(<MessageView {...defaultProps} />);
+        const iframeRerendered2 = await getIframeRootDiv(container);
+
+        const placeholder = iframeRerendered2.querySelector('.proton-image-placeholder') as HTMLImageElement;
 
         expect(placeholder).not.toBe(null);
         assertIcon(placeholder.querySelector('svg'), 'cross-circle');
@@ -242,7 +254,7 @@ describe('Message images', () => {
         // Rerender the message view to check that images have been loaded
         await rerender(<MessageView {...defaultProps} />);
 
-        const loadedImage = iframeRerendered.querySelector('.proton-image-anchor img') as HTMLImageElement;
+        const loadedImage = iframeRerendered2.querySelector('.proton-image-anchor img') as HTMLImageElement;
         expect(loadedImage).toBeDefined();
         expect(loadedImage.getAttribute('src')).toEqual(imageURL);
     });
