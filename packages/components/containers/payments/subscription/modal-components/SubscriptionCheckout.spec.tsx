@@ -5,13 +5,13 @@ import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import SubscriptionCheckout from './SubscriptionCheckout';
 
-jest.mock('../../../hooks', () => ({
+jest.mock('../../../../hooks', () => ({
     useConfig: jest.fn().mockReturnValue({
         APP_NAME: 'proton-account',
     }),
 }));
 
-jest.mock('../Checkout', () => ({ children }: any) => <>{children}</>);
+jest.mock('../../Checkout', () => ({ children }: any) => <>{children}</>);
 
 describe('SubscriptionCheckout', () => {
     let checkResult: SubscriptionCheckResponse;

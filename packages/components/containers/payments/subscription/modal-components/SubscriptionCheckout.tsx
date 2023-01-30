@@ -22,11 +22,11 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
     Info,
-} from '../../../components';
-import { useConfig } from '../../../hooks';
-import Checkout from '../Checkout';
-import StartDateCheckoutRow from '../StartDateCheckoutRow';
-import { getTotalBillingText } from '../helper';
+} from '../../../../components';
+import { useConfig } from '../../../../hooks';
+import Checkout from '../../Checkout';
+import StartDateCheckoutRow from '../../StartDateCheckoutRow';
+import { getTotalBillingText } from '../../helper';
 import CheckoutRow from './CheckoutRow';
 
 const PlanDescription = ({ list }: { list: Included[] }) => {
