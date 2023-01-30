@@ -382,7 +382,7 @@ const WireGuardConfigurationSection = () => {
 
         downloadFile(
             new Blob([certificate.config || '']),
-            normalize((certificate.name || certificate.publicKeyFingerprint) + '-' + serverName) + '.conf'
+            normalize((certificate.name || 'wg') + '-' + serverName) + '.conf'
         );
     };
 
