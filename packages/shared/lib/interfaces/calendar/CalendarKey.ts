@@ -1,4 +1,6 @@
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { ApiResponse } from '@proton/shared/lib/interfaces';
 
 export enum CalendarKeyFlags {
     INACTIVE = 0,
@@ -14,18 +16,25 @@ export interface CalendarKey {
     Flags: CalendarKeyFlags;
 }
 
+interface CalendarMemberPassphrase {
+    MemberID: string;
+    Passphrase: string;
+    Signature: string;
+}
+
+export interface CalendarPassphrase {
+    ID: string;
+    CalendarID: string;
+    Flags: CALENDAR_FLAGS;
+    MemberPassphrases: CalendarMemberPassphrase[];
+}
+
 export interface DecryptedCalendarKey {
     Key: CalendarKey;
     privateKey: PrivateKeyReference;
     publicKey: PublicKeyReference;
 }
 
-export interface InactiveCalendarKey {
-    Key: CalendarKey;
-    error: Error;
-}
-
-export interface ReenableKeyResponse {
-    Code: number;
+export interface ReenableKeyResponse extends ApiResponse {
     Key: CalendarKey;
 }
