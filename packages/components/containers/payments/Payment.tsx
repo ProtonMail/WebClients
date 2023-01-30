@@ -157,7 +157,7 @@ const Payment = ({
                                 type={customPaymentMethod.Type}
                                 details={customPaymentMethod.Details}
                             />
-                            {customPaymentMethod.Type === PAYMENT_METHOD_TYPES.CARD ? <Alert3DS /> : null}
+                            {customPaymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && <Alert3DS />}
                         </>
                     )}
                     {children}

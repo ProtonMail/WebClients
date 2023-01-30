@@ -42,6 +42,8 @@ const getIcon = (paymentMethod: PaymentMethod): IconName | undefined => {
                 return 'brand-visa';
             case 'mastercard':
                 return 'brand-mastercard';
+            case 'Discover':
+                return 'brand-discover';
             default:
                 return 'credit-card';
         }

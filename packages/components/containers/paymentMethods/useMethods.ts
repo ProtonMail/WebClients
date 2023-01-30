@@ -1,11 +1,20 @@
 import { useEffect, useState } from 'react';
 
-import { getPaymentMethodStatus, queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import { PaymentMethod, PaymentMethodStatus } from '@proton/shared/lib/interfaces';
+import { queryPaymentMethodStatus, queryPaymentMethods } from '@proton/shared/lib/api/payments';
+import { Api, PaymentMethod, PaymentMethodStatus } from '@proton/shared/lib/interfaces';
 
 import { useApi, useAuthentication, useLoading } from '../../hooks';
 import { getPaymentMethodOptions } from './getPaymentMethodOptions';
 import { PaymentMethodFlows } from './interface';
+
+async function getPaymentMethods(api: Api): Promise<PaymentMethod[]> {
+    const response = await api<{ PaymentMethods: PaymentMethod[] }>(queryPaymentMethods());
+    return response.PaymentMethods ?? [];
+}
+
+async function getPaymentMethodStatus(api: Api): Promise<PaymentMethodStatus> {
+    return api<PaymentMethodStatus>(queryPaymentMethodStatus());
+}
 
 interface Props {
     amount: number;
@@ -29,19 +38,18 @@ const useMethods = ({ paymentMethodStatus: maybePaymentMethodsStatus, amount, co
 
     useEffect(() => {
         const run = async () => {
-            const [paymentMethodsStatus, paymentMethods] = await Promise.all([
-                maybePaymentMethodsStatus || api<PaymentMethodStatus>(getPaymentMethodStatus()),
-                isAuthenticated
-                    ? api<{ PaymentMethods: PaymentMethod[] }>(queryPaymentMethods()).then(
-                          ({ PaymentMethods = [] }) => PaymentMethods
-                      )
-                    : [],
-            ]);
+            const statusPromise = maybePaymentMethodsStatus ?? getPaymentMethodStatus(api);
+
+            const paymentMethodsPromise = isAuthenticated ? getPaymentMethods(api) : [];
+
+            const [paymentMethodsStatus, paymentMethods] = await Promise.all([statusPromise, paymentMethodsPromise]);
+
             setResult({
                 paymentMethods,
                 paymentMethodsStatus,
             });
         };
+
         withLoading(run());
     }, []);
 
