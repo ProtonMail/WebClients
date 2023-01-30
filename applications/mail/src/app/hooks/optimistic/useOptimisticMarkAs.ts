@@ -110,7 +110,7 @@ export const useOptimisticMarkAs = () => {
         let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
         let { value: conversationCounters } = globalCache.get(ConversationCountsModel.key) as CacheEntry<LabelCount[]>;
 
-        // If no counter is found in the cache, we cannot do optimistic on counters
+        // Counters can be undefined if they are not yet fetched
         if (!messageCounters || !conversationCounters) {
             return;
         }
