@@ -45,7 +45,7 @@ interface Props {
     onBack?: () => void;
     hasRemember?: boolean;
     setupVPN: boolean;
-    signupOptions: Record<string, string | undefined>;
+    signupOptions?: Record<string, string | undefined>;
 }
 
 const LoginContainer = ({
