@@ -68,7 +68,10 @@ export const produceExtensionFork = ({
                     window.removeEventListener('message', messageListenerRef.current);
                     messageListenerRef.current = undefined;
 
-                    resolve({ type: 'success' });
+                    resolve({
+                        type: 'success',
+                        payload: event.data.payload,
+                    });
                 }
             };
 
