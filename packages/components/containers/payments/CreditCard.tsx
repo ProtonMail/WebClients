@@ -22,6 +22,9 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
         ({ target }: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) =>
             onChange(key, target.value);
 
+    // translator: this is the pattern for bank card expiration MM/YY, where MM stands for Month Month and YY Year Year. Please keep the slash in the middle.
+    const patternExpiration = c('Info').t`MM/YY`;
+
     return (
         <>
             <InputFieldTwo
@@ -54,6 +57,8 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                         year={card.year}
                         error={errors.month}
                         disableChange={loading}
+                        hint={patternExpiration}
+                        placeholder={patternExpiration}
                         onChange={({ month, year }: { month: string; year: string }) => {
                             onChange('month', month);
                             onChange('year', year);
