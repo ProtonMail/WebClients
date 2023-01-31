@@ -27,7 +27,7 @@ import {
     testMessageResult,
     testPrivateKeyLegacy,
 } from './decryptMessageLegacy.data';
-import { ecc25519Key, eddsaElGamalSubkey, rsa512BitsKey } from './keys.data';
+import { ecc25519Key, eddsaElGamalSubkey, keyWithThirdPartyCertifications, rsa512BitsKey } from './keys.data';
 import {
     key as mimeKey,
     multipartMessageWithAttachment,
@@ -975,6 +975,22 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
                 passphrase: null,
             });
             expect(privateKeyRef.equals(reformattedKeyRef)).to.be.false;
+        });
+
+        it('equals - can ignore third-party certifications', async () => {
+            const publicKey = await openpgp_readKey({ armoredKey: keyWithThirdPartyCertifications });
+            expect(publicKey.users[0].otherCertifications).to.have.length(1);
+            publicKey.users[0].otherCertifications = [];
+            const publicKeyRef = await CryptoWorker.importPublicKey({
+                armoredKey: publicKey.armor(),
+            });
+
+            const certifiedPublicKeyRef = await CryptoWorker.importPublicKey({
+                armoredKey: keyWithThirdPartyCertifications,
+            });
+
+            expect(certifiedPublicKeyRef.equals(publicKeyRef)).to.be.false;
+            expect(certifiedPublicKeyRef.equals(publicKeyRef, true)).to.be.true;
         });
 
         it('clearKey - cannot reference a cleared key', async () => {
