@@ -4347,9 +4347,6 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個標籤"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } 儲存量"
-      ],
       "${ total } conversations": [
         "${ total } 個交談"
       ],
@@ -4385,9 +4382,6 @@
       ],
       "(No Recipient)": [
         "(無收件人)"
-      ],
-      "10 email addresses": [
-        "10 個電郵位址"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "復原短語是保護帳號存取權限最安全的方法之一。如果您忘記了您的密碼，您可以用它來存取您的帳號並還原您的加密資料。"
@@ -4523,9 +4517,6 @@
       ],
       "Confirm phishing report": [
         "確認網路釣魚報告"
-      ],
-      "Continue with ${ planName }": [
-        "繼續使用 ${ planName }"
       ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
@@ -4950,9 +4941,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
-      "Other options": [
-        "其它選項"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
       ],
@@ -5018,9 +5006,6 @@
       ],
       "Print email": [
         "列印電郵"
-      ],
-      "Priority support": [
-        "優先支援"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "防止您的郵件地址外洩到郵件清單或垃圾郵件發送者手上，使用 ${ maskMyEmailButton }。"
@@ -5139,9 +5124,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "抱歉，此訊息不存在或已過期。"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "儲存空間共用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 。"
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "安全地儲存及分享檔案使用 ${ DRIVE_APP_NAME }。"
       ],
@@ -5156,9 +5138,6 @@
       ],
       "Subject: ": [
         "主旨 : "
-      ],
-      "Support for 1 custom email domain": [
-        "支援 1 個自訂電郵網域"
       ],
       "Support privacy by upgrading for": [
         "透過升級支援隱私"
@@ -5331,12 +5310,6 @@
       "Turn on to search the content of your messages": [
         "啟用以搜尋您的郵件內容"
       ],
-      "Unlimited folders, labels, and filters": [
-        "不限數量的資料夾、標籤與篩選器"
-      ],
-      "Unlimited messages": [
-        "無限制的郵件"
-      ],
       "Unlock message": [
         "解密鎖定訊息"
       ],
@@ -5348,6 +5321,9 @@
       ],
       "Updating message content search...": [
         "正在更新郵件內容搜尋..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
       "Upgrade to add more addresses to your account.": [
         "升級以加入更多電郵位址到您的帳號。"
@@ -5378,9 +5354,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "升級即可通過第三方客戶端使用 ${ MAIL_APP_NAME }。"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "今天就升級，不要錯過 ${ planName } 特賞限時福利！"
       ],
       "Upload picture": [
         "上載圖像"
@@ -8238,8 +8211,8 @@
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您專屬的免費試用即將結束，到期日為 ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
       ]
     },
     "Title header": {

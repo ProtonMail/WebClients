@@ -244,6 +244,9 @@
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
+      "Enable drive search": [
+        "Aktivér søgning på drev"
+      ],
       "Expand": [
         "Udvid"
       ],
@@ -597,6 +600,9 @@
       ],
       "Upgrade": [
         "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ],
       "Upload anyway": [
         "Upload alligevel"
@@ -2925,9 +2931,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } lagerplads"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
@@ -2938,9 +2941,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadresser"
       ],
       "A number will be added to the filename": [
         "Et nummer vil blive tilføjet filnavnet"
@@ -2964,6 +2964,9 @@
       ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
+      ],
+      "Also try looking in Trash.": [
+        "Prøv også at kigge i papirkurven."
       ],
       "An active recovery file": [
         "En aktiv gendannelsesfil"
@@ -3004,6 +3007,9 @@
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Overførsel af mange filer kan reducere din computers ydeevne. Overvej at begrænse hukommelsestunge aktiviteter, så som streaming, under overførslen. Ellers prøv at overføre lidt ad gangen."
       ],
+      "Calendar side panel": [
+        "Kalender-sidepanel"
+      ],
       "Canceled": [
         "Annulleret"
       ],
@@ -3039,9 +3045,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås op for drev senere"
-      ],
-      "Continue with ${ planName }": [
-        "Fortsæt med ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Opret ${ calendarsToBeCreated } ny kalender",
@@ -3125,6 +3128,9 @@
       ],
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
+      ],
+      "Enable drive search": [
+        "Aktivér søgning på drev"
       ],
       "Enabling drive search": [
         "Aktiverer søgning på drev"
@@ -3423,9 +3429,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Kun personer med linket og adgangskoden kan få adgang til denne mappe."
       ],
-      "Other options": [
-        "Andre muligheder"
-      ],
       "Paused": [
         "Sat på pause"
       ],
@@ -3480,9 +3483,6 @@
       ],
       "Primary": [
         "Primær"
-      ],
-      "Priority support": [
-        "Prioriteret support"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privat søgning aktiveret. Du kan nu lukke dialogen og søger efter filer og mapper."
@@ -3562,12 +3562,6 @@
       "Something went wrong, please try again later.": [
         "Noget gik galt. Prøv igen senere."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagerplads deles mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Understøttelse af 1 brugerdefineret e-mail-domæne"
-      ],
       "support team": [
         "supportteam"
       ],
@@ -3635,6 +3629,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "For at aktivere ægte privat søgning skal ${ DRIVE_APP_NAME } indeksere dine filer lokalt."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "For at muliggøre en ægte privat søgning er vi nødt til at indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } normalt - vi giver dig besked, når indekseringen er færdig."
       ],
@@ -3668,14 +3665,11 @@
       "Trash": [
         "Papirkurv"
       ],
+      "Try searching by file name, date, or type.": [
+        "Prøv at søge efter filnavn, dato eller type."
+      ],
       "Unknown error": [
         "Ukendt fejl"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrænsede mapper / etiketter / filtre"
-      ],
-      "Unlimited messages": [
-        "Ubegrænset antal beskeder"
       ],
       "Unlock drive to recover files": [
         "Lås drev op for at gendanne filer"
@@ -3689,8 +3683,8 @@
       "Updating drive search...": [
         "Opdaterer drevsøgning..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
       "Uploaded": [
         "Uploadet"
@@ -3842,6 +3836,9 @@
       ],
       "file data order": [
         "rækkefølge af filoplysninger"
+      ],
+      "hash key": [
+        "hash-nøgle"
       ],
       "keys": [
         "nøgler"
@@ -5097,6 +5094,34 @@
         "Indstillinger"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }. time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 t",
+        "${ hoursInt },5 t"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 time",
+        "${ hoursInt },5 timer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minutter"
+      ]
+    },
     "Title": {
       "# of accesses": [
         "# af adgange"
@@ -5273,6 +5298,9 @@
       "Empty trash": [
         "Tøm Papirkurv"
       ],
+      "Enable drive search": [
+        "Aktivér søgning på drev"
+      ],
       "Enter your password": [
         "Indtast din adgangskode"
       ],
@@ -5370,6 +5398,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "No results found": [
+        "Ingen resultater fundet"
       ],
       "Number of files": [
         "Antal filer"
@@ -5572,8 +5603,8 @@
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Din Mail Plus prøveperiode slutter ${ textDate }"
       ],
       "Your welcome actions": [
         "Dine velkomsthandlinger"

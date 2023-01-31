@@ -4326,9 +4326,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } d'emmagatzematge"
-      ],
       "${ total } conversation": [
         "${ total } conversa",
         "${ total } converses"
@@ -4373,9 +4370,6 @@
       ],
       "(No Recipient)": [
         "(Cap Destinatari)"
-      ],
-      "10 email addresses": [
-        "10 adreces de correu"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Una frase de recuperació és una de les formes més segures de protegir el vostre compte. La podeu utilitzar per accedir al vostre compte i recuperar les vostres dades xifrades si mai oblideu la contrasenya."
@@ -4482,7 +4476,7 @@
         "Cos: "
       ],
       "Calendar side panel": [
-        "Panel lateral de calendari"
+        "Panell lateral del calendari"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
@@ -4513,9 +4507,6 @@
       ],
       "Confirm phishing report": [
         "Confirmeu l'informe de phishing"
-      ],
-      "Continue with ${ planName }": [
-        "Continuar amb ${ planName }"
       ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
@@ -4947,9 +4938,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les teves claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Et recomanem que marquis aquestes claus com a \"no confiables\"."
       ],
-      "Other options": [
-        "Altres opcions"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "El nostre sistema ha marcat aquest missatge com un intent de suplantació d'identitat. Comproveu que sigui legítim."
       ],
@@ -5013,9 +5001,6 @@
       ],
       "Print email": [
         "Imprimir correu electrónic"
-      ],
-      "Priority support": [
-        "Suport prioritari"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Protegiu el vostre correu electrònic de filtracions a llistes de correu brossa amb ${ maskMyEmailButton }."
@@ -5134,9 +5119,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Emmagatzemeu i compartiu fitxers de forma segura amb ${ DRIVE_APP_NAME }."
       ],
@@ -5151,9 +5133,6 @@
       ],
       "Subject: ": [
         "Assumpte: "
-      ],
-      "Support for 1 custom email domain": [
-        "Suport per a 1 domini de correu personalitzat"
       ],
       "Support privacy by upgrading for": [
         "Doneu suport a la privacitat actualitzant a"
@@ -5329,12 +5308,6 @@
       "Turn on to search the content of your messages": [
         "Activeu-ho per cercar el contingut dels missatges"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetes, etiquetes, i filtres il·limitats"
-      ],
-      "Unlimited messages": [
-        "Missatges il·limitats"
-      ],
       "Unlock message": [
         "Desbloqueja el missatge"
       ],
@@ -5376,9 +5349,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Milloreu el compte per a utilitzar ${ MAIL_APP_NAME } amb clients d'escriptori de tercers."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Millora avui la teva subscripció per a no perdre les funcionalitats ${ planName }."
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -8259,9 +8229,6 @@
       ],
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
       ]
     },
     "Title header": {

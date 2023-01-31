@@ -434,11 +434,11 @@
       "No": [
         "Ala"
       ],
-      "Ok": [
-        "IH"
-      ],
       "OK": [
         "Ih"
+      ],
+      "Ok": [
+        "IH"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
@@ -724,6 +724,9 @@
       ],
       "Upgrade": [
         "Lqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -2267,9 +2270,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Awway n tɣimit turmidt ur yeddi ara. Ttxil-k·m ${ refresh } neɣ εreḍ tikkelt-nniḍen ticki."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Amsizdeg yesɛan isem-agi yella yakan"
       ],
@@ -3471,9 +3471,6 @@
       "Continue anyway?": [
         "Ad tkemmeleḍ akken yebɣu yili?"
       ],
-      "Continue with ${ planName }": [
-        "Kemmel s ${ planName }"
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Snulfu-d ${ calendarsToBeCreated } n uwitay amaynut",
         "Snulfu-d ${ calendarsToBeCreated } n yiwitayen imaynuten"
@@ -3628,9 +3625,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Imsizedgen teddun ɣef meṛṛa imaylen, ula ɣef yimaylen yettwaremsen d wid yettwaznen. Yal amsizdeg ilaq ad yesɛu xerṣum isem, tawtilt d tigawt."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "I wayen yeɛnan Visa, MasterCard, 3 yizwilen i yellan deffir tkarḍa-inek·inem. I American Express, 4 yiwilen i yellan ɣef n tkarḍa-inek·inem."
       ],
       "Free up some space or add more storage space.": [
         "Slelli kra n tallunt neɣ rnu tallunt-nniḍen n weḥraz."
@@ -3881,9 +3875,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Inedbalen-nniḍen llan di tuddsa-k. D kečč ara sen-yefken awal uffir amaynut."
-      ],
-      "Other options": [
-        "Ugar n iɣewwaṛen"
       ],
       "P2P": [
         "P2P"
@@ -5337,9 +5328,6 @@
       "What happened?": [
         "D acu akka ay yeḍran?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Acu n sebba tagejdant i k/m-yeǧǧan tkesseḍ amiḍan-inek/m?"
       ],
@@ -5535,9 +5523,6 @@
       ],
       "Terms": [
         "Tiwtilin"
-      ],
-      "Terms and conditions": [
-        "Tiwtilin n useqdec"
       ],
       "Upgrade account": [
         "Sali aswir n umiḍan"
@@ -7650,9 +7635,6 @@
       ],
       "Your current plan": [
         "Aɣawas-ik·im amiran"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Aneɛruḍ-inek n baṭel ad yekfu deg ${ formattedEndDate }"
       ],
       "Your import history": [
         "Azray n uktar-inek"

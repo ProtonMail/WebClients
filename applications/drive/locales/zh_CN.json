@@ -599,6 +599,9 @@
       "Upgrade": [
         "升级账户"
       ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
       "Upload anyway": [
         "仍然上传"
       ],
@@ -2879,9 +2882,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } 存储空间"
-      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
       ],
@@ -2890,9 +2890,6 @@
       ],
       "(${ memberCount } members)": [
         "（${ memberCount } 位成员）"
-      ],
-      "10 email addresses": [
-        "10 个电子邮件地址"
       ],
       "A number will be added to the filename": [
         "将在文件名中添加一个编号"
@@ -2992,9 +2989,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "继续使用 ${ DRIVE_APP_NAME } 并稍后解锁网盘"
-      ],
-      "Continue with ${ planName }": [
-        "升级至 ${ planName } 并继续"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "新建 ${ calendarsToBeCreated } 份日历"
@@ -3374,9 +3368,6 @@
       "Only the people with the link and the password can access this folder.": [
         "只有同时知道链接和密码的人才能访问此文件夹。"
       ],
-      "Other options": [
-        "其他选项"
-      ],
       "Paused": [
         "已暂停"
       ],
@@ -3430,9 +3421,6 @@
       ],
       "Primary": [
         "主要"
-      ],
-      "Priority support": [
-        "优先享受客服"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "隐私搜索已启用，您可以关闭对话框并开始搜索文件和文件夹了。"
@@ -3511,12 +3499,6 @@
       ],
       "Something went wrong, please try again later.": [
         "出错了，请稍后再试。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
-      ],
-      "Support for 1 custom email domain": [
-        "支持 1 个自有域名"
       ],
       "support team": [
         "客服团队"
@@ -3626,12 +3608,6 @@
       "Unknown error": [
         "未知错误"
       ],
-      "Unlimited folders, labels, and filters": [
-        "文件夹、标签、筛选规则不限量"
-      ],
-      "Unlimited messages": [
-        "每日发送邮件不限量"
-      ],
       "Unlock drive to recover files": [
         "解锁网盘以恢复文件"
       ],
@@ -3643,9 +3619,6 @@
       ],
       "Updating drive search...": [
         "正在更新网盘搜索..."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "立即升级账户即可继续享有下列 ${ planName } 权益。"
       ],
       "Uploaded": [
         "已上传"
@@ -5515,9 +5488,6 @@
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您的免费试用将在 ${ formattedEndDate } 后过期。"
       ],
       "Your welcome actions": [
         "您的新人礼包"

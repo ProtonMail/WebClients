@@ -4347,9 +4347,6 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } 存储空间"
-      ],
       "${ total } conversations": [
         "${ total } 条会话"
       ],
@@ -4385,9 +4382,6 @@
       ],
       "(No Recipient)": [
         "(无收件人)"
-      ],
-      "10 email addresses": [
-        "10 个电子邮件地址"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "恢复密语为您对账户的控制权提供了可靠保障。假如您不慎忘记密码，可以通过它找回账户并解锁所有加密的数据。"
@@ -4520,9 +4514,6 @@
       ],
       "Confirm phishing report": [
         "确认钓鱼报告"
-      ],
-      "Continue with ${ planName }": [
-        "升级至 ${ planName } 并继续"
       ],
       "Copied to clipboard": [
         "已复制到剪贴板"
@@ -4950,9 +4941,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
       ],
-      "Other options": [
-        "其他选项"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
       ],
@@ -5018,9 +5006,6 @@
       ],
       "Print email": [
         "打印邮件"
-      ],
-      "Priority support": [
-        "优先享受客服"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "使用 ${ maskMyEmailButton } 功能即可防止您的邮箱地址泄露，免受垃圾邮件干扰。"
@@ -5139,9 +5124,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "对不起，此消息不存在或已过期。"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "使用 ${ DRIVE_APP_NAME } 可以安全地存储、分享文件。"
       ],
@@ -5156,9 +5138,6 @@
       ],
       "Subject: ": [
         "主题："
-      ],
-      "Support for 1 custom email domain": [
-        "支持 1 个自有域名"
       ],
       "Support privacy by upgrading for": [
         "升级账户支持我们的隐私保护事业，仅需"
@@ -5331,12 +5310,6 @@
       "Turn on to search the content of your messages": [
         "开启以搜索您的邮件全文"
       ],
-      "Unlimited folders, labels, and filters": [
-        "文件夹、标签、筛选规则不限量"
-      ],
-      "Unlimited messages": [
-        "每日发送邮件不限量"
-      ],
       "Unlock message": [
         "解锁邮件"
       ],
@@ -5378,9 +5351,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "开通付费账户即可通过第三方客户端使用 ${ MAIL_APP_NAME }。"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "立即升级账户即可继续享有下列 ${ planName } 权益。"
       ],
       "Upload picture": [
         "上传图片"
@@ -8259,9 +8229,6 @@
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您的免费试用将在 ${ formattedEndDate } 后过期。"
       ]
     },
     "Title header": {

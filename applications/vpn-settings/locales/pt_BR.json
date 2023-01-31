@@ -347,6 +347,9 @@
       "Upgrade": [
         "Upgrade"
       ],
+      "Upgrade now": [
+        "Atualizar agora"
+      ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
       ],
@@ -1570,13 +1573,13 @@
         "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
-        "O valor mínimo de crédito que pode ser adicionado é ${ price }"
+        "O valor mínimo de crédito que pode ser adicionado é ${ price }."
       ],
       "The minimum amount that can be donated is ${ price }": [
         "O valor mínimo que pode ser doado é ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
-        "O pagamento mínimo que aceitamos é ${ price }"
+        "O pagamento mínimo que aceitamos é ${ price }."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -1916,6 +1919,9 @@
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
       ],
+      "American Express SafeKey logo": [
+        "Logotipo do American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Valor total abaixo do mínimo (${ amount })."
       ],
@@ -1966,6 +1972,9 @@
       ],
       "Custom email domains": [
         "Domínios personalizados de e-mail"
+      ],
+      "Discover ProtectBuy logo": [
+        "Logotipo do Discover ProtectBuy"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Não use as credenciais do OpenVPN / IKEv2 nos aplicativos do ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
@@ -2036,8 +2045,8 @@
       "expires ${ expirationDate }": [
         "expira em ${ expirationDate }"
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Para Visa e MasterCard, os 3 dígitos no verso do seu cartão. Para American Express, os 4 dígitos na frente do seu cartão."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Para Visa, MasterCard e Discover, os 3 dígitos no verso do cartão. Para a American Express, os 4 dígitos na frente do cartão."
       ],
       "Free up some space or add more storage space.": [
         "Libere algum espaço ou adicione mais espaço de armazenamento."
@@ -2140,6 +2149,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
+      ],
+      "Mastercard SecureCode logo": [
+        "Logotipo do MasterCard SecureCode"
       ],
       "No credit card required": [
         "Cartão de crédito não necessário"
@@ -2372,6 +2384,9 @@
       "Unsupported file": [
         "Arquivo não suportado"
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
@@ -2395,6 +2410,9 @@
       ],
       "Version ${ version }": [
         "Versão ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Logotipo do Visa Secure"
       ],
       "Warning:": [
         "Aviso:"
@@ -2532,7 +2550,7 @@
         "Seu e-mail só será utilizado para essa verificação única."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Sua conta ${ BRAND_NAME } existente pode ser usada para acessar todos os serviços da ${ BRAND_NAME }. Por favor, inicie a sessão com ${ email }."
+        "Sua conta ${ BRAND_NAME } existente pode ser usada para acessar todos os serviços do ${ BRAND_NAME }. Por favor, inicie a sessão com ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças."
@@ -2947,8 +2965,8 @@
       "What happened?": [
         "O que aconteceu?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "Qual é o principal motivo pelo qual você está cancelando?"
       ],
       "What is the main reason you are deleting your account?": [
         "Qual é a principal razão pela qual você está excluindo sua conta?"
@@ -3842,7 +3860,7 @@
         "Endereço de e-mail"
       ],
       "Feedback": [
-        "Feedback"
+        "Comentários"
       ],
       "Gift code": [
         "Código de vale-presente"
@@ -4556,7 +4574,7 @@
         "Parabéns por escolher a privacidade!"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Crie sua conta do ${ BRAND_NAME }"
+        "Crie sua conta do ${ BRAND_NAME }."
       ],
       "Credits": [
         "Créditos"
@@ -4778,7 +4796,7 @@
         "Total pago"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Experimente o melhor do ${ MAIL_APP_NAME } gratuitamente"
+        "Experimente o melhor do ${ MAIL_APP_NAME } gratuitamente."
       ],
       "TV log in": [
         "Iniciar sessão na TV"
@@ -4825,6 +4843,9 @@
       "Your current plan": [
         "O seu plano atual"
       ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Sua avaliação gratuita do Mail Plus termina em ${ textDate }"
+      ],
       "Your plan": [
         "O seu plano"
       ],
@@ -4832,7 +4853,7 @@
         "Suas assinaturas"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Você foi convidado a experimentar o ${ MAIL_APP_NAME }"
+        "Você foi convidado a experimentar o ${ MAIL_APP_NAME }."
       ],
       "ZIP / postal code": [
         "CEP / código postal"
