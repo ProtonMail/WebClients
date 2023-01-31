@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import {
@@ -17,7 +17,6 @@ import {
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import {
     Audience,
-    Organization,
     PlansMap,
     SubscriptionCheckResponse,
     SubscriptionModel,
@@ -26,8 +25,11 @@ import {
     VPNServers,
 } from '@proton/shared/lib/interfaces';
 
+import Payment from '../Payment';
+import PlanCustomization from './PlanCustomization';
 import SubscriptionModal, { Model, Props, useProration } from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
+import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 
 describe('useProration', () => {
     let model: Model;
@@ -221,25 +223,67 @@ jest.mock('../../../hooks/useCalendars', () => ({
     useGetCalendars: jest.fn(),
 }));
 
+jest.mock('./PlanCustomization');
+jest.mock('../Payment');
+jest.mock('./modal-components/SubscriptionCheckout');
+jest.mock('../../../components/portal/Portal', () => ({ children }: any) => <>{children}</>);
+
 describe('SubscriptionModal', () => {
-    let defaultProps: Props;
+    let props: Props;
+    let freeUser: UserModel;
+
     beforeEach(() => {
-        defaultProps = {
-            app: 'proton-account',
+        props = {
+            app: 'proton-mail',
             defaultSelectedProductPlans: {
                 [Audience.B2C]: PLANS.MAIL,
                 [Audience.B2B]: PLANS.MAIL_PRO,
             },
+            open: true,
+            onClose: jest.fn(),
         };
 
         let api = jest.fn();
         (useApi as jest.Mock).mockReturnValue(api);
 
-        let user: UserModel = {};
-        (useUser as jest.Mock).mockReturnValue([user]);
+        freeUser = {
+            ID: 'yUts9NJMnyh5lEXZG8STllXpIz7y3TyVRR-Uhc1-Ei7rAjYR_UZBxeqcrLg62E3gLdn0VfyEl8-gjwibUtLsbQ==',
+            Name: 'proton721',
+            Currency: 'CHF',
+            Credit: 0,
+            Type: 1,
+            CreateTime: 1675091808,
+            MaxSpace: 524288000,
+            MaxUpload: 26214400,
+            UsedSpace: 248329,
+            Subscribed: 0,
+            Services: 1,
+            MnemonicStatus: 1,
+            Role: 0,
+            Private: 1,
+            Delinquent: 0,
+            Keys: [],
+            ToMigrate: 0,
+            Email: 'proton721@proton.black',
+            DisplayName: 'proton721',
+            isAdmin: false,
+            isPaid: false,
+            isFree: true,
+            isMember: false,
+            isPrivate: true,
+            isSubUser: false,
+            isDelinquent: false,
+            hasNonDelinquentScope: true,
+            hasPaidMail: false,
+            hasPaidVpn: false,
+            canPay: true,
+            DriveEarlyAccess: 0,
+            Idle: 0,
+        };
+        (useUser as jest.Mock).mockReturnValue([freeUser]);
 
-        let subscription: SubscriptionModel = {};
-        (useSubscription as jest.Mock).mockReturnValue([subscription]);
+        let noSubscription: any = {}; // otherwise it should be SubscriptionModel
+        (useSubscription as jest.Mock).mockReturnValue([noSubscription]);
 
         let call = jest.fn();
         (useEventManager as jest.Mock).mockReturnValue({ call });
@@ -258,14 +302,51 @@ describe('SubscriptionModal', () => {
         let vpnCountries: VPNCountries = { free_vpn: { count: 0 }, [PLANS.VPN]: { count: 0 } };
         (useVPNCountriesCount as jest.Mock).mockReturnValue([vpnCountries]);
 
-        let organization: Organization = {};
-        (useOrganization as jest.Mock).mockReturnValue([organization]);
+        let noOrganization: any = {}; // otherwise it is Organization
+        (useOrganization as jest.Mock).mockReturnValue([noOrganization]);
 
         let getCalendars = jest.fn();
         (useGetCalendars as jest.Mock).mockReturnValue(getCalendars);
     });
 
-    it('should render', () => {
-        render(<SubscriptionModal {...defaultProps} />);
+    it('should render', async () => {
+        let { container } = render(<SubscriptionModal {...props} />);
+        expect(container).not.toBeEmptyDOMElement();
+    });
+
+    it('should redirect user without supported addons directly to checkout step', async () => {
+        props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
+
+        // That's for initial rednering of CUSTOMIZATION step
+        (PlanCustomization as jest.Mock).mockReturnValue(null);
+
+        // These components consitute the checkout logic
+        (Payment as jest.Mock).mockReturnValue(<>Payment component</>);
+        (SubscriptionCheckout as jest.Mock).mockReturnValue(null);
+
+        let { container } = render(<SubscriptionModal {...props} />);
+        await waitFor(() => {
+            expect(SubscriptionCheckout).toHaveBeenCalled();
+            expect(Payment).toHaveBeenCalled();
+            expect(container).toHaveTextContent('Payment component');
+            expect(container).toHaveTextContent('Review subscription and pay');
+        });
+    });
+
+    it('should render customization step', async () => {
+        props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
+        props.planIDs = {
+            [PLANS.MAIL_PRO]: 1,
+        };
+
+        (PlanCustomization as jest.Mock).mockReturnValue(<>Plan customization component</>);
+
+        let { container } = render(<SubscriptionModal {...props} />);
+
+        await waitFor(() => {
+            expect(PlanCustomization).toHaveBeenCalled();
+            expect(container).toHaveTextContent('Plan customization component');
+            expect(container).toHaveTextContent('Customize your plan');
+        });
     });
 });
