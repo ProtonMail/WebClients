@@ -43,7 +43,7 @@ interface Props {
     defaultUsername?: string;
     hasRemember?: boolean;
     trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
-    signupOptions: Record<string, string | undefined>;
+    signupOptions?: Record<string, string | undefined>;
 }
 
 const LoginForm = ({
@@ -53,7 +53,7 @@ const LoginForm = ({
     signInText = c('Action').t`Sign in`,
     hasRemember,
     trustedDeviceRecoveryFeature,
-    signupOptions = {},
+    signupOptions,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const [submitting, withSubmitting] = useLoading();
@@ -100,7 +100,11 @@ const LoginForm = ({
     );
 
     const signUp = (
-        <Link key="signup" className="link text-nowrap" to={SSO_PATHS.SIGNUP + stringifySearchParams(signupOptions)}>
+        <Link
+            key="signup"
+            className="link text-nowrap"
+            to={SSO_PATHS.SIGNUP + stringifySearchParams(signupOptions || {}, '?')}
+        >
             {c('Link').t`Create account`}
         </Link>
     );
