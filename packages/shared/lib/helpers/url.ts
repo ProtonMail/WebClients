@@ -52,7 +52,10 @@ const getSearchFromHash = (search: string) => {
     return searchHash;
 };
 
-export const stringifySearchParams = (params: { [key: string]: string | string[] | undefined }) => {
+export const stringifySearchParams = (
+    params: { [key: string]: string | string[] | undefined },
+    prefix?: string | undefined
+) => {
     const urlSearchParams = new URLSearchParams();
 
     Object.entries(params)
@@ -68,7 +71,9 @@ export const stringifySearchParams = (params: { [key: string]: string | string[]
             urlSearchParams.set(key, stringifiedValue);
         });
 
-    return urlSearchParams.toString();
+    const urlSearch = urlSearchParams.toString();
+
+    return urlSearch !== '' && prefix !== undefined ? prefix + urlSearch : urlSearch;
 };
 
 /**
