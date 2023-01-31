@@ -510,10 +510,10 @@
       "Not spam": [
         "非垃圾邮件"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -827,6 +827,9 @@
       ],
       "Upgrade": [
         "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ],
       "Upload picture": [
         "上传图片"
@@ -2899,9 +2902,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "未能获取已登录的账户，请${ refresh }或稍后再试。"
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "这个名称已经用过了"
       ],
@@ -4322,9 +4322,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 如果继续，您将无法访问您账户中的所有当前加密数据。"
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "已获得的 ${ BRAND_NAME } ${ planName } 余额奖励"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "与邮件服务商的连接中断，${ BRAND_NAME } 已暂停导入。请重新连接。"
       ],
@@ -4688,9 +4685,6 @@
       "Continue anyway?": [
         "确定要继续吗？"
       ],
-      "Continue with ${ planName }": [
-        "升级至 ${ planName } 并继续"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "继续操作将把您的 ${ BRAND_NAME } 账户与 ${ name } 连接。"
       ],
@@ -4894,9 +4888,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa、万事达卡：卡片背面的三位数字。美国运通卡：卡片正面的四位数字。"
       ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
@@ -5239,9 +5230,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的机构中还有其他管理员，您需要将新密码告知他们。"
-      ],
-      "Other options": [
-        "其他选项"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "恢复文件已过时，请更新以确保能访问您的数据"
@@ -5719,9 +5707,6 @@
       ],
       "Update recovery phrase": [
         "更新恢复密语"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "立即升级账户即可继续享有下列 ${ planName } 权益。"
       ],
       "Upload picture": [
         "上传图片"
@@ -7259,9 +7244,6 @@
       "What happened?": [
         "发生了什么？"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
-      ],
       "What is the main reason you are deleting your account?": [
         "您删除账户的主要原因是？"
       ],
@@ -7498,9 +7480,6 @@
       ],
       "Terms": [
         "服务条款"
-      ],
-      "Terms and conditions": [
-        "活动规则"
       ],
       "Trouble signing in?": [
         "登录遇到问题？"
@@ -8114,6 +8093,26 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -8183,26 +8182,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -9461,6 +9440,14 @@
         "节省"
       ]
     },
+    "Subscription status": {
+      "Active": [
+        "已激活"
+      ],
+      "Upcoming": [
+        "即将到来"
+      ]
+    },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "使用隐私至上的邮箱和日历服务满足您的日常通讯需求。"
@@ -10555,6 +10542,9 @@
       "Time zone": [
         "时区"
       ],
+      "Total paid": [
+        "合计金额"
+      ],
       "Track your referrals": [
         "跟踪邀请进展"
       ],
@@ -10623,9 +10613,6 @@
       ],
       "Your current plan": [
         "您的账户等级"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您的免费试用将在 ${ formattedEndDate } 后过期。"
       ],
       "Your import history": [
         "您的导入历史"

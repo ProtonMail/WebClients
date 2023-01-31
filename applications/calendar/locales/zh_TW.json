@@ -508,6 +508,9 @@
       "Upgrade": [
         "升級"
       ],
+      "Upgrade now": [
+        "立即升級"
+      ],
       "Upload picture": [
         "上載圖像"
       ],
@@ -1973,11 +1976,6 @@
         "此事件屬於已停用的行事曆。"
       ]
     },
-    "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "加入行事曆"
@@ -3123,17 +3121,11 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個標籤"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } 儲存量"
-      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } 個成員)"
-      ],
-      "10 email addresses": [
-        "10 個電郵位址"
       ],
       "A cancellation email will be sent to removed participants.": [
         "取消函將傳送給已移除的參與者。"
@@ -3203,9 +3195,6 @@
       ],
       "Close this screen to exit.": [
         "關閉此螢幕以離開。"
-      ],
-      "Continue with ${ planName }": [
-        "繼續使用 ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "建立 ${ calendarsToBeCreated } 個新行事曆"
@@ -3423,9 +3412,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
-      "Other options": [
-        "其它選項"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 僅與純文字格式相容。"
       ],
@@ -3462,9 +3448,6 @@
       "Primary": [
         "主要"
       ],
-      "Priority support": [
-        "優先支援"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
       ],
@@ -3494,12 +3477,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您對召集人先前更新的事件所作的某些回答將會遺失。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "儲存空間共用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 。"
-      ],
-      "Support for 1 custom email domain": [
-        "支援 1 個自訂電郵網域"
       ],
       "support team": [
         "支援團隊"
@@ -3579,17 +3556,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
       ],
-      "Unlimited folders, labels, and filters": [
-        "不限數量的資料夾、標籤與篩選器"
-      ],
-      "Unlimited messages": [
-        "無限制的郵件"
-      ],
       "Update recurring event": [
         "更新週期性事件"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "今天就升級，不要錯過 ${ planName } 特賞限時福利！"
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
@@ -5565,8 +5536,8 @@
       "Your calendar link": [
         "您的行事曆連結"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您專屬的免費試用即將結束，到期日為 ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

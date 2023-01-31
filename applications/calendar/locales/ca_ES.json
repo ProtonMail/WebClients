@@ -498,6 +498,9 @@
       "Upgrade": [
         "Actualitzar"
       ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
       "Upload picture": [
         "Carregar imatge"
       ],
@@ -1949,8 +1952,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
+      "Do not ask again": [
+        "No tornar a preguntar-ho"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3055,9 +3058,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } d'emmagatzematge"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacte actualitzat amb èxit.",
         "${ updated } contactes actualitzats amb èxit."
@@ -3065,9 +3065,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
-      ],
-      "10 email addresses": [
-        "10 adreces de correu"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Tots els participants eliminats rebran un correu electrònic de cancel·lació."
@@ -3124,7 +3121,7 @@
         "Compartint tots els detalls dels esdeveniments d'aquest calendari accepteu donar a ${ BRAND_NAME } accés a la informació xifrada d'aquest calendari."
       ],
       "Calendar side panel": [
-        "Panel lateral de calendari"
+        "Panell lateral del calendari"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
@@ -3137,9 +3134,6 @@
       ],
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
-      ],
-      "Continue with ${ planName }": [
-        "Continuar amb ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } nou calendari",
@@ -3356,9 +3350,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les teves claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Et recomanem que marquis aquestes claus com a \"no confiables\"."
       ],
-      "Other options": [
-        "Altres opcions"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline només és compatible amb format de Text Pla."
       ],
@@ -3396,9 +3387,6 @@
       "Primary": [
         "Principal"
       ],
-      "Priority support": [
-        "Suport prioritari"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu a menys que escolliu eliminar-la."
       ],
@@ -3428,12 +3416,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algunes de les vostres respostes a ocurrències prèviament actualitzades per l'organitzador es perdran."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Suport per a 1 domini de correu personalitzat"
       ],
       "support team": [
         "equip de suport"
@@ -3513,17 +3495,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per utilitzar la verificació d'adreça, heu d'habilitar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetes, etiquetes, i filtres il·limitats"
-      ],
-      "Unlimited messages": [
-        "Missatges il·limitats"
-      ],
       "Update recurring event": [
         "Actualitza l'esdeveniment recurrent"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Millora avui la teva subscripció per a no perdre les funcionalitats ${ planName }."
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
@@ -5502,9 +5475,6 @@
       ],
       "Your calendar link": [
         "Enllaç del vostre calendari"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

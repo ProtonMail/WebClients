@@ -586,6 +586,9 @@
       "Upgrade": [
         "Actualitzar"
       ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
       "Upload anyway": [
         "Puja-ho igualment"
       ],
@@ -2845,9 +2848,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } d'emmagatzematge"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacte actualitzat amb èxit.",
         "${ updated } contactes actualitzats amb èxit."
@@ -2858,9 +2858,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
-      ],
-      "10 email addresses": [
-        "10 adreces de correu"
       ],
       "A number will be added to the filename": [
         "S'afegirà un número al nom del fitxer"
@@ -2910,7 +2907,7 @@
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
       "Calendar side panel": [
-        "Panel lateral de calendari"
+        "Panell lateral del calendari"
       ],
       "Canceled": [
         "Cancel·lat"
@@ -2938,9 +2935,6 @@
       ],
       "Conflict": [
         "Conflicte"
-      ],
-      "Continue with ${ planName }": [
-        "Continuar amb ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } nou calendari",
@@ -3243,9 +3237,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquesta carpeta."
       ],
-      "Other options": [
-        "Altres opcions"
-      ],
       "Paused": [
         "Pausat"
       ],
@@ -3291,9 +3282,6 @@
       ],
       "Primary": [
         "Principal"
-      ],
-      "Priority support": [
-        "Suport prioritari"
       ],
       "Queued": [
         "En cua"
@@ -3357,12 +3345,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Alguna cosa ha anat malament, siusplau, intenta-ho més tard."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Suport per a 1 domini de correu personalitzat"
       ],
       "support team": [
         "equip de suport"
@@ -3449,12 +3431,6 @@
       "Unknown error": [
         "Error desconegut"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetes, etiquetes, i filtres il·limitats"
-      ],
-      "Unlimited messages": [
-        "Missatges il·limitats"
-      ],
       "Unsaved changes": [
         "Canvis no desats"
       ],
@@ -3463,9 +3439,6 @@
       ],
       "Updating drive search...": [
         "S'està actualitzant la cerca…"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Millora avui la teva subscripció per a no perdre les funcionalitats ${ planName }."
       ],
       "Uploaded": [
         "Carregat"
@@ -5224,9 +5197,6 @@
       ],
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
       ],
       "Your welcome actions": [
         "Les vostres accions de benvinguda"

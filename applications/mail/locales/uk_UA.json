@@ -4550,9 +4550,6 @@
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } сховища"
-      ],
       "${ total } conversation": [
         "${ total } розмова",
         "${ total } розмови",
@@ -4615,9 +4612,6 @@
       ],
       "(No Recipient)": [
         "(Немає отримувача)"
-      ],
-      "10 email addresses": [
-        "10 адрес е-пошти"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Фраза відновлення є одним із найнадійніших способів захисту вашого облікового запису. Ви можете використати її для доступу до свого облікового запису та відновлення зашифрованих даних у випадку втрати пароля."
@@ -4768,9 +4762,6 @@
       ],
       "Confirm phishing report": [
         "Підтвердити звіт про шахрайство"
-      ],
-      "Continue with ${ planName }": [
-        "Продовжити з ${ planName }"
       ],
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
@@ -5228,9 +5219,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один або кілька ваших довірених ключів були позначені «скомпрометованими» їх власником. Ми радимо вам не довіряти цим ключам."
       ],
-      "Other options": [
-        "Інші варіанти"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
       ],
@@ -5299,9 +5287,6 @@
       ],
       "Print email": [
         "Друкувати лист"
-      ],
-      "Priority support": [
-        "Пріоритетна підтримка"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Захистіть свою електронну пошту від потрапляння до списків розсилки або спамерів за допомогою ${ maskMyEmailButton }."
@@ -5420,9 +5405,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Перепрошуємо, цього повідомлення не існує, або термін його дії завершився."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Безпечно розміщуйте та діліться файлами за допомогою ${ DRIVE_APP_NAME }."
       ],
@@ -5437,9 +5419,6 @@
       ],
       "Subject: ": [
         "Тема: "
-      ],
-      "Support for 1 custom email domain": [
-        "Підтримка 1 власного домену е-пошти"
       ],
       "Support privacy by upgrading for": [
         "Підтримайте приватність передплативши"
@@ -5621,12 +5600,6 @@
       "Turn on to search the content of your messages": [
         "Увімкніть, щоб шукати вміст своїх повідомлень"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited messages": [
-        "Необмежена кількість повідомлень"
-      ],
       "Unlock message": [
         "Розблокувати повідомлення"
       ],
@@ -5638,6 +5611,9 @@
       ],
       "Updating message content search...": [
         "Оновлення пошуку вмісту повідомлень..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
@@ -5668,9 +5644,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Передплатіть тарифний план, щоб використовувати ${ MAIL_APP_NAME } зі сторонніми комп'ютерними клієнтами."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Оновіть тарифний план сьогодні, щоб не втратити ці переваги ${ planName }."
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -8766,8 +8739,8 @@
       "Your changes are not synced yet": [
         "Ваші зміни ще не синхронізовані"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
       ]
     },
     "Title header": {

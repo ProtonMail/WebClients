@@ -605,6 +605,9 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
       "Upload anyway": [
         "Přesto nahrát"
       ],
@@ -3026,9 +3029,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } úložiště"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
         "${ updated } kontakty úspěšně aktualizovány.",
@@ -3043,9 +3043,6 @@
         "(${ memberCount } členové)",
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
-      ],
-      "10 email addresses": [
-        "10 e-mailových adres"
       ],
       "A number will be added to the filename": [
         "K názvu souboru bude přidáno číslo"
@@ -3154,9 +3151,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Pokračujte v používání ${ DRIVE_APP_NAME } a odemkněte disk později"
-      ],
-      "Continue with ${ planName }": [
-        "Pokračovat s ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Vytvořit ${ calendarsToBeCreated } nový kalendář",
@@ -3551,9 +3545,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Kdokoli s tímto odkazem a heslem má přístup k této složce."
       ],
-      "Other options": [
-        "Další volby"
-      ],
       "Paused": [
         "Pozastaveno"
       ],
@@ -3610,9 +3601,6 @@
       ],
       "Primary": [
         "Hlavní"
-      ],
-      "Priority support": [
-        "Prioritní podpora"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Soukromé vyhledávání zapnuto. Tento dialog můžete zavřít a vyhledávat soubory a složky."
@@ -3691,12 +3679,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Podpora 1 vlastní e-mailové domény"
       ],
       "support team": [
         "tým podpory"
@@ -3809,12 +3791,6 @@
       "Unknown error": [
         "Neznámá chyba"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Neomezený počet složek, štítků a filtrů"
-      ],
-      "Unlimited messages": [
-        "Neomezený počet zpráv"
-      ],
       "Unlock drive to recover files": [
         "Odemknutí disku pro obnovení souborů"
       ],
@@ -3827,8 +3803,8 @@
       "Updating drive search...": [
         "Aktulizace vyhledání na disku..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Navyšte účet ještě dnes, abyste nepřišli o následující výhody ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Uploaded": [
         "Nahrané"
@@ -5837,8 +5813,8 @@
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"
       ],
       "Your welcome actions": [
         "Akce na uvítanou"

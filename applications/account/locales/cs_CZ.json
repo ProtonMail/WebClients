@@ -510,11 +510,11 @@
       "Not spam": [
         "Není spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -827,6 +827,9 @@
       ],
       "Upgrade": [
         "Přejít na placený tarif"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -2935,9 +2938,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nepodařilo se získat aktivní relace. Prosím ${ refresh } nebo to zkuste znovu později."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Filtr s tímto názvem již existuje"
       ],
@@ -4418,9 +4418,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "${ BRAND_NAME } ${ planName } získaných kreditů"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } pozastavil import, protože ztratil spojení se vzdáleným e-mailovým serverem. Prosím znovu se připojte."
       ],
@@ -4709,6 +4706,9 @@
       "Already used": [
         "Již použito"
       ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey logo"
+      ],
       "Amount below minimum (${ amount }).": [
         "Částka je nižší než minimální možná hodnota (${ amount })."
       ],
@@ -4847,9 +4847,6 @@
       "Continue anyway?": [
         "Přesto pokračovat?"
       ],
-      "Continue with ${ planName }": [
-        "Pokračovat s ${ planName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Pokračováním se váš ${ BRAND_NAME } účet připojí k ${ name }."
       ],
@@ -4883,6 +4880,9 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
       ],
+      "Credits earned": [
+        "Získané kredity"
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "V současné době je veškerý diskový prostor přidělen k účtu správce. Uvolněte prosím část diskového prostoru dalším uživatelům. Kapacitu úložiště můžete kdykoliv navýšit změnou tarifu."
       ],
@@ -4915,6 +4915,9 @@
       ],
       "Delete link?": [
         "Odstranit odkaz?"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy logo"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Nezapomeňte toto heslo. V případě, že ho zapomenete, nebudete se moci přihlásit nebo dešifrovat své zprávy."
@@ -5060,8 +5063,8 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Pro Visa a MasterCard, 3 číslice na zadní straně Vaší karty. Pro American Express 4 číslice na přední straně Vaší karty."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Pro Visa, MasterCard a Discover, 3 číslice na zadní straně vaší karty. Pro American Express 4 číslice na přední straně vaší karty."
       ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
@@ -5315,6 +5318,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Ručně zadejte tyto informace do zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode logo"
+      ],
       "Member": [
         "Člen"
       ],
@@ -5410,9 +5416,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Ve vaší organizaci existují ostatní správci, vaší povinností je sdělit jim nové heslo."
-      ],
-      "Other options": [
-        "Další volby"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Zastaralý obnovovací soubor; aktualizujte, abyste zajistili přístup k vašim údajům"
@@ -5909,8 +5912,8 @@
       "Update recovery phrase": [
         "Aktualizovat obnovovací frázi"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Navyšte účet ještě dnes, abyste nepřišli o následující výhody ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -5947,6 +5950,9 @@
       ],
       "Version ${ version }": [
         "Verze ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure logo"
       ],
       "Warning:": [
         "Upozornění:"
@@ -7460,8 +7466,8 @@
       "What happened?": [
         "Co se stalo?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "Jaký je hlavní důvod vašeho zrušení?"
       ],
       "What is the main reason you are deleting your account?": [
         "Jaký je hlavní důvod, proč mažete svůj účet?"
@@ -7699,9 +7705,6 @@
       ],
       "Terms": [
         "Podmínky"
-      ],
-      "Terms and conditions": [
-        "Obchodní podmínky"
       ],
       "Trouble signing in?": [
         "Potíže s přihlášením?"
@@ -8384,6 +8387,26 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -8453,26 +8476,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Získejte firemní balíček s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -11016,11 +11019,11 @@
       "Your current plan": [
         "Váš aktuální tarif"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"
-      ],
       "Your import history": [
         "Aktuální a minulé importy"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"
       ],
       "Your plan": [
         "Váš tarif"

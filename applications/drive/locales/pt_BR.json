@@ -601,6 +601,9 @@
       "Upgrade": [
         "Upgrade"
       ],
+      "Upgrade now": [
+        "Atualizar agora"
+      ],
       "Upload anyway": [
         "Enviar assim mesmo"
       ],
@@ -2933,9 +2936,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contato atualizado com sucesso.",
         "${ updated } contatos atualizados com sucesso."
@@ -2946,9 +2946,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
       ],
       "A number will be added to the filename": [
         "Um número será adicionado ao nome do arquivo"
@@ -3050,9 +3047,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continue usando ${ DRIVE_APP_NAME } e desbloqueie o drive depois"
-      ],
-      "Continue with ${ planName }": [
-        "Continuar com ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Criar ${ calendarsToBeCreated } novo calendário",
@@ -3437,9 +3431,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Apenas as pessoas com o link e a senha podem acessar esta pasta."
       ],
-      "Other options": [
-        "Outras opções"
-      ],
       "Paused": [
         "Em pausa"
       ],
@@ -3494,9 +3485,6 @@
       ],
       "Primary": [
         "Principal"
-      ],
-      "Priority support": [
-        "Suporte prioritário"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Pesquisa privada ativada. Agora você pode fechar esta caixa de diálogo e procurar arquivos e pastas."
@@ -3575,12 +3563,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Ocorreu um erro, tente novamente mais tarde."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "O espaço de armazenamento é compartilhado através do ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Suporte para 1 domínio de e-mail personalizado"
       ],
       "support team": [
         "equipe de suporte"
@@ -3688,12 +3670,6 @@
       "Unknown error": [
         "Erro desconhecido"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas ilimitadas, marcadores e filtros"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
-      ],
       "Unlock drive to recover files": [
         "Desbloquear drive para recuperar arquivos"
       ],
@@ -3706,8 +3682,8 @@
       "Updating drive search...": [
         "Atualizando pesquisa de drive..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Faça upgrade hoje para não perder os benefícios ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
       "Uploaded": [
         "Enviado"
@@ -4543,7 +4519,7 @@
         "\"${ name }\" movido com sucesso"
       ],
       "\"${ newName }\" failed to be renamed": [
-        "\"${ newName } falhou ao ser renomeado"
+        "\"${ newName }\" falhou ao ser renomeado."
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" renomeado com sucesso"
@@ -4725,7 +4701,7 @@
         "Criar um link compartilhável"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
-        "Comece usando o ${ DRIVE_APP_NAME } e suplicaremos seu espaço gratuito para 1GB!"
+        "Comece usando o ${ DRIVE_APP_NAME } e duplicaremos seu espaço gratuito para 1GB!"
       ],
       "Set a recovery method": [
         "Definir um método de recuperação"
@@ -5864,8 +5840,8 @@
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Sua avaliação gratuita termina em breve, em ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Sua avaliação gratuita do Mail Plus termina em ${ textDate }"
       ],
       "Your welcome actions": [
         "Suas ações de boas-vindas"
@@ -6052,10 +6028,10 @@
         "Essa ação é irreversível. Digite a palavra ${ boldDanger } no campo para continuar."
       ],
       "This feature requires a paid ${ BRAND_NAME } account": [
-        "Este recurso requer um plano pago do ${ BRAND_NAME }"
+        "Este recurso requer um plano pago do ${ BRAND_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta do ${ BRAND_NAME }. Por favor, considere realizar sua importação de forma personalizada."
+        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta do ${ BRAND_NAME }. Considere realizar sua importação de forma personalizada."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."

@@ -514,6 +514,9 @@
       "Upgrade": [
         "Покращити"
       ],
+      "Upgrade now": [
+        "Покращити"
+      ],
       "Upload picture": [
         "Вивантажити зображення"
       ],
@@ -2007,8 +2010,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
+      "Do not ask again": [
+        "Не питати знову"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3285,9 +3288,6 @@
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } сховища"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
         "${ updated } контакти успішно оновлені.",
@@ -3299,9 +3299,6 @@
         "(${ memberCount } учасники)",
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
-      ],
-      "10 email addresses": [
-        "10 адрес е-пошти"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Лист про скасування буде надіслано вилученим учасникам."
@@ -3380,9 +3377,6 @@
       ],
       "Close this screen to exit.": [
         "Закрийте це вікно, щоб вийти."
-      ],
-      "Continue with ${ planName }": [
-        "Продовжити з ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Створити ${ calendarsToBeCreated } новий календар",
@@ -3606,9 +3600,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один або кілька ваших довірених ключів були позначені «скомпрометованими» їх власником. Ми радимо вам не довіряти цим ключам."
       ],
-      "Other options": [
-        "Інші варіанти"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту."
       ],
@@ -3648,9 +3639,6 @@
       "Primary": [
         "Основний"
       ],
-      "Priority support": [
-        "Пріоритетна підтримка"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
       ],
@@ -3680,12 +3668,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Деякі з ваших відповідей на повторювані події, раніше оновлені організатором, будуть втрачені."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Підтримка 1 власного домену е-пошти"
       ],
       "support team": [
         "командою підтримки"
@@ -3765,17 +3747,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для використання перевірки адреси ви повинні зробити довіреним один чи декілька доступних відкритих ключів, включаючи той, який ви хочете використовувати для надсилання. Це запобігає підроблюванню ключів шифрування."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited messages": [
-        "Необмежена кількість повідомлень"
-      ],
       "Update recurring event": [
         "Оновити повторювану подію"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Оновіть тарифний план сьогодні, щоб не втратити ці переваги ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
@@ -5929,8 +5905,8 @@
       "Your calendar link": [
         "Посилання на ваш календар"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
