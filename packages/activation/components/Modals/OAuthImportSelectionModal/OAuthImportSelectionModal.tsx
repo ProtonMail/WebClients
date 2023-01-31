@@ -2,22 +2,15 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL } from '@proton/activation/constants';
+import { SYNC_G_OAUTH_SCOPES, SYNC_SOURCE, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/constants';
 import useOAuthPopup from '@proton/activation/hooks/useOAuthPopup';
-import {
-    EASY_SWITCH_SOURCE,
-    ImportProvider,
-    ImportType,
-    OAUTH_PROVIDER,
-    OAuthProps,
-} from '@proton/activation/interface';
+import { ImportProvider, ImportType, OAUTH_PROVIDER, OAuthProps } from '@proton/activation/interface';
 import { startOauthDraft } from '@proton/activation/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button';
 import {
-    CreateNotificationOptions,
     ModalStateProps,
     ModalTwo,
     ModalTwoContent,
@@ -31,25 +24,18 @@ interface Props {
     onClose: () => void;
 }
 
-const successNotification: CreateNotificationOptions = {
-    type: 'success',
-    text: c('loc_nightly:account').t`Synchronization will start soon. New emails will appear in your inbox.`,
-};
-
-const Source = EASY_SWITCH_SOURCE.CONTACTS_WIDGET_SETTINGS;
-
 /**
  * Modal temporarily used to make an internal test on Gmail emails synchronization
  */
 const OAuthImportSelectionModal = ({ modalProps, onClose }: Props) => {
     const dispatch = useEasySwitchDispatch();
 
-    const { triggerOAuthPopup } = useOAuthPopup();
+    const { triggerOAuthPopup } = useOAuthPopup({
+        errorMessage: c('loc_nightly:Error').t`Your sync will not be processed.`,
+    });
 
     const loadingState = useEasySwitchSelector(selectCreateSyncState);
     const loading = loadingState === 'pending';
-
-    const scopes = [...G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL];
 
     useEffect(() => {
         if (loadingState === 'success') {
@@ -61,12 +47,18 @@ const OAuthImportSelectionModal = ({ modalProps, onClose }: Props) => {
     const handleSynchronizeClick = () => {
         triggerOAuthPopup({
             provider: OAUTH_PROVIDER.GOOGLE,
-            scope: scopes.join(' '),
+            scope: SYNC_G_OAUTH_SCOPES.join(' '),
             callback: async (oAuthProps: OAuthProps) => {
                 const { Code, Provider, RedirectUri } = oAuthProps;
                 dispatch(changeCreateLoadingState('pending'));
                 await dispatch(
-                    createSyncItem({ Code, Provider, RedirectUri, Source, notification: successNotification })
+                    createSyncItem({
+                        Code,
+                        Provider,
+                        RedirectUri,
+                        Source: SYNC_SOURCE,
+                        notification: SYNC_SUCCESS_NOTIFICATION,
+                    })
                 );
             },
         });

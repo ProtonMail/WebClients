@@ -22,6 +22,11 @@ export const getSyncList = () => ({
     method: 'get',
 });
 
+export const resumeSync = (syncId: string) => ({
+    url: `importer/v1/sync/${syncId}/resume`,
+    method: 'put',
+});
+
 export const deleteSync = (syncId: String) => ({
     url: `importer/v1/sync/${syncId}`,
     method: 'DELETE',

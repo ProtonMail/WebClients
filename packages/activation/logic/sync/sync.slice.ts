@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
 import * as globalAction from '../actions';
-import { changeCreateLoadingState, createSyncItem, loadSyncList } from './sync.actions';
+import { changeCreateLoadingState, createSyncItem, loadSyncList, resumeSyncItem } from './sync.actions';
 import { formatApiSync, formatApiSyncs } from './sync.helpers';
 import { SyncMap, SyncState } from './sync.interface';
 
@@ -29,6 +29,23 @@ const syncSlice = createSlice({
         });
 
         builder.addCase(createSyncItem.fulfilled, (state) => {
+            state.creatingLoading = 'success';
+            //reset error
+            delete state.apiErrorCode;
+            delete state.apiErrorLabel;
+        });
+
+        builder.addCase(resumeSyncItem.pending, (state) => {
+            state.creatingLoading = 'pending';
+        });
+
+        builder.addCase(resumeSyncItem.rejected, (state, action) => {
+            state.creatingLoading = 'failed';
+            state.apiErrorCode = action.payload?.Code;
+            state.apiErrorLabel = action.payload?.Error;
+        });
+
+        builder.addCase(resumeSyncItem.fulfilled, (state) => {
             state.creatingLoading = 'success';
             //reset error
             delete state.apiErrorCode;

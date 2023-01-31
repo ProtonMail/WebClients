@@ -1,12 +1,14 @@
 import { c } from 'ttag';
 
 import {
+    EASY_SWITCH_SOURCE,
     ImportProvider,
     MailImportGmailCategories,
     NON_OAUTH_PROVIDER,
     OAUTH_PROVIDER,
     TIME_PERIOD,
 } from '@proton/activation/interface';
+import { CreateNotificationOptions } from '@proton/components';
 import { EMAIL_PLACEHOLDER, USERNAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 
 export const G_OAUTH_REDIRECT_PATH = '/oauth/callback';
@@ -65,3 +67,12 @@ export const EASY_SWITCH_EMAIL_PLACEHOLDER = {
 /* Calendar specific */
 
 export const CALENDAR_TO_BE_CREATED_PREFIX = '###TO_BE_CREATED###';
+
+/* Sync specific */
+
+export const SYNC_SOURCE = EASY_SWITCH_SOURCE.CONTACTS_WIDGET_SETTINGS;
+export const SYNC_G_OAUTH_SCOPES = [...G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL];
+export const SYNC_SUCCESS_NOTIFICATION: CreateNotificationOptions = {
+    type: 'success',
+    text: c('loc_nightly:account').t`Synchronization will start soon. New emails will appear in your inbox.`,
+};
