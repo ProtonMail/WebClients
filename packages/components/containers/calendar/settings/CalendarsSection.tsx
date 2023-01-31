@@ -27,9 +27,6 @@ const CalendarsSection = ({
     onExport,
     ...rest
 }: CalendarsSectionProps) => {
-    // const shouldShowUpgradeCard = canUpgradeCalendarsLimit && !canAdd && !isFeatureUnavailable;
-    // const shouldShowLimitWarning = !isFeatureUnavailable && user.hasNonDelinquentScope && !canAdd;
-
     return (
         <SettingsSectionWide {...rest}>
             {children}

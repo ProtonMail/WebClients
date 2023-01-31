@@ -5,7 +5,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
-import { AutoReplyDuration, BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import {
+    APP_UPSELL_REF_PATH,
+    AutoReplyDuration,
+    BRAND_NAME,
+    MAIL_UPSELL_PATHS,
+    PLANS,
+    PLAN_NAMES,
+} from '@proton/shared/lib/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
 import { Editor, EditorActions, Toggle } from '../../components';
@@ -211,7 +218,10 @@ const AutoReplySection = () => {
             {hasPaidMail ? (
                 isEnabled && renderForm()
             ) : (
-                <UpgradeBanner className="mt2">
+                <UpgradeBanner
+                    className="mt2"
+                    upsellPath={`${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${MAIL_UPSELL_PATHS.AUTO_REPLY}`}
+                >
                     {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}

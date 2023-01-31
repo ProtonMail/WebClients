@@ -4,11 +4,15 @@ const initialWindow = window;
 const initialWindowLocation: Location = initialWindow.location;
 const initialExports = exports.default;
 
-export const mockWindowLocation = (origin = 'https://mail.proton.pink', hostname = 'mail.proton.pink') => {
+export const mockWindowLocation = ({
+    origin = 'https://mail.proton.pink',
+    hostname = 'mail.proton.pink',
+    href = '',
+}) => {
     Object.defineProperty(exports, 'default', {
         writable: true,
         value: {
-            location: { ...initialWindowLocation, hostname, origin, port: '' },
+            location: { ...initialWindowLocation, hostname, origin, port: '', href },
             parent: { ...initialWindow.parent },
         },
     });

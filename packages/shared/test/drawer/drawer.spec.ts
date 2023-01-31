@@ -18,7 +18,7 @@ import {
     postMessageFromIframe,
 } from '../../lib/drawer/helpers';
 import window from '../../lib/window';
-import { mockWindowLocation, resetWindowLocation } from './url.helper';
+import { mockWindowLocation, resetWindowLocation } from '../helpers/url.helper';
 
 const windowHostname = 'mail.proton.me';
 
@@ -57,7 +57,7 @@ describe('drawer helpers', () => {
 
     describe('isAuthorizedDrawerUrl', () => {
         beforeEach(() => {
-            mockWindowLocation(undefined, windowHostname);
+            mockWindowLocation({ hostname: windowHostname });
         });
 
         afterEach(() => {
@@ -98,7 +98,7 @@ describe('drawer helpers', () => {
 
     describe('getIsDrawerPostMessage', () => {
         beforeEach(() => {
-            mockWindowLocation(undefined, windowHostname);
+            mockWindowLocation({ hostname: windowHostname });
         });
 
         afterEach(() => {
@@ -151,7 +151,7 @@ describe('drawer helpers', () => {
 
     describe('postMessageFromIframe', () => {
         beforeEach(() => {
-            mockWindowLocation(undefined, windowHostname);
+            mockWindowLocation({ hostname: windowHostname });
         });
 
         afterEach(() => {

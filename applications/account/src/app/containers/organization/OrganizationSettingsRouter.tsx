@@ -41,7 +41,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(setup) && (
                 <Route path={getSectionPath(path, setup)}>
                     <PrivateMainSettingsArea config={setup}>
-                        <OrganizationSection organization={organization} />
+                        <OrganizationSection organization={organization} app={app} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
@@ -63,6 +63,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, orgKeys)}>
                     <PrivateMainSettingsArea config={orgKeys}>
                         <OrganizationSection
+                            app={app}
                             organization={organization}
                             onSetupOrganization={() => {
                                 // Disable automatic activation modal when setting up an organization
