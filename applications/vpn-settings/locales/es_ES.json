@@ -114,10 +114,10 @@
         "Hecho"
       ],
       "Downgrade": [
-        "Degradar"
+        "Pasar a un plan inferior"
       ],
       "Downgrade account": [
-        "Pasar a un plan inferior"
+        "Pasar a una cuenta inferior"
       ],
       "Download": [
         "Descargar"
@@ -240,7 +240,7 @@
         "Notificar un problema"
       ],
       "Request a feature": [
-        "Solicitar una funcionalidad"
+        "Solicitar una función"
       ],
       "Request new code": [
         "Solicitar un nuevo código"
@@ -276,7 +276,7 @@
         "Buscar países"
       ],
       "See plan features": [
-        "Ver las características del plan"
+        "Ver las funciones del plan"
       ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
@@ -345,7 +345,10 @@
         "Actualizar frase de recuperación"
       ],
       "Upgrade": [
-        "Mejorar"
+        "Actualizar"
+      ],
+      "Upgrade now": [
+        "Actualizar"
       ],
       "Use ${ label } theme": [
         "Utilizar tema ${ label }"
@@ -496,7 +499,7 @@
         "Problema con Drive"
       ],
       "Feature request": [
-        "Solicitar funcionalidad"
+        "Solicitar función"
       ],
       "Import / export problem": [
         "Problema de importación/exportación"
@@ -1534,7 +1537,7 @@
         "El proceso de pago ha expirado"
       ],
       "Payment process failed": [
-        "El proceso de pago ha fallado"
+        "Error al procesar el pago"
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
@@ -1558,7 +1561,7 @@
         "Tiempo de espera agotado"
       ],
       "Signature verification failed": [
-        "La verificación de la firma ha fallado"
+        "Error al verificar la firma"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
@@ -1667,7 +1670,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Deshabilita 2FA con la clave de seguridad antes de desactivar la clave TOTP."
+        "Deshabilita la opción 2FA con la clave de seguridad antes de desactivar la clave TOTP."
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
@@ -1684,7 +1687,7 @@
         "Añade un nombre para identificar tu llave de seguridad."
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "¿Está seguro de querer eliminar la clave de seguridad ${ name }?"
+        "¿Estás seguro de querer eliminar la clave de seguridad ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
@@ -1705,7 +1708,7 @@
         "Esto eliminará todas las llaves de seguridad vinculadas a tu cuenta."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Para activar 2FA con una clave de seguridad, necesitas una aplicación de autenticación."
+        "Para activar la opción 2FA con una clave de seguridad, necesitas una aplicación de autenticación."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifica tu identidad con una clave física de seguridad U2F o FIDO2."
@@ -1846,7 +1849,7 @@
         "La tecnología de cifrado de ${ BRAND_NAME } conlleva que nadie tiene acceso a tu contraseña - ni siquiera nosotros."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "Se puede también usar ${ MAIL_APP_NAME } con una única contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que deseas utilizar y haz clic en Guardar."
+        "Se puede también usar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que quieres utilizar y haz clic en Guardar."
       ],
       "${ number } city": [
         "${ number } ciudad",
@@ -1911,11 +1914,14 @@
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
       ],
+      "American Express SafeKey logo": [
+        "Logo de American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Cantidad por debajo del mínimo (${ amount })."
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "¿Está seguro de que desea deshabilitar la autenticación de dos factores?"
+        "¿Estás seguro de que quieres deshabilitar la autenticación de dos factores?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
@@ -1927,7 +1933,7 @@
         "Se requiere suscripción Basic, Plus o Visionary"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación revisa tu carpeta de spam y comprueba que ${ strong } la dirección es correcta."
+        "Antes de solicitar un nuevo código de verificación verifica tu carpeta de spam y comprueba que ${ strong } la dirección es correcta."
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
@@ -1936,10 +1942,10 @@
         "Las transacciones con Bitcoin pueden tardar un tiempo en ser confirmadas (hasta 24 horas). Una vez confirmada, añadiremos los créditos a tu cuenta. Después de la confirmación de la transacción, podrás pagar tu factura con los créditos."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Al degradar a un plan gratuito, perderás permanentemente estos beneficios, incluso si actualizas de nuevo tu cuenta en el futuro."
+        "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si actualizas de nuevo tu cuenta en el futuro."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Al pasar a un plan con menos funciones perderás los siguientes beneficios. ¿Estás seguro de que deseas continuar?"
+        "Al pasar a un plan con menos funciones perderás los siguientes beneficios. ¿Estás seguro de que quieres continuar?"
       ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
@@ -1961,6 +1967,9 @@
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
+      ],
+      "Discover ProtectBuy logo": [
+        "Logo de Discover ProtectBuy"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "No utilices las credenciales de OpenVPN/IKEv2 en las aplicaciones de ${ VPN_APP_NAME } ni en el panel de control de ${ VPN_APP_NAME }. ${ learnMore }"
@@ -2031,8 +2040,8 @@
       "expires ${ expirationDate }": [
         "expira ${ expirationDate }"
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Para Visa y Mastercard, los 3 dígitos están detrás de la tarjeta. Para American Express, los 4 dígitos de la parte están en la frente de la tarjeta."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Para Visa, MasterCard y Discover, los 3 dígitos en la parte trasera de la tarjeta. Para American Express, los 4 dígitos en la parte frontal de la tarjeta."
       ],
       "Free up some space or add more storage space.": [
         "Libera algo de espacio o añade más espacio de almacenamiento."
@@ -2068,10 +2077,10 @@
         "Si pierdes tu dispositivo habilitado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Si continúas con la baja, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
+        "Si continúas n plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Si continúas con la baja, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME }, incluyendo filtros y almacenamiento adicionales."
+        "Si continúas un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME }, incluyendo filtros y almacenamiento adicionales."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ VPN_APP_NAME }."
@@ -2136,6 +2145,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Introduce manualmente esta información en tu dispositivo de autenticación de dos factores para configurar tu cuenta. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Logo de Mastercard SecureCode"
+      ],
       "No credit card required": [
         "No se requiere tarjeta de crédito"
       ],
@@ -2173,7 +2185,7 @@
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
       "Plan upgrade required": [
-        "Se requiere actualizar el plan"
+        "Necesitas actualizar tu plan."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduce la frase de recuperación de 12 palabras asociada a tu cuenta."
@@ -2206,7 +2218,7 @@
         "Previsualizar"
       ],
       "Preview failed to be loaded": [
-        "No se pudo cargar la vista previa"
+        "Error al cargar la vista previa"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin caducar guardados en tu cuenta."
@@ -2254,7 +2266,7 @@
         "Configurando tu Drive"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "Como eres un usuario leal, tu cuenta tiene habilitadas características adicionales."
+        "Como eres un usuario leal, tu cuenta tiene habilitadas funciones adicionales."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
@@ -2335,7 +2347,7 @@
         "Almacenamiento total"
       ],
       "Total supported domains": [
-        "Dominios compatibles totales"
+        "Total de dominios compatibles"
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
@@ -2367,6 +2379,9 @@
       "Unsupported file": [
         "Fichero no soportado"
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utiliza el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
       ],
@@ -2390,6 +2405,9 @@
       ],
       "Version ${ version }": [
         "Versión ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Logo de Visa Secure"
       ],
       "Warning:": [
         "Advertencia:"
@@ -2942,8 +2960,8 @@
       "What happened?": [
         "¿Qué ha ocurrido?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "¿Cuál es la razón principal por la que estás cancelando?"
       ],
       "What is the main reason you are deleting your account?": [
         "¿Cuál es el motivo principal por el que eliminas tu cuenta?"
@@ -3044,7 +3062,7 @@
         "¿Problemas para iniciar sesión?"
       ],
       "Upgrade account": [
-        "Mejorar cuenta"
+        "Actualizar cuenta"
       ],
       "View guide": [
         "Ver guía"
@@ -3084,13 +3102,13 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "VPN a máxima velocidad"
+        "Velocidad VPN máxima"
       ],
       "Keep your inbox organized with folders": [
         "Mantén tu bandeja de entrada organizada con carpetas"
       ],
       "Medium VPN speed": [
-        "VPN a velocidad media"
+        "Velocidad VPN media"
       ]
     },
     "new_plans: action": {
@@ -3131,12 +3149,12 @@
         "Cambiar plan"
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
-        "Mejorar a ${ upsellPlanHumanSize }"
+        "Pasar a ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        "Degradar a ${ downgradedPlanName }"
+        "Pasar a ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Ver todos los planes de ${ BRAND_NAME }"
@@ -3148,10 +3166,10 @@
         "Desde ${ price } por usuario"
       ],
       "Keep my ${ currentPlanName } account": [
-        "Seguir en ${ currentPlanName }"
+        "Continuar con mi cuneta ${ currentPlanName }"
       ],
       "Upgrade now": [
-        "Actualizar ahora"
+        "Actualizar"
       ]
     },
     "new_plans: attribute": {
@@ -3286,7 +3304,7 @@
         "Firmas HTML"
       ],
       "Kill switch/always-on VPN": [
-        "VPN con Kill Switch/siempre activa"
+        " Kill switch/VPN siempre activa"
       ],
       "Limited support": [
         "Soporte limitado"
@@ -3395,16 +3413,16 @@
         "* Con 12 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
       ],
       "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Por la suscripción de 15 meses. Se ofrecen otras opciones de suscripción cuando se va a formalizar la compra."
+        "* Con 15 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* Con 24 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
       ],
       "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Por la suscripción de 30 meses. Se ofrecen otras opciones de suscripción cuando se va a formalizar la compra."
+        "* Con 30 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        "El crédito, el prorrateo y los cupones que puedan utilizarse se aplicarán en el siguiente paso"
+        "El crédito, el prorrateo y los cupones que puedan utilizarse se aplicarán en el siguiente paso."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad totales con todos los servicios de ${ BRAND_NAME } combinados."
@@ -3454,7 +3472,7 @@
         "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y se desactivará."
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
@@ -3466,7 +3484,7 @@
         "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
-        "La prueba acaba el ${ formattedTrialExpirationDate }"
+        "Tu periodo de pruebas acaba el ${ formattedTrialExpirationDate }."
       ]
     },
     "new_plans: Label": {
@@ -3502,7 +3520,7 @@
         "términos y condiciones"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Para empezar, elige el nombre por el que quieres que se te reconozca. Será el nombre que verán las demás personas cuando les envíes un correo, las invites a un evento o compartas archivos con ellas."
+        "Para empezar, elige un nombre para mostrar. Será el nombre que verán las demás personas cuando les envíes un correo, las invites a un evento o compartas archivos con ellas."
       ],
       "Your ${ planName } subscription is now active.": [
         "Tu suscripción de ${ planName } ahora está activa."
@@ -3522,7 +3540,7 @@
         "¡Pronto habrán planes mejores!"
       ],
       "Review subscription and pay": [
-        "Revisar suscripción y pagar"
+        "Verificar suscripción y pagar"
       ],
       "Start exploring the ${ BRAND_NAME } universe": [
         "Lánzate a explorar el universo ${ BRAND_NAME }"
@@ -3536,7 +3554,7 @@
         "Prueba de ${ mailPlanName }"
       ],
       "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
+        "Pasar a ${ planName }"
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -3686,7 +3704,7 @@
         "Usa tus propias direcciones de correo personalizadas como por ejemplo, tu@tunombre.com."
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "No guardamos ningún registro de lo que haces cuando tienes iniciada la sesión ni registramos metadatos que vulneren tu privacidad"
+        "No guardamos ningún registro de lo que haces cuando tienes iniciada la sesión ni registramos metadatos que pueden comprometer tu privacidad."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Tenemos el firme compromiso de ayudar a los clientes que deben cumplir las normativas HIPAA y HITECH a salvaguardar la información sanitaria protegida que se les proporciona. Todos los clientes de ${ BRAND_NAME } para negocios pueden solicitar un acuerdo de sociedad comercial firmado (BAA)."
@@ -3779,7 +3797,7 @@
         "iOS"
       ],
       "It's missing a key feature that I need": [
-        "Falta una característica clave que necesito"
+        "Falta una función clave que necesito."
       ],
       "It's too expensive": [
         "Es demasiado caro"
@@ -3984,7 +4002,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Espera: estamos modificando tu cuenta."
+        "Espera. Estamos modificando tu cuenta."
       ]
     },
     "Storage": {
@@ -3992,7 +4010,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Mejorar almacenamiento"
+        "Actualizar almacenamiento"
       ],
       "Your current storage:": [
         "Tu almacenamiento actual:"
@@ -4079,7 +4097,7 @@
         "Activa"
       ],
       "Upcoming": [
-        "Próximamente"
+        "Próximo"
       ]
     },
     "Subtitle for trial plan": {
@@ -4098,7 +4116,7 @@
         "Cuenta eliminada. Cerrando sesión..."
       ],
       "Bug reported": [
-        "Fallo reportado"
+        "Error reportado"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
@@ -4229,7 +4247,7 @@
         "2. Seleccionar protocolo"
       ],
       "3-D Secure verification failed": [
-        "La verificación 3-D Secure ha fallado"
+        "Error con la verificación 3-D Secure"
       ],
       "3. Select config file and download": [
         "3. Seleccionar archivo de configuración y descargar"
@@ -4301,7 +4319,7 @@
         "Confirmar dirección"
       ],
       "Confirm downgrade": [
-        "Confirmar degradación"
+        "Confirmar el paso a un plan inferior"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar la pérdida de beneficios de ${ BRAND_NAME }"
@@ -4454,7 +4472,7 @@
         "Pagos"
       ],
       "PayPal verification failed": [
-        "La verificación de PayPal ha fallado"
+        "Error con la verificación de PayPal"
       ],
       "Phone": [
         "Teléfono"
@@ -4582,6 +4600,9 @@
       "Your current plan": [
         "Tu plan actual"
       ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Tu prueba gratuita de Mail Plus termina el ${ textDate }."
+      ],
       "Your plan": [
         "Tu plan"
       ],
@@ -4699,7 +4720,7 @@
         "Al eliminar este número de teléfono, ya no podrás recuperar tu cuenta."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "El chat en vivo es una función premium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
+        "El chat en vivo es una función prémium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ten en cuenta que al elegir este método de pago, tu cuenta no será actualizada inmediatamente. Actualizaremos tu cuenta una vez que el pago se haya completado."

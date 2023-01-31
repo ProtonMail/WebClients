@@ -601,6 +601,9 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
       "Upload anyway": [
         "Yine de yükle"
       ],
@@ -2928,9 +2931,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } depolama alanı"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kişi güncellendi.",
         "${ updated } kişi güncellendi."
@@ -2941,9 +2941,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
-      ],
-      "10 email addresses": [
-        "10 e-posta adresi"
       ],
       "A number will be added to the filename": [
         "Dosya adına bir numara eklensin"
@@ -3048,9 +3045,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } kullanmayı sürdür ve sürücünün kilidini daha sonra aç"
-      ],
-      "Continue with ${ planName }": [
-        "${ planName } aboneliğini kullanmayı sürdür"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } yeni takvim ekle",
@@ -3435,9 +3429,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Bu klasöre yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
       ],
-      "Other options": [
-        "Diğer seçenekler"
-      ],
       "Paused": [
         "Duraklatıldı"
       ],
@@ -3492,9 +3483,6 @@
       ],
       "Primary": [
         "Birincil"
-      ],
-      "Priority support": [
-        "Öncelikli destek"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Gizli arama etkinleştirildi. Bu pencereyi kapatarak dosya ve klasörlerde arama yapabilirsiniz."
@@ -3573,12 +3561,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Bir şeyler ters gitti. Lütfen bir süre sonra yeniden deneyin."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
-      ],
-      "Support for 1 custom email domain": [
-        "1 özel e-posta etki alanı desteği"
       ],
       "support team": [
         "destek ekibi"
@@ -3689,12 +3671,6 @@
       "Unknown error": [
         "Bilinmeyen hata"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket, süzgeç"
-      ],
-      "Unlimited messages": [
-        "Sınırsız ileti"
-      ],
       "Unlock drive to recover files": [
         "Dosyaları kurtarmak için sürücünün kilidini açın"
       ],
@@ -3707,8 +3683,8 @@
       "Updating drive search...": [
         "Drive araması güncelleniyor..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "${ planName } avantajlarını kaybetmemek için tarifenizi bugün yükseltin."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
       ],
       "Uploaded": [
         "Yüklendi"
@@ -5627,8 +5603,8 @@
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your welcome actions": [
         "Karşılama işlemleriniz"

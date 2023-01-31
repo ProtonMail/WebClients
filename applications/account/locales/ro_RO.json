@@ -510,11 +510,11 @@
       "Not spam": [
         "Acceptată"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
@@ -826,6 +826,9 @@
         "Actualizare frază de recuperare"
       ],
       "Upgrade": [
+        "Modernizare"
+      ],
+      "Upgrade now": [
         "Modernizare"
       ],
       "Upload picture": [
@@ -2923,9 +2926,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nu s-a reușit obținerea unei sesiuni active. Vă rugăm să ${ refresh } sau reîncercați mai târziu."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Filtrul cu acest nume există deja"
       ],
@@ -4386,9 +4386,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Veți pierde accesul la toate datele actuale criptate din cont dacă continuați."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "Credite câștigate ${ BRAND_NAME } ${ planName }"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } a întrerupt importarea deoarece a pierdut conexiunea cu celălalt furnizor de e-mail. Reconectați-vă."
       ],
@@ -4794,9 +4791,6 @@
       "Continue anyway?": [
         "Confirmați continuarea?"
       ],
-      "Continue with ${ planName }": [
-        "Continuare cu ${ planName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Continuând contul ${ BRAND_NAME } se va conecta la ${ name }."
       ],
@@ -4828,6 +4822,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credit pentru porțiunea neutilizată din abonamentul planului anterior"
+      ],
+      "Credits earned": [
+        "Credite câștigate"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "În prezent tot spațiul disponibil este alocat contului administratorului. Reduceți alocarea către acest cont pentru a elibera spațiu pentru utilizatorii suplimentari. Puteți mări spațiul total oricând trecând la un cont cu plată."
@@ -5005,8 +5002,8 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtrele funcționează asupra tuturor mesajelor, incluzându-le atât pe cele primite cât și pe cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Pentru Visa și MasterCard, cele 3 cifre de pe spatele cardului. Pentru American Express, cele 4 cifre de pe faţa cardului."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Pentru Visa, MasterCard și Discover, cele 3 cifre de pe spatele cardului. Pentru American Express, cele 4 cifre de pe fața cardului."
       ],
       "Free up some space or add more storage space.": [
         "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
@@ -5353,9 +5350,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Mai există și alți administratori în cadrul organizației și va trebui să le comunicați noua parolă."
-      ],
-      "Other options": [
-        "Alte opțiuni"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Fișier de recuperare învechit. Actualizați-l pentru a vă asigura accesul la date."
@@ -5846,8 +5840,8 @@
       "Update recovery phrase": [
         "Actualizare frază de recuperare"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Treceți la un plan superior astăzi pentru a evita pierderea beneficiilor din ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -7393,8 +7387,8 @@
       "What happened?": [
         "Ce s-a întâmplat?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "Care este principalul motiv pentru care anulați?"
       ],
       "What is the main reason you are deleting your account?": [
         "Care este principalul motiv pentru care vă ștergeți contul?"
@@ -7632,9 +7626,6 @@
       ],
       "Terms": [
         "Termeni"
-      ],
-      "Terms and conditions": [
-        "Termeni și condiții"
       ],
       "Trouble signing in?": [
         "Aveți probleme la autentificare?"
@@ -8294,6 +8285,26 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probare se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8363,26 +8374,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probare se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10889,11 +10880,11 @@
       "Your current plan": [
         "Planul curent"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Perioada de probare gratuită se încheie în curând, la ${ formattedEndDate }"
-      ],
       "Your import history": [
         "Istoric importări"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
       ],
       "Your plan": [
         "Plan actual"

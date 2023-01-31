@@ -4542,9 +4542,6 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } úložiště"
-      ],
       "${ total } conversation": [
         "${ total } konverzace",
         "${ total } konverzace",
@@ -4607,9 +4604,6 @@
       ],
       "(No Recipient)": [
         "(Žádný příjemce)"
-      ],
-      "10 email addresses": [
-        "10 e-mailových adres"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Fráze pro obnovení účtu je jedním z nejbezpečnějších způsobů ochrany samotného účtu. Můžete ji použít pro přístup k účtu a obnovení zašifrovaných dat, pokud někdy zapomenete heslo."
@@ -4760,9 +4754,6 @@
       ],
       "Confirm phishing report": [
         "Potvrzení nahlášení phishingu"
-      ],
-      "Continue with ${ planName }": [
-        "Pokračovat s ${ planName }"
       ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
@@ -5220,9 +5211,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste u takových klíčů vybrali volbu \"Nedůvěřovat\"."
       ],
-      "Other options": [
-        "Další volby"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil tuto zprávu jako pokus o phishing. Zkontrolujte, že se jedná o legitimní zprávu."
       ],
@@ -5291,9 +5279,6 @@
       ],
       "Print email": [
         "Vytisknout e-mail"
-      ],
-      "Priority support": [
-        "Prioritní podpora"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Chraňte svůj e-mail před únikem do seznamů e-mailových schránek nebo spammerů pomocí ${ maskMyEmailButton }."
@@ -5412,9 +5397,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Je nám líto, tato zpráva neexistuje, nebo jí již vypršela platnost."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Bezpečné ukládání a sdílení souborů pomocí ${ DRIVE_APP_NAME }."
       ],
@@ -5429,9 +5411,6 @@
       ],
       "Subject: ": [
         "Předmět: "
-      ],
-      "Support for 1 custom email domain": [
-        "Podpora 1 vlastní e-mailové domény"
       ],
       "Support privacy by upgrading for": [
         "Podpořte soukromí aktualizací na"
@@ -5613,12 +5592,6 @@
       "Turn on to search the content of your messages": [
         "Zapněte pro možnost vyhledávat v obsahu vašich zpráv"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Neomezený počet složek, štítků a filtrů"
-      ],
-      "Unlimited messages": [
-        "Neomezený počet zpráv"
-      ],
       "Unlock message": [
         "Odemknout zprávu"
       ],
@@ -5630,6 +5603,9 @@
       ],
       "Updating message content search...": [
         "Aktualizuji vyhledávání ve zprávách..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Upgrade to add more addresses to your account.": [
         "Navyšte svůj účet a přidejte více e-mailových adres k vašemu účtu."
@@ -5660,9 +5636,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Navyšte svůj účet pro použití ${ MAIL_APP_NAME } se stolními klienty třetích stran."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Navyšte účet ještě dnes, abyste nepřišli o následující výhody ${ planName }."
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -8758,8 +8731,8 @@
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"
       ]
     },
     "Title header": {

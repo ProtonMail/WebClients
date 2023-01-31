@@ -589,6 +589,9 @@
       "Upgrade": [
         "Αναβάθμιση"
       ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
       "Upload anyway": [
         "Ανέβασμα οπωσδήποτε"
       ],
@@ -2723,9 +2726,6 @@
       "${ speed }/s": [
         "${ speed }/δ"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } αποθηκευτικός χώρος"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
         "${ updated } επαφές ενημερώθηκαν επιτυχώς."
@@ -2837,9 +2837,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Συνέχιση χρήσης ${ DRIVE_APP_NAME } και ξεκλείδωμα αρχειοθήκης αργότερα."
-      ],
-      "Continue with ${ planName }": [
-        "Συνέχεια με ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Δημιουργήστε ${ calendarsToBeCreated } νέο ημερολόγιο",
@@ -3197,9 +3194,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Μόνο άτομα που κατέχουν τον σύνδεσμο και το συνθηματικό έχουν πρόσβαση σε αυτό το φάκελο."
       ],
-      "Other options": [
-        "Άλλες επιλογές"
-      ],
       "Paused": [
         "Σε παύση"
       ],
@@ -3235,9 +3229,6 @@
       ],
       "Primary": [
         "Κύριο"
-      ],
-      "Priority support": [
-        "Υποστήριξη κατά προτεραιότητα"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Η ιδιωτική αναζήτηση ενεργοποιήθηκε. Τώρα μπορείτε να κλείσετε αυτόν τον διάλογο και να αναζητήσετε αρχεία και φακέλους."
@@ -3313,9 +3304,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά αργότερα."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
       ],
       "support team": [
         "ομάδα υποστήριξης"
@@ -3420,12 +3408,6 @@
       "Unknown error": [
         "Άγνωστο σφάλμα"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
-      ],
-      "Unlimited messages": [
-        "Aπεριόριστα μηνύματα"
-      ],
       "Unlock drive to recover files": [
         "Ξεκλείδωμα αρχειοθήκης προς ανάκτηση αρχείων"
       ],
@@ -3434,9 +3416,6 @@
       ],
       "Updating drive search...": [
         "Ενημέρωση τοπικής αναζήτησης..."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ planName }."
       ],
       "Uploaded": [
         "Ανέβηκε"

@@ -510,10 +510,10 @@
       "Not spam": [
         "Geen spam"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -827,6 +827,9 @@
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Upgrade now": [
+        "Nu upgraden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -2911,9 +2914,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Het is niet gelukt om uw actieve sessies op te halen. Gelieve te ${ refresh } of later opnieuw te proberen."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Filter met deze naam bestaat reeds"
       ],
@@ -4354,9 +4354,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "${ BRAND_NAME } ${ planName } tegoed verdiend"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } heeft een import onderbroken omdat de verbinding met uw andere e-mailprovider verbroken is. Gelieve opnieuw verbinding te maken."
       ],
@@ -4738,9 +4735,6 @@
       "Continue anyway?": [
         "Toch doorgaan?"
       ],
-      "Continue with ${ planName }": [
-        "Ga door met ${ planName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Doorgaan zal uw ${ BRAND_NAME }-account verbinden met ${ name }."
       ],
@@ -4946,9 +4940,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Voor Visa en MasterCard zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
@@ -5293,9 +5284,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Er zijn andere beheerders in uw organisatie aanwezig, u bent verantwoordelijk om het nieuwe wachtwoord met hen te delen."
-      ],
-      "Other options": [
-        "Andere opties"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Verouderd herstelbestand; werk het bij om toegang tot uw gegevens te garanderen"
@@ -5779,9 +5767,6 @@
       ],
       "Update recovery phrase": [
         "Herstelzin bijwerken"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -7323,9 +7308,6 @@
       "What happened?": [
         "Wat is er gebeurd?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Wat is de voornaamste reden dat u uw account verwijdert?"
       ],
@@ -7562,9 +7544,6 @@
       ],
       "Terms": [
         "Voorwaarden"
-      ],
-      "Terms and conditions": [
-        "Algemene voorwaarden"
       ],
       "Trouble signing in?": [
         "Problemen met inloggen?"
@@ -8201,6 +8180,26 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium ${ BRAND_NAME }-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium ${ BRAND_NAME }-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -8270,26 +8269,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium ${ BRAND_NAME }-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium ${ BRAND_NAME }-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10986,9 +10965,6 @@
       ],
       "Your current plan": [
         "Uw huidige abonnement"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
       ],
       "Your import history": [
         "Uw import historiek"

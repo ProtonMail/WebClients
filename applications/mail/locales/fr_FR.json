@@ -4412,9 +4412,6 @@
         "${ selectedFoldersCountLocalized } label sélectionné",
         "${ selectedFoldersCountLocalized } labels sélectionnés"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } d'espace de stockage"
-      ],
       "${ total } conversation": [
         "${ total } conversation",
         "${ total } conversations"
@@ -4459,9 +4456,6 @@
       ],
       "(No Recipient)": [
         "(aucun destinataire)"
-      ],
-      "10 email addresses": [
-        "10 adresses e-mail"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Une phrase de récupération est l'un des moyens les plus sûrs de protéger l'accès à votre compte. Vous pouvez l'utiliser pour accéder à votre compte et récupérer vos données chiffrées si jamais vous oubliez votre mot de passe."
@@ -4570,6 +4564,9 @@
       "Body: ": [
         "Corps : "
       ],
+      "Calendar side panel": [
+        "Panneau latéral du calendrier"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
       ],
@@ -4599,9 +4596,6 @@
       ],
       "Confirm phishing report": [
         "Confirmer le signalement de phishing/hameçonnage"
-      ],
-      "Continue with ${ planName }": [
-        "Continuer avec ${ planName }"
       ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
@@ -5039,9 +5033,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
       ],
-      "Other options": [
-        "Autres options"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Notre système a marqué ce message comme tentative de phishing/hameçonnage. Nous vous invitons à vérifier qu'il est légitime."
       ],
@@ -5108,9 +5099,6 @@
       ],
       "Print email": [
         "Imprimer l'e-mail"
-      ],
-      "Priority support": [
-        "Assistance prioritaire"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Protégez votre adresse électronique des fuites vers les listes de diffusion ou les spammeurs avec ${ maskMyEmailButton }."
@@ -5229,9 +5217,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Stockez et partagez des fichiers en toute sécurité avec ${ DRIVE_APP_NAME }."
       ],
@@ -5246,9 +5231,6 @@
       ],
       "Subject: ": [
         "Objet : "
-      ],
-      "Support for 1 custom email domain": [
-        "Prise en charge d'un nom de domaine personnalisé"
       ],
       "Support privacy by upgrading for": [
         "Soutenez la protection de la vie privée en passant à"
@@ -5424,12 +5406,6 @@
       "Turn on to search the content of your messages": [
         "Activer pour rechercher dans le contenu de vos messages"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
-      ],
-      "Unlimited messages": [
-        "Messages illimités"
-      ],
       "Unlock message": [
         "Débloquer le message"
       ],
@@ -5441,6 +5417,9 @@
       ],
       "Updating message content search...": [
         "Mise à jour de la recherche dans le contenu des messages..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Changez d'offre maintenant pour bénéficier des fonctionnalités, produits et espaces de stockage Premium à un tarif spécial"
       ],
       "Upgrade to add more addresses to your account.": [
         "Passez à un abonnement supérieur pour ajouter plus d'adresses à votre compte."
@@ -5471,9 +5450,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Passez à l’offre supérieure pour utiliser ${ MAIL_APP_NAME } avec des logiciels client tiers."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Passez à l'offre supérieure dès aujourd'hui pour ne pas perdre ces avantages de ${ planName }."
       ],
       "Upload picture": [
         "Importer une image"
@@ -8662,8 +8638,8 @@
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées."
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }."
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Votre essai gratuit Mail Plus finit le ${ textDate }"
       ]
     },
     "Title header": {

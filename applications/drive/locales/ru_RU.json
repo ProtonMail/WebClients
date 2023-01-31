@@ -605,6 +605,9 @@
       "Upgrade": [
         "Улучшить"
       ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
       "Upload anyway": [
         "Все равно загрузить"
       ],
@@ -3026,9 +3029,6 @@
       "${ speed }/s": [
         "${ speed }/с"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } хранилища"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
         "${ updated } контакта успешно обновлено.",
@@ -3043,9 +3043,6 @@
         "(${ memberCount } участника)",
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
-      ],
-      "10 email addresses": [
-        "10 адресов электронной почты"
       ],
       "A number will be added to the filename": [
         "К имени файла будет добавлен номер"
@@ -3151,9 +3148,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Продолжить использование ${ DRIVE_APP_NAME } и разблокировать хранилище позже"
-      ],
-      "Continue with ${ planName }": [
-        "Продолжить с ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Создать ${ calendarsToBeCreated } новый календарь",
@@ -3548,9 +3542,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Только люди со ссылкой и паролем могут получить доступ к этой папке."
       ],
-      "Other options": [
-        "Другие возможности"
-      ],
       "Paused": [
         "Приостановлено"
       ],
@@ -3607,9 +3598,6 @@
       ],
       "Primary": [
         "Основной"
-      ],
-      "Priority support": [
-        "Приоритетная поддержка"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Конфиденциальный поиск включен. Теперь вы можете закрыть этот диалог и начать поиск файлов и папок."
@@ -3688,12 +3676,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Поддержка 1 пользовательского домена электронной почты"
       ],
       "support team": [
         "служба поддержки"
@@ -3806,12 +3788,6 @@
       "Unknown error": [
         "Неизвестная ошибка"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Неограниченное количество папок, меток и фильтров"
-      ],
-      "Unlimited messages": [
-        "Неограниченное количество сообщений"
-      ],
       "Unlock drive to recover files": [
         "Разблокировать хранилище чтобы восстановить файлы"
       ],
@@ -3824,8 +3800,8 @@
       "Updating drive search...": [
         "Обновляем поиск по хранилищу..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Улучшите сегодня, чтобы не потерять следующие преимущества ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
       ],
       "Uploaded": [
         "Загружено"
@@ -6081,8 +6057,8 @@
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"
       ],
       "Your welcome actions": [
         "Ваши приветственные действия"

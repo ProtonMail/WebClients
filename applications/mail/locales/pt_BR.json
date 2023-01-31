@@ -461,7 +461,7 @@
         "Hide My Email"
       ],
       "Hide my email": [
-        "Esconder meu e-mail"
+        "Hide my email"
       ],
       "I have a question": [
         "Eu tenho uma dúvida"
@@ -888,7 +888,7 @@
         "Enviar resposta rápida"
       ],
       "Send read receipt": [
-        "Enviar recibo de leitura"
+        "Enviar confirmação de leitura"
       ],
       "Set": [
         "Definir"
@@ -1259,7 +1259,7 @@
     },
     "Attachment signature verification": {
       "Sender verification failed": [
-        "A verificação do remetente falhou"
+        "Falha na verificação do remetente"
       ],
       "Sender verification passed": [
         "Verificação do remetente bem-sucedida"
@@ -3134,7 +3134,7 @@
         "Falha na criptografia do anexo. Por favor, tente novamente."
       ],
       "Filter with this name already exists": [
-        "Já existe um filtro com este nome"
+        "Já existe um filtro com este nome."
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode ser vazio."
@@ -3871,7 +3871,7 @@
     },
     "forwardmessage": {
       "Date: On ${ date }": [
-        "Data: On ${ date }"
+        "Data: em ${ date }"
       ],
       "From: ${ senderString }": [
         "De: ${ senderString }"
@@ -4420,9 +4420,6 @@
         "${ selectedFoldersCountLocalized } marcador selecionado",
         "${ selectedFoldersCountLocalized } marcadores selecionados"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
-      ],
       "${ total } conversation": [
         "${ total } conversa",
         "${ total } conversas"
@@ -4467,9 +4464,6 @@
       ],
       "(No Recipient)": [
         "(Nenhum destinatário)"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Uma frase de recuperação é uma das formas mais seguras de proteger o acesso à sua conta. Você pode usá-la para acessar sua conta e recuperar seus dados criptografados caso você esqueça sua senha."
@@ -4610,9 +4604,6 @@
       ],
       "Confirm phishing report": [
         "Confirmar denúncia de phishing"
-      ],
-      "Continue with ${ planName }": [
-        "Continuar com ${ planName }"
       ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
@@ -5050,9 +5041,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
-      "Other options": [
-        "Outras opções"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Por favor, verifique se é legítimo."
       ],
@@ -5119,9 +5107,6 @@
       ],
       "Print email": [
         "Imprimir e-mail"
-      ],
-      "Priority support": [
-        "Suporte prioritário"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Proteja seu e-mail de vazamento para listas de e-mail ou spammers com ${ maskMyEmailButton }."
@@ -5240,9 +5225,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "O espaço de armazenamento é compartilhado através do ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Armazene e compartilhe arquivos seguramente com ${ DRIVE_APP_NAME }."
       ],
@@ -5257,9 +5239,6 @@
       ],
       "Subject: ": [
         "Assunto: "
-      ],
-      "Support for 1 custom email domain": [
-        "Suporte para 1 domínio de e-mail personalizado"
       ],
       "Support privacy by upgrading for": [
         "Apoie a privacidade atualizando para"
@@ -5292,7 +5271,7 @@
         "O remetente original desta mensagem não é mais válido. Sua mensagem será enviada do seu endereço padrão ${ defaultEmail }."
       ],
       "The sender has requested a read receipt.": [
-        "O remetente solicitou um recibo de leitura."
+        "O remetente solicitou uma confirmação de leitura."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "A verificação de ${ contactName } falhou: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente o contato para poder enviar uma mensagem para ${ contactAddress } ou editar o contato."
@@ -5314,7 +5293,7 @@
         "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação fará o download de todas as mensagens para que possam ser pesquisadas localmente. Limpar os dados do seu navegador desativará esta opção."
+        "Esta ação baixará todas as mensagens para elas poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -5435,12 +5414,6 @@
       "Turn on to search the content of your messages": [
         "Ative para pesquisar o conteúdo de suas mensagens"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas ilimitadas, marcadores e filtros"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
-      ],
       "Unlock message": [
         "Desbloquear mensagem"
       ],
@@ -5452,6 +5425,9 @@
       ],
       "Updating message content search...": [
         "Atualizando pesquisa de conteúdo de mensagens..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
       "Upgrade to add more addresses to your account.": [
         "Atualize para adicionar mais endereços à sua conta."
@@ -5482,9 +5458,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Atualize para usar o ${ MAIL_APP_NAME } com clientes de desktop de terceiros."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Faça upgrade hoje para não perder os benefícios ${ planName }."
       ],
       "Upload picture": [
         "Carregar imagem"
@@ -8676,8 +8649,8 @@
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Sua avaliação gratuita termina em breve, em ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Sua avaliação gratuita do Mail Plus termina em ${ textDate }"
       ]
     },
     "Title header": {
@@ -8752,7 +8725,7 @@
         "A importação começará com as mensagens mais recentes."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação baixará todas as mensagens para que elas possam ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
+        "Esta ação baixará todas as mensagens para elas poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
       ],
       "This feature is only available for paid users": [
         "Este recurso só está disponível para usuários com um plano pago"
@@ -8866,10 +8839,10 @@
         "Essa ação é irreversível. Digite a palavra ${ boldDanger } no campo para continuar."
       ],
       "This feature requires a paid ${ BRAND_NAME } account": [
-        "Este recurso requer um plano pago do ${ BRAND_NAME }"
+        "Este recurso requer um plano pago do ${ BRAND_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta do ${ BRAND_NAME }. Por favor, considere realizar sua importação de forma personalizada."
+        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta do ${ BRAND_NAME }. Considere realizar sua importação de forma personalizada."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."

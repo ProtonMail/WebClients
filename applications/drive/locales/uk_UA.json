@@ -605,6 +605,9 @@
       "Upgrade": [
         "Покращити"
       ],
+      "Upgrade now": [
+        "Покращити"
+      ],
       "Upload anyway": [
         "Все одно вивантажити"
       ],
@@ -3031,9 +3034,6 @@
       "${ speed }/s": [
         "${ speed }/с"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } сховища"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
         "${ updated } контакти успішно оновлені.",
@@ -3048,9 +3048,6 @@
         "(${ memberCount } учасники)",
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
-      ],
-      "10 email addresses": [
-        "10 адрес е-пошти"
       ],
       "A number will be added to the filename": [
         "Число буде додано до назви файлу"
@@ -3159,9 +3156,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Продовжити користуватися ${ DRIVE_APP_NAME } та розблокувати сховище згодом"
-      ],
-      "Continue with ${ planName }": [
-        "Продовжити з ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Створити ${ calendarsToBeCreated } новий календар",
@@ -3556,9 +3550,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Лише люди з посиланням та паролем можуть отримати доступ до цієї теки."
       ],
-      "Other options": [
-        "Інші варіанти"
-      ],
       "Paused": [
         "Зупинено"
       ],
@@ -3615,9 +3606,6 @@
       ],
       "Primary": [
         "Основний"
-      ],
-      "Priority support": [
-        "Пріоритетна підтримка"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Приватний пошук увімкнено. Тепер ви можете закрити це діалогове вікно та здійснити пошук файлів і тек."
@@ -3696,12 +3684,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Сталася помилка, повторіть спробу пізніше."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Підтримка 1 власного домену е-пошти"
       ],
       "support team": [
         "командою підтримки"
@@ -3814,12 +3796,6 @@
       "Unknown error": [
         "Невідома помилка"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited messages": [
-        "Необмежена кількість повідомлень"
-      ],
       "Unlock drive to recover files": [
         "Розблокувати сховище, щоб відновити файли"
       ],
@@ -3832,8 +3808,8 @@
       "Updating drive search...": [
         "Оновлення пошуку на диску..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Оновіть тарифний план сьогодні, щоб не втратити ці переваги ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
       "Uploaded": [
         "Вивантажено"
@@ -5842,8 +5818,8 @@
       "Your changes are not synced yet": [
         "Ваші зміни ще не синхронізовані"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
       ],
       "Your welcome actions": [
         "Ваші дії"

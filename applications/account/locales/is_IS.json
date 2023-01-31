@@ -488,10 +488,10 @@
       "Not spam": [
         "Ekki ruslpóstur"
       ],
-      "Ok": [
+      "OK": [
         "Í lagi"
       ],
-      "OK": [
+      "Ok": [
         "Í lagi"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -805,6 +805,9 @@
       ],
       "Upgrade": [
         "Uppfæra"
+      ],
+      "Upgrade now": [
+        "Uppfæra núna"
       ],
       "Upload picture": [
         "Senda inn mynd"
@@ -2552,9 +2555,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Tókst ekki að ná virkum setum. Vinsamlega ${ refresh } eða reyndu aftur síðar."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Sía með þessu nafni er þegar til"
       ],
@@ -3746,6 +3746,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Þú munt missa aðgang að öllum núverandi dulkóðuðum gögnum á reikningnum þínum ef þú heldur áfram."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }'s dulkóðunartækni þýðir að enginn hefur aðgang að lykilorðinu þínu - ekki einu sinni við."
+      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } verður sett sem sjálfgefið dagatal."
       ],
@@ -3760,6 +3763,9 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } sameinað dagatal",
         "${ calendarsToBeMergedCount } sameinuð dagatöl"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } af ${ total }"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ógilt"
@@ -3857,6 +3863,9 @@
         "+${ organization.BonusVPN } tenging fyrir ${ VPN_APP_NAME } (gerir þer kleift að tengja fleiri tæki í gegnum VPN)",
         "+${ organization.BonusVPN } tengingar fyrir ${ VPN_APP_NAME } (gerir þer kleift að tengja fleiri tæki í gegnum VPN)"
       ],
+      "1. Invite friends to ${ BRAND_NAME }": [
+        "1. Bjóddu vinum til ${ BRAND_NAME }"
+      ],
       "10 email addresses": [
         "10 netföng"
       ],
@@ -3896,6 +3905,9 @@
       "Account successfully updated": [
         "Aðgangur þinn hefur verið uppfærður"
       ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Virkjaðu að minnsta kosti eina gagna endurheimtuaðferð til að tryggja að þú getir haldið áfram að fá aðgang að innihaldi á þínum ${ BRAND_NAME } notandareikningi ef þú tapar lykilorðinu þínu."
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Bættu við @pm.me netfangi við reikninginn þinn. Þetta einfalda, stutta lén stendur fyrir \"${ MAIL_APP_NAME } me\" eða \"Einkaskilaboð til mín.\""
       ],
@@ -3908,11 +3920,17 @@
       "Add a recovery phone number": [
         "Bæta við símanúmeri fyrir endurheimt"
       ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
+        "Bættu öðru öryggislagi við reikninginn þinn. Þú þarft að staðfesta þig með 2FA í hvert skipti sem þú skráir þig inn."
+      ],
       "Add image URL": [
         "Bæta við slóð á mynd"
       ],
       "Add label": [
         "Bæta við merkingu"
+      ],
+      "Add multiple users to your organization at once.": [
+        "Bættu mörgum notendum við fyrirtækið þitt í einu."
       ],
       "Additional options": [
         "Viðbótar valkostir"
@@ -4046,6 +4064,12 @@
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus eða Visionary áskriftar krafist"
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Áður en þú býrð til þetta netfang þarftu að gefa upp lykilorð og búa til dulkóðunarlykla fyrir það."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Áður en reikningurinn er virkjaður þarftu að gefa upp lykilorð og búa til dulkóðunarlykla fyrir nýju netföngin."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Áður en þú biður um nýjan staðfestingarkóða skaltu athuga ruslmöppuna þína og athuga hvort ${ strong } sé rétt heimilisfang."
       ],
@@ -4054,6 +4078,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Áður en þú getur farið að senda og taka við tölvupósti á nýju póstföngunum þínum, þarftu að útbúa dulritunarlykla fyrir þau."
+      ],
+      "Billing cycle: ${ text }": [
+        "Innheimtulota: ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Bitcoin-millifærslur geta tekið nokkurn tíma áður en þær eru staðfestar (allt\n að 24 klst.). Þegar staðfesting fæst, verður inneign færð á notandaaðganginn\n þinn. Eftir að sú millifærsla er staðfest, geturðu greitt reikninginn þinn\n með inneigninni."
@@ -4091,9 +4118,6 @@
       "Continue anyway?": [
         "Halda samt áfram?"
       ],
-      "Continue with ${ planName }": [
-        "Halda áfram með ${ planName }"
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Búa til ${ calendarsToBeCreated } nýtt dagatal",
         "Búa til ${ calendarsToBeCreated } ný dagatöl"
@@ -4121,6 +4145,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Inneign fyrir ónotaðan hluta fyrri áskriftar þinnar"
+      ],
+      "Credits earned": [
+        "Inneign áunnin"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Í augnablikinu er allt tiltækt geymslurými skráð á aðgang stjórnandans.\n Minnkaðu magnið sem úthlutað er stjórnandanum til að losa pláss fyrir aðra\n notendur. Þú getur líka aukið heildargeymslurýmið hvenær sem er með því að\n uppfæra áskriftina þína."
@@ -4180,6 +4207,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Niðurfærsla mun loka öllum tengingum við greiddar ${ VPN_APP_NAME } netþjónustur."
       ],
+      "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
+        "Sæktu CSV sniðmátið okkar, fylltu út notendaupplýsingarnar og hladdu síðan upp útfylltu CSV skránni þinni til að búa til reikninga fyrir þessa notendur."
+      ],
       "Download recovery file": [
         "Hlaða niður endurheimtuskrá"
       ],
@@ -4210,6 +4240,9 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Tölvupósthýsing fyrir 10 sérsniðin tölvupóstlén fylgir ókeypis með. Hægt er að bæta við fleiri lénum fyrir ${ price }."
       ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "Tölvupósthýsing er aðeins í boði fyrir lén sem þú átt nú þegar. Lénaskráning er ekki í boði eins og er í gegnum ${ BRAND_NAME }. Þú getur hýst tölvupóst fyrir lén skráð hjá hvaða lénaskráraðila sem er."
+      ],
       "Emailing preference saved": [
         "Kjörstilling tölvupósts vistuð"
       ],
@@ -4222,14 +4255,23 @@
       "Enable this address to join this calendar": [
         "Virkjaðu þetta netfang til að tengjast þessu dagatali"
       ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Virkjaðu TLS eða SSL á ytri þjónustu ef hún er studd."
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Ef endurheimtusetning er virkjuð aftur þá mun það útbúa nýja endurheimtusetningu."
       ],
       "Encryption setting updated": [
         "Dulritunarstilling uppfærð"
       ],
+      "Enter code from your authenticator app": [
+        "Sláðu inn kóða úr auðkenningarforritinu þínu"
+      ],
       "Enter key manually instead": [
         "Settu lykill inn handvirkt í staðinn"
+      ],
+      "Enter new password for user ${ userName }.": [
+        "Sláðu inn nýtt lykilorð fyrir notanda ${ userName }."
       ],
       "Enter the code from your authenticator app": [
         "Settu inn kóðann sem auðkenningarforritið útbjó"
@@ -4282,9 +4324,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Síur virka á alla tölvupósta, jafnt póst sem berst og sendan póst. Hver sía verður a.m.k. að innihalda nafn, skilyrði og aðgerð."
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Fyrir Visa og MasterCard, eru það tölustafirnir 3 aftan á kortinu þínu. Fyrir American Express, eru það tölustafirnir 4 framan á kortinu þínu."
-      ],
       "Free up some space or add more storage space.": [
         "Íhugaðu að losa eitthvað pláss eða að kaupa meiri geymslurýmd áður en hún klárast."
       ],
@@ -4296,6 +4335,15 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Með því að búa til nýja endurheimtusetningu verður sú eldri gerð óvirk."
+      ],
+      "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "Fáðu ${ BRAND_NAME } netfang til að nota allar ${ BRAND_NAME } þjónustur þar á meðal ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "Get my ${ BRAND_NAME } address": [
+        "Sækja mitt ${ BRAND_NAME } netfang"
+      ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
+        "Gefðu tákninu lýsandi nafn, eins og þjónustuna sem þú ætlar að nota það með, og veldu eitt af virku sérsniðnu lénunum þínum. Aðeins þetta netfang mun geta sent tölvupóst með þessu tákni."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Sendu vinum þínum dreifilykilinn þinn, eða gerðu hann opinberann á netinu, til að sem flestir geti sent þér enda-í-enda dulritaðan tölvupóst!"
@@ -4440,6 +4488,9 @@
       "it’s imperative": [
         "það er bráðnauðsynlegt"
       ],
+      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Ég hef verið að nota ${ MAIL_APP_NAME } og datt í hug að þér gæti líkað það. Þetta er örugg tölvupóstþjónusta sem verndar friðhelgi þína. Skráðu þig með þessari krækju til að fá 1 mánuð af úrvalsaðgerðum ókeypis: ${ referrerLink }"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Staðfestu bara val þitt og við sjáum um afganginn."
       ],
@@ -4488,6 +4539,9 @@
       "Link type": [
         "Tegund tengils"
       ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "Hlaðið efni er verndað af proxy-þjóni okkar þegar rakningarvörn er virkjuð."
+      ],
       "Loading": [
         "Hleð inn"
       ],
@@ -4508,6 +4562,9 @@
       ],
       "lose access to all current encrypted data": [
         "missa aðgang að öllum fyrirliggjandi dulrituðum gögnum"
+      ],
+      "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
+        "Gakktu úr skugga um að þú ${ addARecoveryMethod } svo að þú getir komist aftur inn á reikninginn þinn ef þú gleymir lykilorðinu þínu."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Settu þessar upplýsingar handvirkt inn í tækið sem þú notar fyrir tveggja-þrepa auðkenningu til að setja upp notandaaðganginn þinn. ${ switchButton }."
@@ -4605,9 +4662,6 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Aðrir stjórnendur eru til staðar í stofnuninni, þú berð ábyrgð á að koma nýja\n lykilorðinu til þeirra."
       ],
-      "Other options": [
-        "Aðrir valkostir"
-      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Úrelt endurheimtuskrá; uppfærðu til að tryggja aðgang að gögnunum þínum"
       ],
@@ -4649,6 +4703,12 @@
       "Please add an email address for the user on row": [
         "Vinsamlegast bættu við netfangi fyrir notandann í röð",
         "Vinsamlegast bættu við netfangi fyrir notendur í röðum"
+      ],
+      "Please check your file for errors, or contact customer support for more information.": [
+        "Vinsamlegast athugaðu skrána þína gagnvart villum, eða hafðu samband við þjónustuver til að fá frekari upplýsingar."
+      ],
+      "Please check your file, or try using our ${ csvTemplateButton }.": [
+        "Vinsamlegast athugaðu skrána þína, eða reyndu að nota okkar ${ csvTemplateButton }."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vinsamlega sláðu inn 12 orða endurheimtusetninguna sem tengist reikningnum þínum."
@@ -4700,6 +4760,12 @@
       ],
       "Preview": [
         "Forskoðun"
+      ],
+      "Preview failed to be loaded": [
+        "Ekki tókst að hlaða forskoðun"
+      ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Verðið inniheldur alla viðeigandi afslætti sem byggjast á hringrásarafsláttum og afsláttarmiðum sem ekki eru útrunnir og sem vistaðir eru á reikningnum þínum."
       ],
       "Priority support": [
         "Forgangsstuðningur"
@@ -4806,6 +4872,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Þar sem þú ert dyggur notandi, þá er notendaaðgangurinn þinn með fleiri eiginleika virka."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "SMTP gerir þjónustu eða tækjum þriðja aðila kleift að senda tölvupóst í gegnum ${ MAIL_APP_NAME }. Þetta er nýr eiginleiki sem er í boði fyrir valda viðskiptanotendur. Vinsamlegast sendu ${ emailLink } tölvupóst til að biðja um aðgang."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "SMTP gerir þjónustu eða tækjum þriðja aðila kleift að senda tölvupóst í gegnum ${ MAIL_APP_NAME }. Til að nota þennan eiginleika skaltu byrja á því að búa til nýtt tákn."
+      ],
       "Some keys successfully reactivated": [
         "Suma lykla tókst að virkja aftur"
       ],
@@ -4869,6 +4941,9 @@
         "Eftirfarandi netfang var ekki útbúið.",
         "Eftirfarandi netföng voru ekki útbúin."
       ],
+      "The format of your CSV file is incorrect.": [
+        "Snið CSV skráarinnar er rangt."
+      ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Innflutnings-Útflutnings forritið gerir þér kleift að flytja út skilaboð í staðbundið afrit og að endurheimta fyrri afrit inn á reikninginn þinn."
       ],
@@ -4884,6 +4959,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Þessar stillingar eru útvegaðar til að vinna með WireGuard beinum og opinberum viðskiptavinum."
       ],
+      "They'll receive a free month of ${ planName }.": [
+        "Þeir munu fá ókeypis mánuð af ${ planName }."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Þessum reikningi hefur verið lokað vegna hugsanlegs brots á skilmálum."
       ],
@@ -4892,6 +4970,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Þetta getur tekið nokkrar sekúndur eða örfáar mínútur, eftir því um hverskyns\n tæki er um að ræða"
+      ],
+      "This could take up to 15 minutes. Please do not close this page or disconnect from the internet.": [
+        "Þetta gæti tekið allt að 15 mínútur. Vinsamlegast ekki loka þessari síðu eða aftengjast internetinu."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Þetta er 12 orða setning sem þú varst beðinn um að útbúa."
@@ -4914,6 +4995,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Þessi tengill gæti verið staflíkisdulbúin árás (homograph attack). Gakktu úr skugga um að þetta sé sá tengill/slóð sem þú ætlaðir að skoða, en annars skaltu ekki opna þetta."
       ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "Þetta tákn verður ekki tiltækt eftir að þú lokar þessum glugga og þú ættir ekki að deila því með neinum."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Þessi notandi er núna ábyrgur fyrir greiðslum af hálfu stofnunarinnar. Með því að niðurfæra notandann munt þú verða ábyrgur fyrir greiðslum fyrir stofnunina."
       ],
@@ -4931,6 +5015,9 @@
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Þetta mun hlaða niður skrá sem inniheldur einkalykilinn þinn. Verndaðu þessa skrá með því að dulkóða hana með lykilorði."
+      ],
+      "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Þetta gerir kleift að nota PayPal til að greiða fyrir þína ${ BRAND_NAME } áskrift. Við munum vísa þér á PayPal í nýjum vafraflipa. Ef þú notar sprettigluggavörn, vinsamlegast slökktu á þeim til að halda áfram."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Þetta mun eyða öllum gögnum og póstföngum sem tengjast þessum notanda."
@@ -4956,6 +5043,9 @@
       "to continue to ${ toAppName }": [
         "til að fara í ${ toAppName }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Til að bæta þjónustu okkar stöðugt söfnum við stundum gögnum til að fylgjast með því að forritin okkar virki rétt. Þessum upplýsingum er ekki deilt með neinni þjónustu af hálfu þriðja aðila."
+      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Til að afkóða og skoða læst gögn eftir endurstillingu lykilorðs skaltu velja endurheimtuaðferð."
       ],
@@ -4967,6 +5057,9 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Til að flytja inn viðburði skaltu fyrst búa til dagatal í ${ CALENDAR_APP_NAME }. Þetta er þar sem atburðir munu birtast eftir innflutning."
+      ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Til að fylgjast með nýjustu þróun á ${ BRAND_NAME } vörum, þú getur þú gerst áskrifandi að ýmsum tölvupóstum okkar og heimsótt bloggið okkar af og til."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Til að halda áfram skaltu velja aðferð til að endurheimta reikning svo við getum staðfest beiðnina."
@@ -4982,6 +5075,18 @@
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Heildarfjöldi netfanga"
+      ],
+      "Total storage": [
+        "Heildargeymslurými"
+      ],
+      "Total supported domains": [
+        "Heildarfjöldi studdra léna"
+      ],
+      "Total VPN connections": [
+        "Heildarfjöldi VPN tenginga"
       ],
       "Two-factor authentication disabled": [
         "Tveggja-þrepa auðkenning er óvirk"
@@ -5022,8 +5127,8 @@
       "Update recovery phrase": [
         "Uppfæra endurheimtusetningu"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Uppfærðu í dag til að forðast að tapa eftirfarandi ${ planName } kostum."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Uppfærðu núna til að fá úrvals eiginleika, vörur og geymslu á sérstöku verði"
       ],
       "Upload picture": [
         "Settu inn mynd"
@@ -5040,6 +5145,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Notaðu eftirfarandi skilríki þegar þú tengist ${ VPN_APP_NAME } netþjóna án forrits. Dæmi um notkunartilvik eru: Tunnelblick á macOS, OpenVPN á GNU/Linux."
       ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "Notaðu valið netfang sem SMTP notandanafn í ytri þjónustu og útbúna tákninu sem SMTP lykilorðið."
+      ],
       "Verification can take a few minutes.": [
         "Sannvottun getur tekið nokkrar mínútur."
       ],
@@ -5048,6 +5156,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Sannvottun mun opna nýjan flipa, gerðu allar sprettgluggavarnir óvirkar. Þú verður ekki krafin(n) um greiðslu. Upphæðir sem notaðar eru til að sannvotta greiðslukort eru endurgreiddar samstundis."
+      ],
+      "Verify your identity with a time-based one-time password from an authenticator app": [
+        "Staðfestu auðkenni þitt með tímabundnu einnota lykilorði úr auðkenningarforriti"
       ],
       "Verifying your payment": [
         "Staðfestir greiðsluna þína"
@@ -5066,6 +5177,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Við mælum með því að nota endurheimtusetninguna þína í staðinn."
+      ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Við geymum endurheimtuupplýsingar á öruggan hátt á þínu trausta tæki til að koma í veg fyrir að þú glatir gögnunum þínum"
       ],
       "We use 3-D Secure to protect your payments.": [
         "Við notum 3-D Secure til að vernda greiðslurnar þínar."
@@ -5103,6 +5217,9 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Þegar tilkynningar eru virkar sendum við tilkynningu á endurheimtunetfangið þitt ef þú ert með ný skilaboð í þínum ${ MAIL_APP_NAME } reikningi."
       ],
+      "When they subscribe to a plan, you'll get credits to use on your subscription.": [
+        "Þegar þeir gerast áskrifendur að áskriftarþjónustu, færðu inneign til að nota í áskriftinni þinni."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Þegar þú setur upp tvíþætta auðkenningu þá gefum við upp endurheimtarkóða sem þú getur notað til að skrá þig inn ef þú missir aðgang að auðkenningarforritinu þínu."
       ],
@@ -5130,6 +5247,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Þú ert skráður inn sem ${ user.Name } (${ user.Email })."
       ],
+      "You are signed in to the account ${ memberAddress }.": [
+        "Þú ert skráður inn á reikninginn ${ memberAddress }."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Þú getur líka sameinað innflutt dagatöl við núverandi ${ BRAND_NAME } dagatöl."
       ],
@@ -5144,6 +5264,9 @@
       ],
       "You can import one data type at a time.": [
         "Þú getur flutt inn eina gagnategund í einu."
+      ],
+      "You can now access and manage the account as an administrator.": [
+        "Þú getur nú fengið aðgang að og stjórnað reikningnum sem stjórnandi."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Þú getur núna fengið skilaboð á þitt @pm.me netfang. Uppfærðu í greidda áskrift til að senda líka tölvupóst með því að nota þitt @pm.me netfang og stofna viðbótar @pm.me netföng."
@@ -5160,6 +5283,9 @@
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "Þú getur ekki sent meira en ${ emailSendLimitNumber } boð í tölvupósti fyrir næsta sólarhring",
         "Þú getur ekki sent meira en ${ emailSendLimitNumber } boð í tölvupósti fyrir næsta sólarhring"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Þú getur ekki vísað í ${ MAIL_APP_NAME } notendur"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Þú getur ekki notað OpenVPN / IKEv2 skilríki til að skrá þig inn í ${ VPN_APP_NAME } forrit eða í stjórnborð ${ VPN_APP_NAME }. ${ learnMore }"
@@ -5184,6 +5310,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Þú verður að hafa kreditkort eða bankareikning tengt PayPal reikningnum þínum. Ef PayPal reikningurinn þinn er ekki með það, vinsamlegast smelltu á hnappinn hér að neðan."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Þú verður að fjarlægja öll viðbótar persónuleg dagatöl og alla deilda dagatalstengla áður en þú getur sagt upp tölvupóstáskriftinni þinni."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Þú verður að fjarlægja öll viðbótar persónuleg dagatöl og alla deilda dagatalstengla áður en þú getur sagt upp áskriftinni þinni."
@@ -5214,6 +5343,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Þér verður fljótlega endurbeint til PayPal til að sannreyna greiðsluna þína."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Þú munt ekki geta endurheimt læst gögn með því að nota endurheimtuskrárnar þínar."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
         "Þú munt ekki geta endurheimt læst gögn með því að nota endurheimtuskrárnar þínar. Þetta mun einnig ógilda traustar upplýsingar um endurheimt tækis."
@@ -6297,9 +6429,6 @@
       ],
       "What happened?": [
         "Hvað gerðist?"
-      ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
       ],
       "What is the main reason you are deleting your account?": [
         "Hver er aðalástæðan fyrir því að þú ert að eyða aðgangnum þínum?"
@@ -8823,11 +8952,11 @@
       "Your current plan": [
         "Þín núverandi áskrift"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Ókeypis prufuáskrift þinni lýkur fljótlega, þann ${ formattedEndDate }"
-      ],
       "Your import history": [
         "Núverandi og fyrri innflutningur"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Mail Plus ókeypis prufuáskriftinni þinni lýkur þann ${ textDate }"
       ],
       "Your plan": [
         "Þín áskriftaráætlun"

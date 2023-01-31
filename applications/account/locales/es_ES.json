@@ -280,10 +280,10 @@
         "Hecho"
       ],
       "Downgrade": [
-        "Degradar"
+        "Pasar a un plan inferior"
       ],
       "Downgrade account": [
-        "Pasar a un plan inferior"
+        "Pasar a una cuenta inferior"
       ],
       "Download": [
         "Descargar"
@@ -510,11 +510,11 @@
       "Not spam": [
         "No es spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -604,7 +604,7 @@
         "Notificar un problema"
       ],
       "Request a feature": [
-        "Solicitar una funcionalidad"
+        "Solicitar una función"
       ],
       "Request new code": [
         "Solicitar un nuevo código"
@@ -646,7 +646,7 @@
         "Volver a iniciar sesión"
       ],
       "Review": [
-        "Revisar"
+        "Verificar"
       ],
       "Revoke": [
         "Revocar"
@@ -682,7 +682,7 @@
         "Configuración de búsqueda"
       ],
       "See plan features": [
-        "Ver las características del plan"
+        "Ver las funciones del plan"
       ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
@@ -826,7 +826,10 @@
         "Actualizar frase de recuperación"
       ],
       "Upgrade": [
-        "Mejorar"
+        "Actualizar"
+      ],
+      "Upgrade now": [
+        "Actualizar"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -1096,7 +1099,7 @@
     },
     "Bridge version load failed": {
       "Failed to find latest version": [
-        "No se pudo encontrar la última versión"
+        "Error al encontrar la última versión"
       ]
     },
     "Bug category": {
@@ -1122,7 +1125,7 @@
         "Problema con Drive"
       ],
       "Feature request": [
-        "Solicitar funcionalidad"
+        "Solicitar función"
       ],
       "Import / export problem": [
         "Problema de importación/exportación"
@@ -1348,7 +1351,7 @@
         "El enlace del calendario no está accesible temporalmente"
       ],
       "Failed to sync calendar": [
-        "Fallo al sincronizar el calendario"
+        "Error al sincronizar el calendario"
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
@@ -2510,7 +2513,7 @@
         "Parece que falta el encabezado \"${ options.fieldName }\" a tu archivo ."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
-        "Hemos detectado errores en varias filas durante la importación. Averigua tu archivo CSV."
+        "Hemos detectado errores en varias filas durante la importación. Verifica tu archivo CSV."
       ]
     },
     "Cycle": {
@@ -2626,7 +2629,7 @@
         "Además, hemos emparejado automáticamente los campos CSV con los campos vCard. Puedes verificar y cambiar este emparejamiento manualmente."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Hemos detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que deseas importar."
+        "Hemos detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
       ]
     },
     "Domain label": {
@@ -2644,19 +2647,19 @@
         "${ name } añadido"
       ],
       "${ name } deletion failed": [
-        "${ name } no se pudo eliminar"
+        "Error al eliminar ${ name }"
       ],
       "${ name } failed to move to spam list": [
-        "${ name } no se pudo mover a la lista de spam"
+        "Error al mover ${ name } a la lista de spam"
       ],
       "${ name } failed to move to the not-spam list": [
         "Error al mover ${ name } a la lista de \"no es spam\""
       ],
       "${ name } failed to move to your block list": [
-        "${ name } no se pudo mover a tu lista de bloqueados"
+        "Error al mover ${ name } a tu lista de bloqueados"
       ],
       "${ name } moved to not spam list": [
-        "${ name } movido a la lista de no spam"
+        "${ name } movido a la lista de \"No es spam\""
       ],
       "${ name } moved to spam list": [
         "${ name } movido a la lista de spam"
@@ -2761,16 +2764,16 @@
         "${ name } añadido"
       ],
       "${ name } deletion failed": [
-        "${ name } no se pudo eliminar"
+        "Error al eliminar ${ name }"
       ],
       "${ name } failed to move to spam list": [
-        "${ name } no se pudo mover a la lista de spam"
+        "Error al mover ${ name } a la lista de spam"
       ],
       "${ name } failed to move to the not-spam list": [
         "Error al mover ${ name } a la lista de \"no es spam\""
       ],
       "${ name } failed to move to your block list": [
-        "${ name } no se pudo mover a tu lista de bloqueados"
+        "Error al mover ${ name } a tu lista de bloqueados"
       ],
       "${ name } moved to not spam list": [
         "${ name } movido a la lista de no spam"
@@ -2911,9 +2914,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Error al obtener las sesiones activas. ${ refresh } o inténtalo de nuevo más tarde."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre"
       ],
@@ -3039,7 +3039,7 @@
         "El proceso de pago ha expirado"
       ],
       "Payment process failed": [
-        "El proceso de pago ha fallado"
+        "Error al procesar el pago"
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
@@ -3073,10 +3073,10 @@
         "Establece primero un correo electrónico de recuperación/notificación."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Actualiza a un plan de empresa con más de 1 usuario para un soporte multiusuario."
+        "Actualiza a un plan para empresa con más de 1 usuario para un soporte multiusuario."
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Actualiza a un plan de empresa con más de 1 usuario para administrar varios usuarios."
+        "Actualiza a un plan para empresa con más de 1 usuario para administrar varios usuarios."
       ],
       "Port is required": [
         "Puerto requerido"
@@ -3113,7 +3113,7 @@
         "Firma no verificada"
       ],
       "Signature verification failed": [
-        "La verificación de la firma ha fallado"
+        "Error al verificar la firma"
       ],
       "Some of your folder names are reserved. Please customize the import to edit these names.": [
         "Algunos de tus nombres de carpetas están reservados. Personaliza la importación para editar estos nombres."
@@ -3248,10 +3248,10 @@
         "Has alcanzado el número máximo de calendarios personales. No se pudieron importar algunos calendarios."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Has utilizado todas las direcciones de tu plan. Actualiza tu plan para añadir una nueva dirección."
+        "Has utilizado todas las direcciones de tu plan. Actualiza tu plan para añadir una dirección."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Has utilizado todos los usuarios de tu plan. Actualiza tu plan para añadir un nuevo usuario."
+        "Has utilizado todos los usuarios de tu plan. Actualiza tu plan para añadir un usuario."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Debes activar las claves de tu organización. Sin la activación no serás capaz de crear nuevos usuarios, agregar direcciones a los usuarios o acceder a cuentas de usuario no privadas."
@@ -3310,7 +3310,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "El cifrado ha fallado"
+        "Error con el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
         "Versiones vCard menores a 3.0 no compatibles"
@@ -3362,7 +3362,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "El cifrado ha fallado"
+        "Error con el cifrado"
       ],
       "End time out of bounds": [
         "Hora final fuera de límites"
@@ -3371,7 +3371,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falló la validación del evento"
+        "Error al validar el evento"
       ],
       "Floating times not supported": [
         "Tiempos flotantes no admitidos"
@@ -3617,7 +3617,7 @@
         "No se ha podido exportar algunos de tus eventos."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "La conexión a internet fue interrumpida, causando el fallo del proceso de exportación. Inténtalo de nuevo."
+        "La conexión a internet fue interrumpida causando un error con el proceso de exportación. Inténtalo de nuevo."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Puedes guardar un archivo ICS de los eventos exportados."
@@ -3658,7 +3658,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Deshabilita 2FA con la clave de seguridad antes de desactivar la clave TOTP."
+        "Deshabilita la opción 2FA con la clave de seguridad antes de desactivar la clave TOTP."
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
@@ -3675,7 +3675,7 @@
         "Añade un nombre para identificar tu llave de seguridad."
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "¿Está seguro de querer eliminar la clave de seguridad ${ name }?"
+        "¿Estás seguro de querer eliminar la clave de seguridad ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserta una llave de seguridad asociada con tu cuenta de ${ BRAND_NAME }."
@@ -3696,7 +3696,7 @@
         "Esto eliminará todas las llaves de seguridad vinculadas a tu cuenta."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Para activar 2FA con una clave de seguridad, necesitas una aplicación de autenticación."
+        "Para activar la opción 2FA con una clave de seguridad, necesitas una aplicación de autenticación."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifica tu identidad con una clave física de seguridad U2F o FIDO2."
@@ -4262,7 +4262,7 @@
         "Ir a ${ calendarViewLink } en Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Sitúa el ratón sobre el calendario que deseas importar y abre el menú desplegable."
+        "Pasa el ratón sobre el calendario que quieres importar y abre el menú desplegable."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Selecciona ${ boldExport } para exportar el calendario como un archivo ICS."
@@ -4270,7 +4270,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "¿Estás seguro de querer importar una clave privada? La importación de una clave privada generada de forma insegura o filtrada puede perjudicar la seguridad de tus correos electrónicos.\n\nTen en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como tu nombre completo) que no deseas publicar, edita la clave antes de importarla."
+        "¿Estás seguro de querer importar una clave privada? La importación de una clave privada generada de forma insegura o filtrada puede perjudicar la seguridad de tus correos electrónicos.\n\nTen en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como tu nombre completo) que no quieres publicar, edita la clave antes de importarla."
       ]
     },
     "Import provider": {
@@ -4306,7 +4306,7 @@
         "Retrasada"
       ],
       "Failed": [
-        "Fallida"
+        "Error"
       ],
       "In progress": [
         "En progreso"
@@ -4357,9 +4357,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continuas perderás el acceso a todos los datos cifrados actuales en tu cuenta."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "Créditos ganados de ${ BRAND_NAME } ${ planName }"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } ha pausado una importación porque ha perdido la conexión con tu otro proveedor de correo electrónico. Vuelve a conectar."
       ],
@@ -4397,7 +4394,7 @@
         "${ firstRemainingCalendarName } se definirá como calendario por defecto."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "Se puede también usar ${ MAIL_APP_NAME } con una única contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que deseas utilizar y haz clic en Guardar."
+        "Se puede también usar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que quieres utilizar y haz clic en Guardar."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } admite las firmas DKIM para los dominios personalizados. Para utilizar la autenticación DKIM, añade el siguiente registro CNAME en tu configuración DNS para este dominio. Esto puede hacerse normalmente en el panel de control de tu registrador de nombres de dominio."
@@ -4606,6 +4603,9 @@
       "Already used": [
         "Ya usado"
       ],
+      "American Express SafeKey logo": [
+        "Logo de American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Cantidad por debajo del mínimo (${ amount })."
       ],
@@ -4649,7 +4649,7 @@
         "¿Estás seguro de que quieres eliminar esta etiqueta?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "¿Está seguro de que desea deshabilitar la autenticación de dos factores?"
+        "¿Estás seguro de que quieres deshabilitar la autenticación de dos factores?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
@@ -4697,7 +4697,7 @@
         "Antes de activar la cuenta necesitas proporcionar una contraseña y crear las claves de cifrado para las nuevas direcciones."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación revisa tu carpeta de spam y comprueba que ${ strong } la dirección es correcta."
+        "Antes de solicitar un nuevo código de verificación verifica tu carpeta de spam y comprueba que ${ strong } la dirección es correcta."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Antes de poder recibir correos electrónicos para tus direcciones de dominio personalizadas en ${ MAIL_APP_NAME }, debes añadir los siguientes registros MX a tu DNS. Esto puede hacerse normalmente en el panel de control de tu registrador de nombres de dominio."
@@ -4715,10 +4715,10 @@
         "Bloquea a los remitentes para que no vean si has abierto un mensaje y cuándo lo has hecho."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Al degradar a un plan gratuito, perderás permanentemente estos beneficios, incluso si actualizas de nuevo tu cuenta en el futuro."
+        "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si actualizas de nuevo tu cuenta en el futuro."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Al pasar a un plan con menos funciones perderás los siguientes beneficios. ¿Estás seguro de que deseas continuar?"
+        "Al pasar a un plan con menos funciones perderás los siguientes beneficios. ¿Estás seguro de que quieres continuar?"
       ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
@@ -4743,9 +4743,6 @@
       ],
       "Continue anyway?": [
         "¿Continuar de todos modos?"
-      ],
-      "Continue with ${ planName }": [
-        "Continuar con ${ planName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Al continuar se conectará tu cuenta de ${ BRAND_NAME } a ${ name }."
@@ -4777,6 +4774,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu anterior suscripción al plan"
+      ],
+      "Credits earned": [
+        "Créditos ganados"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualmente todo el almacenamiento disponible está asignado a la cuenta del administrador. Reduce la asignación de la cuenta del administrador para liberar espacio para usuarios adicionales. Puedes aumentar el almacenamiento total en cualquier momento mejorando tu cuenta."
@@ -4810,6 +4810,9 @@
       ],
       "Delete link?": [
         "¿Eliminar enlace?"
+      ],
+      "Discover ProtectBuy logo": [
+        "Logo de Discover ProtectBuy"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "NO olvides esta contraseña. Si la olvidas, no podrás iniciar sesión ni descifrar tus mensajes."
@@ -4948,13 +4951,13 @@
         "expira ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
-        "No se han podido obtener los registros."
+        "Error al obtener los registros"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Los filtros funcionan en todos los correos electrónicos, incluidos los entrantes o enviados. Cada filtro debe contener al menos un nombre, una condición y una acción."
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Para Visa y Mastercard, los 3 dígitos están detrás de la tarjeta. Para American Express, los 4 dígitos de la parte están en la frente de la tarjeta."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Para Visa, MasterCard y Discover, los 3 dígitos en la parte trasera de la tarjeta. Para American Express, los 4 dígitos en la parte frontal de la tarjeta."
       ],
       "Free up some space or add more storage space.": [
         "Libera algo de espacio o añade más espacio de almacenamiento."
@@ -5008,7 +5011,7 @@
         "Si no encuentras el correo electrónico en tu bandeja de entrada, comprueba tu carpeta de spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "Si tienes un dominio personalizado con ${ MAIL_APP_NAME }, puedes establecer una dirección de correo electrónico \"catch-all\" para recibir mensajes enviados a tu dominio pero a una dirección de correo electrónico no válida (por ejemplo, debido a errores tipográficos)."
+        "Si tienes un dominio personalizado con ${ MAIL_APP_NAME }, puedes establecer una dirección de correo electrónico \"catch-all\" para recibir mensajes enviados a tu dominio pero también a una dirección de correo electrónico no válida (por ejemplo, debido a errores tipográficos)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Si tienes un código promocional, introdúcelo abajo para aplicar tu descuento."
@@ -5017,7 +5020,7 @@
         "Si nunca has utilizado la autenticación de dos factores anteriormente, te recomendamos encarecidamente ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Si has configurado tanto SPF como DKIM, DMARC te permite especificar cómo otros servicios de correo electrónico deben entregar el correo electrónico para tu dominio si fallaron las comprobaciones de SPF y DKIM. Esto puede hacer que sea más difícil para los spammers que fingen ser tú, pero también puede causar problemas de entrega si no se hace correctamente."
+        "Si has configurado tanto SPF como DKIM, DMARC te permite especificar cómo otros servicios de correo electrónico deben entregar el correo electrónico para tu dominio si ha ocurrido un problema con las verificaciones de SPF y DKIM. Esto puede hacer que sea más difícil para los spammers que fingen ser tú, pero también puede causar problemas de entrega si no se hace correctamente."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Si pierdes tus datos de inicio de sesión y necesitas restablecer tu cuenta, ${ boldImperative } que tengas un ${ boldAccountRecovery } configurado."
@@ -5029,10 +5032,10 @@
         "Si pierdes tu dispositivo habilitado para dos factores, estos códigos pueden utilizarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Si continúas con la baja, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
+        "Si continúas n plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Si continúas con la baja, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME }, incluyendo filtros y almacenamiento adicionales."
+        "Si continúas un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME }, incluyendo filtros y almacenamiento adicionales."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ VPN_APP_NAME }."
@@ -5204,6 +5207,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Introduce manualmente esta información en tu dispositivo de autenticación de dos factores para configurar tu cuenta. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Logo de Mastercard SecureCode"
+      ],
       "Member": [
         "Miembro"
       ],
@@ -5300,9 +5306,6 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existen otros administradores en tu organización, eres responsable de comunicarles la nueva contraseña."
       ],
-      "Other options": [
-        "Otras opciones"
-      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Archivo de recuperación obsoleto. Actualízalo para garantizar el acceso a tus datos"
       ],
@@ -5335,7 +5338,7 @@
         "Número de teléfono"
       ],
       "Plan upgrade required": [
-        "Se requiere actualizar el plan"
+        "Necesitas actualizar tu plan."
       ],
       "Please add a password for the user on row": [
         "Añade una contraseña para el usuario en fila.",
@@ -5406,7 +5409,7 @@
         "Previsualizar"
       ],
       "Preview failed to be loaded": [
-        "No se pudo cargar la vista previa"
+        "Error al cargar la vista previa"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin caducar guardados en tu cuenta."
@@ -5490,7 +5493,7 @@
         "Selecciona lo que quieres importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Seleccione los calendarios que desea importar. Se creará un nuevo calendario para cada calendario importado hasta el límite de 20 calendarios."
+        "Selecciona los calendarios que quieres importar. Se creará un nuevo calendario para cada calendario importado hasta el límite de 20 calendarios."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> correo electrónico seguro."
@@ -5520,7 +5523,7 @@
         "Registrado"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "Como eres un usuario leal, tu cuenta tiene habilitadas características adicionales."
+        "Como eres un usuario leal, tu cuenta tiene habilitadas funciones adicionales."
       ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
         "El protocolo SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME }. Es una nueva función disponible para algunos usuarios profesionales. Envía un correo electrónico a ${ emailLink } para solicitar acceso."
@@ -5577,7 +5580,7 @@
         "El calendario se eliminará de tu cuenta."
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "La dirección de correo electrónico que has colocado en la parte superior de la lista es tu dirección de correo electrónico por defecto. Arrastra y suelta para reordenar tus direcciones."
+        "La dirección de correo electrónico que has colocado en la parte superior de la lista es tu dirección de correo electrónico por defecto. Arrastra y coloca para reordenar tus direcciones."
       ],
       "The following address is available:": [
         "La siguiente dirección está disponible:"
@@ -5742,7 +5745,7 @@
         "Almacenamiento total"
       ],
       "Total supported domains": [
-        "Dominios compatibles totales"
+        "Total de dominios compatibles"
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
@@ -5786,8 +5789,8 @@
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Actualice hoy para evitar perder los beneficios de ${ planName } $."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -5824,6 +5827,9 @@
       ],
       "Version ${ version }": [
         "Versión ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Logo de Visa Secure"
       ],
       "Warning:": [
         "Advertencia:"
@@ -5925,7 +5931,7 @@
         "Puedes personalizar y descargar tus facturas con fines de contabilidad."
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Puedes habilitar el registro de autenticación para ver cuándo se accede a tu cuenta y desde qué IP. Registraremos la dirección IP que accede a la cuenta y la hora, así como los intentos fallidos."
+        "Puedes habilitar el registro de autenticación para ver cuándo se accede a tu cuenta y desde qué IP. Registraremos la dirección IP que accede a la cuenta y la hora, así como los intentos incorrectos."
       ],
       "You can import one data type at a time.": [
         "Puedes importar un tipo de datos a la vez."
@@ -6634,7 +6640,7 @@
         "Respuesta automática"
       ],
       "Auto-unsubscribe": [
-        "Darte de baja automáticamente"
+        "Cancelar subscripción automáticamente"
       ],
       "Awarded": [
         "Galardonado"
@@ -7183,7 +7189,7 @@
         "Enviar respuesta automática"
       ],
       "Send crash reports": [
-        "Enviar informes de fallos"
+        "Enviar informes de error"
       ],
       "Send in": [
         "Enviar"
@@ -7329,8 +7335,8 @@
       "What happened?": [
         "¿Qué ha ocurrido?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "¿Cuál es la razón principal por la que estás cancelando?"
       ],
       "What is the main reason you are deleting your account?": [
         "¿Cuál es el motivo principal por el que eliminas tu cuenta?"
@@ -7569,17 +7575,14 @@
       "Terms": [
         "Términos"
       ],
-      "Terms and conditions": [
-        "Términos y condiciones"
-      ],
       "Trouble signing in?": [
         "¿Problemas para iniciar sesión?"
       ],
       "Upgrade account": [
-        "Mejorar cuenta"
+        "Actualizar cuenta"
       ],
       "Upgrade your plan": [
-        "Mejora tu plan"
+        "Actualiza tu plan"
       ],
       "View guide": [
         "Ver guía"
@@ -7907,13 +7910,13 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "VPN a máxima velocidad"
+        "Velocidad VPN máxima"
       ],
       "Keep your inbox organized with folders": [
         "Mantén tu bandeja de entrada organizada con carpetas"
       ],
       "Medium VPN speed": [
-        "VPN a velocidad media"
+        "Velocidad VPN media"
       ]
     },
     "new_plans: action": {
@@ -7954,12 +7957,12 @@
         "Cambiar plan"
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
-        "Mejorar a ${ upsellPlanHumanSize }"
+        "Pasar a ${ upsellPlanHumanSize }"
       ]
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        "Degradar a ${ downgradedPlanName }"
+        "Pasar a ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Ver todos los planes de ${ BRAND_NAME }"
@@ -7971,10 +7974,10 @@
         "Desde ${ price } por usuario"
       ],
       "Keep my ${ currentPlanName } account": [
-        "Seguir en ${ currentPlanName }"
+        "Continuar con mi cuneta ${ currentPlanName }"
       ],
       "Upgrade now": [
-        "Actualizar ahora"
+        "Actualizar"
       ]
     },
     "new_plans: attribute": {
@@ -8109,7 +8112,7 @@
         "Firmas HTML"
       ],
       "Kill switch/always-on VPN": [
-        "VPN con Kill Switch/siempre activa"
+        " Kill switch/VPN siempre activa"
       ],
       "Limited support": [
         "Soporte limitado"
@@ -8207,6 +8210,26 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedTrialExpirationDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8221,16 +8244,16 @@
         "* Con 12 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
       ],
       "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Por la suscripción de 15 meses. Se ofrecen otras opciones de suscripción cuando se va a formalizar la compra."
+        "* Con 15 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* Con 24 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
       ],
       "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Por la suscripción de 30 meses. Se ofrecen otras opciones de suscripción cuando se va a formalizar la compra."
+        "* Con 30 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        "El crédito, el prorrateo y los cupones que puedan utilizarse se aplicarán en el siguiente paso"
+        "El crédito, el prorrateo y los cupones que puedan utilizarse se aplicarán en el siguiente paso."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad totales con todos los servicios de ${ BRAND_NAME } combinados."
@@ -8278,26 +8301,6 @@
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "La prueba acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -8331,7 +8334,7 @@
         "términos y condiciones"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Para empezar, elige el nombre por el que quieres que se te reconozca. Será el nombre que verán las demás personas cuando les envíes un correo, las invites a un evento o compartas archivos con ellas."
+        "Para empezar, elige un nombre para mostrar. Será el nombre que verán las demás personas cuando les envíes un correo, las invites a un evento o compartas archivos con ellas."
       ],
       "Your ${ planName } subscription is now active.": [
         "Tu suscripción de ${ planName } ahora está activa."
@@ -8345,7 +8348,7 @@
         "Prueba de ${ mailPlanName }"
       ],
       "Upgrade to ${ planName }": [
-        "Mejorar a ${ planName }"
+        "Pasar a ${ planName }"
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -8362,7 +8365,7 @@
         "¡Pronto habrán planes mejores!"
       ],
       "Review subscription and pay": [
-        "Revisar suscripción y pagar"
+        "Verificar suscripción y pagar"
       ],
       "Start exploring the ${ BRAND_NAME } universe": [
         "Lánzate a explorar el universo ${ BRAND_NAME }"
@@ -8518,7 +8521,7 @@
         "Usa tus propias direcciones de correo personalizadas como por ejemplo, tu@tunombre.com."
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "No guardamos ningún registro de lo que haces cuando tienes iniciada la sesión ni registramos metadatos que vulneren tu privacidad"
+        "No guardamos ningún registro de lo que haces cuando tienes iniciada la sesión ni registramos metadatos que pueden comprometer tu privacidad."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Tenemos el firme compromiso de ayudar a los clientes que deben cumplir las normativas HIPAA y HITECH a salvaguardar la información sanitaria protegida que se les proporciona. Todos los clientes de ${ BRAND_NAME } para negocios pueden solicitar un acuerdo de sociedad comercial firmado (BAA)."
@@ -8538,7 +8541,7 @@
         "Se incluye en ${ plus }, ${ bundle } y ${ BRAND_NAME } for Business."
       ],
       "Included with all ${ BRAND_NAME } for Business plans.": [
-        "Se incluye en todos los planes de ${ BRAND_NAME } para negocios."
+        "Se incluye en todos los planes de ${ BRAND_NAME } for Business."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8820,7 +8823,7 @@
         "iOS"
       ],
       "It's missing a key feature that I need": [
-        "Falta una característica clave que necesito"
+        "Falta una función clave que necesito."
       ],
       "It's too expensive": [
         "Es demasiado caro"
@@ -9252,7 +9255,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Al desuscribirte dejarás de tener acceso a este calendario. Todos los eventos en este calendario serán borrados de tu cuenta, pero permanecerán en el enlace público original."
+        "Al cancelar la suscripción dejarás de tener acceso a este calendario. Todos los eventos en este calendario serán borrados de tu cuenta, pero permanecerán en el enlace público original."
       ],
       "You will no longer have access to this calendar.": [
         "Dejarás de tener acceso a este calendario."
@@ -9323,7 +9326,7 @@
         "Haz el cambio a la privacidad sin esfuerzo y de forma segura."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Puedes aplicar varias etiquetas a un solo mensaje, pero los mensajes generalmente sólo pueden estar en una sola carpeta. Arrastra y suelta para reorganizar el orden de tus carpetas y etiquetas."
+        "Puedes aplicar varias etiquetas a un solo mensaje, pero los mensajes generalmente solo pueden estar en una sola carpeta. Arrastra y coloca para reorganizar el orden de tus carpetas y etiquetas."
       ]
     },
     "Settings section title": {
@@ -9336,7 +9339,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Fallo en la actualización de la configuración"
+        "Error al actualizar la configuración"
       ]
     },
     "Settings/filters": {
@@ -9445,7 +9448,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Espera: estamos modificando tu cuenta."
+        "Espera. Estamos modificando tu cuenta."
       ]
     },
     "Step in filter modal": {
@@ -9467,7 +9470,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Mejorar almacenamiento"
+        "Actualizar almacenamiento"
       ],
       "Your current storage:": [
         "Tu almacenamiento actual:"
@@ -9585,7 +9588,7 @@
         "Activa"
       ],
       "Upcoming": [
-        "Próximamente"
+        "Próximo"
       ]
     },
     "Subtitle for trial plan": {
@@ -9616,7 +9619,7 @@
         "Respuesta automática actualizada"
       ],
       "Bug reported": [
-        "Fallo reportado"
+        "Error reportado"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario añadido. La sincronización puede tardar unos minutos."
@@ -9954,7 +9957,7 @@
         "2. Seleccionar protocolo"
       ],
       "3-D Secure verification failed": [
-        "La verificación 3-D Secure ha fallado"
+        "Error con la verificación 3-D Secure"
       ],
       "3. Select config file and download": [
         "3. Seleccionar archivo de configuración y descargar"
@@ -10122,7 +10125,7 @@
         "Confirmar dirección"
       ],
       "Confirm downgrade": [
-        "Confirmar degradación"
+        "Confirmar el paso a un plan inferior"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar la pérdida de beneficios de ${ BRAND_NAME }"
@@ -10503,7 +10506,7 @@
         "Verificación de pago en curso"
       ],
       "PayPal verification failed": [
-        "La verificación de PayPal ha fallado"
+        "Error con la verificación de PayPal"
       ],
       "Phone": [
         "Teléfono"
@@ -10668,7 +10671,7 @@
         "Calendarios suscritos"
       ],
       "Success": [
-        "Exitoso"
+        "Correcto"
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
         "Cuenta de usuario ${ localSuccessfullyCreatedUsers.length } creada",
@@ -10715,7 +10718,7 @@
         "Navegador no soportado"
       ],
       "Upgrade plan": [
-        "Mejorar plan"
+        "Actualizar tu plan"
       ],
       "Users": [
         "Usuarios"
@@ -10765,11 +10768,11 @@
       "Your current plan": [
         "Tu plan actual"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Tu periodo de prueba gratuito acaba el ${ formattedEndDate }"
-      ],
       "Your import history": [
         "Tu historial de importaciones"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Tu prueba gratuita de Mail Plus termina el ${ textDate }."
       ],
       "Your plan": [
         "Tu plan"
@@ -10858,7 +10861,7 @@
         "Direcciones"
       ],
       "Features": [
-        "Características"
+        "Funciones"
       ],
       "Name": [
         "Nombre"
@@ -10953,10 +10956,10 @@
         "Esta dirección ha sido deshabilitada"
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Esta característica retrasa el envío de sus correos electrónicos, dándote la oportunidad de deshacer el envío durante el período de tiempo seleccionado."
+        "Esta función retrasa el envío de tus correos electrónicos, dándote la oportunidad de deshacer el envío durante el período de tiempo seleccionado."
       ],
       "This feature is only available for paid users": [
-        "Esta función solo está disponible para usuarios de pago"
+        "Esta función solo está disponible para usuarios de pago."
       ],
       "This feature is unavailable for the moment": [
         "Esta función no está disponible por el momento"
@@ -11010,7 +11013,7 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Al recibir un correo electrónico de otro usuario de ${ MAIL_APP_NAME } que no tiene claves de confianza en tus contactos, un banner te preguntará si deseas habilitar las claves de confianza."
+        "Al recibir un correo electrónico de otro usuario de ${ MAIL_APP_NAME } que no tiene claves de confianza en tus contactos, un banner te preguntará si quieres habilitar las claves de confianza."
       ]
     },
     "Tooltip sign external messages": {
@@ -11171,7 +11174,7 @@
         "Si cancelas esta importación, no podrás reanudarla. ${ BRAND_NAME } ha guardado todo el progreso en tu cuenta. ¿Quieres cancelarla de todos modos?"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "El chat en vivo es una función premium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
+        "El chat en vivo es una función prémium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ten en cuenta que al elegir este método de pago, tu cuenta no será actualizada inmediatamente. Actualizaremos tu cuenta una vez que el pago se haya completado."
@@ -11227,7 +11230,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Después de la verificación exitosa, no elimines este registro TXT ya que se necesita para confirmar que continúas siendo el propietario del dominio."
+        "Después de la verificación, no elimines este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
       ],
       "It can take up to a day for DNS changes to update.": [
         "Puede tomar hasta un día para que los cambios de DNS se actualicen."

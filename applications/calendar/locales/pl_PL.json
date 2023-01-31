@@ -514,6 +514,9 @@
       "Upgrade": [
         "Ulepsz"
       ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
       "Upload picture": [
         "Prześlij zdjęcie"
       ],
@@ -2007,8 +2010,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
+      "Do not ask again": [
+        "Nie pytaj ponownie"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3288,9 +3291,6 @@
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet",
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } przestrzeni dyskowej"
-      ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
         "${ updated } kontakty zostały zaktualizowane.",
@@ -3302,9 +3302,6 @@
         "(${ memberCount } członków)",
         "(${ memberCount } członków)",
         "(${ memberCount } członków)"
-      ],
-      "10 email addresses": [
-        "10 adresów e-mail"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Wiadomość o anulowaniu wydarzenia zostanie wysłana do usuniętych uczestników."
@@ -3383,9 +3380,6 @@
       ],
       "Close this screen to exit.": [
         "Zamknij te okno, aby wyjść."
-      ],
-      "Continue with ${ planName }": [
-        "Kontynuuj z planem ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Utwórz ${ calendarsToBeCreated } nowy kalendarz",
@@ -3609,9 +3603,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
       ],
-      "Other options": [
-        "Inne opcje"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "Schemat PGP/Inline jest kompatybilny tylko z trybem zwykłego tekstu."
       ],
@@ -3651,9 +3642,6 @@
       "Primary": [
         "Główny"
       ],
-      "Priority support": [
-        "Priorytetowe wsparcie"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
       ],
@@ -3683,12 +3671,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Część Twoich odpowiedzi na powtórzenia, zaktualizowane wcześniej przez organizatora, zostanie utracona."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Wsparcie dla 1 niestandardowej domeny"
       ],
       "support team": [
         "pomocą techniczną"
@@ -3768,17 +3750,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Aby używać weryfikacji adresu, musisz dodać do zaufanych co najmniej jeden z dostępnych kluczy publicznych, w tym klucz, którego chcesz używać do wysyłania wiadomości. Zapobiega to podrabianiu kluczy szyfrowania."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited messages": [
-        "Nieograniczone wysyłanie wiadomości"
-      ],
       "Update recurring event": [
         "Zaktualizuj wydarzenie cykliczne"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Ulepsz konto, aby uniknąć utraty planu ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Zaktualizuj konto w promocyjnej cenie, aby uzyskać dostęp do usług i funkcji premium oraz większej przestrzeni dyskowej"
       ],
       "We'll notify you when the import is done.": [
         "Powiadomimy Cię, kiedy proces importowania danych zostanie zakończony."
@@ -4886,7 +4862,7 @@
         "Dalej"
       ],
       "Start using ${ appName }": [
-        "Zacznij korzystać z aplikacji ${ appName }"
+        "Zacznij korzystać z ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -6182,8 +6158,8 @@
       "Your calendar link": [
         "Twój link kalendarza"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Darmowa wersja próbna zakończy się ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -510,6 +510,9 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ],
       "Upload picture": [
         "Carica immagine"
       ],
@@ -1985,8 +1988,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
+      "Do not ask again": [
+        "Non chiedermelo più"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3177,9 +3180,6 @@
         "${ selectedFoldersCountLocalized } etichetta selezionata",
         "${ selectedFoldersCountLocalized } etichette selezionate"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } spazio"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
         "${ updated } contatti aggiornati con successo."
@@ -3187,9 +3187,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membri)"
-      ],
-      "10 email addresses": [
-        "10 indirizzi email"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Una email di cancellazione verrà inviata ai partecipanti rimossi."
@@ -3262,9 +3259,6 @@
       ],
       "Close this screen to exit.": [
         "Chiudi questa schermata per uscire."
-      ],
-      "Continue with ${ planName }": [
-        "Continua con ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crea ${ calendarsToBeCreated } nuovo calendario",
@@ -3484,9 +3478,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o più chiavi fidate sono state contrassegnate come \"compromesse\" dal proprietario. Si consiglia di \"non fidarsi\" di queste chiavi."
       ],
-      "Other options": [
-        "Altre opzioni"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline è compatibile solo con il formato Testo."
       ],
@@ -3524,9 +3515,6 @@
       "Primary": [
         "Principale"
       ],
-      "Priority support": [
-        "Assistenza prioritaria"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di ripristino rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
       ],
@@ -3556,12 +3544,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Alcune delle risposte alle occorrenze precedentemente aggiornate dall'organizzatore andranno perse."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Supporto per 1 dominio di posta elettronica personalizzato"
       ],
       "support team": [
         "team di supporto"
@@ -3641,17 +3623,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per utilizzare la verifica dell'indirizzo, devi fidarti di una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di cifratura vengano falsificate."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Cartelle, etichette e filtri illimitati"
-      ],
-      "Unlimited messages": [
-        "Messaggi illimitati"
-      ],
       "Update recurring event": [
         "Aggiorna l'evento ricorrente"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Esegui l'upgrade oggi per evitare di perdere i seguenti vantaggi di ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Esegui l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
       ],
       "We'll notify you when the import is done.": [
         "Ti avviseremo quando l'importazione sarà completata."
@@ -5935,8 +5911,8 @@
       "Your calendar link": [
         "Link del tuo calendario"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "La tua prova gratuita terminerà presto, il ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
