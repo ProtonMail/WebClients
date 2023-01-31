@@ -38,7 +38,7 @@
 		opacity: 1; // In case the button is invisible as default
 	}
 
-	@supports not selector(:focus-visible:has) {
+	@supports not selector(:focus-visible:has(a, b)) {
 		&:focus,
 		&:focus-within {
 			border-color: var(--focus-outline);
@@ -47,7 +47,7 @@
 		}
 	}
 
-	@supports selector(:focus-visible:has) {
+	@supports selector(:focus-visible:has(a, b)) {
 		&:focus-visible,
 		&:has(*:focus-visible) {
 			border-color: var(--focus-outline);
@@ -113,7 +113,7 @@
 		transition: 0.15s easing(ease-out-quad);
 	}
 
-	@supports not selector(:focus-visible:has) {
+	@supports not selector(:focus-visible:has(a, b)) {
 		&:focus,
 		&:focus-within {
 			&::after {
@@ -123,7 +123,7 @@
 		}
 	}
 
-	@supports selector(:focus-visible:has) {
+	@supports selector(:focus-visible:has(a, b)) {
 		&:focus-visible,
 		&:has(*:focus-visible) {
 			&::after {
