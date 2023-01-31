@@ -34,7 +34,9 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
     const { ID, account, sasl, provider, products } = importer;
     const { product, errorCode, importState } = activeImporter;
 
-    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup();
+    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
+        errorMessage: c('Error').t`Your import will not be processed.`,
+    });
     const useNewScopeFeature = useFeature(FeatureCode.EasySwitchGmailNewScope);
 
     const api = useApi();

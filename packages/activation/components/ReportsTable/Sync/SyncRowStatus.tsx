@@ -12,7 +12,7 @@ const SyncRowStatus = ({ state }: Props) => {
         case ApiSyncState.ACTIVE:
             return <Badge type="primary">{c('Import status').t`Active`}</Badge>;
         case ApiSyncState.STOPPED:
-            return <Badge type="warning">{c('Import status').t`Stopped`}</Badge>;
+            return <Badge type="warning">{c('Import status').t`Paused`}</Badge>;
     }
 
     return null;

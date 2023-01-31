@@ -69,7 +69,11 @@ const getOAuthAuthorizationUrl = ({
     return url;
 };
 
-const useOAuthPopup = () => {
+interface Props {
+    errorMessage: string;
+}
+
+const useOAuthPopup = ({ errorMessage }: Props) => {
     const { createNotification } = useNotifications();
     const [config, loadingConfig] = useApiEnvironmentConfig();
     const stateId = useRef<string>();
@@ -129,7 +133,7 @@ const useOAuthPopup = () => {
                                     <div className="text-center">
                                         {c('Error').t`Authentication canceled.`}
                                         <br />
-                                        {c('Error').t`Your import will not be processed.`}
+                                        {errorMessage}
                                     </div>
                                 ),
                                 type: 'error',
@@ -146,7 +150,7 @@ const useOAuthPopup = () => {
                                     <div className="text-center">
                                         {c('Error').t`Authentication error.`}
                                         <br />
-                                        {c('Error').t`Your import will not be processed.`}
+                                        {errorMessage}
                                     </div>
                                 ),
                                 type: 'error',
