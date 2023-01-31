@@ -121,7 +121,9 @@ const EasySwitchOauthModal = ({
     const [folders = [], loadingFolders] = useFolders();
     const [calendars = [], loadingCalendars] = useCalendars();
     const visualCalendars = sortCalendars(getVisualCalendars(calendars));
-    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup();
+    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
+        errorMessage: c('Error').t`Your import will not be processed.`,
+    });
 
     const isInitLoading = loadingLabels || loadingFolders || loadingCalendars || loadingConfig;
 
