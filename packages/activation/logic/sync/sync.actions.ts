@@ -95,7 +95,7 @@ export const createSyncItem = createAsyncThunk<
 
         const { ImporterID } = await thunkApi.extra.api(createImport(createImportPayload));
         await thunkApi.extra.api(createSync(ImporterID));
-        await thunkApi.dispatch(loadSyncList());
+        await thunkApi.extra.eventManager.call();
         thunkApi.extra.notificationManager.createNotification(notification);
         return;
     } catch (error: any) {
