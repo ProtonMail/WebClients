@@ -12,48 +12,62 @@ import { ApiError } from '../fetch/ApiError';
 import { getUIDHeaders } from '../fetch/headers';
 import { ProtonConfig } from '../interfaces';
 
-const isLocalhost = (host: string) => host.startsWith('localhost');
-
-const isProduction = (host: string) => host.endsWith('.proton.me') || host === VPN_HOSTNAME;
-
-let authHeaders: { [key: string]: string } = {};
-
-export const setUID = (uid: string | undefined) => {
-    if (!uid) {
-        authHeaders = {};
-        return;
-    }
-    authHeaders = {
-        ...getUIDHeaders(uid),
-    };
+type SentryContext = {
+    authHeaders: { [key: string]: string };
+    enabled: boolean;
 };
 
-const getContentTypeHeaders = (input: RequestInfo | URL): HeadersInit => {
+type SentryConfig = {
+    host: string;
+    release: string;
+    environment: string;
+};
+
+type SentryOptions = {
+    sessionTracking?: boolean;
+    config: ProtonConfig;
+    uid?: string;
+    sentryConfig?: SentryConfig;
+    ignore?: (config: SentryConfig) => boolean;
+};
+
+const context: SentryContext = {
+    authHeaders: {},
+    enabled: true,
+};
+
+export const setUID = (uid: string | undefined) => {
+    context.authHeaders = uid ? getUIDHeaders(uid) : {};
+};
+
+export const setSentryEnabled = (enabled: boolean) => {
+    context.enabled = enabled;
+};
+
+export const getContentTypeHeaders = (input: RequestInfo | URL): HeadersInit => {
     const url = input.toString();
     /**
      * The sentry library does not append the content-type header to requests. The documentation states
      * what routes accept what content-type. Those content-type headers are also expected through our sentry tunnel.
      */
     if (url.includes('/envelope/')) {
-        return {
-            'content-type': 'application/x-sentry-envelope',
-        };
+        return { 'content-type': 'application/x-sentry-envelope' };
     }
+
     if (url.includes('/store/')) {
-        return {
-            'content-type': 'application/json',
-        };
+        return { 'content-type': 'application/json' };
     }
+
     return {};
 };
 
 const sentryFetch = (input: RequestInfo | URL, init?: RequestInit) => {
-    return window.fetch(input, {
+    return globalThis.fetch(input, {
         ...init,
         headers: {
             ...init?.headers,
             ...getContentTypeHeaders(input),
-            ...authHeaders,
+            ...context.authHeaders,
         },
     });
 };
@@ -62,19 +76,30 @@ const makeProtonFetchTransport = (options: BrowserTransportOptions) => {
     return makeFetchTransport(options, sentryFetch);
 };
 
-interface Arguments {
-    sessionTracking?: boolean;
-    config: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT' | 'APP_VERSION'>;
-    uid?: string;
-}
+const isLocalhost = (host: string) => host.startsWith('localhost');
+const isProduction = (host: string) => host.endsWith('.proton.me') || host === VPN_HOSTNAME;
 
-let sentryEnabled = true;
-
-function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTracking = false }: Arguments) {
+const getDefaultSentryConfig = ({ APP_VERSION, COMMIT }: ProtonConfig): SentryConfig => {
     const { host } = window.location;
+    return {
+        host,
+        release: isProduction(host) ? APP_VERSION : COMMIT,
+        environment: host.split('.').splice(1).join('.'),
+    };
+};
+
+function main({
+    uid,
+    config,
+    sessionTracking = false,
+    sentryConfig = getDefaultSentryConfig(config),
+    ignore = ({ host }) => isLocalhost(host),
+}: SentryOptions) {
+    const { SENTRY_DSN, APP_VERSION } = config;
+    const { host, release, environment } = sentryConfig;
 
     // No need to configure it if we don't load the DSN
-    if (!SENTRY_DSN || isLocalhost(host)) {
+    if (!SENTRY_DSN || ignore(sentryConfig)) {
         return;
     }
 
@@ -86,8 +111,8 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
 
     init({
         dsn,
-        release: isProduction(host) ? APP_VERSION : COMMIT,
-        environment: host.split('.').splice(1).join('.'),
+        release,
+        environment,
         normalizeDepth: 5,
         transport: makeProtonFetchTransport,
         autoSessionTracking: sessionTracking,
@@ -107,7 +132,7 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
                 return null;
             }
 
-            if (!sentryEnabled) {
+            if (!context.enabled) {
                 return null;
             }
 
@@ -170,10 +195,6 @@ export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>)
     if (!isLocalhost(window.location.host)) {
         sentryCaptureMessage(...args);
     }
-};
-
-export const setSentryEnabled = (enabled: boolean) => {
-    sentryEnabled = enabled;
 };
 
 export default main;
