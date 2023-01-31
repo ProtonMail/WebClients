@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { changeCreateLoadingState, createSyncItem, deleteSyncItem, loadSyncList } from './sync.actions';
-import { formatApiSync } from './sync.helpers';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+
+import * as globalAction from '../actions';
+import { changeCreateLoadingState, createSyncItem, loadSyncList } from './sync.actions';
+import { formatApiSync, formatApiSyncs } from './sync.helpers';
 import { SyncMap, SyncState } from './sync.interface';
 
 const initialState: SyncState = { listLoading: 'idle', creatingLoading: 'idle', syncs: {} };
@@ -42,7 +45,7 @@ const syncSlice = createSlice({
 
         builder.addCase(loadSyncList.fulfilled, (state, payload) => {
             state.listLoading = 'success';
-            const syncs = formatApiSync(payload.payload.Syncs);
+            const syncs = formatApiSyncs(payload.payload.Syncs);
 
             const formattedSync = syncs.reduce<SyncMap>((acc, sync) => {
                 acc[sync.id] = sync;
@@ -52,9 +55,23 @@ const syncSlice = createSlice({
             state.syncs = formattedSync;
         });
 
-        builder.addCase(deleteSyncItem.fulfilled, (state, action) => {
-            const id = action.payload;
-            delete state.syncs[id];
+        builder.addCase(globalAction.event, (state, action) => {
+            const importerSyncs = action.payload.ImporterSyncs;
+            if (importerSyncs) {
+                importerSyncs.forEach(({ ImporterSync, Action, ID }) => {
+                    if (ImporterSync) {
+                        //The update or create are the same since we replace the state with new sync
+                        if (EVENT_ACTIONS.CREATE === Action || EVENT_ACTIONS.UPDATE === Action) {
+                            const newSync = formatApiSync(ImporterSync);
+                            state.syncs[newSync.id] = newSync;
+                        }
+                    }
+
+                    if (EVENT_ACTIONS.DELETE === Action) {
+                        delete state.syncs[ID];
+                    }
+                });
+            }
         });
     },
 });
