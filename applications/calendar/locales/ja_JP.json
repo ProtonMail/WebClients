@@ -508,6 +508,9 @@
       "Upgrade": [
         "アップグレード"
       ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
       "Upload picture": [
         "写真をアップロード"
       ],
@@ -1973,11 +1976,6 @@
         "無効なカレンダーの予定です。"
       ]
     },
-    "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "カレンダーを追加"
@@ -3117,17 +3115,11 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } ストレージ"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } 人のメンバー)"
-      ],
-      "10 email addresses": [
-        "10 件のメールアドレス"
       ],
       "A cancellation email will be sent to removed participants.": [
         "削除を行った参加者にはメールが送信されます。"
@@ -3194,9 +3186,6 @@
       ],
       "Close this screen to exit.": [
         "画面を閉じると終了します。"
-      ],
-      "Continue with ${ planName }": [
-        "${ planName } で続行"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
@@ -3414,9 +3403,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
-      "Other options": [
-        "その他のオプション"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline は Plain Text 形式にのみ対応しています。"
       ],
@@ -3453,9 +3439,6 @@
       "Primary": [
         "プライマリー"
       ],
-      "Priority support": [
-        "優先的なサポート"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
       ],
@@ -3485,12 +3468,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "主催者が一度変更した行事に対する回答は失われます。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されています。"
-      ],
-      "Support for 1 custom email domain": [
-        "1 つの独自メールドメインをサポート"
       ],
       "support team": [
         "サポートチーム"
@@ -3570,17 +3547,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
       ],
-      "Unlimited folders, labels, and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited messages": [
-        "送信数制限なし"
-      ],
       "Update recurring event": [
         "定期的な予定の更新"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "次の ${ planName } 特典を失わないために今すぐアップグレードしてください。"
       ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
@@ -5548,9 +5516,6 @@
       ],
       "Your calendar link": [
         "カレンダーのリンク"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "無料トライアルは ${ formattedEndDate } に終了します。"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

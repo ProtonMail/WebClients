@@ -4415,9 +4415,6 @@
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } depolama alanı"
-      ],
       "${ total } conversation": [
         "${ total } yazışma",
         "${ total } yazışma"
@@ -4462,9 +4459,6 @@
       ],
       "(No Recipient)": [
         "(Alıcı yok)"
-      ],
-      "10 email addresses": [
-        "10 e-posta adresi"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Bir kurtarma ifadesi, hesabınıza erişimi korumanın en güvenli yollarından biridir. Hesabınıza erişmek ve parolanızı unutursanız şifrelenmiş verilerinizi kurtarmak için bu ifadeyi kullanabilirsiniz."
@@ -4605,9 +4599,6 @@
       ],
       "Confirm phishing report": [
         "Kimlik avı girişimi bildirimini onayla"
-      ],
-      "Continue with ${ planName }": [
-        "${ planName } aboneliğini kullanmayı sürdür"
       ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
@@ -5045,9 +5036,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilir anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
-      "Other options": [
-        "Diğer seçenekler"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemimiz bu iletiyi bir kimlik avı girişimi olarak işaretledi. Lütfen göründüğü gibi olup olmadığını kontrol edin."
       ],
@@ -5114,9 +5102,6 @@
       ],
       "Print email": [
         "E-postayı yazdır"
-      ],
-      "Priority support": [
-        "Öncelikli destek"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } ile e-posta adresinizin, posta listeleri veya istenmeyen e-posta gönderenlere sızmasından korunun."
@@ -5235,9 +5220,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da süresi geçmiş."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "${ DRIVE_APP_NAME } ile dosyaları güvenli bir şekilde saklayın ve paylaşın."
       ],
@@ -5252,9 +5234,6 @@
       ],
       "Subject: ": [
         "Konu: "
-      ],
-      "Support for 1 custom email domain": [
-        "1 özel e-posta etki alanı desteği"
       ],
       "Support privacy by upgrading for": [
         "Tarifenizi yükselterek gizliliği destekleyin"
@@ -5430,12 +5409,6 @@
       "Turn on to search the content of your messages": [
         "İletilerinizin içeriklerini arayabilmek için açın"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket, süzgeç"
-      ],
-      "Unlimited messages": [
-        "Sınırsız ileti"
-      ],
       "Unlock message": [
         "İletinin kilidini aç"
       ],
@@ -5447,6 +5420,9 @@
       ],
       "Updating message content search...": [
         "İleti içerikleri araması güncelleniyor..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
       ],
       "Upgrade to add more addresses to your account.": [
         "Hesabınıza daha fazla adres eklemek için yükseltin."
@@ -5477,9 +5453,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Üçüncü taraf masaüstü uygulamaları ile ${ MAIL_APP_NAME } kullanmak için yükseltin."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "${ planName } avantajlarını kaybetmemek için tarifenizi bugün yükseltin."
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -8433,8 +8406,8 @@
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ]
     },
     "Title header": {

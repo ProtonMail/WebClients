@@ -4420,9 +4420,6 @@
         "${ selectedFoldersCountLocalized } Kategorie ausgewählt",
         "${ selectedFoldersCountLocalized } Kategorien ausgewählt"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } Speicherplatz"
-      ],
       "${ total } conversation": [
         "${ total } Unterhaltung",
         "${ total } Unterhaltungen"
@@ -4467,9 +4464,6 @@
       ],
       "(No Recipient)": [
         "(Kein Empfänger)"
-      ],
-      "10 email addresses": [
-        "10 E-Mail-Adressen"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Eine Wiederherstellungsphrase ist eine der sichersten Möglichkeiten, den Zugang zu deinem Konto zu schützen. Mit dieser kannst du auf dein Konto zugreifen und deine verschlüsselten Daten wiederherstellen, falls du dein Passwort einmal vergessen solltest."
@@ -4610,9 +4604,6 @@
       ],
       "Confirm phishing report": [
         "Phishing-Bericht bestätigen"
-      ],
-      "Continue with ${ planName }": [
-        "Fahre mit ${ planName } fort"
       ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
@@ -5050,9 +5041,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
       ],
-      "Other options": [
-        "Weitere Optionen"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Unser System hat diese Nachricht als Phishing-Versuch gekennzeichnet. Bitte überprüfe, ob sie seriös ist."
       ],
@@ -5119,9 +5107,6 @@
       ],
       "Print email": [
         "E-Mail drucken"
-      ],
-      "Priority support": [
-        "Vorrangiger Support"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Schütze deine E-Mails mit ${ maskMyEmailButton } davor, an Mailinglisten oder Spammer weitergegeben zu werden."
@@ -5240,9 +5225,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Entschuldigung, diese Nachricht existiert nicht oder ist bereits abgelaufen."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Speichere und teile Dateien sicher mit ${ DRIVE_APP_NAME }."
       ],
@@ -5257,9 +5239,6 @@
       ],
       "Subject: ": [
         "Betreff: "
-      ],
-      "Support for 1 custom email domain": [
-        "Unterstützung für 1 eigene E-Mail-Domain"
       ],
       "Support privacy by upgrading for": [
         "Unterstütze Privatsphäre durch ein Upgrade für"
@@ -5435,12 +5414,6 @@
       "Turn on to search the content of your messages": [
         "Aktivieren, um den Inhalt deiner Nachrichten durchsuchen zu können"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Unbegrenzt viele Ordner, Kategorien und Filterlisten"
-      ],
-      "Unlimited messages": [
-        "Unbegrenzt viele Nachrichten"
-      ],
       "Unlock message": [
         "Nachricht entsperren"
       ],
@@ -5452,6 +5425,9 @@
       ],
       "Updating message content search...": [
         "Suche nach Nachrichteninhalten wird aktualisiert..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Jetzt aktualisieren und Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis erhalten"
       ],
       "Upgrade to add more addresses to your account.": [
         "Upgrade, um deinem Konto weitere E-Mail-Adressen hinzuzufügen."
@@ -5482,9 +5458,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Um ${ MAIL_APP_NAME } mit Desktop-Clients von Drittanbietern zu verwenden, ist ein Upgrade nötig."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Führe noch heute ein Upgrade durch, um die folgenden ${ planName } Vorteile nicht zu verlieren."
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -8673,8 +8646,8 @@
       "Your changes are not synced yet": [
         "Deine Änderungen wurden noch nicht synchronisiert"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Deine kostenlose Testversion endet demnächst, am ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Deine kostenlose Testversion von Mail Plus endet am ${ textDate }."
       ]
     },
     "Title header": {

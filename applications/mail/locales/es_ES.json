@@ -36,10 +36,10 @@
         "Añadir grupo"
       ],
       "Add new contact": [
-        "Añadir nuevo contacto"
+        "Añadir contacto"
       ],
       "Add new group": [
-        "Añadir nuevo grupo"
+        "Añadir grupo"
       ],
       "Add participant": [
         "Añadir participante"
@@ -810,7 +810,7 @@
         "Denunciar suplantación de identidad"
       ],
       "Request a feature": [
-        "Solicitar una funcionalidad"
+        "Solicitar una función"
       ],
       "Request new code": [
         "Solicitar un nuevo código"
@@ -858,7 +858,7 @@
         "Buscar contenido del mensaje"
       ],
       "See plan features": [
-        "Ver las características del plan"
+        "Ver las funciones del plan"
       ],
       "Select all": [
         "Seleccionar todo"
@@ -957,7 +957,7 @@
         "Omitir verificación"
       ],
       "Some images failed to load with tracking protection.": [
-        "Algunas de las imágenes no han podido ser cargadas con la protección de rastreo."
+        "Se ha producido un error al cargar algunas de las imágenes con la protección de rastreo."
       ],
       "Star": [
         "Destacar"
@@ -1042,10 +1042,10 @@
         "Actualizar frase de recuperación"
       ],
       "Upgrade": [
-        "Mejorar"
+        "Actualizar"
       ],
       "Upgrade now": [
-        "Actualizar ahora"
+        "Actualizar"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -1144,7 +1144,7 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        "Error al añadir participante"
+        "Error al añadir el participante"
       ],
       "Invitation sent and participant added": [
         "Invitación enviada y participante añadido"
@@ -1293,7 +1293,7 @@
         "Problema con Drive"
       ],
       "Feature request": [
-        "Solicitar funcionalidad"
+        "Solicitar función"
       ],
       "Import / export problem": [
         "Problema de importación/exportación"
@@ -1626,7 +1626,7 @@
         "El enlace del calendario no está accesible temporalmente"
       ],
       "Failed to sync calendar": [
-        "Fallo al sincronizar el calendario"
+        "Error al sincronizar el calendario"
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
@@ -2881,13 +2881,13 @@
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Usa arrastrar y soltar para clasificar la prioridad entre contactos. Desmarca los contactos que no deseas combinar."
+        "Usa arrastrar y soltar para clasificar la prioridad entre contactos. Desmarca los contactos que no quieres combinar."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Puedes marcar para eliminar los contactos que no deseas ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado"
+        "Puedes marcar para eliminar los contactos que no quieres ni combinar ni mantener. La eliminación solo tendrá lugar después de que el botón de combinar sea pulsado"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2895,7 +2895,7 @@
         "Además, hemos emparejado automáticamente los campos CSV con los campos vCard. Puedes verificar y cambiar este emparejamiento manualmente."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Hemos detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que deseas importar."
+        "Hemos detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
       ]
     },
     "Desktop notification body": {
@@ -3078,7 +3078,7 @@
         "No puedes habilitar la búsqueda de contenido en este navegador. Sal del modo de navegación privada o utiliza otro navegador."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Error al descifrar: el descifrado del contenido de este mensaje ha fallado."
+        "Error al descifrar: no se ha podido descifrar el contenido de este mensaje."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Deseleccionar al menos ${ calendarToFixCount } calendario",
@@ -3137,7 +3137,7 @@
         "El nombre de la carpeta no puede estar vacío."
       ],
       "Image upload failed": [
-        "La subida de la imagen ha fallado"
+        "Error al cargar la imagen"
       ],
       "IMAP server is required": [
         "Servidor IMAP requerido"
@@ -3274,7 +3274,7 @@
         "Error al verificar la firma."
       ],
       "Signature verification failed": [
-        "La verificación de la firma ha fallado"
+        "Error al verificar la firma"
       ],
       "Some contacts could not be deleted": [
         "Algunos contactos no se pudieron eliminar"
@@ -3472,7 +3472,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "El cifrado ha fallado"
+        "Error con el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
         "Versiones vCard menores a 3.0 no compatibles"
@@ -3524,7 +3524,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "El cifrado ha fallado"
+        "Error con el cifrado"
       ],
       "End time out of bounds": [
         "Hora final fuera de límites"
@@ -3533,7 +3533,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falló la validación del evento"
+        "Error al validar el evento"
       ],
       "Floating times not supported": [
         "Tiempos flotantes no admitidos"
@@ -3877,7 +3877,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Hemos aumentado el almacenamiento total de tu cuenta a ${ rewardInGb } GB. Consigue almacenamiento adicional y desbloquea las funciones premium hoy."
+        "Hemos aumentado el almacenamiento total de tu cuenta a ${ rewardInGb } GB. Consigue almacenamiento adicional y desbloquea las funciones prémium hoy."
       ],
       "You're all set!": [
         "¡Ya está todo listo!"
@@ -4186,7 +4186,7 @@
         "Se ha creado un evento en el calendario"
       ],
       "Creating calendar event failed": [
-        "Ha fallado la creación del evento del calendario"
+        "Error al crear el evento del calendario"
       ]
     },
     "Import instructions": {
@@ -4269,7 +4269,7 @@
         "Ir a ${ calendarViewLink } en Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Sitúa el ratón sobre el calendario que deseas importar y abre el menú desplegable."
+        "Pasa el ratón sobre el calendario que quieres importar y abre el menú desplegable."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Selecciona ${ boldExport } para exportar el calendario como un archivo ICS."
@@ -4415,9 +4415,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de almacenamiento"
-      ],
       "${ total } conversation": [
         "${ total } conversación",
         "${ total } conversaciones"
@@ -4463,14 +4460,11 @@
       "(No Recipient)": [
         "(Sin destinatario)"
       ],
-      "10 email addresses": [
-        "10 direcciones de correo"
-      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Una frase de recuperación es una de las formas más seguras de proteger el acceso a tu cuenta. Puedes usarla para acceder a tu cuenta y recuperar tus datos cifrados si alguna vez olvidas tu contraseña."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "Se enviará una solicitud para darle de baja de esta lista de correo y se procesará automáticamente."
+        "Se enviará una solicitud para darte de baja de esta lista de correo y se procesará automáticamente."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
@@ -4568,13 +4562,13 @@
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en la configuración."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación revisa tu carpeta de spam y comprueba que ${ strong } la dirección es correcta."
+        "Antes de solicitar un nuevo código de verificación verifica tu carpeta de spam y comprueba que ${ strong } la dirección es correcta."
       ],
       "Body: ": [
         "Cuerpo: "
       ],
       "Calendar side panel": [
-        "Panel lateral de calendario"
+        "Panel lateral del calendario"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No puedes recordar tu contraseña? Podemos ayudarte a eliminar los datos cifrados de todos los contactos cifrados con esta clave, y, en el proceso desactivar la alerta."
@@ -4605,9 +4599,6 @@
       ],
       "Confirm phishing report": [
         "Confirmar denuncia de suplantación"
-      ],
-      "Continue with ${ planName }": [
-        "Continuar con ${ planName }"
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
@@ -4809,7 +4800,7 @@
         "De"
       ],
       "Get more storage and premium features.": [
-        "Consigua más almacenamiento y funciones premium."
+        "Consigue más almacenamiento y funciones prémium."
       ],
       "Group assignment applied": [
         "Asignación de grupo aplicada"
@@ -5045,9 +5036,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
       ],
-      "Other options": [
-        "Otras opciones"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nuestro sistema ha marcado este mensaje como un intento de suplantación de identidad. Comprueba que es legítimo."
       ],
@@ -5107,16 +5095,13 @@
         "Previsualizar"
       ],
       "Preview failed to be loaded": [
-        "No se pudo cargar la vista previa"
+        "Error al cargar la vista previa"
       ],
       "Primary": [
         "Principal"
       ],
       "Print email": [
         "Imprimir correo electrónico"
-      ],
-      "Priority support": [
-        "Soporte prioritario"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Protege tu correo electrónico de ser filtrado a listas de correo o spammers con ${ maskMyEmailButton }."
@@ -5182,13 +5167,13 @@
         "Parece que ya está al día por ahora"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Selecciona el formato de correo electrónico que deseas utilizar por defecto al enviar un correo electrónico a esta dirección."
+        "Selecciona el formato de correo electrónico que quieres utilizar por defecto al enviar un correo electrónico a esta dirección."
       ],
       "Select what you want to import.": [
         "Selecciona lo que quieres importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Seleccione los calendarios que desea importar. Se creará un nuevo calendario para cada calendario importado hasta el límite de 20 calendarios."
+        "Selecciona los calendarios que quieres importar. Se creará un nuevo calendario para cada calendario importado hasta el límite de 20 calendarios."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Enviar un mensaje encriptado y protegido por contraseña a una dirección de correo electrónico que no es de ${ boldText }."
@@ -5235,9 +5220,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Lo sentimos, este mensaje no existe o ya ha caducado."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Almacena y comparte archivos de forma segura con ${ DRIVE_APP_NAME }."
       ],
@@ -5252,9 +5234,6 @@
       ],
       "Subject: ": [
         "Asunto: "
-      ],
-      "Support for 1 custom email domain": [
-        "1 dominio de correo electrónico personalizado"
       ],
       "Support privacy by upgrading for": [
         "Apoye la privacidad actualizando a"
@@ -5290,11 +5269,11 @@
         "El remitente ha solicitado una confirmación de lectura."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "La verificación de ${ contactName } ha fallado: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddress } o editar el contacto."
+        "Error al verificar ${ contactName }: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddress } o editar el contacto."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "La verificación de ${ contactNames } ha fallado: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddresses } o editar el contacto.",
-        "La verificación de ${ contactNames } ha fallado: los contactos no están firmados correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar los contactos para enviar un mensaje a ${ contactAddresses } o editar los contactos."
+        "Error al verificar ${ contactNames }: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddresses } o editar el contacto.",
+        "Error al verificar ${ contactNames }: los contactos no están firmados correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar los contactos para enviar un mensaje a ${ contactAddresses } o editar los contactos."
       ],
       "Themes can give your inbox a new look.": [
         "Los temas pueden darle un aspecto diferente a tu bandeja de entrada."
@@ -5331,7 +5310,7 @@
         "Estas conversaciones serán marcadas como spam. ¿Te gustaría a su vez cancelar la suscripción para no recibir más correos?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Este correo electrónico ha fallado los requisitos de autenticación de su dominio. ¡Puede estar falsificado o reenviado incorrectamente!"
+        "Se ha producido un error con los requisitos de autenticación del dominio de este correo electrónico. Puede estar falsificado o reenviado incorrectamente."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Esta invitación está guardada en un calendario deshabilitado."
@@ -5419,7 +5398,7 @@
         "Para darte de baja de esta lista de correo, se te redirigirá a la siguiente URL donde el remitente del boletín te dará las instrucciones:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para usar la verificación de dirección, debe confiar en una o más de las claves públicas disponibles, incluyendo la clave que deseas utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
+        "Para usar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Demasiados mensajes esperando a ser enviados. Espera hasta que otro mensaje se envíe para programar este."
@@ -5429,12 +5408,6 @@
       ],
       "Turn on to search the content of your messages": [
         "Active para buscar en el contenido de sus mensajes"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensajes ilimitados"
       ],
       "Unlock message": [
         "Desbloquear mensaje"
@@ -5448,38 +5421,38 @@
       "Updating message content search...": [
         "Actualizando búsqueda de contenido de mensaje..."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
+      ],
       "Upgrade to add more addresses to your account.": [
-        "Actualiza para añadir más direcciones a tu cuenta."
+        "Actualiza tu plan para añadir más direcciones a tu cuenta."
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        "Actualice para poder configurar una respuesta automática."
+        "Actualiza tu plan para poder configurar una respuesta automática."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Actualice para crear más carpetas, filtros y direcciones."
+        "Actualiza para crear más carpetas, filtros y direcciones."
       ],
       "Upgrade to host emails from your own domain name.": [
-        "Actualiza para alojar correos electrónicos desde tu dominio personal."
+        "Actualiza tu plan para alojar correos electrónicos desde tu dominio personal."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Actualiza para enviar correos desde direcciones @pm.me."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Actualice para enviar fácilmente correos electrónicos a grupos de contactos."
+        "Actualiza tu plan para enviar fácilmente correos electrónicos a grupos de contactos."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Actualice para apoyar un internet que dé prioridad a la privacidad."
+        "Actualiza tu plan para apoyar un internet que dé prioridad a la privacidad."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Actualice para apoyar nuestra misión de brindar privacidad a todos."
+        "Actualiza tu plan para apoyar nuestra misión de traer privacidad a todos."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Actualice para apoyar la privacidad y obtener más funciones."
+        "Actualiza tu plan para apoyar la privacidad y obtener más funciones."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Actualice para usar ${ MAIL_APP_NAME } con programas de escritorio de terceros."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Actualice hoy para evitar perder los beneficios de ${ planName } $."
+        "Actualiza tu plan para usar ${ MAIL_APP_NAME } con programas de escritorio de terceros."
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -5749,7 +5722,7 @@
     },
     "Key validation warning": {
       "Recipient's key validation failed: ${ validationErrorsMessage }": [
-        "La validación de la clave del destinatario ha fallado: ${ validationErrorsMessage }"
+        "Error al validar la clave del destinatario: ${ validationErrorsMessage }"
       ]
     },
     "Keyboard shortcut name": {
@@ -6627,7 +6600,7 @@
         "Papelera"
       ],
       "Upgrade account": [
-        "Mejorar cuenta"
+        "Actualizar cuenta"
       ],
       "What’s this?": [
         "¿Qué es esto?"
@@ -7292,7 +7265,7 @@
         "Mensaje firmado con PGP de un remitente verificado"
       ],
       "PGP-signed message. Sender verification failed": [
-        "Mensaje firmado con PGP. La verificación del remitente ha fallado."
+        "Mensaje firmado con PGP. Ha ocurrido un error al verificar el remitente."
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero"
@@ -7311,7 +7284,7 @@
         "Respuesta enviada"
       ],
       "Answering invitation failed": [
-        "Ha fallado la respuesta a la invitación"
+        "Error al responder a la invitación"
       ],
       "Calendar event created": [
         "Se ha creado un evento en el calendario"
@@ -7450,7 +7423,7 @@
         "Error al verificar el remitente: ${ verificationErrorsMessage }"
       ],
       "Sender's trusted keys verification failed": [
-        "La verificación de las claves de confianza del remitente ha fallado"
+        "Error al verificar las claves de confianza del remitente"
       ]
     },
     "Signing preference for emails": {
@@ -7537,7 +7510,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Mejorar almacenamiento"
+        "Actualizar almacenamiento"
       ],
       "Your current storage:": [
         "Tu almacenamiento actual:"
@@ -7631,7 +7604,7 @@
         "Verificación de dirección desactivada"
       ],
       "Bug reported": [
-        "Fallo reportado"
+        "Error reportado"
       ],
       "Canceling import": [
         "Cancelando importación"
@@ -7711,7 +7684,7 @@
         "Etiquetas aplicadas."
       ],
       "Mail list unsubscribed": [
-        "Se ha eliminado la suscripción a la lista de correo"
+        "Se ha eliminado la suscripción a la lista de correo."
       ],
       "Message added to ${ labelName }.": [
         "Mensaje añadido a ${ labelName }."
@@ -8401,7 +8374,7 @@
         "Cancelar suscripción"
       ],
       "Unsubscribe request sent": [
-        "Solicitud de baja enviada"
+        "Solicitud de cancelación de suscripción enviada"
       ],
       "Upgrade required": [
         "Actualización necesaria"
@@ -8433,8 +8406,8 @@
       "Your changes are not synced yet": [
         "Tus cambios todavía no están sincronizados."
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Tu periodo de prueba gratuito acaba el ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Tu prueba gratuita de Mail Plus termina el ${ textDate }."
       ]
     },
     "Title header": {
@@ -8512,7 +8485,7 @@
         "Esta acción descargará todos los mensajes para que la búsqueda pueda ser local. Borrar los datos de tu navegador desactivará esta opción."
       ],
       "This feature is only available for paid users": [
-        "Esta función solo está disponible para usuarios de pago"
+        "Esta función solo está disponible para usuarios de pago."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Sube una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
@@ -8589,7 +8562,7 @@
         "Si no recuerdas tu contraseña, es imposible volver a activar tu clave. Podemos ayudarte a desactivar la alerta pero en el proceso perderás permanentemente el acceso a todos los datos cifrados con esa clave."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "El chat en vivo es una función premium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
+        "El chat en vivo es una función prémium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíes ninguna información confidencial."
@@ -8614,16 +8587,16 @@
         "La configuración de la fecha y la hora de tu dispositivo no están sincronizadas. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "El descifrado del contenido cifrado ha fallado."
+        "Ha ocurrido un problema al descifrar el contenido cifrado."
       ],
       "The verification of the contact details' signature failed.": [
-        "La verificación de la firma de los detalles del contacto ha fallado."
+        "Ha ocurrido un problema al verificar la firma de los detalles del contacto."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Introduce la palabra ${ boldDanger } en el campo para continuar."
       ],
       "This feature requires a paid ${ BRAND_NAME } account": [
-        "Esta función requiere una cuenta de pago de ${ BRAND_NAME }"
+        "Esta función requiere una cuenta de pago de ${ BRAND_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Esta importación podría exceder la capacidad de almacenamiento disponible en tu cuenta de ${ BRAND_NAME }. Considera la posibilidad de personalizar tu importación."

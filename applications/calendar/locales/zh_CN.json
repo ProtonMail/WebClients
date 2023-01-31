@@ -508,6 +508,9 @@
       "Upgrade": [
         "升级账户"
       ],
+      "Upgrade now": [
+        "立即升级账户"
+      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -1973,11 +1976,6 @@
         "此为已停用日历中的事件"
       ]
     },
-    "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "添加日历"
@@ -3123,17 +3121,11 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } 存储空间"
-      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
       ],
       "(${ memberCount } members)": [
         "（${ memberCount } 位成员）"
-      ],
-      "10 email addresses": [
-        "10 个电子邮件地址"
       ],
       "A cancellation email will be sent to removed participants.": [
         "活动取消邮件将发送至已移除的参与者"
@@ -3200,9 +3192,6 @@
       ],
       "Close this screen to exit.": [
         "关闭这个窗口以退出"
-      ],
-      "Continue with ${ planName }": [
-        "升级至 ${ planName } 并继续"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "新建 ${ calendarsToBeCreated } 份日历"
@@ -3420,9 +3409,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
       ],
-      "Other options": [
-        "其他选项"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 只能用于纯文本邮件。"
       ],
@@ -3459,9 +3445,6 @@
       "Primary": [
         "主要"
       ],
-      "Priority support": [
-        "优先享受客服"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
       ],
@@ -3491,12 +3474,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您对先前由组织者更新过的事件的一些答复将会丢失"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
-      ],
-      "Support for 1 custom email domain": [
-        "支持 1 个自有域名"
       ],
       "support team": [
         "客服团队"
@@ -3576,17 +3553,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造。"
       ],
-      "Unlimited folders, labels, and filters": [
-        "文件夹、标签、筛选规则不限量"
-      ],
-      "Unlimited messages": [
-        "每日发送邮件不限量"
-      ],
       "Update recurring event": [
         "更新循环周期性日程"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "立即升级账户即可继续享有下列 ${ planName } 权益。"
       ],
       "We'll notify you when the import is done.": [
         "当导入完成时我们将通知您"
@@ -5583,9 +5551,6 @@
       ],
       "Your calendar link": [
         "您的日历链接"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您的免费试用将在 ${ formattedEndDate } 后过期。"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

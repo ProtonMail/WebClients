@@ -490,6 +490,9 @@
       "Upgrade": [
         "Actualizar"
       ],
+      "Upgrade now": [
+        "Atualizar agora"
+      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -1754,8 +1757,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
+      "Do not ask again": [
+        "Não perguntar novamente"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2615,9 +2618,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado com sucesso.",
         "${ updated } contactos actualizados com sucesso."
@@ -2625,9 +2625,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Será enviada uma mensagem de cancelamento aos participantes removidos."
@@ -2684,9 +2681,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
-      ],
-      "Continue with ${ planName }": [
-        "Continuar com ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Criar ${ calendarsToBeCreated } nova agenda",
@@ -2873,9 +2867,6 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Ocorrências previamente actualizadas pelo organizador serão mantidas."
       ],
-      "Other options": [
-        "Outras opções"
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Por favor, note que os endereços atribuídos a este grupo NÃO serão eliminados."
       ],
@@ -2906,9 +2897,6 @@
       ],
       "Primary": [
         "Principal"
-      ],
-      "Priority support": [
-        "Suporte prioritário"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
@@ -2987,12 +2975,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para usar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, etiquetas e filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
       ],
       "Update recurring event": [
         "Actualizar evento recorrente"

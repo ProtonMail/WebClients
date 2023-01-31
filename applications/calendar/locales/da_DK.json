@@ -510,6 +510,9 @@
       "Upgrade": [
         "Opgradér"
       ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
       "Upload picture": [
         "Upload billede"
       ],
@@ -1985,8 +1988,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
+      "Do not ask again": [
+        "Spørg ikke igen"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3177,9 +3180,6 @@
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } lagerplads"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
@@ -3187,9 +3187,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadresser"
       ],
       "A cancellation email will be sent to removed participants.": [
         "En aflysningsmail vil blive sendt til fjernede deltagere."
@@ -3248,6 +3245,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ved at dele alle detaljer om begivenheden i denne kalender, accepterer du at give ${ BRAND_NAME } adgang til denne kalenders krypterede oplysninger."
       ],
+      "Calendar side panel": [
+        "Kalender-sidepanel"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
       ],
@@ -3259,9 +3259,6 @@
       ],
       "Close this screen to exit.": [
         "Luk denne skærm for at afslutte."
-      ],
-      "Continue with ${ planName }": [
-        "Fortsæt med ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Opret ${ calendarsToBeCreated } ny kalender",
@@ -3481,9 +3478,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
-      "Other options": [
-        "Andre muligheder"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline er kun kompatibel med Plain Text-formatet."
       ],
@@ -3521,9 +3515,6 @@
       "Primary": [
         "Primær"
       ],
-      "Priority support": [
-        "Prioriteret support"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
       ],
@@ -3553,12 +3544,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Nogle af dine svar på forekomster, som arrangøren tidligere har opdateret, vil gå tabt."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagerplads deles mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Understøttelse af 1 brugerdefineret e-mail-domæne"
       ],
       "support team": [
         "supportteam"
@@ -3638,17 +3623,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "For at bruge Adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrænsede mapper / etiketter / filtre"
-      ],
-      "Unlimited messages": [
-        "Ubegrænset antal beskeder"
-      ],
       "Update recurring event": [
         "Opdater tilbagevendende begivenhed"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
@@ -5307,6 +5286,34 @@
         "Indstillinger"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }. time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 t",
+        "${ hoursInt },5 t"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 time",
+        "${ hoursInt },5 timer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minutter"
+      ]
+    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Søg tidszoner"
@@ -5672,8 +5679,8 @@
       "Your calendar link": [
         "Dit kalenderlink"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Din Mail Plus prøveperiode slutter ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -347,6 +347,9 @@
       "Upgrade": [
         "Покращити"
       ],
+      "Upgrade now": [
+        "Покращити"
+      ],
       "Use ${ label } theme": [
         "Використовувати тему ${ label }"
       ],
@@ -1942,6 +1945,9 @@
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
       ],
+      "American Express SafeKey logo": [
+        "Логотип American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Сума нижче найменшої (${ amount })."
       ],
@@ -1992,6 +1998,9 @@
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"
+      ],
+      "Discover ProtectBuy logo": [
+        "Логотип Discover ProtectBuy"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Не використовуйте облікові дані OpenVPN / IKEv2 у застосунках ${ VPN_APP_NAME } чи на панелі керування ${ VPN_APP_NAME }. ${ learnMore }"
@@ -2062,8 +2071,8 @@
       "expires ${ expirationDate }": [
         "чинний до ${ expirationDate }"
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Для Visa та MasterCard - 3 цифри на зворотній стороні картки. Для American Express - 4 цифри на лицьовій стороні картки."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Для Visa, MasterCard та Discover — 3 цифри на зворотній стороні картки. Для American Express — 4 цифри на лицьовій стороні картки."
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -2166,6 +2175,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ switchButton }."
+      ],
+      "Mastercard SecureCode logo": [
+        "Логотип Mastercard SecureCode"
       ],
       "No credit card required": [
         "Кредитна картка не обов'язкова"
@@ -2398,6 +2410,9 @@
       "Unsupported file": [
         "Непідтримуваний файл"
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
       ],
@@ -2421,6 +2436,9 @@
       ],
       "Version ${ version }": [
         "Версія ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Логотип Visa Secure"
       ],
       "Warning:": [
         "Попередження:"
@@ -2975,8 +2993,8 @@
       "What happened?": [
         "Що сталося?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "Яка основна причина скасування?"
       ],
       "What is the main reason you are deleting your account?": [
         "Яка основна причина видалення вашого облікового запису?"
@@ -4676,6 +4694,9 @@
       ],
       "Your current plan": [
         "Поточний тарифний план"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
       ],
       "Your plan": [
         "Ваш тарифний план"

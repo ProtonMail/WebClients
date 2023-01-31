@@ -599,6 +599,9 @@
       "Upgrade": [
         "升級"
       ],
+      "Upgrade now": [
+        "立即升級"
+      ],
       "Upload anyway": [
         "仍要上載"
       ],
@@ -2879,9 +2882,6 @@
       "${ speed }/s": [
         "${ speed }/秒"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } 儲存量"
-      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
@@ -2890,9 +2890,6 @@
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } 個成員)"
-      ],
-      "10 email addresses": [
-        "10 個電郵位址"
       ],
       "A number will be added to the filename": [
         "將在檔案名稱中加入數字"
@@ -2995,9 +2992,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "繼續使用 ${ DRIVE_APP_NAME } 並在稍後解鎖雲端硬碟"
-      ],
-      "Continue with ${ planName }": [
-        "繼續使用 ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "建立 ${ calendarsToBeCreated } 個新行事曆"
@@ -3239,6 +3233,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "您最近似乎嘗試上傳 ${ uploadName }。若上傳失敗，請 ${ replaceFile }。若上傳仍在進行中，取代它將會取消進行中的上傳。"
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "垃圾桶中的項目都將保留在此處，直到您將它們永久刪除為止"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "就像拖放或選取檔案一樣簡單"
       ],
@@ -3374,9 +3371,6 @@
       "Only the people with the link and the password can access this folder.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
       ],
-      "Other options": [
-        "其它選項"
-      ],
       "Paused": [
         "已暫停"
       ],
@@ -3430,9 +3424,6 @@
       ],
       "Primary": [
         "主要"
-      ],
-      "Priority support": [
-        "優先支援"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "私密搜尋已啟用。您現可關閉此對話方塊並搜尋檔案和資料夾。"
@@ -3511,12 +3502,6 @@
       ],
       "Something went wrong, please try again later.": [
         "發生錯誤，請稍後再試。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "儲存空間共用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 。"
-      ],
-      "Support for 1 custom email domain": [
-        "支援 1 個自訂電郵網域"
       ],
       "support team": [
         "支援團隊"
@@ -3626,12 +3611,6 @@
       "Unknown error": [
         "未知錯誤"
       ],
-      "Unlimited folders, labels, and filters": [
-        "不限數量的資料夾、標籤與篩選器"
-      ],
-      "Unlimited messages": [
-        "無限制的郵件"
-      ],
       "Unlock drive to recover files": [
         "解鎖雲端硬碟以恢復文件"
       ],
@@ -3644,8 +3623,8 @@
       "Updating drive search...": [
         "正在更新雲端硬碟搜索..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "今天就升級，不要錯過 ${ planName } 特賞限時福利！"
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
       "Uploaded": [
         "已上載"
@@ -3797,6 +3776,9 @@
       ],
       "file data order": [
         "檔案資料順序"
+      ],
+      "hash key": [
+        "雜湊金鑰"
       ],
       "keys": [
         "金鑰"
@@ -5491,8 +5473,8 @@
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您專屬的免費試用即將結束，到期日為 ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
       ],
       "Your welcome actions": [
         "您的歡迎動作"

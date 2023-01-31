@@ -510,11 +510,11 @@
       "Not spam": [
         "No es spam"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -827,6 +827,9 @@
       ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Upgrade now": [
+        "Actualizar ahora"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -2911,9 +2914,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Error al obtener las sesiones activas, ${ refresh } o intente nuevo más tarde."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre"
       ],
@@ -4354,9 +4354,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Perderá el acceso a todos los datos cifrados actuales en su cuenta si continúa."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "Créditos ganados de ${ BRAND_NAME } ${ planName }"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } pausó una importación porque perdió conexión con su otro proveedor de correo electrónico. Vuelva a conectar."
       ],
@@ -4603,6 +4600,9 @@
       "Already used": [
         "Ya usado"
       ],
+      "American Express SafeKey logo": [
+        "Logo de American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Cantidad inferior al mínimo (${ amount })."
       ],
@@ -4741,9 +4741,6 @@
       "Continue anyway?": [
         "¿Continuar de todos modos?"
       ],
-      "Continue with ${ planName }": [
-        "Continuar con ${ planName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Al continuar se conectará su cuenta de ${ BRAND_NAME } a ${ name }."
       ],
@@ -4774,6 +4771,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no usada de su suscripción al plan anterior"
+      ],
+      "Credits earned": [
+        "Créditos ganados"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualmente todo el almacenamiento disponible se asigna a la cuenta de administrador. Reduzca la asignación de la cuenta de administrador para liberar espacio para usuarios adicionales. Puede aumentar el almacenamiento total en cualquier momento al actualizar su cuenta."
@@ -4807,6 +4807,9 @@
       ],
       "Delete link?": [
         "¿Eliminar enlace?"
+      ],
+      "Discover ProtectBuy logo": [
+        "Logo de Discover ProtectBuy"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "NO olvide esta contraseña. Si la olvida, no podrá iniciar sesión ni descifrar sus mensajes."
@@ -4950,8 +4953,8 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Los filtros funcionan en todos los correos, incluyendo los entrantes y enviados. Cada filtro debe contener al menos un nombre, una condición y una acción."
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Para Visa y MasterCard, los 3 dígitos en la parte posterior de la tarjeta."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Para Visa, MasterCard y Discover, los 3 dígitos de la parte trasera de la tarjeta. Para American Express, los 4 dígitos de la parte frontal de la tarjeta."
       ],
       "Free up some space or add more storage space.": [
         "Libere algo de espacio o añada más espacio de almacenamiento."
@@ -5201,6 +5204,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Ingrese manualmente esta información en el dispositivo de autenticación de dos factores para configurar su cuenta. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Logo de Mastercard SecureCode"
+      ],
       "Member": [
         "Miembro"
       ],
@@ -5296,9 +5302,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existen otros administradores en su organización, es responsable de comunicarles la contraseña nueva."
-      ],
-      "Other options": [
-        "Otras opciones"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Archivo de recuperación desactualizado; actualícelo para garantizar el acceso a sus datos"
@@ -5783,8 +5786,8 @@
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Actualice hoy y evite perder los beneficios de ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -5821,6 +5824,9 @@
       ],
       "Version ${ version }": [
         "Versión ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Logo de Visa Secure"
       ],
       "Warning:": [
         "Advertencia:"
@@ -7326,8 +7332,8 @@
       "What happened?": [
         "¿Qué ha ocurrido?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "¿Cuál es la razón principal por la que está cancelando?"
       ],
       "What is the main reason you are deleting your account?": [
         "¿Cuál es el motivo principal por el que elimina su cuenta?"
@@ -7565,9 +7571,6 @@
       ],
       "Terms": [
         "Términos"
-      ],
-      "Terms and conditions": [
-        "Términos y condiciones"
       ],
       "Trouble signing in?": [
         "¿Problemas para iniciar sesión?"
@@ -8204,6 +8207,26 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8273,26 +8296,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -11005,11 +11008,11 @@
       "Your current plan": [
         "Su plan actual"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Su prueba gratuita termina pronto, en ${ formattedEndDate }"
-      ],
       "Your import history": [
         "Su historial de importación"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Su prueba gratuita de Mail Plus termina en ${ textDate }"
       ],
       "Your plan": [
         "Su plan"

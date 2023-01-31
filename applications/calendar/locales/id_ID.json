@@ -508,6 +508,9 @@
       "Upgrade": [
         "Tingkatkan"
       ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
       "Upload picture": [
         "Unggah gambar"
       ],
@@ -1974,8 +1977,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
+      "Do not ask again": [
+        "Jangan tanyakan lagi"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3123,17 +3126,11 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
-      "${ storageSize } storage": [
-        "Kuota penyimpanan ${ storageSize }"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } anggota)"
-      ],
-      "10 email addresses": [
-        "10 alamat email"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Surel pembatalan akan dikirim ke peserta yang dihapus."
@@ -3203,9 +3200,6 @@
       ],
       "Close this screen to exit.": [
         "Tutup layar ini untuk keluar."
-      ],
-      "Continue with ${ planName }": [
-        "Lanjut dengan ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "Buat ${ calendarsToBeCreated } kalender baru"
@@ -3423,9 +3417,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
-      "Other options": [
-        "Pilihan lainnya"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "Enkripsi PGP/Inline hanya kompatibel dengan format Plain Text."
       ],
@@ -3462,9 +3453,6 @@
       "Primary": [
         "Utama"
       ],
-      "Priority support": [
-        "Dukungan prioritas"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
       ],
@@ -3494,12 +3482,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Beberapa jawaban Anda untuk kejadian sebelumnya yang diperbarui oleh penyelenggara akan hilang."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
-      ],
-      "Support for 1 custom email domain": [
-        "Dukungan 1 domain email khusus"
       ],
       "support team": [
         "tim dukungan"
@@ -3579,17 +3561,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited messages": [
-        "Tanpa batasan jumlah pesan"
-      ],
       "Update recurring event": [
         "Perbarui acara berulang"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ planName } berikut."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
       "We'll notify you when the import is done.": [
         "Kami akan memberitahukan Anda apabila proses impor telah selesai."
@@ -5587,8 +5563,8 @@
       "Your calendar link": [
         "Tautan kalender Anda"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Masa uji coba gratis Anda akan segera berakhir pada ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

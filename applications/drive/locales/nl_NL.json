@@ -598,6 +598,9 @@
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade now": [
+        "Nu upgraden"
+      ],
       "Upload anyway": [
         "Toch uploaden"
       ],
@@ -2925,9 +2928,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } opslagruimte"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
@@ -2938,9 +2938,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadressen"
       ],
       "A number will be added to the filename": [
         "Een nummer wordt toegevoegd aan de bestandsnaam"
@@ -3039,9 +3036,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Blijf ${ DRIVE_APP_NAME } gebruiken en ontgrendel de schijf later"
-      ],
-      "Continue with ${ planName }": [
-        "Ga door met ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Maak één nieuwe agenda",
@@ -3423,9 +3417,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot deze map."
       ],
-      "Other options": [
-        "Andere opties"
-      ],
       "Paused": [
         "Gepauzeerd"
       ],
@@ -3480,9 +3471,6 @@
       ],
       "Primary": [
         "Primair"
-      ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privézoeken ingeschakeld. U kunt dit dialoog nu afsluiten, en naar bestanden en folders zoeken."
@@ -3561,12 +3549,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-mail domein"
       ],
       "support team": [
         "ondersteuningsteam"
@@ -3671,12 +3653,6 @@
       "Unknown error": [
         "Onbekende fout"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Ongelimiteerde mappen, labels en filters"
-      ],
-      "Unlimited messages": [
-        "Onbeperkt aantal berichten"
-      ],
       "Unlock drive to recover files": [
         "Ontgrendel schijf om bestanden te herstellen"
       ],
@@ -3688,9 +3664,6 @@
       ],
       "Updating drive search...": [
         "Drive doorzoeken updaten..."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
       ],
       "Uploaded": [
         "Geüpload"
@@ -5819,9 +5792,6 @@
       ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
       ],
       "Your welcome actions": [
         "Uw welkomstacties"

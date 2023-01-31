@@ -347,6 +347,9 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ],
       "Use ${ label } theme": [
         "Usa il tema ${ label }"
       ],
@@ -1911,6 +1914,9 @@
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
       ],
+      "American Express SafeKey logo": [
+        "Logo American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Importo inferiore al minimo (${ amount })."
       ],
@@ -1961,6 +1967,9 @@
       ],
       "Custom email domains": [
         "Domini email personalizzati"
+      ],
+      "Discover ProtectBuy logo": [
+        "Logo Discover ProtectBuy"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Non utilizzare le credenziali OpenVPN / IKEv2 nelle applicazioni ${ VPN_APP_NAME } o nel pannello di controllo ${ VPN_APP_NAME }. ${ learnMore }"
@@ -2031,8 +2040,8 @@
       "expires ${ expirationDate }": [
         "scade il ${ expirationDate }"
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Per Visa e MasterCard, le 3 cifre sul retro della carta. Per American Express, le 4 cifre sulla parte anteriore della carta."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Per Visa, MasterCard e Discover, le 3 cifre sul retro della carta. Per American Express, le 4 cifre sulla parte anteriore della carta."
       ],
       "Free up some space or add more storage space.": [
         "Libera dello spazio o aggiungi più spazio di archiviazione."
@@ -2135,6 +2144,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Inserisci manualmente queste informazioni di autenticazione a due fattori nel tuo dispositivo per impostare il tuo account. ${ switchButton }."
+      ],
+      "Mastercard SecureCode logo": [
+        "Logo Mastercard SecureCode"
       ],
       "No credit card required": [
         "Nessuna carta di credito richiesta"
@@ -2367,6 +2379,9 @@
       "Unsupported file": [
         "File non supportato"
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Esegui l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Usa il miglior server in base al carico corrente e alla posizione: ${ formattedBestServerName }"
       ],
@@ -2390,6 +2405,9 @@
       ],
       "Version ${ version }": [
         "Versione ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Logo Visa Secure"
       ],
       "Warning:": [
         "Attenzione:"
@@ -2942,8 +2960,8 @@
       "What happened?": [
         "Cos'è successo?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "Qual è il motivo principale per cui stai disdicendo?"
       ],
       "What is the main reason you are deleting your account?": [
         "Qual è il motivo principale per cui stai cancellando il tuo account?"
@@ -4813,6 +4831,9 @@
       ],
       "Your current plan": [
         "Il tuo piano attuale"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "La tua prova gratuita di Mail Plus termina il giorno ${ textDate }"
       ],
       "Your plan": [
         "Il tuo piano"

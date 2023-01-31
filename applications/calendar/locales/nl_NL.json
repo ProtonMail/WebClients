@@ -510,6 +510,9 @@
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade now": [
+        "Nu upgraden"
+      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -1984,11 +1987,6 @@
         "De afspraak hoort bij een uitgeschakelde agenda."
       ]
     },
-    "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Agenda toevoegen"
@@ -3177,9 +3175,6 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } opslagruimte"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
@@ -3187,9 +3182,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadressen"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Een annuleringsmail wordt verzonden naar de verwijderde deelnemers."
@@ -3259,9 +3251,6 @@
       ],
       "Close this screen to exit.": [
         "Sluit dit scherm om af te sluiten."
-      ],
-      "Continue with ${ planName }": [
-        "Ga door met ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Maak één nieuwe agenda",
@@ -3481,9 +3470,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
-      "Other options": [
-        "Andere opties"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
       ],
@@ -3521,9 +3507,6 @@
       "Primary": [
         "Primair"
       ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
       ],
@@ -3553,12 +3536,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Sommige antwoorden op voorvallen die eerder zijn bijgewerkt door de organisator zullen verloren gaan."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-mail domein"
       ],
       "support team": [
         "ondersteuningsteam"
@@ -3638,17 +3615,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Ongelimiteerde mappen, labels en filters"
-      ],
-      "Unlimited messages": [
-        "Onbeperkt aantal berichten"
-      ],
       "Update recurring event": [
         "Terugkerende afspraak updaten"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
@@ -5922,9 +5890,6 @@
       ],
       "Your calendar link": [
         "Uw agendakoppeling"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
