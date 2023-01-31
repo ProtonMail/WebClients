@@ -428,7 +428,7 @@ const SubscriptionModal = ({
 
     useEffect(() => {
         // Each time the user switch between steps, it takes the user to the top of the modal
-        topRef.current?.scrollIntoView();
+        topRef.current?.scrollIntoView?.();
     }, [model.step]);
 
     return (
