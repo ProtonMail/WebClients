@@ -1,6 +1,6 @@
 .toolbar {
-	--padding-toolbar-button: #{em(8, $base-font-size)};
-	--padding-toolbar-button-dropdown: #{em(8, $base-font-size)};
+	--padding-toolbar-button: #{em(9)};
+	--padding-toolbar-button-dropdown: #{em(9)};
 
 	position: relative;
 	z-index: 1;
@@ -10,8 +10,10 @@
 	color: var(--toolbar-text-color);
 
 	&-inner {
-		margin: em(5.5); // trick to get square button icons
-		gap: em(12);
+		margin-inline: em(5.5);
+		padding-block: em(3.5);
+		gap: em(8);
+		align-items: stretch;
 	}
 
 	&-button {
@@ -33,9 +35,9 @@
 		&--dropdown {
 			padding-inline: var(--padding-toolbar-button-dropdown);
 
-			// just to make it closer to checkbox
 			&-more-selections {
-				margin-inline-start: em(2);
+				margin-inline-start: em(2); // move it closer to checkbox
+				margin-inline-end: em(8); // more space to buttons on the right
 
 				--padding-toolbar-button-dropdown: #{em(6, $base-font-size)};
 			}
@@ -45,6 +47,11 @@
 	&-separator {
 		inline-size: 1px;
 		background: var(--toolbar-separator-color);
+	}
+
+	.vr.vr {
+		block-size: #{em(28)};
+		align-self: center;
 	}
 
 	button[aria-disabled='true'],

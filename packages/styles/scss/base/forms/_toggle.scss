@@ -176,7 +176,7 @@ $toggle-width-button: em(24) !default;
 			}
 		}
 
-		@supports not selector(:focus-visible:has) {
+		@supports not selector(:focus-visible:has(a, b)) {
 			&:focus-within {
 				&::after {
 					border-color: var(--focus-outline);
@@ -185,7 +185,7 @@ $toggle-width-button: em(24) !default;
 			}
 		}
 
-		@supports selector(:focus-visible:has) {
+		@supports selector(:focus-visible:has(a, b)) {
 			&:has(*:focus-visible) {
 				&::after {
 					border-color: var(--focus-outline);
