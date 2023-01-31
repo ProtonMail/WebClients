@@ -85,6 +85,10 @@ export interface ApiReportSummary {
     State: ApiImporterState;
     TotalSize: number;
     RollbackState?: ApiReportRollbackState;
+    NumMessages?: number;
+    NumContacts?: number;
+    NumGroups?: number;
+    NumEvents?: number;
 }
 
 export enum ApiImportProvider {
@@ -120,6 +124,7 @@ export interface ApiImporterFolder {
     DestinationFolder?: MailImportDestinationFolder;
     Processed: number;
     Total: number;
+    Source?: string;
 }
 
 export interface ApiImporterActive {
@@ -129,6 +134,10 @@ export interface ApiImporterActive {
     Mapping?: ApiImporterFolder[];
     Processed?: number;
     Total?: number;
+    AttemptTime?: number;
+    NumContacts?: number;
+    FilterStartDate?: string;
+    FilterEndDate?: string;
 }
 
 export interface ApiImporter {
@@ -139,6 +148,7 @@ export interface ApiImporter {
     Provider: ApiImportProvider;
     Product: ImportType[];
     Active?: Partial<Record<ImportType, ApiImporterActive>>;
+    ModifyTime: number;
     /** Only on IMAP flow */
     ImapHost?: string;
     /** Only on IMAP flow */
@@ -226,6 +236,8 @@ export interface ApiSync {
     Product: ImportType;
     State: ApiSyncState;
     CreateTime: number;
+    LastImportTime: number;
+    LastRenewTime: number;
 }
 
 export interface APIImportSyncListResponse extends ApiResponse {
