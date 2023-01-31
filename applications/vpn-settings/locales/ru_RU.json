@@ -347,6 +347,9 @@
       "Upgrade": [
         "Улучшить"
       ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ],
       "Use ${ label } theme": [
         "Использовать тему ${ label }"
       ],
@@ -1937,6 +1940,9 @@
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
       ],
+      "American Express SafeKey logo": [
+        "Логотип American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Сумма ниже допустимого минимума (${ amount })."
       ],
@@ -1987,6 +1993,9 @@
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
+      ],
+      "Discover ProtectBuy logo": [
+        "Логотип Discover ProtectBuy"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Не используйте учётные данные OpenVPN / IKEv2 в приложениях ${ VPN_APP_NAME } или в панели управления ${ VPN_APP_NAME }.\n${ learnMore }"
@@ -2057,8 +2066,8 @@
       "expires ${ expirationDate }": [
         "истекает ${ expirationDate }"
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Для Visa и MasterCard - три цифры на обратной стороне карты. Для American Express - 4 цифры на лицевой стороне карты."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Для Visa, MasterCard и Discover - 3 цифры на обратной стороне вашей карты. Для American Express - 4 цифры на лицевой стороне вашей карты."
       ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
@@ -2161,6 +2170,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Введите эту информацию вручную в устройство двухфакторной аутентификации, чтобы настроить учетную запись. ${ switchButton }."
+      ],
+      "Mastercard SecureCode logo": [
+        "Логотип Mastercard SecureCode"
       ],
       "No credit card required": [
         "Кредитная карточка не требуется"
@@ -2393,6 +2405,9 @@
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
       ],
@@ -2416,6 +2431,9 @@
       ],
       "Version ${ version }": [
         "Версия ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Логотип Visa Secure"
       ],
       "Warning:": [
         "Предупреждение:"
@@ -2970,8 +2988,8 @@
       "What happened?": [
         "Что случилось?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "Какова основная причина отмены?"
       ],
       "What is the main reason you are deleting your account?": [
         "Какова основная причина, по которой вы удаляете свой аккаунт?"
@@ -4918,6 +4936,9 @@
       ],
       "Your current plan": [
         "Ваш текущий тариф"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"
       ],
       "Your plan": [
         "Ваш тариф"

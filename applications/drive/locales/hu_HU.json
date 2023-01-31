@@ -589,6 +589,9 @@
       "Upgrade": [
         "Csomagváltás"
       ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ],
       "Upload anyway": [
         "Feltöltés mindenképpen"
       ],
@@ -2864,9 +2867,6 @@
       "${ speed }/s": [
         "${ speed }/mp"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } tárhely"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
         "${ updated } névjegy sikeresen frissítve."
@@ -2877,9 +2877,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
         "(${ memberCount } tagok)"
-      ],
-      "10 email addresses": [
-        "10 e-mail cím"
       ],
       "A number will be added to the filename": [
         "Egy számot ad a fájl nevéhez"
@@ -2975,9 +2972,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "A ${ DRIVE_APP_NAME } használatának folytatása, a tárhely feloldása később"
-      ],
-      "Continue with ${ planName }": [
-        "Folytatás ezzel: ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Létrehozandó ${ calendarsToBeCreated } új naptár",
@@ -3327,9 +3321,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Csak azok férhetnek hozzá a mappához, akik a hivatkozást és a jelszót is ismerik."
       ],
-      "Other options": [
-        "Más opciók"
-      ],
       "Paused": [
         "Felfüggesztve"
       ],
@@ -3372,9 +3363,6 @@
       ],
       "Primary": [
         "Elsődleges"
-      ],
-      "Priority support": [
-        "Elsőbbségi támogatás"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privát keresés engedélyezve. Bezárhatja ezt a párbeszédet és kereshet fájlokat és mappákat."
@@ -3444,12 +3432,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Hiba történt. Kérjük, próbálkozzon később."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "A tárhely megosztott a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } között."
-      ],
-      "Support for 1 custom email domain": [
-        "Egy saját e-mail domain név használata"
       ],
       "support team": [
         "ügyfélszolgálat"
@@ -3542,12 +3524,6 @@
       "Unknown error": [
         "Ismeretlen hiba"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Korlátlan számú mappa, címke és szűrő"
-      ],
-      "Unlimited messages": [
-        "Korlátlan számú üzenet"
-      ],
       "Unlock drive to recover files": [
         "A tárhelyek feloldása a fájlok helyreállításához"
       ],
@@ -3559,9 +3535,6 @@
       ],
       "Updating drive search...": [
         "Felhőtárban keresés frissítése..."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Váltson ma nagyobb csomagra, hogy elkerülje az alábbi ${ planName } előnyök elvesztését."
       ],
       "Uploaded": [
         "Feltöltve"
@@ -5376,9 +5349,6 @@
       ],
       "Your changes are not synced yet": [
         "Módosításai még nincsenek szinkronizálva"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ formattedEndDate }"
       ]
     },
     "Title header": {

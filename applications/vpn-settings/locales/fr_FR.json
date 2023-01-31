@@ -347,6 +347,9 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
+      "Upgrade now": [
+        "Passer à l'abonnement supérieur"
+      ],
       "Use ${ label } theme": [
         "Utiliser le thème ${ label }"
       ],
@@ -1911,6 +1914,9 @@
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
       ],
+      "American Express SafeKey logo": [
+        "Logo American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum de (${ amount })."
       ],
@@ -1961,6 +1967,9 @@
       ],
       "Custom email domains": [
         "Domaines d'e-mails personnalisés"
+      ],
+      "Discover ProtectBuy logo": [
+        "Logo Discover ProtectBuy"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "N'utilisez pas les identifiants OpenVPN/IKEv2 dans les applications ${ VPN_APP_NAME } ou sur le tableau de bord ${ VPN_APP_NAME }. ${ learnMore }"
@@ -2031,8 +2040,8 @@
       "expires ${ expirationDate }": [
         "expire le ${ expirationDate }"
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Pour Visa et MasterCard, les 3 chiffres au verso de votre carte. Pour American Express, les 4 chiffres au recto de votre carte."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Pour Visa, MasterCard et Discover, les 3 chiffres au verso de votre carte. Pour American Express, les 4 chiffres au recto de votre carte."
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
@@ -2135,6 +2144,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Saisissez manuellement cette information dans votre dispositif d'authentification à deux facteurs pour configurer votre compte. ${ switchButton }."
+      ],
+      "Mastercard SecureCode logo": [
+        "Logo Mastercard SecureCode"
       ],
       "No credit card required": [
         "Aucune carte bancaire nécessaire"
@@ -2367,6 +2379,9 @@
       "Unsupported file": [
         "Le fichier n'est pas pris en charge."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Changez d'offre maintenant pour bénéficier des fonctionnalités, produits et espaces de stockage Premium à un tarif spécial"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilisez le meilleur serveur en fonction de la charge actuelle et de la position : ${ formattedBestServerName }"
       ],
@@ -2390,6 +2405,9 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Logo Visa Secure"
       ],
       "Warning:": [
         "Attention :"
@@ -2942,8 +2960,8 @@
       "What happened?": [
         "Que s'est-il passé ?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "Quelle est la raison principale de votre annulation ?"
       ],
       "What is the main reason you are deleting your account?": [
         "Quelle est la principale raison pour laquelle vous supprimez votre compte ?"
@@ -4816,6 +4834,9 @@
       ],
       "Your current plan": [
         "Votre abonnement actuel"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Votre essai gratuit Mail Plus finit le ${ textDate }"
       ],
       "Your plan": [
         "Votre abonnement"

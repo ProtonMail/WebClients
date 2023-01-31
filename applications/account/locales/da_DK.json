@@ -510,10 +510,10 @@
       "Not spam": [
         "Ikke spam"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -827,6 +827,9 @@
       ],
       "Upgrade": [
         "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ],
       "Upload picture": [
         "Upload billede"
@@ -2886,9 +2889,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Kunne ikke hente aktive sessioner. ${ refresh } eller prøv igen senere."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Et filter med dette navn findes allerede"
       ],
@@ -4281,9 +4281,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "${ BRAND_NAME } ${ planName } kreditter optjent"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } satte en import på pause, da vi mistede forbindelsen med din anden e-mail-udbyder. Genopret venligst forbindelsen."
       ],
@@ -4665,9 +4662,6 @@
       "Continue anyway?": [
         "Vil du fortsætte alligevel?"
       ],
-      "Continue with ${ planName }": [
-        "Fortsæt med ${ planName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "At fortsætte vil forbinde din ${ BRAND_NAME }-konto til ${ name }."
       ],
@@ -4870,9 +4864,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "For Visa, MasterCard og Discover er det de 3 cifre på bagsiden af dit kort. For American Express, de 4 cifre på forsiden af dit kort."
       ],
       "Free up some space or add more storage space.": [
         "Frigør plads eller tilføj mere lagerplads."
@@ -5214,9 +5205,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Der findes andre administratorer i din organisation. Du er selv ansvarlig for at formidle den nye adgangskode til dem."
-      ],
-      "Other options": [
-        "Andre muligheder"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Forældet gendannelsesfil; opdater for at sikre adgang til dine data"
@@ -5689,8 +5677,8 @@
       "Update recovery phrase": [
         "Opdater gendannelsessætning"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
       "Upload picture": [
         "Upload billede"
@@ -7208,9 +7196,6 @@
       "What happened?": [
         "Hvad skete der?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
-      ],
       "What is the main reason you are deleting your account?": [
         "Hvad er hovedårsagen til, at du sletter din konto?"
       ],
@@ -7444,9 +7429,6 @@
       ],
       "Terms": [
         "Betingelser"
-      ],
-      "Terms and conditions": [
-        "Vilkår og betingelser"
       ],
       "Trouble signing in?": [
         "Problemer med at logge på?"
@@ -8005,6 +7987,20 @@
         "Support"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* Med 1-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
@@ -8035,20 +8031,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Den gratis startkonto, der er designet til at give alle mulighed for at få privatlivsbeskyttelse som standard."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9461,6 +9443,34 @@
         "vCard-felt"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }. time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 t",
+        "${ hoursInt },5 t"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 time",
+        "${ hoursInt },5 timer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minutter"
+      ]
+    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Søg tidszoner"
@@ -10297,11 +10307,11 @@
       "Your current plan": [
         "Dit nuværende abonnement"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
-      ],
       "Your import history": [
         "Din importhistorik"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Din Mail Plus prøveperiode slutter ${ textDate }"
       ],
       "Your plan": [
         "Dit abonnement"

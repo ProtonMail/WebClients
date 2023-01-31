@@ -599,6 +599,9 @@
       "Upgrade": [
         "Tingkatkan"
       ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
       "Upload anyway": [
         "Tetap unggah"
       ],
@@ -2884,9 +2887,6 @@
       "${ speed }/s": [
         "${ speed }/dtk"
       ],
-      "${ storageSize } storage": [
-        "Kuota penyimpanan ${ storageSize }"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
@@ -2895,9 +2895,6 @@
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } anggota)"
-      ],
-      "10 email addresses": [
-        "10 alamat email"
       ],
       "A number will be added to the filename": [
         "Nomor akan ditambahkan ke nama berkas"
@@ -3000,9 +2997,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Lanjut gunakan ${ DRIVE_APP_NAME } tanpa membuka kunci berkas"
-      ],
-      "Continue with ${ planName }": [
-        "Lanjut dengan ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "Buat ${ calendarsToBeCreated } kalender baru"
@@ -3382,9 +3376,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Hanya orang-orang yang memiliki tautan dan kata sandi yang dapat mengakses folder ini."
       ],
-      "Other options": [
-        "Pilihan lainnya"
-      ],
       "Paused": [
         "Dijeda"
       ],
@@ -3438,9 +3429,6 @@
       ],
       "Primary": [
         "Utama"
-      ],
-      "Priority support": [
-        "Dukungan prioritas"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Pencarian pribadi diaktifkan. Anda kini dapat menutup kotak dialog ini dan mulai mencari berkas dan folder tertentu."
@@ -3519,12 +3507,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Ada sesuatu yang salah, silakan coba lagi nanti."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
-      ],
-      "Support for 1 custom email domain": [
-        "Dukungan 1 domain email khusus"
       ],
       "support team": [
         "tim dukungan"
@@ -3634,12 +3616,6 @@
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited messages": [
-        "Tanpa batasan jumlah pesan"
-      ],
       "Unlock drive to recover files": [
         "Buka kunci drive untuk memulihkan berkas-berkas yang ada"
       ],
@@ -3652,8 +3628,8 @@
       "Updating drive search...": [
         "Memperbarui pencarian drive..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ planName } berikut."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
       "Uploaded": [
         "Diunggah"
@@ -5524,8 +5500,8 @@
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Masa uji coba gratis Anda akan segera berakhir pada ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
       ],
       "Your welcome actions": [
         "Hadiah selamat datang Anda"

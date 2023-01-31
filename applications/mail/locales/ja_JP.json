@@ -4338,9 +4338,6 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } ストレージ"
-      ],
       "${ total } conversations": [
         "${ total }件のやりとり"
       ],
@@ -4376,9 +4373,6 @@
       ],
       "(No Recipient)": [
         "(宛先なし)"
-      ],
-      "10 email addresses": [
-        "10 件のメールアドレス"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "回復用フレーズはアカウントへのアクセスを保護するための手段のうちの 1 つです。回復用フレーズを使用すると、パスワードを忘れた場合でもアカウントにアクセスしたり暗号化されたデータを復元したりすることができます。"
@@ -4511,9 +4505,6 @@
       ],
       "Confirm phishing report": [
         "フィッシング報告の確認"
-      ],
-      "Continue with ${ planName }": [
-        "${ planName } で続行"
       ],
       "Copied to clipboard": [
         "クリップボードにコピーされました。"
@@ -4938,9 +4929,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
-      "Other options": [
-        "その他のオプション"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "システムはこのメッセージを迷惑メールとしてフラグを立てました。これが正当なものであるか確認してください。"
       ],
@@ -5006,9 +4994,6 @@
       ],
       "Print email": [
         "メールを印刷"
-      ],
-      "Priority support": [
-        "優先的なサポート"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "ニュースレターや迷惑メールの配信リストから、${ maskMyEmailButton }で自分のアドレスを守りましょう。"
@@ -5127,9 +5112,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "このメッセージは存在しないか有効期限切れです。"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されています。"
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "${ DRIVE_APP_NAME } を使用してファイルを保存、シェアしました。"
       ],
@@ -5144,9 +5126,6 @@
       ],
       "Subject: ": [
         "件名: "
-      ],
-      "Support for 1 custom email domain": [
-        "1 つの独自メールドメインをサポート"
       ],
       "Support privacy by upgrading for": [
         "こちらにアップグレードしてプライバシーを支援 "
@@ -5319,12 +5298,6 @@
       "Turn on to search the content of your messages": [
         "メッセージ内容の検索をオンにします"
       ],
-      "Unlimited folders, labels, and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited messages": [
-        "送信数制限なし"
-      ],
       "Unlock message": [
         "メッセージのロックを解除"
       ],
@@ -5366,9 +5339,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "アップグレードしてサードパーティのデスクトップクライアントで ${ MAIL_APP_NAME } を使用します。"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "次の ${ planName } 特典を失わないために今すぐアップグレードしてください。"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -8221,9 +8191,6 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "無料トライアルは ${ formattedEndDate } に終了します。"
       ]
     },
     "Title header": {

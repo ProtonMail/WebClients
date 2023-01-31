@@ -512,6 +512,9 @@
       "Upgrade": [
         "Modernizare"
       ],
+      "Upgrade now": [
+        "Modernizare"
+      ],
       "Upload picture": [
         "Încărcare imagine"
       ],
@@ -1996,8 +1999,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
+      "Do not ask again": [
+        "Nu mă mai întreba"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3231,9 +3234,6 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } spațiu"
-      ],
       "${ updated } contact updated successfully.": [
         "S-a actualizat un contact.",
         "S-au actualizat ${ updated } contacte.",
@@ -3243,9 +3243,6 @@
         "(Un membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
-      ],
-      "10 email addresses": [
-        "10 adrese de e-mail"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Un e-mail de anulare va fi trimis participanților eliminați."
@@ -3307,6 +3304,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Partajând toate detaliile evenimentului din acest calendar, sunteți de acord să permiteți accesul ${ BRAND_NAME } la aceste informații criptate din calendar."
       ],
+      "Calendar side panel": [
+        "Panou lateral calendar"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
       ],
@@ -3318,9 +3318,6 @@
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
-      ],
-      "Continue with ${ planName }": [
-        "Continuare cu ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Creare un calendar",
@@ -3542,9 +3539,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
-      "Other options": [
-        "Alte opțiuni"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP / Inline este compatibil doar cu formatul de text simplu."
       ],
@@ -3583,9 +3577,6 @@
       "Primary": [
         "Primară"
       ],
-      "Priority support": [
-        "Asistență prioritară"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
       ],
@@ -3615,12 +3606,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Unele dintre răspunsurile dvs. la evenimentele actualizate anterior de către organizator vor fi pierdute."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Suport pentru un domeniu de e-mail personal"
       ],
       "support team": [
         "echipa de asistență"
@@ -3700,17 +3685,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Unlimited messages": [
-        "Mesaje nelimitate"
-      ],
       "Update recurring event": [
         "Actualizare eveniment recurent"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Treceți la un plan superior astăzi pentru a evita pierderea beneficiilor din ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
@@ -5813,8 +5792,8 @@
       "Your calendar link": [
         "Legătură calendar"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Perioada de probare gratuită se încheie în curând, la ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

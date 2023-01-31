@@ -4477,9 +4477,6 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } spațiu"
-      ],
       "${ total } conversation": [
         "o conversație",
         "${ total } conversații",
@@ -4533,9 +4530,6 @@
       ],
       "(No Recipient)": [
         "(Fără destinatar)"
-      ],
-      "10 email addresses": [
-        "10 adrese de e-mail"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "O frază de recuperare este una dintre cele mai sigure modalități de a vă proteja accesul la cont. O puteți folosi pentru a vă accesa contul și pentru a vă recupera datele criptate dacă vă uitați vreodată parola."
@@ -4649,6 +4643,9 @@
       "Body: ": [
         "Conținut: "
       ],
+      "Calendar side panel": [
+        "Panou lateral calendar"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
       ],
@@ -4678,9 +4675,6 @@
       ],
       "Confirm phishing report": [
         "Confirmare raportare înșelăciune"
-      ],
-      "Continue with ${ planName }": [
-        "Continuare cu ${ planName }"
       ],
       "Copied to clipboard": [
         "Copiat în memorie"
@@ -5128,9 +5122,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
-      "Other options": [
-        "Alte opțiuni"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
       ],
@@ -5198,9 +5189,6 @@
       ],
       "Print email": [
         "Tipărire e-mail"
-      ],
-      "Priority support": [
-        "Asistență prioritară"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Împiedicați divulgarea adresei e-mail către liste de mesagerie sau mesaje nedorite cu ${ maskMyEmailButton }."
@@ -5319,9 +5307,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Stocați și partajați fișiere în siguranță cu ${ DRIVE_APP_NAME }."
       ],
@@ -5336,9 +5321,6 @@
       ],
       "Subject: ": [
         "Subiect: "
-      ],
-      "Support for 1 custom email domain": [
-        "Suport pentru un domeniu de e-mail personal"
       ],
       "Support privacy by upgrading for": [
         "Susțineți confidențialitatea migrând la"
@@ -5517,12 +5499,6 @@
       "Turn on to search the content of your messages": [
         "Activare căutarea în conținutul mesajelor."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Unlimited messages": [
-        "Mesaje nelimitate"
-      ],
       "Unlock message": [
         "Deblocare mesaj"
       ],
@@ -5534,6 +5510,9 @@
       ],
       "Updating message content search...": [
         "Se actualizează căutarea în conținutul mesajelor..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
       "Upgrade to add more addresses to your account.": [
         "Treceți la un plan superior pentru a adăuga mai multe adrese în contul personal."
@@ -5564,9 +5543,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Treceți la alt plan pentru a utiliza ${ MAIL_APP_NAME } cu clienți desktop de la terți."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Treceți la un plan superior astăzi pentru a evita pierderea beneficiilor din ${ planName }."
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -8591,8 +8567,8 @@
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Perioada de probare gratuită se încheie în curând, la ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
       ]
     },
     "Title header": {

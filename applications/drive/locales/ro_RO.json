@@ -603,6 +603,9 @@
       "Upgrade": [
         "Modernizare"
       ],
+      "Upgrade now": [
+        "Modernizare"
+      ],
       "Upload anyway": [
         "Încărcare așa"
       ],
@@ -2977,9 +2980,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } spațiu"
-      ],
       "${ updated } contact updated successfully.": [
         "S-a actualizat un contact.",
         "S-au actualizat ${ updated } contacte.",
@@ -2992,9 +2992,6 @@
         "(Un membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
-      ],
-      "10 email addresses": [
-        "10 adrese de e-mail"
       ],
       "A number will be added to the filename": [
         "Va fi adăugată o cifră la numele fișierelor."
@@ -3063,6 +3060,9 @@
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Încărcările în masă pot reduce performanța computerului. Luați în considerare limitarea activităților cu consum de memorie, cum ar fi redarea transmisiilor în flux în timpul încărcării. Sau încercați să încărcați în mai multe loturi."
       ],
+      "Calendar side panel": [
+        "Panou lateral calendar"
+      ],
       "Canceled": [
         "Anulat"
       ],
@@ -3098,9 +3098,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuare utilizare ${ DRIVE_APP_NAME } și deblocare unitate mai târziu"
-      ],
-      "Continue with ${ planName }": [
-        "Continuare cu ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Creare un calendar",
@@ -3490,9 +3487,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Numai persoanele care au legătura și parola pot accesa acest folder."
       ],
-      "Other options": [
-        "Alte opțiuni"
-      ],
       "Paused": [
         "Suspendat"
       ],
@@ -3548,9 +3542,6 @@
       ],
       "Primary": [
         "Primară"
-      ],
-      "Priority support": [
-        "Asistență prioritară"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Căutarea privată este activată. Acum puteți închide acest dialog și căuta fișiere sau foldere."
@@ -3629,12 +3620,6 @@
       ],
       "Something went wrong, please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Suport pentru un domeniu de e-mail personal"
       ],
       "support team": [
         "echipa de asistență"
@@ -3746,12 +3731,6 @@
       "Unknown error": [
         "Eroare necunoscută."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Unlimited messages": [
-        "Mesaje nelimitate"
-      ],
       "Unlock drive to recover files": [
         "Deblocare unitate pentru recuperarea fișierelor"
       ],
@@ -3764,8 +3743,8 @@
       "Updating drive search...": [
         "Actualizare căutare în unitate..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Treceți la un plan superior astăzi pentru a evita pierderea beneficiilor din ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
       "Uploaded": [
         "Încărcat"
@@ -5729,8 +5708,8 @@
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Perioada de probare gratuită se încheie în curând, la ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
       ],
       "Your welcome actions": [
         "Acțiuni de bun venit"

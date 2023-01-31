@@ -514,6 +514,9 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
       "Upload picture": [
         "Nahrát obrázek"
       ],
@@ -2007,8 +2010,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Do not ask again"
+      "Do not ask again": [
+        "Příště se neptat"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3285,9 +3288,6 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } úložiště"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
         "${ updated } kontakty úspěšně aktualizovány.",
@@ -3299,9 +3299,6 @@
         "(${ memberCount } členové)",
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
-      ],
-      "10 email addresses": [
-        "10 e-mailových adres"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Odebraným účastníkům bude zaslán e-mail o zrušení účasti."
@@ -3380,9 +3377,6 @@
       ],
       "Close this screen to exit.": [
         "Pro ukončení zavřete tuto obrazovku."
-      ],
-      "Continue with ${ planName }": [
-        "Pokračovat s ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Vytvořit ${ calendarsToBeCreated } nový kalendář",
@@ -3606,9 +3600,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste u takových klíčů vybrali volbu \"Nedůvěřovat\"."
       ],
-      "Other options": [
-        "Další volby"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu."
       ],
@@ -3648,9 +3639,6 @@
       "Primary": [
         "Hlavní"
       ],
-      "Priority support": [
-        "Prioritní podpora"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
       ],
@@ -3680,12 +3668,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Některé vaše odpovědi na události, které byly dříve aktualizovány organizátorem, budou ztraceny."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Podpora 1 vlastní e-mailové domény"
       ],
       "support team": [
         "tým podpory"
@@ -3765,17 +3747,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Chcete-li použít Ověření Adresy, musíte důvěřovat jednomu nebo více dostupným veřejným klíčům, včetně toho, který chcete použít pro odesílání. Toto zamezuje zfalšování šifrovacích klíčů."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Neomezený počet složek, štítků a filtrů"
-      ],
-      "Unlimited messages": [
-        "Neomezený počet zpráv"
-      ],
       "Update recurring event": [
         "Aktualizovat opakující se událost"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Navyšte účet ještě dnes, abyste nepřišli o následující výhody ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
@@ -5929,8 +5905,8 @@
       "Your calendar link": [
         "URL adresa kalendáře"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

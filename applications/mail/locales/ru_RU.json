@@ -4542,9 +4542,6 @@
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } хранилища"
-      ],
       "${ total } conversation": [
         "${ total } цепочка писем",
         "${ total } цепочки писем",
@@ -4607,9 +4604,6 @@
       ],
       "(No Recipient)": [
         "(Нет получателей)"
-      ],
-      "10 email addresses": [
-        "10 адресов электронной почты"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Фраза для восстановления - это один из самых надежных способов защиты доступа к вашему аккаунту. С ее помощью можно получить доступ к аккаунту и восстановить зашифрованные данные, если вы вдруг забудете пароль."
@@ -4757,9 +4751,6 @@
       ],
       "Confirm phishing report": [
         "Подтвердить жалобу на фишинг"
-      ],
-      "Continue with ${ planName }": [
-        "Продолжить с ${ planName }"
       ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
@@ -5217,9 +5208,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
-      "Other options": [
-        "Другие возможности"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система отметила это сообщение как попытку фишинга. Пожалуйста, проверьте, что оно является легитимным."
       ],
@@ -5288,9 +5276,6 @@
       ],
       "Print email": [
         "Распечатать письмо"
-      ],
-      "Priority support": [
-        "Приоритетная поддержка"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Защитите свою электронную почту от утечки в списки рассылки или спамеров с помощью ${ maskMyEmailButton }."
@@ -5409,9 +5394,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "К сожалению, это сообщение не существует, либо срок его действия уже истек."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Защищенное хранение и обмен файлами с помощью ${ DRIVE_APP_NAME }."
       ],
@@ -5426,9 +5408,6 @@
       ],
       "Subject: ": [
         "Тема: "
-      ],
-      "Support for 1 custom email domain": [
-        "Поддержка 1 пользовательского домена электронной почты"
       ],
       "Support privacy by upgrading for": [
         "Поддержите конфиденциальность, обновившись до"
@@ -5610,12 +5589,6 @@
       "Turn on to search the content of your messages": [
         "Включите поиск по содержимому ваших сообщений"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Неограниченное количество папок, меток и фильтров"
-      ],
-      "Unlimited messages": [
-        "Неограниченное количество сообщений"
-      ],
       "Unlock message": [
         "Разблокировать сообщение"
       ],
@@ -5627,6 +5600,9 @@
       ],
       "Updating message content search...": [
         "Обновление поиска по содержимому сообщения…"
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
       ],
       "Upgrade to add more addresses to your account.": [
         "Улучшите аккаунт чтобы добавить больше адресов."
@@ -5657,9 +5633,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Обновление для использования ${ MAIL_APP_NAME } со сторонними клиентами для ПК."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Улучшите сегодня, чтобы не потерять следующие преимущества ${ planName }."
       ],
       "Upload picture": [
         "Загрузить картинку"
@@ -9002,8 +8975,8 @@
       "Your changes are not synced yet": [
         "Изменения ещё не сохранены"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"
       ]
     },
     "Title header": {

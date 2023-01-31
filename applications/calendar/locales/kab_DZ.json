@@ -466,6 +466,9 @@
       "Upgrade": [
         "Lqem"
       ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ],
       "Upload picture": [
         "Sali-d tugna"
       ],
@@ -2523,9 +2526,6 @@
         "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
         "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } n uḥraz"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } n unermis yettwaleqqem akken iwata.",
         "${ updated } n yinermisen ttwaleqqemen akken iwata."
@@ -2533,9 +2533,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } n uɛeggal)",
         "(${ memberCount } n yiɛeggalen)"
-      ],
-      "10 email addresses": [
-        "10 n tansiwin n yimayl"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Ad yettwazen yimayl n usefsex i yimettekkiyen yettwakksen."
@@ -2595,9 +2592,6 @@
       ],
       "Close this screen to exit.": [
         "Mdel agdil-agi akken ad teffɣeḍ."
-      ],
-      "Continue with ${ planName }": [
-        "Kemmel s ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Snulfu-d ${ calendarsToBeCreated } n uwitay amaynut",
@@ -2787,9 +2781,6 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Timeḍriwin yettwaleqqmen yakan sɣur amsuddes ad qqiment."
       ],
-      "Other options": [
-        "Ugar n iɣewwaṛen"
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ttxil-k·m ẓer belli tansiwin yettunefken i ugraw-a ur ttwakkasent ara."
       ],
@@ -2813,9 +2804,6 @@
       ],
       "Primary": [
         "Agejdan"
-      ],
-      "Priority support": [
-        "Tallalt yezwaren"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
@@ -2897,9 +2885,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "I useqdec n usenqed n tansa, issefk ad tettekleḍ ɣef yiwet neɣ ugar seg tsura tizuyaz i yellan, ula d tin i tebɣiḍ ad tt-tesqedceḍ i tuzna. Aya ad isewḥel abeddel n tsura n uwgelhen."
-      ],
-      "Unlimited messages": [
-        "Iznan war talast"
       ],
       "Update recurring event": [
         "Leqqem tadyant d-ittuɣalen"
@@ -4497,9 +4482,6 @@
       ],
       "Your calendar link": [
         "Aseɣwen n uwitayen-ik"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Aneɛruḍ-inek n baṭel ad yekfu deg ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

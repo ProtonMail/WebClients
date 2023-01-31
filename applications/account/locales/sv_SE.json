@@ -510,11 +510,11 @@
       "Not spam": [
         "Inte skräppost"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -827,6 +827,9 @@
       ],
       "Upgrade": [
         "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -2905,9 +2908,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Misslyckades att hämta aktiva sessioner. ${ refresh } eller försök igen senare."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Filter med detta namn finns redan"
       ],
@@ -3540,7 +3540,7 @@
         "Oväntat fel"
       ],
       "Unsupported invitation": [
-        "Inbjudan stöds ej"
+        "Inbjudan stöds inte"
       ],
       "Unsupported response": [
         "Svar stöds inte"
@@ -3669,7 +3669,7 @@
         "Är du säker på att du vill ta bort säkerhetsnyckel ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Mata in en säkerhetsnyckel kopplad till ditt ${ BRAND_NAME } konto."
+        "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
       ],
       "Insert your security key into your device's USB port.": [
         "Sätt in din säkerhetsnyckel i din enhets USB-port."
@@ -4344,9 +4344,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du kommer att förlora åtkomst till alla nuvarande krypterade data på ditt konto om du fortsätter."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "${ BRAND_NAME } ${ planName }-krediter intjänade"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } pausade en import eftersom den förlorade anslutningen till din andra e-postleverantör. Återanslut."
       ],
@@ -4593,6 +4590,9 @@
       "Already used": [
         "Redan använd"
       ],
+      "American Express SafeKey logo": [
+        "Logga för American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Belopp under minimum (${ amount })."
       ],
@@ -4689,6 +4689,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Innan du kan börja skicka och ta emot e-postmeddelanden från dina nya adresser måste du skapa krypteringsnycklar för dem."
       ],
+      "Billing cycle: ${ text }": [
+        "Faktureringsperiod: ${ text }"
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Bitcoin-transaktioner kan ta lite tid att bekräfta (upp till 24 timmar). När de har bekräftats kommer vi att lägga till krediter till ditt konto. Efter transaktionsbekräftelsen kan du betala din faktura med krediterna."
       ],
@@ -4724,9 +4727,6 @@
       ],
       "Continue anyway?": [
         "Fortsätt ändå?"
-      ],
-      "Continue with ${ planName }": [
-        "Fortsätt med ${ planName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Om du fortsätter ansluts ditt ${ BRAND_NAME } till ${ name }."
@@ -4791,6 +4791,9 @@
       ],
       "Delete link?": [
         "Ta bort länk?"
+      ],
+      "Discover ProtectBuy logo": [
+        "Logga för Discover ProtectBuy"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Glöm INTE detta lösenord. Om du glömmer det kommer du inte kunna logga in eller dekryptera dina meddelanden."
@@ -4902,7 +4905,7 @@
         "Ange verifieringskoden som skickades till ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Skriv in verifieringskoden. Siffra ${ digit }."
+        "Ange verifieringskod. Siffra ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Ange dina kontodetaljer för ${ BRAND_NAME }."
@@ -4933,9 +4936,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter fungerar på all e-post, såväl inkommande som skickade. Varje filter måste innehålla minst ett namn, ett villkor och en åtgärd."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "För Visa och MasterCard, de tre siffrorna på baksidan av ditt kort. För American Express, de fyra siffrorna på framsidan av ditt kort."
       ],
       "Free up some space or add more storage space.": [
         "Frigör lite utrymme eller lägg till mer lagringsutrymme."
@@ -5185,6 +5185,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Ange denna information manuellt i din tvåfaktorsautentiseringsenhet för att konfigurera ditt konto. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Logga för Mastercard SecureCode"
+      ],
       "Member": [
         "Medlem"
       ],
@@ -5280,9 +5283,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Andra administratörer finns i din organisation, du är ansvarig för att kommunicera det nya lösenordet till dem."
-      ],
-      "Other options": [
-        "Andra alternativ"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Föråldrad återställningsfil, uppdatera för att säkerställa åtkomst till dina data"
@@ -5761,8 +5761,8 @@
       "Update recovery phrase": [
         "Uppdatera återställningsfras"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Uppgradera idag för att undvika att förlora följande ${ planName }-förmåner."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -5799,6 +5799,9 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Logga för Visa Secure"
       ],
       "Warning:": [
         "Varning:"
@@ -7301,8 +7304,8 @@
       "What happened?": [
         "Vad hände?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "Vad är den främsta anledningen till att du avbryter?"
       ],
       "What is the main reason you are deleting your account?": [
         "Vad är den främsta anledningen till att du tar bort ditt konto?"
@@ -7537,9 +7540,6 @@
       ],
       "Terms": [
         "Villkor"
-      ],
-      "Terms and conditions": [
-        "Användarvillkor"
       ],
       "Trouble signing in?": [
         "Problem att logga in?"
@@ -8164,6 +8164,26 @@
         "Teamhantering"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Gör integritet till din standard för säkerhetskopiering, lagring, delning och hämtning."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Uppgradera till företagspaketet med åtkomst till alla ${ BRAND_NAME } premiumtjänster."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Uppgradera till det ultimata integritetspaketet och få tillgång till alla premium ${ BRAND_NAME }-tjänster."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Din provperiod slutar ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -8233,26 +8253,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på din nuvarande prenumeration. Om du nedgraderar ditt konto så förlorar du kampanjpriset och det kommer inte vara tillgängligt om du prövar att prenumerera igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Gör integritet till din standard för säkerhetskopiering, lagring, delning och hämtning."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Uppgradera till företagspaketet med åtkomst till alla ${ BRAND_NAME } premiumtjänster."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Uppgradera till det ultimata integritetspaketet och få tillgång till alla premium ${ BRAND_NAME }-tjänster."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din provperiod slutar ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9862,6 +9862,14 @@
       "${ hours } h": [
         "${ hours } timme",
         "${ hours } timmar"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 t",
+        "${ hoursInt }.5 t"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
@@ -10710,9 +10718,6 @@
       "Your current plan": [
         "Ditt nuvarande paket"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Din gratis provperiod slutar snart, den ${ formattedEndDate }"
-      ],
       "Your import history": [
         "Din importhistorik"
       ],
@@ -11225,7 +11230,7 @@
         "Var ${ interval }:e vecka på måndag"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Varje ${ interval } vecka på måndag, ${ timesString }",
+        "Varje vecka på måndag, ${ timesString }",
         "Var ${ interval }:e vecka på måndag, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
@@ -11249,7 +11254,7 @@
         "Var ${ interval }:e vecka på söndag"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Varje ${ interval } vecka på söndag, ${ timesString }",
+        "Varje vecka på söndag, ${ timesString }",
         "Var ${ interval }:e vecka på söndag, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [

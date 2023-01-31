@@ -4412,9 +4412,6 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } opslagruimte"
-      ],
       "${ total } conversation": [
         "${ total } gesprek",
         "${ total } gesprekken"
@@ -4459,9 +4456,6 @@
       ],
       "(No Recipient)": [
         "(Geen ontvanger)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadressen"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Een herstelzin is een van de veiligste manieren om de toegang tot uw account te beveiligen. U kunt het gebruiken om toegang te krijgen tot uw account en uw versleutelde gegevens te herstellen als u ooit uw wachtwoord vergeet."
@@ -4599,9 +4593,6 @@
       ],
       "Confirm phishing report": [
         "Phishingrapport bevestigen"
-      ],
-      "Continue with ${ planName }": [
-        "Ga door met ${ planName }"
       ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
@@ -5039,9 +5030,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
-      "Other options": [
-        "Andere opties"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
       ],
@@ -5108,9 +5096,6 @@
       ],
       "Print email": [
         "E-mail afdrukken"
-      ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Voorkom dat uw e-mailadres gelekt wordt naar nieuwsbrieven of spammers met ${ maskMyEmailButton }."
@@ -5229,9 +5214,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Bewaar en deel bestanden veilig met ${ DRIVE_APP_NAME }."
       ],
@@ -5246,9 +5228,6 @@
       ],
       "Subject: ": [
         "Onderwerp: "
-      ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-mail domein"
       ],
       "Support privacy by upgrading for": [
         "Ondersteuning van privacy door opwaardering voor"
@@ -5424,12 +5403,6 @@
       "Turn on to search the content of your messages": [
         "Zet aan om de inhoud van uw berichten te doorzoeken"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Ongelimiteerde mappen, labels en filters"
-      ],
-      "Unlimited messages": [
-        "Onbeperkt aantal berichten"
-      ],
       "Unlock message": [
         "Bericht ontgrendelen"
       ],
@@ -5471,9 +5444,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Upgrade om ${ MAIL_APP_NAME } te gebruiken met desktop clients van derden."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -8649,9 +8619,6 @@
       ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
       ]
     },
     "Title header": {

@@ -596,6 +596,9 @@
       "Upgrade": [
         "アップグレード"
       ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
       "Upload anyway": [
         "とにかくアップロード"
       ],
@@ -2870,9 +2873,6 @@
       "${ speed }/s": [
         "${ speed }/秒"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } ストレージ"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
@@ -2881,9 +2881,6 @@
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } 人のメンバー)"
-      ],
-      "10 email addresses": [
-        "10 件のメールアドレス"
       ],
       "A number will be added to the filename": [
         "ファイル名の最後に番号が付加されます"
@@ -2980,9 +2977,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } の使用を継続し、ドライブは後で開く"
-      ],
-      "Continue with ${ planName }": [
-        "${ planName } で続行"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
@@ -3356,9 +3350,6 @@
       "Only the people with the link and the password can access this folder.": [
         "リンクとパスワードを知っている人のみがフォルダーにアクセスすることができます。"
       ],
-      "Other options": [
-        "その他のオプション"
-      ],
       "Paused": [
         "一時停止"
       ],
@@ -3412,9 +3403,6 @@
       ],
       "Primary": [
         "プライマリー"
-      ],
-      "Priority support": [
-        "優先的なサポート"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "プライベート検索が有効化されました。このダイアログを閉じ、ファイルまたはフォルダーを検索することができます。"
@@ -3493,12 +3481,6 @@
       ],
       "Something went wrong, please try again later.": [
         "問題が発生しました。後ほど再度お試しください。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されています。"
-      ],
-      "Support for 1 custom email domain": [
-        "1 つの独自メールドメインをサポート"
       ],
       "support team": [
         "サポートチーム"
@@ -3602,12 +3584,6 @@
       "Unknown error": [
         "不明なエラー"
       ],
-      "Unlimited folders, labels, and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited messages": [
-        "送信数制限なし"
-      ],
       "Unlock drive to recover files": [
         "回復用ファイルを使ってドライブを開く"
       ],
@@ -3619,9 +3595,6 @@
       ],
       "Updating drive search...": [
         "ドライブ内検索の更新中..."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "次の ${ planName } 特典を失わないために今すぐアップグレードしてください。"
       ],
       "Uploaded": [
         "アップロード完了"
@@ -5464,9 +5437,6 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "無料トライアルは ${ formattedEndDate } に終了します。"
       ],
       "Your welcome actions": [
         "ウェルカムアクション"

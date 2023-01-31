@@ -4550,9 +4550,6 @@
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet",
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } przestrzeni dyskowej"
-      ],
       "${ total } conversation": [
         "${ total } wątek",
         "${ total } wątki",
@@ -4615,9 +4612,6 @@
       ],
       "(No Recipient)": [
         "(Brak odbiorców)"
-      ],
-      "10 email addresses": [
-        "10 adresów e-mail"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Hasło odzyskiwania jest jednym z najbezpieczniejszych sposobów ochrony dostępu do konta. Jeśli zapomnisz hasła, możesz go użyć, aby uzyskać dostęp do konta i odzyskać zaszyfrowane dane."
@@ -4768,9 +4762,6 @@
       ],
       "Confirm phishing report": [
         "Potwierdź próbę wyłudzenia informacji"
-      ],
-      "Continue with ${ planName }": [
-        "Kontynuuj z planem ${ planName }"
       ],
       "Copied to clipboard": [
         "Skopiowano do schowka"
@@ -5228,9 +5219,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
       ],
-      "Other options": [
-        "Inne opcje"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nasz system oznaczył wiadomość jako próbę wyłudzenia informacji. Upewnij się, że jest ona wiarygodna."
       ],
@@ -5299,9 +5287,6 @@
       ],
       "Print email": [
         "Drukuj wiadomość"
-      ],
-      "Priority support": [
-        "Priorytetowe wsparcie"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Chroń swój adres e-mail przed ujawnieniem go w listach mailingowych lub przez spammerów za pomocą funkcji ${ maskMyEmailButton }."
@@ -5420,9 +5405,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Wiadomość nie istnieje lub już wygasła."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Przechowuj i udostępniaj bezpiecznie plik z dyskiem ${ DRIVE_APP_NAME }."
       ],
@@ -5437,9 +5419,6 @@
       ],
       "Subject: ": [
         "Temat: "
-      ],
-      "Support for 1 custom email domain": [
-        "Wsparcie dla 1 niestandardowej domeny"
       ],
       "Support privacy by upgrading for": [
         "Wspieraj prywatność i ulepsz konto za"
@@ -5621,12 +5600,6 @@
       "Turn on to search the content of your messages": [
         "Włącz, aby wyszukiwać zawartość wiadomości"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited messages": [
-        "Nieograniczone wysyłanie wiadomości"
-      ],
       "Unlock message": [
         "Odblokuj wiadomość"
       ],
@@ -5638,6 +5611,9 @@
       ],
       "Updating message content search...": [
         "Aktualizacja wyszukiwania zawartości wiadomości..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Zaktualizuj konto w promocyjnej cenie, aby uzyskać dostęp do usług i funkcji premium oraz większej przestrzeni dyskowej"
       ],
       "Upgrade to add more addresses to your account.": [
         "Ulepsz konto, aby dodać więcej adresów."
@@ -5668,9 +5644,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Ulepsz konto, aby używać ${ MAIL_APP_NAME } w alternatywnych aplikacjach pocztowych."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Ulepsz konto, aby uniknąć utraty planu ${ planName }."
       ],
       "Upload picture": [
         "Prześlij obraz"
@@ -6792,7 +6765,7 @@
         "Otwórz w ${ CALENDAR_APP_NAME }"
       ],
       "Open updated event in ${ CALENDAR_APP_NAME }": [
-        "Otwórz zaktualizowane wydarzenie w aplikacji ${ CALENDAR_APP_NAME }"
+        "Otwórz zaktualizowane wydarzenie w ${ CALENDAR_APP_NAME }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Możesz usunąć jeden z kalendarzy i utworzyć nowy, powiązany z aktywnym adresem e-mail."
@@ -7237,7 +7210,7 @@
         "Dalej"
       ],
       "Start using ${ appName }": [
-        "Zacznij korzystać z aplikacji ${ appName }"
+        "Zacznij korzystać z ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -9016,8 +8989,8 @@
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Darmowa wersja próbna zakończy się ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"
       ]
     },
     "Title header": {

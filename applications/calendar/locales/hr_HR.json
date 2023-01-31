@@ -462,6 +462,9 @@
       "Upgrade": [
         "Nadogradnja"
       ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ],
       "Upload picture": [
         "Učitaj sliku"
       ],
@@ -2436,9 +2439,6 @@
         "${ selectedFoldersCountLocalized } oznake odabrane",
         "${ selectedFoldersCountLocalized } oznaka odabrano"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } prostora za pohranu"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt je uspješno ažuriran.",
         "${ updated } kontakta su uspješno ažurirana.",
@@ -2448,9 +2448,6 @@
         "(${ memberCount } član)",
         "(${ memberCount } člana)",
         "(${ memberCount } članova)"
-      ],
-      "10 email addresses": [
-        "10 adresa e-pošte"
       ],
       "A cancellation email will be sent to removed participants.": [
         "E-poruka o otkazivanju biti će poslana svim uklonjenim sudionicima."
@@ -2668,9 +2665,6 @@
       "Primary": [
         "Glavno"
       ],
-      "Priority support": [
-        "Prioritetna podrška"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
@@ -2754,9 +2748,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Da biste koristili Potvrdu adresa, morate se pouzdati u jedan ili više dostupnih javnih ključeva, uključujući ključ koji koristite za slanje. Time se sprječava lažiranje ključeva za šifriranje."
-      ],
-      "Unlimited messages": [
-        "Neograničene poruke"
       ],
       "Update recurring event": [
         "Ažuriraj ponavljajući događaj"
