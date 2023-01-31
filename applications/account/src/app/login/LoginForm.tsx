@@ -185,7 +185,7 @@ const LoginForm = ({
                             onChange={submitting ? noop : () => setPersistent(!persistent)}
                         />
 
-                        {trustedDeviceRecoveryFeature?.feature?.Value ? (
+                        {!loading && trustedDeviceRecoveryFeature?.feature?.Value ? (
                             <div className="flex-item-fluid">
                                 <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
                                     {c('Label').t`Keep me signed in`}
