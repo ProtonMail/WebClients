@@ -4412,9 +4412,6 @@
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } lagerplads"
-      ],
       "${ total } conversation": [
         "${ total } samtale",
         "${ total } samtaler"
@@ -4459,9 +4456,6 @@
       ],
       "(No Recipient)": [
         "(Ingen modtager)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadresser"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "En gendannelsessætning er en af de sikreste måder at beskytte adgangen til din konto. Du kan bruge den til at få adgang til din konto og gendanne dine krypterede data, hvis du nogensinde glemmer din adgangskode."
@@ -4570,6 +4564,9 @@
       "Body: ": [
         "Indhold: "
       ],
+      "Calendar side panel": [
+        "Kalender-sidepanel"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
       ],
@@ -4599,9 +4596,6 @@
       ],
       "Confirm phishing report": [
         "Bekræft phishing-anmeldelse"
-      ],
-      "Continue with ${ planName }": [
-        "Fortsæt med ${ planName }"
       ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
@@ -4973,6 +4967,9 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
+      "Moving messages. This may take a while.": [
+        "Flytter beskeder. Dette kan tage et stykke tid."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
@@ -5035,9 +5032,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
-      ],
-      "Other options": [
-        "Andre muligheder"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Vores system markerede denne besked som et phishing-forsøg. Kontroller, at den er legitim."
@@ -5105,9 +5099,6 @@
       ],
       "Print email": [
         "Udskriv e-mail"
-      ],
-      "Priority support": [
-        "Prioriteret support"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Beskyt din e-mail mod at blive lækket til mailinglister eller spammere med ${ maskMyEmailButton }."
@@ -5226,9 +5217,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne besked findes ikke eller er allerede udløbet."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagerplads deles mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Gem og del filer sikkert med ${ DRIVE_APP_NAME }."
       ],
@@ -5243,9 +5231,6 @@
       ],
       "Subject: ": [
         "Emne: "
-      ],
-      "Support for 1 custom email domain": [
-        "Understøttelse af 1 brugerdefineret e-mail-domæne"
       ],
       "Support privacy by upgrading for": [
         "Støt op om privatlivets fred ved at opgradere til"
@@ -5421,12 +5406,6 @@
       "Turn on to search the content of your messages": [
         "Slå til for at søge i indholdet af dine beskeder"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrænsede mapper / etiketter / filtre"
-      ],
-      "Unlimited messages": [
-        "Ubegrænset antal beskeder"
-      ],
       "Unlock message": [
         "Lås besked op"
       ],
@@ -5438,6 +5417,9 @@
       ],
       "Updating message content search...": [
         "Opdaterer beskedindholdssøgning..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
       "Upgrade to add more addresses to your account.": [
         "Opgrader for at tilføje flere adresser til din konto."
@@ -5468,9 +5450,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Opgrader for at bruge ${ MAIL_APP_NAME } med tredjeparts desktopklienter."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
       ],
       "Upload picture": [
         "Upload billede"
@@ -7869,6 +7848,34 @@
         "${ secondsCountLeft } sekunder"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }. time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 t",
+        "${ hoursInt },5 t"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 time",
+        "${ hoursInt },5 timer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minutter"
+      ]
+    },
     "Title": {
       "${ emailsCount } member": [
         "${ emailsCount } medlem",
@@ -8396,8 +8403,8 @@
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Din Mail Plus prøveperiode slutter ${ textDate }"
       ]
     },
     "Title header": {

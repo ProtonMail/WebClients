@@ -483,11 +483,11 @@
       "Not spam": [
         "No es correu brossa"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "D'acord"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -788,6 +788,9 @@
       ],
       "Upgrade": [
         "Actualitzar"
+      ],
+      "Upgrade now": [
+        "Millora ara"
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -2750,9 +2753,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "No s'han pogut obtenir sessions actives. ${ refresh } o torneu-ho a provar més tard."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Ja existeix un filtre amb aquest nom"
       ],
@@ -4023,9 +4023,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "Crèdits ${ BRAND_NAME } ${ planName } aconseguits"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } ha aturat una importació perquè ha perdut la connexió amb el vostre altre proveïdor de correu electrònic. Torneu a connectar."
       ],
@@ -4359,9 +4356,6 @@
       "Continue anyway?": [
         "Voleu continuar igualment?"
       ],
-      "Continue with ${ planName }": [
-        "Continuar amb ${ planName }"
-      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } nou calendari",
         "Crear ${ calendarsToBeCreated } nous calendaris"
@@ -4537,9 +4531,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Per a Visa i MasterCard, els 3 dígits a la part posterior de la targeta. Per American Express, els 4 dígits de la part frontal de la targeta."
       ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
@@ -4827,9 +4818,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
-      ],
-      "Other options": [
-        "Altres opcions"
       ],
       "P2P": [
         "P2P"
@@ -5195,9 +5183,6 @@
       ],
       "Update recovery phrase": [
         "Actualitza la frase de recuperació"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Millora avui la teva subscripció per a no perdre les funcionalitats ${ planName }."
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -6587,8 +6572,8 @@
       "What happened?": [
         "Què ha passat?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "Quina és la principal raó de la seva cancel·lació?"
       ],
       "What is the main reason you are deleting your account?": [
         "Quin és el motiu principal per suprimir el teu compte?"
@@ -6817,9 +6802,6 @@
       ],
       "Terms": [
         "Termes"
-      ],
-      "Terms and conditions": [
-        "Termes i condicions"
       ],
       "Trouble signing in?": [
         "Problemes per iniciar la sessió?"
@@ -7362,6 +7344,11 @@
         "Assistència"
       ]
     },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7371,11 +7358,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom de manera predeterminada."
-      ]
-    },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9413,9 +9395,6 @@
       ],
       "Your current plan": [
         "El vostre pla actual"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
       ],
       "Your import history": [
         "Historial d'importació"

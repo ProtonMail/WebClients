@@ -589,6 +589,9 @@
       "Upgrade": [
         "Changer d'offre"
       ],
+      "Upgrade now": [
+        "Mettre à niveau maintenant"
+      ],
       "Upload anyway": [
         "Envoyer quand même"
       ],
@@ -2880,9 +2883,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de stockage"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact correctement mis à jour.",
         "${ updated } contacts correctement mis à jour."
@@ -2893,9 +2893,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
-      ],
-      "10 email addresses": [
-        "10 adresses courriel"
       ],
       "A number will be added to the filename": [
         "Un numéro sera ajouté au nom du fichier"
@@ -2991,9 +2988,6 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuer à utiliser ${ DRIVE_APP_NAME } et déverrouiller le disque plus tard"
-      ],
-      "Continue with ${ planName }": [
-        "Continuer avec ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
@@ -3369,9 +3363,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
       ],
-      "Other options": [
-        "Autres options"
-      ],
       "Paused": [
         "En pause"
       ],
@@ -3426,9 +3417,6 @@
       ],
       "Primary": [
         "Principale"
-      ],
-      "Priority support": [
-        "Assistance prioritaire"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Recherche privée activée. Vous pouvez fermer cette boîte de dialogue et rechercher des fichiers et dossiers."
@@ -3507,12 +3495,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Un problème est survenu, veuillez réessayer plus tard."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Prise en charge d'un nom de domaine personnalisé"
       ],
       "support team": [
         "équipe d'assistance"
@@ -3617,12 +3599,6 @@
       "Unknown error": [
         "Erreur inconnue"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
-      ],
-      "Unlimited messages": [
-        "Messages illimités"
-      ],
       "Unlock drive to recover files": [
         "Déverrouillez le disque pour récupérer des fichiers"
       ],
@@ -3634,9 +3610,6 @@
       ],
       "Updating drive search...": [
         "Actualisation de la recherche dans Drive..."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Passez à l'offre supérieure dès aujourd'hui pour conserver les avantages suivants de ${ planName }."
       ],
       "Uploaded": [
         "Téléversé"
@@ -5501,9 +5474,6 @@
       ],
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }"
       ],
       "Your welcome actions": [
         "Vos actions de bienvenue"

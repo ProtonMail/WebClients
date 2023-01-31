@@ -510,10 +510,10 @@
       "Not spam": [
         "İstenmeyen değil"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -827,6 +827,9 @@
       ],
       "Upgrade": [
         "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
       ],
       "Upload picture": [
         "Fotoğraf yükle"
@@ -2911,9 +2914,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Etkin oturumlar alınamadı. Lütfen ${ refresh }yin ya da bir süre sonra yeniden deneyin."
       ],
-      "Filter with this name already exist": [
-        "Filter with this name already exists"
-      ],
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
       ],
@@ -2985,7 +2985,7 @@
         "Ad eşleşmiyor"
       ],
       "Name on card required": [
-        "Kartın üzerindeki ad yazılmalı"
+        "Kart üzerindeki isim yazılmalı"
       ],
       "Name required": [
         "Ad zorunludur"
@@ -4354,9 +4354,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "${ BRAND_NAME } ${ planName } kredisi kazandınız"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME }, diğer e-posta hizmeti sağlayıcınızla bağlantıyı kaybettiğinden içe aktarma işlemini duraklattı. Lüften yeniden bağlanın."
       ],
@@ -4603,6 +4600,9 @@
       "Already used": [
         "Zaten kullanılmış"
       ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey logosu"
+      ],
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
@@ -4741,9 +4741,6 @@
       "Continue anyway?": [
         "Yine de ilerlemek istiyor musunuz?"
       ],
-      "Continue with ${ planName }": [
-        "${ planName } aboneliğini kullanmayı sürdür"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "İlerlerseniz ${ BRAND_NAME } hesabınız ${ name } ile bağlanacak."
       ],
@@ -4774,6 +4771,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki tarife aboneliğinizin kullanılmayan bölümünden kalan kredi"
+      ],
+      "Credits earned": [
+        "Kazanılan kredi"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Şu anda kullanılabilecek tüm depolama alanı yönetici hesabına ayrılmış. Lütfen ek kullanıcılara yer açmak için yönetici hesabına ayrılan alanı azaltın. İstediğiniz zaman toplam depolama alanını artırmak için hesabınızı yükseltebilirsiniz."
@@ -4807,6 +4807,9 @@
       ],
       "Delete link?": [
         "Bağlantı silinsin mi?"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy logosu"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, oturum açamaz veya iletilerinizin şifresini çözemezsiniz."
@@ -4950,8 +4953,8 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve bir koşul ve işlem bulunmalıdır."
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa ve MasterCard için kartınızın arkasındaki 3 haneli kod. American Express için ise kartınızın önündeki 4 haneli kod."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Visa, MasterCard ve Discover için kartınızın arkasındaki 3 rakam. American Express için kartınızın ön yüzündeki 4 rakam."
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
@@ -5201,6 +5204,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Hesabınızı kurmak için bu bilgileri iki aşamalı doğrulama aygıtınıza el ile yazın. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode logosu"
+      ],
       "Member": [
         "Üye"
       ],
@@ -5296,9 +5302,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Kuruluşunuzda başka yöneticiler de var. Yeni parolayı onlara bildirmek sizin sorumluluğunuzdur."
-      ],
-      "Other options": [
-        "Diğer seçenekler"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Kurtarma dosyası eski olabilir. Verilerinize erişebileceğinizden emin olmak için güncelleyin"
@@ -5783,8 +5786,8 @@
       "Update recovery phrase": [
         "Kurtarma ifadesini güncelle"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "${ planName } avantajlarını kaybetmemek için tarifenizi bugün yükseltin."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -5821,6 +5824,9 @@
       ],
       "Version ${ version }": [
         "Sürüm ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure logosu"
       ],
       "Warning:": [
         "Uyarı:"
@@ -7326,8 +7332,8 @@
       "What happened?": [
         "Ne oldu?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "İptal etmenizin ana nedeni nedir?"
       ],
       "What is the main reason you are deleting your account?": [
         "Hesabınızı silmenizin ana nedeni nedir?"
@@ -7565,9 +7571,6 @@
       ],
       "Terms": [
         "Koşullar"
-      ],
-      "Terms and conditions": [
-        "Hüküm ve koşullar"
       ],
       "Trouble signing in?": [
         "Oturum açmakta sorun mu yaşıyorsunuz?"
@@ -8139,7 +8142,7 @@
         "Secure Core sunucuları"
       ],
       "Send & receive invitations": [
-        "Davetler alın ve gönderin"
+        "Davetleri alma ve gönderme"
       ],
       "Share calendar via link": [
         "Bağlantı ile takvim paylaşma"
@@ -8202,6 +8205,26 @@
       ],
       "Team management": [
         "Ekip yönetimi"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal gizlilik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey gizlilik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: info": {
@@ -8273,26 +8296,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal gizlilik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey gizlilik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -9569,12 +9572,12 @@
     },
     "Subscription price": {
       "For": [
-        "Şunun için"
+        "Toplam"
       ]
     },
     "Subscription saving": {
       "Save": [
-        "Kaydet"
+        "Kazancınız"
       ]
     },
     "Subscription status": {
@@ -10762,11 +10765,11 @@
       "Your current plan": [
         "Geçerli tarifeniz"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
-      ],
       "Your import history": [
         "İçe aktarma geçmişiniz"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your plan": [
         "Tarifeniz"

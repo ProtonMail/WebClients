@@ -4352,9 +4352,6 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
-      "${ storageSize } storage": [
-        "Kuota penyimpanan ${ storageSize }"
-      ],
       "${ total } conversations": [
         "${ total } percakapan"
       ],
@@ -4390,9 +4387,6 @@
       ],
       "(No Recipient)": [
         "(Tidak Ada Penerima)"
-      ],
-      "10 email addresses": [
-        "10 alamat email"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Frasa pemulihan merupakan salah satu cara teraman untuk melindungi akun Anda. Seandainya Anda lupa kata sandi, fitur ini akan dapat digunakan untuk mengakses akun dan memulihkan data terenkripsi Anda."
@@ -4528,9 +4522,6 @@
       ],
       "Confirm phishing report": [
         "Konfirmasi laporan phishing"
-      ],
-      "Continue with ${ planName }": [
-        "Lanjut dengan ${ planName }"
       ],
       "Copied to clipboard": [
         "Disalin ke clipboard"
@@ -4958,9 +4949,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
-      "Other options": [
-        "Pilihan lainnya"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistem kami menandai pesan ini sebagai phishing. Mohon periksa keabsahan pesan."
       ],
@@ -5026,9 +5014,6 @@
       ],
       "Print email": [
         "Cetak email"
-      ],
-      "Priority support": [
-        "Dukungan prioritas"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Lindungi email Anda agar tidak bocor ke tangan oknum milis atau spammer dengan ${ maskMyEmailButton }."
@@ -5147,9 +5132,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Simpan dan bagikan berbagai berkas secara aman dengan ${ DRIVE_APP_NAME }."
       ],
@@ -5164,9 +5146,6 @@
       ],
       "Subject: ": [
         "Subjek: "
-      ],
-      "Support for 1 custom email domain": [
-        "Dukungan 1 domain email khusus"
       ],
       "Support privacy by upgrading for": [
         "Dukung privasi dengan meningkatkan akun mulai dari"
@@ -5339,12 +5318,6 @@
       "Turn on to search the content of your messages": [
         "Aktifkan untuk dapat mencari isi konten pesan Anda"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited messages": [
-        "Tanpa batasan jumlah pesan"
-      ],
       "Unlock message": [
         "Buka kunci pesan"
       ],
@@ -5356,6 +5329,9 @@
       ],
       "Updating message content search...": [
         "Memperbarui pencarian konten pesan..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
       "Upgrade to add more addresses to your account.": [
         "Tingkatkan jenis akun Anda untuk dapat menambahkan lebih banyak alamat ke dalam akun Anda."
@@ -5386,9 +5362,6 @@
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Tingkatkan jenis akun Anda untuk dapat mengakses ${ MAIL_APP_NAME } melalui klien desktop terpisah milik pihak ketiga."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ planName } berikut."
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -8268,8 +8241,8 @@
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Masa uji coba gratis Anda akan segera berakhir pada ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
       ]
     },
     "Title header": {

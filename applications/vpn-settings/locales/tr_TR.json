@@ -347,6 +347,9 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
       "Use ${ label } theme": [
         "${ label } teması kullanılsın"
       ],
@@ -1516,7 +1519,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Name on card required": [
-        "Kartın üzerindeki ad yazılmalı"
+        "Kart üzerindeki isim yazılmalı"
       ],
       "Not a valid number": [
         "Numara geçerli değil"
@@ -1911,6 +1914,9 @@
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
       ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey logosu"
+      ],
       "Amount below minimum (${ amount }).": [
         "Tutar en az miktarın altında (${ amount })."
       ],
@@ -1961,6 +1967,9 @@
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy logosu"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "${ VPN_APP_NAME } uygulamalarında veya ${ VPN_APP_NAME } panosunda OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanmayın. ${ learnMore }"
@@ -2031,8 +2040,8 @@
       "expires ${ expirationDate }": [
         "${ expirationDate } tarihinde geçersiz olacak"
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa ve MasterCard için kartınızın arkasındaki 3 haneli kod. American Express için ise kartınızın önündeki 4 haneli kod."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Visa, MasterCard ve Discover için kartınızın arkasındaki 3 rakam. American Express için kartınızın ön yüzündeki 4 rakam."
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
@@ -2135,6 +2144,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Hesabınızı kurmak için bu bilgileri iki aşamalı doğrulama aygıtınıza el ile yazın. ${ switchButton }."
+      ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode logosu"
       ],
       "No credit card required": [
         "Kredi kartı gerekmez"
@@ -2367,6 +2379,9 @@
       "Unsupported file": [
         "Dosya desteklenmiyor"
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
       ],
@@ -2390,6 +2405,9 @@
       ],
       "Version ${ version }": [
         "Sürüm ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure logosu"
       ],
       "Warning:": [
         "Uyarı:"
@@ -2942,8 +2960,8 @@
       "What happened?": [
         "Ne oldu?"
       ],
-      "What is the main reason you are cancelling?": [
-        "What is the main reason you are canceling?"
+      "What is the main reason you are canceling?": [
+        "İptal etmenizin ana nedeni nedir?"
       ],
       "What is the main reason you are deleting your account?": [
         "Hesabınızı silmenizin ana nedeni nedir?"
@@ -3319,7 +3337,7 @@
         "Secure Core sunucuları"
       ],
       "Send & receive invitations": [
-        "Davetler alın ve gönderin"
+        "Davetleri alma ve gönderme"
       ],
       "Share calendar via link": [
         "Bağlantı ile takvim paylaşma"
@@ -4066,12 +4084,12 @@
     },
     "Subscription price": {
       "For": [
-        "Şunun için"
+        "Toplam"
       ]
     },
     "Subscription saving": {
       "Save": [
-        "Kaydet"
+        "Kazancınız"
       ]
     },
     "Subscription status": {
@@ -4581,6 +4599,9 @@
       ],
       "Your current plan": [
         "Geçerli tarifeniz"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your plan": [
         "Tarifeniz"

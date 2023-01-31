@@ -249,7 +249,7 @@
         "włączyć powiadomienia na pulpicie"
       ],
       "Enable drive search": [
-        "Włącz wyszukiwanie dysku"
+        "Włącz wyszukiwanie zawartości dysku"
       ],
       "Expand": [
         "Rozwiń"
@@ -604,6 +604,9 @@
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ],
       "Upload anyway": [
         "Prześlij mimo to"
@@ -3034,9 +3037,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } przestrzeni dyskowej"
-      ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
         "${ updated } kontakty zostały zaktualizowane.",
@@ -3051,9 +3051,6 @@
         "(${ memberCount } członków)",
         "(${ memberCount } członków)",
         "(${ memberCount } członków)"
-      ],
-      "10 email addresses": [
-        "10 adresów e-mail"
       ],
       "A number will be added to the filename": [
         "Do nazwy pliku zostanie dodany numer"
@@ -3161,10 +3158,7 @@
         "Konflikt"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Kontynuuj używanie aplikacji ${ DRIVE_APP_NAME } i odblokuj dysk później"
-      ],
-      "Continue with ${ planName }": [
-        "Kontynuuj z planem ${ planName }"
+        "Kontynuuj używanie ${ DRIVE_APP_NAME } i odblokuj dysk później"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Utwórz ${ calendarsToBeCreated } nowy kalendarz",
@@ -3254,10 +3248,10 @@
         "Wiadomości są automatyczne podpisywane"
       ],
       "Enable drive search": [
-        "Włącz wyszukiwanie dysku"
+        "Włącz wyszukiwanie zawartości dysku"
       ],
       "Enabling drive search": [
-        "Włączanie wyszukiwania dysku"
+        "Włączanie wyszukiwania zawartości dysku"
       ],
       "Encrypted": [
         "Zaszyfrowany"
@@ -3559,9 +3553,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Tylko posiadacz linku i hasła ma dostęp do folderu."
       ],
-      "Other options": [
-        "Inne opcje"
-      ],
       "Paused": [
         "Wstrzymano"
       ],
@@ -3618,9 +3609,6 @@
       ],
       "Primary": [
         "Główny"
-      ],
-      "Priority support": [
-        "Priorytetowe wsparcie"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Prywatne wyszukiwanie zostało włączone. Możesz zamknąć okno i szukać plików oraz folderów."
@@ -3699,12 +3687,6 @@
       ],
       "Something went wrong, please try again later.": [
         "Coś poszło nie tak. Spróbuj ponownie później."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Wsparcie dla 1 niestandardowej domeny"
       ],
       "support team": [
         "pomocą techniczną"
@@ -3817,12 +3799,6 @@
       "Unknown error": [
         "Wystąpił nieznany błąd"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Unlimited messages": [
-        "Nieograniczone wysyłanie wiadomości"
-      ],
       "Unlock drive to recover files": [
         "Odblokuj dysk, aby odzyskać pliki"
       ],
@@ -3833,10 +3809,10 @@
         "Plik jest nieobsługiwany"
       ],
       "Updating drive search...": [
-        "Aktualizacja wyszukiwania dysku..."
+        "Aktualizacja wyszukiwania zawartości dysku..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Ulepsz konto, aby uniknąć utraty planu ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Zaktualizuj konto w promocyjnej cenie, aby uzyskać dostęp do usług i funkcji premium oraz większej przestrzeni dyskowej"
       ],
       "Uploaded": [
         "Przesłano"
@@ -4892,7 +4868,7 @@
         "Dalej"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
-        "Zacznij korzystać z aplikacji ${ DRIVE_APP_NAME }"
+        "Zacznij korzystać z ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
@@ -5787,7 +5763,7 @@
         "Opróżnij kosz"
       ],
       "Enable drive search": [
-        "Włącz wyszukiwanie dysku"
+        "Włącz wyszukiwanie zawartości dysku"
       ],
       "Enter your password": [
         "Wpisz hasło"
@@ -6095,8 +6071,8 @@
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Darmowa wersja próbna zakończy się ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Darmowa wersja próbna planu Mail Plus zakończy się ${ textDate }"
       ],
       "Your welcome actions": [
         "Wykonaj następujące kroki"
