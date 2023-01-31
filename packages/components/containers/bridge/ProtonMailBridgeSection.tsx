@@ -3,7 +3,14 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { BRAND_NAME, MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import {
+    APP_UPSELL_REF_PATH,
+    BRAND_NAME,
+    MAIL_APP_NAME,
+    MAIL_UPSELL_PATHS,
+    PLANS,
+    PLAN_NAMES,
+} from '@proton/shared/lib/constants';
 import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import { Icon, IconName, Select } from '../../components';
@@ -155,7 +162,7 @@ const ProtonMailBridgeSection = () => {
             {hasPaidMail ? (
                 <div className="mt2 bridge-grid">{bridgeClients.map(renderBox)}</div>
             ) : (
-                <UpgradeBanner>
+                <UpgradeBanner upsellPath={`${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${MAIL_UPSELL_PATHS.BRIDGE}`}>
                     {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}

@@ -9,7 +9,8 @@ import { useApi, useFeature, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
-import { BRAND_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, BRAND_NAME, CALENDAR_UPSELL_PATHS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -158,7 +159,16 @@ const CalendarShareSection = ({
                                 {c('Upgrade notice')
                                     .t`Upgrade to a ${MAIL_SHORT_APP_NAME} paid plan to share your calendar.`}
                             </p>
-                            <ButtonLike as={SettingsLink} path="/upgrade" color="norm" shape="solid" size="small">
+                            <ButtonLike
+                                as={SettingsLink}
+                                path={addUpsellPath(
+                                    '/upgrade',
+                                    `${APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH}${CALENDAR_UPSELL_PATHS.SHARE_CAL}`
+                                )}
+                                color="norm"
+                                shape="solid"
+                                size="small"
+                            >
                                 {c('Action').t`Upgrade`}
                             </ButtonLike>
                         </div>
