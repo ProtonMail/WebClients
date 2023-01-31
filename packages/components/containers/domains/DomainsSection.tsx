@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { DomainsModel } from '@proton/shared/lib/models';
@@ -175,7 +175,7 @@ const DomainsSectionUpgrade = () => {
     return (
         <SettingsSectionWide>
             <DomainsSectionText />
-            <UpgradeBanner>
+            <UpgradeBanner upsellPath={`${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${MAIL_UPSELL_PATHS.DOMAIN_NAMES}`}>
                 {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
             </UpgradeBanner>
         </SettingsSectionWide>

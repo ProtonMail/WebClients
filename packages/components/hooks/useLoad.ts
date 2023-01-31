@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 
+import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 const useLoad = () => {
     useEffect(() => {
-        const url = new URL(window.location.href);
-        url.search = '?load=ajax';
-        url.hash = '';
+        const url = formatURLForAjaxRequest();
         fetch(url).catch(noop);
     }, []);
 };
