@@ -61,7 +61,7 @@ export const useShouldMoveOut = ({ conversationMode, elementID = '', labelID, lo
     }, [conversation?.Conversation.Labels, loading]);
 
     useEffect(() => {
-        if (!elementID) {
+        if (!elementID || !cacheEntry) {
             return;
         }
 
