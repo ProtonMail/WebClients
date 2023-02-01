@@ -125,7 +125,7 @@ export enum ATTENDEE_STATUS_API {
     ACCEPTED = 3,
 }
 
-export const MAX_LENGTHS_API = {
+export const MAX_CHARS_API = {
     UID: 191,
     CALENDAR_NAME: 100,
     CALENDAR_DESCRIPTION: 255,
@@ -133,6 +133,10 @@ export const MAX_LENGTHS_API = {
     EVENT_DESCRIPTION: 3000,
     LOCATION: 255,
     CALENDAR_URL: 10000,
+};
+
+export const MAX_CHARS_CLEARTEXT = {
+    PURPOSE: 500,
 };
 
 export const MINIMUM_DATE = new Date(1970, 0, 1);

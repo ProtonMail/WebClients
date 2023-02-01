@@ -56,7 +56,7 @@ import { createCalendar, removeCalendar, updateCalendarUserSettings } from '@pro
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getPersonalCalendars, getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
-import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
 import { ACCENT_COLORS, PRODUCT_NAMES } from '@proton/shared/lib/constants';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
@@ -206,7 +206,7 @@ const EasySwitchOauthModal = ({
             calendarsToBeCreated.map(async ({ Source, Destination, Description }) => {
                 const Name = Destination.replace(CALENDAR_TO_BE_CREATED_PREFIX, '').slice(
                     0,
-                    MAX_LENGTHS_API.CALENDAR_NAME
+                    MAX_CHARS_API.CALENDAR_NAME
                 );
 
                 const { Calendar } = await api(
