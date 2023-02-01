@@ -1,11 +1,12 @@
-$color-item-size: 44;
-
 .color-selector {
 	&-container {
+		--color-item-size: #{em(44)};
+		--color-grid-items: 5;
+
 		display: grid;
 		gap: em(8);
 		justify-content: center;
-		grid-template-columns: repeat(5, em($color-item-size));
+		grid-template-columns: repeat(var(--color-grid-items), var(--color-item-size));
 
 		&-inline {
 			justify-content: space-between;
@@ -20,8 +21,8 @@ $color-item-size: 44;
 	&-item {
 		position: relative;
 		display: flex;
-		block-size: em($color-item-size);
-		inline-size: em($color-item-size);
+		block-size: var(--color-item-size);
+		inline-size: var(--color-item-size);
 		overflow: hidden;
 		border-radius: 50%;
 		background-color: var(--color-selector-base);

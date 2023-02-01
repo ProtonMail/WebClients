@@ -1,4 +1,5 @@
 import tinycolor from 'tinycolor2';
+import { c } from 'ttag';
 
 import { genAccentShades } from '@proton/colors';
 import useInstance from '@proton/hooks/useInstance';
@@ -20,6 +21,7 @@ const ColorSelector = ({ selected, onChange, className, colors, inline = false }
 
     return (
         <ul
+            aria-label={c('Label').t`Colors`}
             className={classnames([
                 'color-selector-container unstyled m0',
                 inline && 'color-selector-container-inline',
@@ -49,7 +51,6 @@ const ColorSelector = ({ selected, onChange, className, colors, inline = false }
                                 value={color}
                                 className="color-selector-input"
                                 data-test-id={`color-selector:${color}`}
-                                aria-labelledby={`Color ${color}`}
                                 onChange={() => onChange(color)}
                                 autoFocus={isSelected}
                             />
