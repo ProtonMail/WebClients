@@ -377,17 +377,22 @@ const SubscriptionModal = ({
     };
 
     const handleCheckout = async () => {
-        const params = await handlePaymentToken({
-            params: {
-                Amount: amountDue,
-                Currency: model.currency,
-                ...parameters,
-            },
-            createModal,
-            api,
-        });
+        try {
+            const params = await handlePaymentToken({
+                params: {
+                    Amount: amountDue,
+                    Currency: model.currency,
+                    ...parameters,
+                },
+                createModal,
+                api,
+            });
 
-        return handleSubscribe(params);
+            return await handleSubscribe(params);
+        } catch (error: any) {
+            console.error(error);
+            console.error('Could not handle checkout');
+        }
     };
 
     const handleGift = (gift = '') => {
@@ -464,6 +469,11 @@ const SubscriptionModal = ({
             ])}
             onSubmit={(e: FormEvent) => {
                 e.preventDefault();
+
+                if (model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
+                    return;
+                }
+
                 if (loadingCheck || loadingGift) {
                     return;
                 }
