@@ -138,7 +138,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: '',
         name: 'Proton Extension',
         bareName: 'Extension',
-        clientID: 'web-account',
+        clientID: 'browser-pass',
         icon: '',
         settingsSlug: '',
     },
