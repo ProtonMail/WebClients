@@ -25,7 +25,7 @@ export interface ApiKey {
 export const apiKeys = new Map<string, ApiKey>();
 
 const addApiKeysMock = () => {
-    addApiMock('keys', (args) => {
+    addApiMock('core/v4/keys', (args) => {
         const email = args.params.Email;
         if (apiKeys.has(email)) {
             const apiKey = apiKeys.get(email) as ApiKey;

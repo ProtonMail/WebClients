@@ -6,7 +6,7 @@ export interface MnemonicKeyResponse {
     Salt: string;
 }
 export const getMnemonicUserKeys = () => ({
-    url: 'settings/mnemonic',
+    url: 'core/v4/settings/mnemonic',
     method: 'get',
 });
 
@@ -24,19 +24,19 @@ interface UpdateMnemonicPhrasePayload {
     };
 }
 export const updateMnemonicPhrase = (data: UpdateMnemonicPhrasePayload) => ({
-    url: 'settings/mnemonic',
+    url: 'core/v4/settings/mnemonic',
     method: 'put',
     data,
 });
 
 export const reactivateMnemonicPhrase = (data: UpdateMnemonicPhrasePayload) => ({
-    url: 'settings/mnemonic/reactivate',
+    url: 'core/v4/settings/mnemonic/reactivate',
     method: 'put',
     data,
 });
 
 export const disableMnemonicPhrase = () => ({
-    url: 'settings/mnemonic/disable',
+    url: 'core/v4/settings/mnemonic/disable',
     method: 'post',
 });
 
@@ -49,7 +49,7 @@ export interface GetMnemonicResetData {
     }[];
 }
 export const getMnemonicReset = () => ({
-    url: 'settings/mnemonic/reset',
+    url: 'core/v4/settings/mnemonic/reset',
     method: 'get',
 });
 
@@ -61,7 +61,7 @@ interface MnemonicResetPayload {
     KeysSalt: string;
 }
 export const mnemonicReset = (data: MnemonicResetPayload) => ({
-    url: 'settings/mnemonic/reset',
+    url: 'core/v4/settings/mnemonic/reset',
     method: 'post',
     data,
 });
