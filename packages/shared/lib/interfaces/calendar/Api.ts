@@ -1,9 +1,9 @@
-import { CalendarKey, CalendarPassphrase } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
+import { CalendarKey, CalendarPassphrase } from '../../interfaces/calendar/CalendarKey';
 
 import { PaginationParams } from '../../api/interface';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '../../calendar/constants';
 import { ApiResponse } from '../Api';
-import { Nullable, RequireSome, SimpleMap } from '../utils';
+import { Nullable, RequireSome } from '../utils';
 import { CalendarNotificationSettings } from './Calendar';
 import { CalendarMember, CalendarMemberInvitation } from './CalendarMember';
 import { Attendee, CalendarEvent, CalendarEventData } from './Event';
@@ -42,14 +42,13 @@ export interface CalendarSetupResponse extends ApiResponse {
     Passphrase: CalendarPassphrase;
 }
 
-export interface GenerateCalendarPayload {
+export interface CreateOrResetCalendarPayload {
     AddressID: string;
     Signature: string;
     PrivateKey: string;
     Passphrase: {
         DataPacket: string;
-        KeyPacket?: string;
-        KeyPackets?: SimpleMap<string>;
+        KeyPacket: string;
     };
 }
 
@@ -223,6 +222,6 @@ export interface GetAllMembersApiResponse {
     Members: CalendarMember[];
 }
 
-export interface GetAllInvitationsApiResponse {
+export interface GetCalendarInvitationsResponse {
     Invitations: CalendarMemberInvitation[];
 }

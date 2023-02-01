@@ -17,7 +17,7 @@ import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { encryptPassphraseSessionKey } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
-import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/share';
+import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';

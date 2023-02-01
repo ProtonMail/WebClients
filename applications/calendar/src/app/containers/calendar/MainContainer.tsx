@@ -15,12 +15,13 @@ import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenS
 import { useInstance } from '@proton/hooks/index';
 import { getOwnedPersonalCalendars, getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import Favicon from '../../components/Favicon';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';
-import ResetContainer from '../setup/ResetContainer';
+import UnlockCalendarsContainer from '../setup/UnlockCalendarsContainer';
 import MainContainerSetup from './MainContainerSetup';
 import { fromUrlParams } from './getUrlHelper';
 
@@ -58,15 +59,15 @@ const MainContainer = () => {
         return ownedPersonalCalendars.length === 0;
     });
 
-    const [calendarsToReset, setCalendarsToReset] = useState(() => {
+    const [calendarsToUnlock, setCalendarsToUnlock] = useState(() => {
         return memoedCalendars.filter(({ Flags }) => {
-            return (Flags & (CALENDAR_FLAGS.RESET_NEEDED | CALENDAR_FLAGS.UPDATE_PASSPHRASE)) > 0;
+            return hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED) || hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
         });
     });
 
     const [calendarsToSetup, setCalendarsToSetup] = useState(() => {
         return memoedCalendars.filter(({ Flags }) => {
-            return (Flags & CALENDAR_FLAGS.INCOMPLETE_SETUP) > 0;
+            return hasBit(Flags, CALENDAR_FLAGS.INCOMPLETE_SETUP);
         });
     });
 
@@ -82,8 +83,16 @@ const MainContainer = () => {
         return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} />;
     }
 
-    if (calendarsToReset.length) {
-        return <ResetContainer calendars={calendarsToReset} onDone={() => setCalendarsToReset([])} />;
+    if (calendarsToUnlock.length) {
+        return (
+            <UnlockCalendarsContainer
+                calendars={memoedCalendars}
+                calendarsToUnlock={calendarsToUnlock}
+                onDone={() => {
+                    setCalendarsToUnlock([]);
+                }}
+            />
+        );
     }
 
     return (

@@ -21,8 +21,8 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import {
     CalendarMember,
     CalendarMemberInvitation,
-    GetAllInvitationsApiResponse,
     GetAllMembersApiResponse,
+    GetCalendarInvitationsResponse,
     MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
@@ -99,7 +99,7 @@ const CalendarSubpage = ({ calendars, subscribedCalendars, defaultCalendar, addr
 
                 const [{ Members }, { Invitations }] = await Promise.all([
                     api<GetAllMembersApiResponse>(getAllMembers(calendar.ID)),
-                    api<GetAllInvitationsApiResponse>(getCalendarInvitations(calendar.ID)),
+                    api<GetCalendarInvitationsResponse>(getCalendarInvitations(calendar.ID)),
                 ]);
                 // if failing here, leave user with loader in the section
 

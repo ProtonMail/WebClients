@@ -4,7 +4,10 @@ import { c } from 'ttag';
 
 import { useAddresses, useEventManager, useGetAddressKeys, useNotifications } from '@proton/components/hooks/index';
 import useApi from '@proton/components/hooks/useApi';
-import { acceptCalendarShareInvitation, rejectCalendarShareInvitation } from '@proton/shared/lib/calendar/share';
+import {
+    acceptCalendarShareInvitation,
+    rejectCalendarShareInvitation,
+} from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
