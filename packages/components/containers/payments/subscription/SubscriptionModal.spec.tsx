@@ -26,6 +26,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 
 import Payment from '../Payment';
+import { handlePaymentToken } from '../paymentTokenHelper';
 import PlanCustomization from './PlanCustomization';
 import SubscriptionModal, { Model, Props, useProration } from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
@@ -228,6 +229,8 @@ jest.mock('../Payment');
 jest.mock('./modal-components/SubscriptionCheckout');
 jest.mock('../../../components/portal/Portal', () => ({ children }: any) => <>{children}</>);
 
+jest.mock('../paymentTokenHelper');
+
 describe('SubscriptionModal', () => {
     let props: Props;
     let freeUser: UserModel;
@@ -318,12 +321,13 @@ describe('SubscriptionModal', () => {
     it('should redirect user without supported addons directly to checkout step', async () => {
         props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
 
+        (SubscriptionCheckout as jest.Mock).mockReturnValue(null);
+
         // That's for initial rednering of CUSTOMIZATION step
         (PlanCustomization as jest.Mock).mockReturnValue(null);
 
         // These components consitute the checkout logic
         (Payment as jest.Mock).mockReturnValue(<>Payment component</>);
-        (SubscriptionCheckout as jest.Mock).mockReturnValue(null);
 
         let { container } = render(<SubscriptionModal {...props} />);
         await waitFor(() => {
@@ -339,6 +343,8 @@ describe('SubscriptionModal', () => {
         props.planIDs = {
             [PLANS.MAIL_PRO]: 1,
         };
+
+        (SubscriptionCheckout as jest.Mock).mockReturnValue(null);
 
         (PlanCustomization as jest.Mock).mockReturnValue(<>Plan customization component</>);
 
@@ -379,6 +385,26 @@ describe('SubscriptionModal', () => {
         expect(container).toHaveTextContent('Plan customization component');
     });
 
-    // Discovered this bug
-    // it('should not call form`s onSubmit when user is still on the customization step and presses Enter', () => {});
+    it('should NOT handle checkout when user presses Enter during customization', async () => {
+        (SubscriptionCheckout as jest.Mock).mockReturnValue(null);
+        (PlanCustomization as jest.Mock).mockReturnValue(<>Plan customization component</>);
+        (handlePaymentToken as jest.Mock).mockRejectedValue(new Error('Error from the test mock: handlePaymentToken'));
+
+        props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
+        props.planIDs = {
+            [PLANS.MAIL_PRO]: 1,
+        };
+        let { container } = render(<SubscriptionModal {...props} />);
+
+        await waitFor(() => {
+            expect(PlanCustomization).toHaveBeenCalled();
+            expect(container).toHaveTextContent('Plan customization component');
+            expect(container).toHaveTextContent('Customize your plan');
+        });
+
+        let formElement: Element = container.getElementsByTagName('form').item(0) as Element;
+        fireEvent.submit(formElement);
+
+        expect(handlePaymentToken).not.toHaveBeenCalled();
+    });
 });
