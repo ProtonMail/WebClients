@@ -16,7 +16,7 @@ import {
 } from '../../interfaces/calendar';
 import { dedupeAlarmsWithNormalizedTriggers } from '../alarms';
 import { getAttendeeEmail, getSupportedAttendee, getSupportedOrganizer } from '../attendees';
-import { ICAL_METHOD, MAX_LENGTHS_API } from '../constants';
+import { ICAL_METHOD, MAX_CHARS_API } from '../constants';
 import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from '../helper';
 import { getHasConsistentRrule, getHasOccurrences, getSupportedRrule } from '../recurrence/rrule';
 import { durationToMilliseconds } from '../vcal';
@@ -286,19 +286,19 @@ export const getSupportedEvent = ({
         if (trimmedSummaryValue) {
             validated.summary = {
                 ...summary,
-                value: truncate(trimmedSummaryValue, MAX_LENGTHS_API.TITLE),
+                value: truncate(trimmedSummaryValue, MAX_CHARS_API.TITLE),
             };
         }
         if (trimmedDescriptionValue) {
             validated.description = {
                 ...description,
-                value: truncate(trimmedDescriptionValue, MAX_LENGTHS_API.EVENT_DESCRIPTION),
+                value: truncate(trimmedDescriptionValue, MAX_CHARS_API.EVENT_DESCRIPTION),
             };
         }
         if (trimmedLocationValue) {
             validated.location = {
                 ...location,
-                value: truncate(trimmedLocationValue, MAX_LENGTHS_API.LOCATION),
+                value: truncate(trimmedLocationValue, MAX_CHARS_API.LOCATION),
             };
         }
         const sequenceValue = sequence?.value || 0;
