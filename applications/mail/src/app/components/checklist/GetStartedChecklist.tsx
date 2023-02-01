@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { ChecklistItem, Loader, SettingsLink, classnames, useApi } from '@proton/components';
+import { ChecklistItem, Loader, SettingsLink, useApi } from '@proton/components';
 import { useDateCountdown } from '@proton/hooks';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS } from '@proton/shared/lib/constants';
@@ -53,12 +53,11 @@ const GetStartedChecklistComplete = ({ rewardInGb }: { rewardInGb: number }) => 
 };
 
 interface GetStartedChecklistProps {
-    limitedMaxWidth?: boolean;
     onItemSelection: (key: ChecklistKey) => () => void;
     onDismiss?: () => void;
 }
 
-const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: GetStartedChecklistProps) => {
+const GetStartedChecklist = ({ onDismiss, onItemSelection }: GetStartedChecklistProps) => {
     const { expires, checklist, loading, rewardInGb, userWasRewarded } = useGetStartedChecklist();
     const { expired, days } = useDateCountdown(expires);
 
@@ -111,7 +110,7 @@ const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: Ge
     const { length: totalNumberOfItems } = checklistItems;
 
     return (
-        <div className={classnames(['p1', limitedMaxWidth && 'get-started_root--limited-width mauto'])}>
+        <div className="p1">
             <GetStartedChecklistHeader
                 numberOfCompletedItems={numberOfCompletedItems}
                 totalNumberOfItems={totalNumberOfItems}
