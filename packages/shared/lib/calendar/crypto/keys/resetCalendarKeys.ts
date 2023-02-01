@@ -1,76 +1,36 @@
-import { c } from 'ttag';
-
 import { useGetAddressKeys } from '@proton/components';
-import { CryptoProxy } from '@proton/crypto';
 
-import { getCalendarGroupReset, queryMembers, resetCalendarGroup } from '../../../api/calendars';
-import { Address, Api } from '../../../interfaces';
-import { Calendar, CalendarMember } from '../../../interfaces/calendar';
+import { resetCalendars } from '../../../api/calendars';
+import { Api } from '../../../interfaces';
+import { VisualCalendar } from '../../../interfaces/calendar';
 import { getPrimaryKey } from '../../../keys';
-import { getMemberAddressWithAdminPermissions } from '../../getMemberWithAdmin';
 import { generateCalendarKeyPayload } from './calendarKeys';
 
 interface ResetCalendarKeysArguments {
+    calendars: VisualCalendar[];
     api: Api;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
-    addresses: Address[];
 }
 
-interface ResetCalendar extends Calendar {
-    Members: { [memberID: string]: string };
-}
-
-export const resetCalendarKeys = async ({ api, getAddressKeys, addresses }: ResetCalendarKeysArguments) => {
-    // We're re-fetching the list of reset calendars because through the getCalendarGroupReset route
-    // we get extra info that will be useful for shared calendars
-    const { Calendars: ResetCalendars = [] } = await api<{ Calendars: ResetCalendar[] }>(getCalendarGroupReset());
-
+export const resetCalendarKeys = async ({ calendars, api, getAddressKeys }: ResetCalendarKeysArguments) => {
     const calendarsResult = await Promise.all(
-        ResetCalendars.map(async ({ ID: calendarID }) => {
-            const { Members = [] } = await api<{ Members: CalendarMember[] }>(queryMembers(calendarID));
-            const { Member: selfMember, Address: selfAddress } = getMemberAddressWithAdminPermissions(
-                Members,
-                addresses
-            );
+        calendars.map(async ({ Members: [{ AddressID: addressID }] }) => {
             const { privateKey: primaryAddressKey, publicKey: primaryAddressPublicKey } =
-                getPrimaryKey(await getAddressKeys(selfAddress.ID)) || {};
+                getPrimaryKey(await getAddressKeys(addressID)) || {};
 
-            if (!primaryAddressKey) {
-                throw new Error(c('Error').t`Primary address key is not decrypted`);
+            if (!primaryAddressKey || !primaryAddressPublicKey) {
+                throw new Error('Calendar owner is missing keys');
             }
-
-            const resetCalendar = ResetCalendars.find(({ ID }) => ID === calendarID);
-
-            if (!resetCalendar) {
-                throw new Error('Reset calendar not found');
-            }
-            const { Members: MemberPublicKeys } = resetCalendar;
-
-            const memberPublicKeyIDs = Object.keys(MemberPublicKeys);
-            const parsedMemberPublicKeys = await Promise.all(
-                memberPublicKeyIDs.map((memberID) =>
-                    CryptoProxy.importPublicKey({ armoredKey: MemberPublicKeys[memberID] })
-                )
-            );
-            const memberPublicKeys = parsedMemberPublicKeys.reduce((acc, publicKey, i) => {
-                return {
-                    ...acc,
-                    [memberPublicKeyIDs[i]]: publicKey,
-                };
-            }, {});
 
             return generateCalendarKeyPayload({
-                addressID: selfAddress.ID,
+                addressID,
                 privateKey: primaryAddressKey,
-                memberPublicKeys: {
-                    ...memberPublicKeys,
-                    [selfMember.ID]: primaryAddressPublicKey,
-                },
+                publicKey: primaryAddressPublicKey,
             });
         })
     );
 
-    const resetPayload = ResetCalendars.reduce((acc, { ID: calendarID }, i) => {
+    const resetPayload = calendars.reduce((acc, { ID: calendarID }, i) => {
         return {
             ...acc,
             [calendarID]: calendarsResult[i],
@@ -78,7 +38,7 @@ export const resetCalendarKeys = async ({ api, getAddressKeys, addresses }: Rese
     }, {});
 
     return api(
-        resetCalendarGroup({
+        resetCalendars({
             CalendarKeys: resetPayload,
         })
     );

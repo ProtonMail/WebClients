@@ -11,8 +11,8 @@ import {
     CalendarKeyFlags,
     CalendarMember,
     CalendarSetupData,
+    CreateOrResetCalendarPayload,
     DecryptedCalendarKey,
-    GenerateCalendarPayload,
 } from '../../../interfaces/calendar';
 import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { GetCalendarKeys } from '../../../interfaces/hooks/GetCalendarKeys';
@@ -160,5 +160,5 @@ export const getAddressesMembersMap = (Members: CalendarMember[], Addresses: Add
 };
 
 export const isCalendarSetupData = (
-    payload: GenerateCalendarPayload | CalendarSetupData
+    payload: CreateOrResetCalendarPayload | CalendarSetupData
 ): payload is CalendarSetupData => isTruthy(payload.Passphrase.KeyPacket);

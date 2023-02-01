@@ -2,10 +2,13 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys, useGetAddresses } from '@proton/components';
 
+import { getSilentApi } from '../../../api/helpers/customConfig';
+import getHasSharedCalendars from '../../../calendar/sharing/getHasSharedCalendars';
 import { Api } from '../../../interfaces';
-import { Calendar } from '../../../interfaces/calendar';
+import { VisualCalendar } from '../../../interfaces/calendar';
 import { CalendarsModel } from '../../../models';
 import { loadModels } from '../../../models/helper';
+import { getIsOwnedCalendar } from '../../calendar';
 import { reactivateCalendarsKeys } from './reactivateCalendarKeys';
 import { resetCalendarKeys } from './resetCalendarKeys';
 
@@ -14,8 +17,8 @@ interface ProcessArguments {
     cache: any;
     getAddresses: ReturnType<typeof useGetAddresses>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
-    calendarsToReset: Calendar[];
-    calendarsToReactivate: Calendar[];
+    calendarsToReset: VisualCalendar[];
+    calendarsToReactivate: VisualCalendar[];
 }
 
 export const process = async ({
@@ -31,12 +34,25 @@ export const process = async ({
         throw new Error(c('Error').t`Please create an address first.`);
     }
 
+    let hasSharedCalendars = false;
+
     if (calendarsToReset.length > 0) {
-        await resetCalendarKeys({
-            api,
-            getAddressKeys,
-            addresses,
-        });
+        // Non-owners can't reset calendar keys
+        const calendars = calendarsToReset.filter((calendar) => getIsOwnedCalendar(calendar));
+        const [hasShared] = await Promise.all([
+            getHasSharedCalendars({
+                calendars,
+                api: getSilentApi(api),
+                catchErrors: true,
+            }),
+            resetCalendarKeys({
+                calendars,
+                api,
+                getAddressKeys,
+            }),
+        ]);
+
+        hasSharedCalendars = hasShared;
     }
 
     if (calendarsToReactivate.length > 0) {
@@ -50,4 +66,6 @@ export const process = async ({
 
     // Refresh the calendar model to be able to get the new flags since it's not updated through the event manager
     await loadModels([CalendarsModel], { api, cache, useCache: false });
+
+    return hasSharedCalendars;
 };
