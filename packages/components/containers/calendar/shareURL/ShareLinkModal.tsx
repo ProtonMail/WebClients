@@ -12,7 +12,7 @@ import {
     generateEncryptedPurpose,
     getCreatePublicLinkPayload,
     transformLinksFromAPI,
-} from '@proton/shared/lib/calendar/shareUrl/helpers';
+} from '@proton/shared/lib/calendar/sharing/shareUrl/shareUrl';
 import { ACCESS_LEVEL, CalendarLink, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
 import { splitKeys } from '@proton/shared/lib/keys';
 
