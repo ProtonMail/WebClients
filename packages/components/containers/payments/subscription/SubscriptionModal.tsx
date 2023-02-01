@@ -324,7 +324,7 @@ const SubscriptionModal = ({
         });
     const creditCardTopRef = useRef<HTMLDivElement>(null);
 
-    const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<void> => {
+    const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<boolean> => {
         const copyNewModel = { ...newModel };
 
         if (copyNewModel.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && !supportAddons(copyNewModel.planIDs)) {
@@ -334,7 +334,7 @@ const SubscriptionModal = ({
         if (!hasPlanIDs(newModel.planIDs)) {
             setCheckResult(getFreeCheckResult(model.currency, model.cycle));
             setModel(copyNewModel);
-            return;
+            return true;
         }
 
         try {
@@ -369,7 +369,11 @@ const SubscriptionModal = ({
             if (error.name === 'OfflineError') {
                 setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
             }
+
+            return false;
         }
+
+        return true;
     };
 
     const handleCheckout = async () => {
@@ -430,6 +434,20 @@ const SubscriptionModal = ({
         // Each time the user switch between steps, it takes the user to the top of the modal
         topRef.current?.scrollIntoView?.();
     }, [model.step]);
+
+    const handleCustomizationSubmit = () => {
+        const run = async () => {
+            let isSuccess = await check();
+
+            if (isSuccess) {
+                setModel((old) => ({
+                    ...old,
+                    step: SUBSCRIPTION_STEPS.CHECKOUT,
+                }));
+            }
+        };
+        withLoading(run());
+    };
 
     return (
         <ModalTwo
@@ -509,17 +527,9 @@ const SubscriptionModal = ({
                                         <Button
                                             color="norm"
                                             loading={loading}
-                                            onClick={() => {
-                                                const run = async () => {
-                                                    await check();
-                                                    return setModel((old) => ({
-                                                        ...old,
-                                                        step: SUBSCRIPTION_STEPS.CHECKOUT,
-                                                    }));
-                                                };
-                                                withLoading(run());
-                                            }}
+                                            onClick={handleCustomizationSubmit}
                                             fullWidth
+                                            data-testid="continue-to-review"
                                         >
                                             {c('new_plans: action').t`Continue to review`}
                                         </Button>
