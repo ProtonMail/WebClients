@@ -7,7 +7,7 @@ export const sendFeedback = ({
     Feedback: string;
     FeedbackType: string;
 }) => ({
-    url: `v4/feedback`,
+    url: `core/v4/feedback`,
     method: 'post',
     data: { Score, Feedback, FeedbackType },
 });

@@ -4,7 +4,7 @@ import { PaginationParams } from './interface';
 
 export const queryMembers = (params?: PaginationParams) => ({
     method: 'get',
-    url: 'members',
+    url: 'core/v4/members',
     params: {
         ...params,
         IncludeAddresses: 1,
@@ -26,12 +26,12 @@ export const getAllMembers = (api: Api) => {
 
 export const getMember = (memberID: string) => ({
     method: 'get',
-    url: `members/${memberID}`,
+    url: `core/v4/members/${memberID}`,
 });
 
 export const queryAddresses = (memberID: string, params?: PaginationParams) => ({
     method: 'get',
-    url: `members/${memberID}/addresses`,
+    url: `core/v4/members/${memberID}/addresses`,
     params,
 });
 
@@ -50,57 +50,57 @@ export const getAllMemberAddresses = (api: Api, memberID: string) => {
 
 export const createMember = (data: { Name: string; Private: number; MaxSpace: number; MaxVPN: number }) => ({
     method: 'post',
-    url: 'members',
+    url: 'core/v4/members',
     data,
 });
 
 export const checkMemberAddressAvailability = (data: { Local: string; Domain: string }) => ({
     method: 'post',
-    url: `members/addresses/available`,
+    url: `core/v4/members/addresses/available`,
     data,
 });
 
 export const createMemberAddress = (memberID: string, data: { Local: string; Domain: string }) => ({
     method: 'post',
-    url: `members/${memberID}/addresses`,
+    url: `core/v4/members/${memberID}/addresses`,
     data,
 });
 
 export const updateName = (memberID: string, Name: string) => ({
     method: 'put',
-    url: `members/${memberID}/name`,
+    url: `core/v4/members/${memberID}/name`,
     data: { Name },
 });
 
 export const updateQuota = (memberID: string, MaxSpace: number) => ({
     method: 'put',
-    url: `members/${memberID}/quota`,
+    url: `core/v4/members/${memberID}/quota`,
     data: { MaxSpace },
 });
 
 export const updateRole = (memberID: string, Role: number) => ({
     method: 'put',
-    url: `members/${memberID}/role`,
+    url: `core/v4/members/${memberID}/role`,
     data: { Role },
 });
 
 export const updateVPN = (memberID: string, MaxVPN: number) => ({
     method: 'put',
-    url: `members/${memberID}/vpn`,
+    url: `core/v4/members/${memberID}/vpn`,
     data: { MaxVPN },
 });
 
 export const removeMember = (memberID: string) => ({
     method: 'delete',
-    url: `members/${memberID}`,
+    url: `core/v4/members/${memberID}`,
 });
 
 export const privatizeMember = (memberID: string) => ({
     method: 'put',
-    url: `members/${memberID}/privatize`,
+    url: `core/v4/members/${memberID}/privatize`,
 });
 
 export const authMember = (memberID: string) => ({
     method: 'post',
-    url: `members/${memberID}/auth`,
+    url: `core/v4/members/${memberID}/auth`,
 });

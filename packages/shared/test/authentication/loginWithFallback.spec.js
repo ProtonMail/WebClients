@@ -30,7 +30,7 @@ describe('login with fallback', () => {
             if (url.includes('info')) {
                 return getInfoResult(4);
             }
-            if (url === 'auth') {
+            if (url === 'core/v4/auth') {
                 authCalls++;
                 return getResponse({
                     ServerProof,
@@ -59,7 +59,7 @@ describe('login with fallback', () => {
                 return getInfoResult(0);
             }
 
-            if (url === 'auth') {
+            if (url === 'core/v4/auth') {
                 apiCalls.push(args);
                 if (apiCalls.length === 1) {
                     // eslint-disable-next-line
@@ -93,7 +93,7 @@ describe('login with fallback', () => {
                 return getInfoResult(4);
             }
 
-            if (url === 'auth') {
+            if (url === 'core/v4/auth') {
                 // eslint-disable-next-line
                 return Promise.reject({ data: { Code: 8002 } });
             }
@@ -117,7 +117,7 @@ describe('login with fallback', () => {
                 return getInfoResult(0);
             }
 
-            if (url === 'auth') {
+            if (url === 'core/v4/auth') {
                 authCalls++;
                 // eslint-disable-next-line
                 return Promise.reject({ data: { Code: 8002 } });

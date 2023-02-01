@@ -3,7 +3,7 @@ import { LABEL_TYPE } from '../constants';
 const { MESSAGE_LABEL, MESSAGE_FOLDER, CONTACT_GROUP, SYSTEM_FOLDER } = LABEL_TYPE;
 
 export const get = (Type: number) => ({
-    url: 'v4/labels',
+    url: 'core/v4/labels',
     method: 'get',
     params: { Type },
 });
@@ -17,7 +17,7 @@ interface LabelOrderArgument extends PartialLabelOrderArgument {
 }
 export const order = ({ LabelIDs, ParentID, Type }: LabelOrderArgument) => ({
     method: 'put',
-    url: 'v4/labels/order',
+    url: 'core/v4/labels/order',
     data: { LabelIDs, ParentID, Type },
 });
 
@@ -34,7 +34,7 @@ interface CreateLabelArgument extends PartialCreateLabelArgument {
 }
 export const create = ({ Name, Color, Type, Notify, ParentID, Expanded }: CreateLabelArgument) => ({
     method: 'post',
-    url: 'v4/labels',
+    url: 'core/v4/labels',
     data: { Name, Color, Type, Notify, ParentID, Expanded },
 });
 
@@ -52,24 +52,24 @@ export const updateLabel = (
     { Name, Color, Notify, ParentID, Sticky, Expanded, Display }: UpdateLabelArguments
 ) => ({
     method: 'put',
-    url: `v4/labels/${labelID}`,
+    url: `core/v4/labels/${labelID}`,
     data: { Name, Color, Notify, ParentID, Sticky, Expanded, Display },
 });
 
 export const deleteLabel = (labelID: string) => ({
     method: 'delete',
-    url: `v4/labels/${labelID}`,
+    url: `core/v4/labels/${labelID}`,
 });
 
 export const deleteLabels = (labelIDs: string[]) => ({
     method: 'delete',
-    url: 'v4/labels',
+    url: 'core/v4/labels',
     data: { LabelIDs: labelIDs },
 });
 
 export const checkLabelAvailability = (params: { Name: string; Type: LABEL_TYPE; ParentID?: string | number }) => ({
     method: 'get',
-    url: 'v4/labels/available',
+    url: 'core/v4/labels/available',
     params,
 });
 
