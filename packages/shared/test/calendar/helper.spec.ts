@@ -1,4 +1,4 @@
-import { MAX_LENGTHS_API } from '../../lib/calendar/constants';
+import { MAX_CHARS_API } from '../../lib/calendar/constants';
 import { generateVeventHashUID, getHasLegacyHashUID, getOriginalUID, getSupportedUID } from '../../lib/calendar/helper';
 
 describe('getSupportedUID', () => {
@@ -38,7 +38,7 @@ describe('getVeventHashUID', () => {
 
     it('should crop long UIDs before the hash', async () => {
         const hashUID = await generateVeventHashUID(binaryString, longUid);
-        expect(hashUID.length).toEqual(MAX_LENGTHS_API.UID);
+        expect(hashUID.length).toEqual(MAX_CHARS_API.UID);
         expect(hashUID).toEqual(
             'original-uid-vEFmcWKJ0q0eeNWIN4OLZ8yJnSDdC8DT9CndSxOnnPC47VWjQHu0psXB25lZuCt4EWsWAtgmCPWe1Wa0AIL0y8rlPn0qbB05u3WuyOst8XYkJNWz6gYx@domaine.com-sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229'
         );
@@ -52,7 +52,7 @@ describe('getVeventHashUID', () => {
 
     it('should crop long UIDs after the hash when using legacy format', async () => {
         const hashUID = await generateVeventHashUID(binaryString, longUid, true);
-        expect(hashUID.length).toEqual(MAX_LENGTHS_API.UID);
+        expect(hashUID.length).toEqual(MAX_CHARS_API.UID);
         expect(hashUID).toEqual(
             'sha1-uid-b8ae0238d0011a4961a2d259e33bd383672b9229-original-uid-vEFmcWKJ0q0eeNWIN4OLZ8yJnSDdC8DT9CndSxOnnPC47VWjQHu0psXB25lZuCt4EWsWAtgmCPWe1Wa0AIL0y8rlPn0qbB05u3WuyOst8XYkJNWz6gYx@domaine.com'
         );

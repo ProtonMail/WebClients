@@ -1,4 +1,4 @@
-import { EVENT_VERIFICATION_STATUS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import { EVENT_VERIFICATION_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import { EventModelView, SelfAddressData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -52,9 +52,9 @@ export const propertiesToModel = ({
     return {
         uid: uid ? uid.value : undefined,
         frequencyModel: propertiesToFrequencyModel(rrule, start),
-        title: truncate(titleString.trim(), MAX_LENGTHS_API.TITLE),
-        location: truncate(locationString.trim(), MAX_LENGTHS_API.LOCATION),
-        description: truncate(descriptionString.trim(), MAX_LENGTHS_API.EVENT_DESCRIPTION),
+        title: truncate(titleString.trim(), MAX_CHARS_API.TITLE),
+        location: truncate(locationString.trim(), MAX_CHARS_API.LOCATION),
+        description: truncate(descriptionString.trim(), MAX_CHARS_API.EVENT_DESCRIPTION),
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
         isProtonProtonInvite,

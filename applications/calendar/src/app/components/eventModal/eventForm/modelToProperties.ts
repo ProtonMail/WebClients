@@ -1,7 +1,7 @@
 import { addDays } from 'date-fns';
 
 import { dedupeNotifications } from '@proton/shared/lib/calendar/alarms';
-import { ICAL_EVENT_STATUS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import { ICAL_EVENT_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import {
     buildVcalOrganizer,
     getDateProperty,
@@ -62,7 +62,7 @@ export const modelToGeneralProperties = ({
     const properties = omit(rest, ['dtstart', 'dtend']);
 
     if (title) {
-        properties.summary = { value: title.trim().slice(0, MAX_LENGTHS_API.TITLE) };
+        properties.summary = { value: title.trim().slice(0, MAX_CHARS_API.TITLE) };
     }
 
     if (uid) {
@@ -70,11 +70,11 @@ export const modelToGeneralProperties = ({
     }
 
     if (location) {
-        properties.location = { value: location.slice(0, MAX_LENGTHS_API.LOCATION) };
+        properties.location = { value: location.slice(0, MAX_CHARS_API.LOCATION) };
     }
 
     if (description) {
-        properties.description = { value: description.slice(0, MAX_LENGTHS_API.EVENT_DESCRIPTION) };
+        properties.description = { value: description.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) };
     }
     properties.status = { value: status || ICAL_EVENT_STATUS.CONFIRMED };
 
