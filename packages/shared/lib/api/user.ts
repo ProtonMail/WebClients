@@ -2,7 +2,7 @@ import { ProductParam, getProductHeaders } from '../apps/product';
 import { HumanVerificationMethodType } from '../interfaces';
 
 export const getUser = () => ({
-    url: 'users',
+    url: 'core/v4/users',
     method: 'get',
 });
 
@@ -23,14 +23,14 @@ export const queryCreateUser = (
     },
     product: ProductParam
 ) => ({
-    url: 'v4/users',
+    url: 'core/v4/users',
     method: 'post',
     data,
     headers: getProductHeaders(product),
 });
 
 export const getRecoveryMethods = (Username: string) => ({
-    url: 'users/reset',
+    url: 'core/v4/users/reset',
     method: 'get',
     params: { Username },
 });
@@ -49,40 +49,40 @@ export const queryCreateUserExternal = (
     },
     product: ProductParam
 ) => ({
-    url: 'users/external',
+    url: 'core/v4/users/external',
     method: 'post',
     data,
     headers: getProductHeaders(product),
 });
 
 export const queryUnlock = () => ({
-    url: 'users/unlock',
+    url: 'core/v4/users/unlock',
     method: 'put',
 });
 
 export const canDelete = () => ({
-    url: 'users/delete',
+    url: 'core/v4/users/delete',
     method: 'get',
 });
 
 export const deleteUser = (data: { Reason?: string; Feedback?: string; Email?: string }) => ({
-    url: 'users/delete',
+    url: 'core/v4/users/delete',
     method: 'put',
     data,
 });
 
 export const unlockPasswordChanges = () => ({
-    url: 'users/password',
+    url: 'core/v4/users/password',
     method: 'put',
 });
 
 export const lockSensitiveSettings = () => ({
-    url: 'users/lock',
+    url: 'core/v4/users/lock',
     method: 'put',
 });
 
 export const getHumanVerificationMethods = () => ({
-    url: 'users/human',
+    url: 'core/v4/users/human',
     method: 'get',
 });
 
@@ -98,19 +98,19 @@ export const queryVerificationCode = (
               Phone: string;
           }
 ) => ({
-    url: 'users/code',
+    url: 'core/v4/users/code',
     method: 'post',
     data: { Type, Destination },
 });
 
 export const queryCheckUsernameAvailability = (Name: string, ParseDomain?: boolean) => ({
-    url: 'users/available',
+    url: 'core/v4/users/available',
     method: 'get',
     params: { Name, ParseDomain: ParseDomain ? 1 : 0 },
 });
 
 export const queryCheckEmailAvailability = (Name: string) => ({
-    url: 'users/availableExternal',
+    url: 'core/v4/users/availableExternal',
     method: 'get',
     params: { Name },
 });
@@ -118,7 +118,7 @@ export const queryCheckEmailAvailability = (Name: string) => ({
 export const queryDirectSignupStatus = (
     Type: 1 | 2 // 1 = mail, 2 = VPN
 ) => ({
-    url: 'users/direct',
+    url: 'core/v4/users/direct',
     method: 'get',
     params: { Type },
 });
@@ -128,7 +128,7 @@ export const queryCheckVerificationCode = (
     TokenType: 'email' | 'sms' | 'invite' | 'coupon' | 'payment',
     Type: 1 | 2 // 1 = mail, 2 = VPN
 ) => ({
-    url: 'users/check',
+    url: 'core/v4/users/check',
     method: 'put',
     data: { Token, TokenType, Type },
 });

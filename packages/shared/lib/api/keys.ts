@@ -6,13 +6,13 @@ interface GetPublicKeysParams {
 }
 
 export const getPublicKeys = (params: GetPublicKeysParams) => ({
-    url: 'keys',
+    url: 'core/v4/keys',
     method: 'get',
     params,
 });
 
 export const getKeySalts = () => ({
-    url: 'keys/salts',
+    url: 'core/v4/keys/salts',
     method: 'get',
 });
 
@@ -35,7 +35,7 @@ interface CreateAddressKeyPayload {
 }
 
 export const createAddressKeyRoute = (data: CreateAddressKeyPayload) => ({
-    url: 'keys',
+    url: 'core/v4/keys',
     method: 'post',
     data,
 });
@@ -46,7 +46,7 @@ interface CreateAddressKeyPayloadV2 extends CreateAddressKeyPayload {
 }
 
 export const createAddressKeyRouteV2 = (data: CreateAddressKeyPayloadV2) => ({
-    url: 'keys/address',
+    url: 'core/v4/keys/address',
     method: 'post',
     data,
 });
@@ -58,7 +58,7 @@ interface SetupKeysPayload {
 }
 
 export const setupKeys = (data: SetupKeysPayload) => ({
-    url: 'keys/setup',
+    url: 'core/v4/keys/setup',
     method: 'post',
     data,
 });
@@ -70,7 +70,7 @@ interface ActivateKeyPayload {
 }
 
 export const activateKeyRoute = ({ ID, ...data }: ActivateKeyPayload) => ({
-    url: `keys/${ID}/activate`,
+    url: `core/v4/keys/${ID}/activate`,
     method: 'put',
     data,
 });
@@ -81,13 +81,13 @@ interface ActivateKeyPayloadV2 extends ActivateKeyPayload {
 }
 
 export const activateKeyRouteV2 = ({ ID, ...data }: ActivateKeyPayloadV2) => ({
-    url: `keys/address/${ID}`,
+    url: `core/v4/keys/address/${ID}`,
     method: 'put',
     data,
 });
 
 export const reactiveLegacyAddressKeyRouteV2 = ({ ID, ...data }: ActivateKeyPayloadV2) => ({
-    url: `keys/address/${ID}`,
+    url: `core/v4/keys/address/${ID}`,
     method: 'put',
     data,
 });
@@ -99,7 +99,7 @@ interface ReactivateKeyPayload {
 }
 
 export const reactivateKeyRoute = ({ ID, PrivateKey, SignedKeyList }: ReactivateKeyPayload) => ({
-    url: `keys/${ID}`,
+    url: `core/v4/keys/${ID}`,
     method: 'put',
     data: {
         PrivateKey,
@@ -117,7 +117,7 @@ interface ReactivateUserKeyPayloadV2 {
 }
 
 export const reactivateUserKeyRouteV2 = ({ ID, ...data }: ReactivateUserKeyPayloadV2) => ({
-    url: `keys/user/${ID}`,
+    url: `core/v4/keys/user/${ID}`,
     method: 'put',
     data,
 });
@@ -128,7 +128,7 @@ interface SetKeyPrimaryPayload {
 }
 
 export const setKeyPrimaryRoute = ({ ID, ...data }: SetKeyPrimaryPayload) => ({
-    url: `keys/${ID}/primary`,
+    url: `core/v4/keys/${ID}/primary`,
     method: 'put',
     data,
 });
@@ -140,7 +140,7 @@ interface SetKeyFlagsPayload {
 }
 
 export const setKeyFlagsRoute = ({ ID, ...data }: SetKeyFlagsPayload) => ({
-    url: `keys/${ID}/flags`,
+    url: `core/v4/keys/${ID}/flags`,
     method: 'put',
     data,
 });
@@ -151,7 +151,7 @@ interface RemoveKeyPayload {
 }
 
 export const removeKeyRoute = ({ ID, ...data }: RemoveKeyPayload) => ({
-    url: `keys/${ID}/delete`,
+    url: `core/v4/keys/${ID}/delete`,
     method: 'put',
     data,
 });
@@ -169,7 +169,7 @@ export interface UpdatePrivateKeyPayloadV2 {
 }
 
 export const updatePrivateKeyRoute = (data: UpdatePrivateKeyPayload | UpdatePrivateKeyPayloadV2) => ({
-    url: 'keys/private',
+    url: 'core/v4/keys/private',
     method: 'put',
     data,
 });
@@ -191,7 +191,7 @@ export interface ResetKeysPayloadV2 extends ResetKeysPayload {
 }
 
 export const resetKeysRoute = (data: ResetKeysPayloadWithKeys | ResetKeysPayloadV2 | ResetKeysPayload) => ({
-    url: 'keys/reset',
+    url: 'core/v4/keys/reset',
     method: 'post',
     data,
 });
@@ -225,7 +225,7 @@ interface UpgradeKeysPayloadV2 {
 }
 
 export const upgradeKeysRoute = (data: UpgradeKeysPayload | UpgradeKeysPayloadV2) => ({
-    url: 'keys/private/upgrade',
+    url: 'core/v4/keys/private/upgrade',
     method: 'post',
     data,
 });
@@ -243,7 +243,7 @@ export interface MigrateAddressKeysPayload {
 }
 
 export const migrateAddressKeysRoute = (data: MigrateAddressKeysPayload) => ({
-    url: 'keys/migrate',
+    url: 'core/v4/keys/migrate',
     method: 'post',
     data,
 });
@@ -254,7 +254,7 @@ export interface GetSignedKeyListsParams {
 }
 
 export const getSignedKeyListsRoute = (params: GetSignedKeyListsParams) => ({
-    url: 'keys/signedkeylists',
+    url: 'core/v4/keys/signedkeylists',
     method: 'get',
     params,
 });
@@ -268,7 +268,7 @@ export interface UpdateSignedKeyListPayload {
 }
 
 export const updateSignedKeyListRoute = (params: UpdateSignedKeyListParams, data: UpdateSignedKeyListPayload) => ({
-    url: 'keys/signedkeylists',
+    url: 'core/v4/keys/signedkeylists',
     method: 'post',
     params,
     data,

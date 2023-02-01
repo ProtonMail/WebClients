@@ -6,26 +6,26 @@ export const PASSWORD_WRONG_ERROR = 8002;
 
 export const auth = (data: any) => ({
     method: 'post',
-    url: 'auth',
+    url: 'core/v4/auth',
     data,
     ignoreHandler: [HTTP_ERROR_CODES.TOO_MANY_REQUESTS],
 });
 
 export const auth2FA = (data: { TwoFactorCode: string } | { FIDO2: AuthenticationCredentialsPayload }) => ({
     method: 'post',
-    url: 'auth/2fa',
+    url: 'core/v4/auth/2fa',
     data: data,
 });
 
 export const authJwt = (data: { Token: String; ClientSecret?: String }) => ({
     method: 'post',
-    url: 'auth/jwt',
+    url: 'core/v4/auth/jwt',
     data,
 });
 
 export const revoke = (params?: { Child?: 1 }) => ({
     method: 'delete',
-    url: 'auth',
+    url: 'core/v4/auth',
     params,
 });
 
@@ -37,7 +37,7 @@ interface RefreshArgs {
 export const setRefreshCookies = (data?: RefreshArgs) => {
     const config = {
         method: 'post',
-        url: 'auth/refresh',
+        url: 'core/v4/auth/refresh',
     };
     if (!data) {
         return config;
@@ -69,7 +69,7 @@ export const setCookies = ({
     Persistent = false,
 }: CookiesArgs) => ({
     method: 'post',
-    url: 'auth/cookies',
+    url: 'core/v4/auth/cookies',
     data: {
         UID,
         ResponseType: 'token',
@@ -83,11 +83,11 @@ export const setCookies = ({
 
 export const getLocalKey = () => ({
     method: 'get',
-    url: 'auth/sessions/local/key',
+    url: 'auth/v4/sessions/local/key',
 });
 export const setLocalKey = (Key: string) => ({
     method: 'put',
-    url: 'auth/sessions/local/key',
+    url: 'auth/v4/sessions/local/key',
     data: {
         Key,
     },
@@ -100,49 +100,49 @@ export const pushForkSession = (data: {
     UserCode?: string;
 }) => ({
     method: 'post',
-    url: 'auth/sessions/forks',
+    url: 'auth/v4/sessions/forks',
     data,
 });
 
 export const pullForkSession = (selector: string) => ({
     method: 'get',
-    url: `auth/sessions/forks/${selector}`,
+    url: `auth/v4/sessions/forks/${selector}`,
 });
 
 export const getLocalSessions = () => ({
     method: 'get',
-    url: `auth/sessions/local`,
+    url: `auth/v4/sessions/local`,
 });
 
 export const getInfo = (Username?: string) => ({
     method: 'post',
-    url: 'auth/info',
+    url: 'core/v4/auth/info',
     data: Username ? { Username } : undefined,
 });
 
 export const getModulus = () => ({
     method: 'get',
-    url: 'auth/modulus',
+    url: 'core/v4/auth/modulus',
 });
 
 export const querySessions = () => ({
     method: 'get',
-    url: 'auth/sessions',
+    url: 'auth/v4/sessions',
 });
 
 export const revokeOtherSessions = () => ({
     method: 'delete',
-    url: 'auth/sessions',
+    url: 'auth/v4/sessions',
 });
 
 export const revokeSession = (UID: string | number) => ({
     method: 'delete',
-    url: `auth/sessions/${UID}`,
+    url: `auth/v4/sessions/${UID}`,
 });
 
 export const queryScopes = () => ({
     method: 'get',
-    url: 'auth/scopes',
+    url: 'core/v4/auth/scopes',
 });
 
 export const getMnemonicAuthInfo = (Username?: string) => ({

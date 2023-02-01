@@ -93,7 +93,7 @@ describe('AddressesEditor', () => {
     });
 
     it('should add an address', async () => {
-        addApiMock('keys', () => ({}));
+        addApiMock('core/v4/keys', () => ({}));
 
         const { getAllByTestId, getByTestId, rerender } = await render(<AddressesEditor {...props} />);
 
