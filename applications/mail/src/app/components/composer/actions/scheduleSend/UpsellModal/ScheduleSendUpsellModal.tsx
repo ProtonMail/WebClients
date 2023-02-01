@@ -31,7 +31,7 @@ interface Item {
 
 const upsellItems: Item[] = [
     {
-        icon: 'clock',
+        icon: 'clock-paper-plane',
         getText: () => c('new_plans: feature').t`Schedule messages at any time`,
     },
     {
