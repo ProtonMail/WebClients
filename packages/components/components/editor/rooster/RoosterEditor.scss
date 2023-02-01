@@ -75,11 +75,8 @@
 }
 
 .editor-toolbar-dropdown .color-selector-container {
-	max-inline-size: em((28 * 7) + (8 * 6)); // items + gaps
-}
-
-.editor-toolbar-dropdown .color-selector-item {
-	font-size: 0.7em; // Decrease size from 40px to 28px
+	--color-item-size: #{em(28)};
+	--color-grid-items: 7;
 }
 
 .editor--disabled::after {
