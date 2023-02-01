@@ -1,4 +1,4 @@
-import { render, waitFor } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import {
@@ -14,7 +14,7 @@ import {
     useVPNCountriesCount,
     useVPNServersCount,
 } from '@proton/components/hooks';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import {
     Audience,
     PlansMap,
@@ -231,6 +231,7 @@ jest.mock('../../../components/portal/Portal', () => ({ children }: any) => <>{c
 describe('SubscriptionModal', () => {
     let props: Props;
     let freeUser: UserModel;
+    let api: jest.Mock;
 
     beforeEach(() => {
         props = {
@@ -243,7 +244,7 @@ describe('SubscriptionModal', () => {
             onClose: jest.fn(),
         };
 
-        let api = jest.fn();
+        api = jest.fn();
         (useApi as jest.Mock).mockReturnValue(api);
 
         freeUser = {
@@ -349,4 +350,35 @@ describe('SubscriptionModal', () => {
             expect(container).toHaveTextContent('Customize your plan');
         });
     });
+
+    it('should not proceed to the checkout step after customization if there was a check error', async () => {
+        props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
+        props.planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER]: 329 }; // user with 330 users in the organization
+
+        // this component is rendered during the customization step
+        (PlanCustomization as jest.Mock).mockReturnValue(<>Plan customization component</>);
+
+        // rendering the button from the submit property of <SubscriptionCheckout>
+        (SubscriptionCheckout as jest.Mock).mockImplementation(({ submit }) => submit);
+
+        // this component is rendered during the checkout step
+        (Payment as jest.Mock).mockReturnValue(<>Payment component</>);
+
+        let { findByTestId, container } = render(<SubscriptionModal {...props} />);
+        let continueButton = await findByTestId('continue-to-review');
+
+        api.mockReset();
+        api.mockRejectedValue(new Error());
+
+        await waitFor(() => {
+            fireEvent.click(continueButton);
+        });
+
+        expect(api).toHaveBeenCalledTimes(1);
+
+        expect(container).toHaveTextContent('Plan customization component');
+    });
+
+    // Discovered this bug
+    // it('should not call form`s onSubmit when user is still on the customization step and presses Enter', () => {});
 });
