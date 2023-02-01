@@ -1,31 +1,41 @@
 import { useCallback } from 'react';
 
 import { format } from 'date-fns';
+import { c } from 'ttag';
 
 import { useAddressesKeys, usePreventLeave } from '@proton/components';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { queryDeleteLockedVolumes, queryRestoreDriveVolume } from '@proton/shared/lib/api/drive/volume';
+import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
-import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
+import { encryptPassphrase, generateLookupHash, sign } from '@proton/shared/lib/keys/driveKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
+import { useDevicesListing } from '../../_devices';
 import { useLink } from '../../_links';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../_links/link';
 import { useDebouncedFunction } from '../../_utils';
-import { LockedVolumeForRestore, ShareWithKey } from './../interface';
+import { LockedDeviceForRestore, LockedVolumeForRestore, ShareWithKey } from './../interface';
 import useDefaultShare from './../useDefaultShare';
 import useShare from './../useShare';
 import useSharesState from './../useSharesState';
 import { getPossibleAddressPrivateKeys, prepareVolumeForRestore } from './utils';
+
+type LockedShares = {
+    defaultShare: ShareWithKey;
+    devices: (ShareWithKey & { deviceName?: string })[];
+}[];
 
 /**
  * useLockedVolume provides actions to delete or recover files from locked volumes.
  */
 export default function useLockedVolume() {
     const { getLinkPrivateKey, getLinkHashKey } = useLink();
+    const { getDeviceByShareId } = useDevicesListing();
 
     return useLockedVolumeInner({
         sharesState: useSharesState(),
@@ -36,6 +46,7 @@ export default function useLockedVolume() {
         prepareVolumeForRestore,
         getLinkHashKey,
         getLinkPrivateKey,
+        getDeviceByShareId,
     });
 }
 
@@ -48,6 +59,7 @@ type LockedVolumesCallbacks = {
     prepareVolumeForRestore: typeof prepareVolumeForRestore;
     getLinkPrivateKey: ReturnType<typeof useLink>['getLinkPrivateKey'];
     getLinkHashKey: ReturnType<typeof useLink>['getLinkHashKey'];
+    getDeviceByShareId: ReturnType<typeof useDevicesListing>['getDeviceByShareId'];
 };
 
 export function useLockedVolumeInner({
@@ -59,38 +71,51 @@ export function useLockedVolumeInner({
     prepareVolumeForRestore,
     getLinkPrivateKey,
     getLinkHashKey,
+    getDeviceByShareId,
 }: LockedVolumesCallbacks) {
     const { preventLeave } = usePreventLeave();
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
 
     const getLoadedLockedShares = useCallback(
-        async (abortSignal: AbortSignal) => {
+        async (abortSignal: AbortSignal): Promise<LockedShares> => {
             return Promise.all(
-                sharesState.getLockedShares().map(({ shareId }) => getShareWithKey(abortSignal, shareId))
+                sharesState.getLockedShares().map(async ({ defaultShare, devices }) => {
+                    return {
+                        defaultShare: await getShareWithKey(abortSignal, defaultShare.shareId),
+                        devices: await Promise.all(
+                            devices.map(async (device) => {
+                                const share = await getShareWithKey(abortSignal, device.shareId);
+                                const shareDevice = getDeviceByShareId(device.shareId);
+                                return {
+                                    ...share,
+                                    deviceName: shareDevice?.name,
+                                };
+                            })
+                        ),
+                    };
+                })
             );
         },
         [sharesState.getLockedShares]
     );
     const getLockedUnpreparedShares = useCallback(
-        async (lockedShares: ShareWithKey[]) => {
+        async (lockedShares: LockedShares) => {
             return lockedShares.filter(
-                ({ shareId }) =>
-                    !sharesState.lockedVolumesForRestore.some(
-                        ({ shareId: preparedShareId }) => shareId === preparedShareId
-                    )
+                ({ defaultShare: { volumeId } }) =>
+                    !sharesState.lockedVolumesForRestore.some(({ lockedVolumeId }) => volumeId === lockedVolumeId)
             );
         },
         [sharesState.lockedVolumesForRestore]
     );
 
     const getPreparedVolumes = useCallback(
-        async (lockedUnpreparedShares: ShareWithKey[], addressPrivateKeys: PrivateKeyReference[]) => {
+        async (lockedUnpreparedShares: LockedShares, addressPrivateKeys: PrivateKeyReference[]) => {
             const preparedVolumes = await Promise.all(
-                lockedUnpreparedShares.map((share) => {
+                lockedUnpreparedShares.map(({ defaultShare, devices }) => {
                     return debouncedFunction(
-                        async () => prepareVolumeForRestore(share, addressPrivateKeys),
-                        ['prepareVolumeForRestore', share.shareId]
+                        async () => prepareVolumeForRestore(defaultShare, devices, addressPrivateKeys),
+                        ['prepareVolumeForRestore', defaultShare.volumeId]
                     );
                 })
             );
@@ -139,7 +164,8 @@ export function useLockedVolumeInner({
         addressKey: PrivateKeyReference,
         address: Address,
         lockedVolumeId: string,
-        lockedSharePassphraseRaw: string
+        lockedShareLinkPassphraseRaw: string,
+        lockedDevices: LockedDeviceForRestore[]
     ) => {
         if (!hashKey) {
             throw new Error('Missing hash key on folder link');
@@ -149,18 +175,42 @@ export function useLockedVolumeInner({
             RegExp(GLOBAL_FORBIDDEN_CHARACTERS, 'g'),
             ' '
         );
-        const restoreFolderName = `Restored files ${formattedDate}`;
+        // translator: The date is in locale of user's preference. It's used for folder name and translating the beginning of the string is enough.
+        const restoreFolderName = c('Info').t`Restored files ${formattedDate}`;
 
-        const [Hash, { NodePassphrase, NodePassphraseSignature }, { message: encryptedName }] = await Promise.all([
-            generateLookupHash(restoreFolderName, hashKey),
-            encryptPassphrase(privateKey, addressKey, lockedSharePassphraseRaw),
-            CryptoProxy.encryptMessage({
-                textData: restoreFolderName,
-                stripTrailingSpaces: true,
-                encryptionKeys: privateKey,
-                signingKeys: addressKey,
-            }),
-        ]);
+        const [Hash, { NodePassphrase, NodePassphraseSignature }, { message: encryptedName }, devicePassphrases] =
+            await Promise.all([
+                generateLookupHash(restoreFolderName, hashKey),
+                encryptPassphrase(privateKey, addressKey, lockedShareLinkPassphraseRaw),
+                CryptoProxy.encryptMessage({
+                    textData: restoreFolderName,
+                    stripTrailingSpaces: true,
+                    encryptionKeys: privateKey,
+                    signingKeys: addressKey,
+                }),
+                Promise.all(
+                    lockedDevices.map(async (device) => {
+                        const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
+                            sign(device.shareDecryptedPassphrase, addressKey),
+                            getEncryptedSessionKey(device.shareSessionKey, addressKey).then(uint8ArrayToBase64String),
+                        ]);
+                        return {
+                            sharePassphraseSignature,
+                            shareKeyPacket,
+                        };
+                    })
+                ),
+            ]);
+
+        const devicesPayload = lockedDevices.map(({ shareId, deviceName }, idx) => {
+            const { shareKeyPacket, sharePassphraseSignature } = devicePassphrases[idx];
+            return {
+                LockedShareID: shareId,
+                ShareKeyPacket: shareKeyPacket,
+                Name: c('Info').t`${deviceName} (restored)`,
+                PassphraseSignature: sharePassphraseSignature,
+            };
+        });
 
         await debouncedRequest(
             queryRestoreDriveVolume(lockedVolumeId, {
@@ -170,6 +220,7 @@ export function useLockedVolumeInner({
                 NodePassphrase,
                 NodePassphraseSignature,
                 TargetVolumeID: parentVolumeID,
+                Devices: devicesPayload,
             })
         );
     };
@@ -190,20 +241,22 @@ export function useLockedVolumeInner({
         // Backend does not support restoring of multiple volumes at one time.
         // Resotring is async operation and user has to trigger it for the next
         // volume manualy later again.
-        const restorePromiseList = [lockedVolumesForRestore[0]].map(
-            async ({ shareId, lockedVolumeId, decryptedPassphrase }) => {
-                await restoreVolume(
-                    defaultShare.volumeId,
-                    privateKey,
-                    hashKey,
-                    addressKey,
-                    address,
-                    lockedVolumeId,
-                    decryptedPassphrase
-                );
-                sharesState.removeShares([shareId]);
-            }
-        );
+        const restorePromiseList = [lockedVolumesForRestore[0]].map(async (lockedVolume) => {
+            await restoreVolume(
+                defaultShare.volumeId,
+                privateKey,
+                hashKey,
+                addressKey,
+                address,
+                lockedVolume.lockedVolumeId,
+                lockedVolume.defaultShare.linkDecryptedPassphrase,
+                lockedVolume.devices
+            );
+            sharesState.removeShares([
+                lockedVolume.defaultShare.shareId,
+                ...lockedVolume.devices.map(({ shareId }) => shareId),
+            ]);
+        });
         await preventLeave(Promise.all(restorePromiseList));
 
         sharesState.setLockedVolumesForRestore([]);
@@ -212,12 +265,12 @@ export function useLockedVolumeInner({
     const deleteLockedVolumes = async () => {
         const lockedShares = sharesState.getLockedShares();
 
-        const lockedVolumeIds = lockedShares.map(({ volumeId }) => volumeId);
+        const lockedVolumeIds = lockedShares.map(({ defaultShare: { volumeId } }) => volumeId);
         await preventLeave(
             Promise.all(lockedVolumeIds.map((volumeId) => debouncedRequest(queryDeleteLockedVolumes(volumeId))))
         );
 
-        const lockedShareIds = lockedShares.map(({ shareId }) => shareId);
+        const lockedShareIds = lockedShares.map(({ defaultShare: { shareId } }) => shareId);
         sharesState.removeShares(lockedShareIds);
     };
 
