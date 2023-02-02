@@ -91,6 +91,7 @@ describe('metrics', () => {
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(content?.headers).toEqual({
                 'content-type': 'application/json',
+                priority: 'u=6',
                 'x-pm-appversion': `${clientID}@${appVersion}-dev`,
                 'x-pm-uid': uid,
             });
@@ -206,6 +207,7 @@ describe('metrics', () => {
             expect(fetchMock).toHaveBeenCalledTimes(1);
             expect(content?.headers).toEqual({
                 'content-type': 'application/json',
+                priority: 'u=6',
                 'x-pm-appversion': `${clientID}@${appVersion}-dev`,
                 'x-pm-uid': uid,
             });
