@@ -133,7 +133,7 @@ describe('SubscriptionCheckout', () => {
             <SubscriptionCheckout
                 checkResult={checkResult}
                 plansMap={{}}
-                vpnServers={{ free_vpn: 0, [PLANS.VPN]: 0 }}
+                vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
                 isOptimistic={true}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
@@ -147,5 +147,85 @@ describe('SubscriptionCheckout', () => {
         expect(container).toHaveTextContent('Proration');
         expect(container).toHaveTextContent('CHF 1275.83');
         expect(container).not.toHaveTextContent('-CHF 1275.83');
+    });
+
+    /**
+     * An example when credits are negative:
+     * - you have 10 credits on the account
+     * - you upgrade to a 5$/month plan
+     * - you should see credits -5 in the <SubscriptionCheckout>
+     */
+    it('should display negative credits value', () => {
+        checkResult = {
+            ...checkResult,
+            AmountDue: 0,
+            Proration: -19149,
+            Amount: 8376,
+            Cycle: 24,
+            CouponDiscount: 0,
+            Gift: 0,
+            Currency: 'CHF',
+            UnusedCredit: 0,
+            Credit: -10773,
+            Coupon: null,
+        };
+
+        let { container } = render(
+            <SubscriptionCheckout
+                checkResult={checkResult}
+                plansMap={{}}
+                vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
+                isOptimistic={true}
+                currency="CHF"
+                cycle={CYCLE.MONTHLY}
+                planIDs={{}}
+                onChangeCurrency={() => {}}
+                nextSubscriptionStart={1668868986}
+            ></SubscriptionCheckout>
+        );
+
+        expect(container).toHaveTextContent('Credit');
+        expect(container).toHaveTextContent('-CHF 107.73');
+    });
+
+    /**
+     * Example when credits are positive:
+     * - you have 0 credits
+     * - you have a plan that's 10/mo
+     * - move to a plan that's 5/mo
+     * - you should see credits 5 (these will end up on your account balance)
+     */
+    it('should display positive credits value', () => {
+        checkResult = {
+            ...checkResult,
+            AmountDue: 0,
+            Proration: -19149,
+            Amount: 8376,
+            Cycle: 24,
+            CouponDiscount: 0,
+            Gift: 0,
+            Currency: 'CHF',
+            UnusedCredit: 0,
+            Credit: 10773,
+            Coupon: null,
+        };
+
+        let { container } = render(
+            <SubscriptionCheckout
+                checkResult={checkResult}
+                plansMap={{}}
+                vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
+                isOptimistic={true}
+                currency="CHF"
+                cycle={CYCLE.MONTHLY}
+                planIDs={{}}
+                onChangeCurrency={() => {}}
+                nextSubscriptionStart={1668868986}
+            ></SubscriptionCheckout>
+        );
+
+        expect(container).toHaveTextContent('Credit');
+        expect(container).not.toHaveTextContent('-CHF 107.73');
+        expect(container).toHaveTextContent('CHF 107.73');
     });
 });
