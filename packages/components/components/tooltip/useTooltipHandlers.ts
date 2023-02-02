@@ -1,5 +1,7 @@
 import { MutableRefObject, useEffect, useRef } from 'react';
 
+import usePrevious from '@proton/hooks/usePrevious';
+
 const LONG_TAP_TIMEOUT = 500;
 const OPEN_DELAY_TIMEOUT = 1000;
 const CLOSE_DELAY_TIMEOUT = 250;
@@ -58,6 +60,7 @@ const useTooltipHandlers = ({
     const ignoreNonTouchEventsTimeoutRef = useRef(0);
     const closeRef = useRef(outsideClose);
     const openRef = useRef(outsideOpen);
+    const wasExternallyOpened = usePrevious(isExternalOpen);
 
     useEffect(() => {
         const entry = tooltips.get(id);
@@ -206,13 +209,26 @@ const useTooltipHandlers = ({
     };
 
     useEffect(() => {
+        /**
+         * if `isExternalOpen` shifted from being `true`
+         * to `undefined` we can safely close the tooltip :
+         * the tooltip is no longer externally controllable
+         * (ie: errored InputField lost focus)
+         */
         if (isExternalOpen === undefined) {
+            if (wasExternallyOpened) {
+                close();
+            }
+
             return;
         }
+
         if (isExternalOpen && !isOpen) {
-            open();
-        } else if (!isExternalOpen && isOpen) {
-            close();
+            return open();
+        }
+
+        if (!isExternalOpen && isOpen) {
+            return close();
         }
     }, [isExternalOpen, isOpen]);
 
