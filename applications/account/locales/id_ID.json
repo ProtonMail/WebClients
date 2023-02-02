@@ -4287,9 +4287,6 @@
       ],
       "Started": [
         "Dimulai"
-      ],
-      "Stopped": [
-        "Terhenti"
       ]
     },
     "Import type": {
@@ -4552,6 +4549,9 @@
       "Already used": [
         "Telah digunakan"
       ],
+      "American Express SafeKey logo": [
+        "Logo American Express Safekey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Di bawah jumlah minimum (${ amount })."
       ],
@@ -4756,6 +4756,9 @@
       "Delete link?": [
         "Hapus tautan?"
       ],
+      "Discover ProtectBuy logo": [
+        "Logo Discover ProtectBuy"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "JANGAN melupakan kata sandi ini. Jika Anda lupa, Anda tidak akan dapat masuk akun atau mendekripsi pesan."
       ],
@@ -4896,6 +4899,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi dan tindakan."
+      ],
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Untuk Visa, MasterCard, dan Discover, 3 digit yang terdapat pada sisi belakang kartu. Untuk American Express, 4 digit yang terdapat pada sisi depan kartu."
       ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
@@ -5143,11 +5149,17 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Masukkan informasi ini secara manual ke perangkat autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Logo Mastercard SecureCode"
+      ],
       "Member": [
         "Anggota"
       ],
       "Merged": [
         "Tergabung"
+      ],
+      "MM/YY": [
+        "BB/TT"
       ],
       "Monthly ${ onDayString }": [
         "Bulanan ${ onDayString }"
@@ -5754,6 +5766,9 @@
       ],
       "Version ${ version }": [
         "Versi ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Logo Visa Secure"
       ],
       "Warning:": [
         "Peringatan:"
@@ -8107,26 +8122,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8196,6 +8191,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {

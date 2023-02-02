@@ -4866,6 +4866,9 @@
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
       ],
+      "Moving messages. This may take a while.": [
+        "メッセージを移動しています。しばらくお待ちください。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
@@ -4892,9 +4895,6 @@
       ],
       "No group found": [
         "グループが見つかりませんでした"
-      ],
-      "No imports to display.": [
-        "表示するインポートはありません。"
       ],
       "No label found": [
         "ラベルが見つかりませんでした"
@@ -7162,6 +7162,11 @@
         "アップロード"
       ]
     },
+    "Send email with changed preferences": {
+      "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
+        "以下のアドレスの連絡先が削除されました。それに関連して、紐づく暗号化設定が更新されました。"
+      ]
+    },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
         "とりあえずメールを送信しますか?"
@@ -8191,23 +8196,9 @@
       ],
       "Your changes are not synced yet": [
         "変更は同期されていません"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "操作"
       ],
-      "Date": [
-        "日付"
-      ],
-      "Import": [
-        "インポート"
-      ],
-      "Size": [
-        "サイズ"
-      ],
-      "Status": [
-        "状態"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Mial Plusのトライアル期間が ${ textDate } に終了します。"
       ]
     },
     "Today icon tooltip in mini calendar": {
