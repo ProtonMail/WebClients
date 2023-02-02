@@ -9,7 +9,7 @@ import DecryptionErrorNotification from '../../components/notifications/Decrypti
 import { getMessageDecryptionKeyIDFromAddress } from '../../helpers/message/messageDecrypt';
 
 export const useKeyVerification = () => {
-    const { createNotification, hideNotification } = useNotifications();
+    const { createNotification } = useNotifications();
     const [addresses] = useAddresses();
 
     /**
@@ -37,22 +37,22 @@ export const useKeyVerification = () => {
             if (
                 !encounteredDecryptionErrorKeysArray.some((encounteredKey: KeyID) => matchingKeyID === encounteredKey)
             ) {
-                const notification = createNotification({
-                    text: <DecryptionErrorNotification onDiscard={() => hideNotification(notification)} keyFound />,
+                createNotification({
+                    text: <DecryptionErrorNotification keyFound />,
                     type: 'error',
                     expiration: -1,
-                    disableAutoClose: true,
+                    showCloseButton: true,
                 });
 
                 const updatedEncounteredKeys = JSON.stringify([...encounteredDecryptionErrorKeysArray, matchingKeyID]);
                 setItem('DecryptionErrorEncounteredKeys', updatedEncounteredKeys);
             }
         } else {
-            const notification = createNotification({
-                text: <DecryptionErrorNotification onDiscard={() => hideNotification(notification)} />,
+            createNotification({
+                text: <DecryptionErrorNotification />,
                 type: 'error',
                 expiration: -1,
-                disableAutoClose: true,
+                showCloseButton: true,
             });
         }
     };

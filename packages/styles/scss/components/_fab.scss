@@ -2,22 +2,22 @@
 	&#{&} {
 		// Specificity -_-v
 		position: fixed;
-		inset-block-end: 1em;
+		inset-block-end: em(64);
 		inset-inline-end: var(--right, 1.6em);
 		z-index: $layer-floating-action-buttons;
-		block-size: rem(66);
-		inline-size: rem(66);
+		block-size: rem(56);
+		inline-size: rem(56);
 		border-radius: 50%;
 		padding: 0.5em;
 		box-shadow: var(--shadow-lifted);
 		transition: inset-block-end 0.5s easing(ease-out-quart);
 
-		&--is-higher {
-			inset-block-end: 4em;
-		}
-
 		&--inBackground {
 			z-index: 0;
+		}
+
+		@include media('>small') {
+			inset-block-end: 1em;
 		}
 	}
 }
