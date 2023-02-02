@@ -1,5 +1,5 @@
 import { ImportedMailFolder, MailImportMapping } from '@proton/activation/interface';
-import { ACCENT_COLORS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import isTruthy from '@proton/utils/isTruthy';
