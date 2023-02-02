@@ -74,11 +74,15 @@ export const useConversationFocus = (messages: Message[]) => {
         ) as HTMLElement | null;
 
         if (element && !preventFocusRef.current) {
+            const iframe = element.querySelector('iframe');
+
             // If has been focused by keyboard shortcut
-            if (withKeyboardRef.current === true) {
+            // Also, if opening the message for the first time, the iframe will not be defined yet
+            // In that case, we want to focus the message, otherwise, nothing gets the focus
+            if (withKeyboardRef.current === true || !iframe) {
                 focus(element);
             } else {
-                focus(element.querySelector('iframe'));
+                focus(iframe);
             }
         }
 
