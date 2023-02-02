@@ -3,8 +3,7 @@ import { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { FeatureCode } from '@proton/components/containers';
-import { useAddresses, useApi, useFeature, useMailSettings, useNotifications } from '@proton/components/hooks';
+import { useAddresses, useApi, useMailSettings, useNotifications } from '@proton/components/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
@@ -26,7 +25,6 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();
     const { createNotification } = useNotifications();
-    const { feature: blockSenderFeature } = useFeature(FeatureCode.BlockSender);
 
     const incomingDefaultsAddresses = useIncomingDefaultsAddresses();
     const incomingDefaultsStatus = useIncomingDefaultsStatus();
@@ -42,8 +40,7 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     // 3 - Incoming defaults addresses are loaded
     // 2 - The sender is not already blocked => Should be filtered from senders
     // 4 - The message is not sent by the user, we don't want to block self addresses => Should be filtered from senders
-    const canShowBlockSender =
-        blockSenderFeature?.Value === true && incomingDefaultsStatus === 'loaded' && senders.length > 0;
+    const canShowBlockSender = incomingDefaultsStatus === 'loaded' && senders.length > 0;
 
     const handleBlockSender = (): Promise<void> => {
         if (!senders || senders.length === 0) {

@@ -59,11 +59,7 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
 };
 
 export type HandleSpamListActionClick = (type: SpamListActionName, item: SpamItem) => void;
-export const getActionsByLocation = (
-    item: SpamItem,
-    onClick: HandleSpamListActionClick,
-    blockSenderFeatureEnabled: boolean
-): SpamListAction[] => {
+export const getActionsByLocation = (item: SpamItem, onClick: HandleSpamListActionClick): SpamListAction[] => {
     const actions: Record<SpamListActionName, SpamListAction> = {
         block: { name: c('Action').t`Block`, onClick: () => onClick('block', item) },
         unblock: { name: c('Action').t`Remove Block`, onClick: () => onClick('delete', item) },
@@ -76,9 +72,9 @@ export const getActionsByLocation = (
         case 'BLOCKED':
             return [actions.unblock, actions.spam];
         case 'SPAM':
-            return [actions.unspam, ...(blockSenderFeatureEnabled ? [actions.block] : []), actions.delete];
+            return [actions.unspam, actions.block, actions.delete];
         case 'NON_SPAM':
-            return [actions.spam, ...(blockSenderFeatureEnabled ? [actions.block] : []), actions.delete];
+            return [actions.spam, actions.block, actions.delete];
         default:
             throw new Error('Invalid use case');
     }

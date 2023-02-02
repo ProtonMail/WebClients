@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { FeatureCode, Href, useFeatures, useNotifications } from '@proton/components';
+import { Href, useNotifications } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -52,23 +52,18 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
         setPasswordHint,
         isPasswordSet,
         setIsPasswordSet,
-        isMatching,
-        setIsMatching,
         validator,
         onFormSubmit,
     } = useExternalExpiration(message);
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
-    const [{ feature: EORedesignFeature, loading }] = useFeatures([FeatureCode.EORedesign]);
-
-    const isEORedesign = EORedesignFeature?.Value;
 
     const isEdition = message?.draftFlags?.expiresIn;
 
     const handleSubmit = () => {
         onFormSubmit();
 
-        if (!isPasswordSet || (!isEORedesign && !isMatching)) {
+        if (!isPasswordSet) {
             return;
         }
 
@@ -117,10 +112,6 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
 
     const expirationText = getExpirationText(message);
 
-    if (loading) {
-        return null;
-    }
-
     return (
         <ComposerInnerModal
             title={isEdition ? c('Info').t`Edit encryption` : c('Info').t`Encrypt message`}
@@ -136,15 +127,12 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
             </p>
 
             <PasswordInnerModalForm
-                message={message}
                 password={password}
                 setPassword={setPassword}
                 passwordHint={passwordHint}
                 setPasswordHint={setPasswordHint}
                 isPasswordSet={isPasswordSet}
                 setIsPasswordSet={setIsPasswordSet}
-                isMatching={isMatching}
-                setIsMatching={setIsMatching}
                 validator={validator}
             />
         </ComposerInnerModal>
