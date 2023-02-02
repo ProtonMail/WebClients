@@ -1,9 +1,13 @@
+import { HTTP_STATUS_CODE, SECOND } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { wait } from '@proton/shared/lib/helpers/promise';
+
+import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS } from './../constants';
 
 export interface IMetricsApi {
     setAuthHeaders: (uid: string) => void;
     setVersionHeaders: (clientID: string, appVersion: string) => void;
-    fetch: (requestInfo: RequestInfo | URL, requestInit?: RequestInit) => Promise<Response>;
+    fetch: (requestInfo: RequestInfo | URL, requestInit?: RequestInit, retries?: number) => Promise<Response | void>;
 }
 
 class MetricsApi implements IMetricsApi {
@@ -24,8 +28,12 @@ class MetricsApi implements IMetricsApi {
         this._versionHeaders = this.getVersionHeaders(clientID, appVersion);
     }
 
-    public fetch(requestInfo: RequestInfo | URL, requestInit?: RequestInit) {
-        return fetch(requestInfo, {
+    public async fetch(
+        requestInfo: RequestInfo | URL,
+        requestInit?: RequestInit,
+        attempt: number = 1
+    ): Promise<Response | undefined> {
+        const response = await fetch(requestInfo, {
             ...requestInit,
             headers: {
                 ...requestInit?.headers,
@@ -34,6 +42,30 @@ class MetricsApi implements IMetricsApi {
                 ...this._versionHeaders,
             },
         });
+
+        if (attempt >= METRICS_MAX_ATTEMPTS) {
+            return;
+        }
+
+        if (response.status === HTTP_STATUS_CODE.TOO_MANY_REQUESTS) {
+            const retryAfterSeconds = (() => {
+                const retryHeader = response?.headers?.get('retry-after') || '';
+
+                const parsedInt = parseInt(retryHeader, 10);
+
+                if (parsedInt <= 0 || isNaN(parsedInt)) {
+                    return METRICS_DEFAULT_RETRY_SECONDS;
+                }
+
+                return parsedInt;
+            })();
+
+            await wait(retryAfterSeconds * SECOND);
+
+            return this.fetch(requestInfo, requestInit, attempt + 1);
+        }
+
+        return response;
     }
 
     private getAuthHeaders(uid?: string) {
