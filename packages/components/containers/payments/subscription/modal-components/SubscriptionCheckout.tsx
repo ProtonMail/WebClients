@@ -118,7 +118,7 @@ const SubscriptionCheckout = ({
     const isVPNPlanSelected = !!planIDs?.[PLANS.VPN];
 
     const proration = checkResult.Proration ?? 0;
-    const credit = Math.abs(checkResult.Credit || 0);
+    const credit = checkResult.Credit ?? 0;
     const amount = checkResult.Amount || 0;
     const amountDue = checkResult.AmountDue || 0;
     const giftValue = Math.abs(checkResult.Gift || 0);
@@ -196,7 +196,7 @@ const SubscriptionCheckout = ({
             {displayStartDate && nextSubscriptionStart && (
                 <StartDateCheckoutRow nextSubscriptionStart={nextSubscriptionStart} />
             )}
-            {credit > 0 && <CheckoutRow title={c('Title').t`Credits`} amount={-credit} currency={currency} />}
+            {credit !== 0 && <CheckoutRow title={c('Title').t`Credits`} amount={credit} currency={currency} />}
             {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
             {!isOptimistic && (
                 <>
