@@ -68,7 +68,7 @@ function useDownloadNotification(downloads: Download[]) {
     let type: NotificationType = 'info';
     let text: string | undefined;
     let expiration: number | undefined = -1;
-    let disableAutoClose = true;
+    let showCloseButton = false;
 
     if (downloads.some(isTransferPausedByConnection)) {
         type = 'warning';
@@ -78,7 +78,7 @@ function useDownloadNotification(downloads: Download[]) {
     if (downloads.some(isTransferDone)) {
         text = c('Info').t`Download finished`;
         expiration = undefined;
-        disableAutoClose = false;
+        showCloseButton = true;
     }
 
     if (downloads.some(isTransferFailed)) {
@@ -105,7 +105,7 @@ function useDownloadNotification(downloads: Download[]) {
             type,
             text,
             expiration,
-            disableAutoClose,
+            showCloseButton,
         });
         return () => {
             hideNotification(notificationId);

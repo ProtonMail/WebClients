@@ -1,5 +1,8 @@
 import { createContext } from 'react';
 
-import { NotificationOptions } from './interfaces';
+import { Notification, NotificationOffset } from './interfaces';
 
-export default createContext<NotificationOptions[]>([]);
+export default createContext<{ notifications: Notification[]; offset: NotificationOffset | undefined }>({
+    notifications: [],
+    offset: undefined,
+});

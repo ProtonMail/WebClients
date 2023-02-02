@@ -77,7 +77,7 @@ export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
         notifManager.ID = createNotification({
             text: <SendingMessageNotification manager={notifManager} />,
             expiration: -1,
-            disableAutoClose: true,
+            showCloseButton: false,
         });
 
         try {

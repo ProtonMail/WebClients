@@ -6,11 +6,13 @@ import NotificationsContext from './notificationsContext';
 
 const NotificationsChildren = () => {
     const manager = useContext(NotificationsContext);
-    const children = useContext(NotificationsChildrenContext);
+    const { notifications, offset } = useContext(NotificationsChildrenContext);
 
     return (
         <NotificationsContainer
-            notifications={children}
+            notifications={notifications}
+            offset={offset}
+            removeDuplicate={manager.removeDuplicate}
             removeNotification={manager.removeNotification}
             hideNotification={manager.hideNotification}
         />
