@@ -264,7 +264,6 @@ const List = (
                                     {userSettings.Checklists?.includes('get-started') &&
                                         !isGetStartedChecklistDismissed && (
                                             <GetStartedChecklist
-                                                limitedMaxWidth={!isColumnMode(mailSettings)}
                                                 onDismiss={dismissGetStartedChecklist}
                                                 onItemSelection={(key: ChecklistKey) => () => {
                                                     switch (key) {
