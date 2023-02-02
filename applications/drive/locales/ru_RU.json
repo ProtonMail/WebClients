@@ -2628,9 +2628,9 @@
       ],
       "This file contains an event invitation:": [
         "Этот файл содержит приглашение на событие:",
-        "Этот файл содержит приглашения на событие:",
-        "Этот файл содержит приглашения на событие:",
-        "Этот файл содержит приглашения на событие:"
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:"
       ],
       "This file contains an invitation response:": [
         "Этот файл содержит ответ на приглашение:",
@@ -3113,6 +3113,9 @@
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Массовая загрузка может снизить производительность вашего компьютера. \nРассмотрите возможность ограничения операций, требующих большого объема памяти, таких как трансляции во время загрузки. Или попробуйте загружать файлы партиями."
       ],
+      "Calendar side panel": [
+        "Боковая панель календаря"
+      ],
       "Canceled": [
         "Отменено"
       ],
@@ -3279,7 +3282,7 @@
         "Завершено с ошибкой"
       ],
       "Failed to generate a secure link. Try again later.": [
-        "Не удалось сгенерировать защищенную ссылку. Повторите попытку позже."
+        "Не удалось сгенерировать защищённую ссылку. Повторите попытку позже."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не удалось открыть защищенную ссылку. Причина: ${ error }"
@@ -3324,10 +3327,10 @@
         "Освободите место или свяжитесь с вашим администратором."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
-        "Познакомьтесь с ${ DRIVE_APP_NAME } и получите бонус за хранение 500 МБ! Действуйте уже сегодня."
+        "Познакомьтесь с ${ DRIVE_APP_NAME } и получите бонус — 500 МБ хранилища! Действуйте уже сегодня."
       ],
       "Go ahead, upload a file": [
-        "Вперед, загрузите файл"
+        "Вперёд, загрузите файл"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Сначала перейдите в раздел \"Мои файлы\" и загрузите несколько файлов."
@@ -3399,7 +3402,7 @@
         "Подключение к Интернету восстановлено."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Похоже, что вы недавно пытались загрузить ${ uploadName }. Если загрузка не удалась, ${ replaceFile }. Если загрузка еще продолжается, замена файла отменит текущую загрузку."
+        "Похоже, что вы недавно пытались загрузить ${ uploadName }. Если загрузка не удалась, ${ replaceFile }. Если загрузка ещё продолжается, замена файла отменит текущую загрузку."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Элементы будут находиться в Корзине до тех пор, пока вы не удалите их окончательно"
@@ -3462,7 +3465,7 @@
         "Объединенные"
       ],
       "More": [
-        "Еще"
+        "Ещё"
       ],
       "Moving files": [
         "Перемещение файлов"
@@ -3493,9 +3496,6 @@
       ],
       "No group found": [
         "Группа не найдена"
-      ],
-      "No imports to display.": [
-        "Нет импорта для отображения."
       ],
       "No preview available": [
         "Предпросмотр недоступен"
@@ -3702,7 +3702,7 @@
         "Пока здесь пусто"
       ],
       "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Эти файлы были переданы с использованием сквозного шифрования. Чтобы сохранить их в безопасности и все ваши документы, фотографии и файлы, храните их на собственном диске ${ DRIVE_APP_NAME }. Он прост в использовании и бесплатен."
+        "Этими файлами поделились с использованием сквозного шифрования. Чтобы сохранить их в безопасности — а все ваши документы, фотографии и файлы кофиденциальными, — храните их на собственном ${ DRIVE_APP_NAME }. Он прост в использовании и бесплатен."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
@@ -3747,10 +3747,10 @@
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Чтобы обеспечить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должно проиндексировать ваши файлы локально."
+        "Чтобы включить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должен проиндексировать ваши файлы локально."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Чтобы включить действительно конфиденциальный поиск, нам надо проиндексировать ваши файлы локально. Вы по-прежнему можете использовать ${ DRIVE_APP_NAME } в обычном режиме. Мы сообщим вам, когда индексирование будет завершено."
+        "Чтобы включить действительно конфиденциальный поиск, нам надо проиндексировать ваши файлы локально. Вы по-прежнему можете использовать ${ DRIVE_APP_NAME } в обычном режиме – мы сообщим вам, когда индексирование будет завершено."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -4085,7 +4085,7 @@
         "Страна"
       ],
       "Create ${ BRAND_NAME } account": [
-        "Создать аккаунт ${ BRAND_NAME }"
+        "Создайте аккаунт ${ BRAND_NAME }"
       ],
       "Create a share link": [
         "Создайте ссылку для общего доступа"
@@ -4872,9 +4872,9 @@
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Просто выполните следующее в ближайший ${ expiresInDays } день:",
-        "Просто выполните следующие в ближайшие ${ expiresInDays } дня:",
-        "Просто выполните следующие в ближайшие ${ expiresInDays } дней:",
-        "Просто выполните следующие в ближайшие ${ expiresInDays } дня:"
+        "Просто выполните следующее в ближайшие ${ expiresInDays } дня:",
+        "Просто выполните следующее в ближайшие ${ expiresInDays } дней:",
+        "Просто выполните следующее в ближайшие ${ expiresInDays } дней:"
       ],
       "Upload a file": [
         "Загрузить файл"
@@ -6065,23 +6065,6 @@
       ],
       "You’ve got 1 GB of storage": [
         "У вас 1 ГБ хралинища"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Действия"
-      ],
-      "Date": [
-        "Дата"
-      ],
-      "Import": [
-        "Импорт"
-      ],
-      "Size": [
-        "Размер"
-      ],
-      "Status": [
-        "Состояние"
       ]
     },
     "Today icon tooltip in mini calendar": {
