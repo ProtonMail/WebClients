@@ -153,7 +153,7 @@ export const guessDateFromText = (text: string) => {
  * If none of the above, return today date
  * @param vCardProperty birthday or anniversary vCardProperty
  */
-export const getDateFromVCardProperty = ({ value: { date, text } }: VCardProperty<VCardDateOrText>) => {
+export const getDateFromVCardProperty = ({ value: { date, text } = {} }: VCardProperty<VCardDateOrText>) => {
     if (date && isValid(date)) {
         return date;
     } else if (text) {
