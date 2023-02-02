@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { FeatureCode, IconName, useFeature, useFolders, useLabels, useMailSettings } from '@proton/components';
+import { IconName, useFolders, useLabels, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
@@ -8,6 +8,7 @@ import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { getLabelIDsToI18N } from '../../../../constants';
 import { getStandardFolders } from '../../../../helpers/labels';
+import useScheduleSendFeature from '../../../composer/actions/scheduleSend/useScheduleSendFeature';
 
 interface ItemBase {
     text: string;
@@ -82,7 +83,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const [labels = []] = useLabels();
     const [folders] = useFolders();
     const treeview = buildTreeview(folders);
-    const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const { canScheduleSend } = useScheduleSendFeature();
 
     const DRAFT_TYPE = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS;
     const SENT_TYPE = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT;
@@ -95,7 +96,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
             url: STANDARD_FOLDERS[DRAFT_TYPE].to,
             icon: 'file-lines',
         },
-        ...(scheduledFeature?.Value
+        ...(canScheduleSend
             ? [
                   {
                       value: SCHEDULED,

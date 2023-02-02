@@ -26,8 +26,6 @@ export const draftSaved = createAction<{ ID: string; message: Message; draftFlag
     'message/draft/saved'
 );
 
-export const updateScheduled = createAction<{ ID: string; scheduledAt: number }>('message/scheduled/update');
-
 export const updateExpires = createAction<{ ID: string; expiresIn: number }>('message/expires/update');
 
 export const startSending = createAction<string>('messages/send/start');
@@ -58,5 +56,3 @@ export const cancelSendMessage = createAsyncThunk<Message, { messageID: string; 
         return results.Message;
     }
 );
-
-export const cancelScheduled = createAction<string>('message/scheduled/cancel');
