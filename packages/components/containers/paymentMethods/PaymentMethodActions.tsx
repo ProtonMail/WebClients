@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
@@ -51,42 +53,49 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
         createNotification({ text: c('Success').t`Payment method updated` });
     };
 
-    const dropdownActions: DropdownActionProps[] = [];
+    const isCard = method.Type === PAYMENT_METHOD_TYPES.CARD;
+    const expired = isExpired(method.Details);
 
-    if (method.Type === PAYMENT_METHOD_TYPES.CARD) {
-        const card: CardModel = toCard(method);
+    const dropdownActions = useMemo(() => {
+        const result: DropdownActionProps[] = [];
 
-        dropdownActions.push({
-            text: c('Action').t`Edit`,
-            onClick: () => createModal(<EditCardModal card={card} />),
+        if (isCard) {
+            const card: CardModel = toCard(method);
+
+            result.push({
+                text: c('Action').t`Edit`,
+                onClick: () => createModal(<EditCardModal card={card} />),
+            });
+        }
+
+        if (index > 0 && !expired) {
+            result.push({
+                text: c('Action').t`Mark as default`,
+                onClick: markAsDefault,
+            });
+        }
+
+        result.push({
+            text: c('Action').t`Delete`,
+            actionType: 'delete',
+            onClick: () => {
+                createModal(
+                    <ConfirmModal
+                        onConfirm={deleteMethod}
+                        title={c('Confirmation title').t`Delete payment method`}
+                        confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    >
+                        <Alert className="mb1">{c('Info when deleting payment method')
+                            .t`To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.`}</Alert>
+                        <Alert className="mb1" type="error">{c('Confirmation message to delete payment method')
+                            .t`Are you sure you want to delete this payment method?`}</Alert>
+                    </ConfirmModal>
+                );
+            },
         });
-    }
 
-    if (index > 0 && !isExpired(method.Details)) {
-        dropdownActions.push({
-            text: c('Action').t`Mark as default`,
-            onClick: markAsDefault,
-        });
-    }
-
-    dropdownActions.push({
-        text: c('Action').t`Delete`,
-        actionType: 'delete',
-        onClick: () => {
-            createModal(
-                <ConfirmModal
-                    onConfirm={deleteMethod}
-                    title={c('Confirmation title').t`Delete payment method`}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
-                >
-                    <Alert className="mb1">{c('Info when deleting payment method')
-                        .t`To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.`}</Alert>
-                    <Alert className="mb1" type="error">{c('Confirmation message to delete payment method')
-                        .t`Are you sure you want to delete this payment method?`}</Alert>
-                </ConfirmModal>
-            );
-        },
-    });
+        return result;
+    }, [isCard, index, expired]);
 
     return <DropdownActions size="small" list={dropdownActions} />;
 };
