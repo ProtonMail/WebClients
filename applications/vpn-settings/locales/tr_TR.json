@@ -15,7 +15,7 @@
         "Kurtarmayı etkinleştir"
       ],
       "Add credit / debit card": [
-        "Kredi / banka kartı ekle"
+        "Kredi ya da banka kartı ekle"
       ],
       "Add credits": [
         "Kredi ekle"
@@ -1963,7 +1963,7 @@
         "Hesabınız oluşturuluyor"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        "Önceki tarife aboneliğinizin kullanılmayan bölümünden kalan kredi"
+        "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
@@ -2147,6 +2147,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
+      ],
+      "MM/YY": [
+        "AA/YY"
       ],
       "No credit card required": [
         "Kredi kartı gerekmez"
@@ -2335,7 +2338,7 @@
         "${ toAppName } ve tüm ${ BRAND_NAME } hizmetlerini kullanmak için"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Hesabınızla yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz krediler ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
+        "Hesabınıza yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz bir miktar kredi ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
       ],
       "Tor": [
         "Tor"
@@ -2443,7 +2446,7 @@
         "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm kredileri kullanacağız."
+        "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
       ],
       "Why?": [
         "Neden?"
@@ -2901,7 +2904,7 @@
         "Posta kodu"
       ],
       "Proration": [
-        "Eşit dağıtım"
+        "Hesap bakiyesi"
       ],
       "Recovery email address": [
         "Kurtarma e-posta adresi"
@@ -3422,7 +3425,7 @@
         "* 30 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        "Uygulanabilir krediler, eşit dağıtım ve kuponlar sonraki adımda uygulanacak"
+        "Kredi, hesap bakiyesi ve kuponlar sonraki adımda düşülecek"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
@@ -3832,10 +3835,10 @@
         "Bitcoin"
       ],
       "Credit/debit card": [
-        "Kredi/banka kartı"
+        "Kredi ya da banka kartı"
       ],
       "New credit/debit card": [
-        "Yeni kredi/banka kartı"
+        "Yeni kredi ya da banka kartı"
       ],
       "PayPal": [
         "PayPal"
@@ -4122,7 +4125,7 @@
         "Kod ${ methodTo } alıcısına gönderildi"
       ],
       "Credits added": [
-        "Krediler eklendi"
+        "Kredi eklendi"
       ],
       "Display name updated": [
         "Görüntülenecek ad güncellendi"
@@ -4268,7 +4271,7 @@
         "İşlem"
       ],
       "Add credit/debit card": [
-        "Kredi / banka kartı ekle"
+        "Kredi ya da banka kartı ekle"
       ],
       "Add credits": [
         "Kredi ekle"
@@ -4334,7 +4337,7 @@
         "${ BRAND_NAME } hesabınızı açın"
       ],
       "Credits": [
-        "Krediler"
+        "Kredi"
       ],
       "Currency": [
         "Para birimi"
@@ -4373,7 +4376,7 @@
         "İndirmeler"
       ],
       "Edit credit/debit card": [
-        "Kredi/banka kartını düzenle"
+        "Kredi ya da banka kartını düzenle"
       ],
       "Edit display name": [
         "Görüntülenecek adı düzenle"

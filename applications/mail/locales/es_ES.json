@@ -1391,7 +1391,7 @@
         "${ participantName } ha solicitado las últimas actualizaciones de un evento que ya no existe en tu calendario."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } ha solicitado las últimas actualizaciones de un evento que no coincide con los detalles de su invitación. Comprueba los detalles de la invitación en tu calendario."
+        "${ participantName } ha solicitado las últimas actualizaciones de un evento que no coincide con los detalles de su invitación. Verifica los detalles de la invitación en tu calendario."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } rechazó una invitación y propuso una nueva hora para una ocurrencia de este evento."
@@ -3035,7 +3035,7 @@
         "Ya existe un grupo con este nombre"
       ],
       "A problem occurred, please try again": [
-        "Ha ocurrido un problema. Inténtalo de nuevo."
+        "Se ha detectado un problema. Inténtalo de nuevo."
       ],
       "Address primary private key not found": [
         "No se ha encontrado la clave primaria de la dirección"
@@ -3183,7 +3183,7 @@
         "No se ha encontrado la firma"
       ],
       "Network error: Please check your connection and try again.": [
-        "Error de red: comprueba tu conexión e inténtalo de nuevo."
+        "Error de red: verifica tu conexión e inténtalo de nuevo."
       ],
       "No address with keys available to compose a message": [
         "No hay una dirección con claves disponibles para redactar un mensaje"
@@ -3304,7 +3304,7 @@
         "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
-        "Lo sentimos, ${ BRAND_NAME } no puede descifrar tu mensaje. Comprueba que todas tus claves están activas."
+        "Lo sentimos, ${ BRAND_NAME } no puede descifrar tu mensaje. Verifica que todas tus claves están activas."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "El archivo adjunto no se ha podido descifrar.\nSi tiene la clave privada correspondiente, aún podrá descifrar\nel archivo con un programa como GnuPG.",
@@ -3338,7 +3338,7 @@
         "Ha sido un problema con la búsqueda de contenido. En su lugar se ha utilizado la búsqueda por defecto."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Hubo un error al exportar los vCards de contactos"
+        "Se ha producido un error al exportar los archivos vCards de los contactos."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
@@ -3439,19 +3439,19 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Ha ocurrido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+        "Se ha producido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. Solo se admiten los formatos ICS."
+        "Se ha producido un error al cargar el archivo ${ formattedFilename }. Solo se admiten los formatos ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ha ocurrido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
+        "Se ha producido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
       ],
       "An unexpected error occurred. Import must be restarted.": [
-        "Ha ocurrido un error inesperado. La importación debe reiniciarse."
+        "Se ha producido un error inesperado. La importación debe reiniciarse."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
         "Tu archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_EVENTS_STRING } evento.",
@@ -3480,16 +3480,16 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ha ocurrido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+        "Se ha producido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf"
+        "Se ha producido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ha ocurrido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
+        "Se ha producido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "El archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
@@ -3613,13 +3613,13 @@
         "Lo sentimos, se ha producido un error."
       ],
       "Please ${ refresh } or check your connection.": [
-        "${ refresh } o comprueba tu conexión."
+        "${ refresh } o verifica tu conexión."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "Se ha producido un error. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Ha ocurrido un problema al conectarte a ${ BRAND_NAME }."
+        "Se ha detectado un problema al conectarte a ${ BRAND_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Aún no tienes ningún contacto. Empieza creando un nuevo contacto"
@@ -4562,7 +4562,7 @@
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en la configuración."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación verifica tu carpeta de spam y comprueba que ${ strong } la dirección es correcta."
+        "Antes de solicitar un nuevo código de verificación verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
       ],
       "Body: ": [
         "Cuerpo: "
@@ -4832,7 +4832,7 @@
         "Si crees que esto es un error, contáctanos ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no encuentras el correo electrónico en tu bandeja de entrada, comprueba tu carpeta de spam."
+        "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Si tu alias es vendido o filtrado, simplemente desactívalo para dejar de recibir spam."
@@ -4887,7 +4887,7 @@
         "Se ha perdido la conexión a Internet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Se ha perdido la conexión a Internet. Comprueba la conectividad de tu dispositivo."
+        "Se ha perdido la conexión a Internet. Verifica la conectividad de tu dispositivo."
       ],
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
@@ -5000,9 +5000,6 @@
       "No group found": [
         "No se ha encontrado ningún grupo"
       ],
-      "No imports to display.": [
-        "No hay importaciones que mostrar."
-      ],
       "No label found": [
         "No se ha encontrado ninguna etiqueta"
       ],
@@ -5037,7 +5034,7 @@
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Nuestro sistema ha marcado este mensaje como un intento de suplantación de identidad. Comprueba que es legítimo."
+        "Nuestro sistema ha marcado este mensaje como un intento de suplantación de identidad. Verifica que es legítimo."
       ],
       "per month.": [
         "al mes."
@@ -7265,7 +7262,7 @@
         "Mensaje firmado con PGP de un remitente verificado"
       ],
       "PGP-signed message. Sender verification failed": [
-        "Mensaje firmado con PGP. Ha ocurrido un error al verificar el remitente."
+        "Mensaje firmado con PGP. Se ha producido un error al verificar el remitente."
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Enviado por ${ MAIL_APP_NAME } con cifrado de acceso cero"
@@ -8410,23 +8407,6 @@
         "Tu prueba gratuita de Mail Plus termina el ${ textDate }."
       ]
     },
-    "Title header": {
-      "Actions": [
-        "Acciones"
-      ],
-      "Date": [
-        "Fecha"
-      ],
-      "Import": [
-        "Importar"
-      ],
-      "Size": [
-        "Tamaño"
-      ],
-      "Status": [
-        "Estado"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoy"
@@ -8587,10 +8567,10 @@
         "La configuración de la fecha y la hora de tu dispositivo no están sincronizadas. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Ha ocurrido un problema al descifrar el contenido cifrado."
+        "Se ha producido un error al descifrar el contenido cifrado."
       ],
       "The verification of the contact details' signature failed.": [
-        "Ha ocurrido un problema al verificar la firma de los detalles del contacto."
+        "Se ha producido un error al verificar la firma de los detalles del contacto."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Introduce la palabra ${ boldDanger } en el campo para continuar."

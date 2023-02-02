@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Adjunta captura(es) de pantalla"
       ],
+      "Attention required": [
+        "Requereix atenció"
+      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -2200,6 +2203,9 @@
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
       ],
+      "No emails found to import - the account does not have an inbox": [
+        "No s'han trobat correus electrònics per a importar - el compte no té una safata d'entrada"
+      ],
       "No public key for ${ BRAND_NAME } address": [
         "L'adreça ${ BRAND_NAME } no té clau pública"
       ],
@@ -3114,6 +3120,9 @@
         "Es permet un màxim d'${ MAX_ATTENDEES } participant per invitació",
         "Es permet un màxim de ${ MAX_ATTENDEES } participants per invitació"
       ],
+      "Attention required": [
+        "Requereix atenció"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
@@ -3326,9 +3335,6 @@
       "No group found": [
         "No s'ha trobat cap grup"
       ],
-      "No imports to display.": [
-        "No hi ha importacions per mostrar."
-      ],
       "No results found": [
         "No s'han trobat resultats"
       ],
@@ -3497,6 +3503,9 @@
       ],
       "Update recurring event": [
         "Actualitza l'esdeveniment recurrent"
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
@@ -5111,6 +5120,34 @@
         "Preferències"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 hora",
+        "${ hoursInt },5 hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ]
+    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Cercar fus horari"
@@ -5475,28 +5512,14 @@
       ],
       "Your calendar link": [
         "Enllaç del vostre calendari"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Tria un número"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Accions"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Import": [
-        "Importació"
-      ],
-      "Size": [
-        "Mida"
-      ],
-      "Status": [
-        "Estat"
       ]
     },
     "Title; create calendar modal": {
