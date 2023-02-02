@@ -17,7 +17,7 @@ export const getCardPayment = async ({
 }: {
     createModal: (modal: JSX.Element) => void;
     api: Api;
-    currency: string;
+    currency: Currency;
     paymentParameters: PaymentParameters;
     checkResult: SubscriptionCheckResponse;
 }) => {
