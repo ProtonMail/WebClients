@@ -62,7 +62,7 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
         });
     }
 
-    if (index > 0 && !isExpired(method.Details as any)) {
+    if (index > 0 && method.Type === PAYMENT_METHOD_TYPES.CARD && !isExpired(method.Details)) {
         dropdownActions.push({
             text: c('Action').t`Mark as default`,
             onClick: markAsDefault,
