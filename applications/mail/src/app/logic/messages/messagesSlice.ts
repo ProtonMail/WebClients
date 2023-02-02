@@ -2,162 +2,73 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { globalReset } from '../actions';
 import { load as loadElements } from '../elements/elementsActions';
-import {
-    cancelScheduled,
-    cancelSendMessage,
-    createDraft,
-    deleteDraft,
-    draftSaved,
-    endSending,
-    endUndo,
-    openDraft,
-    removeAllQuickReplyFlags,
-    removeInitialAttachments,
-    removeQuickReplyFlag,
-    sendModifications,
-    sent,
-    startSending,
-    updateDraftContent,
-    updateExpires,
-    updateIsSavingFlag,
-    updateScheduled,
-} from './draft/messagesDraftActions';
-import {
-    cancelScheduled as cancelScheduledReducer,
-    cancelSendSuccess as cancelSendSuccessReducer,
-    createDraft as createDraftReducer,
-    deleteDraft as deleteDraftReducer,
-    draftSaved as draftSavedSelector,
-    endSending as endSendingReducer,
-    endUndo as endUndoReducer,
-    openDraft as openDraftReducer,
-    removeAllQuickReplyFlags as removeAllQuickReplyFlagsReducer,
-    removeInitialAttachments as removeInitialAttachmentsReducer,
-    removeQuickReplyFlag as removeQuickReplyFlagReducer,
-    sendModifications as sendModificationsReducer,
-    sent as sentReducer,
-    startSending as startSendingReducer,
-    updateDraftContent as updateDraftContentReducer,
-    updateExpires as updateExpiresReducer,
-    updateIsSavingFlag as updateIsSavingFlagReducer,
-    updateScheduled as updateScheduledReducer,
-} from './draft/messagesDraftReducers';
+import * as draftAction from './draft/messagesDraftActions';
+import * as draftReducer from './draft/messagesDraftReducers';
 import { updateFromElements } from './helpers/messagesReducer';
-import {
-    loadEmbedded,
-    loadFakeProxy,
-    loadRemoteDirectFromURL,
-    loadRemoteProxy,
-    loadRemoteProxyFromURL,
-} from './images/messagesImagesActions';
-import {
-    loadEmbeddedFulfilled,
-    loadFakeProxyFulFilled,
-    loadFakeProxyPending,
-    loadRemoteDirectFromURL as loadRemoteDirectFromURLReducer,
-    loadRemotePending,
-    loadRemoteProxyFromURL as loadRemoteProxyFromURLReducer,
-    loadRemoteProxyFulFilled,
-} from './images/messagesImagesReducers';
+import * as msgImageAction from './images/messagesImagesActions';
+import * as msgImageReducer from './images/messagesImagesReducers';
 import { MessagesState } from './messagesTypes';
-import {
-    optimisticApplyLabels,
-    optimisticDelete,
-    optimisticEmptyLabel,
-    optimisticMarkAs,
-    optimisticRestore,
-} from './optimistic/messagesOptimisticActions';
-import {
-    optimisticApplyLabels as optimisticApplyLabelsReducer,
-    optimisticDelete as optimisticDeleteReducer,
-    optimisticEmptyLabel as optimisticEmptyLabelReducer,
-    optimisticMarkAs as optimisticMarkAsReducer,
-    optimisticRestore as optimisticRestoreReducer,
-} from './optimistic/messagesOptimisticReducers';
-import {
-    applyDarkStyle,
-    documentInitializeFulfilled,
-    documentInitializePending,
-    errors,
-    event,
-    initialize,
-    load,
-    reload,
-    removeDarkStyle,
-    resetVerification,
-    resign,
-    verificationComplete,
-} from './read/messagesReadActions';
-import {
-    applyDarkStyle as applyDarkStyleReducer,
-    documentInitializeFulfilled as documentInitializeFulfilledReducer,
-    documentInitializePending as documentInitializePendingReducer,
-    errors as errorsReducer,
-    event as eventReducer,
-    reset as globalResetReducer,
-    initialize as initializeReducer,
-    loadFulfilled,
-    loadRejected,
-    reload as reloadReducer,
-    removeDarkStyle as removeDarkStyleReducer,
-    resetVerification as resetVerificationReducer,
-    resign as resignReducer,
-    verificationComplete as verificationCompleteReducer,
-} from './read/messagesReadReducers';
+import * as msgOptimisticAction from './optimistic/messagesOptimisticActions';
+import * as msgOptimisticReducer from './optimistic/messagesOptimisticReducers';
+import * as msgReadAction from './read/messagesReadActions';
+import * as msgReadReducer from './read/messagesReadReducers';
+import * as scheduledAction from './scheduled/scheduledActions';
+import * as scheduledReducer from './scheduled/scheduledReducers';
 
 const messagesSlice = createSlice({
     name: 'messages',
     initialState: {} as MessagesState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(globalReset, globalResetReducer);
+        builder.addCase(globalReset, msgReadReducer.reset);
 
-        builder.addCase(initialize, initializeReducer);
-        builder.addCase(reload, reloadReducer);
-        builder.addCase(errors, errorsReducer);
-        builder.addCase(event, eventReducer);
-        builder.addCase(load.fulfilled, loadFulfilled);
-        builder.addCase(load.rejected, loadRejected);
-        builder.addCase(verificationComplete, verificationCompleteReducer);
-        builder.addCase(resign, resignReducer);
-        builder.addCase(resetVerification, resetVerificationReducer);
-        builder.addCase(applyDarkStyle, applyDarkStyleReducer);
-        builder.addCase(removeDarkStyle, removeDarkStyleReducer);
+        builder.addCase(msgReadAction.initialize, msgReadReducer.initialize);
+        builder.addCase(msgReadAction.reload, msgReadReducer.reload);
+        builder.addCase(msgReadAction.errors, msgReadReducer.errors);
+        builder.addCase(msgReadAction.event, msgReadReducer.event);
+        builder.addCase(msgReadAction.load.fulfilled, msgReadReducer.loadFulfilled);
+        builder.addCase(msgReadAction.load.rejected, msgReadReducer.loadRejected);
+        builder.addCase(msgReadAction.verificationComplete, msgReadReducer.verificationComplete);
+        builder.addCase(msgReadAction.resign, msgReadReducer.resign);
+        builder.addCase(msgReadAction.resetVerification, msgReadReducer.resetVerification);
+        builder.addCase(msgReadAction.applyDarkStyle, msgReadReducer.applyDarkStyle);
+        builder.addCase(msgReadAction.removeDarkStyle, msgReadReducer.removeDarkStyle);
+        builder.addCase(msgReadAction.documentInitializePending, msgReadReducer.documentInitializePending);
+        builder.addCase(msgReadAction.documentInitializeFulfilled, msgReadReducer.documentInitializeFulfilled);
 
-        builder.addCase(documentInitializePending, documentInitializePendingReducer);
-        builder.addCase(documentInitializeFulfilled, documentInitializeFulfilledReducer);
-        builder.addCase(loadEmbedded.fulfilled, loadEmbeddedFulfilled);
-        builder.addCase(loadRemoteProxy.pending, loadRemotePending);
-        builder.addCase(loadRemoteProxy.fulfilled, loadRemoteProxyFulFilled);
-        builder.addCase(loadFakeProxy.pending, loadFakeProxyPending);
-        builder.addCase(loadFakeProxy.fulfilled, loadFakeProxyFulFilled);
-        builder.addCase(loadRemoteDirectFromURL, loadRemoteDirectFromURLReducer);
-        builder.addCase(loadRemoteProxyFromURL, loadRemoteProxyFromURLReducer);
+        builder.addCase(msgImageAction.loadEmbedded.fulfilled, msgImageReducer.loadEmbeddedFulfilled);
+        builder.addCase(msgImageAction.loadRemoteProxy.pending, msgImageReducer.loadRemotePending);
+        builder.addCase(msgImageAction.loadRemoteProxy.fulfilled, msgImageReducer.loadRemoteProxyFulFilled);
+        builder.addCase(msgImageAction.loadFakeProxy.pending, msgImageReducer.loadFakeProxyPending);
+        builder.addCase(msgImageAction.loadFakeProxy.fulfilled, msgImageReducer.loadFakeProxyFulFilled);
+        builder.addCase(msgImageAction.loadRemoteProxyFromURL, msgImageReducer.loadRemoteProxyFromURL);
+        builder.addCase(msgImageAction.loadRemoteDirectFromURL, msgImageReducer.loadRemoteDirectFromURL);
 
-        builder.addCase(optimisticApplyLabels, optimisticApplyLabelsReducer);
-        builder.addCase(optimisticMarkAs, optimisticMarkAsReducer);
-        builder.addCase(optimisticDelete, optimisticDeleteReducer);
-        builder.addCase(optimisticEmptyLabel, optimisticEmptyLabelReducer);
-        builder.addCase(optimisticRestore, optimisticRestoreReducer);
+        builder.addCase(msgOptimisticAction.optimisticApplyLabels, msgOptimisticReducer.optimisticApplyLabels);
+        builder.addCase(msgOptimisticAction.optimisticMarkAs, msgOptimisticReducer.optimisticMarkAs);
+        builder.addCase(msgOptimisticAction.optimisticDelete, msgOptimisticReducer.optimisticDelete);
+        builder.addCase(msgOptimisticAction.optimisticEmptyLabel, msgOptimisticReducer.optimisticEmptyLabel);
+        builder.addCase(msgOptimisticAction.optimisticRestore, msgOptimisticReducer.optimisticRestore);
 
-        builder.addCase(createDraft, createDraftReducer);
-        builder.addCase(openDraft, openDraftReducer);
-        builder.addCase(removeInitialAttachments, removeInitialAttachmentsReducer);
-        builder.addCase(removeQuickReplyFlag, removeQuickReplyFlagReducer);
-        builder.addCase(removeAllQuickReplyFlags, removeAllQuickReplyFlagsReducer);
-        builder.addCase(updateIsSavingFlag, updateIsSavingFlagReducer);
-        builder.addCase(updateDraftContent, updateDraftContentReducer);
-        builder.addCase(draftSaved, draftSavedSelector);
-        builder.addCase(updateScheduled, updateScheduledReducer);
-        builder.addCase(updateExpires, updateExpiresReducer);
-        builder.addCase(startSending, startSendingReducer);
-        builder.addCase(sendModifications, sendModificationsReducer);
-        builder.addCase(endUndo, endUndoReducer);
-        builder.addCase(sent, sentReducer);
-        builder.addCase(endSending, endSendingReducer);
-        builder.addCase(deleteDraft, deleteDraftReducer);
-        builder.addCase(cancelScheduled, cancelScheduledReducer);
-        builder.addCase(cancelSendMessage.fulfilled, cancelSendSuccessReducer);
+        builder.addCase(draftAction.createDraft, draftReducer.createDraft);
+        builder.addCase(draftAction.openDraft, draftReducer.openDraft);
+        builder.addCase(draftAction.removeInitialAttachments, draftReducer.removeInitialAttachments);
+        builder.addCase(draftAction.removeQuickReplyFlag, draftReducer.removeQuickReplyFlag);
+        builder.addCase(draftAction.removeAllQuickReplyFlags, draftReducer.removeAllQuickReplyFlags);
+        builder.addCase(draftAction.updateIsSavingFlag, draftReducer.updateIsSavingFlag);
+        builder.addCase(draftAction.updateDraftContent, draftReducer.updateDraftContent);
+        builder.addCase(draftAction.draftSaved, draftReducer.draftSaved);
+        builder.addCase(draftAction.updateExpires, draftReducer.updateExpires);
+        builder.addCase(draftAction.startSending, draftReducer.startSending);
+        builder.addCase(draftAction.sendModifications, draftReducer.sendModifications);
+        builder.addCase(draftAction.endUndo, draftReducer.endUndo);
+        builder.addCase(draftAction.sent, draftReducer.sent);
+        builder.addCase(draftAction.endSending, draftReducer.endSending);
+        builder.addCase(draftAction.deleteDraft, draftReducer.deleteDraft);
+        builder.addCase(draftAction.cancelSendMessage.fulfilled, draftReducer.cancelSendSuccess);
+
+        builder.addCase(scheduledAction.updateScheduled, scheduledReducer.updateScheduled);
+        builder.addCase(scheduledAction.cancelScheduled, scheduledReducer.cancelScheduled);
 
         builder.addCase(loadElements.fulfilled, updateFromElements);
     },

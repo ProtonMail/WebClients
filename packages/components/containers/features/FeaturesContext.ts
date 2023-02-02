@@ -40,7 +40,6 @@ export enum FeatureCode {
     CalendarSubscription = 'CalendarSubscription',
     MailFeedbackEnabled = 'MailFeedbackEnabled',
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
-    ScheduledSend = 'ScheduledSend',
     SpotlightScheduledSend = 'SpotlightScheduledSend',
     ExternalSignup = 'ExternalSignup',
     CalendarInviteLocale = 'CalendarInviteLocale',
@@ -100,6 +99,7 @@ export enum FeatureCode {
     TelemetrySetting = 'TelemetrySetting',
     QuickReply = 'QuickReply',
     EasySwitchGmailSync = 'EasySwitchGmailSync',
+    ScheduledSendFreemium = 'ScheduledSendFreemium',
 }
 
 export interface FeaturesContextValue {

@@ -17,6 +17,7 @@ import { Button } from '@proton/atoms';
 import { useCombinedRefs } from '@proton/hooks';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
+import clsx from '@proton/utils/clsx';
 
 import { classnames, generateUID } from '../../helpers';
 import { useIsClosing } from '../../hooks';
@@ -42,6 +43,7 @@ export interface SpotlightProps {
     anchorRef?: RefObject<HTMLElement>;
     style?: CSSProperties;
     className?: string;
+    size?: 'large';
 }
 
 const Spotlight = ({
@@ -56,6 +58,7 @@ const Spotlight = ({
     anchorRef: inputAnchorRef,
     style = {},
     className,
+    size,
 }: SpotlightProps) => {
     const [uid] = useState(generateUID('spotlight'));
 
@@ -124,8 +127,9 @@ const Spotlight = ({
                     ref={floating}
                     id={uid}
                     style={{ ...position, ...arrow, ...style }}
-                    className={classnames([
+                    className={clsx([
                         'spotlight',
+                        size && `spotlight--${size}`,
                         `spotlight--${placement}`,
                         isClosing && 'is-spotlight-out',
                         type && 'spotlight--with-illustration',
