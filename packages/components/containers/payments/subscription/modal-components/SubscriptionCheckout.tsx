@@ -99,7 +99,7 @@ const SubscriptionCheckout = ({
     planIDs,
     checkResult,
     loading,
-    showProration,
+    showProration = true,
     nextSubscriptionStart,
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -125,8 +125,7 @@ const SubscriptionCheckout = ({
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers });
 
-    const displayProration = showProration ?? true;
-    const displayStartDate = !displayProration;
+    const displayStartDate = !showProration;
 
     return (
         <Checkout
@@ -175,7 +174,7 @@ const SubscriptionCheckout = ({
                     />
                 </>
             )}
-            {displayProration && proration > 0 && (
+            {showProration && proration > 0 && (
                 <CheckoutRow
                     title={
                         <span className="inline-flex flex-align-items-center">
