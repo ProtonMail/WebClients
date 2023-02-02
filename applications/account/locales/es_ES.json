@@ -3230,7 +3230,7 @@
         "La verificación no tuvo éxito, vuelve a intentarlo en una hora."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Detuvimos la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
+        "Hemos detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperación incorrecta: inténtalo de nuevo o utiliza otro método de recuperación."
@@ -3277,19 +3277,19 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Ha ocurrido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+        "Se ha producido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. Solo se admiten los formatos ICS."
+        "Se ha producido un error al cargar el archivo ${ formattedFilename }. Solo se admiten los formatos ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ha ocurrido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
+        "Se ha producido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
       ],
       "An unexpected error occurred. Import must be restarted.": [
-        "Ha ocurrido un error inesperado. La importación debe reiniciarse."
+        "Se ha producido un error inesperado. La importación debe reiniciarse."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
         "Tu archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_EVENTS_STRING } evento.",
@@ -3318,16 +3318,16 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ha ocurrido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+        "Se ha producido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf"
+        "Se ha producido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf"
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ha ocurrido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
+        "Se ha producido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "El archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
@@ -3439,13 +3439,13 @@
     },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "Ha ocurrido un error al leer el archivo \"${ formattedFilename }\". El archivo no tiene el formato correcto."
+        "Se ha producido un error al leer el archivo \"${ formattedFilename }\". El archivo no tiene el formato correcto."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ha ocurrido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo debe ser de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo debe ser de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Ha ocurrido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
+        "Se ha producido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
         "Carga un archivo CSV con un máximo de ${ MAX_NUMBER_OF_USER_ROWS } cuentas de usuario."
@@ -3465,13 +3465,13 @@
         "Lo sentimos, se ha producido un error."
       ],
       "Please ${ refresh } or check your connection.": [
-        "${ refresh } o comprueba tu conexión."
+        "${ refresh } o verifica tu conexión."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "Se ha producido un error. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Ha ocurrido un problema al conectarte a ${ BRAND_NAME }."
+        "Se ha detectado un problema al conectarte a ${ BRAND_NAME }."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Hay demasiadas sesiones secundarias. Borra tus cookies y vuelve a iniciar sesión."
@@ -3488,10 +3488,10 @@
         "iniciar sesión"
       ],
       "There was a problem removing your email address.": [
-        "Ha ocurrido un problema al eliminar tu dirección de correo electrónico."
+        "Se ha detectado un problema al eliminar tu dirección de correo electrónico."
       ],
       "There was a problem verifying your email address.": [
-        "Ha ocurrido un problema al verificar tu dirección de correo electrónico."
+        "Se ha detectado un problema al verificar tu dirección de correo electrónico."
       ]
     },
     "Error message, unsubscribe": {
@@ -3502,7 +3502,7 @@
         "iniciar sesión"
       ],
       "There was a problem unsubscribing you.": [
-        "Ha ocurrido un problema al cancelar la suscripción."
+        "Se ha detectado un problema al cancelar la suscripción."
       ]
     },
     "Error notification": {
@@ -4316,9 +4316,6 @@
       ],
       "Started": [
         "Iniciado"
-      ],
-      "Stopped": [
-        "Interrumpido"
       ]
     },
     "Import type": {
@@ -4697,7 +4694,7 @@
         "Antes de activar la cuenta necesitas proporcionar una contraseña y crear las claves de cifrado para las nuevas direcciones."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación verifica tu carpeta de spam y comprueba que ${ strong } la dirección es correcta."
+        "Antes de solicitar un nuevo código de verificación verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Antes de poder recibir correos electrónicos para tus direcciones de dominio personalizadas en ${ MAIL_APP_NAME }, debes añadir los siguientes registros MX a tu DNS. Esto puede hacerse normalmente en el panel de control de tu registrador de nombres de dominio."
@@ -4730,7 +4727,7 @@
         "Centrar"
       ],
       "Check the status of current and previous imports.": [
-        "Comprueba el estado de las importaciones actuales y anteriores."
+        "Verifica el estado de las importaciones actuales y anteriores."
       ],
       "Choose the look and feel of the application.": [
         "Elige el aspecto de la aplicación."
@@ -5008,7 +5005,7 @@
         "Si crees que esto es un error, contáctanos ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no encuentras el correo electrónico en tu bandeja de entrada, comprueba tu carpeta de spam."
+        "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Si tienes un dominio personalizado con ${ MAIL_APP_NAME }, puedes establecer una dirección de correo electrónico \"catch-all\" para recibir mensajes enviados a tu dominio pero también a una dirección de correo electrónico no válida (por ejemplo, debido a errores tipográficos)."
@@ -5020,7 +5017,7 @@
         "Si nunca has utilizado la autenticación de dos factores anteriormente, te recomendamos encarecidamente ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Si has configurado tanto SPF como DKIM, DMARC te permite especificar cómo otros servicios de correo electrónico deben entregar el correo electrónico para tu dominio si ha ocurrido un problema con las verificaciones de SPF y DKIM. Esto puede hacer que sea más difícil para los spammers que fingen ser tú, pero también puede causar problemas de entrega si no se hace correctamente."
+        "Si has configurado tanto SPF como DKIM, DMARC te permite especificar cómo otros servicios de correo electrónico deben entregar el correo electrónico para tu dominio si se ha producido un error con las verificaciones de SPF y DKIM. Esto puede hacer que sea más difícil para los spammers que fingen ser tú, pero también puede causar problemas de entrega si no se hace correctamente."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Si pierdes tus datos de inicio de sesión y necesitas restablecer tu cuenta, ${ boldImperative } que tengas un ${ boldAccountRecovery } configurado."
@@ -5111,7 +5108,7 @@
         "Se ha perdido la conexión a Internet"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Se ha perdido la conexión a Internet. Comprueba la conectividad de tu dispositivo."
+        "Se ha perdido la conexión a Internet. Verifica la conectividad de tu dispositivo."
       ],
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
@@ -5215,6 +5212,9 @@
       ],
       "Merged": [
         "Fusionado"
+      ],
+      "MM/YY": [
+        "MM/AA"
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -5349,7 +5349,7 @@
         "Añade direcciones de correo para los usuarios seleccionados."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
-        "Comprueba los posibles errores de tu archivo o contacta con el servicio al cliente para más información."
+        "Verifica los posibles errores de tu archivo o contacta con el servicio al cliente para más información."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verifica tu archivo o prueba a usar nuestro ${ csvTemplateButton }."
@@ -8210,26 +8210,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedTrialExpirationDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8299,6 +8279,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedTrialExpirationDate }."
       ]
     },
     "new_plans: Label": {
@@ -10977,7 +10977,7 @@
         "Detectamos un problema con tu configuración DNS. Asegúrate de que tus registros coinciden con las instrucciones de abajo. Si el problema persiste, tendremos que cerrar la sesión de DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Detuvimos la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
+        "Hemos detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Cuando añadas una etiqueta a un mensaje en una conversación, se aplicará automáticamente a todos los mensajes futuros que envíes o recibas en esa conversación."

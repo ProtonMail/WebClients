@@ -2939,6 +2939,10 @@
         "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } επαφή περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
+        "${ contactCount } επαφές περιέχουν πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
         "${ contactEmailsLength } Μέλη"
@@ -3242,9 +3246,6 @@
       ],
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
-      ],
-      "No imports to display.": [
-        "Δεν υπάρχουν εισαγωγές προς εμφάνιση."
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
@@ -5318,23 +5319,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Επιλέξτε έναν αριθμό"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Ενέργειες"
-      ],
-      "Date": [
-        "Ημερομηνία"
-      ],
-      "Import": [
-        "Εισαγωγή"
-      ],
-      "Size": [
-        "Μέγεθος"
-      ],
-      "Status": [
-        "Κατάσταση"
       ]
     },
     "Title; create calendar modal": {

@@ -943,6 +943,11 @@
         "Ef þú hættir núna, gætu sumir atburðir ekki verið fluttir inn"
       ]
     },
+    "Alter": {
+      "This will disconnect all the routers and clients using this certificate.": [
+        "Þetta mun aftengja alla beina og viðskiptavini sem nota þetta vottorð."
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } forrit"
@@ -2351,6 +2356,11 @@
         "Óþekkt"
       ]
     },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Öllum viðburðum í þessu dagatali verður eytt."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Reikningur yfir gjalddaga"
@@ -3122,6 +3132,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        "Skilríki ${ name } fannst ekki eða þegar afturkallað"
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "Ekki er hægt að afmerkja kenninafn og eftirnafn á sama tíma"
       ]
@@ -3194,9 +3207,24 @@
         "${ MaxVPN } VPN tenging",
         "${ MaxVPN } VPN tengingar"
       ],
+      "Access to all countries": [
+        "Aðgangur að öllum löndum"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Tenging fyrir allt að ${ plusVpnConnections } tæki",
         "Tenging fyrir allt að ${ plusVpnConnections } tæki"
+      ],
+      "Fastest VPN servers": [
+        "Hröðustu VPN netþjónar"
+      ],
+      "Secure Core servers": [
+        "Öruggir Core netþjónar"
+      ],
+      "Secure streaming support": [
+        "Öruggur streymistuðningur"
+      ],
+      "Torrenting support (P2P)": [
+        "Stuðningur við Torrenting (P2P)"
       ]
     },
     "fido2: Action": {
@@ -3746,6 +3774,15 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Þú munt missa aðgang að öllum núverandi dulkóðuðum gögnum á reikningnum þínum ef þú heldur áfram."
       ],
+      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
+        "${ BRAND_NAME } gerði hlé á innflutningi vegna þess að tengingin við hina tölvupóstveituna rofnaði. Vinsamlegast tengdu aftur."
+      ],
+      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
+        "${ BRAND_NAME } gerði hlé á innflutningi vegna þess að pláss á reikningnum þínum er að verða lítið. Þú getur:"
+      ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } mun reyna að halda innflutningnum áfram um leið og tölvupóstveitan þín endurstillir reikninginn þinn ${ bandwithLimitLink }. Þú þarft ekki að gera neitt. Ef þú hættir við innflutninginn geturðu ekki haldið honum áfram og þú þarft að byrja upp á nýtt."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s dulkóðunartækni þýðir að enginn hefur aðgang að lykilorðinu þínu - ekki einu sinni við."
       ],
@@ -3983,8 +4020,14 @@
       "Already used": [
         "Þegar notað"
       ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey lógó"
+      ],
       "Amount below minimum (${ amount }).": [
         "Upphæð undir lágmarkinu (${ amount })."
+      ],
+      "An error occurred while communicating with the extension": [
+        "Villa kom upp við samskipti við viðbótina"
       ],
       "and": [
         "og"
@@ -4118,6 +4161,9 @@
       "Continue anyway?": [
         "Halda samt áfram?"
       ],
+      "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
+        "Áframhald mun tengja þinn ${ BRAND_NAME } reikning  við ${ name }."
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Búa til ${ calendarsToBeCreated } nýtt dagatal",
         "Búa til ${ calendarsToBeCreated } ný dagatöl"
@@ -4181,6 +4227,9 @@
       ],
       "Delete link?": [
         "Eyða krækju?"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy lógó"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "EKKI gleyma þessu lykilorði. Ef þú gleymir því, muntu ekki geta skráð þig inn\n eða afkóðað skilaboðin þín."
@@ -4324,6 +4373,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Síur virka á alla tölvupósta, jafnt póst sem berst og sendan póst. Hver sía verður a.m.k. að innihalda nafn, skilyrði og aðgerð."
       ],
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Fyrir Visa, MasterCard og Discover, 3 tölustafir aftan á kortinu þínu. Fyrir American Express, 4 tölustafir framan á kortinu þínu."
+      ],
       "Free up some space or add more storage space.": [
         "Íhugaðu að losa eitthvað pláss eða að kaupa meiri geymslurýmd áður en hún klárast."
       ],
@@ -4438,6 +4490,9 @@
       ],
       "Import mailbox": [
         "Flytja inn pósthólf"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Flyttu inn tölvupóstinn þinn, dagatöl og tengiliði frá annarri þjónustu til ${ BRAND_NAME }. Við munum leiðbeina þér alla leið og dulkóða gögnin þín þegar þau eru flutt. Velkomin í heim friðhelgi einkalífs."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Mikilvægt: gakktu úr skugga um að þú hafir vistað endurheimtukóðana. Annars gætirðu misst endanlega aðgang að notandareikningnum þínum ef þú týnir 2FA-tækinu þínu."
@@ -4569,6 +4624,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Settu þessar upplýsingar handvirkt inn í tækið sem þú notar fyrir tveggja-þrepa auðkenningu til að setja upp notandaaðganginn þinn. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode lógó"
+      ],
       "Member": [
         "Meðlimur"
       ],
@@ -4644,6 +4702,9 @@
       "of": [
         "af"
       ],
+      "One account. All ${ BRAND_NAME } services.": [
+        "Einn reikningur. Allar ${ BRAND_NAME } þjónustur."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Breyttu þessum stillingum aðeins ef þú ert að nota PGP með ekki-${ BRAND_NAME } viðtakendum."
       ],
@@ -4709,6 +4770,9 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Vinsamlegast athugaðu skrána þína, eða reyndu að nota okkar ${ csvTemplateButton }."
+      ],
+      "Please contact the administrator of the organisation to manage the subscription.": [
+        "Vinsamlegast hafðu samband við stjórnanda fyrirtækisins til að hafa umsjón með áskriftinni."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vinsamlega sláðu inn 12 orða endurheimtusetninguna sem tengist reikningnum þínum."
@@ -4781,6 +4845,9 @@
       ],
       "read our two-factor authentication guide first": [
         "lestu fyrst tveggja-þátta auðkenningarhandbókina okkar"
+      ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Mælt með á traustum tækjum. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery file downloaded": [
         "Endurheimtuskrá sótt"
@@ -4863,6 +4930,9 @@
       "Set recovery phrase": [
         "Setja upp endurheimtusetningu"
       ],
+      "Setting up your Drive": [
+        "Set upp Drifið þitt"
+      ],
       "Show original message": [
         "Sýna upprunaleg skilaboð"
       ],
@@ -4928,6 +4998,9 @@
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Netfangið sem þú setur efst í listann er sjálfgefna netfangið þitt. Dragðu og slepptu til að endurraða netföngunum þínum."
+      ],
+      "The following address is available:": [
+        "Eftirfarandi heimilisfang er í boði:"
       ],
       "The following address is invalid.": [
         "Eftirfarandi heimilisfang er ógilt.",
@@ -5067,6 +5140,12 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Til að tryggja þína nettengingu þá skaltu hlaða niður og setja upp ${ VPN_APP_NAME } forritið fyrir tækið þitt og tengjast netþjóni."
       ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "til að nota ${ toAppName } og allar ${ BRAND_NAME } þjónustur"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Til að nota ${ toAppName }, þá þarftu ${ MAIL_APP_NAME } netfang."
+      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Til að virka rétt verður hver sía að innihalda að minnsta kosti nafn og gilt Sieve handrit. Þú getur ${ link }."
       ],
@@ -5166,6 +5245,9 @@
       "Version ${ version }": [
         "Útgáfa ${ version }"
       ],
+      "Visa Secure logo": [
+        "Visa Secure lógó"
+      ],
       "Warning:": [
         "Aðvörun:"
       ],
@@ -5226,6 +5308,12 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Þegar áskriftin þín endurnýjast þá munum við nota allar tiltækar inneignir áður en við rukkum greiðslumátann hér að ofan."
       ],
+      "Why?": [
+        "Af hverju?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Með dulkóðuðu ${ BRAND_NAME } netfangi, geturðu notað allar ${ BRAND_NAME } þjónustur"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Án þess að virkja muntu ekki geta búið til nýja notendur, bætt póstföngum við\n fyrirliggjandi notendur eða haft aðgang að notendareikningum sem ekki eru\n einkareikningar."
       ],
@@ -5268,6 +5356,9 @@
       "You can now access and manage the account as an administrator.": [
         "Þú getur nú fengið aðgang að og stjórnað reikningnum sem stjórnandi."
       ],
+      "You can now close this window.": [
+        "Þú getur lokað þessum glugga núna."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Þú getur núna fengið skilaboð á þitt @pm.me netfang. Uppfærðu í greidda áskrift til að senda líka tölvupóst með því að nota þitt @pm.me netfang og stofna viðbótar @pm.me netföng."
       ],
@@ -5298,6 +5389,9 @@
       ],
       "You have no saved payment methods.": [
         "Þú ert ekki með neina vistaða greiðslumáta."
+      ],
+      "You may now start using the extension": [
+        "Þú gætir nú byrjað að nota viðbótina"
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Þú verður að virkja einkadulritunarlykil stofnunar með því að nota\n endurheimtulykilorð stofnunarinnar sem stjórnandi stofnunarinnar hefur gefið\n þér."
@@ -5338,6 +5432,9 @@
       "You will be soon redirected to your bank to verify your payment.": [
         "Þér verður bráðlega endurbeint til bankans þíns til að sannreyna greiðsluna."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Þú þarft ${ BRAND_NAME } netfang til að nota ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
+      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "Þú munt EKKI geta afkóðað nein skilaboð, skrár og önnur gögn sem eru dulkóðuð með þessum lykli."
       ],
@@ -5352,6 +5449,9 @@
       ],
       "You'll stay signed in even after you close the browser.": [
         "Þú verður áfram skráður inn jafnvel eftir að þú lokar vafranum."
+      ],
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
+        "Þinn ${ BRAND_NAME } reikningur er tengdur við ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Þinn ${ BRAND_NAME } reikningur er frystur núna. Eftir 28 daga verður tölvupóstur ekki lengur sendur í pósthólfið þitt, Drive deilitenglar þínir verða lokaðir og þú munt ekki geta hlaðið upp nýjum skrám. Til að halda áfram eðlilegri þjónustu, vinsamlegast greiddu alla gjaldfallna reikninga."
@@ -5759,6 +5859,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } af ${ humanMaxSpace }"
       ],
+      "${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } netfang"
+      ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } síðufótur"
       ],
@@ -5785,11 +5888,17 @@
       "Address": [
         "Póstfang"
       ],
+      "Address type": [
+        "Tegund netfangs"
+      ],
       "Addresses": [
         "Vistföng"
       ],
       "ALL": [
         "ALLT"
+      ],
+      "Allow notifications by email": [
+        "Leyfa tilkynningar í tölvupósti"
       ],
       "Allow recovery by email": [
         "Heimila endurheimt með tölvupósti"
@@ -5799,6 +5908,9 @@
       ],
       "Allow recovery by recovery phrase": [
         "Heimila endurheimt með endurheimtusetningu"
+      ],
+      "Allow recovery using a trusted device": [
+        "Leyfa endurheimt með traustu tæki"
       ],
       "Amount": [
         "Magn"
@@ -5833,8 +5945,23 @@
       "Authenticator app": [
         "Auðkenningarforrit"
       ],
+      "Auto show embedded images": [
+        "Birta sjálfvirkt ívafðar myndir"
+      ],
+      "Auto show remote images": [
+        "Birta sjálfvirkt fjartengdar myndir"
+      ],
+      "Auto-detect primary time zone": [
+        "Skynja sjálfvirkt aðal tímabelti"
+      ],
       "Auto-reply": [
         "Sjálfvirk-svörun"
+      ],
+      "Auto-unsubscribe": [
+        "Sjálfkrafa segja upp áskrift"
+      ],
+      "Awarded": [
+        "Verðlaunuð"
       ],
       "Billing cycle": [
         "Greiðslutímabil"
@@ -5847,6 +5974,9 @@
       ],
       "Block malware, ads and trackers": [
         "Lokaðu fyrir spilliforrit, auglýsingar og rekjara"
+      ],
+      "Blocked": [
+        "Hindrað"
       ],
       "Browser": [
         "Vafri"
@@ -5950,8 +6080,14 @@
       "Create password": [
         "Útbúa lykilorð"
       ],
+      "Credits": [
+        "Inneignir"
+      ],
       "Credits used": [
         "Notuð inneign"
+      ],
+      "Current display name": [
+        "Núverandi birtingarnafn"
       ],
       "Customize invoices": [
         "Sérsníða reikninga"
@@ -5971,8 +6107,14 @@
       "Default language": [
         "Sjálfgefið tungumál"
       ],
+      "Default language (${ defaultLanguage })": [
+        "Sjálfgefið tungumál (${ defaultLanguage })"
+      ],
       "Default PGP scheme": [
         "Sjálfgefið PGP skema"
+      ],
+      "Default view": [
+        "Sjálfgefin sýn"
       ],
       "Delete": [
         "Eyða"
@@ -6142,6 +6284,9 @@
       "Level for NetShield blocker filtering": [
         "Stig fyrir NetShield blokkunarsíu"
       ],
+      "Link label": [
+        "Merking tengils"
+      ],
       "Mail Server (IMAP)": [
         "Póstþjónn (IMAP)"
       ],
@@ -6184,8 +6329,14 @@
       "Name on card": [
         "Nafn á greiðslukorti"
       ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Áframsending gáttar)"
+      ],
       "Navigation": [
         "Flakk"
+      ],
+      "New display name": [
+        "Nýtt birtingarnafn"
       ],
       "New login password": [
         "Nýtt innskráningarlykilorð"
@@ -6207,6 +6358,9 @@
       ],
       "Non-standard ports": [
         "Óstöðluð tengi"
+      ],
+      "Not spam": [
+        "Ekki ruslpóstur"
       ],
       "Notification": [
         "Tilkynning"
@@ -6255,6 +6409,9 @@
       ],
       "Payment method": [
         "Greiðslumáti"
+      ],
+      "Pending": [
+        "Í bið"
       ],
       "Phone number": [
         "Símanúmer"
@@ -6325,11 +6482,26 @@
       "Send auto-reply": [
         "Senda sjálfvirkt svar"
       ],
+      "Send in": [
+        "Senda inn"
+      ],
+      "Show secondary time zone": [
+        "Sýna auka tímabelti"
+      ],
+      "Show sender images": [
+        "Sýna myndir sendanda"
+      ],
+      "Show week numbers": [
+        "Birta vikunúmer"
+      ],
       "Sign external messages": [
         "Undirrita utanaðkomandi skilaboð"
       ],
       "Signature": [
         "Undirskrift"
+      ],
+      "SMTP username": [
+        "SMTP notandanafn"
       ],
       "Spam": [
         "Ruslpóstur"
@@ -6385,6 +6557,9 @@
       "To: ${ emailAddress }": [
         "Til: ${ emailAddress }"
       ],
+      "Token name": [
+        "Nafn tákns"
+      ],
       "Two-password mode": [
         "Tveggja-lykilorða hamur"
       ],
@@ -6429,6 +6604,9 @@
       ],
       "What happened?": [
         "Hvað gerðist?"
+      ],
+      "What is the main reason you are canceling?": [
+        "Hver er aðalástæðan fyrir því að þú ert að hætta?"
       ],
       "What is the main reason you are deleting your account?": [
         "Hver er aðalástæðan fyrir því að þú ert að eyða aðgangnum þínum?"
@@ -6589,6 +6767,15 @@
       "click here": [
         "smelltu hér"
       ],
+      "Common sign in issues": [
+        "Algeng vandamál í innskráningu"
+      ],
+      "Common sign up issues": [
+        "Algeng vandamál í nýskráningu"
+      ],
+      "Create account": [
+        "Búa til notandaaðgang"
+      ],
       "Encryption and keys": [
         "Dulritun og lyklar"
       ],
@@ -6598,8 +6785,17 @@
       "General": [
         "Almennt"
       ],
+      "How to unlock data": [
+        "Hvernig á að aflæsa gögn"
+      ],
+      "Import/export": [
+        "Flytja inn/út"
+      ],
       "Learn more": [
         "Kanna nánar"
+      ],
+      "Learn more about data recovery": [
+        "Lærðu meira um endurheimt gagna"
       ],
       "Need help?": [
         "Þarftu hjálp?"
@@ -6619,17 +6815,35 @@
       "Reset password": [
         "Endurstilla lykilorð"
       ],
+      "Set email address": [
+        "Stilltu netfang"
+      ],
       "Sign in": [
         "Skrá inn"
       ],
       "Terms": [
         "Skilmálar"
       ],
+      "Trouble signing in?": [
+        "Ertu í vandræðum með að skrá þig inn?"
+      ],
       "Upgrade account": [
         "Uppfæra notandaaðgang"
       ],
+      "Upgrade your plan": [
+        "Uppfærðu áskriftina þína"
+      ],
+      "View guide": [
+        "Skoða leiðbeiningar"
+      ],
+      "What is the difference between UDP and TCP protocols?": [
+        "Hver er munurinn á milli UDP og TCP samskiptareglna?"
+      ],
       "What’s this?": [
         "Hvað er þetta?"
+      ],
+      "Why set recovery methods?": [
+        "Af hverju að velja endurheimtuaðferðir?"
       ]
     },
     "Loading info": {
@@ -6872,6 +7086,21 @@
       ],
       "Back": [
         "Til baka"
+      ],
+      "Back to calendar": [
+        "Til baka í dagatal"
+      ],
+      "Back to files": [
+        "Til baka í skrár"
+      ],
+      "Back to inbox": [
+        "Til baka í innhólf"
+      ],
+      "Blocked": [
+        "Hindrað"
+      ],
+      "Calendar": [
+        "Dagatal"
       ],
       "Drive": [
         "Drif"
@@ -7176,6 +7405,11 @@
         "Til að innflutningurinn virki verður þú að velja alla umbeðna hluti eins og sýnt er í GIF."
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ VPN_APP_NAME }": [
+        "Velkominn til ${ VPN_APP_NAME }"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "10. dag mánaðarins"
@@ -7276,6 +7510,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "Spyrja í hvert skipti"
+      ],
       "Automatic (${ defaultDay })": [
         "Sjálfvirkt (${ defaultDay })"
       ],
@@ -7299,6 +7536,9 @@
       ],
       "I found another service that I like better": [
         "Ég fann aðra þjónustu sem mér líkar betur"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "Ég nota annan ${ BRAND_NAME } reikning"
       ],
       "Ignore group": [
         "Hunsa hóp"
@@ -7566,6 +7806,14 @@
         "Free"
       ]
     },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Aðal tímabelti"
+      ],
+      "Secondary time zone": [
+        "Auka tímabelti"
+      ]
+    },
     "Private Member": {
       "private": [
         "persónulegt"
@@ -7632,9 +7880,34 @@
         "Framúrskarandi"
       ]
     },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "Með því að hætta áskrift muntu ekki lengur hafa aðgang að þessu dagatali. Öllum viðburðum í þessu dagatali verður eytt af reikningnum þínum, en þeir verða áfram í upprunalega opinbera hlekknum."
+      ],
+      "You will no longer have access to this calendar.": [
+        "Þú munt ekki lengur hafa aðgang að þessu dagatali."
+      ]
+    },
+    "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "Ef þú yfirgefur þetta dagatal þarftu að biðja eigandann um að vera með aftur."
+      ],
+      "This calendar will be removed from your account.": [
+        "Þetta dagatal verður fjarlægt frá reikningnum þínum."
+      ]
+    },
     "Remove calendar section title": {
       "Delete calendar?": [
         "Eyða dagatali?"
+      ],
+      "Leave calendar?": [
+        "Yfirgefa dagatal?"
+      ],
+      "Remove calendar": [
+        "Fjarlægja dagatal"
+      ],
+      "Unsubscribe?": [
+        "Segja upp áskrift?"
       ]
     },
     "Restore administrator panel": {
@@ -7900,6 +8173,9 @@
       "Calendar created": [
         "Dagatal var búið til"
       ],
+      "Calendar removed": [
+        "Dagatal fjarlægt"
+      ],
       "Calendar updated": [
         "Dagatal uppfært"
       ],
@@ -7914,6 +8190,12 @@
       ],
       "Credits added": [
         "Bætt við inneign"
+      ],
+      "Default calendar updated": [
+        "Sjálfgefið dagatal uppfært"
+      ],
+      "Display name updated": [
+        "Birtingarnafn uppfært"
       ],
       "DMARC value copied to clipboard": [
         "DMARC gildi afritað á klippispjald"
@@ -7972,6 +8254,9 @@
       "Phone number updated": [
         "Símanúmer uppfært"
       ],
+      "Port copied to clipboard": [
+        "Gátt afrituð á klippispjald"
+      ],
       "Preference saved": [
         "Kjörstilling vistuð"
       ],
@@ -7981,14 +8266,26 @@
       "Resuming import": [
         "Hefja innflutning að nýju"
       ],
+      "Server copied to clipboard": [
+        "Netþjónn afritaður á klippispjald"
+      ],
       "Session revoked": [
         "Seta afturkölluð"
       ],
       "Sessions revoked": [
         "Setur afturkallaðar"
       ],
+      "SMTP token deleted": [
+        "SMTP tákni eytt"
+      ],
       "SPF value copied to clipboard": [
         "SPF gildi afritað á klippispjald"
+      ],
+      "Token copied to clipboard": [
+        "Tákn afritað á klippispjald"
+      ],
+      "Undo in progress": [
+        "Afturkalla í vinnslu"
       ],
       "User created": [
         "Bjó til notanda"
@@ -8083,11 +8380,17 @@
       "Import": [
         "Flytja inn"
       ],
+      "Marked as": [
+        "Merkt sem"
+      ],
       "Name": [
         "Nafn"
       ],
       "Status": [
         "Staða"
+      ],
+      "Total storage": [
+        "Heildargeymslurými"
       ],
       "Values": [
         "Gildi"
@@ -9232,6 +9535,11 @@
         "Spila myndband aftur"
       ]
     },
+    "VPN info": {
+      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, og fleira."
+      ]
+    },
     "VPN Plan Feature": {
       "${ n } server": [
         "${ n } miðlari",
@@ -9249,6 +9557,12 @@
     "VPNClient": {
       "Android": [
         "Android"
+      ],
+      "Android TV": [
+        "Android sjónvarp"
+      ],
+      "Chromebook": [
+        "Chromebook"
       ],
       "GNU/Linux": [
         "GNU/Linux"

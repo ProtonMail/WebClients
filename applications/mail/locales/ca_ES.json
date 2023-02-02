@@ -92,6 +92,9 @@
       "Attachment": [
         "Adjuntar"
       ],
+      "Attention required": [
+        "Requereix atenció"
+      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -3142,6 +3145,9 @@
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
       ],
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "S'ha excedit el nombre màxim d'adjunts (${ attachmentsCountLimit })"
+      ],
       "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combineu almenys ${ calendarToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent",
         "Combineu almenys ${ calendarToFixCount } calendaris importats amb els vostres calendaris ${ BRAND_NAME } existents"
@@ -3169,6 +3175,9 @@
       ],
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
+      ],
+      "No emails found to import - the account does not have an inbox": [
+        "No s'han trobat correus electrònics per a importar - el compte no té una safata d'entrada"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -4463,6 +4472,9 @@
       "Attach public key": [
         "Adjuntar la clau pública"
       ],
+      "Attention required": [
+        "Requereix atenció"
+      ],
       "Background color": [
         "Color de fons"
       ],
@@ -4875,6 +4887,9 @@
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
       ],
+      "Moving messages. This may take a while.": [
+        "Movent missatges. Pot trigar una estona."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
@@ -4901,9 +4916,6 @@
       ],
       "No group found": [
         "No s'ha trobat cap grup"
-      ],
-      "No imports to display.": [
-        "No hi ha importacions per mostrar."
       ],
       "No label found": [
         "No s'ha trobat cap etiqueta"
@@ -5319,6 +5331,9 @@
       ],
       "Updating message content search...": [
         "Actualitzant la cerca del contingut del missatge..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
       "Upgrade to add more addresses to your account.": [
         "Actualitzeu per afegir més adreces al vostre compte."
@@ -6428,6 +6443,9 @@
       ],
       "Less": [
         "Menys"
+      ],
+      "Manage blocked email addresses": [
+        "Gestioneu les adreces de correu electrònic bloquejades"
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -7703,6 +7721,34 @@
         "${ secondsCountLeft } segons"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 hora",
+        "${ hoursInt },5 hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ]
+    },
     "Title": {
       "${ emailsCount } member": [
         "${ emailsCount } membre",
@@ -8229,23 +8275,9 @@
       ],
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Accions"
       ],
-      "Date": [
-        "Data"
-      ],
-      "Import": [
-        "Importació"
-      ],
-      "Size": [
-        "Mida"
-      ],
-      "Status": [
-        "Estat"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
