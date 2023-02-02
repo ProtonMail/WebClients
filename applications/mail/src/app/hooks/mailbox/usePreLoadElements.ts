@@ -1,43 +1,42 @@
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
+import { unwrapResult } from '@reduxjs/toolkit';
 
 import { FeatureCode } from '@proton/components/containers';
 import { useApi, useFeature } from '@proton/components/hooks';
 
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
-import { load as loadConversation } from '../../logic/conversations/conversationsActions';
-import { initialize as initializeMessage } from '../../logic/messages/read/messagesReadActions';
-import { useAppDispatch } from '../../logic/store';
-import { useGetConversation } from '../conversation/useConversation';
-import { useGetMessage } from '../message/useMessage';
+import { load } from '../../logic/conversations/conversationsActions';
+import { initialize } from '../../logic/messages/read/messagesReadActions';
+import { RootState, useAppDispatch } from '../../logic/store';
 
 const usePreLoadElements = (elementIDs: string[], isConversation: boolean, labelID: string) => {
-    const api = useApi();
+    const normalApi = useApi();
     const dispatch = useAppDispatch();
     const { feature } = useFeature(FeatureCode.NumberOfPreloadedConversations);
     const numberOfPreloadedConversations = feature?.Value || 0;
     const firstElementIDs = elementIDs.slice(0, numberOfPreloadedConversations);
-    const getConversation = useGetConversation();
-    const getMessage = useGetMessage();
+    const conversationIDs = useSelector((state: RootState) => Object.keys(state.conversations));
+    const silentApi = <T>(config: any) => normalApi<T>({ ...config, silence: true });
 
     useEffect(() => {
         const preload = async () => {
             try {
                 await Promise.all(
                     firstElementIDs.map(async (ID) => {
-                        const cachedConversation = getConversation(ID);
+                        const conversationAlreadyCached = conversationIDs.includes(ID);
 
-                        if (!cachedConversation) {
-                            await dispatch(loadConversation({ api, conversationID: ID, messageID: undefined }));
-                            const conversation = getConversation(ID);
-                            const messageToExpand = findMessageToExpand(labelID, conversation?.Messages);
+                        if (!conversationAlreadyCached) {
+                            const resultAction = await dispatch(
+                                load({ api: silentApi, conversationID: ID, messageID: undefined })
+                            );
+                            const conversationResult = await unwrapResult(resultAction);
+                            const { Messages } = conversationResult;
+                            const messageToExpand = findMessageToExpand(labelID, Messages);
 
                             if (messageToExpand) {
-                                const cachedMessage = getMessage(messageToExpand.ID);
-                                // If not yet in cache, we set it
-                                if (!cachedMessage?.messageDocument?.initialized) {
-                                    const messageState = { localID: messageToExpand.ID, data: messageToExpand };
-                                    await dispatch(initializeMessage(messageState));
-                                }
+                                dispatch(initialize({ localID: messageToExpand.ID, data: messageToExpand }));
                             }
                         }
                     })
@@ -50,7 +49,7 @@ const usePreLoadElements = (elementIDs: string[], isConversation: boolean, label
         if (isConversation && firstElementIDs.length > 0) {
             void preload();
         }
-    }, [firstElementIDs.join(' '), isConversation, labelID]); // firstElementIDs.join(' ') makes this dependency stable
+    }, [firstElementIDs.join(), isConversation, labelID]); // "firstElementIDs.join()" makes firstElementIDs dependency stable
 };
 
 export default usePreLoadElements;
