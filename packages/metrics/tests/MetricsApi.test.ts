@@ -1,4 +1,10 @@
+import { SECOND } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
+
+import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS } from '../constants';
 import MetricsApi from '../lib/MetricsApi';
+
+jest.mock('@proton/shared/lib/helpers/promise');
 
 function getHeader(headers: HeadersInit | undefined, headerName: string) {
     // @ts-ignore
@@ -179,6 +185,88 @@ describe('MetricsApi', () => {
             expect(content?.method).toBe(method);
             expect(content?.body).toBe(body);
             expect(getHeader(content?.headers, 'foo')).toBe('bar');
+        });
+    });
+
+    describe('retry', () => {
+        const getRetryImplementation = (url: string, retrySeconds: string) => async (req: Request) => {
+            if (req.url === url) {
+                return {
+                    status: 429,
+                    headers: {
+                        'retry-after': retrySeconds,
+                    },
+                };
+            }
+
+            return '';
+        };
+
+        it('retries request if response contains retry-after header', async () => {
+            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '1'));
+            const metricsApi = new MetricsApi();
+
+            await metricsApi.fetch('/retry');
+
+            expect(fetchMock).toHaveBeenCalledTimes(2);
+        });
+
+        it('respects the time the retry header contains', async () => {
+            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '1'));
+            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '2'));
+            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '3'));
+            const metricsApi = new MetricsApi();
+
+            await metricsApi.fetch('/retry');
+
+            expect(wait).toHaveBeenNthCalledWith(1, 1 * SECOND);
+            expect(wait).toHaveBeenNthCalledWith(2, 2 * SECOND);
+            expect(wait).toHaveBeenNthCalledWith(3, 3 * SECOND);
+        });
+
+        it(`only retires a maximum of ${METRICS_MAX_ATTEMPTS} times`, async () => {
+            fetchMock.mockResponse(getRetryImplementation('/retry', '1'));
+            const metricsApi = new MetricsApi();
+
+            await metricsApi.fetch('/retry');
+
+            expect(fetchMock).toHaveBeenCalledTimes(METRICS_MAX_ATTEMPTS);
+        });
+
+        it(`uses default retry of ${METRICS_DEFAULT_RETRY_SECONDS} if retry is 0`, async () => {
+            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '0'));
+            const metricsApi = new MetricsApi();
+
+            await metricsApi.fetch('/retry');
+
+            expect(wait).toHaveBeenCalledWith(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
+        });
+
+        it(`uses default retry of ${METRICS_DEFAULT_RETRY_SECONDS} if retry is NaN`, async () => {
+            fetchMock.mockResponseOnce(getRetryImplementation('/retry', 'hello'));
+            const metricsApi = new MetricsApi();
+
+            await metricsApi.fetch('/retry');
+
+            expect(wait).toHaveBeenCalledWith(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
+        });
+
+        it(`uses default retry of ${METRICS_DEFAULT_RETRY_SECONDS} if retry is negative`, async () => {
+            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '-1'));
+            const metricsApi = new MetricsApi();
+
+            await metricsApi.fetch('/retry');
+
+            expect(wait).toHaveBeenCalledWith(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
+        });
+
+        it('floors non integer values', async () => {
+            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '2.5'));
+            const metricsApi = new MetricsApi();
+
+            await metricsApi.fetch('/retry');
+
+            expect(wait).toHaveBeenCalledWith(2 * SECOND);
         });
     });
 });
