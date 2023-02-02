@@ -1,4 +1,4 @@
-import { FeatureCode, useFeature, useMailSettings } from '@proton/components';
+import { useMailSettings } from '@proton/components';
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
 
 import { getMessageHasData } from '../../../helpers/message/messages';
@@ -41,7 +41,6 @@ const HeaderExtra = ({
     const received = isReceived(message.data);
 
     const { canScheduleSend } = useScheduleSendFeature();
-    const { feature: blockSenderFeature } = useFeature(FeatureCode.BlockSender);
     const isScheduledMessage = isScheduled(message.data);
     const showCalendarWidget = messageLoaded && received;
 
@@ -56,7 +55,7 @@ const HeaderExtra = ({
             <ExtraErrors message={message} />
             <ExtraAutoReply message={message.data} />
             <ExtraUnsubscribe message={message.data} />
-            {blockSenderFeature?.Value === true && <ExtraBlockedSender message={message} />}
+            <ExtraBlockedSender message={message} />
             {message.verification && <ExtraPinKey message={message.data} messageVerification={message.verification} />}
             <ExtraAskResign
                 message={message.data}

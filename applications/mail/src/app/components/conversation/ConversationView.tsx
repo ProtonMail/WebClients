@@ -167,7 +167,6 @@ const ConversationView = ({
     return showConversationError ? (
         <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />
     ) : (
-        <>
             <Scroll className={classnames([hidden && 'hidden'])} customContainerRef={containerRef}>
                 <ConversationHeader
                     className={classnames([hidden && 'hidden'])}
@@ -222,7 +221,6 @@ const ConversationView = ({
                     onClick={handleClickUnread}
                 />
             </Scroll>
-        </>
     );
 };
 

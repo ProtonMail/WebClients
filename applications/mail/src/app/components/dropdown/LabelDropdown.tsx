@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import {
     Checkbox,
-    FeatureCode,
     Icon,
     Mark,
     PrimaryButton,
@@ -13,7 +12,6 @@ import {
     Tooltip,
     classnames,
     generateUID,
-    useFeature,
     useLabels,
     useLoading,
     useModalState,
@@ -109,9 +107,6 @@ interface Props {
 
 const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
     const [labels = []] = useLabels();
-    const contextFilteringFeature = useFeature(FeatureCode.ContextFiltering);
-    const displayContextFiltering =
-        contextFilteringFeature.feature?.Value === true && contextFilteringFeature.loading === false;
 
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();
@@ -352,20 +347,18 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 </ul>
             </div>
             <hr className="m0 flex-item-noshrink" />
-            {displayContextFiltering && (
-                <div className={classnames(['px1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
-                    <Checkbox
-                        id={alwaysCheckID}
-                        checked={always}
-                        disabled={alwaysCheckboxDisabled}
-                        onChange={({ target }) => setAlways(target.checked)}
-                        data-testid="label-dropdown:always-move"
-                        data-prevent-arrow-navigation
-                    >
-                        {c('Label').t`Always label sender's emails`}
-                    </Checkbox>
-                </div>
-            )}
+            <div className={classnames(['px1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
+                <Checkbox
+                    id={alwaysCheckID}
+                    checked={always}
+                    disabled={alwaysCheckboxDisabled}
+                    onChange={({ target }) => setAlways(target.checked)}
+                    data-testid="label-dropdown:always-move"
+                    data-prevent-arrow-navigation
+                >
+                    {c('Label').t`Always label sender's emails`}
+                </Checkbox>
+            </div>
             <div className="px1 mt1 flex-item-noshrink">
                 <Checkbox
                     id={archiveCheckID}
