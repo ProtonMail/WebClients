@@ -55,7 +55,7 @@
         "Koşul ekle"
       ],
       "Add credit / debit card": [
-        "Kredi / banka kartı ekle"
+        "Kredi ya da banka kartı ekle"
       ],
       "Add credits": [
         "Kredi ekle"
@@ -4313,9 +4313,6 @@
       ],
       "Started": [
         "Başlatıldı"
-      ],
-      "Stopped": [
-        "Durduruldu"
       ]
     },
     "Import type": {
@@ -4490,7 +4487,7 @@
         "2. Onlar da ${ planName } denesinler"
       ],
       "3. You earn credits": [
-        "3. Hediye kredilerinizi kazanın"
+        "3. Hediye kredinizi kazanın"
       ],
       "30-day money-back guarantee.": [
         "30 gün ücret iade garantisi."
@@ -4770,7 +4767,7 @@
         "Hesabınız oluşturuluyor"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        "Önceki tarife aboneliğinizin kullanılmayan bölümünden kalan kredi"
+        "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
       "Credits earned": [
         "Kazanılan kredi"
@@ -5212,6 +5209,9 @@
       ],
       "Merged": [
         "Birleştirilmiş"
+      ],
+      "MM/YY": [
+        "AA/YY"
       ],
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
@@ -5730,7 +5730,7 @@
         "Düzgün çalışması için, her süzgecin en az bir adı ve geçerli bir Sieve betiği olmalıdır. ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Hesabınızla yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz krediler ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
+        "Hesabınıza yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz bir miktar kredi ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
       ],
       "Tor": [
         "Tor"
@@ -5880,13 +5880,13 @@
         "Bildirimler etkinleştirildiğinde, ${ MAIL_APP_NAME } hesabınızda yeni ileti varsa, kurtarma/bildirim adresinize bir uyarı göndeririz."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
-        "Bir tarifeye abone olduklarında, aboneliğiniz ile kullanabileceğiniz krediler kazanacaksınız."
+        "Bir tarifeye abone olduklarında, aboneliğiniz ile kullanabileceğiniz bir miktar kredi kazanacaksınız."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm kredileri kullanacağız."
+        "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
       ],
       "Why?": [
         "Neden?"
@@ -6763,7 +6763,7 @@
         "Parola oluştur"
       ],
       "Credits": [
-        "Krediler"
+        "Kredi"
       ],
       "Credits used": [
         "Kullanılan kredi"
@@ -7150,7 +7150,7 @@
         "Anahtarlara güvenme sorulsun"
       ],
       "Proration": [
-        "Eşit dağıtım"
+        "Hesap bakiyesi"
       ],
       "Protection mode": [
         "Koruma kipi"
@@ -8207,26 +8207,6 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal gizlilik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey gizlilik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -8250,7 +8230,7 @@
         "* 30 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        "Uygulanabilir krediler, eşit dağıtım ve kuponlar sonraki adımda uygulanacak"
+        "Kredi, hesap bakiyesi ve kuponlar sonraki adımda düşülecek"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
@@ -8296,6 +8276,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal gizlilik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey gizlilik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -8980,10 +8980,10 @@
         "Bitcoin"
       ],
       "Credit/debit card": [
-        "Kredi/banka kartı"
+        "Kredi ya da banka kartı"
       ],
       "New credit/debit card": [
-        "Yeni kredi/banka kartı"
+        "Yeni kredi ya da banka kartı"
       ],
       "PayPal": [
         "PayPal"
@@ -9643,7 +9643,7 @@
         "Kod ${ methodTo } alıcısına gönderildi"
       ],
       "Credits added": [
-        "Krediler eklendi"
+        "Kredi eklendi"
       ],
       "Default calendar updated": [
         "Varsayılan takvim güncellendi"
@@ -9993,7 +9993,7 @@
         "Kişi grubu adı ekle"
       ],
       "Add credit/debit card": [
-        "Kredi / banka kartı ekle"
+        "Kredi ya da banka kartı ekle"
       ],
       "Add credits": [
         "Kredi ekle"
@@ -10171,7 +10171,7 @@
         "Kimlik doğrulama bilgileri"
       ],
       "Credits": [
-        "Krediler"
+        "Kredi"
       ],
       "Currency": [
         "Para birimi"
@@ -10264,7 +10264,7 @@
         "${ VPN_APP_NAME } indir"
       ],
       "Edit credit/debit card": [
-        "Kredi/banka kartını düzenle"
+        "Kredi ya da banka kartını düzenle"
       ],
       "Edit display name": [
         "Görüntülenecek adı düzenle"

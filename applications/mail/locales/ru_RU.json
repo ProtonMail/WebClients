@@ -4130,9 +4130,9 @@
       ],
       "This file contains an event invitation:": [
         "Этот файл содержит приглашение на событие:",
-        "Этот файл содержит приглашения на событие:",
-        "Этот файл содержит приглашения на событие:",
-        "Этот файл содержит приглашения на событие:"
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:"
       ],
       "This file contains an invitation response:": [
         "Этот файл содержит ответ на приглашение:",
@@ -4722,6 +4722,9 @@
       "Body: ": [
         "Тело сообщения: "
       ],
+      "Calendar side panel": [
+        "Боковая панель календаря"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
       ],
@@ -5171,9 +5174,6 @@
       ],
       "No group found": [
         "Группа не найдена"
-      ],
-      "No imports to display.": [
-        "Нет импорта для отображения."
       ],
       "No label found": [
         "Ярлыки не найдены"
@@ -8977,23 +8977,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Действия"
-      ],
-      "Date": [
-        "Дата"
-      ],
-      "Import": [
-        "Импорт"
-      ],
-      "Size": [
-        "Размер"
-      ],
-      "Status": [
-        "Состояние"
       ]
     },
     "Today icon tooltip in mini calendar": {

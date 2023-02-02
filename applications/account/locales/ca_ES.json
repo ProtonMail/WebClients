@@ -105,6 +105,9 @@
       "Attach screenshot(s)": [
         "Adjunta captura(es) de pantalla"
       ],
+      "Attention required": [
+        "Requereix atenció"
+      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -2835,6 +2838,9 @@
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
       ],
+      "No emails found to import - the account does not have an inbox": [
+        "No s'han trobat correus electrònics per a importar - el compte no té una safata d'entrada"
+      ],
       "No public key for ${ BRAND_NAME } address": [
         "L'adreça ${ BRAND_NAME } no té clau pública"
       ],
@@ -4287,6 +4293,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Esteu segur que voleu suprimir els privilegis d'administració d'aquest usuari?"
       ],
+      "Attention required": [
+        "Requereix atenció"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La resposta automàtica està activa durant cada mes entre l'hora inicial i final seleccionada."
       ],
@@ -5183,6 +5192,9 @@
       ],
       "Update recovery phrase": [
         "Actualitza la frase de recuperació"
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -7344,11 +7356,6 @@
         "Assistència"
       ]
     },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7358,6 +7365,11 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom de manera predeterminada."
+      ]
+    },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8602,6 +8614,34 @@
         "Camp vCard"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 hora",
+        "${ hoursInt },5 hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ]
+    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Cercar fus horari"
@@ -9398,6 +9438,9 @@
       ],
       "Your import history": [
         "Historial d'importació"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
       ],
       "Your plan": [
         "El vostre pla"

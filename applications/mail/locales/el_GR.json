@@ -3945,6 +3945,10 @@
         "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } επαφή περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
+        "${ contactCount } επαφές περιέχουν πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
         "${ contactEmailsLength } Μέλη"
@@ -4559,9 +4563,6 @@
       ],
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
-      ],
-      "No imports to display.": [
-        "Δεν υπάρχουν εισαγωγές προς εμφάνιση."
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
@@ -7609,23 +7610,6 @@
       ],
       "What's new": [
         "Τι νέο υπάρχει"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Ενέργειες"
-      ],
-      "Date": [
-        "Ημερομηνία"
-      ],
-      "Import": [
-        "Εισαγωγή"
-      ],
-      "Size": [
-        "Μέγεθος"
-      ],
-      "Status": [
-        "Κατάσταση"
       ]
     },
     "Today icon tooltip in mini calendar": {

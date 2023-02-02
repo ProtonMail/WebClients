@@ -1976,6 +1976,11 @@
         "此事件屬於已停用的行事曆。"
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Do not ask again": [
+        "不要再次詢問"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "加入行事曆"
@@ -3387,9 +3392,6 @@
       ],
       "No group found": [
         "未找到群組"
-      ],
-      "No imports to display.": [
-        "未有任何匯入可供顯示。"
       ],
       "No results found": [
         "找不到相符的結果"
@@ -5176,6 +5178,28 @@
         "設定"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } min": [
+        "${ minutes }分鐘"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hours": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes }分鐘"
+      ]
+    },
     "Timezone search placeholder": {
       "Search timezones": [
         "搜尋時區"
@@ -5543,23 +5567,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "請選擇一個數字"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "動作"
-      ],
-      "Date": [
-        "日期"
-      ],
-      "Import": [
-        "匯入"
-      ],
-      "Size": [
-        "大小"
-      ],
-      "Status": [
-        "狀態"
       ]
     },
     "Title; create calendar modal": {

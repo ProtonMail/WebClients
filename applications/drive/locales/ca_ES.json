@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Adjunta captura(es) de pantalla"
       ],
+      "Attention required": [
+        "Requereix atenció"
+      ],
       "Authenticate": [
         "Autenticar"
       ],
@@ -1990,6 +1993,9 @@
       "No contacts found to import": [
         "No s'ha trobat cap contacte per importar"
       ],
+      "No emails found to import - the account does not have an inbox": [
+        "No s'han trobat correus electrònics per a importar - el compte no té una safata d'entrada"
+      ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
       ],
@@ -2903,6 +2909,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Segur que voleu eliminar completament de la paperera els elements seleccionats?"
       ],
+      "Attention required": [
+        "Requereix atenció"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
@@ -3210,9 +3219,6 @@
       "No group found": [
         "No s'ha trobat cap grup"
       ],
-      "No imports to display.": [
-        "No hi ha importacions per mostrar."
-      ],
       "No preview available": [
         "No hi ha previsualització disponible"
       ],
@@ -3439,6 +3445,9 @@
       ],
       "Updating drive search...": [
         "S'està actualitzant la cerca…"
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
       "Uploaded": [
         "Carregat"
@@ -4723,6 +4732,34 @@
         "Preferències"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 hora",
+        "${ hoursInt },5 hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ]
+    },
     "Title": {
       "# of accesses": [
         "# d'accessos"
@@ -5198,28 +5235,14 @@
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
       ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "La prova gratuïta de Mail Plus finalitza el ${ textDate }"
+      ],
       "Your welcome actions": [
         "Les vostres accions de benvinguda"
       ],
       "You’ve got 1 GB of storage": [
         "Teniu 1 GB de emmagatzematge"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Accions"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Import": [
-        "Importació"
-      ],
-      "Size": [
-        "Mida"
-      ],
-      "Status": [
-        "Estat"
       ]
     },
     "Today icon tooltip in mini calendar": {
