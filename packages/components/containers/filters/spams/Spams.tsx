@@ -14,10 +14,9 @@ import {
     TableRow,
     useModalState,
 } from '@proton/components/components';
-import { useErrorHandler, useFeature, useNotifications } from '@proton/components/hooks';
+import { useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 
-import { FeatureCode } from '../../features';
 import {
     HandleSpamListActionClick,
     getActionsByLocation,
@@ -31,16 +30,14 @@ import useSpamApi from './hooks/useSpamApi';
 import useSpamState from './hooks/useSpamState';
 import SpamModal, { SpamMode } from './modals/SpamModal';
 
-const getActions = (blockSenderFeatureEnabled: boolean): { type: SpamLocation; getName: () => string }[] => {
+const getActions = (): { type: SpamLocation; getName: () => string }[] => {
     const actions = [
         { type: 'SPAM', getName: () => c('Action').t`Spam` },
         { type: 'NON_SPAM', getName: () => c('Action').t`Not spam` },
     ] as { type: SpamLocation; getName: () => string }[];
 
-    // Put block as first element of the list if FF is enabled
-    if (blockSenderFeatureEnabled) {
-        actions.unshift({ type: 'BLOCKED', getName: () => c('Action').t`Block` });
-    }
+    // Put block as first element of the list
+    actions.unshift({ type: 'BLOCKED', getName: () => c('Action').t`Block` });
 
     return actions;
 };
@@ -50,8 +47,6 @@ const ELEMENTS_PER_PAGE = 10;
 const Spams = () => {
     const isMounted = useIsMounted();
     const [modalProps, openModal, renderModal] = useModalState();
-    const { feature: blockSenderFeature, loading: blockSenderLoading } = useFeature(FeatureCode.BlockSender);
-    const blockSenderFeatureEnabled = blockSenderFeature?.Value === true && !blockSenderLoading;
 
     const { createNotification } = useNotifications();
 
@@ -137,12 +132,12 @@ const Spams = () => {
         dispatch({ type: 'fetchList' });
     }, []);
 
-    return blockSenderLoading ? null : (
+    return (
         <>
             <div className="mb2">
                 <SpamsButtonDropdown
                     title={c('Action').t`Add address`}
-                    actions={getActions(blockSenderFeatureEnabled).map(({ getName, type }) => ({
+                    actions={getActions().map(({ getName, type }) => ({
                         name: getName(),
                         onClick: () => {
                             dispatch({ type: 'setModal', payload: type });
@@ -172,7 +167,6 @@ const Spams = () => {
                     <SpamsNav
                         selected={display}
                         onChange={(nextDisplay) => dispatch({ type: 'setDisplay', payload: nextDisplay })}
-                        showBlockSender={blockSenderFeatureEnabled}
                     />
                 </>
             )}
@@ -199,11 +193,7 @@ const Spams = () => {
                                     <TableCell>
                                         <SpamsButtonDropdown
                                             title="…"
-                                            actions={getActionsByLocation(
-                                                item,
-                                                handleMoveSpam,
-                                                blockSenderFeatureEnabled
-                                            )}
+                                            actions={getActionsByLocation(item, handleMoveSpam)}
                                         />
                                     </TableCell>
                                 </TableRow>
