@@ -1,12 +1,15 @@
 .color-selector {
 	&-container {
-		display: flex;
-		flex-flow: row wrap;
-		gap: em(8);
+		--color-item-size: #{em(44)};
+		--color-grid-items: 5;
 
-		@include media('>small') {
-			max-inline-size: em((40 * 5) + (8 * 4)); // items + gaps
-			box-sizing: content-box;
+		display: grid;
+		gap: em(8);
+		justify-content: center;
+		grid-template-columns: repeat(var(--color-grid-items), var(--color-item-size));
+
+		&-inline {
+			justify-content: space-between;
 		}
 	}
 
@@ -18,8 +21,8 @@
 	&-item {
 		position: relative;
 		display: flex;
-		block-size: em(40);
-		inline-size: em(40);
+		block-size: var(--color-item-size);
+		inline-size: var(--color-item-size);
 		overflow: hidden;
 		border-radius: 50%;
 		background-color: var(--color-selector-base);
@@ -32,15 +35,15 @@
 			inset: 0;
 			border-radius: 50%;
 			z-index: 1;
-			border: em(4) solid transparent;
+			border: em(3) solid transparent;
 			transition: inherit;
 		}
 
 		&::after {
 			content: '';
 			display: block;
-			inline-size: em(16);
-			block-size: em(16);
+			inline-size: em(12);
+			block-size: em(12);
 			border-radius: 50%;
 			margin: auto;
 			background-color: transparent;

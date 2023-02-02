@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { checkLabelAvailability, create as createLabel, updateLabel } from '@proton/shared/lib/api/labels';
-import { ACCENT_COLORS, LABEL_TYPE, ROOT_FOLDER } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/colors';
+import { LABEL_TYPE, ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -178,7 +179,7 @@ const EditLabelModal = ({
     };
 
     return (
-        <ModalTwo size="large" data-testid="label-modal" {...rest} onClose={handleClose}>
+        <ModalTwo size="small" data-testid="label-modal" {...rest} onClose={handleClose}>
             <ModalTwoHeader title={getTitle()} />
             <ModalTwoContent>
                 <NewLabelForm

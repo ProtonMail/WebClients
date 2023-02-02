@@ -1,9 +1,9 @@
-import { ElementType, useState } from 'react';
+import { useState } from 'react';
 
 import tinycolor from 'tinycolor2';
 
-import { ACCENT_COLORNAMES } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
+import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
+import { omit } from '@proton/shared/lib/helpers/object';
 
 import { classnames, generateUID } from '../../helpers';
 import ColorSelector from '../color/ColorSelector';
@@ -17,30 +17,46 @@ interface OwnProps {
     onChange: (color: string) => void;
 }
 
-export type Props<T extends ElementType> = OwnProps & DropdownButtonProps<T>;
+type ButtonProps = DropdownButtonProps<'button'>;
 
-const ColorPicker = <T extends ElementType>({ color = 'blue', onChange = noop, className, ...rest }: Props<T>) => {
-    const colorModel = tinycolor(color) as any;
-    const iconColor = colorModel.isValid() ? colorModel.toHexString() : '';
+export type Props =
+    | ({ layout: 'inline' } & OwnProps)
+    | ({ layout?: 'dropdown' } & OwnProps & Omit<ButtonProps, 'onChange' | 'as'>);
 
+const getOptions = () => {
+    return Object.values(ACCENT_COLORS_MAP).map(({ color, getName }) => ({ value: color, label: getName() }));
+};
+
+const ColorPicker = ({ color = '#5252CC', onChange, ...rest }: Props) => {
+    const options = getOptions();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const colors = Object.values(ACCENT_COLORNAMES).map(({ color, getName }) => ({ value: color, label: getName() }));
+    if (rest.layout === 'inline') {
+        return <ColorSelector selected={color} onChange={onChange} colors={options} inline />;
+    }
 
+    const colorModel = tinycolor(color);
+    const iconColor = colorModel.isValid() ? colorModel.toHexString() : '';
+    const colorName = getColorName(color);
+
+    const { className, ...restDropdownProps } = omit(rest, ['layout']);
     return (
         <>
             <DropdownButton
+                {...restDropdownProps}
                 as="button"
                 type="button"
-                className={classnames([className, !rest.as && 'field select flex flex-align-items-center py0 pl0-5'])}
+                className={classnames([className, 'field select w50 flex flex-align-items-center py0 pl0-5'])}
                 hasCaret
-                {...rest}
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
             >
-                <Icon className="flex-item-noshrink" name="circle-filled" size={28} color={iconColor} />
+                <span className="flex-item-fluid text-left flex flex-nowrap flex-align-items-center flex-gap-0-5">
+                    <Icon className="flex-item-noshrink" name="circle-filled" size={28} color={iconColor} />
+                    {colorName && <span className="text-capitalize text-ellipsis">{colorName}</span>}
+                </span>
             </DropdownButton>
             <Dropdown
                 id={uid}
@@ -50,12 +66,7 @@ const ColorPicker = <T extends ElementType>({ color = 'blue', onChange = noop, c
                 onClose={close}
                 disableDefaultArrowNavigation
             >
-                <ColorSelector
-                    selected={color}
-                    onChange={onChange}
-                    className="flex flex-row flex-wrap flex-justify-center m0 p1"
-                    colors={colors}
-                />
+                <ColorSelector selected={color} onChange={onChange} colors={options} className="p1" />
             </Dropdown>
         </>
     );

@@ -1,4 +1,5 @@
-import { ACCENT_COLORS, BASE_SIZE } from '../constants';
+import { ACCENT_COLORS } from '../colors';
+import { BASE_SIZE } from '../constants';
 
 export const MAX_CALENDARS_FREE = 1;
 export const MAX_SUBSCRIBED_CALENDARS = 5;

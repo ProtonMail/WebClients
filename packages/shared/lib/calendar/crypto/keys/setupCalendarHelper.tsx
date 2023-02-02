@@ -4,7 +4,7 @@ import { useGetAddressKeys } from '@proton/components';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { createCalendar, updateCalendarUserSettings } from '../../../api/calendars';
-import { ACCENT_COLORS } from '../../../constants';
+import { ACCENT_COLORS } from '../../../colors';
 import { getTimezone } from '../../../date/timezone';
 import { getActiveAddresses } from '../../../helpers/address';
 import { Address, Api } from '../../../interfaces';

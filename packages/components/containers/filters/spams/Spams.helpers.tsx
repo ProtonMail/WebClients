@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ACCENT_COLORNAMES } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 
 import { SpamItem, SpamListAction, SpamListActionName, SpamLocation } from './Spams.interfaces';
 
@@ -87,11 +87,11 @@ export const getActionsByLocation = (
 export const getLabelByLocation = (location: SpamLocation): { name: string; color: string } => {
     switch (location) {
         case 'BLOCKED':
-            return { name: c('Label').t`Blocked`, color: ACCENT_COLORNAMES.strawberry.color };
+            return { name: c('Label').t`Blocked`, color: ACCENT_COLORS_MAP.purple.color };
         case 'NON_SPAM':
-            return { name: c('Label').t`Not spam`, color: ACCENT_COLORNAMES.reef.color };
+            return { name: c('Label').t`Not spam`, color: ACCENT_COLORS_MAP.reef.color };
         case 'SPAM':
-            return { name: c('Label').t`Spam`, color: ACCENT_COLORNAMES.carrot.color };
+            return { name: c('Label').t`Spam`, color: ACCENT_COLORS_MAP.carrot.color };
         default:
             throw new Error('Invalid use case');
     }

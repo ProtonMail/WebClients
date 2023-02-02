@@ -1,7 +1,8 @@
 import { fireEvent, getByDisplayValue, waitFor } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
-import { ACCENT_COLORS, LABEL_TYPE } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/colors';
+import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
