@@ -117,6 +117,7 @@ export type IconName =
     | 'circle-half-filled'
     | 'circle-slash'
     | 'clock'
+    | 'clock-paper-plane'
     | 'clock-rotate-left'
     | 'cloud'
     | 'code'

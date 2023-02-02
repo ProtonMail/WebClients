@@ -3,11 +3,9 @@ import { useEffect, useState } from 'react';
 import { Location } from 'history';
 
 import {
-    FeatureCode,
     TopNavbarListItemSearchButton,
     generateUID,
     useAddresses,
-    useFeature,
     useFolders,
     useLabels,
     useMailSettings,
@@ -47,7 +45,6 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
-    const { loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
     const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
     const { isDBLimited, dropdownOpened } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
@@ -57,8 +54,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
 
-    const loading =
-        loadingScheduledFeature || loadingLabels || loadingFolders || loadingMailSettings || loadingAddresses;
+    const loading = loadingLabels || loadingFolders || loadingMailSettings || loadingAddresses;
 
     useEffect(() => {
         if (!isOpen) {

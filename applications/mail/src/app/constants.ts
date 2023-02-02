@@ -28,6 +28,10 @@ export const UNDO_SEND_DELAY = 5000;
 
 export const SCHEDULED_MESSAGES_LIMIT = 100;
 export const SCHEDULED_MAX_DATE_DAYS = 30;
+/**
+ * We can't schedule a message before this 120sec buffer
+ */
+export const SCHEDULED_SEND_BUFFER = 120;
 
 export const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
